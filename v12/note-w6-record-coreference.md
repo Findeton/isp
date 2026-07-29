@@ -1,14 +1,14 @@
 # v12 W6 — RECORD CO-REFERENCE AND EFFECTIVE DESCENT
 
-**Status:** GREEN-UNREVIEWED, 2026-07-29.
-**Pin:** `v12/note-w6-record-coreference-pin.md` (STRICT, commit 2efd05e),
-adopted from [REV4] at LOG #29–#30.
+**Status:** GREEN-UNREVIEWED-REPAIRED, 2026-07-29.
+**Pin:** `v12/note-w6-record-coreference-pin.md` (STRICT), adopted from [REV4]
+at LOG #29–#30.
 **Binding antecedents:** paper 0 v2.2 §5 (the four-gate rule; the withdrawn
 global $(E,\prec)$; T5″); W7 TERMINAL (LOG #24 — its scope engraving: *all of
 W7 is one-chart mathematics; the co-reference bridge is W6's*); W3′ (LOG #14 —
 the record hypotheses and the decision criterion, anchored, not re-proved).
 **Receipts:** `v12/code/w6_coreference_exact.py` → `v12/code/w6_output.txt`.
-137 rows (16 ANCHOR, 121 GATE), 137 pass, 0 fail, runtime under 3 s.
+115 rows (16 ANCHOR, 99 GATE), 115 pass, 0 fail, runtime under 2 s.
 **Substrate:** exact arithmetic throughout — $\mathbb{Q}(\zeta_8)$ for the
 dimension 4, 8 and 16 models, the totally real quartic field
 $\mathbb{Q}(\cos\pi/8)$ for the committed 36-configuration composite model.
@@ -23,33 +23,35 @@ The census does **not** block. All six referents are typed, five of them
 constructed from committed primitives with no new postulate, and the resulting
 apparatus decides all three sub-problems on nine exact models.
 
-> **Fact co-reference descends; event-token co-reference descends exactly
-> where the chart's generating structure — not its record law — distinguishes
-> the tokens; and where an automorphism of the committed data exchanges two
-> tokens, the honest object is a groupoid, not a set.**
+> **Fact co-reference descends. Event-token co-reference descends exactly
+> where the chart's declared generating structure — not its record law —
+> distinguishes the tokens; and where an automorphism of the committed data
+> exchanges two tokens, the honest object is a groupoid, not a set.**
 
 **Three** of the six pre-registered outcomes obtain, on disjoint parts of the
 material: **W6-FACT-DESCENT**, **W6-SET-AMALGAM** (scoped) and
-**W6-GROUPOID-AMALGAM**. The other three do not: neither **W6-NO-DESCENT** nor
-**W6-UNDERDETERMINED** obtains on any physical family — both appear only in the
-declared detector-validation branch, whose purpose is to prove the test can
-fail — and **W6-BLOCKED-AT-⟨referent⟩** does not obtain either.
+**W6-GROUPOID-AMALGAM**. **W6-NO-DESCENT** and **W6-UNDERDETERMINED** obtain
+only in the declared detector-validation branch, whose purpose is to prove the
+test can fail; **W6-BLOCKED-AT-⟨referent⟩** does not obtain.
 
-Three measurements carry most of the weight, and two of them cut against the
+Three measurements carry most of the weight, and the third cuts against the
 comfortable reading:
 
-1. On the committed two-frame Bell model, a fact-candidate map exists on
+1. On the committed two-frame Bell model a fact-candidate map exists on
    **exactly the 56 of 144** ordered chart pairs whose final laws agree — and
    **32 of those 56 are different experiments**. Value-and-probability
-   agreement is not fact identity; the common-extension test is (§W6-A).
+   agreement is not fact identity; the common-extension certificate is
+   (§W6-A).
 2. On the same model the fact level leaves a **two-fold** ambiguity at *every*
    setting — the wing exchange preserves the whole final law — and only the
-   generating structure cuts it to one. **Provenance is not optional**
-   (§W6-B).
-3. **Disclosed against our own reading:** at the two symmetric settings the
-   entire *stochastic* history from the initial configuration is wing-exchange
-   symmetric. What breaks the tie there is an amplitude sign. At those
-   settings the base's token labelling is fixed by fibre data (THE DISCLOSURE, below).
+   declared generating structure cuts it to one. The cut is made at the
+   **Born** level of leg matching, and the provenance post-filter does none of
+   it (§W6-B, measured by decomposition).
+3. **Against our own reading:** at the two symmetric settings the *realized*
+   process — every leg restricted to the configurations actually occupied at
+   each time — admits **only the opposite identification**. The token
+   labelling there is fixed by declared transitions the process never takes
+   (WHAT GROUNDS A TOKEN LABEL, below).
 
 ---
 
@@ -66,46 +68,53 @@ sector labels, with the two support hypotheses and an $O(n^2)$ decision
 criterion.
 
 - `v12/paper1_code/sec4_records.py:48` — `h_avail`, (H-avail): every row
-  support of the later leg lies in one sector.
+  support of the later dynamics lies in one sector.
 - `v12/paper1_code/sec4_records.py:53` — `h_corr`, (H-corr): for every column
   of the writing leg the live alternatives lie in distinct sectors.
 - `v12/paper1_code/sec4_records.py:62` — `merge_partition`, $M(U_2)$.
-- `v12/paper1_code/sec4_records.py:81` — `criterion`, the decision procedure.
 - `v12/paper1_code/sec4_records.py:176` — the declared dim-4 record
   `part = [0,1,0,1]`; `:198`, `:199` its two committed hypothesis values.
 
 **W6's typing.** A **record token** $t$ = (a partition of the chart's
 configurations, a declared **value** on each sector, the index of the leg that
 writes it, a provenance tuple). Two status bits are *computed*, not
-stipulated:
+stipulated, and each is read at the place the corpus defines it:
 
-$$\textbf{occurred}(t) \;=\; \text{(H-corr) at the writing leg},\qquad
-\textbf{available}(t)\;=\;\text{(H-avail) under the declared later legs}.$$
+$$\textbf{occurred}(t) = \text{(H-corr) at the \emph{writing leg}},\qquad
+\textbf{available}(t) = \text{(H-avail) under the composition of the declared
+later legs}.$$
 
 A chart's record tokens are exactly the candidates with `occurred = True`. The
 **record algebra** $\mathcal{R}_a$ is the finite Boolean algebra on the
 **actual** (positive-probability) value tuples of the chart's tokens, carrying
 the exact joint law computed from the declared initial configuration.
 
+**This typing is not free at the composite scale, and the instrument says so.**
+On the 36-configuration model the *pointer alone* is not always a record
+structure: wherever the local operator is not diagonal, the other basis
+alternative on the same wing is co-live and (H-corr) fails on the pointer
+partition. Measured over all six settings and both wings, the pointer-alone
+partition satisfies (H-corr) exactly where the measurement angle is $0$ — on
+wing A at SP-A, SP-B and SP-E, on wing B at SP-E, and nowhere else — while the
+partition by $(q_X, p_X)$ satisfies it at every one of the twelve. The
+composite tokens therefore carry the $(q_X,p_X)$ partition with the pointer as
+their **value**, and all 24 of them are then *computed* to have occurred and to
+be available. The chart law so obtained reproduces the committed `outcome_law`
+exactly (gated).
+
 **When the law is read.** At the time every token has been written — not at
 the final time. For an *available* record the two agree, which is what
-availability means, and the choice changes no measurement anywhere else in
-this unit. For an *erased* token they do not: after erasure the later legs
-have moved amplitude across the record sectors, so the final distribution is
-not the record's law. Reading at the final time would make the erasure
+availability means. For an *erased* token they do not: after erasure the later
+legs have moved amplitude across the record sectors, so the final distribution
+is not the record's law. Reading at the final time would make the erasure
 control test the wrong thing.
-
-*Gates.* `census/record algebra atoms` $=[(\texttt{0}),(\texttt{1})]$;
-`census/record algebra law` $=[1/2,1/2]$; `census/record occurred` $=$ True;
-`census/record available` $=$ True; anchors at `sec4_records.py:198`, `:199`.
 
 **Why only actual values.** T5″ forbids inferring a global actuality object,
 and the pin's W6-SET-AMALGAM clause restricts any amalgam to actual stable
-records, never unperformed measurements. Zero-probability value tuples are
-therefore not atoms. This is not cosmetic: at the two settings where the
-singlet law is perfectly anticorrelated the algebra has **2** atoms, not 4, and
-that is what makes the Boolean item of the preservation list bite
-(`M3/list item 1 … (4, 2, 0)`).
+records. Zero-probability value tuples are therefore not atoms. This is not
+cosmetic: at the two settings where the singlet law is perfectly
+anticorrelated the algebra has **2** atoms, not 4, and that is what makes the
+Boolean item of the preservation list bite.
 
 ### 2. The overlap object — CONSTRUCTED, and derived rather than postulated
 
@@ -115,100 +124,111 @@ configurations carrying $b$'s initial configuration to $a$'s, $b$'s leg
 **multiset** to $a$'s under some matching, and each of $b$'s record partitions
 to one of $a$'s. The **overlap object** is the set of token maps so induced.
 
+The **matching level** is a declared parameter of the object, because which
+level of the data does the work is exactly what W6-B has to measure:
+*exact* (amplitudes on the nose), *sign* (amplitudes up to an overall sign per
+leg — a real orthogonal propagator and its negative generate one stochastic
+process), *Born* (the stochastic layer alone).
+
 *Four gates.*
 
 - **Referent.** Definable from committed primitives only: the declared legs,
   the declared initial configuration, and the record partitions of census §1.
-  No new
-  primitive; no shared substrate is presupposed — a bijection is searched for,
-  not assumed.
+  No new primitive; no shared substrate is presupposed — a bijection is
+  searched for, not assumed.
 - **Necessity.** The withdrawn global $(E,\prec)$ presupposed cross-chart event
   identity (paper 0 §5). Something must supply it or the atlas has no bridge.
   Measured necessity: on the committed model the fact level admits **two**
-  identifications at every setting and the overlap object cuts it to one
-  (`M3/|Phi_A| exceeds |Phi_B| at every setting` = True).
+  identifications at every setting and the overlap object cuts it to one.
 - **No-smuggling.** The definition contains no cross-chart identity: it
-  quantifies over bijections and keeps only those that carry one chart's own
-  declared structure onto the other's. It cannot manufacture an identification
-  where the structures differ — measured: **0** of the 120 cross-setting
-  ordered pairs admit one.
-- **Discriminator.** The count itself (census §6). A declared identification that the
-  object does not return is an insertion; M9 exhibits a declaration whose
-  triangle is inconsistent and the solver returns NO-DESCENT.
+  quantifies over bijections and keeps only those carrying one chart's own
+  declared structure onto the other's. Measured: **0** of the 120
+  cross-setting ordered pairs admit one.
+- **Discriminator.** The count itself (census §6).
 
 **The corpus's own declaration, reproduced.** `model_composite.py:26-28`
 declares the two frames to be *"the same two local events in the two orders, on
-one configuration space"*. The derived object reproduces exactly that
-declaration and nothing more: at every setting the unique induced token map is
-the identity (`M3/amplitude-level frame-isomorphism token maps, per setting`
-$=[[(0,1)]]\times 6$), and the token-overlap graph on the twelve committed
-charts has **6 components of size 2** — one per setting.
+one configuration space"*. The derived object reproduces exactly that and
+nothing more: at every setting the unique induced token map is the identity,
+and the token-overlap graph on the twelve committed charts — whose components
+are computed by breadth-first search **on the measured adjacency**, not by
+grouping charts by name — has **6 components of size 2**, one per setting,
+with **0 triangles**.
 
 **The leg matching must be order-free**, and this is forced by the mandatory
 controls, not chosen: two frames of one experiment differ *exactly* by the
-order of two commuting legs. Measured: if leg order were required,
-`M3/frame-isomorphisms if leg ORDER were required` $=[0,0,0,0,0,0]$ — the
-committed model would have no frame-isomorphism at all and control 3 could not
-be met at the token level.
+order of two commuting legs. Measured: if leg order were required, the
+committed model would have **no** frame-isomorphism at any setting and control
+3 could not be met at the token level.
 
 ### 3. The candidate co-reference map $\varphi_{ab}$ — CONSTRUCTED
 
 $\varphi_{ab}$ is presented as a **token bijection** $\tau$ from $b$'s tokens
-to $a$'s, extended to the unique Boolean isomorphism of the generated algebras.
+to $a$'s, extended to the unique Boolean isomorphism of the generated
+algebras. Where a scope filters tokens — an erased record is present
+historically and absent from the available algebra — the admissible maps are
+the **restrictions to that scope** of the frame-isomorphism-induced maps. A
+regression model is carried in the census for exactly this: an
+eight-configuration two-token chart whose second token is erased, on which the
+scope-filtered level-B search returns 1, not 0.
 
-*Four gates.*
+*Four gates.* **Referent** — a map of finite Boolean algebras with state,
+availability and provenance, all census §1's data. **Necessity** — fact
+identity cannot be read off values (M7) nor off provenance alone (M2); a map
+with a preservation list is the minimal object separating the two.
+**No-smuggling** — $\varphi$ is never declared, it is enumerated: every token
+bijection is tested against the list and the survivors are counted; nothing
+chooses among survivors. **Discriminator** — census §6.
 
-- **Referent.** A map of finite Boolean algebras with state, availability and
-  provenance; all four data are census §1's, all committed.
-- **Necessity.** Fact identity cannot be read off values (two detectors may
-  read $+1$ by accident — measured at M7), nor off provenance alone (redundant
-  copies carry one fact on two tokens — measured at M2). A map with a
-  preservation list is the minimal object that separates the two.
-- **No-smuggling.** $\varphi$ is *not* allowed to be declared. It is
-  enumerated: every token bijection is tested against the list and the survivors
-  are counted. Nothing chooses among survivors.
-- **Discriminator.** Census §6.
+### 4. The preservation list — and where each item is measured to bite
 
-### 4. The preservation list — and where each item bites
+Each row names a pair on which that item, **on its own**, rejects every
+candidate map. The attributions are computed by the instrument
+(`bite_profile`), not asserted.
 
-Five of the six items are measured to reject a candidate that the other items
-would pass. The sixth is disclosed as subsumed rather than claimed
-independent.
-
-| # | item | where the item rejects a candidate the other items would pass | receipt |
+| # | item | where the item alone rejects | receipt |
 |---|---|---|---|
-| 1 | Boolean operations / atom count | SP-A ← SP-E (4 atoms vs 2) | `M3/list item 1 … (4, 2, 0)` |
-| 2 | definite record values | SP-E: the joint law *is* bijection-supported, but the bijection reverses values | `M4/ROUTE-EXT at SP-E …` $=$ (False, 2, True) |
-| 3 | probabilities on the shared algebra | SP-A ← SP-B (same values, different law) | `M3/list item 3 … ` $=0$ |
-| 4 | persistence / availability | the eraser against the preserving chart — isolated by a positive control: the two carry the *same* record law, and forcing availability equal turns the 0 into a 1 | `M5/|Phi_A(historical)| P<-E` $=0$; `M5/availability forced equal …` $=1$ |
-| 5 | causal / process provenance | the two-frame wing tie; the redundant copies | `M3/|Phi_B| …` $=[1]\times 6$; `M2/|Phi_B|` $=0$ |
-| 6 | original vs copy | **not a separate test** — carried by the frame-isomorphism, which preserves write-times; M2 exhibits the differing lineages that make its two tokens distinct occurrences, and the rejection there is effected by item 5 | `M2/lineage original vs copy` |
+| 1 | Boolean operations (the induced map of record atoms is a bijection) | SP-A ← SP-E: 4 atoms against 2 | `M3/items that bite …` |
+| 2 | definite record values (the declared value *range* of each token) | SP-A/F1 ← V2, whose ready sector is declared `z` rather than `r`; that sector has probability zero, so the whole law and every realized value are unchanged | `M3/ITEM 2 BITES … (0, 2, ['2 values'])` |
+| 3 | probabilities on the shared algebra | SP-A ← SP-B: same atoms, different law | `M3/items that bite …` |
+| 4 | persistence / availability | SP-A/F1 ← V4, the same experiment continued by $U_B$ twice more; $U_B^3 = 1$, so the propagator and the law are untouched and only (H-avail) for $R_B$ fails. Also the dim-4 eraser against the preserving chart | `M3/ITEM 4 BITES … (0, 2, ['4 availability'])`; `M5/which item kills P<-E historical` |
+| 5+6 | causal/process provenance and original-vs-copy | M2's redundant copies: the structural provenance filter alone returns 0 | `M2/DECOMPOSITION … (0, 0)` |
+
+Items 5 and 6 are carried by one filter and are **not** claimed independent of
+each other: the copying lineage is the datum that separates an original from a
+copy, and the erasure history is computed by (H-avail). Both are compared only
+as grounds for **rejection**, so the filter can never create an identification.
 
 **PHASE IS NOT ON THE LIST.** No item consults an amplitude phase, a Bargmann
-or Haagerup four-cycle product, or any W7 invariant. Control M8 measures the
-consequence.
+or Haagerup four-cycle product, or any W7 invariant. Control M8 constructs the
+phase-consulting item and runs it.
 
 ### 5. The declared gauge — CONSTRUCTED
 
 The declared gauge is **configuration relabelling**: a chart may be presented
 on any labelling of its configuration set. Coherence is judged modulo this and
-nothing else. Measured: relabelling leaves the record algebra pointwise fixed
-while genuinely changing the presentation — `M1/law invariant under relabelling`
-$=$ (True, True) with `M1/legs actually differ` $=$ (True, True). Because the
+nothing else. Measured: relabelling changes the legs and the initial
+configuration while leaving the record algebra pointwise fixed. Because the
 gauge acts trivially on the base, the triple law is judged **on the nose**.
 
-W7's boundary gauge (vertex switching on $\Gamma$; the K-vertex switching
-seam torsor, W7 §14) is **not** in W6's gauge. It acts on the fibre.
+W7's boundary gauge (vertex switching on $\Gamma$; the K-vertex switching seam
+torsor, W7 §14) is **not** in W6's gauge. It acts on the fibre.
 
 ### 6. The insertion-vs-co-reference discriminator — CONSTRUCTED
 
-$$|\Phi_{ab}| = 0 \;\Rightarrow\; \textbf{absent};\qquad
-|\Phi_{ab}| = 1 \;\Rightarrow\; \textbf{forced (genuine)};\qquad
-|\Phi_{ab}| \ge 2 \;\Rightarrow\; \textbf{any named single map is inserted}.$$
+$$|\Phi_{ab}| = 0 \Rightarrow \textbf{ABSENT};\quad
+|\Phi_{ab}| = 1 \Rightarrow \textbf{FORCED};\quad
+|\Phi_{ab}| \ge 2 \Rightarrow \textbf{UNDERDETERMINED}\ \text{(any named
+single map is inserted)};$$
+$$\text{empty scope} \Rightarrow \textbf{VACUOUS};\qquad
+\text{no applicable instrument} \Rightarrow \textbf{NO-INSTRUMENT}.$$
 
-This is GW1's kill inherited: a proposal that names one map where the data
-admit several has added structure. All three values are realized in the table
-below, and the third is realized on committed material (M3's fact level, M7).
+The **emptiness guard** matters. Comparing two charts whose available algebras
+are both trivial yields exactly one map — the empty map. Counting it as
+*forced* would report agreement where nothing was compared. The discriminator
+calls that case VACUOUS, and the descent table below uses this vocabulary and
+no other. This is GW1's kill inherited: a proposal naming one map where the
+data admit several has added structure.
 
 ### 7. Provenance — CONSTRUCTED, and then made derived
 
@@ -216,25 +236,25 @@ $$\mathrm{prov}(t) = (\text{generating interaction},\ \text{local support},\
 \text{causal ancestry},\ \text{copying lineage},\ \text{erasure history}).$$
 
 *Four gates.* **Referent** — every field is read off the chart's own declared
-leg list. **Necessity** — measured twice: without it the two frames' wing
-labels stay two-fold ambiguous, and the redundant copies collapse into one
-token. **No-smuggling** — provenance is chart-local; it contains no
-cross-chart identity, and the cross-chart part is supplied only by census §2's
-search-derived overlap object. **Discriminator** — M2 (provenance differs, one
-fact) against M5 (provenance survives erasure).
+leg list. **Necessity** — measured at M2, where the filter alone refuses the
+copy. **No-smuggling** — the cross-chart part is supplied only by census §2's
+search-derived overlap object; the chart-local part enters only as a ground
+for rejection. **Discriminator** — M2 (provenance differs, one fact) against
+M5 (provenance survives erasure).
 
-**The strengthening.** Rather than *comparing declared provenance strings*
-across charts — which would be circular, since the labels are exactly what is
-in question — W6-B admits only token maps **induced by a frame-isomorphism**.
-Provenance is then preserved automatically, because $\psi$ carries the whole
-generating structure. Nothing is compared by name.
+**Names are never compared.** Comparing declared provenance *strings* across
+charts would be circular, since the labels are exactly what is in question.
+W6-B admits only token maps induced by a frame-isomorphism, then applies the
+structural filter (lineage, erasure). M6 measures what the refused
+name-comparing rule would do: it would return **1** where the honest apparatus
+returns **2**.
 
 ### Census verdict
 
 **PASSES.** Six objects typed: one LOCATED (census §1), five CONSTRUCTED from
 committed primitives (census §2–§6), one primitive re-derived rather than
-declared (census §7). No new postulate was needed. **W6-BLOCKED-AT-⟨referent⟩ does not
-obtain.**
+declared (census §7). No new postulate was needed. **W6-BLOCKED-AT-⟨referent⟩
+does not obtain.**
 
 ---
 
@@ -249,85 +269,109 @@ exists *and* is certified by one of the pin's two routes:
 - **ROUTE-WIT** — a specified common-record witness is perfectly correlated
   with both.
 
-**The candidate level is not the criterion.** This is the unit's sharpest
-negative and it is measured on committed material. Over the 144 ordered pairs
-of the twelve committed charts:
+**The candidate level is not the criterion.** Over the 144 ordered pairs of
+the twelve committed charts:
 
 | quantity | value |
 |---|---|
 | ordered pairs whose final laws agree | **56** |
-| ordered pairs admitting a fact-candidate map | **56** (biconditional exact) |
+| ordered pairs admitting a fact-candidate map | **56**, with **0** violations of the biconditional |
 | of those, pairs that are the *same* experiment | **24** |
 | **accidental agreements** (different settings, identical law) | **32** |
 
 The final-law classes have sizes $\{2,4,6\}$: the six settings collapse to
 three laws, because the singlet law depends only on the product of the two
-outcomes and on $\cos(a-b)$. SP-A, SP-C and SP-D are three different
-experiments with one law. On the accidental pairs the only available common
-extension is the product of two independent runs, and there the joint law has
-**16** positive entries — not bijection-supported. ROUTE-EXT fails; the pairs
-are not the same fact (`M7/ROUTE-EXT on the product extension` $=$
-(False, False)).
+outcomes and on $\cos(a-b)$. On the accidental pairs the only available common
+extension is the product of two independent runs, whose joint law has **16**
+positive entries — not bijection-supported. ROUTE-EXT fails; the pairs are not
+the same fact.
 
-**Where the certificate succeeds** it rests on a measured fact, not on a
-construction: at a fixed setting the two frames assign **all 36** final
-configurations the same probability (the final propagator is literally
-identical in both frames), so reading the same configuration through either
-frame's record map gives a diagonal joint law:
-`M3/ROUTE-EXT same-setting frames` $=$ (True, 4, True).
+**The biconditional is a fact about the committed twelve, not a property of
+the instrument.** On that material items 2 and 4 are constant, so the
+biconditional is carried by items 1 and 3 alone — stated, and measured
+(`M3/items 2 and 4 are CONSTANT on the committed twelve` $= (1,1)$). Adding
+the two variants of census §4 — V2, which changes only a token's declared
+value range, and V4, which erases $R_B$ while leaving the propagator and the
+law untouched — **breaks** the biconditional at **26** ordered pairs of the
+resulting fourteen charts. Agreement of laws is therefore genuinely
+insufficient once the other items have anything to say.
+
+**Where the certificate succeeds** it rests on a measured fact: at a fixed
+setting the two frames assign every final configuration the same probability
+(**0** disagreeing configurations), so reading each configuration through
+either frame's own record map gives a diagonal joint law — (True, 4). The
+same construction against a **corrupted** partner — the same process with its
+two record partitions exchanged — returns (False, 4, not bijection-supported).
+The certificate can fail, and is shown failing.
 
 **ROUTE-WIT** is exercised on a four-qubit three-copy model: the joint law is
-$\{(0,0,0),(1,1,1)\}$ and the third token certifies the first two
-(`M2/ROUTE-WIT t1 vs witness`, `t2 vs witness` both (True, 2, True)).
+$\{(0,0,0),(1,1,1)\}$ and the third token certifies the first two.
 
 **Value preservation is load-bearing.** At SP-E the two wings' outcomes are
 perfectly anticorrelated, so the joint law *is* supported on a bijection — but
 a value-reversing one. "A's outcome is $+$" and "B's outcome is $-$" are
 different facts even when perfectly anticorrelated, and the list rejects the
-map: (False, 2, True).
+map: (False, 2, bijection-supported).
 
 ---
 
 ## W6-B — EVENT-TOKEN CO-REFERENCE
 
 **Definition.** Two tokens denote the **same occurrence** iff the token map is
-induced by a frame-isomorphism (census §2). Provenance — generating interaction,
-local support, causal ancestry, copying lineage, erasure history — is then
-carried, not compared by name.
+induced by a frame-isomorphism (census §2) and survives the structural
+provenance filter (census §7).
 
 **Measured separation from W6-A.**
 
 - **Redundant copies (M2).** One process writes the same alternative twice, at
   two different legs. The two charts have *identical* record laws and
-  ROUTE-EXT certifies one fact — yet $|\Phi_B| = 0$: no bijection of
-  configurations carries the second copy's partition onto the first's while
-  fixing the leg multiset. One fact, two occurrences. This is exactly the
-  pin's mandated outcome for control 2, and it is **derived**, not stipulated.
-  *The negative is not an empty search.* Positive control: the same search
-  returns the identity on each chart against itself; and the register swap
-  **does** carry the second copy's partition onto the first's while **not**
-  fixing the leg multiset. The leg structure — the temporal and causal
-  decomposition — is precisely what refuses the identification.
+  ROUTE-EXT certifies one fact — yet $|\Phi_B| = 0$. The zero is produced
+  **twice over, independently**: no bijection of configurations carries the
+  second copy's partition onto the first's while fixing the leg multiset, and
+  the provenance filter alone also refuses (lineage *original* against
+  *copy-of*). One fact, two occurrences. *The negative is not an empty
+  search:* the same search returns the identity on each chart against itself,
+  and the register swap **does** carry the second copy's partition onto the
+  first's while **not** fixing the leg multiset.
+  The full token-level edge set over $\{a, b, c\}$, with $c$ a relabelling of
+  $a$, is $(a{\leftarrow}b) = 0$, $(b{\leftarrow}a) = 0$,
+  $(b{\leftarrow}c) = 0$, $(c{\leftarrow}b) = 0$, $(a{\leftarrow}c) = 1$,
+  $(c{\leftarrow}a) = 1$: the relabelling edge is a genuine token
+  identification and the copy edges are not. Descent over that atlas is
+  ABSENT-PAIR.
 - **The two-frame wing tie (M3).** $|\Phi_A| = 2$ at every setting: the final
-  law is invariant under exchanging the two wings (it depends only on the
-  product of outcomes). $|\Phi_B| = 1$ at every setting. The generating
-  structure — which leg wrote which pointer, on which local support — is what
-  cuts two to one.
+  law is invariant under exchanging the wings. $|\Phi_B| = 1$ at every
+  setting, and the surviving map is the **identity**. What cuts two to one is
+  the frame-isomorphism, and the level at which it cuts is measured:
+  $|\Phi_B| = 1$ also when the legs are matched only up to sign, and also when
+  they are matched at the **Born** level. Amplitude-level data are not needed.
+  The provenance post-filter does none of the cutting here: removing it leaves
+  $|\Phi_B| = 1$ at every setting.
 - **Erasure (M5).** Occurrence and availability are different predicates and
-  the formalism keeps them apart. Three charts: preserving, erased, and one
-  where the record was never written. Historical token counts $(1,1,0)$;
-  available token counts $(1,0,0)$. The erased token is **not** identified with
-  "no event": $|\Phi_B(\text{historical})|$ for erased ← never-written $=0$.
-  The available algebras of those two charts are both trivial, so at the
-  availability level the comparison is *vacuous* — and that is precisely why
-  the historical level must exist. The preserving and erased charts carry the
-  **same record law**, and forcing their availability bits equal turns
-  $|\Phi_A(\text{historical})| = 0$ into $1$: availability, and nothing else,
-  is what separates them.
+  the formalism keeps them apart. Three charts — preserving, erased, and one
+  where the record was never written — give historical token counts $(1,1,0)$
+  against available counts $(1,0,0)$. The erased token is **not** identified
+  with "no event": historically, erased ← never-written is ABSENT at both
+  levels. At the *available* level both algebras are empty and the comparison
+  is reported **VACUOUS**, which is precisely why the historical level must
+  exist. The preserving and erased charts carry the **same record law**, the
+  item that kills their identification is measured to be availability and
+  nothing else, and forcing the availability bits equal turns the 0 into a 1.
+
+**The scope of every level-B negative is stated where it is used.** On the
+36-configuration model the frame-isomorphism search runs over a **declared
+72-element** permutation scope (wing exchange × pointer 3-cycles on each wing ×
+the two qubit flips). The filter "carries $b$'s initial configuration to $a$'s"
+admits **exactly two** of those 72 — the identity and the pure wing exchange —
+because the ready pointer state is not fixed by a 3-cycle. Every level-B
+statement about the composite model is therefore a statement about a
+**two-element search**, and this is gated, not glossed. An **extension** is
+also run: adjoining the pointer *transposition* $+\leftrightarrow-$, which does
+fix the ready state, gives a 96-element scope of which **8** survive the same
+filter. $|\Phi_B| = 1$ at every setting on the wider search too.
 
 **What W6-B is not.** It does not deliver a co-reference rule for *unrecorded*
-configurations. That is O4-A's price (paper 0 §5) and remains open; WHAT THIS
-UNIT HANDS OVER, below, states what this unit hands to it.
+configurations. That is O4-A's price (paper 0 §5) and remains open.
 
 ---
 
@@ -338,102 +382,98 @@ $\varphi_{ba} = \varphi_{ab}^{-1}$;
 $\varphi_{ab}\circ\varphi_{bc} = \varphi_{ac}$ on triple overlaps, modulo the
 declared gauge only — which, by census §5, is trivial on the base.
 
-**The solver.** Enumerate every selection of one $\varphi$ per edge; keep the
-selections satisfying every triple law (**coherent families**); act on them by
-$\prod_x \mathrm{Aut}(x)$ via
-$(g\cdot\varphi)_{xy} = g_x\circ\varphi_{xy}\circ g_y^{-1}$; count orbits;
-build the colimit and check each chart injects. The classification:
+**The solver.** Every **ordered** edge that is declared is enumerated
+independently, so $\varphi_{ba} = \varphi_{ab}^{-1}$ is a constraint a declared
+family can violate rather than an identity the solver imposes; triple equality
+is tested on the **full domain**, so a map with missing keys fails in both
+directions. Coherent families are then acted on by $\prod_x \mathrm{Aut}(x)$
+via $(g\cdot\varphi)_{xy} = g_x\circ\varphi_{xy}\circ g_y^{-1}$; the action's
+**closure** — does $g\cdot\varphi$ still lie in the $\Phi$ sets? — and whether
+it **moves** any family are reported, not assumed; orbits are counted; the
+colimit is built and each chart checked to inject. The classification:
 
 | condition | verdict |
 |---|---|
 | some $\Phi_{ab} = \emptyset$ | ABSENT-PAIR |
 | no coherent family | **W6-NO-DESCENT** |
-| one family, all $\mathrm{Aut}$ trivial | **W6-SET-AMALGAM** |
+| one gauge orbit, all $\mathrm{Aut}$ trivial | **W6-SET-AMALGAM** |
 | one gauge orbit, some $\mathrm{Aut}$ nontrivial | **W6-GROUPOID-AMALGAM** |
 | several gauge orbits | **W6-UNDERDETERMINED** |
 
 This is the standard shape for a groupoid-valued gain graph — cycle holonomy
-modulo vertex switching — cited from [GG] (Zaslavsky; paper 0's reference
-list), not claimed as ours; the gain group here is the symmetric group of
-record tokens rather than $U(1)$.
+modulo vertex switching — cited from [GG] (Zaslavsky), not claimed as ours;
+the gain group here is the symmetric group of record tokens rather than $U(1)$.
 
-**Two soundness properties of the solver are gated, not assumed.** The
-coherence law $\varphi_{ba} = \varphi_{ab}^{-1}$ is imposed by construction, so
-it must be checked that the inverse is itself admissible: the preservation list
-is symmetric and every $\Phi$ set is inverse-closed (M1, M6). And
-$\varphi_{aa} = \mathrm{id}$ requires the identity to lie in every
-automorphism set — it does (M1, M6). Where $|\mathrm{Aut}| > 1$ the identity is
-a *member* of $\Phi_{aa}$ but not its only member; that is the groupoid case,
-reported as such.
-
-**All five branches are exercised**, so no branch is untested:
-SET-AMALGAM (M1, M2, M3-B, M9-consistent), GROUPOID-AMALGAM (M6,
-M3-A), NO-DESCENT (M9-twisted, 0 coherent families), UNDERDETERMINED
-(M9's two-family / trivial-automorphism instance, orbits $=2$), ABSENT-PAIR
-(M9's empty $\Phi$).
+**The solver is validated against four ways of failing** (M9), on declarations
+over the same three charts: a **twisted** declaration whose triangle has
+holonomy returns NO-DESCENT with 0 coherent families where the consistent one
+returns SET-AMALGAM; an **asymmetric** declaration
+($\varphi_{ba} \ne \varphi_{ab}^{-1}$) fails; a **partial-domain** map fails
+the full-domain triple law; and the latent case of one coherent family with
+nontrivial automorphisms is classified with its gauge action and closure
+reported rather than presumed. All five branches of the classification are
+reached.
 
 **The scope limit, stated plainly.** The committed atlas contains **no
 nonvacuous triple overlap**: the token-overlap graph on the twelve committed
-charts is 6 components of size 2 (`M3/committed charts in a nonvacuous triple
-overlap` $= 0$). Triple coherence is therefore **untested by committed
-structures**; every triple-level result below is carried by a constructed
-family. The committed material decides pairwise descent only.
+charts is 6 components of size 2 with 0 triangles. Triple coherence is
+therefore untested by the committed twelve alone.
 
-**Disclosed:** the "committed triple" of the descent table is
-$\{F_1, F_2, F_2^\pi\}$ — the third chart is $F_2$ presented on a relabelled
-configuration set. Because the declared gauge acts trivially on the record
-algebra (census §5), its record data *are* $F_2$'s. That triple therefore
-tests the triple law against the gauge, not against a third independent
-experiment, and it is reported as such. The corpus contains no third chart
-that would do better.
-
-**M9 is a detector, not a physics claim.** Its twisted declaration pins two
-edges to the identity and the third to the transposition — each a legitimate
-member of its own $\Phi$ set — and the triangle has holonomy. The solver
-returns NO-DESCENT with 0 coherent families; the *same three charts* under the
-consistent declaration return SET-AMALGAM. What this shows is that the triple
-law has power and that descent is a property of the identification system, not
-of the charts separately. It is not evidence that any committed atlas fails to
-descend.
+**The third chart is a real object.** The triple used for M3's descent is
+$\{F_1, F_2, F_2^\pi\}$, where $F_2^\pi$ is $F_2$ presented on a relabelled
+configuration set (both qubit flips), built as its **own** object: its own
+legs, its own initial configuration $j_0 = 27 \ne 0$, its own token objects
+with pushed partitions, and its law **recomputed** from the relabelled
+process rather than copied. That the recomputed law equals $F_2$'s is a
+measurement, not a definition. All six ordered edges of that triple carry a
+token-level identification, so the triple law is genuinely exercised.
 
 ---
 
 ## THE DESCENT TABLE
 
-Every cell is carried by an exact model and by at least one gate.
+Vocabulary: **FORCED** $|\Phi| = 1$ · **UNDERDETERMINED** $|\Phi| \ge 2$ ·
+**ABSENT** $|\Phi| = 0$ · **VACUOUS** empty scope · **NO-INSTRUMENT** no
+measurement available. A candidate map that exists but is refused by
+ROUTE-EXT/ROUTE-WIT is marked *not certified*: the count and the certificate
+are separate questions and the table keeps them separate.
 
 | model | A (fact) | B (event token) | C (effective descent) |
 |---|---|---|---|
-| **M1** relabelled same record | SUCCEEDS-FORCED $|\Phi_A|=1$ | SUCCEEDS-FORCED $|\Phi_B|=1$ | **SET-AMALGAM** (1 family, 1 orbit, 6 triples, amalgam size 1, injective) |
-| **M2** redundant copies | SUCCEEDS-FORCED, ROUTE-EXT **and** ROUTE-WIT | **FAILS-ABSENT** $|\Phi_B|=0$ | SET-AMALGAM at the fact level; the token level has no edges |
-| **M3** two-frame final outcomes | SUCCEEDS, $|\Phi_A|=2$ (wing tie); candidate map on exactly 56/144 | SUCCEEDS-FORCED $|\Phi_B|=1$ at all six settings | **SET-AMALGAM** at level B (amalgam size 2, injective); **GROUPOID-AMALGAM** at level A (4 families, 1 orbit) |
-| **M4** intermediate frame content | NOT FORCED — overlap subalgebra trivial; a probability-preserving map exists and is rejected | FAILS-ABSENT | vacuous (no shared written token) |
-| **M5** record erasure | availability split: vacuous at the available level, $0$ at the historical level | FAILS-ABSENT $|\Phi_B|=0$ | not applicable (no triple) |
-| **M6** symmetric duplicate | SUCCEEDS-FORCED (one fact) | **UNDERDETERMINED** $|\Phi_B|=2$ | **GROUPOID-AMALGAM** (4 of 8 selections coherent, 1 orbit, $|\mathrm{Aut}|=2$ each) |
-| **M7** accidental agreement *(added)* | **FAILS ROUTE-EXT** though $|\Phi_A|=2$ | FAILS-ABSENT | not applicable |
-| **M8** phase blindness *(added)* | SUCCEEDS-FORCED $|\Phi_A|=1$; a phase-consulting map returns 0 | not applicable | not applicable (criterion test) |
-| **M9** detector validation *(added)* | not applicable | not applicable | **NO-DESCENT** (twisted) / SET-AMALGAM (consistent) / UNDERDETERMINED / ABSENT-PAIR |
+| **M1** relabelled same record | **FORCED**, certified | **FORCED** | **SET-AMALGAM** (1 family, 1 orbit, 6 triples, gauge-closed; amalgam size 1, injective) |
+| **M2** redundant copies | **FORCED**, certified by ROUTE-EXT *and* ROUTE-WIT | **ABSENT** on both copy edges; **FORCED** on the relabelling edge | SET-AMALGAM at the fact level (1 family, 6 triples); **ABSENT-PAIR** at the token level |
+| **M3** two-frame final outcomes | **UNDERDETERMINED** ($|\Phi_A| = 2$), certified; candidate on exactly 56 of 144 | **FORCED** ($|\Phi_B| = 1$, the identity map, all six settings) | **GROUPOID-AMALGAM** at the fact level (4 families, 1 orbit, gauge moves them, closed); **SET-AMALGAM** at the token level (1 family, 6 triples, amalgam size 2, injective) |
+| **M4** intermediate frame content | **FORCED but NOT CERTIFIED** — one token each, so $|\Phi_A| = 1$ carries no multiplicity; ROUTE-EXT at $t = 2$ refuses it at every setting | **ABSENT** ($|\Phi_B| = 0$, all six settings) | no shared record subalgebra (derived: 0 shared partitions at $t = 2$ against 2 at the final time) |
+| **M5** record erasure | **ABSENT** historically; **VACUOUS** on the available scope | **ABSENT** ($|\Phi_B| = 0$) | no triple declared |
+| **M6** symmetric duplicate | **UNDERDETERMINED** ($|\Phi_A| = 2$); ROUTE-EXT certifies one fact *within* a chart | **UNDERDETERMINED** ($|\Phi_B| = 2$) | **GROUPOID-AMALGAM** (4 of the 8 inverse-consistent selections of 64 are coherent, 1 orbit, $\lvert\mathrm{Aut}\rvert = 2$ each, gauge moves them, gauge-closed) |
+| **M7** accidental agreement *(added)* | **UNDERDETERMINED** ($|\Phi_A| = 2$), **NOT CERTIFIED** — the product extension has 16 positive entries | **ABSENT** ($|\Phi_B| = 0$) | no token edge |
+| **M8** phase blindness *(added)* | **FORCED** with the declared list; **ABSENT** when a phase item is added | not applicable | criterion test, no descent claim |
+| **M9** detector validation *(added)* | not applicable | not applicable | **NO-DESCENT** (twisted / asymmetric / partial-domain), SET-AMALGAM (consistent), **UNDERDETERMINED**, ABSENT-PAIR |
 
 ### The six mandatory controls, against what the pin demanded
 
 1. **Relabelled same record — co-reference MUST succeed.** It does, forced, at
-   both levels, with a set-level amalgam over three charts. ✔
+   both levels, with a set-level amalgam over three charts; and ROUTE-EXT
+   fails under a *wrong* relabelling, so the certificate is not automatic. ✔
 2. **Redundant copies — A succeeds, B fails.** Exactly, and B's failure is
-   derived from the leg structure rather than declared. ✔
+   derived twice independently (leg structure; provenance filter). ✔
 3. **Two-frame final outcomes — fact descent succeeds exactly where the final
-   laws agree.** Biconditional over all 144 ordered pairs: 56 = 56, no
-   exceptions. ✔
-4. **Intermediate frame content — must NOT be forced identical.** The overlap
-   subalgebra at the intermediate slice is trivial at every setting, and the
-   intermediate propagators genuinely differ ($[270, 270, 432, 432, 108, 432]$
-   entries). A probability-preserving map exists — both marginals are uniform —
-   and is rejected. Frame-relativity respected. ✔
-5. **Record erasure — erased token $\neq$ "no event".** Historical counts
-   $(1,1,0)$ against available counts $(1,0,0)$. ✔
+   laws agree.** Biconditional over all 144 ordered pairs: 56 = 56, zero
+   violations, carried on this material by items 1 and 3; broken at 26 pairs
+   once items 2 and 4 are given something to say. ✔
+4. **Intermediate frame content — must NOT be forced identical.** The shared
+   record subalgebra at $t = 2$ is **derived** to be empty at every setting
+   (0 shared partitions, against 2 at the final time); the intermediate
+   propagators genuinely differ ($[270, 270, 432, 432, 108, 432]$ entries);
+   a probability-preserving map exists — both marginals are uniform — and
+   ROUTE-EXT refuses it at every setting, because at $t = 2$ the other wing's
+   pointer is still in its ready state. ✔
+5. **Record erasure — erased token $\ne$ "no event".** Historical counts
+   $(1,1,0)$ against available $(1,0,0)$; the empty-scope comparison is
+   reported VACUOUS rather than forced. ✔
 6. **Symmetric duplicate — the honest outcome is groupoid.** The exchanging
-   automorphism preserves the leg exactly, the initial configuration, the Born
-   shadow, **and all 784 four-cycle phase invariants** (0 violations). No
-   invariant rule may choose; $|\Phi_B| = 2$; the descent verdict is
+   automorphism preserves the leg, the initial configuration, the Born shadow,
+   **and all 784 four-cycle phase invariants** (0 violations); $|\Phi_B| = 2$;
    GROUPOID-AMALGAM with one gauge orbit. ✔
 
 ---
@@ -449,95 +489,149 @@ that pair as two charts.
   Born shadows, and the record algebras themselves are **identical**;
 - the four-cycle invariants of the two composites **differ** (anchored to
   `sec7_descent.py:242`);
-- $|\Phi_A| = 1$ — fact co-reference succeeds and is forced;
-- had phase been on the preservation list, $|\Phi_A|$ would be **0**.
+- $|\Phi_A| = 1$ — fact co-reference succeeds and is FORCED;
+- **the phase-consulting rule was built and run.** A sixth item comparing the
+  charts' composite four-cycle invariants was added to the list and the
+  $\varphi$-enumeration re-run: it returns **0** exactly where the record
+  level returns 1. The same item is *not* indiscriminate — on a pair of charts
+  differing by a configuration relabelling it returns 1.
 
 A phase-consulting fact criterion therefore returns *absent* exactly where the
-record level returns *forced*. That is the category error the pin names, and
-it is now measured rather than asserted. **Architecture confirmed at the base:
-W6 builds the base of shared record referents; W7's loop data are the fibre.**
+record level returns *forced*. That is the category error the pin names,
+measured rather than asserted. **Architecture confirmed at level A.**
+
+M6 measures the same rule from the other side. The exchanging automorphism
+$\sigma$ is checked against all 784 four-cycle invariants by a code path that
+never conjugates the leg: the invariant is evaluated at $\sigma$-relabelled
+indices of an **independently constructed** swapped circuit — the same gates
+with the two target qubits exchanged, which equals the original because the two
+CNOTs commute, and that equality is itself a gate. The identical sweep run on a
+leg perturbed at a single entry by $\zeta_8$ — a perturbation the Born shadow
+cannot see — reports **2** violations. The sweep can fail; on the committed leg
+it does not.
 
 ---
 
-## WHAT GROUNDS A TOKEN LABEL — the disclosure
+## WHAT GROUNDS A TOKEN LABEL — the measurement, and the tension
 
-The two-frame wing tie is broken by the generating structure. It is worth
-asking *which layer of the committed data* does the breaking, and the answer
-is not the comfortable one. Testing the wing-exchange permutation against
-nested layers of the committed model:
+The two-frame wing tie is broken by the declared generating structure. Which
+*layer* of the declared data does the breaking is a question with an exact
+answer, and it is not the comfortable one.
 
-| layer | wing exchange is a symmetry? |
+| layer tested against the wing exchange | symmetric? |
 |---|---|
-| the final record law | **yes, at every one of the six settings** |
-| the whole Born-level history from the initial configuration | **yes at SP-E and SP-F** ($a = b$), no at the other four |
-| the amplitude-level history from the initial configuration | no, at every setting |
-| the full declared legs (amplitude or Born) | no, at every setting |
-| the legs restricted to the reachable configurations | no, at every setting — reachable sizes $(21,21,35,35,9,27)$, one isomorphism each |
+| the final record law | **yes, at all six settings** |
+| the $j_0$ amplitude history, up to an overall sign | **yes at SP-E and SP-F** ($a = b$), no at the other four |
+| the $j_0$ Born history | **yes at SP-E and SP-F**, no at the other four |
+| the $j_0$ amplitude history on the nose | no, at every setting |
+| the full declared legs (amplitude, up to sign, or Born) | no, at every setting |
+| the legs restricted to the configurations reachable from $j_0$ at any time — sizes $(21,21,35,35,9,27)$ | no, at every setting and at every level |
+| **the realized process** — each leg restricted to the configurations actually occupied *before and after it* | **yes at SP-E and SP-F**, up to sign and at the Born level |
 
-**The disclosure.** At the two symmetric settings, every *stochastic* datum of
-the committed model — the entire Born-level history from the declared initial
-configuration, and the final record law — is invariant under exchanging the two
-wings. What breaks the tie there is the singlet's antisymmetry, an **amplitude
-sign**, together with leg data off the initial column.
+**Two findings follow, and they point in different directions.**
 
-This does not violate the phase rule: a real amplitude sign is not a phase
-invariant, and it is used to fix a *token label*, never to decide fact
-identity. But it is a genuine tension with the clean base/fibre separation,
-and it is the unit's own result against its own preferred reading: **at the
-symmetric settings the base's event-token labelling is not fixed by base-level
-data.** The reachable-subprocess control rules out the obvious deflation — the
-groundedness is not an artifact of `U_prep`'s arbitrary orthogonal completion,
-since restricting every leg to the configurations reachable from $j_0$ leaves
-exactly one isomorphism at every setting.
+**First, the architecture is not violated by the fibre.** The level at which
+the frame-isomorphism cuts the wing tie is the **Born** level: matching the
+full declared legs by their Born shadows alone already yields $|\Phi_B| = 1$ at
+every setting. Amplitude phases play no part; the structural provenance filter
+plays no part either, since removing it changes nothing. What grounds the token
+label is the declared generating dynamics — which is exactly what the pin's
+provenance list names first ("generating interaction", "local support"). On the
+pin's own terms, matching charts by their declared legs *is* provenance by
+generating dynamics, and it is legitimate. **W6 reports no base/fibre
+violation.**
+
+**Second, a sharper tension takes its place.** Run the same level-B search on
+the **realized** legs alone — each leg restricted to the configurations the
+process actually occupies before and after it, which is all the model ever does
+from its declared initial configuration:
+
+- at SP-A, SP-B, SP-C and SP-D no token map survives at all: the two frames'
+  realized processes are not isomorphic, so the realized data are silent;
+- at **SP-E and SP-F** exactly one token map survives, up to sign and at the
+  Born level — and it is the **wing swap**, $R_A \leftrightarrow R_B$: the
+  *opposite* of the identity map that the full declared legs force.
+
+So at the two symmetric settings the committed model's token identification is
+fixed by declared transitions the process never takes, and the process that is
+actually realized would fix it the other way. The obvious deflation is ruled
+out: this is not an artifact of $U_{\text{prep}}$'s arbitrary orthogonal
+completion, because the time-independent reachable restriction — the natural
+way to strip that completion — still breaks the symmetry at every setting and
+at every level. It is the *time-indexing* that makes the difference. At those
+two settings the only declared leg the wing exchange fails to match is
+$U_{\text{prep}}$ itself, and $U_{\text{prep}}$'s realized content is the
+singlet column, which the wing exchange reverses in **sign** only.
+
+**The finding, with its exact scope.** *At the two settings where the two
+measurement angles coincide (SP-E, $a = b = 0$; SP-F, $a = b = \pi/4$), the
+event-token identification that W6-B forces on the committed two-frame model is
+not determined by the realized process: the realized process admits exactly one
+identification and it is the opposite one. The identification W6-B returns is
+carried by counterfactual transition structure.* This is a statement about this
+model, this declared permutation scope (two elements after the $j_0$ filter,
+eight on the declared extension) and these two settings; nothing is claimed
+about the other four settings, where the realized data decide nothing at all,
+and nothing is claimed about nature.
 
 The physically intended datum — the two wings are spatially separated — is not
-part of the committed formal data at all. Paper 0 §5 already prices this under
-O4-A ("BC2 shows the current slice-indexed composite formalism does not provide
-that rule"); W6 now measures where the gap bites and how wide it is.
+part of the committed formal data. Paper 0 §5 already prices this under O4-A
+("BC2 shows the current slice-indexed composite formalism does not provide that
+rule"); W6 now measures where the gap bites and how wide it is.
 
 ---
 
 ## THE VERDICTS (pre-registered; combinable)
 
-**W6-FACT-DESCENT — OBTAINS.** Shared record propositions glue. The fact
-level supports a forced identification on every relabelling pair (M1), on the
-redundant-copy pair by both of the pin's routes (M2), and on every
-same-experiment frame pair (M3); the fact-level triple law holds on the
-constructed families, with a set-level colimit into which every chart injects.
-Event-token identity is *not* everywhere determined by it — M6 leaves it
-two-fold, and M2 shows one fact on two occurrences — which is exactly the
+**W6-FACT-DESCENT — OBTAINS.** Shared record propositions glue. The fact level
+supports a forced and certified identification on every relabelling pair (M1),
+on the redundant-copy pair by *both* of the pin's routes (M2), and on every
+same-experiment frame pair (M3), with the certificate shown failing on a
+corrupted partner, on a wrong relabelling, and on the accidental agreements
+(M7). Event-token identity is *not* everywhere determined by it — M6 leaves it
+two-fold and M2 shows one fact on two occurrences — which is exactly the
 outcome's clause.
 
-**W6-SET-AMALGAM — OBTAINS, SCOPED.** Where the committed generating
-structure distinguishes the tokens, co-reference is unique and the stable
-record tokens form a set-level atlas object: M1's three-chart family (amalgam
-size 1, injective), M2 at the fact level, and each of the six components of the
-committed two-frame atlas (amalgam size 2, injective). **The scope is
-T5″-safe and stated as such:** the amalgam covers **actual stable records
-only** — the positive-probability atoms of census §1 — never unperformed
-measurements; it is not a global present, not a global configuration history,
-and not a counterfactual value table. It is six disjoint two-chart components,
-not one global object; the committed atlas has no triple overlap to glue
-across.
+**W6-SET-AMALGAM — OBTAINS, SCOPED.** A set-level amalgam arises in three
+places, each measured: M1's three-chart relabelling family (1 coherent family,
+trivial automorphisms, amalgam size 1, injective); M2 at the fact level; and
+the token level of the committed two-frame atlas extended by its gauge
+relabelling (1 coherent family over 6 ordered edges and 6 triples, amalgam size
+2, injective). **The scope is T5″-safe and stated as such:** the amalgam covers
+**actual stable records only** — the positive-probability atoms of census §1 —
+never unperformed measurements; it is not a global present, not a global
+configuration history, and not a counterfactual value table. On the committed
+twelve it is six disjoint two-chart components with no triple overlap. **And
+one further scope clause, from the measurement above:** at SP-E and SP-F the
+token-level amalgam is the one the *full declared* legs force, not the one the
+realized process supports.
 
-**W6-GROUPOID-AMALGAM — OBTAINS.** M6: two tokens exchanged by an
-automorphism that preserves the leg exactly, the initial configuration, the
-Born shadow and all 784 four-cycle phase invariants. $|\mathrm{Aut}| = 2$ per
-chart; 4 of 8 selections are coherent; the gauge acts transitively (1 orbit).
-The actuality object there is a groupoid, and any rule naming one of the two
-identifications inserts structure no committed datum supplies. The committed
-model reaches the same shape at its fact level (M3: 4 families, 1 orbit).
+**W6-GROUPOID-AMALGAM — OBTAINS.** M6: two tokens exchanged by an automorphism
+that preserves the leg exactly, the initial configuration, the Born shadow and
+all 784 four-cycle invariants — with the sweep demonstrated able to fail.
+$|\mathrm{Aut}| = 2$ per chart; of $2^6 = 64$ selections, 8 satisfy the inverse
+law and 4 are coherent; the gauge acts, moves them, and $\Phi$ is closed under
+it (all measured), giving 1 orbit. Any rule naming one of the two
+identifications inserts structure no committed datum supplies — and the only
+rule that *would* choose compares provenance by name. The committed model
+reaches the same shape at its fact level on the real triple (4 families, 1
+orbit, gauge moves them, closed).
 
-**W6-UNDERDETERMINED — DOES NOT OBTAIN** on any committed or constructed
-physical family. It is realized only in the declared detector-validation
-branch (two coherent families with trivial automorphisms, 2 orbits), whose
-purpose is to prove the classification's fourth branch reachable.
+**W6-UNDERDETERMINED — DOES NOT OBTAIN** as a descent outcome. The
+discriminator returns UNDERDETERMINED at the *pair* level on committed material
+(M3 at level A, M6 at both levels, M7 at level A), but at the descent level
+every physical family here has a single gauge orbit: the competing
+identifications are gauge-*equivalent*, which is why the honest object is a
+groupoid rather than a plurality of inequivalent structures. Two inequivalent
+orbits are realized only in the declared detector-validation branch.
 
-**W6-NO-DESCENT — DOES NOT OBTAIN** on committed structures. It is realized
-in M9's twisted declaration (0 coherent families). Two honest qualifications:
-the committed atlas has no nonvacuous triple overlap, so it could not have
-failed; and M9's failure is a property of an inconsistent *declaration*, not of
-any chart.
+**W6-NO-DESCENT — DOES NOT OBTAIN** on committed structures. It is realized in
+M9's twisted, asymmetric and partial-domain declarations. Three honest
+qualifications: the committed atlas has no nonvacuous triple overlap, so it
+could not have failed; M9's failures are properties of inconsistent
+*declarations*, not of any chart; and M2's token-level atlas returns
+ABSENT-PAIR, which is the pairwise maps failing to exist — a different thing
+from triple coherence failing.
 
 **W6-BLOCKED-AT-⟨referent⟩ — DOES NOT OBTAIN.** Every object typed; no new
 postulate introduced.
@@ -546,63 +640,97 @@ postulate introduced.
 
 ## SCOPE AND NON-CLAIMS
 
-1. **No claim about nature.** Every result is a statement about declared
-   finite models, a declared gauge, and declared finite search scopes.
-2. **The permutation scopes are declared.** For the dimension 4 and 8 models
-   the frame-isomorphism search is **exhaustive** over all $4!$ resp. $8!$
-   configuration permutations. For the 36-configuration composite model it
-   runs over a **declared 72-element** scope (wing exchange × pointer 3-cycles
-   on each wing × the two qubit flips). Negatives there are negatives at that
-   scope, and are labelled so wherever they are used.
+1. **No claim about nature.** Every result is a statement about declared finite
+   models, a declared gauge, and declared finite search scopes.
+2. **The permutation scopes are declared, and their effective size is gated.**
+   For the dimension 4, 8 and 16 models the frame-isomorphism search is
+   **exhaustive** over all $4!$ resp. $8!$ configuration permutations. For the
+   36-configuration composite model it runs over a declared **72**-element
+   scope, of which the initial-configuration filter admits **exactly 2**; a
+   declared **96**-element extension admits **8**. Every composite level-B
+   negative is a negative at that scope and is labelled so where it is used.
 3. **The amalgam covers actual stable records only** (T5″). Descent does not
-   give a global present; it does not give a value table; and what descends
-   here is six disjoint two-chart components.
-4. **Triple coherence is untested by committed structures** — no committed
-   triple overlap exists. All triple-level verdicts rest on constructed
-   families.
-5. **W3′'s theorem is anchored, not re-proved**; its hypotheses are sufficient
-   and never necessary, its own engraving carried. W7's record-descent limit
-   is anchored, not re-derived.
+   give a global present, does not give a value table, and what descends on the
+   committed material is six disjoint two-chart components.
+4. **Triple coherence is untested by the committed twelve**; the triple that is
+   tested is one component extended by the declared gauge, built as a distinct
+   object and reported as such.
+5. **W3′'s theorem is anchored, not re-proved**; W7's record-descent limit is
+   anchored, not re-derived.
 6. **M9's models are synthetic detector validations**, declared as such, and
-   support no physical claim.
-7. **W6 does not treat unrecorded configurations.** The O4 fork's
-   discriminator — *does a covariant co-reference structure for unrecorded
-   local configurations exist?* — is not answered here.
+   support no physical claim. So are the V2 and V4 variants of census §4, which
+   exist to give items 2 and 4 something to reject.
+7. **W6 does not treat unrecorded configurations.** The O4 fork's discriminator
+   is not answered here.
 8. Paper 0 v2.2 §6's non-claims stand unmodified.
 
 ---
 
 ## WHAT THIS UNIT HANDS OVER
 
-- **To paper 0 §5.** The withdrawn global $(E,\prec)$ can now be replaced by a
+- **To paper 0 §5.** The withdrawn global $(E,\prec)$ can be replaced by a
   *typed, derived* object at the recorded level: the co-reference groupoid of
-  census §2, with $|\Phi|$ as its discriminator. What it earns is strictly less than
-  an event set: six disjoint two-chart components on the committed material,
-  covering actual stable records only. The four gates for it are written out
-  in census §2 and census §7 above.
-- **To the O4 discriminator (queued next).** A sharpened question. W6 shows
-  that at the *recorded* level the co-reference rule exists and is derivable
-  from chart-local structure — except at the symmetric settings, where the
-  stochastic layer alone underdetermines it and an amplitude sign decides. If
-  the recorded level already needs fibre data to label its tokens, O4-A's
-  demand for a covariant rule for *unrecorded* configurations is under more
-  pressure, not less.
-- **To v13's GW2 regional descent census.** The base is built: record
-  algebras, a derived overlap object, a six-item preservation list five of
-  whose items are measured to bite independently (the sixth disclosed as
-  subsumed), and a five-branch descent classification with all five branches
-  exercised. The one thing v13 must supply that W6 could not
-  find in the corpus is a family with a **nonvacuous triple overlap**.
+  census §2, with $|\Phi|$ and its five-valued vocabulary as discriminator.
+  What it earns is strictly less than an event set: six disjoint two-chart
+  components on the committed material, covering actual stable records only.
+- **To the O4 discriminator.** A sharpened question. At the *recorded* level
+  the co-reference rule exists and is derivable from chart-local structure —
+  but at the symmetric settings what derives it is declared structure the
+  process never realizes, and the realized process points the other way. If the
+  recorded level already needs counterfactual transition data to label its
+  tokens, O4-A's demand for a covariant rule for *unrecorded* configurations is
+  under more pressure, not less.
+- **To v13's GW2 regional descent census.** The base is built: record algebras
+  with computed occurrence and availability, a derived overlap object with a
+  declared matching level, a preservation list every item of which is measured
+  to bite on an exhibited pair, a five-valued discriminator with an emptiness
+  guard, and a descent solver validated against four distinct ways of failing.
+  The one thing v13 must supply that W6 could not find in the corpus is a
+  family with a **nonvacuous triple overlap**.
 - **To W7.** The architecture holds at the base: no fact-identity decision in
-  this unit consults a phase invariant, and M8 measures that a criterion which
-  did would return *absent* exactly where the record level returns *forced*.
+  this unit consults a phase invariant; M8 measures that a criterion which did
+  would return *absent* exactly where the record level returns *forced*; and
+  the token-level grounding is measured to work at the Born level, so it does
+  not reach into the fibre either.
+
+---
+
+## THE RECEIPT
+
+`v12/code/w6_coreference_exact.py` → `v12/code/w6_output.txt`: **115 rows —
+16 ANCHOR, 99 GATE — 115 pass, 0 fail, exit 0**, under 2 s, deterministic
+across reruns modulo timings. The 16 anchors are exit-1-only and pin committed
+lines in `sec4_records.py` (`:198`, `:199`, `:209`, `:505`, `:516`, `:524`,
+`:632`–`:635`) and `sec7_descent.py` (`:137`, `:139`, `:239`–`:242`); the
+falsification self-test — deliberately altering one anchor, and separately one
+gate — exits 1 with a visible FAIL in both cases. No floats appear in any
+substantive path.
+
+**Gate discipline.** Every row is either an anchor or a measurement whose value
+could have come out otherwise; a value established by one gate is *referenced*
+downstream, never re-gated as though it were new evidence; no gate compares an
+object with itself, tests a string literal, or reports a quantity true by
+construction. Against this unit's first assembly (137 rows, 16 ANCHOR / 121
+GATE) the gate layer was rebuilt rather than patched, and the comparison is
+stated by label: the 16 anchors are the *same 16*; of the 121 gates then
+carried, **11** survive verbatim and **110** were removed, merged into the
+single measurement they restated, or replaced by a measurement of the same
+quantity that can fail; **88** of the 99 gates now carried are new or
+re-specified. What is new is not padding — among the additions are the level-B
+scope-keying regression, the multi-item variants V2 and V4, the decomposition
+of each level-B negative into its independent causes, the falsifiable phase
+sweep with its perturbed positive control, the constructed phase-consulting
+$\varphi$, the derived shared-subalgebra computation, the corrupted-partner and
+wrong-relabelling ROUTE-EXT controls, the graph-computed components and
+triangles, the gauge-closure and gauge-action reports, and the realized-process
+level-B search.
 
 ---
 
 ## ANTECEDENTS (cited, not claimed)
 
-- **W3′** (LOG #14) — the record hypotheses (H-avail), (H-corr), the
-  $O(n^2)$ decision criterion, and the dim-4 eraser control. Anchored here at
+- **W3′** (LOG #14) — the record hypotheses (H-avail), (H-corr), the $O(n^2)$
+  decision criterion, and the dim-4 eraser control. Anchored at
   `sec4_records.py:198`, `:199`, `:209`, `:632`–`:635`.
 - **W7** (LOG #24, TERMINAL) — the cut-coherence tensor and the record-descent
   limit; its one-chart scope engraving is what makes co-reference this unit's.

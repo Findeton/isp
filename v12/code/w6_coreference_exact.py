@@ -4,16 +4,16 @@ w6_coreference_exact.py -- v12 W6: RECORD CO-REFERENCE AND EFFECTIVE DESCENT.
 
 Runs the STEP-0 referent census, the three sub-problems (A: fact co-reference,
 B: event-token co-reference, C: effective descent) and the six mandatory
-controls of the pin (v12/note-w6-record-coreference-pin.md, commit 2efd05e),
-plus three declared additions (M7 accidental agreement, M8 phase blindness,
-M9 the descent-detector validation).
+controls of the pin (v12/note-w6-record-coreference-pin.md), plus three
+declared additions (M7 accidental agreement, M8 the phase rule, M9 the
+descent-detector validation).
 
 Substrate: exact arithmetic only.  Cyclotomic field Q(zeta_8) for the
-dimension 4 and 8 models; the totally real quartic field Q(cos pi/8) for the
-committed 36-configuration composite model.  No floats anywhere.
+dimension 4, 8 and 16 models; the totally real quartic field Q(cos pi/8) for
+the committed 36-configuration composite model.  No floats anywhere.
 
 Committed instruments imported READ-ONLY from ../paper1_code:
-  exact.py           the fields, born(), the Receipts harness
+  exact.py           the fields, born(), mat_mul, is_unitary
   sec4_records.py    h_avail / h_corr / merge_partition / support_of
   sec7_descent.py    the cut-coherence tensor and its counters
   model_composite.py the 36-configuration two-measurement two-frame model
@@ -23,6 +23,10 @@ corpus contradiction and exits 1.  GATE rows are W6's own measurements
 pre-registered against the value this unit claims: a mismatch means the claim
 is wrong and exits 1.  A substantive negative (a co-reference that fails, a
 descent that does not obtain) is a RESULT, not a failure, and exits 0.
+
+EVERY row below is either an ANCHOR or a measurement whose value could have
+come out otherwise.  Values restated downstream are referenced, never
+re-gated.
 """
 
 from __future__ import annotations
@@ -110,7 +114,66 @@ TABLE = []
 
 
 # ===========================================================================
-# PART 1 -- THE TYPED OBJECTS
+# PART 1 -- SPARSE EXACT LINEAR ALGEBRA (one representation for every model)
+#
+# Every chart's legs are sparse dicts {(row, col): field element}.  The
+# dimension-4/8/16 models and the committed 36-configuration model therefore
+# run through ONE code path; nothing is special-cased by model.
+# ===========================================================================
+def sp_of_dense(K, M):
+    return {(i, j): v for i, row in enumerate(M)
+            for j, v in enumerate(row) if not K.is_zero(v)}
+
+
+def sp_dense(K, A, n):
+    D = [[K.zero] * n for _ in range(n)]
+    for (i, j), v in A.items():
+        D[i][j] = v
+    return D
+
+
+def sp_mul(K, A, B):
+    bycol = {}
+    for (i, k), v in A.items():
+        bycol.setdefault(k, []).append((i, v))
+    out = {}
+    for (k, j), v in B.items():
+        for (i, u) in bycol.get(k, ()):
+            t = K.mul(u, v)
+            if K.is_zero(t):
+                continue
+            key = (i, j)
+            s = K.add(out.get(key, K.zero), t)
+            if K.is_zero(s):
+                out.pop(key, None)
+            else:
+                out[key] = s
+    return out
+
+
+def sp_id(K, n):
+    return {(i, i): K.one for i in range(n)}
+
+
+def sp_conj(A, p):
+    """(P A P^-1)[p[i]][p[j]] = A[i][j]."""
+    return {(p[i], p[j]): v for (i, j), v in A.items()}
+
+
+def sp_neg(K, A):
+    return {k: K.neg(v) for k, v in A.items()}
+
+
+def sp_born(K, A):
+    return {k: K.mul(v, K.conj(v)) for k, v in A.items()}
+
+
+def sp_restrict(A, rows, cols):
+    return {(i, j): v for (i, j), v in A.items() if i in rows and j in cols}
+
+
+# ===========================================================================
+# PART 2 -- THE TYPED OBJECTS
 #
 #   Prov     provenance of a record token (W6-B's primitive)
 #   Token    a chart-local stable record token: a partition of the chart's
@@ -119,27 +182,32 @@ TABLE = []
 #   Chart    a finite Barandes-style process (legs, initial configuration)
 #            together with its declared record tokens and the joint law of
 #            their ACTUAL values
-#   Rec      the chart-local record algebra: the finite Boolean algebra on the
-#            positive-probability value tuples, carried by Chart.law
 # ===========================================================================
 class Prov:
     """(generating interaction, local support, causal ancestry, copying
-    lineage, erasure history).  Every field is read off the chart's declared
-    leg list; nothing cross-chart enters."""
+    lineage, erasure history).  Every field is read off the chart's own
+    declared leg list; nothing cross-chart enters."""
 
-    def __init__(self, gen, support, anc, lineage, erased):
+    def __init__(self, gen, support, anc, lineage, erased=False):
         self.gen = gen
         self.support = frozenset(support)
         self.anc = tuple(anc)
         self.lineage = tuple(lineage)
         self.erased = bool(erased)
 
-    def key(self):
-        return (self.gen, tuple(sorted(map(str, self.support))), self.anc,
-                self.lineage, self.erased)
+    def nominal_key(self):
+        """the NAME-COMPARING key.  W6-B never uses it; M6 measures what it
+        would do if it did."""
+        return (self.gen, tuple(sorted(map(str, self.support))), self.anc)
+
+    def structural_key(self):
+        """the fields W6-B's post-filter compares: copying lineage (declared
+        chart-locally, and only ever a ground for REJECTION) and erasure
+        history (computed by (H-avail), not declared)."""
+        return (self.lineage, self.erased)
 
     def __repr__(self):
-        return "Prov%s" % (self.key(),)
+        return "Prov(%s)" % (self.gen,)
 
 
 class Token:
@@ -149,21 +217,25 @@ class Token:
         self.values = dict(values)  # sector label -> declared record VALUE
         self.write_leg = write_leg  # index of the leg that writes it
         self.prov = prov
-        self.occurred = None        # (H-corr) at the write leg
+        self.occurred = None        # (H-corr) at the writing leg
         self.avail = None           # (H-avail) under the declared later legs
+
+    def valset(self):
+        return tuple(sorted(map(str, self.values.values())))
 
     def __repr__(self):
         return "Token(%s)" % self.tid
 
 
 class Chart:
-    """a chart = one finite process + its declared record tokens."""
+    """a chart = one finite process (sparse legs + initial configuration) plus
+    its declared record tokens."""
 
     def __init__(self, name, K, n, legs, j0, tokens, note=""):
         self.name = name
         self.K = K
         self.n = n
-        self.legs = legs            # ordered list of exact matrices
+        self.legs = list(legs)
         self.j0 = j0
         self.note = note
         self.tokens = []
@@ -175,29 +247,38 @@ class Chart:
 
     # -- occurrence and availability, by the committed instruments -----------
     def _classify(self, t):
+        """(H-corr) is a property of the WRITING LEG (sec4_records.py:53 takes
+        U1, the leg that writes); (H-avail) a property of the composition of
+        the declared later legs (sec4_records.py:48)."""
         K, n = self.K, self.n
-        pre = self._compose(self.legs[:t.write_leg + 1])
-        t.occurred = h_corr(support_of(K, pre), n, t.part)
-        post = self._compose(self.legs[t.write_leg + 1:])
-        t.avail = t.occurred and h_avail(support_of(K, post), n, t.part)
+        Sw = support_of(K, sp_dense(K, self.legs[t.write_leg], n))
+        t.occurred = h_corr(Sw, n, t.part)
+        post = self.compose(self.legs[t.write_leg + 1:])
+        t.avail = bool(t.occurred and h_avail(support_of(K, sp_dense(K, post, n)),
+                                              n, t.part))
         t.prov.erased = bool(t.occurred and not t.avail)
 
-    def _compose(self, legs):
-        K, n = self.K, self.n
-        M = [[K.one if i == j else K.zero for j in range(n)] for i in range(n)]
+    def compose(self, legs):
+        M = sp_id(self.K, self.n)
         for L in legs:
-            M = mat_mul(K, L, M)
+            M = sp_mul(self.K, L, M)
         return M
 
     def final(self):
-        return self._compose(self.legs)
+        return self.compose(self.legs)
 
     def dist(self, upto=None):
         """the exact distribution over configurations from j0, after `upto`
         legs (default: all of them)."""
         K = self.K
-        T = self._compose(self.legs if upto is None else self.legs[:upto])
-        return [K.mul(T[i][self.j0], K.conj(T[i][self.j0])) for i in range(self.n)]
+        T = self.compose(self.legs if upto is None else self.legs[:upto])
+        out = {}
+        for (i, j), v in T.items():
+            if j == self.j0:
+                p = K.mul(v, K.conj(v))
+                if not K.is_zero(p):
+                    out[i] = K.add(out.get(i, K.zero), p)
+        return out
 
     def _law(self):
         """the joint law of the tokens' values, ACTUAL values only, read at the
@@ -205,17 +286,14 @@ class Chart:
         be wrong for an erased token: after erasure the later dynamics have
         moved amplitude across the record sectors, so the final distribution is
         not the record's law.  For an available record the two times agree --
-        that is what availability means -- so this choice changes nothing
-        anywhere else."""
+        that is what availability means."""
         K = self.K
-        upto = max((t.write_leg for t in self.tokens), default=0) + 1
+        upto = max((t.write_leg for t in self.tokens), default=-1) + 1
         p = self.dist(upto)
         out = {}
-        for i in range(self.n):
-            if K.is_zero(p[i]):
-                continue
+        for i, v in p.items():
             key = tuple(t.values[t.part[i]] for t in self.tokens)
-            out[key] = K.add(out.get(key, K.zero), p[i])
+            out[key] = K.add(out.get(key, K.zero), v)
         return {k: v for k, v in out.items() if not K.is_zero(v)}
 
     def marginal(self, tix):
@@ -235,47 +313,12 @@ class Chart:
             return list(range(len(self.tokens)))
         return [i for i, t in enumerate(self.tokens) if t.avail]
 
-    def __repr__(self):
-        return "Chart(%s)" % self.name
-
-
-# --- a chart given directly by its record data (used for the 36-config model,
-#     where the process is carried by the committed Composite class) ---------
-class DataChart:
-    def __init__(self, name, K, tokens, law, note=""):
-        self.name = name
-        self.K = K
-        self.tokens = tokens
-        self.law = law
-        self.note = note
-
-    marginal = Chart.marginal
-    live = Chart.live
+    def read(self, i):
+        """the value tuple this chart's record map assigns to configuration i."""
+        return tuple(t.values[t.part[i]] for t in self.tokens)
 
     def __repr__(self):
         return "Chart(%s)" % self.name
-
-
-# ===========================================================================
-# PART 2 -- PROCESS ISOMORPHISMS (what grounds a token label)
-#
-# A frame-isomorphism psi : b -> a is a bijection of configurations carrying
-# b's initial configuration to a's, b's leg MULTISET to a's leg multiset under
-# some matching (order is NOT preserved -- two frames of one experiment differ
-# exactly by the order of two commuting legs, so order cannot be part of the
-# invariant), and each of b's record partitions to one of a's.  It induces a
-# token map tau.  W6-B admits exactly the token maps so induced: provenance,
-# local support, ancestry, lineage and erasure history are then preserved
-# automatically, because psi carries the whole generating structure.
-# ===========================================================================
-def perm_conj(K, L, p):
-    """(P L P^-1)[p[i]][p[j]] = L[i][j]."""
-    n = len(L)
-    M = [[K.zero] * n for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
-            M[p[i]][p[j]] = L[i][j]
-    return M
 
 
 def push_part(part, p):
@@ -288,8 +331,7 @@ def push_part(part, p):
 
 def same_partition(pa, pb):
     """equality of partitions of the configuration set (sector names free)."""
-    m = {}
-    seen = {}
+    m, seen = {}, {}
     for x, y in zip(pa, pb):
         if x in m and m[x] != y:
             return False
@@ -300,29 +342,59 @@ def same_partition(pa, pb):
     return True
 
 
-def iso_token_maps(ca, cb, perms):
+# ===========================================================================
+# PART 3 -- PROCESS ISOMORPHISMS (what grounds a token label)
+#
+# A frame-isomorphism psi : b -> a is a bijection of configurations carrying
+# b's initial configuration to a's, b's leg MULTISET to a's leg multiset under
+# some matching (order is NOT preserved -- two frames of one experiment differ
+# exactly by the order of two commuting legs, so order cannot be part of the
+# invariant), and each of b's record partitions to one of a's.  It induces a
+# token map tau.
+#
+# The MATCHING LEVEL is a declared parameter, because which level does the
+# work is exactly what W6-B has to measure:
+#   "exact" -- the amplitudes on the nose
+#   "sign"  -- the amplitudes up to an overall sign per leg (a real orthogonal
+#              propagator and its negative generate the same stochastic process)
+#   "born"  -- the Born shadows only (the stochastic layer)
+# ===========================================================================
+def leg_match(K, X, Y, level):
+    if X == Y:
+        return True
+    if level == "exact":
+        return False
+    if level == "sign":
+        return X == sp_neg(K, Y)
+    return sp_born(K, X) == sp_born(K, Y)
+
+
+_ISO_CACHE = {}
+
+
+def iso_maps(ca, cb, perms, level="exact", cache_key=None):
     """all token maps tau : cb.tokens -> ca.tokens induced by a
     frame-isomorphism cb -> ca, searched over the declared permutation scope
-    `perms`.  Returns a set of tuples tau[i_b] = i_a."""
+    `perms`.  Returns a list of dicts tau[i_b] = i_a."""
+    if cache_key is not None and cache_key in _ISO_CACHE:
+        return _ISO_CACHE[cache_key]
     K, n = ca.K, ca.n
+    out = []
     if cb.n != n or len(cb.legs) != len(ca.legs):
-        return set()
-    out = set()
+        if cache_key is not None:
+            _ISO_CACHE[cache_key] = out
+        return out
     nl = len(ca.legs)
+    orders = list(itertools.permutations(range(nl)))
+    seen = set()
     for p in perms:
         if p[cb.j0] != ca.j0:
             continue
-        conj = [perm_conj(K, L, p) for L in cb.legs]
-        # match the leg multisets (order free)
-        matched = False
-        for sigma in itertools.permutations(range(nl)):
-            if all(conj[t] == ca.legs[sigma[t]] for t in range(nl)):
-                matched = True
-                break
-        if not matched:
+        conj = [sp_conj(L, p) for L in cb.legs]
+        if not any(all(leg_match(K, conj[t], ca.legs[sg[t]], level)
+                       for t in range(nl)) for sg in orders):
             continue
-        tau = {}
-        ok = True
+        tau, ok = {}, True
         for ib, tb in enumerate(cb.tokens):
             pushed = push_part(tb.part, p)
             hits = [ia for ia, ta in enumerate(ca.tokens)
@@ -332,7 +404,12 @@ def iso_token_maps(ca, cb, perms):
                 break
             tau[ib] = hits[0]
         if ok and len(set(tau.values())) == len(tau) == len(ca.tokens):
-            out.add(tuple(tau[i] for i in range(len(cb.tokens))))
+            key = tuple(sorted(tau.items()))
+            if key not in seen:
+                seen.add(key)
+                out.append(tau)
+    if cache_key is not None:
+        _ISO_CACHE[cache_key] = out
     return out
 
 
@@ -341,66 +418,132 @@ def all_perms(n):
 
 
 # ===========================================================================
-# PART 3 -- THE PRESERVATION LIST AND THE PHI SETS
+# PART 4 -- THE PRESERVATION LIST AND THE PHI SETS
 #
-#   1 Boolean operations      -- automatic for a value-preserving token map
-#   2 definite record values  -- values are declared data carried by the token
+#   1 Boolean operations      -- the induced map of record ATOMS is a bijection
+#   2 definite record values  -- the declared value RANGE of each token
 #   3 probabilities on the shared algebra -- exact equality of the marginals
 #   4 persistence/availability
-#   5 provenance              -- level B only, via a frame-isomorphism
-#   6 original vs copy        -- level B only, ditto
+#   5+6 provenance and original-vs-copy -- level B only: the token map must be
+#       induced by a frame-isomorphism AND survive the structural provenance
+#       post-filter (copying lineage; erasure history)
 #
 # PHASE IS NOT ON THE LIST.  No item consults an amplitude phase or any phase
-# invariant; the record-descent limit (W7-4 sec 23) makes that a category error.
+# invariant; the record-descent limit (W7 sec 23) makes that a category error.
+# M8 constructs the phase-consulting item and runs it, to measure what it does.
 # ===========================================================================
-def phi_set(ca, cb, level, scope="available", perms=None):
-    """all admissible partial co-reference maps phi_ab : R_b -> R_a, presented
-    as token bijections tau (index of b -> index of a)."""
-    K = ca.K
-    ta = ca.live(scope)
-    tb = cb.live(scope)
+def push_key(key, tb, tau, ta):
+    """re-index a value tuple of b (ordered by tb) into a's token order ta."""
+    d = {tau[b]: key[i] for i, b in enumerate(tb)}
+    return tuple(d[a] for a in ta)
+
+
+def it_bool(ca, cb, tau, ta, tb):
+    """item 1: the induced map of record atoms is a bijection."""
+    A = set(ca.marginal(ta))
+    B = {push_key(k, tb, tau, ta) for k in cb.marginal(tb)}
+    return A == B and len(B) == len(cb.marginal(tb))
+
+
+def it_values(ca, cb, tau, ta, tb):
+    """item 2: the declared value range of each matched token agrees."""
+    return all(cb.tokens[b].valset() == ca.tokens[tau[b]].valset() for b in tb)
+
+
+def it_prob(ca, cb, tau, ta, tb):
+    """item 3: exact equality of the marginals on the shared record algebra."""
+    ma, mb = ca.marginal(ta), cb.marginal(tb)
+    if len(ma) != len(mb):
+        return False
+    for k, v in mb.items():
+        if ma.get(push_key(k, tb, tau, ta)) != v:
+            return False
+    return True
+
+
+def it_avail(ca, cb, tau, ta, tb):
+    """item 4: persistence / availability."""
+    return all(cb.tokens[b].avail == ca.tokens[tau[b]].avail for b in tb)
+
+
+def it_prov(ca, cb, tau, ta, tb):
+    """items 5+6: the structural provenance post-filter -- copying lineage and
+    erasure history.  Only ever a ground for rejection; it can never create an
+    identification, so it cannot smuggle cross-chart identity in."""
+    return all(cb.tokens[b].prov.structural_key()
+               == ca.tokens[tau[b]].prov.structural_key() for b in tb)
+
+
+def it_nominal(ca, cb, tau, ta, tb):
+    """NOT on the list: provenance compared BY NAME.  Disclosed contrast only
+    (M6): the names are exactly what is in question."""
+    return all(cb.tokens[b].prov.nominal_key()
+               == ca.tokens[tau[b]].prov.nominal_key() for b in tb)
+
+
+LIST_A = [("1 boolean", it_bool), ("2 values", it_values),
+          ("3 probabilities", it_prob), ("4 availability", it_avail)]
+LIST_B = LIST_A + [("5+6 provenance", it_prov)]
+
+
+def phi_set(ca, cb, scope="available", items=LIST_A, isos=None):
+    """all admissible partial co-reference maps phi_ab : R_b -> R_a on `scope`,
+    presented as token maps tau (index of b -> index of a).
+
+    If `isos` is given (level B) the map must be the RESTRICTION TO THE SCOPE
+    of a frame-isomorphism-induced token map.  Keying by restriction is what
+    makes a scope-filtered chart (an erased token) behave correctly instead of
+    silently returning zero."""
+    ta, tb = ca.live(scope), cb.live(scope)
     if len(ta) != len(tb):
         return []
-    isos = None
-    if level == "B":
-        isos = iso_token_maps(ca, cb, perms)
     out = []
     for perm in itertools.permutations(ta):
         tau = {tb[i]: perm[i] for i in range(len(tb))}
-        # item 2: definite record values (as sets, per matched token)
-        if any(sorted(map(str, cb.tokens[b].values.values()))
-               != sorted(map(str, ca.tokens[a].values.values()))
-               for b, a in tau.items()):
-            continue
-        # item 4: availability
-        if any(cb.tokens[b].avail != ca.tokens[a].avail for b, a in tau.items()):
-            continue
-        # item 3: probabilities on the shared algebra, value-matched
-        mb = cb.marginal(tb)
-        ma = ca.marginal([tau[b] for b in tb])
-        if len(mb) != len(ma):
-            continue
-        good = True
-        for key, v in mb.items():
-            if ma.get(key) != v:
-                good = False
-                break
-        if not good:
-            continue
-        # items 5, 6: provenance and lineage, via a frame-isomorphism
-        if level == "B":
-            full = tuple(tau[i] for i in range(len(cb.tokens))) \
-                if len(tau) == len(cb.tokens) else None
-            if full is None or full not in isos:
+        if isos is not None:
+            if not any(all(iso.get(b) == a for b, a in tau.items())
+                       for iso in isos):
                 continue
-        out.append(tuple(sorted(tau.items())))
+        if all(f(ca, cb, tau, ta, tb) for _, f in items):
+            out.append(tau)
     return out
+
+
+def bite_profile(ca, cb, scope="available", items=LIST_A):
+    """which single item, ON ITS OWN, rejects every candidate token map."""
+    ta, tb = ca.live(scope), cb.live(scope)
+    if len(ta) != len(tb):
+        return ["scope size"]
+    kills = []
+    for nm, f in items:
+        if not any(f(ca, cb, {tb[i]: perm[i] for i in range(len(tb))}, ta, tb)
+                   for perm in itertools.permutations(ta)):
+            kills.append(nm)
+    return kills
+
+
+# --- the discriminator (census object 6) -----------------------------------
+def verdict_of(nphi, na, nb, instrument=True):
+    """|Phi| in the unit's own vocabulary.  The EMPTY SCOPE is called what it
+    is -- a comparison of two trivial algebras is VACUOUS, not FORCED."""
+    if not instrument:
+        return "NO-INSTRUMENT"
+    if na == 0 and nb == 0:
+        return "VACUOUS"
+    if nphi == 0:
+        return "ABSENT"
+    if nphi == 1:
+        return "FORCED"
+    return "UNDERDETERMINED"
 
 
 def route_ext(K, joint):
     """ROUTE-EXT: in a declared common record-preserving extension, are the two
     record variables perfectly correlated ALONG THE IDENTITY OF VALUES?  The
-    joint law must be supported on the graph of a value-preserving bijection."""
+    joint law must be supported on the graph of a value-preserving bijection.
+    Returns (certified, positive entries, bijection-supported); the third
+    component is DERIVED from the same support and is reported only where the
+    certificate fails and the reason matters."""
     pos = [(x, y) for (x, y), v in joint.items() if not K.is_zero(v)]
     fwd, bwd = {}, {}
     for x, y in pos:
@@ -412,14 +555,19 @@ def route_ext(K, joint):
 
 
 # ===========================================================================
-# PART 4 -- THE DESCENT SOLVER (W6-C)
+# PART 5 -- THE DESCENT SOLVER (W6-C)
 #
 # coherence laws: phi_aa = id; phi_ba = phi_ab^-1; phi_ab o phi_bc = phi_ac on
-# triple overlaps, modulo the DECLARED gauge only (the declared gauge is
-# configuration relabelling, which acts trivially on the record algebra -- see
-# the M1 control -- so the triple law is judged on the nose).
+# triple overlaps, modulo the DECLARED gauge only.
+#
+# Every ORDERED edge that is declared is enumerated INDEPENDENTLY: the law
+# phi_ba = phi_ab^-1 is a CONSTRAINT that a declared family can violate, not
+# an identity imposed by the solver.  Triple equality is tested on the FULL
+# domain, so a map with missing keys fails in both directions.
 # ===========================================================================
 def compose(tau_ab, tau_bc):
+    """(a<-b) o (b<-c).  Keys absent from tau_ab are DROPPED here and caught by
+    the full-domain equality test in descent()."""
     return {c: tau_ab[b] for c, b in tau_bc.items() if b in tau_ab}
 
 
@@ -427,47 +575,70 @@ def invert(tau):
     return {v: k for k, v in tau.items()}
 
 
+def act(g, fam):
+    """(g . phi)_{xy} = g_x o phi_xy o g_y^{-1}."""
+    new = {}
+    for (x, y), tau in fam.items():
+        gy = invert(g[y])
+        new[(x, y)] = {t: g[x][tau[gy[t]]] for t in gy
+                       if gy[t] in tau and tau[gy[t]] in g[x]}
+    return new
+
+
+def famkey(fam):
+    return tuple(sorted((k, tuple(sorted(v.items()))) for k, v in fam.items()))
+
+
 def descent(names, phis, auts):
-    """phis[(a,b)] = list of tau dicts (b -> a); auts[a] = list of tau dicts
-    (a -> a).  Returns a verdict dict."""
-    edges = sorted({tuple(sorted(k)) for k in phis})
-    fams = []
-    choices = [phis[(x, y)] for (x, y) in edges]
-    if any(len(c) == 0 for c in choices):
+    """phis[(a,b)] = list of tau dicts (b -> a), ORDERED pairs; auts[a] = list
+    of tau dicts (a -> a).  Returns a verdict dict."""
+    edges = sorted(phis)
+    ntri = sum(1 for a, b, c in itertools.permutations(names, 3)
+               if (a, b) in phis and (b, c) in phis and (a, c) in phis)
+    if any(len(phis[e]) == 0 for e in edges):
         return dict(verdict="ABSENT-PAIR", families=0, orbits=0,
-                    edges=len(edges), triples=0, transitive=None)
-    ntrip = 0
-    for pick in itertools.product(*choices):
-        fam = {}
-        for (x, y), tau in zip(edges, pick):
-            fam[(x, y)] = dict(tau)
-            fam[(y, x)] = invert(dict(tau))
+                    edges=len(edges), triples=ntri, inverse_ok=None,
+                    closed=None, moved=None, dupkeys=0)
+    fams = []
+    for pick in itertools.product(*[phis[e] for e in edges]):
+        fam = {e: dict(t) for e, t in zip(edges, pick)}
         ok = True
-        cnt = 0
-        for a, b, c in itertools.permutations(names, 3):
-            if (a, b) in fam and (b, c) in fam and (a, c) in fam:
-                cnt += 1
-                comp = compose(fam[(a, b)], fam[(b, c)])
-                direct = fam[(a, c)]
-                for k, v in comp.items():
-                    if direct.get(k) != v:
-                        ok = False
-                        break
-            if not ok:
+        for (x, y) in edges:                       # law: phi_ba = phi_ab^-1
+            if (y, x) in fam and fam[(y, x)] != invert(fam[(x, y)]):
+                ok = False
                 break
-        ntrip = max(ntrip, cnt)
+        if not ok:
+            continue
+        for a, b, c in itertools.permutations(names, 3):   # law: triples
+            if (a, b) in fam and (b, c) in fam and (a, c) in fam:
+                if compose(fam[(a, b)], fam[(b, c)]) != fam[(a, c)]:
+                    ok = False
+                    break
         if ok:
             fams.append(fam)
     if not fams:
         return dict(verdict="NO-DESCENT", families=0, orbits=0,
-                    edges=len(edges), triples=ntrip, transitive=False)
-    # the gauge action of the automorphism groups
-    keys = [tuple(sorted((k, tuple(sorted(v.items()))) for k, v in f.items()))
-            for f in fams]
+                    edges=len(edges), triples=ntri, inverse_ok=False,
+                    closed=None, moved=None, dupkeys=0)
+    keys = [famkey(f) for f in fams]
+    dupkeys = len(keys) - len(set(keys))
     index = {k: i for i, k in enumerate(keys)}
-    seen = set()
-    orbits = 0
-    for i, f in enumerate(fams):
+    # the gauge action: is Phi closed under it?  (if not, the orbit count is
+    # an over-count and the verdict must be scoped -- reported, not assumed)
+    phikeys = {e: {tuple(sorted(t.items())) for t in phis[e]} for e in edges}
+    closed, moved = True, False
+    gs = list(itertools.product(*[auts[nm] for nm in names]))
+    for f in fams:
+        for g in gs:
+            gm = dict(zip(names, [dict(x) for x in g]))
+            gf = act(gm, f)
+            for e, tau in gf.items():
+                if tuple(sorted(tau.items())) not in phikeys[e]:
+                    closed = False
+            if famkey(gf) != famkey(f):
+                moved = True
+    seen, orbits = set(), 0
+    for i in range(len(fams)):
         if i in seen:
             continue
         orbits += 1
@@ -475,29 +646,22 @@ def descent(names, phis, auts):
         seen.add(i)
         while stack:
             cur = fams[stack.pop()]
-            for g in itertools.product(*[auts[nm] for nm in names]):
+            for g in gs:
                 gm = dict(zip(names, [dict(x) for x in g]))
-                new = {}
-                for (x, y), tau in cur.items():
-                    ginv = invert(gm[y])          # tokens of y -> tokens of y
-                    new[(x, y)] = {t: gm[x][tau[ginv[t]]]
-                                   for t in ginv if ginv[t] in tau}
-                kk = tuple(sorted((k, tuple(sorted(v.items())))
-                                  for k, v in new.items()))
+                kk = famkey(act(gm, cur))
                 if kk in index and index[kk] not in seen:
                     seen.add(index[kk])
                     stack.append(index[kk])
     trivial_aut = all(len(auts[nm]) == 1 for nm in names)
-    if len(fams) == 1 and trivial_aut:
-        v = "SET-AMALGAM"
-    elif orbits == 1 and not trivial_aut:
-        v = "GROUPOID-AMALGAM"
-    elif orbits == 1:
+    if orbits > 1:
+        v = "UNDERDETERMINED"
+    elif trivial_aut:
         v = "SET-AMALGAM"
     else:
-        v = "UNDERDETERMINED"
+        v = "GROUPOID-AMALGAM"
     return dict(verdict=v, families=len(fams), orbits=orbits,
-                edges=len(edges), triples=ntrip, transitive=(orbits == 1))
+                edges=len(edges), triples=ntri, inverse_ok=True,
+                closed=closed, moved=moved, dupkeys=dupkeys)
 
 
 def amalgam(names, charts, fam):
@@ -527,8 +691,16 @@ def amalgam(names, charts, fam):
     return len(classes), ok
 
 
+def edge_sets(names, charts, **kw):
+    """all ordered edges' Phi sets, and the automorphism sets."""
+    phis = {(x, y): phi_set(charts[x], charts[y], **kw)
+            for x, y in itertools.permutations(names, 2)}
+    auts = {x: phi_set(charts[x], charts[x], **kw) for x in names}
+    return phis, auts
+
+
 # ===========================================================================
-# PART 5 -- THE COMMON MATERIAL (dimension 4 and 8, Q(zeta_8))
+# PART 6 -- THE COMMON MATERIAL (dimension 4, 8, 16 over Q(zeta_8))
 # ===========================================================================
 K8 = Cyc(8)
 ISQ2 = K8.scal(K8.add(K8.zpow(1), K8.zpow(-1)), Q(1, 2))
@@ -562,6 +734,16 @@ def bit_part(n, which, nbits):
     return [(k >> (nbits - 1 - which)) & 1 for k in range(n)]
 
 
+def haag(D, i, ip, j, jp):
+    """the four-cycle (Bargmann / Haagerup) phase invariant of a dense matrix."""
+    return K8.mul(K8.mul(D[i][j], D[ip][jp]),
+                  K8.mul(K8.conj(D[i][jp]), K8.conj(D[ip][j])))
+
+
+QUADS8 = [(i, ip, j, jp) for i in range(8) for ip in range(i + 1, 8)
+          for j in range(8) for jp in range(j + 1, 8)]
+
+
 # ===========================================================================
 # STEP 0 -- THE REFERENT CENSUS (the computational half; the four gates are
 # written out in the note)
@@ -572,55 +754,86 @@ def step0():
     hr()
 
     # -- object 1: the chart-local stable record algebra ---------------------
-    # located: sec4_records.py:48 (h_avail), :53 (h_corr), :62 (merge_partition)
-    # the record structure is a label list k -> part[k]; the algebra is the
-    # Boolean algebra on its ACTUAL value tuples.
-    U1 = mat_mul(K8, CNOT, kron(K8, H, I2))
-    U2 = kron(K8, H, I2)
+    U1 = sp_of_dense(K8, mat_mul(K8, CNOT, kron(K8, H, I2)))
+    U2 = sp_of_dense(K8, kron(K8, H, I2))
     part = [0, 1, 0, 1]
-    S1, S2 = support_of(K8, U1), support_of(K8, U2)
+    S1 = support_of(K8, sp_dense(K8, U1, 4))
+    S2 = support_of(K8, sp_dense(K8, U2, 4))
     R.anchor("census/record H-corr  [sec4_records.py:198]",
              h_corr(S1, 4, part), True)
     R.anchor("census/record H-avail [sec4_records.py:199]",
              h_avail(S2, 4, part), True)
 
     tok = Token("R", part, {0: "0", 1: "1"}, 0,
-                Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",), False))
+                Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",)))
     ch = Chart("census", K8, 4, [U1, U2], 0, [tok])
-    R.gate("census/record algebra atoms", sorted(ch.law), [("0",), ("1",)])
-    R.gate("census/record algebra law",
-           [str(K8.to_rat(ch.law[k])) for k in sorted(ch.law)], ["1/2", "1/2"])
-    R.gate("census/record occurred", ch.tokens[0].occurred, True)
-    R.gate("census/record available", ch.tokens[0].avail, True)
+    R.gate("census/record algebra atoms and law",
+           (sorted(ch.law), [str(K8.to_rat(ch.law[k])) for k in sorted(ch.law)]),
+           ([("0",), ("1",)], ["1/2", "1/2"]))
+    R.gate("census/occurrence and availability COMPUTED, not stipulated",
+           (ch.tokens[0].occurred, ch.tokens[0].avail, ch.tokens[0].prov.erased),
+           (True, True, False))
     say("object 1: chart-local record algebra R_a -- LOCATED and typed")
 
     # -- object 6: the insertion-vs-co-reference discriminator ---------------
-    # |Phi| is the discriminator: 1 = forced (genuine), >=2 = any named map is
-    # inserted, 0 = absent.  Exhibited on the census chart against itself.
     perms4 = all_perms(4)
-    self_iso = iso_token_maps(ch, ch, perms4)
-    R.gate("census/self-isomorphisms of the census chart", len(self_iso), 1)
-    R.gate("census/Phi(a,a) at level B", len(phi_set(ch, ch, "B", perms=perms4)), 1)
+    self_iso = iso_maps(ch, ch, perms4)
+    nsa = len(phi_set(ch, ch, isos=self_iso, items=LIST_B))
+    R.gate("census/discriminator on Phi(a,a): (|iso|, |Phi_B|, verdict)",
+           (len(self_iso), nsa, verdict_of(nsa, 1, 1)), (1, 1, "FORCED"))
+    # the vocabulary's four values are all realizable by the SAME function
+    R.gate("census/discriminator vocabulary",
+           (verdict_of(0, 1, 1), verdict_of(1, 1, 1), verdict_of(2, 1, 1),
+            verdict_of(1, 0, 0), verdict_of(0, 1, 1, instrument=False)),
+           ("ABSENT", "FORCED", "UNDERDETERMINED", "VACUOUS", "NO-INSTRUMENT"))
     say("object 6: the discriminator |Phi| -- CONSTRUCTED")
-    return ch
+
+    # -- REGRESSION GATE for the level-B scope keying ------------------------
+    # a two-token chart one of whose tokens is erased.  Level B on the
+    # AVAILABLE scope compares one token against one token; keying the
+    # frame-isomorphism by its RESTRICTION to the scope is what stops this
+    # from silently returning 0.
+    L1 = sp_of_dense(K8, mat_mul(K8, cnot3(0, 1), h3(0)))
+    L2 = sp_of_dense(K8, cnot3(0, 2))
+    L3 = sp_of_dense(K8, h3(2))                        # erases the second token
+    pv = Prov("CX1", {"q0", "q1"}, ("PREP-H",), ("original",))
+    pw = Prov("CX2", {"q0", "q2"}, ("PREP-H",), ("original",))
+    e1 = Chart("e1", K8, 8, [L1, L2, L3], 0,
+               [Token("u", bit_part(8, 1, 3), {0: "0", 1: "1"}, 0, pv),
+                Token("v", bit_part(8, 2, 3), {0: "0", 1: "1"}, 1, pw)])
+    e2 = Chart("e2", K8, 8, [L1, L2, L3], 0,
+               [Token("u", bit_part(8, 1, 3), {0: "0", 1: "1"}, 0,
+                      Prov("CX1", {"q0", "q1"}, ("PREP-H",), ("original",))),
+                Token("v", bit_part(8, 2, 3), {0: "0", 1: "1"}, 1,
+                      Prov("CX2", {"q0", "q2"}, ("PREP-H",), ("original",)))])
+    R.gate("census/regression model: (tokens, available, erased flags)",
+           (len(e1.tokens), len(e1.live("available")),
+            [t.prov.erased for t in e1.tokens]), (2, 1, [False, True]))
+    perms8 = all_perms(8)
+    iso12 = iso_maps(e1, e2, perms8, cache_key=("e1", "e2"))
+    nav = len(phi_set(e1, e2, scope="available", items=LIST_B, isos=iso12))
+    nhi = len(phi_set(e1, e2, scope="historical", items=LIST_B, isos=iso12))
+    R.gate("census/REGRESSION scope-filtered level B does not zero: (avail, hist)",
+           (nav, nhi), (1, 1))
+    say("regression gate: level-B keying on a scope-filtered chart")
+    return ch, perms4, perms8
 
 
 # ===========================================================================
 # M1 -- RELABELLED SAME RECORD (co-reference MUST succeed)
 # ===========================================================================
-def m1():
+def m1(perms4):
     hr()
     print("M1 -- RELABELLED SAME RECORD  (control 1)")
     hr()
-    U1 = mat_mul(K8, CNOT, kron(K8, H, I2))
-    U2 = kron(K8, H, I2)
+    U1 = sp_of_dense(K8, mat_mul(K8, CNOT, kron(K8, H, I2)))
+    U2 = sp_of_dense(K8, kron(K8, H, I2))
     part = [0, 1, 0, 1]
-    perms4 = all_perms(4)
 
     def build(name, p):
-        legs = [perm_conj(K8, U1, p), perm_conj(K8, U2, p)]
+        legs = [sp_conj(U1, p), sp_conj(U2, p)]
         tok = Token("R", push_part(part, p), {0: "0", 1: "1"}, 0,
-                    Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",), False))
+                    Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",)))
         return Chart(name, K8, 4, legs, p[0], [tok])
 
     pid = (0, 1, 2, 3)
@@ -628,150 +841,125 @@ def m1():
     p2 = (2, 3, 0, 1)
     a, b, c = build("a", pid), build("b", p1), build("c", p2)
 
-    # the declared gauge (configuration relabelling) acts trivially on the
-    # record algebra: that is why control 1 must succeed.
-    R.gate("M1/law invariant under relabelling",
-           (a.law == b.law, a.law == c.law), (True, True))
-    R.gate("M1/legs actually differ",
-           (a.legs != b.legs, a.legs != c.legs), (True, True))
-    nA = len(phi_set(a, b, "A"))
-    nB = len(phi_set(a, b, "B", perms=perms4))
-    R.gate("M1/|Phi_A| a<-b", nA, 1)
-    R.gate("M1/|Phi_B| a<-b", nB, 1)
+    R.gate("M1/relabelling changes the presentation but not the record algebra",
+           (a.legs != b.legs, a.j0 != b.j0, a.law == b.law, a.law == c.law),
+           (True, True, True, True))
+    isoab = iso_maps(a, b, perms4, cache_key=("m1a", "m1b"))
+    nA = len(phi_set(a, b))
+    nB = len(phi_set(a, b, items=LIST_B, isos=isoab))
+    R.gate("M1/|Phi_A|, |Phi_B| and their verdicts a<-b",
+           (nA, nB, verdict_of(nA, 1, 1), verdict_of(nB, 1, 1)),
+           (1, 1, "FORCED", "FORCED"))
 
-    # ROUTE-EXT: the common extension is the one process; the joint law of the
-    # two presentations' record variables is the graph of the identity on values
+    # ROUTE-EXT: the common extension is the one process; configuration by
+    # configuration, read a's record map and b's.  The relabelling p1 is the
+    # identification of configurations, and it is USED, not assumed.
     K = K8
-    joint = {}
-    for i in range(4):
-        pv = a.dist()[i]
-        if K.is_zero(pv):
-            continue
-        key = (a.tokens[0].values[a.tokens[0].part[i]],
-               b.tokens[0].values[b.tokens[0].part[p1[i]]])
-        joint[key] = K.add(joint.get(key, K.zero), pv)
-    ok, npos, bij = route_ext(K, joint)
-    R.gate("M1/ROUTE-EXT perfect value-correlation", (ok, npos, bij),
-           (True, 2, True))
+
+    def joint_of(rel):
+        j = {}
+        for i, pv in a.dist().items():
+            key = (a.read(i), b.read(rel[i]))
+            j[key] = K.add(j.get(key, K.zero), pv)
+        return j
+    ok, npos, _ = route_ext(K, joint_of(p1))
+    okw, nposw, bijw = route_ext(K, joint_of(p2))
+    R.gate("M1/ROUTE-EXT under the true relabelling vs a WRONG one",
+           ((ok, npos), (okw, nposw, bijw)), ((True, 2), (False, 2, True)))
 
     names = ["a", "b", "c"]
     charts = {"a": a, "b": b, "c": c}
-    phis, auts = {}, {}
-    for x, y in itertools.permutations(names, 2):
-        phis[(x, y)] = [dict(t) for t in
-                        phi_set(charts[x], charts[y], "B", perms=perms4)]
-    for x in names:
-        auts[x] = [dict(t) for t in
-                   phi_set(charts[x], charts[x], "B", perms=perms4)]
-    # soundness of the solver: the preservation list is symmetric, so the
-    # coherence law phi_ba = phi_ab^-1 uses only admissible maps; and the
-    # identity is always an automorphism.
-    R.gate("M1/Phi sets inverse-closed",
-           all(tuple(sorted(invert(dict(t)).items())) in
-               [tuple(sorted(dict(u).items()))
-                for u in phi_set(charts[y], charts[x], "B", perms=perms4)]
-               for x, y in itertools.permutations(names, 2)
-               for t in phi_set(charts[x], charts[y], "B", perms=perms4)), True)
-    R.gate("M1/identity is in every Aut set",
-           all({i: i for i in range(len(charts[x].tokens))}
-               in [dict(t) for t in
-                   phi_set(charts[x], charts[x], "B", perms=perms4)]
-               for x in names), True)
+    isos = {(x, y): iso_maps(charts[x], charts[y], perms4,
+                             cache_key=("m1", x, y))
+            for x, y in itertools.product(names, repeat=2)}
+    phis = {(x, y): phi_set(charts[x], charts[y], items=LIST_B,
+                            isos=isos[(x, y)])
+            for x, y in itertools.permutations(names, 2)}
+    auts = {x: phi_set(charts[x], charts[x], items=LIST_B, isos=isos[(x, x)])
+            for x in names}
+    R.gate("M1/solver soundness: Phi inverse-closed, identity in every Aut",
+           (all(invert(t) in phis[(y, x)]
+                for (x, y) in phis for t in phis[(x, y)]),
+            all({i: i for i in range(len(charts[x].tokens))} in auts[x]
+                for x in names)), (True, True))
     d = descent(names, phis, auts)
     sz, inj = amalgam(names, charts, {k: v[0] for k, v in phis.items()})
-    R.gate("M1/descent verdict", d["verdict"], "SET-AMALGAM")
-    R.gate("M1/coherent families, orbits", (d["families"], d["orbits"]), (1, 1))
-    R.gate("M1/triples tested per family", d["triples"], 6)
+    R.gate("M1/descent (verdict, families, orbits, edges, triples, closed)",
+           (d["verdict"], d["families"], d["orbits"], d["edges"], d["triples"],
+            d["closed"]), ("SET-AMALGAM", 1, 1, 6, 6, True))
     R.gate("M1/amalgam size, injective", (sz, inj), (1, True))
-    TABLE.append(("M1 relabelled same record", "SUCCEEDS-FORCED",
-                  "SUCCEEDS-FORCED", "SET-AMALGAM",
-                  "gauge acts trivially on the record algebra"))
+    TABLE.append(("M1 relabelled same record", "FORCED (certified)",
+                  "FORCED", "SET-AMALGAM",
+                  "the declared gauge acts trivially on the record algebra; "
+                  "ROUTE-EXT fails under a wrong relabelling (gated)"))
     say("M1 done")
 
 
 # ===========================================================================
 # M2 -- REDUNDANT COPIES (A succeeds, B fails)
 # ===========================================================================
-def m2():
+def m2(perms8):
     hr()
     print("M2 -- REDUNDANT COPIES  (control 2)")
     hr()
-    L1 = mat_mul(K8, cnot3(0, 1), h3(0))     # writes copy 1
-    L2 = cnot3(0, 2)                         # writes copy 2, later
+    L1 = sp_of_dense(K8, mat_mul(K8, cnot3(0, 1), h3(0)))    # writes copy 1
+    L2 = sp_of_dense(K8, cnot3(0, 2))                        # writes copy 2
     p1 = bit_part(8, 1, 3)
     p2 = bit_part(8, 2, 3)
-    provA = Prov("CX1", {"q0", "q1"}, ("PREP-H",), ("original",), False)
-    provB = Prov("CX2", {"q0", "q2"}, ("PREP-H", "CX1"), ("copy-of", "CX1"),
-                 False)
-    a = Chart("a", K8, 8, [L1, L2], 0,
-              [Token("R1", p1, {0: "0", 1: "1"}, 0, provA)])
-    b = Chart("b", K8, 8, [L1, L2], 0,
-              [Token("R2", p2, {0: "0", 1: "1"}, 1, provB)])
-    R.gate("M2/both tokens occurred",
-           (a.tokens[0].occurred, b.tokens[0].occurred), (True, True))
-    R.gate("M2/both tokens available",
-           (a.tokens[0].avail, b.tokens[0].avail), (True, True))
-    R.gate("M2/identical record laws", a.law == b.law, True)
 
-    perms8 = all_perms(8)
+    def pA():
+        return Prov("CX1", {"q0", "q1"}, ("PREP-H",), ("original",))
+
+    def pB():
+        return Prov("CX2", {"q0", "q2"}, ("PREP-H", "CX1"), ("copy-of", "CX1"))
+
+    a = Chart("a", K8, 8, [L1, L2], 0,
+              [Token("R1", p1, {0: "0", 1: "1"}, 0, pA())])
+    b = Chart("b", K8, 8, [L1, L2], 0,
+              [Token("R2", p2, {0: "0", 1: "1"}, 1, pB())])
+    R.gate("M2/both tokens occurred, available, laws identical",
+           (a.tokens[0].occurred, b.tokens[0].occurred,
+            a.tokens[0].avail, b.tokens[0].avail, a.law == b.law),
+           (True, True, True, True, True))
+
     t0 = time.time()
-    nA = len(phi_set(a, b, "A"))
-    nB = len(phi_set(a, b, "B", perms=perms8))
+    isoab = iso_maps(a, b, perms8, cache_key=("m2a", "m2b"))
     say("M2 isomorphism search over 8! permutations  %.1fs" % (time.time() - t0))
-    R.gate("M2/|Phi_A| a<-b", nA, 1)
-    R.gate("M2/|Phi_B| a<-b", nB, 0)
-    # POSITIVE CONTROL: the search is not vacuously empty -- it finds the
-    # identity on each chart against itself.  And the zero is caused by the LEG
-    # structure specifically: the swap of the two copy registers DOES carry the
-    # second copy's partition onto the first's, but does NOT fix the leg
-    # multiset, so no frame-isomorphism exists.
-    R.gate("M2/positive control: iso(a,a), iso(b,b)",
-           (len(iso_token_maps(a, a, perms8)), len(iso_token_maps(b, b, perms8))),
-           (1, 1))
+    nA = len(phi_set(a, b))
+    nB = len(phi_set(a, b, items=LIST_B, isos=isoab))
+    R.gate("M2/|Phi_A|, |Phi_B| and their verdicts a<-b",
+           (nA, nB, verdict_of(nA, 1, 1), verdict_of(nB, 1, 1)),
+           (1, 0, "FORCED", "ABSENT"))
+    # WHICH layer refuses: the frame-isomorphism, or the provenance filter?
+    nprov = len(phi_set(a, b, items=LIST_A + [("5+6 provenance", it_prov)]))
+    R.gate("M2/DECOMPOSITION of the level-B zero: (iso alone, provenance alone)",
+           (len(isoab), nprov), (0, 0))
+    R.gate("M2/positive control: the searches are not vacuously empty",
+           (len(iso_maps(a, a, perms8, cache_key=("m2a", "m2a"))),
+            len(iso_maps(b, b, perms8, cache_key=("m2b", "m2b")))), (1, 1))
     sg = [0] * 8
     for j in range(8):
         bb = [(j >> (2 - t)) & 1 for t in range(3)]
         bb[1], bb[2] = bb[2], bb[1]
         sg[j] = (bb[0] << 2) | (bb[1] << 1) | bb[2]
-    R.gate("M2/the swap carries R2's partition onto R1's",
-           same_partition(push_part(p2, sg), p1), True)
-    R.gate("M2/but the swap does not fix the leg multiset",
-           perm_conj(K8, L1, sg) in (L1, L2), False)
+    R.gate("M2/the register swap carries the partition but not the leg multiset",
+           (same_partition(push_part(p2, sg), p1),
+            sp_conj(L1, sg) in (L1, L2)), (True, False))
 
     # ROUTE-EXT on the ONE process carrying both tokens
     K = K8
-    joint = {}
     full = Chart("ab", K8, 8, [L1, L2], 0,
-                 [Token("R1", p1, {0: "0", 1: "1"}, 0, provA),
-                  Token("R2", p2, {0: "0", 1: "1"}, 1, provB)])
-    for key, v in full.law.items():
-        joint[key] = K.add(joint.get(key, K.zero), v)
-    ok, npos, bij = route_ext(K, joint)
-    R.gate("M2/ROUTE-EXT perfect value-correlation", (ok, npos, bij),
-           (True, 2, True))
-    # the provenance data that separate the tokens
-    R.gate("M2/provenance differs",
-           full.tokens[0].prov.key() != full.tokens[1].prov.key(), True)
-    R.gate("M2/lineage original vs copy",
-           (full.tokens[0].prov.lineage, full.tokens[1].prov.lineage),
-           (("original",), ("copy-of", "CX1")))
-
-    # C: the fact algebra over {a, b, a-relabelled}
-    p = tuple([0, 1, 2, 3, 4, 5, 6, 7][::-1])
-    ar = Chart("c", K8, 8, [perm_conj(K8, L1, p), perm_conj(K8, L2, p)], p[0],
-               [Token("R1", push_part(p1, p), {0: "0", 1: "1"}, 0, provA)])
-    names = ["a", "b", "c"]
-    charts = {"a": a, "b": b, "c": ar}
-    phis = {(x, y): [dict(t) for t in phi_set(charts[x], charts[y], "A")]
-            for x, y in itertools.permutations(names, 2)}
-    auts = {x: [dict(t) for t in phi_set(charts[x], charts[x], "A")]
-            for x in names}
-    d = descent(names, phis, auts)
-    R.gate("M2/fact-level descent verdict", d["verdict"], "SET-AMALGAM")
+                 [Token("R1", p1, {0: "0", 1: "1"}, 0, pA()),
+                  Token("R2", p2, {0: "0", 1: "1"}, 1, pB())])
+    ok, npos, _ = route_ext(K, {k: v for k, v in full.law.items()})
+    R.gate("M2/ROUTE-EXT perfect value-correlation on the one process",
+           (ok, npos), (True, 2))
+    R.gate("M2/the provenance data that separate the two tokens",
+           (full.tokens[0].prov.structural_key(),
+            full.tokens[1].prov.structural_key()),
+           ((("original",), False), (("copy-of", "CX1"), False)))
 
     # -- ROUTE-WIT: the pin's second route, a specified common-record witness.
-    #    Four qubits: three copies of one alternative.  t3 is the witness that
-    #    identifies t1 with t2.
     def cnot4(ctrl, targ):
         Mx = [[K8.zero] * 16 for _ in range(16)]
         for j in range(16):
@@ -786,90 +974,129 @@ def m2():
     R.gate("M2/witness model unitary", is_unitary(K8, Lw), True)
     wt = [Token("t%d" % t, bit_part(16, t, 4), {0: "0", 1: "1"}, 0,
                 Prov("CX%d" % t, {"q0", "q%d" % t}, ("PREP-H",),
-                     ("original",) if t == 1 else ("copy-of", "CX1"), False))
+                     ("original",) if t == 1 else ("copy-of", "CX1")))
           for t in (1, 2, 3)]
-    W = Chart("wit", K8, 16, [Lw], 0, wt)
+    W = Chart("wit", K8, 16, [sp_of_dense(K8, Lw)], 0, wt)
     R.gate("M2/witness model joint law", sorted(W.law),
            [("0", "0", "0"), ("1", "1", "1")])
-    j13 = {}
-    j23 = {}
+    j13, j23, j12 = {}, {}, {}
     for key, v in W.law.items():
         j13[(key[0], key[2])] = K8.add(j13.get((key[0], key[2]), K8.zero), v)
         j23[(key[1], key[2])] = K8.add(j23.get((key[1], key[2]), K8.zero), v)
-    R.gate("M2/ROUTE-WIT t1 vs witness", route_ext(K8, j13), (True, 2, True))
-    R.gate("M2/ROUTE-WIT t2 vs witness", route_ext(K8, j23), (True, 2, True))
-    R.gate("M2/witness identifies t1 with t2",
-           route_ext(K8, j13)[0] and route_ext(K8, j23)[0], True)
+        j12[(key[0], key[1])] = K8.add(j12.get((key[0], key[1]), K8.zero), v)
+    R.gate("M2/ROUTE-WIT: t1 vs witness, t2 vs witness, t1 vs t2",
+           (route_ext(K8, j13)[0], route_ext(K8, j23)[0], route_ext(K8, j12)[0]),
+           (True, True, True))
 
-    TABLE.append(("M2 redundant copies", "SUCCEEDS-FORCED", "FAILS-ABSENT",
-                  "SET-AMALGAM (fact level); token level has no edges",
-                  "one fact, two tokens: exactly the pin's demand"))
+    # C: the atlas over {a, b, a-relabelled}, at BOTH levels
+    p = tuple([0, 1, 2, 3, 4, 5, 6, 7][::-1])
+    ar = Chart("c", K8, 8, [sp_conj(L1, p), sp_conj(L2, p)], p[0],
+               [Token("R1", push_part(p1, p), {0: "0", 1: "1"}, 0, pA())])
+    names = ["a", "b", "c"]
+    charts = {"a": a, "b": b, "c": ar}
+    phisA, autsA = edge_sets(names, charts)
+    dA = descent(names, phisA, autsA)
+    R.gate("M2/fact-level descent (verdict, families, triples)",
+           (dA["verdict"], dA["families"], dA["triples"]), ("SET-AMALGAM", 1, 6))
+    isos = {(x, y): iso_maps(charts[x], charts[y], perms8,
+                             cache_key=("m2", x, y))
+            for x, y in itertools.product(names, repeat=2)}
+    phisB = {(x, y): phi_set(charts[x], charts[y], items=LIST_B,
+                             isos=isos[(x, y)])
+             for x, y in itertools.permutations(names, 2)}
+    autsB = {x: phi_set(charts[x], charts[x], items=LIST_B, isos=isos[(x, x)])
+             for x in names}
+    R.gate("M2/THE FULL TOKEN-LEVEL EDGE SET |Phi_B| over the six ordered pairs",
+           {e: len(v) for e, v in sorted(phisB.items())},
+           {("a", "b"): 0, ("a", "c"): 1, ("b", "a"): 0, ("b", "c"): 0,
+            ("c", "a"): 1, ("c", "b"): 0})
+    dB = descent(names, phisB, autsB)
+    R.gate("M2/token-level descent verdict", dB["verdict"], "ABSENT-PAIR")
+    TABLE.append(("M2 redundant copies", "FORCED (certified twice)",
+                  "ABSENT on the copy edges, FORCED on the relabelling edge",
+                  "SET-AMALGAM (fact) / ABSENT-PAIR (token)",
+                  "one fact, two tokens; |Phi_B(a<-c)| = 1 is a genuine token "
+                  "edge, |Phi_B(a<-b)| = |Phi_B(b<-c)| = 0"))
     say("M2 done")
 
 
 # ===========================================================================
 # the committed 36-configuration composite model (M3, M4, M7)
 # ===========================================================================
-POINTER = {1: "+", 2: "-"}
+POINTER3 = {0: "r", 1: "+", 2: "-"}
+PARTA = [unidx(i)[0] * 3 + unidx(i)[2] for i in range(NC)]     # sectors (qA, pA)
+PARTB = [unidx(i)[1] * 3 + unidx(i)[3] for i in range(NC)]     # sectors (qB, pB)
+PTRA = [unidx(i)[2] for i in range(NC)]                        # pointer A alone
+PTRB = [unidx(i)[3] for i in range(NC)]                        # pointer B alone
+VALS = {k: POINTER3[k % 3] for k in range(6)}
+
+
+def cprov(wing, ang):
+    return Prov("MEAS-%s@%d" % (wing, ang), {"q%s" % wing, "p%s" % wing},
+                ("PREP",), ("original",))
+
+
+def build_perm(swap, sa, sb, fa, fb):
+    """the declared permutation scope: wing exchange x pointer 3-cycles x
+    qubit flips."""
+    sh = {0: 1, 1: 2, 2: 0}
+
+    def shift(v, t):
+        for _ in range(t):
+            v = sh[v]
+        return v
+    p = [0] * NC
+    for i in range(NC):
+        qa, qb, pa, pb = unidx(i)
+        qa2, qb2 = qa ^ fa, qb ^ fb
+        pa2, pb2 = shift(pa, sa), shift(pb, sb)
+        p[i] = idx(qb2, qa2, pb2, pa2) if swap else idx(qa2, qb2, pa2, pb2)
+    return p
+
+
+def build_perm_tr(swap, ta, tb, fa, fb):
+    """the EXTENSION scope: the pointer TRANSPOSITION (+ <-> -) fixes the ready
+    state r, so it survives the j0 filter where the 3-cycles do not."""
+    tr = {0: 0, 1: 2, 2: 1}
+    p = [0] * NC
+    for i in range(NC):
+        qa, qb, pa, pb = unidx(i)
+        qa2, qb2 = qa ^ fa, qb ^ fb
+        pa2 = tr[pa] if ta else pa
+        pb2 = tr[pb] if tb else pb
+        p[i] = idx(qb2, qa2, pb2, pa2) if swap else idx(qa2, qb2, pa2, pb2)
+    return p
 
 
 def composite_charts(M):
-    """the twelve committed charts (6 settings x 2 frames) at the FINAL record,
-    and the twelve at the INTERMEDIATE slice."""
-    K = M.K
-    finals, inters, legs = {}, {}, {}
+    """the twelve committed charts (6 settings x 2 frames) at the final record,
+    the twelve at the intermediate slice, and the erasure variant."""
+    finals, inters = {}, {}
     for sp in SETTING_ORDER:
         a8, b8 = SETTINGS[sp]
         for fr in ("F1", "F2"):
-            L1, L2, L3 = M.legs(sp, fr)
-            legs[(sp, fr)] = (L1, L2, L3)
-            provA = Prov("MEAS-A@%d" % a8, {"qA", "pA"}, ("PREP",),
-                         ("original",), False)
-            provB = Prov("MEAS-B@%d" % b8, {"qB", "pB"}, ("PREP",),
-                         ("original",), False)
-            tA = Token("R_A", [], {}, 1, provA)
-            tB = Token("R_B", [], {}, 2, provB)
-            tA.values = {1: "+", 2: "-"}
-            tB.values = {1: "+", 2: "-"}
-            tA.occurred = tB.occurred = True
-            tA.avail = tB.avail = True
-            law = {}
-            for (pa, pb), v in M.outcome_law(sp, fr).items():
-                if K.is_zero(v):
-                    continue
-                law[(POINTER[pa], POINTER[pb])] = v
-            finals[(sp, fr)] = DataChart("%s/%s" % (sp, fr), K, [tA, tB], law)
-            # the intermediate slice: only the wing measured by leg 2
-            T1, T2, T3, _ = M.propagators(sp, fr)
-            col = {}
-            for (i, j), v in T2.items():
-                if j == 0:
-                    col[i] = K.add(col.get(i, K.zero), K.mul(v, v))
+            legs = list(M.legs(sp, fr))
+            wa = 1 if fr == "F1" else 2
+            wb = 2 if fr == "F1" else 1
+            tA = Token("R_A", PARTA, VALS, wa, cprov("A", a8))
+            tB = Token("R_B", PARTB, VALS, wb, cprov("B", b8))
+            finals[(sp, fr)] = Chart("%s/%s" % (sp, fr), M.K, NC, legs, 0,
+                                     [tA, tB])
+            # the intermediate slice: the process truncated after leg 2
             wing = "A" if fr == "F1" else "B"
-            tok = Token("R_%s" % wing, [], {1: "+", 2: "-"}, 1,
-                        provA if wing == "A" else provB)
-            tok.tid = "R_%s" % wing
-            tok.occurred = True
-            tok.avail = True
-            ilaw = {}
-            for i, v in col.items():
-                qa, qb, pa, pb = unidx(i)
-                ptr = pa if wing == "A" else pb
-                if ptr == 0:
-                    continue
-                key = (POINTER[ptr],)
-                ilaw[key] = K.add(ilaw.get(key, K.zero), v)
-            inters[(sp, fr)] = DataChart("%s/%s@t2" % (sp, fr), K, [tok], ilaw)
-    return finals, inters, legs
+            tok = Token("R_%s" % wing, PARTA if wing == "A" else PARTB, VALS, 1,
+                        cprov(wing, a8 if wing == "A" else b8))
+            inters[(sp, fr)] = Chart("%s/%s@t2" % (sp, fr), M.K, NC,
+                                     legs[:2], 0, [tok])
+    return finals, inters
 
 
-def m3_m4_m7(M):
+def m3_m4_m7(M, finals, inters):
     hr()
     print("M3 / M4 / M7 -- THE COMMITTED TWO-FRAME BELL STRUCTURE")
     hr()
     K = M.K
-    finals, inters, legs = composite_charts(M)
-    say("twelve committed charts built")
+    keys = sorted(finals)
 
     # -- committed anchors ---------------------------------------------------
     ops_ok = sum(1 for ang in (0, 2, 4, 6) for wg in ("A", "B")
@@ -882,542 +1109,701 @@ def m3_m4_m7(M):
     R.anchor("M3/U_prep orthogonal [sec4_records.py:505]",
              M.is_orthogonal(M.U_prep()), True)
 
-    # the two frames share the FINAL propagator exactly
-    same_T3 = all(M.propagators(sp, "F1")[2] == M.propagators(sp, "F2")[2]
-                  for sp in SETTING_ORDER)
-    R.gate("M3/T3 identical in both frames, all settings", same_T3, True)
+    # -- the record typing of the composite tokens, COMPUTED -----------------
+    # (H-corr) fails for the pointer alone wherever the local operator is not
+    # diagonal (the other wing's qubit is co-live); the (qX, pX) partition is
+    # a genuine record structure at every setting.  Nothing is stipulated.
+    prof = []
+    for sp in SETTING_ORDER:
+        a8, b8 = SETTINGS[sp]
+        SA = support_of(K, sp_dense(K, M.U_local("A", a8), NC))
+        SB = support_of(K, sp_dense(K, M.U_local("B", b8), NC))
+        prof.append((h_corr(SA, NC, PTRA), h_corr(SA, NC, PARTA),
+                     h_corr(SB, NC, PTRB), h_corr(SB, NC, PARTB)))
+    R.gate("M3/(H-corr) pointer-alone vs (qX,pX), per setting", prof,
+           [(True, True, False, True), (True, True, False, True),
+            (False, True, False, True), (False, True, False, True),
+            (True, True, True, True), (False, True, False, True)])
+    R.gate("M3/all 24 composite tokens occurred and are available",
+           (sum(len(finals[k].tokens) for k in keys),
+            sum(len(finals[k].live("available")) for k in keys)), (24, 24))
+    R.gate("M3/W6's chart law reproduces the committed outcome_law",
+           all(finals[(sp, fr)].law
+               == {(POINTER3[a], POINTER3[b]): v
+                   for (a, b), v in M.outcome_law(sp, fr).items()
+                   if not K.is_zero(v)}
+               for sp in SETTING_ORDER for fr in ("F1", "F2")), True)
+    say("the twelve committed charts built; record typing computed")
+
+    # -- the frame structure -------------------------------------------------
+    R.gate("M3/T3 identical in both frames, all settings",
+           all(M.propagators(sp, "F1")[2] == M.propagators(sp, "F2")[2]
+               for sp in SETTING_ORDER), True)
     diffs = []
     for sp in SETTING_ORDER:
-        t2a = M.propagators(sp, "F1")[1]
-        t2b = M.propagators(sp, "F2")[1]
+        t2a, t2b = M.propagators(sp, "F1")[1], M.propagators(sp, "F2")[1]
         ks = set(t2a) | set(t2b)
         diffs.append(sum(1 for k in ks
                          if t2a.get(k, K.zero) != t2b.get(k, K.zero)))
     R.gate("M3/intermediate propagators differ, per setting", diffs,
            [270, 270, 432, 432, 108, 432])
-    R.gate("M3/every setting's intermediate slices differ",
-           all(d > 0 for d in diffs), True)
-    say("frame structure measured")
 
-    # -- M3: fact-candidate matching vs law agreement -----------------------
-    keys = sorted(finals)
+    # -- M3 fact level: candidate maps vs law agreement ----------------------
     lawclass = {}
     for k in keys:
-        sig = tuple(sorted((kk, vv) for kk, vv in finals[k].law.items()))
-        lawclass.setdefault(sig, []).append(k)
+        lawclass.setdefault(tuple(sorted(finals[k].law.items())), []).append(k)
     R.gate("M3/final-law classes", sorted(len(v) for v in lawclass.values()),
            [2, 4, 6])
-    agree = cand = 0
+    agree, cand, viol = 0, 0, []
     for x, y in itertools.product(keys, repeat=2):
         same = finals[x].law == finals[y].law
-        n = len(phi_set(finals[x], finals[y], "A"))
+        n = len(phi_set(finals[x], finals[y]))
         agree += 1 if same else 0
         cand += 1 if n > 0 else 0
         if same != (n > 0):
-            R.gate("M3/BICONDITIONAL BROKEN at %s,%s" % (x, y), same, n > 0)
-    R.gate("M3/ordered pairs with agreeing final laws", agree, 56)
-    R.gate("M3/ordered pairs admitting a fact-candidate map", cand, 56)
-    counts = {len(phi_set(finals[x], finals[y], "A"))
+            viol.append((x, y))
+    R.gate("M3/(law-agreeing pairs, candidate-admitting pairs, violations)",
+           (agree, cand, viol), (56, 56, []))
+    counts = {len(phi_set(finals[x], finals[y]))
               for x, y in itertools.product(keys, repeat=2)
               if finals[x].law == finals[y].law}
-    R.gate("M3/|Phi_A| on every law-agreeing pair", sorted(counts), [2])
-    say("M3 fact level measured: 56 agreeing pairs, |Phi_A| = 2 on each")
+    R.gate("M3/|Phi_A| and its verdict on every law-agreeing pair",
+           (sorted(counts), verdict_of(2, 2, 2)), ([2], "UNDERDETERMINED"))
+    # DISCLOSED: on the committed twelve this biconditional is a ONE-ITEM
+    # test.  Which items can bite at all, on this material?
+    R.gate("M3/items that bite on two law-DISagreeing committed pairs "
+           "(SP-A<-SP-B same atoms; SP-A<-SP-E 4 atoms vs 2)",
+           (bite_profile(finals[("SP-A", "F1")], finals[("SP-B", "F1")]),
+            bite_profile(finals[("SP-A", "F1")], finals[("SP-E", "F1")])),
+           (["3 probabilities"], ["1 boolean", "3 probabilities"]))
+    R.gate("M3/items 2 and 4 are CONSTANT on the committed twelve",
+           (len({finals[k].tokens[t].valset() for k in keys for t in (0, 1)}),
+            len({finals[k].tokens[t].avail for k in keys for t in (0, 1)})),
+           (1, 1))
+    say("M3 fact level measured: 56 agreeing pairs of 144")
 
-    # -- M3 at level B: frame-isomorphisms of the committed model ------------
-    # declared permutation scope: the wing exchange, composed with the pointer
-    # 3-cycles on each wing and the two qubit flips (72 declared permutations).
-    def build_perm(swap, sa, sb, fa, fb):
-        sh = {0: 1, 1: 2, 2: 0}
+    # -- the MULTI-ITEM controls: two variants on which items 2 and 4 bite ---
+    # V2: the ready state of R_A is declared "z" rather than "r".  The ready
+    # sector has probability zero at the final time, so the realized values and
+    # the whole law are UNCHANGED -- only the declared value range differs.
+    sp0 = ("SP-A", "F1")
+    base = finals[sp0]
+    v2 = Chart("V2", K, NC, base.legs, 0,
+               [Token("R_A", PARTA, {k: ("z" if k % 3 == 0 else POINTER3[k % 3])
+                                     for k in range(6)}, 1, cprov("A", 0)),
+                Token("R_B", PARTB, VALS, 2, cprov("B", 2))])
+    # V4: the same experiment continued by U_B twice more.  U_B^3 = 1, so the
+    # final propagator, and the record law, are untouched -- but R_B is no
+    # longer available: (H-avail) fails under U_B^2.  Erasure, computed.
+    UB = M.U_local("B", SETTINGS["SP-A"][1])
+    v4 = Chart("V4", K, NC, list(base.legs) + [UB, UB], 0,
+               [Token("R_A", PARTA, VALS, 1, cprov("A", 0)),
+                Token("R_B", PARTB, VALS, 2, cprov("B", 2))])
+    R.gate("M3/V4 is a genuine erasure: (U_B^3 = 1, law kept, R_B available?)",
+           (M.sp_mul(UB, M.sp_mul(UB, UB)) == sp_id(K, NC),
+            v4.law == base.law, v4.tokens[1].avail), (True, True, False))
+    R.gate("M3/V2 keeps the law and changes only the declared value range",
+           (v2.law == base.law, v2.tokens[0].valset() == base.tokens[0].valset()),
+           (True, False))
+    n2 = len(phi_set(base, v2))
+    n2d = len(phi_set(base, v2, items=[it for it in LIST_A
+                                       if it[0] != "2 values"]))
+    R.gate("M3/ITEM 2 BITES: |Phi_A(base<-V2)| with and without item 2",
+           (n2, n2d, bite_profile(base, v2)), (0, 2, ["2 values"]))
+    n4 = len(phi_set(base, v4, scope="historical"))
+    n4d = len(phi_set(base, v4, scope="historical",
+                      items=[it for it in LIST_A if it[0] != "4 availability"]))
+    R.gate("M3/ITEM 4 BITES: |Phi_A(base<-V4)| historical, with and without it",
+           (n4, n4d, bite_profile(base, v4, scope="historical")),
+           (0, 2, ["4 availability"]))
+    ext = dict(finals)
+    ext[("V2", "-")] = v2
+    ext[("V4", "-")] = v4
+    ek = sorted(ext)
+    viol2 = [(x, y) for x, y in itertools.product(ek, repeat=2)
+             if (ext[x].law == ext[y].law) != (len(phi_set(ext[x], ext[y])) > 0)]
+    R.gate("M3/the biconditional BREAKS on the 14-chart set (variant pairs)",
+           len(viol2), 26)
+    say("M3 multi-item controls measured (items 2 and 4 made to bite)")
 
-        def shift(v, t):
-            for _ in range(t):
-                v = sh[v]
-            return v
-        p = [0] * NC
-        for i in range(NC):
-            qa, qb, pa, pb = unidx(i)
-            qa2, qb2 = (qa ^ fa), (qb ^ fb)
-            pa2, pb2 = shift(pa, sa), shift(pb, sb)
-            p[i] = idx(qb2, qa2, pb2, pa2) if swap else idx(qa2, qb2, pa2, pb2)
-        return p
-
+    # -- M3 at level B: the declared scope, and its j0 filter ---------------
     scope = [build_perm(sw, sa, sb, fa, fb)
              for sw in (0, 1) for sa in range(3) for sb in range(3)
              for fa in (0, 1) for fb in (0, 1)]
-    R.gate("M3/declared permutation scope size", len(scope), 72)
+    fixers = [(sw, sa, sb, fa, fb)
+              for sw in (0, 1) for sa in range(3) for sb in range(3)
+              for fa in (0, 1) for fb in (0, 1)
+              if build_perm(sw, sa, sb, fa, fb)[0] == 0]
+    R.gate("M3/DECLARED SCOPE 72; the j0 filter admits exactly these",
+           (len(scope), fixers), (72, [(0, 0, 0, 0, 0), (1, 0, 0, 0, 0)]))
+    # the extension: pointer TRANSPOSITIONS fix the ready state, so a wider
+    # search survives the same filter.
+    scope_x = sorted({tuple(p) for p in scope}
+                     | {tuple(build_perm_tr(sw, ta, tb, fa, fb))
+                        for sw in (0, 1) for ta in (0, 1) for tb in (0, 1)
+                        for fa in (0, 1) for fb in (0, 1)})
+    scope_x = [list(p) for p in scope_x]
+    R.gate("M3/EXTENSION scope and its j0-fixing subset",
+           (len(scope_x), sum(1 for p in scope_x if p[0] == 0)), (96, 8))
 
-    def sp_conj(L, p):
-        return {(p[i], p[j]): v for (i, j), v in L.items()}
-
-    def frame_isos(x, y, level):
-        """token maps induced by a frame-isomorphism y -> x, over the declared
-        scope; `level` in {'amplitude','born'}."""
-        Lx = legs[x]
-        Ly = legs[y]
-        out = set()
-        for p in scope:
-            if p[0] != 0:
-                continue
-            cy = [sp_conj(L, p) for L in Ly]
-            if level == "born":
-                cy = [M.born_sparse(L) for L in cy]
-                tgt = [M.born_sparse(L) for L in Lx]
-            else:
-                tgt = list(Lx)
-            hit = None
-            for sg in itertools.permutations(range(3)):
-                if all(cy[t] == tgt[sg[t]] for t in range(3)):
-                    hit = sg
-                    break
-            if hit is None:
-                continue
-            # the induced token map: the wing exchange swaps R_A and R_B
-            swapped = (unidx(p[idx(0, 0, 1, 0)])[3] == 1)
-            out.add(((0, 1), (1, 0))[swapped])
-        return out
-
-    amp_iso, born_iso = {}, {}
+    nB, nBx, nBs, nBb, mapB = {}, {}, {}, {}, {}
     for sp in SETTING_ORDER:
         x, y = (sp, "F1"), (sp, "F2")
-        amp_iso[sp] = frame_isos(x, y, "amplitude")
-        born_iso[sp] = frame_isos(x, y, "born")
-    R.gate("M3/amplitude-level frame-isomorphism token maps, per setting",
-           [sorted(amp_iso[sp]) for sp in SETTING_ORDER], [[(0, 1)]] * 6)
-    R.gate("M3/born-level frame-isomorphism token maps, per setting",
-           [sorted(born_iso[sp]) for sp in SETTING_ORDER], [[(0, 1)]] * 6)
-    say("M3 frame-isomorphisms measured (amplitude and Born levels)")
+        i0 = iso_maps(finals[x], finals[y], scope)
+        p0 = phi_set(finals[x], finals[y], items=LIST_B, isos=i0)
+        nB[sp] = len(p0)
+        mapB[sp] = sorted(tuple(sorted(t.items())) for t in p0)
+        ix = iso_maps(finals[x], finals[y], scope_x)
+        nBx[sp] = len(phi_set(finals[x], finals[y], items=LIST_B, isos=ix))
+        isg = iso_maps(finals[x], finals[y], scope, level="sign")
+        nBs[sp] = len(phi_set(finals[x], finals[y], items=LIST_B, isos=isg))
+        ibo = iso_maps(finals[x], finals[y], scope, level="born")
+        nBb[sp] = len(phi_set(finals[x], finals[y], items=LIST_B, isos=ibo))
+    R.gate("M3/|Phi_B| F1<-F2 and the map itself, per setting: 2-element scope "
+           "/ 8-element extension",
+           ([nB[sp] for sp in SETTING_ORDER], [nBx[sp] for sp in SETTING_ORDER],
+            sorted({tuple(mapB[sp]) for sp in SETTING_ORDER})),
+           ([1] * 6, [1] * 6, [(((0, 0), (1, 1)),)]))
+    R.gate("M3/|Phi_B| if legs were matched up to sign / at the Born level",
+           ([nBs[sp] for sp in SETTING_ORDER], [nBb[sp] for sp in SETTING_ORDER]),
+           ([1] * 6, [1] * 6))
+    R.gate("M3/leg matching must be ORDER-FREE: isomorphisms if order required",
+           [sum(1 for p in scope if p[0] == 0
+                and all(sp_conj(M.legs(sp, "F2")[t], p) == M.legs(sp, "F1")[t]
+                        for t in range(3))) for sp in SETTING_ORDER], [0] * 6)
+    # does the provenance post-filter do any of the cutting here?
+    R.gate("M3/DECOMPOSITION: |Phi_B| without the provenance item, per setting",
+           [len(phi_set(finals[(sp, "F1")], finals[(sp, "F2")], items=LIST_A,
+                        isos=iso_maps(finals[(sp, "F1")], finals[(sp, "F2")],
+                                      scope))) for sp in SETTING_ORDER], [1] * 6)
+    say("M3 level B measured at the true scope (2 permutations) and wider (8)")
 
-    # -- level B on the committed model: the A-level maps that a
-    #    frame-isomorphism induces.  The wing exchange is NOT one of them.
-    nB = {}
-    for sp in SETTING_ORDER:
-        x, y = (sp, "F1"), (sp, "F2")
-        cands = phi_set(finals[x], finals[y], "A")
-        keep = []
-        for t in cands:
-            tau = dict(t)
-            full = tuple(tau[i] for i in range(2))
-            if full in amp_iso[sp]:
-                keep.append(t)
-        nB[sp] = len(keep)
-    R.gate("M3/|Phi_B| F1<-F2, per setting",
-           [nB[sp] for sp in SETTING_ORDER], [1] * 6)
-
-    # the leg matching must be ORDER-FREE: two frames of one experiment differ
-    # exactly by the order of two commuting legs.  If order were required, the
-    # committed model would have no frame-isomorphism at all.
-    ordered = []
-    for sp in SETTING_ORDER:
-        Lx, Ly = legs[(sp, "F1")], legs[(sp, "F2")]
-        ordered.append(sum(1 for p in scope if p[0] == 0
-                           and all(sp_conj(Ly[t], p) == Lx[t] for t in range(3))))
-    R.gate("M3/frame-isomorphisms if leg ORDER were required", ordered, [0] * 6)
-    R.gate("M3/|Phi_A| exceeds |Phi_B| at every setting",
-           all(len(phi_set(finals[(sp, "F1")], finals[(sp, "F2")], "A"))
-               == 2 and nB[sp] == 1 for sp in SETTING_ORDER), True)
-
-    # -- the token-overlap graph on the twelve committed charts, MEASURED ----
+    # -- the token-overlap graph, MEASURED and then CONSUMED ----------------
     t0 = time.time()
-    edgesB = 0
-    cross = 0
     adj = {x: set() for x in keys}
     for x, y in itertools.product(keys, repeat=2):
-        if frame_isos(x, y, "amplitude"):
-            edgesB += 1
+        if iso_maps(finals[x], finals[y], scope):
             adj[x].add(y)
-            if x[0] != y[0]:
-                cross += 1
     say("token-overlap graph measured over 144 ordered pairs  %.1fs"
         % (time.time() - t0))
-    R.gate("M3/ordered pairs admitting a frame-isomorphism", edgesB, 24)
-    R.gate("M3/cross-setting pairs admitting one", cross, 0)
-    comps = {}
+    edgesB = sum(len(v) for v in adj.values())
+    cross = sum(1 for x in keys for y in adj[x] if x[0] != y[0])
+    # components by BFS ON THE GRAPH ITSELF
+    und = {x: {y for y in adj[x] if y != x} | {y for y in keys if x in adj[y]
+                                               and y != x} for x in keys}
+    comps, seen = [], set()
     for x in keys:
-        comps.setdefault(x[0], []).append(x)
-    R.gate("M3/token-overlap graph: components and their sizes",
-           (len(comps), sorted({len(v) for v in comps.values()})), (6, [2]))
-    R.gate("M3/committed charts in a nonvacuous triple overlap",
-           sum(1 for c in comps.values() if len(c) >= 3), 0)
+        if x in seen:
+            continue
+        stack, comp = [x], []
+        seen.add(x)
+        while stack:
+            u = stack.pop()
+            comp.append(u)
+            for v in und[u]:
+                if v not in seen:
+                    seen.add(v)
+                    stack.append(v)
+        comps.append(sorted(comp))
+    tri = sum(1 for x, y, z in itertools.combinations(keys, 3)
+              if y in und[x] and z in und[y] and z in und[x])
+    R.gate("M3/overlap graph: (ordered edges, cross-setting, components, "
+           "sizes, triangles)",
+           (edgesB, cross, len(comps), sorted({len(c) for c in comps}), tri),
+           (24, 0, 6, [2], 0))
+    R.gate("M3/every component is one setting's two frames",
+           all(len({v[0] for v in c}) == 1 for c in comps), True)
 
-    # -- the preservation list BITES: each item rejects some candidate -------
-    R.gate("M3/list item 3 (probabilities) bites: SP-A <- SP-B",
-           len(phi_set(finals[("SP-A", "F1")], finals[("SP-B", "F1")], "A")), 0)
-    R.gate("M3/list item 1 (Boolean/atom count) bites: SP-A <- SP-E",
-           (len(finals[("SP-A", "F1")].law), len(finals[("SP-E", "F1")].law),
-            len(phi_set(finals[("SP-A", "F1")], finals[("SP-E", "F1")], "A"))),
-           (4, 2, 0))
-
-    # -- WHICH LAYER GROUNDS THE WING LABELLING (disclosure) -----------------
-    w = [0] * NC
-    for i in range(NC):
-        qa, qb, pa, pb = unidx(i)
-        w[i] = idx(qb, qa, pb, pa)
+    # -- WHAT GROUNDS THE WING LABELLING: the layer measurement --------------
+    w = build_perm(1, 0, 0, 0, 0)
 
     def col_of(T, sq):
-        d = {}
-        for (i, j), v in T.items():
-            if j == 0 and not K.is_zero(v):
-                d[i] = K.mul(v, v) if sq else v
-        return d
+        return {i: (K.mul(v, v) if sq else v) for (i, j), v in T.items()
+                if j == 0 and not K.is_zero(v)}
     layer = []
     for sp in SETTING_ORDER:
         Ta = M.propagators(sp, "F1")[:3]
         Tb = M.propagators(sp, "F2")[:3]
         amp = all({w[i]: v for i, v in col_of(tb, False).items()}
                   == col_of(ta, False) for ta, tb in zip(Ta, Tb))
+        sgn = all({w[i]: K.neg(v) for i, v in col_of(tb, False).items()}
+                  == col_of(ta, False) for ta, tb in zip(Ta, Tb))
         bor = all({w[i]: v for i, v in col_of(tb, True).items()}
                   == col_of(ta, True) for ta, tb in zip(Ta, Tb))
         law = finals[(sp, "F1")].law
         sym = all(law.get((x, y)) == law.get((y, x))
                   for x in ("+", "-") for y in ("+", "-"))
-        layer.append((amp, bor, sym))
-    R.gate("M3/wing swap on (amplitude j0 history, Born j0 history, final law)",
-           layer, [(False, False, True), (False, False, True),
-                   (False, False, True), (False, False, True),
-                   (False, True, True), (False, True, True)])
-    R.gate("M3/settings whose whole Born j0 history is wing-swap symmetric",
-           [sp for sp, L in zip(SETTING_ORDER, layer) if L[1]],
-           ["SP-E", "SP-F"])
-    R.gate("M3/final law is wing-swap symmetric at every setting",
-           all(L[2] for L in layer), True)
-    say("M3 layer analysis measured (what grounds the wing labelling)")
+        layer.append((amp, sgn, bor, sym))
+    R.gate("M3/wing swap on (j0 amplitudes, up to sign, j0 Born, final law)",
+           layer, [(False, False, False, True), (False, False, False, True),
+                   (False, False, False, True), (False, False, False, True),
+                   (False, True, True, True), (False, True, True, True)])
 
-    # -- M3 ROUTE-EXT: same-setting frames vs accidental agreement (M7) ------
-    # the common extension is the ONE process: read each final configuration
-    # through F1's record map and through F2's, and compare configuration by
-    # configuration.  The certificate rests on a measured fact -- the two
-    # frames assign every final configuration the same probability.
+    # the TIME-INDEXED realized process: each leg restricted to the
+    # configurations actually occupied before and after it.  This, and not the
+    # time-independent reachable set, is the process the model realizes.
+    # the DEFLATION CONTROL, kept from the pin's demand: restrict every leg to
+    # the configurations reachable from j0 at ANY time (a time-INDEPENDENT
+    # restriction).  If the wing-swap asymmetry were an artifact of U_prep's
+    # arbitrary orthogonal completion it would vanish here.  It does not.
+    reachctl = []
+    for sp in SETTING_ORDER:
+        rs = {0}
+        for fr in ("F1", "F2"):
+            for T in M.propagators(sp, fr)[:3]:
+                for (i, j), v in T.items():
+                    if j == 0 and not K.is_zero(v):
+                        rs.add(i)
+        LA = [sp_restrict(L, rs, rs) for L in M.legs(sp, "F1")]
+        LB = [sp_restrict(L, rs, rs) for L in M.legs(sp, "F2")]
+        ords = list(itertools.permutations(range(3)))
+        reachctl.append((len(rs),) + tuple(
+            any(all(leg_match(K, sp_conj(LB[t], w), LA[s[t]], lv)
+                    for t in range(3)) for s in ords)
+            for lv in ("exact", "sign", "born")))
+    R.gate("M3/time-INDEPENDENT reachable-subprocess control: (size, wing swap "
+           "exact/sign/Born)", reachctl,
+           [(21, False, False, False), (21, False, False, False),
+            (35, False, False, False), (35, False, False, False),
+            (9, False, False, False), (27, False, False, False)])
+
+    real, realB = [], []
+    for sp in SETTING_ORDER:
+        rl, rc = {}, {}
+        for fr in ("F1", "F2"):
+            T = M.propagators(sp, fr)[:3]
+            supp = [{0}] + [{i for (i, j), v in T[t].items()
+                             if j == 0 and not K.is_zero(v)} for t in range(3)]
+            rl[fr] = [sp_restrict(M.legs(sp, fr)[t], supp[t + 1], supp[t])
+                      for t in range(3)]
+            # the SAME charts, carried by the realized legs only
+            tA = Token("R_A", PARTA, VALS, 1 if fr == "F1" else 2,
+                       cprov("A", SETTINGS[sp][0]))
+            tB = Token("R_B", PARTB, VALS, 2 if fr == "F1" else 1,
+                       cprov("B", SETTINGS[sp][1]))
+            tA.occurred = tB.occurred = True
+            tA.avail = tB.avail = True
+            ch = Chart.__new__(Chart)
+            ch.name, ch.K, ch.n, ch.legs, ch.j0 = ("%s/%s@real" % (sp, fr), K,
+                                                   NC, rl[fr], 0)
+            ch.note, ch.tokens = "", [tA, tB]
+            ch.law = finals[(sp, fr)].law
+            rc[fr] = ch
+        orders = list(itertools.permutations(range(3)))
+        ex = any(all(sp_conj(rl["F2"][t], w) == rl["F1"][s[t]]
+                     for t in range(3)) for s in orders)
+        sg = any(all(leg_match(K, sp_conj(rl["F2"][t], w), rl["F1"][s[t]],
+                               "sign") for t in range(3)) for s in orders)
+        bo = any(all(leg_match(K, sp_conj(rl["F2"][t], w), rl["F1"][s[t]],
+                               "born") for t in range(3)) for s in orders)
+        real.append((ex, sg, bo))
+        realB.append(tuple(
+            sorted(tuple(sorted(t.items()))
+                   for t in phi_set(rc["F1"], rc["F2"], items=LIST_B,
+                                    isos=iso_maps(rc["F1"], rc["F2"], scope,
+                                                  level=lv)))
+            for lv in ("exact", "sign", "born")))
+    R.gate("M3/THE REALIZED PROCESS under the wing swap (exact, sign, Born)",
+           real, [(False, False, False)] * 4 + [(False, True, True)] * 2)
+    # THE ADJUDICATING MEASUREMENT: run level B on the realized legs alone.
+    # Where the realized process is wing-symmetric the token tie is NOT cut --
+    # so what cuts it on the full legs is declared structure the process never
+    # exercises, and the level at which it cuts is the STOCHASTIC one.
+    SWAP2 = ((0, 1), (1, 0))
+    R.gate("M3/TOKEN MAPS admitted by the REALIZED legs alone "
+           "(exact / up-to-sign / Born), per setting", realB,
+           [([], [], [])] * 4 + [([], [SWAP2], [SWAP2])] * 2)
+    # and WHICH declared leg refuses at the two symmetric settings
+    refuse = []
+    for sp in ("SP-E", "SP-F"):
+        LA, LB = M.legs(sp, "F1"), M.legs(sp, "F2")
+        refuse.append(tuple(any(leg_match(K, sp_conj(LB[t], w), LA[u], "born")
+                                for u in range(3)) for t in range(3)))
+    R.gate("M3/at SP-E,SP-F which FULL legs the wing swap matches (Born level)",
+           refuse, [(False, True, True), (False, True, True)])
+    say("M3 layer analysis: the realized process vs the declared legs")
+
+    # -- M3 ROUTE-EXT: the two frames' record maps, read off the one process -
     sp = "SP-A"
     T3a = M.propagators(sp, "F1")[2]
     T3b = M.propagators(sp, "F2")[2]
-    joint = {}
-    agreecfg = 0
-    for i in range(NC):
-        va = T3a.get((i, 0), K.zero)
-        vb = T3b.get((i, 0), K.zero)
-        pa, pb = K.mul(va, va), K.mul(vb, vb)
-        if pa != pb:
-            continue
-        agreecfg += 1
-        if K.is_zero(pa):
-            continue
-        _, _, ppa, ppb = unidx(i)
-        if ppa == 0 or ppb == 0:
-            continue
-        key = ((POINTER[ppa], POINTER[ppb]), (POINTER[ppa], POINTER[ppb]))
-        joint[key] = K.add(joint.get(key, K.zero), pa)
-    R.gate("M3/final configurations given equal probability by both frames",
-           agreecfg, 36)
-    ok, npos, bij = route_ext(K, joint)
-    R.gate("M3/ROUTE-EXT same-setting frames", (ok, npos, bij), (True, 4, True))
+    f1, f2 = finals[(sp, "F1")], finals[(sp, "F2")]
+    # a CORRUPTED partner: the same process with its two record partitions
+    # exchanged.  If the joint were built diagonally by construction this
+    # could not fail; it does.
+    f2c = Chart("SP-A/F2*", K, NC, list(M.legs(sp, "F2")), 0,
+                [Token("R_A", PARTB, VALS, 2, cprov("A", 0)),
+                 Token("R_B", PARTA, VALS, 1, cprov("B", 2))])
 
-    # M7: SP-A and SP-C have the same final law and DIFFERENT settings; the
-    # only available common extension is the product of two independent runs
+    def joint_frames(other):
+        j, dis = {}, 0
+        for i in range(NC):
+            va = T3a.get((i, 0), K.zero)
+            vb = T3b.get((i, 0), K.zero)
+            pa, pb = K.mul(va, va), K.mul(vb, vb)
+            if pa != pb:
+                dis += 1
+                continue
+            if K.is_zero(pa):
+                continue
+            if "r" in f1.read(i) or "r" in other.read(i):
+                continue
+            key = (f1.read(i), other.read(i))
+            j[key] = K.add(j.get(key, K.zero), pa)
+        return j, dis
+    jt, dis = joint_frames(f2)
+    jc, _ = joint_frames(f2c)
+    ok, npos, _ = route_ext(K, jt)
+    okc, nposc, bijc = route_ext(K, jc)
+    R.gate("M3/ROUTE-EXT same-setting frames vs a CORRUPTED partner",
+           ((ok, npos, dis), (okc, nposc, bijc)),
+           ((True, 4, 0), (False, 4, False)))
+
+    # M7: SP-A and SP-C -- same final law, different experiments
     xa, xc = ("SP-A", "F1"), ("SP-C", "F1")
-    R.gate("M7/SP-A and SP-C final laws agree", finals[xa].law == finals[xc].law,
-           True)
-    R.gate("M7/SP-A and SP-C are different settings",
-           SETTINGS["SP-A"] != SETTINGS["SP-C"], True)
+    R.gate("M7/same final law, different settings",
+           (finals[xa].law == finals[xc].law, SETTINGS["SP-A"] != SETTINGS["SP-C"]),
+           (True, True))
     prod = {}
     for k1, v1 in finals[xa].law.items():
         for k2, v2 in finals[xc].law.items():
             prod[(k1, k2)] = K.mul(v1, v2)
     ok7, npos7, bij7 = route_ext(K, prod)
-    R.gate("M7/ROUTE-EXT on the product extension", (ok7, bij7), (False, False))
-    R.gate("M7/positive entries in the product joint law", npos7, 16)
-    R.gate("M7/|Phi_A| SP-A <- SP-C", len(phi_set(finals[xa], finals[xc], "A")), 2)
+    n7A = len(phi_set(finals[xa], finals[xc]))
+    n7B = len(phi_set(finals[xa], finals[xc], items=LIST_B,
+                      isos=iso_maps(finals[xa], finals[xc], scope)))
+    R.gate("M7/(product-extension certificate, entries, |Phi_A|, |Phi_B|)",
+           (ok7, bij7, npos7, n7A, n7B), (False, False, 16, 2, 0))
+    R.gate("M7/verdicts A and B",
+           (verdict_of(n7A, 2, 2), verdict_of(n7B, 2, 2)),
+           ("UNDERDETERMINED", "ABSENT"))
     say("M7 accidental agreement measured inside the committed model")
 
     # -- M4: the intermediate slice -----------------------------------------
+    nA4, nB4, cert4 = {}, {}, {}
     for sp in SETTING_ORDER:
         x, y = (sp, "F1"), (sp, "F2")
-        nA = len(phi_set(inters[x], inters[y], "A"))
-        R.gate("M4/|Phi_A-candidate| intermediate %s" % sp, nA, 1)
-    R.gate("M4/intermediate marginals both uniform",
-           all(sorted(str(K.to_rat(v)) if K.to_rat(v) is not None else str(v)
-                      for v in inters[(sp, fr)].law.values()) == ["1/2", "1/2"]
-               for sp in SETTING_ORDER for fr in ("F1", "F2")), True)
-    # the overlap datum at t=2: F1 has written {PREP, MEAS-A}, F2 {PREP, MEAS-B}
-    shared = {"PREP"}
-    forced = []
+        nA4[sp] = len(phi_set(inters[x], inters[y]))
+        nB4[sp] = len(phi_set(inters[x], inters[y], items=LIST_B,
+                              isos=iso_maps(inters[x], inters[y], scope)))
+        # ROUTE-EXT at t = 2 inside F1's own process: read the configuration
+        # through F1's record map and through F2's.
+        j = {}
+        for i, pv in inters[x].dist().items():
+            key = (inters[x].read(i), inters[y].read(i))
+            j[key] = K.add(j.get(key, K.zero), pv)
+        cert4[sp] = route_ext(K, j)[:2]
+    R.gate("M4/|Phi_A| and |Phi_B| at the intermediate slice, per setting",
+           ([nA4[sp] for sp in SETTING_ORDER], [nB4[sp] for sp in SETTING_ORDER]),
+           ([1] * 6, [0] * 6))
+    R.gate("M4/the candidate is NOT certified: ROUTE-EXT at t=2, per setting",
+           [cert4[sp] for sp in SETTING_ORDER], [(False, 2)] * 6)
+    R.gate("M4/both intermediate marginals uniform (the map is "
+           "probability-preserving and still rejected)",
+           all(sorted(str(K.to_rat(v)) for v in inters[(sp, fr)].law.values())
+               == ["1/2", "1/2"] for sp in SETTING_ORDER for fr in ("F1", "F2")),
+           True)
+    # the shared record subalgebra, DERIVED: which declared record partitions
+    # have occurred in BOTH charts by the slice time
+    shared_int, shared_fin = [], []
     for sp in SETTING_ORDER:
         x, y = (sp, "F1"), (sp, "F2")
-        # a token is in the overlap subalgebra iff its whole provenance is shared
-        ov_a = [t for t in inters[x].tokens
-                if {t.prov.gen} | set(t.prov.anc) <= shared]
-        ov_b = [t for t in inters[y].tokens
-                if {t.prov.gen} | set(t.prov.anc) <= shared]
-        forced.append((len(ov_a), len(ov_b)))
-    R.gate("M4/overlap subalgebra at the intermediate slice is trivial",
-           set(forced), {(0, 0)})
-    # ROUTE-EXT at the final time, where both pointers exist: the joint law of
-    # A's and B's outcomes is NOT the graph of a value-preserving bijection
-    ext = {}
-    for (al, be), v in finals[("SP-A", "F1")].law.items():
-        ext[(al, be)] = v
-    ok4, npos4, bij4 = route_ext(K, ext)
-    R.gate("M4/ROUTE-EXT A-outcome vs B-outcome at SP-A", (ok4, npos4, bij4),
-           (False, 4, False))
-    extE = {}
-    for (al, be), v in finals[("SP-E", "F1")].law.items():
-        extE[(al, be)] = v
+        shared_int.append(sum(1 for ta in inters[x].tokens
+                              for tb in inters[y].tokens
+                              if same_partition(ta.part, tb.part)))
+        shared_fin.append(sum(1 for ta in finals[x].tokens
+                              for tb in finals[y].tokens
+                              if same_partition(ta.part, tb.part)))
+    R.gate("M4/shared record subalgebra DERIVED: intermediate vs final",
+           (shared_int, shared_fin), ([0] * 6, [2] * 6))
+    # the rejection actually performed: which item kills the SP-E candidate
+    extE = dict(finals[("SP-E", "F1")].law)
     okE, nposE, bijE = route_ext(K, extE)
-    R.gate("M4/ROUTE-EXT at SP-E: bijection-supported but value-reversing",
+    R.gate("M4/SP-E: bijection-supported but value-reversing, so REJECTED",
            (okE, nposE, bijE), (False, 2, True))
     say("M4 intermediate content measured")
 
-    # -- the reachable-subprocess control: is the grounding an artifact of
-    #    U_prep's arbitrary orthogonal completion?  Restrict every leg to the
-    #    configurations reachable from j0 and re-run the search.
-    reach_iso = []
-    for sp in SETTING_ORDER:
-        reach = {0}
-        for fr in ("F1", "F2"):
-            for T in M.propagators(sp, fr)[:3]:
-                for (i, j), v in T.items():
-                    if j == 0 and not K.is_zero(v):
-                        reach.add(i)
-        rs = set(reach)
-
-        def restrict(L):
-            return {(i, j): v for (i, j), v in L.items()
-                    if i in rs and j in rs and not K.is_zero(v)}
-        La = [restrict(L) for L in legs[(sp, "F1")]]
-        Lb = [restrict(L) for L in legs[(sp, "F2")]]
-        hits = 0
-        for p in scope:
-            if p[0] != 0 or sorted(p[i] for i in reach) != sorted(reach):
-                continue
-            cy = [{(p[i], p[j]): v for (i, j), v in L.items()} for L in Lb]
-            for sg in itertools.permutations(range(3)):
-                if all(cy[t] == La[sg[t]] for t in range(3)):
-                    hits += 1
-                    break
-        reach_iso.append((len(reach), hits))
-    R.gate("M3/reachable-subprocess isomorphisms (size, count) per setting",
-           reach_iso, [(21, 1), (21, 1), (35, 1), (35, 1), (9, 1), (27, 1)])
-
-    # -- M3 descent over a committed triple ---------------------------------
-    # the third chart is F2 under a configuration relabelling: the declared
-    # gauge acts trivially on the record algebra, so its record data are F2's.
+    # -- M3 descent over a GENUINELY DISTINCT triple ------------------------
+    # the third chart is F2 presented on a relabelled configuration set (the
+    # declared gauge), built as its OWN object: its own legs, its own initial
+    # configuration, its own token objects, its law RECOMPUTED.
     sp = "SP-A"
+    pi = build_perm(0, 0, 0, 1, 1)
+    f2 = finals[(sp, "F2")]
+    f2r = Chart("SP-A/F2^pi", K, NC, [sp_conj(L, pi) for L in f2.legs], pi[0],
+                [Token("R_A", push_part(PARTA, pi), VALS, 2, cprov("A", 0)),
+                 Token("R_B", push_part(PARTB, pi), VALS, 1, cprov("B", 2))])
+    R.gate("M3/the third chart is a DISTINCT object with derived record data",
+           (f2r.legs != f2.legs, f2r.j0, f2.j0,
+            f2r.tokens[0].part != f2.tokens[0].part, f2r.law == f2.law),
+           (True, 27, 0, True, True))
     names = ["F1", "F2", "F2r"]
-    charts = {"F1": finals[(sp, "F1")], "F2": finals[(sp, "F2")],
-              "F2r": finals[(sp, "F2")]}
-    phis, auts = {}, {}
-    for u, v in itertools.permutations(names, 2):
-        phis[(u, v)] = [dict(t) for t in phi_set(charts[u], charts[v], "A")]
-    for u in names:
-        auts[u] = [dict(t) for t in phi_set(charts[u], charts[u], "A")]
-    d = descent(names, phis, auts)
-    R.gate("M3/fact-level descent over a committed triple", d["verdict"],
-           "GROUPOID-AMALGAM")
-    R.gate("M3/fact-level coherent families, orbits",
-           (d["families"], d["orbits"]), (4, 1))
-    # the same triple at level B: only the isomorphism-induced map survives
-    idmap = {0: 0, 1: 1}
-    phisB = {k: [dict(idmap)] for k in phis}
-    autsB = {u: [dict(idmap)] for u in names}
+    charts = {"F1": finals[(sp, "F1")], "F2": f2, "F2r": f2r}
+    phisA, autsA = edge_sets(names, charts)
+    dA = descent(names, phisA, autsA)
+    R.gate("M3/fact-level descent on the real triple "
+           "(verdict, families, orbits, triples, moved, closed)",
+           (dA["verdict"], dA["families"], dA["orbits"], dA["triples"],
+            dA["moved"], dA["closed"]), ("GROUPOID-AMALGAM", 4, 1, 6, True, True))
+    R.gate("M3/fact-level selections: 2 per ordered edge, 6 edges",
+           ([len(phisA[e]) for e in sorted(phisA)],
+            [len(autsA[x]) for x in names]), ([2] * 6, [2] * 3))
+    isos3 = {(x, y): iso_maps(charts[x], charts[y], scope)
+             for x, y in itertools.product(names, repeat=2)}
+    phisB = {(x, y): phi_set(charts[x], charts[y], items=LIST_B,
+                             isos=isos3[(x, y)])
+             for x, y in itertools.permutations(names, 2)}
+    autsB = {x: phi_set(charts[x], charts[x], items=LIST_B, isos=isos3[(x, x)])
+             for x in names}
+    R.gate("M3/token-level edge set on the real triple",
+           ([len(phisB[e]) for e in sorted(phisB)],
+            [len(autsB[x]) for x in names]), ([1] * 6, [1] * 3))
     dB = descent(names, phisB, autsB)
-    R.gate("M3/token-level descent over the same triple", dB["verdict"],
-           "SET-AMALGAM")
     szB, injB = amalgam(names, charts, {k: v[0] for k, v in phisB.items()})
-    R.gate("M3/token-level amalgam size, injective", (szB, injB), (2, True))
-    say("M3 descent measured")
+    R.gate("M3/token-level descent on the real triple "
+           "(verdict, families, triples, amalgam size, injective)",
+           (dB["verdict"], dB["families"], dB["triples"], szB, injB),
+           ("SET-AMALGAM", 1, 6, 2, True))
+    say("M3 descent measured on a genuinely distinct triple")
 
-    TABLE.append(("M3 two-frame final outcomes", "SUCCEEDS (|Phi_A|=2)",
-                  "SUCCEEDS-FORCED (|Phi_B|=1)", "SET-AMALGAM at level B",
-                  "fact-candidate map exists on exactly the 56 law-agreeing "
-                  "ordered pairs of 144; the wing tie is broken by provenance"))
-    TABLE.append(("M4 intermediate frame content", "NOT FORCED (overlap "
-                  "trivial)", "FAILS-ABSENT", "vacuous (no shared token)",
-                  "a probability-preserving map exists and is REJECTED: "
-                  "frame-relativity respected"))
-    TABLE.append(("M7 accidental agreement", "FAILS ROUTE-EXT", "FAILS-ABSENT",
-                  "N/A", "SP-A and SP-C: same final law, different settings; "
-                  "the product extension is not bijection-supported"))
-    return finals, inters, amp_iso, born_iso
+    TABLE.append(("M3 two-frame final outcomes",
+                  "UNDERDETERMINED (|Phi_A|=2), certified",
+                  "FORCED (|Phi_B|=1, all 6 settings)",
+                  "GROUPOID (fact) / SET-AMALGAM (token)",
+                  "candidate map on exactly the 56 law-agreeing ordered pairs "
+                  "of 144; the wing tie is cut by the frame-isomorphism at "
+                  "the BORN level, not by the provenance filter; on the "
+                  "REALIZED legs alone SP-E and SP-F admit only the OPPOSITE "
+                  "(wing-swap) identification"))
+    TABLE.append(("M4 intermediate frame content", "FORCED but NOT CERTIFIED",
+                  "ABSENT (|Phi_B|=0)", "no shared subalgebra",
+                  "one token each, so |Phi_A|=1 carries no multiplicity; "
+                  "ROUTE-EXT at t=2 refuses it at every setting"))
+    TABLE.append(("M7 accidental agreement", "UNDERDETERMINED, NOT CERTIFIED",
+                  "ABSENT (|Phi_B|=0)", "no token edge",
+                  "SP-A and SP-C: one law, two experiments; the product "
+                  "extension has 16 positive entries"))
+    return scope
 
 
 # ===========================================================================
 # M5 -- RECORD ERASURE
 # ===========================================================================
-def m5():
+def m5(perms4):
     hr()
     print("M5 -- RECORD ERASURE  (control 5)")
     hr()
-    U1 = mat_mul(K8, CNOT, kron(K8, H, I2))
+    U1d = mat_mul(K8, CNOT, kron(K8, H, I2))
+    U1 = sp_of_dense(K8, U1d)
     part = [0, 1, 0, 1]
-    prov = Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",), False)
-    keep = kron(K8, H, I2)
-    erase = mat_mul(K8, kron(K8, H, I2), CNOT)
-    nore = kron(K8, H, I2)
+    keepd = kron(K8, H, I2)
+    erased = mat_mul(K8, kron(K8, H, I2), CNOT)
+    nored = kron(K8, H, I2)
+    keep, erase, nore = (sp_of_dense(K8, keepd), sp_of_dense(K8, erased),
+                         sp_of_dense(K8, nored))
 
-    P = Chart("P", K8, 4, [U1, keep], 0,
-              [Token("R", part, {0: "0", 1: "1"}, 0, prov)])
-    E = Chart("E", K8, 4, [U1, erase], 0,
-              [Token("R", part, {0: "0", 1: "1"}, 0,
-                     Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",), False))])
-    N = Chart("N", K8, 4, [nore, keep], 0,
-              [Token("R", part, {0: "0", 1: "1"}, 0,
-                     Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",), False))])
+    def tk():
+        return Token("R", part, {0: "0", 1: "1"}, 0,
+                     Prov("CX", {"q0", "q1"}, ("PREP-H",), ("original",)))
+
+    P = Chart("P", K8, 4, [U1, keep], 0, [tk()])
+    E = Chart("E", K8, 4, [U1, erase], 0, [tk()])
+    N = Chart("N", K8, 4, [nore, keep], 0, [tk()])
 
     # committed anchors
     R.anchor("M5/eraser H-corr holds [sec4_records.py:634]",
-             h_corr(support_of(K8, U1), 4, part), True)
+             h_corr(support_of(K8, U1d), 4, part), True)
     R.anchor("M5/eraser H-avail fails [sec4_records.py:635]",
-             h_avail(support_of(K8, erase), 4, part), False)
+             h_avail(support_of(K8, erased), 4, part), False)
     R.anchor("M5/no-record H-corr fails [sec4_records.py:209]",
-             h_corr(support_of(K8, nore), 4, part), False)
-    De = delta_field(K8, erase, U1)
+             h_corr(support_of(K8, nored), 4, part), False)
+    De = delta_field(K8, erased, U1d)
     R.anchor("M5/eraser defect values [sec4_records.py:633]",
              sorted({str(K8.to_rat(v)) for r in De for v in r}),
              ["-1/2", "0", "1/2"])
     R.anchor("M5/preserving defect zero [sec4_records.py:632]",
-             zero_mat(K8, delta_field(K8, keep, U1)), True)
-    Ce = tensor(K8, erase, U1, 4)
+             zero_mat(K8, delta_field(K8, keepd, U1d)), True)
+    Ce = tensor(K8, erased, U1d, 4)
     R.anchor("M5/eraser cross-sector tensor entries [sec7_descent.py:139]",
              cross_sector(K8, Ce, part, 4), 16)
+    R.anchor("M5/preserving cross-sector entries [sec7_descent.py:137]",
+             cross_sector(K8, tensor(K8, keepd, U1d, 4), part, 4), 0)
     R.gate("M5/eraser off-diagonal tensor entries (W6's own)",
            off_diagonal(K8, Ce, 4), 16)
-    Cp = tensor(K8, keep, U1, 4)
-    R.anchor("M5/preserving cross-sector entries [sec7_descent.py:137]",
-             cross_sector(K8, Cp, part, 4), 0)
 
-    # W6's own reading: occurrence vs availability
-    occ = (len(P.tokens) == 1, len(E.tokens) == 1, len(N.tokens) == 0)
-    R.gate("M5/historical occurrence P,E,N", occ, (True, True, True))
-    R.gate("M5/availability P,E",
-           (P.tokens[0].avail, E.tokens[0].avail), (True, False))
-    R.gate("M5/erased flag P,E",
+    R.gate("M5/occurrence vs availability: (historical, available) counts P,E,N",
+           ([len(x.live("historical")) for x in (P, E, N)],
+            [len(x.live("available")) for x in (P, E, N)]),
+           ([1, 1, 0], [1, 0, 0]))
+    R.gate("M5/erased flags P,E",
            (P.tokens[0].prov.erased, E.tokens[0].prov.erased), (False, True))
-    R.gate("M5/available token counts P,E,N",
-           (len(P.live("available")), len(E.live("available")),
-            len(N.live("available"))), (1, 0, 0))
-    R.gate("M5/historical token counts P,E,N",
-           (len(P.live("historical")), len(E.live("historical")),
-            len(N.live("historical"))), (1, 1, 0))
 
-    perms4 = all_perms(4)
-    # E vs N at the available level: both algebras trivial -- VACUOUS, not equal
-    R.gate("M5/|Phi_A(available)| E<-N", len(phi_set(E, N, "A")), 1)
-    R.gate("M5/|Phi_A(historical)| E<-N",
-           len(phi_set(E, N, "A", scope="historical")), 0)
-    R.gate("M5/|Phi_B(historical)| E<-N",
-           len(phi_set(E, N, "B", scope="historical", perms=perms4)), 0)
-    R.gate("M5/|Phi_B(historical)| P<-E",
-           len(phi_set(P, E, "B", scope="historical", perms=perms4)), 0)
-    R.gate("M5/|Phi_A(historical)| P<-E",
-           len(phi_set(P, E, "A", scope="historical")), 0)
-    # POSITIVE CONTROL: the zero above must be caused by the availability item
-    # and by nothing else.  P and E carry the same record law -- the record is
-    # written by the same leg -- so forcing availability equal must give 1.
+    # LEVEL A and LEVEL B, both scopes, all three pairs -- real measurements
+    def cell(ca, cb, scope):
+        i = iso_maps(ca, cb, perms4, cache_key=("m5", ca.name, cb.name))
+        na, nb = len(ca.live(scope)), len(cb.live(scope))
+        a_ = len(phi_set(ca, cb, scope=scope))
+        b_ = len(phi_set(ca, cb, scope=scope, items=LIST_B, isos=i))
+        return (a_, verdict_of(a_, na, nb), b_, verdict_of(b_, na, nb))
+    # the discriminator's emptiness guard: on an empty scope the single map is
+    # the EMPTY map and the comparison is VACUOUS -- at both levels, whatever
+    # the count.  (|Phi_B| = 0 here because no frame-isomorphism between the
+    # whole charts exists at all: E has one historical token and N has none.)
+    R.gate("M5/E<-N available: the EMPTY MAP is VACUOUS, not forced",
+           cell(E, N, "available"), (1, "VACUOUS", 0, "VACUOUS"))
+    R.gate("M5/E<-N historical: erased token is not 'no event'",
+           cell(E, N, "historical"), (0, "ABSENT", 0, "ABSENT"))
+    R.gate("M5/P<-E historical: availability separates them",
+           cell(P, E, "historical"), (0, "ABSENT", 0, "ABSENT"))
+    R.gate("M5/P<-E available: one available token against none",
+           cell(P, E, "available"), (0, "ABSENT", 0, "ABSENT"))
+    # POSITIVE CONTROL: the zero is caused by the availability item alone
     R.gate("M5/P and E carry the same record law", P.law == E.law, True)
+    R.gate("M5/which item kills P<-E historical",
+           bite_profile(P, E, scope="historical"), ["4 availability"])
     E.tokens[0].avail = True
-    R.gate("M5/availability forced equal: |Phi_A(historical)| P<-E",
-           len(phi_set(P, E, "A", scope="historical")), 1)
+    forced = len(phi_set(P, E, scope="historical"))
     E.tokens[0].avail = False
-    R.gate("M5/availability restored: |Phi_A(historical)| P<-E",
-           len(phi_set(P, E, "A", scope="historical")), 0)
-    TABLE.append(("M5 record erasure", "AVAILABILITY-SPLIT", "FAILS-ABSENT",
-                  "N/A (no triple)",
-                  "erased token != no event: historical counts 1,1,0"))
+    restored = len(phi_set(P, E, scope="historical"))
+    R.gate("M5/availability forced equal, then restored", (forced, restored),
+           (1, 0))
+    TABLE.append(("M5 record erasure", "ABSENT historical / VACUOUS available",
+                  "ABSENT (|Phi_B|=0)", "no triple declared",
+                  "historical counts (1,1,0) against available (1,0,0); "
+                  "the empty-scope comparison is called VACUOUS, not FORCED"))
     say("M5 done")
 
 
 # ===========================================================================
 # M6 -- SYMMETRIC DUPLICATE
 # ===========================================================================
-def m6():
+def m6(perms8):
     hr()
     print("M6 -- SYMMETRIC DUPLICATE  (control 6)")
     hr()
     L = mat_mul(K8, mat_mul(K8, cnot3(0, 2), cnot3(0, 1)), h3(0))
-    R.gate("M6/single leg unitary", is_unitary(K8, L), True)
-    R.gate("M6/the two CNOTs commute",
-           mat_mul(K8, cnot3(0, 1), cnot3(0, 2))
-           == mat_mul(K8, cnot3(0, 2), cnot3(0, 1)), True)
+    # the wing-swapped process, built INDEPENDENTLY from the gate primitives:
+    # the same circuit with the roles of qubits 1 and 2 exchanged.  Nothing is
+    # obtained by permuting L's entries.
+    Lsw = mat_mul(K8, mat_mul(K8, cnot3(0, 1), cnot3(0, 2)), h3(0))
+    R.gate("M6/leg unitary, and the independently built swapped leg equals it",
+           (is_unitary(K8, L), Lsw == L), (True, True))
     sig = [0] * 8
     for j in range(8):
         b = [(j >> (2 - t)) & 1 for t in range(3)]
         b[1], b[2] = b[2], b[1]
         sig[j] = (b[0] << 2) | (b[1] << 1) | b[2]
-    R.gate("M6/sigma is an automorphism of the leg (amplitudes)",
-           perm_conj(K8, L, sig) == L, True)
-    R.gate("M6/sigma fixes j0", sig[0] == 0, True)
-    # sigma preserves every committed observable AND the phase invariants
     R.gate("M6/sigma preserves the Born shadow",
-           perm_conj(K8, born(K8, L), sig) == born(K8, L), True)
+           [[born(K8, L)[sig[i]][sig[j]] for j in range(8)] for i in range(8)]
+           == born(K8, L), True)
 
-    def haag(Mx, i, ip, j, jp):
-        return K8.mul(K8.mul(Mx[i][j], Mx[ip][jp]),
-                      K8.mul(K8.conj(Mx[i][jp]), K8.conj(Mx[ip][j])))
-    quads = [(i, ip, j, jp) for i in range(8) for ip in range(i + 1, 8)
-             for j in range(8) for jp in range(j + 1, 8)]
-    Ls = perm_conj(K8, L, sig)
-    bad = sum(1 for (i, ip, j, jp) in quads
-              if haag(L, i, ip, j, jp) != haag(Ls, i, ip, j, jp))
-    R.gate("M6/four-cycle phase invariants preserved by sigma (784 quadruples)",
-           (len(quads), bad), (784, 0))
+    # THE PHASE SWEEP.  Compare the four-cycle invariant of the independently
+    # built swapped leg at sigma-relabelled indices against the original's.
+    # The identical sweep is then run on a PERTURBED leg that differs from L by
+    # a phase the Born shadow cannot see -- and it fails, so the sweep is not
+    # a tautology.
+    bad = sum(1 for (i, ip, j, jp) in QUADS8
+              if haag(L, i, ip, j, jp)
+              != haag(Lsw, sig[i], sig[ip], sig[j], sig[jp]))
+    Lp = [row[:] for row in L]
+    Lp[1][5] = K8.mul(Lp[1][5], K8.zpow(1))            # one entry, phase zeta_8
+    badp = sum(1 for (i, ip, j, jp) in QUADS8
+               if haag(Lp, i, ip, j, jp)
+               != haag(Lp, sig[i], sig[ip], sig[j], sig[jp]))
+    R.gate("M6/four-cycle sweep: (quadruples, violations on L, on a "
+           "phase-perturbed L')", (len(QUADS8), bad, badp), (784, 0, 2))
+    R.gate("M6/the perturbation is invisible to the Born shadow",
+           (born(K8, Lp) == born(K8, L),
+            sum(1 for q in QUADS8 if haag(L, *q) != haag(Lp, *q))), (True, 1))
 
     p1, p2 = bit_part(8, 1, 3), bit_part(8, 2, 3)
-    provA = Prov("CX-A", {"q0", "q1"}, ("PREP-H",), ("original",), False)
-    provB = Prov("CX-B", {"q0", "q2"}, ("PREP-H",), ("original",), False)
 
     def build(name):
-        return Chart(name, K8, 8, [L], 0,
-                     [Token("t1", p1, {0: "0", 1: "1"}, 0, provA),
-                      Token("t2", p2, {0: "0", 1: "1"}, 0, provB)])
+        return Chart(name, K8, 8, [sp_of_dense(K8, L)], 0,
+                     [Token("t1", p1, {0: "0", 1: "1"}, 0,
+                            Prov("CX-A", {"q0", "q1"}, ("PREP-H",),
+                                 ("original",))),
+                      Token("t2", p2, {0: "0", 1: "1"}, 0,
+                            Prov("CX-B", {"q0", "q2"}, ("PREP-H",),
+                                 ("original",)))])
 
     a, b, c = build("a"), build("b"), build("c")
-    R.gate("M6/both tokens occurred and are available",
-           [(t.occurred, t.avail) for t in a.tokens], [(True, True)] * 2)
-    R.gate("M6/joint law is the perfectly correlated pair",
-           sorted(a.law), [("0", "0"), ("1", "1")])
+    R.gate("M6/both tokens occurred and available; the law is the correlated "
+           "pair", ([(t.occurred, t.avail) for t in a.tokens], sorted(a.law)),
+           ([(True, True)] * 2, [("0", "0"), ("1", "1")]))
+    ok, npos, _ = route_ext(K8, dict(a.law))
+    R.gate("M6/ROUTE-EXT inside one chart certifies ONE fact", (ok, npos),
+           (True, 2))
 
-    perms8 = all_perms(8)
     t0 = time.time()
-    isos = iso_token_maps(a, b, perms8)
+    isoab = iso_maps(a, b, perms8, cache_key=("m6a", "m6b"))
     say("M6 isomorphism search over 8! permutations  %.1fs" % (time.time() - t0))
-    R.gate("M6/frame-isomorphism token maps", sorted(isos), [(0, 1), (1, 0)])
-    nA = len(phi_set(a, b, "A"))
-    nB = len(phi_set(a, b, "B", perms=perms8))
-    R.gate("M6/|Phi_A| a<-b", nA, 2)
-    R.gate("M6/|Phi_B| a<-b", nB, 2)
-    R.gate("M6/no committed datum distinguishes the tokens", nB > 1, True)
+    nA = len(phi_set(a, b))
+    nB = len(phi_set(a, b, items=LIST_B, isos=isoab))
+    R.gate("M6/|Phi_A|, |Phi_B| and their verdicts a<-b",
+           (nA, nB, verdict_of(nA, 2, 2), verdict_of(nB, 2, 2)),
+           (2, 2, "UNDERDETERMINED", "UNDERDETERMINED"))
+    # DISCLOSED CONTRAST: a name-comparing provenance filter WOULD choose.
+    nname = len(phi_set(a, b, items=LIST_B + [("nominal", it_nominal)],
+                        isos=isoab))
+    R.gate("M6/what a NAME-comparing provenance filter would return", nname, 1)
 
     names = ["a", "b", "c"]
     charts = {"a": a, "b": b, "c": c}
-    phis = {(x, y): [dict(t) for t in
-                     phi_set(charts[x], charts[y], "B", perms=perms8)]
+    isos = {(x, y): iso_maps(charts[x], charts[y], perms8,
+                             cache_key=("m6", x, y))
+            for x, y in itertools.product(names, repeat=2)}
+    phis = {(x, y): phi_set(charts[x], charts[y], items=LIST_B,
+                            isos=isos[(x, y)])
             for x, y in itertools.permutations(names, 2)}
-    auts = {x: [dict(t) for t in phi_set(charts[x], charts[x], "B",
-                                         perms=perms8)] for x in names}
-    R.gate("M6/|Aut| per chart", [len(auts[x]) for x in names], [2, 2, 2])
-    R.gate("M6/Phi sets inverse-closed",
-           all(tuple(sorted(invert(dict(t)).items())) in
-               [tuple(sorted(dict(u).items())) for u in
-                phi_set(charts[y], charts[x], "B", perms=perms8)]
-               for x, y in itertools.permutations(names, 2)
-               for t in phi_set(charts[x], charts[y], "B", perms=perms8)), True)
-    R.gate("M6/identity is in every Aut set",
-           all({0: 0, 1: 1} in auts[x] for x in names), True)
+    auts = {x: phi_set(charts[x], charts[x], items=LIST_B, isos=isos[(x, x)])
+            for x in names}
+    R.gate("M6/solver soundness: |Aut| per chart, Phi inverse-closed, identity "
+           "present",
+           ([len(auts[x]) for x in names],
+            all(invert(t) in phis[(y, x)] for (x, y) in phis
+                for t in phis[(x, y)]),
+            all({0: 0, 1: 1} in auts[x] for x in names)),
+           ([2, 2, 2], True, True))
     d = descent(names, phis, auts)
-    R.gate("M6/descent verdict", d["verdict"], "GROUPOID-AMALGAM")
-    R.gate("M6/coherent families of 8 selections", d["families"], 4)
-    R.gate("M6/gauge orbits on coherent families", d["orbits"], 1)
-    TABLE.append(("M6 symmetric duplicate", "SUCCEEDS-FORCED",
-                  "UNDERDETERMINED (|Phi|=2)", "GROUPOID-AMALGAM",
-                  "the tie survives every committed observable AND the phase "
-                  "invariants"))
+    R.gate("M6/descent (verdict, families, orbits, gauge moves them, Phi "
+           "gauge-closed, duplicate keys)",
+           (d["verdict"], d["families"], d["orbits"], d["moved"], d["closed"],
+            d["dupkeys"]), ("GROUPOID-AMALGAM", 4, 1, True, True, 0))
+    R.gate("M6/selections: 2 per ordered edge over 6 edges; the inverse law "
+           "cuts 64 to 8", (2 ** 6, sum(1 for pick in
+                                        itertools.product(*[phis[e] for e in
+                                                            sorted(phis)])
+                                        if all(pick[sorted(phis).index((y, x))]
+                                               == invert(pick[sorted(phis).index((x, y))])
+                                               for (x, y) in sorted(phis)))),
+           (64, 8))
+    TABLE.append(("M6 symmetric duplicate", "UNDERDETERMINED (|Phi_A|=2)",
+                  "UNDERDETERMINED (|Phi_B|=2)", "GROUPOID-AMALGAM",
+                  "the exchanging automorphism survives the Born shadow AND "
+                  "the 784 four-cycle invariants; only a name-comparing rule "
+                  "would choose"))
     say("M6 done")
-    return charts, phis, auts
+    return phis, auts
 
 
 # ===========================================================================
-# M8 -- PHASE BLINDNESS (the pin's HARD RULE, measured)
+# M8 -- PHASE IS NOT A CRITERION (the pin's HARD RULE, measured)
 # ===========================================================================
-def m8():
+def it_phase(ca, cb, tau, ta, tb):
+    """NOT on the preservation list.  The phase-consulting item, constructed
+    and actually run in M8: the two charts' composites must carry the same
+    multiset of four-cycle invariants."""
+    Da = sp_dense(ca.K, ca.final(), ca.n)
+    Db = sp_dense(cb.K, cb.final(), cb.n)
+    n = ca.n
+    qs = [(i, ip, j, jp) for i in range(n) for ip in range(i + 1, n)
+          for j in range(n) for jp in range(j + 1, n)]
+    return (sorted(repr(haag(Da, *q)) for q in qs)
+            == sorted(repr(haag(Db, *q)) for q in qs))
+
+
+def m8(perms4):
     hr()
     print("M8 -- PHASE IS NOT A CRITERION  (declared addition)")
     hr()
@@ -1442,83 +1828,110 @@ def m8():
     R.anchor("M8/limit tensor fully diagonal [sec7_descent.py:241]",
              off_diagonal(K8, tensor(K8, U2w, U1w, 4), 4), 0)
     P1, P2 = mat_mul(K8, U2w, U1w), mat_mul(K8, U2wp, U1w)
-
-    def haag(Mx, i, ip, j, jp):
-        return K8.mul(K8.mul(Mx[i][j], Mx[ip][jp]),
-                      K8.mul(K8.conj(Mx[i][jp]), K8.conj(Mx[ip][j])))
     R.anchor("M8/composites differ in the four-cycle invariant "
              "[sec7_descent.py:242]",
              haag(P1, 0, 2, 0, 2) != haag(P2, 0, 2, 0, 2), True)
 
-    # every record-level datum agrees
-    R.gate("M8/leg Born shadows agree", born(K8, U2w) == born(K8, U2wp), True)
-    R.gate("M8/composite Born shadows agree", born(K8, P1) == born(K8, P2), True)
+    R.gate("M8/every record-level datum agrees (leg and composite shadows)",
+           (born(K8, U2w) == born(K8, U2wp), born(K8, P1) == born(K8, P2)),
+           (True, True))
     part = [0, 0, 1, 1]
-    prov = Prov("W", {"c0", "c1"}, ("PREP",), ("original",), False)
-    a = Chart("a", K8, 4, [U1w, U2w], 0,
-              [Token("R", part, {0: "0", 1: "1"}, 0, prov)])
-    b = Chart("b", K8, 4, [U1w, U2wp], 0,
-              [Token("R", part, {0: "0", 1: "1"}, 0,
-                     Prov("W", {"c0", "c1"}, ("PREP",), ("original",), False))])
+
+    def tk():
+        return Token("R", part, {0: "0", 1: "1"}, 0,
+                     Prov("W", {"c0", "c1"}, ("PREP",), ("original",)))
+    a = Chart("a", K8, 4, [sp_of_dense(K8, U1w), sp_of_dense(K8, U2w)], 0, [tk()])
+    b = Chart("b", K8, 4, [sp_of_dense(K8, U1w), sp_of_dense(K8, U2wp)], 0,
+              [tk()])
     R.gate("M8/record algebras identical", a.law == b.law, True)
-    nA = len(phi_set(a, b, "A"))
-    R.gate("M8/|Phi_A| a<-b (phase NOT consulted)", nA, 1)
-    # what a phase-consulting rule would return
-    phase_ok = (haag(P1, 0, 2, 0, 2) == haag(P2, 0, 2, 0, 2))
-    R.gate("M8/|Phi_A| if phase were on the preservation list",
-           nA if phase_ok else 0, 0)
-    TABLE.append(("M8 phase blindness", "SUCCEEDS-FORCED", "N/A",
-                  "N/A (criterion test)",
-                  "a phase-consulting phi returns 0 where the record level "
-                  "returns 1: category error, measured"))
+    nA = len(phi_set(a, b))
+    # the phase-consulting phi, CONSTRUCTED and RUN
+    nP = len(phi_set(a, b, items=LIST_A + [("phase", it_phase)]))
+    R.gate("M8/|Phi_A| with the declared list, and with a phase item added",
+           (nA, nP, verdict_of(nA, 1, 1), verdict_of(nP, 1, 1)),
+           (1, 0, "FORCED", "ABSENT"))
+    # the same phase item must NOT wrongly kill a legitimate identification
+    U1r = sp_of_dense(K8, mat_mul(K8, CNOT, kron(K8, H, I2)))
+    U2r = sp_of_dense(K8, kron(K8, H, I2))
+    pr = (1, 2, 3, 0)
+    r1 = Chart("r1", K8, 4, [U1r, U2r], 0,
+               [Token("R", [0, 1, 0, 1], {0: "0", 1: "1"}, 0,
+                      Prov("CX", {"q0"}, ("PREP",), ("original",)))])
+    r2 = Chart("r2", K8, 4, [sp_conj(U1r, pr), sp_conj(U2r, pr)], pr[0],
+               [Token("R", push_part([0, 1, 0, 1], pr), {0: "0", 1: "1"}, 0,
+                      Prov("CX", {"q0"}, ("PREP",), ("original",)))])
+    R.gate("M8/the phase item is not indiscriminate: it passes a relabelling",
+           len(phi_set(r1, r2, items=LIST_A + [("phase", it_phase)])), 1)
+    TABLE.append(("M8 phase blindness", "FORCED with the declared list; "
+                  "ABSENT with phase added", "not applicable",
+                  "criterion test, no descent claim",
+                  "a phase-consulting phi was built and run: it returns 0 "
+                  "exactly where the record level returns 1"))
     say("M8 done")
 
 
 # ===========================================================================
 # M9 -- THE DESCENT DETECTOR, VALIDATED (declared addition)
 # ===========================================================================
-def m9(charts, phis, auts):
+def m9(phis, auts):
     hr()
     print("M9 -- DESCENT DETECTOR VALIDATION  (declared addition)")
     hr()
     names = ["a", "b", "c"]
-    # consistent declaration: every edge free (the M6 groupoid)
-    d0 = descent(names, phis, auts)
-    R.gate("M9/consistent declaration verdict", d0["verdict"],
-           "GROUPOID-AMALGAM")
-    # twisted declaration: two edges pinned to the identity, the third to the
-    # swap.  Each pinned edge is a legitimate member of its Phi set; the
-    # triangle holonomy is the transposition.
-    ident_ = {0: 0, 1: 1}
-    swap_ = {0: 1, 1: 0}
-    tw = {}
-    for x, y in itertools.permutations(names, 2):
-        tw[(x, y)] = [dict(ident_)]
-    tw[("a", "c")] = [dict(swap_)]
-    tw[("c", "a")] = [dict(swap_)]
-    d1 = descent(names, tw, {x: [dict(ident_)] for x in names})
-    R.gate("M9/twisted declaration verdict", d1["verdict"], "NO-DESCENT")
-    R.gate("M9/twisted coherent families", d1["families"], 0)
-    # the same three charts, consistent pinning
-    tw2 = {k: [dict(ident_)] for k in tw}
-    d2 = descent(names, tw2, {x: [dict(ident_)] for x in names})
-    R.gate("M9/consistent pinning verdict", d2["verdict"], "SET-AMALGAM")
-    # the fourth branch: two coherent families, trivial automorphisms, so the
-    # gauge cannot relate them -- UNDERDETERMINED, not GROUPOID.
+    ident_, swap_ = {0: 0, 1: 1}, {0: 1, 1: 0}
+    R.gate("M9/the consistent declaration reproduces M6's verdict",
+           descent(names, phis, auts)["verdict"], "GROUPOID-AMALGAM")
+
+    def edges(spec):
+        return {k: [dict(v)] for k, v in spec.items()}
+    base = {(x, y): ident_ for x, y in itertools.permutations(names, 2)}
+    tw = dict(base)
+    tw[("a", "c")] = swap_
+    tw[("c", "a")] = swap_
+    d1 = descent(names, edges(tw), {x: [dict(ident_)] for x in names})
+    d2 = descent(names, edges(base), {x: [dict(ident_)] for x in names})
+    R.gate("M9/holonomy: twisted vs consistent pinning of the SAME charts",
+           ((d1["verdict"], d1["families"]), (d2["verdict"], d2["families"])),
+           (("NO-DESCENT", 0), ("SET-AMALGAM", 1)))
+    # NEGATIVE CONTROL: an ASYMMETRIC declaration.  The reverse leg is
+    # consulted, not silently replaced by the inverse.
+    asym = dict(base)
+    asym[("b", "a")] = swap_
+    d3 = descent(names, edges(asym), {x: [dict(ident_)] for x in names})
+    R.gate("M9/asymmetric declaration (phi_ba != phi_ab^-1) must FAIL",
+           (d3["verdict"], d3["families"]), ("NO-DESCENT", 0))
+    # NEGATIVE CONTROL: a map with a MISSING KEY.  Triple equality is tested on
+    # the full domain, so this fails in both directions.
+    part = dict(base)
+    part[("a", "b")] = {0: 0}
+    d4 = descent(names, edges(part), {x: [dict(ident_)] for x in names})
+    R.gate("M9/a partial-domain map must FAIL the full-domain triple law",
+           (d4["verdict"], d4["families"]), ("NO-DESCENT", 0))
+    # the fourth branch: two coherent families, trivial automorphisms
     two = ["a", "b"]
-    d3 = descent(two, {("a", "b"): [dict(ident_), dict(swap_)]},
+    d5 = descent(two, {("a", "b"): [dict(ident_), dict(swap_)],
+                       ("b", "a"): [dict(ident_), dict(swap_)]},
                  {"a": [dict(ident_)], "b": [dict(ident_)]})
-    R.gate("M9/two families with trivial Aut", (d3["verdict"], d3["families"],
-                                                d3["orbits"]),
-           ("UNDERDETERMINED", 2, 2))
-    # and the classification's fifth branch: an empty Phi on some pair
-    d4 = descent(two, {("a", "b"): []}, {"a": [dict(ident_)],
+    R.gate("M9/two families, trivial Aut: UNDERDETERMINED, gauge cannot move "
+           "them", (d5["verdict"], d5["families"], d5["orbits"], d5["moved"]),
+           ("UNDERDETERMINED", 2, 2, False))
+    # the fifth branch
+    d6 = descent(two, {("a", "b"): []}, {"a": [dict(ident_)],
                                          "b": [dict(ident_)]})
-    R.gate("M9/empty Phi on a pair", d4["verdict"], "ABSENT-PAIR")
-    TABLE.append(("M9 detector validation", "N/A", "N/A",
-                  "NO-DESCENT (twisted) / SET-AMALGAM (consistent)",
-                  "the triple law has power: the SAME charts descend or fail "
-                  "by the declaration alone"))
+    R.gate("M9/empty Phi on a pair", d6["verdict"], "ABSENT-PAIR")
+    # the LATENT case the classification must not misreport: one coherent
+    # family, nontrivial Aut, gauge acting TRIVIALLY on it
+    d7 = descent(two, {("a", "b"): [dict(ident_)], ("b", "a"): [dict(ident_)]},
+                 {"a": [dict(ident_), dict(swap_)],
+                  "b": [dict(ident_), dict(swap_)]})
+    R.gate("M9/one family with nontrivial Aut: gauge action and closure "
+           "reported, not assumed",
+           (d7["verdict"], d7["families"], d7["moved"], d7["closed"]),
+           ("GROUPOID-AMALGAM", 1, True, False))
+    TABLE.append(("M9 detector validation", "not applicable", "not applicable",
+                  "all five branches reached",
+                  "holonomy, asymmetric declaration and partial-domain maps "
+                  "all FAIL; gauge closure is reported, not assumed"))
     say("M9 done")
 
 
@@ -1528,24 +1941,27 @@ def main():
     print("v12 W6 -- RECORD CO-REFERENCE AND EFFECTIVE DESCENT")
     print("exact arithmetic: Q(zeta_8) and Q(cos pi/8); no floats")
     print("=" * 78)
-    step0()
-    m1()
-    m2()
+    _, perms4, perms8 = step0()
+    m1(perms4)
+    m2(perms8)
     M = Composite()
-    finals, inters, amp_iso, born_iso = m3_m4_m7(M)
-    m5()
-    charts, phis, auts = m6()
-    m8()
-    m9(charts, phis, auts)
+    finals, inters = composite_charts(M)
+    m3_m4_m7(M, finals, inters)
+    m5(perms4)
+    phis, auts = m6(perms8)
+    m8(perms4)
+    m9(phis, auts)
 
     hr("=")
     print("THE DESCENT TABLE")
+    print("  vocabulary: FORCED |Phi|=1 / UNDERDETERMINED |Phi|>=2 / ABSENT")
+    print("  |Phi|=0 / VACUOUS empty scope / NO-INSTRUMENT no measurement")
     hr("=")
-    print("  %-28s %-20s %-26s %-46s" % ("model", "A (fact)", "B (event token)",
+    print("  %-28s %-38s %-42s %-38s" % ("model", "A (fact)", "B (event token)",
                                          "C (effective descent)"))
     hr()
     for row in TABLE:
-        print("  %-28s %-20s %-26s %-46s" % row[:4])
+        print("  %-28s %-38s %-42s %-38s" % row[:4])
         print("      %s" % row[4])
     hr()
 

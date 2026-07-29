@@ -1446,3 +1446,64 @@ FREEZE-ON-DELIVERY enforced (final run = delivery; zero
 post-run edits; no child audits).  The external hostile round
 runs after this repair lands.  Recorded after the dispatch
 occurred.
+
+## 2026-07-29 — W6 MAJOR REPAIR VERIFIED AND COMMITTED (v12
+## LEDGER #38)
+FROZEN delivery (final run = delivery, no post-run edits, no
+child audits; md5s d3f6b63c / 5d12f5a5 / 9f287c07 — all three
+adjudicator-confirmed); adjudicator rerun IDENTICAL modulo
+timings; 115 rows (16 ANCHOR — the same set, parent lines
+re-verified unmoved — 99 GATE), 115 pass / 0 fail, exit 0;
+falsification self-tests pass both ways; float sweep clean.
+ALL 22 FINDINGS FIXED OR REMOVED — the load-bearing repairs:
+the overlap graph now CONSUMED (BFS components + triangle count,
+measured); M3's level-B descent MEASURED on a genuinely distinct
+triple (F2^π its own object, j0=27) — SET-AMALGAM now carried by
+measurement; M6's phase sweep against an INDEPENDENTLY REBUILT
+swapped circuit with a perturbed-phase positive control (the
+sweep can fail: 2 violations under a Born-invisible ζ₈
+perturbation); M8's phase-consulting φ actually constructed
+(1 → 0, and not indiscriminate); the 2-of-72 scope GATED with a
+96-scope labelled extension (8 survive; |Φ_B| = 1 there too);
+route-ext rebuilt with the disagreement path COUNTED and
+negative controls failing properly; the phi_set level-B keying
+bug fixed with a regression gate; M2's FULL ordered edge set
+(copy edges 0/0/0/0, relabelling edges 1/1 — the delivered "no
+token edges" corrected); the discriminator vocabulary unified
+(M6-A now UNDERDETERMINED; M4-A FORCED-but-NOT-CERTIFIED; the
+emptiness guard → M5's VACUOUS); the triple-coherence law now
+full-domain equality with asymmetric declarations consulted;
+gauge closure + moved-ness gated; the biconditional stated as a
+one-item test WITH variants V2/V4 making items 2/4 bite (the
+biconditional BREAKS at 26 pairs on the 14-chart set — honest);
+provenance wired in and MEASURED (bites at M2 alone; does none
+of M3's cutting).  GATE ACCOUNTING: 137 → 115 rows; 11 old
+gates survive verbatim, 110 removed/merged/replaced, 88 of the
+99 new or re-specified.  OUTCOMES: same three obtain —
+FACT-DESCENT, SET-AMALGAM (scoped, measured), GROUPOID-AMALGAM
+(phase-survival clause now falsifiable) — with UNDERDETERMINED
+not a descent outcome (pair-level only; every physical family
+one gauge orbit), NO-DESCENT and BLOCKED not obtaining; T5″
+language kept; census kept.  **THE DELIVERED "FIBRE GROUNDS
+BASE TOKENS" CLAIM IS WITHDRAWN** — measured: the M3 cutting is
+done by the frame isomorphism at the BORN level (|Φ_B| = 1 under
+exact, up-to-sign AND Born leg matching), i.e. legitimate
+provenance-by-generating-dynamics under the pin; level-A
+phase-blindness confirmed by construction and measurement.  **A
+SHARPER MEASURED FINDING REPLACES IT:** on the REALIZED legs
+(each leg restricted to the configurations actually occupied
+before and after it), SP-A–SP-D admit NO level-B map at all,
+and SP-E/SP-F admit EXACTLY ONE — THE WING SWAP, the OPPOSITE
+of the identification the full declared legs force.  The
+identification at the symmetric settings is carried by
+transitions the process never takes.  The deflation control is
+kept and sharpened: the time-INDEPENDENT restriction (sizes
+21,21,35,35,9,27) still breaks the symmetry everywhere — the
+time-INDEXING is what matters.  Worker deviations (i)-(v)
+declared and accepted pending the round (the occurrence-at-
+writing-leg reading of sec4_records:53; the composite-token
+partition choice, gated; V2/V4 synthetic variants; the labelled
+96-scope; the ordered-edges descent semantics with the
+re-derived M6 count 4-of-8-of-64).  COMMITTED; the EXTERNAL
+hostile round next — it, not the child audit, can confer
+terminal.  Dispatch recorded after it occurs.
