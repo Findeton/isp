@@ -1157,3 +1157,71 @@ identity criterion); then W6-A/B/C with the coherence laws; the
 six controls as exact models; the deliverable = the DESCENT
 TABLE (model × sub-problem → outcome); six pre-registered
 outcomes.  Dispatch to follow; recorded after it occurs.
+
+## 2026-07-29 — W6 CENSUS DISPATCHED (v12 LEDGER #31)
+Background worker (Opus 5), bound to the frozen pin at 2efd05e;
+census-first with the blocked verdict first-class; the six
+controls; the phase-is-not-a-criterion rule and the four-gate
+discipline in the dispatch; deliverables v12/code/w6_*,
+v12/note-w6-record-coreference.md (GREEN-UNREVIEWED on landing).
+Runs in parallel with the paper-1 round per the user's order.
+This entry is written after the dispatch occurred.
+
+## 2026-07-29 — PAPER 1 ROUND ADJUDICATED: ACCEPT-WITH-FIXES
+## (PAPER1-BLOCKED-AT-FOUR-ITEMS); REPAIR DISPATCHED (v12 LEDGER
+## #32)
+The referee audited ALL 32 results — NO FALSE THEOREM; 119 of
+its own from-scratch recomputations agree exactly (incl. the
+whole declared n=5 sample rebuilt from prose alone: 653 patterns
+/ 2,100 classes / max μ=26 / 101 failures; the n=4 witness; the
+25 realizable supports with 6/1/9/9; the Hardy table; the
+residual censuses proved V-INDEPENDENT); the bundle re-ran
+369/369 exit 0; ALL 17 [B3] QUOTES VERIFIED VERBATIM against
+arXiv:2507.21192v1 fetched directly — including the load-bearing
+p.19 "partial fixing" — with the structural confirmations that
+[B3] never composes Γ across two division events (the paper's
+founding claim independently confirmed) and that Lemma 9.1's
+spanning hypothesis is genuinely NOT in [B3] (the paper's
+ownership of it correct).  One referee self-retraction (its own
+reversal-test sign bug).  THE FOUR BLOCKERS: **F1 (FATAL for
+self-containment)** Definition 4.9 does not determine its model —
+only column 0 of the preparation V is fixed; the printed 288
+differing entries and ranks 27/18 are V-DEPENDENT (legitimate
+completions give 576/432 and rank 9, and can flip a qualitative
+row of the §4.5 table); fix = print the bundle's V + mark
+V-independent vs V-dependent claims.  **F2 (MAJOR)** the
+φ-criterion prose in the main theorem's (⟹) contains a false
+sentence ("fixes every L₄ holonomy" — a seam 4-cycle has
+φ = e_k−e_ℓ ≠ 0); the bundle tests the correct subgroup-
+membership criterion; replacement supplied.  **F3 (MAJOR)** the
+reference list below journal standard ([10]/[17] cite no
+literature; [9]/[12] bare identifiers; [7]'s planar-sufficiency
+clause unsourced — adjudicated to Tsirelson 1987 J. Soviet Math.
+36 557–570; three orphans never body-cited).  **F4 (MAJOR)**
+§3.5's table killed by an unescaped pipe in $|$CHSH$|$.  Also:
+F5 two strides + one diagonal not reproducible from the text
+(numbers stand; provenance must be stated); F6 the ±14/625
+odd-channel claim true at the first pair, not sweep-wide (24
+distinct values); F7 numbering gaps + two mis-pointed
+contributions; F8 two false appendix statements + the paper's
+single forbidden token ("v12/" at line 2547); F9 scope-tag rule
+met by 5 of 12 contributions; F10 the attribution paragraph
+placed after the table it disclaims; F11 "decided by
+certificates" overstates the simplex leg; F12 column-
+stochasticity mis-cited to the p.29 axiom (it is [3] eq. (9)
+p.8); F13 the dilation branch never scoped out; F14 misc (5.5's
+one-line K_{n,n} gap, Unicode ⇒, bare eq.(20)s, unnamed realized
+contexts, the 9-pairs parenthetical).  **[REV4]'s four editorial
+items arrived mid-round and are adjudicated HERE:** E1 abstract
+restructured to foreground four results (the enumeration merges
+into §1.3); E2 the novelty hierarchy stated early (the
+cross-term identity is elementary; the principal contributions
+are the gauge reduction, record descent + limit, and the
+pair/composite boundary + completion); E3 §8 stays — THE USER'S
+NO-SPLIT ORDER — with one bridging paragraph; K's canonicality
+needs no further text (the round's proof audit: "correctly
+deflated", minimality correctly not claimed, the ΣK no-smuggling
+identity the right flag).  REPAIR DISPATCHED (paper text only;
+the bundle untouched and must re-run 369/369; renumbering to
+consecutive with mechanical cross-ref validation; the three
+audits re-run).  Recorded after the dispatch occurred.
