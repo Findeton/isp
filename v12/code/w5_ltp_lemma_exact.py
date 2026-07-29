@@ -17,6 +17,8 @@ w5_ltp_lemma_exact.py — v12 W5: THE LTP LEMMA about [B3]'s own framework.
            = Q(cos(pi/8)).  No float, no tolerance, no randomness.
   EXIT   : 0 unless a gate fails.  The unit's substantive finding is a
            NEGATIVE about a declared division-event set and exits 0.
+           Declared caveat: the exit code encodes GATE FAILURE only, not
+           the house rule about substantive negatives (SEC 0, CAPS).
 
   Scope: this file computes properties of [B3]'s FORMAL APPARATUS on ONE
   declared toy model.  No claim about nature.  No Bell-inequality claim,
@@ -25,6 +27,7 @@ w5_ltp_lemma_exact.py — v12 W5: THE LTP LEMMA about [B3]'s own framework.
   test.
 """
 
+import math
 import sys
 import time
 from collections import Counter
@@ -95,7 +98,11 @@ SRC = {
  "B3-sysc": ("[B3] p.10",
              "Division events are not global properties of the whole "
              "universe, but are SYSTEM-CENTRIC, just like various other "
-             "kinds of spontaneous time-translation-breaking in physics."),
+             "kinds of spontaneous time-translation-breaking in physics.  "
+             "In practice, a system may have multiple exact division "
+             "events, or they may be generated TO AN EXTREMELY GOOD "
+             "APPROXIMATION through interactions with other systems, AFTER "
+             "MARGINALIZING OVER THOSE OTHER SYSTEMS."),
  "B3-indiv": ("[B3] p.10",
               "Crucially, an indivisible stochastic process, as befits its "
               "name, will NOT GENERALLY OBEY A DIVISIBILITY CONDITION like "
@@ -123,15 +130,19 @@ SRC = {
                "times corresponding to division events, the model's "
                "dynamical laws consist of transition probabilities ... At "
                "the level of the given model, the DYNAMICAL LAWS ARE FIXED "
-               "FEATURES.  Epistemic axiom: ... This standalone probability "
-               "distribution ... is CONTINGENT, meaning that it can vary "
-               "between runs of the model."),
+               "FEATURES.  Epistemic axiom: The system has some "
+               "time-dependent standalone probability distribution to be in "
+               "a particular configuration at any given target time.  This "
+               "standalone probability distribution IS CONNECTED BETWEEN "
+               "DIFFERENT TIMES BY THE MODEL'S TRANSITION PROBABILITIES, "
+               "and is CONTINGENT, meaning that it can vary between runs of "
+               "the model."),
  "B3-meas": ("[B3] p.29 (dynamical axiom)",
              "For example, DIVISION EVENTS ARE GENERATED DURING A "
              "MEASUREMENT PROCESS, which can be modeled as just another "
              "stochastic process."),
- "B3-outcome": ("[B3] p.16",
-                "at the end of the measurement process, the measuring "
+ "B3-outcome": ("[B3] p.16 (quoted from mid-sentence; the cut is marked)",
+                "... at the end of the measurement process, the measuring "
                 "device will end up in one of its possible "
                 "MEASUREMENT-OUTCOME CONFIGURATIONS with a stochastic "
                 "probability that coincides with the standard Born rule."),
@@ -186,6 +197,15 @@ print("  DECLARED-LAW residual D_210, never the EXISTENTIAL object d_div")
 print("  (that census is U1's and BC1's).  Retrodictive matrices are not")
 print("  computed (BC2's cap, inherited).  No claim about frames is made or")
 print("  used; BC2's verdict is cited as data, not re-derived.")
+print()
+print("  EXIT-CODE STRUCTURE, declared as a known structural caveat: this")
+print("  file exits 1 if ANY gate fails and 0 otherwise.  The house rule")
+print("  'substantive negatives exit 0' is MET AS DELIVERED -- every gate")
+print("  passes, and the substantive negative (the forced denial of the")
+print("  declared division event) is carried by a PASSING gate, G6 -- but")
+print("  the exit structure does not ENCODE that rule: it encodes gate")
+print("  failure only.  A substantive negative expressed as a FAILING gate")
+print("  would exit 1.  Stated, not defended.")
 
 # ===========================================================================
 hdr(1, "THE FIELD K — irreducibility certified, arithmetic gated")
@@ -264,10 +284,12 @@ check("K1", "m HAS NO RATIONAL ROOT: by the rational-root theorem any "
 
 
 def _is_rat_square(x):
+    """Exact integer test (math.isqrt), as the committed BC2 receipt uses.
+    No float enters: the banner's 'NO float anywhere' is literal."""
     if x < 0:
         return False
     n, d = x.numerator, x.denominator
-    return int(n ** 0.5 + 0.5) ** 2 == n and int(d ** 0.5 + 0.5) ** 2 == d
+    return math.isqrt(n) ** 2 == n and math.isqrt(d) ** 2 == d
 
 
 _c1 = _is_rat_square(Fr(1) - Fr(1, 2))    # beta = 0 branch: z^2+z+1/8
@@ -367,24 +389,36 @@ print("""
       D_210  :=  Gamma(t <- 0)  -  Gamma(t <- t') Gamma(t' <- 0)
 
   for the DECLARED-LAW residual of [p0]'s T2' (NOT Delta^B, NOT d_div).
-  Then:
 
-  (a) VECTOR FORM (no extra hypothesis).  For every standalone
-      distribution p(0) the model actually runs on,
+  ADMISSIBLE p(0), defined once and used with this meaning throughout:
+  a standalone probability distribution over C at time 0 that the model
+  actually runs on -- i.e. one the EPISTEMIC AXIOM permits, being
+  'CONTINGENT, meaning that it can vary between runs of the model', and
+  'CONNECTED BETWEEN DIFFERENT TIMES BY THE MODEL'S TRANSITION
+  PROBABILITIES' [B3-axioms].  Nothing else is meant by 'admissible'
+  anywhere in this file.  Then:
+
+  (a) VECTOR FORM (no extra hypothesis).  For every ADMISSIBLE p(0),
 
           D_210 p(0) = 0.
 
-      Proof.  p(t') = Gamma(t' <- 0) p(0) and p(t) = Gamma(t <- 0) p(0)
-      by eq. (20) at the division event 0; p(t) = Gamma(t <- t') p(t') by
-      eq. (20) at the division event t'.  Substituting the first into the
-      third and subtracting the second gives D_210 p(0) = 0, using only
-      associativity of the matrix action.  QED
+      Proof.  The epistemic axiom's connecting clause [B3-axioms] is what
+      licenses reading the model's declared Gamma's as the matrices that
+      connect p(0) to later times, so eq. (20) [B3-ltp] applies at each
+      declared conditioning time.  Hence p(t') = Gamma(t' <- 0) p(0) and
+      p(t) = Gamma(t <- 0) p(0) by eq. (20) at the division event 0;
+      p(t) = Gamma(t <- t') p(t') by eq. (20) at the division event t'.
+      Substituting the first into the third and subtracting the second
+      gives D_210 p(0) = 0, using only associativity of the matrix
+      action.  QED
 
-  (b) MATRIX FORM, under H-SPAN.  If the standalone distributions
-      admissible across runs SPAN R^N -- the epistemic axiom read at full
-      strength ('CONTINGENT, meaning that it can vary between runs') while
-      the dynamical laws are 'FIXED FEATURES' [B3-axioms] -- then
-      D_210 = 0 exactly, as matrices.
+  (b) MATRIX FORM, under H-SPAN.  If the admissible standalone
+      distributions SPAN R^N -- H-SPAN, which is V12'S STRENGTHENING AND
+      IS NOT STATED BY [B3]; what [B3] states is only that p is
+      'CONTINGENT, meaning that it can vary between runs' while the
+      dynamical laws are 'FIXED FEATURES' [B3-axioms], which does not by
+      itself supply a spanning family -- then D_210 = 0 exactly, as
+      matrices.
 
   (c) THE FORCING (the contrapositive of (a)).  If the model exhibits a
       target time t and an admissible p(0) with D_210 p(0) != 0, then t'
@@ -471,7 +505,7 @@ check("L2", "H-SPAN IS LOAD-BEARING, BY EXACT SEPARATING INSTANCE: the "
       "residual D = [[1,-1],[-1,1]] is nonzero yet annihilates the "
       "distribution p = (1/2, 1/2), so the VECTOR form (a) is STRICTLY "
       "WEAKER than the matrix form (b); the matrix corollary genuinely "
-      "needs the full-strength epistemic reading",
+      "needs H-SPAN -- v12's strengthening, not stated by [B3]",
       any(x != 0 for r in DSEP for x in r) and all(x == 0 for x in _dp),
       f"D p = {[str(x) for x in _dp]}; D != 0")
 
@@ -940,14 +974,28 @@ hdr(5, "THE GATE — the LTP residual on the model, exact")
 print("""
   The model declares D = {0, 2, 3}: 0 by [B3-div], and 2 and 3 by
   [B3-meas] ('division events are generated during a measurement
-  process').  The lemma's hypotheses are therefore the model's own.  Take
-  t' = 2 and the target time t = 3, and evaluate
+  process').  The lemma's hypotheses are therefore the model's own.
+
+  THE STRENGTH OF THAT DECLARATION, stated before it is tested.  [B3]'s
+  own text HEDGES: division events 'may be generated TO AN EXTREMELY GOOD
+  APPROXIMATION through interactions with other systems, AFTER
+  MARGINALIZING OVER THOSE OTHER SYSTEMS' ([B3-sysc], p.10).  BC2's model
+  declares something STRONGER: an EXACT division event for the
+  UNMARGINALIZED 36-configuration composite (qA, qB, pA, pB together).
+  That stronger, exact, unmarginalized declaration is what the lemma
+  tests below.  [B3]'s hedged, approximate, marginalized reading is a
+  different claim and is NOT tested by this gate.
+
+  Take t' = 2 and the target time t = 3, and evaluate
 
      r  :=  D_210 p(0)  =  Gamma(3<-0) p(0) - Gamma(3<-2) Gamma(2<-0) p(0)
         =  p(3) - Gamma(3<-2) p(2),
 
-  on the model's own declared p(0) = delta_{j0}.  By lemma (c), any
-  nonzero r denies t' = 2 the status of a division event.
+  on the model's own declared p(0) = delta_{j0}, which is admissible in
+  the SEC 2 sense; the epistemic axiom's connecting clause [B3-axioms]
+  is what licenses reading the model's DECLARED Gamma(3<-2) as the matrix
+  that connects p(2) to p(3).  By lemma (c), any nonzero r denies t' = 2
+  the status of a division event OF THIS MODEL, as declared.
 """)
 
 VRES, VN = {}, {}
@@ -981,8 +1029,10 @@ check("G2", "THE RESIDUAL SUMS TO ZERO EXACTLY IN ALL TWELVE CELLS, as "
       not _sum_fail, f"failures {_sum_fail}")
 
 print()
-print("  THE CENSUS (nonzero entries of r out of 36; matrix residual out")
-print("  of 1296; the two must be simultaneously zero or nonzero here):")
+print("  THE NONZERO-COUNT CENSUS (nonzero entries of r out of 36; matrix")
+print("  residual out of 1296; the two must be simultaneously zero or")
+print("  nonzero here).  The VALUE census, which differs setting by")
+print("  setting, is printed separately below:")
 print()
 print("     setting  frame   |r| nonzero / 36    D_210 differing / 1296")
 for nm, a, b in SET:
@@ -1027,21 +1077,76 @@ _vals = sorted(set(fmt(_w[i]) for i in range(NC) if not kzero(_w[i])))
 print(f"     distinct values: {_vals}")
 print("     (all four are +-1/32 +- sqrt2/32; they cancel in pairs, G2)")
 
-check("G5", "THE WITNESS IS EXACTLY THE FOUR VALUES +-1/32 +- sqrt2/32, "
-      "each occurring four times, so the violation is irrational and "
-      "cannot be an arithmetic artefact of a rational truncation",
-      len(_vals) == 4 and all(
-          Counter(fmt(_w[i]) for i in range(NC)
-                  if not kzero(_w[i]))[v] == 4 for v in _vals),
-      f"value census {dict(Counter(fmt(_w[i]) for i in range(NC) if not kzero(_w[i])))}")
+# --- the per-setting value census: the three violated settings DIFFER ----
+CENS, NRAT = {}, {}
+for nm, a, b in SET:
+    for fr in ("F1", "F2"):
+        r = VRES[(nm, fr)]
+        CENS[(nm, fr)] = dict(Counter(fmt(x) for x in r if not kzero(x)))
+        NRAT[(nm, fr)] = sum(1 for x in r if not kzero(x)
+                             and toQ2(x)[1] == 0)
+
+print()
+print("  THE VALUE CENSUS, PER SETTING AND FRAME.  The census is NOT the")
+print("  same at the three violated settings, and no statement below is")
+print("  made across them: SP-C and SP-D share one census, SP-F has")
+print("  another.  (The six clean cells have empty censuses.)")
+print()
+for nm, a, b in SET:
+    for fr in ("F1", "F2"):
+        cen = CENS[(nm, fr)]
+        if not cen:
+            continue
+        print(f"     {nm} {fr}: {VN[(nm,fr)]} nonzero entries, "
+              f"{len(cen)} DISTINCT VALUES, {NRAT[(nm,fr)]} of "
+              f"{VN[(nm,fr)]} RATIONAL")
+        for v in sorted(cen):
+            print(f"          {v:>16s}  x {cen[v]}")
+
+CD_CENSUS = {"-1/32-(1/32)r2": 4, "-1/32+(1/32)r2": 4,
+             "1/32-(1/32)r2": 4, "1/32+(1/32)r2": 4}
+_cd = [(nm, fr) for nm in ("SP-C", "SP-D") for fr in ("F1", "F2")
+       if CENS[(nm, fr)] != CD_CENSUS or NRAT[(nm, fr)] != 0]
+check("G5", "AT SP-C AND SP-D ONLY, THE RESIDUAL TAKES EXACTLY THE FOUR "
+      "IRRATIONAL VALUES +-1/32 +- sqrt2/32, EACH FOUR TIMES, IN BOTH "
+      "FRAMES: none of the 16 entries is rational there, so at those two "
+      "settings the violation cannot be an arithmetic artefact of a "
+      "rational truncation.  THE CLAIM IS SCOPED TO SP-C/SP-D AND IS "
+      "FALSE AT SP-F, which is gated separately at G5b",
+      not _cd,
+      f"censuses {[(nm, fr, sorted(CENS[(nm,fr)].items()), NRAT[(nm,fr)]) for nm in ('SP-C','SP-D') for fr in ('F1','F2')]}; "
+      f"mismatches {_cd}")
+
+F_CENSUS = {"-1/64": 4, "1/64": 4,
+            "-3/64+(1/32)r2": 2, "-3/64-(1/32)r2": 2,
+            "3/64+(1/32)r2": 2, "3/64-(1/32)r2": 2}
+_fc = [(nm, fr) for nm in ("SP-F",) for fr in ("F1", "F2")
+       if CENS[(nm, fr)] != F_CENSUS or NRAT[(nm, fr)] != 8]
+check("G5b", "AT SP-F THE CENSUS IS DIFFERENT AND HALF-RATIONAL: SIX "
+      "distinct values {-1/64 x4, +1/64 x4, -3/64+(1/32)sqrt2 x2, "
+      "-3/64-(1/32)sqrt2 x2, +3/64+(1/32)sqrt2 x2, +3/64-(1/32)sqrt2 x2}, "
+      "in BOTH frames, with EXACTLY 8 OF THE 16 NONZERO ENTRIES RATIONAL.  "
+      "The irrationality argument of G5 therefore does NOT extend to SP-F; "
+      "the violation there is still exact, but it is not carried by "
+      "irrationality",
+      not _fc,
+      f"censuses {[(fr, sorted(CENS[('SP-F',fr)].items()), NRAT[('SP-F',fr)]) for fr in ('F1','F2')]}; "
+      f"mismatches {_fc}")
 
 check("G6", "THE FORCING FIRES: at SP-C, SP-D and SP-F, in both frames, "
       "[B3]'s own eqs. (19)-(20) at the division events 0 and t' = 2 are "
       "CONTRADICTED by the model's own declared law on the model's own "
       "declared p(0).  By lemma (c), t' = 2 IS NOT A DIVISION EVENT of "
-      "those models -- and t' = 2 is exactly where [B3-meas] says a "
-      "measurement generates one.  THE DENIAL IS FORCED BY THE FRAMEWORK, "
-      "NOT IMPOSED FROM OUTSIDE",
+      "those models AS DECLARED -- i.e. not an EXACT division event for "
+      "the UNMARGINALIZED 36-configuration composite, which is what BC2's "
+      "model declares where [B3-meas]'s example places a "
+      "measurement-generated one.  SCOPED: [B3] p.10 hedges that "
+      "interaction-generated division events hold 'to an extremely good "
+      "approximation ... after marginalizing over those other systems' "
+      "([B3-sysc]), and that hedged, marginalized reading is NOT tested "
+      "here.  What is forced is the denial of the EXACT UNMARGINALIZED "
+      "declaration -- forced by the framework's own equations, not "
+      "imposed from outside",
       VIOL == ["SP-C", "SP-D", "SP-F"] and CLEAN == ["SP-A", "SP-B", "SP-E"],
       f"forced denial at {VIOL}; consistent at {CLEAN}")
 
@@ -1092,11 +1197,25 @@ print(f"""
     * the declared intermediate division event t' = 2 violates [B3]'s own
       law of total probability at SP-C, SP-D and SP-F, in both frames, ON
       THE MODEL'S OWN DECLARED p(0): the residual has 16 nonzero entries
-      of 36, with the four irrational values +-1/32 +- sqrt2/32;
+      of 36 at each;
 
-    * by lemma (c) the framework therefore FORCES DENYING that a division
-      event occurs there -- at exactly the place [B3] p.29 says a
-      measurement generates one.  The denial is [B3]'s, not v12's.
+    * THE VALUE CENSUS IS NOT THE SAME AT THE THREE SETTINGS, and the
+      receipt states them separately (G5, G5b).  At SP-C and SP-D: four
+      distinct values +-1/32 +- sqrt2/32, each four times, ALL SIXTEEN
+      IRRATIONAL.  At SP-F: SIX distinct values -- -1/64 x4, +1/64 x4,
+      +-3/64 +- (1/32)sqrt2 x2 each -- of which EIGHT OF THE SIXTEEN
+      ENTRIES ARE RATIONAL.  The irrationality argument is therefore
+      scoped to SP-C/SP-D and is NOT made at SP-F;
+
+    * by lemma (c) the framework therefore FORCES DENYING that an EXACT
+      division event for the UNMARGINALIZED composite occurs there -- at
+      the place where BC2's model, following [B3] p.29's
+      measurement-generates-a-division-event example, declares one.  The
+      denial is forced by [B3]'s own equations, not by v12.  SCOPED: [B3]
+      p.10's hedged reading -- interaction-generated division events
+      holding 'to an extremely good approximation ... after marginalizing
+      over those other systems' -- is a different claim and is untested
+      by this gate.
 
   WHAT IS NOT CLAIMED: nothing about nature; nothing about frames (BC2
   owns that and is cited, not re-derived); nothing about existential
@@ -1113,5 +1232,8 @@ if nfail:
     print("  FAILED GATES: " + ", ".join(g[0] for g in GATES if not g[1]))
     sys.exit(1)
 print("  EXIT 0 — the unit's finding is a substantive NEGATIVE about a")
-print("  declared division-event set, and exits 0 by house rule.")
+print("  declared division-event set, and exits 0 by house rule.  Declared")
+print("  caveat (SEC 0): the exit code encodes GATE FAILURE only, not that")
+print("  rule; the rule is met here because G6 carries the negative and")
+print("  passes.")
 sys.exit(0)

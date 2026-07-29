@@ -16,7 +16,7 @@ exactly where the declared law fails to compose on the actual p.
 SEC 0  THE REGISTRY — every source a gate tests against, quoted, page-cited   [+0s]
 ==============================================================================
   [B3-axioms] [B3] p.29 (Section 5, the three axioms)
-        "Kinematical axiom: ... The configuration space is a FIXED feature of the model, meaning that it does not vary between real-world runs or instantiations of the model.  Dynamical axiom: For arbitrary target times, and for conditioning times corresponding to division events, the model's dynamical laws consist of transition probabilities ... At the level of the given model, the DYNAMICAL LAWS ARE FIXED FEATURES.  Epistemic axiom: ... This standalone probability distribution ... is CONTINGENT, meaning that it can vary between runs of the model."
+        "Kinematical axiom: ... The configuration space is a FIXED feature of the model, meaning that it does not vary between real-world runs or instantiations of the model.  Dynamical axiom: For arbitrary target times, and for conditioning times corresponding to division events, the model's dynamical laws consist of transition probabilities ... At the level of the given model, the DYNAMICAL LAWS ARE FIXED FEATURES.  Epistemic axiom: The system has some time-dependent standalone probability distribution to be in a particular configuration at any given target time.  This standalone probability distribution IS CONNECTED BETWEEN DIFFERENT TIMES BY THE MODEL'S TRANSITION PROBABILITIES, and is CONTINGENT, meaning that it can vary between runs of the model."
   [B3-dict] [B3] p.11, eq. (25)
         "Gamma_ij(t <- 0) = |Theta_ij(t <- 0)|^2.  Note that this formula is NOT A POSTULATE, BUT AN IDENTITY, and that the potential matrix Theta(t <- 0), which will be called a TIME-EVOLUTION OPERATOR in what follows, is NOT UNIQUE."
   [B3-div] [B3] p.9 (below eq. 21)
@@ -33,10 +33,10 @@ SEC 0  THE REGISTRY — every source a gate tests against, quoted, page-cited   
         "The only available Chapman-Kolmogorov equations (5) take the simple form p(i,t) = SUM_j p(i,t|j,t0) p(j,t0), which is just the LAW OF TOTAL PROBABILITY. ... Equivalently, in matrix notation, p(t) = Gamma(t <- t0) p(t0)."
   [B3-meas] [B3] p.29 (dynamical axiom)
         "For example, DIVISION EVENTS ARE GENERATED DURING A MEASUREMENT PROCESS, which can be modeled as just another stochastic process."
-  [B3-outcome] [B3] p.16
-        "at the end of the measurement process, the measuring device will end up in one of its possible MEASUREMENT-OUTCOME CONFIGURATIONS with a stochastic probability that coincides with the standard Born rule."
+  [B3-outcome] [B3] p.16 (quoted from mid-sentence; the cut is marked)
+        "... at the end of the measurement process, the measuring device will end up in one of its possible MEASUREMENT-OUTCOME CONFIGURATIONS with a stochastic probability that coincides with the standard Born rule."
   [B3-sysc] [B3] p.10
-        "Division events are not global properties of the whole universe, but are SYSTEM-CENTRIC, just like various other kinds of spontaneous time-translation-breaking in physics."
+        "Division events are not global properties of the whole universe, but are SYSTEM-CENTRIC, just like various other kinds of spontaneous time-translation-breaking in physics.  In practice, a system may have multiple exact division events, or they may be generated TO AN EXTREMELY GOOD APPROXIMATION through interactions with other systems, AFTER MARGINALIZING OVER THOSE OTHER SYSTEMS."
   [B3-uni] [B3] p.18 (below eq. 64)
         "an N x N matrix is called UNISTOCHASTIC if its individual entries are expressible as the modulus-squares of the corresponding entries of an N x N unitary matrix."
   [bc1] bc/note-bc1-division-event-composition.md @ 42d8610
@@ -71,6 +71,15 @@ SEC 0  THE REGISTRY — every source a gate tests against, quoted, page-cited   
   (that census is U1's and BC1's).  Retrodictive matrices are not
   computed (BC2's cap, inherited).  No claim about frames is made or
   used; BC2's verdict is cited as data, not re-derived.
+
+  EXIT-CODE STRUCTURE, declared as a known structural caveat: this
+  file exits 1 if ANY gate fails and 0 otherwise.  The house rule
+  'substantive negatives exit 0' is MET AS DELIVERED -- every gate
+  passes, and the substantive negative (the forced denial of the
+  declared division event) is carried by a PASSING gate, G6 -- but
+  the exit structure does not ENCODE that rule: it encodes gate
+  failure only.  A substantive negative expressed as a FAILING gate
+  would exit 1.  Stated, not defended.
 
 ==============================================================================
 SEC 1  THE FIELD K — irreducibility certified, arithmetic gated   [+0s]
@@ -109,24 +118,36 @@ SEC 2  THE LEMMA — stated, and its two non-trivial steps gated formally   [+0s
       D_210  :=  Gamma(t <- 0)  -  Gamma(t <- t') Gamma(t' <- 0)
 
   for the DECLARED-LAW residual of [p0]'s T2' (NOT Delta^B, NOT d_div).
-  Then:
 
-  (a) VECTOR FORM (no extra hypothesis).  For every standalone
-      distribution p(0) the model actually runs on,
+  ADMISSIBLE p(0), defined once and used with this meaning throughout:
+  a standalone probability distribution over C at time 0 that the model
+  actually runs on -- i.e. one the EPISTEMIC AXIOM permits, being
+  'CONTINGENT, meaning that it can vary between runs of the model', and
+  'CONNECTED BETWEEN DIFFERENT TIMES BY THE MODEL'S TRANSITION
+  PROBABILITIES' [B3-axioms].  Nothing else is meant by 'admissible'
+  anywhere in this file.  Then:
+
+  (a) VECTOR FORM (no extra hypothesis).  For every ADMISSIBLE p(0),
 
           D_210 p(0) = 0.
 
-      Proof.  p(t') = Gamma(t' <- 0) p(0) and p(t) = Gamma(t <- 0) p(0)
-      by eq. (20) at the division event 0; p(t) = Gamma(t <- t') p(t') by
-      eq. (20) at the division event t'.  Substituting the first into the
-      third and subtracting the second gives D_210 p(0) = 0, using only
-      associativity of the matrix action.  QED
+      Proof.  The epistemic axiom's connecting clause [B3-axioms] is what
+      licenses reading the model's declared Gamma's as the matrices that
+      connect p(0) to later times, so eq. (20) [B3-ltp] applies at each
+      declared conditioning time.  Hence p(t') = Gamma(t' <- 0) p(0) and
+      p(t) = Gamma(t <- 0) p(0) by eq. (20) at the division event 0;
+      p(t) = Gamma(t <- t') p(t') by eq. (20) at the division event t'.
+      Substituting the first into the third and subtracting the second
+      gives D_210 p(0) = 0, using only associativity of the matrix
+      action.  QED
 
-  (b) MATRIX FORM, under H-SPAN.  If the standalone distributions
-      admissible across runs SPAN R^N -- the epistemic axiom read at full
-      strength ('CONTINGENT, meaning that it can vary between runs') while
-      the dynamical laws are 'FIXED FEATURES' [B3-axioms] -- then
-      D_210 = 0 exactly, as matrices.
+  (b) MATRIX FORM, under H-SPAN.  If the admissible standalone
+      distributions SPAN R^N -- H-SPAN, which is V12'S STRENGTHENING AND
+      IS NOT STATED BY [B3]; what [B3] states is only that p is
+      'CONTINGENT, meaning that it can vary between runs' while the
+      dynamical laws are 'FIXED FEATURES' [B3-axioms], which does not by
+      itself supply a spanning family -- then D_210 = 0 exactly, as
+      matrices.
 
   (c) THE FORCING (the contrapositive of (a)).  If the model exhibits a
       target time t and an admissible p(0) with D_210 p(0) != 0, then t'
@@ -139,7 +160,7 @@ SEC 2  THE LEMMA — stated, and its two non-trivial steps gated formally   [+0s
   Delta^B, which by [w1p] can be nonzero on a divisible process.
 
   [PASS] L1 THE ONLY STEP THE PROOF OF (a) USES IS FORMAL: with all 21 entries INDETERMINATE over Q, Gamma_21(Gamma_10 p0) - (Gamma_21 Gamma_10) p0 is identically the zero polynomial vector -- associativity of the matrix action, no property of stochasticity assumed  (N = 3; monomials on each side 27; surviving monomials 0)
-  [PASS] L2 H-SPAN IS LOAD-BEARING, BY EXACT SEPARATING INSTANCE: the residual D = [[1,-1],[-1,1]] is nonzero yet annihilates the distribution p = (1/2, 1/2), so the VECTOR form (a) is STRICTLY WEAKER than the matrix form (b); the matrix corollary genuinely needs the full-strength epistemic reading  (D p = ['0', '0']; D != 0)
+  [PASS] L2 H-SPAN IS LOAD-BEARING, BY EXACT SEPARATING INSTANCE: the residual D = [[1,-1],[-1,1]] is nonzero yet annihilates the distribution p = (1/2, 1/2), so the VECTOR form (a) is STRICTLY WEAKER than the matrix form (b); the matrix corollary genuinely needs H-SPAN -- v12's strengthening, not stated by [B3]  (D p = ['0', '0']; D != 0)
   [PASS] L3 AND SPANNING RESTORES IT: the same D fails to annihilate the point mass delta_0, so admitting the N point masses across runs already forces D = 0 -- the spanning hypothesis is not exotic  (D delta_0 = ['1', '-1'])
   [PASS] L4 THE RESIDUAL IS INVISIBLE TO SUMMING: a difference of two column-stochastic matrices has identically zero column sums, so D_210 p(0) always sums to zero and a nonzero residual must show up as CANCELLING mass -- the detection below counts entries, never totals  (column sums ['0', '0'])
 
@@ -166,7 +187,7 @@ SEC 3  THE MODEL — the committed BC2 Bell model, rebuilt in this receipt   [+0
   [PASS] M5 EVERY TRANSITION MATRIX IS EXACTLY COLUMN-STOCHASTIC: all columns sum to 1 in K, and every entry is a square in K hence non-negative by construction -- [B3] eq. (9) verified, not assumed  (columns checked 1728; failures 0)
 
 ==============================================================================
-SEC 4  THE ANCHOR BATTERY — the rebuild against the committed BC2 print   [+1s]
+SEC 4  THE ANCHOR BATTERY — the rebuild against the committed BC2 print   [+2s]
 ==============================================================================
 
   Every number in this section is quoted from the COMMITTED receipt
@@ -182,25 +203,41 @@ SEC 4  THE ANCHOR BATTERY — the rebuild against the committed BC2 print   [+1s
   [PASS] A6 THE BASIS-FREE CERTIFICATE REPRODUCES AT ALL SIX SETTING PAIRS: at the division event that IS Alice's measurement, Pr[pointer B still ready] = 1 exactly in F1 and 0 exactly in F2, and symmetrically for pointer A at Bob's  (failures [])
 
 ==============================================================================
-SEC 5  THE GATE — the LTP residual on the model, exact   [+2s]
+SEC 5  THE GATE — the LTP residual on the model, exact   [+3s]
 ==============================================================================
 
   The model declares D = {0, 2, 3}: 0 by [B3-div], and 2 and 3 by
   [B3-meas] ('division events are generated during a measurement
-  process').  The lemma's hypotheses are therefore the model's own.  Take
-  t' = 2 and the target time t = 3, and evaluate
+  process').  The lemma's hypotheses are therefore the model's own.
+
+  THE STRENGTH OF THAT DECLARATION, stated before it is tested.  [B3]'s
+  own text HEDGES: division events 'may be generated TO AN EXTREMELY GOOD
+  APPROXIMATION through interactions with other systems, AFTER
+  MARGINALIZING OVER THOSE OTHER SYSTEMS' ([B3-sysc], p.10).  BC2's model
+  declares something STRONGER: an EXACT division event for the
+  UNMARGINALIZED 36-configuration composite (qA, qB, pA, pB together).
+  That stronger, exact, unmarginalized declaration is what the lemma
+  tests below.  [B3]'s hedged, approximate, marginalized reading is a
+  different claim and is NOT tested by this gate.
+
+  Take t' = 2 and the target time t = 3, and evaluate
 
      r  :=  D_210 p(0)  =  Gamma(3<-0) p(0) - Gamma(3<-2) Gamma(2<-0) p(0)
         =  p(3) - Gamma(3<-2) p(2),
 
-  on the model's own declared p(0) = delta_{j0}.  By lemma (c), any
-  nonzero r denies t' = 2 the status of a division event.
+  on the model's own declared p(0) = delta_{j0}, which is admissible in
+  the SEC 2 sense; the epistemic axiom's connecting clause [B3-axioms]
+  is what licenses reading the model's DECLARED Gamma(3<-2) as the matrix
+  that connects p(2) to p(3).  By lemma (c), any nonzero r denies t' = 2
+  the status of a division event OF THIS MODEL, as declared.
 
   [PASS] G1 THE RESIDUAL IS EXACTLY THE j0 COLUMN OF THE MATRIX RESIDUAL, in all twelve cells: because the model's declared p(0) is the point mass delta_{j0}, the vector form of the lemma reads off one column of D_210 and nothing is hidden by the choice of p(0)  (cells 12; failures [])
   [PASS] G2 THE RESIDUAL SUMS TO ZERO EXACTLY IN ALL TWELVE CELLS, as L4 requires: the violation is cancelling mass, never a change of normalisation, so no total can detect it  (failures [])
 
-  THE CENSUS (nonzero entries of r out of 36; matrix residual out
-  of 1296; the two must be simultaneously zero or nonzero here):
+  THE NONZERO-COUNT CENSUS (nonzero entries of r out of 36; matrix
+  residual out of 1296; the two must be simultaneously zero or
+  nonzero here).  The VALUE census, which differs setting by
+  setting, is printed separately below:
 
      setting  frame   |r| nonzero / 36    D_210 differing / 1296
      SP-A     F1             0 / 36                0 / 1296
@@ -240,8 +277,49 @@ SEC 5  THE GATE — the LTP residual on the model, exact   [+2s]
         35  (11|--)         -1/32-(1/32)r2
      distinct values: ['-1/32+(1/32)r2', '-1/32-(1/32)r2', '1/32+(1/32)r2', '1/32-(1/32)r2']
      (all four are +-1/32 +- sqrt2/32; they cancel in pairs, G2)
-  [PASS] G5 THE WITNESS IS EXACTLY THE FOUR VALUES +-1/32 +- sqrt2/32, each occurring four times, so the violation is irrational and cannot be an arithmetic artefact of a rational truncation  (value census {'-1/32-(1/32)r2': 4, '-1/32+(1/32)r2': 4, '1/32+(1/32)r2': 4, '1/32-(1/32)r2': 4})
-  [PASS] G6 THE FORCING FIRES: at SP-C, SP-D and SP-F, in both frames, [B3]'s own eqs. (19)-(20) at the division events 0 and t' = 2 are CONTRADICTED by the model's own declared law on the model's own declared p(0).  By lemma (c), t' = 2 IS NOT A DIVISION EVENT of those models -- and t' = 2 is exactly where [B3-meas] says a measurement generates one.  THE DENIAL IS FORCED BY THE FRAMEWORK, NOT IMPOSED FROM OUTSIDE  (forced denial at ['SP-C', 'SP-D', 'SP-F']; consistent at ['SP-A', 'SP-B', 'SP-E'])
+
+  THE VALUE CENSUS, PER SETTING AND FRAME.  The census is NOT the
+  same at the three violated settings, and no statement below is
+  made across them: SP-C and SP-D share one census, SP-F has
+  another.  (The six clean cells have empty censuses.)
+
+     SP-C F1: 16 nonzero entries, 4 DISTINCT VALUES, 0 of 16 RATIONAL
+            -1/32+(1/32)r2  x 4
+            -1/32-(1/32)r2  x 4
+             1/32+(1/32)r2  x 4
+             1/32-(1/32)r2  x 4
+     SP-C F2: 16 nonzero entries, 4 DISTINCT VALUES, 0 of 16 RATIONAL
+            -1/32+(1/32)r2  x 4
+            -1/32-(1/32)r2  x 4
+             1/32+(1/32)r2  x 4
+             1/32-(1/32)r2  x 4
+     SP-D F1: 16 nonzero entries, 4 DISTINCT VALUES, 0 of 16 RATIONAL
+            -1/32+(1/32)r2  x 4
+            -1/32-(1/32)r2  x 4
+             1/32+(1/32)r2  x 4
+             1/32-(1/32)r2  x 4
+     SP-D F2: 16 nonzero entries, 4 DISTINCT VALUES, 0 of 16 RATIONAL
+            -1/32+(1/32)r2  x 4
+            -1/32-(1/32)r2  x 4
+             1/32+(1/32)r2  x 4
+             1/32-(1/32)r2  x 4
+     SP-F F1: 16 nonzero entries, 6 DISTINCT VALUES, 8 of 16 RATIONAL
+                     -1/64  x 4
+            -3/64+(1/32)r2  x 2
+            -3/64-(1/32)r2  x 2
+                      1/64  x 4
+             3/64+(1/32)r2  x 2
+             3/64-(1/32)r2  x 2
+     SP-F F2: 16 nonzero entries, 6 DISTINCT VALUES, 8 of 16 RATIONAL
+                     -1/64  x 4
+            -3/64+(1/32)r2  x 2
+            -3/64-(1/32)r2  x 2
+                      1/64  x 4
+             3/64+(1/32)r2  x 2
+             3/64-(1/32)r2  x 2
+  [PASS] G5 AT SP-C AND SP-D ONLY, THE RESIDUAL TAKES EXACTLY THE FOUR IRRATIONAL VALUES +-1/32 +- sqrt2/32, EACH FOUR TIMES, IN BOTH FRAMES: none of the 16 entries is rational there, so at those two settings the violation cannot be an arithmetic artefact of a rational truncation.  THE CLAIM IS SCOPED TO SP-C/SP-D AND IS FALSE AT SP-F, which is gated separately at G5b  (censuses [('SP-C', 'F1', [('-1/32+(1/32)r2', 4), ('-1/32-(1/32)r2', 4), ('1/32+(1/32)r2', 4), ('1/32-(1/32)r2', 4)], 0), ('SP-C', 'F2', [('-1/32+(1/32)r2', 4), ('-1/32-(1/32)r2', 4), ('1/32+(1/32)r2', 4), ('1/32-(1/32)r2', 4)], 0), ('SP-D', 'F1', [('-1/32+(1/32)r2', 4), ('-1/32-(1/32)r2', 4), ('1/32+(1/32)r2', 4), ('1/32-(1/32)r2', 4)], 0), ('SP-D', 'F2', [('-1/32+(1/32)r2', 4), ('-1/32-(1/32)r2', 4), ('1/32+(1/32)r2', 4), ('1/32-(1/32)r2', 4)], 0)]; mismatches [])
+  [PASS] G5b AT SP-F THE CENSUS IS DIFFERENT AND HALF-RATIONAL: SIX distinct values {-1/64 x4, +1/64 x4, -3/64+(1/32)sqrt2 x2, -3/64-(1/32)sqrt2 x2, +3/64+(1/32)sqrt2 x2, +3/64-(1/32)sqrt2 x2}, in BOTH frames, with EXACTLY 8 OF THE 16 NONZERO ENTRIES RATIONAL.  The irrationality argument of G5 therefore does NOT extend to SP-F; the violation there is still exact, but it is not carried by irrationality  (censuses [('F1', [('-1/64', 4), ('-3/64+(1/32)r2', 2), ('-3/64-(1/32)r2', 2), ('1/64', 4), ('3/64+(1/32)r2', 2), ('3/64-(1/32)r2', 2)], 8), ('F2', [('-1/64', 4), ('-3/64+(1/32)r2', 2), ('-3/64-(1/32)r2', 2), ('1/64', 4), ('3/64+(1/32)r2', 2), ('3/64-(1/32)r2', 2)], 8)]; mismatches [])
+  [PASS] G6 THE FORCING FIRES: at SP-C, SP-D and SP-F, in both frames, [B3]'s own eqs. (19)-(20) at the division events 0 and t' = 2 are CONTRADICTED by the model's own declared law on the model's own declared p(0).  By lemma (c), t' = 2 IS NOT A DIVISION EVENT of those models AS DECLARED -- i.e. not an EXACT division event for the UNMARGINALIZED 36-configuration composite, which is what BC2's model declares where [B3-meas]'s example places a measurement-generated one.  SCOPED: [B3] p.10 hedges that interaction-generated division events hold 'to an extremely good approximation ... after marginalizing over those other systems' ([B3-sysc]), and that hedged, marginalized reading is NOT tested here.  What is forced is the denial of the EXACT UNMARGINALIZED declaration -- forced by the framework's own equations, not imposed from outside  (forced denial at ['SP-C', 'SP-D', 'SP-F']; consistent at ['SP-A', 'SP-B', 'SP-E'])
   [PASS] G7 AND THE BICONDITIONAL OF [bc4] M-1 IS THE MODEL-LEVEL COROLLARY, NOT THE LEMMA: on this model the setting pairs where t'=2 survives as a division event are exactly the setting pairs where the declared law composes there.  The lemma proves ONE direction (division event => the declared law composes on p(0)); the converse holds HERE because the declared leg Gamma(3<-2) is column-stochastic at every setting pair (M5), and is NOT claimed in general  (divides & division event: ['SP-A', 'SP-B', 'SP-E']; neither: ['SP-C', 'SP-D', 'SP-F'])
   [PASS] G8 THE THREE DEFECTS STAY DISTINCT: on this model D_210 EQUALS Delta^B(Theta(3<-2), Theta(2<-0)) because the amplitude propagators compose (M4), so the 576/16 counts are simultaneously a declared-law residual and a Born-shadow defect; the EXISTENTIAL object d_div is NOT decided here (no LP is run) and by [w1p] Delta^B != 0 does not imply d_div != 0.  This gate asserts the identification and the abstention, both  (D_210 = Delta^B on all 12 cells (M4); d_div: NOT COMPUTED (declared cap, U1/BC1's subject))
 
@@ -262,20 +340,37 @@ SEC 6  VERDICT   [+3s]
     * the declared intermediate division event t' = 2 violates [B3]'s own
       law of total probability at SP-C, SP-D and SP-F, in both frames, ON
       THE MODEL'S OWN DECLARED p(0): the residual has 16 nonzero entries
-      of 36, with the four irrational values +-1/32 +- sqrt2/32;
+      of 36 at each;
 
-    * by lemma (c) the framework therefore FORCES DENYING that a division
-      event occurs there -- at exactly the place [B3] p.29 says a
-      measurement generates one.  The denial is [B3]'s, not v12's.
+    * THE VALUE CENSUS IS NOT THE SAME AT THE THREE SETTINGS, and the
+      receipt states them separately (G5, G5b).  At SP-C and SP-D: four
+      distinct values +-1/32 +- sqrt2/32, each four times, ALL SIXTEEN
+      IRRATIONAL.  At SP-F: SIX distinct values -- -1/64 x4, +1/64 x4,
+      +-3/64 +- (1/32)sqrt2 x2 each -- of which EIGHT OF THE SIXTEEN
+      ENTRIES ARE RATIONAL.  The irrationality argument is therefore
+      scoped to SP-C/SP-D and is NOT made at SP-F;
+
+    * by lemma (c) the framework therefore FORCES DENYING that an EXACT
+      division event for the UNMARGINALIZED composite occurs there -- at
+      the place where BC2's model, following [B3] p.29's
+      measurement-generates-a-division-event example, declares one.  The
+      denial is forced by [B3]'s own equations, not by v12.  SCOPED: [B3]
+      p.10's hedged reading -- interaction-generated division events
+      holding 'to an extremely good approximation ... after marginalizing
+      over those other systems' -- is a different claim and is untested
+      by this gate.
 
   WHAT IS NOT CLAIMED: nothing about nature; nothing about frames (BC2
   owns that and is cited, not re-derived); nothing about existential
   divisibility d_div (no LP is run); nothing about [B3]'s equivalence
   theorem, which is not under test.
 
-  GATES 29  PASS 29  FAIL 0  (anchors 9, anchor failures 0; controls 8, control failures 0)
-  RUNTIME 3.5 s.  Deterministic: no randomness, no hashing
+  GATES 30  PASS 30  FAIL 0  (anchors 9, anchor failures 0; controls 8, control failures 0)
+  RUNTIME 3.3 s.  Deterministic: no randomness, no hashing
   -order dependence, no float anywhere.
 
   EXIT 0 — the unit's finding is a substantive NEGATIVE about a
-  declared division-event set, and exits 0 by house rule.
+  declared division-event set, and exits 0 by house rule.  Declared
+  caveat (SEC 0): the exit code encodes GATE FAILURE only, not that
+  rule; the rule is met here because G6 carries the negative and
+  passes.

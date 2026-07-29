@@ -1,13 +1,13 @@
 # W5 — BARANDES RECAST AS CHART THEORY
 
-**Status:** RESULT, STRICT, **GREEN-UNREVIEWED** (not citable; terminal is
-conferred by a hostile round), 2026-07-28.
+**Status:** RESULT, STRICT, **GREEN-UNREVIEWED-REPAIRED** (not citable;
+terminal is conferred by a hostile round), 2026-07-28.
 **Programme:** v12 — THE WELD (`v12/LOG.md` #1–#8).
 **Pin:** `v12/note-w5-barandes-recast-pin.md` (frozen before this note).
 **Binding:** paper 0 v2.1 §1 (T1 scope notes, T2′, T3′, T5′) and §4 W5.
 **Receipt:** `v12/code/w5_ltp_lemma_exact.py` → `v12/code/w5_output.txt`
-(29 gates, 29 pass, 0 fail; 9 anchors, 0 anchor failures; 8 controls, 0
-control failures; exit 0; runtime 3.5 s as printed; byte-identical under
+(30 gates, 30 pass, 0 fail; 9 anchors, 0 anchor failures; 8 controls, 0
+control failures; exit 0; runtime 3.3 s as printed; byte-identical under
 `PYTHONHASHSEED` 0 and 12345 modulo timings).
 **Lean:** NONE.
 
@@ -46,7 +46,11 @@ mark:
 
 - **FAITHFUL** — [B3]'s own text supports the identification; his words
   are quoted.
-- **EXTENSION** — the atlas postulate speaking; v12's, not his.
+- **EXTENSION** — **v12's own move, attributed**: a step this note takes
+  that [B3] does not take, marked as v12's wherever it appears. Two kinds
+  occur below, and each entry says which: the **atlas postulate** speaking
+  (I-3, I-6), and v12's **naming and organization** of an object [B3]
+  asserts but does not name (I-11). Both are v12's; neither is imported.
 - **TENSION** — his text resists the reading; both sides are quoted and
   the resolution v12 adopts is stated.
 
@@ -85,13 +89,24 @@ an ordinary probability law over them. Nothing is added; "chart" renames
 > ingredient, and provides the model with its informational or
 > '**epistemic**' content" ([B3] p.5).
 >
-> "**Epistemic axiom:** … This standalone probability distribution … is
-> **contingent**, meaning that it can vary between runs of the model."
-> ([B3] p.29.)
+> "**Epistemic axiom:** The system has some time-dependent standalone
+> probability distribution to be in a particular configuration at any
+> given target time. This standalone probability distribution **is
+> connected between different times by the model's transition
+> probabilities**, and is **contingent**, meaning that it can vary between
+> runs of the model." ([B3] p.29.)
 
 The weld reading — *the probability assignment is carried by the
 description, not by the law* — is [B3]'s own tripartite split
 (kinematical / nomological / epistemic), quoted.
+
+**The middle clause, quoted in full because it does two jobs below.** "…
+connected between different times by the model's **transition
+probabilities** …" is what licenses the lemma of §3 to read a model's
+*declared* `Γ(3←2)` as the matrix that connects `p(2)` to `p(3)` (§3.1,
+lemma (a); §3.3, the application step), and it is what fixes the meaning
+of **admissible** `p(0)` (§3.1). It is therefore carried verbatim rather
+than elided.
 
 **I-3. The standalone distribution is chart-relative.** **EXTENSION.**
 
@@ -131,7 +146,9 @@ the division events.** **FAITHFUL.**
 
 The chart's law is *sparse in the conditioning slot and free in the target
 slot* — "The target time `t`, by contrast, can be treated as a **free
-variable**" ([B3] p.10). This asymmetry is what the lemma of §3 turns on.
+variable**. In particular, no assumption is made that `t > t₀`. One can
+choose `t < t₀` as well." ([B3] p.10.) This asymmetry is what the lemma of
+§3 turns on.
 
 **I-5. System-centricity is chart-relativity of the division-event
 structure.** **FAITHFUL.**
@@ -190,7 +207,9 @@ distribution.** **FAITHFUL.**
 > p(t₀)`." ([B3] p.9, eqs. 19–20.)
 >
 > "Importantly, notice that the law of total probability (19) is
-> **linear**" ([B3] p.9).
+> **linear**, in the sense that it establishes a linear relationship
+> between the system's standalone probabilities at `t₀` and the system's
+> standalone probabilities at `t`." ([B3] p.9.)
 
 Applying eq. (20) at **two** of the model's own division events forces the
 declared-law residual `D₂₁₀ = Γ(t←0) − Γ(t←t′)Γ(t′←0)` of paper 0 v2.1's
@@ -209,12 +228,14 @@ the **declared-law** defect `D₂₁₀`, on the **actual** distribution.
 > **not generally obey a divisibility condition** like (7) or (14)." ([B3]
 > p.10.)
 
-The recast's side: with the epistemic axiom read at full strength — the
-standalone distribution "**can vary between runs**" while the dynamical
-laws "are **fixed features**" ([B3] p.29, both quoted at I-2/I-4) — the
-residual annihilates every distribution realizable across runs, and if
-those span, `D₂₁₀ = 0` **as matrices**, i.e. exact divisibility **across
-any two division events**.
+The recast's side: under **H-SPAN — v12's strengthening, not stated by
+[B3]** — the admissible standalone distributions span `ℝᴺ` (what [B3]
+states is only that `p` is "**contingent**, meaning that it can vary
+between runs" while the dynamical laws "are **fixed features**", [B3]
+p.29, both quoted at I-2/I-4; that does not by itself supply a spanning
+family). Under H-SPAN the residual annihilates a spanning set, so
+`D₂₁₀ = 0` **as matrices**, i.e. exact divisibility **across any two
+division events**.
 
 **Resolution stated, not assumed:** the two are compatible, and the
 reconciliation is informative. [B3]'s indivisibility is a statement about
@@ -227,6 +248,19 @@ needs the spanning hypothesis, which [B3] does not state; the receipt
 gates that the hypothesis is load-bearing (L2/L3) — and also that on the
 BC2 model it is **not needed**, because the model's own declared `p(0)`
 already witnesses the violation (G3).
+
+**And the resolution is scoped by [B3]'s own hedge.** The statement above
+concerns **exact** division events — pairs of times at which the model
+declares transition matrices and the law of total probability holds
+exactly. [B3]'s p.10 text (quoted at I-5) hedges precisely this: in
+practice division events "may be generated **to an extremely good
+approximation** through interactions with other systems, **after
+marginalizing over those other systems**". Nothing here tests that hedged,
+approximate, marginalized reading: an *approximate* division event carries
+no exact eq.-(20) identity to contradict, and this note runs no
+approximation theory. What the recast says about I-9 — and what §3's gate
+exhibits — is a statement about **exactly declared, unmarginalized**
+division events only.
 
 ### 1.3 The lift — Born, gauge, dilation
 
@@ -246,14 +280,17 @@ The entrywise squaring that paper 0 v2.1 calls the *Born projection* is
 [B3]'s dictionary, and his own word for the inverse operation is
 "potential" — the electromagnetic analogy is his (p.12).
 
-**I-11. `Δᴮ` as the primary interference invariant.** **EXTENSION.**
+**I-11. `Δᴮ` as the primary interference invariant.** **EXTENSION** — of
+the **naming** kind, *not* the atlas postulate: the atlas is nowhere used
+here, and the entry would stand unchanged if the atlas move were dropped.
 
 `Δᴮ(U₂,U₁) = B(U₂U₁) − B(U₂)B(U₁)` is paper 0 v2.1 T2′'s object. [B3]
 names no such invariant. What he does assert is the phenomenon:
 
-> "indivisible stochastic processes generically exhibit all the hallmark
+> "… indivisible stochastic processes generically exhibit all the hallmark
 > empirical features of quantum systems, including **interference**,
-> decoherence, entanglement, and noncommutative observables" ([B3] p.2).
+> decoherence, entanglement, and noncommutative observables …" ([B3] p.2;
+> quoted from mid-sentence, both cuts marked.)
 
 So the identification "interference = failure of the shadow to compose" is
 v12's **naming and organization** of a phenomenon [B3] asserts, not a
@@ -267,7 +304,8 @@ counterexample; this note keeps them separate (§3, gate G8).
 > are expressible as the modulus-squares of the corresponding entries of
 > an `N × N` unitary matrix. It follows that (64) is just the statement
 > that the system's transition matrix `Γ(t←0)` can be taken to be
-> unistochastic" ([B3] p.18).
+> unistochastic …" ([B3] p.18; the sentence continues past this note's
+> cut.)
 >
 > "an indivisible stochastic process can be viewed either as a
 > unistochastic process itself, or (if a nontrivial dilation was required)
@@ -308,8 +346,11 @@ The base-of-the-fibration question is exactly where v12's own v1
 formulation went wrong (LOG #2–#3), and [B3]'s text answers it: pairs, not
 points.
 
-**I-14. Fixing the unitary lift is a partial gauge fixing: the fibre
-freedom does not act on the lifts.** **FAITHFUL.**
+**I-14. Fixing the unitary lift is a "partial fixing of the gauge freedom":
+the fibre phases *do* act on the lifts, but do not preserve their
+unitarity.** **FAITHFUL.** (Only the phrase "partial fixing of the gauge
+freedom" is p.19-verbatim; the rest of the heading is this note's
+paraphrase of the quoted sentence.)
 
 > "Note that a unitary time-evolution operator `U(t←0)` will **not
 > generically remain unitary** under arbitrary Schur-Hadamard gauge
@@ -318,9 +359,12 @@ freedom does not act on the lifts.** **FAITHFUL.**
 > corresponds to making a **gauge choice** — or, somewhat more precisely,
 > to a **partial fixing of the gauge freedom** (30)." ([B3] p.19.)
 
-Recast: the group of fibre phases is strictly larger than the subgroup
-that preserves the amplitude lift's unitarity. Any construction that puts
-a phase group on the lifts must first restrict to that stabilizer. This is
+Recast: the phase group **acts** on the lifts — eq. (30) sends any `Θ` to
+another `Θ` with the same Born shadow — but the subgroup **preserving
+unitarity** is strictly smaller, which is exactly why fixing a unitary
+representative is a *partial* gauge fixing rather than a full one. Any
+construction that puts a phase group on unitary lifts must first restrict
+to that stabilizer. This is
 a standing constraint on W2b (paper 0 v2.1 §4: the projective-descent
 question over the generated `⟨2,3⟩`), stated here as a fact about [B3]'s
 text, not as a result about W2b.
@@ -345,12 +389,18 @@ and [B3]'s own bundle is flat.** **FAITHFUL.**
 > parameterized by the time `t`, has **vanishing curvature**." ([B3] p.21,
 > fn. 16.)
 
-Recorded exactly: **[B3] himself computes the curvature of the only bundle
-he builds, and gets zero** — necessarily, the base being one-dimensional.
-This is not the statement LOG #2 killed (that was `H¹` of a two-chart
-nerve, a different object), and it is not evidence about any other
-carrier; it is the observation that no holonomy content lives in [B3]'s
-own fibre-bundle language.
+Recorded exactly, in his own modality: **[B3] *states* that the only
+bundle in the paper — the one he builds, a Hilbert-space bundle over the
+one-dimensional time base — has *vanishing curvature* (p.21, fn. 16), and
+offers that as what explains his computed `H_V(t) = 0`**. He computes
+`H_V(t) = 0`; the curvature statement is an assertion about the bundle,
+not a curvature computation, and it is anyway forced by the base being
+one-dimensional. (It is the only bundle in the paper: the word occurs
+once in the 35 pages, at this footnote.) This is
+not the statement LOG #2 killed (that was `H¹` of a two-chart nerve, a
+different object), and it is not evidence about any other carrier; it is
+the observation that no holonomy content lives in [B3]'s own fibre-bundle
+language.
 
 **I-16. Dilation is fibre enlargement — the base is fixed.** **FAITHFUL.**
 
@@ -397,12 +447,13 @@ naming it as such. The pin's phrasing is superseded by this note.
 **I-18. Eq. (22)'s interpolant is the would-be bridge, and
 pseudo-stochasticity is the defect made visible.** **FAITHFUL.**
 
-> "it might seem reasonable to try to define an intermediate transition
+> "… it might seem reasonable to try to define an intermediate transition
 > matrix `Γ̃(t←t′) ≡ Γ(t←t₀)Γ⁻¹(t′←t₀)` … **at least if `Γ(t′←t₀)` is
 > invertible**. … However, it turns out that a matrix `Γ̃(t←t′)` defined
 > according to (22) will **generically fail to be a column stochastic
 > matrix**, and, indeed, will typically have negative entries, and so will
-> form a so-called **pseudo-stochastic matrix**." ([B3] p.10.)
+> form a so-called **pseudo-stochastic matrix**." ([B3] p.10; the passage
+> is spliced across eqs. (22)–(23), and every cut is marked.)
 
 [B3]'s own diagnosis of what goes wrong when one tries to restart at a
 time the law does not serve *is* the weld's statement that the shadow does
@@ -447,7 +498,7 @@ that wording and adds nothing.
 | mark | count | identifications |
 |---|---|---|
 | **FAITHFUL** | **14** | I-1, I-2, I-4, I-5, I-8, I-10, I-12, I-13, I-14, I-15, I-16, I-18, I-19, I-20 |
-| **EXTENSION** | **3** | I-3 (chart-relative `p`), I-6 (the atlas), I-11 (`Δᴮ` as the invariant) |
+| **EXTENSION** | **3** | I-3 (chart-relative `p`) and I-6 (the atlas) — *atlas-postulate* kind; I-11 (`Δᴮ` as the invariant) — *naming* kind, no atlas used |
 | **TENSION** | **3** | I-7 (autonomous charts), I-9 (matrix-form divisibility), I-17 (base enlargement) |
 | **total** | **20** | — |
 
@@ -482,22 +533,35 @@ The pin's third item: bc #4's M-1 incidental, formalized as a lemma
 > `D₂₁₀ := Γ(t←0) − Γ(t←t′) Γ(t′←0)`
 >
 > for the **declared-law residual** of paper 0 v2.1's T2′ (not `Δᴮ`, not
-> `d_div`). Then:
+> `d_div`).
 >
-> **(a) Vector form, no extra hypothesis.** For every standalone
-> distribution `p(0)` the model actually runs on, `D₂₁₀ p(0) = 0`.
+> **Admissible `p(0)`, defined once.** A distribution over `C` at time `0`
+> is **admissible** iff the model actually runs on it — i.e. iff the
+> **epistemic axiom** permits it: `p` is "**contingent**, meaning that it
+> can vary between runs of the model", and it "is **connected between
+> different times by the model's transition probabilities**" ([B3] p.29,
+> quoted in full at I-2). Nothing else is meant by "admissible" anywhere
+> in this note or its receipt. Then:
 >
-> *Proof.* `p(t′) = Γ(t′←0) p(0)` and `p(t) = Γ(t←0) p(0)` by eq. (20) at
-> the division event `0`; `p(t) = Γ(t←t′) p(t′)` by eq. (20) at the
-> division event `t′`. Substituting the first into the third and
-> subtracting the second gives `D₂₁₀ p(0) = 0`, using only associativity
-> of the matrix action. ∎
+> **(a) Vector form, no extra hypothesis.** For every **admissible**
+> `p(0)`, `D₂₁₀ p(0) = 0`.
 >
-> **(b) Matrix form, under H-SPAN.** If the standalone distributions
-> admissible across runs span `ℝᴺ` — the epistemic axiom read at full
-> strength ("contingent, meaning that it **can vary between runs**")
-> against dynamical laws that "are **fixed features**" ([B3] p.29) — then
-> `D₂₁₀ = 0` exactly, as matrices.
+> *Proof.* The epistemic axiom's connecting clause ([B3] p.29: `p` "is
+> connected between different times by the model's transition
+> probabilities") is what licenses reading the model's **declared** `Γ`'s
+> as the matrices connecting `p(0)` to later times, so eq. (20) applies at
+> each declared conditioning time. Hence `p(t′) = Γ(t′←0) p(0)` and
+> `p(t) = Γ(t←0) p(0)` by eq. (20) at the division event `0`;
+> `p(t) = Γ(t←t′) p(t′)` by eq. (20) at the division event `t′`.
+> Substituting the first into the third and subtracting the second gives
+> `D₂₁₀ p(0) = 0`, using only associativity of the matrix action. ∎
+>
+> **(b) Matrix form, under H-SPAN.** If the admissible distributions span
+> `ℝᴺ` — **H-SPAN, which is v12's strengthening and is not stated by
+> [B3]**; what [B3] states is only that `p` is "contingent, meaning that
+> it **can vary between runs**" against dynamical laws that "are **fixed
+> features**" ([B3] p.29), which does not by itself supply a spanning
+> family — then `D₂₁₀ = 0` exactly, as matrices.
 >
 > **(c) The forcing (contrapositive of (a)).** If the model exhibits a
 > target time `t` and an admissible `p(0)` with `D₂₁₀ p(0) ≠ 0`, then
@@ -523,7 +587,7 @@ it formally rather than asserting it:
 - **L2** — **H-SPAN is load-bearing**, by exact separating instance:
   `D = [[1,−1],[−1,1]]` is nonzero yet annihilates `p = (1/2, 1/2)`. The
   vector form is therefore **strictly weaker** than the matrix form, and
-  (b) genuinely needs the full-strength epistemic reading.
+  (b) genuinely needs H-SPAN — v12's strengthening, not [B3]'s statement.
 - **L3** — and spanning restores it: the same `D` fails to annihilate the
   point mass `δ₀`, so admitting the `N` point masses across runs already
   forces `D = 0`.
@@ -560,9 +624,26 @@ rebuild against every number the committed receipt prints**.
 | A5 | the committed §5.2 mismatch table, cell for cell: 36 differing-entry counts across six objects and six setting pairs |
 | A6 | the basis-free certificate: `Pr[pointer B still ready]` at Alice's division event `= 1` in F1 and `= 0` in F2, all six setting pairs |
 
-**The result.** With `t′ = 2` (the first measurement, a division event by
-[B3] p.29's "division events are generated during a measurement process")
-and `t = 3`, evaluated on the model's own declared `p(0) = δ_{j0}`:
+**The declaration under test, and exactly how strong it is.** BC2's model
+declares `t′ = 2` (the first measurement) a division event on the strength
+of [B3] p.29's "division events are generated during a measurement
+process". That declaration is **stronger than [B3]'s own text asserts**:
+p.10 (quoted at I-5) hedges that in practice division events "may be
+generated **to an extremely good approximation** through interactions with
+other systems, **after marginalizing over those other systems**", whereas
+BC2's model declares an **exact** division event for the
+**unmarginalized** 36-configuration composite `(qA, qB, pA, pB)` — device
+pointers included, nothing marginalized, no approximation. It is that
+exact, unmarginalized declaration, and only it, that the gate tests below.
+[B3]'s hedged, approximate, marginalized reading is a different claim and
+is **untested here**: an approximate division event carries no exact
+eq.-(20) identity to contradict, and this unit runs no approximation
+theory.
+
+**The result.** With that `t′ = 2` and `t = 3`, evaluated on the model's
+own declared `p(0) = δ_{j0}` — admissible in §3.1's sense, the epistemic
+axiom's connecting clause (I-2) licensing the reading of the declared
+`Γ(3←2)` as the matrix that connects `p(2)` to `p(3)`:
 
 | setting | frame | `‖r‖₀` of 36 | `D₂₁₀` differing of 1296 |
 |---|---|---|---|
@@ -587,9 +668,32 @@ and `t = 3`, evaluated on the model's own declared `p(0) = δ_{j0}`:
   26 (10|−−)  1/32−(1/32)√2    35 (11|−−) −1/32−(1/32)√2
 ```
 
-Four distinct values, `±1/32 ± √2/32`, each occurring four times (G5): the
-violation is **irrational**, so it cannot be an artefact of rational
-truncation, and it sums to zero exactly (G2), as L4 requires.
+Four distinct values, `±1/32 ± √2/32`, each occurring four times: the
+violation is **irrational** here, so at this cell it cannot be an artefact
+of rational truncation, and it sums to zero exactly (G2), as L4 requires.
+
+**The value census is NOT the same at the three violated settings.** The
+witness above is SP-C, frame F1, and its four-value irrational census is a
+fact about **SP-C and SP-D only**. At SP-F the census is different, and
+half of it is **rational**. The receipt computes and prints all six
+violated cells and gates the two censuses **separately** (G5 for SP-C/D,
+G5b for SP-F); the counts below are the receipt's, exact in `ℚ(√2)`:
+
+| setting, both frames | nonzero of 36 | distinct values | rational entries | the census |
+|---|---|---|---|---|
+| **SP-C** | 16 | **4** | **0 of 16** | `−1/32−(1/32)√2` ×4, `−1/32+(1/32)√2` ×4, `+1/32−(1/32)√2` ×4, `+1/32+(1/32)√2` ×4 |
+| **SP-D** | 16 | **4** | **0 of 16** | identical to SP-C's |
+| **SP-F** | 16 | **6** | **8 of 16** | `−1/64` ×4, `+1/64` ×4, `−3/64+(1/32)√2` ×2, `−3/64−(1/32)√2` ×2, `+3/64+(1/32)√2` ×2, `+3/64−(1/32)√2` ×2 |
+
+**The irrationality argument is therefore scoped to SP-C and SP-D, and is
+not made at SP-F.** At SP-F eight of the sixteen nonzero entries are the
+plain rationals `±1/64`. The violation there is exact all the same — the
+arithmetic is exact everywhere in this receipt, with no float and no
+tolerance, so exactness never depended on irrationality — but the *extra*
+argument that irrationality rules out a rational-truncation artefact
+simply does not apply at SP-F, and is not asserted there. Why the two
+censuses differ is **not explained here**; nothing below rests on the
+explanation, only on the censuses, which are computed.
 
 **The substantive gates.**
 
@@ -603,13 +707,23 @@ truncation, and it sums to zero exactly (G2), as L4 requires.
   **needs no H-SPAN** on this model.
 - **G4** — `16 × 36 = 576`: the vector count and the committed matrix
   count are the same fact, seen once per column.
+- **G5** — the SP-C/SP-D census: exactly the four irrational values
+  `±1/32 ± √2/32`, four times each, **zero rational entries**, both
+  frames. The gate states its own scope: the claim is **false at SP-F**.
+- **G5b** — the SP-F census, gated separately: **six** distinct values,
+  with **8 of the 16** nonzero entries rational (`±1/64`), both frames.
 - **G6** — **the forcing fires.** At SP-C, SP-D and SP-F, in both frames,
-  [B3]'s own eqs. (19)–(20) at the division events `0` and `t′ = 2` are
-  contradicted by the model's own declared law on the model's own declared
-  `p(0)`. By lemma (c), `t′ = 2` **is not a division event** of those
-  models — at exactly the place [B3] p.29 says a measurement generates
-  one. **The denial is forced by the framework, not imposed from
-  outside.**
+  [B3]'s own eqs. (19)–(20) at the declared division events `0` and
+  `t′ = 2` are contradicted by the model's own declared law on the model's
+  own declared `p(0)`. By lemma (c), `t′ = 2` **is not a division event of
+  that model as declared** — i.e. not an **exact** division event of the
+  **unmarginalized** composite, which is what BC2's model declares at the
+  place [B3] p.29's example puts a measurement-generated one. **The denial
+  is forced by the framework's own equations, not imposed from outside.**
+  **Scoped:** [B3] p.29's example is about the measured system, and p.10
+  hedges interaction-generated division events as approximate and
+  **after marginalizing over the device**; that reading is not tested by
+  this gate, which speaks only to the exact unmarginalized declaration.
 - **G7** — bc #4's M-1 biconditional ("legitimate division event ⟺ the
   process divides at it") is the **model-level corollary**, not the lemma.
   The lemma proves one direction. The converse holds *here* because the
@@ -626,18 +740,31 @@ truncation, and it sums to zero exactly (G2), as L4 requires.
 ### 3.4 What the lemma changes, and what it does not
 
 It changes the reading of "indivisible": **indivisibility is a property of
-the intervals between division events, never of the step across a pair of
-them.** A model that declares a division event where its own law fails to
-compose on the actual distribution is not exhibiting indivisibility; it is
-inconsistent with eq. (20), and the framework's own remedy is to withdraw
-the division event.
+the intervals between *exactly declared* division events, never of the
+step across a pair of them.** A model that declares an exact division
+event where its own law fails to compose on the actual distribution is not
+exhibiting indivisibility; it is inconsistent with eq. (20), and the
+framework's own remedy is to withdraw the declaration.
+
+**What it leaves standing, by [B3]'s own hedge.** All of the above is
+about **exact, unmarginalized** division events. [B3] p.10 (I-5) allows
+that in practice division events "may be generated **to an extremely good
+approximation** through interactions with other systems, **after
+marginalizing over those other systems**". A model that declares only
+*that* — an approximate division event for a *marginalized* description —
+is untouched here: there is no exact eq.-(20) identity for the lemma to
+contradict, and this unit supplies no approximation theory and makes no
+claim about how large the residual is relative to anything. The lemma
+bites exactly one reading, the exact unmarginalized one, and that is the
+reading BC2's model declares.
 
 It does **not** show [B3] inconsistent. [B3] states no model. What it
 shows is that the natural [B3] model of a two-measurement Bell experiment
-— built by BC2 to [B3]'s own prescriptions — cannot keep both the
-measurement-generated division event of p.29 and the law of total
-probability of p.9 at three of six declared setting pairs, and that the
-framework itself decides which one goes.
+— built by BC2 to [B3]'s own prescriptions, and declaring an **exact**
+division event for the **unmarginalized** composite — cannot keep both
+that declaration and the law of total probability of p.9 at three of six
+declared setting pairs, and that the framework itself decides which one
+goes.
 
 ---
 
@@ -650,11 +777,11 @@ that the charts be descriptions of one world. Every row is carried by a
 | # | [B3] claim, page-cited | under globalization | carrier |
 |---|---|---|---|
 | **C1** | The configuration space is a fixed feature, one set per model (p.29) | **SURVIVES.** The atlas varies the *description*, not `C`; BC2 runs both frames and all six setting pairs on one fixed `C` of 36 configurations | BC2 §2 |
-| **C2** | Division events are system-centric (p.10) — hence a wing has its own description | **SURVIVES at wing-local grain.** Each wing's marginal, evaluated at *that wing's own* division event, is exactly frame-invariant, at every setting pair | BC2 §7 E3a |
+| **C2** | Division events are system-centric (p.10) — hence a wing has its own description | **SURVIVES at wing-local grain, AT A PRICE BC2 NAMES.** Each wing's marginal, evaluated at *that wing's own* division event, is exactly frame-invariant, at every setting pair (E3a). BC2's E3c states the cost verbatim: "*the product of the two wing-local outcome marginals differs from the composite's outcome joint at every declared setting pair, so the correlations are not recoverable from the two frame-invariant wing descriptions*" — the description that carries the correlations is the composite one, which is exactly the description row C4 reports as not frame-mappable | BC2 §7 E3a, **E3c** |
 | **C3** | The measuring device ends in a measurement-outcome configuration with Born-rule probability (p.16) | **SURVIVES exactly.** `Γ(3←0)` and `p(3)` agree entry by entry across frames; 96 exact singlet identities; paper 8's admissible form 1 holds exactly, not approximately | BC2 §4, §8; bc #4 M-3 |
 | **C4** | The composite's slice-indexed joint at an intermediate division event | **DOES NOT SURVIVE.** At every setting pair with two different settings, no permutation of the 36 configurations carries F1's specified content onto F2's — 16 of 16 cells empty, four grains, two time correspondences, search complete | BC2 §6.1; rescoped by bc #4 |
 | **C5** | Division events are assignable system by system (p.10) | **DOES NOT GLUE.** GS1 restriction-compatibility fails 527/1,296 (marginal) and 361/1,296 (conditional); GS2 gluing fails 85/77 in the population though it held on all eight hand-picked models; **10 slices admit only the empty assignment** | BC1 R1, R3, R4 |
-| **C6** | "Division events are generated during a measurement process" (p.29) | **DOES NOT SURVIVE AS STATED** on a composite where the declared law fails to compose: the framework's own eqs. (19)–(20) force denying the division event at 3 of 6 setting pairs, both frames | bc #4 M-1; **this unit's §3** (G6) |
+| **C6** | "Division events are generated during a measurement process" (p.29), read **exactly and unmarginalized** | **THE EXACT UNMARGINALIZED READING FAILS; [B3]'s HEDGED READING IS UNTESTED.** BC2's model declares an **exact** division event for the **unmarginalized** 36-configuration composite — a configuration [B3]'s own hedged text does not assert (p.10: division events "may be generated **to an extremely good approximation** … **after marginalizing over those other systems**"). What the forcing shows is that *that declaration* is inconsistent with his eqs. (19)–(20) at 3 of 6 setting pairs, both frames. His approximate-marginalized reading is **not tested by this gate** | bc #4 M-1; **this unit's §3** (G6) |
 | **C7** | `Γ` can be taken unistochastic; a subsystem may need a dilation (pp.18–19) | **SURVIVES for the composite, FAILS for the parts.** 21 of 32 composite instances certified with the model's own unitary exhibited; of 1,152 reduced processes, 402 are not doubly stochastic and 12 more fail the polygon obstruction | BC1 R5 |
 | **C8** | The refusal to fix a Kolmogorov tower makes the content minimal (pp.10–11) | **SURVIVES as a fact about the content; buys nothing.** The objects that fail to correspond are the *sparsest* content the framework has — single-time distributions at division events, division-event transition matrices, and the induced order of the division-event set | BC2 §9 |
 | **C9** | Eq. (22)'s interpolant, "at least if `Γ(t′←t₀)` is invertible" (p.10) | **HYPOTHESIS FAILS** on the Bell composite: exact rank 18 or 9, never 36, both frames, every setting pair | BC2 §4; reproduced here at A4 |
@@ -663,11 +790,35 @@ that the charts be descriptions of one world. Every row is carried by a
 | **C12** | "a thoroughly realist orientation … no perspectival or relational notions of ontology" (p.28) | **SURVIVES the recast**, on the resolution adopted at I-7: the atlas is a family of descriptions over one configuration history | this note §1, I-7; paper 0 v2.1 T5′ |
 
 **Reading of the table.** Five rows survive (C1, C2, C3, C8, C12), four
-fail (C4, C5, C6, C7-for-the-parts), one hypothesis fails outright (C9),
-two are untested by construction (C10, C11). The line separating them is
-sharp and is the same line in every case: **everything indexed to one
-system at its own division events survives; everything that requires a
-composite's description at a shared intermediate time does not.**
+fail (C4, C5, C6-as-declared, C7-for-the-parts), one hypothesis fails
+outright (C9), two are untested by construction (C10, C11).
+
+**The line, stated once and defended.** The line is **not** a *shared
+intermediate time*: C5's failure is a **subsystem-lattice** fact holding
+at all times, and C7's is a fact about **marginals** at any time, so a
+shared-time line would leave two failing rows on the wrong side. The line
+that does separate the table is §5's, and it is **one** line:
+
+> **Everything indexed to one system in its own description survives;
+> every failure is at a joint** — a place where two descriptions must be
+> matched to each other.
+
+The defense is that "joint" is not a metaphor here: each failing row names
+an explicit pair of descriptions and an explicit matching that fails, and
+there are exactly **three kinds** of joint in the table.
+
+| kind of joint | the two descriptions being matched | rows |
+|---|---|---|
+| **shared intermediate time** | the composite's description before and after an intermediate conditioning time, or in two frames at one time | C4, C6, C9 |
+| **subsystem-lattice overlap** | a system's description and that of its parts, where the lattice demands restriction-compatibility | C5 |
+| **marginalization interface** | a composite's description and the reduced description obtained by marginalizing it | C7 |
+
+Every surviving row (C1, C2, C3, C8, C12) is a statement about **one**
+description evaluated at **its own** division events; every failing row is
+a statement about **two** descriptions and the map between them. Where a
+surviving row touches a joint it survives only at the one-description
+grain and pays for it — C2 survives wing-locally, and E3c's cost sentence
+in that row is exactly the price of refusing the joint.
 
 ---
 
@@ -705,13 +856,17 @@ three things the corpus has measured the framework not to supply:
   subsystem lattice — BC1: ten slices where only the empty assignment is
   consistent (C5);
 - **(iii)** a division-event set its own law of total probability
-  tolerates wherever a measurement occurs — **this unit**: the forcing
-  fires at 3 of 6 setting pairs, both frames (C6).
+  tolerates wherever a measurement occurs, read **exactly** and on the
+  **unmarginalized** composite — **this unit**: the forcing fires at 3 of
+  6 setting pairs, both frames (C6); [B3]'s hedged approximate-marginalized
+  reading is not tested.
 
-Each of the three is *local to a joint*: (i) the joint between two wings
-at one time, (ii) the joint between a system and its parts, (iii) the
-joint between two successive conditioning times of one composite. The
-recast's summary sentence, stated as a reading:
+Each of the three is *local to a joint*, in the three senses §4 tabulates:
+(i) the joint between two wings at one time and the joint between a
+composite's descriptions in two frames, (ii) the joint between a system
+and its parts — both the lattice overlap (C5) and the marginalization
+interface (C7), (iii) the joint between two successive conditioning times
+of one composite. The recast's summary sentence, stated as a reading:
 
 > **[B3] is a theory of charts and of the defect that appears when charts
 > are joined. Every one of its successes is a statement about one chart;
@@ -742,6 +897,13 @@ stands as the named warning.
 - Nothing about existential divisibility `d_div`: no LP or Farkas search
   is run in this unit. The lemma decides the **declared-law** residual
   only.
+- Nothing about **approximate or marginalized** division events. Every
+  statement here is about **exactly declared, unmarginalized** ones; [B3]
+  p.10's hedge (division events "generated to an extremely good
+  approximation … after marginalizing over those other systems") describes
+  a different object, and no approximation theory is run against it.
+- Nothing about **why** the SP-C/D and SP-F residual censuses differ. Both
+  are computed and gated; neither is explained.
 - Nothing about `Δᴮ` beyond the identification at G8: on this model the
   two objects coincide because the amplitude propagators compose; in
   general they do not, per W1′ C+1.
@@ -798,6 +960,12 @@ stands as the named warning.
   cited, never re-run; A5/A6 reproduce its *numbers* as anchors on the
   rebuild, not as re-derivations of its verdict.
 - **Retrodictive matrices are not computed** (BC2's cap, inherited).
+- **The exit code encodes gate failure only** — a known structural caveat,
+  declared in the receipt (SEC 0 and the exit line): the file exits 1 if
+  any gate fails and 0 otherwise, so the house rule that *substantive
+  negatives exit 0* is **met as delivered** (every gate passes, and the
+  negative is carried by a passing gate, G6) but is **not encoded** by the
+  structure; a substantive negative written as a failing gate would exit 1.
 - **The mark assignments are judgements about two texts**, made by this
   unit and open to a hostile round; the quotes are verbatim and
   page-cited so that each judgement can be checked against its evidence.

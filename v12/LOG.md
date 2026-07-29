@@ -427,3 +427,43 @@ DECIDED NEGATIVELY (owed at the Phase-close paper-0 pass); W3′
 receives the record-kills-D₂₁₀-at-every-cut hook; W5 receives the
 BC1-predicate-is-d_div quotation-fact; W2 receives nothing.
 Hostile round dispatched.  W2 still constructing.
+
+## 2026-07-28 — W5 HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES, ALL
+## APPLIED — **W5 TERMINAL**; #9 CORRECTED (v12 LEDGER #12)
+The round mechanically verified ALL 37 page-cited [B3] fragments
+against the extracted PDF (every one verbatim — "the best quote
+fidelity in this corpus"), rebuilt the Bell gate in a DIFFERENT
+field (ℚ(√2) vs the receipt's ℚ[x]/(8x⁴−8x²+1)) and reproduced the
+forcing witness index-for-index and value-for-value; the
+per-identification table: 20/20 marks upheld (two with quote nits,
+two with framing repairs).  THE LEMMA AND THE FORCING SURVIVE.  All
+17 fixes applied and re-verified (30 gates / 30 PASS; adjudicator
+rerun byte-identical modulo timings).  **#9's OWN TEXT CORRECTED
+HERE (M1, M5): (M1)** #9 carried the receipt's false generalization
+"the residual has ... the four irrational values ±1/32 ± √2/32" AT
+SP-F — the SP-F census is SIX distinct values with 8 OF 16 ENTRIES
+RATIONAL ({±1/64} ×4 each; {±3/64 ± (1/32)√2} ×2 each); the
+four-irrational-value claim holds at SP-C and SP-D ONLY (0/16
+rational there); now computed, printed, and gated per-setting
+(G5 rescoped + new G5b).  **(M5)** #9's "the fibre group does not
+act on the lifts (p.19 verbatim)" misattributed the verbatim mark —
+only "partial gauge fixing" is p.19's; the fibre phases DO act on
+the lifts, what fails is unitarity-preservation (the note's body
+had it right; the heading and #9 did not).  Other fixes: the [B3]
+p.10 approximate-after-marginalizing hedge applied at I-9/§3.3/
+§3.4/C6 — **C6 reworded to the fair form: BC2 declares an EXACT
+division event for the UNMARGINALIZED composite, a configuration
+[B3]'s hedged text does not assert; the forcing shows THAT
+declaration inconsistent with eqs. 19-20 at 3/6 pairs; his
+approximate-marginalized reading is untested** — the strongest
+available defence of [B3] now stands in the unit; the one-line
+claim resolved as "every failure is at a joint" with the
+three-kinds defence table (shared time / lattice overlap /
+marginalization interface); the float purged (math.isqrt);
+"computes his own bundle's curvature" → "states" (p.21 fn.16);
+the epistemic axiom's elided load-bearing clause restored and
+cited at the lemma; "admissible p(0)" defined; EXTENSION widened
+with its two kinds named; E3c's cost carried into C2; H-SPAN
+everywhere marked as v12's strengthening.  **W5 IS TERMINAL** —
+the recast stands as the programme's definitive statement of what
+building on [B3] means, now with his own best defence inside it.
