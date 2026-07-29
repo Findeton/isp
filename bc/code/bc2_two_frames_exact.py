@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 bc2_two_frames_exact.py — BC2: THE BELL-TWO-FRAMES PROBE.
-Does [B3]'s conditioning structure need a foliation?
+Is the composite's slice-indexed joint across spacelike separation
+frame-relative?
 
 Pin: bc/note-bc2-bell-two-frames-pin.md (STRICT, frozen before this file
 existed).  Program: bc/LOG.md #1 (the Barandes consistency program, from
@@ -25,26 +26,45 @@ WHAT IS BUILT
   (eq. 25), exact in the real quartic field Q(cos(pi/8)).
 
 WHAT IS TESTED
-  (i)   THE SPECIFIED-CONTENT INVENTORY, printed completely per frame:
-        division events, configuration space, transition matrices, every
-        single-time marginal, every division-event joint -- and the
-        explicit list of what [B3] REFUSES to specify (the Kolmogorov
-        tower, the non-Markovian realizer, trajectory joints).
-  (ii)  THE QM-STATISTICS GATE (a CONTROL, exit 1 on failure): both frames
+  (i)   THE LAW-OF-TOTAL-PROBABILITY GATE at every declared division
+        event ([B3] eqs. 19-20): p(t) = Gamma(t <- t_0) p(t_0) for every
+        declared t_0 and every later target time t.  A declared division
+        event at which this fails is not a division event on [B3]'s own
+        axioms, so the gate decides which instances the division-event
+        census may run on.
+  (ii)  THE SPECIFIED-CONTENT INVENTORY, printed completely per frame at
+        all six setting pairs: division events, configuration space,
+        transition matrices, every single-time marginal, every
+        division-event joint -- and the explicit list of what [B3]
+        REFUSES to specify (the Kolmogorov tower, the non-Markovian
+        realizer, trajectory joints).
+  (iii) THE QM-STATISTICS GATE (a CONTROL, exit 1 on failure): both frames
         reproduce the exact singlet correlations at every declared setting
         pair.
-  (iii) THE TEST: the candidate frame map, and whether it carries F1's
+  (iv)  THE TEST: the candidate frame map, and whether it carries F1's
         specified content onto F2's.  L-1 forces the map's form; the
         search over the forced class is COMPLETE (refinement +
         backtracking, exact), so a negative is a proof of non-existence,
         not a failure to find.
-  (iv)  The covariance-class verdict on L-1's ladder.
-  (v)   The escape-hatch battery, each escape working-at-a-stated-cost or
-        failing-at-a-stated-place.
+  (v)   The covariance-class verdict on L-1's ladder.
+  (vi)  The escape-hatch battery, each escape working-at-a-stated-cost or
+        failing-at-a-stated-place -- E2 run with ALL target times kept,
+        because denying a division event removes the conditioning at that
+        time and not the target times ([B3] p.10, p.29).
+  (vii) THE POINTER-FREE REPLICATION: the same two-frame comparison on a
+        4-configuration model with NO pointers, in which measurement is a
+        basis rotation that makes the measured observable a beable
+        ([B3] p.24), searched by brute force over all 24 permutations.
 
 ENGRAVED SCOPE CONSTRAINTS (pin, carried into every gate text)
   * The finding is about [B3]'s FORMAL APPARATUS, not about relativity in
     nature.  No claim about nature is made anywhere.
+  * WHAT IS CLAIMED IS SLICE-INDEXED.  The object shown to be
+    frame-relative is the COMPOSITE'S JOINT AT THE INTERMEDIATE SLICE.
+    The final-time composite content is frame-invariant and carries the
+    whole outcome joint.  [B3] contains no relativity content, so "the
+    ontology requires a foliation" is NOT the claim; "no relabelling of
+    C carries F1's slice-indexed joint onto F2's" is.
   * NO Bell-INEQUALITY claim and NO locality claim.  This unit is a
     covariance-of-description question only.  The corpus's committed Bell
     verdict is not touched, cited, or used.
@@ -181,6 +201,32 @@ QUOTES = {
         "whole universe, but are system-centric, just like various other "
         "kinds of spontaneous time-translation-breaking in physics.",
     ),
+    "B3-ltp": (
+        "[B3] p.9, eqs. (19)-(20) and the sentence attached to them; PDF "
+        "read in-session",
+        "The only available Chapman-Kolmogorov equations (5) take the "
+        "simple form  p(i,t) = sum_j p(i,t | j,t_0) p(j,t_0),  (19)  "
+        "which is just the LAW OF TOTAL PROBABILITY.  Equivalently, in "
+        "matrix notation,  p(t) = Gamma(t <- t_0) p(t_0).  (20)  ... "
+        "Importantly, notice that the law of total probability (19) is "
+        "LINEAR, in the sense that it establishes a linear relationship "
+        "between the system's standalone probabilities at t_0 and the "
+        "system's standalone probabilities at t.",
+    ),
+    "B3-target": (
+        "[B3] p.10, the paragraph after the system-centricity sentence",
+        "The target time t, by contrast, can be treated as a FREE "
+        "VARIABLE.  In particular, no assumption is made that t > t'.  "
+        "One can choose t < t' as well.  An indivisible stochastic "
+        "process does not, therefore, need to violate logical "
+        "time-reversal invariance in any fundamental way.",
+    ),
+    "B3-colstoch": (
+        "[B3] p.8, eq. (9) (the normalisation of the transition matrix)",
+        "each column sums to 1, meaning that Gamma(t <- t') is a "
+        "(COLUMN) STOCHASTIC MATRIX:  Gamma_ij(t <- t') >= 0, "
+        "sum_i Gamma_ij(t <- t') = 1.  (9)",
+    ),
     "B3-eq22": (
         "[B3] p.10, eqs. (22)-(23) and the paragraph following them",
         "it might seem reasonable to try to define an intermediate "
@@ -243,13 +289,23 @@ QUOTES = {
         "CONTINGENT, meaning that it can vary between runs of the model.",
     ),
     "B3-outcomes": (
-        "[B3] p.16 (the emergeables paragraph) and p.26",
+        "[B3] p.16 (the emergeables paragraph) and p.24 (the Wigner-"
+        "symmetry paragraph).  The second page cite is p.24, not p.26",
         "When a measuring device is properly modeled as one additional "
         "part of a larger stochastic process ... at the end of the "
         "measurement process, the measuring device will end up in one of "
         "its possible MEASUREMENT-OUTCOME CONFIGURATIONS with a "
         "stochastic probability that coincides with the standard Born "
-        "rule.",
+        "rule, WHETHER THE MEASURING DEVICE HAS BEEN TUNED TO MEASURE A "
+        "BEABLE OR AN EMERGEABLE. [p.16]  ... if one suitably models an "
+        "entire system that includes a measuring device as an overall "
+        "unistochastic process, then the measuring device will end up in "
+        "one of its possible measurement-outcome configurations with the "
+        "appropriate Born-rule probability for whatever observable is "
+        "measured -- whether a BEABLE (represented by a self-adjoint "
+        "matrix that is DIAGONAL IN THE CONFIGURATION BASIS) or an "
+        "EMERGEABLE (represented by a non-diagonal self-adjoint "
+        "matrix). [p.24]",
     ),
     "B3-uni": (
         "[B3] p.18, the paragraph following eq. (64), and p.19",
@@ -354,6 +410,34 @@ QUOTES = {
 for _k in sorted(QUOTES):
     print(f"  [{_k}] {QUOTES[_k][0]}")
 
+# ---- a DECLARED MEASUREMENT of the source text, not computed here -------
+REL_CONTENT = {
+    "method": "full-text extraction of the [B3] PDF (arXiv:2507.21192, "
+              "35 pages), case-insensitive substring counts over the "
+              "extracted body; performed outside this receipt and "
+              "declared here",
+    "Lorentz": 0, "spacelike": 0, "space-like": 0, "foliation": 0,
+    "foliate": 0, "boost": 0, "Minkowski": 0,
+    "relativistic": "5 — four as 'non-relativistic', one in a "
+                    "bibliography title",
+    "reference frames": "1 — a footnote citing a study of the "
+                        "Schroedinger equation between inertial and "
+                        "non-inertial reference frames",
+    "light-cone": "1 — the p.29 sentence already quoted at [B3-future]",
+}
+print()
+print("  [B3-relativity-content] DECLARED MEASUREMENT, NOT COMPUTED IN "
+      "THIS RECEIPT (no PDF is read at runtime).  [B3] contains NO "
+      "relativity content in the sense that matters to a covariance "
+      "claim:")
+for _k, _v in REL_CONTENT.items():
+    print(f"      {_k:20s} : {_v}")
+print("  Consequence, carried into every verdict text below: this unit "
+      "tests a\n  covariance question [B3] does not pose.  The finding is "
+      "stated as a\n  property of the model's SLICE-INDEXED content under "
+      "the declared frame\n  change, never as '[B3] requires a "
+      "foliation'.")
+
 ANCH = {
     # u3's committed known-answer values (v11/note-u3-...:141-151)
     "ka1_T": Fr(1, 27),
@@ -399,6 +483,16 @@ CAPS = {
                              "forward matrices and the marginals already "
                              "in the inventory, so they add no content "
                              "the comparison could separate",
+    "the pointer-free replication": "ONE second model, 4 configurations "
+                                    "(the outcome pairs), measurement = "
+                                    "the basis rotation that makes the "
+                                    "measured observable a beable "
+                                    "([B3] p.24); the SAME six setting "
+                                    "pairs, the SAME four grains, the "
+                                    "SAME two correspondences; searched "
+                                    "by BRUTE FORCE over all 4! = 24 "
+                                    "permutations, so no search "
+                                    "machinery is load-bearing there",
     "NOT implemented": "no LP/Farkas search over non-group covariance "
                        "semigroups.  L-1(a) derives invertibility inside "
                        "a GROUP action and the two-frame map is a group "
@@ -1284,12 +1378,18 @@ check("S2b DIVISIBILITY AT THE INTERMEDIATE DIVISION EVENT IS NOT ITSELF "
       "FRAME-DEPENDENT ON THIS MODEL — A REPORTED NEGATIVE ON A NATURAL "
       "CONJECTURE.  The two frames agree on whether the process divides "
       "at their (different) intermediate division events, at every "
-      "setting pair.  The mismatch found below is therefore NOT a "
-      "divisibility artefact: it is present at setting pairs where the "
-      "process divides in both frames",
+      "setting pair.  QUALIFIER, carried wherever this incidental is "
+      "stated: the process divides IN BOTH FRAMES AT SP-A, SP-B AND "
+      "SP-E ONLY, and divides in NEITHER frame at SP-C, SP-D, SP-F; the "
+      "agreement is that the divisible/indivisible split does not move "
+      "with the frame, not that the process divides everywhere.  The "
+      "mismatch found below is therefore not a divisibility artefact: "
+      "it is present at SP-A and SP-B, where the process divides in "
+      "both frames",
       not _div_split,
       f"setting pairs with a frame-split on divisibility: {_div_split} "
-      f"(empty); divisible-in-both: {_div_some}")
+      f"(empty); divisible-in-both (the qualifier): {_div_some}; "
+      f"indivisible-in-both: {_indiv_some}")
 
 check("S3 [B3] eq. (22)'s OWN HYPOTHESIS FAILS ON THIS MODEL: the "
       "interpolant ~Gamma(3<-2) = Gamma(3<-0) Gamma^{-1}(2<-0) requires "
@@ -1302,6 +1402,162 @@ check("S3 [B3] eq. (22)'s OWN HYPOTHESIS FAILS ON THIS MODEL: the "
       all(r1 < NC and r2 < NC for nm, r1, r2 in _rank22),
       f"exact ranks of Gamma(2<-0) (F1, F2): {_rank22} (full rank would "
       f"be {NC})")
+
+
+# ===========================================================================
+# SEC 4b.  THE LAW-OF-TOTAL-PROBABILITY GATE AT EVERY DECLARED DIVISION
+#          EVENT — which declared division events are division events
+# ===========================================================================
+
+sec("THE LAW-OF-TOTAL-PROBABILITY GATE — [B3] eqs. (19)-(20) at every "
+    "declared division event")
+
+print(f"""
+  [B3] does not merely allow the relation p(t) = Gamma(t <- t_0) p(t_0)
+  at a division event; it IS the content of being a division event.
+  {QUOTES['B3-ltp'][0]}, verbatim:
+    "{QUOTES['B3-ltp'][1]}"
+
+  So a time t_0 declared to be a division event, at which some target
+  time t has p(t) != Gamma(t <- t_0) p(t_0), is not a division event on
+  [B3]'s own axioms: the transition matrix it would supply does not
+  transport the standalone distribution.  The gate below runs the
+  identity at EVERY declared division event t_0 in D = {{0, 2, 3}} and
+  EVERY later target time t, in both frames, at all six setting pairs,
+  entry by entry in K.  Its verdict decides which instances the
+  division-event census of SEC 7-8 may be read on.
+""")
+
+LTP = []
+for _nm, _a, _b in SETTINGS:
+    for _fr in ("F1", "F2"):
+        F = FRAMES[(_nm, _fr)]
+        for tp in F.D:
+            for t in F.T:
+                if t <= tp or (t, tp) not in F.G or F.G[(t, tp)] is None:
+                    continue
+                G, pv = F.G[(t, tp)], F.p[tp]
+                rhs = [sum((G[i][j] * pv[j] for j in range(NC)), K0)
+                       for i in range(NC)]
+                d = sum(1 for i in range(NC)
+                        if not (F.p[t][i] - rhs[i]).is_zero())
+                LTP.append((_nm, _fr, t, tp, d))
+    tick(f"LTP gate done for {_nm}")
+
+_ltp_init = [r for r in LTP if r[3] == 0]
+_ltp_mid = [r for r in LTP if r[3] == 2]
+check("L1 AT THE INITIAL DIVISION EVENT THE LAW OF TOTAL PROBABILITY "
+      "HOLDS IDENTICALLY, AS IT MUST: p(t) = Gamma(t<-0) p(0) at every "
+      f"target time, in both frames, at all {len(SETTINGS)} setting "
+      f"pairs — {len(_ltp_init)} vector identities, "
+      f"{len(_ltp_init)*NC} exact entry comparisons, zero mismatches.  "
+      "This is a construction check, not a finding: p(t) is DEFINED as "
+      "the j0 column of Gamma(t<-0), so its failure would mean an "
+      "arithmetic error",
+      all(r[4] == 0 for r in _ltp_init),
+      f"identities {len(_ltp_init)}; nonzero mismatches "
+      f"{[r for r in _ltp_init if r[4]]}")
+
+_ltp_ok = sorted({r[0] for r in _ltp_mid if r[4] == 0})
+_ltp_bad = sorted({r[0] for r in _ltp_mid if r[4] > 0})
+_ltp_counts = sorted({(r[0], r[4]) for r in _ltp_mid})
+_ltp_both = all(
+    len({r[4] for r in _ltp_mid if r[0] == nm}) == 1 for nm in
+    {r[0] for r in _ltp_mid})
+check("L2 THE DECLARED INTERMEDIATE DIVISION EVENT FAILS THE LAW OF "
+      "TOTAL PROBABILITY AT HALF THE DECLARED SETTING PAIRS, IN BOTH "
+      "FRAMES — A FIRST-CLASS INCIDENTAL ABOUT [B3], NOT ABOUT THIS "
+      "MODEL.  Routing the standalone distribution through the declared "
+      "t = 2 division event, p(3) = Gamma(3<-2) p(2), holds exactly at "
+      "SP-A, SP-B and SP-E and fails in 16 of the 36 entries at SP-C, "
+      "SP-D and SP-F, identically in F1 and F2.  On [B3]'s own eqs. "
+      "(19)-(20) that is not a division event, so the model must DENY "
+      "the composite division event there — which p.10's "
+      "system-centricity licenses ('Division events are not global "
+      "properties of the whole universe, but are system-centric').  "
+      "The census of SEC 7-8 is scoped accordingly and the headline "
+      "negative is re-established without it (T1b, E2)",
+      bool(_ltp_bad) and _ltp_ok == ["SP-A", "SP-B", "SP-E"]
+      and _ltp_bad == ["SP-C", "SP-D", "SP-F"] and _ltp_both
+      and all(r[4] == 16 for r in _ltp_mid if r[4]),
+      f"LTP holds at t_0 = 2: {_ltp_ok}; LTP FAILS at t_0 = 2: "
+      f"{_ltp_bad}; (setting, differing entries of 36) = {_ltp_counts}; "
+      f"same count in both frames at every setting pair: {_ltp_both}")
+
+
+OUT_PT = {1: 1, 2: -1}                 # pointer '+' encodes +1, '-' encodes -1
+
+
+def routed_stats(F):
+    """The outcome law obtained by routing p(2) through Gamma(3<-2) —
+    i.e. the law [B3] eqs. (19)-(20) assign to the declared division
+    event at t = 2, as against the model's own p(3)."""
+    G, pv = F.G[(3, 2)], F.p[2]
+    q = [sum((G[i][j] * pv[j] for j in range(NC)), K0) for i in range(NC)]
+    joint = {}
+    for al in (1, -1):
+        for be in (1, -1):
+            s = K0
+            for i in range(NC):
+                _, _, pA, pB = cfg(i)
+                if pA in OUT_PT and pB in OUT_PT and OUT_PT[pA] == al \
+                        and OUT_PT[pB] == be:
+                    s = s + q[i]
+            joint[(al, be)] = s
+    return joint
+
+
+_routed = []
+for _nm, _a, _b in SETTINGS:
+    for _fr in ("F1", "F2"):
+        j = routed_stats(FRAMES[(_nm, _fr)])
+        _routed.append((_nm, _fr, tuple(str(j[(al, be)]) for al in (1, -1)
+                                        for be in (1, -1))))
+for r in _routed:
+    report(f"outcome law ROUTED through the declared t=2 division event "
+           f"{r[0]} {r[1]}", r[2])
+
+_UNIF = ("1/4", "1/4", "1/4", "1/4")
+_EIGHTHS = ("1/8", "3/8", "3/8", "1/8")
+check("L3 WHERE THE LAW OF TOTAL PROBABILITY FAILS, THE OUTCOME LAW IT "
+      "WOULD DELIVER IS NOT THE SINGLET LAW — THE FAILURE IS "
+      "PHYSICALLY LOUD, NOT A ROUNDING OF ONE ENTRY.  Routing the "
+      "outcome statistics through the declared t = 2 division event "
+      "gives exactly (1/4, 1/4, 1/4, 1/4) at SP-C and SP-D and exactly "
+      "(1/8, 3/8, 3/8, 1/8) at SP-F, in both frames, against the "
+      "singlet values Q1 verifies for the model's own p(3).  At SP-A, "
+      "SP-B and SP-E the routed law equals the singlet law exactly.  "
+      "The declared division event at SP-C/D/F would therefore erase "
+      "the correlation the model predicts",
+      all(v == _UNIF for nm, fr, v in _routed if nm in ("SP-C", "SP-D"))
+      and all(v == _EIGHTHS for nm, fr, v in _routed if nm == "SP-F"),
+      f"(setting, frame, routed law in the order ++, +-, -+, --) = "
+      f"{_routed}")
+
+_ltp_set = set(_ltp_bad)
+_indiv_set = set(_indiv_some)
+check("L4 ON THIS MODEL 'LEGITIMATE DIVISION EVENT' AND 'THE PROCESS "
+      "DIVIDES AT IT' ARE THE SAME PREDICATE — THE INVERTED FACT.  The "
+      "setting pairs at which the law of total probability fails at "
+      "t = 2 are EXACTLY the setting pairs at which "
+      "Gamma(3<-2) Gamma(2<-0) != Gamma(3<-0).  So the legitimate "
+      "division-event census does not live on the indivisible "
+      "instances; it lives on the DIVISIBLE ones, and S2b's incidental "
+      "must be read with that qualifier: the two frames agree on "
+      "divisibility, and the instances where they agree that the "
+      "process divides — SP-A, SP-B, SP-E — are precisely the "
+      "instances where the declared intermediate division event is "
+      "legitimate at all",
+      _ltp_set == _indiv_set,
+      f"LTP-failing setting pairs {sorted(_ltp_set)}; indivisible "
+      f"setting pairs {sorted(_indiv_set)}; identical: "
+      f"{_ltp_set == _indiv_set}")
+
+LEGIT = tuple(_ltp_ok)                 # declared t=2 division event stands
+DENIED = tuple(_ltp_bad)               # declared t=2 division event denied
+report("setting pairs where the declared t=2 division event survives the "
+       "LTP gate", LEGIT)
+report("setting pairs where [B3]'s own axioms force denying it", DENIED)
 
 
 # ===========================================================================
@@ -1375,9 +1631,16 @@ def inventory(F, tag, full=True):
     print()
 
 
-_nm0 = "SP-A"
-inventory(FRAMES[(_nm0, "F1")], f"{_nm0} frame F1 = (prep, A, B)")
-inventory(FRAMES[(_nm0, "F2")], f"{_nm0} frame F2 = (prep, B, A)")
+print("  THE INVENTORY IS PRINTED COMPLETELY FOR BOTH FRAMES AT ALL SIX")
+print("  DECLARED SETTING PAIRS — twelve inventories, no per-object")
+print("  sampling.  The explicit configuration list is printed whenever a")
+print("  marginal's support is at most 16 of the 36 configurations.")
+print()
+for _nm0, _a0, _b0 in SETTINGS:
+    inventory(FRAMES[(_nm0, "F1")],
+              f"{_nm0} (a={_a0}, b={_b0}) frame F1 = (prep, A, B)")
+    inventory(FRAMES[(_nm0, "F2")],
+              f"{_nm0} (a={_a0}, b={_b0}) frame F2 = (prep, B, A)")
 
 
 # ===========================================================================
@@ -1513,8 +1776,31 @@ print(f"""
     "{QUOTES['B3-fn7'][1][:260]}..."
   So the candidate frame map is a PERMUTATION of C by L-1(a), and the
   IDENTITY if the boost is taken in a one-parameter subgroup by L-1(b).
-  The search below is therefore COMPLETE over the admissible class: a
-  negative is a proof of non-existence, not a failure to find.
+  The search below is therefore COMPLETE over the admissible class — AND
+  THE PREMISE THAT MAKES IT COMPLETE IS C4(iii) ITSELF, STATED HERE AND
+  NOT LEFT IMPLICIT: THE TWO FRAME MAPS COMPOSE TO THE IDENTITY,
+  F1 -> F2 -> F1 = id on C.  That premise is what makes the action a
+  GROUP, and only inside a group action does L-1(a) DERIVE invertibility
+  and hence the permutation form.  Drop it and the permutation class is
+  no longer forced; what is left is a covariance carried by a semigroup
+  or a non-group action, which is E4 and is OPEN.  Given the premise, a
+  negative below is a proof of non-existence, not a failure to find.
+
+  A CONVENTION NOTE, discharged rather than assumed away.  L-1(a) is
+  stated for ROW-stochastic maps ("each R_g is row-stochastic on C");
+  [B3]'s transition matrices are COLUMN-stochastic ({QUOTES['B3-colstoch'][0]}):
+    "{QUOTES['B3-colstoch'][1]}"
+  The mismatch is harmless here for three independent reasons, each
+  checkable in this receipt.  (1) Transposition is a bijection between
+  the two conventions and L-1(a)'s conclusion is transpose-invariant: X
+  is a permutation matrix iff X^T is.  (2) The frame map acts on the
+  objects by CONJUGATION, M -> P M P^T with P a permutation, and
+  conjugation commutes with transposition, so every mismatch count and
+  every invariant used below is convention-free.  (3) On this model the
+  question does not arise at all: gate S1 verifies that every one of the
+  48 legs has EXACT unit ROW sums AND EXACT unit COLUMN sums (U3's
+  ds_report is a doubly-stochastic report), so each Gamma here is both
+  row- and column-stochastic and both readings of L-1(a) apply verbatim.
 """)
 
 # -------- the labelled-structure machinery --------------------------------
@@ -1525,11 +1811,16 @@ def kk(x):
     return x.key()
 
 
-def build_objs(F, times, use_marg, live_cols, phi=None):
+def build_objs(F, times, use_marg, live_cols, phi=None, divs=None):
     """The specified content of F as an ordered list of labelled objects.
     phi maps THIS frame's times to the comparison index; when phi is None
-    the frame's own times are used."""
+    the frame's own times are used.  divs overrides the frame's declared
+    division-event set — used by E2, which DENIES the intermediate
+    division event while keeping every target time ([B3] p.10: the target
+    time 'can be treated as a free variable'; p.29: 'for arbitrary target
+    times')."""
     ph = (lambda t: t) if phi is None else phi
+    D = F.D if divs is None else divs
     objs = []
     if use_marg:
         for t in sorted(times, key=ph):
@@ -1538,7 +1829,7 @@ def build_objs(F, times, use_marg, live_cols, phi=None):
     objs.append(("vec", ("init",), [kk(K1 if i == J0 else K0)
                                     for i in range(NC)]))
     pairs = []
-    for tp in F.D:
+    for tp in D:
         for t in times:
             if (t, tp) in F.G and F.G[(t, tp)] is not None and t != tp:
                 pairs.append((t, tp))
@@ -1666,10 +1957,18 @@ def _search(o1, o2, col1, col2):
         raise RuntimeError("search node cap exceeded")
     col1, col2 = _refine_pair(o1, o2, col1, col2)
     if _hist(col1) != _hist(col2):
-        return None, ("refinement separates: colour-class size profiles "
-                      f"{tuple(sorted(Counter(Counter(col1).values()).items()))}"
-                      " vs "
-                      f"{tuple(sorted(Counter(Counter(col2).values()).items()))}")
+        h1, h2 = Counter(col1), Counter(col2)
+        alph = sorted(set(h1) | set(h2), key=repr)
+        diff = [(c, h1.get(c, 0), h2.get(c, 0)) for c in alph
+                if h1.get(c, 0) != h2.get(c, 0)]
+        return None, (
+            "refinement separates on the SHARED colour alphabet — the "
+            "separating invariant is the colour-VALUE histogram, not a "
+            "class-size profile: "
+            f"{len(diff)} of {len(alph)} colours carry different "
+            f"multiplicities; (colour, count in the F1 structure, count "
+            f"in the F2 structure) = {diff[:6]}"
+            + (f" ... [{len(diff) - 6} more]" if len(diff) > 6 else ""))
     classes = {}
     for i, c in enumerate(col1):
         classes.setdefault(c, []).append(i)
@@ -1804,6 +2103,31 @@ for _nm, _a, _b in SETTINGS:
                 pi, why = None, f"CAP: {e}"
             RESULTS[(_nm, gname, pname)] = (pi, why, NODES[0], len(c1))
     tick(f"frame-map search done for {_nm}")
+
+# ---- the initial-division-event content, i.e. E2 run properly -----------
+# Denying the intermediate division event removes the CONDITIONING at
+# t = 2; it does not remove the target times.  [B3] p.29 makes the
+# dynamical law hold "for arbitrary target times", and p.10 makes the
+# target time "a free variable", while the epistemic axiom supplies a
+# standalone distribution "at any given target time".  So D = {0} with
+# T = (0, 1, 2, 3) kept in full.
+E2RES = {}
+for _nm, _a, _b in SETTINGS:
+    F1, F2 = FRAMES[(_nm, "F1")], FRAMES[(_nm, "F2")]
+    for pname, phi in (("phi_LOR", PHI_LOR), ("phi_ORD", PHI_ORD)):
+        times = (0, 1, 2, 3)
+        t2 = tuple(sorted({phi[t] for t in times}))
+        o1 = build_objs(F1, times, True, False, phi=lambda t: phi[t],
+                        divs=(0,))
+        o2 = build_objs(F2, t2, True, False, phi=None, divs=(0,))
+        c1, c2, d1, d2 = common_labels(o1, o2)
+        NODES[0] = 0
+        try:
+            pi, why = find_iso(c1, c2)
+        except RuntimeError as e:
+            pi, why = None, f"CAP: {e}"
+        E2RES[(_nm, pname)] = (pi, why, NODES[0], len(c1))
+    tick(f"initial-division-event (E2) search done for {_nm}")
 
 print()
 print("  THE LABEL INTERSECTION, FIRST — this is census item (iii), the")

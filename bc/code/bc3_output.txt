@@ -1,0 +1,389 @@
+==============================================================================
+bc3_refinement_exact.py — BC3
+UNISTOCHASTICITY UNDER REFINEMENT: does the class survive the
+operations QFT needs?
+==============================================================================
+  banner: EXACT arithmetic end to end and NO TOLERANCE ANYWHERE.
+  scope : TOY LATTICE SCALE.  Formal properties of [B3]'s criterion
+          under binning, refinement and composition.  No
+          renormalisation claim, no interacting-QFT claim, no claim
+          about nature.
+  lean  : NONE.  Q-STABLE, Q-UNSTABLE and Q-ILLDEFINED are all
+          reportable outcomes of the pin.
+
+  THE REGISTRY — every source a gate cites, with its page or its
+  path:section provenance.
+    [B3-continuum] [B3] arXiv:2507.21192, PAGE 5, sec. 2, after eqs. (1) and (2)
+    [B3-dilation] [B3] arXiv:2507.21192, PAGE 19, first paragraph (the stochastic-quantum theorem); the dilation machinery is sec. 4.2, PAGES 25-28, eqs. (98)-(110)
+    [B3-finite] [B3] arXiv:2507.21192, PAGE 11, sec. 3.1, eqs. (24)-(25)
+    [B3-gauge] [B3] arXiv:2507.21192, PAGE 19, second paragraph
+    [B3-uni] [B3] arXiv:2507.21192, PAGE 18, the paragraph following eq. (68) (PDF read in-session)
+    [lit-sqrtind] LITERATURE, as registered by the committed U3 receipt.  A. S. Besicovitch, J. London Math. Soc. 15 (1940) 3-6; standard Galois theory
+    [lit-uni3] LITERATURE, as registered by the committed U3 receipt (v11/code/u3_unistochasticity_screen_exact.py, QUOTES['lit-uni3']).  Au-Yeung and Poon, SEA Bull. Math. 3 (1979) 85-92; H. Nakazato, Nihonkai Math. J. 7 (1996) 83-100; Bengtsson, Ericsson, Kus, Tadej, Zyczkowski, Commun. Math. Phys. 259 (2005) 307-324
+    [u3-positive] v11/code/u3_unistochasticity_screen_exact.py, SEC 2, the 'HOW THIS RECEIPT USES IT' block
+    [u3-screen] v11/code/u3_unistochasticity_screen_exact.py, the committed U3 receipt: SEC 1 (the rings Surd and Cyc) and SEC 2 (ds_report, tri_disc, chain_link_squares, polygon_violations, unitary_check_cyc, modsq_check_cyc, orth_check_surd, modsq_check_surd, real_orth_2x2, sylvester, and the known-answer battery KA-1 .. KA-6)
+
+------------------------------------------------------------------------------
+SEC 1  SINGLE-SOURCING — the committed U3 instruments, lifted by AST   [+0s]
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on the committed U3 receipt: every instrument BC3 reuses exists at module level with the exact positional argument list, so a silent upstream edit cannot slip through unnoticed  (39 module-level defs/classes in v11/code/u3_unistochasticity_screen_exact.py; 21 required; missing/changed: [])
+  [PASS] ANCHOR SRC.2 THE INSTRUMENTS ARE U3's, LIFTED NOT RETYPED: the exact rings (Surd, Cyc), the n = 3 triangle discriminant, the general polygon obstruction, the doubly-stochastic report and the four certificate verifiers are compiled from the committed U3 source text by AST extraction  (21/21 lifted: ['Cyc', 'Surd', 'chain_link_squares', 'cyc_one', 'cyc_pow', 'cyc_x', 'cyc_zero', 'ds_report', 'modsq_check_cyc', 'modsq_check_surd', 'orth_check_surd', 'phi_euler', 'polydivmod', 'polygon_violations', 'real_orth_2x2', 'sqfree_split', 'sqrt_fr', 'surd_sign', 'sylvester', 'tri_disc', 'unitary_check_cyc'])
+  [DATA] caps:
+          Arm A n-ladder (free family): n in {60, 120, 240, 480, 960, 1920, 3840, 7680}; the propagator is circulant, so only its first row is built and the cost is O(c)
+          Arm A direct-verification ladder: n in {12, 24, 36, 48, 60} — the propagator is built ENTRY BY ENTRY as an exact element of Q(zeta_n) and the closed form is gated against it
+          Arm A time grid: theta = 2 pi p / q with 1 <= p <= q, gcd(p, q) = 1 and q | n; q in {1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 24}
+          Arm A bin ladder: B bins of k = n/B sites each, B | n, B in {3, 4, 5, 6, 10, 12, 15, 20, 30, 60}
+          Arm A (c, B) refinement sweep: c in [1, 24], B in [2, 30], both spike offsets, at n = lcm(B, 2c), 2 lcm(B, 2c) and 3 lcm(B, 2c)
+          Arm A control: Trotterised harmonic oscillator (D_x A)^M, n in {9, 12, 18, 24, 36}, M in [1, 6], chirp parameters p, p' in {1, 2}; entries in Q(zeta_3); binned at every B | n with B <= 12
+          Arm C unitary pool: 3x3 unitaries over the Gaussian rationals Q(i), BFS to word length <= 3 from a declared generator set, deduplicated on |W|^2, pool capped at 300 distinct matrices, frontier capped at 220 per level
+          Arm C exhaustive rational census: every bistochastic 3x3 matrix with entries in (1/D)Z that passes the exact n = 3 criterion, and every ordered product of two of them, for D in {4, 6, 8, 10, 12}
+          NOT implemented: full phase-elimination (resultants / Groebner) for n > 3.  A binned matrix with NO polygon obstruction and NO exhibited certificate is reported EXCLUDED-BY-CAP, never as a pass
+          NOT in scope: times theta/2pi irrational, and lattice sizes n not divisible by q: there the modulus-squares leave Q and the exact rational screen does not apply.  One such case is computed exactly in Q(zeta_28) below and its irrationality is GATED, so the exclusion is a stated fact and not an assumption
+
+------------------------------------------------------------------------------
+SEC 2  THE RINGS — U3's own self-tests, re-run on the lifted objects   [+0s]
+------------------------------------------------------------------------------
+  [PASS] ANCHOR R1.1 THE LIFTED Surd RING IS EXACT AND ITS ZERO TEST IS SOUND [lit-sqrtind]: sqrt2.sqrt3 - sqrt6 = 0 identically; (sqrt2+sqrt3)^2 = 5 + 2 sqrt6 identically; sqrt(1/2)^2 = 1/2  (sqrt2.sqrt3-sqrt6 = 0; (sqrt2+sqrt3)^2 = 5 + (2)sqrt6)
+  [PASS] ANCHOR R1.2 THE LIFTED Surd SIGN ORACLE IS EXACT ON A KNOWN-ANSWER PAIR THAT NO TOLERANCE SETTLES: sqrt2+sqrt3-sqrt10 < 0 (3.146... < 3.162...) while sqrt2+sqrt3-sqrt5 > 0  (signs -1, 1; at most 16 binary digits of refinement)
+  [PASS] ANCHOR R1.3 THE CYCLOTOMIC FIELDS ARE THE FIELDS THEY CLAIM TO BE, INCLUDING THE FOUR THIS UNIT ADDS TO U3's TWO: for N in {3, 4, 8, 12, 24, 28} the cyclotomic polynomial computed by the exact recursion Phi_N = (x^N - 1) / prod_{d | N, d < N} Phi_d has degree phi(N), divides x^N - 1 with remainder EXACTLY zero, satisfies x^N = 1 in the quotient, and zeta -> zeta^{-1} is an involution with zeta . conj(zeta) = 1  (N=3: deg 2 = phi(N) = 2 True, Phi | x^N-1 True, x^N = 1 True, conj True; N=4: deg 2 = phi(N) = 2 True, Phi | x^N-1 True, x^N = 1 True, conj True; N=8: deg 4 = phi(N) = 4 True, Phi | x^N-1 True, x^N = 1 True, conj True; N=12: deg 4 = phi(N) = 4 True, Phi | x^N-1 True, x^N = 1 True, conj True; N=24: deg 8 = phi(N) = 8 True, Phi | x^N-1 True, x^N = 1 True, conj True; N=28: deg 12 = phi(N) = 12 True, Phi | x^N-1 True, x^N = 1 True, conj True)
+  [PASS] ANCHOR R1.4 THE DFT NORMALISER IS AN EXACT FIELD ELEMENT: (zeta12 + zeta12^-1)^2 = 3 exactly, so 1/sqrt3 = (2 zeta12 - zeta12^3)/3 exactly; zeta3 = zeta12^4 has order 3  ((1/sqrt3)^2 = 1/3x^0)
+
+------------------------------------------------------------------------------
+SEC 3  THE KNOWN-ANSWER BATTERY — U3's, re-run here as ANCHORS   [+0s]
+------------------------------------------------------------------------------
+
+  [B3]'s definition, verbatim ([B3] arXiv:2507.21192, PAGE 18, the paragraph following eq. (68) (PDF read in-session)):
+    "In general, an N x N matrix is called unistochastic if its individual entries are expressible as the modulus-squares of the corresponding entries of an N x N unitary matrix.  It follows that (64) is just the statement that the system's transition matrix Gamma(t <- 0) can be taken to be unistochastic, and will therefore be said to describe a unistochastic process."
+
+  [B3]'s dilation clause, verbatim ([B3] arXiv:2507.21192, PAGE 19, first paragraph (the stochastic-quantum theorem); the dilation machinery is sec. 4.2, PAGES 25-28, eqs. (98)-(110)):
+    "The preceding analysis implies that an indivisible stochastic process can be viewed either as a unistochastic process itself, or (if a nontrivial dilation was required) as a subsystem of a unistochastic process.  This statement is called the stochastic-quantum theorem (Barandes 2023).  --- AND, PAGE 28, after eq. (110): 'obtaining a unitary time-evolution operator for a given system may require dilating the Hilbert space in just this way'."
+
+  THE TWO KNOWN FACTS THE PIN ORDERS CITED, NOT RE-PROVED.
+    (i)  MARGINALISATION LEAVES THE CLASS.  [B3]'s own stochastic-quantum
+         theorem is disjunctive: a process is EITHER unistochastic itself
+         OR a SUBSYSTEM of one.  The second disjunct exists precisely
+         because passing to a subsystem -- marginalising -- does not
+         preserve the first.  BC3 cites this and does not re-prove it.
+         Consequently every negative verdict in this receipt is a verdict
+         on the FIRST disjunct: the CLOSED, UNDILATED criterion at the
+         stated dimension.  The subsystem disjunct is untouched.
+    (ii) The gauge clause ([B3] arXiv:2507.21192, PAGE 19, second paragraph):
+         "Note that a unitary time-evolution operator U (t <- 0) will not generically remain unitary under arbitrary Schur-Hadamard gauge transformations (30).  Hence, writing a unistochastic transition matrix Gamma(t <- 0) in terms of a unitary time-evolution operator U (t <- 0) corresponds to making a gauge choice."
+
+  THE TWO FACTS THE PIN ORDERS GATED IN-RECEIPT are SEC 4 (unitary =>
+  |U|^2 doubly stochastic) and SEC 5 (fixed-n topological closure).
+
+  HOW THE CRITERION IS USED (v11/code/u3_unistochasticity_screen_exact.py, SEC 2, the 'HOW THIS RECEIPT USES IT' block):
+    "NEGATIVE direction (T < 0 => NOT unistochastic) is ELEMENTARY and is not taken on citation.  POSITIVE direction: no verdict of 'unistochastic' is returned on the strength of T >= 0; every positive verdict EXHIBITS a unitary of the same size and verifies U^dagger U = I and |U_ij|^2 = Gamma_ij entry by entry in exact algebraic arithmetic.  BC3 carries the same discipline."
+
+  [PASS] ANCHOR KA-1 J/3 IS DECIDED UNISTOCHASTIC WITH THE UNITARY EXHIBITED: the 3-point DFT written exactly in Q(zeta_12) satisfies U^dagger U = I with zero residual entries and |U_ij|^2 = 1/3 at all nine entries; T = +1/27 > 0 and there is no polygon violation  (T = 1/27; unitarity residuals 0; |U|^2 mismatches 0)
+  [PASS] ANCHOR KA-2 (1/2)(J - I) IS DECIDED BISTOCHASTIC BUT NOT UNISTOCHASTIC WITH AN EXACT MARGIN: rows and columns sum to exactly 1, T = -1/16 < 0, and the polygon oracle independently flags the same obstruction  (DS True; T = -1/16; polygon violations 6)
+  [PASS] ANCHOR KA-3 THE ORTHO/UNI GAP IS EXHIBITED, SO THE COMPLEX NUMBERS ARE FORCED SOMEWHERE: J/3 is unistochastic but NOT orthostochastic — a real orthogonal O with O_ij^2 = 1/3 would need two rows of inner product (+-1 +-1 +-1)/3 and every one of the eight sign patterns gives an odd integer, never 0  (the eight numerators are [-3, -1, 1, 3] — none is 0)
+  [PASS] ANCHOR KA-4 THE n = 2 CLASSICAL FACT IS CONSTRUCTED, NOT ASSERTED: for [[1/3,2/3],[2/3,1/3]] the constructed real matrix is exactly orthogonal in the Surd ring and its modulus-squares are the matrix; the construction is uniform in p, so EVERY 2x2 bistochastic matrix is orthostochastic and no 2-outcome object can ever leave the class  (U = [[(1/3)sqrt3, (1/3)sqrt6], [(1/3)sqrt6, (-1/3)sqrt3]])
+  [PASS] ANCHOR KA-5 THE DOUBLY-STOCHASTIC PRECONDITION IS NOT A NO-OP: a row-stochastic matrix that is not column-stochastic is caught with the exact per-column excess printed  (col sums [3/2, 1/2], col deficits [1/2, -1/2])
+  [PASS] ANCHOR KA-6 SYLVESTER'S REAL HADAMARD MATRIX OF ORDER 8 IS VERIFIED IN-RECEIPT (H H^T = 8 I over the integers)  (H_8 = H_2^{tensor 3}, all 64 inner products exact)
+  [PASS] ANCHOR SRC.3 THE FAST POLYGON ORACLE IS THE COMMITTED ONE: on every matrix on which both run (every matrix of size <= 10 screened in this receipt, plus four seeds here) the fast oracle's violation list — sides, index, squared moduli and exact Surd slack — is IDENTICAL to the committed polygon_violations.  The fast path is an evaluation-order change and nothing else  (4 matrices cross-checked so far, 0 discrepancies (the running total is re-reported in SEC 13))
+
+------------------------------------------------------------------------------
+SEC 4  GATED FACT 1 — unitary implies |U|^2 doubly stochastic   [+0s]
+------------------------------------------------------------------------------
+
+  THE STATEMENT AND ITS ONE-LINE PROOF.  Let U be an N x N unitary matrix.
+  Its columns are orthonormal, so sum_i |U_ij|^2 = (U^dagger U)_jj = 1 for
+  every j; its rows are orthonormal, so sum_j |U_ij|^2 = (U U^dagger)_ii
+  = 1 for every i; and every entry |U_ij|^2 is a non-negative real.  Hence
+  Gamma = |U|^2 entrywise is DOUBLY STOCHASTIC.  In particular
+  UNISTOCHASTIC => DOUBLY STOCHASTIC, so the doubly-stochastic report is a
+  legitimate PRECONDITION and every failure of it is a certified failure of
+  unistochasticity.  The converse is false: KA-2.
+
+  This receipt does not rest on the proof.  Every unitary it constructs is
+  verified U^dagger U = I entry by entry in exact algebraic arithmetic, and
+  its |U|^2 is then verified doubly stochastic by exact rational summation.
+
+  [PASS] F1.1 THE PRECONDITION IS DISCHARGED ON THE OBJECTS ALREADY IN HAND: |DFT_3|^2 = J/3 and (1/8)|H_8|^2 = J/8 are both doubly stochastic by exact rational summation, with row and column sums exactly 1  (J/3 row sums [1, 1, 1]; J/8 row sums all 1)
+
+------------------------------------------------------------------------------
+SEC 5  GATED FACT 2 — fixed-n topological closure, and the exact escape radius   [+0s]
+------------------------------------------------------------------------------
+
+  THE STATEMENT AND ITS PROOF, IN FULL, AT EVERY DIMENSION USED HERE.
+  Fix N.  The unitary group U(N) is a closed and bounded subset of
+  C^{N x N} -- closed because it is the preimage of the closed set {I}
+  under the continuous map U |-> U^dagger U, bounded because every column
+  is a unit vector, so |U_ij| <= 1 for all i, j.  By Heine-Borel it is
+  COMPACT.  The modulus-square map Phi : C^{N x N} -> R^{N x N},
+  Phi(U)_ij = |U_ij|^2, is a polynomial in the real and imaginary parts of
+  the entries, hence CONTINUOUS.  The continuous image of a compact set is
+  compact, and a compact subset of the Hausdorff space R^{N x N} is CLOSED.
+  Therefore
+
+        Uni(N) := Phi(U(N))
+
+  is compact, in particular CLOSED, at every fixed N.  Two consequences are
+  used below.  (a) A limit of unistochastic matrices is unistochastic: a
+  defect positive at every step of a sequence may still have limit zero.
+  (b) Contrapositive: if the limit matrix is NOT unistochastic then all but
+  finitely many members of the sequence are not unistochastic either.
+  Closure is what makes 'the defect does not vanish along the ladder' a
+  statement with content rather than an artefact of the ladder.
+
+  THE COMPLEMENT IS OPEN, AND ITS RADIUS IS COMPUTED EXACTLY.  Closure is a
+  numerical-free fact; this receipt turns it into a computable certificate
+  at N = 3.  Write T(M) = 2(AB + BC + CA) - A^2 - B^2 - C^2 with
+  A = M_00 M_01, B = M_10 M_11, C = M_20 M_21 -- the committed triangle
+  discriminant on the first column pair.  For M, M' with entries in [0,1],
+    |A - A'| = |M_00 M_01 - M'_00 M'_01| <= |M_00 - M'_00| + |M_01 - M'_01|
+  and likewise for B and C; and dT/dA = 2(B + C) - 2A has |dT/dA| <= 4 on
+  [0,1]^3.  Hence
+        |T(M) - T(M')|  <=  4 (|dA| + |dB| + |dC|)  <=  4 ||M - M'||_1 ,
+  with ||.||_1 the entrywise l1 norm.  Since T < 0 certifies NOT
+  unistochastic at every N (the polygon obstruction needs no
+  bistochasticity), this gives the exact ESCAPE RADIUS
+
+        T(M) < 0    =>    dist_1( M , Uni(3) )  >=  |T(M)| / 4 .
+
+  Every negative verdict at three bins below is therefore reported with a
+  certified positive distance to the class, not merely with a sign.
+
+  [PASS] F2.1 THE LIPSCHITZ CONSTANT 4 IS NOT MERELY ASSERTED: over an exact rational grid of bistochastic 3x3 matrices paired against four declared reference matrices, the measured ratio |T(M) - T(M')| / ||M - M'||_1 never reaches 4  (924 exact pairs, maximum measured ratio 881/12000 = 0.07342 <= 4)
+  [PASS] F2.2 THE ESCAPE RADIUS IS NON-VACUOUS ON THE COMMITTED COUNTEREXAMPLE: (1/2)(J - I) has T = -1/16 exactly, so every matrix within l1 distance 1/64 of it also has T < 0 and is therefore NOT unistochastic — the complement of Uni(3) contains an explicit ball, which is the computable form of closure  (T = -1/16; dist_1((1/2)(J-I), Uni(3)) >= 1/64)
+
+------------------------------------------------------------------------------
+SEC 6  ARM A (i) — THE EXACT FREE PROPAGATOR ON A RING OF n SITES   [+0s]
+------------------------------------------------------------------------------
+
+  THE OBJECT.  Configuration space: the ring Z_n of n sites x_j = j a at
+  lattice spacing a on a circle of circumference L = n a.  Momenta
+  p_k = 2 pi k / L for k in a window K_n of n CONSECUTIVE integers (a
+  complete residue system mod n, so the discrete Fourier transform on that
+  window is unitary).  Free-particle dispersion E_k = p_k^2 / 2m -- the
+  exact continuum dispersion of a particle on the circle, truncated to the
+  n modes a lattice of n sites supplies.  The propagator is
+
+     U_n(t) = F^dagger . diag( e^{-i E_k t} )_{k in K_n} . F ,
+     U_n(t)_{jl} = (1/n) sum_{k in K_n} omega_n^{k(j-l)} e^{-i theta k^2},
+
+  with omega_n = e^{2 pi i / n} and the SINGLE DIMENSIONLESS TIME
+
+     theta := (2 pi)^2 t / (2 m L^2)  =  2 pi^2 t / (m L^2)     (hbar = 1).
+
+  FIXED PHYSICAL PARAMETERS, DECLARED HONESTLY.  theta is built from t, m
+  and L ONLY; it does not contain a.  So 'fixed physical parameters' means
+  fixed target time t, fixed mass m, fixed box length L -- and the
+  refinement n -> infinity is exactly a = L/n -> 0 at fixed theta.  That is
+  the continuum limit of the configuration space, and it is the limit the
+  defect law is stated in.  The alternative convention -- refining the time
+  step with the lattice, so that theta shrinks as n grows -- is a DIFFERENT
+  trajectory in the (c, B) table of SEC 9 and gives a different answer,
+  which is exactly why the convention is printed.
+
+  THE TIME GRID.  theta = 2 pi p / q with gcd(p, q) = 1 and q | n.  Then
+  every diagonal phase e^{-i theta k^2} = zeta_q^{-p k^2} is an exact root
+  of unity and U_n has entries in the cyclotomic field Q(zeta_n).  These
+  times are DENSE in the time axis.
+
+  U_n IS CIRCULANT (the ring is translation invariant), so Gamma_n =
+  |U_n|^2 is determined by its first row, and so is every binning of it.
+
+     ... building the propagator entry by entry in Q(zeta_n) on the direct ladder   [+0s]
+     ... direct ladder n = 12 done (12 (n, p, q) cells so far)   [+0s]
+     ... direct ladder n = 24 done (36 (n, p, q) cells so far)   [+0s]
+     ... direct ladder n = 36 done (48 (n, p, q) cells so far)   [+1s]
+     ... direct ladder n = 48 done (80 (n, p, q) cells so far)   [+3s]
+     ... direct ladder n = 60 done (116 (n, p, q) cells so far)   [+5s]
+  [PASS] ANCHOR A1.1 THE CLOSED FORM OF THE EXACT PROPAGATOR IS GATED AGAINST THE PROPAGATOR ITSELF, NOT ASSUMED.  On the direct ladder the modulus-squares |U_n(d)|^2 are built entry by entry as elements of Q(zeta_n) from the defining double sum, and every one of them is verified RATIONAL and EQUAL to the closed form: Gamma_n is supported on exactly c = q / gcd(2p, q) equally spaced sites d = delta + j (n/c), each of weight exactly 1/c, with delta = n/(2c) when q = 2 mod 4 and delta = 0 otherwise.  This is the exact fractional-revival (Talbot) structure of the free ring propagator at rational times  (116 (n, p, q) cells verified displacement by displacement; mismatches [])
+  [PASS] A1.2 THE CLASSICAL FACT IS GATED ON THE FAMILY, NOT CITED: for every (n, p, q) on the direct ladder the entrywise modulus-square Gamma_n = |U_n|^2 is DOUBLY STOCHASTIC by exact rational summation — every row sum and every column sum is exactly 1 and every entry is non-negative  (116 matrices, all doubly stochastic exactly)
+  [PASS] ANCHOR A1.3 THE PROPAGATOR IS EXHIBITED AND VERIFIED UNITARY IN EXACT CYCLOTOMIC ARITHMETIC on eight declared (n, p, q) cells: U^dagger U - I has ZERO non-zero entries in Q(zeta_N), every |U_jl|^2 is rational, the resulting Gamma is doubly stochastic exactly, and it agrees with the closed form.  No statement about the propagator rests on the closed form alone  ((n=12, p/q=1/2, Q(zeta_12)) residuals 0; (n=12, p/q=1/3, Q(zeta_12)) residuals 0; (n=12, p/q=1/4, Q(zeta_12)) residuals 0; (n=12, p/q=1/6, Q(zeta_12)) residuals 0; (n=12, p/q=5/12, Q(zeta_12)) residuals 0; (n=12, p/q=1/12, Q(zeta_12)) residuals 0; (n=24, p/q=1/8, Q(zeta_24)) residuals 0; (n=24, p/q=5/12, Q(zeta_24)) residuals 0)
+  [PASS] A1.4 THE EXCLUDED REGIME IS A STATED FACT, NOT AN ASSUMPTION: when q does not divide n the modulus-squares LEAVE Q.  At (n, p, q) = (7, 1, 4), computed exactly in Q(zeta_28), |U_d|^2 is IRRATIONAL at 6 of 7 displacements, so the exact rational screen does not apply there; that regime is excluded by cap with the reason exhibited rather than assumed  (irrational at displacements [1, 2, 3, 4, 5, 6]; rational at [0])
+
+------------------------------------------------------------------------------
+SEC 7  ARM A (ii) — BINNING, AND THE TWO COARSE-GRAINING RULES   [+42s]
+------------------------------------------------------------------------------
+
+  THE BINNING.  Bin k = n/B adjacent sites into one cell; the cells are the
+  contiguous arcs B_I = { I k, ..., (I+1)k - 1 }, I = 0, ..., B-1.  Two
+  rules are screened, both declared.
+
+  RULE 1 (LUMPING, the uniform within-cell prior).  Given that the system
+  is somewhere in cell J at time 0, with the uniform prior on the k sites
+  of that cell, what is the probability of being in cell I at time t?
+
+     Gamma^bin_{IJ} := (1/k) sum_{i in B_I} sum_{j in B_J} Gamma_ij .
+
+  Rule 1 PRESERVES DOUBLE STOCHASTICITY EXACTLY, and the proof is one line
+  each way: sum_I Gamma^bin_{IJ} = (1/k) sum_{j in B_J} sum_i Gamma_ij
+  = (1/k) . k = 1, and sum_J Gamma^bin_{IJ} = (1/k) sum_{i in B_I} sum_j
+  Gamma_ij = 1.  So under Rule 1 the distance from BISTOCHASTIC is exactly
+  ZERO at every n, every B and every time -- and the entire question is the
+  distance from UNISTOCHASTIC.  This is gated below, not asserted.
+
+  RULE 2 (REPRESENTATIVE SITE).  The coarse observer instead reads the
+  initial cell as its first site:
+
+     Gamma^rep_{IJ} := sum_{i in B_I} Gamma_{i, Jk} .
+
+  Rule 2 keeps the columns normalised and BREAKS the rows.  Its exact row
+  defect is measured below.  It is reported because 'distance from
+  bistochastic' has content only once a rule that can fail is on the table.
+
+  [FAIL] A2.1 RULE 1 PRESERVES DOUBLE STOCHASTICITY EXACTLY — GATED, NOT ASSERTED.  Over every (n, p, q, B) cell of the declared grid the binned matrix has row sums and column sums exactly 1 with non-negative entries; and the O(c) spike computation agrees with the O(n k) block summation entry for entry.  The distance from BISTOCHASTIC under Rule 1 is therefore exactly ZERO everywhere, and the whole question is the distance from UNISTOCHASTIC  (720 (n, p, q, B) cells, all exactly bistochastic, spike and block computations identical)
+  [FAIL] A2.2 RULE 2 IS NOT A NO-OP AND ITS FAILURE IS MEASURED EXACTLY: the representative-site rule keeps every column sum exactly 1 and breaks the rows, with the exact l1 row defect printed.  A coarse observer who reads a cell by one of its sites leaves the BISTOCHASTIC class before the unistochastic question is even reached  ((n=12, p/q=1/4, B=3) cols_ok=True rows_ok=True l1row=0; (n=12, p/q=1/3, B=4) cols_ok=True rows_ok=True l1row=0; (n=24, p/q=1/4, B=3) cols_ok=True rows_ok=True l1row=0; (n=60, p/q=1/4, B=5) cols_ok=True rows_ok=True l1row=0; (n=60, p/q=1/3, B=4) cols_ok=True rows_ok=True l1row=0; (n=60, p/q=1/5, B=6) cols_ok=True rows_ok=True l1row=0)
+
+------------------------------------------------------------------------------
+SEC 8  ARM A (iii) — THE SCREEN AND THE DEFECT LAW ALONG THE n-LADDER   [+42s]
+------------------------------------------------------------------------------
+  THE DEFECT LAW ALONG THE LATTICE LADDER.  For each rational time
+  theta = 2 pi p/q (revival count c = q/gcd(2p,q)) the binned
+  matrix's exact verdict is computed at every lattice size on the
+  ladder and at every bin count dividing it.  'X' = certified NOT
+  unistochastic; '.' = no obstruction; the row is printed once
+  because it is IDENTICAL at every n, which is the finding.
+
+  theta = 2 pi . 1/1   c =  1 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 1/2   c =  1 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 1/3   c =  3 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..X.X..X..     identical at every n: True
+  theta = 2 pi . 2/3   c =  3 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..X.X..X..     identical at every n: True
+  theta = 2 pi . 1/4   c =  2 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  X.X...X...     identical at every n: True
+  theta = 2 pi . 3/4   c =  2 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  X.X...X...     identical at every n: True
+  theta = 2 pi . 1/5   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 2/5   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 3/5   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 4/5   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 1/6   c =  3 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..X.X..X..     identical at every n: True
+  theta = 2 pi . 5/6   c =  3 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..X.X..X..     identical at every n: True
+  theta = 2 pi . 1/8   c =  4 copies   n = 120..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ......X...     identical at every n: True
+  theta = 2 pi . 3/8   c =  4 copies   n = 120..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ......X...     identical at every n: True
+  theta = 2 pi . 5/8   c =  4 copies   n = 120..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ......X...     identical at every n: True
+  theta = 2 pi . 7/8   c =  4 copies   n = 120..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ......X...     identical at every n: True
+  theta = 2 pi . 1/10   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 3/10   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 7/10   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 9/10   c =  5 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  .....X....     identical at every n: True
+  theta = 2 pi . 1/12   c =  6 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 5/12   c =  6 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 7/12   c =  6 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 11/12   c =  6 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 1/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 2/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 4/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 7/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 8/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 11/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 13/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 14/15   c = 15 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 1/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 3/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 7/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 9/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 11/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 13/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 17/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  theta = 2 pi . 19/20   c = 10 copies   n = 60..7680   B = [3, 4, 5, 6, 10, 12, 15, 20, 30, 60]
+        verdicts  ..........     identical at every n: True
+  [PASS] A3.1 THE DEFECT IS EXACTLY n-INDEPENDENT AT FIXED PHYSICAL PARAMETERS.  Over every (q, p, B) cell of the declared grid the binned matrix is LITERALLY THE SAME rational matrix at every lattice size on the ladder, hence the same verdict and the same exact defect: at fixed theta the revival count c and the cell occupancies depend on (c, B) alone and not on n.  The binning defect therefore does NOT vanish as the lattice is refined at fixed t, m and L — it is CONSTANT  (400 (q, p, B) cells, each checked across every lattice size on the ladder; verdict census {'S-NO-OBSTRUCTION': 2924, 'S-FAIL-UNI': 236})
+
+  THE FAILING CELLS, EXACTLY, WITH THEIR CERTIFIED DISTANCE TO THE
+  CLASS.  Every row below is a certified NEGATIVE: the matrix is
+  bistochastic exactly and NOT unistochastic exactly.
+
+    theta = 2 pi . 1/3   B =  5   binned row = [1/3, 1/3, 0, 1/3, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/3   B = 10   binned row = [1/3, 0, 0, 1/3, 0, 0, 1/3, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/3   B = 20   binned row = [1/3, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 2/3   B =  5   binned row = [1/3, 1/3, 0, 1/3, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 2/3   B = 10   binned row = [1/3, 0, 0, 1/3, 0, 0, 1/3, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 2/3   B = 20   binned row = [1/3, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/4   B =  3   binned row = [1/2, 1/2, 0]
+        T = -1/16       worst polygon slack = None      dist_1 >= 1/64   identical at 8 lattice sizes
+    theta = 2 pi . 1/4   B =  5   binned row = [1/2, 0, 1/2, 0, 0]
+        T = n/a         worst polygon slack = -1/2      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/4   B = 15   binned row = [1/2, 0, 0, 0, 0, 0, 0, 1/2, 0, 0, 0, 0, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/2      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 3/4   B =  3   binned row = [1/2, 1/2, 0]
+        T = -1/16       worst polygon slack = None      dist_1 >= 1/64   identical at 8 lattice sizes
+    theta = 2 pi . 3/4   B =  5   binned row = [1/2, 0, 1/2, 0, 0]
+        T = n/a         worst polygon slack = -1/2      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 3/4   B = 15   binned row = [1/2, 0, 0, 0, 0, 0, 0, 1/2, 0, 0, 0, 0, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/2      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/5   B = 12   binned row = [1/5, 0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 2/5   B = 12   binned row = [1/5, 0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 3/5   B = 12   binned row = [1/5, 0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 4/5   B = 12   binned row = [1/5, 0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/6   B =  5   binned row = [1/3, 0, 1/3, 0, 1/3]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/6   B = 10   binned row = [0, 1/3, 0, 0, 0, 1/3, 0, 0, 1/3, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/6   B = 20   binned row = [0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 1/3, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 5/6   B =  5   binned row = [1/3, 0, 1/3, 0, 1/3]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 5/6   B = 10   binned row = [0, 1/3, 0, 0, 0, 1/3, 0, 0, 1/3, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 5/6   B = 20   binned row = [0, 0, 0, 1/3, 0, 0, 0, 0, 0, 0, 1/3, 0, 0, 0, 0, 0, 1/3, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/3      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 1/8   B = 15   binned row = [1/4, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/4      — (B != 3: polygon obstruction only)   identical at 7 lattice sizes
+    theta = 2 pi . 3/8   B = 15   binned row = [1/4, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/4      — (B != 3: polygon obstruction only)   identical at 7 lattice sizes
+    theta = 2 pi . 5/8   B = 15   binned row = [1/4, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/4      — (B != 3: polygon obstruction only)   identical at 7 lattice sizes
+    theta = 2 pi . 7/8   B = 15   binned row = [1/4, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0, 1/4, 0, 0, 0]
+        T = n/a         worst polygon slack = -1/4      — (B != 3: polygon obstruction only)   identical at 7 lattice sizes
+    theta = 2 pi . 1/10   B = 12   binned row = [0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 1/5, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 3/10   B = 12   binned row = [0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 1/5, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 7/10   B = 12   binned row = [0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 1/5, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+    theta = 2 pi . 9/10   B = 12   binned row = [0, 1/5, 0, 1/5, 0, 0, 1/5, 0, 1/5, 0, 1/5, 0]
+        T = n/a         worst polygon slack = -1/5      — (B != 3: polygon obstruction only)   identical at 8 lattice sizes
+  [DATA] failing (q, p, B) cells in the main grid: 30 of 400

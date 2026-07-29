@@ -1,0 +1,893 @@
+
+------------------------------------------------------------------------------
+SEC 1  THE REGISTRY: quoted constants with path:line provenance
+------------------------------------------------------------------------------
+  [QUOTE armc2-ens] v11/note-u1-indivisibility-census.md:428-434 (ARM-C2) and v11/code/u1_indivisibility_census_exact.py:2161-2170 (gate C2b)
+      "a renewal three events after a renewal forces the two intervening events to be proposals, and the depth-9 leaves carrying renewals at 3, 6 and 9 are enumerable EXHAUSTIVELY: 16 renewal-1 bases -> 256 renewal-2 histories -> 4,096 renewal-3 histories, raw mass 1/32768."
+  [QUOTE b1-live] v10/code/d42b1_transport_exact.py:118-122 (View.live), :331-364 (candidates_for)
+      "the live proposal events of a view are exactly its 'p' events whose triple is not resolved; only a 'p' event creates one, and an arbitration resolves them.  candidates_for builds every 'r' candidate's ckey as triples(full, S) for a SUBSET S of full.live sharing one base."
+  [QUOTE b3-p9] [B3] J. A. Barandes, arXiv:2507.21192, p.9 and eqs. 22-23 (quoted in v11 paper 0 sec.2 and sec.4)
+      "conditioning is admitted only at DIVISION EVENTS; given Gamma(t<-t0) and Gamma(t'<-t0) the interpolated matrix Gammabar = Gamma(t<-t0) Gamma(t'<-t0)^-1 is generically pseudo-stochastic; divisibility failure is a computable, entrywise property."
+  [QUOTE d42b1-token] v10/code/d42b1_transport_exact.py:52-55 (vname), :60-62 (value_of), :64-69 (base_of), :71-79 (regs_of)
+      "vname(base, wkey, init) = ('v', base, value, authors, init) with value = tuple(sorted({t[2] for t in wkey})) and authors = tuple(sorted({t[0] for t in wkey})); the arbitration event's own created version is vname(base, op[3], op[1]) with base = next(iter(op[2]))[1].  tkn[1] IS the base."
+  [QUOTE d62-R4] v10/note-d62-h2-update-table.md:247 (row R4), :550-554; ported at v11/code/u1_indivisibility_census_exact.py:1146-1151
+      "R4 is the pair-arb — tag 'r' with TWO proposers in the ckey — and every pair-arbitration returns the serialized state to the root."
+  [QUOTE u1b-census] v11/note-u1b-renewal-class-sweep.md:343-348 (the census, both ways) and v11/code/u1b_output.txt:199-202 (the bite tables)
+      "1,024 candidate maps x 4 ensembles; the fixedness gate admits 176; the bite gate calls 102 of those DEGENERATE; 74 verdict rows remain, DIVISIBLE 74 / INDIVISIBLE 0; E1/E2/E3 admit 16 each with 0 biting, E4 admits 128 with 74 biting."
+  [QUOTE u1b-kernel] v11/note-u1b-renewal-class-sweep.md:322-333 (GATE A4)
+      "the renewal LEG KERNEL is exactly uniform on the eight payloads CONDITIONALLY ON EVERY PARENT HISTORY — all 16 + 256 + 4,096 parents, at leg lengths 3 and 4, no exception; by the chain rule the payload chain is i.i.d. uniform at every interval pattern."
+  [QUOTE u1b-open] v11/note-u1b-renewal-class-sweep.md:528-533 (the one open computation)
+      "build the ensemble with five renewals at 3/6/9/12/15, take the cut triple (r3, r4, r5), and sweep the lag-<=2 sublattice.  That is the smallest ensemble on which a map with a non-column-constant SECOND transfer is admissible, and therefore the smallest on which the interpolant test at renewal grain can refuse at all."
+  [QUOTE u1b-predict] v11/note-u1b-renewal-class-sweep.md:443-460 (sec.9, ROUND-COMPUTED, NOT RECEIPT-GATED) and the round's warning at :456-460
+      "classifying all 512 lag-<=2 masks at renewals (3,4,5): 1 one-label; 152 forced-divisible; 63 doubly degenerate; 61 forced-indivisible; 127 TWO-SIDED that DIVIDE by exact CK; 108 TWO-SIDED that REFUSE with exact collision certificates.  WARNING: all 108 predicted refusals contain a GAP component (lags 0 and 2, not 1) whose own first transfer is column-constant, the bite supplied by a different component — U1c's bite predicate must be (D-1) AND (D-2) AND factor-wise."
+  [DATA] committed anchors (exit 1 on mismatch): {'C2.bases': '16', 'C2.mass': '1/32768', 'C2.r2': '256', 'C2.r3': '4096', 'U1b.E4adm': '128', 'U1b.E4deg': '54', 'U1b.E4leaves': '65536', 'U1b.adm': '176', 'U1b.bite': '74', 'U1b.deg': '102', 'U1b.kernel': '1/8'}
+  [DATA] THE U1b ROUND'S DEPTH-15 PREDICTION (model-computed, NOT an anchor; a disagreement is a FINDING): {'one-label': 1, 'forced-divisible': 152, 'doubly-degenerate': 63, 'forced-indivisible': 61, 'two-sided DIVISIBLE': 127, 'two-sided INDIVISIBLE': 108}
+
+------------------------------------------------------------------------------
+SEC 2  SINGLE-SOURCING: AST signature pass, text slice, AST extraction
+------------------------------------------------------------------------------
+  [PASS] ANCHOR SRC.1 AST SIGNATURE PASS on the three committed sources: every required definition exists at module level with the exact positional argument list, so a silent upstream edit to the token structure, the enumerator or the U1 census machinery cannot slip through this receipt unnoticed  (d42b1 29 defs (10 required, missing []); d74 39 defs (missing []); u1 receipt 50 defs (18 required, missing []))
+  [DATA] d42b1 slice: 16129/40838 bytes executed (definition head only)
+  [PASS] ANCHOR SRC.2 EXIT-FREEDOM GATED: sys.exit / os._exit are neutralised inside the slice and restored after, so a sliced layer cannot set this receipt's exit status; the slice re-executes cleanly  (second slice of d42b1 executed with exit blocked; 0 sys.exit in the 16129-byte head)
+  [PASS] ANCHOR SRC.3 THE ENUMERATOR IS D74's, extracted by AST from the committed receipt and not retyped  (lifted 3 definitions from v10/code/d74_transport_holonomy_exact.py: enumerate_line, evsk, sk)
+  [PASS] ANCHOR SRC.4 THE LOAD-BEARING MACHINERY IS THE U1 RECEIPT's, extracted by ast.FunctionDef from the TERMINAL U1 receipt and not re-implemented: the ported D62 state sigmaT and its payload_of, the R4 predicate, the exact Phase-I simplex with its Farkas certificate, the feasibility-preserving reduced system and its lift, the Gamma machinery, and decide_triple itself  (lifted 18 definitions from v11/code/u1_indivisibility_census_exact.py: decide_reduced (49L), decide_triple (131L), farkas_ok (10L), fr_digest (9L), gamma_of (9L), invert_exact (25L), is_R4 (6L), lcg_shuffle (8L), lift_and_verify (23L), payload_of (6L), phase1 (90L), proposers_of (2L), reduce_system (59L), sigT (2L), sigmaT (45L), sk (9L), srt (2L), supports (2L))
+  [PASS] ANCHOR SRC.5 THE U1b LAYER THIS RECEIPT RE-USES IS THE COMMITTED U1b TEXT: the leg prune's inequality, the live-state carrier, the renewal-token constructor, the field-record constructor, the column-constancy test and the base-chain walk all appear verbatim in the committed U1b receipt, so this receipt's objects move if U1b's do  (6 clauses located in v11/code/u1b_renewal_class_sweep_exact.py (83445 bytes); missing [])
+  [PASS] ANCHOR SRC.6 THE PRUNE's SECOND PREMISE IS PROVABLE FROM THE COMMITTED SOURCE, not merely gated: every 'r' candidate the grammar offers has ckey = triples(full, S) for a SUBSET S of full.live sharing one base (the five clauses are located verbatim in candidates_for), so an R4 — a ckey with TWO distinct proposers — needs |S| >= 2 and therefore at least two live proposals in the parent's full view.  The 0-violation count reported in SEC 5 is a tripwire on top of the proof, not the warrant  (candidates_for = 52 lines; 5/5 clauses located verbatim)
+
+------------------------------------------------------------------------------
+SEC 3  THE ACCELERATORS: memo wrappers on committed pure functions, declared before use and gated against the committed layer
+------------------------------------------------------------------------------
+  This receipt enumerates ~10^6 leaves of the committed grammar.  FOUR committed
+  functions are wrapped, and no more.  THREE of the four — regs_of,
+  admissible and admissible_arb_ckeys — are pure memo wrappers whose stored
+  values are LITERALLY the committed function's own return values (a miss
+  calls the committed function; a hit returns what the committed function
+  returned), so the only claim they make is that the committed function is a
+  function of its memo key — which is read off its own source: it declares no
+  global, calls no clock and no random source.  THE FOURTH is different and is
+  gated harder: event_poset is rebuilt INCREMENTALLY from the cached parent
+  prefix, so its value is COMPUTED here rather than quoted.  It is compared
+  with the committed event_poset on EVERY call of a declared population,
+  and every leg that uses it is additionally DOUBLE-RUN against the
+  untouched committed layer (gates ACC.2, ACC.4, ACC.5).
+  [PASS] ACC.1 THE MEMOISED COMMITTED FUNCTIONS ARE PURE IN THEIR MEMO KEY, read off their own source: regs_of, admissible and admissible_arb_ckeys declare no global, call no clock and no random source, and every value this receipt serves from cache is the value the committed function itself returned on the first call with that key  (source-inspected 3/3 clean; flagged [])
+
+------------------------------------------------------------------------------
+SEC 4  DECLARED CAPS AND THE ENSEMBLE SPEC (nothing silent)
+------------------------------------------------------------------------------
+  actor pool                     ('A', 'B') (transport scope, d42b1)
+  ensemble                       renewals at (3, 6, 9, 12, 15) (minimal intervals), cut triple at depths (9, 12, 15) = renewals 3, 4, 5
+  field-lattice base-chain depth lag 0..2
+  exact LP caps                  700v/400r (full), 5000v/1200r (reduced), 400000 pivots
+  committed decide_triple cap    handed a row only when every label set is <= 64; rows above it are decided by exact Chapman-Kolmogorov or by the collision certificate, and any row neither instrument decides is printed as EXCLUDED-BY-CAP
+  eq. 22 inversion cap           64 labels
+  certificate print cap          24 non-zero entries (the PRINT is a digest; the VERIFICATION is on the full object)
+  compound-degenerate print cap  240 rows printed individually
+  null reference class cap       16 classes
+  null shuffle                   x <- (1103515245 x + 12345) mod 2147483648, seeds (20260728, 11); no random module, no clock, no hash seed
+  prune-vs-unpruned samples      48 renewal-3 parents (renewal-4 leg) and 24 renewal-4 parents (renewal-5 leg), taken by a printed deterministic stride that ALWAYS includes the first and last parent, so the realised counts are at most one larger and are printed at X3 and X5
+
+  THE ENSEMBLE.  Leaves of the committed transport grammar carrying pair-
+  arbitrations at depths 3, 6, 9, 12 and 15 and at no other depth, reached
+  by the telescoping ARM-C2 uses: at horizon D the relative-horizon leaf
+  measure is P(leaf) = prod_t q_t / G(root, D) because G(leaf,0) = 1, so
+  the law CONDITIONED on a set of leaves needs only those leaves' raw
+  weight products and the normaliser cancels.  No sampling, no truncation,
+  exact rationals throughout.
+
+  WHY DEPTH 15.  The base of renewal k's token is renewal (k-1)'s token,
+  so a map reading base-chain lag 2 meets the genesis boundary at any cut
+  triple beginning before the THIRD renewal and fails the fixedness gate
+  (U1b gate A1).  Depth 15 is therefore the first depth at which a lag-2
+  map is admissible at all, and — because the SECOND transfer of every
+  lag-<=1 map is column-constant (U1b gate A3) — the first depth at which
+  the interpolant test can have TWO sides.
+
+------------------------------------------------------------------------------
+SEC 5  THE RENEWAL LEG: the pruned exhaustive enumerator, with both prune premises AND the live-count identity asserted at EVERY expansion
+------------------------------------------------------------------------------
+  [PASS] C2a (re-run) THE ROOT CARRIES NO LIVE OPERATIONS, which is what licenses reading a renewal as a fresh start: every ported token record at the root state has an EMPTY live-triple list  (root state ((('A', 'B'), False, ()),))
+  [PASS] B0 THE 16 RENEWAL-1 BASES ARE THE DEPTH-3 PAIR-ARBITRATIONS, with exact telescoped weights, and each is a renewal in D62's own sense (post-state = root)  (16 bases; raw mass 1/32; each weight 1/512; distinct renewal-1 tokens 8)
+  [PASS] X1 EXHAUSTIVENESS, LEG 1, BY UNPRUNED SCAN.  Every 3-event continuation of all 16 renewal-1 bases is generated with NO prune and only then filtered; the pruned enumerator returns exactly the same leaf set with exactly the same weights, and (p,p,r) is the only intervening pattern  (16352 raw continuations scanned -> 256 leaves; patterns {('p', 'p', 'r'): 256}  [1s])
+  [PASS] X2 EXHAUSTIVENESS, LEG 2, BY UNPRUNED SCAN: every 3-event continuation of all 256 renewal-2 histories is generated with no prune and only then filtered; the pruned enumerator returns exactly the same 4,096 leaves with the same weights, and (p,p,r) is the ONLY intervening pattern that reaches a renewal three events after a renewal  (453632 raw continuations scanned -> 4096 leaves; patterns {('p', 'p', 'r'): 4096}  [54s])
+  [PASS] ANCHOR ACC.2 THE ACCELERATED LAYER REPRODUCES THE COMMITTED LAYER LEAF BY LEAF AND WEIGHT BY WEIGHT: legs 1 and 2 are re-enumerated with the accelerators UNINSTALLED — d42b1's own regs_of, event_poset, admissible and admissible_arb_ckeys — and the two leaf sets are identical as sets of (history, exact weight) pairs, with identical intervening-pattern censuses  (leg 1: 256 vs 256 leaves; leg 2: 4096 vs 4096 leaves; 0 differences  [11s])
+  [PASS] ACC.3 THE INCREMENTAL event_poset AGREES WITH THE COMMITTED event_poset ON EVERY CALL SO FAR: each incrementally extended predecessor table is compared, as a list of index sets, with the committed function's own output on the same event word  (1757104/1757104 incremental posets identical to event_poset(acts); 0 mismatches)
+      THE PER-CALL POSET GATE IS NOW SWITCHED OFF FOR THE DEEP LEGS AND THAT IS A DECLARED CAP.
+      It ran on 1757104 calls — every expansion of legs 1 and 2 — and the deep
+      legs are covered instead by the whole-leg double runs ACC.4 and ACC.5 below,
+      which re-enumerate the same parents with the committed layer reinstalled.
+
+------------------------------------------------------------------------------
+SEC 6  THE U1b ANCHOR BLOCK: the four committed ensembles rebuilt, the committed census and the kernel fact reproduced (exit 1 on mismatch)
+------------------------------------------------------------------------------
+  [PASS] ANCHOR C2.ENS ARM-C2's ENSEMBLE REPRODUCES EXACTLY on machinery rebuilt here (an unpruned scan, not the committed _ppr): 16 renewal-1 bases -> 256 renewal-2 histories -> 4,096 renewal-3 histories at depth 9, raw mass 1/32768  (16 / 256 / 4096; mass 1/32768 (quoted 16 / 256 / 4096, 1/32768))
+  [PASS] ANCHOR U1b.A4 THE COMMITTED KERNEL FACT REPRODUCES AT RENEWALS 2 AND 3: the renewal leg kernel is exactly uniform 1/8 on the eight payloads CONDITIONALLY ON EVERY PARENT HISTORY — all 16 renewal-1 and all 256 renewal-2 parents, no exception  (renewal-2 kernel 16/16 parents uniform; renewal-3 kernel 256/256 parents uniform; deviations 0  [0s])
+  [DATA] LEG-1 interval-4 tag patterns (the unequal-interval structure, exhaustive): {('d', 'p', 'p', 'r'): 1024, ('n', 'p', 'p', 'r'): 512, ('p', 'n', 'p', 'r'): 512, ('p', 'p', 'd', 'r'): 1024, ('p', 'p', 'n', 'r'): 512}  [2s]
+        ... U1b E2 leg2 1024/3584 parents, 16384 leaves  [14s in leg, 83s total]
+        ... U1b E2 leg2 2048/3584 parents, 32768 leaves  [28s in leg, 97s total]
+        ... U1b E2 leg2 3072/3584 parents, 49152 leaves  [42s in leg, 111s total]
+  [DATA] U1b E2 (3/7/10) rebuilt: 3584 renewal-2 -> 57344 leaves, raw mass 1/8192  [49s]
+        ... U1b E3 leg2 64/256 parents, 18432 leaves  [18s in leg, 137s total]
+        ... U1b E3 leg2 128/256 parents, 36864 leaves  [37s in leg, 155s total]
+        ... U1b E3 leg2 192/256 parents, 55296 leaves  [55s in leg, 173s total]
+        ... U1b E3 leg2 256/256 parents, 73728 leaves  [73s in leg, 191s total]
+  [DATA] U1b E3 (3/6/10) rebuilt: 256 renewal-2 -> 73728 leaves, raw mass 1/8192  [73s]
+        ... U1b E4 leg3 / U1c renewal-4 leg 1024/4096 parents, 16384 leaves  [27s in leg, 218s total]
+        ... U1b E4 leg3 / U1c renewal-4 leg 2048/4096 parents, 32768 leaves  [55s in leg, 246s total]
+        ... U1b E4 leg3 / U1c renewal-4 leg 3072/4096 parents, 49152 leaves  [82s in leg, 273s total]
+        ... U1b E4 leg3 / U1c renewal-4 leg 4096/4096 parents, 65536 leaves  [109s in leg, 301s total]
+  [DATA] U1b E4 = U1c's renewal-4 population (3/6/9/12) built: 4096 renewal-3 -> 65536 leaves, raw mass 1/1048576  [125s]
+  [PASS] X3 PRUNE-VS-UNPRUNED AGREEMENT ON THE RENEWAL-4 LEG, on a declared deterministic stride sample of the renewal-3 parents (a full unpruned scan of all 4,096 parents costs of order 10^7 continuations and is a DECLARED cap, not a silent one): the unpruned scan and the pruned enumerator return identical leaf sets with identical weights  (49 parents at stride indices [0, 85, 170, 256, 341]...[4010, 4095]; 138082 raw continuations scanned -> 784 leaves; patterns {('p', 'p', 'r'): 784}  [20s])
+  [PASS] ANCHOR ACC.4 THE ACCELERATED RENEWAL-4 LEG REPRODUCES THE COMMITTED ONE on the same declared sample of parents, leaf by leaf and weight by weight, with the accelerators uninstalled  (784 vs 784 leaves; 0 differences  [5s])
+  [PASS] ANCHOR U1b.A4b THE RENEWAL-4 LEG KERNEL IS UNIFORM 1/8 CONDITIONALLY ON EVERY ONE OF THE 4,096 RENEWAL-3 PARENTS — the committed U1b fact at the deepest leg it measured  (4096/4096 parents uniform; deviations 0; E4 leaves 65536  [1s])
+  [PASS] X4 THE PRUNE's TWO PREMISES AND THE LIVE-COUNT IDENTITY HOLD ON EVERY EXPANSION OF EVERY LEG SO FAR, asserted rather than sampled: (i) the live-proposal count rises by at most one and only across a 'p'; (ii) every R4 the grammar OFFERS anywhere in any leg — interior ones included, not only those the pattern accepts — has at least two live proposals in its parent's full view (SRC.6 proves this from candidates_for; this is the tripwire); (iii) the carried live count equals d42b1's OWN View.live on every expanded node  (expansions gated 182474; monotonicity violations 0; R4 events offered 214816, of which with fewer than two live proposals in the parent view 0; live-count identity 182474/182474)
+  [DATA] U1b E1 class census (rebuilt): 4096 leaves; admissible 16; one-label 2; DEGENERATE (first transfer column-constant) 16; WITH BITE 0
+  [DATA] U1b E2 class census (rebuilt): 57344 leaves; admissible 16; one-label 2; DEGENERATE (first transfer column-constant) 16; WITH BITE 0
+  [DATA] U1b E3 class census (rebuilt): 73728 leaves; admissible 16; one-label 2; DEGENERATE (first transfer column-constant) 16; WITH BITE 0
+  [DATA] U1b E4 class census (rebuilt): 65536 leaves; admissible 128; one-label 2; DEGENERATE (first transfer column-constant) 54; WITH BITE 74
+  [PASS] ANCHOR U1b.CENSUS THE COMMITTED U1b FOUR-ENSEMBLE CENSUS REPRODUCES EXACTLY on machinery rebuilt here: 1,024 maps x 4 ensembles, 176 admissible, 102 degenerate by the (D-1) bite gate, 74 biting rows, and E4 alone carrying 128 admissible / 54 degenerate / 74 biting  (admissible 176 (quoted 176); degenerate 102 (quoted 102); biting 74 (quoted 74); per-ensemble {'E1': (16, 2, 16, 0), 'E2': (16, 2, 16, 0), 'E3': (16, 2, 16, 0), 'E4': (128, 2, 54, 74)}  [15s])
+
+------------------------------------------------------------------------------
+SEC 7  THE DEPTH-15 ENSEMBLE, streamed, and THE KERNEL-UNIFORMITY GATE AT RENEWAL 5
+------------------------------------------------------------------------------
+  The kernel gate runs BEFORE ANY MASK IS CLASSIFIED — it is computed inside
+  the enumeration itself — and it is EXHAUSTIVE: for EVERY one of the
+  renewal-4 parents the conditional law of the renewal-5 token's payload
+  must be exactly uniform 1/8 on eight payloads.  If it fails, the pin's
+  MODEL-BREAK outcome is scored, the exact deviation census is printed,
+  and the classification below is void — reported, not patched.
+  [PASS] X5 PRUNE-VS-UNPRUNED AGREEMENT ON THE RENEWAL-5 LEG, on a declared deterministic stride sample of the renewal-4 parents (a full unpruned scan of all 65,536 parents costs of order 10^8 continuations and is a DECLARED cap): the unpruned scan and the pruned enumerator return identical leaf sets with identical weights, and (p,p,r) is the only intervening pattern  (25 parents at stride indices [0, 2730, 5461, 8192, 10922]...[62805, 65535]; 105200 raw continuations scanned -> 400 leaves; patterns {('p', 'p', 'r'): 400}  [25s])
+  [PASS] ANCHOR ACC.5 THE ACCELERATED RENEWAL-5 LEG REPRODUCES THE COMMITTED ONE on the same declared sample of renewal-4 parents, leaf by leaf and weight by weight, with the accelerators uninstalled  (400 vs 400 leaves; 0 differences  [5s])
+        ... renewal-5 leg 2048/65536 parents, 32768 leaves, kernel-uniform 2048  [99s in leg, eta 3059s, 486s total]
+        ... renewal-5 leg 4096/65536 parents, 65536 leaves, kernel-uniform 4096  [197s in leg, eta 2951s, 584s total]
+        ... renewal-5 leg 6144/65536 parents, 98304 leaves, kernel-uniform 6144  [295s in leg, eta 2852s, 682s total]
+        ... renewal-5 leg 8192/65536 parents, 131072 leaves, kernel-uniform 8192  [393s in leg, eta 2753s, 781s total]
+        ... renewal-5 leg 10240/65536 parents, 163840 leaves, kernel-uniform 10240  [492s in leg, eta 2656s, 879s total]
+        ... renewal-5 leg 12288/65536 parents, 196608 leaves, kernel-uniform 12288  [591s in leg, eta 2562s, 979s total]
+        ... renewal-5 leg 14336/65536 parents, 229376 leaves, kernel-uniform 14336  [690s in leg, eta 2465s, 1077s total]
+        ... renewal-5 leg 16384/65536 parents, 262144 leaves, kernel-uniform 16384  [789s in leg, eta 2368s, 1176s total]
+        ... renewal-5 leg 18432/65536 parents, 294912 leaves, kernel-uniform 18432  [889s in leg, eta 2271s, 1276s total]
+        ... renewal-5 leg 20480/65536 parents, 327680 leaves, kernel-uniform 20480  [991s in leg, eta 2181s, 1378s total]
+        ... renewal-5 leg 22528/65536 parents, 360448 leaves, kernel-uniform 22528  [1092s in leg, eta 2084s, 1479s total]
+        ... renewal-5 leg 24576/65536 parents, 393216 leaves, kernel-uniform 24576  [1191s in leg, eta 1984s, 1578s total]
+        ... renewal-5 leg 26624/65536 parents, 425984 leaves, kernel-uniform 26624  [1290s in leg, eta 1886s, 1678s total]
+        ... renewal-5 leg 28672/65536 parents, 458752 leaves, kernel-uniform 28672  [1391s in leg, eta 1788s, 1778s total]
+        ... renewal-5 leg 30720/65536 parents, 491520 leaves, kernel-uniform 30720  [1497s in leg, eta 1697s, 1885s total]
+        ... renewal-5 leg 32768/65536 parents, 524288 leaves, kernel-uniform 32768  [1604s in leg, eta 1604s, 1992s total]
+        ... renewal-5 leg 34816/65536 parents, 557056 leaves, kernel-uniform 34816  [1720s in leg, eta 1518s, 2108s total]
+        ... renewal-5 leg 36864/65536 parents, 589824 leaves, kernel-uniform 36864  [1908s in leg, eta 1484s, 2295s total]
+        ... renewal-5 leg 38912/65536 parents, 622592 leaves, kernel-uniform 38912  [2083s in leg, eta 1425s, 2471s total]
+        ... renewal-5 leg 40960/65536 parents, 655360 leaves, kernel-uniform 40960  [2227s in leg, eta 1336s, 2614s total]
+        ... renewal-5 leg 43008/65536 parents, 688128 leaves, kernel-uniform 43008  [2380s in leg, eta 1246s, 2767s total]
+        ... renewal-5 leg 45056/65536 parents, 720896 leaves, kernel-uniform 45056  [2534s in leg, eta 1152s, 2921s total]
+        ... renewal-5 leg 47104/65536 parents, 753664 leaves, kernel-uniform 47104  [2660s in leg, eta 1041s, 3048s total]
+        ... renewal-5 leg 49152/65536 parents, 786432 leaves, kernel-uniform 49152  [2758s in leg, eta 919s, 3145s total]
+        ... renewal-5 leg 51200/65536 parents, 819200 leaves, kernel-uniform 51200  [2855s in leg, eta 799s, 3242s total]
+        ... renewal-5 leg 53248/65536 parents, 851968 leaves, kernel-uniform 53248  [2950s in leg, eta 681s, 3338s total]
+        ... renewal-5 leg 55296/65536 parents, 884736 leaves, kernel-uniform 55296  [3032s in leg, eta 562s, 3420s total]
+        ... renewal-5 leg 57344/65536 parents, 917504 leaves, kernel-uniform 57344  [3107s in leg, eta 444s, 3494s total]
+        ... renewal-5 leg 59392/65536 parents, 950272 leaves, kernel-uniform 59392  [3181s in leg, eta 329s, 3568s total]
+        ... renewal-5 leg 61440/65536 parents, 983040 leaves, kernel-uniform 61440  [3255s in leg, eta 217s, 3642s total]
+        ... renewal-5 leg 63488/65536 parents, 1015808 leaves, kernel-uniform 63488  [3345s in leg, eta 108s, 3732s total]
+        ... renewal-5 leg 65536/65536 parents, 1048576 leaves, kernel-uniform 65536  [3421s in leg, eta 0s, 3809s total]
+  [DATA] THE DEPTH-15 ENSEMBLE: 65536 renewal-4 parents -> 1048576 renewal-5 leaves; raw mass 1/33554432; intervening patterns {('p', 'p', 'r'): 1048576}; distinct leaf weights ['1/35184372088832']; distinct field records over the three cuts 512  [3421s]
+  [PASS] K1 THE KERNEL-UNIFORMITY GATE AT RENEWAL 5, EXHAUSTIVE AND PER-PARENT: the conditional law of the renewal-5 token's payload given the renewal-4 parent history is exactly uniform 1/8 on eight payloads, for EVERY renewal-4 parent.  This is the hypothesis the U1b round's depth-15 prediction was conditional on, and it is MEASURED here rather than assumed  (65536/65536 parents carry the uniform kernel; deviations 0)
+  [PASS] K2 THE ENSEMBLE IS WHAT IT IS DECLARED TO BE: the only intervening pattern anywhere in the renewal-5 leg is (p,p,r) and every parent contributes exactly 16 leaves  (1048576 leaves from 65536 parents; patterns {('p', 'p', 'r'): 1048576})
+  [PASS] X6 THE PRUNE's TWO PREMISES AND THE LIVE-COUNT IDENTITY HOLD ON EVERY EXPANSION OF EVERY LEG OF THIS RECEIPT, THE 10^6-LEAF RENEWAL-5 LEG INCLUDED.  X4 asserted them on everything built before the deep leg; this re-assertion covers the deep leg too, so no expansion anywhere in the receipt is ungated: (i) the live-proposal count rises by at most one and only across a 'p'; (ii) every R4 the grammar OFFERS anywhere has at least two live proposals in its parent's full view; (iii) the carried live count equals d42b1's OWN View.live at every expanded node  (expansions gated 1035092, of which the renewal-5 leg contributes 13 per parent; monotonicity violations 0; R4 events offered 1264192, of which with fewer than two live proposals in the parent view 0; live-count identity 1035092/1035092)
+  [PASS] F0 THE D62-FAITHFUL SERIALIZED STATE IS THE ROOT AT EVERY RENEWAL CUT OF THE DEPTH-15 ENSEMBLE — all three cuts, all leaves — so the `state` generator partitions nothing here and the state bit of the mask is INERT  (distinct states over all three cuts 1)
+  [PASS] F3 NO MERGE TOKEN APPEARS ON ANY BASE CHAIN OF THE DEPTH-15 ENSEMBLE, so the merge branch of the payload record is declared and unexercised: every base chain is arbitration tokens down to genesis  (merge-carrying records 0)
+  [PASS] F4 EXACTLY EIGHT PAYLOADS OCCUR AND NO GENESIS SYMBOL REACHES LAG 2 AT ANY CUT OF THIS TRIPLE — which is precisely why depth 15 is the first admissible depth for a lag-2 map: every record's lag-1 and lag-2 payloads lie in the same eight-element set as its lag-0 payload  (distinct lag-0 payloads 8; lag-1 8; lag-2 8; the eight payloads ["('arb', (0,), ('A',), 'A')", "('arb', (0,), ('A',), 'B')", "('arb', (0,), ('B',), 'A')", "('arb', (0,), ('B',), 'B')", "('arb', (1,), ('A',), 'A')", "('arb', (1,), ('A',), 'B')", "('arb', (1,), ('B',), 'A')", "('arb', (1,), ('B',), 'B')"])
+  [PASS] N1 THE INTEGER REPRESENTATION IS EXACT, NOT AN APPROXIMATION: every leaf weight is an exact multiple of 1/D for the printed common denominator D, and w == NUMER[w]/D holds for every distinct leaf weight  (D = 35184372088832; distinct leaf weights 1; numerators [1])
+  [DATA] the exact joint over the three renewal cuts: 32768 distinct record triples; total numerator 1048576 over D = 35184372088832 (raw mass 1/33554432); distinct records per cut [512, 512, 512]  [0s]
+  [PASS] J1 THE ENSEMBLE's CONDITIONAL LAW IS A PROBABILITY LAW: the field-record joint over the three renewal cuts sums to exactly 1 (the telescoped normaliser cancels), and its raw mass equals the leaf mass the enumerator accumulated independently  (sum = 1; raw mass 1/33554432 == 1/33554432)
+
+------------------------------------------------------------------------------
+SEC 8  THE FIELD LATTICE, THE CLASS, AND THE FIXEDNESS GATE AT ALL THREE CUTS
+------------------------------------------------------------------------------
+  THE DECLARED FIELD SET (U1b's, unchanged).  Every generator is a committed
+  d42b1 token field or the committed post-renewal serialized state.
+    f0  ('state', None)        sigmaT(h, AB, enriched=False) — the D62-faithful post-renewal serialized state (u1 receipt:1154)
+    f1  ('value', 0)           tkn[2] = value_of(tkn); d42b1:53 and :60-62
+    f2  ('authors', 0)         tkn[3]; d42b1:54 (provenance component)
+    f3  ('init', 0)            tkn[4]; d42b1:55 (provenance component)
+    f4  ('value', 1)           the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f5  ('authors', 1)         the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f6  ('init', 1)            the same committed component of payload_of(anc(tkn,1)), reached by following tkn[1] — the BASE — 1 time(s)
+    f7  ('value', 2)           the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+    f8  ('authors', 2)         the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+    f9  ('init', 2)            the same committed component of payload_of(anc(tkn,2)), reached by following tkn[1] — the BASE — 2 time(s)
+  THE CLASS: every subset of the 10 fields = 1024 candidate maps.  The
+  512 masks that do NOT read `state` are the PRIMARY class — they are the
+  512 lag-<=2 masks the U1b round's prediction is stated over — and the state
+  bit is carried beside them and gated INERT.
+  [PASS] A1 THE FIXEDNESS GATE AT ALL THREE CUTS: a map is admissible iff it induces the SAME label set at every cut of the triple.  On a cut triple beginning at the THIRD renewal every field the lattice offers lies inside the part of the base chain that is an arbitration token at every cut, so U1b's exact rule (fixed iff the deepest lag read is at most the first cut's renewal index minus one, here at most 2) predicts that the WHOLE class is admissible — the genesis boundary has been cleared, which is the structural content of depth 15  (1024/1024 maps FIXED; refused 0  [2s])
+  [DATA] label-set size at cut r3 over the class: min 1, max 512
+
+------------------------------------------------------------------------------
+SEC 9  THE CLASSIFICATION: (D-1), (D-2) and FACTOR-WISE — predicted vs measured
+------------------------------------------------------------------------------
+  (D-1) FIRST-TRANSFER DEGENERACY.  If Gamma(r4<-r3) is column-constant the
+        middle cut is INDEPENDENT of the conditioning cut, so X.Gamma(r4<-r3)
+        is column-constant for every X: 'does the law factor through r4?' is
+        vacuous.  No verdict row may cite such a map, in either direction.
+  (D-2) SECOND-TRANSFER DEGENERACY.  If Gamma(r5<-r3) is column-constant with
+        common column b then X[k,j] := b_k is column-stochastic and solves
+        the equation exactly, whatever the first transfer is: DIVISIBLE is
+        FORCED before any test runs.  This is what closed U1b, and it is
+        exactly what depth 15 exists to break.
+  FACTOR-WISE.  The label of a map is the tuple of its selected components,
+        so the map FACTORISES over the three committed payload components
+        (value, authors, init), each read at its own set of lags.  A map whose
+        bite is supplied by ONE factor while another factor is degenerate
+        carries the same compound degeneracy one level up: it is COMPOUND-
+        DEGENERATE, is counted, and may carry no verdict.
+  [DATA] classification pass: 1024 masks classified; largest per-mask joint 32768 cells; largest label set 512  [23s]
+  [PASS] F0b THE STATE BIT IS INERT ACROSS THE WHOLE CLASS, verified mask by mask and not merely inferred from F0: adding `state` to any of the 512 payload masks changes neither the label-set sizes, nor either column-constancy, nor the classification, nor the factor-wise status.  The primary class is therefore the 512 lag-<=2 payload masks, exactly the class the round's prediction is stated over  (512 payload masks compared with their state-bearing twins; 0 differences)
+
+  THE CLASSIFICATION OVER THE 512 LAG-<=2 PAYLOAD MASKS, PREDICTED vs MEASURED.
+  class                       predicted  measured   delta
+  one-label                           1         1      +0
+  forced-divisible                  152       152      +0
+  doubly-degenerate                  63        63      +0
+  forced-indivisible                 61        61      +0
+  two-sided (both bite)             235       235      +0
+  [DATA] of the two-sided masks: FACTOR-WISE (genuine verdict rows) / COMPOUND-DEGENERATE: 7 / 228
+
+  THE PER-FACTOR TABLE, MEASURED.  Each committed payload component read at
+  a lag set is itself a member of the class, so its own two transfers are
+  measured, not argued.
+    value    lags [0]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    value    lags [1]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    value    lags [2]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    value    lags [0, 1]     labels  4  first transfer BITES       second transfer DEGENERATE
+    value    lags [0, 2]     labels  4  first transfer DEGENERATE  second transfer BITES
+    value    lags [1, 2]     labels  4  first transfer BITES       second transfer DEGENERATE
+    value    lags [0, 1, 2]  labels  8  first transfer BITES       second transfer BITES
+    authors  lags [0]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    authors  lags [1]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    authors  lags [2]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    authors  lags [0, 1]     labels  4  first transfer BITES       second transfer DEGENERATE
+    authors  lags [0, 2]     labels  4  first transfer DEGENERATE  second transfer BITES
+    authors  lags [1, 2]     labels  4  first transfer BITES       second transfer DEGENERATE
+    authors  lags [0, 1, 2]  labels  8  first transfer BITES       second transfer BITES
+    init     lags [0]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    init     lags [1]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    init     lags [2]        labels  2  first transfer DEGENERATE  second transfer DEGENERATE
+    init     lags [0, 1]     labels  4  first transfer BITES       second transfer DEGENERATE
+    init     lags [0, 2]     labels  4  first transfer DEGENERATE  second transfer BITES
+    init     lags [1, 2]     labels  4  first transfer BITES       second transfer DEGENERATE
+    init     lags [0, 1, 2]  labels  8  first transfer BITES       second transfer BITES
+
+------------------------------------------------------------------------------
+SEC 10  THE TWO-SIDED TEST on every two-sided row: exact Chapman-Kolmogorov, the collision certificate with its verified Farkas vector, and the committed decide_triple inside the declared caps
+------------------------------------------------------------------------------
+
+  THE GENUINE VERDICT ROWS — two-sided AND factor-wise.  These and only
+  these may carry a verdict.
+      m146  {value@0,value@1,value@2}                        labels 8x8x8  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 16 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+      m292  {authors@0,authors@1,authors@2}                  labels 8x8x8  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 16 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+      m438  {value@0,authors@0,value@1,authors@1,value@2,authors@2} labels 64x64x64  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 256 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+232 more)]
+      m584  {init@0,init@1,init@2}                           labels 8x8x8  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 16 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2, 1/2]
+      m730  {value@0,init@0,value@1,init@1,value@2,init@2}   labels 64x64x64  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 256 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+232 more)]
+      m876  {authors@0,init@0,authors@1,init@1,authors@2,init@2} labels 64x64x64  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 256 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4, 1/4 ... (+232 more)]
+      m1022 {value@0,authors@0,init@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 512x512x512  cols 64/8  DIVISIBLE   [Chapman-Kolmogorov]
+            INTERPOLANT EXHIBITED, the process's own conditional N = Gamma(r5<-r4): 4096 non-zero entries; N.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry = True; column sums all exactly 1 = True; every entry >= 0 = True; entries [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8 ... (+4072 more)]
+
+  THE COMPOUND-DEGENERATE TWO-SIDED ROWS — recorded, counted, and cited by
+  NO verdict.  Each has a factor whose own first or second transfer is
+  column-constant, so its bite is supplied by a different factor.
+      m150  {value@0,authors@0,value@1,value@2}              labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m154  {value@0,init@0,value@1,value@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m158  {value@0,authors@0,init@0,value@1,value@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m166  {value@0,authors@0,authors@1,value@2}            labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), (0,)) and ((1,), ('A',), ('A',), (1,)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), ('A',), ('A',), (0,)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 2:-1]
+      m174  {value@0,authors@0,init@0,authors@1,value@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), (0,)) and ((1,), ('A',), 'A', ('B',), (0,)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), (0,)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 4:-1]
+      m178  {value@0,value@1,authors@1,value@2}              labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m182  {value@0,authors@0,value@1,authors@1,value@2}    labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m186  {value@0,init@0,value@1,authors@1,value@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m190  {value@0,authors@0,init@0,value@1,authors@1,value@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m202  {value@0,init@0,init@1,value@2}                  labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', 'A', (0,)) and ((1,), 'A', 'A', (0,)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), 'A', 'A', (0,)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m206  {value@0,authors@0,init@0,init@1,value@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', (0,)) and ((1,), ('B',), 'A', 'A', (0,)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', (0,)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m210  {value@0,value@1,init@1,value@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m214  {value@0,authors@0,value@1,init@1,value@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m218  {value@0,init@0,value@1,init@1,value@2}          labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m222  {value@0,authors@0,init@0,value@1,init@1,value@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m230  {value@0,authors@0,authors@1,init@1,value@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), 'A', (0,)) and ((1,), ('A',), ('A',), 'B', (0,)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), ('A',), 'A', (0,)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m234  {value@0,init@0,authors@1,init@1,value@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), 'A', (0,)) and ((1,), 'A', ('A',), 'A', (0,)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', ('A',), 'A', (0,)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m238  {value@0,authors@0,init@0,authors@1,init@1,value@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A', (0,)) and ((1,), ('A',), 'A', ('B',), 'A', (0,)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A', (0,)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 4:-1]
+      m242  {value@0,value@1,authors@1,init@1,value@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m246  {value@0,authors@0,value@1,authors@1,init@1,value@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m250  {value@0,init@0,value@1,authors@1,init@1,value@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m254  {value@0,authors@0,init@0,value@1,authors@1,init@1,value@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m278  {value@0,authors@0,value@1,authors@2}            labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), ('A',)) and ((0,), ('B',), (0,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), ('A',), (0,), ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 3:-1]
+      m286  {value@0,authors@0,init@0,value@1,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',)) and ((0,), ('B',), 'A', (1,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 5:-1]
+      m294  {value@0,authors@0,authors@1,authors@2}          labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m300  {authors@0,init@0,authors@1,authors@2}           labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m302  {value@0,authors@0,init@0,authors@1,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m308  {authors@0,value@1,authors@1,authors@2}          labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m310  {value@0,authors@0,value@1,authors@1,authors@2}  labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m316  {authors@0,init@0,value@1,authors@1,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m318  {value@0,authors@0,init@0,value@1,authors@1,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m332  {authors@0,init@0,init@1,authors@2}              labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', 'A', ('A',)) and (('B',), 'A', 'A', ('A',)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target (('A',), 'A', 'A', ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m334  {value@0,authors@0,init@0,init@1,authors@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', ('A',)) and ((1,), ('B',), 'A', 'A', ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m342  {value@0,authors@0,value@1,init@1,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), 'A', ('A',)) and ((0,), ('B',), (0,), 'B', ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), (0,), 'A', ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 3:-1]
+      m348  {authors@0,init@0,value@1,init@1,authors@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), 'A', ('A',)) and (('B',), 'A', (0,), 'A', ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', (0,), 'A', ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m350  {value@0,authors@0,init@0,value@1,init@1,authors@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A', ('A',)) and ((0,), ('B',), 'A', (1,), 'A', ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A', ('A',)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 5:-1]
+      m356  {authors@0,authors@1,init@1,authors@2}           labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m358  {value@0,authors@0,authors@1,init@1,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m364  {authors@0,init@0,authors@1,init@1,authors@2}    labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m366  {value@0,authors@0,init@0,authors@1,init@1,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m372  {authors@0,value@1,authors@1,init@1,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m374  {value@0,authors@0,value@1,authors@1,init@1,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m380  {authors@0,init@0,value@1,authors@1,init@1,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m382  {value@0,authors@0,init@0,value@1,authors@1,init@1,authors@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m402  {value@0,value@1,value@2,authors@2}              labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m404  {authors@0,value@1,value@2,authors@2}            labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), (0,), (0,), ('A',)) and (('B',), (0,), (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target (('A',), (0,), (0,), ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m406  {value@0,authors@0,value@1,value@2,authors@2}    labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), (0,), ('A',)) and ((0,), ('B',), (0,), (1,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), (0,), (0,), ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 3:-1]
+      m410  {value@0,init@0,value@1,value@2,authors@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m412  {authors@0,init@0,value@1,value@2,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), (0,), ('A',)) and (('B',), 'A', (0,), (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', (0,), (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m414  {value@0,authors@0,init@0,value@1,value@2,authors@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), (0,), ('A',)) and ((0,), ('B',), 'A', (0,), (1,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 14:-1]
+      m418  {value@0,authors@1,value@2,authors@2}            labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), ('A',)) and ((1,), ('A',), (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), ('A',), (0,), ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m420  {authors@0,authors@1,value@2,authors@2}          labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m422  {value@0,authors@0,authors@1,value@2,authors@2}  labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), (0,), ('A',)) and ((1,), ('A',), ('A',), (1,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), ('A',), (0,), ('A',)) has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m426  {value@0,init@0,authors@1,value@2,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), (0,), ('A',)) and ((1,), 'A', ('A',), (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', ('A',), (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m428  {authors@0,init@0,authors@1,value@2,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m430  {value@0,authors@0,init@0,authors@1,value@2,authors@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), (0,), ('A',)) and ((1,), ('A',), 'A', ('A',), (1,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 13:-1]
+      m434  {value@0,value@1,authors@1,value@2,authors@2}    labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m436  {authors@0,value@1,authors@1,value@2,authors@2}  labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m442  {value@0,init@0,value@1,authors@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m444  {authors@0,init@0,value@1,authors@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m446  {value@0,authors@0,init@0,value@1,authors@1,value@2,authors@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m458  {value@0,init@0,init@1,value@2,authors@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', 'A', (0,), ('A',)) and ((1,), 'A', 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m460  {authors@0,init@0,init@1,value@2,authors@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', 'A', (0,), ('A',)) and (('B',), 'A', 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m462  {value@0,authors@0,init@0,init@1,value@2,authors@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', (0,), ('A',)) and ((1,), ('B',), 'A', 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m466  {value@0,value@1,init@1,value@2,authors@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m468  {authors@0,value@1,init@1,value@2,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), (0,), 'A', (0,), ('A',)) and (('B',), (0,), 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), (0,), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m470  {value@0,authors@0,value@1,init@1,value@2,authors@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), 'A', (0,), ('A',)) and ((0,), ('B',), (0,), 'B', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), (0,), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 3:-1]
+      m474  {value@0,init@0,value@1,init@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m476  {authors@0,init@0,value@1,init@1,value@2,authors@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), 'A', (0,), ('A',)) and (('B',), 'A', (0,), 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', (0,), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m478  {value@0,authors@0,init@0,value@1,init@1,value@2,authors@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A', (0,), ('A',)) and ((0,), ('B',), 'A', (0,), 'A', (0,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 4:-1]
+      m482  {value@0,authors@1,init@1,value@2,authors@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',)) and ((1,), ('A',), 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m484  {authors@0,authors@1,init@1,value@2,authors@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m486  {value@0,authors@0,authors@1,init@1,value@2,authors@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), 'A', (0,), ('A',)) and ((1,), ('A',), ('A',), 'B', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), ('A',), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m490  {value@0,init@0,authors@1,init@1,value@2,authors@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), 'A', (0,), ('A',)) and ((1,), 'A', ('A',), 'A', (0,), ('A',)) have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', ('A',), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m492  {authors@0,init@0,authors@1,init@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m494  {value@0,authors@0,init@0,authors@1,init@1,value@2,authors@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A', (0,), ('A',)) and ((1,), ('A',), 'A', ('A',), 'A', (0,), ('B',)) have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A', (0,), ('A',)) has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 3:-1]
+      m498  {value@0,value@1,authors@1,init@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m500  {authors@0,value@1,authors@1,init@1,value@2,authors@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m502  {value@0,authors@0,value@1,authors@1,init@1,value@2,authors@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m506  {value@0,init@0,value@1,authors@1,init@1,value@2,authors@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m508  {authors@0,init@0,value@1,authors@1,init@1,value@2,authors@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m510  {value@0,authors@0,init@0,value@1,authors@1,init@1,value@2,authors@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m538  {value@0,init@0,value@1,init@2}                  labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), 'A') and ((0,), 'B', (0,), 'B') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 2:-1]
+      m542  {value@0,authors@0,init@0,value@1,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A') and ((0,), ('A',), 'B', (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m556  {authors@0,init@0,authors@1,init@2}              labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', ('A',), 'A') and (('A',), 'B', ('A',), 'B') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target (('A',), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 2:-1]
+      m558  {value@0,authors@0,init@0,authors@1,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A') and ((0,), ('A',), 'B', ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m570  {value@0,init@0,value@1,authors@1,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), 'A') and ((0,), 'B', (1,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m572  {authors@0,init@0,value@1,authors@1,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), ('A',), 'A') and (('A',), 'B', (1,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m574  {value@0,authors@0,init@0,value@1,authors@1,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), 'A') and ((0,), ('A',), 'B', (1,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m586  {value@0,init@0,init@1,init@2}                   labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m588  {authors@0,init@0,init@1,init@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m590  {value@0,authors@0,init@0,init@1,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m600  {init@0,value@1,init@1,init@2}                   labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m602  {value@0,init@0,value@1,init@1,init@2}           labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m604  {authors@0,init@0,value@1,init@1,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m606  {value@0,authors@0,init@0,value@1,init@1,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m616  {init@0,authors@1,init@1,init@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m618  {value@0,init@0,authors@1,init@1,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m620  {authors@0,init@0,authors@1,init@1,init@2}       labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m622  {value@0,authors@0,init@0,authors@1,init@1,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m632  {init@0,value@1,authors@1,init@1,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m634  {value@0,init@0,value@1,authors@1,init@1,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m636  {authors@0,init@0,value@1,authors@1,init@1,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m638  {value@0,authors@0,init@0,value@1,authors@1,init@1,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m658  {value@0,value@1,value@2,init@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m662  {value@0,authors@0,value@1,value@2,init@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m664  {init@0,value@1,value@2,init@2}                  labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', (0,), (0,), 'A') and ('B', (0,), (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ('A', (0,), (0,), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m666  {value@0,init@0,value@1,value@2,init@2}          labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), (0,), 'A') and ((0,), 'B', (0,), (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', (0,), (0,), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m668  {authors@0,init@0,value@1,value@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), (0,), 'A') and (('A',), 'B', (0,), (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', (0,), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m670  {value@0,authors@0,init@0,value@1,value@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), (0,), 'A') and ((0,), ('A',), 'B', (0,), (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 10:-1]
+      m678  {value@0,authors@0,authors@1,value@2,init@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), (0,), 'A') and ((1,), ('A',), ('A',), (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m684  {authors@0,init@0,authors@1,value@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', ('A',), (0,), 'A') and (('A',), 'B', ('A',), (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m686  {value@0,authors@0,init@0,authors@1,value@2,init@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), (0,), 'A') and ((0,), ('A',), 'B', ('B',), (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m690  {value@0,value@1,authors@1,value@2,init@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m694  {value@0,authors@0,value@1,authors@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m696  {init@0,value@1,authors@1,value@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', (0,), ('A',), (0,), 'A') and ('B', (0,), ('A',), (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ('A', (0,), ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m698  {value@0,init@0,value@1,authors@1,value@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), (0,), 'A') and ((0,), 'B', (0,), ('B',), (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 6:-1]
+      m700  {authors@0,init@0,value@1,authors@1,value@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), ('A',), (0,), 'A') and (('A',), 'B', (0,), ('B',), (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', (0,), ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 6:-1]
+      m702  {value@0,authors@0,init@0,value@1,authors@1,value@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), (0,), 'A') and ((0,), ('A',), 'B', (0,), ('B',), (1,), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), (0,), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 27:-1]
+      m706  {value@0,init@1,value@2,init@2}                  labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), 'A') and ((1,), 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ((0,), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m710  {value@0,authors@0,init@1,value@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A') and ((1,), ('B',), 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m712  {init@0,init@1,value@2,init@2}                   labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m714  {value@0,init@0,init@1,value@2,init@2}           labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', 'A', (0,), 'A') and ((1,), 'A', 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m716  {authors@0,init@0,init@1,value@2,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m718  {value@0,authors@0,init@0,init@1,value@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', (0,), 'A') and ((1,), ('B',), 'A', 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m722  {value@0,value@1,init@1,value@2,init@2}          labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m726  {value@0,authors@0,value@1,init@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m728  {init@0,value@1,init@1,value@2,init@2}           labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m732  {authors@0,init@0,value@1,init@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m734  {value@0,authors@0,init@0,value@1,init@1,value@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m738  {value@0,authors@1,init@1,value@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A') and ((1,), ('A',), 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m742  {value@0,authors@0,authors@1,init@1,value@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), 'A', (0,), 'A') and ((1,), ('A',), ('A',), 'A', (1,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 10:-1]
+      m744  {init@0,authors@1,init@1,value@2,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m746  {value@0,init@0,authors@1,init@1,value@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), 'A', (0,), 'A') and ((1,), 'A', ('A',), 'A', (0,), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m748  {authors@0,init@0,authors@1,init@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m750  {value@0,authors@0,init@0,authors@1,init@1,value@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A', (0,), 'A') and ((1,), ('A',), 'A', ('A',), 'A', (1,), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A', (0,), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 3:-1]
+      m754  {value@0,value@1,authors@1,init@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m758  {value@0,authors@0,value@1,authors@1,init@1,value@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m760  {init@0,value@1,authors@1,init@1,value@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m762  {value@0,init@0,value@1,authors@1,init@1,value@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m764  {authors@0,init@0,value@1,authors@1,init@1,value@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m766  {value@0,authors@0,init@0,value@1,authors@1,init@1,value@2,init@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m790  {value@0,authors@0,value@1,authors@2,init@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), ('A',), 'A') and ((0,), ('B',), (0,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 3:-1]
+      m794  {value@0,init@0,value@1,authors@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), 'A') and ((0,), 'B', (0,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m798  {value@0,authors@0,init@0,value@1,authors@2,init@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), 'A') and ((0,), ('A',), 'B', (1,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m804  {authors@0,authors@1,authors@2,init@2}           labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m806  {value@0,authors@0,authors@1,authors@2,init@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m808  {init@0,authors@1,authors@2,init@2}              labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', ('A',), ('A',), 'A') and ('B', ('A',), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target ('A', ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m810  {value@0,init@0,authors@1,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), ('A',), 'A') and ((0,), 'B', ('A',), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m812  {authors@0,init@0,authors@1,authors@2,init@2}    labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', ('A',), ('A',), 'A') and (('A',), 'B', ('A',), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 2:-1]
+      m814  {value@0,authors@0,init@0,authors@1,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), ('A',), 'A') and ((0,), ('A',), 'B', ('A',), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 10:-1]
+      m820  {authors@0,value@1,authors@1,authors@2,init@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m822  {value@0,authors@0,value@1,authors@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m824  {init@0,value@1,authors@1,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', (0,), ('A',), ('A',), 'A') and ('B', (0,), ('A',), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ('A', (0,), ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m826  {value@0,init@0,value@1,authors@1,authors@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), ('A',), 'A') and ((0,), 'B', (1,), ('A',), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m828  {authors@0,init@0,value@1,authors@1,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), ('A',), ('A',), 'A') and (('A',), 'B', (1,), ('A',), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', (0,), ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m830  {value@0,authors@0,init@0,value@1,authors@1,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), ('A',), 'A') and ((0,), ('A',), 'B', (1,), ('A',), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 18:-1]
+      m836  {authors@0,init@1,authors@2,init@2}              labels 16x16x16  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', ('A',), 'A') and (('B',), 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (16/16 entries equal, exactly), while target (('A',), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 16 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 16; sum = 0; entries [0:1, 1:-1]
+      m838  {value@0,authors@0,init@1,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A') and ((1,), ('B',), 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m840  {init@0,init@1,authors@2,init@2}                 labels 16x16x16  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m842  {value@0,init@0,init@1,authors@2,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m844  {authors@0,init@0,init@1,authors@2,init@2}       labels 32x32x32  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', 'A', ('A',), 'A') and (('B',), 'A', 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/8 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/8 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m846  {value@0,authors@0,init@0,init@1,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', ('A',), 'A') and ((1,), ('B',), 'A', 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m852  {authors@0,value@1,init@1,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), (0,), 'A', ('A',), 'A') and (('B',), (0,), 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), (0,), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m854  {value@0,authors@0,value@1,init@1,authors@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), 'A', ('A',), 'A') and ((0,), ('B',), (0,), 'A', ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), (0,), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 11:-1]
+      m856  {init@0,value@1,init@1,authors@2,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m858  {value@0,init@0,value@1,init@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m860  {authors@0,init@0,value@1,init@1,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), 'A', ('A',), 'A') and (('B',), 'A', (0,), 'A', ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', (0,), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m862  {value@0,authors@0,init@0,value@1,init@1,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A', ('A',), 'A') and ((0,), ('B',), 'A', (0,), 'A', ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A', ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 4:-1]
+      m868  {authors@0,authors@1,init@1,authors@2,init@2}    labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m870  {value@0,authors@0,authors@1,init@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m872  {init@0,authors@1,init@1,authors@2,init@2}       labels 32x32x32  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m874  {value@0,init@0,authors@1,init@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m878  {value@0,authors@0,init@0,authors@1,init@1,authors@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m884  {authors@0,value@1,authors@1,init@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m886  {value@0,authors@0,value@1,authors@1,init@1,authors@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m888  {init@0,value@1,authors@1,init@1,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m890  {value@0,init@0,value@1,authors@1,init@1,authors@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m892  {authors@0,init@0,value@1,authors@1,init@1,authors@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m894  {value@0,authors@0,init@0,value@1,authors@1,init@1,authors@2,init@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m914  {value@0,value@1,value@2,authors@2,init@2}       labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m916  {authors@0,value@1,value@2,authors@2,init@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), (0,), (0,), ('A',), 'A') and (('B',), (0,), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m918  {value@0,authors@0,value@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), (0,), ('A',), 'A') and ((0,), ('B',), (0,), (1,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 3:-1]
+      m920  {init@0,value@1,value@2,authors@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', (0,), (0,), ('A',), 'A') and ('B', (0,), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ('A', (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m922  {value@0,init@0,value@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), (0,), ('A',), 'A') and ((0,), 'B', (0,), (1,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m924  {authors@0,init@0,value@1,value@2,authors@2,init@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), (0,), ('A',), 'A') and (('B',), 'A', (0,), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m926  {value@0,authors@0,init@0,value@1,value@2,authors@2,init@2} labels 128x128x128  cols 4/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), (0,), ('A',), 'A') and ((0,), ('B',), 'A', (0,), (1,), ('A',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 4:-1]
+      m930  {value@0,authors@1,value@2,authors@2,init@2}     labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), ('A',), 'A') and ((1,), ('A',), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m932  {authors@0,authors@1,value@2,authors@2,init@2}   labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m934  {value@0,authors@0,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), (0,), ('A',), 'A') and ((1,), ('A',), ('A',), (1,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m936  {init@0,authors@1,value@2,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', ('A',), (0,), ('A',), 'A') and ('B', ('A',), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ('A', ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m938  {value@0,init@0,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), (0,), ('A',), 'A') and ((1,), 'A', ('A',), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m940  {authors@0,init@0,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', ('A',), (0,), ('A',), 'A') and (('A',), 'B', ('A',), (1,), ('B',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 2:-1]
+      m942  {value@0,authors@0,init@0,authors@1,value@2,authors@2,init@2} labels 128x128x128  cols 4/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), (0,), ('A',), 'A') and ((1,), ('A',), 'A', ('A',), (1,), ('A',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 3:-1]
+      m946  {value@0,value@1,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m948  {authors@0,value@1,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m950  {value@0,authors@0,value@1,authors@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m952  {init@0,value@1,authors@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ('A', (0,), ('A',), (0,), ('A',), 'A') and ('B', (0,), ('A',), (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ('A', (0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m954  {value@0,init@0,value@1,authors@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), (0,), ('A',), 'A') and ((0,), 'B', (0,), ('A',), (0,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 18:-1]
+      m956  {authors@0,init@0,value@1,authors@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), ('A',), (0,), ('A',), 'A') and (('A',), 'B', (0,), ('A',), (0,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target (('A',), 'A', (0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 18:-1]
+      m958  {value@0,authors@0,init@0,value@1,authors@1,value@2,authors@2,init@2} labels 256x256x256  cols 16/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), (0,), ('A',), 'A') and ((0,), ('A',), 'B', (0,), ('A',), (1,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (256/256 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 256 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 256; sum = 0; entries [0:1, 36:-1]
+      m962  {value@0,init@1,value@2,authors@2,init@2}        labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', (0,), ('A',), 'A') and ((1,), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target ((0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m964  {authors@0,init@1,value@2,authors@2,init@2}      labels 32x32x32  cols 2/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), ('A',), 'A') and (('B',), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (32/32 entries equal, exactly), while target (('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 32 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 32; sum = 0; entries [0:1, 1:-1]
+      m966  {value@0,authors@0,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 2/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), 'A') and ((1,), ('B',), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m968  {init@0,init@1,value@2,authors@2,init@2}         labels 32x32x32  cols 4/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m970  {value@0,init@0,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', 'A', (0,), ('A',), 'A') and ((1,), 'A', 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), 'A', 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m972  {authors@0,init@0,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', 'A', (0,), ('A',), 'A') and (('B',), 'A', 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), 'A', 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m974  {value@0,authors@0,init@0,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 4/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', 'A', (0,), ('A',), 'A') and ((1,), ('B',), 'A', 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), 'A', 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/16 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/16 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 1:-1]
+      m978  {value@0,value@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m980  {authors@0,value@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), (0,), 'A', (0,), ('A',), 'A') and (('B',), (0,), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target (('A',), (0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m982  {value@0,authors@0,value@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), (0,), 'A', (0,), ('A',), 'A') and ((0,), ('B',), (0,), 'A', (0,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), (0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 19:-1]
+      m984  {init@0,value@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m986  {value@0,init@0,value@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m988  {authors@0,init@0,value@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels (('A',), 'A', (0,), 'A', (0,), ('A',), 'A') and (('B',), 'A', (0,), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target (('A',), 'A', (0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 1:-1]
+      m990  {value@0,authors@0,init@0,value@1,init@1,value@2,authors@2,init@2} labels 256x256x256  cols 16/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), 'A', (0,), ('A',), 'A') and ((0,), ('B',), 'A', (0,), 'A', (1,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (256/256 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 256 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 256; sum = 0; entries [0:1, 4:-1]
+      m994  {value@0,authors@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 4/2  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', (0,), ('A',), 'A') and ((1,), ('A',), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (64/64 entries equal, exactly), while target ((0,), ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 64 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 64; sum = 0; entries [0:1, 1:-1]
+      m996  {authors@0,authors@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m998  {value@0,authors@0,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), ('A',), 'A', (0,), ('A',), 'A') and ((1,), ('A',), ('A',), 'A', (0,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), ('A',), ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 18:-1]
+      m1000 {init@0,authors@1,init@1,value@2,authors@2,init@2} labels 64x64x64  cols 8/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1002 {value@0,init@0,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 8/4  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), 'A', ('A',), 'A', (0,), ('A',), 'A') and ((1,), 'A', ('A',), 'A', (0,), ('A',), 'A') have IDENTICAL Gamma(r4<-r3) columns (128/128 entries equal, exactly), while target ((0,), 'A', ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 128 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 128; sum = 0; entries [0:1, 1:-1]
+      m1004 {authors@0,init@0,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1006 {value@0,authors@0,init@0,authors@1,init@1,value@2,authors@2,init@2} labels 256x256x256  cols 16/8  INDIVISIBLE [collision + Farkas (verified)]
+            COLLISION CERTIFICATE, verified atom by atom: conditioning labels ((0,), ('A',), 'A', ('A',), 'A', (0,), ('A',), 'A') and ((1,), ('A',), 'A', ('A',), 'A', (1,), ('B',), 'B') have IDENTICAL Gamma(r4<-r3) columns (256/256 entries equal, exactly), while target ((0,), ('A',), 'A', ('A',), 'A', (0,), ('A',), 'A') has Gamma(r5<-r3) entries 1/32 vs 0
+            FARKAS w for that target's row system (w^T M <= 0 on all 256 columns, w^T b = 1/32 > 0), verified by the committed farkas_ok = True: 2 non-zero of 256; sum = 0; entries [0:1, 3:-1]
+      m1010 {value@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1012 {authors@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1014 {value@0,authors@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1016 {init@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 128x128x128  cols 16/2  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1018 {value@0,init@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+      m1020 {authors@0,init@0,value@1,authors@1,init@1,value@2,authors@2,init@2} labels 256x256x256  cols 32/4  DIVISIBLE   [Chapman-Kolmogorov]  certificates: interpolant exhibited and re-verified = True
+  [DATA] compound-degenerate two-sided verdicts: {'DIVISIBLE': 120, 'INDIVISIBLE': 108}
+  [DATA] two-sided test: 235 rows decided  [379s]
+  [PASS] V1 EVERY TWO-SIDED ROW IS DECIDED — no row is left to a cap  (verdicts {'DIVISIBLE': 127, 'INDIVISIBLE': 108})
+  [PASS] V2 EVERY DIVISION EXHIBITS ITS INTERPOLANT AND RE-VERIFIES IT FROM SCRATCH: column sums exactly 1, every entry >= 0, and X.Gamma(r4<-r3) = Gamma(r5<-r3) entry by entry  (127/127 exhibited interpolants re-verified; 127/127 dividing rows carry a verified certificate)
+  [PASS] V3 EVERY REFUSAL CARRIES BOTH CERTIFICATES AND BOTH VERIFY: the collision certificate — two conditioning labels whose Gamma(r4<-r3) columns agree in EVERY entry while some target's Gamma(r5<-r3) entries differ — checked atom by atom, AND a Farkas vector for that target's row system, verified by the committed farkas_ok (w^T M <= 0 componentwise, w^T b > 0)  (collision certificates 108/108 verified atom by atom; Farkas vectors 108/108 verified by the committed farkas_ok; refusing rows 108, of which carrying a verified certificate 108)
+  [DATA] INSTRUMENT CENSUS — which instrument decided each row, so no certificate is implied that was never produced: {'Chapman-Kolmogorov': 127, 'collision + Farkas (verified)': 108}; exact-simplex systems solved anywhere in this receipt 0
+
+------------------------------------------------------------------------------
+SEC 11  THE NULLS: the FAIR null (record outer cuts, randomised middle cut) and matched-size random maps
+------------------------------------------------------------------------------
+  (a) THE FAIR NULL is the one the U1b round's correction demands: the
+      record's OUTER cut labels are KEPT and only the MIDDLE cut is
+      randomised, into classes of exactly the reference map's own sizes.
+      If the forcing analysis is right this must DIVIDE, and a refusal
+      there is a first-class surprise.
+  (b) MATCHED-SIZE RANDOM MAPS deal the distinct cut HISTORIES at EVERY cut
+      into classes of the reference map's sizes.  U1b's round showed this
+      control is NOT matched on the forcing-relevant property; it is run
+      here for continuity and read as a memory contrast, not as a
+      divisibility distinction.
+  x <- (1103515245 x + 12345) mod 2147483648; seeds (20260728, 11); Fisher-Yates over the
+  sk()-sorted list, then cut into blocks of the reference map's own class
+  sizes.  No random module, no clock, no hash-seed dependence.
+  [DATA] null reference maps: ["m14 {value@0,authors@0,init@0} — the lag-0 payload map (U1b's sigma+ at renewal grain)", 'm146 {value@0,value@1,value@2} — a FACTOR-WISE verdict row', 'm166 {value@0,authors@0,authors@1,value@2} — a REFUSING compound-degenerate row']
+      FAIR NULL  ref m14 {value@0,authors@0,init@0}             seed 20260728  classes [8, 8, 8]  cols 8/1  DIVISIBLE   [Chapman-Kolmogorov]
+      FAIR NULL  ref m14 {value@0,authors@0,init@0}             seed 11        classes [8, 8, 8]  cols 8/1  DIVISIBLE   [Chapman-Kolmogorov]
+      FAIR NULL  ref m146 {value@0,value@1,value@2}              seed 20260728  classes [8, 8, 8]  cols 8/2  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = 12572161185/38685626227668133590597632), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 32 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-1155413049107/20115457896', '-16716145834847/100577289480', '-18820875934559/100577289480', '-2117304393333/33525763160', '-4749093502581/33525763160', '-487230004853/33525763160']
+      FAIR NULL  ref m146 {value@0,value@1,value@2}              seed 11        classes [8, 8, 8]  cols 8/2  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = -8920194885/19342813113834066795298816), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 32 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-125535646469/1132723160', '-131485558543/3398169480', '-18303052033/226544632', '-237576517391/3398169480', '-3218622977/226544632', '-38461688069/1132723160']
+      FAIR NULL  ref m166 {value@0,authors@0,authors@1,value@2}  seed 20260728  classes [16, 16, 16]  cols 16/2  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = -4835444687053928354167/11972621413014756705924586149611790497021399392059392), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 128 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-1072957015778787672462729/77367114992862853666672', '-1091903931631997614430089/77367114992862853666672', '-115634972854597561329033/77367114992862853666672', '-1228883996277792692950409/77367114992862853666672', '-1381679310657373883058057/77367114992862853666672', '-1890056100534739202565513/77367114992862853666672']
+      FAIR NULL  ref m166 {value@0,authors@0,authors@1,value@2}  seed 11        classes [16, 16, 16]  cols 16/2  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = -7253275952492094971091/47890485652059026823698344598447161988085597568237568), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 120 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-1104442816584242398513935/38684138413291173179152', '-1325478256209809034210605/116052415239873519537456', '-1490377875364051357050639/38684138413291173179152', '-1890601463895550895036717/116052415239873519537456', '-1955965782877809202781485/116052415239873519537456', '-2673953856131562746551597/116052415239873519537456']
+  [PASS] NUL.1 THE FAIR NULL runs at every reference map and both printed seeds, with the record's outer cut labels kept and the middle cut fully randomised into classes of the reference map's own sizes, AND IT IS SCORED THROUGH THE SAME TWO-SIDED GATE AS THE RECORD ROWS: a control run whose own transfers are degenerate carries no more evidence than a degenerate record row does.  A DIVISION on a two-sided control is what a forcing analysis would predict; a REFUSAL there is a first-class surprise, and it is reported as one with its certificate  (6 runs; verdicts {'DIVISIBLE': 2, 'INDIVISIBLE': 4}; TWO-SIDED control runs 4, of which INDIVISIBLE 4; degenerate control runs 2 (excluded from the comparison), verdicts {'DIVISIBLE': 2})
+      RANDOM-MAP NULL  ref m14 {value@0,authors@0,init@0}       seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = -3485238075/4835703278458516698824704), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 26 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-1001813720497/9517023436800', '-100777685683/1586170572800', '-104135813827/288394649600', '-109266314267/173036789760', '-1233074098483/28551070310400', '-142275122323/865183948800']
+      RANDOM-MAP NULL  ref m14 {value@0,authors@0,init@0}       seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = 652240498843/309485009821345068724781056), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 30 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-10451861319219/83486783851904', '-109928222130865/83486783851904', '-124146245773/652240498843', '-12474937776065/83486783851904', '-147190410454799/41743391925952', '-1505976715747/1304480997686']
+      RANDOM-MAP NULL  ref m146 {value@0,value@1,value@2}        seed 20260728  classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = -3485238075/4835703278458516698824704), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 26 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-1001813720497/9517023436800', '-100777685683/1586170572800', '-104135813827/288394649600', '-109266314267/173036789760', '-1233074098483/28551070310400', '-142275122323/865183948800']
+      RANDOM-MAP NULL  ref m146 {value@0,value@1,value@2}        seed 11        classes [8, 8, 8]  cols 8/8  INDIVISIBLE [eq22-algebraic]
+            CERTIFICATE (control): Gamma(r4<-r3) is square and INVERTIBLE (det = 652240498843/309485009821345068724781056), so eq. 22's algebraic interpolant is the UNIQUE candidate and it has 30 NEGATIVE entries; column sums all exactly 1 = True; most-negative entries ['-10451861319219/83486783851904', '-109928222130865/83486783851904', '-124146245773/652240498843', '-12474937776065/83486783851904', '-147190410454799/41743391925952', '-1505976715747/1304480997686']
+  [PASS] NUL.2 THE MATCHED-SIZE RANDOM-MAP NULL runs beside the census at two printed seeds with the record content removed and the granularity kept, and it is scored through the SAME two-sided gate.  Its reading is the U1b round's: the controls are matched on class sizes but not on the forcing-relevant property, so a contrast here measures the record fields' memory structure, not a divisibility distinction  (4 control runs; two-sided among them 4; verdicts {'INDIVISIBLE': 4})
+
+------------------------------------------------------------------------------
+SEC 12  THE CENSUS, BOTH WAYS, AND THE REFUSAL GEOGRAPHY
+------------------------------------------------------------------------------
+  THE CLASS SWEEP (the class is swept, not chosen).
+  class                         masks   DIV   IND
+  one-label                         1     0     0
+  doubly-degenerate                63     0     0
+  forced-divisible                152     0     0
+  forced-indivisible               61     0     0
+  two-sided COMPOUND-DEGEN        228   120   108
+  two-sided FACTOR-WISE             7     7     0
+
+  THE REFUSAL GEOGRAPHY — which factor structure produces refusal.  Every
+  mask is a triple of lag sets, one per committed payload component, and
+  each lag set is typed by ITS OWN two transfers, measured above: N = neither
+  bites, D1 = first only, D2 = second only (the GAP, lags 0 and 2), B = both.
+  type profile          masks  outcomes
+  ('B', 'B', 'B')           1  two-sided / DIVISIBLE: 1
+  ('B', 'B', 'D1')          6  two-sided / DIVISIBLE: 6
+  ('B', 'B', 'D2')          3  two-sided / INDIVISIBLE: 3
+  ('B', 'B', 'N')          12  two-sided / DIVISIBLE: 12
+  ('B', 'D1', 'D1')        12  two-sided / DIVISIBLE: 12
+  ('B', 'D1', 'D2')        12  two-sided / INDIVISIBLE: 12
+  ('B', 'D1', 'N')         48  two-sided / DIVISIBLE: 48
+  ('B', 'D2', 'D2')         3  two-sided / INDIVISIBLE: 3
+  ('B', 'D2', 'N')         24  two-sided / INDIVISIBLE: 24
+  ('B', 'N', 'N')          48  two-sided / DIVISIBLE: 48
+  ('D1', 'D1', 'D1')        8  forced-divisible / -: 8
+  ('D1', 'D1', 'D2')       12  two-sided / INDIVISIBLE: 12
+  ('D1', 'D1', 'N')        48  forced-divisible / -: 48
+  ('D1', 'D2', 'D2')        6  two-sided / INDIVISIBLE: 6
+  ('D1', 'D2', 'N')        48  two-sided / INDIVISIBLE: 48
+  ('D1', 'N', 'N')         96  forced-divisible / -: 96
+  ('D2', 'D2', 'D2')        1  forced-indivisible / -: 1
+  ('D2', 'D2', 'N')        12  forced-indivisible / -: 12
+  ('D2', 'N', 'N')         48  forced-indivisible / -: 48
+  ('N', 'N', 'N')          64  doubly-degenerate / -: 63, one-label / -: 1
+  [PASS] G1 THE REFUSAL SET HAS AN EXACT, STATABLE CONTENT, verified against every two-sided mask of the class: a two-sided row REFUSES iff some committed component is read at lags 0 and 2 but NOT at lag 1 — the GAP — and DIVIDES otherwise.  The gap is the only structure in the class that puts two-step memory into the label chain without putting the intervening step into it, and it is therefore the exact locus of the selection problem  (refusing type profiles [('B', 'B', 'D2'), ('B', 'D1', 'D2'), ('B', 'D2', 'D2'), ('B', 'D2', 'N'), ('D1', 'D1', 'D2'), ('D1', 'D2', 'D2'), ('D1', 'D2', 'N')]; dividing [('B', 'B', 'B'), ('B', 'B', 'D1'), ('B', 'B', 'N'), ('B', 'D1', 'D1'), ('B', 'D1', 'N'), ('B', 'N', 'N')])
+  [PASS] G2 THE FACTOR-WISE PREDICATE HAS AN EXACT, STATABLE CONTENT, verified against every mask of the class: a mask is factor-wise iff every component it reads at all is read at ALL THREE lags.  That is measured here, not argued, and it is the mechanism by which the U1b round's warning bites: a factor read at all three lags contains no gap, so the factor-wise set and the refusal set are disjoint in this class  (factor-wise rows 7: {'DIVISIBLE': 7}; their factor lag sets [((0, 1, 2),), ((0, 1, 2), (0, 1, 2)), ((0, 1, 2), (0, 1, 2), (0, 1, 2))])
+  [PASS] G3 EVERY REFUSAL IN THIS CLASS INHERITS ITS SECOND SIDE FROM A FACTOR THAT IS (D-1)-DEGENERATE ON ITS OWN, verified factor by factor on all 108: each refusing mask carries at least one factor whose own first transfer is column-constant while its own second transfer bites — a standalone FORCED-INDIVISIBLE map, evidence of nothing by (D-1) — and at least one OTHER factor supplying the first-transfer bite.  The refusal is therefore the (D-1)-degenerate situation of one factor, dressed in a product with a biting partner: exactly the compound degeneracy the U1b round pre-declared  (108/108 refusing masks carry both a (D-1)-degenerate second-side factor and a separate first-side factor)
+  [DATA] FIELDS WHOSE ADDITION OR REMOVAL FLIPS A VERDICT BETWEEN TWO TWO-SIDED ROWS (each edge counted from both ends): {"('authors', 0)": 26, "('authors', 1)": 66, "('authors', 2)": 26, "('init', 0)": 26, "('init', 1)": 66, "('init', 2)": 26, "('value', 0)": 26, "('value', 1)": 66, "('value', 2)": 26}
+  [DATA] FIELDS WHOSE ADDITION OR REMOVAL FLIPS A VERDICT BETWEEN TWO FACTOR-WISE ROWS: NONE
+
+------------------------------------------------------------------------------
+SEC 13  DETERMINISM
+------------------------------------------------------------------------------
+  [PASS] DET.1 the joint law, the Gamma family and the column-constancy tests are independent of dict and set iteration order: rebuilding the lag-0 payload joint from the REVERSED sk()-sorted cell list gives identical Fractions everywhere  (512 cells and 64 transfer entries identical under reversed accumulation order)
+  [PASS] DET.2 the whole 512-mask classification recomputes identically on a second, independent pass  (512 rows recomputed, 0 differences)
+  [PASS] DET.3 every genuine verdict row re-decides identically on a second, independent pass through the same decision order  (7 verdict rows re-decided, 0 differences)
+
+------------------------------------------------------------------------------
+SEC 14  THE VERDICT against the pre-registered outcomes (lean: NONE)
+------------------------------------------------------------------------------
+  class swept                        512 lag-<=2 payload masks (1024 with the inert state bit)
+  admissible (fixedness, three cuts) 1024
+  two-sided ((D-1) and (D-2))        235
+  of those FACTOR-WISE               7   <- the only rows a verdict may cite
+  of those COMPOUND-DEGENERATE       228   (recorded, cited by no verdict)
+  VERDICT ROWS: DIVISIBLE / INDIV.   7 / 0
+  compound-degenerate DIV / IND      120 / 108
+  kernel gate at renewal 5           65536/65536 parents uniform 1/8
+
+  ===> U1c VERDICT: N2-AT-DEPTH-15
+
+  PREDICTED vs MEASURED, in full (the U1b round's sec.9 table).
+    one-label                  predicted    1   measured    1   delta   +0
+    forced-divisible           predicted  152   measured  152   delta   +0
+    doubly-degenerate          predicted   63   measured   63   delta   +0
+    forced-indivisible         predicted   61   measured   61   delta   +0
+    two-sided DIVISIBLE        predicted  127   measured  127   delta   +0
+    two-sided INDIVISIBLE      predicted  108   measured  108   delta   +0
+    of the measured two-sided rows, FACTOR-WISE 7 (DIV 7 / IND 0); COMPOUND-DEGENERATE 228 (DIV 120 / IND 108)
+  [PASS] Z1 THE PREDICTED-VS-MEASURED COMPARISON IS PRINTED IN FULL and the classification is reported whether or not it agrees.  The prediction is model-computed, not committed-receipt: a disagreement is a FINDING with a diagnosis, never a gate failure  (deltas {one-label: +0, forced-divisible: +0, doubly-degenerate: +0, forced-indivisible: +0, two-sided DIVISIBLE: +0, two-sided INDIVISIBLE: +0})
+  [PASS] Z2 exactly one pre-registered outcome is scored, and it is the one the pre-registered definitions select  (FACTOR-WISE rows 7: DIVISIBLE 7, INDIVISIBLE 0; model-break False -> N2-AT-DEPTH-15)
+
+  WHAT THIS RECEIPT ESTABLISHES, IN ITS OWN TERMS.
+   (a) The kernel hypothesis the round's prediction rested on is now
+       MEASURED at renewal 5: 65536/65536 renewal-4 parents carry an
+       exactly uniform 1/8 leg kernel, so the renewal payload chain is
+       i.i.d. uniform on eight labels through five renewals.
+   (b) U1b's forcing is BROKEN here and that is measured, not argued: 235
+       masks have a non-column-constant SECOND transfer as well as a
+       non-column-constant FIRST one, which no ensemble below depth 15
+       could produce.  The interpolant test at renewal grain now has two
+       sides.
+   (c) The factor-wise clause is load-bearing and its effect is measured,
+       not asserted: of the 235 two-sided masks only 7 are factor-wise
+       clean, and the refusals are exactly the masks carrying a GAP
+       factor (lags 0 and 2, not 1) whose own first transfer is
+       column-constant — the compound degeneracy the U1b round warned
+       about, one level up.
+   (d) THE FAIR NULL REFUSES WHERE THE RECORD DIVIDES, and that is the
+       first-class surprise the pin reserved a slot for.  Of the 6 fair-null
+       runs 4 are themselves two-sided and 4 of those REFUSE — including both
+       seeds at a FACTOR-WISE reference, where the record map divides.
+       U1b's fair null divided because divisibility was FORCED there; at
+       depth 15 the forcing is gone, the test discriminates, and the
+       record's own middle cut is what carries the division.  The
+       matched-size random map is reported beside it as a memory
+       contrast, not as a divisibility distinction.
+
+  SCOPE.  Transport scope (d42b1), two-actor pool, the one declared
+  ensemble — renewals at 3/6/9/12/15, minimal intervals, cut triple at
+  depths (9,12,15) — and no other; unequal-interval depth-15+ variants
+  are named follow-ups, not this unit.  Renewal grain per paper 0
+  sec.4's [POSIT]; no claim about non-renewal division-event
+  candidates.  No unistochasticity claim (that is U3's screen, which
+  stands ready for any refusing transfer); no measure-existence claim;
+  no CP, Bell, locality or covariance claim anywhere.  L-1 is quoted at
+  the configuration space: the renewal-grain label sets swept here are
+  fixed finite sets, which is exactly the hypothesis of the
+  finite-stochastic Lorentz no-go, so no exact covariance may be
+  claimed for any law built on them and none is.
+
+==============================================================================
+[U1c] PASS 45 / FAIL 0 / ANCHOR-FAIL 0
+[U1c] VERDICT N2-AT-DEPTH-15
+[CAPS] pool ('A', 'B'); renewals (3, 6, 9, 12, 15); cut triple (9, 12, 15); lattice lag 0..2, class 1024 masks (512 payload masks primary, state bit gated inert); 65536 renewal-4 parents -> 1048576 renewal-5 leaves enumerated EXACTLY and streamed, no sampling anywhere in the ensemble; unpruned exhaustiveness scans on legs 1 and 2 IN FULL and on declared stride samples of 48 / 24 parents at legs 3 and 4 (a full unpruned scan of the deep legs costs of order 10^7 and 10^8 continuations and is a DECLARED cap); prune premises and live-count identity asserted at every one of 1035092 expansions; 4 committed functions wrapped (3 pure memos + 1 incremental event_poset), gated by whole-leg double runs (ACC.2/4/5) and by 1757104 per-call poset comparisons; LP 700v/400r, reduced 5000v/1200r, committed decide_triple handed only rows with every label set <= 64; eq. 22 cap 64; null class cap 16; digest cap 24; compound-degenerate print cap 240
+[U1c] runtime 4405s (renewal-5 leg 3421s)
+==============================================================================
