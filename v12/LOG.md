@@ -656,3 +656,40 @@ tree identity; monomial annihilator; the WK/CAZAC identification)
 + THE ROAD CLOSURE AS A TWO-THEOREM PROOF + the corrected
 successor target: a phase-retaining invariant of ρ finer than
 B∘ρ.**  THE BATCH IS COMPLETE: six units, six terminal.
+
+## 2026-07-28 — **THE W-BATCH CLOSED: SIX UNITS, SIX TERMINAL — THE
+## v12 SYNTHESIS** (v12 LEDGER #17)
+W1′ (#7), W5 (#12), W3′ (#14), W4′ (#15), W2 (#16) in v12; GW1
+(v13 #5).  Five hostile rounds + two external reviews + one delta
+this arc; EVERY mathematical claim survived; the casualties were
+sentences — attributions, scopes, norms, one wrong constant, and
+two of the adjudicator's own ledger lines (all forward-corrected:
+#9, #10, #11, #13).  **WHAT v12 NOW HOLDS, in one paragraph:**
+The composition defect Δᴮ is the programme's exact instrument —
+closed form, sharp bounds, a tree coherence law, a complete
+annihilator theory (the monomial group), and the WK/CAZAC
+identification of when interference dies (W1′+W2).  RECORDS KILL
+THE DEFECT as a genuine theorem with a decision procedure, sharp
+on physical supports, whose Bell instance IS Barandes' division
+event ("a legitimate division event is a record event", decided
+over all partitions) — and the converse honestly refuted at this
+unit's record notion (W3′).  The three obstruction families —
+temporal, contextual, and the measured BC pair — are SIX-WAYS
+INDEPENDENT (nine invariants, one ingredient containment: BC1's
+predicate is the divisibility atom), so no single "quantum
+invariant" exists at this grain (W4′).  The H²-multiplier road is
+CLOSED BY TWO THEOREMS (cancellation + collapse): the projective
+class is invisible to the Born shadow's whole family; a phase
+selection must be a PHASE-RETAINING INVARIANT OF ρ FINER THAN B∘ρ
+(W2).  And [B3] is, on its own text, an exact theory of ONE CHART
+AND ITS DEFECT, with the LTP-forcing lemma binding his division
+events to divisibility — the fair form carried (W5).  **THE
+PROGRAMME'S LIVE FRONTIER, ordered:** (1) the phase-retaining
+invariant (W2's corrected target); (2) the [D71b] Clause-3 bridge
+(R ↔ loop reversal — one identification, one closure, neither
+written); (3) W3′'s converse under the [GMH] record notion; (4)
+the contextual/temporal relation at scenarios beyond CHSH.
+Score across the collaboration: THREE surviving theorems (W1′,
+W3′, W5's lemma), TWO receipted structural negatives (GW1, W2b),
+ONE measured non-unification (W4′); computed-number errors across
+all campaigns and ~12 independent rebuilds: ZERO.

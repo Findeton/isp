@@ -221,3 +221,15 @@ produce the required closure.**  GW1 IS TERMINAL — v13's founding
 question is answered at its first joint with a receipted negative
 and a constructive successor; the v13 programme's next unit (the
 H_a[N] construction) awaits the user's word.
+
+## 2026-07-28 — v13 BATCH CLOSE-OUT (v13 LEDGER #6)
+GW1 terminal at #5 closes v13's opening arc: the founding
+question's first joint is answered (GW1-NOT-RUNNABLE, the
+deformation-interface block, receipted at a pinned SHA), the
+successor is constructed-not-vague (H_a[N] per v4 p7 Def 1.3 with
+the record-read metric and seven named co-requisites), and two
+corpus-level findings are banked (the degenerate-Laplacian
+nondeterminism with its required connectivity guard; the
+no-smuggling definition now available programme-wide).  The v13
+draft paper 0 remains [DRAFT]; the H_a[N] unit awaits the user's
+word.  v13 halts here alongside v12.
