@@ -10,7 +10,10 @@ and the eraser negative control
   binding: v12 paper 0 v2.1 sec.1 T3' (the record defined
            INDEPENDENTLY of the defect) and T2' (the three-defect
            distinction), sec.4 W3', sec.5 (non-claims);
-           v12/LOG.md #1-#8; bc/LOG.md #4; v11/LOG.md #14, #21.
+           v12/LOG.md #1-#8; bc/LOG.md #4 (M-1) AT COMMIT f6d07ee;
+           the Bell model's specification and committed constants
+           at the earlier commit cbb7279 (bc/LOG.md #1, #2).
+           v11/LOG.md #14, #21.
   banner : EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.
            Rationals: fractions.Fraction.  Algebraic: class Cyc =
            Q[x]/Phi_N(x) for N = 16 and 12, canonical
@@ -76,6 +79,15 @@ PART A — THE THEOREM AT FINITE DIMENSION
   D_210 = 0 for ANY later dynamics whatever, provided the record
   sectors separate the alternatives.  Both routes are gated.
 
+  AND THE EXISTENTIAL QUESTION IS DECIDED, NOT SEARCHED.  "Does ANY
+  record structure satisfy both hypotheses?" is answered by the O(n^2)
+  criterion proved above the helpers: YES iff M(U2) — the transitive
+  closure of U2's co-merge relation, which is the FINEST (H-avail)-
+  admissible partition — separates every co-live pair of U1.  Every
+  search this receipt runs is gated against it, and it is what lets the
+  Bell instance be decided over ALL partitions of 36 configurations
+  rather than a declared family of 16.
+
 A1. THE PROOF'S OWN STEPS, GATED (not merely its conclusion)
   [PASS] A1     H is unitary over Q(zeta_16)                         exact
   [PASS] A1     F3 is unitary over Q(zeta_12)                        exact
@@ -109,6 +121,17 @@ A3. THE TWO-STEP WORKED EXAMPLE, ROUTE 2 (the record is PRESERVED
   [PASS] A3     hence Delta^B(U2, U1) = 0 with NO decoherence applied the record alone kills the defect
   [PASS] A3     D_210 = 0: B(U2 U1) = B(U2) B(U1) exactly            canonical divisor
   [PASS] A3     the composed law's column 0 is (1/4, 1/4, 1/4, 1/4)  exact
+    THEOREM 1' IN ITS GENERAL-PARTITION FORM (not only the singleton
+    record): if the record is READ at the cut and its sectors satisfy
+    (H-corr), then the SECTOR pinching already annihilates every
+    surviving coherence — inside a sector there is at most one live
+    alternative — so it agrees with the full configuration pinching
+    and the shadow is B(U2) B(U1) for ANY later dynamics.  Gated here
+    on a genuinely COARSE separating record: 2 sectors of size 2, not
+    singletons.
+  [PASS] A3     Theorem 1' at a COARSE separating record: shadow = B(U2) B(U1) record = qubit 1, 2 sectors of size 2 (NOT the singletons); (H-corr) holds, so the sector pinching suffices
+  [PASS] A3     and the sector pinching = the configuration pinching there the general form is not a weaker statement on this data — it is the same one, reached without refining to singletons
+  [PASS] A3     Theorem 1' holds for an ARBITRARY later leg at that record 5 declared later legs INCLUDING the eraser (H(x)I).CNOT — the reading route needs no hypothesis on the future whatever
     THE CONTRAST (the record removed, everything else identical):
   [PASS] A3     without the CNOT (H-corr) FAILS                      witness column/sector (0, 0, 2, 0)
   [PASS] A3     and Delta^B is nonzero there                         the defect survives when no record is made
@@ -135,12 +158,15 @@ A5. THE DECLARED CENSUS: hypotheses declared first, defect second
   [PASS] A5     every census matrix is unitary (dim 4)               36 matrices, failures []
   [PASS] A5     THE THEOREM ON THE dim-4 CENSUS: hypotheses ==> Delta^B = 0 320 pairs; 252 satisfy both hypotheses, all with Delta^B = 0; violations []
   [PASS] A5     the census is non-vacuous in both cells              hyp+zero 252, nohyp+nonzero 8
-  [PASS] A5     THE CONVERSE FAILS ALREADY HERE: Delta^B = 0 without records 60 pairs with Delta^B = 0 and the record hypotheses FAILING; first witness (U2, U1) = ('I(x)I', 'H(x)I')   <[W1']>
+  [PASS] A5     Delta^B = 0 WITHOUT THE DECLARED RECORD STRUCTURE    60 pairs with Delta^B = 0 while (H-corr)/(H-avail) FAIL at the single declared partition [0,1,0,1]; first witness (U2, U1) = ('I(x)I', 'H(x)I') — this is a statement about ONE partition, NOT a converse failure   <[W1']>
+  [PASS] A5     ALL of them in fact CARRY a record structure, under some partition 60/60 of the Delta^B = 0 pairs that fail the DECLARED structure satisfy both hypotheses at some one of the 15 partitions of the 4 configurations; exceptions []
+  [PASS] A5     and the EXISTENTIAL converse does not fail anywhere in this census over all 320 pairs, every one with Delta^B = 0 admits a record structure at some partition; exceptions [].  The census therefore exhibits NO converse failure at all — the genuine failures are D1 (d_div = 0, exhaustive over both partitions at n = 2) and D2 (Delta^B = 0, same exhaustive scope)
+  [PASS] A5     THE O(n^2) DECISION CRITERION agrees with the 15-partition search 320 dim-4 pairs, criterion vs brute force, 0 disagreements
   [PASS] A5     every census matrix is unitary (dim 9)               16 matrices, failures []
   [PASS] A5     THE THEOREM ON THE dim-9 CENSUS: hypotheses ==> Delta^B = 0 64 pairs; 42 satisfy both hypotheses, all with Delta^B = 0; violations []
   [PASS] A5     dim-9 census non-vacuous in both cells               hyp+zero 42, nohyp+nonzero 9
   [PASS] A5     OVER ALL 15 SET PARTITIONS of the dim-4 configuration space 4800 (partition, U2, U1) triples; 3280 satisfy both hypotheses, all with Delta^B = 0; violations []
-    (    3.6s)
+    (    3.7s)
 
 A5b. THE PROOF'S COMBINATORIAL CORE, VERIFIED EXHAUSTIVELY AT n = 3
      The theorem is a SUPPORT argument, so it can be checked over
@@ -148,7 +174,34 @@ A5b. THE PROOF'S COMBINATORIAL CORE, VERIFIED EXHAUSTIVELY AT n = 3
      2^9 = 512 supports for U1, all 512 for U2, all 5 set partitions
      of the 3 configurations — no sampling, no declared cap.
   [PASS] A5b    THE CORE, EXHAUSTIVE at n = 3: hypotheses ==> every cross-term slot is empty 146536 admissible (partition, U2-support, U1-support) triples over all 512 x 512 supports and all 5 partitions; per-partition (|corr|, |avail|) = [(64, 512), (216, 125), (216, 125), (216, 125), (512, 64)]; violations []
-  [PASS] A5b    the core's converse fails combinatorially too        8673 support pairs in a declared 64x64 corner have empty cross-terms without satisfying the hypotheses
+  [PASS] A5b    the core's PER-PARTITION converse fails, on ABSTRACT matrices 8673 (partition, U2-support, U1-support) triples in the declared 64x64 corner have empty cross-terms while THAT partition's hypotheses fail
+  [PASS] A5b    BUT EVERY witness in that corner is SINGULAR — no unitary realizes it the declared 64x64 corner is masks 0..63, i.e. the third ROW is identically zero in both factors; such a support carries no unitary (and no invertible matrix), so the witnesses above are witnesses about abstract 0/1 patterns only.  Reported, not hidden; the unitary-realizable question is answered next and answers the OPPOSITE way
+
+A5b-U. UNITARY-REALIZABLE SUPPORTS AT n = 3, CLASSIFIED EXACTLY
+     Three elementary necessary conditions on the support S of a
+     unitary: (L1) no zero row and no zero column; (L2) if row i has
+     a single entry, at column k, then column k has a single entry,
+     at row i (and the transpose statement) — else normalization
+     fails; (L3) two rows whose supports meet in exactly ONE column
+     cannot be orthogonal (their inner product is a single nonzero
+     term), and likewise for two columns.  The filter they define is
+     then matched against EXHIBITED exact orthogonal matrices, so the
+     classification is certified in BOTH directions.
+  [PASS] A5b-U  the four base matrices are exactly unitary over Q(zeta_16) and so are all 144 of their row/column permutations — every claimed realizable support comes with an EXHIBITED exact unitary
+  [PASS] A5b-U  the necessary-condition filter and the exhibited set COINCIDE 25 supports survive (L1)+(L2)+(L3) and 25 are realized by an exhibited exact unitary — so at n = 3 the unitary-realizable supports are EXACTLY these 25, by provenance [('all-ones (rational)', 1), ('permutation', 6), ('row sizes (3,3,2)', 9), ('singleton + full 2x2', 9)]
+  [PASS] A5b-U  THE O(n^2) CRITERION agrees with the exhaustive 5-partition search all 512 x 512 = 262144 support pairs, 0 disagreements; the search side is the memoized 512 x 5 table of s_corr/s_avail
+  [PASS] A5b-U  ABSTRACT NON-SHARPNESS: empty cross-terms without any record 94746 of the 262144 support pairs have every cross-term slot empty (so Delta^B = 0 for ANY amplitudes on them), and 5490 of those admit NO record structure at all — the hypotheses are strictly sufficient on abstract 0/1 patterns
+  [PASS] A5b-U  BUT ON UNITARY-REALIZABLE SUPPORTS THE CRITERION IS SHARP over the 25 x 25 unitary-realizable support pairs, 318 have empty cross-terms and ALL 318 of them admit a record structure (0 exceptions) — at n = 3 the abstract non-sharpness is an artefact of non-realizable patterns
+     SCOPE CLAUSE (n = 3 sweeps): the exhaustive sweeps above range
+     over ABSTRACT 0/1 patterns, of which only 25 of the 512 carry
+     a unitary at all.  On the other 487 no unistochastic law exists,
+     so every canonical-divisor statement — Gam_21 = B(U2), D_210,
+     d_div — is VACUOUS there; what those sweeps certify is the
+     combinatorial CORE of the proof (the cross-term slots), which is
+     exactly what the theorem's support argument needs, and the
+     theorem's own direction is therefore established for every 3x3
+     pair of unitaries a fortiori.
+    (    5.7s)
 
 A5c. THE TWO KNOWN MONOMIAL SUFFICIENCY CONDITIONS ARE THE THEOREM
      AT ITS TWO EXTREME RECORD STRUCTURES ([W1'] sec.5's structural
@@ -159,14 +212,20 @@ A5c. THE TWO KNOWN MONOMIAL SUFFICIENCY CONDITIONS ARE THE THEOREM
   [PASS] A5c    (H-corr) at the TRIVIAL record <=> U1 is column-monomial all 512 supports, both directions
   [PASS] A5c    (H-avail) at the TRIVIAL record is automatic         all 512 supports
   [PASS] A5c    and the INTERMEDIATE record structures are strictly stronger 8 dim-4 pairs where NEITHER monomial condition holds yet a middle record structure gives Delta^B = 0; first ('I(x)H', 'H(x)I')
-    (    4.0s)
+    (    5.7s)
 
 A6. EACH HYPOTHESIS IS LOAD-BEARING, EXACTLY
   [PASS] A6     (H-corr) DROPPED: (H-avail) still holds, (H-corr) fails U1 = H(x)I, U2 = H(x)I, record = qubit 1; witness (0, 0, 2, 0)
   [PASS] A6     and the defect SURVIVES: Delta^B =/= 0               entry (0,0) = 1/2
-  [PASS] A6     (H-avail) DROPPED, exhibit 1: (H-corr) holds, (H-avail) fails U2 = (I(x)H).CNOT01 merges the two record sectors; witness (0, [0, 1])
-  [PASS] A6     yet Delta^B = 0 THERE — a NEGATIVE, reported not hidden dropping a hypothesis does not by ITSELF restore the defect: the hypotheses are sufficient, never claimed necessary ([W1']: Delta^B = 0 is phase alignment, strictly weaker than any support condition)
+  [PASS] A6     (H-avail) DROPPED AT THE DECLARED RECORD, exhibit 1  U2 = (I(x)H).CNOT01 merges the two sectors of [0,1,0,1]; witness (0, [0, 1])
+  [PASS] A6     and Delta^B = 0 there — reported, and now DIAGNOSED  dropping a hypothesis at ONE declared structure does not by itself restore the defect
+    THE DIAGNOSIS (this exhibit is NOT a phase-alignment aside — it
+    belongs to the RECORD way of killing the defect).  Three gates:
+  [PASS] A6     exhibit 1's cross-terms are EMPTY, not cancelling    0 of 96 cross-terms nonzero — every slot is support-forced to zero, so nothing here is a phase coincidence
+  [PASS] A6     a DIFFERENT record structure satisfies BOTH hypotheses there over the 15 partitions the winners are [[0, 0, 1, 1]] — the BRANCH qubit, [0,0,1,1]: U2 mixes the record qubit but never the branch, and U1's live alternatives sit in different branch sectors.  Theorem 1 applies at that structure; the exhibit is a STRENGTHENING of the theorem's reach, not a counterexample to anything
+  [PASS] A6     THE DISCRIMINATOR: 0 of 7 phase kicks break exhibit 1 0 of 7 — the same declared kick family breaks the genuine phase-alignment witness of D2 at 7 of 7.  Stability under phase kicks is the operational signature of a SUPPORT (record) kill; exhibit 1 has it, so it is a record kill at an undeclared structure
   [PASS] A6     (H-avail) DROPPED, exhibit 2 (the eraser): the defect RETURNS U2 = (H(x)I).CNOT01 coherently erases the record; part E computes the returned D_210 exactly
+  [PASS] A6     and there NO record structure survives, at ANY partition criterion and the 15-partition search agree — the contrast with exhibit 1, where the branch structure survives, is exactly the difference between merging a record and relabelling it
 
 A7. THE KILL CONDITION, EVALUATED HONESTLY
     KILL = 'a stable record with surviving D_210 ON ITS OWN ALGEBRA
@@ -188,9 +247,12 @@ A8. 'APPROXIMATELY CORRELATED' MADE QUANTITATIVE (exact, rational)
       sum_i |D_210(i|j)|  <=  sum_r Gam_10(r|j) ||sig_{r|j} - sig_r||_1
     A declared classical family: the cut carries a record value r and
     an UNRECORDED residue m; the later readout reads m.
-  [PASS] A8     the stability bound holds on the declared family     6 values of the deviation; (e, LHS, bound) = [('1/4', '1', '1'), ('1/8', '1/2', '1/2'), ('1/16', '1/4', '1/4'), ('1/32', '1/8', '1/8'), ('1/64', '1/16', '1/16'), ('0', '0', '0')]
-  [PASS] A8     the bound is TIGHT (equality at every point of the family) not merely an inequality
-  [PASS] A8     an EXACT record (deviation 0) gives D_210 = 0 exactly the theorem's exact case is the limit
+    THE BOUND IS DERIVED IN-RECEIPT FROM sig_{r|j}, sig_r AND Gam_10;
+    nothing is hard-coded, and the comparison is PER COLUMN j.
+  [PASS] A8     the stability bound holds, COLUMN BY COLUMN          12 (deviation, column) points, 0 violations; the right-hand side is recomputed from sig_{r|j}, sig_r and Gam_10(r|j) at every point
+  [PASS] A8     the bound is TIGHT: equality at EVERY point, not merely a bound (e, j, LHS, RHS) = [('1/4', 0, '0', '0'), ('1/4', 1, '1', '1'), ('1/8', 0, '0', '0'), ('1/8', 1, '1/2', '1/2'), ('1/16', 0, '0', '0'), ('1/16', 1, '1/4', '1/4'), ('1/32', 0, '0', '0'), ('1/32', 1, '1/8', '1/8'), ('1/64', 0, '0', '0'), ('1/64', 1, '1/16', '1/16'), ('0', 0, '0', '0'), ('0', 1, '0', '0')]
+  [PASS] A8     and the tightness is NOT an artefact of degenerate zeros 7 of the 12 points are degenerate (both sides exactly 0: column j = 0 carries no unrecorded residue at any deviation, and e = 0 is the exact-record point); the remaining 5 have both sides equal and STRICTLY POSITIVE
+  [PASS] A8     an EXACT record (deviation 0) gives D_210 = 0 exactly the theorem's exact case is the limit of the family
 ==============================================================================
 PART B — THE INSTANCE: bc #4's M-1 ON THE COMMITTED BELL MODEL
 ==============================================================================
@@ -215,31 +277,46 @@ PART B — THE INSTANCE: bc #4's M-1 ON THE COMMITTED BELL MODEL
   (H-avail), and the reading of the record REPAIRS every illegitimate
   cut.
 
+  B0'. THE DECLARED RECORD STRUCTURES ARE FIXED NOW, BEFORE THE
+       MODEL'S OPERATORS EXIST — the declaration depends only on the
+       configuration indexing (qA, qB, pA, pB), so no defect of this
+       model has been computed when the family is chosen (T3').
+       THE DECLARED FAMILY: all 16 record structures that read a
+       SUBSET of the four coordinates, from the trivial one-sector
+       structure {} to the finest {qA,qB,pA,pB}.
+
   [anchor] every Bell operator is real and exactly orthogonal   ok 7 operators, U^T U = I entry by entry
   [anchor] [U_A(a), U_B(b)] = 0 at all operator pairs           ok 9 pairs
   [anchor] U_prep's j0 column is exactly the singlet            ok (0, 1/sqrt2, -1/sqrt2, 0) on (00, 01, 10, 11)
-  Bell model built for all 6 setting pairs x 2 frames (    5.3s)
+  Bell model built for all 6 setting pairs x 2 frames (    6.9s)
   [anchor] the exact singlet outcome law reproduces in both frames ok P(al,be) = (1 - al be cos(a-b))/4 and both marginals 1/2; 96 exact identities
   [anchor] the committed divisibility census reproduces exactly ok Gam(3<-2)Gam(2<-0) vs Gam(3<-0) differing entries per (SP, F1, F2): {'SP-A': (0, 0), 'SP-B': (0, 0), 'SP-C': (576, 576), 'SP-D': (576, 576), 'SP-E': (0, 0), 'SP-F': (576, 576)}
   [PASS] B0     every Gam(2<-0) entry lies in Q(sqrt 2), exactly     12 matrices, 1296 entries each
   [anchor] the committed exact ranks of Gam(2<-0) reproduce     ok {'SP-A': (18, 18), 'SP-B': (18, 18), 'SP-C': (9, 18), 'SP-D': (9, 18), 'SP-E': (18, 18), 'SP-F': (18, 18)} (full rank would be 36) — [B3] eq. 22's hypothesis fails
   [anchor] the basis-free 1-vs-0 pointer certificate reproduces ok Pr[pointer B still ready] AT ALICE'S DIVISION EVENT = 1 in F1 (t = 2) and 0 in F2 (t = 3), at all six setting pairs
 
-B1. THE DECLARED RECORD STRUCTURES (declared before any defect is
-    computed, per T3'), and the two hypotheses evaluated on each
-    THE DECLARED FAMILY: all 16 record structures that read a SUBSET
-    of the four configuration coordinates (qA, qB, pA, pB) — from
-    the trivial one-sector structure {} to the finest {qA,qB,pA,pB}.
+B1. THE RECORD STRUCTURES DECLARED AT B0' (above, before the model's
+    operators were built, per T3'), with the two hypotheses evaluated
+    on each — and, at B2, the EXISTENTIAL question decided over the
+    FULL class of partitions rather than this declared family.
   [PASS] B1     the 16 declared record structures are genuine partitions sector counts [1, 2, 2, 4, 3, 6, 6, 12, 3, 6, 6, 12, 9, 18, 18, 36] (1 .. 36)
   [PASS] B1     Bob's operator commutes with EVERY pointer-A sector projector [U_B(b), P^A_s] = 0 for all b and s — Alice's record is preserved by Bob's measurement, exactly
   [PASS] B2     THE THEOREM'S DIRECTION: a record structure ==> the cut divides no false positive in 12 (setting pair, frame) cells
-  [PASS] B2     AND THE BICONDITIONAL HOLDS ON THIS MODEL, 12/12 cells divides <=> some declared record structure satisfies (H-corr) and (H-avail); MEASURED over the declared family, not proven in general
+  [PASS] B2     AND THE BICONDITIONAL HOLDS ON THIS MODEL, 12/12 cells divides <=> some DECLARED record structure satisfies (H-corr) and (H-avail), over the 16-member family
       SP-A  a=  0 b= 45 | F1 DIVIDES   wins {qA},{pA},{qA,pA}      | F2 DIVIDES   wins {qA,qB,pB},{qA,qB,pA,pB}
       SP-B  a=  0 b=135 | F1 DIVIDES   wins {qA},{pA},{qA,pA}      | F2 DIVIDES   wins {qA,qB,pB},{qA,qB,pA,pB}
       SP-C  a= 90 b= 45 | F1 indivisible wins -                      | F2 indivisible wins -
       SP-D  a= 90 b=135 | F1 indivisible wins -                      | F2 indivisible wins -
       SP-E  a=  0 b=  0 | F1 DIVIDES   wins {qA},{qB},{qA,qB},{pA},{qA,pA},{qB,pA},{qA,qB,pA},{qA,pB},{qB,pB},{qA,qB,pB},{pA,pB},{qA,pA,pB},{qB,pA,pB},{qA,qB,pA,pB} | F2 DIVIDES   wins {qA},{qB},{qA,qB},{qA,pA},{qB,pA},{qA,qB,pA},{pB},{qA,pB},{qB,pB},{qA,qB,pB},{pA,pB},{qA,pA,pB},{qB,pA,pB},{qA,qB,pA,pB}
       SP-F  a= 45 b= 45 | F1 indivisible wins -                      | F2 indivisible wins -
+
+    THE UPGRADE: the declared 16 are no longer the scope.  The O(n^2)
+    decision criterion answers the EXISTENTIAL question over ALL set
+    partitions of the 36 configurations — a class of Bell number
+    B(36) ~ 1e31 partitions, which no search could enumerate — by
+    testing the single canonical partition M(U2).
+  [PASS] B2     THE BICONDITIONAL, DECIDED OVER THE FULL CLASS OF PARTITIONS 12/12 cells: the cut divides <=> SOME record structure whatever (not merely a declared one) satisfies both hypotheses; mismatches none.  sec.5's scope changes from MEASURED-over-16 to DECIDED-over-the-full-class
+  [PASS] B2     and the criterion never contradicts the declared-family search cells (SP, frame, exists-any, |M(U2)| classes, declared winners) = [('SP-A', 'F1', True, 6, 3), ('SP-A', 'F2', True, 36, 2), ('SP-B', 'F1', True, 6, 3), ('SP-B', 'F2', True, 36, 2), ('SP-C', 'F1', False, 6, 0), ('SP-C', 'F2', False, 6, 0), ('SP-D', 'F1', False, 6, 0), ('SP-D', 'F2', False, 6, 0), ('SP-E', 'F1', True, 36, 14), ('SP-E', 'F2', True, 36, 14), ('SP-F', 'F1', False, 6, 0), ('SP-F', 'F2', False, 6, 0)] — where a declared structure wins, the criterion says yes; where none wins, the criterion says no record exists AT ALL
     THE MECHANISM, exact: in F1 at a = 0 Alice's measurement is a
     CONFIGURATION PERMUTATION, so the two singlet branches leave the
     cut in DIFFERENT pointer-A sectors and Bob — who never touches
@@ -250,7 +327,7 @@ B1. THE DECLARED RECORD STRUCTURES (declared before any defect is
 
 B3. THE READING REPAIRS EVERY ILLEGITIMATE DIVISION EVENT
   [PASS] B3     the READ model's law = Gam(3<-2) Gam(2<-0) (density-matrix route) j0 column recomputed through rho -> pinch -> conjugate at all 12 cells
-  [PASS] B3     so the READ model satisfies the LTP at EVERY declared cut by construction: reading is the pinching onto the record sectors   <[B3]>
+  [PASS] B3     so the READ model satisfies the LTP at EVERY declared cut by construction: reading is the pinching onto the record sectors.  TAGGED DECLARATIVE — its computational content is the gate directly above (the j0 column, which is this model's ONLY declared initial configuration, recomputed through rho -> pinch -> conjugate at all 12 cells); the division events {0, 2, 3} other than the cut carry Gam(t<-t) = I and are trivial.  This gate re-asserts, it does not compute   <declarative; [B3]>
   [PASS] B3     and it differs from the UNREAD model exactly at SP-C/D/F differing entries {('SP-C', 'F1'): 576, ('SP-C', 'F2'): 576, ('SP-D', 'F1'): 576, ('SP-D', 'F2'): 576, ('SP-F', 'F1'): 576, ('SP-F', 'F2'): 576}
     M-1 DERIVED: [B3]'s law of total probability at a declared
     division event IS D_210 = 0 with the canonical divisor, so
@@ -270,8 +347,10 @@ B4. AN ERASER INSIDE THE BELL MODEL (feeds part E)
     second = Theta(2<-0)^T, which recombines the two branches onto
     one configuration.
   [PASS] B4     the coherent eraser destroys EVERY declared record structure second leg Theta(2<-0)^T at SP-A/F1; wins none
+  [PASS] B4     and NO record structure exists there at all, over ALL partitions the O(n^2) criterion decides the existential question over every partition of the 36 configurations: the erasure is not an accident of the declared 16-member family
+  [PASS] B4     whereas the permutation 'eraser' leaves one, by the criterion too relabelling a record is not erasing it — the criterion agrees with the declared-family finding above
   [PASS] B4     and the DEFECT RETURNS at a cut that divided         72 differing entries where the un-erased cut had 0
-    (    7.2s)
+    (    8.8s)
 ==============================================================================
 PART C — THE GLOBAL CASE (the multi-cut corollary; v11 CITED ONLY)
 ==============================================================================
@@ -312,11 +391,35 @@ PART D — THE CONVERSE, SCOPED
         ==> D_210 = 0 with the canonical divisor
         ==> d_div = 0.
 
-  NONE of the reverse implications holds.  Each failure is exhibited
-  exactly below.  The one true converse in the literature is [GMH]'s —
-  for a PURE initial state, medium decoherence <=> generalized records —
-  and it is CITED as the known result it is, never claimed here.
+  THE LADDER HAS FOUR LINKS AND ONLY THREE OF THEM ARE STRICT.  With
+  the CANONICAL divisor Gam_21 = B(U2) the third link is an IDENTITY,
+  not an implication:  D_210 = Gam_20 - B(U2) B(U1) = Delta^B, the same
+  object under two names (T2' keeps them distinct precisely because the
+  divisor need not be canonical).  So there is nothing to refute there,
+  and the honest statement is:
 
+     records ==> medium decoherence ==> Delta^B = 0 (= D_210 at the
+     canonical divisor) ==> d_div = 0,
+
+  three strict links.  TWO of their reverse implications are refuted
+  outright below (Delta^B = 0 ==/=> medium decoherence at D2; d_div = 0
+  ==/=> D_210 = 0 at D1), the COMPOSITE reverse d_div = 0 ==/=> records
+  is refuted twice over (D1 and, more strongly, D2), and ONE reverse
+  link is NOT TESTED HERE and is declared so: medium decoherence
+  ==/=> records in THIS unit's sense.  In [GMH]'s sense that link is a
+  theorem for pure states — cited, not re-derived — and nothing here
+  bears on it, since every witness below lives where medium decoherence
+  FAILS.  Every failure is exhibited exactly, with the divisor named.
+  The one true converse in the literature is [GMH]'s — for a PURE
+  initial state, medium decoherence <=> generalized records — and it is
+  CITED as the known result it is, never claimed here.  IT IS NOT
+  CONTRADICTED by anything below: [GMH]'s generalized records are
+  later-time projections in ANY basis, existentially quantified over
+  operators; this unit's records are partitions of the CONFIGURATION
+  space at the cut, constrained by the declared supports.  Every
+  refutation below is a refutation for THIS unit's notion.
+
+  [PASS] D0     AT THE CANONICAL DIVISOR D_210 AND Delta^B ARE THE SAME OBJECT 49 entries over 5 declared pairs — so the ladder's third link is an identity in both directions and is not among the refutable ones; the three strict links are the ones refuted below
   [PASS] D0     records ==> MEDIUM decoherence (every branch overlap vanishes) 96 overlaps on the A3 instance, 0 nonzero — not merely their real part, the overlaps themselves   <[GMH]>
 
 D1. DIVISIBILITY WITHOUT A RECORD (the C+1 rotation pair, rebuilt)
@@ -326,15 +429,15 @@ D1. DIVISIBILITY WITHOUT A RECORD (the C+1 rotation pair, rebuilt)
   [PASS] D1     Delta^B =/= 0: entry (0,0) = -4032/15625             the actual residual D_210 with the canonical divisor is nonzero too   <[W1']>
   [PASS] D1     K = S(-175/527) is a genuine stochastic matrix       entries >= 0, columns sum to 1
   [PASS] D1     K B(U1) = B(U2 U1) EXACTLY, and K =/= B(U2)          so d_div = 0 while D_210 =/= 0 — the ladder's bottom link is strict
-  [PASS] D1     NO record structure exists at this cut (both partitions of 2) the finest fails (H-avail) since U2 is not monomial; the trivial fails (H-corr) since both alternatives are live
+  [PASS] D1     d_div = 0 WITH THE DIVISOR K = S(-175/527) ==/=> a record NO record structure exists at this cut: EXHAUSTIVE over both partitions of a 2-configuration space (the finest fails (H-avail) since U2 is not monomial; the trivial fails (H-corr) since both alternatives are live), and the O(n^2) criterion agrees.  THE DIVISOR IS NAMED: what vanishes here is d_div, witnessed by the NON-canonical K; with the canonical divisor B(U2) the residual D_210 = Delta^B is -4032/15625 =/= 0 at this very cut.  So the refuted link is d_div = 0 ==/=> a record, NOT D_210 = 0 ==/=> a record
   [PASS] D1     and medium decoherence FAILS here (branch overlaps nonzero) 4 nonzero overlaps; by [GMH] (pure state) NO generalized records exist for this history set   <[GMH]>
     CONCLUSION: divisibility does NOT imply a record.  The converse
     is FALSE at the divisibility level.
 
 D2. Delta^B = 0 WITHOUT MEDIUM DECOHERENCE (phase alignment)
   [PASS] D2     a witness exists: Delta^B = 0 with NONZERO branch overlaps witness (U2, U1) = (H, SH) from the declared family   <[W1']>
-  [PASS] D2     the witness carries NO record structure either       Delta^B = 0 is phase alignment, not a record
-  [PASS] D2     and its Delta^B = 0 is UNSTABLE under declared phase kicks 7 of 7 diagonal phase insertions break it
+  [PASS] D2     THE CONVERSE'S FIRST GENUINE FAILURE: Delta^B = 0 and NO record EXHAUSTIVE over both partitions of a 2-configuration space — there is no third partition to hide in — and the O(n^2) criterion agrees.  This, not the dim-4 census's declared-structure count, is where the converse first fails: Delta^B = 0 here is PHASE ALIGNMENT, not a record
+  [PASS] D2     and its Delta^B = 0 is UNSTABLE under declared phase kicks 7 of 7 diagonal phase insertions break it — against 0 of 7 for A6's exhibit 1, which is why that exhibit is a RECORD kill at an undeclared structure and this one is not a record kill at all
   [PASS] D2     whereas the RECORD-killed defect is STABLE under the same kicks 7 declared phase insertions, Delta^B stays exactly 0 — the record hypotheses are support conditions and phases cannot break them
 
 D3. THE ALL-READOUTS CONVERSE: it forces the branching to be TRIVIAL
@@ -369,7 +472,23 @@ PART E — THE NEGATIVE CONTROL: THE ERASER RESTORES THE DEFECT
   [PASS] E1     the erased composite law is the IDENTITY (the branch returns) coherent erasure recovers the initial configuration exactly
   [PASS] E1     D_210 RETURNS, maximally: every entry is +-1/2 or 0  entries [['1/2', '0', '-1/2', '0'], ['0', '1/2', '0', '-1/2'], ['-1/2', '0', '1/2', '0'], ['0', '-1/2', '0', '1/2']]
   [PASS] E1     and d_div > 0 too: columns 0 and 2 of Gam_10 are EQUAL so K Gam_10 has equal columns 0, 2 for EVERY stochastic K, while Gam_20 = I does not: no divisor exists, by an exact argument and not by a search
-  [PASS] E1     the exact ell^1 floor: min_K ||Gam_20 - K Gam_10||_1 = 2 on columns 0 and 2 alone: (1-v0)+v1+v2+v3 + v0+v1+(1-v2)+v3 = 2 for every probability vector v — computed by hand, gated as arithmetic   <declarative>
+  [PASS] E1     and columns 1 and 3 of Gam_10 are equal as well      Gam_10 = B(CNOT.(H(x)I)) has col0 = col2 = (1/2,0,0,1/2) and col1 = col3 = (0,1/2,1/2,0) — BOTH coincidences matter for the floor
+    THE ell^1 FLOOR, COMPUTED — AND THE NORM NAMED.  Write
+    p = K Gam_10 e_0 = K Gam_10 e_2 and q = K Gam_10 e_1 =
+    K Gam_10 e_3; both are probability vectors.  Against Gam_20 = I,
+    column j = 0 contributes (1 - p_0) + p_1 + p_2 + p_3 = 2 - 2 p_0,
+    column 2 contributes 2 - 2 p_2, and columns 1, 3 contribute
+    2 - 2 q_1 and 2 - 2 q_3.  The ENTRYWISE ell^1 objective is
+    therefore
+        8 - 2 (p_0 + p_2) - 2 (q_1 + q_3),
+    an AFFINE function of K, so its minimum over the column-
+    stochastic polytope is attained at a vertex and the 256
+    deterministic K exhaust the search.  Since p_0 + p_2 <= 1 and
+    q_1 + q_3 <= 1 the floor is 4.
+  [PASS] E1     the closed form 8 - 2(p0+p2) - 2(q1+q3) is exact, all 256 vertices so the objective is AFFINE in K and the vertex enumeration is a genuine minimization, not a sample
+  [PASS] E1     THE ENTRYWISE ell^1 FLOOR IS 4, computed over all 256 vertices min_K sum_ij |Gam_20 - K Gam_10|_ij = 4, attained at 16 of the 256 vertices; the declared witness K = (e_0, e_1, e_3, e_2) is among them: True.  THE NORM IS NAMED — entrywise ell^1 (the sum of all 16 absolute entries)
+  [PASS] E1     the a-fortiori argument on columns 0 and 2 alone gives >= 2 those two columns contribute 4 - 2 v_0 - 2 v_2 for the common image v = p, which is >= 2 because v_0 + v_2 <= 1 — it is NOT identically 2 (at v = e_1 it is 4).  That inequality alone is what proves d_div > 0; the floor's exact VALUE needs all four columns
+  [PASS] E1     under the INDUCED 1-norm the floor is 1, not 4 and not 2 max_j sum_i |.| minimized over the 256 vertices = 1, and the same permutation witness K = (e_0, e_1, e_3, e_2) attains it.  The two conventions disagree — under NO convention is the floor 2 — which is exactly why the norm is now named at the gate
   [PASS] E1     the PRESERVING leg on the same data still has D_210 = 0 the ONLY difference between the two runs is the later operation
 ==============================================================================
 PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
@@ -386,14 +505,28 @@ PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
              ty (eqs. 19-20), Theta(t<-0) (eq. 25).
     [BC2]    bc/note-bc2-bell-two-frames.md and bc/code/bc2_two_frames_exact.py
               at git object cbb7279 (the COMMITTED state; the bc working tree i
-             s dirty with frozen partial edits and is never read here), with bc
-             /LOG.md #2 and #4.
+             s dirty with frozen partial edits and is never read here), carryin
+             g bc/LOG.md #1 and #2 — that commit is the source of the model's S
+             PECIFICATION and of every constant anchored below.  M-1 itself is 
+             bc/LOG.md #4, which does NOT exist at cbb7279: it was appended at 
+             the later commit f6d07ee (BC2 hostile round), and that is the comm
+             it cited for M-1.
     [GAUSS]  Phi_n is irreducible over Q — standard; it makes the Cyc represent
              ation canonical, hence tuple equality = field equality.
     [GMH]    Gell-Mann and Hartle, Phys. Rev. D 47, 3345 (1993) — for a PURE in
              itial state a set of histories medium-decoheres IFF generalized re
              cords exist.  CITED as known; never re-derived and never claimed a
-             s this unit's.
+             s this unit's.  SCOPE NOTE, engraved: [GMH]'s GENERALIZED RECORDS 
+             are a different object from this unit's (H-corr)/(H-avail) record 
+             structures.  [GMH]'s are projections at a LATER time, in ANY basis
+             , perfectly correlated with the history branches — an existential 
+             statement about operators, with no requirement that they be diagon
+             al in the configuration basis or that they partition the configura
+             tion space at the cut.  This unit's are PARTITIONS OF THE CONFIGUR
+             ATION SPACE at the cut, constrained by the SUPPORTS of the declare
+             d U1 and U2.  Every reverse implication refuted in part D is refut
+             ed for THIS unit's notion; none of them contradicts [GMH], whose c
+             onverse is at the decoherence-functional level and stands.
     [V11]    v11/LOG.md #14 (U1 TERMINAL) and #21 (U1b TERMINAL) — cited only; 
              v11 is frozen and nothing of it is re-run.
     [W1']    v12/note-w1p-three-class.md, TERMINAL at v12 LOG #7 — the cross-te
@@ -414,14 +547,24 @@ PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
    * NO claim after erasure or under sector-recombining operations;
      part E is that boundary, exhibited rather than assumed.
    * The bc instance's biconditional is PROVEN in one direction and
-     MEASURED in the other over a declared 16-member family of record
-     structures at 12 cells.  It is not a general converse.
+     DECIDED in the other at all 12 cells — not merely measured over
+     the declared 16-member family: the O(n^2) criterion settles the
+     existential question over the FULL class of partitions of the 36
+     configurations.  It remains a statement about THIS model; it is
+     not a general converse, and D1/D2 refute the general one.
    * v11 is cited, never re-run; [GMH] is cited, never re-derived.
 
   DISCLOSURES:
-   * 3 of the 103 gates are DECLARATIVE (they print a stated scope or
+   * 3 of the 129 gates are DECLARATIVE (they print a stated scope or
      re-assert an already-gated fact rather than computing something
-     new): ["the induction's base and two steps", 'v11 is cited, not re-run: no v11 f', 'the exact ell^1 floor: min_K ||Gam']
+     new): ['so the READ model satisfies the LT', "the induction's base and two steps", 'v11 is cited, not re-run: no v11 f']
+     THE RECOUNT, disclosed: the reviewed version of this receipt
+     carried FOUR gates whose truth value was a literal True — the
+     three then tagged, plus the untagged B3 law-of-total-probability
+     gate.  This version COMPUTES the ell^1 floor (E1, four new
+     gates, and its by-hand justification string was algebraically
+     false) and TAGS the B3 gate, leaving the 3 above.  Every other
+     gate's truth value is computed from data.
    * the Bell model is REBUILT here from the committed specification;
      no bc code is imported and no bc working-tree file is read.
    * the exact ranks are computed over Q(sqrt 2) after an exactness-
@@ -429,8 +572,12 @@ PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
 
 ==============================================================================
   THE KILL CONDITION: a stable record (H-corr and H-avail both holding) with D_210 =/= 0 on its own algebra under record-preserving dynamics
-  searched over: the dim-4 census (320 pairs), the dim-9 census (64 pairs),
-  and the Bell model's 12 cells x 16 declared record structures.
+  searched over, and FOLDED INTO THE KILL VARIABLE ITSELF: the dim-4
+  census (320 pairs at the declared structure) and its all-partitions
+  sweep (4800 triples), the dim-9 census (64 pairs), the Bell model's
+  12 cells x 16 declared record structures AND the same 12 cells
+  decided over ALL partitions by the O(n^2) criterion, and the n = 3
+  exhaustive core sweep (146536 admissible triples).
   AND, at n = 3, EXHAUSTIVELY over all 512 x 512 support patterns and
   all 5 partitions (A5b): the hypotheses are monotone in the support,
   so that check covers EVERY pair of 3x3 matrices, with any
@@ -438,7 +585,7 @@ PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
   RESULT: NOT FIRED.  No instance found.
 ==============================================================================
 
-  gates: 103 run, 103 pass, 0 fail
+  gates: 129 run, 129 pass, 0 fail
   anchors: 14, all exit-1 (a committed constant or the arithmetic layer)
 
 ==============================================================================
@@ -459,21 +606,38 @@ PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
   structures (A5c), and the intermediate structures are strictly
   stronger than both.
 
+  THE DECISION CRITERION: 'does ANY record structure work?' is not a
+  search — it is the O(n^2) test 'M(U2) separates every co-live pair
+  of U1'.  Gated against every search this receipt runs (dim-4's 15
+  partitions, n = 3's exhaustive 512 x 512 x 5), 0 disagreements.
+  On unitary-realizable supports at n = 3 it is SHARP: all 318 pairs
+  with empty cross-terms admit a record structure; the abstract
+  non-sharpness (5490 of 94746) lives entirely on 0/1 patterns that
+  carry no unitary.
+
   THE INSTANCE: on the committed Bell model the theorem's prediction
   matches the committed divisibility census at all 12 cells, and the
   reading of the record repairs every illegitimate division event —
   so bc #4's M-1 biconditional reads: a legitimate division event is
-  a RECORD event.
+  a RECORD event.  The biconditional is now DECIDED over the full
+  class of partitions, not measured over 16.
 
-  THE CONVERSE: FALSE at the divisibility level (D1) and at the
-  Delta^B level (D2); vacuous in its all-readouts form (D3).  The
-  true converse is [GMH]'s, cited.
+  THE CONVERSE: FALSE at the d_div level (D1: the divisor is the
+  non-canonical K = S(-175/527); with the canonical divisor D_210 is
+  nonzero at that very cut) and at the Delta^B level (D2, exhaustive
+  over both partitions at n = 2); vacuous in its all-readouts form
+  (D3).  With the canonical divisor D_210 and Delta^B are the same
+  object, so that link of the ladder is an identity and not a
+  refutable implication.  The true converse is [GMH]'s, cited, and
+  its records are a DIFFERENT object from this unit's.
 
   THE ERASER: the same record, the same first leg, one changed later
   operation — and D_210 returns at +-1/2 with no divisor at all.
-  (H-avail) is load-bearing.
+  The entrywise ell^1 floor is 4 (computed over all 256 vertices,
+  1 under the induced 1-norm); what proves d_div > 0 is the
+  a-fortiori >= 2 from columns 0 and 2.  (H-avail) is load-bearing.
 
   determinism: fixed lexicographic enumeration everywhere; no
   randomness, no hashing, no float in any substantive path.
-  runtime:     7.5s
+  runtime:     9.2s
 ==============================================================================

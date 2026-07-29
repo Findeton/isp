@@ -9,7 +9,10 @@ exclusive values = orthogonal record sectors, correlated with the
 alternatives, available under the declared future dynamics; claims only
 under RECORD-PRESERVING operations; no claim after erasure), T2' (the
 three-defect distinction Delta^B / D_210 / d_div), sec.4 W3', sec.5
-(non-claims); v12/LOG.md #1-#8; bc/LOG.md #4 (M-1); v11/LOG.md #14, #21.
+(non-claims); v12/LOG.md #1-#8; bc/LOG.md #4 (M-1), which lives at
+commit f6d07ee — the Bell model's SPECIFICATION and committed constants
+are the earlier commit cbb7279 (bc/LOG.md #1, #2), and the two are cited
+separately because #4 does not exist at cbb7279; v11/LOG.md #14, #21.
 
 THE FIVE PARTS
   A  THE THEOREM at finite dimension.  A stable record of {C_r} plus
@@ -29,7 +32,13 @@ THE FIVE PARTS
      individually, not merely in the sum), plus exact two-step and
      three-step worked examples, a declared census, the load-bearing
      tests of each hypothesis, and the quantitative
-     approximately-correlated bound.
+     approximately-correlated bound.  It also carries the DECISION
+     CRITERION for the existential question "does ANY record structure
+     satisfy both hypotheses?": the answer is YES iff the transitive
+     closure of U2's co-merge relation separates every co-live pair of
+     U1 — an O(n^2) test (union-find) that replaces every search over
+     partitions, is proven in the note, and is gated against those
+     searches wherever both are available.
   B  THE INSTANCE: bc #4's M-1 biconditional ("legitimate division
      event <=> the process divides at it") on the committed Bell model,
      derived as an instance.  The model is REBUILT INDEPENDENTLY from
@@ -513,7 +522,10 @@ print("           this file existed)")
 print("  binding: v12 paper 0 v2.1 sec.1 T3' (the record defined")
 print("           INDEPENDENTLY of the defect) and T2' (the three-defect")
 print("           distinction), sec.4 W3', sec.5 (non-claims);")
-print("           v12/LOG.md #1-#8; bc/LOG.md #4; v11/LOG.md #14, #21.")
+print("           v12/LOG.md #1-#8; bc/LOG.md #4 (M-1) AT COMMIT f6d07ee;")
+print("           the Bell model's specification and committed constants")
+print("           at the earlier commit cbb7279 (bc/LOG.md #1, #2).")
+print("           v11/LOG.md #14, #21.")
 print("  banner : EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.")
 print("           Rationals: fractions.Fraction.  Algebraic: class Cyc =")
 print("           Q[x]/Phi_N(x) for N = 16 and 12, canonical")
@@ -534,7 +546,18 @@ cite("[B3]", "Barandes, Quantum Systems as Indivisible Stochastic "
 cite("[GMH]", "Gell-Mann and Hartle, Phys. Rev. D 47, 3345 (1993) — "
      "for a PURE initial state a set of histories medium-decoheres IFF "
      "generalized records exist.  CITED as known; never re-derived and "
-     "never claimed as this unit's.")
+     "never claimed as this unit's.  SCOPE NOTE, engraved: [GMH]'s "
+     "GENERALIZED RECORDS are a different object from this unit's "
+     "(H-corr)/(H-avail) record structures.  [GMH]'s are projections at "
+     "a LATER time, in ANY basis, perfectly correlated with the history "
+     "branches — an existential statement about operators, with no "
+     "requirement that they be diagonal in the configuration basis or "
+     "that they partition the configuration space at the cut.  This "
+     "unit's are PARTITIONS OF THE CONFIGURATION SPACE at the cut, "
+     "constrained by the SUPPORTS of the declared U1 and U2.  Every "
+     "reverse implication refuted in part D is refuted for THIS unit's "
+     "notion; none of them contradicts [GMH], whose converse is at the "
+     "decoherence-functional level and stands.")
 cite("[GAUSS]", "Phi_n is irreducible over Q — standard; it makes the "
      "Cyc representation canonical, hence tuple equality = field "
      "equality.")
@@ -545,7 +568,11 @@ cite("[W1']", "v12/note-w1p-three-class.md, TERMINAL at v12 LOG #7 — the "
 cite("[BC2]", "bc/note-bc2-bell-two-frames.md and bc/code/"
      "bc2_two_frames_exact.py at git object cbb7279 (the COMMITTED "
      "state; the bc working tree is dirty with frozen partial edits and "
-     "is never read here), with bc/LOG.md #2 and #4.")
+     "is never read here), carrying bc/LOG.md #1 and #2 — that commit "
+     "is the source of the model's SPECIFICATION and of every constant "
+     "anchored below.  M-1 itself is bc/LOG.md #4, which does NOT exist "
+     "at cbb7279: it was appended at the later commit f6d07ee (BC2 "
+     "hostile round), and that is the commit cited for M-1.")
 cite("[V11]", "v11/LOG.md #14 (U1 TERMINAL) and #21 (U1b TERMINAL) — "
      "cited only; v11 is frozen and nothing of it is re-run.")
 
@@ -689,6 +716,87 @@ def h_corr(K, U1, part):
     return True, None
 
 
+# ------------------------------------------------- THE DECISION CRITERION
+#
+#   LEMMA (proved in the note, sec.2; gated against brute force below).
+#   Define on the cut configurations the CO-MERGE relation of U2:
+#       k ~ l   iff  some later configuration i has (U2)_ik =/= 0 =/= (U2)_il,
+#   and let M(U2) be its TRANSITIVE CLOSURE (a partition).  Define the
+#   CO-LIVE relation of U1: k ~~ l (k =/= l) iff some initial configuration
+#   j has (U1)_kj =/= 0 =/= (U1)_lj.  Then
+#
+#       EXISTS pi [(H-corr)(U1, pi) AND (H-avail)(U2, pi)]
+#         <==>   M(U2) separates every co-live pair of U1.
+#
+#   Proof.  (H-avail)(U2, pi) says every row-support of U2 lies in one
+#   pi-sector, i.e. pi is COARSER than M(U2); M(U2) itself is admissible and
+#   is the FINEST admissible partition.  (H-corr) is inherited by every
+#   REFINEMENT of a partition that satisfies it.  So if any admissible pi
+#   satisfies (H-corr) then so does M(U2), and conversely M(U2) is itself
+#   admissible.  QED.  The test needs one union-find pass over the row
+#   supports and one duplicate-label scan over the column supports: O(n^2)
+#   set operations, no enumeration of partitions at all.
+
+def merge_classes(K, U2):
+    """M(U2): the transitive closure of U2's co-merge relation, as a label
+    list.  This is the FINEST record structure compatible with (H-avail)."""
+    n = len(U2)
+    par = list(range(n))
+
+    def find(x):
+        while par[x] != x:
+            par[x] = par[par[x]]
+            x = par[x]
+        return x
+
+    for i in range(n):
+        ks = [k for k in range(n) if not K.is_zero(U2[i][k])]
+        for k in ks[1:]:
+            ra, rb = find(ks[0]), find(k)
+            if ra != rb:
+                par[rb] = ra
+    return [find(k) for k in range(n)]
+
+
+def record_exists(K, U2, U1):
+    """THE DECISION CRITERION.  True iff SOME record structure whatever —
+    over the full set of partitions of the configuration space, not a
+    declared family — satisfies (H-corr) for U1 and (H-avail) for U2."""
+    cls = merge_classes(K, U2)
+    n = len(U1)
+    for j in range(len(U1[0])):
+        seen = set()
+        for k in range(n):
+            if not K.is_zero(U1[k][j]):
+                if cls[k] in seen:
+                    return False
+                seen.add(cls[k])
+    return True
+
+
+def record_exists_bruteforce(K, U2, U1, parts):
+    """The same question answered by enumerating a supplied partition list."""
+    for p in parts:
+        if h_corr(K, U1, p)[0] and h_avail(K, U2, p)[0]:
+            return True
+    return False
+
+
+def set_partitions(n):
+    """All set partitions of {0..n-1}, as label lists, lexicographic."""
+    if n == 0:
+        return [[]]
+    out = []
+    for p in set_partitions(n - 1):
+        m = (max(p) + 1) if p else 0
+        for lab in range(m + 1):
+            out.append(p + [lab])
+    return out
+
+
+PARTS4 = set_partitions(4)          # the 15 partitions of 4 configurations
+
+
 # ============================================================================
 head("PART A — THE THEOREM AT FINITE DIMENSION")
 print("""
@@ -734,6 +842,15 @@ print("""
   U2 . D . U1 with D the pinching onto the record sectors — then
   D_210 = 0 for ANY later dynamics whatever, provided the record
   sectors separate the alternatives.  Both routes are gated.
+
+  AND THE EXISTENTIAL QUESTION IS DECIDED, NOT SEARCHED.  "Does ANY
+  record structure satisfy both hypotheses?" is answered by the O(n^2)
+  criterion proved above the helpers: YES iff M(U2) — the transitive
+  closure of U2's co-merge relation, which is the FINEST (H-avail)-
+  admissible partition — separates every co-live pair of U1.  Every
+  search this receipt runs is gated against it, and it is what lets the
+  Bell instance be decided over ALL partitions of 36 configurations
+  rather than a declared family of 16.
 """)
 
 # ---------------------------------------------------------------- A1
@@ -892,6 +1009,33 @@ _col0 = [K16.to_rat(mB(K16, mmul(K16, U2_pre, U1_rec))[i][0])
 gate("A3", "the composed law's column 0 is (1/4, 1/4, 1/4, 1/4)",
      _col0 == [Fr(1, 4)] * 4, "exact")
 
+print("    THEOREM 1' IN ITS GENERAL-PARTITION FORM (not only the singleton")
+print("    record): if the record is READ at the cut and its sectors satisfy")
+print("    (H-corr), then the SECTOR pinching already annihilates every")
+print("    surviving coherence — inside a sector there is at most one live")
+print("    alternative — so it agrees with the full configuration pinching")
+print("    and the shadow is B(U2) B(U1) for ANY later dynamics.  Gated here")
+print("    on a genuinely COARSE separating record: 2 sectors of size 2, not")
+print("    singletons.")
+_gen21 = shadow_chain(K16, [U1_rec, U2_pre], [part_rec, None])
+_gen21f = shadow_chain(K16, [U1_rec, U2_pre], [list(range(4)), None])
+_genBB = mmul(K16, mB(K16, U2_pre), mB(K16, U1_rec))
+gate("A3", "Theorem 1' at a COARSE separating record: shadow = B(U2) B(U1)",
+     meq(K16, _gen21, _genBB),
+     "record = qubit 1, 2 sectors of size 2 (NOT the singletons); "
+     "(H-corr) holds, so the sector pinching suffices")
+gate("A3", "and the sector pinching = the configuration pinching there",
+     meq(K16, _gen21, _gen21f),
+     "the general form is not a weaker statement on this data — it is the "
+     "same one, reached without refining to singletons")
+gate("A3", "Theorem 1' holds for an ARBITRARY later leg at that record",
+     all(meq(K16, shadow_chain(K16, [U1_rec, _V], [part_rec, None]),
+             mmul(K16, mB(K16, _V), mB(K16, U1_rec)))
+         for _V in [U2_pre, CN01, mmul(K16, H_b, CN01),
+                    on_qubit(K16, H2, 1, 2), mmul(K16, CN01, H_b)]),
+     "5 declared later legs INCLUDING the eraser (H(x)I).CNOT — the "
+     "reading route needs no hypothesis on the future whatever")
+
 print("    THE CONTRAST (the record removed, everything else identical):")
 U1_norec = H_b                                # no CNOT: no record is made
 ok_c2, w_c2 = h_corr(K16, U1_norec, part_rec)
@@ -1032,11 +1176,52 @@ gate("A5", "the census is non-vacuous in both cells",
      _cens["hyp_and_zero"] > 0 and _cens["nohyp_and_nonzero"] > 0,
      "hyp+zero %d, nohyp+nonzero %d" % (_cens["hyp_and_zero"],
                                         _cens["nohyp_and_nonzero"]))
-gate("A5", "THE CONVERSE FAILS ALREADY HERE: Delta^B = 0 without records",
+gate("A5", "Delta^B = 0 WITHOUT THE DECLARED RECORD STRUCTURE",
      len(_cens_conv) > 0,
-     "%d pairs with Delta^B = 0 and the record hypotheses FAILING; "
-     "first witness (U2, U1) = %s" % (len(_cens_conv), _cens_conv[0]),
-     "[W1']")
+     "%d pairs with Delta^B = 0 while (H-corr)/(H-avail) FAIL at the "
+     "single declared partition [0,1,0,1]; first witness (U2, U1) = %s "
+     "— this is a statement about ONE partition, NOT a converse failure"
+     % (len(_cens_conv), _cens_conv[0]), "[W1']")
+
+# --- M2 REPAIR: those pairs are NOT converse failures.  The declared
+# --- partition is one of 15; the honest question is the EXISTENTIAL one.
+_CAND_BY_NAME = {("2", nm): M for nm, M in CAND2_4}
+_CAND_BY_NAME.update({("1", nm): M for nm, M in CAND1_4})
+_conv_norec = []
+for (n2, n1) in _cens_conv:
+    if not record_exists_bruteforce(K16, _CAND_BY_NAME[("2", n2)],
+                                    _CAND_BY_NAME[("1", n1)], PARTS4):
+        _conv_norec.append((n2, n1))
+gate("A5", "ALL of them in fact CARRY a record structure, under some "
+     "partition", not _conv_norec,
+     "%d/%d of the Delta^B = 0 pairs that fail the DECLARED structure "
+     "satisfy both hypotheses at some one of the 15 partitions of the "
+     "4 configurations; exceptions %s"
+     % (len(_cens_conv) - len(_conv_norec), len(_cens_conv), _conv_norec))
+_zero_norec = []
+for n2, U2 in CAND2_4:
+    for n1, U1 in CAND1_4:
+        if mzero(K16, delta_B(K16, U2, U1)) and \
+                not record_exists_bruteforce(K16, U2, U1, PARTS4):
+            _zero_norec.append((n2, n1))
+gate("A5", "and the EXISTENTIAL converse does not fail anywhere in this "
+     "census", not _zero_norec,
+     "over all %d pairs, every one with Delta^B = 0 admits a record "
+     "structure at some partition; exceptions %s.  The census therefore "
+     "exhibits NO converse failure at all — the genuine failures are D1 "
+     "(d_div = 0, exhaustive over both partitions at n = 2) and D2 "
+     "(Delta^B = 0, same exhaustive scope)"
+     % (len(CAND2_4) * len(CAND1_4), _zero_norec))
+_crit_bad = []
+for n2, U2 in CAND2_4:
+    for n1, U1 in CAND1_4:
+        if record_exists(K16, U2, U1) != \
+                record_exists_bruteforce(K16, U2, U1, PARTS4):
+            _crit_bad.append((n2, n1))
+gate("A5", "THE O(n^2) DECISION CRITERION agrees with the 15-partition "
+     "search", not _crit_bad,
+     "%d dim-4 pairs, criterion vs brute force, %d disagreements"
+     % (len(CAND2_4) * len(CAND1_4), len(_crit_bad)))
 
 
 def sum_gate(K, ctrl, targ, nt, d=3):
@@ -1104,19 +1289,6 @@ gate("A5", "dim-9 census non-vacuous in both cells",
      "hyp+zero %d, nohyp+nonzero %d" % (_cens9["hz"], _cens9["nn"]))
 
 
-def set_partitions(n):
-    """All set partitions of {0..n-1}, as label lists, lexicographic."""
-    if n == 0:
-        return [[]]
-    out = []
-    for p in set_partitions(n - 1):
-        m = (max(p) + 1) if p else 0
-        for lab in range(m + 1):
-            out.append(p + [lab])
-    return out
-
-
-PARTS4 = set_partitions(4)
 _all_viol, _all_hyp, _all_conv = [], 0, 0
 for part in PARTS4:
     for n2, U2 in CAND2_4:
@@ -1217,9 +1389,192 @@ for part in PARTS3:
             if not (s_corr(_S1, part, _N3) and s_avail(_S2, part, _N3)) \
                     and core_holds(_S2, _S1, _N3):
                 _core_conv += 1
-gate("A5b", "the core's converse fails combinatorially too", _core_conv > 0,
-     "%d support pairs in a declared 64x64 corner have empty cross-terms "
-     "without satisfying the hypotheses" % _core_conv)
+gate("A5b", "the core's PER-PARTITION converse fails, on ABSTRACT matrices",
+     _core_conv > 0,
+     "%d (partition, U2-support, U1-support) triples in the declared 64x64 "
+     "corner have empty cross-terms while THAT partition's hypotheses fail"
+     % _core_conv)
+_corner_singular = all(sum(S[2]) == 0 for S in _ALLS3[:64])
+gate("A5b", "BUT EVERY witness in that corner is SINGULAR — no unitary "
+     "realizes it", _corner_singular,
+     "the declared 64x64 corner is masks 0..63, i.e. the third ROW is "
+     "identically zero in both factors; such a support carries no unitary "
+     "(and no invertible matrix), so the witnesses above are witnesses "
+     "about abstract 0/1 patterns only.  Reported, not hidden; the "
+     "unitary-realizable question is answered next and answers the "
+     "OPPOSITE way")
+
+print()
+print("A5b-U. UNITARY-REALIZABLE SUPPORTS AT n = 3, CLASSIFIED EXACTLY")
+print("     Three elementary necessary conditions on the support S of a")
+print("     unitary: (L1) no zero row and no zero column; (L2) if row i has")
+print("     a single entry, at column k, then column k has a single entry,")
+print("     at row i (and the transpose statement) — else normalization")
+print("     fails; (L3) two rows whose supports meet in exactly ONE column")
+print("     cannot be orthogonal (their inner product is a single nonzero")
+print("     term), and likewise for two columns.  The filter they define is")
+print("     then matched against EXHIBITED exact orthogonal matrices, so the")
+print("     classification is certified in BOTH directions.")
+
+
+class _SuppField:
+    """A minimal adapter: the criterion and the hypotheses use only is_zero,
+    so the SAME code runs on 0/1 support patterns and on field matrices."""
+
+    zero = 0
+
+    @staticmethod
+    def is_zero(x):
+        return not x
+
+
+SUPPK = _SuppField()
+
+
+def _L1(S, n):
+    return all(sum(S[i]) for i in range(n)) and \
+        all(sum(S[k][j] for k in range(n)) for j in range(n))
+
+
+def _L2(S, n):
+    for i in range(n):
+        ks = [k for k in range(n) if S[i][k]]
+        if len(ks) == 1 and sum(S[t][ks[0]] for t in range(n)) != 1:
+            return False
+    for j in range(n):
+        ks = [k for k in range(n) if S[k][j]]
+        if len(ks) == 1 and sum(S[ks[0]]) != 1:
+            return False
+    return True
+
+
+def _L3(S, n):
+    for a in range(n):
+        for b in range(a + 1, n):
+            if sum(1 for k in range(n) if S[a][k] and S[b][k]) == 1:
+                return False
+            if sum(1 for k in range(n) if S[k][a] and S[k][b]) == 1:
+                return False
+    return True
+
+
+_filt3 = [m for m in range(512)
+          if _L1(_ALLS3[m], _N3) and _L2(_ALLS3[m], _N3) and _L3(_ALLS3[m], _N3)]
+
+_h16 = K16.scal(K16.add(K16.zpow(2), K16.zpow(-2)), Fr(1, 2))     # 1/sqrt 2
+
+
+def _q(x):
+    return K16.rat(Fr(x))
+
+
+_BASES3 = [
+    ("permutation", mid(K16, 3)),
+    ("singleton + full 2x2",
+     [[K16.one, K16.zero, K16.zero],
+      [K16.zero, _h16, _h16],
+      [K16.zero, _h16, K16.neg(_h16)]]),
+    ("all-ones (rational)",
+     [[_q(Fr(1, 3)), _q(Fr(2, 3)), _q(Fr(2, 3))],
+      [_q(Fr(2, 3)), _q(Fr(1, 3)), _q(Fr(-2, 3))],
+      [_q(Fr(2, 3)), _q(Fr(-2, 3)), _q(Fr(1, 3))]]),
+    ("row sizes (3,3,2)",
+     [[_q(Fr(1, 2)), _q(Fr(1, 2)), _h16],
+      [_q(Fr(-1, 2)), _q(Fr(-1, 2)), _h16],
+      [_h16, K16.neg(_h16), K16.zero]]),
+]
+_base_ok = all(is_unitary(K16, M) for _, M in _BASES3)
+_perms3 = [(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+_realized = {}
+_realized_ok = True
+for _bn, _M in _BASES3:
+    for _rp in _perms3:
+        for _cp in _perms3:
+            _P = [[_M[_rp[i]][_cp[j]] for j in range(3)] for i in range(3)]
+            if not is_unitary(K16, _P):
+                _realized_ok = False
+            _mask = 0
+            for i in range(3):
+                for j in range(3):
+                    if not K16.is_zero(_P[i][j]):
+                        _mask |= 1 << (i * 3 + j)
+            _realized.setdefault(_mask, (_bn, _rp, _cp))
+gate("A5b-U", "the four base matrices are exactly unitary over Q(zeta_16)",
+     _base_ok and _realized_ok,
+     "and so are all %d of their row/column permutations — every claimed "
+     "realizable support comes with an EXHIBITED exact unitary"
+     % (len(_BASES3) * 36))
+_by_base = {}
+for _mk, (_bn, _, _) in _realized.items():
+    _by_base[_bn] = _by_base.get(_bn, 0) + 1
+gate("A5b-U", "the necessary-condition filter and the exhibited set COINCIDE",
+     sorted(_realized) == _filt3,
+     "%d supports survive (L1)+(L2)+(L3) and %d are realized by an "
+     "exhibited exact unitary — so at n = 3 the unitary-realizable "
+     "supports are EXACTLY these %d, by provenance %s"
+     % (len(_filt3), len(_realized), len(_filt3),
+        sorted(_by_base.items())))
+REAL3 = sorted(_realized)
+
+# --- the hypothesis table, then the criterion against it, then sharpness ---
+_CORRM = [0] * 512
+_AVAILM = [0] * 512
+for _m in range(512):
+    for _t, _p in enumerate(PARTS3):
+        if s_corr(_ALLS3[_m], _p, _N3):
+            _CORRM[_m] |= 1 << _t
+        if s_avail(_ALLS3[_m], _p, _N3):
+            _AVAILM[_m] |= 1 << _t
+_crit3_bad = 0
+for _m2 in range(512):
+    for _m1 in range(512):
+        if record_exists(SUPPK, _ALLS3[_m2], _ALLS3[_m1]) != \
+                ((_CORRM[_m1] & _AVAILM[_m2]) != 0):
+            _crit3_bad += 1
+gate("A5b-U", "THE O(n^2) CRITERION agrees with the exhaustive 5-partition "
+     "search", _crit3_bad == 0,
+     "all 512 x 512 = %d support pairs, %d disagreements; the search side "
+     "is the memoized 512 x 5 table of s_corr/s_avail"
+     % (512 * 512, _crit3_bad))
+
+_nQ, _nQ_norec = 0, 0
+for _m2 in range(512):
+    for _m1 in range(512):
+        if core_holds(_ALLS3[_m2], _ALLS3[_m1], _N3):
+            _nQ += 1
+            if not record_exists(SUPPK, _ALLS3[_m2], _ALLS3[_m1]):
+                _nQ_norec += 1
+gate("A5b-U", "ABSTRACT NON-SHARPNESS: empty cross-terms without any record",
+     _nQ_norec > 0,
+     "%d of the %d support pairs have every cross-term slot empty "
+     "(so Delta^B = 0 for ANY amplitudes on them), and %d of those admit "
+     "NO record structure at all — the hypotheses are strictly sufficient "
+     "on abstract 0/1 patterns" % (_nQ, 512 * 512, _nQ_norec))
+_nQu, _nQu_norec = 0, 0
+for _m2 in REAL3:
+    for _m1 in REAL3:
+        if core_holds(_ALLS3[_m2], _ALLS3[_m1], _N3):
+            _nQu += 1
+            if not record_exists(SUPPK, _ALLS3[_m2], _ALLS3[_m1]):
+                _nQu_norec += 1
+gate("A5b-U", "BUT ON UNITARY-REALIZABLE SUPPORTS THE CRITERION IS SHARP",
+     _nQu > 0 and _nQu_norec == 0,
+     "over the %d x %d unitary-realizable support pairs, %d have empty "
+     "cross-terms and ALL %d of them admit a record structure "
+     "(%d exceptions) — at n = 3 the abstract non-sharpness is an artefact "
+     "of non-realizable patterns"
+     % (len(REAL3), len(REAL3), _nQu, _nQu, _nQu_norec))
+print("     SCOPE CLAUSE (n = 3 sweeps): the exhaustive sweeps above range")
+print("     over ABSTRACT 0/1 patterns, of which only %d of the 512 carry"
+      % len(REAL3))
+print("     a unitary at all.  On the other 487 no unistochastic law exists,")
+print("     so every canonical-divisor statement — Gam_21 = B(U2), D_210,")
+print("     d_div — is VACUOUS there; what those sweeps certify is the")
+print("     combinatorial CORE of the proof (the cross-term slots), which is")
+print("     exactly what the theorem's support argument needs, and the")
+print("     theorem's own direction is therefore established for every 3x3")
+print("     pair of unitaries a fortiori.")
+print("    (%s)" % el())
 
 print()
 print("A5c. THE TWO KNOWN MONOMIAL SUFFICIENCY CONDITIONS ARE THE THEOREM")
@@ -1289,22 +1644,60 @@ gate("A6", "and the defect SURVIVES: Delta^B =/= 0",
 _x = mmul(K16, on_qubit(K16, H2, 1, 2), CN01)      # merges the record sectors
 ok_a6b, w_a6b = h_avail(K16, _x, part_rec)
 ok_c6b, _ = h_corr(K16, U1_rec, part_rec)
-gate("A6", "(H-avail) DROPPED, exhibit 1: (H-corr) holds, (H-avail) fails",
+gate("A6", "(H-avail) DROPPED AT THE DECLARED RECORD, exhibit 1",
      ok_c6b and not ok_a6b,
-     "U2 = (I(x)H).CNOT01 merges the two record sectors; witness %s"
+     "U2 = (I(x)H).CNOT01 merges the two sectors of [0,1,0,1]; witness %s"
      % (w_a6b,))
-gate("A6", "yet Delta^B = 0 THERE — a NEGATIVE, reported not hidden",
+gate("A6", "and Delta^B = 0 there — reported, and now DIAGNOSED",
      mzero(K16, delta_B(K16, _x, U1_rec)),
-     "dropping a hypothesis does not by ITSELF restore the defect: the "
-     "hypotheses are sufficient, never claimed necessary ([W1']: "
-     "Delta^B = 0 is phase alignment, strictly weaker than any support "
-     "condition)")
+     "dropping a hypothesis at ONE declared structure does not by itself "
+     "restore the defect")
+print("    THE DIAGNOSIS (this exhibit is NOT a phase-alignment aside — it")
+print("    belongs to the RECORD way of killing the defect).  Three gates:")
+_x_terms = [t for i in range(4) for j in range(4)
+            for _, t in cross_terms(K16, _x, U1_rec, i, j)]
+gate("A6", "exhibit 1's cross-terms are EMPTY, not cancelling",
+     all(K16.is_zero(t) for t in _x_terms),
+     "%d of %d cross-terms nonzero — every slot is support-forced to zero, "
+     "so nothing here is a phase coincidence"
+     % (sum(1 for t in _x_terms if not K16.is_zero(t)), len(_x_terms)))
+_x_wins = [p for p in PARTS4 if h_corr(K16, U1_rec, p)[0]
+           and h_avail(K16, _x, p)[0]]
+gate("A6", "a DIFFERENT record structure satisfies BOTH hypotheses there",
+     len(_x_wins) > 0 and record_exists(K16, _x, U1_rec),
+     "over the 15 partitions the winners are %s — the BRANCH qubit, "
+     "[0,0,1,1]: U2 mixes the record qubit but never the branch, and U1's "
+     "live alternatives sit in different branch sectors.  Theorem 1 "
+     "applies at that structure; the exhibit is a STRENGTHENING of the "
+     "theorem's reach, not a counterexample to anything" % (_x_wins,))
+_x_kick = 0
+for _k in range(1, 8):
+    _Dph = [[K16.zpow(_k), K16.zero, K16.zero, K16.zero],
+            [K16.zero, K16.one, K16.zero, K16.zero],
+            [K16.zero, K16.zero, K16.zpow((3 * _k) % 16), K16.zero],
+            [K16.zero, K16.zero, K16.zero, K16.one]]
+    if not mzero(K16, delta_B(K16, mmul(K16, _x, _Dph),
+                              mmul(K16, _Dph, U1_rec))):
+        _x_kick += 1
+gate("A6", "THE DISCRIMINATOR: 0 of 7 phase kicks break exhibit 1",
+     _x_kick == 0,
+     "%d of 7 — the same declared kick family breaks the genuine "
+     "phase-alignment witness of D2 at 7 of 7.  Stability under phase "
+     "kicks is the operational signature of a SUPPORT (record) kill; "
+     "exhibit 1 has it, so it is a record kill at an undeclared structure"
+     % _x_kick)
 _x2 = mmul(K16, H_b, CN01)                          # the eraser of part E
 ok_a6c, w_a6c = h_avail(K16, _x2, part_rec)
 gate("A6", "(H-avail) DROPPED, exhibit 2 (the eraser): the defect RETURNS",
      (not ok_a6c) and not mzero(K16, delta_B(K16, _x2, U1_rec)),
      "U2 = (H(x)I).CNOT01 coherently erases the record; part E computes "
      "the returned D_210 exactly")
+gate("A6", "and there NO record structure survives, at ANY partition",
+     (not record_exists(K16, _x2, U1_rec))
+     and not record_exists_bruteforce(K16, _x2, U1_rec, PARTS4),
+     "criterion and the 15-partition search agree — the contrast with "
+     "exhibit 1, where the branch structure survives, is exactly the "
+     "difference between merging a record and relabelling it")
 
 # ---------------------------------------------------------------- A7
 print()
@@ -1371,8 +1764,13 @@ print("      sum_i |D_210(i|j)|  <=  sum_r Gam_10(r|j) ||sig_{r|j} - sig_r||_1")
 print("    A declared classical family: the cut carries a record value r and")
 print("    an UNRECORDED residue m; the later readout reads m.")
 
+print("    THE BOUND IS DERIVED IN-RECEIPT FROM sig_{r|j}, sig_r AND Gam_10;")
+print("    nothing is hard-coded, and the comparison is PER COLUMN j.")
 _appr_rows = []
 _appr_bad = 0
+_appr_slack = 0
+_appr_degen = 0
+_appr_live = 0
 for e in [Fr(1, 4), Fr(1, 8), Fr(1, 16), Fr(1, 32), Fr(1, 64), Fr(0)]:
     G10 = [[Fr(1, 2), Fr(1, 2) - e],          # k = (r=0,m=0)
            [Fr(0), e],                        # k = (r=0,m=1)
@@ -1380,24 +1778,54 @@ for e in [Fr(1, 4), Fr(1, 8), Fr(1, 16), Fr(1, 32), Fr(1, 64), Fr(0)]:
            [Fr(0), e]]                        # k = (r=1,m=1)
     G2 = [[Fr(1), Fr(0), Fr(1), Fr(0)],       # reads m
           [Fr(0), Fr(1), Fr(0), Fr(1)]]
+    SECT = {0: [0, 1], 1: [2, 3]}             # record sectors, r = k // 2
     G20 = rat_mm(G2, G10)
-    Grec10 = [[Fr(1, 2), Fr(1, 2)], [Fr(1, 2), Fr(1, 2)]]
-    Ghat21 = [[Fr(1), Fr(1)], [Fr(0), Fr(0)]]     # built from j = 0
-    D210 = [[G20[i][j] - rat_mm(Ghat21, Grec10)[i][j] for j in range(2)]
-            for i in range(2)]
-    lhs = max(sum(abs(D210[i][j]) for i in range(2)) for j in range(2))
-    bound = 4 * e
-    _appr_rows.append((e, lhs, bound))
-    if not (lhs <= bound):
-        _appr_bad += 1
-gate("A8", "the stability bound holds on the declared family",
+    # Gam_10(r|j) = sum over the sector; sig_{r|j} = the conditional residue
+    Grec10 = [[sum(G10[k][j] for k in SECT[r]) for j in range(2)]
+              for r in range(2)]
+    SIG = {}
+    for r in range(2):
+        for j in range(2):
+            w = Grec10[r][j]
+            SIG[(r, j)] = [G10[k][j] / w for k in SECT[r]]
+    SIGREF = {r: SIG[(r, 0)] for r in range(2)}       # sig_r, declared at j = 0
+    # the DECLARED divisor Ghat_21(i|r) = Tr[F_i Phi_2(sig_r)], computed from
+    # sig_r and the readout G2 — not written down by hand
+    Ghat21 = [[sum(G2[i][SECT[r][t]] * SIGREF[r][t] for t in range(2))
+               for r in range(2)] for i in range(2)]
+    PR = rat_mm(Ghat21, Grec10)
+    D210 = [[G20[i][j] - PR[i][j] for j in range(2)] for i in range(2)]
+    for j in range(2):
+        lhs = sum(abs(D210[i][j]) for i in range(2))
+        rhs = sum(Grec10[r][j] * sum(abs(SIG[(r, j)][t] - SIGREF[r][t])
+                                     for t in range(2)) for r in range(2))
+        _appr_rows.append((e, j, lhs, rhs))
+        if not (lhs <= rhs):
+            _appr_bad += 1
+        if lhs != rhs:
+            _appr_slack += 1
+        if lhs == 0 and rhs == 0:
+            _appr_degen += 1
+        else:
+            _appr_live += 1
+gate("A8", "the stability bound holds, COLUMN BY COLUMN",
      _appr_bad == 0,
-     "6 values of the deviation; (e, LHS, bound) = %s"
-     % [(str(a), str(b), str(c)) for a, b, c in _appr_rows])
-gate("A8", "the bound is TIGHT (equality at every point of the family)",
-     all(b == c for _, b, c in _appr_rows), "not merely an inequality")
+     "%d (deviation, column) points, 0 violations; the right-hand side is "
+     "recomputed from sig_{r|j}, sig_r and Gam_10(r|j) at every point"
+     % len(_appr_rows))
+gate("A8", "the bound is TIGHT: equality at EVERY point, not merely a "
+     "bound", _appr_slack == 0,
+     "(e, j, LHS, RHS) = %s"
+     % [(str(a), b, str(c), str(d)) for a, b, c, d in _appr_rows])
+gate("A8", "and the tightness is NOT an artefact of degenerate zeros",
+     _appr_live > 0,
+     "%d of the %d points are degenerate (both sides exactly 0: column "
+     "j = 0 carries no unrecorded residue at any deviation, and e = 0 is "
+     "the exact-record point); the remaining %d have both sides equal and "
+     "STRICTLY POSITIVE" % (_appr_degen, len(_appr_rows), _appr_live))
 gate("A8", "an EXACT record (deviation 0) gives D_210 = 0 exactly",
-     _appr_rows[-1][1] == 0, "the theorem's exact case is the limit")
+     all(c == 0 for a, b, c, d in _appr_rows if a == 0),
+     "the theorem's exact case is the limit of the family")
 
 
 # ============================================================================
@@ -1430,6 +1858,39 @@ NC = 36
 def cfg(i):
     return ((i // 18) % 2, (i // 9) % 2, (i // 3) % 3, i % 3)
 
+
+# ------ THE DECLARED RECORD STRUCTURES, DECLARED HERE ---------------------
+# Execution order is part of the claim (T3'): this block runs BEFORE the
+# Bell operators are built, hence before any defect of this model is
+# computed anywhere in the receipt.  It depends only on the configuration
+# indexing, never on U_prep, U_A, U_B, Gam or Delta.
+print("  B0'. THE DECLARED RECORD STRUCTURES ARE FIXED NOW, BEFORE THE")
+print("       MODEL'S OPERATORS EXIST — the declaration depends only on the")
+print("       configuration indexing (qA, qB, pA, pB), so no defect of this")
+print("       model has been computed when the family is chosen (T3').")
+COORD = ["qA", "qB", "pA", "pB"]
+
+
+def coord_part(sub):
+    """The record structure that reads exactly the declared coordinates."""
+    out = []
+    for k in range(NC):
+        c = cfg(k)
+        out.append(tuple(c[t] for t in sub))
+    labs = {v: i for i, v in enumerate(sorted(set(out)))}
+    return [labs[v] for v in out]
+
+
+RECORD_STRUCTURES = []
+for _m in range(16):
+    _sub = tuple(t for t in range(4) if (_m >> t) & 1)
+    _nm = "RS-%02d {%s}" % (_m, ",".join(COORD[t] for t in _sub) or "-")
+    RECORD_STRUCTURES.append((_nm, coord_part(_sub)))
+PARTS = RECORD_STRUCTURES
+print("       THE DECLARED FAMILY: all 16 record structures that read a")
+print("       SUBSET of the four coordinates, from the trivial one-sector")
+print("       structure {} to the finest {qA,qB,pA,pB}.")
+print()
 
 SH = [[K16.zero, K16.zero, K16.one],
       [K16.one, K16.zero, K16.zero],
@@ -1609,32 +2070,11 @@ anchor("the basis-free 1-vs-0 pointer certificate reproduces",
        "(t = 2) and 0 in F2 (t = 3), at all six setting pairs")
 print()
 
-# ------ the declared record structures -----------------------------------
-print("B1. THE DECLARED RECORD STRUCTURES (declared before any defect is")
-print("    computed, per T3'), and the two hypotheses evaluated on each")
-
-COORD = ["qA", "qB", "pA", "pB"]
-
-
-def coord_part(sub):
-    """The record structure that reads exactly the declared coordinates."""
-    out = []
-    for k in range(NC):
-        c = cfg(k)
-        out.append(tuple(c[t] for t in sub))
-    labs = {v: i for i, v in enumerate(sorted(set(out)))}
-    return [labs[v] for v in out]
-
-
-RECORD_STRUCTURES = []
-for _m in range(16):
-    _sub = tuple(t for t in range(4) if (_m >> t) & 1)
-    _nm = "RS-%02d {%s}" % (_m, ",".join(COORD[t] for t in _sub) or "-")
-    RECORD_STRUCTURES.append((_nm, coord_part(_sub)))
-PARTS = RECORD_STRUCTURES
-print("    THE DECLARED FAMILY: all 16 record structures that read a SUBSET")
-print("    of the four configuration coordinates (qA, qB, pA, pB) — from")
-print("    the trivial one-sector structure {} to the finest {qA,qB,pA,pB}.")
+# ------ the declared record structures, checked --------------------------
+print("B1. THE RECORD STRUCTURES DECLARED AT B0' (above, before the model's")
+print("    operators were built, per T3'), with the two hypotheses evaluated")
+print("    on each — and, at B2, the EXISTENTIAL question decided over the")
+print("    FULL class of partitions rather than this declared family.")
 _sizes_ok = True
 for _m in range(16):
     _sub = tuple(t for t in range(4) if (_m >> t) & 1)
@@ -1688,8 +2128,8 @@ gate("B2", "THE THEOREM'S DIRECTION: a record structure ==> the cut divides",
      "no false positive in 12 (setting pair, frame) cells")
 gate("B2", "AND THE BICONDITIONAL HOLDS ON THIS MODEL, 12/12 cells",
      not _mismatch,
-     "divides <=> some declared record structure satisfies (H-corr) and "
-     "(H-avail); MEASURED over the declared family, not proven in general")
+     "divides <=> some DECLARED record structure satisfies (H-corr) and "
+     "(H-avail), over the 16-member family")
 for nm, a, b in SETTINGS:
     print("      %-5s a=%3d b=%3d | F1 %-9s wins %-22s | F2 %-9s wins %s"
           % (nm, a, b,
@@ -1697,6 +2137,35 @@ for nm, a, b in SETTINGS:
              ",".join(_pred[(nm, "F1")]) or "-",
              "DIVIDES" if FR[(nm, "F2")]["divides"] else "indivisible",
              ",".join(_pred[(nm, "F2")]) or "-"))
+print()
+print("    THE UPGRADE: the declared 16 are no longer the scope.  The O(n^2)")
+print("    decision criterion answers the EXISTENTIAL question over ALL set")
+print("    partitions of the 36 configurations — a class of Bell number")
+print("    B(36) ~ 1e31 partitions, which no search could enumerate — by")
+print("    testing the single canonical partition M(U2).")
+_crit_mismatch = []
+_crit_rows = []
+for nm, a, b in SETTINGS:
+    for fr in ("F1", "F2"):
+        F = FR[(nm, fr)]
+        ex = record_exists(K16, F["second"], F["Th2"])
+        F["exists_any"] = ex
+        _crit_rows.append((nm, fr, ex, len(set(merge_classes(K16, F["second"]))),
+                           len(F["wins"])))
+        if ex != F["divides"]:
+            _crit_mismatch.append((nm, fr, ex, F["divides"]))
+gate("B2", "THE BICONDITIONAL, DECIDED OVER THE FULL CLASS OF PARTITIONS",
+     not _crit_mismatch,
+     "12/12 cells: the cut divides <=> SOME record structure whatever "
+     "(not merely a declared one) satisfies both hypotheses; mismatches "
+     "%s.  sec.5's scope changes from MEASURED-over-16 to DECIDED-over-"
+     "the-full-class" % (_crit_mismatch or "none"))
+gate("B2", "and the criterion never contradicts the declared-family search",
+     all((ex == (w > 0)) for _, _, ex, _, w in _crit_rows),
+     "cells (SP, frame, exists-any, |M(U2)| classes, declared winners) = "
+     "%s — where a declared structure wins, the criterion says yes; where "
+     "none wins, the criterion says no record exists AT ALL"
+     % [(a, b, c, d, e) for a, b, c, d, e in _crit_rows])
 print("    THE MECHANISM, exact: in F1 at a = 0 Alice's measurement is a")
 print("    CONFIGURATION PERMUTATION, so the two singlet branches leave the")
 print("    cut in DIFFERENT pointer-A sectors and Bob — who never touches")
@@ -1729,8 +2198,14 @@ gate("B3", "the READ model's law = Gam(3<-2) Gam(2<-0) (density-matrix route)",
      not _rep_bad,
      "j0 column recomputed through rho -> pinch -> conjugate at all 12 cells")
 gate("B3", "so the READ model satisfies the LTP at EVERY declared cut",
-     True, "by construction: reading is the pinching onto the record sectors",
-     "[B3]")
+     True,
+     "by construction: reading is the pinching onto the record sectors.  "
+     "TAGGED DECLARATIVE — its computational content is the gate directly "
+     "above (the j0 column, which is this model's ONLY declared initial "
+     "configuration, recomputed through rho -> pinch -> conjugate at all "
+     "12 cells); the division events {0, 2, 3} other than the cut carry "
+     "Gam(t<-t) = I and are trivial.  This gate re-asserts, it does not "
+     "compute", "declarative; [B3]")
 gate("B3", "and it differs from the UNREAD model exactly at SP-C/D/F",
      all((_rep_diff[(nm, fr)] > 0) == (not FR[(nm, fr)]["divides"])
          for nm, _, _ in SETTINGS for fr in ("F1", "F2")),
@@ -1776,6 +2251,15 @@ for pn, part in PARTS:
 gate("B4", "the coherent eraser destroys EVERY declared record structure",
      not _er_wins,
      "second leg Theta(2<-0)^T at SP-A/F1; wins %s" % (_er_wins or "none"))
+gate("B4", "and NO record structure exists there at all, over ALL partitions",
+     not record_exists(K16, second_er, _Fa["Th2"]),
+     "the O(n^2) criterion decides the existential question over every "
+     "partition of the 36 configurations: the erasure is not an accident "
+     "of the declared 16-member family")
+gate("B4", "whereas the permutation 'eraser' leaves one, by the criterion too",
+     record_exists(K16, _second_perm, _Fa["Th2"]),
+     "relabelling a record is not erasing it — the criterion agrees with "
+     "the declared-family finding above")
 _G30_er = mB(K16, mmul(K16, second_er, _Fa["Th2"]))
 _prod_er = mmul(K16, mB(K16, second_er), _Fa["G20"])
 _der = sum(1 for i in range(NC) for j in range(NC)
@@ -1829,11 +2313,50 @@ print("""
         ==> D_210 = 0 with the canonical divisor
         ==> d_div = 0.
 
-  NONE of the reverse implications holds.  Each failure is exhibited
-  exactly below.  The one true converse in the literature is [GMH]'s —
-  for a PURE initial state, medium decoherence <=> generalized records —
-  and it is CITED as the known result it is, never claimed here.
+  THE LADDER HAS FOUR LINKS AND ONLY THREE OF THEM ARE STRICT.  With
+  the CANONICAL divisor Gam_21 = B(U2) the third link is an IDENTITY,
+  not an implication:  D_210 = Gam_20 - B(U2) B(U1) = Delta^B, the same
+  object under two names (T2' keeps them distinct precisely because the
+  divisor need not be canonical).  So there is nothing to refute there,
+  and the honest statement is:
+
+     records ==> medium decoherence ==> Delta^B = 0 (= D_210 at the
+     canonical divisor) ==> d_div = 0,
+
+  three strict links.  TWO of their reverse implications are refuted
+  outright below (Delta^B = 0 ==/=> medium decoherence at D2; d_div = 0
+  ==/=> D_210 = 0 at D1), the COMPOSITE reverse d_div = 0 ==/=> records
+  is refuted twice over (D1 and, more strongly, D2), and ONE reverse
+  link is NOT TESTED HERE and is declared so: medium decoherence
+  ==/=> records in THIS unit's sense.  In [GMH]'s sense that link is a
+  theorem for pure states — cited, not re-derived — and nothing here
+  bears on it, since every witness below lives where medium decoherence
+  FAILS.  Every failure is exhibited exactly, with the divisor named.
+  The one true converse in the literature is [GMH]'s — for a PURE
+  initial state, medium decoherence <=> generalized records — and it is
+  CITED as the known result it is, never claimed here.  IT IS NOT
+  CONTRADICTED by anything below: [GMH]'s generalized records are
+  later-time projections in ANY basis, existentially quantified over
+  operators; this unit's records are partitions of the CONFIGURATION
+  space at the cut, constrained by the declared supports.  Every
+  refutation below is a refutation for THIS unit's notion.
 """)
+_ident_can = 0
+_ident_can_n = 0
+for K, U2, U1 in [(K16, H2, H2), (K16, mmul(K16, H2, S2), H2),
+                  (K12, F3, F3), (K16, U2_pre, U1_rec),
+                  (K16, mmul(K16, H_b, CN01), U1_rec)]:
+    n = len(U1)
+    Dcan = msub(K, mB(K, mmul(K, U2, U1)), mmul(K, mB(K, U2), mB(K, U1)))
+    Dl = delta_B(K, U2, U1)
+    _ident_can_n += n * n
+    if not meq(K, Dcan, Dl):
+        _ident_can += 1
+gate("D0", "AT THE CANONICAL DIVISOR D_210 AND Delta^B ARE THE SAME OBJECT",
+     _ident_can == 0,
+     "%d entries over 5 declared pairs — so the ladder's third link is an "
+     "identity in both directions and is not among the refutable ones; "
+     "the three strict links are the ones refuted below" % _ident_can_n)
 
 # D0: records => medium decoherence (the top link, gated)
 _md_bad = 0
@@ -1852,11 +2375,6 @@ gate("D0", "records ==> MEDIUM decoherence (every branch overlap vanishes)",
 # D1: d_div = 0 without D_210 = 0, and divisibility without any record
 print()
 print("D1. DIVISIBILITY WITHOUT A RECORD (the C+1 rotation pair, rebuilt)")
-
-
-def S_rat(c):
-    return [[Fr(1 + c, 2) if isinstance(c, int) else (1 + c) / 2,
-             (1 - c) / 2], [(1 - c) / 2, (1 + c) / 2]]
 
 
 def S_of(c):
@@ -1905,10 +2423,17 @@ for pn, part in [("finest", [0, 1]), ("trivial", [0, 0])]:
     ha, _ = h_avail(K16, U2r, part)
     if hc and ha:
         _rec_win.append(pn)
-gate("D1", "NO record structure exists at this cut (both partitions of 2)",
-     not _rec_win,
-     "the finest fails (H-avail) since U2 is not monomial; the trivial "
-     "fails (H-corr) since both alternatives are live")
+gate("D1", "d_div = 0 WITH THE DIVISOR K = S(-175/527) ==/=> a record",
+     (not _rec_win) and not record_exists(K16, U2r, U1r),
+     "NO record structure exists at this cut: EXHAUSTIVE over both "
+     "partitions of a 2-configuration space (the finest fails (H-avail) "
+     "since U2 is not monomial; the trivial fails (H-corr) since both "
+     "alternatives are live), and the O(n^2) criterion agrees.  THE "
+     "DIVISOR IS NAMED: what vanishes here is d_div, witnessed by the "
+     "NON-canonical K; with the canonical divisor B(U2) the residual "
+     "D_210 = Delta^B is -4032/15625 =/= 0 at this very cut.  So the "
+     "refuted link is d_div = 0 ==/=> a record, NOT D_210 = 0 ==/=> a "
+     "record")
 _mdbad = [(i, j, k, l) for i in range(2) for j in range(2)
           for (k, l), t in cross_terms(K16, U2r, U1r, i, j)
           if not K16.is_zero(t)]
@@ -1949,8 +2474,13 @@ if _align:
         ha, _ = h_avail(K16, V2, part)
         if hc and ha:
             _win.append(pn)
-    gate("D2", "the witness carries NO record structure either", not _win,
-         "Delta^B = 0 is phase alignment, not a record")
+    gate("D2", "THE CONVERSE'S FIRST GENUINE FAILURE: Delta^B = 0 and NO "
+         "record", (not _win) and not record_exists(K16, V2, V1),
+         "EXHAUSTIVE over both partitions of a 2-configuration space — "
+         "there is no third partition to hide in — and the O(n^2) "
+         "criterion agrees.  This, not the dim-4 census's declared-"
+         "structure count, is where the converse first fails: Delta^B = 0 "
+         "here is PHASE ALIGNMENT, not a record")
     _pert_bad = 0
     _pert_n = 0
     for k in range(1, 8):
@@ -1960,7 +2490,10 @@ if _align:
             _pert_bad += 1
     gate("D2", "and its Delta^B = 0 is UNSTABLE under declared phase kicks",
          _pert_bad > 0,
-         "%d of %d diagonal phase insertions break it" % (_pert_bad, _pert_n))
+         "%d of %d diagonal phase insertions break it — against 0 of 7 for "
+         "A6's exhibit 1, which is why that exhibit is a RECORD kill at an "
+         "undeclared structure and this one is not a record kill at all"
+         % (_pert_bad, _pert_n))
 _pert_rec = 0
 for k in range(1, 8):
     Dph = [[K16.zpow(k), K16.zero, K16.zero, K16.zero],
@@ -2063,12 +2596,80 @@ gate("E1", "and d_div > 0 too: columns 0 and 2 of Gam_10 are EQUAL",
      "so K Gam_10 has equal columns 0, 2 for EVERY stochastic K, while "
      "Gam_20 = I does not: no divisor exists, by an exact argument and "
      "not by a search")
-_lb = sum(abs(Fr(1) if i == 0 else Fr(0)) for i in range(4))
-gate("E1", "the exact ell^1 floor: min_K ||Gam_20 - K Gam_10||_1 = 2",
-     True,
-     "on columns 0 and 2 alone: (1-v0)+v1+v2+v3 + v0+v1+(1-v2)+v3 = 2 for "
-     "every probability vector v — computed by hand, gated as arithmetic",
-     "declarative")
+gate("E1", "and columns 1 and 3 of Gam_10 are equal as well",
+     [G10e[i][1] for i in range(4)] == [G10e[i][3] for i in range(4)],
+     "Gam_10 = B(CNOT.(H(x)I)) has col0 = col2 = (1/2,0,0,1/2) and "
+     "col1 = col3 = (0,1/2,1/2,0) — BOTH coincidences matter for the floor")
+
+print("    THE ell^1 FLOOR, COMPUTED — AND THE NORM NAMED.  Write")
+print("    p = K Gam_10 e_0 = K Gam_10 e_2 and q = K Gam_10 e_1 =")
+print("    K Gam_10 e_3; both are probability vectors.  Against Gam_20 = I,")
+print("    column j = 0 contributes (1 - p_0) + p_1 + p_2 + p_3 = 2 - 2 p_0,")
+print("    column 2 contributes 2 - 2 p_2, and columns 1, 3 contribute")
+print("    2 - 2 q_1 and 2 - 2 q_3.  The ENTRYWISE ell^1 objective is")
+print("    therefore")
+print("        8 - 2 (p_0 + p_2) - 2 (q_1 + q_3),")
+print("    an AFFINE function of K, so its minimum over the column-")
+print("    stochastic polytope is attained at a vertex and the 256")
+print("    deterministic K exhaust the search.  Since p_0 + p_2 <= 1 and")
+print("    q_1 + q_3 <= 1 the floor is 4.")
+
+
+def _entry_l1(Kc):
+    """Kc: the 4 column choices of a deterministic stochastic K."""
+    KG = [[sum((Fr(1) if i == Kc[t] else Fr(0)) * G10e[t][j]
+               for t in range(4)) for j in range(4)] for i in range(4)]
+    ent = sum(abs((Fr(1) if i == j else Fr(0)) - KG[i][j])
+              for i in range(4) for j in range(4))
+    ind = max(sum(abs((Fr(1) if i == j else Fr(0)) - KG[i][j])
+                  for i in range(4)) for j in range(4))
+    col02 = sum(abs((Fr(1) if i == j else Fr(0)) - KG[i][j])
+                for j in (0, 2) for i in range(4))
+    p = [KG[i][0] for i in range(4)]
+    q = [KG[i][1] for i in range(4)]
+    closed = 8 - 2 * (p[0] + p[2]) - 2 * (q[1] + q[3])
+    return ent, ind, col02, closed
+
+
+_verts = []
+for _a in range(4):
+    for _b in range(4):
+        for _c in range(4):
+            for _d in range(4):
+                _verts.append((_a, _b, _c, _d))
+_ent_vals, _ind_vals, _c02_vals, _closed_bad = [], [], [], 0
+for _Kc in _verts:
+    _e, _i, _c, _cl = _entry_l1(_Kc)
+    _ent_vals.append((_e, _Kc))
+    _ind_vals.append(_i)
+    _c02_vals.append(_c)
+    if _e != _cl:
+        _closed_bad += 1
+_ent_min = min(e for e, _ in _ent_vals)
+_ent_arg = [kc for e, kc in _ent_vals if e == _ent_min]
+gate("E1", "the closed form 8 - 2(p0+p2) - 2(q1+q3) is exact, all 256 "
+     "vertices", _closed_bad == 0,
+     "so the objective is AFFINE in K and the vertex enumeration is a "
+     "genuine minimization, not a sample")
+gate("E1", "THE ENTRYWISE ell^1 FLOOR IS 4, computed over all 256 vertices",
+     _ent_min == 4,
+     "min_K sum_ij |Gam_20 - K Gam_10|_ij = %s, attained at %d of the 256 "
+     "vertices; the declared witness K = (e_0, e_1, e_3, e_2) is among "
+     "them: %s.  THE NORM IS NAMED — entrywise ell^1 (the sum of all 16 "
+     "absolute entries)"
+     % (_ent_min, len(_ent_arg), (0, 1, 3, 2) in _ent_arg))
+gate("E1", "the a-fortiori argument on columns 0 and 2 alone gives >= 2",
+     min(_c02_vals) == 2,
+     "those two columns contribute 4 - 2 v_0 - 2 v_2 for the common image "
+     "v = p, which is >= 2 because v_0 + v_2 <= 1 — it is NOT identically "
+     "2 (at v = e_1 it is 4).  That inequality alone is what proves "
+     "d_div > 0; the floor's exact VALUE needs all four columns")
+gate("E1", "under the INDUCED 1-norm the floor is 1, not 4 and not 2",
+     min(_ind_vals) == 1 and _entry_l1((0, 1, 3, 2))[1] == 1,
+     "max_j sum_i |.| minimized over the 256 vertices = %s, and the same "
+     "permutation witness K = (e_0, e_1, e_3, e_2) attains it.  The two "
+     "conventions disagree — under NO convention is the floor 2 — which "
+     "is exactly why the norm is now named at the gate" % min(_ind_vals))
 gate("E1", "the PRESERVING leg on the same data still has D_210 = 0",
      mzero(K16, delta_B(K16, U2_pre, U1_rec)),
      "the ONLY difference between the two runs is the later operation")
@@ -2098,8 +2699,11 @@ print("     Every divisibility statement here names its divisor.")
 print("   * NO claim after erasure or under sector-recombining operations;")
 print("     part E is that boundary, exhibited rather than assumed.")
 print("   * The bc instance's biconditional is PROVEN in one direction and")
-print("     MEASURED in the other over a declared 16-member family of record")
-print("     structures at 12 cells.  It is not a general converse.")
+print("     DECIDED in the other at all 12 cells — not merely measured over")
+print("     the declared 16-member family: the O(n^2) criterion settles the")
+print("     existential question over the FULL class of partitions of the 36")
+print("     configurations.  It remains a statement about THIS model; it is")
+print("     not a general converse, and D1/D2 refute the general one.")
 print("   * v11 is cited, never re-run; [GMH] is cited, never re-derived.")
 print()
 
@@ -2109,6 +2713,14 @@ print("   * %d of the %d gates are DECLARATIVE (they print a stated scope or"
       % (len(_decl), len(GATES)))
 print("     re-assert an already-gated fact rather than computing something")
 print("     new): %s" % ([g[1][:34] for g in _decl],))
+print("     THE RECOUNT, disclosed: the reviewed version of this receipt")
+print("     carried FOUR gates whose truth value was a literal True — the")
+print("     three then tagged, plus the untagged B3 law-of-total-probability")
+print("     gate.  This version COMPUTES the ell^1 floor (E1, four new")
+print("     gates, and its by-hand justification string was algebraically")
+print("     false) and TAGS the B3 gate, leaving the %d above.  Every other"
+      % len(_decl))
+print("     gate's truth value is computed from data.")
 print("   * the Bell model is REBUILT here from the committed specification;")
 print("     no bc code is imported and no bc working-tree file is read.")
 print("   * the exact ranks are computed over Q(sqrt 2) after an exactness-")
@@ -2134,13 +2746,27 @@ for nm, a, b in SETTINGS:
     for fr in ("F1", "F2"):
         if FR[(nm, fr)]["wins"] and not FR[(nm, fr)]["divides"]:
             _kill_hits.append((nm, fr))
+        if FR[(nm, fr)]["exists_any"] and not FR[(nm, fr)]["divides"]:
+            _kill_hits.append(("criterion", nm, fr))
+# the two exhaustive sweeps, folded in so that the KILL variable's coverage
+# is exactly the coverage the paragraph below claims
+for _t in _all_viol:
+    _kill_hits.append(("dim-4 all-partitions", _t[1], _t[2]))
+for _t in _core_bad:
+    _kill_hits.append(("n=3 exhaustive core", tuple(_t)))
 KILL = len(_kill_hits) > 0
 
 hr()
 print("  THE KILL CONDITION: %s" % KILL_WHY)
-print("  searched over: the dim-4 census (%d pairs), the dim-9 census (%d "
-      "pairs)," % (len(CAND2_4) * len(CAND1_4), len(CAND2_9) * len(CAND1_9)))
-print("  and the Bell model's 12 cells x 16 declared record structures.")
+print("  searched over, and FOLDED INTO THE KILL VARIABLE ITSELF: the dim-4")
+print("  census (%d pairs at the declared structure) and its all-partitions"
+      % (len(CAND2_4) * len(CAND1_4)))
+print("  sweep (%d triples), the dim-9 census (%d pairs), the Bell model's"
+      % (len(PARTS4) * len(CAND2_4) * len(CAND1_4),
+         len(CAND2_9) * len(CAND1_9)))
+print("  12 cells x 16 declared record structures AND the same 12 cells")
+print("  decided over ALL partitions by the O(n^2) criterion, and the n = 3")
+print("  exhaustive core sweep (%d admissible triples)." % _core_pairs)
 print("  AND, at n = 3, EXHAUSTIVELY over all 512 x 512 support patterns and")
 print("  all 5 partitions (A5b): the hypotheses are monotone in the support,")
 print("  so that check covers EVERY pair of 3x3 matrices, with any")
@@ -2185,19 +2811,36 @@ print("  sufficiency conditions are this theorem at its two EXTREME record")
 print("  structures (A5c), and the intermediate structures are strictly")
 print("  stronger than both.")
 print()
+print("  THE DECISION CRITERION: 'does ANY record structure work?' is not a")
+print("  search — it is the O(n^2) test 'M(U2) separates every co-live pair")
+print("  of U1'.  Gated against every search this receipt runs (dim-4's 15")
+print("  partitions, n = 3's exhaustive 512 x 512 x 5), 0 disagreements.")
+print("  On unitary-realizable supports at n = 3 it is SHARP: all 318 pairs")
+print("  with empty cross-terms admit a record structure; the abstract")
+print("  non-sharpness (5490 of 94746) lives entirely on 0/1 patterns that")
+print("  carry no unitary.")
+print()
 print("  THE INSTANCE: on the committed Bell model the theorem's prediction")
 print("  matches the committed divisibility census at all 12 cells, and the")
 print("  reading of the record repairs every illegitimate division event —")
 print("  so bc #4's M-1 biconditional reads: a legitimate division event is")
-print("  a RECORD event.")
+print("  a RECORD event.  The biconditional is now DECIDED over the full")
+print("  class of partitions, not measured over 16.")
 print()
-print("  THE CONVERSE: FALSE at the divisibility level (D1) and at the")
-print("  Delta^B level (D2); vacuous in its all-readouts form (D3).  The")
-print("  true converse is [GMH]'s, cited.")
+print("  THE CONVERSE: FALSE at the d_div level (D1: the divisor is the")
+print("  non-canonical K = S(-175/527); with the canonical divisor D_210 is")
+print("  nonzero at that very cut) and at the Delta^B level (D2, exhaustive")
+print("  over both partitions at n = 2); vacuous in its all-readouts form")
+print("  (D3).  With the canonical divisor D_210 and Delta^B are the same")
+print("  object, so that link of the ladder is an identity and not a")
+print("  refutable implication.  The true converse is [GMH]'s, cited, and")
+print("  its records are a DIFFERENT object from this unit's.")
 print()
 print("  THE ERASER: the same record, the same first leg, one changed later")
 print("  operation — and D_210 returns at +-1/2 with no divisor at all.")
-print("  (H-avail) is load-bearing.")
+print("  The entrywise ell^1 floor is 4 (computed over all 256 vertices,")
+print("  1 under the induced 1-norm); what proves d_div > 0 is the")
+print("  a-fortiori >= 2 from columns 0 and 2.  (H-avail) is load-bearing.")
 print()
 print("  determinism: fixed lexicographic enumeration everywhere; no")
 print("  randomness, no hashing, no float in any substantive path.")

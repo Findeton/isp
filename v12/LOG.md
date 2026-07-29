@@ -506,3 +506,54 @@ CONSEQUENCE: the H²-through-Δᴮ road is CLOSED BY THEOREM — the
 projective-multiplier enrichment cannot be read off the defect
 family; whatever selects a phase must couple to something the Born
 shadow does not annihilate.  Hostile round dispatched.
+
+## 2026-07-28 — W3′ HOSTILE ROUND ADJUDICATED: ACCEPT-WITH-FIXES,
+## ALL APPLIED + THE DECISION-CRITERION UPGRADE — **W3′ TERMINAL**;
+## #10 CORRECTED (v12 LEDGER #14)
+The round's verdict: the theorem stands, THE TAUTOLOGY ATTACK
+FAILS THREE INDEPENDENT WAYS (the hypotheses are pure support-
+pattern functions; non-equivalence to cross-term-vanishing proven
+at amplitude, support, and exhibit level — 5,490 of 94,746 Q-pairs
+admit no record structure, so no definitional unwinding exists);
+every Bell-instance number reproduced from a from-scratch ℚ(√2)
+rebuild.  All 15 fixes applied and re-verified (129 gates / 129
+pass; adjudicator rerun byte-identical modulo timings).  **#10'S
+OWN TEXT CORRECTED HERE (M1):** #10 engraved "d_div > 0 exactly
+(ℓ¹ floor = 2)" — FALSE: the ENTRYWISE-ℓ¹ floor is **4** (computed
+in-receipt over all 256 deterministic vertices; affine objective,
+so vertex enumeration is a genuine minimization; attained at 16
+vertices incl. the permutation (e₀,e₁,e₃,e₂)); the induced-1-norm
+floor is 1; the a-fortiori columns-0,2 bound is ≥ 2 (not
+identically 2 — the old gate's algebra was false); under NO
+convention is the floor 2.  **THE UPGRADES the round contributed
+and the repair implemented: (1) the O(n²) DECISION CRITERION** —
+∃ record structure ⟺ TC(co-merged under U₂) separates every
+co-live pair of U₁ — proved as a lemma, gated against every search
+(0 disagreements in 262,464 comparisons), and used to DECIDE the
+M-1 biconditional over ALL partitions of the 36 configurations
+(B(36) ≈ 10³¹, via merge-classes): **12/12 — "a legitimate
+division event is a record event" now holds over the full class,
+not 16 structures.  (2) SHARPNESS:** at n = 3 over the 25
+unitary-realizable supports (all 25 exhibited with exact
+orthogonal witnesses), 318/318 Q-pairs admit a record — THE RECORD
+CRITERION IS EXACTLY SHARP ON PHYSICAL SUPPORTS; abstractly it is
+strictly stronger (the 5,490).  Other fixes: the "60 without
+records" claim corrected (all 60 carry one under some partition —
+the census had tested a single declared partition; the genuine
+converse failure is the n = 2 D2 witness); A6 exhibit 1
+re-diagnosed as a RECORD kill at an undeclared structure (0/96
+cross-terms; π = [0,0,1,1] the unique winner; 0/7 phase kicks vs
+the genuine phase witness's 7/7 — gated as the discriminator);
+§7's divisor named and the ladder restated honestly (link 3 an
+identity; the reverse of link 1 — medium decoherence ⇒ records in
+THIS unit's sense — DECLARED UNTESTED rather than counted refuted:
+the repair's own second-gap finding, accepted); [GMH]'s
+generalized-records scope note engraved; the singular A5b
+witnesses labelled and re-witnessed on unitary supports (where the
+converse does NOT fail); record structures REORDERED to be
+declared before the Bell operators exist; the declarative count
+disclosed at 3 post-repair (2 of the round's 4 converted to
+computation).  **W3′ IS TERMINAL — the programme's third surviving
+positive, and its strongest: the records theorem with a sharp
+decision procedure, an all-class biconditional, and an honest
+converse map.**
