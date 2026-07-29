@@ -467,3 +467,42 @@ with its two kinds named; E3c's cost carried into C2; H-SPAN
 everywhere marked as v12's strengthening.  **W5 IS TERMINAL** —
 the recast stands as the programme's definitive statement of what
 building on [B3] means, now with his own best defence inside it.
+
+## 2026-07-28 — W2 DELIVERED: STRUCTURE / NO-ACTION / VACUOUS —
+## GREEN-UNREVIEWED (v12 LEDGER #13)
+The batch's final construction lands (note-w2-multiplier-ladder.md,
+152 gates / 152 pass / 0 fail, 32 anchors, 8 disclosed
+no-independent-information → 144 independent; 283.9s; adjudicator
+rerun byte-identical modulo timings).  **W2a —
+STRUCTURE-DELIVERED:** the universal closed form Δᴮ_ij = |Σw|² −
+Σ|w|² (gated symbolically d=2..6 + all 13,185 census pairs);
+the annihilation is THE WHOLE MAXIMAL TORUS at each outer slot
+(B(ωU) = B(U) is the scalar corner); doubly-centred with sharp SOS
+bounds −s ≤ Δᴮ ≤ (n−1)s; at n = 2 the family is ONE-DIMENSIONAL
+with exact range [−1/2, 1/2]; the n-fold coherence is a TREE
+identity (all C_{n−1} bracketings, formal to n = 6, content-free
+about B — survives five non-Born maps); the two-sided annihilator
+= THE MONOMIAL GROUP EXACTLY (W1′ had sufficiency; necessity now
+proven); the alignment condition in closed form for ALL N: Δᴮ = 0
+⟺ FLAT FOURIER SPECTRUM ⟺ zero periodic autocorrelation (CAZAC) —
+W1′'s mod-8 and mod-3 congruences are the N = 2, 3 cases.  **W2b —
+NO-ACTION, and stronger than pinned: THE MULTIPLIER CANCELS
+(theorem)** — for any projective representation,
+Δᴮ(ρ̃(g), ρ̃(h)) = β(gh) − β(g)β(h) with β lift-independent: ω is
+gone from the WHOLE family; at N = 6 four multiplier orders
+(1, 2, 3, 6) share IDENTICAL Born data and identically zero Δᴮ;
+the committed carriers show the DOUBLE DISSOCIATION (one θ many
+defect families; one defect family at several θ); BASIS, NOT θ,
+CONTROLS THE DEFECT; and the PARITY OBSTRUCTION: Δᴮ is
+reversal-EVEN (13,185/13,185) while a U(1) holonomy is
+reversal-ODD ([D71b]) — even ∧ unimodular ⇒ ±1, and −1 is realized
+nowhere ([D74]).  Seven candidate lifts censused with each missing
+piece named; the verdict split honestly: an action AND nontrivial
+classes exist from W1′'s families — **never from ⟨2,3⟩, which is a
+group of VALUES and never acts**.  **W2c — VACUOUS**, with any
+future θ's constraints gated anyway (θ ∈ (1/N)ℤ; no committed
+object supplies N, k, or a symplectic pairing).  THE PROGRAMME
+CONSEQUENCE: the H²-through-Δᴮ road is CLOSED BY THEOREM — the
+projective-multiplier enrichment cannot be read off the defect
+family; whatever selects a phase must couple to something the Born
+shadow does not annihilate.  Hostile round dispatched.
