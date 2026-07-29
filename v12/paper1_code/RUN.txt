@@ -1,0 +1,897 @@
+==========================================================================
+REPRODUCTION BUNDLE -- Interference as the Composition Defect of
+                       Stochastic Shadows
+==========================================================================
+interpreter : /opt/homebrew/opt/python@3.13/bin/python3.13
+directory   : /Users/felixrobles/workspace/isp/v12/paper1_code
+sections    : 2 3 4 5 6 7 8 9
+==========================================================================
+
+### Section 2 -- the three defects and the coherence law
+==========================================================================
+SECTION 2 -- THE THREE DEFECTS AND THE COHERENCE LAW
+==========================================================================
+[2.0] reference families: |F2| = 96, |F3| = 63
+--------------------------------------------------------------------------
+[2.1] the closed form, symbolically at d = 2..6
+      |sum w|^2 - sum |w|^2 = 2 sum_{k<l} Re(w_k conj w_l), d = 2..6 : identity
+--------------------------------------------------------------------------
+[2.1b] the identity against the definition, on every census pair
+      2x2 done  [    2.5s]
+      3x3 done  [    5.2s]
+      entries checked = 72585, mismatches = 0
+--------------------------------------------------------------------------
+[2.2] the vanishing census
+      2x2 : cond & zero = 5120, cond & nonzero = 0, free & zero = 1024, free & nonzero = 3072
+      3x3 : cond & zero = 3888, cond & nonzero = 0, free & zero = 54, free & nonzero = 27
+      Delta(H,H) = [[1/2,-1/2],[-1/2,1/2]] ; Delta(H,W) = 0 with H, W both fully unbiased
+--------------------------------------------------------------------------
+[2.3] the three-defect separation
+      B(R(theta)) = S(cos 2 theta) modulo c^2 + s^2 = 1 : True
+      S(c) S(d) = S(cd) as a polynomial identity over Q : True
+      c1 = 527/625, c2 = 7/25, c_tot = -7/25
+      Delta_00 = -4032/15625 ; the divisor is K = S(-175/527)
+      the rotation divisor construction: 22062 exact (c1, c_tot) pairs, 0 failures
+--------------------------------------------------------------------------
+[2.4] the coherence law and the tree law, formal matrices
+      coherence law with 24 independent variables at d = 2 and 54 at d = 3 : identity
+      tree law at n = 2..5, [1, 2, 5, 14] bracketings : identity
+--------------------------------------------------------------------------
+[2.5] the law is content-free about the Born projection
+      substitute identity                       : law holds
+      substitute transpose                      : law holds
+      substitute M + 2M^T + 3I                  : law holds
+      substitute constant (argument ignored)    : law holds
+      substitute doubling                       : law holds
+      substitute zero map                       : law holds
+--------------------------------------------------------------------------
+[2.6] the invariance group
+      normalized 90/90 ; outer torus 1017 ; compensated cut 1017 ; equivariance 1017 ; reversal 1017
+      the uncompensated cut insertion MOVES the defect on 192 of 576 declared 2x2 stride pairs
+--------------------------------------------------------------------------
+[2.7] doubly-centred structure, the two certificates, the range
+      doubly-centred violations = 0 over 72585 entries
+      lower certificate holds 72585/72585 ; upper certificate holds 72585/72585
+      exact range of Delta_00 over the 9216 2x2 pairs: [-1/2, 1/2]
+--------------------------------------------------------------------------
+[2.8] the two-sided annihilator
+      n = 2 : 2 probes ; 64 non-row-monomial, 0 unseparated ; 64 non-column-monomial, 0 unseparated
+      n = 3 : 6 probes ; 9 non-row-monomial, 0 unseparated ; 9 non-column-monomial, 0 unseparated
+--------------------------------------------------------------------------
+[2.9] pairwise flatness does not imply n-fold flatness
+      three-step chain, both cuts flat, three-fold defect nonzero: family indices (32, 0, 32)
+--------------------------------------------------------------------------
+[2.10] the flat-spectrum identification
+      N = 2 : 8 interleaving diagonals, 2 with a vanishing defect, 8/8 three-way agreements
+      N = 3 : 36 interleaving diagonals, 6 with a vanishing defect, 36/36 three-way agreements
+      N = 4 : 512 interleaving diagonals, 16 with a vanishing defect, 512/512 three-way agreements
+      N = 5 : 625 interleaving diagonals, 20 with a vanishing defect, 625/625 three-way agreements
+      N = 2 closed form  t + u = +-2 (mod 8) : 4096 quadruples, 0 mismatches
+      N = 3 closed form  b2 + a1 != 0 (mod 3) : 81 quadruples, 0 mismatches
+--------------------------------------------------------------------------
+[2.11] reality, reversal covariance, the odd channel
+      antisymmetric part nonzero on 0 of the 13185 census pairs
+      trace of the defect = +1 on 512 pairs and = -1 on 512 pairs
+      the odd-channel witness set: 4 members, 0 of them in the reference family
+      antisymmetric part nonzero on 12 of 16 ordered pairs; reversal-odd on 16 of 16
+      its nonzero antisymmetric values: ['-14/625', '14/625']
+==========================================================================
+RECEIPTS -- Section 2 -- the defect algebra
+==========================================================================
+  ok    |F2|                                 96
+  ok    |F3|                                 63
+  ok    F2 unitary                           96
+  ok    F3 unitary                           63
+  ok    F2 monomial                          32
+  ok    F3 monomial                          54
+  ok    family moduli non-negative rational  0
+  ok    closed form d=2..6                   True
+  ok    cross-term entries                   72585
+  ok    cross-term mismatches                0
+  ok    2x2 cond&zero                        5120
+  ok    2x2 cond&nonzero                     0
+  ok    2x2 free&zero                        1024
+  ok    2x2 free&nonzero                     3072
+  ok    3x3 cond&zero                        3888
+  ok    3x3 cond&nonzero                     0
+  ok    3x3 free&zero                        54
+  ok    3x3 free&nonzero                     27
+  ok    Delta(H,H)                           [['1/2', '-1/2'], ['-1/2', '1/2']]
+  ok    W unitary                            True
+  ok    Delta(H,W) = 0                       True
+  ok    B(R)=S(cos2t)                        True
+  ok    S(c)S(d)=S(cd)                       True
+  ok    c1                                   '527/625'
+  ok    c2                                   '7/25'
+  ok    c_tot                                '-7/25'
+  ok    Delta_00 rotation                    '-4032/15625'
+  ok    divisor parameter                    '-175/527'
+  ok    K B(U1) = B(U2U1)                    True
+  ok    K stochastic                         True
+  ok    K != B(U2)                           True
+  ok    rotation divisor pairs               22062
+  ok    rotation divisor failures            0
+  ok    coherence law formal                 True
+  ok    tree law                             True
+  ok    bracketing counts                    [1, 2, 5, 14]
+  ok    six substitutes hold                 True
+  ok    stride sizes                         (24, 21)
+  ok    normalized                           90
+  ok    outer torus                          1017
+  ok    compensated cut                      1017
+  ok    equivariance                         1017
+  ok    reversal covariance                  1017
+  ok    uncompensated moved                  192
+  ok    uncompensated total                  576
+  ok    doubly-centred violations            0
+  ok    census entries                       72585
+  ok    lower certificate                    72585
+  ok    upper certificate                    72585
+  ok    n=2 range low                        '-1/2'
+  ok    n=2 range high                       '1/2'
+  ok    Delta(H, diag(1,-1)H)_00             '-1/2'
+  ok    Delta(H,H)_00                        '1/2'
+  ok    2x2 probes                           2
+  ok    3x3 probes                           6
+  ok    2x2 non-row-monomial                 64
+  ok    3x3 non-row-monomial                 9
+  ok    unseparated left                     0
+  ok    unseparated right                    0
+  ok    3-chain witness                      True
+  ok    N=2 (total,flat)                     (8, 2)
+  ok    N=3 (total,flat)                     (36, 6)
+  ok    N=4 (total,flat)                     (512, 16)
+  ok    N=5 (total,flat)                     (625, 20)
+  ok    flat-spectrum agreement              True
+  ok    N=2 closed form quadruples           4096
+  ok    N=2 closed form mismatches           0
+  ok    N=3 closed form quadruples           81
+  ok    N=3 closed form mismatches           0
+  ok    census antisym nonzero               0
+  ok    trace +1 count                       512
+  ok    trace -1 count                       512
+  ok    odd witness in family                0
+  ok    odd channel nonzero pairs            12
+  ok    odd channel flips                    16
+  ok    odd channel values                   ['-14/625', '14/625']
+--------------------------------------------------------------------------
+  Section 2 -- the defect algebra : 76 anchors, 76 pass, 0 fail   [   65.8s]
+
+### Section 3 -- the CHSH three-class skeleton
+==========================================================================
+SECTION 3 -- THE CHSH THREE-CLASS SKELETON
+==========================================================================
+--------------------------------------------------------------------------
+[3.1] the local body: the 16 deterministic assignments
+      16 sign patterns give 8 distinct correlator vectors
+      max over the generators = 2 ; min = -2 ; 64 exact evaluations
+      hull grid: 330 exact rational points x 4 functionals, 0 exceed 2
+--------------------------------------------------------------------------
+[3.2] the Gram body: the four certificates
+      CERT-0 regrouping        : identity
+      CERT-1 Cauchy-Schwarz    : identity
+      CERT-2 parallelogram     : identity
+      CERT-3 sum of squares    : identity
+      saturating instance (z0,z1,w0,w1) = (zeta_8, zeta_8^7, 1, zeta_8^2)
+      correlators ['1/2*sqrt2', '1/2*sqrt2', '1/2*sqrt2', '-1/2*sqrt2'] ; CHSH = 2*sqrt2 ; 2 sqrt 2 = 2*sqrt2
+      pi/4 grid: 4096 quadruples x 4 functionals ; 0 exceed 2 sqrt 2 ; grid maximum = 2*sqrt2
+--------------------------------------------------------------------------
+[3.3] the no-signalling cube: maximum 4, and the 24 vertices
+      max |CHSH| over [-1,1]^4 = 4 ; attained on the standard functional only at [(1, 1, 1, -1)]
+      16 deterministic + 8 superquantum = 24 no-signalling vertices; all valid behaviours: 24
+      their distinct correlator vectors: 8 local, 8 superquantum; local max |CHSH| = 2, superquantum max = 4
+--------------------------------------------------------------------------
+[3.4] both inclusions are strict
+      every local generator is a Gram generator: True
+--------------------------------------------------------------------------
+[3.5] planar sufficiency: the three symbolic ingredients
+      Lagrange identity in R^n, n = 2..6 : True
+      the regrouping identity with symbolic lambda, n = 2..6 : True
+      the two-vector expansion, n = 2..6 : True
+      rational circle parametrization: 1830 slopes, 0 failures
+      R^3 : 246 rational unit vectors at entries |k| <= 9, stride 9 -> 26 sampled, 456976 configurations
+            maximum reached = 14/5 ~ 2.8000 ; exceedances of 2 sqrt 2 = 0
+      [    9.1s]
+      R^4 : 808 rational unit vectors at entries |k| <= 5, stride 31 -> 26 sampled, 456976 configurations
+            maximum reached = 19/7 ~ 2.7143 ; exceedances of 2 sqrt 2 = 0
+      [   17.7s]
+--------------------------------------------------------------------------
+[3.6] the generating class is not convex; the sharp exclusion
+      (1,0,0,0) is the mean of four deterministic vertices: (4, 5, 6, 7)
+      all 4 sign branches give E11 in ['-1', '1'] -- never 0
+--------------------------------------------------------------------------
+[3.7] the four-cycle product identity
+      of the 16 sign vectors, 8 have product +1; they are exactly the factorizable ones: True
+      the four-cycle holonomy of a factorized edge phase is 1 on all 16: True
+--------------------------------------------------------------------------
+[3.8] the anti-correlation exhibit
+      the Born identity as a polynomial identity : True
+      pi/4 family in Q(zeta_8)     : 256 exact Born gates, 256 agree
+      pi/8 family in Q(zeta_16)    : 1024 exact Born gates, 1024 agree
+      singlet correlators at (0, pi/2 ; pi/4, -pi/4) = ['-1/2*sqrt2', '-1/2*sqrt2', '-1/2*sqrt2', '1/2*sqrt2'] ; CHSH = -2*sqrt2
+      pi/4 family: 4096 quadruples, holonomy trivial on 4096
+      pi/8 family: 4096 quadruples, holonomy trivial on 4096
+      superquantum pattern (1,1,1,-1): holonomy = -1, CHSH = 4, valid table = True
+==========================================================================
+RECEIPTS -- Section 3 -- the three convex bodies
+==========================================================================
+  ok    distinct local vertices               8
+  ok    local max                             2
+  ok    local min                             -2
+  ok    local evaluations                     64
+  ok    hull points                           330
+  ok    hull violations                       0
+  ok    four certificates                     True
+  ok    saturating correlators                ['1/2*sqrt2', '1/2*sqrt2', '1/2*sqrt2', '-1/2*sqrt2']
+  ok    saturating CHSH is 2 sqrt 2           True
+  ok    pi/4 grid points                      4096
+  ok    pi/4 grid exceedances                 0
+  ok    pi/4 grid maximum                     '2*sqrt2'
+  ok    cube max                              4
+  ok    cube attainer                         [(1, 1, 1, -1)]
+  ok    deterministic vertices                16
+  ok    superquantum vertices                 8
+  ok    no-signalling vertices                24
+  ok    no-signalling checks                  24
+  ok    distinct local correlator vectors     8
+  ok    every superquantum vertex attains 4   True
+  ok    no local vertex attains 4             False
+  ok    local generators are Gram generators  8
+  ok    2 < 2 sqrt 2                          True
+  ok    2 sqrt 2 < 4                          True
+  ok    Lagrange identity                     True
+  ok    regrouping identity                   True
+  ok    two-vector expansion                  True
+  ok    rational slopes                       1830
+  ok    rational slope failures               0
+  ok    R^3 enumerated                        246
+  ok    R^3 sampled                           26
+  ok    R^3 configurations                    456976
+  ok    R^3 exceedances                       0
+  ok    R^3 maximum                           '14/5'
+  ok    R^4 enumerated                        808
+  ok    R^4 sampled                           26
+  ok    R^4 configurations                    456976
+  ok    R^4 exceedances                       0
+  ok    R^4 maximum                           '19/7'
+  ok    (1,0,0,0) in the local body           True
+  ok    sign branches                         4
+  ok    E11 values                            ['-1', '1']
+  ok    product +1 count                      8
+  ok    product identifies factorizable       True
+  ok    PR product                            -1
+  ok    PR not a Gram generator               True
+  ok    factorized holonomy trivial           True
+  ok    Born identity symbolic                True
+  ok    pi/4 Born gates                       (256, 256)
+  ok    pi/8 Born gates                       (1024, 1024)
+  ok    singlet CHSH                          '-2*sqrt2'
+  ok    singlet |CHSH| = 2 sqrt 2             True
+  ok    sign flip gives +2 sqrt 2             '2*sqrt2'
+  ok    pi/4 holonomy                         (4096, 4096)
+  ok    pi/8 holonomy                         (4096, 4096)
+  ok    superquantum holonomy                 -1.0
+  ok    superquantum CHSH                     4
+  ok    superquantum table valid              True
+--------------------------------------------------------------------------
+  Section 3 -- the three convex bodies : 58 anchors, 58 pass, 0 fail   [   18.5s]
+
+### Section 4 -- records
+==========================================================================
+SECTION 4 -- RECORDS
+==========================================================================
+--------------------------------------------------------------------------
+[4.1] the termwise vanishing on a declared coarse record
+      U1 = CNOT o (H x I), U2 = H x I, record sectors {0,2}, {1,3}
+      (H-corr) = True ; (H-avail) = True
+      96 cross terms, 0 nonzero ; Delta = 0 : True
+      column 0 of the composite shadow = ['1/4', '1/4', '1/4', '1/4'] ; nothing is decohered
+      removing the CNOT breaks (H-corr) and the defect returns: Delta_00 = 1/2
+--------------------------------------------------------------------------
+[4.2] the exhaustive n = 3 support sweep
+      512 x 512 support pairs x 5 partitions
+      admissible triples (both hypotheses) = 146536, cross-term violations = 0
+      support-forced-flat pairs = 94746, of which 5490 admit no record structure
+      decision criterion vs exhaustive search: 262144 comparisons, 0 disagreements
+      [    2.1s]
+--------------------------------------------------------------------------
+[4.3] the realizable supports at n = 3, with exact witnesses
+      support patterns satisfying the necessary condition: 25
+      exact witnesses exhibited for 25 of them (6 permutations, 1 full, 9 of type 1 (+) H, 9 with a single zero)
+--------------------------------------------------------------------------
+[4.4] sharpness on the realizable supports
+      625 ordered pairs of realizable supports; 318 support-forced flat; 0 of those admit no record structure
+--------------------------------------------------------------------------
+[4.5] the two monomial endpoints
+      (H-avail) at the finest record <=> row-monomial, and (H-corr) at the trivial record <=> column-monomial: 0 failures over 512 supports x 2
+--------------------------------------------------------------------------
+[4.6] the reading route, fine against coarse
+      fine reading equals B(U2)B(U1) : True
+      coarse (one-sector) reading equals the unread shadow : True
+      the read shadow is a genuine stochastic matrix : True
+--------------------------------------------------------------------------
+[4.7] the approximate-correlation bound
+      12 declared points (6 deviations x 2 columns): the bound is an equality at 12 of them, 5 of which are strictly positive
+--------------------------------------------------------------------------
+[4.8] the multi-cut corollary
+      three-leg chain on 8 configurations, records at both cuts: Chapman-Kolmogorov holds = True
+      four-leg chain on 16 configurations, records at three cuts: Chapman-Kolmogorov holds = True
+--------------------------------------------------------------------------
+[4.9] the dimension-four census over all 15 partitions
+      8 declared operators, 960 (partition, U2, U1) triples; 259 satisfy both hypotheses, 259 of those have a vanishing defect
+      of the 64 ordered pairs, 49 have a vanishing defect and 49 of those carry a record structure
+--------------------------------------------------------------------------
+[4.10] the composite model: the division-event biconditional
+      U_prep exactly orthogonal : True
+      the j0 column of U_prep: [(9, '1/2*sqrt2'), (18, '-1/2*sqrt2')]
+      the two local operators commute at all 9 setting pairs : 9/9
+      the singlet outcome law P = (1 - alpha beta cos(a-b))/4 : 60/60 exact identities
+      SP-A : F1 differing entries = 0, F2 = 0   [    2.4s]
+      SP-B : F1 differing entries = 0, F2 = 0   [    2.4s]
+      SP-C : F1 differing entries = 288, F2 = 288   [    2.4s]
+      SP-D : F1 differing entries = 288, F2 = 288   [    2.5s]
+      SP-E : F1 differing entries = 0, F2 = 0   [    2.5s]
+      SP-F : F1 differing entries = 288, F2 = 288   [    2.5s]
+      the biconditional 'the cut divides <=> a record structure exists' holds at 12 of 12 cells
+        SP-A F1 : divides = True   record exists = True   declared winners = 3 ['qA', 'pA', 'qA.pA']
+        SP-A F2 : divides = True   record exists = True   declared winners = 2 ['qA.qB.pB', 'qA.qB.pA.pB']
+        SP-B F1 : divides = True   record exists = True   declared winners = 3 ['qA', 'pA', 'qA.pA']
+        SP-B F2 : divides = True   record exists = True   declared winners = 2 ['qA.qB.pB', 'qA.qB.pA.pB']
+        SP-C F1 : divides = False  record exists = False  declared winners = 0 []
+        SP-C F2 : divides = False  record exists = False  declared winners = 0 []
+        SP-D F1 : divides = False  record exists = False  declared winners = 0 []
+        SP-D F2 : divides = False  record exists = False  declared winners = 0 []
+        SP-E F1 : divides = True   record exists = True   declared winners = 14 ['qA', 'qB', 'qA.qB', 'pA']
+        SP-E F2 : divides = True   record exists = True   declared winners = 14 ['qA', 'qB', 'qA.qB', 'qA.pA']
+        SP-F F1 : divides = False  record exists = False  declared winners = 0 []
+        SP-F F2 : divides = False  record exists = False  declared winners = 0 []
+      exact ranks of Gamma(2<-0), the twelve cells: [27, 27, 27, 27, 18, 27, 18, 27, 27, 27, 27, 27]
+--------------------------------------------------------------------------
+[4.11] the eraser control
+      preserving leg H x I : defect zero = True
+      erasing leg (H x I) o CNOT : defect entries are ['-1/2', '0', '1/2']
+      (H-corr) still holds = True ; (H-avail) fails = True
+      the erased composite law is the identity : True
+      the divisibility objective is affine, so the 256 deterministic vertices exhaust the search
+      entrywise l1 floor = 4 ; induced 1-norm floor = 1
+      an eraser inside the composite model (the exact reverse leg): 36 differing entries, 0 of the 16 declared structures survive, record exists = False
+--------------------------------------------------------------------------
+[4.12] the converse, at this record notion
+      the pair (H, diag(1,i) H) has a vanishing defect = True but carries no record structure = True
+      7 declared diagonal phase insertions break the phase-aligned vanishing 6 times, and the record-killed vanishing 0 times
+==========================================================================
+RECEIPTS -- Section 4 -- records
+==========================================================================
+  ok    H-corr holds                         True
+  ok    H-avail holds                        True
+  ok    cross terms                          96
+  ok    nonzero cross terms                  0
+  ok    defect vanishes                      True
+  ok    composite column 0                   ['1/4', '1/4', '1/4', '1/4']
+  ok    no-record Delta_00                   '1/2'
+  ok    no-record H-corr                     False
+  ok    n=3 admissible triples               146536
+  ok    n=3 violations                       0
+  ok    n=3 Q-pairs                          94746
+  ok    n=3 Q-pairs with no record           5490
+  ok    n=3 criterion comparisons            262144
+  ok    n=3 criterion disagreements          0
+  ok    n=3 realizable supports              25
+  ok    n=3 witnesses cover                  25
+  ok    one-zero witness orthogonal          True
+  ok    F3 unitary                           True
+  ok    realizable pairs                     625
+  ok    realizable Q-pairs                   318
+  ok    realizable Q-pairs with no record    0
+  ok    monomial endpoints                   0
+  ok    fine reading divides                 True
+  ok    coarse reading is the unread shadow  True
+  ok    read shadow stochastic               True
+  ok    coarse separating reading divides    True
+  ok    bound points                         12
+  ok    bound equalities                     12
+  ok    bound strictly positive              5
+  ok    three-leg chain                      True
+  ok    four-leg chain                       True
+  ok    dim-4 triples                        960
+  ok    dim-4 both hypotheses                259
+  ok    dim-4 both and flat                  259
+  ok    dim-4 flat pairs                     49
+  ok    dim-4 flat with record               49
+  ok    U_prep orthogonal                    True
+  ok    prep j0 column                       [(9, '1/2*sqrt2'), (18, '-1/2*sqrt2')]
+  ok    local operators orthogonal           8
+  ok    local operators commute              9
+  ok    singlet law identities               (60, 60)
+  ok    biconditional cells                  12
+  ok    differing entries                    [0, 0, 0, 0, 288, 288, 288, 288, 0, 0, 288, 288]
+  ok    winner counts                        [3, 2, 3, 2, 0, 0, 0, 0, 14, 14, 0, 0]
+  ok    Gamma(2<-0) ranks                    [27, 27, 27, 27, 18, 27, 18, 27, 27, 27, 27, 27]
+  ok    no rank is 36                        True
+  ok    preserving defect zero               True
+  ok    eraser defect values                 ['-1/2', '0', '1/2']
+  ok    eraser H-corr                        True
+  ok    eraser H-avail fails                 False
+  ok    erased composite is the identity     True
+  ok    eraser has no record structure       False
+  ok    eraser vertices                      256
+  ok    entrywise l1 floor                   '4'
+  ok    induced 1-norm floor                 '1'
+  ok    composite eraser differing entries   36
+  ok    composite eraser declared survivors  0
+  ok    composite eraser record exists       False
+  ok    phase-alignment defect zero          True
+  ok    phase-alignment has no record        False
+  ok    phase kicks break alignment          6
+  ok    phase kicks break the record kill    0
+--------------------------------------------------------------------------
+  Section 4 -- records : 62 anchors, 62 pass, 0 fail   [    2.9s]
+
+### Section 5 -- the gauge of a compositional law
+==========================================================================
+SECTION 5 -- THE GAUGE OF A COMPOSITIONAL LAW
+==========================================================================
+--------------------------------------------------------------------------
+[5.1] the full entrywise orbit is exactly the modulus class
+      4608 ordered pairs of the 2x2 family share their moduli; a unimodular connecting matrix is built in all 4608
+      3 Born-shadow classes, 3 of them with more than one member
+--------------------------------------------------------------------------
+[5.2] triple products, and the four-cycle invariant
+      9 full-support 3x3 members; the triple product is moved by a declared entrywise gauge on 9 and by a declared boundary gauge on 9
+      under the one-index ray gauge it is invariant on 9 of 9
+      the four-cycle invariant is unchanged by the boundary gauge on 81 of 81 index quadruples
+--------------------------------------------------------------------------
+[5.3] the composition-compatibility theorem
+      n = 2 over mu_4 : 65536 ordered Theta pairs; 1024 satisfy the pointwise equation, 1024 admit an object-indexed family, 65536 agreements
+      [    1.7s]
+      n = 3 over mu_2 : 262144 ordered Theta pairs; 256 satisfy the pointwise equation, 256 admit an object-indexed family, 262144 agreements
+      [    2.2s]
+      boundary-form Theta at n = 2 over mu_4 : 64 ; both factors separately of boundary form : 4096 ; surplus over the coupled count : 3072
+      compatibility measured on the single pair (H, H) : 1024 of 65536 Theta pairs are compatible (agreement with the pointwise equation: 65536)
+      compatibility measured on the single pair (H, X) : 65536 of 65536 Theta pairs are compatible (agreement with the pointwise equation: 1024)
+      [   35.4s]
+--------------------------------------------------------------------------
+[5.4] the unitarity-preservation theorem
+      n = 2 over mu_8 : 4096 Theta ; unitarity-preserving on the declared family 512 ; four-cycle-trivial 512 ; boundary form 512
+            the placed construction leaves 512 standing; the coordinate-plane rotations leave 512
+      [   37.7s]
+      n = 3 over mu_2 : 512 Theta ; unitarity-preserving on the declared family 32 ; four-cycle-trivial 32 ; boundary form 32
+            the placed construction leaves 32 standing; the coordinate-plane rotations leave 64
+      [   38.5s]
+--------------------------------------------------------------------------
+[5.5] the full gauge moves the composite's Born shadow
+      with Theta = [[1,1],[1,-1]] on the pair (H,H): the composite's Born shadow moves = True ; unitarity is destroyed = True
+--------------------------------------------------------------------------
+[5.6] the boundary group and the uncompensated cut
+      the boundary group contains the projective scalar (True) and the same-space rephasing (True)
+--------------------------------------------------------------------------
+[5.7] the single-arrow orbit theorem
+      cycle rank computed on all 159 members; range at 2x2 = [0, 1], at 3x3 = [0, 4]
+      every monomial member has cycle rank 0: True (86 members)
+      n = 2 : 4608 of 9216 ordered pairs are boundary-equivalent (switching built and verified entrywise); 0 disagreements with the four-cycle test
+      n = 3 : 567 of 3969 ordered pairs are boundary-equivalent (switching built and verified entrywise); 0 disagreements with the four-cycle test
+==========================================================================
+RECEIPTS -- Section 5 -- the gauge of a compositional law
+==========================================================================
+  ok    modulus-matched pairs            4608
+  ok    connecting matrices built        4608
+  ok    Born-shadow classes              3
+  ok    multi-member classes             3
+  ok    class members share moduli       True
+  ok    full-support 3x3 members         9
+  ok    triple moved by entrywise gauge  9
+  ok    triple moved by boundary gauge   9
+  ok    triple ray-invariant             9
+  ok    four-cycle boundary-invariant    (81, 81)
+  ok    n=2 pairs                        65536
+  ok    n=2 star count                   1024
+  ok    n=2 family count                 1024
+  ok    n=2 agreements                   65536
+  ok    n=3 pairs                        262144
+  ok    n=3 star count                   256
+  ok    n=3 family count                 256
+  ok    n=3 agreements                   262144
+  ok    boundary Theta count             64
+  ok    separately boundary pairs        4096
+  ok    uncompensated surplus            3072
+  ok    compatible on (H,H)              1024
+  ok    (H,H) agrees with star           65536
+  ok    compatible on (H,X)              65536
+  ok    n=2 Theta count                  4096
+  ok    n=2 unitarity-preserving         512
+  ok    n=2 four-cycle-trivial           512
+  ok    n=2 boundary form                512
+  ok    n=2 placed                       512
+  ok    n=2 coordinate-plane             512
+  ok    n=3 Theta count                  512
+  ok    n=3 unitarity-preserving         32
+  ok    n=3 four-cycle-trivial           32
+  ok    n=3 boundary form                32
+  ok    n=3 placed                       32
+  ok    n=3 coordinate-plane             64
+  ok    full gauge moves the shadow      True
+  ok    full gauge destroys unitarity    True
+  ok    boundary contains scalar         True
+  ok    boundary contains rephasing      True
+  ok    members with a cycle rank        159
+  ok    2x2 cycle ranks                  [0, 1]
+  ok    3x3 cycle ranks                  [0, 4]
+  ok    monomial cycle rank zero         True
+  ok    monomial members                 86
+  ok    2x2 equivalent pairs             4608
+  ok    3x3 equivalent pairs             567
+  ok    2x2 holonomy disagreements       0
+  ok    3x3 holonomy disagreements       0
+  ok    cross-support equivalences       0
+--------------------------------------------------------------------------
+  Section 5 -- the gauge of a compositional law : 50 anchors, 50 pass, 0 fail   [   42.1s]
+
+### Section 6 -- the loop signature and its incompleteness
+==========================================================================
+SECTION 6 -- THE LOOP SIGNATURE AND ITS INCOMPLETENESS
+==========================================================================
+--------------------------------------------------------------------------
+[6.1-6.3] the collapse, and the relation-loop scalar
+      N = 2 : beta separates 2 classes; distinct orders [1, 2]; distinct Born shadows across the 2 classes: 1 ; family identically zero: True
+      N = 3 : beta separates 3 classes; distinct orders [1, 3]; distinct Born shadows across the 3 classes: 1 ; family identically zero: True
+      N = 4 : beta separates 4 classes; distinct orders [1, 2, 4]; distinct Born shadows across the 4 classes: 1 ; family identically zero: True
+      N = 5 : beta separates 5 classes; distinct orders [1, 5]; distinct Born shadows across the 5 classes: 1 ; family identically zero: True
+      N = 6 : beta separates 6 classes; distinct orders [1, 2, 3, 6]; distinct Born shadows across the 6 classes: 1 ; family identically zero: True
+      total exact defect computations over the Weyl words: 12200
+      beta is unchanged by every declared rescaling of the two lifts and by configuration-basis rephasing: 222/222
+--------------------------------------------------------------------------
+[6.4] beta is not a functional of the Born shadow
+      beta(N=4, k=2) = beta(N=2, k=1) = -1 : True, while the two Born shadows are matrices of different sizes (4 and 2)
+--------------------------------------------------------------------------
+[6.5-6.6] the pair graph, the cut-coherence tensor, full support
+      on 64 declared stride pairs: compensated-cut invariance 256/256, outer boundary 64, scalars 64
+      diagonal = classical path weights 64, hermitian 64, every 2x2 minor zero 64, readout identity 64
+      every Weyl pair has at most one live path per endpoint pair, so the tensor cannot see the multiplier: 20 classes
+      at full support the four-cycles generate the whole cycle lattice: True
+--------------------------------------------------------------------------
+[6.7] the exhaustive support-class sweep
+      n = 2 : 3 admissible patterns -> 2 x 2 = 4 graph classes ; max cycle rank 3 ; four-cycle failures 0
+            deficits [] ; the pinned reading fails on 0 ; the total-support screen rejects 0 of the 3 patterns, and 0 of the failures survive it on both legs
+      [    5.3s]
+      n = 3 : 25 admissible patterns -> 4 x 8 = 32 graph classes ; max cycle rank 10 ; four-cycle failures 0
+            deficits [] ; the pinned reading fails on 0 ; the total-support screen rejects 0 of the 25 patterns, and 0 of the failures survive it on both legs
+      [    5.3s]
+        n=4: 400 classes swept, 5 failures  [    6.5s]
+        n=4: 800 classes swept, 7 failures  [    6.7s]
+        n=4: 1200 classes swept, 7 failures  [    6.9s]
+      n = 4 : 783 admissible patterns -> 16 x 79 = 1264 graph classes ; max cycle rank 21 ; four-cycle failures 7
+            deficits [1] ; the pinned reading fails on 7 ; the total-support screen rejects 36 of the 783 patterns, and 7 of the failures survive it on both legs
+      [    7.0s]
+      the phi-criterion realizes the gap by an uncompensated cut at 7 of the 7 failing classes
+            phi-image witness [0, 0, 1, -1]
+            phi-image witness [-1, 1, 1, -1]
+            phi-image witness [1, -1, 1, -1]
+            phi-image witness [0, 0, 1, -1]
+            phi-image witness [1, -1, 0, 0]
+            phi-image witness [0, 0, 1, -1]
+            phi-image witness [0, 0, 1, -1]
+--------------------------------------------------------------------------
+[6.8] the composite-level witness in exact unitary arithmetic
+      neither factor is monomial: [False, False, False] ; live paths per endpoint pair: 1 ; the two second legs share a boundary orbit: True
+      the cut-coherence tensors agree entry by entry: True ; the composites' Born shadows agree: True ; both pairs are defect-flat: True
+      the relation-loop sector is empty (the group commutator is not scalar): True
+      but the composites' four-cycle invariants are 1/16 and -1/16*z^3, with ratio -z^3
+--------------------------------------------------------------------------
+[6.9] the cross-block completion
+      the summed completion equals the composite's own four-cycle invariant at 4 of 4 declared index quadruples
+      it is unchanged by a declared switching moving all three vertex classes at 4 of 4
+      adjoining the completion closes 7 of the 7 n = 4 gaps
+      the first separating index tuple at the leading failing class: (0, 2, 0, 2, 3, 1, 1, 2)
+--------------------------------------------------------------------------
+      the declared n = 5 sample
+      120 permutations in lexicographic order, stride 3 -> 40 bases
+        n=5: 500 classes swept, 24 failures  [   29.0s]
+        n=5: 1000 classes swept, 32 failures  [   29.2s]
+        n=5: 1500 classes swept, 90 failures  [   29.4s]
+        n=5: 2000 classes swept, 101 failures  [   29.7s]
+      653 sampled patterns -> 15 x 140 = 2100 graph classes ; max cycle rank 26 ; four-cycle failures 101
+      the completion closes 101 of them
+==========================================================================
+RECEIPTS -- Section 6 -- the loop signature
+==========================================================================
+  ok    N=2 beta distinct                2
+  ok    N=2 distinct shadows             1
+  ok    N=2 family zero                  True
+  ok    N=3 beta distinct                3
+  ok    N=3 distinct shadows             1
+  ok    N=3 family zero                  True
+  ok    N=4 beta distinct                4
+  ok    N=4 distinct shadows             1
+  ok    N=4 family zero                  True
+  ok    N=5 beta distinct                5
+  ok    N=5 distinct shadows             1
+  ok    N=5 family zero                  True
+  ok    N=6 beta distinct                6
+  ok    N=6 distinct shadows             1
+  ok    N=6 family zero                  True
+  ok    N=6 orders                       [1, 2, 3, 6]
+  ok    Weyl defect computations         12200
+  ok    beta lift-independence           (222, 222)
+  ok    beta coincidence                 True
+  ok    C stride pairs                   64
+  ok    C compensated cut                256
+  ok    C outer boundary                 64
+  ok    C scalars                        64
+  ok    C diagonal                       64
+  ok    C hermitian                      64
+  ok    C rank one                       64
+  ok    C readout                        64
+  ok    Weyl classes path-degenerate     20
+  ok    full support generates           True
+  ok    n=2 admissible                   3
+  ok    n=2 graph classes                4
+  ok    n=2 max cycle rank               3
+  ok    n=2 failures                     0
+  ok    n=2 pinned failures              0
+  ok    n=3 admissible                   25
+  ok    n=3 graph classes                32
+  ok    n=3 max cycle rank               10
+  ok    n=3 failures                     0
+  ok    n=3 pinned failures              0
+  ok    n=4 admissible                   783
+  ok    n=4 graph classes                1264
+  ok    n=4 max cycle rank               21
+  ok    n=4 failures                     7
+  ok    n=4 pinned failures              7
+  ok    n=4 deficits                     [1]
+  ok    n=4 non-realizable patterns      36
+  ok    n=4 failures with total support  7
+  ok    phi realized                     7
+  ok    witness monomial                 [False, False, False]
+  ok    witness live paths               1
+  ok    witness same moduli              True
+  ok    witness same tensor              True
+  ok    witness same shadow              True
+  ok    witness defect flat              True
+  ok    witness commutator not scalar    False
+  ok    witness H_1                      '1/16'
+  ok    witness H_2                      '-1/16*z^3'
+  ok    witness ratio                    '-z^3'
+  ok    Kappa sum identity               (4, 4)
+  ok    Kappa gauge invariance           (4, 4)
+  ok    n=4 gaps closed                  7
+  ok    n=5 sampled patterns             653
+  ok    n=5 graph classes                2100
+  ok    n=5 max cycle rank               26
+  ok    n=5 failures                     101
+  ok    n=5 gaps closed                  101
+--------------------------------------------------------------------------
+  Section 6 -- the loop signature : 66 anchors, 66 pass, 0 fail   [   30.8s]
+
+### Section 7 -- record descent and its limit
+==========================================================================
+SECTION 7 -- RECORD DESCENT AND ITS LIMIT
+==========================================================================
+--------------------------------------------------------------------------
+[7.1-7.2] the two descent theorems
+      8 declared operators x 15 partitions x 8 = 960 triples
+      availability holds on 432; the tensor is block-diagonal on all 432
+      both hypotheses hold on 259; the tensor is fully diagonal on 259 and the defect vanishes on 259
+--------------------------------------------------------------------------
+[7.3] block-diagonality is not phase triviality
+      at the coarse record [0,0,1,1] with U2 = U1 = I x H: cross-sector entries 0, off-diagonal entries inside the blocks 16, defect zero = False
+--------------------------------------------------------------------------
+[7.4] the eraser restores the cross-sector entries
+      preserving leg: cross-sector 0, off-diagonal 0
+      erasing leg   : cross-sector 16, off-diagonal 16
+      correlation still holds = True ; availability fails = True ; the residual returns with entries ['-1/2', '0', '1/2']
+--------------------------------------------------------------------------
+[7.5] a fully diagonal tensor on unitary families
+      of the 64 ordered pairs, 49 have a fully diagonal tensor and the decision criterion finds a record in 49 of them
+      the block-structured census: 10000 pairs, 10000 with a fully diagonal tensor, 10000 of those carrying a record
+      DISCLOSED: 10000 of the 10000 have at most one live path per endpoint pair by the block pattern alone (4096 have exactly one), so their diagonality is forced before any record question is asked
+      [   11.6s]
+--------------------------------------------------------------------------
+[7.6] the limit of record descent
+      the witness pair carries a record structure (merge classes [1, 1, 3, 3]): True ; its tensor is fully diagonal (0 off-diagonal entries)
+      yet the two composites' four-cycle invariants differ: (Fraction(1, 16), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) vs (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(-1, 16))
+==========================================================================
+RECEIPTS -- Section 7 -- record descent
+==========================================================================
+  ok    availability triples          432
+  ok    block-diagonal                432
+  ok    both-hypothesis triples       259
+  ok    fully diagonal                259
+  ok    defect vanishes               259
+  ok    coarse cross-sector           0
+  ok    coarse in-block off-diagonal  16
+  ok    coarse availability           True
+  ok    coarse correlation fails      False
+  ok    coarse defect nonzero         False
+  ok    preserving cross-sector       0
+  ok    preserving off-diagonal       0
+  ok    eraser cross-sector           16
+  ok    eraser correlation holds      True
+  ok    eraser availability fails     False
+  ok    eraser residual values        ['-1/2', '0', '1/2']
+  ok    diagonal pairs                49
+  ok    diagonal pairs with a record  49
+  ok    block census size             10000
+  ok    block census diagonal         10000
+  ok    block census with record      10000
+  ok    block census degenerate       10000
+  ok    block census exactly one      4096
+  ok    limit merge classes           [1, 1, 3, 3]
+  ok    limit has record              True
+  ok    limit tensor diagonal         0
+  ok    limit composites differ       True
+--------------------------------------------------------------------------
+  Section 7 -- record descent : 27 anchors, 27 pass, 0 fail   [   11.6s]
+
+### Section 8 -- independence of the obstruction families
+==========================================================================
+SECTION 8 -- INDEPENDENCE OF THE OBSTRUCTION FAMILIES
+==========================================================================
+--------------------------------------------------------------------------
+[8.1] the six empirical models
+      DET      : valid behaviour = True  ; max CHSH = 2
+      UNIF     : valid behaviour = True  ; max CHSH = 0
+      LCORR    : valid behaviour = True  ; max CHSH = 2
+      SINGLET  : valid behaviour = True  ; max CHSH = 2*sqrt2
+      HARDY    : valid behaviour = True  ; max CHSH = 14/5
+      PR       : valid behaviour = True  ; max CHSH = 4
+--------------------------------------------------------------------------
+[8.2] the contextual invariant, certified in both directions
+      DET      : level NC  ; consistent assignments  1 ; non-extendable sections 0 ; exhibited global distribution True ; gamma nonzero at 0 of 4
+      UNIF     : level NC  ; consistent assignments 16 ; non-extendable sections 0 ; exhibited global distribution True ; gamma nonzero at 0 of 16
+      LCORR    : level NC  ; consistent assignments  2 ; non-extendable sections 0 ; exhibited global distribution True ; gamma nonzero at 0 of 8
+      SINGLET  : level PC  ; consistent assignments 16 ; non-extendable sections 0 ; exhibited global distribution None ; gamma nonzero at 0 of 16
+      HARDY    : level LC  ; consistent assignments  5 ; non-extendable sections 1 ; exhibited global distribution None ; gamma nonzero at 0 of 13
+      PR       : level SC  ; consistent assignments  0 ; non-extendable sections 8 ; exhibited global distribution None ; gamma nonzero at 8 of 8
+      the maximum of every signed CHSH functional over the sixteen deterministic global assignments is 2
+      [    0.0s]
+--------------------------------------------------------------------------
+[8.3-8.6] the carrier and the four invariants
+      48 processes; the divisibility fallback was invoked 64 times
+      T (declared residual, existential indivisibility) at context (0,1):
+        DET      REC/NONE (False, False)  COH/NONE (False, False)  COH/SWAPBACK (False, False)
+        UNIF     REC/NONE (False, False)  COH/NONE (False, False)  COH/SWAPBACK (False, False)
+        LCORR    REC/NONE (False, False)  COH/NONE (True, False)  COH/SWAPBACK (True, False)
+        SINGLET  REC/NONE (False, False)  COH/NONE (True, False)  COH/SWAPBACK (True, False)
+        HARDY    REC/NONE (False, False)  COH/NONE (True, False)  COH/SWAPBACK (True, False)
+        PR       REC/NONE (False, False)  COH/NONE (True, False)  COH/SWAPBACK (True, False)
+      L (division-event sets; restriction and gluing):
+        prefix NONE      D(A) = [0, 1, 2]       D(B) = [0, 1, 2]       D(AB) = [0, 1, 2]         restriction = True  gluing = True
+        prefix SWAPBACK  D(A) = [0, 2, 3, 4]    D(B) = [0, 2, 3, 4]    D(AB) = [0, 1, 2, 3, 4]   restriction = False gluing = True
+      F (frame-mappability: full grain, support grain):
+        DET      context (0,0) (True, True)   context (0,1) (True, True)
+        UNIF     context (0,0) (True, True)   context (0,1) (True, True)
+        LCORR    context (0,0) (True, True)   context (0,1) (True, True)
+        SINGLET  context (0,0) (True, True)   context (0,1) (True, True)
+        HARDY    context (0,0) (True, True)   context (0,1) (False, True)
+        PR       context (0,0) (True, True)   context (0,1) (True, True)
+      [   11.2s]
+--------------------------------------------------------------------------
+[8.7] the relation table
+      T vs X : INDEPENDENT
+        X is not a function of T : ('DET', 'REC', 'NONE', (0, 0))  against  ('HARDY', 'REC', 'NONE', (0, 0))
+        T is not a function of X : ('DET', 'COH', 'NONE', (0, 0))  against  ('LCORR', 'COH', 'NONE', (0, 0))
+      T vs L : INDEPENDENT
+        L is not a function of T : ('DET', 'COH', 'NONE', (0, 0))  against  ('DET', 'COH', 'SWAPBACK', (0, 0))
+        T is not a function of L : ('DET', 'COH', 'NONE', (0, 0))  against  ('HARDY', 'COH', 'NONE', (0, 0))
+      T vs F : INDEPENDENT
+        F is not a function of T : ('DET', 'REC', 'NONE', (0, 1))  against  ('HARDY', 'REC', 'NONE', (0, 1))
+        T is not a function of F : ('DET', 'COH', 'NONE', (0, 0))  against  ('HARDY', 'COH', 'NONE', (0, 0))
+      X vs L : INDEPENDENT
+        L is not a function of X : ('DET', 'COH', 'NONE', (0, 0))  against  ('DET', 'COH', 'SWAPBACK', (0, 0))
+        X is not a function of L : ('DET', 'COH', 'NONE', (0, 0))  against  ('HARDY', 'COH', 'NONE', (0, 0))
+      X vs F : INDEPENDENT
+        F is not a function of X : ('HARDY', 'COH', 'NONE', (0, 0))  against  ('HARDY', 'COH', 'NONE', (0, 1))
+        X is not a function of F : ('DET', 'COH', 'NONE', (0, 0))  against  ('HARDY', 'COH', 'NONE', (0, 0))
+      L vs F : INDEPENDENT
+        F is not a function of L : ('DET', 'COH', 'NONE', (0, 1))  against  ('HARDY', 'COH', 'NONE', (0, 1))
+        L is not a function of F : ('DET', 'COH', 'NONE', (0, 0))  against  ('DET', 'COH', 'SWAPBACK', (0, 0))
+      6 of the 6 unordered pairs are INDEPENDENT
+      [   11.2s]
+==========================================================================
+RECEIPTS -- Section 8 -- independence of the obstruction families
+==========================================================================
+  ok    all models valid                      True
+  ok    CHSH values                           ['2', '0', '2', '2*sqrt2', '14/5', '4']
+  ok    deterministic maximum                 2
+  ok    levels                                ['NC', 'NC', 'NC', 'PC', 'LC', 'SC']
+  ok    gamma fires                           [False, False, False, False, False, True]
+  ok    local certificates                    [True, True, True]
+  ok    processes                             48
+  ok    divisibility fallback invocations     64
+  ok    L prefix NONE                         (True, True)
+  ok    L prefix SWAPBACK                     (False, True)
+  ok    L depends only on the prefix          1
+  ok    T kills the residual under recording  True
+  ok    independent pairs                     6
+  ok    invariant count                       9
+--------------------------------------------------------------------------
+  Section 8 -- independence of the obstruction families : 14 anchors, 14 pass, 0 fail   [   11.2s]
+
+### Section 9 -- the law-of-total-probability lemma
+==========================================================================
+SECTION 9 -- THE LAW-OF-TOTAL-PROBABILITY LEMMA
+==========================================================================
+--------------------------------------------------------------------------
+[9.1] the one non-trivial step, as a formal identity
+      with all 21 entries indeterminate over Q, Gamma21 (Gamma10 p) - (Gamma21 Gamma10) p is the zero vector: True
+--------------------------------------------------------------------------
+[9.2] the spanning hypothesis is load-bearing
+      D = [[1,-1],[-1,1]] is nonzero yet annihilates (1/2, 1/2): True
+      it does not annihilate the point mass at 0: True
+      so the vector form is strictly weaker than the matrix form, and admitting the two point masses across runs already forces D = 0
+--------------------------------------------------------------------------
+[9.3] the control: the residual sums to zero
+      the residual of two column-stochastic matrices has identically zero column sums: True
+--------------------------------------------------------------------------
+[9.4] the forcing, exhibited on the composite model
+      setting  frame   nonzero of 36   differing matrix entries   residual sums to zero
+      SP-A     F1      0               0                          True
+      SP-A     F2      0               0                          True
+      SP-B     F1      0               0                          True
+      SP-B     F2      0               0                          True
+      SP-C     F1      16              288                        True
+      SP-C     F2      16              288                        True
+      SP-D     F1      16              288                        True
+      SP-D     F2      16              288                        True
+      SP-E     F1      0               0                          True
+      SP-E     F2      0               0                          True
+      SP-F     F1      16              288                        True
+      SP-F     F2      16              288                        True
+      SP-C F1 value census: [('-1/32+1/32*sqrt2', 4), ('-1/32-1/32*sqrt2', 4), ('1/32+1/32*sqrt2', 4), ('1/32-1/32*sqrt2', 4)]
+      SP-C F2 value census: [('-1/32+1/32*sqrt2', 4), ('-1/32-1/32*sqrt2', 4), ('1/32+1/32*sqrt2', 4), ('1/32-1/32*sqrt2', 4)]
+      SP-D F1 value census: [('-1/32+1/32*sqrt2', 4), ('-1/32-1/32*sqrt2', 4), ('1/32+1/32*sqrt2', 4), ('1/32-1/32*sqrt2', 4)]
+      SP-D F2 value census: [('-1/32+1/32*sqrt2', 4), ('-1/32-1/32*sqrt2', 4), ('1/32+1/32*sqrt2', 4), ('1/32-1/32*sqrt2', 4)]
+      SP-F F1 value census: [('-1/64', 4), ('-3/64+1/32*sqrt2', 2), ('-3/64-1/32*sqrt2', 2), ('1/64', 4), ('3/64+1/32*sqrt2', 2), ('3/64-1/32*sqrt2', 2)]
+      SP-F F2 value census: [('-1/64', 4), ('-3/64+1/32*sqrt2', 2), ('-3/64-1/32*sqrt2', 2), ('1/64', 4), ('3/64+1/32*sqrt2', 2), ('3/64-1/32*sqrt2', 2)]
+      SP-C: 4 distinct values, 0 of the 16 nonzero entries rational
+      SP-F: 6 distinct values, 8 of the 16 nonzero entries rational
+      [    0.2s]
+--------------------------------------------------------------------------
+[9.5] the interpolant's hypothesis
+      exact ranks of the first leg over the twelve cells: [27, 27, 27, 27, 18, 27, 18, 27, 27, 27, 27, 27]
+      never 36, so the would-be interpolant's invertibility hypothesis fails outright
+--------------------------------------------------------------------------
+[9.6] the three defects stay distinct on this model
+      the amplitude propagators compose exactly at 12 of 12 cells, so on this model the declared-law residual and the Born-shadow defect are the same object
+      the existential object is not decided here: no divisibility search is run on this model
+==========================================================================
+RECEIPTS -- Section 9 -- the law-of-total-probability lemma
+==========================================================================
+  ok    associativity identity      True
+  ok    indeterminates              21
+  ok    uniform annihilated         True
+  ok    point mass not annihilated  True
+  ok    zero column sums            True
+  ok    nonzero counts              [0, 0, 0, 0, 16, 16, 16, 16, 0, 0, 16, 16]
+  ok    matrix differing counts     [0, 0, 0, 0, 288, 288, 288, 288, 0, 0, 288, 288]
+  ok    residual sums to zero       True
+  ok    SP-C census                 [('-1/32+1/32*sqrt2', 4), ('-1/32-1/32*sqrt2', 4), ('1/32+1/32*sqrt2', 4), ('1/32-1/32*sqrt2', 4)]
+  ok    SP-C distinct values        4
+  ok    SP-C rational entries       0
+  ok    SP-F distinct values        6
+  ok    SP-F rational entries       8
+  ok    interpolant ranks           [27, 27, 27, 27, 18, 27, 18, 27, 27, 27, 27, 27]
+  ok    never full rank             True
+  ok    propagators compose         12
+--------------------------------------------------------------------------
+  Section 9 -- the law-of-total-probability lemma : 16 anchors, 16 pass, 0 fail   [    0.7s]
+
+==========================================================================
+RECEIPTS TABLE
+==========================================================================
+  sec  script                        anchors    pass    fail   seconds   exit
+  ----------------------------------------------------------------------
+  2    sec2_defect_algebra.py             76      76       0      65.9      0
+  3    sec3_chsh_bodies.py                58      58       0      18.6      0
+  4    sec4_records.py                    62      62       0       3.0      0
+  5    sec5_gauge.py                      50      50       0      42.1      0
+  6    sec6_signature.py                  66      66       0      30.9      0
+  7    sec7_descent.py                    27      27       0      11.6      0
+  8    sec8_independence.py               14      14       0      11.2      0
+  9    sec9_ltp.py                        16      16       0       0.8      0
+  ----------------------------------------------------------------------
+  all                                    369     369       0     184.0
+==========================================================================
+ALL SELF-ANCHORS PASS: every number printed in the paper is
+regenerated by this bundle in exact arithmetic.

@@ -1031,3 +1031,55 @@ On return: adjudicator forbidden-token audit + full bundle
 regeneration + spot proof reads → commit GREEN-UNREVIEWED →
 paper hostile round per the pin's binding review plan.  This
 entry is written after the dispatch occurred.
+
+## 2026-07-29 — PAPER 1 DELIVERED; ADJUDICATOR AUDITS PASSED;
+## COMMITTED GREEN-UNREVIEWED (v12 LEDGER #27)
+The writer returned the full paper + bundle:
+paper1-composition-defect.md — 2,673 lines, ten sections +
+reproduction appendix, 32 numbered results, 17 external-only
+references; paper1_code/ — 12 files, exact arithmetic only
+(Fraction, cyclotomics mod Φ_n, ℚ(cos π/8), ℚ(√2) with exact
+sign oracle, polynomial ring, integer HNF), master runner +
+RUN.txt at 369 self-anchors / 369 pass / 0 fail / 184s / exit 0.
+MID-FLIGHT RENDERING DIRECTIVES (two, from user-reported preview
+defects): no mathtools environments, structured math in display
+blocks only, no \\ or & in inline spans; prose pure markdown, no
+text-mode LaTeX — 36 fixes applied by the writer (7 + 29), final
+sweeps clean.  ADJUDICATOR AUDITS (independent): token scan ZERO
+on every forbidden token ("v12" once, in the reproduction
+appendix, as the pin permits); rendering scan ZERO across 1,271
+inline spans and 144 display delimiters; backslash-in-prose
+ZERO; full bundle regeneration 369/369, exit 0; register check
+of the opening passed.  WRITER DIVERGENCES, declared and
+ACCEPTED: (1) §8's carrier gained a realized-context coordinate
+(48 processes) — without it the frame invariant could not
+separate; six-for-six independence with a stronger X-vs-F
+witness; (2) the temporal invariant is the two-component pair
+(declared residual, existential divisibility) — Δᴮ undefined on
+the amplitude-free carrier; (3) §8's third/fourth instruments
+are the paper's own declared reduced constructions, labelled so;
+(4) two shared non-main modules beside one-script-per-section;
+(5) multiplier cancellation/collapse carried in §6 where it
+motivates β.  HARD SELF-CONTAINMENT DECISIONS recorded: the
+frame instrument DEFINED FRESH (exhaustive pruned DFS, negatives
+are proofs); the composite model REBUILT from prose with a
+different preparation unitary — its Γ(2←0) ranks 27/18 and
+differing-count 288 are ITS OWN numbers, while the residual
+censuses came out IDENTICAL to the committed unit untargeted
+(16/36 nonzero; ±1/32±√2/32; six values, 8/16 rational) — an
+unplanned independent confirmation; the Hardy table constructed
+fresh from the support constraints (max CHSH 14/5, 5 global
+assignments, 13 sections, 1 non-extendable — its own model, its
+own numbers); AMB's ownership of the two γ-zeros placed BEFORE
+the numbers; CAZAC claimed as identification only.  **NOTE FOR
+THE ROUND:** the paper's declared n=5 sample yields 101 failures
+(its own stride/union enumeration; ALL closed by the cross-block
+completion) against the unit's 104 at the unit's sample — two
+different declared samples, both honest; the round must verify
+the paper's number against the paper's own script.  Open items
+handed to the round: γ vs [AMB] direct; the Tsirelson
+planar-sufficiency source pinning; per-invocation simplex
+certificates; the channel-form theorem exercised only through
+instances; numbering gaps.  COMMITTED GREEN-UNREVIEWED; the
+paper hostile round next per the pin's binding plan; dispatch
+recorded after it occurs.
