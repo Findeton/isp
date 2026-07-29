@@ -1507,3 +1507,32 @@ partition choice, gated; V2/V4 synthetic variants; the labelled
 re-derived M6 count 4-of-8-of-64).  COMMITTED; the EXTERNAL
 hostile round next — it, not the child audit, can confer
 terminal.  Dispatch recorded after it occurs.
+
+## 2026-07-29 — W6 EXTERNAL HOSTILE ROUND DISPATCHED (v12 LEDGER
+## #39)
+Background reviewer (Opus 5), repo read-only, own exact code in
+the session scratchpad, the frozen md5s pinned in the dispatch.
+Six mandatory gates: G1 audit-closure (all 22 internal findings
+re-checked as REAL fixes in the current code, incl. the
+independence of M6's rebuilt swapped circuit and the
+distinctness of F2^π); G2 independent rebuild (the M2 edge set;
+2-of-72 and 8-of-96; M3's 56/144 and |Φ_B| = 1; the 26-pair
+biconditional break; M6's 4-of-8-of-64; M4's 0-vs-2; M5 after
+the emptiness guard; THE CENTRAL REALIZED-LEGS FINDING attacked
+hardest — SP-A–D no map, SP-E/F exactly the wing swap, the
+time-independent deflation control — with the third-reading
+question posed: restriction convention, leg-multiset matching,
+or the partition choice as possible artifacts); G3 the
+adjudications (the withdrawal's measurement; provenance-by-
+generating-dynamics as a reading of the pin; level-A blindness
+with V2/V4 multi-item support; the three outcomes carried by
+measurement; the SET-AMALGAM scope clause vs the realized-legs
+direction; T5″; census); G4 the five deviations (esp. the
+occurrence-at-writing-leg reading of sec4_records.py:53 and the
+composite-token partition gate); G5 the note's sentences (the
+withdrawn claim must not survive anywhere; vocabulary;
+FORCED-but-NOT-CERTIFIED; anchors' parent lines); G6 stress
+attacks of the reviewer's own design (alternative partition;
+different restriction convention; wider scopes; adversarial
+route-ext pair).  This round can confer terminal.  Recorded
+after the dispatch occurred.
