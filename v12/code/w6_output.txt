@@ -16,36 +16,36 @@ M1 -- RELABELLED SAME RECORD  (control 1)
 M2 -- REDUNDANT COPIES  (control 2)
 --------------------------------------------------------------------------
   M2 isomorphism search over 8! permutations  0.0s                 [0.1s]
-  M2 done                                                          [0.2s]
+  M2 done                                                          [0.3s]
 --------------------------------------------------------------------------
 M3 / M4 / M7 -- THE COMMITTED TWO-FRAME BELL STRUCTURE
 --------------------------------------------------------------------------
-  the twelve committed charts built; record typing computed        [0.5s]
+  the twelve committed charts built; record typing computed        [0.6s]
   M3 fact level measured: 56 agreeing pairs of 144                 [0.7s]
-  M3 multi-item controls measured (items 2 and 4 made to bite)     [0.7s]
-  M3 level B measured at the true scope (2 permutations) and wider (8) [0.8s]
-  token-overlap graph measured over 144 ordered pairs  0.0s        [0.8s]
-  M3 layer analysis: the realized process vs the declared legs     [1.1s]
+  M3 multi-item controls measured (items 2 and 4 made to bite)     [0.8s]
+  M3 level B measured at the true scope (2 permutations) and wider (8) [0.9s]
+  token-overlap graph measured over 144 ordered pairs  0.0s        [0.9s]
+  M3 layer analysis: the realized process vs the declared legs     [1.2s]
   M7 accidental agreement measured inside the committed model      [1.2s]
   M4 intermediate content measured                                 [1.2s]
   M3 descent measured on a genuinely distinct triple               [1.2s]
 --------------------------------------------------------------------------
 M5 -- RECORD ERASURE  (control 5)
 --------------------------------------------------------------------------
-  M5 done                                                          [1.2s]
+  M5 done                                                          [1.3s]
 --------------------------------------------------------------------------
 M6 -- SYMMETRIC DUPLICATE  (control 6)
 --------------------------------------------------------------------------
-  M6 isomorphism search over 8! permutations  0.0s                 [1.4s]
-  M6 done                                                          [1.5s]
+  M6 isomorphism search over 8! permutations  0.0s                 [1.3s]
+  M6 done                                                          [1.4s]
 --------------------------------------------------------------------------
 M8 -- PHASE IS NOT A CRITERION  (declared addition)
 --------------------------------------------------------------------------
-  M8 done                                                          [1.5s]
+  M8 done                                                          [1.4s]
 --------------------------------------------------------------------------
 M9 -- DESCENT DETECTOR VALIDATION  (declared addition)
 --------------------------------------------------------------------------
-  M9 done                                                          [1.5s]
+  M9 done                                                          [1.4s]
 ==========================================================================
 THE DESCENT TABLE
   vocabulary: FORCED |Phi|=1 / UNDERDETERMINED |Phi|>=2 / ABSENT
@@ -55,140 +55,145 @@ THE DESCENT TABLE
 --------------------------------------------------------------------------
   M1 relabelled same record    FORCED (certified)                     FORCED                                     SET-AMALGAM                           
       the declared gauge acts trivially on the record algebra; ROUTE-EXT fails under a wrong relabelling (gated)
-  M2 redundant copies          FORCED (certified twice)               ABSENT on the copy edges, FORCED on the relabelling edge SET-AMALGAM (fact) / ABSENT-PAIR (token)
-      one fact, two tokens; |Phi_B(a<-c)| = 1 is a genuine token edge, |Phi_B(a<-b)| = |Phi_B(b<-c)| = 0
-  M3 two-frame final outcomes  UNDERDETERMINED (|Phi_A|=2), certified FORCED (|Phi_B|=1, all 6 settings)         GROUPOID (fact) / SET-AMALGAM (token) 
-      candidate map on exactly the 56 law-agreeing ordered pairs of 144; the wing tie is cut by the frame-isomorphism at the BORN level, not by the provenance filter; on the REALIZED legs alone SP-E and SP-F admit only the OPPOSITE (wing-swap) identification
-  M4 intermediate frame content FORCED but NOT CERTIFIED               ABSENT (|Phi_B|=0)                         no shared subalgebra                  
+  M2 redundant copies          FORCED (certified twice)               ABSENT on the four copy edges, FORCED on the two relabelling edges SET-AMALGAM (fact) / ABSENT-PAIR (token)
+      one fact, two tokens; the two relabelling edges carry |Phi_B| = 1, the four copy edges |Phi_B| = 0
+  M3 two-frame final outcomes  UNDERDETERMINED (|Phi_A|=2), certified FORCED (|Phi_B|=1, all 6 settings)         GROUPOID (fact) / SET-AMALGAM (token), at SP-A
+      candidate map on exactly the 56 law-agreeing ordered pairs of 144; the wing tie is cut by dynamical provenance -- the frame-isomorphism -- at the BORN level, not by the structural provenance filter; on the REALIZED legs alone the identity is inadmissible at every setting and SP-E, SP-F admit exactly one map, the wing swap
+  M4 intermediate frame content FORCED but NOT CERTIFIED               ABSENT (|Phi_B|=0)                         NO-INSTRUMENT -- no shared subalgebra 
       one token each, so |Phi_A|=1 carries no multiplicity; ROUTE-EXT at t=2 refuses it at every setting
-  M7 accidental agreement      UNDERDETERMINED, NOT CERTIFIED         ABSENT (|Phi_B|=0)                         no token edge                         
+  M7 accidental agreement      UNDERDETERMINED, NOT CERTIFIED         ABSENT (|Phi_B|=0)                         NO-INSTRUMENT -- no token edge        
       SP-A and SP-C: one law, two experiments; the product extension has 16 positive entries
-  M5 record erasure            ABSENT historical / VACUOUS available  ABSENT (|Phi_B|=0)                         no triple declared                    
+  M5 record erasure            ABSENT historical / VACUOUS available  ABSENT (|Phi_B|=0)                         NO-INSTRUMENT -- no triple declared   
       historical counts (1,1,0) against available (1,0,0); the empty-scope comparison is called VACUOUS, not FORCED
   M6 symmetric duplicate       UNDERDETERMINED (|Phi_A|=2)            UNDERDETERMINED (|Phi_B|=2)                GROUPOID-AMALGAM                      
-      the exchanging automorphism survives the Born shadow AND the 784 four-cycle invariants; only a name-comparing rule would choose
-  M8 phase blindness           FORCED with the declared list; ABSENT with phase added not applicable                             criterion test, no descent claim      
-      a phase-consulting phi was built and run: it returns 0 exactly where the record level returns 1
-  M9 detector validation       not applicable                         not applicable                             all five branches reached             
-      holonomy, asymmetric declaration and partial-domain maps all FAIL; gauge closure is reported, not assumed
+      the swapped build is measured equal to the original and the 784 four-cycle invariants are then measured sigma-invariant (a zeta_8 perturbation makes the sweep fail); only a name-comparing rule would choose
+  M8 phase blindness           FORCED with the declared list; ABSENT with phase added NO-INSTRUMENT                              NO-INSTRUMENT -- criterion test, no descent claim
+      a phase-consulting item was built and run: it returns 0 on this pair, where the declared list returns 1, and 1 on a relabelling pair
+  M9 detector validation       NO-INSTRUMENT                          NO-INSTRUMENT                              all five branches reached             
+      the twisted declaration fails the triple law, the asymmetric one the inverse law, the inverse-consistent truncated one the full-domain triple law; gauge closure is reported, not assumed
 --------------------------------------------------------------------------
 ==========================================================================
 RECEIPTS -- W6 -- record co-reference and effective descent
 ==========================================================================
-  ok   ANCHOR census/record H-corr  [sec4_records.py:198]                                                                 True
-  ok   ANCHOR census/record H-avail [sec4_records.py:199]                                                                 True
-  ok   GATE   census/record algebra atoms and law                                                                         ([('0',), ('1',)], ['1/2', '1/2'])
-  ok   GATE   census/occurrence and availability COMPUTED, not stipulated                                                 (True, True, False)
-  ok   GATE   census/discriminator on Phi(a,a): (|iso|, |Phi_B|, verdict)                                                 (1, 1, 'FORCED')
-  ok   GATE   census/discriminator vocabulary                                                                             ('ABSENT', 'FORCED', 'UNDERDETERMINED', 'VACUOUS', 'NO-INSTRUMENT')
-  ok   GATE   census/regression model: (tokens, available, erased flags)                                                  (2, 1, [False, True])
-  ok   GATE   census/REGRESSION scope-filtered level B does not zero: (avail, hist)                                       (1, 1)
-  ok   GATE   M1/relabelling changes the presentation but not the record algebra                                          (True, True, True, True)
-  ok   GATE   M1/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                 (1, 1, 'FORCED', 'FORCED')
-  ok   GATE   M1/ROUTE-EXT under the true relabelling vs a WRONG one                                                      ((True, 2), (False, 2, True))
-  ok   GATE   M1/solver soundness: Phi inverse-closed, identity in every Aut                                              (True, True)
-  ok   GATE   M1/descent (verdict, families, orbits, edges, triples, closed)                                              ('SET-AMALGAM', 1, 1, 6, 6, True)
-  ok   GATE   M1/amalgam size, injective                                                                                  (1, True)
-  ok   GATE   M2/both tokens occurred, available, laws identical                                                          (True, True, True, True, True)
-  ok   GATE   M2/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                 (1, 0, 'FORCED', 'ABSENT')
-  ok   GATE   M2/DECOMPOSITION of the level-B zero: (iso alone, provenance alone)                                         (0, 0)
-  ok   GATE   M2/positive control: the searches are not vacuously empty                                                   (1, 1)
-  ok   GATE   M2/the register swap carries the partition but not the leg multiset                                         (True, False)
-  ok   GATE   M2/ROUTE-EXT perfect value-correlation on the one process                                                   (True, 2)
-  ok   GATE   M2/the provenance data that separate the two tokens                                                         ((('original',), False), (('copy-of', 'CX1'), False))
-  ok   GATE   M2/witness model unitary                                                                                    True
-  ok   GATE   M2/witness model joint law                                                                                  [('0', '0', '0'), ('1', '1', '1')]
-  ok   GATE   M2/ROUTE-WIT: t1 vs witness, t2 vs witness, t1 vs t2                                                        (True, True, True)
-  ok   GATE   M2/fact-level descent (verdict, families, triples)                                                          ('SET-AMALGAM', 1, 6)
-  ok   GATE   M2/THE FULL TOKEN-LEVEL EDGE SET |Phi_B| over the six ordered pairs                                         {('a', 'b'): 0, ('a', 'c'): 1, ('b', 'a'): 0, ('b', 'c'): 0, ('c', 'a'): 1, ('c', 'b'...
-  ok   GATE   M2/token-level descent verdict                                                                              'ABSENT-PAIR'
-  ok   ANCHOR M3/local operators orthogonal [sec4_records.py:516]                                                         8
-  ok   ANCHOR M3/local operators commute 9/9 [sec4_records.py:524]                                                        9
-  ok   ANCHOR M3/U_prep orthogonal [sec4_records.py:505]                                                                  True
-  ok   GATE   M3/(H-corr) pointer-alone vs (qX,pX), per setting                                                           [(True, True, False, True), (True, True, False, True), (False, True, False, True), (F...
-  ok   GATE   M3/all 24 composite tokens occurred and are available                                                       (24, 24)
-  ok   GATE   M3/W6's chart law reproduces the committed outcome_law                                                      True
-  ok   GATE   M3/T3 identical in both frames, all settings                                                                True
-  ok   GATE   M3/intermediate propagators differ, per setting                                                             [270, 270, 432, 432, 108, 432]
-  ok   GATE   M3/final-law classes                                                                                        [2, 4, 6]
-  ok   GATE   M3/(law-agreeing pairs, candidate-admitting pairs, violations)                                              (56, 56, [])
-  ok   GATE   M3/|Phi_A| and its verdict on every law-agreeing pair                                                       ([2], 'UNDERDETERMINED')
-  ok   GATE   M3/items that bite on two law-DISagreeing committed pairs (SP-A<-SP-B same atoms; SP-A<-SP-E 4 atoms vs 2)  (['3 probabilities'], ['1 boolean', '3 probabilities'])
-  ok   GATE   M3/items 2 and 4 are CONSTANT on the committed twelve                                                       (1, 1)
-  ok   GATE   M3/V4 is a genuine erasure: (U_B^3 = 1, law kept, R_B available?)                                           (True, True, False)
-  ok   GATE   M3/V2 keeps the law and changes only the declared value range                                               (True, False)
-  ok   GATE   M3/ITEM 2 BITES: |Phi_A(base<-V2)| with and without item 2                                                  (0, 2, ['2 values'])
-  ok   GATE   M3/ITEM 4 BITES: |Phi_A(base<-V4)| historical, with and without it                                          (0, 2, ['4 availability'])
-  ok   GATE   M3/the biconditional BREAKS on the 14-chart set (variant pairs)                                             26
-  ok   GATE   M3/DECLARED SCOPE 72; the j0 filter admits exactly these                                                    (72, [(0, 0, 0, 0, 0), (1, 0, 0, 0, 0)])
-  ok   GATE   M3/EXTENSION scope and its j0-fixing subset                                                                 (96, 8)
-  ok   GATE   M3/|Phi_B| F1<-F2 and the map itself, per setting: 2-element scope / 8-element extension                    ([1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [(((0, 0), (1, 1)),)])
-  ok   GATE   M3/|Phi_B| if legs were matched up to sign / at the Born level                                              ([1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1])
-  ok   GATE   M3/leg matching must be ORDER-FREE: isomorphisms if order required                                          [0, 0, 0, 0, 0, 0]
-  ok   GATE   M3/DECOMPOSITION: |Phi_B| without the provenance item, per setting                                          [1, 1, 1, 1, 1, 1]
-  ok   GATE   M3/overlap graph: (ordered edges, cross-setting, components, sizes, triangles)                              (24, 0, 6, [2], 0)
-  ok   GATE   M3/every component is one setting's two frames                                                              True
-  ok   GATE   M3/wing swap on (j0 amplitudes, up to sign, j0 Born, final law)                                             [(False, False, False, True), (False, False, False, True), (False, False, False, True...
-  ok   GATE   M3/time-INDEPENDENT reachable-subprocess control: (size, wing swap exact/sign/Born)                         [(21, False, False, False), (21, False, False, False), (35, False, False, False), (35...
-  ok   GATE   M3/THE REALIZED PROCESS under the wing swap (exact, sign, Born)                                             [(False, False, False), (False, False, False), (False, False, False), (False, False, ...
-  ok   GATE   M3/TOKEN MAPS admitted by the REALIZED legs alone (exact / up-to-sign / Born), per setting                  [([], [], []), ([], [], []), ([], [], []), ([], [], []), ([], [((0, 1), (1, 0))], [((...
-  ok   GATE   M3/at SP-E,SP-F which FULL legs the wing swap matches (Born level)                                          [(False, True, True), (False, True, True)]
-  ok   GATE   M3/ROUTE-EXT same-setting frames vs a CORRUPTED partner                                                     ((True, 4, 0), (False, 4, False))
-  ok   GATE   M7/same final law, different settings                                                                       (True, True)
-  ok   GATE   M7/(product-extension certificate, entries, |Phi_A|, |Phi_B|)                                               (False, False, 16, 2, 0)
-  ok   GATE   M7/verdicts A and B                                                                                         ('UNDERDETERMINED', 'ABSENT')
-  ok   GATE   M4/|Phi_A| and |Phi_B| at the intermediate slice, per setting                                               ([1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0])
-  ok   GATE   M4/the candidate is NOT certified: ROUTE-EXT at t=2, per setting                                            [(False, 2), (False, 2), (False, 2), (False, 2), (False, 2), (False, 2)]
-  ok   GATE   M4/both intermediate marginals uniform (the map is probability-preserving and still rejected)               True
-  ok   GATE   M4/shared record subalgebra DERIVED: intermediate vs final                                                  ([0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 2])
-  ok   GATE   M4/SP-E: bijection-supported but value-reversing, so REJECTED                                               (False, 2, True)
-  ok   GATE   M3/the third chart is a DISTINCT object with derived record data                                            (True, 27, 0, True, True)
-  ok   GATE   M3/fact-level descent on the real triple (verdict, families, orbits, triples, moved, closed)                ('GROUPOID-AMALGAM', 4, 1, 6, True, True)
-  ok   GATE   M3/fact-level selections: 2 per ordered edge, 6 edges                                                       ([2, 2, 2, 2, 2, 2], [2, 2, 2])
-  ok   GATE   M3/token-level edge set on the real triple                                                                  ([1, 1, 1, 1, 1, 1], [1, 1, 1])
-  ok   GATE   M3/token-level descent on the real triple (verdict, families, triples, amalgam size, injective)             ('SET-AMALGAM', 1, 6, 2, True)
-  ok   ANCHOR M5/eraser H-corr holds [sec4_records.py:634]                                                                True
-  ok   ANCHOR M5/eraser H-avail fails [sec4_records.py:635]                                                               False
-  ok   ANCHOR M5/no-record H-corr fails [sec4_records.py:209]                                                             False
-  ok   ANCHOR M5/eraser defect values [sec4_records.py:633]                                                               ['-1/2', '0', '1/2']
-  ok   ANCHOR M5/preserving defect zero [sec4_records.py:632]                                                             True
-  ok   ANCHOR M5/eraser cross-sector tensor entries [sec7_descent.py:139]                                                 16
-  ok   ANCHOR M5/preserving cross-sector entries [sec7_descent.py:137]                                                    0
-  ok   GATE   M5/eraser off-diagonal tensor entries (W6's own)                                                            16
-  ok   GATE   M5/occurrence vs availability: (historical, available) counts P,E,N                                         ([1, 1, 0], [1, 0, 0])
-  ok   GATE   M5/erased flags P,E                                                                                         (False, True)
-  ok   GATE   M5/E<-N available: the EMPTY MAP is VACUOUS, not forced                                                     (1, 'VACUOUS', 0, 'VACUOUS')
-  ok   GATE   M5/E<-N historical: erased token is not 'no event'                                                          (0, 'ABSENT', 0, 'ABSENT')
-  ok   GATE   M5/P<-E historical: availability separates them                                                             (0, 'ABSENT', 0, 'ABSENT')
-  ok   GATE   M5/P<-E available: one available token against none                                                         (0, 'ABSENT', 0, 'ABSENT')
-  ok   GATE   M5/P and E carry the same record law                                                                        True
-  ok   GATE   M5/which item kills P<-E historical                                                                         ['4 availability']
-  ok   GATE   M5/availability forced equal, then restored                                                                 (1, 0)
-  ok   GATE   M6/leg unitary, and the independently built swapped leg equals it                                           (True, True)
-  ok   GATE   M6/sigma preserves the Born shadow                                                                          True
-  ok   GATE   M6/four-cycle sweep: (quadruples, violations on L, on a phase-perturbed L')                                 (784, 0, 2)
-  ok   GATE   M6/the perturbation is invisible to the Born shadow                                                         (True, 1)
-  ok   GATE   M6/both tokens occurred and available; the law is the correlated pair                                       ([(True, True), (True, True)], [('0', '0'), ('1', '1')])
-  ok   GATE   M6/ROUTE-EXT inside one chart certifies ONE fact                                                            (True, 2)
-  ok   GATE   M6/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                 (2, 2, 'UNDERDETERMINED', 'UNDERDETERMINED')
-  ok   GATE   M6/what a NAME-comparing provenance filter would return                                                     1
-  ok   GATE   M6/solver soundness: |Aut| per chart, Phi inverse-closed, identity present                                  ([2, 2, 2], True, True)
-  ok   GATE   M6/descent (verdict, families, orbits, gauge moves them, Phi gauge-closed, duplicate keys)                  ('GROUPOID-AMALGAM', 4, 1, True, True, 0)
-  ok   GATE   M6/selections: 2 per ordered edge over 6 edges; the inverse law cuts 64 to 8                                (64, 8)
-  ok   ANCHOR M8/limit merge classes [sec7_descent.py:239]                                                                [1, 1, 3, 3]
-  ok   ANCHOR M8/limit has a record structure [sec7_descent.py:240]                                                       True
-  ok   ANCHOR M8/limit tensor fully diagonal [sec7_descent.py:241]                                                        0
-  ok   ANCHOR M8/composites differ in the four-cycle invariant [sec7_descent.py:242]                                      True
-  ok   GATE   M8/every record-level datum agrees (leg and composite shadows)                                              (True, True)
-  ok   GATE   M8/record algebras identical                                                                                True
-  ok   GATE   M8/|Phi_A| with the declared list, and with a phase item added                                              (1, 0, 'FORCED', 'ABSENT')
-  ok   GATE   M8/the phase item is not indiscriminate: it passes a relabelling                                            1
-  ok   GATE   M9/the consistent declaration reproduces M6's verdict                                                       'GROUPOID-AMALGAM'
-  ok   GATE   M9/holonomy: twisted vs consistent pinning of the SAME charts                                               (('NO-DESCENT', 0), ('SET-AMALGAM', 1))
-  ok   GATE   M9/asymmetric declaration (phi_ba != phi_ab^-1) must FAIL                                                   ('NO-DESCENT', 0)
-  ok   GATE   M9/a partial-domain map must FAIL the full-domain triple law                                                ('NO-DESCENT', 0)
-  ok   GATE   M9/two families, trivial Aut: UNDERDETERMINED, gauge cannot move them                                       ('UNDERDETERMINED', 2, 2, False)
-  ok   GATE   M9/empty Phi on a pair                                                                                      'ABSENT-PAIR'
-  ok   GATE   M9/one family with nontrivial Aut: gauge action and closure reported, not assumed                           ('GROUPOID-AMALGAM', 1, True, False)
+  ok   ANCHOR census/record H-corr  [sec4_records.py:198]                                                                                     True
+  ok   ANCHOR census/record H-avail [sec4_records.py:199]                                                                                     True
+  ok   GATE   census/record algebra atoms and law                                                                                             ([('0',), ('1',)], ['1/2', '1/2'])
+  ok   GATE   census/occurrence and availability COMPUTED, not stipulated                                                                     (True, True, False)
+  ok   GATE   census/discriminator on Phi(a,a): (|iso|, |Phi_B|, verdict)                                                                     (1, 1, 'FORCED')
+  ok   GATE   census/discriminator vocabulary                                                                                                 ('ABSENT', 'FORCED', 'UNDERDETERMINED', 'VACUOUS', 'NO-INSTRUMENT')
+  ok   GATE   census/ROUTE-EXT degeneracy guard: one-point and empty joints                                                                   (('VACUOUS', 1, False), ('VACUOUS', 0, False), ('VACUOUS', 0, False))
+  ok   GATE   census/regression model: (tokens, available, erased flags)                                                                      (2, 1, [False, True])
+  ok   GATE   census/REGRESSION scope-filtered level B does not zero: (avail, hist)                                                           (1, 1)
+  ok   GATE   M1/relabelling changes the presentation but not the record algebra                                                              (True, True, True, True)
+  ok   GATE   M1/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                                     (1, 1, 'FORCED', 'FORCED')
+  ok   GATE   M1/ROUTE-EXT under the true relabelling vs a WRONG one                                                                          ((True, 2), (False, 2, True))
+  ok   GATE   M1/solver soundness: Phi inverse-closed, identity in every Aut                                                                  (True, True)
+  ok   GATE   M1/descent (verdict, families, orbits, edges, triples, closed)                                                                  ('SET-AMALGAM', 1, 1, 6, 6, True)
+  ok   GATE   M1/amalgam size, injective                                                                                                      (1, True)
+  ok   GATE   M2/both tokens occurred, available, laws identical                                                                              (True, True, True, True, True)
+  ok   GATE   M2/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                                     (1, 0, 'FORCED', 'ABSENT')
+  ok   GATE   M2/DECOMPOSITION of the level-B zero: (iso alone, provenance alone)                                                             (0, 0)
+  ok   GATE   M2/positive control: the searches are not vacuously empty                                                                       (1, 1)
+  ok   GATE   M2/the register swap carries the partition but not the leg multiset                                                             (True, False)
+  ok   GATE   M2/ROUTE-EXT perfect value-correlation on the one process                                                                       (True, 2)
+  ok   GATE   M2/the provenance data that separate the two tokens                                                                             ((('original',), False), (('copy-of', 'CX1'), False))
+  ok   GATE   M2/witness model unitary                                                                                                        True
+  ok   GATE   M2/witness model joint law                                                                                                      [('0', '0', '0'), ('1', '1', '1')]
+  ok   GATE   M2/ROUTE-WIT: t1 vs witness, t2 vs witness, t1 vs t2                                                                            (True, True, True)
+  ok   GATE   M2/fact-level descent (verdict, families, triples)                                                                              ('SET-AMALGAM', 1, 6)
+  ok   GATE   M2/THE FULL TOKEN-LEVEL EDGE SET |Phi_B| over the six ordered pairs                                                             {('a', 'b'): 0, ('a', 'c'): 1, ('b', 'a'): 0, ('b', 'c'): 0, ('c', 'a'): 1, ('c', 'b'): 0}
+  ok   GATE   M2/token-level descent verdict                                                                                                  'ABSENT-PAIR'
+  ok   ANCHOR M3/local operators orthogonal [sec4_records.py:516]                                                                             8
+  ok   ANCHOR M3/local operators commute 9/9 [sec4_records.py:524]                                                                            9
+  ok   ANCHOR M3/U_prep orthogonal [sec4_records.py:505]                                                                                      True
+  ok   GATE   M3/(H-corr) pointer-alone vs (qX,pX), per setting                                                                               [(True, True, False, True), (True, True, False, True), (False, True, False, True), (False, True, False, True), (True, True, True, True), (False, True, False, True)]
+  ok   GATE   M3/all 24 composite tokens occurred and are available                                                                           (24, 24)
+  ok   GATE   M3/W6's chart law reproduces the committed outcome_law                                                                          True
+  ok   GATE   M3/T3 identical in both frames, all settings                                                                                    True
+  ok   GATE   M3/intermediate propagators differ, per setting                                                                                 [270, 270, 432, 432, 108, 432]
+  ok   GATE   M3/final-law classes                                                                                                            [2, 4, 6]
+  ok   GATE   M3/(law-agreeing pairs, candidate-admitting pairs, violations)                                                                  (56, 56, [])
+  ok   GATE   M3/|Phi_A| and its verdict on every law-agreeing pair                                                                           ([2], 'UNDERDETERMINED')
+  ok   GATE   M3/items that bite on two law-DISagreeing committed pairs (SP-A<-SP-B same atoms; SP-A<-SP-E 4 atoms vs 2)                      (['3 probabilities'], ['1 boolean', '3 probabilities'])
+  ok   GATE   M3/items 2 and 4 are CONSTANT on the committed twelve                                                                           (1, 1)
+  ok   GATE   M3/V4 is a genuine erasure: (U_B^3 = 1, law kept, R_B available?)                                                               (True, True, False)
+  ok   GATE   M3/V2 keeps the law and changes only the declared value range                                                                   (True, False)
+  ok   GATE   M3/ITEM 2 BITES: |Phi_A(base<-V2)| with and without item 2                                                                      (0, 2, ['2 values'])
+  ok   GATE   M3/ITEM 4 BITES: |Phi_A(base<-V4)| historical, with and without it                                                              (0, 2, ['4 availability'])
+  ok   GATE   M3/the biconditional BREAKS on the 14-chart set (variant pairs)                                                                 26
+  ok   GATE   M3/SCOPE 72 (comprehension bound) and the j0 filter's fixers (the measured content)                                             (72, [(0, 0, 0, 0, 0), (1, 0, 0, 0, 0)])
+  ok   GATE   M3/EXTENSION scope and its j0-fixing subset                                                                                     (96, 8)
+  ok   GATE   M3/|Phi_B| F1<-F2 and the map itself, per setting: 2-element scope / 8-element extension                                        ([1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [(((0, 0), (1, 1)),)])
+  ok   GATE   M3/|Phi_B| if legs were matched up to sign / at the Born level                                                                  ([1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1])
+  ok   GATE   M3/leg matching must be ORDER-FREE: isomorphisms if order required                                                              [0, 0, 0, 0, 0, 0]
+  ok   GATE   M3/DECOMPOSITION: |Phi_B| without the provenance item, per setting                                                              [1, 1, 1, 1, 1, 1]
+  ok   GATE   M3/overlap graph: (ordered edges, cross-setting, components, sizes, triangles)                                                  (24, 0, 6, [2], 0)
+  ok   GATE   M3/every component is one setting's two frames                                                                                  True
+  ok   GATE   M3/wing swap on (j0 amplitudes, up to sign, j0 Born, final law)                                                                 [(False, False, False, True), (False, False, False, True), (False, False, False, True), (False, False, False, True), (False, True, True, True), (False, True, True, True)]
+  ok   GATE   M3/time-INDEPENDENT reachable-subprocess control: (size, wing swap exact/sign/Born)                                             [(21, False, False, False), (21, False, False, False), (35, False, False, False), (35, False, False, False), (9, False, False, False), (27, False, False, False)]
+  ok   GATE   M3/the REALIZED charts, TYPED BY THE CONSTRUCTOR: (tokens, available, law == the full chart's law), all twelve                  [(2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True), (2, 2, True)]
+  ok   GATE   M3/the two frames' TIME-2 occupied supports: (coincide?, sizes)                                                                 [(False, 2, 8), (False, 2, 8), (False, 8, 8), (False, 8, 8), (False, 2, 2), (False, 8, 8)]
+  ok   GATE   M3/THE REALIZED PROCESS under the wing swap (exact, sign, Born)                                                                 [(False, False, False), (False, False, False), (False, False, False), (False, False, False), (False, True, True), (False, True, True)]
+  ok   GATE   M3/TOKEN MAPS admitted by the REALIZED legs alone (exact / up-to-sign / Born), per setting                                      [([], [], []), ([], [], []), ([], [], []), ([], [], []), ([], [((0, 1), (1, 0))], [((0, 1), (1, 0))]), ([], [((0, 1), (1, 0))], [((0, 1), (1, 0))])]
+  ok   GATE   M3/at SP-E,SP-F which FULL legs the wing swap matches (Born level)                                                              [(False, True, True), (False, True, True)]
+  ok   GATE   M3/what blocks the wing swap on the FULL legs: w.U_prep.w vs U_prep, j0 column (+,-), the other 35 as a block (+,-), by column  (False, True, False, False, 9, 8)
+  ok   GATE   M3/ROUTE-EXT same-setting frames vs a CORRUPTED partner                                                                         ((True, 4, 0), (False, 4, False))
+  ok   GATE   M3/the DISAGREEMENT branch EXERCISED on a Born-disagreeing partner                                                              (4, True, ('DISAGREEMENT', 4, True))
+  ok   GATE   M7/same final law, different settings                                                                                           (True, True)
+  ok   GATE   M7/(product-extension certificate, entries, |Phi_A|, |Phi_B|)                                                                   (False, False, 16, 2, 0)
+  ok   GATE   M7/verdicts A and B                                                                                                             ('UNDERDETERMINED', 'ABSENT')
+  ok   GATE   M4/|Phi_A| and |Phi_B| at the intermediate slice, per setting                                                                   ([1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0])
+  ok   GATE   M4/the candidate is NOT certified: ROUTE-EXT at t=2, per setting                                                                [(False, 2), (False, 2), (False, 2), (False, 2), (False, 2), (False, 2)]
+  ok   GATE   M4/both intermediate marginals uniform (the map is probability-preserving and still rejected)                                   True
+  ok   GATE   M4/shared record subalgebra DERIVED: intermediate vs final                                                                      ([0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 2])
+  ok   GATE   M4/SP-E: bijection-supported but value-reversing, so REJECTED                                                                   (False, 2, True)
+  ok   GATE   M3/the third chart is a DISTINCT object with derived record data                                                                (True, 27, 0, True, True)
+  ok   GATE   M3/fact-level descent on the real triple (verdict, families, orbits, triples, moved, closed)                                    ('GROUPOID-AMALGAM', 4, 1, 6, True, True)
+  ok   GATE   M3/fact-level selections: 2 per ordered edge, 6 edges                                                                           ([2, 2, 2, 2, 2, 2], [2, 2, 2])
+  ok   GATE   M3/token-level edge set on the real triple                                                                                      ([1, 1, 1, 1, 1, 1], [1, 1, 1])
+  ok   GATE   M3/token-level descent on the real triple (verdict, families, triples, amalgam size, injective)                                 ('SET-AMALGAM', 1, 6, 2, True)
+  ok   ANCHOR M5/eraser H-corr holds [sec4_records.py:634]                                                                                    True
+  ok   ANCHOR M5/eraser H-avail fails [sec4_records.py:635]                                                                                   False
+  ok   ANCHOR M5/no-record H-corr fails [sec4_records.py:209]                                                                                 False
+  ok   ANCHOR M5/eraser defect values [sec4_records.py:633]                                                                                   ['-1/2', '0', '1/2']
+  ok   ANCHOR M5/preserving defect zero [sec4_records.py:632]                                                                                 True
+  ok   ANCHOR M5/eraser cross-sector tensor entries [sec7_descent.py:139]                                                                     16
+  ok   ANCHOR M5/preserving cross-sector entries [sec7_descent.py:137]                                                                        0
+  ok   GATE   M5/eraser off-diagonal tensor entries (W6's own)                                                                                16
+  ok   GATE   M5/occurrence vs availability: (historical, available) counts P,E,N                                                             ([1, 1, 0], [1, 0, 0])
+  ok   GATE   M5/erased flags P,E                                                                                                             (False, True)
+  ok   GATE   M5/E<-N available: the EMPTY MAP is VACUOUS, not forced                                                                         (1, 'VACUOUS', 0, 'VACUOUS')
+  ok   GATE   M5/E<-N historical: erased token is not 'no event'                                                                              (0, 'ABSENT', 0, 'ABSENT')
+  ok   GATE   M5/P<-E historical: availability separates them                                                                                 (0, 'ABSENT', 0, 'ABSENT')
+  ok   GATE   M5/P<-E available: one available token against none                                                                             (0, 'ABSENT', 0, 'ABSENT')
+  ok   GATE   M5/P and E carry the same record law                                                                                            True
+  ok   GATE   M5/which item kills P<-E historical                                                                                             ['4 availability']
+  ok   GATE   M5/availability forced equal, then restored                                                                                     (1, 0)
+  ok   GATE   M6/leg unitary, and the swapped build is MEASURED equal to it                                                                   (True, True)
+  ok   GATE   M6/sigma preserves the Born shadow                                                                                              True
+  ok   GATE   M6/four-cycle sweep: (quadruples, violations on L, on a phase-perturbed L')                                                     (784, 0, 2)
+  ok   GATE   M6/the perturbation is invisible to the Born shadow                                                                             (True, 1)
+  ok   GATE   M6/both tokens occurred and available; the law is the correlated pair                                                           ([(True, True), (True, True)], [('0', '0'), ('1', '1')])
+  ok   GATE   M6/ROUTE-EXT inside one chart certifies ONE fact                                                                                (True, 2)
+  ok   GATE   M6/|Phi_A|, |Phi_B| and their verdicts a<-b                                                                                     (2, 2, 'UNDERDETERMINED', 'UNDERDETERMINED')
+  ok   GATE   M6/what a NAME-comparing provenance filter would return                                                                         1
+  ok   GATE   M6/solver soundness: |Aut| per chart, Phi inverse-closed, identity present                                                      ([2, 2, 2], True, True)
+  ok   GATE   M6/descent (verdict, families, orbits, gauge moves them, Phi gauge-closed, duplicate keys)                                      ('GROUPOID-AMALGAM', 4, 1, True, True, 0)
+  ok   GATE   M6/the enumerated selection space over the 6 ordered edges, and the inverse law's cut                                           (64, 8)
+  ok   ANCHOR M8/limit merge classes [sec7_descent.py:239]                                                                                    [1, 1, 3, 3]
+  ok   ANCHOR M8/limit has a record structure [sec7_descent.py:240]                                                                           True
+  ok   ANCHOR M8/limit tensor fully diagonal [sec7_descent.py:241]                                                                            0
+  ok   ANCHOR M8/composites differ in the four-cycle invariant [sec7_descent.py:242]                                                          True
+  ok   GATE   M8/every record-level datum agrees (leg and composite shadows)                                                                  (True, True)
+  ok   GATE   M8/record algebras identical                                                                                                    True
+  ok   GATE   M8/|Phi_A| with the declared list, and with a phase item added                                                                  (1, 0, 'FORCED', 'ABSENT')
+  ok   GATE   M8/the phase item is not indiscriminate: it passes a relabelling                                                                1
+  ok   GATE   M9/holonomy: twisted vs consistent pinning of the SAME charts                                                                   (('NO-DESCENT', 0), ('SET-AMALGAM', 1))
+  ok   GATE   M9/asymmetric declaration (phi_ba != phi_ab^-1) must FAIL                                                                       ('NO-DESCENT', 0)
+  ok   GATE   M9/an INVERSE-CONSISTENT partial-domain map must FAIL the full-domain triple law                                                ('NO-DESCENT', 0)
+  ok   GATE   M9/WHICH law rejects: (inverse, triple) violations, the asymmetric declaration then the partial-domain one                      ((2, 3), (0, 6))
+  ok   GATE   M9/two families, trivial Aut: UNDERDETERMINED, gauge cannot move them                                                           ('UNDERDETERMINED', 2, 2, False)
+  ok   GATE   M9/empty Phi on a pair                                                                                                          'ABSENT-PAIR'
+  ok   GATE   M9/one family with nontrivial Aut: gauge action and closure reported, not assumed                                               ('GROUPOID-AMALGAM', 1, True, False)
 --------------------------------------------------------------------------
-  115 rows (16 ANCHOR, 99 GATE) : 115 pass, 0 fail   [1.5s]
+  120 rows (16 ANCHOR, 104 GATE) : 120 pass, 0 fail   [1.4s]

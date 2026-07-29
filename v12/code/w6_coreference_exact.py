@@ -90,8 +90,8 @@ class W6Receipts:
         for kind, label, comp, exp, ok in self.rows:
             mark = "ok  " if ok else "FAIL"
             s = repr(comp)
-            if len(s) > 88:
-                s = s[:85] + "..."
+            if len(s) > 200:
+                s = s[:197] + "..."
             if ok:
                 print("  %s %-6s %-*s  %s" % (mark, kind, w, label, s))
             else:
@@ -537,14 +537,28 @@ def verdict_of(nphi, na, nb, instrument=True):
     return "UNDERDETERMINED"
 
 
+# the descent table's cells are EMITTED by the discriminator, never typed as
+# literals: a cell for which this unit runs no instrument gets the word the
+# vocabulary reserves for it.
+NOINST = verdict_of(0, 0, 0, instrument=False)
+
+
 def route_ext(K, joint):
     """ROUTE-EXT: in a declared common record-preserving extension, are the two
     record variables perfectly correlated ALONG THE IDENTITY OF VALUES?  The
     joint law must be supported on the graph of a value-preserving bijection.
     Returns (certified, positive entries, bijection-supported); the third
     component is DERIVED from the same support and is reported only where the
-    certificate fails and the reason matters."""
+    certificate fails and the reason matters.
+
+    DEGENERACY GUARD.  A joint law with fewer than two positive entries
+    certifies nothing: one point is trivially the graph of a bijection and the
+    empty support is trivially value-preserving.  Certifying either would be
+    the emptiness error the discriminator refuses at census 6, so the same
+    word is used -- VACUOUS, not True."""
     pos = [(x, y) for (x, y), v in joint.items() if not K.is_zero(v)]
+    if len(pos) < 2:
+        return ("VACUOUS", len(pos), False)
     fwd, bwd = {}, {}
     for x, y in pos:
         if fwd.setdefault(x, y) != y or bwd.setdefault(y, x) != x:
@@ -552,6 +566,17 @@ def route_ext(K, joint):
     bij = len(fwd) == len(bwd) == len(pos)
     ident = all(x == y for x, y in pos)
     return (bij and ident, len(pos), bij)
+
+
+def route_ext_pair(K, joint, dis):
+    """ROUTE-EXT as a verdict about a PAIR.  The common extension is built only
+    where the two charts assign a configuration the same probability;
+    configurations on which they DISAGREE are dropped by that construction, so
+    a positive certificate on what remains certifies nothing about the pair.
+    Where any configuration was dropped the verdict is DISAGREEMENT, not a
+    certificate."""
+    cert, npos, bij = route_ext(K, joint)
+    return (cert if dis == 0 else "DISAGREEMENT", npos, bij)
 
 
 # ===========================================================================
@@ -786,6 +811,14 @@ def step0():
            (verdict_of(0, 1, 1), verdict_of(1, 1, 1), verdict_of(2, 1, 1),
             verdict_of(1, 0, 0), verdict_of(0, 1, 1, instrument=False)),
            ("ABSENT", "FORCED", "UNDERDETERMINED", "VACUOUS", "NO-INSTRUMENT"))
+    # the same emptiness discipline on the CERTIFICATE side: a joint law with
+    # fewer than two positive entries certifies nothing.  Unit probe: a
+    # one-point joint and an empty joint must both come back VACUOUS.  Without
+    # the guard both return (True, ...) -- a certificate obtained from nothing.
+    R.gate("census/ROUTE-EXT degeneracy guard: one-point and empty joints",
+           (route_ext(K8, {("0", "0"): K8.one}), route_ext(K8, {}),
+            route_ext(K8, {("0", "0"): K8.zero})),
+           (("VACUOUS", 1, False), ("VACUOUS", 0, False), ("VACUOUS", 0, False)))
     say("object 6: the discriminator |Phi| -- CONSTRUCTED")
 
     # -- REGRESSION GATE for the level-B scope keying ------------------------
@@ -1013,10 +1046,11 @@ def m2(perms8):
     dB = descent(names, phisB, autsB)
     R.gate("M2/token-level descent verdict", dB["verdict"], "ABSENT-PAIR")
     TABLE.append(("M2 redundant copies", "FORCED (certified twice)",
-                  "ABSENT on the copy edges, FORCED on the relabelling edge",
+                  "ABSENT on the four copy edges, FORCED on the two "
+                  "relabelling edges",
                   "SET-AMALGAM (fact) / ABSENT-PAIR (token)",
-                  "one fact, two tokens; |Phi_B(a<-c)| = 1 is a genuine token "
-                  "edge, |Phi_B(a<-b)| = |Phi_B(b<-c)| = 0"))
+                  "one fact, two tokens; the two relabelling edges carry "
+                  "|Phi_B| = 1, the four copy edges |Phi_B| = 0"))
     say("M2 done")
 
 
@@ -1234,7 +1268,8 @@ def m3_m4_m7(M, finals, inters):
               for sw in (0, 1) for sa in range(3) for sb in range(3)
               for fa in (0, 1) for fb in (0, 1)
               if build_perm(sw, sa, sb, fa, fb)[0] == 0]
-    R.gate("M3/DECLARED SCOPE 72; the j0 filter admits exactly these",
+    R.gate("M3/SCOPE 72 (comprehension bound) and the j0 filter's fixers "
+           "(the measured content)",
            (len(scope), fixers), (72, [(0, 0, 0, 0, 0), (1, 0, 0, 0, 0)]))
     # the extension: pointer TRANSPOSITIONS fix the ready state, so a wider
     # search survives the same filter.
@@ -1367,28 +1402,34 @@ def m3_m4_m7(M, finals, inters):
             (35, False, False, False), (35, False, False, False),
             (9, False, False, False), (27, False, False, False)])
 
-    real, realB = [], []
+    real, realB, realtype, t2sup = [], [], [], []
     for sp in SETTING_ORDER:
-        rl, rc = {}, {}
+        rl, rc, sup2 = {}, {}, {}
         for fr in ("F1", "F2"):
             T = M.propagators(sp, fr)[:3]
             supp = [{0}] + [{i for (i, j), v in T[t].items()
                              if j == 0 and not K.is_zero(v)} for t in range(3)]
             rl[fr] = [sp_restrict(M.legs(sp, fr)[t], supp[t + 1], supp[t])
                       for t in range(3)]
-            # the SAME charts, carried by the realized legs only
+            # the SAME charts, carried by the realized legs only -- and built
+            # through the ORDINARY constructor, so that occurrence,
+            # availability and the law are RECOMPUTED from the restricted legs
+            # rather than stipulated.  That they come out as they do (two
+            # tokens, both available, the same law) is then a measurement.
             tA = Token("R_A", PARTA, VALS, 1 if fr == "F1" else 2,
                        cprov("A", SETTINGS[sp][0]))
             tB = Token("R_B", PARTB, VALS, 2 if fr == "F1" else 1,
                        cprov("B", SETTINGS[sp][1]))
-            tA.occurred = tB.occurred = True
-            tA.avail = tB.avail = True
-            ch = Chart.__new__(Chart)
-            ch.name, ch.K, ch.n, ch.legs, ch.j0 = ("%s/%s@real" % (sp, fr), K,
-                                                   NC, rl[fr], 0)
-            ch.note, ch.tokens = "", [tA, tB]
-            ch.law = finals[(sp, fr)].law
-            rc[fr] = ch
+            rc[fr] = Chart("%s/%s@real" % (sp, fr), K, NC, rl[fr], 0, [tA, tB])
+            realtype.append((len(rc[fr].tokens), len(rc[fr].live("available")),
+                             rc[fr].law == finals[(sp, fr)].law))
+            sup2[fr] = frozenset(supp[2])
+        # WHY the identity cannot survive on the realized legs: at time 2 the
+        # two frames have not occupied the same configurations -- one wing has
+        # measured and the other has not.  Frame-relativity, and it is M4's own
+        # content seen from the support side.
+        t2sup.append((sup2["F1"] == sup2["F2"],
+                      len(sup2["F1"]), len(sup2["F2"])))
         orders = list(itertools.permutations(range(3)))
         ex = any(all(sp_conj(rl["F2"][t], w) == rl["F1"][s[t]]
                      for t in range(3)) for s in orders)
@@ -1403,6 +1444,12 @@ def m3_m4_m7(M, finals, inters):
                                     isos=iso_maps(rc["F1"], rc["F2"], scope,
                                                   level=lv)))
             for lv in ("exact", "sign", "born")))
+    R.gate("M3/the REALIZED charts, TYPED BY THE CONSTRUCTOR: (tokens, "
+           "available, law == the full chart's law), all twelve",
+           realtype, [(2, 2, True)] * 12)
+    R.gate("M3/the two frames' TIME-2 occupied supports: (coincide?, sizes)",
+           t2sup, [(False, 2, 8), (False, 2, 8), (False, 8, 8), (False, 8, 8),
+                   (False, 2, 2), (False, 8, 8)])
     R.gate("M3/THE REALIZED PROCESS under the wing swap (exact, sign, Born)",
            real, [(False, False, False)] * 4 + [(False, True, True)] * 2)
     # THE ADJUDICATING MEASUREMENT: run level B on the realized legs alone.
@@ -1421,6 +1468,27 @@ def m3_m4_m7(M, finals, inters):
                                 for u in range(3)) for t in range(3)))
     R.gate("M3/at SP-E,SP-F which FULL legs the wing swap matches (Born level)",
            refuse, [(False, True, True), (False, True, True)])
+    # ISOLATED, column by column: the sole blocker is U_prep, and it blocks
+    # OFF the j0 column.  On the j0 column w.U_prep.w is -U_prep -- a
+    # sign-level match; on the other 35 columns it is neither +U_prep nor
+    # -U_prep.  j0 = 0 is the only configuration ever occupied at time 0, so
+    # those 35 columns are transitions the process never takes.
+    Up = M.U_prep()
+    Uw = sp_conj(Up, w)
+
+    def colof(A, j):
+        return {i: v for (i, jj), v in A.items() if jj == j}
+    negcol = {j: {i: K.neg(v) for i, v in colof(Up, j).items()}
+              for j in range(NC)}
+    oth = range(1, NC)
+    R.gate("M3/what blocks the wing swap on the FULL legs: w.U_prep.w vs "
+           "U_prep, j0 column (+,-), the other 35 as a block (+,-), by column",
+           (colof(Uw, 0) == colof(Up, 0), colof(Uw, 0) == negcol[0],
+            all(colof(Uw, j) == colof(Up, j) for j in oth),
+            all(colof(Uw, j) == negcol[j] for j in oth),
+            sum(1 for j in oth if colof(Uw, j) == colof(Up, j)),
+            sum(1 for j in oth if colof(Uw, j) == negcol[j])),
+           (False, True, False, False, 9, 8))
     say("M3 layer analysis: the realized process vs the declared legs")
 
     # -- M3 ROUTE-EXT: the two frames' record maps, read off the one process -
@@ -1435,11 +1503,11 @@ def m3_m4_m7(M, finals, inters):
                 [Token("R_A", PARTB, VALS, 2, cprov("A", 0)),
                  Token("R_B", PARTA, VALS, 1, cprov("B", 2))])
 
-    def joint_frames(other):
+    def joint_frames(other, Tb=T3b):
         j, dis = {}, 0
         for i in range(NC):
             va = T3a.get((i, 0), K.zero)
-            vb = T3b.get((i, 0), K.zero)
+            vb = Tb.get((i, 0), K.zero)
             pa, pb = K.mul(va, va), K.mul(vb, vb)
             if pa != pb:
                 dis += 1
@@ -1452,12 +1520,23 @@ def m3_m4_m7(M, finals, inters):
             j[key] = K.add(j.get(key, K.zero), pa)
         return j, dis
     jt, dis = joint_frames(f2)
-    jc, _ = joint_frames(f2c)
-    ok, npos, _ = route_ext(K, jt)
-    okc, nposc, bijc = route_ext(K, jc)
+    jc, disc = joint_frames(f2c)
+    ok, npos, _ = route_ext_pair(K, jt, dis)
+    okc, nposc, bijc = route_ext_pair(K, jc, disc)
     R.gate("M3/ROUTE-EXT same-setting frames vs a CORRUPTED partner",
            ((ok, npos, dis), (okc, nposc, bijc)),
            ((True, 4, 0), (False, 4, False)))
+    # POSITIVE CONTROL for the disagreement branch.  On same-experiment frames
+    # dis is 0 and the branch is never taken, so it is exercised here against a
+    # partner whose time-3 Born column genuinely differs: another setting's
+    # frame.  The branch fires on 4 configurations -- and the raw certificate
+    # computed on the 4 that remain is True, which is exactly why dropping
+    # configurations must disqualify the pair rather than be silent.
+    jd, disd = joint_frames(finals[("SP-B", "F2")],
+                            M.propagators("SP-B", "F2")[2])
+    R.gate("M3/the DISAGREEMENT branch EXERCISED on a Born-disagreeing partner",
+           (disd, route_ext(K, jd)[0], route_ext_pair(K, jd, disd)),
+           (4, True, ("DISAGREEMENT", 4, True)))
 
     # M7: SP-A and SP-C -- same final law, different experiments
     xa, xc = ("SP-A", "F1"), ("SP-C", "F1")
@@ -1569,18 +1648,19 @@ def m3_m4_m7(M, finals, inters):
     TABLE.append(("M3 two-frame final outcomes",
                   "UNDERDETERMINED (|Phi_A|=2), certified",
                   "FORCED (|Phi_B|=1, all 6 settings)",
-                  "GROUPOID (fact) / SET-AMALGAM (token)",
+                  "GROUPOID (fact) / SET-AMALGAM (token), at SP-A",
                   "candidate map on exactly the 56 law-agreeing ordered pairs "
-                  "of 144; the wing tie is cut by the frame-isomorphism at "
-                  "the BORN level, not by the provenance filter; on the "
-                  "REALIZED legs alone SP-E and SP-F admit only the OPPOSITE "
-                  "(wing-swap) identification"))
+                  "of 144; the wing tie is cut by dynamical provenance -- the "
+                  "frame-isomorphism -- at the BORN level, not by the "
+                  "structural provenance filter; on the REALIZED legs alone "
+                  "the identity is inadmissible at every setting and SP-E, "
+                  "SP-F admit exactly one map, the wing swap"))
     TABLE.append(("M4 intermediate frame content", "FORCED but NOT CERTIFIED",
-                  "ABSENT (|Phi_B|=0)", "no shared subalgebra",
+                  "ABSENT (|Phi_B|=0)", NOINST + " -- no shared subalgebra",
                   "one token each, so |Phi_A|=1 carries no multiplicity; "
                   "ROUTE-EXT at t=2 refuses it at every setting"))
     TABLE.append(("M7 accidental agreement", "UNDERDETERMINED, NOT CERTIFIED",
-                  "ABSENT (|Phi_B|=0)", "no token edge",
+                  "ABSENT (|Phi_B|=0)", NOINST + " -- no token edge",
                   "SP-A and SP-C: one law, two experiments; the product "
                   "extension has 16 positive entries"))
     return scope
@@ -1668,7 +1748,7 @@ def m5(perms4):
     R.gate("M5/availability forced equal, then restored", (forced, restored),
            (1, 0))
     TABLE.append(("M5 record erasure", "ABSENT historical / VACUOUS available",
-                  "ABSENT (|Phi_B|=0)", "no triple declared",
+                  "ABSENT (|Phi_B|=0)", NOINST + " -- no triple declared",
                   "historical counts (1,1,0) against available (1,0,0); "
                   "the empty-scope comparison is called VACUOUS, not FORCED"))
     say("M5 done")
@@ -1682,11 +1762,13 @@ def m6(perms8):
     print("M6 -- SYMMETRIC DUPLICATE  (control 6)")
     hr()
     L = mat_mul(K8, mat_mul(K8, cnot3(0, 2), cnot3(0, 1)), h3(0))
-    # the wing-swapped process, built INDEPENDENTLY from the gate primitives:
-    # the same circuit with the roles of qubits 1 and 2 exchanged.  Nothing is
-    # obtained by permuting L's entries.
+    # the wing-swapped BUILD: the same circuit with the roles of qubits 1 and 2
+    # exchanged, assembled from the gate primitives.  It is MEASURED equal to
+    # the original -- the two CNOTs commute -- which is a real symmetry of the
+    # circuit, and it is that symmetry, not the assembly route, that the phase
+    # sweep below tests.
     Lsw = mat_mul(K8, mat_mul(K8, cnot3(0, 1), cnot3(0, 2)), h3(0))
-    R.gate("M6/leg unitary, and the independently built swapped leg equals it",
+    R.gate("M6/leg unitary, and the swapped build is MEASURED equal to it",
            (is_unitary(K8, L), Lsw == L), (True, True))
     sig = [0] * 8
     for j in range(8):
@@ -1697,8 +1779,9 @@ def m6(perms8):
            [[born(K8, L)[sig[i]][sig[j]] for j in range(8)] for i in range(8)]
            == born(K8, L), True)
 
-    # THE PHASE SWEEP.  Compare the four-cycle invariant of the independently
-    # built swapped leg at sigma-relabelled indices against the original's.
+    # THE PHASE SWEEP.  With the swapped build measured equal to L, the sweep
+    # is the sigma-invariance of L's four-cycle invariants: the invariant at
+    # sigma-relabelled indices against the invariant at the original indices.
     # The identical sweep is then run on a PERTURBED leg that differs from L by
     # a phase the Born shadow cannot see -- and it fails, so the sweep is not
     # a tautology.
@@ -1770,21 +1853,22 @@ def m6(perms8):
            "gauge-closed, duplicate keys)",
            (d["verdict"], d["families"], d["orbits"], d["moved"], d["closed"],
             d["dupkeys"]), ("GROUPOID-AMALGAM", 4, 1, True, True, 0))
-    R.gate("M6/selections: 2 per ordered edge over 6 edges; the inverse law "
-           "cuts 64 to 8", (2 ** 6, sum(1 for pick in
-                                        itertools.product(*[phis[e] for e in
-                                                            sorted(phis)])
-                                        if all(pick[sorted(phis).index((y, x))]
-                                               == invert(pick[sorted(phis).index((x, y))])
-                                               for (x, y) in sorted(phis)))),
-           (64, 8))
+    # the selection space is ENUMERATED, not asserted: its size is the length
+    # of the enumeration, and the inverse law's cut is counted on the same list.
+    edg = sorted(phis)
+    picks = list(itertools.product(*[phis[e] for e in edg]))
+    ninv = sum(1 for pick in picks
+               if all(pick[edg.index((y, x))] == invert(pick[edg.index((x, y))])
+                      for (x, y) in edg))
+    R.gate("M6/the enumerated selection space over the 6 ordered edges, and "
+           "the inverse law's cut", (len(picks), ninv), (64, 8))
     TABLE.append(("M6 symmetric duplicate", "UNDERDETERMINED (|Phi_A|=2)",
                   "UNDERDETERMINED (|Phi_B|=2)", "GROUPOID-AMALGAM",
-                  "the exchanging automorphism survives the Born shadow AND "
-                  "the 784 four-cycle invariants; only a name-comparing rule "
-                  "would choose"))
+                  "the swapped build is measured equal to the original and "
+                  "the 784 four-cycle invariants are then measured "
+                  "sigma-invariant (a zeta_8 perturbation makes the sweep "
+                  "fail); only a name-comparing rule would choose"))
     say("M6 done")
-    return phis, auts
 
 
 # ===========================================================================
@@ -1863,27 +1947,38 @@ def m8(perms4):
     R.gate("M8/the phase item is not indiscriminate: it passes a relabelling",
            len(phi_set(r1, r2, items=LIST_A + [("phase", it_phase)])), 1)
     TABLE.append(("M8 phase blindness", "FORCED with the declared list; "
-                  "ABSENT with phase added", "not applicable",
-                  "criterion test, no descent claim",
-                  "a phase-consulting phi was built and run: it returns 0 "
-                  "exactly where the record level returns 1"))
+                  "ABSENT with phase added", NOINST,
+                  NOINST + " -- criterion test, no descent claim",
+                  "a phase-consulting item was built and run: it returns 0 on "
+                  "this pair, where the declared list returns 1, and 1 on a "
+                  "relabelling pair"))
     say("M8 done")
 
 
 # ===========================================================================
 # M9 -- THE DESCENT DETECTOR, VALIDATED (declared addition)
 # ===========================================================================
-def m9(phis, auts):
+def m9():
     hr()
     print("M9 -- DESCENT DETECTOR VALIDATION  (declared addition)")
     hr()
     names = ["a", "b", "c"]
     ident_, swap_ = {0: 0, 1: 1}, {0: 1, 1: 0}
-    R.gate("M9/the consistent declaration reproduces M6's verdict",
-           descent(names, phis, auts)["verdict"], "GROUPOID-AMALGAM")
 
     def edges(spec):
         return {k: [dict(v)] for k, v in spec.items()}
+
+    def law_profile(fam):
+        """WHICH coherence law rejects a declaration.  descent() stops at the
+        first violation, so the two laws are counted here independently: a
+        declaration rejected by the inverse law never reaches the triple law,
+        and a control that claims the triple law must be inverse-consistent."""
+        ninv = sum(1 for (x, y) in fam
+                   if (y, x) in fam and fam[(y, x)] != invert(fam[(x, y)]))
+        ntri = sum(1 for a, b, c in itertools.permutations(names, 3)
+                   if (a, b) in fam and (b, c) in fam and (a, c) in fam
+                   and compose(fam[(a, b)], fam[(b, c)]) != fam[(a, c)])
+        return (ninv, ntri)
     base = {(x, y): ident_ for x, y in itertools.permutations(names, 2)}
     tw = dict(base)
     tw[("a", "c")] = swap_
@@ -1900,13 +1995,24 @@ def m9(phis, auts):
     d3 = descent(names, edges(asym), {x: [dict(ident_)] for x in names})
     R.gate("M9/asymmetric declaration (phi_ba != phi_ab^-1) must FAIL",
            (d3["verdict"], d3["families"]), ("NO-DESCENT", 0))
-    # NEGATIVE CONTROL: a map with a MISSING KEY.  Triple equality is tested on
-    # the full domain, so this fails in both directions.
+    # NEGATIVE CONTROL: a map with a MISSING KEY, declared INVERSE-CONSISTENTLY
+    # (both directions truncated to the same domain) so that the inverse law
+    # passes and the FULL-DOMAIN TRIPLE LAW is what rejects it -- which is what
+    # this control's label claims.  Triple equality is tested on the full
+    # domain, so the truncated map fails in both directions.
     part = dict(base)
     part[("a", "b")] = {0: 0}
+    part[("b", "a")] = {0: 0}
     d4 = descent(names, edges(part), {x: [dict(ident_)] for x in names})
-    R.gate("M9/a partial-domain map must FAIL the full-domain triple law",
+    R.gate("M9/an INVERSE-CONSISTENT partial-domain map must FAIL the "
+           "full-domain triple law",
            (d4["verdict"], d4["families"]), ("NO-DESCENT", 0))
+    # and WHICH law does the rejecting in each case, counted independently of
+    # descent()'s early exit: the asymmetric declaration is caught by the
+    # inverse law, the truncated one only by the triple law.
+    R.gate("M9/WHICH law rejects: (inverse, triple) violations, the asymmetric "
+           "declaration then the partial-domain one",
+           (law_profile(asym), law_profile(part)), ((2, 3), (0, 6)))
     # the fourth branch: two coherent families, trivial automorphisms
     two = ["a", "b"]
     d5 = descent(two, {("a", "b"): [dict(ident_), dict(swap_)],
@@ -1928,10 +2034,12 @@ def m9(phis, auts):
            "reported, not assumed",
            (d7["verdict"], d7["families"], d7["moved"], d7["closed"]),
            ("GROUPOID-AMALGAM", 1, True, False))
-    TABLE.append(("M9 detector validation", "not applicable", "not applicable",
+    TABLE.append(("M9 detector validation", NOINST, NOINST,
                   "all five branches reached",
-                  "holonomy, asymmetric declaration and partial-domain maps "
-                  "all FAIL; gauge closure is reported, not assumed"))
+                  "the twisted declaration fails the triple law, the "
+                  "asymmetric one the inverse law, the inverse-consistent "
+                  "truncated one the full-domain triple law; gauge closure is "
+                  "reported, not assumed"))
     say("M9 done")
 
 
@@ -1948,9 +2056,9 @@ def main():
     finals, inters = composite_charts(M)
     m3_m4_m7(M, finals, inters)
     m5(perms4)
-    phis, auts = m6(perms8)
+    m6(perms8)
     m8(perms4)
-    m9(phis, auts)
+    m9()
 
     hr("=")
     print("THE DESCENT TABLE")

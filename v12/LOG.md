@@ -1602,3 +1602,65 @@ residuals — folded into ONE TERMINAL-FIX PASS, dispatched
 Outcomes unchanged in identity and now measurement-carried:
 FACT-DESCENT; SET-AMALGAM (scoped, to gain the SP-A tag);
 GROUPOID-AMALGAM (phase-survival falsifiable).
+
+## 2026-07-29 — W6 TERMINAL-FIX PASS COMPLETED AND VERIFIED —
+## **W6 TERMINAL** (v12 LEDGER #41)
+PROCESS RECORD, stated plainly: the fix worker was killed THREE
+times by server-side API errors (one 500, two 529s), each time
+mid-pass with its edits preserved in the working tree; after the
+third death the adjudicator completed the remainder directly —
+a marker-by-marker on-disk audit of all sixteen fixes (P1–P10,
+C1–C6: ALL found applied by the worker before its deaths — the
+scope tags incl. "(at SP-A)"; the one-pair certification
+wording; the repair-narration paragraph deleted and the status
+de-escalated; the swapped-build-measured-EQUAL wording; the
+A/B-columns vocabulary claim with NO-INSTRUMENT emitted; the
+structural-vs-dynamical provenance naming; the scoped Born-level
+adjudication paragraph "stated once and not exceeded"; the
+corrected realized-legs statement with U_prep's 35 never-taken
+columns; the four-copy/two-relabelling edge counts; the
+inverse-consistent partial-domain control now failing THE TRIPLE
+LAW; the disagreement-branch POSITIVE control on a
+Born-disagreeing partner; the honest scope-72 label pairing the
+comprehension bound with the measured fixer list; the
+constructor-typed realized charts, gated (2, 2, law-equal) ×12;
+the route_ext degeneracy guard; the receipt truncation raised —
+the flagship rows print in full), then the regeneration: two
+runs, exit 0, DETERMINISTIC modulo timings; **120 rows (16
+ANCHOR, 104 GATE), 120 pass, 0 fail** (115 → 120: +5 net from
+the C-fixes); float sweep 0; EVERY load-bearing measured value
+UNCHANGED against the #38 receipt (56-of-144; the 26-pair
+biconditional break; the M2 edge sextet; the 72/2 and 96/8
+scopes; the realized-process rows (F,F,F)×4 + (F,T,T)×2 with
+token maps ∅×4 + wing-swap×2; M4's 0-vs-2; M5's VACUOUS; M6's
+descent).  **W6 IS TERMINAL.**  THE STANDING RESULT: the census
+passes (six referents typed, the overlap object derived, names
+never compared); FACT-DESCENT (record propositions glue across
+relabellings, copies, and the same-experiment frame pairs, the
+certificate failing three ways); SET-AMALGAM at the token level
+where the generating structure distinguishes tokens (measured;
+scoped at SP-A for the triple; T5″-safe — actual stable records
+only, no global present, no value table); GROUPOID-AMALGAM at
+the symmetric duplicate (no invariant rule may choose; the
+phase-survival clause falsifiable, ζ₈-control-backed); fact ≠
+value (M7), fact ≠ token (M2), availability ≠ occurrence (M5);
+the architecture adjudication AT ITS STATED SCOPE — the wing tie
+is cut by DYNAMICAL provenance (the frame isomorphism) at the
+BORN level, amplitude phases playing no part in fact identity
+(the constructed phase-consulting item returns 0 where the
+declared list returns 1) — no base/fibre violation within scope;
+AND THE UNIT'S DEEPEST FINDING, round-confirmed and
+mechanism-isolated: THE REALIZED LEGS NEVER ADMIT THE IDENTITY
+(the two frames' time-2 occupied supports never coincide); the
+four asymmetric settings admit no token map at all; the two
+symmetric settings admit EXACTLY ONE — THE WING SWAP — and what
+blocks the swap on the full legs is U_prep acting on the 35
+configurations never occupied at time 0: the identification is
+carried by transitions the process never takes, and the
+time-indexing of those unrealized transitions is what matters
+(the time-independent restriction is the same phenomenon, not a
+deflation).  Ledger score for the unit: one internal 22-finding
+audit, one external round + sub-audit, ~30 independent
+recomputations round-side (25/25 + the sub-audit's probes), zero
+numerical errors; every casualty a sentence or a gate label.
+Next: the paper 0 W6 outcome wiring (#42), memory, and THE HALT.
