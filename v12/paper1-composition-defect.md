@@ -3,63 +3,37 @@
 ## Abstract
 
 Barandes' formulation of quantum theory replaces the state vector by an
-*indivisible stochastic process*: a fixed configuration space carrying
-definite configurations at all times, together with transition matrices
-supplied only at a sparse set of *division events*, and an identity
-$\Gamma = |\Theta|^{\circ 2}$ exhibiting each transition matrix as the
-entrywise modulus square of a complex propagator [1,3]. Because the laws
-are supplied only at division events, the question of what happens *between*
-them — of how the stochastic representation composes across a cut — is
-posed by the framework but not answered by it. This paper studies that
-question.
-
-We take as the subject the **composition defect**
+*indivisible stochastic process*: definite configurations at all times on a
+fixed configuration space, transition matrices only at a sparse set of
+*division events*, and the identity $\Gamma = |\Theta|^{\circ 2}$ making
+each transition matrix the entrywise modulus square of a complex propagator
+[1,3]. How that representation composes *across* a cut is left open; it is
+this paper's subject, the **composition defect**
 $$
 \Delta^{B}(U_2,U_1)\;:=\;B(U_2U_1)\;-\;B(U_2)\,B(U_1),
-\qquad B(U)=|U|^{\circ 2},
+\qquad B(U)=|U|^{\circ 2}.
 $$
-and prove: (i) a closed form identifying $\Delta^{B}_{ij}$ with the total
-pairwise interference of the path amplitudes through the cut, an exact
-separation of $\Delta^{B}$ from the residual of a declared stochastic law
-and from existential divisibility, a coherence law valid at every
-bracketing, a complete two-sided annihilator theory (the monomial group),
-and an identification of the vanishing locus on a Fourier-sandwich family
-with flatness of a discrete spectrum — the CAZAC condition, which is
-classical and cited, not derived here; (ii) a **records theorem**: two
-support hypotheses, stated with no reference to any defect, force the
-defect to vanish termwise, with an $O(n^2)$ decision procedure for the
-existential question "does *any* record structure work?", exact sharpness
-on unitarily realizable supports at $n=3$, and an eraser control that
-locates the boundary; (iii) a **gauge reduction**: the entrywise
-Schur–Hadamard freedom of [3] is annihilating on a single arrow, and its
-composition-compatible subgroup is *exactly* the boundary gauge — proved
-twice, once from compatibility with the admissible class of composable
-dynamics and once from preservation of unitarity, with the residual
-stabilizer that "partial fixing of the gauge freedom" [3, p.19] leaves
-computed exactly; (iv) a **loop signature** for the reduced gauge, whose
-completeness for a composable pair holds *exactly when* the four-cycles
-generate the cycle lattice of a tripartite path graph, with the failure
-realized at every failing support class at $n=4$ by an uncompensated cut,
-and whose completeness for the *composite* is refuted at one class by an
-exact unitary witness; a cross-block completion closes every gap found at
-$n\le 4$ exhaustively and at a declared $n=5$ sample; (v) a **record
-descent** for the signature, together with its limit: a pair may carry a
-record, have a fully diagonal cut-coherence tensor, and still have a
-composite carrying a boundary-gauge phase invariant; (vi) an
-**independence** result: four obstruction families — temporal, contextual,
-lattice-gluing and frame-mappability — are pairwise independent on a
-common finite carrier, with witnesses in both directions for all six pairs;
-and (vii) a **law-of-total-probability lemma** proved against [3]'s own
-equations (19)–(20), whose contrapositive forces the withdrawal of an
-exactly declared, unmarginalized division event wherever the declared law
-fails to compose on the model's own distribution — exhibited on a
-36-configuration two-measurement model built here from scratch.
+Four results follow. **Interference is the composition defect:**
+$\Delta^{B}_{ij}$ is the total pairwise interference of the path amplitudes
+through the cut, separated here from declared-law residuals and existential
+divisibility. **Records make the shadow compose:** two support hypotheses,
+mentioning no defect, force every cross term to vanish individually; the
+existential question is decided in $O(n^2)$.
+**Composition reduces the gauge:** the entrywise Schur–Hadamard freedom of
+[3] annihilates every phase on a single arrow, but its
+composition-compatible subgroup is *exactly* the boundary gauge — derived
+twice, and exactly the residual left by [3, p.19]'s partial gauge fixing.
+**The reduced gauge carries a loop signature**, complete for a pair exactly
+when four-cycles generate the cycle lattice of a tripartite path graph,
+refuted for the *composite* by an exact unitary witness, and descending
+under records only to a limit: a record may be present, the cut-coherence
+tensor fully diagonal, and the composite still phase-nontrivial. §1.3 lists
+all twelve contributions and their scopes.
 
-All results are finite-dimensional and are stated with their scopes. Every
-number printed below is regenerated in exact arithmetic (rational
-arithmetic, cyclotomic and totally real number fields, integer lattices)
-by the accompanying code bundle; no floating-point number and no tolerance
-occurs anywhere in the reproduction.
+Every result is finite-dimensional. Every number printed below is
+regenerated in exact arithmetic — rational, cyclotomic and totally real
+fields, integer lattices — by the accompanying code bundle, with no
+floating-point number and no tolerance anywhere.
 
 ---
 
@@ -147,11 +121,23 @@ that signature under records and the limit of the descent (§7), its
 independence from three other obstruction families (§8), and its relation
 to Barandes' own equations (§9).
 
+**What is elementary here, and what is not.** The cross-term identity for
+$\Delta^{B}$ — Theorem 2.1 below — is elementary, and the identification of
+those cross terms with interference is Barandes' [1]; it is stated in closed
+form because everything else is organized around it, not because it is new.
+The paper's principal contributions are the two gauge-reduction theorems of
+§5, which determine exactly what the entrywise gauge leaves once composition
+and unitarity are required; the record-descent theorems of §7 together with
+their measured limit; and the pair-versus-composite phase-information
+boundary of §6 with the cross-block completion that closes it at the
+declared scope. The CHSH skeleton of §3 is assembled from cited antecedents,
+and §8 is a negative result about determination on a declared carrier.
+
 ### 1.3 Contributions
 
 The following are proved here, each with its scope tag.
 
-1. **The closed form and the three-defect separation** (Theorems 2.1, 2.3).
+1. **The closed form and the three-defect separation** (Theorems 2.1, 2.2).
    $\Delta^{B}_{ij}=|\sum_k w_k|^2-\sum_k|w_k|^2$ with $w_k$ the amplitude
    of the path through the cut; and an exact rational pair of $2\times 2$
    rotations with $\Delta^{B}\ne 0$ for which the shadow nevertheless admits
@@ -164,39 +150,48 @@ The following are proved here, each with its scope tag.
    the honest measurement that it is an identity of associativity: it
    survives replacing $B$ by six declared substitutes, including a map that
    ignores its argument. It constrains the family and selects nothing.
+   *Scope: any three composable factors in any finite dimension; verified as
+   a formal-matrix identity in independent entry variables at $d=2,3$, and
+   extended to every bracketing by Theorem 2.6.*
 
-3. **The two-sided annihilator** (Theorem 2.8): the set of left factors
+3. **The two-sided annihilator** (Theorem 2.7): the set of left factors
    annihilating the defect against *every* unitary is exactly the
    row-monomial unitaries, and dually. *Scope: hand proof with gated
    ingredients; the universal quantifier is carried by an explicit probe.*
 
-4. **The flat-spectrum identification** (Theorem 2.10). On the
+4. **The flat-spectrum identification** (Theorem 2.9). On the
    Fourier-sandwich family the defect vanishes exactly when the
    interleaving diagonal has a flat discrete spectrum. That flatness is
    equivalent to vanishing periodic autocorrelation is the discrete
    Wiener–Khinchin theorem and the definition of a CAZAC sequence [16]:
    **the equivalence is classical and is cited, not proved here.** What is
    ours is the identification of the vanishing locus with that condition.
+   *Scope: the Fourier-sandwich family only; verified exhaustively over the
+   declared phase groups at $N=2,\dots,5$.*
 
-5. **The records theorem with a decision procedure** (Theorems 4.2, 4.6,
-   4.8, 4.9). Two support hypotheses — perfect correlation and availability
+5. **The records theorem with a decision procedure** (Theorem 4.1,
+   Theorem 4.5, §4.4, Corollary 4.7, Definition 4.8). Two support
+   hypotheses — perfect correlation and availability
    — stated without reference to any defect, force every cross term to
    vanish individually. The existential question *does any record structure
    exist?* is not a search: it is decided by one union-find pass, in
    $O(n^2)$. On unitarily realizable supports at $n=3$ the criterion is
    exactly sharp (318 of 318); on abstract $0/1$ patterns it is not (5 490
-   of 94 746). *Scope: finite dimension; sufficiency, never necessity.*
+   of 94 746). An eraser control locates the boundary of the whole account.
+   *Scope: finite dimension; sufficiency, never necessity.*
 
-6. **The gauge reduction, derived twice** (Theorems 5.4, 5.5). The
+6. **The gauge reduction, derived twice** (Theorems 5.2, 5.3). The
    composition-compatible subgroup of the entrywise gauge is exactly the
    boundary gauge, and so is the subgroup preserving unitarity — the exact
    residual stabilizer that [3, p.19]'s "partial fixing" leaves open. The
    load-bearing quantifier in the first route is named and *measured*: on a
    totally path-degenerate pair that route licenses nothing, and the second
-   route alone carries the verdict there.
+   route alone carries the verdict there. *Scope: unitary arrows in
+   dimension $\ge2$; both routes verified exhaustively over declared finite
+   phase groups at $n=2,3$.*
 
-7. **The pair-orbit theorem and the completeness dichotomy** (Theorems 6.7,
-   6.11). The reduced gauge acts as vertex switching on a tripartite path
+7. **The pair-orbit theorem and the completeness dichotomy** (Theorems 6.4,
+   6.7). The reduced gauge acts as vertex switching on a tripartite path
    graph; a complete set of invariants at fixed moduli is a cycle basis.
    For the *pair*, the declared signature is complete **exactly when** the
    four-cycles generate; where they do not, the gap is realized by an
@@ -212,22 +207,28 @@ The following are proved here, each with its scope tag.
    over the block indices *equals* the composite's own four-cycle
    invariant — a derived identity, not an input. It is **sufficient and not
    claimed minimal**: every failing class has rank deficit exactly one, so
-   a smaller completion is not excluded.
+   a smaller completion is not excluded. *Scope: exhaustive for $n\le4$; the
+   declared strided sample at $n=5$; sufficiency, not minimality.*
 
 9. **A phase-retaining invariant the Born shadow does not determine**
    (Proposition 6.3). The relation-loop scalar $\beta$ separates all $N$
    Weyl classes at $N=2,\dots,6$ while their Born shadows are identical.
    The claim is **non-factorization, not refinement**: $\beta$ is *not a
    functional of* $B\circ\rho$, and it is *not* finer than it — a
-   counterexample is exhibited.
+   counterexample is exhibited. *Scope: the Weyl families at
+   $N=2,\dots,6$; $\beta$ is defined only where the group commutator is
+   scalar.*
 
 10. **Record descent and its measured limit** (Theorems 7.1, 7.2, §7.4).
     Availability alone block-diagonalizes the cut-coherence tensor;
     correlation collapses it inside a block. Block-diagonalization is
     **not** phase triviality, and a pair may carry a record, have a fully
-    diagonal tensor, and still have a phase-nontrivial composite.
+    diagonal tensor, and still have a phase-nontrivial composite. *Scope:
+    finite dimension for both theorems; the census is 8 declared
+    dimension-four operators against all 15 partitions.*
 
-11. **Independence of four obstruction families** (§8). All six pairs are
+11. **Independence of four obstruction families** (§8) — temporal,
+    contextual, lattice-gluing and frame-mappability. All six pairs are
     independent on a common 48-process carrier, with witnesses in both
     directions found mechanically by a test declared before the models were
     built. *Scope: one measurement scenario, six empirical models, nine
@@ -238,11 +239,15 @@ The following are proved here, each with its scope tag.
     annihilate every admissible distribution; the matrix form needs a
     spanning hypothesis which [3] does not state and which is shown here to
     be load-bearing. The contrapositive fires on an exactly declared,
-    unmarginalized division event in a two-measurement model, at three of
+    unmarginalized division event in a 36-configuration two-measurement
+    model built here from scratch, at three of
     six setting pairs and in both time orderings. Barandes' own hedge —
     that division events *"may be generated to an extremely good
     approximation … after marginalizing over those other systems"*
     [3, p.10] — describes a different object and is **not tested here**.
+    *Scope: clause (a) needs no hypothesis beyond [3]'s own equations, and
+    clause (b) needs a spanning family [3] does not supply; the forcing is
+    exhibited on one model, at six declared setting pairs in two frames.*
 
 ### 1.4 What is not claimed
 
@@ -347,7 +352,7 @@ $$
 Under the Born declaration $\Gamma_{21}:=B(U_2)$ the first two coincide;
 in general they do not, and $d_{\mathrm{div}}$ is a third object.
 
-**Theorem 2.3 (separation).** *There is an exact rational pair of $2\times2$
+**Theorem 2.2 (separation).** *There is an exact rational pair of $2\times2$
 unitaries with $\Delta^{B}\ne0$ whose Born shadow nevertheless factorizes
 through a genuine stochastic matrix. Hence $\Delta^{B}\ne0$ does not imply
 stochastic indivisibility.*
@@ -383,7 +388,7 @@ $B(U_2)$.
 
 ### 2.4 The invariance group, and the one handle
 
-**Proposition 2.4.** *With $D,D'$ diagonal unitary and $P$ a permutation:*
+**Proposition 2.3.** *With $D,D'$ diagonal unitary and $P$ a permutation:*
 
 | | law | |
 |---|---|---|
@@ -399,6 +404,10 @@ unchanged up to a common unimodular factor per $(i,j)$, or unchanged
 outright; (iv) permutes the index triples; (v) transposes the path
 labelling. (i) is near-tautological, since $B(I)=I$ makes the two terms of
 the definition coincide term by term. $\square$
+
+*Scope tag.* Items (i)–(v) are identities in all finite dimensions, read off
+the closed form; item (vi) is a *non*-identity and is exhibited, not proved
+general.
 
 Item (ii) contains the standing wall $B(\omega U)=B(U)$ and is strictly
 stronger: what dies at each outer slot is the whole maximal torus, and by
@@ -422,12 +431,21 @@ $$
 inside it. On the declared witness set
 $\{R_{01},R_{12},R_{01}F_3,R_{12}F_3\}$ at $n=3$ — none of whose members
 lies in $\mathcal{F}_3$ — one finds $A\ne0$ on $12$ of the $16$ ordered
-pairs, with off-diagonal entries $\pm14/625$, and $A\mapsto-A$ under
-reversal on all $16$.
+pairs — at the first of them the nonzero antisymmetric entries are
+$\pm14/625$; across the twelve they take 24 distinct values — and
+$A\mapsto-A$ under reversal on all $16$, which is Proposition 2.3(v) and
+not a measurement.
 
 Item (vi) — the *uncompensated* cut — is the only surviving handle, and it
-is not a group action on the pair. On a declared stride of 24 members of
-$\mathcal{F}_2$ it moves the defect on **192 of 576** ordered pairs. This
+is not a group action on the pair. On the declared stride of 24 members of
+$\mathcal{F}_2$ (every fourth member in the family's own construction
+order), with the declared insertion $U_2\mapsto U_2D$ at the cut and the
+declared diagonal
+$$
+D=\operatorname{diag}\bigl(\zeta_8^{2},\,\zeta_8^{4}\bigr)
+=\operatorname{diag}(i,-1),
+$$
+it moves the defect on **192 of 576** ordered pairs. This
 count returns in §5 and §6, where it is the same measurement read twice,
 not two independent ones.
 
@@ -444,7 +462,7 @@ $B(U_2)B(U_1)$; therefore **all row sums and all column sums of
 $\Delta^{B}$ vanish**, and the family lands in the $(n-1)^2$-dimensional
 space of doubly-centred matrices. Writing $s_{ij}=(B(U_2)B(U_1))_{ij}$:
 
-**Proposition 2.5 (sharp bounds, by certificate).**
+**Proposition 2.4 (sharp bounds, by certificate).**
 $$
 \Delta^{B}_{ij}+s_{ij}=\Bigl|\sum_k w_k\Bigr|^{2},
 \qquad
@@ -468,7 +486,7 @@ $$
 
 ### 2.6 The coherence law, and what it is worth
 
-**Theorem 2.6 (coherence law).** *For any three composable factors,*
+**Theorem 2.5 (coherence law).** *For any three composable factors,*
 $$
 \Delta^{B}(U_3U_2,\,U_1)+\Delta^{B}(U_3,U_2)B(U_1)
 \;=\;
@@ -479,6 +497,9 @@ $$
 *Proof.* Expand each $\Delta^{B}$ by its definition; both sides telescope
 to the common form. $\square$
 
+*Scope tag.* Any three composable factors, any finite dimension; the proof
+uses no property of $B$ beyond its being a map on matrices.
+
 More generally, write $\Delta_n(L_1,\dots,L_n)=B(L_1\cdots L_n)-B(L_1)\cdots B(L_n)$, and for a binary bracketing $T$ define $\Phi(\text{leaf})=0$ and
 $$
 \Phi(T)=\Delta^{B}\bigl(U(T_L),U(T_R)\bigr)+\Phi(T_L)\,B\bigl(U(T_R)\bigr)
@@ -486,7 +507,7 @@ $$
 $$
 where $\prod_L B$ is the product of $B$ over the *leaves* of $T_L$.
 
-**Theorem 2.7 (tree law).** $\Phi(T)=\Delta_n$ *for every bracketing $T$.*
+**Theorem 2.6 (tree law).** $\Phi(T)=\Delta_n$ *for every bracketing $T$.*
 
 *Proof.* Induction. With $A=U(T_L)$, $B$-side $=U(T_R)$,
 $\Phi(T_L)=B(A)-\prod_L$ and $\Phi(T_R)=B(\text{right})-\prod_R$,
@@ -500,6 +521,9 @@ variables for every entry of $B$ of every contiguous sub-product — 24
 variables at $d=2$, 54 at $d=3$ — with no property of $B$ assumed. The
 bracketing counts at $n=2,\dots,5$ are $1,2,5,14$, the Catalan numbers, and
 the identity holds at all of them.
+
+*Scope tag.* Every binary bracketing at every $n$ and every finite
+dimension; the mechanical verification is at $d=2,3$ and $n\le5$.
 
 **Honest measurement.** Because the gate assumes nothing about $B$, the law
 holds for *any* map. This is made concrete: with $B$ replaced by six
@@ -523,7 +547,7 @@ witness is exhibited in $\mathcal{F}_2$ (family indices $32,0,32$).
 
 ### 2.7 The two-sided annihilator
 
-**Theorem 2.8 (annihilator).** *Let*
+**Theorem 2.7 (annihilator).** *Let*
 $$
 \mathcal{K}_L=\{U_2:\Delta^{B}(U_2,V)=0\ \text{for every unitary}\ V\},\qquad
 \mathcal{K}_R=\{U_1:\Delta^{B}(V,U_1)=0\ \text{for every unitary}\ V\}.
@@ -542,8 +566,8 @@ $$
 $$
 and $\operatorname{Re}(z)=\operatorname{Re}(iz)=0$ forces $z=0$; so
 $m\in\{0,1\}$ separates every non-monomial row. $\mathcal{K}_R$ follows by
-the reversal covariance 2.4(v), whose effect is to transpose the probes.
-$\square$
+the reversal covariance of Proposition 2.3(v), whose effect is to transpose
+the probes. $\square$
 
 *Scope tag.* This is a hand proof with verified ingredients: the closed
 form, the unitarity of the probes (entries in $\mathbb{Q}(i)$ only), and
@@ -554,7 +578,7 @@ $\mathcal{F}_2$ and all $9$ of $\mathcal{F}_3$ are separated in the left
 slot, and likewise in the right slot with the transposed probes — $0$
 unseparated in either.
 
-**Corollary.** $B$ restricted to the monomial group $\mathrm{Mon}(n)= \mathbb{T}^n\rtimes S_n$ is a group homomorphism onto $S_n$, with the whole
+**Corollary 2.8.** $B$ restricted to the monomial group $\mathrm{Mon}(n)= \mathbb{T}^n\rtimes S_n$ is a group homomorphism onto $S_n$, with the whole
 torus in its kernel.
 
 ### 2.8 The flat-spectrum identification
@@ -566,7 +590,7 @@ $(F_NEF_N)_{jk}=\tfrac1N\sum_m\varepsilon_m\omega^{m(j+k)}$, the entries are
 the discrete Fourier transform of the unimodular sequence $\varepsilon$
 read at $j+k$.
 
-**Theorem 2.10 (identification).**
+**Theorem 2.9 (identification).**
 $$
 \Delta^{B}=0
 \;\Longleftrightarrow\;
@@ -600,7 +624,7 @@ $$
 on all $4096$ and all $81$ parameter quadruples respectively, $0$
 mismatches. **The vanishing of $\Delta^{B}$ is a phase-alignment condition,
 and the alignment condition is flatness of a Fourier spectrum.** The
-support criterion of Theorem 2.8 is sufficient and strictly weaker.
+support criterion of Theorem 2.7 is sufficient and strictly weaker.
 
 ---
 
@@ -672,9 +696,12 @@ $[-1,1]$, and $2\sqrt2<4$ exactly. $\square$
 
 ### 3.2 Planar sufficiency
 
-By Tsirelson's theorem [7] — cited, not proved here — the quantum
+By Tsirelson's theorem — cited, not proved here — the quantum
 correlator set at this scenario is
 $\mathcal{Q}^{\mathrm{qm}}=\{E_{ab}=\langle u_a,v_b\rangle: u_a,v_b\ \text{unit vectors in a real Hilbert space}\}$, of unbounded dimension.
+Within [7], the bound $|S|\le2\sqrt2$ is the 1980 paper's, while the
+real-unit-vector characterization — on which the planar sufficiency clause
+below leans — is the 1987 paper's.
 That the *planar* configurations already generate it is likewise standard
 (it is normally quoted as part of Tsirelson's theorem); the contribution
 here is the exact assembly of its three ingredients, each verified
@@ -703,11 +730,16 @@ planar family for every $\lambda$; both sets are compact convex, so
 $\mathcal{Q}=\mathcal{Q}^{\mathrm{qm}}$.
 
 An independent corroboration presses the ceiling with a **declared
-deterministic stride**: from the full enumeration of rational unit vectors
-(246 in $\mathbb{R}^3$ at entries $|k|\le9$; 808 in $\mathbb{R}^4$ at
-$|k|\le5$) take every 9th, respectively every 31st, keeping 26 in each
-case, and sweep all $26^4=456\,976$ four-vector configurations. No
-configuration exceeds $2\sqrt2$; the maxima reached are $14/5=2.8$ in
+deterministic stride**, whose enumeration order and truncation are fixed
+here so that the maxima below are derivable. Enumerate the integer tuples
+$(k_1,\dots,k_n)$ with every $|k_i|\le9$ in $\mathbb{R}^3$, respectively
+$|k_i|\le5$ in $\mathbb{R}^4$, in lexicographic order; keep those whose
+squared norm is a perfect square; divide by that integer norm; and
+deduplicate in order of first occurrence. This gives 246 rational unit
+vectors in $\mathbb{R}^3$ and 808 in $\mathbb{R}^4$. From each list take
+every 9th, respectively every 31st, member starting at the first, truncate
+to the first 26, and sweep all $26^4=456\,976$ four-vector configurations.
+No configuration exceeds $2\sqrt2$; the maxima reached are $14/5=2.8$ in
 $\mathbb{R}^3$ and $19/7\approx2.714$ in $\mathbb{R}^4$, against the ceiling
 $2\sqrt2\approx2.8284$.
 
@@ -731,7 +763,7 @@ cosmetic.
 
 At the class level the exclusion is sharper.
 
-**Proposition 3.3.** *Every $\{\pm1\}$-valued $U(1)$-Gram point satisfies*
+**Proposition 3.2.** *Every $\{\pm1\}$-valued $U(1)$-Gram point satisfies*
 $$
 E_{00}E_{01}E_{10}E_{11}=+1. \tag{$*$}
 $$
@@ -740,6 +772,9 @@ $$
 $z=\varepsilon w$. Reading $z_a=E_{ab}w_b$ at $b=0$ and $b=1$ gives
 $w_1=E_{a0}E_{a1}w_0$ for both $a$, hence $E_{00}E_{01}=E_{10}E_{11}$,
 hence $(*)$. $\square$
+
+*Scope tag.* The CHSH $(2,2,2)$ correlator projection, and only its
+$\{\pm1\}$-valued points; nothing is claimed about interior points.
 
 Of the 16 sign vectors, exactly the 8 with product $+1$ are the
 $\{\pm1\}$-factorizable ones — verified exhaustively. The superquantum
@@ -796,7 +831,7 @@ sweeps over two different families and are cited separately.
 uniform marginals, correlators $(1,1,1,-1)$, $S=4$ exactly, and four-cycle
 holonomy $-1$: not a coboundary.
 
-| model | four-cycle holonomy | $|$CHSH$|$ |
+| model | four-cycle holonomy | $\lvert$CHSH$\rvert$ |
 |---|---|---|
 | singlet Gram model (Tsirelson-saturating) | **trivial** ($=1$) | $2\sqrt2$ |
 | superquantum edge-phase pattern | **nontrivial** ($=-1$) | $4$ |
@@ -841,7 +876,7 @@ computed, and no such counterexample is found.
 
 ### 4.2 The theorem
 
-**Theorem 4.2 (records kill the defect).** *Let a record structure at the
+**Theorem 4.1 (records kill the defect).** *Let a record structure at the
 cut satisfy (H-corr) and (H-avail). Then every summand of the closed form
 vanishes individually, hence*
 $$
@@ -871,7 +906,7 @@ is $(\tfrac14,\tfrac14,\tfrac14,\tfrac14)$. No decoherence is applied
 anywhere. Removing the CNOT — the only change — breaks (H-corr) and the
 defect returns with $\Delta^{B}_{00}=\tfrac12$.
 
-**Theorem 4.3 (the reading route).** *If the record is physically read at
+**Theorem 4.2 (the reading route).** *If the record is physically read at
 the cut — the channel is $U_2\circ\mathcal{D}\circ U_1$ with the pinching
 $\mathcal{D}(\rho)=\sum_r P_r\rho P_r$ onto the record sectors — and the
 sectors satisfy (H-corr), then for **any** later dynamics whatever*
@@ -887,8 +922,11 @@ configuration pinching on that state, giving
 $\mathcal{D}(U_1|j\rangle\langle j|U_1^\dagger)=\sum_k|(U_1)_{kj}|^2\, |k\rangle\langle k|$. Conjugating by $U_2$ and reading the diagonal gives
 $\sum_k|(U_2)_{ik}|^2|(U_1)_{kj}|^2=(B(U_2)B(U_1))_{ij}$. $\square$
 
-The two routes are genuinely different: Theorem 4.2 needs **no decoherence
-at all** — the record keeps the branches apart by itself — while Theorem 4.3
+*Scope tag.* Finite dimension; (H-corr) alone, with **no** hypothesis on the
+later dynamics, and sufficiency never necessity.
+
+The two routes are genuinely different: Theorem 4.1 needs **no decoherence
+at all** — the record keeps the branches apart by itself — while Theorem 4.2
 needs no hypothesis on the future. **The reading route still needs
 (H-corr):** reading a *coarse*, non-separating record leaves the
 intra-sector coherences alive. Both are verified: the fine reading equals
@@ -897,7 +935,7 @@ unit column sums); a genuinely coarse but *separating* record — two sectors
 of size two, not singletons — also divides; and the one-sector reading
 returns the *unread* shadow exactly.
 
-**Theorem 4.4 (channel form).** *Let $\mathcal{H}$ be finite-dimensional,
+**Theorem 4.3 (channel form).** *Let $\mathcal{H}$ be finite-dimensional,
 $\{\rho_j\}$ declared initial states, $\Phi_1,\Phi_2$ CPTP maps, $\{P_r\}$
 an orthogonal resolution at the cut, $\{F_i\}$ a POVM at the final time.
 Put $\Gamma_{10}(r\mid j)=\operatorname{Tr}[P_r\Phi_1(\rho_j)]$,
@@ -916,14 +954,14 @@ $\sigma_{r\mid j}=P_r\Phi_1(\rho_j)P_r/\Gamma_{10}(r\mid j)$. Assume*
 (R1) holds when the reading is applied physically, and when $\Phi_2$'s Kraus
 operators are sector-graded and the $F_i$ commute with the $P_r$ — which is
 (H-avail) at the support level. (R2) holds when the sectors are rank one —
-(H-corr)'s strongest form. Theorem 4.2 does **not** need (R2), because under
+(H-corr)'s strongest form. Theorem 4.1 does **not** need (R2), because under
 (H-avail) the later configuration already determines the record value. Both
 are the same one-line mechanism: *interference between record sectors is
 unobservable, and inside a sector there is at most one live alternative.*
-**Declared limit:** Theorem 4.4 is proved here and exercised only through
+**Declared limit:** Theorem 4.3 is proved here and exercised only through
 its instances; no separate CPTP census is run.
 
-**Theorem 4.5 (approximate correlation).** *Under (R1), with the declared
+**Theorem 4.4 (approximate correlation).** *Under (R1), with the declared
 divisor $\widehat\Gamma_{21}(i\mid r)=\operatorname{Tr}[F_i\Phi_2(\sigma_r)]$,*
 $$
 \sum_i\bigl|D(i\mid j)\bigr|\;\le\;\sum_r\Gamma_{10}(r\mid j)\,
@@ -945,11 +983,11 @@ and the zero-deviation point is the exact-record point) and the remaining
 
 ### 4.3 The decision procedure
 
-Theorem 4.2 is a sufficient condition *at a given* record structure. The
+Theorem 4.1 is a sufficient condition *at a given* record structure. The
 question that matters downstream — *does **any** record structure work?* —
 is not a search problem at all.
 
-**Theorem 4.6 (decision criterion).** *Let $M(U_2)$ be the transitive
+**Theorem 4.5 (decision criterion).** *Let $M(U_2)$ be the transitive
 closure of the co-merge relation "$k\sim\ell$ iff some later configuration
 receives amplitude from both", and call $k,\ell$ **co-live** for $U_1$ if
 some initial configuration makes both live. Then*
@@ -1015,7 +1053,7 @@ $Q$-pairs and all 318 admit a record structure — 0 exceptions**. At $n=3$
 the abstract non-sharpness is entirely an artefact of patterns that carry no
 unitary. Neither number is claimed beyond $n=3$.
 
-**Proposition 4.7 (the two monomial endpoints).** *Over all 512 supports at
+**Proposition 4.6 (the two monomial endpoints).** *Over all 512 supports at
 $n=3$, with no exceptions,*
 $$
 (\text{H-avail})\ \text{at the finest record}\iff U_2\ \text{row-monomial},
@@ -1027,7 +1065,7 @@ sufficiency conditions of §2.2 are therefore the two endpoints of one
 record-indexed family, and the **intermediate** structures are strictly
 stronger than both.
 
-**Corollary 4.8 (multi-cut).** *Let $U_1,\dots,U_{m+1}$ be the legs of a
+**Corollary 4.7 (multi-cut).** *Let $U_1,\dots,U_{m+1}$ be the legs of a
 chain and let each cut $t$ carry a record structure $\pi_t$ satisfying
 (H-corr) for the composite prefix $U_t\cdots U_1$ and (H-avail) for the next
 leg $U_{t+1}$. Then*
@@ -1037,8 +1075,11 @@ $$
 *i.e. the residual vanishes at every cut simultaneously and the chain is
 Chapman–Kolmogorov.*
 
-*Proof.* Apply Theorem 4.2 at the last cut to the pair
+*Proof.* Apply Theorem 4.1 at the last cut to the pair
 $(U_{m+1},U_m\cdots U_1)$, then recurse on the shorter chain. $\square$
+
+*Scope tag.* Finite dimension, any chain length; sufficiency at every cut
+simultaneously, never necessity at any of them.
 
 Verified on exact chains with a **growing** record: three legs on 8
 configurations with records at both cuts, and four legs on 16 configurations
@@ -1055,14 +1096,26 @@ the decision criterion finds a record structure in **all 49**.
 The same theorem is now exhibited on a model of a bipartite two-measurement
 experiment, built here from scratch and reused in §8 and §9.
 
-**Definition 4.9 (the composite model).** The configuration space is
+**Definition 4.8 (the composite model).** The configuration space is
 $C=\{(q_A,q_B,p_A,p_B)\}$ with $q_X\in\{0,1\}$ and $p_X\in\{r,+,-\}$, so
 $|C|=36$, indexed by $i=((q_A\cdot2+q_B)\cdot3+p_A)\cdot3+p_B$, with initial
 configuration $j_0=0$, i.e. $(0,0,r,r)$. The propagators are
 
 - **preparation** $U_{\mathrm{prep}}=V\otimes I_9$, with $V$ real orthogonal
   carrying $e_0$ to the singlet vector $(0,\tfrac1{\sqrt2},-\tfrac1{\sqrt2},0)$
-  on $(q_Aq_B)=(00,01,10,11)$;
+  on $(q_Aq_B)=(00,01,10,11)$. The singlet requirement fixes only column $0$
+  of $V$; the completion used throughout is declared here in full,
+  $$
+  V=\begin{pmatrix}
+  0 & 0 & 1 & 0\\[2pt]
+  \tfrac1{\sqrt2} & \tfrac1{\sqrt2} & 0 & 0\\[2pt]
+  -\tfrac1{\sqrt2} & \tfrac1{\sqrt2} & 0 & 0\\[2pt]
+  0 & 0 & 0 & 1
+  \end{pmatrix}.
+  $$
+  (The remaining columns are load-bearing: the residual on the model's own
+  initial distribution is independent of them, but the matrix-level
+  differing counts and the ranks of $\Gamma(2\!\leftarrow\!0)$ are not.)
 - **local measurement** $U_X(\theta)=\sum_s\Pi^\theta_s\otimes \mathrm{Sh}^{n(s)}$, acting on $(q_X,p_X)$ and trivially on the other pair,
   where $\Pi^\theta_\pm$ are the rank-one projectors onto
   $(\cos\tfrac\theta2,\sin\tfrac\theta2)$ and
@@ -1081,7 +1134,10 @@ $\mathbb{Q}(\cos\pi/8)=\mathbb{Q}[x]/(8x^4-8x^2+1)$, so all arithmetic is
 exact. Verified: $U_{\mathrm{prep}}$ is exactly orthogonal, with $j_0$
 column $\tfrac1{\sqrt2}$ at index 9 and $-\tfrac1{\sqrt2}$ at index 18; all
 8 local operators are exactly orthogonal; the two local operators **commute
-at all 9 setting pairs**; and the outcome law is exactly
+at all 9 setting pairs** (9 = the $3\times3$ grid of distinct settings
+appearing in the six declared pairs; all 16 ordered pairs drawn from
+$\{0^\circ,45^\circ,90^\circ,135^\circ\}$ in fact commute, the two wings
+acting on disjoint coordinates); and the outcome law is exactly
 $$
 P(\alpha,\beta)=\tfrac14\bigl(1-\alpha\beta\cos(a-b)\bigr),
 $$
@@ -1092,7 +1148,9 @@ with both marginals $\tfrac12$ — 60 exact identities across the twelve
 model is computed and depending only on the configuration indexing*, the
 family of **16 record structures** that read a subset of the four
 configuration coordinates, from the one-sector trivial structure to the
-36-sector finest one. Then, at all twelve cells:
+36-sector finest one. Then, at all twelve cells — *this table is read at the
+matrix level, and is therefore a statement about the completion of $V$
+declared in Definition 4.8, not about the singlet column alone*:
 
 | setting pair | $F_1$ | winning structures | $F_2$ | winning structures |
 |---|---|---|---|---|
@@ -1104,10 +1162,13 @@ configuration coordinates, from the one-sector trivial structure to the
 | $(45^\circ,45^\circ)$ | indivisible | — | indivisible | — |
 
 The indivisible cells differ from $\Gamma(3\!\leftarrow\!2)\Gamma(2\!\leftarrow\!0)$
-in **288 entries** each; the divisible ones in 0.
+in **288 entries** each; the divisible ones in 0. The count 288 is
+$V$-dependent — other legitimate completions of the singlet column give
+other counts — while the vector-level residual of §9.3, and the forcing it
+carries, are not.
 
 **The biconditional is decided over the full class, not measured over 16.**
-Theorem 4.6 answers the existential question over *every* set partition of
+Theorem 4.5 answers the existential question over *every* set partition of
 the 36 configurations — a class of size $B(36)\approx10^{31}$, which no
 search could enumerate — by testing the single canonical partition
 $M(U_2)$. The answer agrees with divisibility at **12 of 12 cells**, and
@@ -1126,14 +1187,15 @@ Alice's *outcome*, but two live alternatives share a pointer sector:
 (H-corr) fails, the cross terms survive, and the law does not divide. In
 $F_2$ at $a=0^\circ$ the divisibility comes from the *finest* record
 instead, because the second-leg operator is monomial — the same theorem at
-its other endpoint (Proposition 4.7).
+its other endpoint (Proposition 4.6).
 
 **A legitimate division event is a record event**, on this model, in both
 frames, at every setting pair. This is a statement about *this model*; the
 general converse is false (§4.7).
 
 Finally, the exact ranks of $\Gamma(2\!\leftarrow\!0)$ over the twelve cells
-are $27$ or $18$ — **never 36**. This will matter in §9.
+are $27$ or $18$ — **never 36**. These two values are again $V$-dependent;
+what §9 uses is only that the rank is deficient. This will matter in §9.
 
 ### 4.6 The eraser control
 
@@ -1187,7 +1249,7 @@ identity — $D=\Gamma_{20}-B(U_2)B(U_1)=\Delta^{B}$ — so the ladder has
 refuted here; one is explicitly **not tested**.
 
 - **$d_{\mathrm{div}}=0\;\not\Rightarrow$ a record.** At the rotation cut of
-  Theorem 2.3, the *existential* divisibility holds — witnessed by the
+  Theorem 2.2, the *existential* divisibility holds — witnessed by the
   non-canonical divisor $K=S(-175/527)$ — while of the two partitions of a
   two-configuration space the finest fails (H-avail), because $U_2$ is not
   monomial, and the trivial fails (H-corr), because both alternatives are
@@ -1281,7 +1343,7 @@ $$
 i.e. the transformed factors compose to the transformed composite: the gauge
 is an endofunctor fixing objects.
 
-**Theorem 5.4.** *Over unitary arrows in dimension $\ge2$, a gauge family is
+**Theorem 5.2.** *Over unitary arrows in dimension $\ge2$, a gauge family is
 composition-compatible **iff***
 $$
 \Theta^{(b,a)}_{ij}=d^{(b)}_i\,\overline{d^{(a)}_j}
@@ -1339,7 +1401,7 @@ Where the first route is vacuous, the second route carries the verdict.
 
 ### 5.3 The unitarity-preservation theorem
 
-**Theorem 5.5.** *$\Theta\circ U$ is unitary for **every** unitary $U$ iff
+**Theorem 5.3.** *$\Theta\circ U$ is unitary for **every** unitary $U$ iff
 every Haagerup invariant of $\Theta$ equals 1 iff $\Theta$ is of boundary
 form.*
 
@@ -1367,10 +1429,14 @@ $\lambda_k=\lambda_l$, i.e. $H_{ij;kl}(\Theta)=1$. The construction exists
 for **every** $(i,j)$ and **every** $(k,l)$, so every Haagerup quadruple of
 $\Theta$ is trivial. For the last step: $\Theta$ is a gauge matrix, so every
 entry is unimodular *by definition of the gauge* — $\Theta$ has full
-support, its bipartite graph is complete and therefore connected, and by
-Theorem 5.6 its cycle lattice is generated by the four-cycles. Trivial
-Haagerup on every four-cycle is then precisely the boundary form, by the
-switching reconstruction of Theorem 5.6. $\square$
+support, so its bipartite graph is the complete $K_{n,n}$, connected, and
+its cycle lattice is generated by the four-cycles. That last fact is
+elementary and is proved here rather than cited: fix a column vertex $k'$;
+any cycle of $K_{n,n}$ of length $>4$ contains a sub-path $i\!-\!k\!-\!j$
+with $k\ne k'$, and adding the four-cycle $i\!-\!k\!-\!j\!-\!k'\!-\!i$
+replaces it by $i\!-\!k'\!-\!j$, shortening the cycle by two; induct on
+length. Trivial Haagerup on every four-cycle is then precisely the boundary
+form, by the switching reconstruction of Theorem 5.4. $\square$
 
 **The placement is load-bearing, and the gap it closes is measured.** A
 rotation in the $(k,l)$ *coordinate* plane moves columns $\{k,l\}$ back into
@@ -1443,7 +1509,7 @@ $\mu=|E|-|V|+c$ — is Zaslavsky's [11,12]. What is this paper's is the exact
 adaptation to the declared matrix families, to support changes, and (in §6)
 to the composable-pair graph.
 
-**Theorem 5.6 (orbit classification).** *Two matrices with the same support
+**Theorem 5.4 (orbit classification).** *Two matrices with the same support
 and the same moduli are boundary-gauge equivalent **iff** their cycle-basis
 holonomies agree.*
 
@@ -1452,6 +1518,10 @@ the switching to 1 at each component root and propagate it along tree edges
 — forced, one choice per vertex, since $V_{ij}=d_i\overline{d_j}U_{ij}$
 determines the far endpoint from the near one. Every non-tree edge then
 agrees iff its fundamental-cycle holonomy agrees. $\square$
+
+*Scope tag.* Any two finite matrices sharing a support and its moduli, at
+any $n$; the classification statement is Zaslavsky's [11], adapted here to
+the declared families and to support changes.
 
 Verified by **building** the switching in every positive case and checking
 it entrywise: **4608 of 9216** ordered pairs of $\mathcal{F}_2$ and
@@ -1487,6 +1557,9 @@ $$
 *The multiplier does not appear.*
 
 *Proof.* $B(\omega U)=B(U)$ for unimodular $\omega$; substitute. $\square$
+
+*Scope tag.* Any group, any multiplier, any finite-dimensional projective
+representation; nothing is assumed about the lift.
 
 The whole defect family of a projective representation is thus the deviation
 of $\beta_B$ from being a homomorphism, and $\beta_B$ is a function of the
@@ -1528,7 +1601,9 @@ $$
 $$
 the antisymmetrization of the multiplier and the complete invariant of the
 class in $H^2(\mathbb{Z}^2,U(1))$, which for $\mathbb{Z}^2$ with trivial
-action is determined by that alternating bicharacter.
+action is determined by that alternating bicharacter. The multiplier
+background — Weyl relations on $\mathbb{Z}^2$ and the noncommutative torus,
+realized by the clock/shift pair — is standard and is [9].
 
 **Proposition 6.3.** *On the Weyl families, $\beta=\zeta_N^{-k}$ separates
 all $N$ classes at every $N=2,\dots,6$, with
@@ -1566,7 +1641,7 @@ what §5 licensed.
 
 ### 6.3 The pair graph and the cut-coherence tensor
 
-**Theorem 6.7 (pair-orbit theorem).** *The declared gauge on a composable
+**Theorem 6.4 (pair-orbit theorem).** *The declared gauge on a composable
 pair — outer boundary, compensated cut, projective scalar — acts **exactly
 as vertex switching** on the tripartite path graph*
 $$
@@ -1586,9 +1661,13 @@ size $\mu(\mathsf{G})=|E|-|V|+c$.*
 
 *Proof.* The three declared moves are exactly the three vertex classes'
 switchings, by inspection of the edge values; cycle holonomies are
-switching-invariant by the argument of §5.5; and Theorem 5.6's construction,
+switching-invariant by the argument of §5.5; and Theorem 5.4's construction,
 applied to $\mathsf{G}$, reconstructs the switching from agreeing
 cycle-basis holonomies. $\square$
+
+*Scope tag.* Any composable pair at any finite $n$, at fixed moduli; the
+gauge is the declared one — outer boundary, compensated cut, projective
+scalar — and no larger group is claimed.
 
 **The shared boundary phase frame is the $K$-vertex switching.** It is
 required: the gauge orbits of $U_2$ and $U_1$ *separately* do not determine
@@ -1610,7 +1689,7 @@ w^{ij}_k=(U_2)_{ik}(U_1)_{kj},
 \mathcal{C}^{ij}_{k\ell}=w^{ij}_k\,\overline{w^{ij}_\ell}.
 $$
 
-**Proposition 6.8.** *On 64 declared stride pairs:* $\mathcal{C}$ is
+**Proposition 6.5.** *On 64 declared stride pairs:* $\mathcal{C}$ is
 invariant under the compensated cut (the $w$'s themselves are: 256 checks);
 outer boundary rephasings cancel ($w_k\mapsto d_ie_jw_k$, so
 $\mathcal{C}\mapsto|d_ie_j|^2\mathcal{C}$); projective scalars of both
@@ -1647,7 +1726,7 @@ four-cycles only.
 
 ### 6.4 Completeness at full path support
 
-**Theorem 6.9.** *If every path amplitude $w^{ij}_k$ is nonzero, then
+**Theorem 6.6.** *If every path amplitude $w^{ij}_k$ is nonzero, then
 $\mathcal{C}$ is a **complete** invariant of the pair up to the declared
 gauge, and a fortiori determines the composite's boundary orbit.*
 
@@ -1701,7 +1780,7 @@ $\mathsf{G}$-classes have a four-cycle sublattice of rank exactly $\mu-1$**
 — the deficit is 1 in every one of them.
 
 **The superset is measured, not merely disclosed.** Birkhoff–von Neumann
-sharpens the condition: $B(U)$ is doubly stochastic with exactly the same
+[17] sharpens the condition: $B(U)$ is doubly stochastic with exactly the same
 support, so every entry of a realizable pattern must lie on a permutation
 contained in it — *total support*. At $n=4$ that test proves **36 of the 783**
 admissible patterns non-realizable. **All 7 failing classes have total
@@ -1710,15 +1789,20 @@ support on both legs**, so not one of them is a superset artefact.
 **A lattice gap is not yet an invariant of unitaries. The $\varphi$-criterion
 makes it one.** The only non-gauge diagonal move on a composable pair is the
 uncompensated cut $U_2\mapsto U_2D$. It preserves unitarity, support and
-moduli for *every* unitary pair with the given support; it fixes every $L_4$
-holonomy; and it multiplies the holonomy of a cycle $z$ by
-$\prod_kd_k^{\varphi(z)_k}$, where
+moduli for *every* unitary pair with the given support, and it multiplies
+the holonomy of a cycle $z$ by $\prod_kd_k^{\varphi(z)_k}$, where
 $$
 \varphi(z)_k=\sum_i z_{e_2(i,k)}
 $$
-sums the $U_2$-edge coefficients of $z$ at the intermediate vertex $k$. So
-the gap is **realized — by an actual unitary pair, and for every unitary pair
-with that support — iff $\varphi(Z(\mathsf{G}))\not\subseteq\varphi(L_4)$.**
+sums the $U_2$-edge coefficients of $z$ at the intermediate vertex $k$. A
+seam four-cycle $i\!-\!k\!-\!j\!-\!\ell\!-\!i$ has $\varphi=e_k-e_\ell$, so
+a general cut does *not* fix $L_4$; the cuts that do are exactly those with
+$\prod_kd_k^{v_k}=1$ for every $v\in\varphi(L_4)$. Such a cut moves the
+holonomy of some $z\in Z(\mathsf{G})$ while fixing the entire declared
+signature precisely when
+$\varphi(Z(\mathsf{G}))\not\subseteq\varphi(L_4)$. So the gap is
+**realized — by an actual unitary pair, and for every unitary pair with that
+support — exactly under that condition.**
 It is: in **7 of 7** failing classes, with witness $\varphi$-images
 $$
 [0,0,1,-1],\ [-1,1,1,-1],\ [1,-1,1,-1],\ [0,0,1,-1],\ [1,-1,0,0],\
@@ -1752,7 +1836,7 @@ Exactly, and all verified:
 
 - all three are unitary and **neither factor is monomial**;
 - **every endpoint pair has exactly one live path** — total path degeneracy
-  *without* monomial factors, so the annihilator theorem 2.8 does not cover
+  *without* monomial factors, so the annihilator theorem 2.7 does not cover
   it;
 - $U_2$ and $U_2'$ lie in the **same** boundary orbit (they have identical
   moduli, and $U_2'=U_2\operatorname{diag}(1,\zeta_8,1,1)$);
@@ -1777,13 +1861,15 @@ Exactly, and all verified:
   a ratio of $-\zeta_8^{3}=\zeta_8^{7}$, a primitive eighth root, and no
   switching exists between them.
 
-> **Theorem 6.11 (main theorem; two levels, kept apart).**
+> **Theorem 6.7 (main theorem; two levels, kept apart).**
 >
 > **(i) For the pair.** The signature (factor cycle holonomies +
 > relation-loop phases + $\mathcal{C}$) determines the pair $(U_2,U_1)$ up to
-> the declared gauge **exactly when $L_4=Z(\mathsf{G})$.** $(\Leftarrow)$ is
-> the switching reconstruction (Theorems 5.6, 6.7), holding unconditionally
-> at full support (Theorem 6.9) and at every admissible support class for
+> the declared gauge **exactly when $L_4=Z(\mathsf{G})$** (verified
+> exhaustively for $n\le4$; sampled at $n=5$; general $n$ open).
+> $(\Leftarrow)$ is
+> the switching reconstruction (Theorems 5.4, 6.4), holding unconditionally
+> at full support (Theorem 6.6) and at every admissible support class for
 > $n=2,3$. $(\Rightarrow)$ is the $\varphi$-criterion: where
 > $L_4\ne Z(\mathsf{G})$ the gap is realized by an uncompensated cut, for
 > *every* unitary pair with that support — established at **all seven**
@@ -1884,7 +1970,11 @@ diagonal, hence $\Delta^{B}=0$ by the readout identity.*
 at most one live $k$ per column $j$, so the surviving off-diagonal entries
 are empty too. $\square$
 
-This recovers Theorem 4.2 as a corollary and **separates the two
+*Scope tag, for both.* Finite dimension, any record structure; both are
+support arguments using no property of the amplitudes, and both are
+sufficiency statements only — necessity is refuted in §7.4.
+
+This recovers Theorem 4.1 as a corollary and **separates the two
 hypotheses' roles**: (H-avail) buys the *block structure*, (H-corr) buys the
 *collapse inside a block*. Verified over 8 declared dimension-four operators
 $\times$ 15 partitions $\times$ 8 second factors: **432 triples satisfy
@@ -1950,6 +2040,17 @@ interference cross terms, and they do not kill the phase.
 ---
 
 ## 8. Independence of the obstruction families
+
+**Where this section sits in the argument.** Everything above treats a
+single obstruction: the failure of a Born shadow to compose across a cut. A
+reader is entitled to ask whether that is *the* obstruction — whether
+contextuality, the failure of division-event assignments to glue over a
+subsystem lattice, and the frame-dependence of intermediate content are one
+structure seen from different sides, in which case the theorems above would
+already account for them. This section proves that they are not one
+structure. Its function is therefore to scope the rest of the paper: it
+fixes what the composition defect can be asked to explain, and what lies
+outside its reach.
 
 Four obstruction families arise naturally around a composition defect: the
 **temporal** one studied above; the **contextual** one of the CHSH scenario;
@@ -2017,21 +2118,13 @@ The four levels are then: **NC** (a global distribution exists), **PC**
 assignment in the support), **LC** (some section does not extend), **SC** (no
 global assignment is consistent with the support at all).
 
-| model | level | consistent global assignments | non-extendable local sections | $\gamma\ne0$ |
-|---|---|---|---|---|
-| DET | NC | 1 | 0 | 0 of 4 |
-| UNIF | NC | 16 | 0 | 0 of 16 |
-| LCORR | NC | 2 | 0 | 0 of 8 |
-| SINGLET | **PC** | 16 | 0 | **0 of 16** |
-| HARDY | **LC** | 5 | 1 | **0 of 13** |
-| PR | **SC** | 0 | 8 | **8 of 8** |
-
 The **cohomological witness** $\gamma$ is computed for the criterion of [6]:
 with $S$ the support presheaf and $F$ the free abelian presheaf it
 generates, $\gamma(s_0)=0$ iff there are $r_i\in F(C_i)$ with
 $r|_{C_0}=s_0$ agreeing on every overlap, the empty ones included. That is
 an integer linear feasibility problem, decided here by exact integer
-elimination.
+elimination. The empirical-model and global-section formulation used
+throughout this section is Abramsky and Brandenburger's [5].
 
 **Attribution, before the numbers: both vanishing results are [6]'s own.**
 They are reproduced independently here and are **not** findings of this
@@ -2043,6 +2136,15 @@ corollary of their proposition that possibilistic extendability implies the
 obstruction vanishes on the whole support, since the singlet's support is
 full. What this paper contributes here is the exact integer certificate and
 the placement of these known facts inside the relation table.
+
+| model | level | consistent global assignments | non-extendable local sections | $\gamma\ne0$ |
+|---|---|---|---|---|
+| DET | NC | 1 | 0 | 0 of 4 |
+| UNIF | NC | 16 | 0 | 0 of 16 |
+| LCORR | NC | 2 | 0 | 0 of 8 |
+| SINGLET | **PC** | 16 | 0 | **0 of 16** |
+| HARDY | **LC** | 5 | 1 | **0 of 13** |
+| PR | **SC** | 0 | 8 | **8 of 8** |
 
 With that in place: $\gamma$ vanishes identically on the singlet at the CHSH
 settings — a model with **no global distribution at all** — and on HARDY,
@@ -2063,7 +2165,9 @@ steps first, so that the composite returns to the identity at the second
 grid time, changing no final statistic. The **declared second leg** is
 either the true conditional (**REC**) or the bare marginal (**COH**); the
 *actual* dynamics always records, and only the declared leg changes. Two
-**contexts** of the empirical model are realized. This gives
+**contexts** of the empirical model are realized, named here because §8.5
+turns on which one is which: the first is $(A_0,B_0)$ and the second is
+$(A_0,B_1)$. This gives
 $$
 6\ \text{tables}\times2\ \text{variants}\times2\ \text{prefixes}
 \times2\ \text{contexts}=48\ \text{processes}.
@@ -2083,14 +2187,16 @@ kills the declared residual at every cut and every context — verified on all
 $\text{joint}-\text{product}$, hence nonzero exactly on the correlated
 tables.
 
-**Divisibility, decided by certificates.** The question "is there a
+**Divisibility, decided exactly.** The question "is there a
 column-stochastic $X$ with $X\,\text{src}=\text{tgt}$?" is decided first by
 two exact certificates — equal source columns must carry equal targets, and
 if the distinct source columns have pairwise disjoint supports a divisor is
 **constructed** and verified entrywise — and otherwise by an exact Phase-I
 simplex with Bland's rule over $\mathbb{Q}(\sqrt2)$. The simplex fallback is
 invoked **64 times** across the sweep, and every invocation returns an exact
-verdict; nothing is left undecided.
+verdict; nothing is left undecided. For those 64 verdicts no dual
+certificate is extracted; correctness there rests on exact termination under
+Bland's rule.
 
 ### 8.4 The lattice invariant
 
@@ -2156,7 +2262,8 @@ $$
 \mathsf{F}(\text{HARDY, second context})=(\text{false},\ \text{true}).
 $$
 The full grain fails there because the two wings' marginals at that context
-are $(\tfrac14,\tfrac34)$ and $(\tfrac25,\tfrac35)$, which no relabelling
+— the second, $(A_0,B_1)$ — are
+$(\tfrac14,\tfrac34)$ and $(\tfrac25,\tfrac35)$, which no relabelling
 identifies; at the support grain the two are still matched. $\mathsf{F}$ is
 verified to depend only on the table and the context — not on the variant or
 the prefix.
@@ -2165,7 +2272,8 @@ the prefix.
 
 **The test, declared before the models were built.** For an ordered pair of
 invariants $(P,Q)$: *$Q$ is not a function of $P$* iff two processes exist
-with equal $P$ and different $Q$. Witnesses both ways ⇒ **INDEPENDENT**.
+with equal $P$ and different $Q$. Witnesses both ways $\Rightarrow$
+**INDEPENDENT**.
 Witness pairs are chosen mechanically, preferring the pair differing in the
 fewest process coordinates, ties broken lexicographically, so the choice is
 deterministic.
@@ -2201,7 +2309,7 @@ contextual invariant as the pair (level, witness fires), and all six
 verdicts are identical either way.
 
 Strict implications found: $\Delta^{B}=0\Rightarrow d_{\mathrm{div}}=0$ for
-the Born-declared pair, strict by Theorem 2.3; SC $\Rightarrow$ LC
+the Born-declared pair, strict by Theorem 2.2; SC $\Rightarrow$ LC
 $\Rightarrow$ contextual, both strict on this zoo; and $\gamma\ne0 \Rightarrow$ contextual, strict with **two** witnesses (the singlet *and*
 Hardy are contextual with $\gamma=0$ at every section). **Constructed
 equivalences: none.**
@@ -2255,9 +2363,12 @@ The identification of the Born-projection cross terms with interference is
 [3, p.29] with finite configuration space $C$, $|C|=N$. Let $0$ and $t'$ be
 two **division events** of $M$ ([3, p.9]; $0$ is one by [3]'s own
 convention), and let $t$ be any target time ([3, p.10]: the target time is a
-free variable). The dynamical axiom supplies $M$ with the fixed
-column-stochastic matrices $\Gamma(t'\!\leftarrow\!0)$,
-$\Gamma(t\!\leftarrow\!0)$ and $\Gamma(t\!\leftarrow\!t')$, and [3]'s law of
+free variable). The dynamical axiom supplies $M$ with the fixed transition
+matrices $\Gamma(t'\!\leftarrow\!0)$, $\Gamma(t\!\leftarrow\!0)$ and
+$\Gamma(t\!\leftarrow\!t')$; that these are **column-stochastic** is
+[3] eq. (9), p.8, stated there for a textbook stochastic process and carried
+to the indivisible case by back-reference at [3, p.11] — not part of the
+p.29 dynamical axiom. [3]'s law of
 total probability (eqs. 19–20, p.9) holds at **both** conditioning times.
 Write*
 $$
@@ -2275,11 +2386,11 @@ $D\,p(0)=0$.*
 
 *Proof.* The epistemic axiom's connecting clause is what licenses reading
 the model's **declared** transition matrices as the matrices connecting
-$p(0)$ to later times, so eq. (20) applies at each declared conditioning
+$p(0)$ to later times, so [3] eq. (20) applies at each declared conditioning
 time. Hence $p(t')=\Gamma(t'\!\leftarrow\!0)p(0)$ and
-$p(t)=\Gamma(t\!\leftarrow\!0)p(0)$ by eq. (20) at the division event $0$;
-and $p(t)=\Gamma(t\!\leftarrow\!t')p(t')$ by eq. (20) at the division event
-$t'$. Substituting the first into the third and subtracting the second gives
+$p(t)=\Gamma(t\!\leftarrow\!0)p(0)$ by [3] eq. (20) at the division event
+$0$; and $p(t)=\Gamma(t\!\leftarrow\!t')p(t')$ by [3] eq. (20) at the
+division event $t'$. Substituting the first into the third and subtracting the second gives
 $D\,p(0)=0$, using only associativity of the matrix action. $\square$
 
 **(b) Matrix form, under a spanning hypothesis.** *If the admissible
@@ -2312,7 +2423,7 @@ one that does the work below — does not need it.
 
 ### 9.3 The forcing, exhibited
 
-The composite model of Definition 4.9 declares $t'=2$ (the first
+The composite model of Definition 4.8 declares $t'=2$ (the first
 measurement) a division event on the strength of [3, p.29]'s "division
 events are generated during a measurement process". Evaluated on the
 model's own declared initial distribution — a point mass, hence admissible
@@ -2326,6 +2437,11 @@ in the sense above — with $t=3$:
 | $(90^\circ,135^\circ)$ | $F_1$ / $F_2$ | **16 / 16** | **288 / 288** |
 | $(0^\circ,0^\circ)$ | $F_1$ / $F_2$ | 0 / 0 | 0 / 0 |
 | $(45^\circ,45^\circ)$ | $F_1$ / $F_2$ | **16 / 16** | **288 / 288** |
+
+The third column — the residual evaluated on the model's own initial
+distribution, which is what clause (c) needs — depends only on column $0$ of
+$V$, and so is independent of the completion declared in Definition 4.8; the
+fourth column, a matrix-level count, is not.
 
 The residual sums to zero at every cell, as the control requires. The value
 censuses are computed and are **not the same at the three violated
@@ -2410,7 +2526,7 @@ they appear.
    from him.
 2. **The gauge licensing.** [3] declares the entrywise gauge for a single
    propagator and says that fixing a unitary representative is a *partial*
-   fixing. Theorems 5.4 and 5.5 determine exactly what the composability and
+   fixing. Theorems 5.2 and 5.3 determine exactly what the composability and
    unitarity requirements leave — the boundary subgroup — and Proposition
    5.1 shows that without them nothing phase-sensitive survives at all.
    Neither theorem is in [3].
@@ -2462,7 +2578,7 @@ pair — and nothing above is in tension with that footnote.
 
 ### 10.1 Open problems
 
-1. **General $n$ for the completeness dichotomy.** Theorem 6.11(i) is proved
+1. **General $n$ for the completeness dichotomy.** Theorem 6.7(i) is proved
    for every admissible support class at $n\le4$ and sampled at $n=5$.
    Whether $L_4+\mathcal{K}=Z(\mathsf{G})$ for **every** admissible pair
    graph is open; it is the natural conjecture and it is untested.
@@ -2484,7 +2600,7 @@ pair — and nothing above is in tension with that footnote.
    outcomes — where real-versus-complex separates and the planar argument of
    §3.2 does not apply — is untested.
 6. **Sharpness of the decision criterion beyond $n=3$.** The exact sharpness
-   of Theorem 4.6 on realizable supports is established at $n=3$ only.
+   of Theorem 4.5 on realizable supports is established at $n=3$ only.
 7. **The relation-loop layer off the Weyl families.** $\beta$ is defined
    only where the group commutator is scalar; the composite-level witness of
    §6.6 has an empty relation-loop sector. A phase-retaining invariant
@@ -2498,7 +2614,7 @@ pair — and nothing above is in tension with that footnote.
   claimed. §3's chain is assembled from cited antecedents [4,7,8]; the
   contribution there is the exact assembly and the two class-level
   statements of §3.3.
-- **$\Delta^{B}$ is not a divisibility measure** (Theorem 2.3), and it is
+- **$\Delta^{B}$ is not a divisibility measure** (Theorem 2.2), and it is
   never equated with indivisibility anywhere above.
 - **The coherence law is an identity of associativity** (§2.6). It
   constrains the family and selects nothing.
@@ -2523,6 +2639,12 @@ pair — and nothing above is in tension with that footnote.
 - **The forcing of §9.3 tests one reading only** — exactly declared,
   unmarginalized division events. Barandes' hedged, approximate,
   marginalized reading [3, p.10] is a different object and is not tested.
+- **The dilation branch is not addressed.** Barandes' stochastic-quantum
+  theorem is a *disjunction*: a quantum system corresponds to a unistochastic
+  indivisible process, **or** to a subsystem of a dilated unistochastic
+  process. The unitary-arrow apparatus of §5 and §6 — composable arrows,
+  boundary gauge, loop signature — addresses the undilated branch only, and
+  nothing here constrains the dilated one.
 - **No ontological conclusion is drawn** from any invariant exhibited here.
   §9.4 states where [3]'s own text resists such a reading, and takes the
   weaker option.
@@ -2536,7 +2658,7 @@ accompanying bundle. There is no floating-point number and no tolerance in
 any substantive path: rational arithmetic uses `fractions.Fraction`; complex
 algebraic quantities live in the cyclotomic fields $\mathbb{Q}(\zeta_n)$ for
 $n=2,3,4,5,6,8,12,16$ in a canonical representation modulo $\Phi_n$, so tuple
-equality *is* field equality; the composite model of Definition 4.9 lives in
+equality *is* field equality; the composite model of Definition 4.8 lives in
 the totally real quartic field $\mathbb{Q}(\cos\pi/8)=\mathbb{Q}[x]/(8x^4-8x^2+1)$;
 order comparisons are made only in $\mathbb{Q}(\sqrt2)$ with an exact sign
 oracle; symbolic identities are checked in a multivariate polynomial ring
@@ -2544,13 +2666,15 @@ over $\mathbb{Q}$; and lattice statements use integer Hermite normal form.
 
 ### Inventory
 
-The bundle is `v12/paper1_code/`. Each section script is independently
-runnable and imports only the shared exact-arithmetic module.
+The bundle is `paper1_code/`. Each section script is independently runnable;
+besides the shared exact-arithmetic module `exact.py`, `sec4_records.py` and
+`sec9_ltp.py` import the shared model `model_composite.py`, and
+`sec7_descent.py` reuses the record predicates of `sec4_records.py`.
 
 | file | regenerates |
 |---|---|
 | `exact.py` | the shared arithmetic layer: cyclotomic and general number fields, $\mathbb{Q}(\sqrt2)$ with an exact sign oracle, matrices and the Born projection, a multivariate polynomial ring, integer Hermite normal form, graph cycle ranks, and the anchor harness |
-| `model_composite.py` | the composite two-measurement model of Definition 4.9, shared by §4, §8 and §9 |
+| `model_composite.py` | the composite two-measurement model of Definition 4.8, shared by §4 and §9 |
 | `sec2_defect_algebra.py` | §2 entire: the closed form, the two reference families and the vanishing census, the three-defect separation, the coherence and tree laws, the six substitutes, the invariance group, the bounds and the $n=2$ range, the annihilator, the flat-spectrum identification, reality and the odd channel |
 | `sec3_chsh_bodies.py` | §3 entire: the three maxima, the four certificates and the saturating instance, the 24 no-signalling vertices, the three planar-sufficiency ingredients and the strided rational sweep, the non-convexity and the sharp exclusion, the four-cycle product identity, the anti-correlation exhibit |
 | `sec4_records.py` | §4 entire: the termwise vanishing, the exhaustive $n=3$ sweep, the 25 realizable supports with exact witnesses, sharpness, the monomial endpoints, the reading route, the approximate bound, the multi-cut corollary, the dimension-four census, the composite model's biconditional, the eraser control and floor, the converse witnesses |
@@ -2569,6 +2693,11 @@ value *printed in this paper*. Exit 1 happens only on such a mismatch.
 **Substantive negatives exit 0** — the seven failing support classes, the
 composite-level witness, the refuted converse implications, the
 recorded-but-phased limit and the forcing of §9.3 are results, not failures.
+One printed number is not itself anchored, and is flagged here rather than
+glossed: the count of **24** distinct antisymmetric values in §2.4 is a
+property of the same declared witness set that `sec2_defect_algebra.py`
+builds and evaluates in exact arithmetic, but the anchor there covers only
+the first pair's values $\pm14/625$.
 
 ### Receipts
 
@@ -2597,10 +2726,12 @@ appears:
 
 - §2.4 and §2.6: strides of 24 members of $\mathcal{F}_2$ and 21 of
   $\mathcal{F}_3$ for the invariance-group and corroboration sweeps.
-- §3.2: from the full enumerations of rational unit vectors (246 in
-  $\mathbb{R}^3$ at entries $|k|\le9$; 808 in $\mathbb{R}^4$ at $|k|\le5$),
-  every 9th respectively every 31st, keeping 26 in each case, then all
-  $26^4$ configurations.
+- §3.2: enumerate the integer tuples with entries $|k|\le9$ in
+  $\mathbb{R}^3$ (respectively $|k|\le5$ in $\mathbb{R}^4$) in lexicographic
+  order, keep those of perfect-square norm, normalize, and deduplicate in
+  order of first occurrence — 246 and 808 rational unit vectors — then take
+  every 9th respectively every 31st member starting at the first, truncate
+  to the first 26, and sweep all $26^4$ configurations.
 - §6.6: at $n=5$, the 120 permutations in lexicographic order with stride 3
   (40 of them), all unions of 2, 3 and 4 of those, filtered by the necessary
   condition and reduced modulo the same relabellings.
@@ -2628,26 +2759,33 @@ model and every reconstructed independence witness.
 - **[6]** S. Abramsky, S. Mansfield, R. S. Barbosa, *The Cohomology of
   Non-Locality and Contextuality*, arXiv:1111.3620.
 - **[7]** B. S. Tsirelson, *Quantum generalizations of Bell's inequality*,
-  Lett. Math. Phys. **4**, 93 (1980); and the real-unit-vector
-  characterization of the $(2,2,2)$ quantum correlator set with its
-  dimension-free bound.
+  Lett. Math. Phys. **4**, 93–100 (1980) — the bound $|S|\le2\sqrt2$; and
+  B. S. Tsirelson, *Quantum analogues of the Bell inequalities. The case of
+  two spatially separated domains*, J. Soviet Math. **36** (1987) 557–570 —
+  the real-unit-vector characterization of the $(2,2,2)$ quantum correlator
+  set with its dimension-free bound, which is the source of §3.2's
+  planar-sufficiency clause.
 - **[8]** S. Popescu, D. Rohrlich, *Quantum nonlocality as an axiom*, Found.
   Phys. **24**, 379 (1994); J. Barrett, N. Linden, S. Massar, S. Pironio,
   S. Popescu, D. Roberts, *Nonlocal correlations as an information-theoretic
   resource*, Phys. Rev. A **71**, 022101 (2005).
 - **[9]** Weyl relations and the noncommutative torus: projective
-  multipliers on $\mathbb{Z}^2$ realized by the clock/shift pair; see e.g.
-  arXiv:1606.01829.
+  multipliers on $\mathbb{Z}^2$ realized by the clock/shift pair. See
+  L. Freidel, R. G. Leigh, D. Minic, *Quantum Spaces are Modular*, Phys.
+  Rev. D **94**, 104052 (2016), arXiv:1606.01829.
 - **[10]** The Stone–von Neumann theorem, finite form: on $\mathbb{C}^N$ the
   irreducible projective representations of $\mathbb{Z}^2$ with a primitive
   $q$-th root multiplier have dimension exactly $q$ and are the Weyl pair up
-  to unitary equivalence and scalars. **Cited, not proved here.**
+  to unitary equivalence and scalars. J. Schwinger, *Unitary operator
+  bases*, Proc. Natl. Acad. Sci. USA **46** (1960) 570–579; see also
+  H. Weyl, *The Theory of Groups and Quantum Mechanics* (Dover, 1931).
+  **Cited, not proved here.**
 - **[11]** T. Zaslavsky, *Signed graphs*, Discrete Appl. Math. **4** (1982)
   47–74, and the gain-graph switching classification developed there and in
   its sequels. **The classification statement of §5.5 is this theorem, cited
   and not claimed.**
-- **[12]** *On cospectrality of gain graphs*, DOI 10.1515/spma-2022-0169
-  (secondary).
+- **[12]** M. Cavaleri, A. Donno, *On cospectrality of gain graphs*, Special
+  Matrices **10** (2022) 343–365, DOI 10.1515/spma-2022-0169 (secondary).
 - **[13]** N. Mukunda et al., *Bargmann invariants and off-diagonal geometric
   phases for multi-level quantum systems*, arXiv:quant-ph/0107006. The
   ray/Gram setting: Bargmann triple products are invariants of a
@@ -2668,6 +2806,9 @@ model and every reconstructed independence witness.
   G. Björck; D. C. Chu; R. L. Frank; R. J. Turyn; S. W. Golomb and G. Gong,
   *Signal Design for Good Correlation* (CUP, 2005). **§2.8 originates
   neither.**
-- **[17]** G. Birkhoff; J. von Neumann: a doubly stochastic matrix is a
-  convex combination of permutation matrices — used in §6.5 as the
-  total-support screen.
+- **[17]** G. Birkhoff, *Tres observaciones sobre el algebra lineal*, Univ.
+  Nac. Tucumán Rev. Ser. A **5** (1946) 147–151; J. von Neumann, *A certain
+  zero-sum two-person game equivalent to the optimal assignment problem*, in
+  *Contributions to the Theory of Games II* (Princeton Univ. Press, 1953)
+  5–12: a doubly stochastic matrix is a convex combination of permutation
+  matrices — used in §6.5 as the total-support screen.
