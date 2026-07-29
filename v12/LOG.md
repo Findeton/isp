@@ -1420,3 +1420,29 @@ The delivered state is committed AS-IS with this entry so the
 findings have a fixed referent; MAJOR REPAIR dispatched next
 (recorded after it occurs); the external hostile round runs
 AFTER the repair.
+
+## 2026-07-29 — W6 MAJOR REPAIR DISPATCHED (v12 LEDGER #37)
+Background worker (Opus 5), bound to the pin + LOG #36's full
+22-finding list: kill the circularity (real measurements or
+deletion for findings 1/2/3/4/6/10/11/17/18/19/20/22 — incl. a
+perturbed-phase positive control for M6, an actually-constructed
+phase-consulting φ for M8, provenance wired into level B with
+the wing-tie mechanism RE-MEASURED and the leg-matching
+architecture question adjudicated in the note); fix the logic
+bugs (phi_set level-B false zeros + regression gate; the
+empty-map VACUOUS guard on the discriminator; triple coherence
+as equality on the full domain with asymmetric declarations
+consulted + an incoherent negative control; gauge-closure gate
+for the orbit BFS + the single-family GROUPOID guard; bij
+demoted; level-B for DataChart or NO-INSTRUMENT cells); fix the
+scope and objects (the 2-of-72 filter gated and all M3 level-B
+claims stated at true scope; a GENUINELY DISTINCT third chart
+for the triple or pair-level renaming; every table cell in the
+discriminator's own vocabulary; M4's rejection actually
+performed).  Outcomes to be RE-DERIVED from the repaired
+instrument — they may change; pre-registered six only; the
+SP-E/SP-F finding re-derived under the corrected mechanism.
+FREEZE-ON-DELIVERY enforced (final run = delivery; zero
+post-run edits; no child audits).  The external hostile round
+runs after this repair lands.  Recorded after the dispatch
+occurred.
