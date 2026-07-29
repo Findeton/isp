@@ -338,3 +338,50 @@ DEFECT; the three things a global world-process would need are
 exactly the three the corpus measured missing, and all three are
 JOINTS.  The atlas buys bookkeeping, not rescue.**  Hostile round
 dispatched.  W2/W3′/W4′ still constructing; GW1's round out.
+
+## 2026-07-28 — W3′ DELIVERED: **W3′-PROVEN** — THE RECORDS THEOREM,
+## GREEN-UNREVIEWED (v12 LEDGER #10)
+The unit lands (note-w3p-records-kill-defect.md, 103 gates / 103
+pass / 0 fail, 14 anchors, 7.5s; adjudicator rerun byte-identical
+modulo timings; 3 declarative gates disclosed in-receipt).  **THE
+THEOREM, proven at finite dimension with both hypotheses NAMED:**
+T3′'s definitional clauses become (H-corr) distinct live
+alternatives lie in distinct record sectors, and (H-avail) no later
+configuration receives from two sectors; Theorem 1: together they
+force every interference cross-term to vanish INDIVIDUALLY — Δᴮ = 0
+and D₂₁₀ = 0 with the canonical divisor.  Also proven: Thm 1′ (the
+reading route — no future hypothesis, but (H-corr) required: a
+coarse non-separating reading leaves D₂₁₀ ≠ 0, gated); Thm 2 (the
+CPTP/conditional-expectation form, instance-gated, declared); Thm 3
+(approximate correlation ⇒ approximate divisibility,
+Σ|D₂₁₀| ≤ ΣΓ₁₀‖σ_{r|j} − σ_r‖₁, TIGHT — equality at all six
+declared points).  **EXHAUSTIVE at n = 3: all 512 × 512 supports ×
+all 5 partitions (146,536 triples) — hypotheses support-monotone,
+NO counterexample for any amplitudes.**  BEYOND THE PIN: [W1′]'s
+two monomial sufficiency conditions ARE this theorem at its two
+extreme record structures (row-monomial ⟺ (H-avail) at the finest
+record; column-monomial ⟺ (H-corr) at the trivial one; verified
+over all 512 supports).  **THE M-1 INSTANCE DERIVED:** the Bell
+model rebuilt from the committed state, every constant anchored;
+over 16 record structures the biconditional holds 12/12 cells —
+**"a legitimate division event IS a record event"** (mechanism: at
+a = 0° the measurement is a configuration permutation — branches
+exit in different pointer sectors and Bob, commuting with every
+P^A_s, cannot recombine them; at 45°/90° two live alternatives
+share a sector; READING the record repairs every illegitimate
+cut).  **THE CONVERSE: FALSE, and refuted exactly** — the ladder
+records ⇒ medium decoherence ⇒ Δᴮ = 0 ⇒ D₂₁₀ = 0 ⇒ d_div = 0 has
+ALL THREE reverse links broken with exact witnesses (the C+1
+rotation pair: divisible with NO record structure at the cut; a
+phase-alignment witness broken by 7/7 phase kicks while the record
+route survives 0/7); the all-readouts converse proven VACUOUS
+(forces monomial columns — no branching); [GMH] cited as the true
+converse, not re-derived.  **THE ERASER CONTROL FIRES:** same
+record, same first leg, only the later operation changed — D₂₁₀
+returns with entries ±1/2 and d_div > 0 exactly (ℓ¹ floor = 2);
+plus a Bell-native eraser (72 differing entries at a
+previously-dividing cut) and the honest negative that undoing
+Alice's permutation is NOT an eraser (relabels, does not
+recombine).  THE KILL evaluated explicitly: DOES NOT FIRE.
+Hostile round dispatched.  W2/W4′ still constructing; W5's and
+GW1's rounds/repair out.

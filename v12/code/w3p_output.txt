@@ -1,0 +1,479 @@
+==============================================================================
+w3p_records_exact.py — v12 W3'
+==============================================================================
+RECORDS KILL THE DEFECT: the T3' theorem at finite dimension, the
+bc M-1 instance, the global corollary shape, the scoped converse,
+and the eraser negative control
+==============================================================================
+  pin    : v12/note-w3p-records-kill-defect-pin.md (frozen before
+           this file existed)
+  binding: v12 paper 0 v2.1 sec.1 T3' (the record defined
+           INDEPENDENTLY of the defect) and T2' (the three-defect
+           distinction), sec.4 W3', sec.5 (non-claims);
+           v12/LOG.md #1-#8; bc/LOG.md #4; v11/LOG.md #14, #21.
+  banner : EXACT arithmetic end to end, NO TOLERANCE ANYWHERE.
+           Rationals: fractions.Fraction.  Algebraic: class Cyc =
+           Q[x]/Phi_N(x) for N = 16 and 12, canonical
+           representation, exact conjugation and inversion; the
+           Bell model's cos(pi/8) and sin(pi/8) live in Q(zeta_16).
+           Exact ranks: class Q2 = Q(sqrt 2).  No float anywhere.
+  lean   : NONE.  W3'-PROVEN and W3'-KILLED are both reportable
+           outcomes; the KILL condition is evaluated and printed.
+  exits  : substantive negatives exit 0; exit 1 is ANCHOR-only.
+
+  [anchor] Phi_16 = x^8 + 1                                     ok deg 8
+  [anchor] Phi_12 = x^4 - x^2 + 1                               ok deg 4
+  [anchor] sqrt 2 in Q(zeta_16): (z^2 + z^-2)^2 = 2             ok z^2 - z^6
+  [anchor] cos(pi/8): 8c^4 - 8c^2 + 1 = 0 exactly in Q(zeta_16) ok the Bell model's field is a subfield of Q(zeta_16)
+  [anchor] cos^2 + sin^2 = 1 at k*pi/8, k = 0..7                ok 8 identities
+  [anchor] zeta_3 in Q(zeta_12): 1 + w + w^2 = 0                ok w = z^4
+  [anchor] Q2 arithmetic: (1+sqrt2)(-1+sqrt2) = 1               ok and inversion exact
+
+==============================================================================
+PART A — THE THEOREM AT FINITE DIMENSION
+==============================================================================
+
+  THE RECORD, DEFINED FIRST AND INDEPENDENTLY OF ANY DEFECT (v2.1 T3').
+  A record of the alternatives {C_r} at a cut is a variable R whose
+  values label MUTUALLY EXCLUSIVE record sectors (an orthogonal
+  resolution {P_r} of the identity), PERFECTLY OR APPROXIMATELY
+  CORRELATED with those alternatives, and AVAILABLE under the declared
+  future dynamics.  No Delta and no divisibility appears in the
+  definition, so the theorem below is falsifiable rather than
+  definitional.
+
+  THE TWO HYPOTHESES, which are T3's own clauses made computable.
+  Write the declared laws in [B1]'s unistochastic form: the cut
+  alternatives are the configurations k, the first leg is
+  Gam_10 = B(U1), the declared middle leg is the canonical divisor
+  Gam_21 = B(U2), and Gam_20 = B(U2 U1).  Fix a record structure: a
+  partition of the configurations into record sectors.
+
+    (H-corr)  PERFECT CORRELATION / SEPARATION.  For every initial
+              configuration j, the LIVE alternatives at the cut (the
+              k with (U1)_kj =/= 0) lie in pairwise DISTINCT record
+              sectors.  The record determines which alternative
+              occurred: that is what 'perfectly correlated with those
+              alternatives' means.
+
+    (H-avail) AVAILABILITY / PERSISTENCE.  For every later
+              configuration i, all cut configurations k feeding it
+              ((U2)_ik =/= 0) lie in ONE record sector.  The record
+              value is still recoverable after the later dynamics:
+              that is what 'available under the declared future
+              dynamics' and 'record-PRESERVING operations' mean.
+
+  THEOREM (proved in the note; gated termwise below).  (H-corr) and
+  (H-avail) together imply that EVERY interference cross-term at the
+  cut vanishes INDIVIDUALLY, hence Delta^B(U2, U1) = 0 and
+
+      Gam_20  =  Gam_21 Gam_10  exactly,   i.e.   D_210 = 0
+
+  on the cut algebra, with the canonical divisor Gam_21 = B(U2).
+  A SECOND, INDEPENDENT SUFFICIENT MECHANISM (the reading route):
+  if the record is physically READ at the cut — the channel is
+  U2 . D . U1 with D the pinching onto the record sectors — then
+  D_210 = 0 for ANY later dynamics whatever, provided the record
+  sectors separate the alternatives.  Both routes are gated.
+
+A1. THE PROOF'S OWN STEPS, GATED (not merely its conclusion)
+  [PASS] A1     H is unitary over Q(zeta_16)                         exact
+  [PASS] A1     F3 is unitary over Q(zeta_12)                        exact
+  [PASS] A1     the cross-term identity holds entrywise              26 entries over 4 declared pairs, 0 failures   <[B1x]>
+
+A2. THE TWO-STEP WORKED EXAMPLE, ROUTE 1 (the record is READ):
+    the [W1'] sec.8 seed, re-derived here from scratch
+  [PASS] A2     shadow WITHOUT the reading = B(U2 U1)  [H . H  (2x2, Q(zeta_16))] the density-matrix route reproduces the Born projection
+  [PASS] A2     shadow WITH the reading = B(U2) B(U1) EXACTLY  [H . H  (2x2, Q(zeta_16))] THE DECOHERENCE IDENTITY
+  [PASS] A2     D_210 = 0 on the cut algebra  [H . H  (2x2, Q(zeta_16))] canonical divisor Gam_21 = B(U2)
+  [PASS] A2     and the defect is NONZERO without the reading  [H . H  (2x2, Q(zeta_16))] so the identity is not vacuous on this example
+  [PASS] A2     the read shadow is a genuine stochastic matrix  [H . H  (2x2, Q(zeta_16))] rational, non-negative, columns sum to 1 exactly
+  [PASS] A2     shadow WITHOUT the reading = B(U2 U1)  [F3 . F3 (3x3, Q(zeta_12))] the density-matrix route reproduces the Born projection
+  [PASS] A2     shadow WITH the reading = B(U2) B(U1) EXACTLY  [F3 . F3 (3x3, Q(zeta_12))] THE DECOHERENCE IDENTITY
+  [PASS] A2     D_210 = 0 on the cut algebra  [F3 . F3 (3x3, Q(zeta_12))] canonical divisor Gam_21 = B(U2)
+  [PASS] A2     and the defect is NONZERO without the reading  [F3 . F3 (3x3, Q(zeta_12))] so the identity is not vacuous on this example
+  [PASS] A2     the read shadow is a genuine stochastic matrix  [F3 . F3 (3x3, Q(zeta_12))] rational, non-negative, columns sum to 1 exactly
+    THE READING ROUTE ALSO NEEDS (H-corr): reading a record that
+    does NOT separate the alternatives does not restore divisibility.
+  [PASS] A2     reading a COARSE, non-separating record leaves D_210 =/= 0 U1 = U2 = H(x)I, record = qubit 1: the pinching keeps the branch coherences alive
+  [PASS] A2     while reading the FINE record on the same data gives D_210 = 0 the separating record is what does the work
+
+A3. THE TWO-STEP WORKED EXAMPLE, ROUTE 2 (the record is PRESERVED
+    and SEPARATING — NO reading anywhere, no decoherence applied):
+    a branch qubit and a record qubit, dim 4, basis |b,r> = 2b + r.
+  [PASS] A3     U1 (branch Hadamard then CNOT into the record) is unitary dim 4
+  [PASS] A3     U2 = H on the branch is unitary                      dim 4
+  [PASS] A3     (H-corr) holds: the record separates the live alternatives checked column by column, 4 columns
+  [PASS] A3     (H-avail) holds: no later configuration merges two sectors checked row by row, 4 rows
+  [PASS] A3     THE PROOF STEP: every cross-term vanishes INDIVIDUALLY 96 terms, 0 nonzero   <[B1x]>
+  [PASS] A3     hence Delta^B(U2, U1) = 0 with NO decoherence applied the record alone kills the defect
+  [PASS] A3     D_210 = 0: B(U2 U1) = B(U2) B(U1) exactly            canonical divisor
+  [PASS] A3     the composed law's column 0 is (1/4, 1/4, 1/4, 1/4)  exact
+    THE CONTRAST (the record removed, everything else identical):
+  [PASS] A3     without the CNOT (H-corr) FAILS                      witness column/sector (0, 0, 2, 0)
+  [PASS] A3     and Delta^B is nonzero there                         the defect survives when no record is made
+
+A4. THE THREE-STEP WORKED EXAMPLES (both routes)
+  [PASS] A4     3-step READ shadow = B(U3) B(U2) B(U1)  [H,H,R(3/5,4/5) (2x2)] records at both cuts
+  [PASS] A4     CK at cut 1: B(U3 U2 . D . U1) factorizes  [H,H,R(3/5,4/5) (2x2)] D_210 = 0 at the first cut
+  [PASS] A4     CK at cut 2  [H,H,R(3/5,4/5) (2x2)]                  D_321 = 0 at the second cut
+  [PASS] A4     and the unread 3-step shadow DIFFERS  [H,H,R(3/5,4/5) (2x2)] non-vacuous
+  [PASS] A4     3-step READ shadow = B(U3) B(U2) B(U1)  [F3,F3,P3 (3x3)] records at both cuts
+  [PASS] A4     CK at cut 1: B(U3 U2 . D . U1) factorizes  [F3,F3,P3 (3x3)] D_210 = 0 at the first cut
+  [PASS] A4     CK at cut 2  [F3,F3,P3 (3x3)]                        D_321 = 0 at the second cut
+  [PASS] A4     and the unread 3-step shadow DIFFERS  [F3,F3,P3 (3x3)] non-vacuous
+  [PASS] A4     V1, V2, V3 unitary (dim 8)                           exact
+  [PASS] A4     cut 1 with record r1: (H-corr) and (H-avail) hold    the later dynamics V3 V2 never merges r1 sectors
+  [PASS] A4     cut 2 with the GROWN record (r1, r2): both hypotheses hold 4 sectors, 8 columns
+  [PASS] A4     3-step NO-READING chain: B(V3 V2 V1) = B(V3) B(V2) B(V1) records at both cuts, no decoherence anywhere
+  [PASS] A4     and it divides at cut 1 as well                      D_210 = 0
+  [PASS] A4     and at cut 2                                         D_321 = 0
+  [PASS] A4     4-step chain (dim 16, records at three cuts): full CK the induction of part C, gated
+    (    0.1s)
+
+A5. THE DECLARED CENSUS: hypotheses declared first, defect second
+  [PASS] A5     every census matrix is unitary (dim 4)               36 matrices, failures []
+  [PASS] A5     THE THEOREM ON THE dim-4 CENSUS: hypotheses ==> Delta^B = 0 320 pairs; 252 satisfy both hypotheses, all with Delta^B = 0; violations []
+  [PASS] A5     the census is non-vacuous in both cells              hyp+zero 252, nohyp+nonzero 8
+  [PASS] A5     THE CONVERSE FAILS ALREADY HERE: Delta^B = 0 without records 60 pairs with Delta^B = 0 and the record hypotheses FAILING; first witness (U2, U1) = ('I(x)I', 'H(x)I')   <[W1']>
+  [PASS] A5     every census matrix is unitary (dim 9)               16 matrices, failures []
+  [PASS] A5     THE THEOREM ON THE dim-9 CENSUS: hypotheses ==> Delta^B = 0 64 pairs; 42 satisfy both hypotheses, all with Delta^B = 0; violations []
+  [PASS] A5     dim-9 census non-vacuous in both cells               hyp+zero 42, nohyp+nonzero 9
+  [PASS] A5     OVER ALL 15 SET PARTITIONS of the dim-4 configuration space 4800 (partition, U2, U1) triples; 3280 satisfy both hypotheses, all with Delta^B = 0; violations []
+    (    3.6s)
+
+A5b. THE PROOF'S COMBINATORIAL CORE, VERIFIED EXHAUSTIVELY AT n = 3
+     The theorem is a SUPPORT argument, so it can be checked over
+     ALL support patterns, with no reference to amplitudes: all
+     2^9 = 512 supports for U1, all 512 for U2, all 5 set partitions
+     of the 3 configurations — no sampling, no declared cap.
+  [PASS] A5b    THE CORE, EXHAUSTIVE at n = 3: hypotheses ==> every cross-term slot is empty 146536 admissible (partition, U2-support, U1-support) triples over all 512 x 512 supports and all 5 partitions; per-partition (|corr|, |avail|) = [(64, 512), (216, 125), (216, 125), (216, 125), (512, 64)]; violations []
+  [PASS] A5b    the core's converse fails combinatorially too        8673 support pairs in a declared 64x64 corner have empty cross-terms without satisfying the hypotheses
+
+A5c. THE TWO KNOWN MONOMIAL SUFFICIENCY CONDITIONS ARE THE THEOREM
+     AT ITS TWO EXTREME RECORD STRUCTURES ([W1'] sec.5's structural
+     conditions: a row-monomial left factor, a column-monomial right
+     factor).  Verified over ALL 512 supports at n = 3.
+  [PASS] A5c    (H-avail) at the FINEST record <=> U2 is row-monomial all 512 supports, both directions
+  [PASS] A5c    (H-corr) at the FINEST record is automatic           all 512 supports
+  [PASS] A5c    (H-corr) at the TRIVIAL record <=> U1 is column-monomial all 512 supports, both directions
+  [PASS] A5c    (H-avail) at the TRIVIAL record is automatic         all 512 supports
+  [PASS] A5c    and the INTERMEDIATE record structures are strictly stronger 8 dim-4 pairs where NEITHER monomial condition holds yet a middle record structure gives Delta^B = 0; first ('I(x)H', 'H(x)I')
+    (    4.0s)
+
+A6. EACH HYPOTHESIS IS LOAD-BEARING, EXACTLY
+  [PASS] A6     (H-corr) DROPPED: (H-avail) still holds, (H-corr) fails U1 = H(x)I, U2 = H(x)I, record = qubit 1; witness (0, 0, 2, 0)
+  [PASS] A6     and the defect SURVIVES: Delta^B =/= 0               entry (0,0) = 1/2
+  [PASS] A6     (H-avail) DROPPED, exhibit 1: (H-corr) holds, (H-avail) fails U2 = (I(x)H).CNOT01 merges the two record sectors; witness (0, [0, 1])
+  [PASS] A6     yet Delta^B = 0 THERE — a NEGATIVE, reported not hidden dropping a hypothesis does not by ITSELF restore the defect: the hypotheses are sufficient, never claimed necessary ([W1']: Delta^B = 0 is phase alignment, strictly weaker than any support condition)
+  [PASS] A6     (H-avail) DROPPED, exhibit 2 (the eraser): the defect RETURNS U2 = (H(x)I).CNOT01 coherently erases the record; part E computes the returned D_210 exactly
+
+A7. THE KILL CONDITION, EVALUATED HONESTLY
+    KILL = 'a stable record with surviving D_210 ON ITS OWN ALGEBRA
+    under record-preserving dynamics'.  A6's first instance has a
+    stable, preserved record AND a surviving D_210 — so the phrase
+    'on its own algebra' is load-bearing and is tested here.
+  [PASS] A7     all three legs ARE strongly lumpable onto the record algebra so the record's own law is well defined
+  [PASS] A7     the record's OWN law is the identity and DIVIDES exactly D_210 = 0 on the record algebra: L_20 = L_21 L_10
+  [PASS] A7     while the surviving residual lives on the BRANCH algebra of which R is NOT a record — (H-corr) fails there (A6)
+    VERDICT ON THE KILL: it does NOT fire on this instance.  The
+    residual survives on an algebra the record is not a record OF.
+    The honest content: T3's clause 'perfectly correlated with those
+    alternatives' is NOT decoration — it is the hypothesis (H-corr),
+    and without it a stable, preserved record leaves D_210 alive on
+    the alternatives it fails to separate.
+
+A8. 'APPROXIMATELY CORRELATED' MADE QUANTITATIVE (exact, rational)
+    THE STABILITY BOUND, proven in the note:
+      sum_i |D_210(i|j)|  <=  sum_r Gam_10(r|j) ||sig_{r|j} - sig_r||_1
+    A declared classical family: the cut carries a record value r and
+    an UNRECORDED residue m; the later readout reads m.
+  [PASS] A8     the stability bound holds on the declared family     6 values of the deviation; (e, LHS, bound) = [('1/4', '1', '1'), ('1/8', '1/2', '1/2'), ('1/16', '1/4', '1/4'), ('1/32', '1/8', '1/8'), ('1/64', '1/16', '1/16'), ('0', '0', '0')]
+  [PASS] A8     the bound is TIGHT (equality at every point of the family) not merely an inequality
+  [PASS] A8     an EXACT record (deviation 0) gives D_210 = 0 exactly the theorem's exact case is the limit
+==============================================================================
+PART B — THE INSTANCE: bc #4's M-1 ON THE COMMITTED BELL MODEL
+==============================================================================
+
+  THE MODEL, REBUILT INDEPENDENTLY from the committed specification
+  [BC2] (git object cbb7279; the bc WORKING TREE is dirty with frozen
+  partial edits and is never read).  Configuration space
+  C = (qA, qB, pA, pB), |C| = 2*2*3*3 = 36, index
+  i = ((qA*2 + qB)*3 + pA)*3 + pB, initial configuration j0 = 0.
+  U_prep carries j0 to the singlet; U_X(theta) = sum_s Pi^theta_s (x)
+  Sh^{n(s)} with Sh the 3-cycle r -> + -> - -> r and n(+) = 1,
+  n(-) = 2.  Frames F1 = (prep, A, B) and F2 = (prep, B, A), target
+  times 0..3, division events {0, 2, 3}, second-leg operator U_B in F1
+  and U_A in F2 ([B3] eq. 25, p.29).  Everything is real orthogonal and
+  lives in Q(cos(pi/8)) < Q(zeta_16).
+
+  M-1 ([BC2], bc/LOG.md #4): the declared intermediate division event
+  VIOLATES the law of total probability ([B3] eqs. 19-20) at SP-C/D/F —
+  on this model "legitimate division event <=> the process divides at
+  it".  W3' derives that biconditional as an instance: the cut divides
+  exactly where a DECLARED RECORD STRUCTURE satisfies (H-corr) and
+  (H-avail), and the reading of the record REPAIRS every illegitimate
+  cut.
+
+  [anchor] every Bell operator is real and exactly orthogonal   ok 7 operators, U^T U = I entry by entry
+  [anchor] [U_A(a), U_B(b)] = 0 at all operator pairs           ok 9 pairs
+  [anchor] U_prep's j0 column is exactly the singlet            ok (0, 1/sqrt2, -1/sqrt2, 0) on (00, 01, 10, 11)
+  Bell model built for all 6 setting pairs x 2 frames (    5.3s)
+  [anchor] the exact singlet outcome law reproduces in both frames ok P(al,be) = (1 - al be cos(a-b))/4 and both marginals 1/2; 96 exact identities
+  [anchor] the committed divisibility census reproduces exactly ok Gam(3<-2)Gam(2<-0) vs Gam(3<-0) differing entries per (SP, F1, F2): {'SP-A': (0, 0), 'SP-B': (0, 0), 'SP-C': (576, 576), 'SP-D': (576, 576), 'SP-E': (0, 0), 'SP-F': (576, 576)}
+  [PASS] B0     every Gam(2<-0) entry lies in Q(sqrt 2), exactly     12 matrices, 1296 entries each
+  [anchor] the committed exact ranks of Gam(2<-0) reproduce     ok {'SP-A': (18, 18), 'SP-B': (18, 18), 'SP-C': (9, 18), 'SP-D': (9, 18), 'SP-E': (18, 18), 'SP-F': (18, 18)} (full rank would be 36) — [B3] eq. 22's hypothesis fails
+  [anchor] the basis-free 1-vs-0 pointer certificate reproduces ok Pr[pointer B still ready] AT ALICE'S DIVISION EVENT = 1 in F1 (t = 2) and 0 in F2 (t = 3), at all six setting pairs
+
+B1. THE DECLARED RECORD STRUCTURES (declared before any defect is
+    computed, per T3'), and the two hypotheses evaluated on each
+    THE DECLARED FAMILY: all 16 record structures that read a SUBSET
+    of the four configuration coordinates (qA, qB, pA, pB) — from
+    the trivial one-sector structure {} to the finest {qA,qB,pA,pB}.
+  [PASS] B1     the 16 declared record structures are genuine partitions sector counts [1, 2, 2, 4, 3, 6, 6, 12, 3, 6, 6, 12, 9, 18, 18, 36] (1 .. 36)
+  [PASS] B1     Bob's operator commutes with EVERY pointer-A sector projector [U_B(b), P^A_s] = 0 for all b and s — Alice's record is preserved by Bob's measurement, exactly
+  [PASS] B2     THE THEOREM'S DIRECTION: a record structure ==> the cut divides no false positive in 12 (setting pair, frame) cells
+  [PASS] B2     AND THE BICONDITIONAL HOLDS ON THIS MODEL, 12/12 cells divides <=> some declared record structure satisfies (H-corr) and (H-avail); MEASURED over the declared family, not proven in general
+      SP-A  a=  0 b= 45 | F1 DIVIDES   wins {qA},{pA},{qA,pA}      | F2 DIVIDES   wins {qA,qB,pB},{qA,qB,pA,pB}
+      SP-B  a=  0 b=135 | F1 DIVIDES   wins {qA},{pA},{qA,pA}      | F2 DIVIDES   wins {qA,qB,pB},{qA,qB,pA,pB}
+      SP-C  a= 90 b= 45 | F1 indivisible wins -                      | F2 indivisible wins -
+      SP-D  a= 90 b=135 | F1 indivisible wins -                      | F2 indivisible wins -
+      SP-E  a=  0 b=  0 | F1 DIVIDES   wins {qA},{qB},{qA,qB},{pA},{qA,pA},{qB,pA},{qA,qB,pA},{qA,pB},{qB,pB},{qA,qB,pB},{pA,pB},{qA,pA,pB},{qB,pA,pB},{qA,qB,pA,pB} | F2 DIVIDES   wins {qA},{qB},{qA,qB},{qA,pA},{qB,pA},{qA,qB,pA},{pB},{qA,pB},{qB,pB},{qA,qB,pB},{pA,pB},{qA,pA,pB},{qB,pA,pB},{qA,qB,pA,pB}
+      SP-F  a= 45 b= 45 | F1 indivisible wins -                      | F2 indivisible wins -
+    THE MECHANISM, exact: in F1 at a = 0 Alice's measurement is a
+    CONFIGURATION PERMUTATION, so the two singlet branches leave the
+    cut in DIFFERENT pointer-A sectors and Bob — who never touches
+    pointer A — cannot bring them back to one configuration.  At
+    a = 45 or 90 the pointer still records Alice's OUTCOME, but two
+    live alternatives share a pointer sector: (H-corr) fails, the
+    cross-terms survive, and the law does not divide.
+
+B3. THE READING REPAIRS EVERY ILLEGITIMATE DIVISION EVENT
+  [PASS] B3     the READ model's law = Gam(3<-2) Gam(2<-0) (density-matrix route) j0 column recomputed through rho -> pinch -> conjugate at all 12 cells
+  [PASS] B3     so the READ model satisfies the LTP at EVERY declared cut by construction: reading is the pinching onto the record sectors   <[B3]>
+  [PASS] B3     and it differs from the UNREAD model exactly at SP-C/D/F differing entries {('SP-C', 'F1'): 576, ('SP-C', 'F2'): 576, ('SP-D', 'F1'): 576, ('SP-D', 'F2'): 576, ('SP-F', 'F1'): 576, ('SP-F', 'F2'): 576}
+    M-1 DERIVED: [B3]'s law of total probability at a declared
+    division event IS D_210 = 0 with the canonical divisor, so
+    'legitimate division event <=> the process divides at it' is the
+    definition made explicit; W3' supplies the missing WHY — the
+    legitimate cuts are exactly the RECORD cuts, and reading the
+    record at an illegitimate cut makes it legitimate.
+
+B4. AN ERASER INSIDE THE BELL MODEL (feeds part E)
+    A first, FAILED attempt, reported: undoing only Alice's
+    measurement, second leg U_B(45) U_A(0)^T, is NOT an eraser —
+    U_A(0) is a configuration PERMUTATION, so un-permuting relabels
+    the record instead of recombining it, and the defect stays 0.
+  [PASS] B4     the permutation 'eraser' leaves record structures intact wins ['{qA}', '{pA}', '{qA,pA}'] — a permutation merges no sectors, so it erases nothing
+  [PASS] B4     and the defect stays 0 there, as the theorem then requires reported as the negative it is
+    THE GENUINE ERASER: the exact time-reverse of the first leg,
+    second = Theta(2<-0)^T, which recombines the two branches onto
+    one configuration.
+  [PASS] B4     the coherent eraser destroys EVERY declared record structure second leg Theta(2<-0)^T at SP-A/F1; wins none
+  [PASS] B4     and the DEFECT RETURNS at a cut that divided         72 differing entries where the un-erased cut had 0
+    (    7.2s)
+==============================================================================
+PART C — THE GLOBAL CASE (the multi-cut corollary; v11 CITED ONLY)
+==============================================================================
+
+  COROLLARY (proved by induction in the note, gated on exact chains in
+  A4).  If at EVERY cut of a chain the record structure in force
+  satisfies (H-corr) for the composite first leg and (H-avail) for the
+  composite later leg, then the whole chain is Chapman-Kolmogorov: the
+  law over the record grain is a product of its legs, and D vanishes at
+  every cut simultaneously.  TOTAL FACTUALITY — every alternative
+  recorded, at every cut, with no erasure — is the corollary's global
+  shape: the finest record structure at every cut, preserved forever.
+
+  [PASS] C1     the induction's base and two steps, gated (A4)       3-step and 4-step chains, exact, both routes   <declarative: re-asserts A4's gates>
+  v11's MEASURED STATUS, cited and NOT re-run (v11 is frozen):
+   * [V11] LOG #14 (U1 TERMINAL): at every division-event cut with a
+     biting test the law DIVIDES; the fifteen indivisibility
+     verdicts are at NON-division cuts.  Carried caveat, from that
+     same entry: the renewal-grain divisible verdicts there were
+     DEGENERATE-divisible (a column-constant transfer), so they
+     corroborate the corollary only weakly.
+   * [V11] LOG #21 (U1b TERMINAL): at the record grain no two-sided
+     test exists in the reachable class — 'the record-grain question
+     is not closed, it is UNASKED below depth 15'.  So v11
+     CORROBORATES the corollary where it can ask and does NOT test
+     it where it cannot.  No v11 number is claimed here.
+  [PASS] C2     v11 is cited, not re-run: no v11 file is read by this receipt the corollary's global shape is stated, not measured here   <declarative>
+==============================================================================
+PART D — THE CONVERSE, SCOPED
+==============================================================================
+
+  THE IMPLICATION LADDER (the top link is this unit's theorem; the
+  bottom links are gated separations):
+
+     records (H-corr & H-avail)
+        ==> medium decoherence at the cut
+        ==> Delta^B = 0
+        ==> D_210 = 0 with the canonical divisor
+        ==> d_div = 0.
+
+  NONE of the reverse implications holds.  Each failure is exhibited
+  exactly below.  The one true converse in the literature is [GMH]'s —
+  for a PURE initial state, medium decoherence <=> generalized records —
+  and it is CITED as the known result it is, never claimed here.
+
+  [PASS] D0     records ==> MEDIUM decoherence (every branch overlap vanishes) 96 overlaps on the A3 instance, 0 nonzero — not merely their real part, the overlaps themselves   <[GMH]>
+
+D1. DIVISIBILITY WITHOUT A RECORD (the C+1 rotation pair, rebuilt)
+  [PASS] D1     both rotations are exact rational orthogonal matrices (24/25, 7/25) and (4/5, 3/5)
+  [PASS] D1     B(R(th)) = S(cos 2th) on both factors                c1 = 527/625, c2 = 7/25
+  [PASS] D1     c_tot = -7/25 and B(U2 U1) = S(c_tot)                exact
+  [PASS] D1     Delta^B =/= 0: entry (0,0) = -4032/15625             the actual residual D_210 with the canonical divisor is nonzero too   <[W1']>
+  [PASS] D1     K = S(-175/527) is a genuine stochastic matrix       entries >= 0, columns sum to 1
+  [PASS] D1     K B(U1) = B(U2 U1) EXACTLY, and K =/= B(U2)          so d_div = 0 while D_210 =/= 0 — the ladder's bottom link is strict
+  [PASS] D1     NO record structure exists at this cut (both partitions of 2) the finest fails (H-avail) since U2 is not monomial; the trivial fails (H-corr) since both alternatives are live
+  [PASS] D1     and medium decoherence FAILS here (branch overlaps nonzero) 4 nonzero overlaps; by [GMH] (pure state) NO generalized records exist for this history set   <[GMH]>
+    CONCLUSION: divisibility does NOT imply a record.  The converse
+    is FALSE at the divisibility level.
+
+D2. Delta^B = 0 WITHOUT MEDIUM DECOHERENCE (phase alignment)
+  [PASS] D2     a witness exists: Delta^B = 0 with NONZERO branch overlaps witness (U2, U1) = (H, SH) from the declared family   <[W1']>
+  [PASS] D2     the witness carries NO record structure either       Delta^B = 0 is phase alignment, not a record
+  [PASS] D2     and its Delta^B = 0 is UNSTABLE under declared phase kicks 7 of 7 diagonal phase insertions break it
+  [PASS] D2     whereas the RECORD-killed defect is STABLE under the same kicks 7 declared phase insertions, Delta^B stays exactly 0 — the record hypotheses are support conditions and phases cannot break them
+
+D3. THE ALL-READOUTS CONVERSE: it forces the branching to be TRIVIAL
+    Re<phi|M|phi> = 0 for every unit phi  <=>  M + M^dag = 0, and
+    M + M^dag = |C><C| - sum_k |c_k><c_k| with c_k = U2 Pi_k U1 |j>,
+    C = sum_k c_k = U2 U1 |j>.  Since the c_k are orthogonal, the
+    right side vanishes iff at most one c_k is nonzero — i.e. iff
+    column j of U1 is MONOMIAL: no branching at all.
+  [PASS] D3     the operator identity M + M^dag = |C><C| - sum_k |c_k><c_k| gated on 4 declared pairs, every initial configuration
+  [PASS] D3     a non-monomial column admits a readout with Delta^B =/= 0 U1 = H; witnesses among the declared V family: ['H', 'HT', 'SH']
+  [PASS] D3     a monomial column gives Delta^B = 0 for EVERY declared readout 7 readouts
+    SCOPE: the strong converse (canonical divisibility for all
+    readouts) delivers records only VACUOUSLY.  The honest converse
+    is [GMH]'s, at the decoherence-functional level, and it is not
+    ours: v12 supplies the translation into Barandes division
+    events, nothing more.
+==============================================================================
+PART E — THE NEGATIVE CONTROL: THE ERASER RESTORES THE DEFECT
+==============================================================================
+
+  The same record, the same initial configurations, the same first leg
+  U1 = CNOT . (H (x) I).  ONLY the later operation changes:
+
+     PRESERVING:  U2  = H (x) I          (acts on the branch alone)
+     ERASING:     U2' = (H (x) I) . CNOT (coherently undoes the record)
+
+  T3' claims nothing after erasure; this control shows the clause is
+  load-bearing rather than decorative.
+
+  [PASS] E1     U2' is unitary and (H-corr) still holds for U1       the record is still MADE; only its availability changes
+  [PASS] E1     (H-avail) FAILS for the eraser                       a later configuration receives from both record sectors: (0, [0, 1])
+  [PASS] E1     the erased composite law is the IDENTITY (the branch returns) coherent erasure recovers the initial configuration exactly
+  [PASS] E1     D_210 RETURNS, maximally: every entry is +-1/2 or 0  entries [['1/2', '0', '-1/2', '0'], ['0', '1/2', '0', '-1/2'], ['-1/2', '0', '1/2', '0'], ['0', '-1/2', '0', '1/2']]
+  [PASS] E1     and d_div > 0 too: columns 0 and 2 of Gam_10 are EQUAL so K Gam_10 has equal columns 0, 2 for EVERY stochastic K, while Gam_20 = I does not: no divisor exists, by an exact argument and not by a search
+  [PASS] E1     the exact ell^1 floor: min_K ||Gam_20 - K Gam_10||_1 = 2 on columns 0 and 2 alone: (1-v0)+v1+v2+v3 + v0+v1+(1-v2)+v3 = 2 for every probability vector v — computed by hand, gated as arithmetic   <declarative>
+  [PASS] E1     the PRESERVING leg on the same data still has D_210 = 0 the ONLY difference between the two runs is the later operation
+==============================================================================
+PART F — ANTECEDENTS, DISCLOSURES, THE KILL, THE VERDICT
+==============================================================================
+  ANTECEDENTS, cited at the gates that use them:
+    [B1]     Barandes, The Stochastic-Quantum Correspondence, arXiv:2302.10778 
+             — the Born projection Gamma = |U|^{o2} and the identification of i
+             ts composition failure with interference.
+    [B1x]    the cross-term identity Delta^B_ij = 2 Re sum_{k<l} (U2)_ik (U1)_k
+             j conj((U2)_il (U1)_lj) — [B1]'s identification, re-derived and ga
+             ted here independently of [W1'].
+    [B3]     Barandes, Quantum Systems as Indivisible Stochastic Processes, arX
+             iv:2507.21192 — division events (p.29), the law of total probabili
+             ty (eqs. 19-20), Theta(t<-0) (eq. 25).
+    [BC2]    bc/note-bc2-bell-two-frames.md and bc/code/bc2_two_frames_exact.py
+              at git object cbb7279 (the COMMITTED state; the bc working tree i
+             s dirty with frozen partial edits and is never read here), with bc
+             /LOG.md #2 and #4.
+    [GAUSS]  Phi_n is irreducible over Q — standard; it makes the Cyc represent
+             ation canonical, hence tuple equality = field equality.
+    [GMH]    Gell-Mann and Hartle, Phys. Rev. D 47, 3345 (1993) — for a PURE in
+             itial state a set of histories medium-decoheres IFF generalized re
+             cords exist.  CITED as known; never re-derived and never claimed a
+             s this unit's.
+    [V11]    v11/LOG.md #14 (U1 TERMINAL) and #21 (U1b TERMINAL) — cited only; 
+             v11 is frozen and nothing of it is re-run.
+    [W1']    v12/note-w1p-three-class.md, TERMINAL at v12 LOG #7 — the cross-te
+             rm identity, the Delta^B = 0 census (phase alignment, NOT support)
+             , the three-defect separation C+1, and the record example of its s
+             ec.8 which is this unit's declared seed.
+
+  SCOPE, engraved (v2.1 sec.5 and T3'):
+   * No claim about nature.  Declared finite-dimensional models only.
+   * The record is defined independently of the defect and declared
+     before any defect is computed, at every instance here.
+   * The theorem's hypotheses are SUPPORT conditions.  [W1'] proved
+     Delta^B = 0 is a PHASE-ALIGNMENT condition, strictly weaker;
+     records are therefore ONE way to kill the defect, not the only
+     way — D2 exhibits the other way and shows it is unstable.
+   * Delta^B, D_210 and d_div stay three different objects (T2').
+     Every divisibility statement here names its divisor.
+   * NO claim after erasure or under sector-recombining operations;
+     part E is that boundary, exhibited rather than assumed.
+   * The bc instance's biconditional is PROVEN in one direction and
+     MEASURED in the other over a declared 16-member family of record
+     structures at 12 cells.  It is not a general converse.
+   * v11 is cited, never re-run; [GMH] is cited, never re-derived.
+
+  DISCLOSURES:
+   * 3 of the 103 gates are DECLARATIVE (they print a stated scope or
+     re-assert an already-gated fact rather than computing something
+     new): ["the induction's base and two steps", 'v11 is cited, not re-run: no v11 f', 'the exact ell^1 floor: min_K ||Gam']
+   * the Bell model is REBUILT here from the committed specification;
+     no bc code is imported and no bc working-tree file is read.
+   * the exact ranks are computed over Q(sqrt 2) after an exactness-
+     checked conversion (gate B0), not over Q(zeta_16).
+
+==============================================================================
+  THE KILL CONDITION: a stable record (H-corr and H-avail both holding) with D_210 =/= 0 on its own algebra under record-preserving dynamics
+  searched over: the dim-4 census (320 pairs), the dim-9 census (64 pairs),
+  and the Bell model's 12 cells x 16 declared record structures.
+  AND, at n = 3, EXHAUSTIVELY over all 512 x 512 support patterns and
+  all 5 partitions (A5b): the hypotheses are monotone in the support,
+  so that check covers EVERY pair of 3x3 matrices, with any
+  amplitudes whatever — at n = 3 no counterexample exists at all.
+  RESULT: NOT FIRED.  No instance found.
+==============================================================================
+
+  gates: 103 run, 103 pass, 0 fail
+  anchors: 14, all exit-1 (a committed constant or the arithmetic layer)
+
+==============================================================================
+  VERDICT: W3'-PROVEN
+==============================================================================
+
+  THE THEOREM: at finite dimension, a record of the alternatives at a
+  cut — mutually exclusive sectors (H-orth), perfectly correlated
+  with the alternatives (H-corr), available under the declared future
+  dynamics (H-avail) — forces D_210 = 0 on the cut algebra with the
+  CANONICAL divisor.  The proof is a support argument on the
+  interference cross-terms and is gated TERMWISE, not merely in its
+  conclusion.  A second sufficient route: if the record is physically
+  READ at the cut, the same conclusion holds for ANY later dynamics.
+  Approximate records give approximate divisibility, with an exact
+  and TIGHT total-variation bound (A8).  The two known monomial
+  sufficiency conditions are this theorem at its two EXTREME record
+  structures (A5c), and the intermediate structures are strictly
+  stronger than both.
+
+  THE INSTANCE: on the committed Bell model the theorem's prediction
+  matches the committed divisibility census at all 12 cells, and the
+  reading of the record repairs every illegitimate division event —
+  so bc #4's M-1 biconditional reads: a legitimate division event is
+  a RECORD event.
+
+  THE CONVERSE: FALSE at the divisibility level (D1) and at the
+  Delta^B level (D2); vacuous in its all-readouts form (D3).  The
+  true converse is [GMH]'s, cited.
+
+  THE ERASER: the same record, the same first leg, one changed later
+  operation — and D_210 returns at +-1/2 with no divisor at all.
+  (H-avail) is load-bearing.
+
+  determinism: fixed lexicographic enumeration everywhere; no
+  randomness, no hashing, no float in any substantive path.
+  runtime:     7.5s
+==============================================================================
