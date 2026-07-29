@@ -293,3 +293,48 @@ LTP lemma gated).  All four workers instructed: the bc working
 tree is DIRTY with frozen partial edits — committed state only,
 via git show.  v13's GW1 dispatched alongside (v13 LOG #1).  Five
 units in flight.
+
+## 2026-07-28 — W5 DELIVERED: THE RECAST + THE LTP-FORCING LEMMA,
+## GREEN-UNREVIEWED (v12 LEDGER #9)
+The recast lands (note-w5-barandes-recast.md, 29 gates / 29 PASS /
+0 FAIL, 9 anchors + 8 controls clean, 3.5s; adjudicator rerun
+byte-identical modulo timings; all BC state read via git show).
+**THE RECAST: 20 identifications — 14 FAITHFUL / 3 EXTENSION / 3
+TENSION**, every one page-cited.  Discoveries inside the FAITHFUL
+column: **I-13 sharpened** — the Schur-Hadamard fibre is over
+ordered PAIRS (i,j), not points (p.12/13/27); **I-14, a standing
+constraint on W2b** — the unitary lift is a PARTIAL gauge fixing
+and the fibre group does not act on the lifts (p.19 verbatim);
+**I-15** — [B3] computes his own bundle's curvature and gets ZERO
+(p.20-21).  The TENSION column resolves cleanly: I-7 (one actual
+trajectory vs chart plurality — resolved: descriptions over one
+history); I-9 — **indivisibility lives BETWEEN division events,
+never across them**; **I-17 CORRECTS THE PIN: dilation = FIBRE
+enlargement, base fixed (p.28 "the stochastic dynamics ... will
+still be the same") — the pin's "chart enlargement" superseded.**
+**THE SURVIVES/DOESN'T TABLE (12 rows, citation-carried), one line
+through every row: chart-local content at a system's OWN division
+events survives globalization; composite content at a SHARED
+INTERMEDIATE TIME does not** (survivors: fixed C, wing-local
+content, exact outcome statistics, the realist disclaimer; casualties:
+the composite slice-joint, cross-lattice gluing, measurement-
+generates-a-division-event, unistochasticity-of-parts, eq. 22's
+invertibility hypothesis; untested: locality, the equivalence
+theorem).  **THE LTP-FORCING LEMMA, proven + gated:** with 0 and
+t′ division events, D₂₁₀ = Γ(t←0) − Γ(t←t′)Γ(t′←0) satisfies (a)
+D₂₁₀p(0) = 0 on every distribution the model runs (eqs. 19-20,
+two lines); (b) D₂₁₀ = 0 as matrices under H-SPAN; **(c) the
+forcing: any admissible p(0) with D₂₁₀p(0) ≠ 0 proves t′ is NOT a
+division event — no H-SPAN needed.**  Gate: the Bell model REBUILT
+in K = ℚ[x]/(8x⁴−8x²+1) (the committed receipt prints censuses,
+not matrices — declared), anchored on 9 gates reproducing every
+committed printed number; **the forcing FIRES at SP-C/D/F, both
+frames: 16/36 nonzero residual entries, values ±1/32 ± √2/32,
+16 × 36 = 576 matching the committed count.**  d_div explicitly
+undecided (no LP); D₂₁₀ = Δᴮ here only because the propagators
+compose — W1′ C+1's separation carried.  **THE HONEST CLOSE (v12's
+reading): [B3] is an exact, complete theory of ONE CHART AND ITS
+DEFECT; the three things a global world-process would need are
+exactly the three the corpus measured missing, and all three are
+JOINTS.  The atlas buys bookkeeping, not rescue.**  Hostile round
+dispatched.  W2/W3′/W4′ still constructing; GW1's round out.
