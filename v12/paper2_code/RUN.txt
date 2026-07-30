@@ -23,6 +23,7 @@ Exact standard-library reproduction
 [PASS] set model coherent families: 1
 [PASS] set model stabilizer: 1
 [PASS] set model injective colimit: True
+[PASS] symmetric model gauge action validates: ()
 [PASS] symmetric model verdict: 'GROUPOID-AMALGAM'
 [PASS] symmetric model coherent families: 4
 [PASS] symmetric model gauge orbits: 1
@@ -34,6 +35,7 @@ Exact standard-library reproduction
 [PASS] twisted triangle verdict: 'NO-DESCENT'
 [PASS] twisted triangle coherent families: 0
 [PASS] missing pair verdict: 'ABSENT-PAIR'
+[PASS] non-equivariant candidate data are rejected: True
 
 4. NO NATURAL CHOICE IN THE PRESENCE OF TOKEN SYMMETRY
 [PASS] canonical maps fixed by independent S2 automorphisms: 0
@@ -42,10 +44,12 @@ Exact standard-library reproduction
 [PASS] A full automorphism group is trivial: 1
 [PASS] the two completions have the same realized distribution: (Fraction(0, 1), Fraction(1, 2), Fraction(1, 2), Fraction(0, 1), Fraction(0, 1))
 [PASS] the two completions have the same actual record law: {('1', '0'): Fraction(1, 2), ('0', '1'): Fraction(1, 2)}
-[PASS] realized A<-B_id candidate count: 2
-[PASS] realized A<-B_swap candidate count: 2
+[PASS] realized-support A<-B_id candidate count: 4
+[PASS] realized-support A<-B_swap candidate count: 4
 [PASS] realized token maps are identity and swap: {(0, 1), (1, 0)}
 [PASS] same realized token-map set for both completions: {(0, 1), (1, 0)}
+[PASS] matched provenance permits the identity token map: ((0, 1),)
+[PASS] changed provenance blocks the token map: ()
 [PASS] full A<-B_id isomorphism count: 1
 [PASS] full A<-B_id token map: (0, 1)
 [PASS] full A<-B_swap isomorphism count: 1
@@ -58,4 +62,4 @@ THEOREM READOUT
   Therefore no realized-only co-reference rule can reproduce full-law
   event-token identity on both completions.
 ------------------------------------------------------------------------------
-39 checks: 39 pass, 0 fail
+43 checks: 43 pass, 0 fail

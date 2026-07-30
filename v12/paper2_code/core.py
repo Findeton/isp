@@ -129,18 +129,33 @@ class DynamicChart:
         return out
 
 
-def induced_token_maps(source: DynamicChart, target: DynamicChart, p: Perm) -> Tuple[Perm, ...]:
-    """Token bijections induced by a configuration bijection p: source -> target."""
+def induced_token_maps(
+    source: DynamicChart,
+    target: DynamicChart,
+    p: Perm,
+    configurations: Optional[Iterable[int]] = None,
+) -> Tuple[Perm, ...]:
+    """Token bijections induced by p on the declared comparison scope.
+
+    Full-law comparisons use every configuration. Realized-process
+    comparisons pass only the initial configuration and the positive support
+    of the realized column. Provenance, occurrence, and availability are
+    structural token data and are checked at either scope.
+    """
     if len(source.tokens) != len(target.tokens):
         return ()
     m = len(source.tokens)
+    tested = tuple(range(source.n) if configurations is None else configurations)
     out: List[Perm] = []
     for tau in permutations(range(m)):
         ok = True
         for s_ix, t_ix in enumerate(tau):
+            if not provenance_compatible(source.tokens[s_ix], target.tokens[t_ix]):
+                ok = False
+                break
             sv = source.tokens[s_ix].values_by_configuration
             tv = target.tokens[t_ix].values_by_configuration
-            if any(sv[x] != tv[p[x]] for x in range(source.n)):
+            if any(sv[x] != tv[p[x]] for x in tested):
                 ok = False
                 break
         if ok:
@@ -156,22 +171,25 @@ def full_isomorphisms(target: DynamicChart, source: DynamicChart) -> Tuple[Tuple
     for p in all_perms(source.n, {source.initial: target.initial}):
         if conjugate_matrix(source.transition, p) != target.transition:
             continue
-        for tau in induced_token_maps(source, target, p):
+        for tau in induced_token_maps(source, target, p, range(source.n)):
             out.append((p, tau))
     return tuple(out)
 
 
 def realized_isomorphisms(target: DynamicChart, source: DynamicChart) -> Tuple[Tuple[Perm, Perm], ...]:
-    """All one-run isomorphisms using only the realized initial column and tokens."""
+    """All one-run isomorphisms using only realized-support token values."""
     if target.n != source.n:
         return ()
     tgt = target.realized_distribution()
     src = source.realized_distribution()
+    realized_scope = tuple(
+        sorted({source.initial} | {x for x, probability in enumerate(src) if probability > 0})
+    )
     out: List[Tuple[Perm, Perm]] = []
     for p in all_perms(source.n, {source.initial: target.initial}):
         if permute_vector(src, p) != tgt:
             continue
-        for tau in induced_token_maps(source, target, p):
+        for tau in induced_token_maps(source, target, p, realized_scope):
             out.append((p, tau))
     return tuple(out)
 
@@ -292,6 +310,80 @@ def _in_phi(fam: Mapping[Tuple[int, int], Perm], phi: Mapping[Tuple[int, int], S
     return all(fam[e] in tuple(phi[e]) for e in fam)
 
 
+def _is_permutation(p: Perm, size: int) -> bool:
+    return len(p) == size and set(p) == set(range(size))
+
+
+def descent_data_errors(
+    token_sizes: Sequence[int],
+    phi: Mapping[Tuple[int, int], Sequence[Perm]],
+    automorphisms: Sequence[Sequence[Perm]],
+) -> Tuple[str, ...]:
+    """Validate the group action required by the descent classification.
+
+    Empty required pairs are a pre-registered ABSENT-PAIR outcome and are
+    handled before this validator. All nonempty data must be typed bijections;
+    each automorphism family must be a group; candidate maps must be closed
+    under inverses and under independent endpoint gauge actions.
+    """
+    n = len(token_sizes)
+    errors: List[str] = []
+    if len(automorphisms) != n:
+        return ("one automorphism family is required per chart",)
+
+    aut_sets: List[set[Perm]] = []
+    automorphisms_are_groups = True
+    for a, (size, declared) in enumerate(zip(token_sizes, automorphisms)):
+        group = set(declared)
+        aut_sets.append(group)
+        if not group:
+            errors.append(f"chart {a}: empty automorphism family")
+            automorphisms_are_groups = False
+            continue
+        if any(not _is_permutation(g, size) for g in group):
+            errors.append(f"chart {a}: ill-typed automorphism")
+            automorphisms_are_groups = False
+            continue
+        ident = identity_perm(size)
+        if ident not in group:
+            errors.append(f"chart {a}: automorphisms omit identity")
+            automorphisms_are_groups = False
+        if any(inverse_perm(g) not in group for g in group):
+            errors.append(f"chart {a}: automorphisms not inverse-closed")
+            automorphisms_are_groups = False
+        if any(compose_perm(g, h) not in group for g in group for h in group):
+            errors.append(f"chart {a}: automorphisms not composition-closed")
+            automorphisms_are_groups = False
+
+    edges = [(a, b) for a in range(n) for b in range(n) if a != b]
+    for a, b in edges:
+        candidates = tuple(phi.get((a, b), ()))
+        if any(
+            token_sizes[a] != token_sizes[b]
+            or not _is_permutation(p, token_sizes[b])
+            for p in candidates
+        ):
+            errors.append(f"edge {(a, b)}: candidate is not a typed bijection")
+            continue
+        reverse = set(phi.get((b, a), ()))
+        if any(inverse_perm(p) not in reverse for p in candidates):
+            errors.append(f"edge {(a, b)}: candidates not inverse-closed")
+        if not automorphisms_are_groups:
+            continue
+        for p in candidates:
+            for ga in aut_sets[a]:
+                for gb in aut_sets[b]:
+                    moved = compose_perm(ga, compose_perm(p, inverse_perm(gb)))
+                    if moved not in candidates:
+                        errors.append(f"edge {(a, b)}: candidate set not gauge-closed")
+                        break
+                if errors and errors[-1].startswith(f"edge {(a, b)}: candidate set"):
+                    break
+            if errors and errors[-1].startswith(f"edge {(a, b)}: candidate set"):
+                break
+    return tuple(dict.fromkeys(errors))
+
+
 def _colimit_injective(
     token_sizes: Sequence[int], fam: Mapping[Tuple[int, int], Perm]
 ) -> bool:
@@ -339,6 +431,10 @@ def solve_descent(
     edges = [(a, b) for a in range(n) for b in range(n) if a != b]
     if any(not phi.get(e) for e in edges):
         return DescentResult("ABSENT-PAIR", 0, 0, 0, False)
+
+    errors = descent_data_errors(token_sizes, phi, automorphisms)
+    if errors:
+        raise ValueError("invalid descent data: " + "; ".join(errors))
 
     families = enumerate_coherent_families(token_sizes, phi)
     if not families:

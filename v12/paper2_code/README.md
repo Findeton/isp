@@ -9,11 +9,17 @@ Local Stochastic Atlases* (`../paper2-record-coreference.md`).
 - `models.py` — exact fact controls and the five-configuration
   completion-sensitivity witness.
 - `run_all.py` — executes every result; exits nonzero on any mismatch.
-- `RUN.txt` — output of one complete run: 39 checks, 39 pass, 0 fail.
+- `RUN.txt` — output of one complete run: 43 checks, 43 pass, 0 fail.
 
 Python 3.11+, standard library only, no floating point.
 
 ```bash
 cd paper2_code
 python3 run_all.py
+```
+
+Falsification self-test (deliberately breaks one anchor and must exit 1):
+
+```bash
+python3 run_all.py --mutant
 ```

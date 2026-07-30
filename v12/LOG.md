@@ -1820,3 +1820,37 @@ mode, run it, require visible exit 1, then rerun the normal receipt
 twice.  Rendering and reference audits found no blocker.  **VERDICT:
 ACCEPT-WITH-FIXES.**  Paper 2 remains GREEN-UNREVIEWED; no v13 census
 may lean on it until the repair is independently rerun and terminalized.
+
+## 2026-07-30 — PAPER 2 REPAIRED, RE-RUN, AND ADJUDICATED
+## **TERMINAL AT ITS DECLARED THEOREM SCOPE** (v12 LEDGER #46)
+The #45 findings were repaired without changing the five-state witness or
+the central conclusion.  F1: realized comparison now tests token values only
+on `{initial} ∪ positive support`; each completion consequently admits **4**
+configuration maps (not 2), while both still admit exactly the same two token
+maps, identity and swap, and the opposite full-law completions still select
+one of those maps uniquely.  F2: the descent API now validates typed
+bijections, automorphism-group identity/inverses/composition, edge inverse
+closure, and closure of candidate maps under independent endpoint gauge
+actions before orbit enumeration; a non-equivariant negative control is
+rejected.  F3: abstract, scope, gravity consequence and conclusion now state
+that Paper 2 compares declared tokens and inherits, rather than derives, the
+W3/W6 stability premise.  F4: common-extension/common-witness certificates
+are explicitly sufficient under the adopted criterion, not claimed necessary
+or complete.  F5: provenance, occurrence and availability are now consumed by
+the chart-isomorphism enumerator, with positive and negative controls.  F6:
+`--mutant` deliberately corrupts the full-automorphism anchor.
+
+ADJUDICATOR VERIFICATION: the repaired normal runner executed twice, exit 0,
+byte-identically; both outputs exactly matched the regenerated `RUN.txt`:
+**43 checks, 43 pass, 0 fail**.  The mutant printed **42 pass, 1 fail** and
+exited 1.  `py_compile` passed with an explicit temporary cache; the source
+float sweep returned no hits; `git diff --check` passed; display-math
+delimiters are balanced.  The #45 independent rebuild already reproduced all
+load-bearing group, descent and completion counts without importing the
+bundle, and its primary-source attribution audit found no outsourced theorem.
+The status header, paper tables, reproduction instructions and bundle README
+now agree with the executable receipt.  **PAPER 2 IS TERMINAL AT THE DECLARED
+FINITE THEOREM LAYER.**  This terminality is not a publication/submission
+decision and does not fill GW2 object 3 (a physically established stable-record
+algebra).  The user's ordered frontier is now v13 GW2, preceded only by the
+programme amendment that records the RQ0 → RQ1 → GR1 gate sequence.
