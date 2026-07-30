@@ -1,7 +1,9 @@
 # v13 GW1 — METRIC RECONSTRUCTION FROM DEFORMATION CLOSURE:
 # THE INSTRUMENT CENSUS
 
-**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-07-28.
+**Status:** TERMINAL, STRICT, 2026-07-28 (delivered v13 LOG #2; hostile
+round and repair instructions #3–#4; repaired, verified and adjudicated
+terminal at #5).
 **Pin:** `v13/note-gw1-metric-from-closure-pin.md` (STEP 0, the
 instrument census, promoted there to a first-class verdict).
 **Binding:** v13 paper 0 `[DRAFT]` §2 (the three-defect separation),
@@ -42,8 +44,8 @@ census carries no statement about field equations, backreaction,
 constraint preservation or a geometry-update law.  Grades quoted for
 located objects are the cited papers' own; this note confers none.
 
-The draft's kill condition, quoted once, verbatim from v13 paper 0
-§6 (`v13/relativistic-isp-v13-paper0-gravity.md:433`):
+The draft's kill condition, quoted once, verbatim from v13 paper 0 §6
+(frozen by the GW1 pin at v13 LOG #1 and retained in current §6):
 
 > If the metric must already be inserted into $J[N]$, or if the same
 > record law permits inequivalent recovered tensors, then the
@@ -718,8 +720,9 @@ finite-regulator residual declared an open proof burden.
   promotion is adjudicated.
 - The negative is scoped to the receipted search protocol; no
   nonexistence theorem is claimed.
-- This note is GREEN-UNREVIEWED-REPAIRED and is not citable as
-  terminal.
+- This note is TERMINAL at the scoped census verdict recorded in v13 LOG #5;
+  it does not confer a grade on any located object or on prospective GW1
+  steps 1–5.
 
 ---
 

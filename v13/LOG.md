@@ -254,3 +254,38 @@ later branch, not replaced: W6 co-reference → GW2 regional descent
 paper stays [DRAFT] untouched.  Pre-registered outcomes:
 GW2-CENSUS-COMPLETE / GW2-BLOCKED-AT-⟨object⟩ (first-class, as
 GW1's was).
+
+## 2026-07-30 — PAPER 0 v0.2: THE USER-ORDERED RQ0 → RQ1 → GR1
+## GATES ARE BINDING; GW2 IS NEXT (v13 LEDGER #8)
+After a v1–v13 corpus audit and Paper 2's hostile repair/terminalization
+(v12 #45–#46), the user ordered the gravity prospectus split into spacetime
+kinematics and gravitational dynamics.  Paper 0 remains **[DRAFT]**; this entry
+changes programme order, not theorem grade.  The binding sequence is now:
+W6/Paper 2 fact descent → the already-pinned GW2 regional census → **RQ0**
+(regions, W3-stable local algebras, overlaps/restrictions/gauge, nonvacuous
+triple descent, causal cone, dimension, count measure, independently
+order-derived conformal metric, frames/spacelike relation/refinement) → **RQ1a**
+(free scalar on that recovered fixed arena) → **RQ1b** (Dirac, with independent
+frame/spin/Clifford and CAR tests) → **GR1** (universal geometric response).
+
+THE HARD GATE: **no Einstein-equation, backreaction or universal-coupling claim
+before a terminal free relativistic scalar sector exists on the recovered
+arena.**  Dirac precedes boson/fermion common-metric and spin-structure claims.
+Maxwell may run alongside early GR1 but must precede general-matter universality.
+The bridge is now explicit and independently constructed: compare
+`C_record ≃ C_field` under refinement, then
+`g_order ≃ g_scalar ≃ g_Dirac`, with the protocol and gauge/scale matching
+frozen before field readout.  A global event set is not required: if Paper 2's
+descent is groupoid-valued, RQ0/RQ1 must be invariant over that base.
+
+LEGACY SCOPE BANKED: v8 Paper 9 is the imported, flat-2D scalar-on-record-order
+baseline (no seal–field coupling, backreaction, manifoldlikeness discharge or
+Lorentz-group emergence); v2 Paper 9 is an enriched/background-supplied 1+1D
+Dirac/CAR matching theorem that excludes stress-energy and metric extraction;
+v1 Paper 2 is a fixed periodic one-particle lattice Dirac exchange package.
+They are controls, not completion of the new RQ1.  Paper 0 §6 now records GW1's
+actual terminal negative (#5) and defers its deformation-interface successor
+until GR1.  The GW1 note's stale GREEN status line was forward-corrected to the
+terminal provenance already conferred at #5.  RUNBOOK §0 now points at this
+order.  **GW2 remains the next authorized unit; this entry does not claim it
+was dispatched.**

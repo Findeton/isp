@@ -20,10 +20,14 @@ that made the rule.
 - **HALT discipline:** when a batch closes, STOP. Report, then do nothing
   further without the user's word. Do not start units, papers, or reviews
   on your own initiative.
-- **Live state pointer:** read `v12/LOG.md` from the last entry backwards.
-  The frontier at halt (#42): O4 discriminator; v13 GW2 census (pinned, NOT
-  dispatched, `v13/note-gw2-regional-descent-census-pin.md`); nomological
-  transport over W6's base; paper 1's open problems.
+- **Live state pointer:** read both `v12/LOG.md` and `v13/LOG.md` from their
+  last entries backwards.  Paper 2 is terminal at v12 #46.  The user's
+  binding order is: GW2 regional-descent census → RQ0 regional causal arena
+  → RQ1a scalar → RQ1b Dirac → GR1 backreaction; Maxwell may accompany
+  early GR1 but precedes any general-matter universality claim.  GW2 is the
+  active authorized unit, already pinned at v13 #7; record its dispatch only
+  after it occurs.  No RQ0/RQ1/GR1 construction may begin without its own
+  committed pin and the preceding gate.
 
 ## 1. The unit cycle
 
