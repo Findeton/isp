@@ -492,3 +492,53 @@ specification, and write no repairs.  The complete review will be frozen
 before adjudication or implementation.  This dispatch entry is recorded only
 after the dispatch occurred.  Commit #12 remains **GREEN-UNREVIEWED** pending
 the round.
+
+## 2026-07-30 — RQ0 QUANTUM FACTUAL-BASE HOSTILE REVIEW FROZEN:
+## `FACT-DESCENT BLOCKED AT PHYSICAL OVERLAP` (v13 LEDGER #14)
+The external repo-read-only round has returned and is frozen verbatim at
+`review-rq0-quantum-factual-base-hostile.md`, SHA-256
+`e8b5dab245f138402469aaf97eaf04ca2cf657c12c1396538005d69ca87b9eb3`
+(15,081 bytes).  The reviewer made no repository edit and imported no delivery
+code into its independent exact rebuild.  Both reviewed commits remain
+immutable.
+
+**EXTERNAL VERDICT:** `FACT-DESCENT BLOCKED AT PHYSICAL OVERLAP`; highest
+secure pre-registered rung recommended: `RQ0-REGIONS-CONSTRUCTED`.  The round
+reproduces every load-bearing one-region number: dimensions 4/8/16; W3 write
+true, preserve availability true, eraser availability false, no-write H-corr
+false; preserving cross/within coherence 0/0, defect 0 and record residual 0;
+eraser cross-sector and nonzero-defect counts 8/32/128 with undefined record
+quotient.  It also reproduces the delivered extension's support, probabilities,
+unitarity, internal fact-map combinatorics, token permutation count and all
+Born-shadow coarse-grainings.
+
+The round's two decisive independent results are: **(F1/F2, FATAL)** the
+no-argument common-extension constructor is connected to the three regional
+instruments only by equality of fair marginal laws; an exact anti-diagonal
+unitary extension with support `(0,1,0)/(1,0,1)` has the same three fair
+marginals while forcing complementation rather than identity, so the chosen
+extension inserts the relation it later certifies; and **(F3, MAJOR)** all
+four admitted arrows factor exactly as the two-qubit branch-memory instrument
+tensored with independent identity/Hadamard spectators.  The remaining
+findings type the nine-arrow object as a value-level fact-interface groupoid,
+not `Reg`; type refinement as Born-shadow marginalization, not an amplitude
+instrument morphism; restrict the implemented boundary gauge to the real
+`±1` subgroup; and classify full basis preparation/configuration tomography
+as operational-access postulates.
+
+The review preserves the quantum amplitude-region primitive, derived stable
+record seam, preserve/erase/no-write controls, real sign-gauge first rung,
+internal GHZ-like record theorem, internal record-bit symmetry and exact
+Born-shadow coarse-graining.  It withholds genuine regional dynamical
+diversity, physical common overlap, regional site, physical regional fact
+descent and instrument-level refinement.  Its bounded repair specification
+requires same-dimension non-gauge-isomorphic interacting instruments,
+anti-padding/product-decomposition gates, a pretyped master instrument and
+explicit write/preserve region morphisms, record pullbacks, an independently
+frozen admissible-extension class, diagonal/anti-diagonal and equal-law/no-
+bridge controls, a strict `FactIface`/`Reg` separation, and honest real-gauge,
+access-postulate and shadow-refinement labels.
+
+This entry freezes the external report; it does not yet adjudicate or repair
+it.  No `RQ0-C1`, causal, field or gravity work has begun.  Adjudication is the
+next event.
