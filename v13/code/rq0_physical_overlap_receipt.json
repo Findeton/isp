@@ -1,0 +1,2499 @@
+{
+  "checks": [
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "repair pin commit is an ancestor of HEAD",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "307c36f017d9d5587334d3b79421645ee5b54c61",
+          0,
+          0
+        ],
+        [
+          "1537b1475705a5def1d1d063459fa7d4fb534982",
+          0,
+          0
+        ],
+        [
+          "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          "307c36f017d9d5587334d3b79421645ee5b54c61",
+          0,
+          0
+        ],
+        [
+          "1537b1475705a5def1d1d063459fa7d4fb534982",
+          0,
+          0
+        ],
+        [
+          "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+          0,
+          0
+        ]
+      ],
+      "label": "reviewed and adjudication commits are immutable ancestors",
+      "ok": true
+    },
+    {
+      "computed": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
+      "expected": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
+      "label": "physical-overlap repair pin hash",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "clean-sheet pin",
+          true,
+          "antecedent pin"
+        ],
+        [
+          "quantum amendment pin",
+          true,
+          "antecedent pin"
+        ],
+        [
+          "physical-overlap repair pin",
+          true,
+          "active pin"
+        ],
+        [
+          "Paper 1",
+          true,
+          "W3 and boundary-gauge antecedent"
+        ],
+        [
+          "Paper 2",
+          true,
+          "fact-versus-law antecedent"
+        ],
+        [
+          "hostile review",
+          true,
+          "repair obligations"
+        ]
+      ],
+      "expected": [
+        [
+          "clean-sheet pin",
+          true,
+          "antecedent pin"
+        ],
+        [
+          "quantum amendment pin",
+          true,
+          "antecedent pin"
+        ],
+        [
+          "physical-overlap repair pin",
+          true,
+          "active pin"
+        ],
+        [
+          "Paper 1",
+          true,
+          "W3 and boundary-gauge antecedent"
+        ],
+        [
+          "Paper 2",
+          true,
+          "fact-versus-law antecedent"
+        ],
+        [
+          "hostile review",
+          true,
+          "repair obligations"
+        ]
+      ],
+      "label": "all binding files are hash-locked with declared use classes",
+      "ok": true
+    },
+    {
+      "computed": {
+        "arguments": [],
+        "forbidden_names": []
+      },
+      "expected": {
+        "arguments": [],
+        "forbidden_names": []
+      },
+      "label": "master constructor consumes no comparison target",
+      "ok": true
+    },
+    {
+      "computed": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
+      "expected": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
+      "label": "constructor, morphism type, validator, and bridge surface are source-locked",
+      "ok": true
+    },
+    {
+      "computed": {
+        "float_literals": [],
+        "numpy_imports": [],
+        "random_imports": []
+      },
+      "expected": {
+        "float_literals": [],
+        "numpy_imports": [],
+        "random_imports": []
+      },
+      "label": "substantive code has no float, random, or numpy path",
+      "ok": true
+    },
+    {
+      "computed": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+      "expected": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+      "label": "predeclared master/morphism digest",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "structural bridge predicate accepts the frozen family",
+      "ok": true
+    },
+    {
+      "computed": {
+        "forbidden_names": [],
+        "uses_h_avail": true,
+        "uses_h_corr": true,
+        "uses_induced_record_pullback": true
+      },
+      "expected": {
+        "forbidden_names": [],
+        "uses_h_avail": true,
+        "uses_h_corr": true,
+        "uses_induced_record_pullback": true
+      },
+      "label": "Rec is law-blind and derives restrictions from morphisms",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ]
+      ],
+      "expected": [
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ],
+        [
+          8,
+          8,
+          8
+        ]
+      ],
+      "label": "three regions and the core/master use equal eight-dimensional boundaries",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "O",
+          true,
+          true,
+          true
+        ],
+        [
+          "D1",
+          true,
+          true,
+          true
+        ],
+        [
+          "D2",
+          true,
+          true,
+          true
+        ],
+        [
+          "D3",
+          true,
+          true,
+          true
+        ],
+        [
+          "E",
+          true,
+          true,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          "O",
+          true,
+          true,
+          true
+        ],
+        [
+          "D1",
+          true,
+          true,
+          true
+        ],
+        [
+          "D2",
+          true,
+          true,
+          true
+        ],
+        [
+          "D3",
+          true,
+          true,
+          true
+        ],
+        [
+          "E",
+          true,
+          true,
+          true
+        ]
+      ],
+      "label": "all arrows and readouts are explicitly and uniquely typed",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "all constructed amplitude arrows are exactly unitary",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "O",
+          8,
+          8,
+          true
+        ],
+        [
+          "D1",
+          8,
+          8,
+          true
+        ],
+        [
+          "D2",
+          8,
+          8,
+          true
+        ],
+        [
+          "D3",
+          8,
+          8,
+          true
+        ],
+        [
+          "E",
+          8,
+          8,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          "O",
+          8,
+          8,
+          true
+        ],
+        [
+          "D1",
+          8,
+          8,
+          true
+        ],
+        [
+          "D2",
+          8,
+          8,
+          true
+        ],
+        [
+          "D3",
+          8,
+          8,
+          true
+        ],
+        [
+          "E",
+          8,
+          8,
+          true
+        ]
+      ],
+      "label": "basis preparation and configuration tomography are explicit access postulates",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "implemented gauge is the exact real sign/permutation gauge only",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D1 record occurrence is derived by H-corr",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D1 no-write control fails H-corr",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "D1 both preserving continuations retain availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "label": "D1 preserving seams have zero coherence, defect, and residual",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D1 eraser destroys availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "label": "D1 eraser restores cross-sector coherence and nonzero defect",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D2 record occurrence is derived by H-corr",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D2 no-write control fails H-corr",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "D2 both preserving continuations retain availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "label": "D2 preserving seams have zero coherence, defect, and residual",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D2 eraser destroys availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "label": "D2 eraser restores cross-sector coherence and nonzero defect",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D3 record occurrence is derived by H-corr",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D3 no-write control fails H-corr",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "D3 both preserving continuations retain availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ],
+        [
+          {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          0,
+          true,
+          0
+        ]
+      ],
+      "label": "D3 preserving seams have zero coherence, defect, and residual",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "D3 eraser destroys availability",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        true,
+        false
+      ],
+      "label": "D3 eraser restores cross-sector coherence and nonzero defect",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "composition-compatible sign gauge preserves accessible composite Born laws",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "real-gauged region/master morphism still satisfies every diagram",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "common configuration relabelling preserves W3 and accessible invariants",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "label": "causal, geometric, field, and full-U(1) insertion guards fire",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        true
+      ],
+      "expected": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        true
+      ],
+      "label": "algebraic coupling graph connects branch, record, and auxiliary",
+      "ok": true
+    },
+    {
+      "computed": {
+        "factor_found": true,
+        "permutations_tested": 1,
+        "witness": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "expected": {
+        "factor_found": true,
+        "permutations_tested": 1,
+        "witness": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "label": "old q=3 spectator-padded family is detected",
+      "ok": true
+    },
+    {
+      "computed": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "expected": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "label": "D1 exhausts all 8! common relabellings with no 4x2 product family",
+      "ok": true
+    },
+    {
+      "computed": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "expected": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "label": "D2 exhausts all 8! common relabellings with no 4x2 product family",
+      "ok": true
+    },
+    {
+      "computed": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "expected": {
+        "factor_found": false,
+        "permutations_tested": 40320,
+        "witness": null
+      },
+      "label": "D3 exhausts all 8! common relabellings with no 4x2 product family",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1",
+          [
+            8,
+            8
+          ]
+        ],
+        [
+          "D2",
+          [
+            8,
+            16
+          ]
+        ],
+        [
+          "D3",
+          [
+            8,
+            32
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          "D1",
+          [
+            8,
+            8
+          ]
+        ],
+        [
+          "D2",
+          [
+            8,
+            16
+          ]
+        ],
+        [
+          "D3",
+          [
+            8,
+            32
+          ]
+        ]
+      ],
+      "label": "preserve-family support multisets separate all equal-dimensional regions even if labels permute",
+      "ok": true
+    },
+    {
+      "computed": 3,
+      "expected": 3,
+      "label": "all three full accessible dynamic signatures are distinct",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback",
+      "ok": true
+    },
+    {
+      "computed": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "label": "changing one mapped regional arrow breaks every embedding",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        false,
+        false
+      ],
+      "expected": [
+        true,
+        false,
+        false
+      ],
+      "label": "unitary but non-signed-permutation boundary maps are outside the declared Reg scope",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        5,
+        12
+      ],
+      "expected": [
+        true,
+        5,
+        12
+      ],
+      "label": "Reg has amplitude instruments and typed instrument morphisms",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "label": "Reg identities, compositions, and all declared morphisms validate",
+      "ok": true
+    },
+    {
+      "computed": [
+        22,
+        true
+      ],
+      "expected": [
+        22,
+        true
+      ],
+      "label": "all 22 composable Reg pairs equal their declared composites",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ],
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ],
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ]
+        ],
+        [
+          "core.no-write",
+          "core.preserve",
+          "core.write"
+        ]
+      ],
+      "expected": [
+        [
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ],
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ],
+          [
+            "core.no-write",
+            "core.preserve",
+            "core.write"
+          ]
+        ],
+        [
+          "core.no-write",
+          "core.preserve",
+          "core.write"
+        ]
+      ],
+      "label": "all pair and triple intersections are the nonvacuous amplitude core",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "O satisfies the finite pair-pullback universal tests",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "the three regional subfamilies cover the frozen master arrow family",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "positive Ref is an amplitude-instrument family inclusion",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "old Born-shadow product coarse-graining cannot pass the instrument-refinement gate",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "altering one frozen bridge fails the structural certificate",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "label": "regional fair laws are consequence-only measurements",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          16,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          16,
+          true,
+          true,
+          true,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          16,
+          true,
+          true,
+          true,
+          true
+        ],
+        [
+          16,
+          true,
+          true,
+          true,
+          true
+        ]
+      ],
+      "label": "diagonal and anti-diagonal extensions are exact W3-compatible amplitude controls",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ]
+      ],
+      "label": "diagonal and anti-diagonal supports differ",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "law-only predicate accepts both incompatible extensions",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "label": "equal marginals force incompatible pair-map families",
+      "ok": true
+    },
+    {
+      "computed": [
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false
+      ],
+      "label": "post-selected law couplings fail the structural master criterion",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        true,
+        true
+      ],
+      "expected": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        true,
+        true
+      ],
+      "label": "rogue region has the same stable fair record law",
+      "ok": true
+    },
+    {
+      "computed": [
+        4,
+        false,
+        false
+      ],
+      "expected": [
+        4,
+        false,
+        false
+      ],
+      "label": "rogue preserve has no admissible signed-permutation bridge into the frozen master",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "O",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D1",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D2",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D3",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "E",
+          "memory",
+          true,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          "O",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D1",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D2",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "D3",
+          "memory",
+          true,
+          true
+        ],
+        [
+          "E",
+          "memory",
+          true,
+          true
+        ]
+      ],
+      "label": "all five record algebras are derived at the preserving scope",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        "CONTRAVARIANT",
+        5,
+        12
+      ],
+      "expected": [
+        true,
+        true,
+        "CONTRAVARIANT",
+        5,
+        12
+      ],
+      "label": "FactIface and Rec are distinct typed executable objects",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "every fact restriction is induced from a validated Reg morphism",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "Rec satisfies identities and contravariant composition",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          {
+            "0": 0,
+            "1": 1
+          },
+          {
+            "0": 0,
+            "1": 1
+          },
+          {
+            "0": 0,
+            "1": 1
+          }
+        ],
+        true,
+        true
+      ],
+      "expected": [
+        [
+          {
+            "0": 0,
+            "1": 1
+          },
+          {
+            "0": 0,
+            "1": 1
+          },
+          {
+            "0": 0,
+            "1": 1
+          }
+        ],
+        true,
+        true
+      ],
+      "label": "the common record descends across the genuine triple and all three master paths",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ],
+        [
+          true,
+          true
+        ]
+      ],
+      "label": "regional record projectors are literal morphism pullbacks",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        false,
+        3,
+        9
+      ],
+      "expected": [
+        true,
+        false,
+        3,
+        9
+      ],
+      "label": "value-only groupoid is FactIface-shaped but cannot satisfy Reg typing",
+      "ok": true
+    },
+    {
+      "computed": {
+        "all_laws": true,
+        "composition_count": 27,
+        "identity_count": 3,
+        "inverse_count": 9
+      },
+      "expected": {
+        "all_laws": true,
+        "composition_count": 27,
+        "identity_count": 3,
+        "inverse_count": 9
+      },
+      "label": "value-only control obeys FactIface groupoid laws without becoming Reg",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "all three permitted positive rungs are earned",
+      "ok": true
+    },
+    {
+      "computed": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "label": "all pre-registered repair blocks remain false",
+      "ok": true
+    },
+    {
+      "computed": "RQ0-FACT-DESCENT",
+      "expected": "RQ0-FACT-DESCENT",
+      "label": "highest honestly restored rung",
+      "ok": true
+    },
+    {
+      "computed": 6,
+      "expected": 6,
+      "label": "forbidden successor claims remain explicitly absent",
+      "ok": true
+    }
+  ],
+  "science": {
+    "FactIface": {
+      "arrow_count": 12,
+      "morphism_type": "FactMorphism",
+      "object_count": 5,
+      "object_type": "FactAlgebra",
+      "value_only_control_is_Reg": false,
+      "value_only_control_laws": {
+        "all_laws": true,
+        "composition_count": 27,
+        "identity_count": 3,
+        "inverse_count": 9
+      }
+    },
+    "Rec": {
+      "algebras": {
+        "D1": {
+          "availability": [
+            [
+              "core-preserve",
+              true
+            ],
+            [
+              "regional-preserve",
+              true
+            ]
+          ],
+          "generator": "memory",
+          "occurred": true,
+          "values": [
+            0,
+            1
+          ]
+        },
+        "D2": {
+          "availability": [
+            [
+              "core-preserve",
+              true
+            ],
+            [
+              "regional-preserve",
+              true
+            ]
+          ],
+          "generator": "memory",
+          "occurred": true,
+          "values": [
+            0,
+            1
+          ]
+        },
+        "D3": {
+          "availability": [
+            [
+              "core-preserve",
+              true
+            ],
+            [
+              "regional-preserve",
+              true
+            ]
+          ],
+          "generator": "memory",
+          "occurred": true,
+          "values": [
+            0,
+            1
+          ]
+        },
+        "E": {
+          "availability": [
+            [
+              "core.preserve",
+              true
+            ],
+            [
+              "D1.preserve",
+              true
+            ],
+            [
+              "D2.preserve",
+              true
+            ],
+            [
+              "D3.preserve",
+              true
+            ]
+          ],
+          "generator": "memory",
+          "occurred": true,
+          "values": [
+            0,
+            1
+          ]
+        },
+        "O": {
+          "availability": [
+            [
+              "core-preserve",
+              true
+            ]
+          ],
+          "generator": "memory",
+          "occurred": true,
+          "values": [
+            0,
+            1
+          ]
+        }
+      },
+      "all_functor_laws": true,
+      "all_maps_induced_from_Reg": true,
+      "arrow_map": [
+        [
+          "id:O",
+          "Rec(id:O)"
+        ],
+        [
+          "i1:O->D1",
+          "Rec(i1:O->D1)"
+        ],
+        [
+          "i2:O->D2",
+          "Rec(i2:O->D2)"
+        ],
+        [
+          "i3:O->D3",
+          "Rec(i3:O->D3)"
+        ],
+        [
+          "k1:O->E",
+          "Rec(k1:O->E)"
+        ],
+        [
+          "id:D1",
+          "Rec(id:D1)"
+        ],
+        [
+          "j1:D1->E",
+          "Rec(j1:D1->E)"
+        ],
+        [
+          "id:D2",
+          "Rec(id:D2)"
+        ],
+        [
+          "j2:D2->E",
+          "Rec(j2:D2->E)"
+        ],
+        [
+          "id:D3",
+          "Rec(id:D3)"
+        ],
+        [
+          "j3:D3->E",
+          "Rec(j3:D3->E)"
+        ],
+        [
+          "id:E",
+          "Rec(id:E)"
+        ]
+      ],
+      "marginal_laws_used_as_fact_criterion": false,
+      "object_map": [
+        [
+          "O",
+          "R(O)"
+        ],
+        [
+          "D1",
+          "R(D1)"
+        ],
+        [
+          "D2",
+          "R(D2)"
+        ],
+        [
+          "D3",
+          "R(D3)"
+        ],
+        [
+          "E",
+          "R(E)"
+        ]
+      ],
+      "three_paths_equal_direct_pullback": true,
+      "triple_descends": true,
+      "variance": "CONTRAVARIANT"
+    },
+    "Ref": {
+      "kind": "fixed-carrier intervention-family inclusion",
+      "old_result_is_instrument_morphism": false,
+      "old_result_name": "Born-shadow product coarse-graining",
+      "positive": "j1:D1->E",
+      "positive_is_instrument_morphism": true,
+      "spacetime_resolution_claim": false
+    },
+    "Reg": {
+      "all_category_laws": true,
+      "arrow_count": 12,
+      "composition_law_count": 22,
+      "cover_is_master": true,
+      "morphism_type": "InstrumentMorphism",
+      "object_type": "Instrument",
+      "objects": [
+        "O",
+        "D1",
+        "D2",
+        "D3",
+        "E"
+      ],
+      "pair_overlaps": [
+        [
+          "core.no-write",
+          "core.preserve",
+          "core.write"
+        ],
+        [
+          "core.no-write",
+          "core.preserve",
+          "core.write"
+        ],
+        [
+          "core.no-write",
+          "core.preserve",
+          "core.write"
+        ]
+      ],
+      "pullback_universal": [
+        true,
+        true,
+        true
+      ],
+      "triple_overlap": [
+        "core.no-write",
+        "core.preserve",
+        "core.write"
+      ]
+    },
+    "anti_padding_negative": {
+      "factor_found": true,
+      "permutations_tested": 1,
+      "witness": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "classifications": {
+      "anti_padding": "EXHAUSTIVE EXACT FINITE SEARCH",
+      "causal_locality": "OPEN; NOT CONSTRUCTED",
+      "eraser_recoherence": "EXACT MEASUREMENT",
+      "fact_descent": "EXACT FUNCTORIAL MEASUREMENT",
+      "master_and_morphisms": "CONSTRUCTED OBJECTS",
+      "overlap": "EXACT PULLBACK/INTERSECTION IN THE DECLARED FINITE SUBINSTRUMENT SITE",
+      "preserving_classical_seam": "PAPER-1 THEOREM INSTANCE plus EXACT MEASUREMENTS",
+      "record_occurrence_and_availability": "EXACT MEASUREMENTS",
+      "region": "DEFINITION plus provisional operational-nomology POSTULATES",
+      "same_dimensional_diversity": "EXACT ACCESSIBLE INVARIANT"
+    },
+    "first_unresolved_obstruction": "a typed, gauge-invariant localized quantum subinstrument; only after a new pin could it support an operational-influence study",
+    "highest_outcome": "RQ0-FACT-DESCENT",
+    "inherited_results": {
+      "Paper_1": "W3 H-corr/H-avail seam and composition-compatible boundary-gauge discipline",
+      "Paper_2": "same law is not same fact; fact co-reference precedes token identity",
+      "hostile_review": "anti-spectator and anti-diagonal obstructions; repair specification"
+    },
+    "legacy_uses": {
+      "Paper 1": {
+        "class": "W3 and boundary-gauge antecedent",
+        "code_imported": false,
+        "path": "v12/paper1-composition-defect.md"
+      },
+      "Paper 2": {
+        "class": "fact-versus-law antecedent",
+        "code_imported": false,
+        "path": "v12/paper2-record-coreference.md"
+      },
+      "clean-sheet pin": {
+        "class": "antecedent pin",
+        "code_imported": false,
+        "path": "v13/note-rq0-relativistic-arena-pin.md"
+      },
+      "commit_12_family": {
+        "class": "negative control only: exact q=3 spectator-padded family reconstructed from specification",
+        "code_imported": false
+      },
+      "commit_12_refinement": {
+        "class": "negative/type control only: Born-shadow product coarse-graining",
+        "code_imported": false
+      },
+      "hostile review": {
+        "class": "repair obligations",
+        "code_imported": false,
+        "path": "v13/review-rq0-quantum-factual-base-hostile.md"
+      },
+      "physical-overlap repair pin": {
+        "class": "active pin",
+        "code_imported": false,
+        "path": "v13/note-rq0-physical-overlap-repair-pin.md"
+      },
+      "quantum amendment pin": {
+        "class": "antecedent pin",
+        "code_imported": false,
+        "path": "v13/note-rq0-quantum-substrate-amendment-pin.md"
+      },
+      "v10_and_earlier": {
+        "class": "no ontology, fixture, algorithm, or code imported",
+        "code_imported": false
+      }
+    },
+    "master": {
+      "all_core_morphisms_valid": [
+        true,
+        true,
+        true
+      ],
+      "all_region_morphisms_valid": [
+        true,
+        true,
+        true
+      ],
+      "arrow_names": [
+        "core.write",
+        "core.preserve",
+        "core.no-write",
+        "D1.preserve",
+        "D1.erase",
+        "D2.preserve",
+        "D2.erase",
+        "D3.preserve",
+        "D3.erase"
+      ],
+      "core_embedding_names": [
+        "i1:O->D1",
+        "i2:O->D2",
+        "i3:O->D3"
+      ],
+      "dimension": 8,
+      "master_is_local_witness_not_global_universe": true,
+      "name": "E",
+      "region_embedding_names": [
+        "j1:D1->E",
+        "j2:D2->E",
+        "j3:D3->E"
+      ]
+    },
+    "no_circularity_controls": {
+      "anti_diagonal_forced_maps": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "anti_diagonal_support": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "diagonal_forced_maps": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "diagonal_support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "law_only_accepts_diagonal_and_anti": [
+        true,
+        true
+      ],
+      "regional_laws": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "rogue_candidate_rows": [
+        [
+          "core.preserve",
+          false,
+          8
+        ],
+        [
+          "D1.preserve",
+          false,
+          8
+        ],
+        [
+          "D2.preserve",
+          false,
+          16
+        ],
+        [
+          "D3.preserve",
+          false,
+          32
+        ]
+      ],
+      "rogue_classification": "SAME-LAW-NOT-SAME-FACT",
+      "rogue_same_law": [
+        [
+          0,
+          "1/2"
+        ],
+        [
+          1,
+          "1/2"
+        ]
+      ],
+      "structural_accepts_postselected_controls": [
+        false,
+        false
+      ]
+    },
+    "nonclaims": [
+      "no localized influence or RQ0-C1",
+      "no causal order or cone",
+      "no spacetime region, volume, or conformal metric",
+      "no field propagator or stress object",
+      "no gravity dynamics",
+      "no full complex U(1) gauge"
+    ],
+    "outcomes": {
+      "RQ0-FACT-DESCENT": true,
+      "RQ0-REGIONAL-SITE": true,
+      "RQ0-REGIONS-CONSTRUCTED": true,
+      "RQ0-REPAIR-BLOCKED-AT-DIVERSITY": false,
+      "RQ0-REPAIR-BLOCKED-AT-MORPHISM": false,
+      "RQ0-REPAIR-BLOCKED-AT-OVERLAP": false
+    },
+    "pin_and_freeze": {
+      "adjudication_commit": "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+      "construction_surface_sha256": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
+      "constructor_arguments": [],
+      "constructor_forbidden_names": [],
+      "fact_comparison_occurs_after_digest_gate": true,
+      "master_and_morphism_spec_sha256": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+      "pin_commit": "b05ab95d6721d104a561875bc39aa6daa03f875e",
+      "pin_sha256": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
+      "reviewed_commits": [
+        "307c36f017d9d5587334d3b79421645ee5b54c61",
+        "1537b1475705a5def1d1d063459fa7d4fb534982"
+      ]
+    },
+    "postulates": [
+      "operational individuation by the declared accessible amplitude-instrument family",
+      "all basis preparations are accessible",
+      "the complete final-configuration probe is accessible",
+      "the frozen fixed-carrier subinstrument class is the admissible extension class",
+      "the implemented regional gauge is real signs and common carrier relabelling"
+    ],
+    "regions": {
+      "D1": {
+        "anti_padding": {
+          "factor_found": false,
+          "permutations_tested": 40320,
+          "witness": null
+        },
+        "core_preserve_digest": "47c43f850f03f0b32db878f135dab33798aca6c3879ea41fa12abebacce7e969",
+        "dimension": 8,
+        "dynamic_signature": [
+          8,
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            16
+          ],
+          16,
+          16,
+          [
+            "7c84f20f50af255b5fe82de0feeecee61db7fa93418dd9466b606a0a242e2191",
+            "7c84f20f50af255b5fe82de0feeecee61db7fa93418dd9466b606a0a242e2191"
+          ]
+        ],
+        "erase_digest": "9a0af31ee1b050441430229933eb40e16c734accfe007804841e4414b8474108",
+        "quantum_record_measurements": {
+          "erase": {
+            "available": false,
+            "coherence": {
+              "cross_sector": 16,
+              "total": 16,
+              "within_sector": 0
+            },
+            "defect_nonzero": 16,
+            "residual_defined": false
+          },
+          "no_write_h_corr": false,
+          "occurrence": true,
+          "preserve": {
+            "core-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            },
+            "regional-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            }
+          }
+        },
+        "regional_preserve_digest": "8baadc800d55c0901a9f98f3e12ab59c7d4317377a7d52a41a432e13a796d144",
+        "write_digest": "d550e00b3c90cecfc67b440480842e137f7fa3cee6237c34d33289f31aa96a49"
+      },
+      "D2": {
+        "anti_padding": {
+          "factor_found": false,
+          "permutations_tested": 40320,
+          "witness": null
+        },
+        "core_preserve_digest": "47c43f850f03f0b32db878f135dab33798aca6c3879ea41fa12abebacce7e969",
+        "dimension": 8,
+        "dynamic_signature": [
+          8,
+          [
+            8,
+            16
+          ],
+          [
+            16,
+            32
+          ],
+          32,
+          32,
+          [
+            "1ceb97dc9b264656073ef9bbdb0dbde2442fdde88730e1298f84b89734b94d36",
+            "7c84f20f50af255b5fe82de0feeecee61db7fa93418dd9466b606a0a242e2191"
+          ]
+        ],
+        "erase_digest": "26c425201900b78e470a5fcbe0372f9c7efbb52b51e5bb6861cb203f526a9a99",
+        "quantum_record_measurements": {
+          "erase": {
+            "available": false,
+            "coherence": {
+              "cross_sector": 32,
+              "total": 32,
+              "within_sector": 0
+            },
+            "defect_nonzero": 32,
+            "residual_defined": false
+          },
+          "no_write_h_corr": false,
+          "occurrence": true,
+          "preserve": {
+            "core-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            },
+            "regional-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            }
+          }
+        },
+        "regional_preserve_digest": "361e75ec55bbe073377bd7f15cf13429265a538801205c6061eb8f78dd035baa",
+        "write_digest": "d550e00b3c90cecfc67b440480842e137f7fa3cee6237c34d33289f31aa96a49"
+      },
+      "D3": {
+        "anti_padding": {
+          "factor_found": false,
+          "permutations_tested": 40320,
+          "witness": null
+        },
+        "core_preserve_digest": "47c43f850f03f0b32db878f135dab33798aca6c3879ea41fa12abebacce7e969",
+        "dimension": 8,
+        "dynamic_signature": [
+          8,
+          [
+            8,
+            32
+          ],
+          [
+            16,
+            64
+          ],
+          32,
+          32,
+          [
+            "7c84f20f50af255b5fe82de0feeecee61db7fa93418dd9466b606a0a242e2191",
+            "c6444d58705535263742eb70b84b604f121141013c1f88ec110e9aa33ec0ec8a"
+          ]
+        ],
+        "erase_digest": "6e84bfef5742884263c7c3149454b0792e693d01a68f7f4fb4fc7c8a02883e0f",
+        "quantum_record_measurements": {
+          "erase": {
+            "available": false,
+            "coherence": {
+              "cross_sector": 32,
+              "total": 32,
+              "within_sector": 0
+            },
+            "defect_nonzero": 32,
+            "residual_defined": false
+          },
+          "no_write_h_corr": false,
+          "occurrence": true,
+          "preserve": {
+            "core-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            },
+            "regional-preserve": {
+              "available": true,
+              "coherence": {
+                "cross_sector": 0,
+                "total": 0,
+                "within_sector": 0
+              },
+              "defect_nonzero": 0,
+              "residual_defined": true,
+              "residual_nonzero": 0
+            }
+          }
+        },
+        "regional_preserve_digest": "7496e83923ae7b6d03d3021e009e30e9081d8fc54a9afc51bd746f5987804c87",
+        "write_digest": "d550e00b3c90cecfc67b440480842e137f7fa3cee6237c34d33289f31aa96a49"
+      }
+    },
+    "scope": {
+      "anti_padding_search": "exhaustive all 8! common carrier relabellings for the declared nontrivial 4x2 split; exact rearrangement-rank test",
+      "arithmetic": "exact Q(sqrt(2)) plus exact rational subfield; no floats or tolerances",
+      "caps": {
+        "anti_padding_permutations_per_positive": 40320,
+        "runtime_seconds": 120
+      },
+      "carrier": "three named operational bits; every boundary has dimension 8",
+      "gauge": "REAL-SIGN-GAUGE: common configuration relabelling x independent +/- boundary phases",
+      "morphism_boundary_scope": "exact signed-permutation identifications on the fixed eight-configuration carrier",
+      "numerical_geometry": "none",
+      "preparations": "all eight basis configurations POSTULATED accessible; actual preparation 0",
+      "random_seeds": "none",
+      "record_candidate_search": "none; memory-bit readout frozen in the locked master specification",
+      "rogue_morphism_scope": "all four preserve-family master arrows; exact Born-entry multiset excludes every signed row/column relabelling",
+      "tomography": "full configuration probe POSTULATED accessible"
+    }
+  },
+  "status": "GREEN-UNREVIEWED-REPAIRED",
+  "summary": {
+    "checks": 77,
+    "fail": 0,
+    "pass": 77
+  },
+  "unit": "v13 RQ0 physical-overlap repair"
+}

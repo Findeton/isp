@@ -49,7 +49,15 @@ that made the rule.
   master/subinstrument category, exact process morphisms and record pullbacks,
   law-only negative controls, and strict `Reg`/`FactIface` typing.  No RQ0-C1,
   RQ1, or GR1 construction may begin without its own committed pin and the
-  preceding gate.
+  preceding gate.  v13 #17 delivers that repair **GREEN-UNREVIEWED-REPAIRED**:
+  three equal-dimensional non-padding amplitude regions embed in one frozen
+  finite master, their common record is an exact projector pullback through a
+  nonvacuous amplitude overlap, and distinct `Reg`, `FactIface`, and `Rec`
+  objects restore the capped rung `RQ0-FACT-DESCENT`.  The delivery has 77/77
+  exact checks, deterministic text/JSON receipts and a one-failure anchor
+  mutant, but is not terminal before its own external hostile round.  The
+  next unresolved referent is a localized quantum subinstrument; `RQ0-C1`
+  remains unpinned and unstarted.
 
 ## 1. The unit cycle
 

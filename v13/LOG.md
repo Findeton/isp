@@ -628,3 +628,81 @@ receipts, plus append-only ledger/RUNBOOK updates.  No reviewed file, old pin,
 v10–v12 file or Paper 0 file may change.  No causal, spacetime, field, gravity
 or `RQ0-C1` object is authorized.  Construction begins only after this pin is
 committed.
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP REPAIR DELIVERED:
+## `RQ0-FACT-DESCENT` RESTORED; HALT BEFORE `RQ0-C1` (v13 LEDGER #17)
+The repair pinned at #16 is delivered **GREEN-UNREVIEWED-REPAIRED**.  The new
+note is `note-rq0-physical-overlap-repair.md` (SHA-256
+`bf94a56688636364ca458c758114244eb2abfccbfadc062117ac349b157713bf`);
+the exact executable is `code/rq0_physical_overlap_exact.py` (SHA-256
+`40bf6611cb48836ab51d49509c985420a53800ea5ab32da9b00547f3fa4b82bd`);
+the text and JSON receipts have SHA-256 values
+`cdabb482029fb901ea460539146e5fcb9af9224a230a46aedabb2b84ce9b6e28`
+and `508e3efeafb34e4ff128e67f19a9ec912f4618ea3b205c289681f0d0b092246d`.
+Commits #11 and #12 and their #14 hostile review remain immutable.
+
+Three regions are constructed on equal eight-dimensional carriers.  Their
+complete preserve-family support multisets are `{8,8}`, `{8,16}` and
+`{8,32}`, exact accessible invariants that remain distinct even if preserve
+labels are permuted.  For each positive region, the anti-padding instrument
+exhausts all `8! = 40,320` common carrier relabellings for the nontrivial
+`4 x 2` split and finds no simultaneous product decomposition of all five
+substantive arrows.  The exact q=3 member of #12's spectator-padded family is
+detected at the identity relabelling, so the instrument has a positive
+factorization control.
+
+The predeclared finite master/morphism semantic digest is
+`132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9`;
+the constructor, morphism types, validator, canonicalizer and structural
+bridge surface are independently source-locked at
+`262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8`.
+Each `D_a -> E` and `O -> D_a` is an explicit instrument morphism with signed-
+permutation boundary maps, a total injective family-preserving arrow map,
+exact intertwiners, preparation compatibility and record-projector pullback.
+A mapped-arrow mutant fails all three regional embeddings, and an exact
+unitary nonmonomial boundary control is rejected as outside the declared
+finite morphism scope.
+
+`Reg` is now a category of five amplitude instruments and twelve typed
+morphisms, not a binary-value groupoid.  All 22 composable morphism pairs
+equal their declared composites.  Every pair and the triple intersect in the
+same nonvacuous amplitude core containing write, preserve and no-write; the
+finite pullback tests pass, and the three regional arrow families cover the
+master.  The positive `Ref` is a fixed-carrier intervention-family inclusion.
+The #12 resolution result remains only **Born-shadow product
+coarse-graining** and fails the instrument-refinement type gate.
+
+The W3 seam is re-derived from the new regions' own amplitudes: every write
+passes H-corr, both preserving continuations pass H-avail with zero cut
+coherence, zero configuration defect and zero record residual, every eraser
+fails H-avail and restores nonzero cross-sector coherence/defect, and every
+no-write control fails H-corr.  Eraser coherence/defect counts are
+`16/16`, `32/32`, and `32/32` for `D1`, `D2`, and `D3`.
+
+`FactIface` and the contravariant `Rec` assignment are distinct executable
+types constructed only after `Reg` passes.  All record restrictions are
+induced from exact projector pullbacks, all functor laws pass, and the three
+`Rec(E) -> Rec(D_a) -> Rec(O)` paths equal the direct restriction.  Marginal
+laws are consequence-only.  Exact diagonal and anti-diagonal amplitude
+extensions have the same three fair marginals but force different pair maps,
+so a law-only predicate accepts both while the frozen structural predicate
+accepts neither post-selected coupling.  A separate equal-law W3-stable
+rogue region has no signed-permutation bridge to any of the four preserving
+master arrows and is classified `SAME-LAW-NOT-SAME-FACT`.
+
+The committed receipts contain **77/77 exact passing checks**.  Two complete
+text runs and two complete JSON runs are byte-identical and exactly regenerate
+their stored receipts.  Deliberately corrupting the active-pin anchor exits 1
+with exactly one visible failure (`76 pass, 1 fail`).  There are no floats,
+tolerances, random seeds, numerical geometry or imported legacy code.  The
+gauge claim remains the real sign/permutation scope; basis preparation and
+full configuration tomography remain explicit access postulates.
+
+**HIGHEST RESTORED RUNG: `RQ0-FACT-DESCENT`.**  `RQ0-REGIONS-CONSTRUCTED`
+and `RQ0-REGIONAL-SITE` are also earned at this exact finite amplitude-
+subinstrument scope.  This repair is not terminal until it survives its own
+external hostile round.  No causal order, spacetime region, volume, conformal
+metric, field, stress object, gravity dynamics or full complex `U(1)` claim
+is made.  The first unresolved referent is a typed, gauge-invariant localized
+quantum subinstrument.  `RQ0-C1` has not begun and is not authorized by this
+delivery.  **HALT.**
