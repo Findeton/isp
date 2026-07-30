@@ -1,0 +1,102 @@
+==============================================================================
+v13 RQ0 -- QUANTUM REGIONAL INSTRUMENTS AND FACT DESCENT
+Exact amplitude construction; no causal, metric, field, or gravity claim
+==============================================================================
+
+ANCHORS, READOUT FREEZE, AND USE CLASSES
+[PASS] amendment pin commit is ancestor of HEAD: 0
+[PASS] quantum amendment pin hash: 'cc1c2177dc509641b1ae776444d599f554929c55c1452fa69d30af49cbd9ea91'
+[PASS] all binding locks and use classes: (('clean-sheet pin', True, 'pin'), ('quantum amendment pin', True, 'pin amendment'), ('v12 Paper 0', True, 'scope/postulate'), ('v12 Paper 1', True, 'inherited theorem/schema'), ('W6 note', True, 'fact/token controls'), ('Paper 2', True, 'common-extension/descent discipline'), ('GW1', True, 'no-smuggling discipline'))
+[PASS] frozen readout policy hash: '0402cb35c215bc7d01a86e5b01e9e25c85d6bd69df951549f1265c367ae0ab79'
+[PASS] record partition search is absent by policy: True
+
+NEW GAUGE-TYPED QUANTUM REGIONS
+[PASS] three carrier dimensions are exact and pairwise distinct: (4, 8, 16)
+[PASS] frozen regional readout hashes: (('D1', '2bb60d330d26b7c9ebcd336d3920f3b722518d1a99d079034edf538b3a1781ec'), ('D2', 'b3fb803d279f483a74b690e59c459136adbd984a01f9fd16de2af9788e01c462'), ('D3', 'fa35dd0a9b4e43372a59c5764946e42d8a189719f40e98feaee347b4dd872564'))
+[PASS] preparation and intervention scopes are explicit: (('D1', 0, 4, ('preserve',), ('erase',), ('no-write',)), ('D2', 0, 8, ('preserve',), ('erase',), ('no-write',)), ('D3', 0, 16, ('preserve',), ('erase',), ('no-write',)))
+[PASS] amplitude arrows have explicit source/target types and compose at the declared cut: (('D1', (('write', 'write', 'D1:V0', 'D1:V1', True, True), ('preserve', 'preserve', 'D1:V1', 'D1:V2', True, True), ('erase', 'erase', 'D1:V1', 'D1:V2', True, True), ('no-write', 'control', 'D1:V0', 'D1:V1', True, True)), True, True, True), ('D2', (('write', 'write', 'D2:V0', 'D2:V1', True, True), ('preserve', 'preserve', 'D2:V1', 'D2:V2', True, True), ('erase', 'erase', 'D2:V1', 'D2:V2', True, True), ('no-write', 'control', 'D2:V0', 'D2:V1', True, True)), True, True, True), ('D3', (('write', 'write', 'D3:V0', 'D3:V1', True, True), ('preserve', 'preserve', 'D3:V1', 'D3:V2', True, True), ('erase', 'erase', 'D3:V1', 'D3:V2', True, True), ('no-write', 'control', 'D3:V0', 'D3:V1', True, True)), True, True, True))
+[PASS] all amplitude arrows are unitary: True
+[PASS] all basis configurations are operationally preparable: (4, 8, 16)
+[PASS] all final configurations are exposed to the tomography probe: (4, 8, 16)
+[PASS] exact carrier dimension invariant proves regional non-isomorphism: (0, 0, 0)
+
+DERIVED CONTINUATION-RELATIVE RECORD ALGEBRAS
+[PASS] memory occurrence is derived by H-corr on each write arrow: (True, True, True)
+[PASS] memory availability is continuation-relative: ((('preserve', True), ('erase', False)), (('preserve', True), ('erase', False)), (('preserve', True), ('erase', False)))
+[PASS] historical and persistent algebras are derived separately: ((('memory',), ('memory',)), (('memory',), ('memory',)), (('memory',), ('memory',)))
+[PASS] no-write control fails H-corr: (False, False, False)
+
+CUT COHERENCE, CONFIGURATION DEFECT, AND RECORD RESIDUAL
+[PASS] D1 H-avail block-diagonalizes preserving cut coherence: 0
+[PASS] D1 H-corr kills remaining preserving off-diagonals: 0
+[PASS] D1 preserving configuration defect vanishes: 0
+[PASS] D1 coarse record residual is defined and zero: (True, 0)
+[PASS] D1 eraser restores cross-sector coherence: True
+[PASS] D1 eraser has an observable nonzero configuration defect: True
+[PASS] D1 eraser destroys a well-defined record quotient: True
+[PASS] D2 H-avail block-diagonalizes preserving cut coherence: 0
+[PASS] D2 H-corr kills remaining preserving off-diagonals: 0
+[PASS] D2 preserving configuration defect vanishes: 0
+[PASS] D2 coarse record residual is defined and zero: (True, 0)
+[PASS] D2 eraser restores cross-sector coherence: True
+[PASS] D2 eraser has an observable nonzero configuration defect: True
+[PASS] D2 eraser destroys a well-defined record quotient: True
+[PASS] D3 H-avail block-diagonalizes preserving cut coherence: 0
+[PASS] D3 H-corr kills remaining preserving off-diagonals: 0
+[PASS] D3 preserving configuration defect vanishes: 0
+[PASS] D3 coarse record residual is defined and zero: (True, 0)
+[PASS] D3 eraser restores cross-sector coherence: True
+[PASS] D3 eraser has an observable nonzero configuration defect: True
+[PASS] D3 eraser destroys a well-defined record quotient: True
+
+REGIONAL GAUGE AND PHYSICAL PHASE CONTROL
+[PASS] composition-compatible boundary gauge preserves both arrows and composite Born laws: (True, True, True)
+[PASS] outer-boundary and compensated-cut gauges are separately verified: (True, True)
+[PASS] boundary gauge preserves W3 status: (True, True)
+[PASS] C1 configuration relabelling preserves shadows, defect, W3, and derived algebras: (True, True, True, True, True, True)
+[PASS] C2 uncompensated cut leaves one-step Born shadows equal: (True, True)
+[PASS] C2 uncompensated cut changes the accessible composite law: True
+[PASS] C2 physical phase control is not an allowed relabelling gauge: False
+
+COMMON-EXTENSION FACT CERTIFICATE AND TRIPLE DESCENT
+[PASS] common extension is exact and unitary: (True, True)
+[PASS] common-extension joint support is nonvacuous and diagonal: ((0, 0, 0), (1, 1, 1))
+[PASS] common-extension joint readout passes scoped H-corr: True
+[PASS] common-extension joint readout passes H-avail: True
+[PASS] common-extension fact law is exactly balanced: (((0, 0, 0), Q2(a=Fraction(1, 2), b=Fraction(0, 1))), ((1, 1, 1), Q2(a=Fraction(1, 2), b=Fraction(0, 1))))
+[PASS] common-extension restriction maps to all three regional readouts are explicit: ((((0, 0, 0), 0), ((1, 1, 1), 1)), (((0, 0, 0), 0), ((1, 1, 1), 1)), (((0, 0, 0), 0), ((1, 1, 1), 1)))
+[PASS] common-extension marginals equal the three regional record laws: (((0, Q2(a=Fraction(1, 2), b=Fraction(0, 1))), (1, Q2(a=Fraction(1, 2), b=Fraction(0, 1)))), ((0, Q2(a=Fraction(1, 2), b=Fraction(0, 1))), (1, Q2(a=Fraction(1, 2), b=Fraction(0, 1)))), ((0, Q2(a=Fraction(1, 2), b=Fraction(0, 1))), (1, Q2(a=Fraction(1, 2), b=Fraction(0, 1)))))
+[PASS] C5 common extension forces one fact map on each pair: (1, 1, 1)
+[PASS] C5 unique fact maps satisfy the triple law: {0: 0, 1: 1}
+[PASS] regional fact groupoid has identities, inverses, all 27 composition laws, and a nonvacuous cover: (('D1', 'D2', 'D3'), 9, 3, 9, 27, ('D1', 'D2', 'D3'), ((0, 0, 0), (1, 1, 1)), True)
+[PASS] C3 three regional event tokens remain provenance-distinct: (('D1:memory-token', ('D1', 'write', 'memory-readout')), ('D2:memory-token', ('D2', 'write', 'memory-readout')), ('D3:memory-token', ('D3', 'write', 'memory-readout')))
+[PASS] C3/C7 redundant-copy S2 is an exact common-extension amplitude symmetry: (True, True, True, True, 2)
+[PASS] C3 one fact remains independently forced: (1, 1, 1)
+[PASS] C6 all twisted pairwise groupoid-fibre maps are admissible: True
+[PASS] C6 twisted groupoid-fibre triple fails on the nose: False
+[PASS] C6 groupoid-fibre loop holonomy is the nonidentity swap: (1, 0)
+[PASS] C7 receipt retains the full family rather than a representative: ((0, 1), (1, 0))
+[PASS] fact-map predicate consumes support only: ('pair_support',)
+[PASS] phase/amplitude/geometry names are absent from fact identity: ()
+
+REFINEMENT AND CLAIM CEILING
+[PASS] C10 D1-to-D2 instrument shadows coarse-grain exactly: True
+[PASS] C10 D2-to-D3 instrument shadows coarse-grain exactly: True
+[PASS] C10 refinement preserves the derived record generator: (('memory',), ('memory',), ('memory',))
+[PASS] C10 refinement reports rather than hides full-defect changes: (8, 32, 128)
+[PASS] C8/C9/C11 causal, geometry, and field schema guards fire: (True, True, True)
+[PASS] C8 no locality instrument means fact descent only: 'FACT-DESCENT-ONLY'
+
+PRE-REGISTERED OUTCOME LADDER
+[PASS] three permitted positive rungs are earned: (True, True, True)
+[PASS] all forbidden higher arena rungs remain false: (False, False, False)
+[PASS] highest permitted outcome: 'RQ0-FACT-DESCENT'
+
+VERDICT
+  highest rung: RQ0-FACT-DESCENT
+  lower positive: RQ0-REGIONS-CONSTRUCTED / RQ0-REGIONAL-SITE
+  token descent: groupoid-valued in the redundant-copy control
+  ceiling: FACT-DESCENT-ONLY -- no localized quantum influence instrument
+  next referent: localized subinstruments before operational influence
+------------------------------------------------------------------------------
+73 checks: 73 pass, 0 fail

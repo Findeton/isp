@@ -1,0 +1,2390 @@
+{
+  "checks": [
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "amendment pin commit is ancestor of HEAD",
+      "ok": true
+    },
+    {
+      "computed": "cc1c2177dc509641b1ae776444d599f554929c55c1452fa69d30af49cbd9ea91",
+      "expected": "cc1c2177dc509641b1ae776444d599f554929c55c1452fa69d30af49cbd9ea91",
+      "label": "quantum amendment pin hash",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "clean-sheet pin",
+          true,
+          "pin"
+        ],
+        [
+          "quantum amendment pin",
+          true,
+          "pin amendment"
+        ],
+        [
+          "v12 Paper 0",
+          true,
+          "scope/postulate"
+        ],
+        [
+          "v12 Paper 1",
+          true,
+          "inherited theorem/schema"
+        ],
+        [
+          "W6 note",
+          true,
+          "fact/token controls"
+        ],
+        [
+          "Paper 2",
+          true,
+          "common-extension/descent discipline"
+        ],
+        [
+          "GW1",
+          true,
+          "no-smuggling discipline"
+        ]
+      ],
+      "expected": [
+        [
+          "clean-sheet pin",
+          true,
+          "pin"
+        ],
+        [
+          "quantum amendment pin",
+          true,
+          "pin amendment"
+        ],
+        [
+          "v12 Paper 0",
+          true,
+          "scope/postulate"
+        ],
+        [
+          "v12 Paper 1",
+          true,
+          "inherited theorem/schema"
+        ],
+        [
+          "W6 note",
+          true,
+          "fact/token controls"
+        ],
+        [
+          "Paper 2",
+          true,
+          "common-extension/descent discipline"
+        ],
+        [
+          "GW1",
+          true,
+          "no-smuggling discipline"
+        ]
+      ],
+      "label": "all binding locks and use classes",
+      "ok": true
+    },
+    {
+      "computed": "0402cb35c215bc7d01a86e5b01e9e25c85d6bd69df951549f1265c367ae0ab79",
+      "expected": "0402cb35c215bc7d01a86e5b01e9e25c85d6bd69df951549f1265c367ae0ab79",
+      "label": "frozen readout policy hash",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "record partition search is absent by policy",
+      "ok": true
+    },
+    {
+      "computed": [
+        4,
+        8,
+        16
+      ],
+      "expected": [
+        4,
+        8,
+        16
+      ],
+      "label": "three carrier dimensions are exact and pairwise distinct",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1",
+          "2bb60d330d26b7c9ebcd336d3920f3b722518d1a99d079034edf538b3a1781ec"
+        ],
+        [
+          "D2",
+          "b3fb803d279f483a74b690e59c459136adbd984a01f9fd16de2af9788e01c462"
+        ],
+        [
+          "D3",
+          "fa35dd0a9b4e43372a59c5764946e42d8a189719f40e98feaee347b4dd872564"
+        ]
+      ],
+      "expected": [
+        [
+          "D1",
+          "2bb60d330d26b7c9ebcd336d3920f3b722518d1a99d079034edf538b3a1781ec"
+        ],
+        [
+          "D2",
+          "b3fb803d279f483a74b690e59c459136adbd984a01f9fd16de2af9788e01c462"
+        ],
+        [
+          "D3",
+          "fa35dd0a9b4e43372a59c5764946e42d8a189719f40e98feaee347b4dd872564"
+        ]
+      ],
+      "label": "frozen regional readout hashes",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1",
+          0,
+          4,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ],
+        [
+          "D2",
+          0,
+          8,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ],
+        [
+          "D3",
+          0,
+          16,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          "D1",
+          0,
+          4,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ],
+        [
+          "D2",
+          0,
+          8,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ],
+        [
+          "D3",
+          0,
+          16,
+          [
+            "preserve"
+          ],
+          [
+            "erase"
+          ],
+          [
+            "no-write"
+          ]
+        ]
+      ],
+      "label": "preparation and intervention scopes are explicit",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1",
+          [
+            [
+              "write",
+              "write",
+              "D1:V0",
+              "D1:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D1:V1",
+              "D1:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D1:V1",
+              "D1:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D1:V0",
+              "D1:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ],
+        [
+          "D2",
+          [
+            [
+              "write",
+              "write",
+              "D2:V0",
+              "D2:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D2:V1",
+              "D2:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D2:V1",
+              "D2:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D2:V0",
+              "D2:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ],
+        [
+          "D3",
+          [
+            [
+              "write",
+              "write",
+              "D3:V0",
+              "D3:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D3:V1",
+              "D3:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D3:V1",
+              "D3:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D3:V0",
+              "D3:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ]
+      ],
+      "expected": [
+        [
+          "D1",
+          [
+            [
+              "write",
+              "write",
+              "D1:V0",
+              "D1:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D1:V1",
+              "D1:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D1:V1",
+              "D1:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D1:V0",
+              "D1:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ],
+        [
+          "D2",
+          [
+            [
+              "write",
+              "write",
+              "D2:V0",
+              "D2:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D2:V1",
+              "D2:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D2:V1",
+              "D2:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D2:V0",
+              "D2:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ],
+        [
+          "D3",
+          [
+            [
+              "write",
+              "write",
+              "D3:V0",
+              "D3:V1",
+              true,
+              true
+            ],
+            [
+              "preserve",
+              "preserve",
+              "D3:V1",
+              "D3:V2",
+              true,
+              true
+            ],
+            [
+              "erase",
+              "erase",
+              "D3:V1",
+              "D3:V2",
+              true,
+              true
+            ],
+            [
+              "no-write",
+              "control",
+              "D3:V0",
+              "D3:V1",
+              true,
+              true
+            ]
+          ],
+          true,
+          true,
+          true
+        ]
+      ],
+      "label": "amplitude arrows have explicit source/target types and compose at the declared cut",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "all amplitude arrows are unitary",
+      "ok": true
+    },
+    {
+      "computed": [
+        4,
+        8,
+        16
+      ],
+      "expected": [
+        4,
+        8,
+        16
+      ],
+      "label": "all basis configurations are operationally preparable",
+      "ok": true
+    },
+    {
+      "computed": [
+        4,
+        8,
+        16
+      ],
+      "expected": [
+        4,
+        8,
+        16
+      ],
+      "label": "all final configurations are exposed to the tomography probe",
+      "ok": true
+    },
+    {
+      "computed": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "label": "exact carrier dimension invariant proves regional non-isomorphism",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "memory occurrence is derived by H-corr on each write arrow",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ],
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ],
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ],
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ],
+        [
+          [
+            "preserve",
+            true
+          ],
+          [
+            "erase",
+            false
+          ]
+        ]
+      ],
+      "label": "memory availability is continuation-relative",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ],
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ],
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ],
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ],
+        [
+          [
+            "memory"
+          ],
+          [
+            "memory"
+          ]
+        ]
+      ],
+      "label": "historical and persistent algebras are derived separately",
+      "ok": true
+    },
+    {
+      "computed": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "label": "no-write control fails H-corr",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D1 H-avail block-diagonalizes preserving cut coherence",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D1 H-corr kills remaining preserving off-diagonals",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D1 preserving configuration defect vanishes",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "label": "D1 coarse record residual is defined and zero",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D1 eraser restores cross-sector coherence",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D1 eraser has an observable nonzero configuration defect",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D1 eraser destroys a well-defined record quotient",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D2 H-avail block-diagonalizes preserving cut coherence",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D2 H-corr kills remaining preserving off-diagonals",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D2 preserving configuration defect vanishes",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "label": "D2 coarse record residual is defined and zero",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D2 eraser restores cross-sector coherence",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D2 eraser has an observable nonzero configuration defect",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D2 eraser destroys a well-defined record quotient",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D3 H-avail block-diagonalizes preserving cut coherence",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D3 H-corr kills remaining preserving off-diagonals",
+      "ok": true
+    },
+    {
+      "computed": 0,
+      "expected": 0,
+      "label": "D3 preserving configuration defect vanishes",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        0
+      ],
+      "expected": [
+        true,
+        0
+      ],
+      "label": "D3 coarse record residual is defined and zero",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D3 eraser restores cross-sector coherence",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D3 eraser has an observable nonzero configuration defect",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "D3 eraser destroys a well-defined record quotient",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "composition-compatible boundary gauge preserves both arrows and composite Born laws",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "outer-boundary and compensated-cut gauges are separately verified",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "boundary gauge preserves W3 status",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "label": "C1 configuration relabelling preserves shadows, defect, W3, and derived algebras",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "C2 uncompensated cut leaves one-step Born shadows equal",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "C2 uncompensated cut changes the accessible composite law",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "C2 physical phase control is not an allowed relabelling gauge",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "label": "common extension is exact and unitary",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "label": "common-extension joint support is nonvacuous and diagonal",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "common-extension joint readout passes scoped H-corr",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "common-extension joint readout passes H-avail",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          "1/2"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "1/2"
+        ]
+      ],
+      "expected": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          "1/2"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "1/2"
+        ]
+      ],
+      "label": "common-extension fact law is exactly balanced",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ]
+      ],
+      "label": "common-extension restriction maps to all three regional readouts are explicit",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "label": "common-extension marginals equal the three regional record laws",
+      "ok": true
+    },
+    {
+      "computed": [
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ],
+      "label": "C5 common extension forces one fact map on each pair",
+      "ok": true
+    },
+    {
+      "computed": {
+        "0": 0,
+        "1": 1
+      },
+      "expected": {
+        "0": 0,
+        "1": 1
+      },
+      "label": "C5 unique fact maps satisfy the triple law",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        9,
+        3,
+        9,
+        27,
+        [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        true
+      ],
+      "expected": [
+        [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        9,
+        3,
+        9,
+        27,
+        [
+          "D1",
+          "D2",
+          "D3"
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        true
+      ],
+      "label": "regional fact groupoid has identities, inverses, all 27 composition laws, and a nonvacuous cover",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "D1:memory-token",
+          [
+            "D1",
+            "write",
+            "memory-readout"
+          ]
+        ],
+        [
+          "D2:memory-token",
+          [
+            "D2",
+            "write",
+            "memory-readout"
+          ]
+        ],
+        [
+          "D3:memory-token",
+          [
+            "D3",
+            "write",
+            "memory-readout"
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          "D1:memory-token",
+          [
+            "D1",
+            "write",
+            "memory-readout"
+          ]
+        ],
+        [
+          "D2:memory-token",
+          [
+            "D2",
+            "write",
+            "memory-readout"
+          ]
+        ],
+        [
+          "D3:memory-token",
+          [
+            "D3",
+            "write",
+            "memory-readout"
+          ]
+        ]
+      ],
+      "label": "C3 three regional event tokens remain provenance-distinct",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true,
+        true,
+        2
+      ],
+      "expected": [
+        true,
+        true,
+        true,
+        true,
+        2
+      ],
+      "label": "C3/C7 redundant-copy S2 is an exact common-extension amplitude symmetry",
+      "ok": true
+    },
+    {
+      "computed": [
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ],
+      "label": "C3 one fact remains independently forced",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "C6 all twisted pairwise groupoid-fibre maps are admissible",
+      "ok": true
+    },
+    {
+      "computed": false,
+      "expected": false,
+      "label": "C6 twisted groupoid-fibre triple fails on the nose",
+      "ok": true
+    },
+    {
+      "computed": [
+        1,
+        0
+      ],
+      "expected": [
+        1,
+        0
+      ],
+      "label": "C6 groupoid-fibre loop holonomy is the nonidentity swap",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "label": "C7 receipt retains the full family rather than a representative",
+      "ok": true
+    },
+    {
+      "computed": [
+        "pair_support"
+      ],
+      "expected": [
+        "pair_support"
+      ],
+      "label": "fact-map predicate consumes support only",
+      "ok": true
+    },
+    {
+      "computed": [],
+      "expected": [],
+      "label": "phase/amplitude/geometry names are absent from fact identity",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "C10 D1-to-D2 instrument shadows coarse-grain exactly",
+      "ok": true
+    },
+    {
+      "computed": true,
+      "expected": true,
+      "label": "C10 D2-to-D3 instrument shadows coarse-grain exactly",
+      "ok": true
+    },
+    {
+      "computed": [
+        [
+          "memory"
+        ],
+        [
+          "memory"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "expected": [
+        [
+          "memory"
+        ],
+        [
+          "memory"
+        ],
+        [
+          "memory"
+        ]
+      ],
+      "label": "C10 refinement preserves the derived record generator",
+      "ok": true
+    },
+    {
+      "computed": [
+        8,
+        32,
+        128
+      ],
+      "expected": [
+        8,
+        32,
+        128
+      ],
+      "label": "C10 refinement reports rather than hides full-defect changes",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "C8/C9/C11 causal, geometry, and field schema guards fire",
+      "ok": true
+    },
+    {
+      "computed": "FACT-DESCENT-ONLY",
+      "expected": "FACT-DESCENT-ONLY",
+      "label": "C8 no locality instrument means fact descent only",
+      "ok": true
+    },
+    {
+      "computed": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "label": "three permitted positive rungs are earned",
+      "ok": true
+    },
+    {
+      "computed": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "label": "all forbidden higher arena rungs remain false",
+      "ok": true
+    },
+    {
+      "computed": "RQ0-FACT-DESCENT",
+      "expected": "RQ0-FACT-DESCENT",
+      "label": "highest permitted outcome",
+      "ok": true
+    }
+  ],
+  "science": {
+    "classifications": {
+      "causal_locality": "OPEN; no instrument",
+      "common_extension_fact": "CONSTRUCTED CERTIFICATE",
+      "eraser_recoherence": "EXACT MEASUREMENT",
+      "fact_descent": "EXACT MEASUREMENT",
+      "preserving_cut_classicality": "THEOREM instance and exact measurement",
+      "primitive_region": "DEFINITION plus provisional operational-nomology POSTULATE",
+      "record_occurrence_availability": "MEASUREMENT by W3 support predicates",
+      "token_groupoid": "EXACT MEASUREMENT; no geometric arena claim"
+    },
+    "common_extension": {
+      "dimension": 16,
+      "fact_map_counts": [
+        1,
+        1,
+        1
+      ],
+      "fact_triple_coherent": true,
+      "law": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          "1/2"
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          "1/2"
+        ]
+      ],
+      "marginal_laws": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "record_swap_12_amplitude_symmetry": true,
+      "regional_record_laws": [
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ],
+        [
+          [
+            0,
+            "1/2"
+          ],
+          [
+            1,
+            "1/2"
+          ]
+        ]
+      ],
+      "regional_tokens": [
+        {
+          "local_name": "D1:memory-token",
+          "provenance": [
+            "D1",
+            "write",
+            "memory-readout"
+          ],
+          "readout_name": "memory"
+        },
+        {
+          "local_name": "D2:memory-token",
+          "provenance": [
+            "D2",
+            "write",
+            "memory-readout"
+          ],
+          "readout_name": "memory"
+        },
+        {
+          "local_name": "D3:memory-token",
+          "provenance": [
+            "D3",
+            "write",
+            "memory-readout"
+          ],
+          "readout_name": "memory"
+        }
+      ],
+      "restriction_maps": [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            0
+          ],
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            1
+          ]
+        ]
+      ],
+      "support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "token_map_family": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "twisted_holonomy": [
+        1,
+        0
+      ]
+    },
+    "first_unresolved_obstruction": "define localized quantum subinstruments before constructing an operational influence relation between regional stable-record algebras",
+    "gauge_and_phase_control": {
+      "composite_changed": true,
+      "continuation_shadow_equal": true,
+      "gauge_equivalent_under_allowed_relabelling": false,
+      "inserted_digest": "52230c5eb44e9bebb1838dfa6650afc4f44c33d7be625d626115533519d7bef2",
+      "original_digest": "6b3958f3c63429d51fce2fa794414353caa093fa3105b1ed59a464e410a84907",
+      "signs": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "write_shadow_equal": true
+    },
+    "highest_outcome": "RQ0-FACT-DESCENT",
+    "legacy_uses": {
+      "GW1": {
+        "class": "no-smuggling discipline",
+        "code_imported": false,
+        "path": "v13/note-gw1-metric-from-closure.md"
+      },
+      "Paper 2": {
+        "class": "common-extension/descent discipline",
+        "code_imported": false,
+        "path": "v12/paper2-record-coreference.md"
+      },
+      "W6 note": {
+        "class": "fact/token controls",
+        "code_imported": false,
+        "path": "v12/note-w6-record-coreference.md"
+      },
+      "clean-sheet pin": {
+        "class": "pin",
+        "code_imported": false,
+        "path": "v13/note-rq0-relativistic-arena-pin.md"
+      },
+      "quantum amendment pin": {
+        "class": "pin amendment",
+        "code_imported": false,
+        "path": "v13/note-rq0-quantum-substrate-amendment-pin.md"
+      },
+      "v10_and_earlier": {
+        "class": "no ontology, fixture, data, or code imported",
+        "code_imported": false
+      },
+      "v12 Paper 0": {
+        "class": "scope/postulate",
+        "code_imported": false,
+        "path": "v12/relativistic-isp-v12-paper0-the-weld.md"
+      },
+      "v12 Paper 1": {
+        "class": "inherited theorem/schema",
+        "code_imported": false,
+        "path": "v12/paper1-composition-defect.md"
+      }
+    },
+    "nonclaims": [
+      "no causal order or cone",
+      "no spacetime region",
+      "no volume or conformal metric",
+      "no field propagator",
+      "no gravity dynamics"
+    ],
+    "outcomes": {
+      "RQ0-BLOCKED-AT-REGION": false,
+      "RQ0-CAUSAL-ARENA": false,
+      "RQ0-CONFORMAL-ARENA": false,
+      "RQ0-FACT-DESCENT": true,
+      "RQ0-GROUPOID-ARENA": false,
+      "RQ0-REGIONAL-SITE": true,
+      "RQ0-REGIONS-CONSTRUCTED": true
+    },
+    "pin": {
+      "amendment_sha256": "cc1c2177dc509641b1ae776444d599f554929c55c1452fa69d30af49cbd9ea91",
+      "clean_sheet_sha256": "32f0fe8402c10477ba5f01abc69c44e0512c8f0cba7df1f5e39391908ead684c",
+      "commit": "307c36f017d9d5587334d3b79421645ee5b54c61",
+      "readout_policy": "record-candidate=memory-bit@bit-1;candidate-values=0,1;tomography-probe=full-configuration;partition-search=forbidden",
+      "readout_policy_sha256": "0402cb35c215bc7d01a86e5b01e9e25c85d6bd69df951549f1265c367ae0ab79"
+    },
+    "refinement": {
+      "D1_to_D2": {
+        "all_match": true,
+        "coarse_erase_defect_nonzero": 8,
+        "extra_dimension": 2,
+        "fine_erase_defect_nonzero": 32,
+        "shadow_rows": {
+          "erase": [
+            true,
+            true
+          ],
+          "preserve": [
+            true,
+            true
+          ],
+          "write": [
+            true,
+            true
+          ]
+        }
+      },
+      "D2_to_D3": {
+        "all_match": true,
+        "coarse_erase_defect_nonzero": 32,
+        "extra_dimension": 2,
+        "fine_erase_defect_nonzero": 128,
+        "shadow_rows": {
+          "erase": [
+            true,
+            true
+          ],
+          "preserve": [
+            true,
+            true
+          ],
+          "write": [
+            true,
+            true
+          ]
+        }
+      }
+    },
+    "regional_fact_groupoid": {
+      "all_laws": true,
+      "arrows": [
+        [
+          "D1",
+          "D1",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D1",
+          "D2",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D1",
+          "D3",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D2",
+          "D1",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D2",
+          "D2",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D2",
+          "D3",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D3",
+          "D1",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D3",
+          "D2",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          "D3",
+          "D3",
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "composition_laws": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "covering_family": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "identity_laws": [
+        true,
+        true,
+        true
+      ],
+      "inverse_laws": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "objects": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "triple_overlap_support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "regions": {
+      "D1": {
+        "actual_preparation": 0,
+        "amplitude_signatures": [
+          {
+            "family": "write",
+            "name": "write",
+            "source": "D1:V0",
+            "target": "D1:V1"
+          },
+          {
+            "family": "preserve",
+            "name": "preserve",
+            "source": "D1:V1",
+            "target": "D1:V2"
+          },
+          {
+            "family": "erase",
+            "name": "erase",
+            "source": "D1:V1",
+            "target": "D1:V2"
+          },
+          {
+            "family": "control",
+            "name": "no-write",
+            "source": "D1:V0",
+            "target": "D1:V1"
+          }
+        ],
+        "coherence_and_defect": {
+          "erase": {
+            "cross_sector": 8,
+            "total": 8,
+            "within_sector": 0
+          },
+          "erase_defect_nonzero": 8,
+          "preserve": {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          "preserve_defect_nonzero": 0
+        },
+        "dimension": 4,
+        "erase_digest": "29297162e69149a9cbc00eb5226868e0964326ef274d08e7aa0eaff1df4256b5",
+        "interfaces": [
+          {
+            "dimension": 4,
+            "name": "D1:V0"
+          },
+          {
+            "dimension": 4,
+            "name": "D1:V1"
+          },
+          {
+            "dimension": 4,
+            "name": "D1:V2"
+          }
+        ],
+        "preparations": 4,
+        "preserve_digest": "ad1c34bb4b0b750211dbebd514d67a5da7f94ee2b9d04bde0174969098ef49f8",
+        "record_readout_digest": "2bb60d330d26b7c9ebcd336d3920f3b722518d1a99d079034edf538b3a1781ec",
+        "record_residual": {
+          "erase_defined": false,
+          "erase_nonzero": null,
+          "preserve_defined": true,
+          "preserve_nonzero": 0
+        },
+        "record_status": {
+          "memory": {
+            "availability": [
+              [
+                "preserve",
+                true
+              ],
+              [
+                "erase",
+                false
+              ]
+            ],
+            "historical_algebra_generators": [
+              "memory"
+            ],
+            "occurred": true,
+            "persistent_algebra_generators": [
+              "memory"
+            ]
+          }
+        },
+        "write_digest": "9ebca13583b3ceec55eaedba7102020d007a7a55e5c9553ba6932c33e4081918"
+      },
+      "D2": {
+        "actual_preparation": 0,
+        "amplitude_signatures": [
+          {
+            "family": "write",
+            "name": "write",
+            "source": "D2:V0",
+            "target": "D2:V1"
+          },
+          {
+            "family": "preserve",
+            "name": "preserve",
+            "source": "D2:V1",
+            "target": "D2:V2"
+          },
+          {
+            "family": "erase",
+            "name": "erase",
+            "source": "D2:V1",
+            "target": "D2:V2"
+          },
+          {
+            "family": "control",
+            "name": "no-write",
+            "source": "D2:V0",
+            "target": "D2:V1"
+          }
+        ],
+        "coherence_and_defect": {
+          "erase": {
+            "cross_sector": 32,
+            "total": 32,
+            "within_sector": 0
+          },
+          "erase_defect_nonzero": 32,
+          "preserve": {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          "preserve_defect_nonzero": 0
+        },
+        "dimension": 8,
+        "erase_digest": "6da8e26aa79925513e579d9d0b8ec0fb267c822b6a6779ae7d1933d950636dae",
+        "interfaces": [
+          {
+            "dimension": 8,
+            "name": "D2:V0"
+          },
+          {
+            "dimension": 8,
+            "name": "D2:V1"
+          },
+          {
+            "dimension": 8,
+            "name": "D2:V2"
+          }
+        ],
+        "preparations": 8,
+        "preserve_digest": "5dcf29e01864cee7f79b1dc9d329396e2486632837b56384b7289d45aaa030f0",
+        "record_readout_digest": "b3fb803d279f483a74b690e59c459136adbd984a01f9fd16de2af9788e01c462",
+        "record_residual": {
+          "erase_defined": false,
+          "erase_nonzero": null,
+          "preserve_defined": true,
+          "preserve_nonzero": 0
+        },
+        "record_status": {
+          "memory": {
+            "availability": [
+              [
+                "preserve",
+                true
+              ],
+              [
+                "erase",
+                false
+              ]
+            ],
+            "historical_algebra_generators": [
+              "memory"
+            ],
+            "occurred": true,
+            "persistent_algebra_generators": [
+              "memory"
+            ]
+          }
+        },
+        "write_digest": "d603f65be14006c00fdaa735c5f6482876167f66249a69fee271fe5146c31bb6"
+      },
+      "D3": {
+        "actual_preparation": 0,
+        "amplitude_signatures": [
+          {
+            "family": "write",
+            "name": "write",
+            "source": "D3:V0",
+            "target": "D3:V1"
+          },
+          {
+            "family": "preserve",
+            "name": "preserve",
+            "source": "D3:V1",
+            "target": "D3:V2"
+          },
+          {
+            "family": "erase",
+            "name": "erase",
+            "source": "D3:V1",
+            "target": "D3:V2"
+          },
+          {
+            "family": "control",
+            "name": "no-write",
+            "source": "D3:V0",
+            "target": "D3:V1"
+          }
+        ],
+        "coherence_and_defect": {
+          "erase": {
+            "cross_sector": 128,
+            "total": 128,
+            "within_sector": 0
+          },
+          "erase_defect_nonzero": 128,
+          "preserve": {
+            "cross_sector": 0,
+            "total": 0,
+            "within_sector": 0
+          },
+          "preserve_defect_nonzero": 0
+        },
+        "dimension": 16,
+        "erase_digest": "12d99271a56b26a27edbce48f40bd199b030f729d32d8ba6499640e034278412",
+        "interfaces": [
+          {
+            "dimension": 16,
+            "name": "D3:V0"
+          },
+          {
+            "dimension": 16,
+            "name": "D3:V1"
+          },
+          {
+            "dimension": 16,
+            "name": "D3:V2"
+          }
+        ],
+        "preparations": 16,
+        "preserve_digest": "f73e3a22faae8dd7224064716ae2c4bbed90920e9993214925c317eb7f7eb69d",
+        "record_readout_digest": "fa35dd0a9b4e43372a59c5764946e42d8a189719f40e98feaee347b4dd872564",
+        "record_residual": {
+          "erase_defined": false,
+          "erase_nonzero": null,
+          "preserve_defined": true,
+          "preserve_nonzero": 0
+        },
+        "record_status": {
+          "memory": {
+            "availability": [
+              [
+                "preserve",
+                true
+              ],
+              [
+                "erase",
+                false
+              ]
+            ],
+            "historical_algebra_generators": [
+              "memory"
+            ],
+            "occurred": true,
+            "persistent_algebra_generators": [
+              "memory"
+            ]
+          }
+        },
+        "write_digest": "944ced6ed905b20e4958e808bc5af322e3d1bfc70a5be6ee954bd49db2be4089"
+      }
+    },
+    "scope": {
+      "arithmetic": "exact Q(sqrt(2)); no floats or tolerances",
+      "common_extension_preparation_scope": [
+        0
+      ],
+      "continuation_families": {
+        "controls": [
+          "no-write"
+        ],
+        "erasing": [
+          "erase"
+        ],
+        "preserving": [
+          "preserve"
+        ]
+      },
+      "fact_map_search": "all two bijections of the binary value alphabet",
+      "gauge_control": "configuration relabelling and exact +/- boundary rephasing",
+      "isomorphism_scope": "carrier dimension is an exact accessible invariant; unequal-dimension bijection domains empty",
+      "numerical_diagnostics": "none",
+      "preparation_scope": "every basis configuration in each region; actual preparation 0",
+      "random_seeds": "none",
+      "readout_search": "none; one frozen memory-bit candidate per region",
+      "readout_value_locks": {
+        "D1": "2bb60d330d26b7c9ebcd336d3920f3b722518d1a99d079034edf538b3a1781ec",
+        "D2": "b3fb803d279f483a74b690e59c459136adbd984a01f9fd16de2af9788e01c462",
+        "D3": "fa35dd0a9b4e43372a59c5764946e42d8a189719f40e98feaee347b4dd872564"
+      },
+      "region_dimensions": {
+        "D1": 4,
+        "D2": 8,
+        "D3": 16
+      },
+      "runtime_cap_seconds": 120,
+      "token_map_search": "all two bijections of two redundant tokens"
+    }
+  },
+  "status": "GREEN-UNREVIEWED",
+  "summary": {
+    "checks": 73,
+    "fail": 0,
+    "pass": 73
+  },
+  "unit": "v13 RQ0 quantum factual base"
+}

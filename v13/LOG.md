@@ -391,3 +391,67 @@ is capped at **`RQ0-FACT-DESCENT`**.  Token groupoids may be measured, but no
 causal/groupoid-geometric/conformal arena, volume, field or gravity claim is
 authorized.  Paper 0 remains **[DRAFT]** and unchanged.  Construction begins
 only after this amendment is committed.
+
+## 2026-07-30 — RQ0 QUANTUM FACTUAL BASE DELIVERED AT
+## `RQ0-FACT-DESCENT` — **GREEN-UNREVIEWED** (v13 LEDGER #12)
+The clean-sheet replacement construction is complete at the amendment pin's
+strict ceiling.  The new primitive is the gauge class of a finite operational
+amplitude-instrument family, not a subset of a global event set and not yet a
+spacetime region.  Three exact instruments of carrier dimensions 4, 8 and 16
+were constructed over `Q(sqrt(2))`.  Every basis configuration is admitted as
+a preparation and every final configuration is exposed to the frozen
+tomography probe, so unequal accessible dimension proves pairwise regional
+non-isomorphism rather than distinguishing dormant matrix completions.  Named
+`V0/V1/V2` interfaces and the source, target and family of every write,
+preserve, erase and control arrow are explicit and checked for composability.
+
+The record algebra is not primitive.  The memory-bit candidate and its three
+value tables are hash-locked before W3 evaluation.  On the same write arrow,
+the preserving continuation passes H-avail, has zero cross-sector and
+within-sector cut coherence, zero full `Delta^B`, and zero typed record
+residual.  The erasing continuation fails H-avail, restores respectively
+8/32/128 nonzero cross-sector coherence pairs, and has 8/32/128 nonzero
+`Delta^B` entries.  Historical occurrence remains derived and distinct from
+continuation-relative availability; the no-write control fails H-corr.  A
+compensated middle rephasing is gauge, while an uncompensated cut insertion
+leaves both one-step Born shadows equal and changes the accessible composite
+law.
+
+Shared fact is certified rather than inferred from matching laws.  A fourth
+exact record-preserving amplitude extension has joint support exactly
+`(0,0,0)` and `(1,1,1)`, each with probability `1/2`; its three explicit
+restriction maps reproduce the regional record marginals.  All pairwise fact
+maps are uniquely forced and satisfy the triple law.  The finite regional
+fact-interface groupoid has three objects, nine arrows, three identities, nine
+inverse laws and all 27 composable-triple laws, with the three regions as a
+declared cover of the nonvacuous certified overlap.  The three regional tokens
+remain provenance-distinct.  Swapping two redundant record bits is an exact
+symmetry of the common-extension amplitudes and support, giving the full `S2`
+token automorphism; a twisted token-fibre triple has nonidentity swap holonomy
+without disturbing unique fact descent.  Exact D1→D2→D3 refinement recovers
+all write/preserve/erase Born shadows and the record generator while printing,
+not hiding, the changing full-defect support.
+
+The executable passes **73/73** exact checks.  Two clean text runs and two JSON
+runs are byte-identical and regenerate the committed receipts exactly.  The
+deliberate amendment-anchor mutant exits `1` with exactly one visible failed
+check (**72/73**).  Float AST sweep is empty; no seeds, tolerances, numerical
+geometry, legacy code, v10 ontology, fixture, benchmark or data are used.
+Delivery SHA-256s: code
+`01f7c2a0553a1c3a946d75b23bfe5fa65bf68aaa55e19dab3b9d4c6d49b20da2`;
+stdout
+`cc5b627783f4fad8be307d171d3a1e36e4b40bee8cbb9f03a79af3d58c31d505`;
+JSON receipt
+`a6e0f76f0c5e770c98d0e6663fcdf7bde7f0e88ea48c6fb66b5b45abd268b19d`;
+note
+`f53d39db0be3b6caf5323072cdf054d114daa9ed35f144f19b29c896bc071823`.
+
+**HIGHEST HONEST RUNG: `RQ0-FACT-DESCENT`.**  The lower regional-object and
+regional-site rungs are positive.  Token descent is groupoid-valued only at
+the record-token control; no `RQ0-GROUPOID-ARENA` is claimed.  The first real
+obstruction is a typed, gauge-invariant localized quantum subinstrument from
+which operational influence could be defined.  No causal order, spacetime
+region, `mu`, conformal metric, RQ1 field, H_a[N], Einstein equation, or
+gravity dynamics is constructed.  Paper 0 remains **[DRAFT]** and unchanged.
+The unit is **GREEN-UNREVIEWED**, not terminal; no external hostile round has
+occurred.  **HALT.**

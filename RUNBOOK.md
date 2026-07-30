@@ -26,17 +26,22 @@ that made the rule.
   arena → RQ1a scalar → RQ1b Dirac → GR1 backreaction; Maxwell may accompany
   early GR1 but precedes any general-matter universality claim.  v13 #10
   withdraws #9's `GW2-BLOCKED-AT-1` as a procedural misreading: the pin
-  authorized construction, not merely legacy inventory.  Clean-sheet RQ0 is
-  the active authorized unit under `v13/note-rq0-relativistic-arena-pin.md`,
-  narrowed by `v13/note-rq0-quantum-substrate-amendment-pin.md`: records are
-  derived continuation-relatively from the region's own gauge-typed amplitude
-  instrument; shared fact needs a common-extension certificate; the first
-  pass is capped at `RQ0-FACT-DESCENT`.  Classical DAG/diamond geometry is a
-  later held-out benchmark only after a locality-first quantum influence
-  instrument is separately pinned and frozen.
+  authorized construction, not merely legacy inventory.  Clean-sheet RQ0 was
+  constructed under `v13/note-rq0-relativistic-arena-pin.md`, narrowed by
+  `v13/note-rq0-quantum-substrate-amendment-pin.md`.  v13 #12 delivers the
+  quantum factual-base pass as **GREEN-UNREVIEWED** at the capped rung
+  `RQ0-FACT-DESCENT`: records are derived continuation-relatively from each
+  region's own gauge-typed amplitude instrument, and the shared fact has an
+  exact common-extension certificate.  No causal, spacetime, volume,
+  conformal, field, or gravity object was constructed.  The first unresolved
+  referent is localized quantum subinstrument; `RQ0-C1` is not pinned or
+  authorized.  Classical DAG/diamond geometry remains a later held-out
+  benchmark only after a locality-first quantum influence instrument is
+  separately pinned and frozen.
   The old census commit remains immutable historical evidence but carries no
-  live verdict.  No RQ1/GR1 construction may begin without its own committed
-  pin and the preceding gate.
+  live verdict.  The RQ0 unit is halted awaiting the user's next instruction;
+  no RQ0-C1, RQ1, or GR1 construction may begin without its own committed pin
+  and the preceding gate.
 
 ## 1. The unit cycle
 
