@@ -1,12 +1,15 @@
 {
   "checks": [
     {
+      "category": "anchor",
       "computed": 0,
       "expected": 0,
+      "key": "anchor.pin_commit",
       "label": "repair pin commit is an ancestor of HEAD",
       "ok": true
     },
     {
+      "category": "anchor",
       "computed": [
         [
           "307c36f017d9d5587334d3b79421645ee5b54c61",
@@ -20,6 +23,11 @@
         ],
         [
           "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+          0,
+          0
+        ],
+        [
+          "1d9af029d3c04006c6e42941d66a590b2d887831",
           0,
           0
         ]
@@ -39,18 +47,27 @@
           "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
           0,
           0
+        ],
+        [
+          "1d9af029d3c04006c6e42941d66a590b2d887831",
+          0,
+          0
         ]
       ],
+      "key": "anchor.provenance_commits",
       "label": "reviewed and adjudication commits are immutable ancestors",
       "ok": true
     },
     {
+      "category": "anchor",
       "computed": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
       "expected": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
+      "key": "anchor.active_pin_hash",
       "label": "physical-overlap repair pin hash",
       "ok": true
     },
     {
+      "category": "anchor",
       "computed": [
         [
           "clean-sheet pin",
@@ -61,11 +78,6 @@
           "quantum amendment pin",
           true,
           "antecedent pin"
-        ],
-        [
-          "physical-overlap repair pin",
-          true,
-          "active pin"
         ],
         [
           "Paper 1",
@@ -80,7 +92,12 @@
         [
           "hostile review",
           true,
-          "repair obligations"
+          "antecedent repair obligations"
+        ],
+        [
+          "physical-overlap hostile review",
+          true,
+          "current bounded-repair obligations"
         ]
       ],
       "expected": [
@@ -95,11 +112,6 @@
           "antecedent pin"
         ],
         [
-          "physical-overlap repair pin",
-          true,
-          "active pin"
-        ],
-        [
           "Paper 1",
           true,
           "W3 and boundary-gauge antecedent"
@@ -112,13 +124,20 @@
         [
           "hostile review",
           true,
-          "repair obligations"
+          "antecedent repair obligations"
+        ],
+        [
+          "physical-overlap hostile review",
+          true,
+          "current bounded-repair obligations"
         ]
       ],
-      "label": "all binding files are hash-locked with declared use classes",
+      "key": "anchor.binding_files",
+      "label": "all other binding files are hash-locked with declared use classes",
       "ok": true
     },
     {
+      "category": "static",
       "computed": {
         "arguments": [],
         "forbidden_names": []
@@ -127,16 +146,20 @@
         "arguments": [],
         "forbidden_names": []
       },
+      "key": "static.constructor_law_blind",
       "label": "master constructor consumes no comparison target",
       "ok": true
     },
     {
-      "computed": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
-      "expected": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
-      "label": "constructor, morphism type, validator, and bridge surface are source-locked",
+      "category": "authentication",
+      "computed": "e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3",
+      "expected": "e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3",
+      "key": "authentication.construction_surface",
+      "label": "constructor, typed controls, and bridge validators are canonically authenticated",
       "ok": true
     },
     {
+      "category": "static",
       "computed": {
         "float_literals": [],
         "numpy_imports": [],
@@ -147,22 +170,34 @@
         "numpy_imports": [],
         "random_imports": []
       },
+      "key": "static.exactness",
       "label": "substantive code has no float, random, or numpy path",
       "ok": true
     },
     {
-      "computed": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
-      "expected": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
-      "label": "predeclared master/morphism digest",
+      "category": "authentication",
+      "computed": [
+        "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+        true
+      ],
+      "expected": [
+        "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+        true
+      ],
+      "key": "authentication.master_spec",
+      "label": "fixed canonical master/morphism specification matches",
       "ok": true
     },
     {
+      "category": "control",
       "computed": true,
       "expected": true,
-      "label": "structural bridge predicate accepts the frozen family",
+      "key": "control.positive_structural_family",
+      "label": "structural bridge validator accepts the fixed family independently of its digest",
       "ok": true
     },
     {
+      "category": "static",
       "computed": {
         "forbidden_names": [],
         "uses_h_avail": true,
@@ -175,10 +210,12 @@
         "uses_h_corr": true,
         "uses_induced_record_pullback": true
       },
+      "key": "static.record_functor_law_blind",
       "label": "Rec is law-blind and derives restrictions from morphisms",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           8,
@@ -233,10 +270,12 @@
           8
         ]
       ],
+      "key": "three regions and the core/master use equal eight-dimensional boundaries",
       "label": "three regions and the core/master use equal eight-dimensional boundaries",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         [
           "O",
@@ -301,16 +340,20 @@
           true
         ]
       ],
+      "key": "all arrows and readouts are explicitly and uniquely typed",
       "label": "all arrows and readouts are explicitly and uniquely typed",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "all constructed amplitude arrows are exactly unitary",
       "label": "all constructed amplitude arrows are exactly unitary",
       "ok": true
     },
     {
+      "category": "schema",
       "computed": [
         [
           "O",
@@ -375,10 +418,12 @@
           true
         ]
       ],
+      "key": "basis preparation and configuration tomography are explicit access postulates",
       "label": "basis preparation and configuration tomography are explicit access postulates",
       "ok": true
     },
     {
+      "category": "schema",
       "computed": [
         true,
         true,
@@ -389,22 +434,28 @@
         true,
         true
       ],
+      "key": "implemented gauge is the exact real sign/permutation gauge only",
       "label": "implemented gauge is the exact real sign/permutation gauge only",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "D1 record occurrence is derived by H-corr",
       "label": "D1 record occurrence is derived by H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D1 no-write control fails H-corr",
       "label": "D1 no-write control fails H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true
@@ -413,10 +464,12 @@
         true,
         true
       ],
+      "key": "D1 both preserving continuations retain availability",
       "label": "D1 both preserving continuations retain availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           {
@@ -461,16 +514,20 @@
           0
         ]
       ],
+      "key": "D1 preserving seams have zero coherence, defect, and residual",
       "label": "D1 preserving seams have zero coherence, defect, and residual",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D1 eraser destroys availability",
       "label": "D1 eraser destroys availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -481,22 +538,28 @@
         true,
         false
       ],
+      "key": "D1 eraser restores cross-sector coherence and nonzero defect",
       "label": "D1 eraser restores cross-sector coherence and nonzero defect",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "D2 record occurrence is derived by H-corr",
       "label": "D2 record occurrence is derived by H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D2 no-write control fails H-corr",
       "label": "D2 no-write control fails H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true
@@ -505,10 +568,12 @@
         true,
         true
       ],
+      "key": "D2 both preserving continuations retain availability",
       "label": "D2 both preserving continuations retain availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           {
@@ -553,16 +618,20 @@
           0
         ]
       ],
+      "key": "D2 preserving seams have zero coherence, defect, and residual",
       "label": "D2 preserving seams have zero coherence, defect, and residual",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D2 eraser destroys availability",
       "label": "D2 eraser destroys availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -573,22 +642,28 @@
         true,
         false
       ],
+      "key": "D2 eraser restores cross-sector coherence and nonzero defect",
       "label": "D2 eraser restores cross-sector coherence and nonzero defect",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "D3 record occurrence is derived by H-corr",
       "label": "D3 record occurrence is derived by H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D3 no-write control fails H-corr",
       "label": "D3 no-write control fails H-corr",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true
@@ -597,10 +672,12 @@
         true,
         true
       ],
+      "key": "D3 both preserving continuations retain availability",
       "label": "D3 both preserving continuations retain availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           {
@@ -645,16 +722,20 @@
           0
         ]
       ],
+      "key": "D3 preserving seams have zero coherence, defect, and residual",
       "label": "D3 preserving seams have zero coherence, defect, and residual",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": false,
       "expected": false,
+      "key": "D3 eraser destroys availability",
       "label": "D3 eraser destroys availability",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -665,10 +746,12 @@
         true,
         false
       ],
+      "key": "D3 eraser restores cross-sector coherence and nonzero defect",
       "label": "D3 eraser restores cross-sector coherence and nonzero defect",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -679,16 +762,20 @@
         true,
         true
       ],
+      "key": "composition-compatible sign gauge preserves accessible composite Born laws",
       "label": "composition-compatible sign gauge preserves accessible composite Born laws",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "real-gauged region/master morphism still satisfies every diagram",
       "label": "real-gauged region/master morphism still satisfies every diagram",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -699,10 +786,12 @@
         true,
         true
       ],
+      "key": "common configuration relabelling preserves W3 and accessible invariants",
       "label": "common configuration relabelling preserves W3 and accessible invariants",
       "ok": true
     },
     {
+      "category": "schema",
       "computed": [
         true,
         true,
@@ -715,48 +804,12 @@
         true,
         true
       ],
+      "key": "causal, geometric, field, and full-U(1) insertion guards fire",
       "label": "causal, geometric, field, and full-U(1) insertion guards fire",
       "ok": true
     },
     {
-      "computed": [
-        [
-          [
-            0,
-            1
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            0,
-            2
-          ]
-        ],
-        true
-      ],
-      "expected": [
-        [
-          [
-            0,
-            1
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            0,
-            2
-          ]
-        ],
-        true
-      ],
-      "label": "algebraic coupling graph connects branch, record, and auxiliary",
-      "ok": true
-    },
-    {
+      "category": "measurement",
       "computed": {
         "factor_found": true,
         "permutations_tested": 1,
@@ -785,10 +838,12 @@
           7
         ]
       },
+      "key": "old q=3 spectator-padded family is detected",
       "label": "old q=3 spectator-padded family is detected",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": {
         "factor_found": false,
         "permutations_tested": 40320,
@@ -799,10 +854,12 @@
         "permutations_tested": 40320,
         "witness": null
       },
+      "key": "D1 exhausts all 8! common relabellings with no 4x2 product family",
       "label": "D1 exhausts all 8! common relabellings with no 4x2 product family",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": {
         "factor_found": false,
         "permutations_tested": 40320,
@@ -813,10 +870,12 @@
         "permutations_tested": 40320,
         "witness": null
       },
+      "key": "D2 exhausts all 8! common relabellings with no 4x2 product family",
       "label": "D2 exhausts all 8! common relabellings with no 4x2 product family",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": {
         "factor_found": false,
         "permutations_tested": 40320,
@@ -827,10 +886,12 @@
         "permutations_tested": 40320,
         "witness": null
       },
+      "key": "D3 exhausts all 8! common relabellings with no 4x2 product family",
       "label": "D3 exhausts all 8! common relabellings with no 4x2 product family",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           "D1",
@@ -877,16 +938,20 @@
           ]
         ]
       ],
+      "key": "preserve-family support multisets separate all equal-dimensional regions even if labels permute",
       "label": "preserve-family support multisets separate all equal-dimensional regions even if labels permute",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": 3,
       "expected": 3,
+      "key": "all three full accessible dynamic signatures are distinct",
       "label": "all three full accessible dynamic signatures are distinct",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         true,
         true,
@@ -897,10 +962,12 @@
         true,
         true
       ],
+      "key": "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback",
       "label": "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         true,
         true,
@@ -911,10 +978,12 @@
         true,
         true
       ],
+      "key": "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback",
       "label": "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         false,
         false,
@@ -925,10 +994,12 @@
         false,
         false
       ],
+      "key": "changing one mapped regional arrow breaks every embedding",
       "label": "changing one mapped regional arrow breaks every embedding",
       "ok": true
     },
     {
+      "category": "control",
       "computed": [
         true,
         false,
@@ -939,10 +1010,12 @@
         false,
         false
       ],
+      "key": "unitary but non-signed-permutation boundary maps are outside the declared Reg scope",
       "label": "unitary but non-signed-permutation boundary maps are outside the declared Reg scope",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         true,
         5,
@@ -953,38 +1026,34 @@
         5,
         12
       ],
+      "key": "type.reg_category",
       "label": "Reg has amplitude instruments and typed instrument morphisms",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
         true,
-        true
-      ],
-      "expected": [
         true,
-        true,
-        true,
-        true
-      ],
-      "label": "Reg identities, compositions, and all declared morphisms validate",
-      "ok": true
-    },
-    {
-      "computed": [
         22,
         true
       ],
       "expected": [
+        true,
+        true,
+        true,
+        true,
         22,
         true
       ],
-      "label": "all 22 composable Reg pairs equal their declared composites",
+      "key": "measurement.reg_category_laws",
+      "label": "Reg morphisms, identities, and all 22 declared compositions validate",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           [
@@ -1033,10 +1102,12 @@
           "core.write"
         ]
       ],
+      "key": "all pair and triple intersections are the nonvacuous amplitude core",
       "label": "all pair and triple intersections are the nonvacuous amplitude core",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -1047,34 +1118,36 @@
         true,
         true
       ],
+      "key": "O satisfies the finite pair-pullback universal tests",
       "label": "O satisfies the finite pair-pullback universal tests",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
-      "label": "the three regional subfamilies cover the frozen master arrow family",
+      "key": "the three regional subfamilies cover the fixed master arrow family",
+      "label": "the three regional subfamilies cover the fixed master arrow family",
       "ok": true
     },
     {
-      "computed": true,
-      "expected": true,
-      "label": "positive Ref is an amplitude-instrument family inclusion",
+      "category": "control",
+      "computed": [
+        false,
+        false,
+        "morphism_diagram_failure"
+      ],
+      "expected": [
+        false,
+        false,
+        "morphism_diagram_failure"
+      ],
+      "key": "control.mapped_arrow_mutant",
+      "label": "altering one bridge breaks canonical matching and independent structural validation",
       "ok": true
     },
     {
-      "computed": false,
-      "expected": false,
-      "label": "old Born-shadow product coarse-graining cannot pass the instrument-refinement gate",
-      "ok": true
-    },
-    {
-      "computed": false,
-      "expected": false,
-      "label": "altering one frozen bridge fails the structural certificate",
-      "ok": true
-    },
-    {
+      "category": "measurement",
       "computed": [
         [
           [
@@ -1139,21 +1212,23 @@
           ]
         ]
       ],
+      "key": "regional fair laws are consequence-only measurements",
       "label": "regional fair laws are consequence-only measurements",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         [
-          16,
           true,
+          16,
           true,
           true,
           true
         ],
         [
-          16,
           true,
+          16,
           true,
           true,
           true
@@ -1161,24 +1236,26 @@
       ],
       "expected": [
         [
-          16,
           true,
+          16,
           true,
           true,
           true
         ],
         [
-          16,
           true,
+          16,
           true,
           true,
           true
         ]
       ],
-      "label": "diagonal and anti-diagonal extensions are exact W3-compatible amplitude controls",
+      "key": "type.equal_law_controls",
+      "label": "diagonal and anti-diagonal controls are typed exact W3-compatible instruments",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           [
@@ -1231,10 +1308,12 @@
           ]
         ]
       ],
+      "key": "diagonal and anti-diagonal supports differ",
       "label": "diagonal and anti-diagonal supports differ",
       "ok": true
     },
     {
+      "category": "control",
       "computed": [
         true,
         true
@@ -1243,10 +1322,12 @@
         true,
         true
       ],
+      "key": "control.law_only_ambiguity",
       "label": "law-only predicate accepts both incompatible extensions",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           [
@@ -1379,22 +1460,106 @@
           ]
         ]
       ],
+      "key": "equal marginals force incompatible pair-map families",
       "label": "equal marginals force incompatible pair-map families",
       "ok": true
     },
     {
+      "category": "control",
       "computed": [
-        false,
-        false
+        [
+          true,
+          false,
+          false,
+          false,
+          "boundary_dimension_mismatch",
+          [
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ]
+          ]
+        ],
+        [
+          true,
+          false,
+          false,
+          false,
+          "boundary_dimension_mismatch",
+          [
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ]
+          ]
+        ]
       ],
       "expected": [
-        false,
-        false
+        [
+          true,
+          false,
+          false,
+          false,
+          "boundary_dimension_mismatch",
+          [
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ]
+          ]
+        ],
+        [
+          true,
+          false,
+          false,
+          false,
+          "boundary_dimension_mismatch",
+          [
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              16,
+              8
+            ]
+          ]
+        ]
       ],
-      "label": "post-selected law couplings fail the structural master criterion",
+      "key": "control.typed_equal_law_bridge_obstruction",
+      "label": "typed equal-law bridge candidates fail at the exact 16-versus-8 boundary obstruction",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           [
@@ -1423,10 +1588,12 @@
         true,
         true
       ],
+      "key": "rogue region has the same stable fair record law",
       "label": "rogue region has the same stable fair record law",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         4,
         false,
@@ -1437,10 +1604,12 @@
         false,
         false
       ],
-      "label": "rogue preserve has no admissible signed-permutation bridge into the frozen master",
+      "key": "rogue preserve has no admissible signed-permutation bridge into the fixed master",
+      "label": "rogue preserve has no admissible signed-permutation bridge into the fixed master",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           "O",
@@ -1505,10 +1674,12 @@
           true
         ]
       ],
+      "key": "all five record algebras are derived at the preserving scope",
       "label": "all five record algebras are derived at the preserving scope",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         true,
         true,
@@ -1523,16 +1694,20 @@
         5,
         12
       ],
+      "key": "FactIface and Rec are distinct typed executable objects",
       "label": "FactIface and Rec are distinct typed executable objects",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": true,
       "expected": true,
+      "key": "every fact restriction is induced from a validated Reg morphism",
       "label": "every fact restriction is induced from a validated Reg morphism",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         true,
         true,
@@ -1543,10 +1718,12 @@
         true,
         true
       ],
+      "key": "Rec satisfies identities and contravariant composition",
       "label": "Rec satisfies identities and contravariant composition",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           {
@@ -1583,10 +1760,12 @@
         true,
         true
       ],
+      "key": "the common record descends across the genuine triple and all three master paths",
       "label": "the common record descends across the genuine triple and all three master paths",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": [
         [
           true,
@@ -1639,10 +1818,12 @@
           true
         ]
       ],
+      "key": "regional record projectors are literal morphism pullbacks",
       "label": "regional record projectors are literal morphism pullbacks",
       "ok": true
     },
     {
+      "category": "type",
       "computed": [
         true,
         false,
@@ -1655,10 +1836,12 @@
         3,
         9
       ],
+      "key": "value-only groupoid is FactIface-shaped but cannot satisfy Reg typing",
       "label": "value-only groupoid is FactIface-shaped but cannot satisfy Reg typing",
       "ok": true
     },
     {
+      "category": "measurement",
       "computed": {
         "all_laws": true,
         "composition_count": 27,
@@ -1671,47 +1854,8 @@
         "identity_count": 3,
         "inverse_count": 9
       },
+      "key": "value-only control obeys FactIface groupoid laws without becoming Reg",
       "label": "value-only control obeys FactIface groupoid laws without becoming Reg",
-      "ok": true
-    },
-    {
-      "computed": [
-        true,
-        true,
-        true
-      ],
-      "expected": [
-        true,
-        true,
-        true
-      ],
-      "label": "all three permitted positive rungs are earned",
-      "ok": true
-    },
-    {
-      "computed": [
-        false,
-        false,
-        false
-      ],
-      "expected": [
-        false,
-        false,
-        false
-      ],
-      "label": "all pre-registered repair blocks remain false",
-      "ok": true
-    },
-    {
-      "computed": "RQ0-FACT-DESCENT",
-      "expected": "RQ0-FACT-DESCENT",
-      "label": "highest honestly restored rung",
-      "ok": true
-    },
-    {
-      "computed": 6,
-      "expected": 6,
-      "label": "forbidden successor claims remain explicitly absent",
       "ok": true
     }
   ],
@@ -1878,7 +2022,6 @@
           "Rec(id:E)"
         ]
       ],
-      "marginal_laws_used_as_fact_criterion": false,
       "object_map": [
         [
           "O",
@@ -1901,17 +2044,20 @@
           "R(E)"
         ]
       ],
+      "static_law_inputs_detected": [],
       "three_paths_equal_direct_pullback": true,
       "triple_descends": true,
       "variance": "CONTRAVARIANT"
     },
     "Ref": {
       "kind": "fixed-carrier intervention-family inclusion",
+      "old_result_classification": "TYPE CONTROL ONLY; not counted as an independent scientific gate",
       "old_result_is_instrument_morphism": false,
       "old_result_name": "Born-shadow product coarse-graining",
       "positive": "j1:D1->E",
+      "positive_gate_source": "deduplicated: the already validated j1 region-to-master morphism",
       "positive_is_instrument_morphism": true,
-      "spacetime_resolution_claim": false
+      "scope": "no spacetime-resolution claim"
     },
     "Reg": {
       "all_category_laws": true,
@@ -1949,6 +2095,8 @@
         true,
         true
       ],
+      "standard_name": "finite amplitude-subinstrument cover category/atlas",
+      "topology_scope": "no Grothendieck topology declared; RQ0-REGIONAL-SITE is the pin's internal rung name",
       "triple_overlap": [
         "core.no-write",
         "core.preserve",
@@ -1970,12 +2118,12 @@
       ]
     },
     "classifications": {
-      "anti_padding": "EXHAUSTIVE EXACT FINITE SEARCH",
+      "anti_padding": "EXHAUSTIVE EXACT FINITE SEARCH over common relabellings for the 4 x 2 split; arbitrary-unitary tensor irreducibility open",
       "causal_locality": "OPEN; NOT CONSTRUCTED",
       "eraser_recoherence": "EXACT MEASUREMENT",
       "fact_descent": "EXACT FUNCTORIAL MEASUREMENT",
-      "master_and_morphisms": "CONSTRUCTED OBJECTS",
-      "overlap": "EXACT PULLBACK/INTERSECTION IN THE DECLARED FINITE SUBINSTRUMENT SITE",
+      "master_and_morphisms": "CONSTRUCTED OBJECTS plus SAME-FILE CANONICAL AUTHENTICATION",
+      "overlap": "EXACT PULLBACK/INTERSECTION IN THE DECLARED FINITE AMPLITUDE-SUBINSTRUMENT COVER CATEGORY",
       "preserving_classical_seam": "PAPER-1 THEOREM INSTANCE plus EXACT MEASUREMENTS",
       "record_occurrence_and_availability": "EXACT MEASUREMENTS",
       "region": "DEFINITION plus provisional operational-nomology POSTULATES",
@@ -2013,9 +2161,14 @@
         "code_imported": false
       },
       "hostile review": {
-        "class": "repair obligations",
+        "class": "antecedent repair obligations",
         "code_imported": false,
         "path": "v13/review-rq0-quantum-factual-base-hostile.md"
+      },
+      "physical-overlap hostile review": {
+        "class": "current bounded-repair obligations",
+        "code_imported": false,
+        "path": "v13/review-rq0-physical-overlap-repair-hostile.md"
       },
       "physical-overlap repair pin": {
         "class": "active pin",
@@ -2060,13 +2213,13 @@
         "i3:O->D3"
       ],
       "dimension": 8,
-      "master_is_local_witness_not_global_universe": true,
       "name": "E",
       "region_embedding_names": [
         "j1:D1->E",
         "j2:D2->E",
         "j3:D3->E"
-      ]
+      ],
+      "scope_classification": "DECLARED SCOPE: one finite local witness instrument; no global-universe claim"
     },
     "no_circularity_controls": {
       "anti_diagonal_forced_maps": [
@@ -2101,6 +2254,735 @@
           ]
         ]
       ],
+      "anti_diagonal_instrument": {
+        "access_class": "CONTROL: actual preparation 0 and exact joint-record readout",
+        "actual_preparation": 0,
+        "arrows": [
+          {
+            "amplitude": [
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "family": "write",
+            "name": "write",
+            "source": "G-anti-diagonal:V0",
+            "target": "G-anti-diagonal:V1"
+          },
+          {
+            "amplitude": [
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2"
+              ],
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2"
+              ]
+            ],
+            "family": "preserve",
+            "name": "preserve",
+            "source": "G-anti-diagonal:V1",
+            "target": "G-anti-diagonal:V2"
+          }
+        ],
+        "boundaries": [
+          {
+            "dimension": 16,
+            "name": "G-anti-diagonal:V0"
+          },
+          {
+            "dimension": 16,
+            "name": "G-anti-diagonal:V1"
+          },
+          {
+            "dimension": 16,
+            "name": "G-anti-diagonal:V2"
+          }
+        ],
+        "gauge_class": "REAL-SIGN-GAUGE: candidate signed-permutation identification",
+        "name": "G-anti-diagonal",
+        "preparations": [
+          0
+        ],
+        "readouts": [
+          {
+            "boundary": "G-anti-diagonal:V1",
+            "name": "joint-memory",
+            "record_candidate": true,
+            "values": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "boundary": "G-anti-diagonal:V2",
+            "name": "configuration-probe",
+            "record_candidate": false,
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
       "anti_diagonal_support": [
         [
           0,
@@ -2112,6 +2994,962 @@
           0,
           1
         ]
+      ],
+      "candidate_morphisms": [
+        {
+          "arrow_map": [
+            [
+              "write",
+              "core.write"
+            ],
+            [
+              "preserve",
+              "core.preserve"
+            ]
+          ],
+          "boundary_maps": [
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-diagonal:V0",
+              "target_boundary": "E:V0"
+            },
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-diagonal:V1",
+              "target_boundary": "E:V1"
+            },
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-diagonal:V2",
+              "target_boundary": "E:V2"
+            }
+          ],
+          "name": "candidate:G-diagonal->E",
+          "readout_map": [
+            [
+              "joint-memory",
+              "memory"
+            ],
+            [
+              "configuration-probe",
+              "configuration-probe"
+            ]
+          ],
+          "source": "G-diagonal",
+          "target": "E"
+        },
+        {
+          "arrow_map": [
+            [
+              "write",
+              "core.write"
+            ],
+            [
+              "preserve",
+              "core.preserve"
+            ]
+          ],
+          "boundary_maps": [
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-anti-diagonal:V0",
+              "target_boundary": "E:V0"
+            },
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-anti-diagonal:V1",
+              "target_boundary": "E:V1"
+            },
+            {
+              "amplitude": [
+                [
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "0"
+                ]
+              ],
+              "source_boundary": "G-anti-diagonal:V2",
+              "target_boundary": "E:V2"
+            }
+          ],
+          "name": "candidate:G-anti-diagonal->E",
+          "readout_map": [
+            [
+              "joint-memory",
+              "memory"
+            ],
+            [
+              "configuration-probe",
+              "configuration-probe"
+            ]
+          ],
+          "source": "G-anti-diagonal",
+          "target": "E"
+        }
       ],
       "diagonal_forced_maps": [
         [
@@ -2145,6 +3983,735 @@
           ]
         ]
       ],
+      "diagonal_instrument": {
+        "access_class": "CONTROL: actual preparation 0 and exact joint-record readout",
+        "actual_preparation": 0,
+        "arrows": [
+          {
+            "amplitude": [
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "family": "write",
+            "name": "write",
+            "source": "G-diagonal:V0",
+            "target": "G-diagonal:V1"
+          },
+          {
+            "amplitude": [
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2"
+              ],
+              [
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "1/2*sqrt2",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "0",
+                "-1/2*sqrt2"
+              ]
+            ],
+            "family": "preserve",
+            "name": "preserve",
+            "source": "G-diagonal:V1",
+            "target": "G-diagonal:V2"
+          }
+        ],
+        "boundaries": [
+          {
+            "dimension": 16,
+            "name": "G-diagonal:V0"
+          },
+          {
+            "dimension": 16,
+            "name": "G-diagonal:V1"
+          },
+          {
+            "dimension": 16,
+            "name": "G-diagonal:V2"
+          }
+        ],
+        "gauge_class": "REAL-SIGN-GAUGE: candidate signed-permutation identification",
+        "name": "G-diagonal",
+        "preparations": [
+          0
+        ],
+        "readouts": [
+          {
+            "boundary": "G-diagonal:V1",
+            "name": "joint-memory",
+            "record_candidate": true,
+            "values": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "boundary": "G-diagonal:V2",
+            "name": "configuration-probe",
+            "record_candidate": false,
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
       "diagonal_support": [
         [
           0,
@@ -2226,9 +4793,67 @@
           "1/2"
         ]
       ],
-      "structural_accepts_postselected_controls": [
-        false,
-        false
+      "structural_bridge_diagnostics": [
+        {
+          "accepted": false,
+          "candidate_is_instrument_morphism": true,
+          "dimension_rows": [
+            [
+              "G-diagonal:V0",
+              16,
+              "E:V0",
+              8,
+              false
+            ],
+            [
+              "G-diagonal:V1",
+              16,
+              "E:V1",
+              8,
+              false
+            ],
+            [
+              "G-diagonal:V2",
+              16,
+              "E:V2",
+              8,
+              false
+            ]
+          ],
+          "dimensions_match": false,
+          "full_validator_called": false,
+          "reason": "boundary_dimension_mismatch"
+        },
+        {
+          "accepted": false,
+          "candidate_is_instrument_morphism": true,
+          "dimension_rows": [
+            [
+              "G-anti-diagonal:V0",
+              16,
+              "E:V0",
+              8,
+              false
+            ],
+            [
+              "G-anti-diagonal:V1",
+              16,
+              "E:V1",
+              8,
+              false
+            ],
+            [
+              "G-anti-diagonal:V2",
+              16,
+              "E:V2",
+              8,
+              false
+            ]
+          ],
+          "dimensions_match": false,
+          "full_validator_called": false,
+          "reason": "boundary_dimension_mismatch"
+        }
       ]
     },
     "nonclaims": [
@@ -2239,6 +4864,95 @@
       "no gravity dynamics",
       "no full complex U(1) gauge"
     ],
+    "outcome_derivation": {
+      "all_check_rows_assigned": true,
+      "first_failed_stage": "NONE",
+      "prerequisites": {
+        "anchors_and_authentication": {
+          "anchor.active_pin_hash": true,
+          "anchor.binding_files": true,
+          "anchor.pin_commit": true,
+          "anchor.provenance_commits": true,
+          "authentication.construction_surface": true,
+          "authentication.master_spec": true,
+          "control.positive_structural_family": true,
+          "static.constructor_law_blind": true,
+          "static.exactness": true,
+          "static.record_functor_law_blind": true
+        },
+        "cover_and_overlap": {
+          "O satisfies the finite pair-pullback universal tests": true,
+          "Ref reuses the validated j1 instrument morphism": true,
+          "all pair and triple intersections are the nonvacuous amplitude core": true,
+          "the three regional subfamilies cover the fixed master arrow family": true
+        },
+        "fact_descent": {
+          "FactIface and Rec are distinct typed executable objects": true,
+          "Rec satisfies identities and contravariant composition": true,
+          "all five record algebras are derived at the preserving scope": true,
+          "control.law_only_ambiguity": true,
+          "control.mapped_arrow_mutant": true,
+          "control.typed_equal_law_bridge_obstruction": true,
+          "diagonal and anti-diagonal supports differ": true,
+          "equal marginals force incompatible pair-map families": true,
+          "every fact restriction is induced from a validated Reg morphism": true,
+          "regional fair laws are consequence-only measurements": true,
+          "regional record projectors are literal morphism pullbacks": true,
+          "rogue preserve has no admissible signed-permutation bridge into the fixed master": true,
+          "rogue region has the same stable fair record law": true,
+          "the common record descends across the genuine triple and all three master paths": true,
+          "type.equal_law_controls": true,
+          "value-only control obeys FactIface groupoid laws without becoming Reg": true,
+          "value-only groupoid is FactIface-shaped but cannot satisfy Reg typing": true
+        },
+        "morphisms": {
+          "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback": true,
+          "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback": true,
+          "changing one mapped regional arrow breaks every embedding": true,
+          "measurement.reg_category_laws": true,
+          "type.reg_category": true,
+          "unitary but non-signed-permutation boundary maps are outside the declared Reg scope": true
+        },
+        "regions_and_diversity": {
+          "D1 both preserving continuations retain availability": true,
+          "D1 eraser destroys availability": true,
+          "D1 eraser restores cross-sector coherence and nonzero defect": true,
+          "D1 exhausts all 8! common relabellings with no 4x2 product family": true,
+          "D1 no-write control fails H-corr": true,
+          "D1 preserving seams have zero coherence, defect, and residual": true,
+          "D1 record occurrence is derived by H-corr": true,
+          "D2 both preserving continuations retain availability": true,
+          "D2 eraser destroys availability": true,
+          "D2 eraser restores cross-sector coherence and nonzero defect": true,
+          "D2 exhausts all 8! common relabellings with no 4x2 product family": true,
+          "D2 no-write control fails H-corr": true,
+          "D2 preserving seams have zero coherence, defect, and residual": true,
+          "D2 record occurrence is derived by H-corr": true,
+          "D3 both preserving continuations retain availability": true,
+          "D3 eraser destroys availability": true,
+          "D3 eraser restores cross-sector coherence and nonzero defect": true,
+          "D3 exhausts all 8! common relabellings with no 4x2 product family": true,
+          "D3 no-write control fails H-corr": true,
+          "D3 preserving seams have zero coherence, defect, and residual": true,
+          "D3 record occurrence is derived by H-corr": true,
+          "all arrows and readouts are explicitly and uniquely typed": true,
+          "all constructed amplitude arrows are exactly unitary": true,
+          "all three full accessible dynamic signatures are distinct": true,
+          "basis preparation and configuration tomography are explicit access postulates": true,
+          "causal, geometric, field, and full-U(1) insertion guards fire": true,
+          "common configuration relabelling preserves W3 and accessible invariants": true,
+          "composition-compatible sign gauge preserves accessible composite Born laws": true,
+          "implemented gauge is the exact real sign/permutation gauge only": true,
+          "old q=3 spectator-padded family is detected": true,
+          "preserve-family support multisets separate all equal-dimensional regions even if labels permute": true,
+          "real-gauged region/master morphism still satisfies every diagram": true,
+          "three regions and the core/master use equal eight-dimensional boundaries": true
+        }
+      },
+      "receipt_valid": true,
+      "semantic_declaration_check_count": 0,
+      "unassigned_check_keys": []
+    },
     "outcomes": {
       "RQ0-FACT-DESCENT": true,
       "RQ0-REGIONAL-SITE": true,
@@ -2247,20 +4961,6 @@
       "RQ0-REPAIR-BLOCKED-AT-MORPHISM": false,
       "RQ0-REPAIR-BLOCKED-AT-OVERLAP": false
     },
-    "pin_and_freeze": {
-      "adjudication_commit": "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
-      "construction_surface_sha256": "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8",
-      "constructor_arguments": [],
-      "constructor_forbidden_names": [],
-      "fact_comparison_occurs_after_digest_gate": true,
-      "master_and_morphism_spec_sha256": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
-      "pin_commit": "b05ab95d6721d104a561875bc39aa6daa03f875e",
-      "pin_sha256": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
-      "reviewed_commits": [
-        "307c36f017d9d5587334d3b79421645ee5b54c61",
-        "1537b1475705a5def1d1d063459fa7d4fb534982"
-      ]
-    },
     "postulates": [
       "operational individuation by the declared accessible amplitude-instrument family",
       "all basis preparations are accessible",
@@ -2268,6 +4968,56 @@
       "the frozen fixed-carrier subinstrument class is the admissible extension class",
       "the implemented regional gauge is real signs and common carrier relabelling"
     ],
+    "provenance_and_authentication": {
+      "canonical_construction_surface": {
+        "expected_sha256": "e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3",
+        "matches": true,
+        "observed_sha256": "e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3",
+        "scope": "same-file canonical source authentication"
+      },
+      "canonical_master_spec": {
+        "expected_sha256": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+        "matches": true,
+        "observed_sha256": "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9",
+        "scope": "same-file canonical authentication; not historical independent preregistration"
+      },
+      "constructor_arguments": [],
+      "constructor_forbidden_names": [],
+      "hostile_adjudication_commit": "1d9af029d3c04006c6e42941d66a590b2d887831",
+      "immutable_git_provenance": [
+        [
+          "307c36f017d9d5587334d3b79421645ee5b54c61",
+          0,
+          0
+        ],
+        [
+          "1537b1475705a5def1d1d063459fa7d4fb534982",
+          0,
+          0
+        ],
+        [
+          "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+          0,
+          0
+        ],
+        [
+          "1d9af029d3c04006c6e42941d66a590b2d887831",
+          0,
+          0
+        ]
+      ],
+      "pin_commit": "b05ab95d6721d104a561875bc39aa6daa03f875e",
+      "pin_sha256": "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3",
+      "prior_adjudication_commit": "150f191f6d67dbaa2de99594e6b401d0a3f6e71f",
+      "reviewed_commits": [
+        "307c36f017d9d5587334d3b79421645ee5b54c61",
+        "1537b1475705a5def1d1d063459fa7d4fb534982"
+      ],
+      "structural_validation": {
+        "positive_family_ok": true,
+        "separate_from_authentication": "BY IMPLEMENTATION: validate_structural_bridge takes no digest"
+      }
+    },
     "regions": {
       "D1": {
         "anti_padding": {
@@ -2472,7 +5222,7 @@
       }
     },
     "scope": {
-      "anti_padding_search": "exhaustive all 8! common carrier relabellings for the declared nontrivial 4x2 split; exact rearrangement-rank test",
+      "anti_padding_search": "exhaustive all 8! common carrier relabellings for the declared nontrivial 4x2 split; exact rearrangement-rank test; no arbitrary-unitary irreducibility claim",
       "arithmetic": "exact Q(sqrt(2)) plus exact rational subfield; no floats or tolerances",
       "caps": {
         "anti_padding_permutations_per_positive": 40320,
@@ -2491,9 +5241,51 @@
   },
   "status": "GREEN-UNREVIEWED-REPAIRED",
   "summary": {
-    "checks": 77,
+    "by_category": {
+      "anchor": {
+        "checks": 4,
+        "fail": 0,
+        "pass": 4
+      },
+      "authentication": {
+        "checks": 2,
+        "fail": 0,
+        "pass": 2
+      },
+      "control": {
+        "checks": 5,
+        "fail": 0,
+        "pass": 5
+      },
+      "measurement": {
+        "checks": 45,
+        "fail": 0,
+        "pass": 45
+      },
+      "schema": {
+        "checks": 3,
+        "fail": 0,
+        "pass": 3
+      },
+      "semantic": {
+        "checks": 0,
+        "fail": 0,
+        "pass": 0
+      },
+      "static": {
+        "checks": 3,
+        "fail": 0,
+        "pass": 3
+      },
+      "type": {
+        "checks": 7,
+        "fail": 0,
+        "pass": 7
+      }
+    },
+    "checks": 69,
     "fail": 0,
-    "pass": 77
+    "pass": 69
   },
   "unit": "v13 RQ0 physical-overlap repair"
 }

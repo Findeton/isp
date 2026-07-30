@@ -77,7 +77,15 @@ that made the rule.
   16-versus-8 obstruction; finite-cover and common-relabelling `4 x 2` scope
   wording; deduplicated, classified receipt gates; and an observed-anchor
   mutant that suppresses every positive verdict.  `RQ0-L0` and `RQ0-C1`
-  remain unpinned and prohibited.
+  remain unpinned and prohibited.  v13 #21 delivers that bounded repair
+  **GREEN-UNREVIEWED-REPAIRED**: the unchanged master digest preserves every
+  finite amplitude result; 69/69 classified checks derive all rungs from
+  named prerequisites; typed 16-dimensional diagonal/anti-diagonal controls
+  fail explicit candidate bridges at the exact 16-versus-8 obstruction; and
+  the observed-anchor mutant returns 68/69 while suppressing all positive
+  outcomes.  Two-run text/JSON determinism and stored-receipt regeneration
+  pass.  A post-commit rerun and separate terminal ledger entry are still
+  required before the rung is citable or any successor can be considered.
 
 ## 1. The unit cycle
 

@@ -8,14 +8,21 @@
 **Antecedent verdict:** hostile review frozen at v13 #14 and accepted at
 v13 #15.  Commits `307c36f` and `1537b14` remain immutable.
 
+**Repair hostile round:** `ACCEPT-WITH-FIXES`, frozen at v13 #19 and
+adjudicated at v13 #20.  This file incorporates all six bounded fixes;
+terminal status still requires repaired-receipt verification and its ledger
+entry.
+
 **Executable and receipts:** `v13/code/rq0_physical_overlap_exact.py`,
 `v13/code/rq0_physical_overlap_output.txt`, and
 `v13/code/rq0_physical_overlap_receipt.json`.
 
 **Highest restored rung:** **`RQ0-FACT-DESCENT`.**
 
-> Three equal-dimensional, non-padding finite quantum regional instruments
-> occur as typed subinstruments of one predeclared finite master instrument.
+> Three equal-dimensional finite quantum regional instruments, non-padding
+> under the exhaustive common-configuration-relabelling $4\times2$ test,
+> occur as typed subinstruments of one fixed, canonically authenticated finite
+> master instrument.
 > Their common W3-stable record is the actual pullback of a shared overlap
 > record through exact amplitude-instrument morphisms, not a consequence of
 > matching laws.  `Reg`, `FactIface`, and `Rec` are distinct and the physical
@@ -46,6 +53,7 @@ The result is exact at one finite scope:
   maps;
 - the anti-padding search exhausts all $8!=40{,}320$ common carrier
   relabellings for the declared $4\times2$ split;
+- this finite test makes no arbitrary-unitary tensor-irreducibility claim;
 - no numerical tolerance, random seed, fitted geometry, or field data occur.
 
 The full complex $U(1)$ boundary gauge is not implemented.  All basis
@@ -131,9 +139,11 @@ arrows:
 | `erase` | erase | region-specific coherent erasure |
 | `no-write` | control | failed-record anchor |
 
-The branch-record, record-auxiliary, and branch-auxiliary couplings form a
-connected algebraic interaction graph.  This graph is only a factorization
-diagnostic; it is not interpreted as a causal graph.
+By construction, the displayed arrows directly couple branch to record,
+record to auxiliary, and branch to auxiliary.  This is a transparent
+constructor annotation, not an independently counted receipt gate and not a
+causal graph.  The load-bearing anti-spectator result is instead the exact
+family-level factorization search below.
 
 ### 2.3 Derived quantum seam
 
@@ -217,6 +227,10 @@ The result is scoped to common carrier relabellings and the nontrivial
 $4\times2$ split.  Since swapping the two tensor factors is itself among the
 carrier relabellings, this also covers the corresponding $2\times4$
 presentation.  It is not a theorem about arbitrary dimensions.
+Nor does it exclude product structure exposed only by an arbitrary unitary
+change of tensor factorization.  “Non-padding” below always means the
+exhaustive common-relabelling $4\times2$ result at the declared real
+signed-permutation gauge scope.
 
 ---
 
@@ -237,27 +251,34 @@ theory.  Its only role is to witness one finite compatible family of local
 amplitude instruments.
 
 The no-argument constructor, all readouts, the admissible morphism class, the
-three regional embeddings, and the three overlap embeddings are locked by
-the pre-comparison semantic-specification digest
+three regional embeddings, and the three overlap embeddings have the
+same-file canonical specification digest
 
 ```text
 132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9
 ```
 
-The constructor, morphism datatypes, validator, canonicalizer, and structural
-bridge predicate are separately source-locked by
+The constructor, typed law controls, canonicalizer, and structural bridge
+validators have the separate same-file canonical source digest
 
 ```text
-262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8
+e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3
 ```
 
-before any marginal or common-fact comparison is evaluated.  A source audit
+These digests authenticate the delivered representation and evaluation
+surface.  They do **not** retroactively prove that the exact construction was
+historically preregistered independently of its author.  Immutable Git
+provenance instead fixes the repair pin, original delivery, hostile report,
+and adjudication as distinct events.  On every execution the family is built
+and canonically authenticated before the equal-law controls are evaluated;
+structural validation is a separate digest-free function.  A source audit
 confirms that the constructor consumes no target law, marginal law, requested
 fact map, coordinate, metric, or field object.
 
 ### 4.2 Instrument morphisms
 
-For this exact fixed-carrier site, an admissible morphism $f:D\to E$ contains:
+For this exact fixed-carrier cover category, an admissible morphism $f:D\to E$
+contains:
 
 1. signed-permutation boundary maps $f_j:V_j^D\to V_j^E$;
 2. a total injective map of accessible arrow labels preserving family and
@@ -288,7 +309,7 @@ both source and target preserve the morphism equations.
 
 ---
 
-## 5. Physical overlap and the regional site
+## 5. Physical overlap and the regional cover category
 
 ### 5.1 Common amplitude subinstrument
 
@@ -340,8 +361,10 @@ intertwiners, and the finite pullback tests pass.  The three regional images
 cover the master because their accessible arrow-family union is exactly the
 master family.
 
-This earns `RQ0-REGIONAL-SITE` at the declared finite operational-family
-scope.  It is not yet a causal or spacetime site.
+This earns the pin's internal rung `RQ0-REGIONAL-SITE` at the declared finite
+operational-family scope.  In standard terminology the constructed object is
+a finite amplitude-subinstrument cover category or atlas: no Grothendieck
+topology is declared.  It is not a causal or spacetime site.
 
 ### 5.3 Refinement
 
@@ -372,8 +395,8 @@ exactly.  Thus the regional memory proposition is literally the pullback of
 the master/core proposition.  It is not a new binary variable selected
 because its probability happens to match.
 
-After the amplitude site and morphisms pass, define the persistent record
-algebra by the W3 predicates:
+After the amplitude cover category and morphisms pass, define the persistent
+record algebra by the W3 predicates:
 
 $$
 \operatorname{Rec}(D)
@@ -434,9 +457,10 @@ $$
 \{(0,1,0),(1,0,1)\}.
 $$
 
-Both writes and preserves are unitary, both joint readouts pass the scoped
-H-corr and H-avail tests, and a deliberately inadequate law-only predicate
-accepts both.  But their forced pair maps differ:
+Each control is a typed 16-dimensional amplitude `Instrument`; both writes
+and preserves are unitary, both joint readouts pass the scoped H-corr and
+H-avail tests, and a deliberately inadequate law-only predicate accepts both.
+But their forced pair maps differ:
 
 | pair | diagonal control | anti-diagonal control |
 |---|---|---|
@@ -444,8 +468,13 @@ accepts both.  But their forced pair maps differ:
 | $2\to3$ | identity | complement |
 | $1\to3$ | identity | identity |
 
-Neither post-selected coupling satisfies the frozen master/subinstrument
-schema.  The positive fact certificate instead comes from the already locked
+For each control the executable constructs an explicit candidate
+`InstrumentMorphism` into the fixed eight-dimensional master.  Both candidates
+fail at the first structural gate: their three boundary pairs have dimensions
+$16\to8$, so no signed-permutation boundary identification exists.  The
+reported reason is `boundary_dimension_mismatch`; this is no longer rejection
+by a positive-family digest or untyped dictionary schema.  The positive fact
+certificate instead comes from the fixed, canonically authenticated
 $O\to D_a\to\mathsf E$ morphisms.
 
 ### 7.2 Equal law, no bridge
@@ -463,7 +492,7 @@ $$
 
 on the branch before an auxiliary coupling.  It passes H-corr and H-avail.
 Nevertheless, its preserve Born-entry multiset differs from each of the four
-preserve-family arrows in the frozen master.  That multiset is invariant
+preserve-family arrows in the fixed master.  That multiset is invariant
 under every signed row/column relabelling, so no admissible arrow image—and
 hence no full regional embedding—exists in the declared finite morphism
 scope.
@@ -493,7 +522,7 @@ consequence.  Phase is never used as a fact-identity criterion.
 The classifications are:
 
 - **definitions:** the finite instrument, signed-permutation morphism,
-  subinstrument site, `FactIface`, and `Rec` types;
+  subinstrument cover category, `FactIface`, and `Rec` types;
 - **postulates:** operational nomological individuation, basis-preparation
   access, complete configuration-probe access, the fixed admissible-extension
   class, and the exact real gauge scope;
@@ -511,10 +540,17 @@ The classifications are:
 
 ## 9. Receipt and outcome
 
-The executable reports **77/77 passing exact checks**.  Deliberately
-corrupting the active-pin hash exits with status 1 and exactly one visible
-failure.  Two complete text runs and two complete JSON runs are required to
-be byte-identical in the committed verification receipt.  No legacy code is
+The executable reports **69/69 passing exact checks**.  Those checks are
+classified mechanically as 4 anchors, 2 canonical-authentication checks,
+3 static audits, 7 type checks, 3 schema checks, 45 measurements, 5 controls,
+and 0 semantic declarations.  Outcome labels and prose nonclaims are not
+counted as checks.  Every rung is derived from a named prerequisite mapping.
+
+Deliberately corrupting the **observed** active-pin hash in memory exits with
+status 1 at **68/69**, closes every positive rung, prints `highest restored
+rung: NONE`, and labels the receipt invalid.  It does not alter an expected
+constant.  Two complete text runs and two complete JSON runs must be
+byte-identical and exactly regenerate the stored receipts.  No legacy code is
 imported; the old padded family and old shadow refinement are reconstructed
 only as negative/type controls.
 

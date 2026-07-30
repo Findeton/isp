@@ -882,3 +882,68 @@ mathematical model or any reviewed historical file.  It must regenerate exact
 text/JSON receipts, pass two-run determinism and stored-receipt verification,
 and demonstrate a fail-closed mutant before terminal adjudication.  No
 `RQ0-L0`, `RQ0-C1`, causal, spacetime, field or gravity work is authorized.
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP BOUNDED REPAIR DELIVERED:
+## `RQ0-FACT-DESCENT` RETAINED; 69/69; PENDING TERMINAL ENTRY (v13 LEDGER #21)
+All six findings accepted at #20 have been repaired within the frozen #16
+scope.  The repaired note is `note-rq0-physical-overlap-repair.md` (SHA-256
+`e0b039503cf5ba2d432b529714b49cb32f8139a5e1b7e647ebee412fedeba106`);
+the exact executable is `code/rq0_physical_overlap_exact.py` (SHA-256
+`56781c9a10c65be076d86570abd87cbde0901ecc09df2aa04586b30ff31d08d6`);
+the text and JSON receipts have SHA-256 values
+`0b8f97ef8716a2d69c5ae5d8c80d5836523914effcc997fb755c09483751a460`
+and `fff8c4d633a8e3b1c43db0645305fb02deb763f15db139f7b5ce25bf0f8b375a`.
+The mathematical master/morphism specification digest remains exactly
+`132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9`:
+no amplitude, region, W3 seam, diversity invariant, overlap or record map was
+changed.  The repaired canonical source-surface digest is
+`e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3`.
+
+**M1 repaired.**  The six outcome booleans and highest rung are computed from
+five named prerequisite groups: anchors/authentication, regions/diversity,
+morphisms, cover/overlap and fact descent.  All 69 check rows are assigned to
+one group; outcome labels and nonclaims add no checks.  The receipt closes
+later rungs without erasing earlier earned rungs, while any anchor failure
+closes all positives.  The falsification mutant now corrupts the observed
+active-pin digest in memory, returns `68/69`, sets all three positive outcomes
+false, sets the highest outcome to null, prints `highest restored rung: NONE`,
+labels the receipt invalid and exits 1.
+
+**M2 repaired.**  Immutable Git provenance, same-file canonical
+authentication and digest-free structural validation are separate executable
+objects.  The note explicitly states that the two same-file digests
+authenticate the delivered representation but do not prove historical
+independent preregistration.  `matches_canonical_spec` and
+`validate_structural_bridge` are distinct; the latter accepts the positive
+family without receiving a digest.  The constructor's law-blind static audit
+remains positive.
+
+**M3 repaired.**  The diagonal and anti-diagonal equal-law controls are now
+typed 16-dimensional `Instrument` objects.  Each has a typed explicit
+candidate `InstrumentMorphism` into the eight-dimensional master.  Both are
+rejected at the first structural obstruction, with three measured `16 -> 8`
+boundary pairs and exact reason `boundary_dimension_mismatch`; no positive-
+family schema/digest rejection is used.  The separate rogue invariant remains
+unchanged and positive.
+
+**M4–M6 repaired.**  Standard prose now calls `Reg` a finite amplitude-
+subinstrument cover category or atlas and records that no Grothendieck topology
+is declared; `RQ0-REGIONAL-SITE` remains only the pin's internal rung name.
+Every non-padding headline is scoped to the exhaustive `8!` common-
+relabelling `4 x 2` test and disclaims arbitrary-unitary irreducibility.  The
+literal coupling-graph check, duplicate category/refinement checks and four
+outcome-restating checks are gone.  The receipt classifies its 69 rows as 4
+anchors, 2 authentication checks, 3 static audits, 7 type checks, 3 schema
+checks, 45 measurements, 5 controls and 0 semantic declarations; formerly
+literal JSON science claims are removed, derived or explicitly classified.
+
+Two complete text runs and two complete JSON runs are byte-identical and
+exactly regenerate both stored receipts.  The exact positive run is `69/69`;
+the observed-anchor mutant is the single-failure `68/69` run above.  AST
+inspection finds no float literal and confirms that none of the six `earned`
+values is an AST constant.  The highest repaired rung remains
+`RQ0-FACT-DESCENT` at the external review's exact finite fixed-carrier,
+signed-permutation/common-relabelling amplitude-subinstrument scope.  This
+entry delivers the repair but does not itself confer terminal status; a
+post-commit adjudicator rerun and separate terminal ledger event remain.
+No `RQ0-L0`, `RQ0-C1`, causal, field or gravity work has begun.  **HALT.**

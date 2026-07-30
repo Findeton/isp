@@ -26,11 +26,16 @@ ROOT = Path(__file__).resolve().parents[2]
 PIN_COMMIT = "b05ab95d6721d104a561875bc39aa6daa03f875e"
 PIN_SHA256 = "a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3"
 MASTER_SPEC_SHA256 = "132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9"
-CONSTRUCTION_SURFACE_SHA256 = "262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8"
-ADJUDICATION_COMMIT = "150f191f6d67dbaa2de99594e6b401d0a3f6e71f"
+CONSTRUCTION_SURFACE_SHA256 = "e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3"
+PRIOR_ADJUDICATION_COMMIT = "150f191f6d67dbaa2de99594e6b401d0a3f6e71f"
+HOSTILE_ADJUDICATION_COMMIT = "1d9af029d3c04006c6e42941d66a590b2d887831"
 REVIEWED_COMMITS = (
     "307c36f017d9d5587334d3b79421645ee5b54c61",
     "1537b1475705a5def1d1d063459fa7d4fb534982",
+)
+PROVENANCE_COMMITS = REVIEWED_COMMITS + (
+    PRIOR_ADJUDICATION_COMMIT,
+    HOSTILE_ADJUDICATION_COMMIT,
 )
 
 LOCKS = {
@@ -62,7 +67,12 @@ LOCKS = {
     "hostile review": (
         "v13/review-rq0-quantum-factual-base-hostile.md",
         "e8b5dab245f138402469aaf97eaf04ca2cf657c12c1396538005d69ca87b9eb3",
-        "repair obligations",
+        "antecedent repair obligations",
+    ),
+    "physical-overlap hostile review": (
+        "v13/review-rq0-physical-overlap-repair-hostile.md",
+        "4aab5520f881a20033b3a0e67597feb330f7c3bd7592d8ad32479d3b5e0d0a10",
+        "current bounded-repair obligations",
     ),
 }
 
@@ -168,6 +178,15 @@ def identity(size: int) -> Matrix:
     return tuple(
         tuple(ONE if row == column else ZERO for column in range(size))
         for row in range(size)
+    )
+
+
+def rectangular_basis_map(rows: int, columns: int) -> Matrix:
+    """Canonical basis truncation/inclusion used only for a failed bridge control."""
+
+    return tuple(
+        tuple(ONE if row == column else ZERO for column in range(columns))
+        for row in range(rows)
     )
 
 
@@ -666,7 +685,6 @@ def build_amplitude_family() -> Mapping[str, object]:
         "regional_preserves": regional_preserves,
         "erasers": erasers,
         "no_write": no_write,
-        "circuit_edges": ((0, 1), (1, 2), (0, 2)),
     }
 
 
@@ -1508,7 +1526,9 @@ def region_dynamic_signature(region: Instrument) -> Tuple[object, ...]:
     )
 
 
-def ghz_law_extension(flip_record: Optional[int]) -> Mapping[str, object]:
+def build_equal_law_control(name: str, flip_record: Optional[int]) -> Instrument:
+    """Build a typed 16-dimensional equal-law control instrument."""
+
     qubits = 4
     write = on_qubit(H, 0, qubits)
     for record_bit in (1, 2, 3):
@@ -1516,22 +1536,45 @@ def ghz_law_extension(flip_record: Optional[int]) -> Mapping[str, object]:
     if flip_record is not None:
         write = matmul(on_qubit(X, flip_record, qubits), write)
     preserve = on_qubit(H, 0, qubits)
+    boundaries = renamed_boundaries(name, dimension=16)
     joint_values = tuple(
         tuple(bit_value(configuration, bit, qubits) for bit in (1, 2, 3))
         for configuration in range(2 ** qubits)
     )
-    readout = Readout("joint-memory", "G:V1", joint_values, True)
-    preparation = 0
+    return Instrument(
+        name=name,
+        boundaries=boundaries,
+        arrows=(
+            make_arrow("write", "write", boundaries, 0, 1, write),
+            make_arrow("preserve", "preserve", boundaries, 1, 2, preserve),
+        ),
+        preparations=(0,),
+        actual_preparation=0,
+        readouts=(
+            Readout("joint-memory", boundaries[1].name, joint_values, True),
+            Readout("configuration-probe", boundaries[2].name, tuple(range(16)), False),
+        ),
+        access_class="CONTROL: actual preparation 0 and exact joint-record readout",
+        gauge_class="REAL-SIGN-GAUGE: candidate signed-permutation identification",
+    )
+
+
+def equal_law_control_measurements(control: Instrument) -> Mapping[str, object]:
+    arrows = arrow_dict(control)
+    write = arrows["write"].amplitude
+    preserve = arrows["preserve"].amplitude
+    readout = candidate_record(control)
     support = tuple(
         sorted(
             {
-                joint_values[configuration]
-                for configuration in range(2 ** qubits)
-                if not write[configuration][preparation].is_zero()
+                readout.values[configuration]
+                for configuration in range(len(write))
+                if not write[configuration][control.actual_preparation].is_zero()
             }
         )
     )
-    joint_law = readout_law(write, readout, preparation)
+    joint_law = readout_law(write, readout, control.actual_preparation)
+    component_count = len(readout.values[0])
     marginals = tuple(
         tuple(
             (
@@ -1547,17 +1590,87 @@ def ghz_law_extension(flip_record: Optional[int]) -> Mapping[str, object]:
             )
             for value in (0, 1)
         )
-        for index in range(3)
+        for index in range(component_count)
     )
     return {
-        "dimension": 16,
-        "write": write,
-        "preserve": preserve,
+        "instrument": control,
+        "dimension": control.boundaries[0].dimension,
         "support": support,
         "joint_law": joint_law,
         "marginals": marginals,
-        "h_corr": h_corr(write, readout, (preparation,)),
+        "h_corr": h_corr(write, readout, control.preparations),
         "h_avail": h_avail(preserve, readout),
+    }
+
+
+def equal_law_bridge_candidate(
+    control: Instrument,
+    master: Instrument,
+) -> InstrumentMorphism:
+    """An explicit attempted control-to-master bridge in the admitted schema."""
+
+    return InstrumentMorphism(
+        name=f"candidate:{control.name}->{master.name}",
+        source=control.name,
+        target=master.name,
+        boundary_maps=tuple(
+            BoundaryMap(
+                source_boundary.name,
+                target_boundary.name,
+                rectangular_basis_map(
+                    target_boundary.dimension,
+                    source_boundary.dimension,
+                ),
+            )
+            for source_boundary, target_boundary in zip(
+                control.boundaries,
+                master.boundaries,
+            )
+        ),
+        arrow_map=(("write", "core.write"), ("preserve", "core.preserve")),
+        readout_map=(("joint-memory", "memory"), ("configuration-probe", "configuration-probe")),
+    )
+
+
+def validate_candidate_bridge(
+    morphism: InstrumentMorphism,
+    source: Instrument,
+    target: Instrument,
+) -> Mapping[str, object]:
+    """Fail at the first structural obstruction in the frozen morphism class."""
+
+    dimension_rows = tuple(
+        (
+            source_boundary.name,
+            source_boundary.dimension,
+            target_boundary.name,
+            target_boundary.dimension,
+            source_boundary.dimension == target_boundary.dimension,
+        )
+        for source_boundary, target_boundary in zip(source.boundaries, target.boundaries)
+    )
+    dimensions_match = (
+        len(source.boundaries) == len(target.boundaries)
+        and all(row[4] for row in dimension_rows)
+    )
+    if not dimensions_match:
+        return {
+            "candidate_is_instrument_morphism": isinstance(morphism, InstrumentMorphism),
+            "dimension_rows": dimension_rows,
+            "dimensions_match": False,
+            "full_validator_called": False,
+            "accepted": False,
+            "reason": "boundary_dimension_mismatch",
+        }
+    diagnostics = validate_morphism(morphism, source, target)
+    return {
+        "candidate_is_instrument_morphism": isinstance(morphism, InstrumentMorphism),
+        "dimension_rows": dimension_rows,
+        "dimensions_match": True,
+        "full_validator_called": True,
+        "accepted": diagnostics["ok"],
+        "reason": "accepted" if diagnostics["ok"] else "morphism_diagram_failure",
+        "diagnostics": diagnostics,
     }
 
 
@@ -1779,7 +1892,12 @@ def construction_surface_digest(path: Path) -> str:
         "build_amplitude_family",
         "validate_morphism",
         "canonical_master_spec",
-        "physical_bridge_accepts",
+        "matches_canonical_spec",
+        "validate_structural_bridge",
+        "build_equal_law_control",
+        "rectangular_basis_map",
+        "equal_law_bridge_candidate",
+        "validate_candidate_bridge",
     }
     rows = []
     for node in tree.body:
@@ -1798,7 +1916,8 @@ def record_functor_static_audit(path: Path) -> Mapping[str, object]:
     tree = ast.parse(path.read_text())
     forbidden = {
         "readout_law",
-        "ghz_law_extension",
+        "build_equal_law_control",
+        "equal_law_control_measurements",
         "forced_binary_maps",
         "marginal_law",
         "joint_law",
@@ -1838,34 +1957,62 @@ def exactness_static_audit(path: Path) -> Mapping[str, object]:
 
 def law_only_accepts(
     regional_laws: Sequence[Tuple[Tuple[Hashable, Q2], ...]],
-    extension: Mapping[str, object],
+    control: Instrument,
 ) -> bool:
     """Deliberately inadequate control: marginals alone decide."""
 
-    return tuple(regional_laws) == tuple(extension["marginals"])
+    return tuple(regional_laws) == tuple(
+        equal_law_control_measurements(control)["marginals"]
+    )
 
 
-def physical_bridge_accepts(
+def matches_canonical_spec(
     family: Mapping[str, object],
-    frozen_digest: str,
+    canonical_digest: str,
 ) -> bool:
-    """Structural criterion fixed before any record-law comparison."""
+    """Same-file canonical authentication, not historical preregistration."""
 
     required = {"master", "regions", "core", "region_embeddings", "core_embeddings"}
     if not isinstance(family, Mapping) or not required.issubset(family):
         return False
-    if master_spec_digest(family) != frozen_digest:
-        return False
+    return master_spec_digest(family) == canonical_digest
+
+
+def validate_structural_bridge(family: Mapping[str, object]) -> Mapping[str, object]:
+    """Validate the family structurally without consulting its canonical digest."""
+
+    required = {"master", "regions", "core", "region_embeddings", "core_embeddings"}
+    if not isinstance(family, Mapping) or not required.issubset(family):
+        return {
+            "schema_complete": False,
+            "region_rows": (),
+            "core_rows": (),
+            "ok": False,
+            "reason": "family_schema_incomplete",
+        }
     master = family["master"]
-    regions_ok = all(
-        validate_morphism(morphism, region, master)["ok"]
+    region_rows = tuple(
+        validate_morphism(morphism, region, master)
         for region, morphism in zip(family["regions"], family["region_embeddings"])
     )
-    core_ok = all(
-        validate_morphism(morphism, family["core"], region)["ok"]
+    core_rows = tuple(
+        validate_morphism(morphism, family["core"], region)
         for region, morphism in zip(family["regions"], family["core_embeddings"])
     )
-    return regions_ok and core_ok
+    cardinalities_ok = (
+        len(family["regions"]) == 3
+        and len(region_rows) == len(family["regions"])
+        and len(core_rows) == len(family["regions"])
+    )
+    ok = cardinalities_ok and all(row["ok"] for row in region_rows + core_rows)
+    return {
+        "schema_complete": True,
+        "cardinalities_ok": cardinalities_ok,
+        "region_rows": region_rows,
+        "core_rows": core_rows,
+        "ok": ok,
+        "reason": "accepted" if ok else "morphism_diagram_failure",
+    }
 
 
 def mutate_mapped_arrow(morphism: InstrumentMorphism) -> InstrumentMorphism:
@@ -1961,26 +2108,6 @@ def value_only_groupoid_laws(candidate: FactIfaceCategory) -> Mapping[str, objec
     }
 
 
-def connected_coupling_graph(
-    vertices: Sequence[int],
-    edges: Sequence[Tuple[int, int]],
-) -> bool:
-    if not vertices:
-        return True
-    reached = {vertices[0]}
-    changed = True
-    while changed:
-        changed = False
-        for left, right in edges:
-            if left in reached and right not in reached:
-                reached.add(right)
-                changed = True
-            if right in reached and left not in reached:
-                reached.add(left)
-                changed = True
-    return reached == set(vertices)
-
-
 def is_instrument_refinement(
     candidate: object,
     instruments: Mapping[str, Instrument],
@@ -2021,24 +2148,56 @@ def json_ready(value: object) -> object:
     return repr(value)
 
 
+CHECK_CATEGORIES = (
+    "anchor",
+    "authentication",
+    "static",
+    "type",
+    "schema",
+    "measurement",
+    "control",
+    "semantic",
+)
+
+
 class Checks:
     def __init__(self, emit: bool, mutant: bool) -> None:
         self.emit = emit
         self.mutant = mutant
         self.rows = []
+        self.results: Dict[str, bool] = {}
 
     def section(self, title: str) -> None:
         if self.emit:
             print("\n" + title)
 
-    def check(self, label: str, computed: object, expected: object) -> None:
+    def observed_anchor(self, label: str, observed: str) -> str:
         if self.mutant and label == "physical-overlap repair pin hash":
-            expected = "0" * 64
             if self.emit:
-                print("[MUTANT] deliberately corrupting the active-pin anchor")
+                print("[MUTANT] deliberately corrupting observed active-pin state")
+            return "0" * len(observed)
+        return observed
+
+    def check(
+        self,
+        label: str,
+        computed: object,
+        expected: object,
+        *,
+        category: str = "measurement",
+        key: Optional[str] = None,
+    ) -> bool:
+        if category not in CHECK_CATEGORIES:
+            raise ValueError(f"unknown check category: {category}")
+        result_key = key or label
+        if result_key in self.results:
+            raise ValueError(f"duplicate check key: {result_key}")
         ok = computed == expected
+        self.results[result_key] = ok
         self.rows.append(
             {
+                "key": result_key,
+                "category": category,
                 "label": label,
                 "computed": json_ready(computed),
                 "expected": json_ready(expected),
@@ -2047,79 +2206,127 @@ class Checks:
         )
         if self.emit:
             print(f"[{'PASS' if ok else 'FAIL'}] {label}: {json_ready(computed)!r}")
+        return ok
 
-    def summary(self) -> Mapping[str, int]:
+    def summary(self) -> Mapping[str, object]:
         failures = sum(not row["ok"] for row in self.rows)
+        category_rows = {
+            category: tuple(row for row in self.rows if row["category"] == category)
+            for category in CHECK_CATEGORIES
+        }
         return {
             "checks": len(self.rows),
             "pass": len(self.rows) - failures,
             "fail": failures,
+            "by_category": {
+                category: {
+                    "checks": len(rows),
+                    "pass": sum(row["ok"] for row in rows),
+                    "fail": sum(not row["ok"] for row in rows),
+                }
+                for category, rows in category_rows.items()
+            },
         }
 
 
 def build_science(checks: Checks) -> Mapping[str, object]:
     code_path = ROOT / "v13/code/rq0_physical_overlap_exact.py"
 
-    checks.section("ANCHORS, FROZEN MASTER, AND EXACTNESS")
+    checks.section("ANCHORS, CANONICAL AUTHENTICATION, AND EXACTNESS")
     pin_ancestor = run(("/usr/bin/git", "merge-base", "--is-ancestor", PIN_COMMIT, "HEAD"))
-    checks.check("repair pin commit is an ancestor of HEAD", pin_ancestor.returncode, 0)
+    checks.check(
+        "repair pin commit is an ancestor of HEAD",
+        pin_ancestor.returncode,
+        0,
+        category="anchor",
+        key="anchor.pin_commit",
+    )
     commit_rows = tuple(
         (
             commit,
             run(("/usr/bin/git", "cat-file", "-e", commit + "^{commit}")).returncode,
             run(("/usr/bin/git", "merge-base", "--is-ancestor", commit, "HEAD")).returncode,
         )
-        for commit in REVIEWED_COMMITS + (ADJUDICATION_COMMIT,)
+        for commit in PROVENANCE_COMMITS
     )
     checks.check(
         "reviewed and adjudication commits are immutable ancestors",
         commit_rows,
-        tuple((commit, 0, 0) for commit in REVIEWED_COMMITS + (ADJUDICATION_COMMIT,)),
+        tuple((commit, 0, 0) for commit in PROVENANCE_COMMITS),
+        category="anchor",
+        key="anchor.provenance_commits",
+    )
+    observed_pin_hash = checks.observed_anchor(
+        "physical-overlap repair pin hash",
+        sha256(ROOT / LOCKS["physical-overlap repair pin"][0]),
     )
     checks.check(
         "physical-overlap repair pin hash",
-        sha256(ROOT / LOCKS["physical-overlap repair pin"][0]),
+        observed_pin_hash,
         PIN_SHA256,
+        category="anchor",
+        key="anchor.active_pin_hash",
     )
     lock_rows = tuple(
         (name, sha256(ROOT / relative) == expected, use_class)
         for name, (relative, expected, use_class) in LOCKS.items()
+        if name != "physical-overlap repair pin"
     )
     checks.check(
-        "all binding files are hash-locked with declared use classes",
+        "all other binding files are hash-locked with declared use classes",
         lock_rows,
         tuple(
             (name, True, use_class)
             for name, (_relative, _expected, use_class) in LOCKS.items()
+            if name != "physical-overlap repair pin"
         ),
+        category="anchor",
+        key="anchor.binding_files",
     )
     constructor_audit = constructor_static_audit(code_path)
     checks.check(
         "master constructor consumes no comparison target",
         constructor_audit,
         {"arguments": (), "forbidden_names": ()},
+        category="static",
+        key="static.constructor_law_blind",
     )
+    observed_surface_digest = construction_surface_digest(code_path)
     checks.check(
-        "constructor, morphism type, validator, and bridge surface are source-locked",
-        construction_surface_digest(code_path),
+        "constructor, typed controls, and bridge validators are canonically authenticated",
+        observed_surface_digest,
         CONSTRUCTION_SURFACE_SHA256,
+        category="authentication",
+        key="authentication.construction_surface",
     )
     exactness_audit = exactness_static_audit(code_path)
     checks.check(
         "substantive code has no float, random, or numpy path",
         exactness_audit,
         {"float_literals": (), "random_imports": (), "numpy_imports": ()},
+        category="static",
+        key="static.exactness",
     )
 
-    # The family and admissible morphisms are built and hash-checked before
-    # any record law or GHZ-like law-only control is evaluated below.
+    # The family is built before any record law or equal-law control is
+    # evaluated.  Its digest is a same-file canonical authenticator, not
+    # evidence of historical independent preregistration.
     family = build_amplitude_family()
     frozen_digest = master_spec_digest(family)
-    checks.check("predeclared master/morphism digest", frozen_digest, MASTER_SPEC_SHA256)
     checks.check(
-        "structural bridge predicate accepts the frozen family",
-        physical_bridge_accepts(family, MASTER_SPEC_SHA256),
+        "fixed canonical master/morphism specification matches",
+        (frozen_digest, matches_canonical_spec(family, MASTER_SPEC_SHA256)),
+        (MASTER_SPEC_SHA256, True),
+        category="authentication",
+        key="authentication.master_spec",
+    )
+    structural_family = validate_structural_bridge(family)
+    checks.check(
+        "structural bridge validator accepts the fixed family independently of its digest",
+        structural_family["ok"],
         True,
+        category="control",
+        key="control.positive_structural_family",
     )
     rec_audit = record_functor_static_audit(code_path)
     checks.check(
@@ -2131,6 +2338,8 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "uses_h_corr": True,
             "uses_h_avail": True,
         },
+        category="static",
+        key="static.record_functor_law_blind",
     )
 
     master = family["master"]
@@ -2173,6 +2382,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         "all arrows and readouts are explicitly and uniquely typed",
         typed_rows,
         tuple((name, True, True, True) for name in ("O", "D1", "D2", "D3", "E")),
+        category="type",
     )
     checks.check(
         "all constructed amplitude arrows are exactly unitary",
@@ -2195,11 +2405,13 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             for instrument in (core,) + regions + (master,)
         ),
         tuple((name, 8, 8, True) for name in ("O", "D1", "D2", "D3", "E")),
+        category="schema",
     )
     checks.check(
         "implemented gauge is the exact real sign/permutation gauge only",
         tuple(instrument.gauge_class.startswith("REAL-SIGN-GAUGE") for instrument in regions),
         (True, True, True),
+        category="schema",
     )
 
     quantum_rows = {}
@@ -2347,14 +2559,10 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         "causal, geometric, field, and full-U(1) insertion guards fire",
         tuple(guard_rows),
         (True, True, True, True),
+        category="schema",
     )
 
     checks.section("ANTI-PADDING AND SAME-DIMENSIONAL DIVERSITY")
-    checks.check(
-        "algebraic coupling graph connects branch, record, and auxiliary",
-        (family["circuit_edges"], connected_coupling_graph((0, 1, 2), family["circuit_edges"])),
-        (((0, 1), (1, 2), (0, 2)), True),
-    )
     old_product = simultaneous_product_search(old_padded_negative())
     checks.check(
         "old q=3 spectator-padded family is detected",
@@ -2403,11 +2611,13 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback",
         tuple(row["ok"] for row in region_morphism_rows),
         (True, True, True),
+        category="type",
     )
     checks.check(
         "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback",
         tuple(row["ok"] for row in core_morphism_rows),
         (True, True, True),
+        category="type",
     )
     checks.check(
         "changing one mapped regional arrow breaks every embedding",
@@ -2441,27 +2651,29 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             nonmonomial_diagnostics["ok"],
         ),
         (True, False, False),
+        category="control",
     )
     category = regional_category(family)
     checks.check(
         "Reg has amplitude instruments and typed instrument morphisms",
         (is_reg_category(category["Reg"]), len(category["Reg"].objects), len(category["Reg"].morphisms)),
         (True, 5, 12),
+        category="type",
+        key="type.reg_category",
     )
     checks.check(
-        "Reg identities, compositions, and all declared morphisms validate",
+        "Reg morphisms, identities, and all 22 declared compositions validate",
         (
             category["all_category_laws"],
             category["all_morphisms_valid"],
             category["morphism_keys_match_order"],
             category["core_composites_equal"],
+            len(category["composition_laws"]),
+            all(category["composition_laws"]),
         ),
-        (True, True, True, True),
-    )
-    checks.check(
-        "all 22 composable Reg pairs equal their declared composites",
-        (len(category["composition_laws"]), all(category["composition_laws"])),
-        (22, True),
+        (True, True, True, True, 22, True),
+        category="measurement",
+        key="measurement.reg_category_laws",
     )
     expected_core = frozenset(("core.write", "core.preserve", "core.no-write"))
     checks.check(
@@ -2475,32 +2687,31 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         (True, True, True),
     )
     checks.check(
-        "the three regional subfamilies cover the frozen master arrow family",
+        "the three regional subfamilies cover the fixed master arrow family",
         category["cover_is_master"],
         True,
     )
     positive_refinement = family["region_embeddings"][0]
     old_shadow_object = {"kind": "Born-shadow product coarse-graining", "squares_first": True}
-    checks.check(
-        "positive Ref is an amplitude-instrument family inclusion",
-        is_instrument_refinement(positive_refinement, instruments),
-        True,
-    )
-    checks.check(
-        "old Born-shadow product coarse-graining cannot pass the instrument-refinement gate",
-        is_instrument_refinement(old_shadow_object, instruments),
-        False,
-    )
+    positive_refinement_ok = is_instrument_refinement(positive_refinement, instruments)
+    old_shadow_is_refinement = is_instrument_refinement(old_shadow_object, instruments)
 
     checks.section("NO-CIRCULARITY AND SAME-LAW NEGATIVE CONTROLS")
     corrupted_family = dict(family)
     corrupted_family["region_embeddings"] = (
         mutate_mapped_arrow(family["region_embeddings"][0]),
     ) + tuple(family["region_embeddings"][1:])
+    corrupted_structural = validate_structural_bridge(corrupted_family)
     checks.check(
-        "altering one frozen bridge fails the structural certificate",
-        physical_bridge_accepts(corrupted_family, MASTER_SPEC_SHA256),
-        False,
+        "altering one bridge breaks canonical matching and independent structural validation",
+        (
+            matches_canonical_spec(corrupted_family, MASTER_SPEC_SHA256),
+            corrupted_structural["ok"],
+            corrupted_structural["reason"],
+        ),
+        (False, False, "morphism_diagram_failure"),
+        category="control",
+        key="control.mapped_arrow_mutant",
     )
     regional_laws = tuple(
         readout_law(
@@ -2512,21 +2723,40 @@ def build_science(checks: Checks) -> Mapping[str, object]:
     )
     fair_law = ((0, Q2(Fraction(1, 2))), (1, Q2(Fraction(1, 2))))
     checks.check("regional fair laws are consequence-only measurements", regional_laws, (fair_law,) * 3)
-    diagonal_extension = ghz_law_extension(None)
-    anti_extension = ghz_law_extension(2)
+    diagonal_control = build_equal_law_control("G-diagonal", None)
+    anti_control = build_equal_law_control("G-anti-diagonal", 2)
+    diagonal_extension = equal_law_control_measurements(diagonal_control)
+    anti_extension = equal_law_control_measurements(anti_control)
+    diagonal_candidate = equal_law_bridge_candidate(diagonal_control, master)
+    anti_candidate = equal_law_bridge_candidate(anti_control, master)
+    diagonal_obstruction = validate_candidate_bridge(
+        diagonal_candidate,
+        diagonal_control,
+        master,
+    )
+    anti_obstruction = validate_candidate_bridge(
+        anti_candidate,
+        anti_control,
+        master,
+    )
     checks.check(
-        "diagonal and anti-diagonal extensions are exact W3-compatible amplitude controls",
+        "diagonal and anti-diagonal controls are typed exact W3-compatible instruments",
         tuple(
             (
+                isinstance(control, Instrument),
                 extension["dimension"],
-                is_unitary(extension["write"]),
-                is_unitary(extension["preserve"]),
+                all(is_unitary(arrow.amplitude) for arrow in control.arrows),
                 extension["h_corr"],
                 extension["h_avail"],
             )
-            for extension in (diagonal_extension, anti_extension)
+            for control, extension in (
+                (diagonal_control, diagonal_extension),
+                (anti_control, anti_extension),
+            )
         ),
-        ((16, True, True, True, True), (16, True, True, True, True)),
+        ((True, 16, True, True, True), (True, 16, True, True, True)),
+        category="type",
+        key="type.equal_law_controls",
     )
     checks.check(
         "diagonal and anti-diagonal supports differ",
@@ -2536,10 +2766,12 @@ def build_science(checks: Checks) -> Mapping[str, object]:
     checks.check(
         "law-only predicate accepts both incompatible extensions",
         (
-            law_only_accepts(regional_laws, diagonal_extension),
-            law_only_accepts(regional_laws, anti_extension),
+            law_only_accepts(regional_laws, diagonal_control),
+            law_only_accepts(regional_laws, anti_control),
         ),
         (True, True),
+        category="control",
+        key="control.law_only_ambiguity",
     )
     diagonal_maps = forced_binary_maps(diagonal_extension["support"])
     anti_maps = forced_binary_maps(anti_extension["support"])
@@ -2552,12 +2784,24 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         ),
     )
     checks.check(
-        "post-selected law couplings fail the structural master criterion",
-        (
-            physical_bridge_accepts(diagonal_extension, MASTER_SPEC_SHA256),
-            physical_bridge_accepts(anti_extension, MASTER_SPEC_SHA256),
+        "typed equal-law bridge candidates fail at the exact 16-versus-8 boundary obstruction",
+        tuple(
+            (
+                row["candidate_is_instrument_morphism"],
+                row["dimensions_match"],
+                row["full_validator_called"],
+                row["accepted"],
+                row["reason"],
+                tuple((dimension[1], dimension[3]) for dimension in row["dimension_rows"]),
+            )
+            for row in (diagonal_obstruction, anti_obstruction)
         ),
-        (False, False),
+        (
+            (True, False, False, False, "boundary_dimension_mismatch", ((16, 8),) * 3),
+            (True, False, False, False, "boundary_dimension_mismatch", ((16, 8),) * 3),
+        ),
+        category="control",
+        key="control.typed_equal_law_bridge_obstruction",
     )
     rogue = build_equal_law_rogue(regions[0])
     rogue_invariant = rogue_bridge_invariant(rogue, master)
@@ -2578,7 +2822,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         (fair_law, True, True),
     )
     checks.check(
-        "rogue preserve has no admissible signed-permutation bridge into the frozen master",
+        "rogue preserve has no admissible signed-permutation bridge into the fixed master",
         (
             len(rogue_invariant["candidate_rows"]),
             rogue_invariant["invariant_match"],
@@ -2612,6 +2856,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             len(rec_data["FactIface"].morphisms),
         ),
         (True, True, "CONTRAVARIANT", 5, 12),
+        category="type",
     )
     checks.check(
         "every fact restriction is induced from a validated Reg morphism",
@@ -2655,6 +2900,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             len(value_groupoid.morphisms),
         ),
         (True, False, 3, 9),
+        category="type",
     )
     checks.check(
         "value-only control obeys FactIface groupoid laws without becoming Reg",
@@ -2667,26 +2913,133 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         },
     )
 
-    checks.section("SCOPE GUARDS AND PRE-REGISTERED OUTCOME")
-    earned = {
-        "RQ0-REPAIR-BLOCKED-AT-DIVERSITY": False,
-        "RQ0-REPAIR-BLOCKED-AT-MORPHISM": False,
-        "RQ0-REPAIR-BLOCKED-AT-OVERLAP": False,
-        "RQ0-REGIONS-CONSTRUCTED": True,
-        "RQ0-REGIONAL-SITE": True,
-        "RQ0-FACT-DESCENT": True,
+    checks.section("PREREQUISITE-DERIVED OUTCOME (NOT COUNTED AS NEW CHECKS)")
+    anchor_keys = (
+        "anchor.pin_commit",
+        "anchor.provenance_commits",
+        "anchor.active_pin_hash",
+        "anchor.binding_files",
+        "static.constructor_law_blind",
+        "authentication.construction_surface",
+        "static.exactness",
+        "authentication.master_spec",
+        "control.positive_structural_family",
+        "static.record_functor_law_blind",
+    )
+    region_keys = (
+        "three regions and the core/master use equal eight-dimensional boundaries",
+        "all arrows and readouts are explicitly and uniquely typed",
+        "all constructed amplitude arrows are exactly unitary",
+        "basis preparation and configuration tomography are explicit access postulates",
+        "implemented gauge is the exact real sign/permutation gauge only",
+        "composition-compatible sign gauge preserves accessible composite Born laws",
+        "real-gauged region/master morphism still satisfies every diagram",
+        "common configuration relabelling preserves W3 and accessible invariants",
+        "causal, geometric, field, and full-U(1) insertion guards fire",
+        "old q=3 spectator-padded family is detected",
+        "D1 exhausts all 8! common relabellings with no 4x2 product family",
+        "D2 exhausts all 8! common relabellings with no 4x2 product family",
+        "D3 exhausts all 8! common relabellings with no 4x2 product family",
+        "preserve-family support multisets separate all equal-dimensional regions even if labels permute",
+        "all three full accessible dynamic signatures are distinct",
+    ) + tuple(
+        f"{region.name} {suffix}"
+        for region in regions
+        for suffix in (
+            "record occurrence is derived by H-corr",
+            "no-write control fails H-corr",
+            "both preserving continuations retain availability",
+            "preserving seams have zero coherence, defect, and residual",
+            "eraser destroys availability",
+            "eraser restores cross-sector coherence and nonzero defect",
+        )
+    )
+    morphism_keys = (
+        "all region-to-master embeddings pass typing, intertwiners, preparations, and readout pullback",
+        "all core-to-region embeddings pass typing, intertwiners, preparations, and readout pullback",
+        "changing one mapped regional arrow breaks every embedding",
+        "unitary but non-signed-permutation boundary maps are outside the declared Reg scope",
+        "type.reg_category",
+        "measurement.reg_category_laws",
+    )
+    site_keys = (
+        "all pair and triple intersections are the nonvacuous amplitude core",
+        "O satisfies the finite pair-pullback universal tests",
+        "the three regional subfamilies cover the fixed master arrow family",
+    )
+    fact_keys = (
+        "control.mapped_arrow_mutant",
+        "regional fair laws are consequence-only measurements",
+        "type.equal_law_controls",
+        "diagonal and anti-diagonal supports differ",
+        "control.law_only_ambiguity",
+        "equal marginals force incompatible pair-map families",
+        "control.typed_equal_law_bridge_obstruction",
+        "rogue region has the same stable fair record law",
+        "rogue preserve has no admissible signed-permutation bridge into the fixed master",
+        "all five record algebras are derived at the preserving scope",
+        "FactIface and Rec are distinct typed executable objects",
+        "every fact restriction is induced from a validated Reg morphism",
+        "Rec satisfies identities and contravariant composition",
+        "the common record descends across the genuine triple and all three master paths",
+        "regional record projectors are literal morphism pullbacks",
+        "value-only groupoid is FactIface-shaped but cannot satisfy Reg typing",
+        "value-only control obeys FactIface groupoid laws without becoming Reg",
+    )
+
+    def prerequisite_rows(keys: Sequence[str]) -> Mapping[str, bool]:
+        return {key: checks.results[key] for key in keys}
+
+    prerequisites = {
+        "anchors_and_authentication": prerequisite_rows(anchor_keys),
+        "regions_and_diversity": prerequisite_rows(region_keys),
+        "morphisms": prerequisite_rows(morphism_keys),
+        "cover_and_overlap": prerequisite_rows(site_keys)
+        | {
+            "Ref reuses the validated j1 instrument morphism": positive_refinement_ok,
+        },
+        "fact_descent": prerequisite_rows(fact_keys),
     }
-    checks.check(
-        "all three permitted positive rungs are earned",
-        tuple(earned[name] for name in ("RQ0-REGIONS-CONSTRUCTED", "RQ0-REGIONAL-SITE", "RQ0-FACT-DESCENT")),
-        (True, True, True),
+    assigned_check_keys = set(anchor_keys + region_keys + morphism_keys + site_keys + fact_keys)
+    unassigned_check_keys = tuple(sorted(set(checks.results) - assigned_check_keys))
+    prerequisite_classification_complete = not unassigned_check_keys
+    anchor_stage = (
+        prerequisite_classification_complete
+        and all(prerequisites["anchors_and_authentication"].values())
     )
-    checks.check(
-        "all pre-registered repair blocks remain false",
-        tuple(earned[name] for name in ("RQ0-REPAIR-BLOCKED-AT-DIVERSITY", "RQ0-REPAIR-BLOCKED-AT-MORPHISM", "RQ0-REPAIR-BLOCKED-AT-OVERLAP")),
-        (False, False, False),
-    )
-    checks.check("highest honestly restored rung", "RQ0-FACT-DESCENT", "RQ0-FACT-DESCENT")
+    regions_stage = anchor_stage and all(prerequisites["regions_and_diversity"].values())
+    morphism_stage = regions_stage and all(prerequisites["morphisms"].values())
+    site_stage = morphism_stage and all(prerequisites["cover_and_overlap"].values())
+    fact_stage = site_stage and all(prerequisites["fact_descent"].values())
+    earned = {
+        "RQ0-REPAIR-BLOCKED-AT-DIVERSITY": anchor_stage and not regions_stage,
+        "RQ0-REPAIR-BLOCKED-AT-MORPHISM": regions_stage and not morphism_stage,
+        "RQ0-REPAIR-BLOCKED-AT-OVERLAP": morphism_stage and not site_stage,
+        "RQ0-REGIONS-CONSTRUCTED": regions_stage,
+        "RQ0-REGIONAL-SITE": site_stage,
+        "RQ0-FACT-DESCENT": fact_stage,
+    }
+    if fact_stage:
+        highest_outcome: Optional[str] = "RQ0-FACT-DESCENT"
+        first_failed_stage = "NONE"
+    elif site_stage:
+        highest_outcome = "RQ0-REGIONAL-SITE"
+        first_failed_stage = "FACT-DESCENT"
+    elif morphism_stage:
+        highest_outcome = "RQ0-REGIONS-CONSTRUCTED"
+        first_failed_stage = "OVERLAP"
+    elif regions_stage:
+        highest_outcome = "RQ0-REGIONS-CONSTRUCTED"
+        first_failed_stage = "MORPHISM"
+    elif anchor_stage:
+        highest_outcome = None
+        first_failed_stage = "DIVERSITY"
+    else:
+        highest_outcome = None
+        first_failed_stage = (
+            "UNCLASSIFIED-CHECK" if unassigned_check_keys else "ANCHOR-OR-AUTHENTICATION"
+        )
+    receipt_valid = prerequisite_classification_complete and all(checks.results.values())
     nonclaims = (
         "no localized influence or RQ0-C1",
         "no causal order or cone",
@@ -2695,19 +3048,33 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         "no gravity dynamics",
         "no full complex U(1) gauge",
     )
-    checks.check("forbidden successor claims remain explicitly absent", len(nonclaims), 6)
 
     return {
-        "pin_and_freeze": {
+        "provenance_and_authentication": {
             "pin_commit": PIN_COMMIT,
             "pin_sha256": PIN_SHA256,
-            "adjudication_commit": ADJUDICATION_COMMIT,
+            "prior_adjudication_commit": PRIOR_ADJUDICATION_COMMIT,
+            "hostile_adjudication_commit": HOSTILE_ADJUDICATION_COMMIT,
             "reviewed_commits": REVIEWED_COMMITS,
-            "master_and_morphism_spec_sha256": MASTER_SPEC_SHA256,
-            "construction_surface_sha256": CONSTRUCTION_SURFACE_SHA256,
+            "immutable_git_provenance": commit_rows,
+            "canonical_master_spec": {
+                "expected_sha256": MASTER_SPEC_SHA256,
+                "observed_sha256": frozen_digest,
+                "matches": matches_canonical_spec(family, MASTER_SPEC_SHA256),
+                "scope": "same-file canonical authentication; not historical independent preregistration",
+            },
+            "canonical_construction_surface": {
+                "expected_sha256": CONSTRUCTION_SURFACE_SHA256,
+                "observed_sha256": observed_surface_digest,
+                "matches": observed_surface_digest == CONSTRUCTION_SURFACE_SHA256,
+                "scope": "same-file canonical source authentication",
+            },
+            "structural_validation": {
+                "separate_from_authentication": "BY IMPLEMENTATION: validate_structural_bridge takes no digest",
+                "positive_family_ok": structural_family["ok"],
+            },
             "constructor_arguments": constructor_audit["arguments"],
             "constructor_forbidden_names": constructor_audit["forbidden_names"],
-            "fact_comparison_occurs_after_digest_gate": True,
         },
         "scope": {
             "arithmetic": "exact Q(sqrt(2)) plus exact rational subfield; no floats or tolerances",
@@ -2717,7 +3084,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "record_candidate_search": "none; memory-bit readout frozen in the locked master specification",
             "gauge": "REAL-SIGN-GAUGE: common configuration relabelling x independent +/- boundary phases",
             "morphism_boundary_scope": "exact signed-permutation identifications on the fixed eight-configuration carrier",
-            "anti_padding_search": "exhaustive all 8! common carrier relabellings for the declared nontrivial 4x2 split; exact rearrangement-rank test",
+            "anti_padding_search": "exhaustive all 8! common carrier relabellings for the declared nontrivial 4x2 split; exact rearrangement-rank test; no arbitrary-unitary irreducibility claim",
             "rogue_morphism_scope": "all four preserve-family master arrows; exact Born-entry multiset excludes every signed row/column relabelling",
             "random_seeds": "none",
             "caps": {"runtime_seconds": 120, "anti_padding_permutations_per_positive": 40320},
@@ -2775,9 +3142,11 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "core_embedding_names": tuple(row.name for row in family["core_embeddings"]),
             "all_region_morphisms_valid": tuple(row["ok"] for row in region_morphism_rows),
             "all_core_morphisms_valid": tuple(row["ok"] for row in core_morphism_rows),
-            "master_is_local_witness_not_global_universe": True,
+            "scope_classification": "DECLARED SCOPE: one finite local witness instrument; no global-universe claim",
         },
         "Reg": {
+            "standard_name": "finite amplitude-subinstrument cover category/atlas",
+            "topology_scope": "no Grothendieck topology declared; RQ0-REGIONAL-SITE is the pin's internal rung name",
             "object_type": "Instrument",
             "morphism_type": "InstrumentMorphism",
             "objects": category["objects"],
@@ -2792,22 +3161,30 @@ def build_science(checks: Checks) -> Mapping[str, object]:
         "Ref": {
             "kind": "fixed-carrier intervention-family inclusion",
             "positive": positive_refinement.name,
-            "positive_is_instrument_morphism": is_instrument_refinement(positive_refinement, instruments),
+            "positive_is_instrument_morphism": positive_refinement_ok,
+            "positive_gate_source": "deduplicated: the already validated j1 region-to-master morphism",
             "old_result_name": "Born-shadow product coarse-graining",
-            "old_result_is_instrument_morphism": False,
-            "spacetime_resolution_claim": False,
+            "old_result_is_instrument_morphism": old_shadow_is_refinement,
+            "old_result_classification": "TYPE CONTROL ONLY; not counted as an independent scientific gate",
+            "scope": "no spacetime-resolution claim",
         },
         "no_circularity_controls": {
             "regional_laws": regional_laws,
+            "diagonal_instrument": diagonal_control,
+            "anti_diagonal_instrument": anti_control,
             "diagonal_support": diagonal_extension["support"],
             "anti_diagonal_support": anti_extension["support"],
             "law_only_accepts_diagonal_and_anti": (
-                law_only_accepts(regional_laws, diagonal_extension),
-                law_only_accepts(regional_laws, anti_extension),
+                law_only_accepts(regional_laws, diagonal_control),
+                law_only_accepts(regional_laws, anti_control),
             ),
             "diagonal_forced_maps": diagonal_maps["maps"],
             "anti_diagonal_forced_maps": anti_maps["maps"],
-            "structural_accepts_postselected_controls": (False, False),
+            "candidate_morphisms": (diagonal_candidate, anti_candidate),
+            "structural_bridge_diagnostics": (
+                diagonal_obstruction,
+                anti_obstruction,
+            ),
             "rogue_same_law": rogue_invariant["same_law"],
             "rogue_candidate_rows": rogue_invariant["candidate_rows"],
             "rogue_classification": "SAME-LAW-NOT-SAME-FACT",
@@ -2818,7 +3195,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "object_count": len(rec_data["FactIface"].objects),
             "arrow_count": len(rec_data["FactIface"].morphisms),
             "value_only_control_laws": value_groupoid_laws,
-            "value_only_control_is_Reg": False,
+            "value_only_control_is_Reg": is_reg_category(value_groupoid),
         },
         "Rec": {
             "variance": rec_data["Rec"].variance,
@@ -2829,7 +3206,7 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "all_functor_laws": rec_data["all_functor_laws"],
             "triple_descends": rec_data["triple_descends"],
             "three_paths_equal_direct_pullback": rec_data["triple_path_law"],
-            "marginal_laws_used_as_fact_criterion": False,
+            "static_law_inputs_detected": rec_audit["forbidden_names"],
         },
         "classifications": {
             "region": "DEFINITION plus provisional operational-nomology POSTULATES",
@@ -2837,14 +3214,24 @@ def build_science(checks: Checks) -> Mapping[str, object]:
             "preserving_classical_seam": "PAPER-1 THEOREM INSTANCE plus EXACT MEASUREMENTS",
             "eraser_recoherence": "EXACT MEASUREMENT",
             "same_dimensional_diversity": "EXACT ACCESSIBLE INVARIANT",
-            "anti_padding": "EXHAUSTIVE EXACT FINITE SEARCH",
-            "master_and_morphisms": "CONSTRUCTED OBJECTS",
-            "overlap": "EXACT PULLBACK/INTERSECTION IN THE DECLARED FINITE SUBINSTRUMENT SITE",
+            "anti_padding": "EXHAUSTIVE EXACT FINITE SEARCH over common relabellings for the 4 x 2 split; arbitrary-unitary tensor irreducibility open",
+            "master_and_morphisms": "CONSTRUCTED OBJECTS plus SAME-FILE CANONICAL AUTHENTICATION",
+            "overlap": "EXACT PULLBACK/INTERSECTION IN THE DECLARED FINITE AMPLITUDE-SUBINSTRUMENT COVER CATEGORY",
             "fact_descent": "EXACT FUNCTORIAL MEASUREMENT",
             "causal_locality": "OPEN; NOT CONSTRUCTED",
         },
+        "outcome_derivation": {
+            "prerequisites": prerequisites,
+            "all_check_rows_assigned": prerequisite_classification_complete,
+            "unassigned_check_keys": unassigned_check_keys,
+            "receipt_valid": receipt_valid,
+            "first_failed_stage": first_failed_stage,
+            "semantic_declaration_check_count": sum(
+                row["category"] == "semantic" for row in checks.rows
+            ),
+        },
         "outcomes": earned,
-        "highest_outcome": "RQ0-FACT-DESCENT",
+        "highest_outcome": highest_outcome,
         "first_unresolved_obstruction": (
             "a typed, gauge-invariant localized quantum subinstrument; only after a new pin "
             "could it support an operational-influence study"
@@ -2858,7 +3245,11 @@ def make_receipt(emit: bool, mutant: bool) -> Mapping[str, object]:
     science = build_science(checks)
     return {
         "unit": "v13 RQ0 physical-overlap repair",
-        "status": "GREEN-UNREVIEWED-REPAIRED",
+        "status": (
+            "GREEN-UNREVIEWED-REPAIRED"
+            if science["outcome_derivation"]["receipt_valid"]
+            else "INVALID-RECEIPT-POSITIVE-RUNG-SUPPRESSED"
+        ),
         "science": science,
         "checks": checks.rows,
         "summary": checks.summary(),
@@ -2874,15 +3265,32 @@ def render_text(mutant: bool) -> Tuple[str, Mapping[str, object]]:
         print("=" * 78)
         receipt = make_receipt(emit=True, mutant=mutant)
         summary = receipt["summary"]
+        derivation = receipt["science"]["outcome_derivation"]
+        outcomes = receipt["science"]["outcomes"]
         print("\nVERDICT")
-        print("  highest restored rung: RQ0-FACT-DESCENT")
-        print("  lower positive: RQ0-REGIONS-CONSTRUCTED / RQ0-REGIONAL-SITE")
-        print("  overlap: exact common amplitude subinstrument with projector pullbacks")
-        print("  no-circularity: law-only controls fail; frozen structural bridge passes")
+        if derivation["receipt_valid"]:
+            print(f"  highest restored rung: {receipt['science']['highest_outcome']}")
+            print(
+                "  earned outcomes: "
+                + " / ".join(name for name, earned in outcomes.items() if earned)
+            )
+            print("  overlap: exact common amplitude subinstrument with projector pullbacks")
+            print("  no-circularity: typed equal-law bridges fail at 16-versus-8; fixed structural family passes")
+        else:
+            print("  INVALID RECEIPT: EVERY POSITIVE VERDICT IS SUPPRESSED")
+            print(f"  first failed stage: {derivation['first_failed_stage']}")
+            print("  highest restored rung: NONE")
         print("  ceiling: no localized influence, causal, spacetime, field, or gravity claim")
         print("  next obstruction: localized quantum subinstrument (not started)")
         print("-" * 78)
         print(f"{summary['checks']} checks: {summary['pass']} pass, {summary['fail']} fail")
+        print(
+            "categories: "
+            + ", ".join(
+                f"{name}={row['checks']}"
+                for name, row in summary["by_category"].items()
+            )
+        )
     return stream.getvalue(), receipt
 
 
@@ -2922,16 +3330,16 @@ def main() -> int:
         )
         print(f"wrote {output_path.relative_to(ROOT)}")
         print(f"wrote {receipt_path.relative_to(ROOT)}")
-        return 1 if receipt["summary"]["fail"] else 0
+        return 1 if receipt["summary"]["fail"] or not receipt["science"]["outcome_derivation"]["receipt_valid"] else 0
 
     if json_mode:
         receipt = make_receipt(emit=False, mutant=mutant)
         print(json.dumps(json_ready(receipt), indent=2, sort_keys=True))
-        return 1 if receipt["summary"]["fail"] else 0
+        return 1 if receipt["summary"]["fail"] or not receipt["science"]["outcome_derivation"]["receipt_valid"] else 0
 
     text_output, receipt = render_text(mutant=mutant)
     print(text_output, end="")
-    return 1 if receipt["summary"]["fail"] else 0
+    return 1 if receipt["summary"]["fail"] or not receipt["science"]["outcome_derivation"]["receipt_valid"] else 0
 
 
 if __name__ == "__main__":

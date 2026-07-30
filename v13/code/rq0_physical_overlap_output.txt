@@ -3,16 +3,16 @@ v13 RQ0 -- PHYSICAL OVERLAP OF QUANTUM REGIONAL INSTRUMENTS
 Exact amplitude/morphism construction; no causal, metric, field, or gravity claim
 ==============================================================================
 
-ANCHORS, FROZEN MASTER, AND EXACTNESS
+ANCHORS, CANONICAL AUTHENTICATION, AND EXACTNESS
 [PASS] repair pin commit is an ancestor of HEAD: 0
-[PASS] reviewed and adjudication commits are immutable ancestors: [['307c36f017d9d5587334d3b79421645ee5b54c61', 0, 0], ['1537b1475705a5def1d1d063459fa7d4fb534982', 0, 0], ['150f191f6d67dbaa2de99594e6b401d0a3f6e71f', 0, 0]]
+[PASS] reviewed and adjudication commits are immutable ancestors: [['307c36f017d9d5587334d3b79421645ee5b54c61', 0, 0], ['1537b1475705a5def1d1d063459fa7d4fb534982', 0, 0], ['150f191f6d67dbaa2de99594e6b401d0a3f6e71f', 0, 0], ['1d9af029d3c04006c6e42941d66a590b2d887831', 0, 0]]
 [PASS] physical-overlap repair pin hash: 'a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3'
-[PASS] all binding files are hash-locked with declared use classes: [['clean-sheet pin', True, 'antecedent pin'], ['quantum amendment pin', True, 'antecedent pin'], ['physical-overlap repair pin', True, 'active pin'], ['Paper 1', True, 'W3 and boundary-gauge antecedent'], ['Paper 2', True, 'fact-versus-law antecedent'], ['hostile review', True, 'repair obligations']]
+[PASS] all other binding files are hash-locked with declared use classes: [['clean-sheet pin', True, 'antecedent pin'], ['quantum amendment pin', True, 'antecedent pin'], ['Paper 1', True, 'W3 and boundary-gauge antecedent'], ['Paper 2', True, 'fact-versus-law antecedent'], ['hostile review', True, 'antecedent repair obligations'], ['physical-overlap hostile review', True, 'current bounded-repair obligations']]
 [PASS] master constructor consumes no comparison target: {'arguments': [], 'forbidden_names': []}
-[PASS] constructor, morphism type, validator, and bridge surface are source-locked: '262cac11a22cece5f183d77bae7bfac91c5a82448f4c268bea50d58f0d155fd8'
+[PASS] constructor, typed controls, and bridge validators are canonically authenticated: 'e5661e6566279997e3ebd7bbd6a18e99cc635e2d7cd6f6e0e16c1b1030f5bcc3'
 [PASS] substantive code has no float, random, or numpy path: {'float_literals': [], 'numpy_imports': [], 'random_imports': []}
-[PASS] predeclared master/morphism digest: '132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9'
-[PASS] structural bridge predicate accepts the frozen family: True
+[PASS] fixed canonical master/morphism specification matches: ['132116e2a5b5880443eb609ce52fa940d71211746ba5d7b728984d08c9dbd7d9', True]
+[PASS] structural bridge validator accepts the fixed family independently of its digest: True
 [PASS] Rec is law-blind and derives restrictions from morphisms: {'forbidden_names': [], 'uses_h_avail': True, 'uses_h_corr': True, 'uses_induced_record_pullback': True}
 
 EQUAL-DIMENSIONAL QUANTUM REGIONS
@@ -47,7 +47,6 @@ REAL GAUGE AND PRESENTATION CONTROLS
 [PASS] causal, geometric, field, and full-U(1) insertion guards fire: [True, True, True, True]
 
 ANTI-PADDING AND SAME-DIMENSIONAL DIVERSITY
-[PASS] algebraic coupling graph connects branch, record, and auxiliary: [[[0, 1], [1, 2], [0, 2]], True]
 [PASS] old q=3 spectator-padded family is detected: {'factor_found': True, 'permutations_tested': 1, 'witness': [0, 1, 2, 3, 4, 5, 6, 7]}
 [PASS] D1 exhausts all 8! common relabellings with no 4x2 product family: {'factor_found': False, 'permutations_tested': 40320, 'witness': None}
 [PASS] D2 exhausts all 8! common relabellings with no 4x2 product family: {'factor_found': False, 'permutations_tested': 40320, 'witness': None}
@@ -61,24 +60,21 @@ TYPED MASTER MORPHISMS, OVERLAPS, AND REFINEMENT
 [PASS] changing one mapped regional arrow breaks every embedding: [False, False, False]
 [PASS] unitary but non-signed-permutation boundary maps are outside the declared Reg scope: [True, False, False]
 [PASS] Reg has amplitude instruments and typed instrument morphisms: [True, 5, 12]
-[PASS] Reg identities, compositions, and all declared morphisms validate: [True, True, True, True]
-[PASS] all 22 composable Reg pairs equal their declared composites: [22, True]
+[PASS] Reg morphisms, identities, and all 22 declared compositions validate: [True, True, True, True, 22, True]
 [PASS] all pair and triple intersections are the nonvacuous amplitude core: [[['core.no-write', 'core.preserve', 'core.write'], ['core.no-write', 'core.preserve', 'core.write'], ['core.no-write', 'core.preserve', 'core.write']], ['core.no-write', 'core.preserve', 'core.write']]
 [PASS] O satisfies the finite pair-pullback universal tests: [True, True, True]
-[PASS] the three regional subfamilies cover the frozen master arrow family: True
-[PASS] positive Ref is an amplitude-instrument family inclusion: True
-[PASS] old Born-shadow product coarse-graining cannot pass the instrument-refinement gate: False
+[PASS] the three regional subfamilies cover the fixed master arrow family: True
 
 NO-CIRCULARITY AND SAME-LAW NEGATIVE CONTROLS
-[PASS] altering one frozen bridge fails the structural certificate: False
+[PASS] altering one bridge breaks canonical matching and independent structural validation: [False, False, 'morphism_diagram_failure']
 [PASS] regional fair laws are consequence-only measurements: [[[0, '1/2'], [1, '1/2']], [[0, '1/2'], [1, '1/2']], [[0, '1/2'], [1, '1/2']]]
-[PASS] diagonal and anti-diagonal extensions are exact W3-compatible amplitude controls: [[16, True, True, True, True], [16, True, True, True, True]]
+[PASS] diagonal and anti-diagonal controls are typed exact W3-compatible instruments: [[True, 16, True, True, True], [True, 16, True, True, True]]
 [PASS] diagonal and anti-diagonal supports differ: [[[0, 0, 0], [1, 1, 1]], [[0, 1, 0], [1, 0, 1]]]
 [PASS] law-only predicate accepts both incompatible extensions: [True, True]
 [PASS] equal marginals force incompatible pair-map families: [[[[0, 0], [1, 1]], [[0, 0], [1, 1]], [[0, 0], [1, 1]]], [[[0, 1], [1, 0]], [[0, 1], [1, 0]], [[0, 0], [1, 1]]]]
-[PASS] post-selected law couplings fail the structural master criterion: [False, False]
+[PASS] typed equal-law bridge candidates fail at the exact 16-versus-8 boundary obstruction: [[True, False, False, False, 'boundary_dimension_mismatch', [[16, 8], [16, 8], [16, 8]]], [True, False, False, False, 'boundary_dimension_mismatch', [[16, 8], [16, 8], [16, 8]]]]
 [PASS] rogue region has the same stable fair record law: [[[0, '1/2'], [1, '1/2']], True, True]
-[PASS] rogue preserve has no admissible signed-permutation bridge into the frozen master: [4, False, False]
+[PASS] rogue preserve has no admissible signed-permutation bridge into the fixed master: [4, False, False]
 
 FACTIFACE, REC, AND PHYSICAL TRIPLE DESCENT
 [PASS] all five record algebras are derived at the preserving scope: [['O', 'memory', True, True], ['D1', 'memory', True, True], ['D2', 'memory', True, True], ['D3', 'memory', True, True], ['E', 'memory', True, True]]
@@ -90,18 +86,15 @@ FACTIFACE, REC, AND PHYSICAL TRIPLE DESCENT
 [PASS] value-only groupoid is FactIface-shaped but cannot satisfy Reg typing: [True, False, 3, 9]
 [PASS] value-only control obeys FactIface groupoid laws without becoming Reg: {'all_laws': True, 'composition_count': 27, 'identity_count': 3, 'inverse_count': 9}
 
-SCOPE GUARDS AND PRE-REGISTERED OUTCOME
-[PASS] all three permitted positive rungs are earned: [True, True, True]
-[PASS] all pre-registered repair blocks remain false: [False, False, False]
-[PASS] highest honestly restored rung: 'RQ0-FACT-DESCENT'
-[PASS] forbidden successor claims remain explicitly absent: 6
+PREREQUISITE-DERIVED OUTCOME (NOT COUNTED AS NEW CHECKS)
 
 VERDICT
   highest restored rung: RQ0-FACT-DESCENT
-  lower positive: RQ0-REGIONS-CONSTRUCTED / RQ0-REGIONAL-SITE
+  earned outcomes: RQ0-REGIONS-CONSTRUCTED / RQ0-REGIONAL-SITE / RQ0-FACT-DESCENT
   overlap: exact common amplitude subinstrument with projector pullbacks
-  no-circularity: law-only controls fail; frozen structural bridge passes
+  no-circularity: typed equal-law bridges fail at 16-versus-8; fixed structural family passes
   ceiling: no localized influence, causal, spacetime, field, or gravity claim
   next obstruction: localized quantum subinstrument (not started)
 ------------------------------------------------------------------------------
-77 checks: 77 pass, 0 fail
+69 checks: 69 pass, 0 fail
+categories: anchor=4, authentication=2, static=3, type=7, schema=3, measurement=45, control=5, semantic=0
