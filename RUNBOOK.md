@@ -41,11 +41,13 @@ that made the rule.
   The old census commit remains immutable historical evidence but carries no
   live verdict.  v13 #13 records the external hostile-round dispatch against
   immutable commits `307c36f` and `1537b14`; v13 #14 freezes the returned
-  review verbatim.  Its external verdict is `FACT-DESCENT BLOCKED AT PHYSICAL
-  OVERLAP`, with `RQ0-REGIONS-CONSTRUCTED` recommended as the highest secure
-  pre-registered rung.  Adjudication and any repair remain separate later
-  events.  No RQ0-C1, RQ1, or GR1 construction may begin without its own
-  committed pin and the preceding gate.
+  review verbatim.  v13 #15 accepts its verdict: `RQ0-FACT-DESCENT` and
+  `RQ0-REGIONAL-SITE` are withdrawn pending a typed physical overlap, and
+  `RQ0-REGIONS-CONSTRUCTED` is the highest secure pre-registered rung.  The
+  one-region quantum seam remains positive.  The next authorized work is a
+  separately pinned physical-overlap repair; no RQ0-C1, RQ1, or GR1
+  construction may begin without its own committed pin and the preceding
+  gate.
 
 ## 1. The unit cycle
 

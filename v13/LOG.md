@@ -542,3 +542,57 @@ access-postulate and shadow-refinement labels.
 This entry freezes the external report; it does not yet adjudicate or repair
 it.  No `RQ0-C1`, causal, field or gravity work has begun.  Adjudication is the
 next event.
+
+## 2026-07-30 — RQ0 HOSTILE REVIEW ADJUDICATED: PHYSICAL OVERLAP
+## BLOCKS FACT DESCENT; REPAIR PRECEDES `RQ0-C1` (v13 LEDGER #15)
+**ADJUDICATION: THE EXTERNAL VERDICT AND ALL SEVEN FINDINGS ARE ACCEPTED.**
+The frozen review at #14 is numerically faithful and its semantic objections
+are load-bearing.  Direct commit-scoped inspection confirms: the regional
+constructor factors every extra bit from the two-qubit branch-memory process;
+the common-extension “restrictions” are projections of its own value tuples
+and connect to the separately built regions only through equal marginals; the
+nine arrows consume only binary support; refinement squares amplitudes before
+marginalizing; the executable gauge is diagonal `±1`; and preparation plus
+configuration tomography are declared access, not constructed instruments.
+The round's exact anti-diagonal extension is a decisive discriminator: it has
+the same three fair marginals and preservation property while forcing a
+different fact map.  The regional laws therefore cannot select the delivered
+diagonal coupling.
+
+**FORWARD HEADLINE CORRECTION.**  Commit #12 constructs exact finite quantum
+amplitude instruments with internally derived stable-record seams and coherent
+erasure.  Its common extension establishes an internal three-copy record fact
+but lacks structural maps to the three regional instruments.  Therefore
+`RQ0-FACT-DESCENT` and `RQ0-REGIONAL-SITE` are withdrawn pending a physically
+typed overlap; the highest secure pre-registered rung is
+**`RQ0-REGIONS-CONSTRUCTED`**.  The descriptive phrase
+`RQ0-QUANTUM-REGIONS-AND-INTERNAL-RECORD-SEAMS` may summarize the surviving
+content but is not introduced as a new outcome-ladder rung.
+
+The following remain earned at the exact finite scope: the amplitude-native
+region primitive; continuation-relative occurrence and availability; all
+write/preserve/erase/no-write W3 results; the zero preserving defect and
+record residual; eraser recoherence and nonzero defect; relabel and real-sign
+boundary-gauge controls; the chosen extension's internal GHZ theorem and
+record-bit symmetry; formal unequal-carrier non-isomorphism; and exact
+Born-shadow product coarse-graining.  These do **not** earn genuine regional
+dynamical diversity, physical common overlap, a regional category/site,
+physical regional fact descent or amplitude-instrument refinement.
+
+The first unresolved obstruction is forward-corrected from “localized quantum
+subinstrument” to **physically grounded overlap among genuinely diverse
+quantum regions**.  The repair must be separately pinned and must include at
+least one same-dimension non-gauge-isomorphic interacting pair; an anti-padding
+decomposition gate; a master amplitude instrument with pretyped interface
+maps commuting with write and preserving dynamics; record pullback/restriction
+under those maps; an extension class frozen independently of comparison; the
+diagonal/anti-diagonal ambiguity and equal-law/no-bridge negative controls;
+strict `FactIface` versus `Reg` typing; and either genuine amplitude/channel
+refinement or the honest name “Born-shadow refinement.”  Gauge is scoped to
+the exact real subgroup unless complex arithmetic is separately built, and
+full preparation/tomography remains an operational-access postulate until
+constructed.
+
+Commits `307c36f`, `1537b14`, dispatch `26d0e75` and frozen review `b24e8c7`
+remain immutable.  No repair is made in this adjudication entry.  No
+`RQ0-C1`, causal, field or gravity work has begun.
