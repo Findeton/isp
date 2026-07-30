@@ -596,3 +596,35 @@ constructed.
 Commits `307c36f`, `1537b14`, dispatch `26d0e75` and frozen review `b24e8c7`
 remain immutable.  No repair is made in this adjudication entry.  No
 `RQ0-C1`, causal, field or gravity work has begun.
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP REPAIR PINNED; CONSTRUCTION
+## STILL PRECEDES `RQ0-C1` (v13 LEDGER #16)
+The strict repair pin `note-rq0-physical-overlap-repair-pin.md`, SHA-256
+`a3627bee84a9b222feedb4f41215477ada33088a38b500f6c77a32c110e56cf3`,
+is frozen before any new amplitude is constructed.  It implements every
+accepted hostile-review obligation without reopening commits #11/#12.
+
+The positive atlas must have equal carrier dimension, accessible dynamical
+invariants independent of dimension, coupled auxiliaries and an exact
+family-level anti-product test; the old padded family is the negative control.
+A predeclared finite master instrument, typed instrument morphisms and a
+common amplitude subinstrument must exist before fact comparison.  Regional
+records must be literal projector/readout pullbacks through exact write and
+preserve intertwiners.  Matching marginals is consequence-only.  Diagonal
+versus anti-diagonal equal-marginal extensions and an equal-law region with no
+admissible master bridge are mandatory no-circularity controls.
+
+The pin separates the category `Reg` of amplitude instruments/morphisms from
+`FactIface` and the induced record assignment `Rec`; the old value groupoid
+cannot earn a regional site.  A positive refinement must itself be a typed
+instrument-family morphism; the #12 result is renamed Born-shadow product
+coarse-graining.  The implemented gauge is explicitly real permutations ×
+`±1` boundary phases, and full basis preparation/configuration tomography is
+an operational-access postulate.  Pre-registered repair blocks occur at
+diversity, morphism or overlap; the ceiling remains `RQ0-FACT-DESCENT`.
+
+The file whitelist contains only a new repair note, exact executable and two
+receipts, plus append-only ledger/RUNBOOK updates.  No reviewed file, old pin,
+v10–v12 file or Paper 0 file may change.  No causal, spacetime, field, gravity
+or `RQ0-C1` object is authorized.  Construction begins only after this pin is
+committed.

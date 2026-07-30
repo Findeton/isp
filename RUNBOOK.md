@@ -44,10 +44,12 @@ that made the rule.
   review verbatim.  v13 #15 accepts its verdict: `RQ0-FACT-DESCENT` and
   `RQ0-REGIONAL-SITE` are withdrawn pending a typed physical overlap, and
   `RQ0-REGIONS-CONSTRUCTED` is the highest secure pre-registered rung.  The
-  one-region quantum seam remains positive.  The next authorized work is a
-  separately pinned physical-overlap repair; no RQ0-C1, RQ1, or GR1
-  construction may begin without its own committed pin and the preceding
-  gate.
+  one-region quantum seam remains positive.  v13 #16 pins the authorized
+  physical-overlap repair: same-dimensional anti-padding regions, a frozen
+  master/subinstrument category, exact process morphisms and record pullbacks,
+  law-only negative controls, and strict `Reg`/`FactIface` typing.  No RQ0-C1,
+  RQ1, or GR1 construction may begin without its own committed pin and the
+  preceding gate.
 
 ## 1. The unit cycle
 
