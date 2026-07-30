@@ -455,3 +455,40 @@ region, `mu`, conformal metric, RQ1 field, H_a[N], Einstein equation, or
 gravity dynamics is constructed.  Paper 0 remains **[DRAFT]** and unchanged.
 The unit is **GREEN-UNREVIEWED**, not terminal; no external hostile round has
 occurred.  **HALT.**
+
+## 2026-07-30 — RQ0 QUANTUM FACTUAL-BASE HOSTILE ROUND
+## DISPATCHED; NO `RQ0-C1` (v13 LEDGER #13)
+The user ordered both reviewed commits preserved:
+`307c36f017d9d5587334d3b79421645ee5b54c61` (the quantum-substrate
+amendment pin) and `1537b1475705a5def1d1d063459fa7d4fb534982` (the
+GREEN-UNREVIEWED construction).  No repair, causal reconstruction, field, or
+gravity unit is authorized during this round.  `RQ0-C1` is explicitly held.
+
+The external hostile reviewer has now been dispatched repo-read-only against
+those exact commit objects, with independent scratch permitted only outside
+the repository and with the 73/73 self-checks forbidden from adjudicating the
+ontology.  The mandatory attack surface is: **(1) anti-spectator** — prove or
+refute the exact tensor factorizations and require a same-dimension,
+non-gauge-isomorphic pair before accepting genuine regional diversity;
+**(2) physical common extension** — locate typed process maps from the master
+extension to each regional write/readout/preserving instrument, treating
+matching marginals as insufficient; **(3) no-circularity** — test whether any
+three equal binary laws can be post-coupled diagonally and require an
+equal-law/no-bridge negative control; **(4) type audit** — separate the
+fact-interface groupoid from a category of amplitude regions; **(5)
+refinement audit** — distinguish Born-shadow marginalization from
+instrument-level refinement; **(6) gauge/access scope** — type the executable
+as the real `±1` boundary subgroup and full basis preparation/tomography as
+constructed operations or explicit access postulates; **(7) separate rung
+verdicts** for quantum region, record seam, regional diversity, physical
+overlap, fact descent, and regional site.
+
+The permitted round verdicts are ACCEPT / ACCEPT-WITH-FIXES / HEADLINE
+DOWNGRADE TO REGIONS-CONSTRUCTED / FACT-DESCENT BLOCKED AT PHYSICAL OVERLAP.
+The reviewer must preserve the one-region W3/preserve/erase result absent a
+direct error, report findings severity-first with independently rebuilt
+algebra and commit-scoped evidence, propose only a bounded repair
+specification, and write no repairs.  The complete review will be frozen
+before adjudication or implementation.  This dispatch entry is recorded only
+after the dispatch occurred.  Commit #12 remains **GREEN-UNREVIEWED** pending
+the round.

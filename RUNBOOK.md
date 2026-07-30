@@ -39,9 +39,12 @@ that made the rule.
   benchmark only after a locality-first quantum influence instrument is
   separately pinned and frozen.
   The old census commit remains immutable historical evidence but carries no
-  live verdict.  The RQ0 unit is halted awaiting the user's next instruction;
-  no RQ0-C1, RQ1, or GR1 construction may begin without its own committed pin
-  and the preceding gate.
+  live verdict.  v13 #13 records the external hostile-round dispatch against
+  immutable commits `307c36f` and `1537b14`, focused on spectator padding,
+  the missing extension-to-region bridge, site/refinement typing, real-gauge
+  scope, and operational-access postulates.  The review is read-only and must
+  be frozen before any repair.  No RQ0-C1, RQ1, or GR1 construction may begin
+  without its own committed pin and the preceding gate.
 
 ## 1. The unit cycle
 
