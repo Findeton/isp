@@ -1,0 +1,54 @@
+==============================================================================
+v13 GW2 -- REGIONAL DESCENT STEP-0 REFERENT CENSUS
+Exact type/provenance audit; no descent condition is posed
+==============================================================================
+[PASS] audited programme checkpoint is an ancestor of HEAD: 0
+[PASS] all inspected antecedent blobs match their locks: (('GW2 pin', True), ('W3 receipt', True), ('W6 receipt', True), ('W3 note', True), ('W6 note', True), ('Paper 2', True), ('v10 D37 receipt', True), ('v10 D38b receipt', True), ('v10 D37 note', True), ('v10 D38 note', True), ('v10 Paper 26', True))
+
+ANTECEDENT RECEIPTS
+[PASS] W3 antecedent exits zero: 0
+[PASS] W3 antecedent verdict marker: True
+[PASS] W6 antecedent exits zero: 0
+[PASS] W6 antecedent verdict marker: True
+[PASS] v10 D37 antecedent exits zero: 0
+[PASS] v10 D37 antecedent verdict marker: True
+[PASS] v10 D38b antecedent exits zero: 0
+[PASS] v10 D38b antecedent verdict marker: True
+
+TYPED LINEAGE SPLIT
+[PASS] W3 carries the H-corr decision function: True
+[PASS] W3 carries the H-avail decision function: True
+[PASS] W6 carries a chart type: True
+[PASS] live Barandes Region class is present: False
+[PASS] W6 Chart constructor is process/configuration typed, not region typed: ('name', 'K', 'n', 'legs', 'j0', 'tokens', 'note')
+[PASS] live W3/W6 code exports no regional constructor/restriction identifier: ()
+[PASS] v10 carries an oriented-cell type: True
+[PASS] v10 carries finite-region enumeration: True
+[PASS] v10 carries a regional history constructor: True
+[PASS] v10 does not carry W3 H-corr: False
+[PASS] v10 does not carry W3 H-avail: False
+[PASS] v10 D37 explicitly remains classical: True
+[PASS] v10 D37 explicitly defers a quantum lift: True
+[PASS] v10 D38 explicitly leaves quantum joins open: True
+[PASS] v10 Paper 26 says its carrier is supplied: True
+[PASS] Paper 2 disclaims construction of a universal event set: True
+[PASS] Paper 2 disclaims derivation of token stability: True
+[PASS] no committed Python file co-locates the v10 regional and W3/W6 interfaces: ()
+
+SEVEN-OBJECT TYPE CENSUS
+  1. finite region D: BLOCKED -- W3/W6 exports Chart, not a spacetime region; v10=LOCATED only on a supplied classical opportunity carrier
+  2. local process P_D: NOT REACHED -- no live D on which to index it; v10=gamma_D / Gamma_D exist at the old classical type
+  3. W3-grade stable-record algebra A_R(D): SPLIT -- R_a exists chart-locally, not region-indexed; v10=durable clicks are not an H-corr/H-avail adapter
+  4. physical overlap/common access: SPLIT -- W6 overlap is chart-to-chart only; v10=set overlap inherits supplied carrier identities
+  5. restriction/comparison maps: SPLIT -- no maps between live regional record algebras; v10=r_E,D exists only in the old specification
+  6. declared gauge: SPLIT -- W6 configuration relabelling is not regional transport; v10=construction-order gauge exists separately
+  7. insertion discriminator: LOCATED -- W6 five-valued discriminator applies; v10=it rejects promoting old labels into physical identity
+[PASS] pre-registered GW2 verdict: 'GW2-BLOCKED-AT-1'
+
+VERDICT
+  GW2-BLOCKED-AT-1
+  Missing object: a finite region in the live Barandes/W3-W6 record lineage.
+  v10 supplies a classical regional-specification antecedent, not that object.
+  No regional descent condition is written; Z_D remains candidate notation.
+------------------------------------------------------------------------------
+29 checks: 29 pass, 0 fail

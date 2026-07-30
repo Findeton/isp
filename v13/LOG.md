@@ -289,3 +289,43 @@ until GR1.  The GW1 note's stale GREEN status line was forward-corrected to the
 terminal provenance already conferred at #5.  RUNBOOK §0 now points at this
 order.  **GW2 remains the next authorized unit; this entry does not claim it
 was dispatched.**
+
+## 2026-07-30 — GW2 EXECUTED: THE LIVE BARANDES/W3–W6 LINEAGE
+## BLOCKS AT THE REGIONAL REFERENT (v13 LEDGER #9)
+GW2 ran only after W6/Paper 2 became terminal and the user authorized the
+programme sequence at #8.  During the census the user challenged the initial
+use of v10: its regions belong to the old record programme, not to the
+Barandes-derived W3/W6 line.  **ADJUDICATED: CORRECT AND LOAD-BEARING.**  v10
+D37/D38 remains a useful structural antecedent, but its `D`, `gamma_D` and
+`r_E,D` live on Paper 26's explicitly supplied classical opportunity carrier;
+D37 defers the quantum lift and D38b leaves quantum joins open.  It therefore
+cannot discharge a Barandes/W3-grade regional referent by renaming.
+
+The strict seven-object census returns the pre-registered first-class negative
+**`GW2-BLOCKED-AT-1`**.  W3 computes record status through H-corr/H-avail.  W6
+exports a Barandes-style `Chart`, chart-local record algebras, derived
+chart-overlap/comparison maps, configuration-relabel gauge and the five-valued
+insertion discriminator.  It exports no finite spacetime-region constructor or
+region-indexed W3 algebra.  Accordingly: object 1 REGION = BLOCKED; object 2
+LOCAL PROCESS = NOT REACHED; objects 3–6 = SPLIT between the live chart line
+and old regional line with no adapter; object 7 DISCRIMINATOR = LOCATED.  W6's
+“base is built” handover is now scoped to the chart-local co-reference base,
+not read as an RQ0 regional-site theorem.  No descent equation was written and
+`Z_D` remains candidate notation.
+
+The exact standard-library receipt locks checkpoint
+`e89a2e7c972ce3ff6c3a9d4fe5792bf0dac621b2`, the pin and ten antecedent files;
+re-runs W3 `129/129`, W6 `120/120`, v10 D37 `9/9` and D38b `9/9`; audits the
+typed interfaces and explicit scope sentences; and finds no committed Python
+file co-locating the old regional with W3/W6 interfaces.  Result: **29/29
+checks pass**, two complete runs byte-identical, normal exit `0`; the deliberate
+false-`Region` mutant gives **28/29** and exit `1`.  Delivery SHA-256s: code
+`adb7ef28a36e92b0636b478e53ef47524f45a59fee0dcf78d134400ae8a6f9eb`, stdout
+`25a98b0aa0aaaeb4354a4f8e632afd374ec1bfba7a5c1edd9a266352d0b792ad`, note
+`b2a4d29d640586cd0a32ff6f81a7008bb386acf36c975de7820fbfa17e09faf6`.
+
+GW2 is **GREEN-UNREVIEWED**, not terminal; no external hostile round has
+occurred.  Per the pin, Paper 0 is untouched by this unit.  The correctly typed
+successor would be a separately pinned Barandes regionalization/RQ0a unit with
+positive and negative adapter controls.  It is not authorized here.  No RQ0
+causal geometry, RQ1 field or GR1 dynamics has started.  **HALT.**
