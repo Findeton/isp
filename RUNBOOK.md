@@ -62,7 +62,14 @@ that made the rule.
   an independent exact rebuild of the quantum seams, anti-padding searches,
   instrument morphisms, finite cover/pullbacks, `Rec`, and law-only controls,
   plus a circular-gate audit.  The review must be frozen and adjudicated
-  before any repair, terminal claim, `RQ0-L0`, or `RQ0-C1` action.
+  before any repair, terminal claim, `RQ0-L0`, or `RQ0-C1` action.  v13 #19
+  freezes that returned review verbatim: `ACCEPT-WITH-FIXES`, with
+  `RQ0-FACT-DESCENT` independently secure and no algebraic counterexample.
+  Three major receipt/provenance fixes—derived fail-closed outcomes, honest
+  same-file-digest scope, and typed structural rejection of the law-only
+  controls—plus three wording/hygiene fixes block terminal status.  No
+  successor unit may begin before the frozen findings are adjudicated and
+  repaired.
 
 ## 1. The unit cycle
 

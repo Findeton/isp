@@ -756,3 +756,72 @@ repairs and replacement wording.  It will be frozen verbatim before any
 adjudication or repair.  This entry is recorded only after the dispatch
 occurred.  Commit #17 remains **GREEN-UNREVIEWED-REPAIRED** while the round is
 open.  No localization, influence, causal, field or gravity work has begun.
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP HOSTILE REVIEW FROZEN:
+## `ACCEPT-WITH-FIXES`; FACT DESCENT SECURE (v13 LEDGER #19)
+The external repo-read-only round dispatched at #18 has returned and is
+frozen verbatim at `review-rq0-physical-overlap-repair-hostile.md`, SHA-256
+`4aab5520f881a20033b3a0e67597feb330f7c3bd7592d8ad32479d3b5e0d0a10`
+(21,411 bytes).  The reviewer made no repository edit or git mutation.  Its
+independent exact rebuild was written only under `/tmp`, imported no delivery
+function, and has SHA-256
+`31202dcf13fe73c135b98c38168d974f2616d2879a4b144720e2b479fd04272a`.
+The review file is the complete returned report; this entry freezes it and
+does not yet adjudicate or repair it.
+
+**EXTERNAL VERDICT:** `ACCEPT-WITH-FIXES`.  **HIGHEST SECURE RUNG:**
+`RQ0-FACT-DESCENT` at the declared finite, fixed-carrier,
+signed-permutation/common-relabelling amplitude-subinstrument scope.  The
+round finds no counterexample to the finite construction and independently
+reproduces all load-bearing quantum seams, anti-padding results, morphisms,
+overlaps, record pullbacks, functor laws and law-only controls.
+
+The independent numbers match #17: all regional dimensions are eight; every
+write passes H-corr and every no-write fails it; both preserves have zero
+cross/within coherence, zero defect and zero record residual; erasers have
+cross-coherence/defect counts `16/16`, `32/32`, `32/32`; preserve support
+multisets are `{8,8}`, `{8,16}`, `{8,32}`; the old padded family factors at
+identity; and all `3 x 40,320` positive product searches return no witness.
+The six positive embeddings, mapped-arrow and nonmonomial controls, five
+objects, twelve morphisms, 22 compositions, three-arrow pair/triple core,
+cover union, five record algebras, twelve `Rec` arrows and all three
+master-to-core paths are reproduced.  A stronger stress census over all 512
+subsets of the nine master arrows finds no additional pairwise lower bound
+outside the declared core.  Diagonal and anti-diagonal supports/marginals and
+forced maps match, while the rogue preserve has zero Born-multiset matches
+among all four admissible master preserves.
+
+The round reports three **MAJOR** receipt/provenance defects, without lowering
+the mathematical rung: **M1**, the final `earned` block, highest-rung string
+and nonclaim count are literal declarations/self-comparisons rather than
+prerequisite-derived, fail-closed outcomes; **M2**, same-file semantic/source
+digests authenticate the delivered surface and evaluation order but cannot
+prove historical independent predeclaration; and **M3**, diagonal and
+anti-diagonal law controls are untyped mappings rejected first by positive-
+family schema/digest identity rather than typed morphism obstruction, even
+though their exact 16-versus-8 dimension mismatch supplies the intended
+structural no-bridge proof.
+
+Three **MINOR** findings require bounded correction: **M4**, standard prose
+should call the object a finite amplitude-subinstrument cover category/atlas
+unless a Grothendieck topology is declared, while the programme's internal
+`RQ0-REGIONAL-SITE` rung remains earned under its pin; **M5**, every
+“non-padding” headline must carry the exhaustive common-relabelling `4 x 2`
+scope and disclaim arbitrary-unitary irreducibility; and **M6**, declarative,
+duplicate or weaker receipt gates and JSON fields must be removed, relabelled
+or sourced from measurements.  The mutant must corrupt observed anchor state
+and close the derived rung, not merely alter an expected string while still
+printing a positive verdict.
+
+The bounded repair is therefore receipt/provenance work: derive outcomes from
+named prerequisites and fail closed; separate canonical authentication from
+structural validation; type the diagonal/anti-diagonal controls and gate the
+dimension/morphism obstruction; correct predeclaration, site and anti-padding
+wording; deduplicate/classify checks; strengthen the mutant; regenerate both
+receipts; rerun determinism and adjudicator verification.  The review says no
+amplitude, W3 count, diversity invariant, anti-padding result, positive
+embedding, overlap, rogue invariant or `Rec` result needs to change.
+
+Commit #17 remains immutable and **GREEN-UNREVIEWED-REPAIRED** pending
+adjudication and repair.  No `RQ0-L0`, `RQ0-C1`, causal, field or gravity work
+has begun.  Adjudication of every frozen finding is the next event.
