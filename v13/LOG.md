@@ -706,3 +706,53 @@ metric, field, stress object, gravity dynamics or full complex `U(1)` claim
 is made.  The first unresolved referent is a typed, gauge-invariant localized
 quantum subinstrument.  `RQ0-C1` has not begun and is not authorized by this
 delivery.  **HALT.**
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP REPAIR HOSTILE ROUND
+## DISPATCHED; `RQ0-L0` AND `RQ0-C1` HELD (v13 LEDGER #18)
+An external hostile reviewer has now been dispatched repo-read-only against
+the exact repair pin `b05ab95d6721d104a561875bc39aa6daa03f875e` and delivery
+`8d071641ecc3d028c4ee3355e4faacb368840e95`.  The reviewer may write only an
+independent scratch implementation under `/tmp`; it may not edit the
+repository, mutate git, import delivery functions into its rebuild, start a
+successor unit, or treat the 77 self-checks as adjudicating their own claims.
+The delivery executable may be run separately only as a supplemental
+reproducibility check.
+
+The mandatory independent rebuild covers every one-region W3
+write/preserve/erase/no-write quantity; the three `8!` anti-padding searches
+and the old padded positive factorization control; preserve-family diversity
+invariants; all six typed core/region/master embeddings; signed-permutation
+scope; the mapped-arrow and nonmonomial controls; five `Reg` objects, twelve
+morphisms and 22 composition equations; overlap/pullback/cover claims;
+amplitude-level refinement typing; all projector pullbacks and contravariant
+`Rec` laws; diagonal/anti-diagonal ambiguity; and the equal-law rogue
+obstruction.
+
+The round must separately attack the semantic load-bearing points: whether
+same-file source/specification locks provide a genuine pre-comparison guard
+or only self-authentication; whether the pullback universal-property test is
+substantive beyond the deliberately chosen five objects; whether “site” is
+accurate for the declared finite cover; whether the rogue invariant excludes
+the full admitted morphism class; whether `Rec` is law-blind; and whether any
+of the 77 checks are circular, duplicated or outcome-restating.  The literal
+positive values in the final `earned` dictionary are explicitly on the
+attack surface and must be mechanically traced back to measured gates or
+classified as a receipt defect.
+
+The reviewer is forbidden to move the goalposts: #17 claims an existence
+construction for one jointly built finite atlas, not black-box overlap
+discovery or general emergence; anti-padding is scoped to common
+configuration relabellings/signed permutations and the dimension-eight
+`4 x 2` split, not arbitrary unitary tensor factorizations; and the result
+does not claim a general Grothendieck topology, special relativity, fields or
+gravity.  Limitations at those broader scopes may be recorded but cannot by
+themselves reject the pinned result.
+
+The review must return ACCEPT / ACCEPT-WITH-FIXES / REJECT and separately
+state the highest secure rung among `RQ0-REGIONS-CONSTRUCTED`,
+`RQ0-REGIONAL-SITE` and `RQ0-FACT-DESCENT`, with severity-ordered,
+commit/line-scoped findings, an independently rebuilt claims table, bounded
+repairs and replacement wording.  It will be frozen verbatim before any
+adjudication or repair.  This entry is recorded only after the dispatch
+occurred.  Commit #17 remains **GREEN-UNREVIEWED-REPAIRED** while the round is
+open.  No localization, influence, causal, field or gravity work has begun.

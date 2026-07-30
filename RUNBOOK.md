@@ -57,7 +57,12 @@ that made the rule.
   exact checks, deterministic text/JSON receipts and a one-failure anchor
   mutant, but is not terminal before its own external hostile round.  The
   next unresolved referent is a localized quantum subinstrument; `RQ0-C1`
-  remains unpinned and unstarted.
+  remains unpinned and unstarted.  v13 #18 records the repo-read-only hostile
+  round now running against exact commits `b05ab95` and `8d07164`; it requires
+  an independent exact rebuild of the quantum seams, anti-padding searches,
+  instrument morphisms, finite cover/pullbacks, `Rec`, and law-only controls,
+  plus a circular-gate audit.  The review must be frozen and adjudicated
+  before any repair, terminal claim, `RQ0-L0`, or `RQ0-C1` action.
 
 ## 1. The unit cycle
 
