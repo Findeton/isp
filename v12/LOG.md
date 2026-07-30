@@ -1854,3 +1854,14 @@ FINITE THEOREM LAYER.**  This terminality is not a publication/submission
 decision and does not fill GW2 object 3 (a physically established stable-record
 algebra).  The user's ordered frontier is now v13 GW2, preceded only by the
 programme amendment that records the RQ0 → RQ1 → GR1 gate sequence.
+
+## 2026-07-30 — PROCESS CORRECTION: #46 COMMIT TRAILER OMITTED
+## (v12 LEDGER #47)
+The immutable #46 checkpoint is commit
+`a0dadd5122c88f69f37fcc6cc6b024051649790a`.  Its content and explicit-path
+staging are correct, but the adjudicator omitted RUNBOOK §8's required
+`Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>` trailer while retrying
+the commit after interactive GPG signing failed.  The commit is not amended or
+rewritten; this forward entry owns the metadata error.  No source, receipt,
+verdict or scientific claim is affected.  Subsequent commits use
+`--no-gpg-sign` and the required trailer explicitly.
