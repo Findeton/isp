@@ -947,3 +947,58 @@ signed-permutation/common-relabelling amplitude-subinstrument scope.  This
 entry delivers the repair but does not itself confer terminal status; a
 post-commit adjudicator rerun and separate terminal ledger event remain.
 No `RQ0-L0`, `RQ0-C1`, causal, field or gravity work has begun.  **HALT.**
+
+## 2026-07-30 — RQ0 QUANTUM-REGIONAL FACTUAL BASE TERMINAL:
+## `RQ0-FACT-DESCENT` AT EXACT FINITE SCOPE; HALT (v13 LEDGER #22)
+The bounded repair committed at #21 as
+`6c3ef116cbc1102d74d4f15266f4a9a5c497e7c9` has passed the required
+post-commit adjudicator verification.  Two fresh complete text runs and two
+fresh complete JSON runs are byte-identical and exactly regenerate the stored
+receipts.  The positive receipt remains `69/69`.  A fresh observed-anchor
+mutant remains the exact one-failure `68/69` run, exits 1, marks the receipt
+invalid, sets every positive outcome false and prints `highest restored rung:
+NONE`.  The worktree was clean before this terminal ledger update.
+
+The external `ACCEPT-WITH-FIXES` round at #19 found no algebraic
+counterexample and independently rebuilt every load-bearing number.  #20
+accepted all six findings; #21 repaired all six without changing the canonical
+master/morphism digest.  The complete provenance chain is therefore delivery
+#17 (`8d071641ecc3d028c4ee3355e4faacb368840e95`), hostile review #19
+(`c17a6349a465248f735650d98e8f9e2627e9161d`), adjudication #20
+(`1d9af029d3c04006c6e42941d66a590b2d887831`), bounded repair #21
+(`6c3ef116cbc1102d74d4f15266f4a9a5c497e7c9`) and this terminal event #22.
+The note status is now **TERMINAL** and its terminal form has SHA-256
+`cadc7953004f7124160f325929d05fe651f18182a00df1ffd48652eab025546f`.
+
+**TERMINAL HIGHEST RUNG: `RQ0-FACT-DESCENT`.**  At one exact finite
+fixed-carrier, real-sign/signed-permutation/common-relabelling amplitude-
+subinstrument scope, the programme has:
+
+- three equal-dimensional amplitude-native quantum regions whose stable
+  record seams are derived from their own write/preserve/erase dynamics;
+- exhaustive absence of a common `4 x 2` product factor under all `8!`
+  common configuration relabellings for each positive family, with the old
+  padded family as a positive factorization control;
+- accessible dynamic invariants separating the three regional families;
+- a finite master, nonvacuous common amplitude core and six exact typed
+  core/region/master morphisms with projector pullbacks;
+- the finite amplitude-subinstrument cover category `Reg`, distinct
+  `FactIface`, and contravariant `Rec` with coherent physical triple descent;
+- typed diagonal and anti-diagonal equal-law controls whose explicit bridge
+  candidates fail at the exact `16 -> 8` boundary obstruction, plus the
+  equal-law rogue-region no-bridge control;
+- prerequisite-derived, classified, fail-closed receipts.
+
+The anti-padding result does **not** claim arbitrary-unitary tensor
+irreducibility.  `Reg` is a finite amplitude-subinstrument cover category or
+atlas; no Grothendieck topology is declared.  The same-file digests are
+canonical authentication, not evidence of historical independent
+preregistration.  Full complex `U(1)` gauge, independently derived tomography
+and black-box discovery of overlaps remain outside this result.
+
+No causal relation, local cone, dimension, volume, Lorentzian structure,
+spacetime region, field, stress object, gravity or special-relativity claim is
+made.  The first unresolved referent remains a typed, gauge-invariant
+localized quantum subinstrument.  `RQ0-L0` and `RQ0-C1` are unpinned and have
+not begun.  Under the runbook HALT rule, no successor work is authorized by
+this terminal event.  **HALT.**

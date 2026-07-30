@@ -86,6 +86,14 @@ that made the rule.
   outcomes.  Two-run text/JSON determinism and stored-receipt regeneration
   pass.  A post-commit rerun and separate terminal ledger entry are still
   required before the rung is citable or any successor can be considered.
+  v13 #22 records that post-commit rerun and confers **TERMINAL** status on
+  `RQ0-FACT-DESCENT` only at the exact finite fixed-carrier, real-sign/signed-
+  permutation/common-relabelling amplitude-subinstrument scope.  The result
+  is a quantum-regional factual base: it has no causal relation, cone,
+  dimension, volume, Lorentzian structure, field or gravity claim.  Its first
+  unresolved referent is still a typed, gauge-invariant localized quantum
+  subinstrument.  The run is halted; `RQ0-L0` and `RQ0-C1` remain unpinned
+  and unstarted pending an explicit user go/no-go.
 
 ## 1. The unit cycle
 

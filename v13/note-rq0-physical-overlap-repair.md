@@ -1,6 +1,9 @@
 # v13 RQ0 — physical overlap of quantum regional instruments
 
-**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-07-30.
+**Status:** TERMINAL, STRICT, 2026-07-30 — delivered v13 #17
+(`8d071641ecc3d028c4ee3355e4faacb368840e95`), hostile round frozen v13 #19
+(`c17a6349a465248f735650d98e8f9e2627e9161d`), bounded repair v13 #21
+(`6c3ef116cbc1102d74d4f15266f4a9a5c497e7c9`), terminal adjudication v13 #22.
 
 **Repair pin:** `v13/note-rq0-physical-overlap-repair-pin.md`, commit
 `b05ab95d6721d104a561875bc39aa6daa03f875e`.
@@ -8,10 +11,9 @@
 **Antecedent verdict:** hostile review frozen at v13 #14 and accepted at
 v13 #15.  Commits `307c36f` and `1537b14` remain immutable.
 
-**Repair hostile round:** `ACCEPT-WITH-FIXES`, frozen at v13 #19 and
-adjudicated at v13 #20.  This file incorporates all six bounded fixes;
-terminal status still requires repaired-receipt verification and its ledger
-entry.
+**Repair hostile round:** `ACCEPT-WITH-FIXES`, frozen at v13 #19,
+adjudicated at v13 #20, repaired at v13 #21, and conferred terminal after the
+post-commit rerun at v13 #22.  This file incorporates all six bounded fixes.
 
 **Executable and receipts:** `v13/code/rq0_physical_overlap_exact.py`,
 `v13/code/rq0_physical_overlap_output.txt`, and
@@ -571,6 +573,6 @@ order.
 
 $$
 \boxed{
-\texttt{RQ0-FACT-DESCENT, GREEN-UNREVIEWED-REPAIRED; HALT BEFORE RQ0-C1.}
+\texttt{RQ0-FACT-DESCENT, TERMINAL AT DECLARED FINITE SCOPE; HALT BEFORE RQ0-C1.}
 }
 $$
