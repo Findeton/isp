@@ -69,7 +69,15 @@ that made the rule.
   same-file-digest scope, and typed structural rejection of the law-only
   controls—plus three wording/hygiene fixes block terminal status.  No
   successor unit may begin before the frozen findings are adjudicated and
-  repaired.
+  repaired.  v13 #20 adjudicates and accepts all six findings.  The exact
+  finite `RQ0-FACT-DESCENT` rung survives, but terminal status remains held
+  for a forward-only bounded repair: prerequisite-derived fail-closed
+  outcomes; honest canonical-authentication provenance; typed 16-dimensional
+  equal-law controls with explicit candidate morphisms and a measured
+  16-versus-8 obstruction; finite-cover and common-relabelling `4 x 2` scope
+  wording; deduplicated, classified receipt gates; and an observed-anchor
+  mutant that suppresses every positive verdict.  `RQ0-L0` and `RQ0-C1`
+  remain unpinned and prohibited.
 
 ## 1. The unit cycle
 

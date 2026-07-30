@@ -825,3 +825,60 @@ embedding, overlap, rogue invariant or `Rec` result needs to change.
 Commit #17 remains immutable and **GREEN-UNREVIEWED-REPAIRED** pending
 adjudication and repair.  No `RQ0-L0`, `RQ0-C1`, causal, field or gravity work
 has begun.  Adjudication of every frozen finding is the next event.
+
+## 2026-07-30 — RQ0 PHYSICAL-OVERLAP HOSTILE REVIEW ADJUDICATED:
+## ALL SIX FINDINGS ACCEPTED; BOUNDED REPAIR AUTHORIZED (v13 LEDGER #20)
+The frozen review at #19 has been checked against the committed executable and
+is accepted in full.  Its `ACCEPT-WITH-FIXES` verdict is adopted.  No exact
+amplitude, W3, diversity, anti-padding, morphism, overlap, rogue-control or
+record-functor result is withdrawn: the independent rebuild secures
+`RQ0-FACT-DESCENT` at the declared finite fixed-carrier,
+signed-permutation/common-relabelling amplitude-subinstrument scope.  Terminal
+status is nevertheless withheld until the bounded receipt, typing and wording
+repairs below are implemented and independently rerun.
+
+**M1 ACCEPTED.**  The delivered `earned` mapping contains literal outcome
+booleans, the highest-rung check compares a string with itself, and a prose
+nonclaim tuple is counted as a scientific check.  Direct execution of the
+anchor mutant confirms the consequence: the active-pin check fails and the
+process exits 1, but the positive `RQ0-FACT-DESCENT` verdict is still printed.
+The repair must derive every rung and block from named measured prerequisites,
+fail closed on every required anchor or prerequisite, suppress positive verdict
+text on failure, and exclude outcome labels and nonclaims from the scientific
+check count.
+
+**M2 ACCEPTED.**  `MASTER_SPEC_SHA256` and `CONSTRUCTION_SURFACE_SHA256` are
+same-file canonical locks.  They authenticate the delivered construction and
+its evaluation surface; they do not retroactively prove historical independent
+predeclaration.  The constructor remains law-blind, so the existence result is
+unchanged.  The repair must distinguish immutable Git provenance, same-file
+canonical authentication and structural validation, and replace
+"predeclared" by "fixed, canonically authenticated" wherever the stronger
+historical claim appears.
+
+**M3 ACCEPTED.**  The diagonal and anti-diagonal controls are mappings rather
+than typed instruments and are rejected by positive-family schema/digest checks
+before a structural bridge is attempted.  The exact `16`-versus-`8` boundary
+dimension mismatch independently proves that neither can enter the frozen
+signed-permutation master.  The repair must construct typed control instruments
+and explicit candidate morphisms, separate canonical-specification matching
+from structural validation, and gate the exact dimension/morphism obstruction.
+The rogue-region invariant remains positive and unchanged.
+
+**M4–M6 ACCEPTED.**  Standard prose will call `Reg` a finite amplitude-
+subinstrument cover category or atlas unless a Grothendieck topology is
+declared; the pin's internal `RQ0-REGIONAL-SITE` rung remains earned.  Every
+"non-padding" headline will carry the exhaustive common-configuration-
+relabelling `4 x 2` scope and expressly disclaim arbitrary-unitary tensor
+irreducibility.  Declarative, duplicate and weaker checks/JSON fields will be
+removed, derived or labelled by construction; check classes and counts will be
+separated; and the mutant will corrupt observed anchor state rather than its
+expected value.
+
+The authorized repair is forward-only on top of immutable commits #17 and #19.
+It may modify only the #17 repair note, executable and generated receipts plus
+append-only `v13/LOG.md` and this runbook.  It may not change the pinned finite
+mathematical model or any reviewed historical file.  It must regenerate exact
+text/JSON receipts, pass two-run determinism and stored-receipt verification,
+and demonstrate a fail-closed mutant before terminal adjudication.  No
+`RQ0-L0`, `RQ0-C1`, causal, spacetime, field or gravity work is authorized.
