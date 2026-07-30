@@ -1754,3 +1754,69 @@ standard; if full self-containment is later ordered, §7 and refs
 GREEN-UNREVIEWED — NOT citable as terminal, NOT publishable
 until its deferred round runs (mandatory gates listed in the
 pin).  The halt otherwise stands.
+
+## 2026-07-30 — PAPER 2 HOSTILE ROUND: ACCEPT-WITH-FIXES; CENTRAL
+## THEOREM SURVIVES, THE REALIZED-MAP COUNT STRENGTHENS (v12
+## LEDGER #45)
+The user's new programme order explicitly unfroze the deferred Paper 2
+round and placed it before v13 GW2.  The round pinned the committed
+draft and bundle at `4feda107df664394f8a2e28b8144d7a3635eeb61`
+(sha256 paper/core/models/runner/RUN: `6283c885` / `2cfa6f5c` /
+`4a1fbe23` / `97e6779d` / `b2a5dc7b`).  The committed runner
+reproduced twice byte-for-byte, matched RUN.txt, exited 0, and
+remained float-free.  An independent
+standard-library rebuild imported nothing from the bundle and
+reproduced the symmetric descent counts `(4 coherent, 1 orbit,
+stabilizer 2)`, zero natural maps, the trivial full automorphism group,
+and the opposite unique full-law token maps.  Reference/attribution
+checks passed: Vistoli/Moerdijk are correctly used as descent/stack
+background; Cavaleri–Donno and Zaslavsky only as switching antecedents;
+Weatherall and Bradley–Weatherall only as the declared hole/surplus-
+structure comparison.  No load-bearing theorem is outsourced.
+
+**F1 MAJOR — REALIZED-ONLY SCOPE.**  `realized_isomorphisms` compares
+each token's value function on all five configurations, including the
+two states outside the initial column's support.  That is not the
+paper's own `R(C)` (initial state, used column, actual record algebra
+and law).  Rebuilt on `{initial} ∪ supp(T delta_0)`, each completion has
+**4**, not 2, realized configuration maps; they still induce exactly
+the same **two token maps**, identity and swap.  Theorem 6.3 therefore
+survives and strengthens; the numeric table and code must move 2 → 4,
+and the support restriction must be explicit.
+
+**F2 MAJOR — UNGATED ACTION HYPOTHESIS.**  Theorem 4.1 and the orbit
+solver assume that every declared vertex automorphism preserves the
+candidate-map family.  The fixtures obey this, so every reported
+verdict/count survives, but the API accepts non-equivariant data and
+then filters moved families rather than acting by a group.  State the
+equivariance hypothesis; validate permutations, sizes, inverse closure
+and gauge closure before enumeration; add a negative control that the
+old solver would have silently classified.
+
+**F3 MAJOR — STABILITY SCOPE.**  The finite `Token` object carries
+value/provenance/occurrence/availability but no W3 stability criterion
+or record-preserving future dynamics.  The paper proves descent for
+**declared record tokens**; it applies to stable records only when W3/W6
+supplies that premise.  The abstract, scope, gravity consequence and
+conclusion must say so; Paper 2 alone cannot fill GW2 census object 3.
+
+**F4 MAJOR — CERTIFICATE NECESSITY OVERCLAIM.**  The paper proves that
+equal alphabets/marginals are insufficient and adopts common-extension
+and common-witness certificates.  It does not prove those certificates
+necessary or complete for an independently motivated fact semantics —
+its own Open Problem 8 says exactly that.  Replace "required" by the
+declared-criterion statement everywhere.
+
+**F5 MINOR — PROVENANCE WIRING.**  Section 2.4 requires candidate token
+maps to survive provenance, but the chart-isomorphism enumerator checks
+only value partitions.  Wire the existing provenance predicate into
+the enumerator and exercise it with a positive and negative control;
+the five-state counts are unchanged because its provenance is empty
+and matched.
+
+**F6 MINOR — FALSIFICATION SELF-TEST.**  The bundle has expected-value
+checks but no deliberate broken-anchor run.  Add a documented mutant
+mode, run it, require visible exit 1, then rerun the normal receipt
+twice.  Rendering and reference audits found no blocker.  **VERDICT:
+ACCEPT-WITH-FIXES.**  Paper 2 remains GREEN-UNREVIEWED; no v13 census
+may lean on it until the repair is independently rerun and terminalized.
