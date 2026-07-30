@@ -22,16 +22,15 @@ that made the rule.
   on your own initiative.
 - **Live state pointer:** read both `v12/LOG.md` and `v13/LOG.md` from their
   last entries backwards.  Paper 2 is terminal at v12 #46.  The user's
-  binding order is: GW2 regional-descent census → RQ0 regional causal arena
-  → RQ1a scalar → RQ1b Dirac → GR1 backreaction; Maxwell may accompany
-  early GR1 but precedes any general-matter universality claim.  GW2 is
-  GREEN-UNREVIEWED at v13 #9 with `GW2-BLOCKED-AT-1`: v10's regions belong to
-  the old supplied classical record carrier, while the live Barandes/W3–W6
-  lineage exports charts but no derived finite spacetime-region object.  No
-  descent equation was posed.  The next possible unit is a pinned Barandes
-  regionalization/RQ0a construction; it awaits the user's word.  No
-  RQ0/RQ1/GR1 construction may begin without its own committed pin and the
-  preceding gate.
+  binding order is: W6/Paper 2 record descent → RQ0 regional relativistic
+  arena → RQ1a scalar → RQ1b Dirac → GR1 backreaction; Maxwell may accompany
+  early GR1 but precedes any general-matter universality claim.  v13 #10
+  withdraws #9's `GW2-BLOCKED-AT-1` as a procedural misreading: the pin
+  authorized construction, not merely legacy inventory.  Clean-sheet RQ0 is
+  the active authorized unit under `v13/note-rq0-relativistic-arena-pin.md`.
+  The old census commit remains immutable historical evidence but carries no
+  live verdict.  No RQ1/GR1 construction may begin without its own committed
+  pin and the preceding gate.
 
 ## 1. The unit cycle
 

@@ -329,3 +329,32 @@ occurred.  Per the pin, Paper 0 is untouched by this unit.  The correctly typed
 successor would be a separately pinned Barandes regionalization/RQ0a unit with
 positive and negative adapter controls.  It is not authorized here.  No RQ0
 causal geometry, RQ1 field or GR1 dynamics has started.  **HALT.**
+
+## 2026-07-30 — FORWARD CORRECTION: #9'S GW2 VERDICT WITHDRAWN;
+## CLEAN-SHEET RQ0 CONSTRUCTION PINNED (v13 LEDGER #10)
+**GW2-BLOCKED-AT-1 WITHDRAWN — PROCEDURAL MISREADING.**
+The worker treated a new-theory construction unit as a legacy-corpus
+inventory. Absence from v10 does not block an object the pin authorized
+v13 to construct.
+
+Commit #9 and its files remain immutable in history; this entry supersedes its
+verdict rather than deleting, amending or silently rewriting it.  The error was
+not the scoped observation that v10's regional specifications use an older
+supplied classical carrier.  The error was treating that observation as a
+block after the GW2 pin had explicitly allowed each object to be **located or
+constructed with referent-gate discipline**.  “Not found” is no no-go theorem.
+
+The replacement pin, `note-rq0-relativistic-arena-pin.md`, re-founds the unit
+as a new v13 construction programme and states its controlling instruction:
+**CONSTRUCT RQ0; DO NOT SEARCH FOR A PRE-EXISTING RQ0.**  Its target is the
+new package `(Reg, R, ≺, μ, [g], Ref)`; it freezes five construction stages,
+the eleven user-mandated controls, a seven-rung outcome ladder, the four-gate
+worksheets, field/geometry no-smuggling kills, exact receipt discipline and the
+rule that `RQ0-BLOCKED-AT-REGION` requires a constructed candidate plus an
+actual no-go or underdetermination proof.  Legacy material is typed only as a
+lemma, fixture, control or benchmark, never as RQ0's inherited ontology.
+
+The v13 Paper 0 remains **[DRAFT]** and is unchanged.  This first correction
+commit freezes the pin before any new regional object is constructed.  RQ0 is
+now the active authorized unit; RQ1, H_a[N] and gravity dynamics remain out of
+scope.
