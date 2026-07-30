@@ -358,3 +358,36 @@ The v13 Paper 0 remains **[DRAFT]** and is unchanged.  This first correction
 commit freezes the pin before any new regional object is constructed.  RQ0 is
 now the active authorized unit; RQ1, H_a[N] and gravity dynamics remain out of
 scope.
+
+## 2026-07-30 — QUANTUM FACTUAL-BASE AMENDMENT PINNED; THE
+## UNCOMMITTED CLASSICAL DIAMOND PROTOTYPE REJECTED (v13 LEDGER #11)
+The user identified a second pre-delivery failure mode: a Boolean structural
+process plants a directed dependency pattern, so an intervention test can read
+that pattern back as “causality”; a diamond-tail recognizer can then return the
+planted 1+1 frame; generic W3 witnesses attached afterward do not make the
+substrate quantum.  **ADJUDICATED: CORRECT AND LOAD-BEARING.**  The prototype
+was never staged, committed, entered as a ledger result or delivered.  Its two
+untracked code files were removed and it earns no outcome.
+
+The binding amendment `note-rq0-quantum-substrate-amendment-pin.md` freezes six
+repairs.  **(1)** The primitive region excludes `R(D)`; accessible readouts are
+frozen first and occurrence/availability/algebras are derived by W3.
+**(2)** Availability is continuation-relative, separating historical,
+per-continuation and preserving-family algebras.  **(3)** the physical region
+is a quotient by configuration relabelling and Paper 1's
+composition-compatible boundary gauge; operationally inaccessible dormant
+matrix data cannot individuate it.  **(4)** full cut-coherence/`Δ^B` and the
+coarse record residual are typed separately, with cross-sector coherence—not
+an accidental nonzero sum—the primary eraser witness.  **(5)** the shared fact
+requires a constructed common-extension certificate, while exhaustive gauge
+isomorphism decides whether the three regional instruments are genuinely
+distinct.  **(6)** the causal successor starts by constructing localized
+subinstruments; process-composition direction is not relabelled relativistic
+causality.
+
+The replacement construction uses exact gauge-typed amplitude instrument
+families containing write, preserving, erasing and control continuations.  It
+is capped at **`RQ0-FACT-DESCENT`**.  Token groupoids may be measured, but no
+causal/groupoid-geometric/conformal arena, volume, field or gravity claim is
+authorized.  Paper 0 remains **[DRAFT]** and unchanged.  Construction begins
+only after this amendment is committed.

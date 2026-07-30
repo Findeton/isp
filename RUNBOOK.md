@@ -27,7 +27,13 @@ that made the rule.
   early GR1 but precedes any general-matter universality claim.  v13 #10
   withdraws #9's `GW2-BLOCKED-AT-1` as a procedural misreading: the pin
   authorized construction, not merely legacy inventory.  Clean-sheet RQ0 is
-  the active authorized unit under `v13/note-rq0-relativistic-arena-pin.md`.
+  the active authorized unit under `v13/note-rq0-relativistic-arena-pin.md`,
+  narrowed by `v13/note-rq0-quantum-substrate-amendment-pin.md`: records are
+  derived continuation-relatively from the region's own gauge-typed amplitude
+  instrument; shared fact needs a common-extension certificate; the first
+  pass is capped at `RQ0-FACT-DESCENT`.  Classical DAG/diamond geometry is a
+  later held-out benchmark only after a locality-first quantum influence
+  instrument is separately pinned and frozen.
   The old census commit remains immutable historical evidence but carries no
   live verdict.  No RQ1/GR1 construction may begin without its own committed
   pin and the preceding gate.
