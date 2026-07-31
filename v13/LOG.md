@@ -1984,3 +1984,139 @@ immutable and **GREEN-UNREVIEWED under a frozen hostile rejection**.  No
 repair, terminal claim, topology unit, influence unit, causal reconstruction,
 geometry, field or gravity work is authorized before that adjudication is
 committed.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 HOSTILE REJECTION ADJUDICATED:
+## EXACT WITNESS SURVIVES; NO TERMINAL L0 RUNG; REPAIR AWAITS USER
+## (v13 LEDGER #40)
+The frozen report at #39 has been checked directly against the immutable pin,
+commit chronology, estimator, fixtures, scorer, note and receipts.  The
+`REJECT` verdict is adopted.  Neither `RQ0-LOCAL-ATLAS` nor
+`RQ0-LOCALIZATION-GROUPOID` is terminalized or retained as a live citable
+rung.  Commit #37 and its `GREEN-UNREVIEWED` self-description remain immutable
+historical evidence; no old file or ledger entry is rewritten.
+
+The rejection is not a numerical failure.  The adjudicator independently ran
+the full executable twice.  Both runs exit 0 with `54/54`; the evidence-
+producing run regenerates the committed text and JSON receipts byte-for-byte,
+at SHA-256 `6613cac5...c853b7` and `8ebefb2a...154f1`.  The four invalid quick
+modes exit 1 with no scientific rung, and the valid unavailable-composition
+mode exits 0 at `RQ0-L0-BLOCKED-AT-ADDRESS`.  Static exactness and ancestry
+checks pass.  The report's independent rebuild additionally confirms every
+load-bearing finite count listed at #39.
+
+**F1 / UNSEEN-COMPOSITION PROVENANCE ACCEPTED.**  Direct AST comparison of
+the retired #35 and final #37 fixture files returns identical hashes for
+`s3_elements`, `triple_elements`, `triple_multiply` and `MainTruth`.  The final
+fixture changes local amplitude representations, global encoding, phases and
+handles, but the abstract 216-class `S3^3` composition object, `(6,6,6)` factor
+truth and proper-Boolean atlas truth were already open before estimator v3 was
+frozen.  The #36 ledger's narrower phrase "new encoding/amplitude contents"
+describes what changed; it cannot silently discharge the strict #31 pin's
+genuinely unseen-fixture gate.  This is fatal to terminal certification because
+the factor search reads precisely that already-opened composition object.
+
+**F2 / INDEPENDENT-SELECTION GATE ACCEPTED, WITH MAIN-WITNESS SCOPE.**  Source
+inspection finds `independently_selectable` only in the operation type,
+generator validation, quotient-class storage and inaccessible-support adapter;
+the direct-factor search never reads the class flag.  The adjudicator
+reproduces the report's exact `S3 x C2` mutant: all six bit-one operations are
+marked composite-only and the generator list is reduced to the two selectable
+`S3` generators, yet the estimator returns two finest `(2,6)` factorizations
+and `blocked_at_address = false`.  Thus the generic pinned addressability
+discriminator is unsound.  Separately, all 216 operations in the main fixture
+are marked independently selectable, so its particular faithful direct-product
+existence result remains exact.
+
+**F3 / REGIONAL AND RECORD MAP TYPES ACCEPTED.**  Dataclass inspection gives:
+`AlgebraInclusion = (source_atoms, target_atoms, source_dimension,
+target_dimension, columns)` and `RecordPullback = (larger_atoms,
+smaller_atoms, record_maps)`.  Exact algebra-coordinate inclusions and their
+composition are real.  The pin additionally requires executable maps on
+operational classes, composition rows, preparations, contexts and readouts;
+none is represented.  A direct mutant with identical projectors and a renamed
+record handle raises `ValueError: record projector is not an exact pullback`,
+so the record assignment is handle-dependent rather than a general
+projector/Boolean-algebra homomorphism.  The twisted control reverses one
+projector tuple and rejects that single map during construction; it does not
+build pairwise-valid maps whose triple loop fails.  Pin kill condition 6
+therefore fires for both positive rungs.
+
+**F4 / RECEIPT MUTANTS ACCEPTED WITH ONE PRESERVATION.**  The ordinary outcome
+resolver is source-audit fail-closed: every positive rung depends on
+`all_pass`, exceptions emit structured invalid output, and no outcome exits 1.
+That survives.  The advertised `mutate-anchor`, `mutate-science` and
+`no-outcome` modes, however, print prewritten invalid JSON without mutating and
+rerunning the full prerequisite graph; the malformed branch calls one
+validator only.  They test dedicated response branches, not end-to-end receipt
+falsification.  `A5` also aggregates checks later repeated as C18–C22, and S1
+aggregates atlas predicates counted again by S10–S14.  The headline numbers are
+unchanged; the claimed falsification coverage is withdrawn.
+
+**F5 / RECORDLESS AMBIGUITY ACCEPTED.**  Exact rerun returns three finest `V4`
+factorizations, 72 carrier-relabelled arrows and all nine source/target pairs.
+It also returns atlas object counts `(0,0,0)` and
+`has_positive_localization = false`, because the ambiguity fixture has no
+record candidates.  This is a genuine algebraic localization groupoid control,
+not a record-bearing localization groupoid and cannot discharge the positive
+groupoid rung's full obligation.
+
+**F6 / COLLAPSE SCOPE ACCEPTED.**  On the public control exactly one row changes
+from `IMPLEMENTED` to `COLLAPSED` while its result remains `u003`; the collapsed
+core has `total_implemented = false`, zero candidate tests and zero finest
+factorizations.  The main control uses the same mechanism in two ordered rows.
+It validly measures rejection of a declared collapsed status, but the
+estimator returns before any multiplication-map collision test.  The sentence
+"faithfulness fails" is therefore too strong.
+
+**F7 / `Comp_D` ROW TYPE ACCEPTED AS A NARROWER IMPLEMENTATION.**  Exact
+dataclass inspection gives
+`CompositionRow = (left, right, context, status, result)`.  For non-unavailable
+rows the estimator recomputes the input matrix product and checks its accessible
+signature against the result class.  This is substantive and all 46,656 main
+rows pass; it is not the pin's independently supplied row law
+`(a,b,tau,s,c,M)`.  The narrower matrix-product first rung must be forward-
+pinned explicitly or the missing `M` implemented.
+
+**F8–F9 / WORDING AND GAUGE SCOPE ACCEPTED.**  `build_atlas` creates every
+nonempty proper subset of the recovered three factors and computes higher
+meets directly, not by clique completion.  The exact `6/9/3` incidence and
+empty universal core survive only as the complete proper Boolean-product
+lattice, not a selectively learned irregular nerve.  Gauge scope separates
+global `mu_24` operation-signature normalization from the full-dataset test
+under a carrier permutation with diagonal `mu_8` phases; no full `U(1)` claim
+is allowed.
+
+**SURVIVING EXACT PACKAGE.**  The following remain valid calibration results:
+the exact `Q(zeta_24)` engine; the 216-class, 46,656-row total composition
+object; 38 normal subobjects and 19 factor tests; the unique faithful
+`(6,6,6)` main decomposition; factor-algebra dimensions `(4,4,4)`, scalar
+intersections, commuting factors and collision-free 216-element image; order-
+three and nonabelian controls; all three W3 seams; six distinct record-bearing
+proper products; exact algebra-coordinate inclusions; the proper-Boolean
+`6/12/9/3` incidence; empty universal core; the remove-one-record obstruction;
+three algebraic ambiguity factorizations and 72 arrows; the exhaustive
+`24/1/0` bridge classifications; finite gauge covariance; 180/216 physical-
+phase changes with unchanged W3 decisions; exact arithmetic; deterministic
+receipts; and every spatial, causal, relativistic, field and gravity nonclaim.
+
+**CURRENT LIVE STATUS:** no terminal scientific L0 rung.  The positive
+headlines are not citable.  Unlike #30's predecessor rejection, this entry does
+*not* adopt `RQ0-L0-BLOCKED-AT-ADDRESS`: the fully accessible main fixture
+genuinely contains exact address factors, so the failure is certification,
+typing and anti-tailoring rather than a construction/no-go at addressability.
+No alternative unpinned positive verdict is invented.
+
+The bounded scientific successor is now known but not authorized.  A
+forward-only repair must begin with a new strict pin, freeze a new estimator
+before a genuinely new *abstract composition object* exists, enforce generation
+by independently selectable classes, either implement the full row law `M` or
+pin the narrower matrix-product type, construct full `RegAddr` arrows and
+handle-invariant projector-algebra `Rec` maps, add a pairwise-valid twisted
+triple, make the ambiguity fixture record-bearing or narrow its role, separate
+status discrimination from true multiplication collapse, and replace quick
+branches with end-to-end receipt mutants.  The new composition fixture may not
+be another representation or encoding of `S3^3`.
+
+That repair cycle awaits the user's explicit go-ahead.  Until then no new pin,
+estimator, fixture, `RQ0-T1`, `RQ0-C1`, causal reconstruction, geometry, field
+or gravity work is authorized.  **HALT.**

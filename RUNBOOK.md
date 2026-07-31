@@ -199,7 +199,15 @@ that made the rule.
   selectability gate, and incomplete `RegAddr`/`Rec` maps—plus receipt/control
   deficiencies.  These are hostile findings, not yet adjudicated facts.  The
   next event is independent adjudication; L0 remains nonterminal and both T1
-  and C1 remain prohibited.
+  and C1 remain prohibited.  v13 #40 adjudicates and accepts the rejection.
+  Every headline finite number survives, and the fully selectable main fixture
+  genuinely has exact direct factors, so `RQ0-L0-BLOCKED-AT-ADDRESS` is not
+  conferred.  Nevertheless neither positive pre-registered rung is live or
+  citable: the strict unseen-composition gate failed, independent selection is
+  not enforced generically, and the regional/record arrows miss their pinned
+  types.  A forward repair requires a new strict pin, a new estimator freeze
+  and a genuinely new abstract composition fixture.  That cycle awaits the
+  user's explicit go-ahead; T1 and C1 remain prohibited.
 
 ## 1. The unit cycle
 
