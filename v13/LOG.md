@@ -1521,3 +1521,68 @@ before any new fixture truth exists.
 No repair code may be written before that pin.  `RQ0-C1`, causal order,
 geometry, fields, gravity and deformation dynamics remain unpinned and
 prohibited.  **HALT.**
+
+## 2026-07-30 — RQ0-L0 ADDRESSABILITY REPAIR PIN FROZEN:
+## `Comp_D`, GENERATOR INVARIANCE, RECORD-COMPLETE ATLAS (v13 LEDGER #31)
+The strict forward-repair pin is
+`note-rq0-operational-localization-addressability-repair-pin.md`, SHA-256
+`8135a0c9f358c86384d0d248a7cbf99131095656b5e61c06c8d49d0f62175fe3`
+(28,990 bytes).  It is bound to the double hostile rejection adjudicated at
+#30 and preserves the failed #24–#26 surface without edit.  This commit freezes
+definitions, controls, scopes and outcomes only; it constructs no repaired
+estimator or scientific result.
+
+The repaired primitive adds the missing flat typed `Comp_D` table.  Each
+ordered operation pair has a boundary/context type, an exact status
+`IMPLEMENTED`, `UNAVAILABLE` or `COLLAPSED`, a result class when one exists, and
+an exact amplitude law.  Equal operational signatures must also induce a
+congruence on all composition rows; otherwise the access contract is
+underdetermined.  An unavailable row may not be replaced by a synthetic matrix
+product.
+
+The estimator target is now the complete finite quotient composition object,
+not a partition of primitive generators.  Equivalent generating surfaces,
+aliases, circuit words and redundant admitted composites must yield isomorphic
+localization categories.  A positive complement requires mixed joint
+implementation in both orders, exact law commutation, an injective
+multiplication map after the declared gauge/center quotient, closure, trivial
+typed intersection, the represented-algebra product theorem, and stability
+under restriction.
+
+Every object counted toward either positive L0 rung and every claimed nonempty
+overlap must carry a nonempty independently derived W3 record algebra.  The
+pin separates executable `RegAddr`, `FactIface`, and contravariant `Rec` types;
+regional restrictions, algebra maps, projector pullbacks, composition and a
+nonvacuous triple law must be checked as maps rather than handles or incidence
+tuples.  A genuine ambiguity fixture must contain several finest
+factorizations discovered from the composition object without a supplied swap,
+and the groupoid outcome must retain them all.
+
+All review failures are native mandatory controls: identical-matrix `D+` and
+`D-` composition worlds; the exact changed-generator and redundant-composite
+mutants; a collapsed multiplication map; C10 record completeness; genuine
+ambiguity; coherent and twisted typed descent; full-dataset gauge and physical
+phase variants; inaccessible, active and non-joint spectators; an irreducible
+process; computed same-carrier equal-law bridge/no-bridge searches; non-star
+record-bearing overlaps; handle-renaming and hard-coded-truth mutants; and
+anchor, scientific-gate, no-outcome, malformed and cap fail-closed receipts.
+
+The only scientific outcomes remain `RQ0-L0-BLOCKED-AT-ADDRESS`,
+`RQ0-LOCALIZATION-GROUPOID`, and `RQ0-LOCAL-ATLAS`.
+`RQ0-L0-INVALID` is procedural and exits 1 with no scientific rung.  A valid
+substantive negative exits 0.  Positive scopes are capped at carrier dimension
+64, 216 quotient classes, 46,656 binary composition rows, 50,000 candidate
+subobjects, 100,000 bridge candidates and 360 seconds per complete receipt.
+
+The new generic estimator must be created only at
+`code/rq0_l0_addressability_estimator_exact.py` and committed/source-hashed
+before the new fixture and scorer paths exist.  Its future main fixture must be
+outside the old Pauli-tensor calibration family, include an order-three
+operation and a nonabelian local composition component, and use a declared
+exact cyclotomic field; `Q(zeta_24)` is explicitly admissible.  If the new
+estimator changes after that truth opens, another unseen fixture is required.
+
+The next authorized event is the new estimator-freeze commit, with public
+calibrations only.  No fixture truth, repair delivery, `RQ0-C1`, causal,
+geometric, field, gravity or deformation work may begin in that stage.
+**HALT.**

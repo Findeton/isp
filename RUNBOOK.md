@@ -139,7 +139,12 @@ that made the rule.
   A fresh-estimator/unseen-fixture L0 repair cycle is authorized, but it must
   begin with a new strict repair pin and may not edit or rescore the frozen #25
   estimator against the opened #26 fixture.  C1 and all later units remain
-  prohibited.
+  prohibited.  v13 #31 freezes that repair pin.  It makes a typed flat
+  `Comp_D` table and composition congruence primitive to the operational access
+  contract, requires localization of the quotient composition object rather
+  than a supplied generator list, converts every hostile counterexample into a
+  mandatory control, and demands a record-bearing, map-typed atlas.  A new
+  estimator path must be committed before a new non-Pauli main fixture exists.
 
 ## 1. The unit cycle
 
