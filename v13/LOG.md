@@ -1522,6 +1522,34 @@ No repair code may be written before that pin.  `RQ0-C1`, causal order,
 geometry, fields, gravity and deformation dynamics remain unpinned and
 prohibited.  **HALT.**
 
+## 2026-07-31 — FRESH EXTERNAL HOSTILE REVIEW DISPATCHED AGAINST THE
+## COMPUTATIONAL-CERTIFICATION CHAIN (v13 LEDGER #52)
+A new repo-read-only hostile reviewer is now running against the immutable
+successor pin `605761b`, estimator/public freeze `d881a3e`, freeze attestation
+`59011af`, pre-run fixture/scorer commit `b9e574a`, and one-shot green delivery
+`1b3ffb7`.  The reviewer may write independent scratch code only under
+`/tmp`; it may not edit, stage or commit repository files, import the delivery
+implementation into its independent rebuild, repair findings, or start any
+successor unit.
+
+The dispatch requires independent verification of chronology and no-tailoring;
+the finite proof and pruning/cache/backend equivalences; the actual order-144
+group and amplitude representation; every normal subobject/direct complement
+and P1–P8 certificate; full `RegAddr`, W3, `FactIface` and `Rec` typing;
+the irregular regional/overlap counts; the full-instrument twisted triple;
+all public and official mutants; total outcome resolution; one-shot scoring;
+and every sentence in the delivery note.  It must distinguish mathematical
+counterexamples from wording/receipt defects and return a ranked
+`ACCEPT`/`ACCEPT-WITH-FIXES`/`REJECT` report with an independent numbers table
+and terminal-rung recommendation.
+
+Until that complete report is returned, frozen verbatim and separately
+adjudicated, `RQ0-LOCAL-ATLAS` remains **GREEN-UNREVIEWED**, not terminal or
+citable.  No repair is authorized during review.  The estimator, proof,
+fixture, scorer and one official receipt remain immutable; a second score is
+forbidden.  `RQ0-T1`, `RQ0-C1`, topology, influence, causality, geometry,
+spacetime, fields and gravity remain prohibited.  **HALT.**
+
 ## 2026-07-30 — RQ0-L0 ADDRESSABILITY REPAIR PIN FROZEN:
 ## `Comp_D`, GENERATOR INVARIANCE, RECORD-COMPLETE ATLAS (v13 LEDGER #31)
 The strict forward-repair pin is

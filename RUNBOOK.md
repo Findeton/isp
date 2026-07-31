@@ -327,7 +327,14 @@ that made the rule.
   `da9886f4...28f4`.  No rerun occurred.  This is operational—not spatial or
   causal—localization and remains nonterminal.  The unit is halted for a fresh
   repo-read-only hostile round and separate adjudication; estimator, proof,
-  fixture and score cannot change, and T1/C1 remain prohibited.
+  fixture and score cannot change, and T1/C1 remain prohibited.  v13 #52
+  records that the fresh external repo-read-only hostile round is now running
+  against exact commits `605761b`, `d881a3e`, `59011af`, `b9e574a` and
+  `1b3ffb7`.  It must independently rebuild the order-144 quotient,
+  addressability certificates, full regional/factual maps, W3 seams, irregular
+  overlap counts, twisted triple, mutants, chronology and total resolver
+  without importing or editing the delivery.  The report must be frozen and
+  separately adjudicated before terminal status or any T1/C1 action.
 
 ## 1. The unit cycle
 
