@@ -2630,3 +2630,44 @@ the one-shot stopping rule forbids repair, replacement and rescore.  The next
 event is a separate source-checked adjudication.  `RQ0-T1`, `RQ0-C1`,
 topology, influence, causality, geometry, spacetime, fields and gravity
 remain prohibited.  **HALT.**
+
+## 2026-07-31 — COMPUTATIONAL-CERTIFICATION HOSTILE REVIEW ADJUDICATED:
+## CYCLE CLOSED `RQ0-L0-INVALID`; SCIENTIFIC OUTCOME NULL (v13 LEDGER #54)
+The separate adjudication is frozen at
+`note-rq0-operational-localization-computational-certification-adjudication.md`,
+SHA-256
+`61ab278f3b42e6244570696c3f47cd05c93167d4b107aab5cd382462ce0f6ea3`
+(8,513 bytes).  It accepts the #53 `REJECT` verdict and all seven ranked
+findings after direct source inspection, public-calibration counterexamples
+and a fresh execution of the reviewer's repo-independent exact rebuild.  The
+held-out scorer was not rerun.
+
+F1 is decisive: the order-144 object is nonisomorphic to the two forbidden
+antecedents, but its constructor directly derives from the opened order-192
+product template by retaining the first three cyclic factors and construction
+architecture while replacing `D4` by `S3`.  The order-only H005 gate measured
+nonisomorphism, not the pin's stronger non-derivation condition.
+
+F2–F5 are independently accepted.  A forged finest certificate with
+`passes=False` is admitted as `RQ0-LOCAL-ATLAS`; malformed selectability,
+gauge, readout and boundary inputs remain positive; `None` escapes cap
+handling and `NaN` disables it; the official worker contains declarative and
+positive-biased gates; and a duplicated-row pair map passes the supposedly
+full twisted-triple validator.  F6 narrows completeness to decompositions
+into two through eight proper normal direct factors under the caps.  F7's
+record, row-independence, path-count, physicality and control-coverage wording
+corrections are accepted forward-only.
+
+Accordingly the #51 provisional `GREEN-UNREVIEWED RQ0-LOCAL-ATLAS` headline
+is withdrawn.  This authorized cycle's final disposition is
+`RQ0-L0-INVALID`, scientific outcome null.  No terminal positive or negative
+scientific L0 rung is conferred.
+
+The exact order-144 law, representation, 70 normal subobjects, 36 direct-pool
+members, 14 certificates, unique finest `(2,3,4,6)` factorization and
+`10/31/31/64/64/3` synthetic regional/factual counts survive as opened
+regression evidence only.  The estimator, proof, fixture, scorer, receipt,
+delivery and hostile report remain immutable.  The stopping rule prohibits
+repair, replacement, rescore or an automatic new fixture cycle.  No successor
+L0 cycle is authorized.  `RQ0-T1`, `RQ0-C1`, topology, influence, causality,
+geometry, spacetime, fields and gravity remain prohibited.  **HALT.**

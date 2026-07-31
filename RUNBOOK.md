@@ -582,3 +582,13 @@ review supplies fail-open artifact/input counterexamples.  The report is
 evidence pending separate adjudication.  Frozen estimator, proof, fixture,
 scorer, receipt and delivery files remain immutable; no repair, replacement,
 second score, T1 or C1 is authorized.
+
+## 14. Current v13 RQ0-L0 disposition after adjudication
+
+V13 ledger #54 accepts the frozen hostile `REJECT` verdict.  The successor
+cycle is closed with procedural outcome `RQ0-L0-INVALID` and scientific
+outcome null.  Its order-144 calculation survives only as opened synthetic
+regression evidence: the fixture was derived from the public product template
+and public probes refuted the required fail-closed artifact/input guarantees.
+No frozen artifact may be repaired or rescored, no automatic L0 successor is
+authorized, and T1/C1 remain prohibited.
