@@ -109,9 +109,17 @@ that made the rule.
   `Q(zeta_8)` quotient/algebra/groupoid engine is source-hashed and now
   byte-frozen, with only public calibration models run.  No main fixture or
   expected overlap truth existed in that commit.  The next authorized action
-  is the separate fixture/scoring delivery, which may import the frozen
-  estimator but may not edit it.  No influence or causal relation is defined,
-  and C1 and every later unit remain unpinned.
+  was the separate fixture/scoring delivery at v13 #26; it imported but did
+  not edit the estimator.  That delivery is **GREEN-UNREVIEWED** at
+  `RQ0-LOCAL-ATLAS`: four encoded operational atoms yield 14 proper local
+  objects, 50 restrictions, a non-star pair/triple overlap nerve and coherent
+  W3 fact restrictions, with spectator, encoding, ambiguity, phase,
+  irreducibility and law-only controls.  The exact receipt is 56/56,
+  deterministic, and fail-closed under an observed-estimator-anchor mutant.
+  This is operational localization under a declared access postulate, not
+  spatial or causal localization.  The unit is halted pending its external
+  hostile round.  No influence or causal relation is defined, and C1 and every
+  later unit remain unpinned.
 
 ## 1. The unit cycle
 

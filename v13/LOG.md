@@ -1165,3 +1165,86 @@ to the scorer, and run the full mandatory controls.  Any edit to the frozen
 estimator after this ledger event invalidates the first fixture and requires a
 new estimator freeze plus a genuinely new unseen fixture.  No `RQ0-C1`,
 causal, geometric, field or gravity work is authorized.
+
+## 2026-07-30 — RQ0-L0 OPERATIONAL LOCALIZATION DELIVERED:
+## `RQ0-LOCAL-ATLAS`; 56/56; GREEN-UNREVIEWED; HALT (v13 LEDGER #26)
+The delivery note is `note-rq0-operational-localization.md`, SHA-256
+`89f038ca2521a9c65f476693743d2a4bb7536905d41d2164fba82486284d2778`.
+The fixture/truth module is `code/rq0_l0_fixtures_exact.py`, SHA-256
+`ada6dcbce2e9686b7ab45523cb8e8937a0c98cbae6504fd95092cf60aa7388f5`;
+the scorer/runner is `code/rq0_l0_operational_localization.py`, SHA-256
+`60a9819790b4c81ff76c04ef14b0bb2e0dedeb41a516ec884bd11eebdfb61988`.
+The canonical text and JSON receipts have SHA-256 values
+`0297ac85c85743eb5ef0dc15ca4fdb07acf421b142019cc256da3f4d671e5068`
+and `a073dd2da23d2236658b118ab3d0e19965ae12a1b5caafbac7e7ad1fc59144a5`.
+The estimator remains byte-identical to its earlier freeze commit #25,
+SHA-256
+`0b8d90bad735f6574ee367dd0bf7e98bcc1c6f2854f7a12070c82bae84e063b8`.
+
+**HIGHEST GREEN-UNREVIEWED RUNG: `RQ0-LOCAL-ATLAS`.**  On one exact finite
+`Q(zeta_8)` operational-access scope, the held-out scorer receives a globally
+encoded 16-state process with 48 preparations, 48 probes, one context, eight
+opaque intervention handles and six frozen record candidates.  The estimator
+constructs a 16-dimensional reachable support, retains eight distinct
+operational classes and generates an ambient intervention star-algebra of
+dimension 256.  It exhausts all `Bell(8) = 4140` generator partitions, retains
+14 nontrivial coarsenings and finds one finest four-atom factorization with
+algebra dimensions `(4,4,4,4)`.  Held-out truth matches all four opaque blocks,
+while none of the encoded atoms equals any displayed unencoded slot algebra.
+
+The complete nonempty proper-join lattice has 14 localized operational
+objects.  The delivery makes its category explicit: 14 identities plus every
+proper restriction, 50 arrows total, with exact composition closure.  Algebra-
+checked meets give 66 nonempty pair overlaps and 134 nonempty triple overlaps.
+Ten regions are record-bearing; their common atom intersection is empty and
+their pair meets realize ten distinct nonempty subregions, so the atlas is not
+one identical-core star.
+
+All six record witnesses are derived from their own exact amplitude dynamics.
+Each returns H-corr occurrence true, preserving H-avail true, erasing H-avail
+false, erasing cross-sector coherence count 2 and no-write H-corr false; all
+record laws are exactly fair.  A record attaches only when its projectors and
+write/preserve/erase/control arrows lie in the recovered local algebra.  The
+three regions `{0,1}`, `{0,1,2}` and `{0,1,3}` have common meet `{0,1}` of
+algebra dimension 16; three explicit record restrictions pull the same frozen
+`w0` projector family to that meet.  A separate `4 -> 8` fixed-carrier
+dimension obstruction prevents two equal-law fair W3 witnesses from being
+merged by law alone.
+
+All mandatory controls pass.  Two distinct circuit words give the same exact
+encoding.  A configuration relabelling plus `mu_8` phase produces exact
+conjugate data and conjugate recovered atom algebras.  An inaccessible
+eight-dimensional completion reduces to four accessible dimensions and leaves
+the localization signature unchanged, whereas an active accessible extension
+is recovered as a distinct noncommutative atom.  A generated `M4` process is
+not falsely split.  The symmetric control retains both identity and atom-swap
+groupoid arrows.  An uncompensated cyclotomic phase changes exactly 576 access-
+table cells but leaves its local atom algebra unchanged and never enters fact
+identity.  The truth-import mutant is detected statically.
+
+The canonical receipt has 56/56 classified falsifiable checks: 13 anchors, 8
+quotient, 13 localization, 10 overlap, 5 record, 5 control and 2 cap rows;
+semantic declarations contribute zero.  Two fresh complete builds, each
+rendered in both text and JSON, are byte-identical to each other and exactly
+regenerate the stored receipts.  A fresh full observed-estimator-anchor mutant
+returns 55/56, marks the receipt invalid, sets both positive rungs false, sets
+the highest outcome to null and exits 1.  Every complete suite remains below
+the pinned 240-second cap; raw wall time is excluded from the deterministic
+receipt.
+
+The scope qualifier is load-bearing.  This is a finite existence/recovery
+result under a separating operational-access postulate and a generator-subset
+search over at most eight classes.  Addressability and commutation are present
+in the operational algebra; the result does not derive locality from a bare
+amplitude matrix or select the access contract from first principles.  The
+implemented gauge is configuration relabelling times finite `mu_8`, not full
+`U(1)`.  The result does not enumerate every abstract subalgebra or establish
+generic emergence.
+
+No influence, signalling, screening, causal order, cone, spacelike relation,
+dimension, volume, Lorentzian geometry, special relativity, field, stress,
+gravity or deformation algebra is constructed.  The first unresolved object
+is an operational influence relation between recovered local subinstruments,
+but `RQ0-C1` remains unpinned.  Under freeze-on-delivery and HALT discipline,
+the files are now frozen pending an external hostile round.  No successor work
+is authorized by this green delivery.  **HALT.**

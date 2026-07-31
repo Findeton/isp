@@ -1,0 +1,52 @@
+==============================================================================
+v13 RQ0-L0 — OPERATIONAL LOCALIZATION EXACT RECEIPT
+==============================================================================
+receipt valid: True
+status: GREEN-UNREVIEWED
+mutation: None
+checks: 56/56
+source hashes: {'estimator': '0b8d90bad735f6574ee367dd0bf7e98bcc1c6f2854f7a12070c82bae84e063b8', 'fixtures': 'ada6dcbce2e9686b7ab45523cb8e8937a0c98cbae6504fd95092cf60aa7388f5', 'runner': '60a9819790b4c81ff76c04ef14b0bb2e0dedeb41a516ec884bd11eebdfb61988'}
+
+EXACT SEARCH
+  scalar ring: Q(zeta_8)
+  carrier/access: 16/16
+  intervention classes: 8
+  partitions: 4140
+  runtime below cap / cap ns: True / 240000000000
+
+MEASURED LOCALIZATION
+  ambient algebra dimension: 256
+  valid / finest factorizations: 14 / 1
+  local objects: 14
+  nonempty pair / triple overlaps: 66 / 134
+  record-bearing regions: 10
+  fact triple: [[0, 1], [0, 1, 2], [0, 1, 3]]
+
+OUTCOMES
+  RQ0-L0-BLOCKED-AT-ADDRESS: False
+  RQ0-LOCALIZATION-GROUPOID: True
+  RQ0-LOCAL-ATLAS: True
+  highest: RQ0-LOCAL-ATLAS
+
+CHECK GROUPS
+  anchors: 13/13
+  caps: 2/2
+  controls: 5/5
+  localization: 13/13
+  overlap: 10/10
+  quotient: 8/8
+  records: 5/5
+
+FIRST UNRESOLVED OBSTRUCTION
+  localized operational intervention classes exist, but no influence or screening relation between them has been defined
+
+NONCLAIMS
+  - no influence or signalling relation
+  - no causal order or cone
+  - no spacelike separation
+  - no dimension or volume reconstruction
+  - no Lorentzian or special-relativity result
+  - no field, stress, gravity, or deformation-algebra result
+  - no full U(1) gauge implementation
+  - no claim to enumerate all abstract subalgebras beyond the frozen generator-subset scope
+  - no claim of independent blind authorship for the fixture
