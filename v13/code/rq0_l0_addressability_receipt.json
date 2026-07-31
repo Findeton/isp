@@ -1,46 +1,2042 @@
 {
-  "unit": "RQ0-L0 addressability repair",
-  "attempt": "second held-out fixture after estimator v2 freeze",
-  "status": "RQ0-L0-INVALID",
-  "scientific_outcome": null,
-  "invalid_reason": "complete exact encoded suite exceeded the frozen 360-second runtime cap",
-  "frozen_estimator": {
-    "commit": "36290ef",
-    "sha256": "124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde"
+  "check_summary": {
+    "anchor": {
+      "passed": 5,
+      "total": 5
+    },
+    "control": {
+      "passed": 25,
+      "total": 25
+    },
+    "receipt": {
+      "passed": 5,
+      "total": 5
+    },
+    "scientific": {
+      "passed": 19,
+      "total": 19
+    }
   },
-  "fixture": {
-    "sha256": "107b7dc7d8d5b5f51020da5f3fc071631e1bd8930c3bb1dcf1d86a28665e18de",
-    "family": "globally encoded exact monomial S3 x S3 x S3 amplitude instrument",
-    "field": "Q(zeta_24) modulo x^8-x^4+1",
+  "checks": [
+    {
+      "category": "anchor",
+      "handle": "A1-estimator-hash",
+      "measured": "7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1",
+      "passed": true
+    },
+    {
+      "category": "anchor",
+      "handle": "A2-pin-hash",
+      "measured": "8135a0c9f358c86384d0d248a7cbf99131095656b5e61c06c8d49d0f62175fe3",
+      "passed": true
+    },
+    {
+      "category": "anchor",
+      "handle": "A3-fixture-locks-estimator",
+      "measured": "7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1",
+      "passed": true
+    },
+    {
+      "category": "anchor",
+      "handle": "A4-estimator-api",
+      "measured": "rq0-l0-addressability-v3",
+      "passed": true
+    },
+    {
+      "category": "anchor",
+      "handle": "A5-public-calibrations",
+      "measured": "15/15",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S1-main-positive",
+      "measured": "('generator-independent direct-product addressability found',)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S2-one-finest-factorization",
+      "measured": "1",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S3-factor-orders",
+      "measured": "(6, 6, 6)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S4-factor-algebras",
+      "measured": "(4, 4, 4)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S4b-faithful-product-map",
+      "measured": "(True, 216, 216)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S5-truth-scored-after-construction",
+      "measured": "recovered factor sets compared after estimator return",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S6-order-three",
+      "measured": "searched all quotient classes",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S7-nonabelian",
+      "measured": "searched quotient multiplication table",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S8-product-cache-authenticated",
+      "measured": "216",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S9-three-W3-seams",
+      "measured": "(True, True, True)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S10-six-regions",
+      "measured": "6",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S11-C10-record-complete",
+      "measured": "(((0,), ('w1',)), ((1,), ('w0',)), ((2,), ('w2',)), ((0, 1), ('w0', 'w1')), ((0, 2), ('w1', 'w2')), ((1, 2), ('w0', 'w2')))",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S12-overlap-closed",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S13-typed-algebra-category",
+      "measured": "(True, 12)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S14-record-functor",
+      "measured": "(True, 12)",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S15-pair-overlaps",
+      "measured": "9",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S16-triple-overlaps",
+      "measured": "((((0,), (0, 1), (0, 2)), (0,)), (((1,), (0, 1), (1, 2)), (1,)), (((2,), (0, 2), (1, 2)), (2,)))",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S17-non-star",
+      "measured": "[]",
+      "passed": true
+    },
+    {
+      "category": "scientific",
+      "handle": "S18-twisted-projector-rejected",
+      "measured": "changed projector image fails exact pullback",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C1-recordless-candidate-excluded",
+      "measured": "(5, False)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C2-handle-row-isomorphism",
+      "measured": "216",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C3-renamed-full-estimator",
+      "measured": "(8, (((6, 6, 6), (4, 4, 4)),), ((6, ((4, 1), (4, 1), (4, 1), (16, 2), (16, 2), (16, 2)), 12, 9, 3),), 1)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C4-generator-list-mutant-detected",
+      "measured": "(True, False)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C5-handle-branch-mutant-detected",
+      "measured": "('held-out-addressability-main', 'renamed-generator-presentation')",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C6-full-gauge-conjugacy",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C7-gauge-full-estimator",
+      "measured": "(8, (((6, 6, 6), (4, 4, 4)),), ((6, ((4, 1), (4, 1), (4, 1), (16, 2), (16, 2), (16, 2)), 12, 9, 3),), 1)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C8-gauge-omitted-field-mutant",
+      "measured": "record-field mutation detected",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C9-physical-phase-conjugacy",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C10-physical-signatures-change",
+      "measured": "180",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C11-phase-not-fact-criterion",
+      "measured": "(True, True, True)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C12-Dplus-Dminus-identical-matrices",
+      "measured": "2",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C13-Dminus-blocks-through-CompD",
+      "measured": "('UNAVAILABLE', 'UNAVAILABLE')",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C14-collapse-identical-matrices",
+      "measured": "('COLLAPSED', 'COLLAPSED')",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C15-genuine-ambiguity",
+      "measured": "3",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C16-derived-groupoid-arrows",
+      "measured": "(72, [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2)])",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C17-irreducible-not-split",
+      "measured": "('no faithful jointly implemented direct factorization',)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C18-inaccessible-spectator-quotiented",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C19-active-spectator-survives",
+      "measured": "((2, 6), (2, 6))",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C20-nonjoint-active-blocks",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C21-redundant-composite-invariant",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C22-public-generator-change-invariant",
+      "measured": "True",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C23-equal-record-laws",
+      "measured": "((('(1/2)*1', '(1/2)*1'),), (('(1/2)*1', '(1/2)*1'),), (('(1/2)*1', '(1/2)*1'),))",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C24-positive-structural-bridge",
+      "measured": "(24, 24, 1)",
+      "passed": true
+    },
+    {
+      "category": "control",
+      "handle": "C25-equal-law-no-bridge",
+      "measured": "(24, 0, 'exhaustive S4 carrier permutations')",
+      "passed": true
+    },
+    {
+      "category": "receipt",
+      "handle": "R-mutate-anchor",
+      "measured": "(1, '{\"reason\": \"estimator anchor mismatch\", \"scientific_outcome\": null, \"status\": \"RQ0-L0-INVALID\"}')",
+      "passed": true
+    },
+    {
+      "category": "receipt",
+      "handle": "R-mutate-science",
+      "measured": "(1, '{\"observed_public_factorizations\": 2, \"reason\": \"deliberately corrupted scientific addressability gate\", \"scientific_outcome\": null, \"status\": \"RQ0-L0-INVALID\"}')",
+      "passed": true
+    },
+    {
+      "category": "receipt",
+      "handle": "R-no-outcome",
+      "measured": "(1, '{\"reason\": \"outcome resolver returned no rung\", \"scientific_outcome\": null, \"status\": \"RQ0-L0-INVALID\"}')",
+      "passed": true
+    },
+    {
+      "category": "receipt",
+      "handle": "R-malformed",
+      "measured": "(1, '{\"reason\": \"carrier dimension violates the frozen cap\", \"scientific_outcome\": null, \"status\": \"RQ0-L0-INVALID\"}')",
+      "passed": true
+    },
+    {
+      "category": "receipt",
+      "handle": "R-valid-negative",
+      "measured": "(0, '{\"reason\": [\"composition object has unavailable or collapsed rows\", \"addressability blocked by missing, unavailable, or collapsed composition\"], \"scientific_outcome\": \"RQ0-L0-BLOCKED-AT-ADDRESS\", \"status\": \"RQ0-L0-BLOCKED-AT-ADDRESS\"}')",
+      "passed": true
+    }
+  ],
+  "controls": {
+    "Dminus_changed_rows": 2,
+    "Dminus_rows": [
+      {
+        "left": "k073",
+        "result": null,
+        "right": "k151",
+        "status": "UNAVAILABLE"
+      },
+      {
+        "left": "k151",
+        "result": null,
+        "right": "k073",
+        "status": "UNAVAILABLE"
+      }
+    ],
+    "ambiguity_arrows": 72,
+    "ambiguity_factorizations": 3,
+    "bridge_search_scope_each": 24,
+    "collapse_changed_rows": 2,
+    "collapse_rows": [
+      {
+        "left": "k073",
+        "result": "k187",
+        "right": "k151",
+        "status": "COLLAPSED"
+      },
+      {
+        "left": "k151",
+        "result": "k187",
+        "right": "k073",
+        "status": "COLLAPSED"
+      }
+    ],
+    "gauge_full_signature": [
+      8,
+      [
+        [
+          [
+            6,
+            6,
+            6
+          ],
+          [
+            4,
+            4,
+            4
+          ]
+        ]
+      ],
+      [
+        [
+          6,
+          [
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ],
+          12,
+          9,
+          3
+        ]
+      ],
+      1
+    ],
+    "negative_bridge_candidates": 0,
+    "negative_bridge_permutations": [],
+    "physical_signature_changes": 180,
+    "positive_bridge_candidates": 24,
+    "positive_bridge_permutations": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        0,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        0,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        1,
+        3,
+        0,
+        2
+      ],
+      [
+        1,
+        3,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        0,
+        3,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        1,
+        3,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        1
+      ],
+      [
+        2,
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        0,
+        2,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        2
+      ],
+      [
+        3,
+        1,
+        2,
+        0
+      ],
+      [
+        3,
+        2,
+        0,
+        1
+      ],
+      [
+        3,
+        2,
+        1,
+        0
+      ]
+    ],
+    "positive_bridge_record_flags": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "recordless_region_count": 5,
+    "renamed_full_signature": [
+      8,
+      [
+        [
+          [
+            6,
+            6,
+            6
+          ],
+          [
+            4,
+            4,
+            4
+          ]
+        ]
+      ],
+      [
+        [
+          6,
+          [
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              16,
+              2
+            ],
+            [
+              16,
+              2
+            ]
+          ],
+          12,
+          9,
+          3
+        ]
+      ],
+      1
+    ]
+  },
+  "first_unresolved_obstruction": "define operational influence between localized record-bearing subinstruments without importing temporal, circuit-wire, graph or spatial order",
+  "inherited": [
+    "v12 Paper 1 W3 occurrence/availability record criteria",
+    "v12 Paper 2 fact identity is structural and phase-blind",
+    "v13 terminal finite RQ0-A fact descent",
+    "v13 #31 four-gate and no-smuggling repair pin"
+  ],
+  "legacy_use": {
+    "estimator_public_models": "calibration, controls and benchmarks only",
+    "v10_or_earlier": "none",
+    "v12_paper1": "inherited W3 theorem/decision procedure",
+    "v12_paper2": "inherited structural fact-identity discipline",
+    "v13_33_and_35": "retired timing/calibration fixtures only; never rescored"
+  },
+  "main": {
+    "algebra_restrictions": [
+      {
+        "source": [
+          0
+        ],
+        "source_dimension": 4,
+        "target": [
+          0
+        ],
+        "target_dimension": 4
+      },
+      {
+        "source": [
+          0
+        ],
+        "source_dimension": 4,
+        "target": [
+          0,
+          1
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          0
+        ],
+        "source_dimension": 4,
+        "target": [
+          0,
+          2
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          1
+        ],
+        "source_dimension": 4,
+        "target": [
+          1
+        ],
+        "target_dimension": 4
+      },
+      {
+        "source": [
+          1
+        ],
+        "source_dimension": 4,
+        "target": [
+          0,
+          1
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          1
+        ],
+        "source_dimension": 4,
+        "target": [
+          1,
+          2
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          2
+        ],
+        "source_dimension": 4,
+        "target": [
+          2
+        ],
+        "target_dimension": 4
+      },
+      {
+        "source": [
+          2
+        ],
+        "source_dimension": 4,
+        "target": [
+          0,
+          2
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          2
+        ],
+        "source_dimension": 4,
+        "target": [
+          1,
+          2
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          0,
+          1
+        ],
+        "source_dimension": 16,
+        "target": [
+          0,
+          1
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          0,
+          2
+        ],
+        "source_dimension": 16,
+        "target": [
+          0,
+          2
+        ],
+        "target_dimension": 16
+      },
+      {
+        "source": [
+          1,
+          2
+        ],
+        "source_dimension": 16,
+        "target": [
+          1,
+          2
+        ],
+        "target_dimension": 16
+      }
+    ],
+    "aliases": [],
+    "candidate_tests": 19,
     "carrier_dimension": 8,
-    "raw_operations": 216,
+    "composition_congruence": true,
     "composition_rows": 46656,
-    "record_candidates": 3,
+    "composition_status_counts": {
+      "COLLAPSED": 0,
+      "IMPLEMENTED": 46656,
+      "UNAVAILABLE": 0
+    },
+    "direct_product_collisions": 0,
+    "direct_product_faithful": true,
+    "direct_product_image": 216,
+    "factor_algebra_dimensions": [
+      4,
+      4,
+      4
+    ],
+    "factor_class_sets": [
+      [
+        0,
+        1,
+        18,
+        19,
+        36,
+        37
+      ],
+      [
+        0,
+        7,
+        13,
+        163,
+        168,
+        175
+      ],
+      [
+        0,
+        9,
+        17,
+        111,
+        114,
+        125
+      ]
+    ],
+    "factor_orders": [
+      6,
+      6,
+      6
+    ],
+    "finest_factorizations": 1,
+    "generator_classes": [
+      1,
+      13,
+      17,
+      19,
+      114,
+      168
+    ],
+    "groupoid_arrows": [
+      {
+        "atom_map": [
+          0,
+          1,
+          2
+        ],
+        "carrier_permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "source": 0,
+        "target": 0
+      }
+    ],
+    "identity_class": 0,
+    "normal_subobjects": 38,
+    "pair_overlaps": [
+      {
+        "meet": [
+          0
+        ],
+        "objects": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "meet": [
+          0
+        ],
+        "objects": [
+          [
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          1
+        ],
+        "objects": [
+          [
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "meet": [
+          1
+        ],
+        "objects": [
+          [
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          2
+        ],
+        "objects": [
+          [
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          2
+        ],
+        "objects": [
+          [
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          0
+        ],
+        "objects": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          1
+        ],
+        "objects": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          2
+        ],
+        "objects": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    ],
+    "quotient_class_members": [
+      [
+        "k037"
+      ],
+      [
+        "k151"
+      ],
+      [
+        "k041"
+      ],
+      [
+        "k155"
+      ],
+      [
+        "k147"
+      ],
+      [
+        "k045"
+      ],
+      [
+        "k079"
+      ],
+      [
+        "k181"
+      ],
+      [
+        "k083"
+      ],
+      [
+        "k185"
+      ],
+      [
+        "k189"
+      ],
+      [
+        "k075"
+      ],
+      [
+        "k007"
+      ],
+      [
+        "k109"
+      ],
+      [
+        "k011"
+      ],
+      [
+        "k113"
+      ],
+      [
+        "k117"
+      ],
+      [
+        "k003"
+      ],
+      [
+        "k175"
+      ],
+      [
+        "k049"
+      ],
+      [
+        "k179"
+      ],
+      [
+        "k053"
+      ],
+      [
+        "k069"
+      ],
+      [
+        "k159"
+      ],
+      [
+        "k193"
+      ],
+      [
+        "k103"
+      ],
+      [
+        "k197"
+      ],
+      [
+        "k107"
+      ],
+      [
+        "k087"
+      ],
+      [
+        "k213"
+      ],
+      [
+        "k031"
+      ],
+      [
+        "k121"
+      ],
+      [
+        "k035"
+      ],
+      [
+        "k125"
+      ],
+      [
+        "k141"
+      ],
+      [
+        "k015"
+      ],
+      [
+        "k061"
+      ],
+      [
+        "k163"
+      ],
+      [
+        "k065"
+      ],
+      [
+        "k167"
+      ],
+      [
+        "k171"
+      ],
+      [
+        "k057"
+      ],
+      [
+        "k091"
+      ],
+      [
+        "k205"
+      ],
+      [
+        "k095"
+      ],
+      [
+        "k209"
+      ],
+      [
+        "k201"
+      ],
+      [
+        "k099"
+      ],
+      [
+        "k133"
+      ],
+      [
+        "k019"
+      ],
+      [
+        "k137"
+      ],
+      [
+        "k023"
+      ],
+      [
+        "k027"
+      ],
+      [
+        "k129"
+      ],
+      [
+        "k058"
+      ],
+      [
+        "k172"
+      ],
+      [
+        "k164"
+      ],
+      [
+        "k062"
+      ],
+      [
+        "k168"
+      ],
+      [
+        "k066"
+      ],
+      [
+        "k100"
+      ],
+      [
+        "k202"
+      ],
+      [
+        "k206"
+      ],
+      [
+        "k092"
+      ],
+      [
+        "k210"
+      ],
+      [
+        "k096"
+      ],
+      [
+        "k028"
+      ],
+      [
+        "k130"
+      ],
+      [
+        "k134"
+      ],
+      [
+        "k020"
+      ],
+      [
+        "k138"
+      ],
+      [
+        "k024"
+      ],
+      [
+        "k082"
+      ],
+      [
+        "k184"
+      ],
+      [
+        "k188"
+      ],
+      [
+        "k074"
+      ],
+      [
+        "k192"
+      ],
+      [
+        "k078"
+      ],
+      [
+        "k112"
+      ],
+      [
+        "k010"
+      ],
+      [
+        "k002"
+      ],
+      [
+        "k116"
+      ],
+      [
+        "k006"
+      ],
+      [
+        "k120"
+      ],
+      [
+        "k154"
+      ],
+      [
+        "k040"
+      ],
+      [
+        "k044"
+      ],
+      [
+        "k146"
+      ],
+      [
+        "k048"
+      ],
+      [
+        "k150"
+      ],
+      [
+        "k196"
+      ],
+      [
+        "k070"
+      ],
+      [
+        "k086"
+      ],
+      [
+        "k176"
+      ],
+      [
+        "k090"
+      ],
+      [
+        "k180"
+      ],
+      [
+        "k214"
+      ],
+      [
+        "k124"
+      ],
+      [
+        "k104"
+      ],
+      [
+        "k014"
+      ],
+      [
+        "k108"
+      ],
+      [
+        "k018"
+      ],
+      [
+        "k052"
+      ],
+      [
+        "k142"
+      ],
+      [
+        "k158"
+      ],
+      [
+        "k032"
+      ],
+      [
+        "k162"
+      ],
+      [
+        "k036"
+      ],
+      [
+        "k098"
+      ],
+      [
+        "k200"
+      ],
+      [
+        "k208"
+      ],
+      [
+        "k094"
+      ],
+      [
+        "k102"
+      ],
+      [
+        "k204"
+      ],
+      [
+        "k128"
+      ],
+      [
+        "k026"
+      ],
+      [
+        "k022"
+      ],
+      [
+        "k136"
+      ],
+      [
+        "k132"
+      ],
+      [
+        "k030"
+      ],
+      [
+        "k170"
+      ],
+      [
+        "k056"
+      ],
+      [
+        "k064"
+      ],
+      [
+        "k166"
+      ],
+      [
+        "k174"
+      ],
+      [
+        "k060"
+      ],
+      [
+        "k122"
+      ],
+      [
+        "k212"
+      ],
+      [
+        "k016"
+      ],
+      [
+        "k106"
+      ],
+      [
+        "k126"
+      ],
+      [
+        "k000"
+      ],
+      [
+        "k140"
+      ],
+      [
+        "k050"
+      ],
+      [
+        "k034"
+      ],
+      [
+        "k160"
+      ],
+      [
+        "k144"
+      ],
+      [
+        "k054"
+      ],
+      [
+        "k194"
+      ],
+      [
+        "k068"
+      ],
+      [
+        "k088"
+      ],
+      [
+        "k178"
+      ],
+      [
+        "k198"
+      ],
+      [
+        "k072"
+      ],
+      [
+        "k008"
+      ],
+      [
+        "k110"
+      ],
+      [
+        "k118"
+      ],
+      [
+        "k004"
+      ],
+      [
+        "k012"
+      ],
+      [
+        "k114"
+      ],
+      [
+        "k038"
+      ],
+      [
+        "k152"
+      ],
+      [
+        "k148"
+      ],
+      [
+        "k046"
+      ],
+      [
+        "k042"
+      ],
+      [
+        "k156"
+      ],
+      [
+        "k080"
+      ],
+      [
+        "k182"
+      ],
+      [
+        "k190"
+      ],
+      [
+        "k076"
+      ],
+      [
+        "k084"
+      ],
+      [
+        "k186"
+      ],
+      [
+        "k115"
+      ],
+      [
+        "k001"
+      ],
+      [
+        "k119"
+      ],
+      [
+        "k005"
+      ],
+      [
+        "k009"
+      ],
+      [
+        "k111"
+      ],
+      [
+        "k073"
+      ],
+      [
+        "k187"
+      ],
+      [
+        "k077"
+      ],
+      [
+        "k191"
+      ],
+      [
+        "k183"
+      ],
+      [
+        "k081"
+      ],
+      [
+        "k043"
+      ],
+      [
+        "k145"
+      ],
+      [
+        "k047"
+      ],
+      [
+        "k149"
+      ],
+      [
+        "k153"
+      ],
+      [
+        "k039"
+      ],
+      [
+        "k127"
+      ],
+      [
+        "k025"
+      ],
+      [
+        "k131"
+      ],
+      [
+        "k029"
+      ],
+      [
+        "k021"
+      ],
+      [
+        "k135"
+      ],
+      [
+        "k097"
+      ],
+      [
+        "k199"
+      ],
+      [
+        "k101"
+      ],
+      [
+        "k203"
+      ],
+      [
+        "k207"
+      ],
+      [
+        "k093"
+      ],
+      [
+        "k055"
+      ],
+      [
+        "k169"
+      ],
+      [
+        "k059"
+      ],
+      [
+        "k173"
+      ],
+      [
+        "k165"
+      ],
+      [
+        "k063"
+      ],
+      [
+        "k013"
+      ],
+      [
+        "k139"
+      ],
+      [
+        "k017"
+      ],
+      [
+        "k143"
+      ],
+      [
+        "k123"
+      ],
+      [
+        "k033"
+      ],
+      [
+        "k211"
+      ],
+      [
+        "k085"
+      ],
+      [
+        "k215"
+      ],
+      [
+        "k089"
+      ],
+      [
+        "k105"
+      ],
+      [
+        "k195"
+      ],
+      [
+        "k157"
+      ],
+      [
+        "k067"
+      ],
+      [
+        "k161"
+      ],
+      [
+        "k071"
+      ],
+      [
+        "k051"
+      ],
+      [
+        "k177"
+      ]
+    ],
+    "quotient_classes": 216,
+    "raw_operations": 216,
+    "record_pullbacks": [
+      {
+        "larger": [
+          0
+        ],
+        "records": [
+          "w1"
+        ],
+        "smaller": [
+          0
+        ]
+      },
+      {
+        "larger": [
+          0,
+          1
+        ],
+        "records": [
+          "w1"
+        ],
+        "smaller": [
+          0
+        ]
+      },
+      {
+        "larger": [
+          0,
+          2
+        ],
+        "records": [
+          "w1"
+        ],
+        "smaller": [
+          0
+        ]
+      },
+      {
+        "larger": [
+          1
+        ],
+        "records": [
+          "w0"
+        ],
+        "smaller": [
+          1
+        ]
+      },
+      {
+        "larger": [
+          0,
+          1
+        ],
+        "records": [
+          "w0"
+        ],
+        "smaller": [
+          1
+        ]
+      },
+      {
+        "larger": [
+          1,
+          2
+        ],
+        "records": [
+          "w0"
+        ],
+        "smaller": [
+          1
+        ]
+      },
+      {
+        "larger": [
+          2
+        ],
+        "records": [
+          "w2"
+        ],
+        "smaller": [
+          2
+        ]
+      },
+      {
+        "larger": [
+          0,
+          2
+        ],
+        "records": [
+          "w2"
+        ],
+        "smaller": [
+          2
+        ]
+      },
+      {
+        "larger": [
+          1,
+          2
+        ],
+        "records": [
+          "w2"
+        ],
+        "smaller": [
+          2
+        ]
+      },
+      {
+        "larger": [
+          0,
+          1
+        ],
+        "records": [
+          "w0",
+          "w1"
+        ],
+        "smaller": [
+          0,
+          1
+        ]
+      },
+      {
+        "larger": [
+          0,
+          2
+        ],
+        "records": [
+          "w1",
+          "w2"
+        ],
+        "smaller": [
+          0,
+          2
+        ]
+      },
+      {
+        "larger": [
+          1,
+          2
+        ],
+        "records": [
+          "w0",
+          "w2"
+        ],
+        "smaller": [
+          1,
+          2
+        ]
+      }
+    ],
+    "records": [
+      {
+        "erasing_available": [
+          false
+        ],
+        "erasing_cross_coherence": [
+          2
+        ],
+        "handle": "w0",
+        "no_write_occurrence": false,
+        "occurrence": true,
+        "passes_w3": true,
+        "preserving_available": [
+          true
+        ]
+      },
+      {
+        "erasing_available": [
+          false
+        ],
+        "erasing_cross_coherence": [
+          2
+        ],
+        "handle": "w1",
+        "no_write_occurrence": false,
+        "occurrence": true,
+        "passes_w3": true,
+        "preserving_available": [
+          true
+        ]
+      },
+      {
+        "erasing_available": [
+          false
+        ],
+        "erasing_cross_coherence": [
+          2
+        ],
+        "handle": "w2",
+        "no_write_occurrence": false,
+        "occurrence": true,
+        "passes_w3": true,
+        "preserving_available": [
+          true
+        ]
+      }
+    ],
+    "regions": [
+      {
+        "algebra_dimension": 4,
+        "atoms": [
+          0
+        ],
+        "operation_count": 6,
+        "records": [
+          "w1"
+        ]
+      },
+      {
+        "algebra_dimension": 4,
+        "atoms": [
+          1
+        ],
+        "operation_count": 6,
+        "records": [
+          "w0"
+        ]
+      },
+      {
+        "algebra_dimension": 4,
+        "atoms": [
+          2
+        ],
+        "operation_count": 6,
+        "records": [
+          "w2"
+        ]
+      },
+      {
+        "algebra_dimension": 16,
+        "atoms": [
+          0,
+          1
+        ],
+        "operation_count": 36,
+        "records": [
+          "w0",
+          "w1"
+        ]
+      },
+      {
+        "algebra_dimension": 16,
+        "atoms": [
+          0,
+          2
+        ],
+        "operation_count": 36,
+        "records": [
+          "w1",
+          "w2"
+        ]
+      },
+      {
+        "algebra_dimension": 16,
+        "atoms": [
+          1,
+          2
+        ],
+        "operation_count": 36,
+        "records": [
+          "w0",
+          "w2"
+        ]
+      }
+    ],
+    "triple_overlaps": [
+      {
+        "meet": [
+          0
+        ],
+        "objects": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          1
+        ],
+        "objects": [
+          [
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "meet": [
+          2
+        ],
+        "objects": [
+          [
+            2
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    ],
+    "unique_product_amplitudes": 216
+  },
+  "nonclaims": [
+    "operational localization is not spatial or spacelike separation",
+    "no influence or causal relation",
+    "no causal cone, dimension, volume or Lorentzian metric",
+    "no field propagation or special relativity",
+    "no stress tensor, backreaction or gravity",
+    "no general black-box uniqueness theorem beyond the declared finite access scope"
+  ],
+  "outcome_prerequisites": {
+    "all_measured_gates": true,
+    "groupoid_rung": true,
+    "local_atlas_rung": true
+  },
+  "postulates": [
+    "finite exact amplitude tomography on the declared accessible support",
+    "flat typed composition-row access including unavailable and collapsed statuses",
+    "declared preparations, interventions, probes and record candidates are operationally accessible"
+  ],
+  "provenance": {
+    "estimator_commit": "208a354",
+    "estimator_precedes_current_fixture_contents": true,
+    "estimator_sha256": "7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1",
+    "fixture_sha256": "6b45e0671a16ea966634693a457ef090ae9ca15d0daabccee577ad4f6d527589",
+    "pin_commit": "ffbcce6",
+    "pin_sha256": "8135a0c9f358c86384d0d248a7cbf99131095656b5e61c06c8d49d0f62175fe3",
+    "retired_fixture_commits_not_rescored": [
+      "39fb6b3",
+      "3a6cded"
+    ],
+    "scorer_sha256": "685971fa4dfa2bd418b3d0893c4074dd0a85fb1497c65b3d8639453e0b8da6f6"
+  },
+  "scientific_outcome": "RQ0-LOCAL-ATLAS",
+  "scope": {
+    "bridge_candidate_cap": 100000,
+    "candidate_subobject_cap": 50000,
+    "carrier_dimension_cap": 64,
+    "class_cap": 216,
+    "composition_row_cap": 46656,
+    "exact_field": "Q(zeta_24), Phi_24=x^8-x^4+1",
+    "gauge": "configuration relabelling x finite mu_24 boundary phase",
+    "runtime_cap_seconds": 360,
     "seed": null
   },
-  "runtime": {
-    "cap_seconds": 360,
-    "cap_exceeded": true,
-    "observed_interrupt_seconds": "442.41",
-    "interrupted_stage": "exact composition-product signature canonicalization"
-  },
-  "development_diagnostic_only": {
-    "unencoded_wall_seconds": "349.97",
-    "returned_positive_internal_atlas": true,
-    "promoted": false
-  },
-  "outcome_prerequisites": {
-    "complete_encoded_suite_within_cap": false,
-    "positive_rung_permitted": false,
-    "negative_scientific_rung_permitted": false
-  },
-  "reuse_policy": "opened fixture permanently retired from positive scoring",
-  "nonclaims": [
-    "no localization rung",
-    "no causal or spatial locality",
-    "no influence relation",
-    "no geometry",
-    "no field theory",
-    "no gravity"
-  ]
+  "status": "RQ0-LOCAL-ATLAS",
+  "unit": "RQ0-L0 operational localization and addressability repair"
 }

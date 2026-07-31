@@ -175,7 +175,16 @@ that made the rule.
   a local signature cache, while every composition row is still multiplied and
   checked.  Reference equivalence and cache-hit controls pass; the public suite
   is deterministic in 12.37 seconds.  Only new post-#36 encoding/amplitude
-  contents may be used next.
+  contents may be used next.  v13 #37 delivers that final repair
+  **GREEN-UNREVIEWED** at `RQ0-LOCAL-ATLAS`: the complete 216-class hybrid
+  amplitude process yields one faithful `(6,6,6)` address factorization, six
+  W3-record-bearing proper regions, 12 algebra/record maps, nine pair overlaps
+  and three genuine triple overlaps with empty universal core.  All 54 exact
+  gates pass in two byte-identical runs below 360 seconds, including full
+  rename and gauge runs, typed `D+`/`D-`, phase, ambiguity, spectator,
+  bridge/no-bridge and fail-closed controls.  This is operational—not spatial
+  or causal—localization.  The delivery is halted for external hostile review;
+  `RQ0-C1` remains prohibited.
 
 ## 1. The unit cycle
 

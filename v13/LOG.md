@@ -1800,3 +1800,56 @@ causal object, geometry, field or gravity object is present in the estimator.
 Only newly generated post-#36 encoding/amplitude contents may now be scored.
 Neither #33 nor #35 may be reused for a positive headline.  `RQ0-C1` and all
 later units remain prohibited.  **HALT.**
+
+## 2026-07-30 — RQ0-L0 ADDRESSABILITY REPAIR DELIVERED GREEN:
+## EXACT NON-STAR OPERATIONAL LOCAL ATLAS (v13 LEDGER #37)
+The final post-#36 fixture/scorer delivery is
+`GREEN-UNREVIEWED` at the derived rung `RQ0-LOCAL-ATLAS`.  The frozen v3
+estimator remains byte-identical at SHA-256 `7c8571ea...`; the new fixture and
+scorer are respectively SHA-256
+`6b45e0671a16ea966634693a457ef090ae9ca15d0daabccee577ad4f6d527589`
+and
+`685971fa4dfa2bd418b3d0893c4074dd0a85fb1497c65b3d8639453e0b8da6f6`.
+Neither retired fixture commit #33 nor #35 was rescored.
+
+The exact main input has carrier dimension 8, 216 raw/quotient classes and
+46,656 flat typed composition rows.  Its newly encoded hybrid-amplitude
+`S3^3` law uses monomial, real-natural and complex-conjugated factor
+presentations.  From the complete quotient composition object—not the six
+primitive-generator handles—the estimator returns one finest faithful
+factorization with group orders `(6,6,6)` and represented-algebra dimensions
+`(4,4,4)`.  The direct product image has 216 elements and no collision.
+
+All three independently frozen record candidates pass W3.  The constructed
+non-star atlas has six proper record-bearing `RegAddr` objects, 12 exact
+algebra inclusions, 12 contravariant record-projector pullbacks, nine nonempty
+pair overlaps and three nonvacuous triple overlaps.  Every used meet is
+record-bearing; algebra-category and record-functor composition close; and the
+universal atom intersection is empty.
+
+All #31 controls are native.  Identical-matrix `D-` and collapse worlds differ
+from `D+` in exactly two `Comp_D` rows and fail addressability.  Complete
+renamed/generator-changed and full-gauge estimator runs reproduce the main
+structural signature.  A full complex-phase conjugate changes 180 exact
+operation signatures while preserving every W3 fact decision.  Removing one
+record lowers the atlas to five objects and breaks overlap closure.  A genuine
+ambiguity fixture returns three finest decompositions and 72 derived groupoid
+arrows.  Inaccessible, active, nonjoint and irreducible controls behave as
+required.  Exhaustive same-carrier bridge searches cover all 24 permutations:
+the positive pair has one record-compatible structural bridge, while the
+equal-law `V4`/`C4` negative has none.
+
+The fail-closed outcome graph reports 54/54 measured checks: anchors 5/5,
+scientific 19/19, controls 25/25 and receipt behaviour 5/5.  Anchor,
+scientific-gate, no-outcome and malformed/cap mutants emit only
+`RQ0-L0-INVALID` and exit 1; a valid unavailable-composition world emits
+`RQ0-L0-BLOCKED-AT-ADDRESS` and exits 0.  Two complete runs are byte-identical
+and take 313.20 and 308.98 seconds, under the 360-second cap.  Stored text and
+JSON receipt hashes are `6613cac5...` and `8ebefb2a...`.
+
+This earns finite operational localization only.  It constructs no spatial or
+spacelike relation, influence relation, causal cone, dimension, volume,
+Lorentzian geometry, field or gravity.  The first unresolved referent is now
+operational influence between reconstructed local subinstruments under a
+non-planted screening rule.  The delivery is frozen pending an external
+hostile round.  `RQ0-C1` and every later unit remain prohibited.  **HALT.**

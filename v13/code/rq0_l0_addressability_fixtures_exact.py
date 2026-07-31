@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Held-out exact fixtures for the RQ0-L0 addressability repair.
 
-These genuinely unseen fixture contents were created only after the optimized
-generic estimator was committed and byte-frozen at v13 #34.  They may contain
+These genuinely unseen encoding/amplitude contents were created only after
+the final generic estimator was committed and byte-frozen at v13 #36.  They may contain
 construction truth for scoring.  The estimator may not import this module.
 """
 
@@ -20,8 +20,8 @@ import rq0_l0_addressability_estimator_exact as est
 
 ROOT = Path(__file__).resolve().parents[2]
 ESTIMATOR_PATH = ROOT / "v13/code/rq0_l0_addressability_estimator_exact.py"
-FROZEN_ESTIMATOR_SHA256 = "124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde"
-ESTIMATOR_COMMIT = "36290ef"
+FROZEN_ESTIMATOR_SHA256 = "7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1"
+ESTIMATOR_COMMIT = "208a354"
 
 
 def sha256(path: Path) -> str:
@@ -56,7 +56,7 @@ def triple_multiply(left: Triple, right: Triple) -> Triple:
     )
 
 
-def s3_representation(element: S3) -> est.Matrix:
+def monomial_s3_representation(element: S3) -> est.Matrix:
     omega = est.ZETA ** 8
     rotation = est.matrix(((omega, 0), (0, omega.conjugate())))
     x = est.matrix(((0, 1), (1, 0)))
@@ -66,13 +66,26 @@ def s3_representation(element: S3) -> est.Matrix:
     )
 
 
+def natural_s3_representation(element: S3) -> est.Matrix:
+    return est.s3_representation(element)
+
+
+def complex_s3_representation(element: S3) -> est.Matrix:
+    imaginary = est.ZETA ** 6
+    action = (
+        (est.INV_SQRT2, est.INV_SQRT2 * imaginary),
+        (est.INV_SQRT2, -est.INV_SQRT2 * imaginary),
+    )
+    return est.conjugate_by(action, est.s3_representation(element))
+
+
 def triple_representation(element: Triple) -> est.Matrix:
     return est.kron(
         est.kron(
-            s3_representation(element[0]),
-            s3_representation(element[1]),
+            monomial_s3_representation(element[0]),
+            natural_s3_representation(element[1]),
         ),
-        s3_representation(element[2]),
+        complex_s3_representation(element[2]),
     )
 
 
@@ -89,9 +102,9 @@ def main_encoding() -> est.Matrix:
     phases = []
     for index in range(8):
         left, middle, right = index_to_tuple(index)
-        encoded = (left ^ right, left ^ middle, middle)
+        encoded = (middle, left ^ right, left ^ middle)
         permutation.append(tuple_to_index(encoded))
-        exponent = (5 * left + 7 * middle + 11 * right + 3 * left * middle) % 24
+        exponent = (7 * left + 11 * middle + 13 * right + 5 * middle * right) % 24
         phases.append(est.ZETA ** exponent)
     relabelling = est.permutation_matrix(tuple(permutation))
     diagonal = tuple(
@@ -105,10 +118,10 @@ def main_encoding() -> est.Matrix:
 
 
 def gauge_action() -> est.Matrix:
-    permutation = tuple((3 * index + 2) % 8 for index in range(8))
+    permutation = tuple((5 * index + 3) % 8 for index in range(8))
     if len(set(permutation)) != 8:
         raise AssertionError("gauge relabelling is not a permutation")
-    phases = tuple(est.ZETA ** (3 * ((index * index + 2 * index) % 8)) for index in range(8))
+    phases = tuple(est.ZETA ** (3 * ((3 * index * index + index + 1) % 8)) for index in range(8))
     diagonal = tuple(
         tuple(phases[row] if row == column else est.ZERO for column in range(8))
         for row in range(8)
@@ -393,7 +406,7 @@ def conjugate_dataset(
 
 
 def opaque_handle(index: int) -> str:
-    return f"k{(83 * index + 41) % 216:03d}"
+    return f"k{(91 * index + 37) % 216:03d}"
 
 
 def rename_dataset(
@@ -511,7 +524,7 @@ def build_main_unencoded() -> Tuple[est.OperationalDataset, Dict[str, Triple], T
         (identity_s3, identity_s3, (0, 1)),
     )
     base = est.build_group_dataset(
-        "held-out-monomial-s3-cube-unencoded",
+        "held-out-hybrid-s3-cube-unencoded",
         elements,
         triple_multiply,
         triple_representation,
@@ -519,7 +532,7 @@ def build_main_unencoded() -> Tuple[est.OperationalDataset, Dict[str, Triple], T
     )
     base = with_records(base, tuple(embedded_record(slot) for slot in range(3)))
     old_to_new = {operation.handle: opaque_handle(index) for index, operation in enumerate(base.operations)}
-    opaque = rename_dataset(base, "held-out-monomial-s3-cube-opaque", old_to_new)
+    opaque = rename_dataset(base, "held-out-hybrid-s3-cube-opaque", old_to_new)
     element_by_handle = {
         old_to_new[f"u{index:03d}"]: element for index, element in enumerate(elements)
     }
@@ -551,50 +564,28 @@ def build_phase_unencoded() -> est.OperationalDataset:
     def representation(element: Triple) -> est.Matrix:
         phased_first = est.conjugate_by(
             fourier,
-            s3_representation(element[0]),
+            monomial_s3_representation(element[0]),
         )
         return est.kron(
-            est.kron(phased_first, s3_representation(element[1])),
-            s3_representation(element[2]),
+            est.kron(phased_first, natural_s3_representation(element[1])),
+            complex_s3_representation(element[2]),
         )
 
     base = est.build_group_dataset(
-        "held-out-monomial-s3-cube-phase-unencoded",
+        "held-out-hybrid-s3-cube-phase-unencoded",
         elements,
         triple_multiply,
         representation,
         generators,
     )
-    local_phase_record = conjugate_record(est.two_level_record_witness("w0"), fourier)
-    records = []
-    for slot in range(3):
-        local = (
-            local_phase_record
-            if slot == 0
-            else est.two_level_record_witness(f"w{slot}")
-        )
-        records.append(
-            est.RecordWitness(
-                handle=f"w{slot}",
-                preparations=tuple(embed_local_vector(value, slot) for value in local.preparations),
-                alternative_projectors=tuple(
-                    embed_local_matrix(value, slot) for value in local.alternative_projectors
-                ),
-                cut_record_projectors=tuple(
-                    embed_local_matrix(value, slot) for value in local.cut_record_projectors
-                ),
-                availability_probes=tuple(
-                    embed_local_matrix(value, slot) for value in local.availability_probes
-                ),
-                write=embed_local_matrix(local.write, slot),
-                preserving=tuple(embed_local_matrix(value, slot) for value in local.preserving),
-                erasing=tuple(embed_local_matrix(value, slot) for value in local.erasing),
-                no_write=embed_local_matrix(local.no_write, slot),
-            )
-        )
-    base = with_records(base, tuple(records))
+    full_action = physical_phase_action()
+    records = tuple(
+        conjugate_record(embedded_record(slot), full_action)
+        for slot in range(3)
+    )
+    base = with_records(base, records)
     mapping = {operation.handle: opaque_handle(index) for index, operation in enumerate(base.operations)}
-    return rename_dataset(base, "held-out-monomial-s3-cube-phase-opaque", mapping)
+    return rename_dataset(base, "held-out-hybrid-s3-cube-phase-opaque", mapping)
 
 
 def build_ambiguity_dataset() -> est.OperationalDataset:
@@ -624,7 +615,7 @@ def build_irreducible_dataset() -> est.OperationalDataset:
         "irreducible-s3",
         elements,
         est.s3_multiply,
-        s3_representation,
+        monomial_s3_representation,
         ((1, 0), (0, 1)),
     )
 
@@ -689,7 +680,7 @@ def build_fixture_bundle() -> FixtureBundle:
     )
     handle_by_element = {element: handle for handle, element in element_by_handle.items()}
     second_mapping = {
-        operation.handle: f"r{(137 * index + 19) % 216:03d}"
+        operation.handle: f"r{(197 * index + 23) % 216:03d}"
         for index, operation in enumerate(main.operations)
     }
     renamed = rename_dataset(
