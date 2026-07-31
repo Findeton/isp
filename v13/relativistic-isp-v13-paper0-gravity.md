@@ -1,12 +1,12 @@
 # The Double Weld: Gravity as the Closure Law of Record Deformations
 
-**v13 paper 0 — DRAFT v0.2. 2026-07-30.**
+**v13 paper 0 — DRAFT v0.3. 2026-07-30.**
 
-**Status: [DRAFT] — a programme prospectus, not a founding document.** GW1 is terminal with the negative verdict `GW1-NOT-RUNNABLE — PRIMARY LOCATED BLOCK AT THE DEFORMATION INTERFACE` (v13 LOG #5); GW2 is pinned at LOG #7.  No prospective claim below is thereby adjudicated; grades are the cited papers' own.  Provenance: v0.1 was an external synthesis note over the ISP corpus and the v12 Weld, adopted with formulas typeset and the framing depersonalized.  v0.2 adds the user-ordered programme sequence in §0, records the GW1 outcome in §6, and leaves the Double-Weld hypothesis at programme grade.  The v12 discipline binds throughout: gravity enters as a **second composition law**, not as the Born defect itself.
+**Status: [DRAFT] — a programme prospectus, not a founding document.** GW1 is terminal with the negative verdict `GW1-NOT-RUNNABLE — PRIMARY LOCATED BLOCK AT THE DEFORMATION INTERFACE` (v13 LOG #5).  RQ0-A is terminal with `RQ0-FACT-DESCENT` at its declared exact finite amplitude-subinstrument scope (v13 LOG #22); it makes no causal, Lorentzian, field or gravity claim.  No prospective claim below is thereby adjudicated; grades are the cited papers' own.  Provenance: v0.1 was an external synthesis note over the ISP corpus and the v12 Weld, adopted with formulas typeset and the framing depersonalized.  v0.2 added the user-ordered RQ0–RQ1–GR1 sequence and recorded the GW1 outcome.  v0.3 records the terminal quantum-regional factual base and splits the remaining RQ0 programme into localization, influence, causal and geometric gates.  The Double-Weld hypothesis remains at programme grade.  The v12 discipline binds throughout: gravity enters as a **second composition law**, not as the Born defect itself.
 
 ---
 
-## 0. Binding programme order — RQ0, then RQ1, then GR1
+## 0. Binding programme order — staged RQ0, then RQ1, then GR1
 
 This section is a programme amendment, not a theorem.  It fixes the execution
 order authorized by the user after the v1–v13 corpus audit and after Paper 2's
@@ -23,9 +23,15 @@ $$
 \begin{array}{c}
 \text{W6 / Paper 2 record and fact descent}\\
 \downarrow\\
-\text{GW2 regional-descent census}\\
+\text{RQ0-A: quantum regions and fact descent — TERMINAL}\\
 \downarrow\\
-\text{RQ0: recovered regional causal arena}\\
+\text{RQ0-L0: operational localization and overlap discovery}\\
+\downarrow\\
+\text{RQ0-C1: operational influence}\\
+\downarrow\\
+\text{RQ0-C2: causal order and local cones}\\
+\downarrow\\
+\text{RQ0-G: dimension, volume and conformal geometry}\\
 \downarrow\\
 \text{RQ1a: free scalar on that arena}\\
 \downarrow\\
@@ -37,9 +43,13 @@ $$
 
 The gates are binding:
 
-1. No RQ1 recovery claim may be made before RQ0 supplies a nonvacuous regional
-   causal arena.  Importing Minkowski space may be used as a background control,
-   but it does not pass RQ0 or count as recovery from ISP records.
+1. RQ0-A fact descent does not by itself authorize a causal or spacetime
+   claim.  RQ0-C1 requires a terminal localization referent; RQ0-C2 requires a
+   terminal operational-influence instrument; and RQ0-G requires a terminal
+   intrinsic causal structure.  No RQ1 recovery claim may be made before RQ0-G
+   supplies a nonvacuous regional causal and conformal arena.  Importing
+   Minkowski space may be used as a background control, but it does not pass
+   RQ0 or count as recovery from ISP processes.
 2. **No Einstein-equation, gravitational-backreaction or universal-coupling
    claim may be made before at least a free relativistic scalar sector is
    terminal on the recovered fixed arena.**
@@ -52,18 +62,41 @@ The gates are binding:
 5. Every arrow is a separate pinned unit under the RUNBOOK.  Passing an earlier
    gate authorizes posing the next one; it does not prejudge its verdict.
 
-### 0.2 RQ0 — the relativistic arena
+### 0.2 RQ0 — factual base, localization, causality and geometry
 
-RQ0 asks what the local regions are, which record facts they share, and what
-their causal relations are.  It does not ask why geometry obeys Einstein's
-equation.  Its target is a candidate fixed arena
+RQ0-A has terminally constructed one exact finite quantum-regional factual
+base.  Its objects are amplitude-native process regions rather than subsets of
+a global event set; their stable records are derived from their own
+write/preserve/erase dynamics; their common fact is an exact projector pullback
+through typed amplitude-instrument morphisms; and the contravariant record
+assignment descends on a nonvacuous triple overlap.  This result establishes
+roughly $(\mathbf{Reg},\operatorname{Rec})$ at its declared finite real-sign and
+signed-permutation scope.  It does **not** establish spatial localization,
+causal order, a cone, dimension, volume or a metric.
+
+The remaining relativistic-arena programme is therefore staged:
+
+- **RQ0-L0** must recover gauge-invariant localized subinstruments and a
+  nontrivial overlap nerve from operational amplitude data without reading
+  displayed qubit, circuit, tensor-factor, coordinate or causal labels;
+- **RQ0-C1** may then define operational influence between those localized
+  objects, with correlation without signalling as a mandatory negative
+  control;
+- **RQ0-C2** asks whether the influence structure supports an intrinsic causal
+  order, time orientation and local cones;
+- **RQ0-G** asks for stable dimension, count/volume and conformal Lorentzian
+  geometry, with descent and refinement tests.
+
+RQ0 does not ask why geometry obeys Einstein's equation.  Its final target is
+a candidate fixed arena
 
 $$
 (\mathcal R,\prec,\mu,[g]),
 $$
 
-where $\mathcal R$ is a regional site, atlas or groupoid—not a global event set
-inserted in advance.  RQ0 must co-locate and verify:
+where $\mathcal R$ is a regional cover category, atlas or groupoid—not a global
+event set inserted in advance.  Across its staged units RQ0 must co-locate and
+verify:
 
 - declared finite regions and their local process objects;
 - independently W3-grade stable-record algebras;
@@ -78,10 +111,12 @@ inserted in advance.  RQ0 must co-locate and verify:
   refinement/coarse-graining maps.
 
 Paper 2 supplies a finite calculus for declared-token descent; it does not
-supply the W3 stability premise or physical regions by itself.  GW2 is therefore
-the required census at the entrance to RQ0.  If token identity remains
-groupoid-valued, fields must be formulated invariantly over that structure;
-unique global token labels are not an RQ0 prerequisite.
+supply the W3 stability premise or physical regions by itself.  RQ0-A has now
+supplied one finite existence construction with those ingredients.  The old
+GW2 census and v10 record ontology are antecedent evidence and controls, not an
+entrance gate or required ontology for the remaining RQ0 units.  If token
+identity remains groupoid-valued, fields must be formulated invariantly over
+that structure; unique global token labels are not an RQ0 prerequisite.
 
 ### 0.3 RQ1a — free scalar matter on the recovered fixed arena
 
@@ -249,9 +284,10 @@ $$
 2.00, \quad 3.21, \quad 4.04
 $$
 
-for $C = 1, 2, 3$.  v0.2 does not promote that inherited diagnostic: RQ0 must
-re-census its current terminal status, assumptions and usable referents before
-relying on it.
+for $C = 1, 2, 3$.  v0.3 does not promote that inherited diagnostic: it remains
+legacy benchmark data and may be opened only after the relevant RQ0-C2 or
+RQ0-G estimator is frozen.  It is not an input to operational localization or
+influence.
 
 So ISP currently has a plausible route to:
 
@@ -482,8 +518,8 @@ A genuine gravity explanation would need the following chain.
 The current $C = 3$ result is encouraging dimensional evidence, but it remains:
 
 - window-dependent;
-- inherited from a pre-review snapshot whose usable grade and assumptions must
-  be re-established by the RQ0 referent census;
+- inherited from a pre-review snapshot and retained only as held-out benchmark
+  data for a separately frozen RQ0-G estimator;
 - based on a finite-$C$ polyhedral causal cone;
 - without a derivation of why nature selects $C = 3$;
 - without curved manifold reconstruction.
@@ -603,8 +639,10 @@ K_i\!\left[\widetilde q^{\,ij}
 $$
 
 but its construction is no longer the immediate successor.  The user-ordered
-path is Paper 2/W6 descent → GW2 → RQ0 → RQ1 before this deformation branch is
-reopened as GR1.  When it is reopened, the terminal GW1 no-smuggling definition
+path is Paper 2/W6 descent → terminal RQ0-A fact descent → RQ0-L0 localization
+→ RQ0-C1 influence → RQ0-C2 causal structure → RQ0-G geometry → RQ1 matter
+before this deformation branch is reopened as GR1.  When it is reopened, the
+terminal GW1 no-smuggling definition
 and interface inventory bind, and the original kill condition still applies:
 
 > If the metric must already be inserted into $J[N]$, or if the same record law

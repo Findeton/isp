@@ -1002,3 +1002,43 @@ made.  The first unresolved referent remains a typed, gauge-invariant
 localized quantum subinstrument.  `RQ0-L0` and `RQ0-C1` are unpinned and have
 not begun.  Under the runbook HALT rule, no successor work is authorized by
 this terminal event.  **HALT.**
+
+## 2026-07-30 — PAPER 0 v0.3 RQ0 FACTUAL-BASE OUTCOME PASS:
+## LOCALIZATION-FIRST SUCCESSOR ORDER ADOPTED (v13 LEDGER #23)
+The user's post-terminal review of commits #18–#22 is accepted.  It grades the
+five-commit closure as successful and agrees that `RQ0-FACT-DESCENT` is
+terminal only at the declared finite amplitude-subinstrument scope.  Its
+scientific reading matches #22: the programme now has amplitude-native quantum
+regions, internal W3 seams, finite regional diversity, typed physical overlap
+and coherent stable-fact descent, but no spatial localization, causal order,
+Lorentzian geometry, relativistic field or gravity result.
+
+Paper 0 has received the requested prose-only outcome pass and remains
+**[DRAFT]**.  Version v0.3, SHA-256
+`501c0bb2db3f8448fdc4a07acd2188491f88b12a9d491d19add97bd3208bcbc1`,
+replaces the obsolete `GW2 census -> RQ0` graph with the binding staged order:
+
+```text
+W6 / Paper 2
+  -> RQ0-A quantum regions and fact descent [TERMINAL]
+  -> RQ0-L0 operational localization and overlap discovery
+  -> RQ0-C1 operational influence
+  -> RQ0-C2 causal order and local cones
+  -> RQ0-G dimension, volume and conformal geometry
+  -> RQ1a scalar -> RQ1b Dirac
+  -> GR1 geometric response and universal backreaction.
+```
+
+The charter now states that the old GW2 census and v10 record ontology are
+antecedent evidence and controls rather than the required ontology or entrance
+gate for clean-sheet RQ0.  It records the exact terminal content and exclusions
+of RQ0-A, distinguishes the four remaining RQ0 units, keeps legacy dimension
+and causal-set results closed as held-out benchmarks until the relevant
+estimator is frozen, and defers every deformation/gravity branch until after
+localization, causality, geometry and relativistic matter.
+
+This commit changes programme prose only; it constructs no new mathematical
+object.  The review supplies the user go/no-go for `RQ0-L0` as the next unit.
+Its strict pin must be committed separately before any localization
+construction.  `RQ0-C1`, RQ0-C2, RQ0-G, RQ1 and GR1 remain unpinned and
+unstarted.

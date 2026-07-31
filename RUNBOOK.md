@@ -93,7 +93,13 @@ that made the rule.
   dimension, volume, Lorentzian structure, field or gravity claim.  Its first
   unresolved referent is still a typed, gauge-invariant localized quantum
   subinstrument.  The run is halted; `RQ0-L0` and `RQ0-C1` remain unpinned
-  and unstarted pending an explicit user go/no-go.
+  and unstarted pending an explicit user go/no-go.  The user's post-terminal
+  review supplies that go/no-go for `RQ0-L0` only.  v13 #23 records Paper 0
+  v0.3's prose-only factual-base outcome pass: RQ0-A fact descent is terminal;
+  the binding successor order is RQ0-L0 localization -> RQ0-C1 influence ->
+  RQ0-C2 causal order/cones -> RQ0-G dimension/volume/conformal geometry ->
+  RQ1 matter -> GR1.  A separate strict L0 pin must be committed before any
+  localization construction.  C1 and every later unit remain unpinned.
 
 ## 1. The unit cycle
 
