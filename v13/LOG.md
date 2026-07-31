@@ -1909,3 +1909,78 @@ immutable and **GREEN-UNREVIEWED** while the round is open.  The returned
 report must be frozen verbatim before adjudication.  No repair, terminal
 claim, `RQ0-T1`, `RQ0-C1`, causal reconstruction, geometry, field or gravity
 work is authorized meanwhile.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 HOSTILE REPORT FROZEN VERBATIM:
+## `REJECT`; ALL HEADLINE NUMBERS REBUILT; ADJUDICATION NEXT
+## (v13 LEDGER #39)
+The complete external report returned from the read-only round dispatched at
+#38 is frozen verbatim at
+`review-rq0-operational-localization-addressability-final-hostile.md`,
+SHA-256
+`f8a392809c5dec2067cdb7e0dee452631696e97b6688810473fb1f2431c74853`,
+25,945 bytes and 619 lines.  It is byte-identical to the reviewer's durable
+returned report.  Its verdict is **`REJECT`** terminalization of both
+`RQ0-LOCAL-ATLAS` and `RQ0-LOCALIZATION-GROUPOID`.  This entry freezes the
+report as evidence; it does not yet adjudicate or adopt any finding.
+
+The reviewer independently authenticated the complete commit chain and every
+declared source/receipt hash.  Its official rerun exits 0 with `54/54` in
+approximately 256 seconds.  A separate standard-library exact rebuild,
+importing no repository module, reconstructs all 216 quotient classes, all
+46,656 composition rows, 38 normal subobjects, 19 factor tests, the unique
+faithful `(6,6,6)` factorization, factor-algebra dimensions `(4,4,4)`, ambient
+algebra dimension 64, the 216-element collision-free product image, all three
+W3 seams, the `6/12/9/3` region/map/pair/triple counts, empty universal core,
+the remove-one-record failure, three ambiguity factorizations with 72 arrows,
+all nine ambiguity source/target pairs, bridge counts `24/1/0`, and 180/216
+physical-signature changes.  It also confirms zero floats, tolerances or
+NumPy, and byte-identical regenerated receipts.  The independent composition-
+table checksum is
+`d8906d3cfb1cb18a1a4df0f9a2307dc98ad6ea07a867da1a705bbdb5e418302a`.
+
+The ranked negative findings are:
+
+1. **FATAL F1 — unseen-composition provenance:** the post-#36 fixture changes
+   amplitudes, encoding, phases and handles but reuses #35's already opened
+   abstract `S3^3` composition law, factor truth and Boolean-atlas truth,
+   contrary to the strict pin's genuinely unseen-fixture requirement.
+2. **FATAL F2 — independent selection not enforced:** the factor search stores
+   but never reads `OperationClass.independently_selectable`.  A new exact
+   public `S3 x C2` mutant makes the entire nontrivial `C2` coset composite-
+   only and removes its generator, yet the estimator still returns two
+   `(2,6)` factorizations.  The report separately notes that the main fixture
+   itself postulates all 216 operations independently selectable, so its exact
+   direct-product existence result survives.
+3. **FATAL F3 — incomplete regional/fact maps:** the exact algebra-coordinate
+   inclusions are real, but `AlgebraInclusion` contains no maps on operational
+   classes, composition rows, preparations, contexts or readouts.
+   `RecordPullback` requires equal handles and identical projector tuples; a
+   handle-renamed identical-projector mutant fails, and the twisted control
+   rejects one pair map rather than a pairwise-valid failing triple loop.
+4. **MAJOR F4–F7:** quick invalid modes are prewritten response branches rather
+   than end-to-end full-receipt mutations and evidence is duplicated; the
+   genuine three-factorization/72-arrow ambiguity fixture is recordless; the
+   collapse control measures a declared status change, not a multiplication
+   collision; and `CompositionRow` lacks the pin's independently supplied
+   row-level amplitude law `M`, recomputing a matrix product instead.
+5. **MINOR F8–F9:** the non-star result is exactly the complete proper Boolean-
+   product lattice and must be scoped that way; global `mu_24` signature
+   normalization must be distinguished from the tested permutation/diagonal-
+   `mu_8` full-dataset conjugacy.
+
+The report preserves as exact calibration results the quotient composition
+object, faithful direct factorization, W3 seams, six record-bearing products,
+proper-Boolean incidence, algebraic ambiguity, exhaustive bridge/no-bridge
+classification, finite gauge control, phase discrimination and ordinary
+fail-closed resolver.  It recommends **NO TERMINAL SCIENTIFIC L0 RUNG**, but
+explicitly does *not* recommend `RQ0-L0-BLOCKED-AT-ADDRESS`: the fully
+accessible main fixture genuinely contains exact direct factors, so the
+reported failure is certification, typing and anti-tailoring rather than a
+no-go for addressable models.
+
+The next event is adjudication of every finding against the frozen pin, code,
+independent rebuild and the adjudicator's own countertests.  Commit #37 remains
+immutable and **GREEN-UNREVIEWED under a frozen hostile rejection**.  No
+repair, terminal claim, topology unit, influence unit, causal reconstruction,
+geometry, field or gravity work is authorized before that adjudication is
+committed.  **HALT.**

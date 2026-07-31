@@ -192,7 +192,14 @@ that made the rule.
   gauge/phase controls and fail-closed receipt without importing the delivery
   implementation.  Its complete report must be frozen verbatim and
   adjudicated before any repair, terminal claim, topology branch or influence
-  branch begins.
+  branch begins.  v13 #39 freezes that report verbatim at SHA-256
+  `f8a39280...`: `REJECT`, despite an independent exact rebuild confirming
+  every load-bearing headline number.  The report alleges three positive-rung
+  failures—reuse of the opened `S3^3` composition truth, no native independent-
+  selectability gate, and incomplete `RegAddr`/`Rec` maps—plus receipt/control
+  deficiencies.  These are hostile findings, not yet adjudicated facts.  The
+  next event is independent adjudication; L0 remains nonterminal and both T1
+  and C1 remain prohibited.
 
 ## 1. The unit cycle
 
