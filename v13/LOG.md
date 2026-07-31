@@ -2157,3 +2157,54 @@ The live scientific status is unchanged by this pin: no terminal
 `RQ0-L0-BLOCKED-AT-ADDRESS`.  `RQ0-T1`, `RQ0-C1`, topology, influence,
 causality, spacetime, fields and gravity remain prohibited.  The next event is
 the estimator/soundness freeze and public calibrations only.
+
+## 2026-07-31 — FINAL RQ0-L0 GENERIC ESTIMATOR AND SOUNDNESS PROOF FROZEN:
+## 29/29 PUBLIC GATES; MAIN ABSTRACT FIXTURE DOES NOT YET EXIST
+## (v13 LEDGER #42)
+The new generic estimator is frozen at
+`code/rq0_l0_certification_estimator_exact.py`, SHA-256
+`c1d3c3b36df71ed80b9ca9152be3d5a97f4d4c1c88ab9f3b0defd360ed14a5c3`.
+The pre-fixture theorem note is frozen at
+`note-rq0-operational-localization-final-certification-soundness.md`, SHA-256
+`acb1ccbcf893f26424bc2868af9354fe9cb3d038ff18917c3602f9c32775ec1d`.
+The deterministic public receipt is
+`code/rq0_l0_certification_estimator_public_output.txt`, SHA-256
+`3a6dcbc2ba51a0583a8818f7a59f549dc7d263e92762d52c28ffe92ac051839b`.
+
+The estimator implements complete rows of exact type
+`(a,b,tau,status,result_class,M,observed_signature)`.  It checks boundary
+typing, status/result/law presence, exact law well-formedness, comparison with
+physical composition, finite gauge equivalence and operational signature as
+separate gates.  `UNAVAILABLE` rows carry no law and are never synthesized.
+The factor certificate reads independent-selectability flags and exhaustively
+replays independent generation, two-order mixed implementation, exact row-law
+commutation, multiplication injectivity, closure/inverses, typed intersections,
+represented-algebra product and restriction stability.
+
+The theorem note proves, before fixture evidence, conditional soundness for
+every returned factor and completeness for normal direct-factor tuples within
+the exact finite type and registered caps.  The public calibration returns
+29/29 in two byte-identical runs.  It includes a fully selectable product; the
+hostile composite-only `S3 x C2` coset rejected at independent generation;
+separate `COLLAPSED`, `UNAVAILABLE`, and true injectivity-collision controls;
+a record-bearing `V4` ambiguity groupoid with three finest objects, 18 arrows
+and all nine source/target pairs; a coprime regional calibration with complete
+operation/row/selectability/preparation/context/probe/readout/record/gauge
+maps and exact projector/Boolean `Rec`; handle-renaming invariance; and a
+twisted triple whose three regional and three record pair maps are valid while
+both loop equations fail.
+
+At this commit none of the pinned future fixture, scorer, receipt or delivery
+paths exists.  Static search finds no import or occurrence of `s3_elements`,
+`triple_elements`, `triple_multiply`, `MainTruth`, or a future fixture module.
+Only public textbook calibrations exist in the estimator.  Its legacy import
+is restricted to exact `Q(zeta_24)` linear algebra and W3 evaluation; no old
+factor estimator or old truth is imported.
+
+The estimator source and proof note are now byte-immutable.  The next and only
+permitted construction event is to create the genuinely new post-freeze main
+abstract composition fixture, hidden scorer truth, receipts and delivery.  If
+that run fails scientifically, procedurally or by cap, the registered outcome
+is frozen; no estimator tuning or replacement fixture is authorized.  No
+positive L0 rung is conferred here, and `RQ0-T1`, `RQ0-C1`, topology,
+influence, causality, spacetime, fields and gravity remain prohibited.

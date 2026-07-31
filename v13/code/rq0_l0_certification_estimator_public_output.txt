@@ -1,0 +1,252 @@
+{
+  "all_pass": true,
+  "calibrations": {
+    "composite_only_coset_blocked": true,
+    "declared_collapse_obstruction": "declared COLLAPSED status",
+    "fully_selectable_factor_orders": [
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        6
+      ]
+    ],
+    "record_bearing_groupoid_arrows": 18,
+    "record_bearing_groupoid_objects": 3,
+    "record_bearing_groupoid_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "regional_calibration_arrows": 5,
+    "regional_calibration_fact_maps": 5,
+    "regional_calibration_factor_orders": [
+      2,
+      3,
+      5
+    ],
+    "regional_calibration_objects": 3,
+    "regional_calibration_triples": 1,
+    "true_collision": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      1
+    ],
+    "twisted_loop_commutes": false,
+    "twisted_record_pair_maps_valid": [
+      true,
+      true,
+      true
+    ],
+    "twisted_regional_loop_commutes": false,
+    "twisted_regional_pair_maps_valid": [
+      true,
+      true,
+      true
+    ],
+    "unavailable_obstruction": "unavailable composition row"
+  },
+  "checks": [
+    {
+      "class": "scientific",
+      "id": "P01",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P02",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P03",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P04",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P05",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P06",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P07",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P08",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P09",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P10",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P11",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P12",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P13",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "P14",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P15",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P16",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P17",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P18",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P19",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P20",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P21",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P22",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P23",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P24",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P25",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P26",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P27",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P28",
+      "pass": true
+    },
+    {
+      "class": "scientific",
+      "id": "P29",
+      "pass": true
+    }
+  ],
+  "estimator_api": "rq0-l0-final-certification-v1",
+  "nonclaims": [
+    "no main fixture or hidden main truth",
+    "no spatial or causal localization",
+    "no topology, spacetime, fields, or gravity"
+  ],
+  "passed": 29,
+  "schema": "rq0-l0-certification-estimator-public-v1",
+  "scope": {
+    "gauge": "global mu_24 row phase; finite carrier relabelling in controls",
+    "main_fixture_truth_present": false,
+    "scalar_field": "Q(zeta_24), Phi_24(x)=x^8-x^4+1",
+    "topology_or_causality_present": false
+  },
+  "total": 29
+}

@@ -220,7 +220,18 @@ that made the rule.
   fail-closed mutants.  After the fixture opens there is no estimator edit or
   replacement fixture.  The delivery must halt for a fresh external hostile
   round and adjudication.  `RQ0-T1`, `RQ0-C1`, and every later unit remain
-  prohibited.
+  prohibited.  v13 #42 freezes the new generic estimator at
+  `v13/code/rq0_l0_certification_estimator_exact.py`, SHA-256
+  `c1d3c3b3...a5c3`, together with its pre-fixture finite soundness and
+  completeness proof.  Its 29/29 public gates include the hostile composite-
+  only `S3 x C2` rejection, separately typed declared collapse and measured
+  multiplication collision, a record-bearing three-object ambiguity
+  groupoid, full public regional/fact maps, and a pairwise-valid twisted
+  triple.  No main fixture, multiplication truth, factor truth, atlas truth,
+  scorer, or delivery path existed in that commit.  The estimator and proof
+  are now byte-immutable.  The next and only construction event is the single
+  genuinely new post-freeze abstract fixture and its scorer; regardless of
+  outcome there is no second estimator or fixture cycle.
 
 ## 1. The unit cycle
 
