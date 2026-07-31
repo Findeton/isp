@@ -21,7 +21,7 @@ from functools import lru_cache
 from typing import Callable, Dict, FrozenSet, Hashable, Iterable, Iterator, Mapping, Optional, Sequence, Tuple
 
 
-ESTIMATOR_API_VERSION = "rq0-l0-addressability-v1"
+ESTIMATOR_API_VERSION = "rq0-l0-addressability-v2"
 MAX_CARRIER_DIMENSION = 64
 MAX_OPERATION_CLASSES = 216
 MAX_COMPOSITION_ROWS = 46_656
@@ -414,9 +414,31 @@ def unflatten(value: Vector, dimension: int) -> Matrix:
     )
 
 
-def canonical_mu24_phase(value: Matrix) -> Matrix:
+def canonical_mu24_phase_reference(value: Matrix) -> Matrix:
+    """Slow executable specification retained for public equivalence tests."""
+
     candidates = tuple(mscale(ZETA ** exponent, value) for exponent in range(24))
     return min(candidates, key=lambda candidate: tuple(entry.sort_key() for entry in flatten(candidate)))
+
+
+def canonical_mu24_phase(value: Matrix) -> Matrix:
+    """Exact lexicographic mu_24 quotient without materializing 24 matrices.
+
+    Lexicographic minimization may discard phase candidates as soon as their
+    scaled coefficient tuple exceeds the current minimum at the first entry
+    where they differ.  This is exactly the reference definition above, not a
+    heuristic or a truth-dependent shortcut.
+    """
+
+    candidates = tuple(range(24))
+    for entry in flatten(value):
+        keys = tuple((exponent, ((ZETA ** exponent) * entry).sort_key()) for exponent in candidates)
+        minimum = min(key for _, key in keys)
+        candidates = tuple(exponent for exponent, key in keys if key == minimum)
+        if len(candidates) == 1:
+            break
+    exponent = candidates[0]
+    return mscale(ZETA ** exponent, value)
 
 
 @dataclass
@@ -637,6 +659,8 @@ def reachable_support(dataset: OperationalDataset) -> Tuple[Matrix, int]:
 
 
 def accessible_amplitude(support: Matrix, value: Matrix) -> Matrix:
+    if support == identity(len(support)):
+        return value
     return mmul(mmul(support, value), support)
 
 
@@ -754,13 +778,28 @@ class CompositionObject:
         return row.result
 
 
-def build_composition_object(dataset: OperationalDataset) -> CompositionObject:
+def build_composition_object(
+    dataset: OperationalDataset,
+    precomputed_support: Optional[Matrix] = None,
+) -> CompositionObject:
     validate_dataset(dataset)
-    support, _ = reachable_support(dataset)
+    support = precomputed_support
+    if support is None:
+        support, _ = reachable_support(dataset)
+    elif shape(support) != (dataset.dimension, dataset.dimension) or not is_projector(support):
+        raise InvalidDataset("precomputed accessible support is mistyped")
     operation_map = {operation.handle: operation for operation in dataset.operations}
+    accessible_by_handle = {
+        operation.handle: accessible_amplitude(support, operation.amplitude)
+        for operation in dataset.operations
+    }
+    signature_by_handle = {
+        handle: amplitude_signature(value)
+        for handle, value in accessible_by_handle.items()
+    }
     grouped: Dict[Tuple[str, Tuple[Tuple[Tuple[int, int], ...], ...]], list[Operation]] = {}
     for operation in dataset.operations:
-        key = (operation.boundary_type, accessible_signature(support, operation.amplitude))
+        key = (operation.boundary_type, signature_by_handle[operation.handle])
         grouped.setdefault(key, []).append(operation)
     ordered_keys = sorted(grouped, key=lambda item: (item[0], item[1]))
     classes = []
@@ -771,9 +810,7 @@ def build_composition_object(dataset: OperationalDataset) -> CompositionObject:
             members=tuple(value.handle for value in members),
             boundary_type=key[0],
             signature=key[1],
-            representative=canonical_mu24_phase(
-                accessible_amplitude(support, members[0].amplitude)
-            ),
+            representative=canonical_mu24_phase(accessible_by_handle[members[0].handle]),
             independently_selectable=any(value.independently_selectable for value in members),
         )
         classes.append(operation_class)
@@ -787,9 +824,7 @@ def build_composition_object(dataset: OperationalDataset) -> CompositionObject:
             continue
         assert row.result is not None
         product = mmul(operation_map[row.left].amplitude, operation_map[row.right].amplitude)
-        if accessible_signature(support, product) != accessible_signature(
-            support, operation_map[row.result].amplitude
-        ):
+        if accessible_signature(support, product) != signature_by_handle[row.result]:
             raise InvalidDataset(
                 f"accessible composition amplitude law fails for ({row.left},{row.right})"
             )
@@ -952,7 +987,15 @@ def normal_subobjects(
                 tests += 1
                 if tests > MAX_CANDIDATE_SUBOBJECTS:
                     raise InvalidDataset("normal-subobject search exceeded the frozen cap")
-                joined = normal_closure(value, left | right, inverses)
+                # The product HK of two normal subgroups is their subgroup
+                # join.  Both inputs here are already certified normal
+                # subobjects, so exhaustive pair products replace a repeated
+                # conjugacy closure without changing the searched lattice.
+                joined = frozenset(
+                    value.product(left_entry, right_entry)
+                    for left_entry in left
+                    for right_entry in right
+                )
                 if joined not in candidates:
                     candidates.add(joined)
                     changed = True
@@ -1031,7 +1074,7 @@ def factorization_sort_key(value: DirectFactorization) -> Tuple[object, ...]:
 def analyze_addressability_core(dataset: OperationalDataset) -> AddressabilityCore:
     validate_dataset(dataset)
     support, accessible_dimension = reachable_support(dataset)
-    composition = build_composition_object(dataset)
+    composition = build_composition_object(dataset, support)
     diagnostics = list(composition.diagnostics)
     if composition.identity is None or not composition.total_implemented:
         diagnostics.append("addressability blocked by missing, unavailable, or collapsed composition")
@@ -2408,6 +2451,28 @@ def public_self_test() -> Mapping[str, object]:
         ),
     }
     record = evaluate_record_witness(two_level_record_witness(), identity(2), 2)
+    phase_samples = (
+        zero_matrix(2, 2),
+        identity(2),
+        matrix(((1, ZETA), (SQRT2, SQRT3))),
+        matrix(((ZETA ** 5, -ONE), (INV_SQRT2, ZETA ** 17))),
+    ) + tuple(
+        s3_representation((rotation, reflection))
+        for rotation in range(3)
+        for reflection in range(2)
+    ) + tuple(
+        public_representation(element)
+        for element in public_elements()
+    )
+    phase_quotient_equivalence = all(
+        canonical_mu24_phase(value) == canonical_mu24_phase_reference(value)
+        and all(
+            canonical_mu24_phase(mscale(ZETA ** exponent, value))
+            == canonical_mu24_phase_reference(mscale(ZETA ** exponent, value))
+            for exponent in range(24)
+        )
+        for value in phase_samples
+    )
     base = analyze_addressability_core(public_calibration_dataset("base"))
     changed = analyze_addressability_core(
         public_calibration_dataset("changed-generator")
@@ -2428,6 +2493,16 @@ def public_self_test() -> Mapping[str, object]:
         congruence_failure_detected = True
     else:
         congruence_failure_detected = False
+    normal_join_equivalence = all(
+        frozenset(
+            base.composition.product(left_entry, right_entry)
+            for left_entry in left
+            for right_entry in right
+        )
+        == normal_closure(base.composition, left | right, base.inverses)
+        for left in base.normal_subobjects
+        for right in base.normal_subobjects
+    )
     expected_signature = (
         12,
         4,
@@ -2445,6 +2520,8 @@ def public_self_test() -> Mapping[str, object]:
             "sqrt3": True,
             "inverse_count": 23,
         },
+        "phase_quotient_equivalence": phase_quotient_equivalence,
+        "normal_join_equivalence": normal_join_equivalence,
         "record": record.passes_w3,
         "public_base": core_signature(base) == expected_signature,
         "changed_generator": core_signature(changed) == core_signature(base),
@@ -2540,6 +2617,8 @@ def public_self_test() -> Mapping[str, object]:
             "inaccessible_quotient": checks["inaccessible_quotient"],
             "congruence_failure": checks["congruence_failure"],
             "typed_map_chain": checks["typed_map_chain"],
+            "phase_quotient_equivalence": checks["phase_quotient_equivalence"],
+            "normal_join_equivalence": checks["normal_join_equivalence"],
         },
         "checks": checks,
     }

@@ -1695,3 +1695,42 @@ requires a new source freeze, using public calibrations only, followed by
 genuinely unseen fixture contents.  That performance-only freeze is the next
 authorized event.  `RQ0-C1`, causal order, geometry, fields and gravity remain
 prohibited.  **HALT.**
+
+## 2026-07-30 — RQ0-L0 GENERIC ESTIMATOR v2 FROZEN AFTER RUNTIME FAILURE;
+## NEW UNSEEN FIXTURE REQUIRED (v13 LEDGER #34)
+The performance-repaired generic estimator is frozen at
+`code/rq0_l0_addressability_estimator_exact.py`, SHA-256
+`124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde`
+(99,389 bytes, 2,633 lines), API `rq0-l0-addressability-v2`.  This commit
+modifies no fixture, scorer, delivery note or receipt.  The #33 fixture remains
+an opened retired calibration and was not rescored.
+
+The scientific predicates and caps are unchanged.  Four generic exact
+performance repairs were made: lexicographic `mu_24` phase minimization now
+discards losing candidates entry by entry instead of materializing 24 full
+matrices; operation signatures are cached within the composition-object
+builder; identity accessible support avoids redundant exact projections and
+the already-computed support is reused; and the join of two already-certified
+normal subgroups is computed by the exact `HK` product theorem instead of
+repeating conjugacy closure.
+
+The former phase routine remains as an executable reference specification.
+The public suite compares the optimized result exactly against that reference
+over zero, identity, mixed cyclotomic matrices, every public `S3` and
+`S3 x C2` operation, and all 24 phase shifts.  It also compares every public
+normal-subgroup product join against the former normal-closure construction.
+Both equivalence gates pass, along with every #32 field, W3, quotient,
+generator-change, redundant-alias, unavailable, collapse, congruence,
+inaccessible-support, typed-map, typed-atlas and ambiguity-arrow anchor.
+
+Two complete public runs are byte-identical: 1,730 bytes, 81 lines, SHA-256
+`c05ac5dbdf864670f6f419a2416191d9efd4582ffbb4c6d13efc95b16ff3e051`.
+One measured run completed in 18.11 seconds, below the unchanged 360-second
+cap.  The source contains no new fixture truth, expected atlas, causal object,
+geometry, field or gravity object.
+
+Because this estimator was changed after #33 truth opened, #33 can never earn
+a positive score.  The next authorized stage must construct genuinely unseen
+fixture contents only after this commit, then build the scorer, receipts and
+delivery note under #31.  `RQ0-C1` and every later unit remain prohibited.
+**HALT.**

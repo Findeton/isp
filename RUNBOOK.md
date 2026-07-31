@@ -157,6 +157,13 @@ that made the rule.
   atlas is promoted.  The opened fixture is retired from positive scoring;
   the next permitted event is a generic performance-only estimator freeze
   using public calibrations, followed by genuinely unseen fixture contents.
+  v13 #34 freezes that v2 estimator at SHA-256 `124cc154...`: it preserves the
+  predicates while exactly optimizing finite-phase canonicalization,
+  per-operation signature reuse, identity-support projection and joins of
+  certified normal subgroups.  New and reference algorithms agree on all
+  public phase and subgroup-join controls; two public receipts are identical
+  and one measured run takes 18.11 seconds.  The retired #33 fixture was not
+  rescored.  Only genuinely unseen post-#34 fixture contents may now be used.
 
 ## 1. The unit cycle
 
