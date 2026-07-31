@@ -2324,3 +2324,44 @@ adjudication of F1–F5 and terminal closure of this one-shot cycle at its hones
 procedural status, without conferring a scientific L0 rung.  `RQ0-T1`,
 `RQ0-C1`, topology, influence, causality, spacetime, fields and gravity remain
 prohibited.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 CERTIFICATION HOSTILE REVIEW ADJUDICATED:
+## ONE-SHOT CYCLE CLOSED `RQ0-L0-INVALID`; NO SCIENTIFIC L0 VERDICT
+## (v13 LEDGER #46)
+The adjudication is frozen at
+`note-rq0-operational-localization-final-certification-adjudication.md`,
+SHA-256
+`55d188830028c24f86f78306cd690adba139c1be7466ba83c395580971cdaeb6`.
+It accepts the #45 verdict `ACCEPT INVALID DELIVERY WITH DOCUMENTATION FIXES`
+and all five ranked findings after direct source verification.  The fixes are
+forward scope corrections only; no frozen estimator, theorem, fixture,
+scorer, receipt, delivery note or review is edited.
+
+F1 is accepted: the addressability stage, not a completed downstream main
+pipeline, exhausted the official budget.  The exercised timeout branch fails
+closed, but the unexecuted worker-return branch is not a total outcome
+resolver.  F2 is accepted: the public regional-arrow calibration checks
+substantial projections and squares but does not return every field of the
+pin's complete row-arrow type.  F3 is accepted: the public twisted control is
+a genuine two-atom loop-holonomy calibration, not three independently rebuilt
+full instrument isomorphisms.  F4 is accepted: full five-path chronology,
+proof immutability and non-`S3^3` novelty are independent hostile-review
+measurements rather than consequences of the scorer's partial anchors or
+self-declared `R09`.  F5 is accepted: one canonical official run records the
+360-second timeout; the earlier attempt is narrative evidence and the hostile
+bounded samples corroborate only the bottleneck.
+
+The one-shot cycle's final procedural disposition is `RQ0-L0-INVALID`, with
+scientific outcome null.  This closes the authorized cycle but confers no
+terminal scientific RQ0-L0 status: neither `RQ0-LOCALIZATION-GROUPOID` nor
+`RQ0-LOCAL-ATLAS` nor `RQ0-L0-BLOCKED-AT-ADDRESS` is earned.  The new fixture,
+all 36,864 exact rows, four W3 seams and public theorem/calibrations survive as
+scoped construction/calibration evidence; intended factor orders and atlas
+truth remain hidden and unearned.
+
+The registered stop rule forbids optimization, repair, shrinkage, replacement,
+cap evasion, hidden rescore or an automatic additional fixture cycle.  A new
+L0 attempt would require an explicit user instruction and a new committed pin;
+it could not rewrite this history.  Because there is no terminal L0
+localization result, `RQ0-T1`, `RQ0-C1`, topology, influence, causality,
+spacetime, fields and gravity remain prohibited.  **HALT.**

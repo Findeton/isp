@@ -261,7 +261,18 @@ that made the rule.
   findings concerning the observed-only fail-closed branch, incomplete public
   arrow type, syntactic twisted-pair validation, partly recorded provenance
   and single canonical timeout await separate adjudication.  No repair or
-  retry is authorized; T1 and C1 remain prohibited.
+  retry is authorized; T1 and C1 remain prohibited.  v13 #46 adjudicates and
+  accepts all five scope findings without editing any frozen artifact; its
+  note is frozen at SHA-256 `55d18883...daeb6`.  The
+  authorized one-shot cycle is now closed procedurally
+  `RQ0-L0-INVALID`, scientific outcome null.  This is not a terminal
+  scientific L0 rung: no positive localization result and no
+  `RQ0-L0-BLOCKED-AT-ADDRESS` no-go was earned.  Public theorem/calibration
+  evidence, the new order-192 fixture, its 36,864 exact rows and four W3 seams
+  survive at their narrow scopes; intended factor and atlas truth remain
+  hidden and unearned.  No optimization, repair, replacement, rescore or
+  automatic fixture cycle is permitted.  Reopening L0 requires a new explicit
+  user instruction and committed pin.  T1 and C1 remain prohibited.
 
 ## 1. The unit cycle
 
