@@ -2208,3 +2208,49 @@ that run fails scientifically, procedurally or by cap, the registered outcome
 is frozen; no estimator tuning or replacement fixture is authorized.  No
 positive L0 rung is conferred here, and `RQ0-T1`, `RQ0-C1`, topology,
 influence, causality, spacetime, fields and gravity remain prohibited.
+
+## 2026-07-31 — FINAL RQ0-L0 ONE-SHOT DELIVERY FROZEN INVALID:
+## NEW `C2 x C3 x C4 x D4` FIXTURE BUILT; FROZEN ESTIMATOR EXCEEDS 360 s
+## (v13 LEDGER #43)
+The single post-freeze fixture authorized by #41 is frozen at
+`code/rq0_l0_certification_fixtures_exact.py`, SHA-256
+`b2901029d8533af2b90aa5eddbff6ed583c218bec8476a9dd55dc116ed581b14`.
+It is a genuinely new heterogeneous `C2 x C3 x C4 x D4` exact composition
+family with 192 opaque operation classes, 36,864 complete typed rows, a
+32-state exact monomial carrier, six independently selectable generators,
+four record candidates and five irregular access contexts.  It does not
+import or re-encode `S3^3`, the old `(6,6,6)` factor truth, or the old proper-
+Boolean atlas truth.  Git chronology confirms that neither this fixture nor
+its scorer existed at estimator freeze `3b9d88a`.
+
+The first irreversible score built all 192 classes and 36,864 rows, then the
+byte-frozen estimator failed to return from exact represented-algebra
+certification within the registered complete-run cap of 360 seconds.  The
+official fail-closed scorer authenticated the frozen estimator and proof,
+reproduced the 29/29 public calibration, built the same serialized fixture,
+and independently reached the same timeout before any main factor certificate
+returned.  Its 11/11 provenance/procedural checks pass, every positive
+prerequisite is false, and every positive outcome is suppressed.
+
+The binding delivery outcome is therefore procedural
+`RQ0-L0-INVALID`, with **no scientific outcome**.  This is not terminal
+`RQ0-LOCAL-ATLAS`, not terminal `RQ0-LOCALIZATION-GROUPOID`, and not
+`RQ0-L0-BLOCKED-AT-ADDRESS`: the capped run measured neither the presence nor
+absence of independently operable factors in the new main fixture.  Public
+soundness controls and the successful fixture constructor survive only as
+calibration/construction evidence.
+
+Canonical receipts are
+`code/rq0_l0_certification_receipt.json`, SHA-256
+`c3dfe72c199dd9036f3e4966035805a89d80713a6b788d32451d03fbe589e852`,
+and `code/rq0_l0_certification_output.txt`, SHA-256
+`ce5c3bedd42a188bd12f409f55ea01f9e476fd9baae69e0e9dac6f066398cb8b`.
+The scorer is SHA-256
+`2fab9d403d7f740206e2a8c5cf4287cfb98cd5709257c82fd4b19db565f461a0`.
+No estimator edit, fixture shrinkage, truth change, replacement fixture, or
+automatic retry follows.  Construction is closed under the registered
+stopping rule.  The next and only permitted event is a fresh external repo-
+read-only hostile review of the immutable pin, estimator freeze and invalid
+delivery, followed by verbatim freeze and separate adjudication.  `RQ0-T1`,
+`RQ0-C1`, topology, influence, causality, spacetime, fields and gravity remain
+prohibited.  **HALT.**

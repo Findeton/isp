@@ -231,7 +231,20 @@ that made the rule.
   scorer, or delivery path existed in that commit.  The estimator and proof
   are now byte-immutable.  The next and only construction event is the single
   genuinely new post-freeze abstract fixture and its scorer; regardless of
-  outcome there is no second estimator or fixture cycle.
+  outcome there is no second estimator or fixture cycle.  v13 #43 freezes
+  that one-shot delivery as procedural `RQ0-L0-INVALID`: the genuinely new
+  exact `C2 x C3 x C4 x D4` fixture successfully built 192 classes, 36,864
+  complete typed rows and a 32-state carrier, but the byte-frozen estimator
+  did not return from represented-algebra certification within the registered
+  360-second complete-run cap.  The official resolver reproduces the 29/29
+  public suite, authenticates the chronology and sources, and suppresses all
+  positive outcomes.  No main factor certificate, regional atlas or record
+  functor was returned, so there is no scientific L0 verdict and no
+  `RQ0-L0-BLOCKED-AT-ADDRESS` verdict.  The stopping rule forbids estimator
+  optimization, fixture shrinkage, a replacement fixture or an automatic
+  retry.  The next event is the authorized external repo-read-only hostile
+  review of the immutable invalid delivery, followed by verbatim freeze and
+  separate adjudication.  T1 and C1 remain prohibited.
 
 ## 1. The unit cycle
 

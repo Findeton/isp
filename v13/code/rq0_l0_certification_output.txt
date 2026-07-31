@@ -1,0 +1,31 @@
+RQ0-L0 FINAL CERTIFICATION RECEIPT
+status: INVALID-FROZEN
+procedural_outcome: RQ0-L0-INVALID
+scientific_outcome: None
+reason: main complete pipeline exceeded the registered 360-second cap
+estimator_sha256: c1d3c3b36df71ed80b9ca9152be3d5a97f4d4c1c88ab9f3b0defd360ed14a5c3
+fixture_sha256: b2901029d8533af2b90aa5eddbff6ed583c218bec8476a9dd55dc116ed581b14
+serialized_main_input_sha256: 759d7c0ac774943cf220526751b54d9c5aaa8dcfd4ef98b344758a09cf61d322
+fixture: 192 operations; 36864 complete rows; carrier 32; 6 independently selectable
+public_calibration: 29/29
+main_worker: timed_out=True cap=360s
+checks:
+  R01 [provenance]: PASS
+  R02 [provenance]: PASS
+  R03 [provenance]: PASS
+  R04 [procedural]: PASS
+  R05 [procedural]: PASS
+  R06 [procedural]: PASS
+  R07 [procedural]: PASS
+  R08 [procedural]: PASS
+  R09 [procedural]: PASS
+  R10 [procedural]: PASS
+  R11 [procedural]: PASS
+positive outcomes: SUPPRESSED
+next: external read-only hostile review; no estimator/fixture retry
+nonclaims:
+  - no terminal RQ0-L0 rung
+  - not RQ0-L0-BLOCKED-AT-ADDRESS
+  - no topology or spatial claim
+  - no influence or causal claim
+  - no spacetime, field, or gravity claim

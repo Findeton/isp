@@ -1,0 +1,138 @@
+{
+  "checks": [
+    {
+      "class": "provenance",
+      "id": "R01",
+      "pass": true
+    },
+    {
+      "class": "provenance",
+      "id": "R02",
+      "pass": true
+    },
+    {
+      "class": "provenance",
+      "id": "R03",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R04",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R05",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R06",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R07",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R08",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R09",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R10",
+      "pass": true
+    },
+    {
+      "class": "procedural",
+      "id": "R11",
+      "pass": true
+    }
+  ],
+  "chronology": {
+    "estimator_freeze_commit": "3b9d88a",
+    "estimator_hash_matches_pin": true,
+    "fixture_absent_at_estimator_freeze": true,
+    "scorer_absent_at_estimator_freeze": true
+  },
+  "fixture": {
+    "abstract_family": "fresh heterogeneous C2 x C3 x C4 x D4",
+    "carrier_dimension": 32,
+    "complete_rows": 36864,
+    "contexts": 5,
+    "estimator_freeze_commit": "3b9d88a",
+    "estimator_frozen_sha256": "c1d3c3b36df71ed80b9ca9152be3d5a97f4d4c1c88ab9f3b0defd360ed14a5c3",
+    "independently_selectable": 6,
+    "old_s3_cubed_imported": false,
+    "operations": 192,
+    "post_freeze_fixture": true,
+    "records": 4,
+    "schema": "rq0-l0-final-fresh-heterogeneous-v1",
+    "truth_visible_to_estimator": false
+  },
+  "mandatory_controls_not_reached": [
+    "new-main sound-factor scoring",
+    "new-main RegAddr and Rec scoring",
+    "new-main gauge and physical-phase comparison",
+    "new-main handle/projector/map mutants",
+    "new-main deterministic positive regeneration"
+  ],
+  "nonclaims": [
+    "no terminal RQ0-L0 rung",
+    "not RQ0-L0-BLOCKED-AT-ADDRESS",
+    "no topology or spatial claim",
+    "no influence or causal claim",
+    "no spacetime, field, or gravity claim"
+  ],
+  "positive_prerequisites": {
+    "all_positive_outcomes_suppressed": true,
+    "estimator_returned_under_cap": false,
+    "factor_certificates_available": false,
+    "record_functor_available": false,
+    "regional_maps_available": false
+  },
+  "procedural_outcome": "RQ0-L0-INVALID",
+  "public_calibration": {
+    "all_pass": true,
+    "passed": 29,
+    "total": 29
+  },
+  "reason": "main complete pipeline exceeded the registered 360-second cap",
+  "runtime": {
+    "complete_run_cap_seconds": 360,
+    "main_worker_timed_out": true,
+    "seed": "none; PYTHONHASHSEED=0 for worker",
+    "worker_returncode": null,
+    "worker_stderr_tail": "",
+    "worker_stdout": [
+      "{\"carrier\": 32, \"operations\": 192, \"rows\": 36864, \"worker\": \"fixture-built\"}"
+    ]
+  },
+  "schema": "rq0-l0-final-certification-receipt-v1",
+  "scientific_outcome": null,
+  "sources": {
+    "estimator_sha256": "c1d3c3b36df71ed80b9ca9152be3d5a97f4d4c1c88ab9f3b0defd360ed14a5c3",
+    "fixture_sha256": "b2901029d8533af2b90aa5eddbff6ed583c218bec8476a9dd55dc116ed581b14",
+    "proof_sha256": "acb1ccbcf893f26424bc2868af9354fe9cb3d038ff18917c3602f9c32775ec1d",
+    "scorer_sha256": "2fab9d403d7f740206e2a8c5cf4287cfb98cd5709257c82fd4b19db565f461a0",
+    "serialized_main_input_sha256": "759d7c0ac774943cf220526751b54d9c5aaa8dcfd4ef98b344758a09cf61d322"
+  },
+  "status": "INVALID-FROZEN",
+  "stopping_rule": {
+    "estimator_edit_allowed": false,
+    "next_event": "freeze invalid delivery, external hostile review, adjudication",
+    "replacement_fixture_allowed": false
+  },
+  "surviving_evidence": [
+    "frozen 29/29 public estimator calibrations",
+    "new fixture constructor produced 192 classes, 36864 rows, carrier 32",
+    "new fixture provenance is post-freeze and non-S3^3"
+  ]
+}
