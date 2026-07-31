@@ -207,7 +207,20 @@ that made the rule.
   not enforced generically, and the regional/record arrows miss their pinned
   types.  A forward repair requires a new strict pin, a new estimator freeze
   and a genuinely new abstract composition fixture.  That cycle awaits the
-  user's explicit go-ahead; T1 and C1 remain prohibited.
+  user's explicit go-ahead; T1 and C1 remain prohibited.  The user supplies
+  that go-ahead at v13 #41.  A final, bounded, forward-only L0 certification-
+  and-typing repair pin is now frozen at
+  `v13/note-rq0-operational-localization-final-certification-pin.md`.  It
+  preserves the complete #31–#40 surface, permits one new generic estimator
+  freeze followed by one genuinely new non-`S3^3` abstract fixture, requires
+  independent-selectability generation, independently supplied complete row
+  laws, pre-fixture finite soundness/completeness, full `RegAddr` arrows,
+  handle-invariant projector/Boolean `Rec`, a pairwise-valid twisted triple,
+  record-bearing ambiguity, distinct collapse controls, and end-to-end
+  fail-closed mutants.  After the fixture opens there is no estimator edit or
+  replacement fixture.  The delivery must halt for a fresh external hostile
+  round and adjudication.  `RQ0-T1`, `RQ0-C1`, and every later unit remain
+  prohibited.
 
 ## 1. The unit cycle
 

@@ -2120,3 +2120,40 @@ be another representation or encoding of `S3^3`.
 That repair cycle awaits the user's explicit go-ahead.  Until then no new pin,
 estimator, fixture, `RQ0-T1`, `RQ0-C1`, causal reconstruction, geometry, field
 or gravity work is authorized.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 CERTIFICATION-AND-TYPING REPAIR PIN FROZEN:
+## ONE NEW ESTIMATOR, ONE NEW ABSTRACT FIXTURE, THEN EXTERNAL REVIEW
+## (v13 LEDGER #41)
+The user explicitly authorizes one bounded, forward-only final RQ0-L0 closure
+cycle.  The strict pin is frozen at
+`note-rq0-operational-localization-final-certification-pin.md`.  Commits
+`ffbcce6`, `208a354`, `9d58eb0`, `08118f8`, `d31472b`, and `c6d51b` and all
+associated code, fixtures, receipts and reviews remain immutable.  The old
+`S3^3` result survives only as calibration evidence and will not be edited,
+rescored, or re-encoded as the new main fixture.
+
+The repair requires a complete row type `(a,b,tau,status,result_class,M)`
+with an independently supplied exact amplitude law, generation by classes
+whose independent-selectability flag is actually read, and a pre-fixture
+finite soundness/completeness proof for every returned factor.  It also
+requires full `RegAddr` restriction maps on operations, rows, access flags,
+preparations, contexts, probes/readouts, record candidates and gauge actions;
+handle-invariant exact projector/Boolean-algebra
+`Rec : RegAddr^op -> FactIface`; a pairwise-valid but loop-incoherent twisted
+triple; record-bearing ambiguity; distinct declared-collapse and true
+multiplication-collision controls; and end-to-end serialized-input mutants.
+
+The new generic estimator will be frozen at
+`code/rq0_l0_certification_estimator_exact.py` before the future fixture,
+scorer, truth and delivery paths exist.  Only after that commit may one
+genuinely new heterogeneous/non-`S3^3` abstract composition object be opened.
+Once opened, the estimator is byte-immutable and no second fixture cycle is
+authorized, regardless of outcome.  The resulting delivery must halt for a
+fresh external repo-read-only hostile review, verbatim review freeze and
+separate adjudication before any terminal decision.
+
+The live scientific status is unchanged by this pin: no terminal
+`RQ0-LOCAL-ATLAS`, no terminal `RQ0-LOCALIZATION-GROUPOID`, and no
+`RQ0-L0-BLOCKED-AT-ADDRESS`.  `RQ0-T1`, `RQ0-C1`, topology, influence,
+causality, spacetime, fields and gravity remain prohibited.  The next event is
+the estimator/soundness freeze and public calibrations only.
