@@ -150,7 +150,13 @@ that made the rule.
   independent direct-factor search, W3 records, executable algebra/record
   maps and groupoid derivation, with public calibrations only.  The main
   fixture and scorer paths did not exist at freeze.  The estimator is now byte-
-  immutable for the first repair fixture.
+  immutable for the first repair fixture.  v13 #33 freezes that first unseen
+  fixture as procedural `RQ0-L0-INVALID`: its exact `S3 x projective-V4 x C2`
+  constructor passed, but the complete generic estimator crossed the pinned
+  360-second runtime cap before returning.  No scientific rung or partial
+  atlas is promoted.  The opened fixture is retired from positive scoring;
+  the next permitted event is a generic performance-only estimator freeze
+  using public calibrations, followed by genuinely unseen fixture contents.
 
 ## 1. The unit cycle
 

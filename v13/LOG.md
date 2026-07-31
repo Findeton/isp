@@ -1663,3 +1663,35 @@ main fixture must be outside the old Pauli-tensor family, carry typed `Comp_D`,
 and run every #31 control.  Any estimator change requires another freeze and
 another unseen fixture.  `RQ0-C1` and all causal, geometric, field and gravity
 work remain prohibited.  **HALT.**
+
+## 2026-07-30 — FIRST REPAIRED RQ0-L0 HELD-OUT FIXTURE INVALID AT
+## FROZEN RUNTIME CAP; NO SCIENTIFIC OUTCOME (v13 LEDGER #33)
+The first post-freeze held-out fixture is now frozen at
+`code/rq0_l0_addressability_fixtures_exact.py`, SHA-256
+`fb5b671bd1264122563867f71a1fbeaf1ca0616f7628702d35f6e9eba011cea6`
+(29,085 bytes, 792 lines).  It constructs a globally encoded exact
+`S3 x projective-V4 x C2` amplitude instrument over `Q(zeta_24)`, with carrier
+dimension 8, 48 raw operations, 2,304 flat typed composition rows and two W3
+record candidates.  It imports the unchanged #32 estimator at the exact
+frozen SHA-256 `79c8d493...`.
+
+The fixture constructor completes and its source/type anchors pass.  The
+complete generic estimator call did not return within the pre-registered
+360-second suite cap.  It was interrupted after 419.71 measured wall seconds
+inside the generic direct-complement search.  Pin section 14 makes a cap hit
+procedural `RQ0-L0-INVALID`; therefore no scientific positive or negative rung
+is printed, no partial atlas state is promoted, and no heuristic fallback is
+permitted.
+
+The exact invalid text and JSON receipts are
+`code/rq0_l0_addressability_output.txt` and
+`code/rq0_l0_addressability_receipt.json`.  The accompanying note is
+`note-rq0-operational-localization-addressability-repair.md`.  This opened
+fixture is permanently retired from positive scoring.  It may be used only as
+a timing/calibration benchmark.
+
+The #31 pin already supplies the forward rule: any generic estimator change
+requires a new source freeze, using public calibrations only, followed by
+genuinely unseen fixture contents.  That performance-only freeze is the next
+authorized event.  `RQ0-C1`, causal order, geometry, fields and gravity remain
+prohibited.  **HALT.**

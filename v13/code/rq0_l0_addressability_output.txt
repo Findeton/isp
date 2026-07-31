@@ -1,0 +1,28 @@
+RQ0-L0 ADDRESSABILITY — FIRST HELD-OUT FIXTURE ATTEMPT
+======================================================
+
+status: RQ0-L0-INVALID
+scientific_outcome: none
+invalid_reason: complete exact suite exceeded the frozen 360-second runtime cap
+
+frozen_estimator_sha256: 79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3
+fixture_sha256: fb5b671bd1264122563867f71a1fbeaf1ca0616f7628702d35f6e9eba011cea6
+fixture_family: globally encoded exact S3 x projective-V4 x C2 amplitude instrument
+exact_scalar_field: Q(zeta_24), Phi_24(x) = x^8 - x^4 + 1
+carrier_dimension: 8
+raw_operation_count: 48
+flat_composition_row_count: 2304
+frozen_record_candidates: 2
+seed: none
+
+The fixture constructor completed exactly and authenticated the frozen
+estimator hash.  The complete generic localization call crossed 360 seconds
+before returning.  It was interrupted after 419.71 measured wall seconds
+while inside the generic direct-complement search.  A cap hit is procedural
+RQ0-L0-INVALID under repair pin section 14.  No heuristic fallback was used,
+no positive or negative scientific rung is printed, and no atlas count is
+claimed.
+
+This opened fixture is permanently retired from positive scoring.  Any
+estimator optimization requires a new source freeze followed by genuinely
+unseen fixture contents.

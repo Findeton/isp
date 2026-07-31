@@ -1,0 +1,41 @@
+{
+  "unit": "RQ0-L0 addressability repair",
+  "attempt": "first held-out fixture",
+  "status": "RQ0-L0-INVALID",
+  "scientific_outcome": null,
+  "invalid_reason": "complete exact suite exceeded the frozen 360-second runtime cap",
+  "frozen_estimator": {
+    "commit": "760d921",
+    "sha256": "79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3"
+  },
+  "fixture": {
+    "sha256": "fb5b671bd1264122563867f71a1fbeaf1ca0616f7628702d35f6e9eba011cea6",
+    "family": "globally encoded exact S3 x projective-V4 x C2 amplitude instrument",
+    "field": "Q(zeta_24) modulo x^8-x^4+1",
+    "carrier_dimension": 8,
+    "raw_operations": 48,
+    "composition_rows": 2304,
+    "record_candidates": 2,
+    "seed": null
+  },
+  "runtime": {
+    "cap_seconds": 360,
+    "cap_exceeded": true,
+    "observed_interrupt_seconds": "419.71",
+    "interrupted_stage": "generic direct-complement search"
+  },
+  "outcome_prerequisites": {
+    "complete_suite_within_cap": false,
+    "positive_rung_permitted": false,
+    "negative_scientific_rung_permitted": false
+  },
+  "reuse_policy": "opened fixture permanently retired from positive scoring",
+  "nonclaims": [
+    "no localization rung",
+    "no causal or spatial locality",
+    "no influence relation",
+    "no geometry",
+    "no field theory",
+    "no gravity"
+  ]
+}
