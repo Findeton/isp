@@ -99,7 +99,14 @@ that made the rule.
   the binding successor order is RQ0-L0 localization -> RQ0-C1 influence ->
   RQ0-C2 causal order/cones -> RQ0-G dimension/volume/conformal geometry ->
   RQ1 matter -> GR1.  A separate strict L0 pin must be committed before any
-  localization construction.  C1 and every later unit remain unpinned.
+  localization construction.  v13 #24 freezes that strict pin: L0 must derive
+  an operational quotient and gauge-invariant local subinstruments from
+  black-box amplitude laws, return ambiguity as a groupoid, and recover a
+  non-star overlap nerve without reading planted subsystem or overlap labels.
+  The generic exact estimator must be committed and byte-frozen before its
+  main fixture truth is opened; only a later scorer may read that truth.  The
+  next authorized action is the estimator-freeze stage.  No influence or
+  causal relation is defined, and C1 and every later unit remain unpinned.
 
 ## 1. The unit cycle
 

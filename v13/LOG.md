@@ -1042,3 +1042,62 @@ object.  The review supplies the user go/no-go for `RQ0-L0` as the next unit.
 Its strict pin must be committed separately before any localization
 construction.  `RQ0-C1`, RQ0-C2, RQ0-G, RQ1 and GR1 remain unpinned and
 unstarted.
+
+## 2026-07-30 — RQ0-L0 OPERATIONAL LOCALIZATION PIN FROZEN:
+## ESTIMATOR-BEFORE-TRUTH; NO CAUSAL CLAIM (v13 LEDGER #24)
+The strict successor pin is
+`note-rq0-operational-localization-pin.md`, SHA-256
+`02ed47ad0a294741e613639b02066797a2057fcfcd816edd81203f353b1f9a59`.
+It implements the user's post-terminal direction accepted at #23 and asks
+whether proper local quantum subinstruments and a nontrivial overlap nerve can
+be recovered from finite black-box operational amplitude laws without reading
+qubit names, circuit wires, planted tensor factors, construction labels,
+coordinates, causal graphs, metrics or fields.
+
+The primitive input is a gauge class of typed preparations, amplitude arrows,
+opaque intervention handles, composition contexts and frozen readouts.  A new
+provisional operational-access postulate lists those available operations but
+contains no subsystem partition.  Interventions are first quotiented by exact
+indistinguishability across every admitted preparation, context and readout;
+the accessible intervention star-algebra is then the only localization input.
+A candidate local subinstrument is a proper closed intervention subalgebra
+with a derived W3 record algebra and an exact independently addressable
+complement.  Commutation is necessary but insufficient: faithful joint
+implementation, scalar intersection after typed central structure, closure
+and the declared finite algebra product test are also required.  None of
+these relations is called spatial or causal.
+
+The pin makes the anti-tailoring order executable.  The generic exact
+localization estimator must be committed first, source-hashed and thereafter
+byte-frozen.  Its later fixture and scorer may import it; it may not import
+fixture truth.  Only after that commit may the main non-star construction
+labels be opened to the scorer.  This establishes executable-path separation,
+not independent blind authorship; an external hostile round must supply an
+independently rebuilt or mutated fixture before terminal status.  Any
+post-truth estimator edit invalidates the old score and requires a fresh
+freeze plus a genuinely new unseen fixture family.
+
+Mandatory controls are presentation and gauge changes; inaccessible and
+active spectators; an exact encoded subsystem; a globally irreducible process;
+ambiguous factorization with groupoid output; at least four recovered regions
+forming a non-star nerve with distinct pair overlaps and a genuine triple;
+exact complex phase over `Q(zeta_8)`; derived W3 write/preserve/erase records;
+equal-law false overlap; and a static truth-import mutant.  Substantive paths
+are exact, with at most 32 accessible configurations, eight primitive
+intervention classes, 4,140 exhaustive generator partitions and 240 seconds
+total runtime.  A cap hit or any truth/gauge/numeric breach is fail-closed;
+there is no heuristic fallback.
+
+The only scientific outcomes are `RQ0-L0-BLOCKED-AT-ADDRESS`,
+`RQ0-LOCALIZATION-GROUPOID`, and `RQ0-LOCAL-ATLAS`.
+`RQ0-L0-INVALID` is a procedural receipt status and prints no positive rung.
+The highest rung requires the recovered local objects to be unique up to the
+returned gauge/groupoid equivalence, to form the non-star overlap nerve, and
+to carry coherently descending W3-stable facts.  The lower positive rung
+retains every exact ambiguity rather than selecting a representative.
+
+This commit freezes definitions and instruments only; it constructs no L0
+mathematical result.  The next authorized commit is the estimator-freeze
+stage and may touch only the pinned estimator path plus append-only ledger and
+runbook state.  No main-fixture truth may be opened in that stage.  `RQ0-C1`,
+causal order, geometry, fields and gravity remain unpinned and prohibited.
