@@ -105,8 +105,13 @@ that made the rule.
   non-star overlap nerve without reading planted subsystem or overlap labels.
   The generic exact estimator must be committed and byte-frozen before its
   main fixture truth is opened; only a later scorer may read that truth.  The
-  next authorized action is the estimator-freeze stage.  No influence or
-  causal relation is defined, and C1 and every later unit remain unpinned.
+  estimator-freeze stage is recorded at v13 #25: the generic exact
+  `Q(zeta_8)` quotient/algebra/groupoid engine is source-hashed and now
+  byte-frozen, with only public calibration models run.  No main fixture or
+  expected overlap truth existed in that commit.  The next authorized action
+  is the separate fixture/scoring delivery, which may import the frozen
+  estimator but may not edit it.  No influence or causal relation is defined,
+  and C1 and every later unit remain unpinned.
 
 ## 1. The unit cycle
 

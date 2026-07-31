@@ -1101,3 +1101,67 @@ mathematical result.  The next authorized commit is the estimator-freeze
 stage and may touch only the pinned estimator path plus append-only ledger and
 runbook state.  No main-fixture truth may be opened in that stage.  `RQ0-C1`,
 causal order, geometry, fields and gravity remain unpinned and prohibited.
+
+## 2026-07-30 — RQ0-L0 GENERIC ESTIMATOR FROZEN BEFORE FIXTURE TRUTH:
+## EXACT PUBLIC CALIBRATIONS ONLY; NO L0 RUNG CLAIMED (v13 LEDGER #25)
+The generic estimator is
+`code/rq0_l0_localization_estimator_exact.py`, SHA-256
+`0b8d90bad735f6574ee367dd0bf7e98bcc1c6f2854f7a12070c82bae84e063b8`.
+It is bound to pin commit
+`f218dde7b73631f7fd6359582d7bf494990eb076` and pin SHA-256
+`02ed47ad0a294741e613639b02066797a2057fcfcd816edd81203f353b1f9a59`.
+This commit is the temporal freeze required by #24: the estimator source now
+becomes byte-immutable for the first main fixture and scorer.
+
+The estimator contains no main fixture, planted component partition, expected
+overlap nerve, causal object, metric or field object.  Its only imports are
+Python standard-library `itertools`, `json`, `dataclasses`, `fractions` and
+`typing` plus `__future__`; AST inspection finds zero float literals and zero
+fixture/scorer imports.  The later dependency direction is one-way: fixture
+and scorer may import this file, while this file may never import them.
+
+The frozen engine implements:
+
+- exact arithmetic in `Q(zeta_8)` and exact matrix/projector operations;
+- the reachable operational-support projector, so permanently inaccessible
+  direct-sum structure is quotiented before localization;
+- intervention equivalence from every frozen preparation/context/probe Born
+  statistic, with exact `mu_8` global-phase normalization and fail-closed
+  `AccessUnderdetermined` behavior if equal statistics retain inequivalent
+  accessible actions;
+- generated finite star-algebras and an exhaustive set-partition search of at
+  most eight opaque intervention classes;
+- independently addressable factor tests by non-scalar algebra, pairwise
+  commutation, scalar intersection and exact product/ambient dimension;
+- retention of every finest factorization, exact presentation-action arrows,
+  the derived local-object lattice, and algebra-checked pair/triple meets;
+- basis-invariant frozen W3 witnesses with H-corr, continuation-relative
+  H-avail, erasing cross-sector coherence and a no-write failure control;
+- a canonical data schema and structural signature that contain no scientific
+  L0 outcome constant.
+
+The public calibration suite, which is not the main fixture, reproduces all
+Bell set-partition counts through eight generators
+`1, 2, 5, 15, 52, 203, 877, 4140`; checks 80 nonzero exact field inverses;
+recovers one `4 x 4` algebra factorization of a four-dimensional process;
+returns the identical structural signature after a non-product encoded
+presentation, an exact complex cyclotomic presentation and complete access-
+table reordering; confirms that a generated `M4` irreducible calibration has
+no proper factorization; and obtains the exact W3 row
+`occurrence=true`, `preserving_available=[true]`,
+`erasing_available=[false]`, `erasing_cross_coherence=[2]`,
+`no_write_occurrence=false`.
+
+Two complete public self-test runs are byte-identical.  Their output SHA-256 is
+`374d07105c1ae20aa069d790b79550993ed74c9aee273a418422a7d4d8aac194`.
+The run creates no stored scientific receipt and claims none of
+`RQ0-L0-BLOCKED-AT-ADDRESS`, `RQ0-LOCALIZATION-GROUPOID`, or
+`RQ0-LOCAL-ATLAS`: no held-out L0 construction has yet been scored.
+
+The next authorized stage may create only the pinned fixture, runner, note and
+generated receipts plus append-only ledger/runbook updates.  It must import
+this exact estimator hash, verify it before scoring, keep truth labels confined
+to the scorer, and run the full mandatory controls.  Any edit to the frozen
+estimator after this ledger event invalidates the first fixture and requires a
+new estimator freeze plus a genuinely new unseen fixture.  No `RQ0-C1`,
+causal, geometric, field or gravity work is authorized.
