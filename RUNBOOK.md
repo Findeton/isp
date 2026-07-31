@@ -125,7 +125,11 @@ that made the rule.
   in durable form, independently attack both the mathematics and the access-
   postulate/receipt semantics, and make no repository mutation.  The reports
   must be frozen verbatim and adjudicated before any repair, terminal claim or
-  C1 pin.
+  C1 pin.  v13 #28 freezes the first returned report: `REJECT` terminalization,
+  with explicit missing-`Comp_D`, generator-presentation and recordless-object
+  counterexamples.  It recommends `RQ0-L0-BLOCKED-AT-ADDRESS`; that verdict is
+  evidence only until the second report is frozen and the findings are
+  independently adjudicated.
 
 ## 1. The unit cycle
 

@@ -1293,3 +1293,70 @@ all L0 files remain immutable and **GREEN-UNREVIEWED** while the round is
 open.  The returned reports must be frozen verbatim before adjudication; no
 repair, terminal claim, influence construction, causal reconstruction,
 geometry, field or gravity work is authorized meanwhile.  **HALT.**
+
+## 2026-07-30 — FIRST RQ0-L0 HOSTILE REPORT FROZEN:
+## `REJECT` TERMINALIZATION; ADDRESSABILITY COUNTEREXAMPLES (v13 LEDGER #28)
+The first complete report from the two-pronged round dispatched at #27 is
+frozen verbatim at
+`review-rq0-operational-localization-hostile-countermodel.md`, SHA-256
+`b8e68e6d9b21b2b36868e3d74a6a344434bd383d020d32e00ac6929b9fee5203`
+(17,243 bytes).  It targets the exact immutable commits and hashes recorded at
+#27.  The reviewer made no repository edit or git mutation; this commit adds
+only the returned report and the append-only state pointers.  This entry
+freezes evidence and does not yet adjudicate or repair it.
+
+**EXTERNAL VERDICT:** `RED / REJECT` terminalization.  **RECOMMENDED HIGHEST
+RUNG:** `RQ0-L0-BLOCKED-AT-ADDRESS`.  The report independently reproduces the
+official `56/56`, the observed-anchor mutant's `55/56`, and all advertised
+algebra, lattice and W3 counts.  It does not dispute the exact encoded
+factorization.  It reports that the factorization is insufficient for the
+pin's stronger operational-addressability object.
+
+The first fatal finding is typed: although the pin makes
+`Comp_D`, mixed joint implementation and faithful pair composition mandatory,
+`OperationalDataset` contains no composite table or joint-implementation
+relation.  Two worlds with the same stored matrices and Born tables but
+different admissible mixed schedules therefore serialize identically, so the
+estimator cannot distinguish an addressable product from a forbidden or
+collapsed composition law.
+
+The second fatal finding is an exact generator-presentation counterexample on
+the public `M4` calibration.  The primitive surface
+`(X1,Z1,X2,Z2)` has one valid and one finest factorization.  Replacing `X2` by
+the exact generator `X1 X2`, or merely adding `X1 X2` as a redundant accessible
+composite, leaves the ambient generated star-algebra dimension 16 but changes
+the estimator result to zero valid factorizations.  The delivered presentation
+control reduces two circuit words to the identical matrix before estimation
+and does not test this generator invariance.
+
+The third fatal finding for the top rung is the pin's C10 mismatch: all 14
+proper joins are counted as local atlas objects, but only ten carry a derived
+record algebra and the four singleton atoms are recordless.  Restricting to
+the ten record-bearing objects does not preserve the advertised meet category
+without further construction.
+
+The report ranks three further major groups.  Its ambiguity control finds one
+finest factorization plus a supplied swap automorphism, not several recovered
+indistinguishable factorizations.  Its overlap audit retains the exact algebra
+intersections and record-membership result but finds that the restriction and
+projector-descent arrows are handle metadata rather than executable
+homomorphisms/pullbacks.  Its control audit finds omitted mandatory gates,
+fail-open dataset-conjugacy helpers, a narrow truth-import detector and a
+literal `bridge_exists=False` equal-law field.
+
+The report preserves as positive evidence exact `Q(zeta_8)` arithmetic, the
+estimator-before-truth chronology, reachable-support reduction, the exact
+operational signature quotient at the supplied access scope, exhaustive 4,140
+partition enumeration, the selected-surface four-factor algebra, its Boolean
+subalgebra lattice, exact intersections, six W3 seams, matrix-membership record
+attachment, complex-phase discrimination and the elementary 4-to-8 bridge
+obstruction.  It recommends a fresh estimator freeze and a genuinely unseen
+fixture family if repair is attempted, because the estimator itself must
+change after fixture truth was opened.
+
+The second independent report remains in progress.  Commit #26 remains
+immutable and **GREEN-UNREVIEWED**, now under a frozen hostile rejection.
+Neither the external recommendation nor this summary is adopted until every
+finding is independently checked and both reports are frozen.  No estimator
+repair, new fixture, terminal status, `RQ0-C1`, causal, geometric, field or
+gravity work is authorized before adjudication.  **HALT.**
