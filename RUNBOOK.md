@@ -184,7 +184,15 @@ that made the rule.
   rename and gauge runs, typed `D+`/`D-`, phase, ambiguity, spectator,
   bridge/no-bridge and fail-closed controls.  This is operational—not spatial
   or causal—localization.  The delivery is halted for external hostile review;
-  `RQ0-C1` remains prohibited.
+  `RQ0-C1` remains prohibited.  v13 #38 records the now-running fresh
+  repo-read-only hostile round against the exact repair pin `ffbcce6`, final
+  estimator freeze `208a354`, and delivery `9d58eb0`.  The reviewer must
+  independently rebuild the quotient composition/addressability result, W3
+  seams, typed maps, overlap atlas, ambiguity groupoid, bridge controls,
+  gauge/phase controls and fail-closed receipt without importing the delivery
+  implementation.  Its complete report must be frozen verbatim and
+  adjudicated before any repair, terminal claim, topology branch or influence
+  branch begins.
 
 ## 1. The unit cycle
 

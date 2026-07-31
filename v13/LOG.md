@@ -1853,3 +1853,59 @@ Lorentzian geometry, field or gravity.  The first unresolved referent is now
 operational influence between reconstructed local subinstruments under a
 non-planted screening rule.  The delivery is frozen pending an external
 hostile round.  `RQ0-C1` and every later unit remain prohibited.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 HOSTILE ROUND DISPATCHED:
+## FRESH READ-ONLY REBUILD; TOPOLOGY AND INFLUENCE HELD (v13 LEDGER #38)
+A fresh external hostile reviewer has now been dispatched repo-read-only
+against the exact addressability-repair pin commit
+`ffbcce6`, final generic-estimator freeze `208a354`, and green delivery
+`9d58eb0`.  The procedural runtime-invalid fixture commits `39fb6b3` and
+`3a6cded`, together with the intervening performance freeze `36290ef`, are in
+scope only for chronology, immutability and retired-fixture provenance; they
+may not be promoted or rescored.
+
+The independently authenticated target SHA-256 values are:
+
+* repair pin:
+  `8135a0c9f358c86384d0d248a7cbf99131095656b5e61c06c8d49d0f62175fe3`;
+* final estimator:
+  `7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1`;
+* final fixture:
+  `6b45e0671a16ea966634693a457ef090ae9ca15d0daabccee577ad4f6d527589`;
+* scorer:
+  `685971fa4dfa2bd418b3d0893c4074dd0a85fb1497c65b3d8639453e0b8da6f6`;
+* delivery note:
+  `40333cd02a47e427293594958a34fa3faaf900052a53fe49ad1ac0c1c67db3a2`;
+* text receipt:
+  `6613cac5ec531163b197ce5a07122739b07218b2fd57876412adb83454c853b7`;
+* JSON receipt:
+  `8ebefb2a11bd82fc19f21d9bbfabe91e32ceee0f9de3549a3bee19cd572154f1`.
+
+The review is charged with an independent exact rebuild from the published
+specification, using private scratch code and importing none of the delivery
+implementation.  It must attack the complete 216-class quotient composition
+object and 46,656 typed rows; composition congruence; the unique faithful
+`(6,6,6)` address factorization and represented-algebra tests; generator and
+alias invariance; identical-amplitude `D+`/`D-`/collapse discrimination; all
+three W3 seams; record completeness; executable `RegAddr`, `FactIface` and
+contravariant `Rec` maps; the nine pair and three genuine triple overlaps;
+the non-star scope; the three-object ambiguity groupoid and 72 arrows; both
+24-permutation bridge searches; full gauge and physical-phase controls; exact
+arithmetic and cache/reference equivalence; all 54 gates; structured invalid
+and valid-negative outcomes; and at least three independently designed
+mutants.  It must separately decide whether the strong operational-access
+postulate is honestly scoped or already overinterpreted as spatial locality.
+
+The reviewer may rerun the official executable only as a separate
+reproducibility check.  Reproducing `54/54` is not adjudication.  It may write
+only to private scratch space, must return the complete report durably, and
+must make no repository, causal, topological, field or gravity construction.
+Required verdicts are `ACCEPT`, `ACCEPT-WITH-FIXES` or `REJECT`, with ranked
+findings, an independent numbers table, replacement sentences for overclaims
+and a recommendation among the pin's pre-registered outcomes.
+
+This entry is recorded only after the dispatch occurred.  Commit #37 remains
+immutable and **GREEN-UNREVIEWED** while the round is open.  The returned
+report must be frozen verbatim before adjudication.  No repair, terminal
+claim, `RQ0-T1`, `RQ0-C1`, causal reconstruction, geometry, field or gravity
+work is authorized meanwhile.  **HALT.**
