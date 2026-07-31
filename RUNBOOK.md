@@ -571,3 +571,14 @@ the repo except this rule.
 | #40 F1/F2 | descent measured at one setting, stated unscoped | scope tags at the claim, not just the receipt |
 | paper F1 | a definition fixing one column of V "defined" a model | definitions must determine their objects |
 | #41 | 3× server-killed worker | resume-with-inventory; adjudicator finishes mechanics |
+
+## 13. Current v13 RQ0-L0 computational-certification status
+
+The external hostile report against commits `605761b`, `d881a3e`,
+`59011af`, `b9e574a` and `1b3ffb7` is frozen verbatim by v13 ledger #53.
+Its verdict is `REJECT`: the order-144 computation independently reproduces,
+but the fixture is source-derived from the opened order-192 template and the
+review supplies fail-open artifact/input counterexamples.  The report is
+evidence pending separate adjudication.  Frozen estimator, proof, fixture,
+scorer, receipt and delivery files remain immutable; no repair, replacement,
+second score, T1 or C1 is authorized.

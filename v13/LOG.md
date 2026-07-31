@@ -2598,3 +2598,35 @@ is exactly one invocation of the committed official scorer under its complete
 second score, fixture edit/replacement, cap increase or estimator/proof edit,
 then sent to an external repo-read-only hostile round.  `RQ0-T1`, `RQ0-C1`
 and all later claims remain prohibited.
+
+## 2026-07-31 — COMPUTATIONAL-CERTIFICATION HOSTILE REVIEW FROZEN VERBATIM:
+## `REJECT`; NOVELTY AND FAIL-CLOSED GATES ATTACKED (v13 LEDGER #53)
+The completed repo-read-only hostile report is frozen verbatim at
+`note-rq0-operational-localization-computational-certification-hostile-review.md`,
+SHA-256
+`b6c6a7bd53ca28eac393009a784592f5af5a73d53b28d70f2ff1fd14e1b8e689`
+(17,496 bytes).  Its verdict is `REJECT`.
+
+The reviewer independently reconstructs the order-144 group, exact monomial
+representation, all 70 normal subobjects, 36 direct-pool members, 14 passing
+certificates, unique finest `(2,3,4,6)` factorization, 10 regional objects,
+31 regional arrows, 31 fact maps, 64 regional/factual paths and three
+nonvacuous triples.  The finite computation therefore survives as scoped
+mathematical evidence.
+
+The report nevertheless finds a binding procedural defect: the held-out
+`C2 x C3 x C4 x S3` constructor is derived from the forbidden opened
+`C2 x C3 x C4 x D4` template, whereas the pin required a genuinely
+non-derived composition object.  It also supplies public-calibration
+counterexamples against artifact replay, serialized-input typing and total
+cap resolution; finds positive bias and declarative gates in the official
+scorer; narrows the twisted-triple and completeness claims; and identifies
+delivery wording inflation.  It recommends final disposition
+`RQ0-L0-INVALID` with scientific outcome null.
+
+These are frozen hostile findings, not yet adjudicated programme facts.  No
+estimator, proof, fixture, scorer, receipt or delivery artifact is edited;
+the one-shot stopping rule forbids repair, replacement and rescore.  The next
+event is a separate source-checked adjudication.  `RQ0-T1`, `RQ0-C1`,
+topology, influence, causality, geometry, spacetime, fields and gravity
+remain prohibited.  **HALT.**
