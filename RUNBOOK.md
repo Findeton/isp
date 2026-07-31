@@ -272,7 +272,21 @@ that made the rule.
   survive at their narrow scopes; intended factor and atlas truth remain
   hidden and unearned.  No optimization, repair, replacement, rescore or
   automatic fixture cycle is permitted.  Reopening L0 requires a new explicit
-  user instruction and committed pin.  T1 and C1 remain prohibited.
+  user instruction and committed pin.  T1 and C1 remain prohibited.  The user
+  supplies that reopening at v13 #47.  The new strict computational-
+  certification pin (SHA-256 `56be8f2d...d992f`) preserves the entire invalid
+  cycle and reclassifies its
+  order-192 fixture only as a public performance/regression benchmark.  Stage
+  A permits generic optimization before freeze and requires the complete
+  public pipeline below 240 seconds, addressability below 120 seconds,
+  canonical algebra caches, total outcome resolution, full `RegAddr` maps,
+  a full-instrument twisted triple, authenticated estimator/proof/future-path
+  provenance and anti-tailoring metamorphisms.  Only after those gates pass
+  may Stage B freeze the new estimator, proof and public receipts with no
+  held-out truth present.  Stage C then permits exactly one genuinely new
+  post-freeze fixture and one 360-second official score, followed by hostile
+  review and adjudication.  No post-truth repair or replacement is permitted;
+  T1 and C1 remain prohibited.
 
 ## 1. The unit cycle
 

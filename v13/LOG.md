@@ -2365,3 +2365,60 @@ L0 attempt would require an explicit user instruction and a new committed pin;
 it could not rewrite this history.  Because there is no terminal L0
 localization result, `RQ0-T1`, `RQ0-C1`, topology, influence, causality,
 spacetime, fields and gravity remain prohibited.  **HALT.**
+
+## 2026-07-31 — RQ0-L0 COMPUTATIONAL-CERTIFICATION SUCCESSOR PIN FROZEN:
+## PUBLIC PERFORMANCE QUALIFICATION BEFORE FREEZE; ONE LATER HELD-OUT SCORE
+## (v13 LEDGER #47)
+The user explicitly reopens L0 from `7874daa` for one bounded, forward-only
+computational-certification cycle.  The strict successor pin is frozen at
+`note-rq0-operational-localization-computational-certification-pin.md`,
+SHA-256
+`56be8f2d5d54749b48400e01aee45ee01241bca9b040af9bb9dad111dabd992f`.
+The
+complete `4366531..7874daa` cycle and all its artifacts remain immutable and
+permanently `RQ0-L0-INVALID` with scientific outcome null.  Its opened
+order-192 `C2 x C3 x C4 x D4` fixture is now a public performance/regression
+benchmark only and can never earn a scientific rung.
+
+Stage A permits iterative generic, semantics-preserving development before
+freeze.  The estimator must construct the ambient represented algebra once,
+memoize exact factor algebras by canonical subobject, run cheap predicates
+first, reuse exact law/dense-matrix caches, expose phase/candidate/cache
+instrumentation, and implement a total structured outcome resolver.  It may
+not branch on any public benchmark fingerprint, order, handle, intended
+factor, context, record or atlas truth.  Static and metamorphic anti-tailoring
+controls are mandatory.
+
+Stage A must also repair the complete `RegAddr` row/context type, replace the
+syntactic twisted loop with three full independently built regional
+instruments and pairwise isomorphisms, authenticate both estimator and proof
+hashes plus every future-path absence, and compute novelty from the actual
+composition object.  Before freeze the complete opened benchmark must finish
+addressability below 120 seconds and its full regional/record/mutant pipeline
+below 240 seconds on the reference machine, with deterministic canonical
+receipts, rename/reorder/gauge invariance, unrelated positive/negative/invalid
+controls, one ambient-algebra construction and at most one construction per
+canonical factor algebra.  Failure keeps Stage A mutable; it does not open a
+hidden fixture.
+
+Stage B is a separate estimator/proof/public-receipt freeze commit.  At that
+commit every registered held-out fixture, truth, scorer, receipt and delivery
+path must be absent; afterward estimator and proof are byte-immutable.  Stage
+C then permits exactly one genuinely new, non-`S3^3`, non-order-192-benchmark
+fixture inside the frozen 192-class/36,864-row/dimension-32 envelope, with at
+least three heterogeneous factors, a nonabelian component, substantive
+composite-only classes, fresh W3 records and an irregular selective atlas.
+Exactly one official score runs under 360 seconds.  Once its truth opens there
+is no estimator edit, cap increase, fixture change/replacement, second
+fixture, or hidden rescore.  The result must be frozen, externally reviewed
+and separately adjudicated.
+
+Registered scientific outcomes are `RQ0-LOCALIZATION-GROUPOID`,
+`RQ0-LOCAL-ATLAS`, `RQ0-L0-BLOCKED-AT-ADDRESS`, and
+`RQ0-L0-BLOCKED-AT-REGIONAL-MAPS`, each exit zero only after its complete
+certificate.  Malformed input, exception, timeout, cap failure, missing or
+multiple outcome, or failed provenance yields procedural `RQ0-L0-INVALID`
+and exit one.  A timeout is never a no-go.  The immediate next event is Stage
+A development and public qualification only.  `RQ0-T1`, `RQ0-C1`, topology,
+influence, causality, geometry, spacetime, fields and gravity remain
+prohibited.
