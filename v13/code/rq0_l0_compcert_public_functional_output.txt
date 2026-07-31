@@ -1,0 +1,11 @@
+RQ0-L0 COMPUTATIONAL-CERTIFICATION PUBLIC QUALIFICATION
+stage: B-FROZEN-PUBLIC-QUALIFICATION
+qualification_outcome: PUBLIC-QUALIFIED
+scientific_outcome: none (opened benchmark)
+checks: 48/48
+opened benchmark address: 12.237424s / 120s
+opened benchmark complete: 14.047214s / 240s
+opened benchmark + end-to-end mutants: 67.205267s / 240s
+canonical repeat: PASS
+future held-out paths absent: PASS
+ceiling: L0 only; no T1/C1 or spacetime claim

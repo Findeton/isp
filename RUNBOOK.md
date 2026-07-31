@@ -286,7 +286,23 @@ that made the rule.
   held-out truth present.  Stage C then permits exactly one genuinely new
   post-freeze fixture and one 360-second official score, followed by hostile
   review and adjudication.  No post-truth repair or replacement is permitted;
-  T1 and C1 remain prohibited.
+  T1 and C1 remain prohibited.  v13 #48 closes Stage A and freezes Stage B:
+  the new generic estimator is immutable at SHA-256 `a9f8f93...30f8b` and its
+  revised proof at `5839fedc...d2d`.  The opened benchmark passes 48/48 public
+  gates with byte-identical functional reruns, full typed `RegAddr`/projector-
+  Boolean `Rec` replay, a full pairwise-valid twisted triple, record-bearing
+  ambiguity, static/metamorphic anti-tailoring and total fail-closed mutants.
+  Measured addressability is 12.24 seconds; the base pipeline is 14.05
+  seconds; base plus all end-to-end mutants is 67.21 seconds.  All are below
+  the registered public caps, while raw timing is excluded from the canonical
+  receipt.  Every 15 requested sparse represented algebras agrees exactly
+  with the dense `Q(zeta_24)` backend; one ambient construction and at most
+  one construction per canonical nonambient key are measured.  No held-out
+  fixture, truth, scorer, receipt, output or delivery exists at the freeze,
+  and the opened benchmark remains scientifically sterile.  Git-object
+  absence must be verified on the #48 commit before the sole Stage-C fixture
+  is created.  Estimator and proof may no longer change.  T1 and C1 remain
+  prohibited.
 
 ## 1. The unit cycle
 

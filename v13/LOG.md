@@ -2422,3 +2422,55 @@ and exit one.  A timeout is never a no-go.  The immediate next event is Stage
 A development and public qualification only.  `RQ0-T1`, `RQ0-C1`, topology,
 influence, causality, geometry, spacetime, fields and gravity remain
 prohibited.
+
+## 2026-07-31 — RQ0-L0 COMPUTATIONAL ESTIMATOR AND PUBLIC QUALIFICATION
+## FROZEN PRE-FIXTURE; NO HELD-OUT TRUTH EXISTS (v13 LEDGER #48)
+Stage A closes successfully and Stage B freezes the new generic estimator at
+`code/rq0_l0_compcert_estimator_exact.py`, SHA-256
+`a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b`,
+together with its revised finite soundness/completeness/cache/backend proof at
+`note-rq0-operational-localization-computational-certification-soundness.md`,
+SHA-256
+`5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d`.
+Both files are byte-immutable after this commit.
+
+The opened order-192 benchmark completes addressability in 12.24 seconds,
+its base regional/fact pipeline in 14.05 seconds, and the base plus complete
+end-to-end mutant pipeline in 67.21 seconds on the reference machine.  These
+are noncanonical performance measurements below the registered 120/240-
+second gates, not scientific results.  The canonical public receipt passes
+48/48 gates: two functional runs are byte-identical; all 36,864 typed rows
+pass their separate type/status/result/law/gauge/signature checks; every one
+of 15 requested represented subalgebras agrees exactly between sparse and
+dense `Q(zeta_24)` backends; the ambient algebra is built once; every
+canonical nonambient algebra is built at most once; and certificate,
+regional-restriction and replay requests share the same cache.
+
+Full rename, serialization reorder, carrier-gauge conjugation, global
+character gauge, record-handle-only rename and redundant-alias presentations
+all return the same structural result.  Unrelated positive, address-blocked,
+regional-map-blocked and malformed controls return their registered outcomes.
+The hostile composite-only selectability control is rejected; declared
+`COLLAPSED` status is separated from a measured noninjective multiplication
+collision; the ambiguity fixture is record-bearing; and three independently
+built full instruments have three valid pair isomorphisms while only their
+triple loop fails.  Mutations of an anchor, typed row, selectability,
+`RegAddr` row/context map, projector pullback, malformed input, runtime cap,
+exception, timeout and missing/multiple outcome all suppress a positive rung.
+
+The functional receipt contains no clock values; timing is isolated in the
+noncanonical performance receipt.  Static inspection finds no estimator
+branch on the opened benchmark's module, hash, handles, order, intended
+factor multiset, contexts, records or atlas truth.  Novelty data are computed
+from the actual quotient composition object, never a fixture Boolean.
+
+Every registered future held-out fixture, multiplication truth, scorer,
+receipt, output and delivery path is absent from the filesystem and Git index
+at freeze preparation.  The freeze commit itself must be checked by Git
+object lookup before Stage C creates anything.  The opened benchmark can
+never earn a scientific rung, so this entry has **no scientific L0 outcome**.
+The next authorized construction is exactly one genuinely new post-freeze
+fixture and one official 360-second score under the stopping rule.  No
+estimator/proof edit, second fixture, cap increase, hidden rescore, `RQ0-T1`,
+`RQ0-C1`, topology, influence, causality, geometry, spacetime, fields or
+gravity is permitted.

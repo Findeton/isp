@@ -1,0 +1,7 @@
+RQ0-L0 COMPUTATIONAL-CERTIFICATION PUBLIC PERFORMANCE
+canonical: false
+address: 12.237424s / 120s
+base complete: 14.047214s / 240s
+base plus end-to-end mutants: 67.205267s / 240s
+dense/sparse audit: 81.334718s
+timing is noncanonical and enters no scientific predicate except registered caps

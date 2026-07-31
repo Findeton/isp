@@ -1,0 +1,1446 @@
+{
+  "all_pass": true,
+  "benchmark": {
+    "actual_composition_invariants": {
+      "center_order": 48,
+      "derived_order": 2,
+      "element_order_histogram": {
+        "1": 1,
+        "12": 80,
+        "2": 23,
+        "3": 2,
+        "4": 40,
+        "6": 46
+      },
+      "group_like": true,
+      "order": 192
+    },
+    "dense_sparse": {
+      "all_pass": true,
+      "checks": [
+        {
+          "key": "463f2998327eb3a694145e6014444480b2235be84aa6cfd57871cc64f1cd816c",
+          "order": 2,
+          "pass": true
+        },
+        {
+          "key": "691d778c8c5dc451df4c9612e3481bfff21e92bb8aecb980ae0f8e50737f8322",
+          "order": 3,
+          "pass": true
+        },
+        {
+          "key": "7d09675233ab893de4bd920dbfb80c69f4bf1fd24f3c3ba8cd60d4de5a7393e2",
+          "order": 4,
+          "pass": true
+        },
+        {
+          "key": "4e098021cf9ec15699efd082b803811ec67394af4b3ea324e86edbccc3cbeac3",
+          "order": 6,
+          "pass": true
+        },
+        {
+          "key": "9316f5cbf50ad2d3d3e762a350021f2dece2c51600bfb1b60d9f62ca792c341a",
+          "order": 8,
+          "pass": true
+        },
+        {
+          "key": "590094e6f297a94d0be320ca3c80f0423a588bcf865cf5829c1a82f4fa465c66",
+          "order": 8,
+          "pass": true
+        },
+        {
+          "key": "dbc6913c697cf8befe2d235b7c062624b37d00d6851cf35432582a45c26ba6e7",
+          "order": 12,
+          "pass": true
+        },
+        {
+          "key": "82358319a551e3ff6b4977816ac963568004e07d8c5fafce6c93fbbb071fa956",
+          "order": 16,
+          "pass": true
+        },
+        {
+          "key": "2643659e4e20637a8ef2e12565ea16f87db9bf6267d9538fd69a2701df186d04",
+          "order": 24,
+          "pass": true
+        },
+        {
+          "key": "a139d6a168fe52764339bf904271300e0035d36600ffb29e6455d9a6650cd1f1",
+          "order": 24,
+          "pass": true
+        },
+        {
+          "key": "1dd572c78fd10b69071287c19ac5b1247f232401032665cfd65d7f376cc5239d",
+          "order": 32,
+          "pass": true
+        },
+        {
+          "key": "4553909a36e14433aeefa8ae9551b5ed46c8cdca60094cab61ff3fcf4d553d00",
+          "order": 48,
+          "pass": true
+        },
+        {
+          "key": "ae8670f9aaca0d1ac8fee43a388eff5564017f4022951dda352287f88deb3dda",
+          "order": 64,
+          "pass": true
+        },
+        {
+          "key": "1c5c621ef3dbd5b11c49e3859c5a32c6c59d4eaebc22aeba383e5057d2dd3de4",
+          "order": 96,
+          "pass": true
+        },
+        {
+          "key": "8f824944b05312482763055d2d994a8aba1ca5173513fb48c04d6f0d3159c54e",
+          "order": 192,
+          "pass": true
+        }
+      ],
+      "orders": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        8,
+        12,
+        16,
+        24,
+        24,
+        32,
+        48,
+        64,
+        96,
+        192
+      ],
+      "subobjects_checked": 15
+    },
+    "metamorphic": {
+      "carrier-gauge-conjugated": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "fully-renamed": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "global-character-gauge": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "record-handle-only": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "redundant-legal-alias": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "serialization-reordered": {
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      }
+    },
+    "run_one": {
+      "analysis_digest": "da3622b0a3b96bcb3ebf390533a6694e5cdebb46cc783d1a4a8b2934e0a98802",
+      "atlas_digest": "62edf7a03436e4e620e2085831d50c0cbdb80bb4a004bec9396bee9126c4ec45",
+      "instrumentation": {
+        "counters": {
+          "ambient_represented_algebra_builds": 1,
+          "direct_complement_candidates": 4398,
+          "eligible_direct_pool": 14,
+          "exact_monomial_commutation_tests": 2334,
+          "factor_algebra_build::1c5c621ef3dbd5b11c49e3859c5a32c6c59d4eaebc22aeba383e5057d2dd3de4": 1,
+          "factor_algebra_build::1dd572c78fd10b69071287c19ac5b1247f232401032665cfd65d7f376cc5239d": 1,
+          "factor_algebra_build::2643659e4e20637a8ef2e12565ea16f87db9bf6267d9538fd69a2701df186d04": 1,
+          "factor_algebra_build::4553909a36e14433aeefa8ae9551b5ed46c8cdca60094cab61ff3fcf4d553d00": 1,
+          "factor_algebra_build::463f2998327eb3a694145e6014444480b2235be84aa6cfd57871cc64f1cd816c": 1,
+          "factor_algebra_build::4e098021cf9ec15699efd082b803811ec67394af4b3ea324e86edbccc3cbeac3": 1,
+          "factor_algebra_build::590094e6f297a94d0be320ca3c80f0423a588bcf865cf5829c1a82f4fa465c66": 1,
+          "factor_algebra_build::691d778c8c5dc451df4c9612e3481bfff21e92bb8aecb980ae0f8e50737f8322": 1,
+          "factor_algebra_build::7d09675233ab893de4bd920dbfb80c69f4bf1fd24f3c3ba8cd60d4de5a7393e2": 1,
+          "factor_algebra_build::82358319a551e3ff6b4977816ac963568004e07d8c5fafce6c93fbbb071fa956": 1,
+          "factor_algebra_build::9316f5cbf50ad2d3d3e762a350021f2dece2c51600bfb1b60d9f62ca792c341a": 1,
+          "factor_algebra_build::a139d6a168fe52764339bf904271300e0035d36600ffb29e6455d9a6650cd1f1": 1,
+          "factor_algebra_build::ae8670f9aaca0d1ac8fee43a388eff5564017f4022951dda352287f88deb3dda": 1,
+          "factor_algebra_build::dbc6913c697cf8befe2d235b7c062624b37d00d6851cf35432582a45c26ba6e7": 1,
+          "factor_certificates_passed": 15,
+          "factor_certificates_started": 15,
+          "factor_pair_cheap_tests": 38,
+          "factor_represented_algebra_builds": 14,
+          "factor_tuple_candidates": 14,
+          "factor_tuple_search_nodes": 273,
+          "regional_restriction_algebra_requests": 18,
+          "represented_algebra_cache_hits": 58,
+          "represented_algebra_cache_misses": 15,
+          "sparse_law_vector_cache_hits": 347,
+          "sparse_law_vector_cache_misses": 192
+        },
+        "progress": [
+          {
+            "classes": 192,
+            "phase": "composition-validated",
+            "rows": 36864
+          },
+          {
+            "count": 274,
+            "join_tests": 61241,
+            "phase": "normal-subobjects"
+          },
+          {
+            "count": 90,
+            "phase": "direct-pool",
+            "tests": 4398
+          },
+          {
+            "certificates": 14,
+            "factor_tuple_tests": 4412,
+            "finest": 1,
+            "phase": "addressability-complete"
+          }
+        ]
+      },
+      "outcome": {
+        "category": "scientific",
+        "code": "RQ0-LOCAL-ATLAS",
+        "exit_code": 0,
+        "reason": "all registered prerequisites pass"
+      },
+      "row_audit": {
+        "collapsed_rows": 0,
+        "exact_law_rows": 36864,
+        "gauge_rows": 36864,
+        "physical_composition_rows": 36864,
+        "result_rows": 36864,
+        "signature_rows": 36864,
+        "status_rows": 36864,
+        "typed_rows": 36864,
+        "unavailable_rows": 0
+      },
+      "structural_summary": {
+        "complete_proper_boolean": false,
+        "fact_maps": 22,
+        "factor_orders": [
+          [
+            2,
+            3,
+            4,
+            8
+          ]
+        ],
+        "nonvacuous_triples": 3,
+        "normal_subobjects": 274,
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "regional_arrows": 22,
+        "regional_objects": 9,
+        "regional_scopes": [
+          [
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            8
+          ]
+        ],
+        "universal_factor_orders": []
+      }
+    },
+    "run_two_sha256": "68d08a5423ef0b60e1d4ceda0c820c81a7dc68667f7d21726581ad8d25d2deed"
+  },
+  "checks": [
+    {
+      "class": "provenance",
+      "evidence": {
+        "actual": "a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b",
+        "development": false,
+        "expected": "a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b"
+      },
+      "id": "Q001",
+      "pass": true
+    },
+    {
+      "class": "provenance",
+      "evidence": {
+        "actual": "5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d",
+        "development": false,
+        "expected": "5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d"
+      },
+      "id": "Q002",
+      "pass": true
+    },
+    {
+      "class": "provenance",
+      "evidence": {
+        "v13/code/rq0_l0_compcert_heldout_fixture_exact.py": {
+          "filesystem_absent": true,
+          "git_untracked": true
+        },
+        "v13/code/rq0_l0_compcert_heldout_output.txt": {
+          "filesystem_absent": true,
+          "git_untracked": true
+        },
+        "v13/code/rq0_l0_compcert_heldout_receipt.json": {
+          "filesystem_absent": true,
+          "git_untracked": true
+        },
+        "v13/code/rq0_l0_compcert_heldout_score.py": {
+          "filesystem_absent": true,
+          "git_untracked": true
+        },
+        "v13/note-rq0-operational-localization-computational-certification.md": {
+          "filesystem_absent": true,
+          "git_untracked": true
+        }
+      },
+      "id": "Q003",
+      "pass": true
+    },
+    {
+      "class": "no-tailoring",
+      "evidence": {
+        "condition_hits": [],
+        "import_hits": [],
+        "pass": true,
+        "text_hits": []
+      },
+      "id": "Q004",
+      "pass": true
+    },
+    {
+      "class": "inherited",
+      "evidence": {
+        "passed": 29,
+        "total": 29
+      },
+      "id": "Q005",
+      "pass": true
+    },
+    {
+      "class": "benchmark",
+      "evidence": "RQ0-LOCAL-ATLAS",
+      "id": "Q006",
+      "pass": true
+    },
+    {
+      "class": "determinism",
+      "evidence": "68d08a5423ef0b60e1d4ceda0c820c81a7dc68667f7d21726581ad8d25d2deed",
+      "id": "Q007",
+      "pass": true
+    },
+    {
+      "class": "performance",
+      "evidence": "addressability below registered 120-second cap",
+      "id": "Q008",
+      "pass": true
+    },
+    {
+      "class": "performance",
+      "evidence": "base pipeline below registered 240-second cap",
+      "id": "Q009",
+      "pass": true
+    },
+    {
+      "class": "cache",
+      "evidence": 1,
+      "id": "Q010",
+      "pass": true
+    },
+    {
+      "class": "cache",
+      "evidence": {
+        "factor_algebra_build::1c5c621ef3dbd5b11c49e3859c5a32c6c59d4eaebc22aeba383e5057d2dd3de4": 1,
+        "factor_algebra_build::1dd572c78fd10b69071287c19ac5b1247f232401032665cfd65d7f376cc5239d": 1,
+        "factor_algebra_build::2643659e4e20637a8ef2e12565ea16f87db9bf6267d9538fd69a2701df186d04": 1,
+        "factor_algebra_build::4553909a36e14433aeefa8ae9551b5ed46c8cdca60094cab61ff3fcf4d553d00": 1,
+        "factor_algebra_build::463f2998327eb3a694145e6014444480b2235be84aa6cfd57871cc64f1cd816c": 1,
+        "factor_algebra_build::4e098021cf9ec15699efd082b803811ec67394af4b3ea324e86edbccc3cbeac3": 1,
+        "factor_algebra_build::590094e6f297a94d0be320ca3c80f0423a588bcf865cf5829c1a82f4fa465c66": 1,
+        "factor_algebra_build::691d778c8c5dc451df4c9612e3481bfff21e92bb8aecb980ae0f8e50737f8322": 1,
+        "factor_algebra_build::7d09675233ab893de4bd920dbfb80c69f4bf1fd24f3c3ba8cd60d4de5a7393e2": 1,
+        "factor_algebra_build::82358319a551e3ff6b4977816ac963568004e07d8c5fafce6c93fbbb071fa956": 1,
+        "factor_algebra_build::9316f5cbf50ad2d3d3e762a350021f2dece2c51600bfb1b60d9f62ca792c341a": 1,
+        "factor_algebra_build::a139d6a168fe52764339bf904271300e0035d36600ffb29e6455d9a6650cd1f1": 1,
+        "factor_algebra_build::ae8670f9aaca0d1ac8fee43a388eff5564017f4022951dda352287f88deb3dda": 1,
+        "factor_algebra_build::dbc6913c697cf8befe2d235b7c062624b37d00d6851cf35432582a45c26ba6e7": 1
+      },
+      "id": "Q011",
+      "pass": true
+    },
+    {
+      "class": "cache",
+      "evidence": {
+        "cache_hits": 58,
+        "regional_requests": 18
+      },
+      "id": "Q012",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "fully-renamed",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q013",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "serialization-reordered",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q014",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "carrier-gauge-conjugated",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q015",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "global-character-gauge",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q016",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "record-handle-only",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q017",
+      "pass": true
+    },
+    {
+      "class": "metamorphic",
+      "evidence": {
+        "label": "redundant-legal-alias",
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "summary": {
+          "complete_proper_boolean": false,
+          "fact_maps": 22,
+          "factor_orders": [
+            [
+              2,
+              3,
+              4,
+              8
+            ]
+          ],
+          "nonvacuous_triples": 3,
+          "normal_subobjects": 274,
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "regional_arrows": 22,
+          "regional_objects": 9,
+          "regional_scopes": [
+            [
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8
+            ]
+          ],
+          "universal_factor_orders": []
+        }
+      },
+      "id": "Q018",
+      "pass": true
+    },
+    {
+      "class": "outcome",
+      "evidence": "RQ0-LOCAL-ATLAS",
+      "id": "Q019",
+      "pass": true
+    },
+    {
+      "class": "outcome",
+      "evidence": "RQ0-L0-BLOCKED-AT-ADDRESS",
+      "id": "Q020",
+      "pass": true
+    },
+    {
+      "class": "outcome",
+      "evidence": "RQ0-L0-BLOCKED-AT-REGIONAL-MAPS",
+      "id": "Q021",
+      "pass": true
+    },
+    {
+      "class": "composition",
+      "evidence": "declared COLLAPSED status",
+      "id": "Q022",
+      "pass": true
+    },
+    {
+      "class": "composition",
+      "evidence": "unavailable composition row",
+      "id": "Q023",
+      "pass": true
+    },
+    {
+      "class": "composition",
+      "evidence": {
+        "declared_collapsed_rows": 1,
+        "true_collision": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          1
+        ]
+      },
+      "id": "Q024",
+      "pass": true
+    },
+    {
+      "class": "ambiguity",
+      "evidence": {
+        "arrows": 18,
+        "finest": 3,
+        "objects": 3
+      },
+      "id": "Q025",
+      "pass": true
+    },
+    {
+      "class": "twisted-triple",
+      "evidence": {
+        "built": [
+          true,
+          true,
+          true
+        ],
+        "rechecked": [
+          true,
+          true,
+          true
+        ]
+      },
+      "id": "Q026",
+      "pass": true
+    },
+    {
+      "class": "twisted-triple",
+      "evidence": {
+        "record_loop": false,
+        "regional_loop": false
+      },
+      "id": "Q027",
+      "pass": true
+    },
+    {
+      "class": "backend-equivalence",
+      "evidence": {
+        "orders": [
+          2,
+          3,
+          4,
+          6,
+          8,
+          8,
+          12,
+          16,
+          24,
+          24,
+          32,
+          48,
+          64,
+          96,
+          192
+        ],
+        "subobjects": 15
+      },
+      "id": "Q028",
+      "pass": true
+    },
+    {
+      "class": "typed-rows",
+      "evidence": {
+        "collapsed_rows": 0,
+        "exact_law_rows": 36864,
+        "gauge_rows": 36864,
+        "physical_composition_rows": 36864,
+        "result_rows": 36864,
+        "signature_rows": 36864,
+        "status_rows": 36864,
+        "typed_rows": 36864,
+        "unavailable_rows": 0
+      },
+      "id": "Q029",
+      "pass": true
+    },
+    {
+      "class": "regional-morphisms",
+      "evidence": {
+        "arrows": 22,
+        "regional_paths": 39
+      },
+      "id": "Q030",
+      "pass": true
+    },
+    {
+      "class": "record-functor",
+      "evidence": {
+        "coherent_paths": 39,
+        "fact_maps": 22
+      },
+      "id": "Q031",
+      "pass": true
+    },
+    {
+      "class": "handle-invariance",
+      "evidence": {
+        "base": "62edf7a03436e4e620e2085831d50c0cbdb80bb4a004bec9396bee9126c4ec45",
+        "renamed": "62edf7a03436e4e620e2085831d50c0cbdb80bb4a004bec9396bee9126c4ec45"
+      },
+      "id": "Q032",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "malformed/access-underdetermined input: composition row fails boundary/context typing",
+      "id": "Q033",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "RQ0-L0-BLOCKED-AT-ADDRESS",
+      "id": "Q034",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "malformed/access-underdetermined input: composition table is not complete over operation handles",
+      "id": "Q035",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "addressability exceeded the registered deadline",
+      "id": "Q036",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "artifact validation failed closed: AssertionError: regional/fact artifact replay fails",
+      "id": "Q037",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "artifact validation failed closed: AssertionError: regional/fact artifact replay fails",
+      "id": "Q038",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "artifact validation failed closed: AssertionError: regional/fact artifact replay fails",
+      "id": "Q039",
+      "pass": true
+    },
+    {
+      "class": "total-resolver",
+      "evidence": {
+        "branch": "timeout",
+        "reason": "injected registered timeout"
+      },
+      "id": "Q040",
+      "pass": true
+    },
+    {
+      "class": "total-resolver",
+      "evidence": {
+        "branch": "exception",
+        "reason": "caught RuntimeError: injected resolver exception"
+      },
+      "id": "Q041",
+      "pass": true
+    },
+    {
+      "class": "total-resolver",
+      "evidence": {
+        "branch": "missing-outcome",
+        "reason": "caught RuntimeError: normal return produced no registered outcome"
+      },
+      "id": "Q042",
+      "pass": true
+    },
+    {
+      "class": "total-resolver",
+      "evidence": {
+        "branch": "multiple-outcomes",
+        "reason": "caught RuntimeError: normal return produced multiple registered outcomes"
+      },
+      "id": "Q043",
+      "pass": true
+    },
+    {
+      "class": "end-to-end-mutant",
+      "evidence": "frozen estimator anchor mismatch",
+      "id": "Q044",
+      "pass": true
+    },
+    {
+      "class": "performance",
+      "evidence": "base plus complete end-to-end mutant pipeline below registered 240-second cap",
+      "id": "Q048",
+      "pass": true
+    },
+    {
+      "class": "novelty-discipline",
+      "evidence": {
+        "center_order": 48,
+        "derived_order": 2,
+        "element_order_histogram": {
+          "1": 1,
+          "12": 80,
+          "2": 23,
+          "3": 2,
+          "4": 40,
+          "6": 46
+        },
+        "group_like": true,
+        "order": 192
+      },
+      "id": "Q045",
+      "pass": true
+    },
+    {
+      "class": "truth-separation",
+      "evidence": "novelty read from composition_invariants only",
+      "id": "Q046",
+      "pass": true
+    },
+    {
+      "class": "ceiling",
+      "evidence": "public benchmark only; no scientific L0 promotion",
+      "id": "Q047",
+      "pass": true
+    }
+  ],
+  "controls": {
+    "blocked_at_address": "RQ0-L0-BLOCKED-AT-ADDRESS",
+    "blocked_at_regional_maps": "RQ0-L0-BLOCKED-AT-REGIONAL-MAPS",
+    "declared_collapse": "RQ0-L0-BLOCKED-AT-ADDRESS",
+    "mutants": {
+      "anchor": "RQ0-L0-INVALID",
+      "composition_row": "RQ0-L0-INVALID",
+      "context_map": "RQ0-L0-INVALID",
+      "exception": "RQ0-L0-INVALID",
+      "malformed": "RQ0-L0-INVALID",
+      "missing-outcome": "RQ0-L0-INVALID",
+      "multiple-outcomes": "RQ0-L0-INVALID",
+      "projector_pullback": "RQ0-L0-INVALID",
+      "regional_row_map": "RQ0-L0-INVALID",
+      "runtime_cap": "RQ0-L0-INVALID",
+      "selectability": "RQ0-L0-BLOCKED-AT-ADDRESS",
+      "timeout": "RQ0-L0-INVALID"
+    },
+    "record_bearing_ambiguity": {
+      "arrows": 18,
+      "objects": 3
+    },
+    "twisted_triple": {
+      "pair_valid": [
+        true,
+        true,
+        true
+      ],
+      "rejected_only_at_loop": true
+    },
+    "unavailable": "RQ0-L0-BLOCKED-AT-ADDRESS",
+    "unrelated_positive": "RQ0-LOCAL-ATLAS"
+  },
+  "definitions_postulates": [
+    "complete finite operational row access is a declared access postulate",
+    "full basis preparation/configuration tomography are public fixture postulates",
+    "wall-clock time is noncanonical and enters only registered cap gates"
+  ],
+  "future_paths_absent": {
+    "v13/code/rq0_l0_compcert_heldout_fixture_exact.py": {
+      "filesystem_absent": true,
+      "git_untracked": true
+    },
+    "v13/code/rq0_l0_compcert_heldout_output.txt": {
+      "filesystem_absent": true,
+      "git_untracked": true
+    },
+    "v13/code/rq0_l0_compcert_heldout_receipt.json": {
+      "filesystem_absent": true,
+      "git_untracked": true
+    },
+    "v13/code/rq0_l0_compcert_heldout_score.py": {
+      "filesystem_absent": true,
+      "git_untracked": true
+    },
+    "v13/note-rq0-operational-localization-computational-certification.md": {
+      "filesystem_absent": true,
+      "git_untracked": true
+    }
+  },
+  "nonclaims": [
+    "no scientific result is inferred from the opened benchmark",
+    "no topology, spatial localization, influence or causality",
+    "no Lorentzian geometry, spacetime, fields or gravity"
+  ],
+  "opened_benchmark_can_earn_rung": false,
+  "passed": 48,
+  "qualification_outcome": "PUBLIC-QUALIFIED",
+  "schema": "rq0-l0-compcert-public-qualification-v1",
+  "scientific_outcome": null,
+  "sources": {
+    "estimator_sha256": "a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b",
+    "expected_estimator_sha256": "a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b",
+    "expected_proof_sha256": "5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d",
+    "pin_sha256": "56be8f2d5d54749b48400e01aee45ee01241bca9b040af9bb9dad111dabd992f",
+    "proof_sha256": "5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d"
+  },
+  "stage": "B-FROZEN-PUBLIC-QUALIFICATION",
+  "static_no_tailoring": {
+    "condition_hits": [],
+    "import_hits": [],
+    "pass": true,
+    "text_hits": []
+  },
+  "total": 48
+}
