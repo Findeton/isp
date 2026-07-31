@@ -119,7 +119,13 @@ that made the rule.
   This is operational localization under a declared access postulate, not
   spatial or causal localization.  The unit is halted pending its external
   hostile round.  No influence or causal relation is defined, and C1 and every
-  later unit remain unpinned.
+  later unit remain unpinned.  v13 #27 records the now-running two-pronged
+  repo-read-only hostile round against the immutable L0 pin, frozen estimator
+  and green delivery commits.  The reviewers must return their complete reports
+  in durable form, independently attack both the mathematics and the access-
+  postulate/receipt semantics, and make no repository mutation.  The reports
+  must be frozen verbatim and adjudicated before any repair, terminal claim or
+  C1 pin.
 
 ## 1. The unit cycle
 

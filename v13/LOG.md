@@ -1248,3 +1248,48 @@ is an operational influence relation between recovered local subinstruments,
 but `RQ0-C1` remains unpinned.  Under freeze-on-delivery and HALT discipline,
 the files are now frozen pending an external hostile round.  No successor work
 is authorized by this green delivery.  **HALT.**
+
+## 2026-07-30 — RQ0-L0 HOSTILE ROUND DISPATCHED:
+## TWO INDEPENDENT READ-ONLY ATTACKS; `RQ0-C1` HELD (v13 LEDGER #27)
+Two external hostile reviewers have now been dispatched repo-read-only against
+the exact L0 pin commit
+`f218dde7b73631f7fd6359582d7bf494990eb076`, frozen-estimator commit
+`a5b71735fb80d7214e1cc4e5a389289572895d53`, and green delivery commit
+`3572774435c8940993610c3204edf85b94627141`.  Their target source hashes are
+respectively
+`02ed47ad0a294741e613639b02066797a2057fcfcd816edd81203f353b1f9a59`,
+`0b8d90bad735f6574ee367dd0bf7e98bcc1c6f2854f7a12070c82bae84e063b8`,
+`89f038ca2521a9c65f476693743d2a4bb7536905d41d2164fba82486284d2778`,
+`ada6dcbce2e9686b7ab45523cb8e8937a0c98cbae6504fd95092cf60aa7388f5`
+and
+`60a9819790b4c81ff76c04ef14b0bb2e0dedeb41a516ec884bd11eebdfb61988`
+for the pin, estimator, delivery note, fixture and scorer.  The canonical text
+and JSON receipt hashes remain
+`0297ac85c85743eb5ef0dc15ca4fdb07acf421b142019cc256da3f4d671e5068`
+and
+`a073dd2da23d2236658b118ab3d0e19965ae12a1b5caafbac7e7ad1fc59144a5`.
+
+The first reviewer is charged with an independent mathematical and semantic
+rebuild of the operational quotient, factor criterion, ambiguity groupoid,
+non-star overlap nerve, W3 record restriction and descent, complex phase and
+equal-law controls, exactness, determinism, caps and fail-closed outcome
+logic.  The second reviewer is charged with independently designed
+countermodels and mutants, concentrating on whether the declared access
+contract already encodes the recovered localization, whether factor recovery
+is presentation-dependent, whether addressable complements and product-
+dimension gates suffice, and whether the groupoid and record descent retain
+real ambiguity rather than selecting a planted answer.
+
+Both reviewers may use private scratch code but may not edit, stage or commit
+repository files, import the delivery implementation as their independent
+rebuild, alter the target claims, or begin `RQ0-C1` or any later unit.  Each
+must return its complete report rather than relying on an ephemeral temporary
+path.  Required verdicts are `ACCEPT`, `ACCEPT-WITH-FIXES` or `REJECT`, with
+ranked findings, exact target hashes, independently checked quantities and a
+recommendation among the pin's pre-registered L0 outcomes.
+
+This entry is recorded only after both dispatches occurred.  Commit #26 and
+all L0 files remain immutable and **GREEN-UNREVIEWED** while the round is
+open.  The returned reports must be frozen verbatim before adjudication; no
+repair, terminal claim, influence construction, causal reconstruction,
+geometry, field or gravity work is authorized meanwhile.  **HALT.**
