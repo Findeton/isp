@@ -132,7 +132,14 @@ that made the rule.
   independently adjudicated.  v13 #29 freezes the second report, which reaches
   the same `REJECT` after a separate exact rebuild and confirms that no positive
   L0 rung is secure.  Both reports are now frozen; adjudication, not repair, is
-  the next event.
+  the next event.  v13 #30 adjudicates and accepts both rejections.  The live
+  `RQ0-LOCAL-ATLAS` and `RQ0-LOCALIZATION-GROUPOID` claims are withdrawn; the
+  exact algebra/W3 measurements remain calibration evidence.  The current
+  obstruction is `RQ0-L0-BLOCKED-AT-ADDRESS`, nonterminal until natively gated.
+  A fresh-estimator/unseen-fixture L0 repair cycle is authorized, but it must
+  begin with a new strict repair pin and may not edit or rescore the frozen #25
+  estimator against the opened #26 fixture.  C1 and all later units remain
+  prohibited.
 
 ## 1. The unit cycle
 
