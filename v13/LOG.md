@@ -2671,3 +2671,38 @@ delivery and hostile report remain immutable.  The stopping rule prohibits
 repair, replacement, rescore or an automatic new fixture cycle.  No successor
 L0 cycle is authorized.  `RQ0-T1`, `RQ0-C1`, topology, influence, causality,
 geometry, spacetime, fields and gravity remain prohibited.  **HALT.**
+
+## 2026-07-31 — RQ0-L0 PUBLIC ARCHITECTURE-RESET AND TRUSTED-VERIFIER PIN
+## FROZEN; NO HELD-OUT OR SCIENTIFIC CYCLE AUTHORIZED (v13 LEDGER #55)
+The user explicitly authorizes one bounded forward-only public engineering
+cycle from immutable HEAD `e247d34`.  Its strict pin is frozen at
+`note-rq0-operational-localization-architecture-reset-pin.md`, SHA-256
+`04a63efe95c16df344cd48ba80bf180955f0608cb6ca3bcb629221ecd95c0b57`
+(17,126 bytes).  Every artifact and disposition through #54 remains
+unchanged.  The order-192, order-144 and earlier direct-product objects are
+permanent opened regression benchmarks only.
+
+Normal-direct-factor recovery is reclassified as a calibration lemma complete
+only for decompositions into two through eight proper normal direct factors
+under the implemented finite caps.  The cycle must construct a new exact raw
+schema, a proposer-independent trusted verifier that recomputes P1--P8 and
+every regional/factual map, a single total fail-closed boundary, neutral
+positive/finite-negative testing with `NOT-REACHED`, field-complete coherent
+and twisted triples, and the full hostile counterexample plus systematic
+schema-mutation suite.
+
+The scientific L0 design is reset to overlap-first localization.  Operational
+subinstruments and W3 record-bearing subinstruments must be recovered
+independently and agree through executable region, pair-intersection and
+triple-intersection maps; global direct factors are not the definition of a
+region.  A public exact indecomposable ambient model with overlapping
+record-bearing subinstruments is mandatory, with `Q8` the preferred
+calibration.
+
+This cycle may commit a public review snapshot but may not freeze an estimator,
+create any held-out fixture/scorer/truth, write an official receipt or
+scientific delivery, or claim an L0 rung.  A fresh external repo-read-only
+hostile review must be frozen and adjudicated before the cycle halts.  No
+post-review repair is authorized.  A future held-out cycle requires a new
+explicit user instruction.  `RQ0-T1`, `RQ0-C1` and all topology, influence,
+causal, geometric, spacetime, field and gravity work remain prohibited.

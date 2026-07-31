@@ -592,3 +592,15 @@ regression evidence: the fixture was derived from the public product template
 and public probes refuted the required fail-closed artifact/input guarantees.
 No frozen artifact may be repaired or rescored, no automatic L0 successor is
 authorized, and T1/C1 remain prohibited.
+
+## 15. Current v13 public architecture-reset cycle
+
+V13 ledger #55 reopens L0 only for a bounded public engineering reset.  The
+pin reclassifies direct-factor recovery as a two-to-eight-proper-factor lemma,
+requires exact noncoercive parsing, a proposer-independent trusted verifier,
+one total boundary, neutral outcome tests, full-field regional/triple maps,
+the hostile mutants and a public indecomposable overlap-first model.  It
+forbids held-out fixtures, scoring, scientific L0 outcomes and estimator
+freeze.  After a public review snapshot, one external hostile report must be
+frozen and adjudicated; then the cycle halts for explicit user authorization.
+T1/C1 and all later physics remain prohibited.
