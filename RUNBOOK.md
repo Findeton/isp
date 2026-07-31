@@ -253,7 +253,15 @@ that made the rule.
   be frozen verbatim and separately adjudicated.  Until then the live outcome
   remains procedural `RQ0-L0-INVALID`, scientific outcome null, with no
   terminal L0 rung and no `RQ0-L0-BLOCKED-AT-ADDRESS`; T1 and C1 remain
-  prohibited.
+  prohibited.  v13 #45 freezes the complete returned report verbatim at
+  SHA-256 `757d7754...520f9`.  Its verdict is `ACCEPT INVALID DELIVERY WITH
+  DOCUMENTATION FIXES`: chronology, 29/29 public evidence, the new order-192
+  law, every complete row and the runtime bottleneck survive independent
+  attack; procedural invalidity with null science is affirmed.  Five scope
+  findings concerning the observed-only fail-closed branch, incomplete public
+  arrow type, syntactic twisted-pair validation, partly recorded provenance
+  and single canonical timeout await separate adjudication.  No repair or
+  retry is authorized; T1 and C1 remain prohibited.
 
 ## 1. The unit cycle
 

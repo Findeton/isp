@@ -2284,3 +2284,43 @@ adjudication.  Until then #43 remains the live nonterminal procedural status:
 `RQ0-L0-INVALID`, scientific outcome null, no terminal L0 rung, and not
 `RQ0-L0-BLOCKED-AT-ADDRESS`.  `RQ0-T1`, `RQ0-C1`, and every later unit remain
 prohibited.  **HALT.**
+
+## 2026-07-31 — FINAL RQ0-L0 CERTIFICATION HOSTILE REPORT FROZEN VERBATIM:
+## `ACCEPT INVALID DELIVERY WITH DOCUMENTATION FIXES`
+## (v13 LEDGER #45)
+The complete external repo-read-only report dispatched at #44 is frozen
+verbatim at
+`review-rq0-operational-localization-final-certification-hostile.md`,
+SHA-256
+`757d775484fe97e1962d016c6e5a23d824d862b70d4f3533e7337b2aeb8520f9`
+(12,015 bytes; 262 lines).  The reviewer made no repository mutation.
+
+The report independently confirms the commit ancestry and byte immutability;
+absence of all five delivery paths at estimator freeze; the byte-identical
+29/29 public suite; conditional finite P1–P8 soundness/completeness; the
+composite-only `S3 x C2` rejection; distinct declared-collapse and true-
+collision controls; the genuinely new order-192 `C2 x C3 x C4 x D4` law;
+all 36,864 complete fixture rows; four fresh W3 seams; and the exact slow path
+inside represented-algebra certification.  A bounded 45-second worker sample
+and a separate 20-second stack capture corroborate the bottleneck without
+attempting another full score or promoting partial internals.
+
+Its verdict accepts #43's procedural `RQ0-L0-INVALID` classification and null
+scientific outcome.  It explicitly rejects both a positive L0 rung and
+`RQ0-L0-BLOCKED-AT-ADDRESS`: timeout decides neither factor existence nor
+nonexistence.  It recommends only documentation-scope corrections.  The
+ranked findings allege that the scorer is fail-closed only on the observed
+timeout branch and has an invalid latent return branch; the public `RegAddr`
+arrow omits some complete-row fields; the twisted-triple pair validation is
+not a full amplitude-instrument isomorphism check; several provenance facts
+are recorded rather than scorer-authenticated; and only the official timeout,
+not the earlier attempt, has a canonical runtime receipt.
+
+These findings are frozen hostile evidence, not yet adjudicated programme
+facts.  No code or delivery repair is authorized: the registered stopping
+rule forbids any estimator change, fixture shrink/replacement, hidden rescore
+or automatic additional fixture cycle.  The next event is a separate
+adjudication of F1–F5 and terminal closure of this one-shot cycle at its honest
+procedural status, without conferring a scientific L0 rung.  `RQ0-T1`,
+`RQ0-C1`, topology, influence, causality, spacetime, fields and gravity remain
+prohibited.  **HALT.**
