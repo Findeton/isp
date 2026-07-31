@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Held-out exact fixtures for the RQ0-L0 addressability repair.
 
-This module was created only after the generic estimator was committed and
-byte-frozen at v13 #32.  It may contain construction truth for scoring.  The
-estimator may not import this module.
+These genuinely unseen fixture contents were created only after the optimized
+generic estimator was committed and byte-frozen at v13 #34.  They may contain
+construction truth for scoring.  The estimator may not import this module.
 """
 
 from __future__ import annotations
@@ -20,8 +20,8 @@ import rq0_l0_addressability_estimator_exact as est
 
 ROOT = Path(__file__).resolve().parents[2]
 ESTIMATOR_PATH = ROOT / "v13/code/rq0_l0_addressability_estimator_exact.py"
-FROZEN_ESTIMATOR_SHA256 = "79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3"
-ESTIMATOR_COMMIT = "760d921"
+FROZEN_ESTIMATOR_SHA256 = "124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde"
+ESTIMATOR_COMMIT = "36290ef"
 
 
 def sha256(path: Path) -> str:
@@ -37,8 +37,7 @@ def assert_frozen_estimator() -> None:
 
 
 S3 = Tuple[int, int]
-V4 = Tuple[int, int]
-Triple = Tuple[S3, V4, int]
+Triple = Tuple[S3, S3, S3]
 
 
 def s3_elements() -> Tuple[S3, ...]:
@@ -46,45 +45,34 @@ def s3_elements() -> Tuple[S3, ...]:
 
 
 def triple_elements() -> Tuple[Triple, ...]:
-    v4 = tuple(itertools.product(range(2), repeat=2))
-    return tuple(
-        (left, right, bit)
-        for left in s3_elements()
-        for right in v4
-        for bit in range(2)
-    )
+    return tuple(itertools.product(s3_elements(), repeat=3))
 
 
 def triple_multiply(left: Triple, right: Triple) -> Triple:
     return (
         est.s3_multiply(left[0], right[0]),
-        ((left[1][0] + right[1][0]) % 2, (left[1][1] + right[1][1]) % 2),
-        (left[2] + right[2]) % 2,
+        est.s3_multiply(left[1], right[1]),
+        est.s3_multiply(left[2], right[2]),
     )
 
 
-def natural_s3_representation(element: S3) -> est.Matrix:
-    return est.s3_representation(element)
-
-
-def c2_representation(element: int) -> est.Matrix:
-    z = est.matrix(((1, 0), (0, -1)))
-    return est.matrix_power(z, element)
-
-
-def projective_v4_representation(element: V4) -> est.Matrix:
+def s3_representation(element: S3) -> est.Matrix:
+    omega = est.ZETA ** 8
+    rotation = est.matrix(((omega, 0), (0, omega.conjugate())))
     x = est.matrix(((0, 1), (1, 0)))
-    z = est.matrix(((1, 0), (0, -1)))
-    return est.mmul(est.matrix_power(x, element[0]), est.matrix_power(z, element[1]))
+    return est.mmul(
+        est.matrix_power(rotation, element[0]),
+        est.matrix_power(x, element[1]),
+    )
 
 
 def triple_representation(element: Triple) -> est.Matrix:
     return est.kron(
         est.kron(
-            natural_s3_representation(element[0]),
-            projective_v4_representation(element[1]),
+            s3_representation(element[0]),
+            s3_representation(element[1]),
         ),
-        c2_representation(element[2]),
+        s3_representation(element[2]),
     )
 
 
@@ -101,9 +89,9 @@ def main_encoding() -> est.Matrix:
     phases = []
     for index in range(8):
         left, middle, right = index_to_tuple(index)
-        encoded = (left ^ middle, middle ^ right, left ^ middle ^ right)
+        encoded = (left ^ right, left ^ middle, middle)
         permutation.append(tuple_to_index(encoded))
-        exponent = (left + 2 * middle + 5 * right + 3 * left * right) % 24
+        exponent = (5 * left + 7 * middle + 11 * right + 3 * left * middle) % 24
         phases.append(est.ZETA ** exponent)
     relabelling = est.permutation_matrix(tuple(permutation))
     diagonal = tuple(
@@ -405,7 +393,7 @@ def conjugate_dataset(
 
 
 def opaque_handle(index: int) -> str:
-    return f"k{(83 * index + 41) % 48:03d}"
+    return f"k{(83 * index + 41) % 216:03d}"
 
 
 def rename_dataset(
@@ -513,24 +501,25 @@ class FixtureBundle:
 
 def build_main_unencoded() -> Tuple[est.OperationalDataset, Dict[str, Triple], Tuple[Triple, ...]]:
     elements = triple_elements()
-    identity_local = (0, 0)
+    identity_s3: S3 = (0, 0)
     generators: Tuple[Triple, ...] = (
-        ((1, 0), identity_local, 0),
-        ((0, 1), identity_local, 0),
-        (identity_local, (1, 0), 0),
-        (identity_local, (0, 1), 0),
-        (identity_local, identity_local, 1),
+        ((1, 0), identity_s3, identity_s3),
+        ((0, 1), identity_s3, identity_s3),
+        (identity_s3, (1, 0), identity_s3),
+        (identity_s3, (0, 1), identity_s3),
+        (identity_s3, identity_s3, (1, 0)),
+        (identity_s3, identity_s3, (0, 1)),
     )
     base = est.build_group_dataset(
-        "held-out-s3-v4-c2-unencoded",
+        "held-out-monomial-s3-cube-unencoded",
         elements,
         triple_multiply,
         triple_representation,
         generators,
     )
-    base = with_records(base, tuple(embedded_record(slot) for slot in range(2)))
+    base = with_records(base, tuple(embedded_record(slot) for slot in range(3)))
     old_to_new = {operation.handle: opaque_handle(index) for index, operation in enumerate(base.operations)}
-    opaque = rename_dataset(base, "held-out-s3-v4-c2-opaque", old_to_new)
+    opaque = rename_dataset(base, "held-out-monomial-s3-cube-opaque", old_to_new)
     element_by_handle = {
         old_to_new[f"u{index:03d}"]: element for index, element in enumerate(elements)
     }
@@ -540,36 +529,37 @@ def build_main_unencoded() -> Tuple[est.OperationalDataset, Dict[str, Triple], T
 def build_phase_unencoded() -> est.OperationalDataset:
     """Build the physical complex-phase control before the global encoding.
 
-    The qutrit Fourier transform is not in the declared monomial boundary
-    gauge.  Conjugating the natural S3 representation by it changes exact
+    The complex Hadamard is not in the declared monomial boundary gauge.
+    Conjugating the nonabelian S3 representation by it changes exact
     operational signatures while preserving the abstract composition object.
-    Constructing the transformed 3x3 factors directly avoids an irrelevant
-    dense 27x27 fixture-generation bottleneck.
+    Constructing the transformed 2x2 factor directly keeps fixture generation
+    separate from the frozen estimator's work.
     """
 
     elements = triple_elements()
-    identity_local = (0, 0)
+    identity_s3: S3 = (0, 0)
     generators: Tuple[Triple, ...] = (
-        ((1, 0), identity_local, 0),
-        ((0, 1), identity_local, 0),
-        (identity_local, (1, 0), 0),
-        (identity_local, (0, 1), 0),
-        (identity_local, identity_local, 1),
+        ((1, 0), identity_s3, identity_s3),
+        ((0, 1), identity_s3, identity_s3),
+        (identity_s3, (1, 0), identity_s3),
+        (identity_s3, (0, 1), identity_s3),
+        (identity_s3, identity_s3, (1, 0)),
+        (identity_s3, identity_s3, (0, 1)),
     )
     fourier = local_physical_phase_action()
 
     def representation(element: Triple) -> est.Matrix:
         phased_first = est.conjugate_by(
             fourier,
-            natural_s3_representation(element[0]),
+            s3_representation(element[0]),
         )
         return est.kron(
-            est.kron(phased_first, projective_v4_representation(element[1])),
-            c2_representation(element[2]),
+            est.kron(phased_first, s3_representation(element[1])),
+            s3_representation(element[2]),
         )
 
     base = est.build_group_dataset(
-        "held-out-s3-v4-c2-phase-unencoded",
+        "held-out-monomial-s3-cube-phase-unencoded",
         elements,
         triple_multiply,
         representation,
@@ -577,7 +567,7 @@ def build_phase_unencoded() -> est.OperationalDataset:
     )
     local_phase_record = conjugate_record(est.two_level_record_witness("w0"), fourier)
     records = []
-    for slot in range(2):
+    for slot in range(3):
         local = (
             local_phase_record
             if slot == 0
@@ -604,7 +594,7 @@ def build_phase_unencoded() -> est.OperationalDataset:
         )
     base = with_records(base, tuple(records))
     mapping = {operation.handle: opaque_handle(index) for index, operation in enumerate(base.operations)}
-    return rename_dataset(base, "held-out-s3-v4-c2-phase-opaque", mapping)
+    return rename_dataset(base, "held-out-monomial-s3-cube-phase-opaque", mapping)
 
 
 def build_ambiguity_dataset() -> est.OperationalDataset:
@@ -631,10 +621,10 @@ def build_ambiguity_dataset() -> est.OperationalDataset:
 def build_irreducible_dataset() -> est.OperationalDataset:
     elements = s3_elements()
     return est.build_group_dataset(
-        "irreducible-s3-natural",
+        "irreducible-s3",
         elements,
         est.s3_multiply,
-        natural_s3_representation,
+        s3_representation,
         ((1, 0), (0, 1)),
     )
 
@@ -695,10 +685,11 @@ def build_fixture_bundle() -> FixtureBundle:
         generators[2],
         triple_multiply(generators[1], generators[3]),
         generators[4],
+        generators[5],
     )
     handle_by_element = {element: handle for handle, element in element_by_handle.items()}
     second_mapping = {
-        operation.handle: f"r{(47 * index + 19) % 48:03d}"
+        operation.handle: f"r{(137 * index + 19) % 216:03d}"
         for index, operation in enumerate(main.operations)
     }
     renamed = rename_dataset(
@@ -734,7 +725,7 @@ def build_fixture_bundle() -> FixtureBundle:
         bridge_source, bridge_action, "bridge-v4-positive-target"
     )
     bridge_negative = build_bridge_dataset("c4", "bridge-c4-negative")
-    identities = ((0, 0), (0, 0), 0)
+    identities = ((0, 0), (0, 0), (0, 0))
     factor_elements = tuple(
         frozenset(
             element

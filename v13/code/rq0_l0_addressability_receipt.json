@@ -1,31 +1,36 @@
 {
   "unit": "RQ0-L0 addressability repair",
-  "attempt": "first held-out fixture",
+  "attempt": "second held-out fixture after estimator v2 freeze",
   "status": "RQ0-L0-INVALID",
   "scientific_outcome": null,
-  "invalid_reason": "complete exact suite exceeded the frozen 360-second runtime cap",
+  "invalid_reason": "complete exact encoded suite exceeded the frozen 360-second runtime cap",
   "frozen_estimator": {
-    "commit": "760d921",
-    "sha256": "79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3"
+    "commit": "36290ef",
+    "sha256": "124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde"
   },
   "fixture": {
-    "sha256": "fb5b671bd1264122563867f71a1fbeaf1ca0616f7628702d35f6e9eba011cea6",
-    "family": "globally encoded exact S3 x projective-V4 x C2 amplitude instrument",
+    "sha256": "107b7dc7d8d5b5f51020da5f3fc071631e1bd8930c3bb1dcf1d86a28665e18de",
+    "family": "globally encoded exact monomial S3 x S3 x S3 amplitude instrument",
     "field": "Q(zeta_24) modulo x^8-x^4+1",
     "carrier_dimension": 8,
-    "raw_operations": 48,
-    "composition_rows": 2304,
-    "record_candidates": 2,
+    "raw_operations": 216,
+    "composition_rows": 46656,
+    "record_candidates": 3,
     "seed": null
   },
   "runtime": {
     "cap_seconds": 360,
     "cap_exceeded": true,
-    "observed_interrupt_seconds": "419.71",
-    "interrupted_stage": "generic direct-complement search"
+    "observed_interrupt_seconds": "442.41",
+    "interrupted_stage": "exact composition-product signature canonicalization"
+  },
+  "development_diagnostic_only": {
+    "unencoded_wall_seconds": "349.97",
+    "returned_positive_internal_atlas": true,
+    "promoted": false
   },
   "outcome_prerequisites": {
-    "complete_suite_within_cap": false,
+    "complete_encoded_suite_within_cap": false,
     "positive_rung_permitted": false,
     "negative_scientific_rung_permitted": false
   },

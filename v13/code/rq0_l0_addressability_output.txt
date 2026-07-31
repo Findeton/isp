@@ -1,28 +1,27 @@
-RQ0-L0 ADDRESSABILITY — FIRST HELD-OUT FIXTURE ATTEMPT
-======================================================
+RQ0-L0 ADDRESSABILITY — SECOND HELD-OUT FIXTURE ATTEMPT
+=======================================================
 
 status: RQ0-L0-INVALID
 scientific_outcome: none
-invalid_reason: complete exact suite exceeded the frozen 360-second runtime cap
+invalid_reason: complete exact encoded suite exceeded the frozen 360-second runtime cap
 
-frozen_estimator_sha256: 79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3
-fixture_sha256: fb5b671bd1264122563867f71a1fbeaf1ca0616f7628702d35f6e9eba011cea6
-fixture_family: globally encoded exact S3 x projective-V4 x C2 amplitude instrument
+frozen_estimator_sha256: 124cc1545f91982268efd0b14108b59da9465bd6c748517170110ff2897b7cde
+fixture_sha256: 107b7dc7d8d5b5f51020da5f3fc071631e1bd8930c3bb1dcf1d86a28665e18de
+fixture_family: globally encoded exact monomial S3 x S3 x S3 amplitude instrument
 exact_scalar_field: Q(zeta_24), Phi_24(x) = x^8 - x^4 + 1
 carrier_dimension: 8
-raw_operation_count: 48
-flat_composition_row_count: 2304
-frozen_record_candidates: 2
+raw_operation_count: 216
+flat_composition_row_count: 46656
+frozen_record_candidates: 3
 seed: none
 
-The fixture constructor completed exactly and authenticated the frozen
-estimator hash.  The complete generic localization call crossed 360 seconds
-before returning.  It was interrupted after 419.71 measured wall seconds
-while inside the generic direct-complement search.  A cap hit is procedural
-RQ0-L0-INVALID under repair pin section 14.  No heuristic fallback was used,
-no positive or negative scientific rung is printed, and no atlas count is
-claimed.
+The genuinely unseen constructor completed and authenticated estimator v2.
+The complete encoded localization call crossed 360 seconds before returning.
+It was interrupted after 442.41 measured wall seconds while repeatedly
+canonicalizing exact composition-product signatures.  A separate unencoded
+development diagnostic returned a positive six-object atlas in 349.97
+seconds, but it is not the frozen encoded delivery and is not promoted.
 
-This opened fixture is permanently retired from positive scoring.  Any
-estimator optimization requires a new source freeze followed by genuinely
-unseen fixture contents.
+Pin section 14 classifies the encoded cap hit as procedural RQ0-L0-INVALID.
+No heuristic fallback, scientific rung, or partial atlas claim is permitted.
+This opened fixture is permanently retired from positive scoring.

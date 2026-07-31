@@ -164,6 +164,12 @@ that made the rule.
   public phase and subgroup-join controls; two public receipts are identical
   and one measured run takes 18.11 seconds.  The retired #33 fixture was not
   rescored.  Only genuinely unseen post-#34 fixture contents may now be used.
+  v13 #35 freezes that second fixture as another procedural invalid: its
+  encoded exact monomial `S3^3` suite crossed 360 seconds during repeated
+  product-signature canonicalization.  An unencoded internal atlas returned
+  under cap but is not promoted.  The fixture is retired.  One final generic
+  cache/zero-skip estimator freeze is authorized before newly encoded contents;
+  no L0 scientific rung or C1 authorization exists yet.
 
 ## 1. The unit cycle
 

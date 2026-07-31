@@ -1734,3 +1734,34 @@ a positive score.  The next authorized stage must construct genuinely unseen
 fixture contents only after this commit, then build the scorer, receipts and
 delivery note under #31.  `RQ0-C1` and every later unit remain prohibited.
 **HALT.**
+
+## 2026-07-30 — SECOND RQ0-L0 HELD-OUT FIXTURE INVALID AT RUNTIME;
+## PRODUCT-SIGNATURE RECOMPUTATION ISOLATED (v13 LEDGER #35)
+The second post-freeze fixture is frozen at
+`code/rq0_l0_addressability_fixtures_exact.py`, SHA-256
+`107b7dc7d8d5b5f51020da5f3fc071631e1bd8930c3bb1dcf1d86a28665e18de`
+(28,931 bytes, 783 lines).  It is genuinely post-#34 truth: a globally
+encoded exact monomial `S3 x S3 x S3` instrument over `Q(zeta_24)`, carrier
+dimension 8, 216 raw operations, the maximum 46,656 flat composition rows and
+three W3 record candidates.  It authenticates the unchanged v2 estimator SHA
+`124cc154...`.
+
+The complete encoded call crossed the 360-second cap and was interrupted at
+442.41 measured seconds while repeatedly phase-canonicalizing composition
+products.  A separate unencoded development diagnostic returned one finest
+`(6,6,6)` factorization, six record-bearing objects, nine pair overlaps and
+three triple overlaps in 349.97 seconds.  That diagnostic is not the frozen
+encoded delivery, leaves no control-suite margin and is not promoted.
+
+The live result is therefore procedural `RQ0-L0-INVALID`, with no scientific
+rung.  Exact invalid receipts replace the same permitted delivery paths; git
+history preserves #33 separately.  This opened fixture is retired permanently
+from positive scoring.
+
+The new measured bottleneck licenses only a final generic performance freeze:
+zero entries may be skipped during exact phase discrimination, finite phase
+powers may be precomputed, and repeated exact product matrices may use a pure
+signature cache.  The reference algorithm and public equivalence controls
+must remain.  After that freeze, new encoding/amplitude contents are required;
+#35 may not be rescored.  `RQ0-C1` and all later units remain prohibited.
+**HALT.**
