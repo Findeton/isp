@@ -302,7 +302,12 @@ that made the rule.
   and the opened benchmark remains scientifically sterile.  Git-object
   absence must be verified on the #48 commit before the sole Stage-C fixture
   is created.  Estimator and proof may no longer change.  T1 and C1 remain
-  prohibited.
+  prohibited.  v13 #49 records that verification: Git-object hashes at
+  `d881a3e` reproduce both frozen anchors, every registered future fixture/
+  scorer/receipt/output/delivery path is absent from that tree, and no
+  alternate held-out truth appears in its diff.  This is procedural chronology
+  only.  The sole Stage-C fixture may now be conceived; the frozen estimator
+  and proof cannot change and no second fixture/score is allowed.
 
 ## 1. The unit cycle
 

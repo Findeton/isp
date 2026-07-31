@@ -2474,3 +2474,24 @@ fixture and one official 360-second score under the stopping rule.  No
 estimator/proof edit, second fixture, cap increase, hidden rescore, `RQ0-T1`,
 `RQ0-C1`, topology, influence, causality, geometry, spacetime, fields or
 gravity is permitted.
+
+## 2026-07-31 — STAGE-B FREEZE COMMIT OBJECT AUTHENTICATED BEFORE FIXTURE
+## CONCEPTION (v13 LEDGER #49)
+The Stage-B freeze is immutable commit `d881a3e`.  Direct `git show` hashing
+of that object reproduces estimator SHA-256
+`a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b`
+and proof SHA-256
+`5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d`.
+`git cat-file -e` returns absent for each pre-registered future fixture,
+scorer, receipt, output and delivery path at `d881a3e`; recursive tree
+inspection finds only the pin, estimator, proof, public runner and four public
+receipt/output artifacts under the successor naming surface.  No alternate
+held-out multiplication table, factor truth, context/record truth, scorer or
+delivery was introduced by the freeze diff.
+
+This is chronology authentication only and has no scientific outcome.  It
+does not alter the frozen estimator or proof.  Stage C may now conceive and
+write exactly one genuinely new abstract fixture and execute exactly one
+official score under the 360-second cap.  The no-edit/no-replacement/no-
+second-score rule is now binding.  `RQ0-T1`, `RQ0-C1` and every later claim
+remain prohibited.
