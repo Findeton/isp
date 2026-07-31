@@ -307,7 +307,16 @@ that made the rule.
   scorer/receipt/output/delivery path is absent from that tree, and no
   alternate held-out truth appears in its diff.  This is procedural chronology
   only.  The sole Stage-C fixture may now be conceived; the frozen estimator
-  and proof cannot change and no second fixture/score is allowed.
+  and proof cannot change and no second fixture/score is allowed.  v13 #50
+  freezes that sole fixture and its official scorer before execution.  The
+  genuinely new declared family is order-144 `C2 x C3 x C4 x S3` on an exact
+  24-state carrier, with four heterogeneous factors, nonabelian content, 138
+  composite-only classes, four fresh W3 candidates and an irregular
+  four-context access family.  Fixture SHA-256 is `d4a72c05...d72ea` and
+  scorer SHA-256 `68c01b25...d3538`; both compile, while no receipt/output/
+  delivery exists and no held-out worker has run.  The files are now
+  immutable.  Exactly one official 360-second invocation is next, after which
+  any result is frozen and externally reviewed; no repair or rescore exists.
 
 ## 1. The unit cycle
 

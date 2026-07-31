@@ -2495,3 +2495,35 @@ write exactly one genuinely new abstract fixture and execute exactly one
 official score under the 360-second cap.  The no-edit/no-replacement/no-
 second-score rule is now binding.  `RQ0-T1`, `RQ0-C1` and every later claim
 remain prohibited.
+
+## 2026-07-31 — SOLE POST-FREEZE L0 FIXTURE AND OFFICIAL SCORER FROZEN
+## BEFORE EXECUTION (v13 LEDGER #50)
+The only authorized Stage-C fixture now exists at
+`code/rq0_l0_compcert_heldout_fixture_exact.py`, SHA-256
+`d4a72c05f8755b4247ecac19f7ac9a49656c3c855a2fea08a77c73ce7b8d72ea`.
+Its one-shot scorer exists at `code/rq0_l0_compcert_heldout_score.py`, SHA-256
+`68c01b25b08dc3b2fdb645ed3e5ee6cffef762b2a3942267110fc50e0a5d3538`.
+Both compile.  Neither the fixture constructor nor the official worker has
+been executed, and no held-out receipt, output or delivery note yet exists.
+
+The newly opened abstract composition family is
+`C2 x C3 x C4 x S3`, of declared order 144, with a 24-state exact monomial
+amplitude representation over `Q(zeta_24)`.  It is not imported from either
+older fixture and its order alone separates it from order-192
+`C2 x C3 x C4 x D4` and order-216 `S3^3`.  It has four heterogeneous intended
+factors, a nonabelian `S3` component, six independently selectable generators
+including identity, 138 composite-only classes, 20,736 complete rows, four
+fresh binary W3 candidates and four selective contexts.  The declared
+context scopes `(0,1,2)`, `(0,2,3)`, `(0,1,3)`, `(1,2)` are designed to yield
+an irregular record-bearing family with real pair and triple meets rather
+than a complete proper-Boolean atlas.  These are fixture construction/truth
+data now visible only to the scorer; none is promoted before execution.
+
+Direct hashing confirms that the frozen estimator remains
+`a9f8f93a...30f8b` and proof `5839fedc...d2d`.  They were not edited.  The
+fixture and scorer are now immutable under the stopping rule.  The next event
+is exactly one invocation of the committed official scorer under its complete
+360-second cap.  Whatever registered result occurs must be frozen without a
+second score, fixture edit/replacement, cap increase or estimator/proof edit,
+then sent to an external repo-read-only hostile round.  `RQ0-T1`, `RQ0-C1`
+and all later claims remain prohibited.
