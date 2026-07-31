@@ -129,7 +129,10 @@ that made the rule.
   with explicit missing-`Comp_D`, generator-presentation and recordless-object
   counterexamples.  It recommends `RQ0-L0-BLOCKED-AT-ADDRESS`; that verdict is
   evidence only until the second report is frozen and the findings are
-  independently adjudicated.
+  independently adjudicated.  v13 #29 freezes the second report, which reaches
+  the same `REJECT` after a separate exact rebuild and confirms that no positive
+  L0 rung is secure.  Both reports are now frozen; adjudication, not repair, is
+  the next event.
 
 ## 1. The unit cycle
 

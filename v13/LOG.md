@@ -1360,3 +1360,57 @@ Neither the external recommendation nor this summary is adopted until every
 finding is independently checked and both reports are frozen.  No estimator
 repair, new fixture, terminal status, `RQ0-C1`, causal, geometric, field or
 gravity work is authorized before adjudication.  **HALT.**
+
+## 2026-07-30 — SECOND RQ0-L0 HOSTILE REPORT FROZEN:
+## INDEPENDENT `REJECT`; NO POSITIVE L0 RUNG SECURE (v13 LEDGER #29)
+The second complete report from the round dispatched at #27 is frozen verbatim
+at `review-rq0-operational-localization-hostile.md`, SHA-256
+`40874724a1cd07bb4baf3951ed571edf4f8c061fdb6d73f3f6d603fdc7dac820`
+(22,805 bytes).  It targets the same immutable pin, estimator and delivery
+commits and independently verifies all source hashes and ancestry relations.
+Its scratch rebuild imported no delivery module and is reported at SHA-256
+`d82b9b2829521e803999a6de49a1aab5d27b38ef06465ec306f58b540e6b9df8`
+(7,962 bytes).  The reviewer made no repository edit or git mutation.  This
+entry freezes evidence only and performs no adjudication or repair.
+
+**EXTERNAL VERDICT:** `REJECT`.  **RECOMMENDATION:** no terminal positive L0
+rung; after native gating of the exact obstruction, the appropriate current
+scientific outcome is `RQ0-L0-BLOCKED-AT-ADDRESS`.  The reviewer independently
+rebuilds the exact field, algebra, partition, lattice, W3, phase and receipt
+quantities and confirms the delivery's numerical table.  The rejection is not
+a dispute about those exact measurements.
+
+Its fatal findings independently match #28.  First, `Comp_D`, admitted words,
+joint implementation and faithful pair-composition data are absent from both
+the estimator input schema and fixture even though the pin makes them part of
+the region referent and complement test.  Identical serialized datasets can
+therefore represent an addressable world `D+` or a world `D-` forbidding all
+mixed composites.  Second, the 14-object positive atlas includes four
+recordless singleton objects, contrary to mandatory C10.
+
+The round additionally classifies the literal equal-law `bridge_exists=False`
+field as a circular major gate and notes that dimension `4 != 8` excludes only
+the declared fixed-carrier isomorphism, not every relevant regional bridge.
+It finds the record restrictions to be handle metadata rather than executable
+algebra maps/projector pullbacks, identifies an invalid-with-no-outcome exit-0
+path in the general receipt logic, and downgrades the cancelling-circuit row to
+a constructor identity rather than an estimator presentation test.  It retains
+the exact algebraic proper-join lattice while narrowing “recovered non-star
+nerve” to the non-star meet nerve induced automatically after the four-factor
+decomposition is selected.
+
+The review explicitly preserves the exact `Q(zeta_8)` and reachable-support
+machinery, eight operational signatures, exhaustive 4,140 partitions, the
+selected-surface four-factor algebra and its dimensions, exact lattice and
+intersection counts, all six W3 rows, exact phase measurement, finite `mu_8`
+scope, chronology/source separation, deterministic receipt regeneration and
+the successful anchor mutant.  It confirms there is no causal, geometric,
+field or gravity smuggling.
+
+Both independent reports are now frozen.  Commit #26 remains immutable and
+**GREEN-UNREVIEWED** under two hostile rejections.  The next event must
+adjudicate every finding by direct source inspection and reproduced
+counterexamples, withdraw or retain claims explicitly, and decide whether to
+terminalize the negative rung or authorize a fresh-estimator/unseen-fixture L0
+repair cycle.  No repair, `RQ0-C1`, causal, geometric, field or gravity work is
+authorized before that adjudication.  **HALT.**
