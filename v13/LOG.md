@@ -1765,3 +1765,38 @@ signature cache.  The reference algorithm and public equivalence controls
 must remain.  After that freeze, new encoding/amplitude contents are required;
 #35 may not be rescored.  `RQ0-C1` and all later units remain prohibited.
 **HALT.**
+
+## 2026-07-30 — FINAL GENERIC RQ0-L0 ESTIMATOR v3 FROZEN BEFORE NEW
+## ENCODING/AMPLITUDE CONTENTS (v13 LEDGER #36)
+The final performance-repaired estimator is frozen at
+`code/rq0_l0_addressability_estimator_exact.py`, SHA-256
+`7c8571eac81692eeb87058b1162bf1b874179e93b3d11bc204f264877465b0e1`
+(100,462 bytes, 2,653 lines), API `rq0-l0-addressability-v3`.  This commit
+changes no fixture, scorer, note or receipt.  The opened #35 fixture remains
+retired and was not rescored.
+
+All scientific definitions, gates and caps remain unchanged.  Exact zero
+entries now skip phase-candidate comparison because multiplication by any
+`mu_24` phase leaves zero identical.  The 24 exact phase powers are computed
+once.  Within one composition-object build, equal exact accessible product
+matrices share one phase-quotient signature.  Matrix multiplication is still
+performed for every declared row, so a false composition result cannot be
+accepted through the cache.
+
+The old full-matrix phase minimizer remains an executable reference.  The
+public suite again proves exact equality for zero, identity, mixed cyclotomic,
+all public `S3` and `S3 x C2` operations, and every one of their 24 phase
+shifts.  The public 144 composition rows produce 12 unique exact product
+amplitudes, so the cache has both a positive hit control and full row-law
+validation.  All v2 public field, W3, generator, alias, addressability,
+congruence, support, map, atlas, ambiguity and normal-join gates also pass.
+
+Two complete public outputs are byte-identical: 1,841 bytes, 84 lines,
+SHA-256
+`11d0a11eeaa632259b191f3185ed17835fe68125b1bf352b4a01a2aec1d84284`.
+One measured run takes 12.37 seconds.  No new fixture truth, expected atlas,
+causal object, geometry, field or gravity object is present in the estimator.
+
+Only newly generated post-#36 encoding/amplitude contents may now be scored.
+Neither #33 nor #35 may be reused for a positive headline.  `RQ0-C1` and all
+later units remain prohibited.  **HALT.**

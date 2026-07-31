@@ -169,7 +169,13 @@ that made the rule.
   product-signature canonicalization.  An unencoded internal atlas returned
   under cap but is not promoted.  The fixture is retired.  One final generic
   cache/zero-skip estimator freeze is authorized before newly encoded contents;
-  no L0 scientific rung or C1 authorization exists yet.
+  no L0 scientific rung or C1 authorization exists yet.  v13 #36 freezes that
+  v3 source at SHA-256 `7c8571ea...`: exact zero phase comparisons are skipped,
+  finite phase powers are precomputed and repeated exact product matrices share
+  a local signature cache, while every composition row is still multiplied and
+  checked.  Reference equivalence and cache-hit controls pass; the public suite
+  is deterministic in 12.37 seconds.  Only new post-#36 encoding/amplitude
+  contents may be used next.
 
 ## 1. The unit cycle
 

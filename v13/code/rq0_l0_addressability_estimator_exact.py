@@ -21,7 +21,7 @@ from functools import lru_cache
 from typing import Callable, Dict, FrozenSet, Hashable, Iterable, Iterator, Mapping, Optional, Sequence, Tuple
 
 
-ESTIMATOR_API_VERSION = "rq0-l0-addressability-v2"
+ESTIMATOR_API_VERSION = "rq0-l0-addressability-v3"
 MAX_CARRIER_DIMENSION = 64
 MAX_OPERATION_CLASSES = 216
 MAX_COMPOSITION_ROWS = 46_656
@@ -167,6 +167,7 @@ I = ZETA ** 6
 SQRT2 = ZETA ** 3 - ZETA ** 9
 INV_SQRT2 = SQRT2 * Fraction(1, 2)
 SQRT3 = ZETA ** 2 + ZETA ** 22
+MU24_POWERS = tuple(ZETA ** exponent for exponent in range(24))
 
 
 def _solve_fraction_system(
@@ -432,7 +433,12 @@ def canonical_mu24_phase(value: Matrix) -> Matrix:
 
     candidates = tuple(range(24))
     for entry in flatten(value):
-        keys = tuple((exponent, ((ZETA ** exponent) * entry).sort_key()) for exponent in candidates)
+        if not entry:
+            continue
+        keys = tuple(
+            (exponent, (MU24_POWERS[exponent] * entry).sort_key())
+            for exponent in candidates
+        )
         minimum = min(key for _, key in keys)
         candidates = tuple(exponent for exponent, key in keys if key == minimum)
         if len(candidates) == 1:
@@ -765,6 +771,7 @@ class CompositionObject:
     generator_classes: Tuple[int, ...]
     congruence_verified: bool
     total_implemented: bool
+    unique_product_amplitudes: int
     diagnostics: Tuple[str, ...]
 
     @property
@@ -819,12 +826,16 @@ def build_composition_object(
     if len(classes) > MAX_OPERATION_CLASSES:
         raise InvalidDataset("quotient operation count exceeds the frozen cap")
     raw_rows = {(row.left, row.right): row for row in dataset.composition_rows}
+    product_signature_cache: Dict[Matrix, Tuple[Tuple[Tuple[int, int], ...], ...]] = {}
     for row in dataset.composition_rows:
         if row.status == UNAVAILABLE:
             continue
         assert row.result is not None
         product = mmul(operation_map[row.left].amplitude, operation_map[row.right].amplitude)
-        if accessible_signature(support, product) != signature_by_handle[row.result]:
+        accessible_product = accessible_amplitude(support, product)
+        if accessible_product not in product_signature_cache:
+            product_signature_cache[accessible_product] = amplitude_signature(accessible_product)
+        if product_signature_cache[accessible_product] != signature_by_handle[row.result]:
             raise InvalidDataset(
                 f"accessible composition amplitude law fails for ({row.left},{row.right})"
             )
@@ -886,6 +897,7 @@ def build_composition_object(
         generator_classes=generator_classes,
         congruence_verified=True,
         total_implemented=total_implemented,
+        unique_product_amplitudes=len(product_signature_cache),
         diagnostics=tuple(diagnostics),
     )
 
@@ -1940,6 +1952,7 @@ def localization_to_data(result: LocalizationResult) -> Mapping[str, object]:
             "generator_classes": list(result.core.composition.generator_classes),
             "congruence_verified": result.core.composition.congruence_verified,
             "total_implemented": result.core.composition.total_implemented,
+            "unique_product_amplitudes": result.core.composition.unique_product_amplitudes,
         },
         "accessible_dimension": result.core.accessible_dimension,
         "associative": result.core.associative,
@@ -2522,6 +2535,11 @@ def public_self_test() -> Mapping[str, object]:
         },
         "phase_quotient_equivalence": phase_quotient_equivalence,
         "normal_join_equivalence": normal_join_equivalence,
+        "product_signature_cache": (
+            base.composition.unique_product_amplitudes == base.composition.size
+            and base.composition.unique_product_amplitudes
+            < len(public_calibration_dataset("base").composition_rows)
+        ),
         "record": record.passes_w3,
         "public_base": core_signature(base) == expected_signature,
         "changed_generator": core_signature(changed) == core_signature(base),
@@ -2619,6 +2637,8 @@ def public_self_test() -> Mapping[str, object]:
             "typed_map_chain": checks["typed_map_chain"],
             "phase_quotient_equivalence": checks["phase_quotient_equivalence"],
             "normal_join_equivalence": checks["normal_join_equivalence"],
+            "unique_product_amplitudes": base.composition.unique_product_amplitudes,
+            "product_signature_cache": checks["product_signature_cache"],
         },
         "checks": checks,
     }
