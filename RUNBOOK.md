@@ -145,6 +145,12 @@ that made the rule.
   than a supplied generator list, converts every hostile counterexample into a
   mandatory control, and demands a record-bearing, map-typed atlas.  A new
   estimator path must be committed before a new non-Pauli main fixture exists.
+  v13 #32 freezes that new generic `Q(zeta_24)` estimator at source hash
+  `79c8d493...`: it contains the typed composition quotient, generator-
+  independent direct-factor search, W3 records, executable algebra/record
+  maps and groupoid derivation, with public calibrations only.  The main
+  fixture and scorer paths did not exist at freeze.  The estimator is now byte-
+  immutable for the first repair fixture.
 
 ## 1. The unit cycle
 

@@ -1586,3 +1586,80 @@ The next authorized event is the new estimator-freeze commit, with public
 calibrations only.  No fixture truth, repair delivery, `RQ0-C1`, causal,
 geometric, field, gravity or deformation work may begin in that stage.
 **HALT.**
+
+## 2026-07-30 — REPAIRED RQ0-L0 ESTIMATOR FROZEN BEFORE NEW TRUTH:
+## EXACT COMPOSITION OBJECT AND ADDRESSABILITY ENGINE (v13 LEDGER #32)
+The new generic estimator is
+`code/rq0_l0_addressability_estimator_exact.py`, SHA-256
+`79c8d493d29dbc80d8760984da58cd5a8276d757216e13d20abb4404e52ffed3`
+(96,075 bytes, 2,554 lines).  It is bound to repair-pin commit
+`ffbcce6` and pin SHA-256
+`8135a0c9f358c86384d0d248a7cbf99131095656b5e61c06c8d49d0f62175fe3`.
+This is the required temporal freeze: the source is now byte-immutable for the
+first new fixture family.
+
+The future fixture, scorer, delivery-note and receipt paths did not exist when
+this estimator was frozen.  The estimator imports Python standard-library
+modules only, has zero float literals, contains no old or new fixture/scorer
+import, no expected atlas, no hidden factor labels, and no causal, metric,
+field or gravity object.  Its only in-file models are public calibrations.
+
+The exact scalar engine represents `Q(zeta_24)` by eight rational coefficients
+reduced modulo `Phi_24(x) = x^8 - x^4 + 1`, with exact conjugation and inversion.
+The generic operational type includes a flat row-complete composition table
+with `IMPLEMENTED`, `UNAVAILABLE`, and `COLLAPSED` statuses.  The estimator
+computes accessible support, quotients amplitude-tomography signatures modulo
+finite phase, requires composition congruence across aliases, and constructs
+the quotient composition object before any localization search.
+
+Factorization is now generator independent at the declared finite group first
+rung.  The engine enumerates normal operational subobjects from the complete
+composition law, tests direct complements by mixed implementation,
+commutation, trivial intersection, injective multiplication and exhaustive
+image, and independently checks the represented star-algebra intersection and
+product-dimension theorem.  Primitive `generator_handles` are recorded but are
+not used by the factor search.
+
+The estimator also contains generic exact W3 evaluation; record-bearing local
+objects only; executable algebra-inclusion coordinate maps; explicit
+`FactInterface` projector objects and contravariant record pullbacks; category
+and functor composition checks; pair/triple overlap construction; finite
+carrier-relabelled groupoid-arrow derivation for ambiguous small models; and a
+finite `mu_8` monomial bridge-search API capped at 100,000 candidates.
+
+Public calibration over the nonabelian exact `S3 x C2` composition law has 12
+quotient classes and seven normal subobjects.  It returns two genuine finest
+direct decompositions, each with group orders `(2,6)` and represented-algebra
+dimensions `(2,4)`, plus eight groupoid arrows derived from exact carrier
+relabelings.  Replacing a primitive generator by a mixed exact generator and
+adding a redundant same-law alias both return the identical structural result.
+An unavailable mixed row and a collapsed row both block addressability.  A
+deliberately incongruent alias is rejected.
+
+A separate public `S3 x S3` map calibration returns one `(6,6)` factorization
+with algebra dimensions `(4,4)`, two record-bearing atomic objects, two exact
+algebra inclusions and two exact record pullbacks; the algebra category,
+record functor and overlap closure pass.  The public two-level W3 row is
+`occurrence=true`, `preserving_available=(true)`,
+`erasing_available=(false)`, `erasing_cross_coherence=(2)`, and
+`no_write_occurrence=false`.  An inaccessible direct-sum completion returns
+the same composition/localization signature as its accessible base.  A
+separate three-level algebra-map chain verifies direct versus composite
+coordinate inclusions and record pullbacks.
+
+All public field, record, quotient, changed-generator, redundant-alias,
+unavailable, collapse, congruence, inaccessible-support, typed-map, typed-atlas
+and ambiguity-arrow checks pass.  Two independent complete processes produce
+byte-identical 1,576-byte output, SHA-256
+`2ed811c30ab8887a38896dfe0e7fdabe56377e0a05b22708161d95f838af62d8`;
+their measured runtimes were approximately 46.5 and 46.8 seconds, both below
+the 360-second cap.  No scientific L0 outcome is claimed: no new held-out main
+fixture has been constructed or scored.
+
+The next authorized stage may create only the pinned new fixture, scorer,
+delivery note and generated receipts plus append-only ledger/runbook updates.
+It must import this exact estimator hash and may not edit the estimator.  The
+main fixture must be outside the old Pauli-tensor family, carry typed `Comp_D`,
+and run every #31 control.  Any estimator change requires another freeze and
+another unseen fixture.  `RQ0-C1` and all causal, geometric, field and gravity
+work remain prohibited.  **HALT.**
