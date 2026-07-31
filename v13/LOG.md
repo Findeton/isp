@@ -2496,6 +2496,49 @@ official score under the 360-second cap.  The no-edit/no-replacement/no-
 second-score rule is now binding.  `RQ0-T1`, `RQ0-C1` and every later claim
 remain prohibited.
 
+## 2026-07-31 — SOLE OFFICIAL HELD-OUT SCORE RETURNS GREEN-UNREVIEWED
+## `RQ0-LOCAL-ATLAS`; HALT FOR HOSTILE REVIEW (v13 LEDGER #51)
+The committed scorer from `b9e574a` was invoked exactly once with
+`--write-receipts`.  It returned within the single complete 360-second cap in
+65.74 seconds.  The canonical receipt is frozen at
+`code/rq0_l0_compcert_heldout_receipt.json`, SHA-256
+`476b0ce989811e602add8bda5b58fa1880adb74bc7cca0c6880e188c9500b1de`;
+the delivery note is
+`note-rq0-operational-localization-computational-certification.md`, SHA-256
+`da9886f42ad3328e7755be261e69e786d1ac61d217708c56553a0c6bc6f828f4`.
+No rerun occurred.
+
+All frozen source and chronology anchors pass.  The estimator returns one
+finest factorization with orders `(2,3,4,6)` from the actual order-144
+nonabelian quotient: 70 normal subobjects, 36 direct-pool members and 14
+passing complete certificates.  It constructs 10 irregular proper
+record-bearing operational regions, 31 full `RegAddr` arrows, 31
+projector/Boolean fact maps, 64 coherent regional paths, 64 coherent factual
+paths and three nonvacuous triples, with no universal atom and no complete
+proper-Boolean family.  All four fresh records pass W3.
+
+The official worker passes 35/35 gates.  Its row `tau`/status/result/law/
+signature mutants, all-false selectability mutant, full rename/reorder/gauge/
+record-handle presentations, regional-row/context/projector mutants,
+malformed/cap/timeout/exception/missing/multiple resolver branches and full
+twisted triple all return their registered expected classifications.  A
+mutated anchor suppresses the positive rung.  Fixture order 144, center order
+24, derived order 3 and the measured noncommuting pair are computed from the
+actual quotient; order proves nonisomorphism with both forbidden older
+composition families.
+
+The provisional scientific outcome is therefore
+`RQ0-LOCAL-ATLAS`, status **GREEN-UNREVIEWED**, at finite exact
+`Q(zeta_24)` monomial-amplitude, normal-direct-factor, complete-row and
+declared-access scope.  This is operational localization only.  It is not
+terminal and not yet citable.  The stopping rule now permanently forbids an
+estimator/proof/fixture edit, cap increase, replacement fixture, second
+held-out score or hidden rescore.  The next event is a fresh external
+repo-read-only hostile review with independent exact rebuild, followed by a
+verbatim freeze and separate adjudication.  `RQ0-T1`, `RQ0-C1`, topology,
+influence, causality, geometry, spacetime, fields and gravity remain
+prohibited.  **HALT.**
+
 ## 2026-07-31 — SOLE POST-FREEZE L0 FIXTURE AND OFFICIAL SCORER FROZEN
 ## BEFORE EXECUTION (v13 LEDGER #50)
 The only authorized Stage-C fixture now exists at

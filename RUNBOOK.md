@@ -317,6 +317,17 @@ that made the rule.
   delivery exists and no held-out worker has run.  The files are now
   immutable.  Exactly one official 360-second invocation is next, after which
   any result is frozen and externally reviewed; no repair or rescore exists.
+  v13 #51 records that sole invocation: it returns **GREEN-UNREVIEWED**
+  `RQ0-LOCAL-ATLAS` in 65.74 seconds with 35/35 gates, recovered factor orders
+  `(2,3,4,6)`, 10 irregular record-bearing regions, 31 full regional arrows,
+  31 fact maps and three nonvacuous triples.  All four W3 records, full
+  regional/factual replays, presentation controls, typed row/selectability/
+  map mutants, total-resolver branches, frozen anchors and full twisted triple
+  pass.  Receipt SHA-256 is `476b0ce9...b1de`; delivery SHA-256
+  `da9886f4...28f4`.  No rerun occurred.  This is operational—not spatial or
+  causal—localization and remains nonterminal.  The unit is halted for a fresh
+  repo-read-only hostile round and separate adjudication; estimator, proof,
+  fixture and score cannot change, and T1/C1 remain prohibited.
 
 ## 1. The unit cycle
 

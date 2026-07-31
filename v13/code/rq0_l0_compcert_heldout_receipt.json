@@ -1,0 +1,575 @@
+{
+  "anchor_mutant": {
+    "exit_code": 1,
+    "outcome": "RQ0-L0-INVALID",
+    "positive_suppressed": true
+  },
+  "anchors": {
+    "estimator_hash": true,
+    "fixture_hash": true,
+    "future_paths_absent_at_freeze": true,
+    "proof_hash": true
+  },
+  "future_paths_absent_at_freeze": {
+    "v13/code/rq0_l0_compcert_heldout_fixture_exact.py": true,
+    "v13/code/rq0_l0_compcert_heldout_output.txt": true,
+    "v13/code/rq0_l0_compcert_heldout_receipt.json": true,
+    "v13/code/rq0_l0_compcert_heldout_score.py": true,
+    "v13/note-rq0-operational-localization-computational-certification.md": true
+  },
+  "legacy_imports": {
+    "S3^3 fixture": "not imported by held-out fixture or scorer",
+    "prior order-192 fixture": "not imported by held-out fixture or scorer",
+    "rq0_l0_certification_estimator_exact": "typed exact arithmetic/W3/serialization antecedent lemma",
+    "rq0_l0_compcert_estimator_exact": "byte-frozen generic estimator under official score"
+  },
+  "nonclaims": [
+    "no terminal L0 status before external hostile review and adjudication",
+    "no topology or spatial localization",
+    "no influence or causal order",
+    "no Lorentzian geometry or spacetime",
+    "no fields or gravity"
+  ],
+  "official_runs": 1,
+  "procedural_outcome": null,
+  "reason": "all frozen anchors and held-out scientific/control prerequisites pass",
+  "runtime": {
+    "canonical": false,
+    "complete_cap_seconds": 360.0,
+    "complete_elapsed_seconds": 65.74024708400248,
+    "seed": "none; PYTHONHASHSEED=0",
+    "timed_out": false,
+    "worker_returncode": 0,
+    "worker_stderr_tail": ""
+  },
+  "schema": "rq0-l0-compcert-heldout-official-receipt-v1",
+  "scientific_outcome": "RQ0-LOCAL-ATLAS",
+  "sources": {
+    "estimator_sha256": "a9f8f93a01d7bf84d7dfde1e43b5c14a0111e9722b42d8e3dc999de887630f8b",
+    "fixture_sha256": "d4a72c05f8755b4247ecac19f7ac9a49656c3c855a2fea08a77c73ce7b8d72ea",
+    "freeze_commit": "d881a3e",
+    "proof_sha256": "5839fedcb680cb24e0ba778aff6e00aa92ac4f98191753693abbad1a54bbcd2d",
+    "scorer_sha256": "68c01b25b08dc3b2fdb645ed3e5ee6cffef762b2a3942267110fc50e0a5d3538"
+  },
+  "status": "GREEN-UNREVIEWED",
+  "stopping_rule": {
+    "estimator_edit_allowed": false,
+    "fixture_edit_or_replacement_allowed": false,
+    "next_event": "freeze delivery; external read-only hostile review; separate adjudication",
+    "proof_edit_allowed": false,
+    "second_held_out_score_allowed": false
+  },
+  "worker": {
+    "all_pass": true,
+    "checks": [
+      {
+        "class": "fixture",
+        "evidence": 144,
+        "id": "H001",
+        "pass": true
+      },
+      {
+        "class": "fixture",
+        "evidence": 24,
+        "id": "H002",
+        "pass": true
+      },
+      {
+        "class": "fixture",
+        "evidence": 20736,
+        "id": "H003",
+        "pass": true
+      },
+      {
+        "class": "fixture",
+        "evidence": {
+          "composite_only": 138,
+          "selectable": 6
+        },
+        "id": "H004",
+        "pass": true
+      },
+      {
+        "class": "novelty",
+        "evidence": {
+          "center_order": 24,
+          "derived_order": 3,
+          "element_order_histogram": {
+            "1": 1,
+            "12": 56,
+            "2": 15,
+            "3": 8,
+            "4": 16,
+            "6": 48
+          },
+          "group_like": true,
+          "order": 144
+        },
+        "id": "H005",
+        "pass": true
+      },
+      {
+        "class": "fixture",
+        "evidence": "measured from quotient multiplication",
+        "id": "H006",
+        "pass": true
+      },
+      {
+        "class": "resolver",
+        "evidence": {
+          "category": "scientific",
+          "code": "RQ0-LOCAL-ATLAS",
+          "exit_code": 0,
+          "reason": "all registered prerequisites pass"
+        },
+        "id": "H007",
+        "pass": true
+      },
+      {
+        "class": "score",
+        "evidence": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "id": "H008",
+        "pass": true
+      },
+      {
+        "class": "score",
+        "evidence": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "id": "H009",
+        "pass": true
+      },
+      {
+        "class": "score",
+        "evidence": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "id": "H010",
+        "pass": true
+      },
+      {
+        "class": "score",
+        "evidence": {
+          "arrows": 31,
+          "fact_maps": 31,
+          "objects": 10
+        },
+        "id": "H011",
+        "pass": true
+      },
+      {
+        "class": "score",
+        "evidence": {
+          "complete_boolean": false,
+          "triples": 3,
+          "universal": []
+        },
+        "id": "H012",
+        "pass": true
+      },
+      {
+        "class": "records",
+        "evidence": {
+          "all_w3": true,
+          "records": 4
+        },
+        "id": "H013",
+        "pass": true
+      },
+      {
+        "class": "regional",
+        "evidence": {
+          "fact_paths": 64,
+          "regional_paths": 64
+        },
+        "id": "H014",
+        "pass": true
+      },
+      {
+        "class": "row-mutant",
+        "evidence": {
+          "field": "tau",
+          "outcome": "RQ0-L0-INVALID"
+        },
+        "id": "H015",
+        "pass": true
+      },
+      {
+        "class": "row-mutant",
+        "evidence": {
+          "field": "status",
+          "outcome": "RQ0-L0-BLOCKED-AT-ADDRESS"
+        },
+        "id": "H016",
+        "pass": true
+      },
+      {
+        "class": "row-mutant",
+        "evidence": {
+          "field": "result",
+          "outcome": "RQ0-L0-INVALID"
+        },
+        "id": "H017",
+        "pass": true
+      },
+      {
+        "class": "row-mutant",
+        "evidence": {
+          "field": "law",
+          "outcome": "RQ0-L0-INVALID"
+        },
+        "id": "H018",
+        "pass": true
+      },
+      {
+        "class": "row-mutant",
+        "evidence": {
+          "field": "signature",
+          "outcome": "RQ0-L0-INVALID"
+        },
+        "id": "H019",
+        "pass": true
+      },
+      {
+        "class": "selectability-mutant",
+        "evidence": "RQ0-L0-BLOCKED-AT-ADDRESS",
+        "id": "H020",
+        "pass": true
+      },
+      {
+        "class": "metamorphic",
+        "evidence": {
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "presentation": "rename"
+        },
+        "id": "H021",
+        "pass": true
+      },
+      {
+        "class": "metamorphic",
+        "evidence": {
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "presentation": "reorder"
+        },
+        "id": "H022",
+        "pass": true
+      },
+      {
+        "class": "metamorphic",
+        "evidence": {
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "presentation": "gauge"
+        },
+        "id": "H023",
+        "pass": true
+      },
+      {
+        "class": "metamorphic",
+        "evidence": {
+          "outcome": "RQ0-LOCAL-ATLAS",
+          "presentation": "record-handle"
+        },
+        "id": "H024",
+        "pass": true
+      },
+      {
+        "class": "map-mutant",
+        "evidence": "RQ0-L0-INVALID",
+        "id": "H025",
+        "pass": true
+      },
+      {
+        "class": "map-mutant",
+        "evidence": "RQ0-L0-INVALID",
+        "id": "H026",
+        "pass": true
+      },
+      {
+        "class": "map-mutant",
+        "evidence": "RQ0-L0-INVALID",
+        "id": "H027",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "malformed",
+          "reason": "malformed/access-underdetermined input: composition table is not complete over operation handles"
+        },
+        "id": "H028",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "cap",
+          "reason": "addressability exceeded the registered deadline"
+        },
+        "id": "H029",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "timeout",
+          "reason": "injected registered timeout"
+        },
+        "id": "H030",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "exception",
+          "reason": "caught RuntimeError: injected resolver exception"
+        },
+        "id": "H031",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "missing",
+          "reason": "caught RuntimeError: normal return produced no registered outcome"
+        },
+        "id": "H032",
+        "pass": true
+      },
+      {
+        "class": "total-resolver",
+        "evidence": {
+          "branch": "multiple",
+          "reason": "caught RuntimeError: normal return produced multiple registered outcomes"
+        },
+        "id": "H033",
+        "pass": true
+      },
+      {
+        "class": "twisted-triple",
+        "evidence": {
+          "pair_valid": [
+            true,
+            true,
+            true
+          ],
+          "record_loop": false,
+          "regional_loop": false
+        },
+        "id": "H034",
+        "pass": true
+      },
+      {
+        "class": "ceiling",
+        "evidence": "L0 only; no T1/C1/topology/causality/spacetime",
+        "id": "H035",
+        "pass": true
+      }
+    ],
+    "deadline_seconds": 360.0,
+    "elapsed_seconds": 65.37074674997712,
+    "fixture": {
+      "abstract_description": "C2 x C3 x C4 x S3",
+      "carrier": 24,
+      "composite_only": 138,
+      "estimator_freeze_commit": "d881a3e",
+      "exact_field": "Q(zeta_24)",
+      "operations": 144,
+      "post_freeze_fixture": true,
+      "random_seed": null,
+      "rows": 20736,
+      "schema": "rq0-l0-compcert-heldout-c2-c3-c4-s3-v1",
+      "selectable": 6,
+      "serialized_input_sha256": "1a68f8f9f6a9909f16f9c48818c1bf30906dda58b9d58079172a2e0158f32182",
+      "truth_visible_to_estimator": false
+    },
+    "main": {
+      "analysis_digest": "4f75913246444bcc4dedfd45839be21a2eaf259ee7d0ace4a891e48be491382f",
+      "atlas_digest": "b8ea6d3fcd8c6c7c959b773830a3e5a01abfa967976aaed78d411cf598fd1b51",
+      "composition_invariants": {
+        "center_order": 24,
+        "derived_order": 3,
+        "element_order_histogram": {
+          "1": 1,
+          "12": 56,
+          "2": 15,
+          "3": 8,
+          "4": 16,
+          "6": 48
+        },
+        "group_like": true,
+        "order": 144
+      },
+      "instrumentation": {
+        "counters": {
+          "ambient_represented_algebra_builds": 1,
+          "direct_complement_candidates": 234,
+          "eligible_direct_pool": 14,
+          "exact_monomial_commutation_tests": 1788,
+          "factor_algebra_build::105288f6871e08ba89c2863896d9c362b2b712284cc9c063cb6b7f01d2687568": 1,
+          "factor_algebra_build::1c992eb9bb3bff99a4469afb67b3475e2fd4850842cf3e137b35ab7b5cdfb254": 1,
+          "factor_algebra_build::23383c00b74000e68ef5ffe19514e1f58441c23f7f7c013c99145b4ec14e25d0": 1,
+          "factor_algebra_build::2643659e4e20637a8ef2e12565ea16f87db9bf6267d9538fd69a2701df186d04": 1,
+          "factor_algebra_build::463f2998327eb3a694145e6014444480b2235be84aa6cfd57871cc64f1cd816c": 1,
+          "factor_algebra_build::46cc1df94d719925b773a7f53450e19ea33889b6cb1926ab5766dfa28fb51115": 1,
+          "factor_algebra_build::49a547a53a13fadfcd4627140cacf7251af44c035155c03a4fbc2b706b16de52": 1,
+          "factor_algebra_build::4e098021cf9ec15699efd082b803811ec67394af4b3ea324e86edbccc3cbeac3": 1,
+          "factor_algebra_build::691d778c8c5dc451df4c9612e3481bfff21e92bb8aecb980ae0f8e50737f8322": 1,
+          "factor_algebra_build::7d09675233ab893de4bd920dbfb80c69f4bf1fd24f3c3ba8cd60d4de5a7393e2": 1,
+          "factor_algebra_build::9316f5cbf50ad2d3d3e762a350021f2dece2c51600bfb1b60d9f62ca792c341a": 1,
+          "factor_algebra_build::c67335821c497a0fc76f07251ad41b699911257a8d0ffa311d1687ee8e59aec3": 1,
+          "factor_algebra_build::dbc6913c697cf8befe2d235b7c062624b37d00d6851cf35432582a45c26ba6e7": 1,
+          "factor_algebra_build::ee382592f480718728cb61d6f2edc5702323b7a70a6af4633e2163cbd64ef80c": 1,
+          "factor_certificates_passed": 15,
+          "factor_certificates_started": 15,
+          "factor_pair_cheap_tests": 40,
+          "factor_represented_algebra_builds": 14,
+          "factor_tuple_candidates": 14,
+          "factor_tuple_search_nodes": 281,
+          "regional_restriction_algebra_requests": 30,
+          "represented_algebra_cache_hits": 70,
+          "represented_algebra_cache_misses": 15,
+          "sparse_law_vector_cache_hits": 275,
+          "sparse_law_vector_cache_misses": 144
+        },
+        "progress": [
+          {
+            "classes": 144,
+            "phase": "composition-validated",
+            "rows": 20736
+          },
+          {
+            "count": 70,
+            "join_tests": 5362,
+            "phase": "normal-subobjects"
+          },
+          {
+            "count": 36,
+            "phase": "direct-pool",
+            "tests": 234
+          },
+          {
+            "certificates": 14,
+            "factor_tuple_tests": 248,
+            "finest": 1,
+            "phase": "addressability-complete"
+          }
+        ]
+      },
+      "outcome": {
+        "category": "scientific",
+        "code": "RQ0-LOCAL-ATLAS",
+        "exit_code": 0,
+        "reason": "all registered prerequisites pass"
+      },
+      "summary": {
+        "complete_proper_boolean": false,
+        "fact_maps": 31,
+        "factor_orders": [
+          [
+            2,
+            3,
+            4,
+            6
+          ]
+        ],
+        "nonvacuous_triples": 3,
+        "normal_subobjects": 70,
+        "outcome": "RQ0-LOCAL-ATLAS",
+        "regional_arrows": 31,
+        "regional_objects": 10,
+        "regional_scopes": [
+          [
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4
+          ]
+        ],
+        "universal_factor_orders": []
+      }
+    },
+    "passed": 35,
+    "total": 35
+  }
+}

@@ -1,0 +1,15 @@
+RQ0-L0 COMPUTATIONAL-CERTIFICATION HELD-OUT OFFICIAL RECEIPT
+status: GREEN-UNREVIEWED
+procedural_outcome: None
+scientific_outcome: RQ0-LOCAL-ATLAS
+reason: all frozen anchors and held-out scientific/control prerequisites pass
+official_runs: 1
+worker_checks: 35/35
+factor_orders: [[2, 3, 4, 6]]
+regional_objects: 10
+regional_arrows: 31
+fact_maps: 31
+nonvacuous_triples: 3
+complete_elapsed_seconds: 65.740247 / 360
+next: freeze delivery and dispatch external read-only hostile review
+ceiling: L0 only; no T1/C1/topology/causality/spacetime
