@@ -2254,3 +2254,33 @@ read-only hostile review of the immutable pin, estimator freeze and invalid
 delivery, followed by verbatim freeze and separate adjudication.  `RQ0-T1`,
 `RQ0-C1`, topology, influence, causality, spacetime, fields and gravity remain
 prohibited.  **HALT.**
+
+## 2026-07-31 — EXTERNAL HOSTILE ROUND DISPATCHED AGAINST FINAL RQ0-L0
+## CERTIFICATION PIN, FROZEN ESTIMATOR AND ONE-SHOT INVALID DELIVERY
+## (v13 LEDGER #44)
+A fresh external reviewer is now running repo-read-only against exact commits
+`4366531fc633cf56b5c6409910871f3518e73a9a` (strict pin),
+`3b9d88a1fc2bb9d949375ddc080455ab97a0029a` (generic estimator and
+pre-fixture theorem freeze), and
+`56baf603eab20b19d38b6ce806a553c87876d64e` (one-shot invalid delivery).
+The dispatch occurred before this ledger entry.  The reviewer may use `/tmp`
+for an independent rebuild but may not edit, stage or commit repository files.
+
+The hostile scope is chronology and source immutability; the 29/29 public
+soundness controls; genuinely new non-`S3^3` fixture provenance and hidden-
+truth separation; the complete-row, independent-selectability, full-map,
+handle-invariant `Rec`, twisted-triple and ambiguity mechanisms; exact cap and
+timeout evidence; fail-closed outcome logic; receipt circularity; and strict
+separation of public calibration, fixture construction, hidden intended truth
+and main scientific measurement.  It must not optimize the estimator, alter
+or replace the opened fixture, evade the cap, promote partial internals, or
+begin T1/C1.
+
+The report must choose `ACCEPT INVALID DELIVERY`, `ACCEPT INVALID DELIVERY
+WITH DOCUMENTATION FIXES`, or `REJECT RECEIPT/CLASSIFICATION`, state whether
+the one-shot cycle is closed, and separately identify surviving evidence and
+unearned claims.  Its complete text will be frozen verbatim before a separate
+adjudication.  Until then #43 remains the live nonterminal procedural status:
+`RQ0-L0-INVALID`, scientific outcome null, no terminal L0 rung, and not
+`RQ0-L0-BLOCKED-AT-ADDRESS`.  `RQ0-T1`, `RQ0-C1`, and every later unit remain
+prohibited.  **HALT.**

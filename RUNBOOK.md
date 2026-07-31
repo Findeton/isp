@@ -244,7 +244,16 @@ that made the rule.
   optimization, fixture shrinkage, a replacement fixture or an automatic
   retry.  The next event is the authorized external repo-read-only hostile
   review of the immutable invalid delivery, followed by verbatim freeze and
-  separate adjudication.  T1 and C1 remain prohibited.
+  separate adjudication.  T1 and C1 remain prohibited.  v13 #44 records that
+  this fresh external repo-read-only hostile round is now running against
+  exact commits `4366531`, `3b9d88a`, and `56baf60`.  It independently attacks
+  chronology, the public soundness controls, new-fixture provenance, exact cap
+  evidence, fail-closed classification and receipt semantics without editing
+  the estimator or fixture or evading the stopping rule.  Its full report must
+  be frozen verbatim and separately adjudicated.  Until then the live outcome
+  remains procedural `RQ0-L0-INVALID`, scientific outcome null, with no
+  terminal L0 rung and no `RQ0-L0-BLOCKED-AT-ADDRESS`; T1 and C1 remain
+  prohibited.
 
 ## 1. The unit cycle
 
