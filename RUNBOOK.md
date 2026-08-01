@@ -655,3 +655,17 @@ or rescored in this cycle.  Its unresolved obligation is to define intrinsic
 quantum process charts and physical pullbacks without supplied support labels,
 common handles or planted intersections.  The cycle is closed; T1/C1 remain
 closed.
+
+## 20. Current analytical RQ0-L0 foundations cycle
+
+V13 ledger #60 opens one analytical-only cycle under
+`note-rq0-operational-supports-foundations-pin.md`.  Its primary artifact must
+derive internal W3 diagrams, intrinsic operational envelopes, admissible
+chart notions, categorical physical pullbacks, the post-chart `Rec`
+assignment, automorphism no-selection and the dependence of localization on
+counterfactual process law.  The public `Q8` object is a support-smuggling
+negative and terminal RQ0-A is a declared-region overlap control.  No new
+estimator, hidden fixture, large harness, score or scientific receipt is
+authorized.  After one external mathematical hostile review is frozen and
+adjudicated, halt for explicit authorization.  T1/C1 and all later physics
+remain closed.

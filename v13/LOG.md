@@ -2846,3 +2846,34 @@ outcome null.  Its first unresolved obligation is analytical: define quantum
 process charts and physical overlaps without independent support labels,
 shared handles or planted intersections.  `RQ0-T1`, `RQ0-C1` and every later
 physics unit remain closed.  **HALT THIS CYCLE.**
+
+## 2026-07-31 — ANALYTICAL RQ0-L0 FOUNDATIONS CYCLE PINNED
+## OPERATIONAL SUPPORTS, INTRINSIC CHARTS AND PHYSICAL PULLBACKS (v13 LEDGER #60)
+Following the immutable closure of the public engineering cycle at #59, the
+user authorizes one separately bounded analytical foundations cycle.  Its
+strict pin is
+`note-rq0-operational-supports-foundations-pin.md`.  This is not a software
+verification, estimator-freeze, held-out-score or later-physics cycle.
+
+The primary artifact must be the self-contained mathematical-physics note
+`Operational Supports of Stable Records: Intrinsic Quantum Charts, Physical
+Pullbacks, and the Limits of Localization`.  It must prove the
+support-smuggling theorem, internalize the complete W3 diagram, derive and
+analyze minimal operational envelopes, compare closed subinstruments, split
+retracts and operator-algebraic subsystems, define physical overlaps by a
+universal pullback in an independently specified instrument category, derive
+`Rec` only afterward, prove automorphism no-selection, and settle by theorem
+or counterexample whether realized amplitudes and record laws determine
+localization independently of counterfactual completions.
+
+The public `Q8` object is a support-smuggling negative; terminal RQ0-A is a
+declared-region positive overlap control.  Tensor-product, symmetry/groupoid
+and fully symmetric no-localization controls are mandatory.  Small arithmetic
+scripts may follow derivations but cannot determine definitions or outcomes.
+The strongest permitted provisional result is an intrinsic quantum chart
+groupoid or pullback-closed process cover, never spatial locality.
+
+After the note is committed, one fresh external mathematical hostile review
+must be dispatched, frozen verbatim and adjudicated separately.  The cycle
+then halts for explicit authorization.  `RQ0-T1`, `RQ0-C1`, topology,
+influence, causality, geometry, spacetime, fields and gravity remain closed.
