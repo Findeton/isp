@@ -760,3 +760,19 @@ repo-read-only reviews—operator/process and higher-category/derived—freeze
 each verbatim in a separate commit, adjudicate both against the immutable
 paper, and halt.  No review-time repair, implementation, T1 or C1 is
 authorized.
+
+## 27. Current Weld-stack hostile-review state
+
+V13 ledger #67 dispatches two independent repo-read-only reviews against
+immutable paper commit `f57eb45`.  The operator/process task
+`/root/rq0_weld_operator_review` follows the frozen 77-line scope with
+SHA-256
+`7b12e56e0277fc1563f88f44ef3486d808d7f3c3063c623e52cba0eab39baf7a`.
+The higher/enriched/derived task `/root/rq0_weld_higher_review` follows the
+frozen 86-line scope with SHA-256
+`74a9281b9433d5a97fb9b2ad538793f0b49462a15f286e5773b45c9af1388b1a`.
+
+Freeze each complete report verbatim in a separate commit, then adjudicate
+both against the unchanged paper and halt.  Reviewers may use only
+/private/tmp for scratch and may not repair the paper.  No implementation,
+T1, C1 or later physics is authorized.

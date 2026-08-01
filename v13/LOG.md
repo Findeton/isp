@@ -3073,3 +3073,30 @@ every later physics layer remain unearned.  The paper is
 `GREEN-UNREVIEWED`; the next authorized events are two separate
 repo-read-only reviews, frozen verbatim and jointly adjudicated without
 review-time repair.
+
+## 2026-07-31 — TWO WELD-STACK MATHEMATICAL REVIEWS DISPATCHED
+## OPERATOR/PROCESS AND HIGHER/DERIVED ROUNDS RUN INDEPENDENTLY (v13 LEDGER #67)
+Two external repo-read-only reviewers are running independently against
+immutable paper commit `f57eb45` and governing pin `e056b06`.
+
+The operator/process scope is frozen at
+`note-rq0-weld-stack-operator-review-dispatch.md`, SHA-256
+`7b12e56e0277fc1563f88f44ef3486d808d7f3c3063c623e52cba0eab39baf7a`
+(3,583 bytes; 77 lines), task `/root/rq0_weld_operator_review`.  It must
+independently rebuild the finite-arrow obstruction, exact W3 representation,
+counterfactual observability, UCP addressability, completion controls,
+operator-support quantaloid and inherited finite controls.
+
+The higher/enriched scope is frozen at
+`note-rq0-weld-stack-higher-review-dispatch.md`, SHA-256
+`74a9281b9433d5a97fb9b2ad538793f0b49462a15f286e5773b45c9af1388b1a`
+(4,058 bytes; 86 lines), task `/root/rq0_weld_higher_review`.  It must
+independently audit quantaloid residuals and enrichment, the Isbell
+distributor and principal concepts, gauge versus physical symmetry, partial
+`Rec`, the correspondence overlap cone and central-corner theorem, stack
+scope and the conditional classical shadow.
+
+Both reviewers are prohibited from editing the repository or repairing the
+paper.  Each complete report must be frozen verbatim in a separate commit
+before joint adjudication.  No review-time repair, implementation, T1, C1 or
+later physics is authorized.
