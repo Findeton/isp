@@ -641,3 +641,17 @@ operation handles.  Additional findings concern the W3/projector link,
 schema coverage, structured output, factor-claim scope, trusted-kernel scope
 and triple-control coverage.  These findings await separate adjudication.
 No implementation repair or rescore is permitted in this cycle.
+
+## 19. Public architecture-reset adjudication and closure
+
+V13 ledger #59 accepts the frozen hostile `REJECT`.  Independent adjudicator
+checks reproduce the empty-atlas positive, the W3/projector-algebra disconnect
+and the unstructured-success serializer path; source inspection confirms the
+shared-handle overlap and remaining scope findings.  The public architecture
+candidate is rejected and the scientific outcome is null.  Exact public
+`Q8`/W3 arithmetic survives only as calibration evidence, not as intrinsic
+localization or a no-go theorem.  No implementation artifact may be repaired
+or rescored in this cycle.  Its unresolved obligation is to define intrinsic
+quantum process charts and physical pullbacks without supplied support labels,
+common handles or planted intersections.  The cycle is closed; T1/C1 remain
+closed.

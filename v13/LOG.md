@@ -2818,3 +2818,31 @@ scientific outcome remains null.  The next event is a separate adjudication,
 after which this public engineering cycle halts.  No estimator freeze,
 held-out work, `RQ0-T1`, `RQ0-C1` or later physics is authorized in this
 cycle.
+
+## 2026-07-31 — PUBLIC ARCHITECTURE HOSTILE REJECTION ADJUDICATED
+## ENGINEERING CANDIDATE REJECTED; SCIENTIFIC OUTCOME NULL (v13 LEDGER #59)
+The hostile verdict frozen at #58 is accepted in
+`note-rq0-operational-localization-architecture-reset-hostile-adjudication.md`.
+The adjudicator independently reproduces the three load-bearing executable
+counterexamples: the trusted verifier returns positive for a five-object
+claim with zero arrows and zero intersections; replacing the transported
+binary ambient record resolutions by valid one-atom resolutions leaves the
+W3 witnesses unchanged and still returns positive; and a serializer returning
+`not-json` produces exit zero with unstructured text.  Direct inspection also
+confirms literal shared-handle intersections, the narrower mutation matrix,
+the finest-only direct-factor claim surface, algebraic-only P8 scope, broad
+legacy kernel dependency and narrower twisted-triple coverage.
+
+All eight findings are accepted at their frozen severities.  The public
+architecture candidate is rejected.  The exact `Q8` group/amplitude
+calculation, its W3 seams and its designer-supplied inclusion diagram survive
+only as opened calibration evidence.  They do not establish an intrinsic
+chart, physical pullback, localization atlas, localization groupoid or L0
+no-go theorem.
+
+No implementation artifact is repaired or rescored.  This public engineering
+cycle is closed with external verdict `REJECT — ACCEPTED` and scientific
+outcome null.  Its first unresolved obligation is analytical: define quantum
+process charts and physical overlaps without independent support labels,
+shared handles or planted intersections.  `RQ0-T1`, `RQ0-C1` and every later
+physics unit remain closed.  **HALT THIS CYCLE.**
