@@ -1025,3 +1025,21 @@ Each reviewer must return a complete independent report without repository
 edits. Freeze the reports verbatim in separate commits, then jointly
 adjudicate without repairing the paper. Actualization, overlap, localization,
 T1, C1 and every later physics layer remain closed.
+
+## 40. Frozen moduli/higher-geometry seam-stack report
+
+V13 ledger #80 freezes the complete moduli/higher-geometry review verbatim at
+`v13/note-rq0-w3-seam-stack-moduli-hostile-review.md`, SHA-256
+`129828d4a990df0d1aa055ebbeca22277d1d19149b4fe38e391df1bec6634ac2`
+(15,870 bytes; 380 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+The fixed-packet semialgebraic locus, nine-seam branch-memory classification,
+symmetry/no-selection result, minimal-idempotent existence theorem and
+invertible-core bifibration survive. The three registered rungs do not: the
+operational quotient is absent from the displayed groupoid, spectator
+transport is ill-typed for preparations/probes, action equivariance is
+under-specified and complete Karoubi fibers were reduced to invertible cores.
+
+This is not the joint adjudication. Freeze the independent operator/instrument
+report next, then adjudicate both against the immutable pin and paper. No
+review-time repair or successor physics is authorized.
