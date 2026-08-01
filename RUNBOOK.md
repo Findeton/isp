@@ -839,3 +839,21 @@ partial record functor, gauge quotient and generic physical overlap are not
 constructed.  The immutable paper is not repaired.  The cycle is closed;
 halt and request explicit authorization before any successor.  T1/C1 and all
 later physics remain closed.
+
+## 31. Current W3 effect-transport analytical successor
+
+V13 ledger #71 opens one bounded analytical RQ0-L0 cycle under
+`note-rq0-w3-effect-transport-pin.md`.  The immutable Weld-stack rejection is
+not repaired.  The new paper must separate total effect/POVM-valued record
+transport under admitted UCP maps from partial sharp Boolean transport on the
+multiplicative-domain subcategory, keep outcome instruments above their POVM
+shadows, and derive the exact record-defect chain law.
+
+The first observability object is a law-relative operator system rather than
+an automatically physical C*-algebra.  Addressability may be claimed only
+through a physically admitted UCP idempotent in the typed Karoubi completion;
+abstract expectations do not count.  The no-smuggling problem for selected
+cuts, projectors and transport grammars remains open, so no intrinsic
+localization follows.  Quantaloid/Isbell/stack/overlap repair, T1, C1 and all
+later physics are prohibited.  After the immutable paper, freeze two
+independent mathematical hostile reports, adjudicate jointly, and halt.

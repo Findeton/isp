@@ -3177,3 +3177,26 @@ This cycle is closed without repairing the immutable paper.  No intrinsic
 chart groupoid, process cover, spatial locality, topology, influence,
 causality, spacetime, fields or gravity is earned.  Terminal RQ0-A remains
 unchanged.  Halt and require explicit authorization before any successor.
+
+## 2026-07-31 — W3 EFFECT-TRANSPORT ANALYTICAL SUCCESSOR PINNED
+## SHARP FACTS AND UNSHARP EVIDENCE; WELD HEADLINE REMAINS WITHDRAWN (v13 LEDGER #71)
+One bounded forward-only analytical RQ0-L0 successor is opened under
+`note-rq0-w3-effect-transport-pin.md`.  It preserves the complete Weld-stack
+cycle through #70 and starts from the distinction between total UCP
+effect/POVM transport and partial zero-defect sharp Boolean transport.
+
+The primary paper must derive the UCP record multiplicativity and sharpness
+defects, their exact chain laws, the multiplicative-domain characterization,
+instrument-to-POVM shadow, a minimal law-relative operator system, and
+addressability in the admitted Karoubi completion of the physical UCP channel
+category.  Abstract idempotents are not admitted by default, and products in a
+generated C*-algebra are not automatically executable operations.
+
+The cumulative outcomes are effect transport, sharp fact transport and
+law-relative addressable W3 operator systems, with explicit blocked outcomes.
+Selected cuts, projectors and transport grammars remain declared inputs, so no
+intrinsic-support or localization claim is possible.  Quantaloid, Isbell,
+quotient-stack and generic-overlap repair are prohibited.  After the paper,
+two independent repo-read-only operator/effectus and process/instrument
+reviews must be frozen separately and jointly adjudicated, then halt.
+RQ0-T1, RQ0-C1 and every later physics layer remain closed.
