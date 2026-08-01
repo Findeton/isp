@@ -619,3 +619,11 @@ performance-qualified.  The snapshot is not an estimator freeze and has
 scientific outcome null.  Dispatch, freeze and adjudicate one external
 repo-read-only hostile review, then halt.  No post-review repair, held-out
 cycle, T1 or C1 is authorized.
+
+## 17. Current v13 hostile-review state
+
+V13 ledger #57 dispatches `/root/rq0_archreset_hostile` against immutable
+public snapshot `e55cb68`.  The reviewer is repo-read-only and must rebuild in
+`/tmp` without importing the delivery proposer, verifier, models or audit.
+Freeze its complete report verbatim, adjudicate separately, and halt.  No
+review-time repair, held-out work, scientific L0 claim, T1 or C1 is authorized.

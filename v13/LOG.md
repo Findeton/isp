@@ -2763,3 +2763,26 @@ fresh external repo-read-only hostile review.  The next event is dispatch of
 that review, followed by verbatim freeze and separate adjudication.  No repair
 after review is authorized.  `RQ0-T1`, `RQ0-C1`, topology, influence,
 causality, geometry, spacetime, fields and gravity remain prohibited.
+
+## 2026-07-31 — PUBLIC ARCHITECTURE HOSTILE REVIEW DISPATCHED
+## AGAINST IMMUTABLE COMMIT `e55cb68` (v13 LEDGER #57)
+The mandatory external repo-read-only hostile review is now live as task
+`/root/rq0_archreset_hostile`.  Its exact scope is frozen in
+`note-rq0-operational-localization-architecture-reset-hostile-dispatch.md`.
+The target is the committed #56 public architecture snapshot `e55cb68` under
+pin `c0fab11`.
+
+The reviewer may inspect delivery source but must independently rebuild the
+load-bearing finite mathematics in `/tmp` without importing the proposer,
+trusted verifier, public models or audit harness.  The attack surface includes
+strict schema coverage, the total hard-cap boundary, verifier/import
+independence, P1--P8 and the corrected two-through-eight completeness scope,
+full-field regional maps and triples, the indecomposable `Q8` overlap model,
+independent `OpSub/RecSub` recovery, audit neutrality, constructor circularity
+and every public claim.  The shared kernel's indirect legacy arithmetic import
+is explicitly in scope.
+
+No repository edit or repair is authorized during the review.  The next event
+is verbatim freeze of the complete report, followed by separate adjudication
+and halt.  Scientific outcome remains null; no estimator freeze, held-out
+cycle, T1, C1 or later physics is authorized.
