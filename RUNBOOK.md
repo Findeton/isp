@@ -1063,3 +1063,24 @@ Both hostile reports are now frozen. Adjudicate them jointly against the
 unchanged pin and paper, retain only the highest preregistered rung that
 survives, and halt. No repair, overlap, localization, T1, C1 or later physics
 work is authorized.
+
+## 42. W3 seam-stack adjudication and closure
+
+V13 ledger #82 freezes the joint adjudication at
+`v13/note-rq0-w3-seam-stack-hostile-adjudication.md`, SHA-256
+`d112761f48a81080495be9ed7e3336f64ad60b1a7a11123727575e72f1a771ce`
+(16,220 bytes; 436 lines). The cycle closes with
+`RQ0-L0-BLOCKED-AT-SEAM-INVARIANCE` and no new positive registered rung.
+
+The exact fixed-complete-packet branch-memory theorem survives: nine atomic
+W3 candidate seams exist, so the familiar memory PVM is not uniquely selected.
+The general headline fails because incomplete probe scopes can postselect
+false preservation, the operational quotient is not the displayed groupoid,
+spectator invariance is ill-typed and changes retained isotropy, action
+equivariance is missing, and complete Karoubi fibers were replaced by cores.
+
+The prior terminal `RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` result remains the
+highest positive registered result. Preserve pin #77, paper #78, both reports
+and this adjudication unchanged. Halt and require explicit user authorization
+before any repair or successor. No overlap, localization, T1, C1 or later
+physics is authorized.
