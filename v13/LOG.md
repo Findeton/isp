@@ -3381,3 +3381,36 @@ operator/instrument and one moduli/higher-geometry hostile review, adjudicate
 them jointly, and halt.  Actualization, W6 co-reference, autonomous
 subtheories, overlap, localization, T1, C1 and every later physics layer
 remain prohibited.
+
+## 2026-08-01 — W3 SEAM-STACK ANALYTICAL PAPER FROZEN
+## NINE BRANCH-MEMORY SEAMS; ADDRESSABILITY FIBRATION PROVISIONAL (v13 LEDGER #78)
+The immutable analytical paper is frozen at
+`paper-rq0-w3-seam-stack.md`, SHA-256
+`2a8c7d357346d9dcc8ddbde373f4d4fefbb28cebb8f08471b35106f18f31a91e`
+(60,885 bytes; 1,745 lines). Its status is `GREEN-UNREVIEWED`.
+
+The paper makes the boundary packet and nested commutative pair
+$R\subseteq F$ reconstruction variables, defines the complete law-relative
+W3-positive action groupoid, separates passive presentation gauge from active
+physical symmetry, and proves invariance under its explicitly strong
+represented-theory equivalence. Contextual operational reduction removes
+structure invisible in every admitted scalar context without identifying
+different counterfactual completions.
+
+The exact four-dimensional branch-memory control is solved over every atomic
+fine resolution and every coarse partition. It has nine unlabelled W3 seams:
+six of type $2+1+1$ and three of type $2+2$. The familiar memory PVM is one
+member rather than a unique answer. Full projective access is explicitly a
+benchmark-law postulate, not a derived conclusion.
+
+Every reconstructed seam inherits the terminal effect and sharp-proposition
+transport package. Minimal admitted UCP idempotents containing its derived
+operator system assemble into a Grothendieck fibration. The provisional
+highest rung is `RQ0-L0-ADDRESSABILITY-FIBRATION`, meaning law-relative
+repeatable coarse-graining only.
+
+The paper is now immutable. Dispatch the independent operator/instrument and
+moduli/higher-geometry hostile reviews, freeze each complete report verbatim,
+jointly adjudicate, and halt. No review-time repair, actualization, W6
+co-reference, autonomous subtheory, overlap, localization, T1, C1 or later
+physics is authorized.

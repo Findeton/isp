@@ -986,3 +986,24 @@ repeatable coarse-graining, not autonomous locality.  After the committed
 paper, freeze two independent operator/instrument and moduli/higher-geometry
 reviews, adjudicate jointly, and halt.  No actualization, overlap,
 localization, T1, C1 or later physics is authorized.
+
+## 38. Current W3 seam-stack analytical delivery
+
+V13 ledger #78 freezes `v13/paper-rq0-w3-seam-stack.md`, SHA-256
+`2a8c7d357346d9dcc8ddbde373f4d4fefbb28cebb8f08471b35106f18f31a91e`
+(60,885 bytes; 1,745 lines). The paper reconstructs W3 seams as nested
+commutative algebra pairs over every eligible packet and retains the complete
+passive-presentation action groupoid plus active physical-symmetry action.
+
+At its exact atomic-rank branch-memory scope, the law has nine W3 seams rather
+than one preferred memory PVM. A contextual operational quotient, scoped
+represented-theory invariance theorem, formal spectator and support-smuggling
+controls, and universal-control negative are included. Each seam carries the
+previously terminal record-transport package, and its minimal admitted UCP
+coarse-grainings form the provisional addressability fibration.
+
+Status is `GREEN-UNREVIEWED`; the three rungs remain provisional. The paper is
+immutable. Dispatch one operator/instrument and one moduli/higher-geometry
+repo-read-only hostile review, freeze each report verbatim in a separate
+commit, then adjudicate jointly without repair. No actualization, overlap,
+localization, T1, C1 or later physics work is authorized.
