@@ -1106,3 +1106,25 @@ seams, an effective finite W3 seam stack and a full category-valued
 addressability fibration. After the immutable paper, freeze three independent
 hostile reviews, jointly adjudicate them without repair, and halt. No
 actualization, overlap, localization, T1, C1 or later physics is authorized.
+
+## 44. Current operational-Morita W3 analytical delivery
+
+V13 ledger #84 freezes `v13/paper-rq0-operational-morita-w3.md`. The paper
+defines complete candidate-independent operational markings on finite
+Hilbert-module boundary charts and forms the marked Morita object before W3
+seams. Universal block preservation is proved equivalent to operator-system
+factorization through the record commutant, while a complete output
+instrument separately supplies sharp readable availability.
+
+Classical records are finite Frobenius algebra actions transported by
+imprimitivity bimodules. The paper proves an exact matrix-spectator theorem,
+an explicit finite ineffective-isotropy rigidification, and the full
+category-valued addressability fibration with noninvertible CP/Karoubi maps.
+The complete branch-memory control retains nine W3 objects in two effective
+`S4` symmetry components and selects no preferred memory seam.
+
+Status is `GREEN-UNREVIEWED`; the provisional highest rung is
+`RQ0-L0-FULL-ADDRESSABILITY-FIBRATION` at finite complete-marked operational
+Morita scope. Freeze three independent hostile reports and adjudicate them
+jointly against the immutable pin and paper. No review-time repair,
+actualization, overlap, localization, T1, C1 or later physics is authorized.

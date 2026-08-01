@@ -3553,3 +3553,40 @@ The cumulative ceilings are `RQ0-L0-COMPLETE-INSTRUMENT-W3`,
 three independent operator/Morita, CQM/instrument and
 higher-stack/rigidification reviews, jointly adjudicate them, and halt. No
 actualization, overlap, localization, T1, C1 or later physics is authorized.
+
+## 2026-08-01 — OPERATIONAL MORITA W3 PAPER FROZEN
+## COMPLETE-INSTRUMENT SEAMS AND FULL ADDRESSABILITY PROVISIONAL (v13 LEDGER #84)
+The analytical paper is frozen at
+`paper-rq0-operational-morita-w3.md`, SHA-256
+`cb36418645f845fc35b9e1c77e71a37f1c5a9d6779cae8526a2dfba2ff138537`
+(61,012 bytes; 1,853 lines). Its status is `GREEN-UNREVIEWED`.
+
+The paper replaces raw boundary Hilbert spaces by finite Hilbert-module
+charts `(A,M)` with observables `L_A(M)`. A marked imprimitivity equivalence
+transports those observables by an exact *-isomorphism and coherently carries
+the complete admitted states, effects, instruments, comparisons and scalar
+contexts. The represented operational quotient and Morita localization now
+precede W3 seam construction.
+
+A record is a finite classical Frobenius object acting on a boundary module;
+an embedded PVM is one representative. Preservation is universal over the
+whole admitted effect operator system and is kept distinct from sharp
+readable availability through a complete output instrument. The hostile
+singleton-probe case fails, while the exact complete branch-memory law still
+has nine W3 objects.
+
+The standard matrix-amplification imprimitivity bimodule proves inaccessible-
+spectator stability; an independently accessible spectator changes the
+marking. A normal ineffective-isotropy system gives an explicit finite
+rigidification. Full addressability fibers retain every admitted CP/Karoubi
+arrow, including the noninvertible two-dephasing composite. At the declared
+benchmark symmetry scope, a raw `U(1) x S4` action rigidifies to effective
+`S4`, leaving six `2+1+1` seams and three `2+2` seams in two retained
+components.
+
+The provisional highest rung is
+`RQ0-L0-FULL-ADDRESSABILITY-FIBRATION` at finite complete-marked operational
+Morita scope. The paper is immutable. Dispatch three independent
+operator/Morita, CQM/instrument and higher-stack/rigidification hostile
+reviews, freeze each report verbatim, then adjudicate jointly. No repair,
+actualization, overlap, localization, T1, C1 or later physics is authorized.
