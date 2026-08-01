@@ -3523,3 +3523,33 @@ The prior terminal `RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` result remains the
 highest positive registered result. No intrinsic seam stack, autonomous
 chart, overlap, localization, T1, C1 or later physics is earned. The cycle is
 closed; preserve every artifact unchanged and halt for explicit authorization.
+
+## 2026-08-01 — OPERATIONAL MORITA W3 SUCCESSOR PINNED
+## COMPLETE INSTRUMENTS FIRST; MORITA LOCALIZATION BEFORE SEAMS (v13 LEDGER #83)
+One bounded forward-only analytical RQ0-L0 cycle is opened under
+`note-rq0-operational-morita-w3-pin.md`. It preserves the complete #77--#82
+seam-stack cycle and attacks the common source of its four hostile failures:
+W3 seams must be constructed from complete admitted operational semantics only
+after localization at marked operational Morita equivalences.
+
+The pin distinguishes the complete admitted effect system from the full
+ambient matrix algebra, and distinguishes universal block preservation from
+sharp readable availability. A sharp record is an internal finite classical
+algebra/module object; an embedded PVM is only a representative. Bare C*-algebra
+Morita equivalence is insufficient: the equivalence must coherently preserve
+states, effects, complete outcome instruments, counterfactual comparisons and
+scalar experiments.
+
+Matrix spectators are compared by an imprimitivity bimodule rather than the
+ill-typed preparation/probe map `a -> a tensor I`. A finite rigidification may
+remove only the normal ineffective isotropy acting trivially on every marked
+operational object. The addressability fiber must retain all admitted
+CP/Karoubi morphisms, including noninvertible composites.
+
+The cumulative ceilings are `RQ0-L0-COMPLETE-INSTRUMENT-W3`,
+`RQ0-L0-MORITA-INVARIANT-W3-SEAMS`,
+`RQ0-L0-EFFECTIVE-W3-SEAM-STACK`, and
+`RQ0-L0-FULL-ADDRESSABILITY-FIBRATION`. After the immutable paper, freeze
+three independent operator/Morita, CQM/instrument and
+higher-stack/rigidification reviews, jointly adjudicate them, and halt. No
+actualization, overlap, localization, T1, C1 or later physics is authorized.

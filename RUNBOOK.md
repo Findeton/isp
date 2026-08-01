@@ -1084,3 +1084,25 @@ highest positive registered result. Preserve pin #77, paper #78, both reports
 and this adjudication unchanged. Halt and require explicit user authorization
 before any repair or successor. No overlap, localization, T1, C1 or later
 physics is authorized.
+
+## 43. Current operational-Morita W3 analytical successor
+
+V13 ledger #83 opens one bounded analytical-only cycle under
+`v13/note-rq0-operational-morita-w3-pin.md`. It replaces packet-relative
+probe tests by complete admitted state/effect/instrument semantics and forms
+the marked operational Morita localization before constructing W3 seam
+objects. “Complete” is relative to the declared operational law; it is not a
+silent full-tomography postulate.
+
+The universal block condition is tested on the whole admitted effect operator
+system and is kept distinct from sharp readable availability. Records are
+internal classical algebra/module objects rather than primarily embedded
+PVMs. Inaccessible matrix spectators must be handled by marked Morita
+equivalence, ineffective isotropy by an explicit finite rigidification, and
+addressability by a full category retaining noninvertible CP/Karoubi maps.
+
+The cumulative ceilings are complete-instrument W3, marked-Morita-invariant
+seams, an effective finite W3 seam stack and a full category-valued
+addressability fibration. After the immutable paper, freeze three independent
+hostile reviews, jointly adjudicate them without repair, and halt. No
+actualization, overlap, localization, T1, C1 or later physics is authorized.
