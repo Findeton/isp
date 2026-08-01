@@ -3675,3 +3675,27 @@ survives. This is the second frozen report, not joint adjudication. Freeze the
 CQM/instrument report separately, then adjudicate all three against the
 unchanged pin and paper. No review-time repair or successor work is
 authorized.
+
+## 2026-08-01 — OPERATIONAL MORITA CQM/INSTRUMENT REVIEW FROZEN
+## BLOCKED AT COMPLETE-INSTRUMENT W3 (v13 LEDGER #88)
+The complete independent categorical-quantum-mechanics/instrument report is
+frozen verbatim at
+`note-rq0-operational-morita-w3-instrument-hostile-review.md`, SHA-256
+`8c135e8656a6fe3dc5330a977865bcad236dd40423cebf3f1202c25185ce4f14`
+(28,274 bytes; 804 lines). Its verdict is `HEADLINE-DOWNGRADE`, with first
+registered obstruction `RQ0-L0-BLOCKED-AT-COMPLETE-INSTRUMENT-W3`.
+
+Unlike the first two reports, this review withholds even the first new rung.
+It proves that the W3 tuple retains normalized state and POVM shadows while
+discarding source and output CP-instrument witnesses, and gives an exact
+four-level countermodel in which the paper's individual complex eraser term
+is nonzero although every admitted complete-readout probability is unchanged
+by dephasing. The universal complete-effect block test, hostile singleton
+rejection, classical action, nine effect-level branch candidates, conditional
+pairwise transport and two-dephasing Karoubi arrow survive at narrower scopes.
+
+The review preserves the antecedent terminal
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM`. All three reports are now frozen.
+The next and only authorized action is their joint adjudication against the
+immutable pin and paper; no review-time repair or successor work is
+authorized.

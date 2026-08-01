@@ -1175,3 +1175,19 @@ the spectator kernel confuses strict and natural triviality; the general
 record-compatible addressability arrows are undefined; and the displayed
 unsigned `S4` lift is false. This is not adjudication. Freeze the remaining
 CQM/instrument report before any joint decision or successor.
+
+## 48. Frozen operational-Morita CQM/instrument report
+
+V13 ledger #88 freezes the complete independent CQM/instrument review
+verbatim at SHA-256
+`8c135e8656a6fe3dc5330a977865bcad236dd40423cebf3f1202c25185ce4f14`
+(28,274 bytes; 804 lines). It returns `HEADLINE-DOWNGRADE` and places the
+first registered obstruction at `RQ0-L0-BLOCKED-AT-COMPLETE-INSTRUMENT-W3`.
+
+It finds that the W3 object drops the CP-instrument witnesses above its
+state/POVM shadows and that the algebraic eraser cross term admits an exact
+false positive with no complete-readout probability contrast. It preserves
+the complete-effect block theorem and several narrower controls, but no new
+registered rung. The antecedent addressable-W3-operator-system result remains
+terminal. All three reports are now frozen; adjudicate them jointly before
+any repair or successor.
