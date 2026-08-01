@@ -2968,3 +2968,35 @@ No analytical note, definition, theorem or control is repaired in this
 commit.  The provisional `RQ0-L0-INTRINSIC-CHART-GROUPOID` headline remains
 unaccepted pending separate adjudication.  `RQ0-T1`, `RQ0-C1` and every later
 physics unit remain closed.
+
+## 2026-07-31 — ANALYTICAL FOUNDATIONS HOSTILE REJECTION ADJUDICATED
+## PROVISIONAL CHART HEADLINE WITHDRAWN; SCIENTIFIC OUTCOME NULL (v13 LEDGER #64)
+The external `REJECT` frozen at #63 is accepted in
+`note-rq0-operational-supports-foundations-hostile-adjudication.md`.  The
+adjudicator independently verifies the fatal finite-category obstruction:
+the branch-memory W3 seed contains the closed scalar amplitude `1/2`, while
+every endomorphism in a finite category has eventually repeating powers, so
+no functorial realization of that seed can satisfy Definition 2.1.
+
+The direct-sum matrix identity is exact, but its two claimed completions are
+not constructed as full instruments in the declared category.  The purported
+physical pullback is only a meet in the fixed-ambient strict-subobject poset;
+the general strong-map pullback is unproved.  Generated envelopes survive
+only as a conditional closure-system lemma, projector compression only as a
+conditional record functor, and automorphism no-selection only as a group-
+theoretic prohibition on invariant member choice.
+
+Accordingly, `RQ0-L0-INTRINSIC-CHART-GROUPOID` is withdrawn as earned,
+`RQ0-L0-PULLBACK-CLOSED-PROCESS-COVER` is unearned, and
+`RQ0-L0-FOUNDATIONS-NO-INTRINSIC-SUPPORT` is also unearned because no coherent
+ambient language has been ruled out.  The scientific RQ0-L0 outcome is null.
+The narrow support-label identifiability, fixed-diagram closure, fixed-ambient
+meet, reducing-compression, no-selection and no-retraction lemmas survive as
+conditional antecedents; terminal RQ0-A remains unchanged at its declared
+scope.
+
+No reviewed artifact is repaired.  The first unresolved obligation is a
+coherent process-presentation language that contains W3 amplitudes without
+planting support through selected cuts, projectors or map data.  This cycle is
+closed.  No successor, implementation, `RQ0-T1`, `RQ0-C1` or later physics is
+authorized.  **HALT FOR EXPLICIT USER AUTHORIZATION.**

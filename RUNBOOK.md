@@ -706,3 +706,18 @@ compression, no-selection and support-label identifiability lemmas survive
 the review.  These findings await separate adjudication; the analytical note
 remains immutable and no repair is authorized in this cycle.  T1/C1 and all
 later physics remain closed.
+
+## 24. Analytical-foundations adjudication and closure
+
+V13 ledger #64 accepts the frozen mathematical `REJECT`.  The finite-category
+language cannot contain the note's own W3 seed because its closed scalar
+amplitude `1/2` has nonrepeating powers; the two direct-sum completions are not
+full instruments in that language; and the physical-pullback claim reduces
+to a meet in a fixed-ambient subobject poset.  The provisional
+`RQ0-L0-INTRINSIC-CHART-GROUPOID` headline is withdrawn.  Neither other
+registered analytical outcome is earned, so scientific RQ0-L0 outcome is
+null.  Narrow conditional closure, meet, compression, no-selection,
+no-retraction and support-label identifiability lemmas survive, while terminal
+RQ0-A remains unchanged at its own declared scope.  The reviewed note is not
+repaired.  The cycle is closed; halt for explicit authorization before any
+successor, implementation, T1, C1 or later physics.
