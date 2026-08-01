@@ -3414,3 +3414,28 @@ moduli/higher-geometry hostile reviews, freeze each complete report verbatim,
 jointly adjudicate, and halt. No review-time repair, actualization, W6
 co-reference, autonomous subtheory, overlap, localization, T1, C1 or later
 physics is authorized.
+
+## 2026-08-01 — TWO W3 SEAM-STACK HOSTILE REVIEWS DISPATCHED
+## IMMUTABLE PAPER; OPERATOR AND MODULI ATTACKS INDEPENDENT (v13 LEDGER #79)
+Two repo-read-only hostile reviews have been dispatched against governing pin
+commit `21d28d1` and immutable paper commit `dc0a662`.
+
+The operator-algebra/quantum-instrument task follows
+`note-rq0-w3-seam-stack-operator-review-dispatch.md`, SHA-256
+`5424f0491f4ae0f326a0fe482fec8c430f34bf379a71d103461ba1212974aa5f`
+(4,332 bytes; 111 lines). It must independently rebuild the W3 equations,
+the nine-seam branch-memory classification, scoped channel/dilation
+invariances, transport inheritance, and admitted-idempotent controls.
+
+The moduli/higher-geometry task follows
+`note-rq0-w3-seam-stack-moduli-review-dispatch.md`, SHA-256
+`063e8ad2785922122377b0e19869393e167cdedceaaa72680d2e99534648cf9a`
+(4,221 bytes; 112 lines). It must independently attack the nested-algebra
+parameter spaces, semialgebraic loci, passive and active action groupoids,
+represented-equivalence theorem, no-selection result, and addressability
+Grothendieck fibration.
+
+Both reviewers may use `/private/tmp` only for scratch and may not edit the
+repository or repair the paper. Freeze each complete report verbatim in a
+separate commit, then adjudicate jointly against the unchanged pin and paper.
+No successor mathematics is authorized during review.

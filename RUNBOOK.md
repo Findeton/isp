@@ -1007,3 +1007,21 @@ immutable. Dispatch one operator/instrument and one moduli/higher-geometry
 repo-read-only hostile review, freeze each report verbatim in a separate
 commit, then adjudicate jointly without repair. No actualization, overlap,
 localization, T1, C1 or later physics work is authorized.
+
+## 39. Current W3 seam-stack hostile-review state
+
+V13 ledger #79 dispatches two independent repo-read-only reviews against
+immutable paper commit `dc0a662` and pin commit `21d28d1`.
+
+The operator/instrument task follows
+`v13/note-rq0-w3-seam-stack-operator-review-dispatch.md`, SHA-256
+`5424f0491f4ae0f326a0fe482fec8c430f34bf379a71d103461ba1212974aa5f`
+(4,332 bytes; 111 lines). The moduli/higher-geometry task follows
+`v13/note-rq0-w3-seam-stack-moduli-review-dispatch.md`, SHA-256
+`063e8ad2785922122377b0e19869393e167cdedceaaa72680d2e99534648cf9a`
+(4,221 bytes; 112 lines).
+
+Each reviewer must return a complete independent report without repository
+edits. Freeze the reports verbatim in separate commits, then jointly
+adjudicate without repairing the paper. Actualization, overlap, localization,
+T1, C1 and every later physics layer remain closed.
