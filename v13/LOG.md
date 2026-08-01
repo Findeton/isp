@@ -3624,3 +3624,30 @@ Each reviewer may use `/private/tmp` only for scratch and may not edit the
 repository or repair the paper. Freeze every complete report verbatim in a
 separate commit, then adjudicate all three jointly. No successor mathematics
 is authorized during review.
+
+## 2026-08-01 — OPERATIONAL MORITA STACK/RIGIDIFICATION REVIEW FROZEN
+## HEADLINE-DOWNGRADE; COMPLETE-INSTRUMENT W3 SURVIVES (v13 LEDGER #86)
+The complete independent higher-stack/localization/rigidification report is
+frozen verbatim at
+`note-rq0-operational-morita-w3-stack-hostile-review.md`, SHA-256
+`793407825637546c07a9223860964363da1cb2546a307673f71015dda1ee0f10`
+(26,799 bytes; 658 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer independently accepts the universal block theorem, complete
+singleton rejection, classical-action transport, objectwise imprimitivity
+transport, the noninvertible `e_m e_n` Karoubi arrow and the exact nine-object
+complete branch-memory theorem. It earns
+`RQ0-L0-COMPLETE-INSTRUMENT-W3`.
+
+It withholds every later rung. The marked correspondence bicategory,
+localized W3 morphisms and pseudofunctor coherence are not constructed;
+strict identity is conflated with natural equivalence in the spectator
+kernel; the raw addressability action and compatibility predicate are
+missing; and the general rigidification/fibration does not follow. It also
+finds the displayed unsigned `S4` lift false, while noting that a corrected
+signed lift can preserve the high-level orbit result.
+
+This is the first frozen report, not joint adjudication. Freeze the independent
+operator/Morita and CQM/instrument reports separately, then adjudicate all
+three against the unchanged pin and paper. No review-time repair or successor
+work is authorized.
