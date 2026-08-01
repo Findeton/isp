@@ -3100,3 +3100,27 @@ Both reviewers are prohibited from editing the repository or repairing the
 paper.  Each complete report must be frozen verbatim in a separate commit
 before joint adjudication.  No review-time repair, implementation, T1, C1 or
 later physics is authorized.
+
+## 2026-07-31 — HIGHER/DERIVED WELD-STACK HOSTILE REPORT FROZEN
+## REJECT; STRONGEST SURVIVING REGISTERED RUNG IS REPRESENTABLE W3 SKETCH (v13 LEDGER #68)
+The complete external higher-category/derived-geometric report is frozen
+verbatim at `note-rq0-weld-stack-higher-hostile-review.md`, SHA-256
+`128d186d54245619991d45cab1d31d1076937e565a8d2a8777a4fd4e0d5d98ce`
+(32,071 bytes; 313 lines).  Its verdict is `REJECT`.
+
+The review independently retains the exact W3 process sketch, the
+operator-support quantaloid and residuals, the formal Isbell theorem after a
+source-category repair, the correspondence cone, and finite commutative
+central-corner representability.  It finds the process-support source
+category insufficiently and non-uniformly typed; it also finds that general
+UCP transport does not carry record projectors to projectors or place them in
+the Isbell concept intersection, so the paper's projector family and partial
+`Rec` are not constructed.  Gauge descent, a physically mutual concept,
+selected-boundary no-smuggling, generic overlap, and stack language remain
+unearned.  The reviewer recommends
+`RQ0-L0-REPRESENTABLE-W3-SKETCH` as the strongest surviving registered rung.
+
+This is a frozen review, not an adjudication.  The paper remains immutable;
+the independent operator/process report must next be frozen separately, then
+both reports adjudicated together.  No repair, implementation, T1, C1 or
+later physics is authorized.

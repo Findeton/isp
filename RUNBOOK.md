@@ -776,3 +776,21 @@ Freeze each complete report verbatim in a separate commit, then adjudicate
 both against the unchanged paper and halt.  Reviewers may use only
 /private/tmp for scratch and may not repair the paper.  No implementation,
 T1, C1 or later physics is authorized.
+
+## 28. Frozen higher/derived Weld-stack hostile report
+
+V13 ledger #68 freezes the complete higher-category/derived-geometric review
+against `f57eb45` verbatim, SHA-256
+`128d186d54245619991d45cab1d31d1076937e565a8d2a8777a4fd4e0d5d98ce`
+(32,071 bytes; 313 lines).  Its verdict is `REJECT`, and it recommends
+`RQ0-L0-REPRESENTABLE-W3-SKETCH` as the strongest surviving registered rung.
+
+The exact W3 sketch, operator-support quantaloid/residual theorem, formal
+Isbell theorem after a typing repair, correspondence cone and finite
+commutative central-corner theorem survive independently.  The paper's
+process-support source, projector family, partial `Rec`, gauge quotient,
+physical mutuality, no-smuggling control and generic overlap/stack claims do
+not.  This entry records the hostile result only; do not repair the immutable
+paper.  Freeze the independent operator/process report in its own commit,
+then adjudicate both reports and halt.  T1/C1 and every later physics layer
+remain closed.
