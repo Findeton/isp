@@ -1191,3 +1191,24 @@ the complete-effect block theorem and several narrower controls, but no new
 registered rung. The antecedent addressable-W3-operator-system result remains
 terminal. All three reports are now frozen; adjudicate them jointly before
 any repair or successor.
+
+## 49. Operational-Morita W3 cycle closed at complete-instrument block
+
+V13 ledger #89 jointly adjudicates the three frozen hostile reports at
+SHA-256
+`f2c5568e2a729e402b118768eb669e8455490587063f4c6ee22245be00dcf4cb`
+(18,668 bytes; 585 lines). The provisional full-addressability headline and
+all four new cumulative positive rungs are withdrawn. The selected cycle
+disposition is `RQ0-L0-BLOCKED-AT-COMPLETE-INSTRUMENT-W3`.
+
+The decisive counterexample is operational: the W3 tuple keeps
+normalized-state and POVM shadows rather than complete CP-instrument
+witnesses, and its algebraic eraser term can pass without any admitted
+complete-readout probability contrast. Narrower complete-effect, classical
+action, pairwise transport, matrix-amplification, Karoubi and nine-candidate
+calculations survive as analytical evidence.
+
+The antecedent `RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` remains the strongest
+registered result. The cycle is closed. Do not repair or begin a successor,
+overlap, localization, T1, C1 or later physics unit without new explicit
+authorization.

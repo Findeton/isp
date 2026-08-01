@@ -3699,3 +3699,40 @@ The review preserves the antecedent terminal
 The next and only authorized action is their joint adjudication against the
 immutable pin and paper; no review-time repair or successor work is
 authorized.
+
+## 2026-08-01 — OPERATIONAL MORITA W3 REVIEWS JOINTLY ADJUDICATED
+## BLOCKED AT COMPLETE-INSTRUMENT W3; CYCLE CLOSED (v13 LEDGER #89)
+The three frozen hostile reports are jointly adjudicated at
+`note-rq0-operational-morita-w3-hostile-adjudication.md`, SHA-256
+`f2c5568e2a729e402b118768eb669e8455490587063f4c6ee22245be00dcf4cb`
+(18,668 bytes; 585 lines). The immutable paper's provisional
+`RQ0-L0-FULL-ADDRESSABILITY-FIBRATION` headline is withdrawn.
+
+The CQM/instrument review's exact first-rung counterexample controls the
+cumulative ladder. The object retains normalized-state and POVM shadows but
+not the source/output CP-instrument witnesses, and its individual complex
+eraser term can be nonzero while all admitted complete-readout probabilities
+remain unchanged by dephasing. Therefore no new registered positive rung is
+earned. This successor closes at
+`RQ0-L0-BLOCKED-AT-COMPLETE-INSTRUMENT-W3`.
+
+The adjudication retains substantial narrower mathematics: the universal
+complete-effect block theorem and hostile singleton rejection; finite
+classical actions; exact pairwise transport under supplied endomorphism
+*-isomorphisms; the displayed inaccessible matrix-amplification calculation;
+the underlying CP Karoubi category and noninvertible two-dephasing arrow; and
+the exact nine effect-level branch candidates. The printed unsigned `S4`
+proof is false, though independent corrected signed lifts recover the
+abstract orbit result as external evidence.
+
+Independent later failures also remain engraved: the marked operational
+bicategory/localization and W3 pseudofunctor are not constructed; strict and
+natural isotropy are conflated; the physical-spectator proposition is
+misstated; and the general record-compatible addressability arrows are
+undefined.
+
+The antecedent terminal result remains
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` at its prior law-relative scope. No
+selected actual fact, overlap, spatial localization, topology, influence,
+causality, geometry, field or gravity result follows. The cycle is closed.
+Halt and request explicit authorization before any successor.
