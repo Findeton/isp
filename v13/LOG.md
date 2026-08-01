@@ -3874,3 +3874,30 @@ actuality/co-reference separation, raw coordinate sheaf and chart-complete
 realized W3 locus survive at their narrower scopes. This is the second frozen
 report, not adjudication. Freeze the comb/process report before the joint
 decision. No paper repair is authorized.
+
+## 2026-08-01 — OPERATIONAL W3 COMB/TESTER REVIEW FROZEN
+## FIRST TWO RUNGS EARNED; NINE-CANDIDATE EXHAUSTIVITY REFUTED (v13 LEDGER #95)
+The complete independent quantum-comb/process-tensor and tester-
+discrimination hostile report is frozen verbatim at
+`note-rq0-operational-w3-combs-comb-hostile-review.md`, SHA-256
+`f021f5466432577e2b6c9a50a48730a1a782d39e7235cf365f50d7edc0e9f312`
+(23,204 bytes; 494 lines).
+
+The review independently earns `RQ0-L0-COMB-COMPLETE-W3` and
+`RQ0-L0-TESTER-SEPARATED-W3`, reproducing the tester seminorm, operational
+kernel, contraction, all exact controls, and all nine inherited
+branch-memory candidates with their `5/4` and `1` coherence values. It
+selects `RQ0-L0-BLOCKED-AT-TESTER-DESCENT` because one fixed tester type is
+applied to named comparisons with different open-wire profiles.
+
+The reviewer also supplies a new exact complex rank-two W3 record action at
+the branch-memory law. It is not a partition of the `v_i` basis, passes
+write, no-write, preservation and recovery, and has recovery distance `1`.
+Therefore the nine inherited partition candidates remain valid but are not
+an exhaustive census under the nonseparating source/tester family.
+
+Bounded typing defects in comb tensor order, flagged direct sums,
+fine/coarse Lüders instruments and effect-interval wording do not defeat the
+first two rungs. All three hostile reports are now frozen. The next and only
+authorized action is joint adjudication against the immutable pin and paper;
+no analytical repair, software work or later physics successor is allowed.

@@ -1287,6 +1287,22 @@ wiring and comb tensor order. The one-chart and ontology firewalls pass.
 Freeze the remaining comb/process report before joint adjudication; do not
 repair the paper during review.
 
+## 55. Frozen operational W3 comb/process review
+
+V13 ledger #95 freezes the independent comb/process-tensor and tester-
+discrimination report verbatim at SHA-256
+`f021f5466432577e2b6c9a50a48730a1a782d39e7235cf365f50d7edc0e9f312`
+(23,204 bytes; 494 lines). It earns comb-complete and tester-separated W3,
+rebuilds every exact control, and blocks the third rung at typed tester
+descent.
+
+The report also constructs an exact non-`v`-partition complex record action,
+so the nine inherited branch-memory candidates and their coherence values
+survive but their claimed exhaustivity does not. Bounded tensor-order,
+flagged-direct-sum, fine/coarse Lüders and effect-interval corrections are
+recorded. All three reviews are now frozen; jointly adjudicate without
+repairing the paper and then halt.
+
 ## 52. Operational W3 comb/tester reviews dispatched
 
 V13 ledger #92 dispatches three independent repo-read-only reviews against
