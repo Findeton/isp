@@ -2706,3 +2706,60 @@ hostile review must be frozen and adjudicated before the cycle halts.  No
 post-review repair is authorized.  A future held-out cycle requires a new
 explicit user instruction.  `RQ0-T1`, `RQ0-C1` and all topology, influence,
 causal, geometric, spacetime, field and gravity work remain prohibited.
+
+## 2026-07-31 — RQ0-L0 PUBLIC OVERLAP-FIRST ARCHITECTURE SNAPSHOT
+## PREPARED FOR HOSTILE REVIEW; SCIENTIFIC OUTCOME NULL (v13 LEDGER #56)
+The bounded architecture-reset implementation authorized by #55 is frozen as
+one reviewable public snapshot.  This is not an estimator freeze for future
+held-out use and confers no scientific L0 outcome.  No hidden fixture, hidden
+truth, official scorer, official receipt or scientific delivery exists.
+
+The snapshot adds a strict raw operational schema, an untrusted proposer, a
+separately imported trusted verifier and one total fail-closed boundary.  The
+trusted verifier reconstructs finite composition, independently recomputes
+P1--P8, validates every source and target field in `RegAddr`, reconstructs
+operational and W3 record scopes independently, checks executable pair/triple
+pullbacks, and composes the complete regional maps in coherent and twisted
+triple controls.  Raw row maps now carry source/target `tau`, status, result
+class, exact amplitude law and observed signature rather than only endpoints.
+
+Normal direct-factor recovery is stated only as a finite calibration lemma:
+completeness covers decompositions into two through eight proper normal direct
+factors under the declared types and cap.  The scientific design is reset to
+overlap-first localization in
+`note-rq0-operational-localization-overlap-first-design.md`: `OpSub(D)` and
+`RecSub(D)` are to be reconstructed independently and compared through
+executable full-field maps.  Global product factors are not the definition of
+a region.
+
+The opened public `Q8` model supplies the mandatory indecomposable calibration.
+The direct-factor verifier returns a finite public negative, while the
+overlap-first verifier reconstructs one central order-two core and three
+overlapping cyclic order-four record-bearing subinstruments, twelve regional
+arrows, three pair pullbacks and one triple pullback.  A record-scope mismatch
+returns the registered public finite negative.  These are designed public
+calibrations and cannot earn an RQ0 rung.
+
+The canonical public audit is
+`code/rq0_l0_archreset_public_audit.json`, SHA-256
+`9f56dd4b2e1e56a57d299ca96e913aef22bd5d1c3942be71abda0eb05ee861fc`
+(14,089 bytes).  All nine public cases and all eighteen named adversarial
+cases pass.  All 481 normalized systematic schema mutations return structured
+invalid outcomes through the total boundary, with zero survivors and no
+timeout counted as a schema rejection.  Exact sparse/dense represented-algebra
+ranks agree on the small public suite.  Source hashes embedded in the audit
+match the delivered proposer, kernel and trusted verifier.
+
+The opened order-144 regression completes positively in 207.644 seconds with
+factor orders `(2,3,4,6)`.  The opened order-192 regression hits the hard
+360-second cap and returns `ARCHRESET-INVALID` during verification in 361.062
+externally measured seconds.  This is a public performance limitation, not a
+direct-factor negative and not a scientific L0 result.  The Unix main-thread
+entry now hard-caps parsing as well as estimation and verification; unsupported
+thread/timer states fail closed.
+
+The public snapshot is `PUBLIC-ARCHITECTURE-CANDIDATE`, awaiting the mandatory
+fresh external repo-read-only hostile review.  The next event is dispatch of
+that review, followed by verbatim freeze and separate adjudication.  No repair
+after review is authorized.  `RQ0-T1`, `RQ0-C1`, topology, influence,
+causality, geometry, spacetime, fields and gravity remain prohibited.

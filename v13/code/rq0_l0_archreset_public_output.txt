@@ -1,0 +1,51 @@
+RQ0-L0 PUBLIC ARCHITECTURE AUDIT
+================================
+public gates: PASS
+scientific outcome: null
+estimator frozen: no
+held-out content: none
+
+Public cases:
+- direct-product-positive: PASS (ARCHRESET-PUBLIC-PASS)
+- indecomposable-q8-direct-negative: PASS (ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE)
+- q8-overlap-first-positive: PASS (ARCHRESET-PUBLIC-PASS)
+- q8-independent-reconstructions-disagree: PASS (ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE)
+- full-coherent-triple: PASS (ARCHRESET-PUBLIC-PASS)
+- full-twisted-triple: PASS (ARCHRESET-PUBLIC-PASS)
+- operation-handle-renaming: PASS (ARCHRESET-PUBLIC-PASS)
+- record-handle-renaming: PASS (ARCHRESET-PUBLIC-PASS)
+- serialization-reordering: PASS (ARCHRESET-PUBLIC-PASS)
+
+Adversarial cases:
+- forged-factor-certificate: PASS (ARCHRESET-INVALID, phase=verify)
+- string-false-selectability: PASS (ARCHRESET-INVALID, phase=parse)
+- wrong-gauge-dimension: PASS (ARCHRESET-INVALID, phase=parse)
+- projector-out-of-range: PASS (ARCHRESET-INVALID, phase=parse)
+- projector-overlap: PASS (ARCHRESET-INVALID, phase=parse)
+- projector-incomplete: PASS (ARCHRESET-INVALID, phase=parse)
+- projector-duplicate: PASS (ARCHRESET-INVALID, phase=parse)
+- incompatible-context-boundary: PASS (ARCHRESET-INVALID, phase=parse)
+- incompatible-record-boundary: PASS (ARCHRESET-INVALID, phase=parse)
+- duplicate-dataset-row: PASS (ARCHRESET-INVALID, phase=parse)
+- duplicate-regaddr-row-map: PASS (ARCHRESET-INVALID, phase=verify)
+- forged-regaddr-row-metadata: PASS (ARCHRESET-INVALID, phase=verify)
+- none-cap: PASS (ARCHRESET-INVALID, phase=request)
+- nan-cap: PASS (ARCHRESET-INVALID, phase=request)
+- nonfinite-clock: PASS (ARCHRESET-INVALID, phase=cap)
+- serializer-exception: PASS (ARCHRESET-INVALID, phase=serialize)
+- singleton-factor-outside-completeness-scope: PASS (ARCHRESET-INVALID, phase=verify)
+- nine-factor-outside-completeness-scope: PASS (ARCHRESET-INVALID, phase=verify)
+
+Systematic schema mutation:
+- mutations: 481
+- all fail closed: True
+- phases: {"parse": 257, "request": 11, "verify": 213}
+
+Opened large regressions (never scientific):
+- opened-order-144: ARCHRESET-PUBLIC-PASS (207.644 s)
+- opened-order-192: ARCHRESET-INVALID (361.062 s)
+
+Ceiling:
+- public architecture candidate only
+- no RQ0-L0 scientific claim
+- no T1, C1, topology, influence, causality, geometry, spacetime, fields, or gravity

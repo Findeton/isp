@@ -604,3 +604,18 @@ forbids held-out fixtures, scoring, scientific L0 outcomes and estimator
 freeze.  After a public review snapshot, one external hostile report must be
 frozen and adjudicated; then the cycle halts for explicit user authorization.
 T1/C1 and all later physics remain prohibited.
+
+## 16. Current v13 public architecture snapshot
+
+V13 ledger #56 implements the #55 public-only reset at new paths.  The
+snapshot has exact noncoercive schemas, a proposer-independent trusted
+verifier, hard/cooperative fail-closed caps, neutral public outcomes,
+field-complete regional maps, a full coherent/twisted triple, an overlap-first
+design, and an opened indecomposable `Q8` calibration.  Its public audit
+passes 9 public cases, 18 named hostile cases and 481 systematic schema
+mutations with zero survivors.  The order-144 opened regression passes;
+order-192 hard-times out and is procedural invalid, so the candidate is not
+performance-qualified.  The snapshot is not an estimator freeze and has
+scientific outcome null.  Dispatch, freeze and adjudicate one external
+repo-read-only hostile review, then halt.  No post-review repair, held-out
+cycle, T1 or C1 is authorized.

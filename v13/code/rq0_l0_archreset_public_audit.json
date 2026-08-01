@@ -1,0 +1,493 @@
+{
+  "adversarial_cases": [
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "asserted P1--P8 table differs from trusted recomputation"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "forged-factor-certificate",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "verify"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.operations[0].independently_selectable: expected an exact boolean"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "string-false-selectability",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.gauge_actions.gauge.law: gauge has the wrong carrier"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "wrong-gauge-dimension",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.records[0].ambient_projector_resolution[1][0]: integer exceeds 1"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "projector-out-of-range",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.records[0].ambient_projector_resolution: projector atoms overlap"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "projector-overlap",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.records[0].ambient_projector_resolution: projector atoms do not resolve the carrier"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "projector-incomplete",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.records[0].ambient_projector_resolution: projector resolution contains duplicate atoms"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "projector-duplicate",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.contexts.context-core-0.boundary_type: context boundary is incompatible with operations"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "incompatible-context-boundary",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.records.record-core-0.boundary_type: record boundary is incompatible with access operations"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "incompatible-record-boundary",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "dataset.composition_rows: ordered row pairs are duplicated"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "duplicate-dataset-row",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "parse"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "RegAddr row map duplicates a row"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "duplicate-regaddr-row-map",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "verify"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "RegAddr row map's carried metadata differs from raw rows"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "forged-regaddr-row-metadata",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "verify"
+    },
+    {
+      "detail": {
+        "error_type": "ProposalError",
+        "message": "cap_milliseconds must be an exact positive integer"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "none-cap",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "request"
+    },
+    {
+      "detail": {
+        "error_type": "ProposalError",
+        "message": "cap_milliseconds must be an exact positive integer"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "nan-cap",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "request"
+    },
+    {
+      "detail": {
+        "error_type": "ProposalError",
+        "message": "clock returned a nonfinite or mistyped value"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "nonfinite-clock",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "cap"
+    },
+    {
+      "detail": {
+        "error_type": "RuntimeError",
+        "message": "public serializer mutant"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "serializer-exception",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "serialize"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "factor tuple must contain two through eight factors"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "singleton-factor-outside-completeness-scope",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "verify"
+    },
+    {
+      "detail": {
+        "error_type": "VerificationError",
+        "message": "factor tuple must contain two through eight factors"
+      },
+      "exit_code": 1,
+      "expected_status": "ARCHRESET-INVALID",
+      "name": "nine-factor-outside-completeness-scope",
+      "observed_status": "ARCHRESET-INVALID",
+      "pass": true,
+      "phase": "verify"
+    }
+  ],
+  "all_public_gates_pass": true,
+  "antecedent_head": "e247d34",
+  "cases": [
+    {
+      "detail": {
+        "category": "positive",
+        "certificates": 1,
+        "exhaustive_candidates": 0,
+        "factor_orders": [
+          [
+            2,
+            3
+          ]
+        ],
+        "verification": "factor"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "direct-product-positive",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "category": "scientific-negative",
+        "certificates": 0,
+        "exhaustive_candidates": 3,
+        "factor_orders": [],
+        "verification": "factor"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE",
+      "name": "indecomposable-q8-direct-negative",
+      "observed_status": "ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "arrows": 12,
+        "category": "positive",
+        "coherent_paths": 22,
+        "objects": 5,
+        "operational_scopes": 4,
+        "pair_intersections": 3,
+        "record_scopes": 4,
+        "triple_intersections": 1,
+        "verification": "overlap"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "q8-overlap-first-positive",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "arrows": 0,
+        "category": "scientific-negative",
+        "coherent_paths": 0,
+        "objects": 0,
+        "operational_scopes": 4,
+        "pair_intersections": 0,
+        "record_scopes": 3,
+        "triple_intersections": 0,
+        "verification": "overlap"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE",
+      "name": "q8-independent-reconstructions-disagree",
+      "observed_status": "ARCHRESET-PUBLIC-SCIENTIFIC-NEGATIVE",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "differing_fields": [],
+        "loop_commutes": true,
+        "pair_maps_valid": 3,
+        "verification": "triple"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "full-coherent-triple",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "differing_fields": [
+          "carrier_action",
+          "operation_map",
+          "row_map",
+          "context_map",
+          "record_map"
+        ],
+        "loop_commutes": false,
+        "pair_maps_valid": 3,
+        "verification": "triple"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "full-twisted-triple",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "arrows": 12,
+        "category": "positive",
+        "coherent_paths": 22,
+        "objects": 5,
+        "operational_scopes": 4,
+        "pair_intersections": 3,
+        "record_scopes": 4,
+        "triple_intersections": 1,
+        "verification": "overlap"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "operation-handle-renaming",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "arrows": 12,
+        "category": "positive",
+        "coherent_paths": 22,
+        "objects": 5,
+        "operational_scopes": 4,
+        "pair_intersections": 3,
+        "record_scopes": 4,
+        "triple_intersections": 1,
+        "verification": "overlap"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "record-handle-renaming",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    },
+    {
+      "detail": {
+        "arrows": 12,
+        "category": "positive",
+        "coherent_paths": 22,
+        "objects": 5,
+        "operational_scopes": 4,
+        "pair_intersections": 3,
+        "record_scopes": 4,
+        "triple_intersections": 1,
+        "verification": "overlap"
+      },
+      "exit_code": 0,
+      "expected_status": "ARCHRESET-PUBLIC-PASS",
+      "name": "serialization-reordering",
+      "observed_status": "ARCHRESET-PUBLIC-PASS",
+      "pass": true,
+      "phase": "complete"
+    }
+  ],
+  "claim_ceiling": "public architecture candidate awaiting external hostile review",
+  "classification": "PUBLIC-ARCHITECTURE-AUDIT-NOT-A-SCIENTIFIC-RECEIPT",
+  "dense_sparse_equivalence": [
+    {
+      "dataset": "public-c2-c3-product",
+      "dense_dimension": 4,
+      "pass": true,
+      "sparse_dimension": 4
+    },
+    {
+      "dataset": "public-q8-ambient",
+      "dense_dimension": 4,
+      "pass": true,
+      "sparse_dimension": 4
+    }
+  ],
+  "estimator_frozen": false,
+  "held_out_content_created": false,
+  "neutral_accounting": {
+    "meta_pass": true,
+    "not_reached_counted_as_pass": false,
+    "pass_numerator": 1,
+    "reached_denominator": 2,
+    "states": [
+      "PASS",
+      "FAIL",
+      "NOT-REACHED"
+    ]
+  },
+  "opened_large_regressions": [
+    {
+      "classification": "opened-regression-only",
+      "detail": {
+        "category": "positive",
+        "certificates": 1,
+        "exhaustive_candidates": 0,
+        "factor_orders": [
+          [
+            2,
+            3,
+            4,
+            6
+          ]
+        ],
+        "verification": "factor"
+      },
+      "earns_scientific_rung": false,
+      "engineering_status": "ARCHRESET-PUBLIC-PASS",
+      "exit_code": 0,
+      "name": "opened-order-144",
+      "phase": "complete",
+      "timing_seconds_noncanonical": 207.644
+    },
+    {
+      "classification": "opened-regression-only",
+      "detail": {
+        "error_type": "TimeoutError",
+        "message": "public architecture cap exhausted"
+      },
+      "earns_scientific_rung": false,
+      "engineering_status": "ARCHRESET-INVALID",
+      "exit_code": 1,
+      "name": "opened-order-192",
+      "phase": "verify",
+      "timing_seconds_noncanonical": 361.062
+    }
+  ],
+  "pin_commit": "c0fab11",
+  "schema": "rq0-l0-archreset-public-audit-v1",
+  "scientific_outcome": null,
+  "static_audit": {
+    "forbidden_archreset_paths": [],
+    "pass": true,
+    "source_sha256": {
+      "rq0_l0_archreset_exact.py": "1bc3cb5bc8c07bed49eb2b42a55ae9c85ec5004942721c6db31092f29e26f648",
+      "rq0_l0_archreset_kernel_exact.py": "f00c176422f6be5e22978de1008d3f96b9a0398daacb20c64d1a8bd7ff9ce11c",
+      "rq0_l0_archreset_verifier_exact.py": "9fcd04b30c1625253f5ee61327125aeba36ee9978a2eb318b4a7b946508a7a21"
+    },
+    "tailoring_tokens": {
+      "rq0_l0_archreset_exact.py": [],
+      "rq0_l0_archreset_kernel_exact.py": [],
+      "rq0_l0_archreset_verifier_exact.py": []
+    },
+    "verifier_imports_proposer_or_models": false
+  },
+  "systematic_schema_mutations": {
+    "all_fail_closed": true,
+    "by_root": {
+      "dataset": 178,
+      "factor_claim": 34,
+      "overlap_claim": 170,
+      "request": 90,
+      "triple": 9
+    },
+    "failure_phase_counts": {
+      "parse": 257,
+      "request": 11,
+      "verify": 213
+    },
+    "mutations": 481,
+    "normalized_mapping_fields": 196,
+    "normalized_mapping_objects": 40,
+    "normalized_primitive_array_leaves": 49,
+    "survivors": []
+  }
+}
