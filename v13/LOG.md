@@ -3794,3 +3794,28 @@ categorical-operational and sheaf/stack hostile reviews against the immutable
 pin and paper before any adjudication. No actualization, co-reference,
 cross-chart locality, overlap, topology, causality, field or gravity claim is
 made.
+
+## 2026-08-01 — THREE OPERATIONAL W3 COMB REVIEWS DISPATCHED
+## IMMUTABLE PAPER; INDEPENDENT REBUILDS REQUIRED (v13 LEDGER #92)
+Three repo-read-only hostile reviews are dispatched against frozen pin
+`3c958da` and frozen paper `fa02148`:
+
+- quantum comb/process-tensor and discrimination review at
+  `note-rq0-operational-w3-combs-comb-review-dispatch.md`, SHA-256
+  `d74f30edca2b92cf055d1c73cbc61312ab4549d14218c23817fe63b7d70b6e18`
+  (4,376 bytes; 128 lines);
+- categorical-operational/complete-instrument review at
+  `note-rq0-operational-w3-combs-instrument-review-dispatch.md`, SHA-256
+  `035622c38820072af5fccc405d7c1b4ec01d98cf01ac5ea14ebc1f6463ebe940`
+  (4,019 bytes; 115 lines); and
+- tester-site/sheaf/stack review at
+  `note-rq0-operational-w3-combs-stack-review-dispatch.md`, SHA-256
+  `b7aca670086574134495237fffc4428dd642caec528bf5149b212114d4bb3359`
+  (3,970 bytes; 105 lines).
+
+Each reviewer must independently rebuild its load-bearing mathematics,
+respect the one-chart completeness firewall, grade all three registered
+rungs separately, and return one complete report without repository edits.
+Freeze the reports verbatim in separate commits, then adjudicate jointly.
+The paper may not be repaired during review. No atlas-wide tester,
+localization, overlap, T1, C1 or later physics work is authorized.

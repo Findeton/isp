@@ -1254,3 +1254,19 @@ tester, global event set or cross-chart locality. The provisional outcome is
 tester-separated W3, with status `GREEN-UNREVIEWED`. The next authorized
 event is three independent read-only hostile reviews; no paper repair or
 later physics work may begin during review.
+
+## 52. Operational W3 comb/tester reviews dispatched
+
+V13 ledger #92 dispatches three independent repo-read-only reviews against
+pin `3c958da` and immutable paper `fa02148`. The comb/process review rebuilds
+comb normalization, flagged instruments, tester norms, exact controls and the
+nine-candidate calculation. The categorical-operational review attacks
+complete-instrument typing, effect/instrument distinctions, operational
+referents and the one-chart ontology firewall. The sheaf/stack review attacks
+the tester site, variance obstruction, evaluation-data descent, realized
+locus and quotient-stack headline.
+
+Each complete report must be frozen verbatim in its own commit before joint
+adjudication. No review-time paper repair is allowed. “Complete” remains
+internal to one finite chart; no atlas, locality, topology, causality, field
+or gravity successor may begin during review.
