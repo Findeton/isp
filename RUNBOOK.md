@@ -815,3 +815,27 @@ This is the second frozen review, not a repair.  Adjudicate it jointly with
 ledger #68 against the immutable paper and pin, record the highest surviving
 pre-registered rung, and halt.  T1/C1 and every later physics layer remain
 closed.
+
+## 30. Weld-stack joint adjudication and closure
+
+V13 ledger #70 accepts both independent `REJECT` verdicts and withdraws the
+paper's provisional `RQ0-L0-WELD-QUANTALOID-CHARTS` headline.  The frozen
+adjudication is SHA-256
+`901b32139ca6441bee2da4e1e5c8b7d7b7ee9b517a8cd44ab84233288e64d18f`
+(17,585 bytes; 461 lines).
+
+The highest surviving pre-registered rung is
+`RQ0-L0-REPRESENTABLE-W3-SKETCH`: the finite-arrow obstruction, exact process
+language and branch-memory W3 experiment survive.  Law-relative
+observability, the abstract all-subspace quantaloid, conditional formal
+Isbell theorem, no-selection lemma, correspondence cone and finite
+central-corner representability remain useful, separately scoped theorems.
+They do not compose into an intrinsic chart.
+
+The binding obstruction is internal to L0: selected cuts/projectors/transports
+do not pass no-smuggling; the admitted split and probe source are not typed at
+the claimed scope; UCP transport need not preserve sharp projectors; and the
+partial record functor, gauge quotient and generic physical overlap are not
+constructed.  The immutable paper is not repaired.  The cycle is closed;
+halt and request explicit authorization before any successor.  T1/C1 and all
+later physics remain closed.

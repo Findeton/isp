@@ -3148,3 +3148,32 @@ expressly law-relative sense.  This remains a frozen review position, not the
 joint adjudication.  Both reports are now immutable; adjudicate them together
 against the unchanged paper and pin, then halt.  No repair, implementation,
 T1, C1 or later physics is authorized.
+
+## 2026-07-31 — WELD-STACK HOSTILE REVIEWS ADJUDICATED
+## HIGHEST SURVIVING RUNG: REPRESENTABLE W3 SKETCH; CYCLE CLOSED (v13 LEDGER #70)
+The joint adjudication is frozen at
+`note-rq0-weld-stack-hostile-adjudication.md`, SHA-256
+`901b32139ca6441bee2da4e1e5c8b7d7b7ee9b517a8cd44ab84233288e64d18f`
+(17,585 bytes; 461 lines).  Both independent `REJECT` verdicts are accepted,
+and the provisional `RQ0-L0-WELD-QUANTALOID-CHARTS` headline is withdrawn.
+
+The binding highest surviving pre-registered rung is
+`RQ0-L0-REPRESENTABLE-W3-SKETCH`.  The finite-arrow obstruction, generally
+infinite exact process language and complete branch-memory W3 representation
+remain secure.  The law-relative Heisenberg observability theorem, abstract
+all-subspace quantaloid/residuals, conditional formal Isbell theorem,
+no-selector lemma, correspondence cone and finite central-corner theorem
+survive as individually scoped non-rung results.
+
+The next cumulative rung is withheld because selected boundaries,
+projectors and transport grammar did not pass the pin's no-smuggling gate.
+Later layers fail independently: the split is outside the declared channel
+category; the process-probe source is not type-uniformly defined; general UCP
+transport produces effects rather than projectors; concept projectors need
+not lie in the concept intersection; and the gauge quotient, partial `Rec`
+and generic physical overlaps are not constructed.
+
+This cycle is closed without repairing the immutable paper.  No intrinsic
+chart groupoid, process cover, spatial locality, topology, influence,
+causality, spacetime, fields or gravity is earned.  Terminal RQ0-A remains
+unchanged.  Halt and require explicit authorization before any successor.
