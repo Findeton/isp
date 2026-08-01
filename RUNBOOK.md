@@ -1212,3 +1212,21 @@ The antecedent `RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` remains the strongest
 registered result. The cycle is closed. Do not repair or begin a successor,
 overlap, localization, T1, C1 or later physics unit without new explicit
 authorization.
+
+## 50. Current operational W3 comb/tester analytical successor
+
+V13 ledger #90 opens one bounded analytical-only successor under
+`v13/note-rq0-operational-w3-combs-pin.md`, SHA-256
+`ec1e1c5e6ba6e003daf1cb0ccb88f13a7cd709fb26b55614ec2a8465ff9ef1f9`
+(18,607 bytes; 535 lines). The complete source, continuation and output
+CP-instrument branches must be represented in a typed finite comb. W3
+preservation and coherent recovery are defined only through equality or
+inequality of probabilities under the complete admitted tester family, after
+the operational quotient.
+
+The pin explicitly audits the variance obstruction to a naive seam
+presheaf and requires either a genuine tester-evaluation descent construction
+or a precise block. The three cumulative ceilings are comb-complete W3,
+tester-separated W3 and a W3 test sheaf. After an immutable paper, freeze and
+jointly adjudicate three independent reviews, then halt. Morita repair,
+overlap, localization, T1, C1 and all later physics remain prohibited.

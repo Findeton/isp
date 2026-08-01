@@ -3736,3 +3736,31 @@ The antecedent terminal result remains
 selected actual fact, overlap, spatial localization, topology, influence,
 causality, geometry, field or gravity result follows. The cycle is closed.
 Halt and request explicit authorization before any successor.
+
+## 2026-08-01 — OPERATIONAL W3 COMB/TESTER SUCCESSOR PIN FROZEN
+## COMPLETE INSTRUMENTS BEFORE SEAMS (v13 LEDGER #90)
+One bounded analytical RQ0-L0 successor is opened under
+`note-rq0-operational-w3-combs-pin.md`, SHA-256
+`ec1e1c5e6ba6e003daf1cb0ccb88f13a7cd709fb26b55614ec2a8465ff9ef1f9`
+(18,607 bytes; 535 lines). It preserves the complete #83--#89
+operational-Morita cycle unchanged and does not repair its paper.
+
+The primitive is now a complete finite quantum comb/process tensor with all
+source, continuation and output CP-instrument branches retained. Physical
+equivalence is equality of every admitted complete-tester probability before
+any W3 quotient. Preservation means zero admitted-tester distance after
+record dephasing; coherent recovery means a positive admitted-tester
+distance. A nonzero complex cross term without a probability contrast cannot
+pass.
+
+The pin also makes the tester-descent variance problem binding: universal
+preservation restricts downward, while an existential eraser witness can
+disappear under restriction. The paper must construct a correctly typed
+tester-evaluation sheaf/fibration or return a precise block; it may not assume
+that context-valid seams form a presheaf.
+
+The cumulative ceilings are `RQ0-L0-COMB-COMPLETE-W3`,
+`RQ0-L0-TESTER-SEPARATED-W3`, and `RQ0-L0-W3-TEST-SHEAF`. After the immutable
+paper, freeze three independent comb/process, categorical-operational and
+sheaf/stack reviews, adjudicate jointly, and halt. No Morita repair, overlap,
+localization, T1, C1 or later physics is authorized.
