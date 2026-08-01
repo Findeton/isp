@@ -966,3 +966,23 @@ the immutable paper's scope and bibliographic defects remain recorded.
 No intrinsic chart, generic overlap, localization, T1, C1 or later physics is
 earned or authorized.  Preserve the complete #71--#76 cycle unchanged, halt,
 and require explicit user authorization before any successor.
+
+## 37. Current W3 seam-stack analytical successor
+
+V13 ledger #77 opens one bounded analytical-only cycle under
+`v13/note-rq0-w3-seam-stack-pin.md`.  The W3 cut and nested fine/coarse
+commutative algebras are reconstruction variables over every eligible typed
+experiment packet.  The target is the complete W3-positive action groupoid,
+with stabilizers and physical-symmetry ambiguity retained, followed by
+represented-theory presentation invariance and the existing
+admitted-idempotent classification fibered over reconstructed seams.
+
+The cycle must not supply a preferred PVM, confuse passive gauge with active
+symmetry, let inaccessible spectators create seams, or treat equal statistics
+as process equivalence.  Kraus and minimal instrument-preserving Naimark
+equivalence are explicitly scoped.  The strongest possible result is
+`RQ0-L0-ADDRESSABILITY-FIBRATION`; its meaning remains law-relative
+repeatable coarse-graining, not autonomous locality.  After the committed
+paper, freeze two independent operator/instrument and moduli/higher-geometry
+reviews, adjudicate jointly, and halt.  No actualization, overlap,
+localization, T1, C1 or later physics is authorized.
