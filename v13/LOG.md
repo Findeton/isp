@@ -3031,3 +3031,45 @@ is committed, two separate repo-read-only reviews—operator/process-theoretic
 and higher-categorical/derived-geometric—must be frozen and adjudicated.  No
 review-time repair, estimator, hidden score, implementation, `RQ0-T1`,
 `RQ0-C1` or later physics is authorized.
+
+## 2026-07-31 — WELD-STACK MATHEMATICAL-PHYSICS PAPER FROZEN
+## PROVISIONAL QUANTALOID-CHART RUNG; TWO REVIEWS REQUIRED (v13 LEDGER #66)
+The primary successor artifact is frozen at
+`paper-rq0-weld-stack-foundations.md`, SHA-256
+`30dcec41d9944780cf9289be16f7f7cbcccd4ddab5ff5a9cebdb3e603d493fda`
+(64,293 bytes; 1,952 lines).  No estimator, hidden fixture, score, scientific
+receipt or implementation is part of the delivery.
+
+The paper turns the prior fatal finding into a general theorem: every nonzero
+scalar in an exact representation of a finite-arrow category is a root of
+unity, and every nonzero represented endomorphism eigenvalue is semisimple
+and root-of-unity valued.  It replaces that language by a finitely presented,
+generally infinite, exact dagger-linear process sketch with a separately
+admitted channel grammar.  The full branch-memory write/preserve/erase/control
+experiment and closed amplitude `1/2` are represented exactly over
+`Q(sqrt(2))`.
+
+For every internal W3-positive diagram the paper derives a counterfactual
+observability algebra from admitted Heisenberg transports.  It proves
+minimality, monotonicity, presentation invariance, gauge covariance and
+support-label independence, then separates proper record relevance from
+independent addressability by requiring an admitted UCP split.  Exact
+counterfactual completions sharing one realized W3 experiment return
+record-relevant-not-addressable, addressable and global outcomes.
+
+The accessible operator supports form an involutive quantaloid.  A
+residual-valued distributor between canonical process-support probes and all
+internal W3 diagrams has a quantaloid-enriched Isbell completion; addressable
+principal fixed points exist, presentation gauge is quotiented, physical
+symmetry remains separate, and compatible projectors define a partial
+contravariant `Rec`.  A higher overlap cone is defined in the bicategory of
+finite C*-correspondences and represented for finite commutative central
+corners only.
+
+The provisional highest rung is
+`RQ0-L0-WELD-QUANTALOID-CHARTS`.  A general higher overlap, effective
+descent, analytic/derived Weld stack, locale, manifold, spatial locality and
+every later physics layer remain unearned.  The paper is
+`GREEN-UNREVIEWED`; the next authorized events are two separate
+repo-read-only reviews, frozen verbatim and jointly adjudicated without
+review-time repair.

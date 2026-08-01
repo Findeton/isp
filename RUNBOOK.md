@@ -736,3 +736,27 @@ unproved layers remain conjectural.  After the frozen paper, two independent
 repo-read-only mathematical reviews must be frozen and adjudicated, then halt.
 No implementation, T1, C1, topology, causality, geometry, fields or gravity
 is authorized.
+
+## 26. Current Weld-stack analytical delivery
+
+V13 ledger #66 freezes
+`v13/paper-rq0-weld-stack-foundations.md`, SHA-256
+`30dcec41d9944780cf9289be16f7f7cbcccd4ddab5ff5a9cebdb3e603d493fda`
+(64,293 bytes; 1,952 lines).  It proves the finite-arrow scalar/spectral
+obstruction, supplies a coherent finitely presented but generally infinite
+exact process sketch for the branch-memory W3 experiment, derives
+counterfactual observability, gates addressability by an admitted UCP split,
+constructs an involutive accessible-operator quantaloid and a typed
+residual-valued W3 Isbell completion, and retains presentation gauge
+separately from physical symmetry.
+
+The provisional highest rung is
+`RQ0-L0-WELD-QUANTALOID-CHARTS`.  General bicategorical overlap
+representability is not proved: only the finite commutative central-corner
+control is positive.  The paper explicitly withholds a genuine Weld stack,
+derived overlap, locale, manifold and every spatial or later-physics claim.
+It is GREEN-UNREVIEWED.  Dispatch the two authorized independent
+repo-read-only reviews—operator/process and higher-category/derived—freeze
+each verbatim in a separate commit, adjudicate both against the immutable
+paper, and halt.  No review-time repair, implementation, T1 or C1 is
+authorized.
