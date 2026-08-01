@@ -1128,3 +1128,18 @@ Status is `GREEN-UNREVIEWED`; the provisional highest rung is
 Morita scope. Freeze three independent hostile reports and adjudicate them
 jointly against the immutable pin and paper. No review-time repair,
 actualization, overlap, localization, T1, C1 or later physics is authorized.
+
+## 45. Current operational-Morita W3 hostile-review state
+
+V13 ledger #85 dispatches three independent repo-read-only reviews against
+immutable pin `35a4878` and paper `a1fa2c9`. The operator/Morita review attacks
+the Hilbert-module, CP transport, classical-action, spectator and
+addressability theorems. The CQM/instrument review attacks operational
+completeness, W3 dynamics, the exact singleton counterexample, instrument
+semantics and ontology. The stack/rigidification review attacks localization,
+2-categorical typing, ineffective isotropy, variance and the full
+Grothendieck fibration.
+
+Freeze each complete report verbatim in a separate commit, then adjudicate
+all three jointly without repairing the paper. No successor, overlap,
+localization, T1, C1 or later physics work is authorized during review.

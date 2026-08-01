@@ -3590,3 +3590,37 @@ Morita scope. The paper is immutable. Dispatch three independent
 operator/Morita, CQM/instrument and higher-stack/rigidification hostile
 reviews, freeze each report verbatim, then adjudicate jointly. No repair,
 actualization, overlap, localization, T1, C1 or later physics is authorized.
+
+## 2026-08-01 — THREE OPERATIONAL MORITA W3 HOSTILE REVIEWS DISPATCHED
+## IMMUTABLE PAPER; INDEPENDENT OPERATOR, INSTRUMENT AND STACK ATTACKS (v13 LEDGER #85)
+Three repo-read-only hostile reviews are dispatched against governing pin
+commit `35a4878` and immutable paper commit `a1fa2c9`.
+
+The operator-algebra/Morita task is frozen at
+`note-rq0-operational-morita-w3-operator-review-dispatch.md`, SHA-256
+`1b9279cead7aa329146f2e8af9ca26fd9d20a4b022f3bb23a0c455aacdf8c027`
+(4,461 bytes; 110 lines). It must rebuild
+the Hilbert-module endomorphism theorem, marked Morita typing, classical
+actions, universal block theorem, spectator equivalence, full Karoubi fiber
+and branch symmetry calculation.
+
+The categorical-quantum-mechanics/instrument task is frozen at
+`note-rq0-operational-morita-w3-instrument-review-dispatch.md`, SHA-256
+`85dea4ab0383d40b7babf239a7f3436bfefa99ea7fbec78059d37fb7cb7849a6`
+(4,304 bytes; 96 lines). It must attack
+complete source/effect/instrument semantics, the exact hostile singleton
+case, W3 dynamics, instrument versus POVM meaning, spectator controls and the
+nine-seam ontology.
+
+The higher-stack/rigidification task is frozen at
+`note-rq0-operational-morita-w3-stack-review-dispatch.md`, SHA-256
+`6cc1bf79173a8cd77dc330dea55f55112081e65d0085a5fc4c84fd0b324df511`
+(4,207 bytes; 97 lines). It must audit the
+localization order and bicategory types, ineffective-isotropy quotient,
+spectator kernel, pseudofunctor variance, full Grothendieck fibration and
+retained effective symmetry.
+
+Each reviewer may use `/private/tmp` only for scratch and may not edit the
+repository or repair the paper. Freeze every complete report verbatim in a
+separate commit, then adjudicate all three jointly. No successor mathematics
+is authorized during review.
