@@ -3846,3 +3846,31 @@ or global section was smuggled in. This is the first frozen report, not joint
 adjudication. Freeze the independent comb/process and
 categorical-operational reports separately before deciding the cycle. No
 review-time repair is authorized.
+
+## 2026-08-01 — OPERATIONAL W3 INSTRUMENT REVIEW FROZEN
+## TESTER-SEPARATED W3 SURVIVES; PHYSICAL DESCENT DOES NOT (v13 LEDGER #94)
+The complete independent categorical-operational/complete-instrument hostile
+report is frozen verbatim at
+`note-rq0-operational-w3-combs-instrument-hostile-review.md`, SHA-256
+`af044306d4e78d1765e1b3ad3bf47449be44219a2d5c400e72235022cd3faf46`
+(16,299 bytes; 270 lines).
+
+Its verdict is `HEADLINE-DOWNGRADE`, with first registered obstruction
+`RQ0-L0-BLOCKED-AT-TESTER-DESCENT`. It independently earns the comb-complete
+and tester-separated W3 rungs and reproduces every load-bearing exact number:
+the imaginary distance `0`, real distance `1/2`, Lüders/reprepare distance
+`2`, nine candidates, and coherence values `5/4` and `1`.
+
+The report finds that the ambient coordinate sheaf does not descend physical
+common-comb realizability or tester-conversion equations. It also finds
+bounded earlier-rung typing defects: general control insertion is a tester
+pullback, not an affine map of the old outcome distribution; fine and coarse
+Lüders instruments are not classical coarse-grainings of one another; output
+instruments must be wired explicitly into the tester law; and the printed
+comb tensor order is reversed in one normalization equation.
+
+The operational quotient, complete-instrument controls, one-chart firewall,
+actuality/co-reference separation, raw coordinate sheaf and chart-complete
+realized W3 locus survive at their narrower scopes. This is the second frozen
+report, not adjudication. Freeze the comb/process report before the joint
+decision. No paper repair is authorized.

@@ -1270,6 +1270,23 @@ pretopology, abstract coordinate gluing, singleton discipline and one-chart
 scope survive. Freeze both remaining reports before joint adjudication; do
 not repair the paper during review.
 
+## 54. Frozen operational W3 categorical-instrument review
+
+V13 ledger #94 freezes the categorical-operational/complete-instrument report
+verbatim at SHA-256
+`af044306d4e78d1765e1b3ad3bf47449be44219a2d5c400e72235022cd3faf46`
+(16,299 bytes; 270 lines). It independently earns comb-complete and
+tester-separated W3, reproduces the exact controls and nine-candidate
+classification, and selects `RQ0-L0-BLOCKED-AT-TESTER-DESCENT` for the third
+rung.
+
+The raw coordinate sheaf does not descend physical realizability or tester
+conversion coherence. Additional bounded typing defects concern quantum
+control insertion, fine/coarse Lüders disturbance, explicit output/tail
+wiring and comb tensor order. The one-chart and ontology firewalls pass.
+Freeze the remaining comb/process report before joint adjudication; do not
+repair the paper during review.
+
 ## 52. Operational W3 comb/tester reviews dispatched
 
 V13 ledger #92 dispatches three independent repo-read-only reviews against
