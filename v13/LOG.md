@@ -3000,3 +3000,34 @@ coherent process-presentation language that contains W3 amplitudes without
 planting support through selected cuts, projectors or map data.  This cycle is
 closed.  No successor, implementation, `RQ0-T1`, `RQ0-C1` or later physics is
 authorized.  **HALT FOR EXPLICIT USER AUTHORIZATION.**
+
+## 2026-07-31 — WELD-STACK ANALYTICAL SUCCESSOR PINNED
+## FINITELY PRESENTED PROCESS LAW; INTRINSIC OBSERVABILITY FIRST (v13 LEDGER #65)
+The user explicitly authorizes one bounded forward-only analytical RQ0-L0
+successor from immutable `1905c24`.  Its strict pin is
+`note-rq0-weld-stack-foundations-pin.md`.  Every artifact and rejection from
+#60--#64 remains immutable; this cycle does not reopen the withdrawn intrinsic-
+chart headline.
+
+The correction is `finite presentation != finite arrow category`.  The cycle
+must prove the general finite-arrow obstruction, define one coherent finitely
+presented but generally infinite dagger/operator process language, and
+represent the complete branch-memory W3 experiment before making any support
+claim.  It then derives counterfactual observability algebras, separates
+record relevance from physically admitted addressability, and gates the
+proposed Weld quantaloid, W3 Isbell concepts, gauge quotient, higher overlaps
+and classical-shadow criterion independently.
+
+The provisional Weld stack is not a result by naming.  The pin registers six
+rungs from representable W3 sketch through genuine Weld stack and requires
+claim downgrades whenever enrichment, stack descent or higher universal
+properties are only designs.  Relative tensor product is not to be called a
+pullback without a theorem.  Presentation gauge and physical symmetry remain
+distinct.
+
+The primary artifact is the self-contained paper `The Weld Stack: W3
+Observability, Quantaloid Supports, and Derived Quantum Overlaps`.  After it
+is committed, two separate repo-read-only reviews—operator/process-theoretic
+and higher-categorical/derived-geometric—must be frozen and adjudicated.  No
+review-time repair, estimator, hidden score, implementation, `RQ0-T1`,
+`RQ0-C1` or later physics is authorized.
