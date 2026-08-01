@@ -3149,6 +3149,34 @@ joint adjudication.  Both reports are now immutable; adjudicate them together
 against the unchanged paper and pin, then halt.  No repair, implementation,
 T1, C1 or later physics is authorized.
 
+## 2026-07-31 — FOUNDATIONS/INSTRUMENT RECORD-TRANSPORT REVIEW FROZEN
+## HEADLINE-DOWNGRADE; EFFECT RUNG EARNED, LATER HEADLINES WITHHELD (v13 LEDGER #74)
+The complete external quantum-foundations/process-instrument report is frozen
+verbatim at `note-rq0-w3-effect-transport-foundations-hostile-review.md`,
+SHA-256
+`86a58646c165a5d73777fae05c4bea88d2eaaa1d56cd8a5355376124d4da9fef`
+(18,708 bytes; 360 lines).  Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer independently reconstructs the W3 write/preserve/erase/no-write
+experiment, effect/POVM and instrument transport, record-defect chain laws,
+multiplicative-domain equivalence, operator system, Karoubi typing, terminal
+RQ0-A control and symmetry/no-selection example.  It earns
+`RQ0-L0-W3-EFFECT-TRANSPORT`.
+
+It withholds `RQ0-L0-SHARP-FACT-TRANSPORT` because the Boolean functor
+transports sharp propositions but no truth valuation, occurrence,
+co-reference bridge or token identity.  It also withholds the cumulative
+addressability headline: an admitted UCP idempotent has a defensible weak
+referent as repeatable coarse-graining but does not alone establish general
+independent preparation, readout and manipulation of a subsystem.  The
+underlying sharp-proposition, operator-system and idempotent theorems survive
+under narrower names.
+
+This is a frozen independent report, not the joint adjudication.  The paper
+remains immutable.  Freeze the operator/effectus report separately, then
+adjudicate both against the unchanged pin and paper.  No review-time repair,
+intrinsic localization, T1, C1 or later physics is authorized.
+
 ## 2026-07-31 — WELD-STACK HOSTILE REVIEWS ADJUDICATED
 ## HIGHEST SURVIVING RUNG: REPRESENTABLE W3 SKETCH; CYCLE CLOSED (v13 LEDGER #70)
 The joint adjudication is frozen at

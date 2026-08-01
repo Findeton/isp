@@ -904,3 +904,22 @@ edits or paper repair.  Freeze the reports verbatim in separate commits, then
 adjudicate jointly.  The paper remains immutable.  No quantaloid, Isbell,
 stack, overlap, intrinsic localization, T1, C1 or later physics work is
 authorized during review.
+
+## 34. Frozen foundations/instrument record-transport report
+
+V13 ledger #74 freezes the complete external foundations/process-instrument
+review verbatim at
+`v13/note-rq0-w3-effect-transport-foundations-hostile-review.md`, SHA-256
+`86a58646c165a5d73777fae05c4bea88d2eaaa1d56cd8a5355376124d4da9fef`
+(18,708 bytes; 360 lines).  Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer earns `RQ0-L0-W3-EFFECT-TRANSPORT`.  It retains the
+multiplicative-domain, sharp Boolean, operator-system and Karoubi theorems but
+withholds the “sharp fact” rung because no truth/occurrence datum is
+transported, and withholds the cumulative addressability rung because an
+idempotent certifies repeatable coarse-graining rather than full independent
+subsystem control.
+
+This is not adjudication.  The paper is immutable.  Freeze the independent
+operator/effectus report in its own commit, then adjudicate both reports
+jointly without repair.  T1, C1 and all later physics remain closed.
