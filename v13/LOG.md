@@ -3764,3 +3764,33 @@ The cumulative ceilings are `RQ0-L0-COMB-COMPLETE-W3`,
 paper, freeze three independent comb/process, categorical-operational and
 sheaf/stack reviews, adjudicate jointly, and halt. No Morita repair, overlap,
 localization, T1, C1 or later physics is authorized.
+
+## 2026-08-01 — OPERATIONAL W3 COMB/TESTER PAPER FROZEN
+## COMPLETE ONE-CHART PROCESS SEMANTICS; THREE PROVISIONAL RUNGS (v13 LEDGER #91)
+The self-contained analytical paper is frozen at
+`paper-rq0-operational-w3-combs.md`, SHA-256
+`c2c8a27df423b417bcc8e11b68288f7c7169fee0b0f4b8c18b5ca3f440f1b74a`
+(51,717 bytes; 1,672 lines). It represents the source, write, no-write,
+continuation, record and output CP branches as one typed flagged comb and
+takes the admitted complete-tester quotient before imposing W3.
+
+Preservation is zero tester distance after record dephasing; coherent
+recovery is positive tester distance. The exact imaginary-cross-term false
+eraser is rejected, a real tester-visible eraser has distance `1/2`, and the
+complete branch-memory law retains nine candidates with process-coherence
+values `5/4` for the six `2+1+1` cases and `1` for the three `2+2` cases.
+
+The paper proves that contextwise-valid seams are not a presheaf because the
+existential eraser witness can disappear on restriction. It instead builds a
+finite sheaf of tester-evaluation tables and a retained-symmetry stack, with
+W3 validity imposed only on physically realized sections over the terminal
+tester context of one finite operational chart. No tester or “global
+section” ranges over an atlas.
+
+The provisional cumulative headline is `RQ0-L0-W3-TEST-SHEAF`, including the
+two earlier rungs, at finite definite-order law-relative one-chart scope.
+This is `GREEN-UNREVIEWED`. Dispatch independent comb/process,
+categorical-operational and sheaf/stack hostile reviews against the immutable
+pin and paper before any adjudication. No actualization, co-reference,
+cross-chart locality, overlap, topology, causality, field or gravity claim is
+made.

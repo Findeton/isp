@@ -1230,3 +1230,27 @@ or a precise block. The three cumulative ceilings are comb-complete W3,
 tester-separated W3 and a W3 test sheaf. After an immutable paper, freeze and
 jointly adjudicate three independent reviews, then halt. Morita repair,
 overlap, localization, T1, C1 and all later physics remain prohibited.
+
+## 51. Frozen operational W3 comb/tester paper
+
+V13 ledger #91 freezes the analytical paper at SHA-256
+`c2c8a27df423b417bcc8e11b68288f7c7169fee0b0f4b8c18b5ca3f440f1b74a`
+(51,717 bytes; 1,672 lines). It constructs one typed flagged-comb package
+with complete source, continuation and output CP branches and defines W3 only
+after the admitted complete-tester quotient.
+
+The paper replaces algebraic cross-term erasure by positive closed-experiment
+probability contrast. It rejects the exact imaginary false eraser, accepts an
+exact real contrast, distinguishes equal-POVM/different-disturbance
+instruments, and classifies all nine branch-memory candidates by process
+coherence. It also proves the variance failure of a naive valid-seam
+presheaf and constructs a tester-evaluation sheaf plus chart-complete W3
+locus.
+
+“Complete” and “global section” are strictly internal to one finite
+operational chart and its tester site. They do not provide an atlas-wide
+tester, global event set or cross-chart locality. The provisional outcome is
+`RQ0-L0-W3-TEST-SHEAF`, cumulative through comb-complete and
+tester-separated W3, with status `GREEN-UNREVIEWED`. The next authorized
+event is three independent read-only hostile reviews; no paper repair or
+later physics work may begin during review.
