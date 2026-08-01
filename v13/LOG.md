@@ -2937,3 +2937,34 @@ closure mathematics from physical localization and may work only in `/tmp`.
 No repository edit or review-time repair is authorized.  The complete report
 must be frozen verbatim and adjudicated separately.  `RQ0-T1`, `RQ0-C1` and
 all later physics remain closed.
+
+## 2026-07-31 — ANALYTICAL FOUNDATIONS HOSTILE REPORT FROZEN VERBATIM
+## VERDICT `REJECT`; FINDINGS AWAIT SEPARATE ADJUDICATION (v13 LEDGER #63)
+The complete external mathematical report against immutable analytical commit
+`c952e0b` under pin `ef69ddb` is frozen byte-for-byte at
+`note-rq0-operational-supports-foundations-hostile-review.md`, SHA-256
+`05c430efd30a326028a20f6c8d70b0cdb50d3795844a0c0d0a44acf6227a611a`
+(26,749 bytes; 213 lines).  It records verdict `REJECT`.
+
+The report's fatal findings are mathematical rather than executable.  The
+declared finite-category language cannot contain the note's own nontrivial W3
+seed: a finite endomorphism monoid has eventually repeating powers, whereas
+the seed produces a closed scalar amplitude `1/2` with nonrepeating powers.
+The direct-sum completion pair is not constructed as two full instruments in
+that language.  Major findings reduce the envelope theorem to a conditional
+fixed-diagram closure result, the purported physical pullback to a meet in a
+fixed-ambient subobject poset, `Rec` to conditional reducing compression, and
+the groupoid claim to an elementary no-selector lemma without a proved
+gauge/physical-symmetry identification.
+
+The report preserves narrow results: the forgetful-fibre support-label
+non-identifiability lemma and its public `Q8` application; terminal RQ0-A at
+its declared-map antecedent scope; fixed-diagram closure in a separately
+valid closure system; the `M_2(C)` no-retraction example; fixed-ambient meets;
+reducing projector compression; and automorphism no-selection.  These are
+frozen reviewer findings, not yet adjudicated programme facts.
+
+No analytical note, definition, theorem or control is repaired in this
+commit.  The provisional `RQ0-L0-INTRINSIC-CHART-GROUPOID` headline remains
+unaccepted pending separate adjudication.  `RQ0-T1`, `RQ0-C1` and every later
+physics unit remain closed.
