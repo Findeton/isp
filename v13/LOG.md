@@ -3177,6 +3177,35 @@ remains immutable.  Freeze the operator/effectus report separately, then
 adjudicate both against the unchanged pin and paper.  No review-time repair,
 intrinsic localization, T1, C1 or later physics is authorized.
 
+## 2026-07-31 — OPERATOR/EFFECTUS RECORD-TRANSPORT REVIEW FROZEN
+## ACCEPT-WITH-FIXES; ALL THREE MATHEMATICAL RUNGS RETAINED (v13 LEDGER #75)
+The complete external operator-algebra/effectus report is frozen verbatim at
+`note-rq0-w3-effect-transport-operator-hostile-review.md`, SHA-256
+`72d749d673285429753ba575ae964930052474e3174053ab07dca0775a0ed275`
+(24,545 bytes; 675 lines).  Its verdict is `ACCEPT-WITH-FIXES`.
+
+The reviewer independently validates total effect/POVM transport, supplied
+instrument precomposition, positivity and exact chain laws, the five-way
+multiplicative-domain theorem, the sharp-record category and Boolean functor,
+operator-system minimality, branch-memory calculations, Karoubi typing,
+Choi--Effros scope and every finite addressability control.  An independent
+normal-form completion proves that no omitted finite word in the symmetry
+grammar yields another idempotent, so the two-minimum action groupoid remains
+correct.
+
+Three nonfatal fixes are identified: the printed symmetry proof omits the
+trailing-automorphism normal form although its conclusion is right; some
+instrument/temporal prose is broader than the exact Heisenberg/full-matrix
+scope; and reference 9 has incorrect author initials.  The reviewer earns all
+three registered mathematical rungs subject to those fixes and retains every
+intrinsic-localization and later-physics nonclaim.
+
+This is the second frozen report, not a paper repair.  The reports disagree on
+the registered physical nouns “fact” and “addressable,” so adjudicate them
+jointly against the immutable pin and paper.  No review-time repair,
+quantaloid/Isbell/stack work, overlap, intrinsic localization, T1, C1 or later
+physics is authorized.
+
 ## 2026-07-31 — WELD-STACK HOSTILE REVIEWS ADJUDICATED
 ## HIGHEST SURVIVING RUNG: REPRESENTABLE W3 SKETCH; CYCLE CLOSED (v13 LEDGER #70)
 The joint adjudication is frozen at

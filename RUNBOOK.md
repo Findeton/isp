@@ -923,3 +923,25 @@ subsystem control.
 This is not adjudication.  The paper is immutable.  Freeze the independent
 operator/effectus report in its own commit, then adjudicate both reports
 jointly without repair.  T1, C1 and all later physics remain closed.
+
+## 35. Frozen operator/effectus record-transport report
+
+V13 ledger #75 freezes the complete external operator/effectus review
+verbatim at
+`v13/note-rq0-w3-effect-transport-operator-hostile-review.md`, SHA-256
+`72d749d673285429753ba575ae964930052474e3174053ab07dca0775a0ed275`
+(24,545 bytes; 675 lines).  Its verdict is `ACCEPT-WITH-FIXES`.
+
+The reviewer independently earns all three mathematical rungs.  It finds no
+counterexample to effect transport, the defect laws, multiplicative-domain
+equivalence, sharp Boolean category, operator-system theorem, Karoubi typing
+or finite idempotent controls.  The report supplies the missing odd-symmetry
+word calculation and confirms that only the two declared proper symmetry-
+related minima occur.
+
+Required fixes are nonfatal proof/prose/bibliography findings: complete that
+normal form, retain exact Heisenberg/full-matrix scope, and correct reference
+9 initials.  Do not repair the immutable paper.  Adjudicate this report
+jointly with ledger #74, especially their disagreement over “fact” and strong
+“addressability” terminology.  T1, C1 and every later physics layer remain
+closed.
