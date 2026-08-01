@@ -3464,3 +3464,30 @@ The previous terminal `RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` result remains
 unchanged. This is the first frozen report, not adjudication. Freeze the
 operator/instrument report separately, then adjudicate both jointly without
 repairing the paper or beginning successor work.
+
+## 2026-08-01 — OPERATOR/INSTRUMENT SEAM-STACK REVIEW FROZEN
+## HEADLINE-DOWNGRADE; POSTSELECTED PACKETS DEFEAT GENERAL SEAM RUNG (v13 LEDGER #81)
+The complete independent operator-algebra/quantum-instrument report is frozen
+verbatim at `note-rq0-w3-seam-stack-operator-hostile-review.md`, SHA-256
+`de257b8d8fffbbe5348aa82bdb786d0fa36e7e729a0bf42ee969c000fe97dea5`
+(19,921 bytes; 525 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer independently reproduces the W3 equations, complete nine-seam
+branch-memory classification, Kraus and minimal instrument-dilation scopes,
+effect/sharp-proposition inheritance, minimal-idempotent theorem, and the
+two-dephasing composition-monoid calculation.
+
+It finds four load-bearing failures: arbitrary incomplete probe/preparation
+subfamilies can manufacture packet-relative preserving seams; the
+inaccessible-spectator theorem is ill-typed and also changes retained
+ineffective stabilizers; the contextual operational quotient is not the
+displayed moduli object; and noninvertible admitted Karoubi maps are omitted
+from the preregistered complete fiber. The public Q8 control is also not
+self-contained in the paper.
+
+No new cumulative rung is accepted. The strongest new result is the
+physically-complete fixed-packet semialgebraic candidate locus and exact
+nine-seam theorem. The previous terminal
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` result remains intact. Jointly
+adjudicate this report with ledger #80 against the immutable pin and paper,
+then halt without repair or successor work.

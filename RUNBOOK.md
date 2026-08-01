@@ -1043,3 +1043,23 @@ under-specified and complete Karoubi fibers were reduced to invertible cores.
 This is not the joint adjudication. Freeze the independent operator/instrument
 report next, then adjudicate both against the immutable pin and paper. No
 review-time repair or successor physics is authorized.
+
+## 41. Frozen operator/instrument seam-stack report
+
+V13 ledger #81 freezes the complete operator/instrument hostile review
+verbatim at
+`v13/note-rq0-w3-seam-stack-operator-hostile-review.md`, SHA-256
+`de257b8d8fffbbe5348aa82bdb786d0fa36e7e729a0bf42ee969c000fe97dea5`
+(19,921 bytes; 525 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+The fixed complete branch-memory packet still has exactly nine atomic seams,
+and the paper's fixed-packet operator calculations survive. The general rung
+does not: incomplete probe/preparation subfamilies allow postselected false
+preservation; spectator extension is ill-typed and changes retained isotropy;
+the operational quotient is not implemented; and the fiber omits admitted
+noninvertible Karoubi arrows.
+
+Both hostile reports are now frozen. Adjudicate them jointly against the
+unchanged pin and paper, retain only the highest preregistered rung that
+survives, and halt. No repair, overlap, localization, T1, C1 or later physics
+work is authorized.
