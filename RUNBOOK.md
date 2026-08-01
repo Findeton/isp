@@ -794,3 +794,24 @@ not.  This entry records the hostile result only; do not repair the immutable
 paper.  Freeze the independent operator/process report in its own commit,
 then adjudicate both reports and halt.  T1/C1 and every later physics layer
 remain closed.
+
+## 29. Frozen operator/process Weld-stack hostile report
+
+V13 ledger #69 freezes the complete operator-algebra/categorical-process
+review against `f57eb45` verbatim, SHA-256
+`f108c87937fa88ee929df0e4200f2b6281450f4976e705f8a44b20b7b11e5ba1`
+(26,039 bytes; 508 lines).  Its verdict is `REJECT`.
+
+The review independently secures the finite-arrow obstruction, exact W3
+representation, law-relative Heisenberg observability theorem and abstract
+all-subspace quantaloid.  A concrete UCP channel maps sharp record projectors
+to commuting non-projective effects, and relevant projector families need
+not lie in their Isbell concept intersection, so Boolean `Rec` is undefined
+at the declared chart scope.  The admitted split is not typed in the declared
+physical channel category, least admitted-support semantics is not proved,
+and selected cuts/projectors do not pass the binding no-smuggling gate.
+
+This is the second frozen review, not a repair.  Adjudicate it jointly with
+ledger #68 against the immutable paper and pin, record the highest surviving
+pre-registered rung, and halt.  T1/C1 and every later physics layer remain
+closed.

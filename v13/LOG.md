@@ -3124,3 +3124,27 @@ This is a frozen review, not an adjudication.  The paper remains immutable;
 the independent operator/process report must next be frozen separately, then
 both reports adjudicated together.  No repair, implementation, T1, C1 or
 later physics is authorized.
+
+## 2026-07-31 — OPERATOR/PROCESS WELD-STACK HOSTILE REPORT FROZEN
+## REJECT; BOOLEAN REC AND ADDRESSABILITY TYPING FAIL (v13 LEDGER #69)
+The complete external operator-algebra/categorical-process report is frozen
+verbatim at `note-rq0-weld-stack-operator-hostile-review.md`, SHA-256
+`f108c87937fa88ee929df0e4200f2b6281450f4976e705f8a44b20b7b11e5ba1`
+(26,039 bytes; 508 lines).  Its verdict is `REJECT`.
+
+The review independently retains the finite-arrow obstruction, exact W3
+sketch and arithmetic, the law-relative Heisenberg observability theorem,
+the group-average/partial-trace controls, and the abstract all-subspace
+involutive quantaloid.  It gives an explicit UCP counterexample in which
+transported record projectors become commuting non-idempotent effects, and a
+separate concept-intersection counterexample; therefore the displayed Boolean
+projector interface and partial `Rec` are undefined at the paper's scope.  It
+also finds the addressability split outside the declared physical channel
+category, the quantaloid larger than least admitted-support closure, and the
+selected-cut/projector no-smuggling control incomplete.
+
+The operator reviewer retains `RQ0-L0-W3-OBSERVABILITY-SUPPORT` only in an
+expressly law-relative sense.  This remains a frozen review position, not the
+joint adjudication.  Both reports are now immutable; adjudicate them together
+against the unchanged paper and pin, then halt.  No repair, implementation,
+T1, C1 or later physics is authorized.
