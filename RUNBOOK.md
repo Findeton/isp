@@ -669,3 +669,17 @@ estimator, hidden fixture, large harness, score or scientific receipt is
 authorized.  After one external mathematical hostile review is frozen and
 adjudicated, halt for explicit authorization.  T1/C1 and all later physics
 remain closed.
+
+## 21. Current analytical foundations delivery
+
+V13 ledger #61 freezes the self-contained analytical note
+`note-rq0-operational-supports-foundations.md`, SHA-256
+`61c8066dff17cde9879b857cd7fff09e56024a340437e86c37f39dc21c7e8432`
+(52,929 bytes; 956 lines).  It proves support-smuggling,
+internal-W3-envelope existence/naturality, automorphism no-selection, a
+fixed-ambient pullback theorem, conditional projector-derived `Rec`, and an
+exact counterfactual-completion obstruction.  Its provisional highest result
+is `RQ0-L0-INTRINSIC-CHART-GROUPOID` at finite exact operational-envelope
+scope.  It is GREEN-UNREVIEWED; no generic process cover or spatial claim is
+earned.  Dispatch one fresh external mathematical hostile review, freeze it
+verbatim, adjudicate separately, then halt.  T1/C1 remain closed.

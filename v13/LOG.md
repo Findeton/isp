@@ -2877,3 +2877,42 @@ After the note is committed, one fresh external mathematical hostile review
 must be dispatched, frozen verbatim and adjudicated separately.  The cycle
 then halts for explicit authorization.  `RQ0-T1`, `RQ0-C1`, topology,
 influence, causality, geometry, spacetime, fields and gravity remain closed.
+
+## 2026-07-31 — ANALYTICAL RQ0-L0 FOUNDATIONS NOTE FROZEN
+## PROVISIONAL INTRINSIC-CHART GROUPOID; EXTERNAL REVIEW REQUIRED (v13 LEDGER #61)
+The primary analytical artifact is frozen at
+`note-rq0-operational-supports-foundations.md`, SHA-256
+`61c8066dff17cde9879b857cd7fff09e56024a340437e86c37f39dc21c7e8432`
+(52,929 bytes; 956 lines).  No estimator, hidden fixture, score, receipt or
+new scientific harness is part of the delivery.
+
+The note proves a finite support-smuggling theorem: a localization rule that
+varies with an independently supplied W3 support label cannot factor through
+the underlying amplitude instrument and W3 diagram.  It then defines the
+entire W3 experiment internally, tests the complete admitted preparation,
+probe and continuation scope at the selected typed boundaries, and proves
+that each fixed internal diagram has a unique minimal closed operational
+envelope.  That envelope is natural under strong presentation isomorphism
+and covariant under the composition-compatible gauge.
+
+Because different internal diagrams can generate incomparable envelopes and
+automorphisms can exchange them, the general object is a pointed chart action
+groupoid.  A transitive nontrivial automorphism action has no natural member
+selection.  Physical overlap is defined only as a categorical pullback of
+strong instrument embeddings; `Rec` is derived afterward, on the
+record-compatible chart category, from the exact W3 projector pullback.
+
+An exact direct-sum construction gives two counterfactual completions with
+the same realized amplitudes and record laws but different proper chart
+structures.  Thus localization is nomological at this finite scope and is
+not a function of realized history alone.  The note analyzes by hand the
+public `Q8` support-smuggling negative, terminal RQ0-A declared-region
+positive, a heterogeneous tensor control, a symmetry groupoid and a fully
+synchronized no-proper-chart control.
+
+The provisional highest result is
+`RQ0-L0-INTRINSIC-CHART-GROUPOID` at finite exact operational-envelope scope.
+It is **GREEN-UNREVIEWED**.  Generic pullback-closed record-bearing cover,
+spatial locality and every later unit remain unearned.  The next event is a
+fresh external mathematical hostile review against this immutable note.
+`RQ0-T1` and `RQ0-C1` remain closed.
