@@ -3651,3 +3651,27 @@ This is the first frozen report, not joint adjudication. Freeze the independent
 operator/Morita and CQM/instrument reports separately, then adjudicate all
 three against the unchanged pin and paper. No review-time repair or successor
 work is authorized.
+
+## 2026-08-01 — OPERATIONAL MORITA OPERATOR-ALGEBRA REVIEW FROZEN
+## HEADLINE-DOWNGRADE; COMPLETE-INSTRUMENT W3 SURVIVES (v13 LEDGER #87)
+The complete independent operator-algebra/Morita report is frozen verbatim at
+`note-rq0-operational-morita-w3-operator-hostile-review.md`, SHA-256
+`1bce44ba2498ea5ba7e877ca2dbe9e867ae21e735431de0b6291022ab3c4aa35`
+(28,935 bytes; 805 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer independently earns `RQ0-L0-COMPLETE-INSTRUMENT-W3` and a
+narrower unregistered pairwise transport theorem through explicitly supplied
+endomorphism *-isomorphisms. It withholds all registered Morita, effective
+stack and full-addressability rungs because the marked operational
+localization and W3 pseudofunctor are not constructed, strict identity is
+conflated with natural equivalence in the spectator kernel, and the general
+record-interface morphism condition is undefined.
+
+The report also supplies exact counterchecks: the displayed unsigned `S4`
+lift fails for sixteen of twenty-four permutations; the physical-spectator
+proposition uses an impossible surjectivity hypothesis; and one preservation
+wording is false although the intended complete-instrument distinction
+survives. This is the second frozen report, not joint adjudication. Freeze the
+CQM/instrument report separately, then adjudicate all three against the
+unchanged pin and paper. No review-time repair or successor work is
+authorized.

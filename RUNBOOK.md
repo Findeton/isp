@@ -1160,3 +1160,18 @@ naturally trivial isotropy is conflated, the raw fiber action and
 compatibility predicate are missing, and one displayed `S4` lift is false.
 This is not adjudication. Freeze the other two reports before any joint
 decision or successor.
+
+## 47. Frozen operational-Morita operator-algebra report
+
+V13 ledger #87 freezes the complete independent operator-algebra/Morita
+review verbatim at SHA-256
+`1bce44ba2498ea5ba7e877ca2dbe9e867ae21e735431de0b6291022ab3c4aa35`
+(28,935 bytes; 805 lines). Its verdict is `HEADLINE-DOWNGRADE`.
+
+It independently earns the complete-instrument W3 rung and a narrower
+pairwise transport theorem, while withholding every registered later rung.
+The marked operational bicategory and W3 pseudofunctor are not constructed;
+the spectator kernel confuses strict and natural triviality; the general
+record-compatible addressability arrows are undefined; and the displayed
+unsigned `S4` lift is false. This is not adjudication. Freeze the remaining
+CQM/instrument report before any joint decision or successor.
