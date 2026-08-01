@@ -2916,3 +2916,24 @@ It is **GREEN-UNREVIEWED**.  Generic pullback-closed record-bearing cover,
 spatial locality and every later unit remain unearned.  The next event is a
 fresh external mathematical hostile review against this immutable note.
 `RQ0-T1` and `RQ0-C1` remain closed.
+
+## 2026-07-31 — ANALYTICAL FOUNDATIONS MATHEMATICAL HOSTILE REVIEW DISPATCHED
+## AGAINST IMMUTABLE COMMIT `c952e0b` (v13 LEDGER #62)
+The required external repo-read-only mathematical reviewer is now running as
+task `/root/rq0_analytical_hostile`.  Its exact scope is frozen at
+`note-rq0-operational-supports-foundations-hostile-dispatch.md`, SHA-256
+`557ae68da3841912a782f9e577726efc5c34e91d4346043242e6ed876864e617`
+(7,342 bytes; 152 lines).  The target is the analytical note committed at
+`c952e0b` under pin `ef69ddb`.
+
+The review must independently attack the finite amplitude-instrument
+language, support-smuggling theorem, internal W3 typing, envelope
+existence/naturality, competing chart notions, categorical pullbacks,
+projector-derived `Rec`, automorphism no-selection, the direct-sum
+counterfactual-completion theorem, all five hand controls, the four gates and
+the provisional chart-groupoid headline.  It must distinguish formal
+closure mathematics from physical localization and may work only in `/tmp`.
+
+No repository edit or review-time repair is authorized.  The complete report
+must be frozen verbatim and adjudicated separately.  `RQ0-T1`, `RQ0-C1` and
+all later physics remain closed.

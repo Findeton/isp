@@ -683,3 +683,12 @@ is `RQ0-L0-INTRINSIC-CHART-GROUPOID` at finite exact operational-envelope
 scope.  It is GREEN-UNREVIEWED; no generic process cover or spatial claim is
 earned.  Dispatch one fresh external mathematical hostile review, freeze it
 verbatim, adjudicate separately, then halt.  T1/C1 remain closed.
+
+## 22. Current analytical hostile-review state
+
+V13 ledger #62 dispatches `/root/rq0_analytical_hostile` against immutable
+analytical commit `c952e0b` under pin `ef69ddb`.  The reviewer is repo-read-
+only and must independently attack every definition, proof, counterexample,
+control and physical interpretation named in the frozen dispatch.  Freeze the
+complete report verbatim, adjudicate separately without repairing the note,
+then halt for explicit authorization.  T1/C1 remain closed.
