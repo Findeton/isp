@@ -3200,3 +3200,42 @@ quotient-stack and generic-overlap repair are prohibited.  After the paper,
 two independent repo-read-only operator/effectus and process/instrument
 reviews must be frozen separately and jointly adjudicated, then halt.
 RQ0-T1, RQ0-C1 and every later physics layer remain closed.
+
+## 2026-07-31 — SHARP-FACT / UNSHARP-EVIDENCE PAPER FROZEN
+## THREE LAW-RELATIVE TRANSPORT RUNGS PROVISIONALLY EARNED (v13 LEDGER #72)
+The self-contained mathematical-physics paper is frozen at
+`paper-rq0-sharp-facts-unsharp-evidence.md`, SHA-256
+`6de7743ba614074ca51c68564bd441b870c8210e6f30d49daf3fc297c2970da5`
+(58,386 bytes; 1,918 lines).  It contains no estimator, hidden fixture,
+scientific score or implementation receipt.
+
+Every admitted finite-dimensional UCP Heisenberg map now transports a W3
+record PVM to a typed POVM; when outcome branches are supplied, the full
+instrument is retained above that effect shadow.  The paper defines the
+record multiplicativity and sharpness defects, proves positivity and their
+exact chain law, and separates them from the Born composition defect.  On a
+finite record algebra it proves the equivalence among multiplicative-domain
+membership, homomorphic transport, sharp transported atoms and zero record
+defect.  This yields a total effect interface and a partial Boolean interface
+whose identities and composites are exact.
+
+The first record-observability object is the minimal generated operator
+system, kept distinct from its C*-closure.  Addressability is typed in the
+Karoubi completion of the physically admitted UCP channel category: an
+abstract but unadmitted expectation cannot certify access.  The exact
+branch-memory W3 seed has a proper candidate when its joint-spectral
+conditional expectation is admitted, while separate controls return a unique
+proper candidate, symmetry-related groupoid and identity-only/global result.
+Because identity always fixes every operator system, the pin's literal
+no-containing-idempotent branch is proved impossible and replaced by the
+honest no-proper/identity-only classification.
+
+The provisional highest cumulative rung is
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM`, above
+`RQ0-L0-W3-EFFECT-TRANSPORT` and `RQ0-L0-SHARP-FACT-TRANSPORT`.  All remain
+`GREEN-UNREVIEWED`.  Selected boundaries, projectors, instruments and
+transport grammars remain law inputs, so no intrinsic chart, localization,
+overlap, topology, causality, spacetime, field or gravity claim is made.  The
+next authorized event is dispatch of the two independent repo-read-only
+reviews required by pin #71, followed by separate verbatim freezes and joint
+adjudication without review-time repair.

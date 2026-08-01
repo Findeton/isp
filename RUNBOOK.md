@@ -857,3 +857,31 @@ cuts, projectors and transport grammars remains open, so no intrinsic
 localization follows.  Quantaloid/Isbell/stack/overlap repair, T1, C1 and all
 later physics are prohibited.  After the immutable paper, freeze two
 independent mathematical hostile reports, adjudicate jointly, and halt.
+
+## 32. Current sharp-fact / unsharp-evidence analytical delivery
+
+V13 ledger #72 freezes
+`v13/paper-rq0-sharp-facts-unsharp-evidence.md`, SHA-256
+`6de7743ba614074ca51c68564bd441b870c8210e6f30d49daf3fc297c2970da5`
+(58,386 bytes; 1,918 lines).  The paper replaces the failed universal Boolean
+record interface with total UCP effect/POVM transport and a partial
+multiplicative-domain Boolean interface.  It proves the positive record
+sharpness defect, exact composition chain law, finite-record multiplicative-
+domain equivalence, typed sharp-record category and instrument-to-effect
+shadow.
+
+The law-relative observability object is an operator system.  A physical
+addressability certificate must be an admitted UCP idempotent in the Karoubi
+completion of the already fixed channel category; abstract expectations do
+not count.  Exact noisy, sharp, branch-memory, RQ0-A, spectator, symmetry and
+identity-only controls are included.  The provisional highest rung is
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM`, with the two earlier transport rungs
+also provisional.  The paper is immutable and `GREEN-UNREVIEWED`.
+
+Dispatch the operator-algebra/effectus and quantum-foundations/process-
+instrument reviews independently.  Each reviewer is repo-read-only and may
+use `/private/tmp` only for scratch.  Freeze each complete report verbatim in
+a separate commit, then adjudicate them jointly against pin #71 and the
+unchanged paper.  Do not repair during review.  Quantaloid/Isbell/stack work,
+generic overlap, intrinsic localization, T1, C1 and every later physics layer
+remain prohibited.
