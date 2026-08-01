@@ -3239,3 +3239,30 @@ overlap, topology, causality, spacetime, field or gravity claim is made.  The
 next authorized event is dispatch of the two independent repo-read-only
 reviews required by pin #71, followed by separate verbatim freezes and joint
 adjudication without review-time repair.
+
+## 2026-07-31 — TWO W3 RECORD-TRANSPORT REVIEWS DISPATCHED
+## OPERATOR/EFFECTUS AND FOUNDATIONS/INSTRUMENT ROUNDS INDEPENDENT (v13 LEDGER #73)
+Two external repo-read-only reviewers are dispatched independently against
+immutable paper commit `a57bed6` and governing pin `e994807`.
+
+The operator-algebra/effectus scope is frozen at
+`note-rq0-w3-effect-transport-operator-review-dispatch.md`, SHA-256
+`837263c0d3453c72b0c94e6cf07cdebef110eac30dde3bd36c80b10102eddfe6`
+(5,833 bytes; 184 lines).  It must independently rebuild effect and POVM
+typing, instruments, defect positivity and chain laws, the full
+multiplicative-domain equivalence, the sharp Boolean category, operator-system
+minimality, Karoubi typing, Choi--Effros scope and every idempotent control.
+
+The quantum-foundations/process-instrument scope is frozen at
+`note-rq0-w3-effect-transport-foundations-review-dispatch.md`, SHA-256
+`2b4d9dea6a1a864f5ea66e7c00df3418c3741c6003f4d491014b275bcec6d1f3`
+(5,748 bytes; 174 lines).  It must independently audit native W3 semantics,
+instrument versus POVM, evidence versus fact/co-reference, counterfactual-law
+dependence, admitted-idempotent referents, RQ0-A inheritance, no-smuggling and
+the three-rung outcome ladder.
+
+Both reviewers may use `/private/tmp` only for scratch and may not edit or
+repair the paper.  Freeze each complete report verbatim in a separate commit,
+then adjudicate both jointly against the unchanged pin and paper.  No review-
+time repair, quantaloid/Isbell/stack work, overlap, intrinsic localization,
+T1, C1 or later physics is authorized.

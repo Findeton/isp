@@ -885,3 +885,22 @@ a separate commit, then adjudicate them jointly against pin #71 and the
 unchanged paper.  Do not repair during review.  Quantaloid/Isbell/stack work,
 generic overlap, intrinsic localization, T1, C1 and every later physics layer
 remain prohibited.
+
+## 33. Current W3 record-transport hostile-review state
+
+V13 ledger #73 dispatches two independent repo-read-only reviews against
+immutable paper commit `a57bed6` and pin `e994807`.
+
+The operator/effectus task follows
+`v13/note-rq0-w3-effect-transport-operator-review-dispatch.md`, SHA-256
+`837263c0d3453c72b0c94e6cf07cdebef110eac30dde3bd36c80b10102eddfe6`
+(5,833 bytes; 184 lines).  The foundations/instrument task follows
+`v13/note-rq0-w3-effect-transport-foundations-review-dispatch.md`, SHA-256
+`2b4d9dea6a1a864f5ea66e7c00df3418c3741c6003f4d491014b275bcec6d1f3`
+(5,748 bytes; 174 lines).
+
+Each reviewer must return a complete independent report without repository
+edits or paper repair.  Freeze the reports verbatim in separate commits, then
+adjudicate jointly.  The paper remains immutable.  No quantaloid, Isbell,
+stack, overlap, intrinsic localization, T1, C1 or later physics work is
+authorized during review.
