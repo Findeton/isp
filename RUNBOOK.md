@@ -945,3 +945,24 @@ normal form, retain exact Heisenberg/full-matrix scope, and correct reference
 jointly with ledger #74, especially their disagreement over “fact” and strong
 “addressability” terminology.  T1, C1 and every later physics layer remain
 closed.
+
+## 36. W3 record-transport adjudication and closure
+
+V13 ledger #76 freezes the joint adjudication at
+`v13/note-rq0-w3-effect-transport-hostile-adjudication.md`, SHA-256
+`c61f2a3aeb5a05da903277d26444c903919a7363aa555349fe4809b7b3fd0b0b`
+(16,359 bytes; 470 lines).  The cycle closes with
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` as the highest registered result at
+finite-dimensional, law-relative scope; the effect-transport and sharp-
+proposition transport rungs also survive.
+
+Binding meanings: effect transport is admitted Heisenberg predicate pullback;
+the registered “sharp fact” object is a Boolean record proposition with no
+derived truth, occurrence or co-reference; and addressability is an admitted
+UCP-idempotent coarse-graining, not autonomous subsystem control or spatial
+locality.  The operator report supplies the missing symmetry-word proof, while
+the immutable paper's scope and bibliographic defects remain recorded.
+
+No intrinsic chart, generic overlap, localization, T1, C1 or later physics is
+earned or authorized.  Preserve the complete #71--#76 cycle unchanged, halt,
+and require explicit user authorization before any successor.

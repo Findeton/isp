@@ -3149,63 +3149,6 @@ joint adjudication.  Both reports are now immutable; adjudicate them together
 against the unchanged paper and pin, then halt.  No repair, implementation,
 T1, C1 or later physics is authorized.
 
-## 2026-07-31 — FOUNDATIONS/INSTRUMENT RECORD-TRANSPORT REVIEW FROZEN
-## HEADLINE-DOWNGRADE; EFFECT RUNG EARNED, LATER HEADLINES WITHHELD (v13 LEDGER #74)
-The complete external quantum-foundations/process-instrument report is frozen
-verbatim at `note-rq0-w3-effect-transport-foundations-hostile-review.md`,
-SHA-256
-`86a58646c165a5d73777fae05c4bea88d2eaaa1d56cd8a5355376124d4da9fef`
-(18,708 bytes; 360 lines).  Its verdict is `HEADLINE-DOWNGRADE`.
-
-The reviewer independently reconstructs the W3 write/preserve/erase/no-write
-experiment, effect/POVM and instrument transport, record-defect chain laws,
-multiplicative-domain equivalence, operator system, Karoubi typing, terminal
-RQ0-A control and symmetry/no-selection example.  It earns
-`RQ0-L0-W3-EFFECT-TRANSPORT`.
-
-It withholds `RQ0-L0-SHARP-FACT-TRANSPORT` because the Boolean functor
-transports sharp propositions but no truth valuation, occurrence,
-co-reference bridge or token identity.  It also withholds the cumulative
-addressability headline: an admitted UCP idempotent has a defensible weak
-referent as repeatable coarse-graining but does not alone establish general
-independent preparation, readout and manipulation of a subsystem.  The
-underlying sharp-proposition, operator-system and idempotent theorems survive
-under narrower names.
-
-This is a frozen independent report, not the joint adjudication.  The paper
-remains immutable.  Freeze the operator/effectus report separately, then
-adjudicate both against the unchanged pin and paper.  No review-time repair,
-intrinsic localization, T1, C1 or later physics is authorized.
-
-## 2026-07-31 — OPERATOR/EFFECTUS RECORD-TRANSPORT REVIEW FROZEN
-## ACCEPT-WITH-FIXES; ALL THREE MATHEMATICAL RUNGS RETAINED (v13 LEDGER #75)
-The complete external operator-algebra/effectus report is frozen verbatim at
-`note-rq0-w3-effect-transport-operator-hostile-review.md`, SHA-256
-`72d749d673285429753ba575ae964930052474e3174053ab07dca0775a0ed275`
-(24,545 bytes; 675 lines).  Its verdict is `ACCEPT-WITH-FIXES`.
-
-The reviewer independently validates total effect/POVM transport, supplied
-instrument precomposition, positivity and exact chain laws, the five-way
-multiplicative-domain theorem, the sharp-record category and Boolean functor,
-operator-system minimality, branch-memory calculations, Karoubi typing,
-Choi--Effros scope and every finite addressability control.  An independent
-normal-form completion proves that no omitted finite word in the symmetry
-grammar yields another idempotent, so the two-minimum action groupoid remains
-correct.
-
-Three nonfatal fixes are identified: the printed symmetry proof omits the
-trailing-automorphism normal form although its conclusion is right; some
-instrument/temporal prose is broader than the exact Heisenberg/full-matrix
-scope; and reference 9 has incorrect author initials.  The reviewer earns all
-three registered mathematical rungs subject to those fixes and retains every
-intrinsic-localization and later-physics nonclaim.
-
-This is the second frozen report, not a paper repair.  The reports disagree on
-the registered physical nouns “fact” and “addressable,” so adjudicate them
-jointly against the immutable pin and paper.  No review-time repair,
-quantaloid/Isbell/stack work, overlap, intrinsic localization, T1, C1 or later
-physics is authorized.
-
 ## 2026-07-31 — WELD-STACK HOSTILE REVIEWS ADJUDICATED
 ## HIGHEST SURVIVING RUNG: REPRESENTABLE W3 SKETCH; CYCLE CLOSED (v13 LEDGER #70)
 The joint adjudication is frozen at
@@ -3323,3 +3266,91 @@ repair the paper.  Freeze each complete report verbatim in a separate commit,
 then adjudicate both jointly against the unchanged pin and paper.  No review-
 time repair, quantaloid/Isbell/stack work, overlap, intrinsic localization,
 T1, C1 or later physics is authorized.
+
+## 2026-07-31 — FOUNDATIONS/INSTRUMENT RECORD-TRANSPORT REVIEW FROZEN
+## HEADLINE-DOWNGRADE; EFFECT RUNG EARNED, LATER HEADLINES WITHHELD (v13 LEDGER #74)
+The complete external quantum-foundations/process-instrument report is frozen
+verbatim at `note-rq0-w3-effect-transport-foundations-hostile-review.md`,
+SHA-256
+`86a58646c165a5d73777fae05c4bea88d2eaaa1d56cd8a5355376124d4da9fef`
+(18,708 bytes; 360 lines).  Its verdict is `HEADLINE-DOWNGRADE`.
+
+The reviewer independently reconstructs the W3 write/preserve/erase/no-write
+experiment, effect/POVM and instrument transport, record-defect chain laws,
+multiplicative-domain equivalence, operator system, Karoubi typing, terminal
+RQ0-A control and symmetry/no-selection example.  It earns
+`RQ0-L0-W3-EFFECT-TRANSPORT`.
+
+It withholds `RQ0-L0-SHARP-FACT-TRANSPORT` because the Boolean functor
+transports sharp propositions but no truth valuation, occurrence,
+co-reference bridge or token identity.  It also withholds the cumulative
+addressability headline: an admitted UCP idempotent has a defensible weak
+referent as repeatable coarse-graining but does not alone establish general
+independent preparation, readout and manipulation of a subsystem.  The
+underlying sharp-proposition, operator-system and idempotent theorems survive
+under narrower names.
+
+This is a frozen independent report, not the joint adjudication.  The paper
+remains immutable.  Freeze the operator/effectus report separately, then
+adjudicate both against the unchanged pin and paper.  No review-time repair,
+intrinsic localization, T1, C1 or later physics is authorized.
+
+## 2026-07-31 — OPERATOR/EFFECTUS RECORD-TRANSPORT REVIEW FROZEN
+## ACCEPT-WITH-FIXES; ALL THREE MATHEMATICAL RUNGS RETAINED (v13 LEDGER #75)
+The complete external operator-algebra/effectus report is frozen verbatim at
+`note-rq0-w3-effect-transport-operator-hostile-review.md`, SHA-256
+`72d749d673285429753ba575ae964930052474e3174053ab07dca0775a0ed275`
+(24,545 bytes; 675 lines).  Its verdict is `ACCEPT-WITH-FIXES`.
+
+The reviewer independently validates total effect/POVM transport, supplied
+instrument precomposition, positivity and exact chain laws, the five-way
+multiplicative-domain theorem, the sharp-record category and Boolean functor,
+operator-system minimality, branch-memory calculations, Karoubi typing,
+Choi--Effros scope and every finite addressability control.  An independent
+normal-form completion proves that no omitted finite word in the symmetry
+grammar yields another idempotent, so the two-minimum action groupoid remains
+correct.
+
+Three nonfatal fixes are identified: the printed symmetry proof omits the
+trailing-automorphism normal form although its conclusion is right; some
+instrument/temporal prose is broader than the exact Heisenberg/full-matrix
+scope; and reference 9 has incorrect author initials.  The reviewer earns all
+three registered mathematical rungs subject to those fixes and retains every
+intrinsic-localization and later-physics nonclaim.
+
+This is the second frozen report, not a paper repair.  The reports disagree on
+the registered physical nouns “fact” and “addressable,” so adjudicate them
+jointly against the immutable pin and paper.  No review-time repair,
+quantaloid/Isbell/stack work, overlap, intrinsic localization, T1, C1 or later
+physics is authorized.
+
+## 2026-07-31 — W3 RECORD-TRANSPORT REVIEWS JOINTLY ADJUDICATED
+## HIGHEST RESULT: LAW-RELATIVE ADDRESSABLE W3 OPERATOR SYSTEM (v13 LEDGER #76)
+The joint adjudication is frozen at
+`note-rq0-w3-effect-transport-hostile-adjudication.md`, SHA-256
+`c61f2a3aeb5a05da903277d26444c903919a7363aa555349fe4809b7b3fd0b0b`
+(16,359 bytes; 470 lines).  Its verdict is
+`CYCLE-CLOSED / ACCEPT-WITH-SCOPE-ENGRAVING`.
+
+Both reviews agree on the load-bearing mathematics.  Against the exact
+definitions preregistered by pin #71, all three cumulative rungs are terminal
+at finite-dimensional law-relative scope, with
+`RQ0-L0-ADDRESSABLE-W3-OPERATOR-SYSTEM` highest.  Effect transport means
+Heisenberg predicate pullback; the registered sharp-fact rung transports
+Boolean record propositions but no selected truth, occurrence, co-reference
+or token; and addressability means admitted-idempotent repeatable
+coarse-graining, not autonomous subsystem control or space.
+
+The foundations review's referent warnings are accepted as binding.  The
+operator report's supplemental normal-form proof closes the immutable paper's
+omitted odd-symmetry-word case and confirms that only the two declared proper
+symmetry-related idempotents occur.  Its Heisenberg/full-matrix scope warnings
+and bibliographic correction are recorded without repairing the frozen paper.
+
+The strongest unqualified result is total effect/POVM transport plus the
+zero-defect multiplicative-domain theorem and a typed law-relative idempotent
+classification.  Selected W3 boundaries, projectors, transports and
+idempotents remain inputs.  No actualization theorem, intrinsic chart,
+generic overlap, localization, topology, influence, causality, spacetime,
+field or gravity result is earned.  The cycle is closed; halt and require
+explicit authorization before any successor or implementation.
