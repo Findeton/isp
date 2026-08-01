@@ -3819,3 +3819,30 @@ rungs separately, and return one complete report without repository edits.
 Freeze the reports verbatim in separate commits, then adjudicate jointly.
 The paper may not be repaired during review. No atlas-wide tester,
 localization, overlap, T1, C1 or later physics work is authorized.
+
+## 2026-08-01 — OPERATIONAL W3 TESTER-SHEAF REVIEW FROZEN
+## FIRST TWO RUNGS SURVIVE; THIRD BLOCKED AT TYPED DESCENT (v13 LEDGER #93)
+The complete independent tester-site/sheaf/stack hostile report is frozen
+verbatim at `note-rq0-operational-w3-combs-stack-hostile-review.md`, SHA-256
+`f466003aa1b5851c61e4178cae26caa53763fb5e4808c6fc52bb1f46e64d1a8b`
+(13,022 bytes; 338 lines).
+
+The reviewer independently earns `RQ0-L0-COMB-COMPLETE-W3` and
+`RQ0-L0-TESTER-SEPARATED-W3`, reproducing the false/real eraser controls and
+the nine-candidate `6+3` classification. It withholds
+`RQ0-L0-W3-TEST-SHEAF` and selects
+`RQ0-L0-BLOCKED-AT-TESTER-DESCENT`.
+
+The first fatal obstruction is typing: the paper fixes one tester type but
+uses it to index both pre-continuation and post-continuation processes with
+different open-comb profiles. The second is categorical: the candidate
+groupoid action required for the quotient prestack is asserted but not
+constructed on tester contexts, outcome alphabets and restrictions. The raw
+union-coverage pretopology, variance obstruction and coordinate-gluing lemma
+survive, but no physical W3 seam stack follows.
+
+The review also confirms the one-chart firewall: no atlas-wide tester, state
+or global section was smuggled in. This is the first frozen report, not joint
+adjudication. Freeze the independent comb/process and
+categorical-operational reports separately before deciding the cycle. No
+review-time repair is authorized.
