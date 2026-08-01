@@ -3901,3 +3901,34 @@ fine/coarse Lüders instruments and effect-interval wording do not defeat the
 first two rungs. All three hostile reports are now frozen. The next and only
 authorized action is joint adjudication against the immutable pin and paper;
 no analytical repair, software work or later physics successor is allowed.
+
+## 2026-08-01 — OPERATIONAL W3 COMB/TESTER REVIEWS JOINTLY ADJUDICATED
+## TESTER-SEPARATED W3 EARNED; TEST-SHEAF BLOCKED (v13 LEDGER #96)
+The three frozen hostile reports are jointly adjudicated at
+`note-rq0-operational-w3-combs-hostile-adjudication.md`, SHA-256
+`a0340ec2af68842c759451d1aca4a42f40ca435d5375671d4453f337f2700a2f`
+(16,654 bytes; 560 lines). The paper remains immutable.
+
+`RQ0-L0-COMB-COMPLETE-W3` is earned at its narrow explicit finite-network
+scope, and `RQ0-L0-TESTER-SEPARATED-W3` is earned at finite-dimensional,
+definite-laboratory-order, one-chart admitted-tester scope. Preservation is
+zero complete-tester distance after record dephasing; coherent recovery is a
+positive tester-visible probability contrast. The imaginary-cross-term
+false eraser remains rejected and the real eraser remains accepted.
+
+`RQ0-L0-W3-TEST-SHEAF` is withdrawn. The first registered obstruction is
+typed tester descent: one tester profile was applied to pre- and
+post-continuation processes with different open-wire types. In addition, the
+candidate symmetry action was not constructed, and the coordinate sheaf
+glues probability assignments without proving common-comb realizability or
+tester-conversion coherence. The cycle disposition is therefore
+`RQ0-L0-BLOCKED-AT-TESTER-DESCENT`.
+
+The nine inherited branch-memory partition seams remain exact, but are not
+exhaustive: the comb reviewer constructed an additional exact complex
+rank-two seam with recovery distance `1`. “Complete tester” and “global
+section” remain internal to one finite operational chart; no tester, state or
+section ranges across the regional atlas. No actuality, W6 co-reference,
+localization, overlap, topology, influence, causality, spacetime, field or
+gravity claim follows. The analytical cycle is closed. Halt pending explicit
+authorization for any successor.
