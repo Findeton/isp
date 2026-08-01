@@ -627,3 +627,17 @@ public snapshot `e55cb68`.  The reviewer is repo-read-only and must rebuild in
 `/tmp` without importing the delivery proposer, verifier, models or audit.
 Freeze its complete report verbatim, adjudicate separately, and halt.  No
 review-time repair, held-out work, scientific L0 claim, T1 or C1 is authorized.
+
+## 18. Frozen public architecture hostile report
+
+V13 ledger #58 freezes the complete external report against `e55cb68`
+verbatim, SHA-256
+`14d842af897f49f564a7f359f4db4f99659951e9add78afa64456c6f34d2ad85`
+(14,850 bytes; 266 lines).  Its verdict is `REJECT`.  The independent rebuild
+preserves the public finite `Q8`/W3 mathematics as calibration evidence, but
+the architecture is fail-open: a positive claim can omit all regional arrows
+and intersections, and purported overlaps are still derived from shared
+operation handles.  Additional findings concern the W3/projector link,
+schema coverage, structured output, factor-claim scope, trusted-kernel scope
+and triple-control coverage.  These findings await separate adjudication.
+No implementation repair or rescore is permitted in this cycle.

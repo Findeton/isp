@@ -2786,3 +2786,35 @@ No repository edit or repair is authorized during the review.  The next event
 is verbatim freeze of the complete report, followed by separate adjudication
 and halt.  Scientific outcome remains null; no estimator freeze, held-out
 cycle, T1, C1 or later physics is authorized.
+
+## 2026-07-31 — PUBLIC ARCHITECTURE HOSTILE REPORT FROZEN VERBATIM
+## VERDICT `REJECT`; FINDINGS AWAIT SEPARATE ADJUDICATION (v13 LEDGER #58)
+The complete external report against immutable snapshot `e55cb68` under pin
+`c0fab11` is frozen byte-for-byte at
+`note-rq0-operational-localization-architecture-reset-hostile-review.md`,
+SHA-256
+`14d842af897f49f564a7f359f4db4f99659951e9add78afa64456c6f34d2ad85`
+(14,850 bytes; 266 lines).  It records verdict `REJECT`.
+
+The reviewer independently reproduces the opened finite `Q8` mathematics:
+its order and normal-subgroup structure, absence of a normal direct-product
+pair, three order-four subinstruments with common order-two intersections,
+the exact monomial representation, W3 write/preserve/erase/no-write seams,
+the intended five-object inclusion diagram, and the small direct-product
+calibration.  These remain public calibration evidence only.
+
+The report's two fatal attacks show that the verifier accepts a positive
+claim with zero arrows or intersections and that the implementation still
+defines overlap by globally shared operation handles.  Its major findings
+separate the descended ambient projector resolution from the W3-certified
+record algebra, show incomplete schema-adversary coverage, exhibit an
+unstructured-success serializer path, and narrow the public direct-factor
+and restriction-stability claims.  Minor findings limit trusted-kernel
+independence and public triple-map coverage.
+
+These are frozen hostile findings, not yet adjudicated programme facts.  No
+proposer, verifier, model, audit or report file is repaired or rescored.  The
+scientific outcome remains null.  The next event is a separate adjudication,
+after which this public engineering cycle halts.  No estimator freeze,
+held-out work, `RQ0-T1`, `RQ0-C1` or later physics is authorized in this
+cycle.
