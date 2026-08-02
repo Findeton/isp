@@ -4291,3 +4291,22 @@ ancilla-saturated and instrument-complete scopes and does not select the
 registered blocked outcome. A minor repeated-flag marginal wording issue and
 binding scope clarifications remain for joint adjudication. Freeze both other
 reports before deciding the cycle; the paper remains immutable.
+
+## 2026-08-01 — OPERATIONAL CORE EFFECTUS/ORDER REVIEW FROZEN
+## BOOLEAN ATOMICITY AND FINEST PHYSICAL INSTRUMENT SURVIVE (v13 LEDGER #109)
+The complete independent effectus/order-theory report is frozen verbatim in
+`note-rq0-operational-classical-core-effectus-hostile-review.md`, SHA-256
+`2ff4f5cb7c05e2139acf1a8fa76b1372b8e52d77f9649f0a90e60510ec3eb82f`
+(15,478 bytes; 393 lines).
+
+The report independently verifies that complementary positive projections
+have generated order-ideal ranges, every pair commutes, and complete
+retained-flag sequential composition plus classical coarse-graining
+constructs physical Boolean refinements. Finite atomicity and unique
+finest-instrument claims survive, as do sharp postprocessing, symmetry and
+all finite controls.
+
+It grades both positive rungs earned at their declared scopes and does not
+select the blocked outcome. One minor omitted linear-independence sentence
+and three scope clarifications are retained for adjudication. Freeze the last
+instrument/sufficiency report before deciding the immutable paper.
