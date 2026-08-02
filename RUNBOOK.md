@@ -1458,3 +1458,25 @@ also records necessary common-flag, branch-completion, task-bundle and
 deficiency-direction qualifications. The selected first block remains
 `RQ0-L0-BLOCKED-AT-CENTER-LIFT`. Freeze the operator-algebra report next,
 then adjudicate all three without changing the paper.
+
+## 62. Frozen minimal-boundary operator-algebra review
+
+V13 ledger #102 freezes the independent operator-algebra,
+Koashi--Imoto and classical-center report verbatim at SHA-256
+`5d875d26a18dc5e0ea2c78c300bba44e1423656a3a88d43bfab4cf7108d0e719`
+(25,323 bytes; 529 lines).
+
+The report independently preserves `RQ0-L0-FUTURE-EXPERIMENT` at narrow
+common-profile scope and `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY` at finite
+compact-convex Karoubi scope. It confirms the minimum-rank rigidity,
+retract, uniqueness, finite deficiency duality, center-only sufficiency,
+operator-system obstruction and task-smuggling theorem.
+
+It also reproduces the bounded Choi and branch-memory defects: Proposition
+6.1 proves only that its selected CP witness is not a superchannel, while
+the retained source-weight sink changes the eraser minimum from `C^4` to
+`C^5` and a separating retained-output minimum from `M_4` to
+`M_4 direct-sum C`. A Karoubi process retract still supplies neither an
+observable multiplication nor an admitted central instrument. The selected
+first block is `RQ0-L0-BLOCKED-AT-CENTER-LIFT`. Jointly adjudicate all three
+reviews next without editing the immutable paper, then halt.

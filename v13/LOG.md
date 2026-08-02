@@ -4087,3 +4087,35 @@ No earlier registered block follows. The report selects
 `RQ0-L0-BLOCKED-AT-CENTER-LIFT`; a Karoubi process object has no supplied
 multiplication or central instrument. Freeze the remaining operator-algebra
 report before joint adjudication. Do not edit the paper.
+
+## 2026-08-01 — MINIMAL-BOUNDARY OPERATOR-ALGEBRA REVIEW FROZEN
+## CENTER LIFT FAILS; ABSTRACT MINIMUM SURVIVES (v13 LEDGER #102)
+The complete independent operator-algebra, Koashi--Imoto and
+classical-center report is frozen verbatim at
+`note-rq0-minimal-sufficient-boundaries-operator-hostile-review.md`, SHA-256
+`5d875d26a18dc5e0ea2c78c300bba44e1423656a3a88d43bfab4cf7108d0e719`
+(25,323 bytes; 529 lines).
+
+The reviewer independently earns `RQ0-L0-FUTURE-EXPERIMENT` at narrow
+common-profile scope and `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY` at finite
+compact-convex tester-quotiented Karoubi scope. The deficiency duality,
+minimum-rank mean-ergodic rigidity, retract minimality, uniqueness,
+presentation covariance and center-only sufficiency proposition survive.
+
+The operator-system example is confirmed and strengthened: its abstract
+`M_2 direct-sum M_2` envelope center is not determined by the operational
+states of the given operator system and therefore is not an admitted record
+readout. No omitted Choi--Effros theorem supplies the missing process
+multiplication or central instrument.
+
+The report independently confirms the same bounded withdrawals as the first
+two reviews. The Choi swap proves nonliftability only of its selected CP map,
+not family-level absence of every superchannel. Keeping the required source
+weight sink changes the branch-memory eraser minimum from `C^4` to `C^5`
+and the tomographically separating retained-output minimum from `M_4` to
+`M_4 direct-sum C`. Neither error moves the first registered obstruction.
+
+The selected disposition remains `RQ0-L0-BLOCKED-AT-CENTER-LIFT`.
+`RQ0-L0-BLOCKED-AT-TASK-SELECTION` remains a real downstream hazard. Jointly
+adjudicate the three frozen reviews without repairing the immutable paper,
+then halt before any later RQ0 or physics unit.
