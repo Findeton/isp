@@ -1402,3 +1402,21 @@ The paper disposition is `RQ0-L0-BLOCKED-AT-CENTER-LIFT` and remains
 comb/superchannel, and operator-algebra/Koashi--Imoto reports before joint
 adjudication. Do not edit the paper during review, and do not begin any
 localization, overlap, T1, C1 or later physics successor.
+
+## 59. Minimal-sufficient-boundary hostile reviews dispatched
+
+V13 ledger #99 dispatches three independent repo-read-only mathematical
+reviews under
+`v13/note-rq0-minimal-sufficient-boundaries-hostile-dispatch.md`. They attack
+the immutable pin at `9344434` and paper at `7e81dce` from three separate
+specialties: quantum statistics/sufficiency, combs/superchannels, and
+operator algebras/Koashi--Imoto centers. The dispatch SHA-256 is
+`01b4520431f16e4f0681243b1519c32542c5be1fba9531abe936e2dd67ef0fd6`
+(7,675 bytes; 181 lines).
+
+Every review must rebuild the relevant proofs and finite controls, grade all
+four registered rungs, and select the first registered block. Freeze each
+complete report verbatim in a separate commit, then adjudicate jointly in a
+fourth commit without changing the paper. No review-time repair or later
+locality, overlap, T1, C1, topology, causality, field or gravity work is
+allowed.

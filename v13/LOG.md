@@ -4005,3 +4005,27 @@ obstruction. The paper is `GREEN-UNREVIEWED` and immutable. Dispatch the
 three prescribed read-only mathematical reviews next; do not repair the
 paper, begin locality, overlap, T1, C1, topology, causality, fields or gravity
 during review.
+
+## 2026-08-01 — MINIMAL SUFFICIENT QUANTUM BOUNDARY REVIEWS DISPATCHED
+## THREE INDEPENDENT MATHEMATICAL ATTACKS; PAPER IMMUTABLE (v13 LEDGER #99)
+Three repo-read-only hostile reviews are dispatched under
+`note-rq0-minimal-sufficient-boundaries-hostile-dispatch.md` against strict
+pin commit `93444340f86e6db260c6836b21d4c8d493ee3219` and immutable paper commit
+`7e81dce3ef5267892face7b9579047fae78ccc54`. The dispatch is frozen at
+SHA-256
+`01b4520431f16e4f0681243b1519c32542c5be1fba9531abe936e2dd67ef0fd6`
+(7,675 bytes; 181 lines).
+
+The quantum-statistics review attacks the experiment typing, deficiency
+minimax formula, minimum-rank sufficiency theorem, center-only sufficiency
+and task-smuggling theorem. The comb/superchannel review attacks flagged
+process typing, quotient preservation, compact-convex hypotheses, Karoubi
+interpretation, Choi normalization and every exact W3/branch-memory control.
+The operator-algebra review attacks Koashi--Imoto scope, the
+`M_2 direct-sum M_2` operator-system counterexample, C-star-envelope center,
+physical readout lift and embedded-versus-abstract center identity.
+
+Each report must independently grade all four registered rungs and select
+the first registered block. Freeze every report verbatim in a separate
+commit, jointly adjudicate without paper repair, then halt. No later RQ0 or
+physics unit is open.
