@@ -1532,3 +1532,37 @@ symmetry and corrected branch-memory controls are mandatory. Task selection,
 W3, locality, overlap, T1, C1, topology, causality, QFT and gravity remain
 prohibited. After the immutable analytical paper, freeze three independent
 mathematical reports, adjudicate jointly without repair, and halt.
+
+## 65. Frozen operational-classical-core analytical paper
+
+V13 ledger #105 freezes
+`v13/paper-rq0-operational-classical-cores.md` at SHA-256
+`9e957d1935d0e760e43431e2ed2d154c9370d0e6d1df331bf3815000b9d6a5e3`
+(41,344 bytes; 1,496 lines).
+
+The paper constructs the ancilla-complete matrix-ordered tester dual of an
+earned minimal Karoubi process boundary. It proves the exact complete-kernel
+criterion for lifting the scalar minimum to a UCP idempotent and exhibits the
+positive but non-CP transpose symmetrizer as the required negative control.
+
+Classical information is defined without inserting an associative product:
+an admitted flagged instrument must sum to the identity process, and its CP
+branches must be exclusive and repeatable. Complementary CP projections are
+order projections; all such projections commute. At finite scope, with
+sequential-composition and retained-coarse-graining closure explicitly
+admitted, they form a finite Boolean algebra whose atoms give the unique
+finest nondisturbing repeatable classical instrument.
+
+The construction recovers readable central sectors in finite C-star and
+Koashi--Imoto controls, is trivial on a full matrix factor, and is also
+trivial on the hostile operator system whose envelope has an unreadable
+`C^2` center. The corrected branch-memory minima remain `C`, `C^5` and
+`M_4 direct-sum C`; their cores do not select a W3 seam.
+
+The provisional cumulative ceiling is
+`RQ0-L0-OPERATIONAL-CLASSICAL-CORE`, through
+`RQ0-L0-MATRIX-ORDERED-MINIMAL-BOUNDARY`, at the declared
+ancilla-saturated and instrument-complete scopes. The paper is
+`GREEN-UNREVIEWED`. It makes no task-selection, W3, locality, overlap,
+topology, influence, causal, QFT or gravity claim. Freeze the three prescribed
+read-only mathematical reviews next and adjudicate without paper repair.

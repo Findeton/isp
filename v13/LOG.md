@@ -4200,3 +4200,37 @@ overlap, topology, influence, causal, QFT or gravity claim is authorized.
 After a self-contained immutable analytical paper, freeze three independent
 operator-system, quantum-sufficiency/instrument and effectus/order-theory
 reviews, jointly adjudicate without repairing the paper, then halt.
+
+## 2026-08-01 — OPERATIONAL CLASSICAL CORE PAPER FROZEN
+## MATRIX-ORDER LIFT AND PHYSICAL SPLIT-INSTRUMENT THEOREM (v13 LEDGER #105)
+The analytical paper
+`paper-rq0-operational-classical-cores.md` is frozen at SHA-256
+`9e957d1935d0e760e43431e2ed2d154c9370d0e6d1df331bf3815000b9d6a5e3`
+(41,344 bytes; 1,496 lines).
+
+At finite ancilla-saturated scope, admitted complete testers construct an
+operator-system dual of the earned minimal process boundary, and the exact
+complete-kernel criterion determines whether its scalar idempotent lifts to a
+UCP idempotent. The transpose symmetrizer proves that scalar positivity alone
+does not suffice.
+
+The paper then defines classicality by complete admitted nondisturbing
+repeatable instruments rather than by an inserted associative center. It
+proves that all complementary CP order projections commute and, under
+explicit sequential-composition and retained-coarse-graining closure, form a
+finite atomic Boolean algebra. Its atoms give the unique finest physical
+classical instrument up to outcome permutation; the core may be trivial.
+
+Finite C-star and Koashi--Imoto controls recover their physically admitted
+central sectors. A full matrix factor and the hostile operator system with an
+unreadable `C^2` envelope center return trivial cores. The corrected
+branch-memory minima `C`, `C^5` and `M_4 direct-sum C` retain the `3/4` sink
+and select no W3 seam.
+
+The paper provisionally earns
+`RQ0-L0-MATRIX-ORDERED-MINIMAL-BOUNDARY` and
+`RQ0-L0-OPERATIONAL-CLASSICAL-CORE` only at their declared scopes. It remains
+`GREEN-UNREVIEWED` and immutable. No task-selection, W3, autonomous chart,
+overlap, topology, influence, causal, field or gravity claim is made. Dispatch
+the three prescribed repo-read-only mathematical reviews next; do not repair
+the paper during review.
