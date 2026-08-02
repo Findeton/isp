@@ -4254,3 +4254,20 @@ All three reports must independently grade the registered ladder and return
 complete Markdown suitable for verbatim freezing. The protocol is immutable;
 actual dispatch will be recorded only after all three repo-read-only tasks are
 launched. No paper repair or later physics unit is open.
+
+## 2026-08-01 — OPERATIONAL CLASSICAL CORE HOSTILE REVIEWS DISPATCHED
+## THREE REPO-READ-ONLY MATHEMATICAL REBUILDS ACTIVE (v13 LEDGER #107)
+All three independent hostile reviews have now been launched against the
+immutable protocol at commit `43a624d`, strict pin `f00140c`, and paper
+`044253d`.
+
+`operational_core_operator_review` attacks the complete matrix-order lift,
+finite C-star classification and hostile operator-system discriminator.
+`operational_core_instrument_review` attacks the complete-instrument,
+sufficiency, Koashi--Imoto and branch-memory claims.
+`operational_core_effectus_review` attacks the order-ideal, commutation,
+Boolean atomicity, postprocessing and physical-admission theorems.
+
+Each task is repository read-only and independent. Freeze every complete
+report verbatim in a separate commit, then jointly adjudicate without paper
+repair. No task-selection, W3 or later RQ0/physics successor is open.

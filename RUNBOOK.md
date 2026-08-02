@@ -1584,3 +1584,16 @@ frozen before dispatch so all reviewers receive the same immutable target.
 
 Record actual dispatch only after all three review tasks have been launched.
 No paper repair or later RQ0/physics successor is allowed during review.
+
+## 67. Operational-classical-core hostile reviews dispatched
+
+V13 ledger #107 records the launch of all three independent repo-read-only
+reviews under the immutable protocol at commit `43a624d`. The active review
+tasks are `operational_core_operator_review`,
+`operational_core_instrument_review`, and
+`operational_core_effectus_review`.
+
+No reviewer may edit repository files or consult another current report.
+Freeze each returned report verbatim in its own commit. Only after all three
+are frozen may one joint adjudication be written. The analytical paper remains
+immutable and all later physics units remain closed.
