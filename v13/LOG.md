@@ -4058,3 +4058,32 @@ bundles are required scope conditions. These findings do not move the first
 registered block earlier, but every affected subsidiary claim must be
 withheld in adjudication. Freeze the remaining two reports before deciding
 the cycle; do not edit the paper.
+
+## 2026-08-01 — MINIMAL-BOUNDARY COMB/SUPERCHANNEL REVIEW FROZEN
+## KAROUBI THEOREM SURVIVES; COMMON-TYPE AND CONTROL DEFECTS RETAINED (v13 LEDGER #101)
+The complete independent comb, superchannel and process-decision report is
+frozen verbatim at
+`note-rq0-minimal-sufficient-boundaries-comb-hostile-review.md`, SHA-256
+`f3c77decae4ae05558f8ac9e877821fb86264e59fc862ef71e00f2f6b23ea656`
+(21,703 bytes; 464 lines).
+
+The reviewer independently earns `RQ0-L0-FUTURE-EXPERIMENT` at narrow
+finite common-profile scope and `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY` at
+finite compact-convex Karoubi scope. Operational-kernel congruence,
+deficiency attainment and duality, the minimum-rank mean-ergodic proof,
+retract minimality, uniqueness and presentation covariance all survive.
+
+The report independently reproduces both major bounded defects from ledger
+#100. Honest retention of the source branch weight gives a five-outcome
+eraser experiment, not the paper's four-point minimum. The Choi swap blocks
+only that selected state-map witness from lifting, not all possible
+superchannel equivalences of the displayed singleton family. It also
+restricts the future-experiment rung to a common parameter-independent flag
+profile, valid branch completion and an explicitly admitted controlled or
+normalized task bundle. The W3 deficiency shorthand must be read in the
+center-to-future recovery direction.
+
+No earlier registered block follows. The report selects
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT`; a Karoubi process object has no supplied
+multiplication or central instrument. Freeze the remaining operator-algebra
+report before joint adjudication. Do not edit the paper.

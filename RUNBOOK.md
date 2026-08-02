@@ -1439,3 +1439,22 @@ its retained failure sink: the eraser minimum is `C^5`, not `C^4`. The full
 registered candidate census is incomplete. These are bounded downstream
 errors, not an earlier block. Freeze the comb and operator-algebra reports
 before joint adjudication; do not repair the paper.
+
+## 61. Frozen minimal-boundary comb/superchannel review
+
+V13 ledger #101 freezes the comb/superchannel/process-decision report
+verbatim at SHA-256
+`f3c77decae4ae05558f8ac9e877821fb86264e59fc862ef71e00f2f6b23ea656`
+(21,703 bytes; 464 lines).
+
+It independently earns the future-experiment rung at common-profile scope
+and the minimal-sufficient-boundary rung at finite compact-convex Karoubi
+scope. The process quotient, duality, minimum-rank rigidity, retract and
+uniqueness arguments survive.
+
+It confirms that the branch-memory eraser minimum is `C^5`, not `C^4`, and
+that the Choi swap proves only nonliftability of one selected CP witness. It
+also records necessary common-flag, branch-completion, task-bundle and
+deficiency-direction qualifications. The selected first block remains
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT`. Freeze the operator-algebra report next,
+then adjudicate all three without changing the paper.
