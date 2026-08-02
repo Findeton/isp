@@ -1420,3 +1420,22 @@ complete report verbatim in a separate commit, then adjudicate jointly in a
 fourth commit without changing the paper. No review-time repair or later
 locality, overlap, T1, C1, topology, causality, field or gravity work is
 allowed.
+
+## 60. Frozen minimal-boundary sufficiency review
+
+V13 ledger #100 freezes the quantum-statistics/sufficiency/randomization
+report verbatim at SHA-256
+`a83da40295cacc37d0d1098869d529671282fceb854153d08cbd516c6e475c76`
+(20,956 bytes; 427 lines).
+
+It earns the typed future-experiment rung narrowly and the abstract
+minimal-sufficient-boundary rung at compact-convex Karoubi scope. The
+deficiency duality and minimum-rank mean-ergodic proof survive. It selects
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT` for the next rung.
+
+The report also finds that the Choi example overstates a map-level failure
+as a family-level nonimplication, and that the branch-memory analysis drops
+its retained failure sink: the eraser minimum is `C^5`, not `C^4`. The full
+registered candidate census is incomplete. These are bounded downstream
+errors, not an earlier block. Freeze the comb and operator-algebra reports
+before joint adjudication; do not repair the paper.

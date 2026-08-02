@@ -4029,3 +4029,32 @@ Each report must independently grade all four registered rungs and select
 the first registered block. Freeze every report verbatim in a separate
 commit, jointly adjudicate without paper repair, then halt. No later RQ0 or
 physics unit is open.
+
+## 2026-08-01 — MINIMAL-BOUNDARY SUFFICIENCY REVIEW FROZEN
+## ABSTRACT MINIMUM SURVIVES; TWO BOUNDED PAPER ERRORS FOUND (v13 LEDGER #100)
+The complete independent quantum-statistics, sufficiency and randomization
+report is frozen verbatim at
+`note-rq0-minimal-sufficient-boundaries-sufficiency-hostile-review.md`,
+SHA-256
+`a83da40295cacc37d0d1098869d529671282fceb854153d08cbd516c6e475c76`
+(20,956 bytes; 427 lines).
+
+The reviewer independently earns `RQ0-L0-FUTURE-EXPERIMENT` at compatible
+common-profile scope and `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY` at finite
+compact-convex Karoubi scope. The minimax deficiency formula and the
+minimum-rank/mean-ergodic rigidity, retract and uniqueness proof survive.
+The center and W3 rungs do not; the reviewer selects
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT`.
+
+Three major-but-bounded findings are retained. The Choi swap proves that its
+particular state CP map does not lift, not the paper's stronger existential
+family-level Proposition 6.1. The branch-memory success/sink embedding was
+then dropped from the minimum: its eraser experiment is `C^5`, not `C^4`,
+and a separating retained-success experiment is `M_4 direct-sum C`, not
+`M_4`. The pin's full per-candidate branch-memory census is also incomplete.
+
+Common flag profiles and admission of controlled or normalized future-task
+bundles are required scope conditions. These findings do not move the first
+registered block earlier, but every affected subsidiary claim must be
+withheld in adjudication. Freeze the remaining two reports before deciding
+the cycle; do not edit the paper.
