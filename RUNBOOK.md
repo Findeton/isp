@@ -1346,3 +1346,29 @@ exhaustive; an exact additional complex rank-two seam has recovery distance
 never the full atlas. No locality, overlap, topology, causality, spacetime,
 field or gravity claim follows. Halt before any repair or successor unless
 the user explicitly authorizes one.
+
+## 57. Current minimal-sufficient-boundary analytical successor
+
+V13 ledger #97 opens one bounded analytical-only RQ0-L0 cycle under
+`v13/note-rq0-minimal-sufficient-boundaries-pin.md`, SHA-256
+`d073e3b3f9a7cfffd8cfcf0e1feb27a7e5bd0e48ed1810d2eadc15ca6baff41d`
+(23,903 bytes; 687 lines). It does not repair the rejected tester sheaf.
+
+For each cut inside one finite chart, the paper must form a typed quantum
+statistical experiment of complete conditional future combs indexed by
+complete admitted past instruments. Sufficiency and minimality use one
+parameter-independent admitted superchannel. A state-level Choi compression,
+an idempotent-split process retract and a physically readable classical center
+are separate gated objects; no one is promoted to another by analogy.
+
+The proposed record is the center of a minimal sufficient future experiment
+only if its compression, recovery and readout lift to admitted process maps.
+Preserving and eraser-enlarged future-task classes must be fixed before that
+center is computed, with task-smuggling and within-sector quantum dependence
+as mandatory controls. The highest ceiling is a one-chart,
+instrument-relative `RQ0-L0-W3-MARKOV-BOUNDARY`, not locality or causality.
+
+After the immutable analytical paper, freeze three independent mathematical
+reviews and adjudicate jointly. No estimator, hidden fixture, tester sheaf,
+overlap, localization, T1, C1, topology, spacetime, field or gravity work is
+authorized.

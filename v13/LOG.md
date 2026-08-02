@@ -3932,3 +3932,35 @@ section ranges across the regional atlas. No actuality, W6 co-reference,
 localization, overlap, topology, influence, causality, spacetime, field or
 gravity claim follows. The analytical cycle is closed. Halt pending explicit
 authorization for any successor.
+
+## 2026-08-01 — MINIMAL SUFFICIENT QUANTUM BOUNDARY PIN FROZEN
+## RECORD SELECTION BY FUTURE SUFFICIENCY, NOT TESTER DESCENT (v13 LEDGER #97)
+One bounded analytical-only RQ0-L0 successor is opened under
+`note-rq0-minimal-sufficient-boundaries-pin.md`, SHA-256
+`d073e3b3f9a7cfffd8cfcf0e1feb27a7e5bd0e48ed1810d2eadc15ca6baff41d`
+(23,903 bytes; 687 lines). It preserves the complete #90--#96 comb/tester
+cycle unchanged and does not repair the rejected test sheaf.
+
+For each typed cut inside one finite operational chart, the paper must build
+the complete family of conditional future combs induced by complete admitted
+past instruments. Exact simulation, sufficiency, recovery and minimality must
+use one parameter-independent admitted superchannel. Existing minimal-
+sufficient state theorems and channel-comparison theorems are antecedents,
+not an automatic comb theorem.
+
+The pin separates three layers that may not be conflated: a normalized-Choi
+statistical center, a minimal idempotent-split process boundary, and a
+physically readable classical center whose compression and recovery lift to
+admitted process maps. W3 is tested only between independently frozen nested
+future-task classes. Center-only sufficiency for preserving futures and
+positive deficiency for an eraser-enlarged class must be proved rather than
+encoded through the task choice.
+
+The cumulative ceilings are `RQ0-L0-FUTURE-EXPERIMENT`,
+`RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY`,
+`RQ0-L0-CANONICAL-CLASSICAL-CENTER`, and
+`RQ0-L0-W3-MARKOV-BOUNDARY`, with six precise blocked outcomes. After the
+immutable paper, freeze three independent sufficiency, comb/superchannel and
+operator-algebra/Koashi--Imoto reviews, adjudicate jointly, and halt. No
+software-verification, atlas-wide tester, overlap, localization, T1, C1 or
+later physics is authorized.
