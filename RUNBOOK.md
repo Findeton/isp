@@ -1597,3 +1597,21 @@ No reviewer may edit repository files or consult another current report.
 Freeze each returned report verbatim in its own commit. Only after all three
 are frozen may one joint adjudication be written. The analytical paper remains
 immutable and all later physics units remain closed.
+
+## 68. Frozen operational-core operator-system review
+
+V13 ledger #108 freezes the complete independent operator-system and
+matrix-order report verbatim at SHA-256
+`28c43290a845e2cf8128f1cc9a97f7253d85ab1df3a59333c5c652f44b1070ff`
+(14,071 bytes; 373 lines).
+
+The reviewer returns `ACCEPT` at the paper's exact conditional scopes. It
+independently reproduces the complete tester dual, UCP pullback, exact
+complete-kernel lift criterion, transpose control, order-ideal and commutation
+proofs, finite Boolean atomicity, finite C-star classification and hostile
+operator-system trivial-core result.
+
+It provisionally earns both registered positive rungs and does not select
+`RQ0-L0-BLOCKED-AT-OPERATIONAL-CENTER`. One minor wording issue and four
+scope clarifications are retained. Freeze the two remaining independent
+reports before any adjudication; do not repair the immutable paper.

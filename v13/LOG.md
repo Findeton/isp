@@ -4271,3 +4271,23 @@ Boolean atomicity, postprocessing and physical-admission theorems.
 Each task is repository read-only and independent. Freeze every complete
 report verbatim in a separate commit, then jointly adjudicate without paper
 repair. No task-selection, W3 or later RQ0/physics successor is open.
+
+## 2026-08-01 — OPERATIONAL CORE OPERATOR-SYSTEM REVIEW FROZEN
+## MATRIX LIFT, SPLIT COMMUTATION AND HOSTILE CONTROL SURVIVE (v13 LEDGER #108)
+The complete repo-read-only operator-system/matrix-order report is frozen
+verbatim in
+`note-rq0-operational-classical-core-operator-hostile-review.md`, SHA-256
+`28c43290a845e2cf8128f1cc9a97f7253d85ab1df3a59333c5c652f44b1070ff`
+(14,071 bytes; 373 lines).
+
+The reviewer independently reconstructs the operator-system tester dual,
+contravariant UCP pullback, complete-kernel lift, transpose-symmetrizer
+counterexample, split-projection commutation, Boolean atomicity, finite
+C-star controls and the hostile operator-system proof. It finds no fatal or
+major mathematical defect.
+
+The report grades both positive rungs earned at the declared
+ancilla-saturated and instrument-complete scopes and does not select the
+registered blocked outcome. A minor repeated-flag marginal wording issue and
+binding scope clarifications remain for joint adjudication. Freeze both other
+reports before deciding the cycle; the paper remains immutable.
