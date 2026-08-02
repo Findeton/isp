@@ -3964,3 +3964,44 @@ immutable paper, freeze three independent sufficiency, comb/superchannel and
 operator-algebra/Koashi--Imoto reviews, adjudicate jointly, and halt. No
 software-verification, atlas-wide tester, overlap, localization, T1, C1 or
 later physics is authorized.
+
+## 2026-08-01 — MINIMAL SUFFICIENT QUANTUM BOUNDARY PAPER FROZEN
+## PROCESS MINIMUM EXISTS; PHYSICAL CLASSICAL CENTER DOES NOT FOLLOW (v13 LEDGER #98)
+The analytical paper `paper-rq0-minimal-sufficient-quantum-boundaries.md` is
+frozen at SHA-256
+`5cca95256f2100d10dafa80f9facf34dc3c88fa3e9bb9f3b9ee102232030d053`
+(52,100 bytes; 1,595 lines).
+
+For every compatible cut/task package inside one finite operational chart,
+complete past instruments induce a typed statistical experiment of
+conditional future combs. At finite-dimensional, tester-quotiented,
+compact-convex scope, a minimum-rank stabilizer idempotent constructs a
+minimal sufficient object in the Karoubi completion of the admitted process
+category. A mean-ergodic rigidity proof shows that it is a retract of every
+sufficient representative and is unique up to reversible operational
+equivalence.
+
+The paper provisionally earns `RQ0-L0-FUTURE-EXPERIMENT` and
+`RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY`. It does not promote the process retract
+to an autonomous subsystem or spatial boundary.
+
+The physical classical-center rung fails. A reversible CP map on normalized
+Choi states need not preserve the channel-normalization slice and therefore
+need not be a superchannel. Separately, an exact operator system can generate
+`M_2 direct-sum M_2` as its C-star envelope while containing neither central
+block projector as an admitted effect. A Karoubi process retract has no
+intrinsic multiplication or central readout merely by being minimal.
+
+The paper also proves a downstream task-smuggling theorem: any selected
+finite PVM can be made the center of a minimal experiment by choosing its
+matching dephasing task. Under the independently frozen branch-memory tasks,
+the preserving minimum is trivial and the eraser minimum is the fine
+four-point classical experiment; neither selects the nine inherited coarse
+seams or the additional complex seam.
+
+The provisional disposition is
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT`, with task selection recorded as a later
+obstruction. The paper is `GREEN-UNREVIEWED` and immutable. Dispatch the
+three prescribed read-only mathematical reviews next; do not repair the
+paper, begin locality, overlap, T1, C1, topology, causality, fields or gravity
+during review.

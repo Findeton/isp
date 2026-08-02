@@ -1372,3 +1372,33 @@ After the immutable analytical paper, freeze three independent mathematical
 reviews and adjudicate jointly. No estimator, hidden fixture, tester sheaf,
 overlap, localization, T1, C1, topology, spacetime, field or gravity work is
 authorized.
+
+## 58. Frozen minimal-sufficient-boundary analytical paper
+
+V13 ledger #98 freezes
+`v13/paper-rq0-minimal-sufficient-quantum-boundaries.md` at SHA-256
+`5cca95256f2100d10dafa80f9facf34dc3c88fa3e9bb9f3b9ee102232030d053`
+(52,100 bytes; 1,595 lines).
+
+The paper constructs complete task-indexed future process experiments and
+proves a finite minimal-sufficiency theorem in the Karoubi completion of a
+compact-convex admitted superchannel category. A minimum-rank stabilizer
+idempotent is rigid, is a retract of every sufficient representative, and is
+unique up to reversible operational equivalence. The provisional positive
+ceiling is `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY`, cumulative through
+`RQ0-L0-FUTURE-EXPERIMENT`.
+
+The classical-center promotion is blocked. Normalized-Choi CP equivalence
+need not lift to a deterministic superchannel, and the center of an
+operator-system envelope need not be present as an admitted effect of the
+operator system. A separate exact theorem shows that choosing a
+candidate-matched dephasing task can manufacture any desired finite PVM as a
+minimal center. The independently frozen branch-memory tasks yield a trivial
+preserving minimum and a fine four-point eraser minimum, not one preferred
+coarse seam.
+
+The paper disposition is `RQ0-L0-BLOCKED-AT-CENTER-LIFT` and remains
+`GREEN-UNREVIEWED`. Freeze three independent sufficiency,
+comb/superchannel, and operator-algebra/Koashi--Imoto reports before joint
+adjudication. Do not edit the paper during review, and do not begin any
+localization, overlap, T1, C1 or later physics successor.
