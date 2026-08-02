@@ -1566,3 +1566,21 @@ ancilla-saturated and instrument-complete scopes. The paper is
 `GREEN-UNREVIEWED`. It makes no task-selection, W3, locality, overlap,
 topology, influence, causal, QFT or gravity claim. Freeze the three prescribed
 read-only mathematical reviews next and adjudicate without paper repair.
+
+## 66. Operational-classical-core hostile protocol frozen
+
+V13 ledger #106 freezes
+`v13/note-rq0-operational-classical-core-hostile-dispatch.md` as the common
+protocol for three independent repo-read-only reviews of pin commit
+`f00140c` and immutable paper commit `044253d`. The protocol SHA-256 is
+`101e5ba466393b0a78a409dd883bdbfb971c11d17928f674e54a2da69360b850`
+(7,818 bytes; 178 lines).
+
+The reviews separately attack operator-system/matrix-order foundations,
+quantum sufficiency/instrument semantics, and effectus/order-theoretic
+atomicity. Each must rebuild the load-bearing proofs and controls, grade both
+positive rungs, and identify the first registered block. The protocol is
+frozen before dispatch so all reviewers receive the same immutable target.
+
+Record actual dispatch only after all three review tasks have been launched.
+No paper repair or later RQ0/physics successor is allowed during review.

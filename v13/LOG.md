@@ -4234,3 +4234,23 @@ The paper provisionally earns
 overlap, topology, influence, causal, field or gravity claim is made. Dispatch
 the three prescribed repo-read-only mathematical reviews next; do not repair
 the paper during review.
+
+## 2026-08-01 — OPERATIONAL CLASSICAL CORE HOSTILE PROTOCOL FROZEN
+## THREE INDEPENDENT MATHEMATICAL ATTACKS FIXED BEFORE DISPATCH (v13 LEDGER #106)
+The common read-only review protocol is frozen in
+`note-rq0-operational-classical-core-hostile-dispatch.md` against strict pin
+commit `f00140c` and immutable analytical paper commit `044253d`, at SHA-256
+`101e5ba466393b0a78a409dd883bdbfb971c11d17928f674e54a2da69360b850`
+(7,818 bytes; 178 lines).
+
+One report must attack the matrix-ordered tester dual, complete-kernel lift,
+finite C-star classification and hostile operator-system discriminator. One
+must attack quantum-sufficiency and complete-instrument semantics,
+Koashi--Imoto recovery and the corrected branch-memory controls. One must
+attack the order-ideal, commutation, Boolean atomicity, postprocessing and
+symmetry theorems from an effectus/order-theory perspective.
+
+All three reports must independently grade the registered ladder and return
+complete Markdown suitable for verbatim freezing. The protocol is immutable;
+actual dispatch will be recorded only after all three repo-read-only tasks are
+launched. No paper repair or later physics unit is open.
