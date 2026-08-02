@@ -4413,3 +4413,26 @@ paper-1-grade self-containment audits; one cross-agent independence
 spot-audit desirable).  NO RESEARCH CYCLE DISPATCHED — per-cycle
 authorization is the user's; Cycle B awaits its own authorization
 block.  Halt.
+
+## 2026-08-02 — ROADMAP RECORDED; THE USER'S STANDING AUTHORIZATION;
+## CYCLE B PINNED (v13 LEDGER #113)
+The user: "record the plan in a v13 document and continue running it
+fully."  v13/ROADMAP.md records the [REV5]-derived ladder with the
+#112 amendments (the degeneracy guard; the mandatory monoidal rung;
+the influence-layer controls; stage-7 reopened; the explicit
+continuum/type-III wall; the gravity acceptance tests).  THE STANDING
+AUTHORIZATION is recorded there verbatim: the arc runs cycle-by-cycle
+under full RUNBOOK discipline, halting mid-arc only on a
+roadmap-changing blocked outcome or a user-owned decision.  CYCLE B
+PINNED (note-rq0-l0-task-record-fixed-point-pin.md, immutable base
+6c2d7b8): G0 the definition gate (the [REV5] Pres formula tested for
+collapse on exactly-nondisturbing instruments; the availability form
+adopted if it collapses, nondegeneracy gated); G1 the Galois gates
+before any fixed-point claim; G2 trivial fixed point exhibited,
+nontrivial fixed points characterized, THE DE-SMUGGLING DISCRIMINATOR
+(the #103 manufactured-PVM example must not survive the closure); G3
+the carried controls (branch-memory triple incl. the ℂ⁵ non-seam;
+hostile operator system; readable-center C* controls; no-write +
+outside-continuation recovery).  Pre-registered:
+RQ0-L0-W3-OPERATIONAL-MARKOV-BOUNDARY / NO-NONTRIVIAL-FIXED-POINT /
+BLOCKED-AT-⟨object⟩.  Dispatch to follow; recorded after it occurs.
