@@ -4330,3 +4330,39 @@ No fatal or major finding is returned. Both positive rungs are graded earned
 at declared scope. One repeated-flag wording issue and three exact-scope
 clarifications remain. All reviews are frozen; jointly adjudicate without
 editing the paper, then halt before any successor.
+
+## 2026-08-01 — OPERATIONAL CLASSICAL CORE REVIEWS ADJUDICATED
+## PHYSICAL CENTER LIFT EARNED AT CONDITIONAL FINITE SCOPE (v13 LEDGER #111)
+The three frozen independent reviews are jointly adjudicated in
+`note-rq0-operational-classical-core-hostile-adjudication.md`, SHA-256
+`45610248f60f25b32e45dc2410cc86582dacdf7d696ada3ace35aaa182978941`
+(16,255 bytes; 613 lines). The pin, paper and reviews remain immutable.
+
+All reviewers independently earn
+`RQ0-L0-MATRIX-ORDERED-MINIMAL-BOUNDARY` at the declared finite
+ancilla-saturated scope and `RQ0-L0-OPERATIONAL-CLASSICAL-CORE` at the
+declared finite instrument-complete scope. No fatal or major defect is found.
+`RQ0-L0-BLOCKED-AT-OPERATIONAL-CENTER` is not selected inside that scope and
+remains the outcome for laws failing the complete-kernel or physical
+instrument-closure gates.
+
+The result replaces an untyped algebraic center by one physical object: the
+unique finest admitted exact nondisturbing repeatable retained-flag
+instrument, possibly with one atom. Complementary CP projections have
+generated order-ideal ranges and commute; physical sequential composition
+and classical coarse-graining construct their finite Boolean refinement.
+
+The hostile operator system correctly has a trivial operational core despite
+its `C^2` envelope center. Ordinary finite C-star and Koashi--Imoto centers
+are recovered only when their standard central instruments are admitted. The
+corrected branch-memory cores remain task relative and select no W3 seam.
+
+One repeated-flag sentence and one linear-independence proof detail are minor
+adjudicated clarifications. Ancilla saturation, an admitted deterministic CP
+representative, physical branch preduals, exact repeatability and complete
+flagged sequential/coarse-graining closure remain binding.
+
+No task-independent W3, actuality, autonomous chart, overlap, locality,
+topology, influence, causality, QFT or gravity claim is earned. The next
+obstruction is task selection, but no successor is authorized. This cycle is
+`ADJUDICATED / CYCLE-CLOSED`. Halt.

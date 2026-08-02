@@ -1651,3 +1651,32 @@ It finds no fatal or major defect and grades both positive rungs earned. One
 ambiguous repeated-flag sentence and three binding scope clarifications are
 retained. All three reports are now frozen; jointly adjudicate them against
 the immutable paper, then halt without repair or successor work.
+
+## 71. Operational-classical-core reviews adjudicated; cycle closed
+
+V13 ledger #111 freezes the joint adjudication at SHA-256
+`45610248f60f25b32e45dc2410cc86582dacdf7d696ada3ace35aaa182978941`
+(16,255 bytes; 613 lines).
+
+All three independent reviews earn
+`RQ0-L0-MATRIX-ORDERED-MINIMAL-BOUNDARY` at finite ancilla-saturated scope
+and `RQ0-L0-OPERATIONAL-CLASSICAL-CORE` at finite instrument-complete scope.
+No review reports a fatal or major defect. The blocked outcome is not selected
+within that scope and remains the fallback for laws lacking complete-kernel
+compatibility or complete flagged-instrument closure.
+
+The earned core is the unique finest admitted exact nondisturbing repeatable
+classical instrument on one fixed-task minimal process boundary. It may be
+trivial. The Boolean logic belongs to its retained outcome flag; no
+associative center or PVM is inserted. The hostile operator system returns a
+trivial core despite its nontrivial envelope center.
+
+The repeated-flag wording and atomic-map linear-independence proof detail are
+adjudicated as minor and do not change either rung. All complete-testing,
+physical-predual, exact-repeatability and sequential/coarse-graining
+hypotheses remain binding.
+
+No task-independent W3 seam, actual outcome, autonomous chart, overlap,
+topology, influence, causal, QFT or gravity result is earned. Task selection
+is the next scientific obstruction, but no successor is authorized. The
+cycle is `ADJUDICATED / CYCLE-CLOSED`; halt.
