@@ -4436,3 +4436,17 @@ hostile operator system; readable-center C* controls; no-write +
 outside-continuation recovery).  Pre-registered:
 RQ0-L0-W3-OPERATIONAL-MARKOV-BOUNDARY / NO-NONTRIVIAL-FIXED-POINT /
 BLOCKED-AT-⟨object⟩.  Dispatch to follow; recorded after it occurs.
+
+## 2026-08-02 — CYCLE B DERIVATION DISPATCHED (v13 LEDGER #114)
+Background worker (Opus 5), bound to the frozen pin at 7a80e39;
+read-list = the pin, ROADMAP, RUNBOOK, the #103/#111 artifacts and
+adjudications (immutable inputs; their fixtures and numbers are the
+anchor set), the v12 availability antecedents; deliverables
+paper-rq0-task-record-fixed-point.md + rq0_l0_fixed_point_* (exact,
+anchored, mutant self-test, freeze-on-delivery, no child agents).
+The de-smuggling discriminator is VERDICT-level: if the
+manufactured-PVM example survives the closure, that finding changes
+the roadmap and halts the arc for the user.  On return: adjudicator
+verification → commit green → protocol freeze → three-lens panel →
+joint adjudication → STATUS board.  This entry is written after the
+dispatch occurred.

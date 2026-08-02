@@ -47,8 +47,7 @@ Updated: 2026-08-02 (v12 LOG #46; v13 LOG #111; runbook §13 added).
 
 ## Frontier (nothing authorized; per-cycle authorization required)
 
-1. **Cycle B — task–record fixed point** (de-smuggling: M ≃ Core(Pres(M))),
-   with the degenerate-fixed-point guard and the Galois-connection gates.
+1. **Cycle B — task–record fixed point**: **RUNNING** (pinned 7a80e39, v13 #113; derivation dispatched #114; the definition gate + de-smuggling discriminator binding).
 2. **Composite/tensor boundaries** (the missing monoidal rung before
    autonomous charts; core-of-composite vs composite-of-cores as the
    operational entanglement witness).
