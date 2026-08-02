@@ -1633,3 +1633,21 @@ One omitted linear-independence sentence and three binding scope
 clarifications are retained; none changes the theorem. Freeze the remaining
 quantum-sufficiency/instrument report next, then jointly adjudicate without
 paper repair.
+
+## 70. Frozen operational-core sufficiency/instrument review
+
+V13 ledger #110 freezes the complete independent quantum-sufficiency,
+instrument and process-typing report verbatim at SHA-256
+`4aca07f024dbb63d38280f2573243884929b28c9199c04bdcfc639fa1b9b1b5a`
+(16,487 bytes; 507 lines).
+
+The reviewer returns `ACCEPT AT DECLARED SCOPE / MINOR CLARIFICATIONS`. It
+independently verifies the predecessor-scope use, Schrödinger/Heisenberg
+typing, complete retained flag, identity when outcomes are forgotten,
+exclusive repeatability, maximality over every admitted target instrument,
+Koashi--Imoto comparison and corrected branch-memory controls.
+
+It finds no fatal or major defect and grades both positive rungs earned. One
+ambiguous repeated-flag sentence and three binding scope clarifications are
+retained. All three reports are now frozen; jointly adjudicate them against
+the immutable paper, then halt without repair or successor work.

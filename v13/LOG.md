@@ -4310,3 +4310,23 @@ It grades both positive rungs earned at their declared scopes and does not
 select the blocked outcome. One minor omitted linear-independence sentence
 and three scope clarifications are retained for adjudication. Freeze the last
 instrument/sufficiency report before deciding the immutable paper.
+
+## 2026-08-01 — OPERATIONAL CORE SUFFICIENCY/INSTRUMENT REVIEW FROZEN
+## COMPLETE FLAG, MAXIMALITY AND CORRECTED TASK CONTROLS SURVIVE (v13 LEDGER #110)
+The complete independent quantum-sufficiency, instrument and process-typing
+report is frozen verbatim in
+`note-rq0-operational-classical-core-instrument-hostile-review.md`, SHA-256
+`4aca07f024dbb63d38280f2573243884929b28c9199c04bdcfc639fa1b9b1b5a`
+(16,487 bytes; 507 lines).
+
+The review independently verifies that the predecessor minimum is used only
+at adjudicated Karoubi scope, process/effect variance is correct, the complete
+flag and postmeasurement branches are retained, and every admitted exact
+nondisturbing repeatable instrument is captured by the split-projection
+Boolean algebra. Koashi--Imoto and the corrected `C`, `C^5`, and
+`M_4 direct-sum C` branch-memory controls also survive.
+
+No fatal or major finding is returned. Both positive rungs are graded earned
+at declared scope. One repeated-flag wording issue and three exact-scope
+clarifications remain. All reviews are frozen; jointly adjudicate without
+editing the paper, then halt before any successor.
