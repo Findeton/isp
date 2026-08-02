@@ -1510,3 +1510,25 @@ no-smuggling obstruction.
 No canonical classical center, W3 Markov boundary, locality, overlap,
 topology, influence, causal, field or gravity claim is earned. The analytical
 cycle is closed. Do not begin a successor without explicit authorization.
+
+## 64. Current operational-classical-core analytical successor
+
+V13 ledger #104 opens one bounded analytical-only center-lift cycle under
+`v13/note-rq0-operational-classical-core-pin.md`, SHA-256
+`7253d66856330b7f71538c5b7b6e398904a0f9edad4650ab4618091f06a87f1d`
+(15,134 bytes; 451 lines). It preserves the complete
+minimal-sufficient-boundary cycle through #103 and does not manufacture an
+associative center on the Karoubi object.
+
+The cycle must first construct an ancilla-complete matrix-ordered tester dual
+and prove whether the earned minimum idempotent induces a UCP idempotent.
+Classicality is then defined operationally by complete admitted CP branches
+whose forgotten-outcome channel is the Karoubi identity and whose outcomes
+are exclusive and repeatable. The target core is the unique finest admitted
+split instrument, if it exists; a trivial core is a valid result.
+
+Finite C-star, Koashi--Imoto, factor, hostile operator-system, admission,
+symmetry and corrected branch-memory controls are mandatory. Task selection,
+W3, locality, overlap, T1, C1, topology, causality, QFT and gravity remain
+prohibited. After the immutable analytical paper, freeze three independent
+mathematical reports, adjudicate jointly without repair, and halt.

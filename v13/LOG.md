@@ -4168,3 +4168,35 @@ claim is earned.
 
 This analytical cycle is `ADJUDICATED / CYCLE-CLOSED`. Halt. No successor is
 authorized without a new explicit instruction.
+
+## 2026-08-01 — OPERATIONAL CLASSICAL CORE PIN FROZEN
+## PHYSICAL CENTER LIFT BY NONDISTURBING INSTRUMENTS ONLY (v13 LEDGER #104)
+One bounded forward-only analytical RQ0-L0 successor is opened under
+`note-rq0-operational-classical-core-pin.md`, SHA-256
+`7253d66856330b7f71538c5b7b6e398904a0f9edad4650ab4618091f06a87f1d`
+(15,134 bytes; 451 lines). It preserves immutable HEAD
+`dba40d4` and the complete minimal-sufficient-boundary paper, reviews and
+adjudication.
+
+The strict question is whether complete admitted ancillary testers turn the
+earned minimal Karoubi process boundary into a matrix-ordered operational
+dual, and whether that dual has a canonical finest physically admitted
+nondisturbing repeatable classical instrument. No associative center, PVM or
+record algebra is supplied as input.
+
+The pin separates scalar positivity from complete positivity, mathematical
+CP maps from admitted instruments, and an algebraic envelope center from
+physically readable effects. It requires exact finite C-star,
+Koashi--Imoto, factor, hostile operator-system, admission, symmetry and
+corrected branch-memory controls. The retained `3/4` sink may not be
+postselected away.
+
+Only `RQ0-L0-MATRIX-ORDERED-MINIMAL-BOUNDARY`,
+`RQ0-L0-OPERATIONAL-CLASSICAL-CORE`, or
+`RQ0-L0-BLOCKED-AT-OPERATIONAL-CENTER` may be reported. A trivial core is a
+positive physical classification. No task-selection, W3, localization,
+overlap, topology, influence, causal, QFT or gravity claim is authorized.
+
+After a self-contained immutable analytical paper, freeze three independent
+operator-system, quantum-sufficiency/instrument and effectus/order-theory
+reviews, jointly adjudicate without repairing the paper, then halt.
