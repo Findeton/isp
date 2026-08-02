@@ -557,6 +557,41 @@ the repo except this rule.
 
 ---
 
+## 13. Process upgrades adopted from the RQ0 campaign (added 2026-08-02)
+
+The v13 RQ0 cycles (LOG #8–#111) introduced five practices now adopted
+programme-wide; they extend, and where stricter supersede, §3–§6:
+
+1. **Freeze the hostile protocol BEFORE dispatching reviews.** The
+   review gates, reviewer lenses, and pre-registered rungs are
+   committed as their own artifact before any reviewer starts —
+   reviews are then judged against a frozen standard, not an evolving
+   one.
+2. **Freeze each review as its own committed, SHA-256-pinned file.**
+   Reviews are immutable documents in `vNN/review-*.md`; the
+   adjudication note cites their hashes. No review lives only in a
+   task transcript.
+3. **Three-lens reviewer panels.** Each unit gets ≥3 independent
+   reviews from declared distinct lenses (e.g. operator-system /
+   effectus-order / sufficiency-instrument), jointly adjudicated —
+   perspective diversity over redundancy.
+4. **Freeze estimators/instruments BEFORE fixture truth.** Any
+   estimator or decision instrument is committed before the truth
+   values of its test fixtures are computed (LOG #~40s:
+   "FROZEN BEFORE FIXTURE TRUTH") — the pre-registration analogue for
+   instruments.
+5. **Per-cycle halt authorization.** Every adjudication ends by
+   naming the next obstruction and stating explicitly that **no
+   successor is authorized**; each new cycle requires a fresh user
+   authorization naming its scope, its immutable base commit, and its
+   pre-registered rungs only.
+
+**The status board.** `/STATUS.md` at the repo root tracks every
+paper/cycle with its current status, earned/blocked rungs, and ledger
+pointer. EVERY adjudication entry must update it in the same commit.
+Review debt (anything GREEN-UNREVIEWED or sub-terminal) must be
+visible there, never implicit.
+
 ## Appendix: the failure catalogue (why each rule exists)
 
 | Ledger | Failure | Rule it made |

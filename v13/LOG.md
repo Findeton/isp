@@ -4366,3 +4366,50 @@ No task-independent W3, actuality, autonomous chart, overlap, locality,
 topology, influence, causality, QFT or gravity claim is earned. The next
 obstruction is task selection, but no successor is authorized. This cycle is
 `ADJUDICATED / CYCLE-CLOSED`. Halt.
+
+## 2026-08-02 — [REV5] ROADMAP ADJUDICATED; RUNBOOK §13 + STATUS BOARD;
+## NO CYCLE DISPATCHED (v13 LEDGER #112)
+The user delivered an external roadmap review ([REV5]: operational
+classical cores → task-de-smuggling → autonomous charts → overlaps →
+topology/influence → QFT → QCD/gravity, with an authorization block
+for an operational-classical-core cycle from immutable dba40d4).
+FACT-CHECK FIRST: the review's verified state is STALE — it read the
+remote at dba40d4 (#103); local main is 8 commits ahead at 431c2c8,
+and its recommended cycle ALREADY RAN as #104–#111 and EARNED both
+positive rungs (MATRIX-ORDERED-MINIMAL-BOUNDARY;
+OPERATIONAL-CLASSICAL-CORE) with exactly the three demanded reviewer
+lenses and its key discriminator (trivial core on the hostile
+operator-system example) passing.  Its authorization is therefore
+DISCHARGED, not pending.  THE ROADMAP ADOPTED-WITH-AMENDMENTS
+(adjudicator's, recorded for the next authorization): (a) Cycle B
+(task–record fixed point M ≃ Core(Pres(M))) is the right successor
+BUT needs the degenerate-fixed-point guard (the trivial instrument is
+always a fixed point; the theorem must characterize NONTRIVIAL fixed
+points, with a NO-NONTRIVIAL-FIXED-POINT outcome pre-registered) and
+should gate the Galois connection (antitone monotonicity both ways)
+FIRST, then use closed-element machinery; (b) A MISSING RUNG inserted
+between Cycle B and autonomous charts: COMPOSITE/TENSOR BOUNDARIES —
+the earned corpus is one-boundary; charts need independence, i.e. a
+monoidal layer (does Core distribute over composition? the
+core-of-composite vs composite-of-cores gap IS the operational
+entanglement witness; v12's LTP-forcing lemma is the one-chart
+antecedent); (c) the influence layer must reproduce v12's measured
+non-unification (W4′) and the three-defect separation as positive
+controls; (d) the roadmap's Stage-6 "Closed" is corrected to:
+REOPENED ON THE OPERATIONAL SUBSTRATE (v9/v10 order/dimension results
+are toy-substrate history, not inheritable); (e) an explicit
+CONTINUUM/TYPE-III rung is added before the QFT stage (everything
+earned is finite-dimensional; modular-Lorentz reconstruction lives in
+type III; pre-register blocked outcomes); (f) gravity-stage
+candidates must retroactively pass GW1's no-smuggling census as a
+standing acceptance test, and paper 2 §9.2's
+no-geometry-into-records rule binds.  HOUSEKEEPING EXECUTED at the
+user's order: RUNBOOK §13 (the five RQ0 process upgrades adopted
+programme-wide: protocol-freeze-before-dispatch; SHA-pinned frozen
+review files; three-lens panels; frozen-before-fixture-truth;
+per-cycle halt authorization) + /STATUS.md created (full board incl.
+the review-debt section: the seven paper-rq0 drafts lack
+paper-1-grade self-containment audits; one cross-agent independence
+spot-audit desirable).  NO RESEARCH CYCLE DISPATCHED — per-cycle
+authorization is the user's; Cycle B awaits its own authorization
+block.  Halt.
