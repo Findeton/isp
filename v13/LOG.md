@@ -4119,3 +4119,52 @@ The selected disposition remains `RQ0-L0-BLOCKED-AT-CENTER-LIFT`.
 `RQ0-L0-BLOCKED-AT-TASK-SELECTION` remains a real downstream hazard. Jointly
 adjudicate the three frozen reviews without repairing the immutable paper,
 then halt before any later RQ0 or physics unit.
+
+## 2026-08-01 — MINIMAL-SUFFICIENT-BOUNDARY REVIEWS ADJUDICATED
+## ABSTRACT PROCESS MINIMUM EARNED; CENTER LIFT BLOCKS W3 BOUNDARY (v13 LEDGER #103)
+The three frozen mathematical reviews are jointly adjudicated under
+`note-rq0-minimal-sufficient-boundaries-hostile-adjudication.md`, SHA-256
+`284772149bb95c76b1a1ad2ec8607906f6ec358d70c0d0f185f5e9beb3bb40af`
+(17,874 bytes; 598 lines). The pin, analytical paper and all reviews remain
+immutable.
+
+The first two cumulative rungs survive. For a compatible finite one-chart
+cut and future-task family, complete past instruments induce a typed
+experiment of conditional future combs. In a finite-dimensional,
+tester-quotiented, compact-convex admitted process category, a minimum-rank
+stabilizing idempotent constructs a rigid minimal sufficient object in the
+Karoubi completion. It retracts from every sufficient representative and is
+unique up to reversible operational equivalence.
+
+The strongest positive result is
+`RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY`, through
+`RQ0-L0-FUTURE-EXPERIMENT`. The binding scope requires a common
+parameter-independent profile or neutral admitted padding, physical branch
+completion and an admitted task bundle. The object is a repeatable minimum
+process coarse-graining, not an ordinary comb wire, autonomous subsystem or
+spatial boundary.
+
+The selected first obstruction is
+`RQ0-L0-BLOCKED-AT-CENTER-LIFT`. The process retract supplies no observable
+multiplication, central effects or admitted nondemolition central
+instrument. The exact operator-system control confirms that the center of a
+canonical algebraic envelope can remain unreadable by every operational
+state of the original system.
+
+Two bounded printed claims are withdrawn. The Choi swap proves only that its
+particular CP witness does not lift to a deterministic superchannel; it does
+not establish the paper's family-level nonimplication. Retaining the common
+failure sink required by the branch weights changes the eraser minimum from
+`C^4` to `C^5` and a separating retained-output minimum from `M_4` to
+`M_4 direct-sum C`. The exact branch-memory theorem is withdrawn, while its
+qualitative failure to select any inherited seam survives.
+
+The task-smuggling theorem survives at affine-separating scope and records
+`TASK-SELECTION` as a downstream obstruction. The exact one-step qubit W3
+example remains a nonemptiness control only. No canonical classical center,
+W3 Markov boundary, actual outcome, fact co-reference, autonomous region,
+physical overlap, locality, topology, influence, causality, field or gravity
+claim is earned.
+
+This analytical cycle is `ADJUDICATED / CYCLE-CLOSED`. Halt. No successor is
+authorized without a new explicit instruction.

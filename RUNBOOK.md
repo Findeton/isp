@@ -1480,3 +1480,33 @@ the retained source-weight sink changes the eraser minimum from `C^4` to
 observable multiplication nor an admitted central instrument. The selected
 first block is `RQ0-L0-BLOCKED-AT-CENTER-LIFT`. Jointly adjudicate all three
 reviews next without editing the immutable paper, then halt.
+
+## 63. Minimal-sufficient-boundary reviews adjudicated; cycle closed
+
+V13 ledger #103 freezes the joint adjudication at SHA-256
+`284772149bb95c76b1a1ad2ec8607906f6ec358d70c0d0f185f5e9beb3bb40af`
+(17,874 bytes; 598 lines).
+
+All three reviews earn `RQ0-L0-FUTURE-EXPERIMENT` at narrow finite
+common-profile scope and `RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY` at
+compact-convex tester-quotiented Karoubi scope. A minimum-rank stabilizing
+idempotent is rigid, retracts from every sufficient representative, and is
+unique up to reversible operational equivalence.
+
+The selected disposition is `RQ0-L0-BLOCKED-AT-CENTER-LIFT`. The minimal
+process retract has no canonically supplied observable multiplication,
+central effects or admitted central instrument. The operator-system
+counterexample proves that an abstract envelope center need not be a
+physically readable interface.
+
+The adjudication withdraws the paper's family-level Choi Proposition 6.1,
+retaining only the narrower witness-nonliftability warning. It also corrects
+the immutable branch-memory interpretation: retaining the required sink
+gives `C^5`, not `C^4`, for the eraser minimum and `M_4 direct-sum C`, not
+`M_4`, for a separating retained-output experiment. The qualitative
+nonselection result survives. Task selection remains a downstream
+no-smuggling obstruction.
+
+No canonical classical center, W3 Markov boundary, locality, overlap,
+topology, influence, causal, field or gravity claim is earned. The analytical
+cycle is closed. Do not begin a successor without explicit authorization.
