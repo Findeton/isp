@@ -5304,3 +5304,13 @@ R-1..R-13; the STAGE-5 BRIEF fixed: ε-ADMISSIBILITY ON δ with
 both refuted relaxations as mandatory negative controls + the
 mixed-law arena + an occupancy-sensitive statistic.  STATUS
 updated.  Repair dispatch recorded after it occurs.
+
+## 2026-08-06 — CYCLE B″ REPAIR DISPATCHED (v13 LEDGER #144)
+Background worker (Opus 5), bound to the adjudication at 4200491
+(R-1..R-13) and the three frozen reviews; four unit files only;
+freeze-on-delivery; deviations ship with the delivery.  On
+return: verification → TERMINAL at the corrected scope → the
+stage-5 pin per the fixed brief (ε-admissibility on δ; the two
+refuted relaxations as negative controls; the mixed-law arena;
+an occupancy-sensitive statistic).  Recorded after the dispatch
+occurred.
