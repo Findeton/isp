@@ -5369,3 +5369,50 @@ reported first and plainly (EPSILON-BLIND is verdict-level); the
 two refuted relaxations implemented as mandatory negative
 controls; freeze-on-delivery.  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — STAGE-5 DELIVERED; VERIFIED; COMMITTED
+## GREEN-UNREVIEWED (v13 LEDGER #148)
+Verification: source hash = receipt; rerun exit 0; 25/25 gates,
+19/19 anchors, 16/16 mutants; byte-identical; four files only.
+**HEADLINE, VERDICT-LEVEL: RQ0-L3-EPSILON-BLIND** — ε (defect-
+based grading on δ) does NOT separate forged from legitimate
+coarse patches: the separating threshold set is EMPTY and the
+ordering is INVERTED (legitimate tomographic 3/16 > forged-2+2
+1/8 > forged-2+1+1 1/16 — the least positive defect in the whole
+spectrum is THE FORGERY'S); blindness proved STRUCTURAL (ε is a
+function of the patch quadruple; provenance is not a component —
+exhibited: the manufactured 1+1+1+1 and the legitimate address
+context are literally the same patch).  The ε-form is sound
+constructively (ε=0 ⟺ the terminal axiom, both directions, 3803
+instances, 0 disagreements; monotone under refinement 1790/1790;
+welded to the B″ cost machinery, reproducing 120/360/1260/3120
+independently; the graded tower prices the amnesty — the forgery
+costing 120 at τ=0 costs ZERO at τ=1/16) but it rejects the
+forgery ONLY at τ=0, i.e. only as the exact axiom; both refuted
+relaxations fire as mandated and the ε-form does NOT escape
+them.  A CLOSED FORM derived: at any identity-containing law
+ε(π) = Σ_r[Pr(r) − max_{j∈r} ρ_j] — ε CARRIES NO LAW INFORMATION
+exactly where the blockade bites; identity-free side all 745
+admissible patches at ε=0 as required; ε is STATE-RELATIVE (a
+sink-only state zeroes the forgery — a disclosed limit).
+**H2:** the mixed-law escape CLOSES BY BOTH ROUTES AT MEASURED
+PRICES — and both routes IMPORT THE BLOCKADE they were invoked
+to escape (shared refinement always exists at a finite carrier
+but infers admission from existence — the forbidden inference;
+inter-law descent required a construction because THE TERMINAL
+DESCENT SELECTOR READS NO LAW — settling B″ Prop 6.2's
+unmeasured question: THE ATTACK RUNS AT EVERY LAW, 14/15
+certified; the law-relative selector takes the forged context
+14→0 and the eraser 51→1).  MIXED-LAW-CLOSED and
+NOMOLOGICAL-PLURALISM-PRICED registered TOGETHER (combinable,
+non-exclusive at this scope — a declared deviation).
+**ω CONSTRUCTED** (the occupancy statistic: the state's weight
+on outcomes the realized process never writes) — separates W1/W3
+at 0 vs 2/3 and the counter-law preparations at 0 vs 15/16,
+exactly where σ and δ are structurally blind.
+BLOCKED-AT-PROVENANCE instantiated: coarse legitimacy cannot be
+a function of the quadruple; provenance must become DATA.  Ten
+deviations shipped (incl. the two-component (ε, ω) tolerance and
+the full-support hypothesis the pin omitted).  GREEN-UNREVIEWED;
+panel next — the blindness proof itself must survive review
+before the roadmap bends on it.

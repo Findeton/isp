@@ -1,0 +1,1759 @@
+{
+  "anchors": {
+    "passed": 19,
+    "rows": [
+      {
+        "committed": [
+          1,
+          2,
+          5,
+          15,
+          52
+        ],
+        "computed": [
+          1,
+          2,
+          5,
+          15,
+          52
+        ],
+        "id": "N01",
+        "passed": true,
+        "quantity": "record-lattice sizes at 1..5 configurations",
+        "source": "Cycle B sec 4 (Bell triangle)"
+      },
+      {
+        "committed": [
+          3125,
+          120
+        ],
+        "computed": [
+          3125,
+          120
+        ],
+        "id": "N02",
+        "passed": true,
+        "quantity": "DET and REV cardinalities at five configurations",
+        "source": "Cycle B Thm 4.4 / B\" M32"
+      },
+      {
+        "committed": 240,
+        "computed": 240,
+        "id": "N03",
+        "passed": true,
+        "quantity": "the forged boundary's Cycle B closure under DET",
+        "source": "B\" sec 6.1"
+      },
+      {
+        "committed": 120,
+        "computed": 120,
+        "id": "N04",
+        "passed": true,
+        "quantity": "the carrier algebra's closure under DET is the reversible family",
+        "source": "B\" sec 6.3 / Thm 7.2"
+      },
+      {
+        "committed": [
+          "1",
+          "3/4"
+        ],
+        "computed": [
+          "1",
+          "3/4"
+        ],
+        "id": "N05",
+        "passed": true,
+        "quantity": "sigma: admissible patch vs the closure-plus-total-eraser patch",
+        "source": "B\" Thm 7.2"
+      },
+      {
+        "committed": [
+          "0",
+          "1/16"
+        ],
+        "computed": [
+          "0",
+          "1/16"
+        ],
+        "id": "N06",
+        "passed": true,
+        "quantity": "delta: admissible patch vs the forged patch",
+        "source": "B\" sec 7.1"
+      },
+      {
+        "committed": [
+          "1/16",
+          "3/16"
+        ],
+        "computed": [
+          "1/16",
+          "3/16"
+        ],
+        "id": "N07",
+        "passed": true,
+        "quantity": "eps IS B\"'s delta: max of the per-task defect reproduces it",
+        "source": "THIS UNIT vs B\" sec 7.1"
+      },
+      {
+        "committed": [
+          687,
+          259,
+          259
+        ],
+        "computed": [
+          687,
+          259,
+          259
+        ],
+        "id": "N08",
+        "passed": true,
+        "quantity": "censused laws; identity-containing; reversible-containing",
+        "source": "B\" Thm 3.5 (census)"
+      },
+      {
+        "committed": [
+          428,
+          0,
+          0,
+          687
+        ],
+        "computed": [
+          428,
+          0,
+          0,
+          687
+        ],
+        "id": "N09",
+        "passed": true,
+        "quantity": "laws admitting a proper boundary; identity-containing ones that do; identity-free ones that do not; the biconditional",
+        "source": "B\" Thm 3.5 (dichotomy, both directions)"
+      },
+      {
+        "committed": [
+          357,
+          0
+        ],
+        "computed": [
+          357,
+          0
+        ],
+        "id": "N10",
+        "passed": true,
+        "quantity": "unordered admissible pairs; comparable among them",
+        "source": "B\" Thm 6.1 (census)"
+      },
+      {
+        "committed": [
+          1004,
+          745,
+          0
+        ],
+        "computed": [
+          1004,
+          745,
+          0
+        ],
+        "id": "N11",
+        "passed": true,
+        "quantity": "condition-(i) instances; at proper boundaries; (ii-a) failures",
+        "source": "B\" Thm 3.2 (census)"
+      },
+      {
+        "committed": [
+          2748,
+          1008,
+          927
+        ],
+        "computed": [
+          2748,
+          1008,
+          927
+        ],
+        "id": "N12",
+        "passed": true,
+        "quantity": "cost pairs; complement does not admit; non-empty among them",
+        "source": "B\" Thm 8.3 (census)"
+      },
+      {
+        "committed": [
+          [
+            120,
+            360,
+            1260,
+            3120
+          ],
+          [
+            3005,
+            2765,
+            1865,
+            5
+          ]
+        ],
+        "computed": [
+          [
+            120,
+            360,
+            1260,
+            3120
+          ],
+          [
+            3005,
+            2765,
+            1865,
+            5
+          ]
+        ],
+        "id": "N13",
+        "passed": true,
+        "quantity": "the DET cost tower and what it leaves",
+        "source": "B\" Thm 8.4"
+      },
+      {
+        "committed": [
+          14,
+          true
+        ],
+        "computed": [
+          14,
+          true
+        ],
+        "id": "N14",
+        "passed": true,
+        "quantity": "colluding pair: records certified, and the forged greatest record descends",
+        "source": "Cycle B' sec 7.7 / B\" M25-M26"
+      },
+      {
+        "committed": [
+          51,
+          52
+        ],
+        "computed": [
+          51,
+          52
+        ],
+        "id": "N15",
+        "passed": true,
+        "quantity": "the legitimate eraser context: records certified of 52",
+        "source": "Cycle B' Thm 6.4 / B\" M31"
+      },
+      {
+        "committed": [
+          true,
+          false
+        ],
+        "computed": [
+          true,
+          false
+        ],
+        "id": "N16",
+        "passed": true,
+        "quantity": "the escape law {(0,0,2,3,4)} is composition-closed and identity-free",
+        "source": "B\" Prop 6.2 (R1 sec 2.2, R2 F3)"
+      },
+      {
+        "committed": [
+          true,
+          false,
+          "0"
+        ],
+        "computed": [
+          true,
+          false,
+          "0"
+        ],
+        "id": "N17",
+        "passed": true,
+        "quantity": "sub-law relativization: forged member admissible, member two not, and delta collapses to 0",
+        "source": "R2 F3 (frozen effectus review af2149f5f7ab)"
+      },
+      {
+        "committed": [
+          120,
+          60,
+          20
+        ],
+        "computed": [
+          120,
+          60,
+          20
+        ],
+        "id": "N18",
+        "passed": true,
+        "quantity": "(i-b') declared-family sizes at the forged 2+1+1, the forged 2+2 and the legitimate tomographic minimum",
+        "source": "R3 sec 7.3 (frozen instrument review 6bc2aa0ba77e)"
+      },
+      {
+        "committed": [
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "computed": [
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "id": "N19",
+        "passed": true,
+        "quantity": "the identity-free control's admissible set is the two PROPER charts and not the carrier's",
+        "source": "B\" Prop 3.4"
+      }
+    ],
+    "total": 19
+  },
+  "arithmetic": "exact (fractions.Fraction and finite combinatorics); no float in any substantive path, verified by an abstract-syntax-tree sweep of this unit and of the three terminal modules it imports",
+  "falsification": {
+    "anchor_mutants": {
+      "anchor:N03": "the forged boundary's closure size under DET",
+      "anchor:N06": "B\"'s delta values, 0 and 1/16",
+      "anchor:N09": "the rigidity dichotomy's census counts",
+      "anchor:N13": "the DET cost tower",
+      "anchor:N14": "the colluding pair's 14 certified records",
+      "anchor:N17": "R2 F3's refuted sub-law relativization",
+      "anchor:N18": "R3 sec 7.3's refuted (i-b') family sizes",
+      "anchor:N19": "the identity-free control's admissible set"
+    },
+    "derivation_mutants": {
+      "descent-lax2": "the inter-law descent filter admits every partner fact, so law-relative descent is law-free descent and route (ii) is untested",
+      "eps-lax": "the concordance defect is reported zero everywhere, so the reduction theorem's forward direction cannot fire and the spectrum collapses",
+      "ibprime-lax": "negative control 2 is run at the full closure instead of the written-exact subfamily, so the refuted relaxation is not implemented",
+      "omega-lax": "the occupancy statistic is given the whole carrier as its reach, so it cannot see a never-occupied atom and the Feynman gate's missing half is not supplied",
+      "refine-lax": "the refinement monotonicity sweep is emptied, so the claim is corroborated by nothing",
+      "shared-lax": "the shared refinement returns the first law instead of the closure of the union, so route (i) is not the condition it is named as",
+      "state-lax": "the spectrum is measured at the degenerate sink-only state, so every defect is zero and the reduction fails",
+      "tau-lax": "the graded cost at tolerance zero is reported to DISAGREE with B\"'s obstruction, breaking the weld the section claims"
+    },
+    "determinism": "no wall-clock value enters this receipt or the rendered output; timings appear only on the progress stream, so two consecutive runs of the same source produce byte-identical artifacts",
+    "note": "run `--falsification-selftest`; each mutant must exit 1. Anchor mutants substitute the reported value at the anchor comparison site; derivation mutants perturb one computation and must be killed either by making at least one gate fail or by moving a value an anchor pins"
+  },
+  "findings": {
+    "control_1_re_admits_the_forgery": true,
+    "control_2_re_admits_the_forgery": true,
+    "descent_selector_is_law_free": true,
+    "epsilon_is_law_blind_in_closed_form": true,
+    "epsilon_ordering_inverted": true,
+    "epsilon_separates_forged_from_legitimate": false,
+    "least_positive_epsilon_under_DET": "1/16",
+    "mixed_law_escape_closes_under_route_i": true,
+    "mixed_law_escape_closes_under_route_ii": true,
+    "occupancy_statistic_constructed": true,
+    "reduction_holds": true
+  },
+  "gates": {
+    "failed": [],
+    "passed": 25,
+    "rows": [
+      {
+        "claim": "EXACT ARITHMETIC.  Every substantive value in this unit is an integer, a Fraction or a finite combinatorial object; the abstract-syntax-tree sweep of this unit and of the three terminal modules it imports finds float literals only inside progress-stream formatting, which enters no receipt and no rendered output",
+        "class": "hygiene",
+        "id": "L3-00",
+        "passed": true,
+        "value": {
+          "float_literals_found": []
+        }
+      },
+      {
+        "claim": "THE REDUCTION THEOREM, GATED BOTH DIRECTIONS.  At a full-support state a patch is 0-admissible in the eps-form if and only if it is admissible under the terminal B\" axiom.  Measured exhaustively over every record at two, three, four and five configurations against every committed law, and over the whole 687-law census at three: zero disagreements.  The eps-form is therefore a QUANTIFICATION of the terminal axiom and not a replacement for it",
+        "class": "reduction",
+        "id": "L3-01",
+        "passed": true,
+        "value": {
+          "census_disagreements": 0,
+          "census_instances": 3435,
+          "committed_disagreements": 0,
+          "committed_instances": 368,
+          "disagreement_rows": []
+        }
+      },
+      {
+        "claim": "THE DICHOTOMY'S IDENTITY-FREE SIDE COMES OUT eps = 0, AS THE PIN REQUIRES.  Every admissible patch at an identity-free censused law -- the side of B\" Theorem 3.5 where PROPER charts live -- has concordance defect exactly zero.  This is the reduction theorem read on the populated side, and it is the reason the eps-form cannot buy a proper chart by lowering a threshold: on that side there is nothing to lower",
+        "class": "reduction",
+        "id": "L3-02",
+        "passed": true,
+        "value": {
+          "identity_free_admissible_patches": 745,
+          "of_them_with_epsilon_zero": 745
+        }
+      },
+      {
+        "claim": "THE FULL-SUPPORT HYPOTHESIS IS LOAD-BEARING, AND IT IS A LIMIT OF THE FORM, NOT A TECHNICALITY.  At the degenerate state carrying all mass on the retained sink the forged boundary's defect is exactly 0 while the terminal axiom still rejects it, so the reduction fails and the eps-form would certify the forgery at tolerance zero.  eps is STATE-RELATIVE: whoever declares the state moves the number",
+        "class": "control",
+        "id": "L3-03",
+        "passed": true,
+        "value": {
+          "epsilon_at_the_committed_state": "1/16",
+          "epsilon_at_the_degenerate_state": "0",
+          "terminal_verdict": "inadmissible"
+        }
+      },
+      {
+        "claim": "THE NON-EMPTINESS CLAUSE IS LOAD-BEARING.  The empty declared family has concordance defect exactly 0 -- no task resolves anything because there is no task -- while the terminal axiom rejects it through ker(empty) = the one-atom boundary.  Without clause (a)'s non-emptiness the eps-form would certify a patch that writes nothing at all",
+        "class": "control",
+        "id": "L3-04",
+        "passed": true,
+        "value": {
+          "epsilon_of_the_empty_family": "0"
+        }
+      },
+      {
+        "claim": "THE SPECTRUM IS MEASURED, NOT ASSERTED, AND EVERY VALUE IS AN EXACT RATIONAL.  Under every committed law containing a reversible operation the three named coarse boundaries carry a STRICTLY POSITIVE concordance defect, as B\"'s rigidity dichotomy requires; the values are 1/16, 1/8 and 3/16 and they are the same under DET, REV, the funnel closure and the counter-law, because the defect is carried by the identity, which every one of them contains",
+        "class": "spectrum",
+        "id": "L3-05",
+        "passed": true,
+        "value": {
+          "rows": 12
+        }
+      },
+      {
+        "claim": "THE SMALLEST POSITIVE DEFECT IN THE WHOLE SPECTRUM IS ATTAINED BY THE FORGERY.  Over all 52 records at the committed carrier under DET the defect takes five values, 0 < 1/16 < 1/8 < 3/16 < 1/4; the unique zero is the carrier's own algebra, and the least positive value 1/16 is attained by the ten two-configuration merges -- one of which is exactly the colluding pair's forged boundary.  So the FIRST coarse chart any tolerance can buy includes a forged one",
+        "class": "spectrum",
+        "id": "L3-06",
+        "passed": true,
+        "value": {
+          "boundaries_attaining_it": 10,
+          "counts": {
+            "0": 1,
+            "1/16": 10,
+            "1/4": 1,
+            "1/8": 25,
+            "3/16": 15
+          },
+          "least_positive": "1/16",
+          "the_forged_boundary_is_among_them": true,
+          "values": [
+            "0",
+            "1/16",
+            "1/8",
+            "3/16",
+            "1/4"
+          ]
+        }
+      },
+      {
+        "claim": "eps IS LAW-BLIND INSIDE THE IDENTITY-CONTAINING CLASS, IN CLOSED FORM.  The identity lies in the closure of every boundary at every law and separates every pair, and no admitted future has a larger per-task defect, so wherever the law contains the identity the defect collapses to the LAW-FREE quantity sum_r [Pr(r) - max_{j in r} rho_j].  Measured over every record at the committed carrier against every committed identity-containing law: the closed form agrees everywhere, and the five spectra -- at law sizes 21, 120, 120, 3006 and 3125 -- are IDENTICAL.  eps therefore carries no information about the law at all inside the class where the blockade bites; it grades the boundary against the state and nothing else",
+        "class": "spectrum",
+        "id": "L3-24",
+        "passed": true,
+        "value": {
+          "all_five_spectra_identical": true,
+          "instances": 260,
+          "laws": [
+            "DET",
+            "FUNNEL",
+            "REV",
+            "FUNNEL-CLOSURE",
+            "COUNTER-LAW"
+          ]
+        }
+      },
+      {
+        "claim": "RQ0-L3-EPSILON-BLIND, MEASURED AND REPORTED PLAINLY.  eps does NOT separate the forged coarse patches from the legitimate one.  No threshold whatsoever admits the legitimate coarse patch while rejecting either forged one -- every candidate value in the spectrum and every midpoint between consecutive values is tried, and the separating set is EMPTY.  Worse, the order is INVERTED at the committed state: the legitimate coarse boundary carries defect 3/16 and the forged one 1/16, so eps ranks the legitimate patch as the least admissible of the three",
+        "class": "separation",
+        "id": "L3-07",
+        "passed": true,
+        "value": {
+          "epsilon": {
+            "forged 2+1+1": "1/16",
+            "forged 2+2": "1/8",
+            "legitimate tomographic minimum": "3/16"
+          },
+          "separating_thresholds": []
+        }
+      },
+      {
+        "claim": "THE COLLAPSE IS TOTAL, NOT MARGINAL.  At tolerance 0 the eps-form admits exactly ONE of the 52 records -- the carrier's own algebra, i.e. the terminal axiom.  At the least tolerance that admits any coarse chart at all, 1/16, it admits eleven, INCLUDING the forged boundary; at the tolerance needed to admit the legitimate coarse patch, 3/16, it admits fifty-one of fifty-two -- everything except the one-atom boundary.  The eps-form is either the terminal axiom or an almost total amnesty",
+        "class": "separation",
+        "id": "L3-08",
+        "passed": true,
+        "value": {
+          "at_tau_0": 1,
+          "at_tau_1_16": 11,
+          "at_tau_3_16": 51,
+          "of": 52
+        }
+      },
+      {
+        "claim": "THE BLINDNESS IS STRUCTURAL AT THIS SCOPE, AND IT IS PROVED, NOT SAMPLED.  eps is a function of the quadruple (boundary, family, preparation, law) through Pres_L(A(B)) and the committed state; provenance is not a component of the quadruple and B\" sec 10 records that it is not laboratory data.  Exhibited: the adversary's manufactured 1+1+1+1 context and the legitimate address context present the SAME carrier partition under the same law -- by B\" sec 6.5 literally the same patch -- so their defects are identical.  No statistic on the quadruple can separate a forged declaration from a legitimate one; what eps grades is coarseness weighted by state mass, which is why the ordering inverts",
+        "class": "separation",
+        "id": "L3-09",
+        "passed": true,
+        "value": {
+          "epsilon_forged_declaration": "0",
+          "epsilon_legitimate_declaration": "0",
+          "same_presented_partition": true
+        }
+      },
+      {
+        "claim": "eps IS MONOTONE UNDER REFINEMENT, MEASURED EXHAUSTIVELY OVER EVERY STRICTLY COMPARABLE PAIR OF RECORDS AT THREE, FOUR AND FIVE CONFIGURATIONS UNDER EVERY COMMITTED LAW: refining a boundary never raises its defect.  This is what makes the form usable as a grading -- and it is also exactly why it cannot separate: it grades coarseness, and forgery is not coarseness",
+        "class": "monotonicity",
+        "id": "L3-10",
+        "passed": true,
+        "value": {
+          "comparable_pairs_checked": 1790,
+          "violation_rows": [],
+          "violations": 0
+        }
+      },
+      {
+        "claim": "THE eps-FORM WELDS TO B\"'s COST MACHINERY EXACTLY.  The per-task defect is intrinsic to the task, the boundary and the state, so nothing else in an altered law can change it and the same argument that bounds B\"'s forging cost below by |Obs| bounds the tolerance-tau cost below by |{F in Pres : d(F) > tau}|.  At tau = 0 that set IS B\"'s obstruction, member for member, at all four levels of the committed tower -- 120, 360, 1260, 3120 recomputed here by the defect route",
+        "class": "cost",
+        "id": "L3-11",
+        "passed": true,
+        "value": {
+          "levels": [
+            {
+              "B_obstruction": 120,
+              "graded_cost_at_tau_zero": 120,
+              "level": "record level"
+            },
+            {
+              "B_obstruction": 360,
+              "graded_cost_at_tau_zero": 360,
+              "level": "boundary level"
+            },
+            {
+              "B_obstruction": 1260,
+              "graded_cost_at_tau_zero": 1260,
+              "level": "coarser boundary"
+            },
+            {
+              "B_obstruction": 3120,
+              "graded_cost_at_tau_zero": 3120,
+              "level": "the limit"
+            }
+          ]
+        }
+      },
+      {
+        "claim": "AND THE WELD PRICES THE AMNESTY.  At every level of the tower the graded cost falls to ZERO as soon as the tolerance reaches that level's own defect: the forgery that costs 120 deletions at tau = 0 costs nothing at tau = 1/16.  A single alteration never moves eps at any level of the committed tower, because the maximum is attained by many tasks at once -- eps is stable under single-operation perturbation and collapses under tolerance, which is the opposite of what a discriminator needs",
+        "class": "cost",
+        "id": "L3-12",
+        "passed": true,
+        "value": {
+          "levels_free_at_their_own_defect": [
+            "record level",
+            "boundary level",
+            "coarser boundary",
+            "the limit"
+          ],
+          "single_deletion_moves_epsilon": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      {
+        "claim": "MANDATORY NEGATIVE CONTROL 1 BEHAVES AS THE BRIEF REQUIRES: the sub-law relativization RE-ADMITS THE FORGERY.  Under the declared composition-closed identity-free sub-law {(0,0,2,3,4)} the colluding pair's forged member passes all four clauses, member two becomes inadmissible, and the refinement separator collapses from 1/16 to exactly 0 -- so the relaxation destroys the discriminator it was meant to survive.  The control fires; the relaxation stays refuted",
+        "class": "control",
+        "id": "L3-13",
+        "passed": true,
+        "value": {
+          "admissible": true,
+          "epsilon": "0",
+          "family_size": 1,
+          "sub_law_closed": true,
+          "sub_law_has_identity": false,
+          "sub_law_size": 1
+        }
+      },
+      {
+        "claim": "MANDATORY NEGATIVE CONTROL 2 BEHAVES AS THE BRIEF REQUIRES: the (i-b') relaxation RE-ADMITS THE FORGERY, and not only it.  Weakening the closure to its written-exact subfamily makes ALL FIFTY-TWO records at the committed carrier admissible under DET, the forged 2+1+1 among them with a declared family of 120 tasks, the forged 2+2 with 60 and the legitimate tomographic minimum with 20.  Blockade and discrimination are the same mechanism, as the adjudication's brief states",
+        "class": "control",
+        "id": "L3-14",
+        "passed": true,
+        "value": {
+          "boundaries_admitted": 52,
+          "of": 52,
+          "rows": {
+            "forged 2+1+1": {
+              "admissible": true,
+              "family_size": 120,
+              "i_a": true,
+              "i_b_prime": true,
+              "ii_a": true,
+              "ii_b": true
+            },
+            "forged 2+2": {
+              "admissible": true,
+              "family_size": 60,
+              "i_a": true,
+              "i_b_prime": true,
+              "ii_a": true,
+              "ii_b": true
+            },
+            "legitimate tomographic minimum": {
+              "admissible": true,
+              "family_size": 20,
+              "i_a": true,
+              "i_b_prime": true,
+              "ii_a": true,
+              "ii_b": true
+            }
+          }
+        }
+      },
+      {
+        "claim": "AND THE eps-FORM DOES NOT ESCAPE THE CONTROLS -- IT JOINS THEM.  At tolerance zero the eps-form rejects the forgery exactly as the terminal axiom does, which is the ONLY tolerance at which it does: by L3-06 the least tolerance that admits any coarse chart admits the forged one too.  The pin's required outcome -- 'the eps-form must NOT re-admit the forgery' -- is therefore NOT obtained, and the honest finding RQ0-L3-EPSILON-BLIND is reported in its place",
+        "class": "control",
+        "id": "L3-15",
+        "passed": true,
+        "value": {
+          "at_every_tolerance_that_buys_a_coarse_chart_it_is_admitted": true,
+          "at_tolerance_zero_the_forgery_is_rejected": true
+        }
+      },
+      {
+        "claim": "THE ANCHORED ESCAPE IS REPRODUCED BEFORE IT IS TESTED.  Member one at the identity-free {(0,0,2,3,4)} and member two at DET are BOTH admissible while their boundaries are strictly comparable -- the configuration B\" Theorem 6.1 forbids at a shared law.  The escape is real and it is this unit's object",
+        "class": "mixed-law",
+        "id": "L3-16",
+        "passed": true,
+        "value": {
+          "boundaries_comparable": true,
+          "closes_under_shared_refinement": true,
+          "declared_family_survives_at_the_shared_refinement": [
+            false,
+            true
+          ],
+          "escapes": true,
+          "member_1_at_its_own_law": true,
+          "member_1_at_the_shared_refinement": false,
+          "member_2_at_its_own_law": true,
+          "member_2_at_the_shared_refinement": true,
+          "shared_refinement_is_a_law": true,
+          "shared_refinement_size": 3125
+        }
+      },
+      {
+        "claim": "ROUTE (i), SHARED REFINEMENT, CLOSES THE ESCAPE -- AND IS EMPTY AS A CONDITION.  The least composition-closed law containing both declared laws is DET itself, all 3125 operations, because the escape generator is a deterministic map and so already an admitted operation of DET; at that law member one is inadmissible by B\" Theorem 3.1 and the escape is closed.  But the shared refinement of two admitted laws at a finite carrier ALWAYS exists -- the closure of their union is composition-closed by construction -- so route (i) is not a hypothesis that can fail, it is the deletion of the cycle's declared scope, one law family per context",
+        "class": "mixed-law",
+        "id": "L3-17",
+        "passed": true,
+        "value": {
+          "member_1_at_L_star": false,
+          "member_2_at_L_star": true,
+          "shared_refinement_size": 3125
+        }
+      },
+      {
+        "claim": "ROUTE (i)'s PRICE, EXACTLY.  Reading admissibility at the shared refinement is the exact negation of negative control 1: the sub-law relativization says read the patch at the law it runs, shared refinement says read it at the law both patches inhabit.  The price is measured on both sides.  First, member one's declared family does NOT survive the move -- one task at its own law against 240 at the shared one -- so route (i) does not adjudicate the declared patch, it adjudicates a different one.  Second, the shared law is nobody's declaration: constructing it and calling it admitted infers admission from algebraic existence, which B\" sec 1.1 forbids in terms ('admission is measured per law and never inferred from algebraic existence').  Route (i) closes the escape under a NEW hypothesis, not a committed one",
+        "class": "mixed-law",
+        "id": "L3-18",
+        "passed": true,
+        "value": {
+          "declared_family_survives": [
+            false,
+            true
+          ],
+          "member_1_family_at_its_own_law": 1,
+          "member_1_family_at_the_shared_refinement": 240
+        }
+      },
+      {
+        "claim": "THE ESCAPE DELIVERS THE ATTACK, AND THAT IS PROVED RATHER THAN SAMPLED.  B\" Prop 6.2 left open whether the predecessor's record-descent attack still runs at the escape law.  It does, at every law: the terminal descent selector is a function of the two contexts and the declared overlap and takes no law argument at all, so its 14-of-15 certification and its descending greatest record are invariant under every declaration of law.  The mixed-law escape is therefore not a bookkeeping artefact -- the adversary keeps both the admissibility verdicts and the attack",
+        "class": "mixed-law",
+        "id": "L3-19",
+        "passed": true,
+        "value": {
+          "certified": 14,
+          "of": 15
+        }
+      },
+      {
+        "claim": "ROUTE (ii), INTER-LAW DESCENT, CLOSES THE ESCAPE -- AND CERTIFIES ALMOST NOTHING.  Restricting the partner's realized facts to those the partner is ADMISSIBLE to assert at its own declared law kills the forged context's descent outright: 14 certified records become 0, and the forged greatest record no longer descends.  The closure is real.  Its price is measured with it: the same restriction cuts the LEGITIMATE eraser context from 51 certified records of 52 to 1, because B\"'s rigidity leaves the partner exactly one admissible boundary to assert facts with.  Route (ii) closes the escape by importing the blockade it was invoked to escape",
+        "class": "mixed-law",
+        "id": "L3-20",
+        "passed": true,
+        "value": {
+          "eraser_law_free": 51,
+          "eraser_law_relative": 1,
+          "forged_law_free": 14,
+          "forged_law_relative": 0
+        }
+      },
+      {
+        "claim": "THE BLINDNESS OF B\"'s TWO STATISTICS IS STRUCTURAL, NOT INCIDENTAL.  sigma and delta are functions of (boundary, declared family, state) alone; the declared preparation is not an argument of either.  B\"'s own minimal witness W1 and W3 agree on all three arguments, differ ONLY in the declared preparation, and receive OPPOSITE terminal verdicts -- so no function of those three arguments can ever see a failure of the occupancy clause.  The proof is one line and the witness is exhibited",
+        "class": "occupancy",
+        "id": "L3-21",
+        "passed": true,
+        "value": {
+          "W1": {
+            "admissible": true,
+            "delta": "0",
+            "sigma": "1"
+          },
+          "W3": {
+            "admissible": false,
+            "delta": "0",
+            "sigma": "1"
+          }
+        }
+      },
+      {
+        "claim": "RQ0-L3-OCCUPANCY-STATISTIC -- CONSTRUCTED AND GATED.  omega changes a number exactly where B\"'s two statistics cannot.  At three configurations, W1 against W3: identical sigma and delta, omega exactly 0 against exactly 2/3.  At the committed carrier under the counter-law, two patches differing in the declared preparation alone: identical sigma and delta, omega exactly 0 against exactly 15/16.  omega is exact-rational, it is a functional of two admitted experiments' outcome distributions, and it vanishes precisely on the occupancy clause -- so the Feynman gate's missing half is supplied at this scope",
+        "class": "occupancy",
+        "id": "L3-22",
+        "passed": true,
+        "value": {
+          "W1_omega": "0",
+          "W3_omega": "2/3",
+          "carrier_full_prep_omega": "0",
+          "carrier_prep_{0}_omega": "15/16"
+        }
+      },
+      {
+        "claim": "AND omega's HONEST HALF, STATED WITH IT.  omega reads the declared preparation, which sigma and delta do not; it does NOT read provenance, which nothing on the quadruple can.  It is therefore a completion of the Feynman gate and not an answer to the de-smuggling question: an adversary who declares the preparation moves omega exactly as one who declares the state moves eps.  Measured: at the committed carrier the forged and the legitimate declarations of the same partition receive the same omega",
+        "class": "occupancy",
+        "id": "L3-23",
+        "passed": true,
+        "value": {
+          "omega_is_a_function_of_the_quadruple": true
+        }
+      }
+    ],
+    "total": 25
+  },
+  "immutable_base_commit": "267cb2a",
+  "nonclaims": [
+    "No claim that eps separates forged from legitimate patches.  It does not, at any threshold, and the ordering is inverted (L3-07).",
+    "No claim that the eps-form admits a proper chart that the terminal axiom rejects while still rejecting the forgery.  The least tolerance that admits any coarse chart admits a forged one (L3-06, L3-08).",
+    "No claim that eps is state-independent.  It is state-relative, the reduction needs full support, and a degenerate state certifies the forgery at tolerance zero (L3-03).",
+    "No claim that omega answers the de-smuggling question.  It reads the declared preparation; it does not read provenance, and nothing on the quadruple can (L3-23).",
+    "No claim that omega grades the second clause of (ii-b).  Unrealized identifications between reachable configurations are kept exact.",
+    "No claim that the shared refinement is an ADMITTED law.  It is composition-closed by construction; calling it admitted infers admission from algebraic existence, which the terminal cycle forbids (L3-18).",
+    "No claim that inter-law descent is the predecessor's selector.  The terminal selector takes no law argument; the law-relative form is built here and its collateral is measured (L3-20).",
+    "No spatial, causal, temporal or spacetime reading of reachability, of 'coarse', of 'patch' or of 'atlas'.  No locality, topology, manifold, field, QFT or gravity object is constructed or claimed.",
+    "No claim beyond the committed carrier, the committed law families, the 687-law census at three configurations and the declared states.",
+    "No Lean, as pinned.  No new primitive: every object is committed structure from Cycles B, B' and B\" and the three frozen B\" reviews."
+  ],
+  "pin_commit": "6e1aa82",
+  "schema": "rq0-l3-epsilon-admissibility-receipt-v1",
+  "source_sha256": "d0f8ad773135c7f4ee77e4fe54109f8a24181e9ff651bc9feaea6a16e639a43a",
+  "tables": {
+    "coarse_under_reversibility_containing_laws": [
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/16",
+        "family_size": 240,
+        "law": "DET"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/8",
+        "family_size": 420,
+        "law": "DET"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "3/16",
+        "family_size": 1280,
+        "law": "DET"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/16",
+        "family_size": 120,
+        "law": "REV"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/8",
+        "family_size": 120,
+        "law": "REV"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "3/16",
+        "family_size": 120,
+        "law": "REV"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/16",
+        "family_size": 121,
+        "law": "FUNNEL-CLOSURE"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/8",
+        "family_size": 301,
+        "law": "FUNNEL-CLOSURE"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "3/16",
+        "family_size": 1161,
+        "law": "FUNNEL-CLOSURE"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/16",
+        "family_size": 9,
+        "law": "COUNTER-LAW"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "1/8",
+        "family_size": 17,
+        "law": "COUNTER-LAW"
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "epsilon": "3/16",
+        "family_size": 60,
+        "law": "COUNTER-LAW"
+      }
+    ],
+    "epsilon_spectrum_at_the_committed_carrier": [
+      {
+        "contains_a_reversible_operation": true,
+        "counts": {
+          "0": 1,
+          "1/16": 10,
+          "1/4": 1,
+          "1/8": 25,
+          "3/16": 15
+        },
+        "distinct_epsilon_values": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon_zero_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "law": "DET",
+        "size": 3125
+      },
+      {
+        "contains_a_reversible_operation": true,
+        "counts": {
+          "0": 1,
+          "1/16": 10,
+          "1/4": 1,
+          "1/8": 25,
+          "3/16": 15
+        },
+        "distinct_epsilon_values": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon_zero_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "law": "FUNNEL",
+        "size": 21
+      },
+      {
+        "contains_a_reversible_operation": true,
+        "counts": {
+          "0": 1,
+          "1/16": 10,
+          "1/4": 1,
+          "1/8": 25,
+          "3/16": 15
+        },
+        "distinct_epsilon_values": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon_zero_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "law": "REV",
+        "size": 120
+      },
+      {
+        "contains_a_reversible_operation": true,
+        "counts": {
+          "0": 1,
+          "1/16": 10,
+          "1/4": 1,
+          "1/8": 25,
+          "3/16": 15
+        },
+        "distinct_epsilon_values": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon_zero_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "law": "FUNNEL-CLOSURE",
+        "size": 3006
+      },
+      {
+        "contains_a_reversible_operation": true,
+        "counts": {
+          "0": 1,
+          "1/16": 10,
+          "1/4": 1,
+          "1/8": 25,
+          "3/16": 15
+        },
+        "distinct_epsilon_values": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon_zero_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "law": "COUNTER-LAW",
+        "size": 120
+      }
+    ],
+    "inter_law_descent": {
+      "law_free_descent": {
+        "forged_context_certified": 14,
+        "greatest_record_descends": true,
+        "legitimate_eraser_certified": 51,
+        "of_records": 15,
+        "of_records_eraser": 52
+      },
+      "law_relative_descent": {
+        "partner_law_DET": {
+          "forged_context_certified": 0,
+          "greatest_record_descends": false,
+          "legitimate_eraser_certified": 1
+        },
+        "partner_law_the_escape_law": {
+          "forged_context_certified": 1,
+          "partner_admissible_facts": 1
+        }
+      },
+      "the_terminal_selector_reads_no_law": "certified_records, facts_realized and transports_without_collision take (context atoms, incidence, partner facts) only; the declared law appears in none of them, so the predecessor's record-descent attack runs IDENTICALLY at every declared law -- which answers B\" Prop 6.2's explicitly unmeasured question"
+    },
+    "law_perturbation": [
+      {
+        "B_terminal_obstruction_size": 120,
+        "a_single_deletion_moves_epsilon": false,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "closure_size": 240,
+        "distinct_task_defects": [
+          "0",
+          "1/16"
+        ],
+        "epsilon": "1/16",
+        "graded_cost": [
+          {
+            "deletions_required": 120,
+            "tau": "0"
+          },
+          {
+            "deletions_required": 0,
+            "tau": "1/16"
+          }
+        ],
+        "graded_cost_at_tau_zero": 120,
+        "level": "record level",
+        "tasks_attaining_the_maximum": 120
+      },
+      {
+        "B_terminal_obstruction_size": 360,
+        "a_single_deletion_moves_epsilon": false,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "closure_size": 420,
+        "distinct_task_defects": [
+          "0",
+          "1/16",
+          "1/8"
+        ],
+        "epsilon": "1/8",
+        "graded_cost": [
+          {
+            "deletions_required": 360,
+            "tau": "0"
+          },
+          {
+            "deletions_required": 120,
+            "tau": "1/16"
+          },
+          {
+            "deletions_required": 0,
+            "tau": "1/8"
+          }
+        ],
+        "graded_cost_at_tau_zero": 360,
+        "level": "boundary level",
+        "tasks_attaining_the_maximum": 120
+      },
+      {
+        "B_terminal_obstruction_size": 1260,
+        "a_single_deletion_moves_epsilon": false,
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "closure_size": 1280,
+        "distinct_task_defects": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16"
+        ],
+        "epsilon": "3/16",
+        "graded_cost": [
+          {
+            "deletions_required": 1260,
+            "tau": "0"
+          },
+          {
+            "deletions_required": 1020,
+            "tau": "1/16"
+          },
+          {
+            "deletions_required": 120,
+            "tau": "1/8"
+          },
+          {
+            "deletions_required": 0,
+            "tau": "3/16"
+          }
+        ],
+        "graded_cost_at_tau_zero": 1260,
+        "level": "coarser boundary",
+        "tasks_attaining_the_maximum": 120
+      },
+      {
+        "B_terminal_obstruction_size": 3120,
+        "a_single_deletion_moves_epsilon": false,
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "closure_size": 3125,
+        "distinct_task_defects": [
+          "0",
+          "1/16",
+          "1/8",
+          "3/16",
+          "1/4"
+        ],
+        "epsilon": "1/4",
+        "graded_cost": [
+          {
+            "deletions_required": 3120,
+            "tau": "0"
+          },
+          {
+            "deletions_required": 3040,
+            "tau": "1/16"
+          },
+          {
+            "deletions_required": 2560,
+            "tau": "1/8"
+          },
+          {
+            "deletions_required": 1280,
+            "tau": "3/16"
+          },
+          {
+            "deletions_required": 0,
+            "tau": "1/4"
+          }
+        ],
+        "graded_cost_at_tau_zero": 3120,
+        "level": "the limit",
+        "tasks_attaining_the_maximum": 1280
+      }
+    ],
+    "mixed_law_arena": {
+      "boundaries_comparable": true,
+      "closes_under_shared_refinement": true,
+      "declared_family_survives_at_the_shared_refinement": [
+        false,
+        true
+      ],
+      "escapes": true,
+      "member_1_at_its_own_law": true,
+      "member_1_at_the_shared_refinement": false,
+      "member_2_at_its_own_law": true,
+      "member_2_at_the_shared_refinement": true,
+      "shared_refinement_is_a_law": true,
+      "shared_refinement_size": 3125
+    },
+    "named_boundaries": [
+      {
+        "atoms": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "the forged aligned manufactured 2+1+1",
+        "epsilon": "1/16",
+        "family_size": 240,
+        "provenance": "FORGED",
+        "terminal_verdict": false
+      },
+      {
+        "atoms": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "the forged aligned manufactured 2+2",
+        "epsilon": "1/8",
+        "family_size": 420,
+        "provenance": "FORGED",
+        "terminal_verdict": false
+      },
+      {
+        "atoms": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "the corrected tomographic minimum",
+        "epsilon": "3/16",
+        "family_size": 1280,
+        "provenance": "LEGITIMATE",
+        "terminal_verdict": false
+      },
+      {
+        "atoms": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "the carrier's own configuration algebra",
+        "epsilon": "0",
+        "family_size": 120,
+        "provenance": "LEGITIMATE",
+        "terminal_verdict": true
+      }
+    ],
+    "negative_controls": {
+      "control_1_sub_law_relativization": {
+        "and_kills_the_separator": true,
+        "declared_sub_law": "{(0,0,2,3,4)} -- composition-closed, identity-free",
+        "forged_member_one": {
+          "admissible": true,
+          "epsilon": "0",
+          "family_size": 1,
+          "sub_law_closed": true,
+          "sub_law_has_identity": false,
+          "sub_law_size": 1
+        },
+        "member_two": {
+          "admissible": false,
+          "epsilon": "0",
+          "family_size": 0,
+          "sub_law_closed": true,
+          "sub_law_has_identity": false,
+          "sub_law_size": 1
+        },
+        "re_admits_the_forgery": true,
+        "source": "R2 (effectus) F3, frozen af2149f5f7ab"
+      },
+      "control_2_i_b_prime": {
+        "boundaries_admitted_of_52": 52,
+        "re_admits_the_forgery": true,
+        "relaxation": "F = {F in Pres_L(A(B)) : comp(F) = A(B)}",
+        "rows": {
+          "forged 2+1+1": {
+            "admissible": true,
+            "family_size": 120,
+            "i_a": true,
+            "i_b_prime": true,
+            "ii_a": true,
+            "ii_b": true
+          },
+          "forged 2+2": {
+            "admissible": true,
+            "family_size": 60,
+            "i_a": true,
+            "i_b_prime": true,
+            "ii_a": true,
+            "ii_b": true
+          },
+          "legitimate tomographic minimum": {
+            "admissible": true,
+            "family_size": 20,
+            "i_a": true,
+            "i_b_prime": true,
+            "ii_a": true,
+            "ii_b": true
+          }
+        },
+        "source": "R3 (instrument) sec 7.3, frozen 6bc2aa0ba77e"
+      },
+      "the_eps_form_at_tolerance_zero": {
+        "epsilon": "1/16",
+        "forged_boundary_admissible": false
+      }
+    },
+    "occupancy_statistic": {
+      "definition": "omega(P) = the committed state's probability of a record outcome the patch's OWN realized process never produces: run the boundary's record instrument on the committed state and on the uniform state over Reach(P), and sum the committed probability of the outcomes the second never returns",
+      "does_not_see": "the SECOND clause of (ii-b) -- an asserted identification unrealized between reachable configurations.  That clause is kept exact in the eps-form and is not graded here",
+      "rows": [
+        {
+          "admissible": true,
+          "delta": "0",
+          "omega": "0",
+          "patch": "W1 (three configurations, preparation the whole carrier)",
+          "sigma": "1"
+        },
+        {
+          "admissible": false,
+          "delta": "0",
+          "omega": "2/3",
+          "patch": "W3 (three configurations, preparation {0})",
+          "sigma": "1"
+        },
+        {
+          "admissible": true,
+          "delta": "0",
+          "omega": "0",
+          "patch": "the committed carrier under the counter-law, preparation the whole carrier",
+          "sigma": "1"
+        },
+        {
+          "admissible": false,
+          "delta": "0",
+          "omega": "15/16",
+          "patch": "the committed carrier under the counter-law, preparation {0}",
+          "sigma": "1"
+        }
+      ]
+    },
+    "reduction_sweep": [
+      {
+        "agreements": 2,
+        "configurations": 2,
+        "law": "DET",
+        "records": 2,
+        "size": 4
+      },
+      {
+        "agreements": 2,
+        "configurations": 2,
+        "law": "FUNNEL",
+        "records": 2,
+        "size": 3
+      },
+      {
+        "agreements": 2,
+        "configurations": 2,
+        "law": "REV",
+        "records": 2,
+        "size": 2
+      },
+      {
+        "agreements": 2,
+        "configurations": 2,
+        "law": "ALL",
+        "records": 2,
+        "size": 9
+      },
+      {
+        "agreements": 5,
+        "configurations": 3,
+        "law": "DET",
+        "records": 5,
+        "size": 27
+      },
+      {
+        "agreements": 5,
+        "configurations": 3,
+        "law": "FUNNEL",
+        "records": 5,
+        "size": 7
+      },
+      {
+        "agreements": 5,
+        "configurations": 3,
+        "law": "REV",
+        "records": 5,
+        "size": 6
+      },
+      {
+        "agreements": 5,
+        "configurations": 3,
+        "law": "FUNNEL-CLOSURE",
+        "records": 5,
+        "size": 22
+      },
+      {
+        "agreements": 5,
+        "configurations": 3,
+        "law": "ALL",
+        "records": 5,
+        "size": 343
+      },
+      {
+        "agreements": 15,
+        "configurations": 4,
+        "law": "DET",
+        "records": 15,
+        "size": 256
+      },
+      {
+        "agreements": 15,
+        "configurations": 4,
+        "law": "FUNNEL",
+        "records": 15,
+        "size": 13
+      },
+      {
+        "agreements": 15,
+        "configurations": 4,
+        "law": "REV",
+        "records": 15,
+        "size": 24
+      },
+      {
+        "agreements": 15,
+        "configurations": 4,
+        "law": "FUNNEL-CLOSURE",
+        "records": 15,
+        "size": 233
+      },
+      {
+        "agreements": 15,
+        "configurations": 4,
+        "law": "ALL",
+        "records": 15,
+        "size": 50625
+      },
+      {
+        "agreements": 52,
+        "configurations": 5,
+        "law": "DET",
+        "records": 52,
+        "size": 3125
+      },
+      {
+        "agreements": 52,
+        "configurations": 5,
+        "law": "FUNNEL",
+        "records": 52,
+        "size": 21
+      },
+      {
+        "agreements": 52,
+        "configurations": 5,
+        "law": "REV",
+        "records": 52,
+        "size": 120
+      },
+      {
+        "agreements": 52,
+        "configurations": 5,
+        "law": "FUNNEL-CLOSURE",
+        "records": 52,
+        "size": 3006
+      },
+      {
+        "agreements": 52,
+        "configurations": 5,
+        "law": "COUNTER-LAW",
+        "records": 52,
+        "size": 120
+      }
+    ],
+    "separation": {
+      "admissible_at_tau_1_16": 11,
+      "admissible_at_tau_3_16": 51,
+      "admissible_at_tau_zero": 1,
+      "epsilon_values": {
+        "forged 2+1+1": "1/16",
+        "forged 2+2": "1/8",
+        "legitimate tomographic minimum": "3/16"
+      },
+      "forged_2_1_1_admitted_at_1_16": true,
+      "forged_2_1_1_admitted_at_3_16": true,
+      "ordering": "the LEGITIMATE coarse patch carries the LARGEST defect and the forged 2+1+1 the smallest: 3/16 > 1/8 > 1/16",
+      "ordering_is_inverted": true,
+      "records_at_the_carrier": 52,
+      "separating_thresholds": [],
+      "thresholds_tried": [
+        "0",
+        "1/32",
+        "1/16",
+        "3/32",
+        "1/8",
+        "5/32",
+        "3/16",
+        "7/32",
+        "1/4"
+      ]
+    }
+  },
+  "unit": "RQ0-L3 stage 5 -- eps-admissibility and the mixed-law arena",
+  "verdict": {
+    "RQ0-L3-BLOCKED-AT-PROVENANCE": {
+      "content": "every instrument this stage builds is a function of the declared quadruple and the declared state.  Forgery is a property of how a declaration came to be made, which B\" sec 10 records is not laboratory data.  The block is therefore not at the carrier and not at the law but one level further out, at the declaration itself",
+      "scope": "as above",
+      "status": "OCCURS -- census discipline, the named successor obstruction"
+    },
+    "RQ0-L3-EPSILON-ADMISSIBILITY": {
+      "earned": "the eps-form is well posed on B\"'s own delta, is decidable, is monotone under refinement, welds exactly to B\"'s cost machinery at tolerance zero, and its tolerance-zero case IS the terminal axiom, gated both directions over every record at two to five configurations under every committed law and over the whole 687-law census",
+      "not_earned": "the forgery is NOT separated at the eps-level; both refuted relaxations re-admit it as the brief requires, and the eps-form re-admits it too at every tolerance that buys a coarse chart",
+      "scope": "finite; the committed five-configuration carrier; the committed law families and the 687-law census at three configurations; the committed branch-memory state at five configurations and the uniform state elsewhere",
+      "status": "PARTIALLY EARNED -- the form is built and reduces, the separation it was built for FAILS"
+    },
+    "RQ0-L3-EPSILON-BLIND": {
+      "content": "no threshold admits the legitimate coarse patch while rejecting either forged one; the ordering is inverted at the committed state (legitimate 3/16, forged 1/8 and 1/16); the least positive defect in the whole spectrum is attained by the forgery; and the blindness is proved structural -- eps is a function of the quadruple and provenance is not a component of the quadruple.  The coarse-reality question escalates: it cannot be answered by any statistic on the declared data at this scope",
+      "scope": "as above; the two forged coarse patches and the one legitimate coarse patch the predecessor cycles commit",
+      "status": "OCCURS -- verdict-level, and it is this unit's headline"
+    },
+    "RQ0-L3-MIXED-LAW-CLOSED": {
+      "content": "route (i) shared refinement closes it -- the least law containing both declared laws is DET itself and member one is inadmissible there -- but the shared refinement always exists at a finite carrier, so the condition deletes the declared scope rather than restricting it, and calling the constructed law admitted infers admission from algebraic existence.  Route (ii) inter-law descent closes it -- filtering the partner's facts to those it is admissible to assert takes the forged context from 14 certified records to 0 -- but the same filter takes the legitimate eraser context from 51 to 1",
+      "scope": "the committed arena; the anchored escape law {(0,0,2,3,4)}; DET as the partner law",
+      "status": "OCCURS at BOTH routes, each under a stated cost"
+    },
+    "RQ0-L3-NOMOLOGICAL-PLURALISM-PRICED": {
+      "content": "the escape stands wherever the two closures are refused, and refusing them is the default: the declared scope IS one law family per context.  The price of pluralism is measured on both sides.  Keeping it, the adversary holds two admissible patches AND the attack, because the terminal descent selector takes no law argument and certifies 14 of 15 records at every declared law -- which settles B\" Prop 6.2's explicitly unmeasured question.  Giving it up costs either the per-context law (route i) or 50 of the legitimate eraser's 51 certified records (route ii)",
+      "scope": "as above",
+      "status": "OCCURS -- the price is stated exactly and is the reason both closures are Pyrrhic"
+    },
+    "RQ0-L3-OCCUPANCY-STATISTIC": {
+      "content": "omega, the committed state's probability of a record outcome the patch's own realized process never produces, is exact-rational, reads the declared preparation, and vanishes exactly on the occupancy clause.  It separates W1 from W3 at 0 against 2/3 and the two counter-law preparations at 0 against 15/16, in both cases where sigma and delta are identical.  The blindness of B\"'s own two statistics is proved structural at the same time",
+      "scope": "the committed carrier and B\"'s minimal witness; the second clause of (ii-b) is kept exact and is not graded",
+      "status": "OCCURS -- constructed and gated"
+    }
+  }
+}

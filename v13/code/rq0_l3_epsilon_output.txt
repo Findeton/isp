@@ -1,0 +1,111 @@
+==============================================================================
+RQ0-L3  STAGE 5  --  eps-ADMISSIBILITY AND THE MIXED-LAW ARENA
+==============================================================================
+pin 6e1aa82   base 267cb2a   schema rq0-l3-epsilon-admissibility-receipt-v1
+source sha256 d0f8ad773135c7f4ee77e4fe54109f8a24181e9ff651bc9feaea6a16e639a43a
+exact (fractions.Fraction and finite combinatorics); no float in any substantive path, verified by an abstract-syntax-tree sweep of this unit and of the three terminal modules it imports
+
+THE FORM.  P = (B, F, X_0, L) is EPS-ADMISSIBLE AT TOLERANCE tau iff
+  (a)  F = Pres_L(A(B)) and F non-empty        [(i-b), kept EXACT]
+  (b)  eps(P) = delta(A(B), F, rho) <= tau_eps [relaxes (i-a)/(ii-a)]
+  (c)  omega(P) <= tau_omega                   [relaxes occupancy]
+  (d)  no unrealized identification            [(ii-b) residue, EXACT]
+eps is B"'s OWN refinement statistic; omega is new and reads the
+declared preparation, which neither B" statistic does.
+
+------------------------------------------------------------------------------
+H1(a)  THE REDUCTION
+------------------------------------------------------------------------------
+  committed instances 368, disagreements 0
+  census instances    3435, disagreements 0
+  tau = 0  <==>  the terminal B" axiom, both directions.
+
+------------------------------------------------------------------------------
+H1(b)  THE eps SPECTRUM AT THE COMMITTED CARRIER
+------------------------------------------------------------------------------
+  law               size   rev?  spectrum (value: count)
+  DET               3125   True  0:1  1/16:10  1/8:25  3/16:15  1/4:1
+  FUNNEL              21   True  0:1  1/16:10  1/8:25  3/16:15  1/4:1
+  REV                120   True  0:1  1/16:10  1/8:25  3/16:15  1/4:1
+  FUNNEL-CLOSURE    3006   True  0:1  1/16:10  1/8:25  3/16:15  1/4:1
+  COUNTER-LAW        120   True  0:1  1/16:10  1/8:25  3/16:15  1/4:1
+
+  the named boundaries, under DET, at the committed state:
+    boundary                                    prov           |F|     eps
+    the forged aligned manufactured 2+1+1       FORGED         240    1/16
+    the forged aligned manufactured 2+2         FORGED         420     1/8
+    the corrected tomographic minimum           LEGITIMATE    1280    3/16
+    the carrier's own configuration algebra     LEGITIMATE     120       0
+
+------------------------------------------------------------------------------
+H1(c)  THE SEPARATION VERDICT  --  RQ0-L3-EPSILON-BLIND
+------------------------------------------------------------------------------
+  thresholds tried      : 0, 1/32, 1/16, 3/32, 1/8, 5/32, 3/16, 7/32, 1/4
+  separating thresholds : NONE
+  ordering inverted     : True  (legitimate 3/16 > forged 1/8 > forged 1/16)
+  admissible of 52: tau=0 -> 1;  tau=1/16 -> 11;  tau=3/16 -> 51
+  the forged 2+1+1 is admitted at tau=1/16: True
+
+------------------------------------------------------------------------------
+H1(d)  PERTURBATION AND THE GRADED COST TOWER
+------------------------------------------------------------------------------
+  level                 |Pres|     eps   |Obs|  c(tau=0)  graded
+  record level             240    1/16     120       120  0->120, 1/16->0
+  boundary level           420     1/8     360       360  0->360, 1/16->120, 1/8->0
+  coarser boundary        1280    3/16    1260      1260  0->1260, 1/16->1020, 1/8->120, 3/16->0
+  the limit               3125     1/4    3120      3120  0->3120, 1/16->3040, 1/8->2560, 3/16->1280, 1/4->0
+
+------------------------------------------------------------------------------
+H1(e)  THE TWO MANDATORY NEGATIVE CONTROLS
+------------------------------------------------------------------------------
+  control 1 (sub-law, R2 F3)   : re-admits the forgery True; delta collapses to 0
+  control 2 ((i-b'), R3 7.3)   : re-admits the forgery True; boundaries admitted 52 of 52; |F| = 120, 60, 20
+  the eps-form at tau = 0      : forgery admitted False  (and admitted at every tolerance that buys a coarse chart)
+
+------------------------------------------------------------------------------
+H2  THE MIXED-LAW ARENA
+------------------------------------------------------------------------------
+  the escape           : member 1 True at the identity-free law, member 2 True at DET, boundaries comparable True
+  route (i)  shared refinement: |L*| = 3125, member 1 at L* False -> closes True
+  route (ii) inter-law descent: forged context certified 14 -> 0;  legitimate eraser 51 -> 1
+  the terminal descent selector takes NO law argument, so the attack runs at every law
+
+------------------------------------------------------------------------------
+H2  THE OCCUPANCY STATISTIC omega
+------------------------------------------------------------------------------
+  patch                                                       adm  sigma  delta  omega
+  W1 (three configurations, preparation the whole carrier)   True      1      0      0
+  W3 (three configurations, preparation {0})                False      1      0    2/3
+  the committed carrier under the counter-law, preparation the whole carrier True      1      0      0
+  the committed carrier under the counter-law, preparation {0}False      1      0  15/16
+
+------------------------------------------------------------------------------
+VERDICT
+------------------------------------------------------------------------------
+  RQ0-L3-EPSILON-ADMISSIBILITY
+    PARTIALLY EARNED -- the form is built and reduces, the separation it was built for FAILS
+  RQ0-L3-EPSILON-BLIND
+    OCCURS -- verdict-level, and it is this unit's headline
+  RQ0-L3-MIXED-LAW-CLOSED
+    OCCURS at BOTH routes, each under a stated cost
+  RQ0-L3-NOMOLOGICAL-PLURALISM-PRICED
+    OCCURS -- the price is stated exactly and is the reason both closures are Pyrrhic
+  RQ0-L3-OCCUPANCY-STATISTIC
+    OCCURS -- constructed and gated
+  RQ0-L3-BLOCKED-AT-PROVENANCE
+    OCCURS -- census discipline, the named successor obstruction
+
+NON-CLAIMS
+  - No claim that eps separates forged from legitimate patches.  It does not, at any threshold, and the ordering is inverted (L3-07).
+  - No claim that the eps-form admits a proper chart that the terminal axiom rejects while still rejecting the forgery.  The least tolerance that admits any coarse chart admits a forged one (L3-06, L3-08).
+  - No claim that eps is state-independent.  It is state-relative, the reduction needs full support, and a degenerate state certifies the forgery at tolerance zero (L3-03).
+  - No claim that omega answers the de-smuggling question.  It reads the declared preparation; it does not read provenance, and nothing on the quadruple can (L3-23).
+  - No claim that omega grades the second clause of (ii-b).  Unrealized identifications between reachable configurations are kept exact.
+  - No claim that the shared refinement is an ADMITTED law.  It is composition-closed by construction; calling it admitted infers admission from algebraic existence, which the terminal cycle forbids (L3-18).
+  - No claim that inter-law descent is the predecessor's selector.  The terminal selector takes no law argument; the law-relative form is built here and its collateral is measured (L3-20).
+  - No spatial, causal, temporal or spacetime reading of reachability, of 'coarse', of 'patch' or of 'atlas'.  No locality, topology, manifold, field, QFT or gravity object is constructed or claimed.
+  - No claim beyond the committed carrier, the committed law families, the 687-law census at three configurations and the declared states.
+  - No Lean, as pinned.  No new primitive: every object is committed structure from Cycles B, B' and B" and the three frozen B" reviews.
+
+gates 25/25   anchors 19/19
+==============================================================================
