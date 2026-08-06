@@ -4831,3 +4831,16 @@ RQ0-L1-DESCENT-SELECTOR earned AT THE DECLARED ARENA; no
 arena-independent selector claimed.  Ten deviations shipped as
 Appendix A per the #121 rule.  GREEN-UNREVIEWED; protocol freeze
 and the three-lens panel next.
+
+## 2026-08-06 — CYCLE B′ HOSTILE PROTOCOL FROZEN (v13 LEDGER #127)
+note-rq0-composite-hostile-protocol.md frozen before dispatch:
+four artifact SHAs pinned; four kill-shots (K1 the lemma's reach
+incl. a direct excluded-pair test; K2 the corrected witness's own
+soundness under adversarial tasks; K3 overlap neutrality + THE
+ADVERSARIAL-PAIR QUESTION — both-contexts-manufactured, to be left
+open honestly or constructed as a MAJOR finding; K4 the
+independence gate's law-relative ground); three lenses with
+primaries (R1 operator/H1; R2 effectus/guard-and-descent-order;
+R3 instrument/arena); common gates incl. the
+no-arena-independent-claim sweep.  Dispatch recorded after it
+occurs.
