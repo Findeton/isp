@@ -5148,3 +5148,13 @@ CHEAP-LAW-FORGERY does not occur.**  The 3-configuration minimal
 witness printed whole (admissible / fails-(i)-only /
 fails-(ii)-only).  Ten deviations shipped.  GREEN-UNREVIEWED;
 protocol freeze and panel next.
+
+## 2026-08-06 — CYCLE B″ HOSTILE PROTOCOL FROZEN (v13 LEDGER #138)
+note-rq0-admissibility-hostile-protocol.md frozen before dispatch:
+four SHAs pinned; kill-shots K1 rigidity's reach (+ the stage-5
+consequence question: are coarse patches ever admissible in
+physical laws, or does the axiom need a relative form — answer
+required), K2 joint unforgeability's quantifier, K3 the cost
+proofs (additions-never-help attacked), K4 the entailment + the
+measured kills + the Feynman statistics; three lenses with
+primaries; common gates.  Dispatch recorded after it occurs.
