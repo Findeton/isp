@@ -5347,3 +5347,17 @@ escape named open; the reversibility dichotomy; the ker-pairing
 mechanism; the lower-bound + iff cost theory).  STATUS updated;
 the paper stamped.  Stage-5 pin next per the standing
 authorization and the fixed brief.
+
+## 2026-08-06 — STAGE 5 PINNED: ε-ADMISSIBILITY AND THE MIXED-LAW
+## ARENA (v13 LEDGER #146)
+note-rq0-l3-epsilon-admissibility-pin.md frozen (base 267cb2a;
+the #143 brief binding): H1 ε-admissibility on δ (ε = 0 ⟺ the
+terminal axiom, gated; the ε-spectrum of coarse boundaries under
+reversibility-containing laws; the de-smuggling question at the
+ε-level; the two refuted relaxations as MANDATORY negative
+controls; RQ0-L3-EPSILON-BLIND verdict-level if ε cannot
+separate); H2 the mixed-law arena (the escape run through
+shared-refinement and inter-law descent;
+NOMOLOGICAL-PLURALISM-PRICED first-class if nothing closes it;
+the occupancy-sensitive statistic constructed or its blindness
+proved structural).  Dispatch recorded after it occurs.
