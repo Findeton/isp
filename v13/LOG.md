@@ -4741,3 +4741,25 @@ RQ0-L0-BLOCKED-AT-DE-SMUGGLING**, the block top-of-lattice-
 grounded and law-independent; the paper's status stamped.  Stage
 3 of the ROADMAP is closed; the Cycle B′ pin is next per the
 standing authorization.
+
+## 2026-08-06 — CYCLE B′ PINNED: COMPOSITE BOUNDARIES AND THE
+## DE-SMUGGLING ARENA (v13 LEDGER #124)
+note-rq0-l1-composite-boundaries-pin.md frozen (immutable base
+0bc943c): H1 the monoidal layer (composite operational structure;
+factorization of the minimal boundary; Core(A⊗B) vs Core(A)⊗Core(B)
+with THE GAP pre-registered as the operational entanglement
+witness; v12's LTP-forcing lemma the antecedent; product/entangled/
+hostile-wing controls both ways); H2 the de-smuggling arena
+(two INDEPENDENTLY declared task families + declared overlap; the
+descent selector built on the committed paper-2/W6 co-reference
+machinery; THE TOP-OF-LATTICE GUARD binding — the selector's
+carrier must be the pair-plus-overlap structure, the candidate
+provably not maximal there; THE DISCRIMINATOR verdict-level: Cycle
+B's CONSTRUCTED manufactured boundary must FAIL descent while the
+legitimate eraser record survives, with context-independence
+itself MEASURED via the counter-law machinery — a relabelled
+second context must fail the independence gate as a control).
+Pre-registered: RQ0-L1-COMPOSITE-BOUNDARY / ENTANGLEMENT-WITNESS /
+DESCENT-SELECTOR / SMUGGLING-SURVIVES-DESCENT (verdict-level,
+halts the arc) / BLOCKED-AT-⟨object⟩.  Dispatch recorded after it
+occurs.
