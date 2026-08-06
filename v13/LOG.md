@@ -4605,3 +4605,49 @@ UNDER EVERY ATTACK** — it rests on Thms 4.5 + 4.2 (independently
 confirmed), not on 4.6.  Per-rung: (a)-(d), (f) confirmed; (e) NOT
 confirmed as stated — rescope required, convergent with R3's K4.
 Adjudication waits for R2.
+
+## 2026-08-06 — CYCLE B R2 (EFFECTUS LENS) REVIEW FROZEN; THE PANEL
+## IS COMPLETE (v13 LEDGER #120)
+review-rq0-fixed-point-effectus.md (598 lines) frozen as delivered;
+compliance verified.  R2 VERDICT: ACCEPT-WITH-FIXES; 30 independent
+recomputations, ZERO disagreements; the pinned code regenerated the
+committed receipt BYTE-IDENTICALLY from a scratchpad copy; 6/6
+mutants confirmed.  **K3 FAILS TO KILL, DECISIVELY FOR THE PAPER:**
+cl = id survives on FOUR declared no-reprepare law families
+(deterministic classical maps; unital futures;
+everything-minus-reprepares; FUNNEL = identity + elementary
+pairwise sector merges — 7 futures at n=3, 21 at n=5).  The
+degeneracy is FORCED BY ANY IRREVERSIBLE SECTOR MERGE, not bought
+with a generous class; the single escape (reversible-only) makes
+the manufactured record the UNIQUE fixed point — worse for
+one-boundary de-smuggling, not better.  R2 proved the general
+STRUCTURE THEOREM: Fix is the Moore family of meets of realized
+collision partitions (1,500 random families, 0 mismatches).
+**THREE STRUCTURAL FINDINGS:** (1) Prop 4.1's "only if" is FALSE —
+cl(⊥) is the MEET of all collision partitions, trivializable with
+no single erasing future (explicit composition-closed 3-atom
+counterexample; repair supplied) — the unit's correction of the
+pin's premise was itself half-wrong; the premise chain is now
+corrected TWICE, both forward-recorded.  (2) SIX GATES CANNOT FAIL
+(cl_of(π) provably returns π, so G1-05/06/07, G2-01, G2-03, G2-10
+compare π with π); the n=1 and n=5 strata of the 1/2/5/15/52
+headline were ASSERTED, never measured — R2 SUPPLIED the missing
+measurement itself (cl = id at n=5 over the full 84,375-relation
+family, 52/52): THE HEADLINE IS TRUE; THE GATING WAS NOT EVIDENCE
+FOR IT.  (3) **THE DISCRIMINATOR WAS STRUCTURALLY UNABLE TO REJECT
+THE MANUFACTURED RECORD** — it is the TOP of its own record
+lattice, and every closure operator fixes the top, under EVERY
+law; Thm 4.5(1) vacuous; NO-NONTRIVIAL-FIXED-POINT was a priori
+unreachable, not refuted — AND THEREFORE THE VERDICT DOES NOT MOVE
+even with Thm 4.6 rescoped (convergent with R1).  Extensions
+beyond the unit: Lemma 3.2 at 9× declared scope + n=6,7 (52.3M
+tests); the adjunction over all ≤3-element families at n=3 (33.6M
+tests).  Two disclosures accepted: an assigned-window overrun
+(saw #118's summary post-findings; its code predates); and the
+deviations (1)-(8) list existed only in the worker's report, not
+in any committed artifact — A PROTOCOL-ASSEMBLY GAP, THE
+ADJUDICATOR'S: the list will be committed in the adjudication
+note, and future protocols must commit the deviations list with
+the delivery.  Panel complete: 3× ACCEPT-WITH-FIXES, 128
+independent recomputations across three lenses, zero numerical
+errors.  Joint adjudication next.
