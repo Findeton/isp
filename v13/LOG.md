@@ -4899,3 +4899,43 @@ on the candidate's lattice).  Five required rewrites S-1..S-5 +
 four recommended; two undisclosed pin deviations flagged.
 Adjudication waits for R1 + R3; the DESCENT-SELECTOR rung's earned
 scope will be re-cut there.
+
+## 2026-08-06 — CYCLE B′ R3 (INSTRUMENT LENS) REVIEW FROZEN (v13
+## LEDGER #130)
+review-rq0-composite-instrument.md frozen as delivered; compliance
+verified (R3 did not open R2's file — no cross-reading).  R3
+VERDICT: ACCEPT-WITH-FIXES; 19 independent recomputations, 0
+mismatches (one self-caught meet-convention error in the
+reviewer's own code, corrected and recorded); centres 4/3/5, the
+atom map, the six carrying isomorphisms elementwise, the
+counter-law triple, and BOTH sharpness controls all reproduce; the
+discriminator genuinely fires both ways; the guard escape is real.
+**CONVERGENT WITH R2 ON ALL THREE MAJORS, independently:** (F1,
+K4) the independence gate COULD NOT HAVE FAILED — cardinality 2
+vs 6 and relabellings are bijections, so |image| ≤ 2 < 6 for all
+120; Prop 5.4's certificate is true and VACUOUS; the
+"gate-bites" control runs at EQUAL cardinality — credibility was
+transferred from a control that could fail to a certificate that
+could not; (F2, K3(ii)) THE ADVERSARIAL PAIR EXISTS — R3's own
+construction from committed machinery: declared task families are
+DECOUPLED from the boundaries they present (no gate ties them);
+two aligned-manufactured contexts pass the gate while the forged
+top record descends (certified set 14; a two-boundaries variant
+certifies 4); does NOT trigger SMUGGLING-SURVIVES-DESCENT (the
+constructed rotated record still fails D1; different arena) — the
+arc does not halt — but the question is neither named nor
+foreclosed in the paper; (F3) the declared second context IS the
+overlap, atom for atom; it realizes all 52 partitions, so (D2)
+REMOVES ZERO RECORDS everywhere the positive rung is earned;
+co-reference bites only against TOMO, where the certificate is
+withdrawn.  F4/F5: under the counter-law the gate degenerates to
+"families unequal"; H2-09's positive control is byte-identical to
+the H2-07 headline (the 51 twice — convergent with R2's finding).
+F6: §2 and deviation (2) assert an exhibit (equal block counts,
+different partitions) that the unit's own table shows does not
+exist (0 of 8) — the definition right, the justification not.
+K4's narrow answer: NO sentence treats measured-independence as
+law-independent (Def 5.3/Prop 5.5 scope correctly); the failure
+is that the measurement is NON-BINDING under both committed laws,
+nowhere said.  Ten sentences-to-rewrite; per-rung (a)-(f) with two
+PARTIAL.  Adjudication waits for R1 only.
