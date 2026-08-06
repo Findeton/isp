@@ -5612,3 +5612,13 @@ worker-declared, pre-registered before evaluation);
 per-candidate verdicts mandatory; outcomes FINGERPRINT /
 FINGERPRINT-AMNESTY / CLASS-IMPOSSIBILITY (the purchasable
 negative) / BLOCKED.  Dispatch recorded after it occurs.
+
+## 2026-08-06 — BRANCH-C DERIVATION DISPATCHED (v13 LEDGER #158)
+Background worker (Opus 5), bound to the frozen pin at b4fc87c;
+terminal inputs immutable; the freeze-before-fixture-truth
+discipline enforced through the receipt's gate ordering;
+per-candidate verdicts mandatory; freeze-on-delivery.  On
+return: verification → green → protocol freeze → three-lens
+panel → adjudication — and the A-or-onward decision returns to
+the user with C's verdict.  Recorded after the dispatch
+occurred.
