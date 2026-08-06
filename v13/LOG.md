@@ -5543,3 +5543,26 @@ monotonicity a one-line corollary.  PANEL COMPLETE: 3× AWF, 143
 recomputations across the three lenses, zero false computed
 numbers.  Joint adjudication next — the coarse-legitimacy fork
 goes to the user.
+
+## 2026-08-06 — STAGE-5 JOINTLY ADJUDICATED: COARSE LEGITIMACY
+## UNDECIDABLE-FROM-WITHIN AT THIS SCOPE; THE FORK GOES TO THE
+## USER; REPAIR DISPATCH NEXT (v13 LEDGER #154)
+note-rq0-epsilon-adjudication.md committed (reviews c458b0a4-era
+SHAs recorded: operator/effectus/instrument per #151/#153/#152).
+Panel: 3× AWF, 143 recomputations, zero false numbers.  THE
+ADJUDICATED FACT (three-way convergent): at this scope, coarse-
+patch legitimacy is undecidable from declared data at the
+declared configuration — ε is the boundary's Bayes error
+(ordering failure, every state, by theorem); ω is the right
+shape but structurally inert there, and IS a quadruple function
+(no escape); the impossibility is TOTAL for same-quadruple pairs
+and constraint-bounded for distinct-quadruple pairs; the
+mixed-STATE arena registered as the fifth declaration, no
+closure.  Repair R-1..R-11 dispatched next (mechanical; incl.
+the Bayes-error identity, the every-state theorem, the varied-
+preparation reduction, the countermodel hypotheses, the amnesty
+census).  **THE FORK HELD FOR THE USER: (A) provenance-as-data
+(the quintuple patch); (B) coarse arena-relativity; (C) the
+constrained statistic hunt (recommended first — cheapest, dies
+fastest, total-impossibility pre-registered as first-class).**
+No successor authorized by this adjudication.
