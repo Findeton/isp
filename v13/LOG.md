@@ -5470,3 +5470,40 @@ so no number moves; the [EXH-5] sweep the tag claims was never
 run — R1 ran it, it holds).  Five minors.  Adjudication waits
 for R2 + R3 — K3 (ω on the coarse comparison) now carries R1's
 monotonicity constraint as its frame.
+
+## 2026-08-06 — STAGE-5 R3 (INSTRUMENT) REVIEW FROZEN (v13 LEDGER
+## #152)
+review-rq0-epsilon-instrument.md frozen; compliance verified.
+R3: ACCEPT-WITH-FIXES; 30 recomputations + 18/19 anchors
+re-derived, zero false numbers.  **K3 ANSWERED: ω DOES NOT
+SEPARATE — THE ESCALATION HARDENS.**  At the committed state, law
+and preparation: ω(forged 2+1+1) = ω(forged 2+2) =
+ω(legitimate) = 0, 0, 0 — and STRUCTURAL, not fixture luck:
+Reach(P) ⊇ the declared preparation ⟹ ω vanishes identically —
+0 in 260/260 (5 laws × 52 records); under DET a forger attains
+ω = 0 at 31/31 declared preparations.  THE CONSOLATION, real: ω
+is ANTI-monotone under refinement (0 violations in 4590) — the
+exact shape R1's impossibility demands of any escaping statistic
+— but its content vanishes where needed.  Separating rows exist
+(15/155) but 0 at the genuine committed laws; at the one law
+that separates, THE AMNESTY STRUCTURE RECURS (the legitimate
+patch carries ω = 3/4).  **K4 CONFIRMED both halves by an
+independent route** (AST call-closure shows the descent selector
+names no law object; 14/15 identical under all five laws; the
+DET law-relative filter forces 14→0 structurally and 51→1).
+FINDINGS: (F1) §5's "cannot be answered by ANY statistic on the
+declared data" is FALSIFIED by the unit's own ω at a restricted
+preparation — the airtight claim is the narrower same-quadruple
+one; (F2) gate L3-23 says "Measured:" for a comparison its
+predicate never computes; (F3) Thm 8.4's load-bearing premise
+asserted in a table string, never gated (true, ungated); (F4)
+Thm 5.1's one-tolerance search for a two-component form; (F5)
+deviation 8 under-declares (PLURALISM-PRICED's defining clause
+"the escape stands" measured FALSE at both routes); (F6) a
+degenerate structural exhibit.  Ten rewrites; two gates to
+strengthen; one new measurement for §9.1.  Adjudication waits
+for R2 only — its ω-vs-quadruple verdict now decides whether the
+counterfactual-probe route (ω at undeclared preparations — the
+law's unused possibilities as the auditing resource, paper 2's
+nomological individuation operationalized) is available inside
+declared data, or whether provenance-as-data is forced.
