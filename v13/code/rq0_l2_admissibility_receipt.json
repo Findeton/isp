@@ -1,0 +1,3743 @@
+{
+  "anchors": {
+    "passed": 45,
+    "rows": [
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M01-1",
+        "passed": true,
+        "quantity": "record lattice size at 1 atoms",
+        "source": "Cycle B sec 4 (Bell triangle recurrence)"
+      },
+      {
+        "committed": 2,
+        "computed": 2,
+        "id": "M01-2",
+        "passed": true,
+        "quantity": "record lattice size at 2 atoms",
+        "source": "Cycle B sec 4 (Bell triangle recurrence)"
+      },
+      {
+        "committed": 5,
+        "computed": 5,
+        "id": "M01-3",
+        "passed": true,
+        "quantity": "record lattice size at 3 atoms",
+        "source": "Cycle B sec 4 (Bell triangle recurrence)"
+      },
+      {
+        "committed": 15,
+        "computed": 15,
+        "id": "M01-4",
+        "passed": true,
+        "quantity": "record lattice size at 4 atoms",
+        "source": "Cycle B sec 4 (Bell triangle recurrence)"
+      },
+      {
+        "committed": 52,
+        "computed": 52,
+        "id": "M01-5",
+        "passed": true,
+        "quantity": "record lattice size at 5 atoms",
+        "source": "Cycle B sec 4 (Bell triangle recurrence)"
+      },
+      {
+        "committed": 3,
+        "computed": 3,
+        "id": "M02-2",
+        "passed": true,
+        "quantity": "FUNNEL futures at 2 atoms",
+        "source": "Cycle B Thm 4.4 (FUNNEL row)"
+      },
+      {
+        "committed": 7,
+        "computed": 7,
+        "id": "M02-3",
+        "passed": true,
+        "quantity": "FUNNEL futures at 3 atoms",
+        "source": "Cycle B Thm 4.4 (FUNNEL row)"
+      },
+      {
+        "committed": 13,
+        "computed": 13,
+        "id": "M02-4",
+        "passed": true,
+        "quantity": "FUNNEL futures at 4 atoms",
+        "source": "Cycle B Thm 4.4 (FUNNEL row)"
+      },
+      {
+        "committed": 21,
+        "computed": 21,
+        "id": "M02-5",
+        "passed": true,
+        "quantity": "FUNNEL futures at 5 atoms",
+        "source": "Cycle B Thm 4.4 (FUNNEL row)"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M03-2",
+        "passed": true,
+        "quantity": "records fixed by cl under the reversible law at 2 atoms",
+        "source": "Cycle B Thm 4.4 (REV row)"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M03-3",
+        "passed": true,
+        "quantity": "records fixed by cl under the reversible law at 3 atoms",
+        "source": "Cycle B Thm 4.4 (REV row)"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M03-4",
+        "passed": true,
+        "quantity": "records fixed by cl under the reversible law at 4 atoms",
+        "source": "Cycle B Thm 4.4 (REV row)"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M03-5",
+        "passed": true,
+        "quantity": "records fixed by cl under the reversible law at 5 atoms",
+        "source": "Cycle B Thm 4.4 (REV row)"
+      },
+      {
+        "committed": 2,
+        "computed": 2,
+        "id": "M04-2",
+        "passed": true,
+        "quantity": "records fixed by cl under DET at 2 atoms",
+        "source": "Cycle B Thm 4.3 / Thm 4.4 (DET row)"
+      },
+      {
+        "committed": 5,
+        "computed": 5,
+        "id": "M04-3",
+        "passed": true,
+        "quantity": "records fixed by cl under DET at 3 atoms",
+        "source": "Cycle B Thm 4.3 / Thm 4.4 (DET row)"
+      },
+      {
+        "committed": 15,
+        "computed": 15,
+        "id": "M04-4",
+        "passed": true,
+        "quantity": "records fixed by cl under DET at 4 atoms",
+        "source": "Cycle B Thm 4.3 / Thm 4.4 (DET row)"
+      },
+      {
+        "committed": 52,
+        "computed": 52,
+        "id": "M04-5",
+        "passed": true,
+        "quantity": "records fixed by cl under DET at 5 atoms",
+        "source": "Cycle B Thm 4.3 / Thm 4.4 (DET row)"
+      },
+      {
+        "committed": 120,
+        "computed": 120,
+        "id": "M05",
+        "passed": true,
+        "quantity": "counter-law L_R: admitted sector maps",
+        "source": "Cycle B Prop 4.12"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M06",
+        "passed": true,
+        "quantity": "counter-law L_R: reversible members",
+        "source": "Cycle B Prop 4.12"
+      },
+      {
+        "committed": 52,
+        "computed": 52,
+        "id": "M07",
+        "passed": true,
+        "quantity": "counter-law L_R: records fixed of 52",
+        "source": "Cycle B Prop 4.12"
+      },
+      {
+        "committed": true,
+        "computed": true,
+        "id": "M08",
+        "passed": true,
+        "quantity": "the committed three-atom law {id,a,b} is composition-closed",
+        "source": "Cycle B Example 4.2"
+      },
+      {
+        "committed": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "computed": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "id": "M09",
+        "passed": true,
+        "quantity": "its realized collision partitions",
+        "source": "Cycle B Example 4.2"
+      },
+      {
+        "committed": 4,
+        "computed": 4,
+        "id": "M10",
+        "passed": true,
+        "quantity": "records fixed of 5",
+        "source": "Cycle B Example 4.2"
+      },
+      {
+        "committed": 1,
+        "computed": 1,
+        "id": "M11",
+        "passed": true,
+        "quantity": "minimal classical experiment of the preserving branch-memory task",
+        "source": "Cycle B Thm 3.8 / #103 sec 9.2"
+      },
+      {
+        "committed": 5,
+        "computed": 5,
+        "id": "M12",
+        "passed": true,
+        "quantity": "minimal classical experiment of the eraser branch-memory task",
+        "source": "Cycle B Thm 3.8 / #103 sec 9.3"
+      },
+      {
+        "committed": [
+          "3/4",
+          "1/4"
+        ],
+        "computed": [
+          "3/4",
+          "1/4"
+        ],
+        "id": "M13",
+        "passed": true,
+        "quantity": "eraser likelihood rows (sink weight, success weight)",
+        "source": "Cycle B sec 5.1"
+      },
+      {
+        "committed": 5,
+        "computed": 5,
+        "id": "M14",
+        "passed": true,
+        "quantity": "core atom count of C^5 (corrected eraser minimum)",
+        "source": "#111 Prop 10.1 / Cycle B' L05"
+      },
+      {
+        "committed": 2,
+        "computed": 2,
+        "id": "M15",
+        "passed": true,
+        "quantity": "core atom count of M_4 + C (corrected tomographic minimum)",
+        "source": "#111 Prop 10.1 / Cycle B' L06"
+      },
+      {
+        "committed": 4,
+        "computed": 4,
+        "id": "M16",
+        "passed": true,
+        "quantity": "constructed manufactured 2+1+1 with sink: centre dimension",
+        "source": "Cycle B sec 4.5 / Cycle B' sec 5.2"
+      },
+      {
+        "committed": 3,
+        "computed": 3,
+        "id": "M17",
+        "passed": true,
+        "quantity": "constructed manufactured 2+2 with sink: centre dimension",
+        "source": "Cycle B sec 4.5 / Cycle B' sec 5.2"
+      },
+      {
+        "committed": 5,
+        "computed": 5,
+        "id": "M18",
+        "passed": true,
+        "quantity": "constructed manufactured 1+1+1+1 with sink: centre dimension",
+        "source": "Cycle B sec 4.5 / Cycle B' sec 5.2"
+      },
+      {
+        "committed": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M19",
+        "passed": true,
+        "quantity": "constructed manufactured 2+1+1: incidence at the declared carrier",
+        "source": "Cycle B' sec 5.2 (incidence table)"
+      },
+      {
+        "committed": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M20",
+        "passed": true,
+        "quantity": "aligned manufactured 2+1+1: incidence",
+        "source": "Cycle B' sec 5.2 / sec 7.7"
+      },
+      {
+        "committed": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M21",
+        "passed": true,
+        "quantity": "aligned manufactured 1+1+1+1: incidence",
+        "source": "Cycle B' sec 5.2 / sec 7.7"
+      },
+      {
+        "committed": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M22",
+        "passed": true,
+        "quantity": "aligned manufactured 2+2: incidence",
+        "source": "Cycle B' sec 5.2 / sec 7.7"
+      },
+      {
+        "committed": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M23",
+        "passed": true,
+        "quantity": "corrected eraser minimum: incidence",
+        "source": "Cycle B' sec 5.2"
+      },
+      {
+        "committed": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "computed": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "id": "M24",
+        "passed": true,
+        "quantity": "corrected tomographic minimum: incidence",
+        "source": "Cycle B' sec 5.2"
+      },
+      {
+        "committed": 14,
+        "computed": 14,
+        "id": "M25",
+        "passed": true,
+        "quantity": "colluding pair form 1: records certified for the forged context",
+        "source": "Cycle B' sec 7.7 / L28 (frozen panel R2 F-4, R3 F2)"
+      },
+      {
+        "committed": true,
+        "computed": true,
+        "id": "M26",
+        "passed": true,
+        "quantity": "colluding pair form 1: the forged greatest record descends",
+        "source": "Cycle B' sec 7.7"
+      },
+      {
+        "committed": true,
+        "computed": true,
+        "id": "M27",
+        "passed": true,
+        "quantity": "colluding pair form 1 passes the rebuilt binding gate",
+        "source": "Cycle B' sec 7.7"
+      },
+      {
+        "committed": 12,
+        "computed": 12,
+        "id": "M28",
+        "passed": true,
+        "quantity": "duplicate-boundary form: carrying relabellings",
+        "source": "Cycle B' sec 7.7"
+      },
+      {
+        "committed": 4,
+        "computed": 4,
+        "id": "M29",
+        "passed": true,
+        "quantity": "colluding pair form 3: records certified",
+        "source": "Cycle B' sec 7.7"
+      },
+      {
+        "committed": [
+          false,
+          120
+        ],
+        "computed": [
+          false,
+          120
+        ],
+        "id": "M30",
+        "passed": true,
+        "quantity": "the arena's two contexts are dependent, with all 120 witnesses",
+        "source": "Cycle B' Prop 5.5"
+      },
+      {
+        "committed": 51,
+        "computed": 51,
+        "id": "M31",
+        "passed": true,
+        "quantity": "the legitimate eraser context: records certified of 52",
+        "source": "Cycle B' Thm 6.4"
+      },
+      {
+        "committed": [
+          3125,
+          120
+        ],
+        "computed": [
+          3125,
+          120
+        ],
+        "id": "M32",
+        "passed": true,
+        "quantity": "DET and REV cardinalities at five configurations",
+        "source": "Cycle B Thm 4.4 (DET/REV sizes at five atoms)"
+      }
+    ],
+    "total": 45
+  },
+  "arithmetic": "exact (fractions.Fraction and finite combinatorics); no float in any substantive path, verified by an abstract-syntax-tree sweep of this unit and of both terminal modules it imports",
+  "falsification": {
+    "anchor_mutants": {
+      "anchor:M03-5": "the reversible law's fixed-record count",
+      "anchor:M05": "the counter-law's admitted map count",
+      "anchor:M10": "Example 4.2's fixed-record count",
+      "anchor:M12": "the eraser task's minimal classical experiment",
+      "anchor:M16": "the constructed manufactured 2+1+1 centre dimension",
+      "anchor:M20": "the aligned manufactured 2+1+1 incidence",
+      "anchor:M25": "the colluding pair's certified count",
+      "anchor:M30": "the arena pair's dependence and its witnesses"
+    },
+    "derivation_mutants": {
+      "comp-lax": "every task is reported to write the discrete record, so the WRITTEN clause cannot fire",
+      "cost-lax": "the identity is dropped from the obstruction, so the forging cost is understated",
+      "ker-lax": "the minimal sufficient boundary of every family is reported trivial, so (i-a) cannot fire",
+      "pres-lax": "the Cycle B closure returns the whole law, so (i-b) cannot fire",
+      "reach-lax": "the reachable subprocess is reported to be the whole carrier, so the OCCUPANCY clause cannot fire",
+      "typing-lax": "every presented boundary is reported carrier-typed, so the rotated contexts are not caught at the typing gate"
+    },
+    "determinism": "no wall-clock value enters this receipt or the rendered output; timings appear only on the progress stream, so two consecutive runs of the same source produce byte-identical artifacts",
+    "note": "run `--falsification-selftest`; each mutant must exit 1. Anchor mutants substitute the reported value at the anchor comparison site; derivation mutants perturb one computation and must be killed either by making at least one gate fail or by moving a value an anchor pins"
+  },
+  "findings": {
+    "cheap_law_forgery": false,
+    "colluding_pair_jointly_unforgeable": true,
+    "colluding_pair_member_1_inadmissible": true,
+    "conditions_independently_violable": true,
+    "empirically_idle": false,
+    "eraser_context_admissible": true,
+    "feynman_gate_positive": true,
+    "forging_cost_grows_along_the_tower": true,
+    "pair_level_forgery_impossible": true,
+    "rotated_manufactured_contexts_inadmissible": true
+  },
+  "gates": {
+    "failed": [],
+    "passed": 21,
+    "rows": [
+      {
+        "claim": "EXACT ARITHMETIC EVERYWHERE.  An abstract-syntax-tree sweep of this unit and of both terminal modules it imports finds no float literal and no call to float in any path; every probability in this unit is a Fraction and every structural object is a finite set or tuple of integers",
+        "class": "arithmetic",
+        "id": "L2-00",
+        "passed": true,
+        "value": {
+          "violations": []
+        }
+      },
+      {
+        "claim": "THE RIGIDITY THEOREM, MEASURED EXHAUSTIVELY: at every committed law family that contains the identity, the two halves of condition (i) are jointly satisfied by EXACTLY ONE boundary -- the carrier's own configuration algebra.  The reason is structural and is proved in the paper: Pres_L(A(B)) always contains the identity, and the identity factors through a coarse-graining only if that coarse-graining is trivial, so #103-minimality and the Cycle B closure pull in opposite directions everywhere except at the carrier.  Swept over all records at 2,3,4,5 configurations against DET, FUNNEL, REV, ALL (n<=4) and the counter-law",
+        "class": "theorem",
+        "id": "L2-02",
+        "passed": true,
+        "value": {
+          "sweep": [
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ],
+              "configurations": 2,
+              "contains_identity": true,
+              "law": "DET",
+              "records": 2,
+              "size": 4
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ],
+              "configurations": 2,
+              "contains_identity": true,
+              "law": "FUNNEL",
+              "records": 2,
+              "size": 3
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ],
+              "configurations": 2,
+              "contains_identity": true,
+              "law": "REV",
+              "records": 2,
+              "size": 2
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              ],
+              "configurations": 2,
+              "contains_identity": true,
+              "law": "ALL",
+              "records": 2,
+              "size": 9
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "configurations": 3,
+              "contains_identity": true,
+              "law": "DET",
+              "records": 5,
+              "size": 27
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "configurations": 3,
+              "contains_identity": true,
+              "law": "FUNNEL",
+              "records": 5,
+              "size": 7
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "configurations": 3,
+              "contains_identity": true,
+              "law": "REV",
+              "records": 5,
+              "size": 6
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "configurations": 3,
+              "contains_identity": true,
+              "law": "ALL",
+              "records": 5,
+              "size": 343
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "configurations": 4,
+              "contains_identity": true,
+              "law": "DET",
+              "records": 15,
+              "size": 256
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "configurations": 4,
+              "contains_identity": true,
+              "law": "FUNNEL",
+              "records": 15,
+              "size": 13
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "configurations": 4,
+              "contains_identity": true,
+              "law": "REV",
+              "records": 15,
+              "size": 24
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "configurations": 4,
+              "contains_identity": true,
+              "law": "ALL",
+              "records": 15,
+              "size": 50625
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "configurations": 5,
+              "contains_identity": true,
+              "law": "DET",
+              "records": 52,
+              "size": 3125
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "configurations": 5,
+              "contains_identity": true,
+              "law": "FUNNEL",
+              "records": 52,
+              "size": 21
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "configurations": 5,
+              "contains_identity": true,
+              "law": "REV",
+              "records": 52,
+              "size": 120
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "configurations": 5,
+              "contains_identity": true,
+              "law": "COUNTER-LAW",
+              "records": 52,
+              "size": 120
+            }
+          ]
+        }
+      },
+      {
+        "claim": "THE ENTAILMENT THEOREM: condition (ii-a) is ENTAILED by condition (i) -- every patch passing both halves of (i) writes exactly its boundary's record.  Proof in the paper: (i-a) makes every declared task constant on blocks, so comp(F) is coarser than A(B); (i-b) makes comp(F) refine A(B); the two force equality.  Measured on the same exhaustive sweep, with zero counterexamples.  So generativity's WRITTEN clause is not an independent constraint, and the axiom's independent content beyond (i) is the OCCUPANCY clause alone",
+        "class": "theorem",
+        "id": "L2-04",
+        "passed": true,
+        "value": {
+          "counterexamples": 0
+        }
+      },
+      {
+        "claim": "THE IDENTITY-FREE POSITIVE CONTROL: rigidity is a statement about laws that can idle, not a tautology.  The composition-closed identity-FREE law {a,b} of Cycle B Example 4.2 admits a PROPER coarse-graining -- the two-atom boundary {01|2} is admissible there, both conditions passing.  So the axiom does select proper charts, and it selects them exactly when the law admits no operation that leaves the configurations where they are",
+        "class": "control-positive",
+        "id": "L2-03",
+        "passed": true,
+        "value": {
+          "admissible_proper_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "claim": "ADMISSIBILITY IS COVARIANT under the admitted relabellings of the carrier, measured rather than assumed: over every relabelling and every record at three and four configurations under DET there is no case where a boundary is admissible and its relabelled copy is not.  The law-relativity is disclosed with it: the counter-law is preserved by exactly ONE of the 120 relabellings, so under that law covariance has no content -- admission, as the predecessor cycle already found, must be certified per law",
+        "class": "covariance",
+        "id": "L2-06",
+        "passed": true,
+        "value": {
+          "counter_law_symmetries": 1,
+          "violations": 0
+        }
+      },
+      {
+        "claim": "THE COLLUDING PAIR FAILS THE AXIOM.  Cycle B''s standing obstruction is two aligned manufactured contexts, each a measure chosen to match a preselected one, whose forged greatest record descends 14-of-15 past the rebuilt binding gate.  MEMBER 1, the forged context (atoms {0,1},{2},{3},{4}), is INADMISSIBLE, and the killing conditions are measured, not assumed: (i-a) AND (ii-a) both fail, on the SAME witness -- a declared task that separates the two configurations the boundary asserts are one atom.  The boundary claims an identification its own realized legs never write.  MEMBER 2 is admissible, and correctly so: as a boundary it IS the legitimate address algebra, and the collusion lives entirely in member 1's forged patch",
+        "class": "discriminator",
+        "id": "L2-07",
+        "passed": true,
+        "value": {
+          "member_1": {
+            "admissible": false,
+            "atoms": [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "boundary": "aligned manufactured 2+1+1",
+            "carrier_typed": true,
+            "declared_family_size": 240,
+            "i_a": false,
+            "i_b": true,
+            "ii_a": false,
+            "ii_b": true,
+            "killed_by": "(i-a), (ii-a)",
+            "minimal_boundary_of_the_family": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "witness": {
+              "block": [
+                0,
+                1
+              ],
+              "offending_task": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  3
+                ],
+                [
+                  4
+                ]
+              ],
+              "separates_inside_block": [
+                0,
+                1
+              ]
+            }
+          },
+          "member_2": {
+            "admissible": true,
+            "atoms": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "boundary": "aligned manufactured 1+1+1+1",
+            "carrier_typed": true,
+            "declared_family_size": 120,
+            "i_a": true,
+            "i_b": true,
+            "ii_a": true,
+            "ii_b": true,
+            "killed_by": null,
+            "minimal_boundary_of_the_family": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "witness": null
+          }
+        }
+      },
+      {
+        "claim": "THE PAIR IS JOINTLY UNFORGEABLE.  Stronger than rejection: no admitted law whatsoever makes both members admissible at once.  Pres(discrete) is contained in Pres(forged) -- measured -- so any law under which the forged boundary's preserving family fails to separate configurations 0 and 1 is a law under which the second member's family fails to separate them either, and the second member stops being admissible.  The adversary cannot have both contexts at any price",
+        "class": "discriminator",
+        "id": "L2-08",
+        "passed": true,
+        "value": {
+          "laws_tested": [
+            {
+              "both": false,
+              "law": "DET",
+              "member_1_admissible": false,
+              "member_2_admissible": true
+            },
+            {
+              "both": false,
+              "law": "FUNNEL",
+              "member_1_admissible": false,
+              "member_2_admissible": true
+            },
+            {
+              "both": false,
+              "law": "REV",
+              "member_1_admissible": false,
+              "member_2_admissible": true
+            },
+            {
+              "both": false,
+              "law": "COUNTER-LAW",
+              "member_1_admissible": false,
+              "member_2_admissible": true
+            }
+          ],
+          "structural": "Pres(discrete) subset Pres(forged)"
+        }
+      },
+      {
+        "claim": "THE LEGITIMATE ERASER CONTEXT PASSES BOTH CONDITIONS.  The corrected eraser minimum is carrier-typed with five atoms; its Cycle B closure is the 120-member reversible family; that family's #103-minimal sufficient boundary is the five-atom boundary itself; every member writes exactly that record; and the reachable subprocess occupies every atom.  Both halves of (i) and both clauses of (ii) return true",
+        "class": "discriminator",
+        "id": "L2-09",
+        "passed": true,
+        "value": {
+          "admissible": true,
+          "atoms": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "boundary": "corrected eraser minimum",
+          "carrier_typed": true,
+          "declared_family_size": 120,
+          "i_a": true,
+          "i_b": true,
+          "ii_a": true,
+          "ii_b": true,
+          "killed_by": null,
+          "minimal_boundary_of_the_family": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "witness": null
+        }
+      },
+      {
+        "claim": "THE RELABELLED CONTEXT: the honest verdict.  Applying the committed cyclic address shift to the address context returns a context that is still carrier-typed and still discrete, and the axiom returns ADMISSIBLE -- as covariance (L2-06) requires it must.  This is reported as what it is: the axiom does not discriminate relabelled copies, and it was never asked to; the predecessor's binding gate is the instrument for that, and it fails the relabelled control by design",
+        "class": "control",
+        "id": "L2-10",
+        "passed": true,
+        "value": {
+          "counter_law_address_context": {
+            "admissible": true,
+            "declared_family_size": 1,
+            "family_is_the_identity_alone": true
+          },
+          "counter_law_admissible_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          ],
+          "counter_law_forged_boundary_admissible": false,
+          "relabelled_context": {
+            "admissible": true,
+            "cyclic_shift": [
+              1,
+              2,
+              3,
+              4,
+              0
+            ],
+            "family_size": 120
+          }
+        }
+      },
+      {
+        "claim": "THE COUNTER-LAW CONTEXT, with its law-relativity disclosed.  Under Cycle B Prop 4.12's counter-law the address context remains admissible, and the forged boundary remains inadmissible, so the verdicts of the discriminator are stable across the two committed laws.  What is NOT stable is the content of the certificate: the declared family collapses to the identity alone, one task instead of 120, because the counter-law admits exactly one reversible member.  Admissibility survives while saying strictly less, and that is disclosed rather than absorbed",
+        "class": "control",
+        "id": "L2-11",
+        "passed": true,
+        "value": {
+          "counter_law_address_context": {
+            "admissible": true,
+            "declared_family_size": 1,
+            "family_is_the_identity_alone": true
+          },
+          "counter_law_admissible_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          ],
+          "counter_law_forged_boundary_admissible": false,
+          "relabelled_context": {
+            "admissible": true,
+            "cyclic_shift": [
+              1,
+              2,
+              3,
+              4,
+              0
+            ],
+            "family_size": 120
+          }
+        }
+      },
+      {
+        "claim": "THE ARENA'S OWN TWO CONTEXTS, reported.  Cycle B' disclosed that its declared second context coincides with the declared overlap atom for atom and that the binding gate returns the pair DEPENDENT with all 120 witnesses.  The axiom returns both ADMISSIBLE, and returns more: under condition (i-b) the declared family is a FUNCTION of the boundary, so two contexts with the same boundary are literally the same patch.  The dependence that had to be disclosed in the predecessor is derived here",
+        "class": "discriminator",
+        "id": "L2-12",
+        "passed": true,
+        "value": {
+          "family_size": 120,
+          "same_boundary": true
+        }
+      },
+      {
+        "claim": "THE THREE CONSTRUCTED MANUFACTURED CONTEXTS are inadmissible, and the axiom names where: they fail the carrier-typing gate.  Their atoms' images at the committed carrier OVERLAP, so no family of carrier-level tasks has any of them as its minimal sufficient retract and (i-a) cannot be satisfied at all.  This is reported with its limitation stated: the bite here is carrier-relative and reproduces the predecessor's rotated-versus-address-aligned separation rather than extending it.  What is new is L2-07, which rejects boundaries that ARE address-aligned",
+        "class": "discriminator",
+        "id": "L2-13",
+        "passed": true,
+        "value": {
+          "contexts": [
+            {
+              "admissible": false,
+              "boundary": "constructed manufactured 2+1+1",
+              "carrier_typed": false,
+              "killed_by": "(i-a), at the carrier-typing gate",
+              "witness": {
+                "overlapping_images": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+              }
+            },
+            {
+              "admissible": false,
+              "boundary": "constructed manufactured 2+2",
+              "carrier_typed": false,
+              "killed_by": "(i-a), at the carrier-typing gate",
+              "witness": {
+                "overlapping_images": [
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+              }
+            },
+            {
+              "admissible": false,
+              "boundary": "constructed manufactured 1+1+1+1",
+              "carrier_typed": false,
+              "killed_by": "(i-a), at the carrier-typing gate",
+              "witness": {
+                "overlapping_images": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    2
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "claim": "THE FEYNMAN GATE IS POSITIVE: admissibility changes a number.  At ONE fixed boundary -- the carrier's configuration algebra -- an admissible patch and an inadmissible patch differ in an admitted tester statistic.  The statistic is Cycle B Definition 2.3's own two-time record-recovery probability under the committed branch-memory state: it is exactly 1 for the admissible patch and exactly 3/4 for the inadmissible one.  Both values are rational and computed, and the two patches share their boundary, their law and their state; only the declared family differs.  The pre-registered EMPIRICALLY-IDLE outcome therefore does NOT occur",
+        "class": "feynman",
+        "id": "L2-14",
+        "passed": true,
+        "value": {
+          "sigma_admissible": "1",
+          "sigma_inadmissible": "3/4"
+        }
+      },
+      {
+        "claim": "THE GATE'S HONEST HALF, reported with the positive.  The record-recovery statistic does NOT separate the forged patch: every task in the forged boundary's closure preserves that boundary's record, so sigma is exactly 1 there too.  What separates the forgery is the REFINEMENT statistic -- the probability mass on which the admitted later readout resolves a distinction the declared record does not -- which is exactly 0 for the admissible patch and exactly 1/16 for the forged one.  And the same-boundary form cannot be run at the forged boundary at all, because rigidity leaves no admissible comparator there.  Both limitations are stated, neither is absorbed",
+        "class": "feynman-honest",
+        "id": "L2-15",
+        "passed": true,
+        "value": {
+          "delta_admissible": "0",
+          "delta_forged": "1/16",
+          "sigma_forged": "1"
+        }
+      },
+      {
+        "claim": "THE MINIMAL WITNESS, three configurations, printed whole, every entry rational.  On Cycle B Example 4.2's committed composition-closed law {id, a, b}: W1 passes both conditions; W2 fails (i) ONLY -- its declared family writes exactly its boundary's record but is not that boundary's Cycle B closure, the missing task exhibited; W3 fails (ii) ONLY -- it satisfies both halves of (i) and writes what it declares, but its declared preparation leaves two of its three atoms never occupied by the reachable subprocess.  So the two conditions are independently violable and the axiom is not one condition wearing two names",
+        "class": "witness",
+        "id": "L2-01",
+        "passed": true,
+        "value": {
+          "configurations": 3,
+          "law": {
+            "composition_closed": true,
+            "maps": [
+              [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0
+                ],
+                [
+                  2
+                ],
+                [
+                  2
+                ]
+              ]
+            ],
+            "name": "Cycle B Example 4.2's committed law {id, a, b}",
+            "realized_collision_partitions": [
+              [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            ]
+          },
+          "patches": [
+            {
+              "admissible": true,
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              "declared_family": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "declared_preparation": [
+                0,
+                1,
+                2
+              ],
+              "i_a": true,
+              "i_b": true,
+              "ii_a": true,
+              "ii_b": true,
+              "intended": "ADMISSIBLE",
+              "patch": "W1",
+              "reachable_subprocess": [
+                0,
+                1,
+                2
+              ],
+              "witness": null
+            },
+            {
+              "admissible": false,
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              "declared_family": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    0
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "declared_preparation": [
+                0,
+                1,
+                2
+              ],
+              "i_a": true,
+              "i_b": false,
+              "ii_a": true,
+              "ii_b": true,
+              "intended": "FAILS (i) ONLY",
+              "patch": "W2",
+              "reachable_subprocess": [
+                0,
+                1,
+                2
+              ],
+              "witness": {
+                "closure": 2,
+                "declared": 1,
+                "declared_but_not_preserving": [],
+                "missing_from_declared_family": [
+                  [
+                    [
+                      0
+                    ],
+                    [
+                      1
+                    ],
+                    [
+                      2
+                    ]
+                  ]
+                ]
+              }
+            },
+            {
+              "admissible": false,
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              "declared_family": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "declared_preparation": [
+                0
+              ],
+              "i_a": true,
+              "i_b": true,
+              "ii_a": true,
+              "ii_b": false,
+              "intended": "FAILS (ii) ONLY",
+              "patch": "W3",
+              "reachable_subprocess": [
+                0
+              ],
+              "witness": {
+                "never_occupied_atoms": [
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ],
+                "unrealized_identifications": []
+              }
+            }
+          ],
+          "state": "no state is needed: every entry is an integer or a singleton set; the two statistics of the Feynman gate are not part of the witness"
+        }
+      },
+      {
+        "claim": "CONDITION (ii) IS NOT ENTAILED BY CONDITION (i).  The entailment theorem L2-04 covers the WRITTEN clause only; the OCCUPANCY clause is independent, and W3 is the exhibited separator: both halves of (i) hold, comp(F) equals the boundary's record, and the patch is still inadmissible because the process never occupies two of the atoms it declares.  This is the transported form of the predecessor corpus's never-occupied columns: an identification -- here, a distinction -- carried by transitions the process never takes",
+        "class": "independence",
+        "id": "L2-05",
+        "passed": true,
+        "value": {
+          "admissible": false,
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "declared_family": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ]
+          ],
+          "declared_preparation": [
+            0
+          ],
+          "i_a": true,
+          "i_b": true,
+          "ii_a": true,
+          "ii_b": false,
+          "intended": "FAILS (ii) ONLY",
+          "patch": "W3",
+          "reachable_subprocess": [
+            0
+          ],
+          "witness": {
+            "never_occupied_atoms": [
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "unrealized_identifications": []
+          }
+        }
+      },
+      {
+        "claim": "THE COMPLEMENT OF THE OBSTRUCTION IS A LAW, so the forging cost is achievable and not merely a lower bound.  The general reason is proved in the paper -- if a composite lies in the obstruction then so does its right factor, because the fibres of the composite refine the fibres of that factor -- and it is measured here exhaustively over every non-discrete boundary at three and four configurations and over the four levels of the tower at five",
+        "class": "cost",
+        "id": "L2-16",
+        "passed": true,
+        "value": {
+          "exhaustive_n3_n4": 18,
+          "tower": [
+            {
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  3
+                ],
+                [
+                  4
+                ]
+              ],
+              "boundary_admissible_after": true,
+              "cost": 120,
+              "identity_deleted": true,
+              "law_size": 3125,
+              "level": "record level",
+              "note": "one asserted identification: the forged context's atom {0,1}",
+              "remaining": 3005,
+              "remaining_is_a_law": true
+            },
+            {
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  4
+                ]
+              ],
+              "boundary_admissible_after": true,
+              "cost": 360,
+              "identity_deleted": true,
+              "law_size": 3125,
+              "level": "boundary level",
+              "note": "the whole aligned 2+2 boundary: two asserted identifications",
+              "remaining": 2765,
+              "remaining_is_a_law": true
+            },
+            {
+              "boundary": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  4
+                ]
+              ],
+              "boundary_admissible_after": true,
+              "cost": 1260,
+              "identity_deleted": true,
+              "law_size": 3125,
+              "level": "coarser boundary",
+              "note": "the corrected tomographic minimum",
+              "remaining": 1865,
+              "remaining_is_a_law": true
+            },
+            {
+              "boundary": [
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              ],
+              "boundary_admissible_after": true,
+              "cost": 3120,
+              "identity_deleted": true,
+              "law_size": 3125,
+              "level": "the limit",
+              "note": "the indiscrete boundary: every configuration identified with every other",
+              "remaining": 5,
+              "remaining_is_a_law": true
+            }
+          ]
+        }
+      },
+      {
+        "claim": "THE COST IS EXACT, not an estimate.  Every member of the obstruction must be deleted -- each one alone makes the declared boundary strictly coarser than the minimal sufficient boundary of the family it belongs to, checked here on the first forty members at each level -- and no addition can ever remove one, because adding admitted operations only enlarges the preserving family.  So the minimum over all alterations, additions and deletions together, is exactly the obstruction's cardinality",
+        "class": "cost",
+        "id": "L2-17",
+        "passed": true,
+        "value": {
+          "checked_per_level": 40
+        }
+      },
+      {
+        "claim": "THE COST GROWS ALONG THE TOWER, and the limit is a different law.  At five configurations under DET, whose 3125 admitted operations are the committed deterministic law, forging one identification costs 120 deletions; forging the aligned 2+2 boundary costs 360; the tomographic boundary costs 1260; and the limiting forgery -- the boundary that identifies everything -- costs 3120, leaving exactly five admitted operations out of 3125.  What remains is not an altered version of the original law but a complete alternative one: the Borges bound, stated only as far as these finite numbers carry it",
+        "class": "cost",
+        "id": "L2-18",
+        "passed": true,
+        "value": {
+          "costs": [
+            120,
+            360,
+            1260,
+            3120
+          ],
+          "remaining_at_the_limit": 5
+        }
+      },
+      {
+        "claim": "WITHIN THE COMMITTED CLASS OF LAWS THE COST IS UNPAYABLE.  Every obstruction computed here contains the identity, at every level and at every boundary swept.  The committed law families of the predecessor cycle each contain the identity by construction -- a laboratory law under which nothing may be left alone is not one of them -- so forging any proper coarse-graining requires leaving the class, not paying a price inside it.  RQ0-L2-CHEAP-LAW-FORGERY therefore does NOT occur: the cheapest alteration is not small, and inside the committed class there is no alteration at all",
+        "class": "cost",
+        "id": "L2-19",
+        "passed": true,
+        "value": {
+          "identity_in_every_obstruction": true
+        }
+      },
+      {
+        "claim": "THE PAIR LEVEL IS NOT EXPENSIVE, IT IS IMPOSSIBLE.  The tower does not merely grow at the third rung; it terminates.  Paying the record-level cost of 120 to make the forged context admissible makes the SECOND colluding context inadmissible in the same breath, because the preserving family of the finer boundary is contained in the preserving family of the coarser one, so the deletions that blind one blind the other.  Measured on every committed law and on the altered law itself.  There is no law, at any cost, in which both members of the colluding pair are admissible",
+        "class": "cost",
+        "id": "L2-20",
+        "passed": true,
+        "value": {
+          "Pres_discrete_subset_of_Pres_forged": true,
+          "after_paying_the_record_level_cost_member_2_admissible": false,
+          "laws": [
+            {
+              "law": "DET",
+              "member_1": false,
+              "member_2": true
+            },
+            {
+              "law": "FUNNEL",
+              "member_1": false,
+              "member_2": true
+            },
+            {
+              "law": "REV",
+              "member_1": false,
+              "member_2": true
+            },
+            {
+              "law": "COUNTER-LAW",
+              "member_1": false,
+              "member_2": true
+            }
+          ]
+        }
+      }
+    ],
+    "total": 21
+  },
+  "immutable_base_commit": "efa7224",
+  "nonclaims": [
+    "REACHABILITY IS AN ORDER ON CONFIGURATIONS.  It carries no spatial, causal, temporal or spacetime reading of any kind, and the reachable subprocess is not a region, a light cone, a neighbourhood or a history.",
+    "no locality, topology, atlas-as-place, manifold or geometric object; the word patch names a triple of committed operational data and nothing else",
+    "no influence, causal order or Lorentzian object",
+    "no field, QFT, QCD or gravity object",
+    "no claim that the axiom derives a carrier; the rigidity theorem says the opposite, and the rung is registered with that price attached",
+    "no claim beyond the committed law families and the one committed carrier; nothing is claimed for infinite dimension or for laws not run",
+    "no claim that provenance is measurable; every verdict here is computed from declared boundaries, declared families and admitted laws only",
+    "no claim that condition (ii)'s WRITTEN clause is independent of condition (i): it is proved entailed, and only the OCCUPANCY clause is independent"
+  ],
+  "pin_commit": "9576aee",
+  "schema": "rq0-l2-generative-admissibility-receipt-v1",
+  "source_sha256": "c81f7f5530d1fd49b1420d382215f56e2d7fcf5b2edacc026d8d1102bc1aa832",
+  "tables": {
+    "colluding_pair": {
+      "Pres_discrete_subset_of_Pres_forged": true,
+      "joint": [
+        {
+          "both": false,
+          "law": "DET",
+          "member_1_admissible": false,
+          "member_2_admissible": true
+        },
+        {
+          "both": false,
+          "law": "FUNNEL",
+          "member_1_admissible": false,
+          "member_2_admissible": true
+        },
+        {
+          "both": false,
+          "law": "REV",
+          "member_1_admissible": false,
+          "member_2_admissible": true
+        },
+        {
+          "both": false,
+          "law": "COUNTER-LAW",
+          "member_1_admissible": false,
+          "member_2_admissible": true
+        }
+      ],
+      "member_1": {
+        "admissible": false,
+        "atoms": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "aligned manufactured 2+1+1",
+        "carrier_typed": true,
+        "declared_family_size": 240,
+        "i_a": false,
+        "i_b": true,
+        "ii_a": false,
+        "ii_b": true,
+        "killed_by": "(i-a), (ii-a)",
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": {
+          "block": [
+            0,
+            1
+          ],
+          "offending_task": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "separates_inside_block": [
+            0,
+            1
+          ]
+        }
+      },
+      "member_2": {
+        "admissible": true,
+        "atoms": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "aligned manufactured 1+1+1+1",
+        "carrier_typed": true,
+        "declared_family_size": 120,
+        "i_a": true,
+        "i_b": true,
+        "ii_a": true,
+        "ii_b": true,
+        "killed_by": null,
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": null
+      }
+    },
+    "cost_scaling": [
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 6,
+        "identifications": 1,
+        "law_size": 27,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 6,
+        "identifications": 1,
+        "law_size": 27,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 24,
+        "identifications": 2,
+        "law_size": 27,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ]
+        ],
+        "configurations": 3,
+        "cost": 6,
+        "identifications": 1,
+        "law_size": 27,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 96,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 72,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 96,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 252,
+        "identifications": 3,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            2
+          ]
+        ],
+        "configurations": 4,
+        "cost": 96,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "configurations": 4,
+        "cost": 72,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            1
+          ]
+        ],
+        "configurations": 4,
+        "cost": 96,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            3
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "configurations": 4,
+        "cost": 24,
+        "identifications": 1,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "boundary": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "configurations": 4,
+        "cost": 72,
+        "identifications": 2,
+        "law_size": 256,
+        "remaining_is_a_law": true
+      }
+    ],
+    "cost_tower": [
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary_admissible_after": true,
+        "cost": 120,
+        "identity_deleted": true,
+        "law_size": 3125,
+        "level": "record level",
+        "note": "one asserted identification: the forged context's atom {0,1}",
+        "remaining": 3005,
+        "remaining_is_a_law": true
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary_admissible_after": true,
+        "cost": 360,
+        "identity_deleted": true,
+        "law_size": 3125,
+        "level": "boundary level",
+        "note": "the whole aligned 2+2 boundary: two asserted identifications",
+        "remaining": 2765,
+        "remaining_is_a_law": true
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary_admissible_after": true,
+        "cost": 1260,
+        "identity_deleted": true,
+        "law_size": 3125,
+        "level": "coarser boundary",
+        "note": "the corrected tomographic minimum",
+        "remaining": 1865,
+        "remaining_is_a_law": true
+      },
+      {
+        "boundary": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "boundary_admissible_after": true,
+        "cost": 3120,
+        "identity_deleted": true,
+        "law_size": 3125,
+        "level": "the limit",
+        "note": "the indiscrete boundary: every configuration identified with every other",
+        "remaining": 5,
+        "remaining_is_a_law": true
+      }
+    ],
+    "covariance": {
+      "relabellings_preserving_the_counter_law": 1,
+      "violations_DET_n3_n4": 0
+    },
+    "feynman_gate": {
+      "same_boundary_comparison": {
+        "admissible_patch": {
+          "admissible": true,
+          "family_size": 120,
+          "sigma": "1"
+        },
+        "boundary": "the carrier's configuration algebra (five atoms)",
+        "inadmissible_patch": {
+          "admissible": false,
+          "fails": "(i-b): the declared family is not the boundary's closure -- it contains a task the closure excludes",
+          "family_size": 121,
+          "sigma": "3/4"
+        },
+        "statistic_differs": true
+      },
+      "state": {
+        "rho": [
+          "1/16",
+          "1/16",
+          "1/16",
+          "1/16",
+          "3/4"
+        ],
+        "source": "Cycle B sec 5.1 eraser likelihoods, uniform source: sink 3/4, each address 1/16"
+      },
+      "the_forged_patch": {
+        "delta_admissible": "0",
+        "delta_forged": "1/16",
+        "delta_separates_the_forgery": true,
+        "sigma_admissible": "1",
+        "sigma_forged": "1",
+        "sigma_separates_the_forgery": false
+      },
+      "vacuity_disclosure": "at the forged boundary the rigidity theorem leaves NO admissible comparator, so the same-boundary form of the gate cannot be run there; the forgery is separated instead by delta, across boundaries"
+    },
+    "identity_free_control": {
+      "admissible": [
+        [
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          1
+        ],
+        [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          1
+        ]
+      ],
+      "composition_closed": true,
+      "contains_identity": false,
+      "law": [
+        [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      ]
+    },
+    "minimal_witness": {
+      "configurations": 3,
+      "law": {
+        "composition_closed": true,
+        "maps": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "name": "Cycle B Example 4.2's committed law {id, a, b}",
+        "realized_collision_partitions": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ]
+      },
+      "patches": [
+        {
+          "admissible": true,
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "declared_family": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ]
+          ],
+          "declared_preparation": [
+            0,
+            1,
+            2
+          ],
+          "i_a": true,
+          "i_b": true,
+          "ii_a": true,
+          "ii_b": true,
+          "intended": "ADMISSIBLE",
+          "patch": "W1",
+          "reachable_subprocess": [
+            0,
+            1,
+            2
+          ],
+          "witness": null
+        },
+        {
+          "admissible": false,
+          "boundary": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "declared_family": [
+            [
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ]
+            ]
+          ],
+          "declared_preparation": [
+            0,
+            1,
+            2
+          ],
+          "i_a": true,
+          "i_b": false,
+          "ii_a": true,
+          "ii_b": true,
+          "intended": "FAILS (i) ONLY",
+          "patch": "W2",
+          "reachable_subprocess": [
+            0,
+            1,
+            2
+          ],
+          "witness": {
+            "closure": 2,
+            "declared": 1,
+            "declared_but_not_preserving": [],
+            "missing_from_declared_family": [
+              [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "admissible": false,
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "declared_family": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ]
+          ],
+          "declared_preparation": [
+            0
+          ],
+          "i_a": true,
+          "i_b": true,
+          "ii_a": true,
+          "ii_b": false,
+          "intended": "FAILS (ii) ONLY",
+          "patch": "W3",
+          "reachable_subprocess": [
+            0
+          ],
+          "witness": {
+            "never_occupied_atoms": [
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "unrealized_identifications": []
+          }
+        }
+      ],
+      "state": "no state is needed: every entry is an integer or a singleton set; the two statistics of the Feynman gate are not part of the witness"
+    },
+    "pair_level_cost": {
+      "Pres_discrete_subset_of_Pres_forged": true,
+      "after_paying_the_record_level_cost_member_2_admissible": false,
+      "laws": [
+        {
+          "law": "DET",
+          "member_1": false,
+          "member_2": true
+        },
+        {
+          "law": "FUNNEL",
+          "member_1": false,
+          "member_2": true
+        },
+        {
+          "law": "REV",
+          "member_1": false,
+          "member_2": true
+        },
+        {
+          "law": "COUNTER-LAW",
+          "member_1": false,
+          "member_2": true
+        }
+      ]
+    },
+    "patch_verdicts": {
+      "ADDRESS": {
+        "admissible": true,
+        "atoms": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "declared address family",
+        "carrier_typed": true,
+        "declared_family_size": 120,
+        "i_a": true,
+        "i_b": true,
+        "ii_a": true,
+        "ii_b": true,
+        "killed_by": null,
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": null
+      },
+      "ALIGNED1111": {
+        "admissible": true,
+        "atoms": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "aligned manufactured 1+1+1+1",
+        "carrier_typed": true,
+        "declared_family_size": 120,
+        "i_a": true,
+        "i_b": true,
+        "ii_a": true,
+        "ii_b": true,
+        "killed_by": null,
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": null
+      },
+      "ALIGNED211": {
+        "admissible": false,
+        "atoms": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "aligned manufactured 2+1+1",
+        "carrier_typed": true,
+        "declared_family_size": 240,
+        "i_a": false,
+        "i_b": true,
+        "ii_a": false,
+        "ii_b": true,
+        "killed_by": "(i-a), (ii-a)",
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": {
+          "block": [
+            0,
+            1
+          ],
+          "offending_task": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "separates_inside_block": [
+            0,
+            1
+          ]
+        }
+      },
+      "ALIGNED22": {
+        "admissible": false,
+        "atoms": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "aligned manufactured 2+2",
+        "carrier_typed": true,
+        "declared_family_size": 420,
+        "i_a": false,
+        "i_b": true,
+        "ii_a": false,
+        "ii_b": true,
+        "killed_by": "(i-a), (ii-a)",
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": {
+          "block": [
+            2,
+            3
+          ],
+          "offending_task": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "separates_inside_block": [
+            2,
+            3
+          ]
+        }
+      },
+      "ERASER": {
+        "admissible": true,
+        "atoms": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "corrected eraser minimum",
+        "carrier_typed": true,
+        "declared_family_size": 120,
+        "i_a": true,
+        "i_b": true,
+        "ii_a": true,
+        "ii_b": true,
+        "killed_by": null,
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": null
+      },
+      "MAN1111": {
+        "admissible": false,
+        "boundary": "constructed manufactured 1+1+1+1",
+        "carrier_typed": false,
+        "killed_by": "(i-a), at the carrier-typing gate",
+        "witness": {
+          "overlapping_images": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+        }
+      },
+      "MAN211": {
+        "admissible": false,
+        "boundary": "constructed manufactured 2+1+1",
+        "carrier_typed": false,
+        "killed_by": "(i-a), at the carrier-typing gate",
+        "witness": {
+          "overlapping_images": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+        }
+      },
+      "MAN22": {
+        "admissible": false,
+        "boundary": "constructed manufactured 2+2",
+        "carrier_typed": false,
+        "killed_by": "(i-a), at the carrier-typing gate",
+        "witness": {
+          "overlapping_images": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "reason": "the atoms' images at the committed carrier are not disjoint, so no family of carrier-level tasks has this boundary as its minimal sufficient retract"
+        }
+      },
+      "TOMO": {
+        "admissible": false,
+        "atoms": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "boundary": "corrected tomographic minimum",
+        "carrier_typed": true,
+        "declared_family_size": 1280,
+        "i_a": false,
+        "i_b": true,
+        "ii_a": false,
+        "ii_b": true,
+        "killed_by": "(i-a), (ii-a)",
+        "minimal_boundary_of_the_family": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "witness": {
+          "block": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "offending_task": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "separates_inside_block": [
+            0,
+            3
+          ]
+        }
+      }
+    },
+    "relabelled_and_counter_law": {
+      "counter_law_address_context": {
+        "admissible": true,
+        "declared_family_size": 1,
+        "family_is_the_identity_alone": true
+      },
+      "counter_law_admissible_boundaries": [
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      ],
+      "counter_law_forged_boundary_admissible": false,
+      "relabelled_context": {
+        "admissible": true,
+        "cyclic_shift": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "family_size": 120
+      }
+    },
+    "rigidity_sweep": [
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "configurations": 2,
+        "contains_identity": true,
+        "law": "DET",
+        "records": 2,
+        "size": 4
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "configurations": 2,
+        "contains_identity": true,
+        "law": "FUNNEL",
+        "records": 2,
+        "size": 3
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "configurations": 2,
+        "contains_identity": true,
+        "law": "REV",
+        "records": 2,
+        "size": 2
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "configurations": 2,
+        "contains_identity": true,
+        "law": "ALL",
+        "records": 2,
+        "size": 9
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "configurations": 3,
+        "contains_identity": true,
+        "law": "DET",
+        "records": 5,
+        "size": 27
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "configurations": 3,
+        "contains_identity": true,
+        "law": "FUNNEL",
+        "records": 5,
+        "size": 7
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "configurations": 3,
+        "contains_identity": true,
+        "law": "REV",
+        "records": 5,
+        "size": 6
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "configurations": 3,
+        "contains_identity": true,
+        "law": "ALL",
+        "records": 5,
+        "size": 343
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        ],
+        "configurations": 4,
+        "contains_identity": true,
+        "law": "DET",
+        "records": 15,
+        "size": 256
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        ],
+        "configurations": 4,
+        "contains_identity": true,
+        "law": "FUNNEL",
+        "records": 15,
+        "size": 13
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        ],
+        "configurations": 4,
+        "contains_identity": true,
+        "law": "REV",
+        "records": 15,
+        "size": 24
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        ],
+        "configurations": 4,
+        "contains_identity": true,
+        "law": "ALL",
+        "records": 15,
+        "size": 50625
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "configurations": 5,
+        "contains_identity": true,
+        "law": "DET",
+        "records": 52,
+        "size": 3125
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "configurations": 5,
+        "contains_identity": true,
+        "law": "FUNNEL",
+        "records": 52,
+        "size": 21
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "configurations": 5,
+        "contains_identity": true,
+        "law": "REV",
+        "records": 52,
+        "size": 120
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "configurations": 5,
+        "contains_identity": true,
+        "law": "COUNTER-LAW",
+        "records": 52,
+        "size": 120
+      }
+    ]
+  },
+  "unit": "RQ0-L2 Cycle B\" -- generative patch admissibility: the Atlas Axiom",
+  "verdict": {
+    "collusion_cost": "POSITIVE, GROWING, AND TERMINATING AT THE PAIR LEVEL",
+    "feynman_gate": "POSITIVE",
+    "not_occurring": [
+      {
+        "rung": "RQ0-L2-EMPIRICALLY-IDLE",
+        "why": "the Feynman gate is positive: at one fixed boundary an admissible and an inadmissible patch differ in an admitted tester statistic, exactly 1 against exactly 3/4"
+      },
+      {
+        "rung": "RQ0-L2-CHEAP-LAW-FORGERY",
+        "why": "the cheapest forgery deletes 120 of 3125 admitted operations, the obstruction always contains the identity so no forgery is available inside the committed class of laws at all, the cost grows 120 to 360 to 1260 to 3120 along the tower, and at the pair level the forgery is impossible at any cost"
+      }
+    ],
+    "registered": [
+      {
+        "content": "the two-condition axiom is well posed, decidable, and discriminating in both directions: the colluding pair's forged member is rejected with the killing conditions named and a witness exhibited, the pair is jointly unforgeable under any law, the legitimate eraser context passes both conditions, the relabelled and counter-law contexts get honest verdicts with the law-relativity disclosed, and the arena's dependent pair is returned as one patch",
+        "rung": "RQ0-L2-GENERATIVE-ATLAS-AXIOM",
+        "scope": "finite; one committed carrier of five configurations; the committed law families DET, FUNNEL, REV, ALL (at most four configurations) and the counter-law; exhaustive over all records at two to five configurations; boundaries presented at the carrier by their committed incidence",
+        "status": "earned at the declared scope"
+      },
+      {
+        "content": "the rigidity theorem: at every admitted law that contains the identity the two halves of condition (i) are jointly satisfiable by exactly one boundary, the carrier's own configuration algebra.  The axiom therefore certifies relative to a declared carrier rather than deriving one, and the de-smuggling question moves up one level, from the boundary to the carrier.  The identity-free positive control shows this is a statement about laws that can idle, not a tautology: where the law admits no operation that leaves the configurations alone, proper coarse-grainings are admissible",
+        "rung": "RQ0-L2-BLOCKED-AT-CARRIER",
+        "scope": "the same declared scope; the theorem is proved and measured exhaustively, not sampled",
+        "status": "earned, and it is the price of the first rung"
+      }
+    ],
+    "scope": {}
+  }
+}

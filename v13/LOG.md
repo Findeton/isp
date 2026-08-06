@@ -5103,3 +5103,48 @@ freeze-on-delivery; deviations ship with the delivery.  On
 return: verification → green commit → protocol freeze →
 three-lens panel → adjudication.  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — CYCLE B″ DELIVERED; VERIFIED; COMMITTED
+## GREEN-UNREVIEWED (v13 LEDGER #137)
+Verification: source hash = receipt; rerun exit 0; 21/21 gates,
+45/45 anchors, 14/14 mutants; byte-identical runs; four files
+only.  **THE ATLAS AXIOM EARNED at declared scope, JOINTLY WITH
+RQ0-L2-BLOCKED-AT-CARRIER** — the rigidity theorem is the price:
+at any identity-containing law, condition (i) admits EXACTLY ONE
+boundary, the carrier's own algebra (the identity-free positive
+control shows this is about laws that can idle, not a tautology:
+under a closed identity-free law proper coarse-grainings ARE
+admissible); also proved (i) ⟹ (ii-a), so generativity's
+independent content is the OCCUPANCY clause alone.  **THE
+COLLUDING PAIR:** member 1 INADMISSIBLE — killed by (i-a) AND
+(ii-a) TOGETHER on one witness ("the boundary claims an
+identification its own realized legs never write": the identity
+task separates configurations 0,1 inside the claimed atom; the
+pin's expectation that (ii) alone kills is REFUTED, Thm 3.2
+explains why they fail together); member 2 ADMISSIBLE and
+correctly so (it IS the legitimate address algebra — the
+collusion lived entirely in member 1's patch).  **THEOREM 6.1,
+JOINT UNFORGEABILITY: no admitted law whatsoever makes both
+members admissible** (Pres(discrete) ⊆ Pres(forged) — the
+alterations that blind one blind the other; measured on all four
+committed laws AND on the altered law that pays member 1's
+price).  Eraser passes both; relabelled admissible as covariance
+requires (0 violations, n=3,4); counter-law verdicts stable with
+the certificate collapsing to the identity alone (law-relativity
+disclosed); the arena's dependent pair DERIVED to be one patch
+(what B′ had to disclose, the axiom proves).  **FEYNMAN GATE
+POSITIVE: 1 vs 3/4 exact** — admissibility changes a number at a
+fixed boundary — with its honest half (the same-boundary
+statistic does not separate the forged patch; rigidity leaves no
+admissible comparator at the forged boundary; the forgery is
+separated by the refinement statistic 0 vs 1/16 across
+boundaries).  **COLLUSION COST: the tower 120 → 360 → 1260 →
+3120, strictly growing; cost = |Obs| exactly (proved; the
+complement-is-a-law lemma); the limit = a complete alternative
+law (the Borges reading stated only that far); the PAIR level
+proved IMPOSSIBLE AT ANY COST; inside the committed
+identity-containing class NO forgery at any price.
+CHEAP-LAW-FORGERY does not occur.**  The 3-configuration minimal
+witness printed whole (admissible / fails-(i)-only /
+fails-(ii)-only).  Ten deviations shipped.  GREEN-UNREVIEWED;
+protocol freeze and panel next.
