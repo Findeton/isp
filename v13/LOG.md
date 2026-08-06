@@ -5091,3 +5091,15 @@ first-class negatives).  Pre-registered outcomes:
 GENERATIVE-ATLAS-AXIOM / EMPIRICALLY-IDLE / CHEAP-LAW-FORGERY /
 BLOCKED-AT-⟨object⟩.  ROADMAP stage 4 closed, 4b added; STATUS
 updated.  Dispatch recorded after it occurs.
+
+## 2026-08-06 — CYCLE B″ DERIVATION DISPATCHED (v13 LEDGER #136)
+Background worker (Opus 5), bound to the frozen pin at 9576aee;
+terminal inputs immutable (B, B′, #103, #111); the colluding
+pair's admissibility verdict to be reported FIRST with the
+killing condition named per member; the Feynman gate and the
+collusion-cost results reported plainly (CHEAP-LAW-FORGERY is
+branch-C evidence and changes the roadmap — no softening);
+freeze-on-delivery; deviations ship with the delivery.  On
+return: verification → green commit → protocol freeze →
+three-lens panel → adjudication.  Recorded after the dispatch
+occurred.
