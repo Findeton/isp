@@ -5425,3 +5425,14 @@ forged-vs-legitimate COARSE comparison ε failed (either answer
 reshapes the adjudication); K4 the law-free-descent finding and
 the closures' imports-the-blockade adjudication.  Dispatch
 recorded after it occurs.
+
+## 2026-08-06 — STAGE-5 THREE-LENS PANEL DISPATCHED (v13 LEDGER
+## #150)
+Three independent reviewers (Opus 5, parallel), protocol d670892,
+one review file each, separate scratchpads, no cross-reading,
+freeze-on-delivery: R1 (K1 state-robustness of the inversion +
+the closed form), R2 (K2 the structural-blindness proof and
+whether ω itself escapes the quadruple argument), R3 (K3 THE
+UNASKED QUESTION — ω run on the forged-vs-legitimate coarse
+comparison, answer first; K4 the law-free-descent finding and
+the closures).  Recorded after the dispatch occurred.
