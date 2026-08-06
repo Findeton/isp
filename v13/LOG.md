@@ -4507,3 +4507,18 @@ refuted.  Next per the plan the user approved: protocol freeze →
 three-lens panel → adjudication (where the ROADMAP inversion and
 the premise correction land).  GREEN-UNREVIEWED; recorded before
 any review exists.
+
+## 2026-08-02 — CYCLE B HOSTILE PROTOCOL FROZEN (v13 LEDGER #116)
+note-rq0-fixed-point-hostile-protocol.md frozen BEFORE any review
+dispatch per RUNBOOK §13(1): the four artifact SHAs pinned; the
+verdict vocabulary + six per-rung confirmation lines; THE FOUR
+KILL-SHOTS every review must attempt (K1 admitted-map premise of
+the impossibility theorem; K2 the measure-and-broadcast reading of
+D_M; K3 law-family robustness of cl = identity; K4 the
+criterion-class quantifier); three lens assignments with primary
+kill-shots distributed (R1 operator-system/K1; R2 effectus-order/K3;
+R3 sufficiency-instrument/K2, incl. the literal-(H-avail)
+coincidence check against the v12 corpus and the #103 fidelity
+check); common gates (paper-vs-receipt, scope tags, forbidden
+vocabulary, deviations adjudicated, anchors, determinism).
+Dispatch to follow; recorded after it occurs.
