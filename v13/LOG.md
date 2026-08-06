@@ -4651,3 +4651,40 @@ note, and future protocols must commit the deviations list with
 the delivery.  Panel complete: 3× ACCEPT-WITH-FIXES, 128
 independent recomputations across three lenses, zero numerical
 errors.  Joint adjudication next.
+
+## 2026-08-06 — CYCLE B JOINTLY ADJUDICATED:
+## **RQ0-L0-BLOCKED-AT-DE-SMUGGLING CONFIRMED**, TOP-OF-LATTICE-
+## GROUNDED; ROADMAP INVERTED; REPAIR DISPATCH NEXT (v13 LEDGER #121)
+note-rq0-fixed-point-adjudication.md committed with the three
+review SHAs pinned (6a122da0f92b / f5b0a2abd84b / 95af6add8b95).
+Panel: 3× ACCEPT-WITH-FIXES, 128 independent recomputations, ZERO
+numerical errors.  WHAT STANDS, STRONGER THAN DELIVERED: G0
+collapse + R3's uniqueness upgrade; the EXACT (H-avail)
+coincidence (availability clause only; comp(F) = M(U₂) bonus); the
+Galois connection at 52.3M tests incl. n=6,7; cl = id robust
+across four no-reprepare families (K3 dead; forced by any
+irreversible merge; the reversible-only escape makes the
+manufactured record UNIQUELY fixed); and THE TRUE GROUND OF THE
+BLOCK (R2): the manufactured record is the TOP of its own record
+lattice — every closure fixes the top, under every law; no
+one-boundary closure dethrones its own top.  WHAT FALLS: Thm 4.6
+rescoped (R1's counter-law; admission is law-relative and must be
+measured; the criterion class defined; DEMOTED — the top-of-
+lattice theorem takes its place as load-bearing); Prop 4.1's
+"only if" false (the premise chain corrected TWICE: the pin's
+"always" [adjudicator's, owned #115] and the unit's "iff eraser"
+[worker's, caught by R2] → the meet form); six tautological gates
++ the unconstructed manufactured boundary + the asserted strata
+(R2 supplied the missing 52/52 measurement — headline TRUE, gating
+insufficient).  The worker's deviations (1)-(8) COMMITTED in the
+adjudication note, closing R2's disclosed protocol gap; NEW RULE:
+deviations lists ship with deliveries.  THE ADJUDICATED
+CONSEQUENCE: the one-boundary block is now LAW-INDEPENDENT and
+criterion-class-free; the escapes are exactly paper 2's trilemma
+one level up (change the lattice = multi-boundary descent; ground
+an external restriction = provenance; or indeterminacy).  ROADMAP
+stage 3 CLOSED-BLOCKED; stage 4 = the de-smuggling arena;
+amendment 1's premise corrected to the meet form; STATUS updated
+in this commit.  The consolidated repair list R-1..R-12 is in the
+adjudication note; repair dispatch recorded after it occurs; after
+repair verification the unit is TERMINAL at this verdict.

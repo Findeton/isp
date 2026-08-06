@@ -14,8 +14,8 @@ user-owned decision (publication, splits, frozen lines).
 |---|---|---|---|
 | 1 | Minimal sufficient process boundary | RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY | **EARNED** (#103) |
 | 2 | Operational classical core | RQ0-L0-OPERATIONAL-CLASSICAL-CORE | **EARNED** (#111) |
-| 3 | **Cycle B: task–record fixed point** (de-smuggling) | RQ0-L0-W3-OPERATIONAL-MARKOV-BOUNDARY / -NO-NONTRIVIAL-FIXED-POINT / -BLOCKED-AT-⟨x⟩ | RUNNING (#114) |
-| 4 | **Cycle B′: composite/tensor boundaries** (monoidal layer) | core-of-composite vs composite-of-cores = operational entanglement | queued |
+| 3 | **Cycle B: task–record fixed point** (de-smuggling) | **RQ0-L0-BLOCKED-AT-DE-SMUGGLING** — adjudicated #121: the manufactured record is lattice-top, unrejectable by any closure from within, law-independently; cl = id forced by any irreversible merge | **CLOSED-BLOCKED** (repair → terminal) |
+| 4 | **Cycle B′: composite/tensor boundaries** (monoidal layer) **+ THE DE-SMUGGLING ARENA (relocated per #121)** | core-of-composite vs composite-of-cores = operational entanglement; multi-boundary descent as the lattice-change escape from the trilemma | next |
 | 5 | Autonomous quantum charts | independence, separating effects, internal law, stable classical interface | queued |
 | 6 | Physical overlaps + fact descent | terminal W6 as positive control; paper-2 descent classification binds | queued |
 | 7 | Topology + influence, **reopened on the operational substrate** | W4′ non-unification + three-defect separation as mandatory controls | queued |
@@ -26,11 +26,15 @@ user-owned decision (publication, splits, frozen lines).
 
 ## The six amendments to [REV5] (binding on every cycle)
 
-1. **Cycle B degeneracy guard.** The trivial instrument is always a
-   fixed point of Core∘Pres; the theorem targets NONTRIVIAL fixed
-   points, with NO-NONTRIVIAL-FIXED-POINT pre-registered. The Galois
-   connection (antitone monotonicity both ways) is gated FIRST; fixed
-   points are then closed elements.
+1. **Cycle B degeneracy guard** *(premise corrected twice — #115 and
+   #121: the trivial record is fixed iff the MEET of the realized
+   collision partitions is trivial; neither "always fixed" nor "iff
+   an eraser is admitted" was right)*. The theorem targets NONTRIVIAL
+   fixed points, with NO-NONTRIVIAL-FIXED-POINT pre-registered. The
+   Galois connection (antitone monotonicity both ways) is gated
+   FIRST; fixed points are then closed elements.  *Outcome (#121):
+   run and adjudicated — blocked at de-smuggling, the block
+   top-of-lattice-grounded; the arena moves to stage 4.*
 2. **The monoidal rung is mandatory** (stage 4) before charts: how
    boundaries compose; whether Core distributes; the
    core-of-composite vs composite-of-cores gap as the operational
