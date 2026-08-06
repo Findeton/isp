@@ -4763,3 +4763,12 @@ Pre-registered: RQ0-L1-COMPOSITE-BOUNDARY / ENTANGLEMENT-WITNESS /
 DESCENT-SELECTOR / SMUGGLING-SURVIVES-DESCENT (verdict-level,
 halts the arc) / BLOCKED-AT-⟨object⟩.  Dispatch recorded after it
 occurs.
+
+## 2026-08-06 — CYCLE B′ DERIVATION DISPATCHED (v13 LEDGER #125)
+Background worker (Opus 5), bound to the frozen pin at 62cdf68;
+terminal inputs immutable (Cycle B, #103, #111; v12 antecedents
+read-only); the discriminator verdict-level with the
+report-it-plainly instruction; deviations ship with the delivery.
+On return: verification → green commit → protocol freeze →
+three-lens panel → adjudication.  Recorded after the dispatch
+occurred.

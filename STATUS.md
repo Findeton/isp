@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-06 (v13 LOG #121: Cycle B adjudicated; deviations-list-ships-with-delivery rule added).
+Updated: 2026-08-06 (v13 LOG #125: Cycle B terminal; Cycle B′ running).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -33,7 +33,7 @@ Updated: 2026-08-06 (v13 LOG #121: Cycle B adjudicated; deviations-list-ships-wi
 | RQ0 operational Morita W3 | adjudicated (3-lens panel) | v13 #89 |
 | RQ0 operational W3 combs | COMB-COMPLETE-W3 / W3-TEST-SHEAF / TESTER-SEPARATED-W3; BLOCKED-AT-TESTER-DESCENT branch recorded | v13 #96 |
 | RQ0 minimal sufficient quantum boundaries | FUTURE-EXPERIMENT earned (narrow finite); MINIMAL-SUFFICIENT-BOUNDARY earned (compact-convex Karoubi); CANONICAL-CLASSICAL-CENTER **not earned**; disposition BLOCKED-AT-CENTER-LIFT | v13 #103 |
-| RQ0 Cycle B task–record fixed point | **BLOCKED-AT-DE-SMUGGLING** adjudicated (#121): cl = id forced by any irreversible merge (K3 dead); top-of-lattice impossibility law-independent; Thm 4.6 rescoped, Prop 4.1 corrected; repair → terminal | v13 #113–#121 ✓adj |
+| RQ0 Cycle B task–record fixed point | **TERMINAL: BLOCKED-AT-DE-SMUGGLING** (#123): the top-of-lattice theorem load-bearing and law-independent; cl = id forced by any irreversible merge; manufactured boundary constructed; 75/75 gates, 8 mutants | v13 #113–#123 ✓adj |
 | RQ0 operational classical cores | **MATRIX-ORDERED-MINIMAL-BOUNDARY earned** (ancilla-saturated finite scope); **OPERATIONAL-CLASSICAL-CORE earned** (instrument-complete finite scope); hostile operator-system control returns trivial core; CYCLE-CLOSED | v13 #104–#111 ✓adj |
 
 ## Review debt (must shrink, never hide)
@@ -48,7 +48,7 @@ Updated: 2026-08-06 (v13 LOG #121: Cycle B adjudicated; deviations-list-ships-wi
 
 ## Frontier (nothing authorized; per-cycle authorization required)
 
-1. **Cycle B — task–record fixed point**: **ADJUDICATED BLOCKED-AT-DE-SMUGGLING** (#121; 3× ACCEPT-WITH-FIXES, 128 recomputations zero errors; the manufactured record is lattice-top — unrejectable from within, law-independently; repair pass in flight → terminal). Stage 4 (composite boundaries) = the de-smuggling arena next.
+1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **RUNNING** (pin 62cdf68, #124; derivation dispatched #125; the entanglement-witness gap + descent selector with top-of-lattice guard; SMUGGLING-SURVIVES-DESCENT = verdict-level halt).
 2. **Composite/tensor boundaries** (the missing monoidal rung before
    autonomous charts; core-of-composite vs composite-of-cores as the
    operational entanglement witness).
