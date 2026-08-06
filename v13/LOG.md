@@ -5436,3 +5436,37 @@ whether ω itself escapes the quadruple argument), R3 (K3 THE
 UNASKED QUESTION — ω run on the forged-vs-legitimate coarse
 comparison, answer first; K4 the law-free-descent finding and
 the closures).  Recorded after the dispatch occurred.
+
+## 2026-08-06 — STAGE-5 R1 (OPERATOR) REVIEW FROZEN (v13 LEDGER
+## #151)
+review-rq0-epsilon-operator.md (460 lines) frozen; compliance
+verified.  R1: ACCEPT-WITH-FIXES; 28 recomputations, no false
+number.  **K1 RESOLVED BY THEOREM — THE INVERSION HOLDS AT EVERY
+STATE:** the five committed boundaries form one refinement chain
+(both forgeries REFINE the legitimate chart) and ε is
+refinement-monotone at every law and state (a two-line theorem
+the unit measured but never proved) ⟹ ε(forged) ≤ ε(legitimate)
+ALWAYS, strict at every full-support state.  Measured: forward
+separation EMPTY at 4845/4845 grid states; strict inversion
+1365/1365 full-support; 0 violations in 1,482,570 pair-state
+instances.  **EPSILON-BLIND needs STRENGTHENING, not rescoping —
+and the successor constraint sharpens: NO refinement-monotone
+statistic whatsoever can threshold-separate these forgeries**
+(the adjudication must test ω against THIS: ω may escape
+precisely iff it is refinement-INCREASING on unwritten
+distinctions).  **SELECTIVE AMNESTY (major):** at
+ρ = (1/2,0,1/2,0,0) both forgeries carry defect 0 while the
+legitimate chart carries 1/2 — at τ=0 the form CERTIFIES THE
+FRAUDS AND REJECTS THE HONEST CHART; reverse-separating
+thresholds exist at 4540/4845 states incl. the committed one.
+**THE MIXED-STATE ARENA (major, unregistered):** the declared
+state is a FIFTH declaration with the same escape structure and
+NO closure route (no least state containing two states) — held
+back only by an asserted sentence.  The declaration tower
+continues: boundary → family → law → STATE.  **Thm 4.2 ships
+without its determinism hypothesis** (single-valued supports;
+counterexample at ALL(2); all five committed laws single-valued
+so no number moves; the [EXH-5] sweep the tag claims was never
+run — R1 ran it, it holds).  Five minors.  Adjudication waits
+for R2 + R3 — K3 (ω on the coarse comparison) now carries R1's
+monotonicity constraint as its frame.
