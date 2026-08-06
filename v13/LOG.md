@@ -5598,3 +5598,17 @@ PLURALISM-PRICED (declared-scope reading) + OCCUPANCY-STATISTIC
 (quadruple-bound) + BLOCKED-AT-PROVENANCE — the paper stamped.
 Per the user's authorized plan: BRANCH C NEXT (the nomological-
 fingerprint hunt), pin to follow.
+
+## 2026-08-06 — BRANCH C PINNED: THE NOMOLOGICAL FINGERPRINT HUNT
+## (v13 LEDGER #157)
+note-rq0-l4-nomological-fingerprint-pin.md frozen (base a5cb096):
+the question "does the law remember what forgetting erased";
+THE CORRIDOR binding (non-monotone; non-Bayes; content surviving
+the committed configuration; the AMNESTY CHECK over the full
+state map mandatory per candidate; covariance); the candidate
+family FROZEN BEFORE FIXTURE TRUTH (C1 counterfactual occupancy
+profile; C2 generation-profile mismatch; C3 law-fan-in; C4
+worker-declared, pre-registered before evaluation);
+per-candidate verdicts mandatory; outcomes FINGERPRINT /
+FINGERPRINT-AMNESTY / CLASS-IMPOSSIBILITY (the purchasable
+negative) / BLOCKED.  Dispatch recorded after it occurs.
