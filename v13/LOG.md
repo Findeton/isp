@@ -4844,3 +4844,16 @@ primaries (R1 operator/H1; R2 effectus/guard-and-descent-order;
 R3 instrument/arena); common gates incl. the
 no-arena-independent-claim sweep.  Dispatch recorded after it
 occurs.
+
+## 2026-08-06 — CYCLE B′ THREE-LENS PANEL DISPATCHED (v13 LEDGER
+## #128)
+Three independent reviewers (Opus 5, parallel), bound to the
+frozen protocol at 612b149, repo read-only except one review file
+each, separate scratchpads, no cross-reading, freeze-on-delivery:
+R1 operator (K1 the lemma's reach + K2 the corrected witness's
+soundness), R2 effectus/order (K3 overlap neutrality + THE
+ADVERSARIAL-PAIR QUESTION), R3 instrument (K4 the independence
+gate's ground + the sharpness controls + deviations
+adjudication).  On return: freeze each review as it lands, joint
+adjudication, STATUS in the same commit.  Recorded after the
+dispatch occurred.
