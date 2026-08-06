@@ -5314,3 +5314,36 @@ stage-5 pin per the fixed brief (ε-admissibility on δ; the two
 refuted relaxations as negative controls; the mixed-law arena;
 an occupancy-sensitive statistic).  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — CYCLE B″ REPAIR VERIFIED — **CYCLE B″ TERMINAL:
+## GENERATIVE-ATLAS-AXIOM + BLOCKED-AT-CARRIER, CORRECTED SCOPE**
+## (v13 LEDGER #145)
+Verification: source hash = receipt; rerun exit 0; 32/32 gates,
+45/45 anchors (values bit-identical to the delivery), 18/18
+mutants; byte-identical runs; four files only.  ALL THIRTEEN
+FIXES IN — with the repair SHARPENING two of them: Thm 8.3 is now
+the sound lower bound PLUS AN EXACT IFF (equality ⟺ the
+complement admits the boundary — the only-if forced), both
+counterexamples gated incl. a distance-≤7 brute force; and **the
+repair CORRECTED A PANEL-SUPPLIED NUMBER: const₀'s true forging
+cost is 1, not 2** (a single addition suffices; three distinct
+additions achieve it; the distance-1 deletion is inadmissible;
+verified exhaustively over all left-total single additions) — the
+adversarial process now corrects panels as well as units.  The
+mechanism proposition (ker vs Core moving in OPPOSITE directions,
+exhibited); the dichotomy proved (Thm 3.5); the
+declaration-relative kill-table (six actual declarations; the
+merging family reported under BOTH readings, 625 vs 120
+members); the quadruple patch; the Feynman blind spot gated
+structurally; FUNNEL disclosed as task-family with its closure
+added (the 3 re-run sweeps move nothing); L2-17 realified at all
+4860; the [EXH-5] 1004/745 population native; fifteen deviations.
+The two refuted naive relaxations deliberately NOT imported —
+they are the stage-5 pin's mandatory negative controls (correct
+scoping; accepted).  **CYCLE B″ IS TERMINAL** at
+RQ0-L2-GENERATIVE-ATLAS-AXIOM + RQ0-L2-BLOCKED-AT-CARRIER
+(corrected scope: shared-law unforgeability with the mixed-law
+escape named open; the reversibility dichotomy; the ker-pairing
+mechanism; the lower-bound + iff cost theory).  STATUS updated;
+the paper stamped.  Stage-5 pin next per the standing
+authorization and the fixed brief.

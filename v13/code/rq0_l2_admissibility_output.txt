@@ -2,17 +2,20 @@
 RQ0-L2  CYCLE B"  --  GENERATIVE PATCH ADMISSIBILITY: THE ATLAS AXIOM
 ==============================================================================
 pin 9576aee   base efa7224   schema rq0-l2-generative-admissibility-receipt-v1
-source sha256 c81f7f5530d1fd49b1420d382215f56e2d7fcf5b2edacc026d8d1102bc1aa832
+source sha256 6512b0ebb288c9700574dc533e899992236dc921dd0858d1ac04de74f314defe
 exact (fractions.Fraction and finite combinatorics); no float in any substantive path, verified by an abstract-syntax-tree sweep of this unit and of both terminal modules it imports
 
-THE AXIOM.  A patch (boundary, declared task family, admitted law) on
-the committed carrier is ADMISSIBLE iff
+THE AXIOM.  A patch is a QUADRUPLE (boundary, declared task family,
+declared preparation, admitted law) on the committed carrier.  It is
+ADMISSIBLE iff
   (i-a)  A(B) = ker(F)          the boundary is the #103-minimal
                                sufficient boundary of its own family
+                               -- ker, NOT Cycle B's Core (L2-22)
   (i-b)  F   = Pres_L(A(B))     the family is the boundary's Cycle B
                                closure (availability criterion)
-  (ii-a) comp(F) = A(B) for all F in the family   -- the realized legs
-                               write exactly what the boundary asserts
+  (ii-a) the family is non-empty and comp(F) = A(B) for all F in it
+                               -- the realized legs write exactly
+                               what the boundary asserts
   (ii-b) the reachable subprocess occupies every atom, and every
                                asserted identification is realized
 
@@ -20,18 +23,18 @@ the committed carrier is ADMISSIBLE iff
 VERDICT
 ------------------------------------------------------------------------------
   RQ0-L2-GENERATIVE-ATLAS-AXIOM  --  earned at the declared scope
-      the two-condition axiom is well posed, decidable, and discriminating in both directions: the colluding pair's forged member is rejected with the killing conditions named and a witness exhibited, the pair is jointly unforgeable under any law, the legitimate eraser context passes both conditions, the relabelled and counter-law contexts get honest verdicts with the law-relativity disclosed, and the arena's dependent pair is returned as one patch
+      the two-condition axiom is well posed, decidable, and discriminating in both directions: the colluding pair's forged member is rejected with the killing conditions named -- declaration-relative, and the declaration disclosed -- and a witness exhibited; the pair is jointly unforgeable at any SHARED law, with the mixed-law escape exhibited and the mixed-law arena named open; the legitimate eraser context passes both conditions; the relabelled and counter-law contexts get honest verdicts with the law-relativity disclosed; and the arena's dependent pair is returned as one patch
       SCOPE: finite; one committed carrier of five configurations; the committed law families DET, FUNNEL, REV, ALL (at most four configurations) and the counter-law; exhaustive over all records at two to five configurations; boundaries presented at the carrier by their committed incidence
 
   RQ0-L2-BLOCKED-AT-CARRIER  --  earned, and it is the price of the first rung
-      the rigidity theorem: at every admitted law that contains the identity the two halves of condition (i) are jointly satisfiable by exactly one boundary, the carrier's own configuration algebra.  The axiom therefore certifies relative to a declared carrier rather than deriving one, and the de-smuggling question moves up one level, from the boundary to the carrier.  The identity-free positive control shows this is a statement about laws that can idle, not a tautology: where the law admits no operation that leaves the configurations alone, proper coarse-grainings are admissible
+      the rigidity DICHOTOMY, proved in both directions: the carrier's own configuration algebra is admissible if and only if the law contains the identity, equivalently if and only if it contains any reversible operation -- so a law has either exactly one chart, the carrier's, or no carrier chart at all and possibly several proper ones, with nothing in between.  The trigger is REVERSIBILITY, not idling.  The axiom therefore certifies relative to a declared carrier rather than deriving one, and the de-smuggling question moves up one level, from the boundary to the carrier.  The block is not the only available diagnosis: condition (i) pairs ker with Pres, which are adjoints of DIFFERENT connections, and the selectivity is produced by that substitution (L2-22)
       SCOPE: the same declared scope; the theorem is proved and measured exhaustively, not sampled
 
   RQ0-L2-EMPIRICALLY-IDLE  --  DOES NOT OCCUR
       the Feynman gate is positive: at one fixed boundary an admissible and an inadmissible patch differ in an admitted tester statistic, exactly 1 against exactly 3/4
 
   RQ0-L2-CHEAP-LAW-FORGERY  --  DOES NOT OCCUR
-      the cheapest forgery deletes 120 of 3125 admitted operations, the obstruction always contains the identity so no forgery is available inside the committed class of laws at all, the cost grows 120 to 360 to 1260 to 3120 along the tower, and at the pair level the forgery is impossible at any cost
+      at the committed scope the cheapest forgery deletes 120 of 3125 admitted operations, the identity lies in the obstruction of every non-discrete boundary at every identity-containing law so no forgery is available inside that class at any price, the cost grows 120 to 360 to 1260 to 3120 along the tower, and at the pair level the forgery is impossible at any cost.  Disclosed with it: under REV the cheapest forgery costs more than the whole law, and at the degenerate identity-free law {const_0} outside the committed class a single addition suffices
 
   Feynman gate    : POSITIVE
   Collusion cost  : POSITIVE, GROWING, AND TERMINATING AT THE PAIR LEVEL
@@ -57,7 +60,19 @@ THE COLLUDING PAIR (Cycle B' sec 7.7, both panel constructions):
             the family's minimal sufficient boundary is [[0], [1], [2], [3], [4]], strictly finer than the declared [[0, 1], [2], [3], [4]]
   member 2  aligned manufactured 1+1+1+1  atoms [[0], [1], [2], [3], [4]]
             ADMISSIBLE = True  (it IS the legitimate address algebra; the collusion is entirely in member 1)
-  jointly unforgeable: no committed law admits both  --  [{'law': 'DET', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'FUNNEL', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'REV', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'COUNTER-LAW', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}]
+  jointly unforgeable AT A SHARED LAW: no committed law admits both --  [{'law': 'DET', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'FUNNEL', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'REV', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'FUNNEL-CLOSURE', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}, {'law': 'COUNTER-LAW', 'member_1_admissible': False, 'member_2_admissible': True, 'both': False}]
+  THE MIXED-LAW ESCAPE (one law per context, the declared scope): member 1 is
+    ADMISSIBLE under {(0,0,2,3,4)}, composition-closed and identity-free (family 1), member 2 admissible under DET.
+    the MIXED-LAW ARENA: what binds two patches that declare different admitted laws.  Nothing in this cycle measures it, and physically it is the realistic case -- patches with different effective laws
+
+THE KILL-LIST IS DECLARATION-RELATIVE (at the forged boundary, DET):
+declared family                                                   size   adm   killed by
+the boundary's closure -- the canonical substitution              240    False (i-a), (ii-a)
+the written-exact subfamily {F : comp(F) = pi_1}                  120    False (i-b)
+the merging subfamily inside the closure {F in Pres : F(0) = F(1)}120    False (i-b)
+the merging subfamily of the whole law {F in L : F(0) = F(1)}     625    False (i-b), (ii-a)
+the single repreparation task (0,0,2,3,4)                         1      False (i-b)
+the identity alone                                                1      False (i-a), (i-b), (ii-a), (ii-b)
 
 ------------------------------------------------------------------------------
 THE FEYNMAN GATE
@@ -67,8 +82,16 @@ THE FEYNMAN GATE
     admissible patch    family 120   sigma = 1
     inadmissible patch  family 121   sigma = 3/4
     the statistic differs: True
+    the comparator's kill-list, COMPUTED: (i-b), (ii-a)
   the forged patch: sigma = 1 (does NOT separate); delta = 1/16 against 0 (separates)
   at the forged boundary the rigidity theorem leaves NO admissible comparator, so the same-boundary form of the gate cannot be run there; the forgery is separated instead by delta, across boundaries
+  BLIND TO OCCUPANCY -- the axiom's only independent clause.  Two patches under the
+    counter-law differing in the PREPARATION alone: [0, 1, 2, 3, 4] -> admissible True, sigma 1, delta 0;
+    [0] -> admissible False (reach [0]), sigma 1, delta 0.
+    Neither statistic takes the preparation as an argument: sigma('part', 'fam', 'rho').
+  BLIND IN THE OMISSION DIRECTION: the discrete boundary declaring the identity alone is admissible False with sigma 1.
+  sigma over all 3005 one-task extensions: {'3/4': 5, '13/16': 300, '7/8': 1500, '15/16': 1200}; minimum 3/4 attained by exactly 5.
+  AN OCCUPANCY-SENSITIVE STATISTIC IS LEFT OPEN.
 
 ------------------------------------------------------------------------------
 THE MINIMAL WITNESS  (three configurations, printed whole)
@@ -100,30 +123,55 @@ record level        [[0, 1], [2], [3], [4]]   120     3005        True      True
 boundary level      [[0, 1], [2, 3], [4]]     360     2765        True      True
 coarser boundary    [[0, 1, 2, 3], [4]]       1260    1865        True      True
 the limit           [[0, 1, 2, 3, 4]]         3120    5           True      True
-  pair level: IMPOSSIBLE at any cost.  After paying the record-level cost the second member is admissible = False
+  pair level: IMPOSSIBLE at any cost, at a SHARED law.  After paying the record-level cost the second member is admissible = False
+  the cost equals |Obs| EXACTLY WHEN the complement admits the boundary.  Over the
+  687-law census, 1008 of 2748 pairs fail that condition (927 with a non-empty complement),
+  so their true cost is strictly greater; DET and ALL attain it everywhere swept.
+  COUNTEREXAMPLE 1 -- REV: 18 boundaries at n=3,4 with an EMPTY complement;
+    the cheapest forgery needs an ADDITION and costs n!+1 (6->7, 24->25); brute force at
+    n=3 over every law at distance <= 7 confirms 7.
+  COUNTEREXAMPLE 2 -- {const_0} at [[0], [1, 2]]: |Obs| = 0 while the boundary is
+    inadmissible; true cost 1, by any of 3 single additions.
 
 ------------------------------------------------------------------------------
 THE RIGIDITY SWEEP
 ------------------------------------------------------------------------------
-n   law           |L|     id    records   admissible boundaries
-2   DET           4       True  2         [[[0], [1]]]
-2   FUNNEL        3       True  2         [[[0], [1]]]
-2   REV           2       True  2         [[[0], [1]]]
-2   ALL           9       True  2         [[[0], [1]]]
-3   DET           27      True  5         [[[0], [1], [2]]]
-3   FUNNEL        7       True  5         [[[0], [1], [2]]]
-3   REV           6       True  5         [[[0], [1], [2]]]
-3   ALL           343     True  5         [[[0], [1], [2]]]
-4   DET           256     True  15        [[[0], [1], [2], [3]]]
-4   FUNNEL        13      True  15        [[[0], [1], [2], [3]]]
-4   REV           24      True  15        [[[0], [1], [2], [3]]]
-4   ALL           50625   True  15        [[[0], [1], [2], [3]]]
-5   DET           3125    True  52        [[[0], [1], [2], [3], [4]]]
-5   FUNNEL        21      True  52        [[[0], [1], [2], [3], [4]]]
-5   REV           120     True  52        [[[0], [1], [2], [3], [4]]]
-5   COUNTER-LAW   120     True  52        [[[0], [1], [2], [3], [4]]]
+n   law             |L|     id    rev   closed                records   admissible boundaries
+2   DET             4       True  True  True (by construction)2         [[[0], [1]]]
+2   FUNNEL          3       True  True  True (measured)       2         [[[0], [1]]]
+2   REV             2       True  True  True (by construction)2         [[[0], [1]]]
+2   ALL             9       True  True  True (by construction)2         [[[0], [1]]]
+3   DET             27      True  True  True (by construction)5         [[[0], [1], [2]]]
+3   FUNNEL          7       True  True  False (measured)      5         [[[0], [1], [2]]]
+3   REV             6       True  True  True (by construction)5         [[[0], [1], [2]]]
+3   FUNNEL-CLOSURE  22      True  True  True (by construction)5         [[[0], [1], [2]]]
+3   ALL             343     True  True  True (by construction)5         [[[0], [1], [2]]]
+4   DET             256     True  True  True (by construction)15        [[[0], [1], [2], [3]]]
+4   FUNNEL          13      True  True  False (measured)      15        [[[0], [1], [2], [3]]]
+4   REV             24      True  True  True (by construction)15        [[[0], [1], [2], [3]]]
+4   FUNNEL-CLOSURE  233     True  True  True (by construction)15        [[[0], [1], [2], [3]]]
+4   ALL             50625   True  True  True (by construction)15        [[[0], [1], [2], [3]]]
+5   DET             3125    True  True  True (by construction)52        [[[0], [1], [2], [3], [4]]]
+5   FUNNEL          21      True  True  False (measured)      52        [[[0], [1], [2], [3], [4]]]
+5   REV             120     True  True  True (by construction)52        [[[0], [1], [2], [3], [4]]]
+5   FUNNEL-CLOSURE  3006    True  True  True (by construction)52        [[[0], [1], [2], [3], [4]]]
+5   COUNTER-LAW     120     True  True  True (measured)       52        [[[0], [1], [2], [3], [4]]]
   identity-free control: law [[[0], [0], [2]], [[0], [2], [2]]]  closed=True  contains identity=False
       admissible boundaries (with family size): [[[[0], [1, 2]], 1], [[[0, 1], [2]], 1]]
+  FUNNEL is composition-closed at: {'2': True, '3': False, '4': False, '5': False} -- a declared TASK FAMILY, not a law at n>=3;
+      the law it generates has sizes {'3': 22, '4': 233, '5': 3006} and the three re-run sweeps move nothing.
+  THE DICHOTOMY, censused over 687 laws at three configurations:
+      the carrier's algebra is admissible IFF the law contains the identity: 687 of 687
+      identity-containing 259 = reversible-containing 259  (reversible but no identity: 0)
+      laws admitting a PROPER boundary 428; of them, identity-containing 0
+      admissible pairs 357, comparable among them 0
+  THE MECHANISM: condition (i) pairs ker with Pres -- adjoints of DIFFERENT connections.
+      n   law           records   Core.Pres fixes   ker.Pres fixes
+      2   DET           2         2                 1
+      3   DET           5         5                 1
+      4   DET           15        15                1
+      5   DET           52        52                1
+      5   COUNTER-LAW   52        52                1
 
 ------------------------------------------------------------------------------
 GATES
@@ -131,17 +179,31 @@ GATES
   [PASS] L2-00  (arithmetic)
       EXACT ARITHMETIC EVERYWHERE.  An abstract-syntax-tree sweep of this unit and of both terminal modules it imports finds no float literal and no call to float in any path; every probability in this unit is a Fraction and every structural object is a finite set or tuple of integers
   [PASS] L2-02  (theorem)
-      THE RIGIDITY THEOREM, MEASURED EXHAUSTIVELY: at every committed law family that contains the identity, the two halves of condition (i) are jointly satisfied by EXACTLY ONE boundary -- the carrier's own configuration algebra.  The reason is structural and is proved in the paper: Pres_L(A(B)) always contains the identity, and the identity factors through a coarse-graining only if that coarse-graining is trivial, so #103-minimality and the Cycle B closure pull in opposite directions everywhere except at the carrier.  Swept over all records at 2,3,4,5 configurations against DET, FUNNEL, REV, ALL (n<=4) and the counter-law
+      THE RIGIDITY THEOREM, MEASURED EXHAUSTIVELY: at every committed law family that contains the identity, the two halves of condition (i) are jointly satisfied by EXACTLY ONE boundary -- the carrier's own configuration algebra.  The reason is structural and is proved in the paper: Pres_L(A(B)) always contains the identity, and the identity factors through a coarse-graining only if that coarse-graining is trivial, so #103-minimality and the Cycle B closure pull in opposite directions everywhere except at the carrier.  Swept over all records at 2,3,4,5 configurations against DET, FUNNEL, REV, ALL (n<=4) and the counter-law -- sixteen sweeps -- and over three further sweeps on FUNNEL's composition closure, the law FUNNEL generates where FUNNEL itself is not one (L2-21).  Nineteen sweeps, one admissible boundary each, no exceptions
+  [PASS] L2-21  (scope)
+      FUNNEL IS NOT A LAW AT THREE CONFIGURATIONS OR MORE, and the three sweeps that used it are re-run on the law it generates.  Definition 2.1 requires an admitted law to be composition-closed.  Measured: FUNNEL is composition-closed at n = 2 ONLY; at n = 3 the composite f_{0->1} o f_{1->2} = (1,2,2) moves two configurations and is neither the identity nor an elementary merge, so it lies outside FUNNEL; the same failure occurs at 4 and 5.  FUNNEL is therefore a declared TASK FAMILY, and its composition closure -- the identity together with every non-injective map, of sizes 22, 233 and 3006 -- is the law it generates.  The three affected rigidity sweeps are re-run on that closure and NOTHING MOVES: the admissible set is the singleton {discrete} in each, as rigidity requires of any law containing the identity
   [PASS] L2-04  (theorem)
-      THE ENTAILMENT THEOREM: condition (ii-a) is ENTAILED by condition (i) -- every patch passing both halves of (i) writes exactly its boundary's record.  Proof in the paper: (i-a) makes every declared task constant on blocks, so comp(F) is coarser than A(B); (i-b) makes comp(F) refine A(B); the two force equality.  Measured on the same exhaustive sweep, with zero counterexamples.  So generativity's WRITTEN clause is not an independent constraint, and the axiom's independent content beyond (i) is the OCCUPANCY clause alone
+      THE ENTAILMENT THEOREM: at any NON-EMPTY admitted law, condition (ii-a) is ENTAILED by condition (i) -- every patch passing both halves of (i) writes exactly its boundary's record.  Proof in the paper: (i) forces the declared family to be non-empty unless the law is; (i-a) then makes every declared task constant on blocks, so comp(F) is coarser than A(B); (i-b) makes comp(F) refine A(B); the two force equality.  The empty law at the one-atom boundary is the degenerate case the non-emptiness requirement in (ii-a) excludes, and the decision procedure and Definition 2.2 agree on it because the clause says so.  Corroborated where it can actually bite: rigidity leaves the committed sweep only 19 condition-(i) instances, one per law and every one of them the discrete boundary, so that sweep is nearly vacuous as evidence for this theorem.  The population reported here is the census of every composition-closed law on three configurations generated by at most three maps -- 687 laws, 1004 condition-(i) instances, 745 of them at PROPER boundaries -- with ZERO (ii-a) failures.  So generativity's WRITTEN clause is not an independent constraint, and the axiom's independent content beyond (i) is the OCCUPANCY clause alone
+  [PASS] L2-23  (theorem)
+      #103-MINIMALITY IS WHAT (i-a) COMPUTES, proved and now gated.  The quotient by ker is the COARSEST partition on whose blocks every declared task is constant -- one line: a partition r is a retract through which every task factors exactly when every task is constant on r's blocks, i.e. exactly when r refines ker, and the coarsest such r is ker itself.  The identification was asserted and never gated; it is measured here by brute force over every boundary of every law in the census, recomputing the minimum-atom retract independently of ker and comparing
   [PASS] L2-03  (control-positive)
       THE IDENTITY-FREE POSITIVE CONTROL: rigidity is a statement about laws that can idle, not a tautology.  The composition-closed identity-FREE law {a,b} of Cycle B Example 4.2 admits a PROPER coarse-graining -- the two-atom boundary {01|2} is admissible there, both conditions passing.  So the axiom does select proper charts, and it selects them exactly when the law admits no operation that leaves the configurations where they are
   [PASS] L2-06  (covariance)
-      ADMISSIBILITY IS COVARIANT under the admitted relabellings of the carrier, measured rather than assumed: over every relabelling and every record at three and four configurations under DET there is no case where a boundary is admissible and its relabelled copy is not.  The law-relativity is disclosed with it: the counter-law is preserved by exactly ONE of the 120 relabellings, so under that law covariance has no content -- admission, as the predecessor cycle already found, must be certified per law
+      ADMISSIBILITY IS COVARIANT under the admitted relabellings of the carrier, measured rather than assumed: over every relabelling and every record at three and four configurations under DET there is no case where a boundary is admissible and its relabelled copy is not.  THE VACUITY IS DISCLOSED WITH IT: of those 390 instances the antecedent holds in exactly 30 -- rigidity leaves one admissible boundary per relabelling and it is the discrete one carried to itself -- so the DET sweep tests one boundary.  Covariance is therefore re-run where it can bite, over the census of 687 laws at three configurations against EACH LAW'S OWN symmetry group, including the identity-free laws whose admissible boundaries are proper: 4620 tests, zero violations.  The law-relativity is disclosed too: the counter-law is preserved by exactly ONE of the 120 relabellings, so under that law covariance has no content -- admission, as the predecessor cycle already found, must be certified per law
+  [PASS] L2-22  (mechanism)
+      CONDITION (i) IS THE ker-PAIRING, NOT CYCLE B'S TWO-SIDED FIXED POINT, and this is where the axiom's selectivity comes from.  (i-b) uses Pres, Cycle B's right adjoint; (i-a) uses ker, which is NOT Core.  They move in OPPOSITE directions with the family: enlarging {a} to {a,b} COARSENS Core from {01|2} to the one-atom boundary and REFINES ker from {01|2} to the discrete boundary -- exhibited here.  Cycle B Theorem 3.8 records exactly this conflation as the one to avoid.  Measured consequence: the genuine two-sided Cycle B condition Core(Pres(pi)) = pi fixes EVERY record -- 2 of 2, 5 of 5, 15 of 15, 52 of 52 under DET and 52 of 52 under the counter-law -- while the mixed ker(Pres(pi)) = pi fixes EXACTLY ONE at every count.  The selectivity is neither inherited from Cycle B nor a discovery about competing minimalities: it is produced by the substitution, and RIGIDITY IS THE SIGNATURE OF THE MISMATCHED PAIRING
+  [PASS] L2-24  (theorem)
+      THE RIGIDITY DICHOTOMY, BOTH DIRECTIONS.  Theorem 3.1 gives one half; the converse is two lines and is proved in the paper: n pairwise-disjoint non-empty supports inside an n-configuration carrier force every support to be a singleton, so Pres_L(discrete) is exactly the reversible members of L, and any of them separates every pair; hence the carrier's own algebra is admissible IFF the law contains a reversible operation IFF (finite order) it contains the identity.  THE TRIGGER IS REVERSIBILITY, NOT IDLING.  Census over the 687 composition-closed laws on three configurations: the biconditional holds 687 of 687; laws containing a reversible operation 259, laws containing the identity 259, reversible-but-no-identity 0; laws admitting a proper boundary 428; identity-containing laws admitting a proper boundary 0; identity-free laws admitting NO proper boundary 0.  So every law has either exactly one chart -- the carrier's -- or no carrier chart at all and possibly several proper ones; there is nothing in between.  Re-measured on a declared sample of 865 laws at four configurations: zero failures in both directions
   [PASS] L2-07  (discriminator)
-      THE COLLUDING PAIR FAILS THE AXIOM.  Cycle B''s standing obstruction is two aligned manufactured contexts, each a measure chosen to match a preselected one, whose forged greatest record descends 14-of-15 past the rebuilt binding gate.  MEMBER 1, the forged context (atoms {0,1},{2},{3},{4}), is INADMISSIBLE, and the killing conditions are measured, not assumed: (i-a) AND (ii-a) both fail, on the SAME witness -- a declared task that separates the two configurations the boundary asserts are one atom.  The boundary claims an identification its own realized legs never write.  MEMBER 2 is admissible, and correctly so: as a boundary it IS the legitimate address algebra, and the collusion lives entirely in member 1's forged patch
+      THE COLLUDING PAIR FAILS THE AXIOM.  Cycle B''s standing obstruction is two aligned manufactured contexts, each a measure chosen to match a preselected one, whose forged greatest record descends 14-of-15 past the rebuilt binding gate.  MEMBER 1, the forged context (atoms {0,1},{2},{3},{4}), is INADMISSIBLE, and the killing conditions are measured, not assumed: for the boundary's own closure -- the only declaration that could ever satisfy (i-b), and the one this section substitutes -- (i-a) AND (ii-a) both fail, on the SAME witness, a declared task that separates the two configurations the boundary asserts are one atom.  The boundary claims an identification its own realized legs never write.  Under any OTHER declared family the patch fails (i-b) instead: the verdict is declaration-independent, the kill-list is not, and L2-26 measures it.  The verdict is also law-relative -- member 1 is inadmissible at every law CONTAINING THE IDENTITY, and L2-27 exhibits an identity-free law where it is admissible.  MEMBER 2 is admissible, and correctly so: as a boundary it IS the legitimate address algebra, and the collusion lives entirely in member 1's forged patch
   [PASS] L2-08  (discriminator)
-      THE PAIR IS JOINTLY UNFORGEABLE.  Stronger than rejection: no admitted law whatsoever makes both members admissible at once.  Pres(discrete) is contained in Pres(forged) -- measured -- so any law under which the forged boundary's preserving family fails to separate configurations 0 and 1 is a law under which the second member's family fails to separate them either, and the second member stops being admissible.  The adversary cannot have both contexts at any price
+      THE PAIR IS JOINTLY UNFORGEABLE AT A SHARED LAW.  Stronger than rejection: no SINGLE admitted law makes both members admissible at once.  Pres(discrete) is contained in Pres(forged) -- measured -- so any law under which the forged boundary's preserving family fails to separate configurations 0 and 1 is a law under which the second member's family fails to separate them either, and the second member stops being admissible.  The theorem is general in the pair: NO law admits two strictly COMPARABLE boundaries, of which the colluding pair is the instance.  The hypothesis is load-bearing and is stated: both contexts must declare the SAME law.  Under the pin's own one-law-family-per-context reading the adversary may declare a law per context, and then the escape of L2-27 exists
+  [PASS] L2-25  (theorem)
+      NO LAW ADMITS TWO STRICTLY COMPARABLE BOUNDARIES -- the general form of joint unforgeability, which costs nothing and is strictly stronger.  The proof uses nothing about the arena: if pi strictly refines pi' then Pres_L(pi) is contained in Pres_L(pi') for every L, and the coarser member's admissibility forces the finer member's kernel to merge a pair the finer boundary separates.  Measured over the census: 277 of 687 laws have more than one admissible boundary, 357 unordered admissible pairs occur, and ZERO of them are comparable; 0 of 687 laws admit both {01|2} and the discrete boundary (246 the coarse one only, 259 the fine one only).  At four configurations, over DET, REV and the funnel closure: 135 comparable pairs, zero jointly admissible.  Incomparable boundaries genuinely differ -- the identity-free control's two proper charts coexist -- so comparability is the sharp hypothesis
+  [PASS] L2-27  (discriminator-negative)
+      THE MIXED-LAW ESCAPE EXISTS, and it is reported as a limitation of the unforgeability theorem rather than absorbed.  The scope line declares ONE LAW FAMILY PER CONTEXT.  An adversary who uses that freedom holds both members: member 1, the forged 2+1+1 boundary, is ADMISSIBLE under the composition-closed identity-free law {(0,0,2,3,4)} -- all four clauses passing, declared family of one task -- while member 2 is admissible under DET, exactly as Section 6 reports.  The axiom rejects neither.  So 'no admitted law whatsoever' is false and 'no SINGLE admitted law' is what is proved; joint unforgeability is a statement about one law, not about one adversary.  Whether the predecessor's record-descent attack still runs at the escape law is NOT measured here.  THE MIXED-LAW ARENA IS THE NAMED OPEN QUESTION
+  [PASS] L2-26  (discriminator)
+      THE KILL-LIST IS DECLARATION-RELATIVE, and Section 6's table is read against the adversary's ACTUAL declarations rather than the one the unit substitutes.  The VERDICT at the forged boundary is declaration-independent -- inadmissible under every declaration, as (i-b) and rigidity together require -- but the IDENTITY OF THE KILLING CONDITION is not.  Measured at pi_1 under DET: under the boundary's closure (240 tasks, the canonical substitution) the kill is (i-a)+(ii-a); under the written-exact declaration and under the merging declaration inside the closure -- the same 120 tasks, measured -- the kill is (i-b) ALONE; under the merging subfamily of the whole law (625 tasks) it is (i-b)+(ii-a); under the single repreparation task it is (i-b) alone; under the identity alone all four clauses fail.  Two consequences are disclosed with it: in Section 6 the family is SET to the closure and the preparation to the whole carrier, so (i-b) and (ii-b) hold by construction -- 52 of 52 records each -- and with (i-b) imposed and the identity present, (i-a) and (ii-a) each reduce to the single bit 'is the presented boundary the carrier's own algebra', 52 of 52.  The nine-row table has ONE measured degree of freedom per row
   [PASS] L2-09  (discriminator)
       THE LEGITIMATE ERASER CONTEXT PASSES BOTH CONDITIONS.  The corrected eraser minimum is carrier-typed with five atoms; its Cycle B closure is the 120-member reversible family; that family's #103-minimal sufficient boundary is the five-atom boundary itself; every member writes exactly that record; and the reachable subprocess occupies every atom.  Both halves of (i) and both clauses of (ii) return true
   [PASS] L2-10  (control)
@@ -153,23 +215,31 @@ GATES
   [PASS] L2-13  (discriminator)
       THE THREE CONSTRUCTED MANUFACTURED CONTEXTS are inadmissible, and the axiom names where: they fail the carrier-typing gate.  Their atoms' images at the committed carrier OVERLAP, so no family of carrier-level tasks has any of them as its minimal sufficient retract and (i-a) cannot be satisfied at all.  This is reported with its limitation stated: the bite here is carrier-relative and reproduces the predecessor's rotated-versus-address-aligned separation rather than extending it.  What is new is L2-07, which rejects boundaries that ARE address-aligned
   [PASS] L2-14  (feynman)
-      THE FEYNMAN GATE IS POSITIVE: admissibility changes a number.  At ONE fixed boundary -- the carrier's configuration algebra -- an admissible patch and an inadmissible patch differ in an admitted tester statistic.  The statistic is Cycle B Definition 2.3's own two-time record-recovery probability under the committed branch-memory state: it is exactly 1 for the admissible patch and exactly 3/4 for the inadmissible one.  Both values are rational and computed, and the two patches share their boundary, their law and their state; only the declared family differs.  The pre-registered EMPIRICALLY-IDLE outcome therefore does NOT occur
+      THE FEYNMAN GATE IS POSITIVE VIA CONDITION (i): admissibility changes a number, and the claim names which condition changes it.  At ONE fixed boundary -- the carrier's configuration algebra -- an admissible patch and an inadmissible patch differ in an admitted tester statistic.  The statistic is Cycle B Definition 2.3's own two-time record-recovery probability under the committed branch-memory state: it is exactly 1 for the admissible patch and exactly 3/4 for the inadmissible one, whose declared family is the closure plus the TOTAL ERASER to one configuration.  Both values are rational and computed, and the two patches share their boundary, their law, their state and their preparation; only the declared family differs.  The comparator's kill-list is COMPUTED here, not asserted, and it is TWO clauses: (i-b), because the declared family is not the boundary's closure, AND (ii-a), because the total eraser writes the one-atom record rather than the declared discrete one.  The pre-registered EMPIRICALLY-IDLE outcome therefore does NOT occur
   [PASS] L2-15  (feynman-honest)
-      THE GATE'S HONEST HALF, reported with the positive.  The record-recovery statistic does NOT separate the forged patch: every task in the forged boundary's closure preserves that boundary's record, so sigma is exactly 1 there too.  What separates the forgery is the REFINEMENT statistic -- the probability mass on which the admitted later readout resolves a distinction the declared record does not -- which is exactly 0 for the admissible patch and exactly 1/16 for the forged one.  And the same-boundary form cannot be run at the forged boundary at all, because rigidity leaves no admissible comparator there.  Both limitations are stated, neither is absorbed
+      THE GATE'S HONEST HALF, reported with the positive.  The record-recovery statistic does NOT separate the forged patch: every task in the forged boundary's closure preserves that boundary's record, so sigma is exactly 1 there too.  What separates the forgery is the REFINEMENT statistic -- the probability mass on which the admitted later readout resolves a distinction the declared record does not -- which is exactly 0 for the admissible patch and exactly 1/16 for the forged one.  And the same-boundary form cannot be run at the forged boundary at all, because rigidity leaves no admissible comparator there -- and by L2-26 that holds for EVERY declaration at that boundary, not merely the canonical one.  Both limitations are stated, neither is absorbed, and L2-28 states the third
+  [PASS] L2-28  (feynman-honest)
+      THE GATE IS BLIND TO THE AXIOM'S INDEPENDENT CLAUSE.  Theorem 3.2 makes OCCUPANCY the only content the axiom has beyond condition (i), and neither admitted statistic can see it: sigma and delta are functions of the boundary, the declared family and the state, and the declared preparation is not an argument of either.  Exhibited at the committed carrier under the counter-law, where the closure of the discrete boundary is the identity alone: two patches differing in the declared preparation ALONE -- the whole carrier against {0} -- have opposite verdicts (the second leaves four atoms never occupied) and IDENTICAL statistics, sigma = 1 and delta = 0 for both.  Two further blind spots are reported with it: the inadmissible patch that declares the identity alone at the discrete boundary also has sigma = 1, so sigma is not a function of admissibility at a fixed boundary but fires in the ADDITION direction of (i-b) only; and over all 3005 one-task extensions of the closure sigma takes four values with minimum exactly 3/4, attained by exactly the five constant maps -- the positive's 3/4 is the extreme of that family, not a generic value.  AN OCCUPANCY-SENSITIVE STATISTIC IS LEFT OPEN
   [PASS] L2-01  (witness)
       THE MINIMAL WITNESS, three configurations, printed whole, every entry rational.  On Cycle B Example 4.2's committed composition-closed law {id, a, b}: W1 passes both conditions; W2 fails (i) ONLY -- its declared family writes exactly its boundary's record but is not that boundary's Cycle B closure, the missing task exhibited; W3 fails (ii) ONLY -- it satisfies both halves of (i) and writes what it declares, but its declared preparation leaves two of its three atoms never occupied by the reachable subprocess.  So the two conditions are independently violable and the axiom is not one condition wearing two names
   [PASS] L2-05  (independence)
       CONDITION (ii) IS NOT ENTAILED BY CONDITION (i).  The entailment theorem L2-04 covers the WRITTEN clause only; the OCCUPANCY clause is independent, and W3 is the exhibited separator: both halves of (i) hold, comp(F) equals the boundary's record, and the patch is still inadmissible because the process never occupies two of the atoms it declares.  This is the transported form of the predecessor corpus's never-occupied columns: an identification -- here, a distinction -- carried by transitions the process never takes
   [PASS] L2-16  (cost)
-      THE COMPLEMENT OF THE OBSTRUCTION IS A LAW, so the forging cost is achievable and not merely a lower bound.  The general reason is proved in the paper -- if a composite lies in the obstruction then so does its right factor, because the fibres of the composite refine the fibres of that factor -- and it is measured here exhaustively over every non-discrete boundary at three and four configurations and over the four levels of the tower at five
+      THE COMPLEMENT OF THE OBSTRUCTION IS A LAW -- and that is ALL this lemma says.  If a composite lies in the obstruction then so does its right factor, because the fibres of the composite refine the fibres of that factor; the relational form of the same argument is in the paper, since Definition 2.1 admits left-total relations and not only maps.  The lemma does NOT say the boundary is admissible in the complement: that is a separate four-clause condition, it is the hypothesis of the exact-cost statement, and it is MEASURED here rather than inherited -- under DET exhaustively over every non-discrete boundary at three and four configurations and over the four levels of the tower at five, and under the full left-total family ALL at three.  Every row carries the law it was measured under; L2-31 exhibits the laws where the hypothesis fails
   [PASS] L2-17  (cost)
-      THE COST IS EXACT, not an estimate.  Every member of the obstruction must be deleted -- each one alone makes the declared boundary strictly coarser than the minimal sufficient boundary of the family it belongs to, checked here on the first forty members at each level -- and no addition can ever remove one, because adding admitted operations only enlarges the preserving family.  So the minimum over all alterations, additions and deletions together, is exactly the obstruction's cardinality
+      EVERY MEMBER OF THE OBSTRUCTION MUST BE DELETED -- the lower bound's mechanism, tested on every member rather than sampled.  Retaining a single obstruction member F leaves the declared boundary strictly coarser than the minimal sufficient boundary of the family it belongs to, so (i-a) fails: the family tested here is the COMPLEMENT PLUS F, and ker of it is compared with the declared boundary.  Run on all 4860 members across the four levels of the tower, 120 + 360 + 1260 + 3120, with no exception.  No addition can remove a member either, because obstruction membership depends only on comp(F), which nothing else in the altered law can change.  Hence the cost is at least the obstruction's cardinality, additions included -- a LOWER BOUND, sound for every admitted law
   [PASS] L2-18  (cost)
-      THE COST GROWS ALONG THE TOWER, and the limit is a different law.  At five configurations under DET, whose 3125 admitted operations are the committed deterministic law, forging one identification costs 120 deletions; forging the aligned 2+2 boundary costs 360; the tomographic boundary costs 1260; and the limiting forgery -- the boundary that identifies everything -- costs 3120, leaving exactly five admitted operations out of 3125.  What remains is not an altered version of the original law but a complete alternative one: the Borges bound, stated only as far as these finite numbers carry it
+      THE COST GROWS ALONG THE TOWER, and the limit is a different law.  At five configurations under DET, whose 3125 admitted operations are the committed deterministic law, forging one identification costs 120 deletions; forging the aligned 2+2 boundary costs 360; the tomographic boundary costs 1260; and the limiting forgery -- the boundary that identifies everything -- costs 3120, leaving exactly five admitted operations out of 3125.  These are COSTS, not merely lower bounds, because under DET the attainment hypothesis is measured to hold at all four levels (L2-16); under REV it fails and the same arithmetic would be wrong (L2-29).  What remains at the limit is not an altered version of the original law but a complete alternative one: the Borges bound, stated only as far as these finite numbers carry it, and only under the law they were measured at
   [PASS] L2-19  (cost)
-      WITHIN THE COMMITTED CLASS OF LAWS THE COST IS UNPAYABLE.  Every obstruction computed here contains the identity, at every level and at every boundary swept.  The committed law families of the predecessor cycle each contain the identity by construction -- a laboratory law under which nothing may be left alone is not one of them -- so forging any proper coarse-graining requires leaving the class, not paying a price inside it.  RQ0-L2-CHEAP-LAW-FORGERY therefore does NOT occur: the cheapest alteration is not small, and inside the committed class there is no alteration at all
+      NO FORGERY AT ANY PRICE INSIDE THE IDENTITY-CONTAINING CLASS -- and this is a one-line corollary of the rigidity theorem, not a fact about the levels swept.  comp(id) is discrete, which refines every boundary, so the identity lies in Pres_L(pi) for EVERY law and every boundary; and the identity separates every pair, so it lies in the obstruction of every non-discrete boundary.  Any admissible altered law must therefore delete the identity and leave the class.  The class that is provably closed to forgery is the class of IDENTITY-CONTAINING laws, which is larger than the five committed families.  Measured at every non-discrete boundary at three and four configurations under DET, REV and the funnel closure, and at all four levels of the tower.  The pre-registered RQ0-L2-CHEAP-LAW-FORGERY does NOT occur at the committed scope: under DET the cheapest forgery deletes 120 of 3125 operations, under REV it costs more than the law itself (L2-29), and inside the identity-containing class it is unavailable at any price.  The one-operation forgery of L2-30 lives at a degenerate identity-free law of a single constant operation, outside the committed class, and is disclosed rather than absorbed
+  [PASS] L2-29  (cost-counterexample)
+      THE EXACT-COST CLAIM IS FALSE IN GENERAL, and REV refutes it inside the committed law families.  Every permutation is collision-free, so comp is discrete, so Pres_REV(pi) is ALL of REV at every boundary, and every permutation separates every pair: the obstruction is the whole law and THE COMPLEMENT IS EMPTY.  The empty declared family fails (i-a) -- its minimal boundary is the one-atom boundary by the standing convention -- so the boundary is not admissible in the complement, and an alteration of size |Obs| must BE the complement.  The cheapest forgery is therefore |REV| + 1 and it requires an ADDITION: delete every permutation and add the BLOCK-MINIMUM IDEMPOTENT, under which the boundary passes all four clauses.  6 -> 7 at three configurations (4 boundaries) and 24 -> 25 at four (14 boundaries): 18 counterexamples inside the range the exhaustive tag advertises.  Confirmed at three configurations by brute force over EVERY composition-closed law at distance at most 7, drawn from the full left-total family.  So 'additions never help' is withdrawn: an addition can be NECESSARY
+  [PASS] L2-30  (cost-counterexample)
+      AND THE OBSTRUCTION CAN BE EMPTY AT A BOUNDARY THAT IS INADMISSIBLE AT ANY PRICE -- the sharper failure of the exact-cost claim.  Take the composition-closed identity-free law {const_0} at three configurations and the boundary {0|12}.  The images of the two blocks are {0} and {0}, not disjoint, so the preserving family is EMPTY, so the obstruction is empty and |Obs| = 0 would report the boundary as already admissible.  It is not: with an empty declared family (i-a) fails.  The obstruction sees only over-separation INSIDE a block and is blind to under-separation BETWEEN blocks -- the decision procedure's own second witness branch -- and to (ii-a) and (ii-b) entirely.  The true cost is ONE: deleting const_0 leaves the empty law, still inadmissible, but a single ADDITION suffices, and three distinct additions achieve it, because const_0 never enters the declared family and so never needs removing
+  [PASS] L2-31  (cost)
+      THE COST EQUALS THE OBSTRUCTION'S SIZE EXACTLY WHEN THE COMPLEMENT ADMITS THE BOUNDARY -- an IFF, which is the corrected statement.  One direction is the lower bound plus the complement; the other is forced, since an alteration of size |Obs| must delete all of Obs and nothing else and therefore IS the complement.  So the hypothesis is not a convenience, it is the exact criterion.  Censused over the 687 composition-closed laws at three configurations against every non-discrete boundary: in 1008 of the 2748 pairs the complement does not admit the boundary, so in every one of those the true cost is STRICTLY GREATER than the obstruction's size; 927 of them have a non-empty complement, so this is not an artefact of emptiness.  The committed law of the tower is clean: DET at three, four and five configurations attains the bound everywhere swept, and so does the full left-total family at three.  That is why the tower stands and the general claim does not
   [PASS] L2-20  (cost)
-      THE PAIR LEVEL IS NOT EXPENSIVE, IT IS IMPOSSIBLE.  The tower does not merely grow at the third rung; it terminates.  Paying the record-level cost of 120 to make the forged context admissible makes the SECOND colluding context inadmissible in the same breath, because the preserving family of the finer boundary is contained in the preserving family of the coarser one, so the deletions that blind one blind the other.  Measured on every committed law and on the altered law itself.  There is no law, at any cost, in which both members of the colluding pair are admissible
+      THE PAIR LEVEL IS NOT EXPENSIVE, IT IS IMPOSSIBLE.  The tower does not merely grow at the third rung; it terminates.  Paying the record-level cost of 120 to make the forged context admissible makes the SECOND colluding context inadmissible in the same breath, because the preserving family of the finer boundary is contained in the preserving family of the coarser one, so the deletions that blind one blind the other.  Measured on every committed law and on the altered law itself.  There is no SINGLE law, at any cost, in which both members of the colluding pair are admissible -- the quantifier is one law shared by both contexts, which is the theorem's hypothesis; L2-27 exhibits the escape when each context declares its own
 
 ------------------------------------------------------------------------------
 ANCHORS  (exit-1-only; every committed value this unit reuses)
@@ -269,13 +339,17 @@ ANCHORS  (exit-1-only; every committed value this unit reuses)
 NON-CLAIMS
 ------------------------------------------------------------------------------
   - REACHABILITY IS AN ORDER ON CONFIGURATIONS.  It carries no spatial, causal, temporal or spacetime reading of any kind, and the reachable subprocess is not a region, a light cone, a neighbourhood or a history.
-  - no locality, topology, atlas-as-place, manifold or geometric object; the word patch names a triple of committed operational data and nothing else
+  - no locality, topology, atlas-as-place, manifold or geometric object; the word patch names a QUADRUPLE of committed operational data -- boundary, declared family, declared preparation, admitted law -- and nothing else
   - no influence, causal order or Lorentzian object
   - no field, QFT, QCD or gravity object
   - no claim that the axiom derives a carrier; the rigidity theorem says the opposite, and the rung is registered with that price attached
   - no claim beyond the committed law families and the one committed carrier; nothing is claimed for infinite dimension or for laws not run
   - no claim that provenance is measurable; every verdict here is computed from declared boundaries, declared families and admitted laws only
   - no claim that condition (ii)'s WRITTEN clause is independent of condition (i): it is proved entailed, and only the OCCUPANCY clause is independent
+  - NO CLAIM THAT THE FORGING COST EQUALS THE OBSTRUCTION'S SIZE IN GENERAL: that is false, refuted here at REV and at a law with an empty obstruction.  What is claimed is the lower bound, sound everywhere, and the equality exactly where the complement admits the boundary -- measured under DET, where the tower runs
+  - no claim that condition (i) is Cycle B's two-sided Galois fixed point: it pairs ker with Pres, which are adjoints of different connections, and Cycle B Theorem 3.8 records the conflation as the one to avoid
+  - no claim that joint unforgeability holds across DIFFERENT declared laws: it is a statement about one law shared by both contexts, and the mixed-law escape is exhibited
+  - no claim that an admitted statistic can see the occupancy clause: neither tester statistic reads the declared preparation, and an occupancy-sensitive statistic is left open
 
-gates 21/21   anchors 45/45
+gates 32/32   anchors 45/45
 ==============================================================================

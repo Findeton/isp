@@ -634,8 +634,12 @@
       "anchor:M30": "the arena pair's dependence and its witnesses"
     },
     "derivation_mutants": {
+      "blind-lax": "the occupancy-blindness comparison gives both patches the full preparation, so the two verdicts agree and the blind spot cannot fire",
+      "census-lax": "the census population is restricted to the identity-containing laws, so the dichotomy, the comparable-pairs strengthening, the entailment population and the cost equality criterion all lose the half of the population that carries them",
       "comp-lax": "every task is reported to write the discrete record, so the WRITTEN clause cannot fire",
       "cost-lax": "the identity is dropped from the obstruction, so the forging cost is understated",
+      "declaration-lax": "every declared family in the declaration-relative table is replaced by the boundary's closure, so the kill-list stops being declaration-relative",
+      "forgery-lax": "the block-minimum idempotent is replaced by the identity, so the REV counterexample's cheapest forgery cannot be exhibited",
       "ker-lax": "the minimal sufficient boundary of every family is reported trivial, so (i-a) cannot fire",
       "pres-lax": "the Cycle B closure returns the whole law, so (i-b) cannot fire",
       "reach-lax": "the reachable subprocess is reported to be the whole carrier, so the OCCUPANCY clause cannot fire",
@@ -651,6 +655,7 @@
     "conditions_independently_violable": true,
     "empirically_idle": false,
     "eraser_context_admissible": true,
+    "feynman_gate_blind_to_occupancy": true,
     "feynman_gate_positive": true,
     "forging_cost_grows_along_the_tower": true,
     "pair_level_forgery_impossible": true,
@@ -658,7 +663,7 @@
   },
   "gates": {
     "failed": [],
-    "passed": 21,
+    "passed": 32,
     "rows": [
       {
         "claim": "EXACT ARITHMETIC EVERYWHERE.  An abstract-syntax-tree sweep of this unit and of both terminal modules it imports finds no float literal and no call to float in any path; every probability in this unit is a Fraction and every structural object is a finite set or tuple of integers",
@@ -670,11 +675,13 @@
         }
       },
       {
-        "claim": "THE RIGIDITY THEOREM, MEASURED EXHAUSTIVELY: at every committed law family that contains the identity, the two halves of condition (i) are jointly satisfied by EXACTLY ONE boundary -- the carrier's own configuration algebra.  The reason is structural and is proved in the paper: Pres_L(A(B)) always contains the identity, and the identity factors through a coarse-graining only if that coarse-graining is trivial, so #103-minimality and the Cycle B closure pull in opposite directions everywhere except at the carrier.  Swept over all records at 2,3,4,5 configurations against DET, FUNNEL, REV, ALL (n<=4) and the counter-law",
+        "claim": "THE RIGIDITY THEOREM, MEASURED EXHAUSTIVELY: at every committed law family that contains the identity, the two halves of condition (i) are jointly satisfied by EXACTLY ONE boundary -- the carrier's own configuration algebra.  The reason is structural and is proved in the paper: Pres_L(A(B)) always contains the identity, and the identity factors through a coarse-graining only if that coarse-graining is trivial, so #103-minimality and the Cycle B closure pull in opposite directions everywhere except at the carrier.  Swept over all records at 2,3,4,5 configurations against DET, FUNNEL, REV, ALL (n<=4) and the counter-law -- sixteen sweeps -- and over three further sweeps on FUNNEL's composition closure, the law FUNNEL generates where FUNNEL itself is not one (L2-21).  Nineteen sweeps, one admissible boundary each, no exceptions",
         "class": "theorem",
         "id": "L2-02",
         "passed": true,
         "value": {
+          "committed_sweeps": 16,
+          "funnel_closure_sweeps": 3,
           "sweep": [
             {
               "admissible_boundaries": [
@@ -687,8 +694,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 2,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "DET",
               "records": 2,
               "size": 4
@@ -704,8 +714,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 2,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "measured",
               "law": "FUNNEL",
               "records": 2,
               "size": 3
@@ -721,8 +734,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 2,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "REV",
               "records": 2,
               "size": 2
@@ -738,8 +754,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 2,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "ALL",
               "records": 2,
               "size": 9
@@ -758,8 +777,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 3,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "DET",
               "records": 5,
               "size": 27
@@ -778,8 +800,11 @@
                   ]
                 ]
               ],
+              "composition_closed": false,
               "configurations": 3,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "measured",
               "law": "FUNNEL",
               "records": 5,
               "size": 7
@@ -798,8 +823,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 3,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "REV",
               "records": 5,
               "size": 6
@@ -818,8 +846,34 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 3,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 5,
+              "size": 22
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 3,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "by construction",
               "law": "ALL",
               "records": 5,
               "size": 343
@@ -841,8 +895,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 4,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "DET",
               "records": 15,
               "size": 256
@@ -864,8 +921,11 @@
                   ]
                 ]
               ],
+              "composition_closed": false,
               "configurations": 4,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "measured",
               "law": "FUNNEL",
               "records": 15,
               "size": 13
@@ -887,8 +947,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 4,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "REV",
               "records": 15,
               "size": 24
@@ -910,8 +973,37 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 4,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 15,
+              "size": 233
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 4,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "by construction",
               "law": "ALL",
               "records": 15,
               "size": 50625
@@ -936,8 +1028,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 5,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "DET",
               "records": 52,
               "size": 3125
@@ -962,8 +1057,11 @@
                   ]
                 ]
               ],
+              "composition_closed": false,
               "configurations": 5,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "measured",
               "law": "FUNNEL",
               "records": 52,
               "size": 21
@@ -988,8 +1086,11 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 5,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
               "law": "REV",
               "records": 52,
               "size": 120
@@ -1014,8 +1115,40 @@
                   ]
                 ]
               ],
+              "composition_closed": true,
               "configurations": 5,
+              "contains_a_reversible_operation": true,
               "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 52,
+              "size": 3006
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 5,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "measured",
               "law": "COUNTER-LAW",
               "records": 52,
               "size": 120
@@ -1024,12 +1157,167 @@
         }
       },
       {
-        "claim": "THE ENTAILMENT THEOREM: condition (ii-a) is ENTAILED by condition (i) -- every patch passing both halves of (i) writes exactly its boundary's record.  Proof in the paper: (i-a) makes every declared task constant on blocks, so comp(F) is coarser than A(B); (i-b) makes comp(F) refine A(B); the two force equality.  Measured on the same exhaustive sweep, with zero counterexamples.  So generativity's WRITTEN clause is not an independent constraint, and the axiom's independent content beyond (i) is the OCCUPANCY clause alone",
+        "claim": "FUNNEL IS NOT A LAW AT THREE CONFIGURATIONS OR MORE, and the three sweeps that used it are re-run on the law it generates.  Definition 2.1 requires an admitted law to be composition-closed.  Measured: FUNNEL is composition-closed at n = 2 ONLY; at n = 3 the composite f_{0->1} o f_{1->2} = (1,2,2) moves two configurations and is neither the identity nor an elementary merge, so it lies outside FUNNEL; the same failure occurs at 4 and 5.  FUNNEL is therefore a declared TASK FAMILY, and its composition closure -- the identity together with every non-injective map, of sizes 22, 233 and 3006 -- is the law it generates.  The three affected rigidity sweeps are re-run on that closure and NOTHING MOVES: the admissible set is the singleton {discrete} in each, as rigidity requires of any law containing the identity",
+        "class": "scope",
+        "id": "L2-21",
+        "passed": true,
+        "value": {
+          "FUNNEL_is_composition_closed": {
+            "2": true,
+            "3": false,
+            "4": false,
+            "5": false
+          },
+          "closure_is_the_identity_plus_the_non_injective_maps": {
+            "3": true,
+            "4": true,
+            "5": true
+          },
+          "closure_sizes": {
+            "3": 22,
+            "4": 233,
+            "5": 3006
+          },
+          "re_run_sweeps": [
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 3,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 5,
+              "size": 22
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 4,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 15,
+              "size": 233
+            },
+            {
+              "admissible_boundaries": [
+                [
+                  [
+                    0
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ]
+              ],
+              "composition_closed": true,
+              "configurations": 5,
+              "contains_a_reversible_operation": true,
+              "contains_identity": true,
+              "how": "by construction",
+              "law": "FUNNEL-CLOSURE",
+              "records": 52,
+              "size": 3006
+            }
+          ],
+          "witness_at_three_configurations": {
+            "composite": [
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                2
+              ]
+            ],
+            "composite_in_FUNNEL": false,
+            "f_0to1": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "f_1to2": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                2
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "claim": "THE ENTAILMENT THEOREM: at any NON-EMPTY admitted law, condition (ii-a) is ENTAILED by condition (i) -- every patch passing both halves of (i) writes exactly its boundary's record.  Proof in the paper: (i) forces the declared family to be non-empty unless the law is; (i-a) then makes every declared task constant on blocks, so comp(F) is coarser than A(B); (i-b) makes comp(F) refine A(B); the two force equality.  The empty law at the one-atom boundary is the degenerate case the non-emptiness requirement in (ii-a) excludes, and the decision procedure and Definition 2.2 agree on it because the clause says so.  Corroborated where it can actually bite: rigidity leaves the committed sweep only 19 condition-(i) instances, one per law and every one of them the discrete boundary, so that sweep is nearly vacuous as evidence for this theorem.  The population reported here is the census of every composition-closed law on three configurations generated by at most three maps -- 687 laws, 1004 condition-(i) instances, 745 of them at PROPER boundaries -- with ZERO (ii-a) failures.  So generativity's WRITTEN clause is not an independent constraint, and the axiom's independent content beyond (i) is the OCCUPANCY clause alone",
         "class": "theorem",
         "id": "L2-04",
         "passed": true,
         "value": {
-          "counterexamples": 0
+          "census_at_proper_boundaries": 745,
+          "census_condition_i_instances": 1004,
+          "census_ii_a_failures": 0,
+          "census_laws": 687,
+          "condition_i_instances_in_the_committed_sweep": 19,
+          "counterexamples_in_the_committed_sweep": 0
+        }
+      },
+      {
+        "claim": "#103-MINIMALITY IS WHAT (i-a) COMPUTES, proved and now gated.  The quotient by ker is the COARSEST partition on whose blocks every declared task is constant -- one line: a partition r is a retract through which every task factors exactly when every task is constant on r's blocks, i.e. exactly when r refines ker, and the coarsest such r is ker itself.  The identification was asserted and never gated; it is measured here by brute force over every boundary of every law in the census, recomputing the minimum-atom retract independently of ker and comparing",
+        "class": "theorem",
+        "id": "L2-23",
+        "passed": true,
+        "value": {
+          "families_checked": 3435,
+          "mismatches": 0
         }
       },
       {
@@ -1061,17 +1349,181 @@
         }
       },
       {
-        "claim": "ADMISSIBILITY IS COVARIANT under the admitted relabellings of the carrier, measured rather than assumed: over every relabelling and every record at three and four configurations under DET there is no case where a boundary is admissible and its relabelled copy is not.  The law-relativity is disclosed with it: the counter-law is preserved by exactly ONE of the 120 relabellings, so under that law covariance has no content -- admission, as the predecessor cycle already found, must be certified per law",
+        "claim": "ADMISSIBILITY IS COVARIANT under the admitted relabellings of the carrier, measured rather than assumed: over every relabelling and every record at three and four configurations under DET there is no case where a boundary is admissible and its relabelled copy is not.  THE VACUITY IS DISCLOSED WITH IT: of those 390 instances the antecedent holds in exactly 30 -- rigidity leaves one admissible boundary per relabelling and it is the discrete one carried to itself -- so the DET sweep tests one boundary.  Covariance is therefore re-run where it can bite, over the census of 687 laws at three configurations against EACH LAW'S OWN symmetry group, including the identity-free laws whose admissible boundaries are proper: 4620 tests, zero violations.  The law-relativity is disclosed too: the counter-law is preserved by exactly ONE of the 120 relabellings, so under that law covariance has no content -- admission, as the predecessor cycle already found, must be certified per law",
         "class": "covariance",
         "id": "L2-06",
         "passed": true,
         "value": {
+          "census_tests": 4620,
+          "census_violations": 0,
           "counter_law_symmetries": 1,
+          "instances": 390,
+          "non_vacuous": 30,
           "violations": 0
         }
       },
       {
-        "claim": "THE COLLUDING PAIR FAILS THE AXIOM.  Cycle B''s standing obstruction is two aligned manufactured contexts, each a measure chosen to match a preselected one, whose forged greatest record descends 14-of-15 past the rebuilt binding gate.  MEMBER 1, the forged context (atoms {0,1},{2},{3},{4}), is INADMISSIBLE, and the killing conditions are measured, not assumed: (i-a) AND (ii-a) both fail, on the SAME witness -- a declared task that separates the two configurations the boundary asserts are one atom.  The boundary claims an identification its own realized legs never write.  MEMBER 2 is admissible, and correctly so: as a boundary it IS the legitimate address algebra, and the collusion lives entirely in member 1's forged patch",
+        "claim": "CONDITION (i) IS THE ker-PAIRING, NOT CYCLE B'S TWO-SIDED FIXED POINT, and this is where the axiom's selectivity comes from.  (i-b) uses Pres, Cycle B's right adjoint; (i-a) uses ker, which is NOT Core.  They move in OPPOSITE directions with the family: enlarging {a} to {a,b} COARSENS Core from {01|2} to the one-atom boundary and REFINES ker from {01|2} to the discrete boundary -- exhibited here.  Cycle B Theorem 3.8 records exactly this conflation as the one to avoid.  Measured consequence: the genuine two-sided Cycle B condition Core(Pres(pi)) = pi fixes EVERY record -- 2 of 2, 5 of 5, 15 of 15, 52 of 52 under DET and 52 of 52 under the counter-law -- while the mixed ker(Pres(pi)) = pi fixes EXACTLY ONE at every count.  The selectivity is neither inherited from Cycle B nor a discovery about competing minimalities: it is produced by the substitution, and RIGIDITY IS THE SIGNATURE OF THE MISMATCHED PAIRING",
+        "class": "mechanism",
+        "id": "L2-22",
+        "passed": true,
+        "value": {
+          "fixed_records": [
+            {
+              "configurations": 2,
+              "law": "DET",
+              "records": 2,
+              "records_fixed_by_Core_after_Pres": 2,
+              "records_fixed_by_ker_after_Pres": 1
+            },
+            {
+              "configurations": 3,
+              "law": "DET",
+              "records": 5,
+              "records_fixed_by_Core_after_Pres": 5,
+              "records_fixed_by_ker_after_Pres": 1
+            },
+            {
+              "configurations": 4,
+              "law": "DET",
+              "records": 15,
+              "records_fixed_by_Core_after_Pres": 15,
+              "records_fixed_by_ker_after_Pres": 1
+            },
+            {
+              "configurations": 5,
+              "law": "DET",
+              "records": 52,
+              "records_fixed_by_Core_after_Pres": 52,
+              "records_fixed_by_ker_after_Pres": 1
+            },
+            {
+              "configurations": 5,
+              "law": "COUNTER-LAW",
+              "records": 52,
+              "records_fixed_by_Core_after_Pres": 52,
+              "records_fixed_by_ker_after_Pres": 1
+            }
+          ],
+          "opposite_monotonicity": {
+            "Core_of_family": [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "Core_of_superfamily": [
+              [
+                0,
+                1,
+                2
+              ]
+            ],
+            "family": [
+              [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ]
+              ]
+            ],
+            "ker_of_family": [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "ker_of_superfamily": [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            "superfamily": [
+              [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ]
+              ],
+              [
+                [
+                  0
+                ],
+                [
+                  2
+                ],
+                [
+                  2
+                ]
+              ]
+            ]
+          }
+        }
+      },
+      {
+        "claim": "THE RIGIDITY DICHOTOMY, BOTH DIRECTIONS.  Theorem 3.1 gives one half; the converse is two lines and is proved in the paper: n pairwise-disjoint non-empty supports inside an n-configuration carrier force every support to be a singleton, so Pres_L(discrete) is exactly the reversible members of L, and any of them separates every pair; hence the carrier's own algebra is admissible IFF the law contains a reversible operation IFF (finite order) it contains the identity.  THE TRIGGER IS REVERSIBILITY, NOT IDLING.  Census over the 687 composition-closed laws on three configurations: the biconditional holds 687 of 687; laws containing a reversible operation 259, laws containing the identity 259, reversible-but-no-identity 0; laws admitting a proper boundary 428; identity-containing laws admitting a proper boundary 0; identity-free laws admitting NO proper boundary 0.  So every law has either exactly one chart -- the carrier's -- or no carrier chart at all and possibly several proper ones; there is nothing in between.  Re-measured on a declared sample of 865 laws at four configurations: zero failures in both directions",
+        "class": "theorem",
+        "id": "L2-24",
+        "passed": true,
+        "value": {
+          "census_at_three_configurations": {
+            "admissible_pairs": 357,
+            "admitting_a_proper_boundary": 428,
+            "admitting_both_a_coarse_and_the_discrete_boundary": 0,
+            "admitting_the_coarse_boundary_only": 246,
+            "admitting_the_discrete_boundary_only": 259,
+            "coarsest_retract_checked": 3435,
+            "coarsest_retract_mismatches": 0,
+            "comparable_admissible_pairs": 0,
+            "complement_does_not_admit": 1008,
+            "complement_non_empty_and_does_not_admit": 927,
+            "condition_i_at_proper_boundaries": 745,
+            "condition_i_instances": 1004,
+            "condition_i_with_ii_a_failing": 0,
+            "cost_pairs": 2748,
+            "covariance_tests": 4620,
+            "covariance_violations": 0,
+            "discrete_admissible_iff_identity": 687,
+            "identity_containing": 259,
+            "identity_containing_with_a_proper_boundary": 0,
+            "identity_free_with_no_proper_boundary": 0,
+            "laws": 687,
+            "laws_with_more_than_one_admissible_boundary": 277,
+            "mutant": null,
+            "reversible_but_no_identity": 0,
+            "reversible_containing": 259
+          },
+          "sample_at_four_configurations": {
+            "discrete_admissible_iff_identity": 865,
+            "identity_containing_with_a_proper_boundary": 0,
+            "laws": 865
+          }
+        }
+      },
+      {
+        "claim": "THE COLLUDING PAIR FAILS THE AXIOM.  Cycle B''s standing obstruction is two aligned manufactured contexts, each a measure chosen to match a preselected one, whose forged greatest record descends 14-of-15 past the rebuilt binding gate.  MEMBER 1, the forged context (atoms {0,1},{2},{3},{4}), is INADMISSIBLE, and the killing conditions are measured, not assumed: for the boundary's own closure -- the only declaration that could ever satisfy (i-b), and the one this section substitutes -- (i-a) AND (ii-a) both fail, on the SAME witness, a declared task that separates the two configurations the boundary asserts are one atom.  The boundary claims an identification its own realized legs never write.  Under any OTHER declared family the patch fails (i-b) instead: the verdict is declaration-independent, the kill-list is not, and L2-26 measures it.  The verdict is also law-relative -- member 1 is inadmissible at every law CONTAINING THE IDENTITY, and L2-27 exhibits an identity-free law where it is admissible.  MEMBER 2 is admissible, and correctly so: as a boundary it IS the legitimate address algebra, and the collusion lives entirely in member 1's forged patch",
         "class": "discriminator",
         "id": "L2-07",
         "passed": true,
@@ -1195,11 +1647,12 @@
         }
       },
       {
-        "claim": "THE PAIR IS JOINTLY UNFORGEABLE.  Stronger than rejection: no admitted law whatsoever makes both members admissible at once.  Pres(discrete) is contained in Pres(forged) -- measured -- so any law under which the forged boundary's preserving family fails to separate configurations 0 and 1 is a law under which the second member's family fails to separate them either, and the second member stops being admissible.  The adversary cannot have both contexts at any price",
+        "claim": "THE PAIR IS JOINTLY UNFORGEABLE AT A SHARED LAW.  Stronger than rejection: no SINGLE admitted law makes both members admissible at once.  Pres(discrete) is contained in Pres(forged) -- measured -- so any law under which the forged boundary's preserving family fails to separate configurations 0 and 1 is a law under which the second member's family fails to separate them either, and the second member stops being admissible.  The theorem is general in the pair: NO law admits two strictly COMPARABLE boundaries, of which the colluding pair is the instance.  The hypothesis is load-bearing and is stated: both contexts must declare the SAME law.  Under the pin's own one-law-family-per-context reading the adversary may declare a law per context, and then the escape of L2-27 exists",
         "class": "discriminator",
         "id": "L2-08",
         "passed": true,
         "value": {
+          "hypothesis": "both contexts declare the same admitted law",
           "laws_tested": [
             {
               "both": false,
@@ -1221,12 +1674,137 @@
             },
             {
               "both": false,
+              "law": "FUNNEL-CLOSURE",
+              "member_1_admissible": false,
+              "member_2_admissible": true
+            },
+            {
+              "both": false,
               "law": "COUNTER-LAW",
               "member_1_admissible": false,
               "member_2_admissible": true
             }
           ],
           "structural": "Pres(discrete) subset Pres(forged)"
+        }
+      },
+      {
+        "claim": "NO LAW ADMITS TWO STRICTLY COMPARABLE BOUNDARIES -- the general form of joint unforgeability, which costs nothing and is strictly stronger.  The proof uses nothing about the arena: if pi strictly refines pi' then Pres_L(pi) is contained in Pres_L(pi') for every L, and the coarser member's admissibility forces the finer member's kernel to merge a pair the finer boundary separates.  Measured over the census: 277 of 687 laws have more than one admissible boundary, 357 unordered admissible pairs occur, and ZERO of them are comparable; 0 of 687 laws admit both {01|2} and the discrete boundary (246 the coarse one only, 259 the fine one only).  At four configurations, over DET, REV and the funnel closure: 135 comparable pairs, zero jointly admissible.  Incomparable boundaries genuinely differ -- the identity-free control's two proper charts coexist -- so comparability is the sharp hypothesis",
+        "class": "theorem",
+        "id": "L2-25",
+        "passed": true,
+        "value": {
+          "at_four_configurations": {
+            "comparable_pairs": 135,
+            "jointly_admissible": 0,
+            "laws": [
+              "DET",
+              "REV",
+              "FUNNEL-CLOSURE"
+            ]
+          },
+          "census_at_three_configurations": {
+            "comparable_among_them": 0,
+            "laws": 687,
+            "laws_admitting_both_{01|2}_and_the_discrete_boundary": 0,
+            "laws_with_more_than_one_admissible_boundary": 277,
+            "the_coarse_boundary_only": 246,
+            "the_discrete_boundary_only": 259,
+            "unordered_admissible_pairs": 357
+          }
+        }
+      },
+      {
+        "claim": "THE MIXED-LAW ESCAPE EXISTS, and it is reported as a limitation of the unforgeability theorem rather than absorbed.  The scope line declares ONE LAW FAMILY PER CONTEXT.  An adversary who uses that freedom holds both members: member 1, the forged 2+1+1 boundary, is ADMISSIBLE under the composition-closed identity-free law {(0,0,2,3,4)} -- all four clauses passing, declared family of one task -- while member 2 is admissible under DET, exactly as Section 6 reports.  The axiom rejects neither.  So 'no admitted law whatsoever' is false and 'no SINGLE admitted law' is what is proved; joint unforgeability is a statement about one law, not about one adversary.  Whether the predecessor's record-descent attack still runs at the escape law is NOT measured here.  THE MIXED-LAW ARENA IS THE NAMED OPEN QUESTION",
+        "class": "discriminator-negative",
+        "id": "L2-27",
+        "passed": true,
+        "value": {
+          "member_1": {
+            "admissible": true,
+            "declared_family_size": 1,
+            "i_a": true,
+            "i_b": true,
+            "ii_a": true,
+            "ii_b": true,
+            "law": "{(0,0,2,3,4)}, composition-closed and identity-free",
+            "law_contains_identity": false,
+            "law_is_composition_closed": true
+          },
+          "member_2": {
+            "admissible": true,
+            "declared_family_size": 120,
+            "law": "DET"
+          },
+          "open_question": "the MIXED-LAW ARENA: what binds two patches that declare different admitted laws.  Nothing in this cycle measures it, and physically it is the realistic case -- patches with different effective laws"
+        }
+      },
+      {
+        "claim": "THE KILL-LIST IS DECLARATION-RELATIVE, and Section 6's table is read against the adversary's ACTUAL declarations rather than the one the unit substitutes.  The VERDICT at the forged boundary is declaration-independent -- inadmissible under every declaration, as (i-b) and rigidity together require -- but the IDENTITY OF THE KILLING CONDITION is not.  Measured at pi_1 under DET: under the boundary's closure (240 tasks, the canonical substitution) the kill is (i-a)+(ii-a); under the written-exact declaration and under the merging declaration inside the closure -- the same 120 tasks, measured -- the kill is (i-b) ALONE; under the merging subfamily of the whole law (625 tasks) it is (i-b)+(ii-a); under the single repreparation task it is (i-b) alone; under the identity alone all four clauses fail.  Two consequences are disclosed with it: in Section 6 the family is SET to the closure and the preparation to the whole carrier, so (i-b) and (ii-b) hold by construction -- 52 of 52 records each -- and with (i-b) imposed and the identity present, (i-a) and (ii-a) each reduce to the single bit 'is the presented boundary the carrier's own algebra', 52 of 52.  The nine-row table has ONE measured degree of freedom per row",
+        "class": "discriminator",
+        "id": "L2-26",
+        "passed": true,
+        "value": {
+          "boundary": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ],
+          "declarations": [
+            {
+              "admissible": false,
+              "declared_family": "the boundary's closure -- the canonical substitution",
+              "killed_by": "(i-a), (ii-a)",
+              "size": 240
+            },
+            {
+              "admissible": false,
+              "declared_family": "the written-exact subfamily {F : comp(F) = pi_1}",
+              "killed_by": "(i-b)",
+              "size": 120
+            },
+            {
+              "admissible": false,
+              "declared_family": "the merging subfamily inside the closure {F in Pres : F(0) = F(1)}",
+              "killed_by": "(i-b)",
+              "size": 120
+            },
+            {
+              "admissible": false,
+              "declared_family": "the merging subfamily of the whole law {F in L : F(0) = F(1)}",
+              "killed_by": "(i-b), (ii-a)",
+              "size": 625
+            },
+            {
+              "admissible": false,
+              "declared_family": "the single repreparation task (0,0,2,3,4)",
+              "killed_by": "(i-b)",
+              "size": 1
+            },
+            {
+              "admissible": false,
+              "declared_family": "the identity alone",
+              "killed_by": "(i-a), (i-b), (ii-a), (ii-b)",
+              "size": 1
+            }
+          ],
+          "over_all_52_records_under_DET": {
+            "(i-a)_equivalent_to_the_boundary_being_discrete": 52,
+            "(i-b)_true_by_construction": 52,
+            "(ii-a)_equivalent_to_the_boundary_being_discrete": 52,
+            "(ii-b)_true_by_construction": 52,
+            "records": 52
+          }
         }
       },
       {
@@ -1481,17 +2059,21 @@
         }
       },
       {
-        "claim": "THE FEYNMAN GATE IS POSITIVE: admissibility changes a number.  At ONE fixed boundary -- the carrier's configuration algebra -- an admissible patch and an inadmissible patch differ in an admitted tester statistic.  The statistic is Cycle B Definition 2.3's own two-time record-recovery probability under the committed branch-memory state: it is exactly 1 for the admissible patch and exactly 3/4 for the inadmissible one.  Both values are rational and computed, and the two patches share their boundary, their law and their state; only the declared family differs.  The pre-registered EMPIRICALLY-IDLE outcome therefore does NOT occur",
+        "claim": "THE FEYNMAN GATE IS POSITIVE VIA CONDITION (i): admissibility changes a number, and the claim names which condition changes it.  At ONE fixed boundary -- the carrier's configuration algebra -- an admissible patch and an inadmissible patch differ in an admitted tester statistic.  The statistic is Cycle B Definition 2.3's own two-time record-recovery probability under the committed branch-memory state: it is exactly 1 for the admissible patch and exactly 3/4 for the inadmissible one, whose declared family is the closure plus the TOTAL ERASER to one configuration.  Both values are rational and computed, and the two patches share their boundary, their law, their state and their preparation; only the declared family differs.  The comparator's kill-list is COMPUTED here, not asserted, and it is TWO clauses: (i-b), because the declared family is not the boundary's closure, AND (ii-a), because the total eraser writes the one-atom record rather than the declared discrete one.  The pre-registered EMPIRICALLY-IDLE outcome therefore does NOT occur",
         "class": "feynman",
         "id": "L2-14",
         "passed": true,
         "value": {
+          "comparator_kill_list": [
+            "(i-b)",
+            "(ii-a)"
+          ],
           "sigma_admissible": "1",
           "sigma_inadmissible": "3/4"
         }
       },
       {
-        "claim": "THE GATE'S HONEST HALF, reported with the positive.  The record-recovery statistic does NOT separate the forged patch: every task in the forged boundary's closure preserves that boundary's record, so sigma is exactly 1 there too.  What separates the forgery is the REFINEMENT statistic -- the probability mass on which the admitted later readout resolves a distinction the declared record does not -- which is exactly 0 for the admissible patch and exactly 1/16 for the forged one.  And the same-boundary form cannot be run at the forged boundary at all, because rigidity leaves no admissible comparator there.  Both limitations are stated, neither is absorbed",
+        "claim": "THE GATE'S HONEST HALF, reported with the positive.  The record-recovery statistic does NOT separate the forged patch: every task in the forged boundary's closure preserves that boundary's record, so sigma is exactly 1 there too.  What separates the forgery is the REFINEMENT statistic -- the probability mass on which the admitted later readout resolves a distinction the declared record does not -- which is exactly 0 for the admissible patch and exactly 1/16 for the forged one.  And the same-boundary form cannot be run at the forged boundary at all, because rigidity leaves no admissible comparator there -- and by L2-26 that holds for EVERY declaration at that boundary, not merely the canonical one.  Both limitations are stated, neither is absorbed, and L2-28 states the third",
         "class": "feynman-honest",
         "id": "L2-15",
         "passed": true,
@@ -1499,6 +2081,79 @@
           "delta_admissible": "0",
           "delta_forged": "1/16",
           "sigma_forged": "1"
+        }
+      },
+      {
+        "claim": "THE GATE IS BLIND TO THE AXIOM'S INDEPENDENT CLAUSE.  Theorem 3.2 makes OCCUPANCY the only content the axiom has beyond condition (i), and neither admitted statistic can see it: sigma and delta are functions of the boundary, the declared family and the state, and the declared preparation is not an argument of either.  Exhibited at the committed carrier under the counter-law, where the closure of the discrete boundary is the identity alone: two patches differing in the declared preparation ALONE -- the whole carrier against {0} -- have opposite verdicts (the second leaves four atoms never occupied) and IDENTICAL statistics, sigma = 1 and delta = 0 for both.  Two further blind spots are reported with it: the inadmissible patch that declares the identity alone at the discrete boundary also has sigma = 1, so sigma is not a function of admissibility at a fixed boundary but fires in the ADDITION direction of (i-b) only; and over all 3005 one-task extensions of the closure sigma takes four values with minimum exactly 3/4, attained by exactly the five constant maps -- the positive's 3/4 is the extreme of that family, not a generic value.  AN OCCUPANCY-SENSITIVE STATISTIC IS LEFT OPEN",
+        "class": "feynman-honest",
+        "id": "L2-28",
+        "passed": true,
+        "value": {
+          "occupancy_blindness": {
+            "law": "the counter-law; declared family = Pres(discrete) = the identity alone",
+            "neither_statistic_takes_the_preparation_as_an_argument": {
+              "delta_arguments": [
+                "part",
+                "fam",
+                "rho"
+              ],
+              "preparation_free": true,
+              "sigma_arguments": [
+                "part",
+                "fam",
+                "rho"
+              ]
+            },
+            "patch_A": {
+              "admissible": true,
+              "delta": "0",
+              "preparation": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "reach": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "sigma": "1"
+            },
+            "patch_B": {
+              "admissible": false,
+              "delta": "0",
+              "preparation": [
+                0
+              ],
+              "reach": [
+                0
+              ],
+              "sigma": "1"
+            },
+            "the_two_patches_differ_in_the_preparation_alone": true
+          },
+          "omission_blindness": {
+            "admissible": false,
+            "note": "sigma equals the admissible patch's value at an INADMISSIBLE patch, so sigma is not a function of admissibility at a fixed boundary; it fires in the ADDITION direction of (i-b) only",
+            "patch": "the discrete boundary declaring the identity alone",
+            "sigma": "1"
+          },
+          "sigma_over_every_one_task_extension_of_the_closure": {
+            "attained_by": 5,
+            "distinct_values": {
+              "13/16": 300,
+              "15/16": 1200,
+              "3/4": 5,
+              "7/8": 1500
+            },
+            "extensions": 3005,
+            "minimum": "3/4",
+            "note": "3/4 is the EXTREME of the comparator family, attained by exactly the five constant maps, not a generic inadmissible value"
+          }
         }
       },
       {
@@ -1793,14 +2448,19 @@
         }
       },
       {
-        "claim": "THE COMPLEMENT OF THE OBSTRUCTION IS A LAW, so the forging cost is achievable and not merely a lower bound.  The general reason is proved in the paper -- if a composite lies in the obstruction then so does its right factor, because the fibres of the composite refine the fibres of that factor -- and it is measured here exhaustively over every non-discrete boundary at three and four configurations and over the four levels of the tower at five",
+        "claim": "THE COMPLEMENT OF THE OBSTRUCTION IS A LAW -- and that is ALL this lemma says.  If a composite lies in the obstruction then so does its right factor, because the fibres of the composite refine the fibres of that factor; the relational form of the same argument is in the paper, since Definition 2.1 admits left-total relations and not only maps.  The lemma does NOT say the boundary is admissible in the complement: that is a separate four-clause condition, it is the hypothesis of the exact-cost statement, and it is MEASURED here rather than inherited -- under DET exhaustively over every non-discrete boundary at three and four configurations and over the four levels of the tower at five, and under the full left-total family ALL at three.  Every row carries the law it was measured under; L2-31 exhibits the laws where the hypothesis fails",
         "class": "cost",
         "id": "L2-16",
         "passed": true,
         "value": {
-          "exhaustive_n3_n4": 18,
+          "exhaustive_rows": 22,
+          "laws_swept": [
+            "ALL",
+            "DET"
+          ],
           "tower": [
             {
+              "bound_attained": true,
               "boundary": [
                 [
                   0,
@@ -1821,11 +2481,13 @@
               "identity_deleted": true,
               "law_size": 3125,
               "level": "record level",
+              "lower_bound": 120,
               "note": "one asserted identification: the forged context's atom {0,1}",
               "remaining": 3005,
               "remaining_is_a_law": true
             },
             {
+              "bound_attained": true,
               "boundary": [
                 [
                   0,
@@ -1844,11 +2506,13 @@
               "identity_deleted": true,
               "law_size": 3125,
               "level": "boundary level",
+              "lower_bound": 360,
               "note": "the whole aligned 2+2 boundary: two asserted identifications",
               "remaining": 2765,
               "remaining_is_a_law": true
             },
             {
+              "bound_attained": true,
               "boundary": [
                 [
                   0,
@@ -1865,11 +2529,13 @@
               "identity_deleted": true,
               "law_size": 3125,
               "level": "coarser boundary",
+              "lower_bound": 1260,
               "note": "the corrected tomographic minimum",
               "remaining": 1865,
               "remaining_is_a_law": true
             },
             {
+              "bound_attained": true,
               "boundary": [
                 [
                   0,
@@ -1884,6 +2550,7 @@
               "identity_deleted": true,
               "law_size": 3125,
               "level": "the limit",
+              "lower_bound": 3120,
               "note": "the indiscrete boundary: every configuration identified with every other",
               "remaining": 5,
               "remaining_is_a_law": true
@@ -1892,16 +2559,16 @@
         }
       },
       {
-        "claim": "THE COST IS EXACT, not an estimate.  Every member of the obstruction must be deleted -- each one alone makes the declared boundary strictly coarser than the minimal sufficient boundary of the family it belongs to, checked here on the first forty members at each level -- and no addition can ever remove one, because adding admitted operations only enlarges the preserving family.  So the minimum over all alterations, additions and deletions together, is exactly the obstruction's cardinality",
+        "claim": "EVERY MEMBER OF THE OBSTRUCTION MUST BE DELETED -- the lower bound's mechanism, tested on every member rather than sampled.  Retaining a single obstruction member F leaves the declared boundary strictly coarser than the minimal sufficient boundary of the family it belongs to, so (i-a) fails: the family tested here is the COMPLEMENT PLUS F, and ker of it is compared with the declared boundary.  Run on all 4860 members across the four levels of the tower, 120 + 360 + 1260 + 3120, with no exception.  No addition can remove a member either, because obstruction membership depends only on comp(F), which nothing else in the altered law can change.  Hence the cost is at least the obstruction's cardinality, additions included -- a LOWER BOUND, sound for every admitted law",
         "class": "cost",
         "id": "L2-17",
         "passed": true,
         "value": {
-          "checked_per_level": 40
+          "members_tested": 4860
         }
       },
       {
-        "claim": "THE COST GROWS ALONG THE TOWER, and the limit is a different law.  At five configurations under DET, whose 3125 admitted operations are the committed deterministic law, forging one identification costs 120 deletions; forging the aligned 2+2 boundary costs 360; the tomographic boundary costs 1260; and the limiting forgery -- the boundary that identifies everything -- costs 3120, leaving exactly five admitted operations out of 3125.  What remains is not an altered version of the original law but a complete alternative one: the Borges bound, stated only as far as these finite numbers carry it",
+        "claim": "THE COST GROWS ALONG THE TOWER, and the limit is a different law.  At five configurations under DET, whose 3125 admitted operations are the committed deterministic law, forging one identification costs 120 deletions; forging the aligned 2+2 boundary costs 360; the tomographic boundary costs 1260; and the limiting forgery -- the boundary that identifies everything -- costs 3120, leaving exactly five admitted operations out of 3125.  These are COSTS, not merely lower bounds, because under DET the attainment hypothesis is measured to hold at all four levels (L2-16); under REV it fails and the same arithmetic would be wrong (L2-29).  What remains at the limit is not an altered version of the original law but a complete alternative one: the Borges bound, stated only as far as these finite numbers carry it, and only under the law they were measured at",
         "class": "cost",
         "id": "L2-18",
         "passed": true,
@@ -1916,16 +2583,710 @@
         }
       },
       {
-        "claim": "WITHIN THE COMMITTED CLASS OF LAWS THE COST IS UNPAYABLE.  Every obstruction computed here contains the identity, at every level and at every boundary swept.  The committed law families of the predecessor cycle each contain the identity by construction -- a laboratory law under which nothing may be left alone is not one of them -- so forging any proper coarse-graining requires leaving the class, not paying a price inside it.  RQ0-L2-CHEAP-LAW-FORGERY therefore does NOT occur: the cheapest alteration is not small, and inside the committed class there is no alteration at all",
+        "claim": "NO FORGERY AT ANY PRICE INSIDE THE IDENTITY-CONTAINING CLASS -- and this is a one-line corollary of the rigidity theorem, not a fact about the levels swept.  comp(id) is discrete, which refines every boundary, so the identity lies in Pres_L(pi) for EVERY law and every boundary; and the identity separates every pair, so it lies in the obstruction of every non-discrete boundary.  Any admissible altered law must therefore delete the identity and leave the class.  The class that is provably closed to forgery is the class of IDENTITY-CONTAINING laws, which is larger than the five committed families.  Measured at every non-discrete boundary at three and four configurations under DET, REV and the funnel closure, and at all four levels of the tower.  The pre-registered RQ0-L2-CHEAP-LAW-FORGERY does NOT occur at the committed scope: under DET the cheapest forgery deletes 120 of 3125 operations, under REV it costs more than the law itself (L2-29), and inside the identity-containing class it is unavailable at any price.  The one-operation forgery of L2-30 lives at a degenerate identity-free law of a single constant operation, outside the committed class, and is disclosed rather than absorbed",
         "class": "cost",
         "id": "L2-19",
         "passed": true,
         "value": {
-          "identity_in_every_obstruction": true
+          "general_over_identity_containing_laws": true,
+          "identity_in_every_obstruction_measured": true
         }
       },
       {
-        "claim": "THE PAIR LEVEL IS NOT EXPENSIVE, IT IS IMPOSSIBLE.  The tower does not merely grow at the third rung; it terminates.  Paying the record-level cost of 120 to make the forged context admissible makes the SECOND colluding context inadmissible in the same breath, because the preserving family of the finer boundary is contained in the preserving family of the coarser one, so the deletions that blind one blind the other.  Measured on every committed law and on the altered law itself.  There is no law, at any cost, in which both members of the colluding pair are admissible",
+        "claim": "THE EXACT-COST CLAIM IS FALSE IN GENERAL, and REV refutes it inside the committed law families.  Every permutation is collision-free, so comp is discrete, so Pres_REV(pi) is ALL of REV at every boundary, and every permutation separates every pair: the obstruction is the whole law and THE COMPLEMENT IS EMPTY.  The empty declared family fails (i-a) -- its minimal boundary is the one-atom boundary by the standing convention -- so the boundary is not admissible in the complement, and an alteration of size |Obs| must BE the complement.  The cheapest forgery is therefore |REV| + 1 and it requires an ADDITION: delete every permutation and add the BLOCK-MINIMUM IDEMPOTENT, under which the boundary passes all four clauses.  6 -> 7 at three configurations (4 boundaries) and 24 -> 25 at four (14 boundaries): 18 counterexamples inside the range the exhaustive tag advertises.  Confirmed at three configurations by brute force over EVERY composition-closed law at distance at most 7, drawn from the full left-total family.  So 'additions never help' is withdrawn: an addition can be NECESSARY",
+        "class": "cost-counterexample",
+        "id": "L2-29",
+        "passed": true,
+        "value": {
+          "brute_force_n3": {
+            "cheapest": 7,
+            "laws_tested": 248
+          },
+          "counterexamples": 18,
+          "rows": [
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 3,
+              "its_law_is_composition_closed": true,
+              "law_size": 6,
+              "lower_bound": 6,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 7
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 3,
+              "its_law_is_composition_closed": true,
+              "law_size": 6,
+              "lower_bound": 6,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 7
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 3,
+              "its_law_is_composition_closed": true,
+              "law_size": 6,
+              "lower_bound": 6,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 7
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 3,
+              "its_law_is_composition_closed": true,
+              "law_size": 6,
+              "lower_bound": 6,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 7
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  1
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary": [
+                [
+                  0
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  0
+                ],
+                [
+                  2
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  0
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1
+                ],
+                [
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  0
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  0
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  2,
+                  3
+                ],
+                [
+                  1
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1
+                ],
+                [
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            },
+            {
+              "block_minimum_idempotent": [
+                [
+                  0
+                ],
+                [
+                  1
+                ],
+                [
+                  1
+                ],
+                [
+                  0
+                ]
+              ],
+              "boundary": [
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ]
+              ],
+              "boundary_admissible_there": true,
+              "complement_size": 0,
+              "configurations": 4,
+              "its_law_is_composition_closed": true,
+              "law_size": 24,
+              "lower_bound": 24,
+              "the_empty_law_is_admissible": false,
+              "true_cost": 25
+            }
+          ]
+        }
+      },
+      {
+        "claim": "AND THE OBSTRUCTION CAN BE EMPTY AT A BOUNDARY THAT IS INADMISSIBLE AT ANY PRICE -- the sharper failure of the exact-cost claim.  Take the composition-closed identity-free law {const_0} at three configurations and the boundary {0|12}.  The images of the two blocks are {0} and {0}, not disjoint, so the preserving family is EMPTY, so the obstruction is empty and |Obs| = 0 would report the boundary as already admissible.  It is not: with an empty declared family (i-a) fails.  The obstruction sees only over-separation INSIDE a block and is blind to under-separation BETWEEN blocks -- the decision procedure's own second witness branch -- and to (ii-a) and (ii-b) entirely.  The true cost is ONE: deleting const_0 leaves the empty law, still inadmissible, but a single ADDITION suffices, and three distinct additions achieve it, because const_0 never enters the declared family and so never needs removing",
+        "class": "cost-counterexample",
+        "id": "L2-30",
+        "passed": true,
+        "value": {
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "boundary_admissible_as_declared": false,
+          "law": "{const_0} on three configurations, composition-closed and identity-free",
+          "obstruction_size": 0,
+          "preserving_family_size": 0,
+          "single_additions_that_make_it_admissible": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ],
+            [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                0
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "the_single_deletion_leaves_the_empty_law_inadmissible": true,
+          "true_cost": 1
+        }
+      },
+      {
+        "claim": "THE COST EQUALS THE OBSTRUCTION'S SIZE EXACTLY WHEN THE COMPLEMENT ADMITS THE BOUNDARY -- an IFF, which is the corrected statement.  One direction is the lower bound plus the complement; the other is forced, since an alteration of size |Obs| must delete all of Obs and nothing else and therefore IS the complement.  So the hypothesis is not a convenience, it is the exact criterion.  Censused over the 687 composition-closed laws at three configurations against every non-discrete boundary: in 1008 of the 2748 pairs the complement does not admit the boundary, so in every one of those the true cost is STRICTLY GREATER than the obstruction's size; 927 of them have a non-empty complement, so this is not an artefact of emptiness.  The committed law of the tower is clean: DET at three, four and five configurations attains the bound everywhere swept, and so does the full left-total family at three.  That is why the tower stands and the general claim does not",
+        "class": "cost",
+        "id": "L2-31",
+        "passed": true,
+        "value": {
+          "DET_and_ALL_rows_all_attain": true,
+          "complement_does_not_admit": 1008,
+          "laws": 687,
+          "of_those_with_a_non_empty_complement": 927,
+          "pairs": 2748,
+          "population": "every composition-closed law on three configurations generated by at most three maps, against every non-discrete boundary"
+        }
+      },
+      {
+        "claim": "THE PAIR LEVEL IS NOT EXPENSIVE, IT IS IMPOSSIBLE.  The tower does not merely grow at the third rung; it terminates.  Paying the record-level cost of 120 to make the forged context admissible makes the SECOND colluding context inadmissible in the same breath, because the preserving family of the finer boundary is contained in the preserving family of the coarser one, so the deletions that blind one blind the other.  Measured on every committed law and on the altered law itself.  There is no SINGLE law, at any cost, in which both members of the colluding pair are admissible -- the quantifier is one law shared by both contexts, which is the theorem's hypothesis; L2-27 exhibits the escape when each context declares its own",
         "class": "cost",
         "id": "L2-20",
         "passed": true,
@@ -1949,6 +3310,11 @@
               "member_2": true
             },
             {
+              "law": "FUNNEL-CLOSURE",
+              "member_1": false,
+              "member_2": true
+            },
+            {
               "law": "COUNTER-LAW",
               "member_1": false,
               "member_2": true
@@ -1957,22 +3323,26 @@
         }
       }
     ],
-    "total": 21
+    "total": 32
   },
   "immutable_base_commit": "efa7224",
   "nonclaims": [
     "REACHABILITY IS AN ORDER ON CONFIGURATIONS.  It carries no spatial, causal, temporal or spacetime reading of any kind, and the reachable subprocess is not a region, a light cone, a neighbourhood or a history.",
-    "no locality, topology, atlas-as-place, manifold or geometric object; the word patch names a triple of committed operational data and nothing else",
+    "no locality, topology, atlas-as-place, manifold or geometric object; the word patch names a QUADRUPLE of committed operational data -- boundary, declared family, declared preparation, admitted law -- and nothing else",
     "no influence, causal order or Lorentzian object",
     "no field, QFT, QCD or gravity object",
     "no claim that the axiom derives a carrier; the rigidity theorem says the opposite, and the rung is registered with that price attached",
     "no claim beyond the committed law families and the one committed carrier; nothing is claimed for infinite dimension or for laws not run",
     "no claim that provenance is measurable; every verdict here is computed from declared boundaries, declared families and admitted laws only",
-    "no claim that condition (ii)'s WRITTEN clause is independent of condition (i): it is proved entailed, and only the OCCUPANCY clause is independent"
+    "no claim that condition (ii)'s WRITTEN clause is independent of condition (i): it is proved entailed, and only the OCCUPANCY clause is independent",
+    "NO CLAIM THAT THE FORGING COST EQUALS THE OBSTRUCTION'S SIZE IN GENERAL: that is false, refuted here at REV and at a law with an empty obstruction.  What is claimed is the lower bound, sound everywhere, and the equality exactly where the complement admits the boundary -- measured under DET, where the tower runs",
+    "no claim that condition (i) is Cycle B's two-sided Galois fixed point: it pairs ker with Pres, which are adjoints of different connections, and Cycle B Theorem 3.8 records the conflation as the one to avoid",
+    "no claim that joint unforgeability holds across DIFFERENT declared laws: it is a statement about one law shared by both contexts, and the mixed-law escape is exhibited",
+    "no claim that an admitted statistic can see the occupancy clause: neither tester statistic reads the declared preparation, and an occupancy-sensitive statistic is left open"
   ],
   "pin_commit": "9576aee",
   "schema": "rq0-l2-generative-admissibility-receipt-v1",
-  "source_sha256": "c81f7f5530d1fd49b1420d382215f56e2d7fcf5b2edacc026d8d1102bc1aa832",
+  "source_sha256": "6512b0ebb288c9700574dc533e899992236dc921dd0858d1ac04de74f314defe",
   "tables": {
     "colluding_pair": {
       "Pres_discrete_subset_of_Pres_forged": true,
@@ -1992,6 +3362,12 @@
         {
           "both": false,
           "law": "REV",
+          "member_1_admissible": false,
+          "member_2_admissible": true
+        },
+        {
+          "both": false,
+          "law": "FUNNEL-CLOSURE",
           "member_1_admissible": false,
           "member_2_admissible": true
         },
@@ -2119,9 +3495,38 @@
         "witness": null
       }
     },
+    "comparable_pairs": {
+      "at_four_configurations": {
+        "comparable_pairs": 135,
+        "jointly_admissible": 0,
+        "laws": [
+          "DET",
+          "REV",
+          "FUNNEL-CLOSURE"
+        ]
+      },
+      "census_at_three_configurations": {
+        "comparable_among_them": 0,
+        "laws": 687,
+        "laws_admitting_both_{01|2}_and_the_discrete_boundary": 0,
+        "laws_with_more_than_one_admissible_boundary": 277,
+        "the_coarse_boundary_only": 246,
+        "the_discrete_boundary_only": 259,
+        "unordered_admissible_pairs": 357
+      }
+    },
+    "cost_equality_criterion": {
+      "DET_and_ALL_rows_all_attain": true,
+      "complement_does_not_admit": 1008,
+      "laws": 687,
+      "of_those_with_a_non_empty_complement": 927,
+      "pairs": 2748,
+      "population": "every composition-closed law on three configurations generated by at most three maps, against every non-discrete boundary"
+    },
     "cost_scaling": [
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0
@@ -2134,11 +3539,14 @@
         "configurations": 3,
         "cost": 6,
         "identifications": 1,
+        "law": "DET",
         "law_size": 27,
+        "lower_bound": 6,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2151,11 +3559,14 @@
         "configurations": 3,
         "cost": 6,
         "identifications": 1,
+        "law": "DET",
         "law_size": 27,
+        "lower_bound": 6,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2166,11 +3577,14 @@
         "configurations": 3,
         "cost": 24,
         "identifications": 2,
+        "law": "DET",
         "law_size": 27,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2183,11 +3597,14 @@
         "configurations": 3,
         "cost": 6,
         "identifications": 1,
+        "law": "DET",
         "law_size": 27,
+        "lower_bound": 6,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0
@@ -2203,11 +3620,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0
@@ -2223,11 +3643,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0
@@ -2241,11 +3664,14 @@
         "configurations": 4,
         "cost": 96,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 96,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0
@@ -2261,11 +3687,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2281,11 +3710,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2299,11 +3731,14 @@
         "configurations": 4,
         "cost": 72,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 72,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2317,11 +3752,14 @@
         "configurations": 4,
         "cost": 96,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 96,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2333,11 +3771,14 @@
         "configurations": 4,
         "cost": 252,
         "identifications": 3,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 252,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2351,11 +3792,14 @@
         "configurations": 4,
         "cost": 96,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 96,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2371,11 +3815,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2389,11 +3836,14 @@
         "configurations": 4,
         "cost": 72,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 72,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2407,11 +3857,14 @@
         "configurations": 4,
         "cost": 96,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 96,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2427,11 +3880,14 @@
         "configurations": 4,
         "cost": 24,
         "identifications": 1,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 24,
         "remaining_is_a_law": true
       },
       {
         "admissible_after": true,
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2445,12 +3901,93 @@
         "configurations": 4,
         "cost": 72,
         "identifications": 2,
+        "law": "DET",
         "law_size": 256,
+        "lower_bound": 72,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "bound_attained": true,
+        "boundary": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 18,
+        "identifications": 1,
+        "law": "ALL",
+        "law_size": 343,
+        "lower_bound": 18,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "bound_attained": true,
+        "boundary": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 18,
+        "identifications": 1,
+        "law": "ALL",
+        "law_size": 343,
+        "lower_bound": 18,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "bound_attained": true,
+        "boundary": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "configurations": 3,
+        "cost": 336,
+        "identifications": 2,
+        "law": "ALL",
+        "law_size": 343,
+        "lower_bound": 336,
+        "remaining_is_a_law": true
+      },
+      {
+        "admissible_after": true,
+        "bound_attained": true,
+        "boundary": [
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ]
+        ],
+        "configurations": 3,
+        "cost": 18,
+        "identifications": 1,
+        "law": "ALL",
+        "law_size": 343,
+        "lower_bound": 18,
         "remaining_is_a_law": true
       }
     ],
     "cost_tower": [
       {
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2471,11 +4008,13 @@
         "identity_deleted": true,
         "law_size": 3125,
         "level": "record level",
+        "lower_bound": 120,
         "note": "one asserted identification: the forged context's atom {0,1}",
         "remaining": 3005,
         "remaining_is_a_law": true
       },
       {
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2494,11 +4033,13 @@
         "identity_deleted": true,
         "law_size": 3125,
         "level": "boundary level",
+        "lower_bound": 360,
         "note": "the whole aligned 2+2 boundary: two asserted identifications",
         "remaining": 2765,
         "remaining_is_a_law": true
       },
       {
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2515,11 +4056,13 @@
         "identity_deleted": true,
         "law_size": 3125,
         "level": "coarser boundary",
+        "lower_bound": 1260,
         "note": "the corrected tomographic minimum",
         "remaining": 1865,
         "remaining_is_a_law": true
       },
       {
+        "bound_attained": true,
         "boundary": [
           [
             0,
@@ -2534,14 +4077,849 @@
         "identity_deleted": true,
         "law_size": 3125,
         "level": "the limit",
+        "lower_bound": 3120,
         "note": "the indiscrete boundary: every configuration identified with every other",
         "remaining": 5,
         "remaining_is_a_law": true
       }
     ],
+    "counterexample_REV": {
+      "brute_force_n3": {
+        "cheapest": 7,
+        "laws_tested": 248
+      },
+      "counterexamples": 18,
+      "rows": [
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 3,
+          "its_law_is_composition_closed": true,
+          "law_size": 6,
+          "lower_bound": 6,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 7
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 3,
+          "its_law_is_composition_closed": true,
+          "law_size": 6,
+          "lower_bound": 6,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 7
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 3,
+          "its_law_is_composition_closed": true,
+          "law_size": 6,
+          "lower_bound": 6,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 7
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              2
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 3,
+          "its_law_is_composition_closed": true,
+          "law_size": 6,
+          "lower_bound": 6,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 7
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary": [
+            [
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1,
+              2,
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              2
+            ],
+            [
+              1
+            ],
+            [
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              2,
+              3
+            ],
+            [
+              1
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        },
+        {
+          "block_minimum_idempotent": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "boundary_admissible_there": true,
+          "complement_size": 0,
+          "configurations": 4,
+          "its_law_is_composition_closed": true,
+          "law_size": 24,
+          "lower_bound": 24,
+          "the_empty_law_is_admissible": false,
+          "true_cost": 25
+        }
+      ]
+    },
+    "counterexample_const0": {
+      "boundary": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "boundary_admissible_as_declared": false,
+      "law": "{const_0} on three configurations, composition-closed and identity-free",
+      "obstruction_size": 0,
+      "preserving_family_size": 0,
+      "single_additions_that_make_it_admissible": [
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "the_single_deletion_leaves_the_empty_law_inadmissible": true,
+      "true_cost": 1
+    },
     "covariance": {
+      "census_tests_against_each_law's_own_symmetry_group": 4620,
+      "census_violations": 0,
+      "instances_DET_n3_n4": 390,
+      "instances_with_a_true_antecedent": 30,
       "relabellings_preserving_the_counter_law": 1,
       "violations_DET_n3_n4": 0
+    },
+    "declaration_relativity": {
+      "boundary": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "declarations": [
+        {
+          "admissible": false,
+          "declared_family": "the boundary's closure -- the canonical substitution",
+          "killed_by": "(i-a), (ii-a)",
+          "size": 240
+        },
+        {
+          "admissible": false,
+          "declared_family": "the written-exact subfamily {F : comp(F) = pi_1}",
+          "killed_by": "(i-b)",
+          "size": 120
+        },
+        {
+          "admissible": false,
+          "declared_family": "the merging subfamily inside the closure {F in Pres : F(0) = F(1)}",
+          "killed_by": "(i-b)",
+          "size": 120
+        },
+        {
+          "admissible": false,
+          "declared_family": "the merging subfamily of the whole law {F in L : F(0) = F(1)}",
+          "killed_by": "(i-b), (ii-a)",
+          "size": 625
+        },
+        {
+          "admissible": false,
+          "declared_family": "the single repreparation task (0,0,2,3,4)",
+          "killed_by": "(i-b)",
+          "size": 1
+        },
+        {
+          "admissible": false,
+          "declared_family": "the identity alone",
+          "killed_by": "(i-a), (i-b), (ii-a), (ii-b)",
+          "size": 1
+        }
+      ],
+      "over_all_52_records_under_DET": {
+        "(i-a)_equivalent_to_the_boundary_being_discrete": 52,
+        "(i-b)_true_by_construction": 52,
+        "(ii-a)_equivalent_to_the_boundary_being_discrete": 52,
+        "(ii-b)_true_by_construction": 52,
+        "records": 52
+      }
+    },
+    "dichotomy": {
+      "census_at_three_configurations": {
+        "admissible_pairs": 357,
+        "admitting_a_proper_boundary": 428,
+        "admitting_both_a_coarse_and_the_discrete_boundary": 0,
+        "admitting_the_coarse_boundary_only": 246,
+        "admitting_the_discrete_boundary_only": 259,
+        "coarsest_retract_checked": 3435,
+        "coarsest_retract_mismatches": 0,
+        "comparable_admissible_pairs": 0,
+        "complement_does_not_admit": 1008,
+        "complement_non_empty_and_does_not_admit": 927,
+        "condition_i_at_proper_boundaries": 745,
+        "condition_i_instances": 1004,
+        "condition_i_with_ii_a_failing": 0,
+        "cost_pairs": 2748,
+        "covariance_tests": 4620,
+        "covariance_violations": 0,
+        "discrete_admissible_iff_identity": 687,
+        "identity_containing": 259,
+        "identity_containing_with_a_proper_boundary": 0,
+        "identity_free_with_no_proper_boundary": 0,
+        "laws": 687,
+        "laws_with_more_than_one_admissible_boundary": 277,
+        "mutant": null,
+        "reversible_but_no_identity": 0,
+        "reversible_containing": 259
+      },
+      "sample_at_four_configurations": {
+        "discrete_admissible_iff_identity": 865,
+        "identity_containing_with_a_proper_boundary": 0,
+        "laws": 865
+      }
+    },
+    "feynman_blind_spots": {
+      "occupancy_blindness": {
+        "law": "the counter-law; declared family = Pres(discrete) = the identity alone",
+        "neither_statistic_takes_the_preparation_as_an_argument": {
+          "delta_arguments": [
+            "part",
+            "fam",
+            "rho"
+          ],
+          "preparation_free": true,
+          "sigma_arguments": [
+            "part",
+            "fam",
+            "rho"
+          ]
+        },
+        "patch_A": {
+          "admissible": true,
+          "delta": "0",
+          "preparation": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "reach": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sigma": "1"
+        },
+        "patch_B": {
+          "admissible": false,
+          "delta": "0",
+          "preparation": [
+            0
+          ],
+          "reach": [
+            0
+          ],
+          "sigma": "1"
+        },
+        "the_two_patches_differ_in_the_preparation_alone": true
+      },
+      "omission_blindness": {
+        "admissible": false,
+        "note": "sigma equals the admissible patch's value at an INADMISSIBLE patch, so sigma is not a function of admissibility at a fixed boundary; it fires in the ADDITION direction of (i-b) only",
+        "patch": "the discrete boundary declaring the identity alone",
+        "sigma": "1"
+      },
+      "sigma_over_every_one_task_extension_of_the_closure": {
+        "attained_by": 5,
+        "distinct_values": {
+          "13/16": 300,
+          "15/16": 1200,
+          "3/4": 5,
+          "7/8": 1500
+        },
+        "extensions": 3005,
+        "minimum": "3/4",
+        "note": "3/4 is the EXTREME of the comparator family, attained by exactly the five constant maps, not a generic inadmissible value"
+      }
     },
     "feynman_gate": {
       "same_boundary_comparison": {
@@ -2553,9 +4931,30 @@
         "boundary": "the carrier's configuration algebra (five atoms)",
         "inadmissible_patch": {
           "admissible": false,
-          "fails": "(i-b): the declared family is not the boundary's closure -- it contains a task the closure excludes",
+          "declared_family": "the closure plus the TOTAL ERASER to one configuration, (0,0,0,0,0)",
+          "fails": "(i-b), (ii-a)",
+          "fails_computed_not_asserted": true,
           "family_size": 121,
-          "sigma": "3/4"
+          "sigma": "3/4",
+          "tasks_failing_the_written_clause": [
+            [
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ]
+          ]
         },
         "statistic_differs": true
       },
@@ -2578,6 +4977,140 @@
         "sigma_separates_the_forgery": false
       },
       "vacuity_disclosure": "at the forged boundary the rigidity theorem leaves NO admissible comparator, so the same-boundary form of the gate cannot be run there; the forgery is separated instead by delta, across boundaries"
+    },
+    "funnel_closure": {
+      "FUNNEL_is_composition_closed": {
+        "2": true,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "closure_is_the_identity_plus_the_non_injective_maps": {
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "closure_sizes": {
+        "3": 22,
+        "4": 233,
+        "5": 3006
+      },
+      "re_run_sweeps": [
+        {
+          "admissible_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ]
+          ],
+          "composition_closed": true,
+          "configurations": 3,
+          "contains_a_reversible_operation": true,
+          "contains_identity": true,
+          "how": "by construction",
+          "law": "FUNNEL-CLOSURE",
+          "records": 5,
+          "size": 22
+        },
+        {
+          "admissible_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ]
+            ]
+          ],
+          "composition_closed": true,
+          "configurations": 4,
+          "contains_a_reversible_operation": true,
+          "contains_identity": true,
+          "how": "by construction",
+          "law": "FUNNEL-CLOSURE",
+          "records": 15,
+          "size": 233
+        },
+        {
+          "admissible_boundaries": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ]
+          ],
+          "composition_closed": true,
+          "configurations": 5,
+          "contains_a_reversible_operation": true,
+          "contains_identity": true,
+          "how": "by construction",
+          "law": "FUNNEL-CLOSURE",
+          "records": 52,
+          "size": 3006
+        }
+      ],
+      "witness_at_three_configurations": {
+        "composite": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "composite_in_FUNNEL": false,
+        "f_0to1": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "f_1to2": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ]
+      }
     },
     "identity_free_control": {
       "admissible": [
@@ -2632,6 +5165,120 @@
           ]
         ]
       ]
+    },
+    "mechanism": {
+      "fixed_records": [
+        {
+          "configurations": 2,
+          "law": "DET",
+          "records": 2,
+          "records_fixed_by_Core_after_Pres": 2,
+          "records_fixed_by_ker_after_Pres": 1
+        },
+        {
+          "configurations": 3,
+          "law": "DET",
+          "records": 5,
+          "records_fixed_by_Core_after_Pres": 5,
+          "records_fixed_by_ker_after_Pres": 1
+        },
+        {
+          "configurations": 4,
+          "law": "DET",
+          "records": 15,
+          "records_fixed_by_Core_after_Pres": 15,
+          "records_fixed_by_ker_after_Pres": 1
+        },
+        {
+          "configurations": 5,
+          "law": "DET",
+          "records": 52,
+          "records_fixed_by_Core_after_Pres": 52,
+          "records_fixed_by_ker_after_Pres": 1
+        },
+        {
+          "configurations": 5,
+          "law": "COUNTER-LAW",
+          "records": 52,
+          "records_fixed_by_Core_after_Pres": 52,
+          "records_fixed_by_ker_after_Pres": 1
+        }
+      ],
+      "opposite_monotonicity": {
+        "Core_of_family": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "Core_of_superfamily": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "family": [
+          [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "ker_of_family": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "ker_of_superfamily": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "superfamily": [
+          [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ],
+          [
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        ]
+      }
     },
     "minimal_witness": {
       "configurations": 3,
@@ -2862,6 +5509,25 @@
       ],
       "state": "no state is needed: every entry is an integer or a singleton set; the two statistics of the Feynman gate are not part of the witness"
     },
+    "mixed_law_escape": {
+      "member_1": {
+        "admissible": true,
+        "declared_family_size": 1,
+        "i_a": true,
+        "i_b": true,
+        "ii_a": true,
+        "ii_b": true,
+        "law": "{(0,0,2,3,4)}, composition-closed and identity-free",
+        "law_contains_identity": false,
+        "law_is_composition_closed": true
+      },
+      "member_2": {
+        "admissible": true,
+        "declared_family_size": 120,
+        "law": "DET"
+      },
+      "open_question": "the MIXED-LAW ARENA: what binds two patches that declare different admitted laws.  Nothing in this cycle measures it, and physically it is the realistic case -- patches with different effective laws"
+    },
     "pair_level_cost": {
       "Pres_discrete_subset_of_Pres_forged": true,
       "after_paying_the_record_level_cost_member_2_admissible": false,
@@ -2878,6 +5544,11 @@
         },
         {
           "law": "REV",
+          "member_1": false,
+          "member_2": true
+        },
+        {
+          "law": "FUNNEL-CLOSURE",
           "member_1": false,
           "member_2": true
         },
@@ -3375,8 +6046,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 2,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "DET",
         "records": 2,
         "size": 4
@@ -3392,8 +6066,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 2,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "measured",
         "law": "FUNNEL",
         "records": 2,
         "size": 3
@@ -3409,8 +6086,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 2,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "REV",
         "records": 2,
         "size": 2
@@ -3426,8 +6106,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 2,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "ALL",
         "records": 2,
         "size": 9
@@ -3446,8 +6129,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 3,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "DET",
         "records": 5,
         "size": 27
@@ -3466,8 +6152,11 @@
             ]
           ]
         ],
+        "composition_closed": false,
         "configurations": 3,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "measured",
         "law": "FUNNEL",
         "records": 5,
         "size": 7
@@ -3486,8 +6175,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 3,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "REV",
         "records": 5,
         "size": 6
@@ -3506,8 +6198,34 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 3,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
+        "law": "FUNNEL-CLOSURE",
+        "records": 5,
+        "size": 22
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        ],
+        "composition_closed": true,
+        "configurations": 3,
+        "contains_a_reversible_operation": true,
+        "contains_identity": true,
+        "how": "by construction",
         "law": "ALL",
         "records": 5,
         "size": 343
@@ -3529,8 +6247,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 4,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "DET",
         "records": 15,
         "size": 256
@@ -3552,8 +6273,11 @@
             ]
           ]
         ],
+        "composition_closed": false,
         "configurations": 4,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "measured",
         "law": "FUNNEL",
         "records": 15,
         "size": 13
@@ -3575,8 +6299,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 4,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "REV",
         "records": 15,
         "size": 24
@@ -3598,8 +6325,37 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 4,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
+        "law": "FUNNEL-CLOSURE",
+        "records": 15,
+        "size": 233
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        ],
+        "composition_closed": true,
+        "configurations": 4,
+        "contains_a_reversible_operation": true,
+        "contains_identity": true,
+        "how": "by construction",
         "law": "ALL",
         "records": 15,
         "size": 50625
@@ -3624,8 +6380,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 5,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "DET",
         "records": 52,
         "size": 3125
@@ -3650,8 +6409,11 @@
             ]
           ]
         ],
+        "composition_closed": false,
         "configurations": 5,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "measured",
         "law": "FUNNEL",
         "records": 52,
         "size": 21
@@ -3676,8 +6438,11 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 5,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
         "law": "REV",
         "records": 52,
         "size": 120
@@ -3702,8 +6467,40 @@
             ]
           ]
         ],
+        "composition_closed": true,
         "configurations": 5,
+        "contains_a_reversible_operation": true,
         "contains_identity": true,
+        "how": "by construction",
+        "law": "FUNNEL-CLOSURE",
+        "records": 52,
+        "size": 3006
+      },
+      {
+        "admissible_boundaries": [
+          [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        ],
+        "composition_closed": true,
+        "configurations": 5,
+        "contains_a_reversible_operation": true,
+        "contains_identity": true,
+        "how": "measured",
         "law": "COUNTER-LAW",
         "records": 52,
         "size": 120
@@ -3721,18 +6518,18 @@
       },
       {
         "rung": "RQ0-L2-CHEAP-LAW-FORGERY",
-        "why": "the cheapest forgery deletes 120 of 3125 admitted operations, the obstruction always contains the identity so no forgery is available inside the committed class of laws at all, the cost grows 120 to 360 to 1260 to 3120 along the tower, and at the pair level the forgery is impossible at any cost"
+        "why": "at the committed scope the cheapest forgery deletes 120 of 3125 admitted operations, the identity lies in the obstruction of every non-discrete boundary at every identity-containing law so no forgery is available inside that class at any price, the cost grows 120 to 360 to 1260 to 3120 along the tower, and at the pair level the forgery is impossible at any cost.  Disclosed with it: under REV the cheapest forgery costs more than the whole law, and at the degenerate identity-free law {const_0} outside the committed class a single addition suffices"
       }
     ],
     "registered": [
       {
-        "content": "the two-condition axiom is well posed, decidable, and discriminating in both directions: the colluding pair's forged member is rejected with the killing conditions named and a witness exhibited, the pair is jointly unforgeable under any law, the legitimate eraser context passes both conditions, the relabelled and counter-law contexts get honest verdicts with the law-relativity disclosed, and the arena's dependent pair is returned as one patch",
+        "content": "the two-condition axiom is well posed, decidable, and discriminating in both directions: the colluding pair's forged member is rejected with the killing conditions named -- declaration-relative, and the declaration disclosed -- and a witness exhibited; the pair is jointly unforgeable at any SHARED law, with the mixed-law escape exhibited and the mixed-law arena named open; the legitimate eraser context passes both conditions; the relabelled and counter-law contexts get honest verdicts with the law-relativity disclosed; and the arena's dependent pair is returned as one patch",
         "rung": "RQ0-L2-GENERATIVE-ATLAS-AXIOM",
         "scope": "finite; one committed carrier of five configurations; the committed law families DET, FUNNEL, REV, ALL (at most four configurations) and the counter-law; exhaustive over all records at two to five configurations; boundaries presented at the carrier by their committed incidence",
         "status": "earned at the declared scope"
       },
       {
-        "content": "the rigidity theorem: at every admitted law that contains the identity the two halves of condition (i) are jointly satisfiable by exactly one boundary, the carrier's own configuration algebra.  The axiom therefore certifies relative to a declared carrier rather than deriving one, and the de-smuggling question moves up one level, from the boundary to the carrier.  The identity-free positive control shows this is a statement about laws that can idle, not a tautology: where the law admits no operation that leaves the configurations alone, proper coarse-grainings are admissible",
+        "content": "the rigidity DICHOTOMY, proved in both directions: the carrier's own configuration algebra is admissible if and only if the law contains the identity, equivalently if and only if it contains any reversible operation -- so a law has either exactly one chart, the carrier's, or no carrier chart at all and possibly several proper ones, with nothing in between.  The trigger is REVERSIBILITY, not idling.  The axiom therefore certifies relative to a declared carrier rather than deriving one, and the de-smuggling question moves up one level, from the boundary to the carrier.  The block is not the only available diagnosis: condition (i) pairs ker with Pres, which are adjoints of DIFFERENT connections, and the selectivity is produced by that substitution (L2-22)",
         "rung": "RQ0-L2-BLOCKED-AT-CARRIER",
         "scope": "the same declared scope; the theorem is proved and measured exhaustively, not sampled",
         "status": "earned, and it is the price of the first rung"
