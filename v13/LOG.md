@@ -4522,3 +4522,18 @@ coincidence check against the v12 corpus and the #103 fidelity
 check); common gates (paper-vs-receipt, scope tags, forbidden
 vocabulary, deviations adjudicated, anchors, determinism).
 Dispatch to follow; recorded after it occurs.
+
+## 2026-08-02 — CYCLE B THREE-LENS PANEL DISPATCHED (v13 LEDGER #117)
+Three independent reviewers (Opus 5, background, parallel), each
+bound to the frozen protocol at 6effc7a, repo read-only except one
+assigned review file each (review-rq0-fixed-point-{operator,
+effectus,instrument}.md), own exact rebuilds in separate scratchpad
+directories, no cross-reading, freeze-on-delivery: R1
+operator-system (primary K1 — the admitted-map premise), R2
+effectus/order (primary K3 — law-family robustness of cl =
+identity), R3 sufficiency/instrument (primary K2 — the
+measure-and-broadcast reading; the literal-(H-avail) coincidence;
+the #103 fidelity check).  On their return: SHA-pin all three
+reviews, joint adjudication (the ROADMAP inversion + the
+trivial-fixed-point premise correction land there), STATUS board
+update.  This entry is written after the dispatch occurred.
