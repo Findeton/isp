@@ -4772,3 +4772,62 @@ report-it-plainly instruction; deviations ship with the delivery.
 On return: verification → green commit → protocol freeze →
 three-lens panel → adjudication.  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — CYCLE B′ DELIVERED; VERIFIED; COMMITTED
+## GREEN-UNREVIEWED (v13 LEDGER #126)
+Adjudicator verification: rerun exit 0 (the script self-writes its
+artifacts; receipt source_sha256 = on-disk source 52809c24…;
+regeneration deterministic per the worker's two byte-identical
+runs); 25 gates / 25 pass, 31 anchors / 31 pass, 9 mutants (6
+anchor + 3 derivation, the derivation mutants naming the gates
+they break incl. the discriminator); exactly the four whitelisted
+files.  **H1 (monoidal layer):** under the product law the
+composite minimal boundary FACTORIZES and the core DISTRIBUTES
+EXACTLY — proved by the support-space identity, verified by exact
+subspace intersection (30 pairs), measured exhaustively on all 65
+ordered fixture pairs at carrier ≤ 20, gap ZERO everywhere, the
+16 excluded pairs lemma-carried.  Under declared JOINT tasks the
+gap OPENS (per-task table committed).  **THE WORKER'S OWN HEADLINE
+CORRECTION, forced by its own control:** the pin's "the gap opens
+exactly on entangled fixtures" is FALSE — the classically
+correlated parity task opens the gap with separable rank-two
+atoms; THE GAP ALONE IS A JOINT-READABILITY WITNESS; the
+entanglement witness is the gap PLUS the exact atom
+classification, gated both ways (and the rotated-basis product
+control separates rotated-ness from entanglement — gap zero
+there).  Hostile wing: 10 composites, both orders, five partners —
+NO promotion.  **H2 (the arena) — THE DISCRIMINATOR FIRES BOTH
+WAYS:** all three constructed manufactured records (2+1+1, 2+2,
+1+1+1+1; centre dims 4/3/5 anchored) FAIL descent at the first
+clause (blocks collide at the declared overlap) — each
+manufactured context certifies exactly ONE record: the sink split,
+precisely the part of its boundary it did not manufacture; the
+LEGITIMATE eraser record SURVIVES (51 of 52 certified; the
+co-referring record exhibited).  RQ0-L1-SMUGGLING-SURVIVES-DESCENT
+DOES NOT OCCUR — the arc does not halt.  The failure mechanism is
+poetic justice, printed in the paper: the manufactured measure
+fails for exactly the feature that manufactured it (the rotated
+basis that hid its blocks from the coordinates leaves it with no
+fact content at an independently declared overlap).  INDEPENDENCE
+MEASURED (120 relabellings searched; none carries eraser↔address
+or manufactured↔address; the relabelled-context control BITES,
+naming its 6 carrying isomorphisms; under the Cycle B counter-law
+the relabelled context PASSES — independence is LAW-RELATIVE
+exactly as admission was, disclosed).  THE TOP-OF-LATTICE GUARD:
+escaped provably (closures fix ⊤ re-verified natively on 160
+families; the certified sets omit ⊤ for all three manufactured
+contexts; the candidate ABSENT from the descent carrier; the
+covariance obstruction does not transfer — the carrying map MOVES
+the overlap, 4 of 5 address projections go non-diagonal).
+**MEASURED LIMITS, reported not suppressed:** the ALIGNED
+manufactured measure DOES descend (descent certifies fact content
+at an independent overlap, NOT absence of manufacture); the
+coarser tomographic second context withdraws the eraser's
+certificates 51→1 while the manufactured rejection is untouched —
+THE NEGATIVE DIRECTION IS ROBUST, THE POSITIVE IS ARENA-RELATIVE.
+Verdicts: RQ0-L1-COMPOSITE-BOUNDARY earned;
+RQ0-L1-ENTANGLEMENT-WITNESS earned IN CORRECTED FORM;
+RQ0-L1-DESCENT-SELECTOR earned AT THE DECLARED ARENA; no
+arena-independent selector claimed.  Ten deviations shipped as
+Appendix A per the #121 rule.  GREEN-UNREVIEWED; protocol freeze
+and the three-lens panel next.
