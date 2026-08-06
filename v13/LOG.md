@@ -5566,3 +5566,12 @@ census).  **THE FORK HELD FOR THE USER: (A) provenance-as-data
 constrained statistic hunt (recommended first — cheapest, dies
 fastest, total-impossibility pre-registered as first-class).**
 No successor authorized by this adjudication.
+
+## 2026-08-06 — STAGE-5 REPAIR DISPATCHED (v13 LEDGER #155)
+Background worker (Opus 5), bound to the adjudication at bf80c02
+(R-1..R-11) and the three frozen reviews; four unit files only;
+freeze-on-delivery.  On return: verification → TERMINAL at the
+adjudicated scope → STATUS → THE ARC HOLDS AT THE STAGE-5 FORK
+FOR THE USER (A provenance-quintuple / B coarse
+arena-relativity / C constrained statistic hunt — recommended C
+then A).  Recorded after the dispatch occurred.

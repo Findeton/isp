@@ -59,3 +59,5 @@ Updated: 2026-08-06 (v13 LOG #145: B″ TERMINAL; stage 5 opening).
    modular Lorentz tests) → gauge/QCD and gravity branches.
 4. Local `main` is 8 commits ahead of the remote the last external
    review saw (dba40d4 → 431c2c8): pushing is the user's call.
+
+**Stage-5 adjudicated (#154): coarse legitimacy undecidable-from-within; THE FORK IS THE USER'S (A/B/C, recommend C-then-A); repair in flight.**
