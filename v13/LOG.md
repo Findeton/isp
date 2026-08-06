@@ -5205,3 +5205,43 @@ the naive relative form (i-b′) unblocks all 52 charts AND
 RE-ADMITS THE FORGERY — the discriminating power and the blockade
 are the SAME MECHANISM.**  Deviations appendix FAILS BY THREE
 undeclared items.  Adjudication waits for R1 + R2.
+
+## 2026-08-06 — CYCLE B″ R2 (EFFECTUS) REVIEW FROZEN (v13 LEDGER
+## #141)
+review-rq0-admissibility-effectus.md (224 lines) frozen;
+compliance verified (R2 disclosed seeing R3's COMMIT SUBJECT LINE
+in git log mid-verification — convergence not input; its findings
+predate; process note for the adjudication: mid-panel freeze
+commits expose subject lines — acceptable per the RQ0 pattern,
+disclosure the remedy).  R2: ACCEPT-WITH-FIXES; 26 native
+recomputations; NO number moved, NO false theorem; the
+3-configuration witness re-derived BY HAND cell-for-cell.
+**F1 (MAJOR, the panel's deepest): condition (i) is NOT the
+two-sided Cycle B Galois fixed point the abstract and pin claim** —
+(i-b) is Cycle B's Pres, but (i-a) is ker, the adjoint of a
+DIFFERENT connection, the exact conflation Cycle B's own Thm 3.8
+flagged.  Measured: Core∘Pres fixes EVERY record (2/5/15/52);
+ker∘Pres fixes EXACTLY ONE.  **RIGIDITY IS THE SIGNATURE OF THE
+MISMATCHED PAIRING, not of two minimalities meeting** — the
+axiom's power now has a mechanism.  **F2: rigidity's real trigger
+is REVERSIBILITY, not idling** — at a finite carrier a
+composition-closed law contains a permutation iff it contains the
+identity (259/259); the 687-law census EXACT both ways (proper
+boundaries admissible iff identity-free; n=4 sample agrees); the
+§3.4 biconditional was asserted, never proved.  **F3 (the stage-5
+answer): NO — coarse patches are NEVER admissible under any
+committed law nor any law with a single reversible operation; the
+naive sub-law relativization REFUTED by counterexample (the
+forged member passes all four clauses; δ collapses 1/16 → 0);
+THE VIABLE ROUTE = AN ε-FORM ON THE PAPER'S OWN δ** — convergent
+with R3's same-mechanism trap, from the other side.  F4/F6: the
+entailment re-proved (silently uses left-totality — to be
+stated); (ii) honestly occupancy-only; the [EXH-5] corroboration
+population corrected 16 → 1004 (745 at proper boundaries, 0
+failures — R2 supplied it); **the Feynman gate is BLIND to the
+axiom's only independent clause** (neither σ nor δ depends on the
+declared preparation: W1 admissible and W3 inadmissible both give
+σ=1, δ=0) — the positive verdict separates via (i), not via
+occupancy; to be rescoped.  One more undeclared deviation
+(generativity-as-generation dropped) + two no-op code defects.
+Adjudication waits for R1 only.
