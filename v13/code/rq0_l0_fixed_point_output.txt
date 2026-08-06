@@ -3,7 +3,7 @@ schema: rq0-l0-task-record-fixed-point-receipt-v1
 status: GREEN-UNREVIEWED
 pin: 7a80e39   immutable base: 6c2d7b8
 arithmetic: exact (fractions.Fraction and Q(i)); no float in any substantive path
-source sha256: c77e94561d148cb23589a0dce69b8e0d2ad356a077d6f19b6f2d62ed91e41b96
+source sha256: 94ed7cd9ac923c89b209becf14dda8b6f80b77ffea6bb5b4e39e65a0c8e6d1b8
 anchor type violations: []
 
 VERDICT
@@ -16,15 +16,18 @@ VERDICT
   scope: finite dimension, one boundary, one admitted process law, the earned #103/#111 fixtures; exhaustive over all left-total sector relations at atom count <= 4 and over a declared subfamily at atom count 5, with the general case covered by the proved component lemma
 
 FINDINGS
+  G0_availability_form_is_the_unique_typed_repair: True
   G0_availability_nondegenerate: True
   G0_literal_collapsed: True
   G1_galois_holds_for_availability: True
   G1_msb_core_not_antitone: True
+  G2_covariant_criteria_cannot_separate_under_law_hom: True
   G2_manufactured_pvm_survives: True
-  G2_one_boundary_desmuggling_impossible: True
-  G2_trivial_fixed_requires_erasure: True
+  G2_manufactured_record_is_lattice_top: True
+  G2_relabelling_admission_is_law_relative: True
+  G2_trivial_fixed_iff_meet_of_realized_collisions_is_trivial: True
 
-GATES  57/57
+GATES  75/75
   EXACT-01     [arithmetic] PASS
       native float sweep of this file: zero float literals, zero float-producing calls (numpy / math.sqrt / float() / random / round)
       value: {"banned_tokens": [], "float_literals": []}
@@ -54,6 +57,21 @@ GATES  57/57
   G0-09        [definition-adopted] PASS
       ADOPTED DEFINITION: Pres(M) = { admitted F : an admitted readout M' exists with flag-joint statistics Pr(r,s) = delta_rs Pr(r) }, equivalently Phi^#(q'_s) = q_s; nondegenerate on the earned fixtures
       value: {"n_inside": 9, "n_outside": 7}
+  G0-10        [repair-uniqueness] PASS
+      REPAIR B1 (trace the flag out before comparing): the S'-marginal of the broadcast is sum_r z_r rho z_r = rho, so the test returns Theorem 2.1 exactly and RE-COLLAPSES on every battery pair
+      value: {"future_instrument_pairs": 16, "recollapsed": 16}
+  G0-11        [repair-uniqueness] PASS
+      REPAIR B4 (keep the flag, demand no later readout): the broadcast overwrites the flag, so the test holds for the one-outcome record and fails for EVERY record with two or more outcomes -- even for the identity future.  Nondegenerate, but degenerate in the opposite direction: it empties Pres instead of filling it
+      value: {"nontrivial_records_with_identity_inside": 0, "records_tested": 58, "trivial_record_all_futures_inside": 4}
+  G0-12        [repair-uniqueness] PASS
+      REPAIR B3 (keep the flag, demand the record be readable after F as it was before it: m_s o Phi = Phi o m'_s): nondegenerate, and EQUIVALENT to Definition 2.3 -- the multiplicative-domain lemma carries each direction
+      value: {"disagreements_with_definition_2_3": 0, "inside": 9, "outside": 7}
+  G0-13        [repair-uniqueness] PASS
+      UNIQUENESS: of the three typed repairs of the literal formula one re-collapses (B1), one degenerates oppositely (B4), and the only nondegenerate survivor (B3) IS the adopted availability form.  The adoption of Definition 2.3 is forced at the scope of the flag-retaining repairs, not merely convenient
+      value: {"empties": "B4", "equals_definition_2_3": "B3", "recollapses": "B1"}
+  G1-00-n1     [lemma-soundness] PASS
+      EXHAUSTIVE n=1: F in Pres(pi) iff comp(F) refines pi, over all 1 left-total relations (definition vs lemma)
+      value: {"mismatches": 0, "relations": 1, "tests": 1}
   G1-00-n2     [lemma-soundness] PASS
       EXHAUSTIVE n=2: F in Pres(pi) iff comp(F) refines pi, over all 9 left-total relations (definition vs lemma)
       value: {"mismatches": 0, "relations": 9, "tests": 18}
@@ -64,8 +82,14 @@ GATES  57/57
       EXHAUSTIVE n=4: F in Pres(pi) iff comp(F) refines pi, over all 50625 left-total relations (definition vs lemma)
       value: {"mismatches": 0, "relations": 50625, "tests": 759375}
   G1-00-n5     [lemma-soundness] PASS
-      DECLARED SUBFAMILY n=5 (at most one multi-valued atom): F in Pres(pi) iff comp(F) refines pi; the general case is covered by the proved lemma
+      DECLARED SUBFAMILY n=5 (the 84,375 relations in which at most one atom has a multi-valued sector support): F in Pres(pi) iff comp(F) refines pi; the general case is covered by the proved lemma
       value: {"mismatches": 0, "relations": 84375, "tests": 4387500}
+  G1-00-total  [lemma-soundness] PASS
+      the exhaustive membership total quoted in the text: 18 + 1,715 + 759,375 membership tests at atom counts 2, 3 and 4
+      value: {"tests_n2": 18, "tests_n3": 1715, "tests_n4": 759375, "total_tests_n_le_4": 761108}
+  G1-12        [predecessor-identity] PASS
+      comp(F) -- the connected components of the collision graph -- IS the object M(U_2) of the predecessor's Theorem 4.5, the transitive closure of the co-merge relation, over all 512 support patterns at three atoms; the two decision procedures are compared, union-find against Warshall, not merely the two statements
+      value: {"mismatches": 0, "support_patterns": 512}
   G1-01        [galois] PASS
       Pres is ANTITONE in instrument refinement: pi finer than sigma implies Pres(pi) contained in Pres(sigma)
       value: {"scope": "exhaustive n<=4; first 4000 declared futures at n=5", "tests": 3504535}
@@ -79,11 +103,14 @@ GATES  57/57
       ANTITONE GALOIS CONNECTION: G contained in Pres(M) iff M coarser than Core(G) -- verified as a two-sided equivalence
       value: {"scope": "declared families, n = 2..5", "tests": 30422}
   G1-05        [closure] PASS
-      cl = Core o Pres is EXTENSIVE (M coarser than cl(M))
+      cl = Core o Pres is EXTENSIVE (M coarser than cl(M)), measured from the declared future family at atom counts 1 to 5
+      value: {"1": {"closure_values_computed": 1, "records": 1}, "2": {"closure_values_computed": 2, "records": 2}, "3": {"closure_values_computed": 5, "records": 5}, "4": {"closure_values_computed": 15, "records": 15}, "5": {"closure_values_computed": 52, "records": 52}}
   G1-06        [closure] PASS
-      cl = Core o Pres is MONOTONE
+      cl = Core o Pres is MONOTONE, measured from the declared future family at atom counts 1 to 5
+      value: {"1": {"closure_values_computed": 1, "records": 1}, "2": {"closure_values_computed": 2, "records": 2}, "3": {"closure_values_computed": 5, "records": 5}, "4": {"closure_values_computed": 15, "records": 15}, "5": {"closure_values_computed": 52, "records": 52}}
   G1-07        [closure] PASS
-      cl = Core o Pres is IDEMPOTENT
+      cl = Core o Pres is IDEMPOTENT, measured from the declared future family at atom counts 1 to 5
+      value: {"1": {"closure_values_computed": 1, "records": 1}, "2": {"closure_values_computed": 2, "records": 2}, "3": {"closure_values_computed": 5, "records": 5}, "4": {"closure_values_computed": 15, "records": 15}, "5": {"closure_values_computed": 52, "records": 52}}
   G1-08        [closure] PASS
       cl' = Pres o Core is a closure operator on future families (idempotent; Galois-closed families are exactly the Pres-images)
       value: {"scope": "exhaustive n = 2,3,4"}
@@ -97,17 +124,26 @@ GATES  57/57
       REFUTED: the #111 map (task family -> core of its minimal sufficient boundary) is NOT antitone: enlarging the preserving task family by the eraser task takes a 1-atom core to a 5-atom core
       value: {"core_of_F1": 1, "core_of_F1_union_F2": 5}
   G2-01        [trivial-fixed-point] PASS
-      the trivial one-outcome instrument is a fixed point of cl WHENEVER the law admits a total-erasure future (reprepare closure R)
-      value: {"n_checked": [1, 2, 3, 4, 5]}
+      the trivial one-outcome instrument is a fixed point of cl exactly when the MEET of the collision partitions realized by the admitted futures is trivial; under the declared family (which contains the total-erasure future of condition R) it is, at atom counts 1 to 5
+      value: {"1": {"cl_of_trivial_is_trivial": true, "meet_of_realized_collision_partitions_is_trivial": true}, "2": {"cl_of_trivial_is_trivial": true, "meet_of_realized_collision_partitions_is_trivial": true}, "3": {"cl_of_trivial_is_trivial": true, "meet_of_realized_collision_partitions_is_trivial": true}, "4": {"cl_of_trivial_is_trivial": true, "meet_of_realized_collision_partitions_is_trivial": true}, "5": {"cl_of_trivial_is_trivial": true, "meet_of_realized_collision_partitions_is_trivial": true}}
+  G2-01b       [trivial-fixed-point] PASS
+      COUNTEREXAMPLE to the erasing-future form: on three atoms the composition-closed law generated by the sector maps (0,0,2) and (0,2,2) realizes the collision partitions {01|2} and {0|12}, whose MEET is trivial, so the trivial record is fixed -- yet NO admitted future preserves only the trivial record.  The closure is genuinely selective here: 4 of the 5 records are fixed
+      value: {"composition_closed": true, "fixed_records": 4, "futures_preserving_no_nontrivial_record": 0, "meet_is_trivial": true, "realized_collision_partitions": [[[0], [1], [2]], [[0, 1], [2]], [[0], [1, 2]]], "records": 5}
+  G2-01c       [trivial-fixed-point] PASS
+      over every law realizable by a set of reprepare futures at atom counts 3 and 4, the MEET criterion decides the trivial fixed point in every case, while the erasing-future criterion decides it wrongly in a large minority -- the two are not equivalent
+      value: {"erasing_future_criterion_correct": 16546, "erasing_future_criterion_wrong": 16252, "laws_tested": 32798, "meet_criterion_correct": 32798}
   G2-02        [trivial-fixed-point-negative] PASS
       REFINEMENT OF THE ROADMAP AMENDMENT: the trivial instrument is NOT always fixed -- under an identity-only future law cl is constant at the full core and the trivial record fails to be closed
       value: {"cl_of_anything": "the full operational core"}
   G2-03        [characterization] PASS
-      CHARACTERIZATION: under reprepare closure (R), cl = Core o Pres is the IDENTITY on records -- every admitted instrument is a fixed point, so the closure selects nothing
-      value: {"1": {"fixed": 1, "records": 1}, "2": {"fixed": 2, "records": 2}, "3": {"fixed": 5, "records": 5}, "4": {"fixed": 15, "records": 15}, "5": {"fixed": 52, "records": 52}}
+      CHARACTERIZATION: under reprepare closure (R), cl = Core o Pres is the IDENTITY on records -- every admitted instrument is a fixed point, so the closure selects nothing.  Every stratum is measured from the declared future family, none is asserted
+      value: {"1": {"fixed": 1, "futures_in_family": 1, "records": 1}, "2": {"fixed": 2, "futures_in_family": 9, "records": 2}, "3": {"fixed": 5, "futures_in_family": 343, "records": 5}, "4": {"fixed": 15, "futures_in_family": 50625, "records": 15}, "5": {"fixed": 52, "futures_in_family": 84375, "records": 52}}
   G2-03b       [characterization] PASS
-      cl(pi) recomputed from the EXHAUSTIVE future family (not from generators) at n <= 4: Core(Pres(pi)) = pi for every record
+      cl(pi) recomputed from the EXHAUSTIVE future family by a second route (explicit Pres index sets, then Core of the futures) at n <= 4: Core(Pres(pi)) = pi for every record
       value: {"scope": "all left-total relations, n = 2,3,4"}
+  G2-03c       [characterization] PASS
+      the extreme strata, measured: at atom count 1 the single record is fixed, and at atom count 5 all 52 records are fixed, with Pres membership decided by the definition over each of the 84,375 declared futures
+      value: {"n1_fixed_of_records": [1, 1], "n5_declared_futures": 84375, "n5_fixed_of_records": [52, 52], "n5_membership_tests": 4387500}
   G2-04        [characterization] PASS
       for every record pi and every strictly finer sigma the reprepare future R_pi lies in Pres(pi) and NOT in Pres(sigma) -- exhaustive witness construction, n <= 5
       value: {"strict_refinement_pairs": 359}
@@ -116,7 +152,7 @@ GATES  57/57
       value: {"scope": "all relations, n = 2,3,4"}
   G2-06        [existence] PASS
       NONTRIVIAL FIXED POINTS EXIST on every fixture whose operational core has at least two atoms -- in fact every record is fixed
-      value: {"C2": {"atoms": 2, "fixed_points": 2, "nontrivial": 1}, "C5": {"atoms": 5, "fixed_points": 52, "nontrivial": 51}, "M2+C": {"atoms": 2, "fixed_points": 2, "nontrivial": 1}, "M4+C": {"atoms": 2, "fixed_points": 2, "nontrivial": 1}, "PVM211": {"atoms": 4, "fixed_points": 15, "nontrivial": 14}, "PVM22": {"atoms": 3, "fixed_points": 5, "nontrivial": 4}}
+      value: {"C2": {"atoms": 2, "fixed_points": 2, "nontrivial": 1, "records": 2}, "C5": {"atoms": 5, "fixed_points": 52, "nontrivial": 51, "records": 52}, "M2+C": {"atoms": 2, "fixed_points": 2, "nontrivial": 1, "records": 2}, "M4+C": {"atoms": 2, "fixed_points": 2, "nontrivial": 1, "records": 2}, "PVM211": {"atoms": 4, "fixed_points": 15, "nontrivial": 14, "records": 15}, "PVM22": {"atoms": 3, "fixed_points": 5, "nontrivial": 4, "records": 5}}
   G2-07        [existence-negative] PASS
       where the operational core is trivial (full matrix factor; the corrected preserving minimum C) the ONLY fixed point is the trivial record
       value: {"C1": {"atoms": 1, "fixed_points": 1}, "M2": {"atoms": 1, "fixed_points": 1}}
@@ -125,15 +161,39 @@ GATES  57/57
   G2-09        [reading-B] PASS
       a constant map has exactly ONE fixed point: Reading B's unique fixed point is Cl_op(S) itself, which re-derives #111 and adds nothing
       value: {"C2": {"n_fixed_points": 1, "unique_fixed_point_atoms": 2}, "C5": {"n_fixed_points": 1, "unique_fixed_point_atoms": 5}, "M2": {"n_fixed_points": 1, "unique_fixed_point_atoms": 1}, "M2+C": {"n_fixed_points": 1, "unique_fixed_point_atoms": 2}, "M4+C": {"n_fixed_points": 1, "unique_fixed_point_atoms": 2}, "PVM211": {"n_fixed_points": 1, "unique_fixed_point_atoms": 4}, "PVM22": {"n_fixed_points": 1, "unique_fixed_point_atoms": 3}}
+  G2-09a       [manufactured-construction] PASS
+      the manufactured boundary is CONSTRUCTED, not typed: a PVM of the declared rank multiset is built in a ROTATED basis by exact Pythagorean Givens rotations, its matched dephasing D_P(rho) = sum_r P_r rho P_r is verified unital and idempotent, A_P = range(D_P) is obtained by exact elimination and verified multiplicatively closed, and the retained sink summand of the #103 adjudication is adjoined; the atoms are exhibited as orthogonal central projections summing to the unit
+      value: {"PVM211": {"algebra_dimension": 6, "algebra_is_the_range": true, "atom_count": 4, "atoms_central": true, "atoms_in_algebra": true, "atoms_orthogonal": true, "atoms_sum_to_unit": true, "centre_dim_with_sink": 4, "centre_dim_without_sink": 3, "dephasing_idempotent": true, "dephasing_unital": true, "multiplicatively_closed": true, "pvm_complete": true, "pvm_is_rotated_not_diagonal": true, "pvm_projections": true, "pvm_ranks": [2, 1, 1], "range_dimension": 6, "unitary_rotation": true}, "PVM22": {"algebra_dimension": 8, "algebra_is_the_range": true, "atom_count": 3, "atoms_central": true, "atoms_in_algebra": true, "atoms_orthogonal": true, "atoms_sum_to_unit": true, "centre_dim_with_sink": 3, "centre_dim_without_sink": 2, "dephasing_idempotent": true, "dephasing_unital": true, "multiplicatively_closed": true, "pvm_complete": true, "pvm_is_rotated_not_diagonal": true, "pvm_projections": true, "pvm_ranks": [2, 2], "range_dimension": 8, "unitary_rotation": true}, "PVM5": {"algebra_dimension": 4, "algebra_is_the_range": true, "atom_count": 5, "atoms_central": true, "atoms_in_algebra": true, "atoms_orthogonal": true, "atoms_sum_to_unit": true, "centre_dim_with_sink": 5, "centre_dim_without_sink": 4, "dephasing_idempotent": true, "dephasing_unital": true, "multiplicatively_closed": true, "pvm_complete": true, "pvm_is_rotated_not_diagonal": true, "pvm_projections": true, "pvm_ranks": [1, 1, 1, 1], "range_dimension": 4, "unitary_rotation": true}}
+  G2-09b       [manufactured-construction] PASS
+      the declared fixtures are representatives of the CONSTRUCTED isomorphism classes: the commutant solve on the constructed rotated algebras returns the same centre dimensions as the typed block structures (4, 3 and 5)
+      value: {"constructed_centre_dims": {"PVM211": 4, "PVM22": 3, "PVM5": 5}, "typed_centre_dims": {"C5": 5, "PVM211": 4, "PVM22": 3}}
   G2-10        [DISCRIMINATOR] PASS
-      READING A: the #103 manufactured PVM SURVIVES the closure as a nontrivial fixed point -- the closure does NOT de-smuggle
-      value: {"PVM211": {"atoms": 4, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true}, "PVM22": {"atoms": 3, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true}}
+      READING A: the CONSTRUCTED manufactured PVM record SURVIVES the closure as a nontrivial fixed point -- cl is computed from the exhaustive future family, and the closure does NOT de-smuggle
+      value: {"PVM211": {"atoms_from_commutant_solve": 4, "atoms_from_pvm_ranks_plus_sink": 4, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true, "records": 15}, "PVM22": {"atoms_from_commutant_solve": 3, "atoms_from_pvm_ranks_plus_sink": 3, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true, "records": 5}}
   G2-11        [DISCRIMINATOR] PASS
-      READING B: the #103 manufactured PVM is the UNIQUE fixed point of the composite map -- the closure does NOT de-smuggle
-      value: {"PVM211": {"atoms": 4, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true}, "PVM22": {"atoms": 3, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true}}
+      READING B: the CONSTRUCTED manufactured PVM record is the UNIQUE fixed point of the composite map -- the closure does NOT de-smuggle
+      value: {"PVM211": {"atoms_from_commutant_solve": 4, "atoms_from_pvm_ranks_plus_sink": 4, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true, "records": 15}, "PVM22": {"atoms_from_commutant_solve": 3, "atoms_from_pvm_ranks_plus_sink": 3, "readingA_cl_equals_input": true, "readingB_unique_fixed_point_equals_input": true, "records": 5}}
   G2-12        [IMPOSSIBILITY] PASS
-      the corrected eraser boundary C^5 (a legitimately derived record) and a manufactured 5-outcome PVM boundary are carried onto each other by an admitted reversible map that permutes the core atoms; by #111 Cor 5.6 the closure is covariant under exactly such maps, so NO one-boundary criterion can accept one and reject the other
-      value: {"atom_bijection": true, "permutation": [1, 2, 3, 4, 0], "unitary": true}
+      TOP OF LATTICE: the manufactured record is the atom instrument of its own boundary, hence the greatest element of that boundary's record lattice; and cl(top) = top for EVERY admitted future family, the empty family included, by extensivity alone.  No closure operator dethrones the top of its own lattice, under any law -- this is what defeats the discriminator, and it needs no covariance premise
+      value: {"atom_counts_swept": [2, 3, 4, 5], "families_swept": 4000, "manufactured_record_is_the_top": true, "violations": 0}
+  G2-12b       [IMPOSSIBILITY] PASS
+      STRUCTURE: Fix(cl_F) is exactly the set of meets of subsets of the collision partitions realized by F, the empty meet being the top -- so the fixed-point set is always a meet-subsemilattice containing the top, whatever the law
+      value: {"families_swept": 1500, "mismatches": 0}
+  G2-12c       [IMPOSSIBILITY] PASS
+      COVARIANCE, MEASURED: cl commutes with every atom relabelling at atom counts 4 and 5 -- the fixed-point set is stable under the whole symmetric group, so no object built from it distinguishes two boundaries related by a relabelling
+      value: {"atom_counts": [4, 5], "tests": 6600}
+  G2-13        [IMPOSSIBILITY] PASS
+      SECTOR-TYPE ISOMORPHISM, TWO CONSTRUCTED OBJECTS: the legitimately derived eraser minimum C^5 and an independently constructed manufactured five-outcome boundary (a rank-(1,1,1,1) PVM in a rotated basis, its matched dephasing's range, plus the retained sink) have the same sector type, and the explicit reversible map (W (+) 1)V carries the atoms of the first onto the atoms of the second bijectively.  Whether that map is ADMITTED is a property of the committed law, measured per law in G2-14, never inferred from its existence
+      value: {"atom_bijection": [4, 0, 1, 2, 3], "permutation": [1, 2, 3, 4, 0], "rotation_unitary": true, "same_sector_type": true, "shift_unitary_over_Z": true}
+  G2-14        [IMPOSSIBILITY] PASS
+      ADMISSION IS MEASURED, NOT INFERRED: the composition closure of the reprepare futures that condition R itself demands is a law with 120 admitted sector maps of which exactly ONE is reversible -- the identity.  It admits no nontrivial atom relabelling at all, so the cyclic shift is not admitted there, while every record remains fixed (52 of 52).  The covariance obstruction is therefore law-relative and its hypothesis must be measured for each committed law
+      value: {"admitted_sector_maps": 120, "cyclic_shift_admitted": false, "nontrivial_admitted_permutations": 0, "records": 52, "records_fixed": 52, "reversible_admitted": 1}
+  G2-15        [characterization] PASS
+      THE DEGENERACY IS NOT BOUGHT WITH A GENEROUS FUTURE CLASS: cl is the identity on the deterministic classical postprocessings (DET), on the unital futures (UNITAL), on the admitted class with every reprepare deleted (NOREP), and on the FUNNEL law of the identity plus the n(n-1) elementary sector merges -- three futures at two atoms, seven at three, twenty-one at five.  None of these discards anything inside a kept sector
+      value: {"1": {"ALL": {"fixed": 1, "futures": 1, "records": 1}, "DET": {"fixed": 1, "futures": 1, "records": 1}, "FUNNEL": {"fixed": 1, "futures": 1, "records": 1}, "NOREP": {"fixed": 1, "futures": 0, "records": 1}, "REV": {"fixed": 1, "futures": 1, "records": 1}, "UNITAL": {"fixed": 1, "futures": 1, "records": 1}}, "2": {"ALL": {"fixed": 2, "futures": 9, "records": 2}, "DET": {"fixed": 2, "futures": 4, "records": 2}, "FUNNEL": {"fixed": 2, "futures": 3, "records": 2}, "NOREP": {"fixed": 2, "futures": 7, "records": 2}, "REV": {"fixed": 1, "futures": 2, "records": 2}, "UNITAL": {"fixed": 2, "futures": 3, "records": 2}}, "3": {"ALL": {"fixed": 5, "futures": 343, "records": 5}, "DET": {"fixed": 5, "futures": 27, "records": 5}, "FUNNEL": {"fixed": 5, "futures": 7, "records": 5}, "NOREP": {"fixed": 5, "futures": 338, "records": 5}, "REV": {"fixed": 1, "futures": 6, "records": 5}, "UNITAL": {"fixed": 5, "futures": 49, "records": 5}}, "4": {"ALL": {"fixed": 15, "futures": 50625, "records": 15}, "DET": {"fixed": 15, "futures": 256, "records": 15}, "FUNNEL": {"fixed": 15, "futures": 13, "records": 15}, "NOREP": {"fixed": 15, "futures": 50610, "records": 15}, "REV": {"fixed": 1, "futures": 24, "records": 15}, "UNITAL": {"fixed": 15, "futures": 7443, "records": 15}}, "5": {"DET": {"fixed": 52, "futures": 3125, "records": 52}, "FUNNEL": {"fixed": 52, "futures": 21, "records": 52}, "REV": {"fixed": 1, "futures": 120, "records": 52}}}
+  G2-16        [characterization] PASS
+      THE ONE ESCAPE AND ITS PRICE: under a reversible-only law the closure IS selective -- exactly one record is fixed out of 1, 2, 5, 15, 52 -- but the record it selects is the top of the lattice, i.e. the manufactured record itself, which becomes the UNIQUE fixed point.  Restricting the law to escape the degeneracy makes the smuggling worse, not better
+      value: {"fixed_per_atom_count": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1}, "records_per_atom_count": {"1": 1, "2": 2, "3": 5, "4": 15, "5": 52}, "selected_record_is_the_top": true}
   G3-1a        [control-branch-memory] PASS
       the corrected eraser minimum is recomputed from q_j(perp) = 3/4, q_j(k) = (1/4)delta_jk: five inequivalent likelihood columns, so M_erase = C^5 (not C^4)
       value: {"atoms": 5}
@@ -147,8 +207,8 @@ GATES  57/57
       POSITIVE: on the corrected branch-memory triple every admitted record is a fixed point (1, 52 and 2 respectively)
       value: {"C1": {"core_atoms": 1, "fixed": 1, "records": 1}, "C5": {"core_atoms": 5, "fixed": 52, "records": 52}, "M4+C": {"core_atoms": 2, "fixed": 2, "records": 2}}
   G3-1e        [control-branch-memory-negative] PASS
-      NEGATIVE: the C^5 common-sink task minimum is NOT promoted to a W3 seam -- its five-atom core restricted to the branch labels is the discrete partition, none of the nine inherited seams, and all 52 records on it are equally fixed so the closure selects none
-      value: {"induced_partition": [[0], [1], [2], [3]], "is_one_of_the_nine_seams": false, "nine_seams": [[[0], [1], [2, 3]], [[0], [1, 2], [3]], [[0], [1, 3], [2]], [[0, 1], [2], [3]], [[0, 1], [2, 3]], [[0, 2], [1], [3]], [[0, 2], [1, 3]], [[0, 3], [1], [2]], [[0, 3], [1, 2]]], "records_all_equally_fixed": 52}
+      NEGATIVE: the C^5 common-sink task minimum is NOT promoted to a W3 seam -- its five-atom core restricted to the branch labels is the discrete partition, which is none of the nine inherited seams because it is too FINE, not because anything rejected it.  Of the 52 records on that core, 33 do restrict to one of the nine seams, and all 33 are fixed, exactly as all 52 are: the closure SELECTS NOTHING, it does not exclude seams
+      value: {"induced_partition": [[0], [1], [2], [3]], "is_one_of_the_nine_seams": false, "nine_seams": [[[0], [1], [2, 3]], [[0], [1, 2], [3]], [[0], [1, 3], [2]], [[0, 1], [2], [3]], [[0, 1], [2, 3]], [[0, 2], [1], [3]], [[0, 2], [1, 3]], [[0, 3], [1], [2]], [[0, 3], [1, 2]]], "of_those_fixed": 33, "records_all_equally_fixed": 52, "records_restricting_to_a_seam": 33}
   G3-2a        [control-hostile] PASS
       the generated algebra contains z_1 = (I,0) and z_2 = (0,I), so C*(S) = M_2 (+) M_2
   G3-2b        [control-hostile] PASS
@@ -226,6 +286,11 @@ ANCHORS  34/34  (exit-1-only)
   A26       #111 sec 3.3 / #111 adj sec 3.4    <psi^-|J(P)|psi^->: committed=QC(-1/2,0) computed=QC(-1/2,0) PASS
   A27       #103 sec 7.2                       distinguishability of the two written settings: committed=1/2 computed=1/2 PASS
   A28       #103 sec 7.2                       squared coherence loss ||rho - D_Z(rho)||_1^2: committed=3/4 computed=3/4 PASS
+
+FALSIFICATION COVERAGE
+  anchor mutants (6): choi -> A26, coherence -> A28, erase-min -> A07, hostile-norm -> A16, seams -> A14, tomo-dist -> A12
+  derivation mutants (2): avail-lax (images_disjoint() skips the first block pair), comp-coarse (comp() merges the first two atoms unconditionally)
+  anchors exercised: 6 of 34  (A07, A12, A14, A16, A26, A28)
 
 NON-CLAIMS
   - no composition or tensor claim (that is stage 4's question)

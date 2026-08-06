@@ -30,7 +30,7 @@ import subprocess
 import sys
 import time
 from fractions import Fraction as Fr
-from itertools import combinations, product
+from itertools import combinations, permutations, product
 from pathlib import Path
 
 SCHEMA = "rq0-l0-task-record-fixed-point-receipt-v1"
@@ -543,7 +543,8 @@ def images_disjoint(sup, part) -> bool:
         for k in b:
             u |= sup[k]
         imgs.append(u)
-    for i in range(len(imgs)):
+    start = 1 if MUTANT == "avail-lax" else 0
+    for i in range(start, len(imgs)):
         for j in range(i + 1, len(imgs)):
             if imgs[i] & imgs[j]:
                 return False
@@ -552,7 +553,7 @@ def images_disjoint(sup, part) -> bool:
 
 def comp(sup):
     """Connected components of the collision graph k ~ l iff sup[k] & sup[l].
-    Lemma 3.4 of the paper: this is the FINEST record `sup` preserves."""
+    Lemma 3.2 of the paper: this is the FINEST record `sup` preserves."""
     n = len(sup)
     parent = list(range(n))
 
@@ -568,15 +569,140 @@ def comp(sup):
                 a, b = find(i), find(j)
                 if a != b:
                     parent[a] = b
+    if MUTANT == "comp-coarse" and n >= 2:
+        a, b = find(0), find(1)
+        if a != b:
+            parent[a] = b
     groups = {}
     for x in range(n):
         groups.setdefault(find(x), []).append(x)
     return tuple(sorted(tuple(sorted(v)) for v in groups.values()))
 
 
+def transitive_closure_of_comerge(smat, n: int):
+    """v12 Theorem 4.5's object M(U_2), rebuilt by its own algorithm: the
+    co-merge relation k ~ l iff some later configuration i has smat[i][k] and
+    smat[i][l] nonzero, closed transitively by Warshall (never by union-find,
+    so that the comparison with comp() is a comparison of two procedures)."""
+    rel = [[k == l for l in range(n)] for k in range(n)]
+    for i in range(len(smat)):
+        hit = [k for k in range(n) if smat[i][k]]
+        for k in hit:
+            for l in hit:
+                rel[k][l] = True
+    for m in range(n):
+        for k in range(n):
+            if rel[k][m]:
+                for l in range(n):
+                    if rel[m][l]:
+                        rel[k][l] = True
+    blocks, seen = [], set()
+    for k in range(n):
+        if k in seen:
+            continue
+        b = tuple(sorted(l for l in range(n) if rel[k][l]))
+        seen |= set(b)
+        blocks.append(b)
+    return tuple(sorted(blocks))
+
+
 def core_avail(sups):
     """Core(G) = the finest record preserved by every future in G."""
     return closure_of_relations([comp(s) for s in sups])
+
+
+def meet_of_parts(ps, n: int):
+    """The meet of a set of records in the refinement order (the transitive
+    closure of the union of their equivalences).  The EMPTY meet is the top
+    of the record lattice, Cl_op(S) -- the convention the adjunction needs at
+    the empty future family."""
+    if not ps:
+        return discrete(n)
+    return closure_of_relations(list(ps) + [discrete(n)])
+
+
+def core_of_family(sups, n: int):
+    """Core(G) with the empty-family convention Core(empty) = Cl_op(S)."""
+    return meet_of_parts([comp(s) for s in sups], n)
+
+
+_COMP_CACHE: dict = {}
+
+
+def comps_of(n: int):
+    """comp(F) for every future in the exhaustive relation family, cached."""
+    if n not in _COMP_CACHE:
+        _COMP_CACHE[n] = tuple(comp(s) for s in relations_of(n))
+    return _COMP_CACHE[n]
+
+
+# cl(pi) MEASURED from a declared future family: Pres membership is decided
+# by the DEFINITION (pairwise disjoint block images) over every member of the
+# family, and cl(pi) is the meet of the collision partitions actually
+# realized by the futures that pass.  Populated by G1-00; no generator, and
+# in particular never `meet(discrete, pi)`.
+PRES_COMPS: dict = {}
+_CL_TABLE: dict = {}
+
+
+def cl_measured(part, n: int):
+    if n not in PRES_COMPS:
+        raise SystemExit(1)
+    tab = _CL_TABLE.setdefault(n, {})
+    if part not in tab:
+        tab[part] = meet_of_parts(PRES_COMPS[n][part], n)
+    return tab[part]
+
+
+def fix_set_of_family(sups, n: int, comps=None):
+    """Fix(cl_F) for a declared law family F.  The family is first reduced to
+    the collision partitions it realizes -- exact by Lemma 3.2, which is gated
+    exhaustively on the same relation set -- and Pres membership is then
+    decided by the DEFINITION on one representative future per realized
+    partition."""
+    if comps is None:
+        comps = [comp(s) for s in sups]
+    reps: dict = {}
+    for s, c in zip(sups, comps):
+        reps.setdefault(c, s)
+    fixed = []
+    for p in parts_of(n):
+        inside = [c for c, s in reps.items() if images_disjoint(s, p)]
+        if meet_of_parts(inside, n) == p:
+            fixed.append(p)
+    return fixed
+
+
+def lcg_step(state: int) -> int:
+    """A fixed-seed integer linear congruential generator.  Exact integer
+    arithmetic, no library entropy: the sweeps below are reproducible."""
+    return (6364136223846793005 * state + 1442695040888963407) % (2 ** 64)
+
+
+def functional_support(f):
+    return tuple(frozenset({v}) for v in f)
+
+
+def elementary_merge(n: int, k: int, l: int):
+    """f_{k->l}: map sector k into sector l, act as the identity elsewhere.
+    Discards nothing inside a kept sector and reprepares nothing."""
+    return tuple(frozenset({l if i == k else i}) for i in range(n))
+
+
+def has_total_support(sup, n: int, perms) -> bool:
+    """Birkhoff/Koenig: a sector relation is the support of a doubly
+    stochastic sector map exactly when every admitted entry lies on a
+    permutation contained in the relation."""
+    covered = set()
+    for sg in perms:
+        if all(sg[i] in sup[i] for i in range(n)):
+            covered.update((i, sg[i]) for i in range(n))
+    return all((k, l) in covered for k in range(n) for l in sup[k])
+
+
+def relabel_part(part, sigma):
+    """The action of an atom relabelling on a record."""
+    return tuple(sorted(tuple(sorted(sigma[x] for x in b)) for b in part))
 
 
 def reprepare_support(part, n):
@@ -623,8 +749,13 @@ def pres_table(n: int):
     return _PRES_CACHE[n]
 
 
+_FAM5_CACHE: list = []
+
+
 def declared_family_n5():
     """Declared n = 5 subfamily: at most one multi-valued atom."""
+    if _FAM5_CACHE:
+        return _FAM5_CACHE[0]
     subsets = [frozenset(s) for r in range(1, 6) for s in combinations(range(5), r)]
     singles = [s for s in subsets if len(s) == 1]
     multis = [s for s in subsets if len(s) > 1]
@@ -633,6 +764,7 @@ def declared_family_n5():
         for mset in multis:
             for base in product(singles, repeat=4):
                 fam.append(tuple(list(base[:k]) + [mset] + list(base[k:])))
+    _FAM5_CACHE.append(fam)
     return fam
 
 
@@ -865,6 +997,84 @@ def total_variation(p, q) -> Fr:
     return sum((abs(a - b) for a, b in zip(p, q)), Fr(0)) / 2
 
 
+# --- the flag-retaining ("measure and broadcast") readings of the literal
+#     formula.  D_M-hat : rho -> sum_r (z_r rho z_r) (x) |r><r| is not an
+#     endomorphism of S, so the literal equation is type-ill-formed; there are
+#     exactly three ways to repair the type, and all three are run.
+
+
+def broadcast_b1_recollapses(alg: CStar, part, ch: Channel) -> bool:
+    """B1 -- trace the flag out before comparing.  The S'-marginal of
+    (F (x) id) D_M-hat(rho) is F(sum_r z_r rho z_r), so the test returns
+    Theorem 2.1 exactly."""
+    for b in alg.matrix_units():
+        if not meq(ch.forward(forget_map(alg, part, b)), ch.forward(b)):
+            return False
+    return True
+
+
+def broadcast_b4_membership(alg: CStar, part, ch: Channel) -> bool:
+    """B4 -- keep the flag and demand no later readout: compare F (x) id with
+    (F (x) id) o D_M-hat on S (x) C^Omega, where the broadcast overwrites the
+    flag.  Joint operators are carried as flag-indexed blocks."""
+    m = len(part)
+    zs = instrument_branches(alg, part)
+    zero = mzero(alg.dim)
+    for f in range(m):
+        for g in range(m):
+            for rho in alg.matrix_units():
+                # sigma = rho (x) |f><g|, carried as flag-indexed blocks.
+                marg = rho if f == g else zero  # Tr_flag(sigma)
+                for a in range(m):
+                    for b in range(m):
+                        lhs = ch.forward(rho if (a == f and b == g) else zero)
+                        rhs = ch.forward(
+                            mmul(mmul(zs[a], marg), zs[a]) if a == b else zero
+                        )
+                        if not meq(lhs, rhs):
+                            return False
+    return True
+
+
+def broadcast_b3_membership(alg_in: CStar, alg_out: CStar, ch: Channel, part):
+    """B3 -- keep the flag and demand the record be readable after F exactly
+    as it was before it: m_s o Phi = Phi o m'_s for every outcome s, i.e. the
+    full flag-joint statistics agree, not merely the flag marginal."""
+    m = len(part)
+    targets = [alg_in.central_projection(b) for b in part]
+    basis = alg_out.matrix_units()
+    pulled = [ch.pullback(b) for b in basis]
+    zsub, psub = {}, {}
+    for r in range(len(alg_out.blocks) + 1):
+        for sub in combinations(alg_out.atoms(), r):
+            zsub[frozenset(sub)] = alg_out.central_projection(list(sub))
+            psub[frozenset(sub)] = ch.pullback(zsub[frozenset(sub)])
+    for assign in product(range(m), repeat=len(alg_out.blocks)):
+        zprime = []
+        pruned = False
+        for s in range(m):
+            key = frozenset(l for l in alg_out.atoms() if assign[l] == s)
+            # The case b = 1 of the identity is NECESSARY for B3, so failing
+            # it discards no candidate; it only shortens the search.
+            if not meq(psub[key], targets[s]):
+                pruned = True
+                break
+            zprime.append(zsub[key])
+        if pruned:
+            continue
+        ok = True
+        for s in range(m):
+            for bi, b in enumerate(basis):
+                if not meq(ch.pullback(mmul(zprime[s], b)), mmul(targets[s], pulled[bi])):
+                    ok = False
+                    break
+            if not ok:
+                break
+        if ok:
+            return True, assign
+    return False, None
+
+
 def run_g0():
     prog("G0  definition gate: literal formula collapse test")
     battery = build_concrete_battery()
@@ -1036,6 +1246,90 @@ def run_g0():
     )
     FINDINGS["G0_availability_nondegenerate"] = bool(proper)
 
+    # ---- G0-10/11/12/13  UNIQUENESS of the repair.  The literal formula can
+    #      also be read with the flag RETAINED (measure and broadcast).  That
+    #      reading is type-ill-formed, and has exactly three type repairs.
+    prog("G0  uniqueness: the three typed repairs of the broadcast reading")
+
+    b1_pairs, b1_recollapse = 0, 0
+    for alg, part, chans in battery:
+        for ch in chans:
+            b1_pairs += 1
+            if broadcast_b1_recollapses(alg, part, ch):
+                b1_recollapse += 1
+    gate(
+        "G0-10",
+        "repair-uniqueness",
+        "REPAIR B1 (trace the flag out before comparing): the S'-marginal of "
+        "the broadcast is sum_r z_r rho z_r = rho, so the test returns "
+        "Theorem 2.1 exactly and RE-COLLAPSES on every battery pair",
+        b1_recollapse == b1_pairs and b1_pairs >= 1,
+        {"future_instrument_pairs": b1_pairs, "recollapsed": b1_recollapse},
+    )
+
+    b4_trivial_inside, b4_nontrivial_identity_inside, b4_records = 0, 0, 0
+    for alg, part_default, chans in battery:
+        for p in parts_of(len(alg.blocks)):
+            b4_records += 1
+            inside_id = broadcast_b4_membership(alg, p, chan_identity(alg.dim))
+            if len(p) == 1:
+                if all(broadcast_b4_membership(alg, p, ch) for ch in chans):
+                    b4_trivial_inside += 1
+            elif inside_id:
+                b4_nontrivial_identity_inside += 1
+    gate(
+        "G0-11",
+        "repair-uniqueness",
+        "REPAIR B4 (keep the flag, demand no later readout): the broadcast "
+        "overwrites the flag, so the test holds for the one-outcome record "
+        "and fails for EVERY record with two or more outcomes -- even for the "
+        "identity future.  Nondegenerate, but degenerate in the opposite "
+        "direction: it empties Pres instead of filling it",
+        b4_trivial_inside == len(battery) and b4_nontrivial_identity_inside == 0,
+        {
+            "records_tested": b4_records,
+            "trivial_record_all_futures_inside": b4_trivial_inside,
+            "nontrivial_records_with_identity_inside": b4_nontrivial_identity_inside,
+        },
+    )
+
+    b3_in, b3_out, b3_disagree = 0, 0, 0
+    for alg, part, chans in battery:
+        for ch in chans:
+            b3, _ = broadcast_b3_membership(alg, alg, ch, part)
+            av, _ = availability_membership(alg, alg, ch, part)
+            if b3:
+                b3_in += 1
+            else:
+                b3_out += 1
+            if b3 != av:
+                b3_disagree += 1
+    gate(
+        "G0-12",
+        "repair-uniqueness",
+        "REPAIR B3 (keep the flag, demand the record be readable after F as "
+        "it was before it: m_s o Phi = Phi o m'_s): nondegenerate, and "
+        "EQUIVALENT to Definition 2.3 -- the multiplicative-domain lemma "
+        "carries each direction",
+        b3_disagree == 0 and b3_in >= 1 and b3_out >= 1,
+        {"inside": b3_in, "outside": b3_out, "disagreements_with_definition_2_3": b3_disagree},
+    )
+
+    by_id = {g["id"]: g["pass"] for g in GATES}
+    uniq = by_id["G0-10"] and by_id["G0-11"] and by_id["G0-12"]
+    gate(
+        "G0-13",
+        "repair-uniqueness",
+        "UNIQUENESS: of the three typed repairs of the literal formula one "
+        "re-collapses (B1), one degenerates oppositely (B4), and the only "
+        "nondegenerate survivor (B3) IS the adopted availability form.  The "
+        "adoption of Definition 2.3 is forced at the scope of the "
+        "flag-retaining repairs, not merely convenient",
+        uniq,
+        {"recollapses": "B1", "empties": "B4", "equals_definition_2_3": "B3"},
+    )
+    FINDINGS["G0_availability_form_is_the_unique_typed_repair"] = bool(uniq)
+
 
 # --------------------------------------------------------------------------
 # G1 — THE GALOIS GATES
@@ -1050,20 +1344,33 @@ def run_g1():
     exhaustive_n = 4
 
     # ---- G1-00  soundness of the component lemma against the DEFINITION.
+    #      The same pass MEASURES the closure: whenever the definition puts a
+    #      future inside Pres(pi), that future's realized collision partition
+    #      is accumulated, so cl(pi) = Core(Pres(pi)) is afterwards available
+    #      as the meet of the partitions the family actually realizes -- never
+    #      as a function of pi's own reprepare generator.
     fam5 = declared_family_n5()
-    for n in (2, 3, 4):
+    tests_by_n = {}
+    for n in (1, 2, 3, 4):
         parts = parts_of(n)
         fam = relations_of(n)
         if len(fam) != count_relations(n, n):
             raise SystemExit(1)
+        cs = comps_of(n)
+        acc = {p: set() for p in parts}
         bad = 0
         total = 0
-        for sup in fam:
-            c = comp(sup)
+        for i, sup in enumerate(fam):
+            c = cs[i]
             for p in parts:
                 total += 1
-                if images_disjoint(sup, p) != refines(c, p):
+                inside = images_disjoint(sup, p)
+                if inside != refines(c, p):
                     bad += 1
+                if inside:
+                    acc[p].add(c)
+        PRES_COMPS[n] = acc
+        tests_by_n[n] = total
         gate(
             f"G1-00-n{n}",
             "lemma-soundness",
@@ -1075,23 +1382,60 @@ def run_g1():
         prog(f"     n={n}: {len(fam)} relations x {len(parts)} records checked")
 
     parts5 = parts_of(5)
+    acc5 = {p: set() for p in parts5}
     bad5 = 0
     tests5 = 0
     for sup in fam5:
         c = comp(sup)
         for p in parts5:
             tests5 += 1
-            if images_disjoint(sup, p) != refines(c, p):
+            inside = images_disjoint(sup, p)
+            if inside != refines(c, p):
                 bad5 += 1
+            if inside:
+                acc5[p].add(c)
+    PRES_COMPS[5] = acc5
     gate(
         "G1-00-n5",
         "lemma-soundness",
-        "DECLARED SUBFAMILY n=5 (at most one multi-valued atom): F in Pres(pi) "
-        "iff comp(F) refines pi; the general case is covered by the proved lemma",
+        "DECLARED SUBFAMILY n=5 (the 84,375 relations in which at most one "
+        "atom has a multi-valued sector support): F in Pres(pi) iff comp(F) "
+        "refines pi; the general case is covered by the proved lemma",
         bad5 == 0,
         {"relations": len(fam5), "tests": tests5, "mismatches": bad5},
     )
     prog(f"     n=5: {len(fam5)} declared relations x {len(parts5)} records checked")
+
+    total_le4 = sum(tests_by_n[n] for n in (2, 3, 4))
+    gate(
+        "G1-00-total",
+        "lemma-soundness",
+        "the exhaustive membership total quoted in the text: 18 + 1,715 + "
+        "759,375 membership tests at atom counts 2, 3 and 4",
+        total_le4 == 761108,
+        {"tests_n2": tests_by_n[2], "tests_n3": tests_by_n[3],
+         "tests_n4": tests_by_n[4], "total_tests_n_le_4": total_le4},
+    )
+
+    # ---- G1-12  comp(F) IS v12 Theorem 4.5's decision procedure M(U_2).
+    mu2_bad, mu2_tested = 0, 0
+    for bits in product((0, 1), repeat=9):
+        smat = [bits[3 * i:3 * i + 3] for i in range(3)]
+        sup = tuple(frozenset(i for i in range(3) if smat[i][k]) for k in range(3))
+        mu2_tested += 1
+        if comp(sup) != transitive_closure_of_comerge(smat, 3):
+            mu2_bad += 1
+    gate(
+        "G1-12",
+        "predecessor-identity",
+        "comp(F) -- the connected components of the collision graph -- IS the "
+        "object M(U_2) of the predecessor's Theorem 4.5, the transitive "
+        "closure of the co-merge relation, over all 512 support patterns at "
+        "three atoms; the two decision procedures are compared, union-find "
+        "against Warshall, not merely the two statements",
+        mu2_bad == 0,
+        {"support_patterns": mu2_tested, "mismatches": mu2_bad},
+    )
 
     # ---- G1-01  Pres is ANTITONE in instrument refinement.
     anti_ok = True
@@ -1209,30 +1553,51 @@ def run_g1():
     )
     prog("     G1-04 adjunction verified")
 
-    # ---- G1-05/06/07  closure operator laws for cl = Core o Pres.
-    def cl_of(part, n):
-        """Core(Pres(part)) computed from the exact characterisation of
-        Pres(part) by its generating futures (identity + reprepare)."""
-        gens = [tuple(frozenset({k}) for k in range(n)), reprepare_support(part, n)]
-        return core_avail(gens)
-
+    # ---- G1-05/06/07  closure operator laws for cl = Core o Pres, computed
+    #      from the MEASURED closure of G1-00's pass: cl(pi) is the meet of
+    #      the collision partitions realized by the futures that the
+    #      definition puts inside Pres(pi).
     ext_ok = mono_ok = idem_ok = True
-    for n in (2, 3, 4, 5):
-        parts = partitions(n)
+    law_counts = {}
+    for n in (1, 2, 3, 4, 5):
+        parts = parts_of(n)
+        law_counts[n] = {"records": len(parts), "closure_values_computed": 0}
         for p in parts:
-            c = cl_of(p, n)
+            c = cl_measured(p, n)
+            law_counts[n]["closure_values_computed"] += 1
             if not refines(c, p):
                 ext_ok = False
-            if cl_of(c, n) != c:
+            if cl_measured(c, n) != c:
                 idem_ok = False
         for p in parts:
             for q in parts:
                 if refines(q, p):  # q finer than p
-                    if not refines(cl_of(q, n), cl_of(p, n)):
+                    if not refines(cl_measured(q, n), cl_measured(p, n)):
                         mono_ok = False
-    gate("G1-05", "closure", "cl = Core o Pres is EXTENSIVE (M coarser than cl(M))", ext_ok, None)
-    gate("G1-06", "closure", "cl = Core o Pres is MONOTONE", mono_ok, None)
-    gate("G1-07", "closure", "cl = Core o Pres is IDEMPOTENT", idem_ok, None)
+    gate(
+        "G1-05",
+        "closure",
+        "cl = Core o Pres is EXTENSIVE (M coarser than cl(M)), measured from "
+        "the declared future family at atom counts 1 to 5",
+        ext_ok,
+        law_counts,
+    )
+    gate(
+        "G1-06",
+        "closure",
+        "cl = Core o Pres is MONOTONE, measured from the declared future "
+        "family at atom counts 1 to 5",
+        mono_ok,
+        law_counts,
+    )
+    gate(
+        "G1-07",
+        "closure",
+        "cl = Core o Pres is IDEMPOTENT, measured from the declared future "
+        "family at atom counts 1 to 5",
+        idem_ok,
+        law_counts,
+    )
 
     # ---- G1-08  the dual closure on future families.
     dual_ok = True
@@ -1261,7 +1626,7 @@ def run_g1():
     for n in (2, 3, 4):
         parts = parts_of(n)
         pres = pres_table(n)
-        closed_records = [p for p in parts if cl_of(p, n) == p]
+        closed_records = [p for p in parts if cl_measured(p, n) == p]
         closed_fams = {pres[p] for p in parts}
         bij_counts[n] = {"closed_records": len(closed_records), "closed_families": len(closed_fams)}
         if len(closed_records) != len(closed_fams):
@@ -1434,6 +1799,183 @@ def stochastic_postprocessing_is_deterministic(n: int, m: int, grid):
     return tested, sharp, viol
 
 
+def vec(m):
+    return tuple(x for row in m for x in row)
+
+
+def span_rank(mats) -> int:
+    if not mats:
+        return 0
+    return mrank(tuple(vec(m) for m in mats))
+
+
+def independent_subset(mats):
+    """An exact basis of the span, by elimination -- never by counting."""
+    chosen, r = [], 0
+    for m in mats:
+        if span_rank(chosen + [m]) > r:
+            chosen.append(m)
+            r += 1
+    return chosen
+
+
+def in_span(basis, x) -> bool:
+    return span_rank(list(basis) + [x]) == span_rank(list(basis))
+
+
+def centre_dim_of_basis(basis) -> int:
+    """dim Z(A) for an algebra given by an exact basis: solve [x, y] = 0 for
+    every basis element y, by exact elimination."""
+    nb = len(basis)
+    dim = len(basis[0])
+    conds = []
+    for y in basis:
+        comms = [msub(mmul(b, y), mmul(y, b)) for b in basis]
+        for i in range(dim):
+            for j in range(dim):
+                row = [comms[c][i][j] for c in range(nb)]
+                if any(not x.is_zero() for x in row):
+                    conds.append(row)
+    return nb if not conds else nullity_of_conditions(conds)
+
+
+def rational_rotation(n: int, i: int, j: int, c: Fr, s: Fr):
+    """An exact rational Givens rotation in the (i,j) plane; c^2 + s^2 = 1 by
+    a Pythagorean triple, so no root is ever extracted."""
+    m = [[ONE if a == b else ZERO for b in range(n)] for a in range(n)]
+    m[i][i] = QC(c)
+    m[i][j] = QC(-s)
+    m[j][i] = QC(s)
+    m[j][j] = QC(c)
+    return tuple(tuple(r) for r in m)
+
+
+def embed_with_sink(m, dim: int):
+    """Adjoin the retained sink summand of the #103 adjudication: the matched
+    success algebra sits in the top-left corner, the failure branch is the
+    extra diagonal entry."""
+    out = [[ZERO] * (dim + 1) for _ in range(dim + 1)]
+    for i in range(dim):
+        for j in range(dim):
+            out[i][j] = m[i][j]
+    return tuple(tuple(r) for r in out)
+
+
+def embed_unitary_with_sink(m, dim: int):
+    """The same embedding for a REVERSIBLE map: it must act as the identity
+    on the retained sink, not annihilate it."""
+    out = [[ZERO] * (dim + 1) for _ in range(dim + 1)]
+    for i in range(dim):
+        for j in range(dim):
+            out[i][j] = m[i][j]
+    out[dim][dim] = ONE
+    return tuple(tuple(r) for r in out)
+
+
+def build_manufactured_boundary(ranks):
+    """#103 sec 7.1, CONSTRUCTED rather than typed.  Choose a PVM P = {P_r} of
+    the declared rank multiset in a ROTATED basis (so that no block structure
+    is read off the coordinates), form the matched dephasing
+    D_P(rho) = sum_r P_r rho P_r, take A_P = range(D_P) = (+)_r P_r B(H) P_r
+    by exact elimination, and adjoin the retained sink summand.  Every
+    reported quantity below is computed from the projections."""
+    dim = sum(ranks)
+    W = mmul(
+        mmul(
+            rational_rotation(dim, 0, 1, Fr(3, 5), Fr(4, 5)),
+            rational_rotation(dim, 1, 2, Fr(5, 13), Fr(12, 13)),
+        ),
+        rational_rotation(dim, 2, 3, Fr(8, 17), Fr(15, 17)),
+    )
+    proj = []
+    off = 0
+    for r in ranks:
+        d0 = [[ZERO] * dim for _ in range(dim)]
+        for i in range(off, off + r):
+            d0[i][i] = ONE
+        p0 = tuple(tuple(x) for x in d0)
+        proj.append(mmul(mmul(W, p0), madj(W)))
+        off += r
+    units = []
+    for i in range(dim):
+        for j in range(dim):
+            m = [[ZERO] * dim for _ in range(dim)]
+            m[i][j] = ONE
+            units.append(tuple(tuple(x) for x in m))
+
+    def dephase(rho):
+        acc = mzero(dim)
+        for p in proj:
+            acc = madd(acc, mmul(mmul(p, rho), p))
+        return acc
+
+    ap_basis = independent_subset(
+        [mmul(mmul(p, e), p) for p in proj for e in units]
+    )
+    # the matched dephasing's matrix in the matrix-unit basis; its rank is the
+    # dimension of its range, computed rather than asserted.
+    dmat = tuple(vec(dephase(e)) for e in units)
+    facts = {
+        "unitary_rotation": meq(mmul(W, madj(W)), mid(dim))
+        and meq(mmul(madj(W), W), mid(dim)),
+        "pvm_projections": all(
+            meq(mmul(p, p), p) and meq(madj(p), p) for p in proj
+        ),
+        "pvm_complete": meq(
+            [
+                [
+                    sum((proj[r][i][j] for r in range(len(proj))), ZERO)
+                    for j in range(dim)
+                ]
+                for i in range(dim)
+            ],
+            mid(dim),
+        ),
+        "pvm_ranks": [mrank(p) for p in proj],
+        "pvm_is_rotated_not_diagonal": any(
+            not proj[0][i][j].is_zero() for i in range(dim) for j in range(dim) if i != j
+        ),
+        "dephasing_unital": meq(dephase(mid(dim)), mid(dim)),
+        "dephasing_idempotent": all(meq(dephase(dephase(e)), dephase(e)) for e in units),
+        "range_dimension": mrank(dmat),
+        "algebra_dimension": len(ap_basis),
+        "algebra_is_the_range": all(meq(dephase(b), b) for b in ap_basis),
+        "centre_dim_without_sink": centre_dim_of_basis(ap_basis),
+    }
+    full = [embed_with_sink(b, dim) for b in ap_basis]
+    sink = [[ZERO] * (dim + 1) for _ in range(dim + 1)]
+    sink[dim][dim] = ONE
+    sink = tuple(tuple(r) for r in sink)
+    full.append(sink)
+    atoms = [embed_with_sink(p, dim) for p in proj] + [sink]
+    facts["multiplicatively_closed"] = all(
+        in_span(full, mmul(a, b)) for a in full for b in full
+    )
+    facts["centre_dim_with_sink"] = centre_dim_of_basis(full)
+    facts["atoms_in_algebra"] = all(in_span(full, z) for z in atoms)
+    facts["atoms_central"] = all(
+        meq(mmul(z, b), mmul(b, z)) for z in atoms for b in full
+    )
+    facts["atoms_orthogonal"] = all(
+        meq(mmul(atoms[a], atoms[b]), mzero(dim + 1))
+        for a in range(len(atoms))
+        for b in range(len(atoms))
+        if a != b
+    )
+    facts["atoms_sum_to_unit"] = meq(
+        [
+            [
+                sum((atoms[r][i][j] for r in range(len(atoms))), ZERO)
+                for j in range(dim + 1)
+            ]
+            for i in range(dim + 1)
+        ],
+        mid(dim + 1),
+    )
+    facts["atom_count"] = len(atoms)
+    return facts, {"atoms": atoms, "basis": full, "rotation": W, "projections": proj}
+
+
 def core_size(alg: CStar) -> int:
     """|Cl_op(A)| at the full standard law: the number of minimal central
     projections, computed from the exact centre dimension."""
@@ -1443,23 +1985,110 @@ def core_size(alg: CStar) -> int:
 def run_g2():
     prog("G2  fixed points: trivial, characterization, discriminator")
 
-    def cl_of(part, n):
-        gens = [tuple(frozenset({k}) for k in range(n)), reprepare_support(part, n)]
-        return core_avail(gens)
-
-    # ---- G2-01  the trivial record IS fixed, under reprepare closure (R).
+    # ---- G2-01  the trivial record IS fixed under the declared family, and
+    #      the exact criterion is the MEET of the realized collision
+    #      partitions -- measured, not read off a generator.
     triv_fixed = True
+    triv_detail = {}
     for n in (1, 2, 3, 4, 5):
         p = indiscrete(n)
-        if cl_of(p, n) != p:
+        c = cl_measured(p, n)
+        realized_meet = meet_of_parts(PRES_COMPS[n][p], n)
+        triv_detail[n] = {
+            "cl_of_trivial_is_trivial": c == p,
+            "meet_of_realized_collision_partitions_is_trivial": realized_meet == p,
+        }
+        if c != p or realized_meet != p:
             triv_fixed = False
     gate(
         "G2-01",
         "trivial-fixed-point",
-        "the trivial one-outcome instrument is a fixed point of cl WHENEVER "
-        "the law admits a total-erasure future (reprepare closure R)",
+        "the trivial one-outcome instrument is a fixed point of cl exactly "
+        "when the MEET of the collision partitions realized by the admitted "
+        "futures is trivial; under the declared family (which contains the "
+        "total-erasure future of condition R) it is, at atom counts 1 to 5",
         triv_fixed,
-        {"n_checked": [1, 2, 3, 4, 5]},
+        triv_detail,
+    )
+
+    # ---- G2-01b  the meet form is STRICTLY weaker than "some admitted future
+    #      erases the record": a composition-closed three-atom law on which
+    #      the trivial record is fixed although no single admitted future
+    #      preserves no nontrivial record.
+    a_map = functional_support((0, 0, 2))
+    b_map = functional_support((0, 2, 2))
+    id3 = functional_support((0, 1, 2))
+    fam3 = [id3, a_map, b_map]
+
+    def compose_sup(f, g):
+        """g after f, for single-valued sector maps."""
+        return tuple(frozenset({next(iter(g[next(iter(f[k]))]))}) for k in range(3))
+
+    closed = all(compose_sup(f, g) in fam3 for f in fam3 for g in fam3)
+    comps3 = [comp(s) for s in fam3]
+    meet3 = meet_of_parts(comps3, 3)
+    erasers = [c for c in comps3 if c == indiscrete(3)]
+    fixed3 = fix_set_of_family(fam3, 3, comps3)
+    ce_ok = (
+        closed
+        and meet3 == indiscrete(3)
+        and not erasers
+        and indiscrete(3) in fixed3
+        and len(fixed3) == 4
+    )
+    gate(
+        "G2-01b",
+        "trivial-fixed-point",
+        "COUNTEREXAMPLE to the erasing-future form: on three atoms the "
+        "composition-closed law generated by the sector maps (0,0,2) and "
+        "(0,2,2) realizes the collision partitions {01|2} and {0|12}, whose "
+        "MEET is trivial, so the trivial record is fixed -- yet NO admitted "
+        "future preserves only the trivial record.  The closure is genuinely "
+        "selective here: 4 of the 5 records are fixed",
+        ce_ok,
+        {
+            "composition_closed": closed,
+            "realized_collision_partitions": [[list(b) for b in c] for c in comps3],
+            "meet_is_trivial": meet3 == indiscrete(3),
+            "futures_preserving_no_nontrivial_record": len(erasers),
+            "fixed_records": len(fixed3),
+            "records": bell(3),
+        },
+    )
+
+    # ---- G2-01c  the two criteria compared over every realizable law.
+    crit_agree_meet, crit_agree_eraser, crit_cases = 0, 0, 0
+    for n in (3, 4):
+        parts = parts_of(n)
+        reps = [reprepare_support(p, n) for p in parts]
+        reps_comp = [comp(s) for s in reps]
+        for size in range(1, len(parts) + 1):
+            for idx in combinations(range(len(parts)), size):
+                fam = [reps[i] for i in idx]
+                cs = [reps_comp[i] for i in idx]
+                crit_cases += 1
+                fixed_trivial = meet_of_parts(
+                    [c for s, c in zip(fam, cs) if images_disjoint(s, indiscrete(n))],
+                    n,
+                ) == indiscrete(n)
+                if fixed_trivial == (meet_of_parts(cs, n) == indiscrete(n)):
+                    crit_agree_meet += 1
+                if fixed_trivial == any(c == indiscrete(n) for c in cs):
+                    crit_agree_eraser += 1
+    gate(
+        "G2-01c",
+        "trivial-fixed-point",
+        "over every law realizable by a set of reprepare futures at atom "
+        "counts 3 and 4, the MEET criterion decides the trivial fixed point "
+        "in every case, while the erasing-future criterion decides it wrongly "
+        "in a large minority -- the two are not equivalent",
+        crit_agree_meet == crit_cases and crit_agree_eraser < crit_cases,
+        {
+            "laws_tested": crit_cases,
+            "meet_criterion_correct": crit_agree_meet,
+            "erasing_future_criterion_correct": crit_agree_eraser,
+            "erasing_future_criterion_wrong": crit_cases - crit_agree_eraser,
+        },
     )
 
     # ---- G2-02  NEGATIVE direction: without (R) it is NOT fixed.
@@ -1481,17 +2110,24 @@ def run_g2():
         not_fixed_without_R,
         {"cl_of_anything": "the full operational core"},
     )
-    FINDINGS["G2_trivial_fixed_requires_erasure"] = bool(
+    FINDINGS["G2_trivial_fixed_iff_meet_of_realized_collisions_is_trivial"] = bool(
         triv_fixed and not_fixed_without_R
     )
 
-    # ---- G2-03  characterization: cl is the IDENTITY under (R).
+    # ---- G2-03  characterization: cl is the IDENTITY under (R).  Every
+    #      stratum is MEASURED from the declared future family -- exhaustively
+    #      at atom counts 1 to 4, and from all 84,375 declared futures at
+    #      atom count 5.
     cl_identity = True
     counts = {}
     for n in (1, 2, 3, 4, 5):
         parts = parts_of(n)
-        fixed = [p for p in parts if cl_of(p, n) == p]
-        counts[n] = {"records": len(parts), "fixed": len(fixed)}
+        fixed = [p for p in parts if cl_measured(p, n) == p]
+        counts[n] = {
+            "records": len(parts),
+            "fixed": len(fixed),
+            "futures_in_family": len(relations_of(n)) if n <= 4 else 84375,
+        }
         if len(fixed) != len(parts):
             cl_identity = False
     # independent cross-check of the record-lattice sizes: the enumerator is
@@ -1509,28 +2145,52 @@ def run_g2():
         "characterization",
         "CHARACTERIZATION: under reprepare closure (R), cl = Core o Pres is "
         "the IDENTITY on records -- every admitted instrument is a fixed "
-        "point, so the closure selects nothing",
+        "point, so the closure selects nothing.  Every stratum is measured "
+        "from the declared future family, none is asserted",
         cl_identity,
         counts,
     )
 
-    # ---- G2-03b  cl recomputed independently from the EXHAUSTIVE future
-    #              family, not from the two generators, at n <= 4.
+    # ---- G2-03b  cl recomputed by a second route at n <= 4: Pres(pi) is
+    #              materialized as an explicit index set over the exhaustive
+    #              family and Core is taken of the futures themselves.
     direct_ok = True
     for n in (2, 3, 4):
         fam = relations_of(n)
         pres = pres_table(n)
         for p in parts_of(n):
             direct = core_avail([fam[i] for i in sorted(pres[p])])
-            if direct != p or direct != cl_of(p, n):
+            if direct != p or direct != cl_measured(p, n):
                 direct_ok = False
     gate(
         "G2-03b",
         "characterization",
-        "cl(pi) recomputed from the EXHAUSTIVE future family (not from "
-        "generators) at n <= 4: Core(Pres(pi)) = pi for every record",
+        "cl(pi) recomputed from the EXHAUSTIVE future family by a second "
+        "route (explicit Pres index sets, then Core of the futures) at "
+        "n <= 4: Core(Pres(pi)) = pi for every record",
         direct_ok,
         {"scope": "all left-total relations, n = 2,3,4"},
+    )
+
+    # ---- G2-03c  the two strata that a generator-based closure cannot see:
+    #              atom count 1, and atom count 5 over the whole declared
+    #              family of 84,375 futures.
+    n5_fixed = [p for p in parts_of(5) if cl_measured(p, 5) == p]
+    n1_fixed = [p for p in parts_of(1) if cl_measured(p, 1) == p]
+    gate(
+        "G2-03c",
+        "characterization",
+        "the extreme strata, measured: at atom count 1 the single record is "
+        "fixed, and at atom count 5 all 52 records are fixed, with Pres "
+        "membership decided by the definition over each of the 84,375 "
+        "declared futures",
+        len(n5_fixed) == 52 and len(n1_fixed) == 1,
+        {
+            "n1_fixed_of_records": [len(n1_fixed), bell(1)],
+            "n5_fixed_of_records": [len(n5_fixed), bell(5)],
+            "n5_declared_futures": 84375,
+            "n5_membership_tests": 84375 * 52,
+        },
     )
 
     # ---- G2-04  exhaustive verification of the separating witness.
@@ -1582,7 +2242,13 @@ def run_g2():
     for key in ("C2", "M2+C", "C5", "M4+C", "PVM211", "PVM22"):
         alg = FIXTURES[key]
         n = core_size(alg)
-        exist[key] = {"atoms": n, "fixed_points": bell(n), "nontrivial": bell(n) - 1}
+        fixed = [p for p in parts_of(n) if cl_measured(p, n) == p]
+        exist[key] = {
+            "atoms": n,
+            "records": bell(n),
+            "fixed_points": len(fixed),
+            "nontrivial": len(fixed) - 1,
+        }
     gate(
         "G2-06",
         "existence",
@@ -1596,7 +2262,11 @@ def run_g2():
     trivial_core = {}
     for key in ("M2", "C1"):
         alg = FIXTURES[key]
-        trivial_core[key] = {"atoms": core_size(alg), "fixed_points": bell(core_size(alg))}
+        n = core_size(alg)
+        trivial_core[key] = {
+            "atoms": n,
+            "fixed_points": len([p for p in parts_of(n) if cl_measured(p, n) == p]),
+        }
     ok7 = all(v["atoms"] == 1 and v["fixed_points"] == 1 for v in trivial_core.values())
     gate(
         "G2-07",
@@ -1643,32 +2313,101 @@ def run_g2():
         readingB_fixed,
     )
 
-    # ---- G2-10/11  THE DE-SMUGGLING DISCRIMINATOR.
-    prog("G2  DE-SMUGGLING DISCRIMINATOR: running the #103 manufactured PVM")
-    # #103 sec 7.1: choose a PVM P; the matched dephasing has range
-    # A_P = (+)_r P_r B(H) P_r, and with an affine-separating state family the
-    # minimal boundary's centre is C*(P_1,...,P_m).  Two committed rank types.
+    # ---- G2-09a/b  THE MANUFACTURED BOUNDARY, CONSTRUCTED.
+    prog("G2  constructing the manufactured boundary: PVM, matched dephasing, A_P")
+    built = {}
+    objs = {}
+    for key, ranks in (("PVM211", (2, 1, 1)), ("PVM22", (2, 2)), ("PVM5", (1, 1, 1, 1))):
+        built[key], objs[key] = build_manufactured_boundary(ranks)
+    construction_ok = all(
+        f["unitary_rotation"]
+        and f["pvm_projections"]
+        and f["pvm_complete"]
+        and f["pvm_is_rotated_not_diagonal"]
+        and f["dephasing_unital"]
+        and f["dephasing_idempotent"]
+        and f["algebra_is_the_range"]
+        and f["multiplicatively_closed"]
+        and f["atoms_in_algebra"]
+        and f["atoms_central"]
+        and f["atoms_orthogonal"]
+        and f["atoms_sum_to_unit"]
+        and f["range_dimension"] == f["algebra_dimension"]
+        for f in built.values()
+    )
+    gate(
+        "G2-09a",
+        "manufactured-construction",
+        "the manufactured boundary is CONSTRUCTED, not typed: a PVM of the "
+        "declared rank multiset is built in a ROTATED basis by exact "
+        "Pythagorean Givens rotations, its matched dephasing D_P(rho) = "
+        "sum_r P_r rho P_r is verified unital and idempotent, A_P = range(D_P) "
+        "is obtained by exact elimination and verified multiplicatively "
+        "closed, and the retained sink summand of the #103 adjudication is "
+        "adjoined; the atoms are exhibited as orthogonal central projections "
+        "summing to the unit",
+        construction_ok,
+        {k: {kk: vv for kk, vv in f.items()} for k, f in built.items()},
+    )
+    anchor(
+        "A10",
+        "#103 sec 6.2",
+        "matched 2+1+1 algebra with sink: centre dimension",
+        4,
+        built["PVM211"]["centre_dim_with_sink"],
+    )
+    anchor(
+        "A11",
+        "#103 sec 6.2",
+        "matched 2+2 algebra with sink: centre dimension",
+        3,
+        built["PVM22"]["centre_dim_with_sink"],
+    )
     man211 = FIXTURES["PVM211"]
     man22 = FIXTURES["PVM22"]
-    c211 = man211.centre_dimension()
-    c22 = man22.centre_dimension()
-    anchor("A10", "#103 sec 6.2", "matched 2+1+1 algebra with sink: centre dimension", 4, c211)
-    anchor("A11", "#103 sec 6.2", "matched 2+2 algebra with sink: centre dimension", 3, c22)
+    typed_agrees = (
+        man211.centre_dimension() == built["PVM211"]["centre_dim_with_sink"]
+        and man22.centre_dimension() == built["PVM22"]["centre_dim_with_sink"]
+        and FIXTURES["C5"].centre_dimension() == built["PVM5"]["centre_dim_with_sink"]
+    )
+    gate(
+        "G2-09b",
+        "manufactured-construction",
+        "the declared fixtures are representatives of the CONSTRUCTED "
+        "isomorphism classes: the commutant solve on the constructed rotated "
+        "algebras returns the same centre dimensions as the typed block "
+        "structures (4, 3 and 5)",
+        typed_agrees,
+        {
+            "constructed_centre_dims": {
+                k: built[k]["centre_dim_with_sink"] for k in built
+            },
+            "typed_centre_dims": {
+                "PVM211": man211.centre_dimension(),
+                "PVM22": man22.centre_dimension(),
+                "C5": FIXTURES["C5"].centre_dimension(),
+            },
+        },
+    )
 
-    # The manufactured record is the atom instrument of the manufactured
-    # boundary -- the TOP of its record lattice.  Run it through the closure.
+    # ---- G2-10/11  THE DE-SMUGGLING DISCRIMINATOR, run on the constructed
+    #      object.  The manufactured record is the atom instrument of the
+    #      constructed boundary; its atom count comes from the PVM's rank
+    #      multiset plus the sink, while Reading B's unique fixed point comes
+    #      from the commutant solve -- two different routes to the same
+    #      record, so the comparison can fail.
+    prog("G2  DE-SMUGGLING DISCRIMINATOR: the constructed manufactured PVM")
     surviving = {}
-    for key, alg in (("PVM211", man211), ("PVM22", man22)):
-        n = core_size(alg)
-        # the manufactured record: the atom instrument of the manufactured
-        # boundary, i.e. the PVM the task was matched to (#103 sec 7.1).
-        manufactured = discrete(n)
-        clA = cl_of(manufactured, n)
-        # Reading B's unique fixed point, computed: the constant value of the
-        # composite map is Cl_op(S), the atom instrument of the SAME boundary.
-        readingB_unique = discrete(core_size(alg))
+    for key in ("PVM211", "PVM22"):
+        f = built[key]
+        n_from_pvm = f["atom_count"]
+        manufactured = discrete(n_from_pvm)
+        clA = cl_measured(manufactured, n_from_pvm)
+        readingB_unique = discrete(f["centre_dim_with_sink"])
         surviving[key] = {
-            "atoms": n,
+            "atoms_from_pvm_ranks_plus_sink": n_from_pvm,
+            "atoms_from_commutant_solve": f["centre_dim_with_sink"],
+            "records": bell(n_from_pvm),
             "readingA_cl_equals_input": clA == manufactured,
             "readingB_unique_fixed_point_equals_input": readingB_unique == manufactured,
         }
@@ -1676,51 +2415,301 @@ def run_g2():
     gate(
         "G2-10",
         "DISCRIMINATOR",
-        "READING A: the #103 manufactured PVM SURVIVES the closure as a "
-        "nontrivial fixed point -- the closure does NOT de-smuggle",
+        "READING A: the CONSTRUCTED manufactured PVM record SURVIVES the "
+        "closure as a nontrivial fixed point -- cl is computed from the "
+        "exhaustive future family, and the closure does NOT de-smuggle",
         survivedA,
         surviving,
     )
     gate(
         "G2-11",
         "DISCRIMINATOR",
-        "READING B: the #103 manufactured PVM is the UNIQUE fixed point of the "
-        "composite map -- the closure does NOT de-smuggle",
+        "READING B: the CONSTRUCTED manufactured PVM record is the UNIQUE "
+        "fixed point of the composite map -- the closure does NOT de-smuggle",
         all(v["readingB_unique_fixed_point_equals_input"] for v in surviving.values()),
         surviving,
     )
     FINDINGS["G2_manufactured_pvm_survives"] = bool(survivedA)
 
-    # ---- G2-12  the impossibility behind the discriminator's failure.
-    #  A legitimate boundary and a manufactured boundary of the same sector
-    #  type are carried onto each other by an admitted reversible map, and
-    #  #111 Cor 5.6 makes the whole construction covariant under such maps.
-    prog("G2  impossibility: legitimate and manufactured boundaries are isomorphic")
-    n5 = 5
-    perm = [1, 2, 3, 4, 0]
-    V = [[ONE if perm[i] == j else ZERO for j in range(n5)] for i in range(n5)]
-    V = tuple(tuple(r) for r in V)
-    unitary_ok = meq(mmul(madj(V), V), mid(n5)) and meq(mmul(V, madj(V)), mid(n5))
-    legit = FIXTURES["C5"]
-    carried = []
-    for k in range(n5):
-        zk = legit.central_projection([k])
-        img = mmul(mmul(V, zk), madj(V))
-        hit = [l for l in range(n5) if meq(img, legit.central_projection([l]))]
-        carried.append(hit)
-    bijection = sorted(h[0] for h in carried if len(h) == 1) == list(range(n5))
+    # ---- G2-12  THE LOAD-BEARING IMPOSSIBILITY: the manufactured record is
+    #      the TOP of its own record lattice, and every closure operator
+    #      fixes the top -- under every admitted law, with no covariance
+    #      premise and no condition on the law whatsoever.
+    prog("G2  top of lattice: no closure operator dethrones its own top")
+    top_ok, top_families, top_violations = True, 0, 0
+    state = 20260806
+    for n in (2, 3, 4, 5):
+        pool = relations_of(n) if n <= 4 else declared_family_n5()
+        top = discrete(n)
+        for t in range(1000):
+            state = lcg_step(state)
+            size = state % 7  # includes the EMPTY family
+            fam = []
+            for _ in range(size):
+                state = lcg_step(state)
+                fam.append(pool[state % len(pool)])
+            inside = [comp(s) for s in fam if images_disjoint(s, top)]
+            top_families += 1
+            if meet_of_parts(inside, n) != top:
+                top_violations += 1
+                top_ok = False
+    manufactured_is_top = all(
+        discrete(built[k]["atom_count"]) == discrete(built[k]["centre_dim_with_sink"])
+        for k in ("PVM211", "PVM22")
+    )
     gate(
         "G2-12",
         "IMPOSSIBILITY",
-        "the corrected eraser boundary C^5 (a legitimately derived record) and "
-        "a manufactured 5-outcome PVM boundary are carried onto each other by "
-        "an admitted reversible map that permutes the core atoms; by #111 "
-        "Cor 5.6 the closure is covariant under exactly such maps, so NO "
-        "one-boundary criterion can accept one and reject the other",
-        unitary_ok and bijection,
-        {"unitary": unitary_ok, "atom_bijection": bijection, "permutation": perm},
+        "TOP OF LATTICE: the manufactured record is the atom instrument of "
+        "its own boundary, hence the greatest element of that boundary's "
+        "record lattice; and cl(top) = top for EVERY admitted future family, "
+        "the empty family included, by extensivity alone.  No closure "
+        "operator dethrones the top of its own lattice, under any law -- this "
+        "is what defeats the discriminator, and it needs no covariance premise",
+        top_ok and manufactured_is_top,
+        {
+            "families_swept": top_families,
+            "violations": top_violations,
+            "atom_counts_swept": [2, 3, 4, 5],
+            "manufactured_record_is_the_top": manufactured_is_top,
+        },
     )
-    FINDINGS["G2_one_boundary_desmuggling_impossible"] = bool(unitary_ok and bijection)
+    FINDINGS["G2_manufactured_record_is_lattice_top"] = bool(top_ok and manufactured_is_top)
+
+    # ---- G2-12b  STRUCTURE THEOREM: Fix(cl_F) is exactly the Moore family of
+    #      meets of the collision partitions the family realizes.
+    struct_ok, struct_families, struct_bad = True, 0, 0
+    state = 771103
+    for n in (3, 4):
+        pool = relations_of(n)
+        for t in range(750):
+            state = lcg_step(state)
+            size = 1 + state % 5
+            fam = []
+            for _ in range(size):
+                state = lcg_step(state)
+                fam.append(pool[state % len(pool)])
+            cs = [comp(s) for s in fam]
+            realized = sorted(set(cs))
+            fixed = set(fix_set_of_family(fam, n, cs))
+            moore = set()
+            for k in range(len(realized) + 1):
+                for sub in combinations(realized, k):
+                    moore.add(meet_of_parts(list(sub), n))
+            struct_families += 1
+            if fixed != moore:
+                struct_bad += 1
+                struct_ok = False
+    gate(
+        "G2-12b",
+        "IMPOSSIBILITY",
+        "STRUCTURE: Fix(cl_F) is exactly the set of meets of subsets of the "
+        "collision partitions realized by F, the empty meet being the top -- "
+        "so the fixed-point set is always a meet-subsemilattice containing "
+        "the top, whatever the law",
+        struct_ok,
+        {"families_swept": struct_families, "mismatches": struct_bad},
+    )
+
+    # ---- G2-12c  the closure is COVARIANT under atom relabelling: this is
+    #      the step the covariance obstruction actually uses, measured.
+    cov_ok, cov_tests = True, 0
+    for n in (4, 5):
+        for sigma in permutations(range(n)):
+            for p in parts_of(n):
+                cov_tests += 1
+                if cl_measured(relabel_part(p, sigma), n) != relabel_part(
+                    cl_measured(p, n), sigma
+                ):
+                    cov_ok = False
+    gate(
+        "G2-12c",
+        "IMPOSSIBILITY",
+        "COVARIANCE, MEASURED: cl commutes with every atom relabelling at "
+        "atom counts 4 and 5 -- the fixed-point set is stable under the whole "
+        "symmetric group, so no object built from it distinguishes two "
+        "boundaries related by a relabelling",
+        cov_ok,
+        {"tests": cov_tests, "atom_counts": [4, 5]},
+    )
+
+    # ---- G2-13  THE SECTOR-TYPE WITNESS, on two independently built objects.
+    prog("G2  witness: the legitimate C^5 and a constructed manufactured C^5")
+    n5 = 5
+    perm = [1, 2, 3, 4, 0]
+    V = tuple(
+        tuple(ONE if perm[i] == j else ZERO for j in range(n5)) for i in range(n5)
+    )
+    unitary_ok = meq(mmul(madj(V), V), mid(n5)) and meq(mmul(V, madj(V)), mid(n5))
+    legit = FIXTURES["C5"]
+    legit_atoms = [legit.central_projection([k]) for k in range(n5)]
+    man_atoms = objs["PVM5"]["atoms"]
+    U = embed_unitary_with_sink(objs["PVM5"]["rotation"], 4)
+    U_unitary = meq(mmul(madj(U), U), mid(n5)) and meq(mmul(U, madj(U)), mid(n5))
+    T = mmul(U, V)
+    carried = []
+    for k in range(n5):
+        img = mmul(mmul(T, legit_atoms[k]), madj(T))
+        hit = [l for l in range(n5) if meq(img, man_atoms[l])]
+        carried.append(hit[0] if len(hit) == 1 else None)
+    bijection = sorted(h for h in carried if h is not None) == list(range(n5))
+    same_sector_type = sorted(mrank(z) for z in legit_atoms) == sorted(
+        mrank(z) for z in man_atoms
+    )
+    gate(
+        "G2-13",
+        "IMPOSSIBILITY",
+        "SECTOR-TYPE ISOMORPHISM, TWO CONSTRUCTED OBJECTS: the legitimately "
+        "derived eraser minimum C^5 and an independently constructed "
+        "manufactured five-outcome boundary (a rank-(1,1,1,1) PVM in a "
+        "rotated basis, its matched dephasing's range, plus the retained "
+        "sink) have the same sector type, and the explicit reversible map "
+        "(W (+) 1)V carries the atoms of the first onto the atoms of the "
+        "second bijectively.  Whether that map is ADMITTED is a property of "
+        "the committed law, measured per law in G2-14, never inferred from "
+        "its existence",
+        unitary_ok and U_unitary and bijection and same_sector_type,
+        {
+            "shift_unitary_over_Z": unitary_ok,
+            "rotation_unitary": U_unitary,
+            "atom_bijection": carried,
+            "same_sector_type": same_sector_type,
+            "permutation": perm,
+        },
+    )
+    FINDINGS["G2_covariant_criteria_cannot_separate_under_law_hom"] = bool(
+        unitary_ok and U_unitary and bijection and same_sector_type and cov_ok
+    )
+
+    # ---- G2-14  ADMISSION IS LAW-RELATIVE: a committed law that satisfies
+    #      condition R, keeps every earned rung, and admits NO nontrivial
+    #      relabelling at all.
+    prog("G2  counter-law: the reprepare-generated law admits no relabelling")
+    gens5 = [reprepare_support(p, 5) for p in parts_of(5)]
+    gens_fn = [tuple(next(iter(s)) for s in g) for g in gens5]
+    seen = set(gens_fn)
+    frontier = list(seen)
+    while frontier:
+        fresh = []
+        for f in frontier:
+            for g in gens_fn:
+                for h in (
+                    tuple(g[f[k]] for k in range(5)),
+                    tuple(f[g[k]] for k in range(5)),
+                ):
+                    if h not in seen:
+                        seen.add(h)
+                        fresh.append(h)
+        frontier = fresh
+    law_R = sorted(seen)
+    reversible = [f for f in law_R if len(set(f)) == 5]
+    shift_admitted = tuple(perm) in seen
+    law_R_sups = [functional_support(f) for f in law_R]
+    fixed_under_R = fix_set_of_family(law_R_sups, 5)
+    counter_ok = (
+        len(law_R) == 120
+        and len(reversible) == 1
+        and reversible[0] == (0, 1, 2, 3, 4)
+        and not shift_admitted
+        and len(fixed_under_R) == 52
+    )
+    gate(
+        "G2-14",
+        "IMPOSSIBILITY",
+        "ADMISSION IS MEASURED, NOT INFERRED: the composition closure of the "
+        "reprepare futures that condition R itself demands is a law with 120 "
+        "admitted sector maps of which exactly ONE is reversible -- the "
+        "identity.  It admits no nontrivial atom relabelling at all, so the "
+        "cyclic shift is not admitted there, while every record remains fixed "
+        "(52 of 52).  The covariance obstruction is therefore law-relative "
+        "and its hypothesis must be measured for each committed law",
+        counter_ok,
+        {
+            "admitted_sector_maps": len(law_R),
+            "reversible_admitted": len(reversible),
+            "nontrivial_admitted_permutations": len(reversible) - 1,
+            "cyclic_shift_admitted": shift_admitted,
+            "records_fixed": len(fixed_under_R),
+            "records": bell(5),
+        },
+    )
+    FINDINGS["G2_relabelling_admission_is_law_relative"] = bool(counter_ok)
+
+    # ---- G2-15  THE DEGENERACY IS NOT AN ARTIFACT OF THE ADMITTED CLASS.
+    prog("G2  law families: the degeneracy under five no-reprepare laws")
+    fam_table = {}
+    for n in (1, 2, 3, 4, 5):
+        parts = parts_of(n)
+        perms_n = list(permutations(range(n)))
+        rows = {}
+        det = [functional_support(f) for f in product(range(n), repeat=n)]
+        rows["DET"] = det
+        rows["FUNNEL"] = [functional_support(tuple(range(n)))] + [
+            elementary_merge(n, k, l) for k in range(n) for l in range(n) if k != l
+        ]
+        rows["REV"] = [functional_support(sg) for sg in perms_n]
+        if n <= 4:
+            allrel = relations_of(n)
+            reps = {reprepare_support(p, n) for p in parts}
+            rows["ALL"] = allrel
+            rows["NOREP"] = [s for s in allrel if s not in reps]
+            rows["UNITAL"] = [s for s in allrel if has_total_support(s, n, perms_n)]
+        fam_table[n] = {}
+        for label, fam in rows.items():
+            fam_table[n][label] = {
+                "futures": len(fam),
+                "fixed": len(fix_set_of_family(fam, n)),
+                "records": len(parts),
+            }
+    no_reprepare_degenerate = all(
+        fam_table[n][label]["fixed"] == fam_table[n][label]["records"]
+        for n in fam_table
+        for label in ("DET", "FUNNEL")
+    ) and all(
+        fam_table[n][label]["fixed"] == fam_table[n][label]["records"]
+        for n in (1, 2, 3, 4)
+        for label in ("ALL", "NOREP", "UNITAL")
+    )
+    gate(
+        "G2-15",
+        "characterization",
+        "THE DEGENERACY IS NOT BOUGHT WITH A GENEROUS FUTURE CLASS: cl is the "
+        "identity on the deterministic classical postprocessings (DET), on "
+        "the unital futures (UNITAL), on the admitted class with every "
+        "reprepare deleted (NOREP), and on the FUNNEL law of the identity "
+        "plus the n(n-1) elementary sector merges -- three futures at two "
+        "atoms, seven at three, twenty-one at five.  None of these discards "
+        "anything inside a kept sector",
+        no_reprepare_degenerate,
+        fam_table,
+    )
+
+    # ---- G2-16  the single escape, and its price.
+    rev_fixed = {n: fam_table[n]["REV"]["fixed"] for n in fam_table}
+    rev_selective = all(rev_fixed[n] == 1 for n in rev_fixed)
+    rev_value_is_top = all(
+        fix_set_of_family(
+            [functional_support(sg) for sg in permutations(range(n))], n
+        )
+        == [discrete(n)]
+        for n in (2, 3, 4, 5)
+    )
+    gate(
+        "G2-16",
+        "characterization",
+        "THE ONE ESCAPE AND ITS PRICE: under a reversible-only law the "
+        "closure IS selective -- exactly one record is fixed out of "
+        "1, 2, 5, 15, 52 -- but the record it selects is the top of the "
+        "lattice, i.e. the manufactured record itself, which becomes the "
+        "UNIQUE fixed point.  Restricting the law to escape the degeneracy "
+        "makes the smuggling worse, not better",
+        rev_selective and rev_value_is_top,
+        {
+            "fixed_per_atom_count": rev_fixed,
+            "records_per_atom_count": {n: bell(n) for n in rev_fixed},
+            "selected_record_is_the_top": rev_value_is_top,
+        },
+    )
 
 
 # --------------------------------------------------------------------------
@@ -1731,9 +2720,7 @@ def run_g2():
 def run_g3():
     prog("G3  controls: branch memory, hostile operator system, C*, no-write")
 
-    def cl_of(part, n):
-        gens = [tuple(frozenset({k}) for k in range(n)), reprepare_support(part, n)]
-        return core_avail(gens)
+    cl_of = cl_measured
 
     # ================= Control 1: the branch-memory triple ================
     fam_erase = branch_memory_eraser_likelihoods()
@@ -1813,22 +2800,48 @@ def run_g3():
     nine_seams = [p for p in parts_of(4) if sorted(len(b) for b in p) in ([1, 1, 2], [2, 2])]
     anchor("A14", "#103 Thm 9.1", "number of inherited coarse partition seams", 9, len(nine_seams))
     core5 = discrete(5)
-    induced = tuple(sorted(tuple(sorted(set(b) & {1, 2, 3, 4})) for b in core5 if set(b) & {1, 2, 3, 4}))
-    induced_relabelled = tuple(sorted(tuple(sorted(x - 1 for x in b)) for b in induced))
+
+    def branch_restriction(part):
+        """The restriction of a record on the five-atom eraser core to the
+        four branch labels (atom 0 is the common sink), relabelled to
+        {0,1,2,3} so that it can be compared with the inherited seams."""
+        induced = tuple(
+            sorted(
+                tuple(sorted(set(b) & {1, 2, 3, 4}))
+                for b in part
+                if set(b) & {1, 2, 3, 4}
+            )
+        )
+        return tuple(sorted(tuple(sorted(x - 1 for x in b)) for b in induced))
+
+    induced_relabelled = branch_restriction(core5)
     not_a_seam = induced_relabelled not in nine_seams
     n_fixed_c5 = bm_fixed["C5"]["fixed"]
+    # how many of the 52 records DO restrict to one of the nine seams, and
+    # how many of those are fixed?  The control's negative direction is that
+    # the closure selects nothing, not that it excludes seams.
+    seam_records = [p for p in parts_of(5) if branch_restriction(p) in nine_seams]
+    seam_records_fixed = [p for p in seam_records if cl_of(p, 5) == p]
     gate(
         "G3-1e",
         "control-branch-memory-negative",
         "NEGATIVE: the C^5 common-sink task minimum is NOT promoted to a W3 "
         "seam -- its five-atom core restricted to the branch labels is the "
-        "discrete partition, none of the nine inherited seams, and all 52 "
-        "records on it are equally fixed so the closure selects none",
-        not_a_seam and n_fixed_c5 == 52,
+        "discrete partition, which is none of the nine inherited seams "
+        "because it is too FINE, not because anything rejected it.  Of the 52 "
+        "records on that core, 33 do restrict to one of the nine seams, and "
+        "all 33 are fixed, exactly as all 52 are: the closure SELECTS "
+        "NOTHING, it does not exclude seams",
+        not_a_seam
+        and n_fixed_c5 == 52
+        and len(seam_records) == 33
+        and len(seam_records_fixed) == 33,
         {
             "induced_partition": [list(b) for b in induced_relabelled],
             "is_one_of_the_nine_seams": not not_a_seam,
             "records_all_equally_fixed": n_fixed_c5,
+            "records_restricting_to_a_seam": len(seam_records),
+            "of_those_fixed": len(seam_records_fixed),
             "nine_seams": [[list(b) for b in s] for s in nine_seams],
         },
     )
@@ -2230,6 +3243,25 @@ def build_receipt():
             "passed": sum(1 for a in ANCHORS if a["pass"]),
             "entries": ANCHORS,
         },
+        "falsification": {
+            "note": (
+                "run `--falsification-selftest`; each mutant must exit 1.  "
+                "Anchor mutants substitute the reported value at the anchor "
+                "comparison site and certify that the anchor harness is live; "
+                "derivation mutants perturb a computation and must make at "
+                "least one G1/G2 gate fail, which also exits 1"
+            ),
+            "anchor_mutants": {k: v[0] for k, v in sorted(MUTANT_TABLE.items())},
+            "derivation_mutants": dict(sorted(MUTANT_GATE_TABLE.items())),
+            "anchors_covered": sorted({v[0] for v in MUTANT_TABLE.values()}),
+            "anchors_total": len(ANCHORS),
+            "determinism": (
+                "no wall-clock value enters this receipt or the rendered "
+                "output; timings appear only on the progress stream, so two "
+                "consecutive runs of the same source produce byte-identical "
+                "artifacts"
+            ),
+        },
         "nonclaims": [
             "no composition or tensor claim (that is stage 4's question)",
             "no locality, overlap, region, topology or manifold claim",
@@ -2286,6 +3318,19 @@ def render(rec) -> str:
             f"{'PASS' if a['pass'] else 'FAIL'}"
         )
     L.append("")
+    L.append("FALSIFICATION COVERAGE")
+    f = rec["falsification"]
+    L.append(f"  anchor mutants ({len(f['anchor_mutants'])}): " + ", ".join(
+        f"{k} -> {v}" for k, v in f["anchor_mutants"].items()
+    ))
+    L.append(f"  derivation mutants ({len(f['derivation_mutants'])}): " + ", ".join(
+        f"{k} ({v})" for k, v in f["derivation_mutants"].items()
+    ))
+    L.append(
+        f"  anchors exercised: {len(f['anchors_covered'])} of {f['anchors_total']}"
+        f"  ({', '.join(f['anchors_covered'])})"
+    )
+    L.append("")
     L.append("NON-CLAIMS")
     for s in rec["nonclaims"]:
         L.append(f"  - {s}")
@@ -2301,25 +3346,47 @@ MUTANT_TABLE = {
     "coherence": ("A28", Fr(1, 2)),
 }
 
+# Mutants that perturb a DERIVATION rather than a reported anchor value, so
+# that the unit's own new results -- the component lemma, the closure, the
+# fixed-point strata and the discriminator -- carry falsification coverage
+# too.  Each must make at least one G1/G2 gate fail, and a failing gate under
+# a mutant exits 1.
+MUTANT_GATE_TABLE = {
+    "comp-coarse": "comp() merges the first two atoms unconditionally",
+    "avail-lax": "images_disjoint() skips the first block pair",
+}
+
 
 def run_falsification_selftest() -> int:
     prog("FALSIFICATION SELF-TEST: each mutant must exit 1")
     rows = []
     ok = True
-    for name in sorted(MUTANT_TABLE):
+    names = sorted(MUTANT_TABLE) + sorted(MUTANT_GATE_TABLE)
+    for name in names:
         r = subprocess.run(
             [sys.executable, str(Path(__file__).resolve()), "--mutant", name],
             capture_output=True,
             text=True,
         )
-        killed = r.returncode == 1 and "ANCHOR FAILURE" in r.stdout
-        rows.append((name, MUTANT_TABLE[name][0], r.returncode, killed))
+        killed = r.returncode == 1 and (
+            "ANCHOR FAILURE" in r.stdout or "GATE FAILURE" in r.stdout
+        )
+        broke = (
+            MUTANT_TABLE[name][0] if name in MUTANT_TABLE else "gates"
+        )
+        detail = ""
+        if name in MUTANT_GATE_TABLE:
+            for line in r.stdout.splitlines():
+                if line.startswith("GATE FAILURE"):
+                    detail = line[len("GATE FAILURE "):]
+        rows.append((name, broke, r.returncode, killed, detail))
         if not killed:
             ok = False
-    for name, aid, code, killed in rows:
+    for name, broke, code, killed, detail in rows:
         sys.stdout.write(
-            f"  mutant {name:12s} breaks {aid:6s} exit={code} "
-            f"{'KILLED (correct)' if killed else 'SURVIVED (DEFECT)'}\n"
+            f"  mutant {name:12s} breaks {broke:6s} exit={code} "
+            f"{'KILLED (correct)' if killed else 'SURVIVED (DEFECT)'}"
+            f"{('  ' + detail) if detail else ''}\n"
         )
     sys.stdout.write(
         f"falsification self-test: {sum(1 for r in rows if r[3])}/{len(rows)} mutants killed\n"
@@ -2330,7 +3397,11 @@ def run_falsification_selftest() -> int:
 def main() -> int:
     global MUTANT, MUTANT_OVERRIDE
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mutant", choices=sorted(MUTANT_TABLE), default=None)
+    ap.add_argument(
+        "--mutant",
+        choices=sorted(MUTANT_TABLE) + sorted(MUTANT_GATE_TABLE),
+        default=None,
+    )
     ap.add_argument("--falsification-selftest", action="store_true")
     ap.add_argument("--no-write-files", action="store_true")
     args = ap.parse_args()
@@ -2340,9 +3411,15 @@ def main() -> int:
 
     if args.mutant:
         MUTANT = args.mutant
-        aid, val = MUTANT_TABLE[args.mutant]
-        MUTANT_OVERRIDE = {aid: val}
-        prog(f"MUTANT MODE: anchor {aid} deliberately broken ({args.mutant})")
+        if args.mutant in MUTANT_TABLE:
+            aid, val = MUTANT_TABLE[args.mutant]
+            MUTANT_OVERRIDE = {aid: val}
+            prog(f"MUTANT MODE: anchor {aid} deliberately broken ({args.mutant})")
+        else:
+            prog(
+                f"MUTANT MODE: derivation deliberately broken "
+                f"({args.mutant}: {MUTANT_GATE_TABLE[args.mutant]})"
+            )
 
     prog(f"RQ0-L0 Cycle B - task-record fixed point; pin {PIN_COMMIT}")
     run_exactness_gate()
@@ -2363,6 +3440,10 @@ def main() -> int:
     )
     if rec["gates"]["failed"]:
         prog(f"GATE FAILURES: {rec['gates']['failed']}")
+        if MUTANT:
+            sys.stdout.write(f"GATE FAILURE {','.join(rec['gates']['failed'])}\n")
+            sys.stdout.flush()
+            return 1
     return 0
 
 

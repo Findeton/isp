@@ -4700,3 +4700,44 @@ with the delivery per the new rule.  On return: adjudicator
 verification → TERMINAL at RQ0-L0-BLOCKED-AT-DE-SMUGGLING → the
 Cycle B′ pin (composite/tensor boundaries + the de-smuggling
 arena).  This entry is written after the dispatch occurred.
+
+## 2026-08-06 — CYCLE B REPAIR VERIFIED — **CYCLE B TERMINAL:
+## RQ0-L0-BLOCKED-AT-DE-SMUGGLING** (v13 LEDGER #123)
+Adjudicator verification: all four SHAs match the frozen report
+(9b9db359 / 94ed7cd9 / 33d2cc72 / 79e8fcd4); rerun exit 0 with
+receipt rows IDENTICAL to the delivered output (progress stream
+separate by design — the receipt carries no wall-clock, so runs
+are byte-identical); 75 gates / 75 pass, 34 anchors / 34 pass;
+mutant kill re-confirmed (erase-min → exit 1; the worker ran all
+8).  ALL TWELVE FIXES APPLIED: Thm 4.11 rescoped with the
+criterion class DEFINED and covariance MEASURED (6,600 pairs) and
+the counter-law exhibited as scope witness; **the TOP-OF-LATTICE
+THEOREM (4.8) now load-bearing** with the structure theorem (4.7)
+and 4,000+1,500-family sweeps; Prop 4.1 in the meet form with the
+3-atom counterexample gated (and the erasing-future criterion
+measured WRONG on 16,252 of 32,798 laws — the correction is not
+cosmetic); the six tautological gates realified against a MEASURED
+closure; the strata measured (1/1, 52/52); the manufactured
+boundary CONSTRUCTED (exact Givens PVM, matched dephasing verified
+unital+idempotent, A_P = range(D_P) multiplicatively closed,
+centres 3→4 and 2→3, atom bijection) and the discriminator gated
+on the constructed object by two independent routes; the G0
+uniqueness theorem (2.7) gated three ways; comp(F) = M(U₂) gated
+by two algorithms against each other (union-find vs Warshall, 512
+patterns); the law-family table (DET/FUNNEL/NOREP/UNITAL/REV) with
+the reversible-only price; the seam control reframed with 33-of-52
+printed; the minors; the Markov-rung sentence in its
+top-of-lattice-grounded form; deviations (1)-(8) shipped as
+Appendix A per the new rule.  Accounting: gates 57 → 75, mutants
+6 → 8, anchors 34 unchanged IN VALUE (A10/A11 now computed from
+the constructed boundary); no committed number moved; two finding
+keys renamed because the old names asserted corrected claims —
+listed in the report.  Worker deviations (renumbering with
+verified cross-refs; TERMINAL left to the adjudicator; four
+enabling items; the B3 prune-on-necessary-condition; one mid-run
+mutant-suite relaunch folded into the final frozen source) all
+accepted.  **CYCLE B IS TERMINAL at
+RQ0-L0-BLOCKED-AT-DE-SMUGGLING**, the block top-of-lattice-
+grounded and law-independent; the paper's status stamped.  Stage
+3 of the ROADMAP is closed; the Cycle B′ pin is next per the
+standing authorization.
