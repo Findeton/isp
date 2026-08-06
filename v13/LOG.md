@@ -5019,3 +5019,49 @@ REMAINS WITH THE USER (A: B″ grounded independence — recommended;
 B: the provenance branch; C: accept arena-relativity); no new
 cycle before the user's word.  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — CYCLE B′ REPAIR VERIFIED — **CYCLE B′ TERMINAL AT
+## THE RESCOPED RUNGS**; THE ARC HOLDS AT THE FORK (v13 LEDGER #134)
+Verification: receipt source_sha256 = on-disk source (18f0b756…);
+rerun exit 0; 34/34 gates, 40/40 anchors, 16/16 mutants (worker's
+post-delivery self-test); byte-identical runs; only the four unit
+files.  ALL TWELVE FIXES IN: the exact-PPT classifier at every
+rank (R1's (2,2) PVM now flagged entangled, det PT = −1/16;
+PARITY separable certified twice over; the witness restated with
+the classifier total, 32 atoms); Thm 3.2 completed with its
+hypothesis and counterexample; the span reading fixed with the
+∗-algebra contrast gated (3/1→8/2, 6/2→16/4, 12/1→32/2); the
+arena restated as ALIGNMENT-AT-A-DECLARED-EXTERNAL-ALGEBRA with
+the two-contexts-one-object coincidence disclosed and (D2)'s
+removals measured 0/0/0/0/0 (TOMO: 50 and 13 — where co-reference
+bites); the independence gate REBUILT BINDING (fails the
+relabelled control naming 6/2/12 witnesses; fails at unequal
+cardinality where the old certificate structurally could not);
+the diagnosis biconditional (Thm 6.5, proved, 9/9 contexts)
+replacing §6.4 everywhere; dedup; F6 deleted-and-rejustified; all
+three rewrite tables applied; deviations now 14.  **THE
+LOAD-BEARING NEW MEASUREMENT, stated first in the delivery and
+here:** THE REBUILT BINDING GATE DOES NOT STOP THE COLLUDING
+PAIR — aligned 2+1+1 vs aligned 1+1+1+1 returns INDEPENDENT
+(zero carrying relabellings — contexts presenting different
+NUMBERS of atoms can never be carried onto one another; the
+adversary exploits exactly that) and the forged record descends
+14-of-15; the duplicate-boundary form is caught (12 witnesses);
+the third form passes the gate but its forged record does NOT
+descend (4-of-15).  §7.7 + gate H2-13, both panel constructions
+cited, left open.  SECOND VERDICT: the arena's own two contexts
+are now reported DEPENDENT (120 witnesses) — the paper's
+statement, not a hidden fact.  CONSEQUENCE FOR THE FORK: branch
+A's cheapest form (relabelling-based binding) is MEASURED DEAD —
+any B″ must bind task families to the boundaries they present by
+a mechanism that is not relabelling-comparison, and must catch
+the 2+1+1-vs-1+1+1+1 pair as its mandatory discriminator; failing
+that, branch B (provenance) is forced with evidence.  Worker
+deviations accepted (the carrier-25 sweep declined with reasons;
+R1's K2.5 task adopted; the gate search widened to all admitted
+relabellings of the overlap — strictly MORE binding).  **CYCLE B′
+IS TERMINAL** at RQ0-L1-COMPOSITE-BOUNDARY /
+ENTANGLEMENT-WITNESS (classifier-total form) /
+ALIGNMENT-SELECTOR-AT-DECLARED-ALGEBRA (the rescoped rung).
+STATUS updated.  **THE ARC HOLDS AT THE STAGE-4 FORK FOR THE
+USER.**

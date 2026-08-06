@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-06 (v13 LOG #132: B′ adjudicated; the stage-4 fork awaits the user).
+Updated: 2026-08-06 (v13 LOG #134: B′ terminal; the stage-4 fork awaits the user).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -48,7 +48,7 @@ Updated: 2026-08-06 (v13 LOG #132: B′ adjudicated; the stage-4 fork awaits the
 
 ## Frontier (nothing authorized; per-cycle authorization required)
 
-1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **ADJUDICATED** (#132; 3× ACCEPT-WITH-FIXES, ~79 recomputations zero errors): COMPOSITE-BOUNDARY confirmed; ENTANGLEMENT-WITNESS confirmed w/ bounded (2,2) defect (PPT repair); DESCENT-SELECTOR **rescoped to alignment-at-declared-algebra** (D2 vacuous at the arena; independence certificate vacuous; **the adversarial pair constructed twice** — the standing obstruction). Repair in flight. **THE FORK IS THE USER'S: B″ grounded-independence / provenance branch / accept arena-relativity.**
+1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **ADJUDICATED** (#132; 3× ACCEPT-WITH-FIXES, ~79 recomputations zero errors): COMPOSITE-BOUNDARY confirmed; ENTANGLEMENT-WITNESS confirmed w/ bounded (2,2) defect (PPT repair); DESCENT-SELECTOR **rescoped to alignment-at-declared-algebra** (D2 vacuous at the arena; independence certificate vacuous; **the adversarial pair constructed twice** — the standing obstruction). **TERMINAL at the rescoped rungs (#134)**: the rebuilt binding gate PASSES the colluding pair (measured — no relabelling-based test can bind across different atom counts) and reports the arena's own contexts DEPENDENT. **THE FORK IS THE USER'S: (A) B″ with task-boundary binding [the relabelling route is measured-dead] / (B) provenance branch / (C) arena-relativity.**
 2. **Composite/tensor boundaries** (the missing monoidal rung before
    autonomous charts; core-of-composite vs composite-of-cores as the
    operational entanglement witness).

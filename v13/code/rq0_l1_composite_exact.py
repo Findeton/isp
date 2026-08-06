@@ -13,7 +13,10 @@ Executes the frozen pin `v13/note-rq0-l1-composite-boundaries-pin.md`
 
 Immutable inputs reused as anchors: the Cycle B terminal delivery (v13 #123 --
 the CONSTRUCTED manufactured boundary, its committed centre dimensions, the
-counter-law, the top-of-lattice theorem) and the #103/#111 fixtures.
+counter-law, the top-of-lattice theorem) and the #103/#111 fixtures; and the
+values supplied by this cycle's frozen three-lens panel (operator
+e7fc8886a683, effectus a375336ae5ee, instrument f5adf20bf814; adjudication
+06ca494), which are anchored to their frozen reviews by name.
 
 Substantive negatives exit 0.  Anchor mismatches exit 1.  `--mutant NAME`
 breaks exactly one committed anchor or one derivation step and must exit 1.
@@ -223,6 +226,208 @@ def mscale(s, m):
 
 
 # --------------------------------------------------------------------------
+# 0b.  Exact determinants, positivity, partial transpose, and the *-algebra
+#      closure.  These decide (i) separability of a composite-core atom at
+#      2 (x) 2 by the exact partial-transpose criterion, at EVERY rank, and
+#      (ii) the *-algebra reading of "generated", against which the declared
+#      linear-span reading is contrasted.
+# --------------------------------------------------------------------------
+
+
+def isqrt_int(n: int) -> int:
+    """Exact integer square root by Newton iteration (no float, no math)."""
+    if n < 2:
+        return n
+    x, y = n, (n + 1) // 2
+    while y < x:
+        x = y
+        y = (x + n // x) // 2
+    return x
+
+
+def qsqrt(z):
+    """The exact square root of z in Q, when z is real, non-negative and a
+    rational square; None otherwise."""
+    if z.im != 0 or z.re < 0:
+        return None
+    num, den = z.re.numerator, z.re.denominator
+    sn, sd = isqrt_int(num), isqrt_int(den)
+    if sn * sn == num and sd * sd == den:
+        return QC(Fr(sn, sd))
+    return None
+
+
+def mdet(m):
+    """Exact determinant over Q(i) by fraction-free-free Gaussian elimination."""
+    n = len(m)
+    a = [list(r) for r in m]
+    det = ONE
+    for c in range(n):
+        piv = None
+        for r in range(c, n):
+            if not a[r][c].is_zero():
+                piv = r
+                break
+        if piv is None:
+            return QC(0)
+        if piv != c:
+            a[c], a[piv] = a[piv], a[c]
+            det = QC(0) - det
+        det = det * a[c][c]
+        inv = a[c][c].inv()
+        for r in range(c + 1, n):
+            if not a[r][c].is_zero():
+                f = a[r][c] * inv
+                a[r] = [a[r][k] - f * a[c][k] for k in range(n)]
+    return det
+
+
+def principal_submatrix(m, idx):
+    return tuple(tuple(m[i][j] for j in idx) for i in idx)
+
+
+def is_psd_hermitian(m) -> bool:
+    """Exact positive semidefiniteness of a Hermitian matrix: every principal
+    minor is real and non-negative.  No float, no eigenvalue routine."""
+    n = len(m)
+    if not meq(m, madj(m)):
+        return False
+    for r in range(1, n + 1):
+        for idx in combinations(range(n), r):
+            d = mdet(principal_submatrix(m, idx))
+            if d.im != 0 or d.re < 0:
+                return False
+    return True
+
+
+def partial_transpose_B(m, dA: int, dB: int):
+    """Partial transpose on the second factor, exactly."""
+    n = dA * dB
+    out = [[ZERO] * n for _ in range(n)]
+    for i in range(dA):
+        for j in range(dB):
+            for k in range(dA):
+                for l in range(dB):
+                    out[i * dB + j][k * dB + l] = m[i * dB + l][k * dB + j]
+    return tuple(tuple(r) for r in out)
+
+
+def is_ppt(P, dA: int, dB: int) -> bool:
+    if MUTANT == "ppt-lax":
+        return True
+    return is_psd_hermitian(partial_transpose_B(P, dA, dB))
+
+
+def product_directions(P, dA: int, dB: int):
+    """The product vectors in the range of a rank-two projection at 2 (x) 2,
+    up to scale: the zeros of the binary quadratic form
+    det(alpha M_1 + beta M_2), where M_i is the reshape of a range basis
+    vector.  Returns (count, vectors); count is None off rank two."""
+    n = dA * dB
+    cols = [tuple(P[i][j] for i in range(n)) for j in range(n)]
+    basis, _ = rref(cols)
+    if len(basis) != 2:
+        return None, []
+    v1, v2 = basis
+
+    def reshape(v):
+        return tuple(tuple(v[i * dB + j] for j in range(dB)) for i in range(dA))
+
+    M1, M2 = reshape(v1), reshape(v2)
+    A, C = mdet(M1), mdet(M2)
+    B = mdet(madd(M1, M2)) - A - C
+    roots = []
+    if A.is_zero() and B.is_zero() and C.is_zero():
+        return None, []
+    if A.is_zero():
+        roots.append((ONE, QC(0)))
+        if not B.is_zero():
+            roots.append((QC(0) - C * B.inv(), ONE))
+    else:
+        s = qsqrt(B * B - QC(4) * A * C)
+        if s is None:
+            return 0, []
+        inv2A = (QC(2) * A).inv()
+        for sign in (ONE, QC(-1)):
+            roots.append(((QC(0) - B + sign * s) * inv2A, ONE))
+    uniq = []
+    for (a, b) in roots:
+        if not any((a * d - b * c).is_zero() for (c, d) in uniq):
+            uniq.append((a, b))
+    vecs = [tuple(a * v1[i] + b * v2[i] for i in range(n)) for (a, b) in uniq]
+    return len(uniq), vecs
+
+
+def orthogonal_product_decomposition(P, dA: int, dB: int):
+    """A CONSTRUCTIVE separability certificate for a rank-two projection: a
+    decomposition into two orthogonal rank-one product projections, or None."""
+    k, vecs = product_directions(P, dA, dB)
+    if k != 2:
+        return None
+    v, w = vecs
+    if not inner(v, w).is_zero():
+        return None
+    Pv = range_projection([v], dA * dB)
+    Pw = range_projection([w], dA * dB)
+    if not meq(madd(Pv, Pw), P):
+        return None
+    return (Pv, Pw)
+
+
+def classify_atom(P, dA: int, dB: int) -> dict:
+    """THE ATOM CLASSIFIER, exact at EVERY rank at 2 (x) 2.  An atom is
+    ENTANGLED when its partial transpose fails to be positive semidefinite
+    (Peres, valid in every dimension); at 2 (x) 2 positivity of the partial
+    transpose is equivalent to separability, so the verdict is exact here.  A
+    constructive certificate -- a decomposition into orthogonal product
+    projections -- is exhibited wherever one exists."""
+    r = mrank(P)
+    ppt = is_ppt(P, dA, dB)
+    dec = orthogonal_product_decomposition(P, dA, dB) if r == 2 else None
+    return {
+        "rank": r,
+        "ppt": ppt,
+        "entangled": not ppt,
+        "det_partial_transpose": str(mdet(partial_transpose_B(P, dA, dB))),
+        "schmidt_rank": schmidt_rank_of_rank_one(P, dA, dB) if r == 1 else None,
+        "product_projection": is_product_projection(P, dA, dB),
+        "product_directions": product_directions(P, dA, dB)[0] if r == 2 else None,
+        "orthogonal_product_decomposition": dec is not None,
+    }
+
+
+def star_algebra_span(span_mats, dim: int):
+    """The *-algebra GENERATED by a self-adjoint spanning set: close under
+    adjoint and multiplication until the linear dimension stabilizes."""
+    cur = [flat(m) for m in span_mats] + [flat(madj(m)) for m in span_mats]
+    basis, piv = rref(cur)
+    while True:
+        new = list(basis)
+        for a in basis:
+            A = unflat(a, dim)
+            for b in basis:
+                new.append(flat(mmul(A, unflat(b, dim))))
+        nb, npv = rref(new)
+        if len(nb) == len(basis):
+            return basis, piv
+        basis, piv = nb, npv
+
+
+def is_coordinate_projection(P, dim: int) -> bool:
+    """P is the projection onto a set of declared addresses: diagonal, with
+    every diagonal entry 0 or 1."""
+    if MUTANT == "coord-lax":
+        return True
+    for a in range(dim):
+        if not (P[a][a] == ONE or P[a][a].is_zero()):
+            return False
+        for b in range(dim):
+            if a != b and not P[a][b].is_zero():
+                return False
+    return True
+
+
+# --------------------------------------------------------------------------
 # 1.  Gate / anchor bookkeeping (Cycle B's discipline, own tables).
 # --------------------------------------------------------------------------
 
@@ -322,6 +527,32 @@ def hostile_boundary() -> Boundary:
     alg = CB.CStar("M2+M2", (2, 2))
     atoms = tuple(alg.central_projection([k]) for k in alg.atoms())
     return Boundary("HOSTILE", 4, atoms, (s0, s1, s2), "hostile operator system")
+
+
+def hypothesis_counterexample_boundary() -> Boundary:
+    """The boundary that shows Theorem 3.2's "exactly" clause needs its
+    block-indicator hypothesis: on the diagonal algebra of four atoms take
+    E = span{(1,1,1,1),(1,1,0,0),(1,0,1,0)}, self-adjoint, unital, of
+    dimension three.  Its projections cut the DISCRETE partition, yet no
+    singleton indicator lies in E, so the core blocks are not themselves
+    admitted splits.  The construction is the operator lens's (Cycle B'
+    panel, R1 K1.2)."""
+
+    def diag4(v):
+        m = [[ZERO] * 4 for _ in range(4)]
+        for i in range(4):
+            m[i][i] = QC(v[i])
+        return tuple(tuple(r) for r in m)
+
+    alg = CB.CStar("C4", (1, 1, 1, 1))
+    atoms = tuple(alg.central_projection([k]) for k in alg.atoms())
+    return Boundary(
+        "HYPCE",
+        4,
+        atoms,
+        (diag4((1, 1, 1, 1)), diag4((1, 1, 0, 0)), diag4((1, 0, 1, 0))),
+        "block-indicator hypothesis counterexample",
+    )
 
 
 def manufactured_boundary(ranks) -> tuple:
@@ -435,8 +666,10 @@ def admitted_split_partition(b: Boundary):
 
 
 def composite_product_law(bA: Boundary, bB: Boundary) -> Boundary:
-    """The declared PRODUCT composite: local operations on each factor and the
-    joint class GENERATED by them -- the algebraic span of products."""
+    """The declared PRODUCT composite: local operations on each factor, and for
+    the composite effect system the LINEAR SPAN of the simple tensors -- not
+    the *-algebra they generate, which is a different and strictly larger
+    declaration (see the span-vs-algebra contrast, gate H1-04b)."""
     atoms = [mkron(za, zb) for za in bA.atoms for zb in bB.atoms]
     span = [mkron(a, b) for a in bA.span for b in bB.span]
     return Boundary(
@@ -665,6 +898,27 @@ def build_declared_pvms():
         mkron(mat(((1, 0), (0, 0))), mid(2)),
         mkron(mat(((0, 0), (0, 1))), mid(2)),
     )
+    # The rank-(2,2) task with ENTANGLED atoms: {P, I-P} with
+    # P = |00><00| + |psi^+><psi^+| and I-P = |11><11| + |psi^-><psi^-|.  Both
+    # atoms are rank two and both have a non-positive partial transpose, so a
+    # classifier reading only rank-one atoms reports them unentangled.  The
+    # construction is the operator lens's (Cycle B' panel, R1 K2.3).
+    h2 = QC(Fr(1, 2))
+    advp = [[ZERO] * 4 for _ in range(4)]
+    advp[0][0] = ONE
+    for a in (1, 2):
+        for b in (1, 2):
+            advp[a][b] = h2
+    advp = tuple(tuple(r) for r in advp)
+    advq = msub(mid(4), advp)
+    # The task all of whose atoms are rank-one PRODUCT projections and which
+    # opens the gap nonetheless: the second factor's measurement depends on the
+    # first factor's outcome (operator lens, Cycle B' panel, R1 K2.5).
+    e0 = mat(((1, 0), (0, 0)))
+    e1 = mat(((0, 0), (0, 1)))
+    pp = mat(((Fr(1, 2), Fr(1, 2)), (Fr(1, 2), Fr(1, 2))))
+    pm = mat(((Fr(1, 2), Fr(-1, 2)), (Fr(-1, 2), Fr(1, 2))))
+    advprod = (mkron(e1, e0), mkron(e1, e1), mkron(e0, pp), mkron(e0, pm))
     DECLARED_PVMS.update(
         {
             "PROD": (prod, "product PVM in the coordinate basis", False),
@@ -675,6 +929,8 @@ def build_declared_pvms():
             "PARITY": (parity, "classically correlated rank-two atoms (separable)", False),
             "SYMANTI": ((sym, psi_m), "symmetric / antisymmetric split (psi^- is committed)", True),
             "LOCALZ": (localz, "a local PVM on the first factor alone", False),
+            "ADVENT": ((advp, advq), "rank-two atoms, both entangled", True),
+            "ADVPROD": (advprod, "rank-one product atoms, outcome-dependent second measurement", False),
         }
     )
     return bells, ZI, XI
@@ -769,6 +1025,63 @@ def run_h1():
         {"pairs_tested": lemma_tests, "carrier_cap": 9},
     )
 
+    # ---- H1-02b  THE TWO HYPOTHESES THEOREM 3.2 NEEDS, measured, with the
+    #      counterexample that shows the second is not vacuous.
+    unital = {}
+    blockind = {}
+    for name, b in FIXTURES.items():
+        bas, piv = b.basis()
+        unital[name] = in_span(bas, piv, flat(mid(b.dim)))
+        blockind[name] = admitted_split_partition(b)[1]
+    ce = hypothesis_counterexample_boundary()
+    ce_part, ce_ok = admitted_split_partition(ce)
+    ce_dim = len(ce.basis()[0])
+    ce_bas, ce_piv = ce.basis()
+    ce_singletons = [
+        in_span(ce_bas, ce_piv, flat(ce.atoms[k])) for k in range(4)
+    ]
+    pair_blockind = True
+    for nameA, bA in FIXTURES.items():
+        for nameB, bB in FIXTURES.items():
+            if bA.dim * bB.dim > 20:
+                continue
+            if not admitted_split_partition(composite_product_law(bA, bB))[1]:
+                pair_blockind = False
+    gate(
+        "H1-02b",
+        "lemma",
+        "THE HYPOTHESES OF THE FACTORIZATION THEOREM, MEASURED AND NOT "
+        "VACUOUS: the theorem's forward containment is the support lemma; its "
+        "reverse containment needs each effect system to contain the UNIT (so "
+        "that P(x)1 and 1(x)Q are admitted whenever P and Q are), and its "
+        "'exactly' clause needs each core block indicator to be itself an "
+        "admitted split.  Both hold on every committed fixture and on every "
+        "swept composite.  The second is not vacuous: on the diagonal algebra "
+        "of four atoms the unital self-adjoint effect system of dimension "
+        "three spanned by (1,1,1,1), (1,1,0,0) and (1,0,1,0) cuts the "
+        "DISCRETE partition while NO singleton indicator is admitted, so "
+        "without the hypothesis the core blocks need not be admitted splits "
+        "at all",
+        all(unital.values())
+        and all(blockind.values())
+        and pair_blockind
+        and ce_dim == 3
+        and len(ce_part) == 4
+        and (not ce_ok)
+        and not any(ce_singletons),
+        {
+            "fixtures_unital": unital,
+            "fixtures_block_indicators_admitted": blockind,
+            "swept_composites_block_indicators_admitted": pair_blockind,
+            "counterexample": {
+                "effect_system_dimension": ce_dim,
+                "partition_cut": [list(b) for b in ce_part],
+                "block_indicators_admitted": ce_ok,
+                "singleton_indicators_admitted": ce_singletons,
+            },
+        },
+    )
+
     # ---- H1-03  PRODUCT-LAW FACTORIZATION over the committed fixtures.
     prog("H1  product-law sweep over the committed fixture pairs")
     rows = []
@@ -808,9 +1121,10 @@ def run_h1():
         "H1-03",
         "factorization",
         "PRODUCT-LAW FACTORIZATION: under the declared product law -- local "
-        "admitted operations on each factor and the joint class GENERATED by "
-        "them -- the composite minimal boundary's admitted split algebra is "
-        "exactly the one generated by the local splits, so "
+        "admitted operations on each factor, and for the composite effect "
+        "system the LINEAR SPAN of the simple tensors, not the *-algebra they "
+        "generate -- the composite minimal boundary's admitted split algebra "
+        "is exactly the one generated by the local splits, so "
         "Core(A (x) B) = Core(A) (x) Core(B) with the GAP ZERO, on every "
         "ordered pair of committed fixtures of composite carrier dimension at "
         "most 20",
@@ -860,6 +1174,87 @@ def run_h1():
         {"composites": hostile_rows},
     )
 
+    # ---- H1-04b  "GENERATED": the declared LINEAR SPAN against the *-algebra.
+    prog("H1  the span reading against the *-algebra reading of 'generated'")
+    span_rows = []
+    for name, bA, bB in (
+        ("HOSTILE", FIXTURES["HOSTILE"], None),
+        ("HOSTILE(x)C2", FIXTURES["HOSTILE"], FIXTURES["C2"]),
+        ("HOSTILE(x)M2", FIXTURES["HOSTILE"], FIXTURES["M2"]),
+    ):
+        b = bA if bB is None else composite_product_law(bA, bB)
+        span_basis, _ = b.basis()
+        part_span, _ = admitted_split_partition(b)
+        alg, _ = star_algebra_span(b.span, b.dim)
+        balg = Boundary(
+            b.name + "*",
+            b.dim,
+            b.atoms,
+            tuple(unflat(v, b.dim) for v in alg),
+            "the *-algebra generated",
+        )
+        part_alg, _ = admitted_split_partition(balg)
+        span_rows.append(
+            {
+                "object": name,
+                "linear_span_dimension": len(span_basis),
+                "linear_span_core": len(part_span),
+                "star_algebra_dimension": len(alg),
+                "star_algebra_core": len(part_alg),
+            }
+        )
+    TABLES["span_vs_algebra"] = span_rows
+    anchor(
+        "L17",
+        "R1 K1.4 (frozen panel review e7fc8886a683)",
+        "dimension of the *-algebra generated by the hostile operator system",
+        8,
+        span_rows[0]["star_algebra_dimension"],
+    )
+    anchor(
+        "L18",
+        "R1 K1.4 (frozen panel review e7fc8886a683)",
+        "core of the hostile system composed with the classical bit, *-algebra reading",
+        4,
+        span_rows[1]["star_algebra_core"],
+    )
+    anchor(
+        "L19",
+        "R1 K1.4 (frozen panel review e7fc8886a683)",
+        "dimension of the *-algebra generated by HOSTILE (x) C2",
+        16,
+        span_rows[1]["star_algebra_dimension"],
+    )
+    gate(
+        "H1-04b",
+        "declaration",
+        "THE DECLARED READING OF 'GENERATED' IS THE LINEAR SPAN, AND THE "
+        "CONTRAST IS DISCLOSED: the declared composite effect system is the "
+        "linear span of the simple tensors, which is what the support lemma "
+        "requires and what this unit computes.  Under the other reading -- the "
+        "*-algebra generated, closed under composition -- the same declaration "
+        "yields a strictly larger object with a strictly finer core: the "
+        "hostile operator system goes from dimension 3 with a trivial core to "
+        "dimension 8 with a core of two, and its composite with the classical "
+        "bit from dimension 6 with a core of two to dimension 16 with a core "
+        "of four.  THE TRIVIAL CORE OF THE HOSTILE WING IS THEREFORE "
+        "SPAN-RELATIVE, and the distribution law is what survives both "
+        "readings when each is applied consistently to factors and composite",
+        span_rows[0]["linear_span_dimension"] == 3
+        and span_rows[0]["linear_span_core"] == 1
+        and span_rows[0]["star_algebra_dimension"] == 8
+        and span_rows[0]["star_algebra_core"] == 2
+        and span_rows[1]["linear_span_dimension"] == 6
+        and span_rows[1]["linear_span_core"] == 2
+        and span_rows[1]["star_algebra_dimension"] == 16
+        and span_rows[1]["star_algebra_core"] == 4
+        and span_rows[2]["linear_span_dimension"] == 12
+        and span_rows[2]["linear_span_core"] == 1
+        and span_rows[2]["star_algebra_dimension"] == 32
+        and span_rows[2]["star_algebra_core"] == 2,
+        {"readings": span_rows},
+    )
+
     # ---- H1-05..07  THE JOINT LAW: the gap, measured on the declared PVMs.
     prog("H1  the declared joint tasks: composite core vs local cores")
     pvm_rows = []
@@ -873,10 +1268,10 @@ def run_h1():
         locB = local_split_partition_direct(b, "B")
         prodpart = join_partitions(locA, locB, n)
         ranks = [mrank(p) for p in projs]
-        rank_one = all(r == 1 for r in ranks)
-        srs = [schmidt_rank_of_rank_one(p, 2, 2) if mrank(p) == 1 else None for p in projs]
-        entangled_atom = any(s is not None and s > 1 for s in srs)
-        prods = [is_product_projection(p, 2, 2) for p in projs]
+        cls = [classify_atom(p, 2, 2) for p in projs]
+        srs = [c["schmidt_rank"] for c in cls]
+        entangled_atom = any(c["entangled"] for c in cls)
+        prods = [c["product_projection"] for c in cls]
         opens = cpart != prodpart
         pvm_rows.append(
             {
@@ -890,6 +1285,7 @@ def run_h1():
                 "gap_opens": opens,
                 "schmidt_ranks": srs,
                 "atoms_are_product_projections": prods,
+                "atom_classification": cls,
                 "has_entangled_atom": entangled_atom,
                 "declared_entangled": declared_entangled,
                 "boundary_factorizes": cpart == prodpart,
@@ -910,24 +1306,31 @@ def run_h1():
         "THE GAP, BOTH DIRECTIONS: under the declared joint law the composite "
         "core is computed from the composite boundary's admitted splits and "
         "compared with the join of the splits readable on one factor alone.  "
-        "The gap VANISHES on every declared product task, including a product "
-        "task in a rotated basis and a purely local task; it OPENS on every "
+        "The gap VANISHES on every declared product PVM, including one in a "
+        "rotated basis, and on the purely local task; it OPENS on every "
         "declared entangled task.  Rotation of the basis alone does not open "
         "the gap -- that control separates 'manufactured in a rotated basis' "
         "from 'entangled'",
         gap_ok,
         {"tasks": pvm_rows},
     )
+    n_atoms_classified = sum(len(r["atom_classification"]) for r in pvm_rows)
+    n_rank_one = sum(
+        1 for r in pvm_rows for c in r["atom_classification"] if c["rank"] == 1
+    )
     gate(
         "H1-06",
         "witness",
         "WHAT THE GAP ACTUALLY WITNESSES: over the declared joint tasks, "
-        "'some composite-core atom is entangled' holds exactly on the tasks "
-        "declared entangled.  It is NOT equivalent to the gap opening: the "
-        "classically correlated parity task has separable rank-two atoms and "
-        "still opens the gap, so the gap alone is a JOINT-READABILITY witness "
-        "and the entanglement witness is the gap TOGETHER WITH the atom "
-        "classification (exact Schmidt rank on rank-one atoms)",
+        "'some composite-core atom is entangled' -- decided by the EXACT "
+        "partial-transpose classifier at every rank -- holds exactly on the "
+        "tasks declared entangled.  It is NOT equivalent to the gap opening: "
+        "two declared tasks open the gap with no entangled atom at all, the "
+        "classically correlated parity task with separable rank-two atoms and "
+        "the outcome-dependent task all of whose atoms are rank-one PRODUCT "
+        "projections.  So the gap alone is a JOINT-READABILITY witness and "
+        "the entanglement witness is the gap TOGETHER WITH the atom "
+        "classification",
         iff_ok,
         {
             "gap_opens_without_entanglement": [
@@ -935,6 +1338,89 @@ def run_h1():
             ],
             "entangled_and_gap_opens": [
                 r["task"] for r in pvm_rows if r["gap_opens"] and r["has_entangled_atom"]
+            ],
+            "atoms_classified": n_atoms_classified,
+            "of_which_rank_one": n_rank_one,
+        },
+    )
+    # ---- H1-06b  THE CLASSIFIER ITSELF: exact at every rank.
+    par_cls = next(r for r in pvm_rows if r["task"] == "PARITY")["atom_classification"]
+    adv_cls = next(r for r in pvm_rows if r["task"] == "ADVENT")["atom_classification"]
+    advprod_row = next(r for r in pvm_rows if r["task"] == "ADVPROD")
+    rank_one_agree = all(
+        (c["schmidt_rank"] > 1) == c["entangled"]
+        for r in pvm_rows
+        for c in r["atom_classification"]
+        if c["rank"] == 1
+    )
+    anchor(
+        "L23",
+        "R1 K2.3 (frozen panel review e7fc8886a683)",
+        "determinant of the partial transpose of each rank-two entangled atom",
+        [QC(Fr(-1, 16)), QC(Fr(-1, 16))],
+        [mdet(partial_transpose_B(p, 2, 2)) for p in DECLARED_PVMS["ADVENT"][0]],
+    )
+    anchor(
+        "L24",
+        "R1 K2.3 (frozen panel review e7fc8886a683)",
+        "product directions in the range of each atom of the rank-(2,2) entangled task",
+        [1, 1],
+        [c["product_directions"] for c in adv_cls],
+    )
+    gate(
+        "H1-06b",
+        "witness",
+        "THE ATOM CLASSIFICATION IS MEASURED AT EVERY RANK, AND THE DECISIVE "
+        "WORD IS COMPUTED: every atom of every declared task is classified by "
+        "the exact partial transpose, which at this composite dimension is "
+        "equivalent to separability, so no verdict is a default.  The "
+        "classically correlated task's rank-two atoms are certified separable "
+        "twice over -- their partial transposes are positive, and each is "
+        "exhibited as the sum of two orthogonal rank-one PRODUCT projections. "
+        " The rank-(2,2) task whose atoms are both entangled is flagged "
+        "entangled, with the determinant of each partial transpose exactly "
+        "-1/16 and exactly one product direction in each atom's range: a "
+        "classifier reading only rank-one atoms returns a FALSE NEGATIVE "
+        "there.  On rank-one atoms the partial-transpose verdict and the "
+        "exact Schmidt rank agree without exception",
+        all(c["ppt"] and c["orthogonal_product_decomposition"] for c in par_cls)
+        and all(c["entangled"] and c["rank"] == 2 for c in adv_cls)
+        and rank_one_agree
+        and n_atoms_classified == 32
+        and n_rank_one == 25,
+        {
+            "atoms_classified": n_atoms_classified,
+            "rank_one": n_rank_one,
+            "higher_rank": n_atoms_classified - n_rank_one,
+            "parity": par_cls,
+            "rank_two_entangled_task": adv_cls,
+            "rank_one_schmidt_vs_partial_transpose_agree": rank_one_agree,
+        },
+    )
+    # ---- H1-06c  what the block counts do and do not show.
+    equal_counts_differ = [
+        r["task"]
+        for r in pvm_rows
+        if r["core_AB"] == r["product_core"] and r["gap_opens"]
+    ]
+    gate(
+        "H1-06c",
+        "witness",
+        "THE GAP IS A PARTITION INEQUALITY, AND THE DECLARED FAMILY DOES NOT "
+        "SEPARATE THAT FROM A COUNT DIFFERENCE: both sides are partitions of "
+        "the same atom set, so the well-typed comparison is of partitions, "
+        "not of two counts.  Measured across the declared family, no task has "
+        "equal block counts on the two sides with different partitions -- "
+        "every task that opens the gap also has unequal counts.  The "
+        "definition is therefore justified by well-typedness alone, and no "
+        "declared task is offered as an exhibit for it",
+        equal_counts_differ == [],
+        {
+            "tasks_with_equal_counts_and_different_partitions": equal_counts_differ,
+            "block_counts": [
+                {"task": r["task"], "core_AB": r["core_AB"], "product_core": r["product_core"],
+                 "gap_opens": r["gap_opens"]}
+                for r in pvm_rows
             ],
         },
     )
@@ -964,6 +1450,8 @@ def run_h1():
     FINDINGS["H1_gap_opens_on_entangled_tasks"] = gap_ok
     FINDINGS["H1_gap_alone_is_joint_readability_not_entanglement"] = True
     FINDINGS["H1_hostile_wing_not_promoted"] = hostile_ok
+    FINDINGS["H1_atom_classification_exact_at_every_rank"] = bool(iff_ok and rank_one_agree)
+    FINDINGS["H1_hostile_trivial_core_is_span_relative"] = True
 
 
 # --------------------------------------------------------------------------
@@ -1070,11 +1558,51 @@ def family_image(fam, sigma):
 
 
 def independence(famA, famB, isos):
-    """MEASURED independence: no ADMITTED isomorphism carries one declared
-    task family onto the other.  Returns (independent, witnesses)."""
+    """The DECLARED-FAMILY independence measurement: no ADMITTED isomorphism
+    carries one declared task family onto the other.  Retained because it is
+    what the arena's certificate was first taken from; it is NON-BINDING, and
+    the unit measures exactly why (H2-02c).  Returns (independent, witnesses)."""
     wit = []
     for sigma in isos:
         if family_image(famA, sigma) == frozenset(famB):
+            wit.append(tuple(sigma))
+    return (not wit), wit
+
+
+def presented_partition(inc_vec):
+    """What a context PRESENTS at the declared overlap: the multiset of its
+    atoms' incidence images, as a sorted tuple of sorted tuples."""
+    return tuple(sorted(tuple(sorted(s)) for s in inc_vec))
+
+
+def common_refinement(incA, incB, n_overlap: int):
+    """The common refinement of the two presented structures: the finest
+    partition of the overlap atoms whose blocks both contexts' images resolve.
+    The comparison of the two presentations is posed on it."""
+    imgs = list(incA) + list(incB)
+    blocks: dict = {}
+    for j in range(n_overlap):
+        blocks.setdefault(tuple(j in S for S in imgs), []).append(j)
+    return tuple(sorted(tuple(sorted(v)) for v in blocks.values()))
+
+
+def binding_independence(incA, incB, isos):
+    """THE BINDING INDEPENDENCE GATE.  Two contexts are DEPENDENT when some
+    admitted relabelling carries the atom-partition one presents at the
+    declared overlap onto the atom-partition the other presents, as multisets.
+    The comparison is well posed because both presentations are expressible on
+    the common refinement of the two, which the caller records; the
+    relabellings searched are the admitted relabellings of the overlap atoms,
+    which refine it.  Unlike the declared-family measurement this is computed
+    from the boundaries themselves, so it can fail at unequal declared-family
+    cardinality.  Returns (independent, witnesses)."""
+    if MUTANT == "bind-lax":
+        return True, []
+    target = presented_partition(incB)
+    wit = []
+    for sigma in isos:
+        img = tuple(sorted(tuple(sorted(sigma[j] for j in S)) for S in incA))
+        if img == target:
             wit.append(tuple(sigma))
     return (not wit), wit
 
@@ -1129,6 +1657,9 @@ def run_h2():
     ctx["ADDRESS"] = boundary_from_blocks("ADDRESS", (1, 1, 1, 1, 1))
     ctx["TOMO"] = boundary_from_blocks("TOMO", (4, 1))
     ctx["ALIGNED211"] = aligned_manufactured_boundary((2, 1, 1))
+    # the two further aligned manufactured contexts the adversarial pair uses
+    ctx["ALIGNED1111"] = aligned_manufactured_boundary((1, 1, 1, 1))
+    ctx["ALIGNED22"] = aligned_manufactured_boundary((2, 2))
 
     anchor("L05", "#111 Prop 10.1", "core atom count of C^5 (corrected eraser minimum)", 5,
            len(admitted_split_partition(ctx["ERASER"])[0]))
@@ -1150,16 +1681,17 @@ def run_h2():
     # ---- H2-01  the arena is declared, and the overlap is reachable from both.
     reach = all(
         all(len(s) > 0 for s in inc[k]) and set().union(*inc[k]) == set(range(nW))
-        for k in ("MAN211", "ERASER", "ADDRESS", "TOMO")
+        for k in ctx
     )
     gate(
         "H2-01",
         "census",
         "THE ARENA IS WELL POSED: the declared overlap is reached by every "
-        "atom of every declared context and is covered by each context's "
-        "atoms, so every record that transports without collision transports "
-        "to a genuine partition of the overlap",
-        reach,
+        "atom of every declared context -- all nine of them, the quantifier "
+        "of the claim -- and is covered by each context's atoms, so every "
+        "record that transports without collision transports to a genuine "
+        "partition of the overlap",
+        reach and len(ctx) == 9,
         {"overlap_atoms": nW, "contexts": sorted(ctx)},
     )
 
@@ -1184,27 +1716,140 @@ def run_h2():
     ind_real, wit_real = independence(F_eraser, F_address, perms)
     ind_man, wit_man = independence(F_man, F_address, perms)
     ind_ctrl, wit_ctrl = independence(F_eraser, F_relabelled, perms)
+
+    def shifted_inc(iv):
+        return tuple(frozenset(shift[j] for j in S) for S in iv)
+
+    bind_rows = []
+    for label, a, b in (
+        ("ERASER vs ADDRESS (the declared arena)", inc["ERASER"], inc["ADDRESS"]),
+        ("MAN211 vs ADDRESS", inc["MAN211"], inc["ADDRESS"]),
+        ("MAN22 vs ADDRESS", inc["MAN22"], inc["ADDRESS"]),
+        ("MAN1111 vs ADDRESS", inc["MAN1111"], inc["ADDRESS"]),
+        ("TOMO vs ADDRESS", inc["TOMO"], inc["ADDRESS"]),
+        ("MAN211 vs shift(MAN211)", inc["MAN211"], shifted_inc(inc["MAN211"])),
+        ("MAN1111 vs shift(MAN1111)", inc["MAN1111"], shifted_inc(inc["MAN1111"])),
+        ("ALIGNED211 vs shift(ALIGNED211)", inc["ALIGNED211"], shifted_inc(inc["ALIGNED211"])),
+        ("ALIGNED211 vs ALIGNED1111", inc["ALIGNED211"], inc["ALIGNED1111"]),
+        ("ALIGNED211 vs ALIGNED211", inc["ALIGNED211"], inc["ALIGNED211"]),
+        ("ALIGNED211 vs ALIGNED22", inc["ALIGNED211"], inc["ALIGNED22"]),
+    ):
+        ind_b, wit_b = binding_independence(a, b, perms)
+        bind_rows.append(
+            {
+                "pair": label,
+                "independent": ind_b,
+                "witnesses": len(wit_b),
+                "shift_is_a_witness": shift in wit_b,
+                "common_refinement": [list(x) for x in common_refinement(a, b, nW)],
+                "presented_A": [list(x) for x in presented_partition(a)],
+                "presented_B": [list(x) for x in presented_partition(b)],
+            }
+        )
+    TABLES["binding_independence"] = bind_rows
+    arena_row = bind_rows[0]
+    ctrl_row = next(r for r in bind_rows if r["pair"] == "MAN211 vs shift(MAN211)")
     gate(
         "H2-02",
         "independence",
-        "INDEPENDENCE IS MEASURED, NOT DECLARED: no admitted isomorphism of "
-        "the standard law -- all 120 address relabellings were searched -- "
-        "carries the declared eraser family onto the declared address family, "
-        "nor the manufactured family onto the address family.  The two "
-        "contexts of the arena are operationally independent",
-        ind_real and ind_man,
-        {"relabellings_searched": len(perms), "witnesses": wit_real + wit_man},
+        "INDEPENDENCE IS MEASURED BY A GATE THAT CAN FAIL, AND AT THE "
+        "DECLARED ARENA IT DOES FAIL: the gate compares the atom-partitions "
+        "the two contexts PRESENT at the declared overlap, as multisets, "
+        "under all 120 admitted relabellings of their common refinement.  It "
+        "is computed from the boundaries themselves rather than from "
+        "hand-declared future families.  At the declared arena the two "
+        "contexts present the same atom-partition -- the discrete partition "
+        "of the overlap -- so every one of the 120 relabellings carries one "
+        "onto the other and THE ARENA'S TWO CONTEXTS ARE DEPENDENT.  The "
+        "three constructed manufactured contexts and the coarser tomographic "
+        "context are independent of the address context, and are so for a "
+        "reason the gate computes",
+        (not arena_row["independent"])
+        and arena_row["witnesses"] == len(perms)
+        and all(
+            r["independent"]
+            for r in bind_rows
+            if r["pair"] in ("MAN211 vs ADDRESS", "MAN22 vs ADDRESS",
+                             "MAN1111 vs ADDRESS", "TOMO vs ADDRESS")
+        ),
+        {"pairs": bind_rows, "relabellings_searched": len(perms)},
     )
     gate(
         "H2-03",
         "control",
-        "THE INDEPENDENCE GATE BITES: when the second context is replaced by "
-        "an admitted-isomorphism image of the first -- the cyclic address "
-        "shift applied to the eraser family -- the same gate FAILS and names "
-        "the carrying isomorphism.  A gate that could not fail would prove "
-        "nothing",
-        (not ind_ctrl) and shift in wit_ctrl,
-        {"carrying_isomorphism": wit_ctrl, "relabelled_context": "shift(eraser family)"},
+        "THE REBUILT GATE BITES ON THE RELABELLED CONTROL: when a second "
+        "context is replaced by an admitted-isomorphism image of the first -- "
+        "the cyclic address shift applied to a context's presented "
+        "atom-partition -- the gate FAILS and names the carrying "
+        "relabellings, the cyclic shift among them, on every context whose "
+        "presented partition is not already relabelling-invariant.  A gate "
+        "that could not fail would prove nothing",
+        all(
+            (not r["independent"]) and r["shift_is_a_witness"]
+            for r in bind_rows
+            if r["pair"].startswith(("MAN211 vs shift", "MAN1111 vs shift",
+                                     "ALIGNED211 vs shift"))
+        ),
+        {
+            "controls": [r for r in bind_rows if " vs shift(" in r["pair"]],
+            "carrying_relabellings_MAN211": ctrl_row["witnesses"],
+        },
+    )
+    gate(
+        "H2-03b",
+        "independence",
+        "THE REBUILT GATE IS CAPABLE OF FAILING AT UNEQUAL DECLARED-FAMILY "
+        "CARDINALITY, WHICH IS EXACTLY WHERE THE FAMILY-LEVEL MEASUREMENT "
+        "COULD NOT: the arena's two declared future families have "
+        "cardinalities 2 and 6, and no relabelling can carry a 2-element "
+        "family onto a 6-element one, so the family-level gate was "
+        "structurally unable to return a witness there.  On the SAME pair the "
+        "rebuilt gate fails, with all 120 relabellings as witnesses.  The "
+        "rebuilt gate's own residual blindness is stated with it: two "
+        "contexts presenting different NUMBERS of atoms can never be carried "
+        "onto one another, so it cannot detect dependence across unequal atom "
+        "counts",
+        (not arena_row["independent"])
+        and len(F_eraser) == 2
+        and len(F_address) == 6
+        and max(len(family_image(F_eraser, s)) for s in perms) < len(F_address),
+        {
+            "declared_family_cardinalities": {"eraser": len(F_eraser), "address": len(F_address)},
+            "max_image_cardinality": max(len(family_image(F_eraser, s)) for s in perms),
+            "family_level_verdict": ind_real,
+            "rebuilt_verdict_independent": arena_row["independent"],
+        },
+    )
+    anchor(
+        "L25",
+        "R3 F1 / R2 F-3 (frozen panel reviews f5adf20bf814, a375336ae5ee)",
+        "declared future family cardinalities (eraser, address)",
+        [2, 6],
+        [len(F_eraser), len(F_address)],
+    )
+    gate(
+        "H2-03c",
+        "independence",
+        "THE FAMILY-LEVEL MEASUREMENT IS NON-BINDING UNDER BOTH COMMITTED "
+        "LAWS, AND THE UNIT SAYS SO: under the standard law the arena's two "
+        "declared families differ in cardinality, so the search over all 120 "
+        "relabellings could not have returned a witness whatever the families "
+        "contained -- the certificate was true and vacuous.  Under the "
+        "predecessor's counter-law exactly one admitted map is reversible, "
+        "the identity, so the family-level gate there reduces to the test "
+        "that two declared families are unequal and cannot detect a "
+        "relabelled copy at all.  Neither the certificate nor its "
+        "law-relativity is withdrawn; what is withdrawn is the claim that "
+        "either measured anything discriminating",
+        ind_real and ind_man and (not ind_ctrl) and shift in wit_ctrl,
+        {
+            "standard_law": {
+                "certificate": ind_real,
+                "carried_by": "cardinality mismatch 2 vs 6, not by the search",
+                "control_fails": not ind_ctrl,
+                "carrying_isomorphisms": len(wit_ctrl),
+            }
+        },
     )
 
     # ---- H2-04  the bare-boundary isomorphism exists but MOVES the overlap.
@@ -1227,19 +1872,36 @@ def run_h2():
             img[a][b].is_zero() for a in range(5) for b in range(5) if a != b
         )
         moved.append(not diagonal)
+    man_non_address = [
+        k
+        for k in range(5)
+        if not is_coordinate_projection(ctx["MAN1111"].atoms[k], 5)
+    ]
+    legit_is_overlap = all(meq(a, b) for a, b in zip(legit.atoms, W))
     gate(
         "H2-04",
         "impossibility",
-        "WHY THE ONE-BOUNDARY COVARIANCE OBSTRUCTION DOES NOT TRANSFER: the "
-        "reversible map that carries the legitimate five-atom boundary onto "
-        "the constructed manufactured one -- recomputed here, with the same "
-        "committed atom map -- does NOT preserve the declared overlap: it "
-        "sends declared address projections to non-diagonal elements.  A "
-        "criterion covariant for one context alone is therefore not a "
-        "criterion covariant for the arena, and the predecessor's covariance "
-        "theorem has no purchase here",
-        any(moved),
-        {"atom_map": carried, "overlap_atoms_moved": moved},
+        "WHY THE ONE-BOUNDARY COVARIANCE OBSTRUCTION DOES NOT TRANSFER, FOR "
+        "EVERY CARRYING MAP AND NOT ONLY THE COMMITTED ONE: the reversible "
+        "map that carries the legitimate five-atom boundary onto the "
+        "constructed manufactured one -- recomputed here, with the same "
+        "committed atom map -- does not preserve the declared overlap, "
+        "sending four of the five declared address projections to "
+        "non-diagonal elements.  The conclusion is not confined to that "
+        "witness: the legitimate context's atoms ARE the overlap's atoms, so "
+        "ANY reversible map carrying the legitimate boundary onto the "
+        "manufactured one sends the overlap atoms onto the manufactured "
+        "atoms, and four of those are not address projections.  No carrying "
+        "map preserves the declared overlap.  A criterion covariant for one "
+        "context alone is therefore not a criterion covariant for the arena",
+        any(moved) and sum(moved) == 4 and legit_is_overlap and len(man_non_address) == 4,
+        {
+            "atom_map": carried,
+            "overlap_atoms_moved": moved,
+            "overlap_atoms_moved_count": sum(moved),
+            "legitimate_context_atoms_are_the_overlap_atoms": legit_is_overlap,
+            "manufactured_atoms_that_are_not_address_projections": man_non_address,
+        },
     )
 
     # ---- H2-05  THE TOP-OF-LATTICE GUARD.
@@ -1258,16 +1920,38 @@ def run_h2():
             top_tests += 1
             if CB.discrete(n) not in CB.fix_set_of_family(fam, n):
                 top_fixed_ok = False
+    exhaustive = {}
+    exh_ok = True
+    for n in (2, 3, 4):
+        pool = CB.relations_of(n)
+        bad = sum(
+            1 for r in pool if CB.discrete(n) not in CB.fix_set_of_family([r], n)
+        )
+        exhaustive[n] = {"relations": len(pool), "not_fixing_the_top": bad}
+        if bad:
+            exh_ok = False
+    anchor(
+        "L26",
+        "R2 F-6 (frozen panel review a375336ae5ee)",
+        "left-total relations swept exhaustively at atom counts 2, 3, 4",
+        [9, 343, 50625],
+        [exhaustive[n]["relations"] for n in (2, 3, 4)],
+    )
     gate(
         "H2-05a",
         "guard",
-        "THE OBSTRUCTION BEING ESCAPED, RE-VERIFIED NATIVELY: on 160 declared "
-        "admitted families at atom counts 2 to 5 the greatest record of the "
-        "one-boundary record lattice is a fixed point of the availability "
-        "closure without exception, so no closure operator on a single "
-        "context's record lattice can reject it",
-        top_fixed_ok,
-        {"families": top_tests},
+        "THE PREMISE OF THE OBSTRUCTION BEING ESCAPED, MEASURED "
+        "EXHAUSTIVELY: the universal statement that every closure operator "
+        "fixes the greatest record is proved by extensivity and needs no "
+        "sampling.  What is measured here is the predecessor's AVAILABILITY "
+        "closure at the top: sweeping EVERY left-total relation at atom "
+        "counts two, three and four -- 9, 343 and 50625 relations -- not one "
+        "fails to fix the greatest record, so the availability closure fixes "
+        "it for every family over those relations, not merely for a sample.  "
+        "The 160 seeded families at atom counts two to five are retained as a "
+        "cross-check at the atom count the arena uses",
+        exh_ok and top_fixed_ok,
+        {"exhaustive": exhaustive, "seeded_families": top_tests},
     )
 
     addr_facts = facts_realized(ctx["ADDRESS"].atoms, inc["ADDRESS"])
@@ -1377,13 +2061,53 @@ def run_h2():
         "three constructed manufactured boundaries the manufactured record "
         "collides at the declared overlap (distinct blocks reach a common "
         "overlap atom), so it fails the transport clause outright and is "
-        "certified against neither declared second context.  It fails for the "
-        "very feature that manufactured it: the measure was chosen in a "
-        "rotated basis so that no block structure could be read off the "
-        "coordinates, and that is exactly what leaves it with no fact content "
-        "at an independently declared overlap",
+        "certified against neither declared second context.  What it fails "
+        "for is stated exactly by H2-06b: at this overlap a context's "
+        "greatest record transports without collision if and only if every "
+        "atom of its measure is an address projection.  The separation is "
+        "ROTATED against ADDRESS-ALIGNED, not manufactured against earned",
         disc_neg,
         {"contexts": disc_rows},
+    )
+    # ---- H2-06b  THE CORRECTED DIAGNOSIS, as a biconditional, on every context.
+    diag_rows = []
+    diag_ok = True
+    for key in sorted(ctx):
+        n = len(ctx[key].atoms)
+        d1 = transports_without_collision(CB.discrete(n), inc[key])
+        coord = all(is_coordinate_projection(z, ctx[key].dim) for z in ctx[key].atoms)
+        diag_rows.append(
+            {
+                "context": key,
+                "top_transports_without_collision": d1,
+                "every_atom_is_an_address_projection": coord,
+                "biconditional_holds": d1 == coord,
+            }
+        )
+        if d1 != coord:
+            diag_ok = False
+    TABLES["diagnosis"] = diag_rows
+    gate(
+        "H2-06b",
+        "DISCRIMINATOR",
+        "WHAT THE NEGATIVE DIRECTION ACTUALLY SEPARATES: at the declared "
+        "overlap a context's greatest record transports without collision IF "
+        "AND ONLY IF every atom of its measure is an address projection.  "
+        "(Necessity: if the atoms' address supports are pairwise disjoint "
+        "they partition the addresses, since the diagonal entries of the "
+        "atoms sum to one at each address; for an address outside an atom's "
+        "support that atom's diagonal entry vanishes, and positivity then "
+        "kills the whole row and column, so the atom is dominated by the "
+        "coordinate projection onto its support; the two families both sum to "
+        "the unit and their differences are positive, so they are equal.  "
+        "Sufficiency is immediate.)  Measured on every declared context "
+        "without exception.  The constructed manufactured measures were built "
+        "by rotating the coordinate basis and the overlap is the coordinate "
+        "algebra, so their rejection separates ROTATED from ADDRESS-ALIGNED "
+        "-- it does not separate manufactured from earned, and the aligned "
+        "manufactured context descends",
+        diag_ok and len(diag_rows) == 9,
+        {"contexts": diag_rows},
     )
     n_er = len(ctx["ERASER"].atoms)
     top_er = CB.discrete(n_er)
@@ -1458,20 +2182,99 @@ def run_h2():
         tomo_rows,
     )
 
-    # ---- H2-09  positive control: the identity overlap.
+    # ---- H2-09  the identity-overlap configuration is the SAME measurement.
     self_inc = incidence(ctx["ERASER"].atoms, ctx["ERASER"].atoms)
     self_facts = facts_realized(ctx["ERASER"].atoms, self_inc)
     self_cert = certified_records(ctx["ERASER"].atoms, self_inc, self_facts, n_er)
+    same_computation = (
+        self_inc == inc["ERASER"]
+        and self_facts == addr_facts
+        and set(self_cert) == set(cert["ERASER"]["vs_ADDRESS"])
+    )
     gate(
         "H2-09",
-        "control",
-        "POSITIVE CONTROL, THE IDENTITY OVERLAP: when the declared overlap is "
-        "the context's own core and the second context is a copy, every "
-        "non-vacuous record descends -- 51 of the 52 records, the excluded "
-        "one being the trivial record, which fails the non-vacuity clause.  "
-        "The selector fires when it should",
-        len(self_cert) == CB.bell(n_er) - 1,
-        {"certified": len(self_cert), "records": CB.bell(n_er)},
+        "census",
+        "THE IDENTITY-OVERLAP CONFIGURATION IS THE SAME MEASUREMENT AS THE "
+        "POSITIVE DIRECTION, AND IS REPORTED AS ONE: setting the overlap to "
+        "the legitimate context's own core and the second context to a copy "
+        "reproduces the incidence data, the realized fact set and the "
+        "certified set of the positive direction identically.  It is "
+        "therefore a consistency identity, not independent evidence, and the "
+        "51 of 52 it reports is the SAME 51 -- one measurement referred to "
+        "twice, not two measurements",
+        same_computation and len(self_cert) == CB.bell(n_er) - 1,
+        {
+            "identical_incidence": self_inc == inc["ERASER"],
+            "identical_fact_sets": self_facts == addr_facts,
+            "identical_certified_sets": set(self_cert) == set(cert["ERASER"]["vs_ADDRESS"]),
+            "certified": len(self_cert),
+            "records": CB.bell(n_er),
+        },
+    )
+
+    # ---- H2-09b  THE DISCLOSURE: the second context IS the declared overlap.
+    coincide_addr = all(meq(a, b) for a, b in zip(ctx["ADDRESS"].atoms, W)) and len(
+        ctx["ADDRESS"].atoms
+    ) == nW
+    coincide_er = all(meq(a, b) for a, b in zip(ctx["ERASER"].atoms, W)) and len(
+        ctx["ERASER"].atoms
+    ) == nW
+    d2_rows = []
+    d2_ok = True
+    for key in ("MAN211", "MAN22", "MAN1111", "ERASER", "ALIGNED211"):
+        n = len(ctx[key].atoms)
+        d13 = [
+            p
+            for p in CB.parts_of(n)
+            if transports_without_collision(p, inc[key])
+            and fact_of(p, inc[key]) != (tuple(range(nW)),)
+        ]
+        d2_rows.append(
+            {
+                "context": key,
+                "D1_and_D3_only": len(d13),
+                "certified_vs_ADDRESS": len(cert[key]["vs_ADDRESS"]),
+                "removed_by_D2_at_the_arena": len(d13) - len(cert[key]["vs_ADDRESS"]),
+                "certified_vs_TOMO": len(cert[key]["vs_TOMO"]),
+                "removed_by_D2_against_TOMO": len(d13) - len(cert[key]["vs_TOMO"]),
+            }
+        )
+        if len(d13) != len(cert[key]["vs_ADDRESS"]):
+            d2_ok = False
+    TABLES["co_reference_bite"] = d2_rows
+    anchor(
+        "L27",
+        "R2 F-2 / R3 F3 (frozen panel reviews a375336ae5ee, f5adf20bf814)",
+        "fact contents realized by the declared second context (all partitions of the overlap)",
+        CB.bell(nW),
+        len(addr_facts),
+    )
+    gate(
+        "H2-09b",
+        "census",
+        "THE DECLARED SECOND CONTEXT IS THE DECLARED OVERLAP, AND CLAUSE (D2) "
+        "REMOVES NOTHING THERE: the address context's atoms are the overlap's "
+        "atoms, one for one, and so are the legitimate eraser context's -- the "
+        "corrected eraser minimum IS the committed address algebra, which is "
+        "laboratory data, but the coincidence must be reported.  Because the "
+        "second context is the overlap, it realizes all 52 fact contents, "
+        "every partition of the overlap, so any record passing transport and "
+        "non-vacuity passes co-reference automatically: measured, (D2) removes "
+        "ZERO records from every context at the declared arena.  Co-reference "
+        "bites only against the coarser tomographic context, which realizes 2 "
+        "fact contents and where the positive certificate is withdrawn.  The "
+        "arena is therefore an ALIGNMENT test at an externally declared "
+        "algebra, and the escape from the one-boundary obstruction is carried "
+        "by posing availability at that algebra, not by comparing two contexts",
+        coincide_addr and coincide_er and d2_ok and len(addr_facts) == CB.bell(nW),
+        {
+            "address_context_is_the_overlap": coincide_addr,
+            "eraser_context_is_the_overlap": coincide_er,
+            "fact_contents_realized_by_ADDRESS": len(addr_facts),
+            "all_partitions_of_the_overlap": CB.bell(nW),
+            "fact_contents_realized_by_TOMO": len(tomo_facts),
+            "records_removed_by_D2": d2_rows,
+        },
     )
 
     # ---- H2-10  the fact/token split, measured.
@@ -1512,26 +2315,48 @@ def run_h2():
     anchor("L21", "Cycle B Prop 4.12", "reversible admitted maps of the counter-law", 1, len(rev))
     fixed_R = CB.fix_set_of_family([CB.functional_support(f) for f in law], 5)
     anchor("L22", "Cycle B Prop 4.12", "records fixed under the counter-law", 52, len(fixed_R))
-    isos_R = [f for f in rev]
+    isos_R = [tuple(f) for f in rev]
     ind_ctrl_R, wit_ctrl_R = independence(F_eraser, F_relabelled, isos_R)
+    bind_R = []
+    for label, a, b in (
+        ("ERASER vs ADDRESS (the declared arena)", inc["ERASER"], inc["ADDRESS"]),
+        ("MAN211 vs shift(MAN211)", inc["MAN211"], shifted_inc(inc["MAN211"])),
+        ("ALIGNED211 vs ALIGNED211", inc["ALIGNED211"], inc["ALIGNED211"]),
+        ("ALIGNED211 vs ALIGNED1111", inc["ALIGNED211"], inc["ALIGNED1111"]),
+    ):
+        i_r, w_r = binding_independence(a, b, isos_R)
+        bind_R.append({"pair": label, "independent": i_r, "witnesses": len(w_r)})
+    TABLES["binding_independence_counter_law"] = bind_R
     gate(
         "H2-11",
         "control",
-        "THE COUNTER-LAW AS THE SECOND CONTEXT'S LAW, REPORTED HONESTLY: "
-        "under the composition closure of the reprepare futures the only "
-        "reversible admitted map is the identity, so the relabelled context "
-        "that the standard law exposes as a dependent copy PASSES the "
-        "independence gate there.  Independence, like admission before it, is "
-        "law-relative and must be certified per law; the descent verdicts "
-        "themselves are unchanged, because transport to the overlap is decided "
-        "by incidence and not by the future class",
-        ind_ctrl_R and (not ind_ctrl),
+        "THE COUNTER-LAW AS THE SECOND CONTEXT'S LAW, AND THE DEGENERACY IT "
+        "CAUSES: under the composition closure of the reprepare futures there "
+        "are 120 admitted sector maps of which EXACTLY ONE is reversible, the "
+        "identity.  The gate searches the reversible maps, so under that law "
+        "it searches a single map and reduces to the test that two "
+        "presentations are literally unequal: it still catches an identical "
+        "copy and it cannot catch a relabelled one at all.  The relabelled "
+        "context that the standard law exposes as dependent therefore PASSES "
+        "there, at both the family level and the rebuilt level.  Independence, "
+        "like admission before it, is law-relative and must be certified per "
+        "law; the descent verdicts themselves are unchanged, because transport "
+        "to the overlap is decided by incidence and not by the future class",
+        ind_ctrl_R
+        and (not ind_ctrl)
+        and len(isos_R) == 1
+        and bind_R[1]["independent"]
+        and (not bind_R[0]["independent"])
+        and (not bind_R[2]["independent"]),
         {
             "counter_law_size": len(law),
             "reversible": len(rev),
+            "reversible_maps": [list(f) for f in isos_R],
             "records_fixed": len(fixed_R),
             "relabelled_context_independent_under_counter_law": ind_ctrl_R,
             "relabelled_context_independent_under_standard_law": ind_ctrl,
+            "rebuilt_gate_under_the_counter_law": bind_R,
+            "gate_search_space_under_the_counter_law": len(isos_R),
         },
     )
 
@@ -1570,6 +2395,75 @@ def run_h2():
         and not rows[1]["factor_record_descends_non_vacuously"],
         {"tasks": rows},
     )
+
+    # ---- H2-13  THE ADVERSARIAL PAIR: the standing obstruction, named.
+    prog("H2  the adversarial pair")
+    adv_rows = []
+    for label, k1, k2 in (
+        ("both contexts manufactured, different boundaries", "ALIGNED211", "ALIGNED1111"),
+        ("both contexts manufactured, one boundary twice", "ALIGNED211", "ALIGNED211"),
+        ("both contexts manufactured, the (2,2) variant", "ALIGNED211", "ALIGNED22"),
+    ):
+        partner_facts = facts_realized(ctx[k2].atoms, inc[k2])
+        c = certified_records(ctx[k1].atoms, inc[k1], partner_facts, nW)
+        n1 = len(ctx[k1].atoms)
+        forged = CB.discrete(n1)
+        ind_b, wit_b = binding_independence(inc[k1], inc[k2], perms)
+        adv_rows.append(
+            {
+                "pair": label,
+                "context_1": k1,
+                "context_2": k2,
+                "forged_record_descends": forged in c,
+                "certified": len(c),
+                "records": CB.bell(n1),
+                "passes_the_rebuilt_independence_gate": ind_b,
+                "carrying_relabellings": len(wit_b),
+            }
+        )
+    TABLES["adversarial_pair"] = adv_rows
+    anchor(
+        "L28",
+        "R2 F-4 / R3 F2 (frozen panel reviews a375336ae5ee, f5adf20bf814)",
+        "records certified for the adversary's first context against the second",
+        14,
+        adv_rows[0]["certified"],
+    )
+    gate(
+        "H2-13",
+        "obstruction",
+        "THE ADVERSARIAL PAIR, NAMED AND LEFT OPEN: a declared task family and "
+        "the boundary it presents are not tied to one another anywhere in this "
+        "construction -- the independence gate constrains what the contexts "
+        "present, descent constrains the boundaries through incidence -- so an "
+        "adversary who declares BOTH contexts controls both.  Taking both "
+        "contexts to be aligned manufactured boundaries, each a measure chosen "
+        "to match a preselected one, the forged greatest record of the first "
+        "descends against the second and 14 of its 15 records are certified.  "
+        "The rebuilt independence gate is reported on all three forms without "
+        "adjustment: it catches the form that declares one boundary twice, and "
+        "it PASSES the two forms whose boundaries differ, including the one "
+        "whose forged record descends.  THE PAIR IS NOT FORECLOSED HERE AND "
+        "NOTHING BELOW WEAKENS IT.  It does not trigger the escalation "
+        "outcome, whose pre-registered condition is the CONSTRUCTED rotated "
+        "manufactured record descending, and that record still fails transport "
+        "in every case.  The construction is the panel's, made independently "
+        "by the effectus and instrument lenses of this cycle",
+        adv_rows[0]["forged_record_descends"]
+        and adv_rows[0]["certified"] == 14
+        and adv_rows[0]["passes_the_rebuilt_independence_gate"]
+        and (not adv_rows[1]["passes_the_rebuilt_independence_gate"])
+        and disc_neg,
+        {"forms": adv_rows},
+    )
+    FINDINGS["H2_adversarial_pair_passes_and_forges"] = bool(
+        adv_rows[0]["forged_record_descends"]
+        and adv_rows[0]["passes_the_rebuilt_independence_gate"]
+    )
+    FINDINGS["H2_arena_contexts_are_dependent_under_the_binding_gate"] = bool(
+        not arena_row["independent"]
+    )
+    FINDINGS["H2_co_reference_removes_no_record_at_the_declared_arena"] = bool(d2_ok)
 
 
 # --------------------------------------------------------------------------
@@ -1637,30 +2531,50 @@ def verdict():
                 "general case carried by the proved support lemma"
             ),
             "RQ0-L1-ENTANGLEMENT-WITNESS": (
-                "finite; the declared eight-member family of joint tasks on the "
+                "finite; the declared ten-member family of joint tasks on the "
                 "two-qubit composite, entangled members built from the committed "
-                "entangled objects; the entanglement classification is exact on rank-one "
-                "atoms via Schmidt rank"
+                "entangled objects; the atom classification is exact at EVERY rank by "
+                "the exact partial transpose, which decides separability at this "
+                "composite dimension"
             ),
             "RQ0-L1-DESCENT-SELECTOR": (
-                "finite; ONE declared arena (two independently declared task families and "
-                "one declared overlap on the committed five-dimensional carrier); "
-                "exhaustive over all records of every declared context; the negative "
-                "direction verified on all three constructed manufactured boundaries"
+                "finite; ONE declared arena on the committed five-dimensional carrier, "
+                "whose declared second context IS the declared overlap, so the rung is "
+                "an ALIGNMENT test at an externally declared algebra: co-reference "
+                "removes no record there, independence of the two contexts FAILS the "
+                "binding gate there, and the certificate is relative to the standard "
+                "law; exhaustive over all records of every declared context; the "
+                "negative direction verified on all three constructed manufactured "
+                "boundaries"
             ),
         },
         "corrections": [
             "the core gap ALONE is a joint-readability witness, not an entanglement "
-            "witness: a classically correlated declared task opens it with separable "
-            "atoms.  The entanglement witness is the gap together with the exact atom "
-            "classification",
-            "descent certifies non-vacuous fact content at an independently declared "
-            "overlap, not absence of manufacture: an aligned manufactured measure does "
+            "witness: two declared tasks open it with no entangled atom -- one with "
+            "separable rank-two atoms and one whose atoms are all rank-one product "
+            "projections.  The entanglement witness is the gap together with the atom "
+            "classification, which is exact at every rank",
+            "descent certifies non-vacuous fact content at an externally declared "
+            "algebra, not absence of manufacture: an aligned manufactured measure does "
             "descend",
+            "the negative direction separates ROTATED from ADDRESS-ALIGNED, not "
+            "manufactured from earned: at this overlap the greatest record transports "
+            "without collision if and only if every atom of the measure is an address "
+            "projection",
+            "the declared second context coincides with the declared overlap, so the "
+            "co-reference clause removes no record at the declared arena and the escape "
+            "from the one-boundary obstruction is carried by posing availability at an "
+            "externally declared algebra",
         ],
         "not_earned": [
             "no arena-independent selector: certification is relative to the declared "
-            "arena, and a coarser second context certifies strictly less"
+            "arena, and a coarser second context certifies strictly less",
+            "no exclusion of an adversary who declares BOTH contexts: nothing ties a "
+            "declared task family to the boundary it presents, and a pair of aligned "
+            "manufactured contexts passes the rebuilt independence gate while the "
+            "forged record descends.  Left open",
+            "no independence of the arena's two contexts: under the binding gate they "
+            "are DEPENDENT, being the same object",
         ],
     }
 
@@ -1672,7 +2586,13 @@ def build_receipt():
         "unit": "RQ0-L1 Cycle B' - composite boundaries and the de-smuggling arena",
         "pin_commit": PIN_COMMIT,
         "immutable_base_commit": BASE_COMMIT,
-        "status": "GREEN-UNREVIEWED",
+        "status": "REPAIRED AFTER THREE-LENS PANEL REVIEW (3 x ACCEPT-WITH-FIXES)",
+        "panel": {
+            "adjudication": "06ca494",
+            "operator_lens": "e7fc8886a683",
+            "effectus_lens": "a375336ae5ee",
+            "instrument_lens": "f5adf20bf814",
+        },
         "arithmetic": "exact (fractions.Fraction and Q(i)); no float in any substantive path",
         "source_sha256": SOURCE_SHA256,
         "anchor_type_violations": EXACTNESS_VIOLATIONS,
@@ -1694,8 +2614,9 @@ def build_receipt():
             "note": (
                 "run `--falsification-selftest`; each mutant must exit 1.  Anchor "
                 "mutants substitute the reported value at the anchor comparison site; "
-                "derivation mutants perturb a computation and must make at least one "
-                "gate fail, which also exits 1"
+                "derivation mutants perturb a computation and must be killed either by "
+                "making at least one gate fail or by moving a value an anchor pins -- "
+                "both exit 1, and the self-test records which"
             ),
             "anchor_mutants": {k: v[0] for k, v in sorted(MUTANT_TABLE.items())},
             "derivation_mutants": dict(sorted(MUTANT_GATE_TABLE.items())),
@@ -1716,6 +2637,11 @@ def build_receipt():
             "no arena-independent record and no W3 rung",
             "no claim that the declared composite is the only admissible one",
             "no actual outcome selection and no event-token identity",
+            "no claim that the arena's two contexts are independent: under the "
+            "binding gate they are dependent",
+            "no claim that an adversary declaring both contexts is excluded",
+            "no claim that the atom classification extends beyond this composite "
+            "dimension, where positivity of the partial transpose decides separability",
         ],
     }
 
@@ -1793,12 +2719,21 @@ MUTANT_TABLE = {
     "erase-min": ("L05", 4),
     "atom-map": ("L13", [0, 1, 2, 3, 4]),
     "hostile-dim": ("L14", 2),
+    "star-dim": ("L17", 7),
+    "advent-pt": ("L23", [QC(0), QC(0)]),
+    "d2-facts": ("L27", 51),
+    "family-card": ("L25", [2, 2]),
 }
 
 MUTANT_GATE_TABLE = {
     "descent-lax": "the transport clause treats nested images as non-colliding",
     "fact-coarse": "transported fact content merges the first two images",
     "gap-lax": "the local split partition is reported as the discrete one",
+    "ppt-lax": "the partial-transpose test reports every atom positive, so the "
+               "rank-two entangled atoms are classified separable",
+    "bind-lax": "the binding independence gate reports every pair independent",
+    "coord-lax": "every atom is reported an address projection, so the "
+                 "corrected diagnosis cannot fail",
 }
 
 
