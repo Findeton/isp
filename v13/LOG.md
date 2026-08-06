@@ -5171,3 +5171,37 @@ hand-derived witness), R3 instrument (K4 measured verdicts incl.
 the member-2 LEAK TEST under a joint reading + the Feynman
 recomputation + the ten deviations).  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — CYCLE B″ R3 (INSTRUMENT) REVIEW FROZEN (v13 LEDGER
+## #140)
+review-rq0-admissibility-instrument.md frozen; compliance
+verified.  R3: ACCEPT-WITH-FIXES; 25 native recomputations, ZERO
+disagreements (all 16 rigidity sweeps; all discriminator verdicts
+and family sizes 240/120/420/1280; both Feynman statistics; the
+whole cost tower).  Both rungs stand.  FIX-REAL: (F1) the
+headline "(i-a)+(ii-a) fail together" is DECLARATION-RELATIVE —
+§6 never reads the adversary's declared family (it substitutes
+closure + full carrier); under other declarations at the same
+forged boundary the kill is (i-b) alone; across all 52 records
+(i-b)/(ii-b) hold 52/52 by construction and (i-a) ⟺ (ii-a) ⟺
+"boundary is discrete" — one measured bit per table row.  (F2)
+the patch is a QUADRUPLE, not a triple (W1 and W3 are the same
+triple with opposite verdicts — the declared preparation is a
+component).  (F3) Thm 7.2's comparator fails (i-b) AND (ii-a),
+not "(i-b)" as stated — the one asserted-not-adjudicated clause
+verdict.  SCOPE (F4): member 1's inadmissibility is NOT
+law-universal (an identity-free law admits the forged boundary);
+only the JOINT statement is law-universal.  STRENGTHENING (F8):
+RIGIDITY HAS AN EXACT CONVERSE — the carrier's algebra is
+admissible IFF the law contains the identity; measured 687/687
+sub-laws of T₃; 0 laws admit both the carrier's chart and any
+proper one; 428 identity-free laws admit a proper chart — A
+STRICT DICHOTOMY.  MEMBER-2 LEAK TEST: NOT A LEAK — the pair
+fails under EVERY joint reading (0 of 687 laws admit both;
+generalizes Thm 6.1) — but member 2's certificate is issued to
+the CANONICAL patch at that boundary, not to what the adversary
+declared (a wording fix).  **THE STAGE-5 ANSWER, load-bearing:
+the naive relative form (i-b′) unblocks all 52 charts AND
+RE-ADMITS THE FORGERY — the discriminating power and the blockade
+are the SAME MECHANISM.**  Deviations appendix FAILS BY THREE
+undeclared items.  Adjudication waits for R1 + R2.
