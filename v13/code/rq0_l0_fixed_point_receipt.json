@@ -1,0 +1,1226 @@
+{
+  "anchor_type_violations": [],
+  "anchors": {
+    "entries": [
+      {
+        "committed": "(Fraction(3, 4), Fraction(1, 4))",
+        "computed": "(Fraction(3, 4), Fraction(1, 4))",
+        "id": "A01",
+        "pass": true,
+        "quantity": "preserving Z-dephasing law p_0",
+        "source": "#103 sec 7.2"
+      },
+      {
+        "committed": "(Fraction(1, 4), Fraction(3, 4))",
+        "computed": "(Fraction(1, 4), Fraction(3, 4))",
+        "id": "A02",
+        "pass": true,
+        "quantity": "preserving Z-dephasing law p_1",
+        "source": "#103 sec 7.2"
+      },
+      {
+        "committed": "(Fraction(1, 2), Fraction(1, 2))",
+        "computed": "(Fraction(1, 2), Fraction(1, 2))",
+        "id": "A03",
+        "pass": true,
+        "quantity": "no-write reset output (setting 0)",
+        "source": "#103 sec 7.2"
+      },
+      {
+        "committed": "(Fraction(1, 2), Fraction(1, 2))",
+        "computed": "(Fraction(1, 2), Fraction(1, 2))",
+        "id": "A04",
+        "pass": true,
+        "quantity": "no-write reset output (setting 1)",
+        "source": "#103 sec 7.2"
+      },
+      {
+        "committed": "1/4",
+        "computed": "1/4",
+        "id": "A05",
+        "pass": true,
+        "quantity": "no-write reset recovery deficit",
+        "source": "this unit"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A06",
+        "pass": true,
+        "quantity": "M_preserve atom count",
+        "source": "#111 sec 10.2 / #103 sec 6.2"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A07",
+        "pass": true,
+        "quantity": "M_erase atom count",
+        "source": "#111 sec 10.3 / #103 sec 6.2"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A08",
+        "pass": true,
+        "quantity": "bundled minimum atom count",
+        "source": "#103 sec 9.3 (corrected)"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A09-1",
+        "pass": true,
+        "quantity": "record lattice size at 1 atoms (enumerated vs recurrence)",
+        "source": "Bell triangle recurrence"
+      },
+      {
+        "committed": "2",
+        "computed": "2",
+        "id": "A09-2",
+        "pass": true,
+        "quantity": "record lattice size at 2 atoms (enumerated vs recurrence)",
+        "source": "Bell triangle recurrence"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A09-3",
+        "pass": true,
+        "quantity": "record lattice size at 3 atoms (enumerated vs recurrence)",
+        "source": "Bell triangle recurrence"
+      },
+      {
+        "committed": "15",
+        "computed": "15",
+        "id": "A09-4",
+        "pass": true,
+        "quantity": "record lattice size at 4 atoms (enumerated vs recurrence)",
+        "source": "Bell triangle recurrence"
+      },
+      {
+        "committed": "52",
+        "computed": "52",
+        "id": "A09-5",
+        "pass": true,
+        "quantity": "record lattice size at 5 atoms (enumerated vs recurrence)",
+        "source": "Bell triangle recurrence"
+      },
+      {
+        "committed": "4",
+        "computed": "4",
+        "id": "A10",
+        "pass": true,
+        "quantity": "matched 2+1+1 algebra with sink: centre dimension",
+        "source": "#103 sec 6.2"
+      },
+      {
+        "committed": "3",
+        "computed": "3",
+        "id": "A11",
+        "pass": true,
+        "quantity": "matched 2+2 algebra with sink: centre dimension",
+        "source": "#103 sec 6.2"
+      },
+      {
+        "committed": "(Fraction(1, 4), Fraction(3, 4))",
+        "computed": "(Fraction(1, 4), Fraction(3, 4))",
+        "id": "A12",
+        "pass": true,
+        "quantity": "success/failure distribution of the tomographic core",
+        "source": "#111 sec 10.4 / sec 5.5"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A13-C1",
+        "pass": true,
+        "quantity": "core atom count of C (corrected preserving minimum)",
+        "source": "#111 Prop 10.1"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A13-C5",
+        "pass": true,
+        "quantity": "core atom count of C^5 (corrected eraser minimum)",
+        "source": "#111 Prop 10.1"
+      },
+      {
+        "committed": "2",
+        "computed": "2",
+        "id": "A13-M4+C",
+        "pass": true,
+        "quantity": "core atom count of M_4 + C (corrected tomographic minimum)",
+        "source": "#111 Prop 10.1"
+      },
+      {
+        "committed": "9",
+        "computed": "9",
+        "id": "A14",
+        "pass": true,
+        "quantity": "number of inherited coarse partition seams",
+        "source": "#103 Thm 9.1"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A15",
+        "pass": true,
+        "quantity": "s_2^2 second block coefficient",
+        "source": "#111 sec 8.1"
+      },
+      {
+        "committed": "5",
+        "computed": "5",
+        "id": "A16",
+        "pass": true,
+        "quantity": "||s_2||^2 (full system)",
+        "source": "#111 sec 8.1"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A17",
+        "pass": true,
+        "quantity": "||s_2||^2 after deleting block 2",
+        "source": "#111 sec 8.1"
+      },
+      {
+        "committed": "10",
+        "computed": "10",
+        "id": "A18",
+        "pass": true,
+        "quantity": "||-3s_1+s_2||^2 (full system)",
+        "source": "#111 sec 8.1"
+      },
+      {
+        "committed": "8",
+        "computed": "8",
+        "id": "A19",
+        "pass": true,
+        "quantity": "||-3s_1+s_2||^2 after deleting block 1",
+        "source": "#111 sec 8.1"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A20",
+        "pass": true,
+        "quantity": "dim (S intersect Z(C*_e(S)))",
+        "source": "#111 sec 8.1 / #103 sec 5.2"
+      },
+      {
+        "committed": "QC(1,0)",
+        "computed": "QC(1,0)",
+        "id": "A21",
+        "pass": true,
+        "quantity": "phi_lambda(s_0)",
+        "source": "#111 sec 8.3"
+      },
+      {
+        "committed": "QC(0,0)",
+        "computed": "QC(0,0)",
+        "id": "A22",
+        "pass": true,
+        "quantity": "phi_lambda(s_1)",
+        "source": "#111 sec 8.3"
+      },
+      {
+        "committed": "QC(0,0)",
+        "computed": "QC(0,0)",
+        "id": "A23",
+        "pass": true,
+        "quantity": "phi_lambda(s_2)",
+        "source": "#111 sec 8.3"
+      },
+      {
+        "committed": "QC(3/7,0)",
+        "computed": "QC(3/7,0)",
+        "id": "A24",
+        "pass": true,
+        "quantity": "phi_lambda(z_1) = lambda",
+        "source": "#111 sec 8.3"
+      },
+      {
+        "committed": "1",
+        "computed": "1",
+        "id": "A25",
+        "pass": true,
+        "quantity": "rank of J(identity channel) on M_d",
+        "source": "#111 sec 6.1"
+      },
+      {
+        "committed": "QC(-1/2,0)",
+        "computed": "QC(-1/2,0)",
+        "id": "A26",
+        "pass": true,
+        "quantity": "<psi^-|J(P)|psi^->",
+        "source": "#111 sec 3.3 / #111 adj sec 3.4"
+      },
+      {
+        "committed": "1/2",
+        "computed": "1/2",
+        "id": "A27",
+        "pass": true,
+        "quantity": "distinguishability of the two written settings",
+        "source": "#103 sec 7.2"
+      },
+      {
+        "committed": "3/4",
+        "computed": "3/4",
+        "id": "A28",
+        "pass": true,
+        "quantity": "squared coherence loss ||rho - D_Z(rho)||_1^2",
+        "source": "#103 sec 7.2"
+      }
+    ],
+    "passed": 34,
+    "total": 34
+  },
+  "arithmetic": "exact (fractions.Fraction and Q(i)); no float in any substantive path",
+  "findings": {
+    "G0_availability_nondegenerate": true,
+    "G0_literal_collapsed": true,
+    "G1_galois_holds_for_availability": true,
+    "G1_msb_core_not_antitone": true,
+    "G2_manufactured_pvm_survives": true,
+    "G2_one_boundary_desmuggling_impossible": true,
+    "G2_trivial_fixed_requires_erasure": true
+  },
+  "gates": {
+    "entries": [
+      {
+        "claim": "native float sweep of this file: zero float literals, zero float-producing calls (numpy / math.sqrt / float() / random / round)",
+        "class": "arithmetic",
+        "id": "EXACT-01",
+        "pass": true,
+        "value": {
+          "banned_tokens": [],
+          "float_literals": []
+        }
+      },
+      {
+        "claim": "D_M(b) = sum_r m_r(b) = b exactly, for every admitted instrument and every basis effect -- the outcome-forgetting composite IS the identity (the earned axiom sum_r m_r = id, #111 Def 4.1(3))",
+        "class": "collapse",
+        "id": "G0-01",
+        "pass": true,
+        "value": {
+          "instrument_effect_pairs_checked": 308
+        }
+      },
+      {
+        "claim": "the literal formula ||F - F o D_M||_Test = 0 holds for EVERY admitted future and every admitted instrument, so Pres_lit(M) is the whole admitted future set",
+        "class": "collapse",
+        "id": "G0-02",
+        "pass": true,
+        "value": {
+          "future_instrument_pairs": 16
+        }
+      },
+      {
+        "claim": "the literal Pres(M) contains a record-DESTROYING future: the no-write reset, whose optimal record-recovery deficit is 1/4 > 0",
+        "class": "collapse-witness",
+        "id": "G0-03",
+        "pass": true,
+        "value": {
+          "recovery_deficit": "1/4",
+          "tv_before": "1/2"
+        }
+      },
+      {
+        "claim": "LITERAL FORMULA COLLAPSES: Pres_lit(M) = all admitted futures for every M, so Core o Pres_lit is constant and the closure is degenerate",
+        "class": "collapse-verdict",
+        "id": "G0-04",
+        "pass": true,
+        "value": {
+          "degenerate": true
+        }
+      },
+      {
+        "claim": "at least one admitted future OTHER than the identity lies INSIDE Pres_avail(M) on the earned fixtures",
+        "class": "availability-nondegeneracy",
+        "id": "G0-05",
+        "pass": true,
+        "value": {
+          "inside": [
+            "C^2 (classical bit) | bit-flip",
+            "C^2 (classical bit) | id",
+            "C^5 (corrected eraser minimum) | eraser-core reprepare",
+            "C^5 (corrected eraser minimum) | id",
+            "M_2 + C (mixed control) | id",
+            "M_2 + C (mixed control) | intra-block unitary X(+)1",
+            "M_2 + C (mixed control) | sector-keeping reprepare",
+            "M_4 + C (corrected tomographic minimum) | id",
+            "M_4 + C (corrected tomographic minimum) | success/failure keeping"
+          ],
+          "nontrivial_inside": [
+            "C^2 (classical bit) | bit-flip",
+            "C^5 (corrected eraser minimum) | eraser-core reprepare",
+            "M_2 + C (mixed control) | intra-block unitary X(+)1",
+            "M_2 + C (mixed control) | sector-keeping reprepare",
+            "M_4 + C (corrected tomographic minimum) | success/failure keeping"
+          ]
+        }
+      },
+      {
+        "claim": "at least one admitted future lies OUTSIDE Pres_avail(M) on the earned fixtures",
+        "class": "availability-nondegeneracy",
+        "id": "G0-06",
+        "pass": true,
+        "value": {
+          "outside": [
+            "C^2 (classical bit) | no-write reset",
+            "C^2 (classical bit) | reprepare-0",
+            "C^5 (corrected eraser minimum) | merge {0,1}",
+            "C^5 (corrected eraser minimum) | total erasure",
+            "M_2 + C (mixed control) | reset into sector 0",
+            "M_2 + C (mixed control) | sector-merging reprepare",
+            "M_4 + C (corrected tomographic minimum) | total erasure"
+          ]
+        }
+      },
+      {
+        "claim": "the concrete criterion Phi^#(q'_s) = q_s agrees with the sector criterion (block images pairwise disjoint) on the whole battery",
+        "class": "availability-soundness",
+        "id": "G0-07",
+        "pass": true,
+        "value": {
+          "triples_compared": 16
+        }
+      },
+      {
+        "claim": "every future inside Pres_avail(M) recovers M's record with exact deficit 0 (an exhibited readout, not an estimate)",
+        "class": "availability-stability",
+        "id": "G0-08",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "ADOPTED DEFINITION: Pres(M) = { admitted F : an admitted readout M' exists with flag-joint statistics Pr(r,s) = delta_rs Pr(r) }, equivalently Phi^#(q'_s) = q_s; nondegenerate on the earned fixtures",
+        "class": "definition-adopted",
+        "id": "G0-09",
+        "pass": true,
+        "value": {
+          "n_inside": 9,
+          "n_outside": 7
+        }
+      },
+      {
+        "claim": "EXHAUSTIVE n=2: F in Pres(pi) iff comp(F) refines pi, over all 9 left-total relations (definition vs lemma)",
+        "class": "lemma-soundness",
+        "id": "G1-00-n2",
+        "pass": true,
+        "value": {
+          "mismatches": 0,
+          "relations": 9,
+          "tests": 18
+        }
+      },
+      {
+        "claim": "EXHAUSTIVE n=3: F in Pres(pi) iff comp(F) refines pi, over all 343 left-total relations (definition vs lemma)",
+        "class": "lemma-soundness",
+        "id": "G1-00-n3",
+        "pass": true,
+        "value": {
+          "mismatches": 0,
+          "relations": 343,
+          "tests": 1715
+        }
+      },
+      {
+        "claim": "EXHAUSTIVE n=4: F in Pres(pi) iff comp(F) refines pi, over all 50625 left-total relations (definition vs lemma)",
+        "class": "lemma-soundness",
+        "id": "G1-00-n4",
+        "pass": true,
+        "value": {
+          "mismatches": 0,
+          "relations": 50625,
+          "tests": 759375
+        }
+      },
+      {
+        "claim": "DECLARED SUBFAMILY n=5 (at most one multi-valued atom): F in Pres(pi) iff comp(F) refines pi; the general case is covered by the proved lemma",
+        "class": "lemma-soundness",
+        "id": "G1-00-n5",
+        "pass": true,
+        "value": {
+          "mismatches": 0,
+          "relations": 84375,
+          "tests": 4387500
+        }
+      },
+      {
+        "claim": "Pres is ANTITONE in instrument refinement: pi finer than sigma implies Pres(pi) contained in Pres(sigma)",
+        "class": "galois",
+        "id": "G1-01",
+        "pass": true,
+        "value": {
+          "scope": "exhaustive n<=4; first 4000 declared futures at n=5",
+          "tests": 3504535
+        }
+      },
+      {
+        "claim": "{pi : F in Pres(pi)} is closed under common refinement, so Core(G) = the FINEST record preserved by all of G is well defined (the Choi multiplicative-domain lemma in sector form).  By G1-00 this set depends on F only through comp(F), so testing all Bell(n) distinct sets is exhaustive",
+        "class": "galois",
+        "id": "G1-02",
+        "pass": true,
+        "value": {
+          "distinct_preserved_sets": {
+            "2": 2,
+            "3": 5,
+            "4": 15,
+            "5": 52
+          },
+          "tests": 6087
+        }
+      },
+      {
+        "claim": "Core is ANTITONE in future-family inclusion: G contained in H implies Core(H) coarser than Core(G)",
+        "class": "galois",
+        "id": "G1-03",
+        "pass": true,
+        "value": {
+          "scope": "declared family pairs, n = 3,4,5",
+          "tests": 93375
+        }
+      },
+      {
+        "claim": "ANTITONE GALOIS CONNECTION: G contained in Pres(M) iff M coarser than Core(G) -- verified as a two-sided equivalence",
+        "class": "galois",
+        "id": "G1-04",
+        "pass": true,
+        "value": {
+          "scope": "declared families, n = 2..5",
+          "tests": 30422
+        }
+      },
+      {
+        "claim": "cl = Core o Pres is EXTENSIVE (M coarser than cl(M))",
+        "class": "closure",
+        "id": "G1-05",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "cl = Core o Pres is MONOTONE",
+        "class": "closure",
+        "id": "G1-06",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "cl = Core o Pres is IDEMPOTENT",
+        "class": "closure",
+        "id": "G1-07",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "cl' = Pres o Core is a closure operator on future families (idempotent; Galois-closed families are exactly the Pres-images)",
+        "class": "closure",
+        "id": "G1-08",
+        "pass": true,
+        "value": {
+          "scope": "exhaustive n = 2,3,4"
+        }
+      },
+      {
+        "claim": "the fixed points of cl are exactly the Galois-closed records, in bijection with the closed future families",
+        "class": "closure",
+        "id": "G1-09",
+        "pass": true,
+        "value": {
+          "counts": {
+            "2": {
+              "closed_families": 2,
+              "closed_records": 2
+            },
+            "3": {
+              "closed_families": 5,
+              "closed_records": 5
+            },
+            "4": {
+              "closed_families": 15,
+              "closed_records": 15
+            }
+          },
+          "scope": "exhaustive n = 2,3,4"
+        }
+      },
+      {
+        "claim": "#111 Cor 5.5 recomputed on an exact rational grid: every exclusive repeatable stochastic postprocessing of the core atoms has 0/1 coefficients, so the admitted records ARE the partitions of the atom set -- this is what licenses the record lattice used throughout",
+        "class": "record-poset",
+        "id": "G1-11",
+        "pass": true,
+        "value": {
+          "2atoms_2outcomes": {
+            "exclusive_repeatable": 4,
+            "kappa_tested": 25,
+            "nonsharp_violations": 0
+          },
+          "3atoms_2outcomes": {
+            "exclusive_repeatable": 8,
+            "kappa_tested": 125,
+            "nonsharp_violations": 0
+          },
+          "3atoms_3outcomes": {
+            "exclusive_repeatable": 27,
+            "kappa_tested": 3375,
+            "nonsharp_violations": 0
+          }
+        }
+      },
+      {
+        "claim": "REFUTED: the #111 map (task family -> core of its minimal sufficient boundary) is NOT antitone: enlarging the preserving task family by the eraser task takes a 1-atom core to a 5-atom core",
+        "class": "refutation",
+        "id": "G1-10",
+        "pass": true,
+        "value": {
+          "core_of_F1": 1,
+          "core_of_F1_union_F2": 5
+        }
+      },
+      {
+        "claim": "the trivial one-outcome instrument is a fixed point of cl WHENEVER the law admits a total-erasure future (reprepare closure R)",
+        "class": "trivial-fixed-point",
+        "id": "G2-01",
+        "pass": true,
+        "value": {
+          "n_checked": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "claim": "REFINEMENT OF THE ROADMAP AMENDMENT: the trivial instrument is NOT always fixed -- under an identity-only future law cl is constant at the full core and the trivial record fails to be closed",
+        "class": "trivial-fixed-point-negative",
+        "id": "G2-02",
+        "pass": true,
+        "value": {
+          "cl_of_anything": "the full operational core"
+        }
+      },
+      {
+        "claim": "CHARACTERIZATION: under reprepare closure (R), cl = Core o Pres is the IDENTITY on records -- every admitted instrument is a fixed point, so the closure selects nothing",
+        "class": "characterization",
+        "id": "G2-03",
+        "pass": true,
+        "value": {
+          "1": {
+            "fixed": 1,
+            "records": 1
+          },
+          "2": {
+            "fixed": 2,
+            "records": 2
+          },
+          "3": {
+            "fixed": 5,
+            "records": 5
+          },
+          "4": {
+            "fixed": 15,
+            "records": 15
+          },
+          "5": {
+            "fixed": 52,
+            "records": 52
+          }
+        }
+      },
+      {
+        "claim": "cl(pi) recomputed from the EXHAUSTIVE future family (not from generators) at n <= 4: Core(Pres(pi)) = pi for every record",
+        "class": "characterization",
+        "id": "G2-03b",
+        "pass": true,
+        "value": {
+          "scope": "all left-total relations, n = 2,3,4"
+        }
+      },
+      {
+        "claim": "for every record pi and every strictly finer sigma the reprepare future R_pi lies in Pres(pi) and NOT in Pres(sigma) -- exhaustive witness construction, n <= 5",
+        "class": "characterization",
+        "id": "G2-04",
+        "pass": true,
+        "value": {
+          "strict_refinement_pairs": 359
+        }
+      },
+      {
+        "claim": "EXHAUSTIVE n <= 4 over all left-total relations: Pres(pi) contained in Pres(sigma) iff sigma is coarser than pi; hence cl(pi) = pi",
+        "class": "characterization",
+        "id": "G2-05",
+        "pass": true,
+        "value": {
+          "scope": "all relations, n = 2,3,4"
+        }
+      },
+      {
+        "claim": "NONTRIVIAL FIXED POINTS EXIST on every fixture whose operational core has at least two atoms -- in fact every record is fixed",
+        "class": "existence",
+        "id": "G2-06",
+        "pass": true,
+        "value": {
+          "C2": {
+            "atoms": 2,
+            "fixed_points": 2,
+            "nontrivial": 1
+          },
+          "C5": {
+            "atoms": 5,
+            "fixed_points": 52,
+            "nontrivial": 51
+          },
+          "M2+C": {
+            "atoms": 2,
+            "fixed_points": 2,
+            "nontrivial": 1
+          },
+          "M4+C": {
+            "atoms": 2,
+            "fixed_points": 2,
+            "nontrivial": 1
+          },
+          "PVM211": {
+            "atoms": 4,
+            "fixed_points": 15,
+            "nontrivial": 14
+          },
+          "PVM22": {
+            "atoms": 3,
+            "fixed_points": 5,
+            "nontrivial": 4
+          }
+        }
+      },
+      {
+        "claim": "where the operational core is trivial (full matrix factor; the corrected preserving minimum C) the ONLY fixed point is the trivial record",
+        "class": "existence-negative",
+        "id": "G2-07",
+        "pass": true,
+        "value": {
+          "C1": {
+            "atoms": 1,
+            "fixed_points": 1
+          },
+          "M2": {
+            "atoms": 1,
+            "fixed_points": 1
+          }
+        }
+      },
+      {
+        "claim": "the identity future lies in Pres(M) for EVERY admitted record; hence Stab(Pres(M)) = {id}, B_{Pres(M)} = S, and the composite map M -> Cl_op(B_{Pres(M)}) is CONSTANT at Cl_op(S)",
+        "class": "reading-B",
+        "id": "G2-08",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "a constant map has exactly ONE fixed point: Reading B's unique fixed point is Cl_op(S) itself, which re-derives #111 and adds nothing",
+        "class": "reading-B",
+        "id": "G2-09",
+        "pass": true,
+        "value": {
+          "C2": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 2
+          },
+          "C5": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 5
+          },
+          "M2": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 1
+          },
+          "M2+C": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 2
+          },
+          "M4+C": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 2
+          },
+          "PVM211": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 4
+          },
+          "PVM22": {
+            "n_fixed_points": 1,
+            "unique_fixed_point_atoms": 3
+          }
+        }
+      },
+      {
+        "claim": "READING A: the #103 manufactured PVM SURVIVES the closure as a nontrivial fixed point -- the closure does NOT de-smuggle",
+        "class": "DISCRIMINATOR",
+        "id": "G2-10",
+        "pass": true,
+        "value": {
+          "PVM211": {
+            "atoms": 4,
+            "readingA_cl_equals_input": true,
+            "readingB_unique_fixed_point_equals_input": true
+          },
+          "PVM22": {
+            "atoms": 3,
+            "readingA_cl_equals_input": true,
+            "readingB_unique_fixed_point_equals_input": true
+          }
+        }
+      },
+      {
+        "claim": "READING B: the #103 manufactured PVM is the UNIQUE fixed point of the composite map -- the closure does NOT de-smuggle",
+        "class": "DISCRIMINATOR",
+        "id": "G2-11",
+        "pass": true,
+        "value": {
+          "PVM211": {
+            "atoms": 4,
+            "readingA_cl_equals_input": true,
+            "readingB_unique_fixed_point_equals_input": true
+          },
+          "PVM22": {
+            "atoms": 3,
+            "readingA_cl_equals_input": true,
+            "readingB_unique_fixed_point_equals_input": true
+          }
+        }
+      },
+      {
+        "claim": "the corrected eraser boundary C^5 (a legitimately derived record) and a manufactured 5-outcome PVM boundary are carried onto each other by an admitted reversible map that permutes the core atoms; by #111 Cor 5.6 the closure is covariant under exactly such maps, so NO one-boundary criterion can accept one and reject the other",
+        "class": "IMPOSSIBILITY",
+        "id": "G2-12",
+        "pass": true,
+        "value": {
+          "atom_bijection": true,
+          "permutation": [
+            1,
+            2,
+            3,
+            4,
+            0
+          ],
+          "unitary": true
+        }
+      },
+      {
+        "claim": "the corrected eraser minimum is recomputed from q_j(perp) = 3/4, q_j(k) = (1/4)delta_jk: five inequivalent likelihood columns, so M_erase = C^5 (not C^4)",
+        "class": "control-branch-memory",
+        "id": "G3-1a",
+        "pass": true,
+        "value": {
+          "atoms": 5
+        }
+      },
+      {
+        "claim": "the corrected preserving minimum is recomputed: all four source branches give the same complete distribution, so M_preserve = C",
+        "class": "control-branch-memory",
+        "id": "G3-1b",
+        "pass": true,
+        "value": {
+          "atoms": 1
+        }
+      },
+      {
+        "claim": "the tomographic minimum M_4 + C has a two-atom core whose distribution is (1/4,3/4) for EVERY source label: the only nondisturbing classical label is success/failure and it carries no branch information",
+        "class": "control-branch-memory",
+        "id": "G3-1c",
+        "pass": true,
+        "value": {
+          "core_atoms": 2,
+          "distribution": [
+            "1/4",
+            "3/4"
+          ]
+        }
+      },
+      {
+        "claim": "POSITIVE: on the corrected branch-memory triple every admitted record is a fixed point (1, 52 and 2 respectively)",
+        "class": "control-branch-memory",
+        "id": "G3-1d",
+        "pass": true,
+        "value": {
+          "C1": {
+            "core_atoms": 1,
+            "fixed": 1,
+            "records": 1
+          },
+          "C5": {
+            "core_atoms": 5,
+            "fixed": 52,
+            "records": 52
+          },
+          "M4+C": {
+            "core_atoms": 2,
+            "fixed": 2,
+            "records": 2
+          }
+        }
+      },
+      {
+        "claim": "NEGATIVE: the C^5 common-sink task minimum is NOT promoted to a W3 seam -- its five-atom core restricted to the branch labels is the discrete partition, none of the nine inherited seams, and all 52 records on it are equally fixed so the closure selects none",
+        "class": "control-branch-memory-negative",
+        "id": "G3-1e",
+        "pass": true,
+        "value": {
+          "induced_partition": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ],
+          "is_one_of_the_nine_seams": false,
+          "nine_seams": [
+            [
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                0
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3
+              ]
+            ],
+            [
+              [
+                0
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                3
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ],
+          "records_all_equally_fixed": 52
+        }
+      },
+      {
+        "claim": "the generated algebra contains z_1 = (I,0) and z_2 = (0,I), so C*(S) = M_2 (+) M_2",
+        "class": "control-hostile",
+        "id": "G3-2a",
+        "pass": true,
+        "value": null
+      },
+      {
+        "claim": "neither simple summand can be removed by a boundary quotient: the exact squared norms drop 5 -> 1 and 10 -> 8, so C*_e(S) = M_2 (+) M_2",
+        "class": "control-hostile",
+        "id": "G3-2b",
+        "pass": true,
+        "value": {
+          "s2_block1_only": "1",
+          "s2_full": "5",
+          "w_block2_only": "8",
+          "w_full": "10"
+        }
+      },
+      {
+        "claim": "S intersect Z(C*_e(S)) = C(I,I): only the scalars, so by #111 Thm 8.2 Cl_op(S) is trivial",
+        "class": "control-hostile",
+        "id": "G3-2c",
+        "pass": true,
+        "value": {
+          "dimension": 1
+        }
+      },
+      {
+        "claim": "every phi_lambda restricts to the SAME state on S while phi_lambda(z_1) = lambda: the envelope block weight is not determined by any effect of S",
+        "class": "control-hostile",
+        "id": "G3-2d",
+        "pass": true,
+        "value": {
+          "phi_on_S": [
+            "1",
+            "0",
+            "0"
+          ],
+          "phi_z1": "3/7"
+        }
+      },
+      {
+        "claim": "NEGATIVE DIRECTION: the computed dim(S cap Z) = 1 admits only the trivial split, so the hostile operator system's core has one atom and its fixed-point set is the singleton {trivial record} -- no nontrivial fixed point exists there",
+        "class": "control-hostile-negative",
+        "id": "G3-2e",
+        "pass": true,
+        "value": {
+          "core_atoms": 1,
+          "fixed_points": 1
+        }
+      },
+      {
+        "claim": "POSITIVE DIRECTION: the readable direct sum M_2 (+) M_2 itself (all central branches admitted) has a two-atom core and two fixed points, so the machinery does fire when the split is physically readable",
+        "class": "control-hostile-positive",
+        "id": "G3-2f",
+        "pass": true,
+        "value": {
+          "core_atoms": 2,
+          "fixed": 2
+        }
+      },
+      {
+        "claim": "POSITIVE: where the central-sector branches are physically readable the fixed points recover exactly the minimal central projections (centre dimension computed by exact commutant solve, never typed)",
+        "class": "control-cstar-positive",
+        "id": "G3-3a",
+        "pass": true,
+        "value": {
+          "C2": {
+            "blocks": [
+              1,
+              1
+            ],
+            "centre_dim": 2,
+            "core_atoms": 2
+          },
+          "C5": {
+            "blocks": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "centre_dim": 5,
+            "core_atoms": 5
+          },
+          "M2+C": {
+            "blocks": [
+              2,
+              1
+            ],
+            "centre_dim": 2,
+            "core_atoms": 2
+          },
+          "M4+C": {
+            "blocks": [
+              4,
+              1
+            ],
+            "centre_dim": 2,
+            "core_atoms": 2
+          },
+          "PVM211": {
+            "blocks": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "centre_dim": 4,
+            "core_atoms": 4
+          },
+          "PVM22": {
+            "blocks": [
+              2,
+              2,
+              1
+            ],
+            "centre_dim": 3,
+            "core_atoms": 3
+          }
+        }
+      },
+      {
+        "claim": "NEGATIVE: on a full matrix factor J(I) is rank one, so any CP-dominated idempotent is a scalar multiple of the identity and Cl_op(M_d) = {I}: no nontrivial fixed point",
+        "class": "control-cstar-negative",
+        "id": "G3-3b",
+        "pass": true,
+        "value": {
+          "M2_core_atoms": 1,
+          "choi_ranks": {
+            "2": 1,
+            "3": 1,
+            "4": 1
+          }
+        }
+      },
+      {
+        "claim": "NEGATIVE: under the restricted law of #111 sec 9.1 the same algebra C^2 has B_op = {0,I}, so the physical core is trivial and the only fixed point is the trivial record even though the ALGEBRAIC centre has dimension 2 -- admission is measured, not inferred",
+        "class": "control-cstar-negative",
+        "id": "G3-3c",
+        "pass": true,
+        "value": {
+          "algebraic_centre_dim": 2,
+          "enlarged_law_core_atoms": 2,
+          "restricted_law_core_atoms": 1
+        }
+      },
+      {
+        "claim": "NEGATIVE: the transpose symmetrizer is positive, unital and idempotent but has Choi expectation -1/2 on the antisymmetric vector, so scalar positivity does not supply an admitted branch",
+        "class": "control-cstar-negative",
+        "id": "G3-3d",
+        "pass": true,
+        "value": {
+          "value": "-1/2"
+        }
+      },
+      {
+        "claim": "POSITIVE: the no-write reset lies OUTSIDE Pres(M) for the two-atom record, with an exact optimal recovery deficit of 1/4 -- a tester-visible failure, not a definitional one",
+        "class": "control-no-write-positive",
+        "id": "G3-4a",
+        "pass": true,
+        "value": {
+          "analytic_lower_bound": "1/4",
+          "optimal_deficit": "1/4"
+        }
+      },
+      {
+        "claim": "NEGATIVE: the same reset lies INSIDE Pres of the trivial record with deficit exactly 0 while lying OUTSIDE Pres of the two-atom record -- the criterion does not reject futures indiscriminately",
+        "class": "control-no-write-negative",
+        "id": "G3-4b",
+        "pass": true,
+        "value": {
+          "inside_trivial_record": true,
+          "inside_two_atom_record": false
+        }
+      },
+      {
+        "claim": "the exact coherence loss of the preserving Z-dephasing is recomputed: its square is 3/4, i.e. the committed trace-norm sqrt(3)/2",
+        "class": "control-no-write-positive",
+        "id": "G3-4c",
+        "pass": true,
+        "value": {
+          "offdiag_sq": "3/16",
+          "squared_trace_norm": "3/4"
+        }
+      },
+      {
+        "claim": "STABILITY, both directions: every admitted continuation inside Pres(M) has recovery deficit 0, and every admitted continuation outside it collides two record blocks, certifying a strictly positive tester-visible deficit",
+        "class": "control-stability",
+        "id": "G3-4d",
+        "pass": true,
+        "value": {
+          "inside_zero_deficit": 9,
+          "outside_positive_deficit": 7
+        }
+      }
+    ],
+    "failed": [],
+    "passed": 57,
+    "total": 57
+  },
+  "immutable_base_commit": "6c2d7b8",
+  "nonclaims": [
+    "no composition or tensor claim (that is stage 4's question)",
+    "no locality, overlap, region, topology or manifold claim",
+    "no causal order, influence or spacetime claim",
+    "no field, QCD or gravity claim",
+    "no actual outcome selection, W6 co-reference or event-token identity",
+    "no task-independent W3 record is earned",
+    "'Markov' in this unit means operational screening-off inside ONE boundary and carries no spacetime meaning"
+  ],
+  "pin_commit": "7a80e39",
+  "schema": "rq0-l0-task-record-fixed-point-receipt-v1",
+  "source_sha256": "c77e94561d148cb23589a0dce69b8e0d2ad356a077d6f19b6f2d62ed91e41b96",
+  "status": "GREEN-UNREVIEWED",
+  "unit": "RQ0-L0 Cycle B - the task-record fixed point",
+  "verdict": {
+    "blocked_object": "a task-independent selector on the fixed-point set: at one-boundary scope the closure's carrier is itself the smuggled object",
+    "instance_of_preregistered_outcome": "RQ0-L0-BLOCKED-AT-<object>",
+    "not_earned": [
+      "RQ0-L0-W3-OPERATIONAL-MARKOV-BOUNDARY (existence and characterization hold; smuggling rejection FAILS)"
+    ],
+    "reason": "nontrivial fixed points exist and are fully characterized, but the #103 manufactured PVM survives the closure, so the de-smuggling requirement of RQ0-L0-W3-OPERATIONAL-MARKOV-BOUNDARY is not met",
+    "refuted": [
+      "RQ0-L0-NO-NONTRIVIAL-FIXED-POINT (nontrivial fixed points exist in abundance: under the availability Galois closure EVERY admitted record is fixed)"
+    ],
+    "rung": "RQ0-L0-BLOCKED-AT-DE-SMUGGLING",
+    "scope": "finite dimension, one boundary, one admitted process law, the earned #103/#111 fixtures; exhaustive over all left-total sector relations at atom count <= 4 and over a declared subfamily at atom count 5, with the general case covered by the proved component lemma"
+  }
+}

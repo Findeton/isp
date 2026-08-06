@@ -4450,3 +4450,60 @@ the roadmap and halts the arc for the user.  On return: adjudicator
 verification → commit green → protocol freeze → three-lens panel →
 joint adjudication → STATUS board.  This entry is written after the
 dispatch occurred.
+
+## 2026-08-02 — CYCLE B DELIVERED: **RQ0-L0-BLOCKED-AT-DE-SMUGGLING**;
+## VERIFIED AND COMMITTED GREEN-UNREVIEWED (v13 LEDGER #115)
+Adjudicator verification: two runs exit 0, receipt rows IDENTICAL
+(the delivered output is stdout-only; progress narration on stderr);
+57 gates / 57 pass, 34 anchors / 34 pass (exit-1-only); mutant
+spot-kill confirmed (erase-min → exit 1; the worker ran all six);
+AST float sweep clean per the receipt; exactly the four whitelisted
+files.  THE DELIVERY: **G0** — [REV5]'s literal preserving-family
+formula PROVED to collapse (D_M = Σ m_r acts as the identity on
+effects; 308 instrument–effect pairs; a record-DESTROYING future
+sits inside the literal family with exact optimal recovery deficit
+1/4) — the availability form adopted (an admitted later readout
+reproduces the record's flag-joint statistics), nondegenerate (9
+in / 7 out; 5 non-identity preservers incl. the intra-block X⊕1),
+and FOUND TO BE LITERALLY v12's (H-avail) with CP futures replacing
+unitaries — the two programmes' record notions coincide exactly.
+**G1** — the availability relation carries a genuine antitone Galois
+connection (adjunction two-sided on 30,422 tests; the collision
+lemma validated against ALL left-total relations at ≤4 atoms,
+761,108 tests, zero mismatches; closure laws at 1–5 atoms); the
+rival right adjoint (#111's core-of-boundary) REFUTED as antitone
+(the eraser task takes a 1-atom core to 5).  **G2** — the pin's
+premise "the trivial instrument is always fixed" is FALSE AS
+STATED (fixed iff an erasing future is admitted; both directions
+gated) — THE ADJUDICATOR'S OWN FALSE PREMISE, written into the pin
+and ROADMAP amendment 1, owned here and forward-corrected at the
+adjudication; under reprepare closure cl = IDENTITY (every record
+fixed: 1/2/5/15/52 of each stratum; witness-separated, 359 pairs),
+and the composite reading is CONSTANT at #111's core — both
+readings degenerate.  **THE DISCRIMINATOR FAILED, VERDICT-LEVEL:**
+the #103 manufactured PVM SURVIVES under both readings — and the
+load-bearing new theorem explains why: the legitimate eraser
+boundary ℂ⁵ and the manufactured 5-outcome boundary are carried
+onto each other by an ADMITTED reversible map (exact permutation
+(1,2,3,4,0), unitary over ℤ), and the construction is covariant
+under such maps (#111 Cor 5.6) — NO CRITERION DEFINABLE FROM
+ONE-BOUNDARY DATA CAN ACCEPT ONE AND REJECT THE OTHER; the
+smuggling lives in the CHOICE of boundary, invisible to any test
+whose carrier is the smuggled object.  **G3** — all four control
+families both directions (branch-memory minima recomputed ℂ/ℂ⁵/
+M₄⊕ℂ; the ℂ⁵ core not promoted to a seam — disclosed as degenerate
+satisfaction: nothing is promoted; hostile S trivial ⟹ singleton
+fixed set; readable-centre C* recovery incl. the restricted-law
+1-vs-2 and transpose −1/2; no-write deficit exactly 1/4 with the
+9-in/7-out stability table).  Worker deviations (1)-(8) accepted:
+the pin's ambiguous closure read BOTH ways (A: availability
+adjoint — Galois-sound; B: #111 core — physical-sided) with the
+split verdict the honest result.  VERDICT:
+RQ0-L0-BLOCKED-AT-DE-SMUGGLING (instantiating BLOCKED-AT-⟨object⟩,
+object = a task-independent selector on the fixed-point set);
+W3-OPERATIONAL-MARKOV-BOUNDARY not earned (smuggling rejection
+impossible at this scope, proved); NO-NONTRIVIAL-FIXED-POINT
+refuted.  Next per the plan the user approved: protocol freeze →
+three-lens panel → adjudication (where the ROADMAP inversion and
+the premise correction land).  GREEN-UNREVIEWED; recorded before
+any review exists.
