@@ -15,7 +15,8 @@ user-owned decision (publication, splits, frozen lines).
 | 1 | Minimal sufficient process boundary | RQ0-L0-MINIMAL-SUFFICIENT-BOUNDARY | **EARNED** (#103) |
 | 2 | Operational classical core | RQ0-L0-OPERATIONAL-CLASSICAL-CORE | **EARNED** (#111) |
 | 3 | **Cycle B: task–record fixed point** (de-smuggling) | **RQ0-L0-BLOCKED-AT-DE-SMUGGLING** — adjudicated #121: the manufactured record is lattice-top, unrejectable by any closure from within, law-independently; cl = id forced by any irreversible merge | **CLOSED-BLOCKED** (repair → terminal) |
-| 4 | **Cycle B′: composite/tensor boundaries** (monoidal layer) **+ THE DE-SMUGGLING ARENA (relocated per #121)** | core-of-composite vs composite-of-cores = operational entanglement; multi-boundary descent as the lattice-change escape from the trilemma | next |
+| 4 | **Cycle B′: composite/tensor boundaries** (monoidal layer) **+ THE DE-SMUGGLING ARENA (relocated per #121)** | core-of-composite vs composite-of-cores = operational entanglement; multi-boundary descent as the lattice-change escape from the trilemma | **CLOSED** (B′ terminal #134: COMPOSITE-BOUNDARY + witness classifier-total + ALIGNMENT-SELECTOR rescope; the adversarial pair = the standing obstruction) |
+| 4b | **Cycle B″: generative patch admissibility — THE ATLAS AXIOM** (the fork resolved by synthesis: A+B fused, dynamics-grounded binding, no new primitive; C the measured fallback) | GENERATIVE-ATLAS-AXIOM / EMPIRICALLY-IDLE (Feynman gate) / CHEAP-LAW-FORGERY (Borges-bound conjecture refuted) / BLOCKED | RUNNING (#135) |
 | 5 | Autonomous quantum charts | independence, separating effects, internal law, stable classical interface | queued |
 | 6 | Physical overlaps + fact descent | terminal W6 as positive control; paper-2 descent classification binds | queued |
 | 7 | Topology + influence, **reopened on the operational substrate** | W4′ non-unification + three-defect separation as mandatory controls | queued |
