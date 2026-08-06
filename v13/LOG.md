@@ -4568,3 +4568,40 @@ the ℂ⁵ seam-negative means "selects nothing", not "excludes seams"
 failed outright (Thm 2.1 unevadable; the (H-avail) identification
 real; cl = id survives exhaustive recomputation).  Adjudication
 waits for R1 + R2.
+
+## 2026-08-02 — CYCLE B R1 (OPERATOR LENS) REVIEW FROZEN (v13
+## LEDGER #119)
+review-rq0-fixed-point-operator.md frozen as delivered; compliance
+verified (one new file; pinned SHAs reproduced by the reviewer
+before reading).  R1 VERDICT: ACCEPT-WITH-FIXES; 78/78 independent
+exact recomputations, ZERO numerical errors (reviewer disclosed and
+corrected its own initial Core-order bug — 10 spurious mismatches,
+all agreeing after its fix).  **K1 DECIDED AGAINST THE UNIT (the
+panel's sharpest result): Theorem 4.6's admitted-map premise is
+UNMEASURED AND LAW-RELATIVE** — the proof infers admission from the
+unitary's existence, exactly the inference #111 §9.1 forbids and
+that the paper itself re-runs as its own §5.3 control; the #111
+Cor 5.6 citation is CIRCULAR (its hypothesis is admission).  R1
+CONSTRUCTED the counter-law K1 demanded: on ℂ⁵ the composition
+closure of the 52 reprepares yields 120 sector maps with EXACTLY
+ONE reversible (the identity) — the paper's V = (1,2,3,4,0) is NOT
+admitted there; condition R holds, Thm 4.2 untouched (52/52), and
+nothing earned at #111 breaks (its rungs constrain instruments,
+not futures).  The paper's own identity-only law (Prop 4.1)
+already falsifies the premise — yet Thm 4.6 carries a [FIN] tag.
+RESCOPED, NOT KILLED: true on the committed fixtures under the
+standard channel law.  **F2 (HIGH): gate G2-12 never constructs
+the manufactured boundary** — it checks properties unconditionally
+true of every permutation, CANNOT FAIL, and is the sole gate under
+the headline impossibility finding (0 of 57 gates mutant-covered
+there) — convergent with R3's declared-not-constructed finding.
+F3 (K3, partial): the cl = id degeneracy TRACKS THE ADMITTED CLASS
+(one direction proved, 0/600 violations; the conjectured converse
+REFUTED, strict in 185/600) — the degeneracy is law-relative, to
+be scope-tagged.  F4–F7 minor (scope-box vs Def 2.3's later S′;
+"only the scalars"; a missing receipt row; falsification-coverage
+disclosure).  **THE VERDICT RQ0-L0-BLOCKED-AT-DE-SMUGGLING STANDS
+UNDER EVERY ATTACK** — it rests on Thms 4.5 + 4.2 (independently
+confirmed), not on 4.6.  Per-rung: (a)-(d), (f) confirmed; (e) NOT
+confirmed as stated — rescope required, convergent with R3's K4.
+Adjudication waits for R2.
