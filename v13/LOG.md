@@ -5507,3 +5507,39 @@ counterfactual-probe route (ω at undeclared preparations — the
 law's unused possibilities as the auditing resource, paper 2's
 nomological individuation operationalized) is available inside
 declared data, or whether provenance-as-data is forced.
+
+## 2026-08-06 — STAGE-5 R2 (EFFECTUS) REVIEW FROZEN; PANEL
+## COMPLETE (v13 LEDGER #153)
+review-rq0-epsilon-effectus.md (314 lines) frozen; compliance
+verified (audit against the frozen object d5eca4e; R3's parallel
+commit disclosed, K3 cross-checked independently).  R2:
+ACCEPT-WITH-FIXES; 85 recomputations, no computed number moved.
+**K2 DECIDED: ω IS A FUNCTION OF THE QUADRUPLE** — proved (ω
+factors through (A(B), Pres_L(A(B)), X₀, ρ); Reach is the
+closure of the DECLARED preparation under the DECLARED family)
+and measured (687-law census × records × preparations: 6118
+distinct keys, ONE (ε, ω) value each, zero exceptions) —
+**BLOCKED-AT-PROVENANCE CORRECTLY INSTANTIATED**; understated
+even: ε and ω read the law only through Pres_L(A(B)) (175/874
+keys reachable from >1 law; one from 428).  TWO NEW PROOF-LEVEL
+DEFECTS with countermodels, both at support-valued laws (all
+committed laws single-valued, numbers unharmed): Thm 3.1's (⟸)
+false (2-config countermodel, admissible with ε = 1/2; 9 + 124
+disagreements); Lemma 2.3's converse false (20 + 45,810
+countermodels; zero at deterministic laws; the forward direction
+0 failures everywhere).  **THE REDUCTION'S ω-CLAUSE WAS
+VACUOUSLY GATED** (preparation frozen at the full carrier, all
+3803 instances) — R2 REPAIRED it: 25,657 prep-varied instances,
+zero disagreements, 9,837 exercising ω; and the (ε, ω)
+two-component deviation now MEASURED: 3,117 rejections where ω
+alone blocks.  K2.2: the structural proof as written is a NON
+SEQUITUR ("provenance is not a component" does not entail
+blindness; the L3-09 collision witness carries it — and the
+failure is one of ORDERING, NOT RESOLUTION).  **K2.3, the free
+upgrade: ε(π) = (5 − |π|)/16 at the committed state = 1 − Σ max
+ρ — ε IS THE BOUNDARY'S BAYES ERROR**; the spectrum
+multiplicities are the Stirling row; the inversion is arithmetic;
+monotonicity a one-line corollary.  PANEL COMPLETE: 3× AWF, 143
+recomputations across the three lenses, zero false computed
+numbers.  Joint adjudication next — the coarse-legitimacy fork
+goes to the user.
