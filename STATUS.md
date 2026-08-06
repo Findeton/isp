@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-06 (v13 LOG #134: B′ terminal; the stage-4 fork awaits the user).
+Updated: 2026-08-06 (v13 LOG #143: B″ adjudicated; repair in flight; stage-5 brief fixed).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -48,7 +48,7 @@ Updated: 2026-08-06 (v13 LOG #134: B′ terminal; the stage-4 fork awaits the us
 
 ## Frontier (nothing authorized; per-cycle authorization required)
 
-1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **ADJUDICATED** (#132; 3× ACCEPT-WITH-FIXES, ~79 recomputations zero errors): COMPOSITE-BOUNDARY confirmed; ENTANGLEMENT-WITNESS confirmed w/ bounded (2,2) defect (PPT repair); DESCENT-SELECTOR **rescoped to alignment-at-declared-algebra** (D2 vacuous at the arena; independence certificate vacuous; **the adversarial pair constructed twice** — the standing obstruction). **TERMINAL at the rescoped rungs (#134)**: the rebuilt binding gate PASSES the colluding pair (measured — no relabelling-based test can bind across different atom counts) and reports the arena's own contexts DEPENDENT. **THE FORK IS RESOLVED BY THE USER'S WORD (synthesis A+B): Cycle B″ Generative Patch Admissibility RUNNING** (pin #135; the Atlas Axiom = Galois-minimality + dynamics-generativity; colluding pair the mandatory executioner; the Feynman gate + the collusion-cost/Borges-bound conjecture pre-registered).
+1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **ADJUDICATED** (#132; 3× ACCEPT-WITH-FIXES, ~79 recomputations zero errors): COMPOSITE-BOUNDARY confirmed; ENTANGLEMENT-WITNESS confirmed w/ bounded (2,2) defect (PPT repair); DESCENT-SELECTOR **rescoped to alignment-at-declared-algebra** (D2 vacuous at the arena; independence certificate vacuous; **the adversarial pair constructed twice** — the standing obstruction). **TERMINAL at the rescoped rungs (#134)**: the rebuilt binding gate PASSES the colluding pair (measured — no relabelling-based test can bind across different atom counts) and reports the arena's own contexts DEPENDENT. **Cycle B″ (Atlas Axiom) ADJUDICATED (#143)**: both rungs confirmed at corrected scope — rigidity DICHOTOMY proved (reversibility trigger; coarse charts iff identity-free law); the (i)-mechanism corrected (ker-pairing, rigidity = its signature); unforgeability shared-law + comparable-pairs (0/357); THE ARC'S FIRST FALSE THEOREM (Thm 8.3 cost equality; lower bound + DET tower survive); mixed-law arena = the named open question. Repair in flight → terminal. **Stage-5 brief: ε-admissibility on δ.**
 2. **Composite/tensor boundaries** (the missing monoidal rung before
    autonomous charts; core-of-composite vs composite-of-cores as the
    operational entanglement witness).

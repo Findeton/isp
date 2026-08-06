@@ -5285,3 +5285,22 @@ STANDS (~370 recomputations across the three cycles); the
 zero-false-THEOREM record BREAKS at Thm 8.3 — recorded without
 softening.  Panel complete: 3× ACCEPT-WITH-FIXES (84
 recomputations this panel).  Joint adjudication next.
+
+## 2026-08-06 — CYCLE B″ JOINTLY ADJUDICATED; BOTH RUNGS CONFIRMED
+## AT CORRECTED SCOPE; REPAIR DISPATCH NEXT (v13 LEDGER #143)
+note-rq0-admissibility-adjudication.md committed (reviews
+2a434493550f / af2149f5f7ab / 6bc2aa0ba77e).  Panel: 3× AWF, 84
+recomputations, zero false numbers, the arc's FIRST FALSE THEOREM
+(8.3's equality) recorded unsoftened — the lower bound and the
+DET tower survive.  STANDS: both rungs; the rigidity DICHOTOMY
+proved with its REVERSIBILITY trigger; the mechanism correction
+(ker-pairing — rigidity is its signature; Cycle B Thm 3.8's own
+warning); unforgeability strengthened to comparable-pairs (0/357)
+at a SHARED law with the MIXED-LAW ESCAPE constructed and named
+the open question; the Feynman gate rescoped (positive via (i),
+blind to occupancy); declaration-relativity, the quadruple patch,
+the comparator's two clauses — all fix-real.  Repair list
+R-1..R-13; the STAGE-5 BRIEF fixed: ε-ADMISSIBILITY ON δ with
+both refuted relaxations as mandatory negative controls + the
+mixed-law arena + an occupancy-sensitive statistic.  STATUS
+updated.  Repair dispatch recorded after it occurs.
