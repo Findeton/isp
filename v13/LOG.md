@@ -4688,3 +4688,15 @@ amendment 1's premise corrected to the meet form; STATUS updated
 in this commit.  The consolidated repair list R-1..R-12 is in the
 adjudication note; repair dispatch recorded after it occurs; after
 repair verification the unit is TERMINAL at this verdict.
+
+## 2026-08-06 — CYCLE B REPAIR DISPATCHED (v13 LEDGER #122)
+Background worker (Opus 5), bound to the adjudication note at
+d063f6d (R-1..R-12) and the three frozen reviews as its source
+material (panel constructions incorporated natively with inline
+credit); the four unit files only; no committed number may move
+except those the panel proved wrong or supplied missing, each
+listed with its reason; freeze-on-delivery; deviations list ships
+with the delivery per the new rule.  On return: adjudicator
+verification → TERMINAL at RQ0-L0-BLOCKED-AT-DE-SMUGGLING → the
+Cycle B′ pin (composite/tensor boundaries + the de-smuggling
+arena).  This entry is written after the dispatch occurred.
