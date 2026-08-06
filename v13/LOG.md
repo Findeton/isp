@@ -5361,3 +5361,11 @@ shared-refinement and inter-law descent;
 NOMOLOGICAL-PLURALISM-PRICED first-class if nothing closes it;
 the occupancy-sensitive statistic constructed or its blindness
 proved structural).  Dispatch recorded after it occurs.
+
+## 2026-08-06 — STAGE-5 DERIVATION DISPATCHED (v13 LEDGER #147)
+Background worker (Opus 5), bound to the frozen pin at 6e1aa82;
+terminal inputs immutable; the ε-separation verdict to be
+reported first and plainly (EPSILON-BLIND is verdict-level); the
+two refuted relaxations implemented as mandatory negative
+controls; freeze-on-delivery.  Recorded after the dispatch
+occurred.
