@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-06 (v13 LOG #125: Cycle B terminal; Cycle B′ running).
+Updated: 2026-08-06 (v13 LOG #132: B′ adjudicated; the stage-4 fork awaits the user).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -48,7 +48,7 @@ Updated: 2026-08-06 (v13 LOG #125: Cycle B terminal; Cycle B′ running).
 
 ## Frontier (nothing authorized; per-cycle authorization required)
 
-1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **RUNNING** (pin 62cdf68, #124; derivation dispatched #125; the entanglement-witness gap + descent selector with top-of-lattice guard; SMUGGLING-SURVIVES-DESCENT = verdict-level halt).
+1. **Cycle B′ — composite boundaries + the de-smuggling arena**: **ADJUDICATED** (#132; 3× ACCEPT-WITH-FIXES, ~79 recomputations zero errors): COMPOSITE-BOUNDARY confirmed; ENTANGLEMENT-WITNESS confirmed w/ bounded (2,2) defect (PPT repair); DESCENT-SELECTOR **rescoped to alignment-at-declared-algebra** (D2 vacuous at the arena; independence certificate vacuous; **the adversarial pair constructed twice** — the standing obstruction). Repair in flight. **THE FORK IS THE USER'S: B″ grounded-independence / provenance branch / accept arena-relativity.**
 2. **Composite/tensor boundaries** (the missing monoidal rung before
    autonomous charts; core-of-composite vs composite-of-cores as the
    operational entanglement witness).

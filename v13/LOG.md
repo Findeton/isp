@@ -4978,3 +4978,32 @@ across three lenses; ZERO false computed numbers; every casualty
 scope, structure, or diagnosis — with three-way convergence on the
 diagnosis correction and two-way convergence (independent
 constructions) on the adversarial pair.  Joint adjudication next.
+
+## 2026-08-06 — CYCLE B′ JOINTLY ADJUDICATED; THE DESCENT-SELECTOR
+## RESCOPED; THE ADVERSARIAL PAIR NAMED; THE STAGE-4 FORK GOES TO
+## THE USER (v13 LEDGER #132)
+note-rq0-composite-adjudication.md committed (review SHAs
+e7fc8886a683 / a375336ae5ee / f5adf20bf814).  Panel: 3×
+ACCEPT-WITH-FIXES, ~79 recomputations, zero false numbers.
+STANDS: COMPOSITE-BOUNDARY (with the Thm 3.2 hypothesis and the
+span reading disclosed; six lemma-carried pairs discharged
+directly); the H2 negative direction; the guard escape
+(exhaustive).  RE-CUT: ENTANGLEMENT-WITNESS confirmed with the
+bounded (2,2) false-negative defect (exact-PPT repair);
+DESCENT-SELECTOR RESCOPED to ALIGNMENT-AT-DECLARED-ALGEBRA (the
+two contexts are one object — disclosed; D2 vacuous at the arena;
+the independence certificate vacuous by cardinality — REBUILD
+ordered as a binding gate; measured-independence non-binding under
+both laws — stated; the three-way-convergent diagnosis
+biconditional replaces §6.4 everywhere).  THE ADVERSARIAL PAIR
+(constructed independently by R2 and R3) NAMED as the standing
+obstruction — it does not trigger the pre-registered halt (both
+lenses explicit) but is the spirit's half-trigger.
+ADJUDICATOR'S OWN FORWARD-CORRECTION: #126 and the user report
+repeated the wrong "poetic justice" diagnosis — corrected by name.
+Repair list R-1..R-12 dispatched next (mechanical, within the
+standing authorization).  **THE FORK PAUSES THE ARC AT STAGE 4'S
+EXIT, FOR THE USER: (A) Cycle B″ grounded independence (the
+colluding pair as mandatory discriminator — recommended); (B) the
+provenance branch; (C) accept arena-relativity as final.**  No
+new cycle dispatched pending the user's word.
