@@ -5245,3 +5245,43 @@ declared preparation: W1 admissible and W3 inadmissible both give
 occupancy; to be rescoped.  One more undeclared deviation
 (generativity-as-generation dropped) + two no-op code defects.
 Adjudication waits for R1 only.
+
+## 2026-08-06 — CYCLE B″ R1 (OPERATOR) REVIEW FROZEN; PANEL
+## COMPLETE (v13 LEDGER #142)
+review-rq0-admissibility-operator.md frozen; compliance verified
+(no cross-reading).  R1: ACCEPT-WITH-FIXES (three MAJORS
+blocking); 33 native recomputations, ZERO false computed numbers
+(tower, remainders, closures, both Feynman statistics, 16/16
+rigidity sweeps — all reproduce) — **BUT ONE FALSE THEOREM, the
+arc's first: Theorem 8.3 (cost = |Obs|) IS FALSE AS STATED,
+refuted inside its own advertised [EXH-4] scope.**  Under REV the
+obstruction is all of REV, the complement is EMPTY, and the
+cheapest forgery costs n!+1 (6→7 at n=3, 24→25 at n=4; 18
+counterexamples, each requiring an ADDITION — the block-minimum
+idempotent); sharper: L = {const₀}, π = {0|12} has |Obs| = 0
+while the boundary is inadmissible — a forgery priced at 0 that
+costs 2.  Census: 1008 of 2748 (law, boundary) pairs fail; DET
+is clean — WHICH IS WHY THE DELIVERED TOWER SURVIVES.  The lower
+bound c ≥ |Obs| is sound and general.  **MAJOR-2, the hole:**
+"Lemma 8.2 exhibits the complement as a law in which the
+boundary is admissible" — 8.2 proves composition-closure ONLY;
+admissibility-in-complement was measured DET-only.  **MAJOR-3:
+Theorem 6.1 is missing a load-bearing hypothesis** — sound at a
+SHARED law (and GENERALIZES: no two strictly comparable
+boundaries are ever both admissible, 0 of 357), but under the
+pin's own "one law family per context" reading R1 CONSTRUCTS THE
+ESCAPE: member 1 admissible under the identity-free law
+{(0,0,2,3,4)}, member 2 under DET.  "No admitted law whatsoever"
+must become "no single admitted law", the escape disclosed — and
+the MIXED-LAW ARENA (different patches, different effective laws
+— the physically realistic atlas) becomes a NAMED OPEN QUESTION.
+MODERATES: gate L2-17's loop body constant in F (claim
+nonetheless true, 4860/4860 checked by R1); FUNNEL is NOT
+composition-closed at n ≥ 3 (violating Def 2.1 on 3 of 16
+sweeps; no verdict changes).  Twelve rewrites supplied; per-rung
+(a)-(f) all confirmed WITH the hypotheses.  META, stated
+plainly: the collaboration's zero-false-COMPUTED-NUMBER record
+STANDS (~370 recomputations across the three cycles); the
+zero-false-THEOREM record BREAKS at Thm 8.3 — recorded without
+softening.  Panel complete: 3× ACCEPT-WITH-FIXES (84
+recomputations this panel).  Joint adjudication next.
