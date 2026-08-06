@@ -5007,3 +5007,15 @@ EXIT, FOR THE USER: (A) Cycle B″ grounded independence (the
 colluding pair as mandatory discriminator — recommended); (B) the
 provenance branch; (C) accept arena-relativity as final.**  No
 new cycle dispatched pending the user's word.
+
+## 2026-08-06 — CYCLE B′ REPAIR DISPATCHED (v13 LEDGER #133)
+Background worker (Opus 5), bound to the adjudication at 06ca494
+(R-1..R-12) and the three frozen reviews; the four unit files
+only; the rebuilt binding independence gate's verdict on the
+colluding pair to be reported FIRST AND PLAINLY; freeze-on-
+delivery; deviations ship with the delivery.  On return:
+verification → TERMINAL at the rescoped rungs.  THE STAGE-4 FORK
+REMAINS WITH THE USER (A: B″ grounded independence — recommended;
+B: the provenance branch; C: accept arena-relativity); no new
+cycle before the user's word.  Recorded after the dispatch
+occurred.
