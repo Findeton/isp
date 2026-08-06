@@ -4857,3 +4857,45 @@ gate's ground + the sharpness controls + deviations
 adjudication).  On return: freeze each review as it lands, joint
 adjudication, STATUS in the same commit.  Recorded after the
 dispatch occurred.
+
+## 2026-08-06 — CYCLE B′ R2 (EFFECTUS LENS) REVIEW FROZEN (v13
+## LEDGER #129)
+review-rq0-composite-effectus.md (447 lines) frozen as delivered;
+compliance verified.  R2 VERDICT: ACCEPT-WITH-FIXES; all 31 swept
+numbers reproduce exactly; the top-of-lattice guard premise
+verified EXHAUSTIVELY (9 + 343 + 50,625 relations at n = 2,3,4)
+beyond the unit's 160 samples — THE GUARD HOLDS.  BUT FIVE
+FINDINGS THAT NARROW THE POSITIVE DIRECTION SHARPLY: (1) THE
+ARENA'S TWO CONTEXTS ARE THE SAME OBJECT — eraser atoms = address
+atoms = the declared overlap, elementwise, UNDISCLOSED; (2) clause
+(D2) is therefore VACUOUS at the declared arena — the certified
+set equals (D1) ∧ (D3) exactly (verified); the escape from the
+top-of-lattice trap is carried by POSING AVAILABILITY AT AN
+EXTERNALLY DECLARED ALGEBRA, not by comparing two contexts — the
+pair structure is extensionally inert; §7.1's positive control is
+the same computation as §6.4's direction two (the 51 reported
+twice); (3) **K3(ii): THE ADVERSARIAL PAIR EXISTS — CONSTRUCTED**:
+both contexts manufactured (aligned-2+1+1 and 1+1+1+1), the pair
+PASSES the unit's own independence gate over all 120 relabellings,
+and the forged ⊤ record DESCENDS (14 of 15 certified); the paper
+does not foreclose it and does not name it (§8 names only the
+weaker arena-relativity); (4) the independence certificate is
+carried by a CARDINALITY MISMATCH (|𝔉| = 2 vs 6) — a relabelling
+acts bijectively, so the 120-search was STRUCTURALLY INCAPABLE of
+returning a witness, which is what makes (3) cheap; (5) §6.4's
+"fails for exactly the feature that manufactured it" is the WRONG
+DIAGNOSIS (contradicting §7.6) — R2 supplies the proved
+biconditional: at this overlap, ⊤ transports without collision ⟺
+every atom is an address projection; THE DISCRIMINATOR SEPARATES
+ROTATED FROM ADDRESS-ALIGNED, NOT MANUFACTURED FROM EARNED.
+Adjudicator note: the #126 entry and the adjudicator's user
+report REPEATED the wrong diagnosis ("poetic justice") — to be
+forward-corrected at the joint adjudication.  R2 states
+explicitly: RQ0-L1-SMUGGLING-SURVIVES-DESCENT correctly does NOT
+occur (finding 3 is a weaker object than the pre-registered
+escalation — a different arena, not the unit's discriminator);
+the guard is undamaged ((D1) alone rejects ⊤ and is not a closure
+on the candidate's lattice).  Five required rewrites S-1..S-5 +
+four recommended; two undisclosed pin deviations flagged.
+Adjudication waits for R1 + R3; the DESCENT-SELECTOR rung's earned
+scope will be re-cut there.
