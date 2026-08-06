@@ -5416,3 +5416,12 @@ deviations shipped (incl. the two-component (ε, ω) tolerance and
 the full-support hypothesis the pin omitted).  GREEN-UNREVIEWED;
 panel next — the blindness proof itself must survive review
 before the roadmap bends on it.
+
+## 2026-08-06 — STAGE-5 HOSTILE PROTOCOL FROZEN (v13 LEDGER #149)
+Kill-shots: K1 the inversion's state-robustness; K2 the
+structural-blindness proof (does ω itself escape the quadruple
+argument?); K3 THE UNASKED QUESTION — run ω on the
+forged-vs-legitimate COARSE comparison ε failed (either answer
+reshapes the adjudication); K4 the law-free-descent finding and
+the closures' imports-the-blockade adjudication.  Dispatch
+recorded after it occurs.
