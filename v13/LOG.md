@@ -5575,3 +5575,26 @@ adjudicated scope → STATUS → THE ARC HOLDS AT THE STAGE-5 FORK
 FOR THE USER (A provenance-quintuple / B coarse
 arena-relativity / C constrained statistic hunt — recommended C
 then A).  Recorded after the dispatch occurred.
+
+## 2026-08-06 — STAGE-5 REPAIR VERIFIED — **STAGE 5 TERMINAL:
+## EPSILON-BLIND AT THE ADJUDICATED SCOPE** (v13 LEDGER #156)
+Verification: source hash = receipt; rerun exit 0; 38/38 gates,
+28/28 anchors, 29/29 mutants; byte-identical; four files only.
+All R-1..R-11 in: the single-valuedness hypotheses restored with
+countermodels gated; the varied-preparation reduction (25,657
+instances, 0 disagreements; the 3,117 ω-alone rejections
+measured); the Bayes-error identity + Stirling row + every-state
+inversion theorem gated (the whole 4845-state simplex); the
+overclaim cut to same-quadruple form everywhere; the
+selective-amnesty census (4540/4845) disclosed in §5.4; THE
+MIXED-STATE ARENA registered open (deviation 13; no shared state
+separates 0/4845 + 0/17 mixtures; the axiom takes no state
+argument, AST-verified); no measured number moved (six
+presentational/coverage corrections listed with reasons; one
+panel sampling-scope divergence re-measured full-census, 2316/
+3435, direction identical).  **STAGE 5 IS TERMINAL** at
+RQ0-L3-EPSILON-BLIND (every-state form) + MIXED-LAW-CLOSED/
+PLURALISM-PRICED (declared-scope reading) + OCCUPANCY-STATISTIC
+(quadruple-bound) + BLOCKED-AT-PROVENANCE — the paper stamped.
+Per the user's authorized plan: BRANCH C NEXT (the nomological-
+fingerprint hunt), pin to follow.

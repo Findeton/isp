@@ -2,7 +2,7 @@
 RQ0-L3  STAGE 5  --  eps-ADMISSIBILITY AND THE MIXED-LAW ARENA
 ==============================================================================
 pin 6e1aa82   base 267cb2a   schema rq0-l3-epsilon-admissibility-receipt-v1
-source sha256 d0f8ad773135c7f4ee77e4fe54109f8a24181e9ff651bc9feaea6a16e639a43a
+source sha256 ae47c3530e62837b23d7aa2502b01827b700b5af873ee4042691fb08a96e56b8
 exact (fractions.Fraction and finite combinatorics); no float in any substantive path, verified by an abstract-syntax-tree sweep of this unit and of the three terminal modules it imports
 
 THE FORM.  P = (B, F, X_0, L) is EPS-ADMISSIBLE AT TOLERANCE tau iff
@@ -19,6 +19,17 @@ H1(a)  THE REDUCTION
   committed instances 368, disagreements 0
   census instances    3435, disagreements 0
   tau = 0  <==>  the terminal B" axiom, both directions.
+  with the DECLARED PREPARATION VARIED: 25657 further instances, 0 disagreements;  9837 carry omega != 0
+  clause (c) is load-bearing: 3117 rejections turn on omega ALONE (dropping it: 3117 disagreements); clause (d) blocks alone 0 times
+
+------------------------------------------------------------------------------
+H1(a')  THE HYPOTHESIS THE STATEMENTS NEED: SINGLE-VALUEDNESS
+------------------------------------------------------------------------------
+  reduction, support-valued laws : 38 laws / 9 disagreements at 2 configs;  342 / 124 at 3
+    minimal countermodel: terminal-admissible with eps = 1/2
+  entailment converse            : 20 countermodels at 2 configs, 45810 at 3, 0 at single-valued laws; forward failures 0
+  closed form                    : at ALL(2), rho = (3/4,1/4): eps = 1/2 against the closed form's 1/4;  a multi-valued witness at the committed carrier has per-task defect 5/8
+  the scope tag's sweep, RUN     : 368 instances, 0 mismatches (22 of them at the support-valued ALL)
 
 ------------------------------------------------------------------------------
 H1(b)  THE eps SPECTRUM AT THE COMMITTED CARRIER
@@ -45,6 +56,26 @@ H1(c)  THE SEPARATION VERDICT  --  RQ0-L3-EPSILON-BLIND
   ordering inverted     : True  (legitimate 3/16 > forged 1/8 > forged 1/16)
   admissible of 52: tau=0 -> 1;  tau=1/16 -> 11;  tau=3/16 -> 51
   the forged 2+1+1 is admitted at tau=1/16: True
+  the whole tolerance SQUARE (81 pairs): separating set EMPTY  (omega is 0 at 260 of 260 committed instances, so the diagonal IS the square)
+
+  the inversion at EVERY declared state, in closed form:
+    declared state                           f 2+1+1     f 2+2     legit  fwd  rev
+    the committed branch-memory state           1/16       1/8      3/16   no  yes
+    uniform at five configurations               1/5       2/5       3/5   no  yes
+    degenerate on the retained sink                0         0         0   no   no
+    sink mass moved to address 0                1/16       1/8      3/16   no  yes
+    sink mass moved to address 1                1/16       1/8      3/16   no  yes
+    sink mass moved to address 2                1/16       1/8      3/16   no  yes
+    sink mass moved to address 3                1/16       1/8      3/16   no  yes
+    near-degenerate                           1/1000     1/500    3/1000   no  yes
+    the colluding pair starved                     0      1/16       1/8   no  yes
+    asymmetric full support                     1/16       1/4       3/8   no  yes
+    a legitimate-favouring attempt              1/16       1/8      3/16   no  yes
+    flat on the four addresses                   1/4       1/2       3/4   no  yes
+    the selective-amnesty state                    0         0       1/2   no  yes
+  over all 4845 states of denominator 16: forward separating 0, REVERSE separating 4540, weak inversion 4845, strict at 1365 of 1365 full-support states
+  monotonicity over the grid: 0 violations of 1482570 instances
+  the selective amnesty (1/2, 0, 1/2, 0, 0): eps = 0, 0, 1/2 -- tolerance ZERO certifies both forgeries and rejects the legitimate chart
 
 ------------------------------------------------------------------------------
 H1(d)  PERTURBATION AND THE GRADED COST TOWER
@@ -68,7 +99,11 @@ H2  THE MIXED-LAW ARENA
   the escape           : member 1 True at the identity-free law, member 2 True at DET, boundaries comparable True
   route (i)  shared refinement: |L*| = 3125, member 1 at L* False -> closes True
   route (ii) inter-law descent: forged context certified 14 -> 0;  legitimate eraser 51 -> 1
-  the terminal descent selector takes NO law argument, so the attack runs at every law
+  the terminal descent selector takes NO law argument -- gated by an AST pass over its
+    call closure ['certified_records', 'fact_of', 'facts_realized', 'transported_images', 'transports_without_collision']: law-valued names NONE
+  the MIXED-STATE arena: OPEN -- registered as an obstruction, not closed.  The terminal axiom's signature is ['part', 'fam', 'law', 'prep', 'n']
+    -- no state argument, so no state-relative descent; and no shared state separates
+    (0 of 4845 grid states, 0 of 17 mixtures)
 
 ------------------------------------------------------------------------------
 H2  THE OCCUPANCY STATISTIC omega
@@ -78,6 +113,12 @@ H2  THE OCCUPANCY STATISTIC omega
   W3 (three configurations, preparation {0})                False      1      0    2/3
   the committed carrier under the counter-law, preparation the whole carrier True      1      0      0
   the committed carrier under the counter-law, preparation {0}False      1      0  15/16
+  on the comparison eps FAILED: omega = 0, 0, 0 (forged 2+1+1, forged 2+2, legitimate)
+    zero at 260 of 260 committed instances; the forger zeroes it at 31 of 31 preparations
+    ANTI-monotone under refinement: 0 violations of 4590 instances
+    ranks the legitimate patch strictly best at 15 of 155 (law, preparation) rows, admitting at tolerance zero at 6
+  omega IS a function of the quadruple: 6118 keys, 0 carrying two values; the preparation moves omega at
+    2316 of 3435 triples and eps at 0; 175 of 874 (boundary, family) keys are reachable from more than one law
 
 ------------------------------------------------------------------------------
 VERDICT
@@ -87,19 +128,25 @@ VERDICT
   RQ0-L3-EPSILON-BLIND
     OCCURS -- verdict-level, and it is this unit's headline
   RQ0-L3-MIXED-LAW-CLOSED
-    OCCURS at BOTH routes, each under a stated cost
+    OCCURS at BOTH routes, NEITHER OF WHICH RUNS ON COMMITTED MACHINERY ALONE, each under a stated cost
   RQ0-L3-NOMOLOGICAL-PLURALISM-PRICED
-    OCCURS -- the price is stated exactly and is the reason both closures are Pyrrhic
+    OCCURS ON THE DECLARED-SCOPE READING -- the pin's own condition, that the escape STANDS, is measured FALSE at both routes
   RQ0-L3-OCCUPANCY-STATISTIC
     OCCURS -- constructed and gated
   RQ0-L3-BLOCKED-AT-PROVENANCE
     OCCURS -- census discipline, the named successor obstruction
+  RQ0-L3-MIXED-STATE-ARENA
+    OPEN -- an obstruction REGISTERED, not an outcome claimed; no closure route exists at this scope
 
 NON-CLAIMS
   - No claim that eps separates forged from legitimate patches.  It does not, at any threshold, and the ordering is inverted (L3-07).
   - No claim that the eps-form admits a proper chart that the terminal axiom rejects while still rejecting the forgery.  The least tolerance that admits any coarse chart admits a forged one (L3-06, L3-08).
   - No claim that eps is state-independent.  It is state-relative, the reduction needs full support, and a degenerate state certifies the forgery at tolerance zero (L3-03).
-  - No claim that omega answers the de-smuggling question.  It reads the declared preparation; it does not read provenance, and nothing on the quadruple can (L3-23).
+  - No claim that omega answers the de-smuggling question.  It reads the declared preparation; it does not read provenance, and nothing on the quadruple can separate two declarations of the SAME patch (L3-23).
+  - No claim that omega separates the comparison eps failed.  It is identically zero on all three coarse patches at the committed state, law and preparation, and the forger zeroes it at every declared preparation under DET (L3-34).
+  - No claim that the reduction theorem, the entailment lemma or the closed form holds at a law of MULTI-VALUED admitted operations.  Each needs single-valuedness and each has an exhibited countermodel without it (L3-25, L3-26, L3-27).  Every committed law is measured single-valued.
+  - No claim that the impossibility covers distinct declarations.  For distinct-quadruple coarse pairs eps, omega and the whole refinement-monotone class fail, and the general question is left OPEN under the design constraints this stage makes sharp.
+  - No claim that the MIXED-STATE arena is closed, priced or formalized.  It is registered as an open obstruction, with the argument that neither closure route of section 8 has a state analogue (L3-35).
   - No claim that omega grades the second clause of (ii-b).  Unrealized identifications between reachable configurations are kept exact.
   - No claim that the shared refinement is an ADMITTED law.  It is composition-closed by construction; calling it admitted infers admission from algebraic existence, which the terminal cycle forbids (L3-18).
   - No claim that inter-law descent is the predecessor's selector.  The terminal selector takes no law argument; the law-relative form is built here and its collateral is measured (L3-20).
@@ -107,5 +154,5 @@ NON-CLAIMS
   - No claim beyond the committed carrier, the committed law families, the 687-law census at three configurations and the declared states.
   - No Lean, as pinned.  No new primitive: every object is committed structure from Cycles B, B' and B" and the three frozen B" reviews.
 
-gates 25/25   anchors 19/19
+gates 38/38   anchors 28/28
 ==============================================================================
