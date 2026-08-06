@@ -4537,3 +4537,34 @@ the #103 fidelity check).  On their return: SHA-pin all three
 reviews, joint adjudication (the ROADMAP inversion + the
 trivial-fixed-point premise correction land there), STATUS board
 update.  This entry is written after the dispatch occurred.
+
+## 2026-08-02 — CYCLE B R3 (INSTRUMENT LENS) REVIEW FROZEN (v13
+## LEDGER #118)
+review-rq0-fixed-point-instrument.md (566 lines) frozen as
+delivered; compliance verified (exactly one new file; the object
+under review still at the pinned SHAs).  R3 VERDICT:
+ACCEPT-WITH-FIXES; 20 independent exact recomputations, ZERO
+numerical disagreements.  K2 (its primary): THE COLLAPSE SURVIVES —
+the measure-and-broadcast reading is type-ill-formed; of the three
+type repairs, two re-collapse or degenerate oppositely and the only
+nondegenerate one (read-before = read-after) is EQUIVALENT to the
+adopted availability form — upgrading §2.2's adoption into a
+UNIQUENESS claim the paper must now state.  The (H-avail)
+coincidence: EXACT, not analogical (verbatim quotation; 1,715
+transported comparisons, 0 mismatches; bonus under-claim: comp(F)
+IS v12 Thm 4.5's M(U₂)) — with the scope correction that #115's
+"the two programmes' record notions coincide exactly" OVERCLAIMS:
+only the availability clause transports, (H-corr) does not
+(forward-correction of #115's sentence, recorded here).  #103
+fidelity: the unit correctly follows the superseding adjudication's
+centres (4, 3), avoiding the superseded paper's (3, 2) trap; BUT
+the manufactured boundary is DECLARED (typed block tuple), not
+constructed (no PVM, no matched dephasing built) — a fix item.
+K4 BITES: Theorem 4.6 is stated as unrestricted impossibility but
+proved as ISOMORPHISM-COVARIANCE; the criterion class is never
+defined — must be rescoped.  Also: one self-comparing gate (G2-11);
+the ℂ⁵ seam-negative means "selects nothing", not "excludes seams"
+(33 of 52 fixed records DO restrict to seams).  Three attacks
+failed outright (Thm 2.1 unevadable; the (H-avail) identification
+real; cl = id survives exhaustive recomputation).  Adjudication
+waits for R1 + R2.
