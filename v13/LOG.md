@@ -5752,3 +5752,27 @@ likely fused form: at full-group laws, covariant ⟹ resolution ∨
 state-reading (R1's fusion); at trivial-group laws,
 NAME-BLINDNESS imposed as principle kills the label-readers; no
 legitimate separator anywhere.
+
+## 2026-08-06 — BRANCH-C R3 FROZEN + JOINT ADJUDICATION: THE
+## IMPOSSIBILITY SURVIVES FUSED AND PRINCIPLE-COMPLETED;
+## FINGERPRINT WITHDRAWN; REPAIR NEXT (v13 LEDGER #164)
+R3 frozen (ACCEPT-WITH-FIXES; ~40 quantities zero-mismatch; the
+freeze certificate refuted — 864 orbit-forced pre-barrier
+evaluations, TUNE passing everything with FREEZE green — while
+the freeze SUBSTANCE verified honored by source inspection; Thm
+6.1's hypothesis-conclusion gap with the extension measured 9/9;
+the C1 disqualification honest, carried by order-entailment +
+total erasure).  note-rq0-fingerprint-adjudication.md committed:
+panel 3× AWF, ~89 recomputations, zero false numbers; BOTH
+headline formalizations fall as stated (shape ≠ resolution at
+the committed state; the dichotomy a tally with counterexamples);
+every counterexample is itself illegitimate by the deeper
+principle (label-readers at trivial-group configurations; the
+fixture-tuned TUNE) — THE FUSED THEOREM replaces both (covariant
+⟹ resolution ∨ state-reading at full-group states, 25/4845
+scoped) and THE NAME-BLINDNESS GATE is imposed where symmetry
+cannot enforce it; the FINGERPRINT tag WITHDRAWN (C1's content =
+stage 5's pre-adjudicated ω rows).  Repair R-1..R-9 dispatched
+next; after verification: TERMINAL at
+CLASS-IMPOSSIBILITY-corrected + AMNESTY + BLOCKED-AT-THE-
+REFINEMENT-ORDER — then BRANCH A per the authorized plan.
