@@ -6532,3 +6532,41 @@ never-obtains-on-committed-base).  R3's bottom line: no false
 physics number; the unit verdict stands UNDER ITS FINDINGS —
 vs R1's REJECT on the read-time artifact (K2, outside R3's
 lens).  R2 pending; adjudication after all three.
+
+## 2026-08-07 — O4 R2 (EFFECTUS) FROZEN (v13 LEDGER #195)
+review-o4-effectus.md frozen as delivered (sha256-12
+34c65f461bdb).  Grade ACCEPT-WITH-FIXES; 532 recomputations on
+six scripts built directly on model_composite /
+w6_coreference_exact; ZERO false computed numbers (225/225 §5
+cells; §6 supports; both residual censuses; D1's 288).  SEVEN
+MAJORS, all interpretive/control-design: (1) **INDEPENDENT
+CONFIRMATION OF R1's K2 — the discrimination is a TIME effect,
+not a CLASS effect**: the unit's own transports_rec run at the
+intermediate time returns EXACTLY the F-CFG profile candidate
+by candidate (C2/C3 [0×6]; C4 [0,0,0,0,1,1]) with CERT =
+DISAGREEMENT at all six — no green positive control exists at
+the object's coordinate; the unit's own anchors A13/A14 carry
+this.  (2) The named obstruction is asserted-not-measured AS A
+CAUSE ("every F-CFG count dies on it" contradicted by C4's own
+row).  (3) **At SP-C/D/E/F the two occupied sets are ONE ORBIT
+of the base's own admitted wing exchange** (law-preserving at
+E/F); at SP-A/B disjointness is cardinality-forced; C4's
+transport IS the wing swap, never named.  (4) The arena test
+compares name-indexed QA1 against name-free QA2 — the name-free
+counterpart drops orbit 2→1, distinct 4→3, and is FRAME-EQUAL
+at SP-E/F.  (5) The dual verdict double-counts (ARENA-RELATIVE
+= the §6 obstruction restated).  (6) Strengthening-in-paraphrase
+of paper 0 §O4 (O4-A's "not yet a forced conclusion" hedge and
+O4-B's "variables of the nomological representation" both
+dropped).  (7) NOSLICE is measured sensitive to drop_identity
+and NOTHING ELSE (8/8 probes) — it enforces the leg-order
+convention, not the no-global-now reading.  K3: LTP-BARE
+genuinely computed (reconstructed by hand); LTP-LAWFUL
+REACHABLE BY INJECTION but unwitnessed by any gate or mutant —
+passed on the merits, failed on the receipt (reconciles the
+R1/R3 conflict: selector-reachable, base-never-obtains,
+receipt-unwitnessed).  POSITIVE EXTENSION OF K1: all 36
+cross-frame chart pairs DISJOINT, all 30 same-frame pairs
+SHARE — disjointness is not choice-relative.  Panel complete:
+R1 REJECT / R2 AWF / R3 AWF; ~1,155 recomputations, zero false
+computed numbers.  Adjudication next.
