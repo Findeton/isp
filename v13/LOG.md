@@ -6601,3 +6601,43 @@ representatives, no double-counting; R3's F1–F6; charter hedges
 restored verbatim; NOSLICE re-founded or renamed.  On delivery:
 COMMIT-AS-IS FIRST, then verification, then terminal-or-bounce.
 Recorded after it occurs.
+
+## 2026-08-07 — O4 RE-DERIVATION DELIVERED, COMMITTED AS-IS (v13 LEDGER #198)
+Re-derivation RD-1..RD-6 delivered complete; committed as-is.
+THE MATCHED TABLE (54 cells, 486 gate cells; read time a
+declared coordinate computed from leg count; like-for-like now
+SEMANTIC; read-at-t computed two independent ways 36/36).
+VERDICT WITHDRAWN BY MEASUREMENT, new unit verdict:
+**O4-BLOCKED-AT-⟨the intermediate read times⟩** — class-neutral;
+the two intermediate times blocked by DIFFERENT named objects
+(t=1: the certificate is DEGENERATE — the transported datum
+takes one value on the whole occupied support; t=2: the
+certificate REFUSES the pair); the old DISCRIMINATED obtains at
+exactly ONE of eighteen (time,setting) coordinates — SP-E@t=3,
+a division event, OUTSIDE the object's scope.  **THE t=1/t=2
+FINDING ISOLATED: TRANSPORTABILITY TRACKS THE DECLARED LEG
+PREFIX, NOT THE DIVISIBILITY RESIDUAL** — prefix-alignment
+agrees with transport 18/18 cells; residual-vanishing agrees
+12/18; identical ‖r‖₀ at both intermediate times with opposite
+verdicts at all six settings; MECHANISM: the frames differ by
+the order of two commuting legs — prefixes coincide at t=1,
+differ at t=2 (the index is shared, the event is not), coincide
+as multisets at t=3; gated O4-PREFIX-DECIDES (scoped to
+full-leg rules, realized profile printed) w/ prefix-lax mutant.
+Cause gated as the RELATION (36/36-vs-30/30 at t=2, 0/36 at
+t=1/t=3; wing-exchange orbit; per-clause decomposition);
+C4's map NAMED as the wing exchange.  Arena: withdrawn by the
+proper-subset gate (name-free frame-difference ⊊ obstruction
+set); one fact stated once; D6 owns that the pin's
+"distinct-from-both-branches" claim is not sustained.  R3's
+F1–F6 all executed (the two false cells now fail + a catching
+gate; LTP witnessed both ways; kinds computed 24/7).  Charter
+blockquote verbatim w/ both hedges; NOSLICE split into two
+measured clauses w/ sensitivity sweep; C1a isolates C1's
+leg-order emptiness.  D1 REWRITTEN NARROWER (the
+completion-family sweep not claimed — it was panel-computed,
+not unit-computed).  27 anchors / 31 gates (27 must-pass,
+26/26 falsified, never_falsified EMPTY) / 31 mutants all died
+/ 0 failures / self-test 0 cache hits / two delivery runs
+byte-identical.  md5 output 2d2eed41 / receipt dcf1ce5d.
+Adjudicator verification next.
