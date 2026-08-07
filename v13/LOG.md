@@ -6457,3 +6457,44 @@ K4 arena+D3 group shrinkage / K5 instrument + D1 the W5-576→288
 diagnosis decided conclusively).  Frozen SHAs (sha256-12):
 recorded in the freeze command output with this commit.
 Three-lens panel (Opus 5) dispatched immediately after.
+
+## 2026-08-07 — O4 R1 (OPERATOR) FROZEN: REJECT — THE DISCRIMINATION
+## IS A READ-TIME ARTIFACT; K1 AND D1 CONCLUSIVELY CONFIRMED
+## (v13 LEDGER #193)
+review-o4-operator.md frozen as delivered (sha256-12
+8a6934033c5d).  Grade REJECT; 593 independent recomputations,
+composite model rebuilt from mathematical spec alone (quartic
+field Q(cos π/8) over Fraction); ZERO computed numbers wrong
+(the §6 occupied-set table, all 90 §5 cells, A13/A25/A26/A27
+reproduce exactly).  K1 THE PAPER WINS CONCLUSIVELY: the
+declared 72, the 96-extension, a 1728-element structural scope,
+and EVERY bijection of the 36 configurations by exact
+backtracking — no frame isomorphism shares a single occupied
+configuration; DISCRIMINATED-not-BLOCKED-AT-FRAME-CHOICE at the
+delivered coordinates.  K5/D1 CONCLUSIVE IN THE PAPER'S FAVOUR:
+288 independently confirmed (18 columns × 16); W5's 576
+CONSTRUCTED (two completion basis vectors mixed at 45° → 36
+columns × 16); j₀ weight 16 across all 51 completions swept —
+the finding about W5 stands.  **K2 FATAL: the three fact-classes
+are read at DIFFERENT TIMES (F-REC t=3; F-CFG/F-CTRL t=2).
+Varying only the read time with charts/rules/scopes fixed: at
+t=2 BOTH classes score 0 at all six settings; at t=3 BOTH score
+1.  The delivered discrimination is entirely the unmatched read
+time — and the disconfirming half sits in the paper's own
+receipt as anchor A13, passing exit-1.  The O4-LIKE-FOR-LIKE
+gate is a function-signature check blind to the branch.**
+Further majors: at t=1 F-CFG is FORCED at all six and t=1 is
+NOT excludable as a division event (W5 residual identical to
+t=2) — the verdict flips there; the obstruction is carried
+ENTIRELY by the pointer/record coordinates (the qubit marginal
+is never disjoint and transports FORCED at SP-E/SP-F) and is a
+setting-blind theorem (all 16 angle pairs); the arena result
+REVERSES under matched representatives (record class orbit 2
+under relabelling — 8 under the declared group — configuration
+class orbit 1); LTP-LAWFUL structurally unreachable (shared=0
+by construction, no mutant reaches it — the Q-OPT disease
+recurring); §6's "every F-CFG transport count dies" contradicted
+by C4's own 1 at SP-E/SP-F.  R1's disposition: both halves of
+the unit verdict need RE-DERIVATION FROM MATCHED COORDINATES,
+not prose repair; the instrument mostly survives.  R2/R3
+pending; adjudication after all three.
