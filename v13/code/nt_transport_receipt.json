@@ -1,0 +1,3315 @@
+{
+ "anchors": [
+  {
+   "committed": 18,
+   "computed": 18,
+   "id": "A01",
+   "passed": true,
+   "quantity": "the number of (read time, setting) cells the profiles are compared on",
+   "source": "v13/code/o4_discriminator_receipt.json O4-PREFIX-DECIDES"
+  },
+  {
+   "committed": 18,
+   "computed": 18,
+   "id": "A02",
+   "passed": true,
+   "quantity": "cells at which the leg-prefix profile agrees with the transport profile",
+   "source": "v13/code/o4_discriminator_receipt.json O4-PREFIX-DECIDES"
+  },
+  {
+   "committed": 12,
+   "computed": 12,
+   "id": "A03",
+   "passed": true,
+   "quantity": "cells at which the divisibility-residual profile agrees with the transport profile",
+   "source": "v13/code/o4_discriminator_receipt.json O4-PREFIX-DECIDES"
+  },
+  {
+   "committed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "computed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "id": "A04",
+   "passed": true,
+   "quantity": "the leg-prefix alignment profile, cell by cell",
+   "source": "v13/code/o4_discriminator_receipt.json read_time_structure"
+  },
+  {
+   "committed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "computed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "id": "A05",
+   "passed": true,
+   "quantity": "the transport profile of the full-declared-leg corridor rules, cell by cell",
+   "source": "v13/code/o4_discriminator_receipt.json read_time_structure"
+  },
+  {
+   "committed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": false,
+    "t1/SP-D": false,
+    "t1/SP-E": true,
+    "t1/SP-F": false,
+    "t2/SP-A": true,
+    "t2/SP-B": true,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": true,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "computed": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": false,
+    "t1/SP-D": false,
+    "t1/SP-E": true,
+    "t1/SP-F": false,
+    "t2/SP-A": true,
+    "t2/SP-B": true,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": true,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "id": "A06",
+   "passed": true,
+   "quantity": "the residual-vanishing profile, cell by cell",
+   "source": "v13/code/o4_discriminator_receipt.json read_time_structure"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A07",
+   "passed": true,
+   "quantity": "the equal-residual / opposite-transport witnesses",
+   "source": "v13/code/o4_discriminator_receipt.json O4-PREFIX-DECIDES"
+  },
+  {
+   "committed": [
+    "SP-C",
+    "SP-D",
+    "SP-E",
+    "SP-F"
+   ],
+   "computed": [
+    "SP-C",
+    "SP-D",
+    "SP-E",
+    "SP-F"
+   ],
+   "id": "A08",
+   "passed": true,
+   "quantity": "settings at which the two frames' occupied sets are ONE ORBIT of the admitted wing exchange at the second intermediate checkpoint",
+   "source": "v13/code/o4_discriminator_receipt.json orbit_relation"
+  },
+  {
+   "committed": [
+    "SP-E",
+    "SP-F"
+   ],
+   "computed": [
+    "SP-E",
+    "SP-F"
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "settings at which the wing exchange preserves the exact law there",
+   "source": "v13/code/o4_discriminator_receipt.json orbit_relation"
+  },
+  {
+   "committed": [
+    "SP-A",
+    "SP-B"
+   ],
+   "computed": [
+    "SP-A",
+    "SP-B"
+   ],
+   "id": "A10",
+   "passed": true,
+   "quantity": "settings at which the disjointness is cardinality-forced there",
+   "source": "v13/code/o4_discriminator_receipt.json orbit_relation"
+  },
+  {
+   "committed": {
+    "t2 SP-A/F1": [
+     12,
+     24
+    ],
+    "t2 SP-A/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-B/F1": [
+     12,
+     24
+    ],
+    "t2 SP-B/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-C/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-C/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-D/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-D/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-E/F1": [
+     12,
+     24
+    ],
+    "t2 SP-E/F2": [
+     11,
+     19
+    ],
+    "t2 SP-F/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-F/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ]
+   },
+   "computed": {
+    "t2 SP-A/F1": [
+     12,
+     24
+    ],
+    "t2 SP-A/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-B/F1": [
+     12,
+     24
+    ],
+    "t2 SP-B/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-C/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-C/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-D/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-D/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "t2 SP-E/F1": [
+     12,
+     24
+    ],
+    "t2 SP-E/F2": [
+     11,
+     19
+    ],
+    "t2 SP-F/F1": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "t2 SP-F/F2": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ]
+   },
+   "id": "A11",
+   "passed": true,
+   "quantity": "the occupied supports at the second intermediate checkpoint",
+   "source": "v13/code/o4_discriminator_receipt.json occupied_supports"
+  },
+  {
+   "committed": [
+    36,
+    36,
+    30,
+    30
+   ],
+   "computed": [
+    36,
+    36,
+    30,
+    30
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "cross-frame disjoint / cross-frame pairs / same-frame sharing / same-frame pairs at the second intermediate checkpoint",
+   "source": "v12/note-w6-record-coreference.md K1 / O4 pair_census"
+  },
+  {
+   "committed": [
+    0,
+    0
+   ],
+   "computed": [
+    0,
+    0
+   ],
+   "id": "A13",
+   "passed": true,
+   "quantity": "cross-frame disjoint pairs at the other declared read times",
+   "source": "v13/code/o4_discriminator_receipt.json pair_census"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A14",
+   "passed": true,
+   "quantity": "the local operators commute at all nine declared setting pairs",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:524]"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A15",
+   "passed": true,
+   "quantity": "U_prep is exactly orthogonal",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:505]"
+  },
+  {
+   "committed": 8,
+   "computed": 8,
+   "id": "A16",
+   "passed": true,
+   "quantity": "the eight local measurement operators are exactly orthogonal",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:516]"
+  },
+  {
+   "committed": [
+    72,
+    2,
+    96,
+    8
+   ],
+   "computed": [
+    72,
+    2,
+    96,
+    8
+   ],
+   "id": "A17",
+   "passed": true,
+   "quantity": "the declared permutation scope, its j0-admitted subgroup, the declared extension and its admitted part",
+   "source": "v12/note-w6-record-coreference.md SCOPE 2"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A18",
+   "passed": true,
+   "quantity": "the number of declared legs per frame, computed from the model",
+   "source": "the committed composite model"
+  },
+  {
+   "committed": [
+    0,
+    0,
+    16,
+    16,
+    0,
+    16
+   ],
+   "computed": [
+    0,
+    0,
+    16,
+    16,
+    0,
+    16
+   ],
+   "id": "A19",
+   "passed": true,
+   "quantity": "W5's declared-law residual weight ||r||_0 per setting at the first intermediate checkpoint",
+   "source": "v13/code/o4_discriminator_receipt.json ltp_residuals"
+  },
+  {
+   "committed": [
+    0,
+    0,
+    16,
+    16,
+    0,
+    16
+   ],
+   "computed": [
+    0,
+    0,
+    16,
+    16,
+    0,
+    16
+   ],
+   "id": "A20",
+   "passed": true,
+   "quantity": "the same at the second intermediate checkpoint",
+   "source": "v13/code/o4_discriminator_receipt.json ltp_residuals"
+  },
+  {
+   "committed": [
+    0,
+    0,
+    288,
+    288,
+    0,
+    288
+   ],
+   "computed": [
+    0,
+    0,
+    288,
+    288,
+    0,
+    288
+   ],
+   "id": "A21",
+   "passed": true,
+   "quantity": "the matrix residual per setting at the first intermediate checkpoint, on THIS build of the model",
+   "source": "v13/code/o4_discriminator_exact.py o4 A19 / D1"
+  },
+  {
+   "committed": 27,
+   "computed": 27,
+   "id": "A22",
+   "passed": true,
+   "quantity": "the O4 terminal receipt's own anchor pass count",
+   "source": "v12/note-w6-record-coreference.md / O4 anchors A04-A07"
+  }
+ ],
+ "base_commit": "a264a06",
+ "findings": {
+  "holonomy_group": {
+   "description": "the based closed-loop holonomy group at node F1@t0, read as the gauge-invariant permutation part of the closed-loop link product, enumerated over every closed path of the committed path space",
+   "per_setting": {
+    "SP-A": {
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "group_elements": [
+      "the identity"
+     ],
+     "sign_orbits_seen": 1,
+     "value_set_size": 1
+    },
+    "SP-B": {
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "group_elements": [
+      "the identity"
+     ],
+     "sign_orbits_seen": 1,
+     "value_set_size": 1
+    },
+    "SP-C": {
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "group_elements": [
+      "the identity"
+     ],
+     "sign_orbits_seen": 1,
+     "value_set_size": 1
+    },
+    "SP-D": {
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "group_elements": [
+      "the identity"
+     ],
+     "sign_orbits_seen": 1,
+     "value_set_size": 1
+    },
+    "SP-E": {
+     "elements": [
+      "another permutation",
+      "the identity",
+      "the wing exchange"
+     ],
+     "generated_group_order": 4,
+     "group_elements": [
+      "another permutation",
+      "another permutation",
+      "the identity",
+      "the wing exchange"
+     ],
+     "sign_orbits_seen": 2,
+     "value_set_size": 3
+    },
+    "SP-F": {
+     "elements": [
+      "another permutation",
+      "the identity",
+      "the wing exchange"
+     ],
+     "generated_group_order": 4,
+     "group_elements": [
+      "another permutation",
+      "another permutation",
+      "the identity",
+      "the wing exchange"
+     ],
+     "sign_orbits_seen": 2,
+     "value_set_size": 3
+    }
+   }
+  },
+  "hypothesis": {
+   "aligned_pairs_that_disagree": 2525952,
+   "crossing_pairs_that_agree": 4963464,
+   "flat_crossing_witnesses": [
+    "SP-E / the prefix-crossing loop t=1<->t=2",
+    "SP-F / the prefix-crossing loop t=1<->t=2"
+   ],
+   "twisted_corridor_witnesses": [
+    "SP-E / the aligned-prefix bigon at t=0",
+    "SP-E / the aligned-prefix bigon at t=1",
+    "SP-E / the aligned-prefix bigon at t=3",
+    "SP-F / the aligned-prefix bigon at t=0",
+    "SP-F / the aligned-prefix bigon at t=1",
+    "SP-F / the aligned-prefix bigon at t=3"
+   ],
+   "verdict": "NT-PREFIX-FLATNESS-REFUTED"
+  },
+  "per_object": {
+   "T1": {
+    "distinct_transported_values": 223,
+    "loop_value_set_size_per_setting": {
+     "SP-A": 11,
+     "SP-B": 11,
+     "SP-C": 17,
+     "SP-D": 17,
+     "SP-E": 14,
+     "SP-F": 58
+    },
+    "pairs_agreeing": 1957780,
+    "pairs_disagreeing": 3014316,
+    "pairs_with_an_obstructed_side": 0,
+    "settings_with_a_nontrivial_loop_value_set": [
+     "SP-A",
+     "SP-B",
+     "SP-C",
+     "SP-D",
+     "SP-E",
+     "SP-F"
+    ],
+    "verdict": "NT-HOLONOMY-<T1>"
+   },
+   "T2": {
+    "distinct_transported_values": 5,
+    "loop_value_set_size_per_setting": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 2,
+     "SP-D": 2,
+     "SP-E": 1,
+     "SP-F": 3
+    },
+    "pairs_agreeing": 4248576,
+    "pairs_disagreeing": 723520,
+    "pairs_with_an_obstructed_side": 0,
+    "settings_with_a_nontrivial_loop_value_set": [
+     "SP-C",
+     "SP-D",
+     "SP-F"
+    ],
+    "verdict": "NT-HOLONOMY-<T2>"
+   },
+   "T3": {
+    "distinct_transported_values": 186,
+    "loop_value_set_size_per_setting": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 14,
+     "SP-F": 14
+    },
+    "pairs_agreeing": 1352156,
+    "pairs_disagreeing": 3619940,
+    "pairs_with_an_obstructed_side": 0,
+    "settings_with_a_nontrivial_loop_value_set": [
+     "SP-E",
+     "SP-F"
+    ],
+    "verdict": "NT-HOLONOMY-<T3>"
+   }
+  },
+  "prefix_decides": {
+   "cells": 18,
+   "prefix_agreement": "18/18",
+   "residual_agreement": "12/18",
+   "witnesses": [
+    "SP-A: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-B: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-C: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+    "SP-D: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+    "SP-E: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-F: t=1 transports=True / t=2 transports=False at ||r||_0=16 both"
+   ]
+  },
+  "thesis": "On the W6 terminal base the pin's canonical loop -- frame 1's leg order against frame 2's, closed by the identifications at the two declared division events -- is measured EXACTLY FLAT at every setting: the two frames differ by the order of two legs the base measures to commute, so the loop is a commutator of commuting operators and carries no holonomy.  But the base admits a SECOND certified identification at the two symmetric settings -- the realized-only rule's WING EXCHANGE -- and the bigon it forms with the full-leg rule's identity, at a PREFIX-ALIGNED checkpoint, carries a nontrivial closed-loop holonomy of order two, while a loop CROSSING the prefix-divergent checkpoint is measured exactly flat.  Both of the pre-registered failure modes therefore obtain and the central hypothesis is REFUTED: the prefix criterion is not the flatness condition.  What carries the holonomy is measured to be the base's own wing-exchange orbit -- the same element the O4 obstruction is about -- and not the alignment of the declared leg prefixes.  The holonomy's gauge content is separated from its gauge orbit by the mandatory switching sweep: the closed loop's permutation part is fixed under the whole declared switching group, its overall sign is a gauge orbit, and a control quantity reading that sign is measured to move.  Stated at the committed finite scope, per coordinate; nothing is claimed about nature.",
+  "unit_verdict": "NT-HOLONOMY-<T1> + NT-HOLONOMY-<T2> + NT-HOLONOMY-<T3> + NT-PREFIX-FLATNESS-REFUTED"
+ },
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)).  The three transported objects with their per-coordinate actions, the two identification rules with their admissibility predicates, the node set with its declared read-time coordinate, the path length bound and the four declared probes are all recorded above, and the object-datum evaluation counter is measured to be ZERO at this point.  The `freeze-lax` mutant evaluates one datum first and must die here",
+   "class": "freeze",
+   "id": "NT-FREEZE",
+   "passed": true,
+   "value": {
+    "checkpoints": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "declared_division_events": [
+     0,
+     3
+    ],
+    "identification_rules": [
+     "FULL",
+     "REAL"
+    ],
+    "nodes_per_setting": 8,
+    "object_datum_evaluations_before_freeze": 0,
+    "objects": [
+     "T1",
+     "T2",
+     "T3"
+    ],
+    "path_length_bound": 8,
+    "probes": [
+     "the canonical loop",
+     "the aligned-prefix bigon",
+     "the prefix-crossing loop",
+     "the twisted comparator"
+    ]
+   }
+  },
+  {
+   "claim": "THE PIN'S FIRST CLAUSE, DISCHARGED BEFORE ANY TRANSPORT RESULT.  PREFIX-DECIDES was panel-unseen at O4, so it is re-derived here on this base by an INDEPENDENT route -- prefix alignment as multiset equality of canonical leg keys rather than a permutation search over leg orders, transport by this unit's own four-clause admissibility predicate, the residual as the j0 column of the defect matrix -- and the three profiles are compared on the same cells.  The gate measures that the leg-prefix profile agrees with the transport profile at EVERY cell, that the residual profile does NOT, and that at every setting the two intermediate checkpoints carry identical residual weight and opposite transport verdicts.  All three profiles are anchored cell by cell against the committed O4 receipt (A01-A07).  The `prefix-lax` mutant reads the whole declared leg list instead of the prefix and must die here",
+   "class": "measurement",
+   "id": "NT-PREFIX-DECIDES-REDERIVED",
+   "passed": true,
+   "value": {
+    "cells": 18,
+    "cells_where_the_prefix_profile_agrees": 18,
+    "cells_where_the_residual_profile_agrees": 12,
+    "equal_residual_opposite_transport": [
+     "SP-A: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+     "SP-B: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+     "SP-C: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+     "SP-D: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+     "SP-E: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+     "SP-F: t=1 transports=True / t=2 transports=False at ||r||_0=16 both"
+    ],
+    "route_is_independent_of_the_o4_script": true
+   }
+  },
+  {
+   "claim": "THE COMMITTED PATH SPACE IS ENUMERATED, NEVER TYPED.  Nodes are (frame, checkpoint) coordinates and the read time is a coordinate of the node; moves are leg applications in both directions and the admitted identifications; paths are the REDUCED sequences of moves up to the declared bound, which is the canonical loop's own length.  Every count in the table -- nodes, links, identification links, cycle rank, paths, closed paths, path pairs sharing both endpoints -- is computed from the enumeration.  The gate measures that the node count is the declared product, that the cycle rank is Euler's, and that the space is non-empty and contains closed paths at every setting.  The `reduce-lax` mutant drops the reduced condition and must die here",
+   "class": "measurement",
+   "id": "NT-PATH-SPACE-ENUMERATED",
+   "passed": true,
+   "value": {
+    "SP-A": {
+     "closed_paths": 56,
+     "cycle_rank": 2,
+     "identification_links": 3,
+     "links": 9,
+     "nodes": 8,
+     "paths": 422
+    },
+    "SP-B": {
+     "closed_paths": 56,
+     "cycle_rank": 2,
+     "identification_links": 3,
+     "links": 9,
+     "nodes": 8,
+     "paths": 422
+    },
+    "SP-C": {
+     "closed_paths": 56,
+     "cycle_rank": 2,
+     "identification_links": 3,
+     "links": 9,
+     "nodes": 8,
+     "paths": 422
+    },
+    "SP-D": {
+     "closed_paths": 56,
+     "cycle_rank": 2,
+     "identification_links": 3,
+     "links": 9,
+     "nodes": 8,
+     "paths": 422
+    },
+    "SP-E": {
+     "closed_paths": 2820,
+     "cycle_rank": 6,
+     "identification_links": 7,
+     "links": 13,
+     "nodes": 8,
+     "paths": 16168
+    },
+    "SP-F": {
+     "closed_paths": 2820,
+     "cycle_rank": 6,
+     "identification_links": 7,
+     "links": 13,
+     "nodes": 8,
+     "paths": 16168
+    },
+    "total_path_pairs": 4972096,
+    "total_paths": 34024
+   }
+  },
+  {
+   "claim": "THE POSITIVE CONTROL FIRES.  The canonical loop -- frame 1's leg order forward against frame 2's leg order backward, closed by the identifications at the two declared division events -- is a path pair that MUST agree: the two frames differ exactly by the order of two legs the base measures to COMMUTE (anchor A14), so the loop is a commutator of commuting operators.  The gate measures that its closed-loop holonomy is EXACTLY the identity at every setting.  Its T1 and T2 columns are reported as data and not folded into the control, because the reverse leg move is measured not to carry them (section 6).  The `control-lax` mutant waives the control and the `orient-flip` mutant reads a reversed leg without transposing it; both must die here",
+   "class": "measurement",
+   "id": "NT-POSITIVE-CONTROL",
+   "passed": true,
+   "value": {
+    "loops": [
+     "SP-A / the canonical loop",
+     "SP-B / the canonical loop",
+     "SP-C / the canonical loop",
+     "SP-D / the canonical loop",
+     "SP-E / the canonical loop",
+     "SP-F / the canonical loop"
+    ],
+    "settings": 6
+   }
+  },
+  {
+   "claim": "THE NEGATIVE CONTROL HAS TEETH.  A deliberately TWISTED comparator -- the canonical loop with one identification replaced by the wing exchange where the base supplies the identity -- MUST show holonomy.  If it did not, the instrument could not detect a twist at all and every flatness result here would be vacuous; the gate measures that its closed-loop permutation part is NOT the identity at every setting",
+   "class": "measurement",
+   "id": "NT-NEGATIVE-CONTROL",
+   "passed": true,
+   "value": {
+    "loops": [
+     "SP-A / the twisted comparator",
+     "SP-B / the twisted comparator",
+     "SP-C / the twisted comparator",
+     "SP-D / the twisted comparator",
+     "SP-E / the twisted comparator",
+     "SP-F / the twisted comparator"
+    ]
+   }
+  },
+  {
+   "claim": "T2'S EXACT-POSABILITY GATE, EVALUATED BEFORE ANY T2 RESULT (the RQ0-SYNTH lesson).  The composition-defect question is posed at a node only if the committed laws supply BOTH cut factors and their amplitude composition is EXACT there, so that Delta^B is the defect of a genuine factorisation of the declared process and not of an invented one.  The gate additionally measures the WELD: the defect matrix computed from paper 1's definition is measured IDENTICAL, entry by entry, to W5's declared-law residual Gamma(N<-0) - Gamma(N<-t)Gamma(t<-0) at every node.  Had any clause failed the unit would report NT-BLOCKED-AT-<posability> and force nothing.  The `defect-order` mutant composes the two Born shadows in the wrong order and must die here",
+   "class": "measurement",
+   "id": "NT-T2-POSABILITY",
+   "passed": true,
+   "value": {
+    "distinct_defect_weights": [
+     0,
+     288
+    ],
+    "nodes_tested": 48
+   }
+  },
+  {
+   "claim": "THE MANDATORY SECTION 14 SELF-TEST.  Every declared loop's holonomy is RECOMPUTED FROM THE LINK VARIABLES under every element of the declared switching group -- one sign per link of the corridor sub-graph, enumerated, 512 of them at every setting -- and the gate measures that the INVARIANT (the closed loop's permutation part) takes exactly ONE value under all of them, while the checkpoint subgroup (the switchings induced by a sign at each node, which is the base's own checkpoint-phase redundancy) leaves even the loop's SIGN fixed.  The `gauge-sign` mutant drops the switching on a reversed traversal -- a sign/orientation perturbation of exactly the kind section 14 requires -- and must die here, and the `gauge-subsample` mutant, which shrinks the sweep, must die at the group-size clause",
+   "class": "measurement",
+   "id": "NT-GAUGE-COVARIANCE",
+   "passed": true,
+   "value": {
+    "group_sizes": {
+     "SP-A": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 9,
+      "sampled": false,
+      "switching_group_order": 512,
+      "switchings_swept": 512
+     },
+     "SP-B": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 9,
+      "sampled": false,
+      "switching_group_order": 512,
+      "switchings_swept": 512
+     },
+     "SP-C": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 9,
+      "sampled": false,
+      "switching_group_order": 512,
+      "switchings_swept": 512
+     },
+     "SP-D": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 9,
+      "sampled": false,
+      "switching_group_order": 512,
+      "switchings_swept": 512
+     },
+     "SP-E": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 13,
+      "sampled": true,
+      "switching_group_order": 8192,
+      "switchings_swept": 512
+     },
+     "SP-F": {
+      "checkpoint_subgroup": 128,
+      "gauge_links": 13,
+      "sampled": true,
+      "switching_group_order": 8192,
+      "switchings_swept": 512
+     }
+    },
+    "instances_tested": 6400,
+    "loops_whose_permutation_part_moved": 0,
+    "loops_whose_sign_moved_under_the_checkpoint_subgroup": 0
+   }
+  },
+  {
+   "claim": "THE MIS-CONVENTIONED CONTROL MOVES.  A quantity that reads the closed loop's RAW SIGN -- the gauge-orbit datum the L5 disease promoted to physics -- is measured to MOVE under the declared switching group at at least one declared loop.  A sweep under which nothing moves cannot certify an invariance, so this gate is the sweep's own tooth; the `gauge-subsample` mutant collapses the sweep and must die here",
+   "class": "measurement",
+   "id": "NT-GAUGE-CONTROL-MOVES",
+   "passed": true,
+   "value": {
+    "loops_at_which_the_raw_sign_moved": 10,
+    "loops_swept": 10
+   }
+  },
+  {
+   "claim": "THE SELF-TEST EVALUATES FRESH (RUNBOOK section 14 addendum).  Every holonomy in the sweep is rebuilt from the link variables with the instrument's value cache bypassed; the phase's cache-HIT count is gated at ZERO and its MISS count gated positive, so a self-test that read the cache would be testing the cache and not the quantity.  The `memo-lax` mutant lets the phase read the cache and must die here",
+   "class": "measurement",
+   "id": "NT-FRESH-EVAL",
+   "passed": true,
+   "value": {
+    "value_cache_hits_during_the_self_test": 0,
+    "value_cache_misses_during_the_self_test": 6400
+   }
+  },
+  {
+   "claim": "THE DIRECTION DECLARATION IS BOOKKEEPING, NOT CONTENT.  Every declared loop is re-traversed with the direction convention flipped, and the gate measures that the reversed traversal's holonomy is the INVERSE permutation of the forward one at every loop and every setting -- so the flatness and holonomy verdicts are invariant under the choice.  The `flip-lax` mutant waives the comparison and must die here",
+   "class": "derivation",
+   "id": "NT-FLIP-DIRECTION",
+   "passed": true,
+   "value": {
+    "per_loop": {
+     "SP-A / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-B / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-C / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-D / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-E / the aligned-prefix bigon at t=0": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-E / the aligned-prefix bigon at t=1": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-E / the aligned-prefix bigon at t=3": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-E / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-E / the prefix-crossing loop t=1<->t=2": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-F / the aligned-prefix bigon at t=0": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-F / the aligned-prefix bigon at t=1": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-F / the aligned-prefix bigon at t=3": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-F / the canonical loop": {
+      "reverse_traversal_inverts_the_holonomy": true
+     },
+     "SP-F / the prefix-crossing loop t=1<->t=2": {
+      "reverse_traversal_inverts_the_holonomy": true
+     }
+    }
+   }
+  },
+  {
+   "claim": "THE ADMISSION CRITERION IS A DECLARATION AND ITS CONTENT IS REPORTED.  Identification links are admitted by UNIQUENESS of the admitted transport (the O4 discriminator's FORCED).  The O4 terminal separately measured that its CERTIFICATE is degenerate at the first intermediate checkpoint and refuses the pair at the second, so an admission criterion reading the certificate instead would admit links only at the final declared division event and would empty the loop space.  Both readings are printed; every verdict below is licensed at the declared criterion and at no wider scope",
+   "class": "disclosure",
+   "id": "NT-ADMISSION-DISCLOSED",
+   "passed": true,
+   "value": {
+    "per_setting": {
+     "SP-A": {
+      "links_admitted_by_uniqueness": 3,
+      "links_at_prefix_aligned_checkpoints": 3,
+      "links_at_prefix_divergent_checkpoints": 0
+     },
+     "SP-B": {
+      "links_admitted_by_uniqueness": 3,
+      "links_at_prefix_aligned_checkpoints": 3,
+      "links_at_prefix_divergent_checkpoints": 0
+     },
+     "SP-C": {
+      "links_admitted_by_uniqueness": 3,
+      "links_at_prefix_aligned_checkpoints": 3,
+      "links_at_prefix_divergent_checkpoints": 0
+     },
+     "SP-D": {
+      "links_admitted_by_uniqueness": 3,
+      "links_at_prefix_aligned_checkpoints": 3,
+      "links_at_prefix_divergent_checkpoints": 0
+     },
+     "SP-E": {
+      "links_admitted_by_uniqueness": 7,
+      "links_at_prefix_aligned_checkpoints": 6,
+      "links_at_prefix_divergent_checkpoints": 1
+     },
+     "SP-F": {
+      "links_admitted_by_uniqueness": 7,
+      "links_at_prefix_aligned_checkpoints": 6,
+      "links_at_prefix_divergent_checkpoints": 1
+     }
+    },
+    "rule_label_flip_is_inert": true
+   }
+  },
+  {
+   "claim": "THE HYPOTHESIS' VERDICT IS DERIVED FROM THE MATCHED TABLE OF PATH PAIRS AND FROM NOTHING ELSE.  The pre-registered claim is that the prefix criterion IS the flatness condition.  The table is read for its two falsifiers -- an aligned-prefix pair that DISAGREES (a twisted corridor) and a divergence-crossing pair that AGREES (a flat crossing) -- and the declared probes for each are reported with their exact holonomies.  The gate measures that the emitted verdict is the one the table supports.  The `path-collapse` mutant makes every path carry the same key, so that no pair can ever disagree, and must die here",
+   "class": "derivation",
+   "id": "NT-HYPOTHESIS-FROM-THE-TABLE",
+   "passed": true,
+   "value": {
+    "aligned_pairs_that_disagree": 2525952,
+    "crossing_pairs_that_agree": 4963464,
+    "flat_crossing_probes_that_fired": [
+     "SP-E / the prefix-crossing loop t=1<->t=2",
+     "SP-F / the prefix-crossing loop t=1<->t=2"
+    ],
+    "twisted_corridor_probes_that_fired": [
+     "SP-E / the aligned-prefix bigon at t=0",
+     "SP-E / the aligned-prefix bigon at t=1",
+     "SP-E / the aligned-prefix bigon at t=3",
+     "SP-F / the aligned-prefix bigon at t=0",
+     "SP-F / the aligned-prefix bigon at t=1",
+     "SP-F / the aligned-prefix bigon at t=3"
+    ],
+    "verdict": "NT-PREFIX-FLATNESS-REFUTED"
+   }
+  },
+  {
+   "claim": "EVERY VERDICT IS DRAWN FROM THE PIN'S PRE-REGISTERED VOCABULARY and from nothing else: each per-object verdict and the hypothesis' own verdict is measured to begin with one of the pre-registered names.  The `verdict-lax` mutant emits an out-of-vocabulary tag and must die here",
+   "class": "derivation",
+   "id": "NT-VOCABULARY",
+   "passed": true,
+   "value": {
+    "per_object": [
+     "NT-HOLONOMY-<T1>",
+     "NT-HOLONOMY-<T2>",
+     "NT-HOLONOMY-<T3>"
+    ],
+    "unit_verdict": "NT-HOLONOMY-<T1> + NT-HOLONOMY-<T2> + NT-HOLONOMY-<T3> + NT-PREFIX-FLATNESS-REFUTED"
+   }
+  },
+  {
+   "claim": "EXACT ARITHMETIC EVERYWHERE.  An AST sweep of this module finds no float literal and no call to `float`, and a runtime sweep finds no float in any value that reached a gate or an anchor.  The substrate is the committed model's own totally real quartic field Q(cos pi/8), where tuple equality IS field equality, together with fractions.Fraction.  The `float-lax` mutant introduces one and must die here",
+   "class": "derivation",
+   "id": "NT-EXACT",
+   "passed": true,
+   "value": {
+    "float_call_lines": [],
+    "float_literal_lines": [],
+    "fraction_available": "1/2",
+    "rows_carrying_a_float": []
+   }
+  },
+  {
+   "claim": "EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.  Each declared mutant is run to completion, must exit 1, and must falsify at least one NAMED gate or anchor; the second clause is the one that matters -- the set of must-pass gates that NO mutant falsifies is measured to be EMPTY.  Each mutant declares its KIND and the split is counted from the declaration: a WAIVER proves a gate's predicate is load-bearing for the exit code, not that the gate would catch a computational defect, and the two are not claimed to be the same thing",
+   "class": "derivation",
+   "id": "NT-FALSIFICATION",
+   "passed": true,
+   "value": {
+    "died": 21,
+    "must_pass_gate_denominator": 13,
+    "mutants": 21,
+    "never_falsified": [],
+    "perturb_a_computation": 17,
+    "waivers": 4
+   }
+  }
+ ],
+ "pin_commit": "26cc502",
+ "pin_sha256_prefix": "ee22c5aadbcf",
+ "schema": "nt-transport-receipt-v1",
+ "source_sha256": "76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb",
+ "tables": {
+  "declarations": {
+   "arena": {
+    "admitted_extension": 8,
+    "admitted_permutation_group": 2,
+    "carrier": 36,
+    "checkpoints": 4,
+    "declared_extension_scope": 96,
+    "declared_permutation_scope": 72,
+    "frames": 2,
+    "initial_configuration": 0,
+    "settings": 6,
+    "state": "p(0) = delta_{j0}"
+   },
+   "checkpoints": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "declared_division_events": [
+    0,
+    3
+   ],
+   "identification_rules": [
+    {
+     "definition": "The O4 corridor-bound rule matching the FULL declared legs order-free at the Born level (O4's C2/C3, measured to agree at every cell): an identification at checkpoint t is admitted iff exactly one permutation of the admitted scope carries j0 to j0, carries F2's full declared legs onto F1's, and carries F2's read-time law datum onto F1's.",
+     "id": "FULL",
+     "legs": "declared",
+     "level": "born",
+     "name": "FULL-DECLARED-LEGS"
+    },
+    {
+     "definition": "The O4 realized-only rule (C4): the same predicate with each leg restricted to the configurations the process actually occupies before and after it.  Declared because the O4 terminal measured that where it admits a transport the admitted map is the base's own WING EXCHANGE and not the identity.",
+     "id": "REAL",
+     "legs": "realized",
+     "level": "born",
+     "name": "REALIZED-ONLY"
+    }
+   ],
+   "nodes": [
+    "F1@t0",
+    "F1@t1",
+    "F1@t2",
+    "F1@t3",
+    "F2@t0",
+    "F2@t1",
+    "F2@t2",
+    "F2@t3"
+   ],
+   "objects": [
+    {
+     "action": "legs act by the declared one-step Born transition (transpose in reverse); identifications act by the admitted permutation",
+     "datum": "occupied support + the exact law at the node's declared read time",
+     "id": "T1",
+     "name": "the law's restriction to the context"
+    },
+    {
+     "action": "identifications act by conjugation (paper 1 equivariance (iv)); legs carry the matrix unchanged, so leg flatness measures the defect's stability under moving the cut",
+     "datum": "B(U2 U1) - B(U2) B(U1) with U1 = Theta(t<-0), U2 = Theta(N<-t)",
+     "id": "T2",
+     "name": "the composition defect Delta^B at the node's own cut"
+    },
+    {
+     "action": "legs contribute the leg operator (its inverse in reverse); identifications contribute the permutation matrix",
+     "datum": "the ordered product of link variables around a closed loop",
+     "id": "T3",
+     "name": "the amplitude/phase layer, closed-loop form"
+    }
+   ],
+   "path_length_bound": 8,
+   "probes": [
+    "the canonical loop",
+    "the aligned-prefix bigon",
+    "the prefix-crossing loop",
+    "the twisted comparator"
+   ]
+  },
+  "flip_tests": {
+   "admission_disclosure": {
+    "SP-A": {
+     "links_admitted_by_uniqueness": 3,
+     "links_at_prefix_aligned_checkpoints": 3,
+     "links_at_prefix_divergent_checkpoints": 0
+    },
+    "SP-B": {
+     "links_admitted_by_uniqueness": 3,
+     "links_at_prefix_aligned_checkpoints": 3,
+     "links_at_prefix_divergent_checkpoints": 0
+    },
+    "SP-C": {
+     "links_admitted_by_uniqueness": 3,
+     "links_at_prefix_aligned_checkpoints": 3,
+     "links_at_prefix_divergent_checkpoints": 0
+    },
+    "SP-D": {
+     "links_admitted_by_uniqueness": 3,
+     "links_at_prefix_aligned_checkpoints": 3,
+     "links_at_prefix_divergent_checkpoints": 0
+    },
+    "SP-E": {
+     "links_admitted_by_uniqueness": 7,
+     "links_at_prefix_aligned_checkpoints": 6,
+     "links_at_prefix_divergent_checkpoints": 1
+    },
+    "SP-F": {
+     "links_admitted_by_uniqueness": 7,
+     "links_at_prefix_aligned_checkpoints": 6,
+     "links_at_prefix_divergent_checkpoints": 1
+    }
+   },
+   "direction": {
+    "SP-A / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-B / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-C / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-D / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-E / the aligned-prefix bigon at t=0": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-E / the aligned-prefix bigon at t=1": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-E / the aligned-prefix bigon at t=3": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-E / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-E / the prefix-crossing loop t=1<->t=2": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-F / the aligned-prefix bigon at t=0": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-F / the aligned-prefix bigon at t=1": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-F / the aligned-prefix bigon at t=3": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-F / the canonical loop": {
+     "reverse_traversal_inverts_the_holonomy": true
+    },
+    "SP-F / the prefix-crossing loop t=1<->t=2": {
+     "reverse_traversal_inverts_the_holonomy": true
+    }
+   }
+  },
+  "gate_falsification": {
+   "falsified_by_some_mutant": [
+    "NT-EXACT",
+    "NT-FLIP-DIRECTION",
+    "NT-FREEZE",
+    "NT-FRESH-EVAL",
+    "NT-GAUGE-CONTROL-MOVES",
+    "NT-GAUGE-COVARIANCE",
+    "NT-HYPOTHESIS-FROM-THE-TABLE",
+    "NT-NEGATIVE-CONTROL",
+    "NT-PATH-SPACE-ENUMERATED",
+    "NT-POSITIVE-CONTROL",
+    "NT-PREFIX-DECIDES-REDERIVED",
+    "NT-T2-POSABILITY",
+    "NT-VOCABULARY"
+   ],
+   "must_pass_gates": [
+    "NT-FREEZE",
+    "NT-PREFIX-DECIDES-REDERIVED",
+    "NT-PATH-SPACE-ENUMERATED",
+    "NT-POSITIVE-CONTROL",
+    "NT-NEGATIVE-CONTROL",
+    "NT-T2-POSABILITY",
+    "NT-GAUGE-COVARIANCE",
+    "NT-GAUGE-CONTROL-MOVES",
+    "NT-FRESH-EVAL",
+    "NT-FLIP-DIRECTION",
+    "NT-HYPOTHESIS-FROM-THE-TABLE",
+    "NT-VOCABULARY",
+    "NT-EXACT"
+   ],
+   "never_falsified": []
+  },
+  "gauge_selftest": {
+   "group_sizes": {
+    "SP-A": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 9,
+     "sampled": false,
+     "switching_group_order": 512,
+     "switchings_swept": 512
+    },
+    "SP-B": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 9,
+     "sampled": false,
+     "switching_group_order": 512,
+     "switchings_swept": 512
+    },
+    "SP-C": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 9,
+     "sampled": false,
+     "switching_group_order": 512,
+     "switchings_swept": 512
+    },
+    "SP-D": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 9,
+     "sampled": false,
+     "switching_group_order": 512,
+     "switchings_swept": 512
+    },
+    "SP-E": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 13,
+     "sampled": true,
+     "switching_group_order": 8192,
+     "switchings_swept": 512
+    },
+    "SP-F": {
+     "checkpoint_subgroup": 128,
+     "gauge_links": 13,
+     "sampled": true,
+     "switching_group_order": 8192,
+     "switchings_swept": 512
+    }
+   },
+   "per_loop": {
+    "SP-A / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-B / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-C / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-D / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-E / the aligned-prefix bigon at t=0": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-E / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-E / the prefix-crossing loop t=1<->t=2": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-F / the aligned-prefix bigon at t=0": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-F / the canonical loop": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-F / the prefix-crossing loop t=1<->t=2": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    }
+   }
+  },
+  "hypothesis_table": {
+   "T1/aligned/agree": 681660,
+   "T1/aligned/disagree": 1025340,
+   "T1/crossing/agree": 1276120,
+   "T1/crossing/disagree": 1988976,
+   "T2/aligned/agree": 1478644,
+   "T2/aligned/disagree": 228356,
+   "T2/crossing/agree": 2769932,
+   "T2/crossing/disagree": 495164,
+   "T3/aligned/agree": 434744,
+   "T3/aligned/disagree": 1272256,
+   "T3/crossing/agree": 917412,
+   "T3/crossing/disagree": 2347684
+  },
+  "mutants": [
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the leg prefix read as the whole declared leg list",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A02",
+     "A04"
+    ],
+    "falsified_gates": [
+     "NT-PREFIX-DECIDES-REDERIVED"
+    ],
+    "kind": "computation",
+    "mutant": "prefix-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every path given the same transported key",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-HYPOTHESIS-FROM-THE-TABLE"
+    ],
+    "kind": "computation",
+    "mutant": "path-collapse"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the switching dropped on a reversed traversal",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-GAUGE-COVARIANCE"
+    ],
+    "kind": "computation",
+    "mutant": "gauge-sign"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every node datum read at the final checkpoint",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A02",
+     "A05",
+     "A07",
+     "A10",
+     "A11",
+     "A12"
+    ],
+    "falsified_gates": [
+     "NT-PREFIX-DECIDES-REDERIVED",
+     "NT-GAUGE-COVARIANCE",
+     "NT-FLIP-DIRECTION"
+    ],
+    "kind": "computation",
+    "mutant": "readtime-conflate"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the defect's two Born shadows composed in the wrong order",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A06",
+     "A07",
+     "A19",
+     "A20",
+     "A21"
+    ],
+    "falsified_gates": [
+     "NT-PREFIX-DECIDES-REDERIVED",
+     "NT-T2-POSABILITY"
+    ],
+    "kind": "computation",
+    "mutant": "defect-order"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a leg's reverse traversal read without transposition",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-POSITIVE-CONTROL",
+     "NT-GAUGE-COVARIANCE",
+     "NT-FLIP-DIRECTION",
+     "NT-HYPOTHESIS-FROM-THE-TABLE"
+    ],
+    "kind": "computation",
+    "mutant": "orient-flip"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every admitted permutation accepted as an identification",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-PATH-SPACE-ENUMERATED",
+     "NT-POSITIVE-CONTROL",
+     "NT-NEGATIVE-CONTROL",
+     "NT-GAUGE-COVARIANCE",
+     "NT-GAUGE-CONTROL-MOVES",
+     "NT-FRESH-EVAL"
+    ],
+    "kind": "computation",
+    "mutant": "id-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the reduced-path condition dropped",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-PATH-SPACE-ENUMERATED"
+    ],
+    "kind": "computation",
+    "mutant": "reduce-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the admitted permutation scope subsampled",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A17"
+    ],
+    "falsified_gates": [
+     "NT-HYPOTHESIS-FROM-THE-TABLE"
+    ],
+    "kind": "computation",
+    "mutant": "scope-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the switching sweep subsampled",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-GAUGE-CONTROL-MOVES"
+    ],
+    "kind": "computation",
+    "mutant": "gauge-subsample"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the self-test allowed to read the cache",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-FRESH-EVAL"
+    ],
+    "kind": "computation",
+    "mutant": "memo-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one object datum evaluated before the freeze",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-FREEZE"
+    ],
+    "kind": "computation",
+    "mutant": "freeze-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a float literal introduced",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-EXACT"
+    ],
+    "kind": "computation",
+    "mutant": "float-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the re-derived prefix profile perturbed at one cell",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A02",
+     "A04"
+    ],
+    "falsified_gates": [],
+    "kind": "computation",
+    "mutant": "anchor-o4-prefix"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "an occupied support read at the wrong checkpoint",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A08",
+     "A09",
+     "A10",
+     "A11"
+    ],
+    "falsified_gates": [],
+    "kind": "computation",
+    "mutant": "anchor-o4-occ"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the wing exchange replaced by the identity",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A08",
+     "A09"
+    ],
+    "falsified_gates": [
+     "NT-NEGATIVE-CONTROL"
+    ],
+    "kind": "computation",
+    "mutant": "anchor-w6-wing"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the residual's composition order flipped",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A06",
+     "A19",
+     "A20"
+    ],
+    "falsified_gates": [],
+    "kind": "computation",
+    "mutant": "anchor-ltp"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "T2's posability predicate overwritten after the fact",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-T2-POSABILITY"
+    ],
+    "kind": "waiver",
+    "mutant": "posability-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the positive control's predicate overwritten after the fact",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-POSITIVE-CONTROL"
+    ],
+    "kind": "waiver",
+    "mutant": "control-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the direction flip-test's predicate overwritten after the fact",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-FLIP-DIRECTION"
+    ],
+    "kind": "waiver",
+    "mutant": "flip-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "an out-of-vocabulary verdict emitted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-VOCABULARY"
+    ],
+    "kind": "waiver",
+    "mutant": "verdict-lax"
+   }
+  ],
+  "occupied_supports": {
+   "t0 SP-A/F1": [
+    0
+   ],
+   "t0 SP-A/F2": [
+    0
+   ],
+   "t0 SP-B/F1": [
+    0
+   ],
+   "t0 SP-B/F2": [
+    0
+   ],
+   "t0 SP-C/F1": [
+    0
+   ],
+   "t0 SP-C/F2": [
+    0
+   ],
+   "t0 SP-D/F1": [
+    0
+   ],
+   "t0 SP-D/F2": [
+    0
+   ],
+   "t0 SP-E/F1": [
+    0
+   ],
+   "t0 SP-E/F2": [
+    0
+   ],
+   "t0 SP-F/F1": [
+    0
+   ],
+   "t0 SP-F/F2": [
+    0
+   ],
+   "t1 SP-A/F1": [
+    9,
+    18
+   ],
+   "t1 SP-A/F2": [
+    9,
+    18
+   ],
+   "t1 SP-B/F1": [
+    9,
+    18
+   ],
+   "t1 SP-B/F2": [
+    9,
+    18
+   ],
+   "t1 SP-C/F1": [
+    9,
+    18
+   ],
+   "t1 SP-C/F2": [
+    9,
+    18
+   ],
+   "t1 SP-D/F1": [
+    9,
+    18
+   ],
+   "t1 SP-D/F2": [
+    9,
+    18
+   ],
+   "t1 SP-E/F1": [
+    9,
+    18
+   ],
+   "t1 SP-E/F2": [
+    9,
+    18
+   ],
+   "t1 SP-F/F1": [
+    9,
+    18
+   ],
+   "t1 SP-F/F2": [
+    9,
+    18
+   ],
+   "t2 SP-A/F1": [
+    12,
+    24
+   ],
+   "t2 SP-A/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "t2 SP-B/F1": [
+    12,
+    24
+   ],
+   "t2 SP-B/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "t2 SP-C/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "t2 SP-C/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "t2 SP-D/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "t2 SP-D/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "t2 SP-E/F1": [
+    12,
+    24
+   ],
+   "t2 SP-E/F2": [
+    11,
+    19
+   ],
+   "t2 SP-F/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "t2 SP-F/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "t3 SP-A/F1": [
+    4,
+    5,
+    13,
+    14,
+    25,
+    26,
+    34,
+    35
+   ],
+   "t3 SP-A/F2": [
+    4,
+    5,
+    13,
+    14,
+    25,
+    26,
+    34,
+    35
+   ],
+   "t3 SP-B/F1": [
+    4,
+    5,
+    13,
+    14,
+    25,
+    26,
+    34,
+    35
+   ],
+   "t3 SP-B/F2": [
+    4,
+    5,
+    13,
+    14,
+    25,
+    26,
+    34,
+    35
+   ],
+   "t3 SP-C/F1": [
+    4,
+    5,
+    7,
+    8,
+    13,
+    14,
+    16,
+    17,
+    22,
+    23,
+    25,
+    26,
+    31,
+    32,
+    34,
+    35
+   ],
+   "t3 SP-C/F2": [
+    4,
+    5,
+    7,
+    8,
+    13,
+    14,
+    16,
+    17,
+    22,
+    23,
+    25,
+    26,
+    31,
+    32,
+    34,
+    35
+   ],
+   "t3 SP-D/F1": [
+    4,
+    5,
+    7,
+    8,
+    13,
+    14,
+    16,
+    17,
+    22,
+    23,
+    25,
+    26,
+    31,
+    32,
+    34,
+    35
+   ],
+   "t3 SP-D/F2": [
+    4,
+    5,
+    7,
+    8,
+    13,
+    14,
+    16,
+    17,
+    22,
+    23,
+    25,
+    26,
+    31,
+    32,
+    34,
+    35
+   ],
+   "t3 SP-E/F1": [
+    14,
+    25
+   ],
+   "t3 SP-E/F2": [
+    14,
+    25
+   ],
+   "t3 SP-F/F1": [
+    5,
+    7,
+    14,
+    16,
+    23,
+    25,
+    32,
+    34
+   ],
+   "t3 SP-F/F2": [
+    5,
+    7,
+    14,
+    16,
+    23,
+    25,
+    32,
+    34
+   ]
+  },
+  "orbit_relation": {
+   "t0/SP-A": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t0/SP-B": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t0/SP-C": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t0/SP-D": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t0/SP-E": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t0/SP-F": {
+    "cardinality_forced": false,
+    "intersection": 1,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     1,
+     1
+    ]
+   },
+   "t1/SP-A": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t1/SP-B": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t1/SP-C": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t1/SP-D": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t1/SP-E": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t1/SP-F": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t2/SP-A": {
+    "cardinality_forced": true,
+    "intersection": 0,
+    "law_preserving": false,
+    "one_orbit": false,
+    "sizes": [
+     2,
+     8
+    ]
+   },
+   "t2/SP-B": {
+    "cardinality_forced": true,
+    "intersection": 0,
+    "law_preserving": false,
+    "one_orbit": false,
+    "sizes": [
+     2,
+     8
+    ]
+   },
+   "t2/SP-C": {
+    "cardinality_forced": false,
+    "intersection": 0,
+    "law_preserving": false,
+    "one_orbit": true,
+    "sizes": [
+     8,
+     8
+    ]
+   },
+   "t2/SP-D": {
+    "cardinality_forced": false,
+    "intersection": 0,
+    "law_preserving": false,
+    "one_orbit": true,
+    "sizes": [
+     8,
+     8
+    ]
+   },
+   "t2/SP-E": {
+    "cardinality_forced": false,
+    "intersection": 0,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t2/SP-F": {
+    "cardinality_forced": false,
+    "intersection": 0,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     8,
+     8
+    ]
+   },
+   "t3/SP-A": {
+    "cardinality_forced": false,
+    "intersection": 8,
+    "law_preserving": false,
+    "one_orbit": false,
+    "sizes": [
+     8,
+     8
+    ]
+   },
+   "t3/SP-B": {
+    "cardinality_forced": false,
+    "intersection": 8,
+    "law_preserving": false,
+    "one_orbit": false,
+    "sizes": [
+     8,
+     8
+    ]
+   },
+   "t3/SP-C": {
+    "cardinality_forced": false,
+    "intersection": 16,
+    "law_preserving": false,
+    "one_orbit": true,
+    "sizes": [
+     16,
+     16
+    ]
+   },
+   "t3/SP-D": {
+    "cardinality_forced": false,
+    "intersection": 16,
+    "law_preserving": false,
+    "one_orbit": true,
+    "sizes": [
+     16,
+     16
+    ]
+   },
+   "t3/SP-E": {
+    "cardinality_forced": false,
+    "intersection": 2,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     2,
+     2
+    ]
+   },
+   "t3/SP-F": {
+    "cardinality_forced": false,
+    "intersection": 8,
+    "law_preserving": true,
+    "one_orbit": true,
+    "sizes": [
+     8,
+     8
+    ]
+   }
+  },
+  "pair_census": {
+   "t=1": {
+    "cross_disjoint": 0,
+    "cross_pairs": 36,
+    "same_pairs": 30,
+    "same_sharing": 30
+   },
+   "t=2": {
+    "cross_disjoint": 36,
+    "cross_pairs": 36,
+    "same_pairs": 30,
+    "same_sharing": 30
+   },
+   "t=3": {
+    "cross_disjoint": 0,
+    "cross_pairs": 36,
+    "same_pairs": 30,
+    "same_sharing": 30
+   }
+  },
+  "path_space": {
+   "SP-A": {
+    "closed_paths": 56,
+    "cycle_rank": 2,
+    "identification_links": 3,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     }
+    ],
+    "links": 9,
+    "nodes": 8,
+    "paths": 422
+   },
+   "SP-B": {
+    "closed_paths": 56,
+    "cycle_rank": 2,
+    "identification_links": 3,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     }
+    ],
+    "links": 9,
+    "nodes": 8,
+    "paths": 422
+   },
+   "SP-C": {
+    "closed_paths": 56,
+    "cycle_rank": 2,
+    "identification_links": 3,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     }
+    ],
+    "links": 9,
+    "nodes": 8,
+    "paths": 422
+   },
+   "SP-D": {
+    "closed_paths": 56,
+    "cycle_rank": 2,
+    "identification_links": 3,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     }
+    ],
+    "links": 9,
+    "nodes": 8,
+    "paths": 422
+   },
+   "SP-E": {
+    "closed_paths": 2820,
+    "cycle_rank": 6,
+    "identification_links": 7,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 0
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 1
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": false,
+      "rule": "REAL",
+      "t": 2
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 3
+     }
+    ],
+    "links": 13,
+    "nodes": 8,
+    "paths": 16168
+   },
+   "SP-F": {
+    "closed_paths": 2820,
+    "cycle_rank": 6,
+    "identification_links": 7,
+    "link_detail": [
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 0
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 1
+     },
+     {
+      "perm_name": "the identity",
+      "prefix_aligned": true,
+      "rule": "FULL",
+      "t": 3
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 0
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 1
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": false,
+      "rule": "REAL",
+      "t": 2
+     },
+     {
+      "perm_name": "the wing exchange",
+      "prefix_aligned": true,
+      "rule": "REAL",
+      "t": 3
+     }
+    ],
+    "links": 13,
+    "nodes": 8,
+    "paths": 16168
+   },
+   "_total_pairs": 4972096,
+   "_total_paths": 34024
+  },
+  "posability": {
+   "SP-A": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   },
+   "SP-B": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   },
+   "SP-C": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   },
+   "SP-D": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   },
+   "SP-E": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   },
+   "SP-F": {
+    "F1@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F1@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F1@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t0": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    },
+    "F2@t1": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t2": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 16,
+     "defect_nonzero_entries": 288
+    },
+    "F2@t3": {
+     "amplitude_composition_exact": true,
+     "both_factors_declared": true,
+     "defect_equals_W5_residual": true,
+     "defect_j0_column_weight": 0,
+     "defect_nonzero_entries": 0
+    }
+   }
+  },
+  "prefix_rederivation": {
+   "equal_residual_opposite_transport": [
+    "SP-A: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-B: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-C: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+    "SP-D: t=1 transports=True / t=2 transports=False at ||r||_0=16 both",
+    "SP-E: t=1 transports=True / t=2 transports=False at ||r||_0=0 both",
+    "SP-F: t=1 transports=True / t=2 transports=False at ||r||_0=16 both"
+   ],
+   "prefix_alignment": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "residual_vanishes": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": false,
+    "t1/SP-D": false,
+    "t1/SP-E": true,
+    "t1/SP-F": false,
+    "t2/SP-A": true,
+    "t2/SP-B": true,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": true,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   },
+   "residual_weight": {
+    "t1/SP-A": 0,
+    "t1/SP-B": 0,
+    "t1/SP-C": 16,
+    "t1/SP-D": 16,
+    "t1/SP-E": 0,
+    "t1/SP-F": 16,
+    "t2/SP-A": 0,
+    "t2/SP-B": 0,
+    "t2/SP-C": 16,
+    "t2/SP-D": 16,
+    "t2/SP-E": 0,
+    "t2/SP-F": 16,
+    "t3/SP-A": 0,
+    "t3/SP-B": 0,
+    "t3/SP-C": 0,
+    "t3/SP-D": 0,
+    "t3/SP-E": 0,
+    "t3/SP-F": 0
+   },
+   "route": "prefix by multiset equality of canonical leg keys; transport by this unit's own four-clause admissibility predicate; residual as the j0 column of Delta^B",
+   "transports": {
+    "t1/SP-A": true,
+    "t1/SP-B": true,
+    "t1/SP-C": true,
+    "t1/SP-D": true,
+    "t1/SP-E": true,
+    "t1/SP-F": true,
+    "t2/SP-A": false,
+    "t2/SP-B": false,
+    "t2/SP-C": false,
+    "t2/SP-D": false,
+    "t2/SP-E": false,
+    "t2/SP-F": false,
+    "t3/SP-A": true,
+    "t3/SP-B": true,
+    "t3/SP-C": true,
+    "t3/SP-D": true,
+    "t3/SP-E": true,
+    "t3/SP-F": true
+   }
+  },
+  "probes": {
+   "SP-A / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-A / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": false,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "not a signed permutation",
+    "T3_sign_orbit": null,
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   },
+   "SP-B / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-B / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": false,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "not a signed permutation",
+    "T3_sign_orbit": null,
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   },
+   "SP-C / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-C / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": false,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "not a signed permutation",
+    "T3_sign_orbit": null,
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   },
+   "SP-D / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-D / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": false,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "not a signed permutation",
+    "T3_sign_orbit": null,
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   },
+   "SP-E / the aligned-prefix bigon at t=0": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-E / the aligned-prefix bigon at t=1": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t1",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-E / the aligned-prefix bigon at t=3": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t3",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-E / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-E / the prefix-crossing loop t=1<->t=2": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t1",
+    "corridor": "crossing",
+    "length": 4,
+    "role": "THE FLAT-CROSSING PROBE"
+   },
+   "SP-E / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "another permutation",
+    "T3_sign_orbit": [
+     -1,
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   },
+   "SP-F / the aligned-prefix bigon at t=0": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-F / the aligned-prefix bigon at t=1": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": false,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t1",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-F / the aligned-prefix bigon at t=3": {
+    "T1_obstructed": false,
+    "T1_returns": true,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "the wing exchange",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t3",
+    "corridor": "aligned",
+    "length": 2,
+    "role": "THE TWISTED-CORRIDOR PROBE"
+   },
+   "SP-F / the canonical loop": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": 8,
+    "role": "the pin's own loop: the two leg-orders"
+   },
+   "SP-F / the prefix-crossing loop t=1<->t=2": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": true,
+    "T3_permutation_name": "the identity",
+    "T3_sign_orbit": [
+     1
+    ],
+    "base_node": "F1@t1",
+    "corridor": "crossing",
+    "length": 4,
+    "role": "THE FLAT-CROSSING PROBE"
+   },
+   "SP-F / the twisted comparator": {
+    "T1_obstructed": false,
+    "T1_returns": false,
+    "T2_obstructed": false,
+    "T2_returns": true,
+    "T3_is_signed_permutation": true,
+    "T3_permutation_is_the_identity": false,
+    "T3_permutation_name": "another permutation",
+    "T3_sign_orbit": [
+     -1,
+     1
+    ],
+    "base_node": "F1@t0",
+    "corridor": "aligned",
+    "length": null,
+    "role": "NEGATIVE CONTROL: it MUST show holonomy"
+   }
+  }
+ },
+ "totals": {
+  "anchors": 22,
+  "gates": 15,
+  "must_pass_failures": 0
+ }
+}

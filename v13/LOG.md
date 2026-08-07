@@ -6697,3 +6697,43 @@ same-order pair, negative control twisted comparator w/ teeth.
 On delivery: COMMIT-AS-IS FIRST, then verification, then §13
 protocol freeze → panel (PREFIX-DECIDES re-derivation checked
 first) → adjudication.  Recorded after it occurs.
+
+## 2026-08-07 — NT DELIVERED, COMMITTED AS-IS (v13 LEDGER #202)
+Delivery committed as-is.  Worker's inventory: **PREFIX-DECIDES
+INDEPENDENTLY RE-DERIVED FIRST by a different route** (multiset
+canonical-key alignment vs O4's permutation search; own
+admissibility predicate; own defect matrix) — 18/18 and 12/18
+reproduce exactly, all 6 equal-residual witnesses reappear,
+A01–A07 exit-1 against the O4 receipt: the panel-unseen flag
+DISCHARGED.  Path space computed: 8 nodes/setting; 9 links
+(SP-A–D) / 13 (SP-E/F); cycle rank 2/6; 34,024 paths; 4,972,096
+same-endpoint pairs.  ALL THREE OBJECTS: NT-HOLONOMY —
+T1 (223 distinct values, nontrivial all six; cause: the declared
+transposed Born step does not invert the forward one), T2 (5
+values, nontrivial SP-C/D/F; POSABILITY PASSED AT ALL 48 NODES
+INCL. THE WELD — Δᴮ measured IDENTICAL ENTRY-BY-ENTRY to W5's
+declared-law residual; sharpest cell SP-F t∈{1,2}: the wing
+exchange moves Δᴮ, 288 nonzeros/16 in j₀), T3 (186 values,
+nontrivial SP-E/F; value set 1 at SP-A–D, 3 at SP-E/F,
+**generated group order 4**).  **NT-PREFIX-FLATNESS-REFUTED,
+TWICE**: twisted corridors (6 witnesses — aligned-prefix bigons
+at t=0,1,3 at SP-E/F carry the WING-EXCHANGE holonomy inside
+alignment) AND flat crossings (2 witnesses — prefix-crossing
+t=1↔2 loops at SP-E/F are exactly identity).  Positive control
+fires (the canonical loop identity at all six — the legs
+commute, A14); negative control has teeth (non-identity
+everywhere, not even signed-permutation at SP-A–D).
+**MECHANISM AS MEASURED: holonomy appears where the base admits
+TWO CERTIFIED IDENTIFICATIONS AT ONE COORDINATE differing by
+the wing exchange — prefix alignment governs whether an
+identification EXISTS, not whether existing ones AGREE.**
+22/22 anchors / 15 gates (14 must-pass, 0 failures) / 21/21
+mutants died / never_falsified EMPTY / fresh-eval 0 hits /
+byte-identical ×2.  9 deviations incl. D1 (the canonical loop
+does NOT return T1 — positive control scoped to the amplitude
+layer, the layer contrast reported), D8 (a waiver-direction
+bug caught by the census BEFORE delivery), and the ~2h budget
+overrun explained (the §14 sweep dominates; machine load
+60–120; two real instrument defects found and fixed
+pre-delivery).  md5 output 1dc080d5 / receipt a016e8b0.
+Adjudicator verification next.
