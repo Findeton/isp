@@ -6751,3 +6751,16 @@ PREFIX-DECIDES independence check / K5 D1 T1-non-return,
 D8 audit, anchors, path-space counts).  Frozen SHAs (sha256-12)
 recorded in the freeze command output with this commit.
 Three-lens panel (Opus 5) dispatched immediately after.
+
+## 2026-08-07 — NT PANEL DISPATCHED (v13 LEDGER #204)
+Three-lens panel dispatched (Opus 5, one review file each, no
+git): R1 operator (the 8 refutation witnesses recomputed; the
+wing-exchange holonomy swept for gauge-orbit vs content; the
+[SAMP] attack on the unswept 8192-group); R2 effectus (the
+multiplicity mechanism vs the FULL table; the FORCED-vs-CERT
+demotion; the Δᴮ≡W5-residual weld identity verified against
+both sources; overclaim check on the existence-vs-uniqueness
+framing); R3 instrument (D1 T1-non-return adjudged; D8 audit;
+the exempt 14th gate; 22 anchors; the PREFIX-DECIDES
+independence judgment; path-space counts; fresh-eval; mutant
+reconstruction; sweep bookkeeping).  Reviews frozen on return.
