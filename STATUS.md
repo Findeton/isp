@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-07 (v13 LOG #176: branch-A repair in flight; the ladder's full state below).
+Updated: 2026-08-07 (v13 LOG #177: branch A TERMINAL; the ladder HALTED at the branch-B adoption decision — the user's).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -66,5 +66,5 @@ Updated: 2026-08-07 (v13 LOG #176: branch-A repair in flight; the ladder's full 
 |---|---|---|
 | Stage 5 — ε-admissibility | **TERMINAL: EPSILON-BLIND at every state** (ε = Bayes error; inverted ordering — the forgery has the least defect; ω quadruple-bound and inert; mixed-STATE arena named) | v13 #156 ✓adj |
 | Branch C — nomological fingerprint | **TERMINAL: CLASS-IMPOSSIBILITY fused w/ the name-blindness principle** ("the coarse present cannot testify: proved where symmetry acts; principled where it does not"; FINGERPRINT withdrawn; 42/42 name-blind rows accounted) | v13 #166 ✓adj |
-| Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | green #171; panel #173–#175: R1 AWF / R2 REJECT-of-artifact / R3 AWF; **adjudicated ACCEPT-WITH-MAJOR-REPAIRS** — outcome box survives whole (BOTH KILLS FIRE ON BOTH VARIANTS; delta zero by theorem; BLOCKED-AT-THE-DECLARATION w/ R3's functionality qualifier); the amplitude instrument was GAUGE-VARIANT (constancy theorem −1 ordered; RUNBOOK §14 born from it); **repair R-1..R-9 in flight (#176)** | v13 #175 ✓adj |
-| Branch B — coarse arena-relativity | **THE PROVEN RESIDUE** pending branch-A terminal; **adoption decision = THE USER'S** (per the pin: no successor authorized by this unit) | pin ce18eac |
+| Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | **TERMINAL (#177 ✓adj byte-identical independent rerun)**: BOTH KILLS FIRE ON BOTH VARIANTS at the corrected gauge-invariant instrument; the amplitude datum BLIND (one-step closed holonomy CONSTANT −1, unitarity-forced); LOSSY-vs-V-CL a theorem; BLOCKED-AT-THE-DECLARATION w/ the functionality qualifier; 12 anchors / 46 gates / 20 mutants named-kills; RUNBOOK §14 born from its gauge-variance bug | v13 #175–#177 ✓adj |
+| Branch B — coarse arena-relativity | **THE PROVEN RESIDUE — NOW FORMALLY BEFORE THE USER** (C and A both terminal-negative; per the pin no successor is authorized; the ladder HALTS here awaiting the user's adoption decision) | v13 #177 |

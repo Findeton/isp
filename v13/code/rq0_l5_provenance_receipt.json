@@ -192,8 +192,10 @@
  "base_commit": "483311c",
  "findings": {
   "acyclicity": {
-   "consequence": "V-AMP == V-CL exactly at every committed law",
-   "paths_tested": 2880,
+   "consequence": "the carried loop content is empty at every committed law; V-AMP's certificate reduces to V-CL's there except on the moduli profile, which the theorem does not cover and a declared lift fixes",
+   "distinct_carried_paths_at_their_laws": 1680,
+   "distinct_support_sequences": 910,
+   "path_evaluations": 2880,
    "statement": "single-valued steps have acyclic layered diagrams"
   },
   "amplitude_scope": {
@@ -236,7 +238,7 @@
       "(ID)": 0,
       "(SW01)": 0
      },
-     "distinct_single_step_holonomy_classes": 4,
+     "distinct_single_step_holonomy_classes": 1,
      "statement": "V-AMP distinguishes carried histories V-CL identifies -- a strictly finer equivalence on declared provenance"
     },
     "does_NOT_buy": [
@@ -272,24 +274,40 @@
  },
  "gates": [
   {
-   "claim": "every definition of the quintuple, of the amplitude layer, and every provenance-reading statistic is SHA-256 registered before any fixture verdict is computed",
+   "claim": "A08's three zeros are reproduced and their scope is stated: omega sums the declared mass of blocks disjoint from the reachable set, and the reachable set always contains the declared preparation, so at the whole-carrier preparation no block can miss it.  Measured over ALL committed records, not only the three coarse ones: omega is identically zero there.  The anchor is faithful and discriminates nothing at this preparation",
+   "class": "derivation",
+   "id": "L5-A08-SCOPE",
+   "passed": true,
+   "value": {
+    "distinct_omega_values": [
+     "0"
+    ],
+    "records_swept": 52
+   }
+  },
+  {
+   "claim": "every definition of the quintuple, of the amplitude layer, of the carried datum itself -- the declared-history supplier and the declarable-history set -- and every provenance-reading statistic is SHA-256 registered before any fixture verdict is computed.  The registration binds this receipt to the DELIVERED source and makes no claim across revisions: a definition edited between runs is re-registered, not detected",
    "class": "freeze",
    "id": "L5-00",
    "passed": true,
-   "value": 22
+   "value": 30
   },
   {
-   "claim": "automated source scan: no definition mentions a committed boundary, AND the permanent negative control TUNE -- which special-cases the legitimate tomographic minimum by name -- is CAUGHT by the same scan",
+   "claim": "automated source scan: NO registered definition -- the quintuple's, the amplitude layer's, the declared-history supplier's and the six statistics' alike -- mentions a committed boundary, AND both permanent negative controls are CAUGHT by the same scan: TUNE, which special-cases the legitimate tomographic minimum inside a statistic, and TUNE_HISTORY, which special-cases the discrete boundary inside the history supplier.  The carried datum's own definition is inside the scanned set, not beside it",
    "class": "freeze",
    "id": "L5-SRC",
    "passed": true,
    "value": {
-    "definitions_clean": 22,
-    "definitions_scanned": 22,
-    "negative_control_caught": true,
-    "negative_control_hits": [
-     "PTOMO"
-    ]
+    "definitions_clean": 30,
+    "definitions_scanned": 30,
+    "negative_controls_caught": {
+     "TUNE": [
+      "PTOMO"
+     ],
+     "TUNE_HISTORY": [
+      "DISC5"
+     ]
+    }
    }
   },
   {
@@ -298,17 +316,6 @@
    "id": "L5-AMP-CLOSED",
    "passed": true,
    "value": 7
-  },
-  {
-   "claim": "every declared amplitude is exact in the rational-times-root-of-unity form c*2^(-s/2)*zeta_8^e; all sums formed are between commensurable terms, so no float and no MIXED residue arises",
-   "class": "derivation",
-   "id": "L5-AMP-EXACT",
-   "passed": true,
-   "value": [
-    "1*2^-(0/2)",
-    "1*2^-(1/2)",
-    "1/2*2^-(0/2)"
-   ]
   },
   {
    "claim": "every declared amplitude generator is exactly unitary",
@@ -321,6 +328,16 @@
     "H23": true,
     "ID": true,
     "SW01": true
+   }
+  },
+  {
+   "claim": "the carried invariant is the PHASE of the loop product, not the product: the single fundamental cycle of the declared Hadamard step has loop product exactly -1/4, of modulus 1/4 and not 1.  The modulus travels separately, in the certificate's moduli profile, and the holonomy column reports arguments",
+   "class": "derivation",
+   "id": "L5-AMP-MODULUS",
+   "passed": true,
+   "value": {
+    "as_a_rational": "-1/4",
+    "loop_product": "1/4*2^-(0/2)*z8^4"
    }
   },
   {
@@ -392,18 +409,39 @@
    }
   },
   {
-   "claim": "MEASURED: over one- and two-step carried paths at every committed law, the layered realized-leg diagram has cycle rank 0 and an EMPTY holonomy family, with E = m*n edges and exactly n components in every case -- there is no gauge-invariant amplitude content to carry",
+   "claim": "MEASURED, at a DECLARED SAMPLE of 60 operations per law (not exhaustive over any law): over one- and two-step carried paths at every committed law, the layered realized-leg diagram has cycle rank 0 and an EMPTY holonomy family, with E = m*n edges measured and exactly n components COUNTED by union-find on the FULL layered vertex set -- isolated upper-layer vertices included -- rather than inferred from Euler.  There is no gauge-invariant loop content to carry",
    "class": "derivation",
    "id": "L5-ACYC-M",
    "passed": true,
    "value": {
+    "components_counted_equal_n": 2880,
+    "distinct_carried_paths_at_their_laws": 1680,
+    "distinct_support_sequences": 910,
     "euler_identity_holds": 2880,
-    "paths_tested": 2880,
+    "path_evaluations": 2880,
+    "sample_scope": {
+     "COUNTER": {
+      "law_size": 120,
+      "operations_sampled": 60
+     },
+     "DET": {
+      "law_size": 3125,
+      "operations_sampled": 60
+     },
+     "FUNNEL-CLOSURE": {
+      "law_size": 3006,
+      "operations_sampled": 60
+     },
+     "REV": {
+      "law_size": 120,
+      "operations_sampled": 60
+     }
+    },
     "violations": 0
    }
   },
   {
-   "claim": "PROVED: a single-valued step gives each vertex of a layer exactly one upward edge, so E = m*n while V = (m+1)*n; following upward edges, every component meets the top layer, so C <= n; hence rank = E - V + C = C - n <= 0, and rank >= 0 forces rank = 0 and C = n.  Every committed law is single-valued (anchor A11), so V-AMP's gauge-invariant content is EMPTY at the whole committed scope and V-AMP reduces to V-CL there identically",
+   "claim": "PROVED: a single-valued step gives each vertex of a layer exactly one upward edge, so E = m*n while V = (m+1)*n; following upward edges, every component meets the top layer, so C <= n; hence rank = E - V + C = C - n <= 0, and rank >= 0 forces rank = 0 and C = n.  Every committed law is single-valued (anchor A11), so V-AMP's gauge-invariant LOOP content is EMPTY at the whole committed scope",
    "class": "derivation",
    "id": "L5-ACYC-P",
    "passed": true,
@@ -412,6 +450,41 @@
     "E": "m*n",
     "V": "(m+1)*n",
     "rank": 0
+   }
+  },
+  {
+   "claim": "THE SCOPE OF THE ACYCLICITY THEOREM, MEASURED.  Rank 0 empties the carried LOOP content and nothing else: the moduli profile is gauge-invariant and is not a loop product, so switching on a forest does not trivialize it.  Three declared lifts of ONE committed single-valued step -- which, being non-injective, has no unitary lift at all, so neither (P1) nor (P2) pins its amplitude description -- give the same rank 0 and the same empty holonomy family with DIFFERENT moduli profiles.  V-AMP's certificate therefore reduces to V-CL's on the loop content and the amplitude record, and on the moduli profile only for the declared all-ones lift",
+   "class": "derivation",
+   "id": "L5-ACYC-MODULI",
+   "passed": true,
+   "value": {
+    "distinct_moduli_profiles": 2,
+    "profiles": {
+     "all-ones (the declared canonical lift)": [
+      "1/2^(0/2)"
+     ],
+     "global phase z8^3": [
+      "1/2^(0/2)"
+     ],
+     "modulus 1/2 on one leg": [
+      "1/2/2^(0/2)",
+      "1/2^(0/2)"
+     ]
+    },
+    "ranks": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "claim": "the declared-history supplier has NO fixture branch: the uniform rule -- the block-minimum idempotent of the declared record -- returns the IDENTITY at the carrier's own algebra, so the address chart's 'nothing was done' history is computed by the general rule rather than written in by name.  Measured against the identity",
+   "class": "freeze",
+   "id": "L5-HIST-UNIFORM",
+   "passed": true,
+   "value": {
+    "history_at_the_discrete_boundary": "((0,), (1,), (2,), (3,), (4,))"
    }
   },
   {
@@ -464,6 +537,16 @@
      true,
      true
     ]
+   }
+  },
+  {
+   "claim": "clause (i-b) of the inherited axiom is an IDENTITY under the adjudication convention this unit inherits, not a measured verdict: the declared family is taken to be Pres_L of the boundary's record, and (i-b) asks exactly whether it is.  Measured over ALL committed records, it holds in every case.  Three of the four clause columns are measurements; this one is a convention, and the rejection of the coarse charts is carried by (i-a) and (ii-a)",
+   "class": "discriminator",
+   "id": "L5-D1-IDENTITY-CLAUSE",
+   "passed": true,
+   "value": {
+    "clause_i_b_true": 52,
+    "records_swept": 52
    }
   },
   {
@@ -561,28 +644,118 @@
    }
   },
   {
-   "claim": "THE REDUCTION, and it is what fires the kill.  Let S be ANY statistic on the quintuple.  Because the declarable-history set is a function of (boundary, preparation, law), the range of values S can take at a declaration is a function of the QUADRUPLE, and an adversary may realize any element of it.  So every provenance-reading statistic is bounded by a quadruple statistic -- exactly the class stage-5 Theorem 5.3 proved cannot separate a forged from a legitimate declaration of the same patch.  RQ0-L5-PROVENANCE-REGRESS FIRES, on both variants",
+   "claim": "THE REDUCTION, and it is what fires the kill -- stated in the general form, which closes the escape route in advance.  Let D be a declared datum and extend it by a component H whose admissibility is decided by ANY predicate A(D, H).  For any statistic S the ACHIEVABLE SET {S(D,H) : A(D,H)} is a function of D alone.  Two declarations presenting the same D therefore have IDENTICAL achievable sets -- equality, not a bound -- so no admission rule of the form 'admit iff S lies in A' can admit one and reject the other, for any A whatever, up-set, down-set or neither, and no order orientation is needed.  (P1) is the special case A = (P1), which is why reading deeper into the carried path cannot help: the carried path is supplied by the party under test.  Here D is the quadruple TOGETHER WITH the declared state, since a statistic may read the state; the stage-5 collision presents the same patch at the same committed state, so the reduction applies to it.  RQ0-L5-PROVENANCE-REGRESS FIRES, on both variants",
    "class": "kill",
    "id": "L5-D2-REDUCTION",
    "passed": true,
    "value": {
+    "arguments_of_the_achievable_set": "(boundary, family, preparation, law, state)",
+    "arguments_of_the_declarable_history_set": "(boundary, law)",
+    "general_form": "achievable sets are equal, not bounded",
     "inherited": "stage-5 Theorem 5.3 (forgery is not a function of the quadruple)"
    }
   },
   {
-   "claim": "THE AMPLITUDE DATUM IS ONE FURTHER FREE DECLARATION.  Over the COMPLETE family of admitted unitary lifts of one declared support step, the carried gauge-invariant holonomy takes several values and each is realized by many lifts -- so an adversary declaring a forged boundary may declare ANY of them, including whichever one a legitimate declaration carries.  The regress moves one level deeper with the quantum bits and does not bottom out",
+   "claim": "(P2)-WEAK IS AN IDENTITY, NOT A MEASUREMENT, AND THAT IS WHY PROVENANCE ADDS NO REJECTION POWER.  The carried certificate is RECOMPUTED by the same route that produced it, so an honestly declared carry verifies BY CONSTRUCTION: measured, every honest carry passes, and no adversary would make the only kind of carry that could fail.  The predicate is nonetheless wired and can return false -- the POSITIVE CONTROL a dishonest carry supplies, here another boundary's certificate carried against a path that does not produce it, is REJECTED.  The discriminating weight of (P2) therefore rests entirely on the strong reading, and that reading collapses onto rigidity",
+   "class": "discriminator",
+   "id": "L5-P2-VACUOUS",
+   "passed": true,
+   "value": {
+    "dishonest_carry_rejected": true,
+    "honest_carries_verified": 20
+   }
+  },
+  {
+   "claim": "the declared lift family is COMPLETE WITHIN ITS DECLARED MODULUS PROFILE, measured rather than asserted: brute force over all 8^4 phase quadruples returns exactly the set the three-parameter orthogonality parametrisation produces.  Completeness is claimed only inside the equal-modulus eighth-root family; nothing is claimed for amplitude families outside it",
+   "class": "derivation",
+   "id": "L5-AMP-LIFTS",
+   "passed": true,
+   "value": {
+    "brute_force_over_8^4": 512,
+    "parametrised": 512,
+    "phase_quadruples_tried": 4096
+   }
+  },
+  {
+   "claim": "THE CONSTANCY THEOREM, GATED EXHAUSTIVELY.  Over the complete family of admitted unitary lifts of one declared full-support step the carried closed-loop holonomy is CONSTANT at zeta_8^4 = -1.  It is forced by unitarity and not by the declared family: row orthogonality gives u00*conj(u10) = -u01*conj(u11), and multiplying by conj(u01)*u11 makes the loop product -|u01|^2*|u11|^2, a negative real, whatever the moduli.  Every one of the lifts realizes the single class, and every loop product is a negative rational",
+   "class": "derivation",
+   "id": "L5-AMP-CONSTANCY",
+   "passed": true,
+   "value": {
+    "admitted_unitary_lifts": 512,
+    "classes": {
+     "(4,)": 512
+    },
+    "distinct_holonomy_classes": 1,
+    "distinct_loop_products": 1,
+    "lifts_whose_loop_product_is_a_negative_rational": 512,
+    "the_loop_product": [
+     "1/4*2^-(0/2)*z8^4"
+    ]
+   }
+  },
+  {
+   "claim": "the constancy is UNITARITY's and the gate has teeth, both measured.  POSITIVE CONTROL: a second declared lift family with UNEQUAL moduli (3/5, 4/5) -- so not the eighth-root equal-modulus family at all -- is again constant at zeta_8^4.  NEGATIVE CONTROL: drop unitarity and keep the same full-support block shape, and the loop holonomy sweeps ALL eight values.  Constancy is therefore a property of the admitted lifts, not of the loop formula",
+   "class": "derivation",
+   "id": "L5-AMP-CONSTANCY-CTRL",
+   "passed": true,
+   "value": {
+    "non_unitary_full_support_classes": 8,
+    "unequal_modulus_classes": [
+     "(4,)"
+    ],
+    "unequal_modulus_family_size": 512
+   }
+  },
+  {
+   "claim": "THE AMPLITUDE DATUM IS BLIND, AND THAT IS WHY REGRESS FIRES ON V-AMP.  Two measurements, one negative and one positive.  NEGATIVE: the carried gauge-invariant amplitude datum is CONSTANT over the complete admitted lift family (L5-AMP-CONSTANCY), so it carries no information whatever about which lift was declared -- it cannot police a choice it does not vary with.  POSITIVE: the declared amplitude scope's LAW is its support-level composition closure, and every admitted lift of the step has the SAME sector support, so the law constrains no amplitude at all and every amplitude datum not already forced by unitarity is free by construction.  Meanwhile what the forger actually chooses with the lift is visible in the endpoint: over the same family the two-step word (U,U) writes the address chart for some lifts and the forged record for the rest.  Anchored implies constant; free implies unanchored; the regress does not bottom out",
    "class": "kill",
    "id": "L5-AMP-FREE",
    "passed": true,
    "value": {
     "admitted_unitary_lifts": 512,
-    "distinct_holonomy_classes": 4,
-    "multiplicities": {
-     "(0,)": 128,
-     "(2,)": 128,
-     "(4,)": 128,
-     "(6,)": 128
+    "distinct_holonomy_classes": 1,
+    "distinct_sector_supports_among_the_lifts": 1,
+    "endpoint_record_of_(U,U)_over_the_family": {
+     "01|2|3|4": 384,
+     "0|1|2|3|4": 128
     }
+   }
+  },
+  {
+   "claim": "EVERY fundamental cycle carried is a CLOSED walk -- each leg's tail is the previous leg's head and the walk returns to its start -- which is Definition 3.1's own criterion for a quantity to be gauge-invariant, checked leg by leg rather than assumed.  Both reconstructed mis-conventions, the one that traverses the tree path in the same direction as the extra edge and the one that reverses the extra edge, FAIL to close",
+   "class": "derivation",
+   "id": "L5-HOL-CLOSED",
+   "passed": true,
+   "value": {
+    "one_step_closes": true,
+    "reversed_convention_closes": false,
+    "two_step_closes": true,
+    "unclosed_convention_closes": false
+   }
+  },
+  {
+   "claim": "THE GAUGE-COVARIANCE SELF-TEST.  Definition 3.1's own admitted symmetry is swept EXHAUSTIVELY over the committed one-step diagram -- every assignment of eighth-root phases to the loop component's vertices, one fixed as the global phase -- and every switched lift is verified to remain unitary and inside the declared family.  The carried invariant is FIXED under every single switching.  The negative control, the unclosed convention reconstructed inside this test, MOVES under most of them: the gate has teeth, and it is the definitional criterion the paper states",
+   "class": "derivation",
+   "id": "L5-HOL-GAUGE",
+   "passed": true,
+   "value": {
+    "carried_invariant_moved": 0,
+    "switched_lifts_still_unitary": 512,
+    "switchings_swept": 512,
+    "unclosed_control_moved": 384
+   }
+  },
+  {
+   "claim": "the same self-test at the TWO-step diagram, where the cross-checkpoint content lives, swept EXHAUSTIVELY over the loop component's switchings for one declared lift pair: BOTH the fundamental-cycle family and the cross-checkpoint invariant X = (arg u00 - arg u10) + (arg v00 - arg v01) are fixed under every one, while the unclosed control moves.  X is a gauge-invariant of the carried two-step diagram, measured, not declared",
+   "class": "derivation",
+   "id": "L5-HOL-GAUGE-2",
+   "passed": true,
+   "value": {
+    "cross_checkpoint_invariant_moved": 0,
+    "cycle_family_moved": 0,
+    "switchings_swept": 32768,
+    "unclosed_control_moved": 29696
    }
   },
   {
@@ -599,6 +772,36 @@
    }
   },
   {
+   "claim": "AND IT IS A THEOREM, NOT A FIXTURE FACT.  The carried certificate is a function of the RECORD the checkpoint writes and of nothing else about the operation: its first component is that record and every later component is computed from it.  Measured over the whole committed law: operations writing the same record carry the same certificate in EVERY case, and the number of distinct carried certificates equals the number of distinct records written.  The same collapse therefore occurs at every committed boundary, not only at the collision one -- a chain of carried certificates carries exactly the sequence of written records.  LOSSY against V-CL is immediate from what the pin specifies is carried",
+   "class": "kill",
+   "id": "L5-LOSSY-CL-THM",
+   "passed": true,
+   "value": {
+    "distinct_certificates": 52,
+    "distinct_records_written": 52,
+    "histories_and_certificates_per_committed_boundary": {
+     "0123|4": [
+      20,
+      1
+     ],
+     "01|23|4": [
+      60,
+      1
+     ],
+     "01|2|3|4": [
+      120,
+      1
+     ],
+     "0|1|2|3|4": [
+      120,
+      1
+     ]
+    },
+    "max_certificates_among_same_record_operations": 1,
+    "operations_in_the_law": 3125
+   }
+  },
+  {
    "claim": "RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP AT THE COMMITTED SCOPE, and it fires with the SAME witness: the 120 admitted histories at the carrier's own algebra carry one and the same AMPLITUDE certificate too, because their diagrams are monomial and a monomial diagram has no gauge-invariant loop content at all.  The amplitude bits are empty exactly where the provenance question is sharpest",
    "class": "kill",
    "id": "L5-LOSSY-AMP-C",
@@ -609,34 +812,116 @@
    }
   },
   {
-   "claim": "RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP WHERE ITS CONTENT IS NOT EMPTY EITHER -- the amendment-v2 form of the adversary.  (P2) is checkpoint-LOCAL by its own definition: it verifies the certificate AT its own checkpoint, so an admitted checkpoint verification reads step-local invariants only, while the carried diagram's cycle space is strictly larger than the span of its step-local cycles.  Exhibited: two admitted lifts of ONE declared support word with IDENTICAL checkpoint-local shadows and DIFFERENT cross-checkpoint holonomy.  This is the v12 recorded-but-phased limit applied to the CHECKS -- block-local data is not phase-triviality",
-   "class": "kill",
-   "id": "L5-LOSSY-AMP-A",
+   "claim": "Theorem 6.2 carried by its ARGUMENT and not by one measured lift: a monomial diagram has cycle rank 0, so it has no loop content whatever lift is declared, and unitarity forces UNIT moduli on a monomial matrix -- measured by trying candidate moduli on one committed permutation support, where exactly the unit modulus gives a unitary.  So the committed-scope collapse holds for EVERY admitted lift, not only the all-ones one",
+   "class": "derivation",
+   "id": "L5-LOSSY-AMP-GEN",
    "passed": true,
    "value": {
-    "checkpoint_local_shadows_identical": true,
-    "global_holonomies_A": [
-     0,
-     4,
-     6
-    ],
-    "global_holonomies_B": [
-     1,
-     4,
-     5
-    ],
-    "local_per_step_holonomies": [
-     [
-      4
-     ],
-     [
-      6
-     ]
+    "candidate_moduli_giving_a_unitary_monomial": {
+     "1*2^-(0/2)": true,
+     "1*2^-(1/2)": false,
+     "1/2*2^-(0/2)": false,
+     "2*2^-(0/2)": false
+    },
+    "moduli_in_the_canonical_lifts": [
+     "1"
     ]
    }
   },
   {
-   "claim": "the accounting that makes the witness inevitable: the carried two-step diagram has cycle rank 3 while its two checkpoint-local diagrams have rank 1 each, so a checkpoint-local verification leaves a rank-1 residue of gauge-invariant content permanently unread",
+   "claim": "RQ0-L5-PROVENANCE-LOSSY AGAINST V-AMP AT THE AMPLITUDE SCOPE, under the DECLARED step-local reading of an admitted verification.  Over the complete pool of admitted lift pairs of one declared support word the step-local holonomy shadow takes exactly ONE value -- it reads nothing at all -- while the cross-checkpoint invariant sweeps ALL eight of its values.  Exhibited: two admitted lift pairs agreeing on EVERY checkpoint-local datum -- per-step holonomies, moduli, and both checkpoints' amplitude records, so the visible-cancellation datum is included and not omitted -- and differing in cross-checkpoint holonomy.  What this establishes is INFORMATION loss under that reading; the reading itself does not bind (Section 6.4)",
+   "class": "kill",
+   "id": "L5-LOSSY-AMP-A",
+   "passed": true,
+   "value": {
+    "checkpoint_amplitude_records_A": [
+     "01|2|3|4",
+     "01|2|3|4"
+    ],
+    "checkpoint_amplitude_records_B": [
+     "01|2|3|4",
+     "01|2|3|4"
+    ],
+    "cross_checkpoint_invariant_A": 7,
+    "cross_checkpoint_invariant_B": 6,
+    "global_holonomies_A": [
+     1,
+     4,
+     5
+    ],
+    "global_holonomies_B": [
+     2,
+     4,
+     6
+    ],
+    "lift_exponents_A": [
+     [
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      0,
+      1,
+      0,
+      5
+     ]
+    ],
+    "lift_exponents_B": [
+     [
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      0,
+      2,
+      0,
+      6
+     ]
+    ],
+    "per_step_holonomies_A": [
+     [
+      4
+     ],
+     [
+      4
+     ]
+    ],
+    "per_step_holonomies_B": [
+     [
+      4
+     ],
+     [
+      4
+     ]
+    ],
+    "pool_cross_checkpoint_values": 8,
+    "pool_global_families": 4,
+    "pool_step_local_holonomy_values": 1,
+    "step_local_shadows_identical": true
+   }
+  },
+  {
+   "claim": "POSITIVE CONTROL for the shadow function: the step-local shadow MUST separate a cancelling word from a non-cancelling one, because the record the amplitude composite writes is checkpoint-local data par excellence -- it is the paper's own Gain 1.  Measured: the doubled Hadamard word, whose amplitude composite is the identity, has a different shadow from the witness word, whose composite writes the coarse record.  A shadow that omitted the amplitude records would fail this gate",
+   "class": "derivation",
+   "id": "L5-SHADOW-SEP",
+   "passed": true,
+   "value": {
+    "cancelling_word_records": [
+     "01|2|3|4",
+     "0|1|2|3|4"
+    ],
+    "witness_word_records": [
+     "01|2|3|4",
+     "01|2|3|4"
+    ]
+   }
+  },
+  {
+   "claim": "the accounting that makes the witness inevitable: the carried two-step diagram has cycle rank 3 while its two checkpoint-local diagrams have rank 1 each, so a step-local verification leaves a rank-1 residue of gauge-invariant content unread.  The rank accounting is combinatorial and holds for every lift",
    "class": "derivation",
    "id": "L5-LOSSY-AMP-DIM",
    "passed": true,
@@ -647,13 +932,16 @@
    }
   },
   {
-   "claim": "THE SCISSORS, disclosed rather than resolved.  Under the reading in which a verification is a classical computation on declared numerals it reads everything, including the cross-checkpoint holonomy, and LOSSY does not fire against V-AMP -- but then the amplitude datum is a free declaration and REGRESS eats it (L5-AMP-FREE).  Under the reading the amendment fixes -- checks are record-producing and checkpoint-local -- LOSSY fires.  The amplitude bits are readable only under the reading that leaves them unanchored, and anchored only under the reading that leaves them unread.  Both readings are reported; neither escapes a kill",
-   "class": "disclosure",
+   "claim": "THE READING, ADJUDICATED RATHER THAN DISCLOSED, AND IT BINDS THE OTHER WAY.  A verification that compares certificates containing the cross-checkpoint holonomy READS the cross-checkpoint holonomy: Definition 2.3 puts the carried diagram's loop holonomies inside V-AMP's certificate, (P2) compares carried against recomputed certificates, and the certificate is computed over the WHOLE carried word at every committed patch -- measured here, not asserted.  Checkpoints are the cumulative composites, so locality at the final checkpoint is locality to the whole carried path; and the numerals construal that licenses CARRYING the amplitudes is the same one that licenses computing a loop product of them.  The step-local restriction is therefore a declared modelling choice and is labelled one.  The TRUE scissors is measured and reading-independent: ANCHORED implies CONSTANT (the per-step holonomy that unitarity anchors is zeta_8^4 always), FREE implies UNANCHORED (the amplitude scope's law is support-level)",
+   "class": "derivation",
    "id": "L5-LOSSY-READING",
    "passed": true,
    "value": {
-    "reading_A_numerals": "REGRESS fires, LOSSY does not",
-    "reading_B_record_producing": "both fire"
+    "LOSSY_vs_V_AMP_under_the_binding_reading": "does not fire at the amplitude scope; fires at the committed scope by Theorem 6.2, which is reading-independent",
+    "V_AMP_certificate_separates_the_step_local_witness_pair": true,
+    "anchored_datum_is_constant": "zeta_8^4 on all admitted lifts",
+    "free_datum_is_unanchored": "the law is the support-level closure",
+    "layers_spanned_by_a_carried_fundamental_cycle": 2
    }
   },
   {
@@ -687,6 +975,25 @@
     "s_intermediate_spread": false,
     "s_manufacture_depth": false,
     "s_path_length": false
+   }
+  },
+  {
+   "claim": "the amnesty sweep's state-independence is MEASURED, not declared.  Each statistic is evaluated at the committed state and at a second declared state; the set that moves is compared against the declared state-reading set, and the extrapolation used for the state-independent ones is licensed by that measurement rather than by a hand-maintained list.  Exactly one statistic moves, and it is the declared one -- so the gate is a positive control on itself",
+   "class": "discriminator",
+   "id": "L5-RHO-GATED",
+   "passed": true,
+   "value": {
+    "declared_state_reading": [
+     "s_coarsest_checkpoint_defect"
+    ],
+    "moves_between_two_declared_states": {
+     "s_carried_cycle_rank": false,
+     "s_coarsest_checkpoint_defect": true,
+     "s_history_fan_in": false,
+     "s_intermediate_spread": false,
+     "s_manufacture_depth": false,
+     "s_path_length": false
+    }
    }
   },
   {
@@ -733,11 +1040,138 @@
    "id": "L5-DELTA",
    "passed": true,
    "value": null
+  },
+  {
+   "claim": "EXACT THROUGHOUT, AND THE CLAIM IS WHAT THE PREDICATE MEASURES.  No float enters any path; every amplitude is a rational combination of eighth roots.  The (c, s, e) shorthand names the declared family, and the declared family is NOT closed under addition -- composites of two general admitted lifts leave it -- so every such residue is carried in the CANONICAL Q(zeta_8) coordinates instead, where equality and vanishing are decided exactly.  This gate counts the residues EVERY sum this run formed and runs two controls on the decision procedure: a sum that vanishes only across two incommensurable shorthands must return the field zero, and a genuinely non-zero residue must be carried rather than dropped",
+   "class": "derivation",
+   "id": "L5-AMP-EXACT",
+   "passed": true,
+   "value": {
+    "cross_shorthand_cancellation_decided_zero": true,
+    "non_zero_residue_carried": true,
+    "residues_carried_in_canonical_coordinates": 9232
+   }
+  },
+  {
+   "claim": "THE FALSIFICATION SUITE, RUN AND RECORDED.  Every declared mutant breaks exactly one anchor or one derivation step, is run to completion, must EXIT 1, and must falsify at least one NAMED gate or anchor -- an exit code alone would not show the suite tests anything.  The suite includes sign-convention and orientation mutants of the holonomy: a wholesale replacement mutant tests only that some invariant is computed, never that the RIGHT one is",
+   "class": "freeze",
+   "id": "L5-MUTANTS",
+   "passed": true,
+   "value": {
+    "died": 20,
+    "kills": {
+     "acyc-lax": [
+      "L5-AMP-MODULUS",
+      "L5-AMP-CONTENT",
+      "L5-ACYC-M",
+      "L5-ACYC-MODULI",
+      "L5-D1-VARIANT",
+      "L5-AMP-CONSTANCY",
+      "L5-AMP-CONSTANCY-CTRL",
+      "L5-LOSSY-AMP-DIM"
+     ],
+     "amp-cancel-lax": [
+      "L5-AMP-CANCEL",
+      "L5-AMP-FREE",
+      "L5-SHADOW-SEP"
+     ],
+     "anchor-A02": [
+      "A02"
+     ],
+     "anchor-A04": [
+      "A04"
+     ],
+     "anchor-A05": [
+      "A05"
+     ],
+     "anchor-A06": [
+      "A06"
+     ],
+     "anchor-A07": [
+      "A07"
+     ],
+     "anchor-A09": [
+      "A09"
+     ],
+     "comp-lax": [
+      "L5-AMP-REACH",
+      "L5-AMP-CANCEL",
+      "L5-D1-P1",
+      "L5-D1-STRONG",
+      "L5-D2-EXIST",
+      "L5-D2-COLLISION",
+      "L5-P2-VACUOUS",
+      "L5-AMP-FREE",
+      "L5-LOSSY-CL-THM",
+      "L5-LOSSY-AMP-GEN",
+      "L5-SHADOW-SEP",
+      "L5-RHO-GATED"
+     ],
+     "hist-tune": [
+      "L5-SRC"
+     ],
+     "hol-lax": [
+      "L5-AMP-MODULUS",
+      "L5-AMP-CONTENT",
+      "L5-AMP-CONSTANCY",
+      "L5-AMP-CONSTANCY-CTRL",
+      "L5-HOL-GAUGE",
+      "L5-HOL-GAUGE-2",
+      "L5-LOSSY-AMP-A",
+      "L5-LOSSY-READING"
+     ],
+     "hol-orient": [
+      "L5-AMP-CONSTANCY",
+      "L5-AMP-CONSTANCY-CTRL",
+      "L5-AMP-FREE",
+      "L5-HOL-GAUGE",
+      "L5-HOL-GAUGE-2",
+      "L5-LOSSY-AMP-A"
+     ],
+     "hol-sign": [
+      "L5-AMP-CONSTANCY",
+      "L5-AMP-CONSTANCY-CTRL",
+      "L5-AMP-FREE",
+      "L5-HOL-GAUGE",
+      "L5-HOL-GAUGE-2",
+      "L5-LOSSY-AMP-A"
+     ],
+     "nb-lax": [
+      "L5-NB"
+     ],
+     "p1-break": [
+      "L5-D1-P1",
+      "L5-D1-COLLATERAL"
+     ],
+     "p2-break": [
+      "L5-D1-P1",
+      "L5-D1-COLLATERAL",
+      "L5-P2-VACUOUS"
+     ],
+     "pres-lax": [
+      "A04",
+      "A06",
+      "A07",
+      "L5-D1-COLLATERAL",
+      "L5-D1-STRONG"
+     ],
+     "shadow-lax": [
+      "L5-SHADOW-SEP"
+     ],
+     "srcscan-lax": [
+      "L5-SRC"
+     ],
+     "stat-label": [
+      "L5-NB"
+     ]
+    },
+    "mutants": 20
+   }
   }
  ],
  "pin_commit": "a05e3d5",
  "schema": "rq0-l5-provenance-quintuple-receipt-v1",
- "source_sha256": "eb290aa77675c3c321f8f6e276f6f0b1e15dbcc7b5407044951faa9cfaeb30e8",
+ "source_sha256": "0756faf4bc9f1d91c7cfa086cc5764323171baf0e6a0d1c57c7f8b29315d01f9",
  "tables": {
   "amnesty": [
    {
@@ -785,12 +1219,16 @@
   ],
   "amplitude_lift_family": {
    "admitted_unitary_lifts": 512,
+   "declared_support_of_every_lift": "((0, 1), (0, 1), (2,), (3,), (4,))",
+   "endpoint_record_of_the_doubled_word": {
+    "01|2|3|4": 384,
+    "0|1|2|3|4": 128
+   },
    "holonomy_classes": {
-    "(0,)": 128,
-    "(2,)": 128,
-    "(4,)": 128,
-    "(6,)": 128
-   }
+    "(4,)": 512
+   },
+   "non_unitary_control_classes": 8,
+   "unequal_modulus_control_family": 512
   },
   "amplitude_words": [
    {
@@ -799,6 +1237,7 @@
     "cycle_rank": 0,
     "cycle_spans": [],
     "holonomy_phases": [],
+    "loop_products": [],
     "support_record": "0|1|2|3|4",
     "word": "(ID)"
    },
@@ -808,6 +1247,7 @@
     "cycle_rank": 0,
     "cycle_spans": [],
     "holonomy_phases": [],
+    "loop_products": [],
     "support_record": "0|1|2|3|4",
     "word": "(SW01)"
    },
@@ -820,6 +1260,9 @@
     ],
     "holonomy_phases": [
      4
+    ],
+    "loop_products": [
+     "1/4*2^-(0/2)*z8^4"
     ],
     "support_record": "01|2|3|4",
     "word": "(H01)"
@@ -835,6 +1278,10 @@
     "holonomy_phases": [
      4,
      4
+    ],
+    "loop_products": [
+     "1/4*2^-(0/2)*z8^4",
+     "1/4*2^-(0/2)*z8^4"
     ],
     "support_record": "01|23|4",
     "word": "(H01,H23)"
@@ -865,6 +1312,17 @@
      6,
      6
     ],
+    "loop_products": [
+     "1/16*2^-(0/2)*z8^0",
+     "1/16*2^-(0/2)*z8^2",
+     "1/16*2^-(0/2)*z8^2",
+     "1/16*2^-(0/2)*z8^4",
+     "1/16*2^-(0/2)*z8^4",
+     "1/16*2^-(0/2)*z8^4",
+     "1/16*2^-(0/2)*z8^4",
+     "1/16*2^-(0/2)*z8^6",
+     "1/16*2^-(0/2)*z8^6"
+    ],
     "support_record": "0123|4",
     "word": "(F4)"
    },
@@ -882,10 +1340,55 @@
      4,
      4
     ],
+    "loop_products": [
+     "1/4*2^-(0/2)*z8^0",
+     "1/4*2^-(0/2)*z8^4",
+     "1/4*2^-(0/2)*z8^4"
+    ],
     "support_record": "01|2|3|4",
     "word": "(H01,H01)"
    }
   ],
+  "cross_checkpoint_sweep": {
+   "distinct_cross_checkpoint_values": 8,
+   "distinct_global_families": 4,
+   "distinct_step_local_holonomy_values": 1,
+   "endpoint_record_by_cross_checkpoint_value": {
+    "0": [
+     "0|1|2|3|4"
+    ],
+    "1": [
+     "01|2|3|4"
+    ],
+    "2": [
+     "01|2|3|4"
+    ],
+    "3": [
+     "01|2|3|4"
+    ],
+    "4": [
+     "0|1|2|3|4"
+    ],
+    "5": [
+     "01|2|3|4"
+    ],
+    "6": [
+     "01|2|3|4"
+    ],
+    "7": [
+     "01|2|3|4"
+    ]
+   },
+   "global_families": {
+    "(0, 4, 4)": 65536,
+    "(1, 4, 5)": 65536,
+    "(2, 4, 6)": 65536,
+    "(3, 4, 7)": 65536
+   },
+   "lift_pairs": 262144,
+   "record_sweep_pairs": 512,
+   "record_sweep_scope": "every pair whose first step is the declared Hadamard lift"
+  },
   "definition_hashes": [
    {
     "name": "composite_of",
@@ -921,7 +1424,7 @@
    },
    {
     "name": "asum",
-    "sha256": "ede8180dddfae23dc31cd4855d0394c425e49bf4bc9894f73aee56d4bf577d96"
+    "sha256": "3bc2d3a0582b90df36c516537a2bed6e26ab16a16df8ee646c61e38aee9d1367"
    },
    {
     "name": "sup_of_matrix",
@@ -936,16 +1439,40 @@
     "sha256": "a9fb4544f91ae03d84ecdf9d6965a6b0d2f33304cab0bffaaac820d0b508395a"
    },
    {
+    "name": "leg_ends",
+    "sha256": "e47a1bd360aaf188e07d028de0321efd72264660c26a5cc8615b5b6afa46046b"
+   },
+   {
+    "name": "walk_closes",
+    "sha256": "59b344cac01c570048a29866ea9fad87d2f3e7037dc0797b288a4781fa294f74"
+   },
+   {
+    "name": "cycle_structure",
+    "sha256": "578e0a2da0844b6c571ebd35ad1145290f8c7b5c84aa5e65d710eca87275a4eb"
+   },
+   {
     "name": "cycle_basis_holonomies",
-    "sha256": "eea24b5db802c6f5edf42152995daff2f52ee46792f4781b81878ae70ca46087"
+    "sha256": "60d5e9d5e2697f723af4380682ecc05dc1ffd262ab4384f405a00b87871a6547"
+   },
+   {
+    "name": "vertex_switch",
+    "sha256": "a61439b5c986b7428a4dfe27dc48a976bfb224b938f8ae91fd4f9ef3fc268ee6"
+   },
+   {
+    "name": "cross_checkpoint_phase",
+    "sha256": "aaa394412187bc0519ec6640c0e672826515140f23e1973f960c2dad391e35e0"
+   },
+   {
+    "name": "amplitude_composite",
+    "sha256": "657ddab6f7469b950dac12e1bbab4306f31537e8195e55d7c3190764f788e4a4"
    },
    {
     "name": "certificate_AMP",
-    "sha256": "0a9160896b7b7edd073ab9272ea12eb9da99f7345077ece6e6cb37ed17a581d1"
+    "sha256": "2290d2ca4f016257533f092f40864c859c66ecd26d3c85cd0c7ce60ebe29bcc5"
    },
    {
-    "name": "local_holonomy_shadow",
-    "sha256": "eede6360bc8cf1a905ddec1ae5260cb953511897b80a4f5b78974e70986f3d0c"
+    "name": "step_local_shadow",
+    "sha256": "a87f518275bcf853271b56969c004b992419f03cb8d1c042a31a1f86bb1044fe"
    },
    {
     "name": "s_manufacture_depth",
@@ -970,6 +1497,14 @@
    {
     "name": "s_carried_cycle_rank",
     "sha256": "9094363e519dfbd27e18c7ba4f9cf86eaa7212b9d28f6cdb5c11ca3fba0edb18"
+   },
+   {
+    "name": "true_histories",
+    "sha256": "8add38c2d89a428180a6853940fb883bd91a2754e7a86ff23dd8b534aeaadc8e"
+   },
+   {
+    "name": "passing_histories_1",
+    "sha256": "d7b3d8e3d1006b40cffb1031cf0a833a9bf0fa28e24176d05403ec373a2c755e"
    },
    {
     "name": "nb_negative_control",
@@ -1165,32 +1700,365 @@
    "global_rank": 3,
    "local_rank": 2,
    "witness": {
-    "checkpoint_local_shadows_identical": true,
-    "global_holonomies_A": [
-     0,
-     4,
-     6
+    "checkpoint_amplitude_records_A": [
+     "01|2|3|4",
+     "01|2|3|4"
     ],
-    "global_holonomies_B": [
+    "checkpoint_amplitude_records_B": [
+     "01|2|3|4",
+     "01|2|3|4"
+    ],
+    "cross_checkpoint_invariant_A": 7,
+    "cross_checkpoint_invariant_B": 6,
+    "global_holonomies_A": [
      1,
      4,
      5
     ],
-    "local_per_step_holonomies": [
+    "global_holonomies_B": [
+     2,
+     4,
+     6
+    ],
+    "lift_exponents_A": [
+     [
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      0,
+      1,
+      0,
+      5
+     ]
+    ],
+    "lift_exponents_B": [
+     [
+      0,
+      0,
+      0,
+      4
+     ],
+     [
+      0,
+      2,
+      0,
+      6
+     ]
+    ],
+    "per_step_holonomies_A": [
      [
       4
      ],
      [
-      6
+      4
      ]
-    ]
+    ],
+    "per_step_holonomies_B": [
+     [
+      4
+     ],
+     [
+      4
+     ]
+    ],
+    "step_local_shadows_identical": true
    }
   },
   "lossy_CL": {
    "class_size": 120,
    "distinct_certificates": 1,
-   "histories": 120
+   "histories": 120,
+   "per_boundary_histories_to_certificates": {
+    "0123|4": [
+     20,
+     1
+    ],
+    "01|23|4": [
+     60,
+     1
+    ],
+    "01|2|3|4": [
+     120,
+     1
+    ],
+    "0|1|2|3|4": [
+     120,
+     1
+    ]
+   },
+   "records_vs_certificates_over_the_whole_law": [
+    52,
+    52
+   ]
   },
+  "moduli_freedom": [
+   {
+    "cycle_rank": 0,
+    "declared_lift": "all-ones (the declared canonical lift)",
+    "holonomy_phases": [],
+    "moduli_profile": [
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)"
+    ]
+   },
+   {
+    "cycle_rank": 0,
+    "declared_lift": "modulus 1/2 on one leg",
+    "holonomy_phases": [],
+    "moduli_profile": [
+     "1/2/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)"
+    ]
+   },
+   {
+    "cycle_rank": 0,
+    "declared_lift": "global phase z8^3",
+    "holonomy_phases": [],
+    "moduli_profile": [
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)",
+     "1/2^(0/2)"
+    ]
+   }
+  ],
+  "mutants": [
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A02"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A02"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A04"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A04"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A05"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A05"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A06"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A06"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A07"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A07"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A09"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-REACH",
+     "L5-AMP-CANCEL",
+     "L5-D1-P1",
+     "L5-D1-STRONG",
+     "L5-D2-EXIST",
+     "L5-D2-COLLISION",
+     "L5-P2-VACUOUS",
+     "L5-AMP-FREE",
+     "L5-LOSSY-CL-THM",
+     "L5-LOSSY-AMP-GEN",
+     "L5-SHADOW-SEP",
+     "L5-RHO-GATED"
+    ],
+    "mutant": "comp-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A04",
+     "A06",
+     "A07"
+    ],
+    "falsified_gates": [
+     "L5-D1-COLLATERAL",
+     "L5-D1-STRONG"
+    ],
+    "mutant": "pres-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-D1-P1",
+     "L5-D1-COLLATERAL"
+    ],
+    "mutant": "p1-break"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-D1-P1",
+     "L5-D1-COLLATERAL",
+     "L5-P2-VACUOUS"
+    ],
+    "mutant": "p2-break"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-MODULUS",
+     "L5-AMP-CONTENT",
+     "L5-ACYC-M",
+     "L5-ACYC-MODULI",
+     "L5-D1-VARIANT",
+     "L5-AMP-CONSTANCY",
+     "L5-AMP-CONSTANCY-CTRL",
+     "L5-LOSSY-AMP-DIM"
+    ],
+    "mutant": "acyc-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-MODULUS",
+     "L5-AMP-CONTENT",
+     "L5-AMP-CONSTANCY",
+     "L5-AMP-CONSTANCY-CTRL",
+     "L5-HOL-GAUGE",
+     "L5-HOL-GAUGE-2",
+     "L5-LOSSY-AMP-A",
+     "L5-LOSSY-READING"
+    ],
+    "mutant": "hol-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-CONSTANCY",
+     "L5-AMP-CONSTANCY-CTRL",
+     "L5-AMP-FREE",
+     "L5-HOL-GAUGE",
+     "L5-HOL-GAUGE-2",
+     "L5-LOSSY-AMP-A"
+    ],
+    "mutant": "hol-sign"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-CONSTANCY",
+     "L5-AMP-CONSTANCY-CTRL",
+     "L5-AMP-FREE",
+     "L5-HOL-GAUGE",
+     "L5-HOL-GAUGE-2",
+     "L5-LOSSY-AMP-A"
+    ],
+    "mutant": "hol-orient"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-SHADOW-SEP"
+    ],
+    "mutant": "shadow-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-NB"
+    ],
+    "mutant": "stat-label"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-AMP-CANCEL",
+     "L5-AMP-FREE",
+     "L5-SHADOW-SEP"
+    ],
+    "mutant": "amp-cancel-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-NB"
+    ],
+    "mutant": "nb-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-SRC"
+    ],
+    "mutant": "srcscan-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "L5-SRC"
+    ],
+    "mutant": "hist-tune"
+   }
+  ],
   "name_blindness": [
    {
     "is_negative_control": false,
@@ -1330,7 +2198,7 @@
  },
  "totals": {
   "anchors": 12,
-  "gates": 29,
+  "gates": 46,
   "must_pass_failures": 0
  }
 }

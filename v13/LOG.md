@@ -6043,3 +6043,43 @@ mutants added. STATUS.md refreshed in this commit (it lagged
 #175 by one commit — owned): stage-5/branch-C/branch-A rows
 brought current. Verification on delivery recorded after it
 occurs.
+
+## 2026-08-07 — BRANCH A REPAIR VERIFIED → TERMINAL; BRANCH B IS THE
+## PROVEN RESIDUE — THE ADOPTION DECISION IS THE USER'S (v13 LEDGER #177)
+Repair delivered (all R-1..R-9 completed; nothing proved
+impossible). Adjudicator's independent verification: (1) full
+delivery-mode run (--falsification-selftest) reproduces the
+worker's artifacts BYTE-IDENTICALLY (output md5 c39843f4, receipt
+f9fe6e0c — four byte-identical runs total across two machines'
+sessions); (2) script sha256 = the receipt's registered
+source_sha256 (0756faf4…); (3) 12/12 anchors, 46/46 gates, 0
+must-pass failures; (4) 20/20 mutants exit 1 with named kills —
+hol-sign and hol-orient CAUGHT BY L5-HOL-GAUGE as §14 orders;
+(5) text gates: unqualified slogan absent, R3's functionality
+form at both sites, Thm 3.2 → [SAMP] 1,680 computed, Thms
+5.1/6.1's [EXH-1] legitimately exhaustive-at-committed-law,
+(P2)-vacuity gated (L5-P2-VACUOUS), true_histories under the
+scan, Deviations 11–13 shipped, the #175 transport-correction
+cited in §1.1. Headline: the one-step closed holonomy CONSTANT
+ζ₈⁴ = −1 (unitarity-forced; the blindness theorem), gauge gate
+512+32,768 switchings corrected-invariant-moved-0; R2's witness
+implemented (shadow constant, X sweeps all 8); BOTH KILLS FIRE ON
+BOTH VARIANTS at the corrected instrument. Worker's disclosed
+beyond-list repair accepted (amended Deviation 5: the (c,s,e)
+shorthand not closed under addition — a latent soundness hole;
+residues now canonical ℚ(ζ₈) w/ two-sided control).
+ADJUDICATOR'S HANDLING SLIP OWNED: verification was run BEFORE
+committing the delivery, and a git checkout meant to clean mutant
+side-effects restored the two artifact files to the pre-repair
+commit, destroying the uncommitted delivered copies — recovered
+losslessly (deterministic regeneration, script hash-verified),
+but this is precisely what deliveries-committed-as-is exists to
+prevent; order violated, owned here.
+**RQ0-L5 BRANCH A TERMINAL: PROVENANCE-CERTIFIES does not occur.
+REGRESS and LOSSY fire on V-CL and V-AMP alike; the carried
+amplitude datum is BLIND (constant −1); a sixth declaration whose
+admissible range is a function of the first four cannot bind
+them. Per the pin: BRANCH B (coarse arena-relativity) IS THE
+PROVEN RESIDUE. No successor is authorized by this unit — the
+adoption decision RETURNS TO THE USER, presented with the
+complete C+A impossibility record.**
