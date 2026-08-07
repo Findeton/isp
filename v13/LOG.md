@@ -6226,3 +6226,37 @@ predicate; receipt transport_object:false contradicts
 of R2; all 14,400 zero; the "sample" a point stabiliser
 subgroup); 6/20 mutants perturb no computation.  R1 pending;
 adjudication after all three.
+
+## 2026-08-07 — RQ0-SYNTH R1 (OPERATOR) FROZEN (v13 LEDGER #184)
+review-rq0-synth-operator.md frozen as delivered.  Grade
+ACCEPT-WITH-FIXES; 142 independent recomputations, ZERO
+arithmetic errors ("I could not move a single number").  K1
+ANSWERED IN THE UNIT'S FAVOUR: |𝒜| rebuilt from scratch (Σ|G| =
+1073, histogram {1:17, 6:24, 12:4, 24:16, 120:4} identical); the
+fibration does NOT smuggle — the identity relabelling lies in
+every fiber, so the σ=id slice IS the flat 3×5×13 product, and
+the dependence profile reproduces on it row for row.  Five
+MAJOR: M1 Q1/Q2/Q3 equivariance literally x==x on one memoized
+object (12,876/19,314 self-test instances cannot fail; the
+printed discrimination statistic measures a coordinate three of
+them do not read); M2 under transport-lax SYN-ST-RELABEL still
+PASSES (self-scopes onto {Q1,Q2,Q3,Q7}) while Q4/Q8 silently
+flip and CENSUS-COMPLETE still emits; M3 ARENA-INERT-Q8
+UNREACHABLE (both degeneracy routes False on Q8's own
+constructed neutral; route 2 identically False); M4 Q4/Q5
+identical measured law-dependence, verdict decided by the
+READS/ACTS label alone; M5 Q8's invariance definitional (never
+reads law/rho) + Q5's 123 NAMING-INFLATED (true per-declaration
+figure 5 = 15 over three; naming discounted for Q8 but not Q5).
+K3: transport exact (Δᴮ(H,H) matches v12 paper 1 line 339) but
+the sweep measures a theorem (Δᴮ≡0 on ALL monomials, 14,400
+exhaustive + 200 phased), perms[:24] a point-stabilizer
+subgroup, and run_qopt can emit only 2 of the pin's 4 names —
+THE VERDICT WAS INEVITABLE (falsifiability corridor violated).
+K5: the record table verbatim-faithful; §7.3's control bites Q8
+only.  R1's gift: the §7.2 [SAMP] 32/512 gauge sweep RUN
+EXHAUSTIVELY — 512×512 = 262,144 instances, 0 moved; the claim
+true, its delivered evidence not.  Eleven named repairs, all
+evidentiary; no new fixture, no tower re-run.  PANEL COMPLETE:
+AWF / AWF(→REJECT if 1–2 declined) / AWF; ~301 recomputations,
+zero false numbers programme-wide again.  Adjudication next.
