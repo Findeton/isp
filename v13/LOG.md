@@ -5913,3 +5913,12 @@ measured, not arranged.  **PROVENANCE-CERTIFIES does not occur;
 per the pin, BRANCH B IS THE PROVEN RESIDUE — the adjudication
 returns to the user after the panel confirms.**
 GREEN-UNREVIEWED; panel next.
+
+## 2026-08-07 — BRANCH-A HOSTILE PROTOCOL FROZEN + PANEL
+## DISPATCHED (v13 LEDGER #172)
+Protocol frozen (K1 the delta-zero theorem; K2 the REGRESS
+reduction incl. the escape question; K3 the LOSSY constructions +
+the scissors adjudication; K4 the discriminator findings + the
+mutant-repair/freeze audit); three lenses dispatched (Opus 5,
+parallel, one review file each, no cross-reading).  Recorded
+after the dispatches occurred.
