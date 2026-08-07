@@ -5622,3 +5622,41 @@ return: verification → green → protocol freeze → three-lens
 panel → adjudication — and the A-or-onward decision returns to
 the user with C's verdict.  Recorded after the dispatch
 occurred.
+
+## 2026-08-06 — BRANCH C DELIVERED; VERIFIED; COMMITTED
+## GREEN-UNREVIEWED (v13 LEDGER #159)
+Verification: source hash = receipt; rerun exit 0; 16/16 anchors,
+45 gates (15 must-pass, 0 failures; per-candidate kill gates
+recorded as informative), 21/21 mutants; byte-identical; four
+files.  **HEADLINE: RQ0-L4-CLASS-IMPOSSIBILITY** — at the
+committed configuration, at every committed law with the full
+24-element isomorphism group: covariance forces every statistic
+through the ORBIT INVARIANT; the 52 records fall into exactly 12
+orbits; the orbit invariant IS the shape/resolution profile
+(52×52 checked) — so covariant ∧ non-resolution = EMPTY, proved
+and measured on the six frozen candidates (freeze-before-fixture-
+truth enforced by receipt gate order: L4-00 definitions+SHAs
+before any fixture value; the L4-FREEZE barrier).  Covariance
+analysis per the pin: the committed pairs occupy THREE DISTINCT
+ORBITS (6/3/1) — they resist not because covariance forces them
+equal but because the only covariant distinction between them is
+HOW MUCH THEY RESOLVE.  Per-candidate: C1 separator at the
+counter-law/FUNNEL but DISQUALIFIED four ways (covariance gate
+VACUOUS there — trivial isomorphism group; order-entailed;
+certifies total erasure; splits the identity-free side) — the
+qualified FINGERPRINT tag registered on the pin's letter, content
+NOT delivered; C4a FINGERPRINT-AMNESTY (1552/4845 inverting);
+C4c killed at G2b; C2 measured to BE ε; C3 fan-in identically 1
+at the carrier (the resource does not transport one arity up);
+C4b a function of ε off-fixture.  **THE FINGERPRINT DICHOTOMY
+(gated): every separation is either ORDER-ENTAILED (a coarseness
+grading, sweep-immune) or STATE-READING (sweep-killed); none is
+both.**  Honest corridor-hole disclosure: the pin's gate-1
+excluded only the monotone direction while the inherited
+constraint demands non-monotone — C1/C4c walked the anti-monotone
+half; both readings anchored and adjudicated, not silently
+patched.  BLOCKED-AT-THE-REFINEMENT-ORDER instantiated.  Eleven
+deviations.  **COARSE REALITY DOES NOT SELF-CERTIFY at this
+scope: the law does not remember what forgetting erased.**
+GREEN-UNREVIEWED; the panel must confirm the impossibility before
+branch A is entered on its strength.
