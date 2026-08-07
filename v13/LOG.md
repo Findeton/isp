@@ -6737,3 +6737,17 @@ overrun explained (the §14 sweep dominates; machine load
 60–120; two real instrument defects found and fixed
 pre-delivery).  md5 output 1dc080d5 / receipt a016e8b0.
 Adjudicator verification next.
+
+## 2026-08-07 — NT VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #203)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical (output 1dc080d5 / receipt a016e8b0; three
+identical runs total).  note-nt-hostile-protocol.md FROZEN
+(K1 the 8 refutation witnesses + gauge sweep / K2 the
+multiplicity mechanism vs the full table + the FORCED-vs-CERT
+demotion / K3 the three holonomy computations + the Δᴮ≡W5-
+residual weld identity + the [SAMP] attack / K4 the
+PREFIX-DECIDES independence check / K5 D1 T1-non-return,
+D8 audit, anchors, path-space counts).  Frozen SHAs (sha256-12)
+recorded in the freeze command output with this commit.
+Three-lens panel (Opus 5) dispatched immediately after.
