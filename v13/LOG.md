@@ -6392,3 +6392,19 @@ fresh-eval self-tests binding.  THE FORK ITSELF IS NOT
 ADJUDICATED BY THIS UNIT — its routing is paper 0's and the
 user's.  The nomological-transport pin (law-data) follows this
 unit's verdict.  Construction dispatch next.
+
+## 2026-08-07 — O4 DISCRIMINATOR CONSTRUCTION DISPATCHED (v13 LEDGER #190)
+Construction worker dispatched (Opus 5, freeze-on-delivery, no
+git) against pin 2568bc528796 @ e1e8dcd: the transport
+instrument (one gate set, three fact-classes — F-REC anchored to
+W6/paper-2 receipts as positive control, F-CFG the object,
+F-CTRL teeth); corridor-bound candidate rules (naive-slice as
+the gated-out control; descent-restriction; base-suggested
+candidates incl. the realized-legs/modal route); the W5 LTP
+gate per candidate (LTP-BARE computed not asserted); the RQ0
+arena test on F-CFG truth-values (measured orbit if they move);
+measurement-founded verdicts w/ flip-test; §14 fresh-eval; §15
+per-coordinate claims.  On delivery: COMMIT-AS-IS FIRST, then
+verification, then §13 protocol freeze → panel.  The
+nomological-transport pin (law-data) queued behind this unit's
+verdict.  Recorded after it occurs.
