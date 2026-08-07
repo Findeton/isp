@@ -5959,3 +5959,45 @@ declared arguments gets the bound; the ESCAPE ATTEMPT FAILED in
 all six constructed readings — the only door is a
 non-self-supplied argument, confirming §8's own diagnosis).
 Ten rewrites.  Adjudication waits for R2 + R3.
+
+## 2026-08-07 — BRANCH-A R2 (EFFECTUS) REVIEW FROZEN (v13 LEDGER
+## #174)
+review-rq0-provenance-effectus.md (589 lines) frozen; compliance
+verified (R2 saw R1's commit SUBJECT only, post-findings,
+disclosed).  **R2 VERDICT: REJECT OF THE DELIVERED ARTIFACT, NOT
+OF ITS HEADLINE** — the verdict-grade divergence (R1 AWF vs R2
+REJECT) is the adjudicator's to resolve.  50 recomputations;
+23/24 blind reproductions exact; every classical number correct.
+CONVERGENT with R1 on the gauge-variance bug (independent
+diagnosis: the double-negated direction flag; 384/512 switchings
+move the unit's quantity, 0 move a closed loop) — and SHARPER:
+**Prop 5.4's "4 classes × 128" IS THE GAUGE ORBIT RELABELLED AS
+INVARIANT CONTENT** (all 4,096 switchings of the committed lift
+stay inside the admitted family; on that single orbit the buggy
+quantity takes all four values); the true one-step holonomy is a
+CONSTANT (−1, rigidly forced by unitarity for any full-support
+2×2 unitary).  **Thm 6.3's witness invalid on its own terms**
+(its two "indistinguishable" words write DIFFERENT records —
+separated by the paper's own Gain 1, which the shadow function
+omits); a corrected witness exhibited; the repaired theorem
+STRONGER (constant checkpoint-local shadow over the whole pool
+vs the cross-checkpoint invariant sweeping all 8 values).
+**THE SCISSORS COLLAPSE — THE NUMERALS READING BINDS** (three
+grounds: Def 2.3 already puts the diagram's holonomies inside
+V-AMP's certificate and the code computes them;
+checkpoint-local ≠ step-local; carrying-as-numerals while
+forbidding reading-as-numerals is incoherent; and v12's
+recorded-but-phased limit DOES NOT TRANSPORT — its block is
+intra-sector at one time, the residue here cross-checkpoint).
+**WHAT SURVIVES: THE REGISTERED OUTCOME BOX, all of it** —
+LOSSY-vs-V-CL is a THEOREM (the certificate is a function of the
+written record alone; 52 certificates over all 3,125 DET
+operations); LOSSY-vs-V-AMP fires reading-independently at the
+committed scope; REGRESS fires FOR A BETTER REASON than given
+(the declared amplitude law is support-level and constrains no
+amplitude at all — declarations unanchored); the delta-zero
+theorem, the 3-vs-2 rank accounting, and the (P2)-strong
+collapse reproduce exactly.  Convergent process finding: no
+sign-convention mutant, no gauge-covariance self-test — a
+four-line test of the paper's own Def 3.1 criterion would have
+caught everything.  Adjudication waits for R3.
