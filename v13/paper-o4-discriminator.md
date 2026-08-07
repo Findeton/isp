@@ -2,7 +2,7 @@
 
 ## Unrecorded Actuality on the Record Co-reference Base
 
-**Status:** `GREEN-UNREVIEWED (v13 O4-DISCRIMINATOR, re-derived)` — delivered
+**Status:** `TERMINAL (v13 O4 discriminator)` — panel #193–#195, adjudicated #196 REJECT-AS-DELIVERED, re-derivation RD-1..RD-6 verified and conferred terminal at v13 LOG #199. PREFIX-DECIDES is panel-unseen (isolated under the #196 order) and is the mandatory first anchor of the successor transport unit's panel.
 against the frozen pin under the adjudication's re-derivation order RD-1..RD-6
 (v13 LOG #196); the STATUS update and any successor cycle follow.
 

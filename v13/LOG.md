@@ -6641,3 +6641,28 @@ not unit-computed).  27 anchors / 31 gates (27 must-pass,
 / 0 failures / self-test 0 cache hits / two delivery runs
 byte-identical.  md5 output 2d2eed41 / receipt dcf1ce5d.
 Adjudicator verification next.
+
+## 2026-08-07 — O4 TERMINAL (v13 LEDGER #199)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical (output 2d2eed41 / receipt dcf1ce5d; three
+identical runs total); 27 anchors / 31 gates / 0 must-pass
+failures / 31 mutants / 26/26 falsified / 0 self-test cache
+hits.  TERMINAL CONFERRED, judgment owned: the re-derivation
+implements the #196 order exactly, and the panel itself had
+computed the matched table's missing cells (reproduced here);
+the ONE panel-unseen result is PREFIX-DECIDES (isolated under
+the order's isolate-or-name-open clause; gated + mutant-covered
++ reproduced in the adjudicator's rerun) — flagged as the
+MANDATORY FIRST ANCHOR of the successor transport unit's panel,
+which builds directly on it.  **O4 CLOSES: at committed scope,
+before the final division event no fact-class achieves
+certified covariant transport (records included; two named
+blockers), and what governs transportability is the DECLARED
+LEG PREFIX — shared history, not divisibility structure.  The
+charter fork stays open, now honestly priced: O4-A's rule
+fails class-neutrally at between-event times; the paper's
+charter section carries both hedges verbatim.  Bequests to the
+transport pin: PREFIX-DECIDES; the wing-exchange orbit cause;
+the completed K1 universality; LTP-LAWFUL-at-t=3-only.**
+Successor: the nomological-transport pin.  Publication route
+the user's.
