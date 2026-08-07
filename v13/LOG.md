@@ -5667,3 +5667,14 @@ edge); K2 the corridor-hole adjudication under both readings; K3
 the dichotomy attacked by construction; K4 the C1 disqualification
 honesty + the freeze-mechanism audit.  Dispatch recorded after it
 occurs.
+
+## 2026-08-06 — BRANCH-C THREE-LENS PANEL DISPATCHED (v13 LEDGER
+## #161)
+Three independent reviewers (Opus 5, parallel), protocol c120ea3,
+one review file each, separate scratchpads, no cross-reading,
+freeze-on-delivery: R1 (K1 the 12-orbit theorem + the
+shape=resolution edge attacked by construction), R2 (K2 the
+corridor-hole under both readings + K3 the dichotomy attacked by
+counterexample), R3 (K4 the C1-disqualification honesty + THE
+FREEZE AUDIT + per-candidate kills natively).  Recorded after
+the dispatch occurred.
