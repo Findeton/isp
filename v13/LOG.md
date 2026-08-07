@@ -5827,3 +5827,13 @@ four discriminator families; the adjudicator's prior (at least
 one kill fires) recorded; if both fire, branch B is the proven
 residue and the adjudication returns to the user.  Dispatch
 recorded after it occurs.
+
+## 2026-08-06 — BRANCH-A DERIVATION DISPATCHED (v13 LEDGER #168)
+Background worker (Opus 5), bound to the frozen pin at ce18eac;
+terminal inputs immutable; the kill verdicts to be reported FIRST
+(the adjudicator's prior recorded — the worker measures, neither
+confirms nor dodges); the lossy adversary's antecedent = v12's
+recorded-but-phased limit; freeze-on-delivery.  On return:
+verification → green → protocol → panel → adjudication — and if
+both kills fire, branch B is the proven residue, returning to
+the user.  Recorded after the dispatch occurred.
