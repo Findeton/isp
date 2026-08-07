@@ -6083,3 +6083,22 @@ them. Per the pin: BRANCH B (coarse arena-relativity) IS THE
 PROVEN RESIDUE. No successor is authorized by this unit — the
 adoption decision RETURNS TO THE USER, presented with the
 complete C+A impossibility record.**
+
+## 2026-08-07 — THE USER ADOPTED BRANCH B IN MINIMAL FORM; RQ0-SYNTH
+## PINNED; RUNBOOK §15 ENGRAVED; THE CRITICAL PATH QUEUED (v13 LEDGER #178)
+The user's decision (2026-08-07, "go ahead" on the recommended
+plan): branch B adopted in MINIMAL FORM — one bounded synthesis
+unit (the arena-relativity thesis stated with the six-level
+theorem record + the FIRST INVARIANCE CENSUS over admissible
+arenas drawn exactly from the terminal fixtures), then the RQ0
+line CLOSES and the ladder resumes at the roadmap's critical path
+(O4-on-W6-base / nomological transport → overlaps/autonomous
+charts → topology+influence → continuum → QFT benchmarks; gravity
+H_a[N] parallel).  No open-ended arena-relativity line.
+note-rq0-synth-arena-pin.md frozen this commit (quantities Q1–Q8
++ Q-OPT Δᴮ behind an exact-transport gate; outcomes
+ARENA-INVARIANT/INERT/ARTIFACT/BLOCKED per quantity +
+CENSUS-COMPLETE + ACTION-TOO-WEAK; §14 self-test under the
+admitted relabellings and the 512 switchings mandatory).
+RUNBOOK §15 (declared-arena discipline) added.  ROADMAP addendum
++ STATUS updated in this commit.  Construction dispatch next.

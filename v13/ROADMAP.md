@@ -75,3 +75,19 @@ Four transitions to generic relativistic QFT, with the continuum wall
 inside the fourth; QCD and gravity each at least three more beyond
 that; any single one may require new mathematics. No rung may be
 skipped; no cycle may claim a later stage's vocabulary.
+
+## 2026-08-07 addendum — the RQ0 line CLOSED; the critical path resumed (v13 #178)
+
+The stage-4/5 fork is resolved: C and A terminal-negative (#166,
+#177); the user adopted branch B in MINIMAL FORM (2026-08-07):
+one synthesis unit (RQ0-SYNTH, pin this commit) stating
+arena-relativity with the six-level record + the first invariance
+census; RUNBOOK §15 (declared-arena discipline) engraved.  NO
+open-ended arena line.  After RQ0-SYNTH terminal, the ladder
+resumes at the critical path: (i) O4 discriminator on W6's base +
+nomological transport over the base (the v12 opens); (ii)
+physical overlaps / autonomous charts on the operational
+substrate (terminal W6 = positive control); (iii) topology +
+influence; (iv) continuum/type-III; (v) QFT benchmarks; gravity
+H_a[N] parallel when a slot frees.  Publication route remains the
+user's.

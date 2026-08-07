@@ -1727,3 +1727,17 @@ enters. A wholesale-replacement mutant does not test that the
 RIGHT invariant is computed. (Lesson: branch A's gauge-variant
 holonomy — Prop 5.4 exhibited the gauge orbit as physics; no
 mutant could catch it.)
+
+## 15. Declared-arena discipline (added 2026-08-07, from the RQ0 tower #103–#177)
+
+Every unit's pin declares its arena explicitly — boundary,
+family, law, state, arena (and, if carried, provenance) — as
+data, not prose. Claims of physical significance are entered
+only for quantities GATED as invariant across the unit's
+admissible arenas; arena-artifacts may serve as instruments but
+never as conclusions. Where an instrument enforces the arena
+action, §14 applies: it must be self-tested under that action.
+(Origin: six terminal units proved coarse legitimacy is not
+intrinsic, not context-certifiable, not law-structural at coarse
+grain, not state-carried, not law-remembered, not
+provenance-carriable — relative to the declared arena only.)

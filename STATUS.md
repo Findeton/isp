@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-07 (v13 LOG #177: branch A TERMINAL; the ladder HALTED at the branch-B adoption decision — the user's).
+Updated: 2026-08-07 (v13 LOG #178: branch B adopted minimal-form by the user; RQ0-SYNTH pinned; §15 engraved; critical path queued).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -67,4 +67,5 @@ Updated: 2026-08-07 (v13 LOG #177: branch A TERMINAL; the ladder HALTED at the b
 | Stage 5 — ε-admissibility | **TERMINAL: EPSILON-BLIND at every state** (ε = Bayes error; inverted ordering — the forgery has the least defect; ω quadruple-bound and inert; mixed-STATE arena named) | v13 #156 ✓adj |
 | Branch C — nomological fingerprint | **TERMINAL: CLASS-IMPOSSIBILITY fused w/ the name-blindness principle** ("the coarse present cannot testify: proved where symmetry acts; principled where it does not"; FINGERPRINT withdrawn; 42/42 name-blind rows accounted) | v13 #166 ✓adj |
 | Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | **TERMINAL (#177 ✓adj byte-identical independent rerun)**: BOTH KILLS FIRE ON BOTH VARIANTS at the corrected gauge-invariant instrument; the amplitude datum BLIND (one-step closed holonomy CONSTANT −1, unitarity-forced); LOSSY-vs-V-CL a theorem; BLOCKED-AT-THE-DECLARATION w/ the functionality qualifier; 12 anchors / 46 gates / 20 mutants named-kills; RUNBOOK §14 born from its gauge-variance bug | v13 #175–#177 ✓adj |
-| Branch B — coarse arena-relativity | **THE PROVEN RESIDUE — NOW FORMALLY BEFORE THE USER** (C and A both terminal-negative; per the pin no successor is authorized; the ladder HALTS here awaiting the user's adoption decision) | v13 #177 |
+| Branch B — coarse arena-relativity | **ADOPTED IN MINIMAL FORM BY THE USER (2026-08-07)**: one synthesis unit + RUNBOOK §15; no open-ended arena line | v13 #178 |
+| RQ0-SYNTH — arena-relativity synthesis + first invariance census | pin frozen (#178); **construction in flight (#179)**; closes the RQ0 line; successor = the critical path (O4-on-W6-base / nomological transport) | v13 #178–#179 |
