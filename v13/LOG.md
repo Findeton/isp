@@ -6680,3 +6680,20 @@ CONFIRMED-or-REFUTED/BLOCKED; PREFIX-DECIDES independently
 re-derived on this base as a PIN CLAUSE (the O4 panel-unseen
 anchor discharged first); matched coordinates baked in.
 Construction dispatch next.
+
+## 2026-08-07 — NT CONSTRUCTION DISPATCHED (v13 LEDGER #201)
+Construction worker dispatched (Opus 5, freeze-on-delivery, no
+git) against pin ee22c5aadbcf @ 26cc502.  Order of work: the
+PREFIX-DECIDES independent re-derivation FIRST (own
+implementation, 18/18 + 12/18 gated, O4 values anchored — the
+panel-unseen flag discharged); the committed path space
+enumerated; T1/T2/T3 transported along every path at matched
+coordinates (T2 behind the posability gate; T3 under the
+mandatory 512-switching gauge sweep); the prefix-flatness
+hypothesis decided by the full path-pair table with both
+failure modes probed (flat-crossing, twisted-corridor);
+verdicts measurement-founded w/ flip-test; positive control
+same-order pair, negative control twisted comparator w/ teeth.
+On delivery: COMMIT-AS-IS FIRST, then verification, then §13
+protocol freeze → panel (PREFIX-DECIDES re-derivation checked
+first) → adjudication.  Recorded after it occurs.
