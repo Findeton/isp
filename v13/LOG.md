@@ -6368,3 +6368,27 @@ O4-on-W6-base / nomological transport (next pins), overlaps/
 autonomous charts, topology+influence, continuum, QFT
 benchmarks; gravity H_a[N] parallel.  Publication route remains
 the user's.**
+
+## 2026-08-07 — O4 DISCRIMINATOR PINNED (v13 LEDGER #189)
+The user ordered the O4+transport arc ("ok work on O4 and
+transport").  note-o4-discriminator-pin.md frozen this commit:
+the charter's unrecorded-actuality fork (paper 0 §O4, O4-A
+configuration realism vs O4-B record actualism) made decidable
+at W6's committed finite scope via TRANSPORT OF FACT-DATA along
+the terminal co-reference base — three fact-classes under
+identical descent gates (F-REC records = positive control
+anchored to W6/paper-2 receipts; F-CFG unrecorded configurations
+= the object, with the W5 LTP clause as a mandatory gate
+(lawless actuality recorded as LTP-BARE); F-CTRL mis-conventioned
+= negative control with teeth); candidates corridor-bound
+(covariant, name-blind, NO GLOBAL SLICE — a global-now-smuggler
+mutant must be caught); outcomes O4-RULE-EXISTS /
+O4-RULE-EXISTS-LTP-BARE / O4-DISCRIMINATED-RECORD-ACTUALISM /
+O4-ARENA-RELATIVE (the RQ0 census applied to unrecorded
+actuality — a sharpened O4-B distinct from both charter
+branches) / O4-BLOCKED-AT-⟨object⟩.  §15 arena declared as data
+(W6's committed configuration + its admitted group); §14
+fresh-eval self-tests binding.  THE FORK ITSELF IS NOT
+ADJUDICATED BY THIS UNIT — its routing is paper 0's and the
+user's.  The nomological-transport pin (law-data) follows this
+unit's verdict.  Construction dispatch next.
