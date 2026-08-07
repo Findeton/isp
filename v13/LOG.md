@@ -5922,3 +5922,40 @@ the scissors adjudication; K4 the discriminator findings + the
 mutant-repair/freeze audit); three lenses dispatched (Opus 5,
 parallel, one review file each, no cross-reading).  Recorded
 after the dispatches occurred.
+
+## 2026-08-07 — BRANCH-A R1 (OPERATOR) REVIEW FROZEN (v13 LEDGER
+## #173)
+review-rq0-provenance-operator.md frozen; compliance verified
+(triple-independent re-derivation of the diagnosis).  R1:
+ACCEPT-WITH-FIXES; 30 recomputations; all 12 anchors reproduce;
+verdict and both kills STAND.  **F1 (MAJOR): the unit's holonomy
+function is GAUGE-VARIANT** — tree legs sign-reversed twice, the
+loop never closes; under 512 random switchings the unit's
+quantity moves 379/512, the true invariant 0/512.  CONSEQUENCES:
+**Prop 5.4 FALSE** (the 512 lifts carry ONE holonomy class, ζ₈⁴
+— by theorem: any equal-modulus 2×2 unitary satisfies
+U₀₀U₁₁ = −U₀₁U₁₀, 0 violations); Thm 6.3's printed witness
+UNACHIEVABLE (ζ₈⁶ and (0,4,6) cannot occur); kill-gate
+L5-AMP-FREE FAILS UNDER CORRECTION — the receipt's "0 must-pass
+failures" does not survive the repair.  **NOT REJECT because
+every conclusion survives and two STRENGTHEN** (replacements
+supplied): the amplitude datum is not free-among-four but BLIND
+(constant invariant while the endpoint record varies 128/384) —
+REGRESS sharper; the LOSSY witness survives with a CONSTANT
+checkpoint-local shadow — sharper than the amendment's own form.
+**F2 (process): no gauge-covariance gate existed** despite
+gauge-invariance being the paper's own carried-content criterion;
+the mutant suite structurally could not catch F1 — a
+gate-design lesson for the runbook.  F4: the 120→1 collision and
+LOSSY-CL are DEFINITIONAL, not measured (verified; owning it
+strengthens the kill).  K1 SOUND (re-proved by a shorter forest
+lemma surviving partial steps; sweeps extended to EXHAUSTIVE on
+REV + the 3,006 funnel closure, zero violations; two scope
+defects: "reduces identically" exceeds its proof — moduli
+uncovered, the committed lift a declared choice; 2,880 tests =
+1,680 distinct paths, [EXH-1] misapplied).  K2 SOUND AND
+STRONGER (the reduction never uses (P1) — ANY predicate over
+declared arguments gets the bound; the ESCAPE ATTEMPT FAILED in
+all six constructed readings — the only door is a
+non-self-supplied argument, confirming §8's own diagnosis).
+Ten rewrites.  Adjudication waits for R2 + R3.
