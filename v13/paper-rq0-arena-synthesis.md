@@ -2,7 +2,7 @@
 
 ## The Six-Unit Record, and the First Invariance Census over Admissible Arenas
 
-**Status:** `GREEN-UNREVIEWED (v13 RQ0-SYNTH)`
+**Status:** `TERMINAL (v13 RQ0-SYNTH)` — panel #182–#184, adjudicated #185 ACCEPT-WITH-MAJOR-REPAIRS, repair S-1..S-6 verified and conferred terminal at v13 LOG #188. THE RQ0 LINE CLOSES AT THIS UNIT.
 
 **Date:** 2026-08-07
 

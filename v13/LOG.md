@@ -6341,3 +6341,30 @@ refute the old wording).  20 anchors / 27 gates / 0 must-pass
 failures; 12 deviations; single-threaded w/ the one #185
 citation.  md5 output 183de93a / receipt 701b5ac1; two delivery
 runs diff-clean.  Adjudicator verification next.
+
+## 2026-08-07 — RQ0-SYNTH TERMINAL; THE RQ0 LINE IS CLOSED (v13 LEDGER #188)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical to the worker's two (output md5 183de93a, receipt
+701b5ac1; source sha a2c4ebf0 = receipt's registration); 20
+anchors / 27 gates / 0 must-pass failures / 27 mutants exit-1;
+text gates clean (single #185 citation; Deviations 10–12;
+BLOCKED single-name).  TERMINAL CONFERRED WITHOUT A SECOND PANEL
+— judgment owned here: the verdict-table changes (Q1/Q4/Q8
+INVARIANT→ARTIFACT) are exactly the three flips R3's F10
+MEASURED as declaration-dependent; the repair moved the table to
+the measurement-founded fixed point the panel itself computed,
+and the flip-test is now a permanent passing gate.  The pin's
+Q1 global expectation is owned as a category conflation
+(bedrock-status ≠ fixity under an action whose coordinates
+include the law); Q1's control content survives per-coordinate.
+**THE RQ0 LINE CLOSES: six terminal tower units + the terminal
+synthesis.  Its bequests: (1) the arena-relativity theorem
+record; (2) the first invariance census at measurement-founded
+verdicts — per-coordinate fixity the only licensed physical
+claim; (3) the de-named asymmetry (legitimacy moves with the
+law, 5 values; the seam's motion is naming alone, 1 value); (4)
+RUNBOOK §14+addendum and §15.  Successor: the critical path —
+O4-on-W6-base / nomological transport (next pins), overlaps/
+autonomous charts, topology+influence, continuum, QFT
+benchmarks; gravity H_a[N] parallel.  Publication route remains
+the user's.**

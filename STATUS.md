@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-07 (v13 LOG #185: RQ0-SYNTH panel complete + adjudicated; repair in flight; RQ0 close pending its terminal).
+Updated: 2026-08-07 (v13 LOG #188: RQ0-SYNTH TERMINAL — THE RQ0 LINE IS CLOSED. Successor: the critical path (O4-on-W6-base / nomological transport), per-cycle authorization standing from the user's 2026-08-07 plan approval).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -68,4 +68,4 @@ Updated: 2026-08-07 (v13 LOG #185: RQ0-SYNTH panel complete + adjudicated; repai
 | Branch C — nomological fingerprint | **TERMINAL: CLASS-IMPOSSIBILITY fused w/ the name-blindness principle** ("the coarse present cannot testify: proved where symmetry acts; principled where it does not"; FINGERPRINT withdrawn; 42/42 name-blind rows accounted) | v13 #166 ✓adj |
 | Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | **TERMINAL (#177 ✓adj byte-identical independent rerun)**: BOTH KILLS FIRE ON BOTH VARIANTS at the corrected gauge-invariant instrument; the amplitude datum BLIND (one-step closed holonomy CONSTANT −1, unitarity-forced); LOSSY-vs-V-CL a theorem; BLOCKED-AT-THE-DECLARATION w/ the functionality qualifier; 12 anchors / 46 gates / 20 mutants named-kills; RUNBOOK §14 born from its gauge-variance bug | v13 #175–#177 ✓adj |
 | Branch B — coarse arena-relativity | **ADOPTED IN MINIMAL FORM BY THE USER (2026-08-07)**: one synthesis unit + RUNBOOK §15; no open-ended arena line | v13 #178 |
-| RQ0-SYNTH — arena-relativity synthesis + first invariance census | delivered as-is #180, verified byte-identical #181; **panel COMPLETE #182–#184 (3× AWF, ~301 recomputations, zero false numbers; family vindicated; record table verbatim-faithful)**; adjudicated #185 ACCEPT-WITH-MAJOR-REPAIRS — verdicts re-founded on measurement, the asymmetry RESCOPED (σ measured, law/state definitional), Q-OPT → BLOCKED per pin vocabulary; **repair S-1..S-6 in flight** | v13 #180–#185 ✓adj |
+| RQ0-SYNTH — arena-relativity synthesis + first invariance census | delivered as-is #180, verified byte-identical #181; **panel COMPLETE #182–#184 (3× AWF, ~301 recomputations, zero false numbers; family vindicated; record table verbatim-faithful)**; adjudicated #185; repair S-1..S-6 delivered + verified byte-identical (3 runs); **TERMINAL #188 ✓adj**: verdicts measurement-founded (flip-test permanent gate, verdicts_that_differ EMPTY; Q1/Q4/Q8 flipped exactly per R3's F10); THE ASYMMETRY at sharpest honest form (de-named: legitimacy 5 values per declaration, the seam 1; both relabelling-fixed w/ teeth 2,144/2,688); Q-OPT BLOCKED single name (monomial theorem 0/14,400); 20 anchors / 27 gates / 27 mutants, 24/24 must-pass falsified. **THE RQ0 LINE IS CLOSED.** | v13 #180–#188 ✓adj |
