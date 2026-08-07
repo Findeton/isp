@@ -6195,3 +6195,34 @@ counterexamples; true criterion: square-again-fully-unbiased,
 no small-fiber artifact), ARENA-ARTIFACT-Q5 and -Q6,
 ARENA-INVARIANT-Q2, ARENA-INERT-Q7.  R1/R3 pending; adjudication
 after all three.
+
+## 2026-08-07 — RQ0-SYNTH R3 (INSTRUMENT) FROZEN (v13 LEDGER #183)
+review-rq0-synth-instrument.md frozen as delivered.  Grade
+ACCEPT-WITH-FIXES; 106 independent recomputations; byte-identity
+re-confirmed from a different working directory; the census
+REIMPLEMENTED with native tuple equality — every number agrees
+(proving canon injective here); ALL 20 mutant kills reproduce
+(four rebuilt from the receipt's prose alone); all 19 anchors
+traced to the six terminal receipts; the §2 record table
+VERBATIM-FAITHFUL.  Four MAJOR: F1 SYN-ST-RELABEL — the §14
+headline gate — CANNOT FAIL (self-selects on the census's own
+verdicts; 20,484 memo hits / 0 misses — it recounts the cache; 6
+of 19 gates never falsified by any mutant); F2 the anti-vacuity
+counter printed but NOT gated (action-weaken passes with 0
+configurations moved; one-line fix); F3 the mis-conventioned
+control bites ONLY Q8 (admitted σ fixes law setwise and state
+pointwise 0/1,073, so the broken action differs only in the
+sigma argument only Q8 reads; per-quantity 0/3,024, 0/3,024,
+2,772/3,024); F10 the ALTERNATIVE READS/ACTS declaration FLIPS 3
+of 8 verdicts (Q1 — a declared positive control —, Q4, Q8),
+fails SYN-POSITIVE-CONTROLS, un-earns CENSUS-COMPLETE — BUT Q5
+vs Q8 is genuinely apples-to-apples (identical
+READS/ACTS/fibration/sweep), so K4's CORE asymmetry survives
+while the abstract's unqualified "six do not move" does not.
+Moderates: Q8's degeneracy route dead AND wrong on the true
+neutral, its nondegeneracy witness absent from the gate
+predicate; receipt transport_object:false contradicts
+§8/Deviation 4; the Δᴮ sweep vacuous (independent confirmation
+of R2; all 14,400 zero; the "sample" a point stabiliser
+subgroup); 6/20 mutants perturb no computation.  R1 pending;
+adjudication after all three.
