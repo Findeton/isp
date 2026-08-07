@@ -5776,3 +5776,12 @@ stage 5's pre-adjudicated ω rows).  Repair R-1..R-9 dispatched
 next; after verification: TERMINAL at
 CLASS-IMPOSSIBILITY-corrected + AMNESTY + BLOCKED-AT-THE-
 REFINEMENT-ORDER — then BRANCH A per the authorized plan.
+
+## 2026-08-06 — BRANCH-C REPAIR DISPATCHED (v13 LEDGER #165)
+Background worker (Opus 5), bound to the adjudication at 885ce7d
+(R-1..R-9) and the three frozen reviews; four unit files only;
+the measured verdict of the fused claim over the name-blind class
+at all committed configurations to be reported FIRST (branch A's
+preamble cites it); freeze-on-delivery.  On return: verification
+→ TERMINAL → then BRANCH A per the authorized plan.  Recorded
+after the dispatch occurred.
