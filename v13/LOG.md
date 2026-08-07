@@ -5863,3 +5863,53 @@ first-class; amplitude data carried in gauge-invariant form per
 terminal W7 (raw gauge-variant phases would smuggle); the kill
 verdicts per variant reported first; freeze-on-delivery.
 Recorded after the dispatch occurred.
+
+## 2026-08-07 — BRANCH A DELIVERED; VERIFIED; COMMITTED
+## GREEN-UNREVIEWED (v13 LEDGER #171)
+Verification: source hash = receipt (eb290aa7…); rerun exit 0;
+12/12 anchors, 29/29 gates, 0 must-pass failures, 15/15 mutants;
+byte-identical; four files (predecessor partials overwritten).
+**THE KILL VERDICTS: BOTH FIRE, ON BOTH VARIANTS.**
+**REGRESS:** admissibility and generation are DECOUPLED — making
+the forged boundary admissible costs 120 deletions (unpayable);
+GENERATING it as a written record costs ZERO (120 admitted
+one-step paths already write it); the declarable-history set is a
+function of the quadruple, so every provenance-reading statistic
+reduces to stage-5 Thm 5.3's proved-blind class; the 120→1
+collision (all 120 admitted histories carry ONE certificate, both
+variants); at amplitude scope it recurs a level deeper (512
+lifts, 4 holonomy values, 128 realizing each — the forger
+declares whichever the legitimate declaration carries).
+**LOSSY:** V-CL — the single indistinguishable class contains
+both the identity (nothing was done) and the deleted rotation
+(manufactured); V-AMP — (P2) is checkpoint-local by definition;
+the carried diagram has cycle rank 3 vs checkpoint-local rank 2 —
+A RANK-1 RESIDUE PERMANENTLY UNREAD; two lifts exhibited with
+identical checkpoint shadows (ζ₈⁴, ζ₈⁶) and different
+cross-checkpoint holonomy — the recorded-but-phased limit applied
+to the CHECKS, as the v2 amendment posed it.  **THE DELTA IS
+ZERO AT THE COMMITTED SCOPE, BY THEOREM:** single-valued laws
+force cycle rank 0 (Euler argument; 2,880 carried paths measured
+rank-0, empty holonomy) — A DETERMINISTIC LAW HAS NO QUANTUM
+BITS TO CARRY; at the declared amplitude scope the bits buy
+visible cancellation + loop holonomy, AND EACH GAIN IS EATEN BY
+ONE KILL.  The scissors, disclosed: "the amplitude bits are
+readable only under the reading that leaves them unanchored, and
+anchored only under the reading that leaves them unread."
+**THE SHARPEST VERDICT: RQ0-L5-BLOCKED-AT-THE-DECLARATION** —
+(P1)/(P2) PASS at every patch, forged and legitimate alike (the
+true manufacture-history of a forged boundary IS an admitted
+path; rejection is carried entirely by the inherited B″ clauses);
+(P2)-strong collapses onto rigidity (rejects the legitimate chart
+too); manufacture-depth ranks the legitimate chart WITH the
+forgeries; history fan-in runs BACKWARDS (the forgery is the MORE
+generable boundary, 120 vs 20).  **"Adding a sixth declaration
+to five cannot bind the five."**  Amnesty: 0 separations, 4,845
+ties — the failure is PRIOR to amnesty.  Process honesty: two
+initially-surviving mutants repaired-not-retired (recorded in
+§10); the ~45 min budget exceeded (~2h, selftest-driven) —
+declared.  The adjudicator's prior confirmed and over-confirmed —
+measured, not arranged.  **PROVENANCE-CERTIFIES does not occur;
+per the pin, BRANCH B IS THE PROVEN RESIDUE — the adjudication
+returns to the user after the panel confirms.**
+GREEN-UNREVIEWED; panel next.

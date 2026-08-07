@@ -1,0 +1,1336 @@
+{
+ "anchors": [
+  {
+   "committed": [
+    1,
+    2,
+    5,
+    15,
+    52
+   ],
+   "computed": [
+    1,
+    2,
+    5,
+    15,
+    52
+   ],
+   "id": "A01",
+   "passed": true,
+   "quantity": "record-lattice sizes at 1..5 configurations",
+   "source": "Cycle B sec 4 (Bell triangle)"
+  },
+  {
+   "committed": [
+    3125,
+    120
+   ],
+   "computed": [
+    3125,
+    120
+   ],
+   "id": "A02",
+   "passed": true,
+   "quantity": "DET and REV cardinalities at five configurations",
+   "source": "Cycle B Thm 4.4 / B'' M32"
+  },
+  {
+   "committed": [
+    120,
+    1
+   ],
+   "computed": [
+    120,
+    1
+   ],
+   "id": "A03",
+   "passed": true,
+   "quantity": "counter-law size and its reversible count",
+   "source": "B'' sec 6.4"
+  },
+  {
+   "committed": [
+    120,
+    240,
+    420,
+    1280
+   ],
+   "computed": [
+    120,
+    240,
+    420,
+    1280
+   ],
+   "id": "A04",
+   "passed": true,
+   "quantity": "Pres under DET at delta, forged 2+1+1, forged 2+2, legitimate tomographic minimum",
+   "source": "stage-5 Thm 4.1 / B'' sec 6"
+  },
+  {
+   "committed": [
+    "1/16",
+    "1/8",
+    "3/16"
+   ],
+   "computed": [
+    "1/16",
+    "1/8",
+    "3/16"
+   ],
+   "id": "A05",
+   "passed": true,
+   "quantity": "eps at the two forged coarse patches and the legitimate one, at the committed state",
+   "source": "stage-5 Thm 4.1 / 4.2"
+  },
+  {
+   "committed": [
+    1,
+    1,
+    1
+   ],
+   "computed": [
+    1,
+    1,
+    1
+   ],
+   "id": "A06",
+   "passed": true,
+   "quantity": "admissible records under DET, REV and the counter-law: the singleton {discrete} each",
+   "source": "B'' Thm 3.1 (rigidity)"
+  },
+  {
+   "committed": [
+    120,
+    360,
+    1260,
+    3120
+   ],
+   "computed": [
+    120,
+    360,
+    1260,
+    3120
+   ],
+   "id": "A07",
+   "passed": true,
+   "quantity": "obstruction sizes under DET at the record, boundary, coarser boundary and limit levels",
+   "source": "B'' Thm 8.4 (the cost tower)"
+  },
+  {
+   "committed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "computed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "id": "A08",
+   "passed": true,
+   "quantity": "omega at the three coarse committed patches under DET at the whole carrier",
+   "source": "stage-5 sec 9.1"
+  },
+  {
+   "committed": [
+    24,
+    12
+   ],
+   "computed": [
+    24,
+    12
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "admitted isomorphisms of the declared data at the committed state, and the orbit count of the 52 records",
+   "source": "branch C Thm 7.1 / 7.3"
+  },
+  {
+   "committed": 4845,
+   "computed": 4845,
+   "id": "A10",
+   "passed": true,
+   "quantity": "declared state grid size at denominator 16",
+   "source": "stage-5 sec 5.4 / branch C sec 5"
+  },
+  {
+   "committed": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "computed": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "id": "A11",
+   "passed": true,
+   "quantity": "every committed law is single-valued",
+   "source": "stage-5 gate L3-27"
+  },
+  {
+   "committed": [
+    0,
+    0,
+    0
+   ],
+   "computed": [
+    0,
+    0,
+    0
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "jointly admissible comparable boundary pairs under DET, REV and the counter-law",
+   "source": "B'' Thm 6.1 (comparable boundaries)"
+  }
+ ],
+ "base_commit": "483311c",
+ "findings": {
+  "acyclicity": {
+   "consequence": "V-AMP == V-CL exactly at every committed law",
+   "paths_tested": 2880,
+   "statement": "single-valued steps have acyclic layered diagrams"
+  },
+  "amplitude_scope": {
+   "cancellation_witness": "(H01,H01)",
+   "declared_generators": [
+    "F4",
+    "H01",
+    "H23",
+    "ID",
+    "SW01"
+   ],
+   "generated_support_law_size": 7
+  },
+  "delta": {
+   "at_the_committed_scope": {
+    "carried_cycle_rank": {
+     "0123|4": 0,
+     "01|23|4": 0,
+     "01|2|3|4": 0,
+     "0|1|2|3|4": 0
+    },
+    "reason": "every committed law is single-valued; single-valued steps have acyclic layered diagrams; vertex switching trivializes every edge phase on a forest, so there is no gauge-invariant amplitude content to carry",
+    "verdict": "ZERO -- the amplitude bits buy NOTHING here, and provably so",
+    "verdicts_identical": true
+   },
+   "at_the_declared_amplitude_scope": {
+    "V_AMP_carries_strictly_more": true,
+    "buys_1_visible_cancellation": {
+     "amplitude_record": "0|1|2|3|4",
+     "statement": "the amplitude composite is the identity while the support composite writes the FORGED 2+1+1 record: V-AMP adjudicates an endpoint claim that V-CL gets WRONG",
+     "support_record": "01|2|3|4",
+     "word": "(H01,H01)"
+    },
+    "buys_2_loop_holonomy": {
+     "cycle_ranks": {
+      "(F4)": 9,
+      "(H01)": 1,
+      "(H01,H01)": 3,
+      "(H01,H23)": 2,
+      "(ID)": 0,
+      "(SW01)": 0
+     },
+     "distinct_single_step_holonomy_classes": 4,
+     "statement": "V-AMP distinguishes carried histories V-CL identifies -- a strictly finer equivalence on declared provenance"
+    },
+    "does_NOT_buy": [
+     "the extra content is a FREE DECLARATION (L5-AMP-FREE): many admitted unitary lifts realize each holonomy class, so a forger declares whichever one a legitimate declaration carries -- REGRESS eats it",
+     "the extra content is NOT READABLE by the checkpoint-local verification (P2) is defined to be (L5-LOSSY-AMP-A) -- LOSSY eats it",
+     "at the carrier's own algebra, the one place the base supplies a genuine provenance collision, the content is IDENTICALLY EMPTY (L5-LOSSY-AMP-C)"
+    ]
+   },
+   "delta_measured_against_the_kills": "ZERO -- the same two kills fire on both variants",
+   "reverse_direction": "V-CL certifies nothing V-AMP cannot: the classical certificate is the support-and-modulus shadow of the amplitude one, computed by the same routes.  The delta is one-way."
+  },
+  "verdict": {
+   "both_kills_fire_on_both_variants": true,
+   "per_variant": {
+    "V-AMP": {
+     "PROVENANCE-CERTIFIES": false,
+     "PROVENANCE-LOSSY": true,
+     "PROVENANCE-REGRESS": true
+    },
+    "V-CL": {
+     "PROVENANCE-CERTIFIES": false,
+     "PROVENANCE-LOSSY": true,
+     "PROVENANCE-REGRESS": true
+    }
+   },
+   "residue": "BRANCH B (coarse arena-relativity) IS THE PROVEN RESIDUE: both pre-registered kills fire, on both variants, at the declared scope",
+   "tags": [
+    "RQ0-L5-PROVENANCE-REGRESS",
+    "RQ0-L5-PROVENANCE-LOSSY",
+    "RQ0-L5-BLOCKED-AT-THE-DECLARATION"
+   ]
+  }
+ },
+ "gates": [
+  {
+   "claim": "every definition of the quintuple, of the amplitude layer, and every provenance-reading statistic is SHA-256 registered before any fixture verdict is computed",
+   "class": "freeze",
+   "id": "L5-00",
+   "passed": true,
+   "value": 22
+  },
+  {
+   "claim": "automated source scan: no definition mentions a committed boundary, AND the permanent negative control TUNE -- which special-cases the legitimate tomographic minimum by name -- is CAUGHT by the same scan",
+   "class": "freeze",
+   "id": "L5-SRC",
+   "passed": true,
+   "value": {
+    "definitions_clean": 22,
+    "definitions_scanned": 22,
+    "negative_control_caught": true,
+    "negative_control_hits": [
+     "PTOMO"
+    ]
+   }
+  },
+  {
+   "claim": "the support-level law generated by the declared amplitude family is composition-closed -- it is the law the family generates, carried exactly as B'' carries FUNNEL",
+   "class": "derivation",
+   "id": "L5-AMP-CLOSED",
+   "passed": true,
+   "value": 7
+  },
+  {
+   "claim": "every declared amplitude is exact in the rational-times-root-of-unity form c*2^(-s/2)*zeta_8^e; all sums formed are between commensurable terms, so no float and no MIXED residue arises",
+   "class": "derivation",
+   "id": "L5-AMP-EXACT",
+   "passed": true,
+   "value": [
+    "1*2^-(0/2)",
+    "1*2^-(1/2)",
+    "1/2*2^-(0/2)"
+   ]
+  },
+  {
+   "claim": "every declared amplitude generator is exactly unitary",
+   "class": "derivation",
+   "id": "L5-AMP-UNITARY",
+   "passed": true,
+   "value": {
+    "F4": true,
+    "H01": true,
+    "H23": true,
+    "ID": true,
+    "SW01": true
+   }
+  },
+  {
+   "claim": "the declared amplitude family generates every committed boundary as a written record: delta by (ID), the forged 2+1+1 by (H01), the forged 2+2 by (H01,H23), the legitimate tomographic minimum by (F4) -- so the amplitude question is posed AT the fixture",
+   "class": "derivation",
+   "id": "L5-AMP-REACH",
+   "passed": true,
+   "value": {
+    "(F4)": "0123|4",
+    "(H01)": "01|2|3|4",
+    "(H01,H23)": "01|23|4",
+    "(ID)": "0|1|2|3|4"
+   }
+  },
+  {
+   "claim": "the amplitude layer has NON-TRIVIAL gauge-invariant content on this declared family: the cycle rank is positive at every non-monomial word and the holonomy phases are non-zero, so V-AMP carries strictly more than V-CL there",
+   "class": "derivation",
+   "id": "L5-AMP-CONTENT",
+   "passed": true,
+   "value": {
+    "(F4)": [
+     9,
+     [
+      0,
+      2,
+      2,
+      4
+     ]
+    ],
+    "(H01)": [
+     1,
+     [
+      4
+     ]
+    ],
+    "(H01,H01)": [
+     3,
+     [
+      0,
+      4,
+      4
+     ]
+    ],
+    "(H01,H23)": [
+     2,
+     [
+      4,
+      4
+     ]
+    ],
+    "(ID)": [
+     0,
+     []
+    ],
+    "(SW01)": [
+     0,
+     []
+    ]
+   }
+  },
+  {
+   "claim": "AMPLITUDE CANCELLATION IS VISIBLE TO V-AMP AND INVISIBLE TO V-CL. The word (H01,H01) has a support-composite writing the FORGED 2+1+1 record while its amplitude composite is the identity, writing delta.  B'' Definition 4.1's non-negativity -- 'no entry is lost to cancellation, so a leg is present exactly when the process can take it' -- is exactly what the amplitude variant suspends, and this is the first thing the quantum bits buy",
+   "class": "derivation",
+   "id": "L5-AMP-CANCEL",
+   "passed": true,
+   "value": {
+    "amplitude": "0|1|2|3|4",
+    "support": "01|2|3|4"
+   }
+  },
+  {
+   "claim": "MEASURED: over one- and two-step carried paths at every committed law, the layered realized-leg diagram has cycle rank 0 and an EMPTY holonomy family, with E = m*n edges and exactly n components in every case -- there is no gauge-invariant amplitude content to carry",
+   "class": "derivation",
+   "id": "L5-ACYC-M",
+   "passed": true,
+   "value": {
+    "euler_identity_holds": 2880,
+    "paths_tested": 2880,
+    "violations": 0
+   }
+  },
+  {
+   "claim": "PROVED: a single-valued step gives each vertex of a layer exactly one upward edge, so E = m*n while V = (m+1)*n; following upward edges, every component meets the top layer, so C <= n; hence rank = E - V + C = C - n <= 0, and rank >= 0 forces rank = 0 and C = n.  Every committed law is single-valued (anchor A11), so V-AMP's gauge-invariant content is EMPTY at the whole committed scope and V-AMP reduces to V-CL there identically",
+   "class": "derivation",
+   "id": "L5-ACYC-P",
+   "passed": true,
+   "value": {
+    "C": "n",
+    "E": "m*n",
+    "V": "(m+1)*n",
+    "rank": 0
+   }
+  },
+  {
+   "claim": "(1) the axiom REJECTS both forged patches carrying their TRUE manufacture-histories, in both variants",
+   "class": "discriminator",
+   "id": "L5-D1-REJECT",
+   "passed": true,
+   "value": {
+    "01|23|4/V-AMP": false,
+    "01|23|4/V-CL": false,
+    "01|2|3|4/V-AMP": false,
+    "01|2|3|4/V-CL": false
+   }
+  },
+  {
+   "claim": "MEASURED, and it is the finding: (P1) and (P2) PASS at every committed patch, forged and legitimate alike -- the true manufacture-history of a forged boundary IS an admitted path that genuinely produces it, and its checkpoint certificates verify.  The rejection is carried entirely by the inherited B'' clauses; the provenance component adds NO rejection power",
+   "class": "discriminator",
+   "id": "L5-D1-P1",
+   "passed": true,
+   "value": {
+    "0123|4/V-AMP": [
+     true,
+     true
+    ],
+    "0123|4/V-CL": [
+     true,
+     true
+    ],
+    "01|23|4/V-AMP": [
+     true,
+     true
+    ],
+    "01|23|4/V-CL": [
+     true,
+     true
+    ],
+    "01|2|3|4/V-AMP": [
+     true,
+     true
+    ],
+    "01|2|3|4/V-CL": [
+     true,
+     true
+    ],
+    "0|1|2|3|4/V-AMP": [
+     true,
+     true
+    ],
+    "0|1|2|3|4/V-CL": [
+     true,
+     true
+    ]
+   }
+  },
+  {
+   "claim": "(3) the same rejection falls on the LEGITIMATE coarse chart: the tomographic minimum carrying its own true history is rejected by exactly the clauses that reject the forgeries, in both variants.  Only the carrier's own algebra passes.  The quintuple inherits B'' rigidity and does not repair it",
+   "class": "discriminator",
+   "id": "L5-D1-COLLATERAL",
+   "passed": true,
+   "value": {
+    "DISC5_admissible": true,
+    "PI1": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "PTOMO": [
+     false,
+     true,
+     false,
+     true
+    ]
+   }
+  },
+  {
+   "claim": "V-AMP and V-CL return BIT-IDENTICAL verdicts at every committed patch, and every carried diagram has cycle rank 0: the delta at the committed scope is ZERO, by the acyclicity theorem",
+   "class": "delta",
+   "id": "L5-D1-VARIANT",
+   "passed": true,
+   "value": {
+    "0123|4": 0,
+    "01|23|4": 0,
+    "01|2|3|4": 0,
+    "0|1|2|3|4": 0
+   }
+  },
+  {
+   "claim": "the STRONG reading of (P2) -- every checkpoint itself admissible, not merely honestly certified -- rejects every coarse patch INCLUDING the legitimate one, so it collapses onto B'' rigidity and certifies only the carrier's own algebra.  Neither reading of (P2) separates by provenance",
+   "class": "discriminator",
+   "id": "L5-D1-STRONG",
+   "passed": true,
+   "value": {
+    "0123|4": false,
+    "01|23|4": false,
+    "01|2|3|4": false,
+    "0|1|2|3|4": true
+   }
+  },
+  {
+   "claim": "THE MANUFACTURE-PATH EXISTS AT THE COMMITTED LAW, AND IT IS FREE. B''s cost theory prices making a forged boundary ADMISSIBLE at 120 deleted operations, unpayable inside the identity-containing class; it prices GENERATING it as a written record at ZERO -- 120 admitted one-step paths already write the forged 2+1+1.  Admissibility and generation are DECOUPLED, and provenance sits on the generation side, which is the cheap one",
+   "class": "kill",
+   "id": "L5-D2-EXIST",
+   "passed": true,
+   "value": {
+    "0123|4": [
+     20,
+     1260
+    ],
+    "01|23|4": [
+     60,
+     360
+    ],
+    "01|2|3|4": [
+     120,
+     120
+    ],
+    "0|1|2|3|4": [
+     120,
+     0
+    ]
+   }
+  },
+  {
+   "claim": "THE DECLARABLE-HISTORY SET IS A FUNCTION OF (boundary, law) AND OF NOTHING ELSE.  Two declarations of opposite provenance presenting the same boundary under the same law have the SAME set of declarable histories, by the definition of (P1) -- so carried provenance is a free variable the adversary ranges over, not a datum the law fixes",
+   "class": "kill",
+   "id": "L5-D2-FUNCTION",
+   "passed": true,
+   "value": {
+    "definition": "H_1(part, law) = {F in law : comp(F) = part}"
+   }
+  },
+  {
+   "claim": "THE COLLISION SURVIVES THE EXTENSION -- the constructed adversary. At the carrier's own algebra the base supplies BOTH provenance labels for ONE patch (B'' sec 6.5: the adversary's manufactured 1+1+1+1 context and the legitimate address context are literally the same patch).  Both may declare the same carried history, and all 120 admitted one-step histories there yield ONE carried certificate -- in V-CL and in V-AMP alike",
+   "class": "kill",
+   "id": "L5-D2-COLLISION",
+   "passed": true,
+   "value": {
+    "both_labels_at_this_patch": [
+     "LEGITIMATE address context",
+     "FORGED manufactured 1+1+1+1"
+    ],
+    "boundary": "0|1|2|3|4",
+    "distinct_AMP_certificates": 1,
+    "distinct_CL_certificates": 1,
+    "passing_histories": 120
+   }
+  },
+  {
+   "claim": "THE REDUCTION, and it is what fires the kill.  Let S be ANY statistic on the quintuple.  Because the declarable-history set is a function of (boundary, preparation, law), the range of values S can take at a declaration is a function of the QUADRUPLE, and an adversary may realize any element of it.  So every provenance-reading statistic is bounded by a quadruple statistic -- exactly the class stage-5 Theorem 5.3 proved cannot separate a forged from a legitimate declaration of the same patch.  RQ0-L5-PROVENANCE-REGRESS FIRES, on both variants",
+   "class": "kill",
+   "id": "L5-D2-REDUCTION",
+   "passed": true,
+   "value": {
+    "inherited": "stage-5 Theorem 5.3 (forgery is not a function of the quadruple)"
+   }
+  },
+  {
+   "claim": "THE AMPLITUDE DATUM IS ONE FURTHER FREE DECLARATION.  Over the COMPLETE family of admitted unitary lifts of one declared support step, the carried gauge-invariant holonomy takes several values and each is realized by many lifts -- so an adversary declaring a forged boundary may declare ANY of them, including whichever one a legitimate declaration carries.  The regress moves one level deeper with the quantum bits and does not bottom out",
+   "class": "kill",
+   "id": "L5-AMP-FREE",
+   "passed": true,
+   "value": {
+    "admitted_unitary_lifts": 512,
+    "distinct_holonomy_classes": 4,
+    "multiplicities": {
+     "(0,)": 128,
+     "(2,)": 128,
+     "(4,)": 128,
+     "(6,)": 128
+    }
+   }
+  },
+  {
+   "claim": "RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-CL, with an exhibited witness at the committed fixture: all 120 admitted one-step histories that produce the carrier's own algebra carry ONE AND THE SAME classical certificate.  Among them are the legitimate address context's history -- the identity, nothing was done -- and the manufactured context's deleted rotation.  Two admitted histories, one legitimate and one forged, agreeing on every carried classical certificate and differing in the un-carried part: the pin's adversary, constructed",
+   "class": "kill",
+   "id": "L5-LOSSY-CL",
+   "passed": true,
+   "value": {
+    "distinct_certificates": 1,
+    "histories": 120,
+    "identity_in_class": true,
+    "largest_indistinguishable_class": 120,
+    "rotation_in_class": true
+   }
+  },
+  {
+   "claim": "RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP AT THE COMMITTED SCOPE, and it fires with the SAME witness: the 120 admitted histories at the carrier's own algebra carry one and the same AMPLITUDE certificate too, because their diagrams are monomial and a monomial diagram has no gauge-invariant loop content at all.  The amplitude bits are empty exactly where the provenance question is sharpest",
+   "class": "kill",
+   "id": "L5-LOSSY-AMP-C",
+   "passed": true,
+   "value": {
+    "distinct_AMP_certificates": 1,
+    "histories": 120
+   }
+  },
+  {
+   "claim": "RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP WHERE ITS CONTENT IS NOT EMPTY EITHER -- the amendment-v2 form of the adversary.  (P2) is checkpoint-LOCAL by its own definition: it verifies the certificate AT its own checkpoint, so an admitted checkpoint verification reads step-local invariants only, while the carried diagram's cycle space is strictly larger than the span of its step-local cycles.  Exhibited: two admitted lifts of ONE declared support word with IDENTICAL checkpoint-local shadows and DIFFERENT cross-checkpoint holonomy.  This is the v12 recorded-but-phased limit applied to the CHECKS -- block-local data is not phase-triviality",
+   "class": "kill",
+   "id": "L5-LOSSY-AMP-A",
+   "passed": true,
+   "value": {
+    "checkpoint_local_shadows_identical": true,
+    "global_holonomies_A": [
+     0,
+     4,
+     6
+    ],
+    "global_holonomies_B": [
+     1,
+     4,
+     5
+    ],
+    "local_per_step_holonomies": [
+     [
+      4
+     ],
+     [
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "claim": "the accounting that makes the witness inevitable: the carried two-step diagram has cycle rank 3 while its two checkpoint-local diagrams have rank 1 each, so a checkpoint-local verification leaves a rank-1 residue of gauge-invariant content permanently unread",
+   "class": "derivation",
+   "id": "L5-LOSSY-AMP-DIM",
+   "passed": true,
+   "value": {
+    "checkpoint_local_rank": 2,
+    "global_rank": 3,
+    "unread_residue": 1
+   }
+  },
+  {
+   "claim": "THE SCISSORS, disclosed rather than resolved.  Under the reading in which a verification is a classical computation on declared numerals it reads everything, including the cross-checkpoint holonomy, and LOSSY does not fire against V-AMP -- but then the amplitude datum is a free declaration and REGRESS eats it (L5-AMP-FREE).  Under the reading the amendment fixes -- checks are record-producing and checkpoint-local -- LOSSY fires.  The amplitude bits are readable only under the reading that leaves them unanchored, and anchored only under the reading that leaves them unread.  Both readings are reported; neither escapes a kill",
+   "class": "disclosure",
+   "id": "L5-LOSSY-READING",
+   "passed": true,
+   "value": {
+    "reading_A_numerals": "REGRESS fires, LOSSY does not",
+    "reading_B_record_producing": "both fire"
+   }
+  },
+  {
+   "claim": "(4) the name-blindness gate is applied to EVERY provenance-reading statistic, over all 120 relabellings acting on the whole declared datum at once -- boundary, law, preparation, state AND the carried history together.  The gate is SELF-TESTING: it passes only if all six declared statistics are name-blind AND the permanent label-reading negative control -- an indicator that the configuration named 0 forms a block of its own -- is CAUGHT by the same sweep",
+   "class": "discriminator",
+   "id": "L5-NB",
+   "passed": true,
+   "value": {
+    "declared": {
+     "s_carried_cycle_rank": 0,
+     "s_coarsest_checkpoint_defect": 0,
+     "s_history_fan_in": 0,
+     "s_intermediate_spread": 0,
+     "s_manufacture_depth": 0,
+     "s_path_length": 0
+    },
+    "group_size": 120,
+    "negative_control_caught": true,
+    "negative_control_violations": 120
+   }
+  },
+  {
+   "claim": "MEASURED: with the TRUE histories carried, NO declared provenance-reading statistic separates the legitimate contexts below the forged ones at the committed state.  The legitimate coarse chart's true history has the same form as a manufacture-path, because it IS one -- an admitted operation that writes the declared record",
+   "class": "discriminator",
+   "id": "L5-SEP",
+   "passed": true,
+   "value": {
+    "s_carried_cycle_rank": false,
+    "s_coarsest_checkpoint_defect": false,
+    "s_history_fan_in": false,
+    "s_intermediate_spread": false,
+    "s_manufacture_depth": false,
+    "s_path_length": false
+   }
+  },
+  {
+   "claim": "the amnesty sweep is run over all 4845 declared states for every provenance-reading statistic.  No statistic separates at ANY state, so the sweep has nothing to amnesty: the failure here is PRIOR to amnesty rather than an instance of it, and FINGERPRINT-AMNESTY's pattern does not recur",
+   "class": "discriminator",
+   "id": "L5-AMNESTY",
+   "passed": true,
+   "value": {
+    "s_carried_cycle_rank": [
+     0,
+     4845,
+     0
+    ],
+    "s_coarsest_checkpoint_defect": [
+     0,
+     4845,
+     0
+    ],
+    "s_history_fan_in": [
+     0,
+     4845,
+     0
+    ],
+    "s_intermediate_spread": [
+     0,
+     4845,
+     0
+    ],
+    "s_manufacture_depth": [
+     0,
+     4845,
+     0
+    ],
+    "s_path_length": [
+     0,
+     4845,
+     0
+    ]
+   }
+  },
+  {
+   "claim": "THE DELTA, STATED EXACTLY.  At the committed scope V-AMP == V-CL bit for bit and the amplitude bits buy NOTHING, provably.  At the declared amplitude scope V-AMP buys two real things -- visible cancellation and loop holonomy -- and BOTH are eaten, one by each kill.  Measured against the kills the delta is ZERO",
+   "class": "delta",
+   "id": "L5-DELTA",
+   "passed": true,
+   "value": null
+  }
+ ],
+ "pin_commit": "a05e3d5",
+ "schema": "rq0-l5-provenance-quintuple-receipt-v1",
+ "source_sha256": "eb290aa77675c3c321f8f6e276f6f0b1e15dbcc7b5407044951faa9cfaeb30e8",
+ "tables": {
+  "amnesty": [
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": true,
+    "statistic": "s_manufacture_depth",
+    "ties": 4845
+   },
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": true,
+    "statistic": "s_intermediate_spread",
+    "ties": 4845
+   },
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": false,
+    "statistic": "s_coarsest_checkpoint_defect",
+    "ties": 4845
+   },
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": true,
+    "statistic": "s_history_fan_in",
+    "ties": 4845
+   },
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": true,
+    "statistic": "s_path_length",
+    "ties": 4845
+   },
+   {
+    "inverts": 0,
+    "separates": 0,
+    "state_independent": true,
+    "statistic": "s_carried_cycle_rank",
+    "ties": 4845
+   }
+  ],
+  "amplitude_lift_family": {
+   "admitted_unitary_lifts": 512,
+   "holonomy_classes": {
+    "(0,)": 128,
+    "(2,)": 128,
+    "(4,)": 128,
+    "(6,)": 128
+   }
+  },
+  "amplitude_words": [
+   {
+    "amplitude_record": "0|1|2|3|4",
+    "cancellation": false,
+    "cycle_rank": 0,
+    "cycle_spans": [],
+    "holonomy_phases": [],
+    "support_record": "0|1|2|3|4",
+    "word": "(ID)"
+   },
+   {
+    "amplitude_record": "0|1|2|3|4",
+    "cancellation": false,
+    "cycle_rank": 0,
+    "cycle_spans": [],
+    "holonomy_phases": [],
+    "support_record": "0|1|2|3|4",
+    "word": "(SW01)"
+   },
+   {
+    "amplitude_record": "01|2|3|4",
+    "cancellation": false,
+    "cycle_rank": 1,
+    "cycle_spans": [
+     1
+    ],
+    "holonomy_phases": [
+     4
+    ],
+    "support_record": "01|2|3|4",
+    "word": "(H01)"
+   },
+   {
+    "amplitude_record": "01|23|4",
+    "cancellation": false,
+    "cycle_rank": 2,
+    "cycle_spans": [
+     1,
+     1
+    ],
+    "holonomy_phases": [
+     4,
+     4
+    ],
+    "support_record": "01|23|4",
+    "word": "(H01,H23)"
+   },
+   {
+    "amplitude_record": "0123|4",
+    "cancellation": false,
+    "cycle_rank": 9,
+    "cycle_spans": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "holonomy_phases": [
+     0,
+     2,
+     2,
+     4,
+     4,
+     4,
+     4,
+     6,
+     6
+    ],
+    "support_record": "0123|4",
+    "word": "(F4)"
+   },
+   {
+    "amplitude_record": "0|1|2|3|4",
+    "cancellation": true,
+    "cycle_rank": 3,
+    "cycle_spans": [
+     1,
+     2,
+     2
+    ],
+    "holonomy_phases": [
+     0,
+     4,
+     4
+    ],
+    "support_record": "01|2|3|4",
+    "word": "(H01,H01)"
+   }
+  ],
+  "definition_hashes": [
+   {
+    "name": "composite_of",
+    "sha256": "b3e566cd3fa8ff4b50736387c2d435c4b24c6f3d936f323d815468b9de23e1ca"
+   },
+   {
+    "name": "checkpoints_of",
+    "sha256": "95682e23971755fe6d1a9d410329d68d8729ae0da5e92d51fcd7024a930a91ff"
+   },
+   {
+    "name": "certificate_CL",
+    "sha256": "002d99630c4de165966145abf149132380966ecf2f0483626082932fbfb2c03f"
+   },
+   {
+    "name": "P1",
+    "sha256": "2705f864acba6e885c97d45fd0e558445cf5b4a5fbd00ffc0fda279e6428fcd7"
+   },
+   {
+    "name": "P2_weak",
+    "sha256": "d611de0e5aab77fb82386895ae1047d985c958ff6fac575044c8ecd9ef9d25f1"
+   },
+   {
+    "name": "P2_strong",
+    "sha256": "ed183fbadbfd2e97c21c2257507d726d537a9a742cf40f99d8dae82bde487820"
+   },
+   {
+    "name": "amul",
+    "sha256": "2eded818025199c09ed321ba27bbfc844bff59d83dcefd761e4cb9413e211692"
+   },
+   {
+    "name": "aconj",
+    "sha256": "ad515a6070ec7690dfe03b98573033fe799fae6c116ce0dd12ec59a4dd0b293f"
+   },
+   {
+    "name": "asum",
+    "sha256": "ede8180dddfae23dc31cd4855d0394c425e49bf4bc9894f73aee56d4bf577d96"
+   },
+   {
+    "name": "sup_of_matrix",
+    "sha256": "ea81649ba0cf3811d0f6a8c775d83f4821e9fb3fdcf26ffc01941bb35360f616"
+   },
+   {
+    "name": "matmul",
+    "sha256": "7d4a46d6eb4181956fae469e11dbb192d3417593ef6c33e71731dd64d27a85b9"
+   },
+   {
+    "name": "layered_edges",
+    "sha256": "a9fb4544f91ae03d84ecdf9d6965a6b0d2f33304cab0bffaaac820d0b508395a"
+   },
+   {
+    "name": "cycle_basis_holonomies",
+    "sha256": "eea24b5db802c6f5edf42152995daff2f52ee46792f4781b81878ae70ca46087"
+   },
+   {
+    "name": "certificate_AMP",
+    "sha256": "0a9160896b7b7edd073ab9272ea12eb9da99f7345077ece6e6cb37ed17a581d1"
+   },
+   {
+    "name": "local_holonomy_shadow",
+    "sha256": "eede6360bc8cf1a905ddec1ae5260cb953511897b80a4f5b78974e70986f3d0c"
+   },
+   {
+    "name": "s_manufacture_depth",
+    "sha256": "445c5877399147a1a785419edb0bf2ea7109bf72b04c8fae5e63d8a4f396520c"
+   },
+   {
+    "name": "s_intermediate_spread",
+    "sha256": "96053ddd2fa655cad1a0325cf7227d1a2d79a34492a5bf6a9c5d0610210ff6b1"
+   },
+   {
+    "name": "s_coarsest_checkpoint_defect",
+    "sha256": "934c3710b8b3564e73a717660c249fa2aceba19d01f9d8a0ffe3a39de0fda539"
+   },
+   {
+    "name": "s_history_fan_in",
+    "sha256": "58e9bdfd1a1c19b9a7d230d30aa94973c18010881d94c89ea2b01e73261d8d37"
+   },
+   {
+    "name": "s_path_length",
+    "sha256": "a7d44b1457e573f0dd971018459f7fa4b8a78c4a2899dd96267c76b004a236c7"
+   },
+   {
+    "name": "s_carried_cycle_rank",
+    "sha256": "9094363e519dfbd27e18c7ba4f9cf86eaa7212b9d28f6cdb5c11ca3fba0edb18"
+   },
+   {
+    "name": "nb_negative_control",
+    "sha256": "f451744b80a3a9bd3bd27c300e70dce4f2643a905be2b40f35d83e84bc2d665c"
+   }
+  ],
+  "delta_collision": {
+   "both_labels_at_this_patch": [
+    "LEGITIMATE address context",
+    "FORGED manufactured 1+1+1+1"
+   ],
+   "boundary": "0|1|2|3|4",
+   "distinct_AMP_certificates": 1,
+   "distinct_CL_certificates": 1,
+   "passing_histories": 120
+  },
+  "discriminator_1": [
+   {
+    "L5_admissible": true,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": true,
+    "P2_strong_witness": "every checkpoint admissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "bdd_admissible": true,
+    "boundary": "0|1|2|3|4",
+    "clauses": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "name": "delta address chart",
+    "provenance_truth": "LEGITIMATE",
+    "variant": "V-CL"
+   },
+   {
+    "L5_admissible": true,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": true,
+    "P2_strong_witness": "every checkpoint admissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "amplitude_record": "0|1|2|3|4",
+    "bdd_admissible": true,
+    "boundary": "0|1|2|3|4",
+    "clauses": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "cycle_rank": 0,
+    "holonomy_phases": [],
+    "name": "delta address chart",
+    "provenance_truth": "LEGITIMATE",
+    "variant": "V-AMP"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 01|2|3|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "bdd_admissible": false,
+    "boundary": "01|2|3|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "name": "forged 2+1+1",
+    "provenance_truth": "FORGED",
+    "variant": "V-CL"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 01|2|3|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "amplitude_record": "01|2|3|4",
+    "bdd_admissible": false,
+    "boundary": "01|2|3|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "cycle_rank": 0,
+    "holonomy_phases": [],
+    "name": "forged 2+1+1",
+    "provenance_truth": "FORGED",
+    "variant": "V-AMP"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 01|23|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "bdd_admissible": false,
+    "boundary": "01|23|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "name": "forged 2+2",
+    "provenance_truth": "FORGED",
+    "variant": "V-CL"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 01|23|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "amplitude_record": "01|23|4",
+    "bdd_admissible": false,
+    "boundary": "01|23|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "cycle_rank": 0,
+    "holonomy_phases": [],
+    "name": "forged 2+2",
+    "provenance_truth": "FORGED",
+    "variant": "V-AMP"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 0123|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "bdd_admissible": false,
+    "boundary": "0123|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "name": "legit tomographic min",
+    "provenance_truth": "LEGITIMATE",
+    "variant": "V-CL"
+   },
+   {
+    "L5_admissible": false,
+    "P1": true,
+    "P1_witness": "admitted; endpoint matches",
+    "P2_strong": false,
+    "P2_strong_witness": "checkpoint 1 at 0123|4 inadmissible",
+    "P2_weak": true,
+    "P2_witness": "every carried certificate verifies",
+    "amplitude_record": "0123|4",
+    "bdd_admissible": false,
+    "boundary": "0123|4",
+    "clauses": [
+     false,
+     true,
+     false,
+     true
+    ],
+    "cycle_rank": 0,
+    "holonomy_phases": [],
+    "name": "legit tomographic min",
+    "provenance_truth": "LEGITIMATE",
+    "variant": "V-AMP"
+   }
+  ],
+  "lossy_AMP": {
+   "committed_scope_certificates": 1,
+   "global_rank": 3,
+   "local_rank": 2,
+   "witness": {
+    "checkpoint_local_shadows_identical": true,
+    "global_holonomies_A": [
+     0,
+     4,
+     6
+    ],
+    "global_holonomies_B": [
+     1,
+     4,
+     5
+    ],
+    "local_per_step_holonomies": [
+     [
+      4
+     ],
+     [
+      6
+     ]
+    ]
+   }
+  },
+  "lossy_CL": {
+   "class_size": 120,
+   "distinct_certificates": 1,
+   "histories": 120
+  },
+  "name_blindness": [
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_manufacture_depth",
+    "violations": 0
+   },
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_intermediate_spread",
+    "violations": 0
+   },
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_coarsest_checkpoint_defect",
+    "violations": 0
+   },
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_history_fan_in",
+    "violations": 0
+   },
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_path_length",
+    "violations": 0
+   },
+   {
+    "is_negative_control": false,
+    "name_blind": true,
+    "statistic": "s_carried_cycle_rank",
+    "violations": 0
+   },
+   {
+    "is_negative_control": true,
+    "name_blind": false,
+    "statistic": "nb_negative_control",
+    "violations": 120
+   }
+  ],
+  "regress_history_counts": [
+   {
+    "boundary": "0|1|2|3|4",
+    "cost_of_ADMISSIBILITY": 0,
+    "name": "delta address chart",
+    "passing_one_step_histories": 120,
+    "provenance_truth": "LEGITIMATE"
+   },
+   {
+    "boundary": "01|2|3|4",
+    "cost_of_ADMISSIBILITY": 120,
+    "name": "forged 2+1+1",
+    "passing_one_step_histories": 120,
+    "provenance_truth": "FORGED"
+   },
+   {
+    "boundary": "01|23|4",
+    "cost_of_ADMISSIBILITY": 360,
+    "name": "forged 2+2",
+    "passing_one_step_histories": 60,
+    "provenance_truth": "FORGED"
+   },
+   {
+    "boundary": "0123|4",
+    "cost_of_ADMISSIBILITY": 1260,
+    "name": "legit tomographic min",
+    "passing_one_step_histories": 20,
+    "provenance_truth": "LEGITIMATE"
+   }
+  ],
+  "separation": [
+   {
+    "separates": false,
+    "statistic": "s_manufacture_depth",
+    "values": {
+     "0123|4": "1",
+     "01|23|4": "1",
+     "01|2|3|4": "1",
+     "0|1|2|3|4": "0"
+    }
+   },
+   {
+    "separates": false,
+    "statistic": "s_intermediate_spread",
+    "values": {
+     "0123|4": "1",
+     "01|23|4": "1",
+     "01|2|3|4": "1",
+     "0|1|2|3|4": "1"
+    }
+   },
+   {
+    "separates": false,
+    "statistic": "s_coarsest_checkpoint_defect",
+    "values": {
+     "0123|4": "3/16",
+     "01|23|4": "1/8",
+     "01|2|3|4": "1/16",
+     "0|1|2|3|4": "0"
+    }
+   },
+   {
+    "separates": false,
+    "statistic": "s_history_fan_in",
+    "values": {
+     "0123|4": "20",
+     "01|23|4": "60",
+     "01|2|3|4": "120",
+     "0|1|2|3|4": "120"
+    }
+   },
+   {
+    "separates": false,
+    "statistic": "s_path_length",
+    "values": {
+     "0123|4": "1",
+     "01|23|4": "1",
+     "01|2|3|4": "1",
+     "0|1|2|3|4": "1"
+    }
+   },
+   {
+    "separates": false,
+    "statistic": "s_carried_cycle_rank",
+    "values": {
+     "0123|4": "0",
+     "01|23|4": "0",
+     "01|2|3|4": "0",
+     "0|1|2|3|4": "0"
+    }
+   }
+  ]
+ },
+ "totals": {
+  "anchors": 12,
+  "gates": 29,
+  "must_pass_failures": 0
+ }
+}

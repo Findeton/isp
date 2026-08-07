@@ -1,0 +1,364 @@
+==============================================================================
+RQ0-L5 BRANCH A -- THE PROVENANCE QUINTUPLE, BOTH VARIANTS
+==============================================================================
+pin a05e3d5   base 483311c
+source sha256 eb290aa77675c3c321f8f6e276f6f0b1e15dbcc7b5407044951faa9cfaeb30e8
+
+------------------------------------------------------------------------------
+ANCHORS (exit 1 on mismatch; never on a substantive negative)
+------------------------------------------------------------------------------
+  A01  OK   record-lattice sizes at 1..5 configurations
+        committed [1, 2, 5, 15, 52]
+        computed  [1, 2, 5, 15, 52]
+  A02  OK   DET and REV cardinalities at five configurations
+        committed [3125, 120]
+        computed  [3125, 120]
+  A03  OK   counter-law size and its reversible count
+        committed [120, 1]
+        computed  [120, 1]
+  A04  OK   Pres under DET at delta, forged 2+1+1, forged 2+2, legitimate tomographic minimum
+        committed [120, 240, 420, 1280]
+        computed  [120, 240, 420, 1280]
+  A05  OK   eps at the two forged coarse patches and the legitimate one, at the committed state
+        committed ['1/16', '1/8', '3/16']
+        computed  ['1/16', '1/8', '3/16']
+  A06  OK   admissible records under DET, REV and the counter-law: the singleton {discrete} each
+        committed [1, 1, 1]
+        computed  [1, 1, 1]
+  A07  OK   obstruction sizes under DET at the record, boundary, coarser boundary and limit levels
+        committed [120, 360, 1260, 3120]
+        computed  [120, 360, 1260, 3120]
+  A08  OK   omega at the three coarse committed patches under DET at the whole carrier
+        committed ['0', '0', '0']
+        computed  ['0', '0', '0']
+  A09  OK   admitted isomorphisms of the declared data at the committed state, and the orbit count of the 52 records
+        committed [24, 12]
+        computed  [24, 12]
+  A10  OK   declared state grid size at denominator 16
+        committed 4845
+        computed  4845
+  A11  OK   every committed law is single-valued
+        committed [True, True, True, True]
+        computed  [True, True, True, True]
+  A12  OK   jointly admissible comparable boundary pairs under DET, REV and the counter-law
+        committed [0, 0, 0]
+        computed  [0, 0, 0]
+
+------------------------------------------------------------------------------
+THE FOUR DISCRIMINATORS, PER VARIANT
+------------------------------------------------------------------------------
+  (1)+(3) committed patches carrying their TRUE histories
+     boundary               variant  prov   B''  P1 P2 P2s  L5  rank
+     delta address chart    V-CL     LEGI   yes  ok ok ok   YES -
+     delta address chart    V-AMP    LEGI   yes  ok ok ok   YES 0
+     forged 2+1+1           V-CL     FORG   no   ok ok X    no  -
+     forged 2+1+1           V-AMP    FORG   no   ok ok X    no  0
+     forged 2+2             V-CL     FORG   no   ok ok X    no  -
+     forged 2+2             V-AMP    FORG   no   ok ok X    no  0
+     legit tomographic min  V-CL     LEGI   no   ok ok X    no  -
+     legit tomographic min  V-AMP    LEGI   no   ok ok X    no  0
+
+  (2) the regress: declarable one-step histories per boundary
+     delta address chart    histories 120    cost-of-ADMISSIBILITY 0
+     forged 2+1+1           histories 120    cost-of-ADMISSIBILITY 120
+     forged 2+2             histories 60     cost-of-ADMISSIBILITY 360
+     legit tomographic min  histories 20     cost-of-ADMISSIBILITY 1260
+     collision at 0|1|2|3|4: 120 histories -> 1 distinct V-CL certificate, 1 distinct V-AMP
+
+  (4) name-blindness, separation, amnesty
+     s_manufacture_depth            NB True  sep False sweep 0/4845/0
+     s_intermediate_spread          NB True  sep False sweep 0/4845/0
+     s_coarsest_checkpoint_defect   NB True  sep False sweep 0/4845/0
+     s_history_fan_in               NB True  sep False sweep 0/4845/0
+     s_path_length                  NB True  sep False sweep 0/4845/0
+     s_carried_cycle_rank           NB True  sep False sweep 0/4845/0
+     nb_negative_control            NB False  <- permanent label-reading negative control, must be caught (120 violations)
+
+------------------------------------------------------------------------------
+THE AMPLITUDE LAYER (V-AMP), at the declared amplitude scope
+------------------------------------------------------------------------------
+  word         support-record  amplitude-record rank cancels holonomies
+  (ID)         0|1|2|3|4       0|1|2|3|4        0    False   []
+  (SW01)       0|1|2|3|4       0|1|2|3|4        0    False   []
+  (H01)        01|2|3|4        01|2|3|4         1    False   [4]
+  (H01,H23)    01|23|4         01|23|4          2    False   [4, 4]
+  (F4)         0123|4          0123|4           9    False   [0, 2, 2, 4, 4, 4]
+  (H01,H01)    01|2|3|4        0|1|2|3|4        3    True    [0, 4, 4]
+
+------------------------------------------------------------------------------
+GATES
+------------------------------------------------------------------------------
+  L5-00                [freeze] PASS
+      every definition of the quintuple, of the amplitude layer, and every
+      provenance-reading statistic is SHA-256 registered before any fixture
+      verdict is computed
+      value: 22
+  L5-SRC               [freeze] PASS
+      automated source scan: no definition mentions a committed boundary,
+      AND the permanent negative control TUNE -- which special-cases the
+      legitimate tomographic minimum by name -- is CAUGHT by the same scan
+      value: {"definitions_clean": 22, "definitions_scanned": 22, "negative_control_caught": true, "negative_control_hits": ["PTOMO"]}
+  L5-AMP-CLOSED        [derivation] PASS
+      the support-level law generated by the declared amplitude family is
+      composition-closed -- it is the law the family generates, carried
+      exactly as B'' carries FUNNEL
+      value: 7
+  L5-AMP-EXACT         [derivation] PASS
+      every declared amplitude is exact in the rational-times-root-of-unity
+      form c*2^(-s/2)*zeta_8^e; all sums formed are between commensurable
+      terms, so no float and no MIXED residue arises
+      value: ["1*2^-(0/2)", "1*2^-(1/2)", "1/2*2^-(0/2)"]
+  L5-AMP-UNITARY       [derivation] PASS
+      every declared amplitude generator is exactly unitary
+      value: {"F4": true, "H01": true, "H23": true, "ID": true, "SW01": true}
+  L5-AMP-REACH         [derivation] PASS
+      the declared amplitude family generates every committed boundary as a
+      written record: delta by (ID), the forged 2+1+1 by (H01), the forged
+      2+2 by (H01,H23), the legitimate tomographic minimum by (F4) -- so the
+      amplitude question is posed AT the fixture
+      value: {"(F4)": "0123|4", "(H01)": "01|2|3|4", "(H01,H23)": "01|23|4", "(ID)": "0|1|2|3|4"}
+  L5-AMP-CONTENT       [derivation] PASS
+      the amplitude layer has NON-TRIVIAL gauge-invariant content on this
+      declared family: the cycle rank is positive at every non-monomial word
+      and the holonomy phases are non-zero, so V-AMP carries strictly more
+      than V-CL there
+      value: {"(F4)": [9, [0, 2, 2, 4]], "(H01)": [1, [4]], "(H01,H01)": [3, [0, 4, 4]], "(H01,H23)": [2, [4, 4]], "(ID)": [0, []], "(SW01)": [0, []]}
+  L5-AMP-CANCEL        [derivation] PASS
+      AMPLITUDE CANCELLATION IS VISIBLE TO V-AMP AND INVISIBLE TO V-CL. The
+      word (H01,H01) has a support-composite writing the FORGED 2+1+1 record
+      while its amplitude composite is the identity, writing delta. B''
+      Definition 4.1's non-negativity -- 'no entry is lost to cancellation,
+      so a leg is present exactly when the process can take it' -- is
+      exactly what the amplitude variant suspends, and this is the first
+      thing the quantum bits buy
+      value: {"amplitude": "0|1|2|3|4", "support": "01|2|3|4"}
+  L5-ACYC-M            [derivation] PASS
+      MEASURED: over one- and two-step carried paths at every committed law,
+      the layered realized-leg diagram has cycle rank 0 and an EMPTY
+      holonomy family, with E = m*n edges and exactly n components in every
+      case -- there is no gauge-invariant amplitude content to carry
+      value: {"euler_identity_holds": 2880, "paths_tested": 2880, "violations": 0}
+  L5-ACYC-P            [derivation] PASS
+      PROVED: a single-valued step gives each vertex of a layer exactly one
+      upward edge, so E = m*n while V = (m+1)*n; following upward edges,
+      every component meets the top layer, so C <= n; hence rank = E - V + C
+      = C - n <= 0, and rank >= 0 forces rank = 0 and C = n. Every committed
+      law is single-valued (anchor A11), so V-AMP's gauge-invariant content
+      is EMPTY at the whole committed scope and V-AMP reduces to V-CL there
+      identically
+      value: {"C": "n", "E": "m*n", "V": "(m+1)*n", "rank": 0}
+  L5-D1-REJECT         [discriminator] PASS
+      (1) the axiom REJECTS both forged patches carrying their TRUE
+      manufacture-histories, in both variants
+      value: {"01|23|4/V-AMP": false, "01|23|4/V-CL": false, "01|2|3|4/V-AMP": false, "01|2|3|4/V-CL": false}
+  L5-D1-P1             [discriminator] PASS
+      MEASURED, and it is the finding: (P1) and (P2) PASS at every committed
+      patch, forged and legitimate alike -- the true manufacture-history of
+      a forged boundary IS an admitted path that genuinely produces it, and
+      its checkpoint certificates verify. The rejection is carried entirely
+      by the inherited B'' clauses; the provenance component adds NO
+      rejection power
+      value: {"0123|4/V-AMP": [true, true], "0123|4/V-CL": [true, true], "01|23|4/V-AMP": [true, true], "01|23|4/V-CL": [true, true], "01|2|3|4/V-AMP": [true, true], "01|2|3|4/V-CL": [true, true], "0|1|2|3|4/V-AMP": [true, true], "0|1|2|3|4/V-CL": [true, true]}
+  L5-D1-COLLATERAL     [discriminator] PASS
+      (3) the same rejection falls on the LEGITIMATE coarse chart: the
+      tomographic minimum carrying its own true history is rejected by
+      exactly the clauses that reject the forgeries, in both variants. Only
+      the carrier's own algebra passes. The quintuple inherits B'' rigidity
+      and does not repair it
+      value: {"DISC5_admissible": true, "PI1": [false, true, false, true], "PTOMO": [false, true, false, true]}
+  L5-D1-VARIANT        [delta] PASS
+      V-AMP and V-CL return BIT-IDENTICAL verdicts at every committed patch,
+      and every carried diagram has cycle rank 0: the delta at the committed
+      scope is ZERO, by the acyclicity theorem
+      value: {"0123|4": 0, "01|23|4": 0, "01|2|3|4": 0, "0|1|2|3|4": 0}
+  L5-D1-STRONG         [discriminator] PASS
+      the STRONG reading of (P2) -- every checkpoint itself admissible, not
+      merely honestly certified -- rejects every coarse patch INCLUDING the
+      legitimate one, so it collapses onto B'' rigidity and certifies only
+      the carrier's own algebra. Neither reading of (P2) separates by
+      provenance
+      value: {"0123|4": false, "01|23|4": false, "01|2|3|4": false, "0|1|2|3|4": true}
+  L5-D2-EXIST          [kill] PASS
+      THE MANUFACTURE-PATH EXISTS AT THE COMMITTED LAW, AND IT IS FREE. B''s
+      cost theory prices making a forged boundary ADMISSIBLE at 120 deleted
+      operations, unpayable inside the identity-containing class; it prices
+      GENERATING it as a written record at ZERO -- 120 admitted one-step
+      paths already write the forged 2+1+1. Admissibility and generation are
+      DECOUPLED, and provenance sits on the generation side, which is the
+      cheap one
+      value: {"0123|4": [20, 1260], "01|23|4": [60, 360], "01|2|3|4": [120, 120], "0|1|2|3|4": [120, 0]}
+  L5-D2-FUNCTION       [kill] PASS
+      THE DECLARABLE-HISTORY SET IS A FUNCTION OF (boundary, law) AND OF
+      NOTHING ELSE. Two declarations of opposite provenance presenting the
+      same boundary under the same law have the SAME set of declarable
+      histories, by the definition of (P1) -- so carried provenance is a
+      free variable the adversary ranges over, not a datum the law fixes
+      value: {"definition": "H_1(part, law) = {F in law : comp(F) = part}"}
+  L5-D2-COLLISION      [kill] PASS
+      THE COLLISION SURVIVES THE EXTENSION -- the constructed adversary. At
+      the carrier's own algebra the base supplies BOTH provenance labels for
+      ONE patch (B'' sec 6.5: the adversary's manufactured 1+1+1+1 context
+      and the legitimate address context are literally the same patch). Both
+      may declare the same carried history, and all 120 admitted one-step
+      histories there yield ONE carried certificate -- in V-CL and in V-AMP
+      alike
+      value: {"both_labels_at_this_patch": ["LEGITIMATE address context", "FORGED manufactured 1+1+1+1"], "boundary": "0|1|2|3|4", "distinct_AMP_certificates": 1, "distinct_CL_certificates": 1, "passing_histories": 120}
+  L5-D2-REDUCTION      [kill] PASS
+      THE REDUCTION, and it is what fires the kill. Let S be ANY statistic
+      on the quintuple. Because the declarable-history set is a function of
+      (boundary, preparation, law), the range of values S can take at a
+      declaration is a function of the QUADRUPLE, and an adversary may
+      realize any element of it. So every provenance-reading statistic is
+      bounded by a quadruple statistic -- exactly the class stage-5 Theorem
+      5.3 proved cannot separate a forged from a legitimate declaration of
+      the same patch. RQ0-L5-PROVENANCE-REGRESS FIRES, on both variants
+      value: {"inherited": "stage-5 Theorem 5.3 (forgery is not a function of the quadruple)"}
+  L5-AMP-FREE          [kill] PASS
+      THE AMPLITUDE DATUM IS ONE FURTHER FREE DECLARATION. Over the COMPLETE
+      family of admitted unitary lifts of one declared support step, the
+      carried gauge-invariant holonomy takes several values and each is
+      realized by many lifts -- so an adversary declaring a forged boundary
+      may declare ANY of them, including whichever one a legitimate
+      declaration carries. The regress moves one level deeper with the
+      quantum bits and does not bottom out
+      value: {"admitted_unitary_lifts": 512, "distinct_holonomy_classes": 4, "multiplicities": {"(0,)": 128, "(2,)": 128, "(4,)": 128, "(6,)": 128}}
+  L5-LOSSY-CL          [kill] PASS
+      RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-CL, with an exhibited witness
+      at the committed fixture: all 120 admitted one-step histories that
+      produce the carrier's own algebra carry ONE AND THE SAME classical
+      certificate. Among them are the legitimate address context's history
+      -- the identity, nothing was done -- and the manufactured context's
+      deleted rotation. Two admitted histories, one legitimate and one
+      forged, agreeing on every carried classical certificate and differing
+      in the un-carried part: the pin's adversary, constructed
+      value: {"distinct_certificates": 1, "histories": 120, "identity_in_class": true, "largest_indistinguishable_class": 120, "rotation_in_class": true}
+  L5-LOSSY-AMP-C       [kill] PASS
+      RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP AT THE COMMITTED SCOPE,
+      and it fires with the SAME witness: the 120 admitted histories at the
+      carrier's own algebra carry one and the same AMPLITUDE certificate
+      too, because their diagrams are monomial and a monomial diagram has no
+      gauge-invariant loop content at all. The amplitude bits are empty
+      exactly where the provenance question is sharpest
+      value: {"distinct_AMP_certificates": 1, "histories": 120}
+  L5-LOSSY-AMP-A       [kill] PASS
+      RQ0-L5-PROVENANCE-LOSSY FIRES AGAINST V-AMP WHERE ITS CONTENT IS NOT
+      EMPTY EITHER -- the amendment-v2 form of the adversary. (P2) is
+      checkpoint-LOCAL by its own definition: it verifies the certificate AT
+      its own checkpoint, so an admitted checkpoint verification reads
+      step-local invariants only, while the carried diagram's cycle space is
+      strictly larger than the span of its step-local cycles. Exhibited: two
+      admitted lifts of ONE declared support word with IDENTICAL
+      checkpoint-local shadows and DIFFERENT cross-checkpoint holonomy. This
+      is the v12 recorded-but-phased limit applied to the CHECKS --
+      block-local data is not phase-triviality
+      value: {"checkpoint_local_shadows_identical": true, "global_holonomies_A": [0, 4, 6], "global_holonomies_B": [1, 4, 5], "local_per_step_holonomies": [[4], [6]]}
+  L5-LOSSY-AMP-DIM     [derivation] PASS
+      the accounting that makes the witness inevitable: the carried two-step
+      diagram has cycle rank 3 while its two checkpoint-local diagrams have
+      rank 1 each, so a checkpoint-local verification leaves a rank-1
+      residue of gauge-invariant content permanently unread
+      value: {"checkpoint_local_rank": 2, "global_rank": 3, "unread_residue": 1}
+  L5-LOSSY-READING     [disclosure] PASS
+      THE SCISSORS, disclosed rather than resolved. Under the reading in
+      which a verification is a classical computation on declared numerals
+      it reads everything, including the cross-checkpoint holonomy, and
+      LOSSY does not fire against V-AMP -- but then the amplitude datum is a
+      free declaration and REGRESS eats it (L5-AMP-FREE). Under the reading
+      the amendment fixes -- checks are record-producing and
+      checkpoint-local -- LOSSY fires. The amplitude bits are readable only
+      under the reading that leaves them unanchored, and anchored only under
+      the reading that leaves them unread. Both readings are reported;
+      neither escapes a kill
+      value: {"reading_A_numerals": "REGRESS fires, LOSSY does not", "reading_B_record_producing": "both fire"}
+  L5-NB                [discriminator] PASS
+      (4) the name-blindness gate is applied to EVERY provenance-reading
+      statistic, over all 120 relabellings acting on the whole declared
+      datum at once -- boundary, law, preparation, state AND the carried
+      history together. The gate is SELF-TESTING: it passes only if all six
+      declared statistics are name-blind AND the permanent label-reading
+      negative control -- an indicator that the configuration named 0 forms
+      a block of its own -- is CAUGHT by the same sweep
+      value: {"declared": {"s_carried_cycle_rank": 0, "s_coarsest_checkpoint_defect": 0, "s_history_fan_in": 0, "s_intermediate_spread": 0, "s_manufacture_depth": 0, "s_path_length": 0}, "group_size": 120, "negative_control_caught": true, "negative_control_violations": 120}
+  L5-SEP               [discriminator] PASS
+      MEASURED: with the TRUE histories carried, NO declared
+      provenance-reading statistic separates the legitimate contexts below
+      the forged ones at the committed state. The legitimate coarse chart's
+      true history has the same form as a manufacture-path, because it IS
+      one -- an admitted operation that writes the declared record
+      value: {"s_carried_cycle_rank": false, "s_coarsest_checkpoint_defect": false, "s_history_fan_in": false, "s_intermediate_spread": false, "s_manufacture_depth": false, "s_path_length": false}
+  L5-AMNESTY           [discriminator] PASS
+      the amnesty sweep is run over all 4845 declared states for every
+      provenance-reading statistic. No statistic separates at ANY state, so
+      the sweep has nothing to amnesty: the failure here is PRIOR to amnesty
+      rather than an instance of it, and FINGERPRINT-AMNESTY's pattern does
+      not recur
+      value: {"s_carried_cycle_rank": [0, 4845, 0], "s_coarsest_checkpoint_defect": [0, 4845, 0], "s_history_fan_in": [0, 4845, 0], "s_intermediate_spread": [0, 4845, 0], "s_manufacture_depth": [0, 4845, 0], "s_path_length": [0, 4845, 0]}
+  L5-DELTA             [delta] PASS
+      THE DELTA, STATED EXACTLY. At the committed scope V-AMP == V-CL bit
+      for bit and the amplitude bits buy NOTHING, provably. At the declared
+      amplitude scope V-AMP buys two real things -- visible cancellation and
+      loop holonomy -- and BOTH are eaten, one by each kill. Measured
+      against the kills the delta is ZERO
+
+------------------------------------------------------------------------------
+THE DELTA -- WHAT THE AMPLITUDE BITS BUY
+------------------------------------------------------------------------------
+{
+ "at_the_committed_scope": {
+  "carried_cycle_rank": {
+   "0123|4": 0,
+   "01|23|4": 0,
+   "01|2|3|4": 0,
+   "0|1|2|3|4": 0
+  },
+  "reason": "every committed law is single-valued; single-valued steps have acyclic layered diagrams; vertex switching trivializes every edge phase on a forest, so there is no gauge-invariant amplitude content to carry",
+  "verdict": "ZERO -- the amplitude bits buy NOTHING here, and provably so",
+  "verdicts_identical": true
+ },
+ "at_the_declared_amplitude_scope": {
+  "V_AMP_carries_strictly_more": true,
+  "buys_1_visible_cancellation": {
+   "amplitude_record": "0|1|2|3|4",
+   "statement": "the amplitude composite is the identity while the support composite writes the FORGED 2+1+1 record: V-AMP adjudicates an endpoint claim that V-CL gets WRONG",
+   "support_record": "01|2|3|4",
+   "word": "(H01,H01)"
+  },
+  "buys_2_loop_holonomy": {
+   "cycle_ranks": {
+    "(F4)": 9,
+    "(H01)": 1,
+    "(H01,H01)": 3,
+    "(H01,H23)": 2,
+    "(ID)": 0,
+    "(SW01)": 0
+   },
+   "distinct_single_step_holonomy_classes": 4,
+   "statement": "V-AMP distinguishes carried histories V-CL identifies -- a strictly finer equivalence on declared provenance"
+  },
+  "does_NOT_buy": [
+   "the extra content is a FREE DECLARATION (L5-AMP-FREE): many admitted unitary lifts realize each holonomy class, so a forger declares whichever one a legitimate declaration carries -- REGRESS eats it",
+   "the extra content is NOT READABLE by the checkpoint-local verification (P2) is defined to be (L5-LOSSY-AMP-A) -- LOSSY eats it",
+   "at the carrier's own algebra, the one place the base supplies a genuine provenance collision, the content is IDENTICALLY EMPTY (L5-LOSSY-AMP-C)"
+  ]
+ },
+ "delta_measured_against_the_kills": "ZERO -- the same two kills fire on both variants",
+ "reverse_direction": "V-CL certifies nothing V-AMP cannot: the classical certificate is the support-and-modulus shadow of the amplitude one, computed by the same routes.  The delta is one-way."
+}
+
+------------------------------------------------------------------------------
+VERDICT
+------------------------------------------------------------------------------
+  V-AMP:
+      PROVENANCE-CERTIFIES       False
+      PROVENANCE-LOSSY           True
+      PROVENANCE-REGRESS         True
+  V-CL:
+      PROVENANCE-CERTIFIES       False
+      PROVENANCE-LOSSY           True
+      PROVENANCE-REGRESS         True
+  registered tags: RQ0-L5-PROVENANCE-REGRESS, RQ0-L5-PROVENANCE-LOSSY, RQ0-L5-BLOCKED-AT-THE-DECLARATION
+  both kills fire on both variants: True
+  BRANCH B (coarse arena-relativity) IS THE PROVEN RESIDUE: both pre-registered kills fire, on both variants, at the declared scope
+
+TOTALS: 12 anchors, 29 gates, 0 must-pass failures
+==============================================================================
