@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-07 (v13 LOG #178: branch B adopted minimal-form by the user; RQ0-SYNTH pinned; §15 engraved; critical path queued).
+Updated: 2026-08-07 (v13 LOG #185: RQ0-SYNTH panel complete + adjudicated; repair in flight; RQ0 close pending its terminal).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -68,4 +68,4 @@ Updated: 2026-08-07 (v13 LOG #178: branch B adopted minimal-form by the user; RQ
 | Branch C — nomological fingerprint | **TERMINAL: CLASS-IMPOSSIBILITY fused w/ the name-blindness principle** ("the coarse present cannot testify: proved where symmetry acts; principled where it does not"; FINGERPRINT withdrawn; 42/42 name-blind rows accounted) | v13 #166 ✓adj |
 | Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | **TERMINAL (#177 ✓adj byte-identical independent rerun)**: BOTH KILLS FIRE ON BOTH VARIANTS at the corrected gauge-invariant instrument; the amplitude datum BLIND (one-step closed holonomy CONSTANT −1, unitarity-forced); LOSSY-vs-V-CL a theorem; BLOCKED-AT-THE-DECLARATION w/ the functionality qualifier; 12 anchors / 46 gates / 20 mutants named-kills; RUNBOOK §14 born from its gauge-variance bug | v13 #175–#177 ✓adj |
 | Branch B — coarse arena-relativity | **ADOPTED IN MINIMAL FORM BY THE USER (2026-08-07)**: one synthesis unit + RUNBOOK §15; no open-ended arena line | v13 #178 |
-| RQ0-SYNTH — arena-relativity synthesis + first invariance census | pin frozen (#178); **construction in flight (#179)**; closes the RQ0 line; successor = the critical path (O4-on-W6-base / nomological transport) | v13 #178–#179 |
+| RQ0-SYNTH — arena-relativity synthesis + first invariance census | delivered as-is #180, verified byte-identical #181; **panel COMPLETE #182–#184 (3× AWF, ~301 recomputations, zero false numbers; family vindicated; record table verbatim-faithful)**; adjudicated #185 ACCEPT-WITH-MAJOR-REPAIRS — verdicts re-founded on measurement, the asymmetry RESCOPED (σ measured, law/state definitional), Q-OPT → BLOCKED per pin vocabulary; **repair S-1..S-6 in flight** | v13 #180–#185 ✓adj |

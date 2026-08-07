@@ -1741,3 +1741,12 @@ action, §14 applies: it must be self-tested under that action.
 intrinsic, not context-certifiable, not law-structural at coarse
 grain, not state-carried, not law-remembered, not
 provenance-carriable — relative to the declared arena only.)
+
+**§14 addendum (2026-08-07, from v13 #185):** a self-test that
+reaches its quantity through the instrument's own memoization
+tests the cache, not the quantity. Self-test phases must
+evaluate fresh (cache bypassed or cleared), and the self-test's
+cache-hit count must itself be gated (a zero-miss self-test is
+the signature of a gate that cannot fail). A symmetry gate's
+tested set is fixed by declaration, never selected by the very
+verdicts under audit.

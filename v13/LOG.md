@@ -6260,3 +6260,30 @@ true, its delivered evidence not.  Eleven named repairs, all
 evidentiary; no new fixture, no tower re-run.  PANEL COMPLETE:
 AWF / AWF(→REJECT if 1–2 declined) / AWF; ~301 recomputations,
 zero false numbers programme-wide again.  Adjudication next.
+
+## 2026-08-07 — RQ0-SYNTH JOINT ADJUDICATION:
+## ACCEPT-WITH-MAJOR-REPAIRS; THE ASYMMETRY RESCOPED, NOT DEAD;
+## REPAIR S-1..S-6 ORDERED (v13 LEDGER #185)
+note-rq0-synth-adjudication.md committed.  Grade
+ACCEPT-WITH-MAJOR-REPAIRS (R2's conditional-REJECT honored: no
+terminal until the re-founded verdicts re-emerge from
+measurement under rebuilt gates).  One disease, three lenses:
+the census MEASURED correctly (zero false numbers, ~301
+recomputations) but its evidentiary layer let declarations do
+verdict work (READS/ACTS flips 3/8 incl. a positive control) and
+its self-test recounted its own cache (12,876/19,314 cannot
+fail; CENSUS-COMPLETE emits while quantities flip).  Repair
+order: S-1 self-test rebuilt fresh-eval w/ gated anti-vacuity +
+zero-hit cache gate; S-2 verdicts re-founded on measured motion
+w/ the declaration flip-test as a PERMANENT GATE; S-3 the
+asymmetry at true scope (σ measured w/ teeth, law/state
+definitional-disclosed; naming unified — Q5's honest figure 5;
+INERT-Q8 made reachable; seam-orient made to bite); S-4 Q-OPT →
+BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION per the pin's
+vocabulary, all four names emittable w/ a mutant proving it,
+Δᴮ≡0-on-monomials stated as the theorem it is; S-5 gate/mutant
+hygiene (6 unfalsifiable gates, 6 no-op mutants); S-6 R1's
+exhaustive 262,144/0 gauge sweep incorporated; abstract
+requalified.  RUNBOOK §14 addendum: self-tests evaluate fresh;
+zero-miss cache counters gated.  STATUS updated this commit.
+Repair dispatch next; recorded after it occurs.
