@@ -1,7 +1,7 @@
 RQ0-L4 BRANCH C -- THE NOMOLOGICAL FINGERPRINT HUNT
 ==============================================================================
 pin b4fc87c   base a5cb096
-source sha256 203570c51e988efc5a136b3a3fa61584
+source sha256 f65f20bd79be546d25cff4330a17bd96
 
 THE DECLARED CANDIDATE FAMILY (frozen before any fixture value)
 ------------------------------------------------------------------------------
@@ -133,6 +133,136 @@ THE ADMITTED-ISOMORPHISM ACTION
   FUNNEL-CLOSURE  isomorphisms 24   orbits of the 52 records 12   orbit = shape: yes
   COUNTER-LAW     isomorphisms 1    orbits of the 52 records 52   orbit = shape: NO
 
+SHAPE IS NOT RESOLUTION (the 12-vs-7 decomposition)
+------------------------------------------------------------------------------
+  covariant shape classes 12   resolution-profile classes 7   splitting profiles 5
+  second route sum_s p(4-s) = 12   orbit-size census [1, 1, 1, 3, 4, 4, 4, 4, 6, 6, 6, 12] = 52
+  the splitting resolution profiles: [[1, 1, 1, 2], [1, 1, 3], [1, 2, 2], [1, 4], [2, 3]]
+  marked-block excess at the committed triple: [[0], [0], [0]]
+  full-group scope over the 4845 declared states: 25 carry the full 24, 1200 a trivial group, 0 the whole 120
+  group-size histogram {'1': 1200, '2': 2640, '4': 510, '6': 440, '12': 30, '24': 25}
+
+THE NAME-BLINDNESS GATE, AND THE PANEL CLASS (declared post-fixture)
+------------------------------------------------------------------------------
+  stat  law             NB   type          G2b   sep  erasure   sweep INVERTING
+  C5    DET             y    neither       n     YES  3980      3975
+  C5    FUNNEL          y    neither       n     YES  3980      3975
+  C5    REV             y    neither       n     YES  3980      3975
+  C5    FUNNEL-CLOSURE  y    neither       n     YES  3980      3975
+  C5    COUNTER-LAW     y    neither       n     YES  3980      3975
+  D1    DET             y    neither       n     YES  0         0
+  D1    FUNNEL          y    neither       n     YES  0         0
+  D1    REV             y    neither       n     YES  0         0
+  D1    FUNNEL-CLOSURE  y    neither       n     YES  0         0
+  D1    COUNTER-LAW     y    neither       n     YES  0         0
+  D2    DET             y    neither       n     YES  0         0
+  D2    FUNNEL          y    neither       n     YES  0         0
+  D2    REV             y    neither       n     YES  0         0
+  D2    FUNNEL-CLOSURE  y    neither       n     YES  0         0
+  D2    COUNTER-LAW     y    neither       n     YES  0         0
+  D3    DET             NO   neither       y     YES  0         0
+  D3    FUNNEL          NO   neither       y     YES  0         0
+  D3    REV             NO   neither       y     YES  0         0
+  D3    FUNNEL-CLOSURE  NO   neither       y     YES  0         0
+  D3    COUNTER-LAW     NO   neither       y     YES  0         0
+  D4    DET             y    neither       n     YES  1         0
+  D4    FUNNEL          y    neither       n     YES  1         0
+  D4    REV             y    neither       n     YES  1         0
+  D4    FUNNEL-CLOSURE  y    neither       n     YES  1         0
+  D4    COUNTER-LAW     y    neither       n     YES  1         0
+  D5    DET             NO   anti-monotone n     YES  -5        4350
+  D5    FUNNEL          NO   anti-monotone n     YES  -5        4350
+  D5    REV             NO   anti-monotone n     YES  -5        4350
+  D5    FUNNEL-CLOSURE  NO   anti-monotone n     YES  -5        4350
+  D5    COUNTER-LAW     NO   anti-monotone n     YES  -5        4350
+  D5N   DET             y    anti-monotone n     YES  -5        2380
+  D5N   FUNNEL          y    anti-monotone n     YES  -5        2380
+  D5N   REV             y    anti-monotone n     YES  -5        2380
+  D5N   FUNNEL-CLOSURE  y    anti-monotone n     YES  -5        2380
+  D5N   COUNTER-LAW     y    anti-monotone n     YES  -5        2380
+  D     DET             y    neither       n     YES  0         1552
+  D     FUNNEL          y    neither       n     YES  0         1552
+  D     REV             y    neither       n     YES  0         1552
+  D     FUNNEL-CLOSURE  y    neither       n     YES  0         1552
+  D     COUNTER-LAW     y    neither       y     YES  0         1552
+  TUNE  DET             NO   neither       n     YES  0         0
+  TUNE  FUNNEL          NO   neither       n     YES  0         0
+  TUNE  REV             NO   neither       n     YES  0         0
+  TUNE  FUNNEL-CLOSURE  NO   neither       n     YES  0         0
+  TUNE  COUNTER-LAW     NO   neither       y     YES  0         0
+
+THE FUSED CLAIM, MEASURED OVER THE NAME-BLIND CLASS
+------------------------------------------------------------------------------
+  C1    FUNNEL          name-blind     2 arm(s): resolution-reading; order-entailed
+  C1    COUNTER-LAW     name-blind     1 arm(s): order-entailed
+  C4a   DET             name-blind     2 arm(s): resolution-reading; state-reading
+  C4a   FUNNEL          name-blind     2 arm(s): resolution-reading; state-reading
+  C4a   REV             name-blind     2 arm(s): resolution-reading; state-reading
+  C4a   FUNNEL-CLOSURE  name-blind     2 arm(s): resolution-reading; state-reading
+  C4a   COUNTER-LAW     name-blind     2 arm(s): resolution-reading; state-reading
+  C4c   DET             name-blind     2 arm(s): resolution-reading; order-entailed
+  C4c   FUNNEL          name-blind     2 arm(s): resolution-reading; order-entailed
+  C4c   REV             name-blind     2 arm(s): resolution-reading; order-entailed
+  C4c   FUNNEL-CLOSURE  name-blind     2 arm(s): resolution-reading; order-entailed
+  C4c   COUNTER-LAW     name-blind     2 arm(s): resolution-reading; order-entailed
+  C5    DET             name-blind     2 arm(s): resolution-reading; state-reading
+  C5    FUNNEL          name-blind     2 arm(s): resolution-reading; state-reading
+  C5    REV             name-blind     2 arm(s): resolution-reading; state-reading
+  C5    FUNNEL-CLOSURE  name-blind     2 arm(s): resolution-reading; state-reading
+  C5    COUNTER-LAW     name-blind     2 arm(s): resolution-reading; state-reading
+  D1    DET             name-blind     1 arm(s): resolution-reading
+  D1    FUNNEL          name-blind     1 arm(s): resolution-reading
+  D1    REV             name-blind     1 arm(s): resolution-reading
+  D1    FUNNEL-CLOSURE  name-blind     1 arm(s): resolution-reading
+  D1    COUNTER-LAW     name-blind     1 arm(s): resolution-reading
+  D2    DET             name-blind     1 arm(s): resolution-reading
+  D2    FUNNEL          name-blind     1 arm(s): resolution-reading
+  D2    REV             name-blind     1 arm(s): resolution-reading
+  D2    FUNNEL-CLOSURE  name-blind     1 arm(s): resolution-reading
+  D2    COUNTER-LAW     name-blind     1 arm(s): resolution-reading
+  D3    DET             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D3    FUNNEL          LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D3    REV             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D3    FUNNEL-CLOSURE  LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D3    COUNTER-LAW     LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D4    DET             name-blind     1 arm(s): resolution-reading
+  D4    FUNNEL          name-blind     1 arm(s): resolution-reading
+  D4    REV             name-blind     1 arm(s): resolution-reading
+  D4    FUNNEL-CLOSURE  name-blind     1 arm(s): resolution-reading
+  D4    COUNTER-LAW     name-blind     1 arm(s): resolution-reading
+  D5    DET             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D5    FUNNEL          LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D5    REV             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D5    FUNNEL-CLOSURE  LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D5    COUNTER-LAW     LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  D5N   DET             name-blind     3 arm(s): resolution-reading; order-entailed; state-reading
+  D5N   FUNNEL          name-blind     3 arm(s): resolution-reading; order-entailed; state-reading
+  D5N   REV             name-blind     3 arm(s): resolution-reading; order-entailed; state-reading
+  D5N   FUNNEL-CLOSURE  name-blind     3 arm(s): resolution-reading; order-entailed; state-reading
+  D5N   COUNTER-LAW     name-blind     3 arm(s): resolution-reading; order-entailed; state-reading
+  D     DET             name-blind     2 arm(s): resolution-reading; state-reading
+  D     FUNNEL          name-blind     2 arm(s): resolution-reading; state-reading
+  D     REV             name-blind     2 arm(s): resolution-reading; state-reading
+  D     FUNNEL-CLOSURE  name-blind     2 arm(s): resolution-reading; state-reading
+  D     COUNTER-LAW     name-blind     1 arm(s): state-reading
+  TUNE  DET             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  TUNE  FUNNEL          LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  TUNE  REV             LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  TUNE  FUNNEL-CLOSURE  LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  TUNE  COUNTER-LAW     LABEL-READING  REMOVED BY THE NAME-BLINDNESS GATE
+  name-blind separating rows 42, unaccounted by any arm 0; label-reading rows unaccounted 6 (['D3', 'TUNE'])
+
+THE DISQUALIFICATION OF THE PIN'S-LETTER SURVIVOR, IN ORDER OF FORCE
+------------------------------------------------------------------------------
+  1. ORDER-ENTAILMENT. C1 is measured anti-monotone in the refinement order -- off-fixture and, by L4-EXT, over the whole 52-record lattice -- and the comm
+     independently sufficient: YES   measured: yes
+  2. TOTAL ERASURE. The tolerance that admits the legitimate chart and rejects both forgeries also admits the one-atom boundary, which forgets the entire c
+     independently sufficient: YES   measured: yes
+  3. THE IDENTITY-FREE SIDE. C1 takes 3 distinct values on the 745 admissible patches at identity-free censused laws, where eps takes one, so it splits the
+     independently sufficient: no   measured: yes
+  4. THE COVARIANCE GATE IS VACUOUS AT THE COUNTER-LAW -- and this carries NO INFORMATION. A vacuous universal quantification is satisfied, not evaded: not
+     independently sufficient: no   measured: yes
+
 LAW-BLINDNESS ON THE COMMITTED PAIRS
 ------------------------------------------------------------------------------
   C1   distinct value triples across the five committed laws: 3   law-blind: no
@@ -172,7 +302,11 @@ PER-CANDIDATE VERDICTS
 GATES
 ------------------------------------------------------------------------------
   [PASS] L4-00           (must pass)
-       THE CANDIDATE FAMILY IS DECLARED AND FROZEN BEFORE ANY FIXTURE VALUE IS COMPUTED. Six candidates, each with its definition, its orientation and the SHA-256 of its source text; the pin's C1, C2 and C3 and three worker constructions.
+       THE CANDIDATE FAMILY IS DECLARED AND FROZEN BEFORE ANY FIXTURE VALUE IS COMPUTED. Six candidates, each with its definition, its orientation and the SHA-256 of its source text; the pin's C1, C2 and C3 and three worker constructions. The hashes are what binds this receipt to inspectable source, and th
+  [PASS] L4-SRC          (must pass)
+       THE FREEZE'S SUBSTANTIVE CHECK: AN AUTOMATED SOURCE SCAN. Each of the eight declared definitions is scanned, in its own source text, for any reference to a committed boundary (PI1, P22, PTOMO, DISC5, ONEATOM5, FIXTURE, PROVENANCE): every one is a generic function of (part, law, prep, rho, n) and NON
+  [fail] L4-NB           
+       THE NAME-BLINDNESS GATE. A statistic on declared data must be a function of LABEL-FREE invariants: relabelling the carrier throughout the declared datum -- boundary, law, preparation and state moved together -- may not move its value. Tested exhaustively over the 48 off-fixture records and all 120 r
   [PASS] L4-CC1          
        C1 corridor membership at the committed laws, decided on the 48 off-fixture records alone. Under the PIN's gate 1 (not refinement-monotone): ['COUNTER-LAW']. Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.
   [fail] L4-CC2          
@@ -201,8 +335,10 @@ GATES
        C1's underlying occupancy defect by THREE routes: the successor closure against the family saturation over all 48 off-fixture records at all 31 admitted preparations (1488 instances), and both against the terminal module's own route at the declared preparation (48 more), and at the COUNTER-LAW at th
   [PASS] L4-X7           (must pass)
        THE SEPARATION PREDICATE IS THE CORPUS'S OWN. A candidate separates iff a tolerance admits the legitimate patch and rejects both forged ones, so it is irreflexive (equal values never separate) and oriented (only the legitimate side may be the low one). And the admitted-isomorphism action is an actio
+  [PASS] L4-IMG          
+       THE ORBIT-FORCED EVALUATIONS, DISCLOSED AND COUNTED. Covariance and name-blindness are ORBIT properties: they compare a candidate's value at a record with its value at the record's relabelled image, and some of those images ARE committed boundaries -- necessarily, since the forged 2+1+1 and the forg
   [PASS] L4-FREEZE       (must pass)
-       FREEZE BARRIER. Every gate above is a candidate declaration, a corridor gate or a derivation cross-check, and NONE of them evaluated ANY declared candidate at ANY of the four committed boundaries: the corridor population is the 48 off-fixture records and the 745 identity-free census patches. (The an
+       FREEZE BARRIER, THE HONEST CLAIM. Two checks carry the freeze and both are above this line: L4-00, which registers the SHA-256 of every candidate definition's source text before any fixture value is computed, binding the receipt to inspectable source; and L4-SRC, an automated scan of that source est
   [PASS] L4-FC1          
        C1 on the committed pairs at the committed configuration: separating laws ['FUNNEL', 'COUNTER-LAW'].
   [fail] L4-FC2          
@@ -258,9 +394,27 @@ GATES
   [PASS] L4-COV3         (must pass)
        THE CLASS THEOREM. Every admitted-isomorphism-covariant statistic of the declared data at the committed configuration is constant on orbits, hence factors through the shape profile -- the boundary's resolution data. So a covariant candidate that separates the committed pairs separates them BY SHAPE 
   [PASS] L4-COV4         (must pass)
-       THE THEOREM, MEASURED ON THE DECLARED FAMILY. No declared candidate is both covariant and non-resolution at DET: the intersection is empty, exactly as L4-COV3 proves it must be.
+       THE THEOREM, MEASURED ON THE DECLARED FAMILY. No declared candidate is both covariant and a non-function of the covariant shape invariant at DET: the intersection is empty, exactly as L4-COV3 proves it must be.
+  [PASS] L4-DEC          (must pass)
+       SHAPE IS NOT RESOLUTION, AND THE GAP IS STATE-DERIVED. The covariant orbit invariant separates the 52 records into 12 classes; the RESOLUTION profile -- the block-size profile the pin's gate 2 names -- separates them into 7, and exactly 5 resolution profiles split into two orbits apiece (12 = 7 + 5)
+  [PASS] L4-UNIF         (must pass)
+       THE CONTROL THAT SETTLES IT. At the UNIFORM state the declared data marks no configuration out, the admitted-isomorphism group is the whole 120, the 52 records fall into exactly 7 orbits, and the orbit invariant IS the block-size profile exactly -- measured over all 52 x 52 pairs. The 12-vs-7 gap is
+  [PASS] L4-SCOPE        (must pass)
+       THE SCOPE OF THE FULL-GROUP HYPOTHESIS, COUNTED. The class theorem needs the full 24-element admitted-isomorphism group, which is the automorphism group of the declared state's level partition (DET, REV, FUNNEL and the funnel closure being invariant under every relabelling). Over the 4845 declared s
+  [PASS] L4-EXT          (must pass)
+       THEOREM 6.1's HYPOTHESIS IS MEASURED OFF-FIXTURE AND ITS CONCLUSION IS ABOUT THE FIXTURE CHAIN, which is not in that population: off-fixture monotonicity does not ENTAIL monotonicity across the chain. The extension is therefore measured here and not asserted: over the 224 comparable off-fixture pair
+  [PASS] L4-C1STATE      (must pass)
+       C1's MONOTONICITY TYPE AT EVERY DECLARED STATE. C4c is state-blind and its type is state-free by construction; C1 is NOT -- omega reads rho -- so its immunity to the amnesty sweep is a measurement and not a structural property, and the measurement is made here rather than argued. C1 is linear in the
+  [PASS] L4-00B          (must pass)
+       THE PANEL CLASS, DECLARED AND HASHED. Nine further statistics, none of them a hunt candidate: each was constructed AGAINST the delivered unit with the fixture already known, and each is carried here because a corridor that only ever meets its author's constructions has not been tested. They are decl
+  [PASS] L4-CORPSE       (must pass)
+       THE FOUR COUNTEREXAMPLE CORPSES, EACH AT ITS NAMED GATE. D3 and TUNE compare carrier NAMES and die at the name-blindness gate -- TUNE twice over, since the source scan catches it as well, which is the point of a negative control. C5 is name-blind and refuses total erasure, and the amnesty sweep inve
+  [PASS] L4-FUSED        (must pass)
+       THE FUSED CLAIM, MEASURED OVER THE NAME-BLIND CLASS AT EVERY COMMITTED CONFIGURATION. Every separating (statistic, law) row of the whole declared-plus-panel class that passes the name-blindness gate falls to at least one of the three arms: it is a function of the covariant shape invariant (resolutio
+  [PASS] L4-C1-DQ        (must pass)
+       THE DISQUALIFICATION OF THE ONE CORRIDOR SURVIVOR, ITS GROUNDS IN THE ORDER OF THEIR FORCE. Order-entailment and total erasure are each independently sufficient and each bites at EVERY committed law, symmetric or not; the identity-free split is collateral; the vacuous covariance gate is not a ground
   [PASS] L4-DICH         
-       THE FINGERPRINT DICHOTOMY, over the declared family: every separation this unit found is EITHER entailed by the refinement order -- hence a grading of coarseness, which survives the amnesty sweep for the same state-free reason the terminal inversion theorem holds -- OR not so entailed, in which case
+       THE XOR TALLY OVER THE DECLARED FAMILY -- AN OBSERVATION, NOT A THEOREM. Over the separating rows of the six declared candidates, each separation is EITHER entailed by the refinement order OR inverted by the amnesty sweep, and none is both. This is a property of the declared family and not of statis
 
 ANCHORS (exit-1-only)
 ------------------------------------------------------------------------------
@@ -278,14 +432,34 @@ ANCHORS (exit-1-only)
   [PASS] A12   the DET cost tower at the committed tower's four levels
   [PASS] A13   both forgeries are REFINEMENTS of the legitimate coarse chart
   [PASS] A14   the adversary's manufactured 1+1+1+1 context and the legitimate ad
-  [PASS] A16   the terminal cycle's OWN constraint on any successor statistic
   [PASS] A15   this unit's own Pres, eps and omega routes agree with the terminal
+  [PASS] A16   the terminal cycle's OWN constraint on any successor statistic
+  [PASS] A17   the terminal cycle's OWN verdict on an anti-monotone grading
+  [PASS] A18   the terminal cycle's OWN count of the rows where omega ranks the l
+  [PASS] A19   the (law, preparation) rows at which omega ranks the LEGITIMATE pa
+
+THE FREEZE, AS IT IS ACTUALLY CARRIED
+------------------------------------------------------------------------------
+  c1_counterfactual_occupancy                     clean
+  c1_profile                                      clean
+  c2_generation_mismatch                          clean
+  c3_law_fan_in                                   clean
+  c4a_state_alignment                             clean
+  c4a_route2                                      clean
+  c4b_reach_alignment                             clean
+  c4c_pair_resolution                             clean
+  tune_negative_control (NEGATIVE CONTROL)        CAUGHT: PTOMO
+  orbit-forced evaluations at a committed boundary, pre-barrier: 10028
+    {'L4-G5': {'((0, 1), (2,), (3,), (4,))': 480, '((0, 1), (2, 3), (4,))': 384, 'SUBTOTAL': 864}, 'L4-NB': {'total': 9164, 'SUBTOTAL': 9164}, 'per_candidate_per_symmetric_law_in_the_covariance_gate': {'((0, 1), (2,), (3,), (4,))': 20, '((0, 1), (2, 3), (4,))': 16, 'SUBTOTAL': 36}}
 
 REGISTERED OUTCOMES
 ------------------------------------------------------------------------------
-  RQ0-L4-NOMOLOGICAL-FINGERPRINT (on the pin's letter; qualified -- see the dichotomy)
   RQ0-L4-FINGERPRINT-AMNESTY
-  RQ0-L4-CLASS-IMPOSSIBILITY (over the declared class at the committed configuration, and over the declared family under the inherited corridor)
+  RQ0-L4-CLASS-IMPOSSIBILITY (the fused theorem at full-group configurations; measured over the name-blind class at every committed configuration)
   RQ0-L4-BLOCKED-AT-THE-REFINEMENT-ORDER
 
-TOTALS: 16 anchors (16 passed), 45 gates (31 passed), 15 must-pass (0 failures), 6 declared candidates
+WITHDRAWN
+------------------------------------------------------------------------------
+  RQ0-L4-NOMOLOGICAL-FINGERPRINT -- WITHDRAWN. The pin's letter is met by C1 at the counter-law and the letter is not the finding: C1's separating content is the immutable base's own already-counted and already-dismissed omega rows (A17, A18, A19), and the tag is disqualified on order-entailment and on total erasure, each independently sufficient (L4-C1-DQ). Registering it would re-register an adjudicated negative as a positive.
+
+TOTALS: 19 anchors (19 passed), 57 gates (42 passed), 25 must-pass (0 failures), 6 declared candidates

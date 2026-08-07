@@ -5785,3 +5785,32 @@ at all committed configurations to be reported FIRST (branch A's
 preamble cites it); freeze-on-delivery.  On return: verification
 → TERMINAL → then BRANCH A per the authorized plan.  Recorded
 after the dispatch occurred.
+
+## 2026-08-06 — BRANCH-C REPAIR VERIFIED — **BRANCH C TERMINAL:
+## CLASS-IMPOSSIBILITY, FUSED AND PRINCIPLE-COMPLETED** (v13
+## LEDGER #166)
+Verification: source hash = receipt; rerun exit 0; 19/19 anchors,
+57 gates, 0 must-pass failures, 30/30 mutants; byte-identical;
+four files.  All R-1..R-9 in.  **THE MEASURED VERDICT (branch
+A's preamble):** over the name-blind class at EVERY committed
+configuration — six declared + nine panel candidates, all five
+laws — all 42 name-blind separating rows fall to an arm
+(shape-functional / order-entailed / swept), 0 unaccounted;
+Theorem 7.3 proves the factorization at full-group configurations
+(covariant ⟺ function of (resolution profile, marked-block
+excess)); **the only 6 rows escaping every arm are LABEL-READERS
+(D3 ×5, TUNE ×1), removed by the name-blindness principle alone —
+the gate is load-bearing, not decorative.**  The freeze rebuilt
+honest (10,028 orbit-forced evaluations disclosed; the source
+scan catches TUNE; the barrier claim gone); FINGERPRINT
+withdrawn from the registered outcomes; shape ≠ resolution
+corrected everywhere (12 vs 7, 5 splittings, uniform control
+120/7); Thm 6.1 measured (9/9); one new honest finding (C3's
+name-blindness failure at the counter-law diagnosed as a
+population-closure artifact, not name-reading).  No committed
+measured number moved.  **BRANCH C IS TERMINAL at
+RQ0-L4-CLASS-IMPOSSIBILITY (fused form) + FINGERPRINT-AMNESTY +
+BLOCKED-AT-THE-REFINEMENT-ORDER, with FINGERPRINT WITHDRAWN.
+The coarse present cannot testify: proved where symmetry acts;
+principled where it does not.**  BRANCH A next per the
+authorized plan.

@@ -253,14 +253,6 @@
    "source": "stage-5 Thm 5.3 (the collision)"
   },
   {
-   "committed": true,
-   "computed": true,
-   "id": "A16",
-   "passed": true,
-   "quantity": "the terminal cycle's OWN constraint on any successor statistic",
-   "source": "stage-5 sec 10 (immutable, verbatim)"
-  },
-  {
    "committed": [
     0,
     0,
@@ -275,6 +267,58 @@
    "passed": true,
    "quantity": "this unit's own Pres, eps and omega routes agree with the terminal ones over all 52 records under DET",
    "source": "THIS UNIT vs B\" / stage-5"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A16",
+   "passed": true,
+   "quantity": "the terminal cycle's OWN constraint on any successor statistic",
+   "source": "stage-5 sec 10 (immutable, verbatim)"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A17",
+   "passed": true,
+   "quantity": "the terminal cycle's OWN verdict on an anti-monotone grading",
+   "source": "stage-5 sec 1 (immutable, verbatim)"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A18",
+   "passed": true,
+   "quantity": "the terminal cycle's OWN count of the rows where omega ranks the legitimate patch best: 15 of 155, 12 at FUNNEL and 3 at the counter-law, 6 admitting it at tolerance zero",
+   "source": "stage-5 sec 9.1 (immutable, verbatim)"
+  },
+  {
+   "committed": [
+    15,
+    [
+     0,
+     12,
+     0,
+     0,
+     3
+    ],
+    6
+   ],
+   "computed": [
+    15,
+    [
+     0,
+     12,
+     0,
+     0,
+     3
+    ],
+    6
+   ],
+   "id": "A19",
+   "passed": true,
+   "quantity": "the (law, preparation) rows at which omega ranks the LEGITIMATE patch strictly best -- total of 155, per committed law, and those admitting it at tolerance zero",
+   "source": "stage-5 sec 9.1 (the fifteen rows, recomputed here)"
   }
  ],
  "arithmetic": "exact rationals throughout; no float in any substantive path",
@@ -284,9 +328,8 @@
    "C4a"
   ],
   "registered_outcomes": [
-   "RQ0-L4-NOMOLOGICAL-FINGERPRINT (on the pin's letter; qualified -- see the dichotomy)",
    "RQ0-L4-FINGERPRINT-AMNESTY",
-   "RQ0-L4-CLASS-IMPOSSIBILITY (over the declared class at the committed configuration, and over the declared family under the inherited corridor)",
+   "RQ0-L4-CLASS-IMPOSSIBILITY (the fused theorem at full-group configurations; measured over the name-blind class at every committed configuration)",
    "RQ0-L4-BLOCKED-AT-THE-REFINEMENT-ORDER"
   ],
   "separating_candidates": [
@@ -298,23 +341,81 @@
   "survivors_pinned_corridor": [
    "C1"
   ],
-  "the_fingerprint_dichotomy": true
+  "the_fingerprint_dichotomy": true,
+  "the_fused_claim_over_the_name_blind_class": {
+   "label_reading_rows_unaccounted_by_any_arm": 6,
+   "name_blind_rows_unaccounted_by_any_arm": 0,
+   "name_blind_separating_rows": 42,
+   "separating_rows_measured": 57,
+   "the_label_readers_that_would_otherwise_survive": [
+    "D3",
+    "TUNE"
+   ]
+  },
+  "the_pins_letter_survivor_before_withdrawal": [
+   "C1"
+  ],
+  "withdrawn_outcomes": [
+   "RQ0-L4-NOMOLOGICAL-FINGERPRINT -- WITHDRAWN.  The pin's letter is met by C1 at the counter-law and the letter is not the finding: C1's separating content is the immutable base's own already-counted and already-dismissed omega rows (A17, A18, A19), and the tag is disqualified on order-entailment and on total erasure, each independently sufficient (L4-C1-DQ).  Registering it would re-register an adjudicated negative as a positive."
+  ]
  },
- "gate_order_proves_the_freeze": true,
  "gates": [
   {
-   "claim": "THE CANDIDATE FAMILY IS DECLARED AND FROZEN BEFORE ANY FIXTURE VALUE IS COMPUTED.  Six candidates, each with its definition, its orientation and the SHA-256 of its source text; the pin's C1, C2 and C3 and three worker constructions.",
+   "claim": "THE CANDIDATE FAMILY IS DECLARED AND FROZEN BEFORE ANY FIXTURE VALUE IS COMPUTED.  Six candidates, each with its definition, its orientation and the SHA-256 of its source text; the pin's C1, C2 and C3 and three worker constructions.  The hashes are what binds this receipt to inspectable source, and they are half of what carries the freeze; L4-SRC is the other half.",
    "class": "freeze",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-00",
    "must_pass": true,
    "passed": true,
    "value": 6
   },
   {
+   "claim": "THE FREEZE'S SUBSTANTIVE CHECK: AN AUTOMATED SOURCE SCAN.  Each of the eight declared definitions is scanned, in its own source text, for any reference to a committed boundary (PI1, P22, PTOMO, DISC5, ONEATOM5, FIXTURE, PROVENANCE): every one is a generic function of (part, law, prep, rho, n) and NONE of them mentions one.  The gate is self-testing: it passes only if the eight are clean AND the permanent negative control -- R3's TUNE, which special-cases the committed legitimate boundary -- IS caught by the same scan.  This is the check that works, and it is a property of the source, not of the gate order.",
+   "class": "freeze",
+   "fixture_stage_declared_when_fired": false,
+   "id": "L4-SRC",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "declared_definitions_clean": true,
+    "declared_definitions_scanned": 8,
+    "negative_control_caught_by_the_scan": [
+     "tune_negative_control (NEGATIVE CONTROL)"
+    ],
+    "tokens": [
+     "PI1",
+     "P22",
+     "PTOMO",
+     "DISC5",
+     "ONEATOM5",
+     "FIXTURE",
+     "PROVENANCE"
+    ]
+   }
+  },
+  {
+   "claim": "THE NAME-BLINDNESS GATE.  A statistic on declared data must be a function of LABEL-FREE invariants: relabelling the carrier throughout the declared datum -- boundary, law, preparation and state moved together -- may not move its value.  Tested exhaustively over the 48 off-fixture records and all 120 relabellings at every committed law, with a witness recorded for every failure.  Covariance (gate 5) is invariance under the STABILIZER of the declared data and has no content where that stabilizer is trivial; this gate has content everywhere, and it is the corpus's own co-reference discipline, under which names are never compared.  Measured on the declared six: one failure, C3 at the counter-law -- and it is NOT a statistic reading names.  C3 counts the laws of a DECLARED POPULATION sharing the patch's key, and that population is not closed under relabelling: it adjoins the five committed laws, one of which -- the counter-law, generated by block-minimum idempotents -- is itself a label-reading construction, so a relabelled counter-law is not in the population.  The gate is measuring the population's non-closure, not the statistic; C3 is dead at G3 in any case, its fan-in being identically 1 at every committed law.",
+   "class": "corridor",
+   "fixture_stage_declared_when_fired": false,
+   "id": "L4-NB",
+   "must_pass": false,
+   "passed": false,
+   "value": {
+    "diagnosis": {
+     "C3 @ COUNTER-LAW": "the declared 2847-law population is not closed under relabelling (it adjoins the committed counter-law, a label-reading construction); C3 is dead at G3 regardless"
+    },
+    "failures": [
+     [
+      "C3",
+      "COUNTER-LAW"
+     ]
+    ]
+   }
+  },
+  {
    "claim": "C1 corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): ['COUNTER-LAW'].  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC1",
    "must_pass": false,
    "passed": true,
@@ -328,7 +429,7 @@
   {
    "claim": "C2 corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): NONE.  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC2",
    "must_pass": false,
    "passed": false,
@@ -340,7 +441,7 @@
   {
    "claim": "C3 corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): NONE.  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC3",
    "must_pass": false,
    "passed": false,
@@ -352,7 +453,7 @@
   {
    "claim": "C4a corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): NONE.  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC4a",
    "must_pass": false,
    "passed": false,
@@ -364,7 +465,7 @@
   {
    "claim": "C4b corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): NONE.  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC4b",
    "must_pass": false,
    "passed": false,
@@ -376,7 +477,7 @@
   {
    "claim": "C4c corridor membership at the committed laws, decided on the 48 off-fixture records alone.  Under the PIN's gate 1 (not refinement-monotone): NONE.  Under the INHERITED gate 1 (stage-5 sec 10, anchor A16: a successor must be NON-monotone in the refinement order): NONE.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-CC4c",
    "must_pass": false,
    "passed": false,
@@ -388,7 +489,7 @@
   {
    "claim": "THE DICHOTOMY'S IDENTITY-FREE SIDE.  eps is constant (exactly 0) at all 745 admissible patches at identity-free censused laws, so one tolerance retains the whole side.  A candidate keeps the side intact only if it is constant there too; measured per candidate.",
    "class": "corridor",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-G6",
    "must_pass": false,
    "passed": true,
@@ -428,7 +529,7 @@
   {
    "claim": "C4a computed by two independent routes -- per-atom level-class membership, and the atom's level-closure -- over the 48 off-fixture records: zero disagreements.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X1",
    "must_pass": true,
    "passed": true,
@@ -437,7 +538,7 @@
   {
    "claim": "THE GENERATED STRUCTURE AT AN IDENTITY-CONTAINING LAW IS DISCRETE. Every committed law contains the identity, the identity preserves every boundary, and its collision partition is discrete, so ker(Pres_L(pi)) is discrete at every off-fixture record and every committed law: 0 exceptions.  This is why C2 collapses.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X2",
    "must_pass": true,
    "passed": true,
@@ -446,7 +547,7 @@
   {
    "claim": "C2 IS eps.  The generation-profile mismatch equals the concordance defect at every off-fixture record under every committed law -- 240 instances, 0 disagreements -- a consequence of L4-X2 and the closed form, measured before it is used.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X3",
    "must_pass": true,
    "passed": true,
@@ -455,7 +556,7 @@
   {
    "claim": "C3's declared law population at five configurations contains every committed law and is closed under composition member-wise.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X4",
    "must_pass": true,
    "passed": true,
@@ -466,7 +567,7 @@
   {
    "claim": "C4c is invariant under every admitted isomorphism, as the maximal covariant candidate must be.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X5",
    "must_pass": true,
    "passed": true,
@@ -475,7 +576,7 @@
   {
    "claim": "C1's underlying occupancy defect by THREE routes: the successor closure against the family saturation over all 48 off-fixture records at all 31 admitted preparations (1488 instances), and both against the terminal module's own route at the declared preparation (48 more), and at the COUNTER-LAW at three declared preparations where the defect is genuinely non-zero (92 of 144 instances carry omega > 0).  0 disagreements.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X6",
    "must_pass": true,
    "passed": true,
@@ -487,27 +588,62 @@
   {
    "claim": "THE SEPARATION PREDICATE IS THE CORPUS'S OWN.  A candidate separates iff a tolerance admits the legitimate patch and rejects both forged ones, so it is irreflexive (equal values never separate) and oriented (only the legitimate side may be the low one).  And the admitted-isomorphism action is an action: the identity relabelling fixes every one of the 52 records.",
    "class": "derivation",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-X7",
    "must_pass": true,
    "passed": true,
    "value": null
   },
   {
-   "claim": "FREEZE BARRIER.  Every gate above is a candidate declaration, a corridor gate or a derivation cross-check, and NONE of them evaluated ANY declared candidate at ANY of the four committed boundaries: the corridor population is the 48 off-fixture records and the 745 identity-free census patches.  (The anchors above reproduce terminal values, which are immutable base and not this unit's fixture truth.)  Every gate below computes fixture truth. RUNBOOK sec 13(4).",
+   "claim": "THE ORBIT-FORCED EVALUATIONS, DISCLOSED AND COUNTED.  Covariance and name-blindness are ORBIT properties: they compare a candidate's value at a record with its value at the record's relabelled image, and some of those images ARE committed boundaries -- necessarily, since the forged 2+1+1 and the forged 2+2 lie in the orbits of off-fixture records under the admitted isomorphisms, and the legitimate tomographic minimum lies in theirs under the full relabelling group.  Every such value is equality-tested against its own off-fixture partner; none is retained, compared to a threshold, or used in any selection, and no ORDERING of fixture values is ever read.  Counted exactly, per gate and per committed boundary.",
    "class": "freeze",
-   "fixture_touched_when_fired": false,
+   "fixture_stage_declared_when_fired": false,
+   "id": "L4-IMG",
+   "must_pass": false,
+   "passed": true,
+   "value": {
+    "per_gate": {
+     "L4-G5": {
+      "((0, 1), (2, 3), (4,))": 384,
+      "((0, 1), (2,), (3,), (4,))": 480,
+      "SUBTOTAL": 864
+     },
+     "L4-NB": {
+      "SUBTOTAL": 9164,
+      "total": 9164
+     },
+     "per_candidate_per_symmetric_law_in_the_covariance_gate": {
+      "((0, 1), (2, 3), (4,))": 16,
+      "((0, 1), (2,), (3,), (4,))": 20,
+      "SUBTOTAL": 36
+     }
+    },
+    "total_pre_barrier_evaluations_at_a_committed_boundary": 10028
+   }
+  },
+  {
+   "claim": "FREEZE BARRIER, THE HONEST CLAIM.  Two checks carry the freeze and both are above this line: L4-00, which registers the SHA-256 of every candidate definition's source text before any fixture value is computed, binding the receipt to inspectable source; and L4-SRC, an automated scan of that source establishing that NO candidate definition mentions any committed boundary -- with a permanent negative control that the scan catches.  Below this line the corridor's DECISIONS are already taken, on the 48 off-fixture records and the 745 census patches alone.  What is NOT claimed: that the gate order proves the freeze (it cannot establish authoring order), and that no candidate was evaluated at a committed boundary (L4-IMG counts those that the orbit gates force).  RUNBOOK sec 13(4).",
+   "class": "freeze",
+   "fixture_stage_declared_when_fired": false,
    "id": "L4-FREEZE",
    "must_pass": true,
    "passed": true,
    "value": {
-    "gates_before_the_barrier": 15
+    "carried_by": [
+     "L4-00 definition hashes",
+     "L4-SRC automated source scan"
+    ],
+    "gates_before_the_barrier": 18,
+    "not_carried_by": [
+     "the gate order",
+     "the per-gate provenance annotation"
+    ]
    }
   },
   {
    "claim": "C1 on the committed pairs at the committed configuration: separating laws ['FUNNEL', 'COUNTER-LAW'].",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC1",
    "must_pass": false,
    "passed": true,
@@ -521,7 +657,7 @@
   {
    "claim": "C2 on the committed pairs at the committed configuration: separating laws NONE.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC2",
    "must_pass": false,
    "passed": false,
@@ -532,7 +668,7 @@
   {
    "claim": "C3 on the committed pairs at the committed configuration: separating laws NONE.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC3",
    "must_pass": false,
    "passed": false,
@@ -543,7 +679,7 @@
   {
    "claim": "C4a on the committed pairs at the committed configuration: separating laws ['DET', 'FUNNEL', 'REV', 'FUNNEL-CLOSURE', 'COUNTER-LAW'].",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC4a",
    "must_pass": false,
    "passed": true,
@@ -560,7 +696,7 @@
   {
    "claim": "C4b on the committed pairs at the committed configuration: separating laws NONE.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC4b",
    "must_pass": false,
    "passed": false,
@@ -571,7 +707,7 @@
   {
    "claim": "C4c on the committed pairs at the committed configuration: separating laws ['DET', 'FUNNEL', 'REV', 'FUNNEL-CLOSURE', 'COUNTER-LAW'].",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-FC4c",
    "must_pass": false,
    "passed": true,
@@ -588,7 +724,7 @@
   {
    "claim": "C1 READ POINTWISE, its strongest form: is there ANY admitted preparation at which the occupancy profile separates the committed pairs?  Swept over all 31 preparations at every committed law.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-C1PT",
    "must_pass": false,
    "passed": true,
@@ -623,7 +759,7 @@
   {
    "claim": "IS THE SEPARATION ENTAILED BY THE REFINEMENT ORDER?  The committed triple is a CHAIN whose coarsest member is the legitimate one (anchor A13), so a candidate measured monotone in EITHER direction off-fixture separates it automatically, by the order alone and with no reading of provenance.  Reported per separating row; the gate passes only if some separation is NOT so entailed.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-ENT",
    "must_pass": false,
    "passed": true,
@@ -717,7 +853,7 @@
   {
    "claim": "DOES THE SEPARATING TOLERANCE CERTIFY TOTAL ERASURE?  The one-atom boundary forgets the whole carrier.  A tolerance that admits the legitimate coarse patch and rejects both forgeries, yet also admits total erasure, is grading how much is forgotten and not who declared it.  The gate passes only if some separator refuses total erasure at its own separating tolerance.",
    "class": "fixture",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-ERASE",
    "must_pass": false,
    "passed": false,
@@ -811,7 +947,7 @@
   {
    "claim": "THE SWEEP IS EXHAUSTIVE.  Every one of the 4845 declared states of denominator 16 is classified exactly once as separating, tied or inverting, for every separator that reached the sweep.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-SUM",
    "must_pass": true,
    "passed": true,
@@ -820,7 +956,7 @@
   {
    "claim": "C1 at FUNNEL swept over the whole declared state simplex at denominator 16: separation holds at 4844 states, ties at 1, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C1-FUNNEL",
    "must_pass": false,
    "passed": true,
@@ -837,7 +973,7 @@
   {
    "claim": "C1 at COUNTER-LAW swept over the whole declared state simplex at denominator 16: separation holds at 4692 states, ties at 153, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C1-COUNTER-LAW",
    "must_pass": false,
    "passed": true,
@@ -854,7 +990,7 @@
   {
    "claim": "C4a at DET swept over the whole declared state simplex at denominator 16: separation holds at 1276 states, ties at 2017, and INVERTS at 1552.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4a-DET",
    "must_pass": false,
    "passed": false,
@@ -871,7 +1007,7 @@
   {
    "claim": "C4a at FUNNEL swept over the whole declared state simplex at denominator 16: separation holds at 1276 states, ties at 2017, and INVERTS at 1552.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4a-FUNNEL",
    "must_pass": false,
    "passed": false,
@@ -888,7 +1024,7 @@
   {
    "claim": "C4a at REV swept over the whole declared state simplex at denominator 16: separation holds at 1276 states, ties at 2017, and INVERTS at 1552.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4a-REV",
    "must_pass": false,
    "passed": false,
@@ -905,7 +1041,7 @@
   {
    "claim": "C4a at FUNNEL-CLOSURE swept over the whole declared state simplex at denominator 16: separation holds at 1276 states, ties at 2017, and INVERTS at 1552.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4a-FUNNEL-CLOSURE",
    "must_pass": false,
    "passed": false,
@@ -922,7 +1058,7 @@
   {
    "claim": "C4a at COUNTER-LAW swept over the whole declared state simplex at denominator 16: separation holds at 1276 states, ties at 2017, and INVERTS at 1552.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4a-COUNTER-LAW",
    "must_pass": false,
    "passed": false,
@@ -939,7 +1075,7 @@
   {
    "claim": "C4c at DET swept over the whole declared state simplex at denominator 16: separation holds at 4845 states, ties at 0, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4c-DET",
    "must_pass": false,
    "passed": true,
@@ -956,7 +1092,7 @@
   {
    "claim": "C4c at FUNNEL swept over the whole declared state simplex at denominator 16: separation holds at 4845 states, ties at 0, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4c-FUNNEL",
    "must_pass": false,
    "passed": true,
@@ -973,7 +1109,7 @@
   {
    "claim": "C4c at REV swept over the whole declared state simplex at denominator 16: separation holds at 4845 states, ties at 0, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4c-REV",
    "must_pass": false,
    "passed": true,
@@ -990,7 +1126,7 @@
   {
    "claim": "C4c at FUNNEL-CLOSURE swept over the whole declared state simplex at denominator 16: separation holds at 4845 states, ties at 0, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4c-FUNNEL-CLOSURE",
    "must_pass": false,
    "passed": true,
@@ -1007,7 +1143,7 @@
   {
    "claim": "C4c at COUNTER-LAW swept over the whole declared state simplex at denominator 16: separation holds at 4845 states, ties at 0, and INVERTS at 0.  Any inversion is FINGERPRINT-AMNESTY and kills the candidate.",
    "class": "amnesty",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-AM-C4c-COUNTER-LAW",
    "must_pass": false,
    "passed": true,
@@ -1024,7 +1160,7 @@
   {
    "claim": "LAW-BLINDNESS ON THE COMMITTED PAIRS.  The pin's question is whether the LAW remembers.  A candidate whose values on the three committed boundaries do not move across the five committed laws reads no law at all, whatever else it reads.",
    "class": "robustness",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-LB",
    "must_pass": false,
    "passed": true,
@@ -1058,7 +1194,7 @@
   {
    "claim": "THE COMMITTED LAWS SPLIT BY SYMMETRY.  Four of the five committed law families -- DET, FUNNEL, REV and the funnel closure -- have the full 24-element admitted-isomorphism group at the committed state and preparation; the COUNTER-LAW has the TRIVIAL group, so corridor gate 5 has no content there and any statistic passes it vacuously.  This is measured, and it is where the one corridor survivor survives.",
    "class": "covariance",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-COV0",
    "must_pass": true,
    "passed": true,
@@ -1073,7 +1209,7 @@
   {
    "claim": "THE ADMITTED ISOMORPHISMS OF THE COMMITTED CONFIGURATION are the 24 relabellings fixing the retained sink and permuting the four success addresses -- the stabilizer of the declared state, law and preparation, measured and not assumed.  Under them the 52 records fall into exactly 12 orbits, and two records share an orbit if and only if they share the shape profile (the multiset over declared atoms of the atom's profile across the state's level classes), checked over all 52 x 52 pairs.",
    "class": "covariance",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-COV1",
    "must_pass": true,
    "passed": true,
@@ -1085,7 +1221,7 @@
   {
    "claim": "ARE THE COMMITTED PAIRS RELATED BY AN ADMITTED ISOMORPHISM?  No: the three coarse boundaries lie in three DISTINCT orbits, of sizes [6, 3, 1], and no admitted isomorphism carries one to another.  Covariance therefore does NOT force them equal, and separation is not blocked by it.",
    "class": "covariance",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-COV2",
    "must_pass": true,
    "passed": true,
@@ -1097,7 +1233,7 @@
   {
    "claim": "THE CLASS THEOREM.  Every admitted-isomorphism-covariant statistic of the declared data at the committed configuration is constant on orbits, hence factors through the shape profile -- the boundary's resolution data.  So a covariant candidate that separates the committed pairs separates them BY SHAPE ALONE, and no covariant candidate can satisfy corridor gate 2 in its strong reading.  The corridor is empty at the committed configuration.  Witness of the cost: the terminal collision -- the adversary's manufactured 1+1+1+1 context and the legitimate address context present identical declared data (anchor A14), hence identical shape, hence identical verdict from every covariant statistic.",
    "class": "covariance",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-COV3",
    "must_pass": true,
    "passed": true,
@@ -1147,9 +1283,9 @@
    }
   },
   {
-   "claim": "THE THEOREM, MEASURED ON THE DECLARED FAMILY.  No declared candidate is both covariant and non-resolution at DET: the intersection is empty, exactly as L4-COV3 proves it must be.",
+   "claim": "THE THEOREM, MEASURED ON THE DECLARED FAMILY.  No declared candidate is both covariant and a non-function of the covariant shape invariant at DET: the intersection is empty, exactly as L4-COV3 proves it must be.",
    "class": "covariance",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-COV4",
    "must_pass": true,
    "passed": true,
@@ -1158,9 +1294,347 @@
    }
   },
   {
-   "claim": "THE FINGERPRINT DICHOTOMY, over the declared family: every separation this unit found is EITHER entailed by the refinement order -- hence a grading of coarseness, which survives the amnesty sweep for the same state-free reason the terminal inversion theorem holds -- OR not so entailed, in which case it reads the declared state and the amnesty sweep kills it.  No separation is both.",
+   "claim": "SHAPE IS NOT RESOLUTION, AND THE GAP IS STATE-DERIVED.  The covariant orbit invariant separates the 52 records into 12 classes; the RESOLUTION profile -- the block-size profile the pin's gate 2 names -- separates them into 7, and exactly 5 resolution profiles split into two orbits apiece (12 = 7 + 5).  The datum that splits them is s, how many configurations the boundary merges with the one the declared state marks out: measured over all 52 x 52 pairs, two records share an orbit if and only if they share the PAIR (resolution profile, s).  A second route with no group action agrees: an orbit is determined by (s, the multiset of the remaining block sizes), giving sum over s of p(4-s) = 5+3+2+1+1 = 12.  The orbit-size census sums to 52.  So every covariant statistic factors through (resolution profile, state-reading component) -- and NOT through resolution data alone.",
+   "class": "covariance",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-DEC",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "marked_block_excess_at_the_committed_triple": [
+     [
+      0
+     ],
+     [
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "orbit_classes_the_covariant_shape_invariant": 12,
+    "orbit_size_census": [
+     1,
+     1,
+     1,
+     3,
+     4,
+     4,
+     4,
+     4,
+     6,
+     6,
+     6,
+     12
+    ],
+    "orbit_size_census_sums_to": 52,
+    "resolution_profile_classes": 7,
+    "resolution_profiles_that_split_into_two_orbits": 5,
+    "second_route_sum_over_s_of_p_4_minus_s": 12,
+    "the_splitting_profiles": [
+     [
+      1,
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      1,
+      2,
+      2
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ]
+   }
+  },
+  {
+   "claim": "THE CONTROL THAT SETTLES IT.  At the UNIFORM state the declared data marks no configuration out, the admitted-isomorphism group is the whole 120, the 52 records fall into exactly 7 orbits, and the orbit invariant IS the block-size profile exactly -- measured over all 52 x 52 pairs.  The 12-vs-7 gap is therefore produced entirely by the committed state's 4+1 level structure, and a sentence identifying the covariant invariant with resolution data is the uniform-state theorem carried where it fails.",
+   "class": "covariance",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-UNIF",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "admitted_isomorphisms": 120,
+    "orbit_invariant_is_the_resolution_profile": true,
+    "orbits": 7
+   }
+  },
+  {
+   "claim": "THE SCOPE OF THE FULL-GROUP HYPOTHESIS, COUNTED.  The class theorem needs the full 24-element admitted-isomorphism group, which is the automorphism group of the declared state's level partition (DET, REV, FUNNEL and the funnel closure being invariant under every relabelling).  Over the 4845 declared states of denominator 16 that group is carried by exactly 25 states; 1200 carry a TRIVIAL group, where the theorem has no content at all; and none carries the whole 120, the uniform state not being of denominator 16.  The emptiness the theorem delivers is purchased by the committed state's degeneracy, and this is its price.",
+   "class": "covariance",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-SCOPE",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "admitted_isomorphism_group_size_histogram": {
+     "1": 1200,
+     "12": 30,
+     "2": 2640,
+     "24": 25,
+     "4": 510,
+     "6": 440
+    },
+    "states": 4845,
+    "states_carrying_the_full_24": 25,
+    "states_carrying_the_whole_120": 0,
+    "states_with_a_trivial_group": 1200
+   }
+  },
+  {
+   "claim": "THEOREM 6.1's HYPOTHESIS IS MEASURED OFF-FIXTURE AND ITS CONCLUSION IS ABOUT THE FIXTURE CHAIN, which is not in that population: off-fixture monotonicity does not ENTAIL monotonicity across the chain.  The extension is therefore measured here and not asserted: over the 224 comparable off-fixture pairs and the 306 comparable pairs of the whole 52-record lattice, the monotonicity type is the SAME in all nine (candidate, law) cases -- C1, C4a and C4c at DET, FUNNEL and the counter-law.  The theorem is restated with the measured hypothesis.",
+   "class": "derivation",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-EXT",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "all_52_comparable_pairs": 306,
+    "off_fixture_comparable_pairs": 224,
+    "rows": [
+     {
+      "agree": true,
+      "candidate": "C1",
+      "law": "DET",
+      "type_off_fixture": "constant",
+      "type_over_all_52": "constant"
+     },
+     {
+      "agree": true,
+      "candidate": "C1",
+      "law": "FUNNEL",
+      "type_off_fixture": "anti-monotone",
+      "type_over_all_52": "anti-monotone"
+     },
+     {
+      "agree": true,
+      "candidate": "C1",
+      "law": "COUNTER-LAW",
+      "type_off_fixture": "anti-monotone",
+      "type_over_all_52": "anti-monotone"
+     },
+     {
+      "agree": true,
+      "candidate": "C4a",
+      "law": "DET",
+      "type_off_fixture": "neither",
+      "type_over_all_52": "neither"
+     },
+     {
+      "agree": true,
+      "candidate": "C4a",
+      "law": "FUNNEL",
+      "type_off_fixture": "neither",
+      "type_over_all_52": "neither"
+     },
+     {
+      "agree": true,
+      "candidate": "C4a",
+      "law": "COUNTER-LAW",
+      "type_off_fixture": "neither",
+      "type_over_all_52": "neither"
+     },
+     {
+      "agree": true,
+      "candidate": "C4c",
+      "law": "DET",
+      "type_off_fixture": "anti-monotone",
+      "type_over_all_52": "anti-monotone"
+     },
+     {
+      "agree": true,
+      "candidate": "C4c",
+      "law": "FUNNEL",
+      "type_off_fixture": "anti-monotone",
+      "type_over_all_52": "anti-monotone"
+     },
+     {
+      "agree": true,
+      "candidate": "C4c",
+      "law": "COUNTER-LAW",
+      "type_off_fixture": "anti-monotone",
+      "type_over_all_52": "anti-monotone"
+     }
+    ]
+   }
+  },
+  {
+   "claim": "C1's MONOTONICITY TYPE AT EVERY DECLARED STATE.  C4c is state-blind and its type is state-free by construction; C1 is NOT -- omega reads rho -- so its immunity to the amnesty sweep is a measurement and not a structural property, and the measurement is made here rather than argued.  C1 is linear in the declared state (two routes, 0 disagreements at the committed state), and over the 224 comparable off-fixture pairs it is anti-monotone at ALL 4845 declared states, at FUNNEL and at the counter-law alike.  That is why no state inverts it -- and the general claim that a monotone separator is immune by construction is false for state-dependent statistics (see D5).",
+   "class": "amnesty",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-C1STATE",
+   "must_pass": true,
+   "passed": true,
+   "value": [
+    {
+     "law": "FUNNEL",
+     "route_disagreements_at_the_committed_state": 0,
+     "states": 4845,
+     "states_at_which_C1_is_anti_monotone": 4845
+    },
+    {
+     "law": "COUNTER-LAW",
+     "route_disagreements_at_the_committed_state": 0,
+     "states": 4845,
+     "states_at_which_C1_is_anti_monotone": 4845
+    }
+   ]
+  },
+  {
+   "claim": "THE PANEL CLASS, DECLARED AND HASHED.  Nine further statistics, none of them a hunt candidate: each was constructed AGAINST the delivered unit with the fixture already known, and each is carried here because a corridor that only ever meets its author's constructions has not been tested.  They are declared as post-fixture, hashed like the six, gated by the same battery, and evaluated only after the barrier.  TUNE is the permanent negative control of the freeze audit.",
+   "class": "panel",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-00B",
+   "must_pass": true,
+   "passed": true,
+   "value": 9
+  },
+  {
+   "claim": "THE FOUR COUNTEREXAMPLE CORPSES, EACH AT ITS NAMED GATE.  D3 and TUNE compare carrier NAMES and die at the name-blindness gate -- TUNE twice over, since the source scan catches it as well, which is the point of a negative control.  C5 is name-blind and refuses total erasure, and the amnesty sweep inverts it, because the datum it adds to the pair-resolution index is the declared state's, and the state moves.  D5 as written reads a configuration by name; its name-blind completion is measured ANTI-MONOTONE at the committed state and the sweep inverts it anyway -- which refutes 'a monotone separator passes the amnesty gate by construction' for state-dependent statistics.",
+   "class": "panel",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-CORPSE",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "C5 (R1)": {
+     "at_the_relabelled_state_(3/4,1/16,1/16,1/16,1/16)": [
+      "998",
+      "996",
+      "2988"
+     ],
+     "dies_at": "the amnesty sweep (state relabelling)",
+     "name_blind": true,
+     "refuses_total_erasure": true,
+     "sweep_INVERTING": [
+      3975,
+      3975,
+      3975,
+      3975,
+      3975
+     ]
+    },
+    "D3 (R2)": {
+     "dies_at": "the name-blindness gate",
+     "name_blind": false,
+     "sweep_INVERTING": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "two_boundaries_of_the_SAME_shape_it_separates": {
+      "same_shape_invariant": true,
+      "{01|2|3|4}": "3",
+      "{02|1|3|4}": "2"
+     },
+     "would_otherwise_pass": true
+    },
+    "D5 (R2)": {
+     "dies_at": "the name-blindness gate as written; its name-blind completion D5N at the sweep",
+     "monotonicity_type_at_the_committed_state": [
+      "anti-monotone"
+     ],
+     "name_blind": false,
+     "sweep_INVERTING_literal": [
+      4350,
+      4350,
+      4350,
+      4350,
+      4350
+     ],
+     "sweep_INVERTING_name_blind_completion": [
+      2380,
+      2380,
+      2380,
+      2380,
+      2380
+     ]
+    },
+    "TUNE (R3)": {
+     "caught_by_the_source_scan": true,
+     "dies_at": "the name-blindness gate AND the source scan",
+     "name_blind": false,
+     "sweep_INVERTING": [
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   }
+  },
+  {
+   "claim": "THE FUSED CLAIM, MEASURED OVER THE NAME-BLIND CLASS AT EVERY COMMITTED CONFIGURATION.  Every separating (statistic, law) row of the whole declared-plus-panel class that passes the name-blindness gate falls to at least one of the three arms: it is a function of the covariant shape invariant (resolution data relative to the declared state's level partition), or its verdict is entailed by the committed chain's order, or the amnesty sweep inverts it.  None is unaccounted; there is no robust name-blind separator at any committed law.  The gate is not vacuous: the rows that ARE unaccounted are exactly the label-reading constructions, which separate, are not order-entailed and no state inverts -- and which the name-blindness gate takes.",
    "class": "verdict",
-   "fixture_touched_when_fired": true,
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-FUSED",
+   "must_pass": true,
+   "passed": true,
+   "value": {
+    "label_reading_rows_unaccounted_by_any_arm": 6,
+    "name_blind_rows_unaccounted_by_any_arm": 0,
+    "name_blind_separating_rows": 42,
+    "separating_rows_measured": 57,
+    "the_label_readers_that_would_otherwise_survive": [
+     "D3",
+     "TUNE"
+    ]
+   }
+  },
+  {
+   "claim": "THE DISQUALIFICATION OF THE ONE CORRIDOR SURVIVOR, ITS GROUNDS IN THE ORDER OF THEIR FORCE.  Order-entailment and total erasure are each independently sufficient and each bites at EVERY committed law, symmetric or not; the identity-free split is collateral; the vacuous covariance gate is not a ground at all but a statement that one of five gates did not test C1.  And the separating content is not new: C1 is the sum of omega over the same 31 preparations whose rows the terminal cycle already counted and already dismissed -- 15 of 155, 12 at FUNNEL and 3 at the counter-law (A19), 'a grading of coarseness with the sign flipped rather than a reading of provenance' (A17, verbatim).",
+   "class": "verdict",
+   "fixture_stage_declared_when_fired": true,
+   "id": "L4-C1-DQ",
+   "must_pass": true,
+   "passed": true,
+   "value": [
+    {
+     "ground": "ORDER-ENTAILMENT.  C1 is measured anti-monotone in the refinement order -- off-fixture and, by L4-EXT, over the whole 52-record lattice -- and the committed triple is a chain whose coarsest member is the legitimate patch, so its verdict is the order's and reads no provenance.  The terminal cycle adjudicated exactly this case on exactly these rows (A17, A18, A19).",
+     "independently_sufficient": true,
+     "measured": true,
+     "rank": 1
+    },
+    {
+     "ground": "TOTAL ERASURE.  The tolerance that admits the legitimate chart and rejects both forgeries also admits the one-atom boundary, which forgets the entire carrier.",
+     "independently_sufficient": true,
+     "measured": true,
+     "rank": 2
+    },
+    {
+     "ground": "THE IDENTITY-FREE SIDE.  C1 takes 3 distinct values on the 745 admissible patches at identity-free censused laws, where eps takes one, so it splits the side on which proper charts live.",
+     "independently_sufficient": false,
+     "measured": true,
+     "rank": 3
+    },
+    {
+     "ground": "THE COVARIANCE GATE IS VACUOUS AT THE COUNTER-LAW -- and this carries NO INFORMATION.  A vacuous universal quantification is satisfied, not evaded: nothing about C1 was tested.  The correct accounting is not that C1 failed a gate but that C1 was SCREENED BY FOUR GATES, NOT FIVE.  A symmetry-free configuration is an admissible configuration.",
+     "independently_sufficient": false,
+     "measured": true,
+     "rank": 4
+    }
+   ]
+  },
+  {
+   "claim": "THE XOR TALLY OVER THE DECLARED FAMILY -- AN OBSERVATION, NOT A THEOREM.  Over the separating rows of the six declared candidates, each separation is EITHER entailed by the refinement order OR inverted by the amnesty sweep, and none is both.  This is a property of the declared family and not of statistics on declared data, and the panel class shows why: D1 is in NEITHER arm (state-blind, non-monotone, never inverted) and D5N is in BOTH (anti-monotone at the committed state and inverted anyway).  The claim that carries the verdict is not this tally but L4-FUSED.",
+   "class": "verdict",
+   "fixture_stage_declared_when_fired": true,
    "id": "L4-DICH",
    "must_pass": false,
    "passed": true,
@@ -1230,7 +1704,7 @@
  ],
  "pin_commit": "b4fc87c",
  "schema": "rq0-l4-nomological-fingerprint-receipt-v1",
- "source_sha256": "203570c51e988efc5a136b3a3fa615849b96710aeebda9bcff3125ebbd702741",
+ "source_sha256": "f65f20bd79be546d25cff4330a17bd96e1232cb0c2a786a993599b4958adc288",
  "tables": {
   "admitted_isomorphism_action": [
    {
@@ -1374,6 +1848,20 @@
     "verdict": "survives the sweep"
    }
   ],
+  "c1_monotonicity_over_the_simplex": [
+   {
+    "law": "FUNNEL",
+    "route_disagreements_at_the_committed_state": 0,
+    "states": 4845,
+    "states_at_which_C1_is_anti_monotone": 4845
+   },
+   {
+    "law": "COUNTER-LAW",
+    "route_disagreements_at_the_committed_state": 0,
+    "states": 4845,
+    "states_at_which_C1_is_anti_monotone": 4845
+   }
+  ],
   "c1_pointwise_profile": [
    {
     "law": "DET",
@@ -1407,6 +1895,24 @@
    "keys_with_fan_in_one": 699,
    "worst_fan_in": 428
   },
+  "committed_law_cardinalities": {
+   "COUNTER-LAW": 120,
+   "DET": 3125,
+   "FUNNEL": 21,
+   "FUNNEL-CLOSURE": 3006,
+   "REV": 120
+  },
+  "committed_laws_invariant_under_relabelling": {
+   "COUNTER-LAW": 120,
+   "DET": 1,
+   "FUNNEL": 1,
+   "FUNNEL-CLOSURE": 1,
+   "REV": 1
+  },
+  "comparable_pair_populations": {
+   "off_fixture_comparable_ordered_pairs": 448,
+   "off_fixture_comparable_unordered_pairs": 224
+  },
   "corridor_gates_off_fixture": [
    {
     "G1_not_refinement_monotone": false,
@@ -1416,6 +1922,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C1",
     "distinct_values_off_fixture": 1,
     "law": "DET",
@@ -1430,6 +1938,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C1",
     "distinct_values_off_fixture": 10,
     "law": "FUNNEL",
@@ -1444,6 +1954,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C1",
     "distinct_values_off_fixture": 1,
     "law": "REV",
@@ -1458,6 +1970,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C1",
     "distinct_values_off_fixture": 1,
     "law": "FUNNEL-CLOSURE",
@@ -1472,6 +1986,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C1",
     "distinct_values_off_fixture": 25,
     "law": "COUNTER-LAW",
@@ -1486,6 +2002,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C2",
     "distinct_values_off_fixture": 4,
     "law": "DET",
@@ -1500,6 +2018,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C2",
     "distinct_values_off_fixture": 4,
     "law": "FUNNEL",
@@ -1514,6 +2034,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C2",
     "distinct_values_off_fixture": 4,
     "law": "REV",
@@ -1528,6 +2050,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C2",
     "distinct_values_off_fixture": 4,
     "law": "FUNNEL-CLOSURE",
@@ -1542,6 +2066,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C2",
     "distinct_values_off_fixture": 4,
     "law": "COUNTER-LAW",
@@ -1556,6 +2082,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C3",
     "distinct_values_off_fixture": 1,
     "law": "DET",
@@ -1570,6 +2098,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C3",
     "distinct_values_off_fixture": 1,
     "law": "FUNNEL",
@@ -1584,6 +2114,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C3",
     "distinct_values_off_fixture": 1,
     "law": "REV",
@@ -1598,6 +2130,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C3",
     "distinct_values_off_fixture": 1,
     "law": "FUNNEL-CLOSURE",
@@ -1612,6 +2146,17 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
     "candidate": "C3",
     "distinct_values_off_fixture": 1,
     "law": "COUNTER-LAW",
@@ -1626,6 +2171,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4a",
     "distinct_values_off_fixture": 3,
     "law": "DET",
@@ -1640,6 +2187,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4a",
     "distinct_values_off_fixture": 3,
     "law": "FUNNEL",
@@ -1654,6 +2203,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4a",
     "distinct_values_off_fixture": 3,
     "law": "REV",
@@ -1668,6 +2219,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4a",
     "distinct_values_off_fixture": 3,
     "law": "FUNNEL-CLOSURE",
@@ -1682,6 +2235,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4a",
     "distinct_values_off_fixture": 3,
     "law": "COUNTER-LAW",
@@ -1696,6 +2251,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4b",
     "distinct_values_off_fixture": 2,
     "law": "DET",
@@ -1710,6 +2267,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4b",
     "distinct_values_off_fixture": 1,
     "law": "FUNNEL",
@@ -1724,6 +2283,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4b",
     "distinct_values_off_fixture": 2,
     "law": "REV",
@@ -1738,6 +2299,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4b",
     "distinct_values_off_fixture": 2,
     "law": "FUNNEL-CLOSURE",
@@ -1752,6 +2315,8 @@
     "G3_nondegenerate": false,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4b",
     "distinct_values_off_fixture": 1,
     "law": "COUNTER-LAW",
@@ -1766,6 +2331,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4c",
     "distinct_values_off_fixture": 6,
     "law": "DET",
@@ -1780,6 +2347,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4c",
     "distinct_values_off_fixture": 6,
     "law": "FUNNEL",
@@ -1794,6 +2363,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4c",
     "distinct_values_off_fixture": 6,
     "law": "REV",
@@ -1808,6 +2379,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4c",
     "distinct_values_off_fixture": 6,
     "law": "FUNNEL-CLOSURE",
@@ -1822,6 +2395,8 @@
     "G3_nondegenerate": true,
     "G5_covariant": true,
     "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
     "candidate": "C4c",
     "distinct_values_off_fixture": 6,
     "law": "COUNTER-LAW",
@@ -2161,6 +2736,69 @@
     "total_erasure": "-20"
    }
   ],
+  "freeze_source_scan": [
+   {
+    "clean": true,
+    "definition": "c1_counterfactual_occupancy",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c1_profile",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c2_generation_mismatch",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c3_law_fan_in",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c4a_state_alignment",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c4a_route2",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c4b_reach_alignment",
+    "fixture_references": []
+   },
+   {
+    "clean": true,
+    "definition": "c4c_pair_resolution",
+    "fixture_references": []
+   },
+   {
+    "clean": false,
+    "definition": "tune_negative_control (NEGATIVE CONTROL)",
+    "fixture_references": [
+     "PTOMO"
+    ]
+   }
+  ],
+  "full_group_scope_over_the_declared_simplex": {
+   "admitted_isomorphism_group_size_histogram": {
+    "1": 1200,
+    "12": 30,
+    "2": 2640,
+    "24": 25,
+    "4": 510,
+    "6": 440
+   },
+   "states": 4845,
+   "states_carrying_the_full_24": 25,
+   "states_carrying_the_whole_120": 0,
+   "states_with_a_trivial_group": 1200
+  },
   "identity_free_side": [
    {
     "G6_side_intact": false,
@@ -2387,6 +3025,1337 @@
     }
    }
   ],
+  "monotonicity_type_extension": {
+   "all_52_comparable_pairs": 306,
+   "off_fixture_comparable_pairs": 224,
+   "rows": [
+    {
+     "agree": true,
+     "candidate": "C1",
+     "law": "DET",
+     "type_off_fixture": "constant",
+     "type_over_all_52": "constant"
+    },
+    {
+     "agree": true,
+     "candidate": "C1",
+     "law": "FUNNEL",
+     "type_off_fixture": "anti-monotone",
+     "type_over_all_52": "anti-monotone"
+    },
+    {
+     "agree": true,
+     "candidate": "C1",
+     "law": "COUNTER-LAW",
+     "type_off_fixture": "anti-monotone",
+     "type_over_all_52": "anti-monotone"
+    },
+    {
+     "agree": true,
+     "candidate": "C4a",
+     "law": "DET",
+     "type_off_fixture": "neither",
+     "type_over_all_52": "neither"
+    },
+    {
+     "agree": true,
+     "candidate": "C4a",
+     "law": "FUNNEL",
+     "type_off_fixture": "neither",
+     "type_over_all_52": "neither"
+    },
+    {
+     "agree": true,
+     "candidate": "C4a",
+     "law": "COUNTER-LAW",
+     "type_off_fixture": "neither",
+     "type_over_all_52": "neither"
+    },
+    {
+     "agree": true,
+     "candidate": "C4c",
+     "law": "DET",
+     "type_off_fixture": "anti-monotone",
+     "type_over_all_52": "anti-monotone"
+    },
+    {
+     "agree": true,
+     "candidate": "C4c",
+     "law": "FUNNEL",
+     "type_off_fixture": "anti-monotone",
+     "type_over_all_52": "anti-monotone"
+    },
+    {
+     "agree": true,
+     "candidate": "C4c",
+     "law": "COUNTER-LAW",
+     "type_off_fixture": "anti-monotone",
+     "type_over_all_52": "anti-monotone"
+    }
+   ]
+  },
+  "panel_class_gates": [
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "C5",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "-2",
+    "forged_2+2": "-4",
+    "law": "DET",
+    "legitimate_tomographic": "-12",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 3975,
+    "sweep_separating": 870,
+    "sweep_tied": 0,
+    "total_erasure": "3980"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "C5",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "-2",
+    "forged_2+2": "-4",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "-12",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 3975,
+    "sweep_separating": 870,
+    "sweep_tied": 0,
+    "total_erasure": "3980"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "C5",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "-2",
+    "forged_2+2": "-4",
+    "law": "REV",
+    "legitimate_tomographic": "-12",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 3975,
+    "sweep_separating": 870,
+    "sweep_tied": 0,
+    "total_erasure": "3980"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "C5",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "-2",
+    "forged_2+2": "-4",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "-12",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 3975,
+    "sweep_separating": 870,
+    "sweep_tied": 0,
+    "total_erasure": "3980"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "C5",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "-2",
+    "forged_2+2": "-4",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "-12",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 3975,
+    "sweep_separating": 870,
+    "sweep_tied": 0,
+    "total_erasure": "3980"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D1",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "DET",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D1",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D1",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "REV",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D1",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D1",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D2",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "1/8",
+    "forged_2+2": "1/4",
+    "law": "DET",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4692,
+    "sweep_tied": 153,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D2",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "1/8",
+    "forged_2+2": "1/4",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4692,
+    "sweep_tied": 153,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D2",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "1/8",
+    "forged_2+2": "1/4",
+    "law": "REV",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4692,
+    "sweep_tied": 153,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D2",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "1/8",
+    "forged_2+2": "1/4",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4692,
+    "sweep_tied": 153,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D2",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "1/8",
+    "forged_2+2": "1/4",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4692,
+    "sweep_tied": 153,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": false,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D3",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "3",
+    "forged_2+2": "5",
+    "law": "DET",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": false,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D3",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "3",
+    "forged_2+2": "5",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": false,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D3",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "3",
+    "forged_2+2": "5",
+    "law": "REV",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": false,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D3",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "3",
+    "forged_2+2": "5",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      2,
+      1,
+      3,
+      4
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D3",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 5,
+    "forged_2+1+1": "3",
+    "forged_2+2": "5",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D4",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "DET",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "1"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D4",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "1"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D4",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "REV",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "1"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D4",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "1"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D4",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1",
+    "forged_2+2": "2",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "1"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D5",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "DET",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 4350,
+    "sweep_separating": 330,
+    "sweep_tied": 165,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D5",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 4350,
+    "sweep_separating": 330,
+    "sweep_tied": 165,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D5",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "REV",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 4350,
+    "sweep_separating": 330,
+    "sweep_tied": 165,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D5",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 4350,
+    "sweep_separating": 330,
+    "sweep_tied": 165,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": {
+     "record": "((0,), (1,), (2,), (3, 4))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "D5",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 4350,
+    "sweep_separating": 330,
+    "sweep_tied": 165,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D5N",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "DET",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 2380,
+    "sweep_separating": 1650,
+    "sweep_tied": 815,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D5N",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 2380,
+    "sweep_separating": 1650,
+    "sweep_tied": 815,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D5N",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "REV",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 2380,
+    "sweep_separating": 1650,
+    "sweep_tied": 815,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D5N",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 2380,
+    "sweep_separating": 1650,
+    "sweep_tied": 815,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": false,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D5N",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 6,
+    "forged_2+1+1": "-1/2",
+    "forged_2+2": "-1",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "-3",
+    "monotonicity_type": "anti-monotone",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 2380,
+    "sweep_separating": 1650,
+    "sweep_tied": 815,
+    "total_erasure": "-5"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "DET",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 1552,
+    "sweep_separating": 1276,
+    "sweep_tied": 2017,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "33/125",
+    "forged_2+2": "263/1000",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "23/2000",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 1552,
+    "sweep_separating": 3292,
+    "sweep_tied": 1,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "REV",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 1552,
+    "sweep_separating": 1276,
+    "sweep_tied": 2017,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "0",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 1552,
+    "sweep_separating": 1276,
+    "sweep_tied": 2017,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": null,
+    "GNB_name_blind": true,
+    "candidate": "D",
+    "certifies_total_erasure_at_that_tolerance": true,
+    "distinct_values_off_fixture": 25,
+    "forged_2+1+1": "419/1600",
+    "forged_2+2": "2093/8000",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "9/800",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 1552,
+    "sweep_separating": 3183,
+    "sweep_tied": 110,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1, 2, 4), (3,))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "TUNE",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "DET",
+    "legitimate_tomographic": "-1000",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1, 2, 4), (3,))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "TUNE",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 10,
+    "forged_2+1+1": "33/125",
+    "forged_2+2": "263/1000",
+    "law": "FUNNEL",
+    "legitimate_tomographic": "-1999977/2000",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1, 2, 4), (3,))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "TUNE",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "REV",
+    "legitimate_tomographic": "-1000",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": false,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": false,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1, 2, 4), (3,))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "TUNE",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 3,
+    "forged_2+1+1": "1/4",
+    "forged_2+2": "1/4",
+    "law": "FUNNEL-CLOSURE",
+    "legitimate_tomographic": "-1000",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 24,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   },
+   {
+    "G1_not_refinement_monotone": true,
+    "G1t_non_monotone_in_the_refinement_order": true,
+    "G2a_not_a_function_of_eps": true,
+    "G2b_not_a_function_of_the_covariant_invariant": true,
+    "G3_nondegenerate": true,
+    "G5_covariant": true,
+    "G5_vacuous_no_admitted_isomorphism": true,
+    "GNB_label_reading_witness": {
+     "record": "((0, 1, 2, 4), (3,))",
+     "relabelling": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ]
+    },
+    "GNB_name_blind": false,
+    "candidate": "TUNE",
+    "certifies_total_erasure_at_that_tolerance": false,
+    "distinct_values_off_fixture": 25,
+    "forged_2+1+1": "419/1600",
+    "forged_2+2": "2093/8000",
+    "law": "COUNTER-LAW",
+    "legitimate_tomographic": "-799991/800",
+    "monotonicity_type": "neither",
+    "separates": true,
+    "stabilizer_order": 1,
+    "sweep_INVERTING": 0,
+    "sweep_separating": 4845,
+    "sweep_tied": 0,
+    "total_erasure": "0"
+   }
+  ],
   "per_candidate_verdicts": [
    {
     "amnesty_verdict": "survives the sweep",
@@ -2499,6 +4468,159 @@
     ]
    }
   ],
+  "shape_is_not_resolution": {
+   "marked_block_excess_at_the_committed_triple": [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   "orbit_classes_the_covariant_shape_invariant": 12,
+   "orbit_size_census": [
+    1,
+    1,
+    1,
+    3,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    6,
+    12
+   ],
+   "orbit_size_census_sums_to": 52,
+   "resolution_profile_classes": 7,
+   "resolution_profiles_that_split_into_two_orbits": 5,
+   "second_route_sum_over_s_of_p_4_minus_s": 12,
+   "the_splitting_profiles": [
+    [
+     1,
+     1,
+     1,
+     2
+    ],
+    [
+     1,
+     1,
+     3
+    ],
+    [
+     1,
+     2,
+     2
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     3
+    ]
+   ]
+  },
+  "the_c1_disqualification": [
+   {
+    "ground": "ORDER-ENTAILMENT.  C1 is measured anti-monotone in the refinement order -- off-fixture and, by L4-EXT, over the whole 52-record lattice -- and the committed triple is a chain whose coarsest member is the legitimate patch, so its verdict is the order's and reads no provenance.  The terminal cycle adjudicated exactly this case on exactly these rows (A17, A18, A19).",
+    "independently_sufficient": true,
+    "measured": true,
+    "rank": 1
+   },
+   {
+    "ground": "TOTAL ERASURE.  The tolerance that admits the legitimate chart and rejects both forgeries also admits the one-atom boundary, which forgets the entire carrier.",
+    "independently_sufficient": true,
+    "measured": true,
+    "rank": 2
+   },
+   {
+    "ground": "THE IDENTITY-FREE SIDE.  C1 takes 3 distinct values on the 745 admissible patches at identity-free censused laws, where eps takes one, so it splits the side on which proper charts live.",
+    "independently_sufficient": false,
+    "measured": true,
+    "rank": 3
+   },
+   {
+    "ground": "THE COVARIANCE GATE IS VACUOUS AT THE COUNTER-LAW -- and this carries NO INFORMATION.  A vacuous universal quantification is satisfied, not evaded: nothing about C1 was tested.  The correct accounting is not that C1 failed a gate but that C1 was SCREENED BY FOUR GATES, NOT FIVE.  A symmetry-free configuration is an admissible configuration.",
+    "independently_sufficient": false,
+    "measured": true,
+    "rank": 4
+   }
+  ],
+  "the_counterexample_corpses": {
+   "C5 (R1)": {
+    "at_the_relabelled_state_(3/4,1/16,1/16,1/16,1/16)": [
+     "998",
+     "996",
+     "2988"
+    ],
+    "dies_at": "the amnesty sweep (state relabelling)",
+    "name_blind": true,
+    "refuses_total_erasure": true,
+    "sweep_INVERTING": [
+     3975,
+     3975,
+     3975,
+     3975,
+     3975
+    ]
+   },
+   "D3 (R2)": {
+    "dies_at": "the name-blindness gate",
+    "name_blind": false,
+    "sweep_INVERTING": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "two_boundaries_of_the_SAME_shape_it_separates": {
+     "same_shape_invariant": true,
+     "{01|2|3|4}": "3",
+     "{02|1|3|4}": "2"
+    },
+    "would_otherwise_pass": true
+   },
+   "D5 (R2)": {
+    "dies_at": "the name-blindness gate as written; its name-blind completion D5N at the sweep",
+    "monotonicity_type_at_the_committed_state": [
+     "anti-monotone"
+    ],
+    "name_blind": false,
+    "sweep_INVERTING_literal": [
+     4350,
+     4350,
+     4350,
+     4350,
+     4350
+    ],
+    "sweep_INVERTING_name_blind_completion": [
+     2380,
+     2380,
+     2380,
+     2380,
+     2380
+    ]
+   },
+   "TUNE (R3)": {
+    "caught_by_the_source_scan": true,
+    "dies_at": "the name-blindness gate AND the source scan",
+    "name_blind": false,
+    "sweep_INVERTING": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
   "the_declared_candidate_family": [
    {
     "definition_sha256": "22bcaca93b2a665e",
@@ -2541,6 +4663,728 @@
     "id": "C4c",
     "name": "the maximal covariant candidate (pair-resolution index)",
     "orientation": "admitted iff the statistic is SMALL"
+   }
+  ],
+  "the_fused_claim_measured": [
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C1",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C1",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C4a",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C4a",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C4a",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C4a",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C4a",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C4c",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C4c",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C4c",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C4c",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)"
+    ],
+    "candidate": "C4c",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C5",
+    "certifies_total_erasure": false,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 3975,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C5",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 3975,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C5",
+    "certifies_total_erasure": false,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 3975,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C5",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 3975,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "C5",
+    "certifies_total_erasure": false,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 3975,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D1",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D1",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D1",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D1",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D1",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D2",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D2",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D2",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D2",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D2",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [],
+    "candidate": "D3",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   },
+   {
+    "arms": [],
+    "candidate": "D3",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   },
+   {
+    "arms": [],
+    "candidate": "D3",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   },
+   {
+    "arms": [],
+    "candidate": "D3",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   },
+   {
+    "arms": [],
+    "candidate": "D3",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D4",
+    "certifies_total_erasure": false,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D4",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D4",
+    "certifies_total_erasure": false,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D4",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "D4",
+    "certifies_total_erasure": false,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": false,
+    "sweep_INVERTING": 4350,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": false,
+    "sweep_INVERTING": 4350,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": false,
+    "sweep_INVERTING": 4350,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": false,
+    "sweep_INVERTING": 4350,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": false,
+    "sweep_INVERTING": 4350,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5N",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 2380,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5N",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 2380,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5N",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 2380,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5N",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 2380,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "order-entailed: the verdict is the committed chain's own order (Theorem 6.1)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D5N",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 2380,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D",
+    "certifies_total_erasure": true,
+    "law": "DET",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D",
+    "certifies_total_erasure": true,
+    "law": "REV",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)",
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D",
+    "certifies_total_erasure": true,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "state-reading: the amnesty sweep inverts it"
+    ],
+    "candidate": "D",
+    "certifies_total_erasure": true,
+    "law": "COUNTER-LAW",
+    "name_blind": true,
+    "sweep_INVERTING": 1552,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "TUNE",
+    "certifies_total_erasure": false,
+    "law": "DET",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "TUNE",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "TUNE",
+    "certifies_total_erasure": false,
+    "law": "REV",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [
+     "resolution-reading: a function of the covariant shape invariant (resolution profile refined by the declared state's level classes)"
+    ],
+    "candidate": "TUNE",
+    "certifies_total_erasure": false,
+    "law": "FUNNEL-CLOSURE",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": false
+   },
+   {
+    "arms": [],
+    "candidate": "TUNE",
+    "certifies_total_erasure": false,
+    "law": "COUNTER-LAW",
+    "name_blind": false,
+    "sweep_INVERTING": 0,
+    "unaccounted": true
+   }
+  ],
+  "the_panel_class": [
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "d52524f3a035a7c7",
+    "docstring": "C5 -- R1's construction (operator lens), completed to name-blindness. The pair-resolution index penalised by the excess of the block carrying the configuration the declared state marks out: PR(pi) + 1000 s, with s the mean over the maximal-mass configurations of |block(j)| - 1. Built to clear the pinned corridor, the inherited G1 AND the erasure column at once -- the only construction in this file that refuses total erasure.",
+    "id": "C5",
+    "name": "R1: pair-resolution penalised by the marked block's excess"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "b833b2a819ab45b5",
+    "docstring": "D1 -- R2's construction (effectus lens): the number of two-element declared atoms. State-blind, non-monotone, and a function of the atom sizes: the first arm of the fused theorem with an inhabitant.",
+    "id": "D1",
+    "name": "R2: the count of two-element atoms"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "9febd4d26244a425",
+    "docstring": "D2 -- R2's construction: the declared mass carried by two-element atoms. It READS the declared state and the sweep never inverts it -- R2's refutation of 'the sweep's power is co-extensive with state-reading'.",
+    "id": "D2",
+    "name": "R2: the mass on two-element atoms"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "9e1f8426439c90b4",
+    "docstring": "D3 -- R2's sharpest construction: D1 doubled plus the indicator of one named atom. It passes every pinned corridor gate at the counter-law under both readings of G1, separates, and survives the sweep -- and it COMPARES NAMES. The corpse the name-blindness gate exists to produce.",
+    "id": "D3",
+    "name": "R2: D1 doubled plus a NAMED-ATOM indicator"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "4b8a47e9744c13c9",
+    "docstring": "D4 -- R2's construction: the number of atoms of size neither 1 nor 4. It separates and REFUSES total erasure, which is why 'every separator certifies total erasure' is a measured property of three candidates and not a law.",
+    "id": "D4",
+    "name": "R2: the count of atoms of size neither 1 nor 4"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "39e8d00ced9a582e",
+    "docstring": "D5 -- R2's construction as written: the merged-pair count weighted by (1/2 - the mass at configuration 4). It is measured ANTI-MONOTONE at the committed state and the sweep inverts it anyway -- the refutation of the 'monotone separators are immune by construction' mechanism. As written it reads a configuration by NAME, so the name-blindness gate takes it.",
+    "id": "D5",
+    "name": "R2: merged pairs weighted by (1/2 - the mass AT CONFIGURATION 4)"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "b5b2508a4379234f",
+    "docstring": "D5N -- R2's D5 completed to name-blindness: the same statistic with the marked configuration's mass in place of configuration 4's. It carries R2's structural point through the gate.",
+    "id": "D5N",
+    "name": "R2's D5 completed to name-blindness (the marked mass)"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "46024ad5f7c6897e",
+    "docstring": "D -- R3's construction (instrument lens): C4a + C1/1000, a sum of two DECLARED candidates with no fixture reference whatever. It passes the full pinned and inherited corridor at the counter-law, which the declared family does not -- the declared family is not closed under sums.",
+    "id": "D",
+    "name": "R3: C4a + C1/1000, a sum of two declared candidates"
+   },
+   {
+    "declared": "AFTER the fixture was known -- a construction against this unit, not a candidate of the hunt",
+    "definition_sha256": "011ab04f8329938f",
+    "docstring": "TUNE -- R3's construction, and the PERMANENT NEGATIVE CONTROL of the freeze audit: D with one explicit read of the committed legitimate boundary. It would be registered as a fingerprint by the delivered machinery -- it separates, it is not order-entailed, and no state inverts it. It must be caught, and it must be caught by the SOURCE SCAN and by the NAME-BLINDNESS gate, never by the barrier, which cannot see it.",
+    "id": "TUNE",
+    "name": "R3: D with one read of the committed legitimate boundary (THE NEGATIVE CONTROL)"
    }
   ],
   "why_each_separation_happens": [
@@ -2630,14 +5474,23 @@
    }
   ]
  },
+ "the_freeze_is_NOT_carried_by": [
+  "the gate order, which cannot establish authoring order",
+  "the per-gate stage annotation, which records the stage a gate was written into and not what the run evaluated",
+  "any claim that no candidate was evaluated at a committed boundary: the orbit gates force such evaluations and L4-IMG counts them"
+ ],
+ "the_freeze_is_carried_by": [
+  "L4-00: the SHA-256 of every candidate definition's source text, registered before any fixture value is computed",
+  "L4-SRC: an automated scan of that source for any reference to a committed boundary, self-tested against a negative control"
+ ],
  "totals": {
-  "anchors": 16,
-  "anchors_passed": 16,
+  "anchors": 19,
+  "anchors_passed": 19,
   "candidates": 6,
-  "gates": 45,
-  "gates_passed": 31,
+  "gates": 57,
+  "gates_passed": 42,
   "must_pass_failures": 0,
-  "must_pass_gates": 15
+  "must_pass_gates": 25
  },
  "unit": "RQ0-L4 branch C -- the nomological fingerprint hunt"
 }
