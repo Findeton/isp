@@ -6586,3 +6586,18 @@ receipt completed; charter hedges restored; NOSLICE re-founded
 or renamed.  RUNBOOK §15 addendum: match every coordinate
 before claiming a class contrast.  STATUS updated this commit.
 Re-derivation dispatch next.
+
+## 2026-08-07 — O4 RE-DERIVATION DISPATCHED (RD-1..RD-6) (v13 LEDGER #197)
+Re-derivation worker dispatched (Opus 5, freeze-on-delivery, no
+git, the four unit files) with the adjudication's binding order:
+the matched table (3 classes × t ∈ {1,2,3} × candidates,
+identical gates, name-free representatives, one naming
+convention) as the central object; the unit verdict re-derived
+from it within the pin's vocabulary (DISCRIMINATED withdrawn;
+the table decides); the t=1/t=2 equal-residual asymmetry
+isolated or named open as the bequest to the transport pin; the
+wing-exchange cause gated; the arena test at matched name-free
+representatives, no double-counting; R3's F1–F6; charter hedges
+restored verbatim; NOSLICE re-founded or renamed.  On delivery:
+COMMIT-AS-IS FIRST, then verification, then terminal-or-bounce.
+Recorded after it occurs.
