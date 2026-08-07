@@ -5814,3 +5814,16 @@ BLOCKED-AT-THE-REFINEMENT-ORDER, with FINGERPRINT WITHDRAWN.
 The coarse present cannot testify: proved where symmetry acts;
 principled where it does not.**  BRANCH A next per the
 authorized plan.
+
+## 2026-08-06 — BRANCH A PINNED: THE PROVENANCE QUINTUPLE (v13
+## LEDGER #167)
+note-rq0-l5-provenance-quintuple-pin.md frozen (base 483311c):
+the quintuple patch with provenance = a carried chain of
+fine-grained B″-certificates; the axiom = B″ + (P1) admitted-path
++ (P2) checkpoint verification; THE TWO KILLS pre-registered with
+constructed adversaries (forged-history for the REGRESS;
+agreeing-classical-differing-quantum histories for the LOSSY);
+four discriminator families; the adjudicator's prior (at least
+one kill fires) recorded; if both fire, branch B is the proven
+residue and the adjudication returns to the user.  Dispatch
+recorded after it occurs.
