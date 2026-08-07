@@ -5837,3 +5837,19 @@ recorded-but-phased limit; freeze-on-delivery.  On return:
 verification → green → protocol → panel → adjudication — and if
 both kills fire, branch B is the proven residue, returning to
 the user.  Recorded after the dispatch occurred.
+
+## 2026-08-06 — BRANCH-A PIN AMENDED v2 (THE USER'S ORDER) +
+## PREDECESSOR WORKER STOPPED (v13 LEDGER #169)
+The first branch-A worker was stopped by a session exit (partial
+work, if any, is superseded).  THE USER: "ensure that in A we
+force keeping the amplitudes/quantum bits, so that we can more
+easily see if it really works" — the pin amended v2: provenance
+carries the FULL AMPLITUDE-LEVEL generation data (declared-data
+descriptions — no-cloning constrains cloning unknown states, not
+carrying declared amplitudes); BOTH variants run side by side
+(V-CL classical-only vs V-AMP amplitude-carrying) with THE DELTA
+a first-class deliverable; the LOSSY kill rescoped to
+VERIFICATION (the checks are record-producing — the
+recorded-but-phased limit applies to the checks; the lossy
+adversary posed against what any admitted verification can
+read).  Fresh dispatch against pin v2; recorded after it occurs.

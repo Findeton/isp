@@ -78,3 +78,36 @@ v13/paper-rq0-provenance-quintuple.md +
 v13/code/rq0_l5_provenance_exact.py + _output.txt +
 _receipt.json.  Then RUNBOOK §13: protocol freeze → three-lens
 panel → adjudication → STATUS.
+
+## AMENDMENT v2 (2026-08-06, the user's order — binding)
+
+**"Ensure that in A we force keeping the amplitudes/quantum bits,
+so that we can more easily see if it really works."**
+
+1. **Provenance carries the FULL AMPLITUDE-LEVEL generation
+   data**, not classical certificates only: the admitted path is
+   carried WITH the amplitude-level description of each step (the
+   operations' lifts/amplitude data as DECLARED-DATA descriptions —
+   legal to carry: no-cloning constrains copying unknown states,
+   not writing down the declared amplitudes of known admitted
+   operations) and the checkpoint B″-certificates are computed AT
+   the amplitude level.
+2. **BOTH VARIANTS RUN, mandatorily:** (V-CL) classical-only
+   provenance (the original pin's form) and (V-AMP) the
+   amplitude-carrying form — same discriminators, same kills,
+   side by side.  THE DELTA between them is a first-class
+   deliverable: it measures exactly what the quantum bits buy.
+3. **The LOSSY kill rescoped to where it honestly bites:** with
+   amplitudes carried, lossiness moves to VERIFICATION — the
+   checks are record-producing operations, and the
+   recorded-but-phased limit applies to the CHECKS: gate whether
+   checkpoint verification can consume the carried amplitude data
+   or necessarily collapses to its classical shadow.  The lossy
+   adversary is now posed against V-AMP: two histories agreeing
+   on everything any admitted VERIFICATION can read, differing in
+   the carried amplitude data, one legitimate one forged — if
+   they exist, LOSSY fires against V-AMP too; if V-AMP survives
+   where V-CL dies, the delta is the result.
+4. The REGRESS kill unchanged, posed against both variants.
+   Name-blindness, the honest freeze, and all discriminators
+   unchanged.
