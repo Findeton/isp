@@ -1715,3 +1715,15 @@ No task-independent W3 seam, actual outcome, autonomous chart, overlap,
 topology, influence, causal, QFT or gravity result is earned. Task selection
 is the next scientific obstruction, but no successor is authorized. The
 cycle is `ADJUDICATED / CYCLE-CLOSED`; halt.
+
+## 14. Symmetry self-tests (added 2026-08-07, from v13 #175)
+
+Any instrument that computes or enforces a symmetry-invariant
+quantity must carry a self-test that measures the quantity's
+invariance under the symmetry's own action (e.g. a switching
+sweep for gauge data), and the mutant table must include
+sign/orientation perturbations wherever a direction convention
+enters. A wholesale-replacement mutant does not test that the
+RIGHT invariant is computed. (Lesson: branch A's gauge-variant
+holonomy — Prop 5.4 exhibited the gauge orbit as physics; no
+mutant could catch it.)

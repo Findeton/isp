@@ -6001,3 +6001,29 @@ collapse reproduce exactly.  Convergent process finding: no
 sign-convention mutant, no gauge-covariance self-test — a
 four-line test of the paper's own Def 3.1 criterion would have
 caught everything.  Adjudication waits for R3.
+
+## 2026-08-07 — BRANCH-A R3 FROZEN + JOINT ADJUDICATION:
+## ACCEPT-WITH-MAJOR-REPAIRS; THE OUTCOME BOX SURVIVES WHOLE AND
+## STRENGTHENED; REPAIR NEXT (v13 LEDGER #175)
+R3 frozen (AWF; 46/46 recomputations; the freeze/mutant-repair
+audit PASSES — repairs real and targeted, the pre-repair mutant
+reconstructed and confirmed surviving; (P2)-weak exposed as an
+IDENTITY — why provenance adds no rejection power;
+true_histories outside the scan, inert but to be scanned; the §8
+slogan requires R3's functionality qualifier;
+BLOCKED-AT-THE-DECLARATION upheld by measurement).
+note-rq0-provenance-adjudication.md committed: grade resolved
+ACCEPT-WITH-MAJOR-REPAIRS (R2's artifact-REJECT honored
+operationally — no terminal until the corrected kill-gates re-run
+clean); the gauge-variance corrections ordered (constancy
+theorem; R2's stronger witness; L5-AMP-FREE in blindness form;
+the scissors resolved — the numerals reading binds); **THE
+ADJUDICATOR'S OWN ERROR OWNED: the pin's recorded-but-phased
+antecedent was mis-transported** (intra-sector-at-one-time vs
+cross-checkpoint); RUNBOOK §14 added (symmetry self-tests;
+sign/orientation mutants).  The outcome box survives whole:
+both kills, both variants, better proofs; PROVENANCE-CERTIFIES
+does not occur; **BRANCH B REMAINS THE PROVEN RESIDUE pending
+the repaired unit's verification — the adoption decision returns
+to the user at terminal.**  Repair R-1..R-9 dispatched next;
+recorded after it occurs.
