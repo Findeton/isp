@@ -6102,3 +6102,17 @@ CENSUS-COMPLETE + ACTION-TOO-WEAK; §14 self-test under the
 admitted relabellings and the 512 switchings mandatory).
 RUNBOOK §15 (declared-arena discipline) added.  ROADMAP addendum
 + STATUS updated in this commit.  Construction dispatch next.
+
+## 2026-08-07 — RQ0-SYNTH CONSTRUCTION DISPATCHED (v13 LEDGER #179)
+Construction worker dispatched (Opus 5, freeze-on-delivery, no
+git) against pin f74a8511b204 @ a14bda0: the six-unit theorem
+record + the first invariance census (arena family from terminal
+fixtures only, size computed; Q1–Q8 verdicts
+INVARIANT/INERT/ARTIFACT/BLOCKED with declared actions frozen
+before fixture truth; Q-OPT Δᴮ behind the exact-transport gate;
+Q1/Q2 positive controls, Q5 negative control, ACTION-TOO-WEAK
+live; §14 self-test under relabellings + the 512 switchings with
+a mis-conventioned moving control; L5-style mutant table;
+byte-identical delivery-mode runs).  On delivery:
+COMMIT-AS-IS FIRST (the #177 lesson), then verification, then
+§13 protocol freeze → panel.  Recorded after it occurs.
