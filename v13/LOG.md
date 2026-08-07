@@ -6166,3 +6166,32 @@ record-table verbatim-faithfulness).  Frozen file SHAs
 Three-lens panel (operator / effectus / instrument, Opus 5)
 dispatched immediately after this commit; reviews recorded on
 return.
+
+## 2026-08-07 — RQ0-SYNTH R2 (EFFECTUS) FROZEN (v13 LEDGER #182)
+review-rq0-synth-effectus.md frozen as delivered (sha256-12
+b6f72b1dab04).  Grade ACCEPT-WITH-FIXES (→ REJECT if fixes 1–2
+declined); 53 independent recomputations, ZERO arithmetic errors
+— every delivered number reproduces (1073 / 65 fibers /
+1,648,128; all eight distinct-value counts; the gauge sweep; the
+§2 commits and all sixteen verdict tokens).  THREE OF NINE
+VERDICTS REFUTED AS STATED: (1) K4 THE ASYMMETRY —
+ARENA-INVARIANT-Q8 is DEFINITIONAL, not measured (AST: Q8 reads
+only part+sigma, never law/rho; the seam-orient mutant leaves the
+verdict standing; the seam is a lattice maximum of the chain);
+(2) THE DEEPEST — READS-vs-ACTS: Q4 and Q5 anchor to the SAME
+triple 1280/240/420, read the same coordinates, carry identical
+dependence profiles, and get OPPOSITE verdicts from the
+declaration label alone — Deviation 3's mitigation FAILS and
+§9.2's physical-claims licensing rests on it; (3) K3 Q-OPT — the
+576-pair sweep is vacuous (0/1 matrices where B(U)=U so Δᴮ≡0 by
+identity; no arena coordinate ever varies; no real census row;
+the INERT+BLOCKED hybrid unauthorized).  Also: transport-lax
+reverses Q8's verdict while the self-test passes; SYN-ST-BROKEN's
+stated mechanism cannot bite (no admitted relabelling moves law
+or state, 0/1073); four of six relabelling columns vacuous;
+Deviation 5's zero-defect characterisation FALSE (256
+counterexamples; true criterion: square-again-fully-unbiased,
+128/128 vs 0/384).  SURVIVES FULLY EARNED: the family (K1 sound,
+no small-fiber artifact), ARENA-ARTIFACT-Q5 and -Q6,
+ARENA-INVARIANT-Q2, ARENA-INERT-Q7.  R1/R3 pending; adjudication
+after all three.
