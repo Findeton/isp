@@ -1,0 +1,2271 @@
+{
+ "anchors": [
+  {
+   "committed": [
+    1,
+    2,
+    5,
+    15,
+    52
+   ],
+   "computed": [
+    1,
+    2,
+    5,
+    15,
+    52
+   ],
+   "id": "A01",
+   "passed": true,
+   "quantity": "record-lattice sizes at 1..5 configurations",
+   "source": "Cycle B sec 4 (the record lattice)"
+  },
+  {
+   "committed": [
+    3125,
+    120
+   ],
+   "computed": [
+    3125,
+    120
+   ],
+   "id": "A02",
+   "passed": true,
+   "quantity": "DET and REV cardinalities at five configurations",
+   "source": "Cycle B Thm 4.4 / B'' M32"
+  },
+  {
+   "committed": [
+    120,
+    1
+   ],
+   "computed": [
+    120,
+    1
+   ],
+   "id": "A03",
+   "passed": true,
+   "quantity": "counter-law size and its reversible count",
+   "source": "B'' sec 6.4"
+  },
+  {
+   "committed": [
+    1280,
+    240,
+    420
+   ],
+   "computed": [
+    1280,
+    240,
+    420
+   ],
+   "id": "A04",
+   "passed": true,
+   "quantity": "Pres under DET at the legitimate tomographic minimum, forged 2+1+1 and forged 2+2",
+   "source": "stage-5 Thm 4.1 / B'' sec 6"
+  },
+  {
+   "committed": [
+    "1/16",
+    "1/8",
+    "3/16"
+   ],
+   "computed": [
+    "1/16",
+    "1/8",
+    "3/16"
+   ],
+   "id": "A05",
+   "passed": true,
+   "quantity": "epsilon at the two forged coarse patches and the legitimate one, at the committed branch-memory state",
+   "source": "stage-5 Thm 4.1 / 4.2 (the epsilon spectrum)"
+  },
+  {
+   "committed": [
+    1,
+    1,
+    1
+   ],
+   "computed": [
+    1,
+    1,
+    1
+   ],
+   "id": "A06",
+   "passed": true,
+   "quantity": "admissible records under DET, REV and the counter-law",
+   "source": "B'' Thm 3.1 (rigidity)"
+  },
+  {
+   "committed": [
+    24,
+    12
+   ],
+   "computed": [
+    24,
+    12
+   ],
+   "id": "A07",
+   "passed": true,
+   "quantity": "admitted isomorphisms of the declared data at the committed state, and the orbit count of the 52 records",
+   "source": "branch C Thm 7.1 / 7.3"
+  },
+  {
+   "committed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "computed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "id": "A08",
+   "passed": true,
+   "quantity": "omega at the three committed coarse patches under DET at the whole carrier",
+   "source": "stage-5 sec 9.1 / branch A A08"
+  },
+  {
+   "committed": [
+    1,
+    [
+     4
+    ]
+   ],
+   "computed": [
+    1,
+    [
+     4
+    ]
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "the one-step closed holonomy over the whole declared admitted lift family: one value, the phase 4, i.e. zeta_8^4 = -1",
+   "source": "branch A sec 5 (the constancy theorem)"
+  },
+  {
+   "committed": 4845,
+   "computed": 4845,
+   "id": "A10",
+   "passed": true,
+   "quantity": "declared state grid size at denominator 16",
+   "source": "stage-5 sec 5.4 (the declared state grid)"
+  },
+  {
+   "committed": [
+    13,
+    true
+   ],
+   "computed": [
+    13,
+    true
+   ],
+   "id": "A11",
+   "passed": true,
+   "quantity": "the number of NAMED declared states, and their epsilon triples, read from stage-5's own source and recomputed",
+   "source": "stage-5 sec 4 (the named-state table)"
+  },
+  {
+   "committed": [
+    3,
+    512
+   ],
+   "computed": [
+    3,
+    512
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "the checkpoint-phase switchings of the committed one-step diagram: free vertices and switching count",
+   "source": "branch A gate L5-HOL-GAUGE"
+  },
+  {
+   "committed": [
+    5,
+    5
+   ],
+   "computed": [
+    5,
+    5
+   ],
+   "id": "A13",
+   "passed": true,
+   "quantity": "every committed law contains the identity and a reversible operation, so all five sit on the rigid side",
+   "source": "B'' Thm 3.5 (the dichotomy) / stage-5 sec 6"
+  },
+  {
+   "committed": [
+    [
+     [
+      "01|23|4",
+      "0123|4",
+      2
+     ],
+     [
+      "01|2|3|4",
+      "0123|4",
+      2
+     ]
+    ],
+    [
+     [
+      "0123|4",
+      "0123|4",
+      2
+     ],
+     [
+      "01|23|4",
+      "01|23|4",
+      3
+     ]
+    ]
+   ],
+   "computed": [
+    [
+     [
+      "01|23|4",
+      "0123|4",
+      2
+     ],
+     [
+      "01|2|3|4",
+      "0123|4",
+      2
+     ]
+    ],
+    [
+     [
+      "0123|4",
+      "0123|4",
+      2
+     ],
+     [
+      "01|23|4",
+      "01|23|4",
+      3
+     ]
+    ]
+   ],
+   "id": "A14",
+   "passed": true,
+   "quantity": "THE CENSUS'S OWN Q8: the seam of the legitimate declaration with each forged one, and of the two forged ones with each other -- the three declarations form a CHAIN, so each seam is the coarser member, and the atom counts are 2, 2 and 3",
+   "source": "the chain of committed patch declarations (stage-5 sec 5)"
+  },
+  {
+   "committed": [
+    "3/16",
+    "1/16",
+    "1/8"
+   ],
+   "computed": [
+    "3/16",
+    "1/16",
+    "1/8"
+   ],
+   "id": "A15",
+   "passed": true,
+   "quantity": "the census instrument's own Q6 at the three declared patches, at the committed state under DET",
+   "source": "stage-5 Thm 4.1 (the epsilon spectrum), THROUGH Q6"
+  },
+  {
+   "committed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "computed": [
+    "0",
+    "0",
+    "0"
+   ],
+   "id": "A16",
+   "passed": true,
+   "quantity": "the census instrument's own Q7 at the three declared patches, at the committed state under DET",
+   "source": "stage-5 sec 9.1 (omega), THROUGH Q7"
+  },
+  {
+   "committed": [
+    [
+     1280,
+     240,
+     420
+    ],
+    [
+     false,
+     false,
+     false
+    ]
+   ],
+   "computed": [
+    [
+     1280,
+     240,
+     420
+    ],
+    [
+     false,
+     false,
+     false
+    ]
+   ],
+   "id": "A17",
+   "passed": true,
+   "quantity": "the census instrument's own Q5: the V-CL certificate's preserving-family size at the three declared patches under DET, and the terminal verdict, which is inadmissible at all three",
+   "source": "B'' sec 6 (the preserving families), THROUGH Q5"
+  },
+  {
+   "committed": [
+    1280,
+    240,
+    420
+   ],
+   "computed": [
+    1280,
+    240,
+    420
+   ],
+   "id": "A18",
+   "passed": true,
+   "quantity": "the census instrument's own Q4: the preserving-family size component of the generation profile at the three declared patches under DET",
+   "source": "B'' sec 6 / branch C sec 4, THROUGH Q4"
+  },
+  {
+   "committed": [
+    [
+     "1/2",
+     "-1/2"
+    ],
+    [
+     "-1/2",
+     "1/2"
+    ]
+   ],
+   "computed": [
+    [
+     "1/2",
+     "-1/2"
+    ],
+    [
+     "-1/2",
+     "1/2"
+    ]
+   ],
+   "id": "A19",
+   "passed": true,
+   "quantity": "Delta^B(H, H) at the Hadamard, in exact Q(zeta_8)",
+   "source": "v12 paper 1 sec 2 (the defect algebra)"
+  }
+ ],
+ "arena_family": {
+  "fibers": [
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "DET",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "DET",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "DET",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "FUNNEL",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "FUNNEL",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "FUNNEL",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "REV",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "REV",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "REV",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "FUNNEL-CLOSURE",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "FUNNEL-CLOSURE",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the selective-amnesty state"
+   }
+  ],
+  "sigma_total": 1073,
+  "size": 1648128,
+  "switch_free_vertices": 3,
+  "switchings": 512
+ },
+ "base_commit": "77b015e",
+ "findings": {
+  "ACTION_TOO_WEAK": false,
+  "Q_OPT": {
+   "obstruction": "the composition defect transports EXACTLY -- the arithmetic and the definition both -- and is then identically zero on every admissible arena, because Delta^B is non-zero only on non-monomial admitted operations and no committed law admits one: BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION",
+   "transport_arithmetic": true,
+   "transport_object": false,
+   "verdict": "ARENA-INERT-Q-OPT"
+  },
+  "declaration_sha256": "2872f23361b949587f0630f45165742d2e908af41df2d4d85b14df53e2404d72",
+  "verdict": {
+   "census_complete": true,
+   "tags": [
+    "ARENA-INVARIANT-Q1",
+    "ARENA-INVARIANT-Q2",
+    "ARENA-INVARIANT-Q3",
+    "ARENA-INVARIANT-Q4",
+    "ARENA-ARTIFACT-Q5",
+    "ARENA-ARTIFACT-Q6",
+    "ARENA-INERT-Q7",
+    "ARENA-INVARIANT-Q8",
+    "ARENA-INERT-Q-OPT",
+    "RQ0-SYNTH-CENSUS-COMPLETE"
+   ],
+   "thesis": "ADOPTED-ARENA-RELATIVITY: the legitimacy of a coarse patch is relative to a DECLARED ARENA.  Measured here: the legitimacy certificate of a FIXED patch declaration moves with the arena's law, while the fine-grained transition data, the closed holonomy, the rigidity classifier, the name-blind generation profile and the seam datum do not move at all."
+  },
+  "verdicts": {
+   "Q1": "ARENA-INVARIANT-Q1",
+   "Q2": "ARENA-INVARIANT-Q2",
+   "Q3": "ARENA-INVARIANT-Q3",
+   "Q4": "ARENA-INVARIANT-Q4",
+   "Q5": "ARENA-ARTIFACT-Q5",
+   "Q6": "ARENA-ARTIFACT-Q6",
+   "Q7": "ARENA-INERT-Q7",
+   "Q8": "ARENA-INVARIANT-Q8"
+  }
+ },
+ "gates": [
+  {
+   "claim": "THE PER-QUANTITY ARENA ACTION IS DECLARED BEFORE ANY FIXTURE VALUE EXISTS.  Every quantity's READS (its own arguments), ACTS (the coordinates whose variation is the tested arena change), value TRANSPORT under an admitted relabelling and NEUTRAL value are fixed here, each definition hashed by source; the census evaluation counter is still zero, which is what proves the order",
+   "class": "freeze",
+   "id": "SYN-FREEZE",
+   "passed": true,
+   "value": {
+    "census_evaluations_so_far": 0,
+    "declaration_sha256": "2872f23361b949587f0630f45165742d2e908af41df2d4d85b14df53e2404d72",
+    "quantities_declared": 8
+   }
+  },
+  {
+   "claim": "WHICH QUANTITIES CAN SEE THE SWITCHING COORDINATE AT ALL, decided by SOURCE SCAN rather than by assertion: exactly Q2 names an amplitude object, so exactly Q2 is swept over the 512 switchings and the others are switching-blind by construction.  A quantity that silently read amplitude data would be caught here",
+   "class": "freeze",
+   "id": "SYN-SWITCH-SCOPE",
+   "passed": true,
+   "value": {
+    "amplitude_tokens_per_quantity": {
+     "Q1": [],
+     "Q2": [
+      "cycle_basis_holonomies",
+      "sup_of_matrix"
+     ],
+     "Q3": [],
+     "Q4": [],
+     "Q5": [],
+     "Q6": [],
+     "Q7": [],
+     "Q8": []
+    }
+   }
+  },
+  {
+   "claim": "THE ADMISSIBLE-ARENA FAMILY IS ENUMERATED AND ITS SIZE IS COMPUTED, never typed: the product of the declared patch count, the FIBERED count of admitted relabellings over every (law, state) pair, and the switching count read off the committed diagram.  The family is fibered because the admitted-isomorphism group is a function of the declared law and state (branch C Thm 7.1), so a flat product would count relabellings no arena admits",
+   "class": "derivation",
+   "id": "SYN-FAMILY",
+   "passed": true,
+   "value": {
+    "admitted_relabellings_total": 1073,
+    "family_size": 1648128,
+    "fibers": 65,
+    "laws": 5,
+    "patches": 3,
+    "states": 13,
+    "switchings": 512
+   }
+  },
+  {
+   "claim": "NAME-BLINDNESS, GATED FIRST (the pin's order): branch C's generation/collision profile is carried EXACTLY by every admitted relabelling of the whole configuration -- the profile of the relabelled patch is the relabelled profile, with zero failures -- and the count of relabellings that actually move the patch is reported beside it, so a vacuous pass is visible.  A statistic that read a configuration's NAME would fail here",
+   "class": "derivation",
+   "id": "SYN-Q4-NAME-BLIND",
+   "passed": true,
+   "value": {
+    "configurations_actually_moved": 2144,
+    "equivariance_failures": 0,
+    "moves": false,
+    "tested": 3219
+   }
+  },
+  {
+   "claim": "THE INERT/INVARIANT DISTINCTION IS DECIDED AGAINST A CONSTRUCTED OBJECT, not against a pattern: for each quantity the NEUTRAL value declared in the freeze is BUILT -- the empty law, the trivial holonomy of the all-phases-zero member of the ambient family, the classifier that constrains nothing, the empty profile, the empty certificate, the zero defect, the one-atom seam -- and a quantity is gated INERT exactly when its single family value equals that built object.  The set of inert quantities is therefore a measurement",
+   "class": "derivation",
+   "id": "SYN-DEGENERACY",
+   "passed": true,
+   "value": {
+    "degenerate": {
+     "Q1": false,
+     "Q2": false,
+     "Q3": false,
+     "Q4": false,
+     "Q5": false,
+     "Q6": false,
+     "Q7": true,
+     "Q8": false
+    },
+    "gated_inert": [
+     "Q7"
+    ],
+    "independent_route": {
+     "Q1": false,
+     "Q2": false,
+     "Q3": false,
+     "Q4": false,
+     "Q5": false,
+     "Q6": false,
+     "Q7": true,
+     "Q8": false
+    }
+   }
+  },
+  {
+   "claim": "EVERY DECLARED QUANTITY HAS A VERDICT, and every verdict is one of the pin's four names.  The dependence profile behind each is measured over EVERY coordinate, whether or not that coordinate is in the quantity's declared acting set, so the declaration fixes the label and never what is shown",
+   "class": "derivation",
+   "id": "SYN-CENSUS-COMPLETE",
+   "passed": true,
+   "value": {
+    "quantities": 8,
+    "verdicts": {
+     "Q1": "ARENA-INVARIANT-Q1",
+     "Q2": "ARENA-INVARIANT-Q2",
+     "Q3": "ARENA-INVARIANT-Q3",
+     "Q4": "ARENA-INVARIANT-Q4",
+     "Q5": "ARENA-ARTIFACT-Q5",
+     "Q6": "ARENA-ARTIFACT-Q6",
+     "Q7": "ARENA-INERT-Q7",
+     "Q8": "ARENA-INVARIANT-Q8"
+    }
+   }
+  },
+  {
+   "claim": "THE DECLARED POSITIVE CONTROLS BEHAVE.  Q1, the fine-grained law's transition data, and Q2, the one-step closed holonomy, are gated ARENA-INVARIANT: the fine grain does not move when the coarse declaration, the state, the naming or the gauge moves.  If either had moved the census would say so here rather than be adjusted",
+   "class": "derivation",
+   "id": "SYN-POSITIVE-CONTROLS",
+   "passed": true,
+   "value": {
+    "Q1": "ARENA-INVARIANT-Q1",
+    "Q2": "ARENA-INVARIANT-Q2"
+   }
+  },
+  {
+   "claim": "THE DECLARED NEGATIVE CONTROL MOVES.  Q5, the legitimacy certificate of a FIXED patch declaration, changes when the arena's law changes -- which is the thesis itself, measured: the same declared patch receives different certificates in different admissible arenas",
+   "class": "derivation",
+   "id": "SYN-NEGATIVE-CONTROL",
+   "passed": true,
+   "value": {
+    "moves_under": {
+     "Q5": [
+      "law"
+     ]
+    },
+    "verdicts": {
+     "Q5": "ARENA-ARTIFACT-Q5"
+    }
+   }
+  },
+  {
+   "claim": "THE PRE-REGISTERED KILL DID NOT FIRE.  ACTION-TOO-WEAK fires when the arena action fails to move ANY declared negative control, which would mean the family under-generates and the census as instrumented is dead.  It is reported here as measured",
+   "class": "derivation",
+   "id": "SYN-ACTION-NOT-TOO-WEAK",
+   "passed": true,
+   "value": {
+    "ACTION_TOO_WEAK": false,
+    "quantities_that_move": [
+     "Q5",
+     "Q6"
+    ]
+   }
+  },
+  {
+   "claim": "EVERY QUANTITY GATED CONSTANT IS SHOWN TO BE A WORKING INSTRUMENT.  For each, a DECLARED AMBIENT WITNESS outside the admissible-arena family is exhibited at which the quantity takes another value: omega is non-zero at reduced preparations, the rigidity classifier returns proper coarse charts on the identity-free side, the holonomy takes other values off the unitary constraint, the law data separates the five laws, and the seam degenerates against the one-atom boundary.  Constancy on the family is therefore a fact ABOUT THE FAMILY, not about a dead instrument",
+   "class": "derivation",
+   "id": "SYN-NONDEGENERACY",
+   "passed": true,
+   "value": {
+    "Q1": {
+     "distinct_transition_data": 5,
+     "witness": "the five committed laws themselves"
+    },
+    "Q2": {
+     "admitted_holonomy_values": 1,
+     "ambient_holonomy_values": 8,
+     "witness": "the ambient (non-unitary-constrained) phase quadruples of the same declared modulus profile"
+    },
+    "Q3": {
+     "admissible_patches": 745,
+     "of_them_proper_coarse_charts": 745,
+     "witness": "the identity-free side of the dichotomy at three configurations"
+    },
+    "Q7": {
+     "ambient_instances_where_omega_is_non_zero": 201,
+     "scope": "[EXH] 5 committed laws x 5 charts (the three declared patches, the fine chart, the one-atom chart) x all 31 preparations = 775 instances",
+     "witness": "the declared preparation reduced below the whole carrier"
+    },
+    "Q8": {
+     "one_atom_seams": 1,
+     "witness": "the one-atom boundary, whose seam with every declared patch is the one-atom seam"
+    }
+   }
+  },
+  {
+   "claim": "SECTION 14, THE SYMMETRY SELF-TEST.  Every admitted relabelling is applied to the WHOLE declared configuration -- patch, law, state and, for the seam, the other declared patches -- at every arena of the family, and every quantity gated invariant or inert is FIXED under every one of them, transported by its declared transport.  The count of relabellings that actually move the configuration is reported beside it, so a vacuous pass is visible",
+   "class": "derivation",
+   "id": "SYN-ST-RELABEL",
+   "passed": true,
+   "value": {
+    "fixed": 19314,
+    "instances": 19314,
+    "instances_where_the_configuration_actually_moved": 12864,
+    "quantities": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4",
+     "Q7",
+     "Q8"
+    ]
+   }
+  },
+  {
+   "claim": "SECTION 14 AT THE GAUGE COORDINATE.  All 512 checkpoint-phase switchings are applied to the whole carried diagram -- every member of the declared admitted lift family switched at once -- and the one-step closed holonomy is fixed under every one.  The negative control reconstructed inside this test, the UNCLOSED convention (the walk that does not return to its start), MOVES under most of them: the gate has teeth",
+   "class": "derivation",
+   "id": "SYN-ST-SWITCH",
+   "passed": true,
+   "value": {
+    "carried_invariant_moved": 0,
+    "scope": "[EXH] all 512 switchings x [SAMP] 32 of 512 lifts; the whole family is swept at the base gauge by anchor A09",
+    "switchings": 512,
+    "unclosed_control_moved": 384
+   }
+  },
+  {
+   "claim": "THE DELIBERATELY MIS-CONVENTIONED CONTROL MOVES.  A broken action is reconstructed inside the self-test -- the patch relabelled while the law and the state are left alone, the classic transport bug -- and the quantities the census gates invariant FAIL under it.  A self-test no wrong action can fail is not a test",
+   "class": "derivation",
+   "id": "SYN-ST-BROKEN",
+   "passed": true,
+   "value": {
+    "failures_under_the_broken_action": 2772,
+    "instances": 9072
+   }
+  },
+  {
+   "claim": "THE NAME-READER CONTROL.  Branch C's label-reading statistic -- does the configuration NAMED 0 form a block of its own -- is run through the same self-test and MOVES under the admitted relabellings.  The self-test therefore discriminates name-blind quantities from name-readers, which is exactly what branch C's name-blindness principle requires of it",
+   "class": "derivation",
+   "id": "SYN-ST-NAME-READER",
+   "passed": true,
+   "value": {
+    "instances": 3219,
+    "name_reader_moved": 728
+   }
+  },
+  {
+   "claim": "TRANSPORT GATE 1, THE ARITHMETIC.  Delta^B is rebuilt here in exact Q(zeta_8) as 4-tuples of Fractions reduced mod x^4 + 1, and reproduces v12 paper 1's committed value at the Hadamard exactly.  The arithmetic transports",
+   "class": "derivation",
+   "id": "SYN-QOPT-T1",
+   "passed": true,
+   "value": {
+    "Delta_HH": [
+     [
+      "1/2",
+      "-1/2"
+     ],
+     [
+      "-1/2",
+      "1/2"
+     ]
+    ]
+   }
+  },
+  {
+   "claim": "TRANSPORT GATE 2, THE OBJECT.  Delta^B is a function of ADMITTED amplitude operations.  Measured: the one declared amplitude family in the corpus lifts a support step -- the two-configuration merge -- that NO committed law admits, and the only admitted operations carrying unitary lifts at all are the reversible ones, whose lifts are monomial.  The gate that must hold is the CONSISTENCY of the measurement -- the liftable count computed by two independent routes, singleton-support-injectivity and membership in the permutation key set -- and the ANSWER, which could have come out either way, is the recorded value: no committed law admits the lifted step",
+   "class": "derivation",
+   "id": "SYN-QOPT-T2",
+   "passed": true,
+   "value": {
+    "committed_laws_admitting_the_lifted_step": {
+     "COUNTER-LAW": false,
+     "DET": false,
+     "FUNNEL": false,
+     "FUNNEL-CLOSURE": false,
+     "REV": false
+    },
+    "second_route": {
+     "COUNTER-LAW": 1,
+     "DET": 120,
+     "FUNNEL": 1,
+     "FUNNEL-CLOSURE": 1,
+     "REV": 120
+    },
+    "the_object_transports": false,
+    "unitarily_liftable_admitted_operations": {
+     "COUNTER-LAW": 1,
+     "DET": 120,
+     "FUNNEL": 1,
+     "FUNNEL-CLOSURE": 1,
+     "REV": 120
+    }
+   }
+  },
+  {
+   "claim": "THE VALUE, WHERE THE OBJECT TRANSPORTS.  Over every composable pair of admitted reversible operations at the committed carrier -- the only admitted operations with unitary lifts -- Delta^B is identically ZERO, exactly and without exception.  The positive control fires: on the declared non-monomial lift the same instrument returns a NON-zero defect, so the zero is a fact about the admitted operations and not about the instrument",
+   "class": "derivation",
+   "id": "SYN-QOPT-VALUE",
+   "passed": true,
+   "value": {
+    "admitted_pairs_swept": 576,
+    "non_zero_defects": 0,
+    "positive_control_non_zero_on_the_declared_lift": true
+   }
+  },
+  {
+   "claim": "SCOPE, DECLARED, AND THE CONTROL MEASURED RATHER THAN ASSUMED.  The reversible sweep is [SAMP] over 24 x 24 of the 120 admitted permutations (576 pairs).  The non-monomial control is [EXH] over the whole 512-member declared lift family, and the defect is non-zero on 384 of them -- not on all: the remaining 128 are the phase choices whose square is again non-monomial, where the Born map happens to compose.  What the zero above says is therefore that the defect is non-zero only where the laws admit nothing",
+   "class": "disclosure",
+   "id": "SYN-QOPT-SCOPE",
+   "passed": true,
+   "value": {
+    "lift_family": 512,
+    "non_zero_defects_in_the_family": 384,
+    "reversible_pairs_swept": 576
+   }
+  },
+  {
+   "claim": "EXACT THROUGHOUT.  An AST scan of this source finds NO float literal and no float-producing name (math, numpy, float, round); every quantity is a Fraction, an integer-indexed partition, or a 4-tuple of Fractions in Q(zeta_8) reduced mod x^4 + 1, where tuple equality IS field equality.  The scan reads IMPORTS and CALLS, so naming a type in an isinstance test is not mistaken for using it",
+   "class": "derivation",
+   "id": "SYN-EXACT",
+   "passed": true,
+   "value": {
+    "banned_imports_or_calls": [],
+    "float_literals": 0,
+    "modules_imported": [
+     "__future__",
+     "argparse",
+     "ast",
+     "concurrent",
+     "fractions",
+     "hashlib",
+     "inspect",
+     "itertools",
+     "json",
+     "pathlib",
+     "rq0_l0_fixed_point_exact",
+     "rq0_l2_admissibility_exact",
+     "rq0_l3_epsilon_exact",
+     "rq0_l4_fingerprint_exact",
+     "rq0_l5_provenance_exact",
+     "subprocess",
+     "sys"
+    ]
+   }
+  },
+  {
+   "claim": "THE FALSIFICATION SUITE, RUN AND RECORDED.  Every declared mutant breaks exactly one anchor or one derivation step, is run to completion, must EXIT 1, and must falsify at least one NAMED gate or anchor.  The suite includes the sign and orientation mutants of the holonomy's closed-walk convention, an orientation mutant of the seam's refinement order, a stat-label-style name-reader, the ACTION-WEAKENING mutant that collapses the arena action (it must be killed by the negative control), and anchor mutants",
+   "class": "freeze",
+   "id": "SYN-MUTANTS",
+   "passed": true,
+   "value": {
+    "died": 20,
+    "kills": {
+     "action-weaken": [
+      "A11",
+      "A13",
+      "SYN-FAMILY",
+      "SYN-Q4-NAME-BLIND",
+      "SYN-NEGATIVE-CONTROL",
+      "SYN-ACTION-NOT-TOO-WEAK",
+      "SYN-NONDEGENERACY",
+      "SYN-ST-BROKEN",
+      "SYN-ST-NAME-READER"
+     ],
+     "anchor-A04": [
+      "A04"
+     ],
+     "anchor-A05": [
+      "A05"
+     ],
+     "anchor-A09": [
+      "A09"
+     ],
+     "anchor-A11": [
+      "A11"
+     ],
+     "anchor-A12": [
+      "A12"
+     ],
+     "anchor-A19": [
+      "A19"
+     ],
+     "born-lax": [
+      "A19",
+      "SYN-QOPT-T1",
+      "SYN-QOPT-VALUE"
+     ],
+     "degeneracy-lax": [
+      "SYN-DEGENERACY"
+     ],
+     "eps-lax": [
+      "A11"
+     ],
+     "float-lax": [
+      "SYN-EXACT"
+     ],
+     "hol-orient": [
+      "A09"
+     ],
+     "hol-sign": [
+      "A09"
+     ],
+     "name-reader": [
+      "SYN-Q4-NAME-BLIND"
+     ],
+     "omega-lax": [
+      "A16"
+     ],
+     "seam-orient": [
+      "A14"
+     ],
+     "srcscan-lax": [
+      "SYN-SWITCH-SCOPE"
+     ],
+     "stab-lax": [
+      "A07",
+      "SYN-Q4-NAME-BLIND",
+      "SYN-POSITIVE-CONTROLS"
+     ],
+     "states-drop": [
+      "A11"
+     ],
+     "transport-lax": [
+      "SYN-Q4-NAME-BLIND"
+     ]
+    },
+    "mutants": 20
+   }
+  }
+ ],
+ "pin_commit": "a14bda0",
+ "pin_sha256_prefix": "f74a8511b204",
+ "schema": "rq0-synth-arena-census-receipt-v1",
+ "source_sha256": "5a3d5b0b17049ef8a64da7dc9ecbfb7c816fe4cc97fdfc433045f701d1f3a15e",
+ "tables": {
+  "arena_fibers": [
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "DET",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "DET",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "DET",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "DET",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "DET",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "FUNNEL",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "FUNNEL",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "FUNNEL",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "REV",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "REV",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "REV",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "REV",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "REV",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 120,
+    "law": "FUNNEL-CLOSURE",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "FUNNEL-CLOSURE",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 6,
+    "law": "FUNNEL-CLOSURE",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 24,
+    "law": "FUNNEL-CLOSURE",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 12,
+    "law": "FUNNEL-CLOSURE",
+    "state": "the selective-amnesty state"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the committed branch-memory state"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "uniform at five configurations"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "degenerate on the retained sink"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 0"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 1"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 2"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "sink mass moved to address 3"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "near-degenerate"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the colluding pair starved"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "asymmetric full support"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "a legitimate-favouring attempt"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "flat on the four addresses"
+   },
+   {
+    "admitted_isomorphisms": 1,
+    "law": "COUNTER-LAW",
+    "state": "the selective-amnesty state"
+   }
+  ],
+  "census": [
+   {
+    "acted_on_by": [
+     "patch",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "positive",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 5,
+      "moves": true,
+      "slices": 795,
+      "slices_that_move": 795
+     },
+     "patch": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1073,
+      "slices_that_move": 0
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 5,
+    "moves_under": [],
+    "name": "the fine-grained law's transition data",
+    "quantity": "Q1",
+    "reads": [
+     "law"
+    ],
+    "single_family_value": null,
+    "verdict": "ARENA-INVARIANT-Q1"
+   },
+   {
+    "acted_on_by": [
+     "patch",
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "positive",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 795,
+      "slices_that_move": 0
+     },
+     "patch": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1073,
+      "slices_that_move": 0
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "scope": "[EXH] all 512 switchings x [SAMP] 32 of 512 declared lifts",
+      "switchings_swept": 512,
+      "switchings_that_moved": 0
+     }
+    },
+    "distinct_values_over_the_family": 1,
+    "moves_under": [],
+    "name": "the one-step closed holonomy",
+    "quantity": "Q2",
+    "reads": [
+     "lift family"
+    ],
+    "single_family_value": "((1,(4),(1)))",
+    "verdict": "ARENA-INVARIANT-Q2"
+   },
+   {
+    "acted_on_by": [
+     "patch",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 795,
+      "slices_that_move": 0
+     },
+     "patch": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1073,
+      "slices_that_move": 0
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 1,
+    "moves_under": [],
+    "name": "the rigidity classifier (the identity-free flag)",
+    "quantity": "Q3",
+    "reads": [
+     "law"
+    ],
+    "single_family_value": "(True,True,(((0),(1),(2),(3),(4))))",
+    "verdict": "ARENA-INVARIANT-Q3"
+   },
+   {
+    "acted_on_by": [
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 5,
+      "moves": true,
+      "slices": 795,
+      "slices_that_move": 795
+     },
+     "patch": {
+      "max_distinct_values": 3,
+      "moves": true,
+      "slices": 1073,
+      "slices_that_move": 808
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 40,
+    "moves_under": [],
+    "name": "the name-blind generation/collision profile",
+    "quantity": "Q4",
+    "reads": [
+     "patch",
+     "law"
+    ],
+    "single_family_value": null,
+    "verdict": "ARENA-INVARIANT-Q4"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "negative",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 5,
+      "moves": true,
+      "slices": 795,
+      "slices_that_move": 795
+     },
+     "patch": {
+      "max_distinct_values": 3,
+      "moves": true,
+      "slices": 1073,
+      "slices_that_move": 1073
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 123,
+    "moves_under": [
+     "law"
+    ],
+    "name": "the legitimacy certificate functions (V-CL; the terminal verdict)",
+    "quantity": "Q5",
+    "reads": [
+     "patch"
+    ],
+    "single_family_value": null,
+    "verdict": "ARENA-ARTIFACT-Q5"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 795,
+      "slices_that_move": 0
+     },
+     "patch": {
+      "max_distinct_values": 3,
+      "moves": true,
+      "slices": 1073,
+      "slices_that_move": 976
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 8,
+      "moves": true,
+      "slices": 1443,
+      "slices_that_move": 387
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 14,
+    "moves_under": [
+     "state"
+    ],
+    "name": "epsilon, the concordance defect",
+    "quantity": "Q6",
+    "reads": [
+     "patch"
+    ],
+    "single_family_value": null,
+    "verdict": "ARENA-ARTIFACT-Q6"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "degenerate_at_the_declared_neutral_value": true,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 795,
+      "slices_that_move": 0
+     },
+     "patch": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1073,
+      "slices_that_move": 0
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 1,
+    "moves_under": [],
+    "name": "omega, the occupancy defect",
+    "quantity": "Q7",
+    "reads": [
+     "patch"
+    ],
+    "single_family_value": "0",
+    "verdict": "ARENA-INERT-Q7"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "degenerate_at_the_declared_neutral_value": false,
+    "dependence_profile": {
+     "law": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 795,
+      "slices_that_move": 0
+     },
+     "patch": {
+      "max_distinct_values": 3,
+      "moves": true,
+      "slices": 1073,
+      "slices_that_move": 1073
+     },
+     "relabelling": {
+      "configurations_actually_moved": 2144,
+      "equivariance_failures": 0,
+      "moves": false,
+      "tested": 3219
+     },
+     "state": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 1443,
+      "slices_that_move": 0
+     },
+     "switching": {
+      "moves": false,
+      "structural": "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)",
+      "switchings_swept": 0
+     }
+    },
+    "distinct_values_over_the_family": 75,
+    "moves_under": [],
+    "name": "the cross-arena overlap datum (the seam)",
+    "quantity": "Q8",
+    "reads": [
+     "patch"
+    ],
+    "single_family_value": null,
+    "verdict": "ARENA-INVARIANT-Q8"
+   }
+  ],
+  "declared_actions": [
+   {
+    "acted_on_by": [
+     "patch",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "positive",
+    "definition_sha256": "b0ab1b899d4cea85",
+    "name": "the fine-grained law's transition data",
+    "neutral_value": "the empty law",
+    "quantity": "Q1",
+    "reads": [
+     "law"
+    ],
+    "value_transport": "conjugation"
+   },
+   {
+    "acted_on_by": [
+     "patch",
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "positive",
+    "definition_sha256": "f181fd8e7a0b670c",
+    "name": "the one-step closed holonomy",
+    "neutral_value": "the trivial holonomy (phase 0)",
+    "quantity": "Q2",
+    "reads": [
+     "lift family"
+    ],
+    "value_transport": "identity"
+   },
+   {
+    "acted_on_by": [
+     "patch",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "definition_sha256": "6f4ac682e400f5ad",
+    "name": "the rigidity classifier (the identity-free flag)",
+    "neutral_value": "no constraint (every boundary admissible)",
+    "quantity": "Q3",
+    "reads": [
+     "law"
+    ],
+    "value_transport": "boundary relabelling"
+   },
+   {
+    "acted_on_by": [
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "definition_sha256": "014e112960454e71",
+    "name": "the name-blind generation/collision profile",
+    "neutral_value": "the empty profile",
+    "quantity": "Q4",
+    "reads": [
+     "patch",
+     "law"
+    ],
+    "value_transport": "partition relabelling"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "negative",
+    "definition_sha256": "e3ede2a1df8f294c",
+    "name": "the legitimacy certificate functions (V-CL; the terminal verdict)",
+    "neutral_value": "the empty certificate",
+    "quantity": "Q5",
+    "reads": [
+     "patch"
+    ],
+    "value_transport": "certificate relabelling"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "definition_sha256": "36651654af52676e",
+    "name": "epsilon, the concordance defect",
+    "neutral_value": "0",
+    "quantity": "Q6",
+    "reads": [
+     "patch"
+    ],
+    "value_transport": "identity"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "definition_sha256": "873148c41141efac",
+    "name": "omega, the occupancy defect",
+    "neutral_value": "0",
+    "quantity": "Q7",
+    "reads": [
+     "patch"
+    ],
+    "value_transport": "identity"
+   },
+   {
+    "acted_on_by": [
+     "law",
+     "state",
+     "relabelling",
+     "switching"
+    ],
+    "control": "none",
+    "definition_sha256": "e4161c55cd1a9306",
+    "name": "the cross-arena overlap datum (the seam)",
+    "neutral_value": "the one-atom seam",
+    "quantity": "Q8",
+    "reads": [
+     "patch"
+    ],
+    "value_transport": "partition relabelling"
+   }
+  ],
+  "mutants": [
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A04"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A04"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A05"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A05"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A09"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A11"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A12"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A12"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A19"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-A19"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11"
+    ],
+    "falsified_gates": [],
+    "mutant": "states-drop"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A07"
+    ],
+    "falsified_gates": [
+     "SYN-Q4-NAME-BLIND",
+     "SYN-POSITIVE-CONTROLS"
+    ],
+    "mutant": "stab-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11",
+     "A13"
+    ],
+    "falsified_gates": [
+     "SYN-FAMILY",
+     "SYN-Q4-NAME-BLIND",
+     "SYN-NEGATIVE-CONTROL",
+     "SYN-ACTION-NOT-TOO-WEAK",
+     "SYN-NONDEGENERACY",
+     "SYN-ST-BROKEN",
+     "SYN-ST-NAME-READER"
+    ],
+    "mutant": "action-weaken"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "SYN-Q4-NAME-BLIND"
+    ],
+    "mutant": "transport-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "SYN-Q4-NAME-BLIND"
+    ],
+    "mutant": "name-reader"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A14"
+    ],
+    "falsified_gates": [],
+    "mutant": "seam-orient"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09"
+    ],
+    "falsified_gates": [],
+    "mutant": "hol-sign"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09"
+    ],
+    "falsified_gates": [],
+    "mutant": "hol-orient"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "SYN-DEGENERACY"
+    ],
+    "mutant": "degeneracy-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A19"
+    ],
+    "falsified_gates": [
+     "SYN-QOPT-T1",
+     "SYN-QOPT-VALUE"
+    ],
+    "mutant": "born-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "SYN-SWITCH-SCOPE"
+    ],
+    "mutant": "srcscan-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "SYN-EXACT"
+    ],
+    "mutant": "float-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11"
+    ],
+    "falsified_gates": [],
+    "mutant": "eps-lax"
+   },
+   {
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A16"
+    ],
+    "falsified_gates": [],
+    "mutant": "omega-lax"
+   }
+  ],
+  "nondegeneracy_witnesses": {
+   "Q1": {
+    "distinct_transition_data": 5,
+    "witness": "the five committed laws themselves"
+   },
+   "Q2": {
+    "admitted_holonomy_values": 1,
+    "ambient_holonomy_values": 8,
+    "witness": "the ambient (non-unitary-constrained) phase quadruples of the same declared modulus profile"
+   },
+   "Q3": {
+    "admissible_patches": 745,
+    "of_them_proper_coarse_charts": 745,
+    "witness": "the identity-free side of the dichotomy at three configurations"
+   },
+   "Q7": {
+    "ambient_instances_where_omega_is_non_zero": 201,
+    "scope": "[EXH] 5 committed laws x 5 charts (the three declared patches, the fine chart, the one-atom chart) x all 31 preparations = 775 instances",
+    "witness": "the declared preparation reduced below the whole carrier"
+   },
+   "Q8": {
+    "one_atom_seams": 1,
+    "witness": "the one-atom boundary, whose seam with every declared patch is the one-atom seam"
+   }
+  },
+  "q_opt": {
+   "admitted_pairs_swept": 576,
+   "laws_admitting_the_lifted_step": {
+    "COUNTER-LAW": false,
+    "DET": false,
+    "FUNNEL": false,
+    "FUNNEL-CLOSURE": false,
+    "REV": false
+   },
+   "non_zero_defects": 0,
+   "scope": "[SAMP] the reversible sweep is over the first 24 x 24 admitted permutation pairs of the 120; the declared non-monomial control is exhaustive over the whole 512-member lift family below",
+   "unitarily_liftable_admitted_operations": {
+    "COUNTER-LAW": 1,
+    "DET": 120,
+    "FUNNEL": 1,
+    "FUNNEL-CLOSURE": 1,
+    "REV": 120
+   }
+  }
+ },
+ "totals": {
+  "anchors": 19,
+  "gates": 20,
+  "must_pass_failures": 0
+ }
+}

@@ -6116,3 +6116,30 @@ a mis-conventioned moving control; L5-style mutant table;
 byte-identical delivery-mode runs).  On delivery:
 COMMIT-AS-IS FIRST (the #177 lesson), then verification, then
 §13 protocol freeze → panel.  Recorded after it occurs.
+
+## 2026-08-07 — RQ0-SYNTH DELIVERED, COMMITTED AS-IS (v13 LEDGER #180)
+Delivery committed AS-IS before any adjudicator verification (the
+#177 lesson applied).  Worker's inventory: arena family 1,648,128
+(fibered: 3 declarations × 1,073 admitted relabellings over 65
+law×state pairs × 512 switchings, every factor computed); census
+COMPLETE, ACTION-TOO-WEAK did not fire; verdicts Q1
+ARENA-INVARIANT (5 values, 0/3,219 equivariance failures), Q2
+ARENA-INVARIANT (constant ζ₈⁴ = −1, 0/512 moved, ambient attains
+8), Q3 ARENA-INVARIANT (rigid at all five laws; 745 proper
+identity-free charts), Q4 ARENA-INVARIANT (40 values, name-blind
+0/3,219), Q5 ARENA-ARTIFACT (orbit 123, moves under LAW), Q6
+ARENA-ARTIFACT (orbit 14, moves under STATE), Q7 ARENA-INERT
+(constant 0; ambient non-zero 201/775), Q8 ARENA-INVARIANT
+(seams 2/2/3 atoms, a chain, fixed under law and state), Q-OPT
+ARENA-INERT (Δᴮ transport SUCCEEDED exactly; 0 non-zero over 576
+admitted reversible pairs; obstruction named
+BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION).  19 anchors /
+20 gates / 0 must-pass failures / 20 mutants exit-1 named kills;
+§14 self-test 19,314/19,314 fixed w/ moving controls.  8
+deviations shipped (fibered family; AST-extracted states;
+READS-vs-ACTS pin-underdetermined; Q-OPT NOT blocked; et al.).
+Worker's flag: THE ASYMMETRY — legitimacy moves with the arena
+(123 certificates for one patch) but the SEAM does not; the seam
+datum is what the successor rung builds on.  md5 output 36e486d9
+/ receipt c71e6172; source sha 5a3d5b0b….  Adjudicator
+verification next; recorded after it occurs.
