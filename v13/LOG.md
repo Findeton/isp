@@ -6666,3 +6666,17 @@ transport pin: PREFIX-DECIDES; the wing-exchange orbit cause;
 the completed K1 universality; LTP-LAWFUL-at-t=3-only.**
 Successor: the nomological-transport pin.  Publication route
 the user's.
+
+## 2026-08-07 — NT (NOMOLOGICAL TRANSPORT) PINNED (v13 LEDGER #200)
+note-nt-transport-pin.md frozen this commit: law-data transport
+over the W6 base; the two leg-orders as the canonical loop;
+transported objects T1 transition data / T2 Δᴮ behind an
+exact-posability gate / T3 the gauge-invariant amplitude layer
+w/ mandatory §14 gauge sweep; THE CENTRAL PRE-REGISTERED
+HYPOTHESIS: the prefix criterion is the flatness condition
+(falsifiable both ways, probed with teeth); outcomes
+NT-FLAT/INERT/HOLONOMY/OBSTRUCTED/PREFIX-FLATNESS-
+CONFIRMED-or-REFUTED/BLOCKED; PREFIX-DECIDES independently
+re-derived on this base as a PIN CLAUSE (the O4 panel-unseen
+anchor discharged first); matched coordinates baked in.
+Construction dispatch next.
