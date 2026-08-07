@@ -2,7 +2,7 @@
 RQ0-SYNTH -- ADOPTED-ARENA-RELATIVITY: THE FIRST INVARIANCE CENSUS
 ==============================================================================
 pin a14bda0 (sha f74a8511b204)  base 77b015e
-source sha256 5a3d5b0b17049ef8
+source sha256 a2c4ebf0ef5a16ea
 
 THE ADMISSIBLE-ARENA FAMILY (every count computed)
   patch declarations         3
@@ -63,6 +63,9 @@ ANCHORS (exit-1-only)
   A17  ok   the census instrument's own Q5: the V-CL certificate's pre
         committed [[1280, 240, 420], [False, False, False]]
         computed  [[1280, 240, 420], [False, False, False]]
+  A20  ok   the census instrument's own Q5: the preserving-family size
+        committed [[1280, 13, 120, 1161, 60], [[False, True, False, True], [False, True, False, True], [False, True, False, False], [False, True, False, True], [False, True, False, True]]]
+        computed  [[1280, 13, 120, 1161, 60], [[False, True, False, True], [False, True, False, True], [False, True, False, False], [False, True, False, True], [False, True, False, True]]]
   A18  ok   the census instrument's own Q4: the preserving-family size
         committed [1280, 240, 420]
         computed  [1280, 240, 420]
@@ -96,77 +99,96 @@ THE DECLARED ACTIONS (frozen before any fixture value)
         reads ['patch']; acted on by ['law', 'state', 'relabelling', 'switching']
         transport partition relabelling; neutral 'the one-atom seam'; control none
 
+THE SIGNATURE SCAN (which arena coordinates each definition consumes at all)
+  Q1: consumes ['law']; amplitude objects []
+  Q2: consumes ['switching']; amplitude objects ['cycle_basis_holonomies', 'sup_of_matrix']
+  Q3: consumes ['law', 'patch']; amplitude objects []
+  Q4: consumes ['law', 'patch']; amplitude objects []
+  Q5: consumes ['law', 'patch']; amplitude objects []
+  Q6: consumes ['patch', 'state']; amplitude objects []
+  Q7: consumes ['law', 'patch', 'state']; amplitude objects []
+  Q8: consumes ['patch', 'relabelling']; amplitude objects []
+
 THE CENSUS
-  Q1  ARENA-INVARIANT-Q1
+  Q1  ARENA-ARTIFACT-Q1
         the fine-grained law's transition data
-        distinct values over the family: 5; moves under nothing
-        patch        moves=False max distinct values in a slice=1
-        law          moves=True  max distinct values in a slice=5
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 5; de-named, per declaration: [5, 5, 5]; over all declarations: 5
+        MEASURED to move under ['law']; definition consumes ['law']
+        patch        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        law          MOVES                                                max distinct in a slice=5
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 0 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
   Q2  ARENA-INVARIANT-Q2
         the one-step closed holonomy
-        distinct values over the family: 1; moves under nothing
-        patch        moves=False max distinct values in a slice=1
-        law          moves=False max distinct values in a slice=1
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
-        switching    {'moves': False, 'switchings_swept': 512, 'switchings_that_moved': 0, 'scope': '[EXH] all 512 switchings x [SAMP] 32 of 512 declared lifts'}
+        distinct values over the family: 1; de-named, per declaration: [1, 1, 1]; over all declarations: 1
+        MEASURED to move under nothing; definition consumes ['switching']
+        patch        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        law          fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 0 with teeth)
+        switching    {'moves': False, 'switchings_swept': 512, 'switchings_that_moved': 0, 'scope': '[EXH] all 512 switchings x [EXH] all 512 declared lifts = 262144 instances'}
   Q3  ARENA-INVARIANT-Q3
         the rigidity classifier (the identity-free flag)
-        distinct values over the family: 1; moves under nothing
-        patch        moves=False max distinct values in a slice=1
-        law          moves=False max distinct values in a slice=1
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 1; de-named, per declaration: [1, 1, 1]; over all declarations: 1
+        MEASURED to move under nothing; definition consumes ['law', 'patch']
+        patch        fixed [measured]                                     max distinct in a slice=1
+        law          fixed [measured]                                     max distinct in a slice=1
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 0 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
-  Q4  ARENA-INVARIANT-Q4
+  Q4  ARENA-ARTIFACT-Q4
         the name-blind generation/collision profile
-        distinct values over the family: 40; moves under nothing
-        patch        moves=True  max distinct values in a slice=3
-        law          moves=True  max distinct values in a slice=5
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 40; de-named, per declaration: [5, 5, 5]; over all declarations: 13
+        MEASURED to move under ['patch', 'law']; definition consumes ['law', 'patch']
+        patch        MOVES                                                max distinct in a slice=3
+        law          MOVES                                                max distinct in a slice=5
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 536 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
   Q5  ARENA-ARTIFACT-Q5
         the legitimacy certificate functions (V-CL; the terminal verdict)
-        distinct values over the family: 123; moves under ['law']
-        patch        moves=True  max distinct values in a slice=3
-        law          moves=True  max distinct values in a slice=5
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 123; de-named, per declaration: [5, 5, 5]; over all declarations: 15
+        MEASURED to move under ['patch', 'law']; definition consumes ['law', 'patch']
+        patch        MOVES                                                max distinct in a slice=3
+        law          MOVES                                                max distinct in a slice=5
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 2144 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
   Q6  ARENA-ARTIFACT-Q6
         epsilon, the concordance defect
-        distinct values over the family: 14; moves under ['state']
-        patch        moves=True  max distinct values in a slice=3
-        law          moves=False max distinct values in a slice=1
-        state        moves=True  max distinct values in a slice=8
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 14; de-named, per declaration: [5, 7, 8]; over all declarations: 14
+        MEASURED to move under ['patch', 'state']; definition consumes ['patch', 'state']
+        patch        MOVES                                                max distinct in a slice=3
+        law          fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        state        MOVES                                                max distinct in a slice=8
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 0 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
   Q7  ARENA-INERT-Q7
         omega, the occupancy defect
-        distinct values over the family: 1; moves under nothing
-        patch        moves=False max distinct values in a slice=1
-        law          moves=False max distinct values in a slice=1
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 1; de-named, per declaration: [1, 1, 1]; over all declarations: 1
+        MEASURED to move under nothing; definition consumes ['law', 'patch', 'state']
+        patch        fixed [measured]                                     max distinct in a slice=1
+        law          fixed [measured]                                     max distinct in a slice=1
+        state        fixed [measured]                                     max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 0 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
-  Q8  ARENA-INVARIANT-Q8
+  Q8  ARENA-ARTIFACT-Q8
         the cross-arena overlap datum (the seam)
-        distinct values over the family: 75; moves under nothing
-        patch        moves=True  max distinct values in a slice=3
-        law          moves=False max distinct values in a slice=1
-        state        moves=False max distinct values in a slice=1
-        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved)
+        distinct values over the family: 75; de-named, per declaration: [1, 1, 1]; over all declarations: 3
+        MEASURED to move under ['patch']; definition consumes ['patch', 'relabelling']
+        patch        MOVES                                                max distinct in a slice=3
+        law          fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        state        fixed [DEFINITIONAL: the definition never names it]  max distinct in a slice=1
+        relabelling  equivariance failures=0 of 3219 (2144 configurations actually moved; 2688 with teeth)
         switching    {'moves': False, 'switchings_swept': 0, 'structural': "no amplitude object is named in this quantity's definition (SYN-SWITCH-SCOPE)"}
-  Q-OPT  ARENA-INERT-Q-OPT
+  Q-OPT  BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION
         the composition defect transports EXACTLY -- the arithmetic and the
-        definition both -- and is then identically zero on every admissible
-        arena, because Delta^B is non-zero only on non-monomial admitted
-        operations and no committed law admits one:
-        BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION
+        object both -- but the arena-variation question cannot be POSED at the
+        committed laws: Delta^B is identically zero on monomials by a theorem,
+        no committed law admits a non-monomial operation, and there is
+        therefore no admissible arena at which the quantity could take a
+        second value. That is BLOCKED, not INERT
 
 GATES
   [PASS] SYN-FREEZE (freeze)
@@ -176,14 +198,29 @@ GATES
         TRANSPORT under an admitted relabelling and NEUTRAL value are fixed
         here, each definition hashed by source; the census evaluation counter
         is still zero, which is what proves the order
-        value: {"census_evaluations_so_far": 0, "declaration_sha256": "2872f23361b949587f0630f45165742d2e908af41df2d4d85b14df53e2404d72", "quantities_declared": 8}
+        value: {"census_evaluations_so_far": 0, "declaration_sha256": "5d8419cd24a8474e2fd2b24c17dff192840cb96fecebc36fc1ca70c09a2afaa0", "quantities_declared": 8}
   [PASS] SYN-SWITCH-SCOPE (freeze)
         WHICH QUANTITIES CAN SEE THE SWITCHING COORDINATE AT ALL, decided by
-        SOURCE SCAN rather than by assertion: exactly Q2 names an amplitude
-        object, so exactly Q2 is swept over the 512 switchings and the others
-        are switching-blind by construction. A quantity that silently read
-        amplitude data would be caught here
-        value: {"amplitude_tokens_per_quantity": {"Q1": [], "Q2": ["cycle_basis_holonomies", "sup_of_matrix"], "Q3": [], "Q4": [], "Q5": [], "Q6": [], "Q7": [], "Q8": []}}
+        SOURCE SCAN rather than by assertion, and over the TRANSITIVE CLOSURE
+        of each quantity's module-local callees rather than one level deep:
+        exactly Q2 names an amplitude object, so exactly Q2 is swept over the
+        512 switchings and the others are switching-blind by construction. A
+        quantity that read amplitude data THROUGH A HELPER would be caught
+        here -- that is what the `hidden-read` mutant does, and it dies at
+        this gate
+        value: {"amplitude_tokens_per_quantity": {"Q1": [], "Q2": ["cycle_basis_holonomies", "sup_of_matrix"], "Q3": [], "Q4": [], "Q5": [], "Q6": [], "Q7": [], "Q8": []}, "callees_followed_per_quantity": {"Q1": 1, "Q2": 1, "Q3": 2, "Q4": 1, "Q5": 2, "Q6": 0, "Q7": 0, "Q8": 2}, "the_same_scan_one_level_deep": {"Q1": [], "Q2": ["cycle_basis_holonomies", "sup_of_matrix"], "Q3": [], "Q4": [], "Q5": [], "Q6": [], "Q7": [], "Q8": []}}
+  [PASS] SYN-SELFTEST-SET (disclosure)
+        THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION, never by the
+        verdicts under audit (RUNBOOK section 14 addendum). It is the full
+        declared quantity list, frozen here with the declarations themselves
+        and gated equal to it; the delivered instrument's defect was that the
+        set was recomputed from the census's own verdicts, so a quantity a
+        broken transport made move was DELETED from the test instead of
+        failing it. DISCLOSURE CLASS: this gate records the declaration; the
+        ENFORCEMENT -- that the set actually tested is this one -- is a
+        conjunct of SYN-ST-RELABEL, which the `selftest-scope` mutant
+        falsifies by reinstating the reviewed self-scoping
+        value: {"declared_quantities": ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"], "declared_tested_set": ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8"]}
   [PASS] SYN-FAMILY (derivation)
         THE ADMISSIBLE-ARENA FAMILY IS ENUMERATED AND ITS SIZE IS COMPUTED,
         never typed: the product of the declared patch count, the FIBERED
@@ -201,79 +238,159 @@ GATES
         the count of relabellings that actually move the patch is reported
         beside it, so a vacuous pass is visible. A statistic that read a
         configuration's NAME would fail here
-        value: {"configurations_actually_moved": 2144, "equivariance_failures": 0, "moves": false, "tested": 3219}
+        value: {"configurations_actually_moved": 2144, "discrimination": "measured", "equivariance_failures": 0, "instances_where_either_side_differs_from_the_base": 536, "moves": false, "tested": 3219}
+  [PASS] SYN-DECLARATION-INDEPENDENT (derivation)
+        THE VERDICTS DO NOT DEPEND ON THE READS/ACTS DECLARATION. Every
+        verdict is derived from the MEASURED dependence profile alone; the
+        declaration survives as bookkeeping annotation. The proof is run here
+        rather than argued: the whole verdict table is re-derived under a
+        second declaration -- every arena coordinate acting on every quantity,
+        which is the reading a reader who rejects the split would take -- and
+        the two tables must be IDENTICAL. In the reviewed instrument this flip
+        moved three of eight verdicts, including a declared positive control
+        value: {"declared": {"Q1": "ARENA-ARTIFACT-Q1", "Q2": "ARENA-INVARIANT-Q2", "Q3": "ARENA-INVARIANT-Q3", "Q4": "ARENA-ARTIFACT-Q4", "Q5": "ARENA-ARTIFACT-Q5", "Q6": "ARENA-ARTIFACT-Q6", "Q7": "ARENA-INERT-Q7", "Q8": "ARENA-ARTIFACT-Q8"}, "under_the_alternative_declaration": {"Q1": "ARENA-ARTIFACT-Q1", "Q2": "ARENA-INVARIANT-Q2", "Q3": "ARENA-INVARIANT-Q3", "Q4": "ARENA-ARTIFACT-Q4", "Q5": "ARENA-ARTIFACT-Q5", "Q6": "ARENA-ARTIFACT-Q6", "Q7": "ARENA-INERT-Q7", "Q8": "ARENA-ARTIFACT-Q8"}, "verdicts_that_differ": []}
+  [PASS] SYN-SIGNATURE-SCOPE (derivation)
+        MEASURED FIXITY VERSUS DEFINITIONAL FIXITY. The source scan records
+        which arena coordinates each quantity's definition consumes at all; a
+        quantity whose definition never names the law CANNOT move with the
+        law, so reporting that fixity as an invariance would be reporting a
+        signature as a result. Q8, the seam, names neither the law nor the
+        state. The gate's own law is the consistency of scan and measurement:
+        NO QUANTITY MOVES IN A COORDINATE ITS DEFINITION NEVER NAMES. A wrong
+        relabelling group or a wrong value transport breaks it, because the
+        quantity then moves in a coordinate it never reads
+        value: {"arena_coordinates_consumed": {"Q1": ["law"], "Q2": ["switching"], "Q3": ["law", "patch"], "Q4": ["law", "patch"], "Q5": ["law", "patch"], "Q6": ["patch", "state"], "Q7": ["law", "patch", "state"], "Q8": ["patch", "relabelling"]}, "violations": []}
+  [PASS] SYN-NEUTRAL-RECOGNITION (derivation)
+        EVERY QUANTITY'S ARENA-INERT VERDICT IS REACHABLE, demonstrated rather
+        than assumed: each declared NEUTRAL value is CONSTRUCTED and fed
+        through the whole decision path -- the degeneracy predicate and the
+        verdict derivation -- and must come back ARENA-INERT. This is the
+        working negative control of the inert/invariant boundary. The reviewed
+        instrument decided Q8's degeneracy by a string suffix and returned
+        False on Q8's own constructed neutral, so ARENA-INERT-Q8 was
+        unreachable by construction at the one place the pin says it must not
+        be
+        value: {"both_routes_recognise_the_constructed_neutral": {"Q1": true, "Q2": true, "Q3": true, "Q4": true, "Q5": true, "Q6": true, "Q7": true, "Q8": true}, "inert_is_reachable_for": {"Q1": true, "Q2": true, "Q3": true, "Q4": true, "Q5": true, "Q6": true, "Q7": true, "Q8": true}}
   [PASS] SYN-DEGENERACY (derivation)
         THE INERT/INVARIANT DISTINCTION IS DECIDED AGAINST A CONSTRUCTED
         OBJECT, not against a pattern: for each quantity the NEUTRAL value
         declared in the freeze is BUILT -- the empty law, the trivial holonomy
         of the all-phases-zero member of the ambient family, the classifier
         that constrains nothing, the empty profile, the empty certificate, the
-        zero defect, the one-atom seam -- and a quantity is gated INERT
-        exactly when its single family value equals that built object. The set
+        zero defect, the one-atom seam of the arena's own patch with each
+        other declared patch -- and a quantity is gated INERT exactly when its
+        single family value IS that object, by two routes: structurally on the
+        value object (for the seam: every seam it carries is the one-atom
+        partition) and by canonical string against the construction. The set
         of inert quantities is therefore a measurement
         value: {"degenerate": {"Q1": false, "Q2": false, "Q3": false, "Q4": false, "Q5": false, "Q6": false, "Q7": true, "Q8": false}, "gated_inert": ["Q7"], "independent_route": {"Q1": false, "Q2": false, "Q3": false, "Q4": false, "Q5": false, "Q6": false, "Q7": true, "Q8": false}}
   [PASS] SYN-CENSUS-COMPLETE (derivation)
-        EVERY DECLARED QUANTITY HAS A VERDICT, and every verdict is one of the
-        pin's four names. The dependence profile behind each is measured over
-        EVERY coordinate, whether or not that coordinate is in the quantity's
-        declared acting set, so the declaration fixes the label and never what
-        is shown
-        value: {"quantities": 8, "verdicts": {"Q1": "ARENA-INVARIANT-Q1", "Q2": "ARENA-INVARIANT-Q2", "Q3": "ARENA-INVARIANT-Q3", "Q4": "ARENA-INVARIANT-Q4", "Q5": "ARENA-ARTIFACT-Q5", "Q6": "ARENA-ARTIFACT-Q6", "Q7": "ARENA-INERT-Q7", "Q8": "ARENA-INVARIANT-Q8"}}
+        EVERY DECLARED QUANTITY HAS A VERDICT, every verdict is one of the
+        pin's four names, and every verdict is DERIVED FROM THE MEASURED
+        dependence profile over every arena coordinate rather than from a
+        declaration about which coordinates count as the arena change
+        value: {"quantities": 8, "verdicts": {"Q1": "ARENA-ARTIFACT-Q1", "Q2": "ARENA-INVARIANT-Q2", "Q3": "ARENA-INVARIANT-Q3", "Q4": "ARENA-ARTIFACT-Q4", "Q5": "ARENA-ARTIFACT-Q5", "Q6": "ARENA-ARTIFACT-Q6", "Q7": "ARENA-INERT-Q7", "Q8": "ARENA-ARTIFACT-Q8"}}
   [PASS] SYN-POSITIVE-CONTROLS (derivation)
-        THE DECLARED POSITIVE CONTROLS BEHAVE. Q1, the fine-grained law's
-        transition data, and Q2, the one-step closed holonomy, are gated
-        ARENA-INVARIANT: the fine grain does not move when the coarse
-        declaration, the state, the naming or the gauge moves. If either had
-        moved the census would say so here rather than be adjusted
-        value: {"Q1": "ARENA-INVARIANT-Q1", "Q2": "ARENA-INVARIANT-Q2"}
+        THE DECLARED POSITIVE CONTROLS BEHAVE, PER COORDINATE. Q1, the
+        fine-grained law's transition data, is FIXED under the patch
+        declaration, under the state and under an admitted relabelling of the
+        whole configuration -- it moves only with the law, which is its own
+        argument. Q2, the one-step closed holonomy, is fixed under EVERY arena
+        coordinate including the gauge. The control is stated coordinate by
+        coordinate because that is what is measured; the reviewed instrument
+        stated it as a single label, and the label was an artifact of the
+        READS declaration
+        value: {"claim": {"Q1": ["patch", "state", "relabelling"], "Q2": ["patch", "law", "state", "relabelling", "switching"]}, "measured_to_move": {"Q1": {"patch": false, "relabelling": false, "state": false}, "Q2": {"law": false, "patch": false, "relabelling": false, "state": false, "switching": false}}, "verdicts": {"Q1": "ARENA-ARTIFACT-Q1", "Q2": "ARENA-INVARIANT-Q2"}}
   [PASS] SYN-NEGATIVE-CONTROL (derivation)
-        THE DECLARED NEGATIVE CONTROL MOVES. Q5, the legitimacy certificate of
-        a FIXED patch declaration, changes when the arena's law changes --
-        which is the thesis itself, measured: the same declared patch receives
-        different certificates in different admissible arenas
-        value: {"moves_under": {"Q5": ["law"]}, "verdicts": {"Q5": "ARENA-ARTIFACT-Q5"}}
+        THE DECLARED NEGATIVE CONTROL MOVES, AND MOVES WITH THE LAW. Q5, the
+        legitimacy certificate of a FIXED patch declaration, changes when the
+        arena's law changes -- which is the thesis itself, measured: the same
+        declared patch receives different certificates in different admissible
+        arenas. The gate names the coordinate, so that a family which merely
+        renamed things could not satisfy it
+        value: {"certificates_per_declaration_de_named": {"Q5": [5, 5, 5]}, "moves_under": {"Q5": ["patch", "law"]}, "verdicts": {"Q5": "ARENA-ARTIFACT-Q5"}}
   [PASS] SYN-ACTION-NOT-TOO-WEAK (derivation)
         THE PRE-REGISTERED KILL DID NOT FIRE. ACTION-TOO-WEAK fires when the
         arena action fails to move ANY declared negative control, which would
         mean the family under-generates and the census as instrumented is
         dead. It is reported here as measured
-        value: {"ACTION_TOO_WEAK": false, "quantities_that_move": ["Q5", "Q6"]}
+        value: {"ACTION_TOO_WEAK": false, "quantities_that_move": ["Q1", "Q4", "Q5", "Q6", "Q8"]}
+  [PASS] SYN-SEAM-ORDER (derivation)
+        THE SEAM IS A COMMON COARSENING, GATED. What Q8 returns for a pair of
+        declared boundaries must be COARSER THAN OR EQUAL TO both of them --
+        that is what `the finest common coarsening, which is the intersection
+        of the two boundary algebras` means, and it is the property that makes
+        the seam a seam rather than its lattice opposite. It is checked here
+        at every declared pair by recomputing the meet of the seam with each
+        member. In the reviewed instrument replacing the meet by the join left
+        the Q8 verdict standing and killed only a typed atom count
+        value: {"declared_pairs_tested": 6, "seams_coarser_than_or_equal_to_both_members": 6}
   [PASS] SYN-NONDEGENERACY (derivation)
-        EVERY QUANTITY GATED CONSTANT IS SHOWN TO BE A WORKING INSTRUMENT. For
-        each, a DECLARED AMBIENT WITNESS outside the admissible-arena family
-        is exhibited at which the quantity takes another value: omega is
-        non-zero at reduced preparations, the rigidity classifier returns
-        proper coarse charts on the identity-free side, the holonomy takes
-        other values off the unitary constraint, the law data separates the
-        five laws, and the seam degenerates against the one-atom boundary.
-        Constancy on the family is therefore a fact ABOUT THE FAMILY, not
-        about a dead instrument
-        value: {"Q1": {"distinct_transition_data": 5, "witness": "the five committed laws themselves"}, "Q2": {"admitted_holonomy_values": 1, "ambient_holonomy_values": 8, "witness": "the ambient (non-unitary-constrained) phase quadruples of the same declared modulus profile"}, "Q3": {"admissible_patches": 745, "of_them_proper_coarse_charts": 745, "witness": "the identity-free side of the dichotomy at three configurations"}, "Q7": {"ambient_instances_where_omega_is_non_zero": 201, "scope": "[EXH] 5 committed laws x 5 charts (the three declared patches, the fine chart, the one-atom chart) x all 31 preparations = 775 instances", "witness": "the declared preparation reduced below the whole carrier"}, "Q8": {"one_atom_seams": 1, "witness": "the one-atom boundary, whose seam with every declared patch is the one-atom seam"}}
+        EVERY QUANTITY GATED CONSTANT IS SHOWN TO BE A WORKING INSTRUMENT, AND
+        THE SEAM IS SHOWN TO HAVE CONTENT. For each, a DECLARED AMBIENT
+        WITNESS outside the admissible-arena family is exhibited at which the
+        quantity takes another value: omega is non-zero at reduced
+        preparations; the rigidity classifier returns proper coarse charts on
+        the identity-free side; the holonomy takes other values off the
+        unitary constraint; and -- run THROUGH Q8's own function on an ambient
+        NON-CHAIN triple -- the seam collapses to the one-atom neutral, which
+        no seam of the declared family is. Q1's `witness` is the family's own
+        law coordinate and is therefore NOT ambient; it is reported as a
+        separation measurement and deliberately not gated as a nondegeneracy
+        witness
+        value: {"Q1": {"ambient": false, "distinct_transition_data": 5, "witness": "the five committed laws themselves -- NOT an ambient object: they are the family's own law coordinate, so this is a measurement of separation and not a nondegeneracy witness, and it is not gated as one"}, "Q2": {"admitted_holonomy_values": 1, "ambient_holonomy_values": 8, "witness": "the ambient (non-unitary-constrained) phase quadruples of the same declared modulus profile"}, "Q3": {"admissible_law_patch_instances": 745, "distinct_admissible_patches": 4, "distinct_identity_free_laws": 428, "of_them_proper_coarse_charts": 745, "witness": "the identity-free side of the dichotomy at three configurations"}, "Q7": {"ambient_instances_where_omega_is_non_zero": 201, "scope": "[EXH] 5 committed laws x 5 charts (the three declared patches, the fine chart, the one-atom chart) x all 31 preparations = 775 instances", "witness": "t
   [PASS] SYN-ST-RELABEL (derivation)
         SECTION 14, THE SYMMETRY SELF-TEST. Every admitted relabelling is
         applied to the WHOLE declared configuration -- patch, law, state and,
         for the seam, the other declared patches -- at every arena of the
-        family, and every quantity gated invariant or inert is FIXED under
-        every one of them, transported by its declared transport. The count of
-        relabellings that actually move the configuration is reported beside
-        it, so a vacuous pass is visible
-        value: {"fixed": 19314, "instances": 19314, "instances_where_the_configuration_actually_moved": 12864, "quantities": ["Q1", "Q2", "Q3", "Q4", "Q7", "Q8"]}
+        family, and EVERY DECLARED QUANTITY, not merely the ones the census
+        has just gated fixed, is FIXED under every one of them, transported by
+        its declared transport. The ANTI-VACUITY counter is in this predicate,
+        not beside it: the number of instances in which either side of the
+        equality actually differs from the base is measured PER QUANTITY, and
+        at least two quantities must have teeth. A wrong value transport, a
+        wrong relabelling group, a name-reading quantity, an un-corelabelled
+        seam or a collapsed action all fail here
+        value: {"fixed": 25752, "instances": 25752, "instances_where_the_configuration_actually_moved": 17152, "per_quantity": {"Q1": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base": 0, "tested": 3219}, "Q2": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base": 0, "tested": 3219}, "Q3": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base": 0, "tested": 3219}, "Q4": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base": 536, "tested": 3219}, "Q5": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base": 2144, "tested": 3219}, "Q6": {"configurations_actually_moved": 2144, "fixed": 3219, "instances_where_either_side_differs_from_the_base"
+  [PASS] SYN-ST-FRESH (derivation)
+        THE SELF-TEST EVALUATES FRESH (RUNBOOK section 14 addendum). A
+        self-test that reaches its quantity through the instrument's own
+        memoization tests the CACHE, not the quantity: in the reviewed
+        instrument three of the equivariance rows were literally `x == x` on
+        one memoized object. Every evaluation and every transport in this
+        phase bypasses the three value-level memos -- the ones whose keys omit
+        coordinates the census varies -- and the phase's value-cache HIT count
+        is gated at ZERO with its miss count gated positive. The adjudication
+        sub-expression cache, whose key is the full (record, law) pair that
+        determines it, is CLEARED here rather than bypassed and its misses are
+        gated positive too (Deviation 10)
+        value: {"adjudication_cache_hits": 340954, "adjudication_cache_misses": 260, "value_cache_hits": 0, "value_cache_misses": 109446}
   [PASS] SYN-ST-SWITCH (derivation)
-        SECTION 14 AT THE GAUGE COORDINATE. All 512 checkpoint-phase
-        switchings are applied to the whole carried diagram -- every member of
-        the declared admitted lift family switched at once -- and the one-step
-        closed holonomy is fixed under every one. The negative control
+        SECTION 14 AT THE GAUGE COORDINATE, EXHAUSTIVELY. Every one of the 512
+        checkpoint-phase switchings is applied to the whole carried diagram
+        and EVERY ONE of the 512 members of the declared admitted lift family
+        is switched -- the full cross product, which the reviewed instrument
+        sampled at 32 lifts while claiming the family -- and the one-step
+        closed holonomy is fixed at every instance. The negative control
         reconstructed inside this test, the UNCLOSED convention (the walk that
-        does not return to its start), MOVES under most of them: the gate has
-        teeth
-        value: {"carried_invariant_moved": 0, "scope": "[EXH] all 512 switchings x [SAMP] 32 of 512 lifts; the whole family is swept at the base gauge by anchor A09", "switchings": 512, "unclosed_control_moved": 384}
+        does not return to its start), MOVES under most of them.
+        Exhaustiveness is in the predicate
+        value: {"carried_invariant_moved": 0, "instances": 262144, "lift_family": 512, "lifts_swept": 512, "scope": "[EXH] all 512 switchings x [EXH] all 512 declared lifts = 262144 instances", "switchings": 512, "unclosed_control_moved": 384}
   [PASS] SYN-ST-BROKEN (derivation)
-        THE DELIBERATELY MIS-CONVENTIONED CONTROL MOVES. A broken action is
-        reconstructed inside the self-test -- the patch relabelled while the
-        law and the state are left alone, the classic transport bug -- and the
-        quantities the census gates invariant FAIL under it. A self-test no
-        wrong action can fail is not a test
-        value: {"failures_under_the_broken_action": 2772, "instances": 9072}
+        THE DELIBERATELY MIS-CONVENTIONED CONTROLS MOVE, AND WHAT EACH CAN
+        BITE IS MEASURED. Control 1 relabels the arena's own patch and leaves
+        the OTHER declared patches unrelabelled. It does NOT leave the law and
+        the state alone in any operative sense -- the census's own action
+        leaves them alone too, because an admitted relabelling fixes the law
+        setwise and the state POINTWISE, measured 0 of 1073 for each -- so
+        control 1 differs from the true action in exactly one thing, the sigma
+        handed to the quantity, and it therefore bites exactly the quantities
+        whose definition names sigma. Control 2 is CONSTRUCTED OUTSIDE THE
+        ADMITTED GROUP, from relabellings the arena does not admit and
+        transporting by the INVERSE, so that the law and the state really do
+        move: it bites the nomological quantities, which control 1 cannot.
+        Both must fail somewhere and the per-quantity split is reported
+        value: {"control_1_the_seam_left_unrelabelled": {"Q1": {"failures": 0, "instances": 3024}, "Q2": {"failures": 0, "instances": 3024}, "Q3": {"failures": 0, "instances": 3024}, "Q4": {"failures": 0, "instances": 3024}, "Q5": {"failures": 0, "instances": 3024}, "Q6": {"failures": 0, "instances": 3024}, "Q7": {"failures": 0, "instances": 3024}, "Q8": {"failures": 2772, "instances": 3024}}, "control_1_total_failures": 2772, "control_2_outside_the_admitted_group": {"Q1": {"failures": 119, "instances": 503}, "Q2": {"failures": 0, "instances": 503}, "Q3": {"failures": 0, "instances": 503}, "Q4": {"failures": 96, "instances": 503}, "Q5": {"failures": 96, "instances": 503}, "Q6": {"failures": 0, "instances": 503}, "Q7": {"failures": 0, "instances": 503}, "Q8": {"failures": 500, "instances": 503}}, "control_2_scope": "[EXH] the legitimate declaration x 5 committed laws x the committed named state x every 
   [PASS] SYN-ST-NAME-READER (derivation)
         THE NAME-READER CONTROL. Branch C's label-reading statistic -- does
         the configuration NAMED 0 form a block of its own -- is run through
@@ -288,7 +405,7 @@ GATES
         v12 paper 1's committed value at the Hadamard exactly. The arithmetic
         transports
         value: {"Delta_HH": [["1/2", "-1/2"], ["-1/2", "1/2"]]}
-  [PASS] SYN-QOPT-T2 (derivation)
+  [PASS] SYN-QOPT-T2 (disclosure)
         TRANSPORT GATE 2, THE OBJECT. Delta^B is a function of ADMITTED
         amplitude operations. Measured: the one declared amplitude family in
         the corpus lifts a support step -- the two-configuration merge -- that
@@ -298,27 +415,50 @@ GATES
         measurement -- the liftable count computed by two independent routes,
         singleton-support-injectivity and membership in the permutation key
         set -- and the ANSWER, which could have come out either way, is the
-        recorded value: no committed law admits the lifted step
-        value: {"committed_laws_admitting_the_lifted_step": {"COUNTER-LAW": false, "DET": false, "FUNNEL": false, "FUNNEL-CLOSURE": false, "REV": false}, "second_route": {"COUNTER-LAW": 1, "DET": 120, "FUNNEL": 1, "FUNNEL-CLOSURE": 1, "REV": 120}, "the_object_transports": false, "unitarily_liftable_admitted_operations": {"COUNTER-LAW": 1, "DET": 120, "FUNNEL": 1, "FUNNEL-CLOSURE": 1, "REV": 120}}
+        recorded value: no committed law admits the lifted step. DISCLOSURE
+        CLASS, and why: the two routes compute the same predicate by different
+        means, so no mutant short of a stub can separate them; the gate
+        records a measurement rather than enforcing a claim
+        value: {"committed_laws_admitting_the_lifted_step": {"COUNTER-LAW": false, "DET": false, "FUNNEL": false, "FUNNEL-CLOSURE": false, "REV": false}, "second_route": {"COUNTER-LAW": 1, "DET": 120, "FUNNEL": 1, "FUNNEL-CLOSURE": 1, "REV": 120}, "some_committed_law_admits_the_lifted_step": false, "unitarily_liftable_admitted_operations": {"COUNTER-LAW": 1, "DET": 120, "FUNNEL": 1, "FUNNEL-CLOSURE": 1, "REV": 120}}
   [PASS] SYN-QOPT-VALUE (derivation)
-        THE VALUE, WHERE THE OBJECT TRANSPORTS. Over every composable pair of
-        admitted reversible operations at the committed carrier -- the only
-        admitted operations with unitary lifts -- Delta^B is identically ZERO,
-        exactly and without exception. The positive control fires: on the
-        declared non-monomial lift the same instrument returns a NON-zero
-        defect, so the zero is a fact about the admitted operations and not
-        about the instrument
-        value: {"admitted_pairs_swept": 576, "non_zero_defects": 0, "positive_control_non_zero_on_the_declared_lift": true}
-  [PASS] SYN-QOPT-SCOPE (disclosure)
-        SCOPE, DECLARED, AND THE CONTROL MEASURED RATHER THAN ASSUMED. The
-        reversible sweep is [SAMP] over 24 x 24 of the 120 admitted
-        permutations (576 pairs). The non-monomial control is [EXH] over the
-        whole 512-member declared lift family, and the defect is non-zero on
-        384 of them -- not on all: the remaining 128 are the phase choices
-        whose square is again non-monomial, where the Born map happens to
-        compose. What the zero above says is therefore that the defect is
-        non-zero only where the laws admit nothing
-        value: {"lift_family": 512, "non_zero_defects_in_the_family": 384, "reversible_pairs_swept": 576}
+        THE VALUE, WHERE THE OBJECT TRANSPORTS, OVER EVERY PAIR. The sweep is
+        EXHAUSTIVE over all 14,400 composable pairs of admitted reversible
+        operations at the committed carrier -- the reviewed instrument swept
+        576, which was not a sample but the square of the point stabilizer of
+        one configuration -- and over a declared PHASED monomial sweep as
+        well, since the reversible lifts are monomial and not merely
+        permutation matrices. Delta^B is identically ZERO on all of them,
+        which is the monomial theorem, not a measurement that could have gone
+        otherwise. The positive control fires: on the declared non-monomial
+        lift the same instrument returns a NON-zero defect, so the zero is a
+        fact about the admitted operations and not about the instrument.
+        Exhaustiveness is in the predicate
+        value: {"admitted_pairs_swept": 14400, "non_zero_defects": 0, "non_zero_defects_phased": 0, "phased_monomial_pairs_swept": 960, "positive_control_non_zero_on_the_declared_lift": true}
+  [PASS] SYN-QOPT-NAMES (derivation)
+        THE VERDICT CORRIDOR IS OPEN, AND THAT IS COMPUTED HERE. Q-OPT's
+        verdict is selected from ALL of the pin's names by measured conditions
+        -- BLOCKED-AT-IMPORT if the arithmetic does not transport,
+        BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION if no committed law
+        admits an operation at which the defect could be non-zero,
+        ARENA-ARTIFACT if it is non-zero somewhere admitted, ARENA-INERT if it
+        is everywhere the neutral with the control firing, ARENA-INVARIANT
+        otherwise. The reviewed instrument could emit only TWO of the four, so
+        its verdict was fixed before any fixture was consulted. The predicate
+        is that the selector, run over the declared condition tuples, actually
+        REACHES every name; and the `qopt-force` mutant, which admits a
+        non-monomial operation, makes the live selection come out differently
+        value: {"arithmetic_transports": true, "names_reached_by_the_selector": {"(False, False, 0, True)": "BLOCKED-AT-IMPORT", "(True, False, 0, True)": "BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION", "(True, True, 0, False)": "ARENA-INVARIANT-Q-OPT", "(True, True, 0, True)": "ARENA-INERT-Q-OPT", "(True, True, 1, True)": "ARENA-ARTIFACT-Q-OPT"}, "non_zero_defects_over_the_admitted_pairs": 0, "the_question_is_posable": false, "verdict": "BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION"}
+  [PASS] SYN-QOPT-SCOPE (derivation)
+        THE NON-MONOMIAL CONTROL, AND WHAT SEPARATES ITS TWO HALVES, MEASURED.
+        The control is [EXH] over the whole 512-member declared lift family
+        and the defect is non-zero on 384 of them, not on all. The reviewed
+        characterisation of the remaining 128 -- `the phase choices whose
+        square is again non-monomial` -- is FALSE, and measurably so: 128 of
+        the 384 non-zero members also have non-monomial squares. The true
+        criterion is two-sided and is gated here: Delta^B(U,U) = 0 exactly
+        when U^2 is again FULLY UNBIASED, every entry of modulus 2^(-1/2) --
+        128 of 128 on one side and 0 of 384 on the other
+        value: {"lift_family": 512, "non_zero_defects_in_the_family": 384, "reversible_pairs_swept": 14400, "square_fully_unbiased_among_the_non_zero_members": 0, "square_fully_unbiased_among_the_zero_defect_members": 128, "square_non_monomial_among_the_non_zero_members": 256, "zero_defect_members": 128}
   [PASS] SYN-EXACT (derivation)
         EXACT THROUGHOUT. An AST scan of this source finds NO float literal
         and no float-producing name (math, numpy, float, round); every
@@ -326,63 +466,96 @@ GATES
         Fractions in Q(zeta_8) reduced mod x^4 + 1, where tuple equality IS
         field equality. The scan reads IMPORTS and CALLS, so naming a type in
         an isinstance test is not mistaken for using it
-        value: {"banned_imports_or_calls": [], "float_literals": 0, "modules_imported": ["__future__", "argparse", "ast", "concurrent", "fractions", "hashlib", "inspect", "itertools", "json", "pathlib", "rq0_l0_fixed_point_exact", "rq0_l2_admissibility_exact", "rq0_l3_epsilon_exact", "rq0_l4_fingerprint_exact", "rq0_l5_provenance_exact", "subprocess", "sys"]}
+        value: {"banned_imports_or_calls": [], "float_literals": 0, "modules_imported": ["__future__", "argparse", "ast", "concurrent", "fractions", "hashlib", "inspect", "itertools", "json", "pathlib", "rq0_l0_fixed_point_exact", "rq0_l2_admissibility_exact", "rq0_l3_epsilon_exact", "rq0_l4_fingerprint_exact", "rq0_l5_provenance_exact", "subprocess", "sys", "textwrap"]}
   [PASS] SYN-MUTANTS (freeze)
-        THE FALSIFICATION SUITE, RUN AND RECORDED. Every declared mutant
-        breaks exactly one anchor or one derivation step, is run to
-        completion, must EXIT 1, and must falsify at least one NAMED gate or
-        anchor. The suite includes the sign and orientation mutants of the
-        holonomy's closed-walk convention, an orientation mutant of the seam's
-        refinement order, a stat-label-style name-reader, the ACTION-WEAKENING
-        mutant that collapses the arena action (it must be killed by the
-        negative control), and anchor mutants
-        value: {"died": 20, "kills": {"action-weaken": ["A11", "A13", "SYN-FAMILY", "SYN-Q4-NAME-BLIND", "SYN-NEGATIVE-CONTROL", "SYN-ACTION-NOT-TOO-WEAK", "SYN-NONDEGENERACY", "SYN-ST-BROKEN", "SYN-ST-NAME-READER"], "anchor-A04": ["A04"], "anchor-A05": ["A05"], "anchor-A09": ["A09"], "anchor-A11": ["A11"], "anchor-A12": ["A12"], "anchor-A19": ["A19"], "born-lax": ["A19", "SYN-QOPT-T1", "SYN-QOPT-VALUE"], "degeneracy-lax": ["SYN-DEGENERACY"], "eps-lax": ["A11"], "float-lax": ["SYN-EXACT"], "hol-orient": ["A09"], "hol-sign": ["A09"], "name-reader": ["SYN-Q4-NAME-BLIND"], "omega-lax": ["A16"], "seam-orient": ["A14"], "srcscan-lax": ["SYN-SWITCH-SCOPE"], "stab-lax": ["A07", "SYN-Q4-NAME-BLIND", "SYN-POSITIVE-CONTROLS"], "states-drop": ["A11"], "transport-lax": ["SYN-Q4-NAME-BLIND"]}, "mutants": 20}
+        THE FALSIFICATION SUITE, RUN AND RECORDED, AND EVERY MUST-PASS GATE
+        FALSIFIED BY AT LEAST ONE MUTANT. Every declared mutant perturbs a
+        COMPUTATION -- not one of them overwrites a computed field after the
+        fact, which is what six of the reviewed suite's twenty did -- is run
+        to completion, must EXIT 1, and must falsify at least one NAMED gate
+        or anchor. The second half of the predicate is the one the reviews
+        asked for: the set of must-pass gates that NO mutant falsifies must be
+        EMPTY, so that no gate can sit in the table incapable of failing.
+        SYN-MUTANTS itself is excluded from that count and its own
+        falsification route is a mutant that fails to die. The suite carries
+        the holonomy's sign and orientation mutants, an orientation mutant of
+        the seam's refinement order, a stat-label-style name-reader, a wrong
+        value transport, a cache-reading self-test, an un-corelabelled seam, a
+        hidden amplitude read one call level down, a subsampled gauge sweep, a
+        subsampled defect sweep, a forced non-monomial admitted operation, a
+        declaration-consulting verdict rule, an out-of-vocabulary verdict, a
+        pre-freeze evaluation, a collapsed arena and a collapsed action
+        value: {"died": 27, "kills": {"action-weaken": ["A11", "A13", "A20", "SYN-FAMILY", "SYN-Q4-NAME-BLIND", "SYN-NEGATIVE-CONTROL", "SYN-NONDEGENERACY", "SYN-ST-RELABEL", "SYN-ST-BROKEN", "SYN-ST-NAME-READER"], "arena-collapse": ["A11", "A13", "A20", "SYN-FAMILY", "SYN-Q4-NAME-BLIND", "SYN-NEGATIVE-CONTROL", "SYN-ACTION-NOT-TOO-WEAK", "SYN-NONDEGENERACY", "SYN-ST-RELABEL", "SYN-ST-BROKEN", "SYN-ST-NAME-READER"], "born-lax": ["A19", "SYN-QOPT-T1", "SYN-QOPT-VALUE", "SYN-QOPT-SCOPE"], "canon-lax": ["A14", "SYN-DEGENERACY", "SYN-NEGATIVE-CONTROL", "SYN-ACTION-NOT-TOO-WEAK"], "declaration-lax": ["SYN-DECLARATION-INDEPENDENT"], "degeneracy-lax": ["SYN-NEUTRAL-RECOGNITION", "SYN-DEGENERACY"], "eps-lax": ["A15"], "float-lax": ["SYN-EXACT"], "freeze-lax": ["SYN-FREEZE"], "gauge-subsample": ["SYN-ST-SWITCH"], "hidden-read": ["SYN-SWITCH-SCOPE", "SYN-ST-RELABEL"], "hol-orient": ["A09"], "hol-sign": ["A09"], 
+
+MEASURED DISCLOSURES
+  distinct_fiber_size_patterns_across_the_laws: 2
+  epsilon_values_over_the_fibered_family: 14
+  epsilon_values_over_the_flat_product_of_realized_patches_x_states: 17
+  fiber_size_patterns: {'(24, 120, 24, 6, 6, 6, 6, 24, 6, 1, 6, 24, 12)': ['DET', 'FUNNEL', 'REV', 'FUNNEL-CLOSURE'], '(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)': ['COUNTER-LAW']}
+  realized_patches: 30
+  the admitted action: {"relabellings": 1073, "that_move_the_law": 0, "that_move_the_state": 0}
+  self-test cache: {"adjudication_cache_hits": 367878, "adjudication_cache_misses": 260, "value_cache_hits": 0, "value_cache_misses": 120074}
+  broken_control_1_per_quantity: Q1 0/3024, Q2 0/3024, Q3 0/3024, Q4 0/3024, Q5 0/3024, Q6 0/3024, Q7 0/3024, Q8 2772/3024
+  broken_control_2_per_quantity: Q1 119/503, Q2 0/503, Q3 0/503, Q4 96/503, Q5 96/503, Q6 0/503, Q7 0/503, Q8 500/503
+  gate falsification: {"falsified_by_some_mutant": 24, "gate_input_stub_mutants": ["float-lax", "degeneracy-lax"], "must_pass_gates": 24, "not_falsified_by_any_mutant": []}
 
 NONDEGENERACY WITNESSES
-  Q1: {"distinct_transition_data": 5, "witness": "the five committed laws themselves"}
+  Q1: {"ambient": false, "distinct_transition_data": 5, "witness": "the five committed laws themselves -- NOT an ambient object: they are the family's own law coordinate, so this is a measurement of separation and not a nondegeneracy witness, and it is not gated as one"}
   Q2: {"admitted_holonomy_values": 1, "ambient_holonomy_values": 8, "witness": "the ambient (non-unitary-constrained) phase quadruples of the same declared modulus profile"}
-  Q3: {"admissible_patches": 745, "of_them_proper_coarse_charts": 745, "witness": "the identity-free side of the dichotomy at three configurations"}
+  Q3: {"admissible_law_patch_instances": 745, "distinct_admissible_patches": 4, "distinct_identity_free_laws": 428, "of_them_proper_coarse_charts": 745, "witness": "the identity-free side of the dichotomy at three configurations"}
   Q7: {"ambient_instances_where_omega_is_non_zero": 201, "scope": "[EXH] 5 committed laws x 5 charts (the three declared patches, the fine chart, the one-atom chart) x all 31 preparations = 775 instances", "witness": "the declared preparation reduced below the whole carrier"}
-  Q8: {"one_atom_seams": 1, "witness": "the one-atom boundary, whose seam with every declared patch is the one-atom seam"}
+  Q8: {"ambient": true, "ambient_seam_atom_counts": [1, 2], "ambient_seams": {"ambient 2+3": [["012|34", "01234", 1], ["0|1|2|3|4", "01|234", 2]], "ambient 3+2": [["01|234", "01234", 1], ["0|1|2|3|4", "012|34", 2]], "ambient fine": [["012|34", "012|34", 2], ["01|234", "01|234", 2]]}, "ambient_seams_strictly_coarser_than_both": 4, "family_seam_atom_counts": [2, 3], "witness": "an AMBIENT NON-CHAIN triple of boundaries outside the declared family, run through Q8's own function: two of its members are incomparable, so their seam is strictly coarser than both rather than the coarser member, and it collapses to the ONE-ATOM seam -- the declared neutral value, which the family's own seams never are"}
 
 MUTANTS
-  anchor-A04       exit 1  kills ['A04']
-  anchor-A05       exit 1  kills ['A05']
-  anchor-A09       exit 1  kills ['A09']
-  anchor-A11       exit 1  kills ['A11']
-  anchor-A12       exit 1  kills ['A12']
-  anchor-A19       exit 1  kills ['A19']
   states-drop      exit 1  kills ['A11']
-  stab-lax         exit 1  kills ['A07', 'SYN-Q4-NAME-BLIND', 'SYN-POSITIVE-CONTROLS']
-  action-weaken    exit 1  kills ['A11', 'A13', 'SYN-FAMILY', 'SYN-Q4-NAME-BLIND', 'SYN-NEGATIVE-CONTROL', 'SYN-ACTION-NOT-TOO-WEAK', 'SYN-NONDEGENERACY', 'SYN-ST-BROKEN', 'SYN-ST-NAME-READER']
-  transport-lax    exit 1  kills ['SYN-Q4-NAME-BLIND']
-  name-reader      exit 1  kills ['SYN-Q4-NAME-BLIND']
-  seam-orient      exit 1  kills ['A14']
+  stab-lax         exit 1  kills ['A07', 'SYN-Q4-NAME-BLIND', 'SYN-SIGNATURE-SCOPE', 'SYN-POSITIVE-CONTROLS', 'SYN-ST-RELABEL', 'SYN-ST-BROKEN']
+  action-weaken    exit 1  kills ['A11', 'A13', 'A20', 'SYN-FAMILY', 'SYN-Q4-NAME-BLIND', 'SYN-NEGATIVE-CONTROL', 'SYN-NONDEGENERACY', 'SYN-ST-RELABEL', 'SYN-ST-BROKEN', 'SYN-ST-NAME-READER']
+  arena-collapse   exit 1  kills ['A11', 'A13', 'A20', 'SYN-FAMILY', 'SYN-Q4-NAME-BLIND', 'SYN-NEGATIVE-CONTROL', 'SYN-ACTION-NOT-TOO-WEAK', 'SYN-NONDEGENERACY', 'SYN-ST-RELABEL', 'SYN-ST-BROKEN', 'SYN-ST-NAME-READER']
+  transport-lax    exit 1  kills ['SYN-Q4-NAME-BLIND', 'SYN-SIGNATURE-SCOPE', 'SYN-ST-RELABEL']
+  memo-lax         exit 1  kills ['SYN-ST-FRESH']
+  selftest-scope   exit 1  kills ['SYN-ST-RELABEL', 'SYN-ST-BROKEN']
+  name-reader      exit 1  kills ['SYN-Q4-NAME-BLIND', 'SYN-ST-RELABEL']
+  seam-orient      exit 1  kills ['A14', 'SYN-SEAM-ORDER', 'SYN-NONDEGENERACY']
+  seam-blind       exit 1  kills ['SYN-ST-RELABEL']
+  hidden-read      exit 1  kills ['SYN-SWITCH-SCOPE', 'SYN-ST-RELABEL']
   hol-sign         exit 1  kills ['A09']
   hol-orient       exit 1  kills ['A09']
-  degeneracy-lax   exit 1  kills ['SYN-DEGENERACY']
-  born-lax         exit 1  kills ['A19', 'SYN-QOPT-T1', 'SYN-QOPT-VALUE']
-  srcscan-lax      exit 1  kills ['SYN-SWITCH-SCOPE']
+  gauge-subsample  exit 1  kills ['SYN-ST-SWITCH']
+  degeneracy-lax   exit 1  kills ['SYN-NEUTRAL-RECOGNITION', 'SYN-DEGENERACY']
+  born-lax         exit 1  kills ['A19', 'SYN-QOPT-T1', 'SYN-QOPT-VALUE', 'SYN-QOPT-SCOPE']
+  qopt-force       exit 1  kills ['SYN-QOPT-VALUE']
+  qopt-subsample   exit 1  kills ['SYN-QOPT-VALUE']
+  qopt-blind       exit 1  kills ['SYN-QOPT-NAMES']
   float-lax        exit 1  kills ['SYN-EXACT']
-  eps-lax          exit 1  kills ['A11']
+  eps-lax          exit 1  kills ['A15']
   omega-lax        exit 1  kills ['A16']
+  canon-lax        exit 1  kills ['A14', 'SYN-DEGENERACY', 'SYN-NEGATIVE-CONTROL', 'SYN-ACTION-NOT-TOO-WEAK']
+  declaration-lax  exit 1  kills ['SYN-DECLARATION-INDEPENDENT']
+  verdict-lax      exit 1  kills ['SYN-NEUTRAL-RECOGNITION', 'SYN-DEGENERACY', 'SYN-CENSUS-COMPLETE', 'SYN-NEGATIVE-CONTROL']
+  freeze-lax       exit 1  kills ['SYN-FREEZE']
+  pres-lax         exit 1  kills ['A04', 'A06', 'A17', 'A20', 'A18']
 
 VERDICT
-  ARENA-INVARIANT-Q1
+  ARENA-ARTIFACT-Q1
   ARENA-INVARIANT-Q2
   ARENA-INVARIANT-Q3
-  ARENA-INVARIANT-Q4
+  ARENA-ARTIFACT-Q4
   ARENA-ARTIFACT-Q5
   ARENA-ARTIFACT-Q6
   ARENA-INERT-Q7
-  ARENA-INVARIANT-Q8
-  ARENA-INERT-Q-OPT
+  ARENA-ARTIFACT-Q8
+  BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION
   RQ0-SYNTH-CENSUS-COMPLETE
     ADOPTED-ARENA-RELATIVITY: the legitimacy of a coarse patch is relative to
-    a DECLARED ARENA. Measured here: the legitimacy certificate of a FIXED
-    patch declaration moves with the arena's law, while the fine-grained
-    transition data, the closed holonomy, the rigidity classifier, the
-    name-blind generation profile and the seam datum do not move at all.
+    a DECLARED ARENA. Measured here, and stated from the computed table rather
+    than typed: Q1, Q4, Q5, Q6, Q8 move under some arena coordinate and Q2,
+    Q3, Q7 move under none; the quantities that move WITH THE LAW at a fixed
+    patch declaration are Q1, Q4, Q5; the quantities whose definition never
+    names the law, so that their law-fixity is definitional and not measured,
+    are Q2, Q6, Q8. The asymmetry the unit carries is between Q5 and Q8, which
+    face the same declared action, the same fibration and the same sweep: the
+    certificate of a fixed declaration takes 5 values per declaration as the
+    law varies, the seam takes 1.
 
-TOTALS: 19 anchors, 20 gates, 0 must-pass failures
+TOTALS: 20 anchors, 27 gates, 0 must-pass failures
 ==============================================================================

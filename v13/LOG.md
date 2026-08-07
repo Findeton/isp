@@ -6304,3 +6304,40 @@ Deviation 5's square-again criterion, transport_object);
 R1's exhaustive 262,144/0 gauge sweep incorporated.  On
 delivery: COMMIT-AS-IS FIRST, then verification, then terminal
 or bounce.  Recorded after it occurs.
+
+## 2026-08-07 — RQ0-SYNTH REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #187)
+Repair S-1..S-6 delivered; committed as-is before adjudicator
+verification.  Worker's inventory: self-test rebuilt fresh
+(value-cache hits GATED ZERO / 120,074 misses; adjudication
+sub-cache cleared, miss count gated positive; 25,752 instances;
+tested set enforced-by-declaration; Deviation 10 owns the
+engineering of "every memo" — value-level memos bypassed, the
+full-key adjudication sub-cache cleared, ~27 min unrunnable
+otherwise).  VERDICTS RE-FOUNDED ON MEASUREMENT:
+SYN-DECLARATION-INDEPENDENT passes with verdicts_that_differ
+EMPTY; declaration-lax kills it.  **THE TABLE MOVED, exactly
+where R3's F10 measured it would: Q1, Q4, Q8 INVARIANT →
+ARTIFACT** (Deviation 11 owns Q1's label — the pin's global
+positive-control expectation was a category conflation; the
+control content survives PER-COORDINATE: Q1 fixed under
+patch/state/relabelling, moves only with the law coordinate
+itself; Q2 fixed under all five, 262,144-instance exhaustive
+gauge sweep).  THE ASYMMETRY AT ITS SHARPEST HONEST FORM: after
+de-naming (one convention for all eight), Q5 legitimacy still
+takes 5 values per declaration (moves with the LAW), Q8's seam
+takes 1 (ALL its patch-motion was naming); both
+relabelling-fixed with teeth (2,144 / 2,688); Q8's law/state
+fixity disclosed as definitional (transitive AST signature scan:
+Q8 consumes {patch, relabelling} only).  Q-OPT →
+BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION single name;
+monomial theorem 0/14,400 + 0/960 phased; all five names
+reachable (SYN-QOPT-NAMES; qopt-blind/force/subsample mutants).
+Hygiene: 27 mutants (6 no-ops removed, 13 added),
+not_falsified_by_any_mutant EMPTY over 24 must-pass gates and
+GATED; SYN-ST-BROKEN restated w/ an outside-the-admitted-group
+control (bites Q1 119, Q4 96, Q5 96, Q8 500/503); Deviation 5
+corrected AND GATED (square-again 128/128 vs 0/384; 256 of 384
+refute the old wording).  20 anchors / 27 gates / 0 must-pass
+failures; 12 deviations; single-threaded w/ the one #185
+citation.  md5 output 183de93a / receipt 701b5ac1; two delivery
+runs diff-clean.  Adjudicator verification next.
