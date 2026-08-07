@@ -6570,3 +6570,19 @@ cross-frame chart pairs DISJOINT, all 30 same-frame pairs
 SHARE — disjointness is not choice-relative.  Panel complete:
 R1 REJECT / R2 AWF / R3 AWF; ~1,155 recomputations, zero false
 computed numbers.  Adjudication next.
+
+## 2026-08-07 — O4 JOINT ADJUDICATION: REJECT-AS-DELIVERED,
+## RE-DERIVATION RD-1..RD-6 ORDERED (v13 LEDGER #196)
+note-o4-adjudication.md committed; grades resolved R1 REJECT
+adopted (R2's independent confirmation decisive; R3 scoped).
+Zero false computed numbers panel-wide; the casualty is the
+derivation.  The matched-coordinate table becomes the object;
+DISCRIMINATED withdrawn; expected honest outcome
+O4-BLOCKED-AT-⟨THE-INTERMEDIATE-TIME⟩ class-neutral, the table
+to decide; the t=1/t=2 equal-residual asymmetry named as the
+bequest to the transport pin; the wing-exchange cause gated;
+the arena test at name-free matched representatives; LTP
+receipt completed; charter hedges restored; NOSLICE re-founded
+or renamed.  RUNBOOK §15 addendum: match every coordinate
+before claiming a class contrast.  STATUS updated this commit.
+Re-derivation dispatch next.

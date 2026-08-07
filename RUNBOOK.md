@@ -1750,3 +1750,13 @@ cache-hit count must itself be gated (a zero-miss self-test is
 the signature of a gate that cannot fail). A symmetry gate's
 tested set is fixed by declaration, never selected by the very
 verdicts under audit.
+
+**§15 addendum (2026-08-07, from v13 #196):** a like-for-like
+comparison must match EVERY coordinate of the compared objects
+— time, representative, naming — before any class contrast is
+claimed. A class-vs-class verdict whose classes are read at
+different coordinates is a coordinate effect in disguise; the
+matched-coordinate table is the primary object, and the
+contrast is derived from it, never assumed. A like-for-like
+gate that checks function signatures does not check
+coordinates.
