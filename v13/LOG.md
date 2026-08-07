@@ -6287,3 +6287,20 @@ exhaustive 262,144/0 gauge sweep incorporated; abstract
 requalified.  RUNBOOK §14 addendum: self-tests evaluate fresh;
 zero-miss cache counters gated.  STATUS updated this commit.
 Repair dispatch next; recorded after it occurs.
+
+## 2026-08-07 — RQ0-SYNTH REPAIR DISPATCHED (S-1..S-6) (v13 LEDGER #186)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+the four unit files only) with the adjudication's binding order:
+self-test rebuilt fresh-eval w/ zero-memo-hit gate and
+declaration-fixed tested sets; verdicts re-founded on measured
+motion w/ the READS/ACTS flip-test as a permanent gate; the
+asymmetry restated at true scope (σ measured w/ teeth, law/state
+definitional-disclosed; naming unified, Q5's honest de-named
+figure; INERT-Q8 made reachable; seam-orient made to bite);
+Q-OPT → BLOCKED-AT-THE-NON-MONOMIAL-ADMITTED-OPERATION w/ all
+four names emittable (qopt-force mutant); hygiene (6
+unfalsifiable gates, 6 no-op mutants, SYN-ST-BROKEN mechanism,
+Deviation 5's square-again criterion, transport_object);
+R1's exhaustive 262,144/0 gauge sweep incorporated.  On
+delivery: COMMIT-AS-IS FIRST, then verification, then terminal
+or bounce.  Recorded after it occurs.
