@@ -6027,3 +6027,19 @@ does not occur; **BRANCH B REMAINS THE PROVEN RESIDUE pending
 the repaired unit's verification — the adoption decision returns
 to the user at terminal.**  Repair R-1..R-9 dispatched next;
 recorded after it occurs.
+
+## 2026-08-07 — BRANCH-A REPAIR DISPATCHED (R-1..R-9) (v13 LEDGER #176)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git, the
+four unit files only) with the adjudication's binding list:
+holonomy rebuilt as a true closed-loop invariant + 512-switching
+gauge-covariance gate w/ negative control; Prop 5.4 → the
+constancy theorem (−1, blindness); Thm 6.3 → R2's corrected
+stronger witness (Gain-1 separation fixed); L5-AMP-FREE
+re-derived in blindness form w/ the failed-as-delivered receipt
+owned in deviations; scissors → the binding numerals reading; §8
+slogan → R3's functionality form; (P2)-weak vacuity stated;
+true_histories under the scan; [EXH-1] → 1,680; sign/orientation
+mutants added. STATUS.md refreshed in this commit (it lagged
+#175 by one commit — owned): stage-5/branch-C/branch-A rows
+brought current. Verification on delivery recorded after it
+occurs.

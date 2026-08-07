@@ -5,7 +5,7 @@ same commit. Statuses are the ledgers' words; rows marked ✓adj were
 re-verified by the adjudicator writing the row; others carry their
 ledger pointer as the authority.
 
-Updated: 2026-08-06 (v13 LOG #145: B″ TERMINAL; stage 5 opening).
+Updated: 2026-08-07 (v13 LOG #176: branch-A repair in flight; the ladder's full state below).
 
 ## v12 (the Weld — one-chart composition, records, co-reference)
 
@@ -60,4 +60,11 @@ Updated: 2026-08-06 (v13 LOG #145: B″ TERMINAL; stage 5 opening).
 4. Local `main` is 8 commits ahead of the remote the last external
    review saw (dba40d4 → 431c2c8): pushing is the user's call.
 
-**Stage-5 adjudicated (#154): coarse legitimacy undecidable-from-within; THE FORK IS THE USER'S (A/B/C, recommend C-then-A); repair in flight.**
+## The stage-5 fork and its branches (the user's order: C then A; B the residue)
+
+| unit | status | authority |
+|---|---|---|
+| Stage 5 — ε-admissibility | **TERMINAL: EPSILON-BLIND at every state** (ε = Bayes error; inverted ordering — the forgery has the least defect; ω quadruple-bound and inert; mixed-STATE arena named) | v13 #156 ✓adj |
+| Branch C — nomological fingerprint | **TERMINAL: CLASS-IMPOSSIBILITY fused w/ the name-blindness principle** ("the coarse present cannot testify: proved where symmetry acts; principled where it does not"; FINGERPRINT withdrawn; 42/42 name-blind rows accounted) | v13 #166 ✓adj |
+| Branch A — provenance quintuple (V-CL + V-AMP per the user's amplitude amendment) | green #171; panel #173–#175: R1 AWF / R2 REJECT-of-artifact / R3 AWF; **adjudicated ACCEPT-WITH-MAJOR-REPAIRS** — outcome box survives whole (BOTH KILLS FIRE ON BOTH VARIANTS; delta zero by theorem; BLOCKED-AT-THE-DECLARATION w/ R3's functionality qualifier); the amplitude instrument was GAUGE-VARIANT (constancy theorem −1 ordered; RUNBOOK §14 born from it); **repair R-1..R-9 in flight (#176)** | v13 #175 ✓adj |
+| Branch B — coarse arena-relativity | **THE PROVEN RESIDUE** pending branch-A terminal; **adoption decision = THE USER'S** (per the pin: no successor authorized by this unit) | pin ce18eac |
