@@ -5853,3 +5853,13 @@ VERIFICATION (the checks are record-producing — the
 recorded-but-phased limit applies to the checks; the lossy
 adversary posed against what any admitted verification can
 read).  Fresh dispatch against pin v2; recorded after it occurs.
+
+## 2026-08-06 — BRANCH-A v2 DERIVATION DISPATCHED (v13 LEDGER
+## #170)
+Fresh background worker (Opus 5) against the amended pin at
+a05e3d5 (the stopped predecessor's partials, if any, to be
+overwritten); BOTH variants run (V-CL vs V-AMP) with THE DELTA
+first-class; amplitude data carried in gauge-invariant form per
+terminal W7 (raw gauge-variant phases would smuggle); the kill
+verdicts per variant reported first; freeze-on-delivery.
+Recorded after the dispatch occurred.
