@@ -6408,3 +6408,39 @@ per-coordinate claims.  On delivery: COMMIT-AS-IS FIRST, then
 verification, then §13 protocol freeze → panel.  The
 nomological-transport pin (law-data) queued behind this unit's
 verdict.  Recorded after it occurs.
+
+## 2026-08-07 — O4 DISCRIMINATOR DELIVERED, COMMITTED AS-IS (v13 LEDGER #191)
+Delivery committed as-is before adjudicator verification.
+Worker's inventory — UNIT VERDICT:
+**O4-DISCRIMINATED-RECORD-ACTUALISM + O4-ARENA-RELATIVE** (two of
+the five pre-registered outcomes; the fork NOT adjudicated, per
+pin).  THE OBSTRUCTION NAMED: the two frames' occupied
+configuration sets at the intermediate time are DISJOINT at
+every setting (intersections 0×6; sizes F1 = 2,2,8,8,2,8 / F2 =
+8,8,8,8,2,8) — NO proposition "the configuration between
+division events is i" is true in both frames.  Candidates: C1
+naive-slice BLOCKED-AT-NOSLICE (the gate bites 12/12; zero
+transports anyway); C2 descent-restriction (Born) →
+DISCRIMINATED at all six settings (F-REC passes all gates
+reproducing W6's FORCED identity |Φ|=1×6; F-CFG |Φ|=0×6); C2X
+exact-level BLOCKED-AT-COVAR (not switching-invariant); C3
+MODAL-CARRIER → DISCRIMINATED all six — **the modal structure
+that carries record-token identity CANNOT carry configuration
+facts**; C4 realized-only → LTP-BARE (SP-F forced by W5's lemma;
+SP-E LTP-BARE-UNWITNESSED; LTP-LAWFUL reachable and measured
+never to obtain; residual ‖r‖₀ = (0,0,16,16,0,16) matching W5
+exactly; shared record subalgebra 0 at every setting).  ARENA
+TEST (192, computed): F-CFG truth-vector ARENA-ARTIFACT — moves
+under setting/frame/relabelling, orbit 2 at every one of the 12
+charts; F-REC control moves under setting only, orbit 1
+everywhere — **same experiment: record facts frame-invariant,
+configuration facts not.**  27 anchors / 21 gates (18 must-pass,
+0 failures) / 23 mutants named-kills / never-falsified EMPTY.
+DEVIATION 1 IS A FINDING: W5's divisibility census 576
+recomputes to 288 — W5 chose a DIFFERENT orthogonal completion
+of U_prep off the j₀ column (j₀ agrees exactly A25; the
+completion-independent anchor reproduces): independent
+second-direction confirmation of W6's
+U_prep's-arbitrary-completion-does-work finding.  7 deviations;
+nothing impossible as pinned.  md5 output 36f46ad3 / receipt
+4ab40f9f.  Adjudicator verification next.

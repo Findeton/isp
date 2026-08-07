@@ -1,0 +1,6315 @@
+{
+ "anchors": [
+  {
+   "committed": 8,
+   "computed": 8,
+   "id": "A01",
+   "passed": true,
+   "quantity": "the eight local measurement operators are exactly orthogonal",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:516]"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A02",
+   "passed": true,
+   "quantity": "the local operators commute at all nine setting pairs",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:524]"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A03",
+   "passed": true,
+   "quantity": "U_prep is exactly orthogonal",
+   "source": "v12/code/w6_output.txt M3 [sec4_records.py:505]"
+  },
+  {
+   "committed": 72,
+   "computed": 72,
+   "id": "A04",
+   "passed": true,
+   "quantity": "the declared permutation scope has 72 elements",
+   "source": "v12/note-w6-record-coreference.md SCOPE 2"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A05",
+   "passed": true,
+   "quantity": "the j0 filter admits exactly 2 of the 72",
+   "source": "v12/note-w6-record-coreference.md SCOPE 2"
+  },
+  {
+   "committed": 8,
+   "computed": 8,
+   "id": "A06",
+   "passed": true,
+   "quantity": "the declared extension admits exactly 8",
+   "source": "v12/note-w6-record-coreference.md SCOPE 2"
+  },
+  {
+   "committed": 96,
+   "computed": 96,
+   "id": "A07",
+   "passed": true,
+   "quantity": "the extension's comprehension bound is 96 -- the declared base scope together with the pointer-transposition elements it does not already contain, counted by enumeration",
+   "source": "v12/note-w6-record-coreference.md SCOPE 2"
+  },
+  {
+   "committed": [
+    56,
+    56,
+    0
+   ],
+   "computed": [
+    56,
+    56,
+    0
+   ],
+   "id": "A08",
+   "passed": true,
+   "quantity": "law-agreeing / candidate-admitting ordered pairs of 144, and violations of the biconditional",
+   "source": "v12/note-w6-record-coreference.md W6-A"
+  },
+  {
+   "committed": [
+    24,
+    32
+   ],
+   "computed": [
+    24,
+    32
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "of the 56, same-experiment pairs and accidental agreements",
+   "source": "v12/note-w6-record-coreference.md W6-A"
+  },
+  {
+   "committed": [
+    2,
+    4,
+    6
+   ],
+   "computed": [
+    2,
+    4,
+    6
+   ],
+   "id": "A10",
+   "passed": true,
+   "quantity": "the final-law class sizes",
+   "source": "v12/note-w6-record-coreference.md W6-A"
+  },
+  {
+   "committed": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "computed": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "id": "A11",
+   "passed": true,
+   "quantity": "|Phi_A| at the six settings (the wing tie)",
+   "source": "v12/note-w6-record-coreference.md W6-B"
+  },
+  {
+   "committed": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "computed": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "|Phi_B| at the six settings (forced, the identity)",
+   "source": "v12/note-w6-record-coreference.md W6-B"
+  },
+  {
+   "committed": [
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "computed": [
+    [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   ],
+   "id": "A13",
+   "passed": true,
+   "quantity": "|Phi_A| and |Phi_B| at the intermediate slice, per setting",
+   "source": "v12/note-w6-record-coreference.md M4"
+  },
+  {
+   "committed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "computed": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "id": "A14",
+   "passed": true,
+   "quantity": "shared record subalgebra at the intermediate time, per setting",
+   "source": "v12/note-w6-record-coreference.md M4"
+  },
+  {
+   "committed": [
+    270,
+    270,
+    432,
+    432,
+    108,
+    432
+   ],
+   "computed": [
+    270,
+    270,
+    432,
+    432,
+    108,
+    432
+   ],
+   "id": "A15",
+   "passed": true,
+   "quantity": "differing entries of the intermediate propagators, per setting",
+   "source": "v12/note-w6-record-coreference.md control 4"
+  },
+  {
+   "committed": [
+    [
+     false,
+     2,
+     8
+    ],
+    [
+     false,
+     2,
+     8
+    ],
+    [
+     false,
+     8,
+     8
+    ],
+    [
+     false,
+     8,
+     8
+    ],
+    [
+     false,
+     2,
+     2
+    ],
+    [
+     false,
+     8,
+     8
+    ]
+   ],
+   "computed": [
+    [
+     false,
+     2,
+     8
+    ],
+    [
+     false,
+     2,
+     8
+    ],
+    [
+     false,
+     8,
+     8
+    ],
+    [
+     false,
+     8,
+     8
+    ],
+    [
+     false,
+     2,
+     2
+    ],
+    [
+     false,
+     8,
+     8
+    ]
+   ],
+   "id": "A16",
+   "passed": true,
+   "quantity": "the two frames' time-2 occupied supports never coincide, with their sizes",
+   "source": "v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL"
+  },
+  {
+   "committed": [
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ]
+    ],
+    [
+     [],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ]
+    ]
+   ],
+   "computed": [
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [],
+     []
+    ],
+    [
+     [],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ]
+    ],
+    [
+     [],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        0
+       ]
+      ]
+     ]
+    ]
+   ],
+   "id": "A17",
+   "passed": true,
+   "quantity": "token maps admitted by the REALIZED legs alone (exact / sign / Born), per setting",
+   "source": "v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL"
+  },
+  {
+   "committed": [
+    false,
+    true,
+    false,
+    false,
+    9,
+    8
+   ],
+   "computed": [
+    false,
+    true,
+    false,
+    false,
+    9,
+    8
+   ],
+   "id": "A18",
+   "passed": true,
+   "quantity": "w.U_prep.w against U_prep: the j0 column (+,-), the other 35 as a block (+,-), then column by column",
+   "source": "v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL"
+  },
+  {
+   "committed": 35,
+   "computed": 35,
+   "id": "A19",
+   "passed": true,
+   "quantity": "the never-occupied block of U_prep has 35 columns",
+   "source": "v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL"
+  },
+  {
+   "committed": [
+    "SET-AMALGAM",
+    "GROUPOID-AMALGAM",
+    "UNDERDETERMINED",
+    "NO-DESCENT",
+    "ABSENT-PAIR"
+   ],
+   "computed": [
+    "SET-AMALGAM",
+    "GROUPOID-AMALGAM",
+    "UNDERDETERMINED",
+    "NO-DESCENT",
+    "ABSENT-PAIR"
+   ],
+   "id": "A20",
+   "passed": true,
+   "quantity": "paper 2's four descent verdicts (set / groupoid / underdetermined / twisted / missing)",
+   "source": "v12/paper2_code/RUN.txt section 3"
+  },
+  {
+   "committed": [
+    4,
+    1,
+    2,
+    true
+   ],
+   "computed": [
+    4,
+    1,
+    2,
+    true
+   ],
+   "id": "A21",
+   "passed": true,
+   "quantity": "paper 2's groupoid model: families, orbits, stabiliser, injective colimit",
+   "source": "v12/paper2_code/RUN.txt section 3"
+  },
+  {
+   "committed": 0,
+   "computed": 0,
+   "id": "A22",
+   "passed": true,
+   "quantity": "no canonical map survives independent S2 automorphisms",
+   "source": "v12/paper2_code/RUN.txt section 4"
+  },
+  {
+   "committed": [
+    4,
+    4,
+    1,
+    1,
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "computed": [
+    4,
+    4,
+    1,
+    1,
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "id": "A23",
+   "passed": true,
+   "quantity": "paper 2's completion witness: realized candidate counts, full isomorphism counts, and the two opposite full token maps",
+   "source": "v12/paper2_code/RUN.txt section 5"
+  },
+  {
+   "committed": [
+    0,
+    2,
+    1,
+    4,
+    3
+   ],
+   "computed": [
+    0,
+    2,
+    1,
+    4,
+    3
+   ],
+   "id": "A24",
+   "passed": true,
+   "quantity": "the swap completion is generated by the declared permutation P",
+   "source": "v12/paper2_code/RUN.txt section 5"
+  },
+  {
+   "committed": [
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     16
+    ],
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     16
+    ]
+   ],
+   "computed": [
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     16
+    ],
+    [
+     0,
+     0,
+     16,
+     16,
+     0,
+     16
+    ]
+   ],
+   "id": "A25",
+   "passed": true,
+   "quantity": "the LTP residual weight ||r||_0 of 36 at the six settings, frame F1 then F2",
+   "source": "v12/note-w5-barandes-recast.md section 3.3 (G6)"
+  },
+  {
+   "committed": "{16}",
+   "computed": "{16}",
+   "id": "A26",
+   "passed": true,
+   "quantity": "every column of the matrix residual that differs at all differs in exactly 16 entries (W5's 'the same fact, seen once per column'), at the three violated settings, both frames",
+   "source": "v12/note-w5-barandes-recast.md section 3.3 (G4)"
+  },
+  {
+   "committed": [
+    [
+     4,
+     0
+    ],
+    [
+     6,
+     8
+    ]
+   ],
+   "computed": [
+    [
+     4,
+     0
+    ],
+    [
+     6,
+     8
+    ]
+   ],
+   "id": "A27",
+   "passed": true,
+   "quantity": "the SP-C and SP-F residual censuses: (distinct values, rational entries of 16)",
+   "source": "v12/note-w5-barandes-recast.md section 3.3 (G5, G5b)"
+  }
+ ],
+ "base_commit": "71371ae",
+ "findings": {
+  "arena_relative": true,
+  "coordinates": {
+   "O4-DISCRIMINATED-RECORD-ACTUALISM": [
+    "C2@SP-A",
+    "C2@SP-B",
+    "C2@SP-C",
+    "C2@SP-D",
+    "C2@SP-E",
+    "C2@SP-F",
+    "C3@SP-A",
+    "C3@SP-B",
+    "C3@SP-C",
+    "C3@SP-D",
+    "C3@SP-E",
+    "C3@SP-F"
+   ]
+  },
+  "per_candidate": {
+   "C1": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>",
+   "C2": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+   "C2X": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>",
+   "C3": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+   "C4": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"
+  },
+  "record_control_green": true,
+  "thesis": "Under one instrument and ten identical gates on the W6 terminal base: record facts transport and descend; unrecorded configuration facts do not, and the obstruction is the two frames' occupied supports at the intermediate time, which are measured never to coincide at any of the six committed settings.  Where a rule DOES admit a transport, the actuality it carries is LTP-BARE at the coordinates where W5's forcing lemma fires.  F-CFG's truth-values move under the admitted arena action at coordinates where F-REC's do not.  Stated at the committed finite scope; nothing is claimed about nature and the charter fork is not adjudicated here.",
+  "unit_verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM + O4-ARENA-RELATIVE"
+ },
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)).  The three fact-classes, their carriers and preservation lists, the ten descent gates and the four candidate rules with their matching levels and corridor claims are all recorded above, and the fact-datum evaluation counter is measured to be ZERO at this point.  The `freeze-lax` mutant evaluates one fixture datum first and must die here",
+   "class": "freeze",
+   "id": "O4-FREEZE",
+   "passed": true,
+   "value": {
+    "candidates": [
+     "C1",
+     "C2",
+     "C2X",
+     "C3",
+     "C4"
+    ],
+    "descent_gates": [
+     "EXIST",
+     "FORCED",
+     "INV",
+     "TRI",
+     "GLUE",
+     "CERT",
+     "COVAR",
+     "NAMEBLIND",
+     "NOSLICE",
+     "LTP"
+    ],
+    "fact_classes": [
+     "F-REC",
+     "F-CFG",
+     "F-CTRL"
+    ],
+    "fact_datum_evaluations_before_freeze": 0
+   }
+  },
+  {
+   "claim": "A DECLARED DIVERGENCE FROM A COMMITTED COUNT, AND WHY.  W5's A3 prints the divisibility census (0,0,576,576,0,576) -- 16 differing entries in every one of the 36 columns.  Recomputed on THIS base's preparation operator the count is measured to be smaller, because W5 rebuilt the model from the singlet dictionary and chose a different orthogonal completion of U_prep off the j0 column.  The j0 COLUMN -- the only column the model's own admissible p(0) ever reads, and the one W5's G1 says carries the whole residual -- agrees exactly (A25).  The matrix count is therefore a completion-dependent quantity and the vector count is not: an independent confirmation, from a second direction, of W6's finding that U_prep's arbitrary completion off j0 is doing work",
+   "class": "disclosure",
+   "id": "O4-COMPLETION-DISCLOSURE",
+   "passed": true,
+   "value": {
+    "columns_that_differ": [
+     0,
+     0,
+     18,
+     18,
+     0,
+     18
+    ],
+    "committed_bc2_matrix_count": 576,
+    "j0_column_agrees_with_the_committed_count": true,
+    "per_column_differing_counts": [
+     16
+    ],
+    "recomputed_on_this_base": [
+     0,
+     0,
+     288,
+     288,
+     0,
+     288
+    ]
+   }
+  },
+  {
+   "claim": "THE ADMISSIBLE ARENA IS ENUMERATED AND ITS SIZE IS COMPUTED, never typed: the product of the declared setting count, the frame count, the admitted isomorphisms surviving the base's own j0 filter, and the checkpoint-phase switchings read off the declared leg count.  Every factor is measured from the fixtures",
+   "class": "derivation",
+   "id": "O4-ARENA-FAMILY",
+   "passed": true,
+   "value": {
+    "admitted_isomorphisms": 2,
+    "checkpoint_phase_switchings": 8,
+    "frames": 2,
+    "settings": 6,
+    "size": 192,
+    "switching_free_legs": 3
+   }
+  },
+  {
+   "claim": "THE ARENA ACTION HAS TEETH: at least one declared quantity is MEASURED to move under it.  If nothing moves, the action is too weak and the census is dead as instrumented; the `action-weaken` mutant collapses the action and must die here",
+   "class": "control",
+   "id": "O4-ARENA-TEETH",
+   "passed": true,
+   "value": {
+    "F-CFG_moved_under": [
+     "setting",
+     "frame",
+     "relabelling"
+    ],
+    "F-REC_moved_under": [
+     "setting"
+    ]
+   }
+  },
+  {
+   "claim": "THE ARENA TEST DISCRIMINATES THE TWO CLASSES.  F-REC's and F-CFG's truth-values are pushed through the SAME action and the coordinate sets under which they move are compared.  The gate records the comparison as measured; it fires only if the two classes are measured to differ under some coordinate",
+   "class": "measurement",
+   "id": "O4-ARENA-DISCRIMINATES",
+   "passed": true,
+   "value": {
+    "F-CFG": [
+     "setting",
+     "frame",
+     "relabelling"
+    ],
+    "F-REC": [
+     "setting"
+    ],
+    "symmetric_difference": [
+     "frame",
+     "relabelling"
+    ]
+   }
+  },
+  {
+   "claim": "THE POSITIVE CONTROL FIRES.  Routed through THIS unit's transport instrument -- the same ten gates, the same discriminator, the same solver -- the record class reproduces W6's terminal descent results: a transport exists and is FORCED at every one of the six committed settings, the inverse law holds, and the declared triple descends.  If the instrument could not reproduce the base's own positive result, nothing it says about the object would mean anything",
+   "class": "control",
+   "id": "O4-CTRL-POS",
+   "passed": true,
+   "value": {
+    "counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "triple": "SET-AMALGAM",
+    "triple_families": 1,
+    "triple_orbits": 1,
+    "triple_triples": 6,
+    "verdicts": {
+     "SP-A": "FORCED",
+     "SP-B": "FORCED",
+     "SP-C": "FORCED",
+     "SP-D": "FORCED",
+     "SP-E": "FORCED",
+     "SP-F": "FORCED"
+    }
+   }
+  },
+  {
+   "claim": "THE NEGATIVE CONTROL FAILS, AS IT MUST.  The mis-conventioned name-reading class is put through the IDENTICAL gates and is measured to fail at least one of them under every candidate rule.  A pass here would mean the instrument cannot tell a fact from a name -- the ACTION-TOO-WEAK analogue -- and this gate is the place that would be reported.  The `ctrl-pass` mutant makes it pass and must die here",
+   "class": "control",
+   "id": "O4-CTRL-NEG",
+   "passed": true,
+   "value": {
+    "candidates_where_the_control_passed": [],
+    "failed_gates_per_candidate": {
+     "C1": [
+      "EXIST",
+      "FORCED",
+      "INV",
+      "TRI",
+      "GLUE",
+      "CERT",
+      "NAMEBLIND",
+      "NOSLICE"
+     ],
+     "C2": [
+      "TRI",
+      "GLUE",
+      "CERT",
+      "NAMEBLIND"
+     ],
+     "C2X": [
+      "TRI",
+      "GLUE",
+      "CERT",
+      "COVAR",
+      "NAMEBLIND"
+     ],
+     "C3": [
+      "TRI",
+      "GLUE",
+      "CERT",
+      "NAMEBLIND"
+     ],
+     "C4": [
+      "EXIST",
+      "FORCED",
+      "INV",
+      "TRI",
+      "GLUE",
+      "CERT",
+      "NAMEBLIND"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "THE THREE CLASSES ARE GATED LIKE FOR LIKE.  Every fact-class is routed through the SAME ten gates by the same code path: the gate row of each class is measured to carry every declared gate key, and the transport dispatch is measured to be a single function per class with an identical signature.  No class receives a gate the others do not",
+   "class": "derivation",
+   "id": "O4-LIKE-FOR-LIKE",
+   "passed": true,
+   "value": {
+    "classes": [
+     "F-CFG",
+     "F-CTRL",
+     "F-REC"
+    ],
+    "gate_keys": [
+     "EXIST",
+     "FORCED",
+     "INV",
+     "TRI",
+     "GLUE",
+     "CERT",
+     "COVAR",
+     "NAMEBLIND",
+     "NOSLICE",
+     "LTP"
+    ]
+   }
+  },
+  {
+   "claim": "THE CORRIDOR GATES HAVE BOTH CONTROLS.  At least one declared candidate is MEASURED to lie inside the pin's corridor -- covariant under the admitted arena action, name-blind under the declared gauge, and blind to a pure time re-indexing, on every fact-class -- and at least one is MEASURED to lie outside it.  A corridor every candidate passes tests nothing, and a corridor no candidate passes tests only the corridor.  The `name-reader` and `global-now-smuggler` mutants empty the inside; a waived gate empties the outside",
+   "class": "control",
+   "id": "O4-CORRIDOR-CENSUS",
+   "passed": true,
+   "value": {
+    "inside": [
+     "C2",
+     "C3",
+     "C4"
+    ],
+    "name_blindness_of_the_negative_control": {
+     "C1": false,
+     "C2": false,
+     "C2X": false,
+     "C3": false,
+     "C4": false
+    },
+    "outside": [
+     "C1",
+     "C2X"
+    ],
+    "why_outside": {
+     "C1": [
+      "NOSLICE"
+     ],
+     "C2X": [
+      "COVAR"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "THE CORRIDOR SELECTS THE MATCHING LEVEL, MEASURED.  The same rule is run at all three of the base's declared matching levels and its invariance under the checkpoint-phase switchings is measured at each.  The EXACT amplitude level is measured NOT invariant -- the switchings are exactly the amplitude gauge -- while the SIGN and BORN levels are measured invariant.  This row is what makes the corridor's covariance clause a measurement rather than a stipulation, and the sign/orientation mutants must die here",
+   "class": "measurement",
+   "id": "O4-LEVEL-CENSUS",
+   "passed": true,
+   "value": {
+    "born": {
+     "covariant": true,
+     "relabelling_failures": 0,
+     "switching_failures": 0
+    },
+    "exact": {
+     "covariant": false,
+     "relabelling_failures": 0,
+     "switching_failures": 24
+    },
+    "sign": {
+     "covariant": true,
+     "relabelling_failures": 0,
+     "switching_failures": 0
+    }
+   }
+  },
+  {
+   "claim": "THE CERTIFICATE FIRES AND FAILS ON EXHIBITED PAIRS.  The identical ROUTE-EXT construction certifies the RECORD pair at every one of the six settings and refuses the UNRECORDED-CONFIGURATION pair at every one of them.  A certificate that never fails would certify nothing; a certificate that never succeeds would be an instrument defect rather than a finding.  The `cert-lax` mutant waives it and must die here",
+   "class": "control",
+   "id": "O4-CERT-BITES",
+   "passed": true,
+   "value": {
+    "F-CFG_certified": {
+     "SP-A": false,
+     "SP-B": false,
+     "SP-C": false,
+     "SP-D": false,
+     "SP-E": false,
+     "SP-F": false
+    },
+    "F-CFG_detail": {
+     "SP-A": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 10,
+      "positive_entries": 1,
+      "verdict": "DISAGREEMENT"
+     },
+     "SP-B": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 10,
+      "positive_entries": 1,
+      "verdict": "DISAGREEMENT"
+     },
+     "SP-C": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 16,
+      "positive_entries": 1,
+      "verdict": "DISAGREEMENT"
+     },
+     "SP-D": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 16,
+      "positive_entries": 1,
+      "verdict": "DISAGREEMENT"
+     },
+     "SP-E": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 4,
+      "positive_entries": 1,
+      "verdict": "DISAGREEMENT"
+     },
+     "SP-F": {
+      "bijection_supported": false,
+      "disagreeing_configurations": 16,
+      "positive_entries": 3,
+      "verdict": "DISAGREEMENT"
+     }
+    },
+    "F-REC_certified": {
+     "SP-A": true,
+     "SP-B": true,
+     "SP-C": true,
+     "SP-D": true,
+     "SP-E": true,
+     "SP-F": true
+    }
+   }
+  },
+  {
+   "claim": "THE TRIPLE LAW IS GENUINELY EXERCISED.  The declared triple is the base's own: the two frames plus the second frame presented on a relabelled configuration set, built as its OWN object with its own legs, its own initial configuration and its law recomputed.  All six ordered edges and all six ordered triples are measured to carry a transport, so the cocycle law has something to reject.  The `descent-lax` mutant drops the third chart and must die here",
+   "class": "control",
+   "id": "O4-TRIPLE-EXERCISED",
+   "passed": true,
+   "value": {
+    "automorphism_counts": {
+     "F1": 1,
+     "F2": 1,
+     "F2pi": 1
+    },
+    "edge_counts": {
+     "F1<-F2": 1,
+     "F1<-F2pi": 1,
+     "F2<-F1": 1,
+     "F2<-F2pi": 1,
+     "F2pi<-F1": 1,
+     "F2pi<-F2": 1
+    },
+    "edges": 6,
+    "families": 1,
+    "orbits": 1,
+    "triples": 6,
+    "verdict": "SET-AMALGAM"
+   }
+  },
+  {
+   "claim": "AN EMPTY CORRIDOR GATE IS DECLARED EMPTY.  Where a candidate admits NO F-CFG transport, its covariance row is satisfied vacuously -- nothing can move that does not exist -- which is exactly the emptiness the base's own discriminator refuses to count as agreement.  The coordinates at which each candidate's F-CFG corridor rows are vacuous are listed here, and the verdict derivation reads the corridor on EVERY class the rule is applied to, so no rule reaches a verdict on a vacuous covariance row",
+   "class": "disclosure",
+   "id": "O4-VACUITY-DISCLOSURE",
+   "passed": true,
+   "value": {
+    "F-CFG_vacuous_coordinates": {
+     "C1": [
+      "SP-A",
+      "SP-B",
+      "SP-C",
+      "SP-D",
+      "SP-E",
+      "SP-F"
+     ],
+     "C2": [
+      "SP-A",
+      "SP-B",
+      "SP-C",
+      "SP-D",
+      "SP-E",
+      "SP-F"
+     ],
+     "C2X": [
+      "SP-A",
+      "SP-B",
+      "SP-C",
+      "SP-D",
+      "SP-E",
+      "SP-F"
+     ],
+     "C3": [
+      "SP-A",
+      "SP-B",
+      "SP-C",
+      "SP-D",
+      "SP-E",
+      "SP-F"
+     ],
+     "C4": [
+      "SP-A",
+      "SP-B",
+      "SP-C",
+      "SP-D"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "WHERE F-CFG FAILS, THE FAILING GATE AND THE OBSTRUCTING OBJECT ARE NAMED.  The obstruction is exhibited as data: the two frames' occupied supports at the intermediate time, with their sizes, measured never to coincide at any of the six settings.  That is the object on which every F-CFG transport count below is measured to die.  The gate is the DISJOINTNESS itself, measured: every pairwise intersection is zero",
+   "class": "measurement",
+   "id": "O4-OBSTRUCTION-NAMED",
+   "passed": true,
+   "value": {
+    "F-CFG_truth_moves_under": [
+     "setting",
+     "frame",
+     "relabelling"
+    ],
+    "intersection_sizes": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "obstruction": "the two frames' occupied supports at the intermediate time are measured DISJOINT at every setting: not merely unequal, but sharing no configuration at all, so no proposition of the form 'the configuration between the division events is i' is true in both frames",
+    "support_sizes": {
+     "SP-A/F1": 2,
+     "SP-A/F2": 8,
+     "SP-B/F1": 2,
+     "SP-B/F2": 8,
+     "SP-C/F1": 8,
+     "SP-C/F2": 8,
+     "SP-D/F1": 8,
+     "SP-D/F2": 8,
+     "SP-E/F1": 2,
+     "SP-E/F2": 2,
+     "SP-F/F1": 8,
+     "SP-F/F2": 8
+    },
+    "union_sizes": {
+     "SP-A": 10,
+     "SP-B": 10,
+     "SP-C": 16,
+     "SP-D": 16,
+     "SP-E": 4,
+     "SP-F": 16
+    }
+   }
+  },
+  {
+   "claim": "THE SELF-TEST EVALUATES FRESH.  Every value the symmetry self-test reads is recomputed with the instrument's value cache bypassed: the phase's cache-HIT count is gated at ZERO and its MISS count gated positive, so the test cannot degenerate to reading one cached object twice.  The `memo-lax` mutant restores the cache and must die here",
+   "class": "selftest",
+   "id": "O4-ST-FRESH",
+   "passed": true,
+   "value": {
+    "value_cache_hits": 0,
+    "value_cache_misses": 1320
+   }
+  },
+  {
+   "claim": "THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION and has teeth: the set swept is the FULL declared arena action (every admitted isomorphism, every checkpoint-phase switching, at every setting), never a set selected by the verdicts under audit, and the count of instances at which the action is nontrivial is measured positive.  The `action-weaken` and `gauge-subsample` mutants shrink it and must die here",
+   "class": "selftest",
+   "id": "O4-ST-TEETH",
+   "passed": true,
+   "value": {
+    "instances_tested": 600,
+    "instances_where_the_action_is_nontrivial": 480,
+    "per_candidate": {
+     "C1/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C1/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 24
+     },
+     "C3/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C3/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     }
+    }
+   }
+  },
+  {
+   "claim": "THE ENFORCED INVARIANT IS MEASURED UNDER ITS OWN ACTION, AND THE MEASUREMENT IS RECONCILED.  The instrument enforces equivariance of the transport count under the admitted arena action; the self-test recomputes that count FRESH under every element of the action and its per-candidate failure counts must agree with the counts the covariance gate itself recorded.  A gate that only reported its own number would test nothing; the `covar-lax` mutant waives the covariance gate's count and must die here",
+   "class": "selftest",
+   "id": "O4-ST-INVARIANCE",
+   "passed": true,
+   "value": {
+    "covariance_gate_per_candidate": {
+     "C1/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C1/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 24
+     },
+     "C3/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C3/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     }
+    },
+    "selftest_per_candidate": {
+     "C1/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C1/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C2X/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 24
+     },
+     "C3/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C3/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-CFG": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     },
+     "C4/F-REC": {
+      "relabelling_failures": 0,
+      "switching_failures": 0
+     }
+    },
+    "total_equivariance_failures": 24
+   }
+  },
+  {
+   "claim": "NO DECLARATION-FOUNDED VERDICT (the RQ0-SYNTH lesson).  Every candidate's verdict is re-derived with its declared corridor claim FLIPPED to its opposite, and must come out identical: the derivation reads the measured gate results and nothing else.  The `declaration-lax` mutant lets the declaration reach the result and must die here",
+   "class": "selftest",
+   "id": "O4-ST-DECLARATION-FLIP",
+   "passed": true,
+   "value": {
+    "C1": {
+     "identical": true,
+     "under_flipped_declaration": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>",
+     "verdict": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>"
+    },
+    "C2": {
+     "identical": true,
+     "under_flipped_declaration": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+     "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+    },
+    "C2X": {
+     "identical": true,
+     "under_flipped_declaration": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>",
+     "verdict": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>"
+    },
+    "C3": {
+     "identical": true,
+     "under_flipped_declaration": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+     "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+    },
+    "C4": {
+     "identical": true,
+     "under_flipped_declaration": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]",
+     "verdict": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"
+    }
+   }
+  },
+  {
+   "claim": "EXACT ARITHMETIC EVERYWHERE.  An AST sweep of this module finds no float literal and no call to `float` outside the progress line's own formatting, and a runtime type sweep finds no float in any value that reached a gate or an anchor.  The substrate is the committed model's own totally real quartic field, where tuple equality IS field equality, and fractions.Fraction",
+   "class": "derivation",
+   "id": "O4-EXACT",
+   "passed": true,
+   "value": {
+    "float_call_lines": [],
+    "float_literal_lines": [],
+    "rows_carrying_a_float": []
+   }
+  },
+  {
+   "claim": "THE FALSIFICATION SUITE, RUN AND RECORDED, AND EVERY MUST-PASS GATE FALSIFIED BY AT LEAST ONE MUTANT.  Every declared mutant perturbs a COMPUTATION -- none overwrites a computed field after the fact -- is run to completion, must EXIT 1, and must falsify at least one NAMED gate or anchor.  The set of must-pass gates that NO mutant falsifies must be EMPTY.  The suite carries mutants over the reused anchors (W6 and the LTP lemma), over the sign and orientation conventions, a name-reader, a GLOBAL-NOW SMUGGLER that must be caught by the no-slice gate, an action-weakener, a cache-reading self-test, a stubbed LTP gate, a negative control made to pass, a pre-freeze evaluation, an out-of-vocabulary verdict, a declaration-consulting verdict rule, a subsampled scope, a subsampled gauge sweep, a float, a truncated descent solver, a collapsed canonicaliser, a waived covariance gate, a wrong-time support read, a waived certificate and a waived like-for-like check",
+   "class": "freeze",
+   "id": "O4-MUTANTS",
+   "passed": true,
+   "value": {
+    "died": 23,
+    "kills": {
+     "action-weaken": [
+      "A05",
+      "A17",
+      "O4-ARENA-FAMILY",
+      "O4-LEVEL-CENSUS",
+      "O4-ST-TEETH"
+     ],
+     "anchor-ltp": [
+      "A25",
+      "A26",
+      "A27"
+     ],
+     "anchor-w6": [
+      "A18"
+     ],
+     "canon-lax": [
+      "O4-ARENA-TEETH",
+      "O4-ARENA-DISCRIMINATES"
+     ],
+     "cert-lax": [
+      "O4-CERT-BITES"
+     ],
+     "covar-lax": [
+      "O4-LEVEL-CENSUS",
+      "O4-ST-INVARIANCE"
+     ],
+     "ctrl-pass": [
+      "O4-CTRL-NEG"
+     ],
+     "declaration-lax": [
+      "O4-ST-DECLARATION-FLIP"
+     ],
+     "descent-lax": [
+      "O4-TRIPLE-EXERCISED"
+     ],
+     "float-lax": [
+      "O4-EXACT"
+     ],
+     "freeze-lax": [
+      "O4-FREEZE"
+     ],
+     "gauge-subsample": [
+      "O4-ARENA-FAMILY",
+      "O4-LEVEL-CENSUS"
+     ],
+     "global-now-smuggler": [
+      "O4-CORRIDOR-CENSUS"
+     ],
+     "likeforlike-lax": [
+      "O4-LIKE-FOR-LIKE"
+     ],
+     "ltp-lax": [
+      "A25",
+      "A27"
+     ],
+     "memo-lax": [
+      "O4-ST-FRESH"
+     ],
+     "name-reader": [
+      "O4-CORRIDOR-CENSUS"
+     ],
+     "orient-flip": [
+      "A17"
+     ],
+     "rec-uncut": [
+      "O4-CTRL-POS"
+     ],
+     "scope-lax": [
+      "A04",
+      "A07",
+      "O4-CTRL-POS",
+      "O4-CORRIDOR-CENSUS",
+      "O4-TRIPLE-EXERCISED"
+     ],
+     "sign-flip": [
+      "O4-LEVEL-CENSUS"
+     ],
+     "support-lax": [
+      "O4-OBSTRUCTION-NAMED"
+     ],
+     "verdict-lax": [
+      "O4-VOCABULARY"
+     ]
+    },
+    "must_pass_gates_never_falsified": [],
+    "mutants": 23
+   }
+  },
+  {
+   "claim": "EVERY VERDICT IS DRAWN FROM THE PIN'S PRE-REGISTERED VOCABULARY and from nothing else: the unit verdict and every per-candidate verdict is measured to begin with one of the five pre-registered names.  The `verdict-lax` mutant emits an out-of-vocabulary tag and must die here",
+   "class": "derivation",
+   "id": "O4-VOCABULARY",
+   "passed": true,
+   "value": {
+    "per_candidate": {
+     "C1": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>",
+     "C2": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+     "C2X": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>",
+     "C3": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+     "C4": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"
+    },
+    "unit_verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM + O4-ARENA-RELATIVE"
+   }
+  }
+ ],
+ "pin_commit": "e1e8dcd",
+ "pin_sha256_prefix": "2568bc528796",
+ "schema": "o4-discriminator-receipt-v1",
+ "source_sha256": "240a6e05dce70337b5137595ad96fe4f08685557473ec606843af0e25bf7d02d",
+ "tables": {
+  "arena": [
+   {
+    "dependence": {
+     "frame": {
+      "max_distinct_values": 2,
+      "moves": true,
+      "slices": 96,
+      "slices_that_move": 96
+     },
+     "relabelling": {
+      "max_distinct_values": 2,
+      "moves": true,
+      "slices": 96,
+      "slices_that_move": 96
+     },
+     "setting": {
+      "max_distinct_values": 2,
+      "moves": true,
+      "slices": 32,
+      "slices_that_move": 32
+     },
+     "switching": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 24,
+      "slices_that_move": 0
+     }
+    },
+    "distinct_values_over_family": 4,
+    "id": "QA1",
+    "moved_under": [
+     "setting",
+     "frame",
+     "relabelling"
+    ],
+    "name": "F-CFG truth-value vector (named propositions)",
+    "orbit_size_per_chart": {
+     "SP-A/F1": 2,
+     "SP-A/F2": 2,
+     "SP-B/F1": 2,
+     "SP-B/F2": 2,
+     "SP-C/F1": 2,
+     "SP-C/F2": 2,
+     "SP-D/F1": 2,
+     "SP-D/F2": 2,
+     "SP-E/F1": 2,
+     "SP-E/F2": 2,
+     "SP-F/F1": 2,
+     "SP-F/F2": 2
+    },
+    "role": "THE OBJECT",
+    "verdict": "O4-ARENA-ARTIFACT"
+   },
+   {
+    "dependence": {
+     "frame": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 96,
+      "slices_that_move": 0
+     },
+     "relabelling": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 96,
+      "slices_that_move": 0
+     },
+     "setting": {
+      "max_distinct_values": 2,
+      "moves": true,
+      "slices": 32,
+      "slices_that_move": 32
+     },
+     "switching": {
+      "max_distinct_values": 1,
+      "moves": false,
+      "slices": 24,
+      "slices_that_move": 0
+     }
+    },
+    "distinct_values_over_family": 2,
+    "id": "QA2",
+    "moved_under": [
+     "setting"
+    ],
+    "name": "F-REC truth-value set (actual record values)",
+    "orbit_size_per_chart": {
+     "SP-A/F1": 1,
+     "SP-A/F2": 1,
+     "SP-B/F1": 1,
+     "SP-B/F2": 1,
+     "SP-C/F1": 1,
+     "SP-C/F2": 1,
+     "SP-D/F1": 1,
+     "SP-D/F2": 1,
+     "SP-E/F1": 1,
+     "SP-E/F2": 1,
+     "SP-F/F1": 1,
+     "SP-F/F2": 1
+    },
+    "role": "POSITIVE CONTROL",
+    "verdict": "O4-ARENA-ARTIFACT"
+   }
+  ],
+  "arena_family": {
+   "admitted_isomorphisms": 2,
+   "checkpoint_phase_switchings": 8,
+   "frames": 2,
+   "settings": 6,
+   "size": 192,
+   "switching_free_legs": 3
+  },
+  "candidate_verdicts": {
+   "C1": {
+    "F-CFG_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-CTRL_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-REC_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "detail": {
+     "corridor_failures": [
+      "NOSLICE"
+     ]
+    },
+    "ltp": "LTP-NOT-APPLICABLE",
+    "name": "NAIVE-SLICE",
+    "verdict": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>"
+   },
+   "C2": {
+    "F-CFG_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-CTRL_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "F-REC_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "detail": {
+     "obstructions": [
+      [
+       "SP-A",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-B",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-C",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-D",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-E",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-F",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ]
+     ],
+     "per_setting": {
+      "SP-A": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-B": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-C": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-D": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-E": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-F": "O4-DISCRIMINATED-RECORD-ACTUALISM"
+     }
+    },
+    "ltp": "LTP-NOT-APPLICABLE",
+    "name": "DESCENT-RESTRICTION",
+    "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+   },
+   "C2X": {
+    "F-CFG_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-CTRL_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "F-REC_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "detail": {
+     "corridor_failures": [
+      "COVAR"
+     ]
+    },
+    "ltp": "LTP-NOT-APPLICABLE",
+    "name": "DESCENT-RESTRICTION-AT-THE-AMPLITUDE-LEVEL",
+    "verdict": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>"
+   },
+   "C3": {
+    "F-CFG_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-CTRL_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "F-REC_counts": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "detail": {
+     "obstructions": [
+      [
+       "SP-A",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-B",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-C",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-D",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-E",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ],
+      [
+       "SP-F",
+       [
+        "EXIST",
+        "FORCED",
+        "CERT"
+       ]
+      ]
+     ],
+     "per_setting": {
+      "SP-A": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-B": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-C": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-D": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-E": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-F": "O4-DISCRIMINATED-RECORD-ACTUALISM"
+     }
+    },
+    "ltp": "LTP-NOT-APPLICABLE",
+    "name": "MODAL-CARRIER",
+    "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+   },
+   "C4": {
+    "F-CFG_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "F-CTRL_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "F-REC_counts": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 1,
+     "SP-F": 1
+    },
+    "detail": {
+     "obstructions": [
+      [
+       "SP-E",
+       [
+        "CERT"
+       ]
+      ],
+      [
+       "SP-F",
+       [
+        "CERT"
+       ]
+      ]
+     ],
+     "per_setting": {
+      "SP-A": "O4-BLOCKED-AT-<no certified transport for either class>",
+      "SP-B": "O4-BLOCKED-AT-<no certified transport for either class>",
+      "SP-C": "O4-BLOCKED-AT-<no certified transport for either class>",
+      "SP-D": "O4-BLOCKED-AT-<no certified transport for either class>",
+      "SP-E": "O4-DISCRIMINATED-RECORD-ACTUALISM",
+      "SP-F": "O4-DISCRIMINATED-RECORD-ACTUALISM"
+     }
+    },
+    "ltp": "LTP-BARE",
+    "name": "REALIZED-ONLY",
+    "verdict": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"
+   }
+  },
+  "declaration_flip_test": {
+   "C1": {
+    "identical": true,
+    "under_flipped_declaration": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>",
+    "verdict": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>"
+   },
+   "C2": {
+    "identical": true,
+    "under_flipped_declaration": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+    "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+   },
+   "C2X": {
+    "identical": true,
+    "under_flipped_declaration": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>",
+    "verdict": "O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>"
+   },
+   "C3": {
+    "identical": true,
+    "under_flipped_declaration": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+    "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"
+   },
+   "C4": {
+    "identical": true,
+    "under_flipped_declaration": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]",
+    "verdict": "O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"
+   }
+  },
+  "declarations": {
+   "candidates": [
+    {
+     "corridor_claim": "GLOBAL-SLICE: declared as the gated-out control",
+     "definition": "Two unrecorded configuration facts co-refer iff they carry the same configuration label at the same declared time index.  The rule matches legs IN ORDER and counts identity legs, so it reads a single external time coordinate shared by all contexts.",
+     "drop_identity": false,
+     "id": "C1",
+     "level": "exact",
+     "ltp_claim": "none stated",
+     "name": "NAIVE-SLICE",
+     "order_free": false,
+     "perms": "base"
+    },
+    {
+     "corridor_claim": "covariant, name-blind, no global slice",
+     "definition": "Two unrecorded configuration facts co-refer iff the W6 groupoid acts between their charts: the transport must be an admitted frame-isomorphism, order-free and blind to identity legs, and it must carry the intermediate-time datum.  Co-reference is declared only where the record-level base already supplies a map.  The matching level is the level at which the base's own token tie is measured to be cut -- the BORN level: matching the full declared legs by their Born shadows alone already forces the record-level map at every setting.",
+     "drop_identity": true,
+     "id": "C2",
+     "level": "born",
+     "ltp_claim": "the law of the recorded level, if it reaches",
+     "name": "DESCENT-RESTRICTION",
+     "order_free": true,
+     "perms": "base"
+    },
+    {
+     "corridor_claim": "covariant, name-blind, no global slice",
+     "definition": "C2's rule with one declaration changed: the legs must match on the nose, at the exact amplitude level, rather than by their Born shadows.  Declared as a variant so that what the corridor's covariance gate does to the matching level is REPORTED rather than chosen: a rule reading amplitudes on the nose is being asked to be invariant under the checkpoint-phase switchings, which are exactly the amplitude gauge.",
+     "drop_identity": true,
+     "id": "C2X",
+     "level": "exact",
+     "ltp_claim": "the law of the recorded level, if it reaches",
+     "name": "DESCENT-RESTRICTION-AT-THE-AMPLITUDE-LEVEL",
+     "order_free": true,
+     "perms": "base"
+    },
+    {
+     "corridor_claim": "covariant, name-blind, no global slice",
+     "definition": "The base's own structure suggests it: W6 measured that what identifies the record tokens at the symmetric settings is carried by U_prep's columns on the configurations the process never occupies -- the identification is carried by transitions the process never takes.  C3 tests whether F-CFG transport can be carried by the same modal structure: the FULL declared legs, including never-taken transitions, matched up to the per-leg sign (the level at which the amplitude gauge acts).",
+     "drop_identity": true,
+     "id": "C3",
+     "level": "sign",
+     "ltp_claim": "must be computed: modal structure carries no law by itself",
+     "name": "MODAL-CARRIER",
+     "order_free": true,
+     "perms": "extension_all"
+    },
+    {
+     "corridor_claim": "covariant, name-blind, no global slice",
+     "definition": "The mirror of C3: transport carried by the REALIZED process alone -- each leg restricted to the configurations actually occupied before and after it -- matched at the Born level, which is the level at which the record-level tie is cut.  Nothing counterfactual is consulted.",
+     "drop_identity": true,
+     "id": "C4",
+     "level": "born",
+     "ltp_claim": "must be computed",
+     "name": "REALIZED-ONLY",
+     "order_free": true,
+     "perms": "base",
+     "realized": true
+    }
+   ],
+   "descent_gates": [
+    {
+     "claim": "a transport exists on every declared edge",
+     "id": "EXIST"
+    },
+    {
+     "claim": "the transport is unique on every declared edge",
+     "id": "FORCED"
+    },
+    {
+     "claim": "the inverse of an admitted transport is admitted in reverse",
+     "id": "INV"
+    },
+    {
+     "claim": "triple coherence holds on the declared triple",
+     "id": "TRI"
+    },
+    {
+     "claim": "a coherent family exists in one gauge orbit with an injective colimit",
+     "id": "GLUE"
+    },
+    {
+     "claim": "the transported datum is CERTIFIED, not merely compatible",
+     "id": "CERT"
+    },
+    {
+     "claim": "the verdict is equivariant under the admitted arena action",
+     "id": "COVAR"
+    },
+    {
+     "claim": "the verdict survives a pure configuration relabelling",
+     "id": "NAMEBLIND"
+    },
+    {
+     "claim": "the verdict survives a pure time re-indexing",
+     "id": "NOSLICE"
+    },
+    {
+     "claim": "a committed probability law conditions on the transported datum",
+     "id": "LTP"
+    }
+   ],
+   "fact_classes": [
+    {
+     "datum": "F-REC.  Carrier: the chart's record tokens.  Datum: the joint law of",
+     "id": "F-REC",
+     "role": "POSITIVE CONTROL"
+    },
+    {
+     "datum": "F-CFG.  Carrier: the 36 configuration propositions \"the configuration",
+     "id": "F-CFG",
+     "role": "THE OBJECT"
+    },
+    {
+     "datum": "F-CTRL.  The deliberately MIS-CONVENTIONED class: the same 36",
+     "id": "F-CTRL",
+     "role": "NEGATIVE CONTROL"
+    }
+   ]
+  },
+  "gate_falsification": {
+   "falsified_by_some_mutant": 17,
+   "must_pass_gates": 17,
+   "not_falsified_by_any_mutant": []
+  },
+  "gate_table": {
+   "C1": {
+    "F-CFG": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": false,
+     "TRI": false
+    },
+    "F-CTRL": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": false,
+     "NOSLICE": false,
+     "TRI": false
+    },
+    "F-REC": {
+     "CERT": true,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": false,
+     "TRI": false
+    }
+   },
+   "C2": {
+    "F-CFG": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-CTRL": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": false,
+     "INV": true,
+     "NAMEBLIND": false,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-REC": {
+     "CERT": true,
+     "COVAR": true,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": true,
+     "INV": true,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": true
+    }
+   },
+   "C2X": {
+    "F-CFG": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-CTRL": {
+     "CERT": false,
+     "COVAR": false,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": false,
+     "INV": true,
+     "NAMEBLIND": false,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-REC": {
+     "CERT": true,
+     "COVAR": false,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": true,
+     "INV": true,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": true
+    }
+   },
+   "C3": {
+    "F-CFG": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-CTRL": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": false,
+     "INV": true,
+     "NAMEBLIND": false,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-REC": {
+     "CERT": true,
+     "COVAR": true,
+     "EXIST": true,
+     "FORCED": true,
+     "GLUE": true,
+     "INV": true,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": true
+    }
+   },
+   "C4": {
+    "F-CFG": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-CTRL": {
+     "CERT": false,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": false,
+     "INV": false,
+     "NAMEBLIND": false,
+     "NOSLICE": true,
+     "TRI": false
+    },
+    "F-REC": {
+     "CERT": true,
+     "COVAR": true,
+     "EXIST": false,
+     "FORCED": false,
+     "GLUE": true,
+     "INV": false,
+     "NAMEBLIND": true,
+     "NOSLICE": true,
+     "TRI": true
+    }
+   }
+  },
+  "gate_table_detail": {
+   "C1": {
+    "F-CFG": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 4,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 3,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-CTRL": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 4,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 0,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 0
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-REC": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": true,
+      "SP-B": true,
+      "SP-C": true,
+      "SP-D": true,
+      "SP-E": true,
+      "SP-F": true
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    }
+   },
+   "C2": {
+    "F-CFG": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 4,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 3,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-CTRL": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 4,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 0,
+       "F2<-F1": 1,
+       "F2<-F2pi": 0,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 0
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    },
+    "F-REC": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": true,
+      "SP-B": true,
+      "SP-C": true,
+      "SP-D": true,
+      "SP-E": true,
+      "SP-F": true
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": true,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 1,
+       "F2<-F1": 1,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 1,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 1,
+      "inverse_ok": true,
+      "moved": false,
+      "orbits": 1,
+      "triples": 6,
+      "verdict": "SET-AMALGAM"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    }
+   },
+   "C2X": {
+    "F-CFG": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 4,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 3,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-CTRL": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 4,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 24,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 0,
+       "F2<-F1": 1,
+       "F2<-F2pi": 0,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 0
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    },
+    "F-REC": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": true,
+      "SP-B": true,
+      "SP-C": true,
+      "SP-D": true,
+      "SP-E": true,
+      "SP-F": true
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 24,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": true,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 1,
+       "F2<-F1": 1,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 1,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 1,
+      "inverse_ok": true,
+      "moved": false,
+      "orbits": 1,
+      "triples": 6,
+      "verdict": "SET-AMALGAM"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    }
+   },
+   "C3": {
+    "F-CFG": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 4,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 3,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-CTRL": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 4,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 0,
+       "F2<-F1": 1,
+       "F2<-F2pi": 0,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 0
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    },
+    "F-REC": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": true,
+      "SP-B": true,
+      "SP-C": true,
+      "SP-D": true,
+      "SP-E": true,
+      "SP-F": true
+     },
+     "counts": {
+      "SP-A": 1,
+      "SP-B": 1,
+      "SP-C": 1,
+      "SP-D": 1,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 1,
+       "SP-B": 1,
+       "SP-C": 1,
+       "SP-D": 1,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": true,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 1,
+       "F2<-F1": 1,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 1,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 1,
+      "inverse_ok": true,
+      "moved": false,
+      "orbits": 1,
+      "triples": 6,
+      "verdict": "SET-AMALGAM"
+     },
+     "verdicts": {
+      "SP-A": "FORCED",
+      "SP-B": "FORCED",
+      "SP-C": "FORCED",
+      "SP-D": "FORCED",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    }
+   },
+   "C4": {
+    "F-CFG": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 10,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 4,
+        "positive_entries": 1,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": false,
+        "disagreeing_configurations": 16,
+        "positive_entries": 3,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 0,
+       "F1<-F2pi": 0,
+       "F2<-F1": 0,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    },
+    "F-CTRL": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 10,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 4,
+        "positive_entries": 2,
+        "verdict": "DISAGREEMENT"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 16,
+        "positive_entries": 8,
+        "verdict": "DISAGREEMENT"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": false,
+      "SP-B": false,
+      "SP-C": false,
+      "SP-D": false,
+      "SP-E": false,
+      "SP-F": false
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 0,
+      "SP-F": 0
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 0,
+       "SP-F": 0
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 12,
+      "identified": 0,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        0
+       ],
+       "SP-A/F2": [
+        1,
+        0
+       ],
+       "SP-B/F1": [
+        1,
+        0
+       ],
+       "SP-B/F2": [
+        1,
+        0
+       ],
+       "SP-C/F1": [
+        1,
+        0
+       ],
+       "SP-C/F2": [
+        1,
+        0
+       ],
+       "SP-D/F1": [
+        1,
+        0
+       ],
+       "SP-D/F2": [
+        1,
+        0
+       ],
+       "SP-E/F1": [
+        1,
+        0
+       ],
+       "SP-E/F2": [
+        1,
+        0
+       ],
+       "SP-F/F1": [
+        1,
+        0
+       ],
+       "SP-F/F2": [
+        1,
+        0
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": null,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 0,
+       "F2<-F1": 1,
+       "F2<-F2pi": 0,
+       "F2pi<-F1": 0,
+       "F2pi<-F2": 0
+      },
+      "edges": 6,
+      "families": 0,
+      "inverse_ok": null,
+      "moved": null,
+      "orbits": 0,
+      "triples": 6,
+      "verdict": "ABSENT-PAIR"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "ABSENT",
+      "SP-F": "ABSENT"
+     }
+    },
+    "F-REC": {
+     "cert_detail": {
+      "per_setting": {
+       "SP-A": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-B": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-C": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-D": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 4,
+        "verdict": "True"
+       },
+       "SP-E": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       },
+       "SP-F": {
+        "bijection_supported": true,
+        "disagreeing_configurations": 0,
+        "positive_entries": 2,
+        "verdict": "True"
+       }
+      },
+      "route": "EXT"
+     },
+     "cert_per_setting": {
+      "SP-A": true,
+      "SP-B": true,
+      "SP-C": true,
+      "SP-D": true,
+      "SP-E": true,
+      "SP-F": true
+     },
+     "counts": {
+      "SP-A": 0,
+      "SP-B": 0,
+      "SP-C": 0,
+      "SP-D": 0,
+      "SP-E": 1,
+      "SP-F": 1
+     },
+     "covar_detail": {
+      "base_counts": {
+       "SP-A": 0,
+       "SP-B": 0,
+       "SP-C": 0,
+       "SP-D": 0,
+       "SP-E": 1,
+       "SP-F": 1
+      },
+      "relabelling_failures": 0,
+      "switching_failures": 0,
+      "tested": 60
+     },
+     "nameblind_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "noslice_detail": {
+      "failed": 0,
+      "identified": 12,
+      "per_chart": {
+       "SP-A/F1": [
+        1,
+        1
+       ],
+       "SP-A/F2": [
+        1,
+        1
+       ],
+       "SP-B/F1": [
+        1,
+        1
+       ],
+       "SP-B/F2": [
+        1,
+        1
+       ],
+       "SP-C/F1": [
+        1,
+        1
+       ],
+       "SP-C/F2": [
+        1,
+        1
+       ],
+       "SP-D/F1": [
+        1,
+        1
+       ],
+       "SP-D/F2": [
+        1,
+        1
+       ],
+       "SP-E/F1": [
+        1,
+        1
+       ],
+       "SP-E/F2": [
+        1,
+        1
+       ],
+       "SP-F/F1": [
+        1,
+        1
+       ],
+       "SP-F/F2": [
+        1,
+        1
+       ]
+      }
+     },
+     "triple": {
+      "aut_counts": {
+       "F1": 1,
+       "F2": 1,
+       "F2pi": 1
+      },
+      "closed": true,
+      "dupkeys": 0,
+      "edge_counts": {
+       "F1<-F2": 1,
+       "F1<-F2pi": 1,
+       "F2<-F1": 1,
+       "F2<-F2pi": 1,
+       "F2pi<-F1": 1,
+       "F2pi<-F2": 1
+      },
+      "edges": 6,
+      "families": 1,
+      "inverse_ok": true,
+      "moved": false,
+      "orbits": 1,
+      "triples": 6,
+      "verdict": "SET-AMALGAM"
+     },
+     "verdicts": {
+      "SP-A": "ABSENT",
+      "SP-B": "ABSENT",
+      "SP-C": "ABSENT",
+      "SP-D": "ABSENT",
+      "SP-E": "FORCED",
+      "SP-F": "FORCED"
+     }
+    }
+   }
+  },
+  "intermediate_actuality": {
+   "SP-A/F1": {
+    "law": {
+     "12": "(1/2,0,0,0)",
+     "24": "(1/2,0,0,0)"
+    },
+    "occupied": [
+     12,
+     24
+    ],
+    "size": 2
+   },
+   "SP-A/F2": {
+    "law": {
+     "1": "(1/16,0,0,0)",
+     "10": "(7/16,0,-1/2,0)",
+     "11": "(-1/16,0,1/2,0)",
+     "19": "(-1/16,0,1/2,0)",
+     "2": "(1/16,0,0,0)",
+     "20": "(7/16,0,-1/2,0)",
+     "28": "(1/16,0,0,0)",
+     "29": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "size": 8
+   },
+   "SP-B/F1": {
+    "law": {
+     "12": "(1/2,0,0,0)",
+     "24": "(1/2,0,0,0)"
+    },
+    "occupied": [
+     12,
+     24
+    ],
+    "size": 2
+   },
+   "SP-B/F2": {
+    "law": {
+     "1": "(1/16,0,0,0)",
+     "10": "(-1/16,0,1/2,0)",
+     "11": "(7/16,0,-1/2,0)",
+     "19": "(7/16,0,-1/2,0)",
+     "2": "(1/16,0,0,0)",
+     "20": "(-1/16,0,1/2,0)",
+     "28": "(1/16,0,0,0)",
+     "29": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "size": 8
+   },
+   "SP-C/F1": {
+    "law": {
+     "12": "(1/8,0,0,0)",
+     "15": "(1/8,0,0,0)",
+     "21": "(1/8,0,0,0)",
+     "24": "(1/8,0,0,0)",
+     "3": "(1/8,0,0,0)",
+     "30": "(1/8,0,0,0)",
+     "33": "(1/8,0,0,0)",
+     "6": "(1/8,0,0,0)"
+    },
+    "occupied": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "size": 8
+   },
+   "SP-C/F2": {
+    "law": {
+     "1": "(1/16,0,0,0)",
+     "10": "(7/16,0,-1/2,0)",
+     "11": "(-1/16,0,1/2,0)",
+     "19": "(-1/16,0,1/2,0)",
+     "2": "(1/16,0,0,0)",
+     "20": "(7/16,0,-1/2,0)",
+     "28": "(1/16,0,0,0)",
+     "29": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "size": 8
+   },
+   "SP-D/F1": {
+    "law": {
+     "12": "(1/8,0,0,0)",
+     "15": "(1/8,0,0,0)",
+     "21": "(1/8,0,0,0)",
+     "24": "(1/8,0,0,0)",
+     "3": "(1/8,0,0,0)",
+     "30": "(1/8,0,0,0)",
+     "33": "(1/8,0,0,0)",
+     "6": "(1/8,0,0,0)"
+    },
+    "occupied": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "size": 8
+   },
+   "SP-D/F2": {
+    "law": {
+     "1": "(1/16,0,0,0)",
+     "10": "(-1/16,0,1/2,0)",
+     "11": "(7/16,0,-1/2,0)",
+     "19": "(7/16,0,-1/2,0)",
+     "2": "(1/16,0,0,0)",
+     "20": "(-1/16,0,1/2,0)",
+     "28": "(1/16,0,0,0)",
+     "29": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "size": 8
+   },
+   "SP-E/F1": {
+    "law": {
+     "12": "(1/2,0,0,0)",
+     "24": "(1/2,0,0,0)"
+    },
+    "occupied": [
+     12,
+     24
+    ],
+    "size": 2
+   },
+   "SP-E/F2": {
+    "law": {
+     "11": "(1/2,0,0,0)",
+     "19": "(1/2,0,0,0)"
+    },
+    "occupied": [
+     11,
+     19
+    ],
+    "size": 2
+   },
+   "SP-F/F1": {
+    "law": {
+     "12": "(-1/16,0,1/2,0)",
+     "15": "(7/16,0,-1/2,0)",
+     "21": "(7/16,0,-1/2,0)",
+     "24": "(-1/16,0,1/2,0)",
+     "3": "(1/16,0,0,0)",
+     "30": "(1/16,0,0,0)",
+     "33": "(1/16,0,0,0)",
+     "6": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     3,
+     6,
+     12,
+     15,
+     21,
+     24,
+     30,
+     33
+    ],
+    "size": 8
+   },
+   "SP-F/F2": {
+    "law": {
+     "1": "(1/16,0,0,0)",
+     "10": "(7/16,0,-1/2,0)",
+     "11": "(-1/16,0,1/2,0)",
+     "19": "(-1/16,0,1/2,0)",
+     "2": "(1/16,0,0,0)",
+     "20": "(7/16,0,-1/2,0)",
+     "28": "(1/16,0,0,0)",
+     "29": "(1/16,0,0,0)"
+    },
+    "occupied": [
+     1,
+     2,
+     10,
+     11,
+     19,
+     20,
+     28,
+     29
+    ],
+    "size": 8
+   }
+  },
+  "intermediate_actuality_sizes": {
+   "SP-A/F1": 2,
+   "SP-A/F2": 8,
+   "SP-B/F1": 2,
+   "SP-B/F2": 8,
+   "SP-C/F1": 8,
+   "SP-C/F2": 8,
+   "SP-D/F1": 8,
+   "SP-D/F2": 8,
+   "SP-E/F1": 2,
+   "SP-E/F2": 2,
+   "SP-F/F1": 8,
+   "SP-F/F2": 8
+  },
+  "intermediate_actuality_support": {
+   "SP-A/F1": [
+    12,
+    24
+   ],
+   "SP-A/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "SP-B/F1": [
+    12,
+    24
+   ],
+   "SP-B/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "SP-C/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "SP-C/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "SP-D/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "SP-D/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ],
+   "SP-E/F1": [
+    12,
+    24
+   ],
+   "SP-E/F2": [
+    11,
+    19
+   ],
+   "SP-F/F1": [
+    3,
+    6,
+    12,
+    15,
+    21,
+    24,
+    30,
+    33
+   ],
+   "SP-F/F2": [
+    1,
+    2,
+    10,
+    11,
+    19,
+    20,
+    28,
+    29
+   ]
+  },
+  "ltp_gate": {
+   "C1": {
+    "coordinates_forced_bare": [],
+    "coordinates_with_transport": [],
+    "per_setting": {
+     "SP-A": "NOT-APPLICABLE (no transport admitted)",
+     "SP-B": "NOT-APPLICABLE (no transport admitted)",
+     "SP-C": "NOT-APPLICABLE (no transport admitted)",
+     "SP-D": "NOT-APPLICABLE (no transport admitted)",
+     "SP-E": "NOT-APPLICABLE (no transport admitted)",
+     "SP-F": "NOT-APPLICABLE (no transport admitted)"
+    },
+    "verdict": "LTP-NOT-APPLICABLE"
+   },
+   "C2": {
+    "coordinates_forced_bare": [],
+    "coordinates_with_transport": [],
+    "per_setting": {
+     "SP-A": "NOT-APPLICABLE (no transport admitted)",
+     "SP-B": "NOT-APPLICABLE (no transport admitted)",
+     "SP-C": "NOT-APPLICABLE (no transport admitted)",
+     "SP-D": "NOT-APPLICABLE (no transport admitted)",
+     "SP-E": "NOT-APPLICABLE (no transport admitted)",
+     "SP-F": "NOT-APPLICABLE (no transport admitted)"
+    },
+    "verdict": "LTP-NOT-APPLICABLE"
+   },
+   "C2X": {
+    "coordinates_forced_bare": [],
+    "coordinates_with_transport": [],
+    "per_setting": {
+     "SP-A": "NOT-APPLICABLE (no transport admitted)",
+     "SP-B": "NOT-APPLICABLE (no transport admitted)",
+     "SP-C": "NOT-APPLICABLE (no transport admitted)",
+     "SP-D": "NOT-APPLICABLE (no transport admitted)",
+     "SP-E": "NOT-APPLICABLE (no transport admitted)",
+     "SP-F": "NOT-APPLICABLE (no transport admitted)"
+    },
+    "verdict": "LTP-NOT-APPLICABLE"
+   },
+   "C3": {
+    "coordinates_forced_bare": [],
+    "coordinates_with_transport": [],
+    "per_setting": {
+     "SP-A": "NOT-APPLICABLE (no transport admitted)",
+     "SP-B": "NOT-APPLICABLE (no transport admitted)",
+     "SP-C": "NOT-APPLICABLE (no transport admitted)",
+     "SP-D": "NOT-APPLICABLE (no transport admitted)",
+     "SP-E": "NOT-APPLICABLE (no transport admitted)",
+     "SP-F": "NOT-APPLICABLE (no transport admitted)"
+    },
+    "verdict": "LTP-NOT-APPLICABLE"
+   },
+   "C4": {
+    "coordinates_forced_bare": [
+     "SP-E",
+     "SP-F"
+    ],
+    "coordinates_with_transport": [
+     "SP-E",
+     "SP-F"
+    ],
+    "per_setting": {
+     "SP-A": "NOT-APPLICABLE (no transport admitted)",
+     "SP-B": "NOT-APPLICABLE (no transport admitted)",
+     "SP-C": "NOT-APPLICABLE (no transport admitted)",
+     "SP-D": "NOT-APPLICABLE (no transport admitted)",
+     "SP-E": "LTP-BARE-UNWITNESSED (the residual vanishes, so the forcing lemma does not fire; and the shared record subalgebra at that time is measured empty, so no committed law conditions on the datum either)",
+     "SP-F": "LTP-BARE (forced: the intermediate time is not a division event of the model as declared)"
+    },
+    "verdict": "LTP-BARE"
+   }
+  },
+  "ltp_residuals": {
+   "SP-A/F1": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-A/F2": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-B/F1": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-B/F2": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-C/F1": {
+    "distinct": 4,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 0,
+    "values": [
+     "(-1/32,0,1/8,0)",
+     "(-3/32,0,1/8,0)",
+     "(1/32,0,-1/8,0)",
+     "(3/32,0,-1/8,0)"
+    ]
+   },
+   "SP-C/F2": {
+    "distinct": 4,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 0,
+    "values": [
+     "(-1/32,0,1/8,0)",
+     "(-3/32,0,1/8,0)",
+     "(1/32,0,-1/8,0)",
+     "(3/32,0,-1/8,0)"
+    ]
+   },
+   "SP-D/F1": {
+    "distinct": 4,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 0,
+    "values": [
+     "(-1/32,0,1/8,0)",
+     "(-3/32,0,1/8,0)",
+     "(1/32,0,-1/8,0)",
+     "(3/32,0,-1/8,0)"
+    ]
+   },
+   "SP-D/F2": {
+    "distinct": 4,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 0,
+    "values": [
+     "(-1/32,0,1/8,0)",
+     "(-3/32,0,1/8,0)",
+     "(1/32,0,-1/8,0)",
+     "(3/32,0,-1/8,0)"
+    ]
+   },
+   "SP-E/F1": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-E/F2": {
+    "distinct": 0,
+    "matrix_differing": 0,
+    "nonzero": 0,
+    "per_column": [],
+    "rational": 0,
+    "values": []
+   },
+   "SP-F/F1": {
+    "distinct": 6,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 8,
+    "values": [
+     "(-1/64,0,0,0)",
+     "(-1/64,0,1/8,0)",
+     "(-7/64,0,1/8,0)",
+     "(1/64,0,-1/8,0)",
+     "(1/64,0,0,0)",
+     "(7/64,0,-1/8,0)"
+    ]
+   },
+   "SP-F/F2": {
+    "distinct": 6,
+    "matrix_differing": 288,
+    "nonzero": 16,
+    "per_column": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "rational": 8,
+    "values": [
+     "(-1/64,0,0,0)",
+     "(-1/64,0,1/8,0)",
+     "(-7/64,0,1/8,0)",
+     "(1/64,0,-1/8,0)",
+     "(1/64,0,0,0)",
+     "(7/64,0,-1/8,0)"
+    ]
+   }
+  },
+  "mutants": [
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A18"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-w6"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A25",
+     "A26",
+     "A27"
+    ],
+    "falsified_gates": [],
+    "mutant": "anchor-ltp"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-LEVEL-CENSUS"
+    ],
+    "mutant": "sign-flip"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A17"
+    ],
+    "falsified_gates": [],
+    "mutant": "orient-flip"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-CTRL-POS"
+    ],
+    "mutant": "rec-uncut"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-CORRIDOR-CENSUS"
+    ],
+    "mutant": "name-reader"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-CORRIDOR-CENSUS"
+    ],
+    "mutant": "global-now-smuggler"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A05",
+     "A17"
+    ],
+    "falsified_gates": [
+     "O4-ARENA-FAMILY",
+     "O4-LEVEL-CENSUS",
+     "O4-ST-TEETH"
+    ],
+    "mutant": "action-weaken"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-ST-FRESH"
+    ],
+    "mutant": "memo-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A25",
+     "A27"
+    ],
+    "falsified_gates": [],
+    "mutant": "ltp-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-CTRL-NEG"
+    ],
+    "mutant": "ctrl-pass"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-FREEZE"
+    ],
+    "mutant": "freeze-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-VOCABULARY"
+    ],
+    "mutant": "verdict-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-ST-DECLARATION-FLIP"
+    ],
+    "mutant": "declaration-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A04",
+     "A07"
+    ],
+    "falsified_gates": [
+     "O4-CTRL-POS",
+     "O4-CORRIDOR-CENSUS",
+     "O4-TRIPLE-EXERCISED"
+    ],
+    "mutant": "scope-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-ARENA-FAMILY",
+     "O4-LEVEL-CENSUS"
+    ],
+    "mutant": "gauge-subsample"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-EXACT"
+    ],
+    "mutant": "float-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-TRIPLE-EXERCISED"
+    ],
+    "mutant": "descent-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-ARENA-TEETH",
+     "O4-ARENA-DISCRIMINATES"
+    ],
+    "mutant": "canon-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-LEVEL-CENSUS",
+     "O4-ST-INVARIANCE"
+    ],
+    "mutant": "covar-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-OBSTRUCTION-NAMED"
+    ],
+    "mutant": "support-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-CERT-BITES"
+    ],
+    "mutant": "cert-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "O4-LIKE-FOR-LIKE"
+    ],
+    "mutant": "likeforlike-lax"
+   }
+  ]
+ },
+ "totals": {
+  "anchors": 27,
+  "gates": 21,
+  "must_pass_failures": 0
+ }
+}

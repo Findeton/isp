@@ -1,0 +1,656 @@
+==============================================================================
+O4 DISCRIMINATOR -- UNRECORDED ACTUALITY ON THE W6 CO-REFERENCE BASE
+==============================================================================
+pin e1e8dcd (sha 2568bc528796)  base 71371ae
+source sha256 240a6e05dce70337
+
+THE DECLARED ARENA (section 15; every count computed)
+  carrier                     36 configurations, j0 = 0
+  settings x frames           6 x 2
+  admitted isomorphisms       2 (of the declared 96, after the base's own j0 filter)
+  checkpoint-phase switchings 8 (2^3, one sign per declared leg)
+  ARENA SIZE                  192
+
+ANCHORS (exit-1-only)
+  A01  ok   the eight local measurement operators are exactly orthog
+        source    v12/code/w6_output.txt M3 [sec4_records.py:516]
+        committed 8
+        computed 8
+  A02  ok   the local operators commute at all nine setting pairs
+        source    v12/code/w6_output.txt M3 [sec4_records.py:524]
+        committed 9
+        computed 9
+  A03  ok   U_prep is exactly orthogonal
+        source    v12/code/w6_output.txt M3 [sec4_records.py:505]
+        committed True
+        computed True
+  A04  ok   the declared permutation scope has 72 elements
+        source    v12/note-w6-record-coreference.md SCOPE 2
+        committed 72
+        computed 72
+  A05  ok   the j0 filter admits exactly 2 of the 72
+        source    v12/note-w6-record-coreference.md SCOPE 2
+        committed 2
+        computed 2
+  A06  ok   the declared extension admits exactly 8
+        source    v12/note-w6-record-coreference.md SCOPE 2
+        committed 8
+        computed 8
+  A07  ok   the extension's comprehension bound is 96 -- the declare
+        source    v12/note-w6-record-coreference.md SCOPE 2
+        committed 96
+        computed 96
+  A08  ok   law-agreeing / candidate-admitting ordered pairs of 144,
+        source    v12/note-w6-record-coreference.md W6-A
+        committed (56,56,0)
+        computed (56,56,0)
+  A09  ok   of the 56, same-experiment pairs and accidental agreemen
+        source    v12/note-w6-record-coreference.md W6-A
+        committed (24,32)
+        computed (24,32)
+  A10  ok   the final-law class sizes
+        source    v12/note-w6-record-coreference.md W6-A
+        committed (2,4,6)
+        computed (2,4,6)
+  A11  ok   |Phi_A| at the six settings (the wing tie)
+        source    v12/note-w6-record-coreference.md W6-B
+        committed (2,2,2,2,2,2)
+        computed (2,2,2,2,2,2)
+  A12  ok   |Phi_B| at the six settings (forced, the identity)
+        source    v12/note-w6-record-coreference.md W6-B
+        committed (1,1,1,1,1,1)
+        computed (1,1,1,1,1,1)
+  A13  ok   |Phi_A| and |Phi_B| at the intermediate slice, per setti
+        source    v12/note-w6-record-coreference.md M4
+        committed ((1,1,1,1,1,1),(0,0,0,0,0,0))
+        computed ((1,1,1,1,1,1),(0,0,0,0,0,0))
+  A14  ok   shared record subalgebra at the intermediate time, per s
+        source    v12/note-w6-record-coreference.md M4
+        committed (0,0,0,0,0,0)
+        computed (0,0,0,0,0,0)
+  A15  ok   differing entries of the intermediate propagators, per s
+        source    v12/note-w6-record-coreference.md control 4
+        committed (270,270,432,432,108,432)
+        computed (270,270,432,432,108,432)
+  A16  ok   the two frames' time-2 occupied supports never coincide,
+        source    v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL
+        committed
+        ((False,2,8),(False,2,8),(False,8,8),(False,8,8),(False,2,2),(False,8,8))
+        computed
+        ((False,2,8),(False,2,8),(False,8,8),(False,8,8),(False,2,2),(False,8,8))
+  A17  ok   token maps admitted by the REALIZED legs alone (exact / 
+        source    v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL
+        committed
+        (((),(),()),((),(),()),((),(),()),((),(),()),((),(((0,1),(1,0))),(((0,1),(1,0)))),((),(((0,1),(1,0))),(((0,1),(1,0)))))
+        computed
+        (((),(),()),((),(),()),((),(),()),((),(),()),((),(((0,1),(1,0))),(((0,1),(1,0)))),((),(((0,1),(1,0))),(((0,1),(1,0)))))
+  A18  ok   w.U_prep.w against U_prep: the j0 column (+,-), the othe
+        source    v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL
+        committed (False,True,False,False,9,8)
+        computed (False,True,False,False,9,8)
+  A19  ok   the never-occupied block of U_prep has 35 columns
+        source    v12/note-w6-record-coreference.md WHAT GROUNDS A TOKEN LABEL
+        committed 35
+        computed 35
+  A20  ok   paper 2's four descent verdicts (set / groupoid / underd
+        source    v12/paper2_code/RUN.txt section 3
+        committed
+        (SET-AMALGAM,GROUPOID-AMALGAM,UNDERDETERMINED,NO-DESCENT,ABSENT-PAIR)
+        computed
+        (SET-AMALGAM,GROUPOID-AMALGAM,UNDERDETERMINED,NO-DESCENT,ABSENT-PAIR)
+  A21  ok   paper 2's groupoid model: families, orbits, stabiliser, 
+        source    v12/paper2_code/RUN.txt section 3
+        committed (4,1,2,True)
+        computed (4,1,2,True)
+  A22  ok   no canonical map survives independent S2 automorphisms
+        source    v12/paper2_code/RUN.txt section 4
+        committed 0
+        computed 0
+  A23  ok   paper 2's completion witness: realized candidate counts,
+        source    v12/paper2_code/RUN.txt section 5
+        committed (4,4,1,1,(0,1),(1,0))
+        computed (4,4,1,1,(0,1),(1,0))
+  A24  ok   the swap completion is generated by the declared permuta
+        source    v12/paper2_code/RUN.txt section 5
+        committed (0,2,1,4,3)
+        computed (0,2,1,4,3)
+  A25  ok   the LTP residual weight ||r||_0 of 36 at the six setting
+        source    v12/note-w5-barandes-recast.md section 3.3 (G6)
+        committed ((0,0,16,16,0,16),(0,0,16,16,0,16))
+        computed ((0,0,16,16,0,16),(0,0,16,16,0,16))
+  A26  ok   every column of the matrix residual that differs at all 
+        source    v12/note-w5-barandes-recast.md section 3.3 (G4)
+        committed {16}
+        computed {16}
+  A27  ok   the SP-C and SP-F residual censuses: (distinct values, r
+        source    v12/note-w5-barandes-recast.md section 3.3 (G5, G5b)
+        committed ((4,0),(6,8))
+        computed ((4,0),(6,8))
+
+THE FACT-CLASS GATE TABLE
+  gates: EXIST FORCED INV TRI GLUE CERT COVAR NAMEBLIND NOSLICE LTP
+
+  C1 NAIVE-SLICE   [exact]
+    class    EXIST     FORCED    INV       TRI       GLUE      CERT      COVAR     NAMEBLIND NOSLICE  
+    F-REC    fail      fail      fail      fail      fail      PASS      PASS      PASS      fail     
+    F-CFG    fail      fail      fail      fail      fail      fail      PASS      PASS      fail     
+    F-CTRL   fail      fail      fail      fail      fail      fail      PASS      fail      fail     
+      F-REC   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-REC   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+      F-CFG   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CFG   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+      F-CTRL  |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CTRL  discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+
+  C2 DESCENT-RESTRICTION   [born]
+    class    EXIST     FORCED    INV       TRI       GLUE      CERT      COVAR     NAMEBLIND NOSLICE  
+    F-REC    PASS      PASS      PASS      PASS      PASS      PASS      PASS      PASS      PASS     
+    F-CFG    fail      fail      fail      fail      fail      fail      PASS      PASS      PASS     
+    F-CTRL   PASS      PASS      PASS      fail      fail      fail      PASS      fail      PASS     
+      F-REC   |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-REC   discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+      F-CFG   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CFG   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+      F-CTRL  |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-CTRL  discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+
+  C2X DESCENT-RESTRICTION-AT-THE-AMPLITUDE-LEVEL   [exact]
+    class    EXIST     FORCED    INV       TRI       GLUE      CERT      COVAR     NAMEBLIND NOSLICE  
+    F-REC    PASS      PASS      PASS      PASS      PASS      PASS      fail      PASS      PASS     
+    F-CFG    fail      fail      fail      fail      fail      fail      PASS      PASS      PASS     
+    F-CTRL   PASS      PASS      PASS      fail      fail      fail      fail      fail      PASS     
+      F-REC   |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-REC   discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+      F-CFG   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CFG   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+      F-CTRL  |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-CTRL  discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+
+  C3 MODAL-CARRIER   [sign]
+    class    EXIST     FORCED    INV       TRI       GLUE      CERT      COVAR     NAMEBLIND NOSLICE  
+    F-REC    PASS      PASS      PASS      PASS      PASS      PASS      PASS      PASS      PASS     
+    F-CFG    fail      fail      fail      fail      fail      fail      PASS      PASS      PASS     
+    F-CTRL   PASS      PASS      PASS      fail      fail      fail      PASS      fail      PASS     
+      F-REC   |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-REC   discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+      F-CFG   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CFG   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+      F-CTRL  |Phi| per setting  SP-A=1 SP-B=1 SP-C=1 SP-D=1 SP-E=1 SP-F=1
+      F-CTRL  discriminator     SP-A=FORCED SP-B=FORCED SP-C=FORCED SP-D=FORCED SP-E=FORCED SP-F=FORCED
+
+  C4 REALIZED-ONLY   [born]
+    class    EXIST     FORCED    INV       TRI       GLUE      CERT      COVAR     NAMEBLIND NOSLICE  
+    F-REC    fail      fail      fail      PASS      PASS      PASS      PASS      PASS      PASS     
+    F-CFG    fail      fail      fail      fail      fail      fail      PASS      PASS      PASS     
+    F-CTRL   fail      fail      fail      fail      fail      fail      PASS      fail      PASS     
+      F-REC   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=1 SP-F=1
+      F-REC   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=FORCED SP-F=FORCED
+      F-CFG   |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=1 SP-F=1
+      F-CFG   discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=FORCED SP-F=FORCED
+      F-CTRL  |Phi| per setting  SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+      F-CTRL  discriminator     SP-A=ABSENT SP-B=ABSENT SP-C=ABSENT SP-D=ABSENT SP-E=ABSENT SP-F=ABSENT
+
+THE LTP GATE (W5's forcing lemma, per candidate, per setting)
+  C1  LTP-NOT-APPLICABLE
+      SP-A  NOT-APPLICABLE (no transport admitted)
+      SP-B  NOT-APPLICABLE (no transport admitted)
+      SP-C  NOT-APPLICABLE (no transport admitted)
+      SP-D  NOT-APPLICABLE (no transport admitted)
+      SP-E  NOT-APPLICABLE (no transport admitted)
+      SP-F  NOT-APPLICABLE (no transport admitted)
+  C2  LTP-NOT-APPLICABLE
+      SP-A  NOT-APPLICABLE (no transport admitted)
+      SP-B  NOT-APPLICABLE (no transport admitted)
+      SP-C  NOT-APPLICABLE (no transport admitted)
+      SP-D  NOT-APPLICABLE (no transport admitted)
+      SP-E  NOT-APPLICABLE (no transport admitted)
+      SP-F  NOT-APPLICABLE (no transport admitted)
+  C2X  LTP-NOT-APPLICABLE
+      SP-A  NOT-APPLICABLE (no transport admitted)
+      SP-B  NOT-APPLICABLE (no transport admitted)
+      SP-C  NOT-APPLICABLE (no transport admitted)
+      SP-D  NOT-APPLICABLE (no transport admitted)
+      SP-E  NOT-APPLICABLE (no transport admitted)
+      SP-F  NOT-APPLICABLE (no transport admitted)
+  C3  LTP-NOT-APPLICABLE
+      SP-A  NOT-APPLICABLE (no transport admitted)
+      SP-B  NOT-APPLICABLE (no transport admitted)
+      SP-C  NOT-APPLICABLE (no transport admitted)
+      SP-D  NOT-APPLICABLE (no transport admitted)
+      SP-E  NOT-APPLICABLE (no transport admitted)
+      SP-F  NOT-APPLICABLE (no transport admitted)
+  C4  LTP-BARE
+      SP-A  NOT-APPLICABLE (no transport admitted)
+      SP-B  NOT-APPLICABLE (no transport admitted)
+      SP-C  NOT-APPLICABLE (no transport admitted)
+      SP-D  NOT-APPLICABLE (no transport admitted)
+      SP-E  LTP-BARE-UNWITNESSED (the residual vanishes, so the forcing lemma does not fire; and the shared record subalgebra at that time is measured empty, so no committed law conditions on the datum either)
+      SP-F  LTP-BARE (forced: the intermediate time is not a division event of the model as declared)
+
+  the residual that decides it (||r||_0 of 36, frame F1/F2)
+      SP-A   0 /  0   matrix differing    0 /    0
+      SP-B   0 /  0   matrix differing    0 /    0
+      SP-C  16 / 16   matrix differing  288 /  288
+      SP-D  16 / 16   matrix differing  288 /  288
+      SP-E   0 /  0   matrix differing    0 /    0
+      SP-F  16 / 16   matrix differing  288 /  288
+
+THE INTERMEDIATE-TIME ACTUALITY, EXHIBITED (the LTP exhibit)
+      SP-A/F1   occupied  2  [12, 24]
+      SP-A/F2   occupied  8  [1, 2, 10, 11, 19, 20, 28, 29]
+      SP-B/F1   occupied  2  [12, 24]
+      SP-B/F2   occupied  8  [1, 2, 10, 11, 19, 20, 28, 29]
+      SP-C/F1   occupied  8  [3, 6, 12, 15, 21, 24, 30, 33]
+      SP-C/F2   occupied  8  [1, 2, 10, 11, 19, 20, 28, 29]
+      SP-D/F1   occupied  8  [3, 6, 12, 15, 21, 24, 30, 33]
+      SP-D/F2   occupied  8  [1, 2, 10, 11, 19, 20, 28, 29]
+      SP-E/F1   occupied  2  [12, 24]
+      SP-E/F2   occupied  2  [11, 19]
+      SP-F/F1   occupied  8  [3, 6, 12, 15, 21, 24, 30, 33]
+      SP-F/F2   occupied  8  [1, 2, 10, 11, 19, 20, 28, 29]
+
+THE ARENA TEST
+  QA1 F-CFG truth-value vector (named propositions)  O4-ARENA-ARTIFACT
+      role THE OBJECT;  moves under: setting, frame, relabelling
+      distinct values over the family: 4
+      orbit size per chart: SP-A/F1=2, SP-A/F2=2, SP-B/F1=2, SP-B/F2=2, SP-C/F1=2, SP-C/F2=2, SP-D/F1=2, SP-D/F2=2, SP-E/F1=2, SP-E/F2=2, SP-F/F1=2, SP-F/F2=2
+  QA2 F-REC truth-value set (actual record values)   O4-ARENA-ARTIFACT
+      role POSITIVE CONTROL;  moves under: setting
+      distinct values over the family: 2
+      orbit size per chart: SP-A/F1=1, SP-A/F2=1, SP-B/F1=1, SP-B/F2=1, SP-C/F1=1, SP-C/F2=1, SP-D/F1=1, SP-D/F2=1, SP-E/F1=1, SP-E/F2=1, SP-F/F1=1, SP-F/F2=1
+
+PER-CANDIDATE VERDICTS
+  C1 NAIVE-SLICE            O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>
+      LTP LTP-NOT-APPLICABLE;  F-CFG |Phi| SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+  C2 DESCENT-RESTRICTION    O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]
+      LTP LTP-NOT-APPLICABLE;  F-CFG |Phi| SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+  C2X DESCENT-RESTRICTION-AT-THE-AMPLITUDE-LEVEL O4-BLOCKED-AT-<COVAR: the rule leaves the declared corridor>
+      LTP LTP-NOT-APPLICABLE;  F-CFG |Phi| SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+  C3 MODAL-CARRIER          O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]
+      LTP LTP-NOT-APPLICABLE;  F-CFG |Phi| SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=0 SP-F=0
+  C4 REALIZED-ONLY          O4-BLOCKED-AT-<no certified transport for either class> [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]
+      LTP LTP-BARE;  F-CFG |Phi| SP-A=0 SP-B=0 SP-C=0 SP-D=0 SP-E=1 SP-F=1
+
+GATES
+  O4-FREEZE                freeze       PASS
+      THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)). The
+      three fact-classes, their carriers and preservation lists, the ten
+      descent gates and the four candidate rules with their matching levels
+      and corridor claims are all recorded above, and the fact-datum
+      evaluation counter is measured to be ZERO at this point. The
+      `freeze-lax` mutant evaluates one fixture datum first and must die here
+        {"candidates": ["C1", "C2", "C2X", "C3", "C4"], "descent_gates":
+        ["EXIST", "FORCED", "INV", "TRI", "GLUE", "CERT", "COVAR",
+        "NAMEBLIND", "NOSLICE", "LTP"], "fact_classes": ["F-REC", "F-CFG",
+        "F-CTRL"], "fact_datum_evaluations_before_freeze": 0}
+  O4-COMPLETION-DISCLOSURE disclosure   PASS
+      A DECLARED DIVERGENCE FROM A COMMITTED COUNT, AND WHY. W5's A3 prints
+      the divisibility census (0,0,576,576,0,576) -- 16 differing entries in
+      every one of the 36 columns. Recomputed on THIS base's preparation
+      operator the count is measured to be smaller, because W5 rebuilt the
+      model from the singlet dictionary and chose a different orthogonal
+      completion of U_prep off the j0 column. The j0 COLUMN -- the only column
+      the model's own admissible p(0) ever reads, and the one W5's G1 says
+      carries the whole residual -- agrees exactly (A25). The matrix count is
+      therefore a completion-dependent quantity and the vector count is not:
+      an independent confirmation, from a second direction, of W6's finding
+      that U_prep's arbitrary completion off j0 is doing work
+        {"columns_that_differ": [0, 0, 18, 18, 0, 18],
+        "committed_bc2_matrix_count": 576,
+        "j0_column_agrees_with_the_committed_count": true,
+        "per_column_differing_counts": [16], "recomputed_on_this_base": [0, 0,
+        288, 288, 0, 288]}
+  O4-ARENA-FAMILY          derivation   PASS
+      THE ADMISSIBLE ARENA IS ENUMERATED AND ITS SIZE IS COMPUTED, never
+      typed: the product of the declared setting count, the frame count, the
+      admitted isomorphisms surviving the base's own j0 filter, and the
+      checkpoint-phase switchings read off the declared leg count. Every
+      factor is measured from the fixtures
+        {"admitted_isomorphisms": 2, "checkpoint_phase_switchings": 8,
+        "frames": 2, "settings": 6, "size": 192, "switching_free_legs": 3}
+  O4-ARENA-TEETH           control      PASS
+      THE ARENA ACTION HAS TEETH: at least one declared quantity is MEASURED
+      to move under it. If nothing moves, the action is too weak and the
+      census is dead as instrumented; the `action-weaken` mutant collapses the
+      action and must die here
+        {"F-CFG_moved_under": ["setting", "frame", "relabelling"],
+        "F-REC_moved_under": ["setting"]}
+  O4-ARENA-DISCRIMINATES   measurement  PASS
+      THE ARENA TEST DISCRIMINATES THE TWO CLASSES. F-REC's and F-CFG's
+      truth-values are pushed through the SAME action and the coordinate sets
+      under which they move are compared. The gate records the comparison as
+      measured; it fires only if the two classes are measured to differ under
+      some coordinate
+        {"F-CFG": ["setting", "frame", "relabelling"], "F-REC": ["setting"],
+        "symmetric_difference": ["frame", "relabelling"]}
+  O4-CTRL-POS              control      PASS
+      THE POSITIVE CONTROL FIRES. Routed through THIS unit's transport
+      instrument -- the same ten gates, the same discriminator, the same
+      solver -- the record class reproduces W6's terminal descent results: a
+      transport exists and is FORCED at every one of the six committed
+      settings, the inverse law holds, and the declared triple descends. If
+      the instrument could not reproduce the base's own positive result,
+      nothing it says about the object would mean anything
+        {"counts": {"SP-A": 1, "SP-B": 1, "SP-C": 1, "SP-D": 1, "SP-E": 1,
+        "SP-F": 1}, "triple": "SET-AMALGAM", "triple_families": 1,
+        "triple_orbits": 1, "triple_triples": 6, "verdicts": {"SP-A":
+        "FORCED", "SP-B": "FORCED", "SP-C": "FORCED", "SP-D": "FORCED",
+        "SP-E": "FORCED", "SP-F": "FORCED"}}
+  O4-CTRL-NEG              control      PASS
+      THE NEGATIVE CONTROL FAILS, AS IT MUST. The mis-conventioned
+      name-reading class is put through the IDENTICAL gates and is measured to
+      fail at least one of them under every candidate rule. A pass here would
+      mean the instrument cannot tell a fact from a name -- the
+      ACTION-TOO-WEAK analogue -- and this gate is the place that would be
+      reported. The `ctrl-pass` mutant makes it pass and must die here
+        {"candidates_where_the_control_passed": [],
+        "failed_gates_per_candidate": {"C1": ["EXIST", "FORCED", "INV", "TRI",
+        "GLUE", "CERT", "NAMEBLIND", "NOSLICE"], "C2": ["TRI", "GLUE", "CERT",
+        "NAMEBLIND"], "C2X": ["TRI", "GLUE", "CERT", "COVAR", "NAMEBLIND"],
+        "C3": ["TRI", "GLUE", "CERT", "NAMEBLIND"], "C4": ["EXIST", "FORCED",
+        "INV", "TRI", "GLUE", "CERT", "NAMEBLIND"]}}
+  O4-LIKE-FOR-LIKE         derivation   PASS
+      THE THREE CLASSES ARE GATED LIKE FOR LIKE. Every fact-class is routed
+      through the SAME ten gates by the same code path: the gate row of each
+      class is measured to carry every declared gate key, and the transport
+      dispatch is measured to be a single function per class with an identical
+      signature. No class receives a gate the others do not
+        {"classes": ["F-CFG", "F-CTRL", "F-REC"], "gate_keys": ["EXIST",
+        "FORCED", "INV", "TRI", "GLUE", "CERT", "COVAR", "NAMEBLIND",
+        "NOSLICE", "LTP"]}
+  O4-CORRIDOR-CENSUS       control      PASS
+      THE CORRIDOR GATES HAVE BOTH CONTROLS. At least one declared candidate
+      is MEASURED to lie inside the pin's corridor -- covariant under the
+      admitted arena action, name-blind under the declared gauge, and blind to
+      a pure time re-indexing, on every fact-class -- and at least one is
+      MEASURED to lie outside it. A corridor every candidate passes tests
+      nothing, and a corridor no candidate passes tests only the corridor. The
+      `name-reader` and `global-now-smuggler` mutants empty the inside; a
+      waived gate empties the outside
+        {"inside": ["C2", "C3", "C4"],
+        "name_blindness_of_the_negative_control": {"C1": false, "C2": false,
+        "C2X": false, "C3": false, "C4": false}, "outside": ["C1", "C2X"],
+        "why_outside": {"C1": ["NOSLICE"], "C2X": ["COVAR"]}}
+  O4-LEVEL-CENSUS          measurement  PASS
+      THE CORRIDOR SELECTS THE MATCHING LEVEL, MEASURED. The same rule is run
+      at all three of the base's declared matching levels and its invariance
+      under the checkpoint-phase switchings is measured at each. The EXACT
+      amplitude level is measured NOT invariant -- the switchings are exactly
+      the amplitude gauge -- while the SIGN and BORN levels are measured
+      invariant. This row is what makes the corridor's covariance clause a
+      measurement rather than a stipulation, and the sign/orientation mutants
+      must die here
+        {"born": {"covariant": true, "relabelling_failures": 0,
+        "switching_failures": 0}, "exact": {"covariant": false,
+        "relabelling_failures": 0, "switching_failures": 24}, "sign":
+        {"covariant": true, "relabelling_failures": 0, "switching_failures":
+        0}}
+  O4-CERT-BITES            control      PASS
+      THE CERTIFICATE FIRES AND FAILS ON EXHIBITED PAIRS. The identical
+      ROUTE-EXT construction certifies the RECORD pair at every one of the six
+      settings and refuses the UNRECORDED-CONFIGURATION pair at every one of
+      them. A certificate that never fails would certify nothing; a
+      certificate that never succeeds would be an instrument defect rather
+      than a finding. The `cert-lax` mutant waives it and must die here
+        {"F-CFG_certified": {"SP-A": false, "SP-B": false, "SP-C": false,
+        "SP-D": false, "SP-E": false, "SP-F": false}, "F-CFG_detail": {"SP-A":
+        {"bijection_supported": false, "disagreeing_configurations": 10,
+        "positive_entries": 1, "verdict": "DISAGREEMENT"}, "SP-B":
+        {"bijection_supported": false, "disagreeing_configurations": 10,
+        "positive_entries": 1, "verdict": "DISAGREEMENT"}, "SP-C":
+        {"bijection_supported": false, "disagreeing_configurations": 16,
+        "positive_entries": 1, "verdict": "DISAGREEMENT"}, "SP-D":
+        {"bijection_supported": false, "disagreeing_configurations": 16,
+        "positive_entries": 1, "verdict": "DISAGREEMENT"}, "SP-E":
+        {"bijection_supported": false, "disagreeing_configurations": 4,
+        "positive_entries": 1, "verdict": "DISAGREEMENT"}, "SP-F":
+        {"bijection_supported": false, "disagreeing_configurations": 16,
+        "positive_entries": 3, "verdict": "DISAGREEMENT"}}, "F-REC_certified":
+        {"SP-A": true, "SP-B": true, "SP-C": true, "SP-D": true, "SP-E": true,
+        "SP-F": true}}
+  O4-TRIPLE-EXERCISED      control      PASS
+      THE TRIPLE LAW IS GENUINELY EXERCISED. The declared triple is the base's
+      own: the two frames plus the second frame presented on a relabelled
+      configuration set, built as its OWN object with its own legs, its own
+      initial configuration and its law recomputed. All six ordered edges and
+      all six ordered triples are measured to carry a transport, so the
+      cocycle law has something to reject. The `descent-lax` mutant drops the
+      third chart and must die here
+        {"automorphism_counts": {"F1": 1, "F2": 1, "F2pi": 1}, "edge_counts":
+        {"F1<-F2": 1, "F1<-F2pi": 1, "F2<-F1": 1, "F2<-F2pi": 1, "F2pi<-F1":
+        1, "F2pi<-F2": 1}, "edges": 6, "families": 1, "orbits": 1, "triples":
+        6, "verdict": "SET-AMALGAM"}
+  O4-VACUITY-DISCLOSURE    disclosure   PASS
+      AN EMPTY CORRIDOR GATE IS DECLARED EMPTY. Where a candidate admits NO
+      F-CFG transport, its covariance row is satisfied vacuously -- nothing
+      can move that does not exist -- which is exactly the emptiness the
+      base's own discriminator refuses to count as agreement. The coordinates
+      at which each candidate's F-CFG corridor rows are vacuous are listed
+      here, and the verdict derivation reads the corridor on EVERY class the
+      rule is applied to, so no rule reaches a verdict on a vacuous covariance
+      row
+        {"F-CFG_vacuous_coordinates": {"C1": ["SP-A", "SP-B", "SP-C", "SP-D",
+        "SP-E", "SP-F"], "C2": ["SP-A", "SP-B", "SP-C", "SP-D", "SP-E",
+        "SP-F"], "C2X": ["SP-A", "SP-B", "SP-C", "SP-D", "SP-E", "SP-F"],
+        "C3": ["SP-A", "SP-B", "SP-C", "SP-D", "SP-E", "SP-F"], "C4": ["SP-A",
+        "SP-B", "SP-C", "SP-D"]}}
+  O4-OBSTRUCTION-NAMED     measurement  PASS
+      WHERE F-CFG FAILS, THE FAILING GATE AND THE OBSTRUCTING OBJECT ARE
+      NAMED. The obstruction is exhibited as data: the two frames' occupied
+      supports at the intermediate time, with their sizes, measured never to
+      coincide at any of the six settings. That is the object on which every
+      F-CFG transport count below is measured to die. The gate is the
+      DISJOINTNESS itself, measured: every pairwise intersection is zero
+        {"F-CFG_truth_moves_under": ["setting", "frame", "relabelling"],
+        "intersection_sizes": {"SP-A": 0, "SP-B": 0, "SP-C": 0, "SP-D": 0,
+        "SP-E": 0, "SP-F": 0}, "obstruction": "the two frames' occupied
+        supports at the intermediate time are measured DISJOINT at every
+        setting: not merely unequal, but sharing no configuration at all, so
+        no proposition of the form 'the configuration between the division
+        events is i' is true in both frames", "support_sizes": {"SP-A/F1": 2,
+        "SP-A/F2": 8, "SP-B/F1": 2, "SP-B/F2": 8, "SP-C/F1": 8, "SP-C/F2": 8,
+        "SP-D/F1": 8, "SP-D/F2": 8, "SP-E/F1": 2, "SP-E/F2": 2, "SP-F/F1": 8,
+        "SP-F/F2": 8}, "union_sizes": {"SP-A": 10, "SP-B": 10, "SP-C": 16,
+        "SP-D": 16, "SP-E": 4, "SP-F": 16}}
+  O4-ST-FRESH              selftest     PASS
+      THE SELF-TEST EVALUATES FRESH. Every value the symmetry self-test reads
+      is recomputed with the instrument's value cache bypassed: the phase's
+      cache-HIT count is gated at ZERO and its MISS count gated positive, so
+      the test cannot degenerate to reading one cached object twice. The
+      `memo-lax` mutant restores the cache and must die here
+        {"value_cache_hits": 0, "value_cache_misses": 1320}
+  O4-ST-TEETH              selftest     PASS
+      THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION and has teeth: the
+      set swept is the FULL declared arena action (every admitted isomorphism,
+      every checkpoint-phase switching, at every setting), never a set
+      selected by the verdicts under audit, and the count of instances at
+      which the action is nontrivial is measured positive. The `action-weaken`
+      and `gauge-subsample` mutants shrink it and must die here
+        {"instances_tested": 600, "instances_where_the_action_is_nontrivial":
+        480, "per_candidate": {"C1/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C1/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2X/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2X/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 24}, "C3/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C3/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C4/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C4/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}}}
+  O4-ST-INVARIANCE         selftest     PASS
+      THE ENFORCED INVARIANT IS MEASURED UNDER ITS OWN ACTION, AND THE
+      MEASUREMENT IS RECONCILED. The instrument enforces equivariance of the
+      transport count under the admitted arena action; the self-test
+      recomputes that count FRESH under every element of the action and its
+      per-candidate failure counts must agree with the counts the covariance
+      gate itself recorded. A gate that only reported its own number would
+      test nothing; the `covar-lax` mutant waives the covariance gate's count
+      and must die here
+        {"covariance_gate_per_candidate": {"C1/F-CFG":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C1/F-REC":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C2/F-CFG":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C2/F-REC":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C2X/F-CFG":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C2X/F-REC":
+        {"relabelling_failures": 0, "switching_failures": 24}, "C3/F-CFG":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C3/F-REC":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C4/F-CFG":
+        {"relabelling_failures": 0, "switching_failures": 0}, "C4/F-REC":
+        {"relabelling_failures": 0, "switching_failures": 0}},
+        "selftest_per_candidate": {"C1/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C1/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2X/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C2X/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 24}, "C3/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C3/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C4/F-CFG": {"relabelling_failures": 0,
+        "switching_failures": 0}, "C4/F-REC": {"relabelling_failures": 0,
+        "switching_failures": 0}}, "total_equivariance_failures": 24}
+  O4-ST-DECLARATION-FLIP   selftest     PASS
+      NO DECLARATION-FOUNDED VERDICT (the RQ0-SYNTH lesson). Every candidate's
+      verdict is re-derived with its declared corridor claim FLIPPED to its
+      opposite, and must come out identical: the derivation reads the measured
+      gate results and nothing else. The `declaration-lax` mutant lets the
+      declaration reach the result and must die here
+        {"C1": {"identical": true, "under_flipped_declaration":
+        "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared corridor>",
+        "verdict": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the declared
+        corridor>"}, "C2": {"identical": true, "under_flipped_declaration":
+        "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+        "verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM
+        [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"}, "C2X": {"identical": true,
+        "under_flipped_declaration": "O4-BLOCKED-AT-<COVAR: the rule leaves
+        the declared corridor>", "verdict": "O4-BLOCKED-AT-<COVAR: the rule
+        leaves the declared corridor>"}, "C3": {"identical": true,
+        "under_flipped_declaration": "O4-DISCRIMINATED-RECORD-ACTUALISM
+        [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]", "verdict":
+        "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]"},
+        "C4": {"identical": true, "under_flipped_declaration":
+        "O4-BLOCKED-AT-<no certified transport for either class>
+        [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM
+        [SP-E,SP-F]", "verdict": "O4-BLOCKED-AT-<no certified transport for
+        either class> [SP-A,SP-B,SP-C,SP-D] +
+        O4-DISCRIMINATED-RECORD-ACTUALISM [SP-E,SP-F]"}}
+  O4-EXACT                 derivation   PASS
+      EXACT ARITHMETIC EVERYWHERE. An AST sweep of this module finds no float
+      literal and no call to `float` outside the progress line's own
+      formatting, and a runtime type sweep finds no float in any value that
+      reached a gate or an anchor. The substrate is the committed model's own
+      totally real quartic field, where tuple equality IS field equality, and
+      fractions.Fraction
+        {"float_call_lines": [], "float_literal_lines": [],
+        "rows_carrying_a_float": []}
+  O4-MUTANTS               freeze       PASS
+      THE FALSIFICATION SUITE, RUN AND RECORDED, AND EVERY MUST-PASS GATE
+      FALSIFIED BY AT LEAST ONE MUTANT. Every declared mutant perturbs a
+      COMPUTATION -- none overwrites a computed field after the fact -- is run
+      to completion, must EXIT 1, and must falsify at least one NAMED gate or
+      anchor. The set of must-pass gates that NO mutant falsifies must be
+      EMPTY. The suite carries mutants over the reused anchors (W6 and the LTP
+      lemma), over the sign and orientation conventions, a name-reader, a
+      GLOBAL-NOW SMUGGLER that must be caught by the no-slice gate, an
+      action-weakener, a cache-reading self-test, a stubbed LTP gate, a
+      negative control made to pass, a pre-freeze evaluation, an
+      out-of-vocabulary verdict, a declaration-consulting verdict rule, a
+      subsampled scope, a subsampled gauge sweep, a float, a truncated descent
+      solver, a collapsed canonicaliser, a waived covariance gate, a
+      wrong-time support read, a waived certificate and a waived like-for-like
+      check
+        {"died": 23, "kills": {"action-weaken": ["A05", "A17",
+        "O4-ARENA-FAMILY", "O4-LEVEL-CENSUS", "O4-ST-TEETH"], "anchor-ltp":
+        ["A25", "A26", "A27"], "anchor-w6": ["A18"], "canon-lax":
+        ["O4-ARENA-TEETH", "O4-ARENA-DISCRIMINATES"], "cert-lax":
+        ["O4-CERT-BITES"], "covar-lax": ["O4-LEVEL-CENSUS",
+        "O4-ST-INVARIANCE"], "ctrl-pass": ["O4-CTRL-NEG"], "declaration-lax":
+        ["O4-ST-DECLARATION-FLIP"], "descent-lax": ["O4-TRIPLE-EXERCISED"],
+        "float-lax": ["O4-EXACT"], "freeze-lax": ["O4-FREEZE"],
+        "gauge-subsample": ["O4-ARENA-FAMILY", "O4-LEVEL-CENSUS"],
+        "global-now-smuggler": ["O4-CORRIDOR-CENSUS"], "likeforlike-lax":
+        ["O4-LIKE-FOR-LIKE"], "ltp-lax": ["A25", "A27"], "memo-lax":
+        ["O4-ST-FRESH"], "name-reader": ["O4-CORRIDOR-CENSUS"], "orient-flip":
+        ["A17"], "rec-uncut": ["O4-CTRL-POS"], "scope-lax": ["A04", "A07",
+        "O4-CTRL-POS", "O4-CORRIDOR-CENSUS", "O4-TRIPLE-EXERCISED"],
+        "sign-flip": ["O4-LEVEL-CENSUS"], "support-lax":
+        ["O4-OBSTRUCTION-NAMED"], "verdict-lax": ["O4-VOCABULARY"]},
+        "must_pass_gates_never_falsified": [], "mutants": 23}
+  O4-VOCABULARY            derivation   PASS
+      EVERY VERDICT IS DRAWN FROM THE PIN'S PRE-REGISTERED VOCABULARY and from
+      nothing else: the unit verdict and every per-candidate verdict is
+      measured to begin with one of the five pre-registered names. The
+      `verdict-lax` mutant emits an out-of-vocabulary tag and must die here
+        {"per_candidate": {"C1": "O4-BLOCKED-AT-<NOSLICE: the rule leaves the
+        declared corridor>", "C2": "O4-DISCRIMINATED-RECORD-ACTUALISM
+        [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]", "C2X": "O4-BLOCKED-AT-<COVAR: the
+        rule leaves the declared corridor>", "C3":
+        "O4-DISCRIMINATED-RECORD-ACTUALISM [SP-A,SP-B,SP-C,SP-D,SP-E,SP-F]",
+        "C4": "O4-BLOCKED-AT-<no certified transport for either class>
+        [SP-A,SP-B,SP-C,SP-D] + O4-DISCRIMINATED-RECORD-ACTUALISM
+        [SP-E,SP-F]"}, "unit_verdict": "O4-DISCRIMINATED-RECORD-ACTUALISM +
+        O4-ARENA-RELATIVE"}
+
+MUTANT TABLE
+  anchor-w6              exit 1  DIED
+      kills: A18
+  anchor-ltp             exit 1  DIED
+      kills: A25, A26, A27
+  sign-flip              exit 1  DIED
+      kills: O4-LEVEL-CENSUS
+  orient-flip            exit 1  DIED
+      kills: A17
+  rec-uncut              exit 1  DIED
+      kills: O4-CTRL-POS
+  name-reader            exit 1  DIED
+      kills: O4-CORRIDOR-CENSUS
+  global-now-smuggler    exit 1  DIED
+      kills: O4-CORRIDOR-CENSUS
+  action-weaken          exit 1  DIED
+      kills: A05, A17, O4-ARENA-FAMILY, O4-LEVEL-CENSUS, O4-ST-TEETH
+  memo-lax               exit 1  DIED
+      kills: O4-ST-FRESH
+  ltp-lax                exit 1  DIED
+      kills: A25, A27
+  ctrl-pass              exit 1  DIED
+      kills: O4-CTRL-NEG
+  freeze-lax             exit 1  DIED
+      kills: O4-FREEZE
+  verdict-lax            exit 1  DIED
+      kills: O4-VOCABULARY
+  declaration-lax        exit 1  DIED
+      kills: O4-ST-DECLARATION-FLIP
+  scope-lax              exit 1  DIED
+      kills: A04, A07, O4-CTRL-POS, O4-CORRIDOR-CENSUS, O4-TRIPLE-EXERCISED
+  gauge-subsample        exit 1  DIED
+      kills: O4-ARENA-FAMILY, O4-LEVEL-CENSUS
+  float-lax              exit 1  DIED
+      kills: O4-EXACT
+  descent-lax            exit 1  DIED
+      kills: O4-TRIPLE-EXERCISED
+  canon-lax              exit 1  DIED
+      kills: O4-ARENA-TEETH, O4-ARENA-DISCRIMINATES
+  covar-lax              exit 1  DIED
+      kills: O4-LEVEL-CENSUS, O4-ST-INVARIANCE
+  support-lax            exit 1  DIED
+      kills: O4-OBSTRUCTION-NAMED
+  cert-lax               exit 1  DIED
+      kills: O4-CERT-BITES
+  likeforlike-lax        exit 1  DIED
+      kills: O4-LIKE-FOR-LIKE
+  must-pass gates 17; falsified by some mutant 17; never falsified []
+
+==============================================================================
+UNIT VERDICT   O4-DISCRIMINATED-RECORD-ACTUALISM + O4-ARENA-RELATIVE
+==============================================================================
+  Under one instrument and ten identical gates on the W6 terminal base: record
+  facts transport and descend; unrecorded configuration facts do not, and the
+  obstruction is the two frames' occupied supports at the intermediate time,
+  which are measured never to coincide at any of the six committed settings.
+  Where a rule DOES admit a transport, the actuality it carries is LTP-BARE at
+  the coordinates where W5's forcing lemma fires. F-CFG's truth-values move
+  under the admitted arena action at coordinates where F-REC's do not. Stated
+  at the committed finite scope; nothing is claimed about nature and the
+  charter fork is not adjudicated here.
+
+  anchors 27  gates 21  must-pass failures 0
