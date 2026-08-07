@@ -6498,3 +6498,37 @@ by C4's own 1 at SP-E/SP-F.  R1's disposition: both halves of
 the unit verdict need RE-DERIVATION FROM MATCHED COORDINATES,
 not prose repair; the instrument mostly survives.  R2/R3
 pending; adjudication after all three.
+
+## 2026-08-07 — O4 R3 (INSTRUMENT) FROZEN (v13 LEDGER #194)
+review-o4-instrument.md frozen as delivered (sha256-12
+0a026177f21b).  Grade ACCEPT-WITH-FIXES; 30 recomputations.
+Byte-identity re-reproduced from an isolated scratch mirror.
+§14 fresh-eval REAL AT FULL STRENGTH (1,320/1,320 lookups would
+have hit the cache without the bypass — the self-test would have
+measured nothing; no hidden cache leaks).  K5/D1 DECIDED, 288
+RIGHT: own Born map reproduces 288 = 16×18; W5's
+(0,0,576,576,0,576) CONSTRUCTED via the Bell-basis completion of
+the same declared j₀ column; 192-completion sweep {288:48,
+432:96, 576:48} with ‖r‖₀ ≡ 16 invariant — A25/A26/A27
+genuinely completion-independent.  K4: shrinkage does NOT hollow
+the claims (72 is a group; the 96-set fails conjugation-closure
+1856/9216 AND composition-closure 3072/9216; orbits reproduce at
+all twelve charts).  SIX FIXES: F1 (MED-HIGH) triple_descent
+never applies C4's realized restriction — TWO PUBLISHED CELLS
+FALSE (C4/F-REC TRI and GLUE print PASS, are fail; C4's triple
+is literally C2's; no gate catches it); F2 the LTP gate has NO
+falsification coverage (a bare stub runs green); F3 §12's
+no-post-hoc-overwrite claim false for 7/23 mutants; F4 three
+gate texts misname their killers; F5 D1's CLOSING SENTENCE
+REFUTED (A18 invariant across all 192 completions; W6's note
+says the completion is NOT the artifact); F6 the relabelling
+clause not like-for-like — THE FRAME COORDINATE ALONE carries
+O4-ARENA-RELATIVE.  Positives: 23/23 mutants named kills;
+27/27 anchors traced (25 verbatim), exit-1 proven by deliberate
+breakage; LTP-LAWFUL shown reachable BY AN EXHIBITED WITNESS —
+**direct conflict with R1's structurally-unreachable, to be
+reconciled at adjudication** (likely selector-reachability vs
+never-obtains-on-committed-base).  R3's bottom line: no false
+physics number; the unit verdict stands UNDER ITS FINDINGS —
+vs R1's REJECT on the read-time artifact (K2, outside R3's
+lens).  R2 pending; adjudication after all three.
