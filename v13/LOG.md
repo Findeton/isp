@@ -5660,3 +5660,10 @@ deviations.  **COARSE REALITY DOES NOT SELF-CERTIFY at this
 scope: the law does not remember what forgetting erased.**
 GREEN-UNREVIEWED; the panel must confirm the impossibility before
 branch A is entered on its strength.
+
+## 2026-08-06 — BRANCH-C HOSTILE PROTOCOL FROZEN (v13 LEDGER #160)
+Kill-shots: K1 the 12-orbit theorem (incl. the shape=resolution
+edge); K2 the corridor-hole adjudication under both readings; K3
+the dichotomy attacked by construction; K4 the C1 disqualification
+honesty + the freeze-mechanism audit.  Dispatch recorded after it
+occurs.
