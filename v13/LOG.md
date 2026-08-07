@@ -5678,3 +5678,37 @@ corridor-hole under both readings + K3 the dichotomy attacked by
 counterexample), R3 (K4 the C1-disqualification honesty + THE
 FREEZE AUDIT + per-candidate kills natively).  Recorded after
 the dispatch occurred.
+
+## 2026-08-06 — BRANCH-C R1 (OPERATOR) REVIEW FROZEN (v13 LEDGER
+## #162)
+review-rq0-fingerprint-operator.md frozen; compliance verified.
+R1: ACCEPT-WITH-FIXES; 25 recomputations, no computed value
+moved; the orbit census re-derived exactly (12/12/12/12/52;
+groups 24/24/24/24/1; the committed triple in three distinct
+orbits 6/3/1).  **THE EDGE ATTACK LANDED: SHAPE ≠ RESOLUTION** —
+the orbit invariant has 12 classes; the resolution profile has 7;
+five profiles split by a STATE-DERIVED datum (sink-merge count).
+At the UNIFORM state the identification is exact (group 120,
+orbits 7) — the unit carried the uniform-state theorem into the
+committed state, where it is FALSE (one measurably false sentence
+in §7.4; Thm 7.2 clause (ii) mis-stated).  CONSEQUENCES: under
+the pin's literal gate-2 the corridor at DET is INHABITED — by
+the unit's own C4a and by R1's constructed C5 (= C4c +
+sink-excess term), which clears BOTH monotonicity readings and
+REFUSES total erasure — C4a/C5 fail only G2b, the strengthening
+the unit introduced without declaring it one.  **BUT NO
+FINGERPRINT RESULTS: C5 inverts under a state relabelling — THE
+DICHOTOMY SURVIVED R1's BEST ATTACK.**  R1's constructive repair,
+adopted-pending-panel: the 12-vs-7 gap is entirely state-derived,
+so covariance ⟹ resolution-reading OR state-reading — Thm 7.2
+and the §8 dichotomy are ONE THEOREM, and the impossibility
+survives FUSED AND STRONGER (every covariant statistic either
+reads resolution — order-inverted — or reads the state —
+amnesty-killed; no robust separator).  **THE FREEZE BARRIER'S
+CLAIM IS FALSE AS WORDED**: the covariance gate necessarily
+evaluates candidates at two committed boundaries 864 times before
+the barrier; _TOUCHED_FIXTURE fires only on hand-placed touch()
+calls; the substance survives (SHA-first declarations, no value
+retention/thresholding) but the instrument certifies less than
+claimed and its mutant cannot catch the gap.  Nine rewrites
+listed.  Adjudication waits for R2 + R3.
