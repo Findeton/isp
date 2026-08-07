@@ -5712,3 +5712,43 @@ calls; the substance survives (SHA-first declarations, no value
 retention/thresholding) but the instrument certifies less than
 claimed and its mutant cannot catch the gap.  Nine rewrites
 listed.  Adjudication waits for R2 + R3.
+
+## 2026-08-06 — BRANCH-C R2 (EFFECTUS) REVIEW FROZEN (v13 LEDGER
+## #163)
+review-rq0-fingerprint-effectus.md (482 lines) frozen; compliance
+verified.  R2: ACCEPT-WITH-FIXES; 24 recomputations, zero false
+numbers; Thms 6.1/7.1/7.2 sound as scoped.  **K3: THE DICHOTOMY
+FALLS AS A GENERAL CLAIM** — L4-DICH was a TALLY over the twelve
+rows found, not a theorem; five constructed counterexamples (four
+in neither arm, one in both).  The sharpest, D3 = 2·#{size-2
+atoms} + 1[{0,1} is an atom], passes the ENTIRE corridor at the
+counter-law under BOTH gate-1 readings, separates (0 vs 3, 5),
+survives the sweep 4845/0/0, and is neither order-entailed nor
+state-reading — **exploiting the vacuous covariance gate, which
+is NOT a C1 qualification but a HOLE admitting a whole class of
+LABEL-READING separators that dodge Thm 6.1** (at a trivial-group
+law, covariance enforces nothing, so raw-name statistics pass
+vacuously — D3's atom-indicator reads the distinguishing feature
+BY NAME, exactly the name-comparison the corpus's co-reference
+discipline forbids; the adjudication will impose NAME-BLINDNESS
+as an explicit gate where symmetry cannot supply it).  D5:
+anti-monotone by the unit's own test yet sweep-inverted at
+4350/4845 — §5's "structural, not empirical" immunity mechanism
+is WRONG AS STATED.  **K2:** the narrow reading binds on the
+letter (A16 is a substring test certifying words, not readings);
+the strict exclusion is right on STAGE-5 §9.1's warrant — and the
+closing finding: **C1's separating rows ARE the base's
+already-dismissed ω rows** (15/155, recomputed; stage 5 already
+called them "a grading of coarseness with the sign flipped,
+rather than a reading of provenance") — the corridor survivor's
+positive content is INHERITED AND PRE-ADJUDICATED; the qualified
+FINGERPRINT tag is headed for withdrawal.  The strict reading
+empties only the declared six, not the class a fortiori; class
+impossibility is reading-independent, family emptiness
+reading-dependent.  New scoping numbers: Thm 7.2's 24-group
+hypothesis holds at only 25/4845 states; C1 anti-monotone
+4845/4845.  Nine rewrites.  Adjudication waits for R3 — the
+likely fused form: at full-group laws, covariant ⟹ resolution ∨
+state-reading (R1's fusion); at trivial-group laws,
+NAME-BLINDNESS imposed as principle kills the label-readers; no
+legitimate separator anywhere.
