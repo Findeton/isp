@@ -6444,3 +6444,16 @@ second-direction confirmation of W6's
 U_prep's-arbitrary-completion-does-work finding.  7 deviations;
 nothing impossible as pinned.  md5 output 36f46ad3 / receipt
 4ab40f9f.  Adjudicator verification next.
+
+## 2026-08-07 — O4 VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #192)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical (output 36f46ad3 / receipt 4ab40f9f; source
+240a6e05 registered); 27 anchors / 21 gates / 23 mutants
+exit-1; unit verdicts + 7 deviations present in paper.
+note-o4-hostile-protocol.md FROZEN (K1 obstruction-vs-
+frame-choice sweep / K2 like-for-like / K3 LTP reachability /
+K4 arena+D3 group shrinkage / K5 instrument + D1 the W5-576→288
+diagnosis decided conclusively).  Frozen SHAs (sha256-12):
+recorded in the freeze command output with this commit.
+Three-lens panel (Opus 5) dispatched immediately after.
