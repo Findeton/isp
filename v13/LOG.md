@@ -6143,3 +6143,26 @@ Worker's flag: THE ASYMMETRY — legitimacy moves with the arena
 datum is what the successor rung builds on.  md5 output 36e486d9
 / receipt c71e6172; source sha 5a3d5b0b….  Adjudicator
 verification next; recorded after it occurs.
+
+## 2026-08-07 — RQ0-SYNTH VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN;
+## PANEL DISPATCHED (v13 LEDGER #181)
+Adjudicator verification PASSED: independent delivery-mode run
+(--falsification-selftest) reproduces the worker's artifacts
+byte-identically (output md5 36e486d9, receipt c71e6172; script
+sha256 = registered source_sha256 5a3d5b0b…); exit 0, no failed
+anchors/gates; receipt 19 anchors / 20 gates / 20 mutants all
+exit-1.  Paper text gates: thesis verbatim; the six-row record
+table carries the terminal verdict names, commits, and headline
+theorems in the papers' own language; all 8 deviations in
+Appendix A.  note-rq0-synth-hostile-protocol.md FROZEN this
+commit (K1 family-fibering / K2 verdict-soundness / K3
+Q-OPT-transport / K4 THE-ASYMMETRY / K5 instrument-integrity +
+record-table verbatim-faithfulness).  Frozen file SHAs
+(sha256-12):
+  3a03467dd43e v13/paper-rq0-arena-synthesis.md
+  5a3d5b0b1704 v13/code/rq0_synth_census_exact.py
+  ee94cc4c6612 v13/code/rq0_synth_census_output.txt
+  0dc2c182b66b v13/code/rq0_synth_census_receipt.json
+Three-lens panel (operator / effectus / instrument, Opus 5)
+dispatched immediately after this commit; reviews recorded on
+return.
