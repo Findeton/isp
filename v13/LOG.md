@@ -7082,3 +7082,21 @@ characterization / K3 cross-base integrity + the steering risk
 / K4 the base declaration / K5 instrument.  Frozen SHAs
 (sha256-12) in the freeze output with this commit.  Three-lens
 panel (Opus 5) dispatched immediately after.
+
+## 2026-08-08 — GEN PANEL DISPATCHED (v13 LEDGER #216)
+Three-lens panel dispatched (Opus 5, one review file each, no
+git): R1 operator (the five patterns recomputed from the §2
+declaration alone; D characterized structurally; the base
+declaration verified incl. the printed 9×9 completion; the
+flip-test's trivial holonomy verified); R2 effectus (K1 THE
+COMPLETION QUESTION: the flip-test verified, additional
+completions of the same ψ constructed and measured — is the
+pinned completion special or generic; the verdict's honest
+name decided — REPRODUCES vs REPRODUCES-AT-DECLARED-COMPLETION;
+D2 steering audit; the cross-base sentence "the pattern is the
+theory's, the elements are the base's" tested); R3 instrument
+(AST no-exemption gate; census honesty; the 5 external anchors
+traced to the NT receipt; D5's combinatorial claim verified
+without fixture imports; the flip-test implementation audited
+as a genuine rebuild; D3 pin-compliance).  Reviews frozen on
+return.
