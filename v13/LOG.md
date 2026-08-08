@@ -6904,3 +6904,17 @@ contribution; silent drops counted; RUNBOOK §14 addendum (no
 gate may reference mutant identity; analytically-forced
 clauses are disclosures).  STATUS updated this commit.  Repair
 dispatch next.
+
+## 2026-08-07 — NT REPAIR DISPATCHED (N-1..N-7) (v13 LEDGER #209)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+the four unit files) with the #208 order: the Klein-four number
+w/ label-collapse mutant and D5 rewritten; the mechanism
+sufficient-only w/ the prep-leg source gated and T1 excluded;
+the non-principality escape headlined and gated w/ mixed-sign
+content; the mutant-exempting gate rebuilt (no MUTANT
+references anywhere) and the gauge headline clause reclassified
+w/ R1's complete-8192 incorporated; the 96/8 scope searched and
+the canonical loop's scope-relativity disclosed as a result;
+certified→FORCED; drops counted; the weld cited (paper 1 §2.4 +
+W5 M4) w/ the residual imported.  On delivery: COMMIT-AS-IS,
+verify, terminal-or-bounce.  Recorded after it occurs.
