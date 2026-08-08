@@ -7987,3 +7987,17 @@ corollaries; R1's third species (dim-4 wings) run in-delivery;
 the #234 instrument rules installed.  On delivery:
 COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after it
 occurs.
+
+## 2026-08-08 — PSI VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #251)
+Adjudicator verification PASSED (exit 0; output bfe16589 /
+receipt 15a0952d; three identical runs).
+note-psi-hostile-protocol.md FROZEN (K1 the witness + the
+Born-scoping audit / K2 the law + THE CROSS-UNIT TEST: is
+E(ψ) the ψ-dependence of the commutator D = [P,u] — one law
+again? / K3 the family + the readable-comparator audit / K4
+the second phenomenon / K5 instrument incl. MANDATORY #234
+compliance — this unit delivered after the addendum and lists
+PSI-VERDICT waiver-only).  Frozen SHAs in the freeze output
+with this commit.  Three-lens panel (Opus 5) dispatched
+immediately after.
