@@ -8953,3 +8953,38 @@ refinement rests on that forced cell BUT STANDS EMPIRICALLY
 (201 fully censused, no normalising-but-escaping instance).
 F6: **max order the carrier admits is 7, not 6** (at a
 3-cycle).  R2 pending; adjudication after it.
+
+## 2026-08-08 — TB3 R2 (EFFECTUS) FROZEN (v13 LEDGER #290)
+review-tb3-effectus.md frozen as delivered.  Grade AWF; 129
+recomputations, 0 discrepancies; no false number, no false
+theorem.  **M4 — THE SPARK CONFIRMED: by BRG's own
+prime-general theorem, TB3's targets yield LIVE Z/5 AND Z/7
+HOMS NATIVELY (15,120 = 2⁴·3³·5·7; 1,008 = 2⁴·3²·7) — BRG's
+live cells reopen at three wings without leaving scope; BRG's
+"theorem about the entire family" is BOUNDED to two-wing
+bases, TB3 the witness; the paper mentions BRG nowhere.**
+M5: the naming CONVERGENT with R1 (A₄ / PSL(2,7) / A₆ / A₇)
+and STRONGER — Hol = K ⋊ S₃ SPLIT in all four (measured
+complement); **and K is NOT the commutator subgroup —
+[Hol,Hol] = 3|K| in every case** (the "6 × commutator" framing
+false on the standard reading).  M1 (convergent w/ R1-F1):
+A2's headline is an algebraic identity — HOLDS-VERBATIM and
+FAILS both algebraically unreachable at S₃; GENERALIZES was
+fixed before the base existed (#208 violation the paper itself
+avoids two pages earlier).  M2: GENERALIZES over-reports —
+π ↦ π⁻¹ is a bijection, only the INDEX moves (an inherited
+placement convention); PSI's four-factor form was
+conditional-on-involutivity by its own derivation.  M3: the
+normaliser refinement is extensionally
+"contains-or-centralises" on this base (51-instance hunt, no
+discriminating probe); **no COC contradiction exists** (COC
+scoped necessity as a measurement) — an ERRATUM retro-scoping
+COC's displayed unscoped biconditional is routed.  Moderates:
+Hol is a GAUGE-INCLUSIVE holonomy (the wing factor's meaning);
+**psi-B (biseparable, |Hol| = 6 = psi-W1's) is the decisive
+control sitting unused in the paper's own table** (the GHZ/W
+contrast is stabiliser-confounded); psi-W4's 14 unreadable
+generators are NON-MONOMIAL orthogonal involutions
+(support-4) — strictly stronger than PSI's collapse.  PANEL
+COMPLETE: 3× AWF; ~299 recomputations; zero number errors.
+Adjudication next.
