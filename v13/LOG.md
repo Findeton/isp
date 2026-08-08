@@ -7501,3 +7501,28 @@ ANALYTICALLY FORCED (D lies in NO declared search scope — the
 scopes are groups) — measurement voice must go.  F7: the 96
 has a closed form (|C_{S₉}(σ₉)| = 288; index-0 stabilizer 96).
 R3 pending; adjudication after all three.
+
+## 2026-08-08 — COC R3 (INSTRUMENT) FROZEN (v13 LEDGER #234a)
+review-coc-instrument.md frozen as delivered (sha256-12
+88a011e1dc1c).  Grade AWF; 61 recomputations, zero arithmetic
+discrepancies; byte-identity twice from scratch; all 19 anchors
+verified (the hash pin fires even on whitespace-only change);
+28/28 mutants; the self-correction gate identified
+(COC-COMPLETION-DEPENDENCE, asym==4) and confirmed firing on
+the reconstructed false version; the non-abelian witness real
+(1/6 orderings).  THREE MAJORS: (1) independent confirmation
+of the forced closure — the drawn maps form a coboundary
+g_XY = h_Y·h_X⁻¹ at 48/48 coordinate×rule combos, all 576
+flat triangles at rule-blind coordinates, δ=1 FORCED; closed
+form δ = ∏_{REAL edges} w_X·w_Y reproducing all 1,824; (2)
+**THE VERDICT'S DERIVATION IS UNGATED — one character
+(outside>0 → >=0) yields exit 0 printing HIGHER-OBSTRUCTION**;
+(3) **the census's "two independent routes" are the
+distributivity identity — skipping a whole cell (192
+triangles) passes with both routes agreeing and NO gate
+catching it.**  Moderate: COC-MEMBERSHIP's tabulation untested
+(false zero demonstrated).  Positives: two waiver-only gates
+verified with REAL source falsifiers (stronger than claimed);
+the collapse criterion validated at 6 full 81-rebuilds; 96
+derived in closed form |C_{S₉}(σ) ∩ Stab(0)|.  PANEL
+COMPLETE: 3× AWF, ~289 recomputations, zero number errors.
