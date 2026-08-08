@@ -7627,3 +7627,22 @@ byte-identical ×2.  10 deviations (D1 the freeze-vs-realized-
 labels residual answered by the third instance, recorded not
 argued away).  md5 output 2df4bbfb / receipt 5624f153.
 Adjudicator verification next; panel follows.
+
+## 2026-08-08 — XBA VERIFIED (AFTER A VACUOUS FIRST RUN, OWNED);
+## PROTOCOL FROZEN; PANEL DISPATCHED (v13 LEDGER #238)
+ADJUDICATOR NEAR-MISS OWNED: the first verification run passed
+--quiet to a CLI that lacks it; argparse exited 2 having run
+NOTHING, and the byte-identity of UNTOUCHED files was vacuous.
+The exit-code check caught it; the real run (--delivery
+--falsification-selftest) PASSED: exit 0, output 2df4bbfb /
+receipt 5624f153 byte-identical — three genuine identical runs
+total.  LESSON (verification discipline): hash equality counts
+only with evidence the run executed — exit path + run marker;
+CLIs vary per worker, read the argparse before invoking.
+note-xba-hostile-protocol.md FROZEN (K1 the chain / K2 the
+prediction's strength vs the label-level caveats / K3 the
+honest open / K4 the freeze-vs-realized-labels steering audit
+/ K5 instrument incl. the refused-lookup cache mechanism and
+the three hash pins).  Frozen SHAs in the freeze output with
+this commit.  Three-lens panel (Opus 5) dispatched immediately
+after.
