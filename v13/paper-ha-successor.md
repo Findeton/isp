@@ -1,6 +1,6 @@
 # HA — THE RECORD-NATIVE `H_a[N]`, CONSTRUCTED; AND THE DEFORMATION-CLOSURE TEST, RUN
 
-**Status:** GREEN-UNREVIEWED, STRICT, 2026-08-08.
+**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-08-08.
 **Pin:** `v13/note-ha-successor-pin.md` (frozen; immutable base commit `024fcd7`).
 **Binding:** `v13/note-gw1-metric-from-closure.md` — TERMINAL at v13 LOG #5 —
 and in particular its §7.1 successor directive, quoted verbatim in §1;
@@ -9,7 +9,10 @@ and in particular its §7.1 successor directive, quoted verbatim in §1;
 (the charter, `[DRAFT]`).  Declared secondary:
 `v13/paper-nt-nomological-transport.md` and `v13/paper-gen-generality-check.md`,
 both receipts hash-pinned in §11.
-**Verdict:** **`HA-RUNNABLE` + `HA-BRIDGE-NOT-POSABLE`.**
+**Verdict:** **`HA-RUNNABLE`.**  The declared secondary enters **no**
+`HA-BRIDGE-…` outcome: §10 is a coordinate audit, the morphism question is
+registered OPEN in §14, and the verdict string is derived inside a gate (G25)
+with a falsifier that must die there.
 **Deliverables:** this note; `v13/code/ha_successor_exact.py`,
 `v13/code/ha_successor_output.txt`, `v13/code/ha_successor_receipt.json`.
 
@@ -37,11 +40,15 @@ The GW1 kill condition, quoted once, verbatim from v13 paper 0 §6:
 > permits inequivalent recovered tensors, then the deformation algebra is
 > representing geometry rather than explaining it.
 
-**The kill fires, and it is measured rather than asserted.**  That is this
-unit's contribution: GW1's conditional — "the corpus can either obtain
-nontrivial closure by supplying geometry, or remain record-native and fail to
-produce the required closure" — becomes a measurement on a constructed
+**The kill fires — at its second disjunct, and measured rather than asserted.**
+That is this unit's contribution: GW1's conditional — "the corpus can either
+obtain nontrivial closure by supplying geometry, or remain record-native and
+fail to produce the required closure" — becomes a measurement on a constructed
 substrate, with the sector where each alternative holds named and counted (§6).
+The disjunct that fires is *the same record law permits inequivalent recovered
+tensors*, counted at §6.3; the first disjunct cannot be fired by GW1's original
+route here, because this formulation eliminates the decoder that would extract a
+second tensor to compare (§1, §12.2).
 
 Everything below is at ONE declared finite arena: $d = 2$ (primary) and $d = 3$
 (extension) spatial directions, $L = 3$ sites per direction, the declared link
@@ -69,13 +76,35 @@ lapse-pair family of full rank at each point.
 
 The directive is executed with **one substitution**, declared here and carried
 in the deviations (§12).  `v6_task2b` is **not** used as the metric readout.
-GW1's own §2 grades it partial: its fit runs against embedding coordinate
-separations `dx = P[b] − P[a]` and its constant `K` is calibrated against the
-true interval.  Using it would insert held-out embedding data into `β` and would
-fail GW1 §1.2 at the first line.  Instead the metric candidate is read where v4
-paper 7 Definition 1.4 says it lives — **from the finite geometry record
-itself** — by the corpus's own order+count relation, interval cardinality as
-squared separation (§3.2).
+The reach outside order-and-count data is broader than GW1's own §2 recorded,
+and it is enumerated here because the substitution rests on it: the sample
+region is selected by embedding coordinates (`:40`), the fit runs against
+embedding separations `dx = P[b] − P[a]` (`:48`, `:63–65`), the sample is
+filtered by the **true** interval (`:49–50`), and the single scale `K` is
+calibrated against the true interval (`:58`).  Exactly one ingredient,
+`c = C[a,b]` (`:52`), is order-and-count data.  That fails GW1 §1.1
+**condition 5** ("`q^{ij}_order` … from order and count data on the same
+substrate") and GW1 §1.2's **second** bullet, which bans held-out embedding
+coordinates; using it would insert held-out embedding data into `β`, i.e. into
+the residual under test.
+
+Two further reasons the directive's letter is unexecutable, independent of
+smuggling.  **Type.** `v6_task2b` returns one constant `d × d` least-squares
+matrix fitted over a whole sprinkling, while `β_a^i = I_a(g)^{ij}(x) ω_j(x)`
+needs an exact, site-dependent rational field on a `3^d` lattice; there is no
+route from the former to the latter.  **Validation.** That script's own closing
+note (`:116–119`) lists the curved test as REMAINING, so the fit is validated on
+flat space only.
+
+Instead the metric candidate is read from the finite geometry record itself, by
+a **declared** readout — interval cardinality as squared separation (§3.2) —
+which is a legitimate instantiation of v4 paper 7 Definition 1.4's undetermined
+"metric candidate", chosen because it inverts exactly.  Definition 1.4 supplies
+no relation, and the only committed corpus implementation of cardinality →
+metric uses the Myrheim–Meyer exponent, `τ̂² = (card/K)^{2/d}`, not a
+cardinality-linear relation; the two agree only at spacetime `d = 2`, while this
+unit applies its readout at spatial `d = 2` and `d = 3`.  The readout is
+therefore this unit's declared choice and is not attributed to the corpus.
 
 The co-requisites are discharged or declared as follows.
 
@@ -86,7 +115,11 @@ The co-requisites are discharged or declared as follows.
   no division by $\epsilon^2$ and no decoder inverse — the tangential
   correction is included rather than fitted.  GW1 §5 items 2 and 4 are
   therefore not open here; they are not needed by this formulation, which is
-  itself a declared narrowing of GW1's original STEP 4.
+  itself a declared narrowing of GW1's original STEP 4.  **The price is stated
+  once:** with no decoder there is no independently extracted tensor, so GW1's
+  `q_comp`/`q_order` comparison is eliminated along with `K_i`, and the kill
+  condition's first disjunct cannot be fired by GW1's original route.  What
+  fires instead is its second disjunct, measured (§6.3).
 - The density-weight convention: declared, and flip-tested (§7.5).  It moves
   the verdict, and that is reported.
 - The lapse-pair rank: measured full (§4.2).  This is the first time that
@@ -109,6 +142,15 @@ two-cell; the residual posed in a form needing no decoder; and a metric read
 from the same record on the same hypersurface.  It is invertible by construction
 with a closed-form inverse, not by declaration.  Everything it uses is the
 corpus's own division-event counts.
+
+**One of GW1 §1.2's four exclusions is vacuous here, and it is the fourth.**
+That clause bans "algebraic data equivalent to the target metric"; at this arena
+the site's link counts and the components of $q$ determine each other by an
+invertible linear map (§3.2, G28), so *every* record-native rule has access to
+data equivalent to the metric by construction and the clause cannot discriminate.
+The first three exclusions are passed cleanly and are what §2's claim rests on.
+What this unit measures is therefore not *what data a rule can see* but **which
+function of the counts it computes** (§6.5).
 
 ---
 
@@ -139,8 +181,8 @@ first, dies there.
 The geometry record is count data on the corpus's own division/record structure:
 $n_\ell(x)$ is the number of division events in the record interval between $x$
 and $x+\ell$.  GW1 §1.2 permits event counts and record adjacency explicitly.
-The metric candidate is read from that record by the corpus's own order+count
-relation — interval cardinality as squared separation — solved exactly:
+The metric candidate is read from that record by the **declared** readout of §1
+— interval cardinality as squared separation — solved exactly:
 
 $$q_{ij}(x)\,e_\ell^i e_\ell^j \;=\; n_\ell(x)\quad\text{for every }\ell\in\mathcal L,
 \qquad I_a(g)^{ij}(x) \;:=\; (q^{-1})^{ij}(x)\cdot(\det q)^{w}(x).$$
@@ -149,6 +191,20 @@ At $d = 2$ the three links determine the three components of $q$ exactly; at
 $d = 3$ the six links determine the six.  A record is **admissible** when $q$ is
 nonsingular and positive definite at every site, by the exact Sylvester
 criterion, and $q^{-1}$ exists at every site.
+
+> **The readout is an invertible linear re-encoding: in count coordinates, the
+> record IS the metric.**  The map from the site's link counts to the components
+> of $q$ is linear with an exact nonzero determinant (measured: $2$ at $d=2$),
+> and $q$ reproduces every declared link count at every site of every record
+> (81 of 81; G28).  At $d = 2$ this is $q_{11} = n_{e_1}$, $q_{22} = n_{e_2}$,
+> $q_{12} = (n_{e_1+e_2} - n_{e_1} - n_{e_2})/2$; three links, three components.
+> So "the geometry record" and "the metric candidate" are **one datum in two
+> coordinate systems**, and reading one off the other is a change of
+> coordinates, not a reconstruction.  Everything this unit measures about
+> insertion and no-smuggling is therefore a statement about **which function of
+> the counts a drag rule computes** — not about what data it could in principle
+> see (§2, disclosure X05).  Nothing below weakens on that account, and §6.3
+> says so at the point where it matters.
 
 ### 3.3 `H_a[N]`, and its inverse
 
@@ -218,7 +274,9 @@ $\mathsf{SW}_{HHH,a} = \mathsf W_{N|ML}\mathsf W_{M|LN}\mathsf W_{L|NM}$.
 
 ### 3.7 Two layers, three comparators
 
-The residual is computed by routes that share no code.
+The residual is computed by routes that share no code, and every cell of the
+headline table is computed by **both** (13 068 comparisons, 0 disagreements,
+G05).
 
 - **The exact rational layer.**  Every object is an exact `Fraction`-valued
   field; the residual is the register displacement of the literal five-map
@@ -227,7 +285,15 @@ The residual is computed by routes that share no code.
   touching the composition:
   $\rho^i(x) = \bigl(\Lambda^{ij}(x)-I^{ij}(x)\bigr)\omega_j(x)$ for
   architecture A, and $\sum_\ell\lambda_\ell e_\ell^i\omega_\ell - \beta^i$ for
-  architecture B.
+  architecture B.  One row is not of that form: the frozen-front variant
+  `A-notransport` is evaluated in the closed route as $-\beta$ directly, which
+  is what its frozen front makes it, and the literal composition confirms that
+  independently at every one of its cells.
+- **What the two routes do and do not share.**  They share `beta()`: a
+  common-mode error in $\beta$ would be invisible to G05, and is policed
+  instead by the positive control (G06), the sector law (G08), the flat/curved
+  separation (G12) and the $d=3$ extension (G21), each of which a declared
+  falsifier that perturbs $\beta$ must and does kill.
 - **The finite operator layer.**  On a declared finite total-configuration
   carrier $C_{red} = \mathcal F\times\mathcal A$ — $\mathcal F$ the front sector
   $n_0 + \operatorname{span}_{\mathbb F_p}\{N,M\}$, $\mathcal A = (\mathbb F_p)^d$
@@ -235,7 +301,11 @@ The residual is computed by routes that share no code.
   explicit permutation and $R_{HH}$ is formed as a genuine operator product.
   This is Definition 2.3 as an operator on $V_a^{tot}$, with Definition 2.4's
   norm on the declared test class of indicator effects:
-  $\lVert R\rVert$ = configurations moved, over carrier size.
+  $\lVert R\rVert$ = configurations moved, over carrier size.  **That norm is a
+  boolean in disguise on this carrier** and is read as one: a nonzero
+  translation of $\mathcal F\times(\mathbb F_p)^d$ moves *every* configuration,
+  so $\lVert R\rVert \in \{0, 1\}$ and each row of the printed table carries one
+  bit — whether the residual reduces to zero at that prime — not a magnitude.
 
 ---
 
@@ -279,15 +349,22 @@ a proportional family, dies on this gate.
 
 ## 5. The construction runs
 
-$H^{-1}H = HH^{-1} = \mathrm{id}$ is measured on **396** (rule, record, lapse)
-triples, with **0** failures; and the declared non-injective falsifier — a
-variant that collapses the address register — is measured **rejected** by the
-same predicate (G04).  The `invert-lax` mutant, which blinds that predicate,
-dies there; so does `transport-off`, because a drag read at the wrong front is
-no longer inverted by the closed form.
+$H^{-1}H = HH^{-1} = \mathrm{id}$ is measured on **792** (rule, record, lapse,
+register) instances — 396 at each of the two declared address registers,
+$m \equiv 0$ and $m \equiv 1$ — with **0** failures at each (G04).  The declared
+non-injective falsifier, a variant that collapses the address register, is run
+at both registers too, and the report is two-sided: it is **rejected** at
+$m \equiv 1$, and at $m \equiv 0$ it is **not** rejected and cannot be, because
+collapsing an already-zero register is the identity there and no predicate could
+separate them.  The gate's teeth are therefore at $m \equiv 1$, the H family is
+measured invertible at both, and the coordinate at which each side is evaluated
+is stated rather than left to be inferred.  The `invert-lax` mutant, which
+blinds the predicate, dies there; so does `transport-off`, because a drag read
+at the wrong front is no longer inverted by the closed form.
 
 The literal five-map composition and the independently built closed form agree
-field by field at **1188** comparisons, **0** disagreements (G05).  The
+field by field at **13 068** comparisons — **every** (rule, record, ordered
+lapse pair) cell of the headline table — with **0** disagreements (G05).  The
 comparator is not a copy of the audited object routed through it: `sign-flip`,
 `order-swap`, `omega-asym` and `transport-off` each move one side and not the
 other, and each dies at G05.
@@ -342,7 +419,11 @@ one of the 9 sites.
 > sites, on all **five** records whose order+count readout is diagonal:
 > `G-FLAT`, the scaled-flat `G-DIAG2`, the two homogeneous anisotropic records
 > `G-ANISO` and `G-ANISO2`, and the **inhomogeneous** diagonal record
-> `G-CURVED`.
+> `G-CURVED`.  **Read this with §6.5:** on a diagonal readout
+> $\Lambda_{\text{axis}} = \operatorname{diag}(1/q_{jj}) = q^{-1}$ *identically*,
+> so what the diagonal sector exhibits is a rule that coincides with the metric
+> by arithmetic rather than by design.  The finding is the sector boundary and
+> its mechanism, not a derivation of geometry.
 
 > **At the cross term it does not close, and the anomaly is exact.**  On all
 > four records whose readout carries $q_{12}\neq0$ the residual is nonzero at 96
@@ -363,14 +444,17 @@ link-local rule `A-axis`:
 ### 6.2 Positive and negative controls
 
 - **Positive control (G06):** the metric-inserted rule closes exactly at every
-  admissible record and every tested pair — 9 of 9 records.
+  admissible record and every tested pair — 9 of 9 records — **by both routes**.
+  The closed-form clause is forced by X02's identity; the literal five-map clause
+  is not, and it is the measurement: 0 nonzero cells of the 1188 literal
+  evaluations of that rule.  `beta-flat` and `transport-off` each kill it.
 - **Negative control with teeth (G07):** every declared broken variant fails
   closure — `A-insert-x` on 4 records (exactly the four with a nonzero cross
   term, since flipping the sign of a zero is a no-op), `A-insert-2x` on 9,
   `A-notransport` on 9.  `closure-lax`, `control-lax` and `readout-local` each
   die here.
 
-### 6.3 The sector law: closure IS insertion
+### 6.3 The sector law: closure forces the count-matrix inverse — a joint, not link-local, function of the record
 
 Cells read *(sites where $\Lambda = I_a(g)$) / (sites where the residual
 vanishes at all 132 pairs)*, out of 9.
@@ -395,10 +479,38 @@ sector law is measured at site resolution, not only at record resolution.
 
 **Disclosure (X02).** The equivalence in G08 is **analytically forced** once
 §4.2's rank is full: $\rho^i = (\Lambda^{ij}-I^{ij})\omega_j$ vanishes on a
-spanning covector family if and only if $\Lambda = I$.  It is recorded as a
-disclosure, not claimed as an independent discovery.  The measured content is
-the rank that makes the statement bite, the cell census above, the residual
-magnitudes of §6.1, and §6.5's obstruction.
+spanning covector family if and only if $\Lambda = I$.  The same identity forces
+the closed-form clause of the positive control G06 and the `A-insert` clauses of
+G12 and G21; in each case the **measurement** is the literal five-map route,
+which the identity does not force, and G06 carries that route explicitly.  The
+forcing is conditional on §4.2's rank, which a declared falsifier genuinely
+breaks, so the pair is not vacuous.  It is recorded as a disclosure, not claimed
+as an independent discovery.  The measured content is the rank that makes the
+statement bite, the cell census above, the residual magnitudes of §6.1, and
+§6.5's theorem.
+
+**Which disjunct of the kill condition fires — measured.**  GW1's kill has two
+disjuncts: *the metric must already be inserted into $J[N]$*, **or** *the same
+record law permits inequivalent recovered tensors*.  The **second** is the one
+that fires here, and it fires cleanly.  Under GW1's own STEP 4 reading the
+commutator's displacement is $\Lambda^{ij}\omega_j$, so the tensor a rule
+"recovers" **is its own weight field** $\Lambda$.  On one record — `G-OFFDIAG` —
+the complete declared family realises **7 pairwise-distinct recovered tensors**
+across its 8 architecture-A rules (`A-insert` and `A-notransport` carry the same
+weight and differ only in transport), and **9 pairwise-distinct residual laws**
+across all 11 declared rules (`B-axis` reproduces `A-axis` and `B-chart`
+reproduces `A-chart`, exactly as the architecture split predicts).  One record,
+many inequivalent recovered tensors: that is the second disjunct, measured, over
+a family whose completeness is itself gated (G26, G27).
+
+**And "insertion" means something specific here.**  Nothing external is
+inserted: by §3.2 the record and the metric are one datum in two coordinate
+systems, so what closure forces is not the arrival of foreign data but that the
+drag weight be a **particular joint function of the record** — the count-matrix
+inverse — rather than any link-local function of it (§6.5).  GW1's kill was
+written for substrates where the metric arrived from outside; the boundary this
+unit actually locates is between **link-local and joint functions of the
+record**, which is a different and weaker boundary, and it is the honest one.
 
 ### 6.4 Insertion alone does not buy closure: transport is necessary
 
@@ -414,17 +526,41 @@ nothing, leaving $\rho = -\beta$ uncancelled.
 > insufficient; the second normal step must be transported along the first, and
 > the price of dropping it is the whole tangential correction.
 
-### 6.5 No link-local record-native weight can close
+### 6.5 No link-local record-native weight closes — a theorem
 
-A weight is **link-local** when $\lambda_\ell$ is a function of $n_\ell$ alone.
-The obstruction is exhibited, not argued: `G-CURVOFF` and `G-DIAG2` **agree** on
-the interval count of the link $e_1$ — both carry $n_{e_1}(0,0) = 2$ — while
-their full count vectors are $(2,2,6)$ and $(2,2,4)$ and the record-read inverse
-metric demands $I^{11} = 2/3$ at the first and $1/2$ at the second (G09).
+A weight is **link-local** when each declared link contributes a weight that is
+a function of **its own** interval count alone:
 
-The mechanism: $I^{jj} = \operatorname{adj}(q)^{jj}/\det q$, and $\det q$ is a
-**joint** function of every link count at the site.  A weight that reads only
-its own link's count cannot see it.  Closure therefore requires a rule that
+$$\Lambda(x) \;=\; \sum_{\ell\in\mathcal L} f_\ell\bigl(n_\ell(x)\bigr)\,
+e_\ell e_\ell^{\mathsf T},\qquad\text{so at } d = 2:\quad
+\Lambda^{11} = f_1(n_{e_1}) + f_3(n_{e_1+e_2}),\quad
+\Lambda^{22} = f_2(n_{e_2}) + f_3(n_{e_1+e_2}),\quad
+\Lambda^{12} = f_3(n_{e_1+e_2}).$$
+
+> **Theorem.**  No link-local weight closes on the declared record family.
+>
+> *Proof.*  Closure at a site forces $\Lambda = I_a(g)$ there (§6.3, with §4.2's
+> full rank).  For a link-local weight the cross component
+> $\Lambda^{12} = f_3(n_{e_1+e_2})$ is a function of the diagonal link's own
+> count alone, so closure demands $f_3(n_{e_1+e_2}) = I^{12}$ at **every**
+> admissible record.  `G-DIAG2` $(2,2,4)$ and `G-OFFNEG` $(3,5,4)$ are both
+> admissible and both carry $n_{e_1+e_2}(0,0) = 4$, while
+> $I^{12} = -q_{12}/\det q$ is $0$ at the first and $2/11$ at the second.  So
+> $f_3(4)$ would have to take two values.  $\blacksquare$
+
+The witness is gated (G09), and the weaker statement is kept separate from the
+stronger one: the pair `G-CURVOFF`/`G-DIAG2`, which share $n_{e_1}(0,0) = 2$
+while demanding $I^{11} = 2/3$ and $1/2$, refutes only the diagonal-restricted
+subfamily $\Lambda^{jj} = f(n_{e_j})$ — that is, exactly `A-axis` — and is
+reported as such.  Neither witness is an accident of the declared nine: over the
+declared count lattice ($1 \le n_{e_1}, n_{e_2} \le 6$, $1 \le n_{e_1+e_2} \le
+12$, positive definite) there are **361** admissible count vectors, **5100**
+pairs that share $n_{e_1+e_2}$ and demand different $I^{12}$, and **781** that
+share $(n_{e_1}, n_{e_1+e_2})$ and demand different $I^{11}$ (G09B, recorded).
+
+The mechanism: $I^{ij} = \operatorname{adj}(q)^{ij}/\det q$, and $\det q$ is a
+**joint** function of every link count at the site.  A weight assembled from
+per-link functions cannot see it.  Closure therefore requires a rule that
 computes the record's count-matrix inverse — which is the metric.  The
 `readout-local` mutant, which replaces the readout by a link-local surrogate,
 dies here and at three further gates.
@@ -463,24 +599,34 @@ closure; a cross term is.
 ### 7.3 Randomised update order
 
 Exchanging the two normal labels sends the residual field to its exact negative
-at every site: **360** pairs tested, **0** antisymmetry violations (G13).  The
+at every site, at **every** cell of the headline table: **13 068** (rule,
+record, ordered pair) cells, **0** antisymmetry violations (G13).  The
 `omega-asym` mutant, which replaces the bracket covector by a non-antisymmetric
 difference, dies here.
 
 ### 7.4 Chart changes — and the RUNBOOK §14 symmetry self-test
 
-The declared chart group is the $\lvert X\rvert$ chart translations and the $d!$
-direction relabellings, acting on sites, on the record's link counts, on the
-lapse profiles and on every tensor index.  Equivariance of the residual field is
-measured component by component on freshly rebuilt records: **4860**
-comparisons, **0** violations (G14).  The `chart-shift` mutant, which moves the
+The declared chart group is the $\lvert X\rvert = 9$ chart translations and the
+$d! = 2$ direction relabellings — **18** elements — acting on sites, on the
+record's link counts, on the lapse profiles and on every tensor index.
+Equivariance of the residual field is measured over the **whole** group, at
+every admissible record, every one of the 132 ordered lapse pairs and every
+site, on freshly rebuilt records: **192 456** site comparisons (**384 912**
+components), **0** violations (G14).  The `chart-shift` mutant, which moves the
 record but not the field index, dies here.
 
-Per the RUNBOOK §14 addendum the self-test evaluates fresh, and the cache path is itself
-gated: **283 133** cache hits, **1377** misses, **486** fresh bypasses (G15).
-The `cache-lax` mutant, which routes the fresh path back through the memo, dies
-there.  A zero-hit cache gate would have been vacuous; this one measures that
-the cache is exercised and that the self-test does not read it.
+**The memo, stated as it is coded.**  The self-test's comparands are served
+*through* the weight memo — that is what gives G14 its teeth against a cache
+that returns the wrong record's weight — and the memo's returns are themselves
+measured: every weight the self-test uses is recomputed with the memo **bypassed**
+and compared against what the memo returned, on the base record and on the
+chart-transformed record alike.  Measured: **904 241** cache hits, **2349**
+misses, **2916** fresh bypasses, **2916** fresh-versus-memo comparisons, **0**
+disagreements (G15).  Two declared falsifiers die on this pair: `cache-lax`,
+which routes the fresh path back through the memo, and `cache-alias`, which
+serves a chart-transformed record the base record's cached weight — the latter
+kills G14 and G15 together.  A zero-hit cache gate would have been vacuous; this
+one measures that the cache is exercised **and** that what it returns is right.
 
 ### 7.5 The density-weight convention — and it moves the verdict
 
@@ -554,13 +700,30 @@ three corrected switches**:
   $\max\lvert\text{reg}\rvert = 2$ at `A-insert | G-ANISO | (9,10,0)` and
   $1/64$ at `A-insert | G-ANISO2 | (0,3,9)` (G20).
 
-> **Pair closure does not buy $HHH$ closure.**  The metric-inserted rule closes
+**The displacement has an exact closed form, and it is measured.**  Writing
+$A = \mathcal L_{B_{ML}}N$, $B = \mathcal L_{B_{LN}}M$,
+$C = \mathcal L_{B_{NM}}L$ for the three transported lapse derivatives — whose
+sum vanishes at all 108 cells, above — the degeneracy $\mathsf C(H,D) = I$ makes
+$\mathsf{SW}_{HHH} = H_a[A]H_a[B]H_a[C]$, and its register displacement is
+
+$$\Delta m^i \;=\; \Lambda^{ij}\bigl(B\,\partial_j C \;+\; A\,\partial_j B \;+\;
+A\,\partial_j C\bigr),$$
+
+compared against the literal composition of the three corrected switches at
+**108 of 108** cells with **0** disagreements (G20B).  The `transport-off`
+mutant, which reads the pre-advance front, moves the literal side only and dies
+there.
+
+> **What the nonzero $\mathsf{SW}_{HHH}$ is, and is not.**  The comparison is
+> between a **corrected** pair object and an **uncorrected** triple: v4 paper 7
+> defines no triple-level correction, so a nonzero $\mathsf{SW}_{HHH}$ is what
+> the definitions predict rather than a failure of the inserted rule, and the
+> section's content is the closed form above.  The metric-inserted rule closes
 > the $HH$ pair residual exactly at every record and every pair (§6.2) and its
-> three-normal detector is nonzero at 27 of its 36 tested triples.  That is the
+> three-normal object is nonzero at 27 of its 36 tested triples: that is the
 > finite measurement of v4 paper 12's own reason for building the corrected
-> switch: "the smallest switch object that can see the $HHH$ Jacobi obstruction
-> is not the corrected $HH$ pair residual itself."  The obstruction survives
-> insertion.
+> switch — "the smallest switch object that can see the $HHH$ Jacobi obstruction
+> is not the corrected $HH$ pair residual itself."
 
 ---
 
@@ -583,22 +746,50 @@ fails on the cross-term record.
 
 ---
 
-## 10. The declared secondary: the stitching geometry
+## 10. The declared secondary, as a coordinate audit
 
 The pin asks, by measurement and not by analogy, whether $R_{HH}$ can be
 expressed in the data of the measured transport/holonomy layer — NT's bigon
 group and GEN's defect law $D = (\Sigma V^{\mathsf T}\Sigma V)\otimes I_9$.
+**This section does not answer that question.**  It reports what is measured
+about the two objects' coordinates, separates what is a property of $R_{HH}$
+from what is a property of the declared arena, and hands the unanswered
+question to a successor unit with its requirements stated (§14).  No posability
+predicate is evaluated anywhere in the run, and no `HA-BRIDGE-…` outcome is
+entered.
 
-### 10.1 The HA residual as a holonomy, in NT's and GEN's own coordinate
+### 10.1 What $R_{HH}$ is on the reduced carrier, and what the prime decides
 
-At the declared symmetric configuration (a swap-invariant base front and two
-swap-invariant lapses, so that the chart involution preserves the front sector —
-measured, not assumed), the based closed-loop product of the link transports is
-computed on the reduced carrier of **625** total records.  The HA residual
-generates a group of order **5**, abelian, with element orders $\{1,5\}$: an
-elementary abelian group of exponent $p$.
+The instrument forms $R_{HH}$ as an explicit permutation product on the reduced
+carrier and takes the group generated by that **one** permutation: it is the
+**cyclic** group $\langle R_{HH}\rangle$, not a loop product of link transports
+and not a multi-generator group.  Its structure is measured, not inferred:
 
-### 10.2 GEN's own relations, tested — with GEN's own defect as the control
+> $R_{HH}$ acts on the reduced carrier as the **translation of the address
+> register by $\rho(x^\ast) \bmod p$**, with the front sector returning to
+> itself — verified configuration by configuration at every swept prime (G29).
+> Hence $\langle R_{HH}\rangle \cong \mathbb Z/p$ whenever $\rho \not\equiv 0$.
+
+Which makes the group's order an **arena coordinate**.  At the declared
+symmetric configuration the exact rational residual at the detector site is
+$\rho(0,0) = (1/6,\,1/6)$ — the same at every prime — while the group order
+tracks the declared reduction prime exactly:
+
+| $p$ | 5 | 7 | 11 | 13 | 17 | 19 | 23 |
+|---|---|---|---|---|---|---|---|
+| carrier $p^{k+d}$ | 625 | 2401 | 14 641 | 28 561 | 83 521 | 130 321 | 279 841 |
+| $\rho \bmod p$ | $(1,1)$ | $(6,6)$ | $(2,2)$ | $(11,11)$ | $(3,3)$ | $(16,16)$ | $(4,4)$ |
+| $\lvert\langle R_{HH}\rangle\rvert$ | **5** | **7** | **11** | **13** | **17** | **19** | **23** |
+
+RUNBOOK §15 is explicit about what follows: a quantity not gated invariant
+across the unit's admissible arenas may serve as an instrument reading and may
+**never** enter as a conclusion.  The order of $\langle R_{HH}\rangle$ is such a
+quantity (G30), and it is therefore excluded from every argument below.  The
+`prime-single` mutant, which collapses the sweep to one prime, dies at that
+gate; `factor-lax`, which perturbs the exact-to-$\mathbb F_p$ reduction, dies at
+the translation-structure gate.
+
+### 10.2 GEN's relations, and the spectrum a like-for-like comparison must use
 
 GEN's defect law is rebuilt independently from the published prose (§2.3's
 $\psi$, Householder and declared transposition; its §8.1's reduction of
@@ -608,53 +799,107 @@ $[0,2,1,6,4,5,3,7,8]$ entry by entry, its order **2**, its **45** fixed
 configurations of 81, the whole **40 320**-member family, its **96**
 identity-defect members and **40 224** geometry-bearing ones, its order and
 fixed-configuration spectra, and **0** members where the dihedral relation
-fails.  Those are anchors A09–A16.
+fails.  Those are anchors A09–A17.
 
-| relation | GEN's own defect (positive control) | the HA residual |
+**Disclosure (X06): $\Sigma D\Sigma = D^{-1}$ is analytically forced.**  With
+$D = \Sigma Q^{-1}\Sigma Q$ and $\Sigma^2 = \mathrm{id}$,
+$\Sigma D\Sigma = (\Sigma Q^{-1}\Sigma Q)^{-1} = D^{-1}$ for **every**
+completion $Q$ — which is why A16 counts 0 failures over all 40 320 members.
+It is a disclosure, not a discriminating control, and the sentence "the same
+relation is measured *to* hold for GEN's own defect" is withdrawn as a
+measurement.  The relation is not vacuous for arbitrary permutations: a declared
+3-cycle outside the sandwich form does **not** satisfy it, measured.
+
+**Both GEN spectra are computed in this run, from the completion census, and
+neither is typed.**  The defect order spectrum is
+$\{1,2,3,4,5,6,7,15\}$ with multiplicities
+$\{1{:}96,\,2{:}1440,\,3{:}4224,\,4{:}4608,\,5{:}4608,\,6{:}6912,\,7{:}9216,\,
+15{:}9216\}$ (A14); the holonomy order spectrum $\{1,4,6,8,10,12,14,30\}$ is
+derived from it as $2n$ with the flat class at 1 (A17).  The coordinate table
+below pairs $R_{HH}$ with GEN's **defect** $D$, so the **defect** spectrum is the
+like-for-like comparator; reading HA against one spectrum and GEN against the
+other would be a class-versus-class verdict taken at two different coordinates,
+which RUNBOOK §15's addendum forbids.  Against the correct comparator:
+
+| relation | GEN's own defect | $R_{HH}$ |
 |---|---|---|
-| $\Sigma D\Sigma = D^{-1}$ | **holds** | **fails** at the declared loop |
-| order | 2 | 5 |
-| in GEN's measured order spectrum $\{1,2,3,4,5,6,7,15\}$ for the defect, holonomy $\{1,4,6,8,10,12,14,30\}$ | yes | **no** (order 5) |
-| Klein four-group (NT's group) | — | **no** |
+| $\Sigma D\Sigma = D^{-1}$ | holds — **analytically forced** (X06) | **fails** at the declared loop |
+| order | 2 | $p$, the declared prime (§10.1) |
+| in GEN's computed **defect** order spectrum | yes | **yes at $p = 5$** (multiplicity 4608 of 40 320) and at $p = 7$ (9216); no at $p = 11,13,17,19,23$ |
+| Klein four-group (NT's group) | — | no — $\langle R_{HH}\rangle$ is cyclic on one generator |
 
-The dihedral relation is measured over 24 further declared lapse pairs and holds
-at **17** of them — so it is a coordinate coincidence at this arena, not a
-structural property of $R_{HH}$.
+The third row is the decisive one, and it reads **yes** at the arena's own first
+prime: order 5 lies in GEN's defect order spectrum, at 4608 of its 40 320
+members.  It reads no at four of the seven swept primes.  A criterion whose
+answer is a function of the reduction prime decides nothing about $R_{HH}$, and
+that prime-dependence is itself gated (G31); the `bridge-spectrum` mutant, which
+reads the holonomy spectrum where the defect spectrum belongs, dies there.
 
-### 10.3 The coordinate table
+### 10.3 The $\Sigma$-relation census, decomposed
+
+$\Sigma$ is the declared chart involution.  On the reduced carrier it exists
+only where the front sector is swap-closed, so the relation
+$\Sigma R\Sigma = R^{-1}$ is **posable** only there.  Three readings are
+reported rather than one, over two declared sets of ordered lapse pairs, with
+the vacuous cells separated out (G32, recorded):
+
+| reading | first 24 pairs | all 132 pairs |
+|---|---|---|
+| single-site surrogate $\rho_1 + \rho_2 = 0$ | 17 | 114 |
+| …of which $R_{HH}$ is the identity at the detector site | **17 of 17** | **114 of 114** |
+| the same statement over the whole field, all 9 sites | 8 | 36 |
+| carrier-level relation **posable** ($\Sigma$ exists) | 4 | 20 |
+| carrier-level relation **holds** | 3 | 18 |
+| …of which $R_{HH}$ is the identity | 3 of 3 | 18 of 18 |
+
+The single-site surrogate is not the relation, and its 17 are not coincidences:
+every one of them is a cell where $R_{HH}$ is the identity and the relation holds
+trivially.  What the census establishes is sharper than any single count:
+**the relation holds at no tested cell where $R_{HH}$ is nontrivial** — at the
+single-site reading, at the whole-field reading, and at the carrier level alike.
+Where it is genuinely posable it holds 3 of 4, and those 3 are exactly the
+identity cells.
+
+### 10.4 The coordinate table
+
+Sizes are reported as sizes.  Equal cardinality is neither necessary nor
+sufficient for a carrier morphism to exist, and no cardinality test is used as a
+criterion anywhere.
 
 | coordinate | NT / GEN | HA |
 |---|---|---|
-| carrier | 36 configurations $(q_A,q_B,p_A,p_B)$ / 81 $(s_A,s_B,p_A,p_B)$ | 625 total records = front sector $\times$ address register |
+| carrier | 36 configurations $(q_A,q_B,p_A,p_B)$ / 81 $(s_A,s_B,p_A,p_B)$ | $p^{k+d}$ total records = front sector $\times$ address register (625 at $p = 5$) |
 | family | 6 settings $\times$ 2 frames / 6 settings | 11 drag rules $\times$ 9 geometry records |
 | law | the declared legs $U_{\text{prep}}, U_A(a), U_B(b)$ | $H_a[N] : (n,m)\mapsto(n+N,\,m+w[N,n])$ at a lapse profile |
 | state | $p(0) = \delta_{j_0}$ | the base total record $(n_{\text{sym}}, 0)$ |
 | arena | (frame, read time) nodes, co-reference identifications | (record site, front sector), normal and tangential comparison maps |
-| structure group | Klein four $\{1,W,X,WX\}$ / dihedral of order $2n$ | elementary abelian of exponent 5, order 5 here |
+| structure group | Klein four $\{1,W,X,WX\}$ / dihedral of order $2n$ | cyclic on one generator, of order $p$ — the **declared prime** (§10.1) |
 | defect construction | $D = P_WU_{\text{prep}}^{-1}P_WU_{\text{prep}} = (\Sigma V^{\mathsf T}\Sigma V)\otimes I_9$ | $R_{HH} = \mathsf C(H[N],H[M])\,D[-\beta_a(g;N,M)]$ |
 
-### 10.4 Verdict
+### 10.5 What is measured, and what is not
 
-> **`HA-BRIDGE-NOT-POSABLE`.  Named obstruction: NO COMMITTED CARRIER
-> MORPHISM.**  The stitching geometry's defect law is a statement about a fixed
-> 81-element (or 36-element) process carrier factorised as a system pair times a
-> pointer pair, with $\Sigma$ the pair-label exchange and the defect the failure
-> of a declared completion to intertwine that exchange.  $R_{HH}$ lives on total
-> matter-geometry records with no such factorisation, no exchange-typed
-> completion, and no committed map to that carrier.  The measured consequences:
-> the HA holonomy group has order 5 and exponent 5, which is not in GEN's
-> measured order spectrum; and GEN's defining relation
-> $\Sigma D\Sigma = D^{-1}$ is measured **not** to hold for $R_{HH}$ at the
-> declared loop, while the same relation is measured **to** hold for GEN's own
-> defect.  The `bridge-lax` mutant, which drops the coordinate test from the
-> posability predicate, dies at G22.
+> **Measured.**  The carriers are different sizes with different factorisations.
+> $\langle R_{HH}\rangle$ is cyclic on one generator, while NT's group is Klein
+> four and GEN's is dihedral, both genuinely multi-generator.  GEN's relation
+> $\Sigma D\Sigma = D^{-1}$ fails for $R_{HH}$ at every tested cell where
+> $R_{HH}$ is nontrivial (§10.3).  No map between the carriers is committed
+> anywhere in the corpus.
+>
+> **Not measured.**  Any census of candidate carrier morphisms.  None was run.
+> Nothing here is a nonexistence statement, and no obstruction theorem is
+> claimed or implied.  The group's order and its membership in GEN's spectrum
+> are arena coordinates (§10.1, §10.2) and are excluded from the argument.
+>
+> **Therefore no `HA-BRIDGE-…` outcome is entered.**  The morphism question is
+> registered OPEN in §14, with the requirements a successor unit must meet.
 
-The stitching geometry therefore does **not** supply the interface object GW1
-lacked.  What GW1 lacked was a lapse-profiled record-native comparison family;
-NT and GEN measure path-dependence of lawful data on a co-reference base with no
-lapse argument, no front, and no geometry record.  The shape is shared — both
-are holonomies of a bigon corrected by a third transport — and shape-sharing is
-analogy, which the pin excludes.
+What GW1 lacked was a lapse-profiled record-native comparison family; NT and GEN
+measure path-dependence of lawful data on a co-reference base with no lapse
+argument, no front, and no geometry record.  The shape is shared — both are
+holonomies of a bigon corrected by a third transport — and shape-sharing is
+analogy, which the pin excludes.  Whether that shared shape is carried by an
+actual morphism is exactly the open question, and it is not settled here in
+either direction.
 
 ---
 
@@ -669,10 +914,10 @@ every residual field is measured to be an exact type (G24).
 
 | item | value |
 |---|---|
-| anchors (exit-1-only) | **16**, all reproduced |
-| gates | **26** (21 must-pass, 5 recorded), **0** must-pass failures |
-| disclosures | **4** (X01–X04) |
-| mutants | **25**, **0** survivors, `never_falsified` **empty** |
+| anchors (exit-1-only) | **17**, all reproduced |
+| gates | **36** (27 must-pass, 9 recorded), **0** must-pass failures |
+| disclosures | **6** (X01–X06) |
+| mutants | **29**, **0** survivors, `never_falsified` **empty** |
 | runs | two full runs, byte-identical output and receipt |
 
 **Hash pins.**
@@ -680,41 +925,60 @@ every residual field is measured to be an exact type (G24).
 `d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e`;
 `v13/code/gen_generality_receipt.json` sha256
 `e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292`.
-Instrument sha256 `19dad19b01ee09f333c9780769dd3b887cc7699b2132813b7d24b03dcb83d772`.
+Instrument sha256 `d44cb72f8ee9f2d212f4c9a881247411bc3245c9453e3745b5f4ff673ff6c439`.
 
 **The anchor set.**  A01–A04 recompute the terminal GW1 census's own repository
 facts: the `.py` counts of its ten frozen runnable trees — 353, 273, 137, 101,
 84, 9, 8, 7, 3 and 1 — the 3 at the repository root, the **12** files in `code/`
 carrying the token `lapse`, and **0** in every other frozen tree.  A05–A08 pin
 the NT and GEN receipt hashes and recompute NT's **34 024** reduced paths and its
-per-setting holonomy orders $(1,1,1,1,4,4)$.  A09–A16 rebuild GEN's completion
-census independently from the paper's prose (§10.2).
+per-setting holonomy orders $(1,1,1,1,4,4)$.  A09–A17 rebuild GEN's completion
+census independently from the paper's prose, including both order spectra
+(§10.2).
 
-**Disclosure X01.**  `v12/code/` now carries 7 `.py` against the GW1 census's 5,
-and `v13/code/` is the live tree of four concurrent cycles.  Both are declared
-LIVE and excluded from A01 **by declaration, not by outcome**; their current
-counts are printed.
+**Disclosure X01.**  `v12/code/` and `v13/code/` are LIVE trees written by
+concurrent cycles, and are excluded from A01 **by declaration, not by outcome**.
+**No live count of either is taken**: a count of a tree this unit does not own is
+not reproducible by construction, and the delivery's byte-identity would
+otherwise depend on directories outside the unit.  The GW1 census's own
+committed value for `v12/code/` is 5; `v13/code/` is not in that census at all.
 
 **The mutant table.**  Every declared mutant exits 1 with its named kills:
-`anchor-gen-defect` → A12; `anchor-gen-family` → A09; `anchor-gw1-lapse` → A03;
-`anchor-gw1-trees` → A01; `anchor-nt-paths` → A07; `anchor-nt-sha` → A05;
-`beta-flat` → G06, G08, G12, G21; `bridge-lax` → G22; `cache-lax` → G15;
-`chart-shift` → G14; `closure-lax` → G07, G08, G08B, G12, G21;
-`control-lax` → G07; `exempt-lax` → G23; `factor-lax` → G10, G11;
-`float-lax` → G24; `freeze-lax` → G01; `invert-lax` → G04;
-`omega-asym` → G05, G13; `order-swap` → G05; `posdef-lax` → G02;
-`prime-single` → G10B; `rank-lax` → G03, G07, G08, G08B, G10, G12;
-`readout-local` → G07, G09, G12, G21; `sign-flip` → G05, G10, G11;
-`transport-off` → G04, G05, G19.
+`anchor-gen-defect` → A12; `anchor-gen-family` → A09; `anchor-gen-spectrum` →
+A14; `anchor-gw1-lapse` → A03; `anchor-gw1-trees` → A01; `anchor-nt-paths` →
+A07; `anchor-nt-sha` → A05; `beta-flat` → G06, G08, G12, G21;
+`bridge-spectrum` → G31; `cache-alias` → G14, G15; `cache-lax` → G15;
+`census-drop` → G26, G27; `chart-shift` → G14;
+`closure-lax` → G07, G08, G08B, G12, G21; `control-lax` → G07;
+`exempt-lax` → G23; `factor-lax` → G10, G11, G29; `float-lax` → G24;
+`freeze-lax` → G01; `invert-lax` → G04; `omega-asym` → G05, G06, G13, G20B;
+`order-swap` → G05, G06; `posdef-lax` → G02; `prime-single` → G10B, G30, G31;
+`rank-lax` → G03, G07, G08, G08B, G10, G12, G27;
+`readout-local` → G07, G09, G12, G21, G30, G31;
+`sign-flip` → G05, G06, G10, G11, G29, G30;
+`transport-off` → G04, G05, G06, G19, G20B; `verdict-flip` → G25.
 
 **Mutant discipline.**  Every mutation is a mutation of an instrument helper; no
-gate predicate and no gate-registering function references mutant identity —
-neither `MUTANT`, nor a per-mutant switch, nor a mutant-name literal — and the
-AST guard that measures this is validated by a synthetic injection it must flag
-(G23).  The single exception is disclosed: one run-mode boolean, identical for
-every mutant, decides only whether the delivery artifacts are written; no gate
-reads it (X03).  `--falsification-selftest` reproduces the whole run and the
-whole mutant harness without writing artifacts.
+gate predicate and no gate-registering function references **run-mode** identity
+— neither `MUTANT`, nor a per-mutant switch, nor a mutant-name literal, nor a
+run-mode boolean (`DELIVERY_RUN` is mutant identity under another name), nor
+`sys.argv` — and the AST guard that measures this is validated by four synthetic
+injections, one per channel, every one of which it must flag (G23).  That the
+run-mode boolean touches no gate is now **measured, not asserted**: the whole
+measurement lives in a function that registers every gate and reads no run-mode
+name, and the run-mode branch lives in a function that registers none (X03).
+`--falsification-selftest` reproduces the whole run and the whole mutant harness
+without writing artifacts.
+
+**The verdict is derived inside a gate.**  G25 recomputes the verdict string
+from the measured gate outcomes and the must-pass failure count and compares it,
+string by string, against what the run printed; the `verdict-flip` falsifier,
+which hand-types a verdict, dies there.  The closing prose is gated on the same
+boolean, so a blocked run cannot print a construction claim.  **Census
+completeness is gated too** (G26): the closure table, the sector-law grid, the
+$d = 3$ grid and the count of residual fields computed each match exactly what
+their declarations require — 99, 72, 12 and 13 068 — so a silently dropped rule
+cannot shrink a census, and `census-drop` dies there.
 
 ---
 
@@ -724,22 +988,36 @@ Everything here is a choice the directive underdetermined, declared rather than
 made silently.
 
 1. **`v6_task2b` is not the metric readout** (§1).  The successor directive
-   names it; GW1's own §2 grades its fit as reaching outside order and count
-   data, and using it would fail GW1 §1.2.  The readout is instead the
-   record-internal interval-cardinality relation of §3.2.  This is a deviation
-   from the directive's letter in service of the directive's own no-smuggling
-   predicate, and it is the largest single deviation in the unit.
+   names it; its fit reaches outside order and count data at five enumerated
+   sites, and using it would fail GW1 §1.1 condition 5 and §1.2's second bullet.
+   It is also of the wrong type (one constant least-squares matrix against an
+   exact site-dependent rational field) and is validated on flat space only, by
+   its own closing note.  The readout is instead the declared interval-cardinality
+   relation of §3.2 — a legitimate instantiation of v4 paper 7 Definition 1.4's
+   undetermined "metric candidate", **chosen because it inverts exactly**, and
+   not the corpus's relation: Definition 1.4 supplies no relation, and the only
+   committed corpus implementation uses the exponent $2/d$, not a
+   cardinality-linear law.  This is a deviation from the directive's letter in
+   service of the directive's own no-smuggling predicate, and it is the largest
+   single deviation in the unit.
 2. **`K_i` and `ε` are eliminated, not built** (§1).  The residual is posed in v4
    paper 7's multiplicative form, which needs neither.  GW1 §5 items 2 and 4
    remain open for the divided form $(\Omega-I)/\epsilon^2$; this unit does not
-   discharge them, it declines to need them.
+   discharge them, it declines to need them.  The price is declared in §1:
+   eliminating $K_i$ eliminates the `q_comp`/`q_order` comparison itself, so the
+   kill condition's first disjunct cannot be fired by GW1's original route here.
 3. **The direction-labelled record adjacency is declared, not derived.**  The
    site set $(\mathbb Z_3)^d$ with $d$ direction-labelled periodic links is
-   declared data.  Deriving a direction labelling from a record order is exactly
-   the open problem GW1 §2 records as unsolved (the spectral frame is
-   unoriented).  The mitigation is measurement: the residual field is gated
-   equivariant under the whole declared chart group (§7.4), so the verdict is a
-   chart-invariant, but the arena's existence is a declaration.
+   declared data, and this touches GW1 §1.2's ban on planted frames.  Deriving a
+   direction labelling from a record order is exactly the open problem GW1 §2
+   records as unsolved (the spectral frame is unoriented).  The mitigation is
+   measurement — the residual field is gated equivariant under the whole declared
+   chart group (§7.4) — and the mitigation is **priced honestly**: that group is
+   a subgroup of the automorphisms of the planted structure itself, so it
+   certifies chart-invariance of the verdict and cannot certify the frame.  The
+   sector split rests on $q_{12} = 0 \Leftrightarrow n_{e_1+e_2} = n_{e_1} +
+   n_{e_2}$, a statement about counts **and** about which link is called the
+   diagonal; the second half is declared, not record-derived.
 4. **The address-register realisation of the tangential sector.**  $D_a[v]$ acts
    additively on a matter-record address register.  Consequences, all measured
    or disclosed: the tangential maps form an **abelian** group, so the declared
@@ -747,8 +1025,10 @@ made silently.
    vacuous; $H_a[N]$ and $D_a[B]$ commute identically, so the tangential-normal
    residual is not the identity and the corrected switch degenerates (§8).  **No diffeomorphism
    action on geometry records is claimed, and $R_{DD}$ and $R_{DH}$ are outside
-   the tested scope.**  The alternative realisation D-TOT is measured and found
-   almost never defined at this arena (§7.6).
+   the tested scope.**  This is a **realisation choice**, not a derived fact, and
+   its only tested alternative — D-TOT — is measured almost nowhere defined at
+   this arena (§7.6), so GW1's diffeomorphism content is untouched by this unit
+   in either direction.
 5. **The density weight $w = 0$.**  Declared, flip-tested, and it moves the
    verdict at four cells (§7.5).  Every closure claim is at $w = 0$.
 6. **The declared lapse family** is 12 profiles, not all profiles; the rank it
@@ -766,13 +1046,42 @@ made silently.
    the exact rational field (G10, G11) and the multi-prime gate bounds the
    modular risk (G10B), with 33 undefined reductions printed.
 9. **G16 and G19 are analytically forced** and are recorded rather than
-   must-pass (X04).
+   must-pass (X04).  So are the closed-form clause of G06 and the `A-insert`
+   clauses of G12 and G21, and X02 now names them; in each case the measurement
+   is the literal five-map route, which the identity does not force.  GEN's
+   dihedral relation is likewise forced for every completion (X06), so it is a
+   disclosure and not a control.
 10. **The G08 sector-law grid excludes the frozen-front variant by
     declaration**, and that variant is measured separately at G08B, where it
-    carries the unit's sharpest result.
-11. **Three anchors could not be taken as the census recorded them.**
-    `v12/code/` and `v13/code/` have moved since 2026-07-28; both are declared
-    LIVE and excluded, with their current counts printed (X01).
+    carries the unit's sharpest result.  The receipt reports both counts — the
+    72 cells in the grid and the 63 the gate adjudicates — rather than one.
+11. **Two trees could not be taken as the census recorded them.**
+    `v12/code/` and `v13/code/` are LIVE, written by concurrent cycles; both are
+    declared excluded and **no live count is taken** of either, because a count
+    of a tree this unit does not own is not reproducible by construction (X01).
+12. **The declared secondary enters no verdict, and the `NOT-POSABLE` reading is
+    withdrawn.**  A posability predicate built from the coordinates available
+    here cannot return its other value anywhere in the declared arena, so it
+    measures nothing; and two of the quantities such a predicate would cite —
+    the holonomy group's order, and that order's membership in a GEN spectrum —
+    are measured to be arena coordinates (§10.1, §10.2).  §10 is therefore a
+    coordinate audit, every sentence of it either a measurement or an explicit
+    non-measurement, and the morphism question is registered OPEN in §14
+    (v13 LOG #246).
+13. **Nine of seventeen anchors carry a declared falsifier.**  A01, A03, A05,
+    A07, A09, A12 and A14 are covered by named anchor mutants; A02, A04, A06,
+    A08, A10, A11, A13, A15, A16 and A17 are not, and every one of the seventeen
+    is recomputed on every run.  Stated rather than left to be counted.
+14. **G03's falsifier is a wholesale replacement.**  The lapse family is
+    degenerated to a proportional family, which drives $\omega \equiv 0$ and
+    collaterally kills five further gates.  Per RUNBOOK §14 a wholesale
+    replacement does not establish that the *right* invariant is computed; the
+    rank measurement is reported at that scope.
+15. **The RUNBOOK addenda bind at delivery time, not at pin time.**  The §13
+    addendum requiring a gate-derived verdict with a verdict-flip falsifier, and
+    a cell-completeness gate, post-dates this unit's pin and precedes its
+    delivery.  It binds.  Both are carried here (G25, G26), with the falsifiers
+    that must die at each.
 
 ---
 
@@ -799,9 +1108,50 @@ made silently.
 - No claim that v4 paper 13 Proposition 3.6's nonzero detector is reproduced; it
   is measured **not** to be, on this substrate, for a disclosed structural
   reason.
-- No claim about the stitching geometry beyond the measured coordinate mismatch
-  of §10; NT and GEN are not criticised, they are measured to be a different
-  arena.
-- The negative in §10.4 is scoped to the committed coordinates enumerated there;
-  no nonexistence theorem about bridges is claimed.
+- **No bridge verdict of any kind.**  §10 measures coordinates; it runs no
+  morphism census, decides no posability question, and claims no obstruction —
+  neither that a carrier morphism exists nor that none does.  NT and GEN are not
+  criticised; they are measured to sit at different coordinates.
+- No claim that the group order of $\langle R_{HH}\rangle$, its exponent, or its
+  membership in either GEN spectrum carries physical content: all three are
+  measured to move with the declared reduction prime.
+- No claim that the closure result is a derivation of geometry from something
+  else: by §3.2 the record and the metric candidate are one datum in two
+  coordinate systems, and the closure result is a statement about which function
+  of the counts a drag rule computes.
 - Nothing here is citable before an external hostile round confers TERMINAL.
+
+---
+
+## 14. Opens
+
+**THE MORPHISM QUESTION — OPEN.**  Is there a carrier morphism relating
+$R_{HH}$'s arena to the stitching geometry's, and does one carry the shared
+bigon-plus-correction shape?  This unit does not answer it in either direction
+(§10.5).  A successor bridge unit is what would, and it must carry, at minimum:
+
+1. **A carrier functor**, defined between the two arenas as objects with their
+   own typed data — not a comparison of two tables of coordinates — with the
+   direction of the map declared and its domain stated.
+2. **A morphism census**, not a single candidate expression: the admissible maps
+   enumerated over a declared class, each tested, with the count of candidates
+   and the count that survive both printed against honest denominators.  No
+   cardinality criterion may stand in for a morphism test; equal carrier size is
+   neither necessary nor sufficient.
+3. **Two-way gates, both reachable.**  `BRIDGE-MORPHISM-FOUND` and
+   `BRIDGE-EMPTY-AT-CARRIER` must each be reachable by measurement, and the
+   reachability of **each** must be demonstrated by a declared falsifier that
+   forces it — a synthetic arena at which the census returns a morphism, and one
+   at which it returns none.  A predicate that cannot return its other value
+   anywhere in the declared arena is not a measurement, and no verdict may rest
+   on one.
+4. **Arena-invariance gated at every quantity that enters the argument**, per
+   RUNBOOK §15: any quantity that moves with a declared reduction prime, a
+   declared basis, or a declared labelling may appear as an instrument reading
+   and may not appear as a premise.
+
+Also open, and untouched here: the divided form $(\Omega-I)/\epsilon^2$ with its
+decoder $K_i$ (GW1 §5 items 2 and 4); a record-derived direction labelling (GW1
+§2); a geometry-update law, and hence anything bearing on v4 paper 7 Theorem
+6.1; $R_{DD}$, $R_{DH}$, and `V4P7-FIN-ALG-CLOSE`; general $d$, general $L$,
+general records, general lapses, general weights.

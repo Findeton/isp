@@ -6,14 +6,17 @@ binding: v13/note-gw1-metric-from-closure.md 7.1 (the successor, ordered);
 ==============================================================================
 run mode            : none (delivery run)
 python              : 3.13.2
-instrument sha256   : 19dad19b01ee09f333c9780769dd3b887cc7699b2132813b7d24b03dcb83d772
+instrument sha256   : d44cb72f8ee9f2d212f4c9a881247411bc3245c9453e3745b5f4ff673ff6c439
 arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
 
 --- 1. ANCHORS (exit-1-only) ---
-  16 anchors, every one reproduced.
-  DISCLOSURE X01: v12/code carries 7 .py against the GW1 census's 5, and
-  v13/code carries 37 (four concurrent cycles).  Both are declared LIVE
-  and excluded from A01 BY DECLARATION, not by outcome.
+  17 anchors, every one reproduced.
+  DISCLOSURE X01: v12/code and v13/code are LIVE trees, written by concurrent
+  cycles, and are excluded from A01 BY DECLARATION, not by outcome.  No count
+  of either is taken here: a count of a tree this unit does not own is not
+  reproducible by construction, and the delivery's byte-identity would then
+  depend on directories outside the unit.  The GW1 census's own committed
+  value for v12/code is 5; v13/code is not in that census at all.
 
 --- 2. THE DECLARED ARENA (data; frozen before any fixture value) ---
   d                          : 2
@@ -31,9 +34,14 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   rules                      : [["A-chart", "A", "Lambda = delta (count-blind chart identity)"], ["A-axis", "A", "Lambda = diag(1/n_{e_j}) from the axis interval counts"], ["A-linkframe", "A", "Lambda^{ij} = sum_l e_l^i e_l^j / n_l
   broken_rules               : ["A-insert-x", "A-insert-2x", "A-notransport"]
   transported_rules          : ["A-chart", "A-axis", "A-linkframe", "A-linkhalf", "A-insert", "A-insert-x", "A-insert-2x"]
+  rules_d3                   : ["A-chart", "A-axis", "A-linkframe", "A-insert"]
   frozen_front_rule          : A-notransport
   positive_control_rule      : A-insert
   primes                     : [5, 7, 13]
+  bridge_primes              : [5, 7, 11, 13, 17, 19, 23]
+  registers                  : {"m == 0": "the zero address register", "m == 1": "the unit address register"}
+  count_lattice              : {"axis_max": 6, "diag_max": 12, "description": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses"}
+  relation_sets              : {"first-24": "the first 24 ordered lapse pairs of the declared enumeration", "all": "every declared ordered lapse pair"}
   test_class                 : the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size
   tangential_realisations    : {"D-REG": "D_a[v] shifts the matter record's address register by v; the geometry front is not transported (primary)", "D-TOT": "D_a[v] shifts the register AND drags the front along x -> x+v(x), define
   chart_group                : the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index
@@ -61,15 +69,19 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   G03 identifiability: PASS
 
 --- 5. H_a[N] : V_a^tot -> V_a^tot, CONSTRUCTED AND MEASURED INVERTIBLE ---
-  H^-1 H = id measured on 396 (rule, record, lapse) triples; failures 0
-  declared non-injective falsifier rejected: True   (G04 PASS)
+  H^-1 H = id measured on 792 (rule, record, lapse, register) instances over both declared registers; failures 0
+  declared non-injective falsifier rejected: {'m == 0': False, 'm == 1': True}   (G04 PASS)
+  Both sides are run at both registers.  At m == 0 the falsifier is NOT
+  rejected and cannot be: collapsing an already-zero register is the identity
+  there, so no predicate could separate them.  The teeth are at m == 1, and
+  the H family is measured invertible at both.
 
 --- 6. THE GW1 RESIDUAL  R_HH,a[N,M] = H[N]H[M]H[N]^-1 H[M]^-1 D[-beta] ---
        RUN at the committed finite scope, by two independent routes:
        (a) the LITERAL composition of the five comparison maps;
        (b) the CLOSED form, built from the drag rule and the record
            readout without ever touching (a).
-  literal-vs-closed comparisons 1188, disagreements 0   (G05 PASS)
+  literal-vs-closed comparisons 13068 (every cell of the table), disagreements 0   (G05 PASS)
 
   CLOSURE TABLE.  Cells give the number of the 132 ordered lapse
   pairs at which R_HH is NOT the identity ('CLOSES' = none of them).
@@ -117,13 +129,26 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
     G-OFFDIAG2   (Lambda - I)(0,0) = [-4/33,2/11,2/11,-4/55]   q^12 = 2   max|rho| = 40/33
     G-OFFNEG     (Lambda - I)(0,0) = [-4/33,-2/11,-2/11,-4/55]   q^12 = -2   max|rho| = 20/33
 
---- 7. CAN ANY LINK-LOCAL RECORD-NATIVE WEIGHT CLOSE?  (measured) ---
-  counterexample: {"records": ["G-CURVOFF", "G-DIAG2"], "direction": 0, "link": "(1, 0)", "shared_interval_count": 2, "I^jj_demanded": ["2/3", "1/2"], "other_counts": ["(2, 2, 6)", "(2, 2, 4)"]}
-  G09 link-locality obstruction: PASS
-  Reading: I^{jj} = adj(q)^{jj} / det q, and det q is a JOINT function of every
-  link count at the site.  A weight that reads only its own link's count
-  cannot see it.  Closure therefore requires a rule that computes the
+--- 7. NO LINK-LOCAL RECORD-NATIVE WEIGHT CLOSES  (theorem, witness gated) ---
+  A weight is LINK-LOCAL when Lambda = sum_l f_l(n_l) e_l e_l^T, i.e. each
+  declared link contributes a weight that is a function of ITS OWN interval
+  count alone.  At d = 2 that reads, component by component,
+     Lambda^11 = f_1(n_e1) + f_3(n_diag),  Lambda^22 = f_2(n_e2) + f_3(n_diag),
+     Lambda^12 = f_3(n_diag).
+  Closure at a site forces Lambda = I_a(g) there (G08, with G03's full rank),
+  so f_3(n_diag) = I^12 for EVERY admissible record.  Two admissible records
+  that share n_diag and demand different I^12 therefore refute the whole
+  link-local family at once.
+  in-family witness (refutes every link-local weight): {"records": ["G-DIAG2", "G-OFFNEG"], "link": "(1, 1)", "shared_interval_count": 4, "f_3_demanded": ["0", "2/11"], "count_vectors": ["(2, 2, 4)", "(3, 5, 4)"]}
+  diagonal-restricted witness (refutes Lambda^jj = f(n_e_j) only): {"records": ["G-CURVOFF", "G-DIAG2"], "direction": 0, "link": "(1, 0)", "shared_interval_count": 2, "I^jj_demanded": ["2/3", "1/2"], "count_vectors": ["(2, 2, 6)", "(2, 2, 4)"]}
+  G09 link-locality theorem: PASS
+  Mechanism: I^{ij} = adj(q)^{ij} / det q, and det q is a JOINT function of
+  every link count at the site.  A weight that reads only its own link's
+  count cannot see it.  Closure therefore requires a rule that computes the
   record's count-matrix inverse -- which is the metric.
+  declared count lattice: 361 admissible count vectors; pairs sharing
+  n_diag but demanding different I^12: 5100; pairs sharing (n_e1, n_diag)
+  but demanding different I^11: 781   (G09B recorded)
 
 --- 8. THE FINITE OPERATOR LAYER: R_HH AS AN ACTUAL OPERATOR ON V_a^tot ---
   reduced carriers built 1056 over primes [5, 7, 13]; reductions undefined 33; non-bijective maps 0; operator-vs-field mismatches 0
@@ -221,9 +246,9 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
 
 --- 9. THE GW1 PIN'S OWN CONTROL LIST, RUN ---
   flat/curved: G-FLAT True, G-CURVED True, G-OFFDIAG False, G-CURVOFF False   (G12 PASS)
-  update-order control: 360 pairs, antisymmetry violations 0   (G13 PASS)
-  chart self-test: 4860 component comparisons, violations 0   (G14 PASS)
-  cache hits 283133, misses 1377, fresh bypasses 486   (G15 PASS)
+  update-order control: 13068 cells (every rule, record and ordered pair), antisymmetry violations 0   (G13 PASS)
+  chart self-test over the full declared group: 192456 site comparisons (384912 components), violations 0   (G14 PASS)
+  cache hits 904241, misses 2349, fresh bypasses 2916; fresh-vs-memo compared 2916, disagreements 0   (G15 PASS)
   matter-free vs matter-conditioned: the matter-free commutator is trivial for every cell: True   (G16 PASS)
   density-weight flip-test (I = q^-1 against I = q^-1 det q):
     G-ANISO      w=0 nonzero pairs     0    w=1 nonzero pairs    96
@@ -257,13 +282,17 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   A-insert   G-CURVOFF   (0,3,9)    True   True    True     False   1/27
   ... 108 triples in all.  The cyclic Jacobi LAPSE sum is nonvanishing at 0;
   SW_HHH is not the identity at 81 of them (Det_HHH > 0 there).
+  SW_HHH closed form vs literal composition: 108 triples, disagreements 0   (G20B PASS)
     A-axis       Det_HHH > 0 at  27 of  36 tested triples
     A-chart      Det_HHH > 0 at  27 of  36 tested triples
     A-insert     Det_HHH > 0 at  27 of  36 tested triples
   READ THIS AGAINST SECTION 6: the metric-inserted rule closes the HH PAIR
-  residual exactly at every record, and its three-normal detector is
-  nevertheless nonzero.  Pair closure does not buy HHH closure -- the finite
-  measurement of v4 paper 12's own reason for building the corrected switch.
+  residual exactly at every record, and its three-normal object is
+  nevertheless nonzero.  The comparison is between a CORRECTED pair object
+  and an UNCORRECTED triple: v4 paper 7 defines no triple-level correction,
+  so a nonzero SW_HHH is what the definitions predict, and the content is
+  the exact closed form above -- the finite measurement of v4 paper 12's own
+  reason for building the corrected switch.
 
 --- 11. THE GENERAL-d EXTENSION (v4 p7 is general-d; d = 3 run) ---
   |X| = 27 sites, 3 records, 42 lapse pairs
@@ -275,51 +304,120 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   G21 general-d: PASS
 
 ==============================================================================
---- 12. THE DECLARED SECONDARY: CAN R_HH BE EXPRESSED IN THE STITCHING
-        GEOMETRY'S DATA?  (NT and GEN, receipts hash-pinned at A05/A06)
+--- 12. THE DECLARED SECONDARY, AS A COORDINATE AUDIT: WHAT DOES R_HH
+        SHARE WITH THE STITCHING GEOMETRY'S DATA, AND WHAT IS ARENA?
+        (NT and GEN, receipts hash-pinned at A05/A06)
 ==============================================================================
-  12.1  THE HA RESIDUAL AS A HOLONOMY, computed in the coordinate NT and GEN
-        use: the based closed-loop product of the link transports, counted as
-        group elements and never as name labels.
-        carrier 625; HA residual holonomy group order 5, abelian True, element orders [1, 5]
-  12.2  GEN's OWN STRUCTURAL RELATIONS, tested on the HA residual, with GEN's
-        own defect as the positive control.
-        [positive control] GEN's declared defect: order 2, Sigma D Sigma = D^-1 : True
-        the declared chart involution preserves the front sector: True
-        HA: Sigma R Sigma = R^-1 at the declared loop : False
-        over 24 further lapse pairs the same relation holds at 17 of them
-  12.3  THE COORDINATE TABLE.  A stitching-geometry expression of R_HH needs a
-        committed coordinate at which the compared objects both live.
+  12.1  THE STRUCTURE OF R_HH ON THE REDUCED CARRIER, and its dependence on
+        the declared reduction prime.  R_HH is formed as an explicit
+        permutation product and the group it generates is the CYCLIC group
+        generated by that one permutation -- not a loop product of link
+        transports, and not a multi-generator group.
+        exact rational residual at the detector site: (Fraction(1, 6), Fraction(1, 6)) -- the SAME at every prime
+        p    carrier   |<R>|   abelian  elt orders    rho mod p   SigmaRSigma=R^-1
+        5    625       5       True     [1, 5]        [1, 1]      False
+        7    2401      7       True     [1, 7]        [6, 6]      False
+        11   14641     11      True     [1, 11]       [2, 2]      False
+        13   28561     13      True     [1, 13]       [11, 11]    False
+        17   83521     17      True     [1, 17]       [3, 3]      False
+        19   130321    19      True     [1, 19]       [16, 16]    False
+        23   279841    23      True     [1, 23]       [4, 4]      False
+        G29 translation structure: PASS   (<R> is cyclic of order p at every swept prime)
+        G30 arena-determinism: PASS   measured orders [5, 7, 11, 13, 17, 19, 23] against declared primes [5, 7, 11, 13, 17, 19, 23]
+
+  12.2  GEN's OWN RELATIONS, AND THE SPECTRUM THE COMPARISON MUST USE.
+        GEN's declared defect: order 2, Sigma D Sigma = D^-1 : True
+        DISCLOSURE X06: that relation is ANALYTICALLY FORCED for every
+        completion -- with D = Sigma Q^-1 Sigma Q and Sigma^2 = id,
+        Sigma D Sigma = (Sigma Q^-1 Sigma Q)^-1 = D^-1 identically, which is
+        why A16 counts 0 failures over all 40320 members.  It is a disclosure,
+        not a discriminating control.  The relation is not vacuous for
+        arbitrary permutations -- a declared 3-cycle outside the sandwich form
+        satisfies it: False -- it is forced for every COMPLETION.
+        GEN publishes TWO spectra, and BOTH are computed here from the
+        completion census: the DEFECT order spectrum [1, 2, 3, 4, 5, 6, 7, 15]
+        (multiplicities {1: 96, 2: 1440, 3: 4224, 4: 4608, 5: 4608, 6: 6912, 7: 9216, 15: 9216}) and the derived HOLONOMY
+        order spectrum [1, 4, 6, 8, 10, 12, 14, 30].  The coordinate table pairs R_HH
+        with GEN's DEFECT D, so the defect spectrum is the like-for-like
+        comparator; comparing HA against one and GEN against the other would
+        be a class-vs-class verdict read at two coordinates (RUNBOOK 15).
+          order 5   at p = 5   in the defect spectrum: True   (multiplicity 4608 of 40320)
+          order 7   at p = 7   in the defect spectrum: True   (multiplicity 9216 of 40320)
+          order 11  at p = 11  in the defect spectrum: False  (multiplicity 0 of 40320)
+          order 13  at p = 13  in the defect spectrum: False  (multiplicity 0 of 40320)
+          order 17  at p = 17  in the defect spectrum: False  (multiplicity 0 of 40320)
+          order 19  at p = 19  in the defect spectrum: False  (multiplicity 0 of 40320)
+          order 23  at p = 23  in the defect spectrum: False  (multiplicity 0 of 40320)
+        G31 spectrum comparison: PASS   membership by prime {5: True, 7: True, 11: False, 13: False, 17: False, 19: False, 23: False}
+
+  12.3  THE Sigma-RELATION CENSUS, decomposed.  Sigma is the declared chart
+        involution; on the reduced carrier it exists only where the front
+        sector is swap-closed, and the relation Sigma R Sigma = R^-1 is
+        POSABLE only there.  Three readings are reported, not one.
+        [first-24] of 24 ordered pairs: the single-site surrogate rho_1 + rho_2 = 0
+          holds at 17, of which 17 are cells where R_HH is the identity at the
+          detector site; the SAME relation stated over the whole field holds at 8;
+          the carrier-level relation is POSABLE (Sigma exists) at 4 and holds at
+          3, of which 3 are cells where R_HH is the identity.
+        [all] of 132 ordered pairs: the single-site surrogate rho_1 + rho_2 = 0
+          holds at 114, of which 114 are cells where R_HH is the identity at the
+          detector site; the SAME relation stated over the whole field holds at 36;
+          the carrier-level relation is POSABLE (Sigma exists) at 20 and holds at
+          18, of which 18 are cells where R_HH is the identity.
+        HA at the declared loop: Sigma R Sigma = R^-1 : False   (G32 recorded)
+
+  12.4  THE COORDINATE TABLE.  An expression of R_HH in the stitching
+        geometry's data needs a committed coordinate at which the compared
+        objects both live.  Sizes are reported as sizes; equal cardinality is
+        neither necessary nor sufficient for a carrier morphism to exist.
         coordinate          NT / GEN                                            HA
-        carrier             36 (q_A,q_B,p_A,p_B) [NT] / 81 (s_A,s_B,p_A,p_B) [  625 total records = front sector x address reg
+        carrier             36 (q_A,q_B,p_A,p_B) [NT] / 81 (s_A,s_B,p_A,p_B) [  p^(k+d) total records = front sector x registe
         family              6 settings x 2 frames [NT] / 6 settings [GEN]       11 drag rules x 9 geometry records
         law                 the declared legs U_prep, U_A(a), U_B(b)            H_a[N] : (n,m) -> (n+N, m+w[N,n]) at a lapse p
         state               p(0) = delta_{j0}                                   the base total record (n_sym, 0)
         arena               (frame, read time) nodes, co-reference identificat  (record site, front sector), normal and tangen
-        structure group     Klein four {1,W,X,WX} [NT] / dihedral order 2n [GE  elementary abelian of exponent 5, order 5 here
+        structure group     Klein four {1,W,X,WX} [NT] / dihedral order 2n [GE  cyclic of order p -- the DECLARED prime (G30)
         defect construction D = P_W U^-1 P_W U = (Sigma V^T Sigma V) (x) I_9    R_HH = C(H[N],H[M]) D[-beta_a(g;N,M)]
 
-        carrier size matches a committed NT/GEN carrier   : False
-        HA holonomy order in GEN's measured spectrum       : False   (order 5; spectrum {1,4,6,8,10,12,14,30})
-        HA holonomy group is NT/GEN's Klein four-group     : False
-        GEN's defining relation Sigma D Sigma = D^-1 holds : False
+        WHAT IS MEASURED, AND WHAT IS NOT.
+        Measured: the carriers are different sizes with different
+        factorisations; HA's group is cyclic on ONE generator while NT's is
+        Klein four and GEN's is dihedral, both multi-generator; and GEN's
+        relation Sigma D Sigma = D^-1 fails for R_HH at every tested cell
+        where R_HH is nontrivial (12.3).  NOT measured: any census of
+        candidate carrier morphisms.  None was run, so nothing here is a
+        nonexistence statement.  The order of the group and its membership in
+        GEN's spectrum are ARENA COORDINATES (G30, G31) and are excluded from
+        the argument.  THE MORPHISM QUESTION IS OPEN and is bequeathed to a
+        successor unit; no HA-BRIDGE outcome is entered by this run.
 
-        BRIDGE VERDICT: NOT POSABLE   (G22 PASS)
-        NAMED OBSTRUCTION -- NO COMMITTED CARRIER MORPHISM.  The stitching
-        geometry's defect law is a statement about a fixed 81-element (or
-        36-element) process carrier factorised as a system pair times a
-        pointer pair, with Sigma the pair-label exchange and the defect the
-        failure of a declared completion to intertwine that exchange.  R_HH
-        lives on total matter-geometry records with no such factorisation,
-        no exchange-typed completion, and no committed map to that carrier.
-        The measured consequences: the HA holonomy group has order 5,
-        exponent 5, which is NOT in GEN's measured order spectrum; and GEN's defining relation is measured
-        NOT to hold for R_HH, while the same relation is measured to hold for
-        GEN's own defect (the positive control).
+--- 12B. CELL COMPLETENESS AND INEQUIVALENT RECOVERED TENSORS ---
+  closure table 99/99 cells; sector grid 72/72; d=3 grid 12/12; residual fields 13068/13068   (G26 PASS)
+  at G-OFFDIAG: 7 pairwise-distinct recovered tensors over the 8 architecture-A rules
+      ['A-axis']
+      ['A-chart']
+      ['A-insert', 'A-notransport']
+      ['A-insert-2x']
+      ['A-insert-x']
+      ['A-linkframe']
+      ['A-linkhalf']
+  and 9 pairwise-distinct residual laws over all 11 declared rules (G27 PASS)
+      ['A-axis', 'B-axis']
+      ['A-chart', 'B-chart']
+      ['A-insert']
+      ['A-insert-2x']
+      ['A-insert-x']
+      ['A-linkframe']
+      ['A-linkhalf']
+      ['A-notransport']
+      ['B-all']
+
+--- 12C. THE READOUT IS AN INVERTIBLE LINEAR RE-ENCODING ---
+  counts -> q is linear with exact determinant 2; q reproduces every declared link count at 81 of 81 sites (G28 recorded)
 
 --- 13. THE AST GUARD (RUNBOOK 14 addendum, v13 #208) ---
-  gate-registering functions referencing mutant identity: []
-  synthetic injection flagged by the scanner            : ['gate_decoy_injected']
+  gate-registering functions referencing run-mode identity: []
+  synthetic injections flagged by the scanner             : ['gate_decoy_argv', 'gate_decoy_delivery', 'gate_decoy_mutant', 'gate_decoy_selftest']
   G23 AST guard: PASS
 
 --- 13B. THE FLOAT SWEEP (RUNBOOK 4) ---
@@ -328,37 +426,9 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   measured types of every residual field value   : ['Fraction']
   G24 float sweep: PASS
 
---- 14. GATES ---
-  G01  PASS  must-pass  THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)): the fixture-evaluation cou
-  G02  PASS  must-pass  THE RECORD READOUT'S ADMISSIBILITY GATE REJECTS BOTH DECLARED DEGENERATE RECORDS -- the SING
-  G03  PASS  must-pass  THE TESTED LAPSE PAIRS REALISE A FULL-RANK BRACKET-COVECTOR FAMILY AT EVERY SITE, so the clo
-  G04  PASS  must-pass  EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY
-  G05  PASS  must-pass  THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIEL
-  G06  PASS  must-pass  POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admiss
-  G07  PASS  must-pass  NEGATIVE CONTROL WITH TEETH: every declared BROKEN H variant fails closure on at least one a
-  G08  PASS  must-pass  SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE 
-  G08B  PASS  must-pass  TRANSPORT OF THE SECOND NORMAL STEP IS MEASURED NECESSARY: the declared frozen-front variant
-  G09  PASS  must-pass  A LINK-LOCAL RECORD-NATIVE WEIGHT CANNOT CLOSE IN GENERAL: two admissible records AGREE on a
-  G10  PASS  must-pass  EVERY COMPARISON MAP IS AN EXACT PERMUTATION OF THE REDUCED TOTAL-CONFIGURATION CARRIER, AND
-  G10B  PASS  must-pass  NO CELL WITH A NONZERO EXACT-RATIONAL RESIDUAL IS INVISIBLE AT EVERY TESTED PRIME -- countin
-  G11  PASS  must-pass  THE OPERATOR'S OWN REGISTER DISPLACEMENT, READ OFF THE PERMUTATION ITSELF, EQUALS THE EXACT-
-  G12  PASS  must-pass  FLAT AND CURVED TARGETS SEPARATE: the link-local record-native rule closes on the flat recor
-  G13  PASS  must-pass  UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact
-  G14  PASS  must-pass  CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under every declared chart t
-  G15  PASS  must-pass  THE SELF-TEST'S CACHE PATH IS EXERCISED AND ITS FRESH PATH BYPASSES IT (RUNBOOK 14 addenda, 
-  G16  PASS  recorded   MATTER CONTROL: on the matter-free carrier the HH commutator is the identity for every rule 
-  G17  PASS  recorded   DENSITY-WEIGHT FLIP-TEST (GW1 5, item 5): the closure verdict is measured under BOTH declare
-  G18  PASS  recorded   TANGENTIAL-REALISATION FLIP-TEST (the bookkeeping split): under D-TOT, D_a[v] must drag the 
-  G19  PASS  recorded   THE NORMAL-TANGENTIAL GROUP COMMUTATOR C(H_a[N], D_a[B]) IS MEASURED TRIVIAL ON THIS SUBSTRA
-  G20  PASS  recorded   THE THREE-NORMAL DETECTOR IS EVALUATED BY LITERAL COMPOSITION OF THE THREE CORRECTED SWITCHE
-  G21  PASS  must-pass  THE GENERAL-d EXTENSION REPRODUCES THE SAME SEPARATION AT d = 3: the metric-inserted rule cl
-  G22  PASS  must-pass  BRIDGE POSABILITY IS DECIDED BY THE COORDINATE TABLE AND BY GEN's OWN DEFINING RELATION, bot
-  G23  PASS  must-pass  NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (neither MUTANT, nor a module switch
-  G24  PASS  must-pass  NO FLOAT ENTERS ANY SUBSTANTIVE PATH: the instrument's own source carries no float or comple
-  must-pass gates 21;  failures 0 []
-
---- 15. VERDICT ---
-  HA-RUNNABLE + HA-BRIDGE-NOT-POSABLE
+--- 14. VERDICT ---
+  HA-RUNNABLE + HA-BRIDGE-NOT-ENTERED
+  G25 verdict derivation: PASS
 
   A record-native H_a[N] EXISTS at finite N.  It is constructed on total
   finite matter-geometry records, measured invertible, lapse-profiled, and
@@ -373,36 +443,86 @@ arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
   cross term, because I^{ij} = adj(q)^{ij}/det q and det q is a joint
   function of the site's link counts that no link-local rule reads (G09).
   Site by site, the residual vanishes exactly where the drag weight IS the
-  record-read inverse metric (G08): on this construction, closure is
-  insertion.  GW1's kill condition is thereby measured rather than asserted.
+  record-read inverse metric (G08).  That equality is what closure means
+  here, and the recovered tensor is the rule's own weight: on ONE record
+  the declared family supplies pairwise-inequivalent recovered tensors
+  (G27), which is the second disjunct of GW1's kill condition, measured.
+
+  THE DECLARED SECONDARY IS NOT DECIDED HERE.  Section 12 is a coordinate
+  audit: it reports what R_HH and the stitching geometry share and what is
+  arena.  No posability predicate is evaluated, no morphism census is run,
+  and no HA-BRIDGE outcome is entered.  THE MORPHISM QUESTION IS OPEN.
+
+--- 15. GATES ---
+  G01  PASS  must-pass  THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)): the fixture-evaluation cou
+  G02  PASS  must-pass  THE RECORD READOUT'S ADMISSIBILITY GATE REJECTS BOTH DECLARED DEGENERATE RECORDS -- the SING
+  G03  PASS  must-pass  THE TESTED LAPSE PAIRS REALISE A FULL-RANK BRACKET-COVECTOR FAMILY AT EVERY SITE, so the clo
+  G04  PASS  must-pass  EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY
+  G05  PASS  must-pass  THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIEL
+  G06  PASS  must-pass  POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admiss
+  G07  PASS  must-pass  NEGATIVE CONTROL WITH TEETH: every declared BROKEN H variant fails closure on at least one a
+  G08  PASS  must-pass  SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE 
+  G08B  PASS  must-pass  TRANSPORT OF THE SECOND NORMAL STEP IS MEASURED NECESSARY: the declared frozen-front variant
+  G09  PASS  must-pass  NO LINK-LOCAL RECORD-NATIVE WEIGHT CLOSES (theorem, witness gated): closure forces Lambda = 
+  G09B  PASS  recorded   THE LINK-LOCALITY WITNESS IS NOT AN ISOLATED ACCIDENT OF THE DECLARED NINE: over the declare
+  G10  PASS  must-pass  EVERY COMPARISON MAP IS AN EXACT PERMUTATION OF THE REDUCED TOTAL-CONFIGURATION CARRIER, AND
+  G10B  PASS  must-pass  NO CELL WITH A NONZERO EXACT-RATIONAL RESIDUAL IS INVISIBLE AT EVERY TESTED PRIME -- countin
+  G11  PASS  must-pass  THE OPERATOR'S OWN REGISTER DISPLACEMENT, READ OFF THE PERMUTATION ITSELF, EQUALS THE EXACT-
+  G12  PASS  must-pass  FLAT AND CURVED TARGETS SEPARATE: the link-local record-native rule closes on the flat recor
+  G13  PASS  must-pass  UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact
+  G14  PASS  must-pass  CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under EVERY element of the d
+  G15  PASS  must-pass  THE WEIGHT MEMO IS EXERCISED AND ITS RETURNS ARE MEASURED CORRECT: the self-test's own compa
+  G16  PASS  recorded   MATTER CONTROL: on the matter-free carrier the HH commutator is the identity for every rule 
+  G17  PASS  recorded   DENSITY-WEIGHT FLIP-TEST (GW1 5, item 5): the closure verdict is measured under BOTH declare
+  G18  PASS  recorded   TANGENTIAL-REALISATION FLIP-TEST (the bookkeeping split): under D-TOT, D_a[v] must drag the 
+  G19  PASS  recorded   THE NORMAL-TANGENTIAL GROUP COMMUTATOR C(H_a[N], D_a[B]) IS MEASURED TRIVIAL ON THIS SUBSTRA
+  G20  PASS  recorded   THE THREE-NORMAL DETECTOR IS EVALUATED BY LITERAL COMPOSITION OF THE THREE CORRECTED SWITCHE
+  G20B  PASS  must-pass  THE THREE-NORMAL DISPLACEMENT HAS AN EXACT CLOSED FORM, AND IT IS MEASURED: with the normal-
+  G21  PASS  must-pass  THE GENERAL-d EXTENSION REPRODUCES THE SAME SEPARATION AT d = 3: the metric-inserted rule cl
+  G29  PASS  must-pass  R_HH ACTS ON THE REDUCED CARRIER AS THE TRANSLATION OF THE ADDRESS REGISTER BY rho mod p, ME
+  G30  PASS  must-pass  THE HOLONOMY ORDER IS AN ARENA COORDINATE, NOT A PROPERTY OF R_HH (RUNBOOK 15): swept over t
+  G31  PASS  must-pass  THE SPECTRUM COMPARISON IS ARENA-DEPENDENT TOO, AND IS RUN AGAINST THE COMPUTED DEFECT SPECT
+  G32  PASS  recorded   THE Sigma-RELATION CENSUS IS REPORTED AT EVERY READING RATHER THAN AT THE ONE THAT FLATTERS:
+  G22  PASS  recorded   COORDINATE REPORT (recorded, not a verdict): the compared objects' coordinates are tabulated
+  G26  PASS  must-pass  EVERY DECLARED CELL IS PRESENT: the closure table, the sector-law grid and the d = 3 grid ea
+  G27  PASS  must-pass  THE KILL'S SECOND DISJUNCT FIRES, MEASURED: on ONE record the declared family supplies pairw
+  G28  PASS  recorded   THE MAP FROM THE SITE'S LINK COUNTS TO THE COMPONENTS OF q IS LINEAR AND INVERTIBLE (determi
+  G23  PASS  must-pass  NO GATE-REGISTERING FUNCTION REFERENCES RUN-MODE IDENTITY -- neither MUTANT, nor a module sw
+  G24  PASS  must-pass  NO FLOAT ENTERS ANY SUBSTANTIVE PATH: the instrument's own source carries no float or comple
+  G25  PASS  must-pass  THE PRINTED VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS AND COMPARED, STRIN
+  must-pass gates 27;  failures 0 []
 
 --- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
   mutant              exit  killed   named kills
   anchor-gen-defect   1     True     A:A12
   anchor-gen-family   1     True     A:A09
+  anchor-gen-spectrum 1     True     A:A14
   anchor-gw1-lapse    1     True     A:A03
   anchor-gw1-trees    1     True     A:A01
   anchor-nt-paths     1     True     A:A07
   anchor-nt-sha       1     True     A:A05
   beta-flat           1     True     G:G06,G:G08,G:G12,G:G21
-  bridge-lax          1     True     G:G22
+  bridge-spectrum     1     True     G:G31
+  cache-alias         1     True     G:G14,G:G15
   cache-lax           1     True     G:G15
+  census-drop         1     True     G:G26,G:G27
   chart-shift         1     True     G:G14
   closure-lax         1     True     G:G07,G:G08,G:G08B,G:G12,G:G21
   control-lax         1     True     G:G07
   exempt-lax          1     True     G:G23
-  factor-lax          1     True     G:G10,G:G11
+  factor-lax          1     True     G:G10,G:G11,G:G29
   float-lax           1     True     G:G24
   freeze-lax          1     True     G:G01
   invert-lax          1     True     G:G04
-  omega-asym          1     True     G:G05,G:G13
-  order-swap          1     True     G:G05
+  omega-asym          1     True     G:G05,G:G06,G:G13,G:G20B
+  order-swap          1     True     G:G05,G:G06
   posdef-lax          1     True     G:G02
-  prime-single        1     True     G:G10B
-  rank-lax            1     True     G:G03,G:G07,G:G08,G:G08B,G:G10,G:G12
-  readout-local       1     True     G:G07,G:G09,G:G12,G:G21
-  sign-flip           1     True     G:G05,G:G10,G:G11
-  transport-off       1     True     G:G04,G:G05,G:G19
+  prime-single        1     True     G:G10B,G:G30,G:G31
+  rank-lax            1     True     G:G03,G:G07,G:G08,G:G08B,G:G10,G:G12,G:G27
+  readout-local       1     True     G:G07,G:G09,G:G12,G:G21,G:G30,G:G31
+  sign-flip           1     True     G:G05,G:G06,G:G10,G:G11,G:G29,G:G30
+  transport-off       1     True     G:G04,G:G05,G:G06,G:G19,G:G20B
+  verdict-flip        1     True     G:G25
   mutants that survived : []
   must-pass gates never falsified by any mutant : []
 

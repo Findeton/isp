@@ -237,6 +237,32 @@
    "passed": true,
    "quantity": "GEN: members where the dihedral relation Sigma D Sigma = D^-1 fails",
    "source": "v13/paper-gen-generality-check.md 8.3"
+  },
+  {
+   "committed": [
+    1,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    30
+   ],
+   "computed": [
+    1,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    30
+   ],
+   "id": "A17",
+   "passed": true,
+   "quantity": "GEN: the predicted holonomy order spectrum, derived from the defect spectrum (2n, with the flat class at 1)",
+   "source": "v13/paper-gen-generality-check.md 8.2-8.3"
   }
  ],
  "arithmetic": "fractions.Fraction / integers / exact F_p; no floats",
@@ -252,12 +278,26 @@
    "structure group",
    "defect construction"
   ],
+  "bridge_primes": [
+   5,
+   7,
+   11,
+   13,
+   17,
+   19,
+   23
+  ],
   "broken_rules": [
    "A-insert-x",
    "A-insert-2x",
    "A-notransport"
   ],
   "chart_group": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+  "count_lattice": {
+   "axis_max": 6,
+   "description": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses",
+   "diag_max": 12
+  },
   "d": 2,
   "d_ext": 3,
   "density_weight": 0,
@@ -393,6 +433,14 @@
     4
    ]
   },
+  "registers": {
+   "m == 0": "the zero address register",
+   "m == 1": "the unit address register"
+  },
+  "relation_sets": {
+   "all": "every declared ordered lapse pair",
+   "first-24": "the first 24 ordered lapse pairs of the declared enumeration"
+  },
   "rules": [
    [
     "A-chart",
@@ -450,6 +498,12 @@
     "lambda_l = 1 on the axis links only"
    ]
   ],
+  "rules_d3": [
+   "A-chart",
+   "A-axis",
+   "A-linkframe",
+   "A-insert"
+  ],
   "tangential_realisations": {
    "D-REG": "D_a[v] shifts the matter record's address register by v; the geometry front is not transported (primary)",
    "D-TOT": "D_a[v] shifts the register AND drags the front along x -> x+v(x), defined only where that site map is a bijection (flip-test)"
@@ -470,15 +524,15 @@
    "detail": {
     "v12/code": {
      "census": 5,
-     "now": 7
+     "live_count": "not taken"
     },
     "v13/code": {
      "census": "not listed",
-     "now": 37
+     "live_count": "not taken"
     }
    },
    "id": "X01",
-   "statement": "two trees moved since the GW1 census and are excluded from A01 by declaration"
+   "statement": "two trees are LIVE and are excluded from A01 by declaration, with no live count taken -- a count of a concurrently written tree is not reproducible by construction"
   },
   {
    "detail": null,
@@ -488,12 +542,26 @@
   {
    "detail": null,
    "id": "X03",
-   "statement": "The instrument carries ONE run-mode boolean, DELIVERY_RUN, identical for every mutant, which decides only whether receipts are written and the mutant harness is spawned.  It carries no per-mutant identity, no gate predicate reads it, and the AST guard (G23) forbids every gate-registering function from naming MUTANT, a per-mutant switch, or a mutant name."
+   "statement": "The instrument carries ONE run-mode boolean, DELIVERY_RUN, identical for every mutant, which decides only whether receipts are written and the mutant harness is spawned.  It carries no per-mutant identity, and that no gate depends on it is now MEASURED rather than asserted: the whole measurement lives in a function that registers every gate and reads no run-mode name, the run-mode branch lives in a function that registers none, and G23's scanner treats DELIVERY_RUN, SELFTEST_ONLY, WRITE_ARTIFACTS and sys.argv as mutant identity under another name, with one synthetic injection per channel that it must flag."
   },
   {
    "detail": null,
    "id": "X02",
-   "statement": "The equivalence measured by G08 is ANALYTICALLY FORCED once G03's rank is full: rho^i = (Lambda^{ij} - I^{ij}) omega_j vanishes on a spanning covector family iff Lambda = I.  It is therefore recorded as a DISCLOSURE, not claimed as an independent discovery; the measured content is G03's rank, the cell census, and the residual magnitudes below."
+   "statement": "The equivalence measured by G08 is ANALYTICALLY FORCED once G03's rank is full: rho^i = (Lambda^{ij} - I^{ij}) omega_j vanishes on a spanning covector family iff Lambda = I.  The same identity forces the CLOSED-FORM clause of G06 and the A-insert clauses of G12 and G21; those clauses are disclosures, and the measurement in each case is the LITERAL five-map route, which the identity does not force (G05, and G06's literal clause).  The forcing is conditional on G03, which a declared mutant genuinely breaks, so the pair is not vacuous.  The measured content of the sector law is G03's rank, the cell census, and the residual magnitudes below."
+  },
+  {
+   "detail": {
+    "declared_3_cycle_satisfies_the_relation": false
+   },
+   "id": "X06",
+   "statement": "GEN's dihedral relation Sigma D Sigma = D^-1 is analytically forced for every completion Q by Sigma^2 = id and D = Sigma Q^-1 Sigma Q, so A16's 0 failures over 40320 members and the 'positive control' reading of the relation are disclosures, not discriminating measurements; a declared permutation outside the sandwich form is exhibited against it"
+  },
+  {
+   "detail": {
+    "readout_determinant": "2"
+   },
+   "id": "X05",
+   "statement": "The readout is an INVERTIBLE LINEAR RE-ENCODING of the record: at the declared arena the link counts and the components of q determine each other exactly, so 'the metric candidate' and 'the geometry record' are one datum in two coordinate systems.  Two consequences are owned here.  (i) GW1 1.2's fourth exclusion -- 'algebraic data equivalent to the target metric' -- is VACUOUS at this arena: every record-native rule has access to data equivalent to the metric by construction, so that clause cannot discriminate here and the unit's claim is about WHICH FUNCTION of the counts a rule computes, not about what data it can see.  (ii) The no-smuggling result of this unit is therefore an identity read in count coordinates, not a derivation of geometry from something else."
   }
  ],
  "gates": [
@@ -551,28 +619,43 @@
    "passed": true
   },
   {
-   "claim": "EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY H^-1 H = H H^-1 = id; and the declared non-injective falsifier (register collapse) is REJECTED by the same predicate",
+   "claim": "EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY H^-1 H = H H^-1 = id AT BOTH DECLARED ADDRESS REGISTERS; and the declared non-injective falsifier (register collapse) is REJECTED by the same predicate at the register that distinguishes it -- both sides of the control are run at both coordinates (RUNBOOK 15 addendum, like-for-like)",
    "detail": {
     "failures": 0,
-    "falsifier_rejected": true,
-    "tested": 396
+    "falsifier_rejected_at": {
+     "m == 0": false,
+     "m == 1": true
+    },
+    "per_register": {
+     "m == 0": {
+      "failures": 0,
+      "tested": 396
+     },
+     "m == 1": {
+      "failures": 0,
+      "tested": 396
+     }
+    },
+    "tested": 792
    },
    "id": "G04",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIELD (the comparator is not a copy of the audited object routed through it -- RUNBOOK 14 addendum, v13 #219)",
+   "claim": "THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIELD, AT EVERY CELL OF THE HEADLINE TABLE (the comparator is not a copy of the audited object routed through it -- RUNBOOK 14 addendum, v13 #219)",
    "detail": {
-    "compared": 1188,
-    "disagreements": 0
+    "compared": 13068,
+    "disagreements": 0,
+    "scope": "every (rule, record, ordered lapse pair) cell",
+    "shared_ingredient": "both routes call the same beta(), so a common-mode beta error is invisible here and is policed by G06/G08/G12/G21 instead"
    },
    "id": "G05",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admissible record and every tested lapse pair",
+   "claim": "POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admissible record and every tested lapse pair -- BY BOTH ROUTES.  The closed-form clause is analytically forced by the same identity X02 discloses for G08; the LITERAL five-map clause is not, and is the measurement",
    "detail": {
     "G-ANISO": true,
     "G-ANISO2": true,
@@ -582,7 +665,8 @@
     "G-FLAT": true,
     "G-OFFDIAG": true,
     "G-OFFDIAG2": true,
-    "G-OFFNEG": true
+    "G-OFFNEG": true,
+    "literal_route_nonzero_cells": 0
    },
    "id": "G06",
    "must_pass": true,
@@ -612,9 +696,11 @@
    "passed": true
   },
   {
-   "claim": "SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE RECORD-READ INVERSE METRIC: closure IS insertion, over the whole rule x record x site grid",
+   "claim": "SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE RECORD-READ INVERSE METRIC, over the whole rule x record x site grid.  What closure forces is that the weight be the record's count-matrix inverse -- a JOINT, not link-local, function of the record (G09); nothing external is inserted, since by X05 the record and the metric candidate are one datum in two coordinate systems",
    "detail": {
-    "cells": 72,
+    "cells_adjudicated": 63,
+    "cells_in_grid": 72,
+    "excluded_rule": "A-notransport",
     "mismatches": []
    },
    "id": "G08",
@@ -680,28 +766,62 @@
    "passed": true
   },
   {
-   "claim": "A LINK-LOCAL RECORD-NATIVE WEIGHT CANNOT CLOSE IN GENERAL: two admissible records AGREE on a link's own interval count yet the record-read inverse metric demands DIFFERENT weights there (counterexample exhibited, not argued)",
+   "claim": "NO LINK-LOCAL RECORD-NATIVE WEIGHT CLOSES (theorem, witness gated): closure forces Lambda = I_a(g), a link-local weight has Lambda^12 = f_3(n_diag) depending on the diagonal link's own count alone, and two admissible records SHARE that count while demanding different I^12.  The second witness refutes only the diagonal-restricted subfamily Lambda^jj = f(n_e_j), and is reported as the weaker statement it is",
    "detail": {
     "witness": {
-     "I^jj_demanded": [
-      "2/3",
-      "1/2"
-     ],
-     "direction": 0,
-     "link": "(1, 0)",
-     "other_counts": [
-      "(2, 2, 6)",
-      "(2, 2, 4)"
-     ],
-     "records": [
-      "G-CURVOFF",
-      "G-DIAG2"
-     ],
-     "shared_interval_count": 2
+     "diagonal_restricted_subfamily": {
+      "I^jj_demanded": [
+       "2/3",
+       "1/2"
+      ],
+      "count_vectors": [
+       "(2, 2, 6)",
+       "(2, 2, 4)"
+      ],
+      "direction": 0,
+      "link": "(1, 0)",
+      "records": [
+       "G-CURVOFF",
+       "G-DIAG2"
+      ],
+      "shared_interval_count": 2
+     },
+     "link_local_family": {
+      "count_vectors": [
+       "(2, 2, 4)",
+       "(3, 5, 4)"
+      ],
+      "f_3_demanded": [
+       "0",
+       "2/11"
+      ],
+      "link": "(1, 1)",
+      "records": [
+       "G-DIAG2",
+       "G-OFFNEG"
+      ],
+      "shared_interval_count": 4
+     }
     }
    },
    "id": "G09",
    "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE LINK-LOCALITY WITNESS IS NOT AN ISOLATED ACCIDENT OF THE DECLARED NINE: over the declared count lattice the number of admissible pairs that share the diagonal count and demand different I^12, and that share (n_e1, n_diag) and demand different I^11, is censused",
+   "detail": {
+    "admissible_points": 361,
+    "lattice": {
+     "axis_max": 6,
+     "description": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses",
+     "diag_max": 12
+    },
+    "pairs_sharing_n_diag_with_different_I12": 5100,
+    "pairs_sharing_n_e1_and_n_diag_with_different_I11": 781
+   },
+   "id": "G09B",
+   "must_pass": false,
    "passed": true
   },
   {
@@ -759,9 +879,10 @@
    "passed": true
   },
   {
-   "claim": "UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact negative at every site, so the measured two-cell is genuinely antisymmetric and not an artefact of one order",
+   "claim": "UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact negative at every site, so the measured two-cell is genuinely antisymmetric and not an artefact of one order -- over EVERY rule, record and ordered lapse pair",
    "detail": {
-    "tested": 360,
+    "scope": "every (rule, record, ordered lapse pair) cell",
+    "tested": 13068,
     "violations": 0
    },
    "id": "G13",
@@ -769,11 +890,13 @@
    "passed": true
   },
   {
-   "claim": "CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under every declared chart translation and direction relabelling, measured site by site and component by component on freshly rebuilt records",
+   "claim": "CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under EVERY element of the declared chart group -- all |X| translations times all d! direction relabellings -- at every admissible record, every ordered lapse pair and every site, measured component by component on freshly rebuilt records",
    "detail": {
+    "component_comparisons": 384912,
+    "group_elements": 18,
     "relabellings": 2,
-    "tested": 4860,
-    "translations": 3,
+    "site_comparisons": 192456,
+    "translations": 9,
     "violations": 0
    },
    "id": "G14",
@@ -781,11 +904,13 @@
    "passed": true
   },
   {
-   "claim": "THE SELF-TEST'S CACHE PATH IS EXERCISED AND ITS FRESH PATH BYPASSES IT (RUNBOOK 14 addenda, v13 #185 / #219: a zero-hit cache gate must also gate that the cache path is used at all)",
+   "claim": "THE WEIGHT MEMO IS EXERCISED AND ITS RETURNS ARE MEASURED CORRECT: the self-test's own comparands are served through the memo, and every one of those weights is recomputed with the memo BYPASSED and compared against it, on the base record and on the chart-transformed record alike (RUNBOOK 14 addenda, v13 #185 / #219: a zero-hit cache gate is vacuous, and a cache that is never checked against a fresh evaluation is a cache, not a measurement)",
    "detail": {
-    "fresh_bypasses": 486,
-    "hits": 283133,
-    "misses": 1377
+    "fresh_bypasses": 2916,
+    "fresh_vs_memo_compared": 2916,
+    "fresh_vs_memo_disagreements": 0,
+    "hits": 904241,
+    "misses": 2349
    },
    "id": "G15",
    "must_pass": true,
@@ -970,6 +1095,16 @@
    "passed": true
   },
   {
+   "claim": "THE THREE-NORMAL DISPLACEMENT HAS AN EXACT CLOSED FORM, AND IT IS MEASURED: with the normal-tangential commutator degenerate and the Jacobi lapse sum zero, the register displacement of SW_HHH is Lambda^{ij}( B d_j C + A d_j B + A d_j C ) in the three transported lapse derivatives A = L_{B_ML}N, B = L_{B_LN}M, C = L_{B_NM}L -- compared against the LITERAL composition of the three corrected switches at every tested triple",
+   "detail": {
+    "compared": 108,
+    "disagreements": 0
+   },
+   "id": "G20B",
+   "must_pass": true,
+   "passed": true
+  },
+  {
    "claim": "THE GENERAL-d EXTENSION REPRODUCES THE SAME SEPARATION AT d = 3: the metric-inserted rule closes on every admissible record; the link-local rule closes on the diagonal records and fails on the cross-term record",
    "detail": {
     "A-axis|G3-ANISO": 0,
@@ -990,31 +1125,283 @@
    "passed": true
   },
   {
-   "claim": "BRIDGE POSABILITY IS DECIDED BY THE COORDINATE TABLE AND BY GEN's OWN DEFINING RELATION, both measured: an expression of R_HH in the stitching geometry's data requires a committed carrier match AND a structure group in GEN's measured family AND the dihedral relation; the positive control is that GEN's own defect satisfies the relation",
+   "claim": "R_HH ACTS ON THE REDUCED CARRIER AS THE TRANSLATION OF THE ADDRESS REGISTER BY rho mod p, MEASURED PERMUTATION BY PERMUTATION: the front sector returns to itself and every configuration is moved by the same register shift, so <R_HH> is cyclic of order p whenever rho is nonzero mod p -- the group is read off the arena, not off the physics",
    "detail": {
-    "carrier_match": false,
-    "dihedral_relation_on_R_HH": false,
-    "dihedral_relation_over_further_pairs": "17/24",
-    "ha_abelian": true,
-    "ha_element_orders": [
-     1,
-     5
+    "carriers_checked": 7,
+    "primes": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
     ],
-    "ha_group_order": 5,
-    "in_gen_spectrum": false,
-    "is_klein": false,
-    "posable": false,
-    "positive_control_gen_defect_relation": true
+    "translation_structure_confirmed": 7
    },
-   "id": "G22",
+   "id": "G29",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (neither MUTANT, nor a module switch, nor a mutant-name literal), and the scanner is validated by a synthetic injection that it MUST flag",
+   "claim": "THE HOLONOMY ORDER IS AN ARENA COORDINATE, NOT A PROPERTY OF R_HH (RUNBOOK 15): swept over the declared primes the measured group order EQUALS the declared prime at every one, while the exact rational residual is prime-independent.  A quantity that moves with the arena may serve as an instrument reading and may not enter as a conclusion",
    "detail": {
+    "exact_residual": [
+     "1/6",
+     "1/6"
+    ],
+    "measured_orders": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
+    ],
+    "order_equals_the_declared_prime": true,
+    "primes": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
+    ],
+    "residual_is_prime_independent": true
+   },
+   "id": "G30",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SPECTRUM COMPARISON IS ARENA-DEPENDENT TOO, AND IS RUN AGAINST THE COMPUTED DEFECT SPECTRUM RATHER THAN A TYPED TUPLE: the measured holonomy order lies in GEN's own defect order spectrum at some declared primes and outside it at others, so membership is a property of the reduction prime and not of R_HH",
+   "detail": {
+    "comparator": "GEN's defect order spectrum, computed at A14",
+    "defect_spectrum": {
+     "1": 96,
+     "2": 1440,
+     "3": 4224,
+     "4": 4608,
+     "5": 4608,
+     "6": 6912,
+     "7": 9216,
+     "15": 9216
+    },
+    "holonomy_spectrum": [
+     1,
+     4,
+     6,
+     8,
+     10,
+     12,
+     14,
+     30
+    ],
+    "membership_by_prime": {
+     "5": true,
+     "7": true,
+     "11": false,
+     "13": false,
+     "17": false,
+     "19": false,
+     "23": false
+    },
+    "multiplicity_by_prime": {
+     "5": 4608,
+     "7": 9216,
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0
+    }
+   },
+   "id": "G31",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE Sigma-RELATION CENSUS IS REPORTED AT EVERY READING RATHER THAN AT THE ONE THAT FLATTERS: the single-site surrogate, the whole-field statement and the carrier-level group relation are counted separately, each against its own honest denominator, with the vacuous cells (R_HH = id) separated out; the tested sets are declared, not selected",
+   "detail": {
+    "census": {
+     "all": {
+      "carrier_relation_holds": 18,
+      "carrier_relation_holds_at_the_identity": 18,
+      "carrier_relation_posable": 20,
+      "full_field_relation_holds": 36,
+      "pairs": 132,
+      "surrogate_holds": 114,
+      "surrogate_holds_vacuously": 114
+     },
+     "first-24": {
+      "carrier_relation_holds": 3,
+      "carrier_relation_holds_at_the_identity": 3,
+      "carrier_relation_posable": 4,
+      "full_field_relation_holds": 8,
+      "pairs": 24,
+      "surrogate_holds": 17,
+      "surrogate_holds_vacuously": 17
+     }
+    },
+    "sets": {
+     "all": "every declared ordered lapse pair",
+     "first-24": "the first 24 ordered lapse pairs of the declared enumeration"
+    }
+   },
+   "id": "G32",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "COORDINATE REPORT (recorded, not a verdict): the compared objects' coordinates are tabulated as measured.  NO POSABILITY PREDICATE IS EVALUATED HERE -- the delivered one could not return its other value anywhere in the declared arena, and a criterion that cannot come out otherwise decides nothing (RUNBOOK 4).  What is measured: the carriers are different sizes with different factorisations, no map between them is committed anywhere, and GEN's relation fails for R_HH wherever R_HH is nontrivial",
+   "detail": {
+    "committed_carrier_morphism": null,
+    "dihedral_relation_on_R_HH_at_the_declared_loop": false,
+    "gen_group": "dihedral of order 2n",
+    "ha_carrier_sizes": [
+     625,
+     2401,
+     14641,
+     28561,
+     83521,
+     130321,
+     279841
+    ],
+    "ha_group_is_cyclic_on_one_generator": true,
+    "ha_group_orders": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
+    ],
+    "morphism_census_run": false,
+    "nt_gen_carrier_sizes": [
+     36,
+     81
+    ],
+    "nt_group": "Klein four (two generators)"
+   },
+   "id": "G22",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "EVERY DECLARED CELL IS PRESENT: the closure table, the sector-law grid and the d = 3 grid each carry exactly the number of cells their DECLARATIONS require, so a silently dropped rule or record cannot shrink a census without failing here (RUNBOOK 13 addendum, v13 #234)",
+   "detail": {
+    "closure_cells": 99,
+    "closure_cells_declared": 99,
+    "d3_cells": 12,
+    "d3_cells_declared": 12,
+    "residual_fields_computed": 13068,
+    "residual_fields_declared": 13068,
+    "sector_cells": 72,
+    "sector_cells_declared": 72
+   },
+   "id": "G26",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE KILL'S SECOND DISJUNCT FIRES, MEASURED: on ONE record the declared family supplies pairwise-INEQUIVALENT recovered tensors -- the recovered tensor of an architecture-A rule IS its weight field, since the commutator's displacement is Lambda^{ij} omega_j -- so the same record law permits inequivalent recovered tensors, over the complete declared family",
+   "detail": {
+    "archA_rules": 8,
+    "distinct_recovered_tensors_archA": 7,
+    "distinct_residual_laws": 9,
+    "record": "G-OFFDIAG",
+    "recovered_tensor_classes": [
+     [
+      "A-axis"
+     ],
+     [
+      "A-chart"
+     ],
+     [
+      "A-insert",
+      "A-notransport"
+     ],
+     [
+      "A-insert-2x"
+     ],
+     [
+      "A-insert-x"
+     ],
+     [
+      "A-linkframe"
+     ],
+     [
+      "A-linkhalf"
+     ]
+    ],
+    "residual_law_classes": [
+     [
+      "A-axis",
+      "B-axis"
+     ],
+     [
+      "A-chart",
+      "B-chart"
+     ],
+     [
+      "A-insert"
+     ],
+     [
+      "A-insert-2x"
+     ],
+     [
+      "A-insert-x"
+     ],
+     [
+      "A-linkframe"
+     ],
+     [
+      "A-linkhalf"
+     ],
+     [
+      "A-notransport"
+     ],
+     [
+      "B-all"
+     ]
+    ],
+    "rules": 11
+   },
+   "id": "G27",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE MAP FROM THE SITE'S LINK COUNTS TO THE COMPONENTS OF q IS LINEAR AND INVERTIBLE (determinant computed, exact): the geometry record and the metric candidate are THE SAME DATUM in two coordinate systems, and reading one off the other is a change of coordinates, not a reconstruction.  Recorded, because it is forced by the declared link set rather than discovered",
+   "detail": {
+    "independent_components_of_q": 3,
+    "invertible": true,
+    "links": 3,
+    "readout_determinant": "2",
+    "sites_tested": 81,
+    "sites_where_q_reproduces_every_count": 81
+   },
+   "id": "G28",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "NO GATE-REGISTERING FUNCTION REFERENCES RUN-MODE IDENTITY -- neither MUTANT, nor a module switch, nor a mutant-name literal, nor a run-mode boolean (DELIVERY_RUN is mutant identity under another name), nor sys.argv -- and the scanner is validated by FOUR synthetic injections, one per channel, every one of which it must flag",
+   "detail": {
+    "decoy_channels": [
+     "gate_decoy_argv",
+     "gate_decoy_delivery",
+     "gate_decoy_mutant",
+     "gate_decoy_selftest"
+    ],
     "injection_flagged": [
-     "gate_decoy_injected"
+     "gate_decoy_argv",
+     "gate_decoy_delivery",
+     "gate_decoy_mutant",
+     "gate_decoy_selftest"
     ],
     "offenders": []
    },
@@ -1027,14 +1414,30 @@
    "detail": {
     "float_hits": [],
     "injection_flagged": [
-     "line 1033: call float()",
-     "line 1033: literal 0.5"
+     "line 1082: call float()",
+     "line 1082: literal 0.5"
     ],
     "residual_value_types": [
      "Fraction"
     ]
    },
    "id": "G24",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PRINTED VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS AND COMPARED, STRING BY STRING, TO WHAT THE RUN PRINTED (RUNBOOK 13 addendum, v13 #234: an ungated verdict is a typo away from fiction).  The runnable component is recomputed here from the same measured gate outcomes and from the failure count over the must-pass gates registered before the verdict; the secondary component is NOT-ENTERED because no posability predicate is evaluated anywhere in this run",
+   "detail": {
+    "derived_here": [
+     "HA-RUNNABLE",
+     "HA-BRIDGE-NOT-ENTERED"
+    ],
+    "printed": [
+     "HA-RUNNABLE",
+     "HA-BRIDGE-NOT-ENTERED"
+    ]
+   },
+   "id": "G25",
    "must_pass": true,
    "passed": true
   }
@@ -1060,6 +1463,15 @@
    "mutant": "anchor-gen-family",
    "named_kills": [
     "A:A09"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "GEN's computed defect order spectrum perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-spectrum",
+   "named_kills": [
+    "A:A14"
    ]
   },
   {
@@ -1112,11 +1524,21 @@
   },
   {
    "exit": 1,
-   "expected_kill": "the bridge posability predicate drops its coordinate test",
+   "expected_kill": "the bridge's comparator spectrum is GEN's holonomy spectrum instead of GEN's defect spectrum",
    "killed": true,
-   "mutant": "bridge-lax",
+   "mutant": "bridge-spectrum",
    "named_kills": [
-    "G:G22"
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the weight memo serves a chart-transformed record the base record's entry",
+   "killed": true,
+   "mutant": "cache-alias",
+   "named_kills": [
+    "G:G14",
+    "G:G15"
    ]
   },
   {
@@ -1126,6 +1548,16 @@
    "mutant": "cache-lax",
    "named_kills": [
     "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a declared drag rule is dropped from the tested family",
+   "killed": true,
+   "mutant": "census-drop",
+   "named_kills": [
+    "G:G26",
+    "G:G27"
    ]
   },
   {
@@ -1175,7 +1607,8 @@
    "mutant": "factor-lax",
    "named_kills": [
     "G:G10",
-    "G:G11"
+    "G:G11",
+    "G:G29"
    ]
   },
   {
@@ -1212,7 +1645,9 @@
    "mutant": "omega-asym",
    "named_kills": [
     "G:G05",
-    "G:G13"
+    "G:G06",
+    "G:G13",
+    "G:G20B"
    ]
   },
   {
@@ -1221,7 +1656,8 @@
    "killed": true,
    "mutant": "order-swap",
    "named_kills": [
-    "G:G05"
+    "G:G05",
+    "G:G06"
    ]
   },
   {
@@ -1235,11 +1671,13 @@
   },
   {
    "exit": 1,
-   "expected_kill": "the operator layer's multi-prime control is reduced to one prime",
+   "expected_kill": "the multi-prime controls are reduced to one prime",
    "killed": true,
    "mutant": "prime-single",
    "named_kills": [
-    "G:G10B"
+    "G:G10B",
+    "G:G30",
+    "G:G31"
    ]
   },
   {
@@ -1253,7 +1691,8 @@
     "G:G08",
     "G:G08B",
     "G:G10",
-    "G:G12"
+    "G:G12",
+    "G:G27"
    ]
   },
   {
@@ -1265,7 +1704,9 @@
     "G:G07",
     "G:G09",
     "G:G12",
-    "G:G21"
+    "G:G21",
+    "G:G30",
+    "G:G31"
    ]
   },
   {
@@ -1275,8 +1716,11 @@
    "mutant": "sign-flip",
    "named_kills": [
     "G:G05",
+    "G:G06",
     "G:G10",
-    "G:G11"
+    "G:G11",
+    "G:G29",
+    "G:G30"
    ]
   },
   {
@@ -1287,7 +1731,18 @@
    "named_kills": [
     "G:G04",
     "G:G05",
-    "G:G19"
+    "G:G06",
+    "G:G19",
+    "G:G20B"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the verdict derivation returns a hand-typed string instead of the measured one",
+   "killed": true,
+   "mutant": "verdict-flip",
+   "named_kills": [
+    "G:G25"
    ]
   }
  ],
@@ -1296,22 +1751,177 @@
  "pin_base_commit": "024fcd7",
  "python": "3.13.2",
  "schema": "ha-successor-receipt-v1",
- "source_sha256": "19dad19b01ee09f333c9780769dd3b887cc7699b2132813b7d24b03dcb83d772",
+ "source_sha256": "d44cb72f8ee9f2d212f4c9a881247411bc3245c9453e3745b5f4ff673ff6c439",
  "tables": {
   "bridge": {
-   "carrier_match": false,
+   "committed_carrier_morphism": null,
+   "declared_3_cycle_satisfies_the_relation": false,
+   "defect_order_spectrum": {
+    "1": 96,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216,
+    "15": 9216
+   },
+   "exact_residual_at_the_detector_site": [
+    "1/6",
+    "1/6"
+   ],
    "gen_defect_order": 2,
    "gen_dihedral": true,
-   "ha_abelian": true,
-   "ha_dihedral": false,
-   "ha_dihedral_over_pairs": "17/24",
-   "ha_element_orders": [
+   "gen_dihedral_is_analytically_forced": true,
+   "ha_dihedral_at_the_declared_loop": false,
+   "holonomy_order_spectrum": [
     1,
-    5
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    30
    ],
-   "ha_holonomy_order": 5,
-   "in_gen_spectrum": false,
-   "posable": false
+   "membership_in_the_defect_spectrum_by_prime": {
+    "5": true,
+    "7": true,
+    "11": false,
+    "13": false,
+    "17": false,
+    "19": false,
+    "23": false
+   },
+   "morphism_census_run": false,
+   "prime_sweep": [
+    {
+     "abelian": true,
+     "carrier": 625,
+     "element_orders": [
+      1,
+      5
+     ],
+     "group_order": 5,
+     "p": 5,
+     "rho_mod_p": [
+      1,
+      1
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 2401,
+     "element_orders": [
+      1,
+      7
+     ],
+     "group_order": 7,
+     "p": 7,
+     "rho_mod_p": [
+      6,
+      6
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 14641,
+     "element_orders": [
+      1,
+      11
+     ],
+     "group_order": 11,
+     "p": 11,
+     "rho_mod_p": [
+      2,
+      2
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 28561,
+     "element_orders": [
+      1,
+      13
+     ],
+     "group_order": 13,
+     "p": 13,
+     "rho_mod_p": [
+      11,
+      11
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 83521,
+     "element_orders": [
+      1,
+      17
+     ],
+     "group_order": 17,
+     "p": 17,
+     "rho_mod_p": [
+      3,
+      3
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 130321,
+     "element_orders": [
+      1,
+      19
+     ],
+     "group_order": 19,
+     "p": 19,
+     "rho_mod_p": [
+      16,
+      16
+     ],
+     "sigma_relation": false
+    },
+    {
+     "abelian": true,
+     "carrier": 279841,
+     "element_orders": [
+      1,
+      23
+     ],
+     "group_order": 23,
+     "p": 23,
+     "rho_mod_p": [
+      4,
+      4
+     ],
+     "sigma_relation": false
+    }
+   ],
+   "sigma_relation_census": {
+    "all": {
+     "carrier_relation_holds": 18,
+     "carrier_relation_holds_at_the_identity": 18,
+     "carrier_relation_posable": 20,
+     "full_field_relation_holds": 36,
+     "pairs": 132,
+     "surrogate_holds": 114,
+     "surrogate_holds_vacuously": 114
+    },
+    "first-24": {
+     "carrier_relation_holds": 3,
+     "carrier_relation_holds_at_the_identity": 3,
+     "carrier_relation_posable": 4,
+     "full_field_relation_holds": 8,
+     "pairs": 24,
+     "surrogate_holds": 17,
+     "surrogate_holds_vacuously": 17
+    }
+   },
+   "status": "COORDINATE AUDIT -- no posability predicate evaluated, no morphism census run, no HA-BRIDGE outcome entered"
   },
   "closure": {
    "A-axis|G-ANISO": {
@@ -3347,6 +3957,10 @@
     "triple": "(1,4,10)"
    }
   ],
+  "detector_closed_form": {
+   "compared": 108,
+   "disagreements": 0
+  },
   "general_d": {
    "A-axis|G3-ANISO": 0,
    "A-axis|G3-FLAT": 0,
@@ -3372,22 +3986,45 @@
    "(2, 1)": 2,
    "(2, 2)": 2
   },
+  "link_locality_lattice": {
+   "admissible_points": 361,
+   "pairs_sharing_n_diag_diff_I12": 5100,
+   "pairs_sharing_n_e1_n_diag_diff_I11": 781
+  },
   "link_locality_witness": {
-   "I^jj_demanded": [
-    "2/3",
-    "1/2"
-   ],
-   "direction": 0,
-   "link": "(1, 0)",
-   "other_counts": [
-    "(2, 2, 6)",
-    "(2, 2, 4)"
-   ],
-   "records": [
-    "G-CURVOFF",
-    "G-DIAG2"
-   ],
-   "shared_interval_count": 2
+   "diagonal_restricted_subfamily": {
+    "I^jj_demanded": [
+     "2/3",
+     "1/2"
+    ],
+    "count_vectors": [
+     "(2, 2, 6)",
+     "(2, 2, 4)"
+    ],
+    "direction": 0,
+    "link": "(1, 0)",
+    "records": [
+     "G-CURVOFF",
+     "G-DIAG2"
+    ],
+    "shared_interval_count": 2
+   },
+   "link_local_family": {
+    "count_vectors": [
+     "(2, 2, 4)",
+     "(3, 5, 4)"
+    ],
+    "f_3_demanded": [
+     "0",
+     "2/11"
+    ],
+    "link": "(1, 1)",
+    "records": [
+     "G-DIAG2",
+     "G-OFFNEG"
+    ],
+    "shared_interval_count": 4
+   }
   },
   "operator_layer": {
    "carriers_built": 1056,
@@ -3998,6 +4635,70 @@
     }
    ]
   },
+  "readout_reencoding": {
+   "determinant": "2",
+   "sites_verified": 81
+  },
+  "recovered_tensors": {
+   "classes": [
+    [
+     "A-axis"
+    ],
+    [
+     "A-chart"
+    ],
+    [
+     "A-insert",
+     "A-notransport"
+    ],
+    [
+     "A-insert-2x"
+    ],
+    [
+     "A-insert-x"
+    ],
+    [
+     "A-linkframe"
+    ],
+    [
+     "A-linkhalf"
+    ]
+   ],
+   "distinct_recovered_tensors_archA": 7,
+   "distinct_residual_laws": 9,
+   "law_classes": [
+    [
+     "A-axis",
+     "B-axis"
+    ],
+    [
+     "A-chart",
+     "B-chart"
+    ],
+    [
+     "A-insert"
+    ],
+    [
+     "A-insert-2x"
+    ],
+    [
+     "A-insert-x"
+    ],
+    [
+     "A-linkframe"
+    ],
+    [
+     "A-linkhalf"
+    ],
+    [
+     "A-notransport"
+    ],
+    [
+     "B-all"
+    ]
+   ],
+   "record": "G-OFFDIAG"
+  },
   "sector_law": {
    "A-axis|G-ANISO": {
     "Lambda_equals_I_sites": 9,
@@ -4362,16 +5063,16 @@
   }
  },
  "totals": {
-  "anchors": 16,
-  "disclosures": 4,
-  "gates": 26,
+  "anchors": 17,
+  "disclosures": 6,
+  "gates": 36,
   "must_pass_failures": 0,
-  "must_pass_gates": 21,
+  "must_pass_gates": 27,
   "mutant_survivors": 0,
-  "mutants": 25
+  "mutants": 29
  },
  "verdict": [
   "HA-RUNNABLE",
-  "HA-BRIDGE-NOT-POSABLE"
+  "HA-BRIDGE-NOT-ENTERED"
  ]
 }

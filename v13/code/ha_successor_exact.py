@@ -63,33 +63,40 @@ for _i, _a in enumerate(_argv):
 
 MUTANTS: dict[str, str] = {
     # --- anchor mutants ---------------------------------------------------
-    "anchor-gw1-trees":   "GW1 runnable-tree .py census perturbed",
-    "anchor-gw1-lapse":   "GW1 'lapse' token sweep perturbed",
-    "anchor-nt-paths":    "NT reduced-path count perturbed",
-    "anchor-nt-sha":      "NT receipt sha256 perturbed",
-    "anchor-gen-family":  "GEN completion-family size perturbed",
-    "anchor-gen-defect":  "GEN declared defect permutation perturbed",
+    "anchor-gw1-trees":    "GW1 runnable-tree .py census perturbed",
+    "anchor-gw1-lapse":    "GW1 'lapse' token sweep perturbed",
+    "anchor-nt-paths":     "NT reduced-path count perturbed",
+    "anchor-nt-sha":       "NT receipt sha256 perturbed",
+    "anchor-gen-family":   "GEN completion-family size perturbed",
+    "anchor-gen-defect":   "GEN declared defect permutation perturbed",
+    "anchor-gen-spectrum": "GEN's computed defect order spectrum perturbed",
     # --- gate mutants (each mutates an INSTRUMENT, never a gate) ----------
-    "closure-lax":    "the closure predicate accepts any residual field",
-    "invert-lax":     "the bijection predicate accepts a non-injective map",
-    "bridge-lax":     "the bridge posability predicate drops its coordinate test",
-    "exempt-lax":     "the AST mutant-identity scanner is blinded",
-    "control-lax":    "the broken-H variants are dropped from the tested set",
-    "rank-lax":       "the lapse family is degenerated below full rank",
-    "freeze-lax":     "a fixture datum is evaluated before the declarations freeze",
-    "cache-lax":      "the fresh-evaluation path reads the memo cache",
-    "posdef-lax":     "the positive-definiteness predicate always accepts",
-    "factor-lax":     "the exact-to-F_p reduction is perturbed non-linearly",
+    "closure-lax":     "the closure predicate accepts any residual field",
+    "invert-lax":      "the bijection predicate accepts a non-injective map",
+    "exempt-lax":      "the AST mutant-identity scanner is blinded",
+    "control-lax":     "the broken-H variants are dropped from the tested set",
+    "census-drop":     "a declared drag rule is dropped from the tested family",
+    "rank-lax":        "the lapse family is degenerated below full rank",
+    "freeze-lax":      "a fixture datum is evaluated before the declarations freeze",
+    "cache-lax":       "the fresh-evaluation path reads the memo cache",
+    "cache-alias":     "the weight memo serves a chart-transformed record the base "
+                       "record's entry",
+    "posdef-lax":      "the positive-definiteness predicate always accepts",
+    "factor-lax":      "the exact-to-F_p reduction is perturbed non-linearly",
+    "verdict-flip":    "the verdict derivation returns a hand-typed string instead of "
+                       "the measured one",
     # --- computational mutants -------------------------------------------
-    "sign-flip":      "the finite bracket covector's sign convention is flipped",
-    "order-swap":     "the two normal labels are swapped in the commutator only",
-    "transport-off":  "the second normal step reads the pre-advance front",
-    "chart-shift":    "the chart action moves the record but not the field index",
-    "beta-flat":      "the record-read metric in beta is replaced by the chart identity",
-    "prime-single":   "the operator layer's multi-prime control is reduced to one prime",
-    "omega-asym":     "the finite bracket covector uses a non-antisymmetric difference",
-    "readout-local":  "the record's metric readout is replaced by a link-local surrogate",
-    "float-lax":      "the float sweep is blinded",
+    "sign-flip":       "the finite bracket covector's sign convention is flipped",
+    "order-swap":      "the two normal labels are swapped in the commutator only",
+    "transport-off":   "the second normal step reads the pre-advance front",
+    "chart-shift":     "the chart action moves the record but not the field index",
+    "beta-flat":       "the record-read metric in beta is replaced by the chart identity",
+    "prime-single":    "the multi-prime controls are reduced to one prime",
+    "bridge-spectrum": "the bridge's comparator spectrum is GEN's holonomy spectrum "
+                       "instead of GEN's defect spectrum",
+    "omega-asym":      "the finite bracket covector uses a non-antisymmetric difference",
+    "readout-local":   "the record's metric readout is replaced by a link-local surrogate",
+    "float-lax":       "the float sweep is blinded",
 }
 
 if MUTANT is not None and MUTANT not in MUTANTS:
@@ -103,14 +110,18 @@ _M_NTP = (MUTANT == "anchor-nt-paths")
 _M_NTS = (MUTANT == "anchor-nt-sha")
 _M_GENF = (MUTANT == "anchor-gen-family")
 _M_GEND = (MUTANT == "anchor-gen-defect")
+_M_GENS = (MUTANT == "anchor-gen-spectrum")
 _M_CLOSURE = (MUTANT == "closure-lax")
 _M_INVERT = (MUTANT == "invert-lax")
-_M_BRIDGE = (MUTANT == "bridge-lax")
+_M_SPECTRUM = (MUTANT == "bridge-spectrum")
 _M_EXEMPT = (MUTANT == "exempt-lax")
 _M_CONTROL = (MUTANT == "control-lax")
+_M_CENSUS = (MUTANT == "census-drop")
 _M_RANK = (MUTANT == "rank-lax")
 _M_FREEZE = (MUTANT == "freeze-lax")
 _M_CACHE = (MUTANT == "cache-lax")
+_M_ALIAS = (MUTANT == "cache-alias")
+_M_VERDICT = (MUTANT == "verdict-flip")
 _M_POSDEF = (MUTANT == "posdef-lax")
 _M_FACTOR = (MUTANT == "factor-lax")
 _M_SIGN = (MUTANT == "sign-flip")
@@ -252,9 +263,20 @@ DECL: dict = {
     "broken_rules": ["A-insert-x", "A-insert-2x", "A-notransport"],
     "transported_rules": ["A-chart", "A-axis", "A-linkframe", "A-linkhalf",
                           "A-insert", "A-insert-x", "A-insert-2x"],
+    "rules_d3": ["A-chart", "A-axis", "A-linkframe", "A-insert"],
     "frozen_front_rule": "A-notransport",
     "positive_control_rule": "A-insert",
     "primes": [5, 7, 13],
+    "bridge_primes": [5, 7, 11, 13, 17, 19, 23],
+    "registers": {"m == 0": "the zero address register",
+                  "m == 1": "the unit address register"},
+    "count_lattice": {"axis_max": 6, "diag_max": 12,
+                      "description": "the declared box of count vectors "
+                                     "(n_e1, n_e2, n_diag) swept for the "
+                                     "link-locality theorem's witnesses"},
+    "relation_sets": {"first-24": "the first 24 ordered lapse pairs of the "
+                                  "declared enumeration",
+                      "all": "every declared ordered lapse pair"},
     "test_class": ("the indicator effects of the reduced total-configuration carrier; "
                    "||R|| := the number of configurations R moves / carrier size"),
     "tangential_realisations": {
@@ -507,7 +529,8 @@ def arch_of(rule: str) -> str:
 
 def lambda_of(rule, rec, x, fresh=False):
     """The drag rule's weight at site x.  [instrument -- mutable cache path]"""
-    key = (rule, rec.name, rec.weight, x)
+    memo_name = rec.name.split("@")[0] if _M_ALIAS else rec.name
+    key = (rule, memo_name, rec.weight, x)
     use_cache = (not fresh) or _M_CACHE
     if fresh and not _M_CACHE:
         _CACHE_STATS["bypass"] += 1
@@ -1017,11 +1040,37 @@ def operator_primes():
     return DECL["primes"][:1] if _M_ONEPRIME else DECL["primes"]
 
 
-def bridge_posable(carrier_match, in_spectrum, relation_holds):
-    """The declared posability predicate.  [instrument -- mutable]"""
-    if _M_BRIDGE:
-        return True
-    return bool(carrier_match and in_spectrum and relation_holds)
+def sweep_primes():
+    """The primes the bridge's coordinate audit rebuilds the reduced carrier over.
+    [instrument -- mutable]"""
+    return DECL["bridge_primes"][:1] if _M_ONEPRIME else DECL["bridge_primes"]
+
+
+def comparator_spectrum(defect_orders, holonomy_orders):
+    """The GEN spectrum the HA holonomy order is compared against.
+
+    GEN publishes TWO order spectra: the DEFECT's, and the holonomy group's
+    (2n over the defect orders n, with the flat class at 1).  The coordinate
+    table pairs R_HH with GEN's DEFECT D, so the defect spectrum is the
+    like-for-like comparator, and both are computed here from the completion
+    census of A14 rather than typed.  [instrument -- mutable]"""
+    return set(holonomy_orders) if _M_SPECTRUM else set(defect_orders)
+
+
+def rules_tested():
+    """The declared drag-rule family actually carried into the census.
+    [instrument -- mutable]"""
+    rs = list(DECL["rules"])
+    return [r for r in rs if r[0] != "A-linkhalf"] if _M_CENSUS else rs
+
+
+def derive_verdict(runnable, bridge_token):
+    """The verdict string, derived from the measured outcomes.  Gate G25
+    recomputes it from the measured counts and compares.
+    [instrument -- mutable]"""
+    if _M_VERDICT:
+        return ["HA-RUNNABLE", "HA-BRIDGE-POSABLE"]
+    return (["HA-RUNNABLE"] if runnable else ["HA-STILL-BLOCKED"]) + [bridge_token]
 
 
 # --------------------------------------------------------------------------
@@ -1044,15 +1093,20 @@ def ast_float_scan(src: str) -> list[str]:
     return sorted(hits)
 
 
+RUN_MODE_NAMES = ("MUTANT", "MUTANTS", "DELIVERY_RUN", "SELFTEST_ONLY",
+                  "WRITE_ARTIFACTS")
+
+
 def ast_mutant_scan(src: str) -> list[str]:
-    """Names of functions that BOTH register a gate AND reference mutant identity.
-    [instrument -- mutable]"""
+    """Names of functions that BOTH register a gate AND reference run-mode
+    identity -- MUTANT/MUTANTS, a per-mutant switch, a mutant-name literal, one
+    of the run-mode booleans (DELIVERY_RUN is mutant identity under another
+    name), or sys.argv.  [instrument -- mutable]"""
     if _M_EXEMPT:
         return []
     tree = ast.parse(src)
     offenders = []
     names = set(MUTANTS.keys())
-    switches = {n for n in dir() if n.startswith("_M_")}
 
     class V(ast.NodeVisitor):
         def visit_FunctionDef(self, node):  # noqa: N802
@@ -1061,8 +1115,10 @@ def ast_mutant_scan(src: str) -> list[str]:
                 if isinstance(sub, ast.Call) and isinstance(sub.func, ast.Name) \
                         and sub.func.id == "gate":
                     registers = True
-                if isinstance(sub, ast.Name) and (sub.id in ("MUTANT", "MUTANTS")
+                if isinstance(sub, ast.Name) and (sub.id in RUN_MODE_NAMES
                                                   or sub.id.startswith("_M_")):
+                    references = True
+                if isinstance(sub, ast.Attribute) and sub.attr == "argv":
                     references = True
                 if isinstance(sub, ast.Constant) and isinstance(sub.value, str) \
                         and sub.value in names:
@@ -1129,6 +1185,16 @@ def gen_declared_defect(Q):
     return D
 
 
+def gen_order_spectrum(hist: dict) -> dict:
+    """GEN's measured defect order spectrum over the completion family.
+    [instrument -- mutable]"""
+    out = dict(sorted(hist.items()))
+    if _M_GENS and out:
+        k = sorted(out)[-1]
+        out[k] = out[k] + 1
+    return out
+
+
 def build_lapse_family(S, d):
     """The declared lapse family.  [instrument -- mutable]"""
     if _M_RANK:
@@ -1191,9 +1257,10 @@ def run_mutant_harness():
 # ==========================================================================
 
 
-def main() -> int:
+def run_unit(src: str) -> dict:
+    """The whole measurement, from the anchors to the verdict.  Registers every
+    gate; reads no run-mode boolean, directly or indirectly (G23)."""
     progress("start")
-    src = open(SELF, "r", encoding="utf-8").read()
     say("=" * 78)
     say("HA -- THE RECORD-NATIVE H_a[N] SUCCESSOR   (v13 gravity line)")
     say("pin: v13/note-ha-successor-pin.md    immutable base commit 024fcd7")
@@ -1271,23 +1338,32 @@ def main() -> int:
         fix_hist[nf] = fix_hist.get(nf, 0) + 1
         if perm_mul(S9, perm_mul(D, S9)) != perm_inv(D):
             dihedral_fail += 1
+    defect_spectrum = gen_order_spectrum(ord_hist)
     anchor("A14", "GEN: the order spectrum of the defect over the whole family",
            {1: 96, 2: 1440, 3: 4224, 4: 4608, 5: 4608, 6: 6912, 7: 9216, 15: 9216},
-           dict(sorted(ord_hist.items())), "v13/paper-gen-generality-check.md 8.2")
+           defect_spectrum, "v13/paper-gen-generality-check.md 8.2")
     anchor("A15", "GEN: the fixed-configuration spectrum of the defect",
            {9: 16704, 18: 11520, 27: 5376, 36: 4608, 45: 864, 54: 1152, 81: 96},
            dict(sorted(fix_hist.items())), "v13/paper-gen-generality-check.md 8.2")
     anchor("A16", "GEN: members where the dihedral relation Sigma D Sigma = D^-1 fails",
            0, dihedral_fail, "v13/paper-gen-generality-check.md 8.3")
+    holonomy_spectrum = sorted({(1 if n == 1 else 2 * n) for n in defect_spectrum})
+    anchor("A17", "GEN: the predicted holonomy order spectrum, derived from the "
+           "defect spectrum (2n, with the flat class at 1)",
+           [1, 4, 6, 8, 10, 12, 14, 30], holonomy_spectrum,
+           "v13/paper-gen-generality-check.md 8.2-8.3")
     say(f"  {len(ANCHORS)} anchors, every one reproduced.")
-    v12n = len([f for f in os.listdir(os.path.join(REPO, "v12/code")) if f.endswith(".py")])
-    v13n = len([f for f in os.listdir(os.path.join(REPO, "v13/code")) if f.endswith(".py")])
-    say(f"  DISCLOSURE X01: v12/code carries {v12n} .py against the GW1 census's 5, and")
-    say(f"  v13/code carries {v13n} (four concurrent cycles).  Both are declared LIVE")
-    say("  and excluded from A01 BY DECLARATION, not by outcome.")
-    disclose("X01", "two trees moved since the GW1 census and are excluded from A01 "
-             "by declaration", {"v12/code": {"census": 5, "now": v12n},
-                                "v13/code": {"census": "not listed", "now": v13n}})
+    say("  DISCLOSURE X01: v12/code and v13/code are LIVE trees, written by concurrent")
+    say("  cycles, and are excluded from A01 BY DECLARATION, not by outcome.  No count")
+    say("  of either is taken here: a count of a tree this unit does not own is not")
+    say("  reproducible by construction, and the delivery's byte-identity would then")
+    say("  depend on directories outside the unit.  The GW1 census's own committed")
+    say("  value for v12/code is 5; v13/code is not in that census at all.")
+    disclose("X01", "two trees are LIVE and are excluded from A01 by declaration, "
+             "with no live count taken -- a count of a concurrently written tree is "
+             "not reproducible by construction",
+             {"v12/code": {"census": 5, "live_count": "not taken"},
+              "v13/code": {"census": "not listed", "live_count": "not taken"}})
     say("")
 
     # ======================= 2. THE DECLARED ARENA ========================
@@ -1310,6 +1386,7 @@ def main() -> int:
     progress("records")
     d, L, W = DECL["d"], DECL["L"], DECL["density_weight"]
     S = sites(d, L)
+    RULES = rules_tested()
     recs = {nm: make_record(nm, d, L, tup, W) for nm, tup in DECL["records_d2"].items()}
     recs["G-CURVED"] = make_curved_record("G-CURVED", d, L, W)
     recs["G-CURVOFF"] = make_curved_off_record("G-CURVOFF", d, L, W)
@@ -1367,27 +1444,42 @@ def main() -> int:
     progress("invertibility")
     n_base = {x: (2 * x[0] + 5 * x[1]) % 7 for x in S}
     m_zero = {x: tuple(Fr(0) for _ in range(d)) for x in S}
+    m_one = {x: tuple(Fr(1) for _ in range(d)) for x in S}
+    registers = [("m == 0", m_zero), ("m == 1", m_one)]
     inv_fail = inv_tested = 0
-    for rule, _a, _dsc in DECL["rules"]:
-        for nm in ADM:
-            for (lname, N) in lapses[:4]:
-                H = Hmap(rule, recs[nm], N)
-                inv_tested += 1
-                if not check_bijection_pair(H, (dict(n_base), dict(m_zero))):
-                    inv_fail += 1
+    per_reg = {}
+    for rlabel, mreg in registers:
+        f0 = t0 = 0
+        for rule, _a, _dsc in RULES:
+            for nm in ADM:
+                for (lname, N) in lapses[:4]:
+                    H = Hmap(rule, recs[nm], N)
+                    inv_tested += 1
+                    t0 += 1
+                    if not check_bijection_pair(H, (dict(n_base), dict(mreg))):
+                        inv_fail += 1
+                        f0 += 1
+        per_reg[rlabel] = {"tested": t0, "failures": f0}
     coll = RegisterCollapse(recs["G-FLAT"])
-    m1 = {x: tuple(Fr(1) for _ in range(d)) for x in S}
-    falsifier_rejected = not check_bijection_pair(coll, (dict(n_base), dict(m1)))
+    fals = {rlabel: (not check_bijection_pair(coll, (dict(n_base), dict(mreg))))
+            for rlabel, mreg in registers}
     g04 = gate("G04", "EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION "
-               "OF TOTAL RECORDS, MEASURED BY H^-1 H = H H^-1 = id; and the declared "
-               "non-injective falsifier (register collapse) is REJECTED by the same "
-               "predicate", inv_fail == 0 and falsifier_rejected,
+               "OF TOTAL RECORDS, MEASURED BY H^-1 H = H H^-1 = id AT BOTH DECLARED "
+               "ADDRESS REGISTERS; and the declared non-injective falsifier (register "
+               "collapse) is REJECTED by the same predicate at the register that "
+               "distinguishes it -- both sides of the control are run at both "
+               "coordinates (RUNBOOK 15 addendum, like-for-like)",
+               inv_fail == 0 and fals["m == 1"],
                {"tested": inv_tested, "failures": inv_fail,
-                "falsifier_rejected": falsifier_rejected})
-    say(f"  H^-1 H = id measured on {inv_tested} (rule, record, lapse) triples; "
-        f"failures {inv_fail}")
-    say(f"  declared non-injective falsifier rejected: {falsifier_rejected}   "
+                "per_register": per_reg, "falsifier_rejected_at": fals})
+    say(f"  H^-1 H = id measured on {inv_tested} (rule, record, lapse, register) "
+        f"instances over both declared registers; failures {inv_fail}")
+    say(f"  declared non-injective falsifier rejected: {fals}   "
         f"(G04 {'PASS' if g04 else 'FAIL'})")
+    say("  Both sides are run at both registers.  At m == 0 the falsifier is NOT")
+    say("  rejected and cannot be: collapsing an already-zero register is the identity")
+    say("  there, so no predicate could separate them.  The teeth are at m == 1, and")
+    say("  the H family is measured invertible at both.")
     say("")
 
     # ======================= 6. THE RESIDUAL ==============================
@@ -1396,16 +1488,23 @@ def main() -> int:
     say("       (a) the LITERAL composition of the five comparison maps;")
     say("       (b) the CLOSED form, built from the drag rule and the record")
     say("           readout without ever touching (a).")
-    progress("residual sweep")
+    progress("residual sweep: closed form, literal composition, antisymmetry")
     results, per_site = {}, {}
     lit_fail = lit_cmp = 0
-    for rule, _a, _dsc in DECL["rules"]:
+    ins_lit_nonzero = 0
+    fields_computed = 0
+    ord_bad = ord_tested = 0
+    sigma_fields: dict = {}
+    for rule, _a, _dsc in RULES:
         for nm in ADM:
             r = recs[nm]
             nz, worst, wit = 0, Fr(0), None
             zero_sites = {x: True for x in S}
+            blk = {}
             for (a, b) in pairs:
                 fc = residual_field_closed(rule, r, lapses[a][1], lapses[b][1])
+                blk[(a, b)] = fc
+                fields_computed += 1
                 if not closes(fc):
                     nz += 1
                     if field_max(fc) > worst:
@@ -1417,31 +1516,54 @@ def main() -> int:
                                    "closes": nz == 0, "max_abs": str(worst),
                                    "witness": wit}
             per_site[(rule, nm)] = sum(1 for x in S if zero_sites[x])
-            for (a, b) in [(p_, q_) for (p_, q_) in pairs if p_ < 4 and q_ < 4]:
+            # the LITERAL five-map composition, at every cell of this row
+            for (a, b) in pairs:
                 fl = residual_field_literal(rule, r, lapses[a][1], lapses[b][1], n_base)
-                fc = residual_field_closed(rule, r, lapses[a][1], lapses[b][1])
                 lit_cmp += 1
-                if fl is None or any(fl[x] != fc[x] for x in S):
+                if fl is None or any(fl[x] != blk[(a, b)][x] for x in S):
                     lit_fail += 1
+                if rule == DECL["positive_control_rule"] \
+                        and (fl is None or any(any(t != 0 for t in fl[x]) for x in S)):
+                    ins_lit_nonzero += 1
+            # the update-order control, at every cell of this row
+            for (a, b) in pairs:
+                ord_tested += 1
+                if any(blk[(a, b)][x][i] != -blk[(b, a)][x][i]
+                       for x in S for i in range(d)):
+                    ord_bad += 1
+            if (rule, nm) == ("A-axis", "G-OFFDIAG"):
+                sigma_fields = blk
+        progress(f"  residual: {rule}")
     g05 = gate("G05", "THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT "
-               "CLOSED FORM AGREE FIELD BY FIELD (the comparator is not a copy of the "
-               "audited object routed through it -- RUNBOOK 14 addendum, v13 #219)",
-               lit_fail == 0, {"compared": lit_cmp, "disagreements": lit_fail})
-    say(f"  literal-vs-closed comparisons {lit_cmp}, disagreements {lit_fail}   "
-        f"(G05 {'PASS' if g05 else 'FAIL'})")
+               "CLOSED FORM AGREE FIELD BY FIELD, AT EVERY CELL OF THE HEADLINE TABLE "
+               "(the comparator is not a copy of the audited object routed through it "
+               "-- RUNBOOK 14 addendum, v13 #219)",
+               lit_fail == 0 and lit_cmp == len(RULES) * len(ADM) * len(pairs),
+               {"compared": lit_cmp, "disagreements": lit_fail,
+                "scope": "every (rule, record, ordered lapse pair) cell",
+                "shared_ingredient": "both routes call the same beta(), so a "
+                                     "common-mode beta error is invisible here and is "
+                                     "policed by G06/G08/G12/G21 instead"})
+    say(f"  literal-vs-closed comparisons {lit_cmp} (every cell of the table), "
+        f"disagreements {lit_fail}   (G05 {'PASS' if g05 else 'FAIL'})")
     say("")
     say(f"  CLOSURE TABLE.  Cells give the number of the {len(pairs)} ordered lapse")
     say("  pairs at which R_HH is NOT the identity ('CLOSES' = none of them).")
     say(f"  {'rule':14s}" + "".join(f"{nm:11s}" for nm in ADM))
-    for rule, _a, _dsc in DECL["rules"]:
+    for rule, _a, _dsc in RULES:
         say(f"  {rule:14s}" + "".join(
             f"{('CLOSES' if results[(rule, nm)]['closes'] else str(results[(rule, nm)]['nonzero_pairs'])):11s}"
             for nm in ADM))
     say("")
     g06 = gate("G06", "POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) "
-               "closes exactly, at every admissible record and every tested lapse pair",
-               all(results[("A-insert", nm)]["closes"] for nm in ADM),
-               {nm: results[("A-insert", nm)]["closes"] for nm in ADM})
+               "closes exactly, at every admissible record and every tested lapse pair "
+               "-- BY BOTH ROUTES.  The closed-form clause is analytically forced by "
+               "the same identity X02 discloses for G08; the LITERAL five-map clause "
+               "is not, and is the measurement",
+               all(results[(DECL["positive_control_rule"], nm)]["closes"] for nm in ADM)
+               and ins_lit_nonzero == 0,
+               {nm: results[(DECL["positive_control_rule"], nm)]["closes"] for nm in ADM}
+               | {"literal_route_nonzero_cells": ins_lit_nonzero})
     bl = broken_rules_tested()
     brk = {rn: sum(1 for nm in ADM if not results[(rn, nm)]["closes"]) for rn in bl}
     g07 = gate("G07", "NEGATIVE CONTROL WITH TEETH: every declared BROKEN H variant "
@@ -1461,7 +1583,7 @@ def main() -> int:
     say("  with the record-read I_a(g), and the number where the residual vanishes")
     say(f"  for every one of the {len(pairs)} tested lapse pairs (out of {len(S)} sites).")
     sector, mism = {}, []
-    for rule, _a, _dsc in DECL["rules"]:
+    for rule, _a, _dsc in RULES:
         if arch_of(rule) != "A":
             continue
         for nm in ADM:
@@ -1474,12 +1596,20 @@ def main() -> int:
                                   "sites": len(S)}
             if rule in DECL["transported_rules"] and same != per_site[(rule, nm)]:
                 mism.append(f"{rule}|{nm}")
+    adjudicated = sum(1 for (rule, nm) in sector if rule in DECL["transported_rules"])
     g08 = gate("G08", "SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG "
-               "RULE'S WEIGHT COINCIDES WITH THE RECORD-READ INVERSE METRIC: closure "
-               "IS insertion, over the whole rule x record x site grid",
-               len(mism) == 0, {"cells": len(sector), "mismatches": mism})
+               "RULE'S WEIGHT COINCIDES WITH THE RECORD-READ INVERSE METRIC, over the "
+               "whole rule x record x site grid.  What closure forces is that the "
+               "weight be the record's count-matrix inverse -- a JOINT, not "
+               "link-local, function of the record (G09); nothing external is "
+               "inserted, since by X05 the record and the metric candidate are one "
+               "datum in two coordinate systems",
+               len(mism) == 0, {"cells_in_grid": len(sector),
+                                "cells_adjudicated": adjudicated,
+                                "excluded_rule": DECL["frozen_front_rule"],
+                                "mismatches": mism})
     say(f"  {'rule':14s}" + "".join(f"{nm:11s}" for nm in ADM))
-    for rule, _a, _dsc in DECL["rules"]:
+    for rule, _a, _dsc in RULES:
         if arch_of(rule) != "A":
             continue
         say(f"  {rule:14s}" + "".join(
@@ -1510,14 +1640,22 @@ def main() -> int:
     disclose("X03", "The instrument carries ONE run-mode boolean, DELIVERY_RUN, "
              "identical for every mutant, which decides only whether receipts are "
              "written and the mutant harness is spawned.  It carries no per-mutant "
-             "identity, no gate predicate reads it, and the AST guard (G23) forbids "
-             "every gate-registering function from naming MUTANT, a per-mutant "
-             "switch, or a mutant name.")
+             "identity, and that no gate depends on it is now MEASURED rather than "
+             "asserted: the whole measurement lives in a function that registers every "
+             "gate and reads no run-mode name, the run-mode branch lives in a function "
+             "that registers none, and G23's scanner treats DELIVERY_RUN, "
+             "SELFTEST_ONLY, WRITE_ARTIFACTS and sys.argv as mutant identity under "
+             "another name, with one synthetic injection per channel that it must flag.")
     disclose("X02", "The equivalence measured by G08 is ANALYTICALLY FORCED once G03's "
              "rank is full: rho^i = (Lambda^{ij} - I^{ij}) omega_j vanishes on a "
-             "spanning covector family iff Lambda = I.  It is therefore recorded as a "
-             "DISCLOSURE, not claimed as an independent discovery; the measured content "
-             "is G03's rank, the cell census, and the residual magnitudes below.")
+             "spanning covector family iff Lambda = I.  The same identity forces the "
+             "CLOSED-FORM clause of G06 and the A-insert clauses of G12 and G21; those "
+             "clauses are disclosures, and the measurement in each case is the LITERAL "
+             "five-map route, which the identity does not force (G05, and G06's literal "
+             "clause).  The forcing is conditional on G03, which a declared mutant "
+             "genuinely breaks, so the pair is not vacuous.  The measured content of "
+             "the sector law is G03's rank, the cell census, and the residual "
+             "magnitudes below.")
     say("")
     say("  THE CROSS-TERM WALL.  A-axis is the link-local record-native rule: its")
     say("  weight is diag(1/n_{e_j}), read from the axis interval counts alone.")
@@ -1532,35 +1670,102 @@ def main() -> int:
     say("")
 
     # ======================= 7. LINK LOCALITY =============================
-    say("--- 7. CAN ANY LINK-LOCAL RECORD-NATIVE WEIGHT CLOSE?  (measured) ---")
+    say("--- 7. NO LINK-LOCAL RECORD-NATIVE WEIGHT CLOSES  (theorem, witness gated) ---")
     progress("link locality")
-    witness = None
+    say("  A weight is LINK-LOCAL when Lambda = sum_l f_l(n_l) e_l e_l^T, i.e. each")
+    say("  declared link contributes a weight that is a function of ITS OWN interval")
+    say("  count alone.  At d = 2 that reads, component by component,")
+    say("     Lambda^11 = f_1(n_e1) + f_3(n_diag),  Lambda^22 = f_2(n_e2) + f_3(n_diag),")
+    say("     Lambda^12 = f_3(n_diag).")
+    say("  Closure at a site forces Lambda = I_a(g) there (G08, with G03's full rank),")
+    say("  so f_3(n_diag) = I^12 for EVERY admissible record.  Two admissible records")
+    say("  that share n_diag and demand different I^12 therefore refute the whole")
+    say("  link-local family at once.")
     x0 = (0,) * d
-    cand = [(nm1, nm2, j) for nm1 in ADM for nm2 in ADM for j in range(d)
-            if nm1 < nm2]
-    for (nm1, nm2, j) in cand:
-        if witness is not None:
-            break
-        r1, r2 = recs[nm1], recs[nm2]
-        lk = r1.links[j]
-        if r1.counts[x0][lk] == r2.counts[x0][lk] \
-                and r1.I[x0][j][j] != r2.I[x0][j][j]:
-            witness = {"records": [nm1, nm2], "direction": j, "link": str(lk),
-                       "shared_interval_count": r1.counts[x0][lk],
-                       "I^jj_demanded": [str(r1.I[x0][j][j]), str(r2.I[x0][j][j])],
-                       "other_counts": [str(tuple(r1.counts[x0][t] for t in r1.links)),
-                                        str(tuple(r2.counts[x0][t] for t in r2.links))]}
-    g09 = gate("G09", "A LINK-LOCAL RECORD-NATIVE WEIGHT CANNOT CLOSE IN GENERAL: two "
-               "admissible records AGREE on a link's own interval count yet the "
-               "record-read inverse metric demands DIFFERENT weights there "
-               "(counterexample exhibited, not argued)",
-               witness is not None, {"witness": witness})
-    say(f"  counterexample: {json.dumps(witness)}")
-    say(f"  G09 link-locality obstruction: {'PASS' if g09 else 'FAIL'}")
-    say("  Reading: I^{jj} = adj(q)^{jj} / det q, and det q is a JOINT function of every")
-    say("  link count at the site.  A weight that reads only its own link's count")
-    say("  cannot see it.  Closure therefore requires a rule that computes the")
+    dlk = recs[ADM[0]].links[d]              # the declared diagonal link e_1 + e_2
+    cross_witness = None
+    for nm1 in ADM:
+        for nm2 in ADM:
+            if nm1 >= nm2 or cross_witness is not None:
+                continue
+            r1, r2 = recs[nm1], recs[nm2]
+            if r1.counts[x0][dlk] == r2.counts[x0][dlk] \
+                    and r1.I[x0][0][1] != r2.I[x0][0][1]:
+                cross_witness = {
+                    "records": [nm1, nm2], "link": str(dlk),
+                    "shared_interval_count": r1.counts[x0][dlk],
+                    "f_3_demanded": [str(r1.I[x0][0][1]), str(r2.I[x0][0][1])],
+                    "count_vectors": [str(tuple(r1.counts[x0][t] for t in r1.links)),
+                                      str(tuple(r2.counts[x0][t] for t in r2.links))]}
+    axis_witness = None
+    for nm1 in ADM:
+        for nm2 in ADM:
+            for j in range(d):
+                if nm1 >= nm2 or axis_witness is not None:
+                    continue
+                r1, r2 = recs[nm1], recs[nm2]
+                lk = r1.links[j]
+                if r1.counts[x0][lk] == r2.counts[x0][lk] \
+                        and r1.I[x0][j][j] != r2.I[x0][j][j]:
+                    axis_witness = {
+                        "records": [nm1, nm2], "direction": j, "link": str(lk),
+                        "shared_interval_count": r1.counts[x0][lk],
+                        "I^jj_demanded": [str(r1.I[x0][j][j]), str(r2.I[x0][j][j])],
+                        "count_vectors":
+                            [str(tuple(r1.counts[x0][t] for t in r1.links)),
+                             str(tuple(r2.counts[x0][t] for t in r2.links))]}
+    witness = {"link_local_family": cross_witness,
+               "diagonal_restricted_subfamily": axis_witness}
+    g09 = gate("G09", "NO LINK-LOCAL RECORD-NATIVE WEIGHT CLOSES (theorem, witness "
+               "gated): closure forces Lambda = I_a(g), a link-local weight has "
+               "Lambda^12 = f_3(n_diag) depending on the diagonal link's own count "
+               "alone, and two admissible records SHARE that count while demanding "
+               "different I^12.  The second witness refutes only the "
+               "diagonal-restricted subfamily Lambda^jj = f(n_e_j), and is reported "
+               "as the weaker statement it is",
+               cross_witness is not None and axis_witness is not None,
+               {"witness": witness})
+    say(f"  in-family witness (refutes every link-local weight): "
+        f"{json.dumps(cross_witness)}")
+    say(f"  diagonal-restricted witness (refutes Lambda^jj = f(n_e_j) only): "
+        f"{json.dumps(axis_witness)}")
+    say(f"  G09 link-locality theorem: {'PASS' if g09 else 'FAIL'}")
+    say("  Mechanism: I^{ij} = adj(q)^{ij} / det q, and det q is a JOINT function of")
+    say("  every link count at the site.  A weight that reads only its own link's")
+    say("  count cannot see it.  Closure therefore requires a rule that computes the")
     say("  record's count-matrix inverse -- which is the metric.")
+    lat_max_a = DECL["count_lattice"]["axis_max"]
+    lat_max_c = DECL["count_lattice"]["diag_max"]
+    lat = []
+    for a_ in range(1, lat_max_a + 1):
+        for b_ in range(1, lat_max_a + 1):
+            for c_ in range(1, lat_max_c + 1):
+                q_ = [[Fr(a_), Fr(c_ - a_ - b_, 2)], [Fr(c_ - a_ - b_, 2), Fr(b_)]]
+                if q_[0][0] > 0 and det_exact(q_) > 0:
+                    lat.append((a_, b_, c_, q_, det_exact(q_)))
+    lat_w11 = lat_w12 = 0
+    for i_ in range(len(lat)):
+        a1, b1, c1, q1, d1_ = lat[i_]
+        for j_ in range(i_ + 1, len(lat)):
+            a2, b2, c2, q2, d2_ = lat[j_]
+            if c1 != c2:
+                continue
+            if -q1[0][1] / d1_ != -q2[0][1] / d2_:
+                lat_w12 += 1
+            if a1 == a2 and q1[1][1] / d1_ != q2[1][1] / d2_:
+                lat_w11 += 1
+    g09b = gate("G09B", "THE LINK-LOCALITY WITNESS IS NOT AN ISOLATED ACCIDENT OF THE "
+                "DECLARED NINE: over the declared count lattice the number of "
+                "admissible pairs that share the diagonal count and demand different "
+                "I^12, and that share (n_e1, n_diag) and demand different I^11, is "
+                "censused", True,
+                {"lattice": DECL["count_lattice"], "admissible_points": len(lat),
+                 "pairs_sharing_n_diag_with_different_I12": lat_w12,
+                 "pairs_sharing_n_e1_and_n_diag_with_different_I11": lat_w11},
+                must_pass=False)
+    say(f"  declared count lattice: {len(lat)} admissible count vectors; pairs sharing")
+    say(f"  n_diag but demanding different I^12: {lat_w12}; pairs sharing (n_e1, n_diag)")
+    say(f"  but demanding different I^11: {lat_w11}   (G09B recorded)")
     say("")
 
     # ======================= 8. THE OPERATOR LAYER ========================
@@ -1576,7 +1781,7 @@ def main() -> int:
     plan = [(oprimes[0], S)] + [(pp, S[:1]) for pp in oprimes[1:]]
     for p, site_list in plan:
         n0p = {x: n_base[x] % p for x in S}
-        for rule, _a, _dsc in DECL["rules"]:
+        for rule, _a, _dsc in RULES:
             for nm in ADM:
                 r = recs[nm]
                 bb = beta(r, Na, Mb)
@@ -1684,32 +1889,25 @@ def main() -> int:
     say(f"  flat/curved: G-FLAT {fl_c}, G-CURVED {cu_c}, G-OFFDIAG {of_c}, "
         f"G-CURVOFF {co_c}   (G12 {'PASS' if g12 else 'FAIL'})")
 
-    ord_bad = ord_tested = 0
-    for nm in ADM:
-        r = recs[nm]
-        for (a, b) in pairs[:40]:
-            f1 = residual_field_closed("A-axis", r, lapses[a][1], lapses[b][1])
-            f2 = residual_field_closed("A-axis", r, lapses[b][1], lapses[a][1])
-            ord_tested += 1
-            if any(f1[x][i] != -f2[x][i] for x in S for i in range(d)):
-                ord_bad += 1
     g13 = gate("G13", "UPDATE-ORDER CONTROL: exchanging the two normal labels sends the "
                "residual field to its exact negative at every site, so the measured "
-               "two-cell is genuinely antisymmetric and not an artefact of one order",
-               ord_bad == 0, {"tested": ord_tested, "violations": ord_bad})
-    say(f"  update-order control: {ord_tested} pairs, antisymmetry violations "
-        f"{ord_bad}   (G13 {'PASS' if g13 else 'FAIL'})")
+               "two-cell is genuinely antisymmetric and not an artefact of one order "
+               "-- over EVERY rule, record and ordered lapse pair",
+               ord_bad == 0 and ord_tested == len(RULES) * len(ADM) * len(pairs),
+               {"tested": ord_tested, "violations": ord_bad,
+                "scope": "every (rule, record, ordered lapse pair) cell"})
+    say(f"  update-order control: {ord_tested} cells (every rule, record and ordered "
+        f"pair), antisymmetry violations {ord_bad}   (G13 {'PASS' if g13 else 'FAIL'})")
 
-    progress("chart self-test")
+    progress("chart self-test, the FULL declared chart group")
     cb = dict(_CACHE_STATS)
     chart_bad = chart_tested = 0
+    fresh_tested = fresh_bad = 0
     sigmas = list(itertools.permutations(range(d)))
     shifts = S
+    base_field = {}
     for sigma in sigmas:
-        inv_sigma = [0] * d
-        for i in range(d):
-            inv_sigma[sigma[i]] = i
-        for sh in shifts[:3]:
+        for sh in shifts:
             for nm in ADM:
                 r = recs[nm]
 
@@ -1726,38 +1924,66 @@ def main() -> int:
                     return r.counts[inv_phi[y]][inv_phil[m]]
                 r2 = GeomRecord(f"{r.name}@chart{sigma}{sh}", d, L,
                                rule_fn, W)
-                for (a, b) in pairs[:10]:
+                for (a, b) in pairs:
                     Nn, Mm = lapses[a][1], lapses[b][1]
                     N2 = {phi(x): Nn[x] for x in S}
                     M2 = {phi(x): Mm[x] for x in S}
-                    f1 = residual_field_closed("A-axis", r, Nn, Mm)
+                    if (nm, a, b) not in base_field:
+                        base_field[(nm, a, b)] = residual_field_closed("A-axis", r,
+                                                                      Nn, Mm)
+                    f1 = base_field[(nm, a, b)]
                     f2 = residual_field_closed("A-axis", r2, N2, M2)
                     for x in S:
                         lhs = tuple(f1[x][sigma[i]] for i in range(d))
                         chart_tested += 1
                         if lhs != f2[phi(x)]:
                             chart_bad += 1
-                for x in S:
-                    lambda_of("A-axis", r, x, fresh=True)
+                # the memo is load-bearing above: every comparand is served through
+                # it.  Here the SAME weights are recomputed with the memo BYPASSED
+                # and compared against what the memo returns, on both the base and
+                # the chart-transformed record, so an aliased memo cannot survive.
+                for rr in (r, r2):
+                    for x in S:
+                        fresh_tested += 1
+                        if lambda_of("A-axis", rr, x, fresh=True) \
+                                != lambda_of("A-axis", rr, x):
+                            fresh_bad += 1
+        progress(f"  chart relabelling {sigma} done")
     ca = dict(_CACHE_STATS)
     g14 = gate("G14", "CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT "
-               "under every declared chart translation and direction relabelling, "
-               "measured site by site and component by component on freshly rebuilt "
-               "records", chart_bad == 0,
-               {"tested": chart_tested, "violations": chart_bad,
-                "relabellings": len(sigmas), "translations": len(shifts[:3])})
-    g15 = gate("G15", "THE SELF-TEST'S CACHE PATH IS EXERCISED AND ITS FRESH PATH "
-               "BYPASSES IT (RUNBOOK 14 addenda, v13 #185 / #219: a zero-hit cache gate "
-               "must also gate that the cache path is used at all)",
-               ca["bypass"] > cb["bypass"] and ca["hits"] > 0 and ca["misses"] > 0,
-               {"hits": ca["hits"], "misses": ca["misses"], "fresh_bypasses": ca["bypass"]})
-    say(f"  chart self-test: {chart_tested} component comparisons, violations "
-        f"{chart_bad}   (G14 {'PASS' if g14 else 'FAIL'})")
+               "under EVERY element of the declared chart group -- all |X| translations "
+               "times all d! direction relabellings -- at every admissible record, every "
+               "ordered lapse pair and every site, measured component by component on "
+               "freshly rebuilt records",
+               chart_bad == 0
+               and chart_tested == len(sigmas) * len(shifts) * len(ADM) * len(pairs) * len(S),
+               {"site_comparisons": chart_tested,
+                "component_comparisons": chart_tested * d,
+                "violations": chart_bad,
+                "group_elements": len(sigmas) * len(shifts),
+                "relabellings": len(sigmas), "translations": len(shifts)})
+    g15 = gate("G15", "THE WEIGHT MEMO IS EXERCISED AND ITS RETURNS ARE MEASURED "
+               "CORRECT: the self-test's own comparands are served through the memo, "
+               "and every one of those weights is recomputed with the memo BYPASSED "
+               "and compared against it, on the base record and on the "
+               "chart-transformed record alike (RUNBOOK 14 addenda, v13 #185 / #219: "
+               "a zero-hit cache gate is vacuous, and a cache that is never checked "
+               "against a fresh evaluation is a cache, not a measurement)",
+               ca["bypass"] > cb["bypass"] and ca["hits"] > 0 and ca["misses"] > 0
+               and fresh_bad == 0 and fresh_tested > 0,
+               {"hits": ca["hits"], "misses": ca["misses"],
+                "fresh_bypasses": ca["bypass"],
+                "fresh_vs_memo_compared": fresh_tested,
+                "fresh_vs_memo_disagreements": fresh_bad})
+    say(f"  chart self-test over the full declared group: {chart_tested} site "
+        f"comparisons ({chart_tested * d} components), violations {chart_bad}   "
+        f"(G14 {'PASS' if g14 else 'FAIL'})")
     say(f"  cache hits {ca['hits']}, misses {ca['misses']}, fresh bypasses "
-        f"{ca['bypass']}   (G15 {'PASS' if g15 else 'FAIL'})")
+        f"{ca['bypass']}; fresh-vs-memo compared {fresh_tested}, disagreements "
+        f"{fresh_bad}   (G15 {'PASS' if g15 else 'FAIL'})")
 
     mf_trivial = True
-    for rule, _a, _dsc in DECL["rules"]:
+    for rule, _a, _dsc in RULES:
         for nm in ADM:
             HN, HM = Hmap(rule, recs[nm], Na), Hmap(rule, recs[nm], Mb)
             c = (dict(n_base), {})
@@ -1831,6 +2057,7 @@ def main() -> int:
     progress("detector")
     det_rows, comm_triv, comm_tested = [], 0, 0
     det_nonzero = 0
+    hhh_cmp = hhh_bad = 0
     for rule in ("A-insert", "A-axis", "A-chart"):
         for nm in ADM:
             r = recs[nm]
@@ -1848,6 +2075,26 @@ def main() -> int:
                 jac0 = all(jac[x] == 0 for x in S)
                 if not (front0 and reg0):
                     det_nonzero += 1
+                # the closed form of the displacement, built from the three
+                # TRANSPORTED LAPSE DERIVATIVES and the drag weight alone:
+                #   Delta m^i = Lambda^{ij} ( B d_j C + A d_j B + A d_j C ),
+                #   A = L_{B_ML}N,  B = L_{B_LN}M,  C = L_{B_NM}L,
+                # valid because C(H,D) degenerates here and A + B + C = 0.
+                A3 = lie_lapse(r, B_ML, Nl)
+                B3 = lie_lapse(r, beta(r, Ll, Nl), Ml)
+                C3 = lie_lapse(r, beta(r, Nl, Ml), Ll)
+                pred = {}
+                for x in S:
+                    Lam = lambda_of(rule, r, x)
+                    dC = [Fr(C3[add(x, e, L)] - C3[x]) for e in r.links[:d]]
+                    dB = [Fr(B3[add(x, e, L)] - B3[x]) for e in r.links[:d]]
+                    pred[x] = tuple(
+                        sum((Lam[i][j] * (Fr(B3[x]) * dC[j] + Fr(A3[x]) * dB[j]
+                                          + Fr(A3[x]) * dC[j]) for j in range(d)), Fr(0))
+                        for i in range(d))
+                hhh_cmp += 1
+                if any(pred[x] != dr[x] for x in S):
+                    hhh_bad += 1
                 det_rows.append((rule, nm, f"({a},{b},{c_})", triv, jac0,
                                  front0, reg0,
                                  str(max((abs(t) for v in dr.values() for t in v),
@@ -1880,6 +2127,17 @@ def main() -> int:
         f"nonvanishing at {len(jac_bad)};")
     say(f"  SW_HHH is not the identity at {len(det_bad)} of them "
         f"(Det_HHH > 0 there).")
+    g20b = gate("G20B", "THE THREE-NORMAL DISPLACEMENT HAS AN EXACT CLOSED FORM, AND "
+                "IT IS MEASURED: with the normal-tangential commutator degenerate and "
+                "the Jacobi lapse sum zero, the register displacement of SW_HHH is "
+                "Lambda^{ij}( B d_j C + A d_j B + A d_j C ) in the three transported "
+                "lapse derivatives A = L_{B_ML}N, B = L_{B_LN}M, C = L_{B_NM}L -- "
+                "compared against the LITERAL composition of the three corrected "
+                "switches at every tested triple",
+                hhh_bad == 0 and hhh_cmp == len(det_rows),
+                {"compared": hhh_cmp, "disagreements": hhh_bad})
+    say(f"  SW_HHH closed form vs literal composition: {hhh_cmp} triples, "
+        f"disagreements {hhh_bad}   (G20B {'PASS' if g20b else 'FAIL'})")
     by_rule = {}
     for r_ in det_rows:
         k = r_[0]
@@ -1891,9 +2149,12 @@ def main() -> int:
         say(f"    {k:12s} Det_HHH > 0 at {by_rule[k][0]:3d} of {by_rule[k][1]:3d} "
             f"tested triples")
     say("  READ THIS AGAINST SECTION 6: the metric-inserted rule closes the HH PAIR")
-    say("  residual exactly at every record, and its three-normal detector is")
-    say("  nevertheless nonzero.  Pair closure does not buy HHH closure -- the finite")
-    say("  measurement of v4 paper 12's own reason for building the corrected switch.")
+    say("  residual exactly at every record, and its three-normal object is")
+    say("  nevertheless nonzero.  The comparison is between a CORRECTED pair object")
+    say("  and an UNCORRECTED triple: v4 paper 7 defines no triple-level correction,")
+    say("  so a nonzero SW_HHH is what the definitions predict, and the content is")
+    say("  the exact closed form above -- the finite measurement of v4 paper 12's own")
+    say("  reason for building the corrected switch.")
     say("")
 
     # ======================= 11. GENERAL d ================================
@@ -1907,8 +2168,9 @@ def main() -> int:
     pairs3 = [(a, b) for a in range(len(lp3)) for b in range(len(lp3)) if a != b]
     say(f"  |X| = {len(S3)} sites, {len(recs3)} records, {len(pairs3)} lapse pairs")
     res3 = {}
+    rules3 = [r for r in DECL["rules_d3"] if r in {t[0] for t in RULES}]
     say(f"  {'rule':14s}" + "".join(f"{nm:12s}" for nm in sorted(recs3)))
-    for rule in ("A-chart", "A-axis", "A-linkframe", "A-insert"):
+    for rule in rules3:
         row = f"  {rule:14s}"
         for nm in sorted(recs3):
             r = recs3[nm]
@@ -1935,73 +2197,225 @@ def main() -> int:
 
     # ======================= 12. THE BRIDGE ===============================
     say("=" * 78)
-    say("--- 12. THE DECLARED SECONDARY: CAN R_HH BE EXPRESSED IN THE STITCHING")
-    say("        GEOMETRY'S DATA?  (NT and GEN, receipts hash-pinned at A05/A06)")
+    say("--- 12. THE DECLARED SECONDARY, AS A COORDINATE AUDIT: WHAT DOES R_HH")
+    say("        SHARE WITH THE STITCHING GEOMETRY'S DATA, AND WHAT IS ARENA?")
+    say("        (NT and GEN, receipts hash-pinned at A05/A06)")
     say("=" * 78)
     progress("bridge")
-    say("  12.1  THE HA RESIDUAL AS A HOLONOMY, computed in the coordinate NT and GEN")
-    say("        use: the based closed-loop product of the link transports, counted as")
-    say("        group elements and never as name labels.")
-    p = 5
+    say("  12.1  THE STRUCTURE OF R_HH ON THE REDUCED CARRIER, and its dependence on")
+    say("        the declared reduction prime.  R_HH is formed as an explicit")
+    say("        permutation product and the group it generates is the CYCLIC group")
+    say("        generated by that one permutation -- not a loop product of link")
+    say("        transports, and not a multi-generator group.")
     r = recs["G-OFFDIAG"]
-    n_sym = {x: (x[0] * x[1]) % p for x in S}          # symmetric under the swap
-    N_sym = {y: (1 if y == (0, 0) else 0) for y in S}  # symmetric
-    M_sym = {y: (1 if y in ((0, 1), (1, 0)) else 0) for y in S}   # symmetric
+    N_sym = {y: (1 if y == (0, 0) else 0) for y in S}             # swap-symmetric
+    M_sym = {y: (1 if y in ((0, 1), (1, 0)) else 0) for y in S}   # swap-symmetric
     xs = (0, 0)
-    RC = ReducedCarrier(r, p, n_sym, [N_sym, M_sym], xs)
-    PN, PM = RC.perm_H("A-axis", N_sym, None), RC.perm_H("A-axis", M_sym, None)
-    bb = beta(r, N_sym, M_sym)
-    PD = RC.perm_D({x: tuple(-bb[x][i] for i in range(d)) for x in S})
-    R_HA = perm_compose(PN, perm_compose(PM, perm_compose(
-        perm_inv(PN), perm_compose(perm_inv(PM), PD))))
-    ha_group = sorted(group_closure([tuple(R_HA)], tuple(range(RC.size))))
-    ha_order = len(ha_group)
-    ha_abelian = all(perm_mul(list(g1), list(g2)) == perm_mul(list(g2), list(g1))
-                     for g1 in ha_group for g2 in ha_group)
-    ha_exponents = sorted({perm_order(list(g)) for g in ha_group})
-    say(f"        carrier {RC.size}; HA residual holonomy group order {ha_order}, "
-        f"abelian {ha_abelian}, element orders {ha_exponents}")
+    rho_exact = residual_field_closed("A-axis", r, N_sym, M_sym)[xs]
 
-    say("  12.2  GEN's OWN STRUCTURAL RELATIONS, tested on the HA residual, with GEN's")
-    say("        own defect as the positive control.")
+    def ha_sigma(RC_):
+        out = [0] * RC_.size
+        for fi, f in enumerate(RC_.fronts):
+            key = tuple(sorted({x: f[(x[1], x[0])] for x in S}.items()))
+            fj = RC_.front_index.get(key)
+            if fj is None:
+                return None
+            for reg in RC_.regs:
+                out[RC_.code(fi, reg)] = RC_.code(fj, (reg[1], reg[0]))
+        return out
+
+    prime_rows = []
+    trans_ok = trans_tested = 0
+    RC = SIG = R_HA = None
+    for pp in sweep_primes():
+        n_symp = {x: (x[0] * x[1]) % pp for x in S}   # symmetric under the swap
+        RCp = ReducedCarrier(r, pp, n_symp, [N_sym, M_sym], xs)
+        PN, PM = RCp.perm_H("A-axis", N_sym, None), RCp.perm_H("A-axis", M_sym, None)
+        bb = beta(r, N_sym, M_sym)
+        PD = RCp.perm_D({x: tuple(-bb[x][i] for i in range(d)) for x in S})
+        Rp = perm_compose(PN, perm_compose(PM, perm_compose(
+            perm_inv(PN), perm_compose(perm_inv(PM), PD))))
+        grp = sorted(group_closure([tuple(Rp)], tuple(range(RCp.size))))
+        abelian = all(perm_mul(list(g1), list(g2)) == perm_mul(list(g2), list(g1))
+                      for g1 in grp for g2 in grp)
+        exps = sorted({perm_order(list(g)) for g in grp})
+        rho_p = tuple(to_Fp(v, pp) for v in rho_exact)
+        # is R_HH exactly the translation of the address register by rho mod p?
+        trans_tested += 1
+        if None not in rho_p and all(
+                Rp[RCp.code(fi, reg)] == RCp.code(
+                    fi, tuple((reg[i] + rho_p[i]) % pp for i in range(d)))
+                for fi in range(len(RCp.fronts)) for reg in RCp.regs):
+            trans_ok += 1
+        SIGp = ha_sigma(RCp)
+        dih_p = None if SIGp is None else \
+            (perm_mul(SIGp, perm_mul(Rp, SIGp)) == perm_inv(Rp))
+        prime_rows.append({"p": pp, "carrier": RCp.size, "group_order": len(grp),
+                           "abelian": abelian, "element_orders": exps,
+                           "rho_mod_p": list(rho_p), "sigma_relation": dih_p})
+        if RC is None:
+            RC, SIG, R_HA = RCp, SIGp, Rp
+            ha_group, ha_order = grp, len(grp)
+            ha_abelian, ha_exponents = abelian, exps
+        progress(f"  bridge prime {pp}")
+    p = prime_rows[0]["p"]
+    say(f"        exact rational residual at the detector site: {rho_exact} -- the "
+        f"SAME at every prime")
+    say(f"        {'p':5s}{'carrier':10s}{'|<R>|':8s}{'abelian':9s}{'elt orders':14s}"
+        f"{'rho mod p':12s}SigmaRSigma=R^-1")
+    for row in prime_rows:
+        say(f"        {row['p']:<5d}{row['carrier']:<10d}{row['group_order']:<8d}"
+            f"{str(row['abelian']):9s}{str(row['element_orders']):14s}"
+            f"{str(row['rho_mod_p']):12s}{row['sigma_relation']}")
+    orders = [row["group_order"] for row in prime_rows]
+    swept = [row["p"] for row in prime_rows]
+    order_is_prime = (orders == swept)
+    g29 = gate("G29", "R_HH ACTS ON THE REDUCED CARRIER AS THE TRANSLATION OF THE "
+               "ADDRESS REGISTER BY rho mod p, MEASURED PERMUTATION BY PERMUTATION: "
+               "the front sector returns to itself and every configuration is moved by "
+               "the same register shift, so <R_HH> is cyclic of order p whenever rho is "
+               "nonzero mod p -- the group is read off the arena, not off the physics",
+               trans_ok == trans_tested and trans_tested > 0,
+               {"primes": swept, "carriers_checked": trans_tested,
+                "translation_structure_confirmed": trans_ok})
+    g30 = gate("G30", "THE HOLONOMY ORDER IS AN ARENA COORDINATE, NOT A PROPERTY OF "
+               "R_HH (RUNBOOK 15): swept over the declared primes the measured group "
+               "order EQUALS the declared prime at every one, while the exact rational "
+               "residual is prime-independent.  A quantity that moves with the arena "
+               "may serve as an instrument reading and may not enter as a conclusion",
+               order_is_prime and len(set(orders)) == len(orders) and len(orders) > 1,
+               {"primes": swept, "measured_orders": orders,
+                "order_equals_the_declared_prime": order_is_prime,
+                "exact_residual": [str(t) for t in rho_exact],
+                "residual_is_prime_independent": True})
+    say(f"        G29 translation structure: {'PASS' if g29 else 'FAIL'}   "
+        f"(<R> is cyclic of order p at every swept prime)")
+    say(f"        G30 arena-determinism: {'PASS' if g30 else 'FAIL'}   "
+        f"measured orders {orders} against declared primes {swept}")
+    say("")
+
+    say("  12.2  GEN's OWN RELATIONS, AND THE SPECTRUM THE COMPARISON MUST USE.")
     D_gen = gen_defect(Q_declared)
     gen_dih = perm_mul(S9, perm_mul(D_gen, S9)) == perm_inv(D_gen)
     gen_ord = perm_order(D_gen)
-    say(f"        [positive control] GEN's declared defect: order {gen_ord}, "
-        f"Sigma D Sigma = D^-1 : {gen_dih}")
+    # a permutation that is NOT of the sandwich form Sigma Q^-1 Sigma Q
+    P_ctrl = list(range(9))
+    P_ctrl[0], P_ctrl[1], P_ctrl[2] = P_ctrl[1], P_ctrl[2], P_ctrl[0]
+    ctrl_dih = perm_mul(S9, perm_mul(P_ctrl, S9)) == perm_inv(P_ctrl)
+    say(f"        GEN's declared defect: order {gen_ord}, Sigma D Sigma = D^-1 : "
+        f"{gen_dih}")
+    say("        DISCLOSURE X06: that relation is ANALYTICALLY FORCED for every")
+    say("        completion -- with D = Sigma Q^-1 Sigma Q and Sigma^2 = id,")
+    say("        Sigma D Sigma = (Sigma Q^-1 Sigma Q)^-1 = D^-1 identically, which is")
+    say("        why A16 counts 0 failures over all 40320 members.  It is a disclosure,")
+    say("        not a discriminating control.  The relation is not vacuous for")
+    say("        arbitrary permutations -- a declared 3-cycle outside the sandwich form")
+    say(f"        satisfies it: {ctrl_dih} -- it is forced for every COMPLETION.")
+    disclose("X06", "GEN's dihedral relation Sigma D Sigma = D^-1 is analytically "
+             "forced for every completion Q by Sigma^2 = id and D = Sigma Q^-1 Sigma Q, "
+             "so A16's 0 failures over 40320 members and the 'positive control' reading "
+             "of the relation are disclosures, not discriminating measurements; a "
+             "declared permutation outside the sandwich form is exhibited against it",
+             {"declared_3_cycle_satisfies_the_relation": ctrl_dih})
+    comp_spec = comparator_spectrum(sorted(defect_spectrum),
+                                    holonomy_spectrum)
+    say("        GEN publishes TWO spectra, and BOTH are computed here from the")
+    say(f"        completion census: the DEFECT order spectrum {sorted(defect_spectrum)}")
+    say(f"        (multiplicities {dict(defect_spectrum)}) and the derived HOLONOMY")
+    say(f"        order spectrum {holonomy_spectrum}.  The coordinate table pairs R_HH")
+    say("        with GEN's DEFECT D, so the defect spectrum is the like-for-like")
+    say("        comparator; comparing HA against one and GEN against the other would")
+    say("        be a class-vs-class verdict read at two coordinates (RUNBOOK 15).")
+    memb = {row["p"]: (row["group_order"] in comp_spec) for row in prime_rows}
+    mult = {row["p"]: defect_spectrum.get(row["group_order"], 0) for row in prime_rows}
+    for row in prime_rows:
+        pp = row["p"]
+        say(f"          order {row['group_order']:<3d} at p = {pp:<3d} in the defect "
+            f"spectrum: {str(memb[pp]):6s} (multiplicity {mult[pp]} of "
+            f"{sum(defect_spectrum.values())})")
+    g31 = gate("G31", "THE SPECTRUM COMPARISON IS ARENA-DEPENDENT TOO, AND IS RUN "
+               "AGAINST THE COMPUTED DEFECT SPECTRUM RATHER THAN A TYPED TUPLE: the "
+               "measured holonomy order lies in GEN's own defect order spectrum at some "
+               "declared primes and outside it at others, so membership is a property "
+               "of the reduction prime and not of R_HH",
+               len(set(memb.values())) > 1,
+               {"membership_by_prime": memb, "multiplicity_by_prime": mult,
+                "comparator": "GEN's defect order spectrum, computed at A14",
+                "defect_spectrum": dict(defect_spectrum),
+                "holonomy_spectrum": holonomy_spectrum})
+    say(f"        G31 spectrum comparison: {'PASS' if g31 else 'FAIL'}   "
+        f"membership by prime {memb}")
+    say("")
 
-    def ha_sigma(RC):
-        out = [0] * RC.size
-        for fi, f in enumerate(RC.fronts):
-            key = tuple(sorted({x: f[(x[1], x[0])] for x in S}.items()))
-            fj = RC.front_index.get(key)
-            if fj is None:
-                return None
-            for reg in RC.regs:
-                out[RC.code(fi, reg)] = RC.code(fj, (reg[1], reg[0]))
-        return out
-    SIG = ha_sigma(RC)
-    say(f"        the declared chart involution preserves the front sector: "
-        f"{SIG is not None}")
-    ha_dih = None
-    dih_hold = dih_tested = 0
-    if SIG is not None:
-        ha_dih = (perm_mul(SIG, perm_mul(R_HA, SIG)) == perm_inv(R_HA))
-        for (a, b) in pairs[:24]:
+    say("  12.3  THE Sigma-RELATION CENSUS, decomposed.  Sigma is the declared chart")
+    say("        involution; on the reduced carrier it exists only where the front")
+    say("        sector is swap-closed, and the relation Sigma R Sigma = R^-1 is")
+    say("        POSABLE only there.  Three readings are reported, not one.")
+    n_sym = {x: (x[0] * x[1]) % p for x in S}
+    ha_dih = None if SIG is None else (perm_mul(SIG, perm_mul(R_HA, SIG))
+                                       == perm_inv(R_HA))
+    rel_rows = {}
+    for setname, PS in (("first-24", pairs[:24]), ("all", pairs)):
+        sur = sur_vac = full = 0
+        cdef = chold = cid = 0
+        for (a, b) in PS:
             Nn, Mm = lapses[a][1], lapses[b][1]
-            rho = residual_field_closed("A-axis", r, Nn, Mm)[xs]
-            dih_tested += 1
-            if rho[0] + rho[1] == 0:
-                dih_hold += 1
-    say(f"        HA: Sigma R Sigma = R^-1 at the declared loop : {ha_dih}")
-    say(f"        over {dih_tested} further lapse pairs the same relation holds at "
-        f"{dih_hold} of them")
+            f = sigma_fields[(a, b)]
+            if f[xs][0] + f[xs][1] == 0:
+                sur += 1
+                if all(t == 0 for t in f[xs]):
+                    sur_vac += 1
+            if all(f[x][0] + f[x][1] == 0 for x in S):
+                full += 1
+            RCq = ReducedCarrier(r, p, n_sym, [Nn, Mm], xs)
+            PNq, PMq = RCq.perm_H("A-axis", Nn, None), RCq.perm_H("A-axis", Mm, None)
+            bq = beta(r, Nn, Mm)
+            PDq = RCq.perm_D({x: tuple(-bq[x][i] for i in range(d)) for x in S})
+            if PNq is None or PMq is None or PDq is None:
+                continue
+            Rq = perm_compose(PNq, perm_compose(PMq, perm_compose(
+                perm_inv(PNq), perm_compose(perm_inv(PMq), PDq))))
+            SIGq = ha_sigma(RCq)
+            if SIGq is None:
+                continue
+            cdef += 1
+            if perm_mul(SIGq, perm_mul(Rq, SIGq)) == perm_inv(Rq):
+                chold += 1
+                if Rq == list(range(RCq.size)):
+                    cid += 1
+        rel_rows[setname] = {
+            "pairs": len(PS), "surrogate_holds": sur,
+            "surrogate_holds_vacuously": sur_vac,
+            "full_field_relation_holds": full,
+            "carrier_relation_posable": cdef, "carrier_relation_holds": chold,
+            "carrier_relation_holds_at_the_identity": cid}
+        say(f"        [{setname}] of {len(PS)} ordered pairs: the single-site surrogate "
+            f"rho_1 + rho_2 = 0")
+        say(f"          holds at {sur}, of which {sur_vac} are cells where R_HH is the "
+            f"identity at the")
+        say(f"          detector site; the SAME relation stated over the whole field "
+            f"holds at {full};")
+        say(f"          the carrier-level relation is POSABLE (Sigma exists) at "
+            f"{cdef} and holds at")
+        say(f"          {chold}, of which {cid} are cells where R_HH is the identity.")
+    g32 = gate("G32", "THE Sigma-RELATION CENSUS IS REPORTED AT EVERY READING RATHER "
+               "THAN AT THE ONE THAT FLATTERS: the single-site surrogate, the "
+               "whole-field statement and the carrier-level group relation are counted "
+               "separately, each against its own honest denominator, with the "
+               "vacuous cells (R_HH = id) separated out; the tested sets are declared, "
+               "not selected", True, {"sets": DECL["relation_sets"], "census": rel_rows},
+               must_pass=False)
+    say(f"        HA at the declared loop: Sigma R Sigma = R^-1 : {ha_dih}   "
+        f"(G32 recorded)")
+    say("")
 
-    say("  12.3  THE COORDINATE TABLE.  A stitching-geometry expression of R_HH needs a")
-    say("        committed coordinate at which the compared objects both live.")
+    say("  12.4  THE COORDINATE TABLE.  An expression of R_HH in the stitching")
+    say("        geometry's data needs a committed coordinate at which the compared")
+    say("        objects both live.  Sizes are reported as sizes; equal cardinality is")
+    say("        neither necessary nor sufficient for a carrier morphism to exist.")
     coord_rows = [
         ("carrier", "36 (q_A,q_B,p_A,p_B) [NT] / 81 (s_A,s_B,p_A,p_B) [GEN]",
-         f"{RC.size} total records = front sector x address register"),
+         f"p^(k+d) total records = front sector x register ({RC.size} at p={p})"),
         ("family", "6 settings x 2 frames [NT] / 6 settings [GEN]",
          f"{len(DECL['rules'])} drag rules x {len(ADM)} geometry records"),
         ("law", "the declared legs U_prep, U_A(a), U_B(b)",
@@ -2010,72 +2424,175 @@ def main() -> int:
         ("arena", "(frame, read time) nodes, co-reference identifications",
          "(record site, front sector), normal and tangential comparison maps"),
         ("structure group", "Klein four {1,W,X,WX} [NT] / dihedral order 2n [GEN]",
-         f"elementary abelian of exponent {p}, order {ha_order} here"),
+         "cyclic of order p -- the DECLARED prime (G30)"),
         ("defect construction", "D = P_W U^-1 P_W U = (Sigma V^T Sigma V) (x) I_9",
          "R_HH = C(H[N],H[M]) D[-beta_a(g;N,M)]"),
     ]
     say(f"        {'coordinate':20s}{'NT / GEN':52s}HA")
     for (c_, a_, b_) in coord_rows:
         say(f"        {c_:20s}{a_[:50]:52s}{b_[:46]}")
-    carrier_match = RC.size in (36, 81)
-    in_spectrum = ha_order in (1, 4, 6, 8, 10, 12, 14, 30)
-    is_klein = (ha_order == 4 and ha_abelian and ha_exponents in ([1, 2], [2], [1]))
-    posable = bridge_posable(carrier_match, in_spectrum, bool(ha_dih))
+    carrier_sizes = sorted({row["carrier"] for row in prime_rows})
+    g22 = gate("G22", "COORDINATE REPORT (recorded, not a verdict): the compared "
+               "objects' coordinates are tabulated as measured.  NO POSABILITY "
+               "PREDICATE IS EVALUATED HERE -- the delivered one could not return its "
+               "other value anywhere in the declared arena, and a criterion that "
+               "cannot come out otherwise decides nothing (RUNBOOK 4).  What is "
+               "measured: the carriers are different sizes with different "
+               "factorisations, no map between them is committed anywhere, and GEN's "
+               "relation fails for R_HH wherever R_HH is nontrivial",
+               True,
+               {"ha_carrier_sizes": carrier_sizes,
+                "nt_gen_carrier_sizes": [36, 81],
+                "ha_group_orders": orders,
+                "ha_group_is_cyclic_on_one_generator": True,
+                "nt_group": "Klein four (two generators)",
+                "gen_group": "dihedral of order 2n",
+                "dihedral_relation_on_R_HH_at_the_declared_loop": ha_dih,
+                "committed_carrier_morphism": None,
+                "morphism_census_run": False}, must_pass=False)
     say("")
-    say(f"        carrier size matches a committed NT/GEN carrier   : {carrier_match}")
-    say(f"        HA holonomy order in GEN's measured spectrum       : {in_spectrum}"
-        f"   (order {ha_order}; spectrum {{1,4,6,8,10,12,14,30}})")
-    say(f"        HA holonomy group is NT/GEN's Klein four-group     : {is_klein}")
-    say(f"        GEN's defining relation Sigma D Sigma = D^-1 holds : {ha_dih}")
-    g22 = gate("G22", "BRIDGE POSABILITY IS DECIDED BY THE COORDINATE TABLE AND BY GEN's "
-               "OWN DEFINING RELATION, both measured: an expression of R_HH in the "
-               "stitching geometry's data requires a committed carrier match AND a "
-               "structure group in GEN's measured family AND the dihedral relation; "
-               "the positive control is that GEN's own defect satisfies the relation",
-               gen_dih and (not posable),
-               {"carrier_match": carrier_match, "ha_group_order": ha_order,
-                "ha_abelian": ha_abelian, "ha_element_orders": ha_exponents,
-                "in_gen_spectrum": in_spectrum, "is_klein": is_klein,
-                "dihedral_relation_on_R_HH": ha_dih,
-                "dihedral_relation_over_further_pairs": f"{dih_hold}/{dih_tested}",
-                "positive_control_gen_defect_relation": gen_dih,
-                "posable": posable})
+    say("        WHAT IS MEASURED, AND WHAT IS NOT.")
+    say("        Measured: the carriers are different sizes with different")
+    say("        factorisations; HA's group is cyclic on ONE generator while NT's is")
+    say("        Klein four and GEN's is dihedral, both multi-generator; and GEN's")
+    say("        relation Sigma D Sigma = D^-1 fails for R_HH at every tested cell")
+    say("        where R_HH is nontrivial (12.3).  NOT measured: any census of")
+    say("        candidate carrier morphisms.  None was run, so nothing here is a")
+    say("        nonexistence statement.  The order of the group and its membership in")
+    say("        GEN's spectrum are ARENA COORDINATES (G30, G31) and are excluded from")
+    say("        the argument.  THE MORPHISM QUESTION IS OPEN and is bequeathed to a")
+    say("        successor unit; no HA-BRIDGE outcome is entered by this run.")
     say("")
-    say(f"        BRIDGE VERDICT: {'POSABLE' if posable else 'NOT POSABLE'}   "
-        f"(G22 {'PASS' if g22 else 'FAIL'})")
-    if not posable:
-        say("        NAMED OBSTRUCTION -- NO COMMITTED CARRIER MORPHISM.  The stitching")
-        say("        geometry's defect law is a statement about a fixed 81-element (or")
-        say("        36-element) process carrier factorised as a system pair times a")
-        say("        pointer pair, with Sigma the pair-label exchange and the defect the")
-        say("        failure of a declared completion to intertwine that exchange.  R_HH")
-        say("        lives on total matter-geometry records with no such factorisation,")
-        say("        no exchange-typed completion, and no committed map to that carrier.")
-        say("        The measured consequences: the HA holonomy group has order "
-            f"{ha_order},")
-        say(f"        exponent {p}, which is {'in' if in_spectrum else 'NOT in'} GEN's "
-            f"measured order spectrum; and GEN's defining relation is measured")
-        say(f"        {'to hold' if ha_dih else 'NOT to hold'} for R_HH, while the same "
-            f"relation is measured to hold for")
-        say("        GEN's own defect (the positive control).")
+
+    # ======================= 12B. THE CENSUS'S OWN COMPLETENESS ===========
+    say("--- 12B. CELL COMPLETENESS AND INEQUIVALENT RECOVERED TENSORS ---")
+    progress("census completeness")
+    exp_closure = len(DECL["rules"]) * len(ADM)
+    exp_sector = len([t for t in DECL["rules"] if arch_of(t[0]) == "A"]) * len(ADM)
+    exp_d3 = len(DECL["rules_d3"]) * len([nm for nm in recs3 if recs3[nm].admissible])
+    g26 = gate("G26", "EVERY DECLARED CELL IS PRESENT: the closure table, the sector-law "
+               "grid and the d = 3 grid each carry exactly the number of cells their "
+               "DECLARATIONS require, so a silently dropped rule or record cannot shrink "
+               "a census without failing here (RUNBOOK 13 addendum, v13 #234)",
+               len(results) == exp_closure and len(sector) == exp_sector
+               and len(res3) == exp_d3
+               and fields_computed == exp_closure * len(pairs),
+               {"closure_cells": len(results), "closure_cells_declared": exp_closure,
+                "sector_cells": len(sector), "sector_cells_declared": exp_sector,
+                "d3_cells": len(res3), "d3_cells_declared": exp_d3,
+                "residual_fields_computed": fields_computed,
+                "residual_fields_declared": exp_closure * len(pairs)})
+    say(f"  closure table {len(results)}/{exp_closure} cells; sector grid "
+        f"{len(sector)}/{exp_sector}; d=3 grid {len(res3)}/{exp_d3}; residual fields "
+        f"{fields_computed}/{exp_closure * len(pairs)}   (G26 {'PASS' if g26 else 'FAIL'})")
+
+    tensor_rec = "G-OFFDIAG"
+    rT = recs[tensor_rec]
+    lam_classes: dict = {}
+    for rule, _a, _dsc in RULES:
+        if arch_of(rule) != "A":
+            continue
+        sig = tuple(tuple(tuple(row) for row in lambda_of(rule, rT, x)) for x in S)
+        lam_classes.setdefault(sig, []).append(rule)
+    law_classes: dict = {}
+    for rule, _a, _dsc in RULES:
+        sig = tuple(tuple(residual_field_closed(rule, rT, lapses[a][1],
+                                                lapses[b][1])[x] for x in S)
+                    for (a, b) in pairs)
+        law_classes.setdefault(sig, []).append(rule)
+    g27 = gate("G27", "THE KILL'S SECOND DISJUNCT FIRES, MEASURED: on ONE record the "
+               "declared family supplies pairwise-INEQUIVALENT recovered tensors -- the "
+               "recovered tensor of an architecture-A rule IS its weight field, since "
+               "the commutator's displacement is Lambda^{ij} omega_j -- so the same "
+               "record law permits inequivalent recovered tensors, over the complete "
+               "declared family",
+               len(lam_classes) > 1 and len(law_classes) > 1
+               and sum(len(v) for v in law_classes.values()) == len(DECL["rules"]),
+               {"record": tensor_rec,
+                "distinct_recovered_tensors_archA": len(lam_classes),
+                "archA_rules": sum(len(v) for v in lam_classes.values()),
+                "recovered_tensor_classes": sorted(sorted(v) for v in
+                                                   lam_classes.values()),
+                "distinct_residual_laws": len(law_classes),
+                "rules": sum(len(v) for v in law_classes.values()),
+                "residual_law_classes": sorted(sorted(v) for v in law_classes.values())})
+    say(f"  at {tensor_rec}: {len(lam_classes)} pairwise-distinct recovered tensors over "
+        f"the {sum(len(v) for v in lam_classes.values())} architecture-A rules")
+    for v in sorted(sorted(v) for v in lam_classes.values()):
+        say(f"      {v}")
+    say(f"  and {len(law_classes)} pairwise-distinct residual laws over all "
+        f"{sum(len(v) for v in law_classes.values())} declared rules "
+        f"(G27 {'PASS' if g27 else 'FAIL'})")
+    for v in sorted(sorted(v) for v in law_classes.values()):
+        say(f"      {v}")
+    say("")
+
+    # ======================= 12C. THE READOUT AS A RE-ENCODING ============
+    say("--- 12C. THE READOUT IS AN INVERTIBLE LINEAR RE-ENCODING ---")
+    reenc_ok = reenc_tested = 0
+    for nm in ADM:
+        rr = recs[nm]
+        for x in S:
+            reenc_tested += 1
+            if all(sum(rr.q[x][i][j] * lk[i] * lk[j] for i in range(d)
+                       for j in range(d)) == rr.counts[x][lk] for lk in rr.links):
+                reenc_ok += 1
+    idx = sym_index(d)
+    readout_matrix = [[Fr(lk[i] * lk[j] * (1 if i == j else 2)) for (i, j) in idx]
+                      for lk in sorted(recs[ADM[0]].links)]
+    readout_det = det_exact(readout_matrix)
+    g28 = gate("G28", "THE MAP FROM THE SITE'S LINK COUNTS TO THE COMPONENTS OF q IS "
+               "LINEAR AND INVERTIBLE (determinant computed, exact): the geometry "
+               "record and the metric candidate are THE SAME DATUM in two coordinate "
+               "systems, and reading one off the other is a change of coordinates, not "
+               "a reconstruction.  Recorded, because it is forced by the declared link "
+               "set rather than discovered", True,
+               {"readout_determinant": str(readout_det),
+                "invertible": readout_det != 0,
+                "sites_where_q_reproduces_every_count": reenc_ok,
+                "sites_tested": reenc_tested,
+                "links": len(recs[ADM[0]].links),
+                "independent_components_of_q": len(idx)}, must_pass=False)
+    say(f"  counts -> q is linear with exact determinant {readout_det}; q reproduces "
+        f"every declared link count at {reenc_ok} of {reenc_tested} sites (G28 recorded)")
+    disclose("X05", "The readout is an INVERTIBLE LINEAR RE-ENCODING of the record: at "
+             "the declared arena the link counts and the components of q determine each "
+             "other exactly, so 'the metric candidate' and 'the geometry record' are one "
+             "datum in two coordinate systems.  Two consequences are owned here.  (i) "
+             "GW1 1.2's fourth exclusion -- 'algebraic data equivalent to the target "
+             "metric' -- is VACUOUS at this arena: every record-native rule has access "
+             "to data equivalent to the metric by construction, so that clause cannot "
+             "discriminate here and the unit's claim is about WHICH FUNCTION of the "
+             "counts a rule computes, not about what data it can see.  (ii) The "
+             "no-smuggling result of this unit is therefore an identity read in count "
+             "coordinates, not a derivation of geometry from something else.",
+             {"readout_determinant": str(readout_det)})
     say("")
 
     # ======================= 13. AST GUARD ================================
     say("--- 13. THE AST GUARD (RUNBOOK 14 addendum, v13 #208) ---")
     offenders = ast_mutant_scan(src)
+    decoys = {
+        "gate_decoy_mutant": "return gate('D1', 'decoy', MUTANT is None)",
+        "gate_decoy_delivery": "return gate('D2', 'decoy', DELIVERY_RUN)",
+        "gate_decoy_selftest": "return gate('D3', 'decoy', SELFTEST_ONLY)",
+        "gate_decoy_argv": "return gate('D4', 'decoy', len(sys.argv) > 1)",
+    }
     injected = src.replace(
         "def ast_mutant_scan(",
-        "def gate_decoy_injected():\n"
-        "    return gate('DECOY', 'decoy', MUTANT is None)\n\n\n"
-        "def ast_mutant_scan(", 1)
+        "".join(f"def {nm_}():\n    {body}\n\n\n" for nm_, body in decoys.items())
+        + "def ast_mutant_scan(", 1)
     inj = ast_mutant_scan(injected)
-    g23 = gate("G23", "NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (neither "
-               "MUTANT, nor a module switch, nor a mutant-name literal), and the scanner "
-               "is validated by a synthetic injection that it MUST flag",
-               offenders == [] and "gate_decoy_injected" in inj,
-               {"offenders": offenders, "injection_flagged": inj})
-    say(f"  gate-registering functions referencing mutant identity: {offenders}")
-    say(f"  synthetic injection flagged by the scanner            : {inj}")
+    g23 = gate("G23", "NO GATE-REGISTERING FUNCTION REFERENCES RUN-MODE IDENTITY -- "
+               "neither MUTANT, nor a module switch, nor a mutant-name literal, nor a "
+               "run-mode boolean (DELIVERY_RUN is mutant identity under another name), "
+               "nor sys.argv -- and the scanner is validated by FOUR synthetic "
+               "injections, one per channel, every one of which it must flag",
+               offenders == [] and all(nm_ in inj for nm_ in decoys),
+               {"offenders": offenders, "injection_flagged": inj,
+                "decoy_channels": sorted(decoys)})
+    say(f"  gate-registering functions referencing run-mode identity: {offenders}")
+    say(f"  synthetic injections flagged by the scanner             : {inj}")
     say(f"  G23 AST guard: {'PASS' if g23 else 'FAIL'}")
     say("")
 
@@ -2105,57 +2622,73 @@ def main() -> int:
     say(f"  G24 float sweep: {'PASS' if g24 else 'FAIL'}")
     say("")
 
-    # ======================= 14. GATES AND VERDICT ========================
+    # ======================= 14. THE VERDICT, DERIVED IN A GATE ===========
+    say("--- 14. VERDICT ---")
+    pre = [g["id"] for g in GATES if g["must_pass"] and not g["passed"]]
+    ha_runnable = (g04 and g05 and g10 and g10b and g11 and len(pre) == 0)
+    bridge_token = "HA-BRIDGE-NOT-ENTERED"
+    verdict = derive_verdict(ha_runnable, bridge_token)
+    printed = "  " + " + ".join(verdict)
+    say(printed)
+    expect_runnable = (g04 and g05 and g10 and g10b and g11
+                       and not [g["id"] for g in GATES
+                                if g["must_pass"] and not g["passed"]])
+    expect = (["HA-RUNNABLE"] if expect_runnable
+              else ["HA-STILL-BLOCKED"]) + [bridge_token]
+    g25 = gate("G25", "THE PRINTED VERDICT IS DERIVED INSIDE THIS GATE FROM THE "
+               "MEASURED COUNTS AND COMPARED, STRING BY STRING, TO WHAT THE RUN "
+               "PRINTED (RUNBOOK 13 addendum, v13 #234: an ungated verdict is a typo "
+               "away from fiction).  The runnable component is recomputed here from "
+               "the same measured gate outcomes and from the failure count over the "
+               "must-pass gates registered before the verdict; the secondary component "
+               "is NOT-ENTERED because no posability predicate is evaluated anywhere "
+               "in this run",
+               verdict == expect and printed == "  " + " + ".join(expect),
+               {"printed": verdict, "derived_here": expect})
+    say(f"  G25 verdict derivation: {'PASS' if g25 else 'FAIL'}")
+    say("")
+    if ha_runnable:
+        say("  A record-native H_a[N] EXISTS at finite N.  It is constructed on total")
+        say("  finite matter-geometry records, measured invertible, lapse-profiled, and")
+        say("  its second normal step is transported along the first.  The GW1 residual")
+        say("  R_HH RUNS, at the committed finite scope, as an exact rational field and")
+        say("  as an actual operator on a finite total-configuration carrier.")
+        say("")
+        say("  THE CLOSURE RESULT: CLOSURE ON THE DIAGONAL SECTOR, ANOMALY AT THE CROSS")
+        say("  TERM.  The link-local record-native rule closes on every record whose")
+        say("  order+count readout is diagonal -- flat and inhomogeneous alike, at d = 2")
+        say("  and at d = 3 -- and fails at every record whose readout carries a nonzero")
+        say("  cross term, because I^{ij} = adj(q)^{ij}/det q and det q is a joint")
+        say("  function of the site's link counts that no link-local rule reads (G09).")
+        say("  Site by site, the residual vanishes exactly where the drag weight IS the")
+        say("  record-read inverse metric (G08).  That equality is what closure means")
+        say("  here, and the recovered tensor is the rule's own weight: on ONE record")
+        say("  the declared family supplies pairwise-inequivalent recovered tensors")
+        say("  (G27), which is the second disjunct of GW1's kill condition, measured.")
+    else:
+        say("  THE UNIT IS BLOCKED: at least one must-pass gate failed, so no")
+        say("  construction or closure statement is made by this run.")
+    say("")
+    say("  THE DECLARED SECONDARY IS NOT DECIDED HERE.  Section 12 is a coordinate")
+    say("  audit: it reports what R_HH and the stitching geometry share and what is")
+    say("  arena.  No posability predicate is evaluated, no morphism census is run,")
+    say("  and no HA-BRIDGE outcome is entered.  THE MORPHISM QUESTION IS OPEN.")
+    say("")
+
+    # ======================= 15. THE GATE TABLE ===========================
     must = [g for g in GATES if g["must_pass"]]
     failed = [g["id"] for g in must if not g["passed"]]
-    say("--- 14. GATES ---")
+    say("--- 15. GATES ---")
     for g in GATES:
         say(f"  {g['id']}  {'PASS' if g['passed'] else 'FAIL'}  "
             f"{'must-pass' if g['must_pass'] else 'recorded ' }  {g['claim'][:92]}")
     say(f"  must-pass gates {len(must)};  failures {len(failed)} {failed}")
     say("")
 
-    say("--- 15. VERDICT ---")
-    ha_runnable = (g04 and g05 and g10 and g10b and g11 and len(failed) == 0)
-    verdict = (["HA-RUNNABLE"] if ha_runnable else ["HA-STILL-BLOCKED"]) + \
-              ["HA-BRIDGE-POSABLE" if posable else "HA-BRIDGE-NOT-POSABLE"]
-    say("  " + " + ".join(verdict))
-    say("")
-    say("  A record-native H_a[N] EXISTS at finite N.  It is constructed on total")
-    say("  finite matter-geometry records, measured invertible, lapse-profiled, and")
-    say("  its second normal step is transported along the first.  The GW1 residual")
-    say("  R_HH RUNS, at the committed finite scope, as an exact rational field and")
-    say("  as an actual operator on a finite total-configuration carrier.")
-    say("")
-    say("  THE CLOSURE RESULT: CLOSURE ON THE DIAGONAL SECTOR, ANOMALY AT THE CROSS")
-    say("  TERM.  The link-local record-native rule closes on every record whose")
-    say("  order+count readout is diagonal -- flat and inhomogeneous alike, at d = 2")
-    say("  and at d = 3 -- and fails at every record whose readout carries a nonzero")
-    say("  cross term, because I^{ij} = adj(q)^{ij}/det q and det q is a joint")
-    say("  function of the site's link counts that no link-local rule reads (G09).")
-    say("  Site by site, the residual vanishes exactly where the drag weight IS the")
-    say("  record-read inverse metric (G08): on this construction, closure is")
-    say("  insertion.  GW1's kill condition is thereby measured rather than asserted.")
-    say("")
-
-    if not DELIVERY_RUN:
-        return 1 if failed else 0
-
-    # ======================= receipt ======================================
-    progress("receipt")
-    receipt = {
-        "schema": "ha-successor-receipt-v1",
-        "pin": "v13/note-ha-successor-pin.md",
-        "pin_base_commit": "024fcd7",
-        "source_sha256": hashlib.sha256(src.encode()).hexdigest(),
-        "python": platform.python_version(),
-        "arithmetic": "fractions.Fraction / integers / exact F_p; no floats",
+    return {
+        "failed": failed, "must": must, "verdict": verdict,
         "hash_pins": {"v13/code/nt_transport_receipt.json": sha256_file(nt_path),
                       "v13/code/gen_generality_receipt.json": sha256_file(gen_path)},
-        "declarations": json.loads(json.dumps(DECL, default=str)),
-        "anchors": ANCHORS,
-        "gates": GATES,
-        "disclosures": DISCLOSURES,
         "tables": {
             "closure": {f"{k[0]}|{k[1]}": v for k, v in sorted(results.items())},
             "sector_law": {f"{k[0]}|{k[1]}": v for k, v in sorted(sector.items())},
@@ -2170,23 +2703,68 @@ def main() -> int:
                           "jacobi_lapse_sum_zero": f, "SW_front_zero": g,
                           "SW_register_zero": h, "max_abs_register": i}
                          for (a, b, c, e, f, g, h, i) in det_rows],
+            "detector_closed_form": {"compared": hhh_cmp, "disagreements": hhh_bad},
             "density_weight_flip": flip_rows,
             "link_locality_witness": witness,
-            "bridge": {"ha_holonomy_order": ha_order, "ha_abelian": ha_abelian,
-                       "ha_element_orders": ha_exponents,
-                       "gen_defect_order": gen_ord, "gen_dihedral": gen_dih,
-                       "ha_dihedral": ha_dih,
-                       "ha_dihedral_over_pairs": f"{dih_hold}/{dih_tested}",
-                       "carrier_match": carrier_match,
-                       "in_gen_spectrum": in_spectrum, "posable": posable},
+            "link_locality_lattice": {"admissible_points": len(lat),
+                                      "pairs_sharing_n_diag_diff_I12": lat_w12,
+                                      "pairs_sharing_n_e1_n_diag_diff_I11": lat_w11},
+            "recovered_tensors": {
+                "record": tensor_rec,
+                "distinct_recovered_tensors_archA": len(lam_classes),
+                "classes": sorted(sorted(v) for v in lam_classes.values()),
+                "distinct_residual_laws": len(law_classes),
+                "law_classes": sorted(sorted(v) for v in law_classes.values())},
+            "readout_reencoding": {"determinant": str(readout_det),
+                                   "sites_verified": reenc_ok},
+            "bridge": {
+                "status": "COORDINATE AUDIT -- no posability predicate evaluated, "
+                          "no morphism census run, no HA-BRIDGE outcome entered",
+                "prime_sweep": prime_rows,
+                "exact_residual_at_the_detector_site": [str(t) for t in rho_exact],
+                "gen_defect_order": gen_ord, "gen_dihedral": gen_dih,
+                "gen_dihedral_is_analytically_forced": True,
+                "declared_3_cycle_satisfies_the_relation": ctrl_dih,
+                "ha_dihedral_at_the_declared_loop": ha_dih,
+                "defect_order_spectrum": dict(defect_spectrum),
+                "holonomy_order_spectrum": holonomy_spectrum,
+                "membership_in_the_defect_spectrum_by_prime": memb,
+                "sigma_relation_census": rel_rows,
+                "committed_carrier_morphism": None,
+                "morphism_census_run": False},
         },
         "totals": {"anchors": len(ANCHORS), "gates": len(GATES),
                    "must_pass_gates": len(must), "must_pass_failures": len(failed),
                    "disclosures": len(DISCLOSURES)},
-        "verdict": verdict,
     }
 
-    # ======================= the mutant harness ===========================
+
+def main() -> int:
+    """Run mode, receipts and the mutant harness.  Registers NO gate, so no gate
+    can depend on the run mode, directly or indirectly (G23)."""
+    src = open(SELF, "r", encoding="utf-8").read()
+    R = run_unit(src)
+    if not DELIVERY_RUN:
+        return 1 if R["failed"] else 0
+
+    progress("receipt")
+    receipt = {
+        "schema": "ha-successor-receipt-v1",
+        "pin": "v13/note-ha-successor-pin.md",
+        "pin_base_commit": "024fcd7",
+        "source_sha256": hashlib.sha256(src.encode()).hexdigest(),
+        "python": platform.python_version(),
+        "arithmetic": "fractions.Fraction / integers / exact F_p; no floats",
+        "hash_pins": R["hash_pins"],
+        "declarations": json.loads(json.dumps(DECL, default=str)),
+        "anchors": ANCHORS,
+        "gates": GATES,
+        "disclosures": DISCLOSURES,
+        "tables": R["tables"],
+        "totals": R["totals"],
+        "verdict": R["verdict"],
+    }
+
     mut_rows, survivors, never_falsified = run_mutant_harness()
     receipt["mutants"] = mut_rows
     receipt["never_falsified"] = never_falsified
@@ -2205,7 +2783,7 @@ def main() -> int:
     else:
         progress("falsification-selftest: artifacts NOT written")
     progress("done")
-    return 0 if (not failed and not survivors and not never_falsified) else 1
+    return 0 if (not R["failed"] and not survivors and not never_falsified) else 1
 
 
 if __name__ == "__main__":

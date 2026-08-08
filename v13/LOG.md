@@ -8219,3 +8219,42 @@ the gated one-law instantiation; the third species (dim-4) as
 a ready carrier; the counter-instance as the standing E5
 falsifier.**  TWO OF THREE THIRD-BASE PREREQUISITES DONE
 (COC #252, XBA #260); the third base fires on PSI's terminal.
+
+## 2026-08-08 — HA REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #261)
+Repair H-1..H-4 delivered complete; committed as-is.  VERDICT
+(verbatim): **HA-RUNNABLE + HA-BRIDGE-NOT-ENTERED** — the
+second component a DECLINATION, not an invented outcome
+(deviation 1, for the adjudicator: the ordered demotion makes
+both pre-registered bridge tokens un-enterable; the pin
+forbids inventing names; NOT-ENTERED records the declination).
+H-1: §10 a coordinate audit; G29 PROVES R_HH = translation of
+the address register by ρ mod p (⟨R⟩ ≅ Z/p,
+permutation-by-permutation); G30 sweeps SEVEN primes (order =
+the declared prime at every one; the residual (1/6,1/6)
+prime-independent); G31 compares the DEFECT spectrum (order 5
+in it at 4,608; membership flips with the prime); the 17/24 →
+the full decomposition (17/17 vacuous; full-field 8/24; Σ
+posable 4, holding 3 — all identity cells; R1/R3 reconciled);
+every order-5-as-discriminator sentence deleted; the MORPHISM
+QUESTION registered OPEN in §14 w/ the four successor
+requirements.  H-2: the record-is-metric identity GATED (G28:
+counts→q linear, det 2, 81/81 sites); G09 A THEOREM w/ R1's
+proof + the in-family witness gated + a declared count-lattice
+census (781/5,100 at a declared box — R1's unspecified box not
+reproduced, owned); the kill's second disjunct MEASURED and
+CORRECTED (R2's "11 tensors" false: 7 distinct tensors / 9
+distinct residual laws — the disjunct still fires, the honest
+numbers carried); the HHH formula 108/108; readout provenance
+fixed w/ source line cites.  H-3: verdict derived in-gate
+(verdict-flip dies); cell-completeness (census-drop dies); the
+486 bypasses LOAD-BEARING (2,916/0; cache-alias dies at G14
+AND G15); G14 extended to the full 18-element group
+(192,456/0); G05/G13 full-cell (F8 closed); the run-mode
+measurement de-asserted.  CLOSURE HEADLINE NUMBERS UNCHANGED —
+the closure table byte-identical to the delivered one.  17
+anchors / 36 gates (27 must-pass, 0 failures) / 29 mutants, 0
+survivors, never_falsified EMPTY / byte-identical (passes C/D;
+the A/B pair's one mislabeled receipt field repaired and
+re-run, owned in deviation 7).  15 deviations, each honest.
+md5 output b3f25543 / receipt 213b3250.  Adjudicator
+verification next.
