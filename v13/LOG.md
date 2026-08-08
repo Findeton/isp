@@ -7348,3 +7348,18 @@ per-candidate membership/size/forcing; violator controls per
 candidate.  Three concurrent cycles; adjudications serialize
 through the ledger as each delivers.  Recorded after each
 occurs.
+
+## 2026-08-08 — HA (GRAVITY H_a[N] SUCCESSOR) PINNED + DISPATCHED
+## (v13 LEDGER #227)
+The roadmap's parallel gravity branch activated as the FOURTH
+concurrent cycle (user's faster-in-parallel order).
+note-ha-successor-pin.md frozen: the record-native H_a[N]
+constructed per GW1's own terminal successor directive; the
+GW1 residual R_{HH} and detector run at finite N if unblocked;
+DECLARED SECONDARY: whether the NT/GEN stitching geometry
+supplies the interface object GW1 lacked (R_{HH} in terms of
+the defect law / bigon group — posable or not, by
+measurement).  Outcomes HA-RUNNABLE /
+HA-STILL-BLOCKED-AT-⟨object⟩ / HA-BRIDGE-⟨POSABLE|NOT-POSABLE⟩
+/ HA-BLOCKED.  ha_* namespace; construction dispatch with this
+commit.
