@@ -8512,3 +8512,27 @@ crux for from-vs-alongside: the live cells are excluded by
 the arena-invariance rule, not by physics — the successor
 must either derive the prime or accept declaration-relative
 bridging.  R3 (resumed) pending; adjudication after it.
+
+## 2026-08-08 — BRG R3 (INSTRUMENT) FROZEN (v13 LEDGER #272)
+review-brg-instrument.md frozen as delivered (sha256-12
+60a0ed65ff83).  Grade AWF; 152 recomputations + 36 adversarial
+runs; full rerun byte-identical; every load-bearing number
+reproduced without discrepancy; all five hash pins
+corrupt-and-fire correctly; the verdict CORRECT.  FOUR
+INSTRUMENT MAJORS: (1) verdict QUALIFIERS ungated (instances:
+999 typed → printed under VERDICT and written to the receipt
+at exit 0); (2) G31's "independent expression" shares all five
+inputs — a one-line flip prints BRG-MORPHISM-FOUND at exit 0
+beside an output showing 0 morphisms; (3) G15's symmetry
+self-tests measure a FORCED CONSTANT (the degenerate functor's
+label-independent rejection) and the generator-change leg
+builds an arena it NEVER USES (identity generators pass) —
+confirms R1's patch experiment; (4) the 35-cell functor census
+has NO cell-completeness (dropping 34/35 exits 0).  Minors:
+the held-out E-ROT blind to the declared rule (analytically
+forced — disclosure per #208); TINY-A mis-declared w/ a built
+counterexample (24 vs 6) on the untested hypothesis;
+set_int_max_str_digits a verified no-op.  PANEL COMPLETE:
+3× AWF; ~286 recomputations + adversarial batteries; zero
+number errors; the verdict survives all three lenses.
+Adjudication next.
