@@ -9000,3 +9000,28 @@ instrument brought under the modern rules; **the COC erratum
 of record entered in the adjudication note** (terminal file
 unmodified per freeze discipline).  STATUS updated this
 commit.  Repair dispatch next.
+
+## 2026-08-08 — LCB R3 (INSTRUMENT) FROZEN (v13 LEDGER #292)
+review-lcb-instrument.md frozen as delivered (sha256-12
+cdf2dee2dd53).  Grade AWF; 134 recomputations, 0 numerical
+disagreements; both delivered verdicts CORRECT on the
+reviewer's own reconstruction; route A/B independence survives
+undeclared stresses; all 7 pins fire; the 124 HELD cells never
+enter the fit.  FOUR INSTRUMENT MAJORS: F1 the obstruction
+qualifier UNGATED (a fabricated obstruction string reaches the
+receipt at exit 0 with all 34 gates green); **F2 the Open-1
+verdict FLIPS AT EXIT 0 — its two "sources" both reduce to the
+variable inter (P12 is built from it); setting inter = {5}
+prints LCB-PRIME-DERIVED with no gate failing** (the exact
+#234 failure); F3 S5's held-out block runs on the SYNTHETIC
+chart map, DISCLOSED NOWHERE (the flagship 6,336/6,144/124-124
+measured against a deformation side that is not the
+pairing's); F4 F0-IDENT a tautology (x == x four ways) —
+though G22, the real FOUND control, is genuine.  KEY MINORS:
+**S1d's 48 is BASE-RECORD-DEPENDENT — 5 of HA's 9 admissible
+records pass, 4 give zero** (R1's unsatisfiability was
+record-scoped); the "declaration-free" column means free of
+the PRIME only; the frozen DECL's H2 disagrees with code and
+paper.  PANEL COMPLETE: R1 REJECT / R2 AWF / R3 AWF; ~323
+recomputations; zero number errors.  Adjudication next — the
+richest reconciliation of the arc.
