@@ -6888,3 +6888,19 @@ bijection predicate) BUT the transport profile is genuinely
 independent, so the 18/18 is NOT circular.  PANEL COMPLETE:
 3× AWF; ~362 recomputations; the four pre-registered verdicts
 survive all three lenses.  Adjudication next.
+
+## 2026-08-07 — NT JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## N-1..N-7 ORDERED (v13 LEDGER #208)
+note-nt-adjudication.md committed.  The four verdicts survive
+all three lenses; ordered: the Klein-four number fixed w/ D5
+rewritten owning the bug; the mechanism rescoped
+sufficient-only w/ the prep-leg second source gated and T1
+excluded; the outside-scope escape promoted to a gated
+headline (non-principality); the mutant-name-exempting gate
+rebuilt; the 96/8 scope-relativity of the canonical loop
+disclosed as a result; certified→FORCED; the weld cited to
+paper 1 §2.4 + W5 M4 w/ the four-cut extension as the
+contribution; silent drops counted; RUNBOOK §14 addendum (no
+gate may reference mutant identity; analytically-forced
+clauses are disclosures).  STATUS updated this commit.  Repair
+dispatch next.

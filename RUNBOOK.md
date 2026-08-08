@@ -1760,3 +1760,11 @@ matched-coordinate table is the primary object, and the
 contrast is derived from it, never assumed. A like-for-like
 gate that checks function signatures does not check
 coordinates.
+
+**§14 addendum (2026-08-07, from v13 #208):** no gate predicate
+may reference mutant identity. A gate that special-cases a
+named mutant ("MUTANT != x") exempts its own falsifier and
+tests nothing; every declared falsifier must die by the gate's
+own predicate evaluated blind. Analytically-forced clauses
+(true by algebra for every input) are disclosures, not
+must-pass gates.
