@@ -9054,3 +9054,20 @@ instrument brought fully under the modern rules.  TB3's
 repair (T-1..T-8) runs in parallel.  On each delivery:
 COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after
 each occurs.
+
+## 2026-08-08 — OUTAGE RECOVERY: BOTH REPAIR WORKERS RELAUNCHED AS
+## CONTINUATIONS (v13 LEDGER #295)
+An infrastructure interruption (~17:36–17:39 local) killed
+both in-flight workers (TB3 T-1..T-8; LCB L-1..L-6); the
+harness recorded them user-stopped and refused resume; the
+user authorized relaunch ("go ahead").  Both relaunched as
+CONTINUATION workers with inventory-first orders: read-only
+git diff/status to inventory the predecessors' partial
+working-tree edits (TB3 code through 17:36; LCB through
+17:39; artifacts stale), verify each ordered item as
+complete/partial/absent, complete the remainder, double
+delivery, freeze.  Nothing committed was touched; the
+partial edits preserved.  Also recorded: the user pushed to
+GitHub — origin/main now level with local main (the entire
+arc through #294 off-machine).  Recorded after each delivery
+occurs.
