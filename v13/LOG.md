@@ -7363,3 +7363,17 @@ measurement).  Outcomes HA-RUNNABLE /
 HA-STILL-BLOCKED-AT-⟨object⟩ / HA-BRIDGE-⟨POSABLE|NOT-POSABLE⟩
 / HA-BLOCKED.  ha_* namespace; construction dispatch with this
 commit.
+
+## 2026-08-08 — THE USER'S THIRD-BASE ORDER (CONDITIONAL, STANDING)
+## (v13 LEDGER #228)
+The user's order: LAUNCH THE THIRD BASE AFTER COC/PSI/XBA
+REPORT.  Execution plan recorded: once all three cycles reach
+terminal, the third-base pin is written with each design axis
+set by its governing verdict — (1) wing count: three wings
+native-triples if COC finds a higher obstruction, else
+completion-richness prioritized; (2) completion range sized to
+the group-family question; (3) a native preparation family
+sized by PSI's verdict; (4) deliberate variation of whatever
+invariant XBA names (the break-it-on-purpose control).  The
+pin will cite this entry as its authorization; no further ask
+needed at launch time.
