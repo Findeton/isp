@@ -8140,3 +8140,16 @@ prediction" reading was WRONG — owned here, corrected in the
 repair); D10's split ENDORSED w/ the collapse-to-flat-baseline
 note.  PANEL COMPLETE: 3× AWF; ~2,880 recomputations;
 adjudication next.
+
+## 2026-08-08 — PSI JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## THE ONE LAW BECOMES THE CENTRAL RESULT (v13 LEDGER #257)
+note-psi-adjudication.md committed.  The physics survives
+whole on all three lenses; the one law (panel-convergent, two
+routes, the cocycle mechanism) ordered central; #234 full
+compliance ordered incl. the computed qualifier (precedent:
+qualifiers are part of the verdict); scoping honesty ordered
+(declared-basis Born statements; the 1/9 overlap; the
+reproduction-not-prediction relabel — the adjudicator's own
+#241 wording corrected by name); the orthogonal witness pair
+incorporated.  STATUS updated this commit.  Repair dispatch
+next.
