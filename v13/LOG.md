@@ -8805,3 +8805,24 @@ fatal; the self-test cache measured exercised;
 cell-completeness catches drops in all three censuses; the
 K4 witness pair verified on all six equalities.  R1/R2
 pending; adjudication after all three.
+
+## 2026-08-08 — USER-SPOTTED RELATION FORWARDED TO THE TB3 PANEL
+## (v13 LEDGER #286)
+THE USER'S OBSERVATION (verbatim substance): 15,120 = 2,160 ×
+7 exactly — the GHZ geometry's order divides the richest
+target with cofactor precisely the celebrated prime; either
+structural and worth naming, or exactly the label-collapse
+artifact shape the program has met before.  ADJUDICATOR'S
+EXTENSION before forwarding: the delivered commutator-subgroup
+orders line up as a candidate ladder — 12 (A₄?), 360 (A₆?),
+2,520 (A₇?), 168 (PSL(2,7)?) — with 2,520/360 = [A₇ : A₆] =
+7, so the structural reading is THE ALTERNATING-LADDER INDEX;
+but order does not fix isomorphism type, and divisibility does
+not imply embedding.  FORWARDED to R1-TB3 as a K1-scope
+addendum with three decidables: (1) isomorphism types by
+element-order spectra + composition tests, not order; (2) the
+actual embedding Hol_GHZ ≤ Hol_ord6 at index 7 — constructed
+or refuted; (3) structural-vs-label-collapse, with the
+counting route audited before any order is certified.  To be
+reported as a distinct finding with its own verdict; the TB3
+adjudication will resolve it explicitly either way.
