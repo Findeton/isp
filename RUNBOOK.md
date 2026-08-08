@@ -1768,3 +1768,12 @@ tests nothing; every declared falsifier must die by the gate's
 own predicate evaluated blind. Analytically-forced clauses
 (true by algebra for every input) are disclosures, not
 must-pass gates.
+
+**§14 addendum (2026-08-08, from v13 #219):** a gate clause
+that compares an object against a copy of itself routed
+through the very component under test verifies nothing —
+decomposition/rebuild checks must construct their comparator
+independently of the audited component (the #38→#40 disease,
+recurred at GEN). And a zero-hit cache gate must also gate
+that the cache path is exercised — zero hits of zero lookups
+is vacuous.

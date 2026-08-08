@@ -7202,3 +7202,17 @@ VACUOUS (_MEMO never written — cannot-fail again); D5's 2.5%
 confirmed; no hash pin on the NT receipt.  D3 judged
 pin-compliant.  Verdict stands WITH the scope tag.  PANEL
 COMPLETE: 3× AWF, ~754 recomputations, zero numerical errors.
+
+## 2026-08-08 — GEN JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## G-1..G-7 ORDERED (v13 LEDGER #219)
+note-gen-adjudication.md committed.  The verdict renamed
+REPRODUCES-AT-DECLARED-COMPLETION and scoped to existence;
+the completion census + defect law incorporated as the central
+result (geometry GENERIC, group COMPLETION-SELECTED, dihedral
+family w/ presentation); D renamed (ψ-independent — both
+sources declaration-side; the ψ-side-curvature question
+registered open); D2/D5 rewritten to the measured mechanisms
+(the cross-base agreement OPEN); instrument repairs incl. the
+self-comparison clause and the vacuous zero-hit clause;
+RUNBOOK §14 addendum (independent comparators; exercised-cache
+gating).  STATUS updated this commit.  Repair dispatch next.
