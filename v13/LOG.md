@@ -7779,3 +7779,45 @@ give 11 different q̃), not the first as framed.  New mechanism:
 the HHH displacement = Λ(B∂C + A∂B + A∂C) exactly (108/108) —
 a corrected pair against an uncorrected triple.  R3 (resumed)
 pending; adjudication after all three.
+
+## 2026-08-08 — XBA R2 (EFFECTUS) FROZEN: REJECT — THE MISNOMER,
+## THE FIFTH PREMISE, AND THE UNIFICATION (v13 LEDGER #244)
+review-xba-effectus.md frozen as delivered (sha256-12
+4d730a9ccd1b).  Grade REJECT (mandatory re-derivation); ~450
+recomputations, 258 delivered values ALL agreeing at first
+attempt — zero computed-number errors; the failures are in
+MEANING.  **F1: the §7.1 derivation asserts P and u⁻¹Pu
+commute — valid IFF D² = 1, an UNNAMED FIFTH PREMISE**; at
+ord(D) = 3 the step fails (SQ_REAL_1 = D², not D); two
+instances satisfying E0–E4 VERBATIM give SIX holonomies with a
+DIFFERENT profile — "forced by four clauses" is false as
+stated.  **F2: SPECIES-FORCED-SPLIT IS A MISNOMER** — GEN's
+terminal species has four clauses; XBA's E3/E4 are not among
+them; the equivariant control IS species-compliant with a
+different profile (172/192, printed in XBA's own §7.3); the
+correct name is COMPLETION-FORCED (E1–E3 exclude nothing —
+90/90 constructed instances hold them; E4 excludes
+288/362,880; involutivity supplies the rest).  **F3: the
+third-instance prediction does not answer the steering worry**
+— its advertised variations are provably INERT (ψ-independence
+verified across 3 preparations × 4 completions; 5 quaternions
+byte-identical) while the deciding parameter (the
+transposition) was drawn from the 12/36 that give the answer,
+and by F1 it could not have come out otherwise; every forcing
+candidate is reverse-engineerable.  F4: D4 is a FALSE printed
+lemma (a 36-configuration rank-2 instance with involutive
+defect reproduces 82/86/90/106 — a stronger different-flesh
+third instance was available).  F5: the "derivation" is a
+HARD-CODED TUPLE equal to the measured answer, C4 defined as
+equality with it (the #24 disease at the central object — the
+exact mechanism by which steering could operate undetected).
+C2a's vacuity judged LEGITIMATE.  **THE CROSS-UNIT
+UNIFICATION: THE THREE LAWS COMPOSE INTO ONE — D = P·u⁻¹·P·u =
+[P, u]; XBA's clauses are CENTRALIZER conditions (COC's
+criterion with ⟨P⟩ as the chart-generating group); the ORDER
+of the commutator is GEN's completion-selection.  XBA is not a
+third law; it is GEN's law refined to the gauge class in COC's
+vocabulary.**  Seven-item repair order supplied (X-1..X-7);
+"the repaired result is real, reachable in one pass, and
+better than the delivered one."  R1/R3 (resumed) pending;
+adjudication after all three.
