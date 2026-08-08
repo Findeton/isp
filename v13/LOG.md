@@ -7296,3 +7296,15 @@ group family; the defect law as the declaration→geometry map;
 base G as the richer carrier.**  Successor per standing order
 #212: the overlaps/cocycle pin.  Publication + push remain the
 user's.
+
+## 2026-08-08 — COC (OVERLAPS/COCYCLE) PINNED (v13 LEDGER #223)
+note-coc-cocycle-pin.md frozen this commit: the triple-overlap
+question on base G — is every triangle defect bigon-generated
+(COCYCLE-CLOSES) or does a higher obstruction exist
+(HIGHER-OBSTRUCTION); the third chart declared from the base's
+own admitted material before fixture truth (sub-leg splitting /
+admitted-isomorphism frame / the two rules as parallel
+atlases); TRIANGLES-ABSENT the honest fallback; completion
+FIXED at GEN's pinned V (one arena); dihedral family + defect
+law + bigon group inherited as exit-1 anchors; all engraved
+lessons binding.  Construction dispatch next.
