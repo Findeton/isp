@@ -14,12 +14,16 @@ pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
         v13/code/gen_generality_receipt.json           e0b2f444f6a9b828... OK
         v13/code/ha_successor_receipt.json             542b8735daf0ebc6... OK
         v13/code/nt_transport_receipt.json             d256891b479a8636... OK
+        v13/code/psi_curvature_receipt.json            7c7b91a9257e3888... OK
         v13/code/xba_crossbase_receipt.json            6015708df2a437a6... OK
         v13/note-brg-bridge-pin.md                     56ce4a7e2deeaaa2... OK
+        v13/paper-xba-crossbase.md                     2041ebcd8b3c70f9... OK
 
 --- 3. THE TRANSPORT SIDE, REBUILT FROM GEN 8.1's DEFECT LAW ---
         base G: Sigma on 9 labels, D = [0, 2, 1, 6, 4, 5, 3, 7, 8], ord 2, 45 fixed of 81
         W fixed 9 of 81; |<W,D>| = 4
+        PSI's one law: D = [P_W, u] with P_W an involution, so W D W = D^-1 is forced and |<W,D>| = 2*ord(D);
+        PSI records delta(Q) = [0, 2, 1, 6, 4, 5, 3, 7, 8] and the measured holonomy order 4 -- both reproduced here.
         base 1: W = Sigma_4 (x) Sigma_9 on 36, fixed 6; factor fixed points 18/12 anchored against NT
         species 4: 256 configurations, D fixed 192, W fixed 16, |<W,D>| = 4; its own 120-member transposition family splits {1: 12, 2: 60, 3: 48}
         base T: D of order 3, |<W,D>| = 6;   base S' (equivariant control): |<W,D>| = 2
@@ -43,7 +47,7 @@ pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
         orbits of <R_HH> on the carrier, by prime: {5: 125, 7: 343, 11: 1331, 13: 2197, 17: 4913, 19: 6859, 23: 12167} (the action is free, so every orbit has length p)
 
 --- 6. THE COMMITTED TRANSPORT INSTANCES (scope 1), REBUILT OR ANCHORED ---
-  G03 PASS   5 instances rebuilt as permutation groups; comparator independent: True
+  G03 PASS   5 instances rebuilt as permutation groups; comparator independent: True; explicit isomorphism verified at 4 instances, 0 violations
         instance        carrier  ord D  |<W,D>|  rebuilt
         base 1 @ SP-E   36       2      4        False
         base 1 @ SP-F   36       2      4        False
@@ -136,12 +140,12 @@ pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
 --- 9. ARENA-INVARIANCE (pin requirement 4; RUNBOOK 15) ---
   G12 PASS   empty at every one of 7 primes: [True]
   G13 PASS   F3 survives at [5, 7], dies at [11, 13, 17, 19, 23]; agrees with the extended census: True
-  G14 PASS   no instance of any declared scope admits a non-trivial morphism at every declared prime
-  G15 PASS   4 self-tests, all matching; arena actions move [81, 81, 625] points; generator sweep counts [1, 1, 1, 1]
-  G16 PASS   selftest hits 0, bypasses 35, lookups 100, hits 5
+  G14 PASS   no instance of any declared scope admits a non-trivial morphism at every declared prime, and none admits two: at m = 3 that needs 2*ord(D) divisible by 35 while the family's maximum is 30
+  G15 PASS   4 self-tests on an accepted and a degenerate candidate, all matching; arena actions move [81, 81, 625] points; generator sweep reads [125, 125, 125, 125] orbits, free [True, True, True, True], accepted [True, True, True, True]
+  G16 PASS   selftest hits 0, bypasses 35, lookups 132, hits 25
 
 --- 10. THE FUNCTOR-LEVEL CENSUS: THE CARRIER MAPS THEMSELVES ---
-  G17 PASS   orbit counts agree at 35 cells
+  G17 PASS   orbit counts agree at 35 cells; 35 distinct of 35 expected
         p   instance        |C_HA|   orbits  group maps  SP pairs (bits)    non-degenerate
         5   base G @ GP-E   625      125     1           793                0
         5   base G @ GP-F   625      125     1           793                0
@@ -179,7 +183,8 @@ pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
         23  base T          279841   12167   1           77137              0
         23  species 4       279841   12167   1           97337              0
         the SP-satisfying space is enormous and entirely degenerate: 0 non-degenerate pairs over 35 cells
-  G18 PASS   TINY-A: formula 16 = brute 16 (nd 12); TINY-B: formula 18 = brute 18 (nd 12); TINY-C: formula 4 = brute 4 (nd 0)
+  G18 PASS   TINY-A: formula 64 = brute 64 (nd 48, orbits 2); TINY-B: formula 18 = brute 18 (nd 12, orbits 1); TINY-C: formula 4 = brute 4 (nd 0, orbits 1)
+  G42 PASS   TINY-NEG (generator of order 3 against p = 2): formula 24 vs brute force 6 -- the hypothesis bites
 
 --- 11. THE PIN's DECLARED LEAD: THE RECORD <-> COMPLETION DICTIONARY ---
   G19 PASS   9 records x 40320 completions; space has 42 digits; 504 spectrum cells swept
@@ -200,92 +205,143 @@ pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
   G25 PASS   p = 5 against |G| = 6: 0 non-trivial group maps
 
 --- 13. THE OBSTRUCTION, NAMED AND GATED ---
-  G26 PASS   137 empty / 3 live of 140 cells; obstruction 'order-coprimality'
+  G26 PASS   137 empty / 3 live of 140 cells (forward); obstruction 'order-coprimality'
   G27 PASS   reverse empty at all 140 cells; abelianisation orders [2, 4]
+  G34 PASS   reverse non-trivial 0 at all 140 cells including the 3 live ones; reverse emptiness NOT coextensive with coprimality (3 cells)
+  G32 PASS   primes dividing 2*ord(D) at the committed instances [2, 3] (computed) = primes where rho fails to reduce [2, 3]; 2 at 8/8 instances, 3 at 1; without that instance [2]
+  G33 PASS   Lagrange+Cauchy holds at 189 group x prime cells over 21 groups, 0 failures; the 2*ord(D) reading fails at 5 of 117 non-dihedral cells
+  G35 PASS   W D W = D^-1 at 400 of 400 randomised pairs (0 violations); |<W,D>| = 2 ord(D) at all of them (0 violations); the non-involutive control fails at 145 of 168
         The two obstructions, stated at their measured strength:
           forward  hom(Z/p, <W,D>) is trivial iff p does not divide
-                   2*ord(D); over the committed instances ord(D) is at
-                   most 3, so 2*ord(D) is in [2, 4, 6]
-                   and no declared prime divides any of them.
-          reverse  every hom <W,D> -> Z/p factors through a 2-group.
-        rho does not reduce at exactly the primes [2, 3] -- the
-        same two primes that are the only ones dividing 2*ord(D) at the
-        committed instances.  The obstruction is not an artifact of the
-        declared prime list: the deformation side cannot be built at the
-        primes at which the match would be possible.
+                   2*ord(D) -- Lagrange one way, Cauchy the other, for
+                   ANY finite group of that order; the geometric content
+                   is the order formula |<W,D>| = 2*ord(D), which the one
+                   law forces.  The only contingent content is that
+                   ord(D) is at most 3 at the committed
+                   instances, so 2*ord(D) is in [2, 4, 6] and no declared prime
+                   divides any of them.
+          reverse  every hom <W,D> -> Z/p factors through a 2-group, so
+                   the reverse census is empty at all 140 cells --
+                   including the 3 where the forward census is not.
+                   The maps run in one direction only.
+        The primes dividing 2*ord(D) at the committed instances are
+        [2, 3] (computed), and rho fails to reduce at exactly [2, 3].
+        AT THE COMMITTED INSTANCES -- AND ONLY THERE -- the deformation
+        side cannot be built at the primes at which the match would be
+        possible.  At the twelve rebuilt classes this fails: the primes
+        dividing 2*ord(D) there include [2, 3, 5, 7],
+        of which 5 and 7 are admissible on the deformation side.
+
+--- 13b. THE ADMISSIBLE-PRIME CELLS: THE FULL DELIVERED PREDICATE AND THE HELD-OUT PROTOCOL, RUN ---
+  G36 PASS   p=5 ord=15,fixed=9: SP3 3125 cells 0 bad, held-out 3100 cells 0 violations, accepted True; p=5 ord=5,fixed=36: SP3 3125 cells 0 bad, held-out 3100 cells 0 violations, accepted True; p=7 ord=7,fixed=18: SP3 16807 cells 0 bad, held-out 16758 cells 0 violations, accepted True
+        p = 5   ord=15,fixed=9   |<W,D>| = 30  SP1 25/0  SP3 3125/0  held-out 3100/0  fit points 5  non-degenerate pairs 240 digits
+        p = 5   ord=5,fixed=36   |<W,D>| = 10  SP1 25/0  SP3 3125/0  held-out 3100/0  fit points 5  non-degenerate pairs 240 digits
+        p = 7   ord=7,fixed=18   |<W,D>| = 14  SP1 49/0  SP3 16807/0  held-out 16758/0  fit points 7  non-degenerate pairs 656 digits
+  G37 PASS   at p = 5, 124 of 125 source orbits collapsed into one target orbit: accepted True (NT2 asks for 2 distinct images; the map has 10)
+
+--- 13c. THE REGISTERED OPENS, WITH THEIR MEASURED NUMBERS ---
+  G38 PASS   family 40320: 5760 in the ord(D) <= 3 band, 23040 admitting some declared prime (orders [5, 7, 15]); committed instances 8/8 in the band, 0 admitting one
+        members by defect order {1: 96, 2: 1440, 3: 4224, 4: 4608, 5: 4608, 6: 6912, 7: 9216, 15: 9216}
+        the fewest labels a completion of each defect order moves: {1: 0, 2: 2, 3: 2, 4: 5, 5: 3, 6: 4, 7: 4, 15: 5}
+  G40 PASS   m = 3: max ord(D) 15, so 2*ord(D) never reaches 35 (Landau bound 20); m = 4: 162 of 2000 sampled completions have ord(D) divisible by 35 (Landau bound 140)
+
+--- 13d. DISCLOSURE-GRADE MEASUREMENTS: WHAT IS ANALYTICALLY FORCED ---
+  G39 PASS   10 rule x extension rows: rotation-valued violations [0], reflection-valued [54] of 234 held-out cells
+  G41 PASS   in-arena FOUND needs 2*ord(D) >= 35 (two primes) or 37182145 (all seven); the family's maximum is 30
 
 --- 14. THE AST GUARDS ---
   G28 PASS   0 hits in source, 2 in the synthetic sample
   G29 PASS   0 offenders; synthetic sample flagged: ['f']
-  G30 PASS   77 anchors; failures 0, fatal 0
+  G30 PASS   87 anchors; failures 0, fatal 0
 
 --- 15. THE VERDICT, DERIVED INSIDE ITS GATE FROM THE MEASURED COUNTS ---
-  G31 PASS   verdict BRG-EMPTY-AT-CARRIER (recomputed BRG-EMPTY-AT-CARRIER)
+  G31 PASS   verdict BRG-EMPTY-AT-CARRIER (recomputed BRG-EMPTY-AT-CARRIER; from the census tables BRG-EMPTY-AT-CARRIER); 13 qualifiers recomputed, 0 disagreements
 
         VERDICT: BRG-EMPTY-AT-CARRIER
+          admissible_prime_cells_found_outside_the_committed_scope 3
           completion_family_members                    40320
           directed_cells                               112
           extended_scope_cells                         168
           instances                                    8
+          live_extended_scope_cells                    3
           non_degenerate_functor_pairs                 0
           non_degenerate_group_morphisms_forward       0
           non_degenerate_group_morphisms_reverse       0
-          obstruction                                  order-coprimality
+          obstruction_forward                          order-coprimality
+          obstruction_reverse                          2-group abelianisation (prime-independent)
           prime_tracking_candidates_excluded           1
           primes                                       7
           scope                                        the committed transport instances at the declared primes
 
-  gates 31 (31 must-pass), failures 0: []
-  anchors 77, all reproduced
+  gates 42 (40 must-pass), failures 0: []
+  anchors 87, all reproduced
 
 --- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
   mutant                exit  killed   named kills
   abelianization-lax    1     True     G:G27
   ambiguity-lax         1     True     G:G04
-  anchor-gen-defect     1     True     A:A06
-  anchor-gen-family     1     True     A:A21,G:G02
+  anchor-gen-defect     1     True     A:A08
+  anchor-gen-family     1     True     A:A29,G:G02
   anchor-gen-sha        1     True     A:A01
-  anchor-ha-rho         1     True     A:A29
+  anchor-ha-rho         1     True     A:A37
   anchor-ha-sha         1     True     A:A02
   anchor-nt-sha         1     True     A:A03
-  anchor-pin-sha        1     True     A:A05
-  anchor-soft           1     True     A:A05,G:G30
-  anchor-xba-orders     1     True     A:A33
-  anchor-xba-sha        1     True     A:A04
+  anchor-pin-sha        1     True     A:A06
+  anchor-psi-sha        1     True     A:A04
+  anchor-soft           1     True     A:A06,G:G30
+  anchor-xba-orders     1     True     A:A41
+  anchor-xba-sha        1     True     A:A05
+  anchor-xbapaper-sha   1     True     A:A07
+  arena-order-lax       1     True     G:G18,G:G42
   break-blind           1     True     G:G07
   cache-lax             1     True     G:G16,G:G31
   cache-unused          1     True     G:G16,G:G31
-  cell-drop             1     True     G:G09,G:G31
+  cauchy-narrow         1     True     G:G33
+  cell-drop             1     True     G:G09,G:G17,G:G31
   class-drop            1     True     G:G11,G:G13,G:G31
+  collapse-lax          1     True     G:G37
   comparator-self       1     True     G:G03
   conj-lax              1     True     G:G15,G:G31
+  count-flip            1     True     G:G31
   dict-drop             1     True     G:G19,G:G31
   dict-scope-lax        1     True     G:G20
   empty-block           1     True     G:G25,G:G31
-  equivariance-side     1     True     G:G05,G:G07,G:G21,G:G31
+  equivariance-side     1     True     G:G05,G:G07,G:G15,G:G21,G:G31,G:G36,G:G37
   exempt-lax            1     True     G:G29
-  family-drop           1     True     A:A21,G:G02
+  family-drop           1     True     A:A29,G:G02
   float-lax             1     True     G:G28
   formula-lax           1     True     G:G18
-  found-block           1     True     G:G21,G:G22,G:G24,G:G31
+  found-block           1     True     G:G21,G:G22,G:G24,G:G31,G:G39
   freeze-lax            1     True     G:G01
-  heldout-leak          1     True     G:G21,G:G22,G:G23,G:G31
+  functor-cell-drop     1     True     G:G17,G:G31
+  generator-blind       1     True     G:G15,G:G31
+  heldout-leak          1     True     G:G21,G:G22,G:G23,G:G31,G:G39
   hom-lax               1     True     G:G08
   invariance-lax        1     True     G:G14,G:G31
+  landau-lax            1     True     G:G40
+  live-order-lax        1     True     G:G31,G:G36
+  model-lax             1     True     G:G03,G:G27,G:G34
   nontrivial-lax        1     True     G:G06,G:G18
   obstruction-misname   1     True     G:G26
-  orbit-lax             1     True     G:G17,G:G18,G:G24,G:G31
+  orbit-lax             1     True     G:G15,G:G17,G:G18,G:G24,G:G31
   predicate-lax         1     True     G:G18,G:G22
-  prime-single          1     True     A:A77,G:G09,G:G12,G:G13
+  prime-single          1     True     A:A87,G:G09,G:G12,G:G13
+  psi-noninvolutive     1     True     G:G35
+  qualifier-typo        1     True     G:G31
   quantity-lax          1     True     G:G24
+  radical-inject        1     True     G:G32
   relabel-lax           1     True     G:G15,G:G31
+  reverse-alias         1     True     G:G27,G:G34
   route-alias           1     True     G:G10
-  route-b-lax           1     True     G:G10
-  scope-leak            1     True     G:G09,G:G12,G:G31
+  route-b-lax           1     True     G:G10,G:G31
+  scope-leak            1     True     G:G09,G:G12,G:G31,G:G32,G:G38
+  sector-lax            1     True     G:G38
+  selftest-blind        1     True     G:G15,G:G31
   selftest-select       1     True     G:G15,G:G31
-  spectrum-swap         1     True     A:A77,G:G13
+  spectrum-swap         1     True     A:A87,G:G13
   teeth-off             1     True     G:G22
-  tracking-blind        1     True     A:A77,G:G13
+  tiny-drop             1     True     G:G18
+  tracking-blind        1     True     A:A87,G:G13
   verdict-flip          1     True     G:G31
   mutants that survived : []
   must-pass gates never falsified by any mutant : []

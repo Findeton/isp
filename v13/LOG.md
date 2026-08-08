@@ -8561,3 +8561,42 @@ opens; the instrument brought fully under the modern rules
 generator arena actually read, functor-census completeness,
 TINY-A rebuilt).  On delivery: COMMIT-AS-IS, verify,
 terminal-or-bounce.  Recorded after it occurs.
+
+## 2026-08-08 — BRG REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #275)
+Repair B-1..B-7 delivered complete; committed as-is.  VERDICT:
+BRG-EMPTY-AT-CARRIER w/ ALL 13 QUALIFIERS COMPUTED inside G31
+(0 disagreements), incl.
+admissible_prime_cells_found_outside_the_committed_scope: 3
+and both obstructions as qualifier lines.  **THE TWO
+OBSTRUCTIONS: forward — hom(Z/p,⟨W,D⟩) trivial iff p ∤
+2·ord(D), Lagrange one way CAUCHY the other, NO dihedral
+hypothesis (189 group×prime cells over 21 groups incl.
+non-dihedral, 0 failures; honest scoping: the 2·ord(D)
+reading fails at 5/117 non-dihedral cells — the geometric
+content is the order formula), the order formula FORCED BY
+THE ONE LAW (WDW = D⁻¹ from W²=1 + D=[W,u]; 400/400 w/
+non-involutive control failing 145/168; PSI cited and
+hash-pinned w/ 6 cross-anchors); reverse — EMPTY at all 140
+cells INCLUDING the live ones, measured NOT coextensive with
+coprimality (3-cell mismatch): maps run ONE WAY ONLY.**
+FOUND-AT-DELIVERED-STANDARD-OUTSIDE-COMMITTED-SCOPE gated
+(G36: the three pairs rebuilt, full predicate + held-out 0
+violations, ACCEPTED); the reconciliation gated (G37: the
+124/125-collapse acceptance shown — necessary-but-weak); the
+strengthened standard S1–S6 REGISTERED, tested neither
+direction (X11); the two distinct exclusions stated.  OPENS:
+Open 1 (the prime is a declaration; the dichotomy; ord(D)=5
+at 4,608/40,320, smallest move 3 labels) + Open 2 (sector
+concentration refined: 5,760 = 1/7 in the ord≤3 band; 23,040
+= 4/7 admit a prime; 8-of-8 committed in the band, 0
+admitting).  Instrument: 65 mutants incl. qualifier-typo,
+count-flip, selftest-blind, generator-blind,
+functor-cell-drop, tiny-drop; TINY-A a genuine Z/2-set w/
+TINY-NEG (24-vs-6) as negative control; G14 scoped w/ the m=4
+contingency measured (162/2,000 w/ 35 | ord(D), explicit
+witness); E-ROT blindness a disclosure.  87 anchors / 42
+gates (40 must-pass, 0 failures) / 65 mutants 0 survivors /
+byte-identical ×2 + selftest preserved.  9 deviations (two
+new: the sha256-seeded sampled measurements; non-monotone
+gate ids).  md5 output 1e2a88a2 / receipt e9a7861e.
+Adjudicator verification next.

@@ -25,9 +25,17 @@
    "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
   },
   {
+   "committed": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+   "computed": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+   "id": "A04",
+   "passed": true,
+   "quantity": "sha256 of v13/code/psi_curvature_receipt.json",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
    "committed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
    "computed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
-   "id": "A04",
+   "id": "A05",
    "passed": true,
    "quantity": "sha256 of v13/code/xba_crossbase_receipt.json",
    "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
@@ -35,9 +43,17 @@
   {
    "committed": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
    "computed": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
-   "id": "A05",
+   "id": "A06",
    "passed": true,
    "quantity": "sha256 of v13/note-brg-bridge-pin.md",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": "2041ebcd8b3c70f9d637f02764db438c393bf58f4b90a1cec2d807502f8e16f5",
+   "computed": "2041ebcd8b3c70f9d637f02764db438c393bf58f4b90a1cec2d807502f8e16f5",
+   "id": "A07",
+   "passed": true,
+   "quantity": "sha256 of v13/paper-xba-crossbase.md",
    "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
   },
   {
@@ -63,7 +79,7 @@
     7,
     8
    ],
-   "id": "A06",
+   "id": "A08",
    "passed": true,
    "quantity": "GEN: the declared completion's defect permutation",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -71,7 +87,7 @@
   {
    "committed": 2,
    "computed": 2,
-   "id": "A07",
+   "id": "A09",
    "passed": true,
    "quantity": "GEN: the declared defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -79,7 +95,7 @@
   {
    "committed": 45,
    "computed": 45,
-   "id": "A08",
+   "id": "A10",
    "passed": true,
    "quantity": "GEN: the declared defect's fixed configurations of 81",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -87,7 +103,7 @@
   {
    "committed": 9,
    "computed": 9,
-   "id": "A09",
+   "id": "A11",
    "passed": true,
    "quantity": "XBA: base G's wing-exchange fixed configurations",
    "source": "v13/code/xba_crossbase_receipt.json bases"
@@ -95,15 +111,67 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A10",
+   "id": "A12",
    "passed": true,
    "quantity": "XBA: base G's |<W,D>|",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
   },
   {
+   "committed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "computed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "id": "A13",
+   "passed": true,
+   "quantity": "PSI: the commutator delta(Q) at the pinned completion is the defect this unit rebuilds",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A14",
+   "passed": true,
+   "quantity": "PSI: the order of the commutator at the pinned completion",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A15",
+   "passed": true,
+   "quantity": "PSI: the measured based-holonomy group order at GP-E is 2*ord(delta(Q))",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A16",
+   "passed": true,
+   "quantity": "PSI: the group order the dihedral reading predicts at the pinned completion",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
    "committed": 6,
    "computed": 6,
-   "id": "A11",
+   "id": "A17",
    "passed": true,
    "quantity": "NT: the wing exchange's fixed configurations of 36",
    "source": "v13/code/nt_transport_receipt.json structure_group"
@@ -111,7 +179,7 @@
   {
    "committed": 18,
    "computed": 18,
-   "id": "A12",
+   "id": "A18",
    "passed": true,
    "quantity": "NT: the qubit-only wing swap's fixed configurations",
    "source": "v13/code/nt_transport_receipt.json structure_group"
@@ -119,7 +187,7 @@
   {
    "committed": 12,
    "computed": 12,
-   "id": "A13",
+   "id": "A19",
    "passed": true,
    "quantity": "NT: the pointer-only wing swap's fixed configurations",
    "source": "v13/code/nt_transport_receipt.json structure_group"
@@ -127,7 +195,7 @@
   {
    "committed": 192,
    "computed": 192,
-   "id": "A14",
+   "id": "A20",
    "passed": true,
    "quantity": "XBA: species 4's defect fixed configurations of 256",
    "source": "v13/paper-xba-crossbase.md 9.4 (committed table)"
@@ -135,7 +203,7 @@
   {
    "committed": 16,
    "computed": 16,
-   "id": "A15",
+   "id": "A21",
    "passed": true,
    "quantity": "XBA: species 4's wing-exchange fixed configurations of 256",
    "source": "v13/paper-xba-crossbase.md 9.4 (committed table)"
@@ -143,7 +211,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A16",
+   "id": "A22",
    "passed": true,
    "quantity": "XBA: species 4's |<W,D>|",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -159,7 +227,7 @@
     "2": 60,
     "3": 48
    },
-   "id": "A17",
+   "id": "A23",
    "passed": true,
    "quantity": "XBA: species 4's own completion family, split by defect order",
    "source": "v13/paper-xba-crossbase.md 9.4 (120 transpositions, 12/60/48)"
@@ -167,7 +235,7 @@
   {
    "committed": 3,
    "computed": 3,
-   "id": "A18",
+   "id": "A24",
    "passed": true,
    "quantity": "XBA: base T's defect order",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -175,15 +243,51 @@
   {
    "committed": 6,
    "computed": 6,
-   "id": "A19",
+   "id": "A25",
    "passed": true,
    "quantity": "XBA: base T's |<W,D>|",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
   },
   {
+   "committed": [
+    0,
+    3,
+    2,
+    4,
+    1,
+    5,
+    6,
+    7,
+    8
+   ],
+   "computed": [
+    0,
+    3,
+    2,
+    4,
+    1,
+    5,
+    6,
+    7,
+    8
+   ],
+   "id": "A26",
+   "passed": true,
+   "quantity": "PSI: base T's completion is PSI's Q-negA, and its commutator delta(Q) is the defect rebuilt here",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A27",
+   "passed": true,
+   "quantity": "PSI: the measured based-holonomy group order at Q-negA",
+   "source": "v13/code/psi_curvature_receipt.json one_law.the_group_order_reading"
+  },
+  {
    "committed": 2,
    "computed": 2,
-   "id": "A20",
+   "id": "A28",
    "passed": true,
    "quantity": "XBA: base S' (the equivariant control) |<W,D>|",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -191,7 +295,7 @@
   {
    "committed": 40320,
    "computed": 40320,
-   "id": "A21",
+   "id": "A29",
    "passed": true,
    "quantity": "GEN: the declared completion family's size",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -217,7 +321,7 @@
     "6": 6912,
     "7": 9216
    },
-   "id": "A22",
+   "id": "A30",
    "passed": true,
    "quantity": "GEN: the defect order spectrum over the family",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -241,7 +345,7 @@
     "81": 96,
     "9": 16704
    },
-   "id": "A23",
+   "id": "A31",
    "passed": true,
    "quantity": "GEN: the defect fixed-configuration spectrum over the family",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -249,7 +353,7 @@
   {
    "committed": 96,
    "computed": 96,
-   "id": "A24",
+   "id": "A32",
    "passed": true,
    "quantity": "GEN: members whose defect is the identity",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -257,7 +361,7 @@
   {
    "committed": 40224,
    "computed": 40224,
-   "id": "A25",
+   "id": "A33",
    "passed": true,
    "quantity": "GEN: geometry-bearing members",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -265,7 +369,7 @@
   {
    "committed": 0,
    "computed": 0,
-   "id": "A26",
+   "id": "A34",
    "passed": true,
    "quantity": "GEN: members where the dihedral relation Sigma D Sigma = D^-1 fails",
    "source": "v13/code/gen_generality_receipt.json completion_census"
@@ -279,7 +383,7 @@
     "1/6",
     "1/6"
    ],
-   "id": "A27",
+   "id": "A35",
    "passed": true,
    "quantity": "HA: the exact rational residual at the detector site",
    "source": "v13/code/ha_successor_receipt.json bridge"
@@ -303,7 +407,7 @@
     130321,
     279841
    ],
-   "id": "A28",
+   "id": "A36",
    "passed": true,
    "quantity": "HA: the reduced carrier size at every swept prime",
    "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
@@ -369,7 +473,7 @@
      4
     ]
    ],
-   "id": "A29",
+   "id": "A37",
    "passed": true,
    "quantity": "HA: rho mod p at every swept prime",
    "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
@@ -393,7 +497,7 @@
     19,
     23
    ],
-   "id": "A30",
+   "id": "A38",
    "passed": true,
    "quantity": "HA: |<R_HH>| at every swept prime",
    "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
@@ -459,7 +563,7 @@
      23
     ]
    ],
-   "id": "A31",
+   "id": "A39",
    "passed": true,
    "quantity": "HA: the element orders of <R_HH> at every swept prime",
    "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
@@ -467,7 +571,7 @@
   {
    "committed": "2",
    "computed": "2",
-   "id": "A32",
+   "id": "A40",
    "passed": true,
    "quantity": "HA: the record-is-metric re-encoding determinant",
    "source": "v13/code/ha_successor_receipt.json readout_reencoding"
@@ -475,7 +579,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A33",
+   "id": "A41",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base 1 @ SP-E",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -483,7 +587,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A34",
+   "id": "A42",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base 1 @ SP-F",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -491,7 +595,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A35",
+   "id": "A43",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base G @ GP-E",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -499,7 +603,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A36",
+   "id": "A44",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base G @ GP-F",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -507,7 +611,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A37",
+   "id": "A45",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base S",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -515,7 +619,7 @@
   {
    "committed": 2,
    "computed": 2,
-   "id": "A38",
+   "id": "A46",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base S'",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -523,7 +627,7 @@
   {
    "committed": 6,
    "computed": 6,
-   "id": "A39",
+   "id": "A47",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at base T",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
@@ -531,15 +635,31 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A40",
+   "id": "A48",
    "passed": true,
    "quantity": "XBA: |<W,D>| = 2*ord(D) at species 4",
    "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
   },
   {
+   "committed": 18,
+   "computed": 18,
+   "id": "A49",
+   "passed": true,
+   "quantity": "XBA: base 1 @ SP-E's defect fixed configurations (the constraint the ambiguity sweep is filtered by)",
+   "source": "v13/code/xba_crossbase_receipt.json bases"
+  },
+  {
+   "committed": 45,
+   "computed": 45,
+   "id": "A50",
+   "passed": true,
+   "quantity": "XBA: base S's defect fixed configurations (the constraint the ambiguity sweep is filtered by)",
+   "source": "v13/code/xba_crossbase_receipt.json third_instances"
+  },
+  {
    "committed": 1,
    "computed": 1,
-   "id": "A41",
+   "id": "A51",
    "passed": true,
    "quantity": "GEN: class ord=1,fixed=81 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -547,7 +667,7 @@
   {
    "committed": 81,
    "computed": 81,
-   "id": "A42",
+   "id": "A52",
    "passed": true,
    "quantity": "GEN: class ord=1,fixed=81 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -555,7 +675,7 @@
   {
    "committed": 15,
    "computed": 15,
-   "id": "A43",
+   "id": "A53",
    "passed": true,
    "quantity": "GEN: class ord=15,fixed=9 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -563,7 +683,7 @@
   {
    "committed": 9,
    "computed": 9,
-   "id": "A44",
+   "id": "A54",
    "passed": true,
    "quantity": "GEN: class ord=15,fixed=9 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -583,7 +703,7 @@
     5,
     15
    ],
-   "id": "A45",
+   "id": "A55",
    "passed": true,
    "quantity": "GEN: class ord=15,fixed=9 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -591,7 +711,7 @@
   {
    "committed": 2,
    "computed": 2,
-   "id": "A46",
+   "id": "A56",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=45 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -599,7 +719,7 @@
   {
    "committed": 45,
    "computed": 45,
-   "id": "A47",
+   "id": "A57",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=45 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -613,7 +733,7 @@
     1,
     2
    ],
-   "id": "A48",
+   "id": "A58",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=45 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -621,7 +741,7 @@
   {
    "committed": 2,
    "computed": 2,
-   "id": "A49",
+   "id": "A59",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=9 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -629,7 +749,7 @@
   {
    "committed": 9,
    "computed": 9,
-   "id": "A50",
+   "id": "A60",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=9 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -643,7 +763,7 @@
     1,
     2
    ],
-   "id": "A51",
+   "id": "A61",
    "passed": true,
    "quantity": "GEN: class ord=2,fixed=9 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -651,7 +771,7 @@
   {
    "committed": 3,
    "computed": 3,
-   "id": "A52",
+   "id": "A62",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=27 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -659,7 +779,7 @@
   {
    "committed": 27,
    "computed": 27,
-   "id": "A53",
+   "id": "A63",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=27 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -675,7 +795,7 @@
     2,
     3
    ],
-   "id": "A54",
+   "id": "A64",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=27 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -683,7 +803,7 @@
   {
    "committed": 3,
    "computed": 3,
-   "id": "A55",
+   "id": "A65",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=54 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -691,7 +811,7 @@
   {
    "committed": 54,
    "computed": 54,
-   "id": "A56",
+   "id": "A66",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=54 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -707,7 +827,7 @@
     2,
     3
    ],
-   "id": "A57",
+   "id": "A67",
    "passed": true,
    "quantity": "GEN: class ord=3,fixed=54 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -715,7 +835,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A58",
+   "id": "A68",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=27 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -723,7 +843,7 @@
   {
    "committed": 27,
    "computed": 27,
-   "id": "A59",
+   "id": "A69",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=27 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -739,7 +859,7 @@
     2,
     4
    ],
-   "id": "A60",
+   "id": "A70",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=27 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -747,7 +867,7 @@
   {
    "committed": 4,
    "computed": 4,
-   "id": "A61",
+   "id": "A71",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=9 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -755,7 +875,7 @@
   {
    "committed": 9,
    "computed": 9,
-   "id": "A62",
+   "id": "A72",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=9 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -771,7 +891,7 @@
     2,
     4
    ],
-   "id": "A63",
+   "id": "A73",
    "passed": true,
    "quantity": "GEN: class ord=4,fixed=9 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -779,7 +899,7 @@
   {
    "committed": 5,
    "computed": 5,
-   "id": "A64",
+   "id": "A74",
    "passed": true,
    "quantity": "GEN: class ord=5,fixed=36 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -787,7 +907,7 @@
   {
    "committed": 36,
    "computed": 36,
-   "id": "A65",
+   "id": "A75",
    "passed": true,
    "quantity": "GEN: class ord=5,fixed=36 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -803,7 +923,7 @@
     2,
     5
    ],
-   "id": "A66",
+   "id": "A76",
    "passed": true,
    "quantity": "GEN: class ord=5,fixed=36 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -811,7 +931,7 @@
   {
    "committed": 6,
    "computed": 6,
-   "id": "A67",
+   "id": "A77",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=18 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -819,7 +939,7 @@
   {
    "committed": 18,
    "computed": 18,
-   "id": "A68",
+   "id": "A78",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=18 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -837,7 +957,7 @@
     3,
     6
    ],
-   "id": "A69",
+   "id": "A79",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=18 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -845,7 +965,7 @@
   {
    "committed": 6,
    "computed": 6,
-   "id": "A70",
+   "id": "A80",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=9 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -853,7 +973,7 @@
   {
    "committed": 9,
    "computed": 9,
-   "id": "A71",
+   "id": "A81",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=9 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -871,7 +991,7 @@
     3,
     6
    ],
-   "id": "A72",
+   "id": "A82",
    "passed": true,
    "quantity": "GEN: class ord=6,fixed=9 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -879,7 +999,7 @@
   {
    "committed": 7,
    "computed": 7,
-   "id": "A73",
+   "id": "A83",
    "passed": true,
    "quantity": "GEN: class ord=7,fixed=18 -- the defect's order",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -887,7 +1007,7 @@
   {
    "committed": 18,
    "computed": 18,
-   "id": "A74",
+   "id": "A84",
    "passed": true,
    "quantity": "GEN: class ord=7,fixed=18 -- the defect's fixed configurations",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -903,7 +1023,7 @@
     2,
     7
    ],
-   "id": "A75",
+   "id": "A85",
    "passed": true,
    "quantity": "GEN: class ord=7,fixed=18 -- the element orders of <W,D>",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -911,7 +1031,7 @@
   {
    "committed": true,
    "computed": true,
-   "id": "A76",
+   "id": "A86",
    "passed": true,
    "quantity": "GEN: |<W,D>| = the measured holonomy group order at every class of defect order >= 2",
    "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
@@ -935,7 +1055,7 @@
     "5": true,
     "7": true
    },
-   "id": "A77",
+   "id": "A87",
    "passed": true,
    "quantity": "HA: membership of p in GEN's defect order spectrum, by prime",
    "source": "v13/code/ha_successor_receipt.json bridge"
@@ -1006,6 +1126,16 @@
    },
    "rho_exact": "(1/6, 1/6) -- the exact rational residual at the detector site, the same at every prime (HA 10.1)"
   },
+  "extension_rules": {
+   "reflection": "the same five rules, multiplied by W where d0 is odd",
+   "rotation": [
+    "(d0 + 2 d1 + c) mod ord(D)  -- the declared rule",
+    "0",
+    "(2 d0 + d1 + 2 c) mod ord(D)",
+    "d0 mod ord(D)",
+    "(7 d0 + 5 c) mod ord(D)"
+   ]
+  },
   "functors": {
    "F0-IDENT": "the identity self-functor within one arena (carrier map = id, group map = id) -- POSITIVE CONTROL: the census machinery must FIND it on each side",
    "F1-RECORD-COMPLETION": "the pin's declared lead.  Object part: a dictionary delta from the deformation side's geometry records to the transport side's completions; group part: the induced map <R_HH(r)> -> <W, D(delta(r))>; encoding part: HA's record-is-metric datum (counts <-> q) against GEN/XBA's completion datum (Q -> D). Declared space: records x completions.",
@@ -1016,6 +1146,7 @@
    "F6-BREAK-A": "NEGATIVE CONTROL WITH TEETH: carrier map = the register doubling (f, m) -> (f, 2m), group map = the identity. Bijective and non-degenerate; differs from an ACCEPTED morphism (same carrier map, group map R -> R^2) only in the group map, so the predicate must be sensitive to exactly the structure it claims to test.",
    "F6-BREAK-B": "NEGATIVE CONTROL WITH TEETH: carrier map = the identity with two points of different orbits transposed, group map = the identity."
   },
+  "group_zoo": "the declared group list for the Lagrange+Cauchy sweep: the cyclic groups Z/1..Z/7, the dihedral groups D_1..D_7, S_3, S_4, A_4, A_4 x Z/2, Z/2 x Z/2, Z/2 x Z/3 and D_4 x Z/3 -- abelian and non-abelian, dihedral and non-dihedral, swept against the declared prime list plus 2 and 3.",
   "held_out": {
    "H1": "the orbit-size multiset on each side",
    "H2": "the fixed-point count of each generator",
@@ -1029,6 +1160,12 @@
    },
    "split_rule": "the source orbits are ordered lexicographically by their minimal element; FIT = orbit 0 only; HELD = every other orbit.  Sizes computed."
   },
+  "one_law_sweep": {
+   "control": "a second sweep in which W is a general permutation rather than an involution; the relation must FAIL there",
+   "draws": 400,
+   "points": "4 to 8",
+   "seed": "sha256 of a declared byte string naming the sweep -- no wall-clock value and no operating-system entropy enters, so two runs draw the same sequence"
+  },
   "outcomes": [
    "BRG-MORPHISM-FOUND",
    "BRG-EMPTY-AT-CARRIER",
@@ -1038,8 +1175,10 @@
    "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
    "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
    "v13/code/nt_transport_receipt.json": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "v13/code/psi_curvature_receipt.json": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
    "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
-   "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b"
+   "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
+   "v13/paper-xba-crossbase.md": "2041ebcd8b3c70f9d637f02764db438c393bf58f4b90a1cec2d807502f8e16f5"
   },
   "predicate": {
    "NT1": "phi is non-trivial (the group action is carried, not killed)",
@@ -1049,14 +1188,36 @@
    "SP3": "Phi is phi-equivariant: Phi(g . x) = phi(g) . Phi(x) at every one of the |G_src| x |C_src| cells (the group actions preserved)",
    "arena_invariance": "SP references only the group actions, the composition and carrier incidence; never a prime value, never a label name, never a carrier index.  Measured by the relabelling, conjugation and generator-change self-tests (RUNBOOK 14)."
   },
+  "registered_opens": {
+   "OPEN-1": "Can the reduction prime be fixed by anything other than declaration?  Every live cell is prime-dependent by construction, so requirement 4 excludes it however good the transport side gets.  The successor's dichotomy: DERIVE THE PRIME, or accept declaration-relative bridging and say so.",
+   "OPEN-2": "Why do the prepared bases concentrate in the closed sector?  The declared completion family is majority-live; every committed instance sits in the low-defect-order band.  Is that a selection rule of the preparation or an artifact of which bases happen to have been built?"
+  },
+  "species4_contingency": {
+   "arena": "species 4's own sixteen-label arena (m = 4)",
+   "claim": "the two-declared-prime clause is analytically forced only at m = 3; at m = 4 it is contingent, and a witness with ord(D) divisible by 5*7 is exhibited",
+   "sample": 2000,
+   "seed": "sha256 of a declared byte string naming the sweep"
+  },
+  "strengthened_standard": {
+   "S1-ENCODING-INTERTWINING": "THE NON-NEGOTIABLE.  The functor must make a COMMUTING SQUARE at the encoding layer, not a triangle at the group layer: HA's record-is-metric linear map (determinant 2) intertwined with GEN/XBA's Q -> delta(Q) = Sigma Q^T Sigma Q.  While the encoding factorises through the group actions, nothing physical is carried.",
+   "S2-CARRIER-RIGIDITY": "SP3 supplemented so that Phi is DETERMINED, not chosen -- e.g. the fixed-configuration stratification (transport: 9/18/27/36/45/54/81) carried into the source stratification.",
+   "S3-NON-DEGENERACY-WITH-TEETH": "NT2 replaced by injectivity on orbits, or at least a measured lower bound on |image(Phi)| as a fraction of the orbit count.",
+   "S4-FUNCTORIALITY-IN-THE-FAMILY": "naturality across the declared base-change maps, so that a live cell is not an isolated coincidence at one (p, ord(D)).",
+   "S5-HELD-OUT-AT-A-LIVE-CELL-WITH-A-TRANSPORTED-QUANTITY": "a computed physical quantity transported out of sample at a live cell, not equivariance alone.",
+   "S6-AN-IN-ARENA-READING-OF-REQUIREMENT-4": "either the prime declared a parameter of the arena with per-prime verdicts, or a corpus-internal fixing of p.",
+   "status": "REGISTERED, NOT TESTED.  No cell of any scope in this unit is evaluated against S1-S6, in either direction."
+  },
   "synthetic": {
    "SYN-EMPTY": "a DECLARED SYNTHETIC incompatible pair: source Z/5 acting on F_5^2 x F_5^2, target base T's rebuilt <W,D> of order 6.",
    "SYN-FOUND": "a DECLARED SYNTHETIC compatible pair: source Z/3 acting on F_3^2 x F_3^2 by translation by (1,1), target base T's rebuilt <W,D> of order 6.  Synthetic because HA's own rho = (1/6,1/6) does not reduce at p = 3 -- measured."
   },
   "tiny_cells": {
-   "TINY-A": "source Z/2 acting freely on 4 points; target the Klein four group acting regularly on 4 points",
+   "TINY-A": "source Z/2 acting FREELY on 4 points -- the generator is the fixed-point-free involution (0 1)(2 3), so the action is a genuine Z/2-set with 2 orbits; target the Klein four group acting regularly on 4 points.  This is the cell that exercises the count formula's ORBIT EXPONENT above 1.",
    "TINY-B": "source Z/3 acting freely on 3 points; target the dihedral group of order 6 acting regularly on 6 points",
    "TINY-C": "source Z/5 acting freely on 5 points; target the Klein four group acting regularly on 4 points"
+  },
+  "tiny_negative_control": {
+   "TINY-NEG": "NEGATIVE CONTROL FOR THE COUNT FORMULA'S HYPOTHESIS: source declared p = 2 but with a generator of order 3 on 3 points, so the declared group does NOT act; target the dihedral group of order 6 acting regularly on 6 points.  The formula |C_tgt|^#orbits is valid only for a genuine free Z/p action and must DISAGREE with brute force here."
   },
   "transport_side": {
    "carrier": "C_TR = the system pair (m^2 labels) x the pointer pair (m^2 labels), index i = m^2 * a + p",
@@ -1074,16 +1235,46 @@
    "exchange": "Sigma: the label exchange (u,v) -> (v,u); W = Sigma (x) Sigma",
    "extended_scope_2": "GEN's 12 rebuilt completion classes",
    "extended_scope_3": "the whole declared completion family, 8! members",
-   "group": "<W, D> = the dihedral group of order 2*ord(D) (XBA 8.1-8.3)"
+   "group": "<W, D> = the dihedral group of order 2*ord(D) (XBA 8.1-8.3), the form FORCED by PSI's one law: with W^2 = 1 and D = [W,u], W D W = (W W u^-1 W u W) = u^-1 W u W = D^-1, so <W,D> is dihedral of order 2*ord(D) whenever W is not a power of D",
+   "one_law": "PSI (terminal): D(psi) = [P_W, u(psi)] = P_W u^-1 P_W u with P_W an involution.  Everything the obstruction says about <W,D> is a consequence of that law and holds for every base the law covers, prepared or not."
   }
  },
  "disclosures": [
   {
    "detail": {
-    "analytically_forced": true
+    "analytically_forced_for_odd_p": true,
+    "every_declared_prime_is_odd": true,
+    "measured_failures_at_p_equals_2": 20,
+    "n_measured_gcd_at_p_equals_2": [
+     [
+      1,
+      2,
+      1
+     ],
+     [
+      2,
+      4,
+      2
+     ],
+     [
+      3,
+      4,
+      1
+     ],
+     [
+      4,
+      6,
+      2
+     ],
+     [
+      5,
+      6,
+      1
+     ]
+    ]
    },
    "id": "X01",
-   "statement": "The count |hom(Z/p, D_n)| = gcd(n, p) is analytically forced; it is recorded as a disclosure and is NOT used as a gate. Both census routes compute the count without invoking it."
+   "statement": "The count |hom(Z/p, D_n)| = gcd(n, p) is analytically forced FOR ODD p; it FAILS at p = 2, which is inadmissible on the deformation side, and the failures are measured here rather than asserted.  It is recorded as a disclosure and is NOT used as a gate; both census routes compute the count without invoking it."
   },
   {
    "detail": {
@@ -1103,6 +1294,26 @@
   },
   {
    "detail": {
+    "admissible_prime_cells_at_which_the_protocol_also_passes": [
+     [
+      5,
+      "ord=15,fixed=9",
+      3100,
+      0
+     ],
+     [
+      5,
+      "ord=5,fixed=36",
+      3100,
+      0
+     ],
+     [
+      7,
+      "ord=7,fixed=18",
+      16758,
+      0
+     ]
+    ],
     "non_reducible_primes": [
      2,
      3
@@ -1110,7 +1321,7 @@
     "synthetic_prime": 3
    },
    "id": "X04",
-   "statement": "The FOUND branch is exhibited only at a DECLARED SYNTHETIC pair, at the prime 3, which is outside the deformation side's admissible primes: rho = (1/6,1/6) does not reduce there.  Nothing about the committed arena is claimed from it; it exists to prove the census's other value attainable."
+   "statement": "The synthetic FOUND branch is exhibited at a DECLARED SYNTHETIC pair, at the prime 3, which is outside the deformation side's admissible primes: rho = (1/6,1/6) does not reduce there.  It is NOT the only exercise of the FOUND machinery: the same held-out protocol is run at the live extended-scope cells, at the DECLARED-ADMISSIBLE primes 5 and 7, and passes there too (G36).  What excludes those cells is requirement 4, not a failure of the verification."
   },
   {
    "detail": {
@@ -1127,10 +1338,15 @@
       7,
       "ord=7,fixed=18"
      ]
+    ],
+    "non_degenerate_pair_digits_at_those_cells": [
+     240,
+     240,
+     656
     ]
    },
    "id": "X05",
-   "statement": "Over the EXTENDED scopes a non-trivial group morphism does exist -- at p = 5 into the defect-order-5 and defect-order-15 classes and at p = 7 into the defect-order-7 class.  It is measured and reported, and it is excluded from the verdict by pin requirement 4 because its existence is a function of the declared reduction prime."
+   "statement": "Over the EXTENDED scopes a non-trivial group morphism does exist -- at p = 5 into the defect-order-5 and defect-order-15 classes and at p = 7 into the defect-order-7 class -- and each of them extends, because the source action is free, to non-degenerate pairs in counts of 240, 240 and 656 digits (G36).  They satisfy the full delivered predicate, not merely its group clause.  They are measured and reported, and excluded from the verdict by pin requirement 4 because their existence is a function of the declared reduction prime."
   },
   {
    "detail": {
@@ -1138,6 +1354,72 @@
    },
    "id": "X06",
    "statement": "The functor-level census counts the SP-satisfying pairs by the orbit-representative formula; the counts are astronomically large and entirely degenerate.  Only the non-degenerate count enters any argument."
+  },
+  {
+   "detail": {
+    "analytically_forced": true,
+    "reflection_violations": [
+     54
+    ],
+    "rotation_violations": [
+     0
+    ]
+   },
+   "id": "X07",
+   "statement": "The held-out check is a TWO-VALUED measurement, not a test of the declared extension formula: for any rotation-valued extension the held-out equations hold identically because <D> is abelian, and every reflection-valued one fails at the same cells.  Measured under five declared rotation rules and their five reflection counterparts (G39).  What the check verifies is centraliser membership."
+  },
+  {
+   "detail": {
+    "largest_2_ord_D_in_the_family": 30,
+    "smallest_two_prime_product": 35
+   },
+   "id": "X08",
+   "statement": "THE TWO OUTCOMES ARE HELD TO DIFFERENT EVIDENTIAL STANDARDS.  EMPTY is measured against the intersection reading at every instance of both scopes; FOUND is exhibited at a synthetic pair and at the live cells that requirement 4 excludes.  Under this unit's declared reading of requirement 4 an in-arena FOUND was foreclosed before any census ran, by an arithmetic the unit computes: two declared primes need 2*ord(D) divisible by their product, and the declared family's maximum is below it (G41)."
+  },
+  {
+   "detail": {
+    "forward_routes": "one criterion, two implementations, shared model",
+    "reverse_routes": "two different computations",
+    "the_model_is_audited_at": [
+     "G03 (explicit isomorphism)",
+     "G27 (abelianisation)"
+    ]
+   },
+   "id": "X09",
+   "statement": "The two FORWARD census routes are two implementations of one criterion -- g^p = e and ord(g) | p are the same predicate -- over a SHARED abstract model, and are disclosed as such rather than advertised as independent computations.  What audits the shared model is a different gate: the explicit isomorphism from the model to the permutation rebuild, verified on every ordered pair (G03), together with the abelianisation measurement (G27).  The two REVERSE routes are genuinely different computations (word evaluation in G, versus construction of the abelianisation and its own quotient table)."
+  },
+  {
+   "detail": {
+    "abelianisation_orders_measured": [
+     2,
+     4
+    ],
+    "forced_for": "the dihedral family"
+   },
+   "id": "X10",
+   "statement": "G27's outcome is analytically forced for the dihedral family -- the abelianisation of a dihedral group is Z/2 or Z/2 x Z/2 -- and the dihedral form is itself forced by the one law (G35).  It is retained as a gate because the commutator subgroup is BUILT rather than cited, so a wrong model is caught there; the forcing is recorded here.  G14's outcome is forced in the nine-label arena only, and G40 measures that it is contingent at sixteen labels."
+  },
+  {
+   "detail": {
+    "requirements": [
+     "S1-ENCODING-INTERTWINING",
+     "S2-CARRIER-RIGIDITY",
+     "S3-NON-DEGENERACY-WITH-TEETH",
+     "S4-FUNCTORIALITY-IN-THE-FAMILY",
+     "S5-HELD-OUT-AT-A-LIVE-CELL-WITH-A-TRANSPORTED-QUANTITY",
+     "S6-AN-IN-ARENA-READING-OF-REQUIREMENT-4"
+    ],
+    "tested_here": false
+   },
+   "id": "X11",
+   "statement": "THE STRENGTHENED STANDARD IS REGISTERED AND UNTESTED.  The six requirements a live-cell morphism would have to meet before the word 'bridge' is earned -- encoding intertwining as a commuting square first among them -- are declared at DECL.strengthened_standard as the successor's gate.  NO cell of any scope in this unit is evaluated against them, in either direction: this unit's EMPTY and its live cells are both at the DELIVERED standard."
+  },
+  {
+   "detail": {
+    "paper_pinned": "v13/paper-xba-crossbase.md"
+   },
+   "id": "X12",
+   "statement": "Three of this unit's anchors carry values published in the XBA paper's committed table rather than in a receipt's JSON: species 4's defect and exchange fixed-configuration counts and its 120-member transposition split.  The paper file is hash-pinned here so those anchors are hash-protected, and all three are recomputed from the rebuilt permutations."
   }
  ],
  "gates": [
@@ -1163,10 +1445,36 @@
    "passed": true
   },
   {
-   "claim": "THE ABSTRACT DIHEDRAL MODEL IS AUDITED BY AN INDEPENDENTLY CONSTRUCTED COMPARATOR (RUNBOOK 14 addendum, v13 #219): the comparator is the permutation rebuild from the completion Q and Sigma, never the abstract model it audits, and the two agree at every rebuilt instance",
+   "claim": "THE ABSTRACT DIHEDRAL MODEL IS AUDITED BY AN INDEPENDENTLY CONSTRUCTED COMPARATOR (RUNBOOK 14 addendum, v13 #219): the comparator is the permutation rebuild from the completion Q and Sigma, never the abstract model it audits; the two agree in ORDER at every rebuilt instance, and the model is certified ISOMORPHIC to the rebuild by the explicit map (i,k) -> D^i W^k, measured bijective and multiplicative on every ordered pair -- order agreement alone would not imply isomorphism, and both census routes consume this model",
    "detail": {
     "agreements": true,
     "comparator_is_the_permutation_rebuild": true,
+    "isomorphism_audit": [
+     {
+      "bijective": true,
+      "instance": "base G @ GP-E",
+      "model_order": 4,
+      "multiplication_violations": 0
+     },
+     {
+      "bijective": true,
+      "instance": "base T",
+      "model_order": 6,
+      "multiplication_violations": 0
+     },
+     {
+      "bijective": true,
+      "instance": "base S'",
+      "model_order": 2,
+      "multiplication_violations": 0
+     },
+     {
+      "bijective": true,
+      "instance": "species 4",
+      "model_order": 4,
+      "multiplication_violations": 0
+     }
+    ],
     "rebuilt_instances": [
      "base G @ GP-E",
      "base G @ GP-F",
@@ -1180,13 +1488,19 @@
    "passed": true
   },
   {
-   "claim": "THE UNDER-DETERMINED COMMITTED INSTANCES ARE SWEPT, NOT GUESSED: base 1's defect and base S's defect are each replaced by the whole declared set of candidates consistent with every committed datum, and every member of each set gives the same group order, so the ambiguity cannot move any census count",
+   "claim": "THE UNDER-DETERMINED COMMITTED INSTANCES ARE SWEPT, NOT GUESSED: base 1's defect and base S's defect are each replaced by the whole declared set of candidates consistent with every committed datum -- the constraints being READ from the pinned XBA receipt and anchored, and the class size COMPUTED from the family classification rather than typed -- and every member of each set gives the same group order, so the ambiguity cannot move any census count",
    "detail": {
     "base_1_candidates": 2,
+    "base_1_constraint_read_from_XBA": 18,
     "base_1_group_orders": [
      4
     ],
     "base_S_candidates": 864,
+    "base_S_class_size_computed_from_the_family": 864,
+    "base_S_constraint_read_from_XBA": [
+     2,
+     45
+    ],
     "base_S_defect_orders": [
      2
     ]
@@ -1376,31 +1690,74 @@
    "passed": true
   },
   {
-   "claim": "THE PRIME-TRACKING CANDIDATE IS EXCLUDED FROM THE VERDICT (pin requirement 4): a candidate whose survival is a function of the declared reduction prime is an arena artifact; it is recorded as an instrument reading and the verdict is taken over the arena-invariant content only -- the intersection over the declared prime sweep, which is measured EMPTY at every instance of every declared scope",
+   "claim": "THE PRIME-TRACKING CANDIDATE IS EXCLUDED FROM THE VERDICT (pin requirement 4): a candidate whose survival is a function of the declared reduction prime is an arena artifact; it is recorded as an instrument reading and the verdict is taken over the arena-invariant content only -- the intersection over the declared prime sweep, which is measured EMPTY at every instance of every declared scope, and no instance admits even two declared primes.  THE REASON IS SCOPED TO THE NINE-LABEL ARENA: admitting two declared primes needs 2*ord(D) divisible by their product, and the whole nine-label family's maximum is smaller than that product -- both numbers computed here.  At the sixteen-label arena the same clause is CONTINGENT, not forced, and a witness is exhibited",
    "detail": {
     "instances_admitting_EVERY_declared_prime": 0,
+    "instances_admitting_at_least_two_declared_primes": 0,
     "instances_tested": 20,
-    "the_arena_invariant_census": "EMPTY at every instance of every declared scope"
+    "the_arena_invariant_census": "EMPTY at every instance of every declared scope",
+    "the_largest_2_ord_D_over_the_nine_label_family": 30,
+    "the_product_of_all_declared_primes": 37182145,
+    "the_reason_is_structural_at_m_equals_3": true,
+    "the_smallest_product_of_two_declared_primes": 35
    },
    "id": "G14",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "RUNBOOK 14 SYMMETRY SELF-TESTS: the predicate's verdict and the census's counts are measured INVARIANT under the arena's own action -- relabelling either carrier, conjugating the transport action by a carrier permutation, and replacing the source generator R by R^j for every j -- with the tested set fixed by declaration and never selected by the verdicts under audit",
+   "claim": "RUNBOOK 14 SYMMETRY SELF-TESTS, ON A CANDIDATE THE ACTION COULD MOVE: the predicate's verdict is measured INVARIANT under the arena's own action -- relabelling either carrier, conjugating the transport action by a carrier permutation, and replacing the source generator R by R^j for every j -- carried on an ACCEPTED NON-DEGENERATE candidate (the register doubling with the group map R -> R^2, and the target's identity self-morphism) as well as on the degenerate one; and the generator sweep CONSUMES the arena it builds, recomputing that arena's orbit count and freeness and re-evaluating the accepted candidate inside it.  The tested set is fixed by declaration and never selected by the verdicts under audit",
    "detail": {
+    "base_verdicts": {
+     "accepted_candidate": true,
+     "degenerate_candidate": false,
+     "target_translation": true
+    },
     "declared_tested_set": [
      "relabel-source",
      "relabel-target",
      "conjugate-target",
      "change-generator"
     ],
-    "generator_change_counts": [
-     1,
-     1,
-     1,
-     1
+    "generator_sweep": [
+     {
+      "accepted_candidate_verdict": true,
+      "action_is_free": true,
+      "j": 1,
+      "orbit_sizes": [
+       5
+      ],
+      "orbits": 125
+     },
+     {
+      "accepted_candidate_verdict": true,
+      "action_is_free": true,
+      "j": 2,
+      "orbit_sizes": [
+       5
+      ],
+      "orbits": 125
+     },
+     {
+      "accepted_candidate_verdict": true,
+      "action_is_free": true,
+      "j": 3,
+      "orbit_sizes": [
+       5
+      ],
+      "orbits": 125
+     },
+     {
+      "accepted_candidate_verdict": true,
+      "action_is_free": true,
+      "j": 4,
+      "orbit_sizes": [
+       5
+      ],
+      "orbits": 125
+     }
     ],
+    "orbits_declared_for_the_swept_arenas": 125,
     "points_moved_by_the_declared_arena_actions": {
      "conjugator": 81,
      "relabel_source": 625,
@@ -1408,24 +1765,28 @@
     },
     "self_tests": [
      {
+      "accepted_candidate_verdict": true,
+      "degenerate_candidate_verdict": false,
       "matches_base": true,
-      "self_test": "relabel-source",
-      "verdict": false
+      "self_test": "relabel-source"
      },
      {
+      "accepted_candidate_verdict": true,
+      "degenerate_candidate_verdict": false,
       "matches_base": true,
-      "self_test": "relabel-target",
-      "verdict": false
+      "self_test": "relabel-target"
      },
      {
+      "accepted_candidate_verdict": true,
+      "degenerate_candidate_verdict": false,
       "matches_base": true,
-      "self_test": "conjugate-target",
-      "verdict": false
+      "self_test": "conjugate-target"
      },
      {
+      "accepted_candidate_verdict": true,
+      "degenerate_candidate_verdict": false,
       "matches_base": true,
-      "self_test": "change-generator",
-      "verdict": false
+      "self_test": "change-generator"
      }
     ],
     "tested_set_used": [
@@ -1433,7 +1794,11 @@
      "relabel-target",
      "conjugate-target",
      "change-generator"
-    ]
+    ],
+    "the_carried_candidates": {
+     "accepted_non_degenerate": "the register doubling with the group map R -> R^2 on the source side; the target's translation self-morphism (carrier map = the action of W, group map = the identity automorphism)",
+     "degenerate": "the constant carrier map with the trivial group map"
+    }
    },
    "id": "G15",
    "must_pass": true,
@@ -1444,9 +1809,9 @@
    "detail": {
     "cache": {
      "bypass": 35,
-     "hits": 5,
-     "lookups": 100,
-     "misses": 95,
+     "hits": 25,
+     "lookups": 132,
+     "misses": 107,
      "selftest_hits": 0
     }
    },
@@ -1455,29 +1820,41 @@
    "passed": true
   },
   {
-   "claim": "THE ORBIT COUNT IS COMPUTED TWICE BY DIFFERENT MEANS: union-find over the generator's own edges, and the division of the carrier size by the orbit length (the action is measured free), and the two agree at every cell",
+   "claim": "THE ORBIT COUNT IS COMPUTED TWICE BY DIFFERENT MEANS AND THE FUNCTOR-LEVEL CENSUS IS CELL-COMPLETE: union-find over the generator's own edges and the division of the carrier size by the orbit length (the action is measured free) agree at every cell; and the cell count is COMPUTED from the declared sets -- the declared primes times the instances rebuilt as permutation groups -- with every cell visited exactly once, so a dropped cell cannot pass (RUNBOOK 13 addendum, v13 #234)",
    "detail": {
     "agreements": true,
-    "cells": 35
+    "cells_expected": 35,
+    "cells_visited": 35,
+    "distinct_cells": 35,
+    "instances": 5,
+    "primes": 7
    },
    "id": "G17",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE EQUIVARIANT-MAP COUNT IS COMPUTED BY TWO INDEPENDENT ROUTES: the orbit-representative formula, and an EXHAUSTIVE brute-force enumeration of every function from the source carrier to the target carrier filtered by the very predicate the census uses, at declared tiny cells that include a cell with non-trivial group maps and a cell with none",
+   "claim": "THE EQUIVARIANT-MAP COUNT IS COMPUTED BY TWO INDEPENDENT ROUTES: the orbit-representative formula, and an EXHAUSTIVE brute-force enumeration of every function from the source carrier to the target carrier filtered by the very predicate the census uses, at declared tiny cells that include a cell with non-trivial group maps and a cell with none, that are cell-complete against the declaration, whose source generators are measured to satisfy gen^p = identity (so the declared group really acts), and whose ORBIT EXPONENTS include a value above 1 -- the exponent is what the formula asserts",
    "detail": {
+    "declared_tiny_cells": 3,
+    "every_declared_group_acts": true,
+    "orbit_exponents_exercised": [
+     1,
+     2
+    ],
     "tiny_cells": [
      {
-      "brute_force": 16,
+      "brute_force": 64,
       "cell": "TINY-A",
-      "formula": 16,
+      "formula": 64,
       "group_maps": 4,
-      "non_degenerate_brute": 12,
-      "orbits": 1,
+      "non_degenerate_brute": 48,
+      "orbits": 2,
       "p": 2,
+      "source_generator_order": 2,
       "source_points": 4,
-      "target_points": 4
+      "target_points": 4,
+      "the_declared_group_acts": true
      },
      {
       "brute_force": 18,
@@ -1487,8 +1864,10 @@
       "non_degenerate_brute": 12,
       "orbits": 1,
       "p": 3,
+      "source_generator_order": 3,
       "source_points": 3,
-      "target_points": 6
+      "target_points": 6,
+      "the_declared_group_acts": true
      },
      {
       "brute_force": 4,
@@ -1498,12 +1877,37 @@
       "non_degenerate_brute": 0,
       "orbits": 1,
       "p": 5,
+      "source_generator_order": 5,
       "source_points": 5,
-      "target_points": 4
+      "target_points": 4,
+      "the_declared_group_acts": true
      }
     ]
    },
    "id": "G18",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COUNT FORMULA'S HYPOTHESIS IS MEASURED, NOT ASSUMED: at a declared negative-control cell whose source generator's order does NOT divide the declared prime -- so the declared group does not act -- the orbit-representative formula and the exhaustive brute force DISAGREE, and the disagreement is measured here; every cell of the validation set is measured to satisfy the hypothesis the formula needs, and the committed census's own source action is measured free at every cell",
+   "detail": {
+    "negative_control": {
+     "brute_force": 6,
+     "cell": "TINY-NEG",
+     "formula": 24,
+     "group_maps": 4,
+     "non_degenerate_brute": 0,
+     "orbits": 1,
+     "p": 2,
+     "source_generator_order": 3,
+     "source_points": 3,
+     "target_points": 6,
+     "the_declared_group_acts": false
+    },
+    "the_formula_needs": "a genuine free Z/p action on the source",
+    "validation_cells_satisfying_the_hypothesis": true
+   },
+   "id": "G42",
    "must_pass": true,
    "passed": true
   },
@@ -1737,13 +2141,13 @@
    "passed": true
   },
   {
-   "claim": "THE OBSTRUCTION IS NAMED AND IS MEASURED COEXTENSIVE WITH EMPTINESS, IN BOTH DIRECTIONS: over every cell of every declared scope, the forward census is empty EXACTLY where gcd(p, |<W,D>|) = 1 -- so the named obstruction is order-coprimality (a prime source group and a transport group whose order 2*ord(D) is not divisible by it), and the naming is falsifiable because cells of both kinds occur",
+   "claim": "THE FORWARD OBSTRUCTION IS NAMED, AND IT IS MEASURED COEXTENSIVE WITH THE FORWARD CENSUS'S EMPTINESS IN BOTH DIRECTIONS OF THE EQUIVALENCE: over every cell of every declared scope, the forward census is empty EXACTLY where gcd(p, |<W,D>|) = 1 -- so the named forward obstruction is order-coprimality (a prime source group and a transport group whose order 2*ord(D) is not divisible by it), and the naming is falsifiable because cells of both kinds occur.  This is a statement about the FORWARD census only; the reverse census has its own, different obstruction (G34)",
    "detail": {
     "cells": 140,
-    "coextensive_in_both_directions": true,
     "empty_cells": 137,
     "live_cells": 3,
-    "obstruction": "order-coprimality"
+    "obstruction": "order-coprimality",
+    "the_forward_equivalence_holds_in_both_directions": true
    },
    "id": "G26",
    "must_pass": true,
@@ -1761,6 +2165,580 @@
    },
    "id": "G27",
    "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SECOND OBSTRUCTION, NAMED BESIDE THE FIRST: THE REVERSE CENSUS IS EMPTY AT EVERY ONE OF THE DECLARED CELLS -- INCLUDING THE LIVE ONES.  Where the forward census is non-trivial the reverse census is still zero, so the reverse emptiness is NOT coextensive with order-coprimality: the mismatch is measured and nonzero, and the reverse obstruction is the 2-group abelianisation, which does not mention the prime.  MEASURED CONSEQUENCE: at every declared cell the structure-preserving maps run in ONE direction only, deformation -> transport, so 'built FROM' could at most mean embedding as a sub-object, and that only where a forward morphism exists at all",
+   "detail": {
+    "cells": 140,
+    "cells_where_the_reverse_reading_would_fail": 3,
+    "live_forward_cells": 3,
+    "reverse_emptiness_is_coextensive_with_coprimality": false,
+    "reverse_non_trivial_at_the_live_cells": 0,
+    "reverse_non_trivial_total": 0,
+    "the_live_cells": [
+     [
+      5,
+      "ord=15,fixed=9",
+      4,
+      0
+     ],
+     [
+      5,
+      "ord=5,fixed=36",
+      4,
+      0
+     ],
+     [
+      7,
+      "ord=7,fixed=18",
+      6,
+      0
+     ]
+    ],
+    "the_reverse_obstruction": "the 2-group abelianisation (prime-independent)"
+   },
+   "id": "G34",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TWO SETS ARE BOTH COMPUTED, AND THEIR EQUALITY IS GATED (RUNBOOK 4: counts computed, never typed): the primes dividing 2*ord(D) at the committed instances are obtained by trial division over the measured defect orders, the primes at which the deformation side's exact residual fails to reduce are obtained by testing the denominator, and the two sets are compared here.  THE COINCIDENCE HAS ONE DEGREE OF FREEDOM, MEASURED: the prime 2 divides 2*ord(D) at every instance by the dihedral form, and the prime 3 enters from ONE instance alone -- delete it and the union is {2}, while the inclusion in {2,3} survives",
+   "detail": {
+    "instances": 8,
+    "instances_whose_radical_contains_2": 8,
+    "instances_whose_radical_contains_3": 1,
+    "radical_by_instance": {
+     "base 1 @ SP-E": [
+      2
+     ],
+     "base 1 @ SP-F": [
+      2
+     ],
+     "base G @ GP-E": [
+      2
+     ],
+     "base G @ GP-F": [
+      2
+     ],
+     "base S": [
+      2
+     ],
+     "base S'": [
+      2
+     ],
+     "base T": [
+      2,
+      3
+     ],
+     "species 4": [
+      2
+     ]
+    },
+    "the_largest_committed_defect_order": 3,
+    "the_primes_at_which_rho_fails_to_reduce": [
+     2,
+     3
+    ],
+    "the_union_over_the_committed_instances": [
+     2,
+     3
+    ],
+    "the_union_without_that_one_instance": [
+     2
+    ]
+   },
+   "id": "G32",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE OBSTRUCTION THEOREM IS LAGRANGE + CAUCHY, WITH NO DIHEDRAL HYPOTHESIS: for a finite group G and a prime q, hom(Z/q, G) is trivial IFF q does not divide |G| -- Lagrange forward (an element of order q would generate a subgroup of order q), Cauchy back (q | |G| yields an element of order q).  Swept over a declared group zoo that is NOT only dihedral -- cyclic, dihedral, symmetric, alternating and direct products, abelian and non-abelian -- with zero failures.  THE GEOMETRIC CONTENT IS THEREFORE THE ORDER FORMULA |<W,D>| = 2*ord(D), NOT THE HOM COUNT: the same criterion read through 2*ord(D) instead of |G| is measured to FAIL off the dihedral family",
+   "detail": {
+    "failures_of_the_Lagrange_Cauchy_equivalence": 0,
+    "failures_of_the_order_reading_off_the_dihedral_family": 5,
+    "group_times_prime_cells": 189,
+    "groups": 21,
+    "non_dihedral_cells_tested_against_the_order_reading": 117,
+    "zoo": [
+     {
+      "element_orders": [
+       1,
+       2,
+       3
+      ],
+      "group": "A_4",
+      "nonabelian": true,
+      "order": 12
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       6
+      ],
+      "group": "A_4 x Z/2",
+      "nonabelian": true,
+      "order": 24
+     },
+     {
+      "element_orders": [
+       1
+      ],
+      "group": "D_1",
+      "nonabelian": false,
+      "order": 1
+     },
+     {
+      "element_orders": [
+       1,
+       2
+      ],
+      "group": "D_2",
+      "nonabelian": false,
+      "order": 2
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3
+      ],
+      "group": "D_3",
+      "nonabelian": true,
+      "order": 6
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       4
+      ],
+      "group": "D_4",
+      "nonabelian": true,
+      "order": 8
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       4,
+       6,
+       12
+      ],
+      "group": "D_4 x Z/3",
+      "nonabelian": true,
+      "order": 24
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       5
+      ],
+      "group": "D_5",
+      "nonabelian": true,
+      "order": 10
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       6
+      ],
+      "group": "D_6",
+      "nonabelian": true,
+      "order": 12
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       7
+      ],
+      "group": "D_7",
+      "nonabelian": true,
+      "order": 14
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3
+      ],
+      "group": "S_3",
+      "nonabelian": true,
+      "order": 6
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "group": "S_4",
+      "nonabelian": true,
+      "order": 24
+     },
+     {
+      "element_orders": [
+       1
+      ],
+      "group": "Z/1",
+      "nonabelian": false,
+      "order": 1
+     },
+     {
+      "element_orders": [
+       1,
+       2
+      ],
+      "group": "Z/2",
+      "nonabelian": false,
+      "order": 2
+     },
+     {
+      "element_orders": [
+       1,
+       2
+      ],
+      "group": "Z/2 x Z/2",
+      "nonabelian": false,
+      "order": 4
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       6
+      ],
+      "group": "Z/2 x Z/3",
+      "nonabelian": false,
+      "order": 6
+     },
+     {
+      "element_orders": [
+       1,
+       3
+      ],
+      "group": "Z/3",
+      "nonabelian": false,
+      "order": 3
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       4
+      ],
+      "group": "Z/4",
+      "nonabelian": false,
+      "order": 4
+     },
+     {
+      "element_orders": [
+       1,
+       5
+      ],
+      "group": "Z/5",
+      "nonabelian": false,
+      "order": 5
+     },
+     {
+      "element_orders": [
+       1,
+       2,
+       3,
+       6
+      ],
+      "group": "Z/6",
+      "nonabelian": false,
+      "order": 6
+     },
+     {
+      "element_orders": [
+       1,
+       7
+      ],
+      "group": "Z/7",
+      "nonabelian": false,
+      "order": 7
+     }
+    ]
+   },
+   "id": "G33",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE OBSTRUCTION IS A THEOREM ABOUT THE ONE-LAW FAMILY, NOT ABOUT EIGHT MEASURED COINCIDENCES.  Given only the one law's two ingredients -- W^2 = 1 and D = [W,u] -- the relation W D W = D^-1 is forced by algebra: W(W u^-1 W u)W = u^-1 W u W = (W u^-1 W u)^-1.  Hence <W,D> is dihedral of order 2*ord(D) whenever W is not a power of D, and the forward obstruction holds for EVERY base the law covers, including bases the corpus has not built.  Measured over a randomised family sweep whose seed is the sha256 of declared data alone, with a control in which W is NOT an involution and the relation must fail",
+   "detail": {
+    "control_draws_with_a_non_involutive_W": 168,
+    "control_violations_of_the_relation": 145,
+    "defect_orders_drawn": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     15
+    ],
+    "draws": 400,
+    "draws_where_W_is_a_power_of_D": 0,
+    "points": "4 to 8",
+    "seed": "sha256 of a declared byte string naming the sweep -- no wall-clock value and no operating-system entropy enters, so two runs draw the same sequence",
+    "the_only_contingent_content": "ord(D) <= 3 at the committed instances",
+    "violations_of_W_D_W_equals_D_inverse": 0,
+    "violations_of_the_order_formula": 0
+   },
+   "id": "G35",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "FOUND-AT-DELIVERED-STANDARD-OUTSIDE-COMMITTED-SCOPE: at every live cell of the extended scope -- at DECLARED-ADMISSIBLE primes, on classes the transport side itself rebuilt -- an explicit pair (phi, Phi) is constructed and passes the FULL delivered predicate SP1, SP2, SP3, NT1, NT2 exhaustively, AND passes this unit's own held-out protocol: fitted on the declared FIT orbit alone, extended by the declared source symmetry, and verified on every HELD orbit with zero violations.  These cells are excluded from the verdict by the pin's requirement 4 -- because their existence is a function of the DECLARED reduction prime -- and by nothing else; the FOUND machinery is therefore exercised at admissible primes and not only at the synthetic pair",
+   "detail": {
+    "cells": [
+     {
+      "NT1": true,
+      "NT2": true,
+      "SP1_cells": 25,
+      "SP1_violations": 0,
+      "SP2": true,
+      "SP3_cells": 3125,
+      "SP3_violations": 0,
+      "accepted_by_the_full_delivered_predicate": true,
+      "class": "ord=15,fixed=9",
+      "fit_orbits": 1,
+      "fit_points_touched": 5,
+      "fixed_points_of_the_group_maps_image": 36,
+      "group_map_order": 5,
+      "group_order": 30,
+      "held_out_cells": 3100,
+      "held_out_violations": 0,
+      "non_degenerate_pairs_digits": 240,
+      "ord_D": 15,
+      "p": 5,
+      "source_orbits": 125
+     },
+     {
+      "NT1": true,
+      "NT2": true,
+      "SP1_cells": 25,
+      "SP1_violations": 0,
+      "SP2": true,
+      "SP3_cells": 3125,
+      "SP3_violations": 0,
+      "accepted_by_the_full_delivered_predicate": true,
+      "class": "ord=5,fixed=36",
+      "fit_orbits": 1,
+      "fit_points_touched": 5,
+      "fixed_points_of_the_group_maps_image": 36,
+      "group_map_order": 5,
+      "group_order": 10,
+      "held_out_cells": 3100,
+      "held_out_violations": 0,
+      "non_degenerate_pairs_digits": 240,
+      "ord_D": 5,
+      "p": 5,
+      "source_orbits": 125
+     },
+     {
+      "NT1": true,
+      "NT2": true,
+      "SP1_cells": 49,
+      "SP1_violations": 0,
+      "SP2": true,
+      "SP3_cells": 16807,
+      "SP3_violations": 0,
+      "accepted_by_the_full_delivered_predicate": true,
+      "class": "ord=7,fixed=18",
+      "fit_orbits": 1,
+      "fit_points_touched": 7,
+      "fixed_points_of_the_group_maps_image": 18,
+      "group_map_order": 7,
+      "group_order": 14,
+      "held_out_cells": 16758,
+      "held_out_violations": 0,
+      "non_degenerate_pairs_digits": 656,
+      "ord_D": 7,
+      "p": 7,
+      "source_orbits": 343
+     }
+    ],
+    "every_prime_is_declared_admissible": true,
+    "excluded_by": "pin requirement 4 (the prime is a declaration)",
+    "label": "FOUND-AT-DELIVERED-STANDARD-OUTSIDE-COMMITTED-SCOPE",
+    "primes": [
+     5,
+     7
+    ]
+   },
+   "id": "G36",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DELIVERED STANDARD IS WEAK AT THE FUNCTOR LAYER, MEASURED: because the source action is FREE, an equivariant carrier map is one free choice of image per orbit, so SP3 constrains nothing once phi is fixed, and NT2 asks only for two distinct images.  The example is built and evaluated here: a carrier map that sends every source orbit but one into a SINGLE target orbit satisfies the whole predicate and is ACCEPTED.  The consequence cuts both ways and both are recorded: the EMPTY verdict is correspondingly STRONG (the filter is as loose as it can be and the answer is still zero), and a live cell is correspondingly WEAK",
+   "detail": {
+    "NT2_requires": "at least 2 distinct images",
+    "accepted": true,
+    "class": "ord=15,fixed=9",
+    "distinct_images": 10,
+    "orbits_sent_into_one_target_orbit": 124,
+    "prime": 5,
+    "source_orbits": 125,
+    "the_strengthened_standard": "REGISTERED at DECL.strengthened_standard, tested in NEITHER direction here"
+   },
+   "id": "G37",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SECTOR CONCENTRATION IS MEASURED, AND REGISTERED AS AN OPEN: the declared completion family is MAJORITY-LIVE -- more of it admits some declared prime than does not -- while every committed instance sits in the low-defect-order band.  Both counts are computed from the swept family and the measured instance table, the three sectors are measured to partition the family, and the question 'why do the prepared bases concentrate in the closed sector' is registered as OPEN-2",
+   "detail": {
+    "OPEN-2": "Why do the prepared bases concentrate in the closed sector?  The declared completion family is majority-live; every committed instance sits in the low-defect-order band.  Is that a selection rule of the preparation or an artifact of which bases happen to have been built?",
+    "committed_instances": 8,
+    "committed_instances_admitting_some_declared_prime": 0,
+    "committed_instances_in_the_low_band": 8,
+    "family_members": 40320,
+    "live_as_a_fraction": "23040/40320",
+    "low_band_as_a_fraction": "5760/40320",
+    "members_admitting_some_declared_prime": 23040,
+    "members_by_defect_order": {
+     "1": 96,
+     "15": 9216,
+     "2": 1440,
+     "3": 4224,
+     "4": 4608,
+     "5": 4608,
+     "6": 6912,
+     "7": 9216
+    },
+    "members_in_neither_sector": 11520,
+    "members_in_the_low_band": 5760,
+    "the_fewest_labels_a_completion_of_each_defect_order_moves": {
+     "1": 0,
+     "15": 5,
+     "2": 2,
+     "3": 2,
+     "4": 5,
+     "5": 3,
+     "6": 4,
+     "7": 4
+    },
+    "the_low_defect_order_band": "ord(D) <= 3",
+    "the_orders_that_admit_one": [
+     5,
+     7,
+     15
+    ]
+   },
+   "id": "G38",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TWO-PRIME CLAUSE IS FORCED ONLY IN THE NINE-LABEL ARENA, MEASURED BOTH WAYS: over the whole nine-label family, exhaustively, no member has 2*ord(D) divisible by the smallest product of two declared primes -- the family's largest defect order is below the bound, and the Landau maximum for nine labels is computed here.  In species 4's own SIXTEEN-label arena, where the Landau maximum is far larger, a declared deterministic sample EXHIBITS completions whose defect order is divisible by that same product, with an explicit witness.  So G14's outcome is structural at m = 3 and CONTINGENT at m = 4, and species 4's own measured defect order is what carries it there",
+   "detail": {
+    "Landau_maximum_for_16_labels": 140,
+    "Landau_maximum_for_9_labels": 20,
+    "an_explicit_witness_completion": [
+     0,
+     6,
+     14,
+     13,
+     2,
+     8,
+     11,
+     10,
+     15,
+     9,
+     12,
+     7,
+     3,
+     4,
+     5,
+     1
+    ],
+    "its_defect_order": 105,
+    "nine_label_members_admitting_two_declared_primes": 0,
+    "sample_size": 2000,
+    "sampled_members_with_ord_D_divisible_by_the_product": 162,
+    "the_nine_label_family_maximum_defect_order": 15,
+    "the_sampled_arena": "m = 4, 16 labels",
+    "the_sampled_order_spectrum": {
+     "10": 57,
+     "105": 111,
+     "11": 22,
+     "12": 167,
+     "13": 56,
+     "14": 20,
+     "15": 65,
+     "18": 33,
+     "20": 100,
+     "21": 49,
+     "22": 30,
+     "24": 159,
+     "28": 61,
+     "3": 8,
+     "30": 122,
+     "33": 141,
+     "35": 51,
+     "36": 57,
+     "4": 20,
+     "40": 63,
+     "42": 84,
+     "45": 109,
+     "5": 30,
+     "6": 94,
+     "60": 59,
+     "7": 65,
+     "8": 45,
+     "9": 122
+    },
+    "the_smallest_product_of_two_declared_primes": 35
+   },
+   "id": "G40",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "DISCLOSURE (RUNBOOK 14 addendum, v13 #208 -- recorded, NOT a must-pass gate): the held-out check discriminates a ROTATION-valued extension from a REFLECTION-valued one and is BLIND to which rotation rule is declared.  Measured by sweeping five declared rotation rules and their five reflection-valued counterparts: every rotation rule passes at every held-out cell and every reflection rule fails at the same number of them, because <D> is abelian and the held-out equation is then an identity.  What the 234 cells verify is centraliser membership",
+   "detail": {
+    "held_out_cells": 234,
+    "reflection_valued_violations": [
+     54
+    ],
+    "rotation_valued_violations": [
+     0
+    ],
+    "rules_swept": 10,
+    "what_the_check_verifies": "that the extension element centralises the group map's image"
+   },
+   "id": "G39",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "DISCLOSURE (recorded, NOT a must-pass gate): THE TWO OUTCOMES ARE DEMONSTRATED AT DIFFERENT EVIDENTIAL STANDARDS.  EMPTY is measured against the intersection-over-primes reading at every instance of both scopes; FOUND is demonstrated at a declared synthetic pair at one prime, and separately at the live extended-scope cells (G36) which requirement 4 excludes.  Under this unit's declared reading of requirement 4, an IN-ARENA FOUND was foreclosed before any census ran: it needs an instance admitting every declared prime, hence 2*ord(D) divisible by their product, and the nine-label family's maximum is far below even the smallest two-prime product -- both numbers computed",
+   "detail": {
+    "EMPTY_is_measured_over": "20 instances x 7 primes, intersection reading",
+    "FOUND_is_demonstrated_at": "one declared synthetic pair (p = 3) and the live extended-scope cells (excluded by requirement 4)",
+    "an_in_arena_FOUND_was_reachable": false,
+    "the_largest_2_ord_D_in_the_declared_family": 30,
+    "the_product_of_all_declared_primes": 37182145,
+    "the_smallest_two_prime_product": 35
+   },
+   "id": "G41",
+   "must_pass": false,
    "passed": true
   },
   {
@@ -1795,37 +2773,60 @@
      "failures": 0,
      "fatal": 0
     },
-    "anchors": 77
+    "anchors": 87
    },
    "id": "G30",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE VERDICT STRING AND ITS QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234): the derivation is recomputed here by an independent expression over the same counts and the two must agree, so a hand-typed verdict cannot survive",
+   "claim": "THE VERDICT STRING AND EVERY ONE OF ITS QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234): the verdict is derived once from the emptiness decision, recomputed by a second expression over the same five booleans, and derived a THIRD time from the recorded census tables by re-summing the per-cell counts of the other route -- so neither a hand-typed verdict nor a corrupted count survives; and every printed qualifier is recomputed here from its own source, so a typed qualifier cannot reach the receipt",
    "detail": {
     "inputs": {
      "complete": true,
      "empty_everywhere": true,
      "empty_reachable": true,
+     "empty_recomputed_from_the_tables": true,
+     "forward_recount_from_the_tables": 0,
      "found_reachable": true,
-     "invariant": true
+     "invariant": true,
+     "reverse_recount_from_the_tables": 0
     },
     "qualifiers": {
+     "admissible_prime_cells_found_outside_the_committed_scope": 3,
      "completion_family_members": 40320,
      "directed_cells": 112,
      "extended_scope_cells": 168,
      "instances": 8,
+     "live_extended_scope_cells": 3,
      "non_degenerate_functor_pairs": 0,
      "non_degenerate_group_morphisms_forward": 0,
      "non_degenerate_group_morphisms_reverse": 0,
-     "obstruction": "order-coprimality",
+     "obstruction_forward": "order-coprimality",
+     "obstruction_reverse": "2-group abelianisation (prime-independent)",
      "prime_tracking_candidates_excluded": 1,
      "primes": 7,
      "scope": "the committed transport instances at the declared primes"
     },
+    "qualifiers_recomputed_in_gate": {
+     "admissible_prime_cells_found_outside_the_committed_scope": 3,
+     "completion_family_members": 40320,
+     "directed_cells": 112,
+     "extended_scope_cells": 168,
+     "instances": 8,
+     "live_extended_scope_cells": 3,
+     "non_degenerate_functor_pairs": 0,
+     "non_degenerate_group_morphisms_forward": 0,
+     "non_degenerate_group_morphisms_reverse": 0,
+     "obstruction_forward": "order-coprimality",
+     "obstruction_reverse": "2-group abelianisation (prime-independent)",
+     "prime_tracking_candidates_excluded": 1,
+     "primes": 7
+    },
+    "qualifiers_that_disagree": [],
     "recomputed": "BRG-EMPTY-AT-CARRIER",
-    "verdict": "BRG-EMPTY-AT-CARRIER"
+    "verdict": "BRG-EMPTY-AT-CARRIER",
+    "verdict_recomputed_from_the_census_tables": "BRG-EMPTY-AT-CARRIER"
    },
    "id": "G31",
    "must_pass": true,
@@ -1836,8 +2837,10 @@
   "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
   "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
   "v13/code/nt_transport_receipt.json": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+  "v13/code/psi_curvature_receipt.json": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
   "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
-  "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b"
+  "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
+  "v13/paper-xba-crossbase.md": "2041ebcd8b3c70f9d637f02764db438c393bf58f4b90a1cec2d807502f8e16f5"
  },
  "mutants": [
   {
@@ -1864,7 +2867,7 @@
    "killed": true,
    "mutant": "anchor-gen-defect",
    "named_kills": [
-    "A:A06"
+    "A:A08"
    ]
   },
   {
@@ -1873,7 +2876,7 @@
    "killed": true,
    "mutant": "anchor-gen-family",
    "named_kills": [
-    "A:A21",
+    "A:A29",
     "G:G02"
    ]
   },
@@ -1892,7 +2895,7 @@
    "killed": true,
    "mutant": "anchor-ha-rho",
    "named_kills": [
-    "A:A29"
+    "A:A37"
    ]
   },
   {
@@ -1919,7 +2922,16 @@
    "killed": true,
    "mutant": "anchor-pin-sha",
    "named_kills": [
-    "A:A05"
+    "A:A06"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the PSI receipt hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-psi-sha",
+   "named_kills": [
+    "A:A04"
    ]
   },
   {
@@ -1928,7 +2940,7 @@
    "killed": true,
    "mutant": "anchor-soft",
    "named_kills": [
-    "A:A05",
+    "A:A06",
     "G:G30"
    ]
   },
@@ -1938,7 +2950,7 @@
    "killed": true,
    "mutant": "anchor-xba-orders",
    "named_kills": [
-    "A:A33"
+    "A:A41"
    ]
   },
   {
@@ -1947,7 +2959,26 @@
    "killed": true,
    "mutant": "anchor-xba-sha",
    "named_kills": [
-    "A:A04"
+    "A:A05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the XBA paper's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-xbapaper-sha",
+   "named_kills": [
+    "A:A07"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the tiny arena's generator is built with an order that does not divide p",
+   "killed": true,
+   "mutant": "arena-order-lax",
+   "named_kills": [
+    "G:G18",
+    "G:G42"
    ]
   },
   {
@@ -1981,11 +3012,21 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the declared group zoo is narrowed to dihedral groups",
+   "killed": true,
+   "mutant": "cauchy-narrow",
+   "named_kills": [
+    "G:G33"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "one declared census cell is dropped from the sweep",
    "killed": true,
    "mutant": "cell-drop",
    "named_kills": [
     "G:G09",
+    "G:G17",
     "G:G31"
    ]
   },
@@ -1998,6 +3039,15 @@
     "G:G11",
     "G:G13",
     "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared orbit-collapsing carrier map is made constant",
+   "killed": true,
+   "mutant": "collapse-lax",
+   "named_kills": [
+    "G:G37"
    ]
   },
   {
@@ -2016,6 +3066,15 @@
    "mutant": "conj-lax",
    "named_kills": [
     "G:G15",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the emptiness decision is inverted at its own source",
+   "killed": true,
+   "mutant": "count-flip",
+   "named_kills": [
     "G:G31"
    ]
   },
@@ -2056,8 +3115,11 @@
    "named_kills": [
     "G:G05",
     "G:G07",
+    "G:G15",
     "G:G21",
-    "G:G31"
+    "G:G31",
+    "G:G36",
+    "G:G37"
    ]
   },
   {
@@ -2075,7 +3137,7 @@
    "killed": true,
    "mutant": "family-drop",
    "named_kills": [
-    "A:A21",
+    "A:A29",
     "G:G02"
    ]
   },
@@ -2106,7 +3168,8 @@
     "G:G21",
     "G:G22",
     "G:G24",
-    "G:G31"
+    "G:G31",
+    "G:G39"
    ]
   },
   {
@@ -2120,6 +3183,26 @@
   },
   {
    "exit": 1,
+   "expected_kill": "one cell is dropped from the functor-level census",
+   "killed": true,
+   "mutant": "functor-cell-drop",
+   "named_kills": [
+    "G:G17",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the generator sweep replaces the swept generators by the identity",
+   "killed": true,
+   "mutant": "generator-blind",
+   "named_kills": [
+    "G:G15",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the morphism is fitted on the held-out orbits",
    "killed": true,
    "mutant": "heldout-leak",
@@ -2127,7 +3210,8 @@
     "G:G21",
     "G:G22",
     "G:G23",
-    "G:G31"
+    "G:G31",
+    "G:G39"
    ]
   },
   {
@@ -2147,6 +3231,36 @@
    "named_kills": [
     "G:G14",
     "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the species-4 contingency sweep is run in the nine-label arena",
+   "killed": true,
+   "mutant": "landau-lax",
+   "named_kills": [
+    "G:G40"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the live-cell group map is built from the defect itself instead of its element of order p",
+   "killed": true,
+   "mutant": "live-order-lax",
+   "named_kills": [
+    "G:G31",
+    "G:G36"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the abstract model is built as the abelian group of the same order",
+   "killed": true,
+   "mutant": "model-lax",
+   "named_kills": [
+    "G:G03",
+    "G:G27",
+    "G:G34"
    ]
   },
   {
@@ -2174,6 +3288,7 @@
    "killed": true,
    "mutant": "orbit-lax",
    "named_kills": [
+    "G:G15",
     "G:G17",
     "G:G18",
     "G:G24",
@@ -2196,10 +3311,28 @@
    "killed": true,
    "mutant": "prime-single",
    "named_kills": [
-    "A:A77",
+    "A:A87",
     "G:G09",
     "G:G12",
     "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the one-law sweep draws a general permutation where the law declares an involution",
+   "killed": true,
+   "mutant": "psi-noninvolutive",
+   "named_kills": [
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one printed verdict qualifier is replaced by a typed value",
+   "killed": true,
+   "mutant": "qualifier-typo",
+   "named_kills": [
+    "G:G31"
    ]
   },
   {
@@ -2213,12 +3346,31 @@
   },
   {
    "exit": 1,
+   "expected_kill": "an instance of defect order 5 is injected into the radical computation's instance set",
+   "killed": true,
+   "mutant": "radical-inject",
+   "named_kills": [
+    "G:G32"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the relabelling self-test relabels nothing",
    "killed": true,
    "mutant": "relabel-lax",
    "named_kills": [
     "G:G15",
     "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the reverse census's non-trivial count is read off the forward count",
+   "killed": true,
+   "mutant": "reverse-alias",
+   "named_kills": [
+    "G:G27",
+    "G:G34"
    ]
   },
   {
@@ -2236,7 +3388,8 @@
    "killed": true,
    "mutant": "route-b-lax",
    "named_kills": [
-    "G:G10"
+    "G:G10",
+    "G:G31"
    ]
   },
   {
@@ -2247,6 +3400,27 @@
    "named_kills": [
     "G:G09",
     "G:G12",
+    "G:G31",
+    "G:G32",
+    "G:G38"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the low-defect sector's declared bound is lowered",
+   "killed": true,
+   "mutant": "sector-lax",
+   "named_kills": [
+    "G:G38"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one symmetry self-test applies its declared action to the candidate the wrong way round",
+   "killed": true,
+   "mutant": "selftest-blind",
+   "named_kills": [
+    "G:G15",
     "G:G31"
    ]
   },
@@ -2266,7 +3440,7 @@
    "killed": true,
    "mutant": "spectrum-swap",
    "named_kills": [
-    "A:A77",
+    "A:A87",
     "G:G13"
    ]
   },
@@ -2281,11 +3455,20 @@
   },
   {
    "exit": 1,
+   "expected_kill": "one declared tiny validation cell is dropped",
+   "killed": true,
+   "mutant": "tiny-drop",
+   "named_kills": [
+    "G:G18"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the prime-tracking control is made prime-uniform",
    "killed": true,
    "mutant": "tracking-blind",
    "named_kills": [
-    "A:A77",
+    "A:A87",
     "G:G13"
    ]
   },
@@ -2304,13 +3487,13 @@
  "pin_base_commit": "b632f59",
  "python": "3.13.2",
  "schema": "brg-bridge-receipt-v1",
- "source_sha256": "6f288deb3ee96d82af42ba9ca7f7d6f94a14beb45414c88c467cc02c579f8874",
+ "source_sha256": "6bd653eb8b3d2e5bf7ffca7334191fcd9fdb5478073102c30126c507ca795e31",
  "tables": {
   "cache": {
    "bypass": 35,
-   "hits": 10,
-   "lookups": 118,
-   "misses": 108,
+   "hits": 55,
+   "lookups": 178,
+   "misses": 123,
    "selftest_hits": 0
   },
   "census_scope_1": [
@@ -4936,6 +6119,92 @@
    "5": 0,
    "7": 0
   },
+  "found_at_the_admissible_primes": {
+   "cells": [
+    {
+     "NT1": true,
+     "NT2": true,
+     "SP1_cells": 25,
+     "SP1_violations": 0,
+     "SP2": true,
+     "SP3_cells": 3125,
+     "SP3_violations": 0,
+     "accepted_by_the_full_delivered_predicate": true,
+     "class": "ord=15,fixed=9",
+     "fit_orbits": 1,
+     "fit_points_touched": 5,
+     "fixed_points_of_the_group_maps_image": 36,
+     "group_map_order": 5,
+     "group_order": 30,
+     "held_out_cells": 3100,
+     "held_out_violations": 0,
+     "non_degenerate_pairs_digits": 240,
+     "ord_D": 15,
+     "p": 5,
+     "source_orbits": 125
+    },
+    {
+     "NT1": true,
+     "NT2": true,
+     "SP1_cells": 25,
+     "SP1_violations": 0,
+     "SP2": true,
+     "SP3_cells": 3125,
+     "SP3_violations": 0,
+     "accepted_by_the_full_delivered_predicate": true,
+     "class": "ord=5,fixed=36",
+     "fit_orbits": 1,
+     "fit_points_touched": 5,
+     "fixed_points_of_the_group_maps_image": 36,
+     "group_map_order": 5,
+     "group_order": 10,
+     "held_out_cells": 3100,
+     "held_out_violations": 0,
+     "non_degenerate_pairs_digits": 240,
+     "ord_D": 5,
+     "p": 5,
+     "source_orbits": 125
+    },
+    {
+     "NT1": true,
+     "NT2": true,
+     "SP1_cells": 49,
+     "SP1_violations": 0,
+     "SP2": true,
+     "SP3_cells": 16807,
+     "SP3_violations": 0,
+     "accepted_by_the_full_delivered_predicate": true,
+     "class": "ord=7,fixed=18",
+     "fit_orbits": 1,
+     "fit_points_touched": 7,
+     "fixed_points_of_the_group_maps_image": 18,
+     "group_map_order": 7,
+     "group_order": 14,
+     "held_out_cells": 16758,
+     "held_out_violations": 0,
+     "non_degenerate_pairs_digits": 656,
+     "ord_D": 7,
+     "p": 7,
+     "source_orbits": 343
+    }
+   ],
+   "excluded_by": "pin requirement 4 (the prime is a declaration)",
+   "label": "FOUND-AT-DELIVERED-STANDARD-OUTSIDE-COMMITTED-SCOPE",
+   "the_delivered_standard_is_weak_at_the_functor_layer": {
+    "orbits_collapsed_into_one_target_orbit": 124,
+    "source_orbits": 125,
+    "still_accepted": true
+   },
+   "the_strengthened_standard": {
+    "S1-ENCODING-INTERTWINING": "THE NON-NEGOTIABLE.  The functor must make a COMMUTING SQUARE at the encoding layer, not a triangle at the group layer: HA's record-is-metric linear map (determinant 2) intertwined with GEN/XBA's Q -> delta(Q) = Sigma Q^T Sigma Q.  While the encoding factorises through the group actions, nothing physical is carried.",
+    "S2-CARRIER-RIGIDITY": "SP3 supplemented so that Phi is DETERMINED, not chosen -- e.g. the fixed-configuration stratification (transport: 9/18/27/36/45/54/81) carried into the source stratification.",
+    "S3-NON-DEGENERACY-WITH-TEETH": "NT2 replaced by injectivity on orbits, or at least a measured lower bound on |image(Phi)| as a fraction of the orbit count.",
+    "S4-FUNCTORIALITY-IN-THE-FAMILY": "naturality across the declared base-change maps, so that a live cell is not an isolated coincidence at one (p, ord(D)).",
+    "S5-HELD-OUT-AT-A-LIVE-CELL-WITH-A-TRANSPORTED-QUANTITY": "a computed physical quantity transported out of sample at a live cell, not equivariance alone.",
+    "S6-AN-IN-ARENA-READING-OF-REQUIREMENT-4": "either the prime declared a parameter of the arena with per-prime verdicts, or a corpus-internal fixing of p.",
+    "status": "REGISTERED, NOT TESTED.  No cell of any scope in this unit is evaluated against S1-S6, in either direction."
+   }
+  },
   "functor_census": [
    {
     "group_maps": 1,
@@ -5362,6 +6631,44 @@
     "ord_D": 7
    }
   ],
+  "generator_sweep": [
+   {
+    "accepted_candidate_verdict": true,
+    "action_is_free": true,
+    "j": 1,
+    "orbit_sizes": [
+     5
+    ],
+    "orbits": 125
+   },
+   {
+    "accepted_candidate_verdict": true,
+    "action_is_free": true,
+    "j": 2,
+    "orbit_sizes": [
+     5
+    ],
+    "orbits": 125
+   },
+   {
+    "accepted_candidate_verdict": true,
+    "action_is_free": true,
+    "j": 3,
+    "orbit_sizes": [
+     5
+    ],
+    "orbits": 125
+   },
+   {
+    "accepted_candidate_verdict": true,
+    "action_is_free": true,
+    "j": 4,
+    "orbit_sizes": [
+     5
+    ],
+    "orbits": 125
+   }
+  ],
   "held_out": [
    {
     "accepted_by_the_census": true,
@@ -5378,6 +6685,68 @@
     "held_out_violations": 54
    }
   ],
+  "held_out_rule_sweep": [
+   {
+    "extension": "E-ROT",
+    "held_out_cells": 234,
+    "rule": "(d0 + 2 d1 + c) mod ord(D)  -- the declared rule",
+    "violations": 0
+   },
+   {
+    "extension": "E-REF",
+    "held_out_cells": 234,
+    "rule": "(d0 + 2 d1 + c) mod ord(D)  -- the declared rule",
+    "violations": 54
+   },
+   {
+    "extension": "E-ROT",
+    "held_out_cells": 234,
+    "rule": "0",
+    "violations": 0
+   },
+   {
+    "extension": "E-REF",
+    "held_out_cells": 234,
+    "rule": "0",
+    "violations": 54
+   },
+   {
+    "extension": "E-ROT",
+    "held_out_cells": 234,
+    "rule": "(2 d0 + d1 + 2 c) mod ord(D)",
+    "violations": 0
+   },
+   {
+    "extension": "E-REF",
+    "held_out_cells": 234,
+    "rule": "(2 d0 + d1 + 2 c) mod ord(D)",
+    "violations": 54
+   },
+   {
+    "extension": "E-ROT",
+    "held_out_cells": 234,
+    "rule": "d0 mod ord(D)",
+    "violations": 0
+   },
+   {
+    "extension": "E-REF",
+    "held_out_cells": 234,
+    "rule": "d0 mod ord(D)",
+    "violations": 54
+   },
+   {
+    "extension": "E-ROT",
+    "held_out_cells": 234,
+    "rule": "(7 d0 + 5 c) mod ord(D)",
+    "violations": 0
+   },
+   {
+    "extension": "E-REF",
+    "held_out_cells": 234,
+    "rule": "(7 d0 + 5 c) mod ord(D)",
+    "violations": 54
+   }
+  ],
   "non_reducible_primes": [
    2,
    3
@@ -5387,10 +6756,52 @@
     2,
     4
    ],
-   "coextensive": true,
    "empty_cells": 137,
+   "forward_name": "order-coprimality",
    "live_cells": 3,
-   "name": "order-coprimality"
+   "primes_dividing_2_ord_D_by_instance": {
+    "base 1 @ SP-E": [
+     2
+    ],
+    "base 1 @ SP-F": [
+     2
+    ],
+    "base G @ GP-E": [
+     2
+    ],
+    "base G @ GP-F": [
+     2
+    ],
+    "base S": [
+     2
+    ],
+    "base S'": [
+     2
+    ],
+    "base T": [
+     2,
+     3
+    ],
+    "species 4": [
+     2
+    ]
+   },
+   "primes_dividing_2_ord_D_union": [
+    2,
+    3
+   ],
+   "primes_where_rho_fails_to_reduce": [
+    2,
+    3
+   ],
+   "reverse_emptiness_is_coextensive_with_coprimality": false,
+   "reverse_empty_at_the_live_cells": true,
+   "reverse_name": "2-group abelianisation (prime-independent)",
+   "reverse_non_trivial_total": 0,
+   "the_forward_equivalence_holds_both_ways": true,
+   "the_union_without_base_T": [
+    2
+   ]
   },
   "prime_tracking": {
    "F3_by_prime": {
@@ -5412,39 +6823,326 @@
     "7": true
    }
   },
+  "registered_opens": {
+   "OPEN-1": "Can the reduction prime be fixed by anything other than declaration?  Every live cell is prime-dependent by construction, so requirement 4 excludes it however good the transport side gets.  The successor's dichotomy: DERIVE THE PRIME, or accept declaration-relative bridging and say so.",
+   "OPEN-2": "Why do the prepared bases concentrate in the closed sector?  The declared completion family is majority-live; every committed instance sits in the low-defect-order band.  Is that a selection rule of the preparation or an artifact of which bases happen to have been built?"
+  },
   "self_tests": [
    {
+    "accepted_candidate_verdict": true,
+    "degenerate_candidate_verdict": false,
     "matches_base": true,
-    "self_test": "relabel-source",
-    "verdict": false
+    "self_test": "relabel-source"
    },
    {
+    "accepted_candidate_verdict": true,
+    "degenerate_candidate_verdict": false,
     "matches_base": true,
-    "self_test": "relabel-target",
-    "verdict": false
+    "self_test": "relabel-target"
    },
    {
+    "accepted_candidate_verdict": true,
+    "degenerate_candidate_verdict": false,
     "matches_base": true,
-    "self_test": "conjugate-target",
-    "verdict": false
+    "self_test": "conjugate-target"
    },
    {
+    "accepted_candidate_verdict": true,
+    "degenerate_candidate_verdict": false,
     "matches_base": true,
-    "self_test": "change-generator",
-    "verdict": false
+    "self_test": "change-generator"
    }
   ],
+  "the_arena_dependence_of_the_two_prime_clause": {
+   "Landau_16": 140,
+   "Landau_9": 20,
+   "all_prime_product": 37182145,
+   "nine_label_family_maximum_defect_order": 15,
+   "sample_size": 2000,
+   "sampled_arena_labels": 16,
+   "sampled_members_divisible_by_the_two_prime_product": 162,
+   "smallest_two_prime_product": 35,
+   "witness_completion": [
+    0,
+    6,
+    14,
+    13,
+    2,
+    8,
+    11,
+    10,
+    15,
+    9,
+    12,
+    7,
+    3,
+    4,
+    5,
+    1
+   ]
+  },
+  "the_lagrange_cauchy_sweep": {
+   "cells": 189,
+   "failures": 0,
+   "failures_of_the_order_reading_off_the_dihedral_family": 5,
+   "groups": 21,
+   "non_dihedral_cells_against_the_order_reading": 117,
+   "zoo": [
+    {
+     "element_orders": [
+      1,
+      2,
+      3
+     ],
+     "group": "A_4",
+     "nonabelian": true,
+     "order": 12
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      6
+     ],
+     "group": "A_4 x Z/2",
+     "nonabelian": true,
+     "order": 24
+    },
+    {
+     "element_orders": [
+      1
+     ],
+     "group": "D_1",
+     "nonabelian": false,
+     "order": 1
+    },
+    {
+     "element_orders": [
+      1,
+      2
+     ],
+     "group": "D_2",
+     "nonabelian": false,
+     "order": 2
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3
+     ],
+     "group": "D_3",
+     "nonabelian": true,
+     "order": 6
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      4
+     ],
+     "group": "D_4",
+     "nonabelian": true,
+     "order": 8
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      12
+     ],
+     "group": "D_4 x Z/3",
+     "nonabelian": true,
+     "order": 24
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      5
+     ],
+     "group": "D_5",
+     "nonabelian": true,
+     "order": 10
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      6
+     ],
+     "group": "D_6",
+     "nonabelian": true,
+     "order": 12
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      7
+     ],
+     "group": "D_7",
+     "nonabelian": true,
+     "order": 14
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3
+     ],
+     "group": "S_3",
+     "nonabelian": true,
+     "order": 6
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "group": "S_4",
+     "nonabelian": true,
+     "order": 24
+    },
+    {
+     "element_orders": [
+      1
+     ],
+     "group": "Z/1",
+     "nonabelian": false,
+     "order": 1
+    },
+    {
+     "element_orders": [
+      1,
+      2
+     ],
+     "group": "Z/2",
+     "nonabelian": false,
+     "order": 2
+    },
+    {
+     "element_orders": [
+      1,
+      2
+     ],
+     "group": "Z/2 x Z/2",
+     "nonabelian": false,
+     "order": 4
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      6
+     ],
+     "group": "Z/2 x Z/3",
+     "nonabelian": false,
+     "order": 6
+    },
+    {
+     "element_orders": [
+      1,
+      3
+     ],
+     "group": "Z/3",
+     "nonabelian": false,
+     "order": 3
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      4
+     ],
+     "group": "Z/4",
+     "nonabelian": false,
+     "order": 4
+    },
+    {
+     "element_orders": [
+      1,
+      5
+     ],
+     "group": "Z/5",
+     "nonabelian": false,
+     "order": 5
+    },
+    {
+     "element_orders": [
+      1,
+      2,
+      3,
+      6
+     ],
+     "group": "Z/6",
+     "nonabelian": false,
+     "order": 6
+    },
+    {
+     "element_orders": [
+      1,
+      7
+     ],
+     "group": "Z/7",
+     "nonabelian": false,
+     "order": 7
+    }
+   ]
+  },
+  "the_one_law_family": {
+   "control_draws": 168,
+   "control_violations": 145,
+   "defect_orders_drawn": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    15
+   ],
+   "randomised_draws": 400,
+   "statement": "W^2 = 1 and D = [W,u] force W D W = D^-1, hence <W,D> dihedral of order 2*ord(D) whenever W is not a power of D",
+   "the_only_contingent_content": "ord(D) <= 3 at the committed instances",
+   "violations_of_the_order_formula": 0,
+   "violations_of_the_relation": 0
+  },
+  "the_sector_concentration": {
+   "committed_instances_admitting_one": 0,
+   "committed_instances_in_the_low_band": 8,
+   "family_members": 40320,
+   "low_defect_order_band": "ord(D) <= 3",
+   "members_admitting_some_declared_prime": 23040,
+   "members_in_the_low_band": 5760,
+   "orders_admitting_one": [
+    5,
+    7,
+    15
+   ]
+  },
   "tiny_cells": [
    {
-    "brute_force": 16,
+    "brute_force": 64,
     "cell": "TINY-A",
-    "formula": 16,
+    "formula": 64,
     "group_maps": 4,
-    "non_degenerate_brute": 12,
-    "orbits": 1,
+    "non_degenerate_brute": 48,
+    "orbits": 2,
     "p": 2,
+    "source_generator_order": 2,
     "source_points": 4,
-    "target_points": 4
+    "target_points": 4,
+    "the_declared_group_acts": true
    },
    {
     "brute_force": 18,
@@ -5454,8 +7152,10 @@
     "non_degenerate_brute": 12,
     "orbits": 1,
     "p": 3,
+    "source_generator_order": 3,
     "source_points": 3,
-    "target_points": 6
+    "target_points": 6,
+    "the_declared_group_acts": true
    },
    {
     "brute_force": 4,
@@ -5465,8 +7165,10 @@
     "non_degenerate_brute": 0,
     "orbits": 1,
     "p": 5,
+    "source_generator_order": 5,
     "source_points": 5,
-    "target_points": 4
+    "target_points": 4,
+    "the_declared_group_acts": true
    }
   ],
   "transport_instances": [
@@ -5528,27 +7230,30 @@
    }
   ],
   "verdict_qualifiers": {
+   "admissible_prime_cells_found_outside_the_committed_scope": 3,
    "completion_family_members": 40320,
    "directed_cells": 112,
    "extended_scope_cells": 168,
    "instances": 8,
+   "live_extended_scope_cells": 3,
    "non_degenerate_functor_pairs": 0,
    "non_degenerate_group_morphisms_forward": 0,
    "non_degenerate_group_morphisms_reverse": 0,
-   "obstruction": "order-coprimality",
+   "obstruction_forward": "order-coprimality",
+   "obstruction_reverse": "2-group abelianisation (prime-independent)",
    "prime_tracking_candidates_excluded": 1,
    "primes": 7,
    "scope": "the committed transport instances at the declared primes"
   }
  },
  "totals": {
-  "anchors": 77,
-  "disclosures": 6,
-  "gates": 31,
+  "anchors": 87,
+  "disclosures": 12,
+  "gates": 42,
   "must_pass_failures": 0,
-  "must_pass_gates": 31,
+  "must_pass_gates": 40,
   "mutant_survivors": 0,
-  "mutants": 47
+  "mutants": 65
  },
  "verdict": [
   "BRG-EMPTY-AT-CARRIER"
