@@ -8547,3 +8547,17 @@ concentration + the p-declaration crux registered as the
 opens; the adjudicator's #267 overstatement owned; the
 instrument brought under the full modern rules.  STATUS
 updated this commit.  Repair dispatch next.
+
+## 2026-08-08 — BRG REPAIR DISPATCHED (B-1..B-7) (v13 LEDGER #274)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+brg_* only) with the #273 order: the two obstructions named;
+the Lagrange+Cauchy theorem completed; the one-law-family
+strengthening installed w/ PSI cited; the admissible-prime
+FOUNDs rebuilt in-delivery and reported at their honest label
+w/ the vacuity reconciliation; the scope leak fixed; the
+sector concentration + the p-declaration crux registered as
+opens; the instrument brought fully under the modern rules
+(computed qualifiers, independent verdict derivation, a
+generator arena actually read, functor-census completeness,
+TINY-A rebuilt).  On delivery: COMMIT-AS-IS, verify,
+terminal-or-bounce.  Recorded after it occurs.
