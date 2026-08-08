@@ -7710,3 +7710,35 @@ hits + 65,544 refusals / AST clean / byte-identical ×2.  10
 deviations, nothing impossible.  md5 output bfe16589 /
 receipt 15a0952d.  Adjudicator verification next (CLI checked
 first — the #238 lesson).
+
+## 2026-08-08 — HA R1 (OPERATOR) FROZEN (v13 LEDGER #242)
+review-ha-operator.md frozen as delivered (sha256-12
+110668edce60).  Grade AWF; 31 recomputation blocks, ~5.1×10⁵
+exact evaluations; the closed form re-derived BY HAND and
+cross-checked at ALL 13,068 cells (the delivery checks 1,188);
+three added controls pass (front-independence 4,752;
+reversed-switch detector 108/108 agreement; full-group chart
+equivariance 384,912).  **THE CLOSURE RESULT COULD NOT BE
+BROKEN — no false numerical result found.**  THREE MAJORS, ALL
+IN K4 (THE BRIDGE): (1) **G22 CANNOT FAIL** — carrier_match and
+in_spectrum identically False across every declared
+prime×dimension, the ΣDΣ=D⁻¹ "positive control" identically
+True BY ALGEBRA (D = ΣQ⁻¹ΣQ, Σ² = id; 0 failures over 40,320 +
+1,200 random Q): HA-BRIDGE-NOT-POSABLE is ARENA-DETERMINED,
+not measured; (2) **the "order 5" holonomy IS THE PRIME** —
+R_HH acts as translation by ρ mod p, ⟨R⟩ ≅ Z/p (measured at
+p = 5,7,11,13,17,19,23 → orders equal p); only p=5 computed of
+the declared {5,7,13} — a §15 violation, an arena coordinate
+presented as physics; (3) the §10.2 spectrum row FALSE AS
+PRINTED (GEN's DEFECT spectrum {1,2,3,4,5,6,7,15} contains 5
+at multiplicity 4,608; the code silently compared the holonomy
+spectrum only).  MEDIUM: G09's exhibited witness satisfiable
+BUT THE THEOREM IS REAL — R1 supplies the proof + an in-family
+witness (G-DIAG2/G-OFFNEG share n₍₁,₁₎ = 4 demanding
+f₃(4) = 0 AND 2/11); the 17/24 dihedral figure a single-site
+surrogate (full-field 8/24, carrier defined 3/24); G04's
+falsifier register caveat.  DISPOSITION: HA-RUNNABLE and the
+whole two-sided closure STAND; the bridge secondary must be
+RE-INSTRUMENTED OR DEMOTED to a coordinate audit.  R2/R3
+(resumed after API failures) pending; adjudication after all
+three.
