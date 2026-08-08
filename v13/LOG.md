@@ -8988,3 +8988,15 @@ generators are NON-MONOMIAL orthogonal involutions
 (support-4) — strictly stronger than PSI's collapse.  PANEL
 COMPLETE: 3× AWF; ~299 recomputations; zero number errors.
 Adjudication next.
+
+## 2026-08-08 — TB3 JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## T-1..T-8 ORDERED; THE COC ERRATUM OF RECORD (v13 LEDGER #291)
+note-tb3-adjudication.md committed.  The ladder named and
+proved; the user's relation structural w/ the embedding; the
+same-seven legitimate; the ceiling theorem; the spark
+confirmed (live Z/5+Z/7 natively; BRG bounded to two wings);
+A2/A1/A3 restated at honest register; psi-B installed; the
+instrument brought under the modern rules; **the COC erratum
+of record entered in the adjudication note** (terminal file
+unmodified per freeze discipline).  STATUS updated this
+commit.  Repair dispatch next.
