@@ -8826,3 +8826,43 @@ or refuted; (3) structural-vs-label-collapse, with the
 counting route audited before any order is certified.  To be
 reported as a distinct finding with its own verdict; the TB3
 adjudication will resolve it explicitly either way.
+
+## 2026-08-08 — LCB R1 (OPERATOR) FROZEN: REJECT — THE ENCODING SWEEP
+## WAS 4 OF 12; THE PRIME VERDICT MAY FLIP TO DERIVED-AT-7
+## (v13 LEDGER #287)
+review-lcb-operator.md frozen as delivered.  Grade REJECT (no
+wrong number found; two verdict-level defects); 134
+recomputations + byte-identical reproduction.  K1: the
+squaring-forcing derivation is SOUND (re-derived: Sylow ⇒
+cyclic image; the square ⇒ ΣgΣ = g^c, c² ≡ 1; c = +1 empty ⇒
+δ = squaring) and spec(E) + the p-sweep reproduce — **BUT the
+"4 encoding cells" are 4 OF 12 (six slot identifications
+exist, not two), and two UNDECLARED cells — including the
+τ-conjugate of the unit's own declared index cell — put 2 IN
+THE SPECTRUM at the ADMISSIBLE prime p = 7 in the REGISTERED
+direction** (explicit witness verified: 0/343 S1a violations,
+0/117,649 S1b, S1d passing); disclosure X10 false as scoped.
+K2: **S1c ∧ S1d is UNSATISFIABLE at the declared base record
+for EVERY chart map** (G-FLAT = (1,1,2) is τ-fixed while S1c
+forces antisymmetric; proved + exhaustive over 166,656 pairs:
+192 pass S1c, 0 of those pass S1d) — the EMPTY verdict as
+delivered was FORCED BY THE CLAUSE LIST, not measured off the
+encodings; the named obstruction is not the operative one;
+AND the SYNTH-COMPATIBLE control evaluates S1d at G-ANISO
+instead of the declared G-FLAT — the exact substitution its
+own falsifier performs, undisclosed.  **K3 — THE POTENTIAL
+FLIP: adding the τ-conjugate cell flips the pre-registered
+Open-1 verdict from PRIME-DECLARED to PRIME-DERIVED at p = 7
+(P12 narrows to {7}; unique_forced → True)**; P8 misclassified
+declaration-free; declaration_free is a typed literal.  K4:
+S1d forces ord ∈ {1, p} not = p (two printed counts wrong:
+4→8, 2→4); BRG's 3→2 narrowing unaffected.  K5: instrument
+strong EXCEPT all of S5 runs against the synthetic chart map
+(recorded nowhere).  **WHAT SURVIVES: BRIDGE-EMPTY itself is
+OVERDETERMINED — it survived R1's own 12-cell sweep, the
+two-arrow reading, the prime sweep, and the base-change
+sweep.**  One-lens-pending: if R2/R3 + adjudication confirm
+the τ-conjugate cell's legitimacy, the corrected unit reads
+EMPTY + PRIME-DERIVED-AT-7 — the absolute-answer branch of
+Open 1, at the same prime TB3's three-wing torsion celebrates.
+R2/R3 pending; adjudication after all three.
