@@ -7439,3 +7439,33 @@ audit; the admission diff clause-by-clause; R1-route's
 one-setting basis judged; the non-abelian witness gate).
 Reviews frozen on return.  Six agents now concurrent (three
 COC reviewers + PSI + XBA + HA constructions).
+
+## 2026-08-08 — COC R2 (EFFECTUS) FROZEN: CLOSURE IS FORCED AT THE
+## DECLARED ATLAS; LEVEL-2 ESCAPES EXIST AT THE EXTENSION ATLAS;
+## THE CRITERION NAMED (v13 LEDGER #232)
+review-coc-effectus.md frozen as delivered.  Grade AWF; 118
+recomputations, 0 mismatches, everything rebuilt from prose.
+**F1 (FATAL-if-unrepaired): THE FREE CONTENT ISN'T FREE** — the
+equivariance lemma Adm(σ.X, τ.Y) = τ·Adm(X,Y)·σ⁻¹ (verified
+576/576) telescopes every defect to a conjugate of a two-chart
+loop; with S abelian of exponent two (measured by the paper
+itself in §7.3), δ is ALWAYS identity or the coordinate's
+multiplicity bigon — **COC-MEMBERSHIP cannot fail on any
+admissible input at any completion**; the four "could have
+carried" sentences are false; reclassify to disclosure (the
+RUNBOOK-#36 disease at the unit's center).  **F2 (THE
+TRANSFORMATION): the extension's 8-element admitted group is
+NON-ABELIAN (only 4/8 centralise W); its 16-chart orbit census
+carries 32,256 DEFECTS OUTSIDE the bigon-generated group
+(16,128 per geometry-bearing setting; the escaping element a
+conjugate of W) — HIGHER OBSTRUCTIONS EXIST, demonstrably, one
+atlas over.  THE CRITERION: CLOSURE ⟺ THE CHART-GENERATING
+GROUP CENTRALISES THE LEVEL-1 HOLONOMY.**  Survived: atlas
+completeness AT THE DECLARED SCOPE (R2 supplied the missing
+argument — only 4/324 orbit charts can glue; 0 triangles in
+the other 80 classes); the 40,320 collapse sweep sound;
+R1-route's one-setting basis sufficient; the wrong-order
+disclosure exemplary.  Minors: D-never is FORCED not measured;
+the true divide is checkpoint-local vs checkpoint-crossing
+LINK KIND, not loop shape; 240/160 = GEN's 18/8 replayed.
+R1/R3 pending; adjudication after all three.
