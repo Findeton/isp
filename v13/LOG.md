@@ -8427,3 +8427,47 @@ route independence probed; cell-completeness across all
 scopes; the SP teeth; the formula-vs-brute-force validation).
 Reviews frozen on return.  In flight: BRG panel ×3 + TB3
 construction.
+
+## 2026-08-08 — BRG R2 (EFFECTUS) FROZEN (v13 LEDGER #270)
+review-brg-effectus.md frozen as delivered (sha256-12
+d0d0cb3acff6).  Grade AWF; 42 recomputations (41/42 agree; no
+false census number); the verdict EMPTY-AT-CARRIER "correct
+and survived attack from the theorem, census, arena and
+cross-unit sides."  THREE MAJORS: **F-1 (#24 one level up): a
+SET typed then certified in print as computed** — "both sets
+computed and printed beside each other" is false; the
+primes-dividing-2·ord(D) set is never computed anywhere
+(2,555 lines, zero factorisation hits); the census never
+evaluates p ∈ {2,3} (sweep starts at 5) so the claim was
+unmeasurable in principle.  **F-2 THE ONE LEAK: §9's
+pull-quote drops its scope and is falsified by the paper's own
+scope-2** — over GEN's 12 classes the primes dividing 2·ord(D)
+include {5,7}, both admissible on the deformation side; "the
+deformation side cannot be built at the primes where the match
+would be possible" is false in general — AND **THE
+ADJUDICATOR'S LEDGER #267 IS FLAGGED unscoped and
+self-refuting** ("needs odd primes" would readmit p=3) — owned
+at adjudication.  **F-5: the preservation predicate is VACUOUS
+at the functor layer** (the source action is free ⟹ SP3
+imposes nothing; the census is a group-hom count in functor
+costume; a "live cell" is ~10²³⁹ incomparable pairs, never
+computed) — cuts EMPTY's way (maximally loose filter, still
+zero) but the live-cell rhetoric is unsupportable at
+delivered strength.  **THE CROSS-UNIT STRENGTHENING: WDW =
+D⁻¹ is FORCED by algebra from W² = 1 + D = [W,u] (400/400) —
+the obstruction is a THEOREM ABOUT THE ONE-LAW FAMILY covering
+bases not yet built; the only contingent content is
+"ord(D) ≤ 3 at the committed instances"; BRG never cites
+PSI.**  **THE CONSTRUCTIVE MISS: THE SECTOR CONCENTRATION —
+57.1% of the 40,320 family admits some declared prime, yet
+8/8 committed instances land in the 14.3% ord≤3 sector; the
+substantive obstruction is WHY PREPARED BASES CONCENTRATE
+THERE — all numbers in hand, the question never asked.**
+Moderates: the {2,3} "coincidence" has one degree of freedom;
+requirement (1) at G-set strength only; FOUND at a weaker
+standard than EMPTY, in-arena FOUND foreclosed a priori;
+TINY-A violates its own action axiom (TINY-B/C carry G18);
+G14/G27 analytically forced yet must-pass.  Six honest
+successor-predicate requirements written (the non-negotiable:
+ENCODING INTERTWINING as a commuting square).  Required
+before terminal: F-1, F-2, F-5, F-11.  R1/R3 pending.
