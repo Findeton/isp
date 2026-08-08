@@ -7646,3 +7646,18 @@ honest open / K4 the freeze-vs-realized-labels steering audit
 the three hash pins).  Frozen SHAs in the freeze output with
 this commit.  Three-lens panel (Opus 5) dispatched immediately
 after.
+
+## 2026-08-08 — XBA PANEL DISPATCHED (v13 LEDGER #239)
+Three-lens panel dispatched (Opus 5, parallel-safe): R1
+operator (the chain rebuilt; the third instance + what the
+label-level scope leaves unproven); R2 effectus (the steering
+audit per candidate; the tautology question — is
+SPECIES-FORCED-SPLIT contentful, w/ the equivariant control as
+the existence proof of species-divergent profiles;
+CROSS-UNIT CONSISTENCY: do the three declaration→structure
+laws — completion-selection, centralizer criterion,
+species-forced-split — compose or overlap); R3 instrument (the
+three hash pins fired-on-corruption; the refused-lookup cache
+mechanism; §13-addendum verdict-gate compliance judged;
+route-independence w/ dropped-cell probe).  Reviews frozen on
+return.
