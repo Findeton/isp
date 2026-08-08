@@ -7179,3 +7179,26 @@ STANDS per the pin's P2 (Klein-four never required) but must
 be scoped to EXISTENCE (nontrivial group, two sources,
 scope-escaping generator), not isomorphism type — convergent
 with R2's REPRODUCES-AT-DECLARED-COMPLETION.  R3 pending.
+
+## 2026-08-08 — GEN R3 (INSTRUMENT) FROZEN (v13 LEDGER #219a)
+review-gen-instrument.md frozen as delivered.  Grade AWF; 71
+recomputations, clean-room byte-identical rerun, three
+deliberate anchor breakages exit-1 correctly, four mutants
+reconstructed, census honest, no fixture imports.  F1: R3's OWN
+exhaustive 40,320 sweep via the factorised law — **99.76%
+geometry-bearing (96 exceptions, 0.24%) — REFUTES THE
+VERDICT-STEERING CHARGE (geometry is GENERIC); the bare
+Householder is the family's RAREST member**; but Klein-four is
+NOT generic (the fixed(D)=45 class, 864/40,320 ≈ 2.14%; 18
+full rebuilds show orders 30/12/8/6/10/4/6, element orders to
+15) — P2 needs the completion scope tag.  F2: **a receipt claim
+FALSE about its own instrument** — GEN-SPECIES's decomposition
+clause compares U_local with a verbatim copy of itself through
+the SAME mutated pointer_shift (stays True under mutation; the
+#38→#40 disease verbatim).  F3: 7 of 12 §8 "agreements are the
+geometry" rows are copied design choices or graph
+combinatorics.  Minors incl.: GEN-FRESH-EVAL's zero-hit clause
+VACUOUS (_MEMO never written — cannot-fail again); D5's 2.5%
+confirmed; no hash pin on the NT receipt.  D3 judged
+pin-compliant.  Verdict stands WITH the scope tag.  PANEL
+COMPLETE: 3× AWF, ~754 recomputations, zero numerical errors.
