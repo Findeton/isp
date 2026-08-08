@@ -7377,3 +7377,37 @@ sized by PSI's verdict; (4) deliberate variation of whatever
 invariant XBA names (the break-it-on-purpose control).  The
 pin will cite this entry as its authorization; no further ask
 needed at launch time.
+
+## 2026-08-08 — COC DELIVERED, COMMITTED AS-IS (v13 LEDGER #229)
+Delivery committed as-is.  Verdict:
+**COC-COCYCLE-CLOSES-AT-THE-DECLARED-TRIPLE-STRUCTURE** — the
+chart family = the orbit of the two frames under the admitted
+S = {1, W} (four charts, pairwise distinct at every setting;
+the pin's triple contained); 1,824 admissible triangles over
+20/24 cells (size computed twice); defect set = {identity
+(1,248), the wing exchange (576, only GP-E/F)} generating
+ORDER 2 — a PROPER subgroup of the Klein four (D and W·D are
+NEVER triangle defects); membership 0/1,824 outside;
+**STRENGTHENED TO AN IFF: every non-identity defect EQUALS the
+multiplicity bigon's holonomy at its own coordinate — level 2
+adds no VALUE, not merely no element**; the forced/free split
+separated (576 free triangles could have carried a pure
+level-2 obstruction; none does).  STRUCTURAL BONUSES:
+W.F1 ≠ F2 EXACTLY because the completion is non-equivariant
+(they differ by D alone); at the equivariant completion the
+ATLAS ITSELF COLLAPSES to 2 charts at exactly the two
+geometry-bearing settings (624→0 triangles; swept 96/40,224 of
+40,320, anchored) — the CHART COUNT is completion-dependent;
+route R1 (sub-leg) measured ABSENT at the leg-list clause.
+Controls: 152 degenerate triangles positive; D-injection
+inside-group-outside-defect-set + pointer-transposition
+outside-group (the predicate fires); **the pin's wrong-order
+control measured INERT (abelian exponent two) — reported
+honestly as without-teeth, replaced by a gated non-abelian
+witness**.  19 anchors (10 external to the hash-pinned GEN
+receipt) / 29 gates (25 must-pass, 0 failures) / 28 mutants
+died, never_falsified EMPTY at 24.  One mid-build false claim
+CAUGHT BY ITS OWN GATE pre-delivery (the collapse is
+per-setting, not everywhere) — the instrument self-corrected
+before freeze.  8 deviations.  md5 output 258abdac / receipt
+5c183977.  Adjudicator verification next.

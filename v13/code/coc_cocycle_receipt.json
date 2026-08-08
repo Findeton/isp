@@ -1,0 +1,4512 @@
+{
+ "anchors": [
+  {
+   "computed": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "declared": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "id": "A01-R0",
+   "passed": true,
+   "quantity": "the rotation matrix R0, entry by entry",
+   "source": "base G's pinned declaration (the GEN pin)"
+  },
+  {
+   "computed": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "3/5",
+     "-4/5"
+    ],
+    [
+     "0",
+     "4/5",
+     "3/5"
+    ]
+   ],
+   "declared": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "3/5",
+     "-4/5"
+    ],
+    [
+     "0",
+     "4/5",
+     "3/5"
+    ]
+   ],
+   "id": "A01-R1",
+   "passed": true,
+   "quantity": "the rotation matrix R1, entry by entry",
+   "source": "base G's pinned declaration (the GEN pin)"
+  },
+  {
+   "computed": [
+    [
+     "5/13",
+     "-12/13",
+     "0"
+    ],
+    [
+     "12/13",
+     "5/13",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "declared": [
+    [
+     "5/13",
+     "-12/13",
+     "0"
+    ],
+    [
+     "12/13",
+     "5/13",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "id": "A01-R2",
+   "passed": true,
+   "quantity": "the rotation matrix R2, entry by entry",
+   "source": "base G's pinned declaration (the GEN pin)"
+  },
+  {
+   "computed": [
+    "0",
+    "2/3",
+    "0",
+    "2/3",
+    "0",
+    "0",
+    "0",
+    "0",
+    "1/3"
+   ],
+   "declared": [
+    "0",
+    "2/3",
+    "0",
+    "2/3",
+    "0",
+    "0",
+    "0",
+    "0",
+    "1/3"
+   ],
+   "id": "A02",
+   "passed": true,
+   "quantity": "the preparation vector psi as the first column of V",
+   "source": "base G's pinned declaration"
+  },
+  {
+   "computed": [
+    [
+     "0",
+     "0",
+     "2/3",
+     "2/3",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1/3"
+    ],
+    [
+     "2/3",
+     "0",
+     "5/9",
+     "-4/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "2/3",
+     "0",
+     "-4/9",
+     "5/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "1/3",
+     "0",
+     "-2/9",
+     "-2/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "8/9"
+    ]
+   ],
+   "declared": [
+    [
+     "0",
+     "0",
+     "2/3",
+     "2/3",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1/3"
+    ],
+    [
+     "2/3",
+     "0",
+     "5/9",
+     "-4/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "2/3",
+     "0",
+     "-4/9",
+     "5/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "1/3",
+     "0",
+     "-2/9",
+     "-2/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "8/9"
+    ]
+   ],
+   "id": "A03",
+   "passed": true,
+   "quantity": "the 9x9 completion V, entry by entry",
+   "source": "base G's pinned declaration"
+  },
+  {
+   "computed": true,
+   "declared": true,
+   "id": "A04",
+   "passed": true,
+   "quantity": "every declared leg is exactly orthogonal over Q",
+   "source": "this unit's own measurement of the pinned declaration"
+  },
+  {
+   "computed": true,
+   "declared": true,
+   "id": "A05",
+   "passed": true,
+   "quantity": "the two wings' local legs commute at every declared pair",
+   "source": "this unit's own measurement of the pinned declaration"
+  },
+  {
+   "computed": [
+    true,
+    true
+   ],
+   "declared": [
+    true,
+    true
+   ],
+   "id": "A06",
+   "passed": true,
+   "quantity": "the record shift is injective, and every declared local leg equals the sum assembled from the PINNED rotations and the INDEPENDENTLY declared shift table",
+   "source": "this unit's own measurement of the pinned declaration"
+  },
+  {
+   "computed": [
+    "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+    "f3cc8da27b1c492d670b81157d03aba7a33990663d0cb5001a93718415f298c1",
+    "gen-generality-receipt-v1",
+    "5e8bc58",
+    "fceb614"
+   ],
+   "declared": [
+    "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+    "f3cc8da27b1c492d670b81157d03aba7a33990663d0cb5001a93718415f298c1",
+    "gen-generality-receipt-v1",
+    "5e8bc58",
+    "fceb614"
+   ],
+   "id": "A07",
+   "passed": true,
+   "quantity": "the sha256 of the committed GEN terminal receipt, its recorded instrument hash, its schema, and its pin/base commits",
+   "source": "v13/code/gen_generality_receipt.json"
+  },
+  {
+   "computed": [
+    2,
+    8,
+    81,
+    4,
+    216,
+    162,
+    27,
+    27,
+    9,
+    2,
+    0,
+    3,
+    8,
+    6
+   ],
+   "declared": [
+    2,
+    8,
+    81,
+    4,
+    216,
+    162,
+    27,
+    27,
+    9,
+    2,
+    0,
+    3,
+    8,
+    6
+   ],
+   "id": "A08",
+   "passed": true,
+   "quantity": "base G's declared arena: carrier, settings, frames, legs, checkpoints, path bound, both scopes, both admitted sets, the initial configuration and the three exchange fixed-point counts",
+   "source": "the GEN terminal receipt, tables.arena"
+  },
+  {
+   "computed": [
+    2,
+    [
+     "the identity",
+     "the wing exchange"
+    ]
+   ],
+   "declared": [
+    2,
+    [
+     "the identity",
+     "the wing exchange"
+    ]
+   ],
+   "id": "A08b",
+   "passed": true,
+   "quantity": "the symmetric-setting count and the admitted map names",
+   "source": "the GEN terminal receipt, tables.arena"
+  },
+  {
+   "computed": [
+    18,
+    8
+   ],
+   "declared": [
+    18,
+    8
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "the cells at which each committed gluing rule draws a link, recomputed here by the generalised predicate restricted to the committed ordered pair",
+   "source": "the GEN terminal receipt, GEN-ADMISSION-TABLE"
+  },
+  {
+   "computed": [],
+   "declared": [],
+   "id": "A10",
+   "passed": true,
+   "quantity": "the committed admission table, cell by cell and map by map, reproduced by the generalised predicate",
+   "source": "the GEN terminal receipt, tables.admission.per_cell"
+  },
+  {
+   "computed": [
+    1,
+    1,
+    1,
+    1,
+    4,
+    4
+   ],
+   "declared": [
+    1,
+    1,
+    1,
+    1,
+    4,
+    4
+   ],
+   "id": "A11",
+   "passed": true,
+   "quantity": "the committed based holonomy group order at every setting",
+   "source": "the GEN terminal receipt, findings.holonomy_group"
+  },
+  {
+   "computed": [
+    8,
+    8,
+    8,
+    8,
+    364,
+    364
+   ],
+   "declared": [
+    8,
+    8,
+    8,
+    8,
+    364,
+    364
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "the committed closed-path count at the declared base node, every setting",
+   "source": "the GEN terminal receipt, findings.holonomy_group"
+  },
+  {
+   "computed": [
+    {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    },
+    {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    }
+   ],
+   "declared": [
+    {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    },
+    {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    }
+   ],
+   "id": "A13",
+   "passed": true,
+   "quantity": "the committed group's elements by fixed-point count, at both symmetric settings",
+   "source": "the GEN terminal receipt, findings.holonomy_group"
+  },
+  {
+   "computed": [
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1,
+      2
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1,
+      2
+     ],
+     true
+    ]
+   ],
+   "declared": [
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1,
+      2
+     ],
+     true
+    ],
+    [
+     true,
+     [
+      1,
+      2
+     ],
+     true
+    ]
+   ],
+   "id": "A14",
+   "passed": true,
+   "quantity": "the committed group is abelian with every element of order dividing two, and its value set is closed at the declared bound",
+   "source": "the GEN terminal receipt, findings.holonomy_group"
+  },
+  {
+   "computed": [
+    2,
+    45
+   ],
+   "declared": [
+    2,
+    45
+   ],
+   "id": "A15",
+   "passed": true,
+   "quantity": "the completion's non-equivariance defect: its order and its fixed configurations",
+   "source": "the GEN terminal receipt, tables.completion_census"
+  },
+  {
+   "computed": [
+    40320,
+    96,
+    40224
+   ],
+   "declared": [
+    40320,
+    96,
+    40224
+   ],
+   "id": "A16",
+   "passed": true,
+   "quantity": "the declared completion family's size, the members whose defect is the identity, and the members that bear geometry",
+   "source": "the GEN terminal receipt, tables.completion_census"
+  }
+ ],
+ "base_commit": "20b8df2",
+ "findings": {
+  "the_verdicts_declared_scope": [
+   "at the committed finite scope",
+   "at the declared admission scope",
+   "at the declared triple structure",
+   "at the pinned completion",
+   "per coordinate"
+  ],
+  "thesis": "THE TRIPLE STRUCTURE.  Base G carries two frames per setting, so a third chart had to be constructed from the base's own admitted material.  The declared route is the pin's second candidate -- a relabelled frame via a declared ADMITTED isomorphism -- in its principled form: the chart family is the ORBIT of the two committed frames under the declared admitted group, 4 members, measured pairwise distinct at every setting.  The relabelled first frame is measured DIFFERENT from the second committed frame, and the mechanism is measured: the wing exchange does not intertwine the preparation leg, so the third chart exists exactly because the completion is non-equivariant.  At the exchange-equivariant completion the atlas collapses to 2 charts at exactly the two geometry-bearing settings and no triangle survives there; over the whole declared completion family, swept exhaustively, 40224 of 40320 members meet the criterion and 96 do not.  THE CENSUS.  1824 admissible triangles -- every ordered triple of distinct charts, every assignment of a committed gluing rule to each of the three ordered edges, every declared coordinate -- with the size computed twice by independent routes, at 20 of the 24 declared coordinate cells.  THE DEFECT SET has 2 members: the identity, the wing exchange.  THE MEMBERSHIP QUESTION.  Every defect lies in the bigon-generated holonomy group at its own setting: 0 outside, of 1824.  The reading is stronger than membership and is gated as an if and only if: every non-identity defect is measured EQUAL to the multiplicity bigon's holonomy at its own coordinate, and every coordinate carrying no such bigon carries only identity defects -- so level two adds no VALUE to level one, not merely no element.  The defect set generates a group of order 2, a PROPER subgroup of the order-4 group at the symmetric settings: the completion's own defect is measured never to be a triangle defect.  WHAT IS FORCED AND WHAT IS FREE, disclosed.  Every admissible identification is an element of the declared admitted set, which is measured closed under composition, so the confinement of the defect is analytically forced.  Membership is forced only where that set is contained in the holonomy group -- the two symmetric settings.  At the four settings whose connection is measured FLAT the admitted set is measured NOT contained in the trivial group, so each of the 576 triangles there could have carried a defect that no bigon generates, a pure level-2 obstruction at a flat setting, and the gate measures that none does.  Stated at the committed finite scope, at the declared admission scope, at the declared triple structure, at the pinned completion, per coordinate; nothing is claimed about nature.",
+  "unit_verdict": "COC-COCYCLE-CLOSES-AT-THE-DECLARED-TRIPLE-STRUCTURE"
+ },
+ "gates": [
+  {
+   "claim": "THE TRIPLE STRUCTURE IS DECLARED BEFORE ANY FIXTURE TRUTH.  The pin requires the three charts, their admission rule and their coordinates to be declared before any cocycle defect is evaluated.  The instrument carries a counter that every defect evaluation increments and that raises if it is touched before the freeze; this gate is the FIRST gate of the run and measures the counter at ZERO, with the declared route, the chart-family rule, the admission rule, the coordinate and the defect's own composition recorded as data beside it.  The `freeze-lax` mutant evaluates one defect before the freeze and must die here",
+   "class": "measurement",
+   "id": "COC-FREEZE",
+   "passed": true,
+   "value": {
+    "cocycle_defects_evaluated_before_the_freeze": 0,
+    "declaration": {
+     "admission_rule_per_pair": "base G's own four-clause predicate (initial configuration, order-free Born leg-list match, occupied set, exact law), generalised verbatim to an ordered chart pair, applied under EACH of the two committed gluing rules, with a map DRAWN only where that rule admits UNIQUELY",
+     "chart_family": "the orbit of the two committed frames F1 and F2 under the declared admitted set S, i.e. {sigma.X : sigma in S, X in {F1, F2}}, deduplicated by chart identity",
+     "chart_identity": "two charts are the SAME chart iff their ordered leg lists agree as canonical Born leg keys AND their law data agree at every declared checkpoint, read time included",
+     "coordinates": "one (setting, checkpoint) cell; all three identifications of a triangle are read at the SAME cell, and the read time is carried inside every law datum",
+     "defect": "delta = g_CA . g_BC . g_AB, composed as permutations of the carrier and recorded as a permutation TUPLE",
+     "membership_comparator": "the bigon-generated holonomy group at the SAME setting: the based closed-loop holonomy group of the committed TWO-chart path graph at the declared base node, at the declared length bound, rebuilt natively in this module and anchored exit-1 against the committed GEN receipt",
+     "route": "R2-ADMITTED-RELABELLING",
+     "triangle": "an ordered triple (A, B, C) of PAIRWISE DISTINCT charts together with a rule for each of the three ordered edges AB, BC, CA, such that all three edges are drawn"
+    },
+    "declared_route": "R2-ADMITTED-RELABELLING"
+   }
+  },
+  {
+   "claim": "BASE G'S DECLARED DATA ARE REUSED EXACTLY AND EVERY CONSTRUCTOR IS ANCHORED AGAINST THE PINNED DECLARATION.  The three rotation matrices entry by entry, the preparation vector as the first column of the completion, the full 9x9 completion entry by entry, the exact orthogonality of every declared leg at every (setting, frame), the commutation of the two wings at every declared pair of rotations, and the injectivity of the record shift.  The record DECOMPOSITION is rebuilt from the PINNED rotations and an INDEPENDENTLY declared shift table, so the mutant that perturbs a constructed rotation and the mutant that collapses two outcomes onto one shift each move one side of the comparison and not the other.  Nothing of the GEN module is imported: this is a rebuild",
+   "class": "measurement",
+   "id": "COC-BASE-PINNED",
+   "passed": true,
+   "value": {
+    "distinct_pointer_shifts": 3,
+    "legs_measured_orthogonal": true,
+    "record_shift_is_injective": true,
+    "the_decomposition_matches_the_independent_rebuild": true,
+    "wings_commute": true
+   }
+  },
+  {
+   "claim": "THE INHERITED BASE IS PINNED BY HASH, NOT BY CAPTION.  The GEN terminal receipt is read as bytes and its sha256 is measured against the value pinned in this file, together with the instrument hash it records for itself, its schema string and its pin and base commits.  Every number this unit reuses from it is then carried by an exit-1 anchor.  The `gen-hash` mutant perturbs the receipt's bytes before they are hashed and must die here; the `anchor-gen` mutant perturbs a reused value and must die at the anchor that reuses it",
+   "class": "measurement",
+   "id": "COC-EXTERNAL-SOURCE-PINNED",
+   "passed": true,
+   "value": {
+    "anchors_in_the_external_receipt": 17,
+    "gates_in_the_external_receipt": 36,
+    "schema": "gen-generality-receipt-v1",
+    "sha256": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292"
+   }
+  },
+  {
+   "claim": "THE DECLARED TRIPLE STRUCTURE IS WELL-POSED, AND ITS THIRD CHART IS MANUFACTURED BY THE COMPLETION.  The chart family is the ORBIT of the two committed frames under the declared admitted set; its size is computed by enumeration and deduplication, its members are measured PAIRWISE DISTINCT at every declared setting under the declared chart identity (ordered Born leg keys AND the law datum at every checkpoint), every member is measured to carry the same initial configuration -- so the first admissibility clause is posable for every pair -- and the family is measured to have at least three members, without which no triangle could be declared at all.  The mechanism is measured beside it: the relabelled first frame differs from the second committed frame exactly because the wing exchange is measured NOT to intertwine the preparation leg, i.e. because the completion's non-equivariance defect is measured not to be the identity.  The `chart-merge` mutant identifies charts by the Born leg multiset alone and must die at the family size; the `completion-Q` mutant takes the exchange-equivariant completion, at which the family collapses, and must die here too",
+   "class": "measurement",
+   "id": "COC-TRIPLE-DECLARED",
+   "passed": true,
+   "value": {
+    "distinct_charts_per_setting": {
+     "GP-A": 4,
+     "GP-B": 4,
+     "GP-C": 4,
+     "GP-D": 4,
+     "GP-E": 4,
+     "GP-F": 4
+    },
+    "distinct_members": 4,
+    "every_member_carries_the_declared_initial_configuration": true,
+    "generated_members": 4,
+    "members": [
+     "F1",
+     "W.F1",
+     "F2",
+     "W.F2"
+    ],
+    "orbit_group_size": 2,
+    "pairwise_distinct_at_every_setting": true,
+    "the_defect_is_the_identity": false,
+    "the_wing_exchange_intertwines_the_preparation_leg": false
+   }
+  },
+  {
+   "claim": "THE ARENA, DECLARED AS DATA WITH EVERY SIZE COMPUTED (RUNBOOK section 15).  The carrier, the setting family and which of its members are symmetric, the frames, the legs, the checkpoints and which are division events, the declared coordinate of every datum -- setting and READ TIME -- and the number of coordinate cells; the declared relabelling scope and its extension, both generated and deduplicated; the admitted sets after the initial-configuration filter; the two gluing rules; and the chart family with its ordered pairs and ordered triples.  Two structural facts are measured rather than assumed, and the unit's central disclosure rests on the first of them: the declared ADMITTED SET IS CLOSED under composition, so it is a group; and so is its extension.  The `scope-lax` mutant subsamples the admitted set and must die here; the `chart-merge` mutant changes the chart family size and must die here too",
+   "class": "measurement",
+   "id": "COC-ARENA",
+   "passed": true,
+   "value": {
+    "admitted_after_the_j0_filter": 2,
+    "admitted_after_the_j0_filter_at_the_extension": 8,
+    "carrier": 81,
+    "chart_family_size": 4,
+    "charts": [
+     "F1",
+     "W.F1",
+     "F2",
+     "W.F2"
+    ],
+    "checkpoint_values": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "checkpoints": 4,
+    "coordinate_cells": 24,
+    "declared_coordinate": [
+     "setting",
+     "checkpoint (the READ TIME)"
+    ],
+    "declared_division_events": [
+     0,
+     3
+    ],
+    "declared_extension_scope": 216,
+    "declared_relabelling_scope": 162,
+    "frames": 2,
+    "gluing_rules": [
+     "FULL",
+     "REAL"
+    ],
+    "initial_configuration": 0,
+    "legs_per_frame": 3,
+    "ordered_chart_pairs": 12,
+    "ordered_chart_triples": 24,
+    "path_length_bound": 8,
+    "rule_assignments_per_triple": 8,
+    "settings": 6,
+    "state": "p(0) = delta_{j0}",
+    "symmetric_setting_count": 2,
+    "symmetric_settings": [
+     "GP-E",
+     "GP-F"
+    ],
+    "the_admitted_extension_is_closed_under_composition": true,
+    "the_admitted_maps": [
+     "the identity",
+     "the wing exchange"
+    ],
+    "the_admitted_set_is_closed_under_composition": true
+   }
+  },
+  {
+   "claim": "THE GENERALISED PREDICATE IS THE COMMITTED ONE.  Restricted to the committed ordered pair (frame 2 -> frame 1), the four-clause predicate generalised here is measured to reproduce the committed admission table CELL BY CELL AND MAP BY MAP -- the drawn/not-drawn verdict and the name of the permutation drawn, at all 24 declared coordinates, against the hash-pinned GEN receipt, with the mismatch list gated EMPTY and the two drawn-cell counts anchored exit-1.  Without this the triple structure would be glued by a different rule from the one the base committed.  The `admit-lax` mutant accepts every scope element without testing the clauses, so nothing is drawn uniquely; the `scope-lax` mutant subsamples the admitted set; both must die here",
+   "class": "measurement",
+   "id": "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+   "passed": true,
+   "value": {
+    "cells": 24,
+    "cells_where_the_full_rule_draws_a_link": 18,
+    "cells_where_the_realized_rule_draws_a_link": 8,
+    "mismatches": []
+   }
+  },
+  {
+   "claim": "THE READ TIME IS A COORDINATE OF EVERY DATUM (RUNBOOK section 15).  Every chart's law datum carries the checkpoint it was read at INSIDE the datum, and the gate measures the consequence: over every chart, every setting and every pair of distinct checkpoints, the number of data that compare EQUAL is gated at zero against the printed denominator.  Since a triangle's three identifications are all admitted against data at one checkpoint, this is what makes 'at matched coordinates' a property of the objects rather than a caption on the table.  The `readtime-conflate` mutant reads every datum at the final checkpoint, which makes the data at different checkpoints identical, and must die here",
+   "class": "measurement",
+   "id": "COC-READ-TIME-COORDINATE",
+   "passed": true,
+   "value": {
+    "collisions": [],
+    "pairs_of_distinct_checkpoints_compared": 144,
+    "pairs_that_compare_equal": 0
+   }
+  },
+  {
+   "claim": "THE PAIRWISE GLUING DATA OF THE DECLARED ATLAS, COMPUTED.  Every ordered pair of distinct charts is searched at every declared coordinate under both committed rules, and the table records what each rule draws.  Three clauses: every drawn map is measured to lie in the declared admitted set -- which is what confines the defect and is the unit's central disclosure; both rules are measured to draw somewhere, so the atlas has gluing data at all; and the ordered-pair MULTIPLICITY -- the number of DISTINCT maps the two rules draw on one ordered pair -- is computed and its histogram printed, since a pair carrying two different maps is exactly a bigon and is what a triangle can mix.  The `edge-perturb` mutant replaces one drawn map by a permutation outside the admitted set and must die at the first clause",
+   "class": "measurement",
+   "id": "COC-PAIR-TABLE",
+   "passed": true,
+   "value": {
+    "cells_where_each_rule_draws_over_every_ordered_pair": {
+     "FULL": 240,
+     "REAL": 160
+    },
+    "every_drawn_map_lies_in_the_declared_admitted_set": true,
+    "ordered_pair_multiplicity_histogram": {
+     "0": 32,
+     "1": 208,
+     "2": 48
+    }
+   }
+  },
+  {
+   "claim": "THE MEMBERSHIP COMPARATOR IS REBUILT HERE AND ANCHORED TO THE COMMITTED ONE.  The bigon-generated holonomy group is the based closed-loop holonomy group of the committed TWO-chart path graph at the declared base node, at the declared length bound, read as the permutation part of the closed-loop link product and counted as PERMUTATION TUPLES.  It is enumerated from this module's own graph, its own link variables and its own path walk -- nothing of the GEN module is imported -- and then anchored exit-1 against the hash-pinned GEN receipt on five quantities: the group order at every setting, the closed-path count at every setting, the elements by fixed-point count at both symmetric settings, abelianness with the element orders and the closure of the value set, and the completion defect's order and fixed configurations.  The `bigon-lax` mutant reads closed paths at every base point at once and must die at the closed-path anchor",
+   "class": "measurement",
+   "id": "COC-BIGON-GROUP",
+   "passed": true,
+   "value": {
+    "GP-A": {
+     "closed_paths_based_there": 8,
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 1
+    },
+    "GP-B": {
+     "closed_paths_based_there": 8,
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 1
+    },
+    "GP-C": {
+     "closed_paths_based_there": 8,
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 1
+    },
+    "GP-D": {
+     "closed_paths_based_there": 8,
+     "elements": [
+      "the identity"
+     ],
+     "generated_group_order": 1,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 1
+    },
+    "GP-E": {
+     "closed_paths_based_there": 364,
+     "elements": [
+      "the completion's non-equivariance defect",
+      "the identity",
+      "the wing exchange",
+      "the wing exchange composed with the non-equivariance defect"
+     ],
+     "generated_group_order": 4,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 4
+    },
+    "GP-F": {
+     "closed_paths_based_there": 364,
+     "elements": [
+      "the completion's non-equivariance defect",
+      "the identity",
+      "the wing exchange",
+      "the wing exchange composed with the non-equivariance defect"
+     ],
+     "generated_group_order": 4,
+     "the_value_set_is_closed_under_composition": true,
+     "value_set_size": 4
+    }
+   }
+  },
+  {
+   "claim": "THE TRIANGLE CENSUS IS EXHAUSTIVE AND ITS SIZE IS COMPUTED TWICE, BY INDEPENDENT ROUTES.  The enumerator walks every ordered triple of pairwise distinct charts, every assignment of a committed gluing rule to each of the three ordered edges, and every declared coordinate, keeping a triangle exactly when all three edges are drawn.  The COMPARATOR does not walk triangles at all: it sums, over the same triples and coordinates, the PRODUCT of the number of rules that draw on each ordered edge -- a count built from the pair table and not from the census -- and the two are measured equal.  The cells that carry no triangle are named rather than dropped.  The `triangle-drop` mutant keeps only the triangles whose three rules agree and must die here",
+   "class": "measurement",
+   "id": "COC-CENSUS",
+   "passed": true,
+   "value": {
+    "cells_carrying_a_triangle": 20,
+    "cells_carrying_no_triangle": [
+     "GP-A/t2",
+     "GP-B/t2",
+     "GP-C/t2",
+     "GP-D/t2"
+    ],
+    "defect_evaluations": 1824,
+    "size": 1824,
+    "size_recomputed_independently": 1824
+   }
+  },
+  {
+   "claim": "THE MEMBERSHIP QUESTION, GATED PER TRIANGLE AT MATCHED COORDINATES.  Every one of the census's triangle defects is tested for membership in the bigon-generated holonomy group AT ITS OWN SETTING -- the comparison object is read at the same coordinate as the object compared, never at another one -- and the number lying outside is gated at ZERO against the printed denominator.  The gate is not one measurement but two, and the second is the one with teeth: at the two symmetric settings the declared admitted set IS a subgroup of the group, so membership there is forced by the containment and is reported as such; at the four settings whose connection is measured FLAT the group is trivial and the admitted set is measured NOT to be contained in it, so every triangle there could have carried a non-identity defect that no bigon holonomy generates -- a pure level-2 obstruction at a flat setting -- and the gate measures that none does.  The `edge-perturb` mutant replaces one drawn map by a permutation outside the admitted set and must die here; the `label-collapse` mutant counts defects as labels rather than permutations and must die here too",
+   "class": "measurement",
+   "id": "COC-MEMBERSHIP",
+   "passed": true,
+   "value": {
+    "defect_set": [
+     "the identity",
+     "the wing exchange"
+    ],
+    "defects_outside_the_bigon_group": 0,
+    "denominator": 1824,
+    "per_setting": {
+     "GP-A": {
+      "bigon_group_order": 1,
+      "defect_names": [
+       "the identity"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+      "triangles": 144
+     },
+     "GP-B": {
+      "bigon_group_order": 1,
+      "defect_names": [
+       "the identity"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+      "triangles": 144
+     },
+     "GP-C": {
+      "bigon_group_order": 1,
+      "defect_names": [
+       "the identity"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+      "triangles": 144
+     },
+     "GP-D": {
+      "bigon_group_order": 1,
+      "defect_names": [
+       "the identity"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+      "triangles": 144
+     },
+     "GP-E": {
+      "bigon_group_order": 4,
+      "defect_names": [
+       "the identity",
+       "the wing exchange"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "FORCED by the admitted set's containment",
+      "triangles": 624
+     },
+     "GP-F": {
+      "bigon_group_order": 4,
+      "defect_names": [
+       "the identity",
+       "the wing exchange"
+      ],
+      "defects_outside_the_bigon_group": 0,
+      "membership_here_is": "FORCED by the admitted set's containment",
+      "triangles": 624
+     }
+    },
+    "settings_where_membership_is_a_free_measurement": [
+     "GP-A",
+     "GP-B",
+     "GP-C",
+     "GP-D"
+    ],
+    "triangles_at_those_settings": 576
+   }
+  },
+  {
+   "claim": "EVERY TRIANGLE DEFECT IS EITHER THE IDENTITY OR THE BIGON HOLONOMY AT ITS OWN COORDINATE -- the sharper statement, and an IF AND ONLY IF at the level of coordinates.  Two clauses, both measured.  (1) Every non-identity defect sits at a coordinate that carries a multiplicity bigon, and is measured EQUAL to that bigon's holonomy.  (2) Every coordinate that carries NO multiplicity bigon carries only identity defects.  The comparator is built independently of the component under audit: it is a loop of the committed TWO-chart path graph, evaluated as an ordered product of exact 81x81 matrices whose permutation part is then read, where the census composes permutation tuples -- so a defect in the composition routine moves one side of the comparison and not the other.  What the two sides DO share is disclosed: the drawn maps themselves, which are the atlas's own gluing data and cannot be independent of either side.  Level two therefore adds no VALUE to level one, which is a stronger reading than membership.  The `edge-perturb`, `compose-order` and `label-collapse` mutants must die here",
+   "class": "measurement",
+   "id": "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+   "passed": true,
+   "value": {
+    "coordinates_carrying_a_multiplicity_bigon": 6,
+    "coordinates_carrying_none": 18,
+    "non_identity_defects": 576,
+    "non_identity_defects_at_a_coordinate_with_no_bigon": [],
+    "non_identity_defects_that_differ_from_the_bigon": []
+   }
+  },
+  {
+   "claim": "WHY IT CLOSES, STATED AS THE DISCLOSURE IT IS.  Every admissible identification of this atlas is by construction an element of the declared admitted set, and that set is MEASURED closed under composition -- a group of order two.  A triangle defect is a composite of three of them, so it lies in that group for every input: the confinement is ANALYTICALLY FORCED and is recorded here as a disclosure and not as a must-pass gate.  What is NOT forced is the relation between that group and the bigon-generated one, and this gate prints the split: at the settings where the admitted set is contained in the holonomy group, membership follows from the containment; at the settings where it is not, membership is a free measurement whose failure was available",
+   "class": "disclosure",
+   "id": "COC-CONFINEMENT",
+   "passed": true,
+   "value": {
+    "every_defect_lies_in_the_admitted_set": true,
+    "membership_is_a_free_measurement_at": [
+     "GP-A",
+     "GP-B",
+     "GP-C",
+     "GP-D"
+    ],
+    "membership_is_forced_at": [
+     "GP-E",
+     "GP-F"
+    ],
+    "the_admitted_set": [
+     "the identity",
+     "the wing exchange"
+    ],
+    "the_admitted_set_is_closed_under_composition": true,
+    "the_group_the_defect_set_generates": 2
+   }
+  },
+  {
+   "claim": "THE POSITIVE CONTROL: THE DEGENERATE TRIANGLE MUST REPRODUCE THE BIGON.  The pin's third candidate route -- the two gluing rules as parallel atlases, (frame1-FULL, frame2, frame1-REAL) -- is exactly a triangle whose third chart is the first one again, so its third identification is that chart's own self-map.  Two clauses.  First, the self-map is measured to be UNIQUELY THE IDENTITY at every chart, every coordinate and both rules -- if it were not, the degenerate triangle would not be degenerate.  Second, every degenerate triangle's defect is measured EQUAL to the holonomy of the corresponding two-chart loop, computed independently from the committed path graph as a product of exact 81x81 matrices.  This is the control that says the cocycle machinery reproduces the level-1 object it must reduce to.  The `control-lax` waiver overwrites the predicate and dies here",
+   "class": "measurement",
+   "id": "COC-POSITIVE-CONTROL",
+   "passed": true,
+   "value": {
+    "degenerate_triangles_measured": 152,
+    "disagreements": [],
+    "the_self_identification_is_uniquely_the_identity_everywhere": true
+   }
+  },
+  {
+   "claim": "THE NEGATIVE CONTROL, WITH TEETH.  Two triangles are deliberately mis-glued at a coordinate where the base itself draws an admitted map.  The first injects the COMPLETION'S OWN DEFECT, which is measured to lie inside the bigon group but outside the measured defect set -- so the census's defect set is measured to be a PROPER part of what the group contains, and a defect set gate could have failed.  The second injects a POINTER TRANSPOSITION of the declared extension, measured outside the admitted set, and its defect is measured to lie OUTSIDE the bigon group: the membership predicate is therefore measured able to FIRE, and the zero it reports on the census is not the only answer it can give. If this gate had failed the membership gate would be dead and the run would say so.  The `membership-lax` mutant answers yes to every membership question and must die here",
+   "class": "measurement",
+   "id": "COC-NEGATIVE-CONTROL",
+   "passed": true,
+   "value": {
+    "a pointer transposition of the declared extension": {
+     "defect_fixed_points": 27,
+     "defect_is_in_the_bigon_group": false,
+     "defect_is_in_the_measured_defect_set": false,
+     "injected_map_fixed_points": 27,
+     "injected_map_is_in_the_declared_admitted_set": false,
+     "injected_map_is_in_the_declared_extension": true
+    },
+    "the completion's non-equivariance defect": {
+     "defect_fixed_points": 45,
+     "defect_is_in_the_bigon_group": true,
+     "defect_is_in_the_measured_defect_set": false,
+     "injected_map_fixed_points": 45,
+     "injected_map_is_in_the_declared_admitted_set": false,
+     "injected_map_is_in_the_declared_extension": false
+    }
+   }
+  },
+  {
+   "claim": "THE PIN'S WRONG-ORDER CONTROL IS MEASURED INERT ON THIS BASE, AND IS REPORTED AS A CONTROL WITHOUT TEETH.  Every triangle of the census is recomposed in the reversed order and the number of composites that MOVE is measured -- it is zero, against the printed denominator.  The reason is measured beside it and is not a defect of the instrument: the drawn maps generate an ABELIAN group in which every element is an INVOLUTION, so no reordering and no inversion of the three factors can change their product for any input.  A mis-composed triangle therefore CANNOT land outside the expected set here, and this control is entered as a disclosure rather than as a must-pass gate.  The instrument's order- and inversion-sensitivity is instead gated on a declared NON-ABELIAN witness, where a reordering does move the answer",
+   "class": "disclosure",
+   "id": "COC-MISCOMPOSITION",
+   "passed": true,
+   "value": {
+    "denominator": 1824,
+    "every_drawn_map_is_an_involution": true,
+    "the_drawn_maps_generate_an_abelian_group": true,
+    "where_the_teeth_are": "COC-COMPOSE-WITNESS",
+    "wrong_order_composites_that_differ": 0
+   }
+  },
+  {
+   "claim": "THE COMPOSITION AND INVERSION ROUTINES ARE MEASURED ORDER-SENSITIVE ON A DECLARED NON-ABELIAN WITNESS.  Because the maps this atlas actually draws are involutions in an abelian group, no reordering of a real triangle can move its defect, so the order convention has to be tested somewhere it can fail.  Three elements of base G's own declared relabelling scope are declared as the witness -- a cyclic system relabelling, the wing exchange and a cyclic pointer relabelling -- and the gate measures that the defect's own composition routine returns the value a DIRECT INDEX EXPRESSION returns, that the reversed order returns a DIFFERENT value, that the witness is genuinely of order greater than two so inversion is observable, and that the link variable's reverse traversal is the inverse matrix and not the matrix.  The `compose-order` and `orient-flip` mutants must die here",
+   "class": "measurement",
+   "id": "COC-COMPOSE-WITNESS",
+   "passed": true,
+   "value": {
+    "inversion_is_observable_on_the_witness": true,
+    "the_composition_matches_the_direct_index_expression": true,
+    "the_declared_witness_fixed_points": [
+     0,
+     9,
+     0
+    ],
+    "the_reverse_traversal_is_the_inverse_matrix": true,
+    "the_reversed_order_differs": true,
+    "the_witness_orders": [
+     3,
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "claim": "THE INSTRUMENT'S OWN SYMMETRY, SELF-TESTED UNDER ITS OWN ACTION (RUNBOOK section 14).  The declared switching group assigns one sign to each link of a loop.  The sweep is COMPLETE over the declared loop set -- every multiplicity bigon and the defect loop at every setting, and EVERY triangle loop of the census -- each over its complete switching group, and the tested set is fixed by DECLARATION rather than selected by the verdicts under audit.  The must-pass clause is the SCALAR ACTION: a switched closed loop is measured to equal the unswitched one times the product of its signs, entry by entry, exactly.  Two further clauses are measured: that no swept holonomy stops being a signed permutation, and that no loop's permutation part moves.  The `sign-flip` mutant drops the sign on a reversed traversal and must die at the scalar clause",
+   "class": "measurement",
+   "id": "COC-GAUGE-COVARIANCE",
+   "passed": true,
+   "value": {
+    "cache_entries_written_by_the_priming_pass": 8,
+    "cache_reads_that_returned_a_stored_value_in_the_priming_pass": 8,
+    "deviations_from_the_global_scalar_action": 0,
+    "fresh_requests_for_a_key_already_in_the_cache": 8,
+    "loops_whose_permutation_part_moved": 0,
+    "swept_holonomies_that_are_not_signed_permutations": 0,
+    "triangle_comparisons": 14592,
+    "triangle_loops_swept": 1824,
+    "two_chart_comparisons": 56,
+    "two_chart_loops_swept": 8,
+    "value_cache_hits_during_the_self_test": 0,
+    "value_cache_misses": 64
+   }
+  },
+  {
+   "claim": "ONE CLAUSE OF THAT SWEEP IS FORCED BY ALGEBRA AND IS REPORTED AS A DISCLOSURE.  A switching acts on a closed loop by a global plus-or-minus one, and a signed permutation matrix and its negative have the SAME permutation part, so the invariance of the permutation part -- hence of every cocycle defect in this unit -- is an algebraic identity that no switching and no mutant could make fail.  The sweep confirms it and the confirmation is what is reported.  The sweep's teeth are the scalar-action clause",
+   "class": "disclosure",
+   "id": "COC-GAUGE-PERMUTATION-FORCED",
+   "passed": true,
+   "value": {
+    "comparisons": 14648,
+    "loops_whose_permutation_part_moved": 0
+   }
+  },
+  {
+   "claim": "THE SELF-TEST EVALUATES FRESH, AGAINST A CACHE MEASURED POPULATED AND MEASURED EXERCISED (RUNBOOK section 14 addendum, both halves).  Before the sweep the value cache is PRIMED with the very keys the sweep will request, one per declared loop; a second pass over those keys is measured to RETURN the stored values, so the read path is measured to work; the sweep is then measured to request keys that are already in the populated cache; and its hit count is nevertheless gated at ZERO against the measured misses.  A zero-hit count over zero lookups would be vacuous, and the counts that exclude that reading are printed.  The `memo-lax` mutant lets the self-test read the cache and must die here",
+   "class": "measurement",
+   "id": "COC-FRESH-EVAL",
+   "passed": true,
+   "value": {
+    "cache_entries_written_by_the_priming_pass": 8,
+    "cache_reads_that_returned_a_stored_value_in_the_priming_pass": 8,
+    "fresh_requests_for_a_key_already_in_the_cache": 8,
+    "value_cache_hits_during_the_self_test": 0,
+    "value_cache_misses": 64
+   }
+  },
+  {
+   "claim": "THE DIRECTION FLIP-TEST.  Every declared two-chart loop is re-traversed with the direction convention flipped and its matrix is measured to be the INVERSE of the forward one, and every triangle of the census is re-traversed in the reversed orientation and its defect measured to be the inverse defect.  The positive content of the SECOND half is forced by algebra and is disclosed as such -- every drawn map is an involution, so a reversed triangle's defect equals the forward one -- and the count of triangles whose defect is its own inverse is printed to say so.  The FIRST half is not forced: the defect loop's link variables include the preparation leg, which is measured not to be a symmetric matrix, so a reverse traversal read without transposing breaks the relation, and the `orient-flip` mutant dies here",
+   "class": "measurement",
+   "id": "COC-FLIP-DIRECTION",
+   "passed": true,
+   "value": {
+    "failures": [],
+    "triangles_flipped": 1824,
+    "triangles_whose_defect_is_its_own_inverse": 1824,
+    "triangles_whose_reversal_is_not_the_inverse_defect": 0,
+    "two_chart_loops_flipped": 8,
+    "two_chart_loops_whose_matrix_is_its_own_inverse": 8
+   }
+  },
+  {
+   "claim": "ALL THREE OF THE PIN'S CANDIDATE ROUTES ARE MEASURED, AND THE ONE THAT FAILS IS MEASURED TO FAIL AT A NAMED CLAUSE.  Route 1, the sub-leg splitting: the committed local leg is measured to factorise EXACTLY into three declared orthogonal sub-legs, so the split chart exists as an object; but every candidate map between it and a committed chart, under both rules, at both matchable read times, over the whole declared admitted set, is measured to fail -- and to fail at the LEG-LIST clause, since a five-leg chart cannot match a three-leg chart as a multiset of Born leg keys.  Route 1 therefore yields no admissible pair and no triangle, and the count admitted is gated at zero.  Route 2 is the declared route.  Route 3 is measured as the degenerate triangle and is this unit's positive control.  The `route-lax` mutant skips the leg clause and must die here",
+   "class": "measurement",
+   "id": "COC-ROUTE-CENSUS",
+   "passed": true,
+   "value": {
+    "admitted": 0,
+    "candidate_maps_tested": 32,
+    "committed_chart_legs": 3,
+    "failures_by_clause": {
+     "exact law": 0,
+     "initial configuration": 0,
+     "leg list": 32,
+     "occupied set": 0
+    },
+    "split_chart_legs": 5,
+    "the_committed_local_leg_factorises_exactly": true
+   }
+  },
+  {
+   "claim": "AT THE GEOMETRY-BEARING SETTINGS THE TRIPLE STRUCTURE EXISTS BECAUSE THE COMPLETION IS NON-EQUIVARIANT -- measured at both endpoints, and the criterion swept whole.  At the pinned completion the atlas is measured to have FOUR distinct charts at every setting.  At the exchange-equivariant completion of the very same preparation vector -- the bare Householder, on which the entire base is rebuilt -- the atlas is measured to COLLAPSE TO TWO charts at exactly the two settings that carry the geometry: there the relabelled first frame becomes the second committed frame, the admissible triangle count falls to ZERO from a measured positive count at the pinned completion, and this unit's question is not posable there at all -- the pre-registered outcome COC-TRIANGLES-ABSENT, at that arena and at those settings.  The four FLAT settings are measured to keep a four-chart atlas even there, because the wing exchange moves the two wings' distinct rotations, and that half of the reading is printed rather than smoothed away.  The collapse criterion is then swept EXHAUSTIVELY over the whole declared completion family at the 9x9 level the GEN defect law licenses, and the split is anchored exit-1 against the committed completion census.  The `completion-Q` mutant makes the DECLARED completion the equivariant one and must die here",
+   "class": "measurement",
+   "id": "COC-COMPLETION-DEPENDENCE",
+   "passed": true,
+   "value": {
+    "admissible_triangles_per_setting_at_the_equivariant_completion": {
+     "GP-A": 144,
+     "GP-B": 144,
+     "GP-C": 144,
+     "GP-D": 144,
+     "GP-E": 0,
+     "GP-F": 0
+    },
+    "admissible_triangles_per_setting_at_the_pinned_completion": {
+     "GP-A": 144,
+     "GP-B": 144,
+     "GP-C": 144,
+     "GP-D": 144,
+     "GP-E": 624,
+     "GP-F": 624
+    },
+    "distinct_charts_per_setting_at_the_equivariant_completion": {
+     "GP-A": 4,
+     "GP-B": 4,
+     "GP-C": 4,
+     "GP-D": 4,
+     "GP-E": 2,
+     "GP-F": 2
+    },
+    "distinct_charts_per_setting_at_the_pinned_completion": {
+     "GP-A": 4,
+     "GP-B": 4,
+     "GP-C": 4,
+     "GP-D": 4,
+     "GP-E": 4,
+     "GP-F": 4
+    },
+    "family_size": 40320,
+    "members_at_which_the_criterion_collapses": 96,
+    "members_at_which_the_criterion_holds": 40224,
+    "the_geometry_bearing_settings": [
+     "GP-E",
+     "GP-F"
+    ]
+   }
+  },
+  {
+   "claim": "THE ADMISSION SCOPE IS A DECLARATION, AND WHAT DEPENDS ON IT IS MEASURED.  The declared 216-element extension, which admits eight maps after the initial-configuration filter and is measured to be a group that is NOT contained in the bigon-generated holonomy group, is searched with the same four-clause predicate at every ordered pair and every coordinate.  It is measured to draw the SAME map everywhere the declared scope does, so the triangle census and every defect are unchanged by it: the wider scope supplies no escaping identification even though it contains escaping permutations.  Folded into no verdict",
+   "class": "disclosure",
+   "id": "COC-ADMISSION-SCOPE",
+   "passed": true,
+   "value": {
+    "census_size_at_the_extension": 1824,
+    "coordinates_where_the_wider_scope_changes_what_is_drawn": [],
+    "declared_admitted_extension": 8,
+    "declared_admitted_set": 2,
+    "drawn_maps_at_the_extension": 400
+   }
+  },
+  {
+   "claim": "THE VERDICT IS ONE OF THE PIN'S PRE-REGISTERED NAMES, AND IT IS DERIVED FROM THE GATE RESULTS RATHER THAN CHOSEN.  The decision rule is fixed in advance: COC-TRIANGLES-ABSENT if the census is empty; COC-HIGHER-OBSTRUCTION if any admissible triangle's defect lies outside the bigon-generated holonomy group at its own setting; COC-COCYCLE-CLOSES otherwise.  The qualifier slot of the pre-registered UNIT-OUTCOME(-QUALIFIER) form carries the scope, and the declared triple structure is the parameter it names.  The `verdict-lax` waiver emits a name outside the vocabulary and must die here",
+   "class": "derivation",
+   "id": "COC-VOCABULARY",
+   "passed": true,
+   "value": {
+    "base": "COC-COCYCLE-CLOSES",
+    "defects_outside_the_bigon_group": 0,
+    "pre_registered": [
+     "COC-COCYCLE-CLOSES",
+     "COC-HIGHER-OBSTRUCTION",
+     "COC-TRIANGLES-ABSENT",
+     "COC-BLOCKED-AT-"
+    ],
+    "scope": [
+     "at the committed finite scope",
+     "at the declared admission scope",
+     "at the declared triple structure",
+     "at the pinned completion",
+     "per coordinate"
+    ],
+    "triangles": 1824,
+    "verdict": "COC-COCYCLE-CLOSES-AT-THE-DECLARED-TRIPLE-STRUCTURE"
+   }
+  },
+  {
+   "claim": "THE RECEIPT'S GATE ORDER PROVES THE FREEZE.  The pin requires the triple structure to be declared before any fixture truth, and the proof is the order in which this receipt's gates were recorded: every declaration gate -- the freeze with its defect counter at zero, base G's pinned data, the hash-pinned external source, the chart family, the arena -- is measured to sit STRICTLY BEFORE the first fixture-truth gate, and the freeze gate is measured to be the first gate of the run.  The `order-lax` mutant emits a census gate before the declarations and must die here",
+   "class": "derivation",
+   "id": "COC-DECLARATION-ORDER",
+   "passed": true,
+   "value": {
+    "declaration_gates": [
+     "COC-FREEZE",
+     "COC-BASE-PINNED",
+     "COC-EXTERNAL-SOURCE-PINNED",
+     "COC-TRIPLE-DECLARED",
+     "COC-ARENA",
+     "COC-READ-TIME-COORDINATE"
+    ],
+    "first_fixture_truth_gate_index": 9,
+    "first_gate": "COC-FREEZE",
+    "fixture_truth_gates": [
+     "COC-CENSUS",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY"
+    ],
+    "gate_order": [
+     "COC-FREEZE",
+     "COC-BASE-PINNED",
+     "COC-EXTERNAL-SOURCE-PINNED",
+     "COC-TRIPLE-DECLARED",
+     "COC-ARENA",
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-READ-TIME-COORDINATE",
+     "COC-PAIR-TABLE",
+     "COC-BIGON-GROUP",
+     "COC-CENSUS",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-CONFINEMENT",
+     "COC-POSITIVE-CONTROL",
+     "COC-NEGATIVE-CONTROL",
+     "COC-MISCOMPOSITION",
+     "COC-COMPOSE-WITNESS",
+     "COC-GAUGE-COVARIANCE",
+     "COC-GAUGE-PERMUTATION-FORCED",
+     "COC-FRESH-EVAL",
+     "COC-FLIP-DIRECTION",
+     "COC-ROUTE-CENSUS",
+     "COC-COMPLETION-DEPENDENCE",
+     "COC-ADMISSION-SCOPE",
+     "COC-VOCABULARY"
+    ],
+    "last_declaration_gate_index": 6
+   }
+  },
+  {
+   "claim": "NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 addendum), MEASURED AS THE HEADLINE SAYS IT.  Two clauses, both from an AST sweep of this module's own source.  (1) Every `gate(...)` and `anchor(...)` call site is found, its argument expressions are walked to any depth, and the number of call sites reaching the mutant flag at all -- in a predicate, a claim string or a value expression -- is measured to be ZERO against the computed total.  (2) The four exemption forms are counted separately anywhere in the source, every occurrence found is measured to lie OUTSIDE every gate and anchor call site, and the `!=` count itself is gated at zero.  Every mutation in this instrument is injected where the computation happens.  The `exempt-lax` waiver registers one such comparison and must die here",
+   "class": "derivation",
+   "id": "COC-NO-MUTANT-EXEMPTION",
+   "passed": true,
+   "value": {
+    "all_of_them_outside_any_gate_or_anchor_call_site": true,
+    "call_sites_reaching_the_mutant_flag": [],
+    "comparisons_found": 0,
+    "exemption_forms_found_anywhere_in_the_source": {
+     "MUTANT != ...": 0,
+     "MUTANT is not ...": 0,
+     "MUTANT not in ...": 1,
+     "not (MUTANT == ...)": 0
+    },
+    "gate_and_anchor_call_sites": 49,
+    "their_line_numbers": {
+     "MUTANT not in ...": [
+      3447
+     ]
+    }
+   }
+  },
+  {
+   "claim": "EXACT ARITHMETIC EVERYWHERE.  An AST sweep of this module finds no float literal and no call to `float`, and a runtime sweep finds no float in any value that reached a gate or an anchor.  The substrate is `fractions.Fraction`: every declared operator of base G has rational entries and is exactly orthogonal over Q, so equality of matrices is equality of exact rationals, permutation equality is tuple equality, and no tolerance exists anywhere in this instrument.  The `float-lax` waiver registers a float literal in the gate's own evidence list and must die here",
+   "class": "derivation",
+   "id": "COC-EXACT",
+   "passed": true,
+   "value": {
+    "float_call_lines": [],
+    "float_literal_lines": [],
+    "fraction_available": "1/2",
+    "rows_carrying_a_float": []
+   }
+  },
+  {
+   "claim": "EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.  Each declared mutant is run to completion, must exit 1, and must falsify at least one NAMED gate or anchor; the second clause is the one that matters -- the set of must-pass gates that NO mutant falsifies is measured to be EMPTY.  Each mutant declares its KIND and the split is counted from the declaration: a WAIVER proves a gate's predicate is load-bearing for the exit code, not that the gate would catch a computational defect, and the two are not claimed to be the same thing.  BOTH DENOMINATORS ARE REPORTED.  The one gate excluded from the denominator is this one: the census does not run inside a mutant, so it cannot be falsified by this mechanism at all",
+   "class": "derivation",
+   "id": "COC-FALSIFICATION",
+   "passed": true,
+   "value": {
+    "died": 28,
+    "falsified_by_a_computation_mutant": 21,
+    "falsified_by_some_mutant": 24,
+    "falsified_only_by_a_waiver": [
+     "COC-EXACT",
+     "COC-NO-MUTANT-EXEMPTION",
+     "COC-VOCABULARY"
+    ],
+    "must_pass_gate_denominator": 24,
+    "mutants": 28,
+    "never_falsified": [],
+    "perturb_a_computation": 23,
+    "the_gate_excluded_from_the_denominator": "COC-FALSIFICATION",
+    "waivers": 5
+   }
+  }
+ ],
+ "pin_commit": "9e2b95b",
+ "pin_sha256_prefix": "2ba34071c18f",
+ "schema": "coc-cocycle-receipt-v1",
+ "source_sha256": "0c0592a15d2eacabcfb62ac656b11b758189c074cdbdd583cce70c16906c1d38",
+ "tables": {
+  "admission": {
+   "cells_where_each_rule_draws_over_every_ordered_pair": {
+    "FULL": 240,
+    "REAL": 160
+   },
+   "cells_where_each_rule_draws_over_the_committed_pair": {
+    "FULL": 18,
+    "REAL": 8
+   },
+   "coordinates_of_ordered_pair_multiplicity_two": [
+    "GP-E/t0 F1->F2",
+    "GP-E/t0 F1->W.F2",
+    "GP-E/t0 F2->F1",
+    "GP-E/t0 F2->W.F1",
+    "GP-E/t0 W.F1->F2",
+    "GP-E/t0 W.F1->W.F2",
+    "GP-E/t0 W.F2->F1",
+    "GP-E/t0 W.F2->W.F1",
+    "GP-E/t1 F1->F2",
+    "GP-E/t1 F1->W.F2",
+    "GP-E/t1 F2->F1",
+    "GP-E/t1 F2->W.F1",
+    "GP-E/t1 W.F1->F2",
+    "GP-E/t1 W.F1->W.F2",
+    "GP-E/t1 W.F2->F1",
+    "GP-E/t1 W.F2->W.F1",
+    "GP-E/t3 F1->F2",
+    "GP-E/t3 F1->W.F2",
+    "GP-E/t3 F2->F1",
+    "GP-E/t3 F2->W.F1",
+    "GP-E/t3 W.F1->F2",
+    "GP-E/t3 W.F1->W.F2",
+    "GP-E/t3 W.F2->F1",
+    "GP-E/t3 W.F2->W.F1",
+    "GP-F/t0 F1->F2",
+    "GP-F/t0 F1->W.F2",
+    "GP-F/t0 F2->F1",
+    "GP-F/t0 F2->W.F1",
+    "GP-F/t0 W.F1->F2",
+    "GP-F/t0 W.F1->W.F2",
+    "GP-F/t0 W.F2->F1",
+    "GP-F/t0 W.F2->W.F1",
+    "GP-F/t1 F1->F2",
+    "GP-F/t1 F1->W.F2",
+    "GP-F/t1 F2->F1",
+    "GP-F/t1 F2->W.F1",
+    "GP-F/t1 W.F1->F2",
+    "GP-F/t1 W.F1->W.F2",
+    "GP-F/t1 W.F2->F1",
+    "GP-F/t1 W.F2->W.F1",
+    "GP-F/t3 F1->F2",
+    "GP-F/t3 F1->W.F2",
+    "GP-F/t3 F2->F1",
+    "GP-F/t3 F2->W.F1",
+    "GP-F/t3 W.F1->F2",
+    "GP-F/t3 W.F1->W.F2",
+    "GP-F/t3 W.F2->F1",
+    "GP-F/t3 W.F2->W.F1"
+   ],
+   "every_drawn_map_lies_in_the_declared_admitted_set": true,
+   "ordered_pair_multiplicity_histogram": {
+    "0": 32,
+    "1": 208,
+    "2": 48
+   },
+   "per_cell": {
+    "GP-A/t0": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-A/t1": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-A/t2": {
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-A/t3": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-B/t0": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-B/t1": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-B/t2": {
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-B/t3": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-C/t0": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-C/t1": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-C/t2": {
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-C/t3": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-D/t0": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-D/t1": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-D/t2": {
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-D/t3": {
+     "F1->F2": {
+      "FULL": "the identity"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange"
+     },
+     "F2->F1": {
+      "FULL": "the identity"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity"
+     }
+    },
+    "GP-E/t0": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-E/t1": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-E/t2": {
+     "F1->F2": {
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-E/t3": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-F/t0": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-F/t1": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-F/t2": {
+     "F1->F2": {
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "REAL": "the wing exchange"
+     }
+    },
+    "GP-F/t3": {
+     "F1->F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "F1->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "F2->W.F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "F2->W.F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F1->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F1->W.F2": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->F1": {
+      "FULL": "the wing exchange",
+      "REAL": "the identity"
+     },
+     "W.F2->F2": {
+      "FULL": "the wing exchange",
+      "REAL": "the wing exchange"
+     },
+     "W.F2->W.F1": {
+      "FULL": "the identity",
+      "REAL": "the wing exchange"
+     }
+    }
+   },
+   "route": "base G's four-clause predicate, generalised verbatim to an ordered chart pair; a map is drawn only where the rule admits UNIQUELY",
+   "the_committed_pair_recomputed": {
+    "GP-A/t0": {
+     "FULL": "the identity"
+    },
+    "GP-A/t1": {
+     "FULL": "the identity"
+    },
+    "GP-A/t2": {},
+    "GP-A/t3": {
+     "FULL": "the identity"
+    },
+    "GP-B/t0": {
+     "FULL": "the identity"
+    },
+    "GP-B/t1": {
+     "FULL": "the identity"
+    },
+    "GP-B/t2": {},
+    "GP-B/t3": {
+     "FULL": "the identity"
+    },
+    "GP-C/t0": {
+     "FULL": "the identity"
+    },
+    "GP-C/t1": {
+     "FULL": "the identity"
+    },
+    "GP-C/t2": {},
+    "GP-C/t3": {
+     "FULL": "the identity"
+    },
+    "GP-D/t0": {
+     "FULL": "the identity"
+    },
+    "GP-D/t1": {
+     "FULL": "the identity"
+    },
+    "GP-D/t2": {},
+    "GP-D/t3": {
+     "FULL": "the identity"
+    },
+    "GP-E/t0": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    },
+    "GP-E/t1": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    },
+    "GP-E/t2": {
+     "REAL": "the wing exchange"
+    },
+    "GP-E/t3": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    },
+    "GP-F/t0": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    },
+    "GP-F/t1": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    },
+    "GP-F/t2": {
+     "REAL": "the wing exchange"
+    },
+    "GP-F/t3": {
+     "FULL": "the identity",
+     "REAL": "the wing exchange"
+    }
+   }
+  },
+  "admission_scope": {
+   "census_size_at_the_extension": 1824,
+   "coordinates_where_the_wider_scope_changes_what_is_drawn": [],
+   "declared_admitted_extension": 8,
+   "declared_admitted_set": 2,
+   "drawn_maps_at_the_extension": 400
+  },
+  "arena": {
+   "admitted_after_the_j0_filter": 2,
+   "admitted_after_the_j0_filter_at_the_extension": 8,
+   "carrier": 81,
+   "chart_family_size": 4,
+   "charts": [
+    "F1",
+    "W.F1",
+    "F2",
+    "W.F2"
+   ],
+   "checkpoint_values": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "checkpoints": 4,
+   "coordinate_cells": 24,
+   "declared_coordinate": [
+    "setting",
+    "checkpoint (the READ TIME)"
+   ],
+   "declared_division_events": [
+    0,
+    3
+   ],
+   "declared_extension_scope": 216,
+   "declared_relabelling_scope": 162,
+   "frames": 2,
+   "gluing_rules": [
+    "FULL",
+    "REAL"
+   ],
+   "initial_configuration": 0,
+   "legs_per_frame": 3,
+   "ordered_chart_pairs": 12,
+   "ordered_chart_triples": 24,
+   "path_length_bound": 8,
+   "rule_assignments_per_triple": 8,
+   "settings": 6,
+   "state": "p(0) = delta_{j0}",
+   "symmetric_setting_count": 2,
+   "symmetric_settings": [
+    "GP-E",
+    "GP-F"
+   ],
+   "the_admitted_extension_is_closed_under_composition": true,
+   "the_admitted_maps": [
+    "the identity",
+    "the wing exchange"
+   ],
+   "the_admitted_set_is_closed_under_composition": true
+  },
+  "bigon_group": {
+   "GP-A": {
+    "closed_paths_based_there": 8,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 2,
+    "element_fixed_points": {
+     "the identity": 81
+    },
+    "element_orders": [
+     1
+    ],
+    "elements": [
+     "the identity"
+    ],
+    "generated_group_order": 1,
+    "identification_links": 3,
+    "links": 9,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 1
+   },
+   "GP-B": {
+    "closed_paths_based_there": 8,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 2,
+    "element_fixed_points": {
+     "the identity": 81
+    },
+    "element_orders": [
+     1
+    ],
+    "elements": [
+     "the identity"
+    ],
+    "generated_group_order": 1,
+    "identification_links": 3,
+    "links": 9,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 1
+   },
+   "GP-C": {
+    "closed_paths_based_there": 8,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 2,
+    "element_fixed_points": {
+     "the identity": 81
+    },
+    "element_orders": [
+     1
+    ],
+    "elements": [
+     "the identity"
+    ],
+    "generated_group_order": 1,
+    "identification_links": 3,
+    "links": 9,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 1
+   },
+   "GP-D": {
+    "closed_paths_based_there": 8,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 2,
+    "element_fixed_points": {
+     "the identity": 81
+    },
+    "element_orders": [
+     1
+    ],
+    "elements": [
+     "the identity"
+    ],
+    "generated_group_order": 1,
+    "identification_links": 3,
+    "links": 9,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 1
+   },
+   "GP-E": {
+    "closed_paths_based_there": 364,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 6,
+    "element_fixed_points": {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    },
+    "element_orders": [
+     1,
+     2
+    ],
+    "elements": [
+     "the completion's non-equivariance defect",
+     "the identity",
+     "the wing exchange",
+     "the wing exchange composed with the non-equivariance defect"
+    ],
+    "generated_group_order": 4,
+    "identification_links": 7,
+    "links": 13,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 4
+   },
+   "GP-F": {
+    "closed_paths_based_there": 364,
+    "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+    "cycle_rank": 6,
+    "element_fixed_points": {
+     "the completion's non-equivariance defect": 45,
+     "the identity": 81,
+     "the wing exchange": 9,
+     "the wing exchange composed with the non-equivariance defect": 9
+    },
+    "element_orders": [
+     1,
+     2
+    ],
+    "elements": [
+     "the completion's non-equivariance defect",
+     "the identity",
+     "the wing exchange",
+     "the wing exchange composed with the non-equivariance defect"
+    ],
+    "generated_group_order": 4,
+    "identification_links": 7,
+    "links": 13,
+    "the_group_is_abelian": true,
+    "the_value_set_is_closed_under_composition": true,
+    "value_set_size": 4
+   }
+  },
+  "census": {
+   "cells_carrying_a_triangle": 20,
+   "cells_carrying_no_triangle": [
+    "GP-A/t2",
+    "GP-B/t2",
+    "GP-C/t2",
+    "GP-D/t2"
+   ],
+   "per_cell": {
+    "GP-A/t0": 48,
+    "GP-A/t1": 48,
+    "GP-A/t2": 0,
+    "GP-A/t3": 48,
+    "GP-B/t0": 48,
+    "GP-B/t1": 48,
+    "GP-B/t2": 0,
+    "GP-B/t3": 48,
+    "GP-C/t0": 48,
+    "GP-C/t1": 48,
+    "GP-C/t2": 0,
+    "GP-C/t3": 48,
+    "GP-D/t0": 48,
+    "GP-D/t1": 48,
+    "GP-D/t2": 0,
+    "GP-D/t3": 48,
+    "GP-E/t0": 192,
+    "GP-E/t1": 192,
+    "GP-E/t2": 48,
+    "GP-E/t3": 192,
+    "GP-F/t0": 192,
+    "GP-F/t1": 192,
+    "GP-F/t2": 48,
+    "GP-F/t3": 192
+   },
+   "route": "R2-ADMITTED-RELABELLING",
+   "scope": "EXHAUSTIVE over the declared triple family: every ordered triple of pairwise distinct charts, every rule assignment to the three ordered edges, every declared coordinate",
+   "size": 1824,
+   "size_recomputed_independently": 1824
+  },
+  "chart_family": {
+   "declaration": {
+    "admission_rule_per_pair": "base G's own four-clause predicate (initial configuration, order-free Born leg-list match, occupied set, exact law), generalised verbatim to an ordered chart pair, applied under EACH of the two committed gluing rules, with a map DRAWN only where that rule admits UNIQUELY",
+    "chart_family": "the orbit of the two committed frames F1 and F2 under the declared admitted set S, i.e. {sigma.X : sigma in S, X in {F1, F2}}, deduplicated by chart identity",
+    "chart_identity": "two charts are the SAME chart iff their ordered leg lists agree as canonical Born leg keys AND their law data agree at every declared checkpoint, read time included",
+    "coordinates": "one (setting, checkpoint) cell; all three identifications of a triangle are read at the SAME cell, and the read time is carried inside every law datum",
+    "defect": "delta = g_CA . g_BC . g_AB, composed as permutations of the carrier and recorded as a permutation TUPLE",
+    "membership_comparator": "the bigon-generated holonomy group at the SAME setting: the based closed-loop holonomy group of the committed TWO-chart path graph at the declared base node, at the declared length bound, rebuilt natively in this module and anchored exit-1 against the committed GEN receipt",
+    "route": "R2-ADMITTED-RELABELLING",
+    "triangle": "an ordered triple (A, B, C) of PAIRWISE DISTINCT charts together with a rule for each of the three ordered edges AB, BC, CA, such that all three edges are drawn"
+   },
+   "distinct_charts_per_setting": {
+    "GP-A": 4,
+    "GP-B": 4,
+    "GP-C": 4,
+    "GP-D": 4,
+    "GP-E": 4,
+    "GP-F": 4
+   },
+   "distinct_members": 4,
+   "generated_members": 4,
+   "members": [
+    {
+     "frame": "F1",
+     "initial_configuration": 0,
+     "name": "F1",
+     "relabelling": "the identity"
+    },
+    {
+     "frame": "F1",
+     "initial_configuration": 0,
+     "name": "W.F1",
+     "relabelling": "the wing exchange"
+    },
+    {
+     "frame": "F2",
+     "initial_configuration": 0,
+     "name": "F2",
+     "relabelling": "the identity"
+    },
+    {
+     "frame": "F2",
+     "initial_configuration": 0,
+     "name": "W.F2",
+     "relabelling": "the wing exchange"
+    }
+   ],
+   "orbit_group_size": 2,
+   "pairwise_distinct_at_every_setting": {
+    "GP-A": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    },
+    "GP-B": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    },
+    "GP-C": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    },
+    "GP-D": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    },
+    "GP-E": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    },
+    "GP-F": {
+     "F1 vs F2": true,
+     "F1 vs W.F1": true,
+     "F1 vs W.F2": true,
+     "F2 vs W.F2": true,
+     "W.F1 vs F2": true,
+     "W.F1 vs W.F2": true
+    }
+   },
+   "route": "R2-ADMITTED-RELABELLING",
+   "route_candidates": {
+    "R1-SUB-LEG-SPLIT": {
+     "admission": "base G's own four-clause predicate, unchanged",
+     "definition": "the committed local leg factorises exactly as U_X(g) = (R_g (x) I) . C_X . (R_g^T (x) I), with C_X the declared computational-basis record map; the split chart is the frame whose leg list replaces one committed local leg by its three declared orthogonal sub-legs, giving a five-leg chart",
+     "id": "R1-SUB-LEG-SPLIT",
+     "name": "a third leg-order via a declared sub-leg splitting of a committed leg",
+     "status": "MEASURED HERE, not declared as the route"
+    },
+    "R2-ADMITTED-RELABELLING": {
+     "admission": "base G's own four-clause predicate, generalised verbatim to an ordered chart pair, under each of the two committed gluing rules, drawn only where unique",
+     "definition": "for sigma in the declared ADMITTED set and X a committed frame, sigma.X is the chart whose k-th leg is sigma L_k sigma^{-1} and whose law datum at every checkpoint is the sigma-pushforward of X's; the CHART FAMILY is the orbit of the two committed frames under the admitted set, its size computed by enumeration and its members measured pairwise distinct",
+     "id": "R2-ADMITTED-RELABELLING",
+     "name": "a relabelled frame via a declared admitted isomorphism",
+     "status": "THE DECLARED ROUTE"
+    },
+    "R3-PARALLEL-ATLASES": {
+     "admission": "base G's own four-clause predicate, unchanged",
+     "definition": "the third chart is the FIRST chart read under the other atlas, so the third identification is the chart's own self-identification",
+     "id": "R3-PARALLEL-ATLASES",
+     "name": "the two gluing rules as parallel atlases, (frame1-FULL, frame2, frame1-REAL)",
+     "status": "MEASURED HERE as the DEGENERATE triangle, i.e. this unit's positive control"
+    }
+   },
+   "seeds": [
+    "F1",
+    "F2"
+   ],
+   "the_completions_non_equivariance_defect_is_the_identity": false,
+   "the_preparation_leg_intertwines_under_the_wing_exchange": false
+  },
+  "completion_dependence": {
+   "at_the_exchange_equivariant_completion": {
+    "admissible_triangles_per_setting": {
+     "GP-A": 144,
+     "GP-B": 144,
+     "GP-C": 144,
+     "GP-D": 144,
+     "GP-E": 0,
+     "GP-F": 0
+    },
+    "chart_family_size": 4,
+    "charts": [
+     "F1",
+     "W.F1",
+     "F2",
+     "W.F2"
+    ],
+    "defect_fixed_points": 81,
+    "defect_is_the_identity": true,
+    "distinct_charts_per_setting": {
+     "GP-A": 4,
+     "GP-B": 4,
+     "GP-C": 4,
+     "GP-D": 4,
+     "GP-E": 2,
+     "GP-F": 2
+    }
+   },
+   "at_the_pinned_completion": {
+    "admissible_triangles_per_setting": {
+     "GP-A": 144,
+     "GP-B": 144,
+     "GP-C": 144,
+     "GP-D": 144,
+     "GP-E": 624,
+     "GP-F": 624
+    },
+    "chart_family_size": 4,
+    "charts": [
+     "F1",
+     "W.F1",
+     "F2",
+     "W.F2"
+    ],
+    "defect_fixed_points": 45,
+    "defect_is_the_identity": false,
+    "distinct_charts_per_setting": {
+     "GP-A": 4,
+     "GP-B": 4,
+     "GP-C": 4,
+     "GP-D": 4,
+     "GP-E": 4,
+     "GP-F": 4
+    }
+   },
+   "family_size": 40320,
+   "members_at_which_the_chart_family_collapses_to_two": 96,
+   "members_at_which_the_triple_structure_exists": 40224,
+   "sweep": "EXHAUSTIVE (every member), at the 9x9 level the GEN defect law licenses, with the criterion measured against a full 81-configuration rebuild at both endpoints",
+   "the_declared_family": "V = H . Q with Q a permutation of the nine system-pair indices fixing the first",
+   "the_geometry_bearing_settings": [
+    "GP-E",
+    "GP-F"
+   ]
+  },
+  "defect_is_a_bigon": {
+   "comparator": "the two-chart loop that crosses on the FULL rule's link and returns on the REALIZED rule's, built from the committed two-chart path graph and evaluated as an ordered product of 81x81 exact matrices whose permutation part is then read -- a different route from the census's composition of permutation tuples",
+   "coordinates_carrying_a_multiplicity_bigon": [
+    "GP-E/t0",
+    "GP-E/t1",
+    "GP-E/t3",
+    "GP-F/t0",
+    "GP-F/t1",
+    "GP-F/t3"
+   ],
+   "coordinates_carrying_none": [
+    "GP-A/t0",
+    "GP-A/t1",
+    "GP-A/t2",
+    "GP-A/t3",
+    "GP-B/t0",
+    "GP-B/t1",
+    "GP-B/t2",
+    "GP-B/t3",
+    "GP-C/t0",
+    "GP-C/t1",
+    "GP-C/t2",
+    "GP-C/t3",
+    "GP-D/t0",
+    "GP-D/t1",
+    "GP-D/t2",
+    "GP-D/t3",
+    "GP-E/t2",
+    "GP-F/t2"
+   ],
+   "multiplicity_bigons": {
+    "GP-A/t0": null,
+    "GP-A/t1": null,
+    "GP-A/t2": null,
+    "GP-A/t3": null,
+    "GP-B/t0": null,
+    "GP-B/t1": null,
+    "GP-B/t2": null,
+    "GP-B/t3": null,
+    "GP-C/t0": null,
+    "GP-C/t1": null,
+    "GP-C/t2": null,
+    "GP-C/t3": null,
+    "GP-D/t0": null,
+    "GP-D/t1": null,
+    "GP-D/t2": null,
+    "GP-D/t3": null,
+    "GP-E/t0": "the wing exchange",
+    "GP-E/t1": "the wing exchange",
+    "GP-E/t2": null,
+    "GP-E/t3": "the wing exchange",
+    "GP-F/t0": "the wing exchange",
+    "GP-F/t1": "the wing exchange",
+    "GP-F/t2": null,
+    "GP-F/t3": "the wing exchange"
+   },
+   "non_identity_defects": 576,
+   "non_identity_defects_at_a_coordinate_with_no_bigon": [],
+   "non_identity_defects_that_differ_from_the_bigon": []
+  },
+  "flip_test": {
+   "triangles_flipped": 1824,
+   "triangles_whose_defect_is_its_own_inverse": 1824,
+   "triangles_whose_reversal_is_not_the_inverse_defect": 0,
+   "two_chart_loops_flipped": 8,
+   "two_chart_loops_whose_matrix_is_its_own_inverse": 8,
+   "two_chart_loops_whose_reversal_is_not_the_inverse": []
+  },
+  "gate_falsification": {
+   "falsified_by_a_computation_mutant": [
+    "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+    "COC-ARENA",
+    "COC-BASE-PINNED",
+    "COC-BIGON-GROUP",
+    "COC-CENSUS",
+    "COC-COMPLETION-DEPENDENCE",
+    "COC-COMPOSE-WITNESS",
+    "COC-DECLARATION-ORDER",
+    "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+    "COC-EXTERNAL-SOURCE-PINNED",
+    "COC-FLIP-DIRECTION",
+    "COC-FREEZE",
+    "COC-FRESH-EVAL",
+    "COC-GAUGE-COVARIANCE",
+    "COC-MEMBERSHIP",
+    "COC-NEGATIVE-CONTROL",
+    "COC-PAIR-TABLE",
+    "COC-POSITIVE-CONTROL",
+    "COC-READ-TIME-COORDINATE",
+    "COC-ROUTE-CENSUS",
+    "COC-TRIPLE-DECLARED"
+   ],
+   "falsified_by_some_mutant": [
+    "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+    "COC-ARENA",
+    "COC-BASE-PINNED",
+    "COC-BIGON-GROUP",
+    "COC-CENSUS",
+    "COC-COMPLETION-DEPENDENCE",
+    "COC-COMPOSE-WITNESS",
+    "COC-DECLARATION-ORDER",
+    "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+    "COC-EXACT",
+    "COC-EXTERNAL-SOURCE-PINNED",
+    "COC-FLIP-DIRECTION",
+    "COC-FREEZE",
+    "COC-FRESH-EVAL",
+    "COC-GAUGE-COVARIANCE",
+    "COC-MEMBERSHIP",
+    "COC-NEGATIVE-CONTROL",
+    "COC-NO-MUTANT-EXEMPTION",
+    "COC-PAIR-TABLE",
+    "COC-POSITIVE-CONTROL",
+    "COC-READ-TIME-COORDINATE",
+    "COC-ROUTE-CENSUS",
+    "COC-TRIPLE-DECLARED",
+    "COC-VOCABULARY"
+   ],
+   "falsified_only_by_a_waiver": [
+    "COC-EXACT",
+    "COC-NO-MUTANT-EXEMPTION",
+    "COC-VOCABULARY"
+   ],
+   "must_pass_gates": [
+    "COC-FREEZE",
+    "COC-BASE-PINNED",
+    "COC-EXTERNAL-SOURCE-PINNED",
+    "COC-TRIPLE-DECLARED",
+    "COC-ARENA",
+    "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+    "COC-READ-TIME-COORDINATE",
+    "COC-PAIR-TABLE",
+    "COC-BIGON-GROUP",
+    "COC-CENSUS",
+    "COC-MEMBERSHIP",
+    "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+    "COC-POSITIVE-CONTROL",
+    "COC-NEGATIVE-CONTROL",
+    "COC-COMPOSE-WITNESS",
+    "COC-GAUGE-COVARIANCE",
+    "COC-FRESH-EVAL",
+    "COC-FLIP-DIRECTION",
+    "COC-ROUTE-CENSUS",
+    "COC-COMPLETION-DEPENDENCE",
+    "COC-VOCABULARY",
+    "COC-DECLARATION-ORDER",
+    "COC-NO-MUTANT-EXEMPTION",
+    "COC-EXACT"
+   ],
+   "never_falsified": [],
+   "per_gate_falsifiers": {
+    "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE": {
+     "computation": [
+      "admit-lax",
+      "anchor-record",
+      "completion-Q",
+      "readtime-conflate",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-ARENA": {
+     "computation": [
+      "anchor-gen",
+      "chart-merge",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-BASE-PINNED": {
+     "computation": [
+      "anchor-completion",
+      "anchor-record",
+      "anchor-rot",
+      "completion-Q"
+     ],
+     "waiver": []
+    },
+    "COC-BIGON-GROUP": {
+     "computation": [
+      "admit-lax",
+      "anchor-completion",
+      "anchor-gen",
+      "anchor-record",
+      "bigon-lax",
+      "completion-Q",
+      "defect-order",
+      "orient-flip",
+      "readtime-conflate",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-CENSUS": {
+     "computation": [
+      "admit-lax",
+      "chart-merge",
+      "scope-lax",
+      "triangle-drop"
+     ],
+     "waiver": []
+    },
+    "COC-COMPLETION-DEPENDENCE": {
+     "computation": [
+      "admit-lax",
+      "anchor-record",
+      "chart-merge",
+      "completion-Q",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-COMPOSE-WITNESS": {
+     "computation": [
+      "compose-order",
+      "orient-flip"
+     ],
+     "waiver": []
+    },
+    "COC-DECLARATION-ORDER": {
+     "computation": [
+      "order-lax"
+     ],
+     "waiver": []
+    },
+    "COC-DEFECT-IS-A-BIGON-HOLONOMY": {
+     "computation": [
+      "admit-lax",
+      "chart-merge",
+      "completion-Q",
+      "edge-perturb",
+      "label-collapse",
+      "scope-lax",
+      "triangle-drop"
+     ],
+     "waiver": []
+    },
+    "COC-EXACT": {
+     "computation": [],
+     "waiver": [
+      "float-lax"
+     ]
+    },
+    "COC-EXTERNAL-SOURCE-PINNED": {
+     "computation": [
+      "gen-hash"
+     ],
+     "waiver": []
+    },
+    "COC-FLIP-DIRECTION": {
+     "computation": [
+      "admit-lax",
+      "orient-flip",
+      "scope-lax"
+     ],
+     "waiver": [
+      "flip-lax"
+     ]
+    },
+    "COC-FREEZE": {
+     "computation": [
+      "freeze-lax"
+     ],
+     "waiver": []
+    },
+    "COC-FRESH-EVAL": {
+     "computation": [
+      "admit-lax",
+      "memo-lax",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-GAUGE-COVARIANCE": {
+     "computation": [
+      "admit-lax",
+      "anchor-completion",
+      "chart-merge",
+      "orient-flip",
+      "scope-lax",
+      "sign-flip"
+     ],
+     "waiver": []
+    },
+    "COC-MEMBERSHIP": {
+     "computation": [
+      "admit-lax",
+      "chart-merge",
+      "edge-perturb",
+      "label-collapse",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-NEGATIVE-CONTROL": {
+     "computation": [
+      "admit-lax",
+      "anchor-completion",
+      "chart-merge",
+      "completion-Q",
+      "defect-order",
+      "membership-lax",
+      "orient-flip",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-NO-MUTANT-EXEMPTION": {
+     "computation": [],
+     "waiver": [
+      "exempt-lax"
+     ]
+    },
+    "COC-PAIR-TABLE": {
+     "computation": [
+      "admit-lax",
+      "chart-merge",
+      "completion-Q",
+      "edge-perturb",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-POSITIVE-CONTROL": {
+     "computation": [
+      "admit-lax",
+      "completion-Q",
+      "label-collapse"
+     ],
+     "waiver": [
+      "control-lax"
+     ]
+    },
+    "COC-READ-TIME-COORDINATE": {
+     "computation": [
+      "readtime-conflate"
+     ],
+     "waiver": []
+    },
+    "COC-ROUTE-CENSUS": {
+     "computation": [
+      "route-lax"
+     ],
+     "waiver": []
+    },
+    "COC-TRIPLE-DECLARED": {
+     "computation": [
+      "chart-merge",
+      "completion-Q",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "COC-VOCABULARY": {
+     "computation": [],
+     "waiver": [
+      "verdict-lax"
+     ]
+    }
+   }
+  },
+  "gauge_selftest": {
+   "cache_entries_written_by_the_priming_pass": 8,
+   "cache_reads_that_returned_a_stored_value_in_the_priming_pass": 8,
+   "declared_swept_set": "every declared two-chart loop of this unit -- the multiplicity bigons and the defect loop, at every setting -- over its COMPLETE switching group, plus EVERY triangle loop of the census over its complete switching group",
+   "deviations_from_the_global_scalar_action": 0,
+   "fresh_requests_for_a_key_already_in_the_cache": 8,
+   "loops_whose_permutation_part_moved": 0,
+   "swept_holonomies_that_are_not_signed_permutations": 0,
+   "triangle_comparisons": 14592,
+   "triangle_loops_swept": 1824,
+   "two_chart_comparisons": 56,
+   "two_chart_loops_swept": 8,
+   "value_cache_hits_during_the_self_test": 0,
+   "value_cache_misses": 64
+  },
+  "membership": {
+   "defect_set": [
+    "(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80)",
+    "(0,3,6,1,4,7,2,5,8,27,30,33,28,31,34,29,32,35,54,57,60,55,58,61,56,59,62,9,12,15,10,13,16,11,14,17,36,39,42,37,40,43,38,41,44,63,66,69,64,67,70,65,68,71,18,21,24,19,22,25,20,23,26,45,48,51,46,49,52,47,50,53,72,75,78,73,76,79,74,77,80)"
+   ],
+   "defect_set_names": [
+    "the identity",
+    "the wing exchange"
+   ],
+   "defect_set_size": 2,
+   "defects_outside_the_bigon_group": 0,
+   "denominator": 1824,
+   "per_coordinate_cell": {
+    "GP-A/t0": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-A/t1": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-A/t3": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-B/t0": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-B/t1": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-B/t3": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-C/t0": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-C/t1": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-C/t3": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-D/t0": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-D/t1": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-D/t3": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-E/t0": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    },
+    "GP-E/t1": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    },
+    "GP-E/t2": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-E/t3": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    },
+    "GP-F/t0": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    },
+    "GP-F/t1": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    },
+    "GP-F/t2": {
+     "non_identity_defects": 0,
+     "triangles": 48
+    },
+    "GP-F/t3": {
+     "non_identity_defects": 96,
+     "triangles": 192
+    }
+   },
+   "per_setting": {
+    "GP-A": {
+     "bigon_group_order": 1,
+     "defect_names": [
+      "the identity"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 1,
+     "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": false,
+     "triangles": 144
+    },
+    "GP-B": {
+     "bigon_group_order": 1,
+     "defect_names": [
+      "the identity"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 1,
+     "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": false,
+     "triangles": 144
+    },
+    "GP-C": {
+     "bigon_group_order": 1,
+     "defect_names": [
+      "the identity"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 1,
+     "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": false,
+     "triangles": 144
+    },
+    "GP-D": {
+     "bigon_group_order": 1,
+     "defect_names": [
+      "the identity"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 1,
+     "membership_here_is": "A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": false,
+     "triangles": 144
+    },
+    "GP-E": {
+     "bigon_group_order": 4,
+     "defect_names": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 2,
+     "membership_here_is": "FORCED by the admitted set's containment",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": true,
+     "triangles": 624
+    },
+    "GP-F": {
+     "bigon_group_order": 4,
+     "defect_names": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "defects_outside_the_bigon_group": 0,
+     "distinct_defects": 2,
+     "membership_here_is": "FORCED by the admitted set's containment",
+     "the_admitted_set_is_a_subgroup_of_the_bigon_group": true,
+     "triangles": 624
+    }
+   },
+   "settings_where_membership_is_a_free_measurement": [
+    "GP-A",
+    "GP-B",
+    "GP-C",
+    "GP-D"
+   ],
+   "the_group_the_defect_set_generates": 2,
+   "triangles_at_those_settings": 576
+  },
+  "mutants": [
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one cocycle defect evaluated before the freeze",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-FREEZE"
+    ],
+    "kind": "computation",
+    "mutant": "freeze-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a fixture-truth gate emitted before the declarations",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-DECLARATION-ORDER"
+    ],
+    "kind": "computation",
+    "mutant": "order-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one entry of a constructed declared rotation perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A01-R1",
+     "A04",
+     "A06"
+    ],
+    "falsified_gates": [
+     "COC-BASE-PINNED"
+    ],
+    "kind": "computation",
+    "mutant": "anchor-rot"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one entry of the constructed completion perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A03",
+     "A04",
+     "A11",
+     "A13",
+     "A14",
+     "A15"
+    ],
+    "falsified_gates": [
+     "COC-BASE-PINNED",
+     "COC-BIGON-GROUP",
+     "COC-NEGATIVE-CONTROL",
+     "COC-GAUGE-COVARIANCE"
+    ],
+    "kind": "computation",
+    "mutant": "anchor-completion"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the pointer shift made non-injective, so the record is destroyed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A06",
+     "A09",
+     "A10",
+     "A11",
+     "A12",
+     "A14"
+    ],
+    "falsified_gates": [
+     "COC-BASE-PINNED",
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-BIGON-GROUP",
+     "COC-COMPLETION-DEPENDENCE"
+    ],
+    "kind": "computation",
+    "mutant": "anchor-record"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the external receipt's bytes perturbed before they are hashed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A07"
+    ],
+    "falsified_gates": [
+     "COC-EXTERNAL-SOURCE-PINNED"
+    ],
+    "kind": "computation",
+    "mutant": "gen-hash"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a reused committed value from the external receipt perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A08",
+     "A08b",
+     "A11",
+     "A12"
+    ],
+    "falsified_gates": [
+     "COC-ARENA",
+     "COC-BIGON-GROUP"
+    ],
+    "kind": "computation",
+    "mutant": "anchor-gen"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the admitted relabelling scope subsampled",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A08",
+     "A08b",
+     "A09",
+     "A10",
+     "A11",
+     "A12",
+     "A13",
+     "A14"
+    ],
+    "falsified_gates": [
+     "COC-TRIPLE-DECLARED",
+     "COC-ARENA",
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-PAIR-TABLE",
+     "COC-BIGON-GROUP",
+     "COC-CENSUS",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-NEGATIVE-CONTROL",
+     "COC-GAUGE-COVARIANCE",
+     "COC-FRESH-EVAL",
+     "COC-FLIP-DIRECTION",
+     "COC-COMPLETION-DEPENDENCE"
+    ],
+    "kind": "computation",
+    "mutant": "scope-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "charts identified by the Born leg multiset alone, which merges two genuinely different charts",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-TRIPLE-DECLARED",
+     "COC-ARENA",
+     "COC-PAIR-TABLE",
+     "COC-CENSUS",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-NEGATIVE-CONTROL",
+     "COC-GAUGE-COVARIANCE",
+     "COC-COMPLETION-DEPENDENCE"
+    ],
+    "kind": "computation",
+    "mutant": "chart-merge"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every scope element accepted as a candidate without testing the four clauses",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09",
+     "A10",
+     "A11",
+     "A12",
+     "A13",
+     "A14"
+    ],
+    "falsified_gates": [
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-PAIR-TABLE",
+     "COC-BIGON-GROUP",
+     "COC-CENSUS",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-POSITIVE-CONTROL",
+     "COC-NEGATIVE-CONTROL",
+     "COC-GAUGE-COVARIANCE",
+     "COC-FRESH-EVAL",
+     "COC-FLIP-DIRECTION",
+     "COC-COMPLETION-DEPENDENCE"
+    ],
+    "kind": "computation",
+    "mutant": "admit-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the census restricted to the triangles whose three rules agree",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-CENSUS",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY"
+    ],
+    "kind": "computation",
+    "mutant": "triangle-drop"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the cocycle defect counted as a name label, not a permutation",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-POSITIVE-CONTROL"
+    ],
+    "kind": "computation",
+    "mutant": "label-collapse"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one drawn identification replaced by a permutation outside the declared admitted set",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-PAIR-TABLE",
+     "COC-MEMBERSHIP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY"
+    ],
+    "kind": "computation",
+    "mutant": "edge-perturb"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the membership predicate answers yes to everything",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-NEGATIVE-CONTROL"
+    ],
+    "kind": "computation",
+    "mutant": "membership-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the bigon-generated group read at every base point at once",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11",
+     "A12",
+     "A13",
+     "A14"
+    ],
+    "falsified_gates": [
+     "COC-BIGON-GROUP"
+    ],
+    "kind": "computation",
+    "mutant": "bigon-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the cocycle defect composed in the reversed order",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-COMPOSE-WITNESS"
+    ],
+    "kind": "computation",
+    "mutant": "compose-order"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a link's reverse traversal read without transposition",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A11",
+     "A13",
+     "A14",
+     "A15"
+    ],
+    "falsified_gates": [
+     "COC-BIGON-GROUP",
+     "COC-NEGATIVE-CONTROL",
+     "COC-COMPOSE-WITNESS",
+     "COC-GAUGE-COVARIANCE",
+     "COC-FLIP-DIRECTION"
+    ],
+    "kind": "computation",
+    "mutant": "orient-flip"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the switching's sign dropped on a reversed traversal",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-GAUGE-COVARIANCE"
+    ],
+    "kind": "computation",
+    "mutant": "sign-flip"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the self-test allowed to read the cache",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-FRESH-EVAL"
+    ],
+    "kind": "computation",
+    "mutant": "memo-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the declared completion replaced by the bare Householder",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A03",
+     "A09",
+     "A10",
+     "A11",
+     "A12",
+     "A13",
+     "A14",
+     "A15"
+    ],
+    "falsified_gates": [
+     "COC-BASE-PINNED",
+     "COC-TRIPLE-DECLARED",
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-PAIR-TABLE",
+     "COC-BIGON-GROUP",
+     "COC-DEFECT-IS-A-BIGON-HOLONOMY",
+     "COC-POSITIVE-CONTROL",
+     "COC-NEGATIVE-CONTROL",
+     "COC-COMPLETION-DEPENDENCE"
+    ],
+    "kind": "computation",
+    "mutant": "completion-Q"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the leg-list clause skipped in the route census",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-ROUTE-CENSUS"
+    ],
+    "kind": "computation",
+    "mutant": "route-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every node datum read at the final checkpoint",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A09",
+     "A10",
+     "A12"
+    ],
+    "falsified_gates": [
+     "COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE",
+     "COC-READ-TIME-COORDINATE",
+     "COC-BIGON-GROUP"
+    ],
+    "kind": "computation",
+    "mutant": "readtime-conflate"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the completion's non-equivariance defect composed in the wrong order",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A13",
+     "A15"
+    ],
+    "falsified_gates": [
+     "COC-BIGON-GROUP",
+     "COC-NEGATIVE-CONTROL"
+    ],
+    "kind": "computation",
+    "mutant": "defect-order"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the positive control's predicate overwritten after the fact",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-POSITIVE-CONTROL"
+    ],
+    "kind": "waiver",
+    "mutant": "control-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the direction flip-test's predicate overwritten after the fact",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-FLIP-DIRECTION"
+    ],
+    "kind": "waiver",
+    "mutant": "flip-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a float literal registered in the exactness gate's own evidence list after its AST sweep has run: the source text is never edited, so this is a waiver and is declared as one",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-EXACT"
+    ],
+    "kind": "waiver",
+    "mutant": "float-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a mutant-identity exemption registered in the exemption gate's own evidence list after its AST sweep has run: a waiver, declared as one",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-NO-MUTANT-EXEMPTION"
+    ],
+    "kind": "waiver",
+    "mutant": "exempt-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "an out-of-vocabulary verdict emitted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "COC-VOCABULARY"
+    ],
+    "kind": "waiver",
+    "mutant": "verdict-lax"
+   }
+  ],
+  "negative_controls": {
+   "every_drawn_map_is_an_involution": true,
+   "injected": {
+    "a pointer transposition of the declared extension": {
+     "defect_fixed_points": 27,
+     "defect_is_in_the_bigon_group": false,
+     "defect_is_in_the_measured_defect_set": false,
+     "injected_map_fixed_points": 27,
+     "injected_map_is_in_the_declared_admitted_set": false,
+     "injected_map_is_in_the_declared_extension": true
+    },
+    "the completion's non-equivariance defect": {
+     "defect_fixed_points": 45,
+     "defect_is_in_the_bigon_group": true,
+     "defect_is_in_the_measured_defect_set": false,
+     "injected_map_fixed_points": 45,
+     "injected_map_is_in_the_declared_admitted_set": false,
+     "injected_map_is_in_the_declared_extension": false
+    }
+   },
+   "the_drawn_maps_generate_an_abelian_group": true,
+   "the_triangle_injected_into": {
+    "charts": [
+     "F1",
+     "W.F1",
+     "F2"
+    ],
+    "rules": [
+     "FULL",
+     "FULL",
+     "FULL"
+    ],
+    "setting": "GP-E",
+    "t": 0
+   },
+   "wrong_order_composites_that_differ_from_the_right_order": 0,
+   "wrong_order_denominator": 1824
+  },
+  "positive_control": {
+   "degenerate_triangles_measured": 152,
+   "disagreements": [],
+   "route": "the pin's third candidate route (frame1-FULL, frame2, frame1-REAL), realised as the degenerate triangle whose third identification is the chart's own self-map",
+   "rows": [
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-A",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 0,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 1,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F1",
+      "F2",
+      "F1"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "FULL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    },
+    {
+     "agree": true,
+     "charts": [
+      "F2",
+      "F1",
+      "F2"
+     ],
+     "delta": "the identity",
+     "rules": [
+      "FULL",
+      "FULL",
+      "REAL"
+     ],
+     "self_identification": "the identity",
+     "setting": "GP-B",
+     "t": 3,
+     "the_bigon_holonomy": "the identity"
+    }
+   ],
+   "self_identification_failures": [],
+   "the_self_identification_is_uniquely_the_identity_everywhere": true
+  },
+  "route_census": {
+   "R1_sub_leg_split": {
+    "admitted": 0,
+    "candidate_maps_tested": 32,
+    "checkpoints_in_a_committed_chart": 4,
+    "checkpoints_in_the_split_chart": 6,
+    "declared_legs_in_a_committed_chart": 3,
+    "declared_legs_in_the_split_chart": 5,
+    "failures_by_clause": {
+     "exact law": 0,
+     "initial configuration": 0,
+     "leg list": 32,
+     "occupied set": 0
+    },
+    "the_committed_local_leg_factorises_exactly": true,
+    "verdict": "ABSENT: no map is admitted between a split chart and any committed chart, and every candidate fails at the LEG-LIST clause, since a five-leg chart cannot match a three-leg one as a multiset of Born leg keys; the read-time coordinate cannot be matched either, the two charts carrying different checkpoint sets"
+   },
+   "R2_admitted_relabelling": {
+    "charts": [
+     "F1",
+     "W.F1",
+     "F2",
+     "W.F2"
+    ],
+    "status": "THE DECLARED ROUTE"
+   },
+   "R3_parallel_atlases": {
+    "status": "the degenerate triangle; see the positive control"
+   },
+   "candidates": {
+    "R1-SUB-LEG-SPLIT": {
+     "admission": "base G's own four-clause predicate, unchanged",
+     "definition": "the committed local leg factorises exactly as U_X(g) = (R_g (x) I) . C_X . (R_g^T (x) I), with C_X the declared computational-basis record map; the split chart is the frame whose leg list replaces one committed local leg by its three declared orthogonal sub-legs, giving a five-leg chart",
+     "name": "a third leg-order via a declared sub-leg splitting of a committed leg",
+     "status": "MEASURED HERE, not declared as the route"
+    },
+    "R2-ADMITTED-RELABELLING": {
+     "admission": "base G's own four-clause predicate, generalised verbatim to an ordered chart pair, under each of the two committed gluing rules, drawn only where unique",
+     "definition": "for sigma in the declared ADMITTED set and X a committed frame, sigma.X is the chart whose k-th leg is sigma L_k sigma^{-1} and whose law datum at every checkpoint is the sigma-pushforward of X's; the CHART FAMILY is the orbit of the two committed frames under the admitted set, its size computed by enumeration and its members measured pairwise distinct",
+     "name": "a relabelled frame via a declared admitted isomorphism",
+     "status": "THE DECLARED ROUTE"
+    },
+    "R3-PARALLEL-ATLASES": {
+     "admission": "base G's own four-clause predicate, unchanged",
+     "definition": "the third chart is the FIRST chart read under the other atlas, so the third identification is the chart's own self-identification",
+     "name": "the two gluing rules as parallel atlases, (frame1-FULL, frame2, frame1-REAL)",
+     "status": "MEASURED HERE as the DEGENERATE triangle, i.e. this unit's positive control"
+    }
+   }
+  }
+ },
+ "totals": {
+  "anchors": 19,
+  "disclosures": 4,
+  "gates": 29,
+  "must_pass_failures": 0,
+  "must_pass_gates": 25
+ }
+}
