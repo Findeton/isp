@@ -8750,3 +8750,12 @@ Adjudicator verification PASSED (plain exit 0; output 2d992d0c
 / receipt a0f5b0fc; three identical runs).  Protocol freeze +
 three-lens panel = the immediate next step (queued; the TB3
 panel runs concurrently).
+
+## 2026-08-08 — LCB PROTOCOL FROZEN; PANEL DISPATCHED (v13 LEDGER #283)
+note-lcb-hostile-protocol.md FROZEN (K1 the spectral forcing +
+the 4-cell declaration-relativity / K2 the three obstruction
+forms' independence / K3 the prime-declared audit / K4 the
+S1c/S1d additions' legitimacy / K5 instrument).  Frozen SHAs
+in the freeze output with this commit.  Three-lens panel
+(Opus 5) dispatched immediately after — SIX agents concurrent
+(TB3 panel ×3 + LCB panel ×3).
