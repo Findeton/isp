@@ -9041,3 +9041,16 @@ scales with both outcomes reachable — the prime question's
 answer is whatever the honest computation returns; S5 against
 the actual pairing; the successor requirements installed.
 STATUS updated this commit.  Re-derivation dispatch next.
+
+## 2026-08-08 — LCB RE-DERIVATION DISPATCHED (L-1..L-6) (v13 LEDGER #294)
+Re-derivation worker dispatched (Opus 5, freeze-on-delivery,
+no git, lcb_* only) with the #293 order: the fixed-point
+mismatch installed as the universal obstruction (registered
+clauses, arena-free); the covariant 12-cell sweep w/ R1's p=7
+witness as diagnostic; the Open-1 computation rebuilt
+multi-source at both scales with DERIVED and DECLARED both
+reachable and unsteered; S5 against the actual pairing; the
+instrument brought fully under the modern rules.  TB3's
+repair (T-1..T-8) runs in parallel.  On each delivery:
+COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after
+each occurs.
