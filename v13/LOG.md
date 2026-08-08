@@ -7661,3 +7661,16 @@ three hash pins fired-on-corruption; the refused-lookup cache
 mechanism; §13-addendum verdict-gate compliance judged;
 route-independence w/ dropped-cell probe).  Reviews frozen on
 return.
+
+## 2026-08-08 — HA VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #240)
+Adjudicator verification PASSED (exit 0; output ee8cdfe9 /
+receipt 5a785e7b; three identical runs).
+note-ha-hostile-protocol.md FROZEN (K1 the construction +
+no-smuggling scan / K2 the two-sided closure + G09
+derived-or-refuted / K3 the readout deviation audited both
+halves / K4 the bridge negative's strength / K5 instrument).
+Frozen SHAs in the freeze output with this commit.  Three-lens
+panel (Opus 5) dispatched immediately after — SIX review
+agents now concurrent (XBA's three + HA's three) plus the COC
+re-derivation and PSI construction: EIGHT agents in flight.
