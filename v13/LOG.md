@@ -8348,3 +8348,18 @@ order, four measured corollaries, and its measured
 factorisation residual.  With COC #252 + XBA #260 + PSI #265,
 ALL THREE PREREQUISITES OF THE USER'S STANDING THIRD-BASE
 ORDER (#228) ARE TERMINAL — the order fires now.**
+
+## 2026-08-08 — TB3 (THE THIRD BASE) PINNED + DISPATCHED PER THE
+## USER'S #228 ORDER (v13 LEDGER #266)
+note-tb3-third-base-pin.md frozen this commit: the first
+PURPOSE-BUILT base — three wings (S₃ wing symmetry, native
+six-frame atlas, carrier 64), five axes set by the verdicts
+(the ord-sweep incl. the QCD-reachability probe at first
+honest scale; THE ONE LAW tested at S₃ — commutator subgroup +
+cocycle factorization, pre-registered
+HOLDS/GENERALIZES/FAILS; native level-2; the GHZ-vs-W
+ψ-family; the graph-commonality broken on purpose).  All
+completions by declared rule, pinned and printed.
+Construction dispatch with this commit (Opus 5,
+freeze-on-delivery, tb3_* namespace; BRG runs in parallel on
+brg_*).
