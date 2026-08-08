@@ -7939,3 +7939,29 @@ computation; waiver-only down to EXACT + NO-MUTANT-EXEMPTION).
 extension atlas's loops — an honest scope line for the panel's
 eye).  md5 output 08c0c5f4 / receipt 943af63f.  Adjudicator
 verification next.
+
+## 2026-08-08 — XBA R1 (OPERATOR) FROZEN (v13 LEDGER #249a)
+review-xba-operator.md frozen as delivered.  Grade AWF; 174
+recomputations on a deliberately divergent instrument
+(tree-free F₂-span cycle space; base 1 in Q(ζ₁₆)); ZERO
+numerical discrepancies — the chain, all 12 candidates, all 11
+violators, the sweep, the third instance, the control all
+reproduce.  F1 (= R2's fifth premise, CONSTRUCTIVELY): an
+instance with E1–E4 holding IN PROSE FORM yet ord(D) = 3,
+⟨W,D⟩ order 6, profile [42,46,46,72,78,80] — 18/36
+transpositions do this; the involution premise does silent
+work; the instrument gates it and §11.3 scopes it, but
+abstract/§7.1/§7.2/§10 all say FOUR.  F2: the third instance
+risked ONE BIT, not three (preparation provably inert;
+rotation inert 6/6; E2 64/64 and E3 structural; 7/13 labels
+identically 1 for ANY base).  **ROUND CONTRIBUTION F12: A
+GENUINE THIRD SPECIES BUILT — dimension-4 wings, 256
+configurations, sharing nothing with either base — satisfies
+the clauses and returns 82/86/90/106 with identical labels**
+(the different-flesh instance R2 said was available, now
+constructed; D4 answered cheaply).  Minors: the steering
+residual's sharper form (3,906/4,096 admit the C5 shape on
+some basis); C2a's vacuity reason wrong (frame swap fixes 7/13
+links); the fail-closed attribution wrong (prep-lax exercises
+it).  PANEL COMPLETE: R1 AWF / R2 REJECT / R3 AWF; ~738
+recomputations, zero numerical errors.  Adjudication next.
