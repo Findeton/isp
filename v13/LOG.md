@@ -7422,3 +7422,20 @@ completion-dependent chart count / K4 admission + R1's
 one-setting basis / K5 instrument + the self-correction
 audit).  Frozen SHAs in the freeze output with this commit.
 Three-lens panel (Opus 5) dispatched immediately after.
+
+## 2026-08-08 — COC PANEL DISPATCHED (v13 LEDGER #231)
+Three-lens panel dispatched (Opus 5, one review file each, no
+git, parallel-safe): R1 operator (census + iff rebuilt; ATLAS
+COMPLETENESS sweep beyond the S-orbit; why-D-never derived or
+refuted; the collapse sweep; the admission table); R2 effectus
+(the verdict's scope qualifier vs the prose; the
+completion-scoped-closure question — could a different
+completion's atlas carry a higher obstruction, and does the
+paper say so; the without-teeth honesty; what D's absence
+MEANS — which loop shapes see which curvature source); R3
+instrument (the two census routes' independence; anchors incl.
+the hash-pin fired-on-corruption test; the self-correction
+audit; the admission diff clause-by-clause; R1-route's
+one-setting basis judged; the non-abelian witness gate).
+Reviews frozen on return.  Six agents now concurrent (three
+COC reviewers + PSI + XBA + HA constructions).
