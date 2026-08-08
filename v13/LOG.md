@@ -7965,3 +7965,14 @@ some basis); C2a's vacuity reason wrong (frame swap fixes 7/13
 links); the fail-closed attribution wrong (prep-lax exercises
 it).  PANEL COMPLETE: R1 AWF / R2 REJECT / R3 AWF; ~738
 recomputations, zero numerical errors.  Adjudication next.
+
+## 2026-08-08 — XBA JOINT ADJUDICATION: REJECT-AS-DELIVERED →
+## RE-DERIVATION X-1..X-6; THE COMMUTATOR LAW CENTRAL (v13 LEDGER #249)
+note-xba-adjudication.md committed.  The unification D = [P,u]
+becomes the unit's central result (the three laws ONE — gated,
+with the priors as corollaries); the name corrected to
+COMPLETION-FORCED-SPLIT; the fifth premise named everywhere;
+the hard-coded derivation replaced by a computed one; R1's
+genuine third species run in-delivery; the #234 instrument
+rules installed.  STATUS updated this commit.  Re-derivation
+dispatch next.
