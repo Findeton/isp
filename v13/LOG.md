@@ -8772,3 +8772,36 @@ hand); R3 instrument (the 41,665 enumeration; the held-out
 trace; both verdicts probed; the 4-cell completeness).
 Reviews frozen on return.  SIX agents concurrent (TB3 panel
 ×3 + LCB panel ×3).
+
+## 2026-08-08 — TB3 R3 (INSTRUMENT) FROZEN (v13 LEDGER #285)
+review-tb3-instrument.md frozen as delivered (sha256-12
+8565b2b939bf).  Grade AWF; 51 recomputations/probes;
+from-scratch dense-rational reimplementation reproduces
+EVERYTHING (the rule-selected Q; 576/576 completion entries;
+the 5,040 ord census 48/384/1728/1152/1152/576 max-6; the S7
+five; the 384→6 arena); byte-identical; 42/42 mutants die.
+THREE FINDINGS: (1) MAJOR — **the computed qualifiers are
+UNGATED again** (typed false counts 53/54, 99, 7 into A2's
+qualifier at exit 0; A4's -AT-FIXED-BORN-SHADOW appended with
+an EMPTIED witness list at exit 0; only the verdict WORD is
+re-derived; the credited mutant never touches A4's witness);
+(2) MODERATE — the holonomy "two independent routes" is ONE
+route (both consume the same build_graph output; "share no
+intermediate value" false; dropped-walk probe 0/121
+generators, 0/150 links detected; different_cotrees ungated
+and False at the ord-1 target, contradicting §3.2 verbatim);
+(3) MODERATE — §12 claims a receipt field that doesn't exist
+(carrier-lax aborts correctly but _run discards the key).
+SCOPE REPAIRS: §2.8 clause 1 analytically forced (σ_π(0)=0
+for all six — the #208 disclosure case); **§1's
+control-coverage sentence FALSE — the two-wing control cannot
+reach A2's non-involutions, A3's six frames, or A4's
+multipartite classes; 12/12 axis-specific mutants have zero
+external coverage** (§8.2's per-axis map and deviation 3 ARE
+honest — the defect confined to §1); the honest anchor split
+588 self / 22 external (12 rotation anchors unlabelled
+self).  CLEAN AND RECORDED: corrupt-and-fire ×4; anchors
+fatal; the self-test cache measured exercised;
+cell-completeness catches drops in all three censuses; the
+K4 witness pair verified on all six equalities.  R1/R2
+pending; adjudication after all three.
