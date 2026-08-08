@@ -7469,3 +7469,35 @@ disclosure exemplary.  Minors: D-never is FORCED not measured;
 the true divide is checkpoint-local vs checkpoint-crossing
 LINK KIND, not loop shape; 240/160 = GEN's 18/8 replayed.
 R1/R3 pending; adjudication after all three.
+
+## 2026-08-08 — COC R1 (OPERATOR) FROZEN: THE EXTENSION ATLAS BUILT
+## INDEPENDENTLY — HIGHER-OBSTRUCTION IS REACHABLE ON BASE G, THE
+## ESCAPING DEFECT NAMED (v13 LEDGER #233)
+review-coc-operator.md frozen as delivered (sha256-12
+fd8fe8abf9d4).  Grade AWF; 110 recomputations + off-site full
+rebuild byte-identical + own 28-mutant sweep; ZERO
+computed-number errors; everything gated reproduces.  THE
+DECISIVE FINDING (independent convergence with R2's F2): the
+paper's OWN chart rule applied to base G's OWN declared order-8
+extension group yields **16 charts, 333,312 triangles (both
+routes agree), 32,256 DEFECTS OUTSIDE the bigon group** — the
+same escape count R2 found — **the escaping defect NAMED:
+W·τ_A·τ_B (order 2, 9 fixed points; inside the declared
+216-scope, outside the Klein four)**; verified clause-by-clause
+at GP-E/t=1; controls isolate it cleanly (16-charts+narrow → 0;
+4-charts+wide → the delivered 1,824/0).  §9.3's
+"no escaping identification" and §10's "not the second half"
+REFUTED; **COC-HIGHER-OBSTRUCTION IS REACHABLE ON BASE G**; the
+boxed verdict survives only by its scope qualifier.  F2: the
+R1-route prose false (split charts glue to EACH OTHER — 368
+identifications, 3,552 triangles at GP-E, no escape; the gate
+was scoped right, the prose wasn't).  F3: THE REAL MECHANISM —
+the pair table is an exact Z/2 COBOUNDARY per rule (f_FULL =
+[σ=W]; f_REAL differs by [frame=F2] at symmetric settings) —
+explains all six headline numbers and the four empty cells;
+the delivered no-multiplicity⇒identity mechanism is a
+non-sequitur (counterexample given).  F4: D-never is
+ANALYTICALLY FORCED (D lies in NO declared search scope — the
+scopes are groups) — measurement voice must go.  F7: the 96
+has a closed form (|C_{S₉}(σ₉)| = 288; index-0 stabilizer 96).
+R3 pending; adjudication after all three.
