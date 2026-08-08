@@ -7070,3 +7070,15 @@ the panel's hardest question is pre-named: is REPRODUCES honest
 when a different completion of the same ψ kills the geometry —
 or is the honest verdict REPRODUCES-AT-DECLARED-COMPLETION
 (existence-of-geometry itself arena-relative)?
+
+## 2026-08-08 — GEN VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #215)
+Adjudicator verification PASSED (output 9cac53c4 / receipt
+a9e73c00; three identical runs).  note-gen-hostile-protocol.md
+FROZEN: K1 the completion question (REPRODUCES vs
+REPRODUCES-AT-DECLARED-COMPLETION; completion-sweep; D2
+steering audit) / K2 the five patterns + D's structural
+characterization / K3 cross-base integrity + the steering risk
+/ K4 the base declaration / K5 instrument.  Frozen SHAs
+(sha256-12) in the freeze output with this commit.  Three-lens
+panel (Opus 5) dispatched immediately after.
