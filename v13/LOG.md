@@ -7270,3 +7270,29 @@ printed.  R3's N1 disclosed-not-adopted
 (artifact-write-before-exit; both runs exited 0
 byte-identical).  md5 output 1c45db8d / receipt 04d0bc7d.
 Adjudicator verification next.
+
+## 2026-08-08 — GEN TERMINAL (v13 LEDGER #222)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical (output 1c45db8d / receipt 04d0bc7d; three
+identical runs).  36 gates (30 must-pass, 0 failures) / 17
+anchors / 27 mutants, never_falsified EMPTY at 29.  TERMINAL
+CONFERRED: the repair implements #219 exactly; the census is
+in-delivery and gated; the one reviewer-number correction
+(Klein locus = the involutive 1,440, the pinned class 864 its
+named sub-class) is disclosed with both readings — the
+correction chain worker→panel→adjudicator→repair-worker each
+catching the level above.  **GEN CLOSES: the theory
+GENERICALLY grows geometry (99.76% of completions), and the
+arena declaration SELECTS which — the dihedral family
+⟨W, D | W² = Dⁿ = 1, WDW = D⁻¹⟩, orders 2–30, via the
+ψ-independent defect law D = (ΣVᵀΣV)⊗I₉; every
+geometry-bearing completion's group ESCAPES every declared
+scope (40,224/40,224); both curvature sources are
+declaration-side at these bases (ψ-side curvature = the
+registered open); the unexplained cross-base connection-
+structure agreement = the registered lead.  Bequests to the
+overlaps/cocycle rung: the dihedral family as the structure-
+group family; the defect law as the declaration→geometry map;
+base G as the richer carrier.**  Successor per standing order
+#212: the overlaps/cocycle pin.  Publication + push remain the
+user's.

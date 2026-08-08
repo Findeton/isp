@@ -2,7 +2,7 @@
 
 ## The Nomological-Transport Geometry on a Second Base, and the Census of Its Completions
 
-**Status:** `GREEN-UNREVIEWED-REPAIRED`
+**Status:** `TERMINAL (v13 GEN)` — panel #217–#219a, adjudicated #219 ACCEPT-WITH-MAJOR-REPAIRS, repair G-1..G-7 verified byte-identical and conferred terminal at v13 LOG #222.
 
 **Date:** 2026-08-08
 
