@@ -8600,3 +8600,32 @@ byte-identical ×2 + selftest preserved.  9 deviations (two
 new: the sha256-seeded sampled measurements; non-monotone
 gate ids).  md5 output 1e2a88a2 / receipt e9a7861e.
 Adjudicator verification next.
+
+## 2026-08-08 — BRG TERMINAL (v13 LEDGER #276)
+Adjudicator verification PASSED (plain exit 0 byte-identical:
+output 1e2a88a2 / receipt e9a7861e; selftest exit 0; three
+identical runs).  TERMINAL CONFERRED: the repair implements
+#273 exactly; the theorem emerged MORE general (Cauchy, no
+dihedral hypothesis); the panel's constructions all gated
+natively.  **BRG CLOSES: at the committed carriers the bridge
+is EMPTY by two independent obstructions — the forward
+coprimality wall (a theorem about the one-law family) and the
+reverse one-way wall (maps run only gravity→transport: "from"
+could only ever mean sub-object embedding); weak bridges
+EXIST at admissible live cells (the delivered standard,
+honestly labeled); the real test — the strengthened S1–S6
+standard w/ encoding-intertwining — is registered and
+untested; the opens: the sector concentration (8-of-8
+prepared bases in the 1/7 closed band) and Open 1 (the prime
+is a declaration).**  Successor: LCB, pinned next.
+
+## 2026-08-08 — LCB (THE LIVE-CELL BRIDGE) PINNED + DISPATCHED
+## (v13 LEDGER #277)
+note-lcb-livecell-pin.md frozen this commit: the strengthened
+S1–S6 test built and run at an actual ord(D)=5 / p=5 pairing
+(the first carrier where FOUND is arithmetically possible);
+Open 1 addressed head-on (LCB-PRIME-DERIVED-or-DECLARED,
+measured); both bridge outcomes reachable w/ mutants; the
+one-way theorem's sub-object form the FOUND reading.
+Construction dispatch with this commit (Opus 5,
+freeze-on-delivery, lcb_* namespace; TB3 parallel on tb3_*).

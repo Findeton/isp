@@ -1,6 +1,6 @@
 # BRG — THE MORPHISM-CENSUS BRIDGE: FROM, OR ALONGSIDE?
 
-**Status:** `GREEN-UNREVIEWED-REPAIRED` — delivered 2026-08-08.
+**Status:** `TERMINAL (v13 BRG)` — panel #270–#272, adjudicated #273 ACCEPT-WITH-MAJOR-REPAIRS, repair B-1..B-7 verified byte-identical and conferred terminal at v13 LOG #276.
 **Pin:** `v13/note-brg-bridge-pin.md` (STRICT; frozen, sha256
 `56ce4a7e2dee…`, immutable base commit `b632f59`).
 **Binding:** the pin's four HA-§14 requirements, verbatim in force; RUNBOOK §13
