@@ -6851,3 +6851,40 @@ IS COMPARATOR-DEPENDENT (only 480/1,268 crossing loops flat);
 600–820/2,820 closed loops are not signed permutations and are
 SILENTLY DROPPED; one paper-1 citation error (outer-slot law,
 not conjugation).  R3 pending; adjudication after all three.
+
+## 2026-08-07 — NT R3 (INSTRUMENT) FROZEN (v13 LEDGER #207)
+review-nt-instrument.md frozen as delivered (sha256-12
+bed530a3b0da).  Grade ACCEPT-WITH-FIXES; 63 recomputations + 38
+sandboxed executions; byte-identity re-reproduced; the physics
+rebuilt from prose without importing a line — all counts, all 8
+witnesses, all 22 anchors, the weld at all 48 nodes, the mutant
+kill sets: NO FALSE PHYSICS NUMBER beyond the value-set count.
+**F1 (MAJOR, new): NT-PATH-SPACE-ENUMERATED's predicate contains
+a literal MUTANT != "reduce-lax" exemption** — with it removed
+the mutant SURVIVES at exit 0; the other two clauses are
+tautologies; the reduced-path condition, load-bearing for every
+count, has NO real gate.  F2: the false number confirmed a
+third time (labels collapsed; the true set = Klein four, already
+closed; D5 explains an artifact).  **F5 (MAJOR): the declared
+96/8 extension scope is never searched — at it FULL admits 2
+elements at SP-C/D t=0,1, uniqueness would refuse those links,
+and THE CANONICAL LOOP WOULD NOT EXIST AT SP-C/D** (the
+admission-scope choice is load-bearing for the loop space —
+the scope-does-work disease again).  Broader-than-gates: §6's
+mechanism false for T1 (confirms R1/R2); T2's read time is NOT
+a coordinate of its datum; NT-VOCABULARY's only falsifier is a
+waiver (honest census 12/13); §7's "the invariant is fixed" is
+ANALYTICALLY FORCED (global ±1) — which SETTLES D2 in the
+unit's favour (third confirmation, full 8,192 swept) while
+gutting the gate's must-pass status.  K5: D1 LEGITIMATE
+(transposed-Born cause verified by construction, BᵀB ≠ I,
+minimal two-move witness at every setting); D8's fix CORRECT
+and its account exact; the never_falsified exemption
+(NT-FALSIFICATION itself) legitimate and disclosed; exit-1
+proven by breaking five committed-side anchors — a direction no
+declared mutant tests.  K4: numbers pass; independence
+ALGORITHMIC not derivational (the multiset predicate IS O4's
+bijection predicate) BUT the transport profile is genuinely
+independent, so the 18/18 is NOT circular.  PANEL COMPLETE:
+3× AWF; ~362 recomputations; the four pre-registered verdicts
+survive all three lenses.  Adjudication next.
