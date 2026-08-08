@@ -8908,3 +8908,48 @@ A DIFFERENT SQUARE (a different encoding pairing), not a
 richer carrier.  R3 pending; adjudication after it — the
 prime-verdict reconciliation (R1's widened cells vs R2's
 label-artifact widening) is its hardest task.
+
+## 2026-08-08 — TB3 R1 (OPERATOR) FROZEN: TB3-NAMING-DECIDED — THE
+## LADDER IS REAL, THE FANO GROUP IS EARNED, THE USER'S RELATION IS
+## STRUCTURAL (v13 LEDGER #289)
+review-tb3-operator.md frozen as delivered (sha256-16
+a1cfc598ad1dcc1c).  Grade AWF; 119 claim-level recomputations
+on nine independent scripts + ~2,800-instance probe hunt; ZERO
+wrong numbers; **K2's two-wing coherence PASSES CLEANLY — the
+generalized law recovers PSI's committed D = [P,u] verbatim
+24/24; the corpus is undisturbed.**  THE COORDINATOR ADDENDUM,
+verdict **TB3-NAMING-DECIDED**: (1) the types decided by
+spectrum + simplicity + faithful degree — **A₄ (12), GL(3,2) ≅
+PSL(2,7) (168, SIMPLE), A₆ (360), A₇ (2520); Hol = A₇×S₃,
+A₆×S₃, PSL(2,7)×S₃ as genuine internal direct products** (72
+the exception — NOT a direct product; the "6 × commutator" row
+hides it).  (2) **THE USER'S ×7 IS REAL AND CONCRETE:
+Hol_GHZ ⊆ Hol_ord6 as subgroups of Sym(64) — 0 of 2,160
+elements outside; the GHZ system part is EXACTLY the
+stabiliser of label 7 = |111⟩ inside A₇; ×7 = [A₇ : A₆].**
+(3) **THE TWO SEVENS ARE THE SAME SEVEN — LEGITIMATELY: it is
+|F₂³ \ {0}| = 7**; not aliasing — 720 genuine order-7 elements
+exhibited as permutations of the 64 configurations (8
+seven-cycles + 8 fixed points, pointer part identity); the
+counting route audited (reads only leg matrices; Q enters only
+via V).  (4) **THE 168 IS GL(3,2) ON THE FANO POINTS OF THIS
+VERY SUBSTRATE** — simplicity tested FIRST (passes), linearity
+EARNED (168/168 F₂-linear; the set EQUALS a brute-forced
+GL(3,2); every element permutes the 7 lines of PG(2,2)).
+(5) **NEW STRUCTURAL FACT: every defect is even ⟹ sys(Hol) ≤
+A₇ — 15,120 = |A₇|·|S₃| IS THE CONSTRUCTION'S ALGEBRAIC
+CEILING, attained; the family is the ladder 1 < A₄ < GL(3,2)
+< A₆ < A₇, six-fold extended.**  FIVE MAJORS (none a false
+number): F1 A2's headline is an IDENTITY not a measurement
+(D := (PuP⁻¹)ᵀu ≡ [P⁻¹,u] for ANY orthogonal leg — forced, no
+mutant can move it); F2 the profile mechanism FALSE as stated
+(14/153 profiles carry >1 holonomy order); F3
+dihedral-at-0-of-4 is SETTING-SCOPED (3-of-4 at (R1,R2,R2) —
+the law tracks the setting's stabiliser, the unit's own thesis
+missed); F4 the ord-1 receipt reads PSI's measured 1 instead
+of the law's 2·ord = 2; F5 the flagship 1,226,304-zero is
+ALGEBRAICALLY FORCED (all six wings in G) — the normaliser
+refinement rests on that forced cell BUT STANDS EMPIRICALLY
+(201 fully censused, no normalising-but-escaping instance).
+F6: **max order the carrier admits is 7, not 6** (at a
+3-cycle).  R2 pending; adjudication after it.
