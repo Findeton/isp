@@ -8398,3 +8398,17 @@ never_falsified EMPTY / byte-identical ×2.  7 deviations
 (lead: base-1/base-S defects under-determined by receipts —
 SWEPT, not guessed, whole ambiguity sets).  md5 output
 58f78d36 / receipt b8cf87e5.  Adjudicator verification next.
+
+## 2026-08-08 — BRG VERIFIED BYTE-IDENTICAL (BOTH MODES); PROTOCOL
+## FROZEN; PANEL DISPATCHED (v13 LEDGER #268)
+Adjudicator verification PASSED: plain delivery run
+byte-identical (output 58f78d36 / receipt b8cf87e5; three
+identical runs) AND the selftest mode exit 0 (the two-mode CLI
+read before invoking — the write-guard lives on the plain
+run).  note-brg-hostile-protocol.md FROZEN (K1 the coprimality
+theorem + scope strength / K2 the live cells + successor
+feasibility / K3 the ρ-reduction framing / K4 the dictionary
+sweep + the swept ambiguity sets / K5 the held-out machinery +
+the quarantine + the receipt pins).  Frozen SHAs in the freeze
+output with this commit.  Three-lens panel (Opus 5) dispatched
+immediately after.
