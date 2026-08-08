@@ -7877,3 +7877,16 @@ found 0 violations — true, under-tested.  PANEL COMPLETE:
 3× AWF; ~123 recomputation blocks; the closure bulletproof
 across three independent instruments; the bridge dead as
 instrumented.  Adjudication next.
+
+## 2026-08-08 — HA JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## THE CLOSURE STANDS, THE BRIDGE REOPENED (v13 LEDGER #246)
+note-ha-adjudication.md committed.  The primary closure result
+stands as the corpus's hardest-verified physics (three
+instruments, zero discrepancies); G09 upgraded to theorem;
+the record-is-metric identity incorporated; the bridge
+withdrawn-as-measured and REOPENED as a registered open for a
+successor unit w/ carrier functor + morphism census + two-way
+gates; instrument repairs per the #234 rules (verdict-in-gate,
+cell-completeness, fresh-eval honesty); addenda-bind-at-
+delivery-time recorded as precedent.  STATUS updated this
+commit.  Repair dispatch next.
