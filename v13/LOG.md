@@ -8701,3 +8701,46 @@ the two-wing control's scope vs the ord-2-unrealizable gap;
 route independence per #234; the inert-clauses re-targeting).
 Reviews frozen on return.  Five agents in flight: TB3 panel
 ×3 + LCB construction + (none other).
+
+## 2026-08-08 — LCB DELIVERED, COMMITTED AS-IS (v13 LEDGER #281)
+Delivery committed as-is.  THE PAIRING: base G w/ Q0 =
+lex-first ord-5 completion (moves exactly 3 labels — the
+declared rule lands on BRG's own witness); ⟨W,D⟩ order 10 =
+2·5 verified; C_HA(5) w/ 625 configurations, free action, 125
+orbits; compatibility 5 | 10 w/ in-gate negative (7 ∤ 10); 4
+non-trivial group morphisms — BRG's scope-2 entry reproduced.
+**VERDICT 1: LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD — the
+obstruction NAMED at S1 in two forms + one independent:
+SPECTRAL (the commuting square forces δ to act as SQUARING,
+demanding 2 ∈ spec(E); spec(E) = {1, 1, ½}; 2 enters only at
+p = 3 — THE EXACT PRIME WHERE THE GRAVITY ARENA CANNOT BE
+BUILT, swept to 60); CHART-PARITY (reversed cells: 2 IS in
+spectrum but the 2-eigencovector is chart-SYMMETRIC where
+intertwining needs ANTI-symmetric); SUB-OBJECT (9 labels give
+5-part 5¹ vs the record space's 5³ — no injective candidate,
+forced, positive-controlled at 16 labels).  THE WALL MOVED
+ONE LEVEL UP: where the group orders finally meet (weak
+bridges exist — 4 of them), THE ENCODINGS' SPECTRA AND
+INVOLUTION PARITIES MISS EACH OTHER.**  S1a/S1b two
+independent routes (all 41,665 homomorphisms enumerated) 0/0
+at the registered cells; S5's held-out machinery: 6,336 fits,
+6,144 die out-of-sample, the defect permutation predicted
+124/124; S1d FORCES ord(D) = p, narrowing BRG's 3 live cells
+to 2; S6: the full clause list prime-UNIFORM (0 everywhere).
+**VERDICT 2: LCB-PRIME-DECLARED — the tightest
+declaration-free narrowing is {5, 7} (nothing selects 5 over
+7); the ONLY declaration-free condition singling out a unique
+prime is the intertwining condition itself — and it picks
+p = 3, INADMISSIBLE; the declaration-relative standing
+interpretation stated in one sentence, not adjudicated.**
+Controls: identity found (40,320 cells, 0 violations);
+synthetic FOUND (192 pairs, witness re-verified in-gate);
+synthetic EMPTY; BREAK-HOM rejected by S1b alone.  30 anchors
+/ 34 must-pass gates (0 failures) / 10 disclosures / 55
+mutants 0 survivors / byte-identical ×2 / no sampling, no
+randomness.  8 deviations (the load-bearing two: S1c/S1d are
+this unit's declared additions to BRG's S1; the encoding
+layer's identification+direction both declared and swept — 4
+cells, only the natural identification carries the chart
+involution).  md5 output 2d992d0c / receipt a0f5b0fc.
+Adjudicator verification next.

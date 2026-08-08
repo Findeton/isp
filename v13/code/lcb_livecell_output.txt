@@ -1,0 +1,193 @@
+==============================================================================
+LCB -- THE LIVE-CELL BRIDGE AT THE STRENGTHENED STANDARD
+pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
+==============================================================================
+
+--- 1. THE DECLARATIONS, FROZEN BEFORE ANY CANDIDATE IS EVALUATED ---
+  G01 PASS   candidate evaluations at the freeze point: 0
+  G02 PASS   7 hash pins verified, 0 mismatches
+
+--- 2. THE PAIRING AS DATA ---
+  G03 PASS   40320 members, both spectra sum to 40320
+  G04 PASS   Q0 = [0, 1, 2, 3, 4, 5, 7, 8, 6] (moves 3 labels); D = [0, 1, 8, 3, 4, 2, 7, 5, 6], ord 5, fix81 36
+  G05 PASS   |<W,D>| = 10 = 2*5; element orders [1, 2, 2, 2, 2, 2, 5, 5, 5, 5]
+  G06 PASS   carrier 625, orbit lengths [5], 125 orbits
+  G07 PASS   5 | 10: True (negative case 7 | 10: False); |hom(Z/5,<W,D>)| = 5 (gcd route 5), non-trivial 4
+  G08 PASS   readout determinant 2; q reproduces every count at 11 of 11 records; 9 admissible
+  G09 PASS   4 encoding cells, all invertible; chart-compatible identifications {'natural': True, 'index': False}; 2 cells chart-equivariant
+      natural  counts->q  det   1/2  E mod 5 = [[1, 0, 0], [0, 1, 0], [2, 2, 3]]
+      natural  q->counts  det     2  E mod 5 = [[1, 0, 0], [0, 1, 0], [1, 1, 2]]
+      index    counts->q  det  -1/2  E mod 5 = [[1, 0, 0], [2, 2, 3], [0, 1, 0]]
+      index    q->counts  det    -2  E mod 5 = [[1, 0, 0], [0, 0, 1], [1, 2, 1]]
+
+--- 3. S1: THE COMMUTING SQUARE, CENSUS AT DECLARED SCOPE ---
+  completion group: 40320 elements; of order 5: 1344; Sigma-anti-invariant: 48; Sigma-invariant: 0
+  route B enumerated 41665 homomorphisms V -> completion group; image-size spectrum {1: 1, 5: 41664}
+  G10 PASS   two routes agree at all 4 cells; taint 0
+      natural  counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      natural  q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      index    counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      index    q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+  G11 PASS   4 cells, 41665 homomorphisms (independent count 41665), 125 record cells each
+
+--- 4. WHAT THE SQUARE FORCES, MEASURED RATHER THAN CITED ---
+  G12 PASS   Sigma-invariant order-5 elements: 0; delta = squaring verified at 40 cells; p-part exponent 1
+
+--- 5. S1c (CHART INVOLUTION) AND S1d (BASE POINT) ---
+  G13 PASS   S1 survivors across all cells: 0
+      natural  counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      natural  q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      index    counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      index    q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+
+--- 6. S2 (RIGIDITY) AND S3 (NON-DEGENERACY WITH TEETH) ---
+  G14 PASS   cells with a determined candidate: False; cells with an injective candidate: False
+      natural  counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      natural  q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      index    counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      index    q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+  G15 PASS   16-label p-part exponent 3, witness subgroup order 125 = |V| = 125; 9-label p-part exponent 1
+
+--- 7. S4: FUNCTORIALITY IN THE FAMILY ---
+  G16 PASS   224 grid cells; live at S1a+b 32; live after S1d 4; live at the full S1 0
+      anti-invariant order-p elements by prime: {5: 48, 7: 96, 11: 0, 13: 0, 17: 0, 19: 0, 23: 0}
+      distinct (p, ord D) pairs live: 3 at BRG's own delivered standard, 16 at S1a+b, 2 after the base-point clause, 0 at the full S1
+      BRG's live cells reproduced here: [(5, 5), (5, 15), (7, 7)]
+  G17 PASS   5 completions rebuilt, invariant: True
+
+--- 8. S5: HELD-OUT PREDICTION WITH TRANSPORTED QUANTITIES ---
+  G18 PASS   FIT 1 cell admits 6336 candidates; 6144 die on 124 held-out cells, 192 survive
+  G19 PASS   defect permutation and stratum predicted at 124/124 of 124 held-out cells; teeth fail at 99 and 99
+
+--- 9. S6: THE PRIME DECLARED A PARAMETER, PER-PRIME VERDICTS ---
+  G20 PASS   7 primes; full-clause answer prime-uniform: True; partial-clause answer prime-uniform: False; live at every prime: False
+      p =  5   live at S1a+b 16   after S1d  2   at the full S1  0   anti-invariant elements 48
+      p =  7   live at S1a+b 16   after S1d  2   at the full S1  0   anti-invariant elements 96
+      p = 11   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
+      p = 13   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
+      p = 17   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
+      p = 19   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
+      p = 23   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
+
+--- 10. CONTROLS: POSITIVE, NEGATIVE, AND BOTH OUTCOMES REACHABLE ---
+  G21 PASS   identity self-morphism: 0 square violations at 40320 cells; injective True
+  G22 PASS   synthetic compatible pair: 192 pairs, 48 distinct maps, 192 pass S1c, 192 pass S1d; witness re-verified True
+      witness g = [0, 1, 4, 3, 6, 2, 7, 5, 8], lambda = [1, 4, 0]
+  G23 PASS   synthetic incompatible pair: 0 candidates
+  G24 PASS   BREAK-HOM: S1a 0/125, S1b 6000/15625; accepted counterpart 0/0 -- rejected by S1b
+
+--- 11. SYMMETRY SELF-TESTS (RUNBOOK 14, ALL ADDENDA) ---
+  G25 PASS   relabelling moves 4 labels; delta equivariant at 40320/40320; anti count 48
+  G26 PASS   basis change [[1, 1, 0], [0, 1, 0], [0, 1, 1]]; kernel dimensions invariant: True
+  G27 PASS   tested set ['index|counts->q', 'index|q->counts', 'natural|counts->q', 'natural|q->counts'] (verdict-selected would be ['index|q->counts', 'natural|q->counts'])
+  G28 PASS   self-test bypasses 40320, self-test cache hits 0; cache had 690493 lookups and 650173 hits
+
+--- 12. OPEN 1: IS THE PRIME DERIVABLE ON THIS PAIRING? ---
+  G29 PASS   12 candidates evaluated; tightest declaration-free narrowing [5, 7]
+  id   admissible part   role                 uniq  free  candidate
+  P1   [5]               NARROWING            True  False the deformation carrier's size p^(k+
+  P2   [5, 7, 11, 13, 17 NARROWING            False False the deformation arena's front struct
+  P3   [5]               NARROWING            False False the transport group's order 2*ord(D)
+  P4   [5, 7]            NARROWING            False True  the transport FAMILY's defect-order 
+  P5   [5, 7]            NARROWING            False True  the completion group's element order
+  P6   [5, 7, 11, 13, 17 NARROWING            False True  the record<->metric readout's determ
+  P7   [5, 7, 11, 13, 17 NARROWING            False True  the denominator of HA's exact residu
+  P8   []                NO-ADMISSIBLE-PRIME  True  True  the S1 intertwining condition itself
+  P9   []                NO-ADMISSIBLE-PRIME  False True  the joint system P7 and P8
+  P10  [5, 7]            NARROWING            False True  the count of label-exchange-anti-inv
+  P11  []                NO-ADMISSIBLE-PRIME  False True  the p-part of the completion group's
+  P12  [5, 7]            NARROWING            False True  the intersection of every declaratio
+
+--- 13. THE VERDICTS, DERIVED INSIDE THEIR GATE ---
+  G30 PASS   LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD / LCB-PRIME-DECLARED; 15 qualifiers recomputed, 0 disagreements
+  G31 PASS   obstruction measured coextensive with the clause failures
+
+        BRIDGE VERDICT: LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD
+        OPEN-1 VERDICT: LCB-PRIME-DECLARED
+          accepted_at_the_strengthened_standard            0
+          candidates_passing_S1a_S1b                       96
+          candidates_passing_all_of_S1                     0
+          cells_passing_S2                                 0
+          cells_passing_S3                                 0
+          completion_family_members                        40320
+          encoding_cells                                   4
+          grid_cells                                       224
+          homomorphisms_enumerated                         41665
+          live_grid_cells_after_the_base_point_clause      4
+          obstruction                                      S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)
+          open1_declaration_free_intersection              [5, 7]
+          ord5_class_size                                  4608
+          primes                                           7
+          record_cells_per_candidate                       125
+
+--- 14. ARITHMETIC AND MUTANT-IDENTITY DISCIPLINE ---
+  G32 PASS   0 float/complex hits; scanner flags 2 in its synthetic sample
+  G33 PASS   0 offenders; guard flags ['f']
+  G34 PASS   30 anchors, 0 failures
+
+--- 15. TOTALS ---
+  anchors            : 30 (0 failures required)
+  gates              : 34 (34 must-pass), failures 0
+  disclosures        : 10
+  cache              : {'lookups': 690493, 'hits': 650173, 'misses': 40320, 'bypasses': 40320, 'selftest_hits': 0}
+
+--- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
+  mutant                exit  killed   named kills
+  anchor-brg-sha        1     True     A:A00-paper-brg-bridge.md,G:G02
+  anchor-brgr-sha       1     True     A:A00-brg_bridge_receipt.json,G:G02
+  anchor-defect         1     True     A:A01
+  anchor-family         1     True     A:A05,G:G03
+  anchor-gen-sha        1     True     A:A00-gen_generality_receipt.json,G:G02
+  anchor-ha-sha         1     True     A:A00-ha_successor_receipt.json,G:G02
+  anchor-pin-sha        1     True     A:A00-note-lcb-livecell-pin.md,G:G02
+  anchor-psi-sha        1     True     A:A00-psi_curvature_receipt.json,G:G02
+  anchor-readout        1     True     A:A18,G:G08
+  anchor-rho            1     True     A:A14
+  anchor-soft           1     True     A:A00-psi_curvature_receipt.json,G:G02,G:G34
+  anchor-xba-sha        1     True     A:A00-xba_crossbase_receipt.json,G:G02
+  arena-lax             1     True     A:A14,G:G06
+  basis-lax             1     True     G:G26
+  break-blind           1     True     G:G24,G:G30
+  cache-lax             1     True     G:G28
+  cache-unused          1     True     G:G28
+  compat-lax            1     True     G:G07
+  completion-drop       1     True     G:G17
+  count-flip            1     True     G:G30
+  empty-block           1     True     G:G23,G:G30
+  encoding-drop         1     True     G:G09,G:G11,G:G30
+  enum-drop             1     True     G:G11,G:G30
+  exempt-lax            1     True     G:G33
+  float-lax             1     True     G:G32
+  found-block           1     True     G:G19,G:G22,G:G23,G:G30
+  freeze-lax            1     True     G:G01
+  grid-drop             1     True     G:G16,G:G30
+  group-lax             1     True     A:A12,G:G05
+  heldout-leak          1     True     G:G18,G:G19
+  hom-lax               1     True     G:G24,G:G30
+  ident-block           1     True     G:G21,G:G30
+  matrix-lax            1     True     G:G10,G:G13,G:G23,G:G27,G:G30,G:G31
+  obstruction-misname   1     True     G:G30
+  open1-lax             1     True     G:G29
+  prime-single          1     True     G:G20
+  qualifier-typo        1     True     G:G30
+  quantity-lax          1     True     G:G19
+  relabel-lax           1     True     G:G25
+  route-a-lax           1     True     G:G10,G:G20,G:G30
+  route-alias           1     True     G:G10
+  s1c-lax               1     True     G:G13,G:G30,G:G31
+  s1d-lax               1     True     G:G13
+  s2-lax                1     True     G:G14
+  s3-lax                1     True     G:G14
+  select-lax            1     True     G:G04
+  selftest-select       1     True     G:G27
+  square-lax            1     True     G:G11,G:G30
+  sylow-lax             1     True     G:G12,G:G15
+  tau-lax               1     True     G:G09,G:G22,G:G30
+  teeth-off             1     True     G:G19
+  theorem-lax           1     True     G:G12
+  unique-lax            1     True     G:G30
+  verdict-flip          1     True     G:G30
+  witness-blank         1     True     G:G22,G:G30
+  mutants that survived : []
+  must-pass gates never falsified by any mutant : []
+

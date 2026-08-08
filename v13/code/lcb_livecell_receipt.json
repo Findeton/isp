@@ -1,0 +1,3230 @@
+{
+ "anchors": [
+  {
+   "committed": "5c428afd5c58c8998b575b38b6a7808803805c2cb5c2d5bc0baca3bc10a989f9",
+   "computed": "5c428afd5c58c8998b575b38b6a7808803805c2cb5c2d5bc0baca3bc10a989f9",
+   "id": "A00-brg_bridge_receipt.json",
+   "passed": true,
+   "quantity": "sha256 of v13/code/brg_bridge_receipt.json",
+   "source": "committed file"
+  },
+  {
+   "committed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "computed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "id": "A00-gen_generality_receipt.json",
+   "passed": true,
+   "quantity": "sha256 of v13/code/gen_generality_receipt.json",
+   "source": "committed file"
+  },
+  {
+   "committed": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+   "computed": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+   "id": "A00-ha_successor_receipt.json",
+   "passed": true,
+   "quantity": "sha256 of v13/code/ha_successor_receipt.json",
+   "source": "committed file"
+  },
+  {
+   "committed": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+   "computed": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+   "id": "A00-psi_curvature_receipt.json",
+   "passed": true,
+   "quantity": "sha256 of v13/code/psi_curvature_receipt.json",
+   "source": "committed file"
+  },
+  {
+   "committed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+   "computed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+   "id": "A00-xba_crossbase_receipt.json",
+   "passed": true,
+   "quantity": "sha256 of v13/code/xba_crossbase_receipt.json",
+   "source": "committed file"
+  },
+  {
+   "committed": "4f30880229e72cef28fb4c0891845ad3e258980fce2fc3b25fcf130b8612a822",
+   "computed": "4f30880229e72cef28fb4c0891845ad3e258980fce2fc3b25fcf130b8612a822",
+   "id": "A00-note-lcb-livecell-pin.md",
+   "passed": true,
+   "quantity": "sha256 of v13/note-lcb-livecell-pin.md",
+   "source": "committed file"
+  },
+  {
+   "committed": "371e38742059d14a93dd4dc916785a6c59a6ecd4e4b6cb882298ba8bdbc2ab33",
+   "computed": "371e38742059d14a93dd4dc916785a6c59a6ecd4e4b6cb882298ba8bdbc2ab33",
+   "id": "A00-paper-brg-bridge.md",
+   "passed": true,
+   "quantity": "sha256 of v13/paper-brg-bridge.md",
+   "source": "committed file"
+  },
+  {
+   "committed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "computed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "id": "A01",
+   "passed": true,
+   "quantity": "base G's defect permutation, entry by entry",
+   "source": "GEN 8.1 / BRG 3.1"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A02",
+   "passed": true,
+   "quantity": "base G's defect order",
+   "source": "GEN receipt / BRG 3.1"
+  },
+  {
+   "committed": 45,
+   "computed": 45,
+   "id": "A03",
+   "passed": true,
+   "quantity": "base G's defect fixed configurations of 81",
+   "source": "GEN 8.1 / BRG 3.1"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A04",
+   "passed": true,
+   "quantity": "the wing exchange's fixed configurations of 81",
+   "source": "XBA receipt / BRG 3.1"
+  },
+  {
+   "committed": 40320,
+   "computed": 40320,
+   "id": "A05",
+   "passed": true,
+   "quantity": "the declared completion family's size",
+   "source": "GEN 8.2 / BRG 3.1"
+  },
+  {
+   "committed": {
+    "1": 96,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216,
+    "15": 9216
+   },
+   "computed": {
+    "1": 96,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216,
+    "15": 9216
+   },
+   "id": "A06",
+   "passed": true,
+   "quantity": "the family's defect-order spectrum",
+   "source": "GEN 8.2 / BRG 3.1"
+  },
+  {
+   "committed": {
+    "9": 16704,
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96
+   },
+   "computed": {
+    "9": 16704,
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96
+   },
+   "id": "A07",
+   "passed": true,
+   "quantity": "the family's fixed-configuration spectrum",
+   "source": "GEN 8.2 / BRG 3.1"
+  },
+  {
+   "committed": 4608,
+   "computed": 4608,
+   "id": "A08",
+   "passed": true,
+   "quantity": "completions whose defect has order 5",
+   "source": "BRG 14 open 1 (G38)"
+  },
+  {
+   "committed": [
+    96,
+    40224
+   ],
+   "computed": [
+    96,
+    40224
+   ],
+   "id": "A09",
+   "passed": true,
+   "quantity": "identity-defect / geometry-bearing members",
+   "source": "GEN 8.2"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A10",
+   "passed": true,
+   "quantity": "the fewest labels moved by any ord-5 completion",
+   "source": "BRG 14 open 1 (G38): 'the smallest of them moves just 3 labels'"
+  },
+  {
+   "committed": 36,
+   "computed": 36,
+   "id": "A11",
+   "passed": true,
+   "quantity": "the ord-5 class's fixed-configuration count",
+   "source": "GEN 8.3's class table (ord 5, 36 fixed)"
+  },
+  {
+   "committed": 10,
+   "computed": 10,
+   "id": "A12",
+   "passed": true,
+   "quantity": "the transport group's order at the live cell",
+   "source": "PSI's one law / XBA 8.1: |<W,D>| = 2*ord(D)"
+  },
+  {
+   "committed": 625,
+   "computed": 625,
+   "id": "A13",
+   "passed": true,
+   "quantity": "C_HA(5)'s carrier size",
+   "source": "HA 10.1 / BRG 3.2"
+  },
+  {
+   "committed": [
+    1,
+    1
+   ],
+   "computed": [
+    1,
+    1
+   ],
+   "id": "A14",
+   "passed": true,
+   "quantity": "rho = (1/6,1/6) reduced mod 5, read off the built generator",
+   "source": "HA 10.1 / BRG 3.2"
+  },
+  {
+   "committed": 5,
+   "computed": 5,
+   "id": "A15",
+   "passed": true,
+   "quantity": "the order of <R_HH> at p = 5",
+   "source": "HA G29/G30"
+  },
+  {
+   "committed": 125,
+   "computed": 125,
+   "id": "A16",
+   "passed": true,
+   "quantity": "C_HA(5)'s orbit count (the action is free)",
+   "source": "BRG 3.2"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A17",
+   "passed": true,
+   "quantity": "non-trivial homomorphisms Z/5 -> <W,D> at the live cell",
+   "source": "BRG 4, scope-2 table (p = 5, class ord(D) = 5)"
+  },
+  {
+   "committed": "2",
+   "computed": "2",
+   "id": "A18",
+   "passed": true,
+   "quantity": "HA's record<->metric readout determinant",
+   "source": "HA G28"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A19",
+   "passed": true,
+   "quantity": "HA's admissible geometry records",
+   "source": "HA 4.1"
+  },
+  {
+   "committed": [
+    "G-INDEF",
+    "G-SINGULAR"
+   ],
+   "computed": [
+    "G-INDEF",
+    "G-SINGULAR"
+   ],
+   "id": "A20",
+   "passed": true,
+   "quantity": "HA's declared negative-control records",
+   "source": "HA 4.1"
+  },
+  {
+   "committed": {
+    "G-ANISO": "4",
+    "G-ANISO2": "36",
+    "G-CURVED": "1",
+    "G-CURVOFF": "3",
+    "G-DIAG2": "4",
+    "G-FLAT": "1",
+    "G-INDEF": "-3",
+    "G-OFFDIAG": "3",
+    "G-OFFDIAG2": "11",
+    "G-OFFNEG": "11",
+    "G-SINGULAR": "0"
+   },
+   "computed": {
+    "G-ANISO": "4",
+    "G-ANISO2": "36",
+    "G-CURVED": "1",
+    "G-CURVOFF": "3",
+    "G-DIAG2": "4",
+    "G-FLAT": "1",
+    "G-INDEF": "-3",
+    "G-OFFDIAG": "3",
+    "G-OFFDIAG2": "11",
+    "G-OFFNEG": "11",
+    "G-SINGULAR": "0"
+   },
+   "id": "A21",
+   "passed": true,
+   "quantity": "the declared records' metric determinants",
+   "source": "HA 4.1's table"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A22",
+   "passed": true,
+   "quantity": "live (prime, defect-order) cells at BRG's delivered standard",
+   "source": "BRG 4's scope-2 table and its verdict qualifiers"
+  },
+  {
+   "committed": [
+    4,
+    4,
+    6
+   ],
+   "computed": [
+    4,
+    4,
+    6
+   ],
+   "id": "A23",
+   "passed": true,
+   "quantity": "non-trivial forward group morphisms at BRG's three live cells",
+   "source": "BRG 4's scope-2 table"
+  }
+ ],
+ "arithmetic": "integers / fractions.Fraction / exact F_p; no floats",
+ "declarations": {
+  "arena": {
+   "admission": "a candidate is ACCEPTED at the strengthened standard only if every clause of S1 holds and S2, S3 hold; the clause that fails FIRST in the declared clause order is the named obstruction of that cell",
+   "arena action": "the identification sweep (natural / index); the DIRECTION sweep (counts->q / q->counts) -- the orientation convention RUNBOOK 14 requires to be swept; relabelling of the 9 completion labels by a permutation fixing label 0; change of basis of the record datum space by an element of GL_3(F_p); the prime sweep; the choice of completion inside the declared ord-5 class",
+   "boundary": "one PAIRING.  Transport side: base G's carrier (81 = the system pair x the pointer pair, 9 labels each), a completion Q0 of the 9 system-pair labels fixing label 0, its defect D = delta(Q0) = Sigma Q0^T Sigma Q0 (GEN 8.1), and the group <W,D> with W = Sigma (x) Sigma.  Deformation side: C_HA(5) = F_5^k x F_5^d, k = d = 2, with <R_HH> = Z/5 acting by translation of the address register by rho mod 5.  Encoding layer: the record datum space V = F_p^3 (the three link counts at a site) with HA's record<->metric readout E, and the completion group G_C with GEN's completion->commutator map delta.",
+   "family": "4 declared ENCODING CELLS = 2 identifications x 2 directions; 7 declared primes; 8 measured defect-order classes; the 4,608-member ord-5 completion class; HA's 9 admissible geometry records + 2 declared negative controls",
+   "law": "the strengthened standard S1-S6 as BRG's terminal paper section 2.6 registers it, operationalised clause by clause below; a candidate morphism is a map alpha : V -> G_C",
+   "provenance": "BRG (terminal), HA, GEN, XBA, PSI receipts and papers, hash-pinned; every reused number read from them and recomputed here",
+   "state": "the deformation side's declared base geometry record r0 = G-FLAT's count triple (1,1,2); the transport side's declared base completion Q0 (the lex-first ord-5 member); the transport side's initial configuration j0 = 0"
+  },
+  "controls": {
+   "BREAK-HOM": "NEGATIVE CONTROL WITH TEETH: the accepted candidate's exponent lambda(r) is replaced by lambda(r)*mu(r)^(p-1) with mu a declared 1-eigencovector.  It satisfies the commuting square S1a at EVERY cell -- it differs from an ACCEPTED candidate only in the linearity of its exponent -- and must be rejected by S1b alone, with the rejecting clause named.",
+   "F0-IDENT": "POSITIVE CONTROL: the identity self-morphism of the transport arena -- source and target both the completion group with the encoding delta, alpha = the identity.  The census machinery must FIND it, at every one of the 40,320 cells, and it must pass S1a, S1c, S1d and S3.",
+   "SYNTH-COMPATIBLE": "a declared synthetic compatible pair: the same transport side against a synthetic chart map E~ whose 2-eigencovector is chart-ANTIsymmetric.  The machinery must FIND candidates and they must pass S1a-S1d.",
+   "SYNTH-EMPTY": "a declared synthetic incompatible pair: a scalar chart map with no eigenvalue 2.  The machinery must report EMPTY."
+  },
+  "held_out": {
+   "H1": "the square at every HELD cell, as 9x9 permutation matrices",
+   "H2": "ord(delta(alpha(r))) at every HELD cell -- a transport-side physical quantity",
+   "H3": "fix81(delta(alpha(r))) at every HELD cell -- GEN's own fixed-configuration stratification",
+   "fit_rule": "the candidate (g, lambda) is admitted if the square holds at the FIT cell ALONE; nothing on HELD is consulted.",
+   "split_rule": "FIT = the single declared basis record e1 = (1,0,0); HELD = every other element of V.  Sizes computed.  Frozen before any candidate is fitted.",
+   "teeth": {
+    "X-FLATSTRAT": "predict the identity-defect stratum fix81 = 81 at every HELD cell.  DECLARED IN ADVANCE TO FAIL.",
+    "X-NOSQUARE": "predict that the defect map acts trivially, delta(alpha(r)) = alpha(r).  DECLARED IN ADVANCE TO FAIL on HELD."
+   }
+  },
+  "open1_candidates": {
+   "P1": "the deformation carrier's size p^(k+d)",
+   "P10": "the count of label-exchange-anti-invariant elements of order p",
+   "P11": "the p-part of the completion group's order against |V| = p^3",
+   "P12": "the intersection of every declaration-free candidate",
+   "P2": "the deformation arena's front structure (k, d, L, sites, links)",
+   "P3": "the transport group's order 2*ord(D) and its prime divisors",
+   "P4": "the transport FAMILY's defect-order spectrum and the primes dividing some 2*ord(D) in it",
+   "P5": "the completion group's element orders: the primes p for which an element of order p exists",
+   "P6": "the record<->metric readout's determinant",
+   "P7": "the denominator of HA's exact residual rho",
+   "P8": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
+   "P9": "the joint system P7 and P8"
+  },
+  "outcomes": [
+   "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
+   "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD",
+   "LCB-BLOCKED-AT-CENSUS-DISCIPLINE"
+  ],
+  "pairing": {
+   "Sigma": "the label exchange (u,v) -> (v,u) on a pair of 3-valued labels, index 3u+v; W = Sigma (x) Sigma",
+   "base_record": "G-FLAT, count triple (1,1,2), reduced mod p",
+   "chart_involution": "tau: the declared chart involution of HA's d = 2 arena, the axis swap e_1 <-> e_2.  On counts it swaps n_e1 and n_e2 and fixes n_diag; on the metric it swaps q11 and q22 and fixes q12.",
+   "deformation_carrier": "C_HA(5) = F_5^k x F_5^d, k = 2 (the rank of HA's declared lapse span), d = 2; size 5^4",
+   "directions": {
+    "counts->q": "data -> geometry, the direction that matches the transport side's completion -> defect; REGISTERED",
+    "q->counts": "geometry -> data, the reverse; HA's own measured determinant-2 matrix sits in this direction, so both are swept and both are reported"
+   },
+   "identifications": {
+    "index": "the two coordinate triples are paired slot by slot in index order: n_e1 <-> q11, n_e2 <-> q12, n_diag <-> q22",
+    "natural": "the link is paired with the metric component it determines: n_e1 <-> q11, n_e2 <-> q22, n_diag <-> q12"
+   },
+   "metric_space": "the three components of the metric candidate q; q11 = n_e1, q22 = n_e2, q12 = (n_diag - n_e1 - n_e2)/2",
+   "primes": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23
+   ],
+   "record_negative_controls": [
+    "G-SINGULAR",
+    "G-INDEF"
+   ],
+   "record_space": "V = F_p^3, the three link counts (n_e1, n_e2, n_diag) at a site, d = 2, L = 3",
+   "records": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-CURVED": [
+     1,
+     1,
+     2
+    ],
+    "G-CURVOFF": [
+     2,
+     2,
+     6
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "rho_exact": "(1/6, 1/6), HA's exact rational residual at the detector site, prime-independent",
+   "transport_carrier": "81 configurations, index i = 9a + p with a the system-pair label and p the pointer-pair label",
+   "transport_selection_rule": "DECLARED BEFORE EVALUATION: Q0 is the lexicographically first one-line notation (q_0,...,q_8) among all permutations of the 9 system-pair labels with q_0 = 0 whose defect delta(Q) = Sigma Q^T Sigma Q has order exactly 5.  The class size is computed by exhaustive sweep, not typed."
+  },
+  "prime_outcomes": [
+   "LCB-PRIME-DECLARED",
+   "LCB-PRIME-DERIVED"
+  ],
+  "strengthened_standard": {
+   "S1": "ENCODING INTERTWINING -- THE NON-NEGOTIABLE.  A COMMUTING SQUARE at the encoding layer, not a triangle at the group layer: HA's record-is-metric linear re-encoding E (the determinant-2 readout, HA G28) intertwined with GEN/XBA's Q -> delta(Q) = Sigma Q^T Sigma Q, by the candidate morphism alpha.  Sub-clauses, in this order:\n  S1a  delta(alpha(r)) = alpha(E r) at EVERY record cell, compared as 9x9 permutation MATRICES, entry by entry.\n  S1b  alpha is a homomorphism of the record datum's additive structure into the completion group, at every ordered pair.\n  S1c  alpha carries the chart involution to the label exchange: alpha(tau r) = Sigma alpha(r) Sigma at every record cell.\n  S1d  BASE POINT: the declared base record r0 goes to a completion whose defect reproduces the declared base completion's own measured order and fixed-configuration count.",
+   "S2": "CARRIER RIGIDITY.  (i) the candidate is DETERMINED, not chosen: the census returns exactly one candidate up to the declared redundancy; (ii) the transport side's fixed-configuration stratification {9,18,27,36,45,54,81} is CARRIED -- the map r -> fix81(delta(alpha(r))) must reach more than the two strata a cyclic image can reach.",
+   "S3": "NON-DEGENERACY WITH TEETH.  alpha is INJECTIVE -- the form BRG's one-way theorem requires, since a FOUND could only ever exhibit the deformation side as a SUB-OBJECT of the transport side, and a sub-object embedding is an injection.  Measured against the declared alternative: |image(alpha)| as a fraction of |V|.",
+   "S4": "FUNCTORIALITY IN THE FAMILY.  The census is run over the whole declared (prime, defect-order) grid and over a base change inside the ord-5 completion class, so that a live cell is not an isolated coincidence at one (p, ord(D)).",
+   "S5": "HELD-OUT AT A LIVE CELL WITH A TRANSPORTED QUANTITY.  A declared FIT/HELD split of the record space, frozen BEFORE any candidate is fitted; the candidate is fitted on FIT alone and the square is then VERIFIED on HELD; two transport-side physical quantities -- the defect's order and its fixed-configuration count -- are predicted out of sample and then computed.  Two declared extensions are declared IN ADVANCE to FAIL.",
+   "S6": "AN IN-ARENA READING OF REQUIREMENT 4.  The prime is declared a parameter of the arena and the verdict is reported per prime, together with the intersection over the declared sweep."
+  }
+ },
+ "disclosures": [
+  {
+   "detail": {
+    "c_plus_one_branch": 0,
+    "p_part_exponent": 1
+   },
+   "id": "X01",
+   "statement": "The structure of every S1a-admissible candidate is FORCED and the forcing is measured here rather than cited: a homomorphism's image is a p-subgroup of the completion group, whose p-part is measured p^1, so the image is cyclic of order 1 or p; the square then forces Sigma g Sigma = g^c with c^2 = 1, and c = +1 is measured empty, so c = -1 and delta(alpha(r)) = alpha(r)^2.  The square therefore reads lambda o E = 2*lambda: THE COMPLETION->COMMUTATOR MAP IS A SQUARING, AND THE INTERTWINING DEMANDS 2 IN THE SPECTRUM OF THE CHART MAP."
+  },
+  {
+   "detail": {
+    "p_part_16": 3,
+    "p_part_9": 1,
+    "|V|": 125
+   },
+   "id": "X02",
+   "statement": "S3's FAILURE AT THIS CARRIER IS FORCED AND IS DISCLOSED AS SUCH (RUNBOOK 14 addendum #208): the record datum space has p^3 elements and the completion group's p-part is measured p^1, so no candidate at the nine-label arena can be injective, whatever the encodings do.  It is recorded, not used as a discriminating must-pass gate, and its positive control at sixteen labels (G15) is what makes the clause a measurement rather than a tautology."
+  },
+  {
+   "detail": {
+    "registered": "counts->q",
+    "swept": [
+     "counts->q",
+     "q->counts"
+    ]
+   },
+   "id": "X03",
+   "statement": "THE DIRECTION CONVENTION IS SWEPT, NOT CHOSEN (RUNBOOK 14): HA's own prose calls the determinant-2 map 'the map from the link counts to the components of q', while the matrix its code measures with determinant 2 is the coefficient matrix of the linear system, which runs q -> counts.  Both directions are therefore declared cells of the census and both are reported.  The REGISTERED direction is data -> geometry (counts -> q), because that is the direction that matches the transport side's declaration -> curvature map Q -> delta(Q)."
+  },
+  {
+   "detail": null,
+   "id": "X04",
+   "statement": "THE HELD-OUT SQUARE IS PARTLY FORCED AND IS REPORTED AT THAT STRENGTH: once a candidate's exponent is known to be linear and its generator anti-invariant, the square at the HELD cells follows from the square at a spanning FIT set by linearity.  What the protocol measures that is NOT forced is that 6,144 of the 6,336 candidates admitted by the single FIT cell die out of sample, and that the two transported quantities are predicted correctly at every held-out cell while the two declared failing extensions fail."
+  },
+  {
+   "detail": null,
+   "id": "X05",
+   "statement": "S2's SECOND CLAUSE IS FORCED ONCE THE IMAGE IS CYCLIC: a cyclic image of order p reaches exactly two of the transport side's seven fixed-configuration strata (the p-cycle's own stratum and the identity's), so the stratification cannot be carried by ANY candidate at this carrier.  Measured and disclosed; not used as a discriminating gate."
+  },
+  {
+   "detail": null,
+   "id": "X06",
+   "statement": "THE SQUARE IS COMPARED AS 9x9 PERMUTATION MATRICES ENTRY BY ENTRY, NOT AS GROUP ELEMENTS.  The comparison is the one BRG's S1 asks for; a mutant that compares element ORDERS instead of matrices is declared and dies."
+  },
+  {
+   "detail": null,
+   "id": "X07",
+   "statement": "THE UNIT DECIDES NOTHING ABOUT THE SIXTEEN-LABEL ARENA BEYOND ITS ARITHMETIC: G15 measures that an injective candidate into the sixteen-label completion group EXISTS and exhibits one. Whether any of them satisfies the commuting square there is NOT tested and is registered as an open question."
+  },
+  {
+   "detail": null,
+   "id": "X08",
+   "statement": "TWO OF THE FOUR ENCODING CELLS RETURN A NON-EMPTY S1a/S1b CENSUS -- 48 candidates each -- and every one of them is rejected by S1c at exactly 100 of the 125 record cells.  Measured, reported, and not counted as a FOUND, because S1c is a declared clause of S1 and the verdict is taken at the full clause list."
+  },
+  {
+   "detail": null,
+   "id": "X09",
+   "statement": "THE ENUMERATION ROUTE AND THE LINEAR-ALGEBRA ROUTE SHARE THEIR INPUT DATA (the same chart matrices, the same defect map) but not their computations: one enumerates 41,665 homomorphisms and compares permutation matrices, the other solves a 3x3 kernel over F_p and multiplies by a counted set.  They are disclosed as two computations over shared data, which is what they are."
+  },
+  {
+   "detail": null,
+   "id": "X10",
+   "statement": "THE PRIME 3 IS THE ONLY PRIME AT WHICH THE REGISTERED INTERTWINING IS SOLVABLE, AND IT IS INADMISSIBLE ON THE DEFORMATION SIDE.  The chart map's spectrum contains 1, 1/2 and (in the index identification) -1; 2 joins it only when 2 = 1/2 or 2 = -1 mod p, i.e. only at p = 3, where HA's residual (1/6,1/6) does not reduce.  This is measured over a prime range wider than the declared sweep."
+  }
+ ],
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE ANY CANDIDATE MORPHISM IS EVALUATED: the pairing, the strengthened standard S1-S6, the held-out split, the controls and the Open-1 candidate list are declared as data, and the candidate-evaluation counter is measured ZERO at the freeze point",
+   "detail": {
+    "candidate_evaluations_at_freeze": 0,
+    "declared_blocks": [
+     "arena",
+     "controls",
+     "held_out",
+     "open1_candidates",
+     "outcomes",
+     "pairing",
+     "prime_outcomes",
+     "strengthened_standard"
+    ]
+   },
+   "id": "G01",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY COMMITTED SOURCE THIS UNIT ANCHORS AGAINST IS HASH-PINNED AND THE PIN IS VERIFIED ON DISK: the LCB pin itself, BRG's terminal paper and receipt, and the HA, GEN, XBA and PSI receipts",
+   "detail": {
+    "mismatches": [],
+    "pins": {
+     "v13/code/brg_bridge_receipt.json": "5c428afd5c58c8998b575b38b6a7808803805c2cb5c2d5bc0baca3bc10a989f9",
+     "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+     "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+     "v13/code/psi_curvature_receipt.json": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+     "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+     "v13/note-lcb-livecell-pin.md": "4f30880229e72cef28fb4c0891845ad3e258980fce2fc3b25fcf130b8612a822",
+     "v13/paper-brg-bridge.md": "371e38742059d14a93dd4dc916785a6c59a6ecd4e4b6cb882298ba8bdbc2ab33"
+    }
+   },
+   "id": "G02",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COMPLETION FAMILY IS SWEPT WHOLE AND CELL-COMPLETE: every one of the declared members -- every permutation of the nine system-pair labels fixing label 0, a count computed as a factorial from the label count and never typed -- is classified exactly once, and both spectra sum to the swept count",
+   "detail": {
+    "computed_family_size": 40320,
+    "distinct": 40320,
+    "fixed_spectrum_total": 40320,
+    "members": 40320,
+    "order_spectrum_total": 40320
+   },
+   "id": "G03",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TRANSPORT BASE IS SELECTED BY THE DECLARED RULE AND THE RULE IS EXHIBITED: Q0 is the lexicographically first one-line notation among the completions whose defect has order exactly 5; the class size is computed by exhaustive sweep, the selected member is printed, and its defect order is re-measured from Q0 alone",
+   "detail": {
+    "Q0": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     6
+    ],
+    "class_size": 4608,
+    "defect": [
+     0,
+     1,
+     8,
+     3,
+     4,
+     2,
+     7,
+     5,
+     6
+    ],
+    "defect_fixed_configurations_of_81": 36,
+    "defect_order": 5,
+    "labels_moved_by_Q0": 3
+   },
+   "id": "G04",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TRANSPORT GROUP IS BUILT AS AN EXPLICIT PERMUTATION GROUP ON THE 81 CONFIGURATIONS AND ITS DIHEDRAL FORM IS MEASURED, NOT CITED: W is an involution, W D W = D^-1, W is not a power of D, and the order is 2*ord(D)",
+   "detail": {
+    "dihedral_relations_hold": true,
+    "element_orders": [
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     5,
+     5,
+     5,
+     5
+    ],
+    "group_order": 10,
+    "two_times_ord_D": 10
+   },
+   "id": "G05",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DEFORMATION ARENA C_HA(5) IS REBUILT FROM HA'S OWN LAW AND ITS ACTION IS MEASURED FREE: the generator is the translation of the address register by rho mod p with the front sector fixed, every orbit has length exactly p (counted by an orbit walk over the carrier), the register shift is the SAME at every one of the carrier's configurations, and the orbit count is the carrier size divided by p",
+   "detail": {
+    "carrier": 625,
+    "group_order": 5,
+    "orbit_lengths": [
+     5
+    ],
+    "orbits": 125,
+    "register_shift_uniform_over_the_carrier": true,
+    "rho_mod_p": [
+     1,
+     1
+    ]
+   },
+   "id": "G06",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PAIRING'S BASIC COMPATIBILITY IS VERIFIED AS A MEASUREMENT, WITH ITS OWN NEGATIVE CASE EVALUATED IN GATE: the live-cell condition p | 2*ord(D) holds at p = 5 and is measured to FAIL at p = 7 against the same group, so a blinded clause cannot pass; and the count of homomorphisms Z/p -> <W,D> is computed twice -- once by sweeping the element orders of the built permutation group, once by the gcd of ord(D) with p -- and the two agree",
+   "detail": {
+    "homs_by_element_orders": 5,
+    "homs_by_gcd": 5,
+    "negative_case_7_divides_2ordD": false,
+    "non_trivial": 4,
+    "p": 5,
+    "p_divides_2ordD": true,
+    "two_ord_D": 10
+   },
+   "id": "G07",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE RECORD<->METRIC RE-ENCODING IS REBUILT EXACTLY AS HA BUILDS IT AND ITS DETERMINANT IS RECOMPUTED: the linear system q_ij e^i e^j = n_l is solved at every declared record, q reproduces every declared link count, and the coefficient matrix's determinant is exact",
+   "detail": {
+    "admissible": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-FLAT",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "determinant": "2",
+    "readout_matrix": [
+     [
+      "0",
+      "0",
+      "1"
+     ],
+     [
+      "1",
+      "0",
+      "0"
+     ],
+     [
+      "1",
+      "2",
+      "1"
+     ]
+    ],
+    "records": 11,
+    "records_where_q_reproduces_every_count": 11,
+    "rejected": [
+     "G-INDEF",
+     "G-SINGULAR"
+    ]
+   },
+   "id": "G08",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE FOUR DECLARED ENCODING CELLS ARE BUILT AND CELL-COMPLETE (2 identifications x 2 directions), EACH ONE INVERTIBLE MOD p, AND THE CHART INVOLUTION IS READ IN BOTH COORDINATE ORDERS: the NATURAL identification carries the chart involution -- the axis swap induces the SAME slot permutation on counts and on the metric, and the re-encoding is measured to COMMUTE with it, so the deformation side's encoding is chart-EQUIVARIANT -- while the INDEX identification is measured NOT to carry it.  Exactly one of the two identifications is chart-compatible, and that is a measurement",
+   "detail": {
+    "cells": [
+     [
+      "natural",
+      "counts->q"
+     ],
+     [
+      "natural",
+      "q->counts"
+     ],
+     [
+      "index",
+      "counts->q"
+     ],
+     [
+      "index",
+      "q->counts"
+     ]
+    ],
+    "chart_compatible": {
+     "index": false,
+     "natural": true
+    },
+    "matrices": {
+     "index|counts->q": {
+      "charpoly": [
+       "1/2",
+       "-1",
+       "-1/2",
+       "1"
+      ],
+      "det": "-1/2",
+      "mod_p": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        2,
+        2,
+        3
+       ],
+       [
+        0,
+        1,
+        0
+       ]
+      ]
+     },
+     "index|q->counts": {
+      "charpoly": [
+       "2",
+       "-1",
+       "-2",
+       "1"
+      ],
+      "det": "-2",
+      "mod_p": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        2,
+        1
+       ]
+      ]
+     },
+     "natural|counts->q": {
+      "charpoly": [
+       "-1/2",
+       "2",
+       "-5/2",
+       "1"
+      ],
+      "det": "1/2",
+      "mod_p": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        2,
+        2,
+        3
+       ]
+      ]
+     },
+     "natural|q->counts": {
+      "charpoly": [
+       "-2",
+       "5",
+       "-4",
+       "1"
+      ],
+      "det": "2",
+      "mod_p": [
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        1,
+        2
+       ]
+      ]
+     }
+    },
+    "tau_equivariant_cells": 2,
+    "tau_induced_slot_permutation": {
+     "index": [
+      2,
+      1,
+      0
+     ],
+     "natural": [
+      1,
+      0,
+      2
+     ]
+    },
+    "tau_on_counts": [
+     1,
+     0,
+     2
+    ]
+   },
+   "id": "G09",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE S1a/S1b CENSUS IS COMPUTED BY TWO GENUINELY INDEPENDENT COMPUTATIONS AND THEY AGREE AT EVERY DECLARED ENCODING CELL: route B enumerates EVERY homomorphism of the record datum's additive group into the completion group by pairwise-commuting basis images -- using no group theory -- and tests the commuting square as 9x9 permutation matrices at every record cell; route A solves the kernel of (E^T - 2I) over F_p by Gaussian elimination and multiplies by the measured count of label-exchange-anti-invariant elements of order p.  Neither route reads the other's answer",
+   "detail": {
+    "anti_invariant_order_p_elements": 48,
+    "homomorphisms_enumerated": 41665,
+    "image_size_spectrum": {
+     "1": 1,
+     "5": 41664
+    },
+    "route_calls": {
+     "A": 4,
+     "B": 4,
+     "taint": 0
+    },
+    "rows": [
+     {
+      "direction": "counts->q",
+      "identification": "natural",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "natural",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "index",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "index",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     }
+    ]
+   },
+   "id": "G10",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE CENSUS IS CELL-COMPLETE AND EXHAUSTIVE AT ITS DECLARED SCOPE: the declared encoding cells are visited exactly once each; every candidate is tested at every one of the p^3 record cells; and the ENUMERATION'S OWN SIZE is checked against an independent count built from the measured order-p element count alone -- the cyclic subgroups of order p number (elements)/(p-1), each carrying (p^3 - 1) surjections plus the one trivial map -- so a dropped basis image cannot pass silently",
+   "detail": {
+    "cells_visited": 4,
+    "distinct": 41665,
+    "distinct_cells": 4,
+    "homomorphisms": 41665,
+    "homomorphisms_predicted_independently": 41665,
+    "order_p_elements": 1344,
+    "record_cells_per_candidate": 125
+   },
+   "id": "G11",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SQUARE'S OWN CONSEQUENCES ARE MEASURED, NOT ASSERTED: no element of order p commutes with the label exchange (so the sign +1 branch is empty by measurement); on the anti-invariant locus the completion->commutator map acts as SQUARING, delta(Q) = Q^2, verified element by element; and the p-part of the completion group's order is computed by exact division",
+   "detail": {
+    "completion_group_order": 40320,
+    "order_p_elements_anti_invariant": 48,
+    "order_p_elements_commuting_with_Sigma": 0,
+    "p_part_exponent_of_the_completion_group": 1,
+    "squaring_identity_cells_verified": 40
+   },
+   "id": "G12",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S1c AND S1d ARE EVALUATED ON EVERY S1a/S1b SURVIVOR AT EVERY DECLARED ENCODING CELL, AT EVERY ONE OF THE p^3 RECORD CELLS, AND AGAINST THE DECLARED BASE RECORD: cells where the census is already empty at S1a and cells where it is not both occur, so the clause that bites is read off a measurement and not off a uniform answer",
+   "detail": {
+    "base_defect_fixed_configurations": 36,
+    "base_defect_order": 5,
+    "base_record": [
+     1,
+     1,
+     2
+    ],
+    "base_record_mod_p": [
+     1,
+     1,
+     2
+    ],
+    "candidates_passing_all_of_S1": 0,
+    "rows": [
+     {
+      "direction": "counts->q",
+      "identification": "natural",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "natural",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "index",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "index",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
+     }
+    ],
+    "s1c_cells_evaluated": 125
+   },
+   "id": "G13",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S2 AND S3 ARE MEASURED ON THE CENSUS'S OWN SURVIVORS AND AGAINST THE ARENA'S OWN ARITHMETIC: rigidity asks whether the census DETERMINES a candidate (census size 1) and whether the transport side's fixed-configuration stratification is carried -- a cyclic image reaches exactly two of the seven declared strata, measured; non-degeneracy asks for injectivity, the form BRG's one-way theorem requires of a sub-object embedding, and no cell may be reported injective while the arena's p-part arithmetic forbids it",
+   "detail": {
+    "any_cell_determined": false,
+    "any_cell_injective": false,
+    "declared_strata": [
+     9,
+     18,
+     27,
+     36,
+     45,
+     54,
+     81
+    ],
+    "p_part_exponent": 1,
+    "record_space_size": 125,
+    "rows": [
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
+      "identification": "natural",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "natural",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     },
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
+      "identification": "index",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "index",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     }
+    ],
+    "strata_hit_is_two_at_every_non_empty_cell": true
+   },
+   "id": "G14",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S3'S POSITIVE CONTROL WITH TEETH: THE INJECTIVITY CLAUSE IS SATISFIABLE, AND WHAT FORBIDS IT HERE IS THE NINE-LABEL ARENA.  At the sixteen-label completion arena the p-part of the group's order is p^3, and three disjoint p-cycles are built whose generated subgroup is measured to have exactly p^3 elements -- an injective candidate exists there.  At nine labels the p-part is p^1 and no injective candidate can exist",
+   "detail": {
+    "injective_possible_at_16": true,
+    "p_part_exponent_at_16_labels": 3,
+    "p_part_exponent_at_9_labels": 1,
+    "record_space_size": 125,
+    "witness_subgroup_order": 125
+   },
+   "id": "G15",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S4 IS A CELL-COMPLETE CENSUS OVER THE WHOLE DECLARED (prime, defect-order) GRID AT EVERY ENCODING CELL: each cell is visited exactly once, the count is computed from the declared sets rather than typed, and the narrowing the strengthened standard performs on BRG's live cells is read off it",
+   "detail": {
+    "anti_invariant_elements_by_prime": {
+     "5": 48,
+     "7": 96,
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0
+    },
+    "cells": 224,
+    "cells_live_after_the_base_point_clause": 4,
+    "cells_live_at_S1ab": 32,
+    "cells_live_at_the_full_S1_clause_list": 0,
+    "defect_orders": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     15
+    ],
+    "encoding_cells": 4,
+    "primes": 7
+   },
+   "id": "G16",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE BASE CHANGE INSIDE THE DECLARED ord-5 COMPLETION CLASS IS SWEPT AND THE PAIRING'S DATA ARE MEASURED INVARIANT ACROSS IT: the lex-first, lex-last, fewest-moved and most-moved members are each rebuilt from their own completion, and every one gives the same defect order, the same fixed-configuration count and the same transport group order -- so the pairing is not an artifact of which member of the class was declared",
+   "detail": {
+    "class_size": 4608,
+    "rows": [
+     {
+      "Q": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       7,
+       8,
+       6
+      ],
+      "fix81": 36,
+      "group_order": 10,
+      "live": true,
+      "moved": 3,
+      "ord": 5
+     },
+     {
+      "Q": [
+       0,
+       8,
+       7,
+       6,
+       5,
+       3,
+       2,
+       1,
+       4
+      ],
+      "fix81": 36,
+      "group_order": 10,
+      "live": true,
+      "moved": 8,
+      "ord": 5
+     },
+     {
+      "Q": [
+       0,
+       2,
+       7,
+       5,
+       6,
+       3,
+       4,
+       1,
+       8
+      ],
+      "fix81": 36,
+      "group_order": 10,
+      "live": true,
+      "moved": 7,
+      "ord": 5
+     },
+     {
+      "Q": [
+       0,
+       5,
+       1,
+       2,
+       4,
+       6,
+       3,
+       8,
+       7
+      ],
+      "fix81": 36,
+      "group_order": 10,
+      "live": true,
+      "moved": 7,
+      "ord": 5
+     },
+     {
+      "Q": [
+       0,
+       6,
+       7,
+       2,
+       5,
+       4,
+       1,
+       3,
+       8
+      ],
+      "fix81": 36,
+      "group_order": 10,
+      "live": true,
+      "moved": 7,
+      "ord": 5
+     }
+    ],
+    "uniform": true
+   },
+   "id": "G17",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE HELD-OUT VERIFICATION IS PREDICTIVE, NOT IMPOSED: the split is declared before any candidate is fitted, candidates are admitted by the square at the FIT cell ALONE, and the square is then VERIFIED at every HELD cell -- where most FIT-admitted candidates die.  A protocol under which nothing died out of sample would verify nothing",
+   "detail": {
+    "FIT": [
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "HELD_cells": 124,
+    "fit_admitted": 6336,
+    "rejected_out_of_sample": 6144,
+    "survived_held_out": 192,
+    "total_held_out_violations": 100
+   },
+   "id": "G18",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "TWO TRANSPORT-SIDE PHYSICAL QUANTITIES ARE CARRIED OUT OF SAMPLE AND THE DECLARED FAILING EXTENSIONS DO FAIL: the DEFECT PERMUTATION itself, entry by entry, and its FIXED-CONFIGURATION COUNT are predicted at every held-out cell from the FIT-fitted rule and then computed, while X-NOSQUARE (the defect map predicted to act trivially) and X-FLATSTRAT (the identity-defect stratum predicted everywhere) are declared in advance to fail and are measured failing",
+   "detail": {
+    "X-FLATSTRAT_violations": 99,
+    "X-NOSQUARE_violations": 99,
+    "defect_permutation_predicted_correctly": 124,
+    "example_rejected_at_held_out_cells": 100,
+    "fixed_configuration_predicted_correctly": 124,
+    "held_out_cells": 124,
+    "witness_g": [
+     0,
+     1,
+     4,
+     3,
+     6,
+     2,
+     7,
+     5,
+     8
+    ],
+    "witness_lambda": [
+     1,
+     4,
+     0
+    ]
+   },
+   "id": "G19",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S6 IS DISCHARGED IN THE PER-PRIME FORM AND THE ARENA-INVARIANT INTERSECTION IS TAKEN (RUNBOOK 15, BRG's requirement 4): the census is reported at every one of the declared primes and the verdict is the INTERSECTION over the sweep, never a convenient prime.  The measurement has teeth: the partial clause list IS prime-dependent (live at 5 and 7 only) while the full clause list is measured prime-UNIFORM, so the verdict does not ride on the declared prime and the difference between the two readings is itself measured",
+   "detail": {
+    "full_clause_answer_is_prime_uniform": true,
+    "live_at_every_declared_prime": false,
+    "partial_clause_answer_is_prime_uniform": false,
+    "per_prime": [
+     {
+      "anti_elements": 48,
+      "cells_live_after_S1d": 2,
+      "cells_live_at_S1ab": 16,
+      "cells_live_at_the_full_S1": 0,
+      "p": 5
+     },
+     {
+      "anti_elements": 96,
+      "cells_live_after_S1d": 2,
+      "cells_live_at_S1ab": 16,
+      "cells_live_at_the_full_S1": 0,
+      "p": 7
+     },
+     {
+      "anti_elements": 0,
+      "cells_live_after_S1d": 0,
+      "cells_live_at_S1ab": 0,
+      "cells_live_at_the_full_S1": 0,
+      "p": 11
+     },
+     {
+      "anti_elements": 0,
+      "cells_live_after_S1d": 0,
+      "cells_live_at_S1ab": 0,
+      "cells_live_at_the_full_S1": 0,
+      "p": 13
+     },
+     {
+      "anti_elements": 0,
+      "cells_live_after_S1d": 0,
+      "cells_live_at_S1ab": 0,
+      "cells_live_at_the_full_S1": 0,
+      "p": 17
+     },
+     {
+      "anti_elements": 0,
+      "cells_live_after_S1d": 0,
+      "cells_live_at_S1ab": 0,
+      "cells_live_at_the_full_S1": 0,
+      "p": 19
+     },
+     {
+      "anti_elements": 0,
+      "cells_live_after_S1d": 0,
+      "cells_live_at_S1ab": 0,
+      "cells_live_at_the_full_S1": 0,
+      "p": 23
+     }
+    ],
+    "primes_swept": 7
+   },
+   "id": "G20",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "POSITIVE CONTROL: THE CENSUS MACHINERY FINDS THE IDENTITY SELF-MORPHISM.  The transport arena is paired with itself -- the completion group with the encoding delta on both sides -- and the identity candidate is run through the SAME square comparison, at every one of the family's cells, and through the same S1c, S1d and S3 clauses.  A predicate that could not accept the identity would decide nothing",
+   "detail": {
+    "cells": 40320,
+    "injective": true,
+    "s1c": true,
+    "s1d": true,
+    "square_violations": 0
+   },
+   "id": "G21",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "FOUND IS REACHABLE BY THIS MACHINERY, AND ITS WITNESS IS EXHIBITED AND INDEPENDENTLY RE-VERIFIED: a declared synthetic compatible pair -- the same transport side against a synthetic chart map whose 2-eigencovector is chart-ANTIsymmetric -- yields candidates that pass S1a, S1b, S1c AND S1d, and the exhibited witness is re-checked here from its own two data at every cell",
+   "detail": {
+    "distinct_maps": 48,
+    "pairs_passing_S1a_S1b": 192,
+    "passing_S1c": 192,
+    "passing_S1d": 192,
+    "synthetic_chart_map": [
+     [
+      4,
+      2,
+      0
+     ],
+     [
+      2,
+      4,
+      0
+     ],
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "witness": [
+     [
+      0,
+      1,
+      4,
+      3,
+      6,
+      2,
+      7,
+      5,
+      8
+     ],
+     [
+      1,
+      4,
+      0
+     ]
+    ],
+    "witness_reverified": true
+   },
+   "id": "G22",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EMPTY IS REACHABLE BY THE SAME MACHINERY: a declared synthetic incompatible pair -- a scalar chart map whose only eigenvalue is 3 -- returns a census of size zero, so the two outcomes are separated by a measurement and not by a construction that can only return one of them",
+   "detail": {
+    "candidates": 0,
+    "compatible_pair_for_contrast": 192,
+    "synthetic_incompatible_chart_map": [
+     [
+      3,
+      0,
+      0
+     ],
+     [
+      0,
+      3,
+      0
+     ],
+     [
+      0,
+      0,
+      3
+     ]
+    ]
+   },
+   "id": "G23",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NEGATIVE CONTROL WITH TEETH, AND THE REJECTING CLAUSE IS NAMED: BREAK-HOM differs from an ACCEPTED candidate only in the linearity of its exponent.  It satisfies the commuting square S1a at EVERY record cell -- so the predicate is not rejecting gross malformation -- and it is rejected by S1b alone, at a measured number of the |V|^2 composition cells, while its accepted counterpart is accepted by both",
+   "detail": {
+    "BREAK-HOM_S1a_violations": 0,
+    "BREAK-HOM_S1b_violations": 6000,
+    "accepted_counterpart_S1a_violations": 0,
+    "accepted_counterpart_S1b_violations": 0,
+    "composition_cells": 15625,
+    "lambda": [
+     1,
+     1,
+     1
+    ],
+    "mu": [
+     1,
+     0,
+     0
+    ],
+    "rejecting_clause": "S1b"
+   },
+   "id": "G24",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "SYMMETRY SELF-TEST -- RELABELLING THE COMPLETION ARENA: the whole transport side is transported through a declared non-identity relabelling of the nine labels, the arena is READ INSIDE the new labels (its own defect map recomputed there, its anti-invariant element count recounted there), and the measured invariant is unchanged.  The relabelling is measured to move labels, so a null action cannot pass",
+   "detail": {
+    "anti_invariant_count_declared": 48,
+    "anti_invariant_count_in_the_relabelled_arena": 48,
+    "equivariance_cells": 40320,
+    "equivariance_ok": 40320,
+    "labels_moved": 4,
+    "relabelling": [
+     0,
+     2,
+     3,
+     4,
+     1,
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "id": "G25",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "SYMMETRY SELF-TEST -- CHANGE OF BASIS OF THE RECORD DATUM SPACE: the chart map is conjugated by a declared non-identity element of GL_3(F_p) and the census's own decision quantity -- the dimension of the 2-eigenspace -- is recomputed INSIDE the new basis and measured unchanged at every encoding cell.  A basis change that changed nothing could not test this",
+   "detail": {
+    "basis_change": [
+     [
+      1,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "invariant": true,
+    "rows": [
+     {
+      "cell": "natural|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "natural|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     },
+     {
+      "cell": "index|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "index|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     }
+    ]
+   },
+   "id": "G26",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SELF-TESTS' TESTED SET IS FIXED BY DECLARATION AND NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum #185): the declared set is the full 2 x 2 sweep including the cells whose census is empty, and it is measured equal to the declaration and strictly larger than the set the verdicts would have selected",
+   "detail": {
+    "declared": [
+     "index|counts->q",
+     "index|q->counts",
+     "natural|counts->q",
+     "natural|q->counts"
+    ],
+    "tested": [
+     "index|counts->q",
+     "index|q->counts",
+     "natural|counts->q",
+     "natural|q->counts"
+    ],
+    "verdict_selected": [
+     "index|q->counts",
+     "natural|q->counts"
+    ]
+   },
+   "id": "G27",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "CACHE DISCIPLINE (RUNBOOK 14 addenda #185 and #219): every self-test evaluation of the defect map BYPASSES the memo cache, the self-test's cache-hit count is measured ZERO, and the cache path is measured to have been exercised elsewhere in the run -- so the zero-hit clause is not the signature of a cache nobody uses",
+   "detail": {
+    "cache_entries": 40320,
+    "cache_hits_before_the_selftests": 650173,
+    "cache_lookups_before_the_selftests": 690493,
+    "selftest_bypasses": 40320,
+    "selftest_cache_hits": 0
+   },
+   "id": "G28",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "OPEN 1 IS MEASURED, NOT ARGUED: every declared candidate structure is evaluated for (i) whether its admitted prime set is a SINGLETON and (ii) whether it is itself declaration-free (RUNBOOK 15: a quantity that is itself a declaration cannot derive p).  Both properties are computed; the intersection of the declaration-free candidates is taken; and the candidates that carry a declaration are measured to do so rather than being excluded by assertion",
+   "detail": {
+    "a_declaration_free_singleton_inside_the_admissible_set": false,
+    "admissible_primes": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "candidates": [
+     {
+      "admissible_part": [
+       5
+      ],
+      "candidate": "the deformation carrier's size p^(k+d)",
+      "declaration_free": false,
+      "id": "P1",
+      "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p; it cannot derive it",
+      "primes_it_admits": [
+       5
+      ],
+      "role": "NARROWING",
+      "unique": true
+     },
+     {
+      "admissible_part": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "candidate": "the deformation arena's front structure (k, d, L, sites, links)",
+      "declaration_free": false,
+      "id": "P2",
+      "note": "k, d, L and the link set are declared arena data and constrain no prime",
+      "primes_it_admits": [
+       2,
+       3,
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5
+      ],
+      "candidate": "the transport group's order 2*ord(D) and its prime divisors",
+      "declaration_free": false,
+      "id": "P3",
+      "note": "2*ord(D) = 10, but ord(D) = 5 is THIS unit's declared selection rule; the candidate contains its own conclusion",
+      "primes_it_admits": [
+       2,
+       5
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7
+      ],
+      "candidate": "the transport FAMILY's defect-order spectrum and the primes dividing some 2*ord(D) in it",
+      "declaration_free": true,
+      "id": "P4",
+      "note": "the family's own defect orders admit [2, 3, 5, 7]; intersected with admissibility, two survive",
+      "primes_it_admits": [
+       2,
+       3,
+       5,
+       7
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7
+      ],
+      "candidate": "the completion group's element orders: the primes p for which an element of order p exists",
+      "declaration_free": true,
+      "id": "P5",
+      "note": "the completion group has elements of order p for p in [2, 3, 5, 7]; intersected with admissibility, two survive",
+      "primes_it_admits": [
+       2,
+       3,
+       5,
+       7
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "candidate": "the record<->metric readout's determinant",
+      "declaration_free": true,
+      "id": "P6",
+      "note": "the readout determinant is 2, so the re-encoding is invertible at every prime but 2 -- a single exclusion, not a derivation",
+      "primes_it_admits": [
+       3,
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "candidate": "the denominator of HA's exact residual rho",
+      "declaration_free": true,
+      "id": "P7",
+      "note": "rho's denominator is 6, so the deformation side does not exist at 2 or 3",
+      "primes_it_admits": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [],
+      "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
+      "declaration_free": true,
+      "id": "P8",
+      "note": "the intertwining is solvable at exactly one prime in the registered direction, swept over every prime below 60 -- and it is a prime the deformation side cannot be built at; the re-encoding is undefined at [2]",
+      "primes_it_admits": [
+       3
+      ],
+      "role": "NO-ADMISSIBLE-PRIME",
+      "unique": true
+     },
+     {
+      "admissible_part": [],
+      "candidate": "the joint system P7 and P8",
+      "declaration_free": true,
+      "id": "P9",
+      "note": "the joint system is EMPTY: the only prime that solves the intertwining is one of the two at which rho fails to reduce",
+      "primes_it_admits": [],
+      "role": "NO-ADMISSIBLE-PRIME",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7
+      ],
+      "candidate": "the count of label-exchange-anti-invariant elements of order p",
+      "declaration_free": true,
+      "id": "P10",
+      "note": "48 at p = 5 and 96 at p = 7; zero at every larger declared prime",
+      "primes_it_admits": [
+       5,
+       7
+      ],
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [],
+      "candidate": "the p-part of the completion group's order against |V| = p^3",
+      "declaration_free": true,
+      "id": "P11",
+      "note": "the p-part of the completion group's order is p^1 at every prime, against |V| = p^3: no prime admits an injective candidate here",
+      "primes_it_admits": [],
+      "role": "NO-ADMISSIBLE-PRIME",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7
+      ],
+      "candidate": "the intersection of every declaration-free candidate",
+      "declaration_free": true,
+      "id": "P12",
+      "note": "the tightest declaration-free NARROWING: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11, P8, P9",
+      "primes_it_admits": [
+       5,
+       7
+      ],
+      "role": "NARROWING",
+      "unique": false
+     }
+    ],
+    "declaration_free_candidates_admitting_no_admissible_prime": [
+     "P11",
+     "P8",
+     "P9"
+    ],
+    "tightest_declaration_free_narrowing": [
+     5,
+     7
+    ]
+   },
+   "id": "G29",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TWO VERDICT STRINGS AND EVERY ONE OF THEIR QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234): the bridge verdict is derived once from the emptiness decision, recomputed by a second expression over the same booleans, and derived a THIRD time from the recorded clause table by re-reading the per-cell survivor counts; the prime verdict is derived and recomputed from the candidate table's own intersection; and every printed qualifier is recomputed here from its own source",
+   "detail": {
+    "emptiness": {
+     "at_source": true,
+     "from_tables": true,
+     "recount": true
+    },
+    "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+    "prime_verdict": "LCB-PRIME-DECLARED",
+    "prime_verdict_recomputed": "LCB-PRIME-DECLARED",
+    "qualifiers": {
+     "accepted_at_the_strengthened_standard": 0,
+     "candidates_passing_S1a_S1b": 96,
+     "candidates_passing_all_of_S1": 0,
+     "cells_passing_S2": 0,
+     "cells_passing_S3": 0,
+     "completion_family_members": 40320,
+     "encoding_cells": 4,
+     "grid_cells": 224,
+     "homomorphisms_enumerated": 41665,
+     "live_grid_cells_after_the_base_point_clause": 4,
+     "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+     "open1_declaration_free_intersection": [
+      5,
+      7
+     ],
+     "ord5_class_size": 4608,
+     "primes": 7,
+     "record_cells_per_candidate": 125
+    },
+    "qualifiers_recomputed_in_gate": {
+     "accepted_at_the_strengthened_standard": 0,
+     "candidates_passing_S1a_S1b": 96,
+     "candidates_passing_all_of_S1": 0,
+     "cells_passing_S2": 0,
+     "cells_passing_S3": 0,
+     "completion_family_members": 40320,
+     "encoding_cells": 4,
+     "grid_cells": 224,
+     "homomorphisms_enumerated": 41665,
+     "live_grid_cells_after_the_base_point_clause": 4,
+     "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+     "open1_declaration_free_intersection": [
+      5,
+      7
+     ],
+     "ord5_class_size": 4608,
+     "primes": 7,
+     "record_cells_per_candidate": 125
+    },
+    "qualifiers_that_disagree": [],
+    "recomputed": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
+    "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
+    "verdict_from_the_clause_table": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+   },
+   "id": "G30",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE NAMED OBSTRUCTION IS MEASURED COEXTENSIVE WITH THE CLAUSE FAILURES AND IS NOT A CARDINALITY CLAIM: the data->geometry direction's cells are empty at S1a exactly where 2 is absent from the chart map's spectrum, and the geometry->data direction's cells are non-empty at S1a and empty at S1c exactly where the 2-eigencovector is chart-symmetric.  No cardinality test is used as a criterion anywhere in this unit",
+   "detail": {
+    "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+    "parity_cells_empty_at_S1c": [
+     "q->counts",
+     "q->counts"
+    ],
+    "spectral_cells_empty_at_S1a": [
+     "counts->q",
+     "counts->q"
+    ]
+   },
+   "id": "G31",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SOURCE CONTAINS NO FLOAT OR COMPLEX LITERAL AND NO float()/complex() CALL, AND THE SCANNER THAT MEASURES IT IS VALIDATED BY A SYNTHETIC INJECTION IT MUST FLAG",
+   "detail": {
+    "hits": [],
+    "synthetic_sample_flagged": [
+     "line 1: literal 1.5",
+     "line 2: call float()"
+    ]
+   },
+   "id": "G32",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO FUNCTION THAT REGISTERS A GATE REFERENCES MUTANT IDENTITY, A RUN-MODE BOOLEAN OR sys.argv (RUNBOOK 14 addendum #208), AND THE AST GUARD IS VALIDATED BY A SYNTHETIC SAMPLE IT MUST FLAG",
+   "detail": {
+    "offenders": [],
+    "synthetic_sample_flagged": [
+     "f"
+    ]
+   },
+   "id": "G33",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ANCHOR POLICY IS EXIT-1-ONLY AND IS MEASURED: every committed number this unit reuses is asserted, and a failure kills the run at the assertion",
+   "detail": {
+    "anchors": 30,
+    "failures": 0,
+    "fatal": 0
+   },
+   "id": "G34",
+   "must_pass": true,
+   "passed": true
+  }
+ ],
+ "hash_pins": {
+  "v13/code/brg_bridge_receipt.json": "5c428afd5c58c8998b575b38b6a7808803805c2cb5c2d5bc0baca3bc10a989f9",
+  "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+  "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+  "v13/code/psi_curvature_receipt.json": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+  "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+  "v13/note-lcb-livecell-pin.md": "4f30880229e72cef28fb4c0891845ad3e258980fce2fc3b25fcf130b8612a822",
+  "v13/paper-brg-bridge.md": "371e38742059d14a93dd4dc916785a6c59a6ecd4e4b6cb882298ba8bdbc2ab33"
+ },
+ "mutants": [
+  {
+   "exit": 1,
+   "expected_kill": "the BRG paper's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-brg-sha",
+   "named_kills": [
+    "A:A00-paper-brg-bridge.md",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the BRG receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-brgr-sha",
+   "named_kills": [
+    "A:A00-brg_bridge_receipt.json",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the rebuilt base-G defect permutation is perturbed",
+   "killed": true,
+   "mutant": "anchor-defect",
+   "named_kills": [
+    "A:A01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the completion-family sweep is truncated",
+   "killed": true,
+   "mutant": "anchor-family",
+   "named_kills": [
+    "A:A05",
+    "G:G03"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the GEN receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-sha",
+   "named_kills": [
+    "A:A00-gen_generality_receipt.json",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the HA receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-ha-sha",
+   "named_kills": [
+    "A:A00-ha_successor_receipt.json",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the LCB pin's own hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-pin-sha",
+   "named_kills": [
+    "A:A00-note-lcb-livecell-pin.md",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the PSI receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-psi-sha",
+   "named_kills": [
+    "A:A00-psi_curvature_receipt.json",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the record<->metric readout matrix is perturbed",
+   "killed": true,
+   "mutant": "anchor-readout",
+   "named_kills": [
+    "A:A18",
+    "G:G08"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-to-F_p reduction of rho is perturbed",
+   "killed": true,
+   "mutant": "anchor-rho",
+   "named_kills": [
+    "A:A14"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "anchor failures are made non-fatal",
+   "killed": true,
+   "mutant": "anchor-soft",
+   "named_kills": [
+    "A:A00-psi_curvature_receipt.json",
+    "G:G02",
+    "G:G34"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the XBA receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-xba-sha",
+   "named_kills": [
+    "A:A00-xba_crossbase_receipt.json",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the deformation arena's action is built non-free",
+   "killed": true,
+   "mutant": "arena-lax",
+   "named_kills": [
+    "A:A14",
+    "G:G06"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the basis-change self-test changes nothing",
+   "killed": true,
+   "mutant": "basis-lax",
+   "named_kills": [
+    "G:G26"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the structure-breaking candidate is replaced by its accepted counterpart",
+   "killed": true,
+   "mutant": "break-blind",
+   "named_kills": [
+    "G:G24",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test's fresh path reads the memo cache",
+   "killed": true,
+   "mutant": "cache-lax",
+   "named_kills": [
+    "G:G28"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the memo cache is never looked up",
+   "killed": true,
+   "mutant": "cache-unused",
+   "named_kills": [
+    "G:G28"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the live-cell divisibility clause is blinded",
+   "killed": true,
+   "mutant": "compat-lax",
+   "named_kills": [
+    "G:G07"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one completion is dropped from the base-change sweep",
+   "killed": true,
+   "mutant": "completion-drop",
+   "named_kills": [
+    "G:G17"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the emptiness decision is inverted at its own source",
+   "killed": true,
+   "mutant": "count-flip",
+   "named_kills": [
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the synthetic incompatible pair is made compatible",
+   "killed": true,
+   "mutant": "empty-block",
+   "named_kills": [
+    "G:G23",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one declared encoding cell is dropped from the sweep",
+   "killed": true,
+   "mutant": "encoding-drop",
+   "named_kills": [
+    "G:G09",
+    "G:G11",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one basis image is dropped from the exhaustive hom enumeration",
+   "killed": true,
+   "mutant": "enum-drop",
+   "named_kills": [
+    "G:G11",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the mutant-identity AST scanner is blinded",
+   "killed": true,
+   "mutant": "exempt-lax",
+   "named_kills": [
+    "G:G33"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-arithmetic scanner is blinded",
+   "killed": true,
+   "mutant": "float-lax",
+   "named_kills": [
+    "G:G32"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the synthetic compatible pair is made incompatible",
+   "killed": true,
+   "mutant": "found-block",
+   "named_kills": [
+    "G:G19",
+    "G:G22",
+    "G:G23",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a census datum is evaluated before the declarations freeze",
+   "killed": true,
+   "mutant": "freeze-lax",
+   "named_kills": [
+    "G:G01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one cell is dropped from the (p, ord) grid",
+   "killed": true,
+   "mutant": "grid-drop",
+   "named_kills": [
+    "G:G16",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the transport group is closed under one generator only",
+   "killed": true,
+   "mutant": "group-lax",
+   "named_kills": [
+    "A:A12",
+    "G:G05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the candidate is fitted on the held-out cells",
+   "killed": true,
+   "mutant": "heldout-leak",
+   "named_kills": [
+    "G:G18",
+    "G:G19"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the homomorphism clause is dropped from the predicate",
+   "killed": true,
+   "mutant": "hom-lax",
+   "named_kills": [
+    "G:G24",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the identity self-morphism is made unfindable",
+   "killed": true,
+   "mutant": "ident-block",
+   "named_kills": [
+    "G:G21",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the square is compared as group elements instead of as 9x9 permutation matrices",
+   "killed": true,
+   "mutant": "matrix-lax",
+   "named_kills": [
+    "G:G10",
+    "G:G13",
+    "G:G23",
+    "G:G27",
+    "G:G30",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the named obstruction is replaced by a cardinality claim",
+   "killed": true,
+   "mutant": "obstruction-misname",
+   "named_kills": [
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a declaration-carrying candidate is admitted as declaration-free",
+   "killed": true,
+   "mutant": "open1-lax",
+   "named_kills": [
+    "G:G29"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the prime sweep is collapsed to one prime",
+   "killed": true,
+   "mutant": "prime-single",
+   "named_kills": [
+    "G:G20"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one printed verdict qualifier is replaced by a typed value",
+   "killed": true,
+   "mutant": "qualifier-typo",
+   "named_kills": [
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a transported held-out quantity is read off the wrong map",
+   "killed": true,
+   "mutant": "quantity-lax",
+   "named_kills": [
+    "G:G19"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the relabelling self-test relabels nothing",
+   "killed": true,
+   "mutant": "relabel-lax",
+   "named_kills": [
+    "G:G25"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the linear-algebra route mis-solves its kernel",
+   "killed": true,
+   "mutant": "route-a-lax",
+   "named_kills": [
+    "G:G10",
+    "G:G20",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the second route returns the first route's own answer",
+   "killed": true,
+   "mutant": "route-alias",
+   "named_kills": [
+    "G:G10"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the chart-involution clause is evaluated at the base point only",
+   "killed": true,
+   "mutant": "s1c-lax",
+   "named_kills": [
+    "G:G13",
+    "G:G30",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the base-point clause reads the wrong base record",
+   "killed": true,
+   "mutant": "s1d-lax",
+   "named_kills": [
+    "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the stratification is read off the source instead of the transported defect",
+   "killed": true,
+   "mutant": "s2-lax",
+   "named_kills": [
+    "G:G14"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the injectivity clause counts the source instead of the image",
+   "killed": true,
+   "mutant": "s3-lax",
+   "named_kills": [
+    "G:G14"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared lex-first selection rule is replaced by an arbitrary member of the class",
+   "killed": true,
+   "mutant": "select-lax",
+   "named_kills": [
+    "G:G04"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test's tested set is selected by the verdicts",
+   "killed": true,
+   "mutant": "selftest-select",
+   "named_kills": [
+    "G:G27"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the commuting square is evaluated at the base point only",
+   "killed": true,
+   "mutant": "square-lax",
+   "named_kills": [
+    "G:G11",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the p-part bound is read at the wrong arena",
+   "killed": true,
+   "mutant": "sylow-lax",
+   "named_kills": [
+    "G:G12",
+    "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the chart involution is replaced by the identity",
+   "killed": true,
+   "mutant": "tau-lax",
+   "named_kills": [
+    "G:G09",
+    "G:G22",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared failing extension is silently made the accepted one",
+   "killed": true,
+   "mutant": "teeth-off",
+   "named_kills": [
+    "G:G19"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the forced-sign step is asserted instead of measured",
+   "killed": true,
+   "mutant": "theorem-lax",
+   "named_kills": [
+    "G:G12"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the uniqueness test accepts a two-element prime set",
+   "killed": true,
+   "mutant": "unique-lax",
+   "named_kills": [
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the verdict derivation returns a hand-typed string",
+   "killed": true,
+   "mutant": "verdict-flip",
+   "named_kills": [
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exhibited FOUND witness is blanked",
+   "killed": true,
+   "mutant": "witness-blank",
+   "named_kills": [
+    "G:G22",
+    "G:G30"
+   ]
+  }
+ ],
+ "never_falsified": [],
+ "pin": "v13/note-lcb-livecell-pin.md",
+ "pin_commit": "d2f6104",
+ "prime_verdict": "LCB-PRIME-DECLARED",
+ "python": "3.13.2",
+ "qualifiers": {
+  "accepted_at_the_strengthened_standard": 0,
+  "candidates_passing_S1a_S1b": 96,
+  "candidates_passing_all_of_S1": 0,
+  "cells_passing_S2": 0,
+  "cells_passing_S3": 0,
+  "completion_family_members": 40320,
+  "encoding_cells": 4,
+  "grid_cells": 224,
+  "homomorphisms_enumerated": 41665,
+  "live_grid_cells_after_the_base_point_clause": 4,
+  "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+  "open1_declaration_free_intersection": [
+   5,
+   7
+  ],
+  "ord5_class_size": 4608,
+  "primes": 7,
+  "record_cells_per_candidate": 125
+ },
+ "schema": "lcb-livecell-receipt-v1",
+ "source_sha256": "57d3072b1031394a71826c3c38200c9326059c4f8a01dff36a017158601b4e8a",
+ "tables": {
+  "base_change": [
+   {
+    "Q": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     6
+    ],
+    "fix81": 36,
+    "group_order": 10,
+    "live": true,
+    "moved": 3,
+    "ord": 5
+   },
+   {
+    "Q": [
+     0,
+     8,
+     7,
+     6,
+     5,
+     3,
+     2,
+     1,
+     4
+    ],
+    "fix81": 36,
+    "group_order": 10,
+    "live": true,
+    "moved": 8,
+    "ord": 5
+   },
+   {
+    "Q": [
+     0,
+     2,
+     7,
+     5,
+     6,
+     3,
+     4,
+     1,
+     8
+    ],
+    "fix81": 36,
+    "group_order": 10,
+    "live": true,
+    "moved": 7,
+    "ord": 5
+   },
+   {
+    "Q": [
+     0,
+     5,
+     1,
+     2,
+     4,
+     6,
+     3,
+     8,
+     7
+    ],
+    "fix81": 36,
+    "group_order": 10,
+    "live": true,
+    "moved": 7,
+    "ord": 5
+   },
+   {
+    "Q": [
+     0,
+     6,
+     7,
+     2,
+     5,
+     4,
+     1,
+     3,
+     8
+    ],
+    "fix81": 36,
+    "group_order": 10,
+    "live": true,
+    "moved": 7,
+    "ord": 5
+   }
+  ],
+  "controls": {
+   "break_hom_s1a": 0,
+   "break_hom_s1b": 6000,
+   "identity_self_morphism_cells": 40320,
+   "synthetic_compatible_distinct_maps": 48,
+   "synthetic_compatible_pairs": 192,
+   "synthetic_incompatible_candidates": 0
+  },
+  "encoding_cells": {
+   "index|counts->q": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "index|q->counts": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "natural|counts->q": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     3
+    ]
+   ],
+   "natural|q->counts": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ]
+   ]
+  },
+  "held_out": {
+   "fit_admitted": 6336,
+   "fit_cells": 1,
+   "held_cells": 124,
+   "held_rejected": 6144,
+   "held_survivors": 192
+  },
+  "open1": [
+   {
+    "admissible_part": [
+     5
+    ],
+    "candidate": "the deformation carrier's size p^(k+d)",
+    "declaration_free": false,
+    "id": "P1",
+    "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p; it cannot derive it",
+    "primes_it_admits": [
+     5
+    ],
+    "role": "NARROWING",
+    "unique": true
+   },
+   {
+    "admissible_part": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "candidate": "the deformation arena's front structure (k, d, L, sites, links)",
+    "declaration_free": false,
+    "id": "P2",
+    "note": "k, d, L and the link set are declared arena data and constrain no prime",
+    "primes_it_admits": [
+     2,
+     3,
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5
+    ],
+    "candidate": "the transport group's order 2*ord(D) and its prime divisors",
+    "declaration_free": false,
+    "id": "P3",
+    "note": "2*ord(D) = 10, but ord(D) = 5 is THIS unit's declared selection rule; the candidate contains its own conclusion",
+    "primes_it_admits": [
+     2,
+     5
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7
+    ],
+    "candidate": "the transport FAMILY's defect-order spectrum and the primes dividing some 2*ord(D) in it",
+    "declaration_free": true,
+    "id": "P4",
+    "note": "the family's own defect orders admit [2, 3, 5, 7]; intersected with admissibility, two survive",
+    "primes_it_admits": [
+     2,
+     3,
+     5,
+     7
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7
+    ],
+    "candidate": "the completion group's element orders: the primes p for which an element of order p exists",
+    "declaration_free": true,
+    "id": "P5",
+    "note": "the completion group has elements of order p for p in [2, 3, 5, 7]; intersected with admissibility, two survive",
+    "primes_it_admits": [
+     2,
+     3,
+     5,
+     7
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "candidate": "the record<->metric readout's determinant",
+    "declaration_free": true,
+    "id": "P6",
+    "note": "the readout determinant is 2, so the re-encoding is invertible at every prime but 2 -- a single exclusion, not a derivation",
+    "primes_it_admits": [
+     3,
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "candidate": "the denominator of HA's exact residual rho",
+    "declaration_free": true,
+    "id": "P7",
+    "note": "rho's denominator is 6, so the deformation side does not exist at 2 or 3",
+    "primes_it_admits": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [],
+    "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
+    "declaration_free": true,
+    "id": "P8",
+    "note": "the intertwining is solvable at exactly one prime in the registered direction, swept over every prime below 60 -- and it is a prime the deformation side cannot be built at; the re-encoding is undefined at [2]",
+    "primes_it_admits": [
+     3
+    ],
+    "role": "NO-ADMISSIBLE-PRIME",
+    "unique": true
+   },
+   {
+    "admissible_part": [],
+    "candidate": "the joint system P7 and P8",
+    "declaration_free": true,
+    "id": "P9",
+    "note": "the joint system is EMPTY: the only prime that solves the intertwining is one of the two at which rho fails to reduce",
+    "primes_it_admits": [],
+    "role": "NO-ADMISSIBLE-PRIME",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7
+    ],
+    "candidate": "the count of label-exchange-anti-invariant elements of order p",
+    "declaration_free": true,
+    "id": "P10",
+    "note": "48 at p = 5 and 96 at p = 7; zero at every larger declared prime",
+    "primes_it_admits": [
+     5,
+     7
+    ],
+    "role": "NARROWING",
+    "unique": false
+   },
+   {
+    "admissible_part": [],
+    "candidate": "the p-part of the completion group's order against |V| = p^3",
+    "declaration_free": true,
+    "id": "P11",
+    "note": "the p-part of the completion group's order is p^1 at every prime, against |V| = p^3: no prime admits an injective candidate here",
+    "primes_it_admits": [],
+    "role": "NO-ADMISSIBLE-PRIME",
+    "unique": false
+   },
+   {
+    "admissible_part": [
+     5,
+     7
+    ],
+    "candidate": "the intersection of every declaration-free candidate",
+    "declaration_free": true,
+    "id": "P12",
+    "note": "the tightest declaration-free NARROWING: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11, P8, P9",
+    "primes_it_admits": [
+     5,
+     7
+    ],
+    "role": "NARROWING",
+    "unique": false
+   }
+  ],
+  "per_prime": [
+   {
+    "anti_elements": 48,
+    "cells_live_after_S1d": 2,
+    "cells_live_at_S1ab": 16,
+    "cells_live_at_the_full_S1": 0,
+    "p": 5
+   },
+   {
+    "anti_elements": 96,
+    "cells_live_after_S1d": 2,
+    "cells_live_at_S1ab": 16,
+    "cells_live_at_the_full_S1": 0,
+    "p": 7
+   },
+   {
+    "anti_elements": 0,
+    "cells_live_after_S1d": 0,
+    "cells_live_at_S1ab": 0,
+    "cells_live_at_the_full_S1": 0,
+    "p": 11
+   },
+   {
+    "anti_elements": 0,
+    "cells_live_after_S1d": 0,
+    "cells_live_at_S1ab": 0,
+    "cells_live_at_the_full_S1": 0,
+    "p": 13
+   },
+   {
+    "anti_elements": 0,
+    "cells_live_after_S1d": 0,
+    "cells_live_at_S1ab": 0,
+    "cells_live_at_the_full_S1": 0,
+    "p": 17
+   },
+   {
+    "anti_elements": 0,
+    "cells_live_after_S1d": 0,
+    "cells_live_at_S1ab": 0,
+    "cells_live_at_the_full_S1": 0,
+    "p": 19
+   },
+   {
+    "anti_elements": 0,
+    "cells_live_after_S1d": 0,
+    "cells_live_at_S1ab": 0,
+    "cells_live_at_the_full_S1": 0,
+    "p": 23
+   }
+  ],
+  "s1_clause_census": [
+   {
+    "direction": "counts->q",
+    "identification": "natural",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "natural",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "index",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "index",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   }
+  ],
+  "s1ab_census": [
+   {
+    "direction": "counts->q",
+    "identification": "natural",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "natural",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "index",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "index",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   }
+  ],
+  "s2_s3": [
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
+    "identification": "natural",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "natural",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
+   },
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
+    "identification": "index",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "index",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
+   }
+  ],
+  "s4_grid_summary": {
+   "by_direction": {
+    "counts->q": 0,
+    "q->counts": 4
+   },
+   "cells": 224,
+   "distinct_p_ord_pairs": {
+    "full": 0,
+    "s1ab": 16,
+    "s1d": 2
+   },
+   "live_full_s1": 0,
+   "live_s1ab": 32,
+   "live_s1d": 4
+  }
+ },
+ "totals": {
+  "anchors": 30,
+  "cache": {
+   "bypasses": 40320,
+   "hits": 650173,
+   "lookups": 690493,
+   "misses": 40320,
+   "selftest_hits": 0
+  },
+  "disclosures": 10,
+  "gate_failures": 0,
+  "gates": 34,
+  "must_pass_gates": 34,
+  "mutant_survivors": 0,
+  "mutants": 55,
+  "route_calls": {
+   "A": 4,
+   "B": 4,
+   "taint": 0
+  }
+ },
+ "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+}
