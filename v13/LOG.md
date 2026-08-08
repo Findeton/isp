@@ -8629,3 +8629,46 @@ measured); both bridge outcomes reachable w/ mutants; the
 one-way theorem's sub-object form the FOUND reading.
 Construction dispatch with this commit (Opus 5,
 freeze-on-delivery, lcb_* namespace; TB3 parallel on tb3_*).
+
+## 2026-08-08 — TB3 DELIVERED, COMMITTED AS-IS (v13 LEDGER #278)
+Delivery committed as-is.  UNIT: **TB3-BASE-ESTABLISHED** — all
+five axes CONFIRMED.  THE BASE: 3 wings × (2,2), carrier 64;
+S₃ constructed and measured non-abelian; native six-frame
+atlas; 9-member family (GHZ/W/product/biseparable by Cayley
+hyperdeterminant); Q = (1 3) by the declared rule; 27 settings
+w/ a stabiliser class (order 2) having NO two-wing analogue.
+**A1 — THE DIHEDRAL CAP BREAKS: the dihedral law holds 0 of 4
+targets; at ord-6 targets |Hol| = 15,120; the ord census
+(exhaustive 5,040, two routes) shows the geometry sees the
+PROFILE of six defect orders, not one — S₃'s non-abelianity
+OPENS THE FAMILY (the QCD-reachability probe's first positive
+signal: the group family GROWS with the substrate).**
+**A2 — THE ONE LAW GENERALIZES: D_P = [P⁻¹, u] at 54/54 (the
+committed four-factor writing was an INVOLUTION ARTIFACT —
+splits the pointer factor only at the 4 involutions); the
+cocycle holds VERBATIM (0 deviations, 54 cells + 200 seeded
+triples); the geometry = ⟨commutators⟩ ⋊ wings (2160 = 6×360,
+the commutator subgroup NORMAL, the wing group a semidirect
+factor).**  **A3 — THE CRITERION CORRECTED: at 1,226,304
+native triangles (two routes), 0 escapes while the chart group
+centralises at only 1/6 — the necessity direction of the
+committed centralizer criterion is FALSE where triangles are
+not engineered; the computed refinement: NORMALISES, not
+centralises (5/5; teeth: two instances escape at 62,784
+each).**  A4 — GHZ vs W at identical declarations: 2160 vs
+{6, 4, 1, and NOT-A-PERMUTATION-GROUP}; a fixed-Born-shadow
+witness pair among W-states (psi-W1, psi-W4); E_P = 1 ⟺
+P-invariant at 0/54.  A5 — the survival table: FORM-level
+structures survive the wing-count change (admission pattern,
+alignment profile); numeric ones (the dihedral order, the
+forcing, the two-valued split) do not; S7 non-vacuous (5
+completions sharing ord 3 → TWO holonomy orders).  THE
+POSITIVE CONTROL WITH TEETH: the same generic code at two
+wings reproduces XBA's 42/46/46/72/78/80 and PSI's ord-1 row,
+anchored exit-1 against both receipts (w/ the honest deviation
+that ord-2 is unrealizable there — the defect lies in A₃, so
+the Klein profile is NOT anchored).  610 anchors / 28 gates
+(27 must-pass, 0 failures) / 42 mutants died, never_falsified
+EMPTY / byte-identical ×2.  10 deviations, nothing impossible.
+md5 output ad50b739 / receipt 2197c13b.  Adjudicator
+verification next.

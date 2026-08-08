@@ -1,0 +1,592 @@
+==============================================================================
+TB3 -- THE THIRD BASE: THREE WINGS
+pin 6b02203 (d4ce010372b8) | base d7fdcfb | schema tb3-third-base-receipt-v1
+==============================================================================
+
+VERDICT: TB3-BASE-ESTABLISHED
+   a1_verdict         TB3-A1-CONFIRMED
+   a2_axis_verdict    TB3-A2-CONFIRMED
+   a3_verdict         TB3-A3-CONFIRMED
+   a4_verdict         TB3-A4-CONFIRMED-AT-FIXED-BORN-SHADOW
+   a5_verdict         TB3-A5-CONFIRMED
+   one law:           TB3-ONE-LAW-GENERALIZES-<D_P = F3_group_commutator_Pinv_u reproduces the measured defect at 54 of 54 cells; the committed four-factor product P u^-1 P u at 36, and only at the 4 involutions>
+
+SCOPE: at the declared finite three-wing base; at the declared preparation
+family; at the declared completion form and its rule-selected Q; at the
+declared setting family and its transport subset; per coordinate
+
+------------------------------------------------------------------------------
+1.  THE BASE AS DATA
+------------------------------------------------------------------------------
+carrier 64 = (system 2)^3 x (pointer 2)^3;  j0 = 0;  frames 6 (the leg-orders)
+legs per frame 4; checkpoints 5; division events (0,4); path bound 10
+wing symmetry group: order 6, abelian False, element orders (1,2,3), conjugation law 54/54
+settings 27; stabiliser-size census {1:6,2:18,6:3} (fully symmetric (TB-000,TB-111,TB-222))
+relabelling scope 384, closed True; admitted after the j0 filter 6 (= S_3, abelian False)
+
+THE PREPARATION FAMILY (9 members), completions pinned and printed below
+member   class    3-tangle   stab   b-stab  role
+psi-G1   GHZ      576/625    6      6       GHZ-type, the declared reference p
+psi-G2   GHZ      576/625    6      6       GHZ-type, the same support with th
+psi-G3   GHZ      576/625    6      6       psi-G1 with the sign flipped at a 
+psi-W1   W        0          2      2       W-type, one excitation, weights (A
+psi-W2   W        0          2      2       W-type, weights (A,B,C) = (2/3, 1/
+psi-W3   W        0          1      1       W-type, weights (A,B,C) = (6/7, 2/
+psi-W4   W        0          1      2       psi-W1 with the sign flipped at ON
+psi-P    PRODUCT  0          2      2       a fully product state, non-symmetr
+psi-B    BISEP    0          2      2       a biseparable state: wing A produc
+declared completion transposition Q = (0,3,2,1,4,5,6,7)
+  selection rule: Q = the lexicographically first transposition (i,j) of the
+  system triple labels with 1 <= i < j < 8 -- label 0 fixed, so V e_0 = psi
+  -- whose completion V = H(psi).Q has a Born shadow invariant under NO
+  non-identity wing symmetry
+pairs sharing a Born shadow: ((psi-G1,psi-G3),(psi-W1,psi-W4))
+
+THE COMPLETIONS, PINNED AND PRINTED (V = H(psi).Q, 8 x 8, exact rationals)
+  psi-G1:
+        3/5        0        0        0        0        0        0      4/5
+          0        0        0        1        0        0        0        0
+          0        0        1        0        0        0        0        0
+          0        1        0        0        0        0        0        0
+          0        0        0        0        1        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+        4/5        0        0        0        0        0        0     -3/5
+  psi-G2:
+        4/5        0        0        0        0        0        0      3/5
+          0        0        0        1        0        0        0        0
+          0        0        1        0        0        0        0        0
+          0        1        0        0        0        0        0        0
+          0        0        0        0        1        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+        3/5        0        0        0        0        0        0     -4/5
+  psi-G3:
+        3/5        0        0        0        0        0        0     -4/5
+          0        0        0        1        0        0        0        0
+          0        0        1        0        0        0        0        0
+          0        1        0        0        0        0        0        0
+          0        0        0        0        1        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+       -4/5        0        0        0        0        0        0     -3/5
+  psi-W1:
+          0        0      2/3      2/3      1/3        0        0        0
+        2/3        0     -4/9      5/9     -2/9        0        0        0
+        2/3        0      5/9     -4/9     -2/9        0        0        0
+          0        1        0        0        0        0        0        0
+        1/3        0     -2/9     -2/9      8/9        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+  psi-W2:
+          0        0      1/3      2/3      2/3        0        0        0
+        2/3        0     -2/9      5/9     -4/9        0        0        0
+        1/3        0      8/9     -2/9     -2/9        0        0        0
+          0        1        0        0        0        0        0        0
+        2/3        0     -2/9     -4/9      5/9        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+  psi-W3:
+          0        0      2/7      3/7      6/7        0        0        0
+        3/7        0    -6/49    40/49   -18/49        0        0        0
+        2/7        0    45/49    -6/49   -12/49        0        0        0
+          0        1        0        0        0        0        0        0
+        6/7        0   -12/49   -18/49    13/49        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+  psi-W4:
+          0        0      2/3     -2/3      1/3        0        0        0
+       -2/3        0      4/9      5/9      2/9        0        0        0
+        2/3        0      5/9      4/9     -2/9        0        0        0
+          0        1        0        0        0        0        0        0
+        1/3        0     -2/9      2/9      8/9        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+  psi-P:
+        3/5        0        0        0      4/5        0        0        0
+          0        0        0        1        0        0        0        0
+          0        0        1        0        0        0        0        0
+          0        1        0        0        0        0        0        0
+        4/5        0        0        0     -3/5        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+  psi-B:
+        3/5      4/5        0        0        0        0        0        0
+          0        0        0        1        0        0        0        0
+          0        0        1        0        0        0        0        0
+        4/5     -3/5        0        0        0        0        0        0
+          0        0        0        0        1        0        0        0
+          0        0        0        0        0        1        0        0
+          0        0        0        0        0        0        1        0
+          0        0        0        0        0        0        0        1
+
+------------------------------------------------------------------------------
+2.  A1 -- THE ORD-SWEEP
+------------------------------------------------------------------------------
+completion census 5040 (forced 5040), P* = ACB, two routes agree True
+ord distribution at P*: {1:48,2:384,3:1728,4:1152,5:1152,6:576};  maximum the carrier admits: 6
+target ord profile over S3    |Hol|     commutator wings+comm 2.ord?   links
+1      (1)                    1         1         6         False    99
+2      (1,2,3,4)              1008      168       1008      False    150
+3      (1,3)                  72        12        72        False    111
+6      (1,6)                  15120     2520      15120     False    111
+the dihedral prediction |Hol| = 2.ord holds at 0 of 4 targets
+
+------------------------------------------------------------------------------
+3.  A2 -- THE ONE LAW AT S_3
+------------------------------------------------------------------------------
+cells 54 (forced 54);  form hits:
+   F1_four_factor_P_u_P_u           reproduces the measured defect at   36 / 54 cells (36 / 36 at the involutions)
+                                    splits off the pointer identity at   36 cells
+   F2_group_commutator_P_u          reproduces the measured defect at   36 / 54 cells (36 / 36 at the involutions)
+                                    splits off the pointer identity at   54 cells
+   F3_group_commutator_Pinv_u       reproduces the measured defect at   54 / 54 cells (36 / 36 at the involutions)
+                                    splits off the pointer identity at   54 cells
+cocycle deviations 0 / 54;  factorisation deviations 0
+the geometry is generated by the commutators alone: False;  by commutators and wing symmetries: True
+commutator subgroup order 360, normal under the wing symmetries True, level-1 holonomy 2160
+randomised sweep: 200 triples, 200 orthogonal, 0 deviations, 166 with the mirror order differing
+
+------------------------------------------------------------------------------
+4.  A3 -- THE NATIVE TRIANGLE CENSUS
+------------------------------------------------------------------------------
+instance                               charts |Hol|   triangles  escapes  cent   norm  
+the declared base at a fully symmetric 36     2160    1226304    0        1      6     
+the equivariant-completion control     6      1       600        0        6      6     
+a partially symmetric setting          36     6       343296     62784    1      2     
+an asymmetric setting                  36     1       216720     0        6      6     
+a W-class preparation at a fully symme 36     6       343296     62784    1      2     
+the committed centralizer criterion agrees with the measured closure at 4 of 5 instances
+the computed NORMALISER refinement agrees at 5 of 5
+
+------------------------------------------------------------------------------
+5.  A4 -- THE psi-FAMILY
+------------------------------------------------------------------------------
+member   class    stab  links  rank   |Hol|    readable  E = 1 at
+psi-G1   GHZ      6     150    121    2160     121/121   (ABC,ACB,BAC,BCA,CAB,CBA)
+psi-G2   GHZ      6     150    121    2160     121/121   (ABC,ACB,BAC,BCA,CAB,CBA)
+psi-G3   GHZ      6     150    121    2160     121/121   (ABC,ACB,BAC,BCA,CAB,CBA)
+psi-W1   W        2     90     61     6        61/61     (ABC,ACB)
+psi-W2   W        2     90     61     4        61/61     (ABC,CBA)
+psi-W3   W        1     75     46     1        46/46     (ABC)
+psi-W4   W        1     90     61     None     47/61     (ABC)
+psi-P    PRODUCT  2     83     54     2        54/54     (ABC,ACB)
+psi-B    BISEP    2     90     61     6        61/61     (ABC,ACB)
+E-law deviations 0 over 54 cells (E_P = 1 if and only if psi is P-invariant, both directions)
+pair census 36 (forced 36); fixed-Born-shadow witness pairs: ((psi-W1,psi-W4))
+GHZ holonomy orders (2160,2160,2160) vs W holonomy orders (6,4,1,None); distinguished True
+
+------------------------------------------------------------------------------
+6.  A5 -- THE GRAPH BROKEN ON PURPOSE
+------------------------------------------------------------------------------
+two wings (nodes, links, cycle rank) = (8,13,6)   three wings = (30,150,121)
+id   candidate                                                        survived
+S1   the raw graph triple (nodes, links, cycle rank) is the same      False
+S2   nodes = (leg-orders) x (legs + 1), links = leg links + identific True
+     ation links, cycle rank = Euler's
+S3   wherever either rule draws at all, the full-leg rule draws the I True
+     DENTITY and the realized rule draws a NON-IDENTITY wing symmetry
+S4   the full-leg rule is aligned at the first and last checkpoints a True
+     nd DIVERGENT strictly in between
+S5   the level-1 holonomy group order equals 2 . ord([P,u]) at the de False
+     clared symmetry
+S6   the level-1 holonomy group order equals |wing symmetry group| .  False
+     ord([P,u]) at the declared symmetry
+S7   the level-1 holonomy group order is a function of ord([P,u]) at  False
+     the declared symmetry ALONE
+S8   the identification links split into exactly TWO kinds by the per False
+     mutation they carry (identity-type and exchange-type)
+survived: (S2,S3,S4);  did not: (S1,S5,S6,S7,S8)
+switching group at the reference setting: 2^150 = 1427247692705959881058285969449495136382746624; node gauge group 2^30
+S7 sample: 5 completions sharing ord = 3 at P*; distinct holonomy orders (2160,72)
+settings censused 27 of 27; alignment profile {0:True,1:True,2:False,3:False,4:True}
+
+------------------------------------------------------------------------------
+7.  THE CONTROLS
+------------------------------------------------------------------------------
+POSITIVE -- the same machinery at TWO wings, carrier 16:
+ordD  Q            nodes  links  rank   walks   |Hol|   class counts
+1     (0,1,2,3)    8      11     4      52      1       (52)
+      the law (read out of PSI's receipt) predicts 1; met True
+3     (0,1,3,2)    8      13     6      364     6       (42,46,46,72,78,80)
+      the law (read out of PSI's receipt) predicts 6; met True
+  at two wings the system pair has four labels, the wing exchange is a
+  transposition of them, and the defect is its commutator with a label
+  permutation fixing label 0 -- so the defect lies in the alternating group
+  on the three moved labels, whose element orders are 1 and 3. Order 2 is
+  not reachable at this species and no order-2 anchor is claimed
+committed values read from the receipts: {PSI:{1:{based_closed_loops:52,identification_links:5,links:11,measured_group_order:1},3:{based_closed_loops:364,identification_links:7,links:13,measured_group_order:6}},XBA:{class_count_profiles_by_defect_order:{1:(172,192),2:(82,86,90,106),3:(42,46,46,72,78,80)},closed_walks_all_base_points:2820,closed_walks_at_the_base_point:364,cycle_rank:6,group_orders_by_defect_order:{1:2,2:4,3:6},identification_links:7,links:13,nodes:8,reduced_walks_all_base_points:16168}}
+NEGATIVE -- reference |Hol| = 2160; controls that moved it 3 of 3; measured flat 2
+
+------------------------------------------------------------------------------
+8.  GATES
+------------------------------------------------------------------------------
+[PASS] TB3-FREEZE                     
+    THE DECLARATIONS ARE FROZEN BEFORE ANY TRANSPORT DATUM IS EVALUATED. Every
+    law, occupied set, admission table, graph, holonomy and defect in this
+    instrument is computed through a counter that refuses to run before this
+    point; the counter is measured HERE and must read zero. The `freeze-lax`
+    mutant evaluates one law datum first and dies here. What this gate records
+    is the ordering WITHIN ONE EXECUTION; it is not, and is not offered as,
+    proof that the declarations were fixed before any fixture truth was seen,
+    which no in-run measurement can establish
+    value: {transport_data_evaluated_before_the_freeze:0}
+
+[PASS] TB3-CARRIER                    
+    THE CARRIER IS THREE WINGS OF SYSTEM DIMENSION 2 AND POINTER DIMENSION 2,
+    and the index map is a measured bijection from (system triple, pointer
+    triple) onto the carrier. Every size is computed by enumeration and none
+    is typed
+    value: {carrier:64,configurations_enumerated:64,index_is_a_bijection:True,initial_configuration:0,pointer_dimension_per_wing:2,pointer_triple_dimension:8,system_dimension_per_wing:2,system_triple_dimension:8,wings:3}
+
+[PASS] TB3-S3                         
+    THE WING SYMMETRY GROUP IS S_3, NON-ABELIAN BY CONSTRUCTION, AND IT ACTS
+    ON THE CARRIER. Measured: the six wing permutations give six distinct
+    carrier permutations, closed under composition over all 36 compositions,
+    NOT abelian, with element orders {1,2,3}; each is measured to factorise as
+    (system-triple permutation) . (pointer-triple permutation), the three-wing
+    form of GEN's measured W = X_S . X_P; and the conjugation law P_pi U_w
+    P_pi^-1 = U_{pi(w)} is measured at every one of the wing x rotation cells.
+    A wholesale replacement is not what this tests: the conjugation comparator
+    is the leg on the IMAGE wing, built by the leg constructor from a
+    different argument
+    value: {P_pi_factorises_as_system_times_pointer:True,abelian:False,closed_under_composition:True,compositions_checked:36,conjugation_cells:54,conjugation_law_holds:54,distinct_element_orders:(1,2,3),element_orders:(1,2,2,2,3,3),fixed_configurations:{ABC:64,ACB:16,BAC:16,BCA:4,CAB:4,CBA:16},order:6}
+
+[PASS] TB3-LEGS                       
+    THE LOCAL LEGS ARE EXACTLY ORTHOGONAL, THE RECORD IS INJECTIVE, AND LEGS
+    ON DISTINCT WINGS COMMUTE AT EVERY DECLARED PAIR. The decomposition U_w =
+    sum_o Pi^g_o (x) Sh^o is MEASURED, not assumed, and its comparator is
+    assembled from the PINNED rotation matrices and the INDEPENDENTLY DECLARED
+    shift table -- so a perturbation of the rotation constructor or of the
+    shift map moves one side of the comparison and not the other. Injectivity
+    of the shift is what makes the pointer value at the final division event a
+    RECORD of the outcome; commuting is the fact the six-frame atlas rests on
+    value: {commuting_pairs_checked:54,commuting_pairs_holding:54,decomposition_cells:9,decomposition_reproduced_from_pinned_data:9,every_local_leg_is_orthogonal:True,rotation_anchors:12,rotations_orthogonal:{R0:True,R1:True,R2:True},the_record_shift_is_injective:True}
+
+[PASS] TB3-SETTINGS                   
+    THE SETTING FAMILY IS EVERY ASSIGNMENT OF A DECLARED ROTATION TO EACH
+    WING, AND ITS SYMMETRY TYPE IS COMPUTED, NEVER TYPED. At two wings a
+    setting is symmetric or it is not; at three wings the stabiliser in S_3
+    takes THREE values, and the census measures them: order 6 (fully
+    symmetric), order 2 (partially symmetric -- a type that does not exist at
+    two wings) and order 1. The three counts are measured to sum to the family
+    size
+    value: {asymmetric_count:6,fully_symmetric:(TB-000,TB-111,TB-222),partially_symmetric_count:18,per_setting_stabiliser_size:{TB-000:6,TB-001:2,TB-002:2,TB-010:2,TB-011:2,TB-012:1,TB-020:2,TB-021:1,TB-022:2,TB-100:2,TB-101:2,TB-102:1,TB-110:2,TB-111:6,TB-112:2,TB-120:1,TB-121:2,TB-122:2,TB-200:2,TB-201:1,TB-202:2,TB-210:1,TB-211:2,TB-212:2,TB-220:2,TB-221:2,TB-222:6},settings:27,stabiliser_size_census:{1:6,2:18,6:3}}
+
+[PASS] TB3-FRAMES                     
+    THE FRAMES ARE THE 3! = 6 LEG-ORDERS -- the native six-frame atlas. Triple
+    overlaps are not constructed here; they are what the base HAS. All six
+    frames are measured to carry the SAME leg multiset (one distinct multiset
+    over six frames), so they differ in order alone; the checkpoints, division
+    events, node count and path bound are all computed from the leg count
+    value: {checkpoints:5,distinct_leg_multisets:1,division_events:(0,4),frame_names:(ABC,ACB,BAC,BCA,CAB,CBA),frames:6,legs_per_frame:4,nodes_per_setting:30,path_length_bound:10}
+
+[PASS] TB3-FAMILY                     
+    THE PREPARATION FAMILY IS DECLARED AS DATA AND EVERY PROPERTY OF IT IS
+    COMPUTED. Only the name, the exact rational coefficients and the role are
+    declared; the norm, the ENTANGLEMENT CLASS (by Cayley's 2x2x2
+    hyperdeterminant -- non-zero exactly on the GHZ SLOCC class -- together
+    with the three single-wing ranks), the wing stabiliser, the Born-shadow
+    stabiliser and the completion's orthogonality are all measured. The pin
+    requires at least two GHZ-class, at least two W-class and at least one
+    non-symmetric member: the counts are measured here, not typed. Every
+    member is an exact rational unit vector whose completion is exactly
+    orthogonal with psi as its first column, so every member is a legitimate
+    preparation of the very same declared form
+    value: {completion_self_anchors:576,entanglement_class_census:{BISEP:1,GHZ:3,PRODUCT:1,W:4},family_size:9,members:{psi-B:{born_shadow_stabiliser_order:2,coefficients:{0:3/5,3:4/5},completion_first_column_is_psi:True,completion_is_orthogonal:True,entanglement_class:BISEP,hyperdeterminant:0,norm_squared:1,role:a biseparable state: wing A product with B,C entangled,single_wing_ranks:(1,2,2),support:2,three_tangle:0,wing_stabiliser:(ABC,ACB),wing_stabiliser_order:2},psi-G1:{born_shadow_stabiliser_order:6,coefficients:{0:3/5,7:4/5},completion_first_column_is_psi:True,completion_is_orthogonal:True,entanglement_class:GHZ,hyperdeterminant:144/625,norm_squared:1,role:GHZ-type, the declared reference preparation,single_wing_ranks:(2,2,2),support:2,three_tangle:576/625,wing_stabiliser:(ABC,ACB,BAC,BCA,CAB,CBA),wing_stabiliser_order:6},psi-G2:{born_shadow_stabiliser_order:6,coefficients:{0:4/5,7:3/5},completion_first_column_is_psi:True,completion_is_orthogonal:True,entanglement_class:GHZ,hyperdeterminant:144/625,norm_squared:1,role:GHZ-type, the same support with the weights exchanged,single_wing_ranks:(2,2,2),support:2,three_tangle:576/625,wing_stabiliser:(ABC,ACB,BAC,BCA,CAB,CBA),wing_stabiliser_or
+
+[PASS] TB3-ARENA                      
+    THE ARENA IS DECLARED AS DATA AND ITS SIZES ARE COMPUTED (RUNBOOK section
+    15). The relabelling scope is GENERATED and deduplicated from its declared
+    generators and measured CLOSED under composition over every ordered pair,
+    so it is a group and not a list. The j0 filter -- fix the initial
+    configuration and carry nothing else to it -- is measured to leave EXACTLY
+    the wing symmetry group S_3, which is measured NON-ABELIAN. That is the
+    structural break from both committed bases, whose admitted group was the
+    two-element abelian {1, W}: at three wings the atlas's own generating
+    group is non-abelian NATIVELY, with no extension declared to make it so
+    value: {admitted_after_the_j0_filter:6,arena:the declared relabelling scope and the subgroup surviving the j0 filter, over which every admission search runs,boundary:the final division event, checkpoint 4,carrier:64,checkpoints:5,compositions_checked:147456,coordinate_cells_setting_checkpoint_rule:270,declared_relabelling_scope:384,family:the 27 declared settings and the 9 declared preparations,frames:6,law:the exact Born law of the declared leg sequence, read at the node's declared read time,legs_per_frame:4,path_length_bound:10,scope_generated_from:wing permutations x system bit-flips x pointer bit-flips,scope_is_closed_under_composition:True,settings:27,state:p(0) = delta_{j0},the_admitted_group_is_abelian:False,the_admitted_group_is_the_wing_symmetry_group_S3:True,the_declared_completion_transposition:(0,3,2,1,4,5,6,7)}
+
+[PASS] TB3-EXTERNAL-PINS              
+    THE FOUR COMMITTED TERMINAL RECEIPTS THIS UNIT ANCHORS AGAINST ARE
+    HASH-PINNED BY SHA-256, and the pin is a TYPED CONSTANT of this instrument
+    gated against the hash of the bytes actually read -- so a receipt that
+    changes under this unit kills the run rather than silently re-anchoring
+    it. Every reused number below is READ from those bytes rather than typed
+    here. The `pin-hash` mutant perturbs the bytes before they are hashed and
+    dies here
+    value: {COC:{bytes:175859,file:coc_cocycle_receipt.json,matches_the_pinned_hash:True,sha256:1533ae14b3dc0f712e54abf50910e6b1d34f82f821dbdfdd1d83b153dca265c0},GEN:{bytes:227726,file:gen_generality_receipt.json,matches_the_pinned_hash:True,sha256:e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292},PSI:{bytes:396557,file:psi_curvature_receipt.json,matches_the_pinned_hash:True,sha256:7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75},XBA:{bytes:103041,file:xba_crossbase_receipt.json,matches_the_pinned_hash:True,sha256:6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053}}
+
+[PASS] TB3-A1-ORDCENSUS               
+    THE COMPLETION CENSUS IS EXHAUSTIVE AT THE DECLARED SCOPE AND IS READ BY
+    TWO GENUINELY INDEPENDENT ROUTES. Route 2 computes ord([P,u]) from the
+    LABEL formula sigma^-1 q^-1 sigma q on the eight system triple labels --
+    no matrix is built; route 1 builds the 64x64 preparation leg, forms the
+    transport commutator and reads its order off the resulting carrier
+    permutation. The census size is the one the declaration forces, computed
+    as a factorial here and compared against the enumeration; the
+    `ordcensus-half` mutant halves the enumeration and dies on that
+    comparison. The maximum order the carrier admits is MEASURED, never typed
+    value: {P_star:ACB,census_size_measured:5040,census_size_the_declaration_forces:5040,distinct_ord_profiles_over_S3:310,lex_first_Q_per_order:{1:(0,1,2,3,4,5,6,7),2:(0,1,2,3,5,4,7,6),3:(0,1,2,3,4,5,7,6),4:(0,1,3,4,5,2,7,6),5:(0,1,3,4,5,2,6,7),6:(0,1,3,2,5,4,7,6)},ord_distribution_at_P_star:{1:48,2:384,3:1728,4:1152,5:1152,6:576},orders_realised:(1,2,3,4,5,6),route_1_matrix_commutator_order:{1:1,2:2,3:3,4:4,5:5,6:6},the_maximum_order_the_carrier_admits:6,the_two_routes_agree:True}
+
+[PASS] TB3-A1                         
+    A1, THE ORD-SWEEP, AND ITS VERDICT DERIVED HERE FROM THE MEASURED COUNTS.
+    Completions are selected BY THE DECLARED RULE -- the lexicographically
+    first label permutation fixing label 0 whose defect at P* has the target
+    order -- at orders 1, 2, 3 and the measured maximum, and at each the
+    holonomy group is computed by the two independent routes and gated equal.
+    THE PRE-REGISTERED QUESTION is whether the two-wing law |Hol| =
+    2.ord([P,u]) survives the wing-count change. The verdict is CONFIRMED --
+    meaning the pre-registered probe returns a decision -- exactly when the
+    dihedral prediction is measured to FAIL at at least one target, which is
+    what 'S_3's non-abelianity opens a larger family' MEANS as a measurement;
+    it is REFUTED if the dihedral law survives every target. Both branches are
+    live and the branch taken is computed from the hit count, never typed
+    value: {declared_targets:(1,2,3,6),holonomy_orders:(1,1008,72,15120),of_targets:4,per_target:{1:{Q:(0,1,2,3,4,5,6,7),cycle_rank:70,different_cotrees:False,distinct_defect_orders:(1),holonomy_order:1,links:99,ord_profile_over_S3:{ABC:1,ACB:1,BAC:1,BCA:1,CAB:1,CBA:1},route_B_order:1,routes_agree:True,the_commutator_subgroup_order:1,the_dihedral_prediction_holds:False,the_geometry_equals_commutators_and_wings:False,the_group_generated_by_both:6,the_wing_symmetry_group_order:6,twice_the_commutator_order_would_be:2},2:{Q:(0,1,2,3,5,4,7,6),cycle_rank:121,different_cotrees:True,distinct_defect_orders:(1,2,3,4),holonomy_order:1008,links:150,ord_profile_over_S3:{ABC:1,ACB:2,BAC:2,BCA:4,CAB:4,CBA:3},route_B_order:1008,routes_agree:True,the_commutator_subgroup_order:168,the_dihedral_prediction_holds:False,the_geometry_equals_commutators_and_wings:True,the_group_generated_by_both:1008,the_wing_symmetry_group_order:6,twice_the_commutator_order_would_be:4},3:{Q:(0,1,2,3,4,5,7,6),cycle_rank:82,different_cotrees:True,distinct_defect_orders:(1,3),holonomy_order:72,links:111,ord_profile_over_S3:{ABC:1,ACB:3,BAC:1,BCA:3,CAB:3,CBA:3},route_B_order:72,routes_agree:True,the_commutator_subgroup_order:12,the_dih
+
+[PASS] TB3-A2                         
+    A2, THE ONE LAW AT S_3, WITH ITS VERDICT AND ITS QUALIFIER DERIVED HERE
+    FROM THE MEASURED COUNTS. Three candidate forms are evaluated blind
+    against the defect the CHART RULE actually produces -- read off the
+    conjugated leg matrices, so the comparator is not the formula under test
+    -- at every (member, wing symmetry) cell. The cell count is the one the
+    declaration forces. HOLDS-VERBATIM requires the committed four-factor
+    product to reproduce the measured defect at EVERY cell; GENERALIZES
+    requires some other form to do so while the committed one does not, and
+    the qualifier then CARRIES THE MEASURED COUNTS; FAILS requires no form to
+    work and names a witness cell. The cocycle identity delta_P(XY) =
+    delta_P(Y) . Y^-1 delta_P(X) Y is measured at every cell, and the
+    instantiation at the declared factorisation V = H(psi).Q is measured to
+    reproduce the measured defect. The verdict is re-derived inside this gate
+    from the recorded table by a second evaluation and gated against the
+    emitted one
+    value: {cells_measured:54,cells_the_declaration_forces:54,cells_where_each_form_splits_off_the_pointer_identity:{F1_four_factor_P_u_P_u:36,F2_group_commutator_P_u:54,F3_group_commutator_Pinv_u:54},cocycle_cells:54,cocycle_deviations:0,factorisation_deviations:0,form_construction_cells:162,form_hits:{F1_four_factor_P_u_P_u:36,F2_group_commutator_P_u:36,F3_group_commutator_Pinv_u:54},form_hits_at_the_involutions_only:{F1_four_factor_P_u_P_u:36,F2_group_commutator_P_u:36,F3_group_commutator_Pinv_u:36},forms_holding_at_every_cell:(F3_group_commutator_Pinv_u),forms_holding_at_every_involution_cell:(F1_four_factor_P_u_P_u,F2_group_commutator_P_u,F3_group_commutator_Pinv_u),forms_matching_an_independent_construction:162,involutions_in_S3:4,per_member:{psi-B:{ABC:{E_factor_is_the_identity:True,element_order:1,forms_reproducing_the_measured_defect:(F1_four_factor_P_u_P_u,F2_group_commutator_P_u,F3_group_commutator_Pinv_u),forms_that_split_off_the_pointer_identity:(F1_four_factor_P_u_P_u,F2_group_commutator_P_u,F3_group_commutator_Pinv_u),the_measured_defect_is_a_permutation:True,the_measured_defect_order:1},ACB:{E_factor_is_the_identity:True,element_order:2,forms_reproducing_the_measured_defect:(F
+
+[PASS] TB3-A2-COCYCLE-SWEEP           (disclosure)
+    THE COCYCLE IDENTITY IS FORCED BY ALGEBRA FOR ANY INVERTIBLE P AND ANY
+    INVERTIBLE X, Y -- one line -- and is recorded as a DISCLOSURE rather than
+    advertised as a discovery. What is NOT forced is the ORDER, and that is
+    measured: the mirror-ordered expansion computes delta(YX). The sweep is
+    not vacuous in either direction, and the generator is seeded by the
+    SHA-256 of the declared data alone, so two runs draw the same sequence
+    value: {deviations_from_the_cocycle_identity:0,draws_measured_exactly_orthogonal:200,seed_sha256_of_declared_data_alone:e2e2740a6dca4606d0788e5461638aa3b9ce33c1aebe06b1549740db0b85bbf8,triples:200,triples_where_the_mirror_order_differs:166,triples_with_a_non_trivial_delta:166}
+
+[PASS] TB3-A2-COCYCLE-NONVACUOUS      
+    THE COCYCLE SWEEP IS NON-VACUOUS IN BOTH DIRECTIONS: the mirror order is
+    measured to give a DIFFERENT answer on a measured majority of the draws,
+    and a measured majority of the draws have a non-trivial delta, so the
+    identity is not being confirmed on trivial input. The `cocycle-subsample`
+    mutant shrinks the sweep below the declared size and dies on the size
+    comparison
+    value: {deviations_from_the_cocycle_identity:0,draws_measured_exactly_orthogonal:200,seed_sha256_of_declared_data_alone:e2e2740a6dca4606d0788e5461638aa3b9ce33c1aebe06b1549740db0b85bbf8,triples:200,triples_where_the_mirror_order_differs:166,triples_with_a_non_trivial_delta:166}
+
+[PASS] TB3-A3                         
+    A3, THE NATIVE TRIANGLE CENSUS, WITH ITS VERDICT DERIVED HERE. The atlas
+    is the orbit of the SIX committed leg-order frames under the admitted
+    group, deduplicated by chart identity; the pair table is COC's four-clause
+    predicate generalised verbatim to ordered chart pairs; and the census is
+    taken by TWO GENUINELY INDEPENDENT ROUTES -- adjacency lists walking drawn
+    edges, and a direct triple loop over every ordered triple with dictionary
+    lookups -- whose triangle and escape counts are gated equal. A3 is
+    CONFIRMED when every declared instance returns a census by both routes in
+    agreement; the SCIENTIFIC content is the criterion table, which is
+    reported as measured and is not what the verdict asserts. The
+    `tri-cell-drop` mutant drops one checkpoint from route 1 and dies on the
+    route comparison; the `a3-drop` mutant drops an instance and dies on the
+    instance count
+    value: {instances_declared:5,instances_measured:5,of_instances:5,per_instance:{a W-class preparation at a fully symmetric setting:{admissible_triangles_route_1:343296,admissible_triangles_route_2:343296,charts_in_the_atlas:36,completion:declared,defects_outside_the_level_1_group:62784,distinct_defects:4,distinct_drawn_maps:6,drawn_maps_contained_in_the_level_1_group:2,edges_per_cell:{0/FULL:1260,0/REAL:396,1/FULL:1260,1/REAL:396,2/FULL:396,2/REAL:396,3/FULL:396,3/REAL:396,4/FULL:1260,4/REAL:396},elements_centralising_the_level_1_holonomy:1,elements_normalising_the_level_1_holonomy:2,level_1_cycle_rank:61,level_1_holonomy_order:6,level_1_links:90,member:psi-W1,per_checkpoint:{0:{escapes:19008,triangles:99072},1:{escapes:19008,triangles:99072},2:{escapes:2880,triangles:23040},3:{escapes:2880,triangles:23040},4:{escapes:19008,triangles:99072}},seeds:6,setting:TB-000,setting_stabiliser_order:6,the_cocycle_closes:False,the_group_centralises:False,the_group_normalises:False,the_two_census_routes_agree:True,the_two_group_routes_agree:True},a partially symmetric setting:{admissible_triangles_route_1:343296,admissible_triangles_route_2:343296,charts_in_the_atlas:36,completion:declared,defects_outs
+
+[PASS] TB3-A3-CRITERION               
+    THE CENTRALIZER CRITERION, RE-TESTED WHERE THE TRIANGLES ARE NOT
+    ENGINEERED. COC gated the criterion at two atlases it built; this unit
+    measures it at five instances of a base that was not designed around it,
+    and reports BOTH the committed biconditional and a computed refinement --
+    normalises in place of centralises -- with their agreement counts against
+    the measured closure. The census has TEETH in both directions: it is
+    measured to find escapes at some instances and none at others, so a zero
+    escape count is a measurement and not a property of the instrument. This
+    gate requires the census to be non-degenerate -- at least one instance
+    closing and at least one escaping -- and requires the two criteria's
+    agreement counts to be computed from the same rows
+    value: {instances_declared:5,instances_measured:5,of_instances:5,per_instance:{a W-class preparation at a fully symmetric setting:{admissible_triangles_route_1:343296,admissible_triangles_route_2:343296,charts_in_the_atlas:36,completion:declared,defects_outside_the_level_1_group:62784,distinct_defects:4,distinct_drawn_maps:6,drawn_maps_contained_in_the_level_1_group:2,edges_per_cell:{0/FULL:1260,0/REAL:396,1/FULL:1260,1/REAL:396,2/FULL:396,2/REAL:396,3/FULL:396,3/REAL:396,4/FULL:1260,4/REAL:396},elements_centralising_the_level_1_holonomy:1,elements_normalising_the_level_1_holonomy:2,level_1_cycle_rank:61,level_1_holonomy_order:6,level_1_links:90,member:psi-W1,per_checkpoint:{0:{escapes:19008,triangles:99072},1:{escapes:19008,triangles:99072},2:{escapes:2880,triangles:23040},3:{escapes:2880,triangles:23040},4:{escapes:19008,triangles:99072}},seeds:6,setting:TB-000,setting_stabiliser_order:6,the_cocycle_closes:False,the_group_centralises:False,the_group_normalises:False,the_two_census_routes_agree:True,the_two_group_routes_agree:True},a partially symmetric setting:{admissible_triangles_route_1:343296,admissible_triangles_route_2:343296,charts_in_the_atlas:36,completion:declared,defects_outs
+
+[PASS] TB3-A4                         
+    A4, THE psi-FAMILY, WITH ITS VERDICT AND ITS COMPUTED QUALIFIER DERIVED
+    HERE. The state factor E_P(psi) = delta_P(H(psi)) is computed per wing
+    symmetry at every member, and the characterisation -- E_P is the identity
+    IF AND ONLY IF psi is invariant under that wing symmetry -- is measured in
+    BOTH directions at every (member, symmetry) cell, with the cell count the
+    declaration forces. The unordered-pair census is exhaustive at the
+    declared family size, computed as a binomial here and compared against the
+    enumeration. The qualifier `-AT-FIXED-BORN-SHADOW` is NOT a literal: it is
+    appended exactly when the census measures a pair that shares a Born
+    shadow, agrees cell for cell on its admission table, and still carries a
+    common NAMED loop whose gauge-invariant Born holonomy differs -- three
+    measured conditions, all required
+    value: {E_cells:54,E_law_deviations:0,fixed_born_shadow_witness_pairs:((psi-W1,psi-W4)),pair_census_size_measured:36,pair_census_size_the_declaration_forces:36,per_member:{psi-B:{E_factors_per_wing_symmetry:{ABC:{is_a_signed_permutation:True,is_orthogonal:True,is_the_identity:True,order:1},ACB:{is_a_signed_permutation:True,is_orthogonal:True,is_the_identity:True,order:1},BAC:{is_a_signed_permutation:False,is_orthogonal:True,is_the_identity:False,order:None},BCA:{is_a_signed_permutation:False,is_orthogonal:True,is_the_identity:False,order:None},CAB:{is_a_signed_permutation:False,is_orthogonal:True,is_the_identity:False,order:None},CBA:{is_a_signed_permutation:False,is_orthogonal:True,is_the_identity:False,order:None}},admission_draws:{0/FULL:30,0/REAL:6,1/FULL:30,1/REAL:6,2/FULL:6,2/REAL:6,3/FULL:6,3/REAL:6,4/FULL:30,4/REAL:6},born_shadow_stabiliser_order:2,cycle_rank:61,entanglement_class:BISEP,generators_are_permutations:True,holonomy_order:6,identification_links_drawn:66,links:90,of_generators:61,readable_generators:61,role:a biseparable state: wing A product with B,C entangled,wing_stabiliser_order:2,wing_symmetries_where_E_is_the_identity:(ABC,ACB)},psi-G1:{E_factors_per_wing_symmetry
+
+[PASS] TB3-A5                         
+    A5, THE GRAPH BROKEN ON PURPOSE, WITH ITS VERDICT DERIVED HERE. Eight
+    survival candidates are DECLARED above, in the source, before any
+    three-wing graph quantity is compared against them, and each is measured
+    separately. The pin's own statement -- that the committed 8 / 13 / 6
+    CANNOT transfer -- is candidate S1, and A5 is CONFIRMED exactly when S1 is
+    measured FALSE while the whole declared setting family is censused; if the
+    raw triple survived the wing-count change the axis would be REFUTED and
+    the pin's premise with it. The census runs over every declared setting,
+    and the count is gated against the size the declaration forces; the
+    `a5-drop` mutant drops a setting and dies there, the `survive-lax` mutant
+    reports every candidate as surviving and dies on S1
+    value: {S7_distinct_holonomy_orders_at_a_fixed_ord:(2160,72),S7_per_completion:{(0,1,2,3,4,5,7,6):{holonomy_order:72,links:111,ord_profile:{ABC:1,ACB:3,BAC:1,BCA:3,CAB:3,CBA:3}},(0,1,2,3,4,6,7,5):{holonomy_order:72,links:150,ord_profile:{ABC:1,ACB:3,BAC:3,BCA:2,CAB:2,CBA:3}},(0,1,2,3,4,7,5,6):{holonomy_order:72,links:150,ord_profile:{ABC:1,ACB:3,BAC:3,BCA:2,CAB:2,CBA:3}},(0,1,2,3,4,7,6,5):{holonomy_order:72,links:111,ord_profile:{ABC:1,ACB:3,BAC:3,BCA:3,CAB:3,CBA:1}},(0,1,2,3,5,4,6,7):{holonomy_order:2160,links:150,ord_profile:{ABC:1,ACB:3,BAC:2,BCA:2,CAB:2,CBA:3}}},S7_sample_declared_size:5,S7_sample_size:5,S7_sample_target_order:3,alignment_profile:{0:True,1:True,2:False,3:False,4:True},candidates_declared:((S1,the raw graph triple (nodes, links, cycle rank) is the same,a pure wing-count artifact if it moves),(S2,nodes = (leg-orders) x (legs + 1), links = leg links + identification links, cycle rank = Euler's,the STRUCTURAL FORM of the graph, as opposed to its numbers),(S3,wherever either rule draws at all, the full-leg rule draws the IDENTITY and the realized rule draws a NON-IDENTITY wing symmetry,XBA's measured per-coordinate admission pattern),(S4,the full-leg rule is aligned at the
+
+[PASS] TB3-POSITIVE-CONTROL           
+    THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY, RUN AT TWO WINGS,
+    REPRODUCES THE COMMITTED TWO-WING TRANSPORT STRUCTURE ON A CARRIER NEITHER
+    COMMITTED UNIT USED -- qubit systems and two-state pointers, 16
+    configurations against base 1's 36 and base G's 81. The completion family
+    is swept by RULE and the defect orders it realises are MEASURED. Anchored
+    exit-1 against the hash-pinned XBA receipt: 8 nodes, 13 links, cycle rank
+    6, 7 identification links, the based closed reduced walk count, the
+    all-base-point closed and reduced walk counts, the class-count profile and
+    the group order at the realised defect order. Anchored exit-1 against the
+    hash-pinned PSI receipt at BOTH realised orders, including the order-1
+    case in which the identifications are REFUSED and the graph loses two
+    links -- a row the fixed-graph census cannot express and which therefore
+    could only come from a transport-native instrument. The walk census is
+    taken by TWO independent routes, an enumerator that builds every walk and
+    a transfer recursion that counts without building one, and both are
+    anchored. This is the control that gives the three-wing measurement its
+    teeth: the code under test is the code that reproduces the committed base
+    value: {carrier_at_two_wings:16,completions_reproducing_the_committed_link_count:(3),defect_orders_the_two_wing_species_realises:(1,3),per_defect_order:{1:{Q:(0,1,2,3),based_closed_reduced_walks:52,based_closed_reduced_walks_route_2:52,class_counts:(52),closed_walks_all_base_points:856,cycle_rank:4,distinct_holonomies_over_the_walks:1,holonomy_group_order:1,identification_links:5,links:11,nodes:8,ord_of_the_defect:1,reduced_walks_all_base_points:4942,the_identifications_are_drawn:False,the_law_predicts_a_group_of_order:1,the_prediction_is_met:True,the_two_walk_routes_agree:True,twice_the_defect_order:2},3:{Q:(0,1,3,2),based_closed_reduced_walks:364,based_closed_reduced_walks_route_2:364,class_counts:(42,46,46,72,78,80),closed_walks_all_base_points:2820,cycle_rank:6,distinct_holonomies_over_the_walks:6,holonomy_group_order:6,identification_links:7,links:13,nodes:8,ord_of_the_defect:3,reduced_walks_all_base_points:16168,the_identifications_are_drawn:True,the_law_predicts_a_group_of_order:6,the_prediction_is_met:True,the_two_walk_routes_agree:True,twice_the_defect_order:6}},the_anchor_row_defect_order:3,the_committed_values_read_from_the_receipts:{PSI:{1:{based_closed_loops:52,identification
+
+[PASS] TB3-NEGATIVE-CONTROL           
+    THE NEGATIVE CONTROLS HAVE TEETH. An EQUIVARIANT completion must make
+    every wing symmetry intertwine the preparation leg and collapse the
+    geometry to a point; a DIFFERENT declared transposition must move the
+    holonomy order; an ASYMMETRIC setting must remove the wing symmetries from
+    the admitted maps and flatten the transport. All three are measured to
+    move the geometry away from the reference, and at least one is measured
+    exactly flat. The `negcontrol-lax` mutant replaces every control
+    completion by the declared one -- so the controls stop being controls --
+    and dies here
+    value: {controls:3,controls_measured_flat:2,controls_that_moved_the_geometry:3,per_control:{a different declared transposition:{Q:(0,2,1,3,4,5,6,7),cycle_rank:82,holonomy_order:18,identification_links:87,links:111,ord_profile:{ABC:1,ACB:1,BAC:3,BCA:3,CAB:3,CBA:3},setting:TB-000},an asymmetric setting:{Q:(0,3,2,1,4,5,6,7),cycle_rank:46,holonomy_order:1,identification_links:51,links:75,ord_profile:{ABC:1,ACB:3,BAC:3,BCA:2,CAB:2,CBA:2},setting:TB-012},equivariant completion:{Q:(0,1,2,3,4,5,6,7),cycle_rank:70,holonomy_order:1,identification_links:75,links:99,ord_profile:{ABC:1,ACB:1,BAC:1,BCA:1,CAB:1,CBA:1},setting:TB-000}},reference_holonomy_order:2160}
+
+[PASS] TB3-SWITCHING-SELFTEST         
+    THE SYMMETRY SELF-TEST (RUNBOOK section 14). The declared switching action
+    is applied to the instrument's own holonomy readings and the quantity's
+    invariance under the symmetry's own action is MEASURED: the Born-shadow
+    reading is invariant at every (switching, generator) cell and the
+    permutation part is invariant as a permutation, while the sign the
+    switching carries is measured to move on a non-zero number of cells, so
+    the sweep is not vacuous. TWO FURTHER CLAUSES, both with an INDEPENDENT
+    COMPARATOR: every generator is REBUILT from its own directed link path by
+    the walk-holonomy routine -- which shares no code with the spanning-tree
+    construction that produced it -- and gated equal; and with every link
+    switched, the rebuilt holonomy is gated equal to the unswitched one times
+    the parity read independently off the path length, with the count of
+    negative-parity cells gated non-zero so the sign path is measured to be
+    exercised. The self-test evaluates FRESH: the cache is primed with the
+    very keys it requests, the priming phase's own re-read is counted, the
+    fresh-mode hit count is gated at zero, and the count of fresh requests for
+    a key already in the cache is gated NON-ZERO -- zero hits of zero lookups
+    would be vacuous
+    value: {born_shadow_readings_that_moved:0,cache_entries_primed:8,cache_reads_that_returned_a_stored_value:8,fresh_requests_for_a_key_already_in_the_cache:8,generator_readings_tested:18150,generators:121,generators_rebuilt_from_their_own_directed_path:121,generators_whose_sign_the_switching_flips:366,links:150,permutation_parts_that_moved:0,rebuilds_matching_the_spanning_tree_construction:121,sign_cells:121,sign_cells_matching_the_independent_parity:121,sign_cells_whose_expected_parity_is_negative:84,switchings_swept:150,value_cache_hits_in_fresh_mode:0,value_cache_lookups:16}
+
+[PASS] TB3-CLAUSE-CENSUS              
+    WHICH CLAUSES DECIDE ANYTHING AT THIS BASE, MEASURED. Each clause of the
+    committed four-clause predicate is dropped in turn and the admission table
+    recomputed; the cells whose drawn table moves are counted. The gate
+    requires at least one clause to be measured load-bearing -- a predicate
+    none of whose clauses does anything decides nothing -- and it is stated as
+    a measurement because the answer at THIS base is that only ONE of the four
+    moves the table: the others' content is implied by it here, which is a
+    fact about this base and not a defect of the predicate. The mutant that
+    drops a clause is targeted at the clause measured load-bearing, so the
+    falsifier is one that can fire
+    value: {clauses:{1:the j0 filter,2:the leg list matched order-free as a multiset of canonical Born leg keys,3:the occupied-set clause,4:the exact-law clause},clauses_measured_inert:(1,3,4),load_bearing_clauses:(2),per_clause:{1:{cells_whose_drawn_table_changes:0,links_drawn_with_it:252,links_drawn_without_it:252},2:{cells_whose_drawn_table_changes:10,links_drawn_with_it:252,links_drawn_without_it:0},3:{cells_whose_drawn_table_changes:0,links_drawn_with_it:252,links_drawn_without_it:252},4:{cells_whose_drawn_table_changes:0,links_drawn_with_it:252,links_drawn_without_it:252}}}
+
+[PASS] TB3-CELLS                      
+    CELL COMPLETENESS. Every census size in this unit is COMPUTED from the
+    declaration -- a product, a factorial or a binomial evaluated here -- and
+    gated against the size the corresponding table actually reports. A census
+    that silently drops a cell, a target, an instance, a pair or an anchor
+    moves one side of a comparison and not the other, and dies here. Nine
+    independent cell counts are gated, each against its own denominator
+    value: {forced:{a1_targets:4,a3_instances:5,completion_self_anchors:576,member_symmetry_cells:54,ord_census_size:5040,setting_checkpoint_rule_cells:270,survival_candidates:8,unordered_member_pairs:36,wing_conjugation_cells:54},measured:{a1_targets:4,a3_instances:5,completion_self_anchors:576,member_symmetry_cells:54,ord_census_size:5040,setting_checkpoint_rule_cells:270,survival_candidates:8,unordered_member_pairs:36,wing_conjugation_cells:54},mismatching:()}
+
+[PASS] TB3-VERDICT                    
+    THE UNIT VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS AND
+    GATED AGAINST THE STRING THAT WAS EMITTED (RUNBOOK section 13 addendum,
+    #234). THE RULE, pre-registered: TB3-BASE-ESTABLISHED if the base runs and
+    ALL FIVE AXES return verdicts; otherwise TB3-BLOCKED-AT-<object> naming
+    the first axis that did not. The re-derivation counts the AXIS TABLES
+    actually recorded in the receipt, which is a different quantity from the
+    axis verdict strings the emitter counts, so a perturbation of either side
+    moves one and not the other. Every axis verdict is additionally checked to
+    lie in the pre-registered vocabulary. The `verdict-order` mutant swaps the
+    branch order, `verdict-lax` emits an out-of-vocabulary string and
+    `verdict-nowitness` empties the emitter's input while the recorded tables
+    keep their measurements -- all three die here
+    value: {axis_tables_recorded:(a1_ord_sweep,a2_one_law,a3_triangles,a4_psi_family,a5_graph),axis_verdicts:{a1_verdict:TB3-A1-CONFIRMED,a2_axis_verdict:TB3-A2-CONFIRMED,a3_verdict:TB3-A3-CONFIRMED,a4_verdict:TB3-A4-CONFIRMED-AT-FIXED-BORN-SHADOW,a5_verdict:TB3-A5-CONFIRMED},axis_vocabulary_ok:True,emitted:TB3-BASE-ESTABLISHED,in_vocabulary:True,re_derived:TB3-BASE-ESTABLISHED}
+
+[PASS] TB3-DECLARATION-ORDER          
+    EVERY DECLARATION GATE SITS STRICTLY BEFORE THE FIRST TRANSPORT GATE IN
+    THE RECEIPT'S OWN GATE ORDER, AND THE FREEZE IS THE FIRST GATE OF ALL. The
+    `order-lax` mutant emits a transport measurement before the declarations
+    and dies here
+    value: {first_gate:TB3-FREEZE,first_transport_gate_index:9,gate_order:(TB3-FREEZE,TB3-CARRIER,TB3-S3,TB3-LEGS,TB3-SETTINGS,TB3-FRAMES,TB3-FAMILY,TB3-ARENA,TB3-EXTERNAL-PINS,TB3-A1-ORDCENSUS,TB3-A1,TB3-A2,TB3-A2-COCYCLE-SWEEP,TB3-A2-COCYCLE-NONVACUOUS,TB3-A3,TB3-A3-CRITERION,TB3-A4,TB3-A5,TB3-POSITIVE-CONTROL,TB3-NEGATIVE-CONTROL,TB3-SWITCHING-SELFTEST,TB3-CLAUSE-CENSUS,TB3-CELLS,TB3-VERDICT),last_declaration_gate_index:8}
+
+[PASS] TB3-NO-MUTANT-EXEMPTION        
+    NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 addendum,
+    #208). An AST sweep of this source looks for every negated comparison
+    against the mutant flag -- `MUTANT != ...`, `MUTANT not in ...`, `MUTANT
+    is not ...` and `not (MUTANT == ...)` -- and the set is measured EMPTY.
+    Every mutation is injected in a computation, and each declared falsifier
+    must die by the gates' own predicates evaluated blind. The `exempt-lax`
+    mutant registers an exemption in this gate's own evidence list after the
+    sweep -- a WAIVER, declared as one
+    value: {by_form:{MUTANT != ...:(),MUTANT is not ...:(),MUTANT not in ...:(),not (MUTANT == ...):()},exemptions_found:()}
+
+[PASS] TB3-EXACTNESS                  
+    THE ARITHMETIC IS EXACT. An AST sweep of this instrument's own source
+    finds NO float literal anywhere; every number that enters a measurement is
+    a Python integer or a Fraction, and every matrix entry is a Fraction. The
+    `float-lax` mutant registers a float in this gate's own evidence list
+    after the sweep has run -- the source text is never edited, so it is
+    declared a WAIVER
+    value: {float_literals:(),source_lines:4154,truediv_on_ints:()}
+
+[PASS] TB3-FALSIFICATION              
+    EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.
+    Each declared mutant is run to completion, must exit 1, and must falsify
+    at least one NAMED gate or anchor; the second clause is the one that
+    matters -- the set of must-pass gates that NO mutant falsifies is measured
+    to be EMPTY. Each mutant declares its KIND and the split is counted from
+    the declaration: a WAIVER proves a gate's predicate is load-bearing for
+    the exit code, not that the gate would catch a computational defect, and
+    the two are not claimed to be the same thing. BOTH DENOMINATORS ARE
+    REPORTED because they differ, and the gates carried by a waiver alone are
+    NAMED, never averaged away. The one gate excluded from the denominator is
+    this one: the census does not run inside a mutant
+    value: {died:42,falsified_by_a_computation_mutant:24,falsified_by_some_mutant:26,falsified_only_by_a_waiver:(TB3-EXACTNESS,TB3-NO-MUTANT-EXEMPTION),must_pass_gate_denominator:26,mutants:42,never_falsified:(),perturb_a_computation:38,the_gate_excluded_from_the_denominator:TB3-FALSIFICATION,waivers:4}
+
+------------------------------------------------------------------------------
+9.  ANCHORS (exit-1 only)
+------------------------------------------------------------------------------
+610 anchors, 610 passed, 0 failed
+anchor sources: (PSI committed receipt,SELF-ANCHOR (this file, pinned completion),XBA committed receipt,this file, pinned SHA-256,this file, pinned data)
+
+------------------------------------------------------------------------------
+10. TOTALS
+------------------------------------------------------------------------------
+anchors                  610
+disclosures              1
+gates                    28
+must_pass_failures       0
+must_pass_gates          27
+==============================================================================
