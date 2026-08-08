@@ -8201,3 +8201,21 @@ died (43 computation, 1 waiver) / byte-identical ×2.  5
 order-deviations, each honest (incl. the dim-4 family swept
 only at the 120-member sub-family, scope printed).  md5 output
 fe5d4198 / receipt 53074fc8.  Adjudicator verification next.
+
+## 2026-08-08 — XBA TERMINAL (v13 LEDGER #260)
+Adjudicator verification PASSED (exit 0; output fe5d4198 /
+receipt 53074fc8; three identical runs).  TERMINAL CONFERRED:
+the re-derivation implements #249 exactly — the free-product
+derivation, the gated commutator law, the pure-function
+forcing, the third species, and the counter-instance are the
+panel's own constructions run in-delivery with the cleanest
+instrument of the programme (all waiver-only gates gone; 33/33
+computation-falsified).  The 5 order-deviations each honest
+(the dim-4 family's 120-member scope printed).  **XBA CLOSES:
+the cross-base agreement is COMPLETION-FORCED — the connection
+profile is a pure function of ord([P,u]), the commutator's
+order, with all three observed values exhibited.  Bequests:
+the gated one-law instantiation; the third species (dim-4) as
+a ready carrier; the counter-instance as the standing E5
+falsifier.**  TWO OF THREE THIRD-BASE PREREQUISITES DONE
+(COC #252, XBA #260); the third base fires on PSI's terminal.

@@ -2,7 +2,7 @@
 
 ## What Forces the Holonomy Class-Count Profile on Two Unrelated Bases
 
-**Status:** `GREEN-UNREVIEWED`
+**Status:** `TERMINAL (v13 XBA)` — panel #244–#249a, adjudicated #249 REJECT-AS-DELIVERED, re-derivation X-1..X-6 verified byte-identical and conferred terminal at v13 LOG #260.
 
 **Date:** 2026-08-08
 
