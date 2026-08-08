@@ -7821,3 +7821,33 @@ vocabulary.**  Seven-item repair order supplied (X-1..X-7);
 "the repaired result is real, reachable in one pass, and
 better than the delivered one."  R1/R3 (resumed) pending;
 adjudication after all three.
+
+## 2026-08-08 — XBA R3 (INSTRUMENT) FROZEN (v13 LEDGER #245)
+review-xba-instrument.md frozen as delivered (sha256-12
+42a6fb67d999).  Grade AWF; 114 recomputations by a
+deliberately different route (no spanning tree — the declared
+cycle basis as coordinates, walks solved over F2): **the
+science reproduces completely** — the chain incl. 192→12→6
+with all six survivors one relabelling orbit; the third
+instance driven through independent walks (45/81, 4
+holonomies, the profile element-wise); the control 172/192;
+ALL FOUR hash pins fire on one-byte semantically-null
+corruptions; **the cache refusal is REAL** (442,368 refused
+lookups; memo-lax reaches the read path; the violation
+reconstructed); all nine lex-first violators verified.  THREE
+MAJOR INSTRUMENT DEFECTS BY PROBE: (1) **the verdict is
+UNGATED** (branch strings swapped → prints XBA-PARTIAL at exit
+0, no gate fires — fails §13-addendum clause 1, the SAME
+disease #234 named at COC); (2) **the "second spanning tree"
+is one route** (coordinate-change invariant under 200
+arbitrary invertible changes; the dropped-cell probe PASSES —
+sizes2 = {} leaves subsets_identical True; only 9/12
+candidates ever compared — fails §13-addendum clause 2); (3)
+all four waiver-only must-pass gates are TAUTOLOGIES once
+earlier gates pass (incl. the positive control, definitional
+from gate 7).  Moderates: the fail-closed path claimed
+exercised and is not; the cache second-visit unmeasured
+(garbage priming moved nothing; reserved==primed an identity);
+a freeze-counter/receipt inconsistency.  PANEL COMPLETE
+PENDING R1 (resumed): R2 REJECT / R3 AWF; adjudication after
+R1 lands.
