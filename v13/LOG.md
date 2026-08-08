@@ -6967,3 +6967,32 @@ matrices: W5's own model's propagators differ 216–432
 entries/cell — consistent w/ the completion-relativity
 finding).  md5 output 1d7b28f3 / receipt f50167d9.
 Adjudicator verification next.
+
+## 2026-08-07 — NT TERMINAL (v13 LEDGER #211)
+Adjudicator verification PASSED: independent delivery-mode run
+byte-identical (output 1d7b28f3 / receipt f50167d9; three
+identical runs).  24 gates (18 must-pass, 0 failures) / 23
+anchors exit-1 / 23 mutants died w/ honest census (17
+denominator, never_falsified EMPTY).  TERMINAL CONFERRED — the
+repair implements the #208 order exactly; every correction was
+panel-computed or panel-verified content incorporated natively;
+the worker's five order-deviations each verified honest (incl.
+catching the adjudication's own §2.4→§2.3 citation slip against
+the source).  **NT CLOSES: the theory's first measured
+connection — the KLEIN FOUR-GROUP {1, W, X, WX} with W = X·WX;
+TWO curvature sources (identification multiplicity, sufficient
+not necessary; and the preparation's swap-defect = EXACTLY X);
+NON-PRINCIPAL (2 of 4 elements outside every declared and
+admitted scope — the geometry manufactures transformations);
+the path space itself arena-relative (the canonical loop absent
+at SP-C/D at the extension scope); flatness comparator-relative
+(480/1,268); the weld inherited honestly (paper 1 §2.3 + W5 M4,
+extended to four cuts; the residual's NUMBERS model-relative,
+576-vs-288, while the IDENTITY holds in every model).
+Bequests to the successors: the generality question (is the
+Klein structure a property of the theory or of this base? — THE
+decisive next test), the cocycle question (triple overlaps),
+and the two-bit charge structure w/ its origin split (one bit
+from preparation asymmetry, one from gluing ambiguity).**
+Successor: the generality-check pin, then overlaps/autonomous
+charts.  Publication route and remote push remain the user's.

@@ -2,7 +2,7 @@
 
 ## Path-Dependence of Lawful Data on the W6 Co-reference Base
 
-**Status:** `GREEN-UNREVIEWED-REPAIRED (v13 NT unit)` — delivered against the
+**Status:** `TERMINAL (v13 NT)` — panel #205–#207, adjudicated #208 ACCEPT-WITH-MAJOR-REPAIRS, repair N-1..N-7 verified byte-identical and conferred terminal at v13 LOG #211.
 frozen pin and repaired against the joint adjudication of its three-lens panel
 (v13 LOG #208).
 
