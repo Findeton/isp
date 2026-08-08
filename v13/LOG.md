@@ -7674,3 +7674,39 @@ Frozen SHAs in the freeze output with this commit.  Three-lens
 panel (Opus 5) dispatched immediately after — SIX review
 agents now concurrent (XBA's three + HA's three) plus the COC
 re-derivation and PSI construction: EIGHT agents in flight.
+
+## 2026-08-08 — PSI DELIVERED, COMMITTED AS-IS (v13 LEDGER #241)
+Delivery committed as-is.  VERDICT:
+**PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW — ψ-side curvature
+EXISTS; GEN §11.12 answered POSITIVELY.**  THE WITNESS: psi-N1
+is Born-level INDISTINGUISHABLE from GEN's pinned ψ (same |ψ|,
+same |V| entry-by-entry, same Born key of every leg, same law
+at every node, same 48-cell admission table, same loop space)
+yet **differs in holonomy on 206 of 364 based loops** —
+shortest witness length 4; sharpest: the doubled realized
+bigon is FLAT at psi-G and NON-FLAT at psi-N1; rebuilt by an
+independent route.  **THE DEPENDENCE LAW (GEN's law
+generalized with a ψ-term): D(ψ) = D_GEN·QᵀE(ψ)Q,
+E(ψ) = ΣH(ψ)ΣH(ψ); E(ψ) = I ⟺ ψ exchange-invariant (both
+directions, lists coincide exactly)** — gated entry-by-entry
+at all 11 family members; off the invariant locus D stops
+being a signed permutation; 48-member sign-flip census 26/22
+w/ 0 mismatches vs exchange-invariance.
+PATH-SPACE-DEPENDENCE ALSO OCCURS (psi-N3/N4: 8 admission
+cells move, the loop space shrinks 364→8) — reported beside,
+not folded (D10).  ONTOLOGICAL WEIGHT: the state contributes
+curvature through EXACTLY its non-Born (sign/phase-like)
+exchange structure — the third curvature source is
+PHYSICAL-STATE-SIDE; the earlier both-sources-declaration-side
+claim is now scoped to the exchange-invariant locus.
+Controls: 37 external anchors vs the hash-pinned GEN receipt
+all pass; negative controls WITH TEETH (Q-negA: the GEN law
+PREDICTS order 6 non-abelian → MEASURED 6 non-abelian —
+the law's first successful out-of-sample prediction; Q-negB
+predicts flat+refused-links → measured).  146 anchors / 21
+gates all must-pass 0 failures / 34 mutants died /
+never_falsified EMPTY at 20 / switching sweep 66,560 w/ 0
+hits + 65,544 refusals / AST clean / byte-identical ×2.  10
+deviations, nothing impossible.  md5 output bfe16589 /
+receipt 15a0952d.  Adjudicator verification next (CLI checked
+first — the #238 lesson).

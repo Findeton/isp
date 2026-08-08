@@ -1,0 +1,418 @@
+==============================================================================
+PSI -- THE psi-SIDE CURVATURE HUNT
+Does the physical state contribute geometry?
+==============================================================================
+schema        psi-curvature-receipt-v1
+pin           095c6f7 (sha c12749532eae)
+immutable base 1426984   generator sha256 49b3c980e7d8b8ad
+
+VERDICT: PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW
+         at the committed finite scope
+         at the declared preparation family
+         at the declared completion form and its pinned Q
+         per coordinate
+
+------------------------------------------------------------------------------
+1.  THE PREPARATION FAMILY, DECLARED AS DATA
+------------------------------------------------------------------------------
+member   |psi| rank supp inv   bornS  role
+psi-G    1     3    3    yes   yes    GEN's pinned preparation, carried 
+psi-I1   1     1    4    yes   yes    an exchange-invariant PRODUCT stat
+psi-I2   1     2    2    yes   yes    an exchange-invariant state on the
+psi-I3   1     3    3    yes   yes    an exchange-invariant state on a d
+psi-I4   1     2    4    yes   yes    an exchange-invariant state with f
+psi-S1   1     3    3    yes   yes    psi-G with the sign flipped at a s
+psi-S2   1     2    2    yes   yes    psi-I2 with the sign flipped at a 
+psi-N1   1     3    3    no    yes    psi-G with the sign flipped at ONE
+psi-N2   1     2    4    no    yes    an ANTI-invariant state: the same 
+psi-N3   1     2    2    no    no     an exchange-non-invariant state wh
+psi-N4   1     1    2    no    no     an exchange-non-invariant PRODUCT 
+family size 11 (computed); exchange-invariant 7; non-invariant 4
+Schmidt ranks among the invariant members: [1, 2, 3]
+every member completed with the SAME declared Q = [0, 2, 1, 3, 4, 5, 6, 7, 8]
+
+------------------------------------------------------------------------------
+2.  THE ADMISSION TABLE AND THE LOOP SPACE, PER MEMBER
+------------------------------------------------------------------------------
+member   FULL  REAL  links per setting        based loops per setting 
+psi-G    18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-I1   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-I2   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-I3   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-I4   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-S1   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-S2   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-N1   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-N2   18    8     (9,9,9,9,13,13)          (8,8,8,8,364,364)       
+psi-N3   18    0     (9,9,9,9,9,9)            (8,8,8,8,8,8)           
+psi-N4   18    0     (9,9,9,9,9,9)            (8,8,8,8,8,8)           
+
+------------------------------------------------------------------------------
+3.  THE MATCHED COMPARISON (reference psi-G)
+------------------------------------------------------------------------------
+member   adm-d  common   bornDiff permDiff flat->non
+psi-I1   0      364      0        0        0       
+psi-I2   0      364      0        0        0       
+psi-I3   0      364      0        0        0       
+psi-I4   0      364      0        0        0       
+psi-S1   0      364      0        0        0       
+psi-S2   0      364      0        0        0       
+psi-N1   0      364      206      206      2       
+psi-N2   0      364      196      196      0       
+psi-N3   8      8        0        0        0       
+psi-N4   8      8        0        0        0       
+(the row is read at GP-E; every setting is in the receipt)
+
+------------------------------------------------------------------------------
+4.  GATES
+------------------------------------------------------------------------------
+[PASS] PSI-FREEZE                   
+    THE PREPARATION FAMILY IS DECLARED AS DATA BEFORE ANY TRANSPORT QUANTITY
+    IS EVALUATED (RUNBOOK 13(4)), AND THE RECEIPT'S OWN GATE ORDER PROVES IT.
+    Base G's carrier and index map, its three declared rotations with their
+    pinned matrices, the PINNED TRANSPOSITION Q that every member of the
+    family is completed with, the eleven declared preparation vectors with
+    their exact rational coefficients, the two declared gluing rules, the six
+    declared settings, the two frames, the four checkpoints and the declared
+    relabelling scopes are all fixed above this line. The gate measures the
+    transport-datum evaluation counter to be ZERO at this point and this gate
+    to be the first gate of the run. The `freeze-lax` mutant evaluates one law
+    datum before the freeze and must die here
+    value: {declared_family_size:11,declared_rules:2,declared_settings:6,gates_recorded_so_far:0,transport_datum_evaluations_so_far:0}
+
+[PASS] PSI-BASE-PINNED              
+    BASE G IS REBUILT NATIVELY AND ANCHORED, ENTRY BY ENTRY, AGAINST THIS
+    UNIT'S OWN PINNED DECLARATION. Nothing of GEN's module is imported: the
+    three rotation matrices are reconstructed from their integer quaternions
+    by Euler-Rodrigues and anchored against the pinned matrices; the declared
+    transposition Q is anchored; and the completion V = H(psi-G) . Q is
+    anchored against the pinned 9x9 matrix. The gate additionally measures the
+    properties the species needs and the pinned data cannot supply: every
+    rotation exactly orthogonal over Q, the record shift INJECTIVE, the two
+    wings' legs COMMUTING at every declared pair, and each local leg equal,
+    entry by entry, to a sum assembled from the PINNED rotation matrices and
+    an INDEPENDENTLY DECLARED shift table -- a comparator built from data
+    independent of the constructor it audits, so a perturbation of either
+    moves one side of the comparison and not the other. The `anchor-rot`,
+    `anchor-Q`, `anchor-psi` and `anchor-record` mutants each perturb one
+    declared object and must die here
+    value: {anchors_passed:109,anchors_recorded:109,local_legs_decompose:True,orthogonality:{R0:True,R1:True,R2:True},record_shift_injective:True,wings_commute:True}
+
+[PASS] PSI-FAMILY-DECLARED          
+    THE PREPARATION FAMILY IS DECLARED AS DATA AND ITS SIZES ARE COMPUTED.
+    Every member is measured to be an exact rational UNIT vector, all eleven
+    are measured DISTINCT as coefficient vectors, and each one's completion V
+    = H(psi) . Q -- built with the SAME declared Q -- is measured to be
+    exactly orthogonal with psi as its first column, so every member is a
+    legitimate preparation of the very same declared form. The pin's own
+    composition requirements are measured rather than asserted: at least three
+    exchange-INVARIANT members BEYOND the pinned one, of DIFFERING Schmidt
+    rank, and at least three exchange-NON-invariant members. The
+    `psi-collapse` mutant replaces every member by the pinned one and dies at
+    the distinctness clause; the `schmidt-lax` mutant reports every state as a
+    product state and dies at the rank-spread clause
+    value: {distinct_coefficient_vectors:11,every_completion_is_orthogonal_with_psi_as_column_0:True,every_member_is_a_unit_vector:True,exchange_invariant:7,exchange_non_invariant:4,family_size:11,members_with_an_exchange_symmetric_born_shadow:9,schmidt_ranks_among_the_invariant_members:(1,2,3)}
+
+[PASS] PSI-ARENA                    
+    THE ARENA IS DECLARED AS DATA AND EVERY SIZE IS COMPUTED FROM THE
+    DECLARATION (RUNBOOK section 15). Boundary: the final division event.
+    Family: the six declared settings and the eleven declared preparations.
+    Law: the exact Born law at the node's declared read time. State: p(0) =
+    delta_{j0}. Arena: the declared relabelling scope, generated and
+    deduplicated, together with the two permutations of it that survive the j0
+    filter -- the identity and the wing exchange -- over which EVERY admission
+    search in this unit runs. The arena is measured IDENTICAL for every member
+    of the family, since psi is the only thing the sweep varies. The
+    `scope-lax` mutant subsamples the admitted scope and must die here
+    value: {admitted_after_the_j0_filter:2,compositions_checked:26244,declared_extension_scope:216,declared_relabelling_scope:162,the_admitted_maps:(the identity,the wing exchange),the_declared_scope_is_closed_under_composition:True}
+
+[PASS] PSI-GEN-PIN                  
+    THE INHERITED GEN UNIT IS PINNED BY HASH. No object of GEN's model is
+    imported anywhere in this unit: the only thing read from it is its
+    committed receipt, whose sha256, schema string and recorded generator hash
+    are ANCHORED EXIT-1 before any value is taken out of it. Every number this
+    unit reuses from GEN is anchored separately, so a drift in the file or in
+    any reused value kills the run. The `gen-hash` mutant perturbs the bytes
+    before they are hashed and must die here
+    value: {anchors_against_the_external_receipt:3,schema:gen-generality-receipt-v1,sha256:e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292}
+
+[PASS] PSI-ADMISSION-PER-PSI        
+    THE ADMISSION TABLE IS COMPUTED FOR EVERY MEMBER OF THE FAMILY, AT EVERY
+    CELL AND BOTH RULES. The four-clause predicate -- the j0 filter, the
+    rule's own leg list matched order-free at the Born level, the occupied-set
+    clause, the exact-law clause -- is evaluated at all 24 (setting,
+    checkpoint) cells for both declared rules and all eleven preparations, and
+    a link is DRAWN only where the rule admits UNIQUELY. The gate measures
+    that the table is a real partition rather than a constant: the full-leg
+    rule draws somewhere for EVERY member, the realized rule draws for SOME
+    members and not for others, and the number of drawing cells is counted per
+    member and never typed. The `born-lax` mutant drops the exact-law clause
+    and the `id-lax` mutant accepts every admitted permutation, destroying the
+    uniqueness criterion; both must die here
+    value: {cells_per_member:48,cells_where_each_rule_draws_a_link:{psi-G:{FULL:18,REAL:8},psi-I1:{FULL:18,REAL:8},psi-I2:{FULL:18,REAL:8},psi-I3:{FULL:18,REAL:8},psi-I4:{FULL:18,REAL:8},psi-N1:{FULL:18,REAL:8},psi-N2:{FULL:18,REAL:8},psi-N3:{FULL:18,REAL:0},psi-N4:{FULL:18,REAL:0},psi-S1:{FULL:18,REAL:8},psi-S2:{FULL:18,REAL:8}},distinct_realized_rule_draw_counts:(0,8),members:11}
+
+[PASS] PSI-PATH-SPACE               
+    THE LOOP SPACE IS ENUMERATED FOR EVERY MEMBER AND EVERY SIZE IS COMPUTED,
+    NEVER TYPED. Reduced paths from every node, closed paths at every base
+    point and closed loops based at the declared base point are counted by
+    enumeration at the declared length bound. Four properties are then
+    RECOMPUTED FROM THE DELIVERED ROWS THEMSELVES: that no delivered loop
+    traverses one link twice in immediate succession, that every delivered
+    loop is a genuine walk returning to the node it declares, that each graph
+    is connected by union-find over its own links, and that the declared cycle
+    rank is Euler's with that measured component count. The `reduce-lax`
+    mutant drops the reduced condition and the `path-collapse` mutant gives
+    every loop one name; both must die here
+    value: {every_graph_connected_with_euler_cycle_rank:True,members:11,rows_violating_the_reduced_or_walk_conditions:0,the_delivered_rows_are_as_many_as_the_counted_loops:True,totals_per_member:{psi-G:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-I1:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-I2:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-I3:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-I4:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-N1:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-N2:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-N3:{based_closed_loops:48,closed_paths:336,reduced_paths:2532},psi-N4:{based_closed_loops:48,closed_paths:336,reduced_paths:2532},psi-S1:{based_closed_loops:760,closed_paths:5864,reduced_paths:34024},psi-S2:{based_closed_l
+
+[PASS] PSI-MATCHED-COORDINATES      
+    EVERY COMPARISON IS READ AT MATCHED COORDINATES (RUNBOOK section 15
+    addendum). The compared objects are loops, and a loop is identified by its
+    psi-INDEPENDENT LINK NAMES together with the traversal directions, so 'the
+    same loop at two preparations' is a statement about names and not about
+    positions in a list that moved. Four coordinates are measured to match at
+    every cell of the table: the SETTING, the BASE POINT, the sequence of
+    NAMED links with directions, and the READ TIME, which is carried inside
+    the law datum and is measured never to compare equal across two different
+    checkpoints. The gate measures that the link names are injective within a
+    graph (so a name identifies one link) and that the reference member's own
+    loop set is recovered by name at every setting. The `loopname-collapse`
+    mutant collapses the link names and the `readtime-conflate` mutant reads
+    every datum at the final checkpoint; both must die here
+    value: {link_names_are_injective_in_every_graph:True,members_compared:10,read_time_collisions_across_checkpoints:0,settings:6}
+
+[PASS] PSI-POSITIVE-CONTROL         
+    THE POSITIVE CONTROL: GEN'S PINNED PREPARATION REPRODUCES GEN'S TERMINAL
+    UNIT EXACTLY, AND EVERY CLAUSE IS AN ANCHOR AGAINST THE COMMITTED RECEIPT.
+    At psi-G this unit's independently rebuilt instrument is measured to
+    deliver GEN's admission table cell for cell in the permutation each rule
+    draws at all 48 (setting, checkpoint, rule) cells; GEN's link counts,
+    reduced-path counts, closed-path counts and based-loop counts at every
+    setting; GEN's based holonomy group order at every setting, with the value
+    set measured closed at the declared bound, the group abelian, every
+    element of order dividing two -- the KLEIN FOUR-GROUP -- and the four
+    elements' fixed-configuration counts; and GEN's defect, of order two with
+    45 fixed configurations. If any of these had moved, the instrument would
+    be measuring something other than GEN's geometry and no comparison across
+    psi would mean anything. The `anchor-gen` mutant perturbs a reused GEN
+    value and the `control-lax` waiver overwrites this predicate; both must
+    die here
+    value: {anchors_against_GEN:37,anchors_passed:37,group_order_per_setting:{GP-A:1,GP-B:1,GP-C:1,GP-D:1,GP-E:4,GP-F:4}}
+
+[PASS] PSI-WITNESS                  
+    THE WITNESS GATE, WITH BOTH HALVES IN ITS OWN PREDICATE. THE POSITIVE
+    HALF: at least one COMMON loop -- the same sequence of named links,
+    traversed in the same directions, at the same setting, based at the same
+    declared node -- is measured to carry DIFFERENT holonomy at two members of
+    the family, with every declaration held fixed and only the preparation
+    varying; and each witness's two holonomies are rebuilt by an INDEPENDENT
+    route that shares no interning, no step memo and no value cache with the
+    enumeration that produced them, with the rebuilds measured to reproduce
+    the rows and to differ from each other. THE NEGATIVE HALF: every
+    exchange-INVARIANT member of the family is measured to agree with the
+    reference on EVERY common loop, so the gate is a measurement that comes
+    out both ways on one family and not a fixture of the instrument. The
+    `psi-collapse` mutant makes every member the reference, killing the
+    positive half; the `label-collapse` and `hol-basepoint` mutants corrupt
+    the holonomy reading; the `witness-lax` waiver overwrites this predicate
+    value: {every_exchange_invariant_member_agrees_everywhere:True,flat_to_non_flat_witnesses:1,independent_rebuilds_agree_and_differ:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),witness_pairs:2}
+
+[PASS] PSI-PATH-SPACE-DEPENDENCE    
+    WHETHER THE PREPARATION CHANGES WHICH LOOPS EXIST IS DECIDED CELL BY CELL,
+    AND BOTH ANSWERS OCCUR IN THE FAMILY. The admission tables of all eleven
+    members are compared cell by cell in the number of admitted permutations
+    AND in the permutation each rule draws. Members whose table is IDENTICAL
+    to the reference's are measured to have identical graphs -- same links,
+    same loop space -- so their comparison is total; members whose table MOVES
+    are named together with the cells that move and the loop counts that
+    result. Both halves are clauses of this gate's own predicate, so the
+    reading comes out both ways on one family. The `born-lax` mutant drops the
+    exact-law clause from the admission predicate, which moves cells that must
+    not move, and must die here
+    value: {based_loop_counts_at_the_moving_members:{psi-N3:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:8,GP-F:8},psi-N4:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:8,GP-F:8}},based_loop_counts_at_the_reference:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:364,GP-F:364},cells_compared_per_member:48,members_whose_admission_table_is_identical:(psi-I1,psi-I2,psi-I3,psi-I4,psi-N1,psi-N2,psi-S1,psi-S2),members_whose_admission_table_moves:(psi-N3,psi-N4)}
+
+[PASS] PSI-LAW                      
+    THE GEN LAW GENERALISES, AND THE psi-TERM IS EXHIBITED. GEN measured D =
+    (sigma Q^T sigma Q) (x) I_9 for an exchange-INVARIANT preparation, with
+    the Householder cancelling identically. Off that locus the cancellation
+    fails, and what replaces it is measured here: D(psi) = D_GEN . Q^T E(psi)
+    Q with E(psi) = sigma H(psi) sigma H(psi) -- the HOUSEHOLDER'S OWN
+    exchange defect. Two clauses, both must-pass. (1) THE LAW: for every
+    member of the family the 9x9 law tensored with the pointer identity is
+    measured EQUAL, entry by entry, to the direct 81x81 four-factor product
+    P_W U_prep^-1 P_W U_prep built from that member's own preparation leg --
+    two independent routes. (2) THE CHARACTERISATION, IN BOTH DIRECTIONS: the
+    psi-term E(psi) is the identity EXACTLY on the exchange-invariant members
+    and on no other, so the list of members reproducing GEN's defect is
+    measured to COINCIDE with the list of exchange-invariant members --
+    neither inclusion assumed. The `psilaw-drop` mutant drops the psi-term, so
+    the law predicts GEN's defect for every member, and the `defect-order`
+    mutant composes the four factors in the wrong order; both must die here
+    value: {members:11,members_whose_defect_equals_GENs:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-S1,psi-S2),the_exchange_invariant_members:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-S1,psi-S2),the_law_reproduces_the_direct_computation_at_every_member:True,the_psi_term_is_the_identity_exactly_on_the_invariant_locus:True}
+
+[PASS] PSI-SIGNFLIP-CENSUS          
+    THE SIGN-FLIP CENSUS IS EXHAUSTIVE OVER THE DECLARED SUB-FAMILY AND
+    DECIDES THE DEPENDENCE IN BOTH DIRECTIONS. Every sign pattern on the
+    support of every declared exchange-invariant member -- the count computed
+    by enumeration -- is rebuilt in full at the symmetric setting GP-E. Three
+    things are measured at every member. The BORN SHADOW is unchanged by a
+    sign pattern, so no Born-level declaration can see the flip. The LOOP
+    SPACE is unchanged, so every loop is common and the comparison is total
+    rather than partial. And the HOLONOMY agrees with the reference on every
+    common loop IF AND ONLY IF the flipped state is still exchange-invariant
+    -- both directions, member by member, with the number of mismatches gated
+    at zero. That is the dependence law: the holonomy moves exactly when the
+    sign pattern differs across some sigma-pair of the support. The
+    `signflip-lax` mutant subsamples the census to one pattern per member and
+    must die here
+    value: {members_swept:7,mismatches_between_agreement_and_exchange_invariance:0,patterns_that_do_not:22,patterns_that_move_the_holonomy:26,sub_family_size:48}
+
+[PASS] PSI-NEGATIVE-CONTROL         
+    THE NEGATIVE CONTROL HAS TEETH, AND ITS PREDICTION IS THE GEN LAW'S. At
+    the SAME preparation psi-G and with every other declaration untouched, the
+    declared transposition Q is replaced by two other declared transpositions,
+    and the holonomy must move by the amount GEN's dihedral law predicts: a
+    group of order 2n with n = ord(sigma Q^-1 sigma Q), and order 1 with links
+    refused on the exchange-equivariant locus where that order is one. Q-negA
+    has delta of order THREE, so the law predicts a NON-ABELIAN group of order
+    six where the pinned Q gives the abelian group of order four; Q-negB lies
+    on the equivariant locus, so the law predicts a FLAT connection. Both
+    predictions are measured, and the gate requires both to be met AND the
+    holonomy to have actually moved from the pinned Q's reading -- if a
+    declaration change cannot move this instrument, the instrument is dead and
+    no psi-side reading it reports is worth anything. The `qcontrol-lax`
+    mutant substitutes the pinned Q for the controls, so nothing moves, and
+    must die here
+    value: {at_the_pinned_Q:4,controls:{Q-negA:{abelian:False,measured:6,order_of_delta:3,predicted:6},Q-negB:{abelian:True,measured:1,order_of_delta:1,predicted:1}}}
+
+[PASS] PSI-SWITCHING-SELFTEST       
+    THE HOLONOMY READINGS ARE SELF-TESTED UNDER THE SYMMETRY'S OWN ACTION, AND
+    THE SELF-TEST EVALUATES FRESH AGAINST A CACHE MEASURED TO WORK (RUNBOOK
+    section 14 and both its addenda). The declared switching group assigns one
+    sign to each link of the setting's own graph and is swept COMPLETE, and
+    the checkpoint subgroup -- the switchings induced by a sign at each node
+    -- is swept complete beside it. Three must-pass clauses: every swept
+    holonomy is measured to equal the unswitched one times the product of the
+    signs along the loop, so the action is a GLOBAL SCALAR; the BORN SHADOW of
+    the holonomy, this unit's primary comparator, is measured INVARIANT at
+    every switching; and no checkpoint switching moves any holonomy at all.
+    Every holonomy in the sweep is REBUILT from the link variables with the
+    value cache bypassed, and the bypass is measured against a cache that is
+    measured to EXIST and to WORK: it is primed with the very keys the sweep
+    will request, a second pass is measured to return the stored values, the
+    sweep is measured to ask for keys that are in the populated cache, and its
+    hit count is nevertheless gated at ZERO against a positive miss count --
+    zero hits over zero lookups would be vacuous. The `gauge-sign`,
+    `gauge-subsample`, `memo-lax` and `bornhol-lax` mutants must each die here
+    value: {cache_entries_primed:8,checkpoint_switchings_that_did_not_telescope:0,deviations_from_the_global_scalar_action:0,exact_matrix_comparisons:66560,fresh_requests_for_a_key_already_in_the_cache:65544,primed_keys_served_on_a_second_visit:8,readability_moves_under_a_switching:0,the_switching_group_is_swept_complete_at_every_probe:True,value_cache_hits:0,value_cache_misses:65544}
+
+[PASS] PSI-FLIP-TESTS               
+    TWO FLIP-TESTS, AND THE BOOKKEEPING SPLIT IS THE ONE WITH TEETH. (1) THE
+    DIRECTION FLIP-TEST: every declared probe loop is re-traversed with the
+    direction convention flipped and the product of the two matrices is
+    measured to be exactly the identity. Its positive content is forced by
+    algebra -- the link variables are measured orthogonal and the reverse
+    traversal is the transpose -- so what it retains is instrument integrity:
+    the `orient-flip` mutant reads a reverse traversal without transposing and
+    dies here. (2) THE BOOKKEEPING SPLIT: this unit's two transported objects
+    divide exactly along Born data against sign data, and that division is
+    MEASURED in both directions, and at the level where the invisibility is
+    claimed. THE BORN-LEVEL DATA THE ADMISSION PREDICATE ACTUALLY KEYS ON is
+    compared directly: the Born shadow of the COMPLETION V entry by entry, and
+    the canonical Born-level key of every declared leg and every realized leg
+    at every (setting, frame). Those are measured to agree with the reference
+    for EXACTLY the members that share the reference's Born shadow, neither
+    more nor fewer -- so for those members no clause of the predicate has any
+    input that differs at all. The LAW LAYER is measured to agree at every
+    node of every setting for exactly the same members; and the members whose
+    AMPLITUDE LAYER nevertheless disagrees on a common loop are NAMED. Those
+    are the members where the two layers part company, and their existence is
+    the unit's finding stated as a bookkeeping fact. The `flip-lax` waiver
+    overwrites this predicate
+    value: {loops_direction_flipped:8,loops_whose_reversal_was_not_the_inverse:0,members_where_the_two_layers_part_company:(psi-N1),the_born_level_data_tracks_the_born_shadow_exactly:True,the_law_layer_tracks_the_born_shadow_exactly:True}
+
+[PASS] PSI-VERDICT                  
+    THE VERDICT IS DERIVED FROM THE PRE-REGISTERED DECISION RULE AND FROM
+    NOTHING ELSE, AND IT IS IN THE PRE-REGISTERED VOCABULARY.
+    PSI-CURVATURE-EXISTS if a common loop's holonomy is measured to differ
+    between two preparations; otherwise PSI-PATH-SPACE-DEPENDENCE if the loop
+    space is measured to move while every common loop agrees; otherwise
+    PSI-DECLARATION-ONLY; and PSI-BLOCKED-AT-<object> where the census cannot
+    be posed. The qualifier names the scope the family actually decides: the
+    witnesses are read at a FIXED BORN SHADOW, where the arena, the law layer
+    and the whole loop space are measured identical. The verdict string is
+    re-derived inside this gate from the recorded measurements and measured to
+    be the string the rule selects; the `verdict-lax` mutant emits an
+    out-of-vocabulary verdict and must die here
+    value: {a_common_loop_differs:True,in_the_pre_registered_vocabulary:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),scope:(at the committed finite scope,at the declared preparation family,at the declared completion form and its pinned Q,per coordinate),the_loop_space_moves:True,verdict:PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW}
+
+[PASS] PSI-DECLARATION-ORDER        
+    THE RECEIPT'S GATE ORDER PROVES THE FREEZE. The pin requires the
+    preparation family to be declared AS DATA before any transport
+    measurement, and the proof is the order in which this receipt's gates were
+    recorded: every declaration gate -- the freeze, the pinned base, the
+    family with its computed sizes, the arena, the hash-pin of the inherited
+    receipt -- is measured to sit STRICTLY BEFORE the first transport gate,
+    and the freeze gate is measured to be the first gate of the run with the
+    transport-datum counter at zero. The `order-lax` mutant emits a transport
+    measurement before the declarations and must die here
+    value: {declaration_gates:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN),first_gate:PSI-FREEZE,first_transport_gate_index:5,gate_order:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN,PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-POSITIVE-CONTROL,PSI-WITNESS,PSI-PATH-SPACE-DEPENDENCE,PSI-LAW,PSI-SIGNFLIP-CENSUS,PSI-NEGATIVE-CONTROL,PSI-SWITCHING-SELFTEST,PSI-FLIP-TESTS,PSI-VERDICT),last_declaration_gate_index:4,transport_gates:(PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-WITNESS,PSI-PATH-SPACE-DEPENDENCE)}
+
+[PASS] PSI-NO-MUTANT-EXEMPTION      
+    NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14
+    addendum), MEASURED AS THE HEADLINE SAYS IT. Two clauses, both from an AST
+    sweep of this module's own source. (1) THE DIRECT STATEMENT: every
+    `gate(...)` and `anchor(...)` call site is found, its argument expressions
+    are walked to any depth, and the number of call sites reaching the mutant
+    flag at all -- in a predicate, a claim string or a value expression -- is
+    measured to be ZERO against the computed total. (2) THE EXEMPTION FORMS:
+    `MUTANT != ...`, `MUTANT not in ...`, `MUTANT is not ...` and `not (MUTANT
+    == ...)` are counted separately anywhere in the source, every occurrence
+    found is measured to lie OUTSIDE every gate and anchor call site, and the
+    `!=` count itself is gated at zero. Every mutation in this instrument is
+    injected where the computation happens. The `exempt-lax` waiver registers
+    one such comparison and must die here
+    value: {all_of_them_outside_any_gate_or_anchor_call_site:True,call_sites_reaching_the_mutant_flag:(),comparisons_found:0,exemption_forms_found_anywhere_in_the_source:{MUTANT != ...:0,MUTANT is not ...:0,MUTANT not in ...:1,not (MUTANT == ...):0},gate_and_anchor_call_sites:37,mutant_exemption_comparisons:(),their_line_numbers:{MUTANT not in ...:(3076)}}
+
+[PASS] PSI-EXACT                    
+    EXACT ARITHMETIC EVERYWHERE. An AST sweep of this module finds no float
+    literal and no call to `float`, and a runtime sweep finds no float in any
+    value that reached a gate or an anchor. The substrate is
+    `fractions.Fraction`: every declared operator has RATIONAL entries and is
+    exactly orthogonal over Q, every declared preparation is an exact rational
+    unit vector, so equality of matrices is equality of exact rationals and no
+    tolerance exists anywhere in this instrument. The `float-lax` mutant
+    introduces a float literal and must die here
+    value: {float_call_lines:(),float_literal_lines:(),fraction_available:1/2,rows_carrying_a_float:()}
+
+[PASS] PSI-FALSIFICATION            
+    EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.
+    Each declared mutant is run to completion, must exit 1, and must falsify
+    at least one NAMED gate or anchor; the second clause is the one that
+    matters -- the set of must-pass gates that NO mutant falsifies is measured
+    to be EMPTY. Each mutant declares its KIND and the split is counted from
+    the declaration: a WAIVER proves a gate's predicate is load-bearing for
+    the exit code, not that the gate would catch a computational defect, and
+    the two are not claimed to be the same thing. BOTH DENOMINATORS ARE
+    REPORTED, because they differ: the count of must-pass gates falsified by
+    SOME mutant, and the smaller count falsified by a mutant that perturbs a
+    COMPUTATION. The gates carried by a waiver alone are named, not averaged
+    away. The one gate excluded from the denominator is this one:
+    `run_mutant_table` does not run inside a mutant, so the census gate does
+    not exist there
+    value: {died:34,falsified_by_a_computation_mutant:17,falsified_by_some_mutant:20,falsified_only_by_a_waiver:(PSI-EXACT,PSI-NO-MUTANT-EXEMPTION,PSI-VERDICT),must_pass_gate_denominator:20,mutants:34,never_falsified:(),perturb_a_computation:28,the_gate_excluded_from_the_denominator:PSI-FALSIFICATION,waivers:6}
+
+------------------------------------------------------------------------------
+5.  ANCHORS (exit-1 only)
+------------------------------------------------------------------------------
+146 anchors, 146 passed, 0 failed
+
+------------------------------------------------------------------------------
+6.  TOTALS
+------------------------------------------------------------------------------
+anchors                  146
+disclosures              0
+gates                    21
+must_pass_failures       0
+must_pass_gates          21
+==============================================================================
