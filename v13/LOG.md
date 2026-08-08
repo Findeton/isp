@@ -8001,3 +8001,26 @@ compliance — this unit delivered after the addendum and lists
 PSI-VERDICT waiver-only).  Frozen SHAs in the freeze output
 with this commit.  Three-lens panel (Opus 5) dispatched
 immediately after.
+
+## 2026-08-08 — COC TERMINAL (v13 LEDGER #252)
+Adjudicator verification PASSED (exit 0; output 08c0c5f4 /
+receipt 943af63f; three identical runs).  TERMINAL CONFERRED:
+the re-derivation implements #234 exactly — the criterion, the
+extension census, and the mechanism stack are the panel's own
+constructions reproduced with better gates; the D10 judgment
+call (mechanism stack as disclosure per the forced-clause
+rule) ACCEPTED; D5 (the switching sweep does not cover the
+extension atlas's loops) stands as an honest open scope line.
+THE ONE PANEL-UNSEEN ITEM FLAGGED: the third defect element
+(the wing exchange ∘ both pointer transpositions; 32,256
+triangles; the defect set an order-4 group) — the mandatory
+first anchor for any successor building on the extension
+atlas.  **COC CLOSES: level-2 geometry is REAL on base G at
+the extension-orbit atlas; the criterion — closure ⟺ the
+chart-generating group centralises the level-1 holonomy — is
+the unit's law; the abelian atlas's closure is analytically
+forced and says so.**  Bequests: the criterion (a corollary of
+the commutator law per #249); the extension atlas as the first
+non-principal-chart-group arena; the third element.  With COC
+terminal, TWO of the three third-base prerequisites are done
+(COC ✓, XBA re-deriving, PSI under panel).

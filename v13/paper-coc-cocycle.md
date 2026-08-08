@@ -2,7 +2,7 @@
 
 ## The Triple-Overlap Census on Base G, and What Decides Whether the Connection Is the Whole Story
 
-**Status:** `GREEN-UNREVIEWED-REPAIRED`
+**Status:** `TERMINAL (v13 COC)` — panel #232–#234a, adjudicated #234 REJECT-AS-DELIVERED, re-derivation C-1..C-5 verified byte-identical and conferred terminal at v13 LOG #252. The third defect element (W∘τ_A∘τ_B-composite family) is panel-unseen and is a flagged first anchor for any successor building on the extension atlas.
 
 **Date:** 2026-08-08
 
