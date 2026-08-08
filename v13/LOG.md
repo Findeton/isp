@@ -6764,3 +6764,51 @@ framing); R3 instrument (D1 T1-non-return adjudged; D8 audit;
 the exempt 14th gate; 22 anchors; the PREFIX-DECIDES
 independence judgment; path-space counts; fresh-eval; mutant
 reconstruction; sweep bookkeeping).  Reviews frozen on return.
+
+## 2026-08-07 — NT R1 (OPERATOR) FROZEN: A FALSE NUMBER IN A
+## DELIVERED HEADLINE TABLE — OWNED BY NAME (v13 LEDGER #205)
+review-nt-operator.md frozen as delivered.  Grade
+ACCEPT-WITH-FIXES; 254 recomputed quantities on the reviewer's
+own instrument (4,972,096 pair classifications rebuilt; 101,120
+exact matrix comparisons; the delivered script never run for a
+number).  SURVIVES: all 8 refutation witnesses (bigons walked
+node-by-node, genuinely closed, both ends certified — FULL and
+REAL each admit EXACTLY ONE element per coordinate; holonomy =
+wing exchange = P_REAL·P_FULL⁻¹, order 2); both flat crossings;
+all path counts; 223/5/186; group order 4; 18/18; 12/18; 48/48
+posability; census and fresh-eval; the 56-vs-64 gap fully
+explained (length-0 exclusion).  **MAJOR 1 — A FALSE COMPUTED
+NUMBER: §8.2's holonomy VALUE SET at SP-E/F is 4, NOT 3**
+(Klein four-group: wing exchange = pointer-swap × qubit-swap;
+the bug counts label strings from a 2-entry PERM_NAME,
+collapsing unnamed permutations; the receipt's own
+group_elements prints four entries, two literally "another
+permutation"; AND the value set IS closed at the bound, so
+Deviation D5 NARRATED THE BUG AS STRUCTURE).  This is the
+programme's first false number in a delivered headline table
+since the branch-A gauge-orbit episode — owned here by name;
+the streak language must henceforth read "caught by panel,"
+not "never delivered."  MAJOR 2: the §14 gauge-sweep gate
+CANNOT FAIL on its advertised clause (switching acts by a
+global scalar ⟹ the permutation part is invariant IDENTICALLY;
+gauge-sign moves it at 0/10 loops) — the cannot-fail disease
+again; but R1's COMPLETE 8192 sweep (81,920 comparisons, 0
+deviations, incl. the loops the delivery never touched)
+answers the D2 [SAMP] attack DECISIVELY IN THE PAPER'S FAVOUR.
+MAJOR 3: the gauge split discards invariant content (relative
+signs invariant under s→εs; two of four elements carry mixed
+signs; unreported, ungated).  MODERATES (no verdict
+overturned): "there and only there" FAILS FOR T1 (aligned
+disagreements at SP-A–D with no second identification — the
+mechanism is T2/T3-scoped); a COUNTER-LOOP exists (same t=2
+crossing closed by FULL at t=1 → wing exchange, so "THE loop
+through the divergent checkpoint is flat" is false as
+universal); forward-flatness false at 6/36 cells.  FLAGGED:
+the weld is W5's committed M4 restated (cite, don't claim);
+K4's independence is ALGORITHMIC ONLY (the two routes are
+equivalent predicates — demote the claim); **and the most
+interesting unreported finding: TWO OF THE FOUR HOLONOMY-GROUP
+ELEMENTS LIE OUTSIDE the declared 72-element scope and its
+96-extension — the connection generates transformations beyond
+the declared arena group.**  R2/R3 pending; adjudication after
+all three.
