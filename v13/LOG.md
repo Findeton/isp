@@ -8412,3 +8412,18 @@ sweep + the swept ambiguity sets / K5 the held-out machinery +
 the quarantine + the receipt pins).  Frozen SHAs in the freeze
 output with this commit.  Three-lens panel (Opus 5) dispatched
 immediately after.
+
+## 2026-08-08 — BRG PANEL DISPATCHED (v13 LEDGER #269)
+Three-lens panel dispatched (Opus 5, parallel-safe with TB3):
+R1 operator (the coprimality theorem proved-or-refuted; the 14
+live-cell morphisms recomputed + the live-cell base's honest
+feasibility); R2 effectus (the ρ-reduction framing audit —
+measured vs poetic strength, the committed-scope leak hunt;
+what live-cell morphisms must preserve to deserve "bridge";
+the HA-§14 compliance check; the obstruction as a statement
+about the one law's family); R3 instrument (the four receipt
+pins corrupt-and-fire; the held-out machinery traced; the
+route independence probed; cell-completeness across all
+scopes; the SP teeth; the formula-vs-brute-force validation).
+Reviews frozen on return.  In flight: BRG panel ×3 + TB3
+construction.
