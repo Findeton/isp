@@ -8258,3 +8258,24 @@ the A/B pair's one mislabeled receipt field repaired and
 re-run, owned in deviation 7).  15 deviations, each honest.
 md5 output b3f25543 / receipt 213b3250.  Adjudicator
 verification next.
+
+## 2026-08-08 — HA TERMINAL (v13 LEDGER #262)
+Adjudicator verification PASSED (exit 0; output b3f25543 /
+receipt 213b3250; three identical runs of the frozen C/D
+delivery).  TERMINAL CONFERRED.  **THE DECLINATION ACCEPTED,
+reasoning owned: the #246 order demoted the bridge to a
+coordinate audit, making both pre-registered bridge tokens
+un-enterable; the pin forbids inventing outcome names;
+HA-BRIDGE-NOT-ENTERED records the declination — the exact
+analogue of declining to rule on a mooted question.  Verdict
+tokens may record declinations; they may never invent
+outcomes.**  The repair's own correction of R2's tensor count
+(11 → 7 distinct tensors / 9 residual laws, the disjunct still
+firing) noted: the correction chain has now run in every
+direction the hierarchy has.  **HA CLOSES: the record-native
+H_a[N] exists; the deformation closure runs; the diagonal
+sector closes exactly from counting (the record IS the metric
+in count coordinates, gated); the cross-term boundary is
+G09's theorem; the bridge question is formally OPEN with its
+successor requirements in §14.**  Successor: the BRG
+(morphism-census bridge) unit — pinned next.

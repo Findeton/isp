@@ -1,6 +1,6 @@
 # HA — THE RECORD-NATIVE `H_a[N]`, CONSTRUCTED; AND THE DEFORMATION-CLOSURE TEST, RUN
 
-**Status:** GREEN-UNREVIEWED-REPAIRED, STRICT, 2026-08-08.
+**Status:** `TERMINAL (v13 HA)` — panel #242–#246a, adjudicated #246 ACCEPT-WITH-MAJOR-REPAIRS, repair H-1..H-4 verified byte-identical and conferred terminal at v13 LOG #262. The HA-BRIDGE-NOT-ENTERED declination is accepted by the adjudicator (reasoning at #262).
 **Pin:** `v13/note-ha-successor-pin.md` (frozen; immutable base commit `024fcd7`).
 **Binding:** `v13/note-gw1-metric-from-closure.md` — TERMINAL at v13 LOG #5 —
 and in particular its §7.1 successor directive, quoted verbatim in §1;
