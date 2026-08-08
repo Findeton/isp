@@ -1,0 +1,408 @@
+==============================================================================
+HA -- THE RECORD-NATIVE H_a[N] SUCCESSOR   (v13 gravity line)
+pin: v13/note-ha-successor-pin.md    immutable base commit 024fcd7
+binding: v13/note-gw1-metric-from-closure.md 7.1 (the successor, ordered);
+         v4 paper 7 Defs 1.1-1.4 / 2.1-2.5; v4 paper 12 Def 11.6M
+==============================================================================
+run mode            : none (delivery run)
+python              : 3.13.2
+instrument sha256   : 19dad19b01ee09f333c9780769dd3b887cc7699b2132813b7d24b03dcb83d772
+arithmetic          : fractions.Fraction, integers, exact F_p.  No floats.
+
+--- 1. ANCHORS (exit-1-only) ---
+  16 anchors, every one reproduced.
+  DISCLOSURE X01: v12/code carries 7 .py against the GW1 census's 5, and
+  v13/code carries 37 (four concurrent cycles).  Both are declared LIVE
+  and excluded from A01 BY DECLARATION, not by outcome.
+
+--- 2. THE DECLARED ARENA (data; frozen before any fixture value) ---
+  d                          : 2
+  L                          : 3
+  d_ext                      : 3
+  L_ext                      : 3
+  links_d2                   : [[1, 0], [0, 1], [1, 1]]
+  links_d3                   : [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 0], [1, 0, 1], [0, 1, 1]]
+  records_d2                 : {"G-FLAT": [1, 1, 2], "G-ANISO": [1, 4, 5], "G-ANISO2": [4, 9, 13], "G-DIAG2": [2, 2, 4], "G-OFFDIAG": [2, 2, 6], "G-OFFDIAG2": [3, 5, 12], "G-OFFNEG": [3, 5, 4], "G-SINGULAR": [1, 1, 4], "G-INDEF": [
+  records_d2_inhomogeneous   : ["G-CURVED (diagonal, site-dependent)", "G-CURVOFF (cross term, site-dependent)"]
+  records_d3                 : {"G3-FLAT": [1, 1, 1, 2, 2, 2], "G3-ANISO": [1, 4, 9, 5, 10, 13], "G3-OFF": [2, 2, 2, 6, 4, 4]}
+  density_weight             : 0
+  density_weight_flip        : 1
+  lapse_family               : the |X| site deltas, the constant profile 1, and the d chart ramps
+  rules                      : [["A-chart", "A", "Lambda = delta (count-blind chart identity)"], ["A-axis", "A", "Lambda = diag(1/n_{e_j}) from the axis interval counts"], ["A-linkframe", "A", "Lambda^{ij} = sum_l e_l^i e_l^j / n_l
+  broken_rules               : ["A-insert-x", "A-insert-2x", "A-notransport"]
+  transported_rules          : ["A-chart", "A-axis", "A-linkframe", "A-linkhalf", "A-insert", "A-insert-x", "A-insert-2x"]
+  frozen_front_rule          : A-notransport
+  positive_control_rule      : A-insert
+  primes                     : [5, 7, 13]
+  test_class                 : the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size
+  tangential_realisations    : {"D-REG": "D_a[v] shifts the matter record's address register by v; the geometry front is not transported (primary)", "D-TOT": "D_a[v] shifts the register AND drags the front along x -> x+v(x), define
+  chart_group                : the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index
+  bridge_coordinates         : ["carrier", "family", "law", "state", "arena", "structure group", "defect construction"]
+  fixture evaluations at the freeze point: 0   (G01 PASS)
+
+--- 3. THE GEOMETRY RECORDS AND THE RECORD-READ METRIC CANDIDATE ---
+  record      counts at (0,0) counts at (1,1) q(0,0)              I=q^-1(0,0)                 homog  adm
+  G-ANISO     (1, 4, 5)       (1, 4, 5)       [1,0,0,4]           [1,0,0,1/4]                 True   True
+  G-ANISO2    (4, 9, 13)      (4, 9, 13)      [4,0,0,9]           [1/4,0,0,1/9]               True   True
+  G-CURVED    (1, 1, 2)       (2, 2, 4)       [1,0,0,1]           [1,0,0,1]                   False  True
+  G-CURVOFF   (2, 2, 6)       (3, 3, 10)      [2,1,1,2]           [2/3,-1/3,-1/3,2/3]         False  True
+  G-DIAG2     (2, 2, 4)       (2, 2, 4)       [2,0,0,2]           [1/2,0,0,1/2]               True   True
+  G-FLAT      (1, 1, 2)       (1, 1, 2)       [1,0,0,1]           [1,0,0,1]                   True   True
+  G-INDEF     (1, 1, 6)       (1, 1, 6)       [1,2,2,1]           [-1/3,2/3,2/3,-1/3]         True   False
+  G-OFFDIAG   (2, 2, 6)       (2, 2, 6)       [2,1,1,2]           [2/3,-1/3,-1/3,2/3]         True   True
+  G-OFFDIAG2  (3, 5, 12)      (3, 5, 12)      [3,2,2,5]           [5/11,-2/11,-2/11,3/11]     True   True
+  G-OFFNEG    (3, 5, 4)       (3, 5, 4)       [3,-2,-2,5]         [5/11,2/11,2/11,3/11]       True   True
+  G-SINGULAR  (1, 1, 4)       (1, 1, 4)       [1,1,1,1]           none                        True   False
+  G02 readout control: PASS   rejected: ['G-SINGULAR', 'G-INDEF']
+
+--- 4. THE LAPSE FAMILY AND THE IDENTIFIABILITY RANK (GW1 5, item 7) ---
+  |lapse family| = 12   ordered pairs tested = 132
+  realised covector rank per site: [2]  (d = 2)
+  G03 identifiability: PASS
+
+--- 5. H_a[N] : V_a^tot -> V_a^tot, CONSTRUCTED AND MEASURED INVERTIBLE ---
+  H^-1 H = id measured on 396 (rule, record, lapse) triples; failures 0
+  declared non-injective falsifier rejected: True   (G04 PASS)
+
+--- 6. THE GW1 RESIDUAL  R_HH,a[N,M] = H[N]H[M]H[N]^-1 H[M]^-1 D[-beta] ---
+       RUN at the committed finite scope, by two independent routes:
+       (a) the LITERAL composition of the five comparison maps;
+       (b) the CLOSED form, built from the drag rule and the record
+           readout without ever touching (a).
+  literal-vs-closed comparisons 1188, disagreements 0   (G05 PASS)
+
+  CLOSURE TABLE.  Cells give the number of the 132 ordered lapse
+  pairs at which R_HH is NOT the identity ('CLOSES' = none of them).
+  rule          G-ANISO    G-ANISO2   G-CURVED   G-CURVOFF  G-DIAG2    G-FLAT     G-OFFDIAG  G-OFFDIAG2 G-OFFNEG   
+  A-chart       70         96         84         96         96         CLOSES     96         96         96         
+  A-axis        CLOSES     CLOSES     CLOSES     96         CLOSES     CLOSES     96         96         96         
+  A-linkframe   96         96         96         96         96         96         96         96         96         
+  A-linkhalf    96         96         96         96         96         96         96         96         96         
+  A-insert      CLOSES     CLOSES     CLOSES     CLOSES     CLOSES     CLOSES     CLOSES     CLOSES     CLOSES     
+  A-insert-x    CLOSES     CLOSES     CLOSES     96         CLOSES     CLOSES     96         96         96         
+  A-insert-2x   96         96         96         96         96         96         96         96         96         
+  A-notransport 96         96         96         96         96         96         96         96         96         
+  B-axis        CLOSES     CLOSES     CLOSES     96         CLOSES     CLOSES     96         96         96         
+  B-all         78         78         78         114        78         78         114        114        114        
+  B-chart       70         96         84         96         96         CLOSES     96         96         96         
+
+  G06 positive control (A-insert closes everywhere) : PASS
+  G07 broken-H negative control : PASS   {'A-insert-x': 4, 'A-insert-2x': 9, 'A-notransport': 9}
+
+  THE SECTOR LAW, measured cell by cell.  For each architecture-A rule and
+  each record: the number of sites where the drag weight Lambda coincides
+  with the record-read I_a(g), and the number where the residual vanishes
+  for every one of the 132 tested lapse pairs (out of 9 sites).
+  rule          G-ANISO    G-ANISO2   G-CURVED   G-CURVOFF  G-DIAG2    G-FLAT     G-OFFDIAG  G-OFFDIAG2 G-OFFNEG   
+  A-chart       0/0        0/0        1/1        0/0        0/0        9/9        0/0        0/0        0/0        
+  A-axis        9/9        9/9        9/9        0/0        9/9        9/9        0/0        0/0        0/0        
+  A-linkframe   0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        
+  A-linkhalf    0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        
+  A-insert      9/9        9/9        9/9        9/9        9/9        9/9        9/9        9/9        9/9        
+  A-insert-x    9/9        9/9        9/9        0/0        9/9        9/9        0/0        0/0        0/0        
+  A-insert-2x   0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        0/0        
+  A-notransport 9/0        9/0        9/0        9/0        9/0        9/0        9/0        9/0        9/0        
+  G08 sector law: PASS   mismatching cells []
+  G08B transport necessity (A-notransport: Lambda = I at 9/9 sites, residual zero at 0/9): PASS
+
+  THE CROSS-TERM WALL.  A-axis is the link-local record-native rule: its
+  weight is diag(1/n_{e_j}), read from the axis interval counts alone.
+    G-ANISO      (Lambda - I)(0,0) = [0,0,0,0]   q^12 = 0   max|rho| = 0
+    G-ANISO2     (Lambda - I)(0,0) = [0,0,0,0]   q^12 = 0   max|rho| = 0
+    G-CURVED     (Lambda - I)(0,0) = [0,0,0,0]   q^12 = 0   max|rho| = 0
+    G-CURVOFF    (Lambda - I)(0,0) = [-1/6,1/3,1/3,-1/6]   q^12 = 1   max|rho| = 2/3
+    G-DIAG2      (Lambda - I)(0,0) = [0,0,0,0]   q^12 = 0   max|rho| = 0
+    G-FLAT       (Lambda - I)(0,0) = [0,0,0,0]   q^12 = 0   max|rho| = 0
+    G-OFFDIAG    (Lambda - I)(0,0) = [-1/6,1/3,1/3,-1/6]   q^12 = 1   max|rho| = 2
+    G-OFFDIAG2   (Lambda - I)(0,0) = [-4/33,2/11,2/11,-4/55]   q^12 = 2   max|rho| = 40/33
+    G-OFFNEG     (Lambda - I)(0,0) = [-4/33,-2/11,-2/11,-4/55]   q^12 = -2   max|rho| = 20/33
+
+--- 7. CAN ANY LINK-LOCAL RECORD-NATIVE WEIGHT CLOSE?  (measured) ---
+  counterexample: {"records": ["G-CURVOFF", "G-DIAG2"], "direction": 0, "link": "(1, 0)", "shared_interval_count": 2, "I^jj_demanded": ["2/3", "1/2"], "other_counts": ["(2, 2, 6)", "(2, 2, 4)"]}
+  G09 link-locality obstruction: PASS
+  Reading: I^{jj} = adj(q)^{jj} / det q, and det q is a JOINT function of every
+  link count at the site.  A weight that reads only its own link's count
+  cannot see it.  Closure therefore requires a rule that computes the
+  record's count-matrix inverse -- which is the metric.
+
+--- 8. THE FINITE OPERATOR LAYER: R_HH AS AN ACTUAL OPERATOR ON V_a^tot ---
+  reduced carriers built 1056 over primes [5, 7, 13]; reductions undefined 33; non-bijective maps 0; operator-vs-field mismatches 0
+  G10 operator layer: PASS;  G10B multi-prime: PASS (blind at every prime: [])
+  ||R_HH|| on the carrier at p=5, x*=(0,0), (N,M) = (delta(0, 0),delta(0, 1)):
+    rule          record      carrier  moved   moved/carrier
+    A-chart       G-ANISO     625      625     1
+    A-chart       G-ANISO2    625      625     1
+    A-chart       G-CURVED    625      0       0
+    A-chart       G-CURVOFF   625      625     1
+    A-chart       G-DIAG2     625      625     1
+    A-chart       G-FLAT      625      0       0
+    A-chart       G-OFFDIAG   625      625     1
+    A-chart       G-OFFDIAG2  625      625     1
+    A-chart       G-OFFNEG    625      625     1
+    A-axis        G-ANISO     625      0       0
+    A-axis        G-ANISO2    625      0       0
+    A-axis        G-CURVED    625      0       0
+    A-axis        G-CURVOFF   625      625     1
+    A-axis        G-DIAG2     625      0       0
+    A-axis        G-FLAT      625      0       0
+    A-axis        G-OFFDIAG   625      625     1
+    A-linkframe   G-ANISO2    625      625     1
+    A-linkframe   G-CURVED    625      625     1
+    A-linkframe   G-CURVOFF   625      625     1
+    A-linkframe   G-DIAG2     625      625     1
+    A-linkframe   G-FLAT      625      625     1
+    A-linkframe   G-OFFDIAG   625      625     1
+    A-linkhalf    G-ANISO2    625      625     1
+    A-linkhalf    G-CURVED    625      625     1
+    A-linkhalf    G-CURVOFF   625      625     1
+    A-linkhalf    G-DIAG2     625      625     1
+    A-linkhalf    G-FLAT      625      625     1
+    A-linkhalf    G-OFFDIAG   625      625     1
+    A-insert      G-ANISO     625      0       0
+    A-insert      G-ANISO2    625      0       0
+    A-insert      G-CURVED    625      0       0
+    A-insert      G-CURVOFF   625      0       0
+    A-insert      G-DIAG2     625      0       0
+    A-insert      G-FLAT      625      0       0
+    A-insert      G-OFFDIAG   625      0       0
+    A-insert      G-OFFDIAG2  625      0       0
+    A-insert      G-OFFNEG    625      0       0
+    A-insert-x    G-ANISO     625      0       0
+    A-insert-x    G-ANISO2    625      0       0
+    A-insert-x    G-CURVED    625      0       0
+    A-insert-x    G-CURVOFF   625      625     1
+    A-insert-x    G-DIAG2     625      0       0
+    A-insert-x    G-FLAT      625      0       0
+    A-insert-x    G-OFFDIAG   625      625     1
+    A-insert-x    G-OFFDIAG2  625      625     1
+    A-insert-x    G-OFFNEG    625      625     1
+    A-insert-2x   G-ANISO     625      625     1
+    A-insert-2x   G-ANISO2    625      625     1
+    A-insert-2x   G-CURVED    625      625     1
+    A-insert-2x   G-CURVOFF   625      625     1
+    A-insert-2x   G-DIAG2     625      625     1
+    A-insert-2x   G-FLAT      625      625     1
+    A-insert-2x   G-OFFDIAG   625      625     1
+    A-insert-2x   G-OFFDIAG2  625      625     1
+    A-insert-2x   G-OFFNEG    625      625     1
+    A-notransport G-ANISO     625      625     1
+    A-notransport G-ANISO2    625      625     1
+    A-notransport G-CURVED    625      625     1
+    A-notransport G-CURVOFF   625      625     1
+    A-notransport G-DIAG2     625      625     1
+    A-notransport G-FLAT      625      625     1
+    A-notransport G-OFFDIAG   625      625     1
+    A-notransport G-OFFDIAG2  625      625     1
+    A-notransport G-OFFNEG    625      625     1
+    B-axis        G-ANISO     625      0       0
+    B-axis        G-ANISO2    625      0       0
+    B-axis        G-CURVED    625      0       0
+    B-axis        G-CURVOFF   625      625     1
+    B-axis        G-DIAG2     625      0       0
+    B-axis        G-FLAT      625      0       0
+    B-axis        G-OFFDIAG   625      625     1
+    B-all         G-ANISO2    625      0       0
+    B-all         G-CURVED    625      0       0
+    B-all         G-CURVOFF   625      625     1
+    B-all         G-DIAG2     625      0       0
+    B-all         G-FLAT      625      0       0
+    B-all         G-OFFDIAG   625      625     1
+    B-chart       G-ANISO     625      625     1
+    B-chart       G-ANISO2    625      625     1
+    B-chart       G-CURVED    625      0       0
+    B-chart       G-CURVOFF   625      625     1
+    B-chart       G-DIAG2     625      625     1
+    B-chart       G-FLAT      625      0       0
+    B-chart       G-OFFDIAG   625      625     1
+    B-chart       G-OFFDIAG2  625      625     1
+    B-chart       G-OFFNEG    625      625     1
+
+  operator-displacement vs field mod p: 76 tested, 0 failures   (G11 PASS)
+
+--- 9. THE GW1 PIN'S OWN CONTROL LIST, RUN ---
+  flat/curved: G-FLAT True, G-CURVED True, G-OFFDIAG False, G-CURVOFF False   (G12 PASS)
+  update-order control: 360 pairs, antisymmetry violations 0   (G13 PASS)
+  chart self-test: 4860 component comparisons, violations 0   (G14 PASS)
+  cache hits 283133, misses 1377, fresh bypasses 486   (G15 PASS)
+  matter-free vs matter-conditioned: the matter-free commutator is trivial for every cell: True   (G16 PASS)
+  density-weight flip-test (I = q^-1 against I = q^-1 det q):
+    G-ANISO      w=0 nonzero pairs     0    w=1 nonzero pairs    96
+    G-ANISO2     w=0 nonzero pairs     0    w=1 nonzero pairs    96
+    G-CURVED     w=0 nonzero pairs     0    w=1 nonzero pairs    92
+    G-CURVOFF    w=0 nonzero pairs    96    w=1 nonzero pairs    96
+    G-DIAG2      w=0 nonzero pairs     0    w=1 nonzero pairs    96
+    G-FLAT       w=0 nonzero pairs     0    w=1 nonzero pairs     0
+    G-OFFDIAG    w=0 nonzero pairs    96    w=1 nonzero pairs    96
+    G-OFFDIAG2   w=0 nonzero pairs    96    w=1 nonzero pairs    96
+    G-OFFNEG     w=0 nonzero pairs    96    w=1 nonzero pairs    96
+  verdict moves at: ['G-ANISO', 'G-ANISO2', 'G-CURVED', 'G-DIAG2']
+  D-TOT flip-test over 1188 (record, lapse pair) cells: beta nonzero 864, site map defined 332, undefined 856; nonzero-beta cells admitting a site map: 8
+
+--- 10. THE THREE-NORMAL SWITCH DETECTOR W_{N|ML,a} (v4 p12 Def 11.6M) ---
+  C(H[N],D[B]) trivial at 108/108 tested cells   (G19 PASS)
+  rule       record      (N,M,L)    C=I    Jac=0   front=0  reg=0   max|reg|
+  A-insert   G-ANISO     (0,1,2)    True   True    True     True    0
+  A-insert   G-ANISO     (0,3,9)    True   True    True     False   1
+  A-insert   G-ANISO     (9,10,0)   True   True    True     False   2
+  A-insert   G-ANISO     (1,4,10)   True   True    True     False   1
+  A-insert   G-ANISO2    (0,1,2)    True   True    True     True    0
+  A-insert   G-ANISO2    (0,3,9)    True   True    True     False   1/64
+  A-insert   G-ANISO2    (9,10,0)   True   True    True     False   1/32
+  A-insert   G-ANISO2    (1,4,10)   True   True    True     False   1/64
+  A-insert   G-CURVED    (0,1,2)    True   True    True     True    0
+  A-insert   G-CURVED    (0,3,9)    True   True    True     False   1
+  A-insert   G-CURVED    (9,10,0)   True   True    True     False   1
+  A-insert   G-CURVED    (1,4,10)   True   True    True     False   1
+  A-insert   G-CURVOFF   (0,1,2)    True   True    True     True    0
+  A-insert   G-CURVOFF   (0,3,9)    True   True    True     False   1/27
+  ... 108 triples in all.  The cyclic Jacobi LAPSE sum is nonvanishing at 0;
+  SW_HHH is not the identity at 81 of them (Det_HHH > 0 there).
+    A-axis       Det_HHH > 0 at  27 of  36 tested triples
+    A-chart      Det_HHH > 0 at  27 of  36 tested triples
+    A-insert     Det_HHH > 0 at  27 of  36 tested triples
+  READ THIS AGAINST SECTION 6: the metric-inserted rule closes the HH PAIR
+  residual exactly at every record, and its three-normal detector is
+  nevertheless nonzero.  Pair closure does not buy HHH closure -- the finite
+  measurement of v4 paper 12's own reason for building the corrected switch.
+
+--- 11. THE GENERAL-d EXTENSION (v4 p7 is general-d; d = 3 run) ---
+  |X| = 27 sites, 3 records, 42 lapse pairs
+  rule          G3-ANISO    G3-FLAT     G3-OFF      
+  A-chart       30          CLOSES      30          
+  A-axis        CLOSES      CLOSES      18          
+  A-linkframe   30          30          30          
+  A-insert      CLOSES      CLOSES      CLOSES      
+  G21 general-d: PASS
+
+==============================================================================
+--- 12. THE DECLARED SECONDARY: CAN R_HH BE EXPRESSED IN THE STITCHING
+        GEOMETRY'S DATA?  (NT and GEN, receipts hash-pinned at A05/A06)
+==============================================================================
+  12.1  THE HA RESIDUAL AS A HOLONOMY, computed in the coordinate NT and GEN
+        use: the based closed-loop product of the link transports, counted as
+        group elements and never as name labels.
+        carrier 625; HA residual holonomy group order 5, abelian True, element orders [1, 5]
+  12.2  GEN's OWN STRUCTURAL RELATIONS, tested on the HA residual, with GEN's
+        own defect as the positive control.
+        [positive control] GEN's declared defect: order 2, Sigma D Sigma = D^-1 : True
+        the declared chart involution preserves the front sector: True
+        HA: Sigma R Sigma = R^-1 at the declared loop : False
+        over 24 further lapse pairs the same relation holds at 17 of them
+  12.3  THE COORDINATE TABLE.  A stitching-geometry expression of R_HH needs a
+        committed coordinate at which the compared objects both live.
+        coordinate          NT / GEN                                            HA
+        carrier             36 (q_A,q_B,p_A,p_B) [NT] / 81 (s_A,s_B,p_A,p_B) [  625 total records = front sector x address reg
+        family              6 settings x 2 frames [NT] / 6 settings [GEN]       11 drag rules x 9 geometry records
+        law                 the declared legs U_prep, U_A(a), U_B(b)            H_a[N] : (n,m) -> (n+N, m+w[N,n]) at a lapse p
+        state               p(0) = delta_{j0}                                   the base total record (n_sym, 0)
+        arena               (frame, read time) nodes, co-reference identificat  (record site, front sector), normal and tangen
+        structure group     Klein four {1,W,X,WX} [NT] / dihedral order 2n [GE  elementary abelian of exponent 5, order 5 here
+        defect construction D = P_W U^-1 P_W U = (Sigma V^T Sigma V) (x) I_9    R_HH = C(H[N],H[M]) D[-beta_a(g;N,M)]
+
+        carrier size matches a committed NT/GEN carrier   : False
+        HA holonomy order in GEN's measured spectrum       : False   (order 5; spectrum {1,4,6,8,10,12,14,30})
+        HA holonomy group is NT/GEN's Klein four-group     : False
+        GEN's defining relation Sigma D Sigma = D^-1 holds : False
+
+        BRIDGE VERDICT: NOT POSABLE   (G22 PASS)
+        NAMED OBSTRUCTION -- NO COMMITTED CARRIER MORPHISM.  The stitching
+        geometry's defect law is a statement about a fixed 81-element (or
+        36-element) process carrier factorised as a system pair times a
+        pointer pair, with Sigma the pair-label exchange and the defect the
+        failure of a declared completion to intertwine that exchange.  R_HH
+        lives on total matter-geometry records with no such factorisation,
+        no exchange-typed completion, and no committed map to that carrier.
+        The measured consequences: the HA holonomy group has order 5,
+        exponent 5, which is NOT in GEN's measured order spectrum; and GEN's defining relation is measured
+        NOT to hold for R_HH, while the same relation is measured to hold for
+        GEN's own defect (the positive control).
+
+--- 13. THE AST GUARD (RUNBOOK 14 addendum, v13 #208) ---
+  gate-registering functions referencing mutant identity: []
+  synthetic injection flagged by the scanner            : ['gate_decoy_injected']
+  G23 AST guard: PASS
+
+--- 13B. THE FLOAT SWEEP (RUNBOOK 4) ---
+  float/complex literals and casts in the source : []
+  synthetic injection flagged by the sweep       : 2 hits
+  measured types of every residual field value   : ['Fraction']
+  G24 float sweep: PASS
+
+--- 14. GATES ---
+  G01  PASS  must-pass  THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)): the fixture-evaluation cou
+  G02  PASS  must-pass  THE RECORD READOUT'S ADMISSIBILITY GATE REJECTS BOTH DECLARED DEGENERATE RECORDS -- the SING
+  G03  PASS  must-pass  THE TESTED LAPSE PAIRS REALISE A FULL-RANK BRACKET-COVECTOR FAMILY AT EVERY SITE, so the clo
+  G04  PASS  must-pass  EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY
+  G05  PASS  must-pass  THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIEL
+  G06  PASS  must-pass  POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admiss
+  G07  PASS  must-pass  NEGATIVE CONTROL WITH TEETH: every declared BROKEN H variant fails closure on at least one a
+  G08  PASS  must-pass  SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE 
+  G08B  PASS  must-pass  TRANSPORT OF THE SECOND NORMAL STEP IS MEASURED NECESSARY: the declared frozen-front variant
+  G09  PASS  must-pass  A LINK-LOCAL RECORD-NATIVE WEIGHT CANNOT CLOSE IN GENERAL: two admissible records AGREE on a
+  G10  PASS  must-pass  EVERY COMPARISON MAP IS AN EXACT PERMUTATION OF THE REDUCED TOTAL-CONFIGURATION CARRIER, AND
+  G10B  PASS  must-pass  NO CELL WITH A NONZERO EXACT-RATIONAL RESIDUAL IS INVISIBLE AT EVERY TESTED PRIME -- countin
+  G11  PASS  must-pass  THE OPERATOR'S OWN REGISTER DISPLACEMENT, READ OFF THE PERMUTATION ITSELF, EQUALS THE EXACT-
+  G12  PASS  must-pass  FLAT AND CURVED TARGETS SEPARATE: the link-local record-native rule closes on the flat recor
+  G13  PASS  must-pass  UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact
+  G14  PASS  must-pass  CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under every declared chart t
+  G15  PASS  must-pass  THE SELF-TEST'S CACHE PATH IS EXERCISED AND ITS FRESH PATH BYPASSES IT (RUNBOOK 14 addenda, 
+  G16  PASS  recorded   MATTER CONTROL: on the matter-free carrier the HH commutator is the identity for every rule 
+  G17  PASS  recorded   DENSITY-WEIGHT FLIP-TEST (GW1 5, item 5): the closure verdict is measured under BOTH declare
+  G18  PASS  recorded   TANGENTIAL-REALISATION FLIP-TEST (the bookkeeping split): under D-TOT, D_a[v] must drag the 
+  G19  PASS  recorded   THE NORMAL-TANGENTIAL GROUP COMMUTATOR C(H_a[N], D_a[B]) IS MEASURED TRIVIAL ON THIS SUBSTRA
+  G20  PASS  recorded   THE THREE-NORMAL DETECTOR IS EVALUATED BY LITERAL COMPOSITION OF THE THREE CORRECTED SWITCHE
+  G21  PASS  must-pass  THE GENERAL-d EXTENSION REPRODUCES THE SAME SEPARATION AT d = 3: the metric-inserted rule cl
+  G22  PASS  must-pass  BRIDGE POSABILITY IS DECIDED BY THE COORDINATE TABLE AND BY GEN's OWN DEFINING RELATION, bot
+  G23  PASS  must-pass  NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (neither MUTANT, nor a module switch
+  G24  PASS  must-pass  NO FLOAT ENTERS ANY SUBSTANTIVE PATH: the instrument's own source carries no float or comple
+  must-pass gates 21;  failures 0 []
+
+--- 15. VERDICT ---
+  HA-RUNNABLE + HA-BRIDGE-NOT-POSABLE
+
+  A record-native H_a[N] EXISTS at finite N.  It is constructed on total
+  finite matter-geometry records, measured invertible, lapse-profiled, and
+  its second normal step is transported along the first.  The GW1 residual
+  R_HH RUNS, at the committed finite scope, as an exact rational field and
+  as an actual operator on a finite total-configuration carrier.
+
+  THE CLOSURE RESULT: CLOSURE ON THE DIAGONAL SECTOR, ANOMALY AT THE CROSS
+  TERM.  The link-local record-native rule closes on every record whose
+  order+count readout is diagonal -- flat and inhomogeneous alike, at d = 2
+  and at d = 3 -- and fails at every record whose readout carries a nonzero
+  cross term, because I^{ij} = adj(q)^{ij}/det q and det q is a joint
+  function of the site's link counts that no link-local rule reads (G09).
+  Site by site, the residual vanishes exactly where the drag weight IS the
+  record-read inverse metric (G08): on this construction, closure is
+  insertion.  GW1's kill condition is thereby measured rather than asserted.
+
+--- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
+  mutant              exit  killed   named kills
+  anchor-gen-defect   1     True     A:A12
+  anchor-gen-family   1     True     A:A09
+  anchor-gw1-lapse    1     True     A:A03
+  anchor-gw1-trees    1     True     A:A01
+  anchor-nt-paths     1     True     A:A07
+  anchor-nt-sha       1     True     A:A05
+  beta-flat           1     True     G:G06,G:G08,G:G12,G:G21
+  bridge-lax          1     True     G:G22
+  cache-lax           1     True     G:G15
+  chart-shift         1     True     G:G14
+  closure-lax         1     True     G:G07,G:G08,G:G08B,G:G12,G:G21
+  control-lax         1     True     G:G07
+  exempt-lax          1     True     G:G23
+  factor-lax          1     True     G:G10,G:G11
+  float-lax           1     True     G:G24
+  freeze-lax          1     True     G:G01
+  invert-lax          1     True     G:G04
+  omega-asym          1     True     G:G05,G:G13
+  order-swap          1     True     G:G05
+  posdef-lax          1     True     G:G02
+  prime-single        1     True     G:G10B
+  rank-lax            1     True     G:G03,G:G07,G:G08,G:G08B,G:G10,G:G12
+  readout-local       1     True     G:G07,G:G09,G:G12,G:G21
+  sign-flip           1     True     G:G05,G:G10,G:G11
+  transport-off       1     True     G:G04,G:G05,G:G19
+  mutants that survived : []
+  must-pass gates never falsified by any mutant : []
+

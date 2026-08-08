@@ -1,0 +1,4377 @@
+{
+ "anchors": [
+  {
+   "committed": {
+    "_archive_low_value_2026-06-14/code": 9,
+    "bc/code": 3,
+    "code": 353,
+    "external/walsh-delta-code": 8,
+    "v10/code": 137,
+    "v11/code": 7,
+    "v6/code": 1,
+    "v7/code": 273,
+    "v8/code": 101,
+    "v9/code": 84
+   },
+   "computed": {
+    "_archive_low_value_2026-06-14/code": 9,
+    "bc/code": 3,
+    "code": 353,
+    "external/walsh-delta-code": 8,
+    "v10/code": 137,
+    "v11/code": 7,
+    "v6/code": 1,
+    "v7/code": 273,
+    "v8/code": 101,
+    "v9/code": 84
+   },
+   "id": "A01",
+   "passed": true,
+   "quantity": "GW1 census: .py counts of the frozen runnable trees",
+   "source": "v13/note-gw1-metric-from-closure.md 4 (TERMINAL, v13 LOG #5)"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A02",
+   "passed": true,
+   "quantity": "GW1 census: .py at the repository root",
+   "source": "v13/note-gw1-metric-from-closure.md 4"
+  },
+  {
+   "committed": 12,
+   "computed": 12,
+   "id": "A03",
+   "passed": true,
+   "quantity": "GW1 census: files in code/ carrying the token 'lapse'",
+   "source": "v13/note-gw1-metric-from-closure.md 4"
+  },
+  {
+   "committed": {
+    "_archive_low_value_2026-06-14/code": 0,
+    "bc/code": 0,
+    "external/walsh-delta-code": 0,
+    "v10/code": 0,
+    "v11/code": 0,
+    "v6/code": 0,
+    "v7/code": 0,
+    "v8/code": 0,
+    "v9/code": 0
+   },
+   "computed": {
+    "_archive_low_value_2026-06-14/code": 0,
+    "bc/code": 0,
+    "external/walsh-delta-code": 0,
+    "v10/code": 0,
+    "v11/code": 0,
+    "v6/code": 0,
+    "v7/code": 0,
+    "v8/code": 0,
+    "v9/code": 0
+   },
+   "id": "A04",
+   "passed": true,
+   "quantity": "GW1 census: files carrying 'lapse' in every other frozen tree",
+   "source": "v13/note-gw1-metric-from-closure.md 4"
+  },
+  {
+   "committed": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "computed": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "id": "A05",
+   "passed": true,
+   "quantity": "NT receipt sha256 (hash pin)",
+   "source": "v13/code/nt_transport_receipt.json"
+  },
+  {
+   "committed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "computed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "id": "A06",
+   "passed": true,
+   "quantity": "GEN receipt sha256 (hash pin)",
+   "source": "v13/code/gen_generality_receipt.json"
+  },
+  {
+   "committed": 34024,
+   "computed": 34024,
+   "id": "A07",
+   "passed": true,
+   "quantity": "NT: total reduced paths over the six settings",
+   "source": "v13/paper-nt-nomological-transport.md 3.2"
+  },
+  {
+   "committed": {
+    "SP-A": 1,
+    "SP-B": 1,
+    "SP-C": 1,
+    "SP-D": 1,
+    "SP-E": 4,
+    "SP-F": 4
+   },
+   "computed": {
+    "SP-A": 1,
+    "SP-B": 1,
+    "SP-C": 1,
+    "SP-D": 1,
+    "SP-E": 4,
+    "SP-F": 4
+   },
+   "id": "A08",
+   "passed": true,
+   "quantity": "NT: the based holonomy group order per setting",
+   "source": "v13/paper-nt-nomological-transport.md 8.2"
+  },
+  {
+   "committed": 40320,
+   "computed": 40320,
+   "id": "A09",
+   "passed": true,
+   "quantity": "GEN: the declared completion family's size",
+   "source": "v13/paper-gen-generality-check.md 8.2"
+  },
+  {
+   "committed": 96,
+   "computed": 96,
+   "id": "A10",
+   "passed": true,
+   "quantity": "GEN: completions whose defect is the identity",
+   "source": "v13/paper-gen-generality-check.md 8.2"
+  },
+  {
+   "committed": 40224,
+   "computed": 40224,
+   "id": "A11",
+   "passed": true,
+   "quantity": "GEN: geometry-bearing completions",
+   "source": "v13/paper-gen-generality-check.md 8.2"
+  },
+  {
+   "committed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "computed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "id": "A12",
+   "passed": true,
+   "quantity": "GEN: the declared completion's defect permutation",
+   "source": "v13/code/gen_generality_receipt.json tables.completion_census"
+  },
+  {
+   "committed": 45,
+   "computed": 45,
+   "id": "A13",
+   "passed": true,
+   "quantity": "GEN: the declared defect's fixed configurations of 81",
+   "source": "v13/paper-gen-generality-check.md 8.1"
+  },
+  {
+   "committed": {
+    "1": 96,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216,
+    "15": 9216
+   },
+   "computed": {
+    "1": 96,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216,
+    "15": 9216
+   },
+   "id": "A14",
+   "passed": true,
+   "quantity": "GEN: the order spectrum of the defect over the whole family",
+   "source": "v13/paper-gen-generality-check.md 8.2"
+  },
+  {
+   "committed": {
+    "9": 16704,
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96
+   },
+   "computed": {
+    "9": 16704,
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96
+   },
+   "id": "A15",
+   "passed": true,
+   "quantity": "GEN: the fixed-configuration spectrum of the defect",
+   "source": "v13/paper-gen-generality-check.md 8.2"
+  },
+  {
+   "committed": 0,
+   "computed": 0,
+   "id": "A16",
+   "passed": true,
+   "quantity": "GEN: members where the dihedral relation Sigma D Sigma = D^-1 fails",
+   "source": "v13/paper-gen-generality-check.md 8.3"
+  }
+ ],
+ "arithmetic": "fractions.Fraction / integers / exact F_p; no floats",
+ "declarations": {
+  "L": 3,
+  "L_ext": 3,
+  "bridge_coordinates": [
+   "carrier",
+   "family",
+   "law",
+   "state",
+   "arena",
+   "structure group",
+   "defect construction"
+  ],
+  "broken_rules": [
+   "A-insert-x",
+   "A-insert-2x",
+   "A-notransport"
+  ],
+  "chart_group": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+  "d": 2,
+  "d_ext": 3,
+  "density_weight": 0,
+  "density_weight_flip": 1,
+  "frozen_front_rule": "A-notransport",
+  "lapse_family": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+  "links_d2": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "links_d3": [
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    1,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    1
+   ]
+  ],
+  "positive_control_rule": "A-insert",
+  "primes": [
+   5,
+   7,
+   13
+  ],
+  "records_d2": {
+   "G-ANISO": [
+    1,
+    4,
+    5
+   ],
+   "G-ANISO2": [
+    4,
+    9,
+    13
+   ],
+   "G-DIAG2": [
+    2,
+    2,
+    4
+   ],
+   "G-FLAT": [
+    1,
+    1,
+    2
+   ],
+   "G-INDEF": [
+    1,
+    1,
+    6
+   ],
+   "G-OFFDIAG": [
+    2,
+    2,
+    6
+   ],
+   "G-OFFDIAG2": [
+    3,
+    5,
+    12
+   ],
+   "G-OFFNEG": [
+    3,
+    5,
+    4
+   ],
+   "G-SINGULAR": [
+    1,
+    1,
+    4
+   ]
+  },
+  "records_d2_inhomogeneous": [
+   "G-CURVED (diagonal, site-dependent)",
+   "G-CURVOFF (cross term, site-dependent)"
+  ],
+  "records_d3": {
+   "G3-ANISO": [
+    1,
+    4,
+    9,
+    5,
+    10,
+    13
+   ],
+   "G3-FLAT": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "G3-OFF": [
+    2,
+    2,
+    2,
+    6,
+    4,
+    4
+   ]
+  },
+  "rules": [
+   [
+    "A-chart",
+    "A",
+    "Lambda = delta (count-blind chart identity)"
+   ],
+   [
+    "A-axis",
+    "A",
+    "Lambda = diag(1/n_{e_j}) from the axis interval counts"
+   ],
+   [
+    "A-linkframe",
+    "A",
+    "Lambda^{ij} = sum_l e_l^i e_l^j / n_l over every declared link"
+   ],
+   [
+    "A-linkhalf",
+    "A",
+    "Lambda = (1/2) sum_l e_l e_l^T / n_l"
+   ],
+   [
+    "A-insert",
+    "A",
+    "Lambda = I_a(g), read from the record [POSITIVE CONTROL]"
+   ],
+   [
+    "A-insert-x",
+    "A",
+    "Lambda = I_a(g) with the cross term sign-flipped [BROKEN]"
+   ],
+   [
+    "A-insert-2x",
+    "A",
+    "Lambda = 2 I_a(g) [BROKEN]"
+   ],
+   [
+    "A-notransport",
+    "A",
+    "Lambda = I_a(g), drag read at a frozen reference front [BROKEN]"
+   ],
+   [
+    "B-axis",
+    "B",
+    "lambda_l = 1/n_l on the axis links only"
+   ],
+   [
+    "B-all",
+    "B",
+    "lambda_l = 1/n_l on every declared link"
+   ],
+   [
+    "B-chart",
+    "B",
+    "lambda_l = 1 on the axis links only"
+   ]
+  ],
+  "tangential_realisations": {
+   "D-REG": "D_a[v] shifts the matter record's address register by v; the geometry front is not transported (primary)",
+   "D-TOT": "D_a[v] shifts the register AND drags the front along x -> x+v(x), defined only where that site map is a bijection (flip-test)"
+  },
+  "test_class": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size",
+  "transported_rules": [
+   "A-chart",
+   "A-axis",
+   "A-linkframe",
+   "A-linkhalf",
+   "A-insert",
+   "A-insert-x",
+   "A-insert-2x"
+  ]
+ },
+ "disclosures": [
+  {
+   "detail": {
+    "v12/code": {
+     "census": 5,
+     "now": 7
+    },
+    "v13/code": {
+     "census": "not listed",
+     "now": 37
+    }
+   },
+   "id": "X01",
+   "statement": "two trees moved since the GW1 census and are excluded from A01 by declaration"
+  },
+  {
+   "detail": null,
+   "id": "X04",
+   "statement": "G16 and G19 are ANALYTICALLY FORCED and are therefore recorded, not must-pass: the front advance n -> n+N is an additive translation, so the HH commutator acts trivially on a matter-free carrier (G16); and the address register is passive under the front, so H_a[N] and D_a[B] commute identically (G19).  Both are printed because they are the measured shape of this construction, and both are consequences of declared choices, not discoveries."
+  },
+  {
+   "detail": null,
+   "id": "X03",
+   "statement": "The instrument carries ONE run-mode boolean, DELIVERY_RUN, identical for every mutant, which decides only whether receipts are written and the mutant harness is spawned.  It carries no per-mutant identity, no gate predicate reads it, and the AST guard (G23) forbids every gate-registering function from naming MUTANT, a per-mutant switch, or a mutant name."
+  },
+  {
+   "detail": null,
+   "id": "X02",
+   "statement": "The equivalence measured by G08 is ANALYTICALLY FORCED once G03's rank is full: rho^i = (Lambda^{ij} - I^{ij}) omega_j vanishes on a spanning covector family iff Lambda = I.  It is therefore recorded as a DISCLOSURE, not claimed as an independent discovery; the measured content is G03's rank, the cell census, and the residual magnitudes below."
+  }
+ ],
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE FIXTURE TRUTH (RUNBOOK 13(4)): the fixture-evaluation counter is measured zero at the freeze point",
+   "detail": {
+    "fixture_evals_at_freeze": 0
+   },
+   "id": "G01",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE RECORD READOUT'S ADMISSIBILITY GATE REJECTS BOTH DECLARED DEGENERATE RECORDS -- the SINGULAR one (det q = 0) and the INDEFINITE one (det q < 0) -- and accepts every other one (negative control with teeth, in both failure modes)",
+   "detail": {
+    "admissible": {
+     "G-ANISO": true,
+     "G-ANISO2": true,
+     "G-CURVED": true,
+     "G-CURVOFF": true,
+     "G-DIAG2": true,
+     "G-FLAT": true,
+     "G-INDEF": false,
+     "G-OFFDIAG": true,
+     "G-OFFDIAG2": true,
+     "G-OFFNEG": true,
+     "G-SINGULAR": false
+    },
+    "declared_negative_controls": [
+     "G-SINGULAR",
+     "G-INDEF"
+    ]
+   },
+   "id": "G02",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TESTED LAPSE PAIRS REALISE A FULL-RANK BRACKET-COVECTOR FAMILY AT EVERY SITE, so the closure relation IDENTIFIES the structure function uniquely (GW1 5 item 7 -- 'no committed run tests rank')",
+   "detail": {
+    "rank_per_site": {
+     "(0, 0)": 2,
+     "(0, 1)": 2,
+     "(0, 2)": 2,
+     "(1, 0)": 2,
+     "(1, 1)": 2,
+     "(1, 2)": 2,
+     "(2, 0)": 2,
+     "(2, 1)": 2,
+     "(2, 2)": 2
+    }
+   },
+   "id": "G03",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY MEMBER OF THE CONSTRUCTED H FAMILY IS AN EXACT BIJECTION OF TOTAL RECORDS, MEASURED BY H^-1 H = H H^-1 = id; and the declared non-injective falsifier (register collapse) is REJECTED by the same predicate",
+   "detail": {
+    "failures": 0,
+    "falsifier_rejected": true,
+    "tested": 396
+   },
+   "id": "G04",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE LITERAL FIVE-MAP COMPOSITION AND THE INDEPENDENTLY BUILT CLOSED FORM AGREE FIELD BY FIELD (the comparator is not a copy of the audited object routed through it -- RUNBOOK 14 addendum, v13 #219)",
+   "detail": {
+    "compared": 1188,
+    "disagreements": 0
+   },
+   "id": "G05",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "POSITIVE CONTROL: the metric-INSERTED rule (Lambda = I_a(g)) closes exactly, at every admissible record and every tested lapse pair",
+   "detail": {
+    "G-ANISO": true,
+    "G-ANISO2": true,
+    "G-CURVED": true,
+    "G-CURVOFF": true,
+    "G-DIAG2": true,
+    "G-FLAT": true,
+    "G-OFFDIAG": true,
+    "G-OFFDIAG2": true,
+    "G-OFFNEG": true
+   },
+   "id": "G06",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NEGATIVE CONTROL WITH TEETH: every declared BROKEN H variant fails closure on at least one admissible record -- including the variant whose ONLY defect is that its second normal step is not transported along the first",
+   "detail": {
+    "declared": [
+     "A-insert-x",
+     "A-insert-2x",
+     "A-notransport"
+    ],
+    "failing_records": {
+     "A-insert-2x": 9,
+     "A-insert-x": 4,
+     "A-notransport": 9
+    },
+    "tested": [
+     "A-insert-x",
+     "A-insert-2x",
+     "A-notransport"
+    ]
+   },
+   "id": "G07",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "SITE BY SITE, THE RESIDUAL VANISHES EXACTLY WHERE THE DRAG RULE'S WEIGHT COINCIDES WITH THE RECORD-READ INVERSE METRIC: closure IS insertion, over the whole rule x record x site grid",
+   "detail": {
+    "cells": 72,
+    "mismatches": []
+   },
+   "id": "G08",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "TRANSPORT OF THE SECOND NORMAL STEP IS MEASURED NECESSARY: the declared frozen-front variant carries Lambda = I_a(g) at EVERY site -- it is fully metric-inserted -- and its residual vanishes at NO site and no record.  Insertion alone does not buy closure; the transported second step (GW1 1.1 condition 3) is independently required",
+   "detail": {
+    "Lambda = I at every site, every record": true,
+    "residual vanishes nowhere": true,
+    "row": {
+     "G-ANISO": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-ANISO2": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-CURVED": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-CURVOFF": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-DIAG2": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-FLAT": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-OFFDIAG": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-OFFDIAG2": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     },
+     "G-OFFNEG": {
+      "Lambda_equals_I_sites": 9,
+      "residual_zero_sites": 0,
+      "sites": 9
+     }
+    },
+    "rule": "A-notransport"
+   },
+   "id": "G08B",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "A LINK-LOCAL RECORD-NATIVE WEIGHT CANNOT CLOSE IN GENERAL: two admissible records AGREE on a link's own interval count yet the record-read inverse metric demands DIFFERENT weights there (counterexample exhibited, not argued)",
+   "detail": {
+    "witness": {
+     "I^jj_demanded": [
+      "2/3",
+      "1/2"
+     ],
+     "direction": 0,
+     "link": "(1, 0)",
+     "other_counts": [
+      "(2, 2, 6)",
+      "(2, 2, 4)"
+     ],
+     "records": [
+      "G-CURVOFF",
+      "G-DIAG2"
+     ],
+     "shared_interval_count": 2
+    }
+   },
+   "id": "G09",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY COMPARISON MAP IS AN EXACT PERMUTATION OF THE REDUCED TOTAL-CONFIGURATION CARRIER, AND THE OPERATOR PRODUCT R_HH IS THE IDENTITY OPERATOR EXACTLY WHERE THE RESIDUAL FIELD REDUCES TO ZERO AT THE DETECTOR SITE",
+   "detail": {
+    "carriers_built": 1056,
+    "non_bijective_maps": 0,
+    "operator_vs_field_mismatches": 0,
+    "primes": [
+     5,
+     7,
+     13
+    ],
+    "reductions_undefined": 33
+   },
+   "id": "G10",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO CELL WITH A NONZERO EXACT-RATIONAL RESIDUAL IS INVISIBLE AT EVERY TESTED PRIME -- counting a prime at which the reduction is UNDEFINED as not seeing it: the finite operator layer's verdict is not a modular artefact (the declared primes are each other's control)",
+   "detail": {
+    "blind_at_every_prime": [],
+    "cells": 99,
+    "primes": [
+     5,
+     7,
+     13
+    ]
+   },
+   "id": "G10B",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE OPERATOR'S OWN REGISTER DISPLACEMENT, READ OFF THE PERMUTATION ITSELF, EQUALS THE EXACT-RATIONAL RESIDUAL FIELD REDUCED MOD p AT THE DETECTOR SITE (a second comparator, differently routed)",
+   "detail": {
+    "failures": 0,
+    "tested": 76
+   },
+   "id": "G11",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "FLAT AND CURVED TARGETS SEPARATE: the link-local record-native rule closes on the flat record AND on the inhomogeneous diagonal ('curved') record, and fails on both cross-term records",
+   "detail": {
+    "G-CURVED": true,
+    "G-CURVOFF": false,
+    "G-FLAT": true,
+    "G-OFFDIAG": false
+   },
+   "id": "G12",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "UPDATE-ORDER CONTROL: exchanging the two normal labels sends the residual field to its exact negative at every site, so the measured two-cell is genuinely antisymmetric and not an artefact of one order",
+   "detail": {
+    "tested": 360,
+    "violations": 0
+   },
+   "id": "G13",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "CHART SELF-TEST (RUNBOOK 14): the residual field is EQUIVARIANT under every declared chart translation and direction relabelling, measured site by site and component by component on freshly rebuilt records",
+   "detail": {
+    "relabellings": 2,
+    "tested": 4860,
+    "translations": 3,
+    "violations": 0
+   },
+   "id": "G14",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SELF-TEST'S CACHE PATH IS EXERCISED AND ITS FRESH PATH BYPASSES IT (RUNBOOK 14 addenda, v13 #185 / #219: a zero-hit cache gate must also gate that the cache path is used at all)",
+   "detail": {
+    "fresh_bypasses": 486,
+    "hits": 283133,
+    "misses": 1377
+   },
+   "id": "G15",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "MATTER CONTROL: on the matter-free carrier the HH commutator is the identity for every rule and record, so the deformation-closure test has NO content without matter records -- measured, not asserted",
+   "detail": {
+    "matter_free_commutator_trivial": true
+   },
+   "id": "G16",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "DENSITY-WEIGHT FLIP-TEST (GW1 5, item 5): the closure verdict is measured under BOTH declared normalisation conventions and every cell whose verdict moves is named",
+   "detail": {
+    "per_record": {
+     "G-ANISO": {
+      "w=0": 0,
+      "w=1": 96
+     },
+     "G-ANISO2": {
+      "w=0": 0,
+      "w=1": 96
+     },
+     "G-CURVED": {
+      "w=0": 0,
+      "w=1": 92
+     },
+     "G-CURVOFF": {
+      "w=0": 96,
+      "w=1": 96
+     },
+     "G-DIAG2": {
+      "w=0": 0,
+      "w=1": 96
+     },
+     "G-FLAT": {
+      "w=0": 0,
+      "w=1": 0
+     },
+     "G-OFFDIAG": {
+      "w=0": 96,
+      "w=1": 96
+     },
+     "G-OFFDIAG2": {
+      "w=0": 96,
+      "w=1": 96
+     },
+     "G-OFFNEG": {
+      "w=0": 96,
+      "w=1": 96
+     }
+    },
+    "verdict_moves_at": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-DIAG2"
+    ]
+   },
+   "id": "G17",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "TANGENTIAL-REALISATION FLIP-TEST (the bookkeeping split): under D-TOT, D_a[v] must drag the geometry front along the site map x -> x+v(x).  MEASURED: of the brackets this arena realises, the number with beta nonzero that nevertheless admit a bijective site map",
+   "detail": {
+    "beta nonzero": 864,
+    "beta nonzero AND site map defined": 8,
+    "pairs": 1188,
+    "site map defined": 332,
+    "site map undefined": 856
+   },
+   "id": "G18",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "THE NORMAL-TANGENTIAL GROUP COMMUTATOR C(H_a[N], D_a[B]) IS MEASURED TRIVIAL ON THIS SUBSTRATE, so the corrected switch degenerates to W = H_a[L_B N]: the construction does NOT reproduce v4 paper 13 Proposition 3.6's nonzero detector, and that is a measurement",
+   "detail": {
+    "tested": 108,
+    "trivial": 108
+   },
+   "id": "G19",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "THE THREE-NORMAL DETECTOR IS EVALUATED BY LITERAL COMPOSITION OF THE THREE CORRECTED SWITCHES: the cyclic Jacobi lapse sum, the front displacement and the register displacement of SW_HHH are each measured at every tested triple, and the nonvanishing cells are named",
+   "detail": {
+    "SW_HHH_not_the_identity": 81,
+    "jacobi_lapse_sum_nonvanishing": 0,
+    "nonidentity_cells": [
+     "A-insert|G-ANISO|(0,3,9)|max_reg=1",
+     "A-insert|G-ANISO|(9,10,0)|max_reg=2",
+     "A-insert|G-ANISO|(1,4,10)|max_reg=1",
+     "A-insert|G-ANISO2|(0,3,9)|max_reg=1/64",
+     "A-insert|G-ANISO2|(9,10,0)|max_reg=1/32",
+     "A-insert|G-ANISO2|(1,4,10)|max_reg=1/64",
+     "A-insert|G-CURVED|(0,3,9)|max_reg=1",
+     "A-insert|G-CURVED|(9,10,0)|max_reg=1",
+     "A-insert|G-CURVED|(1,4,10)|max_reg=1",
+     "A-insert|G-CURVOFF|(0,3,9)|max_reg=1/27",
+     "A-insert|G-CURVOFF|(9,10,0)|max_reg=172/1029",
+     "A-insert|G-CURVOFF|(1,4,10)|max_reg=18/125",
+     "A-insert|G-DIAG2|(0,3,9)|max_reg=1/8",
+     "A-insert|G-DIAG2|(9,10,0)|max_reg=1/2",
+     "A-insert|G-DIAG2|(1,4,10)|max_reg=1/8",
+     "A-insert|G-FLAT|(0,3,9)|max_reg=1",
+     "A-insert|G-FLAT|(9,10,0)|max_reg=4",
+     "A-insert|G-FLAT|(1,4,10)|max_reg=1",
+     "A-insert|G-OFFDIAG|(0,3,9)|max_reg=1/27",
+     "A-insert|G-OFFDIAG|(9,10,0)|max_reg=20/27",
+     "A-insert|G-OFFDIAG|(1,4,10)|max_reg=4/27",
+     "A-insert|G-OFFDIAG2|(0,3,9)|max_reg=27/1331",
+     "A-insert|G-OFFDIAG2|(9,10,0)|max_reg=160/1331",
+     "A-insert|G-OFFDIAG2|(1,4,10)|max_reg=75/1331",
+     "A-insert|G-OFFNEG|(0,3,9)|max_reg=343/1331",
+     "A-insert|G-OFFNEG|(9,10,0)|max_reg=360/1331",
+     "A-insert|G-OFFNEG|(1,4,10)|max_reg=175/1331",
+     "A-axis|G-ANISO|(0,3,9)|max_reg=1",
+     "A-axis|G-ANISO|(9,10,0)|max_reg=2",
+     "A-axis|G-ANISO|(1,4,10)|max_reg=1",
+     "A-axis|G-ANISO2|(0,3,9)|max_reg=1/64",
+     "A-axis|G-ANISO2|(9,10,0)|max_reg=1/32",
+     "A-axis|G-ANISO2|(1,4,10)|max_reg=1/64",
+     "A-axis|G-CURVED|(0,3,9)|max_reg=1",
+     "A-axis|G-CURVED|(9,10,0)|max_reg=1",
+     "A-axis|G-CURVED|(1,4,10)|max_reg=1",
+     "A-axis|G-CURVOFF|(0,3,9)|max_reg=1/18",
+     "A-axis|G-CURVOFF|(9,10,0)|max_reg=8/49",
+     "A-axis|G-CURVOFF|(1,4,10)|max_reg=9/50",
+     "A-axis|G-DIAG2|(0,3,9)|max_reg=1/8",
+     "A-axis|G-DIAG2|(9,10,0)|max_reg=1/2",
+     "A-axis|G-DIAG2|(1,4,10)|max_reg=1/8",
+     "A-axis|G-FLAT|(0,3,9)|max_reg=1",
+     "A-axis|G-FLAT|(9,10,0)|max_reg=4",
+     "A-axis|G-FLAT|(1,4,10)|max_reg=1",
+     "A-axis|G-OFFDIAG|(0,3,9)|max_reg=1/18",
+     "A-axis|G-OFFDIAG|(9,10,0)|max_reg=8/9",
+     "A-axis|G-OFFDIAG|(1,4,10)|max_reg=2/9",
+     "A-axis|G-OFFDIAG2|(0,3,9)|max_reg=3/121",
+     "A-axis|G-OFFDIAG2|(9,10,0)|max_reg=70/363",
+     "A-axis|G-OFFDIAG2|(1,4,10)|max_reg=25/363",
+     "A-axis|G-OFFNEG|(0,3,9)|max_reg=49/363",
+     "A-axis|G-OFFNEG|(9,10,0)|max_reg=20/121",
+     "A-axis|G-OFFNEG|(1,4,10)|max_reg=25/363",
+     "A-chart|G-ANISO|(0,3,9)|max_reg=1",
+     "A-chart|G-ANISO|(9,10,0)|max_reg=4",
+     "A-chart|G-ANISO|(1,4,10)|max_reg=1",
+     "A-chart|G-ANISO2|(0,3,9)|max_reg=1/16",
+     "A-chart|G-ANISO2|(9,10,0)|max_reg=1/4",
+     "A-chart|G-ANISO2|(1,4,10)|max_reg=1/16",
+     "A-chart|G-CURVED|(0,3,9)|max_reg=1",
+     "A-chart|G-CURVED|(9,10,0)|max_reg=1",
+     "A-chart|G-CURVED|(1,4,10)|max_reg=1",
+     "A-chart|G-CURVOFF|(0,3,9)|max_reg=1/9",
+     "A-chart|G-CURVOFF|(9,10,0)|max_reg=16/49",
+     "A-chart|G-CURVOFF|(1,4,10)|max_reg=9/25",
+     "A-chart|G-DIAG2|(0,3,9)|max_reg=1/4",
+     "A-chart|G-DIAG2|(9,10,0)|max_reg=1",
+     "A-chart|G-DIAG2|(1,4,10)|max_reg=1/4",
+     "A-chart|G-FLAT|(0,3,9)|max_reg=1",
+     "A-chart|G-FLAT|(9,10,0)|max_reg=4",
+     "A-chart|G-FLAT|(1,4,10)|max_reg=1",
+     "A-chart|G-OFFDIAG|(0,3,9)|max_reg=1/9",
+     "A-chart|G-OFFDIAG|(9,10,0)|max_reg=16/9",
+     "A-chart|G-OFFDIAG|(1,4,10)|max_reg=4/9",
+     "A-chart|G-OFFDIAG2|(0,3,9)|max_reg=9/121",
+     "A-chart|G-OFFDIAG2|(9,10,0)|max_reg=100/121",
+     "A-chart|G-OFFDIAG2|(1,4,10)|max_reg=25/121",
+     "A-chart|G-OFFNEG|(0,3,9)|max_reg=49/121",
+     "A-chart|G-OFFNEG|(9,10,0)|max_reg=100/121",
+     "A-chart|G-OFFNEG|(1,4,10)|max_reg=25/121"
+    ],
+    "triples": 108
+   },
+   "id": "G20",
+   "must_pass": false,
+   "passed": true
+  },
+  {
+   "claim": "THE GENERAL-d EXTENSION REPRODUCES THE SAME SEPARATION AT d = 3: the metric-inserted rule closes on every admissible record; the link-local rule closes on the diagonal records and fails on the cross-term record",
+   "detail": {
+    "A-axis|G3-ANISO": 0,
+    "A-axis|G3-FLAT": 0,
+    "A-axis|G3-OFF": 18,
+    "A-chart|G3-ANISO": 30,
+    "A-chart|G3-FLAT": 0,
+    "A-chart|G3-OFF": 30,
+    "A-insert|G3-ANISO": 0,
+    "A-insert|G3-FLAT": 0,
+    "A-insert|G3-OFF": 0,
+    "A-linkframe|G3-ANISO": 30,
+    "A-linkframe|G3-FLAT": 30,
+    "A-linkframe|G3-OFF": 30
+   },
+   "id": "G21",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "BRIDGE POSABILITY IS DECIDED BY THE COORDINATE TABLE AND BY GEN's OWN DEFINING RELATION, both measured: an expression of R_HH in the stitching geometry's data requires a committed carrier match AND a structure group in GEN's measured family AND the dihedral relation; the positive control is that GEN's own defect satisfies the relation",
+   "detail": {
+    "carrier_match": false,
+    "dihedral_relation_on_R_HH": false,
+    "dihedral_relation_over_further_pairs": "17/24",
+    "ha_abelian": true,
+    "ha_element_orders": [
+     1,
+     5
+    ],
+    "ha_group_order": 5,
+    "in_gen_spectrum": false,
+    "is_klein": false,
+    "posable": false,
+    "positive_control_gen_defect_relation": true
+   },
+   "id": "G22",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (neither MUTANT, nor a module switch, nor a mutant-name literal), and the scanner is validated by a synthetic injection that it MUST flag",
+   "detail": {
+    "injection_flagged": [
+     "gate_decoy_injected"
+    ],
+    "offenders": []
+   },
+   "id": "G23",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO FLOAT ENTERS ANY SUBSTANTIVE PATH: the instrument's own source carries no float or complex literal and never calls float()/complex() (the scanner validated by a synthetic injection it must flag), and every value of every residual field is measured to be an exact type",
+   "detail": {
+    "float_hits": [],
+    "injection_flagged": [
+     "line 1033: call float()",
+     "line 1033: literal 0.5"
+    ],
+    "residual_value_types": [
+     "Fraction"
+    ]
+   },
+   "id": "G24",
+   "must_pass": true,
+   "passed": true
+  }
+ ],
+ "hash_pins": {
+  "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+  "v13/code/nt_transport_receipt.json": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e"
+ },
+ "mutants": [
+  {
+   "exit": 1,
+   "expected_kill": "GEN declared defect permutation perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-defect",
+   "named_kills": [
+    "A:A12"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "GEN completion-family size perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-family",
+   "named_kills": [
+    "A:A09"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "GW1 'lapse' token sweep perturbed",
+   "killed": true,
+   "mutant": "anchor-gw1-lapse",
+   "named_kills": [
+    "A:A03"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "GW1 runnable-tree .py census perturbed",
+   "killed": true,
+   "mutant": "anchor-gw1-trees",
+   "named_kills": [
+    "A:A01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "NT reduced-path count perturbed",
+   "killed": true,
+   "mutant": "anchor-nt-paths",
+   "named_kills": [
+    "A:A07"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "NT receipt sha256 perturbed",
+   "killed": true,
+   "mutant": "anchor-nt-sha",
+   "named_kills": [
+    "A:A05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the record-read metric in beta is replaced by the chart identity",
+   "killed": true,
+   "mutant": "beta-flat",
+   "named_kills": [
+    "G:G06",
+    "G:G08",
+    "G:G12",
+    "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the bridge posability predicate drops its coordinate test",
+   "killed": true,
+   "mutant": "bridge-lax",
+   "named_kills": [
+    "G:G22"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the fresh-evaluation path reads the memo cache",
+   "killed": true,
+   "mutant": "cache-lax",
+   "named_kills": [
+    "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the chart action moves the record but not the field index",
+   "killed": true,
+   "mutant": "chart-shift",
+   "named_kills": [
+    "G:G14"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the closure predicate accepts any residual field",
+   "killed": true,
+   "mutant": "closure-lax",
+   "named_kills": [
+    "G:G07",
+    "G:G08",
+    "G:G08B",
+    "G:G12",
+    "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the broken-H variants are dropped from the tested set",
+   "killed": true,
+   "mutant": "control-lax",
+   "named_kills": [
+    "G:G07"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the AST mutant-identity scanner is blinded",
+   "killed": true,
+   "mutant": "exempt-lax",
+   "named_kills": [
+    "G:G23"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-to-F_p reduction is perturbed non-linearly",
+   "killed": true,
+   "mutant": "factor-lax",
+   "named_kills": [
+    "G:G10",
+    "G:G11"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the float sweep is blinded",
+   "killed": true,
+   "mutant": "float-lax",
+   "named_kills": [
+    "G:G24"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a fixture datum is evaluated before the declarations freeze",
+   "killed": true,
+   "mutant": "freeze-lax",
+   "named_kills": [
+    "G:G01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the bijection predicate accepts a non-injective map",
+   "killed": true,
+   "mutant": "invert-lax",
+   "named_kills": [
+    "G:G04"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the finite bracket covector uses a non-antisymmetric difference",
+   "killed": true,
+   "mutant": "omega-asym",
+   "named_kills": [
+    "G:G05",
+    "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the two normal labels are swapped in the commutator only",
+   "killed": true,
+   "mutant": "order-swap",
+   "named_kills": [
+    "G:G05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the positive-definiteness predicate always accepts",
+   "killed": true,
+   "mutant": "posdef-lax",
+   "named_kills": [
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the operator layer's multi-prime control is reduced to one prime",
+   "killed": true,
+   "mutant": "prime-single",
+   "named_kills": [
+    "G:G10B"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the lapse family is degenerated below full rank",
+   "killed": true,
+   "mutant": "rank-lax",
+   "named_kills": [
+    "G:G03",
+    "G:G07",
+    "G:G08",
+    "G:G08B",
+    "G:G10",
+    "G:G12"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the record's metric readout is replaced by a link-local surrogate",
+   "killed": true,
+   "mutant": "readout-local",
+   "named_kills": [
+    "G:G07",
+    "G:G09",
+    "G:G12",
+    "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the finite bracket covector's sign convention is flipped",
+   "killed": true,
+   "mutant": "sign-flip",
+   "named_kills": [
+    "G:G05",
+    "G:G10",
+    "G:G11"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the second normal step reads the pre-advance front",
+   "killed": true,
+   "mutant": "transport-off",
+   "named_kills": [
+    "G:G04",
+    "G:G05",
+    "G:G19"
+   ]
+  }
+ ],
+ "never_falsified": [],
+ "pin": "v13/note-ha-successor-pin.md",
+ "pin_base_commit": "024fcd7",
+ "python": "3.13.2",
+ "schema": "ha-successor-receipt-v1",
+ "source_sha256": "19dad19b01ee09f333c9780769dd3b887cc7699b2132813b7d24b03dcb83d772",
+ "tables": {
+  "bridge": {
+   "carrier_match": false,
+   "gen_defect_order": 2,
+   "gen_dihedral": true,
+   "ha_abelian": true,
+   "ha_dihedral": false,
+   "ha_dihedral_over_pairs": "17/24",
+   "ha_element_orders": [
+    1,
+    5
+   ],
+   "ha_holonomy_order": 5,
+   "in_gen_spectrum": false,
+   "posable": false
+  },
+  "closure": {
+   "A-axis|G-ANISO": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-axis|G-ANISO2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-axis|G-CURVED": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-axis|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "2/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-axis|G-DIAG2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-axis|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-axis|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-axis|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "40/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-axis|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "20/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-ANISO": {
+    "closes": false,
+    "max_abs": "3",
+    "nonzero_pairs": 70,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-ANISO2": {
+    "closes": false,
+    "max_abs": "32/9",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-CURVED": {
+    "closes": false,
+    "max_abs": "8/3",
+    "nonzero_pairs": 84,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "8/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-DIAG2": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-chart|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "4/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "24/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-chart|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "40/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-ANISO": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-ANISO2": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-CURVED": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(0, 2)",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "4/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-DIAG2": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-FLAT": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "28/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-2x|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "14/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-x|G-ANISO": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert-x|G-ANISO2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert-x|G-CURVED": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert-x|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "8/5",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(1, 1)",
+     "ramp0"
+    ]
+   },
+   "A-insert-x|G-DIAG2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert-x|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert-x|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "8/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-x|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "16/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert-x|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "16/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-insert|G-ANISO": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-ANISO2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-CURVED": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-CURVOFF": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-DIAG2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-OFFDIAG": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-OFFDIAG2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-insert|G-OFFNEG": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "A-linkframe|G-ANISO": {
+    "closes": false,
+    "max_abs": "4/5",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-ANISO2": {
+    "closes": false,
+    "max_abs": "4/13",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-CURVED": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(0, 0)",
+     "one"
+    ]
+   },
+   "A-linkframe|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "5/6",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(1, 1)",
+     "ramp0"
+    ]
+   },
+   "A-linkframe|G-DIAG2": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-FLAT": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "40/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkframe|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "27/55",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-ANISO": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-ANISO2": {
+    "closes": false,
+    "max_abs": "1/2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-CURVED": {
+    "closes": false,
+    "max_abs": "3/4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(0, 2)",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "5/6",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-DIAG2": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-FLAT": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "62/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-linkhalf|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "29/66",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-ANISO": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-ANISO2": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-CURVED": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "delta(0, 2)",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "4/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-DIAG2": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-FLAT": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "4",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "28/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "A-notransport|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "14/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-ANISO": {
+    "closes": false,
+    "max_abs": "4/5",
+    "nonzero_pairs": 78,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-ANISO2": {
+    "closes": false,
+    "max_abs": "4/13",
+    "nonzero_pairs": 78,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-CURVED": {
+    "closes": false,
+    "max_abs": "4/5",
+    "nonzero_pairs": 78,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "11/15",
+    "nonzero_pairs": 114,
+    "total_pairs": 132,
+    "witness": [
+     "delta(1, 1)",
+     "ramp0"
+    ]
+   },
+   "B-all|G-DIAG2": {
+    "closes": false,
+    "max_abs": "1",
+    "nonzero_pairs": 78,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-FLAT": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 78,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 114,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "40/33",
+    "nonzero_pairs": 114,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-all|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "1/2",
+    "nonzero_pairs": 114,
+    "total_pairs": 132,
+    "witness": [
+     "delta(0, 0)",
+     "ramp0"
+    ]
+   },
+   "B-axis|G-ANISO": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-axis|G-ANISO2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-axis|G-CURVED": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-axis|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "2/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-axis|G-DIAG2": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-axis|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-axis|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-axis|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "40/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-axis|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "20/33",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-ANISO": {
+    "closes": false,
+    "max_abs": "3",
+    "nonzero_pairs": 70,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-ANISO2": {
+    "closes": false,
+    "max_abs": "32/9",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-CURVED": {
+    "closes": false,
+    "max_abs": "8/3",
+    "nonzero_pairs": 84,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-CURVOFF": {
+    "closes": false,
+    "max_abs": "8/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-DIAG2": {
+    "closes": false,
+    "max_abs": "2",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-FLAT": {
+    "closes": true,
+    "max_abs": "0",
+    "nonzero_pairs": 0,
+    "total_pairs": 132,
+    "witness": null
+   },
+   "B-chart|G-OFFDIAG": {
+    "closes": false,
+    "max_abs": "4/3",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-OFFDIAG2": {
+    "closes": false,
+    "max_abs": "24/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   },
+   "B-chart|G-OFFNEG": {
+    "closes": false,
+    "max_abs": "40/11",
+    "nonzero_pairs": 96,
+    "total_pairs": 132,
+    "witness": [
+     "ramp0",
+     "ramp1"
+    ]
+   }
+  },
+  "density_weight_flip": {
+   "G-ANISO": {
+    "w=0": 0,
+    "w=1": 96
+   },
+   "G-ANISO2": {
+    "w=0": 0,
+    "w=1": 96
+   },
+   "G-CURVED": {
+    "w=0": 0,
+    "w=1": 92
+   },
+   "G-CURVOFF": {
+    "w=0": 96,
+    "w=1": 96
+   },
+   "G-DIAG2": {
+    "w=0": 0,
+    "w=1": 96
+   },
+   "G-FLAT": {
+    "w=0": 0,
+    "w=1": 0
+   },
+   "G-OFFDIAG": {
+    "w=0": 96,
+    "w=1": 96
+   },
+   "G-OFFDIAG2": {
+    "w=0": 96,
+    "w=1": 96
+   },
+   "G-OFFNEG": {
+    "w=0": 96,
+    "w=1": 96
+   }
+  },
+  "detector": [
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "2",
+    "record": "G-ANISO",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO2",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/64",
+    "record": "G-ANISO2",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/32",
+    "record": "G-ANISO2",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/64",
+    "record": "G-ANISO2",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVED",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVOFF",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/27",
+    "record": "G-CURVOFF",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "172/1029",
+    "record": "G-CURVOFF",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "18/125",
+    "record": "G-CURVOFF",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-DIAG2",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/8",
+    "record": "G-DIAG2",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/2",
+    "record": "G-DIAG2",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/8",
+    "record": "G-DIAG2",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-FLAT",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4",
+    "record": "G-FLAT",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/27",
+    "record": "G-OFFDIAG",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "20/27",
+    "record": "G-OFFDIAG",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4/27",
+    "record": "G-OFFDIAG",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG2",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "27/1331",
+    "record": "G-OFFDIAG2",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "160/1331",
+    "record": "G-OFFDIAG2",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "75/1331",
+    "record": "G-OFFDIAG2",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFNEG",
+    "rule": "A-insert",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "343/1331",
+    "record": "G-OFFNEG",
+    "rule": "A-insert",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "360/1331",
+    "record": "G-OFFNEG",
+    "rule": "A-insert",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "175/1331",
+    "record": "G-OFFNEG",
+    "rule": "A-insert",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "2",
+    "record": "G-ANISO",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO2",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/64",
+    "record": "G-ANISO2",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/32",
+    "record": "G-ANISO2",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/64",
+    "record": "G-ANISO2",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVED",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVOFF",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/18",
+    "record": "G-CURVOFF",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "8/49",
+    "record": "G-CURVOFF",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "9/50",
+    "record": "G-CURVOFF",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-DIAG2",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/8",
+    "record": "G-DIAG2",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/2",
+    "record": "G-DIAG2",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/8",
+    "record": "G-DIAG2",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-FLAT",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4",
+    "record": "G-FLAT",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/18",
+    "record": "G-OFFDIAG",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "8/9",
+    "record": "G-OFFDIAG",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "2/9",
+    "record": "G-OFFDIAG",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG2",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "3/121",
+    "record": "G-OFFDIAG2",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "70/363",
+    "record": "G-OFFDIAG2",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "25/363",
+    "record": "G-OFFDIAG2",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFNEG",
+    "rule": "A-axis",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "49/363",
+    "record": "G-OFFNEG",
+    "rule": "A-axis",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "20/121",
+    "record": "G-OFFNEG",
+    "rule": "A-axis",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "25/363",
+    "record": "G-OFFNEG",
+    "rule": "A-axis",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4",
+    "record": "G-ANISO",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-ANISO",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-ANISO2",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/16",
+    "record": "G-ANISO2",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/4",
+    "record": "G-ANISO2",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/16",
+    "record": "G-ANISO2",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVED",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-CURVED",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-CURVOFF",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/9",
+    "record": "G-CURVOFF",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "16/49",
+    "record": "G-CURVOFF",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "9/25",
+    "record": "G-CURVOFF",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-DIAG2",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/4",
+    "record": "G-DIAG2",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-DIAG2",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/4",
+    "record": "G-DIAG2",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-FLAT",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4",
+    "record": "G-FLAT",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1",
+    "record": "G-FLAT",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "1/9",
+    "record": "G-OFFDIAG",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "16/9",
+    "record": "G-OFFDIAG",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "4/9",
+    "record": "G-OFFDIAG",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFDIAG2",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "9/121",
+    "record": "G-OFFDIAG2",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "100/121",
+    "record": "G-OFFDIAG2",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "25/121",
+    "record": "G-OFFDIAG2",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": true,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "0",
+    "record": "G-OFFNEG",
+    "rule": "A-chart",
+    "triple": "(0,1,2)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "49/121",
+    "record": "G-OFFNEG",
+    "rule": "A-chart",
+    "triple": "(0,3,9)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "100/121",
+    "record": "G-OFFNEG",
+    "rule": "A-chart",
+    "triple": "(9,10,0)"
+   },
+   {
+    "C_trivial": true,
+    "SW_front_zero": true,
+    "SW_register_zero": false,
+    "jacobi_lapse_sum_zero": true,
+    "max_abs_register": "25/121",
+    "record": "G-OFFNEG",
+    "rule": "A-chart",
+    "triple": "(1,4,10)"
+   }
+  ],
+  "general_d": {
+   "A-axis|G3-ANISO": 0,
+   "A-axis|G3-FLAT": 0,
+   "A-axis|G3-OFF": 18,
+   "A-chart|G3-ANISO": 30,
+   "A-chart|G3-FLAT": 0,
+   "A-chart|G3-OFF": 30,
+   "A-insert|G3-ANISO": 0,
+   "A-insert|G3-FLAT": 0,
+   "A-insert|G3-OFF": 0,
+   "A-linkframe|G3-ANISO": 30,
+   "A-linkframe|G3-FLAT": 30,
+   "A-linkframe|G3-OFF": 30
+  },
+  "identifiability_rank": {
+   "(0, 0)": 2,
+   "(0, 1)": 2,
+   "(0, 2)": 2,
+   "(1, 0)": 2,
+   "(1, 1)": 2,
+   "(1, 2)": 2,
+   "(2, 0)": 2,
+   "(2, 1)": 2,
+   "(2, 2)": 2
+  },
+  "link_locality_witness": {
+   "I^jj_demanded": [
+    "2/3",
+    "1/2"
+   ],
+   "direction": 0,
+   "link": "(1, 0)",
+   "other_counts": [
+    "(2, 2, 6)",
+    "(2, 2, 4)"
+   ],
+   "records": [
+    "G-CURVOFF",
+    "G-DIAG2"
+   ],
+   "shared_interval_count": 2
+  },
+  "operator_layer": {
+   "carriers_built": 1056,
+   "mismatches": 0,
+   "non_bijective": 0,
+   "rows_p5": [
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "A-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-linkframe"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-linkhalf"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "A-insert"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "A-insert-x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "A-insert-2x"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "A-notransport"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "B-axis"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "B-all"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-ANISO2",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-CURVED",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-CURVOFF",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-DIAG2",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 0,
+     "p": 5,
+     "record": "G-FLAT",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFDIAG2",
+     "rule": "B-chart"
+    },
+    {
+     "carrier": 625,
+     "moved": 625,
+     "p": 5,
+     "record": "G-OFFNEG",
+     "rule": "B-chart"
+    }
+   ]
+  },
+  "sector_law": {
+   "A-axis|G-ANISO": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-axis|G-ANISO2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-axis|G-CURVED": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-axis|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-axis|G-DIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-axis|G-FLAT": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-axis|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-axis|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-axis|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-ANISO": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-ANISO2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-CURVED": {
+    "Lambda_equals_I_sites": 1,
+    "residual_zero_sites": 1,
+    "sites": 9
+   },
+   "A-chart|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-DIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-FLAT": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-chart|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-chart|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-ANISO": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-ANISO2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-CURVED": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-DIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-FLAT": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-2x|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-x|G-ANISO": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert-x|G-ANISO2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert-x|G-CURVED": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert-x|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-x|G-DIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert-x|G-FLAT": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert-x|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-x|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert-x|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-insert|G-ANISO": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-ANISO2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-CURVED": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-CURVOFF": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-DIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-FLAT": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-insert|G-OFFNEG": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 9,
+    "sites": 9
+   },
+   "A-linkframe|G-ANISO": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-ANISO2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-CURVED": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-DIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-FLAT": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkframe|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-ANISO": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-ANISO2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-CURVED": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-CURVOFF": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-DIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-FLAT": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-linkhalf|G-OFFNEG": {
+    "Lambda_equals_I_sites": 0,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-ANISO": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-ANISO2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-CURVED": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-CURVOFF": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-DIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-FLAT": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-OFFDIAG": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-OFFDIAG2": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   },
+   "A-notransport|G-OFFNEG": {
+    "Lambda_equals_I_sites": 9,
+    "residual_zero_sites": 0,
+    "sites": 9
+   }
+  }
+ },
+ "totals": {
+  "anchors": 16,
+  "disclosures": 4,
+  "gates": 26,
+  "must_pass_failures": 0,
+  "must_pass_gates": 21,
+  "mutant_survivors": 0,
+  "mutants": 25
+ },
+ "verdict": [
+  "HA-RUNNABLE",
+  "HA-BRIDGE-NOT-POSABLE"
+ ]
+}

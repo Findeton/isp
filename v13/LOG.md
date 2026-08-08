@@ -7553,3 +7553,44 @@ mutant; genuinely independent census routes + cell-completeness
 gate; membership tabulation tested.  On delivery:
 COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after it
 occurs.
+
+## 2026-08-08 — HA DELIVERED, COMMITTED AS-IS (v13 LEDGER #236)
+Delivery committed as-is.  VERDICT: **HA-RUNNABLE +
+HA-BRIDGE-NOT-POSABLE**.  THE CONSTRUCTION: H_a[N](n,m) =
+(n+N, m+w[N,n]) — an exact bijection of total finite
+matter-geometry records, closed-form inverse, drag built from
+front tilts (division-event count differences) and eventwise
+lapses only; **the second normal step transported along the
+first — the GW1 condition found on no committed substrate, now
+constructed**.  THE CLOSURE RESULT (GW1's never-runnable test,
+RUN): **CLOSES EXACTLY on the diagonal sector** — the
+link-local record-native rule (axis interval counts only, NO
+metric anywhere in its construction) gives R_HH = id at all
+132 lapse pairs × 9 sites × all 5 diagonal records incl. the
+inhomogeneous one, at d=2 AND d=3; **ANOMALY at the cross
+term** (q₁₂≠0: 96/132 fail); **CLOSURE IS INSERTION** (63
+cells, 0 mismatches: the residual vanishes exactly where Λ
+coincides with the record-read inverse metric — disclosed
+analytically forced given full rank); the obstruction NAMED
+(G09: no link-local weight can close — det q is a JOINT
+function of the site's counts); TRANSPORT NECESSARY (the
+frozen-front variant closes 0/9); the HHH detector: pair
+closure does NOT buy triple closure (81/108 ≠ id);
+first-in-corpus rank test passes; density-weight
+convention-relativity measured.  THE BRIDGE:
+**NOT-POSABLE — no committed carrier morphism**: HA's holonomy
+group is order 5 elementary abelian (not in GEN's spectrum;
+ΣDΣ=D⁻¹ false for R_HH while the rebuilt-GEN positive control
+satisfies it) — the deformation structure and the transport
+geometry are DIFFERENT structures at these carriers, an honest
+measured negative.  DEVIATIONS (11): v6_task2b REJECTED as the
+readout by GW1's OWN no-smuggling grading (the
+interval-cardinality relation used instead — the largest
+letter-deviation, in service of the directive's own
+predicate); K_i/ε eliminated not built; the tangential sector
+abelian (R_DD/R_DH out of scope).  16 anchors / 26 gates (21
+must-pass, 0 failures) / 25 mutants 0 survivors / chart
+self-test 4,860/0 w/ cache exercised / byte-identical ×2.  md5
+output ee8cdfe9 / receipt 5a785e7b.  NO Einstein-dynamics
+claim, NO metric recovered, NO continuum limit — the paper
+says so.  Adjudicator verification next; panel follows.
