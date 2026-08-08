@@ -8024,3 +8024,17 @@ the commutator law per #249); the extension atlas as the first
 non-principal-chart-group arena; the third element.  With COC
 terminal, TWO of the three third-base prerequisites are done
 (COC ✓, XBA re-deriving, PSI under panel).
+
+## 2026-08-08 — PSI PANEL DISPATCHED (v13 LEDGER #253)
+Three-lens panel dispatched (Opus 5, parallel-safe): R1
+operator (the witness rebuilt + the Born-scoping audit; the
+law at all 11 members + the sign-flip census + the Q-negA
+out-of-sample prediction); R2 effectus (**THE CROSS-UNIT
+SYNTHESIS TEST: is E(ψ) the ψ-dependence of the commutator —
+D(ψ) = [P, u(ψ)] — ONE LAW?**; the ontological-scope hunt;
+D7/D10 audits); R3 instrument (MANDATORY #234 compliance —
+the unit delivered after the addendum and lists PSI-VERDICT
+waiver-only; cell-completeness; the refusal mechanism; the
+readable/unreadable split probed for silent drops).  Reviews
+frozen on return.  In flight: PSI panel ×3, HA repair, XBA
+re-derivation.
