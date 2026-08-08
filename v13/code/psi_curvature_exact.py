@@ -33,6 +33,24 @@ is COMMON to two members when both graphs contain every link it names.  The
 matched-coordinate table is the primary object and every contrast is derived
 from it (RUNBOOK section 15 addendum).
 
+THE ONE LAW (the unit's central result).  P_W is measured to be an
+involution, so the completion's non-equivariance defect IS the group
+commutator D(psi) = [P_W, u(psi)] with u(psi) = V(psi) (x) I_9.  The
+commutator splits off the pointer pair and leaves delta(V) := [sigma, V] at
+9x9, and delta is a 1-COCYCLE for the right-conjugation action --
+delta(XY) = delta(Y) . Y^-1 delta(X) Y -- so the declared factorisation
+V = H(psi) . Q expands as delta(HQ) = delta(Q) . Q^-1 delta(H) Q, which IS
+the psi-law with D_GEN = delta(Q) and E(psi) = delta(H(psi)).  Four readings
+follow as corollaries: EXISTENCE (the commutator does not vanish), GROUP
+ORDER (twice the commutator's order), FORCING (a state factor inside the
+centraliser leaves delta(Q) alone -- GEN's theorem), STATE MODULATION (the
+second cocycle factor is the whole of psi's contribution).  Every vanishing
+condition is a CENTRALIZER condition.  The residual is owned and measured:
+the split into a declaration factor and a state factor is
+FACTORISATION-RELATIVE -- V = Q . H' expands equally validly with a
+DIFFERENT state factor -- so what is canonical is the commutator, not the
+split.
+
 THE TWO HOLONOMY READINGS, both gauge-invariant, one always defined.  The
 declared switching group assigns a sign to each link, so a closed loop's
 matrix is defined only up to a global +-1.  The unit therefore reads (i) the
@@ -935,6 +953,90 @@ class World:
                 "law": {p[i]: v for i, v in val["law"].items()}}
 
 
+def flat_admission(W):
+    """The world's admission table as a flat dict over the DECLARED cell keys
+    -- one key per (setting, checkpoint, rule), the count computed from the
+    declared lists and never typed.  The `celltab-drop` mutant removes one
+    declared cell from the table and must die at PSI-CELL-COMPLETENESS."""
+    k = ("flatadm",)
+    if k in W.f:
+        return W.f[k]
+    tab = W.admission_table()
+    drop_one_declared_cell = (MUTANT == "celltab-drop")
+    out = {}
+    for sp in SETTING_ORDER:
+        for t in CHECKPOINTS:
+            for r in ID_RULES:
+                key = "%s/t%d/%s" % (sp, t, r["id"])
+                if drop_one_declared_cell and key == "GP-E/t1/REAL":
+                    continue
+                c = tab[(sp, t, r["id"])]
+                out[key] = {"n_admitted": c["n_admitted"], "maps": c["maps"],
+                            "drawn": c["drawn"]}
+    W.f[k] = out
+    return out
+
+
+def world_node_laws(W):
+    """The whole LAW LAYER of a world: the exact Born law at every node of
+    every declared setting, each carrying its own declared read time."""
+    k = ("alllaws",)
+    if k not in W.f:
+        W.f[k] = {"%s/%s/t%d" % (sp, fr, t): W.node_law(sp, fr, t)
+                  for sp in SETTING_ORDER for fr in FRAMES
+                  for t in CHECKPOINTS}
+    return W.f[k]
+
+
+def world_leg_keys(W):
+    """The Born-level canonical key of every declared leg and every realized
+    leg at every (setting, frame): the exact inputs the admission predicate's
+    leg clause reads."""
+    k = ("alllegkeys",)
+    if k not in W.f:
+        out = {}
+        for sp in SETTING_ORDER:
+            for fr in FRAMES:
+                out["%s/%s/declared" % (sp, fr)] = [
+                    leg_key(x) for x in W.legs(sp, fr)]
+                out["%s/%s/realized" % (sp, fr)] = [
+                    leg_key(x) for x in W.realized(sp, fr)]
+        W.f[k] = out
+    return W.f[k]
+
+
+def interference_width(W):
+    """THE INTERFERENCE WIDTH of the declared leg sequence: the largest number
+    of nonzero paths j0 -> i through the first t legs, over every setting,
+    every frame and every checkpoint.  Width 1 means every declared amplitude
+    is a SINGLE product, so the declared law is a function of |psi| alone and
+    cannot see any sign; width 2 or more means a Born-shadow-preserving flip
+    is generically visible in the law layer.  The `width-lax` mutant reports
+    every member as interference-free and must die."""
+    report_every_member_as_interference_free = (MUTANT == "width-lax")
+    k = ("width",)
+    if k in W.f:
+        return W.f[k]
+    best, per = 1, {}
+    for sp in SETTING_ORDER:
+        for fr in FRAMES:
+            cnt = {J0: 1}
+            for t in range(NLEGS):
+                nxt: dict = {}
+                for (i, j), v in W.legs(sp, fr)[t].items():
+                    if v and j in cnt:
+                        nxt[i] = nxt.get(i, 0) + cnt[j]
+                cnt = nxt
+                m = max(cnt.values()) if cnt else 0
+                per["%s/%s/t%d" % (sp, fr, t + 1)] = m
+                if m > best:
+                    best = m
+    if report_every_member_as_interference_free:
+        best, per = 1, {a: 1 for a in per}
+    W.f[k] = (best, per)
+    return W.f[k]
+
+
 # ===========================================================================
 # 4.  THE PATH SPACE OF ONE (world, setting) -- enumerated, never typed
 # ===========================================================================
@@ -1098,7 +1200,7 @@ def run_freeze():
     gate("PSI-FREEZE", "freeze",
          "THE PREPARATION FAMILY IS DECLARED AS DATA BEFORE ANY TRANSPORT "
          "QUANTITY IS EVALUATED (RUNBOOK 13(4)), AND THE RECEIPT'S OWN GATE "
-         "ORDER PROVES IT.  Base G's carrier and index map, its three "
+         "ORDER RECORDS IT.  Base G's carrier and index map, its three "
          "declared rotations with their pinned matrices, the PINNED "
          "TRANSPOSITION Q that every member of the family is completed with, "
          "the eleven declared preparation vectors with their exact rational "
@@ -1179,7 +1281,10 @@ def run_base_declaration():
     for i in range(NSP):
         for j in range(NSP):
             anchor("A-V-%d%d" % (i, j), "this unit's pinned declaration of "
-                   "base G", "V(psi-G)[%d][%d]" % (i, j),
+                   "base G (a SELF-anchor: the comparand is the matrix typed "
+                   "in this file, not a value read from any external "
+                   "receipt; GEN's committed receipt does not carry V's "
+                   "entries at all)", "V(psi-G)[%d][%d]" % (i, j),
                    PINNED_V_OF_PSI_G[i][j], str(VG[i][j]))
     orth = {k: all(sum(ROT[k][r][a] * ROT[k][r][b] for r in range(NS))
                    == (ONE if a == b else ZERO)
@@ -1289,6 +1394,17 @@ def run_family_declaration():
         "schmidt_ranks_among_the_invariant_members": ranks_inv,
         "members_whose_born_shadow_is_exchange_symmetric": bornsym,
         "the_declared_transposition_every_member_is_completed_with": list(q),
+        "SAMP":
+            "[SAMP] THE ELEVEN ARE A DECLARED FAMILY, NOT A SAMPLE.  They are "
+            "not drawn at random, they are not exhaustive over the "
+            "preparations of base G, and no property of them is extrapolated "
+            "to preparations outside them.  Every MEASURED quantifier over "
+            "preparations in this unit ranges over these eleven, over the "
+            "sign-flip census of the invariant members, and over the "
+            "exhaustive census of their unordered pairs, and nowhere else.  "
+            "The one quantifier that ranges further is the psi-law's own "
+            "characterisation, which is licensed by proof rather than by the "
+            "family",
         "route": "each member is a declared rational vector on the nine "
                  "system-pair basis states; norm, Schmidt rank, exchange "
                  "behaviour and Born-shadow symmetry are computed here, and "
@@ -1456,15 +1572,7 @@ def run_sweep():
         prog("  %-7s links %s" % (nm, [per[sp]["n_links"]
                                        for sp in SETTING_ORDER]))
     # -- the admission tables, cell by cell ---------------------------------
-    admtab = {}
-    for nm in PSI_ORDER:
-        tab = worlds[nm].admission_table()
-        admtab[nm] = {"%s/t%d/%s" % (sp, t, r["id"]):
-                      {"n_admitted": tab[(sp, t, r["id"])]["n_admitted"],
-                       "maps": tab[(sp, t, r["id"])]["maps"],
-                       "drawn": tab[(sp, t, r["id"])]["drawn"]}
-                      for sp in SETTING_ORDER for t in CHECKPOINTS
-                      for r in ID_RULES}
+    admtab = {nm: flat_admission(worlds[nm]) for nm in PSI_ORDER}
     cells = len(admtab[PSI_REFERENCE])
     draws = {nm: {r["id"]: sum(1 for k, v in admtab[nm].items()
                                if k.endswith("/" + r["id"]) and v["drawn"])
@@ -1562,11 +1670,16 @@ def run_comparison(worlds, results):
     ref = results[PSI_REFERENCE]
     # (ii) the admission tables, cell by cell
     admtab = TABLES["admission_per_psi"]["per_member"]
-    delta = {}
+    skip_one_declared_cell = (MUTANT == "cell-drop")
+    delta, compared = {}, {}
     for nm in PSI_ORDER:
         if nm == PSI_REFERENCE:
             continue
-        d = [k for k in sorted(admtab[PSI_REFERENCE])
+        keys = sorted(admtab[PSI_REFERENCE])
+        if skip_one_declared_cell:
+            keys = [k for k in keys if k != "GP-E/t1/REAL"]
+        compared[nm] = len(keys)
+        d = [k for k in keys
              if (admtab[PSI_REFERENCE][k]["n_admitted"]
                  != admtab[nm][k]["n_admitted"]
                  or admtab[PSI_REFERENCE][k]["maps"] != admtab[nm][k]["maps"])]
@@ -1596,6 +1709,10 @@ def run_comparison(worlds, results):
                 (l for l in common
                  if (a[l]["perm"] is None) != (b[l]["perm"] is None)),
                 key=lambda x: (len(x), canon(x)))
+            both_defined_and_differ = [
+                l for l in common
+                if a[l]["perm"] is not None and b[l]["perm"] is not None
+                and a[l]["perm"] != b[l]["perm"]]
             rows[sp] = {
                 "loops_at_the_reference": len(a),
                 "loops_at_this_member": len(b),
@@ -1603,11 +1720,13 @@ def run_comparison(worlds, results):
                 "loops_only_at_the_reference": len(a) - len(common),
                 "loops_only_at_this_member": len(b) - len(common),
                 "common_loops_whose_born_holonomy_differs": len(born_diff),
+                "common_loops_where_readability_flips": len(readable_flip),
+                "common_loops_whose_permutation_parts_are_both_defined_and"
+                "_differ": len(both_defined_and_differ),
                 "common_loops_whose_permutation_part_differs":
                     len(perm_diff),
                 "common_loops_flat_at_the_reference_and_not_here":
                     len(flat_to_non),
-                "common_loops_where_readability_flips": len(readable_flip),
                 "_witness_born": born_diff[0] if born_diff else None,
                 "_witness_flat": flat_to_non[0] if flat_to_non else None}
         matched[nm] = rows
@@ -1615,6 +1734,7 @@ def run_comparison(worlds, results):
         "reference": PSI_REFERENCE,
         "admission_delta_cells": {nm: delta[nm] for nm in PSI_ORDER
                                   if nm != PSI_REFERENCE},
+        "admission_cells_compared_per_member": compared,
         "members_whose_admission_table_moves": movers,
         "members_whose_admission_table_is_identical": still,
         "per_member_per_setting": {
@@ -1735,7 +1855,9 @@ def tensor_with_pointer_identity(M9):
 
 
 def prep_defect(W, sp=None):
-    """D = P_W U_prep^-1 P_W U_prep, computed DIRECTLY at 81x81.  The
+    """D = P_W U_prep^-1 P_W U_prep, computed DIRECTLY at 81x81.  Since P_W is
+    measured to be an involution this is exactly the GROUP COMMUTATOR
+    [P_W, U_prep] -- the identity section 15 makes central.  The
     `defect-order` mutant composes the four factors in the wrong order."""
     PW = pmat(WSWAP)
     U = W.Uprep
@@ -1743,6 +1865,110 @@ def prep_defect(W, sp=None):
     if compose_the_defect_in_the_wrong_order:
         return mm(PW, mm(U, mm(PW, minv(U))))
     return mm(PW, mm(minv(U), mm(PW, U)))
+
+
+# ---- THE 9x9 COMMUTATOR LAYER: delta(X) := [Sigma, X] ---------------------
+SIG9 = {(SIGMA9[i], i): ONE for i in range(NSP)}
+
+
+def id9():
+    return {(i, i): ONE for i in range(NSP)}
+
+
+def t9(A):
+    return {(j, i): v for (i, j), v in A.items()}
+
+
+def delta9(X):
+    """delta(X) := [Sigma, X] = Sigma X^-1 Sigma X, the group commutator of the
+    system-pair exchange with X.  Every operator this is applied to is
+    measured exactly orthogonal over Q, so X^-1 is its transpose; the
+    orthogonality is a gated clause and not an assumption."""
+    return m9(SIG9, m9(t9(X), m9(SIG9, X)))
+
+
+def cocycle_sides(X, Y, mirror=False):
+    """The two sides of the 1-COCYCLE identity for the right-conjugation
+    action:  delta(XY) = delta(Y) . Y^-1 delta(X) Y.  With `mirror` the
+    expansion is composed in the OPPOSITE order, delta(X) . X^-1 delta(Y) X,
+    which computes delta(YX) instead -- that is what makes the order in the
+    law a MEASURED fact rather than a convention.  The `cocycle-order` mutant
+    uses the mirror order as the law's own and must die."""
+    lhs = delta9(m9(X, Y))
+    if mirror:
+        rhs = m9(delta9(X), m9(t9(X), m9(delta9(Y), X)))
+    else:
+        rhs = m9(delta9(Y), m9(t9(Y), m9(delta9(X), Y)))
+    return lhs, rhs
+
+
+PYTHAGOREAN = ((3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25))
+
+
+def declared_seed():
+    """The seed of the randomised sweep, derived from the DECLARED data alone
+    -- the family's names and exact coefficients, the pinned transposition and
+    the exchange -- so that no wall-clock value and no operating-system
+    entropy can enter, and two runs draw the same sequence."""
+    s = (canon([[nm, sorted(c.items()), why] for nm, why, c in PSI_FAMILY])
+         + canon(Q_PINNED) + canon(list(SIGMA9)))
+    return int(hashlib.sha256(s.encode()).hexdigest(), 16)
+
+
+def lcg(seed):
+    """A deterministic generator: a linear congruential recurrence on the
+    declared seed.  Returns a function drawing a uniform index below n."""
+    state = [seed % (2 ** 64)]
+
+    def nxt(n):
+        state[0] = (state[0] * 6364136223846793005 + 1442695040888963407) \
+            % (2 ** 64)
+        return (state[0] >> 17) % n
+    return nxt
+
+
+def random_orthogonal9(rnd):
+    """An exactly orthogonal RATIONAL 9x9 matrix drawn from the deterministic
+    generator: a product of three factors, each a signed permutation, a Givens
+    rotation from a declared Pythagorean triple, or a Householder reflection
+    of a declared rational unit vector.  Every draw is measured orthogonal."""
+    M = id9()
+    for _ in range(3):
+        k = rnd(3)
+        if k == 0:
+            p = list(range(NSP))
+            for i in range(NSP - 1, 0, -1):
+                j = rnd(i + 1)
+                p[i], p[j] = p[j], p[i]
+            G = {(p[j], j): (ONE if rnd(2) == 0 else -ONE)
+                 for j in range(NSP)}
+        elif k == 1:
+            a, b, c = PYTHAGOREAN[rnd(len(PYTHAGOREAN))]
+            i = rnd(NSP)
+            j = (i + 1 + rnd(NSP - 1)) % NSP
+            G = {(x, x): ONE for x in range(NSP) if x != i and x != j}
+            G[(i, i)] = Fr(a, c)
+            G[(j, j)] = Fr(a, c)
+            G[(i, j)] = -Fr(b, c)
+            G[(j, i)] = Fr(b, c)
+        else:
+            a, b, c = PYTHAGOREAN[rnd(len(PYTHAGOREAN))]
+            i = rnd(NSP)
+            j = (i + 1 + rnd(NSP - 1)) % NSP
+            v = [ZERO] * NSP
+            v[i], v[j] = Fr(a, c), Fr(b, c)
+            G = {}
+            for x in range(NSP):
+                for y in range(NSP):
+                    e = (ONE if x == y else ZERO) - 2 * v[x] * v[y]
+                    if e:
+                        G[(x, y)] = e
+        M = m9(M, G)
+    return M
+
+
+def is_orthogonal9(A):
+    return m9(t9(A), A) == id9()
 
 
 def run_psi_law(worlds):
@@ -1786,9 +2012,12 @@ def run_psi_law(worlds):
                          if rows[nm]["the_defect_equals_GENs"])
     inv_members = TABLES["psi_family"]["exchange_invariant_members"]
     TABLES["psi_law"] = {
-        "statement": "D(psi) = D_GEN . Q^T E(psi) Q, with E(psi) = sigma "
-                     "H(psi) sigma H(psi) the Householder's own exchange "
-                     "defect and D_GEN = (sigma Q^T sigma Q) (x) I_9",
+        "statement": "D(psi) = (D_GEN9 . Q^T E(psi) Q) (x) I_9, with "
+                     "E(psi) = sigma H(psi) sigma H(psi) the Householder's "
+                     "own exchange defect and D_GEN9 = sigma Q^T sigma Q the "
+                     "9x9 defect of the declared transposition; every factor "
+                     "of the product is 9x9 and the tensor with the pointer "
+                     "identity is applied once, to the product",
         "per_member": rows,
         "members_whose_defect_equals_GENs": same_as_gen,
         "the_exchange_invariant_members": inv_members,
@@ -1796,8 +2025,12 @@ def run_psi_law(worlds):
         "route": "the law is evaluated at 9x9 and tensored with the pointer "
                  "identity, and is compared against the DIRECT 81x81 "
                  "four-factor product built from the member's own "
-                 "preparation leg -- two independent routes to the same "
-                 "object"}
+                 "preparation leg.  The two evaluations differ in dimension, "
+                 "in operator decomposition (H and Q separately against "
+                 "V = H . Q composed) and in inversion path, but they are "
+                 "related by the identity under test, so they are two "
+                 "EVALUATIONS of one identity and not two independent "
+                 "computations of one number (RUNBOOK section 13 addendum)"}
     gate("PSI-LAW", "derivation",
          "THE GEN LAW GENERALISES, AND THE psi-TERM IS EXHIBITED.  GEN "
          "measured D = (sigma Q^T sigma Q) (x) I_9 for an exchange-INVARIANT "
@@ -1809,7 +2042,10 @@ def run_psi_law(worlds):
          "family the 9x9 law tensored with the pointer identity is measured "
          "EQUAL, entry by entry, to the direct 81x81 four-factor product "
          "P_W U_prep^-1 P_W U_prep built from that member's own preparation "
-         "leg -- two independent routes.  (2) THE CHARACTERISATION, IN BOTH "
+         "leg -- two evaluations at different dimensions and with different "
+         "operator decompositions, related by the identity under test, so "
+         "they are two routes to one identity and not two independent "
+         "computations of one number.  (2) THE CHARACTERISATION, IN BOTH "
          "DIRECTIONS: the psi-term E(psi) is the identity EXACTLY on the "
          "exchange-invariant members and on no other, so the list of members "
          "reproducing GEN's defect is measured to COINCIDE with the list of "
@@ -1828,6 +2064,326 @@ def run_psi_law(worlds):
 
 
 # ===========================================================================
+# 9b.  THE ONE LAW -- D(psi) = [P_W, u(psi)], ITS COCYCLE MECHANISM AND ITS
+#      FOUR READINGS
+#
+#      The unit's central result.  P_W is measured to be an involution, so the
+#      four-factor product IS the group commutator [P_W, U_prep(psi)]; the
+#      commutator splits off the pointer pair and leaves delta(V) := [Sigma, V]
+#      at 9x9; and delta is a 1-COCYCLE for the right-conjugation action, so
+#      the declared factorisation V = H(psi) . Q expands as
+#      delta(HQ) = delta(Q) . Q^-1 delta(H) Q -- which IS the psi-law, with
+#      D_GEN = delta(Q) and E(psi) = delta(H(psi)).  Every vanishing condition
+#      is a CENTRALIZER condition.  The identity is checked on the declared
+#      family AND on a randomised sweep whose seed is derived from the
+#      declared data alone.
+# ===========================================================================
+RANDOM_TRIPLES = 300
+
+
+def run_one_law(worlds):
+    prog("the one law: D(psi) = [P_W, u(psi)], the cocycle and the readings")
+    q = declared_Q()
+    QP = {(q[j], j): ONE for j in range(NSP)}
+    use_the_mirror_order = (MUTANT == "cocycle-order")
+    report_every_operator_as_centralising = (MUTANT == "centralizer-lax")
+    refactor_without_conjugating = (MUTANT == "refactor-lax")
+    PW = pmat(WSWAP)
+    pw_involution = (mm(PW, PW) == sp_id())
+    # an INDEPENDENT comparator for P_W = Sigma (x) Sigma: the product of the
+    # system-only and pointer-only wing exchanges, built from their own
+    # declared index maps and not from WSWAP.
+    pw_is_sigma_tensor_sigma = (mm(pmat(XSSWAP), pmat(XPSWAP)) == PW)
+    D_gen9 = delta9(QP)
+    rows, dev = {}, {"tensor_split": 0, "cocycle": 0, "E_form": 0,
+                     "centralizer": 0, "refactorisation": 0,
+                     "householder_not_involutive": 0}
+    mirror_differs, E_prime_differs = [], []
+    for nm in PSI_ORDER:
+        W = worlds[nm]
+        H9 = dense9(householder(W.psi))
+        V9 = dense9(W.V)
+        if m9(H9, H9) != id9():
+            dev["householder_not_involutive"] += 1
+        E = delta9(H9)
+        if E != m9(SIG9, m9(H9, m9(SIG9, H9))):
+            dev["E_form"] += 1
+        D9 = delta9(V9)
+        if tensor_with_pointer_identity(D9) != prep_defect(W):
+            dev["tensor_split"] += 1
+        lhs, rhs = cocycle_sides(H9, QP, mirror=use_the_mirror_order)
+        if lhs != rhs or lhs != D9:
+            dev["cocycle"] += 1
+        _l, mrhs = cocycle_sides(H9, QP, mirror=not use_the_mirror_order)
+        if lhs != mrhs:
+            mirror_differs.append(nm)
+        # -- the CENTRALIZER readings, each measured in both directions ------
+        cH = (True if report_every_operator_as_centralising
+              else m9(SIG9, H9) == m9(H9, SIG9))
+        cV = (True if report_every_operator_as_centralising
+              else m9(SIG9, V9) == m9(V9, SIG9))
+        if (E == id9()) != cH or (D9 == id9()) != cV:
+            dev["centralizer"] += 1
+        # -- the FACTORISATION-RELATIVITY residual ---------------------------
+        Hp = H9 if refactor_without_conjugating else m9(t9(QP), m9(H9, QP))
+        alt_lhs, alt_rhs = cocycle_sides(QP, Hp)
+        if m9(QP, Hp) != V9 or alt_lhs != D9 or alt_rhs != D9:
+            dev["refactorisation"] += 1
+        Ep = delta9(Hp)
+        if Ep != E:
+            E_prime_differs.append(nm)
+        rows[nm] = {
+            "the_householder_is_symmetric": H9 == t9(H9),
+            "the_householder_is_exactly_orthogonal": is_orthogonal9(H9),
+            "the_householder_is_an_involution": m9(H9, H9) == id9(),
+            "E_is_exactly_orthogonal": is_orthogonal9(E),
+            "E_is_symmetric": E == t9(E),
+            "E_squares_to_the_identity": m9(E, E) == id9(),
+            "E_equals_the_commutator_of_sigma_with_H": E == m9(
+                SIG9, m9(H9, m9(SIG9, H9))),
+            "the_81x81_commutator_is_delta_V_tensor_the_pointer_identity":
+                tensor_with_pointer_identity(D9) == prep_defect(W),
+            "the_cocycle_expansion_reproduces_the_law": lhs == rhs == D9,
+            "the_mirror_order_differs_here": lhs != mrhs,
+            "the_defect_is_the_identity": D9 == id9(),
+            "V_centralises_sigma": cV,
+            "the_psi_factor_is_the_identity": E == id9(),
+            "H_centralises_sigma": cH,
+            "the_state_factor_of_the_alternative_factorisation_differs":
+                Ep != E}
+    # -- the SECOND reading: the group order is twice the commutator's order -
+    order_rows, order_dev = {}, 0
+    for label, qq in ([("the pinned Q", list(q))]
+                      + [(nm, list(qc)) for nm, _w, qc in Q_CONTROLS]):
+        dq = delta_of_Q(qq)
+        n = perm_order_9(list(dq))
+        QQ = {(qq[j], j): ONE for j in range(NSP)}
+        matrix_route = signed_perm9(delta9(QQ))
+        if label == "the pinned Q":
+            measured = TABLES["negative_control"]["at_the_pinned_Q"][
+                "group_order"]
+        else:
+            measured = TABLES["negative_control"]["per_control"][label][
+                "measured_group_order"]
+        predicted = 1 if n == 1 else 2 * n
+        if measured != predicted or matrix_route != list(dq):
+            order_dev += 1
+        order_rows[label] = {
+            "the_commutator_delta_Q": list(dq),
+            "its_order": n,
+            "the_same_permutation_read_off_the_9x9_commutator_matrix":
+                matrix_route == list(dq),
+            "the_group_order_the_dihedral_reading_predicts": predicted,
+            "the_measured_based_holonomy_group_order_at_GP_E": measured}
+    # -- the randomised sweep, seeded from the declared data alone ----------
+    rnd = lcg(declared_seed())
+    r_dev, r_mirror, r_nontrivial, r_orth = 0, 0, 0, 0
+    for _ in range(RANDOM_TRIPLES):
+        X, Y = random_orthogonal9(rnd), random_orthogonal9(rnd)
+        if is_orthogonal9(X) and is_orthogonal9(Y):
+            r_orth += 1
+        lhs, rhs = cocycle_sides(X, Y, mirror=use_the_mirror_order)
+        if lhs != rhs:
+            r_dev += 1
+        _l, mrhs = cocycle_sides(X, Y, mirror=not use_the_mirror_order)
+        if lhs != mrhs:
+            r_mirror += 1
+        if delta9(X) != id9():
+            r_nontrivial += 1
+    inv_members = TABLES["psi_family"]["exchange_invariant_members"]
+    # WHAT E(psi) IS AND IS NOT.  H(psi) is the symmetric orthogonal
+    # involution of this construction; E(psi) is orthogonal at every member
+    # -- E^T = E^-1 by construction -- but is an involution, equivalently
+    # symmetric, only on a measured PROPER subset of the family.
+    E_orth = sorted(nm for nm in PSI_ORDER
+                    if rows[nm]["E_is_exactly_orthogonal"])
+    E_inv = sorted(nm for nm in PSI_ORDER
+                   if rows[nm]["E_squares_to_the_identity"])
+    E_sym = sorted(nm for nm in PSI_ORDER if rows[nm]["E_is_symmetric"])
+    H_inv = sorted(nm for nm in PSI_ORDER
+                   if rows[nm]["the_householder_is_an_involution"]
+                   and rows[nm]["the_householder_is_symmetric"]
+                   and rows[nm]["the_householder_is_exactly_orthogonal"])
+    E_facts_ok = (len(E_orth) == len(PSI_ORDER)
+                  and len(H_inv) == len(PSI_ORDER)
+                  and E_sym == E_inv
+                  and set(inv_members) <= set(E_inv)
+                  and len(E_inv) < len(PSI_ORDER))
+    TABLES["one_law"] = {
+        "statement": "D(psi) = [P_W, u(psi)] = P_W u(psi)^-1 P_W u(psi), with "
+                     "u(psi) = V(psi) (x) I_9 and P_W = sigma (x) sigma an "
+                     "involution; the commutator splits off the pointer pair "
+                     "and leaves delta(V) = [sigma, V] at 9x9, and delta is a "
+                     "1-COCYCLE for the right-conjugation action -- "
+                     "delta(XY) = delta(Y) . Y^-1 delta(X) Y -- so the "
+                     "declared factorisation V = H(psi) . Q expands as "
+                     "delta(HQ) = delta(Q) . Q^-1 delta(H) Q, which is the "
+                     "psi-law with D_GEN = delta(Q) and E(psi) = delta(H)",
+        "the_four_readings": {
+            "EXISTENCE": "curvature at a declaration exists iff the "
+                         "commutator does not vanish: D(psi) != I <=> V is "
+                         "not in the centraliser of sigma",
+            "GROUP_ORDER": "the based holonomy group's order is twice the "
+                           "order of the commutator delta(Q), and 1 with the "
+                           "identifications refused where delta(Q) = I",
+            "FORCING": "at a state factor inside the centraliser -- H(psi) "
+                       "in C(sigma), i.e. psi exchange-invariant -- the "
+                       "commutator is delta(Q) alone, so the completion's "
+                       "declared Q determines the defect and psi cancels: "
+                       "GEN's theorem, as a corollary",
+            "STATE_MODULATION": "off that locus the second cocycle factor "
+                                "Q^-1 delta(H(psi)) Q is what psi "
+                                "contributes, and it is the whole of it"},
+        "per_member": rows,
+        "deviations": dev,
+        "members_where_the_mirror_ordered_expansion_differs":
+            sorted(mirror_differs),
+        "the_group_order_reading": order_rows,
+        "deviations_in_the_group_order_reading": order_dev,
+        "the_centralizer_readings": {
+            "E(psi) = I <=> H(psi) in C(sigma)": "measured at every member",
+            "D_GEN = I <=> Q in C(sigma)": "measured at the three declared "
+                                           "transpositions",
+            "D(psi) = I <=> V in C(sigma)": "measured at every member"},
+        "members_whose_psi_factor_is_the_identity":
+            sorted(nm for nm in PSI_ORDER
+                   if rows[nm]["the_psi_factor_is_the_identity"]),
+        "the_exchange_invariant_members": sorted(inv_members),
+        "what_E_is_and_is_not": {
+            "H(psi) is a symmetric orthogonal involution": H_inv,
+            "E(psi) is exactly orthogonal, E^T = E^-1": E_orth,
+            "E(psi) squares to the identity": E_inv,
+            "E(psi) is symmetric": E_sym,
+            "the two coincide, as they must for an orthogonal matrix":
+                E_sym == E_inv,
+            "and they hold on a PROPER subset of the family":
+                len(E_inv) < len(PSI_ORDER)},
+        "the_factorisation_relativity_residual":
+            "D(psi) depends on the completion V alone, but the SPLIT into a "
+            "declaration factor and a state factor does not: refactoring the "
+            "same V as Q . H' with H' = Q^T H Q is an equally valid cocycle "
+            "expansion delta(QH') = delta(H') . H'^-1 delta(Q) H' whose state "
+            "factor E'(psi) = [sigma, H'] is measured DIFFERENT from E(psi).  "
+            "The world/description split is FACTORISATION-RELATIVE",
+        "members_where_the_alternative_factorisations_state_factor_differs":
+            sorted(E_prime_differs),
+        "the_randomised_sweep": {
+            "seed": "sha256 of the declared family, the pinned transposition "
+                    "and the declared exchange -- no wall-clock value and no "
+                    "operating-system entropy enters",
+            "triples_of_the_form_(sigma, X, Y)": RANDOM_TRIPLES,
+            "draws_measured_exactly_orthogonal": r_orth,
+            "deviations_from_the_cocycle_identity": r_dev,
+            "triples_where_the_mirror_order_gives_a_different_answer":
+                r_mirror,
+            "triples_where_delta(X)_is_not_the_identity": r_nontrivial}}
+    ok = (pw_involution and pw_is_sigma_tensor_sigma
+          and all(v == 0 for v in dev.values())
+          and order_dev == 0 and E_facts_ok
+          and len(mirror_differs) > 0 and len(E_prime_differs) > 0
+          and r_orth == RANDOM_TRIPLES and r_dev == 0
+          and r_mirror > 0 and r_nontrivial > 0
+          and sorted(nm for nm in PSI_ORDER
+                     if rows[nm]["the_psi_factor_is_the_identity"])
+          == sorted(inv_members))
+    gate("PSI-ONE-LAW", "derivation",
+         "THE UNIT'S CENTRAL RESULT: D(psi) = [P_W, u(psi)], AND THE psi-LAW "
+         "IS ITS COCYCLE EXPANSION.  P_W is measured to be an INVOLUTION and "
+         "to equal the product of the independently declared system-only and "
+         "pointer-only wing exchanges, so the four-factor product IS the "
+         "group commutator [P_W, u(psi)] with u(psi) = V(psi) (x) I_9.  Six "
+         "must-pass clauses, every one a measurement at all eleven members.  "
+         "(1) THE SPLIT: the 81x81 commutator is measured EQUAL, entry by "
+         "entry, to delta(V) (x) I_9 with delta(X) := [sigma, X] -- the "
+         "pointer factor cancels.  (2) THE psi-FACTOR IS A COMMUTATOR: the "
+         "Householder is measured to be an involution, so E(psi) = "
+         "sigma H sigma H is delta(H(psi)) = [sigma, H(psi)].  (3) THE "
+         "COCYCLE: delta is a 1-cocycle for the right-conjugation action, "
+         "delta(XY) = delta(Y) . Y^-1 delta(X) Y; instantiated at "
+         "(X, Y) = (H(psi), Q) it is measured to reproduce delta(V) and the "
+         "delivered law entry by entry.  Given the measured sigma^2 = I this "
+         "identity is forced by algebra for any invertible X and Y, and it is "
+         "recorded here as such rather than advertised as a surprise; what is "
+         "NOT forced, and is measured, is (4) THE ORDER: the mirror-ordered "
+         "expansion delta(X) . X^-1 delta(Y) X computes delta(YX) and is "
+         "measured to give a DIFFERENT answer at a positive, counted number "
+         "of family members and of randomised triples, so the order in the "
+         "law is a measurement.  (5) THE RANDOMISED SWEEP: %d triples "
+         "(sigma, X, Y) with X and Y exactly orthogonal rational 9x9 matrices "
+         "drawn from a generator seeded from the DECLARED data alone -- no "
+         "wall-clock value, no operating-system entropy -- with every draw "
+         "measured orthogonal, the identity measured at ZERO deviations, and "
+         "positive counts of both non-trivial delta(X) and mirror-order "
+         "disagreements, so the sweep is not vacuous.  (6) THE READINGS: the "
+         "vanishing conditions are CENTRALIZER conditions and are measured in "
+         "both directions -- E(psi) = I iff H(psi) commutes with sigma, "
+         "D(psi) = I iff V does -- and the group order is measured to be "
+         "twice the order of delta(Q) at each of the three declared "
+         "transpositions, with the commutator permutation read off the 9x9 "
+         "matrix and off the label formula by two routes.  The residual is "
+         "measured too: refactoring V as Q . H' gives an equally valid "
+         "expansion whose state factor DIFFERS at a counted set of members, "
+         "so the world/description split is factorisation-relative.  AND "
+         "WHAT E(psi) IS IS MEASURED RATHER THAN ASSERTED: H(psi) is measured "
+         "to be a symmetric orthogonal INVOLUTION at every member -- that is "
+         "the involution of this construction -- while E(psi) is measured "
+         "exactly orthogonal at every member and to square to the identity, "
+         "equivalently to be symmetric, only on a PROPER subset of the "
+         "family, which the gate measures to be proper and to contain the "
+         "exchange-invariant locus.  The `cocycle-order`, `centralizer-lax` "
+         "and `refactor-lax` mutants must each die here, and so must "
+         "`defect-order` and `psilaw-drop`" % RANDOM_TRIPLES,
+         ok,
+         {"H_is_a_symmetric_orthogonal_involution_at": len(H_inv),
+          "E_is_exactly_orthogonal_at": len(E_orth),
+          "E_squares_to_the_identity_at": E_inv,
+          "E_is_symmetric_at": E_sym,
+          "members": len(PSI_ORDER),
+          "P_W_is_an_involution": pw_involution,
+          "P_W_equals_the_product_of_the_two_declared_half_exchanges":
+              pw_is_sigma_tensor_sigma,
+          "deviations": dev,
+          "members_where_the_mirror_ordered_expansion_differs":
+              sorted(mirror_differs),
+          "members_where_the_alternative_factorisation_gives_a_different"
+          "_state_factor": sorted(E_prime_differs),
+          "deviations_in_the_group_order_reading": order_dev,
+          "the_group_order_reading":
+              {k: [v["its_order"],
+                   v["the_group_order_the_dihedral_reading_predicts"],
+                   v["the_measured_based_holonomy_group_order_at_GP_E"]]
+               for k, v in order_rows.items()},
+          "randomised_triples": RANDOM_TRIPLES,
+          "randomised_draws_measured_orthogonal": r_orth,
+          "randomised_deviations_from_the_cocycle_identity": r_dev,
+          "randomised_triples_where_the_mirror_order_differs": r_mirror,
+          "randomised_triples_with_a_non_trivial_delta": r_nontrivial})
+
+
+def perm_order_9(p):
+    q, n = tuple(p), 1
+    ident = tuple(range(NSP))
+    while q != ident:
+        q = tuple(p[q[i]] for i in range(NSP))
+        n += 1
+        if n > NSP + 1:
+            return None
+    return n
+
+
+def signed_perm9(A):
+    """The permutation a 9x9 matrix carries, if it is one; else None."""
+    out = [None] * NSP
+    for (i, j), v in A.items():
+        if v != ONE:
+            return None
+        if out[j] is not None:
+            return None
+        out[j] = i
+    return None if any(x is None for x in out) else out
+
+
+# ===========================================================================
 # 10.  THE SIGN-FLIP CENSUS -- exhaustive over the declared sub-family
 # ===========================================================================
 def run_signflip_census(worlds):
@@ -1839,18 +2395,25 @@ def run_signflip_census(worlds):
     prog("the sign-flip census, exhaustive over the declared sub-family")
     q = declared_Q()
     subsample = (MUTANT == "signflip-lax")
+    halve_the_census = (MUTANT == "signflip-half")
     ref = enumerate_paths(worlds[PSI_REFERENCE], "GP-E", L_MAX,
                           starts=(BASE_NODE,))["based"]
     inv_members = [nm for nm in PSI_ORDER
                    if TABLES["psi_family"]["per_member"][nm][
                        "is_exchange_invariant"]]
     rows, total, mismatches = [], 0, 0
+    law_movers, cell_movers, moved_cells = set(), set(), set()
+    law_moving_patterns, cell_moving_patterns = 0, 0
     for nm in inv_members:
         base = worlds[nm].psi
+        base_laws = world_node_laws(worlds[nm])
+        base_cells = TABLES["admission_per_psi"]["per_member"][nm]
         sup = [i for i in range(NSP) if base[i] and i != 0]
         pats = list(itertools.product((1, -1), repeat=len(sup)))
         if subsample:
             pats = pats[:1]
+        if halve_the_census:
+            pats = pats[:max(1, len(pats) // 2)]
         for pat in pats:
             psi = list(base)
             for k, i in enumerate(sup):
@@ -1865,53 +2428,103 @@ def run_signflip_census(worlds):
             common = set(ref) & set(got)
             agrees = all(ref[l]["born"] == got[l]["born"] for l in common)
             same_space = set(ref) == set(got)
+            # -- what the flip does OFF the census's own setting: the law
+            #    layer at all 48 nodes of all six settings, and the admission
+            #    table at all 48 cells, each against the pattern's OWN
+            #    unflipped member.  These are the measurements section 6.2's
+            #    superseded mechanism sentence got wrong.
+            laws_moved = [k for k, v in world_node_laws(W2).items()
+                          if base_laws[k] != v]
+            cells_moved = [k for k, v in flat_admission(W2).items()
+                           if base_cells[k] != v]
+            if laws_moved:
+                law_movers.add(nm)
+                law_moving_patterns += 1
+            if cells_moved:
+                cell_movers.add(nm)
+                cell_moving_patterns += 1
+                moved_cells |= set(cells_moved)
             total += 1
             if agrees != still_invariant or not same_space or not born_same:
                 mismatches += 1
             rows.append({"member": nm, "sign_pattern": list(pat),
                          "still_exchange_invariant": bool(still_invariant),
                          "the_born_shadow_is_unchanged": bool(born_same),
-                         "the_loop_space_is_unchanged": bool(same_space),
-                         "every_common_loop_agrees_with_the_reference":
+                         "the_loop_space_is_unchanged_at_GP_E":
+                             bool(same_space),
+                         "every_common_loop_agrees_with_the_reference_at_GP_E":
                              bool(agrees),
+                         "nodes_whose_law_moves_at_some_setting":
+                             len(laws_moved),
+                         "admission_cells_that_move_at_some_setting":
+                             sorted(cells_moved),
                          "common_loops": len(common)})
     moved = [r for r in rows if not r["every_common_loop_agrees_with_the"
-                                     "_reference"]]
+                                     "_reference_at_GP_E"]]
     TABLES["signflip_census"] = {
         "sub_family_size": total, "members_swept": inv_members,
         "rows": rows,
         "patterns_that_move_the_holonomy": len(moved),
         "patterns_that_do_not": total - len(moved),
         "mismatches_between_agreement_and_exchange_invariance": mismatches,
+        "patterns_that_move_a_node_law_at_some_setting": law_moving_patterns,
+        "members_with_a_law_moving_pattern": sorted(law_movers),
+        "patterns_that_move_an_admission_cell_at_some_setting":
+            cell_moving_patterns,
+        "members_with_a_cell_moving_pattern": sorted(cell_movers),
+        "the_admission_cells_they_move": sorted(moved_cells),
+        "the_scope_of_the_holonomy_comparison": "GP-E, where both local legs "
+            "come from R0 and are permutation matrices, so entrywise "
+            "absolute values are preserved through every checkpoint",
         "route": "for each declared exchange-invariant member every sign "
                  "pattern on its support that fixes the initial coefficient "
                  "is enumerated -- the size is computed, never typed -- and "
                  "each one is REBUILT IN FULL at GP-E: new completion, new "
                  "admission table, new graph, new enumeration, new based "
-                 "holonomy"}
+                 "holonomy.  The law layer and the admission table are then "
+                 "compared at ALL SIX settings against the pattern's own "
+                 "unflipped member, which is where the census's Born-level "
+                 "invisibility is measured to be a GP-E fact and not a "
+                 "general one"}
     gate("PSI-SIGNFLIP-CENSUS", "measurement",
          "THE SIGN-FLIP CENSUS IS EXHAUSTIVE OVER THE DECLARED SUB-FAMILY "
-         "AND DECIDES THE DEPENDENCE IN BOTH DIRECTIONS.  Every sign pattern "
-         "on the support of every declared exchange-invariant member -- the "
-         "count computed by enumeration -- is rebuilt in full at the "
-         "symmetric setting GP-E.  Three things are measured at every "
-         "member.  The BORN SHADOW is unchanged by a sign pattern, so no "
-         "Born-level declaration can see the flip.  The LOOP SPACE is "
-         "unchanged, so every loop is common and the comparison is total "
-         "rather than partial.  And the HOLONOMY agrees with the reference "
-         "on every common loop IF AND ONLY IF the flipped state is still "
-         "exchange-invariant -- both directions, member by member, with the "
-         "number of mismatches gated at zero.  That is the dependence law: "
-         "the holonomy moves exactly when the sign pattern differs across "
-         "some sigma-pair of the support.  The `signflip-lax` mutant "
-         "subsamples the census to one pattern per member and must die here",
-         mismatches == 0 and total > 2 * len(inv_members)
-         and len(moved) > 0 and len(moved) < total,
+         "AND DECIDES THE DEPENDENCE IN BOTH DIRECTIONS, AT THE DECLARED "
+         "SETTING GP-E.  Every sign pattern on the support of every declared "
+         "exchange-invariant member that fixes the initial coefficient -- the "
+         "count computed by enumeration and gated against the count the "
+         "declaration forces -- is rebuilt in full at GP-E.  TWO CLAUSES ARE "
+         "FORCED BY ALGEBRA AND ARE RECORDED AS DISCLOSURES, NOT ADVERTISED "
+         "AS MEASUREMENTS (RUNBOOK section 14 addendum): the Born shadow of "
+         "psi and of V is unchanged by a sign pattern, since "
+         "V(eps psi) = S H S Q with S diagonal +-1, and at GP-E both local "
+         "legs are permutation matrices, so every downstream Born-level "
+         "datum and hence the whole loop space is unchanged there too.  OFF "
+         "GP-E the second does not follow, and the census MEASURES how far: "
+         "the number of patterns that move a node law at some setting, and "
+         "the number that move an admission cell, are counted and printed, "
+         "and both are positive -- a local leg that is not a permutation "
+         "superposes distinct support entries of psi, so 'no Born-level "
+         "declaration can see the flip' is a GP-E statement and is made only "
+         "there.  THE ONE CONTINGENT MEASUREMENT, and this gate's must-pass "
+         "content, is the third: the HOLONOMY agrees with the reference on "
+         "every common loop IF AND ONLY IF the flipped state is still "
+         "exchange-invariant -- both directions, pattern by pattern, with the "
+         "number of mismatches gated at zero and both answers occurring.  "
+         "The `signflip-lax` mutant subsamples the census to one pattern per "
+         "member and must die here; the `signflip-half` mutant halves it and "
+         "must die at PSI-CELL-COMPLETENESS",
+         mismatches == 0 and len(moved) > 0 and len(moved) < total
+         and law_moving_patterns > 0 and cell_moving_patterns > 0,
          {"sub_family_size": total, "members_swept": len(inv_members),
           "patterns_that_move_the_holonomy": len(moved),
           "patterns_that_do_not": total - len(moved),
-          "mismatches_between_agreement_and_exchange_invariance":
-              mismatches})
+          "mismatches_between_agreement_and_exchange_invariance": mismatches,
+          "patterns_that_move_a_node_law_at_some_setting":
+              law_moving_patterns,
+          "members_with_a_law_moving_pattern": sorted(law_movers),
+          "patterns_that_move_an_admission_cell_at_some_setting":
+              cell_moving_patterns,
+          "the_admission_cells_they_move": sorted(moved_cells)})
 
 
 # ===========================================================================
@@ -1980,6 +2593,19 @@ def run_positive_control(worlds, results, gen):
                 "fixed_points"]],
            [None if p is None else perm_order([p[j] for j in range(NC)]),
             None if p is None else fixed_points([p[j] for j in range(NC)])])
+    # THE COMPLETION'S ONE GENUINELY EXTERNAL ANCHOR.  GEN's receipt does not
+    # carry V, so the 81 A-V anchors above are self-anchors and are labelled
+    # as such.  What GEN's receipt DOES carry is the completion's own defect
+    # permutation, and this unit's delta(Q) -- computed from the declared
+    # transposition alone -- is anchored against it entry by entry.
+    gen_delta = gen["tables"]["completion_census"][
+        "the_declared_completions_entry"]["the_defect_permutation"]
+    mine_delta = list(delta_of_Q(declared_Q()))
+    for i in range(NSP):
+        anchor("A-GEN-DELTA-%d" % i, "the committed GEN terminal receipt",
+               "delta(Q)[%d], the declared completion's own defect "
+               "permutation on the nine system-pair labels" % i,
+               gen_delta[i], mine_delta[i])
     overwrite_the_positive_control = (MUTANT == "control-lax")
     ok = all(a["passed"] for a in ANCHORS if a["id"].startswith("A-GEN"))
     if overwrite_the_positive_control:
@@ -2029,12 +2655,20 @@ def delta_of_Q(q):
     return tuple(SIGMA9[qi[SIGMA9[q[i]]]] for i in range(NSP))
 
 
-def run_negative_control(worlds, results):
+GEN_SUBFAMILY_KEY = {"Q-negA": "Q = (1 4)", "Q-negB": "Q = (1 3)"}
+
+
+def run_negative_control(worlds, results, gen):
     """A DIFFERENT declared Q must move the holonomy by the amount the GEN law
-    predicts.  If it does not, the instrument is dead."""
+    predicts.  If it does not, the instrument is dead.  Both alternative
+    transpositions lie INSIDE the sub-family GEN rebuilt exhaustively, so
+    every reading here is also a reproduction of a committed measurement and
+    is anchored exit-1 as one."""
     prog("the negative control with teeth: a different declared Q")
     psiG = worlds[PSI_REFERENCE].psi
     ref = based_group(results[PSI_REFERENCE]["GP-E"]["based"])
+    ref_links = results[PSI_REFERENCE]["GP-E"]["n_links"]
+    cr = gen["tables"]["completion_rebuilds"]["per_member"]
     rows = {}
     for nm, why, q in Q_CONTROLS:
         use_the_pinned_Q_instead = (MUTANT == "qcontrol-lax")
@@ -2049,6 +2683,36 @@ def run_negative_control(worlds, results):
         got = enumerate_paths(W2, "GP-E", L_MAX, starts=(BASE_NODE,))
         grp = based_group(got["based"])
         predicted = 1 if n == 1 else 2 * n
+        # -- the four readings, anchored against GEN's exhaustive rebuild ----
+        g = cr[GEN_SUBFAMILY_KEY[nm]]
+        anchor("A-GEN-NEG-%s-ORDER" % nm, "the committed GEN terminal "
+               "receipt, its exhaustive rebuild of the single-transposition "
+               "completion sub-family", "the measured group order at the "
+               "symmetric setting for %s" % GEN_SUBFAMILY_KEY[nm],
+               g["the_measured_group_order_at_the_symmetric_setting"],
+               grp["generated_group_order"])
+        anchor("A-GEN-NEG-%s-ABELIAN" % nm, "the committed GEN terminal "
+               "receipt, its exhaustive rebuild of the single-transposition "
+               "completion sub-family", "abelian, for %s"
+               % GEN_SUBFAMILY_KEY[nm], g["abelian"],
+               grp["the_group_is_abelian"])
+        anchor("A-GEN-NEG-%s-DEFECT" % nm, "the committed GEN terminal "
+               "receipt, its exhaustive rebuild of the single-transposition "
+               "completion sub-family", "the order of the defect, for %s"
+               % GEN_SUBFAMILY_KEY[nm], g["the_order_of_the_defect"], n)
+        anchor("A-GEN-NEG-%s-LINKS" % nm, "the committed GEN terminal "
+               "receipt, its exhaustive rebuild of the single-transposition "
+               "completion sub-family", "the identification links at the "
+               "symmetric setting, for %s" % GEN_SUBFAMILY_KEY[nm],
+               g["identification_links_at_the_symmetric_setting"],
+               got["n_links"] - len(FRAMES) * NLEGS)
+        anchor("A-GEN-NEG-%s-PREDICT" % nm, "the committed GEN terminal "
+               "receipt, its exhaustive rebuild of the single-transposition "
+               "completion sub-family", "the dihedral reading's own "
+               "prediction for the group order, for %s -- which is what "
+               "anchors this instrument's equivariant-locus branch rather "
+               "than leaving it typed" % GEN_SUBFAMILY_KEY[nm],
+               g["the_dihedral_prediction_for_the_group_order"], predicted)
         rows[nm] = {
             "description": why, "Q": qq,
             "delta_of_Q": list(d), "order_of_delta": n,
@@ -2056,7 +2720,14 @@ def run_negative_control(worlds, results):
             "measured_group_order": grp["generated_group_order"],
             "measured_abelian": grp["the_group_is_abelian"],
             "links": got["n_links"],
+            "identification_links": got["n_links"] - len(FRAMES) * NLEGS,
             "based_closed_loops": grp["based_closed_loops"],
+            "it_lies_on_the_exchange_equivariant_locus": n == 1,
+            "the_identifications_are_refused_relative_to_the_pinned_Q":
+                got["n_links"] < ref_links,
+            "the_compound_prediction_is_met":
+                grp["generated_group_order"] == predicted
+                and (got["n_links"] < ref_links if n == 1 else True),
             "the_prediction_is_met":
                 grp["generated_group_order"] == predicted,
             "the_holonomy_moved_from_the_pinned_Q":
@@ -2066,9 +2737,19 @@ def run_negative_control(worlds, results):
     TABLES["negative_control"] = {
         "at_the_pinned_Q": {"group_order": ref["generated_group_order"],
                             "abelian": ref["the_group_is_abelian"],
-                            "links": results[PSI_REFERENCE]["GP-E"][
-                                "n_links"]},
+                            "links": ref_links},
         "per_control": rows,
+        "it_is_also_a_reproduction":
+            "both alternative transpositions are single transpositions of the "
+            "nine system-pair labels fixing the first, hence members of the "
+            "28-member sub-family GEN rebuilt EXHAUSTIVELY, each a full "
+            "rebuild.  Their group orders, abelianness, defect orders, "
+            "identification-link counts and even the dihedral reading's own "
+            "prediction are therefore COMMITTED VALUES, and all twenty of "
+            "those readings are anchored exit-1 here.  The control is at "
+            "once a prediction test and a reproduction of a committed "
+            "measurement; it is NOT an out-of-sample prediction, and no "
+            "claim of one is made",
         "route": "the preparation is held at psi-G and the declared "
                  "transposition alone is changed, so the contrast is read at "
                  "matched coordinates: same base, same rules, same scopes, "
@@ -2088,17 +2769,37 @@ def run_negative_control(worlds, results):
          "requires both to be met AND the holonomy to have actually moved "
          "from the pinned Q's reading -- if a declaration change cannot move "
          "this instrument, the instrument is dead and no psi-side reading it "
-         "reports is worth anything.  The `qcontrol-lax` mutant substitutes "
-         "the pinned Q for the controls, so nothing moves, and must die here",
-         all(r["the_prediction_is_met"] and r["the_holonomy_moved_from_the"
-                                              "_pinned_Q"]
-             for r in rows.values()),
+         "reports is worth anything.  The COMPOUND prediction is in the "
+         "predicate, not only its first half: on the equivariant locus the "
+         "identifications must also be measured REFUSED relative to the "
+         "pinned Q's link count.  AND IT IS ALSO A REPRODUCTION, which the "
+         "unit states rather than trading on: both alternative "
+         "transpositions lie inside the 28-member sub-family GEN rebuilt "
+         "exhaustively, so their group orders, abelianness, defect orders, "
+         "identification links AND the dihedral reading's own prediction -- "
+         "including the equivariant-locus branch, which is therefore anchored "
+         "rather than typed -- are committed values, and every one of them is "
+         "anchored exit-1 against GEN's receipt here.  Nothing in this unit "
+         "is an out-of-sample prediction and nothing claims to be.  The "
+         "`qcontrol-lax` mutant substitutes the pinned Q for the controls, so "
+         "nothing moves, and must die here",
+         all(r["the_compound_prediction_is_met"]
+             and r["the_holonomy_moved_from_the_pinned_Q"]
+             for r in rows.values())
+         and all(a["passed"] for a in ANCHORS
+                 if a["id"].startswith("A-GEN-NEG")),
          {"at_the_pinned_Q": ref["generated_group_order"],
+          "anchors_against_GENs_exhaustive_rebuild":
+              sum(1 for a in ANCHORS if a["id"].startswith("A-GEN-NEG")),
           "controls": {nm: {"order_of_delta": r["order_of_delta"],
                             "predicted": r["the_GEN_law_predicts_a_group_of"
                                            "_order"],
                             "measured": r["measured_group_order"],
-                            "abelian": r["measured_abelian"]}
+                            "abelian": r["measured_abelian"],
+                            "identification_links": r["identification_links"],
+                            "links_refused_relative_to_the_pinned_Q":
+                                r["the_identifications_are_refused_relative"
+                                  "_to_the_pinned_Q"]}
                        for nm, r in rows.items()}})
 
 
@@ -2263,6 +2964,9 @@ def run_switching_selftest(worlds):
                  "probe loops, in the order they are declared, at the "
                  "declared setting, for the declared members -- and is never "
                  "selected by the verdicts under audit"}
+    declared_probe_instances = len(SWEEP_MEMBERS) * len(DECLARED_PROBES)
+    TABLES["switching_selftest"]["declared_probe_instances"] = \
+        declared_probe_instances
     complete = bool(rows) and all(
         r["the_switching_group_is_swept_complete"] for r in rows.values())
     ok = (deviations == 0 and unreadable_flips == 0 and telescoping == 0
@@ -2270,7 +2974,8 @@ def run_switching_selftest(worlds):
           and _CACHE["value_cache_hits"] == 0
           and _CACHE["value_cache_misses"] > 0
           and _CACHE["fresh_requests_for_a_key_already_in_the_cache"] > 0
-          and reread == primed and primed > 0)
+          and reread == primed and primed == declared_probe_instances
+          and len(rows) == declared_probe_instances)
     gate("PSI-SWITCHING-SELFTEST", "measurement",
          "THE HOLONOMY READINGS ARE SELF-TESTED UNDER THE SYMMETRY'S OWN "
          "ACTION, AND THE SELF-TEST EVALUATES FRESH AGAINST A CACHE MEASURED "
@@ -2304,7 +3009,9 @@ def run_switching_selftest(worlds):
           "fresh_requests_for_a_key_already_in_the_cache":
               _CACHE["fresh_requests_for_a_key_already_in_the_cache"],
           "cache_entries_primed": primed,
-          "primed_keys_served_on_a_second_visit": reread})
+          "primed_keys_served_on_a_second_visit": reread,
+          "declared_probe_instances": declared_probe_instances,
+          "probe_instances_realized": len(rows)})
 
 
 def run_flip_tests(worlds, results):
@@ -2344,29 +3051,16 @@ def run_flip_tests(worlds, results):
             == (worlds[PSI_REFERENCE].V[i][j]
                 * worlds[PSI_REFERENCE].V[i][j])
             for i in range(NSP) for j in range(NSP))
-        legs_same = True
-        for sp in SETTING_ORDER:
-            for fr in FRAMES:
-                if ([leg_key(x) for x in worlds[nm].legs(sp, fr)]
-                        != [leg_key(x) for x
-                            in worlds[PSI_REFERENCE].legs(sp, fr)]):
-                    legs_same = False
-                if ([leg_key(x) for x in worlds[nm].realized(sp, fr)]
-                        != [leg_key(x) for x
-                            in worlds[PSI_REFERENCE].realized(sp, fr)]):
-                    legs_same = False
-        L_agrees, A_agrees = True, True
+        legs_same = (world_leg_keys(worlds[nm])
+                     == world_leg_keys(worlds[PSI_REFERENCE]))
+        A_agrees = True
         for sp in SETTING_ORDER:
             a, b = ref[sp]["based"], results[nm][sp]["based"]
             for l in set(a) & set(b):
                 if a[l]["born"] != b[l]["born"]:
                     A_agrees = False
-        for sp in SETTING_ORDER:
-            for fr in FRAMES:
-                for t in CHECKPOINTS:
-                    if (worlds[PSI_REFERENCE].node_law(sp, fr, t)
-                            != worlds[nm].node_law(sp, fr, t)):
-                        L_agrees = False
+        L_agrees = (world_node_laws(worlds[nm])
+                    == world_node_laws(worlds[PSI_REFERENCE]))
         split[nm] = {"the_same_born_shadow_as_the_reference": bool(same_born),
                      "the_born_shadow_of_the_completion_agrees": bool(V_same),
                      "the_born_level_keys_of_every_leg_agree":
@@ -2431,9 +3125,12 @@ def run_flip_tests(worlds, results):
          "members where the two layers part company, and their existence is "
          "the unit's finding stated as a bookkeeping fact.  The `flip-lax` "
          "waiver overwrites this predicate",
-         bad == 0 and flips > 0 and both_ways and born_level_blind
+         bad == 0 and both_ways and born_level_blind
+         and flips == len(SWEEP_MEMBERS) * len(DECLARED_PROBES)
          and not overwrite_the_flip_test,
          {"loops_direction_flipped": flips,
+          "declared_probe_instances":
+              len(SWEEP_MEMBERS) * len(DECLARED_PROBES),
           "loops_whose_reversal_was_not_the_inverse": bad,
           "the_law_layer_tracks_the_born_shadow_exactly": both_ways,
           "the_born_level_data_tracks_the_born_shadow_exactly":
@@ -2491,20 +3188,52 @@ def run_witness(worlds, results, matched, curv, quiet):
     for nm in curv:
         for sp in SETTING_ORDER:
             w = matched[nm][sp]["_witness_flat"]
-            if w is not None:
-                flat_wit.append({"member": nm, "setting": sp,
-                                 "loop": canon(w),
-                                 "loop_length": ref[sp]["based"][w]["len"]})
-                break
-    rebuilds_ok = all(w["the_independent_rebuild_agrees_at_the_reference"]
-                      and w["the_independent_rebuild_agrees_here"]
-                      and w["the_independent_rebuilds_differ"]
-                      for w in witnesses)
+            if w is None:
+                continue
+            # the flat-to-non-flat witness is rebuilt by the SAME independent
+            # route as the born witness: a plain left-to-right product of
+            # freshly constructed link variables.
+            ea = named_edges(worlds[PSI_REFERENCE], sp,
+                             tuple((list(n), d) for n, d in w))
+            eb = named_edges(worlds[nm], sp,
+                             tuple((list(n), d) for n, d in w))
+            ra = loop_matrix_fresh(worlds[PSI_REFERENCE], sp, ea,
+                                   memoised=False)
+            rb = loop_matrix_fresh(worlds[nm], sp, eb, memoised=False)
+            flat_wit.append({
+                "member": nm, "setting": sp, "loop": canon(w),
+                "loop_length": ref[sp]["based"][w]["len"],
+                "the_independent_rebuild_at_the_reference_is_the_identity":
+                    ra == sp_id(),
+                "the_independent_rebuild_here_is_not_the_identity":
+                    rb != sp_id(),
+                "loops_of_this_kind_at_this_member_and_setting":
+                    matched[nm][sp][
+                        "common_loops_flat_at_the_reference_and_not_here"]})
+            break
+    rebuilds_ok = (all(w["the_independent_rebuild_agrees_at_the_reference"]
+                       and w["the_independent_rebuild_agrees_here"]
+                       and w["the_independent_rebuilds_differ"]
+                       for w in witnesses)
+                   and all(w["the_independent_rebuild_at_the_reference_is"
+                             "_the_identity"]
+                           and w["the_independent_rebuild_here_is_not_the"
+                                 "_identity"] for w in flat_wit))
     invariant_quiet = all(nm in quiet for nm in matched
                           if fam[nm]["is_exchange_invariant"])
+    counts = {nm: {sp: matched[nm][sp][
+        "common_loops_whose_born_holonomy_differs"]
+        for sp in SETTING_ORDER} for nm in curv}
+    counts_positive = all(any(counts[nm][sp] > 0 for sp in SETTING_ORDER)
+                          for nm in curv) and bool(curv)
     TABLES["witnesses"] = {
         "witness_pairs": witnesses,
-        "flat_to_non_flat_witnesses": flat_wit,
+        "flat_to_non_flat_witness_records_one_per_member": flat_wit,
+        "flat_to_non_flat_loops_at_GP_E": {
+            nm: matched[nm]["GP-E"][
+                "common_loops_flat_at_the_reference_and_not_here"]
+            for nm in curv},
+        "common_loops_whose_born_holonomy_differs_per_member": counts,
         "members_with_a_differing_common_loop": curv,
         "members_with_no_differing_common_loop": quiet,
         "every_exchange_invariant_member_agrees_on_every_common_loop":
@@ -2515,9 +3244,14 @@ def run_witness(worlds, results, matched, curv, quiet):
                  "freshly constructed link variables, sharing no interning, "
                  "no step memo and no value cache with the enumeration that "
                  "produced the row -- and the rebuilds are measured to "
-                 "reproduce the rows AND to differ from each other"}
+                 "reproduce the rows AND to differ from each other.  The "
+                 "route is independent of the enumeration's accumulation, "
+                 "its interning and its caches; the link variables "
+                 "themselves are the base's own declared data, which both "
+                 "routes necessarily share"}
     overwrite_the_witness = (MUTANT == "witness-lax")
     ok = (len(witnesses) > 0 and rebuilds_ok and invariant_quiet
+          and counts_positive and len(flat_wit) > 0
           and not overwrite_the_witness)
     gate("PSI-WITNESS", "measurement",
          "THE WITNESS GATE, WITH BOTH HALVES IN ITS OWN PREDICATE.  THE "
@@ -2536,10 +3270,21 @@ def run_witness(worlds, results, matched, curv, quiet):
          "fixture of the instrument.  The `psi-collapse` mutant makes every "
          "member the reference, killing the positive half; the "
          "`label-collapse` and `hol-basepoint` mutants corrupt the holonomy "
-         "reading; the `witness-lax` waiver overwrites this predicate",
+         "reading; the `witness-lax` waiver overwrites this predicate.  THE "
+         "PRINTED COUNTS ARE IN THE PREDICATE: the number of common loops "
+         "whose Born holonomy differs is measured positive at every member "
+         "of the differing set, and the flat-to-non-flat witness -- the "
+         "sharpest form the witness takes -- is required to exist whenever "
+         "that set is non-empty and is rebuilt by the same independent route",
          ok,
          {"witness_pairs": len(witnesses),
-          "flat_to_non_flat_witnesses": len(flat_wit),
+          "flat_to_non_flat_witness_records_one_per_member": len(flat_wit),
+          "flat_to_non_flat_loops_at_GP_E":
+              {nm: matched[nm]["GP-E"][
+                  "common_loops_flat_at_the_reference_and_not_here"]
+               for nm in curv},
+          "common_loops_whose_born_holonomy_differs_at_GP_E":
+              {nm: counts[nm]["GP-E"] for nm in curv},
           "independent_rebuilds_agree_and_differ": rebuilds_ok,
           "members_with_a_differing_common_loop": curv,
           "every_exchange_invariant_member_agrees_everywhere":
@@ -2566,8 +3311,14 @@ def run_path_space_dependence(movers, still, matched):
         "based_loop_counts_at_the_reference":
             {sp: ref[sp]["based_closed_loops"] for sp in SETTING_ORDER},
         "the_cells_that_move": {nm: TABLES["matched_comparison"][
-            "admission_delta_cells"][nm] for nm in movers}}
-    gate("PSI-PATH-SPACE-DEPENDENCE", "measurement",
+            "admission_delta_cells"][nm] for nm in movers},
+        "what_happens_to_the_arena_at_the_moving_members":
+            "the loop space is not RESHAPED; it COLLAPSES ONTO THE FLAT "
+            "BASELINE the four asymmetric settings already carry -- the "
+            "moving cells are the whole of the realized rule at the two "
+            "symmetric settings, and the link count and based-loop count at "
+            "GP-E fall to the asymmetric settings' own values"}
+    gate("PSI-ARENA-MOVES", "measurement",
          "WHETHER THE PREPARATION CHANGES WHICH LOOPS EXIST IS DECIDED CELL "
          "BY CELL, AND BOTH ANSWERS OCCUR IN THE FAMILY.  The admission "
          "tables of all eleven members are compared cell by cell in the "
@@ -2576,10 +3327,17 @@ def run_path_space_dependence(movers, still, matched):
          "measured to have identical graphs -- same links, same loop space "
          "-- so their comparison is total; members whose table MOVES are "
          "named together with the cells that move and the loop counts that "
-         "result.  Both halves are clauses of this gate's own predicate, so "
-         "the reading comes out both ways on one family.  The `born-lax` "
-         "mutant drops the exact-law clause from the admission predicate, "
-         "which moves cells that must not move, and must die here",
+         "result.  What happens at the moving members is a COLLAPSE ONTO THE "
+         "FLAT BASELINE rather than a reshaping: the cells that move are the "
+         "whole of the realized rule at the two symmetric settings, and what "
+         "is left is the connection the four asymmetric settings already "
+         "carry.  Both halves are clauses of this gate's own predicate, so "
+         "the reading comes out both ways on one family.  This gate is NOT "
+         "the verdict: it is named for the phenomenon, and the pre-registered "
+         "outcome of the similar name is a conjunction this family refutes.  "
+         "The `born-lax` mutant drops the exact-law clause from the "
+         "admission predicate, which moves cells that must not move, and "
+         "must die here",
          ok,
          {"members_whose_admission_table_moves": movers,
           "members_whose_admission_table_is_identical": still,
@@ -2590,48 +3348,512 @@ def run_path_space_dependence(movers, still, matched):
           "based_loop_counts_at_the_moving_members": moved_sizes})
 
 
-def run_verdict(witnesses, movers, curv):
-    """The decision rule is pre-registered and the verdict is derived from
-    the gates and from nothing else."""
-    prog("the verdict")
-    curvature = bool(witnesses)
-    path_space = bool(movers)
-    if curvature:
+# ===========================================================================
+# 13b.  THE WITNESS-PAIR CENSUS -- EXHAUSTIVE OVER THE UNORDERED PAIRS OF THE
+#       DECLARED FAMILY.  This is what the verdict's QUALIFIER is computed
+#       from: a pair is AT A FIXED BORN SHADOW when every Born-level object
+#       the model builds is measured identical at its two members -- the Born
+#       shadow of psi, the Born shadow of the completion, the Born-level key
+#       of every declared and realized leg, the law at every node, the whole
+#       48-cell admission table and the whole loop space -- and it is a
+#       WITNESS when a common loop's holonomy nevertheless differs.
+# ===========================================================================
+def run_witness_pairs(worlds, results):
+    prog("the witness-pair census, exhaustive over the declared family")
+    admtab = TABLES["admission_per_psi"]["per_member"]
+    drop_one_declared_pair = (MUTANT == "pair-drop")
+    pairs = [(a, b) for i, a in enumerate(PSI_ORDER)
+             for b in PSI_ORDER[i + 1:]]
+    if drop_one_declared_pair:
+        pairs = pairs[:-1]
+    rows = []
+    for (a, b) in pairs:
+        Wa, Wb = worlds[a], worlds[b]
+        psi_same = all(Wa.psi[i] * Wa.psi[i] == Wb.psi[i] * Wb.psi[i]
+                       for i in range(NSP))
+        V_same = all(Wa.V[i][j] * Wa.V[i][j] == Wb.V[i][j] * Wb.V[i][j]
+                     for i in range(NSP) for j in range(NSP))
+        legs_same = world_leg_keys(Wa) == world_leg_keys(Wb)
+        laws_same = world_node_laws(Wa) == world_node_laws(Wb)
+        cells_same = admtab[a] == admtab[b]
+        per_sp, loops_same, diff_total, common_total = {}, True, 0, 0
+        for sp in SETTING_ORDER:
+            A, B = results[a][sp]["based"], results[b][sp]["based"]
+            common = set(A) & set(B)
+            if set(A) != set(B):
+                loops_same = False
+            d = sum(1 for l in common if A[l]["born"] != B[l]["born"])
+            per_sp[sp] = {"common_loops": len(common),
+                          "common_loops_whose_born_holonomy_differs": d}
+            diff_total += d
+            common_total += len(common)
+        ip = ZERO
+        for i in range(NSP):
+            ip = ip + Wa.psi[i] * Wb.psi[i]
+        fixed = bool(psi_same and V_same and legs_same and laws_same
+                     and cells_same and loops_same)
+        rows.append({
+            "members": [a, b],
+            "the_born_shadow_of_psi_agrees": bool(psi_same),
+            "the_born_shadow_of_the_completion_agrees": bool(V_same),
+            "the_born_level_key_of_every_leg_agrees": bool(legs_same),
+            "the_law_at_every_node_agrees": bool(laws_same),
+            "the_whole_48_cell_admission_table_agrees": bool(cells_same),
+            "the_whole_loop_space_agrees": bool(loops_same),
+            "it_is_a_fixed_born_shadow_pair": fixed,
+            "common_loops": common_total,
+            "common_loops_whose_born_holonomy_differs": diff_total,
+            "per_setting": per_sp,
+            "the_inner_product_of_the_two_declared_vectors": str(ip),
+            "the_two_states_are_orthogonal": ip == ZERO,
+            "the_one_shot_separation_probability_of_a_projective_measurement"
+            "_onto_the_first": str(ONE - ip * ip)})
+    fixed_pairs = [r for r in rows if r["it_is_a_fixed_born_shadow_pair"]]
+    wit_pairs = [r for r in fixed_pairs
+                 if r["common_loops_whose_born_holonomy_differs"] > 0]
+    quiet_pairs = [r for r in fixed_pairs
+                   if r["common_loops_whose_born_holonomy_differs"] == 0]
+    orth = [r for r in wit_pairs if r["the_two_states_are_orthogonal"]]
+    TABLES["witness_pair_census"] = {
+        "pairs_compared": len(rows),
+        "the_pairs_the_declaration_forces":
+            len(PSI_ORDER) * (len(PSI_ORDER) - 1) // 2,
+        "per_pair": rows,
+        "fixed_born_shadow_pairs": [r["members"] for r in fixed_pairs],
+        "fixed_born_shadow_witness_pairs": [r["members"] for r in wit_pairs],
+        "fixed_born_shadow_pairs_that_agree_everywhere":
+            [r["members"] for r in quiet_pairs],
+        "fixed_born_shadow_witness_pairs_between_orthogonal_states":
+            [r["members"] for r in orth],
+        "route": "every unordered pair of the eleven declared members is "
+                 "compared -- the number of pairs computed from the declared "
+                 "family size, never typed.  A pair is AT A FIXED BORN "
+                 "SHADOW when six measured equalities all hold: the Born "
+                 "shadow of psi, the Born shadow of the completion V entry by "
+                 "entry, the Born-level canonical key of every declared and "
+                 "every realized leg at every (setting, frame), the exact law "
+                 "at every node of every setting, the whole admission table "
+                 "cell by cell, and the whole loop space.  It is a WITNESS "
+                 "pair when a common loop's Born holonomy nevertheless "
+                 "differs.  The verdict's qualifier is computed from this "
+                 "table and from nothing else"}
+    ok = (len(wit_pairs) >= 2 and len(quiet_pairs) > 0 and len(orth) > 0
+          and all(r["the_inner_product_of_the_two_declared_vectors"]
+                  not in ("1", "-1") for r in wit_pairs)
+          and all(ONE - Fr(r["the_inner_product_of_the_two_declared"
+                             "_vectors"]) ** 2 > ZERO for r in wit_pairs))
+    gate("PSI-WITNESS-PAIRS", "measurement",
+         "THE WITNESS-PAIR CENSUS IS EXHAUSTIVE OVER THE DECLARED FAMILY, AND "
+         "IT COMES OUT BOTH WAYS.  Every unordered pair of the eleven "
+         "declared members is compared on six Born-level equalities -- the "
+         "Born shadow of psi, the Born shadow of the completion entry by "
+         "entry, the Born-level key of every declared and realized leg at "
+         "every (setting, frame), the law at every node, the whole 48-cell "
+         "admission table, the whole loop space -- and then on the holonomy "
+         "of every common loop.  MORE THAN ONE fixed-Born-shadow WITNESS pair "
+         "is measured to exist, so the existence claim does not rest on a "
+         "single construction; at least one of them is measured to hold "
+         "between two states that are exactly ORTHOGONAL, which is the "
+         "sharpest form the invisibility can take; and fixed-Born-shadow "
+         "pairs that agree on every common loop are measured to exist too, so "
+         "the census is not a fixture.  The two states of every witness pair "
+         "are measured to be DISTINCT states with a positive one-shot "
+         "separation probability under a projective measurement outside the "
+         "declared settings -- 'Born-level indistinguishable' is a statement "
+         "about the entrywise squares in the declared basis and about nothing "
+         "else.  The `psi-collapse` mutant makes every member the reference, "
+         "so no pair differs anywhere, and must die here; the `pair-drop` "
+         "mutant drops a declared pair and must die at PSI-CELL-COMPLETENESS",
+         ok,
+         {"pairs_compared": len(rows),
+          "the_pairs_the_declaration_forces":
+              len(PSI_ORDER) * (len(PSI_ORDER) - 1) // 2,
+          "fixed_born_shadow_pairs": len(fixed_pairs),
+          "fixed_born_shadow_witness_pairs":
+              [r["members"] for r in wit_pairs],
+          "their_differing_common_loops_at_GP_E":
+              {canon(r["members"]):
+               r["per_setting"]["GP-E"][
+                   "common_loops_whose_born_holonomy_differs"]
+               for r in wit_pairs},
+          "their_common_loops_at_GP_E":
+              {canon(r["members"]): r["per_setting"]["GP-E"]["common_loops"]
+               for r in wit_pairs},
+          "their_differing_common_loops_summed_over_the_six_settings":
+              {canon(r["members"]):
+               r["common_loops_whose_born_holonomy_differs"]
+               for r in wit_pairs},
+          "their_inner_products":
+              {canon(r["members"]):
+               r["the_inner_product_of_the_two_declared_vectors"]
+               for r in wit_pairs},
+          "their_one_shot_separation_probabilities":
+              {canon(r["members"]):
+               r["the_one_shot_separation_probability_of_a_projective"
+                 "_measurement_onto_the_first"] for r in wit_pairs},
+          "fixed_born_shadow_witness_pairs_between_orthogonal_states":
+              [r["members"] for r in orth],
+          "fixed_born_shadow_pairs_that_agree_everywhere":
+              [r["members"] for r in quiet_pairs]})
+    return rows
+
+
+# ===========================================================================
+# 13c.  WHAT psi DOES TO GEN'S OWN INVARIANT: THE READABLE COLLAPSE
+# ===========================================================================
+def run_readable_collapse(results, matched, curv):
+    prog("the readable holonomy: what GEN's invariant reads at each member")
+    rows = {}
+    for nm in PSI_ORDER:
+        based = results[nm][SWEEP_SETTING]["based"]
+        perms = {r["perm"] for r in based.values() if r["perm"] is not None}
+        vals = {r["value"] for r in based.values() if r["value"] is not None}
+        unread = sum(1 for r in based.values() if r["perm"] is None)
+        closed = bool(perms) and all(perm_compose(x, y) in perms
+                                     for x in perms for y in perms)
+        rows[nm] = {
+            "based_loops": len(based),
+            "readable_loops": len(based) - unread,
+            "loops_that_are_not_a_signed_permutation": unread,
+            "readable_value_set_size": len(perms),
+            "the_value_reading_and_the_permutation_reading_agree_in_size":
+                len(vals) == len(perms),
+            "the_readable_value_set_is_closed_under_composition": closed,
+            "the_readable_values": sorted(name_perm(z) for z in perms),
+            "their_fixed_configurations":
+                sorted(fixed_points(list(z)) for z in perms)}
+    ref = rows[PSI_REFERENCE]
+    both_defined = {nm: {sp: matched[nm][sp][
+        "common_loops_whose_permutation_parts_are_both_defined_and_differ"]
+        for sp in SETTING_ORDER} for nm in matched}
+    relabel_ok = all(
+        matched[nm][sp]["common_loops_whose_permutation_part_differs"]
+        == matched[nm][sp]["common_loops_where_readability_flips"]
+        for nm in matched for sp in SETTING_ORDER)
+    none_both = all(both_defined[nm][sp] == 0
+                    for nm in matched for sp in SETTING_ORDER)
+    collapsed = sorted(nm for nm in curv
+                       if rows[nm]["readable_value_set_size"]
+                       < ref["readable_value_set_size"])
+    TABLES["readable_collapse"] = {
+        "setting": SWEEP_SETTING, "per_member": rows,
+        "members_where_the_readable_group_collapses": collapsed,
+        "common_loops_whose_permutation_parts_are_both_defined_and_differ":
+            both_defined,
+        "the_permutation_part_column_is_a_readability_flip_count": relabel_ok,
+        "route": "GEN's declared invariant is the PERMUTATION PART of the "
+                 "closed-loop link product, undefined where the product is "
+                 "not a signed permutation.  Applied at the members where "
+                 "this unit's witnesses live it does not permute the group's "
+                 "elements: it drops loops out of the class in which it is "
+                 "defined at all.  What is measured here is the positive "
+                 "form of that -- the size, closure, values and "
+                 "fixed-configuration counts of the READABLE value set at "
+                 "every member, and the count of common loops whose "
+                 "permutation parts are BOTH DEFINED and different, which is "
+                 "what the phrase 'the permutation part differs' would have "
+                 "to mean to be a second reading"}
+    ok = (ref["readable_value_set_size"] == 4
+          and ref["the_readable_value_set_is_closed_under_composition"]
+          and ref["their_fixed_configurations"] == [9, 9, 45, 81]
+          and all(rows[nm]["the_value_reading_and_the_permutation_reading"
+                           "_agree_in_size"] for nm in PSI_ORDER)
+          and bool(curv) and collapsed == sorted(curv)
+          and all(rows[nm]["readable_value_set_size"] == 2
+                  and rows[nm]["the_readable_value_set_is_closed_under"
+                               "_composition"]
+                  and rows[nm]["loops_that_are_not_a_signed_permutation"] > 0
+                  for nm in curv)
+          and none_both and relabel_ok)
+    gate("PSI-READABLE-COLLAPSE", "measurement",
+         "WHAT psi DOES TO GEN'S OWN INVARIANT IS MEASURED IN ITS POSITIVE "
+         "FORM.  At the reference the readable holonomy -- the permutation "
+         "part of the closed-loop product, GEN's declared invariant -- takes "
+         "FOUR values, measured closed under composition, with "
+         "fixed-configuration counts 9, 9, 45 and 81: the Klein four-group.  "
+         "At every member carrying a differing common loop it takes TWO, "
+         "measured closed, with a positive counted number of loops leaving "
+         "the readable class entirely.  So the preparation does not permute "
+         "the group's elements; it removes the defect from the class in "
+         "which GEN's invariant is defined at all, which is why this unit "
+         "carries the always-defined Born shadow as its primary comparator.  "
+         "Two bookkeeping clauses come with it, both must-pass: the count of "
+         "common loops whose permutation parts are BOTH DEFINED and different "
+         "is measured to be ZERO everywhere -- so the 'permutation part "
+         "differs' column is a READABILITY-FLIP count and is named as one -- "
+         "and it is measured EQUAL to the readability-flip count at every "
+         "member and setting.  The value reading and the permutation reading "
+         "are measured to agree in cardinality at every member.  The "
+         "`psi-collapse` mutant makes every member the reference, so nothing "
+         "collapses, and the `label-collapse` mutant reads the holonomy value "
+         "as a name label, so the two cardinalities part company; both must "
+         "die here",
+         ok,
+         {"setting": SWEEP_SETTING,
+          "at_the_reference": [ref["readable_value_set_size"],
+                               ref["their_fixed_configurations"]],
+          "members_where_the_readable_group_collapses": collapsed,
+          "at_those_members": {nm: [rows[nm]["readable_value_set_size"],
+                                    rows[nm]["their_fixed_configurations"],
+                                    rows[nm]["loops_that_are_not_a_signed"
+                                             "_permutation"]]
+                               for nm in curv},
+          "common_loops_whose_permutation_parts_are_both_defined_and_differ":
+              max([both_defined[nm][sp] for nm in matched
+                   for sp in SETTING_ORDER] or [0]),
+          "the_permutation_part_column_is_a_readability_flip_count":
+              relabel_ok})
+
+
+# ===========================================================================
+# 13d.  THE MECHANISM OF THE INVISIBILITY: INTERFERENCE WIDTH
+# ===========================================================================
+def run_interference_width(worlds):
+    prog("the interference width of the declared leg sequence")
+    rows = {}
+    for nm in PSI_ORDER:
+        best, per = interference_width(worlds[nm])
+        rows[nm] = {"interference_width": best,
+                    "per_node": {k: v for k, v in sorted(per.items())}}
+    swept = TABLES["signflip_census"]["members_swept"]
+    wide = sorted(nm for nm in swept if rows[nm]["interference_width"] > 1)
+    narrow = sorted(nm for nm in swept if rows[nm]["interference_width"] == 1)
+    law_movers = TABLES["signflip_census"]["members_with_a_law_moving_pattern"]
+    TABLES["interference_width"] = {
+        "per_member": {nm: rows[nm]["interference_width"]
+                       for nm in PSI_ORDER},
+        "members_of_the_census_with_width_at_least_two": wide,
+        "members_of_the_census_with_width_one": narrow,
+        "members_of_the_census_whose_law_layer_moves_under_some_sign_pattern":
+            law_movers,
+        "the_two_sets_coincide": sorted(law_movers) == wide,
+        "route": "the interference width is the largest number of nonzero "
+                 "paths j0 -> i through the first t declared legs, over every "
+                 "setting, frame and checkpoint.  At width 1 every declared "
+                 "amplitude is a single product, so the declared law is a "
+                 "function of |psi| alone and CANNOT see a sign; at width 2 "
+                 "or more a Born-shadow-preserving flip is generically "
+                 "visible in the law layer.  This is the mechanism of the "
+                 "witness's Born-level invisibility, and it says exactly "
+                 "where such witnesses live"}
+    ok = (bool(wide) and bool(narrow) and sorted(law_movers) == wide)
+    gate("PSI-INTERFERENCE-WIDTH", "measurement",
+         "THE WITNESS'S BORN-LEVEL INVISIBILITY HAS A MECHANISM, AND IT IS "
+         "MEASURED IN BOTH DIRECTIONS.  The INTERFERENCE WIDTH of a member is "
+         "the largest number of nonzero paths from the initial configuration "
+         "to a configuration through the first t declared legs, over every "
+         "setting, frame and checkpoint.  At width 1 every declared amplitude "
+         "is a single product, so the declared law is a function of the Born "
+         "shadow alone and no sign pattern can move it; at width 2 or more "
+         "distinct support entries of psi are superposed and a "
+         "Born-shadow-preserving flip is generically visible.  The gate "
+         "measures the prediction exactly: the set of census members whose "
+         "LAW LAYER moves under some sign pattern is measured to COINCIDE "
+         "with the set of census members of width at least two, and both "
+         "sets and their complements are measured non-empty, so the reading "
+         "comes out both ways.  This is why the reference preparation admits "
+         "a fixed-Born-shadow witness at all -- it is inherited from GEN, not "
+         "chosen, and this model is interference-free there.  The `width-lax` "
+         "mutant reports every member as interference-free and the "
+         "`psi-collapse` mutant replaces the family by the reference; both "
+         "must die here",
+         ok,
+         {"per_member": {nm: rows[nm]["interference_width"]
+                         for nm in PSI_ORDER},
+          "census_members_of_width_at_least_two": wide,
+          "census_members_of_width_one": narrow,
+          "census_members_whose_law_layer_moves": sorted(law_movers),
+          "the_two_sets_coincide": sorted(law_movers) == wide})
+
+
+# ===========================================================================
+# 13e.  CELL COMPLETENESS -- RUNBOOK section 13 addendum: a cell-completeness
+#       gate must catch a DROPPED CELL, on every census the unit runs.
+# ===========================================================================
+def run_cell_completeness():
+    prog("cell completeness on every census")
+    declared_cells = len(SETTING_ORDER) * len(CHECKPOINTS) * len(ID_RULES)
+    admtab = TABLES["admission_per_psi"]["per_member"]
+    ref_keys = set(admtab[PSI_REFERENCE])
+    tab_ok = all(len(admtab[nm]) == declared_cells
+                 and set(admtab[nm]) == ref_keys for nm in PSI_ORDER)
+    compared = TABLES["matched_comparison"]["admission_cells_compared_per"
+                                            "_member"]
+    cmp_ok = (bool(compared)
+              and all(v == declared_cells for v in compared.values()))
+    # the sign-flip census's own size, recomputed from the DECLARED
+    # coefficient dictionaries rather than from the pattern lists the census
+    # enumerated -- a comparator built independently of the audited component
+    forced = 0
+    for nm, why, coeffs in PSI_FAMILY:
+        if nm not in TABLES["signflip_census"]["members_swept"]:
+            continue
+        sup = [k for k, v in coeffs.items()
+               if parse_fr(v) and (k[0] * NS + k[1]) != 0]
+        forced += 2 ** len(sup)
+    census_ok = TABLES["signflip_census"]["sub_family_size"] == forced
+    forced_pairs = len(PSI_ORDER) * (len(PSI_ORDER) - 1) // 2
+    pairs_ok = TABLES["witness_pair_census"]["pairs_compared"] == forced_pairs
+    TABLES["cell_completeness"] = {
+        "the_declared_admission_cells_per_member": declared_cells,
+        "measured_admission_cells_per_member":
+            {nm: len(admtab[nm]) for nm in PSI_ORDER},
+        "admission_cells_compared_per_member": compared,
+        "the_sign_flip_census_size_the_declaration_forces": forced,
+        "the_measured_sign_flip_census_size":
+            TABLES["signflip_census"]["sub_family_size"],
+        "the_pair_census_size_the_declaration_forces": forced_pairs,
+        "the_measured_pair_census_size":
+            TABLES["witness_pair_census"]["pairs_compared"],
+        "route": "each census's size is recomputed from the DECLARATION -- "
+                 "the declared setting, checkpoint and rule lists; the "
+                 "declared coefficient dictionaries; the declared family "
+                 "size -- and compared against the size the census actually "
+                 "ran, so a cell dropped anywhere in the construction, in the "
+                 "comparison or in the enumeration moves one side and not the "
+                 "other"}
+    gate("PSI-CELL-COMPLETENESS", "measurement",
+         "EVERY CENSUS IN THIS UNIT IS MEASURED COMPLETE AGAINST THE SIZE ITS "
+         "OWN DECLARATION FORCES (RUNBOOK section 13 addendum).  Four "
+         "clauses.  (1) THE ADMISSION TABLE: every member's table is measured "
+         "to carry exactly len(settings) x len(checkpoints) x len(rules) "
+         "cells, computed from the declared lists, and to carry the SAME KEY "
+         "SET as the reference's.  (2) THE ADMISSION COMPARISON: the "
+         "cell-by-cell delta against the reference is measured to have "
+         "ranged over that full key set for every member, so a cell dropped "
+         "from the comparison rather than from the table is caught too.  (3) "
+         "THE SIGN-FLIP CENSUS: its size is recomputed from the DECLARED "
+         "coefficient dictionaries -- the sum over the swept members of two "
+         "to the number of support indices other than the first -- and "
+         "measured equal to the number of patterns the census actually ran.  "
+         "(4) THE WITNESS-PAIR CENSUS: its size is recomputed from the "
+         "declared family size and measured equal to the number of pairs "
+         "compared.  The `celltab-drop`, `cell-drop`, `signflip-half` and "
+         "`pair-drop` mutants each remove exactly one cell, one comparison, "
+         "half a census or one pair, and each must die here",
+         tab_ok and cmp_ok and census_ok and pairs_ok,
+         {"the_declared_admission_cells_per_member": declared_cells,
+          "every_member_carries_them_all_with_the_same_keys": tab_ok,
+          "the_comparison_ranged_over_them_all": cmp_ok,
+          "admission_cells_compared_per_member": compared,
+          "the_sign_flip_census_size_the_declaration_forces": forced,
+          "the_measured_sign_flip_census_size":
+              TABLES["signflip_census"]["sub_family_size"],
+          "the_pair_census_size_the_declaration_forces": forced_pairs,
+          "the_measured_pair_census_size":
+              TABLES["witness_pair_census"]["pairs_compared"]})
+
+
+# ===========================================================================
+# 13f.  THE VERDICT -- derived by the pre-registered rule, re-derived inside
+#       its own gate from the recorded tables by a second evaluation that
+#       shares no code path with the emitter, QUALIFIER INCLUDED.
+# ===========================================================================
+def select_verdict(a_common_loop_differs, the_loop_space_moves,
+                   a_fixed_born_shadow_witness_pair_exists):
+    """THE PRE-REGISTERED DECISION RULE, applied to the measured booleans.
+    This is the emitter and it is the audited component: PSI-VERDICT
+    re-derives the same string from the recorded tables by its own
+    evaluation and gates the two against each other, so a perturbation HERE
+    -- of the branch order, of the witness input, of the qualifier -- is
+    caught there."""
+    swap_the_branch_order = (MUTANT == "verdict-order")
+    suppress_the_measured_qualifier = (MUTANT == "verdict-qual")
+    if swap_the_branch_order:
+        if the_loop_space_moves:
+            v = "PSI-PATH-SPACE-DEPENDENCE"
+        elif a_common_loop_differs:
+            v = "PSI-CURVATURE-EXISTS"
+        else:
+            v = "PSI-DECLARATION-ONLY"
+    elif a_common_loop_differs:
         v = "PSI-CURVATURE-EXISTS"
-    elif path_space:
+    elif the_loop_space_moves:
         v = "PSI-PATH-SPACE-DEPENDENCE"
     else:
         v = "PSI-DECLARATION-ONLY"
     emit_an_out_of_vocabulary_verdict = (MUTANT == "verdict-lax")
     if emit_an_out_of_vocabulary_verdict:
         v = "PSI-STATE-CARRIES-GEOMETRY"
-    qual = "-AT-FIXED-BORN-SHADOW"
-    full = v + qual
-    inv = v in PREREGISTERED
-    FINDINGS["unit_verdict"] = full
+    if suppress_the_measured_qualifier:
+        return v, ""
+    return v, ("-AT-FIXED-BORN-SHADOW"
+               if a_fixed_born_shadow_witness_pair_exists else "")
+
+
+def run_verdict(witnesses, movers, curv):
+    """The decision rule is pre-registered and the verdict is derived from
+    the gates and from nothing else -- the qualifier included."""
+    prog("the verdict")
+    drop_the_witness_input = (MUTANT == "verdict-nowitness")
+    wl = [] if drop_the_witness_input else list(witnesses)
+    v, qual = select_verdict(
+        bool(wl), bool(movers),
+        bool(TABLES["witness_pair_census"]["fixed_born_shadow_witness_"
+                                           "pairs"]))
+    FINDINGS["unit_verdict"] = v + qual
     FINDINGS["the_verdicts_declared_scope"] = list(SCOPE_CLAUSES)
+    # ---- THE GATE.  The string is RE-DERIVED HERE, inside the gate, from the
+    #      recorded tables, by an evaluation of the pre-registered rule that
+    #      does not call the emitter above and does not read any of its
+    #      variables (RUNBOOK section 14 addendum, #219: the comparator is
+    #      built independently of the audited component).
+    a_common_loop_differs = bool(
+        TABLES["witness_census"]["members_with_a_differing_common_loop"])
+    the_loop_space_moves = bool(
+        TABLES["path_space_dependence"]["members_whose_admission_table"
+                                        "_moves"])
+    qualifying = [p["members"] for p in
+                  TABLES["witness_pair_census"]["per_pair"]
+                  if p["it_is_a_fixed_born_shadow_pair"]
+                  and p["common_loops_whose_born_holonomy_differs"] > 0]
+    if a_common_loop_differs:
+        rederived = "PSI-CURVATURE-EXISTS"
+    elif the_loop_space_moves:
+        rederived = "PSI-PATH-SPACE-DEPENDENCE"
+    else:
+        rederived = "PSI-DECLARATION-ONLY"
+    rederived_qual = "-AT-FIXED-BORN-SHADOW" if qualifying else ""
+    emitted = FINDINGS["unit_verdict"]
+    full = rederived + rederived_qual
+    matches = (emitted == full)
+    invocab = rederived in PREREGISTERED
     gate("PSI-VERDICT", "derivation",
-         "THE VERDICT IS DERIVED FROM THE PRE-REGISTERED DECISION RULE AND "
-         "FROM NOTHING ELSE, AND IT IS IN THE PRE-REGISTERED VOCABULARY.  "
-         "PSI-CURVATURE-EXISTS if a common loop's holonomy is measured to "
-         "differ between two preparations; otherwise "
+         "THE VERDICT STRING, ITS QUALIFIER INCLUDED, IS RE-DERIVED INSIDE "
+         "THIS GATE FROM THE RECORDED MEASUREMENTS AND GATED AGAINST THE "
+         "STRING THAT WAS EMITTED (RUNBOOK section 13 addendum).  THE RULE, "
+         "pre-registered: PSI-CURVATURE-EXISTS if a common loop's holonomy is "
+         "measured to differ between two preparations; otherwise "
          "PSI-PATH-SPACE-DEPENDENCE if the loop space is measured to move "
-         "while every common loop agrees; otherwise PSI-DECLARATION-ONLY; "
-         "and PSI-BLOCKED-AT-<object> where the census cannot be posed.  The "
-         "qualifier names the scope the family actually decides: the "
-         "witnesses are read at a FIXED BORN SHADOW, where the arena, the "
-         "law layer and the whole loop space are measured identical.  The "
-         "verdict string is re-derived inside this gate from the recorded "
-         "measurements and measured to be the string the rule selects; the "
-         "`verdict-lax` mutant emits an out-of-vocabulary verdict and must "
-         "die here",
-         inv,
-         {"verdict": full, "in_the_pre_registered_vocabulary": inv,
-          "a_common_loop_differs": curvature,
-          "the_loop_space_moves": path_space,
+         "while every common loop agrees; otherwise PSI-DECLARATION-ONLY; and "
+         "PSI-BLOCKED-AT-<object> where the census cannot be posed.  THE "
+         "QUALIFIER IS NOT A LITERAL: `-AT-FIXED-BORN-SHADOW` is appended if "
+         "and only if the witness-pair census records at least one pair whose "
+         "SIX Born-level equalities all hold -- the Born shadow of psi, the "
+         "Born shadow of the completion, the Born-level key of every leg, the "
+         "law at every node, the whole 48-cell admission table, the whole "
+         "loop space -- and whose common loops nevertheless differ in "
+         "holonomy.  Remove the witnesses and the qualifier goes with them.  "
+         "The re-derivation here reads the recorded tables and does not call "
+         "the emitter or read any of its variables, so it is a comparator "
+         "built independently of the component it audits.  Three COMPUTATION "
+         "mutants must die here: `verdict-order` swaps the rule's branch "
+         "order, `verdict-nowitness` empties the witness input the emitter "
+         "sees while the tables keep their measurements, and `verdict-qual` "
+         "suppresses the measured qualifier.  The `verdict-lax` waiver emits "
+         "an out-of-vocabulary string and dies here too",
+         matches and invocab,
+         {"verdict": emitted,
+          "re_derived_inside_this_gate_from_the_recorded_tables": full,
+          "the_emitted_string_equals_the_re_derived_string": matches,
+          "in_the_pre_registered_vocabulary": invocab,
+          "a_common_loop_differs": a_common_loop_differs,
+          "the_loop_space_moves": the_loop_space_moves,
           "members_with_a_differing_common_loop": curv,
+          "the_fixed_born_shadow_witness_pairs_the_qualifier_is_computed"
+          "_from": qualifying,
           "scope": list(SCOPE_CLAUSES)})
-    return full
+    return emitted
 
 
 # ===========================================================================
@@ -2746,16 +3968,19 @@ def run_declaration_order():
             "PSI-ARENA", "PSI-GEN-PIN"]
     transport = ["PSI-ADMISSION-PER-PSI", "PSI-PATH-SPACE",
                  "PSI-MATCHED-COORDINATES", "PSI-WITNESS",
-                 "PSI-PATH-SPACE-DEPENDENCE"]
+                 "PSI-ARENA-MOVES"]
     present = all(g in ids for g in decl + transport)
     last_decl = max((ids.index(g) for g in decl if g in ids), default=-1)
     first_tr = min((ids.index(g) for g in transport if g in ids),
                    default=len(ids))
     gate("PSI-DECLARATION-ORDER", "derivation",
-         "THE RECEIPT'S GATE ORDER PROVES THE FREEZE.  The pin requires the "
+         "THE RECEIPT'S GATE ORDER RECORDS THE FREEZE.  The pin requires the "
          "preparation family to be declared AS DATA before any transport "
-         "measurement, and the proof is the order in which this receipt's "
-         "gates were recorded: every declaration gate -- the freeze, the "
+         "measurement, and what this gate measures is the order in which "
+         "this receipt's gates were recorded WITHIN ONE EXECUTION -- which "
+         "records the ordering rather than proving that the family was fixed "
+         "before any fixture truth was seen, a fact no in-run measurement can "
+         "establish: every declaration gate -- the freeze, the "
          "pinned base, the family with its computed sizes, the arena, the "
          "hash-pin of the inherited receipt -- is measured to sit STRICTLY "
          "BEFORE the first transport gate, and the freeze gate is measured "
@@ -2811,6 +4036,37 @@ MUTANT_DECL = (
      "for every preparation"),
     ("signflip-lax", "computation",
      "the sign-flip census subsampled to one pattern per member"),
+    ("signflip-half", "computation",
+     "the sign-flip census halved per member, so its size still clears every "
+     "lower bound but is no longer the size the declaration forces"),
+    ("cell-drop", "computation",
+     "one declared admission cell dropped from the cell-by-cell COMPARISON, "
+     "so a member's delta ranges over 47 of the 48 declared cells"),
+    ("celltab-drop", "computation",
+     "one declared admission cell dropped from the TABLE CONSTRUCTION, for "
+     "every member at once"),
+    ("pair-drop", "computation",
+     "one unordered pair dropped from the witness-pair census"),
+    ("cocycle-order", "computation",
+     "the cocycle expansion composed in the mirror order, which computes "
+     "delta(YX) instead of delta(XY)"),
+    ("centralizer-lax", "computation",
+     "every operator reported as centralising the exchange, so the "
+     "vanishing conditions stop being measurements"),
+    ("refactor-lax", "computation",
+     "the alternative factorisation's state factor built without conjugating "
+     "by Q, so Q . H' is no longer the same completion"),
+    ("width-lax", "computation",
+     "every member reported as interference-free"),
+    ("verdict-order", "computation",
+     "the pre-registered decision rule's branch order swapped, so the "
+     "measured curvature selects the path-space string"),
+    ("verdict-nowitness", "computation",
+     "the witness input the verdict emitter sees emptied, while the recorded "
+     "tables keep their measurements"),
+    ("verdict-qual", "computation",
+     "the measured qualifier suppressed, so the verdict is printed without "
+     "the scope its own witness-pair census earns"),
     ("qcontrol-lax", "computation",
      "the negative control's alternative Q replaced by the pinned Q"),
     ("anchor-rot", "computation",
@@ -3014,24 +4270,70 @@ def render(rec):
       % rec["tables"]["matched_comparison"]["reference"])
     A("-" * 78)
     mc = rec["tables"]["matched_comparison"]["per_member_per_setting"]
-    A("%-8s %-6s %-8s %-8s %-8s %-8s"
-      % ("member", "adm-d", "common", "bornDiff", "permDiff", "flat->non"))
+    A("%-8s %-6s %-8s %-8s %-9s %-8s"
+      % ("member", "adm-d", "common", "bornDiff", "readFlip", "flat->non"))
     for nm in PSI_ORDER:
         if nm == PSI_REFERENCE:
             continue
         d = len(rec["tables"]["matched_comparison"]["admission_delta_cells"][
             nm])
         row = mc[nm][SWEEP_SETTING]
-        A("%-8s %-6d %-8d %-8d %-8d %-8d"
+        A("%-8s %-6d %-8d %-8d %-9d %-8d"
           % (nm, d, row["common_loops"],
              row["common_loops_whose_born_holonomy_differs"],
-             row["common_loops_whose_permutation_part_differs"],
+             row["common_loops_where_readability_flips"],
              row["common_loops_flat_at_the_reference_and_not_here"]))
-    A("(the row is read at %s; every setting is in the receipt)"
-      % SWEEP_SETTING)
+    A("(the row is read at %s; every setting is in the receipt.  readFlip is "
+      "the count of" % SWEEP_SETTING)
+    A(" loops readable at the reference and NOT readable here; the count of "
+      "loops whose")
+    A(" permutation parts are BOTH DEFINED and different is %d everywhere)"
+      % max([rec["tables"]["readable_collapse"][
+          "common_loops_whose_permutation_parts_are_both_defined_and"
+          "_differ"][nm][sp] for nm in mc for sp in SETTING_ORDER] or [0]))
     A("")
     A("-" * 78)
-    A("4.  GATES")
+    A("4.  THE ONE LAW, AND THE WITNESS PAIRS AT A FIXED BORN SHADOW")
+    A("-" * 78)
+    A(rec["tables"]["one_law"]["statement"])
+    A("")
+    ol = rec["tables"]["one_law"]
+    for k, v in sorted(ol["the_four_readings"].items()):
+        for i, ln in enumerate(_wrap("%-16s %s" % (k, v), 74)):
+            A(ln if i == 0 else "                 " + ln)
+    A("")
+    A("randomised sweep: %d triples (sigma, X, Y), %d draws orthogonal, %d "
+      % (ol["the_randomised_sweep"]["triples_of_the_form_(sigma, X, Y)"],
+         ol["the_randomised_sweep"]["draws_measured_exactly_orthogonal"],
+         ol["the_randomised_sweep"]["deviations_from_the_cocycle_identity"])
+      + "deviations,")
+    A("  %d with the mirror order giving a different answer"
+      % ol["the_randomised_sweep"][
+          "triples_where_the_mirror_order_gives_a_different_answer"])
+    A("the state factor of the ALTERNATIVE factorisation V = Q . H' differs "
+      "at: %s" % canon(ol["members_where_the_alternative_factorisations"
+                          "_state_factor_differs"]))
+    A("")
+    wp = rec["tables"]["witness_pair_census"]
+    A("%-22s %-9s %-9s %-9s %s"
+      % ("fixed-Born-shadow pair", "common", "bornDiff", "<a|b>",
+         "one-shot separation"))
+    for r in wp["per_pair"]:
+        if not r["it_is_a_fixed_born_shadow_pair"]:
+            continue
+        A("%-22s %-9d %-9d %-9s %s"
+          % (canon(r["members"]), r["per_setting"][SWEEP_SETTING][
+              "common_loops"],
+             r["per_setting"][SWEEP_SETTING][
+                 "common_loops_whose_born_holonomy_differs"],
+             r["the_inner_product_of_the_two_declared_vectors"],
+             r["the_one_shot_separation_probability_of_a_projective"
+               "_measurement_onto_the_first"]))
+    A("(%d pairs compared, the number the declared family size forces; the "
+      "row is read at %s)" % (wp["pairs_compared"], SWEEP_SETTING))
+    A("")
+    A("-" * 78)
+    A("5.  GATES")
     A("-" * 78)
     for g in rec["gates"]:
         A("[%s] %-28s %s" % ("PASS" if g["passed"] else "FAIL", g["id"],
@@ -3042,7 +4344,7 @@ def render(rec):
         A("    value: " + canon(g["value"])[:900])
         A("")
     A("-" * 78)
-    A("5.  ANCHORS (exit-1 only)")
+    A("6.  ANCHORS (exit-1 only)")
     A("-" * 78)
     bad = [a for a in rec["anchors"] if not a["passed"]]
     A("%d anchors, %d passed, %d failed"
@@ -3054,7 +4356,7 @@ def render(rec):
              canon(a["computed"])[:200]))
     A("")
     A("-" * 78)
-    A("6.  TOTALS")
+    A("7.  TOTALS")
     A("-" * 78)
     for k, v in sorted(rec["totals"].items()):
         A("%-24s %s" % (k, v))
@@ -3108,15 +4410,37 @@ def main():
     run_path_space_dependence(movers, still, matched)
     run_psi_law(worlds)
     run_signflip_census(worlds)
-    run_negative_control(worlds, results)
+    run_negative_control(worlds, results, gen)
+    run_one_law(worlds)
     run_switching_selftest(worlds)
     run_flip_tests(worlds, results)
+    run_witness_pairs(worlds, results)
+    run_readable_collapse(results, matched, curv)
+    run_interference_width(worlds)
+    run_cell_completeness()
     verdict = run_verdict(witnesses, movers, curv)
 
     fam = TABLES["psi_family"]
     ls = TABLES["loop_space_per_psi"]["per_member"]
     FINDINGS["thesis"] = (
-        "THE PHYSICAL STATE CONTRIBUTES GEOMETRY.  On base G, with the "
+        "THE PHYSICAL STATE CONTRIBUTES GEOMETRY -- inside one declared "
+        "finite model, at its declared scope, and with nothing claimed about "
+        "nature.  ONE LAW CARRIES THE WHOLE UNIT: the completion's "
+        "non-equivariance defect is the GROUP COMMUTATOR "
+        "D(psi) = [P_W, u(psi)] of the wing exchange with the preparation "
+        "leg; P_W is measured to be an involution, the commutator splits off "
+        "the pointer pair and leaves delta(V) = [sigma, V] at 9x9, and delta "
+        "is a 1-COCYCLE for the right-conjugation action, so the declared "
+        "factorisation V = H(psi) . Q expands as "
+        "delta(HQ) = delta(Q) . Q^-1 delta(H) Q -- which IS the psi-law, with "
+        "D_GEN = delta(Q) the declaration factor and E(psi) = delta(H(psi)) "
+        "the state factor.  Existence, group order, forcing and "
+        "state-modulation are its four readings, and every vanishing "
+        "condition is a CENTRALIZER condition.  The residual is owned: the "
+        "split into a declaration factor and a state factor is "
+        "FACTORISATION-RELATIVE -- refactoring the same V as Q . H' gives an "
+        "equally valid expansion with a different state factor -- so what is "
+        "canonical is the commutator, not the split.  On base G, with the "
         "declared transposition Q held FIXED at GEN's pinned value and every "
         "other declaration -- the two gluing rules, the six settings, the "
         "two frames, the four checkpoints, the read times, the 162-element "
@@ -3178,13 +4502,20 @@ def main():
 
     rec = build_receipt()
     txt = render(rec)
+    fail = rec["totals"]["must_pass_failures"]
+    # The exit code is computed BEFORE the artifacts are written, and a run
+    # that would exit 1 writes nothing: a failing delivery run can no longer
+    # overwrite a good artifact pair with a failing one.
     if a.falsification_selftest and not a.mutant:
-        OUT_TXT.write_text(txt)
-        OUT_JSON.write_text(json.dumps(rec, indent=1, sort_keys=True,
-                                       default=str) + "\n")
+        if fail:
+            sys.stderr.write("delivery run has %d must-pass failures; the "
+                             "artifacts were NOT written\n" % fail)
+        else:
+            OUT_TXT.write_text(txt)
+            OUT_JSON.write_text(json.dumps(rec, indent=1, sort_keys=True,
+                                           default=str) + "\n")
     if not a.quiet:
         sys.stdout.write("\n" + txt)
-    fail = rec["totals"]["must_pass_failures"]
     if a.quiet:
         sys.stdout.write("KILL-JSON " + json.dumps(
             {"failed_anchors": [x["id"] for x in ANCHORS if not x["passed"]],

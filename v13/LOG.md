@@ -8293,3 +8293,44 @@ reachable w/ mutants proving it); arena-invariance gating
 structural).  The record-is-metric ↔ completion-encoding
 dictionary the declared lead.  Construction dispatch with
 this commit (Opus 5, freeze-on-delivery, brg_* namespace).
+
+## 2026-08-08 — PSI REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #264)
+Repair P-1..P-5 delivered complete; committed as-is.  VERDICT
+(verbatim): PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW, at the
+committed finite scope, at the declared preparation family, at
+the declared completion form and its pinned Q, per coordinate
+— THE QUALIFIER COMPUTED (appended iff the 55-pair census
+records a pair passing all six measured equalities AND
+differing in holonomy; three computation mutants die at
+PSI-VERDICT; the gate has left the waiver-only list).  **P-1:
+PSI-ONE-LAW central — the commutator identity 11/11 (the
+four-factor 81×81 product = δ(V)⊗I₉ entry-by-entry; E(ψ) =
+[Σ,H] with H measured the involution); the cocycle gate w/ the
+deterministic-seed 300-triple sweep (300/300 orthogonal, 0
+deviations, the mirror order differing 300/300 — the order
+MEASURED); the four corollaries measured (existence ⟺ V ∈
+C(Σ); order = 2·ord δ(Q) at all three Q — 4/6/1 w/ links
+refused; forcing = GEN §8.1 as corollary at exactly the 7
+invariant members; state-modulation ⟺ H ∈ C(Σ) both
+directions); THE RESIDUAL MEASURED: E′ ≠ E at 6/11 under the
+equally-valid refactoring — the world/description split is
+factorisation-relative, stated as non-claim §11.6.**  P-3:
+1/9 + 80/81 stated; the census rescoped to GP-E w/ 21/48 and
+8/48 printed; PSI-INTERFERENCE-WIDTH (law-movers coincide
+with width ≥ 2); PSI-READABLE-COLLAPSE ({9,9,45,81} → {9,81}
+at both witnesses; both-defined-and-differ = 0 everywhere).
+P-4: PSI-WITNESS-PAIRS exhaustive over 55 → 5 fixed-shadow /
+**3 witnesses** / 2 quiet — the orthogonal pair (psi-I4,
+psi-N2: 196 loops, overlap 0) gated, AND **A THIRD WITNESS NO
+REVIEWER NAMED: (psi-S1, psi-N1), 206 loops, overlap −1/9**;
+the reproduction relabel w/ 10 new external anchors incl. the
+dihedral prediction itself; the provenance fixed w/ δ(Q) vs
+GEN's recorded permutation (9 anchors entry-by-entry).  P-5:
+all rewrite tables actioned; D12 owns the #24 disease; **D13
+corrects the adjudicator's #241 wording by name**; D11
+discloses the second witness came from the panel; artifacts
+now written AFTER the exit code.  165 anchors (56 external) /
+26 gates (0 failures) / 45 mutants died / never_falsified
+EMPTY at 25 (23 computation) / byte-identical ×2.  md5 output
+2ec72103 / receipt f32ae286.  Adjudicator verification next;
+ON ITS PASS: PSI TERMINAL AND THE THIRD BASE FIRES (#228).

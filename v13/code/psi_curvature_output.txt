@@ -4,7 +4,7 @@ Does the physical state contribute geometry?
 ==============================================================================
 schema        psi-curvature-receipt-v1
 pin           095c6f7 (sha c12749532eae)
-immutable base 1426984   generator sha256 49b3c980e7d8b8ad
+immutable base 1426984   generator sha256 994beac0a9caa60b
 
 VERDICT: PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW
          at the committed finite scope
@@ -50,25 +50,56 @@ psi-N4   18    0     (9,9,9,9,9,9)            (8,8,8,8,8,8)
 ------------------------------------------------------------------------------
 3.  THE MATCHED COMPARISON (reference psi-G)
 ------------------------------------------------------------------------------
-member   adm-d  common   bornDiff permDiff flat->non
-psi-I1   0      364      0        0        0       
-psi-I2   0      364      0        0        0       
-psi-I3   0      364      0        0        0       
-psi-I4   0      364      0        0        0       
-psi-S1   0      364      0        0        0       
-psi-S2   0      364      0        0        0       
-psi-N1   0      364      206      206      2       
-psi-N2   0      364      196      196      0       
-psi-N3   8      8        0        0        0       
-psi-N4   8      8        0        0        0       
-(the row is read at GP-E; every setting is in the receipt)
+member   adm-d  common   bornDiff readFlip  flat->non
+psi-I1   0      364      0        0         0       
+psi-I2   0      364      0        0         0       
+psi-I3   0      364      0        0         0       
+psi-I4   0      364      0        0         0       
+psi-S1   0      364      0        0         0       
+psi-S2   0      364      0        0         0       
+psi-N1   0      364      206      206       2       
+psi-N2   0      364      196      196       0       
+psi-N3   8      8        0        0         0       
+psi-N4   8      8        0        0         0       
+(the row is read at GP-E; every setting is in the receipt.  readFlip is the count of
+ loops readable at the reference and NOT readable here; the count of loops whose
+ permutation parts are BOTH DEFINED and different is 0 everywhere)
 
 ------------------------------------------------------------------------------
-4.  GATES
+4.  THE ONE LAW, AND THE WITNESS PAIRS AT A FIXED BORN SHADOW
+------------------------------------------------------------------------------
+D(psi) = [P_W, u(psi)] = P_W u(psi)^-1 P_W u(psi), with u(psi) = V(psi) (x) I_9 and P_W = sigma (x) sigma an involution; the commutator splits off the pointer pair and leaves delta(V) = [sigma, V] at 9x9, and delta is a 1-COCYCLE for the right-conjugation action -- delta(XY) = delta(Y) . Y^-1 delta(X) Y -- so the declared factorisation V = H(psi) . Q expands as delta(HQ) = delta(Q) . Q^-1 delta(H) Q, which is the psi-law with D_GEN = delta(Q) and E(psi) = delta(H)
+
+EXISTENCE curvature at a declaration exists iff the commutator does not
+                 vanish: D(psi) != I <=> V is not in the centraliser of sigma
+FORCING at a state factor inside the centraliser -- H(psi) in C(sigma),
+                 i.e. psi exchange-invariant -- the commutator is delta(Q) alone, so the
+                 completion's declared Q determines the defect and psi cancels: GEN's
+                 theorem, as a corollary
+GROUP_ORDER the based holonomy group's order is twice the order of the
+                 commutator delta(Q), and 1 with the identifications refused where delta(Q)
+                 = I
+STATE_MODULATION off that locus the second cocycle factor Q^-1
+                 delta(H(psi)) Q is what psi contributes, and it is the whole of it
+
+randomised sweep: 300 triples (sigma, X, Y), 300 draws orthogonal, 0 deviations,
+  300 with the mirror order giving a different answer
+the state factor of the ALTERNATIVE factorisation V = Q . H' differs at: (psi-G,psi-I1,psi-N1,psi-N3,psi-N4,psi-S1)
+
+fixed-Born-shadow pair common    bornDiff  <a|b>     one-shot separation
+(psi-G,psi-S1)         364       0         7/9       32/81
+(psi-G,psi-N1)         364       206       1/9       80/81
+(psi-I2,psi-S2)        364       0         7/25      576/625
+(psi-I4,psi-N2)        364       196       0         1
+(psi-S1,psi-N1)        364       206       -1/9      80/81
+(55 pairs compared, the number the declared family size forces; the row is read at GP-E)
+
+------------------------------------------------------------------------------
+5.  GATES
 ------------------------------------------------------------------------------
 [PASS] PSI-FREEZE                   
     THE PREPARATION FAMILY IS DECLARED AS DATA BEFORE ANY TRANSPORT QUANTITY
-    IS EVALUATED (RUNBOOK 13(4)), AND THE RECEIPT'S OWN GATE ORDER PROVES IT.
+    IS EVALUATED (RUNBOOK 13(4)), AND THE RECEIPT'S OWN GATE ORDER RECORDS IT.
     Base G's carrier and index map, its three declared rotations with their
     pinned matrices, the PINNED TRANSPOSITION Q that every member of the
     family is completed with, the eleven declared preparation vectors with
@@ -197,7 +228,7 @@ psi-N4   8      8        0        0        0
     psi would mean anything. The `anchor-gen` mutant perturbs a reused GEN
     value and the `control-lax` waiver overwrites this predicate; both must
     die here
-    value: {anchors_against_GEN:37,anchors_passed:37,group_order_per_setting:{GP-A:1,GP-B:1,GP-C:1,GP-D:1,GP-E:4,GP-F:4}}
+    value: {anchors_against_GEN:46,anchors_passed:46,group_order_per_setting:{GP-A:1,GP-B:1,GP-C:1,GP-D:1,GP-E:4,GP-F:4}}
 
 [PASS] PSI-WITNESS                  
     THE WITNESS GATE, WITH BOTH HALVES IN ITS OWN PREDICATE. THE POSITIVE
@@ -214,10 +245,15 @@ psi-N4   8      8        0        0        0
     out both ways on one family and not a fixture of the instrument. The
     `psi-collapse` mutant makes every member the reference, killing the
     positive half; the `label-collapse` and `hol-basepoint` mutants corrupt
-    the holonomy reading; the `witness-lax` waiver overwrites this predicate
-    value: {every_exchange_invariant_member_agrees_everywhere:True,flat_to_non_flat_witnesses:1,independent_rebuilds_agree_and_differ:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),witness_pairs:2}
+    the holonomy reading; the `witness-lax` waiver overwrites this predicate.
+    THE PRINTED COUNTS ARE IN THE PREDICATE: the number of common loops whose
+    Born holonomy differs is measured positive at every member of the
+    differing set, and the flat-to-non-flat witness -- the sharpest form the
+    witness takes -- is required to exist whenever that set is non-empty and
+    is rebuilt by the same independent route
+    value: {common_loops_whose_born_holonomy_differs_at_GP_E:{psi-N1:206,psi-N2:196},every_exchange_invariant_member_agrees_everywhere:True,flat_to_non_flat_loops_at_GP_E:{psi-N1:2,psi-N2:0},flat_to_non_flat_witness_records_one_per_member:1,independent_rebuilds_agree_and_differ:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),witness_pairs:2}
 
-[PASS] PSI-PATH-SPACE-DEPENDENCE    
+[PASS] PSI-ARENA-MOVES              
     WHETHER THE PREPARATION CHANGES WHICH LOOPS EXIST IS DECIDED CELL BY CELL,
     AND BOTH ANSWERS OCCUR IN THE FAMILY. The admission tables of all eleven
     members are compared cell by cell in the number of admitted permutations
@@ -225,10 +261,16 @@ psi-N4   8      8        0        0        0
     to the reference's are measured to have identical graphs -- same links,
     same loop space -- so their comparison is total; members whose table MOVES
     are named together with the cells that move and the loop counts that
-    result. Both halves are clauses of this gate's own predicate, so the
-    reading comes out both ways on one family. The `born-lax` mutant drops the
-    exact-law clause from the admission predicate, which moves cells that must
-    not move, and must die here
+    result. What happens at the moving members is a COLLAPSE ONTO THE FLAT
+    BASELINE rather than a reshaping: the cells that move are the whole of the
+    realized rule at the two symmetric settings, and what is left is the
+    connection the four asymmetric settings already carry. Both halves are
+    clauses of this gate's own predicate, so the reading comes out both ways
+    on one family. This gate is NOT the verdict: it is named for the
+    phenomenon, and the pre-registered outcome of the similar name is a
+    conjunction this family refutes. The `born-lax` mutant drops the exact-law
+    clause from the admission predicate, which moves cells that must not move,
+    and must die here
     value: {based_loop_counts_at_the_moving_members:{psi-N3:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:8,GP-F:8},psi-N4:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:8,GP-F:8}},based_loop_counts_at_the_reference:{GP-A:8,GP-B:8,GP-C:8,GP-D:8,GP-E:364,GP-F:364},cells_compared_per_member:48,members_whose_admission_table_is_identical:(psi-I1,psi-I2,psi-I3,psi-I4,psi-N1,psi-N2,psi-S1,psi-S2),members_whose_admission_table_moves:(psi-N3,psi-N4)}
 
 [PASS] PSI-LAW                      
@@ -241,31 +283,43 @@ psi-N4   8      8        0        0        0
     member of the family the 9x9 law tensored with the pointer identity is
     measured EQUAL, entry by entry, to the direct 81x81 four-factor product
     P_W U_prep^-1 P_W U_prep built from that member's own preparation leg --
-    two independent routes. (2) THE CHARACTERISATION, IN BOTH DIRECTIONS: the
-    psi-term E(psi) is the identity EXACTLY on the exchange-invariant members
-    and on no other, so the list of members reproducing GEN's defect is
-    measured to COINCIDE with the list of exchange-invariant members --
-    neither inclusion assumed. The `psilaw-drop` mutant drops the psi-term, so
-    the law predicts GEN's defect for every member, and the `defect-order`
-    mutant composes the four factors in the wrong order; both must die here
+    two evaluations at different dimensions and with different operator
+    decompositions, related by the identity under test, so they are two routes
+    to one identity and not two independent computations of one number. (2)
+    THE CHARACTERISATION, IN BOTH DIRECTIONS: the psi-term E(psi) is the
+    identity EXACTLY on the exchange-invariant members and on no other, so the
+    list of members reproducing GEN's defect is measured to COINCIDE with the
+    list of exchange-invariant members -- neither inclusion assumed. The
+    `psilaw-drop` mutant drops the psi-term, so the law predicts GEN's defect
+    for every member, and the `defect-order` mutant composes the four factors
+    in the wrong order; both must die here
     value: {members:11,members_whose_defect_equals_GENs:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-S1,psi-S2),the_exchange_invariant_members:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-S1,psi-S2),the_law_reproduces_the_direct_computation_at_every_member:True,the_psi_term_is_the_identity_exactly_on_the_invariant_locus:True}
 
 [PASS] PSI-SIGNFLIP-CENSUS          
     THE SIGN-FLIP CENSUS IS EXHAUSTIVE OVER THE DECLARED SUB-FAMILY AND
-    DECIDES THE DEPENDENCE IN BOTH DIRECTIONS. Every sign pattern on the
-    support of every declared exchange-invariant member -- the count computed
-    by enumeration -- is rebuilt in full at the symmetric setting GP-E. Three
-    things are measured at every member. The BORN SHADOW is unchanged by a
-    sign pattern, so no Born-level declaration can see the flip. The LOOP
-    SPACE is unchanged, so every loop is common and the comparison is total
-    rather than partial. And the HOLONOMY agrees with the reference on every
+    DECIDES THE DEPENDENCE IN BOTH DIRECTIONS, AT THE DECLARED SETTING GP-E.
+    Every sign pattern on the support of every declared exchange-invariant
+    member that fixes the initial coefficient -- the count computed by
+    enumeration and gated against the count the declaration forces -- is
+    rebuilt in full at GP-E. TWO CLAUSES ARE FORCED BY ALGEBRA AND ARE
+    RECORDED AS DISCLOSURES, NOT ADVERTISED AS MEASUREMENTS (RUNBOOK section
+    14 addendum): the Born shadow of psi and of V is unchanged by a sign
+    pattern, since V(eps psi) = S H S Q with S diagonal +-1, and at GP-E both
+    local legs are permutation matrices, so every downstream Born-level datum
+    and hence the whole loop space is unchanged there too. OFF GP-E the second
+    does not follow, and the census MEASURES how far: the number of patterns
+    that move a node law at some setting, and the number that move an
+    admission cell, are counted and printed, and both are positive -- a local
+    leg that is not a permutation superposes distinct support entries of psi,
+    so 'no Born-level declaration can see the flip' is a GP-E statement and is
+    made only there. THE ONE CONTINGENT MEASUREMENT, and this gate's must-pass
+    content, is the third: the HOLONOMY agrees with the reference on every
     common loop IF AND ONLY IF the flipped state is still exchange-invariant
-    -- both directions, member by member, with the number of mismatches gated
-    at zero. That is the dependence law: the holonomy moves exactly when the
-    sign pattern differs across some sigma-pair of the support. The
-    `signflip-lax` mutant subsamples the census to one pattern per member and
-    must die here
-    value: {members_swept:7,mismatches_between_agreement_and_exchange_invariance:0,patterns_that_do_not:22,patterns_that_move_the_holonomy:26,sub_family_size:48}
+    -- both directions, pattern by pattern, with the number of mismatches
+    gated at zero and both answers occurring. The `signflip-lax` mutant
+    subsamples the census to one pattern per member and must die here; the
+    `signflip-half` mutant halves it and must die at PSI-CELL-COMPLETENESS
+    value: {members_swept:7,members_with_a_law_moving_pattern:(psi-I1,psi-I3,psi-I4),mismatches_between_agreement_and_exchange_invariance:0,patterns_that_do_not:22,patterns_that_move_a_node_law_at_some_setting:21,patterns_that_move_an_admission_cell_at_some_setting:8,patterns_that_move_the_holonomy:26,sub_family_size:48,the_admission_cells_they_move:(GP-F/t2/REAL,GP-F/t3/REAL)}
 
 [PASS] PSI-NEGATIVE-CONTROL         
     THE NEGATIVE CONTROL HAS TEETH, AND ITS PREDICTION IS THE GEN LAW'S. At
@@ -280,10 +334,65 @@ psi-N4   8      8        0        0        0
     predictions are measured, and the gate requires both to be met AND the
     holonomy to have actually moved from the pinned Q's reading -- if a
     declaration change cannot move this instrument, the instrument is dead and
-    no psi-side reading it reports is worth anything. The `qcontrol-lax`
+    no psi-side reading it reports is worth anything. The COMPOUND prediction
+    is in the predicate, not only its first half: on the equivariant locus the
+    identifications must also be measured REFUSED relative to the pinned Q's
+    link count. AND IT IS ALSO A REPRODUCTION, which the unit states rather
+    than trading on: both alternative transpositions lie inside the 28-member
+    sub-family GEN rebuilt exhaustively, so their group orders, abelianness,
+    defect orders, identification links AND the dihedral reading's own
+    prediction -- including the equivariant-locus branch, which is therefore
+    anchored rather than typed -- are committed values, and every one of them
+    is anchored exit-1 against GEN's receipt here. Nothing in this unit is an
+    out-of-sample prediction and nothing claims to be. The `qcontrol-lax`
     mutant substitutes the pinned Q for the controls, so nothing moves, and
     must die here
-    value: {at_the_pinned_Q:4,controls:{Q-negA:{abelian:False,measured:6,order_of_delta:3,predicted:6},Q-negB:{abelian:True,measured:1,order_of_delta:1,predicted:1}}}
+    value: {anchors_against_GENs_exhaustive_rebuild:10,at_the_pinned_Q:4,controls:{Q-negA:{abelian:False,identification_links:7,links_refused_relative_to_the_pinned_Q:False,measured:6,order_of_delta:3,predicted:6},Q-negB:{abelian:True,identification_links:5,links_refused_relative_to_the_pinned_Q:True,measured:1,order_of_delta:1,predicted:1}}}
+
+[PASS] PSI-ONE-LAW                  
+    THE UNIT'S CENTRAL RESULT: D(psi) = [P_W, u(psi)], AND THE psi-LAW IS ITS
+    COCYCLE EXPANSION. P_W is measured to be an INVOLUTION and to equal the
+    product of the independently declared system-only and pointer-only wing
+    exchanges, so the four-factor product IS the group commutator [P_W,
+    u(psi)] with u(psi) = V(psi) (x) I_9. Six must-pass clauses, every one a
+    measurement at all eleven members. (1) THE SPLIT: the 81x81 commutator is
+    measured EQUAL, entry by entry, to delta(V) (x) I_9 with delta(X) :=
+    [sigma, X] -- the pointer factor cancels. (2) THE psi-FACTOR IS A
+    COMMUTATOR: the Householder is measured to be an involution, so E(psi) =
+    sigma H sigma H is delta(H(psi)) = [sigma, H(psi)]. (3) THE COCYCLE: delta
+    is a 1-cocycle for the right-conjugation action, delta(XY) = delta(Y) .
+    Y^-1 delta(X) Y; instantiated at (X, Y) = (H(psi), Q) it is measured to
+    reproduce delta(V) and the delivered law entry by entry. Given the
+    measured sigma^2 = I this identity is forced by algebra for any invertible
+    X and Y, and it is recorded here as such rather than advertised as a
+    surprise; what is NOT forced, and is measured, is (4) THE ORDER: the
+    mirror-ordered expansion delta(X) . X^-1 delta(Y) X computes delta(YX) and
+    is measured to give a DIFFERENT answer at a positive, counted number of
+    family members and of randomised triples, so the order in the law is a
+    measurement. (5) THE RANDOMISED SWEEP: 300 triples (sigma, X, Y) with X
+    and Y exactly orthogonal rational 9x9 matrices drawn from a generator
+    seeded from the DECLARED data alone -- no wall-clock value, no
+    operating-system entropy -- with every draw measured orthogonal, the
+    identity measured at ZERO deviations, and positive counts of both
+    non-trivial delta(X) and mirror-order disagreements, so the sweep is not
+    vacuous. (6) THE READINGS: the vanishing conditions are CENTRALIZER
+    conditions and are measured in both directions -- E(psi) = I iff H(psi)
+    commutes with sigma, D(psi) = I iff V does -- and the group order is
+    measured to be twice the order of delta(Q) at each of the three declared
+    transpositions, with the commutator permutation read off the 9x9 matrix
+    and off the label formula by two routes. The residual is measured too:
+    refactoring V as Q . H' gives an equally valid expansion whose state
+    factor DIFFERS at a counted set of members, so the world/description split
+    is factorisation-relative. AND WHAT E(psi) IS IS MEASURED RATHER THAN
+    ASSERTED: H(psi) is measured to be a symmetric orthogonal INVOLUTION at
+    every member -- that is the involution of this construction -- while
+    E(psi) is measured exactly orthogonal at every member and to square to the
+    identity, equivalently to be symmetric, only on a PROPER subset of the
+    family, which the gate measures to be proper and to contain the
+    exchange-invariant locus. The `cocycle-order`, `centralizer-lax` and
+    `refactor-lax` mutants must each die here, and so must `defect-order` and
+    `psilaw-drop`
+    value: {E_is_exactly_orthogonal_at:11,E_is_symmetric_at:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-N2,psi-S1,psi-S2),E_squares_to_the_identity_at:(psi-G,psi-I1,psi-I2,psi-I3,psi-I4,psi-N2,psi-S1,psi-S2),H_is_a_symmetric_orthogonal_involution_at:11,P_W_equals_the_product_of_the_two_declared_half_exchanges:True,P_W_is_an_involution:True,deviations:{E_form:0,centralizer:0,cocycle:0,householder_not_involutive:0,refactorisation:0,tensor_split:0},deviations_in_the_group_order_reading:0,members:11,members_where_the_alternative_factorisation_gives_a_different_state_factor:(psi-G,psi-I1,psi-N1,psi-N3,psi-N4,psi-S1),members_where_the_mirror_ordered_expansion_differs:(psi-G,psi-I1,psi-N1,psi-N3,psi-N4,psi-S1),randomised_deviations_from_the_cocycle_identity:0,randomised_draws_measured_orthogonal:300,randomised_triples:300,randomised_triples_where_the_mirror_order_differs:300,randomised_triples_with_a_non_trivi
 
 [PASS] PSI-SWITCHING-SELFTEST       
     THE HOLONOMY READINGS ARE SELF-TESTED UNDER THE SYMMETRY'S OWN ACTION, AND
@@ -304,7 +413,7 @@ psi-N4   8      8        0        0        0
     hit count is nevertheless gated at ZERO against a positive miss count --
     zero hits over zero lookups would be vacuous. The `gauge-sign`,
     `gauge-subsample`, `memo-lax` and `bornhol-lax` mutants must each die here
-    value: {cache_entries_primed:8,checkpoint_switchings_that_did_not_telescope:0,deviations_from_the_global_scalar_action:0,exact_matrix_comparisons:66560,fresh_requests_for_a_key_already_in_the_cache:65544,primed_keys_served_on_a_second_visit:8,readability_moves_under_a_switching:0,the_switching_group_is_swept_complete_at_every_probe:True,value_cache_hits:0,value_cache_misses:65544}
+    value: {cache_entries_primed:8,checkpoint_switchings_that_did_not_telescope:0,declared_probe_instances:8,deviations_from_the_global_scalar_action:0,exact_matrix_comparisons:66560,fresh_requests_for_a_key_already_in_the_cache:65544,primed_keys_served_on_a_second_visit:8,probe_instances_realized:8,readability_moves_under_a_switching:0,the_switching_group_is_swept_complete_at_every_probe:True,value_cache_hits:0,value_cache_misses:65544}
 
 [PASS] PSI-FLIP-TESTS               
     TWO FLIP-TESTS, AND THE BOOKKEEPING SPLIT IS THE ONE WITH TEETH. (1) THE
@@ -329,34 +438,130 @@ psi-N4   8      8        0        0        0
     are the members where the two layers part company, and their existence is
     the unit's finding stated as a bookkeeping fact. The `flip-lax` waiver
     overwrites this predicate
-    value: {loops_direction_flipped:8,loops_whose_reversal_was_not_the_inverse:0,members_where_the_two_layers_part_company:(psi-N1),the_born_level_data_tracks_the_born_shadow_exactly:True,the_law_layer_tracks_the_born_shadow_exactly:True}
+    value: {declared_probe_instances:8,loops_direction_flipped:8,loops_whose_reversal_was_not_the_inverse:0,members_where_the_two_layers_part_company:(psi-N1),the_born_level_data_tracks_the_born_shadow_exactly:True,the_law_layer_tracks_the_born_shadow_exactly:True}
+
+[PASS] PSI-WITNESS-PAIRS            
+    THE WITNESS-PAIR CENSUS IS EXHAUSTIVE OVER THE DECLARED FAMILY, AND IT
+    COMES OUT BOTH WAYS. Every unordered pair of the eleven declared members
+    is compared on six Born-level equalities -- the Born shadow of psi, the
+    Born shadow of the completion entry by entry, the Born-level key of every
+    declared and realized leg at every (setting, frame), the law at every
+    node, the whole 48-cell admission table, the whole loop space -- and then
+    on the holonomy of every common loop. MORE THAN ONE fixed-Born-shadow
+    WITNESS pair is measured to exist, so the existence claim does not rest on
+    a single construction; at least one of them is measured to hold between
+    two states that are exactly ORTHOGONAL, which is the sharpest form the
+    invisibility can take; and fixed-Born-shadow pairs that agree on every
+    common loop are measured to exist too, so the census is not a fixture. The
+    two states of every witness pair are measured to be DISTINCT states with a
+    positive one-shot separation probability under a projective measurement
+    outside the declared settings -- 'Born-level indistinguishable' is a
+    statement about the entrywise squares in the declared basis and about
+    nothing else. The `psi-collapse` mutant makes every member the reference,
+    so no pair differs anywhere, and must die here; the `pair-drop` mutant
+    drops a declared pair and must die at PSI-CELL-COMPLETENESS
+    value: {fixed_born_shadow_pairs:5,fixed_born_shadow_pairs_that_agree_everywhere:((psi-G,psi-S1),(psi-I2,psi-S2)),fixed_born_shadow_witness_pairs:((psi-G,psi-N1),(psi-I4,psi-N2),(psi-S1,psi-N1)),fixed_born_shadow_witness_pairs_between_orthogonal_states:((psi-I4,psi-N2)),pairs_compared:55,the_pairs_the_declaration_forces:55,their_common_loops_at_GP_E:{(psi-G,psi-N1):364,(psi-I4,psi-N2):364,(psi-S1,psi-N1):364},their_differing_common_loops_at_GP_E:{(psi-G,psi-N1):206,(psi-I4,psi-N2):196,(psi-S1,psi-N1):206},their_differing_common_loops_summed_over_the_six_settings:{(psi-G,psi-N1):412,(psi-I4,psi-N2):392,(psi-S1,psi-N1):412},their_inner_products:{(psi-G,psi-N1):1/9,(psi-I4,psi-N2):0,(psi-S1,psi-N1):-1/9},their_one_shot_separation_probabilities:{(psi-G,psi-N1):80/81,(psi-I4,psi-N2):1,(psi-S1,psi-N1):80/81}}
+
+[PASS] PSI-READABLE-COLLAPSE        
+    WHAT psi DOES TO GEN'S OWN INVARIANT IS MEASURED IN ITS POSITIVE FORM. At
+    the reference the readable holonomy -- the permutation part of the
+    closed-loop product, GEN's declared invariant -- takes FOUR values,
+    measured closed under composition, with fixed-configuration counts 9, 9,
+    45 and 81: the Klein four-group. At every member carrying a differing
+    common loop it takes TWO, measured closed, with a positive counted number
+    of loops leaving the readable class entirely. So the preparation does not
+    permute the group's elements; it removes the defect from the class in
+    which GEN's invariant is defined at all, which is why this unit carries
+    the always-defined Born shadow as its primary comparator. Two bookkeeping
+    clauses come with it, both must-pass: the count of common loops whose
+    permutation parts are BOTH DEFINED and different is measured to be ZERO
+    everywhere -- so the 'permutation part differs' column is a
+    READABILITY-FLIP count and is named as one -- and it is measured EQUAL to
+    the readability-flip count at every member and setting. The value reading
+    and the permutation reading are measured to agree in cardinality at every
+    member. The `psi-collapse` mutant makes every member the reference, so
+    nothing collapses, and the `label-collapse` mutant reads the holonomy
+    value as a name label, so the two cardinalities part company; both must
+    die here
+    value: {at_the_reference:(4,(9,9,45,81)),at_those_members:{psi-N1:(2,(9,81),206),psi-N2:(2,(9,81),196)},common_loops_whose_permutation_parts_are_both_defined_and_differ:0,members_where_the_readable_group_collapses:(psi-N1,psi-N2),setting:GP-E,the_permutation_part_column_is_a_readability_flip_count:True}
+
+[PASS] PSI-INTERFERENCE-WIDTH       
+    THE WITNESS'S BORN-LEVEL INVISIBILITY HAS A MECHANISM, AND IT IS MEASURED
+    IN BOTH DIRECTIONS. The INTERFERENCE WIDTH of a member is the largest
+    number of nonzero paths from the initial configuration to a configuration
+    through the first t declared legs, over every setting, frame and
+    checkpoint. At width 1 every declared amplitude is a single product, so
+    the declared law is a function of the Born shadow alone and no sign
+    pattern can move it; at width 2 or more distinct support entries of psi
+    are superposed and a Born-shadow-preserving flip is generically visible.
+    The gate measures the prediction exactly: the set of census members whose
+    LAW LAYER moves under some sign pattern is measured to COINCIDE with the
+    set of census members of width at least two, and both sets and their
+    complements are measured non-empty, so the reading comes out both ways.
+    This is why the reference preparation admits a fixed-Born-shadow witness
+    at all -- it is inherited from GEN, not chosen, and this model is
+    interference-free there. The `width-lax` mutant reports every member as
+    interference-free and the `psi-collapse` mutant replaces the family by the
+    reference; both must die here
+    value: {census_members_of_width_at_least_two:(psi-I1,psi-I3,psi-I4),census_members_of_width_one:(psi-G,psi-I2,psi-S1,psi-S2),census_members_whose_law_layer_moves:(psi-I1,psi-I3,psi-I4),per_member:{psi-G:1,psi-I1:2,psi-I2:1,psi-I3:2,psi-I4:2,psi-N1:1,psi-N2:2,psi-N3:1,psi-N4:2,psi-S1:1,psi-S2:1},the_two_sets_coincide:True}
+
+[PASS] PSI-CELL-COMPLETENESS        
+    EVERY CENSUS IN THIS UNIT IS MEASURED COMPLETE AGAINST THE SIZE ITS OWN
+    DECLARATION FORCES (RUNBOOK section 13 addendum). Four clauses. (1) THE
+    ADMISSION TABLE: every member's table is measured to carry exactly
+    len(settings) x len(checkpoints) x len(rules) cells, computed from the
+    declared lists, and to carry the SAME KEY SET as the reference's. (2) THE
+    ADMISSION COMPARISON: the cell-by-cell delta against the reference is
+    measured to have ranged over that full key set for every member, so a cell
+    dropped from the comparison rather than from the table is caught too. (3)
+    THE SIGN-FLIP CENSUS: its size is recomputed from the DECLARED coefficient
+    dictionaries -- the sum over the swept members of two to the number of
+    support indices other than the first -- and measured equal to the number
+    of patterns the census actually ran. (4) THE WITNESS-PAIR CENSUS: its size
+    is recomputed from the declared family size and measured equal to the
+    number of pairs compared. The `celltab-drop`, `cell-drop`, `signflip-half`
+    and `pair-drop` mutants each remove exactly one cell, one comparison, half
+    a census or one pair, and each must die here
+    value: {admission_cells_compared_per_member:{psi-I1:48,psi-I2:48,psi-I3:48,psi-I4:48,psi-N1:48,psi-N2:48,psi-N3:48,psi-N4:48,psi-S1:48,psi-S2:48},every_member_carries_them_all_with_the_same_keys:True,the_comparison_ranged_over_them_all:True,the_declared_admission_cells_per_member:48,the_measured_pair_census_size:55,the_measured_sign_flip_census_size:48,the_pair_census_size_the_declaration_forces:55,the_sign_flip_census_size_the_declaration_forces:48}
 
 [PASS] PSI-VERDICT                  
-    THE VERDICT IS DERIVED FROM THE PRE-REGISTERED DECISION RULE AND FROM
-    NOTHING ELSE, AND IT IS IN THE PRE-REGISTERED VOCABULARY.
+    THE VERDICT STRING, ITS QUALIFIER INCLUDED, IS RE-DERIVED INSIDE THIS GATE
+    FROM THE RECORDED MEASUREMENTS AND GATED AGAINST THE STRING THAT WAS
+    EMITTED (RUNBOOK section 13 addendum). THE RULE, pre-registered:
     PSI-CURVATURE-EXISTS if a common loop's holonomy is measured to differ
     between two preparations; otherwise PSI-PATH-SPACE-DEPENDENCE if the loop
     space is measured to move while every common loop agrees; otherwise
     PSI-DECLARATION-ONLY; and PSI-BLOCKED-AT-<object> where the census cannot
-    be posed. The qualifier names the scope the family actually decides: the
-    witnesses are read at a FIXED BORN SHADOW, where the arena, the law layer
-    and the whole loop space are measured identical. The verdict string is
-    re-derived inside this gate from the recorded measurements and measured to
-    be the string the rule selects; the `verdict-lax` mutant emits an
-    out-of-vocabulary verdict and must die here
-    value: {a_common_loop_differs:True,in_the_pre_registered_vocabulary:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),scope:(at the committed finite scope,at the declared preparation family,at the declared completion form and its pinned Q,per coordinate),the_loop_space_moves:True,verdict:PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW}
+    be posed. THE QUALIFIER IS NOT A LITERAL: `-AT-FIXED-BORN-SHADOW` is
+    appended if and only if the witness-pair census records at least one pair
+    whose SIX Born-level equalities all hold -- the Born shadow of psi, the
+    Born shadow of the completion, the Born-level key of every leg, the law at
+    every node, the whole 48-cell admission table, the whole loop space -- and
+    whose common loops nevertheless differ in holonomy. Remove the witnesses
+    and the qualifier goes with them. The re-derivation here reads the
+    recorded tables and does not call the emitter or read any of its
+    variables, so it is a comparator built independently of the component it
+    audits. Three COMPUTATION mutants must die here: `verdict-order` swaps the
+    rule's branch order, `verdict-nowitness` empties the witness input the
+    emitter sees while the tables keep their measurements, and `verdict-qual`
+    suppresses the measured qualifier. The `verdict-lax` waiver emits an
+    out-of-vocabulary string and dies here too
+    value: {a_common_loop_differs:True,in_the_pre_registered_vocabulary:True,members_with_a_differing_common_loop:(psi-N1,psi-N2),re_derived_inside_this_gate_from_the_recorded_tables:PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW,scope:(at the committed finite scope,at the declared preparation family,at the declared completion form and its pinned Q,per coordinate),the_emitted_string_equals_the_re_derived_string:True,the_fixed_born_shadow_witness_pairs_the_qualifier_is_computed_from:((psi-G,psi-N1),(psi-I4,psi-N2),(psi-S1,psi-N1)),the_loop_space_moves:True,verdict:PSI-CURVATURE-EXISTS-AT-FIXED-BORN-SHADOW}
 
 [PASS] PSI-DECLARATION-ORDER        
-    THE RECEIPT'S GATE ORDER PROVES THE FREEZE. The pin requires the
+    THE RECEIPT'S GATE ORDER RECORDS THE FREEZE. The pin requires the
     preparation family to be declared AS DATA before any transport
-    measurement, and the proof is the order in which this receipt's gates were
-    recorded: every declaration gate -- the freeze, the pinned base, the
-    family with its computed sizes, the arena, the hash-pin of the inherited
-    receipt -- is measured to sit STRICTLY BEFORE the first transport gate,
-    and the freeze gate is measured to be the first gate of the run with the
-    transport-datum counter at zero. The `order-lax` mutant emits a transport
-    measurement before the declarations and must die here
-    value: {declaration_gates:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN),first_gate:PSI-FREEZE,first_transport_gate_index:5,gate_order:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN,PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-POSITIVE-CONTROL,PSI-WITNESS,PSI-PATH-SPACE-DEPENDENCE,PSI-LAW,PSI-SIGNFLIP-CENSUS,PSI-NEGATIVE-CONTROL,PSI-SWITCHING-SELFTEST,PSI-FLIP-TESTS,PSI-VERDICT),last_declaration_gate_index:4,transport_gates:(PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-WITNESS,PSI-PATH-SPACE-DEPENDENCE)}
+    measurement, and what this gate measures is the order in which this
+    receipt's gates were recorded WITHIN ONE EXECUTION -- which records the
+    ordering rather than proving that the family was fixed before any fixture
+    truth was seen, a fact no in-run measurement can establish: every
+    declaration gate -- the freeze, the pinned base, the family with its
+    computed sizes, the arena, the hash-pin of the inherited receipt -- is
+    measured to sit STRICTLY BEFORE the first transport gate, and the freeze
+    gate is measured to be the first gate of the run with the transport-datum
+    counter at zero. The `order-lax` mutant emits a transport measurement
+    before the declarations and must die here
+    value: {declaration_gates:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN),first_gate:PSI-FREEZE,first_transport_gate_index:5,gate_order:(PSI-FREEZE,PSI-BASE-PINNED,PSI-FAMILY-DECLARED,PSI-ARENA,PSI-GEN-PIN,PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-POSITIVE-CONTROL,PSI-WITNESS,PSI-ARENA-MOVES,PSI-LAW,PSI-SIGNFLIP-CENSUS,PSI-NEGATIVE-CONTROL,PSI-ONE-LAW,PSI-SWITCHING-SELFTEST,PSI-FLIP-TESTS,PSI-WITNESS-PAIRS,PSI-READABLE-COLLAPSE,PSI-INTERFERENCE-WIDTH,PSI-CELL-COMPLETENESS,PSI-VERDICT),last_declaration_gate_index:4,transport_gates:(PSI-ADMISSION-PER-PSI,PSI-PATH-SPACE,PSI-MATCHED-COORDINATES,PSI-WITNESS,PSI-ARENA-MOVES)}
 
 [PASS] PSI-NO-MUTANT-EXEMPTION      
     NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14
@@ -372,7 +577,7 @@ psi-N4   8      8        0        0        0
     `!=` count itself is gated at zero. Every mutation in this instrument is
     injected where the computation happens. The `exempt-lax` waiver registers
     one such comparison and must die here
-    value: {all_of_them_outside_any_gate_or_anchor_call_site:True,call_sites_reaching_the_mutant_flag:(),comparisons_found:0,exemption_forms_found_anywhere_in_the_source:{MUTANT != ...:0,MUTANT is not ...:0,MUTANT not in ...:1,not (MUTANT == ...):0},gate_and_anchor_call_sites:37,mutant_exemption_comparisons:(),their_line_numbers:{MUTANT not in ...:(3076)}}
+    value: {all_of_them_outside_any_gate_or_anchor_call_site:True,call_sites_reaching_the_mutant_flag:(),comparisons_found:0,exemption_forms_found_anywhere_in_the_source:{MUTANT != ...:0,MUTANT is not ...:0,MUTANT not in ...:1,not (MUTANT == ...):0},gate_and_anchor_call_sites:48,mutant_exemption_comparisons:(),their_line_numbers:{MUTANT not in ...:(4378)}}
 
 [PASS] PSI-EXACT                    
     EXACT ARITHMETIC EVERYWHERE. An AST sweep of this module finds no float
@@ -400,19 +605,19 @@ psi-N4   8      8        0        0        0
     away. The one gate excluded from the denominator is this one:
     `run_mutant_table` does not run inside a mutant, so the census gate does
     not exist there
-    value: {died:34,falsified_by_a_computation_mutant:17,falsified_by_some_mutant:20,falsified_only_by_a_waiver:(PSI-EXACT,PSI-NO-MUTANT-EXEMPTION,PSI-VERDICT),must_pass_gate_denominator:20,mutants:34,never_falsified:(),perturb_a_computation:28,the_gate_excluded_from_the_denominator:PSI-FALSIFICATION,waivers:6}
+    value: {died:45,falsified_by_a_computation_mutant:23,falsified_by_some_mutant:25,falsified_only_by_a_waiver:(PSI-EXACT,PSI-NO-MUTANT-EXEMPTION),must_pass_gate_denominator:25,mutants:45,never_falsified:(),perturb_a_computation:39,the_gate_excluded_from_the_denominator:PSI-FALSIFICATION,waivers:6}
 
 ------------------------------------------------------------------------------
-5.  ANCHORS (exit-1 only)
+6.  ANCHORS (exit-1 only)
 ------------------------------------------------------------------------------
-146 anchors, 146 passed, 0 failed
+165 anchors, 165 passed, 0 failed
 
 ------------------------------------------------------------------------------
-6.  TOTALS
+7.  TOTALS
 ------------------------------------------------------------------------------
-anchors                  146
+anchors                  165
 disclosures              0
-gates                    21
+gates                    26
 must_pass_failures       0
-must_pass_gates          21
+must_pass_gates          26
 ==============================================================================
