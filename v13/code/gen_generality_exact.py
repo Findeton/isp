@@ -41,14 +41,48 @@ COMPUTED by enumeration in this file and never typed.
 THE FIVE PRE-REGISTERED PATTERNS, EACH GATED SEPARATELY.
   P1  a nontrivial holonomy group exists (some closed loop non-flat).
   P2  the group COMPUTED, whatever it is: permutation-tuple counting,
-      never labels; closure measured; order and structure named.
+      never labels; closure measured; order and structure named -- AT
+      THE DECLARED COMPLETION, which the census of section 14 measures
+      to select the isomorphism type.
   P3  TWO curvature sources -- identification multiplicity (isolated by
       running the single-rule sub-connections separately) and the
-      preparation's swap-defect P_W U_prep^-1 P_W U_prep -- each
-      exhibited or its absence measured.
-  P4  the preparation-defect is an ELEMENT of the holonomy group.
+      COMPLETION'S NON-EQUIVARIANCE DEFECT D = P_W U_prep^-1 P_W U_prep
+      -- each exhibited or its absence measured.
+  P4  that defect is an ELEMENT of the holonomy group.
   P5  non-principality: membership of every holonomy element in every
       declared and admitted collection, computed.
+
+THE COMPLETION CENSUS (the unit's central result, section 14).  The
+defect obeys an exact law, derived here and gated two ways:
+
+    D = (Sigma V^T Sigma V) (x) I_9      (any orthogonal completion V)
+      = (Sigma Q^T Sigma Q) (x) I_9      (V = H . Q, psi exchange-invariant)
+
+-- the Householder CANCELS IDENTICALLY, so D DOES NOT DEPEND ON psi: it
+is manufactured by the declared transposition alone.  Both curvature
+sources are therefore DECLARATION-side at this base.  The law reduces
+the whole completion question to 9x9 and the family V = H . Q with Q a
+permutation of the nine system-pair indices fixing the first is swept
+EXHAUSTIVELY: all 8! = 40,320 members.  Geometry is GENERIC (the
+exceptions are exactly the exchange-equivariant locus), the GROUP is
+completion-selected, and the family is dihedral:
+
+    Hol = < W, D | W^2 = D^n = 1, W D W = D^-1 >,  n = ord(D).
+
+The 28-member sub-family of the pinned completion's own declared form
+(a single basis transposition) is REBUILT IN FULL, and so is the
+lexicographically first member of every measured class -- one class
+per (order of the defect, fixed configurations of the defect).
+
+DISCIPLINE.  RUNBOOK section 14 with every addendum: the switching
+sweep evaluates FRESH against a POPULATED cache whose read path is
+exercised and gated (a zero-hit count over zero lookups is vacuous);
+every rebuild/decomposition check builds its comparator INDEPENDENTLY
+of the component under audit (the record decomposition is rebuilt from
+the PINNED rotations and an independently declared shift table);
+analytically-forced clauses are DISCLOSURES and not must-pass gates;
+the symmetry instrument is self-tested under its own action and the
+mutant table carries sign/orientation perturbations.
 
 CONTROLS.  Positive: a same-order path pair that MUST agree -- frame 1's
 leg order against frame 2's, the two legs measured to commute -- and the
@@ -57,19 +91,14 @@ comparator, the canonical loop with one identification replaced by the
 wing exchange where the base supplies the identity; if it does not show
 holonomy the instrument is dead and the run says so.
 
-DISCIPLINE.  RUNBOOK section 14 with every addendum: the switching sweep
-evaluates FRESH with its cache-hit count gated at zero; the
-analytically-forced clause (the permutation part's invariance under a
-scalar action) is a DISCLOSURE and not a must-pass gate; the symmetry
-instrument is self-tested under its own action and the mutant table
-carries sign/orientation perturbations.  NO GATE PREDICATE REFERENCES
-MUTANT IDENTITY: every mutation is injected where the computation
-happens, an AST sweep measures the number of `MUTANT != ...` comparisons
-in this module to be zero, and the `exempt-lax` mutant registers one and
-dies there.  RUNBOOK section 15 with every addendum: the arena is
-declared as data with sizes computed, and the READ TIME is a declared
-coordinate of every node and of the law datum, so two data read at
-different checkpoints can never compare equal.
+NO GATE PREDICATE REFERENCES MUTANT IDENTITY: every mutation is
+injected where the computation happens; an AST sweep measures that no
+`gate(...)` or `anchor(...)` call site reaches the mutant flag at all,
+and that the exemption comparison forms are absent from the module.
+RUNBOOK section 15 with every addendum: the arena is declared as data
+with sizes computed, and the READ TIME is a declared coordinate of
+every node and of the law datum, so two data read at different
+checkpoints can never compare equal.
 
 Exact arithmetic throughout: `fractions.Fraction` only.  No float enters
 any path.  Anchors exit 1 on mismatch.  No wall-clock value enters the
@@ -117,6 +146,17 @@ FINDINGS: dict = {}
 PREREGISTERED = ("GEN-STRUCTURE-REPRODUCES", "GEN-STRUCTURE-VARIES-",
                  "GEN-STRUCTURE-ABSENT", "GEN-BLOCKED-AT-")
 
+# The QUALIFIER slot of the pre-registered UNIT-OUTCOME(-QUALIFIER) form.
+# The completion is arena data by the pin's own terms, and the census of
+# section 14 measures that a different declared completion of the very same
+# preparation vector returns a different pre-registered outcome, so the
+# scope the qualifier names is the one parameter that moves the outcome.
+QUALIFIER = "-AT-DECLARED-COMPLETION"
+SCOPE_CLAUSES = ("at the committed finite scope",
+                 "at the declared admission scope",
+                 "at the declared completion",
+                 "per coordinate")
+
 T0 = time.time()
 
 # The freeze counter (RUNBOOK 13(4)): no transport datum may be evaluated
@@ -124,9 +164,14 @@ T0 = time.time()
 _FROZEN = False
 _FEVALS = 0
 
-# Fresh-evaluation bookkeeping (RUNBOOK section 14 addendum).
+# Fresh-evaluation bookkeeping (RUNBOOK section 14 addendum, both halves:
+# the self-test must evaluate fresh, AND the cache path must be measured to
+# be EXERCISED -- zero hits over zero lookups is vacuous).
 _FRESH = False
-_CACHE = {"value_cache_hits": 0, "value_cache_misses": 0}
+_CACHE = {"value_cache_hits": 0, "value_cache_misses": 0,
+          "value_cache_lookups": 0, "value_cache_writes": 0,
+          "cache_reads_that_returned_a_stored_value": 0,
+          "fresh_requests_for_a_key_already_in_the_cache": 0}
 _MEMO: dict = {}
 
 
@@ -165,18 +210,32 @@ def _memo(key, build):
     """The instrument's ONLY transported-value cache.  Bypassed entirely in
     fresh mode, where the hit count is gated at zero; the `memo-lax` mutant
     lets the self-test read the cache and must die there.  The mutation is
-    injected HERE, in the computation; no gate predicate names it."""
+    injected HERE, in the computation; no gate predicate names it.
+
+    The bookkeeping is what makes the zero-hit reading a MEASUREMENT
+    rather than a vacuity: the cache is PRIMED before the self-test with
+    the very keys the self-test will request, the priming phase's own
+    re-read is counted (so the read path is measured to work), and every
+    fresh-mode request for a key that IS in the cache is counted -- so the
+    self-test's zero hits are zero hits against a populated cache that was
+    asked for its entries and refused to serve them."""
     read_cache_in_fresh_mode = (MUTANT == "memo-lax")
     if _FRESH and not read_cache_in_fresh_mode:
         _CACHE["value_cache_misses"] += 1
+        if key in _MEMO:
+            _CACHE["fresh_requests_for_a_key_already_in_the_cache"] += 1
         return build()
+    _CACHE["value_cache_lookups"] += 1
     if key in _MEMO:
+        _CACHE["cache_reads_that_returned_a_stored_value"] += 1
         if _FRESH:
             _CACHE["value_cache_hits"] += 1
+            _CACHE["fresh_requests_for_a_key_already_in_the_cache"] += 1
         return _MEMO[key]
     if _FRESH:
         _CACHE["value_cache_misses"] += 1
     _MEMO[key] = build()
+    _CACHE["value_cache_writes"] += 1
     return _MEMO[key]
 
 
@@ -231,6 +290,14 @@ PINNED_ROT = {
     "R1": [["1", "0", "0"], ["0", "3/5", "-4/5"], ["0", "4/5", "3/5"]],
     "R2": [["5/13", "-12/13", "0"], ["12/13", "5/13", "0"], ["0", "0", "1"]],
 }
+
+# THE DECLARED OUTCOME-TO-SHIFT TABLE.  Declared data, typed here, and used
+# ONLY by the independent comparator of the record decomposition (section 3):
+# the constructor reads `pointer_shift`, the comparator reads THIS, so a
+# perturbation of the constructor moves one side of the comparison and not
+# the other (RUNBOOK section 14 addendum: a rebuild check must construct its
+# comparator independently of the component under audit).
+SHIFT_DECLARED = (0, 1, 2)
 
 # -- the declared preparation ----------------------------------------------
 #    psi is an entangled qutrit-pair vector: invariant under the exchange of
@@ -935,10 +1002,16 @@ def run_base_declaration():
 
     # the record property, MEASURED: the pointer shift is injective in the
     # outcome, and every declared local leg decomposes as a sum of rank-one
-    # projectors tensored with the corresponding shift.
+    # projectors tensored with the corresponding shift.  THE COMPARATOR IS
+    # INDEPENDENT OF BOTH COMPONENTS IT AUDITS (RUNBOOK section 14 addendum):
+    # it is built from the PINNED rotation matrices and the independently
+    # declared shift table SHIFT_DECLARED, never from `rotation()` or from
+    # `pointer_shift()`, so a perturbation of either constructor moves the
+    # constructed leg while leaving the comparator where it was.
     shifts = [pointer_shift(o) for o in range(NS)]
     shift_injective = len(set(shifts)) == NS
     proj_ok, record_ok = True, True
+    record_mismatches = []
     for g in ROT_ORDER:
         R = ROT[g]
         for o in range(NS):
@@ -949,7 +1022,7 @@ def run_base_declaration():
     for wing in ("A", "B"):
         for g in ROT_ORDER:
             U = U_local(wing, g)
-            R = ROT[g]
+            RP = [[parse_fr(v) for v in row] for row in PINNED_ROT[g]]
             rebuilt: dict = {}
             for sa0 in range(NS):
                 for sb0 in range(NS):
@@ -959,9 +1032,9 @@ def run_base_declaration():
                             s0 = sa0 if wing == "A" else sb0
                             p0 = pa0 if wing == "A" else pb0
                             for o in range(NS):
-                                p1 = (p0 + shifts[o]) % NP
+                                p1 = (p0 + SHIFT_DECLARED[o]) % NP
                                 for s1 in range(NS):
-                                    v = R[s1][o] * R[s0][o]
+                                    v = RP[s1][o] * RP[s0][o]
                                     if not v:
                                         continue
                                     i = (idx(s1, sb0, p1, pb0) if wing == "A"
@@ -973,6 +1046,7 @@ def run_base_declaration():
                                         rebuilt.pop((i, j), None)
             if rebuilt != U:
                 record_ok = False
+                record_mismatches.append("%s/%s" % (wing, g))
 
     anchor("A04", "the declared species",
            "every declared operator of every (setting, frame) is exactly "
@@ -1002,8 +1076,10 @@ def run_base_declaration():
         "declared_operators_are_orthogonal": ops_orth,
         "the_local_legs_commute": commute,
         "pointer_shifts": shifts,
+        "the_independently_declared_shift_table": list(SHIFT_DECLARED),
         "the_projectors_are_orthonormal": proj_ok,
         "every_local_leg_is_a_sum_of_projectors_times_shifts": record_ok,
+        "legs_where_the_independent_comparator_disagrees": record_mismatches,
         "legs_per_frame": NLEGS}
 
     gate("GEN-BASE-PINNED", "measurement",
@@ -1047,12 +1123,19 @@ def run_base_declaration():
          "over outcomes of a rank-one projector tensored with the pointer "
          "shift of that outcome, the projectors are measured orthonormal, "
          "and the shift map is measured INJECTIVE -- so the pointer value "
-         "at the final division event determines the outcome.  The "
-         "`anchor-record` mutant collapses two outcomes onto one shift and "
-         "must die at the injectivity clause and at the decomposition "
-         "clause.  (4) EVERY DECLARED OPERATOR IS EXACTLY ORTHOGONAL "
-         "(A04), so the Born shadow of every leg is a stochastic matrix "
-         "and the reverse traversal is the transpose",
+         "at the final division event determines the outcome.  THE "
+         "DECOMPOSITION'S COMPARATOR IS BUILT INDEPENDENTLY OF BOTH "
+         "COMPONENTS IT AUDITS (RUNBOOK section 14 addendum): the sum is "
+         "assembled from the PINNED rotation matrices and the independently "
+         "declared shift table, never from the rotation constructor or from "
+         "`pointer_shift`, so a perturbation of either moves one side of "
+         "the comparison and not the other.  The `anchor-record` mutant "
+         "collapses two outcomes onto one shift and dies at the injectivity "
+         "clause AND at the decomposition clause; the `anchor-rot` mutant "
+         "perturbs a constructed rotation and dies at the decomposition "
+         "clause as well.  (4) EVERY DECLARED OPERATOR IS EXACTLY "
+         "ORTHOGONAL (A04), so the Born shadow of every leg is a stochastic "
+         "matrix and the reverse traversal is the transpose",
          all(commute.values()) and all(ops_orth.values())
          and shift_injective and proj_ok and record_ok and rank >= 2,
          {"the_local_legs_commute_at_every_declared_pair":
@@ -1061,9 +1144,16 @@ def run_base_declaration():
           "declared_operators_that_are_not_orthogonal":
               [k for k, v in ops_orth.items() if not v],
           "pointer_shift_is_injective": shift_injective,
-          "pointer_shifts": shifts,
+          "pointer_shifts_from_the_constructor": shifts,
+          "the_independently_declared_shift_table": list(SHIFT_DECLARED),
           "projectors_orthonormal": proj_ok,
-          "legs_are_projector_times_shift_decompositions": record_ok,
+          "legs_measured_equal_to_the_independently_built_decomposition":
+              record_ok,
+          "legs_where_the_independent_comparator_disagrees":
+              record_mismatches,
+          "the_comparator_reads":
+              "PINNED_ROT and SHIFT_DECLARED (declared data), not "
+              "rotation() and not pointer_shift()",
           "psi_schmidt_rank": rank})
 
     gate("GEN-COMPLETION-IS-LOAD-BEARING", "measurement",
@@ -1094,6 +1184,44 @@ def run_base_declaration():
             "schmidt_rank": rank}
 
 
+def run_external_pin():
+    """THE ONE EXTERNAL ARTIFACT THIS UNIT READS IS HASH-PINNED BEFORE IT IS
+    READ.  The five reused first-base values are anchored against their own
+    fields (A08-A12); this anchors the FILE those fields live in, so that
+    'the committed NT terminal receipt' is an assertion and not a caption."""
+    raw = NT_RECEIPT.read_bytes()
+    perturb_the_external_bytes = (MUTANT == "nt-hash")
+    if perturb_the_external_bytes:
+        raw = raw + b" "
+    nt = json.loads(raw.decode())
+    anchor("A13", "the committed NT terminal receipt, as a file",
+           "the sha256 of the receipt this unit reads, the generator hash "
+           "the receipt itself records, and its schema",
+           ["d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb"
+            "03e",
+            "8cb7607d2ba18c358f12ca22e69d5d398e3e840a998ad8316ef33dc296367"
+            "0e7",
+            "nt-transport-receipt-v1"],
+           [hashlib.sha256(raw).hexdigest(), nt["source_sha256"],
+            nt["schema"]])
+    gate("GEN-EXTERNAL-SOURCE-PINNED", "measurement",
+         "THE EXTERNAL SOURCE IS PINNED BY HASH, NOT BY PATH.  This unit "
+         "reads exactly one file it did not write -- the first base's "
+         "committed terminal receipt -- and A13 measures the sha256 of that "
+         "file, together with the generator hash the receipt records for "
+         "its own instrument and its schema string, against the values this "
+         "unit declares.  A different receipt at the same path, or an "
+         "edited one, kills the run here before any of its numbers is used; "
+         "the five value anchors A08-A12 then measure that the numbers "
+         "inside it are still what this unit believes",
+         all(a["passed"] for a in ANCHORS if a["id"] == "A13"),
+         {"receipt_sha256": hashlib.sha256(raw).hexdigest(),
+          "the_generator_hash_the_receipt_records": nt["source_sha256"],
+          "schema": nt["schema"],
+          "the_receipts_own_pin_and_base_commits":
+              [nt["pin_commit"], nt["base_commit"]]})
+
+
 def run_arena():
     """RUNBOOK section 15: the arena declared AS DATA, with every size
     computed by enumeration and none typed."""
@@ -1109,6 +1237,18 @@ def run_arena():
                 scope_closed = False
                 break
         if not scope_closed:
+            break
+    # The EXTENSION's closure is measured separately, because it is a
+    # different fact: the extension is a UNION and membership in it is a set
+    # test, not a group test.
+    ext_closed = True
+    eset = {tuple(p) for p in SCOPE["extension_all"]}
+    for x in SCOPE["extension_all"]:
+        for y in SCOPE["extension_all"]:
+            if perm_compose(tuple(x), tuple(y)) not in eset:
+                ext_closed = False
+                break
+        if not ext_closed:
             break
     arena = {
         "carrier": NC,
@@ -1132,6 +1272,7 @@ def run_arena():
             SCOPE["n_admitted_extension"],
         "the_admitted_maps": admitted_names,
         "the_declared_scope_is_closed_under_composition": scope_closed,
+        "the_declared_extension_is_closed_under_composition": ext_closed,
         "the_wing_exchange_factorises_as_XS_XP": wfact,
         "fixed_points_of_the_wing_exchange": fixed_points(WSWAP),
         "fixed_points_of_the_system_only_exchange": fixed_points(XSSWAP),
@@ -1150,8 +1291,12 @@ def run_arena():
          "run: the scope is generated from its own generators and "
          "deduplicated, the admitted sets are filtered, the symmetric "
          "settings are read off the family, the checkpoint set is computed "
-         "from the leg count.  The gate measures that the declared scope is "
-         "CLOSED under composition -- so it is a group and not a list -- "
+         "from the leg count.  The gate measures that the DECLARED "
+         "RELABELLING SCOPE is CLOSED under composition -- so that scope, "
+         "and that scope alone, is a group and not a list; the declared "
+         "EXTENSION's closure is measured separately and reported as "
+         "measured, since the extension is a union and membership in it is "
+         "a set test, on which no result depends.  The gate also measures "
          "that the wing exchange factorises as the system-only exchange "
          "times the pointer-only exchange, and that the j0 filter leaves "
          "exactly the maps the identification rules will search over.  The "
@@ -1846,12 +1991,18 @@ def run_controls(graphs, values, probes):
 # ===========================================================================
 # 7.  THE FIVE PRE-REGISTERED PATTERNS, EACH GATED SEPARATELY
 # ===========================================================================
-def based_holonomy(sp, values):
+def based_holonomy(sp, values, closure_bound=None):
     """The based holonomy at the declared base point F1@t0, read as the
     PERMUTATION PART of the closed-loop link product and counted as
     PERMUTATIONS -- matrix content -- never as name labels.  The
     `hol-basepoint` mutant reads closed paths based anywhere instead, so the
-    set is no longer a based holonomy and the closure clause falls over."""
+    set is no longer a based holonomy and the closure clause falls over.
+
+    `closure_bound` is a DECLARED runtime bound used only by the completion
+    census's rebuild sweep, which computes tens of holonomy groups: the
+    closure stops if it exceeds the bound and says so, and the sweep gates
+    that the bound was never reached.  The unit's own measurements pass no
+    bound at all."""
     read_closed_paths_at_any_base_point = (MUTANT == "hol-basepoint")
     base = ("F1", CHECKPOINTS[0])
     els, perms_seen, dropped, sgns = set(), [], 0, set()
@@ -1871,8 +2022,8 @@ def based_holonomy(sp, values):
         mixed[nm] = mixed.get(nm, False) or (len(set(rel)) > 1)
     gen = set(perms_seen)
     grp = set(gen) | {tuple(IDPERM)}
-    changed = True
-    while changed:
+    changed, bound_hit = True, False
+    while changed and not bound_hit:
         changed = False
         for x in list(grp):
             for y in list(grp):
@@ -1880,13 +2031,19 @@ def based_holonomy(sp, values):
                 if z not in grp:
                     grp.add(z)
                     changed = True
-    closed = bool(gen) and all(perm_compose(x, y) in gen
-                               for x in gen for y in gen)
+                    if closure_bound is not None and len(grp) > closure_bound:
+                        bound_hit = True
+                        break
+            if bound_hit:
+                break
+    closed = (bool(gen) and not bound_hit
+              and all(perm_compose(x, y) in gen for x in gen for y in gen))
     abelian = all(perm_compose(x, y) == perm_compose(y, x)
                   for x in grp for y in grp)
     orders = sorted({perm_order(z) for z in grp})
     return {"value_set_size": len(els),
             "generated_group_order": len(grp),
+            "the_declared_closure_bound_was_reached": bound_hit,
             "the_value_set_is_closed_under_composition": bool(closed),
             "the_value_set_is_the_generated_group":
                 bool(gen | {tuple(IDPERM)} == grp),
@@ -1979,10 +2136,15 @@ def subconnection(sp, pref, rule_ids):
 
 
 def prep_defect():
-    """P3(ii): P_W U_prep^-1 P_W U_prep, the element the preparation's
-    failure to intertwine under the wing exchange produces.  The
-    `defect-order` mutant composes the four factors in the wrong order and
-    must die at the involution and membership clauses."""
+    """P3(ii): D = P_W U_prep^-1 P_W U_prep, THE COMPLETION'S
+    NON-EQUIVARIANCE DEFECT -- the element produced by the failure of the
+    declared preparation LEG (hence of the declared completion V, not of
+    the preparation VECTOR psi) to intertwine under the wing exchange.
+    Section 14 derives and gates the closed form D = (Sigma V^T Sigma V)
+    (x) I_9 and its cancellation to (Sigma Q^T Sigma Q) (x) I_9, in which
+    psi does not appear at all.  The `defect-order` mutant composes the
+    four factors in the wrong order and must die at the involution and
+    membership clauses."""
     PW = pmat(WSWAP)
     U = U_prep()
     compose_the_defect_in_the_wrong_order = (MUTANT == "defect-order")
@@ -2036,17 +2198,19 @@ def membership(t):
 def run_patterns(graphs, values, pref, probes):
     """P1 .. P5, each gated separately."""
     prog("P1-P5: the five pre-registered patterns")
-    # The preparation's swap-defect is computed FIRST, so that the element
-    # it names is available to the printer before the group is enumerated.
+    # The completion's non-equivariance defect is computed FIRST, so that
+    # the element it names is available to the printer before the group is
+    # enumerated (the names are also registered before the probes run, in
+    # `main`, so the negative control's holonomy is printed by name).
     # The registration is a printing convenience only: every predicate below
     # compares PERMUTATION TUPLES and no gate reads a name.
     D = prep_defect()
     if D["perm"] is not None:
         PERM_NAME.setdefault(canon(list(D["perm"])),
-                             "the preparation-defect element")
+                             "the completion's non-equivariance defect")
         PERM_NAME.setdefault(
             canon(list(perm_compose(tuple(WSWAP), tuple(D["perm"])))),
-            "the wing exchange composed with the preparation defect")
+            "the wing exchange composed with the non-equivariance defect")
         D["name"] = name_perm(D["perm"])
     hg = {sp: based_holonomy(sp, values) for sp in SETTING_ORDER}
     census = {sp: closed_path_census(sp, values) for sp in SETTING_ORDER}
@@ -2066,6 +2230,12 @@ def run_patterns(graphs, values, pref, probes):
     nonflat = {sp: sum(n for k, n in census[sp].items()
                        if not k.endswith("the identity"))
                for sp in SETTING_ORDER}
+    # Of the non-flat closed paths, how many carry a holonomy that is not a
+    # signed permutation at all?  The two counts are printed against
+    # different denominators elsewhere, so their relation is measured here.
+    notsp = {sp: sum(n for k, n in census[sp].items()
+                     if k.endswith("not a signed permutation"))
+             for sp in SETTING_ORDER}
     # ---- P1 --------------------------------------------------------------
     gate("GEN-P1-NONTRIVIAL-HOLONOMY", "measurement",
          "P1 -- DOES A NONTRIVIAL HOLONOMY GROUP EXIST ON THE SECOND BASE?  "
@@ -2078,16 +2248,27 @@ def run_patterns(graphs, values, pref, probes):
          "result, reported plainly, not a failure of the run.  The negative "
          "control (GEN-NEGATIVE-CONTROL) is what makes the reading "
          "non-vacuous: the instrument is measured able to see a twist that "
-         "is put there deliberately.  The `path-collapse` mutant gives every "
-         "path one key, which makes the holonomy unreadable, and must die "
-         "here",
+         "is put there deliberately.  BOTH DIRECTIONS ARE IN THE PREDICATE "
+         "AND NOT ONLY IN THE TABLE BESIDE IT: the gate requires some "
+         "setting to carry a non-flat closed path AND every setting whose "
+         "based group is trivial to carry NONE, so the measurement comes "
+         "out both ways on one base by the gate's own predicate.  Of the "
+         "non-flat closed paths, the number whose holonomy is not a signed "
+         "permutation at all is counted against the same denominator and "
+         "printed here rather than left to be inferred.  The "
+         "`path-collapse` mutant gives every path one key, which makes the "
+         "holonomy unreadable, and must die here",
          len(nontrivial) > 0
          and all(hg[sp]["closed_paths_based_there"] > 0
-                 for sp in SETTING_ORDER),
+                 for sp in SETTING_ORDER)
+         and all(nonflat[sp] == 0 for sp in SETTING_ORDER
+                 if sp not in nontrivial),
          {"settings_with_a_nontrivial_based_holonomy_group": nontrivial,
           "generated_group_order_per_setting":
               {sp: hg[sp]["generated_group_order"] for sp in SETTING_ORDER},
           "non_flat_closed_paths_per_setting": nonflat,
+          "of_those_non_flat_paths_the_ones_that_are_not_signed_"
+          "permutations": notsp,
           "closed_paths_based_at_F1_t0_per_setting":
               {sp: hg[sp]["closed_paths_based_there"]
                for sp in SETTING_ORDER}})
@@ -2127,14 +2308,21 @@ def run_patterns(graphs, values, pref, probes):
          "permutation, counted and printed rather than silently dropped.  "
          "Reproducing the first base's Klein four-group is NOT required: a "
          "different group is a discovery and is reported as the group it "
-         "is.  The `label-collapse` mutant counts labels instead of "
-         "permutations and must die at clause (1)",
+         "is.  THE ISOMORPHISM TYPE IS A READING AT THE DECLARED "
+         "COMPLETION: the census of GEN-COMPLETION-CENSUS measures the type "
+         "to be selected by the completion, so every statement of the type "
+         "carries that scope tag and the existence of a nontrivial group is "
+         "the completion-generic content.  The `label-collapse` mutant "
+         "counts labels instead of permutations and must die at clause (1)",
          all(vs[sp] == orders[sp] for sp in SETTING_ORDER)
          and all(hg[sp]["the_value_set_is_the_generated_group"]
                  for sp in SETTING_ORDER)
          and all(hg[sp]["the_value_set_is_closed_under_composition"]
                  or orders[sp] == 1 for sp in SETTING_ORDER),
-         {"value_set_size_per_setting": vs,
+         {"the_scope_of_the_isomorphism_type":
+              "at the declared completion V = H . Q (see "
+              "GEN-COMPLETION-CENSUS)",
+          "value_set_size_per_setting": vs,
           "generated_group_order_per_setting": orders,
           "structure_named_per_setting": struct,
           "element_orders_per_setting":
@@ -2174,7 +2362,7 @@ def run_patterns(graphs, values, pref, probes):
             sorted(k for k, v in mult.items() if v >= 2),
         "single_rule_subconnections": subs,
         "the_wing_exchange_intertwines_the_leg": inter,
-        "the_preparation_defect_element":
+        "the_completions_non_equivariance_defect":
             {k: v for k, v in D.items() if k not in ("matrix", "perm")}}
     single_rule_nonflat = sorted(
         k for k, v in subs.items()
@@ -2189,13 +2377,16 @@ def run_patterns(graphs, values, pref, probes):
          "it, the SINGLE-RULE sub-connections are built and enumerated "
          "SEPARATELY -- in each of them every coordinate carries at most one "
          "admitted map, so a non-identity closed path there is holonomy "
-         "that multiplicity cannot explain.  SOURCE (ii), THE "
-         "PREPARATION'S SWAP-DEFECT: P_W U_prep^-1 P_W U_prep is computed "
+         "that multiplicity cannot explain.  SOURCE (ii), THE COMPLETION'S "
+         "NON-EQUIVARIANCE DEFECT: D = P_W U_prep^-1 P_W U_prep is computed "
          "exactly on this base, tested for being a signed permutation, and "
          "named by what it does -- its order, its fixed-point count and "
          "whether it is the wing exchange or either of its two halves.  The "
          "wing exchange's intertwining of every declared leg is measured "
-         "leg by leg, so the defect's cause is exhibited and not asserted.  "
+         "leg by leg, so the defect's cause is exhibited and not asserted; "
+         "the closed form that identifies the defect as a function of the "
+         "declared COMPLETION alone -- and not of the preparation VECTOR -- "
+         "is derived and gated at GEN-DEFECT-LAW.  "
          "The gate requires BOTH sources to be measured and reported: at "
          "least one coordinate of multiplicity two, at least one "
          "single-rule sub-connection measured non-flat, and a defect "
@@ -2207,7 +2398,7 @@ def run_patterns(graphs, values, pref, probes):
          {"coordinates_of_multiplicity_at_least_two": multi,
           "single_rule_subconnections_measured_non_flat":
               single_rule_nonflat,
-          "the_preparation_defect":
+          "the_completions_non_equivariance_defect":
               {k: v for k, v in D.items() if k not in ("matrix", "perm")},
           "the_wing_exchange_intertwines_the_preparation_leg":
               {k: v for k, v in inter.items() if k.endswith("leg1")},
@@ -2259,15 +2450,76 @@ def run_patterns(graphs, values, pref, probes):
                        if not r["in_the_declared_relabelling_scope"]
                        and not r["in_the_declared_extension_scope"])
                for sp in SETTING_ORDER}
+    # WHAT KIND OF TRANSPORT EACH LINK IS, measured link by link at a
+    # setting whose group is nontrivial: the identification links are drawn
+    # from the admitted set by construction, but the LEG links are not
+    # transports the base admits at all, and that is a measurement.
+    link_kinds = {}
+    if nontrivial:
+        spx = sorted(nontrivial)[0]
+        Gx = graphs[spx]
+        for li, L in enumerate(Gx["links"]):
+            M = link_variable(spx, L, +1)
+            p, _s = signed_perm(M)
+            if p is None:
+                link_kinds["link%02d/%s" % (li, L["kind"])] = {
+                    "what_it_is": "not a signed permutation at all",
+                    "in_any_declared_collection": False}
+            else:
+                t = tuple(p[j] for j in range(NC))
+                m = membership(t)
+                link_kinds["link%02d/%s" % (li, L["kind"])] = {
+                    "what_it_is": ("the permutation %s" % name_perm(t)),
+                    "in_the_declared_relabelling_scope":
+                        m["in_the_declared_relabelling_scope"],
+                    "in_the_admitted_set": m["in_the_admitted_set"],
+                    "in_any_declared_collection": any(m.values())}
+    leg_links_outside = sum(1 for k, v in link_kinds.items()
+                            if k.endswith("/leg")
+                            and not v["in_any_declared_collection"])
+    id_links_inside = sum(1 for k, v in link_kinds.items()
+                          if k.endswith("/id")
+                          and v.get("in_the_admitted_set"))
+    # THE FORCEDNESS OF THE MEMBERSHIP TABLE, measured (RUNBOOK section 14
+    # addendum: an analytically forced clause is a disclosure).  Each of the
+    # four collections is measured invariant under left multiplication by
+    # the wing exchange, and the inclusions between them are measured; those
+    # two facts force every cell of the table except one.
+    coll = {"the declared relabelling scope": SCOPE["base"],
+            "the declared extension scope": SCOPE["extension_all"],
+            "the admitted set": SCOPE["admitted"],
+            "the admitted extension": SCOPE["admitted_extension"]}
+    winv, contains = {}, {}
+    for nm, C in coll.items():
+        cs = {tuple(p) for p in C}
+        winv[nm] = ({perm_compose(tuple(WSWAP), tuple(p)) for p in C} == cs)
+        contains[nm] = {"the identity": tuple(IDPERM) in cs,
+                        "the wing exchange": tuple(WSWAP) in cs}
+    incl = {
+        "admitted set inside the declared relabelling scope":
+            {tuple(p) for p in SCOPE["admitted"]}
+            <= {tuple(p) for p in SCOPE["base"]},
+        "declared relabelling scope inside the declared extension":
+            {tuple(p) for p in SCOPE["base"]}
+            <= {tuple(p) for p in SCOPE["extension_all"]},
+        "admitted extension inside the declared extension":
+            {tuple(p) for p in SCOPE["admitted_extension"]}
+            <= {tuple(p) for p in SCOPE["extension_all"]}}
     TABLES["structure_group"] = {
         "per_setting": esc,
         "elements_outside_every_declared_collection": outside,
+        "what_each_link_of_a_nontrivial_setting_is": link_kinds,
+        "leg_links_outside_every_declared_collection": leg_links_outside,
+        "identification_links_in_the_admitted_set": id_links_inside,
+        "each_collection_is_invariant_under_the_wing_exchange": winv,
+        "each_collection_contains": contains,
+        "inclusions_between_the_collections": incl,
         "the_wing_exchange_factorises_as_XS_XP":
             perm_compose(tuple(XSSWAP), tuple(XPSWAP)) == tuple(WSWAP),
         "membership_of_the_two_halves_of_the_wing_exchange": {
             "the system-only wing exchange": membership(XSSWAP),
             "the pointer-only wing exchange": membership(XPSWAP)},
-        "membership_of_the_preparation_defect":
+        "membership_of_the_non_equivariance_defect":
             None if D["perm"] is None else membership(D["perm"])}
     gate("GEN-P5-NON-PRINCIPALITY", "measurement",
          "P5 -- DOES THE GROUP ESCAPE THE BASE'S OWN DECLARED SCOPES?  "
@@ -2276,22 +2528,60 @@ def run_patterns(graphs, values, pref, probes):
          "collection by collection: the declared relabelling scope, its "
          "declared extension, and the two subsets of those that survive the "
          "j0 filter and over which every admission search in this unit "
-         "runs.  Every LINK of this connection is a transport the base "
-         "admits; the question is whether the GROUP THOSE LINKS GENERATE "
-         "AROUND LOOPS is a subgroup of the base's own isomorphisms.  The "
-         "gate measures that at least one element of at least one setting's "
+         "runs.  Every IDENTIFICATION link of this connection is a "
+         "transport the base admits -- by construction, since admission "
+         "searches the admitted set -- while the LEG links are measured "
+         "NOT to be transports the base admits at all: at a setting whose "
+         "group is nontrivial the preparation legs are measured not to be "
+         "signed permutations and the local legs, which ARE permutations of "
+         "the configurations, are measured outside all four collections.  "
+         "The question is whether the GROUP THOSE LINKS GENERATE AROUND "
+         "LOOPS is a subgroup of the base's own isomorphisms.  The gate "
+         "measures that at least one element of at least one setting's "
          "group lies outside every declared collection -- non-principality "
          "-- and that at the settings whose group is trivial the count is "
          "zero, so the measurement can come out both ways and does.  The "
-         "`scope-lax` mutant subsamples the admitted scope and must die at "
-         "GEN-ARENA or here",
+         "escape's STRENGTH is bounded by how small the declared scope is, "
+         "which is a declaration and is stated as one.  The `scope-lax` "
+         "mutant subsamples the admitted scope and must die at GEN-ARENA or "
+         "here",
          any(outside[sp] > 0 for sp in SETTING_ORDER)
          and all(outside[sp] == 0 for sp in SETTING_ORDER
                  if sp not in nontrivial),
          {"elements_outside_every_declared_collection": outside,
           "per_setting": esc,
-          "membership_of_the_preparation_defect":
+          "what_each_link_of_a_nontrivial_setting_is": link_kinds,
+          "leg_links_outside_every_declared_collection": leg_links_outside,
+          "identification_links_in_the_admitted_set": id_links_inside,
+          "membership_of_the_non_equivariance_defect":
               None if D["perm"] is None else membership(D["perm"])})
+    gate("GEN-P5-FORCEDNESS", "disclosure",
+         "HOW MUCH OF P5'S MEMBERSHIP TABLE IS FREE, MEASURED AND "
+         "DISCLOSED (RUNBOOK section 14 addendum).  The table has one row "
+         "per holonomy element and one column per declared collection, but "
+         "its cells are not independent, and this disclosure measures why.  "
+         "Each of the four collections is measured INVARIANT under left "
+         "multiplication by the wing exchange, and each is measured to "
+         "contain the identity and the wing exchange -- so those two rows "
+         "are forced 'yes' everywhere by the scope's own generators, and "
+         "the W.D row is forced to repeat the D row.  The inclusions "
+         "admitted-set c declared-scope c declared-extension and "
+         "admitted-extension c declared-extension are measured -- so a "
+         "single 'no' at the widest collection forces the other three.  "
+         "What remains free is exactly ONE cell: whether the defect lies "
+         "outside the declared EXTENSION.  P5's verdict is that one "
+         "measurement, and the table is its consequence",
+         True,
+         {"each_collection_is_invariant_under_the_wing_exchange": winv,
+          "each_collection_contains": contains,
+          "inclusions_between_the_collections": incl,
+          "the_one_free_cell":
+              "the non-equivariance defect is outside the declared "
+              "extension scope",
+          "the_free_cell_measured":
+              (None if D["perm"] is None
+               else not membership(D["perm"])
+               ["in_the_declared_extension_scope"])})
     FINDINGS["patterns"] = {
         "P1_nontrivial_holonomy_exists": len(nontrivial) > 0,
         "P1_settings": nontrivial,
@@ -2299,7 +2589,7 @@ def run_patterns(graphs, values, pref, probes):
         "P2_structure": struct,
         "P3_multiplicity_coordinates": multi,
         "P3_single_rule_subconnections_non_flat": single_rule_nonflat,
-        "P3_preparation_defect":
+        "P3_non_equivariance_defect":
             {k: v for k, v in D.items() if k not in ("matrix", "perm")},
         "P4_defect_is_a_group_element": inpg,
         "P5_elements_outside_every_declared_collection": outside}
@@ -2364,8 +2654,38 @@ def loop_matrix_fresh(sp, A, negA, signs, key):
     return _memo(("loop", sp, key), build)
 
 
+def prime_the_value_cache(graphs):
+    """EXERCISE THE CACHE PATH BEFORE THE SELF-TEST BYPASSES IT (RUNBOOK
+    section 14 addendum, second half: a zero-hit gate must also gate that
+    the cache path IS exercised -- zero hits of zero lookups is vacuous).
+
+    Every declared loop that carries an edge list has its all-positive
+    holonomy computed here in NON-fresh mode, under exactly the key the
+    self-test will later request.  So the cache is measured populated, its
+    read path is measured to return stored values (the second pass over the
+    same keys), and the self-test's zero hits are then zero hits against a
+    populated cache that was asked for those very entries."""
+    prog("priming the value cache (so the bypass has something to bypass)")
+    primed = 0
+    for _pass in (1, 2):
+        for sp in SETTING_ORDER:
+            G = graphs[sp]
+            for loop in declared_loops(sp, G):
+                if loop["edges"] is None:
+                    continue
+                A = [link_variable(sp, G["links"][li], d)
+                     for (li, d) in loop["edges"]]
+                negA = [sp_neg(X) for X in A]
+                sg = [1] * len(A)
+                loop_matrix_fresh(sp, A, negA, sg,
+                                  (loop["name"], tuple(sg)))
+                primed += 1
+    return primed
+
+
 def run_gauge_selftest(graphs):
     global _FRESH
+    primed = prime_the_value_cache(graphs)
     prog("section 14: the gauge-covariance self-test (fresh evaluation)")
     _FRESH = True
     before = dict(_CACHE)
@@ -2432,6 +2752,9 @@ def run_gauge_selftest(graphs):
     after = dict(_CACHE)
     hits = after["value_cache_hits"] - before["value_cache_hits"]
     misses = after["value_cache_misses"] - before["value_cache_misses"]
+    cached_keys_requested = (
+        after["fresh_requests_for_a_key_already_in_the_cache"]
+        - before["fresh_requests_for_a_key_already_in_the_cache"])
     _FRESH = False
     TABLES["gauge_selftest"] = {
         "per_loop": rows, "group_sizes": sizes,
@@ -2515,16 +2838,40 @@ def run_gauge_selftest(graphs):
          {"loops_at_which_the_raw_sign_moved": moved_raw,
           "loops_swept": len(rows)})
     gate("GEN-FRESH-EVAL", "measurement",
-         "THE SELF-TEST EVALUATES FRESH (RUNBOOK section 14 addendum).  "
-         "Every holonomy in the sweep is rebuilt from the link variables "
-         "with the instrument's value cache bypassed; the phase's cache-HIT "
-         "count is gated at ZERO and its MISS count gated positive, so a "
-         "self-test that read the cache would be testing the cache and not "
-         "the quantity.  The `memo-lax` mutant lets the phase read the cache "
-         "and must die here",
-         hits == 0 and misses > 0,
+         "THE SELF-TEST EVALUATES FRESH, AGAINST A CACHE MEASURED TO BE "
+         "POPULATED AND MEASURED TO WORK (RUNBOOK section 14 addendum, both "
+         "halves).  Every holonomy in the sweep is rebuilt from the link "
+         "variables with the instrument's value cache bypassed.  A zero hit "
+         "count is only worth something if the cache path is EXERCISED, so "
+         "before the sweep the cache is PRIMED: every declared loop with an "
+         "edge list has its all-positive holonomy stored under exactly the "
+         "key the sweep will later request, and a second pass over the same "
+         "keys is measured to return the STORED values -- so the read path "
+         "is measured to work and the store is measured non-empty.  Four "
+         "clauses, each of which can fail: (1) the cache is measured "
+         "populated (writes positive); (2) the cache's read path is "
+         "measured to serve stored values (reads that returned a stored "
+         "value positive); (3) the sweep is measured to REQUEST keys that "
+         "are in the populated cache, positively many of them; (4) the "
+         "sweep's cache-HIT count is nevertheless ZERO, against a positive "
+         "MISS count.  The `memo-lax` mutant lets the phase read the cache "
+         "and must die at clause (4), turning every one of those requests "
+         "into a hit",
+         hits == 0 and misses > 0
+         and _CACHE["value_cache_writes"] > 0
+         and _CACHE["cache_reads_that_returned_a_stored_value"] > 0
+         and cached_keys_requested > 0,
          {"value_cache_hits_during_the_self_test": hits,
-          "value_cache_misses_during_the_self_test": misses})
+          "value_cache_misses_during_the_self_test": misses,
+          "entries_written_into_the_cache_before_the_self_test":
+              _CACHE["value_cache_writes"],
+          "cache_reads_that_returned_a_stored_value":
+              _CACHE["cache_reads_that_returned_a_stored_value"],
+          "self_test_requests_for_a_key_already_in_the_cache":
+              cached_keys_requested,
+          "cache_lookups_outside_the_self_test":
+              _CACHE["value_cache_lookups"],
+          "priming_calls": primed})
     return rows, sizes
 
 
@@ -2574,13 +2921,21 @@ def run_flip_tests(graphs, probes):
          "convention flipped, and the resulting permutation is measured to "
          "be the INVERSE of the forward one, at every loop and every "
          "setting -- so no holonomy verdict in this unit depends on which "
-         "way round the bookkeeping runs the loop.  Coverage is stated: the "
-         "twisted comparator is the canonical loop with one link "
-         "overwritten and carries no edge list of its own, so the NEGATIVE "
-         "CONTROL IS NOT FLIP-TESTED.  The `flip-lax` waiver overwrites the "
-         "predicate and must die here; the `orient-flip` mutant, which "
-         "reads a leg's reverse traversal without transposing, breaks the "
-         "inverse relation and must die here too",
+         "way round the bookkeeping runs the loop.  ITS POSITIVE CONTENT IS "
+         "FORCED, AND THAT IS STATED HERE RATHER THAN LEFT TO BE "
+         "DISCOVERED: every link variable is measured orthogonal and the "
+         "reverse traversal is implemented as the transpose, so a reversed "
+         "loop's matrix is the inverse of the forward one BY ALGEBRA for "
+         "any input, and every element of this base's holonomy group is "
+         "measured to be an involution, so the inverse permutation is the "
+         "same permutation at every one of these loops.  What the gate "
+         "retains is instrument integrity, and that is not forced: the "
+         "`orient-flip` mutant reads a leg's reverse traversal WITHOUT "
+         "transposing, which breaks the relation, and it is what gives this "
+         "gate its teeth; the `flip-lax` waiver overwrites the predicate "
+         "and dies here too.  Coverage is stated: the twisted comparator is "
+         "the canonical loop with one link overwritten and carries no edge "
+         "list of its own, so the NEGATIVE CONTROL IS NOT FLIP-TESTED",
          flip_ok,
          {"loops_flipped": len(rows),
           "loops_where_the_reversal_is_not_the_inverse": bad,
@@ -2588,48 +2943,126 @@ def run_flip_tests(graphs, probes):
     return rows
 
 
-def with_completion(V):
-    """Rebuild the whole base on a DIFFERENT declared completion and return
-    its admission table, its holonomy group and its preparation defect.  The
-    fixture store is swapped out and restored, so nothing this measures
-    leaks into any verdict above."""
+def species_clauses(V):
+    """THE FOUR CLAUSES OF THE DECLARED SPECIES, measured on a base built
+    with the completion V.  Called on the ALTERNATIVE completion so that
+    the question 'is the alternative of the declared species?' is answered
+    by measurement rather than by assertion."""
+    ops = {}
+    for fr in FRAMES:
+        for sp in SETTING_ORDER:
+            for k, L in enumerate(legs_of(sp, fr)):
+                ops["%s/%s/leg%d" % (sp, fr, k + 1)] = is_orthogonal(L)
+    commute = {}
+    for a in ROT_ORDER:
+        for b in ROT_ORDER:
+            commute["A(%s),B(%s)" % (a, b)] = (
+                mm(U_local("A", a), U_local("B", b))
+                == mm(U_local("B", b), U_local("A", a)))
+    Mc = [[V[a * NS + b][0] for b in range(NS)] for a in range(NS)]
+    A = [row[:] for row in Mc]
+    rank = 0
+    for c in range(NS):
+        piv = next((i for i in range(rank, NS) if A[i][c]), None)
+        if piv is None:
+            continue
+        A[rank], A[piv] = A[piv], A[rank]
+        inv = ONE / A[rank][c]
+        A[rank] = [inv * v for v in A[rank]]
+        for i in range(NS):
+            if i != rank and A[i][c]:
+                f = A[i][c]
+                A[i] = [x - f * y for x, y in zip(A[i], A[rank])]
+        rank += 1
+    V_orth = all(sum((V[k][i] * V[k][j] for k in range(NS * NS)), ZERO)
+                 == (ONE if i == j else ZERO)
+                 for i in range(NS * NS) for j in range(NS * NS))
+    shifts = [pointer_shift(o) for o in range(NS)]
+    return {"two_wings_with_commuting_local_legs": all(commute.values()),
+            "a_preparation_common_to_both_frames_and_entangled":
+                V_orth and rank >= 2,
+            "the_preparation_schmidt_rank": rank,
+            "records_at_the_final_division_event_shift_injective":
+                len(set(shifts)) == NS,
+            "every_declared_operator_exactly_orthogonal":
+                all(ops.values()),
+            "all_four_clauses_hold":
+                all(commute.values()) and V_orth and rank >= 2
+                and len(set(shifts)) == NS and all(ops.values())}
+
+
+def with_completion(V, settings=None, species=False, bound=None):
+    """Rebuild the base on a DIFFERENT declared completion and return its
+    admission table, its holonomy group and its non-equivariance defect.
+    The fixture store is swapped out and restored, so nothing this measures
+    leaks into any verdict above.  `settings` declares WHICH settings are
+    rebuilt (all six for the flip-test; the census sweep declares the
+    symmetric setting GP-E and GP-A as its flat control, and prints that
+    scope)."""
     global VCOMP, _FIXTURE, _INTERN, _INTERN_VALUE, _HOL_CLASS
     keepV, keepF = VCOMP, _FIXTURE
     keepI, keepIV, keepH = _INTERN, _INTERN_VALUE, _HOL_CLASS
     VCOMP, _FIXTURE = V, {}
     _INTERN, _INTERN_VALUE, _HOL_CLASS = {}, {}, {}
+    sps = list(SETTING_ORDER) if settings is None else list(settings)
     try:
         born_sym = all(VCOMP[i][j] * VCOMP[i][j]
                        == VCOMP[SIGMA9[i]][SIGMA9[j]]
                        * VCOMP[SIGMA9[i]][SIGMA9[j]]
                        for i in range(NS * NS) for j in range(NS * NS))
         pref = prefix_profile()
-        table = {}
-        for sp in SETTING_ORDER:
+        table, per_rule = {}, {r["id"]: 0 for r in ID_RULES}
+        for sp in sps:
             for t in CHECKPOINTS:
-                table["%s/t%d" % (sp, t)] = {
-                    r["id"]: len(admits(sp, t, r)) for r in ID_RULES}
+                cell = {r["id"]: len(admits(sp, t, r)) for r in ID_RULES}
+                table["%s/t%d" % (sp, t)] = cell
+                for r in ID_RULES:
+                    if cell[r["id"]] == 1:
+                        per_rule[r["id"]] += 1
         drawn = sum(1 for r in table.values()
                     for v in r.values() if v == 1)
-        graphs = {sp: build_graph(sp, pref) for sp in SETTING_ORDER}
-        groups = {}
-        for sp in SETTING_ORDER:
+        graphs = {sp: build_graph(sp, pref) for sp in sps}
+        groups, canon_loop = {}, {}
+        for sp in sps:
             rows = enumerate_paths(sp, graphs[sp], L_MAX)
-            groups[sp] = based_holonomy(sp, {sp: rows})
+            groups[sp] = based_holonomy(sp, {sp: rows},
+                                        closure_bound=bound)
+            canon_loop[sp] = any(x["name"] == "the canonical loop"
+                                 for x in declared_loops(sp, graphs[sp]))
         D = prep_defect()
-        return {"born_shadow_of_the_completion_is_exchange_symmetric":
-                    born_sym,
-                "admission_counts_per_cell": table,
-                "cells_where_a_link_is_drawn": drawn,
-                "identification_links_per_setting":
-                    {sp: sum(1 for L in graphs[sp]["links"]
-                             if L["kind"] == "id") for sp in SETTING_ORDER},
-                "holonomy_group_order_per_setting":
-                    {sp: groups[sp]["generated_group_order"]
-                     for sp in SETTING_ORDER},
-                "the_preparation_defect":
-                    {k: v for k, v in D.items()
-                     if k not in ("matrix", "perm")}}
+        out = {"born_shadow_of_the_completion_is_exchange_symmetric":
+                   born_sym,
+               "settings_rebuilt": sps,
+               "admission_counts_per_cell": table,
+               "cells_where_a_link_is_drawn": drawn,
+               "cells_where_each_rule_draws_a_link": per_rule,
+               "the_canonical_loop_exists_per_setting": canon_loop,
+               "settings_where_the_canonical_loop_exists":
+                   sum(1 for v in canon_loop.values() if v),
+               "identification_links_per_setting":
+                   {sp: sum(1 for L in graphs[sp]["links"]
+                            if L["kind"] == "id") for sp in sps},
+               "holonomy_group_order_per_setting":
+                   {sp: groups[sp]["generated_group_order"] for sp in sps},
+               "holonomy_group_is_abelian_per_setting":
+                   {sp: groups[sp]["the_group_is_abelian"] for sp in sps},
+               "holonomy_element_orders_per_setting":
+                   {sp: groups[sp]["element_orders"] for sp in sps},
+               "value_set_size_per_setting":
+                   {sp: groups[sp]["value_set_size"] for sp in sps},
+               "the_value_set_is_closed_at_the_bound_per_setting":
+                   {sp: groups[sp]["the_value_set_is_closed_under_"
+                                   "composition"] for sp in sps},
+               "the_declared_closure_bound_was_reached":
+                   any(groups[sp]["the_declared_closure_bound_was_reached"]
+                       for sp in sps),
+               "the_completions_non_equivariance_defect":
+                   {k: v for k, v in D.items()
+                    if k not in ("matrix", "perm")}}
+        if species:
+            out["the_declared_species_measured_on_this_completion"] = \
+                species_clauses(V)
+        return out
     finally:
         VCOMP, _FIXTURE = keepV, keepF
         _INTERN, _INTERN_VALUE, _HOL_CLASS = keepI, keepIV, keepH
@@ -2640,7 +3073,7 @@ def run_completion_flip(declared_summary):
     and this measures what depends on it -- reported, folded into no
     verdict."""
     prog("the declared completion flip-test (the bare Householder)")
-    alt = with_completion(householder())
+    alt = with_completion(householder(), species=True)
     TABLES["completion_flip_test"] = {
         "declared_completion": declared_summary,
         "alternative_completion_V_equals_H":
@@ -2659,12 +3092,819 @@ def run_completion_flip(declared_summary):
          "transposition Q removed, whose first column is the SAME psi -- "
          "and re-measures the admission table, the identification links "
          "drawn, the holonomy group order at every setting and the "
-         "preparation defect.  What it shows is printed below.  The "
+         "non-equivariance defect.  WHAT THE ALTERNATIVE STILL HAS IS "
+         "MEASURED TOO, and it is not nothing: the four clauses of the "
+         "declared species are measured to HOLD on it, the full-leg rule is "
+         "measured still to draw links, and the canonical loop is measured "
+         "still to exist at the settings named below -- so the five "
+         "patterns are POSABLE there and are posed, and the answer is the "
+         "pre-registered outcome GEN-STRUCTURE-ABSENT rather than an "
+         "unposable question.  What the alternative loses is measured "
+         "exactly: the wing exchange intertwines the preparation leg (the "
+         "completion is exchange-EQUIVARIANT), so the defect is the "
+         "identity, and at the symmetric settings the full-leg rule admits "
+         "two permutations where it had admitted one.  The census of "
+         "GEN-COMPLETION-CENSUS places this completion in its family.  The "
          "measurement is folded into NO verdict: every result of this unit "
          "stands at the DECLARED completion and at no other, and that "
          "scope statement is what this disclosure exists to license",
          True, alt)
     return alt
+
+
+# ===========================================================================
+# 9b.  THE COMPLETION CENSUS -- the defect law, the exhaustive family sweep,
+#      the group family, and the rebuilds.
+#
+#      The three constructions gated here -- the closed form for the defect,
+#      the exhaustive census of the completion family, and the enumeration
+#      of Klein connections on the gauge-fixed graph -- were contributed by
+#      this unit's review panel and are re-derived and re-measured natively
+#      here (v13 LOG #219).
+# ===========================================================================
+ENUMERATION_CAP = 100000        # declared: the connection space is swept
+#                                 exhaustively below this many assignments
+CLOSURE_BOUND = 256             # declared: the rebuild sweep's group-closure
+#                                 bound; the sweep gates that it is never
+#                                 reached (the measured orders are <= 30)
+
+# The declared alternative preparation VECTORS.  Each is rational, of unit
+# norm, and (except the last, which is the negative control) invariant under
+# the exchange of the two systems.  They exist to measure the psi-
+# independence of the defect -- and, at the control, to measure that the
+# invariance hypothesis is load-bearing rather than decorative.
+PSI_FAMILY = (
+    ("the declared psi", {(0, 1): "2/3", (1, 0): "2/3", (2, 2): "1/3"}, True),
+    ("psi-2", {(0, 0): "1/3", (1, 2): "2/3", (2, 1): "2/3"}, True),
+    ("psi-3", {(0, 0): "4/5", (1, 1): "3/5"}, True),
+    ("psi-4", {(0, 1): "1/2", (1, 0): "1/2", (1, 2): "1/2", (2, 1): "1/2"},
+     True),
+    ("psi-5 (NOT exchange-invariant: the negative control)",
+     {(0, 1): "3/5", (1, 0): "4/5"}, False),
+)
+
+
+def perm9_inverse(p):
+    o = [0] * len(p)
+    for i, v in enumerate(p):
+        o[v] = i
+    return tuple(o)
+
+
+def perm9_compose(x, y):
+    return tuple(x[y[i]] for i in range(len(y)))
+
+
+def perm9_order(p):
+    q, n, ident = tuple(p), 1, tuple(range(len(p)))
+    while q != ident:
+        q = perm9_compose(tuple(p), q)
+        n += 1
+    return n
+
+
+def defect_permutation_of(q):
+    """THE CANCELLATION FORM, as a permutation of the nine system-pair
+    indices: delta(Q) = sigma . Q^-1 . sigma . Q.  psi does not appear."""
+    s = tuple(SIGMA9)
+    return perm9_compose(perm9_compose(s, perm9_inverse(q)),
+                         perm9_compose(s, q))
+
+
+def householder_of(coeffs):
+    """The Householder reflection carrying e_{(0,0)} to the declared vector
+    with the given rational coefficients."""
+    psi = [ZERO] * (NS * NS)
+    for (a, b), v in coeffs.items():
+        psi[a * NS + b] = parse_fr(v)
+    w = list(psi)
+    w[0] = w[0] - ONE
+    ww = sum(v * v for v in w)
+    H = [[(ONE if i == j else ZERO) - 2 * w[i] * w[j] / ww
+          for j in range(NS * NS)] for i in range(NS * NS)]
+    return psi, H
+
+
+def completion_from(H, q):
+    """V = H . Q, column j of V being column Q(j) of H -- the declared
+    construction, applied to any H and any permutation q."""
+    return [[H[i][q[j]] for j in range(NS * NS)] for i in range(NS * NS)]
+
+
+def defect_of_completion(V):
+    """D = P_W U_prep^-1 P_W U_prep, computed DIRECTLY at 81x81 from the
+    completion V -- the same four-factor product the P3 measurement uses,
+    with U_prep rebuilt from V."""
+    U = {}
+    for a in range(NS * NS):
+        for b in range(NS * NS):
+            v = V[a][b]
+            if not v:
+                continue
+            for pa in range(NP):
+                for pb in range(NP):
+                    U[(idx(a // NS, a % NS, pa, pb),
+                       idx(b // NS, b % NS, pa, pb))] = v
+    PW = pmat(WSWAP)
+    return mm(PW, mm(minv(U), mm(PW, U)))
+
+
+def tensor_with_pointer_identity(M9):
+    """M (x) I_9: the 9x9 system-pair matrix acting on the 81 configurations
+    and trivially on the pointer pair, in the model's own index map."""
+    out = {}
+    for (a, b), v in M9.items():
+        for p in range(NS * NS):
+            out[(a * NS * NS + p, b * NS * NS + p)] = v
+    return out
+
+
+def m9(A, B):
+    out = {}
+    for (i, k), u in A.items():
+        for j in range(NS * NS):
+            v = B.get((k, j))
+            if v is None:
+                continue
+            t = u * v
+            if not t:
+                continue
+            s = out.get((i, j), ZERO) + t
+            if s:
+                out[(i, j)] = s
+            else:
+                out.pop((i, j), None)
+    return out
+
+
+def dense9(V):
+    return {(i, j): V[i][j] for i in range(NS * NS)
+            for j in range(NS * NS) if V[i][j]}
+
+
+def run_defect_law():
+    """THE DEFECT LAW, derived and gated two ways, with psi-independence
+    measured over a declared family of preparation vectors."""
+    prog("the defect law and its psi-independence")
+    s9 = {(SIGMA9[i], i): ONE for i in range(NS * NS)}
+    q = tuple(Q_COMPLETION)
+    QP = {(q[j], j): ONE for j in range(NS * NS)}
+    QPt = {(j, q[j]): ONE for j in range(NS * NS)}
+    cancellation = tensor_with_pointer_identity(
+        m9(s9, m9(QPt, m9(s9, QP))))
+    rows, law_ok, cancel_ok, same_D, control_differs = {}, True, True, True, 0
+    D_declared = None
+    for nm, coeffs, invariant in PSI_FAMILY:
+        psi, H = householder_of(coeffs)
+        norm = sum(v * v for v in psi)
+        sym = all(psi[i] == psi[SIGMA9[i]] for i in range(NS * NS))
+        V = completion_from(H, q)
+        Dd = defect_of_completion(V)
+        Vd = dense9(V)
+        law = tensor_with_pointer_identity(
+            m9(s9, m9({(j, i): v for (i, j), v in Vd.items()},
+                      m9(s9, Vd))))
+        if D_declared is None:
+            D_declared = Dd
+        p, _sg = signed_perm(Dd)
+        t = None if p is None else tuple(p[j] for j in range(NC))
+        rows[nm] = {
+            "the_vector_is_of_unit_norm": str(norm) == str(ONE),
+            "the_vector_is_exchange_invariant": sym,
+            "declared_as_exchange_invariant": invariant,
+            "the_law_D_equals_sigma_Vt_sigma_V_tensor_I": Dd == law,
+            "the_cancellation_D_equals_sigma_Qt_sigma_Q_tensor_I":
+                Dd == cancellation,
+            "the_defect_equals_the_declared_completions_defect":
+                Dd == D_declared,
+            "fixed_configurations": None if t is None else fixed_points(t)}
+        if Dd != law:
+            law_ok = False
+        if sym != invariant:
+            law_ok = False
+        if invariant:
+            if Dd != cancellation:
+                cancel_ok = False
+            if Dd != D_declared:
+                same_D = False
+        else:
+            if Dd != cancellation and Dd != D_declared:
+                control_differs += 1
+    delta = defect_permutation_of(q)
+    predicted_fixed = 9 * sum(1 for i in range(NS * NS) if delta[i] == i)
+    Dp, _s = signed_perm(cancellation)
+    measured_fixed = (None if Dp is None
+                      else fixed_points([Dp[j] for j in range(NC)]))
+    TABLES["defect_law"] = {
+        "the_law": "D = (sigma V^T sigma V) (x) I_9, for any completion V",
+        "the_cancellation":
+            "D = (sigma Q^T sigma Q) (x) I_9 when V = H . Q and psi is "
+            "exchange-invariant: the Householder cancels identically and "
+            "psi does not appear",
+        "per_declared_preparation_vector": rows,
+        "the_defect_permutation_at_the_9x9_level": list(delta),
+        "its_fixed_points_at_the_9x9_level":
+            sum(1 for i in range(NS * NS) if delta[i] == i),
+        "fixed_configurations_predicted_by_the_9x9_form": predicted_fixed,
+        "fixed_configurations_measured_at_81x81": measured_fixed,
+        "the_negative_controls_defect_differs": control_differs}
+    gate("GEN-DEFECT-LAW", "measurement",
+         "THE DEFECT OBEYS AN EXACT LAW, AND THE LAW SAYS THE DEFECT IS NOT "
+         "THE PREPARATION'S.  With U_prep = V (x) I_9 and the wing exchange "
+         "P_W = sigma (x) sigma, the four-factor product collapses: D = "
+         "(sigma V^T sigma V) (x) I_9, measured exactly against the direct "
+         "81x81 computation for every completion of a declared family of "
+         "preparation vectors.  When V = H . Q with H the Householder of an "
+         "exchange-INVARIANT psi, H is exchange-equivariant and involutive, "
+         "so it CANCELS IDENTICALLY and D = (sigma Q^T sigma Q) (x) I_9 -- "
+         "in which psi does not appear at all.  Four declared "
+         "exchange-invariant preparation vectors, all different, are "
+         "measured to give the SAME defect, entry by entry, as the declared "
+         "one; a fifth, declared NOT exchange-invariant, is the negative "
+         "control and is measured to give a DIFFERENT defect, so the "
+         "invariance hypothesis is measured load-bearing rather than "
+         "decorative.  The 9x9 form's fixed-point count times the nine "
+         "untouched pointer pairs is measured equal to the 81-configuration "
+         "count.  The `defect-order` mutant composes the product in the "
+         "wrong order, the `anchor-completion` mutant perturbs the "
+         "constructed completion, and the `completion-Q` mutant replaces it "
+         "by the bare Householder; each moves one side of a comparison and "
+         "must die here",
+         law_ok and cancel_ok and same_D and control_differs > 0
+         and predicted_fixed == measured_fixed
+         and defect_of_completion(VCOMP) == cancellation,
+         {"per_declared_preparation_vector": rows,
+          "the_law_holds_for_every_declared_vector": law_ok,
+          "the_cancellation_holds_for_every_invariant_vector": cancel_ok,
+          "every_invariant_vector_gives_the_same_defect": same_D,
+          "the_negative_controls_defect_differs": control_differs,
+          "fixed_configurations_predicted_by_the_9x9_form": predicted_fixed,
+          "fixed_configurations_measured_at_81x81": measured_fixed,
+          "the_defect_of_the_completion_in_force_is_the_cancellation_form":
+              defect_of_completion(VCOMP) == cancellation})
+    return cancellation, delta
+
+
+def run_completion_census():
+    """THE EXHAUSTIVE CENSUS of the declared completion family: all 8! =
+    40,320 permutations Q of the nine system-pair indices fixing the first,
+    every one of which has psi as its first column.  The census runs at the
+    9x9 level through the law gated above, so it is exhaustive and cheap."""
+    prog("the completion census: the exhaustive 8! family sweep")
+    s = tuple(SIGMA9)
+    # Which elements of the declared scopes act on the system pair alone,
+    # i.e. are of the form delta (x) I_9?  Computed by scanning the scopes,
+    # never assumed: those are the only ones a defect could belong to.
+    def tensor_part(p):
+        d = [None] * (NS * NS)
+        for a in range(NS * NS):
+            for pp in range(NS * NS):
+                j = p[a * NS * NS + pp]
+                if j % (NS * NS) != pp:
+                    return None
+                b = j // (NS * NS)
+                if d[a] is None:
+                    d[a] = b
+                elif d[a] != b:
+                    return None
+        return tuple(d)
+    scope9 = {t for t in (tensor_part(p) for p in SCOPE["base"])
+              if t is not None}
+    ext9 = {t for t in (tensor_part(p) for p in SCOPE["extension_all"])
+            if t is not None}
+    by_order, by_fixed, by_class, equivariant = {}, {}, {}, 0
+    equivariance_mismatches, dihedral_failures = 0, 0
+    escapes, inside = 0, 0
+    total = 0
+    first_of_order = {}
+    declared_seen, declared_entry = False, None
+    for tail in itertools.permutations(range(1, NS * NS)):
+        qq = (0,) + tail
+        d = defect_permutation_of(qq)
+        n = perm9_order(d)
+        f = sum(1 for i in range(NS * NS) if d[i] == i)
+        total += 1
+        by_order[n] = by_order.get(n, 0) + 1
+        by_fixed[9 * f] = by_fixed.get(9 * f, 0) + 1
+        commutes = (perm9_compose(s, qq) == perm9_compose(qq, s))
+        if n == 1:
+            equivariant += 1
+        if (n == 1) != commutes:
+            equivariance_mismatches += 1
+        if perm9_compose(perm9_compose(s, d), s) != perm9_inverse(d):
+            dihedral_failures += 1
+        if n > 1:
+            if d in scope9 or d in ext9:
+                inside += 1
+            else:
+                escapes += 1
+        cls = "ord=%d,fixed=%d" % (n, 9 * f)
+        by_class[cls] = by_class.get(cls, 0) + 1
+        if cls not in first_of_order:
+            first_of_order[cls] = qq
+        if qq == tuple(Q_COMPLETION):
+            declared_seen = True
+            declared_entry = {"order": n, "fixed_configurations": 9 * f,
+                              "the_defect_permutation": list(d)}
+    spectrum = sorted({(2 * n if n > 1 else 1) for n in by_order})
+    census = {
+        "the_declared_family":
+            "V = H . Q with Q a permutation of the nine system-pair indices "
+            "fixing the first, so that V's first column is psi for every "
+            "member",
+        "family_size": total,
+        "swept": "EXHAUSTIVE (every member)",
+        "members_by_the_order_of_the_defect":
+            {str(k): v for k, v in sorted(by_order.items())},
+        "members_by_the_fixed_configurations_of_the_defect":
+            {str(k): v for k, v in sorted(by_fixed.items())},
+        "geometry_bearing_members": total - equivariant,
+        "members_whose_defect_is_the_identity": equivariant,
+        "members_where_a_trivial_defect_and_an_equivariant_Q_disagree":
+            equivariance_mismatches,
+        "the_exceptions_are_exactly_the_exchange_equivariant_locus":
+            equivariance_mismatches == 0,
+        "members_where_the_dihedral_relation_fails": dihedral_failures,
+        "the_dihedral_relation_holds_at_every_member":
+            dihedral_failures == 0,
+        "the_predicted_holonomy_group_order_spectrum": spectrum,
+        "geometry_bearing_members_whose_defect_escapes_every_declared_"
+        "collection": escapes,
+        "geometry_bearing_members_whose_defect_lies_inside_a_declared_"
+        "collection": inside,
+        "scope_elements_that_act_on_the_system_pair_alone": len(scope9),
+        "extension_elements_that_act_on_the_system_pair_alone": len(ext9),
+        "the_declared_completion_is_a_member": declared_seen,
+        "the_declared_completions_entry":
+            declared_entry if declared_seen else None,
+        "the_measured_classes_of_the_family":
+            "one per (order of the defect, fixed configurations of the "
+            "defect); every class's lexicographically first member is "
+            "rebuilt in full below",
+        "class_sizes": {k: by_class[k] for k in sorted(by_class)},
+        "the_lexicographically_first_member_of_each_class":
+            {k: list(v) for k, v in sorted(first_of_order.items())}}
+    TABLES["completion_census"] = census
+    anchor("A14", "the frozen review panel's contributed census",
+           "the number of completions of the declared family whose defect "
+           "is the identity, and the number that bear geometry",
+           [96, 40224], [equivariant, total - equivariant])
+    anchor("A15", "the frozen review panel's contributed census",
+           "the distribution of the defect's fixed configurations over the "
+           "declared family",
+           {"9": 16704, "18": 11520, "27": 5376, "36": 4608, "45": 864,
+            "54": 1152, "81": 96},
+           {str(k): v for k, v in sorted(by_fixed.items())})
+    gate("GEN-COMPLETION-CENSUS", "measurement",
+         "THE COMPLETION FAMILY, SWEPT EXHAUSTIVELY.  The declared "
+         "completion is one member of a family the law above reduces to "
+         "9x9: V = H . Q with Q any permutation of the nine system-pair "
+         "indices fixing the first, so that every member has psi as its "
+         "first column.  The family's size is COMPUTED by enumeration, and "
+         "EVERY member is swept.  The gate measures five things that can "
+         "fail.  (1) The defect is the identity on exactly the members "
+         "whose Q COMMUTES with the system exchange -- the "
+         "exchange-EQUIVARIANT locus -- measured member by member, in both "
+         "directions.  (2) Geometry is therefore GENERIC in the family and "
+         "the equivariant locus is the exception, with both counts "
+         "computed.  (3) The dihedral relation sigma D sigma = D^-1 holds "
+         "at EVERY member, which is what makes the family dihedral: <W, D | "
+         "W^2 = D^n = 1, W D W = D^-1> with n the defect's order.  (4) The "
+         "defect of every geometry-bearing member lies OUTSIDE every "
+         "declared collection -- computed against the elements of the "
+         "declared scope and its extension that act on the system pair "
+         "alone, which are found by scanning the scopes and not assumed.  "
+         "(5) The pinned completion is measured to BE a member of the "
+         "family and its census entry -- the order of its defect and its "
+         "fixed-configuration count -- is measured to agree with the defect "
+         "measured on the base itself, so the census is tied to the base in "
+         "force and the `defect-order`, `anchor-completion` and "
+         "`completion-Q` mutants die here.  The isomorphism type of the "
+         "holonomy group is therefore COMPLETION-SELECTED, and every claim "
+         "about the type in this unit carries that scope tag",
+         census["the_declared_completion_is_a_member"]
+         and equivariance_mismatches == 0 and dihedral_failures == 0
+         and escapes > 0 and inside == 0
+         and equivariant > 0 and total - equivariant > equivariant
+         and declared_entry["fixed_configurations"]
+         == TABLES["mechanism"]["the_completions_non_equivariance_defect"]
+                  ["fixed_points"]
+         and declared_entry["order"]
+         == TABLES["mechanism"]["the_completions_non_equivariance_defect"]
+                  ["order"],
+         census)
+    return census, first_of_order
+
+
+def run_completion_rebuilds(first_of_order, hg):
+    """FULL REBUILDS on declared sub-families: the 28 members of the pinned
+    completion's own declared form (a single basis transposition), and the
+    lexicographically first member of every measured class, one class per
+    (order of the defect, fixed configurations of the defect).  Each is
+    rebuilt at the symmetric setting GP-E and at GP-A as the flat control --
+    the declared scope of the rebuild, printed."""
+    prog("the completion census: full rebuilds (the declared form, "
+         "then one per class)")
+    sym = [sp for sp in SETTING_ORDER if SETTINGS[sp][0] == SETTINGS[sp][1]]
+    flat = [sp for sp in SETTING_ORDER if SETTINGS[sp][0] != SETTINGS[sp][1]]
+    sps = [flat[0], sym[0]]
+    H = householder()
+    rows, split, mismatches = {}, {}, []
+    bound_reached = []
+    for i in range(1, NS * NS):
+        for j in range(i + 1, NS * NS):
+            qq = list(range(NS * NS))
+            qq[i], qq[j] = qq[j], qq[i]
+            qq = tuple(qq)
+            d = defect_permutation_of(qq)
+            n = perm9_order(d)
+            r = with_completion(completion_from(H, qq),
+                                settings=sps,
+                                bound=CLOSURE_BOUND)
+            got = r["holonomy_group_order_per_setting"][sym[0]]
+            want = 2 * n if n > 1 else 1
+            ab = r["holonomy_group_is_abelian_per_setting"][sym[0]]
+            nm = ("trivial" if got == 1
+                  else ("the Klein four-group" if got == 4 and ab
+                        else ("a non-abelian group of order %d" % got
+                              if not ab else "an abelian group of order %d"
+                              % got)))
+            split[nm] = split.get(nm, 0) + 1
+            rows["Q = (%d %d)" % (i, j)] = {
+                "the_order_of_the_defect": n,
+                "the_dihedral_prediction_for_the_group_order": want,
+                "the_measured_group_order_at_the_symmetric_setting": got,
+                "the_measured_group_order_at_the_flat_control":
+                    r["holonomy_group_order_per_setting"][flat[0]],
+                "abelian": ab,
+                "the_structure": nm,
+                "identification_links_at_the_symmetric_setting":
+                    r["identification_links_per_setting"][sym[0]]}
+            if got != want or r["holonomy_group_order_per_setting"][
+                    flat[0]] != 1:
+                mismatches.append("Q = (%d %d)" % (i, j))
+            if r["the_declared_closure_bound_was_reached"]:
+                bound_reached.append("Q = (%d %d)" % (i, j))
+    spot = {}
+    for cls in sorted(first_of_order,
+                      key=lambda k: (int(k.split(",")[0].split("=")[1]),
+                                     int(k.split(",")[1].split("=")[1]))):
+        qq = tuple(first_of_order[cls])
+        n = perm9_order(defect_permutation_of(qq))
+        r = with_completion(completion_from(H, qq), settings=sps,
+                            bound=CLOSURE_BOUND)
+        got = r["holonomy_group_order_per_setting"][sym[0]]
+        want = 2 * n if n > 1 else 1
+        spot[cls] = {
+            "Q": list(qq),
+            "the_order_of_the_defect": n,
+            "the_dihedral_prediction_for_the_group_order": want,
+            "the_measured_group_order_at_the_symmetric_setting": got,
+            "the_measured_group_order_at_the_flat_control":
+                r["holonomy_group_order_per_setting"][flat[0]],
+            "abelian": r["holonomy_group_is_abelian_per_setting"][sym[0]],
+            "element_orders":
+                r["holonomy_element_orders_per_setting"][sym[0]],
+            "value_set_size": r["value_set_size_per_setting"][sym[0]],
+            "the_value_set_is_closed_at_the_declared_bound":
+                r["the_value_set_is_closed_at_the_bound_per_setting"][
+                    sym[0]],
+            "the_defects_fixed_configurations":
+                r["the_completions_non_equivariance_defect"]["fixed_points"]}
+        if got != want:
+            mismatches.append(cls)
+        if r["the_declared_closure_bound_was_reached"]:
+            bound_reached.append(cls)
+    declared_row = rows.get("Q = (%d %d)"
+                            % (min(x for x in range(NS * NS)
+                                   if Q_COMPLETION[x] != x),
+                               max(x for x in range(NS * NS)
+                                   if Q_COMPLETION[x] != x)))
+    TABLES["completion_rebuilds"] = {
+        "the_rebuild_scope":
+            "each member is rebuilt in full at %s (symmetric) and at %s "
+            "(the flat control); the other four settings are not rebuilt "
+            "in this sweep; each rebuilt group is closed under a declared "
+            "bound of %d elements, and the sweep gates that the bound is "
+            "never reached" % (sym[0], flat[0], CLOSURE_BOUND),
+        "the_declared_closure_bound": CLOSURE_BOUND,
+        "members_where_the_declared_closure_bound_was_reached":
+            bound_reached,
+        "the_declared_form_sub_family":
+            "every Q that is a single transposition of the nine "
+            "system-pair indices fixing the first -- the pinned "
+            "completion's own declared form",
+        "sub_family_size": len(rows),
+        "per_member": rows,
+        "the_split_of_the_declared_form_sub_family": split,
+        "one_full_rebuild_per_measured_class": spot,
+        "the_class_rule":
+            "one class per (order of the defect, fixed configurations of "
+            "the defect); the lexicographically first member of each is "
+            "rebuilt",
+        "members_where_the_measured_group_order_differs_from_the_dihedral_"
+        "prediction": mismatches,
+        "the_declared_completions_own_row": declared_row}
+    anchor("A16", "the frozen review panel's contributed census",
+           "the split of the 28-member declared-form sub-family into flat, "
+           "Klein-four and non-abelian order-6 members",
+           [4, 12, 12],
+           [split.get("trivial", 0), split.get("the Klein four-group", 0),
+            split.get("a non-abelian group of order 6", 0)])
+    gate("GEN-COMPLETION-FAMILY-REBUILT", "measurement",
+         "THE FAMILY IS NOT ONLY COUNTED, IT IS REBUILT.  Two declared "
+         "sub-families are rebuilt IN FULL -- new completion, new admission "
+         "table, new graph, new path enumeration, new based holonomy -- at "
+         "the symmetric setting and at an asymmetric one as the flat "
+         "control.  (a) EVERY member of the pinned completion's own "
+         "declared form, a single transposition of the nine system-pair "
+         "indices: the sub-family's size is computed, and it splits into "
+         "flat members, members whose group is the Klein four-group, and "
+         "members whose group is NON-ABELIAN of order six -- so the "
+         "isomorphism type is selected inside the pinned completion's own "
+         "form, not only across the wider family.  (b) The "
+         "lexicographically first member of EVERY class measured by "
+         "the census, so the whole predicted spectrum is exhibited by "
+         "rebuild and not by extrapolation.  The gate measures that the "
+         "MEASURED based holonomy group order equals the DIHEDRAL "
+         "PREDICTION 2n at every rebuilt member with a nontrivial defect, "
+         "that it is trivial at the equivariant ones, that the flat control "
+         "setting is measured flat at every member, and that the pinned "
+         "completion's own rebuilt row reproduces the group order measured "
+         "on the base itself by the main enumeration.  A mutant that "
+         "perturbs the admission rule, the scopes, the path space or the "
+         "holonomy reading moves the rebuilds and must die here",
+         not mismatches and not bound_reached
+         and len(rows) > 0 and len(spot) > 0
+         and declared_row is not None
+         and declared_row["the_measured_group_order_at_the_symmetric_"
+                          "setting"] == hg[sym[0]]["generated_group_order"],
+         {"sub_family_size": len(rows),
+          "the_split_of_the_declared_form_sub_family": split,
+          "classes_rebuilt": sorted(spot),
+          "members_where_the_measured_group_order_differs_from_the_"
+          "dihedral_prediction": mismatches,
+          "members_where_the_declared_closure_bound_was_reached":
+              bound_reached,
+          "the_declared_completions_own_row": declared_row,
+          "the_group_order_measured_on_the_base_itself":
+              hg[sym[0]]["generated_group_order"],
+          "the_rebuild_scope": TABLES["completion_rebuilds"][
+              "the_rebuild_scope"]})
+    return rows, spot
+
+
+def run_connection_enumeration(graphs, values, hg):
+    """HOW MUCH OF THE CROSS-BASE AGREEMENT THE GRAPH AND THE GROUP EXPLAIN.
+
+    The holonomy of a based closed walk is fixed by the images of the
+    graph's independent cycles in the group.  This gauge-fixes the
+    connection on a spanning tree, measures that the model so obtained
+    reproduces the directly computed holonomy walk by walk, and then
+    enumerates EVERY assignment of the group's elements to the independent
+    cycles -- the complete space of connections on this graph with this
+    group -- and counts how many reproduce the measured class counts.
+
+    The setting is fixed BY DECLARATION -- the first symmetric member of
+    the declared family -- and never selected by the verdicts under audit
+    (RUNBOOK section 14 addendum)."""
+    sp = [s for s in SETTING_ORDER if SETTINGS[s][0] == SETTINGS[s][1]][0]
+    prog("the connection enumeration on the gauge-fixed graph (%s)" % sp)
+    G = graphs[sp]
+    base = ("F1", CHECKPOINTS[0])
+    # a spanning tree, by breadth-first search from the base node over the
+    # links in their own index order: a declared rule, not a choice
+    T = {base: sp_id()}
+    tree, frontier = set(), [base]
+    while frontier:
+        nxt = []
+        for node in frontier:
+            for (li, d, other) in sorted(G["adj"][node], key=lambda x: x[0]):
+                if other in T:
+                    continue
+                tree.add(li)
+                T[other] = mm(link_variable(sp, G["links"][li], d), T[node])
+                nxt.append(other)
+        frontier = nxt
+    cotree = [li for li in range(G["n_links"]) if li not in tree]
+    grp = {tuple(z) for z in hg[sp]["_group"]}
+    labels, outside_group, unreadable = {}, 0, 0
+    nodes_reached = len(T)
+    for li in range(G["n_links"]):
+        L = G["links"][li]
+        if L["a"] not in T or L["b"] not in T:
+            # the spanning tree did not reach this link's endpoints: the
+            # graph is not connected, so there is no gauge-fixing to do and
+            # the label is reported unreadable rather than invented
+            labels[li] = None
+            unreadable += 1
+            continue
+        g = mm(minv(T[L["b"]]), mm(link_variable(sp, L, +1), T[L["a"]]))
+        p, _s = signed_perm(g)
+        if p is None:
+            labels[li] = None
+            unreadable += 1
+            continue
+        t = tuple(p[j] for j in range(NC))
+        labels[li] = t
+        if t not in grp:
+            outside_group += 1
+    # the model, measured walk by walk against the direct computation
+    walks = [r for r in values[sp]
+             if r["start"] == base and r["end"] == base and r["len"]]
+    disagreements, checked, parvec = 0, 0, {}
+    measured_counts = {}
+    for r in walks:
+        acc = tuple(range(NC))
+        ok = True
+        for (li, d) in r["edges"]:
+            t = labels[li]
+            if t is None:
+                ok = False
+                break
+            acc = perm_compose(t if d > 0 else tuple(perm_inverse(list(t))),
+                               acc)
+        direct = holonomy_class_of_interned(r["A"])[0]
+        checked += 1
+        if not ok or direct is None or acc != direct:
+            disagreements += 1
+        if direct is not None:
+            measured_counts[direct] = measured_counts.get(direct, 0) + 1
+        par = tuple(sum(1 for (li, _d) in r["edges"] if li == c) % 2
+                    for c in cotree)
+        parvec[par] = parvec.get(par, 0) + 1
+    measured_profile = tuple(sorted(measured_counts.values()))
+    # the complete space of connections on this graph with this group
+    els = sorted(grp)
+    ident = tuple(range(NC))
+    profiles, hits, surjective, surjective_hits = {}, 0, 0, 0
+    space = len(els) ** len(cotree)
+    swept = space <= ENUMERATION_CAP
+    for assign in (itertools.product(range(len(els)), repeat=len(cotree))
+                   if swept else ()):
+        counts = {}
+        for par, n in parvec.items():
+            acc = ident
+            for k, c in enumerate(assign):
+                if par[k]:
+                    acc = perm_compose(els[c], acc)
+            counts[acc] = counts.get(acc, 0) + n
+        prof = tuple(sorted(counts.values()))
+        profiles[prof] = profiles.get(prof, 0) + 1
+        gen = {ident} | {els[c] for c in assign}
+        changed = True
+        while changed:
+            changed = False
+            for x in list(gen):
+                for y in list(gen):
+                    z = perm_compose(x, y)
+                    if z not in gen:
+                        gen.add(z)
+                        changed = True
+        onto = (len(gen) == len(grp))
+        surjective += 1 if onto else 0
+        if prof == measured_profile:
+            hits += 1
+            surjective_hits += 1 if onto else 0
+    TABLES["connection_enumeration"] = {
+        "setting": sp,
+        "spanning_tree_links": sorted(tree),
+        "nodes_reached_by_the_spanning_tree": nodes_reached,
+        "nodes_declared": len(NODES),
+        "independent_cycles": len(cotree),
+        "links_whose_gauge_fixed_label_is_unreadable": unreadable,
+        "links_whose_gauge_fixed_label_lies_outside_the_group":
+            outside_group,
+        "based_closed_walks_checked": checked,
+        "walks_where_the_cycle_model_disagrees_with_the_direct_holonomy":
+            disagreements,
+        "the_measured_class_counts": list(measured_profile),
+        "the_group_the_connection_takes_values_in": len(els),
+        "the_size_of_the_connection_space": space,
+        "the_connection_space_was_swept_exhaustively": swept,
+        "the_declared_enumeration_cap": ENUMERATION_CAP,
+        "connections_enumerated": space if swept else 0,
+        "distinct_class_count_profiles": len(profiles),
+        "connections_reproducing_the_measured_profile": hits,
+        "connections_whose_labels_generate_the_whole_group": surjective,
+        "of_those_reproducing_the_measured_profile": surjective_hits,
+        "the_most_common_profile":
+            ([list(max(profiles.items(), key=lambda kv: kv[1])[0]),
+              max(profiles.values())] if profiles else None)}
+    gate("GEN-CONNECTION-CLASS-COUNTS", "measurement",
+         "WHAT THE SHARED GRAPH AND THE SHARED GROUP DO NOT EXPLAIN.  The "
+         "class counts of the based closed walks are not a function of the "
+         "graph and the group alone, and this gate measures how far from it "
+         "they are.  First the connection is GAUGE-FIXED: a spanning tree "
+         "is grown from the base node by breadth-first search over the "
+         "links in their own index order, every link is relabelled by "
+         "conjugation with the tree transports, and the resulting labels "
+         "are measured to be signed permutations lying IN the measured "
+         "holonomy group -- so the connection really is a group-valued "
+         "connection on this graph.  Then the model is measured: the "
+         "holonomy of every based closed walk is measured equal, "
+         "permutation tuple by permutation tuple, to the ordered product of "
+         "those labels along the walk -- at every walk, which is what makes "
+         "the model a measurement and not an assumption.  Finally EVERY "
+         "assignment of the group's elements to the independent cycles is "
+         "enumerated -- the complete connection space, its size computed -- "
+         "and the number reproducing the measured class counts is counted.  "
+         "It is a small fraction, and it is printed: an isomorphic graph "
+         "and an isomorphic group therefore do NOT determine these counts, "
+         "so an agreement of class counts across two bases records "
+         "something the graph and the group do not, and this unit registers "
+         "that as an open question rather than explaining it away.  The "
+         "`path-collapse` mutant makes the holonomies unreadable and must "
+         "die at the model clause",
+         unreadable == 0 and outside_group == 0 and disagreements == 0
+         and checked > 0 and swept and hits > 0 and hits < space
+         and len(els) > 1 and nodes_reached == len(NODES),
+         TABLES["connection_enumeration"])
+    return TABLES["connection_enumeration"]
+
+
+def run_family_probe():
+    """THE MEASUREMENT FAMILY, FLIPPED.  The declared six-setting family is
+    a free declaration; this measures whether the holonomy at a symmetric
+    setting depends on WHICH rotation the two wings share, by adding two
+    further symmetric settings -- one on a declared rotation the family
+    already contains, one on a FRESH integer quaternion -- and re-measuring.
+    Folded into no verdict."""
+    global SETTINGS, SETTING_ORDER, ROT, _FIXTURE, _INTERN, _INTERN_VALUE
+    global _HOL_CLASS
+    prog("the measurement-family probe (two further symmetric settings)")
+    keepS, keepO, keepR = dict(SETTINGS), list(SETTING_ORDER), dict(ROT)
+    keepF, keepI = _FIXTURE, _INTERN
+    keepIV, keepH = _INTERN_VALUE, _HOL_CLASS
+    QUATERNIONS["R3"] = (4, 1, 2, 0)
+    try:
+        ROT = dict(ROT)
+        ROT["R3"] = rotation("R3")
+        r3_orth = all(sum((ROT["R3"][i][a] * ROT["R3"][i][b]
+                           for i in range(NS)), ZERO)
+                      == (ONE if a == b else ZERO)
+                      for a in range(NS) for b in range(NS))
+        SETTINGS = dict(SETTINGS)
+        SETTINGS["GP-G"] = ("R2", "R2")
+        SETTINGS["GP-H"] = ("R3", "R3")
+        SETTING_ORDER = list(SETTING_ORDER) + ["GP-G", "GP-H"]
+        _FIXTURE, _INTERN, _INTERN_VALUE, _HOL_CLASS = {}, {}, {}, {}
+        pref = prefix_profile()
+        rows = {}
+        for sp in ("GP-E", "GP-G", "GP-H"):
+            G = build_graph(sp, pref)
+            vals = enumerate_paths(sp, G, L_MAX)
+            h = based_holonomy(sp, {sp: vals})
+            base = ("F1", CHECKPOINTS[0])
+            counts = {}
+            for r in vals:
+                if r["start"] == base and r["end"] == base and r["len"]:
+                    t = holonomy_class_of_interned(r["A"])[0]
+                    if t is not None:
+                        counts[t] = counts.get(t, 0) + 1
+            rows[sp] = {"wings": list(SETTINGS[sp]),
+                        "identification_links":
+                            sum(1 for L in G["links"] if L["kind"] == "id"),
+                        "generated_group_order": h["generated_group_order"],
+                        "abelian": h["the_group_is_abelian"],
+                        "element_orders": h["element_orders"],
+                        "class_counts_at_the_base_point":
+                            sorted(counts.values()),
+                        "closed_paths_at_the_base_point":
+                            h["closed_paths_based_there"]}
+    finally:
+        SETTINGS, SETTING_ORDER, ROT = keepS, keepO, keepR
+        QUATERNIONS.pop("R3", None)
+        _FIXTURE, _INTERN = keepF, keepI
+        _INTERN_VALUE, _HOL_CLASS = keepIV, keepH
+    same = (len({r["generated_group_order"] for r in rows.values()}) == 1
+            and len({tuple(r["class_counts_at_the_base_point"])
+                     for r in rows.values()}) == 1)
+    TABLES["family_probe"] = {
+        "the_added_settings":
+            "GP-G shares the declared rotation R2 on both wings; GP-H "
+            "shares a rotation built from the FRESH integer quaternion "
+            "(4, 1, 2, 0), which is not in the declared family at all",
+        "the_fresh_rotation_is_exactly_orthogonal": r3_orth,
+        "per_setting": rows,
+        "the_group_and_the_class_counts_are_the_same_at_every_symmetric_"
+        "setting": same}
+    gate("GEN-FAMILY-PROBE", "disclosure",
+         "WHAT THE MEASUREMENT FAMILY DECIDES, MEASURED.  The six-setting "
+         "family is a free declaration, so this disclosure measures what "
+         "depends on it.  Two FURTHER symmetric settings are built and the "
+         "base is re-enumerated on them: one sharing a rotation the "
+         "declared family already contains, one sharing a rotation built "
+         "from a fresh integer quaternion that is not in the declared "
+         "family at all and is measured exactly orthogonal.  At all three "
+         "symmetric settings the based holonomy group and the class counts "
+         "are measured IDENTICAL.  So the measurement family is measured "
+         "INERT for the geometry: the holonomy at a symmetric setting does "
+         "not depend on which rotation the two wings share.  The "
+         "measurement is folded into no verdict; it is what entitles this "
+         "unit to say which of its declared coordinates do work",
+         True, TABLES["family_probe"])
+    return TABLES["family_probe"]
 
 
 def run_scope_disclosure(pref):
@@ -2758,84 +3998,257 @@ def run_comparison(hg, D, subs, esc, nontrivial, struct, ps):
             ntsub["SP-E/REAL"]["generated_group_order"]])
 
     sym = sorted(nontrivial)
+    # The first base's own DECLARED arena, read from its receipt rather than
+    # typed here, and anchored (A17).
+    nta = nt["tables"]["declarations"]["arena"]
+    anchor("A17", "the committed NT terminal receipt",
+           "the first base's declared arena: carrier, settings, declared "
+           "relabelling scope, admitted set and admitted extension",
+           [36, 6, 72, 2, 8],
+           [nta["carrier"], nta["settings"], nta["declared_permutation_"
+                                                 "scope"],
+            nta["admitted_permutation_group"], nta["admitted_extension"]])
+    # The first base's group STRUCTURE is not typed either: it is named by
+    # THIS unit's own naming rule, applied to the properties its receipt
+    # reports (order, abelian, element orders squaring to the identity).
+    nt_struct = ("the Klein four-group"
+                 if (ntg["generated_group_order"] == 4
+                     and ntg["the_group_is_abelian"]
+                     and ntg["every_element_squares_to_the_identity"])
+                 else "a group of order %d" % ntg["generated_group_order"])
+    nt_defect = nt["tables"]["mechanism"]["the_prep_leg_defect_element"][
+        "SP-E"]["name"]
+    nt_halves = [k for k in nts["factor_fixed_points"]
+                 if k != "the wing exchange"]
     rows = {
-        "carrier": {"first base": 36, "base G": NC},
-        "system dimension per wing": {"first base": 2, "base G": NS},
-        "outcomes per measurement": {"first base": 2, "base G": NS},
+        "carrier": {"first base": nta["carrier"], "base G": NC,
+                    "first base read from": "the NT receipt (A17)"},
+        "system dimension per wing":
+            {"first base": 2, "base G": NS,
+             "first base read from": "DECLARED HERE: the NT receipt carries "
+                                     "no such field"},
+        "outcomes per measurement":
+            {"first base": 2, "base G": NS,
+             "first base read from": "DECLARED HERE: the NT receipt carries "
+                                     "no such field"},
         "arithmetic": {"first base": "the quartic field Q(cos pi/8)",
-                       "base G": "the rationals Q"},
+                       "base G": "the rationals Q",
+                       "first base read from":
+                           "DECLARED HERE: the NT receipt carries no such "
+                           "field"},
         "preparation vector under the wing exchange":
             {"first base": "ANTI-invariant (the singlet)",
-             "base G": "invariant"},
+             "base G": "invariant",
+             "first base read from": "DECLARED HERE: the NT receipt carries "
+                                     "no such field"},
         "preparation Schmidt rank":
             {"first base": 2,
-             "base G": TABLES["base_declaration"]["psi_schmidt_rank"]},
-        "settings": {"first base": 6, "base G": len(SETTING_ORDER)},
-        "symmetric settings": {"first base": 2,
-                               "base G": len([s for s in SETTING_ORDER
-                                              if SETTINGS[s][0]
-                                              == SETTINGS[s][1]])},
-        "declared relabelling scope": {"first base": 72,
-                                       "base G": SCOPE["n_base"]},
-        "admitted after the j0 filter": {"first base": 2,
-                                         "base G": SCOPE["n_admitted"]},
-        "admitted at the extension": {"first base": 8,
-                                      "base G":
-                                          SCOPE["n_admitted_extension"]},
+             "base G": TABLES["base_declaration"]["psi_schmidt_rank"],
+             "first base read from": "DECLARED HERE: the NT receipt carries "
+                                     "no such field"},
+        "settings": {"first base": nta["settings"],
+                     "base G": len(SETTING_ORDER),
+                     "first base read from": "the NT receipt (A17)"},
+        "symmetric settings":
+            {"first base": 2,
+             "base G": len([s for s in SETTING_ORDER
+                            if SETTINGS[s][0] == SETTINGS[s][1]]),
+             "first base read from": "DECLARED HERE: the NT receipt carries "
+                                     "no such field"},
+        "declared relabelling scope":
+            {"first base": nta["declared_permutation_scope"],
+             "base G": SCOPE["n_base"],
+             "first base read from": "the NT receipt (A17)"},
+        "admitted after the j0 filter":
+            {"first base": nta["admitted_permutation_group"],
+             "base G": SCOPE["n_admitted"],
+             "first base read from": "the NT receipt (A17)"},
+        "admitted at the extension":
+            {"first base": nta["admitted_extension"],
+             "base G": SCOPE["n_admitted_extension"],
+             "first base read from": "the NT receipt (A17)"},
         "total reduced paths": {"first base": ntp["_total_paths"],
-                                "base G": ps["_total_paths"]},
+                                "base G": ps["_total_paths"],
+                                "first base read from":
+                                    "the NT receipt (A11)"},
         "path pairs sharing both endpoints":
-            {"first base": ntp["_total_pairs"], "base G": ps["_total_pairs"]},
+            {"first base": ntp["_total_pairs"], "base G": ps["_total_pairs"],
+             "first base read from": "the NT receipt (A11)"},
         "holonomy group order at a symmetric setting":
             {"first base": ntg["generated_group_order"],
-             "base G": hg[sym[0]]["generated_group_order"] if sym else 1},
+             "base G": hg[sym[0]]["generated_group_order"] if sym else 1,
+             "first base read from": "the NT receipt (A08)"},
         "holonomy group structure":
-            {"first base": "the Klein four-group",
-             "base G": struct[sym[0]] if sym else "trivial"},
+            {"first base": nt_struct,
+             "base G": struct[sym[0]] if sym else "trivial",
+             "first base read from":
+                 "the NT receipt, named by this unit's own naming rule "
+                 "from the order, the element orders and abelianness it "
+                 "reports"},
         "value set closed at the declared bound":
             {"first base": ntg["the_value_set_is_closed_under_composition"],
              "base G": (hg[sym[0]]["the_value_set_is_closed_under_"
-                                   "composition"] if sym else None)},
+                                   "composition"] if sym else None),
+             "first base read from": "the NT receipt (A09)"},
         "elements outside every declared collection":
             {"first base": nts["elements_outside_every_declared_scope"]
                               ["SP-E"],
              "base G": (sum(1 for r in esc[sym[0]].values()
                             if not r["in_the_declared_relabelling_scope"]
                             and not r["in_the_declared_extension_scope"])
-                        if sym else 0)},
-        "the preparation defect element":
-            {"first base": "the qubit-only wing swap (a half of the wing "
-                           "exchange)",
-             "base G": D["name"]},
-        "the defect is one half of the wing exchange":
-            {"first base": True,
+                        if sym else 0),
+             "first base read from": "the NT receipt (A10)"},
+        "the second generator of the holonomy group":
+            {"first base": nt_defect, "base G": D["name"],
+             "first base read from": "the NT receipt"},
+        "the second generator is one half of the wing exchange":
+            {"first base": nt_defect in nt_halves,
              "base G": bool(D["equals_the_system_only_exchange"]
-                            or D["equals_the_pointer_only_exchange"])},
+                            or D["equals_the_pointer_only_exchange"]),
+             "first base read from":
+                 "the NT receipt: its defect's name against its own two "
+                 "wing-exchange factors"},
         "realized-rule sub-connection: closed paths at the base point":
             {"first base": ntsub["SP-E/REAL"]["closed_paths_at_F1_t0"],
              "base G": (subs["%s/REAL" % sym[0]]
-                        ["closed_paths_at_the_base_point"] if sym else 0)},
+                        ["closed_paths_at_the_base_point"] if sym else 0),
+             "first base read from": "the NT receipt (A12)"},
         "realized-rule sub-connection: generated group order":
             {"first base": ntsub["SP-E/REAL"]["generated_group_order"],
              "base G": (subs["%s/REAL" % sym[0]]["generated_group_order"]
-                        if sym else 1)},
+                        if sym else 1),
+             "first base read from": "the NT receipt (A12)"},
     }
+    # WHY EACH AGREEMENT AGREES.  Declared per row, so that the twelve
+    # agreements are not read as twelve independent confirmations.
+    PROVENANCE = {
+        "settings": "a copied design choice",
+        "symmetric settings": "a copied design choice",
+        "admitted after the j0 filter": "a consequence of the scope design",
+        "admitted at the extension": "a consequence of the scope design",
+        "total reduced paths": "graph combinatorics",
+        "path pairs sharing both endpoints": "graph combinatorics",
+        "realized-rule sub-connection: closed paths at the base point":
+            "graph combinatorics",
+        "holonomy group order at a symmetric setting": "geometry",
+        "holonomy group structure":
+            "geometry, at the declared completion (the type is "
+            "completion-selected: GEN-COMPLETION-CENSUS)",
+        "value set closed at the declared bound": "geometry",
+        "elements outside every declared collection": "geometry",
+        "realized-rule sub-connection: generated group order": "geometry",
+    }
+    for k, v in rows.items():
+        if v["first base"] == v["base G"]:
+            v["agrees because"] = PROVENANCE.get(k, "unclassified")
+    kinds = {}
+    for k, v in rows.items():
+        if v["first base"] == v["base G"]:
+            kinds[v["agrees because"].split(",")[0]] = kinds.get(
+                v["agrees because"].split(",")[0], 0) + 1
+    # THE CROSS-BASE CONNECTION COMPARISON, registered OPEN: the two bases'
+    # admission tables are compared cell for cell in the PERMUTATION each
+    # rule draws, which is the datum the class counts turn on.
+    ntm = nt["tables"]["mechanism"]["identification_multiplicity"]
+    ntorder = sorted({k.split("/")[0] for k in ntm})
+    cells, agree_cells = 0, 0
+    for i, sp in enumerate(SETTING_ORDER):
+        if i >= len(ntorder):
+            break
+        for t in CHECKPOINTS:
+            key_g = "%s/t%d" % (sp, t)
+            key_n = "%s/t%d" % (ntorder[i], t)
+            if key_n not in ntm or key_g not in TABLES["admission"][
+                    "per_cell"]:
+                continue
+            g_cell = TABLES["admission"]["per_cell"][key_g]
+            g_maps = {r["id"]: (g_cell[r["id"]]["maps"][0]
+                                if g_cell[r["id"]]["drawn"] else None)
+                      for r in ID_RULES}
+            n_counts = ntm[key_n]["admitted_count_per_rule"]
+            n_maps_list = ntm[key_n]["admitted_maps"]
+            n_maps = {}
+            for r in ID_RULES:
+                if n_counts.get(r["id"]) == 1:
+                    n_maps[r["id"]] = (
+                        "the identity" if r["id"] == "FULL"
+                        and "the identity" in n_maps_list
+                        else ("the wing exchange"
+                              if "the wing exchange" in n_maps_list
+                              else None))
+                else:
+                    n_maps[r["id"]] = None
+            cells += 1
+            if g_maps == n_maps:
+                agree_cells += 1
+    TABLES["cross_base_connection"] = {
+        "what_is_compared":
+            "the permutation each gluing rule draws, cell for cell, at "
+            "matched (setting index, checkpoint) coordinates",
+        "cells_compared": cells,
+        "cells_where_the_two_bases_draw_the_same_permutation_per_rule":
+            agree_cells,
+        "status": "OPEN: the agreement of the class counts across the two "
+                  "bases is not explained by the shared graph and the "
+                  "shared group (GEN-CONNECTION-CLASS-COUNTS); this "
+                  "cell-for-cell agreement is the further structure the two "
+                  "bases share, and this unit registers it as an open "
+                  "question rather than as a mechanism"}
     TABLES["comparison_with_the_first_base"] = rows
+    TABLES["comparison_provenance"] = {
+        "agreements_by_kind": kinds,
+        "differing_coordinates": [k for k, v in rows.items()
+                                  if v["first base"] != v["base G"]],
+        "the_coordinates_measured_to_carry_the_result": [
+            "the preparation's Born-shadow symmetry type (it decides "
+            "whether the wing exchange can be a co-reference at all: "
+            "GEN-COMPLETION-IS-LOAD-BEARING)",
+            "the declared completion (it decides the defect and with it "
+            "the group: GEN-DEFECT-LAW, GEN-COMPLETION-CENSUS)"],
+        "coordinates_measured_INERT_for_the_geometry": [
+            "which rotation the two wings share at a symmetric setting "
+            "(GEN-FAMILY-PROBE)",
+            "the preparation vector itself, beyond its symmetry type, at "
+            "a fixed completion (GEN-DEFECT-LAW)"],
+        "the_rest":
+            "the remaining differing coordinates -- the carrier size, the "
+            "system dimension, the outcome count, the Schmidt rank and the "
+            "scope size -- are not separately varied by this unit; they "
+            "enter the elements' fixed-point counts, and no inertness is "
+            "claimed for them",
+        "differing_coordinates_that_are_not_one_of_the_two_carrying_ones":
+            len([k for k, v in rows.items()
+                 if v["first base"] != v["base G"]]) - 2}
     gate("GEN-COMPARISON", "measurement",
          "THE COMPARISON WITH THE FIRST BASE, COORDINATE BY COORDINATE, "
-         "WITH THE FIRST BASE'S NUMBERS ANCHORED EXIT-1 AGAINST ITS "
-         "COMMITTED TERMINAL RECEIPT (A08-A12).  Nothing of the first "
-         "base's MODEL is imported by this unit -- no fixture, no operator, "
-         "no permutation -- and the only thing read from it is its receipt's "
-         "reported numbers, which are anchored so that a drift in either "
-         "kills the run.  The gate measures that the two bases genuinely "
-         "DIFFER in their flesh: the carrier, the system dimension, the "
-         "number of outcomes, the arithmetic and the preparation's "
-         "behaviour under the wing exchange are all measured different, so "
-         "the comparison is between two bases and not between a base and "
-         "itself.  The `anchor-nt` mutant perturbs a reused first-base "
+         "SPLIT INTO WHAT IS READ FROM ITS COMMITTED TERMINAL RECEIPT AND "
+         "WHAT IS DECLARED HERE.  Nothing of the first base's MODEL is "
+         "imported by this unit -- no fixture, no operator, no permutation "
+         "-- and the only thing read from it is its receipt's reported "
+         "numbers, which are anchored exit-1 so that a drift in either "
+         "kills the run (A08-A12, A17).  Fifteen of the twenty-one rows now "
+         "READ the first base's value from that receipt, including its "
+         "declared arena, its defect's own name, and its group STRUCTURE, "
+         "which is not typed but NAMED by this unit's own naming rule from "
+         "the order, element orders and abelianness the receipt reports.  "
+         "The remaining six -- the system dimension, the outcome count, the "
+         "arithmetic, the preparation vector's behaviour under the wing "
+         "exchange, its Schmidt rank and the symmetric-setting count -- are "
+         "DECLARED HERE and marked as declared in the table itself, because "
+         "the first base's receipt carries no such field; they are "
+         "disclosures, not anchors.  EVERY AGREEMENT CARRIES ITS "
+         "PROVENANCE: agreements are classified, in the table, as copied "
+         "design choices, as consequences of the scope design, as graph "
+         "combinatorics, or as geometry, and the counts are computed -- so "
+         "the twelve agreements are not read as twelve independent "
+         "confirmations.  The gate measures that the two bases genuinely "
+         "DIFFER in their flesh, so the comparison is between two bases and "
+         "not between a base and itself, and that every agreement is "
+         "classified.  The `anchor-nt` mutant perturbs a reused first-base "
          "value and must die here",
          NC != 36 and NS != 2 and SCOPE["n_base"] != 72
+         and all(v.get("agrees because", "x") != "unclassified"
+                 for v in rows.values())
          and all(a["passed"] for a in ANCHORS if a["id"].startswith("A0")
                  or a["id"].startswith("A1")),
          {"differing_coordinates":
@@ -2844,6 +4257,16 @@ def run_comparison(hg, D, subs, esc, nontrivial, struct, ps):
           "agreeing_coordinates":
               [k for k, v in rows.items()
                if v["first base"] == v["base G"]],
+          "agreements_by_kind": kinds,
+          "rows_whose_first_base_value_is_read_from_the_NT_receipt":
+              sum(1 for v in rows.values()
+                  if not v["first base read from"].startswith("DECLARED")),
+          "rows_whose_first_base_value_is_declared_here":
+              sum(1 for v in rows.values()
+                  if v["first base read from"].startswith("DECLARED")),
+          "what_carries_the_result": TABLES["comparison_provenance"],
+          "the_cross_base_connection_comparison":
+              TABLES["cross_base_connection"],
           "table": rows})
     return rows
 
@@ -2870,39 +4293,77 @@ def run_read_time(values, agg):
                     cross += 1
                 if a[1] == b[1] and seen[a] == seen[b]:
                     same += 1
-    mismatched = 0
+    # Is the read-time coordinate doing separating work on this base, or is
+    # it determined by the endpoint?  MEASURED over every enumerated path:
+    # the read time carried inside the L datum against the checkpoint of the
+    # node the path ends at.
+    carried = agreed = obstructed = 0
     for sp in SETTING_ORDER:
         for r in values[sp]:
-            if r["start"][1] != r["end"][1] and r["start"] == r["end"]:
-                mismatched += 1
+            v = r["L"]
+            if not isinstance(v, int) or v not in _INTERN_VALUE:
+                obstructed += 1
+                continue
+            key = _INTERN_VALUE[v]
+            carried += 1
+            if key[0] == "L" and key[1] == r["end"][1]:
+                agreed += 1
     TABLES["read_time"] = {
         "law_data_read_at_different_checkpoints_that_compare_equal": cross,
         "law_data_read_at_the_same_checkpoint_that_compare_equal": same,
-        "path_pairs_in_the_matched_table_read_at_different_checkpoints":
-            mismatched,
-        "the_matched_table_pairs_only_paths_sharing_both_endpoints": True}
+        "the_matched_table_pairs_only_paths_sharing_both_endpoints": True,
+        "paths_whose_carried_read_time_equals_the_endpoint_checkpoint":
+            agreed,
+        "paths_carrying_a_readable_law_datum": carried,
+        "paths_whose_law_datum_is_obstructed_or_collapsed": obstructed}
     gate("GEN-READ-TIME-COORDINATE", "measurement",
          "THE READ TIME IS A DECLARED COORDINATE OF EVERY NODE AND OF THE "
          "LAW DATUM (RUNBOOK section 15 addendum), AND THE MATCHED TABLE "
-         "READS EVERY CONTRAST AT MATCHED COORDINATES.  Two clauses.  (1) "
-         "No two law data read at DIFFERENT checkpoints compare equal -- "
-         "measured over every pair of the declared nodes at every setting; "
-         "the count is gated at zero, and it can fail, because it is the "
-         "checkpoint tag inside the datum that makes it zero.  (2) Every "
-         "pair in the matched table shares BOTH endpoints, so both members "
-         "are read at the same coordinate; the count of pairs whose two "
-         "endpoints carry different read times is gated at zero.  The "
+         "READS EVERY CONTRAST AT MATCHED COORDINATES.  ONE MUST-PASS "
+         "CLAUSE, and it can fail: no two law data read at DIFFERENT "
+         "checkpoints compare equal -- measured over every pair of the "
+         "declared nodes at every setting, the count gated at zero, with "
+         "the count of pairs read at the SAME checkpoint that do compare "
+         "equal gated positive so the zero is not the zero of an empty "
+         "comparison.  It is the checkpoint tag inside the datum that "
+         "makes the first count zero.  The former second clause -- that no "
+         "pair of the matched table carries different read times at its two "
+         "endpoints -- is WITHDRAWN from the predicate: the matched table "
+         "is grouped BY endpoint pair, so that count could not be nonzero "
+         "for any input, mutated or not, and a clause that cannot fail is a "
+         "disclosure and not a gate (GEN-READ-TIME-FORCED).  The "
          "`readtime-conflate` mutant reads every node datum at the final "
          "checkpoint, which makes law data at different checkpoints compare "
-         "equal, and must die at clause (1)",
-         cross == 0 and mismatched == 0 and same > 0,
+         "equal, and must die here",
+         cross == 0 and same > 0,
          {"law_data_read_at_different_checkpoints_that_compare_equal": cross,
           "law_data_read_at_the_same_checkpoint_that_compare_equal": same,
-          "matched_table_pairs_read_at_different_checkpoints": mismatched,
           "aggregate_pair_table": {o: {c: {"agree": agg[o][c][0],
                                            "disagree": agg[o][c][1]}
                                        for c in ("aligned", "crossing")}
                                    for o in ("L", "A")}})
+    gate("GEN-READ-TIME-FORCED", "disclosure",
+         "WHAT THE READ-TIME COORDINATE DOES ON THIS BASE, MEASURED AND "
+         "DISCLOSED.  The matched table pairs only paths sharing BOTH "
+         "endpoints, so matched coordinates there are STRUCTURAL -- a "
+         "consequence of how the table is grouped, not a measurement -- and "
+         "the corresponding count is reported here rather than gated.  "
+         "Measured over every enumerated path that carries a readable law "
+         "datum: the read time carried INSIDE the datum equals the "
+         "checkpoint of the node the path ends at, at every one of them.  "
+         "So on this base the coordinate is a FUNCTION OF THE ENDPOINT, and "
+         "the discipline it enforces is satisfied structurally here; the "
+         "must-pass content is the node-level clause of "
+         "GEN-READ-TIME-COORDINATE, whose zero is what the tag buys, and "
+         "the `readtime-conflate` mutant is what gives that clause its "
+         "teeth",
+         True,
+         {"paths_whose_carried_read_time_equals_the_endpoint_checkpoint":
+              agreed,
+          "paths_carrying_a_readable_law_datum": carried,
+          "paths_whose_law_datum_is_obstructed_or_collapsed": obstructed,
+          "the_coordinate_is_a_function_of_the_endpoint_on_this_base":
+              carried > 0 and agreed == carried})
 
 
 def run_verdict(nontrivial, struct, comparison):
@@ -2923,29 +4384,56 @@ def run_verdict(nontrivial, struct, comparison):
     if not pg.get("GEN-P1-NONTRIVIAL-HOLONOMY", False):
         verdict = "GEN-STRUCTURE-ABSENT"
     elif not failed:
-        verdict = "GEN-STRUCTURE-REPRODUCES"
+        verdict = "GEN-STRUCTURE-REPRODUCES" + QUALIFIER
     else:
         verdict = "GEN-STRUCTURE-VARIES-<%s>" % ", ".join(failed)
     if MUTANT == "verdict-lax":
         verdict = "GEN-UNDECIDED"
     FINDINGS["unit_verdict"] = verdict
+    FINDINGS["the_verdicts_declared_scope"] = SCOPE_CLAUSES
     FINDINGS["pattern_gates"] = {g: pg.get(g, False) for g in order}
     FINDINGS["computed_differences_from_the_first_base"] = diffs
+    # THE SECOND CONJUNCT, MADE REAL: the verdict is re-derived here from
+    # the recorded gate results -- read out of the receipt's own gate list,
+    # not from the caller's arguments -- and compared with the string that
+    # was emitted.  A waiver that overwrites the emitted string is caught by
+    # this comparison and not only by the vocabulary check.
+    recorded = {x["id"]: x["passed"] for x in GATES
+                if x["id"].startswith("GEN-P") and x["class"] != "disclosure"
+                and x["id"] in order}
+    if not recorded.get("GEN-P1-NONTRIVIAL-HOLONOMY", False):
+        rederived = "GEN-STRUCTURE-ABSENT"
+    elif all(recorded.get(g, False) for g in order):
+        rederived = "GEN-STRUCTURE-REPRODUCES" + QUALIFIER
+    else:
+        rederived = "GEN-STRUCTURE-VARIES-<%s>" % ", ".join(
+            [g for g in order if not recorded.get(g, False)])
     gate("GEN-VOCABULARY", "derivation",
          "THE VERDICT IS DRAWN FROM THE PIN'S PRE-REGISTERED VOCABULARY AND "
          "FROM NOTHING ELSE, AND IT IS DERIVED FROM THE FIVE PATTERN GATES "
          "BY A PRE-REGISTERED RULE: ABSENT if P1 fails; REPRODUCES if all "
          "five pattern gates pass; VARIES, with the failing patterns named "
          "in the tag, otherwise; BLOCKED where a census cannot be posed.  "
-         "The gate measures that the emitted verdict begins with one of the "
-         "pre-registered names and that it is the one the rule selects from "
-         "the recorded gate results.  Reproduction of the PATTERNS is what "
+         "The outcome name is pre-registered and the QUALIFIER states the "
+         "scope the pin itself declares to be arena data -- the completion "
+         "-- in the UNIT-OUTCOME-QUALIFIER form the vocabulary permits; no "
+         "verdict name is invented.  TWO CLAUSES.  (1) The emitted verdict "
+         "begins with one of the pre-registered names.  (2) The emitted "
+         "verdict is RE-DERIVED inside this gate from the pattern gates as "
+         "they were RECORDED in this receipt's own gate list -- not from "
+         "the arguments the verdict routine was called with -- and the two "
+         "strings are measured equal, so a verdict that did not come from "
+         "the rule is caught here.  Reproduction of the PATTERNS is what "
          "the verdict reports; the computed DIFFERENCES between the two "
          "bases are reported beside it and never averaged into it.  The "
          "`verdict-lax` waiver emits an out-of-vocabulary tag and must die "
-         "here",
-         any(verdict.startswith(x) for x in PREREGISTERED),
+         "at both clauses",
+         any(verdict.startswith(x) for x in PREREGISTERED)
+         and verdict == rederived,
          {"unit_verdict": verdict,
+          "the_verdict_re_derived_from_the_recorded_gate_results": rederived,
+          "the_two_agree": verdict == rederived,
+          "the_verdicts_declared_scope": SCOPE_CLAUSES,
           "pattern_gates": {g: pg.get(g, False) for g in order},
           "patterns_that_failed": failed,
           "computed_differences_from_the_first_base": diffs})
@@ -2961,28 +4449,78 @@ def run_exemption_sweep():
     the global MUTANT against anything with `!=` -- the exemption pattern --
     anywhere in the source, gate or not."""
     src = Path(__file__).resolve().read_text()
-    found = []
-    for node in ast.walk(ast.parse(src)):
+    tree = ast.parse(src)
+    found, wider = [], {"MUTANT != ...": [], "MUTANT not in ...": [],
+                        "MUTANT is not ...": [], "not (MUTANT == ...)": []}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+            for sub in ast.walk(node.operand):
+                if (isinstance(sub, ast.Compare)
+                        and any(isinstance(x, ast.Name) and x.id == "MUTANT"
+                                for x in [sub.left] + list(sub.comparators))
+                        and any(isinstance(op, ast.Eq) for op in sub.ops)):
+                    wider["not (MUTANT == ...)"].append(node.lineno)
         if not isinstance(node, ast.Compare):
             continue
         names = [node.left] + list(node.comparators)
         touches = any(isinstance(x, ast.Name) and x.id == "MUTANT"
                       for x in names)
-        if touches and any(isinstance(op, ast.NotEq) for op in node.ops):
+        if not touches:
+            continue
+        if any(isinstance(op, ast.NotEq) for op in node.ops):
             found.append(node.lineno)
+            wider["MUTANT != ..."].append(node.lineno)
+        if any(isinstance(op, ast.NotIn) for op in node.ops):
+            wider["MUTANT not in ..."].append(node.lineno)
+        if any(isinstance(op, ast.IsNot) for op in node.ops):
+            wider["MUTANT is not ..."].append(node.lineno)
+    # THE DIRECT STATEMENT OF THE HEADLINE: walk the argument expressions of
+    # every gate() and anchor() call site and count any reference to the
+    # mutant flag anywhere inside them.
+    call_sites, reaching = 0, []
+    for node in ast.walk(tree):
+        if (isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                and node.func.id in ("gate", "anchor")):
+            call_sites += 1
+            for arg in list(node.args) + [k.value for k in node.keywords]:
+                for sub in ast.walk(arg):
+                    if isinstance(sub, ast.Name) and sub.id == "MUTANT":
+                        reaching.append(node.lineno)
+                        break
     if MUTANT == "exempt-lax":
         found.append(0)
+        wider["MUTANT != ..."].append(0)
+    outside_gates = {k: sorted(set(v) - set(reaching))
+                     for k, v in wider.items()}
     gate("GEN-NO-MUTANT-EXEMPTION", "derivation",
          "NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 "
-         "addendum).  An AST sweep of this module counts every `MUTANT != "
-         "...` comparison anywhere in the source -- the pattern by which a "
-         "gate can exempt its own falsifier -- and the gate measures that "
-         "count to be ZERO.  Every mutation in this instrument is injected "
-         "where the computation happens, and every declared falsifier dies "
-         "by a gate's own predicate evaluated blind.  The `exempt-lax` "
-         "mutant registers one such comparison and must die here",
-         not found,
-         {"mutant_exemption_comparisons": found,
+         "addendum), MEASURED AS THE HEADLINE SAYS IT.  Two clauses, both "
+         "from an AST sweep of this module's own source.  (1) THE DIRECT "
+         "STATEMENT: every `gate(...)` and `anchor(...)` call site is "
+         "found, its argument expressions are walked to any depth, and the "
+         "number of call sites reaching the mutant flag at all -- in a "
+         "predicate, a claim string or a value expression -- is measured to "
+         "be ZERO, against the computed total number of call sites.  (2) "
+         "THE EXEMPTION FORMS: `MUTANT != ...`, `MUTANT not in ...`, "
+         "`MUTANT is not ...` and `not (MUTANT == ...)` are counted "
+         "separately anywhere in the source, since a gate that counts only "
+         "one of them does not enforce its own headline; every occurrence "
+         "found is measured to lie OUTSIDE every gate and anchor call site, "
+         "and the `!=` count itself is gated at zero.  Every mutation in "
+         "this instrument is injected where the computation happens, and "
+         "every declared falsifier dies by a gate's own predicate evaluated "
+         "blind.  The `exempt-lax` waiver registers one such comparison and "
+         "must die here",
+         not found and not reaching,
+         {"gate_and_anchor_call_sites": call_sites,
+          "call_sites_reaching_the_mutant_flag": sorted(set(reaching)),
+          "exemption_forms_found_anywhere_in_the_source":
+              {k: len(v) for k, v in wider.items()},
+          "their_line_numbers": {k: sorted(set(v))
+                                 for k, v in wider.items() if v},
+          "all_of_them_outside_any_gate_or_anchor_call_site":
+              outside_gates == {k: sorted(set(v)) for k, v in wider.items()},
+          "mutant_exemption_comparisons": found,
           "comparisons_found": len(found)})
 
 
@@ -3073,9 +4611,14 @@ MUTANT_DECL = (
      "one transport datum evaluated before the freeze"),
     ("order-lax", "computation",
      "a transport measurement emitted before the base declaration"),
-    ("float-lax", "computation", "a float literal introduced"),
-    ("exempt-lax", "computation",
-     "a mutant-identity exemption registered in a gate predicate"),
+    ("float-lax", "waiver",
+     "a float literal registered in the exactness gate's own evidence list "
+     "after its AST sweep has run: the source text is never edited, so this "
+     "is a waiver and is declared as one"),
+    ("exempt-lax", "waiver",
+     "a mutant-identity exemption registered in the exemption gate's own "
+     "evidence list after its AST sweep has run: the source text is never "
+     "edited, so this is a waiver and is declared as one"),
     ("orient-flip", "computation",
      "a leg's reverse traversal read without transposition"),
     ("id-lax", "computation",
@@ -3084,7 +4627,7 @@ MUTANT_DECL = (
     ("readtime-conflate", "computation",
      "every node datum read at the final checkpoint"),
     ("defect-order", "computation",
-     "the preparation's swap-defect composed in the wrong order"),
+     "the completion's non-equivariance defect composed in the wrong order"),
     ("anchor-completion", "computation",
      "one entry of the constructed completion perturbed"),
     ("completion-Q", "computation",
@@ -3097,6 +4640,8 @@ MUTANT_DECL = (
      "the pointer shift made non-injective, so the record is destroyed"),
     ("anchor-nt", "computation",
      "a reused first-base committed value perturbed"),
+    ("nt-hash", "computation",
+     "the external receipt's bytes perturbed before they are hashed"),
     ("control-lax", "waiver",
      "the positive control's predicate overwritten after the fact"),
     ("flip-lax", "waiver",
@@ -3376,7 +4921,8 @@ def render(rec):
        f["P3_multiplicity_coordinates"])
     kv("P3  single-rule sub-connections measured non-flat",
        f["P3_single_rule_subconnections_non_flat"])
-    kv("P3  the preparation's swap-defect", f["P3_preparation_defect"])
+    kv("P3  the completion's non-equivariance defect",
+       f["P3_non_equivariance_defect"])
     kv("P4  the defect is a group element", f["P4_defect_is_a_group_element"])
     kv("P5  elements outside every declared collection",
        f["P5_elements_outside_every_declared_collection"])
@@ -3422,10 +4968,108 @@ def render(rec):
         if k != "admission_counts_per_cell":
             kv("  " + k, v)
 
+    hdr("10b.  THE COMPLETION CENSUS (the declared family, swept whole)")
+    dl = TABLES["defect_law"]
+    L.append("  the defect law:  " + dl["the_law"])
+    for ln in _wrap("the cancellation: " + dl["the_cancellation"], W - 4):
+        L.append("    " + ln)
+    L.append("")
+    L.append("  %-46s %-8s %-8s %-8s"
+             % ("declared preparation vector", "invar.", "law", "same D"))
+    for k, v in dl["per_declared_preparation_vector"].items():
+        L.append("  %-46s %-8s %-8s %-8s"
+                 % (k[:46], v["the_vector_is_exchange_invariant"],
+                    v["the_law_D_equals_sigma_Vt_sigma_V_tensor_I"],
+                    v["the_defect_equals_the_declared_completions_defect"]))
+    L.append("")
+    c = TABLES["completion_census"]
+    for k in ("family_size", "swept", "geometry_bearing_members",
+              "members_whose_defect_is_the_identity",
+              "the_exceptions_are_exactly_the_exchange_equivariant_locus",
+              "the_dihedral_relation_holds_at_every_member",
+              "the_predicted_holonomy_group_order_spectrum",
+              "geometry_bearing_members_whose_defect_escapes_every_"
+              "declared_collection",
+              "geometry_bearing_members_whose_defect_lies_inside_a_"
+              "declared_collection"):
+        kv(k, c[k])
+    kv("members by the order of the defect",
+       c["members_by_the_order_of_the_defect"])
+    kv("members by the defect's fixed configurations",
+       c["members_by_the_fixed_configurations_of_the_defect"])
+    kv("the declared completion's own entry", c["the_declared_completions_"
+                                                "entry"]["order"])
+    L.append("")
+    rb = TABLES["completion_rebuilds"]
+    for ln in _wrap(rb["the_rebuild_scope"], W - 4):
+        L.append("    " + ln)
+    kv("the declared-form sub-family, size", rb["sub_family_size"])
+    kv("its split", rb["the_split_of_the_declared_form_sub_family"])
+    kv("members where the measured order differs from 2n",
+       rb["members_where_the_measured_group_order_differs_from_the_"
+          "dihedral_prediction"])
+    L.append("")
+    L.append("  one full rebuild per measured class:")
+    L.append("    %-14s %-26s %-8s %-8s %-8s %-6s"
+             % ("class", "Q", "predict", "measured", "abelian", "vset"))
+    for k, v in TABLES["completion_rebuilds"][
+            "one_full_rebuild_per_measured_class"].items():
+        L.append("    %-14s %-26s %-8s %-8s %-8s %-6s"
+                 % (k, v["Q"], v["the_dihedral_prediction_for_the_group_"
+                                 "order"],
+                    v["the_measured_group_order_at_the_symmetric_setting"],
+                    v["abelian"], v["value_set_size"]))
+    L.append("")
+    ce = TABLES["connection_enumeration"]
+    L.append("  the connection enumeration on the gauge-fixed graph (%s):"
+             % ce["setting"])
+    for k in ("independent_cycles", "based_closed_walks_checked",
+              "walks_where_the_cycle_model_disagrees_with_the_direct_"
+              "holonomy",
+              "the_measured_class_counts", "connections_enumerated",
+              "distinct_class_count_profiles",
+              "connections_reproducing_the_measured_profile",
+              "connections_whose_labels_generate_the_whole_group",
+              "of_those_reproducing_the_measured_profile",
+              "the_most_common_profile"):
+        kv("  " + k, ce[k])
+    L.append("")
+    fp = TABLES["family_probe"]
+    L.append("  the measurement-family probe:")
+    for k, v in fp["per_setting"].items():
+        kv("  " + k, "%s  group=%s  classes=%s"
+           % (v["wings"], v["generated_group_order"],
+              v["class_counts_at_the_base_point"]))
+    kv("  the group and the class counts are the same at every symmetric "
+       "setting",
+       fp["the_group_and_the_class_counts_are_the_same_at_every_symmetric_"
+          "setting"])
+
     hdr("11.  THE COMPARISON WITH THE FIRST BASE (anchored exit-1)")
-    L.append("  %-52s %-24s %s" % ("coordinate", "first base", "base G"))
+    L.append("  %-46s %-22s %-16s %s"
+             % ("coordinate", "first base", "base G", "provenance"))
     for k, v in TABLES["comparison_with_the_first_base"].items():
-        L.append("  %-52s %-24s %s" % (k, v["first base"], v["base G"]))
+        L.append("  %-46s %-22s %-16s %s"
+                 % (k[:46], str(v["first base"])[:22],
+                    str(v["base G"])[:16],
+                    v.get("agrees because",
+                          "DIFFERENT")[:40]))
+    L.append("")
+    cp = TABLES["comparison_provenance"]
+    kv("agreements by kind", cp["agreements_by_kind"])
+    kv("differing coordinates", len(cp["differing_coordinates"]))
+    for x in cp["the_coordinates_measured_to_carry_the_result"]:
+        for ln in _wrap("carries the result: " + x, W - 6):
+            L.append("      " + ln)
+    for x in cp["coordinates_measured_INERT_for_the_geometry"]:
+        for ln in _wrap("measured inert: " + x, W - 6):
+            L.append("      " + ln)
+    cb = TABLES["cross_base_connection"]
+    kv("cross-base admission cells compared", cb["cells_compared"])
+    kv("cells where both bases draw the same permutation per rule",
+       cb["cells_where_the_two_bases_draw_the_same_permutation_per_rule"])
+    for ln in _wrap(cb["status"], W - 4):
+        L.append("    " + ln)
 
     hdr("12.  ANCHORS")
     for a in rec["anchors"]:
@@ -3462,6 +5106,8 @@ def render(rec):
     kv("pattern gates", FINDINGS["pattern_gates"])
     kv("computed differences from the first base",
        FINDINGS["computed_differences_from_the_first_base"])
+    kv("the verdict's declared scope",
+       ", ".join(FINDINGS["the_verdicts_declared_scope"]))
     L.append("")
     L.append("  " + FINDINGS["unit_verdict"])
     L.append("")
@@ -3508,6 +5154,7 @@ def main():
     run_freeze()
 
     run_base_declaration()
+    run_external_pin()
     run_arena()
 
     pref = prefix_profile()
@@ -3516,6 +5163,17 @@ def main():
     graphs, values = run_paths(pref)
     pairs, totals, agg = run_pair_table(graphs, values)
     ps = run_path_space_audit(graphs, values, totals)
+    # The defect's own permutation is named BEFORE the probes are printed,
+    # so that the negative control's holonomy is reported by name rather
+    # than as "another permutation".  Names are printing only: every gate
+    # predicate in this unit compares permutation tuples.
+    _D0 = prep_defect()
+    if _D0["perm"] is not None:
+        PERM_NAME.setdefault(canon(list(_D0["perm"])),
+                             "the completion's non-equivariance defect")
+        PERM_NAME.setdefault(
+            canon(list(perm_compose(tuple(WSWAP), tuple(_D0["perm"])))),
+            "the wing exchange composed with the non-equivariance defect")
     probes = run_probes(graphs)
     run_controls(graphs, values, probes)
     hg, D, subs, esc, nontrivial, struct = run_patterns(graphs, values,
@@ -3534,9 +5192,16 @@ def main():
              for sp in SETTING_ORDER},
         "holonomy_group_order_per_setting":
             {sp: hg[sp]["generated_group_order"] for sp in SETTING_ORDER}})
+    run_defect_law()
+    census, first_of_order = run_completion_census()
+    run_completion_rebuilds(first_of_order, hg)
+    run_connection_enumeration(graphs, values, hg)
+    run_family_probe()
     comparison = run_comparison(hg, D, subs, esc, nontrivial, struct, ps)
 
     sym = sorted(nontrivial)
+    cen = TABLES["completion_census"]
+    reb = TABLES["completion_rebuilds"]
     FINDINGS["thesis"] = (
         "A SECOND BASE of the same structural species -- two wings, a "
         "preparation, commuting local legs, records at the final division "
@@ -3545,35 +5210,61 @@ def main():
         "outcomes per measurement instead of two, exact arithmetic over the "
         "RATIONALS instead of a quartic field, and a different preparation "
         "whose orthogonal completion is PINNED EXPLICITLY as data.  On that "
-        "base the five pre-registered patterns were re-measured, each "
-        "gated separately.  All five HOLD: a nontrivial based holonomy "
-        "group exists at the symmetric settings; counted as PERMUTATION "
-        "TUPLES it has order %s, is measured already CLOSED at the declared "
-        "length bound, and is %s; both curvature sources are exhibited -- "
-        "identification multiplicity at the coordinates where two rules "
-        "draw different maps, and, isolated by running the single-rule "
-        "sub-connections separately, the preparation's own swap-defect, "
-        "which already makes the realized-rule sub-connection non-flat at "
-        "multiplicity one; that defect is measured to BE an element of the "
-        "group; and two of the group's four elements are measured to lie "
-        "outside the declared relabelling scope, outside its declared "
-        "extension and outside both admitted sets, so the connection is NOT "
-        "PRINCIPAL for this base's own isomorphisms either.  WHAT VARIES IS "
-        "THE ELEMENT, NOT THE PATTERN: on the first base the "
-        "preparation-defect is one HALF of the wing exchange, a wing swap "
-        "of the system pair alone; here it is measured to be neither half "
-        "nor any wing swap -- a permutation with %s fixed points "
-        "manufactured by the declared COMPLETION of the preparation, which "
-        "the completion flip-test measures to be load-bearing.  The "
-        "geometry is therefore a property of the species and not of the one "
-        "committed base, while the group's elements are a function of the "
-        "base's own declared data.  Stated at the committed finite scope, "
-        "at the declared admission scope, per coordinate; nothing is "
-        "claimed about nature."
+        "base the five pre-registered patterns were re-measured, each gated "
+        "separately.  All five HOLD AT THE DECLARED COMPLETION: a "
+        "nontrivial based holonomy group exists at the symmetric settings; "
+        "counted as PERMUTATION TUPLES it has order %s, is measured already "
+        "CLOSED at the declared length bound, and is %s; both curvature "
+        "sources are exhibited -- identification multiplicity at the "
+        "coordinates where two rules draw different maps, and, isolated by "
+        "running the single-rule sub-connections separately, the "
+        "COMPLETION'S NON-EQUIVARIANCE DEFECT, which already makes the "
+        "realized-rule sub-connection non-flat at multiplicity one; that "
+        "defect is measured to BE an element of the group; and two of the "
+        "group's four elements are measured to lie outside the declared "
+        "relabelling scope, outside its declared extension and outside both "
+        "admitted sets, so the connection is NOT PRINCIPAL for this base's "
+        "own isomorphisms either.  THE COMPLETION IS THE PARAMETER THAT "
+        "DECIDES, AND IT IS SWEPT EXHAUSTIVELY.  The defect obeys the exact "
+        "law D = (sigma V^T sigma V) (x) I_9, which for V = H . Q with an "
+        "exchange-invariant psi cancels to (sigma Q^T sigma Q) (x) I_9: the "
+        "defect is INDEPENDENT OF THE PREPARATION VECTOR and is "
+        "manufactured by the declared transposition alone, so BOTH "
+        "curvature sources on this base are declaration-side.  Over the "
+        "whole declared completion family -- %d members, every one swept -- "
+        "%d bear geometry and the %d that do not are exactly the "
+        "exchange-equivariant locus: EXISTENCE IS GENERIC, and the "
+        "flip-test's bare Householder is a member of the rare exceptional "
+        "class.  The ISOMORPHISM TYPE, by contrast, is completion-selected: "
+        "the family is dihedral, <W, D | W^2 = D^n = 1, W D W = D^-1> with "
+        "n the defect's order, the predicted group orders %s all exhibited "
+        "by full rebuild, and inside the pinned completion's own declared "
+        "form -- a single basis transposition, %d members, all rebuilt -- "
+        "%d give the Klein four-group, %d give the NON-ABELIAN group of "
+        "order six and %d are flat.  What recurs across the two bases is "
+        "therefore the PRESENTATION and the existence of a nontrivial group "
+        "with two sources and a scope-escaping generator; the isomorphism "
+        "type is a function of the declared completion, and the pinned "
+        "completion's class -- the defect fixing 45 of the 81 "
+        "configurations -- is %s of the family.  Stated at the committed "
+        "finite scope, at the declared admission scope, AT THE DECLARED "
+        "COMPLETION, per coordinate; nothing is claimed about nature."
         % (NC,
            hg[sym[0]]["generated_group_order"] if sym else 1,
            struct[sym[0]] if sym else "trivial",
-           D["fixed_points"]))
+           cen["family_size"], cen["geometry_bearing_members"],
+           cen["members_whose_defect_is_the_identity"],
+           cen["the_predicted_holonomy_group_order_spectrum"],
+           reb["sub_family_size"],
+           reb["the_split_of_the_declared_form_sub_family"].get(
+               "the Klein four-group", 0),
+           reb["the_split_of_the_declared_form_sub_family"].get(
+               "a non-abelian group of order 6", 0),
+           reb["the_split_of_the_declared_form_sub_family"].get(
+               "trivial", 0),
+           ("%d of %d"
+            % (cen["members_by_the_fixed_configurations_of_the_defect"]
+               .get("45", 0), cen["family_size"]))))
 
     run_verdict(nontrivial, struct, comparison)
     run_declaration_order()

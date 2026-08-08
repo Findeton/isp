@@ -7232,3 +7232,41 @@ comparator; exercised-cache gating; NT receipt hash-pinned;
 21/5; §8 re-annotated + anchored).  On delivery: COMMIT-AS-IS,
 verify, terminal-or-bounce; then the overlaps/cocycle pin
 under the standing order.  Recorded after it occurs.
+
+## 2026-08-08 — GEN REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #221)
+Repair G-1..G-7 delivered complete; committed as-is.  Verdict
+(verbatim): GEN-STRUCTURE-REPRODUCES-AT-DECLARED-COMPLETION, at
+the committed finite scope, at the declared admission scope, at
+the declared completion, per coordinate.  THE CENSUS NOW
+IN-DELIVERY AND GATED: the defect law both forms (theorem w/
+proof sketch; the cancellation measured on 4 declared
+exchange-invariant ψ w/ a non-invariant 5th as negative
+control); exhaustive 40,320 — 40,224 geometry-bearing (99.76%),
+the 96 exceptions = the equivariant locus gated BOTH directions
+0 mismatches; ΣDΣ = D⁻¹ at all 40,320; ESCAPE 40,224/40,224 —
+0 inside any scope; the FULL ORDER SPECTRUM computed (ord(D)
+1:96 / 2:1,440 / 3:4,224 / 4:4,608 / 5:4,608 / 6:6,912 /
+7:9,216 / 15:9,216; group orders [1,4,6,8,10,12,14,30]
+exhibited by rebuild at all 12 (order×fixed-point) classes);
+the 28-member declared-form family rebuilt in-delivery (12
+Klein / 12 non-abelian order 6 / 4 flat).  KLEIN-FOUR LOCUS
+REFINED: the involutive locus 1,440 ≈ 3.57% (superseding R3's
+sampling-level 45-class reading; the pinned class 864 ≈ 2.14%
+the named sub-class — both stated).  D renamed throughout
+(completion non-equivariance; ψ-independence at introduction;
+both-sources-declaration-side noted; ψ-side curvature = open
+§11.12).  D2/D5 rewritten to measured mechanisms (the
+cross-base agreement OPEN, + the new datum: the two bases'
+admission tables agree 24/24 cells).  Instrument: GEN-SPECIES
+w/ independent comparator (anchor-record dies at BOTH clauses —
+the receipt claim now true); fresh-eval REAL (primed cache, 14
+writes/reads, exercise gated); NT receipt HASH-PINNED w/
+nt-hash mutant; honest recount 22/5; §8 re-annotated (15 rows
+read from the NT receipt; agreements 4 design + 3 combinatorics
++ 5 geometry; the inert-family finding measured by a fresh
+probe).  17 anchors / 36 gates (30 must-pass, 0 failures) / 27
+mutants died / never_falsified EMPTY at 29 w/ both denominators
+printed.  R3's N1 disclosed-not-adopted
+(artifact-write-before-exit; both runs exited 0
+byte-identical).  md5 output 1c45db8d / receipt 04d0bc7d.
+Adjudicator verification next.
