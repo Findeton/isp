@@ -7140,3 +7140,42 @@ presentation ⟨W, D | W² = Dⁿ = 1, WDW = D⁻¹⟩.**  Verbatim
 replacement sentences supplied; the census and the defect law
 offered to the repair as this round's contributed
 constructions.  R1/R3 pending; adjudication after all three.
+
+## 2026-08-08 — GEN R1 (OPERATOR) FROZEN (v13 LEDGER #218)
+review-gen-operator.md frozen as delivered (sha256-12
+1d17534ef9f4).  Grade ACCEPT-WITH-FIXES; 587 paper quantities
+recomputed on the reviewer's own instrument, 0 mismatches, +
+44,545 model evaluations the unit does not carry; discipline
+claims verified by independent AST scans.  THREE MAJORS, all
+interpretive, none moving a number: (1) **THE COMPLETION
+SELECTS THE GROUP'S ISOMORPHISM TYPE and the K1 sweep was not
+done by the unit** — R1's own sweeps: the 40,320-point family
+(only 96 flat — one of them the paper's bare Householder); the
+pinned form's OWN 28-point family: **12 Klein-four, 12
+NON-ABELIAN S₃, 4 flat** (Q = (1 2) vs (1 4) was a free
+choice); the wider family: 2/101 Klein-four, orders to 30 —
+convergent with R2's dihedral census (D₃ ≅ S₃).  (2) **D2
+factually wrong about its own flip-test base** (14 full-leg
+identifications; canonical loop at 4/6 settings; §7.2 itself
+poses and answers all five patterns) — identical diagnosis to
+R2, independent route.  (3) **D5's combinatorial explanation
+REFUTED**: gauge-fixing GP-E to a Klein link labelling and
+enumerating all 4,096 Klein connections — only 96 reproduce
+the 82/86/90/106 class profile (2.5%); the cross-base
+agreement is NOT combinatorially forced — it signals SHARED
+CONNECTION STRUCTURE beyond graph + group, honestly open.
+**THE SHARPER CLOSED FORM: D = (S Qᵀ S Q) ⊗ I₉ — the
+Householder cancels IDENTICALLY, so D is INDEPENDENT OF ψ,
+manufactured by the declared transposition alone (45 = 5×9).**
+The "preparation's defect" is a MISNOMER — the second curvature
+source is the COMPLETION'S non-equivariance, not the physical
+state's asymmetry: BOTH curvature sources are
+declaration-side.  Moderates: P5's 16 cells = 1 free + 15
+forced; §6.5's "every link" false for the 6 leg links;
+read-time analytically inert here; the 23/3 mutant split
+should be 21/5; 14 §8 rows typed-not-anchored (all verified
+correct); the 216 extension not closed.  Verdict: REPRODUCES
+STANDS per the pin's P2 (Klein-four never required) but must
+be scoped to EXISTENCE (nontrivial group, two sources,
+scope-escaping generator), not isomorphism type — convergent
+with R2's REPRODUCES-AT-DECLARED-COMPLETION.  R3 pending.
