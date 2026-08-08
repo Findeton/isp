@@ -7216,3 +7216,19 @@ registered open); D2/D5 rewritten to the measured mechanisms
 self-comparison clause and the vacuous zero-hit clause;
 RUNBOOK §14 addendum (independent comparators; exercised-cache
 gating).  STATUS updated this commit.  Repair dispatch next.
+
+## 2026-08-08 — GEN REPAIR DISPATCHED (G-1..G-7) (v13 LEDGER #220)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+the four unit files) with the #219 order: verdict renamed and
+scoped to existence; the completion census + defect law
+incorporated natively (both forms, ψ-independence as theorem;
+the 28-point pinned-form family gated in-delivery; the full
+census via defect-law exhaustion + declared stratified sample
+w/ the reviews' full-census numbers as external anchors if
+budget demands); D renamed (completion non-equivariance;
+ψ-side-curvature question registered open); D2/D5 rewritten to
+measured mechanisms; instrument repairs (independent
+comparator; exercised-cache gating; NT receipt hash-pinned;
+21/5; §8 re-annotated + anchored).  On delivery: COMMIT-AS-IS,
+verify, terminal-or-bounce; then the overlaps/cocycle pin
+under the standing order.  Recorded after it occurs.
