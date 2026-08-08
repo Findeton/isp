@@ -8038,3 +8038,40 @@ waiver-only; cell-completeness; the refusal mechanism; the
 readable/unreadable split probed for silent drops).  Reviews
 frozen on return.  In flight: PSI panel ×3, HA repair, XBA
 re-derivation.
+
+## 2026-08-08 — PSI R1 (OPERATOR) FROZEN: THE ONE-LAW IDENTITY
+## VERIFIED (v13 LEDGER #254)
+review-psi-operator.md frozen as delivered.  Grade AWF; ~1,450
+recomputed quantities + 2,184 loop holonomies by two routes;
+NOTHING NUMERICAL WRONG (every headline reproduced; the frozen
+instrument rerun 20/20 gates byte-identical).  **THE
+CONTRIBUTION — K2's CROSS-UNIT QUESTION ANSWERED AFFIRMATIVELY
+BY THE OPERATOR LENS: D = [P_W, U_prep] EXACTLY, and the ψ-law
+is the standard commutator identity [a,xy] = [a,y]·y⁻¹[a,x]y
+with D_GEN = [Σ,Q]⊗I₉ and E(ψ) = [Σ,H(ψ)] — verified at all
+11 members.  ONE LAW: D(ψ) = [P, u(ψ)]; the declaration part
+and the state part are the two factors the commutator identity
+produces.**  FIVE MAJORS, none moving a number: (1) §6.2's
+census mechanism FALSE off GP-E (21/48 patterns move a node
+law; 8 move admission cells at GP-F — the census survives by
+its GP-E scope, where both legs are permutation matrices); (2)
+**PSI-VERDICT violates #234 END-TO-END, demonstrated**: a
+branch-order swap (computation perturbation) prints VERDICT:
+PATH-SPACE-DEPENDENCE — false by the pin's own vocabulary —
+at exit 0 with 20/20 PASS and a_common_loop_differs: True in
+the same gate value (REQUIRED repair); (3) §10.3's second
+witness fails at the verdict's scope BUT A STRONGER
+REPLACEMENT EXISTS: (psi-I4, psi-N2) — identical |ψ|/|V|/keys/
+laws/48 cells, differing on 196 loops, between two ORTHOGONAL
+states; (4) §6.1 false ("E symmetric orthogonal involution" —
+E orthogonal always, involutive at 8/11 only; THE involution
+is H(ψ)); (5) **K1's scoping unmet: ⟨ψ_G|ψ_N1⟩ = 1/9 — one
+shot in another basis separates them with p = 80/81;
+"Born-level indistinguishable" MUST be scoped to the declared
+basis** (the ontological claim reads "invisible to the
+declared context", never "invisible absolutely").  Notes: the
+negative control's transpositions lie inside GEN's rebuilt
+28-family (two free external anchors unused);
+cell-completeness ungated (#234); the "permutation part
+differs" column not independent (all 206 rows readability
+flips).  R2/R3 pending; adjudication after all three.
