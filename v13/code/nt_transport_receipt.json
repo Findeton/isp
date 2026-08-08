@@ -434,7 +434,7 @@
    "id": "A12",
    "passed": true,
    "quantity": "cross-frame disjoint / cross-frame pairs / same-frame sharing / same-frame pairs at the second intermediate checkpoint",
-   "source": "v12/note-w6-record-coreference.md K1 / O4 pair_census"
+   "source": "v13/code/o4_discriminator_receipt.json pair_census"
   },
   {
    "committed": [
@@ -498,7 +498,7 @@
    "id": "A18",
    "passed": true,
    "quantity": "the number of declared legs per frame, computed from the model",
-   "source": "the committed composite model"
+   "source": "v13/code/o4_discriminator_receipt.json declarations final_declared_division_event"
   },
   {
    "committed": [
@@ -572,89 +572,167 @@
    "id": "A22",
    "passed": true,
    "quantity": "the O4 terminal receipt's own anchor pass count",
-   "source": "v12/note-w6-record-coreference.md / O4 anchors A04-A07"
+   "source": "v13/code/o4_discriminator_receipt.json anchors (A SOURCE HEALTH CHECK, not a reused NT quantity: both sides are read from the same committed file)"
+  },
+  {
+   "committed": {
+    "SP-A/F1": 0,
+    "SP-A/F2": 0,
+    "SP-B/F1": 0,
+    "SP-B/F2": 0,
+    "SP-C/F1": 16,
+    "SP-C/F2": 16,
+    "SP-D/F1": 16,
+    "SP-D/F2": 16,
+    "SP-E/F1": 0,
+    "SP-E/F2": 0,
+    "SP-F/F1": 16,
+    "SP-F/F2": 16
+   },
+   "computed": {
+    "SP-A/F1": 0,
+    "SP-A/F2": 0,
+    "SP-B/F1": 0,
+    "SP-B/F2": 0,
+    "SP-C/F1": 16,
+    "SP-C/F2": 16,
+    "SP-D/F1": 16,
+    "SP-D/F2": 16,
+    "SP-E/F1": 0,
+    "SP-E/F2": 0,
+    "SP-F/F1": 16,
+    "SP-F/F2": 16
+   },
+   "id": "A23",
+   "passed": true,
+   "quantity": "W5's residual weight per (setting, frame) at the cut it records, against this unit's own defect j0-column weight there",
+   "source": "v12/code/w5_ltp_lemma_exact.py VN (W5's own committed declared-law residual weight, computed by W5's own code)"
   }
  ],
  "base_commit": "a264a06",
  "findings": {
   "holonomy_group": {
-   "description": "the based closed-loop holonomy group at node F1@t0, read as the gauge-invariant permutation part of the closed-loop link product, enumerated over every closed path of the committed path space",
+   "description": "the based closed-loop holonomy group at node F1@t0, read as the permutation part of the closed-loop link product, enumerated over every closed path of the committed path space based there, counted as PERMUTATIONS and not as name labels",
    "per_setting": {
     "SP-A": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 1,
      "elements": [
       "the identity"
      ],
+     "elements_with_mixed_relative_signs": [],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 1,
      "group_elements": [
       "the identity"
      ],
-     "sign_orbits_seen": 1,
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
      "value_set_size": 1
     },
     "SP-B": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 1,
      "elements": [
       "the identity"
      ],
+     "elements_with_mixed_relative_signs": [],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 1,
      "group_elements": [
       "the identity"
      ],
-     "sign_orbits_seen": 1,
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
      "value_set_size": 1
     },
     "SP-C": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 1,
      "elements": [
       "the identity"
      ],
+     "elements_with_mixed_relative_signs": [],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 1,
      "group_elements": [
       "the identity"
      ],
-     "sign_orbits_seen": 1,
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
      "value_set_size": 1
     },
     "SP-D": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 1,
      "elements": [
       "the identity"
      ],
+     "elements_with_mixed_relative_signs": [],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 1,
      "group_elements": [
       "the identity"
      ],
-     "sign_orbits_seen": 1,
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
      "value_set_size": 1
     },
     "SP-E": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 2,
      "elements": [
-      "another permutation",
       "the identity",
+      "the pointer-only wing swap",
+      "the qubit-only wing swap",
       "the wing exchange"
      ],
+     "elements_with_mixed_relative_signs": [
+      "the pointer-only wing swap",
+      "the qubit-only wing swap"
+     ],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 4,
      "group_elements": [
-      "another permutation",
-      "another permutation",
       "the identity",
+      "the pointer-only wing swap",
+      "the qubit-only wing swap",
       "the wing exchange"
      ],
-     "sign_orbits_seen": 2,
-     "value_set_size": 3
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
+     "value_set_size": 4
     },
     "SP-F": {
+     "closed_paths_whose_holonomy_is_not_a_signed_permutation": 0,
+     "distinct_relative_sign_classes_seen": 2,
      "elements": [
-      "another permutation",
       "the identity",
+      "the pointer-only wing swap",
+      "the qubit-only wing swap",
       "the wing exchange"
      ],
+     "elements_with_mixed_relative_signs": [
+      "the pointer-only wing swap",
+      "the qubit-only wing swap"
+     ],
+     "every_element_squares_to_the_identity": true,
      "generated_group_order": 4,
      "group_elements": [
-      "another permutation",
-      "another permutation",
       "the identity",
+      "the pointer-only wing swap",
+      "the qubit-only wing swap",
       "the wing exchange"
      ],
-     "sign_orbits_seen": 2,
-     "value_set_size": 3
+     "the_group_is_abelian": true,
+     "the_value_set_is_closed_under_composition": true,
+     "the_value_set_is_the_generated_group": true,
+     "value_set_size": 4
     }
    }
   },
@@ -673,12 +751,21 @@
     "SP-F / the aligned-prefix bigon at t=1",
     "SP-F / the aligned-prefix bigon at t=3"
    ],
+   "twisted_corridor_witnesses_at_O4's_own_read_times": [
+    "SP-E / the aligned-prefix bigon at t=1",
+    "SP-E / the aligned-prefix bigon at t=3",
+    "SP-F / the aligned-prefix bigon at t=1",
+    "SP-F / the aligned-prefix bigon at t=3"
+   ],
+   "twisted_corridor_witnesses_at_the_added_coordinate_t0": [
+    "SP-E / the aligned-prefix bigon at t=0",
+    "SP-F / the aligned-prefix bigon at t=0"
+   ],
    "verdict": "NT-PREFIX-FLATNESS-REFUTED"
   },
   "per_object": {
    "T1": {
-    "distinct_transported_values": 223,
-    "loop_value_set_size_per_setting": {
+    "closed_path_value_set_size_over_all_base_points": {
      "SP-A": 11,
      "SP-B": 11,
      "SP-C": 17,
@@ -686,10 +773,11 @@
      "SP-E": 14,
      "SP-F": 58
     },
+    "distinct_transported_values": 223,
     "pairs_agreeing": 1957780,
     "pairs_disagreeing": 3014316,
     "pairs_with_an_obstructed_side": 0,
-    "settings_with_a_nontrivial_loop_value_set": [
+    "settings_where_closed_path_values_differ_across_base_points": [
      "SP-A",
      "SP-B",
      "SP-C",
@@ -700,8 +788,7 @@
     "verdict": "NT-HOLONOMY-<T1>"
    },
    "T2": {
-    "distinct_transported_values": 5,
-    "loop_value_set_size_per_setting": {
+    "closed_path_value_set_size_over_all_base_points": {
      "SP-A": 1,
      "SP-B": 1,
      "SP-C": 2,
@@ -709,10 +796,11 @@
      "SP-E": 1,
      "SP-F": 3
     },
+    "distinct_transported_values": 5,
     "pairs_agreeing": 4248576,
     "pairs_disagreeing": 723520,
     "pairs_with_an_obstructed_side": 0,
-    "settings_with_a_nontrivial_loop_value_set": [
+    "settings_where_closed_path_values_differ_across_base_points": [
      "SP-C",
      "SP-D",
      "SP-F"
@@ -720,8 +808,7 @@
     "verdict": "NT-HOLONOMY-<T2>"
    },
    "T3": {
-    "distinct_transported_values": 186,
-    "loop_value_set_size_per_setting": {
+    "closed_path_value_set_size_over_all_base_points": {
      "SP-A": 1,
      "SP-B": 1,
      "SP-C": 1,
@@ -729,10 +816,11 @@
      "SP-E": 14,
      "SP-F": 14
     },
+    "distinct_transported_values": 186,
     "pairs_agreeing": 1352156,
     "pairs_disagreeing": 3619940,
     "pairs_with_an_obstructed_side": 0,
-    "settings_with_a_nontrivial_loop_value_set": [
+    "settings_where_closed_path_values_differ_across_base_points": [
      "SP-E",
      "SP-F"
     ],
@@ -752,7 +840,24 @@
     "SP-F: t=1 transports=True / t=2 transports=False at ||r||_0=16 both"
    ]
   },
-  "thesis": "On the W6 terminal base the pin's canonical loop -- frame 1's leg order against frame 2's, closed by the identifications at the two declared division events -- is measured EXACTLY FLAT at every setting: the two frames differ by the order of two legs the base measures to commute, so the loop is a commutator of commuting operators and carries no holonomy.  But the base admits a SECOND certified identification at the two symmetric settings -- the realized-only rule's WING EXCHANGE -- and the bigon it forms with the full-leg rule's identity, at a PREFIX-ALIGNED checkpoint, carries a nontrivial closed-loop holonomy of order two, while a loop CROSSING the prefix-divergent checkpoint is measured exactly flat.  Both of the pre-registered failure modes therefore obtain and the central hypothesis is REFUTED: the prefix criterion is not the flatness condition.  What carries the holonomy is measured to be the base's own wing-exchange orbit -- the same element the O4 obstruction is about -- and not the alignment of the declared leg prefixes.  The holonomy's gauge content is separated from its gauge orbit by the mandatory switching sweep: the closed loop's permutation part is fixed under the whole declared switching group, its overall sign is a gauge orbit, and a control quantity reading that sign is measured to move.  Stated at the committed finite scope, per coordinate; nothing is claimed about nature.",
+  "structure_group": {
+   "elements_outside_every_declared_scope": {
+    "SP-A": 0,
+    "SP-B": 0,
+    "SP-C": 0,
+    "SP-D": 0,
+    "SP-E": 2,
+    "SP-F": 2
+   },
+   "the_group_at_the_two_symmetric_settings": [
+    "the identity",
+    "the pointer-only wing swap",
+    "the qubit-only wing swap",
+    "the wing exchange"
+   ],
+   "the_wing_exchange_factorises_as_XQ_XP": true
+  },
+  "thesis": "On the W6 terminal base the pin's canonical loop -- frame 1's leg order against frame 2's, closed by the identifications at the two declared division events -- is measured EXACTLY FLAT at every setting: the two frames differ by the order of two legs the base measures to commute, so the loop is a commutator of commuting operators and carries no holonomy.  But the base admits a SECOND identification at the two symmetric settings -- the realized-only rule's WING EXCHANGE, admitted in the discriminator's FORCED sense and refused by its certificate -- and the bigon it forms with the full-leg rule's identity, at a PREFIX-ALIGNED checkpoint, carries a nontrivial closed-loop holonomy of order two, while a loop CROSSING the prefix-divergent checkpoint by the same rule at both of its two crossings is measured exactly flat.  Both of the pre-registered failure modes therefore obtain and the central hypothesis is REFUTED: the prefix criterion is not the flatness condition, and prefix alignment governs whether an identification EXISTS, not whether the identifications that exist AGREE.  Two sources of the twist are measured and neither is the alignment of the declared leg prefixes: two admitted rules differing by the wing exchange at one coordinate -- SUFFICIENT, never necessary -- and the wing exchange's measured failure to intertwine the PREPARATION leg at every setting, which already makes the single-rule sub-connection non-flat at multiplicity one.  The group the loops generate at the two symmetric settings is the KLEIN FOUR-GROUP {1, W, X, WX} with W = X . WX, counted as permutations and measured already closed at the declared length bound; and TWO OF ITS FOUR ELEMENTS -- the qubit-only and pointer-only wing swaps -- are measured to lie OUTSIDE the declared 72-element scope and its declared 96-element extension, so the connection is NOT PRINCIPAL for the base's own admitted isomorphisms.  T1's path-dependence is excluded from that mechanism: its cause is the measured non-inversion of the declared Born-level step, present at every setting.  The gauge layer is separated from its orbit by the mandatory switching sweep, swept COMPLETE at every setting: the switching is MEASURED to act on a closed loop by a global scalar, from which the invariance of the permutation part follows by algebra and is reported as a disclosure rather than as a measurement; the teeth are the scalar-action, checkpoint-telescoping and signed-permutation clauses, and the relative sign class, not the raw sign set, is the invariant sign content.  Stated at the committed finite scope, at the declared narrow admission scope, per coordinate; nothing is claimed about nature.",
   "unit_verdict": "NT-HOLONOMY-<T1> + NT-HOLONOMY-<T2> + NT-HOLONOMY-<T3> + NT-PREFIX-FLATNESS-REFUTED"
  },
  "gates": [
@@ -813,7 +918,7 @@
    }
   },
   {
-   "claim": "THE COMMITTED PATH SPACE IS ENUMERATED, NEVER TYPED.  Nodes are (frame, checkpoint) coordinates and the read time is a coordinate of the node; moves are leg applications in both directions and the admitted identifications; paths are the REDUCED sequences of moves up to the declared bound, which is the canonical loop's own length.  Every count in the table -- nodes, links, identification links, cycle rank, paths, closed paths, path pairs sharing both endpoints -- is computed from the enumeration.  The gate measures that the node count is the declared product, that the cycle rank is Euler's, and that the space is non-empty and contains closed paths at every setting.  The `reduce-lax` mutant drops the reduced condition and must die here",
+   "claim": "THE COMMITTED PATH SPACE IS ENUMERATED, NEVER TYPED, AND THE DECLARED PROPERTY OF ITS PATHS IS MEASURED ON THE ROWS THEMSELVES.  Nodes are (frame, checkpoint) coordinates and the read time is a coordinate of the node; moves are leg applications in both directions and the admitted identifications; paths are the REDUCED sequences of moves up to the declared bound, which is the canonical loop's own length.  Every count in the table is computed from the enumeration.  FOUR PREDICATES, EACH RECOMPUTED HERE FROM THE DELIVERED ROWS: (1) the REDUCED condition, read off the enumerated edge lists -- no enumerated path traverses the same link twice in immediate succession, which is the declared condition itself and is what makes the path counts what they are; (2) every enumerated path is a genuine walk in the graph, step by step, ending at the node it declares; (3) the graph is CONNECTED, measured by union-find over the links, and the cycle rank is Euler's with that measured component count; (4) the enumeration reaches every declared node and contains closed paths at every setting.  The `reduce-lax` mutant drops the reduced condition and must die at predicate (1), which counts its backtracks",
    "class": "measurement",
    "id": "NT-PATH-SPACE-ENUMERATED",
    "passed": true,
@@ -866,6 +971,56 @@
      "nodes": 8,
      "paths": 16168
     },
+    "audit": {
+     "SP-A": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 2,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     },
+     "SP-B": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 2,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     },
+     "SP-C": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 2,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     },
+     "SP-D": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 2,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     },
+     "SP-E": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 6,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     },
+     "SP-F": {
+      "connected_components": 1,
+      "cycle_rank_recomputed_from_the_measured_components": 6,
+      "nodes_reached_by_the_enumeration": 8,
+      "paths_that_traverse_one_link_twice_in_succession": 0,
+      "paths_whose_walk_does_not_reach_the_declared_end": 0,
+      "steps_that_do_not_follow_the_graph": 0
+     }
+    },
     "total_path_pairs": 4972096,
     "total_paths": 34024
    }
@@ -904,71 +1059,355 @@
    }
   },
   {
-   "claim": "T2'S EXACT-POSABILITY GATE, EVALUATED BEFORE ANY T2 RESULT (the RQ0-SYNTH lesson).  The composition-defect question is posed at a node only if the committed laws supply BOTH cut factors and their amplitude composition is EXACT there, so that Delta^B is the defect of a genuine factorisation of the declared process and not of an invented one.  The gate additionally measures the WELD: the defect matrix computed from paper 1's definition is measured IDENTICAL, entry by entry, to W5's declared-law residual Gamma(N<-0) - Gamma(N<-t)Gamma(t<-0) at every node.  Had any clause failed the unit would report NT-BLOCKED-AT-<posability> and force nothing.  The `defect-order` mutant composes the two Born shadows in the wrong order and must die here",
+   "claim": "T2'S EXACT-POSABILITY GATE, EVALUATED BEFORE ANY T2 RESULT (the RQ0-SYNTH lesson).  The composition-defect question is posed at a node only if the committed laws supply BOTH cut factors and their amplitude composition is EXACT there, so that Delta^B is the defect of a genuine factorisation of the declared process and not of an invented one.  Had either clause failed the unit would report NT-BLOCKED-AT-<posability> and force nothing.  THE WELD, third clause, WITH ITS SOURCES AND ITS ENTAILMENT STATED: the defect matrix computed from paper 1's definition is measured IDENTICAL, entry by entry, at every node, to the declared-law residual Gamma(N<-0) - Gamma(N<-t)Gamma(t<-0) built by W5's OWN COMMITTED CODE (its `gam`, `mmul` and `ksub`, imported from v12/code/w5_ltp_lemma_exact.py and applied to this unit's propagators), and W5's own committed residual weights anchor it exit-1 (A23).  That identity FOLLOWS FROM CLAUSE 2 -- same subtrahend, minuends gated equal -- and the entailment is itself measured and printed rather than left for the reader to find.  It is the case paper 1 ENGRAVED in advance as the one exemption to its own scope statement (Delta^B is not the residual of a declared stochastic law UNLESS that law is declared to be B(U2), which is what this base declares), and W5's committed M4 recorded it, with its cause, at the single cut t = 2.  What is measured HERE and not there is the extension to all four cuts in both frames.  The `defect-order` mutant composes the two Born shadows in the wrong order and must die here",
    "class": "measurement",
    "id": "NT-T2-POSABILITY",
    "passed": true,
    "value": {
+    "clause_3_is_entailed_by_clause_2_at_every_node": true,
     "distinct_defect_weights": [
      0,
      288
     ],
-    "nodes_tested": 48
+    "every_admitted_map_is_an_involution_so_paper_1's_outer-slot_law_(iv)_delivers_the_conjugation_action": {
+     "the identity": {
+      "is_an_involution": true,
+      "order": 1
+     },
+     "the wing exchange": {
+      "is_an_involution": true,
+      "order": 2
+     }
+    },
+    "nodes_tested": 48,
+    "sources_of_the_identity": [
+     "paper 1 section 2.3, the engraved clause: Delta^B is not the residual of any declared stochastic law unless that law is declared to be B(U2)",
+     "v12/code/w5_ltp_lemma_exact.py check M4, at the cut t = 2"
+    ],
+    "the_residual_is_built_by_W5's_committed_code": "v12/code/w5_ltp_lemma_exact.py",
+    "this_unit's_extension": "all four cuts, both frames"
    }
   },
   {
-   "claim": "THE MANDATORY SECTION 14 SELF-TEST.  Every declared loop's holonomy is RECOMPUTED FROM THE LINK VARIABLES under every element of the declared switching group -- one sign per link of the corridor sub-graph, enumerated, 512 of them at every setting -- and the gate measures that the INVARIANT (the closed loop's permutation part) takes exactly ONE value under all of them, while the checkpoint subgroup (the switchings induced by a sign at each node, which is the base's own checkpoint-phase redundancy) leaves even the loop's SIGN fixed.  The `gauge-sign` mutant drops the switching on a reversed traversal -- a sign/orientation perturbation of exactly the kind section 14 requires -- and must die here, and the `gauge-subsample` mutant, which shrinks the sweep, must die at the group-size clause",
+   "claim": "WHAT GENERATES THE HOLONOMY, MEASURED IN BOTH DIRECTIONS.  SUFFICIENCY: the base admits two DIFFERENT identifications at one coordinate exactly where the full-leg rule and the realized-only rule both admit uniquely and their maps differ by the wing exchange, and at every such coordinate the bigon they form is measured non-flat -- the gate counts those coordinates and measures that a twisted-corridor probe fires at each.  NECESSITY FAILS, and the gate measures the failure rather than asserting the converse: (a) the SINGLE-RULE sub-connection built from the realized rule alone, in which EVERY coordinate has multiplicity exactly one, already carries non-identity closed-path holonomy; (b) in the delivered graph, closed paths that never traverse two different rules at one coordinate are non-flat in quantity, counted per setting; (c) the proximate cause is measured -- the wing exchange does NOT intertwine the PREPARATION leg at any setting, so a loop crossing between the frames by it at one checkpoint and returning at the next picks up P_W U_prep^-1 P_W U_prep, which is measured to be a non-identity permutation.  THE CLAIM IS THEREFORE SUFFICIENT, NEVER BICONDITIONAL, and it is a claim about the geometric layer (T3) and T2's single cell only: T1 is excluded, its path-dependence having a different and weaker cause (NT-T1-CAUSE).  The `id-lax` mutant admits every element of the scope, so no rule admits uniquely and no bigon fires, and must die at the sufficiency clause",
+   "class": "measurement",
+   "id": "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
+   "passed": true,
+   "value": {
+    "coordinates_of_multiplicity_at_least_two": [
+     "SP-E/t0",
+     "SP-E/t1",
+     "SP-E/t3",
+     "SP-F/t0",
+     "SP-F/t1",
+     "SP-F/t3"
+    ],
+    "non_flat_closed_paths_that_never_use_two_rules_at_one_coordinate": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 348,
+     "SP-F": 348
+    },
+    "settings_where_the_wing_exchange_fails_to_intertwine_the_prep_leg": [
+     "SP-A/leg1",
+     "SP-B/leg1",
+     "SP-C/leg1",
+     "SP-D/leg1",
+     "SP-E/leg1",
+     "SP-F/leg1"
+    ],
+    "single_rule_realized_subconnection_non_identity_closed_paths": {
+     "SP-A/REAL": 0,
+     "SP-B/REAL": 0,
+     "SP-C/REAL": 0,
+     "SP-D/REAL": 0,
+     "SP-E/REAL": 8,
+     "SP-F/REAL": 8
+    },
+    "single_rule_subconnection_multiplicity_is_one_everywhere": true,
+    "single_rule_subconnections_with_links": [
+     "SP-E/REAL",
+     "SP-F/REAL"
+    ],
+    "the_prep_leg_defect_element": {
+     "SP-A": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     },
+     "SP-B": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     },
+     "SP-C": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     },
+     "SP-D": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     },
+     "SP-E": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     },
+     "SP-F": {
+      "is_a_signed_permutation": true,
+      "is_the_identity": false,
+      "name": "the qubit-only wing swap"
+     }
+    },
+    "twisted_corridor_probes_that_fired": [
+     "SP-E / the aligned-prefix bigon at t=0",
+     "SP-E / the aligned-prefix bigon at t=1",
+     "SP-E / the aligned-prefix bigon at t=3",
+     "SP-F / the aligned-prefix bigon at t=0",
+     "SP-F / the aligned-prefix bigon at t=1",
+     "SP-F / the aligned-prefix bigon at t=3"
+    ]
+   }
+  },
+  {
+   "claim": "THE ADMISSION SCOPE IS A CHOICE, AND IT IS LOAD-BEARING.  Every admission search that feeds a link, a profile or a verdict in this unit runs over the 2 elements of the declared 72-element permutation scope that survive the j0 filter; every negative in this unit is a negative at THAT scope.  The declared 96-element extension, which admits 8, is SEARCHED HERE -- the same four-clause predicate, the wider set -- and the measurement is reported and folded into no verdict.  What it shows: at the wider scope the full-leg rule admits TWO permutations at the cells printed below, so the uniqueness criterion REFUSES those links, and the settings at which the pin's own canonical loop would then not exist at all are named.  The admission criterion's FORCED reading is therefore scope-dependent, and this unit's results stand at the narrow scope it declares and at no other",
+   "class": "disclosure",
+   "id": "NT-ADMISSION-SCOPE-IS-LOAD-BEARING",
+   "passed": true,
+   "value": {
+    "cells_where_the_scope_changes_admission": [
+     "SP-C FULL t=0: 1 -> 2",
+     "SP-C FULL t=1: 1 -> 2",
+     "SP-D FULL t=0: 1 -> 2",
+     "SP-D FULL t=1: 1 -> 2"
+    ],
+    "identification_links_at_the_declared_extension": {
+     "SP-A": 3,
+     "SP-B": 3,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 7,
+     "SP-F": 7
+    },
+    "settings_where_the_canonical_loop_would_not_exist": [
+     "SP-C",
+     "SP-D"
+    ],
+    "the_canonical_loop_exists_at_the_declared_extension": {
+     "SP-A": true,
+     "SP-B": true,
+     "SP-C": false,
+     "SP-D": false,
+     "SP-E": true,
+     "SP-F": true
+    }
+   }
+  },
+  {
+   "claim": "T1'S PATH-DEPENDENCE HAS ITS OWN CAUSE, AND IT IS NOT THE GEOMETRIC ONE.  T1 is carried forward by the declared one-step Born transition and backward by its transpose, and the gate measures BY CONSTRUCTION that the transpose does not invert the forward step: B(L)^T B(L) = I would require B(L) to be a permutation matrix, and the preparation leg's Born shadow is measured not to be one at any setting or frame.  That is why T1 fails to return around a loop at every setting, including the four where no coordinate admits two identifications -- so T1 is excluded from the identification-multiplicity mechanism.  It also measures, cell by cell, where the forward Born push of a node's law is NOT the next node's own law: the cells are named, because a sentence saying T1 transports flatly along the law's own forward steps is false exactly there.  THIS IS A DISCLOSURE, NOT A MUST-PASS GATE, and for a stated reason: no declared mutant falsifies it -- a mutation that made the declared Born step orthogonal would not be a perturbation of this instrument but a different model -- so it is reported as a measurement of the committed base rather than counted in the falsification census.  No verdict rests on it: T1's verdict is read off the matched table of path pairs and from nothing else",
+   "class": "disclosure",
+   "id": "NT-T1-CAUSE",
+   "passed": true,
+   "value": {
+    "cells": 36,
+    "cells_where_the_forward_push_is_not_the_next_node's_own_law": [
+     "SP-C/F1/leg3",
+     "SP-C/F2/leg3",
+     "SP-D/F1/leg3",
+     "SP-D/F2/leg3",
+     "SP-F/F1/leg3",
+     "SP-F/F2/leg3"
+    ],
+    "legs_whose_transposed_Born_step_does_not_invert_it": 28
+   }
+  },
+  {
+   "claim": "WHICH DATA CARRY THE READ TIME, MEASURED.  T1's datum carries the checkpoint it was read at, inside the datum, so two T1 data read at different checkpoints can never compare equal -- the O4 lesson (RUNBOOK section 15 addendum) built into the type, and the `readtime-conflate` mutant, which reads every datum at the final checkpoint, dies against it.  T2's datum is the defect matrix at the node's own cut and is NOT so tagged: measured here, T2 data read at different checkpoints DO compare equal, at every setting, and the pairs are printed.  Nothing in this unit compares data across coordinates all the same -- the matched table pairs only paths sharing both endpoints, so every compared pair is read at one coordinate -- but T2's distinct-value count is a count on read-time-blind keys and is flagged as one.  T3 is a path functional and has no read time",
+   "class": "disclosure",
+   "id": "NT-READ-TIME-COORDINATE",
+   "passed": true,
+   "value": {
+    "T2_pairs_of_checkpoints_whose_data_are_equal": {
+     "SP-A/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-A/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-B/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-B/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-C/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-C/F2": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-D/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-D/F2": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-E/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-E/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-F/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-F/F2": [
+      "(0,3)",
+      "(1,2)"
+     ]
+    },
+    "distinct_T1_node_data_with_the_read_time": 14,
+    "distinct_T1_node_data_without_the_read_time": 14,
+    "distinct_T2_node_data_without_a_read_time": 4
+   }
+  },
+  {
+   "claim": "WHERE CONJUGATION BY THE WING EXCHANGE MOVES THE COMPOSITION DEFECT, AND WHERE THAT MATTERS.  Measured at all 24 (setting, checkpoint) cells of frame F1: conjugation moves the defect at more cells than the transport can use, and the two conditions are reported separately -- the defect must be MOVED by the element AND the element must be an ADMITTED identification there.  Only where both hold does any path carry the difference, which is why T2's holonomy is carried by one setting",
+   "class": "disclosure",
+   "id": "NT-T2-CONJUGATION-SCOPED",
+   "passed": true,
+   "value": {
+    "cells_where_both_hold": [
+     "SP-F/t1",
+     "SP-F/t2"
+    ],
+    "cells_where_conjugation_moves_the_defect": [
+     "SP-C/t1",
+     "SP-C/t2",
+     "SP-D/t1",
+     "SP-D/t2",
+     "SP-F/t1",
+     "SP-F/t2"
+    ],
+    "cells_where_the_wing_exchange_is_an_admitted_identification": [
+     "SP-E/t0",
+     "SP-E/t1",
+     "SP-E/t2",
+     "SP-E/t3",
+     "SP-F/t0",
+     "SP-F/t1",
+     "SP-F/t2",
+     "SP-F/t3"
+    ]
+   }
+  },
+  {
+   "claim": "THE MANDATORY SECTION 14 SELF-TEST, STATED AT WHAT IT MEASURES.  Every declared loop that has an edge list -- ALL of them, not one per role -- has its holonomy RECOMPUTED FROM THE LINK VARIABLES under EVERY element of the declared switching group: the sweep is COMPLETE at every setting, 512 where only the full-leg rule supplies identifications and 8192 where the realized rule supplies four more, and the checkpoint subgroup (128) is complete everywhere.  The gate measures four things that CAN fail: (1) the declared switching acts on a closed loop by the GLOBAL SCALAR given by the product of the signs it puts on the traversals -- every swept holonomy is compared, exactly, against that scalar times the unswitched holonomy; (2) every swept holonomy is a SIGNED PERMUTATION at all, which for the eight-link canonical loop of non-permutation matrices is a real fact; (3) the loop's SIGN is fixed under the whole checkpoint subgroup -- the telescoping property a wrong sign convention breaks; (4) the group orders are the enumerated powers of two.  The `gauge-sign` mutant drops the switching on a reversed traversal -- the sign/orientation perturbation section 14 requires -- and must die at clauses (1) and (3); the `gauge-subsample` mutant shrinks the sweep and must die at clause (4).  THE INVARIANCE OF THE PERMUTATION PART IS NOT A CLAUSE OF THIS GATE: it FOLLOWS from clause (1), and is reported as the disclosure NT-GAUGE-PERMUTATION-FORCED",
    "class": "measurement",
    "id": "NT-GAUGE-COVARIANCE",
    "passed": true,
    "value": {
+    "deviations_from_the_global_scalar_action": 0,
+    "exact_matrix_comparisons_against_the_scalar_action": 85760,
     "group_sizes": {
      "SP-A": {
       "checkpoint_subgroup": 128,
       "gauge_links": 9,
-      "sampled": false,
+      "sweep_is_complete": true,
       "switching_group_order": 512,
       "switchings_swept": 512
      },
      "SP-B": {
       "checkpoint_subgroup": 128,
       "gauge_links": 9,
-      "sampled": false,
+      "sweep_is_complete": true,
       "switching_group_order": 512,
       "switchings_swept": 512
      },
      "SP-C": {
       "checkpoint_subgroup": 128,
       "gauge_links": 9,
-      "sampled": false,
+      "sweep_is_complete": true,
       "switching_group_order": 512,
       "switchings_swept": 512
      },
      "SP-D": {
       "checkpoint_subgroup": 128,
       "gauge_links": 9,
-      "sampled": false,
+      "sweep_is_complete": true,
       "switching_group_order": 512,
       "switchings_swept": 512
      },
      "SP-E": {
       "checkpoint_subgroup": 128,
       "gauge_links": 13,
-      "sampled": true,
+      "sweep_is_complete": true,
       "switching_group_order": 8192,
-      "switchings_swept": 512
+      "switchings_swept": 8192
      },
      "SP-F": {
       "checkpoint_subgroup": 128,
       "gauge_links": 13,
-      "sampled": true,
+      "sweep_is_complete": true,
       "switching_group_order": 8192,
-      "switchings_swept": 512
+      "switchings_swept": 8192
      }
     },
-    "instances_tested": 6400,
-    "loops_whose_permutation_part_moved": 0,
-    "loops_whose_sign_moved_under_the_checkpoint_subgroup": 0
+    "instances_tested": 85760,
+    "loops_whose_sign_moved_under_the_checkpoint_subgroup": 0,
+    "swept_holonomies_that_are_not_signed_permutations": 0
+   }
+  },
+  {
+   "claim": "AN ANALYTICALLY FORCED CLAUSE, REPORTED AS A DISCLOSURE AND NOT AS A MUST-PASS MEASUREMENT.  The declared switching assigns one sign per link, so it acts on a CLOSED loop's link product by the product of those signs -- a global +-1 (measured: clause (1) of NT-GAUGE-COVARIANCE, 85760 exact comparisons, 0 deviations).  A signed permutation matrix and its negative have the SAME permutation part.  Therefore the permutation part of a closed loop's holonomy is invariant under the whole switching group BY ALGEBRA, for every loop, every setting and every switching, whether or not anything else in this instrument is right: no switching and no mutant could make this clause fail, and it is not claimed as a measurement.  The sweep confirms it -- exactly one permutation part at every swept loop, over the COMPLETE group -- and that confirmation is what is reported here.  The same algebra makes the RELATIVE sign class s_j*s_0 invariant while the raw sign set is not, which is why the relative class is the sign content this unit reports",
+   "class": "disclosure",
+   "id": "NT-GAUGE-PERMUTATION-FORCED",
+   "passed": true,
+   "value": {
+    "distinct_relative_sign_classes_per_loop": [
+     1
+    ],
+    "loops_swept": 14,
+    "loops_whose_permutation_part_moved_under_the_full_group": 0
    }
   },
   {
@@ -977,8 +1416,8 @@
    "id": "NT-GAUGE-CONTROL-MOVES",
    "passed": true,
    "value": {
-    "loops_at_which_the_raw_sign_moved": 10,
-    "loops_swept": 10
+    "loops_at_which_the_raw_sign_moved": 14,
+    "loops_swept": 14
    }
   },
   {
@@ -988,15 +1427,17 @@
    "passed": true,
    "value": {
     "value_cache_hits_during_the_self_test": 0,
-    "value_cache_misses_during_the_self_test": 6400
+    "value_cache_misses_during_the_self_test": 85760
    }
   },
   {
-   "claim": "THE DIRECTION DECLARATION IS BOOKKEEPING, NOT CONTENT.  Every declared loop is re-traversed with the direction convention flipped, and the gate measures that the reversed traversal's holonomy is the INVERSE permutation of the forward one at every loop and every setting -- so the flatness and holonomy verdicts are invariant under the choice.  The `flip-lax` mutant waives the comparison and must die here",
+   "claim": "THE DIRECTION DECLARATION IS BOOKKEEPING, NOT CONTENT.  Every declared loop is re-traversed with the direction convention flipped, and the gate measures that the reversed traversal's holonomy is the INVERSE permutation of the forward one at every loop and every setting -- so the flatness and holonomy verdicts are invariant under the choice.  The `flip-lax` mutant waives the comparison and must die here.  COVERAGE, stated: the test runs on every declared loop that carries an edge list, and the loops it does not reach are named -- the twisted comparators, which are the canonical loop with one link overwritten and have no edge list of their own, so the negative control is not flip-tested",
    "class": "derivation",
    "id": "NT-FLIP-DIRECTION",
    "passed": true,
    "value": {
+    "declared_loops_without_an_edge_list_skipped": 6,
+    "loops_tested": 14,
     "per_loop": {
      "SP-A / the canonical loop": {
       "reverse_traversal_inverts_the_holonomy": true
@@ -1044,7 +1485,7 @@
    }
   },
   {
-   "claim": "THE ADMISSION CRITERION IS A DECLARATION AND ITS CONTENT IS REPORTED.  Identification links are admitted by UNIQUENESS of the admitted transport (the O4 discriminator's FORCED).  The O4 terminal separately measured that its CERTIFICATE is degenerate at the first intermediate checkpoint and refuses the pair at the second, so an admission criterion reading the certificate instead would admit links only at the final declared division event and would empty the loop space.  Both readings are printed; every verdict below is licensed at the declared criterion and at no wider scope",
+   "claim": "THE ADMISSION CRITERION IS A DECLARATION AND ITS CONTENT IS REPORTED.  Identification links are admitted by UNIQUENESS of the admitted transport (the O4 discriminator's FORCED), and this unit's vocabulary says FORCED, never `certified': the O4 terminal CERTIFICATE refuses these transports at the coordinates that carry the result.  Read from the committed O4 receipt and printed here: the certificate is degenerate at the first intermediate checkpoint, refuses the pair at the second, and at the FINAL declared division event it is VACUOUS at SP-E.  An admission criterion reading the certificate instead would therefore admit links at the final division event alone -- and at SP-E, one of the two settings that carry the entire result, not even there, so that setting's loop space would be empty outright.  Both readings are printed; every verdict below is licensed at the declared criterion and at no wider scope.  A rule-label flip is not applicable: one full-leg rule is declared, so there is nothing to flip it against",
    "class": "disclosure",
    "id": "NT-ADMISSION-DISCLOSED",
    "passed": true,
@@ -1081,11 +1522,21 @@
       "links_at_prefix_divergent_checkpoints": 1
      }
     },
-    "rule_label_flip_is_inert": true
+    "rule_label_flip": "not applicable: one full-leg rule is declared",
+    "the_O4_certificate_at_the_final_division_event": {
+     "t=3": {
+      "SP-A": "True",
+      "SP-B": "True",
+      "SP-C": "True",
+      "SP-D": "True",
+      "SP-E": "VACUOUS",
+      "SP-F": "True"
+     }
+    }
    }
   },
   {
-   "claim": "THE HYPOTHESIS' VERDICT IS DERIVED FROM THE MATCHED TABLE OF PATH PAIRS AND FROM NOTHING ELSE.  The pre-registered claim is that the prefix criterion IS the flatness condition.  The table is read for its two falsifiers -- an aligned-prefix pair that DISAGREES (a twisted corridor) and a divergence-crossing pair that AGREES (a flat crossing) -- and the declared probes for each are reported with their exact holonomies.  The gate measures that the emitted verdict is the one the table supports.  The `path-collapse` mutant makes every path carry the same key, so that no pair can ever disagree, and must die here",
+   "claim": "THE HYPOTHESIS' VERDICT IS DERIVED FROM THE MATCHED TABLE OF PATH PAIRS AND FROM NOTHING ELSE.  The pre-registered claim is that the prefix criterion IS the flatness condition.  The table is read for its two falsifiers -- an aligned-prefix pair that DISAGREES (a twisted corridor) and a divergence-crossing pair that AGREES (a flat crossing) -- and the declared probes for each are reported with their exact holonomies.  The gate measures that the emitted verdict is the one the table supports, that each probe class agrees with its own column of the table, and that the twisted corridor survives at O4'S OWN READ TIMES -- the checkpoints the committed base evaluated -- and not only at the coordinate this unit added.  The `path-collapse` mutant makes every path carry the same key, so that no pair can ever disagree while the probes still fire, and must die at the agreement clauses",
    "class": "derivation",
    "id": "NT-HYPOTHESIS-FROM-THE-TABLE",
    "passed": true,
@@ -1096,6 +1547,21 @@
      "SP-E / the prefix-crossing loop t=1<->t=2",
      "SP-F / the prefix-crossing loop t=1<->t=2"
     ],
+    "the_O4_read_times": [
+     1,
+     2,
+     3
+    ],
+    "twisted_corridor_probes_at_O4's_own_read_times": [
+     "SP-E / the aligned-prefix bigon at t=1",
+     "SP-E / the aligned-prefix bigon at t=3",
+     "SP-F / the aligned-prefix bigon at t=1",
+     "SP-F / the aligned-prefix bigon at t=3"
+    ],
+    "twisted_corridor_probes_at_this_unit's_added_coordinate": [
+     "SP-E / the aligned-prefix bigon at t=0",
+     "SP-F / the aligned-prefix bigon at t=0"
+    ],
     "twisted_corridor_probes_that_fired": [
      "SP-E / the aligned-prefix bigon at t=0",
      "SP-E / the aligned-prefix bigon at t=1",
@@ -1105,6 +1571,208 @@
      "SP-F / the aligned-prefix bigon at t=3"
     ],
     "verdict": "NT-PREFIX-FLATNESS-REFUTED"
+   }
+  },
+  {
+   "claim": "THE HOLONOMY VALUE SET IS COUNTED AS PERMUTATIONS, NEVER AS NAME LABELS.  The value set is the set of permutation parts realized by closed paths of the committed path space based at F1@t0; a set of NAMES counts as many elements as the naming table happens to know, which is a count of the wrong object.  The gate measures (1) that the value set has the same cardinality as the group it generates by closure -- so the value set is already CLOSED at the declared length bound, which is a measurement and not an assumption; (2) that the group is abelian with every element of order dividing two, i.e. elementary abelian; (3) that the number of closed paths based there whose holonomy is not a signed permutation, and which the value set therefore cannot contain, is counted and printed rather than silently dropped.  The `label-collapse` mutant counts labels instead of permutations and must die at clause (1)",
+   "class": "measurement",
+   "id": "NT-HOLONOMY-GROUP",
+   "passed": true,
+   "value": {
+    "closed_paths_based_at_F1_t0_whose_holonomy_is_not_a_signed_permutation": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 0,
+     "SP-F": 0
+    },
+    "elements_with_mixed_relative_signs": {
+     "SP-A": [],
+     "SP-B": [],
+     "SP-C": [],
+     "SP-D": [],
+     "SP-E": [
+      "the pointer-only wing swap",
+      "the qubit-only wing swap"
+     ],
+     "SP-F": [
+      "the pointer-only wing swap",
+      "the qubit-only wing swap"
+     ]
+    },
+    "generated_group_order_per_setting": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 4,
+     "SP-F": 4
+    },
+    "settings_with_a_nontrivial_holonomy_group": [
+     "SP-E",
+     "SP-F"
+    ],
+    "value_set_size_per_setting": {
+     "SP-A": 1,
+     "SP-B": 1,
+     "SP-C": 1,
+     "SP-D": 1,
+     "SP-E": 4,
+     "SP-F": 4
+    }
+   }
+  },
+  {
+   "claim": "THE CONNECTION IS NOT PRINCIPAL FOR THE BASE'S OWN ADMITTED ISOMORPHISMS.  The links of this connection are transports the base admits; the GROUP THEY GENERATE AROUND LOOPS is measured against the base's own declared permutation scopes, element by element.  At the two symmetric settings that group is the Klein four-group {1, W, X, WX}: W is the base's wing exchange, X is the QUBIT-ONLY wing swap and WX the POINTER-ONLY wing swap, and the factorisation W = X . WX is measured, not assumed.  The gate measures that exactly TWO of the four elements lie outside the declared 72-element scope AND outside its declared 96-element extension AND outside both admitted sets -- the declared scope's wing flag always moves the qubit pair and the pointer pair TOGETHER, so neither half of W is in it.  It also measures the gauge-invariant SIGN content: the relative sign class s_j*s_0 survives the switching action (the raw sign set does not), and exactly two of the four elements are measured to carry MIXED relative signs.  A theory that earns a structure group half of whose elements its own base does not certify as isomorphisms has earned a structure group the base does not recognise, and that is reported as the result it is.  The `scope-lax` mutant subsamples the admitted scope, the realized rule then admits nothing, the group collapses to the identity, and it must die here",
+   "class": "measurement",
+   "id": "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE",
+   "passed": true,
+   "value": {
+    "elements_carrying_mixed_relative_signs": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 2,
+     "SP-F": 2
+    },
+    "elements_outside_every_declared_scope": {
+     "SP-A": 0,
+     "SP-B": 0,
+     "SP-C": 0,
+     "SP-D": 0,
+     "SP-E": 2,
+     "SP-F": 2
+    },
+    "fixed_points": {
+     "the pointer-only wing swap": 12,
+     "the qubit-only wing swap": 18,
+     "the wing exchange": 6
+    },
+    "per_setting": {
+     "SP-A": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      }
+     },
+     "SP-B": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      }
+     },
+     "SP-C": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      }
+     },
+     "SP-D": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      }
+     },
+     "SP-E": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      },
+      "the pointer-only wing swap": {
+       "fixed_points": 12,
+       "in_the_admitted_2": false,
+       "in_the_admitted_extension_8": false,
+       "in_the_declared_72": false,
+       "in_the_declared_96_extension": false,
+       "mixed_relative_signs": true,
+       "order": 2
+      },
+      "the qubit-only wing swap": {
+       "fixed_points": 18,
+       "in_the_admitted_2": false,
+       "in_the_admitted_extension_8": false,
+       "in_the_declared_72": false,
+       "in_the_declared_96_extension": false,
+       "mixed_relative_signs": true,
+       "order": 2
+      },
+      "the wing exchange": {
+       "fixed_points": 6,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 2
+      }
+     },
+     "SP-F": {
+      "the identity": {
+       "fixed_points": 36,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 1
+      },
+      "the pointer-only wing swap": {
+       "fixed_points": 12,
+       "in_the_admitted_2": false,
+       "in_the_admitted_extension_8": false,
+       "in_the_declared_72": false,
+       "in_the_declared_96_extension": false,
+       "mixed_relative_signs": true,
+       "order": 2
+      },
+      "the qubit-only wing swap": {
+       "fixed_points": 18,
+       "in_the_admitted_2": false,
+       "in_the_admitted_extension_8": false,
+       "in_the_declared_72": false,
+       "in_the_declared_96_extension": false,
+       "mixed_relative_signs": true,
+       "order": 2
+      },
+      "the wing exchange": {
+       "fixed_points": 6,
+       "in_the_admitted_2": true,
+       "in_the_admitted_extension_8": true,
+       "in_the_declared_72": true,
+       "in_the_declared_96_extension": true,
+       "mixed_relative_signs": false,
+       "order": 2
+      }
+     }
+    },
+    "the_wing_exchange_factorises_as_XQ_XP": true
    }
   },
   {
@@ -1122,6 +1790,16 @@
    }
   },
   {
+   "claim": "NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 addendum).  An AST sweep of this module counts every `MUTANT != ...` comparison anywhere in the source -- the pattern by which a gate can exempt its own falsifier -- and the gate measures that count to be ZERO.  Every mutation in this instrument is injected where the computation happens, and every declared falsifier dies by a gate's own predicate evaluated blind.  The `exempt-lax` mutant registers one such comparison and must die here",
+   "class": "derivation",
+   "id": "NT-NO-MUTANT-EXEMPTION",
+   "passed": true,
+   "value": {
+    "comparisons_found": 0,
+    "mutant_exemption_comparisons": []
+   }
+  },
+  {
    "claim": "EXACT ARITHMETIC EVERYWHERE.  An AST sweep of this module finds no float literal and no call to `float`, and a runtime sweep finds no float in any value that reached a gate or an anchor.  The substrate is the committed model's own totally real quartic field Q(cos pi/8), where tuple equality IS field equality, together with fractions.Fraction.  The `float-lax` mutant introduces one and must die here",
    "class": "derivation",
    "id": "NT-EXACT",
@@ -1134,16 +1812,22 @@
    }
   },
   {
-   "claim": "EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.  Each declared mutant is run to completion, must exit 1, and must falsify at least one NAMED gate or anchor; the second clause is the one that matters -- the set of must-pass gates that NO mutant falsifies is measured to be EMPTY.  Each mutant declares its KIND and the split is counted from the declaration: a WAIVER proves a gate's predicate is load-bearing for the exit code, not that the gate would catch a computational defect, and the two are not claimed to be the same thing",
+   "claim": "EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT, AND EVERY MUTANT DIES.  Each declared mutant is run to completion, must exit 1, and must falsify at least one NAMED gate or anchor; the second clause is the one that matters -- the set of must-pass gates that NO mutant falsifies is measured to be EMPTY.  Each mutant declares its KIND and the split is counted from the declaration: a WAIVER proves a gate's predicate is load-bearing for the exit code, not that the gate would catch a computational defect, and the two are not claimed to be the same thing.  BOTH DENOMINATORS ARE REPORTED, because they differ: the count of must-pass gates falsified by SOME mutant, and the smaller count falsified by a mutant that perturbs a COMPUTATION.  The gates carried by a waiver alone are named, not averaged away.  The one gate excluded from the denominator is this one: `run_mutant_table` does not run inside a mutant, so the census gate does not exist there and cannot be falsified by this mechanism at all -- it is a measurement that can come out otherwise, and did, but not one this suite can test",
    "class": "derivation",
    "id": "NT-FALSIFICATION",
    "passed": true,
    "value": {
-    "died": 21,
-    "must_pass_gate_denominator": 13,
-    "mutants": 21,
+    "died": 23,
+    "falsified_by_a_computation_mutant": 16,
+    "falsified_by_some_mutant": 17,
+    "falsified_only_by_a_waiver": [
+     "NT-VOCABULARY"
+    ],
+    "must_pass_gate_denominator": 17,
+    "mutants": 23,
     "never_falsified": [],
-    "perturb_a_computation": 17,
+    "perturb_a_computation": 19,
+    "the_gate_excluded_from_the_denominator": "NT-FALSIFICATION",
     "waivers": 4
    }
   }
@@ -1151,8 +1835,482 @@
  "pin_commit": "26cc502",
  "pin_sha256_prefix": "ee22c5aadbcf",
  "schema": "nt-transport-receipt-v1",
- "source_sha256": "76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb",
+ "source_sha256": "8cb7607d2ba18c358f12ca22e69d5d398e3e840a998ad8316ef33dc2963670e7",
  "tables": {
+  "admission_scope": {
+   "cells_where_the_scope_changes_admission": [
+    "SP-C FULL t=0: 1 -> 2",
+    "SP-C FULL t=1: 1 -> 2",
+    "SP-D FULL t=0: 1 -> 2",
+    "SP-D FULL t=1: 1 -> 2"
+   ],
+   "identification_links_at_the_declared_extension": {
+    "SP-A": 3,
+    "SP-B": 3,
+    "SP-C": 1,
+    "SP-D": 1,
+    "SP-E": 7,
+    "SP-F": 7
+   },
+   "per_cell": {
+    "SP-A/FULL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-A/FULL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-A/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-A/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-A/REAL/t0": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-A/REAL/t1": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-A/REAL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-A/REAL/t3": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-B/FULL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-B/FULL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-B/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-B/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-B/REAL/t0": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-B/REAL/t1": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-B/REAL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-B/REAL/t3": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-C/FULL/t0": {
+     "admitted_at_the_declared_extension": 2,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-C/FULL/t1": {
+     "admitted_at_the_declared_extension": 2,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-C/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-C/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-C/REAL/t0": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-C/REAL/t1": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-C/REAL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-C/REAL/t3": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-D/FULL/t0": {
+     "admitted_at_the_declared_extension": 2,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-D/FULL/t1": {
+     "admitted_at_the_declared_extension": 2,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-D/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-D/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-D/REAL/t0": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-D/REAL/t1": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-D/REAL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-D/REAL/t3": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-E/FULL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/FULL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-E/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/REAL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/REAL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/REAL/t2": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-E/REAL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/FULL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/FULL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/FULL/t2": {
+     "admitted_at_the_declared_extension": 0,
+     "admitted_at_the_narrow_scope": 0
+    },
+    "SP-F/FULL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/REAL/t0": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/REAL/t1": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/REAL/t2": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    },
+    "SP-F/REAL/t3": {
+     "admitted_at_the_declared_extension": 1,
+     "admitted_at_the_narrow_scope": 1
+    }
+   },
+   "settings_where_the_canonical_loop_would_not_exist": [
+    "SP-C",
+    "SP-D"
+   ],
+   "the_canonical_loop_exists_at_the_declared_extension": {
+    "SP-A": true,
+    "SP-B": true,
+    "SP-C": false,
+    "SP-D": false,
+    "SP-E": true,
+    "SP-F": true
+   }
+  },
+  "closed_path_census": {
+   "SP-A": {
+    "aligned": {
+     "the identity": 56
+    },
+    "aligned_non_identity": 0,
+    "aligned_total": 56,
+    "all": {
+     "the identity": 56
+    },
+    "all_non_identity": 0,
+    "all_total": 56,
+    "based_at_F1_t0": {
+     "the identity": 8
+    },
+    "based_at_F1_t0_non_identity": 0,
+    "based_at_F1_t0_total": 8,
+    "crossing": {},
+    "crossing_non_identity": 0,
+    "crossing_total": 0,
+    "holonomy_not_a_signed_permutation": 0,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "the identity": 56
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 0,
+    "no_two_rules_at_one_coordinate_total": 56
+   },
+   "SP-B": {
+    "aligned": {
+     "the identity": 56
+    },
+    "aligned_non_identity": 0,
+    "aligned_total": 56,
+    "all": {
+     "the identity": 56
+    },
+    "all_non_identity": 0,
+    "all_total": 56,
+    "based_at_F1_t0": {
+     "the identity": 8
+    },
+    "based_at_F1_t0_non_identity": 0,
+    "based_at_F1_t0_total": 8,
+    "crossing": {},
+    "crossing_non_identity": 0,
+    "crossing_total": 0,
+    "holonomy_not_a_signed_permutation": 0,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "the identity": 56
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 0,
+    "no_two_rules_at_one_coordinate_total": 56
+   },
+   "SP-C": {
+    "aligned": {
+     "the identity": 56
+    },
+    "aligned_non_identity": 0,
+    "aligned_total": 56,
+    "all": {
+     "the identity": 56
+    },
+    "all_non_identity": 0,
+    "all_total": 56,
+    "based_at_F1_t0": {
+     "the identity": 8
+    },
+    "based_at_F1_t0_non_identity": 0,
+    "based_at_F1_t0_total": 8,
+    "crossing": {},
+    "crossing_non_identity": 0,
+    "crossing_total": 0,
+    "holonomy_not_a_signed_permutation": 0,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "the identity": 56
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 0,
+    "no_two_rules_at_one_coordinate_total": 56
+   },
+   "SP-D": {
+    "aligned": {
+     "the identity": 56
+    },
+    "aligned_non_identity": 0,
+    "aligned_total": 56,
+    "all": {
+     "the identity": 56
+    },
+    "all_non_identity": 0,
+    "all_total": 56,
+    "based_at_F1_t0": {
+     "the identity": 8
+    },
+    "based_at_F1_t0_non_identity": 0,
+    "based_at_F1_t0_total": 8,
+    "crossing": {},
+    "crossing_non_identity": 0,
+    "crossing_total": 0,
+    "holonomy_not_a_signed_permutation": 0,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "the identity": 56
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 0,
+    "no_two_rules_at_one_coordinate_total": 56
+   },
+   "SP-E": {
+    "aligned": {
+     "another permutation": 64,
+     "not a signed permutation": 384,
+     "the identity": 444,
+     "the pointer-only wing swap": 160,
+     "the qubit-only wing swap": 132,
+     "the wing exchange": 368
+    },
+    "aligned_non_identity": 1108,
+    "aligned_total": 1552,
+    "all": {
+     "another permutation": 220,
+     "not a signed permutation": 600,
+     "the identity": 924,
+     "the pointer-only wing swap": 212,
+     "the qubit-only wing swap": 180,
+     "the wing exchange": 684
+    },
+    "all_non_identity": 1896,
+    "all_total": 2820,
+    "based_at_F1_t0": {
+     "the identity": 82,
+     "the pointer-only wing swap": 106,
+     "the qubit-only wing swap": 90,
+     "the wing exchange": 86
+    },
+    "based_at_F1_t0_non_identity": 282,
+    "based_at_F1_t0_total": 364,
+    "crossing": {
+     "another permutation": 156,
+     "not a signed permutation": 216,
+     "the identity": 480,
+     "the pointer-only wing swap": 52,
+     "the qubit-only wing swap": 48,
+     "the wing exchange": 316
+    },
+    "crossing_non_identity": 788,
+    "crossing_total": 1268,
+    "holonomy_not_a_signed_permutation": 600,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "another permutation": 64,
+     "not a signed permutation": 100,
+     "the identity": 228,
+     "the pointer-only wing swap": 44,
+     "the qubit-only wing swap": 20,
+     "the wing exchange": 120
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 348,
+    "no_two_rules_at_one_coordinate_total": 576
+   },
+   "SP-F": {
+    "aligned": {
+     "not a signed permutation": 448,
+     "the identity": 444,
+     "the pointer-only wing swap": 160,
+     "the qubit-only wing swap": 132,
+     "the wing exchange": 368
+    },
+    "aligned_non_identity": 1108,
+    "aligned_total": 1552,
+    "all": {
+     "not a signed permutation": 820,
+     "the identity": 924,
+     "the pointer-only wing swap": 212,
+     "the qubit-only wing swap": 180,
+     "the wing exchange": 684
+    },
+    "all_non_identity": 1896,
+    "all_total": 2820,
+    "based_at_F1_t0": {
+     "the identity": 82,
+     "the pointer-only wing swap": 106,
+     "the qubit-only wing swap": 90,
+     "the wing exchange": 86
+    },
+    "based_at_F1_t0_non_identity": 282,
+    "based_at_F1_t0_total": 364,
+    "crossing": {
+     "not a signed permutation": 372,
+     "the identity": 480,
+     "the pointer-only wing swap": 52,
+     "the qubit-only wing swap": 48,
+     "the wing exchange": 316
+    },
+    "crossing_non_identity": 788,
+    "crossing_total": 1268,
+    "holonomy_not_a_signed_permutation": 820,
+    "holonomy_not_a_signed_permutation_based_at_F1_t0": 0,
+    "no_two_rules_at_one_coordinate": {
+     "not a signed permutation": 164,
+     "the identity": 228,
+     "the pointer-only wing swap": 44,
+     "the qubit-only wing swap": 20,
+     "the wing exchange": 120
+    },
+    "no_two_rules_at_one_coordinate_non_identity": 348,
+    "no_two_rules_at_one_coordinate_total": 576
+   }
+  },
+  "crossing_counter_loops": {
+   "SP-A": {},
+   "SP-B": {},
+   "SP-C": {},
+   "SP-D": {},
+   "SP-E": {
+    "t=1<->t=2 closed by FULL at t=1": {
+     "holonomy": "the wing exchange",
+     "is_the_declared_probe": false
+    },
+    "t=1<->t=2 closed by REAL at t=1": {
+     "holonomy": "the identity",
+     "is_the_declared_probe": true
+    },
+    "t=2<->t=3 closed by FULL at t=3": {
+     "holonomy": "another permutation",
+     "is_the_declared_probe": false
+    },
+    "t=2<->t=3 closed by REAL at t=3": {
+     "holonomy": "the identity",
+     "is_the_declared_probe": false
+    }
+   },
+   "SP-F": {
+    "t=1<->t=2 closed by FULL at t=1": {
+     "holonomy": "the wing exchange",
+     "is_the_declared_probe": false
+    },
+    "t=1<->t=2 closed by REAL at t=1": {
+     "holonomy": "the identity",
+     "is_the_declared_probe": true
+    },
+    "t=2<->t=3 closed by FULL at t=3": {
+     "holonomy": "not a signed permutation",
+     "is_the_declared_probe": false
+    },
+    "t=2<->t=3 closed by REAL at t=3": {
+     "holonomy": "the identity",
+     "is_the_declared_probe": false
+    }
+   }
+  },
   "declarations": {
    "arena": {
     "admitted_extension": 8,
@@ -1306,9 +2464,37 @@
     "SP-F / the prefix-crossing loop t=1<->t=2": {
      "reverse_traversal_inverts_the_holonomy": true
     }
+   },
+   "the_O4_certificate_at_the_final_division_event": {
+    "t=3": {
+     "SP-A": "True",
+     "SP-B": "True",
+     "SP-C": "True",
+     "SP-D": "True",
+     "SP-E": "VACUOUS",
+     "SP-F": "True"
+    }
    }
   },
   "gate_falsification": {
+   "falsified_by_a_computation_mutant": [
+    "NT-EXACT",
+    "NT-FLIP-DIRECTION",
+    "NT-FREEZE",
+    "NT-FRESH-EVAL",
+    "NT-GAUGE-CONTROL-MOVES",
+    "NT-GAUGE-COVARIANCE",
+    "NT-HOLONOMY-GROUP",
+    "NT-HYPOTHESIS-FROM-THE-TABLE",
+    "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
+    "NT-NEGATIVE-CONTROL",
+    "NT-NO-MUTANT-EXEMPTION",
+    "NT-PATH-SPACE-ENUMERATED",
+    "NT-POSITIVE-CONTROL",
+    "NT-PREFIX-DECIDES-REDERIVED",
+    "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE",
+    "NT-T2-POSABILITY"
+   ],
    "falsified_by_some_mutant": [
     "NT-EXACT",
     "NT-FLIP-DIRECTION",
@@ -1316,12 +2502,19 @@
     "NT-FRESH-EVAL",
     "NT-GAUGE-CONTROL-MOVES",
     "NT-GAUGE-COVARIANCE",
+    "NT-HOLONOMY-GROUP",
     "NT-HYPOTHESIS-FROM-THE-TABLE",
+    "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
     "NT-NEGATIVE-CONTROL",
+    "NT-NO-MUTANT-EXEMPTION",
     "NT-PATH-SPACE-ENUMERATED",
     "NT-POSITIVE-CONTROL",
     "NT-PREFIX-DECIDES-REDERIVED",
+    "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE",
     "NT-T2-POSABILITY",
+    "NT-VOCABULARY"
+   ],
+   "falsified_only_by_a_waiver": [
     "NT-VOCABULARY"
    ],
    "must_pass_gates": [
@@ -1331,113 +2524,295 @@
     "NT-POSITIVE-CONTROL",
     "NT-NEGATIVE-CONTROL",
     "NT-T2-POSABILITY",
+    "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
     "NT-GAUGE-COVARIANCE",
     "NT-GAUGE-CONTROL-MOVES",
     "NT-FRESH-EVAL",
     "NT-FLIP-DIRECTION",
     "NT-HYPOTHESIS-FROM-THE-TABLE",
+    "NT-HOLONOMY-GROUP",
+    "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE",
     "NT-VOCABULARY",
+    "NT-NO-MUTANT-EXEMPTION",
     "NT-EXACT"
    ],
-   "never_falsified": []
+   "never_falsified": [],
+   "per_gate_falsifiers": {
+    "NT-EXACT": {
+     "computation": [
+      "float-lax"
+     ],
+     "waiver": []
+    },
+    "NT-FLIP-DIRECTION": {
+     "computation": [
+      "orient-flip",
+      "readtime-conflate"
+     ],
+     "waiver": [
+      "flip-lax"
+     ]
+    },
+    "NT-FREEZE": {
+     "computation": [
+      "freeze-lax"
+     ],
+     "waiver": []
+    },
+    "NT-FRESH-EVAL": {
+     "computation": [
+      "id-lax",
+      "memo-lax"
+     ],
+     "waiver": []
+    },
+    "NT-GAUGE-CONTROL-MOVES": {
+     "computation": [
+      "gauge-subsample",
+      "id-lax"
+     ],
+     "waiver": []
+    },
+    "NT-GAUGE-COVARIANCE": {
+     "computation": [
+      "gauge-sign",
+      "gauge-subsample",
+      "id-lax",
+      "orient-flip",
+      "readtime-conflate"
+     ],
+     "waiver": []
+    },
+    "NT-HOLONOMY-GROUP": {
+     "computation": [
+      "id-lax",
+      "label-collapse",
+      "orient-flip",
+      "path-collapse"
+     ],
+     "waiver": []
+    },
+    "NT-HYPOTHESIS-FROM-THE-TABLE": {
+     "computation": [
+      "id-lax",
+      "orient-flip",
+      "path-collapse",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY": {
+     "computation": [
+      "anchor-w6-wing",
+      "id-lax",
+      "readtime-conflate",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "NT-NEGATIVE-CONTROL": {
+     "computation": [
+      "anchor-w6-wing",
+      "id-lax"
+     ],
+     "waiver": []
+    },
+    "NT-NO-MUTANT-EXEMPTION": {
+     "computation": [
+      "exempt-lax"
+     ],
+     "waiver": []
+    },
+    "NT-PATH-SPACE-ENUMERATED": {
+     "computation": [
+      "id-lax",
+      "reduce-lax"
+     ],
+     "waiver": []
+    },
+    "NT-POSITIVE-CONTROL": {
+     "computation": [
+      "id-lax",
+      "orient-flip"
+     ],
+     "waiver": [
+      "control-lax"
+     ]
+    },
+    "NT-PREFIX-DECIDES-REDERIVED": {
+     "computation": [
+      "defect-order",
+      "prefix-lax",
+      "readtime-conflate"
+     ],
+     "waiver": []
+    },
+    "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE": {
+     "computation": [
+      "anchor-w6-wing",
+      "id-lax",
+      "orient-flip",
+      "path-collapse",
+      "scope-lax"
+     ],
+     "waiver": []
+    },
+    "NT-T2-POSABILITY": {
+     "computation": [
+      "defect-order"
+     ],
+     "waiver": [
+      "posability-lax"
+     ]
+    },
+    "NT-VOCABULARY": {
+     "computation": [],
+     "waiver": [
+      "verdict-lax"
+     ]
+    }
+   }
   },
   "gauge_selftest": {
    "group_sizes": {
     "SP-A": {
      "checkpoint_subgroup": 128,
      "gauge_links": 9,
-     "sampled": false,
+     "sweep_is_complete": true,
      "switching_group_order": 512,
      "switchings_swept": 512
     },
     "SP-B": {
      "checkpoint_subgroup": 128,
      "gauge_links": 9,
-     "sampled": false,
+     "sweep_is_complete": true,
      "switching_group_order": 512,
      "switchings_swept": 512
     },
     "SP-C": {
      "checkpoint_subgroup": 128,
      "gauge_links": 9,
-     "sampled": false,
+     "sweep_is_complete": true,
      "switching_group_order": 512,
      "switchings_swept": 512
     },
     "SP-D": {
      "checkpoint_subgroup": 128,
      "gauge_links": 9,
-     "sampled": false,
+     "sweep_is_complete": true,
      "switching_group_order": 512,
      "switchings_swept": 512
     },
     "SP-E": {
      "checkpoint_subgroup": 128,
      "gauge_links": 13,
-     "sampled": true,
+     "sweep_is_complete": true,
      "switching_group_order": 8192,
-     "switchings_swept": 512
+     "switchings_swept": 8192
     },
     "SP-F": {
      "checkpoint_subgroup": 128,
      "gauge_links": 13,
-     "sampled": true,
+     "sweep_is_complete": true,
      "switching_group_order": 8192,
-     "switchings_swept": 512
+     "switchings_swept": 8192
     }
+   },
+   "loops_swept_per_setting": {
+    "SP-A": 1,
+    "SP-B": 1,
+    "SP-C": 1,
+    "SP-D": 1,
+    "SP-E": 5,
+    "SP-F": 5
    },
    "per_loop": {
     "SP-A / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-B / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-C / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-D / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-E / the aligned-prefix bigon at t=0": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-E / the aligned-prefix bigon at t=1": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-E / the aligned-prefix bigon at t=3": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-E / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-E / the prefix-crossing loop t=1<->t=2": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-F / the aligned-prefix bigon at t=0": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-F / the aligned-prefix bigon at t=1": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
+     "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
+     "distinct_sign_orbits_under_the_full_group": 2
+    },
+    "SP-F / the aligned-prefix bigon at t=3": {
+     "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-F / the canonical loop": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     },
     "SP-F / the prefix-crossing loop t=1<->t=2": {
      "distinct_permutation_parts_under_the_full_group": 1,
+     "distinct_relative_sign_classes_under_the_full_group": 1,
      "distinct_sign_orbits_under_the_checkpoint_subgroup": 1,
      "distinct_sign_orbits_under_the_full_group": 2
     }
-   }
+   },
+   "the_declared_probe_excluded_from_the_sweep": "the twisted comparator: it carries no edge list of its own, being the canonical loop with one link overwritten"
   },
   "hypothesis_table": {
    "T1/aligned/agree": 681660,
@@ -1452,6 +2827,1012 @@
    "T3/aligned/disagree": 1272256,
    "T3/crossing/agree": 917412,
    "T3/crossing/disagree": 2347684
+  },
+  "layers": {
+   "t1_cause": {
+    "cells": 36,
+    "legs_where_the_forward_push_is_not_the_next_node's_own_law": [
+     "SP-C/F1/leg3",
+     "SP-C/F2/leg3",
+     "SP-D/F1/leg3",
+     "SP-D/F2/leg3",
+     "SP-F/F1/leg3",
+     "SP-F/F2/leg3"
+    ],
+    "legs_whose_transposed_Born_step_does_not_invert_it": [
+     "SP-A/F1/leg1",
+     "SP-A/F1/leg3",
+     "SP-A/F2/leg1",
+     "SP-A/F2/leg2",
+     "SP-B/F1/leg1",
+     "SP-B/F1/leg3",
+     "SP-B/F2/leg1",
+     "SP-B/F2/leg2",
+     "SP-C/F1/leg1",
+     "SP-C/F1/leg2",
+     "SP-C/F1/leg3",
+     "SP-C/F2/leg1",
+     "SP-C/F2/leg2",
+     "SP-C/F2/leg3",
+     "SP-D/F1/leg1",
+     "SP-D/F1/leg2",
+     "SP-D/F1/leg3",
+     "SP-D/F2/leg1",
+     "SP-D/F2/leg2",
+     "SP-D/F2/leg3",
+     "SP-E/F1/leg1",
+     "SP-E/F2/leg1",
+     "SP-F/F1/leg1",
+     "SP-F/F1/leg2",
+     "SP-F/F1/leg3",
+     "SP-F/F2/leg1",
+     "SP-F/F2/leg2",
+     "SP-F/F2/leg3"
+    ]
+   },
+   "t2_conjugation": {
+    "SP-A/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-A/t1": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-A/t2": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-A/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-B/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-B/t1": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-B/t2": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-B/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-C/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-C/t1": {
+     "both": false,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-C/t2": {
+     "both": false,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-C/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-D/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-D/t1": {
+     "both": false,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-D/t2": {
+     "both": false,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-D/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": false
+    },
+    "SP-E/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-E/t1": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-E/t2": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-E/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-F/t0": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-F/t1": {
+     "both": true,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-F/t2": {
+     "both": true,
+     "conjugation_moves_the_defect": true,
+     "defect_is_nonzero": true,
+     "the_wing_exchange_is_admitted_here": true
+    },
+    "SP-F/t3": {
+     "both": false,
+     "conjugation_moves_the_defect": false,
+     "defect_is_nonzero": false,
+     "the_wing_exchange_is_admitted_here": true
+    }
+   },
+   "t2_read_time": {
+    "T1_pairs_of_checkpoints_whose_LAWS_are_equal_before_the_tag": {
+     "SP-A/F1": [],
+     "SP-A/F2": [],
+     "SP-B/F1": [],
+     "SP-B/F2": [],
+     "SP-C/F1": [],
+     "SP-C/F2": [],
+     "SP-D/F1": [],
+     "SP-D/F2": [],
+     "SP-E/F1": [],
+     "SP-E/F2": [],
+     "SP-F/F1": [],
+     "SP-F/F2": []
+    },
+    "T2_pairs_of_checkpoints_whose_data_are_equal": {
+     "SP-A/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-A/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-B/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-B/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-C/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-C/F2": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-D/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-D/F2": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-E/F1": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-E/F2": [
+      "(0,1)",
+      "(0,2)",
+      "(0,3)",
+      "(1,2)",
+      "(1,3)",
+      "(2,3)"
+     ],
+     "SP-F/F1": [
+      "(0,3)",
+      "(1,2)"
+     ],
+     "SP-F/F2": [
+      "(0,3)",
+      "(1,2)"
+     ]
+    },
+    "distinct_T1_node_data_with_the_read_time": 14,
+    "distinct_T1_node_data_without_the_read_time": 14,
+    "distinct_T2_node_data_without_a_read_time": 4
+   }
+  },
+  "mechanism": {
+   "coordinates_of_multiplicity_at_least_two": [
+    "SP-E/t0",
+    "SP-E/t1",
+    "SP-E/t3",
+    "SP-F/t0",
+    "SP-F/t1",
+    "SP-F/t3"
+   ],
+   "identification_multiplicity": {
+    "SP-A/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-A/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-A/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 0
+     },
+     "admitted_maps": [],
+     "multiplicity": 0
+    },
+    "SP-A/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-B/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-B/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-B/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 0
+     },
+     "admitted_maps": [],
+     "multiplicity": 0
+    },
+    "SP-B/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-C/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-C/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-C/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 0
+     },
+     "admitted_maps": [],
+     "multiplicity": 0
+    },
+    "SP-C/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-D/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-D/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-D/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 0
+     },
+     "admitted_maps": [],
+     "multiplicity": 0
+    },
+    "SP-D/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 0
+     },
+     "admitted_maps": [
+      "the identity"
+     ],
+     "multiplicity": 1
+    },
+    "SP-E/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    },
+    "SP-E/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    },
+    "SP-E/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the wing exchange"
+     ],
+     "multiplicity": 1
+    },
+    "SP-E/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    },
+    "SP-F/t0": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    },
+    "SP-F/t1": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    },
+    "SP-F/t2": {
+     "admitted_count_per_rule": {
+      "FULL": 0,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the wing exchange"
+     ],
+     "multiplicity": 1
+    },
+    "SP-F/t3": {
+     "admitted_count_per_rule": {
+      "FULL": 1,
+      "REAL": 1
+     },
+     "admitted_maps": [
+      "the identity",
+      "the wing exchange"
+     ],
+     "multiplicity": 2
+    }
+   },
+   "single_rule_subconnections": {
+    "SP-A/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-A/FULL+REAL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-A/REAL": {
+     "closed_paths_at_F1_t0": 0,
+     "cycle_rank": -1,
+     "generated_group_order": 1,
+     "holonomy_classes": {},
+     "identification_links": 0,
+     "links": 6,
+     "max_identification_multiplicity_at_one_coordinate": 0,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "REAL"
+     ]
+    },
+    "SP-B/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-B/FULL+REAL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-B/REAL": {
+     "closed_paths_at_F1_t0": 0,
+     "cycle_rank": -1,
+     "generated_group_order": 1,
+     "holonomy_classes": {},
+     "identification_links": 0,
+     "links": 6,
+     "max_identification_multiplicity_at_one_coordinate": 0,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "REAL"
+     ]
+    },
+    "SP-C/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-C/FULL+REAL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-C/REAL": {
+     "closed_paths_at_F1_t0": 0,
+     "cycle_rank": -1,
+     "generated_group_order": 1,
+     "holonomy_classes": {},
+     "identification_links": 0,
+     "links": 6,
+     "max_identification_multiplicity_at_one_coordinate": 0,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "REAL"
+     ]
+    },
+    "SP-D/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-D/FULL+REAL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-D/REAL": {
+     "closed_paths_at_F1_t0": 0,
+     "cycle_rank": -1,
+     "generated_group_order": 1,
+     "holonomy_classes": {},
+     "identification_links": 0,
+     "links": 6,
+     "max_identification_multiplicity_at_one_coordinate": 0,
+     "multiplicity_map": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 1
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "REAL"
+     ]
+    },
+    "SP-E/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-E/FULL+REAL": {
+     "closed_paths_at_F1_t0": 364,
+     "cycle_rank": 6,
+     "generated_group_order": 4,
+     "holonomy_classes": {
+      "the identity": 82,
+      "the pointer-only wing swap": 106,
+      "the qubit-only wing swap": 90,
+      "the wing exchange": 86
+     },
+     "identification_links": 7,
+     "links": 13,
+     "max_identification_multiplicity_at_one_coordinate": 2,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 282,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-E/REAL": {
+     "closed_paths_at_F1_t0": 18,
+     "cycle_rank": 3,
+     "generated_group_order": 2,
+     "holonomy_classes": {
+      "the identity": 10,
+      "the qubit-only wing swap": 8
+     },
+     "identification_links": 4,
+     "links": 10,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 8,
+     "rules": [
+      "REAL"
+     ]
+    },
+    "SP-F/FULL": {
+     "closed_paths_at_F1_t0": 8,
+     "cycle_rank": 2,
+     "generated_group_order": 1,
+     "holonomy_classes": {
+      "the identity": 8
+     },
+     "identification_links": 3,
+     "links": 9,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 0,
+     "rules": [
+      "FULL"
+     ]
+    },
+    "SP-F/FULL+REAL": {
+     "closed_paths_at_F1_t0": 364,
+     "cycle_rank": 6,
+     "generated_group_order": 4,
+     "holonomy_classes": {
+      "the identity": 82,
+      "the pointer-only wing swap": 106,
+      "the qubit-only wing swap": 90,
+      "the wing exchange": 86
+     },
+     "identification_links": 7,
+     "links": 13,
+     "max_identification_multiplicity_at_one_coordinate": 2,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 282,
+     "rules": [
+      "FULL",
+      "REAL"
+     ]
+    },
+    "SP-F/REAL": {
+     "closed_paths_at_F1_t0": 18,
+     "cycle_rank": 3,
+     "generated_group_order": 2,
+     "holonomy_classes": {
+      "the identity": 10,
+      "the qubit-only wing swap": 8
+     },
+     "identification_links": 4,
+     "links": 10,
+     "max_identification_multiplicity_at_one_coordinate": 1,
+     "multiplicity_map": {
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 2
+     },
+     "non_identity_closed_paths": 8,
+     "rules": [
+      "REAL"
+     ]
+    }
+   },
+   "the_prep_leg_defect_element": {
+    "SP-A": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    },
+    "SP-B": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    },
+    "SP-C": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    },
+    "SP-D": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    },
+    "SP-E": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    },
+    "SP-F": {
+     "is_a_signed_permutation": true,
+     "is_the_identity": false,
+     "name": "the qubit-only wing swap"
+    }
+   },
+   "wing_exchange_intertwining_per_leg": {
+    "SP-A/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-A/leg2": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-A/leg3": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-B/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-B/leg2": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-B/leg3": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-C/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-C/leg2": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-C/leg3": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-D/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-D/leg2": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-D/leg3": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-E/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-E/leg2": {
+     "wing_exchange_intertwines_the_leg": true
+    },
+    "SP-E/leg3": {
+     "wing_exchange_intertwines_the_leg": true
+    },
+    "SP-F/leg1": {
+     "wing_exchange_intertwines_the_leg": false
+    },
+    "SP-F/leg2": {
+     "wing_exchange_intertwines_the_leg": true
+    },
+    "SP-F/leg3": {
+     "wing_exchange_intertwines_the_leg": true
+    }
+   }
   },
   "mutants": [
    {
@@ -1476,7 +3857,9 @@
     "exit": 1,
     "falsified_anchors": [],
     "falsified_gates": [
-     "NT-HYPOTHESIS-FROM-THE-TABLE"
+     "NT-HYPOTHESIS-FROM-THE-TABLE",
+     "NT-HOLONOMY-GROUP",
+     "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE"
     ],
     "kind": "computation",
     "mutant": "path-collapse"
@@ -1508,6 +3891,7 @@
     ],
     "falsified_gates": [
      "NT-PREFIX-DECIDES-REDERIVED",
+     "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
      "NT-GAUGE-COVARIANCE",
      "NT-FLIP-DIRECTION"
     ],
@@ -1524,7 +3908,8 @@
      "A07",
      "A19",
      "A20",
-     "A21"
+     "A21",
+     "A23"
     ],
     "falsified_gates": [
      "NT-PREFIX-DECIDES-REDERIVED",
@@ -1543,7 +3928,9 @@
      "NT-POSITIVE-CONTROL",
      "NT-GAUGE-COVARIANCE",
      "NT-FLIP-DIRECTION",
-     "NT-HYPOTHESIS-FROM-THE-TABLE"
+     "NT-HYPOTHESIS-FROM-THE-TABLE",
+     "NT-HOLONOMY-GROUP",
+     "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE"
     ],
     "kind": "computation",
     "mutant": "orient-flip"
@@ -1558,9 +3945,13 @@
      "NT-PATH-SPACE-ENUMERATED",
      "NT-POSITIVE-CONTROL",
      "NT-NEGATIVE-CONTROL",
+     "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
      "NT-GAUGE-COVARIANCE",
      "NT-GAUGE-CONTROL-MOVES",
-     "NT-FRESH-EVAL"
+     "NT-FRESH-EVAL",
+     "NT-HYPOTHESIS-FROM-THE-TABLE",
+     "NT-HOLONOMY-GROUP",
+     "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE"
     ],
     "kind": "computation",
     "mutant": "id-lax"
@@ -1579,6 +3970,30 @@
    },
    {
     "crashed_before_reporting": false,
+    "declaration": "the holonomy value set counted as name labels, not permutations",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-HOLONOMY-GROUP"
+    ],
+    "kind": "computation",
+    "mutant": "label-collapse"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a mutant-identity exemption registered in a gate predicate",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "NT-NO-MUTANT-EXEMPTION"
+    ],
+    "kind": "computation",
+    "mutant": "exempt-lax"
+   },
+   {
+    "crashed_before_reporting": false,
     "declaration": "the admitted permutation scope subsampled",
     "died": true,
     "exit": 1,
@@ -1586,7 +4001,9 @@
      "A17"
     ],
     "falsified_gates": [
-     "NT-HYPOTHESIS-FROM-THE-TABLE"
+     "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
+     "NT-HYPOTHESIS-FROM-THE-TABLE",
+     "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE"
     ],
     "kind": "computation",
     "mutant": "scope-lax"
@@ -1598,6 +4015,7 @@
     "exit": 1,
     "falsified_anchors": [],
     "falsified_gates": [
+     "NT-GAUGE-COVARIANCE",
      "NT-GAUGE-CONTROL-MOVES"
     ],
     "kind": "computation",
@@ -1677,7 +4095,9 @@
      "A09"
     ],
     "falsified_gates": [
-     "NT-NEGATIVE-CONTROL"
+     "NT-NEGATIVE-CONTROL",
+     "NT-MECHANISM-SUFFICIENT-NOT-NECESSARY",
+     "NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE"
     ],
     "kind": "computation",
     "mutant": "anchor-w6-wing"
@@ -2549,11 +4969,62 @@
    "_total_pairs": 4972096,
    "_total_paths": 34024
   },
+  "path_space_audit": {
+   "SP-A": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 2,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   },
+   "SP-B": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 2,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   },
+   "SP-C": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 2,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   },
+   "SP-D": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 2,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   },
+   "SP-E": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 6,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   },
+   "SP-F": {
+    "connected_components": 1,
+    "cycle_rank_recomputed_from_the_measured_components": 6,
+    "nodes_reached_by_the_enumeration": 8,
+    "paths_that_traverse_one_link_twice_in_succession": 0,
+    "paths_whose_walk_does_not_reach_the_declared_end": 0,
+    "steps_that_do_not_follow_the_graph": 0
+   }
+  },
   "posability": {
    "SP-A": {
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2561,6 +5032,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2568,6 +5040,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2575,6 +5048,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2582,6 +5056,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2589,6 +5064,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2596,6 +5072,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2603,6 +5080,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2612,6 +5090,7 @@
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2619,6 +5098,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2626,6 +5106,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2633,6 +5114,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2640,6 +5122,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2647,6 +5130,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2654,6 +5138,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2661,6 +5146,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2670,6 +5156,7 @@
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2677,6 +5164,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2684,6 +5172,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2691,6 +5180,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2698,6 +5188,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2705,6 +5196,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2712,6 +5204,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2719,6 +5212,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2728,6 +5222,7 @@
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2735,6 +5230,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2742,6 +5238,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2749,6 +5246,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2756,6 +5254,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2763,6 +5262,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2770,6 +5270,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2777,6 +5278,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2786,6 +5288,7 @@
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2793,6 +5296,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2800,6 +5304,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2807,6 +5312,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2814,6 +5320,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2821,6 +5328,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2828,6 +5336,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2835,6 +5344,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2844,6 +5354,7 @@
     "F1@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2851,6 +5362,7 @@
     "F1@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2858,6 +5370,7 @@
     "F1@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2865,6 +5378,7 @@
     "F1@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2872,6 +5386,7 @@
     "F2@t0": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2879,6 +5394,7 @@
     "F2@t1": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2886,6 +5402,7 @@
     "F2@t2": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 16,
      "defect_nonzero_entries": 288
@@ -2893,6 +5410,7 @@
     "F2@t3": {
      "amplitude_composition_exact": true,
      "both_factors_declared": true,
+     "clause_3_is_entailed_by_clause_2": true,
      "defect_equals_W5_residual": true,
      "defect_j0_column_weight": 0,
      "defect_nonzero_entries": 0
@@ -2999,6 +5517,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3015,6 +5534,7 @@
     "T3_is_signed_permutation": false,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "not a signed permutation",
+    "T3_relative_signs_are_mixed": null,
     "T3_sign_orbit": null,
     "base_node": "F1@t0",
     "corridor": "aligned",
@@ -3029,6 +5549,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3045,6 +5566,7 @@
     "T3_is_signed_permutation": false,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "not a signed permutation",
+    "T3_relative_signs_are_mixed": null,
     "T3_sign_orbit": null,
     "base_node": "F1@t0",
     "corridor": "aligned",
@@ -3059,6 +5581,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3075,6 +5598,7 @@
     "T3_is_signed_permutation": false,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "not a signed permutation",
+    "T3_relative_signs_are_mixed": null,
     "T3_sign_orbit": null,
     "base_node": "F1@t0",
     "corridor": "aligned",
@@ -3089,6 +5613,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3105,6 +5630,7 @@
     "T3_is_signed_permutation": false,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "not a signed permutation",
+    "T3_relative_signs_are_mixed": null,
     "T3_sign_orbit": null,
     "base_node": "F1@t0",
     "corridor": "aligned",
@@ -3119,6 +5645,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3135,6 +5662,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3151,6 +5679,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3167,6 +5696,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3183,6 +5713,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3198,7 +5729,8 @@
     "T2_returns": true,
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
-    "T3_permutation_name": "another permutation",
+    "T3_permutation_name": "the pointer-only wing swap",
+    "T3_relative_signs_are_mixed": true,
     "T3_sign_orbit": [
      -1,
      1
@@ -3216,6 +5748,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3232,6 +5765,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3248,6 +5782,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
     "T3_permutation_name": "the wing exchange",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3264,6 +5799,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3280,6 +5816,7 @@
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": true,
     "T3_permutation_name": "the identity",
+    "T3_relative_signs_are_mixed": false,
     "T3_sign_orbit": [
      1
     ],
@@ -3295,7 +5832,8 @@
     "T2_returns": true,
     "T3_is_signed_permutation": true,
     "T3_permutation_is_the_identity": false,
-    "T3_permutation_name": "another permutation",
+    "T3_permutation_name": "the pointer-only wing swap",
+    "T3_relative_signs_are_mixed": true,
     "T3_sign_orbit": [
      -1,
      1
@@ -3305,11 +5843,157 @@
     "length": null,
     "role": "NEGATIVE CONTROL: it MUST show holonomy"
    }
+  },
+  "structure_group": {
+   "elements_outside_every_declared_scope": {
+    "SP-A": 0,
+    "SP-B": 0,
+    "SP-C": 0,
+    "SP-D": 0,
+    "SP-E": 2,
+    "SP-F": 2
+   },
+   "factor_fixed_points": {
+    "the pointer-only wing swap": 12,
+    "the qubit-only wing swap": 18,
+    "the wing exchange": 6
+   },
+   "per_setting": {
+    "SP-A": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     }
+    },
+    "SP-B": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     }
+    },
+    "SP-C": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     }
+    },
+    "SP-D": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     }
+    },
+    "SP-E": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     },
+     "the pointer-only wing swap": {
+      "fixed_points": 12,
+      "in_the_admitted_2": false,
+      "in_the_admitted_extension_8": false,
+      "in_the_declared_72": false,
+      "in_the_declared_96_extension": false,
+      "mixed_relative_signs": true,
+      "order": 2
+     },
+     "the qubit-only wing swap": {
+      "fixed_points": 18,
+      "in_the_admitted_2": false,
+      "in_the_admitted_extension_8": false,
+      "in_the_declared_72": false,
+      "in_the_declared_96_extension": false,
+      "mixed_relative_signs": true,
+      "order": 2
+     },
+     "the wing exchange": {
+      "fixed_points": 6,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 2
+     }
+    },
+    "SP-F": {
+     "the identity": {
+      "fixed_points": 36,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 1
+     },
+     "the pointer-only wing swap": {
+      "fixed_points": 12,
+      "in_the_admitted_2": false,
+      "in_the_admitted_extension_8": false,
+      "in_the_declared_72": false,
+      "in_the_declared_96_extension": false,
+      "mixed_relative_signs": true,
+      "order": 2
+     },
+     "the qubit-only wing swap": {
+      "fixed_points": 18,
+      "in_the_admitted_2": false,
+      "in_the_admitted_extension_8": false,
+      "in_the_declared_72": false,
+      "in_the_declared_96_extension": false,
+      "mixed_relative_signs": true,
+      "order": 2
+     },
+     "the wing exchange": {
+      "fixed_points": 6,
+      "in_the_admitted_2": true,
+      "in_the_admitted_extension_8": true,
+      "in_the_declared_72": true,
+      "in_the_declared_96_extension": true,
+      "mixed_relative_signs": false,
+      "order": 2
+     }
+    }
+   },
+   "the_two_factors_are_in_the_declared_72": [
+    false,
+    false
+   ],
+   "the_two_factors_are_in_the_declared_96": [
+    false,
+    false
+   ],
+   "the_wing_exchange_factorises_as_XQ_XP": true
   }
  },
  "totals": {
-  "anchors": 22,
-  "gates": 15,
+  "anchors": 23,
+  "gates": 24,
   "must_pass_failures": 0
  }
 }

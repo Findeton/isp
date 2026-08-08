@@ -2,7 +2,7 @@
 NT -- NOMOLOGICAL TRANSPORT OVER THE W6 CO-REFERENCE BASE
 ==============================================================================
 pin 26cc502 (sha ee22c5aadbcf)   immutable base a264a06
-source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
+source sha256 8cb7607d2ba18c358f12ca22e69d5d398e3e840a998ad8316ef33dc2963670e7
 
 ------------------------------------------------------------------------------
 1.  THE PIN'S FIRST CLAUSE: PREFIX-DECIDES, RE-DERIVED HERE
@@ -206,7 +206,7 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
   SP-E / the twisted comparator
       role NEGATIVE CONTROL: it MUST show holonomy   corridor aligned   base F1@t0
       T1 returns False (obstructed False)   T2 returns True  (obstructed False)
-      T3 closed-loop holonomy: another permutation   identity: False   sign orbit [-1, 1]
+      T3 closed-loop holonomy: the pointer-only wing swap   identity: False   sign orbit [-1, 1]
   SP-F / the aligned-prefix bigon at t=0
       role THE TWISTED-CORRIDOR PROBE   corridor aligned   base F1@t0
       T1 returns True  (obstructed False)   T2 returns True  (obstructed False)
@@ -230,7 +230,7 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
   SP-F / the twisted comparator
       role NEGATIVE CONTROL: it MUST show holonomy   corridor aligned   base F1@t0
       T1 returns False (obstructed False)   T2 returns True  (obstructed False)
-      T3 closed-loop holonomy: another permutation   identity: False   sign orbit [-1, 1]
+      T3 closed-loop holonomy: the pointer-only wing swap   identity: False   sign orbit [-1, 1]
 
 ------------------------------------------------------------------------------
 6.  THE MATCHED TABLE OF PATH PAIRS
@@ -250,51 +250,191 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
   T3     crossing   disagree     2347684
 
 ------------------------------------------------------------------------------
-7.  THE SECTION 14 GAUGE SELF-TEST
+6A. THE MECHANISM (sufficient, not necessary)
 ------------------------------------------------------------------------------
-  SP-A     switching group order 512     swept 512           checkpoint subgroup 128   gauge links 9
-  SP-B     switching group order 512     swept 512           checkpoint subgroup 128   gauge links 9
-  SP-C     switching group order 512     swept 512           checkpoint subgroup 128   gauge links 9
-  SP-D     switching group order 512     swept 512           checkpoint subgroup 128   gauge links 9
-  SP-E     switching group order 8192    swept 512   [SAMP]  checkpoint subgroup 128   gauge links 13
-  SP-F     switching group order 8192    swept 512   [SAMP]  checkpoint subgroup 128   gauge links 13
-    SP-A / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-B / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-C / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-D / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-E / the aligned-prefix bigon at t=0         perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-E / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-E / the prefix-crossing loop t=1<->t=2      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-F / the aligned-prefix bigon at t=0         perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-F / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)
-    SP-F / the prefix-crossing loop t=1<->t=2      perm parts 1  sign orbits 2 (checkpoint 1)
+  coordinates where the base admits TWO different maps: ['SP-E/t0', 'SP-E/t1', 'SP-E/t3', 'SP-F/t0', 'SP-F/t1', 'SP-F/t3']
+
+  the single-rule sub-connections (multiplicity 1 everywhere)
+  setting / rules    links  rank   closed@F1t0 group   non-identity closed paths
+  SP-A/FULL          9      2      8           1       0
+  SP-A/FULL+REAL     9      2      8           1       0
+  SP-A/REAL          6      -1     0           1       0
+  SP-B/FULL          9      2      8           1       0
+  SP-B/FULL+REAL     9      2      8           1       0
+  SP-B/REAL          6      -1     0           1       0
+  SP-C/FULL          9      2      8           1       0
+  SP-C/FULL+REAL     9      2      8           1       0
+  SP-C/REAL          6      -1     0           1       0
+  SP-D/FULL          9      2      8           1       0
+  SP-D/FULL+REAL     9      2      8           1       0
+  SP-D/REAL          6      -1     0           1       0
+  SP-E/FULL          9      2      8           1       0
+  SP-E/FULL+REAL     13     6      364         4       282
+  SP-E/REAL          10     3      18          2       8
+  SP-F/FULL          9      2      8           1       0
+  SP-F/FULL+REAL     13     6      364         4       282
+  SP-F/REAL          10     3      18          2       8
+
+  does the wing exchange intertwine the leg?
+    SP-A/leg1        False
+    SP-A/leg2        False
+    SP-A/leg3        False
+    SP-B/leg1        False
+    SP-B/leg2        False
+    SP-B/leg3        False
+    SP-C/leg1        False
+    SP-C/leg2        False
+    SP-C/leg3        False
+    SP-D/leg1        False
+    SP-D/leg2        False
+    SP-D/leg3        False
+    SP-E/leg1        False
+    SP-E/leg2        True
+    SP-E/leg3        True
+    SP-F/leg1        False
+    SP-F/leg2        True
+    SP-F/leg3        True
+
+  P_W U_prep^-1 P_W U_prep, the prep-leg defect element
+    SP-A     the qubit-only wing swap     identity False
+    SP-B     the qubit-only wing swap     identity False
+    SP-C     the qubit-only wing swap     identity False
+    SP-D     the qubit-only wing swap     identity False
+    SP-E     the qubit-only wing swap     identity False
+    SP-F     the qubit-only wing swap     identity False
+
+  every closed path of the path space, by holonomy class
+    SP-A  total 56  aligned 56  crossing 0  not a signed permutation 0
+        aligned                          {the identity:56}
+        crossing                         {}
+        no_two_rules_at_one_coordinate   {the identity:56}
+        based_at_F1_t0                   {the identity:8}
+    SP-B  total 56  aligned 56  crossing 0  not a signed permutation 0
+        aligned                          {the identity:56}
+        crossing                         {}
+        no_two_rules_at_one_coordinate   {the identity:56}
+        based_at_F1_t0                   {the identity:8}
+    SP-C  total 56  aligned 56  crossing 0  not a signed permutation 0
+        aligned                          {the identity:56}
+        crossing                         {}
+        no_two_rules_at_one_coordinate   {the identity:56}
+        based_at_F1_t0                   {the identity:8}
+    SP-D  total 56  aligned 56  crossing 0  not a signed permutation 0
+        aligned                          {the identity:56}
+        crossing                         {}
+        no_two_rules_at_one_coordinate   {the identity:56}
+        based_at_F1_t0                   {the identity:8}
+    SP-E  total 2820  aligned 1552  crossing 1268  not a signed permutation 600
+        aligned                          {another permutation:64,not a signed permutation:384,the identity:444,the pointer-only wing swap:160,the qubit-only wing swap:132,the wing exchange:368}
+        crossing                         {another permutation:156,not a signed permutation:216,the identity:480,the pointer-only wing swap:52,the qubit-only wing swap:48,the wing exchange:316}
+        no_two_rules_at_one_coordinate   {another permutation:64,not a signed permutation:100,the identity:228,the pointer-only wing swap:44,the qubit-only wing swap:20,the wing exchange:120}
+        based_at_F1_t0                   {the identity:82,the pointer-only wing swap:106,the qubit-only wing swap:90,the wing exchange:86}
+    SP-F  total 2820  aligned 1552  crossing 1268  not a signed permutation 820
+        aligned                          {not a signed permutation:448,the identity:444,the pointer-only wing swap:160,the qubit-only wing swap:132,the wing exchange:368}
+        crossing                         {not a signed permutation:372,the identity:480,the pointer-only wing swap:52,the qubit-only wing swap:48,the wing exchange:316}
+        no_two_rules_at_one_coordinate   {not a signed permutation:164,the identity:228,the pointer-only wing swap:44,the qubit-only wing swap:20,the wing exchange:120}
+        based_at_F1_t0                   {the identity:82,the pointer-only wing swap:106,the qubit-only wing swap:90,the wing exchange:86}
+
+  every minimal loop through a prefix-divergent link
+    SP-E     t=1<->t=2 closed by FULL at t=1        the wing exchange            declared probe False
+    SP-E     t=1<->t=2 closed by REAL at t=1        the identity                 declared probe True
+    SP-E     t=2<->t=3 closed by FULL at t=3        another permutation          declared probe False
+    SP-E     t=2<->t=3 closed by REAL at t=3        the identity                 declared probe False
+    SP-F     t=1<->t=2 closed by FULL at t=1        the wing exchange            declared probe False
+    SP-F     t=1<->t=2 closed by REAL at t=1        the identity                 declared probe True
+    SP-F     t=2<->t=3 closed by FULL at t=3        not a signed permutation     declared probe False
+    SP-F     t=2<->t=3 closed by REAL at t=3        the identity                 declared probe False
+
+------------------------------------------------------------------------------
+6B. THE HOLONOMY GROUP AND THE DECLARED SCOPES
+------------------------------------------------------------------------------
+  the wing exchange factorises as (qubit-only).(pointer-only): True
+      the pointer-only wing swap   fixed points 12
+      the qubit-only wing swap     fixed points 18
+      the wing exchange            fixed points 6
+    SP-A  elements outside every declared scope: 0
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+    SP-B  elements outside every declared scope: 0
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+    SP-C  elements outside every declared scope: 0
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+    SP-D  elements outside every declared scope: 0
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+    SP-E  elements outside every declared scope: 2
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+        the pointer-only wing swap   in72 False in96 False adm False admext False fix 12  ord 2  mixed-signs True
+        the qubit-only wing swap     in72 False in96 False adm False admext False fix 18  ord 2  mixed-signs True
+        the wing exchange            in72 True  in96 True  adm True  admext True  fix 6   ord 2  mixed-signs False
+    SP-F  elements outside every declared scope: 2
+        the identity                 in72 True  in96 True  adm True  admext True  fix 36  ord 1  mixed-signs False
+        the pointer-only wing swap   in72 False in96 False adm False admext False fix 12  ord 2  mixed-signs True
+        the qubit-only wing swap     in72 False in96 False adm False admext False fix 18  ord 2  mixed-signs True
+        the wing exchange            in72 True  in96 True  adm True  admext True  fix 6   ord 2  mixed-signs False
+
+  the declared 96/8 extension, searched (folded into no verdict)
+      SP-C FULL t=0: 1 -> 2
+      SP-C FULL t=1: 1 -> 2
+      SP-D FULL t=0: 1 -> 2
+      SP-D FULL t=1: 1 -> 2
+      identification links at the extension: {SP-A:3,SP-B:3,SP-C:1,SP-D:1,SP-E:7,SP-F:7}
+      the canonical loop exists there: {SP-A:True,SP-B:True,SP-C:False,SP-D:False,SP-E:True,SP-F:True}
+
+------------------------------------------------------------------------------
+7.  THE SECTION 14 GAUGE SELF-TEST (COMPLETE SWEEP)
+------------------------------------------------------------------------------
+  SP-A     switching group order 512     swept 512    complete True   checkpoint subgroup 128   gauge links 9
+  SP-B     switching group order 512     swept 512    complete True   checkpoint subgroup 128   gauge links 9
+  SP-C     switching group order 512     swept 512    complete True   checkpoint subgroup 128   gauge links 9
+  SP-D     switching group order 512     swept 512    complete True   checkpoint subgroup 128   gauge links 9
+  SP-E     switching group order 8192    swept 8192   complete True   checkpoint subgroup 128   gauge links 13
+  SP-F     switching group order 8192    swept 8192   complete True   checkpoint subgroup 128   gauge links 13
+    SP-A / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-B / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-C / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-D / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-E / the aligned-prefix bigon at t=0         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-E / the aligned-prefix bigon at t=1         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-E / the aligned-prefix bigon at t=3         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-E / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-E / the prefix-crossing loop t=1<->t=2      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-F / the aligned-prefix bigon at t=0         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-F / the aligned-prefix bigon at t=1         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-F / the aligned-prefix bigon at t=3         perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-F / the canonical loop                      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
+    SP-F / the prefix-crossing loop t=1<->t=2      perm parts 1  sign orbits 2 (checkpoint 1)  relative-sign classes 1
 
 ------------------------------------------------------------------------------
 8.  VERDICTS
 ------------------------------------------------------------------------------
   T1   NT-HOLONOMY-<T1>
        pairs agree 1957780 / disagree 3014316 / obstructed side 0;  distinct values 223
-       settings with a nontrivial loop value set: ['SP-A', 'SP-B', 'SP-C', 'SP-D', 'SP-E', 'SP-F']
+       settings where closed-path values differ across base points: ['SP-A', 'SP-B', 'SP-C', 'SP-D', 'SP-E', 'SP-F']
   T2   NT-HOLONOMY-<T2>
        pairs agree 4248576 / disagree 723520 / obstructed side 0;  distinct values 5
-       settings with a nontrivial loop value set: ['SP-C', 'SP-D', 'SP-F']
+       settings where closed-path values differ across base points: ['SP-C', 'SP-D', 'SP-F']
   T3   NT-HOLONOMY-<T3>
        pairs agree 1352156 / disagree 3619940 / obstructed side 0;  distinct values 186
-       settings with a nontrivial loop value set: ['SP-E', 'SP-F']
+       settings where closed-path values differ across base points: ['SP-E', 'SP-F']
 
-  HOLONOMY GROUP (computed): the based closed-loop holonomy group at node F1@t0, read as the gauge-invariant permutation part of the closed-loop link product, enumerated over every closed path of the committed path space
-      SP-A     value set 1   generated group order 1
+  HOLONOMY GROUP (computed): the based closed-loop holonomy group at node F1@t0, read as the permutation part of the closed-loop link product, enumerated over every closed path of the committed path space based there, counted as PERMUTATIONS and not as name labels
+      SP-A     value set 1   generated group order 1   value set closed True   value set = group True
                values ['the identity']
-      SP-B     value set 1   generated group order 1
+               mixed relative signs [];  dropped (not a signed permutation) 0
+      SP-B     value set 1   generated group order 1   value set closed True   value set = group True
                values ['the identity']
-      SP-C     value set 1   generated group order 1
+               mixed relative signs [];  dropped (not a signed permutation) 0
+      SP-C     value set 1   generated group order 1   value set closed True   value set = group True
                values ['the identity']
-      SP-D     value set 1   generated group order 1
+               mixed relative signs [];  dropped (not a signed permutation) 0
+      SP-D     value set 1   generated group order 1   value set closed True   value set = group True
                values ['the identity']
-      SP-E     value set 3   generated group order 4
-               values ['another permutation', 'the identity', 'the wing exchange']
-      SP-F     value set 3   generated group order 4
-               values ['another permutation', 'the identity', 'the wing exchange']
+               mixed relative signs [];  dropped (not a signed permutation) 0
+      SP-E     value set 4   generated group order 4   value set closed True   value set = group True
+               values ['the identity', 'the pointer-only wing swap', 'the qubit-only wing swap', 'the wing exchange']
+               mixed relative signs ['the pointer-only wing swap', 'the qubit-only wing swap'];  dropped (not a signed permutation) 0
+      SP-F     value set 4   generated group order 4   value set closed True   value set = group True
+               values ['the identity', 'the pointer-only wing swap', 'the qubit-only wing swap', 'the wing exchange']
+               mixed relative signs ['the pointer-only wing swap', 'the qubit-only wing swap'];  dropped (not a signed permutation) 0
 
   THE HYPOTHESIS: NT-PREFIX-FLATNESS-REFUTED
       twisted-corridor witnesses: ['SP-E / the aligned-prefix bigon at t=0', 'SP-E / the aligned-prefix bigon at t=1', 'SP-E / the aligned-prefix bigon at t=3', 'SP-F / the aligned-prefix bigon at t=0', 'SP-F / the aligned-prefix bigon at t=1', 'SP-F / the aligned-prefix bigon at t=3']
@@ -370,7 +510,7 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         SP-E/F2:(11,19),t2 SP-F/F1:(3,6,12,15,21,24,30,33),t2
         SP-F/F2:(1,2,10,11,19,20,28,29)}
   A12  ok   cross-frame disjoint / cross-frame pairs / same-frame sh
-        source    v12/note-w6-record-coreference.md K1 / O4 pair_census
+        source    v13/code/o4_discriminator_receipt.json pair_census
         committed (36,36,30,30)
         computed (36,36,30,30)
   A13  ok   cross-frame disjoint pairs at the other declared read ti
@@ -394,7 +534,7 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         committed (72,2,96,8)
         computed (72,2,96,8)
   A18  ok   the number of declared legs per frame, computed from the
-        source    the committed composite model
+        source    v13/code/o4_discriminator_receipt.json declarations final_declared_division_event
         committed 3
         computed 3
   A19  ok   W5's declared-law residual weight ||r||_0 per setting at
@@ -410,9 +550,15 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         committed (0,0,288,288,0,288)
         computed (0,0,288,288,0,288)
   A22  ok   the O4 terminal receipt's own anchor pass count
-        source    v12/note-w6-record-coreference.md / O4 anchors A04-A07
+        source    v13/code/o4_discriminator_receipt.json anchors (A SOURCE HEALTH CHECK, not a reused NT quantity: both sides are read from the same committed file)
         committed 27
         computed 27
+  A23  ok   W5's residual weight per (setting, frame) at the cut it 
+        source    v12/code/w5_ltp_lemma_exact.py VN (W5's own committed declared-law residual weight, computed by W5's own code)
+        committed
+        {SP-A/F1:0,SP-A/F2:0,SP-B/F1:0,SP-B/F2:0,SP-C/F1:16,SP-C/F2:16,SP-D/F1:16,SP-D/F2:16,SP-E/F1:0,SP-E/F2:0,SP-F/F1:16,SP-F/F2:16}
+        computed
+        {SP-A/F1:0,SP-A/F2:0,SP-B/F1:0,SP-B/F2:0,SP-C/F1:16,SP-C/F2:16,SP-D/F1:16,SP-D/F2:16,SP-E/F1:0,SP-E/F2:0,SP-F/F1:16,SP-F/F2:16}
 
 ------------------------------------------------------------------------------
 10. GATES
@@ -454,19 +600,26 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         transports=True / t=2 transports=False at ||r||_0=16
         both),route_is_independent_of_the_o4_script:True}
   PASS  [measurement]  NT-PATH-SPACE-ENUMERATED
-        THE COMMITTED PATH SPACE IS ENUMERATED, NEVER TYPED. Nodes are (frame,
-        checkpoint) coordinates and the read time is a coordinate of the node;
-        moves are leg applications in both directions and the admitted
-        identifications; paths are the REDUCED sequences of moves up to the
-        declared bound, which is the canonical loop's own length. Every count
-        in the table -- nodes, links, identification links, cycle rank, paths,
-        closed paths, path pairs sharing both endpoints -- is computed from
-        the enumeration. The gate measures that the node count is the declared
-        product, that the cycle rank is Euler's, and that the space is
-        non-empty and contains closed paths at every setting. The `reduce-lax`
-        mutant drops the reduced condition and must die here
+        THE COMMITTED PATH SPACE IS ENUMERATED, NEVER TYPED, AND THE DECLARED
+        PROPERTY OF ITS PATHS IS MEASURED ON THE ROWS THEMSELVES. Nodes are
+        (frame, checkpoint) coordinates and the read time is a coordinate of
+        the node; moves are leg applications in both directions and the
+        admitted identifications; paths are the REDUCED sequences of moves up
+        to the declared bound, which is the canonical loop's own length. Every
+        count in the table is computed from the enumeration. FOUR PREDICATES,
+        EACH RECOMPUTED HERE FROM THE DELIVERED ROWS: (1) the REDUCED
+        condition, read off the enumerated edge lists -- no enumerated path
+        traverses the same link twice in immediate succession, which is the
+        declared condition itself and is what makes the path counts what they
+        are; (2) every enumerated path is a genuine walk in the graph, step by
+        step, ending at the node it declares; (3) the graph is CONNECTED,
+        measured by union-find over the links, and the cycle rank is Euler's
+        with that measured component count; (4) the enumeration reaches every
+        declared node and contains closed paths at every setting. The
+        `reduce-lax` mutant drops the reduced condition and must die at
+        predicate (1), which counts its backtracks
         value
-        {SP-A:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-B:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-C:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-D:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-E:{closed_paths:2820,cycle_rank:6,identification_links:7,links:13,nodes:8,paths:16168},SP-F:{closed_paths:2820,cycle_rank:6,identification_links:7,links:13,nodes:8,paths:16168},total_path_pairs:4972096,total_paths:34024}
+        {SP-A:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-B:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-C:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-D:{closed_paths:56,cycle_rank:2,identification_links:3,links:9,nodes:8,paths:422},SP-E:{closed_paths:2820,cycle_rank:6,identification_links:7,links:13,nodes:8,paths:16168},SP-F:{closed_paths:2820,cycle_rank:6,identification_links:7,links:13,nodes:8,paths:16168},audit:{SP-A:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:2,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0},SP-B:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:2,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0},SP-C:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:2,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0},SP-D:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:2,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0},SP-E:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:6,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0},SP-F:{connected_components:1,cycle_rank_recomputed_from_the_measured_components:6,nodes_reached_by_the_enumeration:8,paths_that_traverse_one_link_twice_in_succession:0,paths_whose_walk_does_not_reach_the_declared_end:0,steps_that_do_not_follow_the_graph:0}},total_path_pairs:4972096,total_paths:34024}
   PASS  [measurement]  NT-POSITIVE-CONTROL
         THE POSITIVE CONTROL FIRES. The canonical loop -- frame 1's leg order
         forward against frame 2's leg order backward, closed by the
@@ -498,30 +651,184 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         RQ0-SYNTH lesson). The composition-defect question is posed at a node
         only if the committed laws supply BOTH cut factors and their amplitude
         composition is EXACT there, so that Delta^B is the defect of a genuine
-        factorisation of the declared process and not of an invented one. The
-        gate additionally measures the WELD: the defect matrix computed from
-        paper 1's definition is measured IDENTICAL, entry by entry, to W5's
-        declared-law residual Gamma(N<-0) - Gamma(N<-t)Gamma(t<-0) at every
-        node. Had any clause failed the unit would report
-        NT-BLOCKED-AT-<posability> and force nothing. The `defect-order`
-        mutant composes the two Born shadows in the wrong order and must die
-        here
-        value {distinct_defect_weights:(0,288),nodes_tested:48}
-  PASS  [measurement]  NT-GAUGE-COVARIANCE
-        THE MANDATORY SECTION 14 SELF-TEST. Every declared loop's holonomy is
-        RECOMPUTED FROM THE LINK VARIABLES under every element of the declared
-        switching group -- one sign per link of the corridor sub-graph,
-        enumerated, 512 of them at every setting -- and the gate measures that
-        the INVARIANT (the closed loop's permutation part) takes exactly ONE
-        value under all of them, while the checkpoint subgroup (the switchings
-        induced by a sign at each node, which is the base's own
-        checkpoint-phase redundancy) leaves even the loop's SIGN fixed. The
-        `gauge-sign` mutant drops the switching on a reversed traversal -- a
-        sign/orientation perturbation of exactly the kind section 14 requires
-        -- and must die here, and the `gauge-subsample` mutant, which shrinks
-        the sweep, must die at the group-size clause
+        factorisation of the declared process and not of an invented one. Had
+        either clause failed the unit would report NT-BLOCKED-AT-<posability>
+        and force nothing. THE WELD, third clause, WITH ITS SOURCES AND ITS
+        ENTAILMENT STATED: the defect matrix computed from paper 1's
+        definition is measured IDENTICAL, entry by entry, at every node, to
+        the declared-law residual Gamma(N<-0) - Gamma(N<-t)Gamma(t<-0) built
+        by W5's OWN COMMITTED CODE (its `gam`, `mmul` and `ksub`, imported
+        from v12/code/w5_ltp_lemma_exact.py and applied to this unit's
+        propagators), and W5's own committed residual weights anchor it exit-1
+        (A23). That identity FOLLOWS FROM CLAUSE 2 -- same subtrahend,
+        minuends gated equal -- and the entailment is itself measured and
+        printed rather than left for the reader to find. It is the case paper
+        1 ENGRAVED in advance as the one exemption to its own scope statement
+        (Delta^B is not the residual of a declared stochastic law UNLESS that
+        law is declared to be B(U2), which is what this base declares), and
+        W5's committed M4 recorded it, with its cause, at the single cut t =
+        2. What is measured HERE and not there is the extension to all four
+        cuts in both frames. The `defect-order` mutant composes the two Born
+        shadows in the wrong order and must die here
         value
-        {group_sizes:{SP-A:{checkpoint_subgroup:128,gauge_links:9,sampled:False,switching_group_order:512,switchings_swept:512},SP-B:{checkpoint_subgroup:128,gauge_links:9,sampled:False,switching_group_order:512,switchings_swept:512},SP-C:{checkpoint_subgroup:128,gauge_links:9,sampled:False,switching_group_order:512,switchings_swept:512},SP-D:{checkpoint_subgroup:128,gauge_links:9,sampled:False,switching_group_order:512,switchings_swept:512},SP-E:{checkpoint_subgroup:128,gauge_links:13,sampled:True,switching_group_order:8192,switchings_swept:512},SP-F:{checkpoint_subgroup:128,gauge_links:13,sampled:True,switching_group_order:8192,switchings_swept:512}},instances_tested:6400,loops_whose_permutation_part_moved:0,loops_whose_sign_moved_under_the_checkpoint_subgroup:0}
+        {clause_3_is_entailed_by_clause_2_at_every_node:True,distinct_defect_weights:(0,288),every_admitted_map_is_an_involution_so_paper_1's_outer-slot_law_(iv)_delivers_the_conjugation_action:{the
+        identity:{is_an_involution:True,order:1},the wing
+        exchange:{is_an_involution:True,order:2}},nodes_tested:48,sources_of_the_identity:(paper
+        1 section 2.3, the engraved clause: Delta^B is not the residual of any
+        declared stochastic law unless that law is declared to be
+        B(U2),v12/code/w5_ltp_lemma_exact.py check M4, at the cut t =
+        2),the_residual_is_built_by_W5's_committed_code:v12/code/w5_ltp_lemma_exact.py,this_unit's_extension:all
+        four cuts, both frames}
+  PASS  [measurement]  NT-MECHANISM-SUFFICIENT-NOT-NECESSARY
+        WHAT GENERATES THE HOLONOMY, MEASURED IN BOTH DIRECTIONS. SUFFICIENCY:
+        the base admits two DIFFERENT identifications at one coordinate
+        exactly where the full-leg rule and the realized-only rule both admit
+        uniquely and their maps differ by the wing exchange, and at every such
+        coordinate the bigon they form is measured non-flat -- the gate counts
+        those coordinates and measures that a twisted-corridor probe fires at
+        each. NECESSITY FAILS, and the gate measures the failure rather than
+        asserting the converse: (a) the SINGLE-RULE sub-connection built from
+        the realized rule alone, in which EVERY coordinate has multiplicity
+        exactly one, already carries non-identity closed-path holonomy; (b) in
+        the delivered graph, closed paths that never traverse two different
+        rules at one coordinate are non-flat in quantity, counted per setting;
+        (c) the proximate cause is measured -- the wing exchange does NOT
+        intertwine the PREPARATION leg at any setting, so a loop crossing
+        between the frames by it at one checkpoint and returning at the next
+        picks up P_W U_prep^-1 P_W U_prep, which is measured to be a
+        non-identity permutation. THE CLAIM IS THEREFORE SUFFICIENT, NEVER
+        BICONDITIONAL, and it is a claim about the geometric layer (T3) and
+        T2's single cell only: T1 is excluded, its path-dependence having a
+        different and weaker cause (NT-T1-CAUSE). The `id-lax` mutant admits
+        every element of the scope, so no rule admits uniquely and no bigon
+        fires, and must die at the sufficiency clause
+        value
+        {coordinates_of_multiplicity_at_least_two:(SP-E/t0,SP-E/t1,SP-E/t3,SP-F/t0,SP-F/t1,SP-F/t3),non_flat_closed_paths_that_never_use_two_rules_at_one_coordinate:{SP-A:0,SP-B:0,SP-C:0,SP-D:0,SP-E:348,SP-F:348},settings_where_the_wing_exchange_fails_to_intertwine_the_prep_leg:(SP-A/leg1,SP-B/leg1,SP-C/leg1,SP-D/leg1,SP-E/leg1,SP-F/leg1),single_rule_realized_subconnection_non_identity_closed_paths:{SP-A/REAL:0,SP-B/REAL:0,SP-C/REAL:0,SP-D/REAL:0,SP-E/REAL:8,SP-F/REAL:8},single_rule_subconnection_multiplicity_is_one_everywhere:True,single_rule_subconnections_with_links:(SP-E/REAL,SP-F/REAL),the_prep_leg_defect_element:{SP-A:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing
+        swap},SP-B:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing
+        swap},SP-C:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing
+        swap},SP-D:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing
+        swap},SP-E:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing
+        swap},SP-F:{is_a_signed_permutation:True,is_the_identity:False,name:the
+        qubit-only wing swap}},twisted_corridor_probes_that_fired:(SP-E / the
+        aligned-prefix bigon at t=0,SP-E / the aligned-prefix bigon at
+        t=1,SP-E / the aligned-prefix bigon at t=3,SP-F / the aligned-prefix
+        bigon at t=0,SP-F / the aligned-prefix bigon at t=1,SP-F / the
+        aligned-prefix bigon at t=3)}
+  PASS  [disclosure]  NT-ADMISSION-SCOPE-IS-LOAD-BEARING
+        THE ADMISSION SCOPE IS A CHOICE, AND IT IS LOAD-BEARING. Every
+        admission search that feeds a link, a profile or a verdict in this
+        unit runs over the 2 elements of the declared 72-element permutation
+        scope that survive the j0 filter; every negative in this unit is a
+        negative at THAT scope. The declared 96-element extension, which
+        admits 8, is SEARCHED HERE -- the same four-clause predicate, the
+        wider set -- and the measurement is reported and folded into no
+        verdict. What it shows: at the wider scope the full-leg rule admits
+        TWO permutations at the cells printed below, so the uniqueness
+        criterion REFUSES those links, and the settings at which the pin's own
+        canonical loop would then not exist at all are named. The admission
+        criterion's FORCED reading is therefore scope-dependent, and this
+        unit's results stand at the narrow scope it declares and at no other
+        value {cells_where_the_scope_changes_admission:(SP-C FULL t=0: 1 ->
+        2,SP-C FULL t=1: 1 -> 2,SP-D FULL t=0: 1 -> 2,SP-D FULL t=1: 1 ->
+        2),identification_links_at_the_declared_extension:{SP-A:3,SP-B:3,SP-C:1,SP-D:1,SP-E:7,SP-F:7},settings_where_the_canonical_loop_would_not_exist:(SP-C,SP-D),the_canonical_loop_exists_at_the_declared_extension:{SP-A:True,SP-B:True,SP-C:False,SP-D:False,SP-E:True,SP-F:True}}
+  PASS  [disclosure]  NT-T1-CAUSE
+        T1'S PATH-DEPENDENCE HAS ITS OWN CAUSE, AND IT IS NOT THE GEOMETRIC
+        ONE. T1 is carried forward by the declared one-step Born transition
+        and backward by its transpose, and the gate measures BY CONSTRUCTION
+        that the transpose does not invert the forward step: B(L)^T B(L) = I
+        would require B(L) to be a permutation matrix, and the preparation
+        leg's Born shadow is measured not to be one at any setting or frame.
+        That is why T1 fails to return around a loop at every setting,
+        including the four where no coordinate admits two identifications --
+        so T1 is excluded from the identification-multiplicity mechanism. It
+        also measures, cell by cell, where the forward Born push of a node's
+        law is NOT the next node's own law: the cells are named, because a
+        sentence saying T1 transports flatly along the law's own forward steps
+        is false exactly there. THIS IS A DISCLOSURE, NOT A MUST-PASS GATE,
+        and for a stated reason: no declared mutant falsifies it -- a mutation
+        that made the declared Born step orthogonal would not be a
+        perturbation of this instrument but a different model -- so it is
+        reported as a measurement of the committed base rather than counted in
+        the falsification census. No verdict rests on it: T1's verdict is read
+        off the matched table of path pairs and from nothing else
+        value
+        {cells:36,cells_where_the_forward_push_is_not_the_next_node's_own_law:(SP-C/F1/leg3,SP-C/F2/leg3,SP-D/F1/leg3,SP-D/F2/leg3,SP-F/F1/leg3,SP-F/F2/leg3),legs_whose_transposed_Born_step_does_not_invert_it:28}
+  PASS  [disclosure]  NT-READ-TIME-COORDINATE
+        WHICH DATA CARRY THE READ TIME, MEASURED. T1's datum carries the
+        checkpoint it was read at, inside the datum, so two T1 data read at
+        different checkpoints can never compare equal -- the O4 lesson
+        (RUNBOOK section 15 addendum) built into the type, and the
+        `readtime-conflate` mutant, which reads every datum at the final
+        checkpoint, dies against it. T2's datum is the defect matrix at the
+        node's own cut and is NOT so tagged: measured here, T2 data read at
+        different checkpoints DO compare equal, at every setting, and the
+        pairs are printed. Nothing in this unit compares data across
+        coordinates all the same -- the matched table pairs only paths sharing
+        both endpoints, so every compared pair is read at one coordinate --
+        but T2's distinct-value count is a count on read-time-blind keys and
+        is flagged as one. T3 is a path functional and has no read time
+        value
+        {T2_pairs_of_checkpoints_whose_data_are_equal:{SP-A/F1:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-A/F2:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-B/F1:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-B/F2:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-C/F1:((0,3),(1,2)),SP-C/F2:((0,3),(1,2)),SP-D/F1:((0,3),(1,2)),SP-D/F2:((0,3),(1,2)),SP-E/F1:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-E/F2:((0,1),(0,2),(0,3),(1,2),(1,3),(2,3)),SP-F/F1:((0,3),(1,2)),SP-F/F2:((0,3),(1,2))},distinct_T1_node_data_with_the_read_time:14,distinct_T1_node_data_without_the_read_time:14,distinct_T2_node_data_without_a_read_time:4}
+  PASS  [disclosure]  NT-T2-CONJUGATION-SCOPED
+        WHERE CONJUGATION BY THE WING EXCHANGE MOVES THE COMPOSITION DEFECT,
+        AND WHERE THAT MATTERS. Measured at all 24 (setting, checkpoint) cells
+        of frame F1: conjugation moves the defect at more cells than the
+        transport can use, and the two conditions are reported separately --
+        the defect must be MOVED by the element AND the element must be an
+        ADMITTED identification there. Only where both hold does any path
+        carry the difference, which is why T2's holonomy is carried by one
+        setting
+        value
+        {cells_where_both_hold:(SP-F/t1,SP-F/t2),cells_where_conjugation_moves_the_defect:(SP-C/t1,SP-C/t2,SP-D/t1,SP-D/t2,SP-F/t1,SP-F/t2),cells_where_the_wing_exchange_is_an_admitted_identification:(SP-E/t0,SP-E/t1,SP-E/t2,SP-E/t3,SP-F/t0,SP-F/t1,SP-F/t2,SP-F/t3)}
+  PASS  [measurement]  NT-GAUGE-COVARIANCE
+        THE MANDATORY SECTION 14 SELF-TEST, STATED AT WHAT IT MEASURES. Every
+        declared loop that has an edge list -- ALL of them, not one per role
+        -- has its holonomy RECOMPUTED FROM THE LINK VARIABLES under EVERY
+        element of the declared switching group: the sweep is COMPLETE at
+        every setting, 512 where only the full-leg rule supplies
+        identifications and 8192 where the realized rule supplies four more,
+        and the checkpoint subgroup (128) is complete everywhere. The gate
+        measures four things that CAN fail: (1) the declared switching acts on
+        a closed loop by the GLOBAL SCALAR given by the product of the signs
+        it puts on the traversals -- every swept holonomy is compared,
+        exactly, against that scalar times the unswitched holonomy; (2) every
+        swept holonomy is a SIGNED PERMUTATION at all, which for the
+        eight-link canonical loop of non-permutation matrices is a real fact;
+        (3) the loop's SIGN is fixed under the whole checkpoint subgroup --
+        the telescoping property a wrong sign convention breaks; (4) the group
+        orders are the enumerated powers of two. The `gauge-sign` mutant drops
+        the switching on a reversed traversal -- the sign/orientation
+        perturbation section 14 requires -- and must die at clauses (1) and
+        (3); the `gauge-subsample` mutant shrinks the sweep and must die at
+        clause (4). THE INVARIANCE OF THE PERMUTATION PART IS NOT A CLAUSE OF
+        THIS GATE: it FOLLOWS from clause (1), and is reported as the
+        disclosure NT-GAUGE-PERMUTATION-FORCED
+        value
+        {deviations_from_the_global_scalar_action:0,exact_matrix_comparisons_against_the_scalar_action:85760,group_sizes:{SP-A:{checkpoint_subgroup:128,gauge_links:9,sweep_is_complete:True,switching_group_order:512,switchings_swept:512},SP-B:{checkpoint_subgroup:128,gauge_links:9,sweep_is_complete:True,switching_group_order:512,switchings_swept:512},SP-C:{checkpoint_subgroup:128,gauge_links:9,sweep_is_complete:True,switching_group_order:512,switchings_swept:512},SP-D:{checkpoint_subgroup:128,gauge_links:9,sweep_is_complete:True,switching_group_order:512,switchings_swept:512},SP-E:{checkpoint_subgroup:128,gauge_links:13,sweep_is_complete:True,switching_group_order:8192,switchings_swept:8192},SP-F:{checkpoint_subgroup:128,gauge_links:13,sweep_is_complete:True,switching_group_order:8192,switchings_swept:8192}},instances_tested:85760,loops_whose_sign_moved_under_the_checkpoint_subgroup:0,swept_holonomies_that_are_not_signed_permutations:0}
+  PASS  [disclosure]  NT-GAUGE-PERMUTATION-FORCED
+        AN ANALYTICALLY FORCED CLAUSE, REPORTED AS A DISCLOSURE AND NOT AS A
+        MUST-PASS MEASUREMENT. The declared switching assigns one sign per
+        link, so it acts on a CLOSED loop's link product by the product of
+        those signs -- a global +-1 (measured: clause (1) of
+        NT-GAUGE-COVARIANCE, 85760 exact comparisons, 0 deviations). A signed
+        permutation matrix and its negative have the SAME permutation part.
+        Therefore the permutation part of a closed loop's holonomy is
+        invariant under the whole switching group BY ALGEBRA, for every loop,
+        every setting and every switching, whether or not anything else in
+        this instrument is right: no switching and no mutant could make this
+        clause fail, and it is not claimed as a measurement. The sweep
+        confirms it -- exactly one permutation part at every swept loop, over
+        the COMPLETE group -- and that confirmation is what is reported here.
+        The same algebra makes the RELATIVE sign class s_j*s_0 invariant while
+        the raw sign set is not, which is why the relative class is the sign
+        content this unit reports
+        value
+        {distinct_relative_sign_classes_per_loop:(1),loops_swept:14,loops_whose_permutation_part_moved_under_the_full_group:0}
   PASS  [measurement]  NT-GAUGE-CONTROL-MOVES
         THE MIS-CONVENTIONED CONTROL MOVES. A quantity that reads the closed
         loop's RAW SIGN -- the gauge-orbit datum the L5 disease promoted to
@@ -529,7 +836,7 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         at least one declared loop. A sweep under which nothing moves cannot
         certify an invariance, so this gate is the sweep's own tooth; the
         `gauge-subsample` mutant collapses the sweep and must die here
-        value {loops_at_which_the_raw_sign_moved:10,loops_swept:10}
+        value {loops_at_which_the_raw_sign_moved:14,loops_swept:14}
   PASS  [measurement]  NT-FRESH-EVAL
         THE SELF-TEST EVALUATES FRESH (RUNBOOK section 14 addendum). Every
         holonomy in the sweep is rebuilt from the link variables with the
@@ -538,15 +845,22 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         read the cache would be testing the cache and not the quantity. The
         `memo-lax` mutant lets the phase read the cache and must die here
         value
-        {value_cache_hits_during_the_self_test:0,value_cache_misses_during_the_self_test:6400}
+        {value_cache_hits_during_the_self_test:0,value_cache_misses_during_the_self_test:85760}
   PASS  [derivation]  NT-FLIP-DIRECTION
         THE DIRECTION DECLARATION IS BOOKKEEPING, NOT CONTENT. Every declared
         loop is re-traversed with the direction convention flipped, and the
         gate measures that the reversed traversal's holonomy is the INVERSE
         permutation of the forward one at every loop and every setting -- so
         the flatness and holonomy verdicts are invariant under the choice. The
-        `flip-lax` mutant waives the comparison and must die here
-        value {per_loop:{SP-A / the canonical
+        `flip-lax` mutant waives the comparison and must die here. COVERAGE,
+        stated: the test runs on every declared loop that carries an edge
+        list, and the loops it does not reach are named -- the twisted
+        comparators, which are the canonical loop with one link overwritten
+        and have no edge list of their own, so the negative control is not
+        flip-tested
+        value
+        {declared_loops_without_an_edge_list_skipped:6,loops_tested:14,per_loop:{SP-A
+        / the canonical
         loop:{reverse_traversal_inverts_the_holonomy:True},SP-B / the
         canonical loop:{reverse_traversal_inverts_the_holonomy:True},SP-C /
         the canonical loop:{reverse_traversal_inverts_the_holonomy:True},SP-D
@@ -573,15 +887,23 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
   PASS  [disclosure]  NT-ADMISSION-DISCLOSED
         THE ADMISSION CRITERION IS A DECLARATION AND ITS CONTENT IS REPORTED.
         Identification links are admitted by UNIQUENESS of the admitted
-        transport (the O4 discriminator's FORCED). The O4 terminal separately
-        measured that its CERTIFICATE is degenerate at the first intermediate
-        checkpoint and refuses the pair at the second, so an admission
-        criterion reading the certificate instead would admit links only at
-        the final declared division event and would empty the loop space. Both
+        transport (the O4 discriminator's FORCED), and this unit's vocabulary
+        says FORCED, never `certified': the O4 terminal CERTIFICATE refuses
+        these transports at the coordinates that carry the result. Read from
+        the committed O4 receipt and printed here: the certificate is
+        degenerate at the first intermediate checkpoint, refuses the pair at
+        the second, and at the FINAL declared division event it is VACUOUS at
+        SP-E. An admission criterion reading the certificate instead would
+        therefore admit links at the final division event alone -- and at
+        SP-E, one of the two settings that carry the entire result, not even
+        there, so that setting's loop space would be empty outright. Both
         readings are printed; every verdict below is licensed at the declared
-        criterion and at no wider scope
+        criterion and at no wider scope. A rule-label flip is not applicable:
+        one full-leg rule is declared, so there is nothing to flip it against
         value
-        {per_setting:{SP-A:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-B:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-C:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-D:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-E:{links_admitted_by_uniqueness:7,links_at_prefix_aligned_checkpoints:6,links_at_prefix_divergent_checkpoints:1},SP-F:{links_admitted_by_uniqueness:7,links_at_prefix_aligned_checkpoints:6,links_at_prefix_divergent_checkpoints:1}},rule_label_flip_is_inert:True}
+        {per_setting:{SP-A:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-B:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-C:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-D:{links_admitted_by_uniqueness:3,links_at_prefix_aligned_checkpoints:3,links_at_prefix_divergent_checkpoints:0},SP-E:{links_admitted_by_uniqueness:7,links_at_prefix_aligned_checkpoints:6,links_at_prefix_divergent_checkpoints:1},SP-F:{links_admitted_by_uniqueness:7,links_at_prefix_aligned_checkpoints:6,links_at_prefix_divergent_checkpoints:1}},rule_label_flip:not
+        applicable: one full-leg rule is
+        declared,the_O4_certificate_at_the_final_division_event:{t=3:{SP-A:True,SP-B:True,SP-C:True,SP-D:True,SP-E:VACUOUS,SP-F:True}}}
   PASS  [derivation]  NT-HYPOTHESIS-FROM-THE-TABLE
         THE HYPOTHESIS' VERDICT IS DERIVED FROM THE MATCHED TABLE OF PATH
         PAIRS AND FROM NOTHING ELSE. The pre-registered claim is that the
@@ -590,16 +912,90 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         corridor) and a divergence-crossing pair that AGREES (a flat crossing)
         -- and the declared probes for each are reported with their exact
         holonomies. The gate measures that the emitted verdict is the one the
-        table supports. The `path-collapse` mutant makes every path carry the
-        same key, so that no pair can ever disagree, and must die here
+        table supports, that each probe class agrees with its own column of
+        the table, and that the twisted corridor survives at O4'S OWN READ
+        TIMES -- the checkpoints the committed base evaluated -- and not only
+        at the coordinate this unit added. The `path-collapse` mutant makes
+        every path carry the same key, so that no pair can ever disagree while
+        the probes still fire, and must die at the agreement clauses
         value
         {aligned_pairs_that_disagree:2525952,crossing_pairs_that_agree:4963464,flat_crossing_probes_that_fired:(SP-E
         / the prefix-crossing loop t=1<->t=2,SP-F / the prefix-crossing loop
-        t=1<->t=2),twisted_corridor_probes_that_fired:(SP-E / the
-        aligned-prefix bigon at t=0,SP-E / the aligned-prefix bigon at
-        t=1,SP-E / the aligned-prefix bigon at t=3,SP-F / the aligned-prefix
-        bigon at t=0,SP-F / the aligned-prefix bigon at t=1,SP-F / the
-        aligned-prefix bigon at t=3),verdict:NT-PREFIX-FLATNESS-REFUTED}
+        t=1<->t=2),the_O4_read_times:(1,2,3),twisted_corridor_probes_at_O4's_own_read_times:(SP-E
+        / the aligned-prefix bigon at t=1,SP-E / the aligned-prefix bigon at
+        t=3,SP-F / the aligned-prefix bigon at t=1,SP-F / the aligned-prefix
+        bigon at
+        t=3),twisted_corridor_probes_at_this_unit's_added_coordinate:(SP-E /
+        the aligned-prefix bigon at t=0,SP-F / the aligned-prefix bigon at
+        t=0),twisted_corridor_probes_that_fired:(SP-E / the aligned-prefix
+        bigon at t=0,SP-E / the aligned-prefix bigon at t=1,SP-E / the
+        aligned-prefix bigon at t=3,SP-F / the aligned-prefix bigon at
+        t=0,SP-F / the aligned-prefix bigon at t=1,SP-F / the aligned-prefix
+        bigon at t=3),verdict:NT-PREFIX-FLATNESS-REFUTED}
+  PASS  [measurement]  NT-HOLONOMY-GROUP
+        THE HOLONOMY VALUE SET IS COUNTED AS PERMUTATIONS, NEVER AS NAME
+        LABELS. The value set is the set of permutation parts realized by
+        closed paths of the committed path space based at F1@t0; a set of
+        NAMES counts as many elements as the naming table happens to know,
+        which is a count of the wrong object. The gate measures (1) that the
+        value set has the same cardinality as the group it generates by
+        closure -- so the value set is already CLOSED at the declared length
+        bound, which is a measurement and not an assumption; (2) that the
+        group is abelian with every element of order dividing two, i.e.
+        elementary abelian; (3) that the number of closed paths based there
+        whose holonomy is not a signed permutation, and which the value set
+        therefore cannot contain, is counted and printed rather than silently
+        dropped. The `label-collapse` mutant counts labels instead of
+        permutations and must die at clause (1)
+        value
+        {closed_paths_based_at_F1_t0_whose_holonomy_is_not_a_signed_permutation:{SP-A:0,SP-B:0,SP-C:0,SP-D:0,SP-E:0,SP-F:0},elements_with_mixed_relative_signs:{SP-A:(),SP-B:(),SP-C:(),SP-D:(),SP-E:(the
+        pointer-only wing swap,the qubit-only wing swap),SP-F:(the
+        pointer-only wing swap,the qubit-only wing
+        swap)},generated_group_order_per_setting:{SP-A:1,SP-B:1,SP-C:1,SP-D:1,SP-E:4,SP-F:4},settings_with_a_nontrivial_holonomy_group:(SP-E,SP-F),value_set_size_per_setting:{SP-A:1,SP-B:1,SP-C:1,SP-D:1,SP-E:4,SP-F:4}}
+  PASS  [measurement]  NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE
+        THE CONNECTION IS NOT PRINCIPAL FOR THE BASE'S OWN ADMITTED
+        ISOMORPHISMS. The links of this connection are transports the base
+        admits; the GROUP THEY GENERATE AROUND LOOPS is measured against the
+        base's own declared permutation scopes, element by element. At the two
+        symmetric settings that group is the Klein four-group {1, W, X, WX}: W
+        is the base's wing exchange, X is the QUBIT-ONLY wing swap and WX the
+        POINTER-ONLY wing swap, and the factorisation W = X . WX is measured,
+        not assumed. The gate measures that exactly TWO of the four elements
+        lie outside the declared 72-element scope AND outside its declared
+        96-element extension AND outside both admitted sets -- the declared
+        scope's wing flag always moves the qubit pair and the pointer pair
+        TOGETHER, so neither half of W is in it. It also measures the
+        gauge-invariant SIGN content: the relative sign class s_j*s_0 survives
+        the switching action (the raw sign set does not), and exactly two of
+        the four elements are measured to carry MIXED relative signs. A theory
+        that earns a structure group half of whose elements its own base does
+        not certify as isomorphisms has earned a structure group the base does
+        not recognise, and that is reported as the result it is. The
+        `scope-lax` mutant subsamples the admitted scope, the realized rule
+        then admits nothing, the group collapses to the identity, and it must
+        die here
+        value
+        {elements_carrying_mixed_relative_signs:{SP-A:0,SP-B:0,SP-C:0,SP-D:0,SP-E:2,SP-F:2},elements_outside_every_declared_scope:{SP-A:0,SP-B:0,SP-C:0,SP-D:0,SP-E:2,SP-F:2},fixed_points:{the
+        pointer-only wing swap:12,the qubit-only wing swap:18,the wing
+        exchange:6},per_setting:{SP-A:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1}},SP-B:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1}},SP-C:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1}},SP-D:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1}},SP-E:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1},the
+        pointer-only wing
+        swap:{fixed_points:12,in_the_admitted_2:False,in_the_admitted_extension_8:False,in_the_declared_72:False,in_the_declared_96_extension:False,mixed_relative_signs:True,order:2},the
+        qubit-only wing
+        swap:{fixed_points:18,in_the_admitted_2:False,in_the_admitted_extension_8:False,in_the_declared_72:False,in_the_declared_96_extension:False,mixed_relative_signs:True,order:2},the
+        wing
+        exchange:{fixed_points:6,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:2}},SP-F:{the
+        identity:{fixed_points:36,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:1},the
+        pointer-only wing
+        swap:{fixed_points:12,in_the_admitted_2:False,in_the_admitted_extension_8:False,in_the_declared_72:False,in_the_declared_96_extension:False,mixed_relative_signs:True,order:2},the
+        qubit-only wing
+        swap:{fixed_points:18,in_the_admitted_2:False,in_the_admitted_extension_8:False,in_the_declared_72:False,in_the_declared_96_extension:False,mixed_relative_signs:True,order:2},the
+        wing
+        exchange:{fixed_points:6,in_the_admitted_2:True,in_the_admitted_extension_8:True,in_the_declared_72:True,in_the_declared_96_extension:True,mixed_relative_signs:False,order:2}}},the_wing_exchange_factorises_as_XQ_XP:True}
   PASS  [derivation]  NT-VOCABULARY
         EVERY VERDICT IS DRAWN FROM THE PIN'S PRE-REGISTERED VOCABULARY and
         from nothing else: each per-object verdict and the hypothesis' own
@@ -608,6 +1004,16 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         value
         {per_object:(NT-HOLONOMY-<T1>,NT-HOLONOMY-<T2>,NT-HOLONOMY-<T3>),unit_verdict:NT-HOLONOMY-<T1>
         + NT-HOLONOMY-<T2> + NT-HOLONOMY-<T3> + NT-PREFIX-FLATNESS-REFUTED}
+  PASS  [derivation]  NT-NO-MUTANT-EXEMPTION
+        NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14
+        addendum). An AST sweep of this module counts every `MUTANT != ...`
+        comparison anywhere in the source -- the pattern by which a gate can
+        exempt its own falsifier -- and the gate measures that count to be
+        ZERO. Every mutation in this instrument is injected where the
+        computation happens, and every declared falsifier dies by a gate's own
+        predicate evaluated blind. The `exempt-lax` mutant registers one such
+        comparison and must die here
+        value {comparisons_found:0,mutant_exemption_comparisons:()}
   PASS  [derivation]  NT-EXACT
         EXACT ARITHMETIC EVERYWHERE. An AST sweep of this module finds no
         float literal and no call to `float`, and a runtime sweep finds no
@@ -627,35 +1033,45 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
         the split is counted from the declaration: a WAIVER proves a gate's
         predicate is load-bearing for the exit code, not that the gate would
         catch a computational defect, and the two are not claimed to be the
-        same thing
+        same thing. BOTH DENOMINATORS ARE REPORTED, because they differ: the
+        count of must-pass gates falsified by SOME mutant, and the smaller
+        count falsified by a mutant that perturbs a COMPUTATION. The gates
+        carried by a waiver alone are named, not averaged away. The one gate
+        excluded from the denominator is this one: `run_mutant_table` does not
+        run inside a mutant, so the census gate does not exist there and
+        cannot be falsified by this mechanism at all -- it is a measurement
+        that can come out otherwise, and did, but not one this suite can test
         value
-        {died:21,must_pass_gate_denominator:13,mutants:21,never_falsified:(),perturb_a_computation:17,waivers:4}
+        {died:23,falsified_by_a_computation_mutant:16,falsified_by_some_mutant:17,falsified_only_by_a_waiver:(NT-VOCABULARY),must_pass_gate_denominator:17,mutants:23,never_falsified:(),perturb_a_computation:19,the_gate_excluded_from_the_denominator:NT-FALSIFICATION,waivers:4}
 
 ------------------------------------------------------------------------------
 11. THE MUTANT TABLE
 ------------------------------------------------------------------------------
   prefix-lax         computation  exit 1  A02,A04,NT-PREFIX-DECIDES-REDERIVE
-  path-collapse      computation  exit 1  NT-HYPOTHESIS-FROM-THE-TABLE
+  path-collapse      computation  exit 1  NT-HYPOTHESIS-FROM-THE-TABLE,NT-HO
   gauge-sign         computation  exit 1  NT-GAUGE-COVARIANCE
   readtime-conflate  computation  exit 1  A02,A05,A07,A10,A11,A12,NT-PREFIX-
-  defect-order       computation  exit 1  A06,A07,A19,A20,A21,NT-PREFIX-DECI
+  defect-order       computation  exit 1  A06,A07,A19,A20,A21,A23,NT-PREFIX-
   orient-flip        computation  exit 1  NT-POSITIVE-CONTROL,NT-GAUGE-COVAR
   id-lax             computation  exit 1  NT-PATH-SPACE-ENUMERATED,NT-POSITI
   reduce-lax         computation  exit 1  NT-PATH-SPACE-ENUMERATED
-  scope-lax          computation  exit 1  A17,NT-HYPOTHESIS-FROM-THE-TABLE
-  gauge-subsample    computation  exit 1  NT-GAUGE-CONTROL-MOVES
+  label-collapse     computation  exit 1  NT-HOLONOMY-GROUP
+  exempt-lax         computation  exit 1  NT-NO-MUTANT-EXEMPTION
+  scope-lax          computation  exit 1  A17,NT-MECHANISM-SUFFICIENT-NOT-NE
+  gauge-subsample    computation  exit 1  NT-GAUGE-COVARIANCE,NT-GAUGE-CONTR
   memo-lax           computation  exit 1  NT-FRESH-EVAL
   freeze-lax         computation  exit 1  NT-FREEZE
   float-lax          computation  exit 1  NT-EXACT
   anchor-o4-prefix   computation  exit 1  A02,A04
   anchor-o4-occ      computation  exit 1  A08,A09,A10,A11
-  anchor-w6-wing     computation  exit 1  A08,A09,NT-NEGATIVE-CONTROL
+  anchor-w6-wing     computation  exit 1  A08,A09,NT-NEGATIVE-CONTROL,NT-MEC
   anchor-ltp         computation  exit 1  A06,A19,A20
   posability-lax     waiver       exit 1  NT-T2-POSABILITY
   control-lax        waiver       exit 1  NT-POSITIVE-CONTROL
   flip-lax           waiver       exit 1  NT-FLIP-DIRECTION
   verdict-lax        waiver       exit 1  NT-VOCABULARY
-  must-pass gates 13;  falsified by some mutant 13;  never falsified EMPTY
+  must-pass gates 17;  falsified by some mutant 17;  by a computation mutant 16;  never falsified EMPTY
+  falsified only by a waiver: ['NT-VOCABULARY']
 
 ------------------------------------------------------------------------------
 12. THESIS
@@ -665,20 +1081,37 @@ source sha256 76fb081b124f58c457f7deca5afc38370f7902897b1a1e23324c683becbfd2eb
   division events -- is measured EXACTLY FLAT at every setting: the two frames
   differ by the order of two legs the base measures to commute, so the loop is
   a commutator of commuting operators and carries no holonomy. But the base
-  admits a SECOND certified identification at the two symmetric settings --
-  the realized-only rule's WING EXCHANGE -- and the bigon it forms with the
+  admits a SECOND identification at the two symmetric settings -- the
+  realized-only rule's WING EXCHANGE, admitted in the discriminator's FORCED
+  sense and refused by its certificate -- and the bigon it forms with the
   full-leg rule's identity, at a PREFIX-ALIGNED checkpoint, carries a
   nontrivial closed-loop holonomy of order two, while a loop CROSSING the
-  prefix-divergent checkpoint is measured exactly flat. Both of the
-  pre-registered failure modes therefore obtain and the central hypothesis is
-  REFUTED: the prefix criterion is not the flatness condition. What carries
-  the holonomy is measured to be the base's own wing-exchange orbit -- the
-  same element the O4 obstruction is about -- and not the alignment of the
-  declared leg prefixes. The holonomy's gauge content is separated from its
-  gauge orbit by the mandatory switching sweep: the closed loop's permutation
-  part is fixed under the whole declared switching group, its overall sign is
-  a gauge orbit, and a control quantity reading that sign is measured to move.
-  Stated at the committed finite scope, per coordinate; nothing is claimed
-  about nature.
+  prefix-divergent checkpoint by the same rule at both of its two crossings is
+  measured exactly flat. Both of the pre-registered failure modes therefore
+  obtain and the central hypothesis is REFUTED: the prefix criterion is not
+  the flatness condition, and prefix alignment governs whether an
+  identification EXISTS, not whether the identifications that exist AGREE. Two
+  sources of the twist are measured and neither is the alignment of the
+  declared leg prefixes: two admitted rules differing by the wing exchange at
+  one coordinate -- SUFFICIENT, never necessary -- and the wing exchange's
+  measured failure to intertwine the PREPARATION leg at every setting, which
+  already makes the single-rule sub-connection non-flat at multiplicity one.
+  The group the loops generate at the two symmetric settings is the KLEIN
+  FOUR-GROUP {1, W, X, WX} with W = X . WX, counted as permutations and
+  measured already closed at the declared length bound; and TWO OF ITS FOUR
+  ELEMENTS -- the qubit-only and pointer-only wing swaps -- are measured to
+  lie OUTSIDE the declared 72-element scope and its declared 96-element
+  extension, so the connection is NOT PRINCIPAL for the base's own admitted
+  isomorphisms. T1's path-dependence is excluded from that mechanism: its
+  cause is the measured non-inversion of the declared Born-level step, present
+  at every setting. The gauge layer is separated from its orbit by the
+  mandatory switching sweep, swept COMPLETE at every setting: the switching is
+  MEASURED to act on a closed loop by a global scalar, from which the
+  invariance of the permutation part follows by algebra and is reported as a
+  disclosure rather than as a measurement; the teeth are the scalar-action,
+  checkpoint-telescoping and signed-permutation clauses, and the relative sign
+  class, not the raw sign set, is the invariant sign content. Stated at the
+  committed finite scope, at the declared narrow admission scope, per
+  coordinate; nothing is claimed about nature.
 
-totals: 22 anchors, 15 gates, 0 must-pass failures
+totals: 23 anchors, 24 gates, 0 must-pass failures

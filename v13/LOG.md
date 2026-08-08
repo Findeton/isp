@@ -6918,3 +6918,52 @@ the canonical loop's scope-relativity disclosed as a result;
 certified→FORCED; drops counted; the weld cited (paper 1 §2.4 +
 W5 M4) w/ the residual imported.  On delivery: COMMIT-AS-IS,
 verify, terminal-or-bounce.  Recorded after it occurs.
+
+## 2026-08-07 — NT REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #210)
+Repair N-1..N-7 delivered complete; committed as-is.  Inventory:
+value set counted as PERMUTATION TUPLES — 4 everywhere, the
+KLEIN FOUR named w/ the factorization W = X·WX MEASURED (fixed
+points 18/12/6); label-collapse mutant dies at the corrected
+gate; D5 rewritten owning the bug.  Mechanism rescoped: new
+must-pass NT-MECHANISM-SUFFICIENT-NOT-NECESSARY (sufficiency
+6/6; necessity refuted three ways — single-rule sub-connection
+8/18 non-flat at multiplicity 1; 348/setting; prep-leg
+non-intertwining 6/6 with P_W·U_prep⁻¹·P_W·U_prep MEASURED TO
+BE EXACTLY X); T1 excluded w/ its own cause gated as disclosure
+(D11: no mutant can falsify it — a perturbation making the Born
+step orthogonal is a different model).  THE ESCAPE HEADLINED:
+NT-STRUCTURE-GROUP-ESCAPES-THE-SCOPE — 2 of 4 elements outside
+ALL FOUR scopes (admitted 2 / declared 72 / declared 96 /
+admitted 8) at both symmetric settings; non-principality its own
+section; mixed-sign invariant (s_j·s_0 relative class) gated,
+2/4 mixed.  Gates: NT-PATH-SPACE-ENUMERATED rebuilt (four real
+predicates; reduce-lax dies BY it); ZERO MUTANT != comparisons
+remain (AST-verified) + new must-pass NT-NO-MUTANT-EXEMPTION w/
+exempt-lax dying by it; the gauge headline clause reclassified
+as forced-disclosure; the must-pass teeth = the measured scalar
+action — 85,760 exact comparisons, 0 deviations, incl. R1's
+complete 8,192-sweeps of all five loops; D2 RETIRED (no
+sampling anywhere).  Census honest: denominator 17,
+never_falsified EMPTY, 16 computation-falsified,
+NT-VOCABULARY named as the waiver-carried one.  Scopes: the
+96/8 search DISCLOSED AS A RESULT (canonical loop absent at
+SP-C/D at the extension; new §8.6); certified→FORCED w/ one
+glossed deliberate exception; t=0 rows scoped w/ the refutation
+gated to survive at O4's own read times; flat crossing
+comparator-scoped w/ 480/1,268 printed; drops counted
+(600/820 of 2,820; 0 at the declared base point); T2
+read-time claim corrected.  THE WELD: residual imported from
+W5's committed CODE (gam/mmul/ksub) w/ W5's committed numbers
+as anchor A23; entailment-by-clause-2 measured; cited to paper
+1 §2.3 (the worker CAUGHT THE ADJUDICATION ORDER'S §2.4 SLIP —
+owned here: my error, verified against the source by the
+worker) + W5 M4; contribution = the four-cut/two-frame
+extension; the (iv) citation fixed w/ the involutive-P caveat.
+All three rewrite tables applied row by row.  24 gates (18
+must-pass) / 23 anchors / 23 mutants 23/23 died (19/4) / 0
+failures / byte-identical ×2.  5 deviations from the order,
+each verified-and-honest (incl. W5-import-of-formula-not-
+matrices: W5's own model's propagators differ 216–432
+entries/cell — consistent w/ the completion-relativity
+finding).  md5 output 1d7b28f3 / receipt f50167d9.
+Adjudicator verification next.
