@@ -7541,3 +7541,15 @@ independent census routes + membership tabulation tested;
 RUNBOOK §13 addendum (gated verdicts w/ verdict-flip mutants;
 independent-routes honesty).  STATUS updated this commit.
 Re-derivation dispatch next.
+
+## 2026-08-08 — COC RE-DERIVATION DISPATCHED (C-1..C-5) (v13 LEDGER #235)
+Re-derivation worker dispatched (Opus 5, freeze-on-delivery,
+no git, coc_* only) with the #234 order: the verdict inverted
+to HIGHER-OBSTRUCTION at the extension atlas; the criterion
+gated at both atlases; the extension census in-delivery; the
+mechanism stack (equivariance lemma / Z2 coboundary / closed
+form) as theorems; verdict-inside-a-gate w/ the verdict-flip
+mutant; genuinely independent census routes + cell-completeness
+gate; membership tabulation tested.  On delivery:
+COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after it
+occurs.
