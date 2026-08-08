@@ -7319,3 +7319,19 @@ mis-composed negative control w/ teeth; GEN receipt hash-pinned;
 all engraved lessons binding.  On delivery: COMMIT-AS-IS,
 verify, §13 freeze → panel → adjudication.  Recorded after it
 occurs.
+
+## 2026-08-08 — THE USER'S PARALLELIZATION ORDER; PSI + XBA PINNED
+## (v13 LEDGER #225)
+The user ordered the two registered opens promoted and run IN
+PARALLEL with COC ("can you do that in parallel?").
+note-psi-curvature-pin.md frozen (the ψ-side hunt: a declared
+ψ-family swept at FIXED declarations; outcomes
+CURVATURE-EXISTS / PATH-SPACE-DEPENDENCE / DECLARATION-ONLY /
+BLOCKED; the GEN-law negative control w/ teeth).
+note-xba-crossbase-pin.md frozen (the agreement hunt: declared
+candidate properties on the 4,096-connection space, frozen
+before fixture truth; outcomes SHARED-STRUCTURE-IDENTIFIED /
+PARTIAL / COINCIDENCE-NOT-EXCLUDED / BLOCKED).  Three cycles
+now run concurrently on disjoint file sets (coc_*, psi_*,
+xba_*); adjudications serialize through the ledger as each
+lands.  Dispatches next.
