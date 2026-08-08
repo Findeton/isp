@@ -1,0 +1,292 @@
+==============================================================================
+BRG -- THE MORPHISM-CENSUS BRIDGE   (v13 gravity <-> transport)
+pin v13/note-brg-bridge-pin.md (STRICT) -- immutable base b632f59
+==============================================================================
+
+--- 1. THE DECLARATIONS, FROZEN BEFORE ANY MORPHISM IS EVALUATED ---
+  G01 PASS   candidate evaluations at the freeze: 0
+        declared functors : 8
+        declared predicate clauses : 5 (SP1, SP2, SP3, NT1, NT2) + the arena-invariance clause
+        declared held-out quantities : 5
+        declared primes : [5, 7, 11, 13, 17, 19, 23]
+
+--- 2. THE PINNED TERMINAL RECEIPTS (anchors are exit-1) ---
+        v13/code/gen_generality_receipt.json           e0b2f444f6a9b828... OK
+        v13/code/ha_successor_receipt.json             542b8735daf0ebc6... OK
+        v13/code/nt_transport_receipt.json             d256891b479a8636... OK
+        v13/code/xba_crossbase_receipt.json            6015708df2a437a6... OK
+        v13/note-brg-bridge-pin.md                     56ce4a7e2deeaaa2... OK
+
+--- 3. THE TRANSPORT SIDE, REBUILT FROM GEN 8.1's DEFECT LAW ---
+        base G: Sigma on 9 labels, D = [0, 2, 1, 6, 4, 5, 3, 7, 8], ord 2, 45 fixed of 81
+        W fixed 9 of 81; |<W,D>| = 4
+        base 1: W = Sigma_4 (x) Sigma_9 on 36, fixed 6; factor fixed points 18/12 anchored against NT
+        species 4: 256 configurations, D fixed 192, W fixed 16, |<W,D>| = 4; its own 120-member transposition family splits {1: 12, 2: 60, 3: 48}
+        base T: D of order 3, |<W,D>| = 6;   base S' (equivariant control): |<W,D>| = 2
+
+--- 4. THE DECLARED COMPLETION FAMILY, SWEPT WHOLE (scope 3) ---
+  G02 PASS   40320 members swept, spectra total 40320/40320, 40320 distinct
+        defect order spectrum   [1, 2, 3, 4, 5, 6, 7, 15]
+        holonomy order spectrum [1, 4, 6, 8, 10, 12, 14, 30]
+
+--- 5. THE DEFORMATION SIDE, REBUILT FROM HA's G28/G29 ---
+        rho = (1/6, 1/6) exactly; carriers p^(k+d) with k = 2, d = 2
+        p = 5   carrier 625      |<R_HH>| = 5   rho mod p = [1, 1]
+        p = 7   carrier 2401     |<R_HH>| = 7   rho mod p = [6, 6]
+        p = 11  carrier 14641    |<R_HH>| = 11  rho mod p = [2, 2]
+        p = 13  carrier 28561    |<R_HH>| = 13  rho mod p = [11, 11]
+        p = 17  carrier 83521    |<R_HH>| = 17  rho mod p = [3, 3]
+        p = 19  carrier 130321   |<R_HH>| = 19  rho mod p = [16, 16]
+        p = 23  carrier 279841   |<R_HH>| = 23  rho mod p = [4, 4]
+        primes at which rho does NOT reduce (measured): [2, 3]
+        record-is-metric re-encoding: determinant 2 (HA G28)
+        orbits of <R_HH> on the carrier, by prime: {5: 125, 7: 343, 11: 1331, 13: 2197, 17: 4913, 19: 6859, 23: 12167} (the action is free, so every orbit has length p)
+
+--- 6. THE COMMITTED TRANSPORT INSTANCES (scope 1), REBUILT OR ANCHORED ---
+  G03 PASS   5 instances rebuilt as permutation groups; comparator independent: True
+        instance        carrier  ord D  |<W,D>|  rebuilt
+        base 1 @ SP-E   36       2      4        False
+        base 1 @ SP-F   36       2      4        False
+        base G @ GP-E   81       2      4        True
+        base G @ GP-F   81       2      4        True
+        base S          81       2      4        False
+        base S'         81       1      2        True
+        base T          81       3      6        True
+        species 4       256      2      4        True
+        base 1's defect is under-determined by the committed data: 2 candidates satisfy every committed datum, all giving |<W,D>| = [4]
+        base S's defect lies in the (ord 2, 45 fixed) class: 864 members, all of defect order [2]
+  G04 PASS   base 1: 2 candidates; base S: 864 candidates; group orders invariant
+
+--- 7. THE CONTROLS: THE IDENTITY SELF-MORPHISM, THE DEGENERATE FUNCTOR, THE STRUCTURE-BREAKING MAPS ---
+  G05 PASS   identity accepted on all three arenas (SP3 cells 3125 / 324 / 486)
+  G06 PASS   degenerate functor: SP=True NT1=False NT2=False accepted=False
+  G07 PASS   BREAK-A rejected at 2500 of 3125 cells; the same map with R->R^2 accepted; BREAK-B rejected at 16 cells
+  G08 PASS   non-hom rejected at 10 of 25 composition cells
+
+--- 8. THE MORPHISM CENSUS AT THE GROUP LEVEL, BOTH DIRECTIONS ---
+  G09 PASS   56 cells = 7 primes x 8 instances; 112 directed cells
+  G10 PASS   routes agree at 56 cells; taint 0; invocations 56/56
+        p   instance        |G|   hom(Z/p,G)  nontriv  hom(G,Z/p)  nontriv  gcd(p,|G|)
+        5   base 1 @ SP-E   4     1           0        1           0        1
+        5   base 1 @ SP-F   4     1           0        1           0        1
+        5   base G @ GP-E   4     1           0        1           0        1
+        5   base G @ GP-F   4     1           0        1           0        1
+        5   base S          4     1           0        1           0        1
+        5   base S'         2     1           0        1           0        1
+        5   base T          6     1           0        1           0        1
+        5   species 4       4     1           0        1           0        1
+        7   base 1 @ SP-E   4     1           0        1           0        1
+        7   base 1 @ SP-F   4     1           0        1           0        1
+        7   base G @ GP-E   4     1           0        1           0        1
+        7   base G @ GP-F   4     1           0        1           0        1
+        7   base S          4     1           0        1           0        1
+        7   base S'         2     1           0        1           0        1
+        7   base T          6     1           0        1           0        1
+        7   species 4       4     1           0        1           0        1
+        11  base 1 @ SP-E   4     1           0        1           0        1
+        11  base 1 @ SP-F   4     1           0        1           0        1
+        11  base G @ GP-E   4     1           0        1           0        1
+        11  base G @ GP-F   4     1           0        1           0        1
+        11  base S          4     1           0        1           0        1
+        11  base S'         2     1           0        1           0        1
+        11  base T          6     1           0        1           0        1
+        11  species 4       4     1           0        1           0        1
+        13  base 1 @ SP-E   4     1           0        1           0        1
+        13  base 1 @ SP-F   4     1           0        1           0        1
+        13  base G @ GP-E   4     1           0        1           0        1
+        13  base G @ GP-F   4     1           0        1           0        1
+        13  base S          4     1           0        1           0        1
+        13  base S'         2     1           0        1           0        1
+        13  base T          6     1           0        1           0        1
+        13  species 4       4     1           0        1           0        1
+        17  base 1 @ SP-E   4     1           0        1           0        1
+        17  base 1 @ SP-F   4     1           0        1           0        1
+        17  base G @ GP-E   4     1           0        1           0        1
+        17  base G @ GP-F   4     1           0        1           0        1
+        17  base S          4     1           0        1           0        1
+        17  base S'         2     1           0        1           0        1
+        17  base T          6     1           0        1           0        1
+        17  species 4       4     1           0        1           0        1
+        19  base 1 @ SP-E   4     1           0        1           0        1
+        19  base 1 @ SP-F   4     1           0        1           0        1
+        19  base G @ GP-E   4     1           0        1           0        1
+        19  base G @ GP-F   4     1           0        1           0        1
+        19  base S          4     1           0        1           0        1
+        19  base S'         2     1           0        1           0        1
+        19  base T          6     1           0        1           0        1
+        19  species 4       4     1           0        1           0        1
+        23  base 1 @ SP-E   4     1           0        1           0        1
+        23  base 1 @ SP-F   4     1           0        1           0        1
+        23  base G @ GP-E   4     1           0        1           0        1
+        23  base G @ GP-F   4     1           0        1           0        1
+        23  base S          4     1           0        1           0        1
+        23  base S'         2     1           0        1           0        1
+        23  base T          6     1           0        1           0        1
+        23  species 4       4     1           0        1           0        1
+        TOTAL non-degenerate group morphisms, forward : 0 of 56 cells
+        TOTAL non-degenerate group morphisms, reverse : 0 of 56 cells
+
+--- 8b. THE SAME CENSUS OVER GEN's TWELVE REBUILT CLASSES (scope 2) ---
+  G11 PASS   84 cells = 7 primes x 12 classes
+        non-degenerate group morphisms over scope 2 : 14, living at exactly these cells:
+          p = 5   ord=15,fixed=9
+          p = 5   ord=5,fixed=36
+          p = 7   ord=7,fixed=18
+
+--- 9. ARENA-INVARIANCE (pin requirement 4; RUNBOOK 15) ---
+  G12 PASS   empty at every one of 7 primes: [True]
+  G13 PASS   F3 survives at [5, 7], dies at [11, 13, 17, 19, 23]; agrees with the extended census: True
+  G14 PASS   no instance of any declared scope admits a non-trivial morphism at every declared prime
+  G15 PASS   4 self-tests, all matching; arena actions move [81, 81, 625] points; generator sweep counts [1, 1, 1, 1]
+  G16 PASS   selftest hits 0, bypasses 35, lookups 100, hits 5
+
+--- 10. THE FUNCTOR-LEVEL CENSUS: THE CARRIER MAPS THEMSELVES ---
+  G17 PASS   orbit counts agree at 35 cells
+        p   instance        |C_HA|   orbits  group maps  SP pairs (bits)    non-degenerate
+        5   base G @ GP-E   625      125     1           793                0
+        5   base G @ GP-F   625      125     1           793                0
+        5   base S'         625      125     1           793                0
+        5   base T          625      125     1           793                0
+        5   species 4       625      125     1           1001               0
+        7   base G @ GP-E   2401     343     1           2175               0
+        7   base G @ GP-F   2401     343     1           2175               0
+        7   base S'         2401     343     1           2175               0
+        7   base T          2401     343     1           2175               0
+        7   species 4       2401     343     1           2745               0
+        11  base G @ GP-E   14641    1331    1           8439               0
+        11  base G @ GP-F   14641    1331    1           8439               0
+        11  base S'         14641    1331    1           8439               0
+        11  base T          14641    1331    1           8439               0
+        11  species 4       14641    1331    1           10649              0
+        13  base G @ GP-E   28561    2197    1           13929              0
+        13  base G @ GP-F   28561    2197    1           13929              0
+        13  base S'         28561    2197    1           13929              0
+        13  base T          28561    2197    1           13929              0
+        13  species 4       28561    2197    1           17577              0
+        17  base G @ GP-E   83521    4913    1           31148              0
+        17  base G @ GP-F   83521    4913    1           31148              0
+        17  base S'         83521    4913    1           31148              0
+        17  base T          83521    4913    1           31148              0
+        17  species 4       83521    4913    1           39305              0
+        19  base G @ GP-E   130321   6859    1           43486              0
+        19  base G @ GP-F   130321   6859    1           43486              0
+        19  base S'         130321   6859    1           43486              0
+        19  base T          130321   6859    1           43486              0
+        19  species 4       130321   6859    1           54873              0
+        23  base G @ GP-E   279841   12167   1           77137              0
+        23  base G @ GP-F   279841   12167   1           77137              0
+        23  base S'         279841   12167   1           77137              0
+        23  base T          279841   12167   1           77137              0
+        23  species 4       279841   12167   1           97337              0
+        the SP-satisfying space is enormous and entirely degenerate: 0 non-degenerate pairs over 35 cells
+  G18 PASS   TINY-A: formula 16 = brute 16 (nd 12); TINY-B: formula 18 = brute 18 (nd 12); TINY-C: formula 4 = brute 4 (nd 0)
+
+--- 11. THE PIN's DECLARED LEAD: THE RECORD <-> COMPLETION DICTIONARY ---
+  G19 PASS   9 records x 40320 completions; space has 42 digits; 504 spectrum cells swept
+        p = 5   admissible completions per record 13824  -> dictionaries 18437563379178327736384102280592359424 (38 digits)
+        p = 7   admissible completions per record 9216   -> dictionaries 479603335372621236652373132533825536 (36 digits)
+        p = 11  admissible completions per record 0      -> dictionaries 0 (1 digits)
+        p = 13  admissible completions per record 0      -> dictionaries 0 (1 digits)
+        p = 17  admissible completions per record 0      -> dictionaries 0 (1 digits)
+        p = 19  admissible completions per record 0      -> dictionaries 0 (1 digits)
+        p = 23  admissible completions per record 0      -> dictionaries 0 (1 digits)
+  G20 PASS   committed-scope admissible per record: [0]
+
+--- 12. BOTH OUTCOMES REACHABLE, AND THE HELD-OUT VERIFICATION ---
+  G21 PASS   2 non-trivial group maps; morphism accepted; held-out 234 cells, 0 violations
+  G22 PASS   E-REF fails at 54 of 234 held-out cells; E-ROT at 0
+  G23 PASS   FIT 1 orbit / HELD 26 orbits of 27; 3 points touched
+  G24 PASS   H1 [3] = [3]; H3 [1, 3] into [1, 2, 3]; H4 9 cells, 0 violations
+  G25 PASS   p = 5 against |G| = 6: 0 non-trivial group maps
+
+--- 13. THE OBSTRUCTION, NAMED AND GATED ---
+  G26 PASS   137 empty / 3 live of 140 cells; obstruction 'order-coprimality'
+  G27 PASS   reverse empty at all 140 cells; abelianisation orders [2, 4]
+        The two obstructions, stated at their measured strength:
+          forward  hom(Z/p, <W,D>) is trivial iff p does not divide
+                   2*ord(D); over the committed instances ord(D) is at
+                   most 3, so 2*ord(D) is in [2, 4, 6]
+                   and no declared prime divides any of them.
+          reverse  every hom <W,D> -> Z/p factors through a 2-group.
+        rho does not reduce at exactly the primes [2, 3] -- the
+        same two primes that are the only ones dividing 2*ord(D) at the
+        committed instances.  The obstruction is not an artifact of the
+        declared prime list: the deformation side cannot be built at the
+        primes at which the match would be possible.
+
+--- 14. THE AST GUARDS ---
+  G28 PASS   0 hits in source, 2 in the synthetic sample
+  G29 PASS   0 offenders; synthetic sample flagged: ['f']
+  G30 PASS   77 anchors; failures 0, fatal 0
+
+--- 15. THE VERDICT, DERIVED INSIDE ITS GATE FROM THE MEASURED COUNTS ---
+  G31 PASS   verdict BRG-EMPTY-AT-CARRIER (recomputed BRG-EMPTY-AT-CARRIER)
+
+        VERDICT: BRG-EMPTY-AT-CARRIER
+          completion_family_members                    40320
+          directed_cells                               112
+          extended_scope_cells                         168
+          instances                                    8
+          non_degenerate_functor_pairs                 0
+          non_degenerate_group_morphisms_forward       0
+          non_degenerate_group_morphisms_reverse       0
+          obstruction                                  order-coprimality
+          prime_tracking_candidates_excluded           1
+          primes                                       7
+          scope                                        the committed transport instances at the declared primes
+
+  gates 31 (31 must-pass), failures 0: []
+  anchors 77, all reproduced
+
+--- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
+  mutant                exit  killed   named kills
+  abelianization-lax    1     True     G:G27
+  ambiguity-lax         1     True     G:G04
+  anchor-gen-defect     1     True     A:A06
+  anchor-gen-family     1     True     A:A21,G:G02
+  anchor-gen-sha        1     True     A:A01
+  anchor-ha-rho         1     True     A:A29
+  anchor-ha-sha         1     True     A:A02
+  anchor-nt-sha         1     True     A:A03
+  anchor-pin-sha        1     True     A:A05
+  anchor-soft           1     True     A:A05,G:G30
+  anchor-xba-orders     1     True     A:A33
+  anchor-xba-sha        1     True     A:A04
+  break-blind           1     True     G:G07
+  cache-lax             1     True     G:G16,G:G31
+  cache-unused          1     True     G:G16,G:G31
+  cell-drop             1     True     G:G09,G:G31
+  class-drop            1     True     G:G11,G:G13,G:G31
+  comparator-self       1     True     G:G03
+  conj-lax              1     True     G:G15,G:G31
+  dict-drop             1     True     G:G19,G:G31
+  dict-scope-lax        1     True     G:G20
+  empty-block           1     True     G:G25,G:G31
+  equivariance-side     1     True     G:G05,G:G07,G:G21,G:G31
+  exempt-lax            1     True     G:G29
+  family-drop           1     True     A:A21,G:G02
+  float-lax             1     True     G:G28
+  formula-lax           1     True     G:G18
+  found-block           1     True     G:G21,G:G22,G:G24,G:G31
+  freeze-lax            1     True     G:G01
+  heldout-leak          1     True     G:G21,G:G22,G:G23,G:G31
+  hom-lax               1     True     G:G08
+  invariance-lax        1     True     G:G14,G:G31
+  nontrivial-lax        1     True     G:G06,G:G18
+  obstruction-misname   1     True     G:G26
+  orbit-lax             1     True     G:G17,G:G18,G:G24,G:G31
+  predicate-lax         1     True     G:G18,G:G22
+  prime-single          1     True     A:A77,G:G09,G:G12,G:G13
+  quantity-lax          1     True     G:G24
+  relabel-lax           1     True     G:G15,G:G31
+  route-alias           1     True     G:G10
+  route-b-lax           1     True     G:G10
+  scope-leak            1     True     G:G09,G:G12,G:G31
+  selftest-select       1     True     G:G15,G:G31
+  spectrum-swap         1     True     A:A77,G:G13
+  teeth-off             1     True     G:G22
+  tracking-blind        1     True     A:A77,G:G13
+  verdict-flip          1     True     G:G31
+  mutants that survived : []
+  must-pass gates never falsified by any mutant : []
+

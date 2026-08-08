@@ -8363,3 +8363,38 @@ completions by declared rule, pinned and printed.
 Construction dispatch with this commit (Opus 5,
 freeze-on-delivery, tb3_* namespace; BRG runs in parallel on
 brg_*).
+
+## 2026-08-08 — BRG DELIVERED, COMMITTED AS-IS (v13 LEDGER #267)
+Delivery committed as-is.  VERDICT: **BRG-EMPTY-AT-CARRIER —
+obstruction named ORDER-COPRIMALITY**, derived in-gate and
+recomputed by an independent expression.  Forward:
+hom(Z/p, ⟨W,D⟩) trivial iff p ∤ 2·ord(D); the committed
+instances have ord(D) ≤ 3 so 2·ord(D) ∈ {2,4,6} — no declared
+prime divides any.  Reverse: every hom factors through a
+measured 2-GROUP abelianisation — prime-independent.  The
+obstruction measured COEXTENSIVE with emptiness both ways
+(137 empty / 3 live of 140 cells).  **THE SHARPEST FINDING:
+the deformation side's ρ = (1/6,1/6) fails to reduce at
+exactly {2,3} — precisely the primes dividing 2·ord(D) at the
+committed instances.  The two structures miss each other
+ARITHMETICALLY: the gravity side needs odd primes to exist;
+the committed transport side carries only 2-and-3-torsion.**
+**AND THE LIVE CELLS: at GEN's richer completion classes, 14
+non-trivial morphisms EXIST — at (p=5, ord 5), (p=5, ord 15),
+(p=7, ord 7).  The bridge is empty at the committed instances,
+NOT structurally impossible — completions with ord(D) ∈
+{5,7,15} open it.**  The prime-tracking spectrum criterion
+measured (it IS the extended census; bites at 2/7 primes) then
+EXCLUDED per requirement 4 (G13/G14).  8 functors declared as
+data (the record↔completion dictionary swept: admissible
+13,824/record at p=5, 0 at p≥11; 0 at the committed scope
+every prime); the preservation predicate w/ measured teeth;
+FOUND proved reachable synthetically w/ held-out verification
+(26 orbits / 234 cells, 0 violations; E-REF teeth 54/234);
+identity self-morphisms found; degenerate/break controls
+behave.  77 anchors (4 terminal receipts + the pin) / 31
+gates all must-pass 0 failures / 47 mutants 0 survivors,
+never_falsified EMPTY / byte-identical ×2.  7 deviations
+(lead: base-1/base-S defects under-determined by receipts —
+SWEPT, not guessed, whole ambiguity sets).  md5 output
+58f78d36 / receipt b8cf87e5.  Adjudicator verification next.

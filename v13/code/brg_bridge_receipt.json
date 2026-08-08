@@ -1,0 +1,5556 @@
+{
+ "anchors": [
+  {
+   "committed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "computed": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "id": "A01",
+   "passed": true,
+   "quantity": "sha256 of v13/code/gen_generality_receipt.json",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+   "computed": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+   "id": "A02",
+   "passed": true,
+   "quantity": "sha256 of v13/code/ha_successor_receipt.json",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "computed": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "id": "A03",
+   "passed": true,
+   "quantity": "sha256 of v13/code/nt_transport_receipt.json",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+   "computed": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+   "id": "A04",
+   "passed": true,
+   "quantity": "sha256 of v13/code/xba_crossbase_receipt.json",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
+   "computed": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b",
+   "id": "A05",
+   "passed": true,
+   "quantity": "sha256 of v13/note-brg-bridge-pin.md",
+   "source": "v13/note-brg-bridge-pin.md + the terminal deliveries"
+  },
+  {
+   "committed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "computed": [
+    0,
+    2,
+    1,
+    6,
+    4,
+    5,
+    3,
+    7,
+    8
+   ],
+   "id": "A06",
+   "passed": true,
+   "quantity": "GEN: the declared completion's defect permutation",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A07",
+   "passed": true,
+   "quantity": "GEN: the declared defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 45,
+   "computed": 45,
+   "id": "A08",
+   "passed": true,
+   "quantity": "GEN: the declared defect's fixed configurations of 81",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A09",
+   "passed": true,
+   "quantity": "XBA: base G's wing-exchange fixed configurations",
+   "source": "v13/code/xba_crossbase_receipt.json bases"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A10",
+   "passed": true,
+   "quantity": "XBA: base G's |<W,D>|",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A11",
+   "passed": true,
+   "quantity": "NT: the wing exchange's fixed configurations of 36",
+   "source": "v13/code/nt_transport_receipt.json structure_group"
+  },
+  {
+   "committed": 18,
+   "computed": 18,
+   "id": "A12",
+   "passed": true,
+   "quantity": "NT: the qubit-only wing swap's fixed configurations",
+   "source": "v13/code/nt_transport_receipt.json structure_group"
+  },
+  {
+   "committed": 12,
+   "computed": 12,
+   "id": "A13",
+   "passed": true,
+   "quantity": "NT: the pointer-only wing swap's fixed configurations",
+   "source": "v13/code/nt_transport_receipt.json structure_group"
+  },
+  {
+   "committed": 192,
+   "computed": 192,
+   "id": "A14",
+   "passed": true,
+   "quantity": "XBA: species 4's defect fixed configurations of 256",
+   "source": "v13/paper-xba-crossbase.md 9.4 (committed table)"
+  },
+  {
+   "committed": 16,
+   "computed": 16,
+   "id": "A15",
+   "passed": true,
+   "quantity": "XBA: species 4's wing-exchange fixed configurations of 256",
+   "source": "v13/paper-xba-crossbase.md 9.4 (committed table)"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A16",
+   "passed": true,
+   "quantity": "XBA: species 4's |<W,D>|",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": {
+    "1": 12,
+    "2": 60,
+    "3": 48
+   },
+   "computed": {
+    "1": 12,
+    "2": 60,
+    "3": 48
+   },
+   "id": "A17",
+   "passed": true,
+   "quantity": "XBA: species 4's own completion family, split by defect order",
+   "source": "v13/paper-xba-crossbase.md 9.4 (120 transpositions, 12/60/48)"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A18",
+   "passed": true,
+   "quantity": "XBA: base T's defect order",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A19",
+   "passed": true,
+   "quantity": "XBA: base T's |<W,D>|",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A20",
+   "passed": true,
+   "quantity": "XBA: base S' (the equivariant control) |<W,D>|",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 40320,
+   "computed": 40320,
+   "id": "A21",
+   "passed": true,
+   "quantity": "GEN: the declared completion family's size",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": {
+    "1": 96,
+    "15": 9216,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216
+   },
+   "computed": {
+    "1": 96,
+    "15": 9216,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216
+   },
+   "id": "A22",
+   "passed": true,
+   "quantity": "GEN: the defect order spectrum over the family",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": {
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96,
+    "9": 16704
+   },
+   "computed": {
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96,
+    "9": 16704
+   },
+   "id": "A23",
+   "passed": true,
+   "quantity": "GEN: the defect fixed-configuration spectrum over the family",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 96,
+   "computed": 96,
+   "id": "A24",
+   "passed": true,
+   "quantity": "GEN: members whose defect is the identity",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 40224,
+   "computed": 40224,
+   "id": "A25",
+   "passed": true,
+   "quantity": "GEN: geometry-bearing members",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": 0,
+   "computed": 0,
+   "id": "A26",
+   "passed": true,
+   "quantity": "GEN: members where the dihedral relation Sigma D Sigma = D^-1 fails",
+   "source": "v13/code/gen_generality_receipt.json completion_census"
+  },
+  {
+   "committed": [
+    "1/6",
+    "1/6"
+   ],
+   "computed": [
+    "1/6",
+    "1/6"
+   ],
+   "id": "A27",
+   "passed": true,
+   "quantity": "HA: the exact rational residual at the detector site",
+   "source": "v13/code/ha_successor_receipt.json bridge"
+  },
+  {
+   "committed": [
+    625,
+    2401,
+    14641,
+    28561,
+    83521,
+    130321,
+    279841
+   ],
+   "computed": [
+    625,
+    2401,
+    14641,
+    28561,
+    83521,
+    130321,
+    279841
+   ],
+   "id": "A28",
+   "passed": true,
+   "quantity": "HA: the reduced carrier size at every swept prime",
+   "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
+  },
+  {
+   "committed": [
+    [
+     1,
+     1
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     16,
+     16
+    ],
+    [
+     4,
+     4
+    ]
+   ],
+   "computed": [
+    [
+     1,
+     1
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     16,
+     16
+    ],
+    [
+     4,
+     4
+    ]
+   ],
+   "id": "A29",
+   "passed": true,
+   "quantity": "HA: rho mod p at every swept prime",
+   "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
+  },
+  {
+   "committed": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23
+   ],
+   "computed": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23
+   ],
+   "id": "A30",
+   "passed": true,
+   "quantity": "HA: |<R_HH>| at every swept prime",
+   "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
+  },
+  {
+   "committed": [
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     17
+    ],
+    [
+     1,
+     19
+    ],
+    [
+     1,
+     23
+    ]
+   ],
+   "computed": [
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     17
+    ],
+    [
+     1,
+     19
+    ],
+    [
+     1,
+     23
+    ]
+   ],
+   "id": "A31",
+   "passed": true,
+   "quantity": "HA: the element orders of <R_HH> at every swept prime",
+   "source": "v13/code/ha_successor_receipt.json bridge.prime_sweep"
+  },
+  {
+   "committed": "2",
+   "computed": "2",
+   "id": "A32",
+   "passed": true,
+   "quantity": "HA: the record-is-metric re-encoding determinant",
+   "source": "v13/code/ha_successor_receipt.json readout_reencoding"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A33",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base 1 @ SP-E",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A34",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base 1 @ SP-F",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A35",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base G @ GP-E",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A36",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base G @ GP-F",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A37",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base S",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A38",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base S'",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A39",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at base T",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A40",
+   "passed": true,
+   "quantity": "XBA: |<W,D>| = 2*ord(D) at species 4",
+   "source": "v13/code/xba_crossbase_receipt.json the_commutator_law"
+  },
+  {
+   "committed": 1,
+   "computed": 1,
+   "id": "A41",
+   "passed": true,
+   "quantity": "GEN: class ord=1,fixed=81 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 81,
+   "computed": 81,
+   "id": "A42",
+   "passed": true,
+   "quantity": "GEN: class ord=1,fixed=81 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 15,
+   "computed": 15,
+   "id": "A43",
+   "passed": true,
+   "quantity": "GEN: class ord=15,fixed=9 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A44",
+   "passed": true,
+   "quantity": "GEN: class ord=15,fixed=9 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    3,
+    5,
+    15
+   ],
+   "computed": [
+    1,
+    2,
+    3,
+    5,
+    15
+   ],
+   "id": "A45",
+   "passed": true,
+   "quantity": "GEN: class ord=15,fixed=9 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A46",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=45 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 45,
+   "computed": 45,
+   "id": "A47",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=45 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2
+   ],
+   "computed": [
+    1,
+    2
+   ],
+   "id": "A48",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=45 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 2,
+   "computed": 2,
+   "id": "A49",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=9 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A50",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=9 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2
+   ],
+   "computed": [
+    1,
+    2
+   ],
+   "id": "A51",
+   "passed": true,
+   "quantity": "GEN: class ord=2,fixed=9 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A52",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=27 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 27,
+   "computed": 27,
+   "id": "A53",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=27 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    3
+   ],
+   "computed": [
+    1,
+    2,
+    3
+   ],
+   "id": "A54",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=27 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A55",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=54 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 54,
+   "computed": 54,
+   "id": "A56",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=54 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    3
+   ],
+   "computed": [
+    1,
+    2,
+    3
+   ],
+   "id": "A57",
+   "passed": true,
+   "quantity": "GEN: class ord=3,fixed=54 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A58",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=27 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 27,
+   "computed": 27,
+   "id": "A59",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=27 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    4
+   ],
+   "computed": [
+    1,
+    2,
+    4
+   ],
+   "id": "A60",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=27 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A61",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=9 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A62",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=9 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    4
+   ],
+   "computed": [
+    1,
+    2,
+    4
+   ],
+   "id": "A63",
+   "passed": true,
+   "quantity": "GEN: class ord=4,fixed=9 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 5,
+   "computed": 5,
+   "id": "A64",
+   "passed": true,
+   "quantity": "GEN: class ord=5,fixed=36 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 36,
+   "computed": 36,
+   "id": "A65",
+   "passed": true,
+   "quantity": "GEN: class ord=5,fixed=36 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    5
+   ],
+   "computed": [
+    1,
+    2,
+    5
+   ],
+   "id": "A66",
+   "passed": true,
+   "quantity": "GEN: class ord=5,fixed=36 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A67",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=18 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 18,
+   "computed": 18,
+   "id": "A68",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=18 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "computed": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "id": "A69",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=18 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 6,
+   "computed": 6,
+   "id": "A70",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=9 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 9,
+   "computed": 9,
+   "id": "A71",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=9 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "computed": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "id": "A72",
+   "passed": true,
+   "quantity": "GEN: class ord=6,fixed=9 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 7,
+   "computed": 7,
+   "id": "A73",
+   "passed": true,
+   "quantity": "GEN: class ord=7,fixed=18 -- the defect's order",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": 18,
+   "computed": 18,
+   "id": "A74",
+   "passed": true,
+   "quantity": "GEN: class ord=7,fixed=18 -- the defect's fixed configurations",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    7
+   ],
+   "computed": [
+    1,
+    2,
+    7
+   ],
+   "id": "A75",
+   "passed": true,
+   "quantity": "GEN: class ord=7,fixed=18 -- the element orders of <W,D>",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": true,
+   "computed": true,
+   "id": "A76",
+   "passed": true,
+   "quantity": "GEN: |<W,D>| = the measured holonomy group order at every class of defect order >= 2",
+   "source": "v13/code/gen_generality_receipt.json completion_rebuilds"
+  },
+  {
+   "committed": {
+    "11": false,
+    "13": false,
+    "17": false,
+    "19": false,
+    "23": false,
+    "5": true,
+    "7": true
+   },
+   "computed": {
+    "11": false,
+    "13": false,
+    "17": false,
+    "19": false,
+    "23": false,
+    "5": true,
+    "7": true
+   },
+   "id": "A77",
+   "passed": true,
+   "quantity": "HA: membership of p in GEN's defect order spectrum, by prime",
+   "source": "v13/code/ha_successor_receipt.json bridge"
+  }
+ ],
+ "arithmetic": "integers / fractions.Fraction / exact F_p; no floats",
+ "declarations": {
+  "arena": {
+   "admission": "a candidate survives only if SP holds AND the non-triviality clauses NT1, NT2 hold",
+   "arena action": "the prime sweep; carrier relabelling on both sides; conjugation of the transport group by a carrier permutation; change of the source generator R -> R^j",
+   "boundary": "two measured group actions: the deformation side (C_HA(p) = F_p^k x F_p^d, <R_HH> = Z/p acting by translation of the address register by rho mod p) and the transport side (C_TR = system pair x pointer pair, <W,D> dihedral of order 2*ord(D))",
+   "family": "7 declared primes x the committed transport instances x 2 directions; plus the 12 rebuilt completion classes and the whole 40,320-member completion family as declared extended scopes",
+   "law": "the structure-preservation predicate SP1-SP3 below; a candidate morphism is a PAIR (phi, Phi) of a group map and a carrier map",
+   "provenance": "four committed terminal receipts (HA, NT, GEN, XBA), hash-pinned; every reused number read from them",
+   "state": "the deformation side's base total record (n_sym, 0); the transport side's initial configuration j0 = 0"
+  },
+  "deformation_side": {
+   "carrier": "C_HA(p) = F_p^k x F_p^d, k = 2 (the rank of the declared lapse span), d = 2; size p^(k+d)",
+   "group": "<R_HH> = Z/p, generated by the translation of the address register by rho mod p (HA G29)",
+   "primes": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23
+   ],
+   "record_is_metric": "the count vector (n_e1, n_e2, n_diag) and the components (q11, q22, q12) determine each other by an invertible linear map (HA G28, determinant 2)",
+   "records": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-CURVED": "inhomogeneous",
+    "G-CURVOFF": "inhomogeneous",
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ]
+   },
+   "rho_exact": "(1/6, 1/6) -- the exact rational residual at the detector site, the same at every prime (HA 10.1)"
+  },
+  "functors": {
+   "F0-IDENT": "the identity self-functor within one arena (carrier map = id, group map = id) -- POSITIVE CONTROL: the census machinery must FIND it on each side",
+   "F1-RECORD-COMPLETION": "the pin's declared lead.  Object part: a dictionary delta from the deformation side's geometry records to the transport side's completions; group part: the induced map <R_HH(r)> -> <W, D(delta(r))>; encoding part: HA's record-is-metric datum (counts <-> q) against GEN/XBA's completion datum (Q -> D). Declared space: records x completions.",
+   "F2-CARRIER": "object part Phi: C_HA -> C_TR (front sector x address register -> pointer pair x system pair), group part phi: Z/p -> <W,D>; the space of phi-equivariant Phi is enumerated by orbit representatives, its size computed.",
+   "F3-SPECTRUM": "the morphism-by-spectrum candidate the pin names: a morphism is declared to exist at p iff p lies in GEN's DEFECT order spectrum.  PRIME-TRACKING CONTROL.",
+   "F4-DEGENERATE": "carrier map constant at j0, group map trivial -- satisfies SP and is a NAMED KILL at the non-triviality gate (DEGENERATE-COLLAPSE).",
+   "F5-REVERSE": "the same data in the direction transport -> deformation.",
+   "F6-BREAK-A": "NEGATIVE CONTROL WITH TEETH: carrier map = the register doubling (f, m) -> (f, 2m), group map = the identity. Bijective and non-degenerate; differs from an ACCEPTED morphism (same carrier map, group map R -> R^2) only in the group map, so the predicate must be sensitive to exactly the structure it claims to test.",
+   "F6-BREAK-B": "NEGATIVE CONTROL WITH TEETH: carrier map = the identity with two points of different orbits transposed, group map = the identity."
+  },
+  "held_out": {
+   "H1": "the orbit-size multiset on each side",
+   "H2": "the fixed-point count of each generator",
+   "H3": "the element-order multiset of each group",
+   "H4": "the source group's composition table, all |G|^2 cells",
+   "H5": "the equivariance equations on every HELD orbit -- never imposed by the construction, verified afterwards",
+   "construction_rule": "the morphism is fitted on the FIT orbit and extended to every other orbit by the declared SOURCE symmetry (front translations and a register translation transverse to rho) carried by a declared assignment into the target group.  Equivariance on the HELD orbits is therefore a PREDICTION, not an imposition.",
+   "extensions": {
+    "E-REF": "the assignment is reflection-valued on part of its domain (W times a rotation) -- declared TEETH: it must FAIL the held-out check",
+    "E-ROT": "the assignment is rotation-valued (inside <D>)"
+   },
+   "split_rule": "the source orbits are ordered lexicographically by their minimal element; FIT = orbit 0 only; HELD = every other orbit.  Sizes computed."
+  },
+  "outcomes": [
+   "BRG-MORPHISM-FOUND",
+   "BRG-EMPTY-AT-CARRIER",
+   "BRG-BLOCKED-AT-<object>"
+  ],
+  "pins": {
+   "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+   "v13/code/nt_transport_receipt.json": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+   "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b"
+  },
+  "predicate": {
+   "NT1": "phi is non-trivial (the group action is carried, not killed)",
+   "NT2": "Phi is non-constant (the carrier is not collapsed to a point)",
+   "SP1": "phi is a homomorphism: phi(g h) = phi(g) phi(h) at every one of the |G_src|^2 ordered pairs (composition preserved)",
+   "SP2": "phi(1) = 1",
+   "SP3": "Phi is phi-equivariant: Phi(g . x) = phi(g) . Phi(x) at every one of the |G_src| x |C_src| cells (the group actions preserved)",
+   "arena_invariance": "SP references only the group actions, the composition and carrier incidence; never a prime value, never a label name, never a carrier index.  Measured by the relabelling, conjugation and generator-change self-tests (RUNBOOK 14)."
+  },
+  "synthetic": {
+   "SYN-EMPTY": "a DECLARED SYNTHETIC incompatible pair: source Z/5 acting on F_5^2 x F_5^2, target base T's rebuilt <W,D> of order 6.",
+   "SYN-FOUND": "a DECLARED SYNTHETIC compatible pair: source Z/3 acting on F_3^2 x F_3^2 by translation by (1,1), target base T's rebuilt <W,D> of order 6.  Synthetic because HA's own rho = (1/6,1/6) does not reduce at p = 3 -- measured."
+  },
+  "tiny_cells": {
+   "TINY-A": "source Z/2 acting freely on 4 points; target the Klein four group acting regularly on 4 points",
+   "TINY-B": "source Z/3 acting freely on 3 points; target the dihedral group of order 6 acting regularly on 6 points",
+   "TINY-C": "source Z/5 acting freely on 5 points; target the Klein four group acting regularly on 4 points"
+  },
+  "transport_side": {
+   "carrier": "C_TR = the system pair (m^2 labels) x the pointer pair (m^2 labels), index i = m^2 * a + p",
+   "committed_instances": [
+    "base 1 @ SP-E",
+    "base 1 @ SP-F",
+    "base G @ GP-E",
+    "base G @ GP-F",
+    "base S",
+    "base S'",
+    "base T",
+    "species 4"
+   ],
+   "defect": "D = (Sigma Q^T Sigma Q) (x) I, Q the declared completion permutation of the system-pair labels (GEN 8.1)",
+   "exchange": "Sigma: the label exchange (u,v) -> (v,u); W = Sigma (x) Sigma",
+   "extended_scope_2": "GEN's 12 rebuilt completion classes",
+   "extended_scope_3": "the whole declared completion family, 8! members",
+   "group": "<W, D> = the dihedral group of order 2*ord(D) (XBA 8.1-8.3)"
+  }
+ },
+ "disclosures": [
+  {
+   "detail": {
+    "analytically_forced": true
+   },
+   "id": "X01",
+   "statement": "The count |hom(Z/p, D_n)| = gcd(n, p) is analytically forced; it is recorded as a disclosure and is NOT used as a gate. Both census routes compute the count without invoking it."
+  },
+  {
+   "detail": {
+    "classes_where_the_two_coordinates_agree": 11,
+    "classes_where_they_differ": 1
+   },
+   "id": "X02",
+   "statement": "At GEN's equivariant class the group |<W,D>| = 2 while GEN's measured based-holonomy group order is 1, because that base refuses the links altogether.  These are two different coordinates; this unit's census consumes the <W,D> coordinate (XBA's), and the agreement gate is taken at the eleven classes of defect order >= 2 where the two coordinates coincide."
+  },
+  {
+   "detail": {
+    "base_1_candidates": 2,
+    "base_S_candidates": 864
+   },
+   "id": "X03",
+   "statement": "Base 1's defect and base S's defect are not determined by the published receipts.  Neither is guessed: the whole set of candidates consistent with every committed datum is swept, and every member gives the same group order, so the ambiguity cannot move a census count."
+  },
+  {
+   "detail": {
+    "non_reducible_primes": [
+     2,
+     3
+    ],
+    "synthetic_prime": 3
+   },
+   "id": "X04",
+   "statement": "The FOUND branch is exhibited only at a DECLARED SYNTHETIC pair, at the prime 3, which is outside the deformation side's admissible primes: rho = (1/6,1/6) does not reduce there.  Nothing about the committed arena is claimed from it; it exists to prove the census's other value attainable."
+  },
+  {
+   "detail": {
+    "live_extended_cells": [
+     [
+      5,
+      "ord=15,fixed=9"
+     ],
+     [
+      5,
+      "ord=5,fixed=36"
+     ],
+     [
+      7,
+      "ord=7,fixed=18"
+     ]
+    ]
+   },
+   "id": "X05",
+   "statement": "Over the EXTENDED scopes a non-trivial group morphism does exist -- at p = 5 into the defect-order-5 and defect-order-15 classes and at p = 7 into the defect-order-7 class.  It is measured and reported, and it is excluded from the verdict by pin requirement 4 because its existence is a function of the declared reduction prime."
+  },
+  {
+   "detail": {
+    "non_degenerate_pairs_over_the_committed_scope": 0
+   },
+   "id": "X06",
+   "statement": "The functor-level census counts the SP-satisfying pairs by the orbit-representative formula; the counts are astronomically large and entirely degenerate.  Only the non-degenerate count enters any argument."
+  }
+ ],
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE ANY CANDIDATE MORPHISM IS EVALUATED: the carrier functors, the structure-preservation predicate, the held-out set and the arena are declared as data, and the candidate-evaluation counter is measured ZERO at the freeze point",
+   "detail": {
+    "candidate_evaluations_at_freeze": 0
+   },
+   "id": "G01",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "CELL-COMPLETENESS OF THE COMPLETION-FAMILY SWEEP: every member of the declared family is classified exactly once and the swept count equals the declared family size, computed by enumeration and not typed",
+   "detail": {
+    "distinct_members": 40320,
+    "fixed_spectrum_total": 40320,
+    "members_swept": 40320,
+    "order_spectrum_total": 40320
+   },
+   "id": "G02",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ABSTRACT DIHEDRAL MODEL IS AUDITED BY AN INDEPENDENTLY CONSTRUCTED COMPARATOR (RUNBOOK 14 addendum, v13 #219): the comparator is the permutation rebuild from the completion Q and Sigma, never the abstract model it audits, and the two agree at every rebuilt instance",
+   "detail": {
+    "agreements": true,
+    "comparator_is_the_permutation_rebuild": true,
+    "rebuilt_instances": [
+     "base G @ GP-E",
+     "base G @ GP-F",
+     "base S'",
+     "base T",
+     "species 4"
+    ]
+   },
+   "id": "G03",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE UNDER-DETERMINED COMMITTED INSTANCES ARE SWEPT, NOT GUESSED: base 1's defect and base S's defect are each replaced by the whole declared set of candidates consistent with every committed datum, and every member of each set gives the same group order, so the ambiguity cannot move any census count",
+   "detail": {
+    "base_1_candidates": 2,
+    "base_1_group_orders": [
+     4
+    ],
+    "base_S_candidates": 864,
+    "base_S_defect_orders": [
+     2
+    ]
+   },
+   "id": "G04",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "POSITIVE CONTROL: the identity self-morphism inside each arena is FOUND by the very census machinery used for the bridge -- every predicate clause holds and both non-triviality clauses hold, on the deformation side, on the abelian transport instance and on the NON-ABELIAN transport instance alike, so the action's orientation convention is exercised where it can bite",
+   "detail": {
+    "deformation_side": {
+     "NT1": true,
+     "NT2": true,
+     "SP": true,
+     "SP1": true,
+     "SP2": true,
+     "SP3": true,
+     "accepted": true,
+     "sp1_bad": 0,
+     "sp1_cells": 25,
+     "sp3_bad": 0,
+     "sp3_cells": 3125
+    },
+    "non_abelian_transport_side": {
+     "NT1": true,
+     "NT2": true,
+     "SP": true,
+     "SP1": true,
+     "SP2": true,
+     "SP3": true,
+     "accepted": true,
+     "sp1_bad": 0,
+     "sp1_cells": 36,
+     "sp3_bad": 0,
+     "sp3_cells": 486
+    },
+    "transport_side": {
+     "NT1": true,
+     "NT2": true,
+     "SP": true,
+     "SP1": true,
+     "SP2": true,
+     "SP3": true,
+     "accepted": true,
+     "sp1_bad": 0,
+     "sp1_cells": 16,
+     "sp3_bad": 0,
+     "sp3_cells": 324
+    }
+   },
+   "id": "G05",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DEGENERATE FUNCTOR IS A NAMED KILL: the constant carrier map with the trivial group map SATISFIES the structure-preservation predicate and is REJECTED by the non-triviality clauses (DEGENERATE-COLLAPSE) -- so the census cannot be won by collapsing either side to a point",
+   "detail": {
+    "NT1": false,
+    "NT2": false,
+    "SP": true,
+    "accepted": false,
+    "kill": "DEGENERATE-COLLAPSE"
+   },
+   "id": "G06",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NEGATIVE CONTROL WITH TEETH: the register-doubling carrier map with the IDENTITY group map is REJECTED by the equivariance clause, while the SAME carrier map with the group map R -> R^2 is ACCEPTED -- so the predicate is sensitive to exactly the structure it claims to test and not to gross malformation; a second breaking map (two points of different orbits transposed) is rejected too",
+   "detail": {
+    "break_A_nondegenerate": true,
+    "break_A_sp3_bad_cells": 2500,
+    "break_A_sp3_cells": 3125,
+    "break_B_sp3_bad_cells": 16,
+    "first_orbit_image": 6,
+    "second_orbit_point": 1,
+    "the_same_carrier_map_with_the_right_group_map": true
+   },
+   "id": "G07",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COMPOSITION CLAUSE HAS TEETH: a declared NON-homomorphism that fixes the identity is REJECTED by SP1, measured over all |G|^2 ordered pairs",
+   "detail": {
+    "sp1_bad": 10,
+    "sp1_cells": 25
+   },
+   "id": "G08",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "CELL-COMPLETENESS OF THE COMMITTED-SCOPE CENSUS: every (prime, instance) cell of the declared scope is visited exactly once, the cell count is COMPUTED from the declared sets and equals the number of rows returned, and both directions are counted at every cell",
+   "detail": {
+    "cells_expected": 56,
+    "cells_visited": 56,
+    "directed_cells": 112,
+    "directions": 2,
+    "distinct_cells": 56,
+    "instances": 8,
+    "primes": 7
+   },
+   "id": "G09",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "TWO INDEPENDENT ROUTES AGREE AT EVERY CELL: the element-power route (iterated multiplication in the target) and the subgroup-lattice route (every subset closed, the cyclic subgroups of order dividing p counted with their generators) return the same homomorphism count at every cell, in both directions, and neither route reads the other",
+   "detail": {
+    "cells": 56,
+    "route_a_invocations": 56,
+    "route_b_invocations": 56,
+    "routes_agree": true,
+    "taint_events": 0
+   },
+   "id": "G10",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "CELL-COMPLETENESS OF THE EXTENDED-SCOPE CENSUS: every (prime, rebuilt class) cell is visited exactly once and the count is computed from the declared sets",
+   "detail": {
+    "cells": 84,
+    "classes_committed_by_the_receipt": 12,
+    "classes_swept": 12,
+    "primes": 7
+   },
+   "id": "G11",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COMMITTED-SCOPE VERDICT IS INVARIANT ACROSS THE WHOLE DECLARED PRIME SWEEP: the census answer is the same at every one of the declared primes, so no quantity that moves with the declared reduction prime carries it (the sweep must contain more than one prime for the gate to be posable)",
+   "detail": {
+    "empty_by_prime": {
+     "11": true,
+     "13": true,
+     "17": true,
+     "19": true,
+     "23": true,
+     "5": true,
+     "7": true
+    },
+    "invariant": true,
+    "primes": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
+    ]
+   },
+   "id": "G12",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PRIME-TRACKING GATE BITES, MEASURED: the declared morphism-by-spectrum candidate F3 SURVIVES at some declared primes and DIES at others, so the arena-invariance rule that rejects it is not vacuous; and the candidate's verdict is measured to coincide, prime by prime, with the extended-scope census's own answer -- the spectrum criterion IS the extended-scope census, and both are prime-tracking",
+   "detail": {
+    "F3_by_prime": {
+     "11": false,
+     "13": false,
+     "17": false,
+     "19": false,
+     "23": false,
+     "5": true,
+     "7": true
+    },
+    "extended_scope_census_by_prime": {
+     "11": false,
+     "13": false,
+     "17": false,
+     "19": false,
+     "23": false,
+     "5": true,
+     "7": true
+    },
+    "the_candidate_is_not_prime_uniform": true,
+    "the_two_readings_agree": true
+   },
+   "id": "G13",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PRIME-TRACKING CANDIDATE IS EXCLUDED FROM THE VERDICT (pin requirement 4): a candidate whose survival is a function of the declared reduction prime is an arena artifact; it is recorded as an instrument reading and the verdict is taken over the arena-invariant content only -- the intersection over the declared prime sweep, which is measured EMPTY at every instance of every declared scope",
+   "detail": {
+    "instances_admitting_EVERY_declared_prime": 0,
+    "instances_tested": 20,
+    "the_arena_invariant_census": "EMPTY at every instance of every declared scope"
+   },
+   "id": "G14",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "RUNBOOK 14 SYMMETRY SELF-TESTS: the predicate's verdict and the census's counts are measured INVARIANT under the arena's own action -- relabelling either carrier, conjugating the transport action by a carrier permutation, and replacing the source generator R by R^j for every j -- with the tested set fixed by declaration and never selected by the verdicts under audit",
+   "detail": {
+    "declared_tested_set": [
+     "relabel-source",
+     "relabel-target",
+     "conjugate-target",
+     "change-generator"
+    ],
+    "generator_change_counts": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "points_moved_by_the_declared_arena_actions": {
+     "conjugator": 81,
+     "relabel_source": 625,
+     "relabel_target": 81
+    },
+    "self_tests": [
+     {
+      "matches_base": true,
+      "self_test": "relabel-source",
+      "verdict": false
+     },
+     {
+      "matches_base": true,
+      "self_test": "relabel-target",
+      "verdict": false
+     },
+     {
+      "matches_base": true,
+      "self_test": "conjugate-target",
+      "verdict": false
+     },
+     {
+      "matches_base": true,
+      "self_test": "change-generator",
+      "verdict": false
+     }
+    ],
+    "tested_set_used": [
+     "relabel-source",
+     "relabel-target",
+     "conjugate-target",
+     "change-generator"
+    ]
+   },
+   "id": "G15",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SELF-TESTS EVALUATE FRESH, AND THE CACHE PATH IS EXERCISED (RUNBOOK 14 addenda, v13 #185 and #219): every self-test evaluation bypasses the memo cache, the self-test's cache-hit count is measured ZERO against a nonzero bypass count, and the cache is measured to be looked up and hit elsewhere in the run -- a zero-hit gate over zero lookups would be vacuous",
+   "detail": {
+    "cache": {
+     "bypass": 35,
+     "hits": 5,
+     "lookups": 100,
+     "misses": 95,
+     "selftest_hits": 0
+    }
+   },
+   "id": "G16",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ORBIT COUNT IS COMPUTED TWICE BY DIFFERENT MEANS: union-find over the generator's own edges, and the division of the carrier size by the orbit length (the action is measured free), and the two agree at every cell",
+   "detail": {
+    "agreements": true,
+    "cells": 35
+   },
+   "id": "G17",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE EQUIVARIANT-MAP COUNT IS COMPUTED BY TWO INDEPENDENT ROUTES: the orbit-representative formula, and an EXHAUSTIVE brute-force enumeration of every function from the source carrier to the target carrier filtered by the very predicate the census uses, at declared tiny cells that include a cell with non-trivial group maps and a cell with none",
+   "detail": {
+    "tiny_cells": [
+     {
+      "brute_force": 16,
+      "cell": "TINY-A",
+      "formula": 16,
+      "group_maps": 4,
+      "non_degenerate_brute": 12,
+      "orbits": 1,
+      "p": 2,
+      "source_points": 4,
+      "target_points": 4
+     },
+     {
+      "brute_force": 18,
+      "cell": "TINY-B",
+      "formula": 18,
+      "group_maps": 3,
+      "non_degenerate_brute": 12,
+      "orbits": 1,
+      "p": 3,
+      "source_points": 3,
+      "target_points": 6
+     },
+     {
+      "brute_force": 4,
+      "cell": "TINY-C",
+      "formula": 4,
+      "group_maps": 1,
+      "non_degenerate_brute": 0,
+      "orbits": 1,
+      "p": 5,
+      "source_points": 5,
+      "target_points": 4
+     }
+    ]
+   },
+   "id": "G18",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DICTIONARY CENSUS IS SWEPT AT A DECLARED FINITE SCOPE WITH ITS SIZE COMPUTED: the space of record->completion dictionaries is |family|^|records|, computed by exponentiation from the two measured set sizes, and the admissible count is a PRODUCT over the records of per-record counts, each obtained by sweeping the whole defect order spectrum -- never one expression",
+   "detail": {
+    "admissible": {
+     "11": {
+      "dictionaries": 0,
+      "digits": 1,
+      "per_record": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "13": {
+      "dictionaries": 0,
+      "digits": 1,
+      "per_record": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "17": {
+      "dictionaries": 0,
+      "digits": 1,
+      "per_record": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "19": {
+      "dictionaries": 0,
+      "digits": 1,
+      "per_record": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "23": {
+      "dictionaries": 0,
+      "digits": 1,
+      "per_record": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "5": {
+      "dictionaries": 18437563379178327736384102280592359424,
+      "digits": 38,
+      "per_record": [
+       13824,
+       13824,
+       13824,
+       13824,
+       13824,
+       13824,
+       13824,
+       13824,
+       13824
+      ]
+     },
+     "7": {
+      "dictionaries": 479603335372621236652373132533825536,
+      "digits": 36,
+      "per_record": [
+       9216,
+       9216,
+       9216,
+       9216,
+       9216,
+       9216,
+       9216,
+       9216,
+       9216
+      ]
+     }
+    },
+    "family": 40320,
+    "records": 9,
+    "space_size_digits": 42,
+    "spectrum_cells_swept": 504
+   },
+   "id": "G19",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "AT THE COMMITTED SCOPE THE DICTIONARY CENSUS IS EMPTY BY A COMPUTED PRODUCT: when the dictionary's image is restricted to the committed completions, the per-record admissible count is ZERO at every declared prime, so the product over the nine records is zero and no dictionary survives",
+   "detail": {
+    "per_record_admissible_at_the_committed_completion": {
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0,
+     "5": 0,
+     "7": 0
+    },
+    "the_committed_completions_defect_order": 2
+   },
+   "id": "G20",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "BRG-MORPHISM-FOUND IS REACHABLE, AND ITS HELD-OUT VERIFICATION IS PREDICTIVE: at the declared synthetic compatible pair the census returns non-trivial group maps and the constructed carrier morphism is ACCEPTED; the morphism is fitted on the declared FIT orbit alone and extended by the declared source symmetry, and its equivariance is then verified on every HELD orbit -- equations the construction never imposed",
+   "detail": {
+    "fit_orbits": 1,
+    "fit_points_touched": 3,
+    "held_out_cells": 234,
+    "held_out_orbits": 26,
+    "held_out_violations": 0,
+    "non_trivial_group_maps": 2,
+    "orbits": 27,
+    "synthetic_prime": 3,
+    "target_group_order": 6
+   },
+   "id": "G21",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE HELD-OUT VERIFICATION HAS TEETH: the SAME construction with the declared reflection-valued extension FAILS the held-out check at a measured, nonzero number of cells, while the rotation-valued extension passes at every one -- so the held-out gate can fail, and passing it is a measurement",
+   "detail": {
+    "E-REF": {
+     "accepted_by_the_census": false,
+     "extension": "E-REF",
+     "fit_points": 3,
+     "held_out_cells": 234,
+     "held_out_violations": 54
+    },
+    "E-ROT": {
+     "accepted_by_the_census": true,
+     "extension": "E-ROT",
+     "fit_points": 3,
+     "held_out_cells": 234,
+     "held_out_violations": 0
+    }
+   },
+   "id": "G22",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE HELD-OUT SET IS PURE: the construction touched only the declared FIT orbit, the HELD orbits were declared before any morphism was constructed, and the two sets partition the source orbits with computed sizes",
+   "detail": {
+    "fit": 1,
+    "fit_points_touched": 3,
+    "held": 26,
+    "orbits": 27
+   },
+   "id": "G23",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DECLARED HELD-OUT QUANTITIES TRANSPORT: the orbit-size multiset, the generators' fixed-point counts, the element-order multisets and the whole source composition table are computed on both sides and the morphism carries each of them correctly",
+   "detail": {
+    "H1_image_orbit_sizes": [
+     3
+    ],
+    "H1_source_orbit_sizes": [
+     3
+    ],
+    "H2_generator_fixed_points": [
+     0,
+     54
+    ],
+    "H3_source_element_orders": [
+     1,
+     3
+    ],
+    "H3_target_element_orders": [
+     1,
+     2,
+     3
+    ],
+    "H4_composition_cells": 9,
+    "H4_violations": 0
+   },
+   "id": "G24",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "BRG-EMPTY-AT-CARRIER IS REACHABLE BY THE SAME MACHINERY: at the declared synthetic incompatible pair the census returns NO non-trivial group map, so the census's other value is attainable and neither outcome is a predicate that cannot fail",
+   "detail": {
+    "group_maps": 1,
+    "non_trivial_group_maps": 0,
+    "synthetic_prime": 5,
+    "target_group_order": 6
+   },
+   "id": "G25",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE OBSTRUCTION IS NAMED AND IS MEASURED COEXTENSIVE WITH EMPTINESS, IN BOTH DIRECTIONS: over every cell of every declared scope, the forward census is empty EXACTLY where gcd(p, |<W,D>|) = 1 -- so the named obstruction is order-coprimality (a prime source group and a transport group whose order 2*ord(D) is not divisible by it), and the naming is falsifiable because cells of both kinds occur",
+   "detail": {
+    "cells": 140,
+    "coextensive_in_both_directions": true,
+    "empty_cells": 137,
+    "live_cells": 3,
+    "obstruction": "order-coprimality"
+   },
+   "id": "G26",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE REVERSE DIRECTION IS EMPTY EVERYWHERE, AND ITS OBSTRUCTION IS A SECOND, PRIME-INDEPENDENT ONE: every homomorphism from a transport group to Z/p kills the commutator subgroup, and the abelianisation is measured to be a 2-group at every instance of every scope, so for every ODD declared prime the reverse census is trivial -- with no dependence on the prime at all",
+   "detail": {
+    "abelianisation_orders": [
+     2,
+     4
+    ],
+    "all_abelianisations_are_2_groups": true,
+    "cells": 140
+   },
+   "id": "G27",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EXACT ARITHMETIC THROUGHOUT: no float or complex literal and no float()/complex() call appears in this source, and the scanner that measures it is validated by a synthetic sample it must flag",
+   "detail": {
+    "hits_in_source": [],
+    "hits_in_the_synthetic_sample": [
+     "line 1: literal 1.5",
+     "line 2: call float()"
+    ]
+   },
+   "id": "G28",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK 14 addendum, v13 #208): no function that registers a gate reads a mutant switch, a mutant name, a run-mode boolean or sys.argv, and the scanner is validated by a synthetic sample it must flag",
+   "detail": {
+    "offenders": [],
+    "synthetic_sample_flagged": [
+     "f"
+    ]
+   },
+   "id": "G29",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "ANCHOR FAILURES ARE EXIT-1: the anchor policy is measured -- every anchor mismatch recorded in this run was fatal, so no anchor can fail softly",
+   "detail": {
+    "anchor_policy": {
+     "failures": 0,
+     "fatal": 0
+    },
+    "anchors": 77
+   },
+   "id": "G30",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE VERDICT STRING AND ITS QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234): the derivation is recomputed here by an independent expression over the same counts and the two must agree, so a hand-typed verdict cannot survive",
+   "detail": {
+    "inputs": {
+     "complete": true,
+     "empty_everywhere": true,
+     "empty_reachable": true,
+     "found_reachable": true,
+     "invariant": true
+    },
+    "qualifiers": {
+     "completion_family_members": 40320,
+     "directed_cells": 112,
+     "extended_scope_cells": 168,
+     "instances": 8,
+     "non_degenerate_functor_pairs": 0,
+     "non_degenerate_group_morphisms_forward": 0,
+     "non_degenerate_group_morphisms_reverse": 0,
+     "obstruction": "order-coprimality",
+     "prime_tracking_candidates_excluded": 1,
+     "primes": 7,
+     "scope": "the committed transport instances at the declared primes"
+    },
+    "recomputed": "BRG-EMPTY-AT-CARRIER",
+    "verdict": "BRG-EMPTY-AT-CARRIER"
+   },
+   "id": "G31",
+   "must_pass": true,
+   "passed": true
+  }
+ ],
+ "hash_pins": {
+  "v13/code/gen_generality_receipt.json": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+  "v13/code/ha_successor_receipt.json": "542b8735daf0ebc6fc0063068e85c76f05cbca53b7f1174968f6ca79dc0068d4",
+  "v13/code/nt_transport_receipt.json": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+  "v13/code/xba_crossbase_receipt.json": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
+  "v13/note-brg-bridge-pin.md": "56ce4a7e2deeaaa24dd9cedf43e117f5c0d68774d48ac62a0120786bdba99b1b"
+ },
+ "mutants": [
+  {
+   "exit": 1,
+   "expected_kill": "the commutator subgroup is computed as the trivial group",
+   "killed": true,
+   "mutant": "abelianization-lax",
+   "named_kills": [
+    "G:G27"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the under-determined instances' candidate sets are truncated to a single guess",
+   "killed": true,
+   "mutant": "ambiguity-lax",
+   "named_kills": [
+    "G:G04"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the rebuilt completion defect permutation is perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-defect",
+   "named_kills": [
+    "A:A06"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the completion-family sweep is truncated",
+   "killed": true,
+   "mutant": "anchor-gen-family",
+   "named_kills": [
+    "A:A21",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the GEN receipt hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-gen-sha",
+   "named_kills": [
+    "A:A01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-to-F_p reduction of rho is perturbed",
+   "killed": true,
+   "mutant": "anchor-ha-rho",
+   "named_kills": [
+    "A:A29"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the HA receipt hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-ha-sha",
+   "named_kills": [
+    "A:A02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the NT receipt hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-nt-sha",
+   "named_kills": [
+    "A:A03"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the BRG pin's own hash is perturbed",
+   "killed": true,
+   "mutant": "anchor-pin-sha",
+   "named_kills": [
+    "A:A05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "anchor failures are made non-fatal",
+   "killed": true,
+   "mutant": "anchor-soft",
+   "named_kills": [
+    "A:A05",
+    "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the rebuilt transport group order is perturbed",
+   "killed": true,
+   "mutant": "anchor-xba-orders",
+   "named_kills": [
+    "A:A33"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the XBA receipt hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-xba-sha",
+   "named_kills": [
+    "A:A04"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared structure-breaking map is replaced by its accepted counterpart",
+   "killed": true,
+   "mutant": "break-blind",
+   "named_kills": [
+    "G:G07"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test's fresh-evaluation path reads the memo cache",
+   "killed": true,
+   "mutant": "cache-lax",
+   "named_kills": [
+    "G:G16",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the memo cache is never looked up",
+   "killed": true,
+   "mutant": "cache-unused",
+   "named_kills": [
+    "G:G16",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one declared census cell is dropped from the sweep",
+   "killed": true,
+   "mutant": "cell-drop",
+   "named_kills": [
+    "G:G09",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one of the committed completion classes is dropped from the extended sweep",
+   "killed": true,
+   "mutant": "class-drop",
+   "named_kills": [
+    "G:G11",
+    "G:G13",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the abstract/permutation comparator is routed through the audited component",
+   "killed": true,
+   "mutant": "comparator-self",
+   "named_kills": [
+    "G:G03"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the conjugation self-test conjugates by the identity",
+   "killed": true,
+   "mutant": "conj-lax",
+   "named_kills": [
+    "G:G15",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one record is dropped from the dictionary census",
+   "killed": true,
+   "mutant": "dict-drop",
+   "named_kills": [
+    "G:G19",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the committed-scope dictionary census reads the extended family",
+   "killed": true,
+   "mutant": "dict-scope-lax",
+   "named_kills": [
+    "G:G20"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the synthetic incompatible pair is made compatible",
+   "killed": true,
+   "mutant": "empty-block",
+   "named_kills": [
+    "G:G25",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the equivariance clause composes the action on the wrong side",
+   "killed": true,
+   "mutant": "equivariance-side",
+   "named_kills": [
+    "G:G05",
+    "G:G07",
+    "G:G21",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the mutant-identity AST scanner is blinded",
+   "killed": true,
+   "mutant": "exempt-lax",
+   "named_kills": [
+    "G:G29"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one member is dropped from the completion-family sweep",
+   "killed": true,
+   "mutant": "family-drop",
+   "named_kills": [
+    "A:A21",
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-arithmetic scanner is blinded",
+   "killed": true,
+   "mutant": "float-lax",
+   "named_kills": [
+    "G:G28"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the equivariant-map count formula is perturbed",
+   "killed": true,
+   "mutant": "formula-lax",
+   "named_kills": [
+    "G:G18"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the synthetic compatible pair is made incompatible",
+   "killed": true,
+   "mutant": "found-block",
+   "named_kills": [
+    "G:G21",
+    "G:G22",
+    "G:G24",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a census datum is evaluated before the declarations freeze",
+   "killed": true,
+   "mutant": "freeze-lax",
+   "named_kills": [
+    "G:G01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the morphism is fitted on the held-out orbits",
+   "killed": true,
+   "mutant": "heldout-leak",
+   "named_kills": [
+    "G:G21",
+    "G:G22",
+    "G:G23",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the composition clause is dropped from the predicate",
+   "killed": true,
+   "mutant": "hom-lax",
+   "named_kills": [
+    "G:G08"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the arena-invariance test is read as a union instead of an intersection",
+   "killed": true,
+   "mutant": "invariance-lax",
+   "named_kills": [
+    "G:G14",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the non-triviality gate accepts a collapsing functor",
+   "killed": true,
+   "mutant": "nontrivial-lax",
+   "named_kills": [
+    "G:G06",
+    "G:G18"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the named obstruction is replaced by a cardinality claim",
+   "killed": true,
+   "mutant": "obstruction-misname",
+   "named_kills": [
+    "G:G26"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the union-find orbit count is perturbed",
+   "killed": true,
+   "mutant": "orbit-lax",
+   "named_kills": [
+    "G:G17",
+    "G:G18",
+    "G:G24",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the equivariance clause is evaluated at the base point only",
+   "killed": true,
+   "mutant": "predicate-lax",
+   "named_kills": [
+    "G:G18",
+    "G:G22"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the prime sweep is collapsed to one prime",
+   "killed": true,
+   "mutant": "prime-single",
+   "named_kills": [
+    "A:A77",
+    "G:G09",
+    "G:G12",
+    "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a declared held-out quantity is read off the wrong action",
+   "killed": true,
+   "mutant": "quantity-lax",
+   "named_kills": [
+    "G:G24"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the relabelling self-test relabels nothing",
+   "killed": true,
+   "mutant": "relabel-lax",
+   "named_kills": [
+    "G:G15",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the second route returns the first route's own result",
+   "killed": true,
+   "mutant": "route-alias",
+   "named_kills": [
+    "G:G10"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the subgroup-lattice route omits the trivial subgroup",
+   "killed": true,
+   "mutant": "route-b-lax",
+   "named_kills": [
+    "G:G10"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "an extended-family instance leaks into the committed scope",
+   "killed": true,
+   "mutant": "scope-leak",
+   "named_kills": [
+    "G:G09",
+    "G:G12",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test's tested set is selected by the verdicts",
+   "killed": true,
+   "mutant": "selftest-select",
+   "named_kills": [
+    "G:G15",
+    "G:G31"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the comparator reads the holonomy spectrum where the defect spectrum belongs",
+   "killed": true,
+   "mutant": "spectrum-swap",
+   "named_kills": [
+    "A:A77",
+    "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the reflection-valued extension is silently rotation-valued",
+   "killed": true,
+   "mutant": "teeth-off",
+   "named_kills": [
+    "G:G22"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the prime-tracking control is made prime-uniform",
+   "killed": true,
+   "mutant": "tracking-blind",
+   "named_kills": [
+    "A:A77",
+    "G:G13"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the verdict derivation returns a hand-typed string",
+   "killed": true,
+   "mutant": "verdict-flip",
+   "named_kills": [
+    "G:G31"
+   ]
+  }
+ ],
+ "never_falsified": [],
+ "pin": "v13/note-brg-bridge-pin.md",
+ "pin_base_commit": "b632f59",
+ "python": "3.13.2",
+ "schema": "brg-bridge-receipt-v1",
+ "source_sha256": "6f288deb3ee96d82af42ba9ca7f7d6f94a14beb45414c88c467cc02c579f8874",
+ "tables": {
+  "cache": {
+   "bypass": 35,
+   "hits": 10,
+   "lookups": 118,
+   "misses": 108,
+   "selftest_hits": 0
+  },
+  "census_scope_1": [
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 36,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base 1 @ SP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-E",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base G @ GP-F",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base S'",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "base T",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 256,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "species 4",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-1 (committed instances)"
+   }
+  ],
+  "census_scope_2": [
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 5,
+    "group_order": 30,
+    "hom_forward_route_a": 5,
+    "hom_forward_route_b": 5,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 4,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 5,
+    "group_order": 10,
+    "hom_forward_route_a": 5,
+    "hom_forward_route_b": 5,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 4,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 5,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 7,
+    "group_order": 14,
+    "hom_forward_route_a": 7,
+    "hom_forward_route_b": 7,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 6,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 7,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 11,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 13,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 17,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 19,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 2,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=1,fixed=81",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 1,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 15,
+    "gcd_p_group_order": 1,
+    "group_order": 30,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=15,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 15,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=45",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 1,
+    "gcd_p_group_order": 1,
+    "group_order": 4,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=2,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 2,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 6,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=3,fixed=54",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 3,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=27",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 2,
+    "gcd_p_group_order": 1,
+    "group_order": 8,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=4,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 4,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 5,
+    "gcd_p_group_order": 1,
+    "group_order": 10,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=5,fixed=36",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 5,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 4,
+    "carrier": 81,
+    "commutator_subgroup_order": 3,
+    "gcd_p_group_order": 1,
+    "group_order": 12,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=6,fixed=9",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 6,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   },
+   {
+    "abelianisation_order": 2,
+    "carrier": 81,
+    "commutator_subgroup_order": 7,
+    "gcd_p_group_order": 1,
+    "group_order": 14,
+    "hom_forward_route_a": 1,
+    "hom_forward_route_b": 1,
+    "hom_reverse_route_a": 1,
+    "hom_reverse_route_b": 1,
+    "instance": "ord=7,fixed=18",
+    "nontrivial_forward": 0,
+    "nontrivial_reverse": 0,
+    "ord_D": 7,
+    "p": 23,
+    "scope": "scope-2 (GEN's rebuilt classes)"
+   }
+  ],
+  "completion_family": {
+   "defect_order_spectrum": {
+    "1": 96,
+    "15": 9216,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216
+   },
+   "dihedral_relation_failures": 0,
+   "fixed_configuration_spectrum": {
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96,
+    "9": 16704
+   },
+   "members": 40320
+  },
+  "deformation_side": [
+   {
+    "abelian": true,
+    "carrier": 625,
+    "element_orders": [
+     1,
+     5
+    ],
+    "group_order": 5,
+    "p": 5,
+    "rho_mod_p": [
+     1,
+     1
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 2401,
+    "element_orders": [
+     1,
+     7
+    ],
+    "group_order": 7,
+    "p": 7,
+    "rho_mod_p": [
+     6,
+     6
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 14641,
+    "element_orders": [
+     1,
+     11
+    ],
+    "group_order": 11,
+    "p": 11,
+    "rho_mod_p": [
+     2,
+     2
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 28561,
+    "element_orders": [
+     1,
+     13
+    ],
+    "group_order": 13,
+    "p": 13,
+    "rho_mod_p": [
+     11,
+     11
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 83521,
+    "element_orders": [
+     1,
+     17
+    ],
+    "group_order": 17,
+    "p": 17,
+    "rho_mod_p": [
+     3,
+     3
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 130321,
+    "element_orders": [
+     1,
+     19
+    ],
+    "group_order": 19,
+    "p": 19,
+    "rho_mod_p": [
+     16,
+     16
+    ]
+   },
+   {
+    "abelian": true,
+    "carrier": 279841,
+    "element_orders": [
+     1,
+     23
+    ],
+    "group_order": 23,
+    "p": 23,
+    "rho_mod_p": [
+     4,
+     4
+    ]
+   }
+  ],
+  "dictionary_census": {
+   "11": {
+    "dictionaries": 0,
+    "digits": 1,
+    "per_record": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "13": {
+    "dictionaries": 0,
+    "digits": 1,
+    "per_record": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "17": {
+    "dictionaries": 0,
+    "digits": 1,
+    "per_record": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "19": {
+    "dictionaries": 0,
+    "digits": 1,
+    "per_record": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "23": {
+    "dictionaries": 0,
+    "digits": 1,
+    "per_record": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "5": {
+    "dictionaries": 18437563379178327736384102280592359424,
+    "digits": 38,
+    "per_record": [
+     13824,
+     13824,
+     13824,
+     13824,
+     13824,
+     13824,
+     13824,
+     13824,
+     13824
+    ]
+   },
+   "7": {
+    "dictionaries": 479603335372621236652373132533825536,
+    "digits": 36,
+    "per_record": [
+     9216,
+     9216,
+     9216,
+     9216,
+     9216,
+     9216,
+     9216,
+     9216,
+     9216
+    ]
+   }
+  },
+  "dictionary_committed_scope": {
+   "11": 0,
+   "13": 0,
+   "17": 0,
+   "19": 0,
+   "23": 0,
+   "5": 0,
+   "7": 0
+  },
+  "functor_census": [
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 125,
+    "orbits_unionfind": 125,
+    "p": 5,
+    "source_points": 625,
+    "structure_preserving_pairs_bits": 793
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 125,
+    "orbits_unionfind": 125,
+    "p": 5,
+    "source_points": 625,
+    "structure_preserving_pairs_bits": 793
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 125,
+    "orbits_unionfind": 125,
+    "p": 5,
+    "source_points": 625,
+    "structure_preserving_pairs_bits": 793
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 125,
+    "orbits_unionfind": 125,
+    "p": 5,
+    "source_points": 625,
+    "structure_preserving_pairs_bits": 793
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 125,
+    "orbits_unionfind": 125,
+    "p": 5,
+    "source_points": 625,
+    "structure_preserving_pairs_bits": 1001
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 343,
+    "orbits_unionfind": 343,
+    "p": 7,
+    "source_points": 2401,
+    "structure_preserving_pairs_bits": 2175
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 343,
+    "orbits_unionfind": 343,
+    "p": 7,
+    "source_points": 2401,
+    "structure_preserving_pairs_bits": 2175
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 343,
+    "orbits_unionfind": 343,
+    "p": 7,
+    "source_points": 2401,
+    "structure_preserving_pairs_bits": 2175
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 343,
+    "orbits_unionfind": 343,
+    "p": 7,
+    "source_points": 2401,
+    "structure_preserving_pairs_bits": 2175
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 343,
+    "orbits_unionfind": 343,
+    "p": 7,
+    "source_points": 2401,
+    "structure_preserving_pairs_bits": 2745
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 1331,
+    "orbits_unionfind": 1331,
+    "p": 11,
+    "source_points": 14641,
+    "structure_preserving_pairs_bits": 8439
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 1331,
+    "orbits_unionfind": 1331,
+    "p": 11,
+    "source_points": 14641,
+    "structure_preserving_pairs_bits": 8439
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 1331,
+    "orbits_unionfind": 1331,
+    "p": 11,
+    "source_points": 14641,
+    "structure_preserving_pairs_bits": 8439
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 1331,
+    "orbits_unionfind": 1331,
+    "p": 11,
+    "source_points": 14641,
+    "structure_preserving_pairs_bits": 8439
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 1331,
+    "orbits_unionfind": 1331,
+    "p": 11,
+    "source_points": 14641,
+    "structure_preserving_pairs_bits": 10649
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 2197,
+    "orbits_unionfind": 2197,
+    "p": 13,
+    "source_points": 28561,
+    "structure_preserving_pairs_bits": 13929
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 2197,
+    "orbits_unionfind": 2197,
+    "p": 13,
+    "source_points": 28561,
+    "structure_preserving_pairs_bits": 13929
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 2197,
+    "orbits_unionfind": 2197,
+    "p": 13,
+    "source_points": 28561,
+    "structure_preserving_pairs_bits": 13929
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 2197,
+    "orbits_unionfind": 2197,
+    "p": 13,
+    "source_points": 28561,
+    "structure_preserving_pairs_bits": 13929
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 2197,
+    "orbits_unionfind": 2197,
+    "p": 13,
+    "source_points": 28561,
+    "structure_preserving_pairs_bits": 17577
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 4913,
+    "orbits_unionfind": 4913,
+    "p": 17,
+    "source_points": 83521,
+    "structure_preserving_pairs_bits": 31148
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 4913,
+    "orbits_unionfind": 4913,
+    "p": 17,
+    "source_points": 83521,
+    "structure_preserving_pairs_bits": 31148
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 4913,
+    "orbits_unionfind": 4913,
+    "p": 17,
+    "source_points": 83521,
+    "structure_preserving_pairs_bits": 31148
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 4913,
+    "orbits_unionfind": 4913,
+    "p": 17,
+    "source_points": 83521,
+    "structure_preserving_pairs_bits": 31148
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 4913,
+    "orbits_unionfind": 4913,
+    "p": 17,
+    "source_points": 83521,
+    "structure_preserving_pairs_bits": 39305
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 6859,
+    "orbits_unionfind": 6859,
+    "p": 19,
+    "source_points": 130321,
+    "structure_preserving_pairs_bits": 43486
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 6859,
+    "orbits_unionfind": 6859,
+    "p": 19,
+    "source_points": 130321,
+    "structure_preserving_pairs_bits": 43486
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 6859,
+    "orbits_unionfind": 6859,
+    "p": 19,
+    "source_points": 130321,
+    "structure_preserving_pairs_bits": 43486
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 6859,
+    "orbits_unionfind": 6859,
+    "p": 19,
+    "source_points": 130321,
+    "structure_preserving_pairs_bits": 43486
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 6859,
+    "orbits_unionfind": 6859,
+    "p": 19,
+    "source_points": 130321,
+    "structure_preserving_pairs_bits": 54873
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-E",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 12167,
+    "orbits_unionfind": 12167,
+    "p": 23,
+    "source_points": 279841,
+    "structure_preserving_pairs_bits": 77137
+   },
+   {
+    "group_maps": 1,
+    "instance": "base G @ GP-F",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 12167,
+    "orbits_unionfind": 12167,
+    "p": 23,
+    "source_points": 279841,
+    "structure_preserving_pairs_bits": 77137
+   },
+   {
+    "group_maps": 1,
+    "instance": "base S'",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 12167,
+    "orbits_unionfind": 12167,
+    "p": 23,
+    "source_points": 279841,
+    "structure_preserving_pairs_bits": 77137
+   },
+   {
+    "group_maps": 1,
+    "instance": "base T",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 12167,
+    "orbits_unionfind": 12167,
+    "p": 23,
+    "source_points": 279841,
+    "structure_preserving_pairs_bits": 77137
+   },
+   {
+    "group_maps": 1,
+    "instance": "species 4",
+    "non_degenerate_pairs": 0,
+    "orbits_by_division": 12167,
+    "orbits_unionfind": 12167,
+    "p": 23,
+    "source_points": 279841,
+    "structure_preserving_pairs_bits": 97337
+   }
+  ],
+  "gen_classes": [
+   {
+    "carrier": 81,
+    "class": "ord=1,fixed=81",
+    "group_order": 2,
+    "ord_D": 1
+   },
+   {
+    "carrier": 81,
+    "class": "ord=15,fixed=9",
+    "group_order": 30,
+    "ord_D": 15
+   },
+   {
+    "carrier": 81,
+    "class": "ord=2,fixed=45",
+    "group_order": 4,
+    "ord_D": 2
+   },
+   {
+    "carrier": 81,
+    "class": "ord=2,fixed=9",
+    "group_order": 4,
+    "ord_D": 2
+   },
+   {
+    "carrier": 81,
+    "class": "ord=3,fixed=27",
+    "group_order": 6,
+    "ord_D": 3
+   },
+   {
+    "carrier": 81,
+    "class": "ord=3,fixed=54",
+    "group_order": 6,
+    "ord_D": 3
+   },
+   {
+    "carrier": 81,
+    "class": "ord=4,fixed=27",
+    "group_order": 8,
+    "ord_D": 4
+   },
+   {
+    "carrier": 81,
+    "class": "ord=4,fixed=9",
+    "group_order": 8,
+    "ord_D": 4
+   },
+   {
+    "carrier": 81,
+    "class": "ord=5,fixed=36",
+    "group_order": 10,
+    "ord_D": 5
+   },
+   {
+    "carrier": 81,
+    "class": "ord=6,fixed=18",
+    "group_order": 12,
+    "ord_D": 6
+   },
+   {
+    "carrier": 81,
+    "class": "ord=6,fixed=9",
+    "group_order": 12,
+    "ord_D": 6
+   },
+   {
+    "carrier": 81,
+    "class": "ord=7,fixed=18",
+    "group_order": 14,
+    "ord_D": 7
+   }
+  ],
+  "held_out": [
+   {
+    "accepted_by_the_census": true,
+    "extension": "E-ROT",
+    "fit_points": 3,
+    "held_out_cells": 234,
+    "held_out_violations": 0
+   },
+   {
+    "accepted_by_the_census": false,
+    "extension": "E-REF",
+    "fit_points": 3,
+    "held_out_cells": 234,
+    "held_out_violations": 54
+   }
+  ],
+  "non_reducible_primes": [
+   2,
+   3
+  ],
+  "obstruction": {
+   "abelianisation_orders": [
+    2,
+    4
+   ],
+   "coextensive": true,
+   "empty_cells": 137,
+   "live_cells": 3,
+   "name": "order-coprimality"
+  },
+  "prime_tracking": {
+   "F3_by_prime": {
+    "11": false,
+    "13": false,
+    "17": false,
+    "19": false,
+    "23": false,
+    "5": true,
+    "7": true
+   },
+   "extended_census_by_prime": {
+    "11": false,
+    "13": false,
+    "17": false,
+    "19": false,
+    "23": false,
+    "5": true,
+    "7": true
+   }
+  },
+  "self_tests": [
+   {
+    "matches_base": true,
+    "self_test": "relabel-source",
+    "verdict": false
+   },
+   {
+    "matches_base": true,
+    "self_test": "relabel-target",
+    "verdict": false
+   },
+   {
+    "matches_base": true,
+    "self_test": "conjugate-target",
+    "verdict": false
+   },
+   {
+    "matches_base": true,
+    "self_test": "change-generator",
+    "verdict": false
+   }
+  ],
+  "tiny_cells": [
+   {
+    "brute_force": 16,
+    "cell": "TINY-A",
+    "formula": 16,
+    "group_maps": 4,
+    "non_degenerate_brute": 12,
+    "orbits": 1,
+    "p": 2,
+    "source_points": 4,
+    "target_points": 4
+   },
+   {
+    "brute_force": 18,
+    "cell": "TINY-B",
+    "formula": 18,
+    "group_maps": 3,
+    "non_degenerate_brute": 12,
+    "orbits": 1,
+    "p": 3,
+    "source_points": 3,
+    "target_points": 6
+   },
+   {
+    "brute_force": 4,
+    "cell": "TINY-C",
+    "formula": 4,
+    "group_maps": 1,
+    "non_degenerate_brute": 0,
+    "orbits": 1,
+    "p": 5,
+    "source_points": 5,
+    "target_points": 4
+   }
+  ],
+  "transport_instances": [
+   {
+    "carrier": 36,
+    "group_order": 4,
+    "instance": "base 1 @ SP-E",
+    "ord_D": 2,
+    "rebuilt_as_permutations": false
+   },
+   {
+    "carrier": 36,
+    "group_order": 4,
+    "instance": "base 1 @ SP-F",
+    "ord_D": 2,
+    "rebuilt_as_permutations": false
+   },
+   {
+    "carrier": 81,
+    "group_order": 4,
+    "instance": "base G @ GP-E",
+    "ord_D": 2,
+    "rebuilt_as_permutations": true
+   },
+   {
+    "carrier": 81,
+    "group_order": 4,
+    "instance": "base G @ GP-F",
+    "ord_D": 2,
+    "rebuilt_as_permutations": true
+   },
+   {
+    "carrier": 81,
+    "group_order": 4,
+    "instance": "base S",
+    "ord_D": 2,
+    "rebuilt_as_permutations": false
+   },
+   {
+    "carrier": 81,
+    "group_order": 2,
+    "instance": "base S'",
+    "ord_D": 1,
+    "rebuilt_as_permutations": true
+   },
+   {
+    "carrier": 81,
+    "group_order": 6,
+    "instance": "base T",
+    "ord_D": 3,
+    "rebuilt_as_permutations": true
+   },
+   {
+    "carrier": 256,
+    "group_order": 4,
+    "instance": "species 4",
+    "ord_D": 2,
+    "rebuilt_as_permutations": true
+   }
+  ],
+  "verdict_qualifiers": {
+   "completion_family_members": 40320,
+   "directed_cells": 112,
+   "extended_scope_cells": 168,
+   "instances": 8,
+   "non_degenerate_functor_pairs": 0,
+   "non_degenerate_group_morphisms_forward": 0,
+   "non_degenerate_group_morphisms_reverse": 0,
+   "obstruction": "order-coprimality",
+   "prime_tracking_candidates_excluded": 1,
+   "primes": 7,
+   "scope": "the committed transport instances at the declared primes"
+  }
+ },
+ "totals": {
+  "anchors": 77,
+  "disclosures": 6,
+  "gates": 31,
+  "must_pass_failures": 0,
+  "must_pass_gates": 31,
+  "mutant_survivors": 0,
+  "mutants": 47
+ },
+ "verdict": [
+  "BRG-EMPTY-AT-CARRIER"
+ ]
+}
