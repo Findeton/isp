@@ -8334,3 +8334,17 @@ now written AFTER the exit code.  165 anchors (56 external) /
 EMPTY at 25 (23 computation) / byte-identical ×2.  md5 output
 2ec72103 / receipt f32ae286.  Adjudicator verification next;
 ON ITS PASS: PSI TERMINAL AND THE THIRD BASE FIRES (#228).
+
+## 2026-08-08 — PSI TERMINAL; THE THIRD-BASE ORDER FIRES (v13 LEDGER #265)
+Adjudicator verification PASSED (exit 0; output 2ec72103 /
+receipt f32ae286; three identical runs).  TERMINAL CONFERRED:
+the repair implements #257 exactly; the exhaustive witness
+census's third pair (psi-S1, psi-N1) is the one panel-unseen
+item — flagged for successors.  **PSI CLOSES: state-side
+curvature exists at fixed Born shadow (computed qualifier,
+three witnesses); THE ONE LAW D(ψ) = [P_W, u(ψ)] is the
+central gated result with its cocycle mechanism, measured
+order, four measured corollaries, and its measured
+factorisation residual.  With COC #252 + XBA #260 + PSI #265,
+ALL THREE PREREQUISITES OF THE USER'S STANDING THIRD-BASE
+ORDER (#228) ARE TERMINAL — the order fires now.**

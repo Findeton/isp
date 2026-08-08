@@ -2,7 +2,7 @@
 
 ## One commutator law, and the preparation inside it: a sweep on base G at fixed declarations
 
-**Status:** `REPAIRED (v13 PSI)` — repair delivery against the frozen three-lens
+**Status:** `TERMINAL (v13 PSI)` — panel #254–#256, adjudicated #257 ACCEPT-WITH-MAJOR-REPAIRS, repair P-1..P-5 verified byte-identical and conferred terminal at v13 LOG #265. The third witness pair (psi-S1, psi-N1) is panel-unseen and flagged for successors.
 panel, unreviewed. Freeze-on-delivery in force.
 
 **Date:** 2026-08-08
