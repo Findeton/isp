@@ -8672,3 +8672,16 @@ the Klein profile is NOT anchored).  610 anchors / 28 gates
 EMPTY / byte-identical ×2.  10 deviations, nothing impossible.
 md5 output ad50b739 / receipt 2197c13b.  Adjudicator
 verification next.
+
+## 2026-08-08 — TB3 VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #279)
+Adjudicator verification PASSED (exit 0; output ad50b739 /
+receipt 2197c13b; three identical runs).
+note-tb3-hostile-protocol.md FROZEN (K1 the cap-break + NAME
+the groups / K2 the generalized law + the semidirect structure
++ two-wing coherence / K3 the normalises refinement + a
+normalising-but-escaping probe / K4 GHZ-vs-W + characterize
+the not-a-group / K5 the self-anchor honesty + the control's
+scope + route independence).  Frozen SHAs in the freeze output
+with this commit.  Three-lens panel (Opus 5) dispatched
+immediately after — running beside the LCB construction.
