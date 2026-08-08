@@ -7308,3 +7308,14 @@ atlases); TRIANGLES-ABSENT the honest fallback; completion
 FIXED at GEN's pinned V (one arena); dihedral family + defect
 law + bigon group inherited as exit-1 anchors; all engraved
 lessons binding.  Construction dispatch next.
+
+## 2026-08-08 — COC CONSTRUCTION DISPATCHED (v13 LEDGER #224)
+Construction worker dispatched (Opus 5, freeze-on-delivery, no
+git) against pin 2ba34071c18f @ 9e2b95b: the triple structure
+declared from base G's admitted material before fixture truth;
+the triangle census; the membership question (δ vs the
+bigon-generated group); degenerate-triangle positive control +
+mis-composed negative control w/ teeth; GEN receipt hash-pinned;
+all engraved lessons binding.  On delivery: COMMIT-AS-IS,
+verify, §13 freeze → panel → adjudication.  Recorded after it
+occurs.
