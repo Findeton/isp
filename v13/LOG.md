@@ -7526,3 +7526,18 @@ verified with REAL source falsifiers (stronger than claimed);
 the collapse criterion validated at 6 full 81-rebuilds; 96
 derived in closed form |C_{S₉}(σ) ∩ Stab(0)|.  PANEL
 COMPLETE: 3× AWF, ~289 recomputations, zero number errors.
+
+## 2026-08-08 — COC JOINT ADJUDICATION: REJECT-AS-DELIVERED →
+## RE-DERIVATION C-1..C-5; THE VERDICT INVERTS (v13 LEDGER #234)
+note-coc-adjudication.md committed.  The delivered closure was
+analytically forced (three independent derivations); the
+genuine pre-registered positive — HIGHER-OBSTRUCTION on base G
+— was found by the panel at the unit's own declared extension
+group (16 charts / 333,312 / 32,256; the escape named
+W·τ_A·τ_B); THE CRITERION (closure ⟺ chart group centralises
+the holonomy) becomes the unit's central result, gated at both
+atlases; instrument: verdict-inside-a-gate + genuinely
+independent census routes + membership tabulation tested;
+RUNBOOK §13 addendum (gated verdicts w/ verdict-flip mutants;
+independent-routes honesty).  STATUS updated this commit.
+Re-derivation dispatch next.

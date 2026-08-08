@@ -1777,3 +1777,12 @@ independently of the audited component (the #38→#40 disease,
 recurred at GEN). And a zero-hit cache gate must also gate
 that the cache path is exercised — zero hits of zero lookups
 is vacuous.
+
+**§13 addendum (2026-08-08, from v13 #234):** the printed
+verdict string must be derived inside a gate from the measured
+counts, and a verdict-flip mutant must prove that derivation
+can fail — an ungated verdict is a typo away from fiction.
+And "two independent routes" for a census must be genuinely
+independent computations; a pair related by an algebraic
+identity is one route, and a cell-completeness gate must catch
+a dropped cell.
