@@ -8107,3 +8107,36 @@ appears to be true — it is simply not gated."  Caveat owned in
 the review: three prose-reconstructed mutants still executing
 at freeze (host contention), no finding rests on them.  R2
 (the one-law lens) pending; adjudication after it lands.
+
+## 2026-08-08 — PSI R2 (EFFECTUS) FROZEN: THE ONE-LAW
+## PANEL-CONVERGENT; THE COCYCLE STRUCTURE FOUND (v13 LEDGER #256)
+review-psi-effectus.md frozen as delivered.  Grade AWF; ~1,240
+recomputations + 8,500 randomised algebraic trials +
+byte-identical reproduction; ZERO computed-number errors.
+**K2 — AGREEMENT WITH R1 BY AN INDEPENDENT ROUTE: D(ψ) =
+[P_W, u(ψ)] is XBA's law with ψ restored; and THE MECHANISM IS
+A 1-COCYCLE — δ(X) := [Σ,X] with the ψ-law being the cocycle
+identity δ(HQ) = δ(Q)·Q⁻¹·δ(H)·Q** (verified on 300 random
+triples; the mirror order false 200/200 — the order is
+forced); beyond R1: all three vanishing conditions are
+CENTRALIZER conditions (E = I ⟺ H ∈ C(Σ); D_GEN = I ⟺ Q ∈
+C(Σ) — COC's criterion again).  "One law, four readings, four
+lines away — entirely absent from the paper."  RESIDUAL owned:
+the world/description split is FACTORISATION-RELATIVE (E′ ≠ E
+at psi-N1 under V = Q·H′).  MANDATORY FIXES (convergent):
+**the verdict qualifier -AT-FIXED-BORN-SHADOW is a HARD-CODED
+LITERAL** — with no witness at all the delivered function
+prints the full verdict and PASSES (#234 noncompliant,
+decided; the #24 disease one unit after XBA named it); the
+census gate's "no Born-level declaration can see the flip" is
+an unmeasured non-sequitur FALSE AT 21/48; the unification
+withheld.  DEEP NUGGETS: the witness's invisibility is carried
+by ψ_G's INTERFERENCE WIDTH 1 (measured, unstated); the real
+§5.2 result is READABLE HOLONOMY COLLAPSES Klein-four → order
+2 (unstated); **the negative control is a SECOND REPRODUCTION,
+not out-of-sample — both Q's lie inside GEN §8.4's exhaustive
+28-family** (the adjudicator's earlier "first out-of-sample
+prediction" reading was WRONG — owned here, corrected in the
+repair); D10's split ENDORSED w/ the collapse-to-flat-baseline
+note.  PANEL COMPLETE: 3× AWF; ~2,880 recomputations;
+adjudication next.
