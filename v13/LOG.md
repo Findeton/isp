@@ -8471,3 +8471,44 @@ G14/G27 analytically forced yet must-pass.  Six honest
 successor-predicate requirements written (the non-negotiable:
 ENCODING INTERTWINING as a commuting square).  Required
 before terminal: F-1, F-2, F-5, F-11.  R1/R3 pending.
+
+## 2026-08-08 — BRG R1 (OPERATOR) FROZEN (v13 LEDGER #271)
+review-brg-operator.md frozen as delivered.  Grade AWF; 92
+recomputations in the ACTUAL permutation groups (81/256
+points, not the abstract model); no wrong number; sandboxed
+rerun byte-identical; the verdict EMPTY-AT-CARRIER survives at
+the committed 56 cells both directions.  K1 REFINED: the iff
+is Lagrange + CAUCHY, needing no dihedral hypothesis (114
+cells verified); the geometric content is the order formula
+2·ord(D), itself analytically forced; §9 proves only the
+Lagrange half; **"coextensive in both directions" is FALSE on
+the census reading — the REVERSE census is empty at ALL 140
+cells including the 3 live ones: THE UNIT HAS TWO OBSTRUCTIONS
+and names one.**  **K2 DECISIVE — THE UNREPORTED FOUND
+OBJECTS: the 14 live morphisms are NOT group-level only — R1
+built explicit non-degenerate pairs satisfying the FULL
+delivered predicate exhaustively (SP3 3,125/3,125 at p=5;
+16,807/16,807 at p=7) AND the unit's own held-out protocol
+PASSES at those cells (3,100 + 16,758 predicted cells, 0
+violations) at ADMISSIBLE primes on GEN's own classes** —
+X04's "FOUND exists only synthetically at inadmissible p=3"
+is false (F3).  FOUR MAJORS: F1 G14 analytically forced
+(Landau bound 20 < 35 on 9 labels) AND its reason fails at
+species-4's 16-label arena (ord(D) = 35 SAMPLED there); F2
+the functor level measured only where already zero; F3 the
+unreported admissible-prime FOUNDs; F4 TINY-A not a Z/2-set
+(confirms R2; the count formula's exponent never
+brute-force-validated; correct row 4|64|64|48).  TWO
+INSTRUMENT DEFECTS BY EXPERIMENT: the §14 self-tests measure
+the DEGENERATE functor's verdict (False vs False,
+unfalsifiable) and the generator-change self-test NEVER READS
+THE GENERATOR (patched to a transposition — passed
+identically).  FEASIBILITY (honest): the transport half easy
+(ord(D)=5 = 11.4% of the family, minimal support 3 labels,
+paired with HA's own C_HA(5)); **THE BLOCKER: p is a
+DECLARATION, so requirement 4 excludes every live cell
+regardless — "Open 1 is the right and only gate."**  The
+crux for from-vs-alongside: the live cells are excluded by
+the arena-invariance rule, not by physics — the successor
+must either derive the prime or accept declaration-relative
+bridging.  R3 (resumed) pending; adjudication after it.
