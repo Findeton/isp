@@ -7100,3 +7100,43 @@ traced to the NT receipt; D5's combinatorial claim verified
 without fixture imports; the flip-test implementation audited
 as a genuine rebuild; D3 pin-compliance).  Reviews frozen on
 return.
+
+## 2026-08-08 — GEN R2 (EFFECTUS) FROZEN: THE COMPLETION CENSUS —
+## KLEIN FOUR IS A 3.571% EVENT; THE GENERIC GROUP IS DIHEDRAL;
+## THE DEFECT LAW DERIVED (v13 LEDGER #217)
+review-gen-effectus.md frozen as delivered (sha256-12
+3bc0913c1582).  Grade ACCEPT-WITH-FIXES (F1–F4 blocking); 96
+recomputations from a full independent rebuild out of the
+paper's prose.  NOTHING NUMERICAL BROKE — every §§2–8 quantity
+reproduced at first attempt, incl. all five external anchors.
+K1 DECIDED: (a) flip-test verified (bare Householder → order 1
+everywhere, defect = identity); (b) **THE STRUCTURAL LAW
+DERIVED AND VERIFIED: D = (σVᵀσV) ⊗ I₉ — the defect is a
+function of the COMPLETION ALONE.  Complete census of all
+8! = 40,320 permutation completions of the same ψ:
+geometry-bearing 99.762% (the 96 exceptions are EXACTLY the
+exchange-equivariant locus); but the group is DIHEDRAL of
+order 2·ord(D), taking eight values (2,4,6,8,10,12,14,30) —
+KLEIN FOUR IS A 3.571% EVENT** (confirmed by full path
+enumeration at ord(D) = 2,3,5,7); outside the permutation
+family the defect is typically not a signed permutation and P4
+fails; (c) the honest verdict is
+**GEN-STRUCTURE-REPRODUCES-AT-DECLARED-COMPLETION** (argued
+from the pin — the completion is arena data — §15, and the
+pin's own qualifier vocabulary); (d) **D2 DOES NOT SURVIVE**:
+the bare-Householder base satisfies all four measured clauses
+of the unit's OWN species gate; the "unposable" story is
+contradicted by the unit's own receipt (14 full-leg
+identifications survive the flip; the canonical loop survives
+at all four asymmetric settings; §7.2 itself poses the
+patterns and gets ABSENT); the REAL mechanism: W intertwines
+the prep leg at every setting under the equivariant
+completion.  K3: the measurement family is measured INERT
+(same group and class counts at a fresh quaternion) — seven of
+§8's nine differing coordinates do no work; "the pattern is
+the theory's, the elements are the base's" REFUTED at fixed
+base data; **THE INVARIANT THE EVIDENCE CARRIES: the dihedral
+presentation ⟨W, D | W² = Dⁿ = 1, WDW = D⁻¹⟩.**  Verbatim
+replacement sentences supplied; the census and the defect law
+offered to the repair as this round's contributed
+constructions.  R1/R3 pending; adjudication after all three.
