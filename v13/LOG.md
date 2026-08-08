@@ -7976,3 +7976,14 @@ the hard-coded derivation replaced by a computed one; R1's
 genuine third species run in-delivery; the #234 instrument
 rules installed.  STATUS updated this commit.  Re-derivation
 dispatch next.
+
+## 2026-08-08 — XBA RE-DERIVATION DISPATCHED (X-1..X-6) (v13 LEDGER #250)
+Re-derivation worker dispatched (Opus 5, freeze-on-delivery,
+no git, xba_* only) with the #249 order: COMPLETION-FORCED-
+SPLIT; the fifth clause named; the derivation computed not
+hard-coded w/ the ord(D)=3 counter-class gated; THE COMMUTATOR
+LAW D = [P,u] central w/ the three prior laws as gated
+corollaries; R1's third species (dim-4 wings) run in-delivery;
+the #234 instrument rules installed.  On delivery:
+COMMIT-AS-IS, verify, terminal-or-bounce.  Recorded after it
+occurs.
