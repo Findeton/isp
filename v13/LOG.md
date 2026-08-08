@@ -7411,3 +7411,14 @@ CAUGHT BY ITS OWN GATE pre-delivery (the collapse is
 per-setting, not everywhere) — the instrument self-corrected
 before freeze.  8 deviations.  md5 output 258abdac / receipt
 5c183977.  Adjudicator verification next.
+
+## 2026-08-08 — COC VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #230)
+Adjudicator verification PASSED (output 258abdac / receipt
+5c183977; three identical runs).  note-coc-hostile-protocol.md
+FROZEN (K1 the iff + atlas completeness + why-D-never / K2
+controls incl. the without-teeth disclosure / K3 the
+completion-dependent chart count / K4 admission + R1's
+one-setting basis / K5 instrument + the self-correction
+audit).  Frozen SHAs in the freeze output with this commit.
+Three-lens panel (Opus 5) dispatched immediately after.
