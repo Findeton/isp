@@ -7032,3 +7032,41 @@ COMMIT-AS-IS, verify byte-identity, §13 freeze → panel →
 adjudication.  Per the pin: REPRODUCES/VARIES → overlaps
 (cocycle) next; ABSENT → the downgrade returns to the user.
 Recorded after it occurs.
+
+## 2026-08-08 — GEN DELIVERED, COMMITTED AS-IS (v13 LEDGER #214)
+Delivery committed as-is.  THE SECOND BASE (declared as data,
+frozen before transport): 81 configurations — QUTRIT system +
+3-state pointer per wing (vs qubit/36), arithmetic the
+RATIONALS (vs Q(cos π/8)), integer-quaternion rotations in two
+DIFFERENT planes (3-4-5 and 5-12-13), preparation
+exchange-INVARIANT Schmidt rank 3 (vs the anti-invariant
+singlet rank 2), completion PINNED (V = Householder·transposition,
+9×9 printed, anchored entry-by-entry A03); scopes computed
+(162/216/2/8; switchings 512/8192; 34,024 paths / 4,972,096
+pairs).  **VERDICT: GEN-STRUCTURE-REPRODUCES — ALL FIVE
+PATTERNS HOLD**: P1 nontrivial at GP-E/F (1,896/2,820 non-flat;
+0/56 at the other four — the gate comes out both ways); P2 THE
+KLEIN FOUR-GROUP AGAIN (order 4, closed, exponent 2; fixed
+points 81/9/45/9); P3 both sources (REAL-only sub-connection
+8/18 non-flat at multiplicity 1; the prep defect a signed
+permutation of order 2 w/ 45 fixed points — NOT W, NOT
+system-only, NOT pointer-only); P4 the defect IS an element at
+both nontrivial settings; P5 2/4 elements outside every
+declared and admitted scope.  5 external anchors against the
+NT terminal receipt pass.  **THE FINDING BESIDE THE VERDICT:
+the pattern is the theory's, the elements are the base's — and
+THE COMPLETION IS LOAD-BEARING FOR EXISTENCE: rebuilt on the
+bare Householder completion of the SAME ψ, the holonomy group
+is order 1 at every setting and the defect is the identity —
+the geometry VANISHES** (measured, reported, folded into no
+verdict; §7.2/D2 — an exchange-symmetric completion makes the
+full-leg rule refuse its links and the patterns unposable).
+12 anchors / 28 gates (25 must-pass, 0 failures) / 26 mutants
+died (never_falsified EMPTY at 24; both denominators printed) /
+sweep COMPLETE 85,760, 0 deviations, 0 cache hits / no floats /
+no W6 fixtures / byte-identical ×2.  8 deviations.  md5 output
+9cac53c4 / receipt a9e73c00.  Adjudicator verification next;
+the panel's hardest question is pre-named: is REPRODUCES honest
+when a different completion of the same ψ kills the geometry —
+or is the honest verdict REPRODUCES-AT-DECLARED-COMPLETION
+(existence-of-geometry itself arena-relative)?
