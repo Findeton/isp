@@ -6996,3 +6996,23 @@ and the two-bit charge structure w/ its origin split (one bit
 from preparation asymmetry, one from gluing ambiguity).**
 Successor: the generality-check pin, then overlaps/autonomous
 charts.  Publication route and remote push remain the user's.
+
+## 2026-08-07 — THE USER'S STANDING LONG-HORIZON ORDER; GEN PINNED
+## (v13 LEDGER #212)
+THE USER'S ORDER (2026-08-07, verbatim): "continue, keep going.
+Until we have full gravity relativity, qft, qcd..." — recorded
+as the STANDING AUTHORIZATION for the roadmap ladder
+(generality check → overlaps/cocycle → topology → continuum/
+type-III → QFT benchmarks → gauge/QCD; gravity H_a[N]
+parallel), cycle by cycle under the standing machinery, halting
+only at blocked outcomes and user-owned decisions (publication,
+push, downgrades).  note-gen-generality-pin.md frozen this
+commit: the NT geometry re-measured on a SECOND declared base
+(different dimensions + different preparation with its
+completion PINNED as data — the completion-relativity lesson
+made structural); five patterns P1–P5 gated separately
+(nontrivial holonomy; the group computed whatever it is —
+variation is discovery; two sources; prep-defect ∈ group;
+non-principality); outcomes REPRODUCES / VARIES-⟨list⟩ /
+ABSENT (downgrade to the user) / BLOCKED.  All terminal
+lessons binding.  Construction dispatch next.
