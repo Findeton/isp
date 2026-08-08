@@ -9025,3 +9025,19 @@ the PRIME only; the frozen DECL's H2 disagrees with code and
 paper.  PANEL COMPLETE: R1 REJECT / R2 AWF / R3 AWF; ~323
 recomputations; zero number errors.  Adjudication next — the
 richest reconciliation of the arc.
+
+## 2026-08-08 — LCB JOINT ADJUDICATION: REJECT-AS-DELIVERED →
+## RE-DERIVATION L-1..L-6; THE COVARIANT-CELL RESOLUTION
+## (v13 LEDGER #293)
+note-lcb-adjudication.md committed.  EMPTY upgraded to
+universal (the fixed-point mismatch, arena-free, registered);
+the trio demoted to diagnostics; wants-p=3 dies; **THE CELL
+QUESTION RESOLVED BY §15 COVARIANCE: the admitted-symmetry
+orbit of declared cells is not a new declaration — the
+12-cell sweep is required (R1 right on scope), while
+direction-carrying candidates are declarations (R2 right on
+P8/P9)**; the Open-1 verdict re-derived multi-source at both
+scales with both outcomes reachable — the prime question's
+answer is whatever the honest computation returns; S5 against
+the actual pairing; the successor requirements installed.
+STATUS updated this commit.  Re-derivation dispatch next.
