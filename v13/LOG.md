@@ -7335,3 +7335,16 @@ PARTIAL / COINCIDENCE-NOT-EXCLUDED / BLOCKED).  Three cycles
 now run concurrently on disjoint file sets (coc_*, psi_*,
 xba_*); adjudications serialize through the ledger as each
 lands.  Dispatches next.
+
+## 2026-08-08 — PSI + XBA CONSTRUCTIONS DISPATCHED (v13 LEDGER #226)
+Both workers dispatched (Opus 5, freeze-on-delivery, no git,
+disjoint psi_*/xba_* namespaces; COC continues in parallel on
+coc_*).  PSI: the declared ψ-family at fixed Q; admission
+tables + loop spaces + holonomy per ψ; the GEN-law negative
+control w/ teeth.  XBA: the gauge-fixed graph rebuilt
+independently w/ R1-GEN's numbers as hash-pinned external
+anchors; candidates C1–C3+ frozen before fixture truth;
+per-candidate membership/size/forcing; violator controls per
+candidate.  Three concurrent cycles; adjudications serialize
+through the ledger as each delivers.  Recorded after each
+occurs.
