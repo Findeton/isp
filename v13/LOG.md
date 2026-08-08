@@ -7851,3 +7851,29 @@ exercised and is not; the cache second-visit unmeasured
 a freeze-counter/receipt inconsistency.  PANEL COMPLETE
 PENDING R1 (resumed): R2 REJECT / R3 AWF; adjudication after
 R1 lands.
+
+## 2026-08-08 — HA R3 (INSTRUMENT) FROZEN (v13 LEDGER #246a)
+review-ha-instrument.md frozen as delivered.  Grade AWF; 60
+recomputations, 6 breakage probes; byte-identical rerun all
+408 lines; ZERO numerical discrepancies under a from-scratch
+memo-free reimplementation (the full 99-cell table, the
+63-cell law, the operator layer 1056/33/0, the detector, the
+bridge's own numbers).  **F1 (principal): the printed verdict
+is UNGATED** — hand-typing HA-BRIDGE-POSABLE yields all 21
+must-pass gates PASS at exit 0 with the output
+self-contradicting between §12 and §15; NO verdict-flip
+mutant; **and the "built before the addendum" excuse is
+REFUTED BY THE LEDGER — #234 introduced the addendum, HA
+delivered at #236**.  F2: no cell-completeness gate (dropping
+A-linkhalf shrinks 99→90 silently).  F3: the "17 of 24" is a
+scalar surrogate (ρ₁+ρ₂=0); Σ is defined on only 4 of the 24
+carriers; where posable the relation holds 3/4.  NEAR-MISS
+CLEAN: the §7.4 fresh-eval wording is false as coded (the 486
+bypasses discarded; comparands go through the memo) but the
+hazard is NOT realised — the memo-free rebuild agrees 4860/0
+and G14 fails under a genuine aliasing probe; G14 tests 6/18
+group elements but R3's full-group run (192,456 comparisons)
+found 0 violations — true, under-tested.  PANEL COMPLETE:
+3× AWF; ~123 recomputation blocks; the closure bulletproof
+across three independent instruments; the bridge dead as
+instrumented.  Adjudication next.
