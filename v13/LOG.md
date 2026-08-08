@@ -8165,3 +8165,39 @@ readable-collapse result); the orthogonal witness pair gated;
 the reproduction relabel w/ GEN's free anchors; the provenance
 fix.  On delivery: COMMIT-AS-IS, verify, terminal-or-bounce.
 Recorded after it occurs.
+
+## 2026-08-08 — XBA RE-DERIVATION DELIVERED, COMMITTED AS-IS (v13
+## LEDGER #259)
+Re-derivation X-1..X-6 delivered complete; committed as-is.
+VERDICT (verbatim): XBA-SHARED-STRUCTURE-IDENTIFIED — the
+property named COMPLETION-FORCED-SPLIT — at the common
+gauge-fixed graph, at the two symmetric settings, over the
+declared Klein-four connection space, per coordinate.
+**X-2/X-3 THE CENTERPIECE: the derivation now runs by
+free-product normal forms in (ℤ²⋊C₂) ∗ ℤ — the four clauses
+derive SQ_REAL_1 = D⁻¹ (so the step to D IS E5, the named
+fifth clause; general law D⁻¹ = D iff involutive); the
+commutator law D = [P,u] GATED 8/8 against GEN's independent
+law (which uses neither P nor u); PDP = D⁻¹ derived
+symbolically; the corollaries gated — existence (both sides
+occur), order (2·ord([P,u]), orders 1/2/3 all seen), and
+FORCING AS A PURE FUNCTION OF ord([P,u]): 1 → 172/192, 2 →
+82/86/90/106, 3 → 42/46/46/72/78/80.**  The third species
+in-delivery (dim-4, carrier 256: E1–E5 hold, the profile
+82/86/90/106, 0/364 model-vs-raw disagreements); the
+counter-instance gated (completion (1,4): E5 fails, 6
+holonomies, the counter-profile, the abelian model disagreeing
+89/364).  Instrument: verdict gated against an independent
+truth table (verdict-swap dies); a genuinely independent
+second route (ordered walk product, 0/4,096 disagreements);
+cell-completeness 12/12 (cells-lax dies); ALL FOUR waiver-only
+gates gone (positive control re-founded; 33/33 must-pass
+falsified by computation mutants); anchor-pin-hash added.
+Steering residual computed (3,906/4,096 w/ exhibited bases).
+D10 owns the typed tuple by content; D11 owns the one-bit
+prediction; D4 withdrawn w/ base 1 itself as witness.  40
+gates (34 must-pass, 0 failures) / 38 anchors / 44 mutants
+died (43 computation, 1 waiver) / byte-identical ×2.  5
+order-deviations, each honest (incl. the dim-4 family swept
+only at the 120-member sub-family, scope printed).  md5 output
+fe5d4198 / receipt 53074fc8.  Adjudicator verification next.

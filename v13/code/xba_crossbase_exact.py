@@ -22,18 +22,27 @@ What this instrument does, in the order it does it:
      the totally real quartic field Q(cos pi/8), base G over Q -- and
      computes each one's gauge-fixed connection directly, with a second,
      gauge-free comparator (the raw matrix product along every walk);
-  5  DECLARES a family of candidate shared properties, each a computable
+  5  measures the COMMUTATOR LAW D = P u^-1 P u = [P, u] on every
+     instance against an independently constructed defect, and derives
+     its three corollaries (existence, order, forcing);
+  6  DECLARES a family of candidate shared properties, each a computable
      predicate on connections, with the freeze measured: the number of
      profiles computed at the declaration point is gated at zero and the
      receipt's gate order is the proof;
-  6  enumerates all 4,096 Klein-four connections on the graph;
-  7  measures, for each candidate: membership of both realized
+  7  enumerates all 4,096 Klein-four connections on the graph, by two
+     genuinely different algorithms (cycle-class coordinates; and the
+     ordered walk product over the thirteen reconstructed link labels);
+  8  measures, for each candidate: membership of both realized
      connections, the constrained subset's size, and whether every member
      of the subset reproduces the profile (exhaustive);
-  8  derives the connection from the species clauses and tests the
-     derivation on a THIRD, freshly constructed instance and on an
-     exchange-equivariant control;
-  9  runs the controls, the symmetry self-tests and the mutant census.
+  9  DERIVES the thirteen labels and the six cycle values symbolically,
+     by normal forms in the group the species clauses present, and gates
+     that the derivation cannot return SQ_REAL_1 = D without the fifth
+     premise D^2 = 1;
+ 10  builds a third instance, an exchange-equivariant control, a
+     COUNTER-INSTANCE whose defect has order three, and a third SPECIES
+     at carrier 256, and measures all four;
+ 11  runs the controls, the symmetry self-tests and the mutant census.
 
 Exact arithmetic only: `fractions.Fraction`, and the quartic field
 Q(cos pi/8) as rational 4-tuples reduced by x^4 = x^2 - 1/8, where tuple
@@ -70,6 +79,7 @@ OUT: list[str] = []
 
 MUTANTS = {
     # name                          kind          what it perturbs
+    "anchor-pin-hash":             ("computation", "the XBA pin's own sha256"),
     "anchor-review-hash":          ("computation", "the frozen review's sha256 pin"),
     "anchor-nt-hash":              ("computation", "the NT terminal receipt's sha256 pin"),
     "anchor-gen-hash":             ("computation", "the GEN terminal receipt's sha256 pin"),
@@ -97,14 +107,29 @@ MUTANTS = {
     "violator-lax":                ("computation", "builds a violator that does not violate"),
     "gauge-head":                  ("computation", "mis-conventioned gauge action (head only)"),
     "memo-lax":                    ("computation", "lets the self-test read the value cache"),
-    "species-lax":                 ("computation", "drops one species clause from the derivation"),
+    "cache-garbage":               ("computation", "primes the value cache with a wrong value"),
+    "species-lax":                 ("computation", "drops one species clause (E3) from the "
+                                                   "derivation and from the clause chain"),
+    "involutive-lax":              ("computation", "withholds the fifth premise D^2 = 1 from "
+                                                   "the derivation"),
+    "defect-lax":                  ("computation", "wrong order in the independent defect law"),
+    "counter-lax":                 ("computation", "gives the order-3 counter-instance an "
+                                                   "order-2 completion"),
+    "dim4-lax":                    ("computation", "gives the third species an "
+                                                   "exchange-symmetric completion"),
+    "inert-lax":                   ("computation", "perturbs one preparation in the inertness sweep"),
+    "route2-lax":                  ("computation", "drops one link from the second route's "
+                                                   "walk product"),
+    "cells-lax":                   ("computation", "drops a compared cell from the flip-test"),
+    "residual-lax":                ("computation", "exhibits a basis that is not a basis"),
+    "family-lax":                  ("computation", "wrong exchange in the completion-family census"),
+    "group-lax":                   ("computation", "stops the generated-group closure after "
+                                                   "one step"),
+    "verdict-swap":                ("computation", "swaps the verdict derivation's two branches"),
     "float-lax":                   ("computation", "introduces a float into a gated value"),
     "exempt-lax":                  ("computation", "registers a mutant-identity comparison"),
-    "control-lax":                 ("waiver",      "waives the positive control"),
-    "chain-lax":                   ("waiver",      "waives the chain/candidate consistency"),
-    "order-lax":                   ("waiver",      "waives the freeze-order predicate"),
-    "verdict-lax":                 ("waiver",      "waives the verdict vocabulary"),
-    "flip-lax":                    ("waiver",      "waives the spanning-tree flip-test"),
+    "verdict-lax":                 ("waiver",      "overwrites the derived verdict with an "
+                                                   "out-of-vocabulary string"),
 }
 
 
@@ -251,21 +276,57 @@ class QuarticRing:
 
 
 def sp_mul(K, A, B):
-    """sparse (row, col) -> value matrix product, A @ B."""
+    """sparse (row, col) -> value matrix product, A @ B.
+
+    Two code paths, arithmetically identical: a generic one over the ring's
+    own operations, and a rational fast path that inlines them.  Both
+    accumulate in the same order and both delete a key whose entry cancels
+    exactly, so dict equality remains matrix equality.
+    """
     bycol = {}
     for (i, k), v in A.items():
-        bycol.setdefault(k, []).append((i, v))
+        r = bycol.get(k)
+        if r is None:
+            bycol[k] = r = []
+        r.append((i, v))
     out = {}
+    if K is RatRing:
+        for (k, j), v in B.items():
+            col = bycol.get(k)
+            if not col:
+                continue
+            for (i, u) in col:
+                t = u * v
+                if t:
+                    key = (i, j)
+                    s = out.get(key)
+                    if s is None:
+                        out[key] = t
+                    else:
+                        s = s + t
+                        if s:
+                            out[key] = s
+                        else:
+                            del out[key]
+        return out
+    mul, add, nz = K.mul, K.add, K.nonzero
     for (k, j), v in B.items():
-        for (i, u) in bycol.get(k, ()):
-            t = K.mul(u, v)
-            if K.nonzero(t):
+        col = bycol.get(k)
+        if not col:
+            continue
+        for (i, u) in col:
+            t = mul(u, v)
+            if nz(t):
                 key = (i, j)
-                s = K.add(out.get(key, K.zero), t)
-                if K.nonzero(s):
-                    out[key] = s
+                s = out.get(key)
+                if s is None:
+                    out[key] = t
                 else:
-                    out.pop(key, None)
+                    s = add(s, t)
+                    if nz(s):
+                        out[key] = s
+                    else:
+                        del out[key]
     return out
 
 
@@ -313,6 +374,8 @@ def read_sources():
     p_rev = V13 / "review-gen-operator.md"
 
     h_pin, h_nt, h_gen, h_rev = (sha256_of(p) for p in (p_pin, p_nt, p_gen, p_rev))
+    if MUTANT == "anchor-pin-hash":
+        h_pin = h_pin[:-1] + ("0" if h_pin[-1] != "0" else "1")
     if MUTANT == "anchor-nt-hash":
         h_nt = h_nt[:-1] + ("0" if h_nt[-1] != "0" else "1")
     if MUTANT == "anchor-gen-hash":
@@ -686,8 +749,13 @@ def build_base_one(setting_angles):
         prep2 = U_local("A", 0)
     legs = {"F1": [Uprep, UA, UB], "F2": [prep2, UB, UA]}
     PW = perm_matrix(K, wing_swap(2, 3), n)
-    return Base("base 1", K, n, legs, PW,
-                "36 configurations, qubit wings, the singlet, Q(cos pi/8)")
+    b = Base("base 1", K, n, legs, PW,
+             "36 configurations, qubit wings, the singlet, Q(cos pi/8)")
+    b.V = Vq
+    b.ns = 2
+    b.npt = 3
+    b.transposition = None
+    return b
 
 
 # --- base G: 81 configurations over Q --------------------------------------
@@ -701,34 +769,43 @@ def euler_rodrigues(q):
     return [[e / nn for e in row] for row in M]
 
 
-def build_qutrit_base(name, quats, setting, psi, transposition, note):
-    """the (s_A,s_B,p_A,p_B) species instance with 3-state wings, over Q."""
+def build_species_instance(name, ns, npt, rots, setting, psi, transposition, note):
+    """the (s_A,s_B,p_A,p_B) species instance over Q, at ANY wing dimension.
+
+    Wings of dimension `ns`, pointers of dimension `npt` (npt >= ns, so the
+    record is injective); carrier ns^2 * npt^2.  The preparation is completed
+    by V = H . Q with H the Householder carrying e_0 to psi and Q a
+    permutation of the ns^2 system-pair labels.
+    """
     K = RatRing
-    n = 81
-    R = [euler_rodrigues(q) for q in quats]
+    m = ns * ns
+    npp = npt * npt
+    n = m * npp
+    R = rots
     if MUTANT == "rot-lax" and len(R) > 1:
         R[1][1][1] = R[1][1][1] + Fraction(1, 100)
 
     def idx(sa, sb, pa, pb):
-        return ((sa * 3 + sb) * 3 + pa) * 3 + pb
+        return ((sa * ns + sb) * npt + pa) * npt + pb
 
     def U_local(wing, g):
         Rg = R[g]
         out = {}
-        for sa0 in range(3):
-            for sb0 in range(3):
-                for pa0 in range(3):
-                    for pb0 in range(3):
+        for sa0 in range(ns):
+            for sb0 in range(ns):
+                for pa0 in range(npt):
+                    for pb0 in range(npt):
                         j = idx(sa0, sb0, pa0, pb0)
                         s0 = sa0 if wing == "A" else sb0
                         p0 = pa0 if wing == "A" else pb0
-                        for o in range(3):
-                            p1 = (p0 + o) % 3
-                            for s1 in range(3):
+                        for o in range(ns):
+                            p1 = (p0 + o) % npt
+                            for s1 in range(ns):
                                 v = Rg[s1][o] * Rg[s0][o]
                                 if not v:
                                     continue
-                                i = idx(s1, sb0, p1, pb0) if wing == "A" else idx(sa0, s1, pa0, p1)
+                                i = (idx(s1, sb0, p1, pb0) if wing == "A"
+                                     else idx(sa0, s1, pa0, p1))
                                 cur = out.get((i, j), Fraction(0)) + v
                                 if cur:
                                     out[(i, j)] = cur
@@ -736,39 +813,74 @@ def build_qutrit_base(name, quats, setting, psi, transposition, note):
                                     out.pop((i, j), None)
         return out
 
-    w = [psi[k] - (Fraction(1) if k == 0 else Fraction(0)) for k in range(9)]
+    w = [psi[k] - (Fraction(1) if k == 0 else Fraction(0)) for k in range(m)]
     ww = sum(t * t for t in w)
     H = [[(Fraction(1) if a == b else Fraction(0)) - 2 * w[a] * w[b] / ww
-          for b in range(9)] for a in range(9)]
-    perm = list(range(9))
+          for b in range(m)] for a in range(m)]
+    perm = list(range(m))
     if transposition is not None:
         i, j = transposition
         perm[i], perm[j] = perm[j], perm[i]
-    Qm = [[Fraction(0)] * 9 for _ in range(9)]
-    for b in range(9):
+    Qm = [[Fraction(0)] * m for _ in range(m)]
+    for b in range(m):
         Qm[perm[b]][b] = Fraction(1)
-    V = [[sum(H[a][k] * Qm[k][b] for k in range(9)) for b in range(9)] for a in range(9)]
-    if MUTANT == "completion-lax":
+    V = [[sum(H[a][k] * Qm[k][b] for k in range(m)) for b in range(m)]
+         for a in range(m)]
+    if MUTANT == "completion-lax" and ns == 3:
         V[0][0] = V[0][0] + Fraction(1, 100)
     Uprep = {}
-    for a1 in range(9):
-        for a0 in range(9):
+    for a1 in range(m):
+        for a0 in range(m):
             if V[a1][a0]:
-                for p in range(9):
-                    Uprep[(a1 * 9 + p, a0 * 9 + p)] = V[a1][a0]
+                for p in range(npp):
+                    Uprep[(a1 * npp + p, a0 * npp + p)] = V[a1][a0]
 
     gA, gB = setting
     UA, UB = U_local("A", gA), U_local("B", gB)
     prep2 = Uprep
-    if MUTANT == "prep-lax":
+    if MUTANT == "prep-lax" and ns == 3:
         prep2 = U_local("A", 0)
     legs = {"F1": [Uprep, UA, UB], "F2": [prep2, UB, UA]}
-    PW = perm_matrix(K, wing_swap(3, 3), n)
+    PW = perm_matrix(K, wing_swap(ns, npt), n)
     b = Base(name, K, n, legs, PW, note)
     b.R = R
     b.V = V
     b.psi = psi
+    b.ns = ns
+    b.npt = npt
+    b.transposition = transposition
     return b
+
+
+def build_qutrit_base(name, quats, setting, psi, transposition, note):
+    """the 81-configuration instance: 3-state wings, 3-state pointers."""
+    return build_species_instance(name, 3, 3, [euler_rodrigues(q) for q in quats],
+                                  setting, psi, transposition, note)
+
+
+def pair_swap(ns):
+    """the exchange on the ns^2 system-pair labels: (i,j) -> (j,i)."""
+    return tuple((i % ns) * ns + (i // ns) for i in range(ns * ns))
+
+
+def independent_defect(K, V, ns, npt):
+    """the defect built from the COMPLETION alone, by the terminal generality
+    unit's own law  D = (Sigma V^T Sigma V) tensor I  -- no wing exchange
+    operator and no preparation leg operator enters this construction."""
+    m = ns * ns
+    npp = npt * npt
+    s = pair_swap(ns)
+    out = {}
+    for a in range(m):
+        for b in range(m):
+            acc = K.zero
+            for k in range(m):
+                left = V[k][a] if MUTANT == "defect-lax" else V[k][s[a]]
+                acc = K.add(acc, K.mul(left, V[s[k]][b]))
+            if K.nonzero(acc):
+                for p in range(npp):
+                    out[(a * npp + p, b * npp + p)] = acc
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -814,6 +926,56 @@ def hol_of_class(phi, c):
         if c >> i & 1:
             h ^= phi[i]
     return h
+
+
+def named_set_closes(b):
+    """do the four named elements close into a group?  (E5 in operator form:
+    the products of {1, W, D, WD} land back in {1, W, D, WD}.)"""
+    els = [v for v in b.group().values() if v is not None]
+    if len(els) != 4:
+        return False
+    S = set(els)
+    for x in els:
+        for y in els:
+            if tuple(y[i] for i in x) not in S:
+                return False
+    return True
+
+
+def walk_link_masks(links, walks):
+    """each walk's 13-link parity vector, with multiplicities -- built from the
+    walk sequences alone.  No cycle-space coordinate enters here: this is the
+    second census route's own bookkeeping."""
+    m = collections.Counter()
+    for s in walks:
+        bits = 0
+        for (li, _rev) in s:
+            bits ^= 1 << li
+        m[bits] += 1
+    return [(bits, [i for i in range(len(links)) if bits >> i & 1], c)
+            for bits, c in sorted(m.items())]
+
+
+def route2_labels(links, cot, phi):
+    """the thirteen link labels of a connection: the tree carries the identity
+    (the declared section), the cotree carries phi."""
+    lab = [0] * len(links)
+    for k, li in enumerate(cot):
+        lab[li] = phi[k]
+    return lab
+
+
+def route2_profile(maskrows, lab):
+    """class counts by the ORDERED WALK PRODUCT over the thirteen labels."""
+    cnt = [0, 0, 0, 0]
+    for _bits, idxs, c in maskrows:
+        h = 0
+        for li in idxs:
+            if M_ON["route2-lax"] and li == idxs[0]:
+                continue
+            h ^= lab[li]
+        cnt[h] += c
+    return tuple(cnt)
 
 
 # ---------------------------------------------------------------------------
@@ -895,9 +1057,22 @@ def main(argv=None) -> int:
     say("")
     say("   cells compared (setting index x checkpoint) : %d" % len(cells))
     say("   cells where the two bases draw the same rule/permutation : %d" % len(same))
+    cellvals = collections.Counter((adm_nt[c]["FULL"], adm_nt[c]["REAL"]) for c in cells)
+    drawn_pairs = sorted({(rule, adm_nt[c][rule][1]) for c in cells
+                          for rule in ("FULL", "REAL") if adm_nt[c][rule][0] == 1})
+    say("   distinct values those cells take : %d" % len(cellvals))
+    for (fv, rv), k in sorted(cellvals.items(), key=lambda kv: (-kv[1], str(kv[0]))):
+        say("      FULL %-14s REAL %-18s x %d"
+            % (fv[1] or "-", rv[1] or "-", k))
+    say("   the permutation each rule draws, wherever it draws at all : %s"
+        % ", ".join("%s -> %s" % p for p in drawn_pairs))
     gate("XBA-ADMISSION-AGREEMENT",
          len(cells) > 0 and len(same) == len(cells), "must-pass",
-         {"cells": len(cells), "agreeing": len(same)})
+         {"cells": len(cells), "agreeing": len(same),
+          "distinct_cell_values": len(cellvals),
+          "the_permutation_coordinate_is_constant_per_rule":
+              len(drawn_pairs) == 2,
+          "the_drawn_permutations": ["%s -> %s" % p for p in drawn_pairs]})
     anchor("A09 GEN cross-base admission cells", len(cells),
            gen["tables"]["cross_base_connection"]["cells_compared"],
            "the 24 matched cells GEN compared")
@@ -1117,6 +1292,8 @@ def main(argv=None) -> int:
         distinct4 = len({v for v in b.group().values() if v is not None}) == 4
         species_facts[tag] = {"legs_commute": commute, "W_intertwines_local_leg": inter2,
                               "W_intertwines_prep": interp, "D_is_an_involution": d2,
+                              "the_four_named_elements_close_under_multiplication":
+                                  named_set_closes(b),
                               "common_preparation_leg": common_prep,
                               "every_declared_operator_is_orthogonal": orth,
                               "the_four_named_elements_are_distinct": distinct4,
@@ -1136,11 +1313,17 @@ def main(argv=None) -> int:
     gate("XBA-SPECIES-CLAUSES-MEASURED",
          all(f["legs_commute"] and f["W_intertwines_local_leg"]
              and not f["W_intertwines_prep"] and f["D_is_an_involution"]
+             and f["the_four_named_elements_close_under_multiplication"]
              and f["common_preparation_leg"]
              and f["every_declared_operator_is_orthogonal"]
              and f["the_four_named_elements_are_distinct"]
              for f in species_facts.values()),
-         "must-pass", species_facts)
+         "must-pass",
+         {"note": "E1 common_preparation_leg, E2 legs_commute, E3 "
+                  "W_intertwines_local_leg, E4 NOT W_intertwines_prep, and the "
+                  "FIFTH premise E5 D_is_an_involution -- equivalently that the "
+                  "four named elements close into a group",
+          **species_facts})
 
     # the gauge-fixed connections
     say("")
@@ -1218,25 +1401,73 @@ def main(argv=None) -> int:
            ce["links_whose_gauge_fixed_label_lies_outside_the_group"],
            "the frozen review measured every one of the 13 labels inside the group")
 
+    # ---- the positive control, against the two receipts' OWN class counts --
+    # Each reading's class counts are recomputed from that reading's OWN
+    # thirteen measured labels, by the second route (the ordered walk product),
+    # and compared with the numbers read out of the two terminal receipts.  No
+    # step of this control passes through the shared connection PHI_R or
+    # through the census profiler.
+    maskrows = walk_link_masks(links, walks)
+    ntE = nt_cls["SP-E/FULL+REAL"]["holonomy_classes"]
+    want_elementwise = (ntE["the identity"], ntE["the wing exchange"],
+                        ntE["the qubit-only wing swap"], ntE["the pointer-only wing swap"])
+    percounts = {}
+    for tag, lab in realized.items():
+        if any(lab[NAMES[i]] is None for i in range(len(links))):
+            percounts[tag] = None
+            continue
+        lb = [NAME2V4[lab[NAMES[i]]] for i in range(len(links))]
+        percounts[tag] = route2_profile(maskrows, lb)
+    pos_ok = (len(percounts) == 4
+              and all(v == want_elementwise for v in percounts.values())
+              and tuple(sorted(want_elementwise)) == tuple(sorted(r_counts)))
+    say("")
+    say("   positive control: each reading's class counts, recomputed from its own")
+    say("   thirteen labels by the ordered walk product, against the two receipts:")
+    for tag in bases:
+        say("      %-14s %s" % (tag, list(percounts[tag]) if percounts[tag] else "-"))
+    gate("XBA-POSITIVE-CONTROL", pos_ok, "must-pass",
+         {"per_reading_class_counts": {k: (list(v) if v else None)
+                                       for k, v in percounts.items()},
+          "the_element_wise_counts_read_from_the_transport_receipt":
+              list(want_elementwise),
+          "the_multiset_counts_read_from_the_generality_receipt": list(r_counts),
+          "readings": len(percounts)})
+
     # ---- 6.4 THE CANDIDATE DECLARATION -----------------------------------
     if MUTANT == "freeze-lax":
         profile(PHI_R)
     frozen_at = PROFILE_EVALS[0]
     say("")
-    say("## 4  The candidate properties, declared (frozen before any profile)")
+    say("## 4  The candidate properties, declared (frozen before any census profile)")
     say("")
-    say("   profiles computed at the declaration point : %d" % frozen_at)
+    say("   census profiles computed at the declaration point : %d" % frozen_at)
     gate("XBA-CANDIDATE-FREEZE", frozen_at == 0, "must-pass",
-         {"profiles_computed_before_the_declaration": frozen_at})
+         {"census_profile_evaluations_before_the_declaration": frozen_at,
+          "note": "the realized class counts are an ANCHORED INPUT, read out of "
+                  "the two terminal receipts, and are recomputed from the rebuilt "
+                  "bases by the comparator and by the positive control before this "
+                  "point; what this counter measures is that no profile of any "
+                  "member of the 4,096 had been evaluated"})
 
-    aut_typed, aut_full, act_typed, act_full = automorphisms(links, cot, coord, tree)
+    aut_typed, aut_full, act_typed, act_full, aut_detail = automorphisms(
+        links, cot, coord, tree)
     say("   |Aut(graph)| rule-preserving %d, full multigraph %d;"
         % (aut_typed, aut_full))
     say("   distinct induced actions on the cycle space: %d (rule-preserving), %d (full)"
         % (len(act_typed), len(act_full)))
+    say("   the non-identity rule-preserving link map fixes %d of the 13 links "
+        "(every identification link) and moves %d (the two frames' legs, in "
+        "matching pairs); it carries every declared cycle's edge set to itself, "
+        "which is why its induced action is trivial."
+        % (aut_detail["links_fixed_by_the_frame_swap"],
+           aut_detail["links_moved_by_the_frame_swap"]))
 
+    # the derivation is symbolic and reads no profile; it is computed here
+    # because one declared candidate IS the tuple it derives.
+    DERIVED, DERIV = derive_from_species(links, BASIS, BKEYS)
     CAND = declare_candidates(BKEYS, BCLS, FULLCLS, REALCLS, BIGCLS, act_full,
-                              act_typed)
+                              act_typed, DERIVED)
     for name, rec in CAND.items():
         say("   %-34s %s" % (name, rec["statement"]))
     gate("XBA-CANDIDATES-DECLARED", len(CAND) >= 10, "disclosure",
@@ -1283,13 +1514,46 @@ def main(argv=None) -> int:
            [list(r_mc_profile), r_mc_count], "the frozen review's (102,94,90,78) at 384")
     anchor("A32 the realized class counts", list(SORTED_TARGET), list(r_counts),
            "82/86/90/106, the profile both terminal receipts record")
-    ntE = nt_cls["SP-E/FULL+REAL"]["holonomy_classes"]
     anchor("A33 the realized class counts, element by element",
            {"1": TARGET[0], "W": TARGET[1], "D": TARGET[2], "WD": TARGET[3]},
            {"1": ntE["the identity"], "W": ntE["the wing exchange"],
             "D": ntE["the qubit-only wing swap"],
             "WD": ntE["the pointer-only wing swap"]},
            "the NT receipt names its elements; the counts must match element by element")
+
+    # ---- the SECOND ROUTE: a different algorithm, not a change of coordinates
+    # Route 1 (above) works in the cotree cycle coordinates: each walk is
+    # reduced to a 6-bit cycle class and the profile is a function of that
+    # class.  Route 2 reconstructs the THIRTEEN link labels of each connection
+    # and takes the ordered walk product over each walk's own 13-link parity
+    # vector.  It never builds a cycle coordinate, never inverts a change of
+    # basis, and shares no intermediate with route 1 -- so a defect in
+    # `cycle_coords` or `walk_class` corrupts route 1 alone.
+    progress("second census route: the ordered walk product over 13 link labels")
+    PROF2 = {p: route2_profile(maskrows, route2_labels(links, cot, p))
+             for p in ALLPHI}
+    hist2 = collections.Counter(tuple(sorted(v)) for v in PROF2.values())
+    hits2 = sum(1 for p in ALLPHI if tuple(sorted(PROF2[p])) == SORTED_TARGET)
+    order4_2 = sum(1 for p in ALLPHI
+                   if len(generated_group(route2_labels(links, cot, p))) == 4)
+    disagree2 = sum(1 for p in ALLPHI if PROF2[p] != PROF[p])
+    say("   second route (ordered walk product over the 13 labels):"
+        " %d distinct profiles, %d hits, %d of order four; connections where the"
+        " two routes disagree : %d" % (len(hist2), hits2, order4_2, disagree2))
+    gate("XBA-SECOND-ROUTE-CENSUS",
+         disagree2 == 0 and len(hist2) == len(prof_hist) and hits2 == len(hits_sorted)
+         and order4_2 == len(order4) and len(maskrows) == len(class_hist),
+         "must-pass",
+         {"connections_where_the_two_routes_disagree": disagree2,
+          "distinct_profiles": [len(prof_hist), len(hist2)],
+          "profile_hits": [len(hits_sorted), hits2],
+          "order_4_connections": [len(order4), order4_2],
+          "distinct_walk_parity_vectors_vs_distinct_cycle_classes":
+              [len(maskrows), len(class_hist)],
+          "note": "route 2 is a different algorithm, not a change of "
+                  "coordinates: it reconstructs the thirteen link labels and "
+                  "takes the ordered walk product, so it does not use "
+                  "cycle_coords or walk_class at all"})
 
     # ---- 6.6 the candidates, measured ------------------------------------
     progress("measuring the declared candidates")
@@ -1348,14 +1612,12 @@ def main(argv=None) -> int:
         say("   | %-46s | %5d | %4d |" % (cname, len(live), hs))
     gate("XBA-CLAUSE-CHAIN", chain_rows[-1]["survivors"] == chain_rows[-1]["hits"],
          "must-pass", {"chain": chain_rows})
-    c4 = "C4 species-split (named)"
-    c5 = "C5 species-split (naming-closed)"
+    c4 = "C4 clause-split (named)"
+    c5 = "C5 clause-split (naming-closed)"
     c4set = [p for p in ALLPHI if CAND[c4]["pred"](p)]
     cons = (c4set == [PHI_R]
             and results[c5]["subset_size"] == chain_rows[-1]["survivors"]
             and results[c4]["subset_size"] * len(V4AUT) == results[c5]["subset_size"])
-    if M_ON["chain-lax"]:
-        cons = False
     gate("XBA-CANDIDATE-CHAIN-CONSISTENCY", cons, "must-pass",
          {"the_named_candidate_s_subset_is_exactly_the_realized_connection":
               c4set == [PHI_R],
@@ -1364,20 +1626,66 @@ def main(argv=None) -> int:
           "and_is_the_naming_orbit_of_the_named_one":
               results[c4]["subset_size"] * len(V4AUT) == results[c5]["subset_size"]})
 
-    # ---- 6.7 the species derivation and a third instance ------------------
-    progress("deriving the connection from the species clauses; third instance")
+    # ---- 6.7 the derivation, computed -------------------------------------
+    progress("the symbolic derivation, and the fifth premise")
     say("")
-    say("## 7  The derivation, and a third instance built to test it")
+    say("## 7  The derivation, computed, and the four instances that test it")
     say("")
-    derived = derive_from_species(BKEYS)
-    say("   derived from the species clauses : %s"
-        % "  ".join("%s=%s" % (k, V4NAME[v]) for k, v in zip(BKEYS, derived)))
+    say("   The species clauses present a group -- (Z^2 x| C2) * Z on a, b, P, u.")
+    say("   The thirteen labels and the six cycle values are evaluated in it by")
+    say("   normal forms; nothing below is typed.")
+    say("")
+    for k in BKEYS:
+        row = DERIV["cycles"][k]
+        say("      %-12s = %-14s = %-8s -> %s"
+            % (k, row["the_derived_word"],
+               ("P^%d D^%d" % tuple(row["as_P_i_D_j"])) if row["as_P_i_D_j"]
+               else "-", row["the_Klein_value"]))
+    say("")
+    say("   D^2 = 1 in that group : %s  (so the fifth premise is independent)"
+        % DERIV["D_squared_is_the_identity_in_the_presented_group"])
+    say("   P D P = D^-1 in that group : %s" % DERIV["P_D_P_equals_D_inverse"])
+    say("   the fifth premise supplied to the derivation : %s"
+        % DERIV["the_fifth_premise_was_supplied"])
+    say("   derived : %s"
+        % ("  ".join("%s=%s" % (k, V4NAME[v]) for k, v in zip(BKEYS, DERIVED))
+           if DERIVED else "the derivation does not land in the Klein group"))
     say("   measured on the realized bases   : %s"
         % "  ".join("%s=%s" % (k, V4NAME[v]) for k, v in zip(BKEYS, beta_of(PHI_R))))
-    gate("XBA-DERIVATION-MATCHES-THE-BASES", derived == beta_of(PHI_R),
-         "must-pass", {"derived": [V4NAME[v] for v in derived],
-                       "measured": [V4NAME[v] for v in beta_of(PHI_R)]})
+    lab_R = realized["base G @ GP-E"]
+    sym_lab_ok = all(
+        (DERIV["the_thirteen_derived_labels"][nm] == "e" and lab_R[nm] == "1")
+        or (DERIV["the_thirteen_derived_labels"][nm] == "P" and lab_R[nm] == "W")
+        or (DERIV["the_thirteen_derived_labels"][nm] == "u^-1.P.u" and lab_R[nm] == "WD")
+        for nm in NAMES)
+    gate("XBA-DERIVATION-COMPUTED",
+         DERIVED is not None and DERIVED == beta_of(PHI_R) and sym_lab_ok,
+         "must-pass",
+         {"derived": [V4NAME[v] for v in DERIVED] if DERIVED else None,
+          "measured": [V4NAME[v] for v in beta_of(PHI_R)],
+          "the_thirteen_symbolic_labels_match_the_measured_ones": sym_lab_ok,
+          **DERIV})
+    # the fifth premise, isolated: WITHOUT it the derivation returns D^-1,
+    # and D^-1 = D is exactly D^2 = 1.
+    sq = DERIV["cycles"]["SQ_REAL_1"]["as_P_i_D_j"]
+    d_inv_ne_d = (nf(GEN_P, nf_inv(GEN_U), GEN_P, GEN_U)
+                  != nf_inv(nf(GEN_P, nf_inv(GEN_U), GEN_P, GEN_U)))
+    gate("XBA-FIFTH-PREMISE",
+         sq == [0, -1] and d_inv_ne_d
+         and not DERIV["D_squared_is_the_identity_in_the_presented_group"]
+         and DERIV["cycles"]["SQ_REAL_1"]["the_Klein_value"] == "D",
+         "must-pass",
+         {"the_preparation_square_derives_as": ("D^%d" % sq[1]) if sq else None,
+          "D_and_its_inverse_are_distinct_in_the_presented_group": d_inv_ne_d,
+          "the_value_it_reaches_once_the_premise_is_supplied":
+              DERIV["cycles"]["SQ_REAL_1"]["the_Klein_value"],
+          "note": "the four clauses E0-E4 derive SQ_REAL_1 = D^-1; the step to D "
+                  "is the fifth premise, and the derivation cannot take it "
+                  "unsupplied"})
 
+    # ---- 6.7b the four further instances ----------------------------------
+    progress("third instance, equivariant control, order-3 counter-instance, "
+             "third species")
     PSI_S = [Fraction(0)] * 9
     PSI_S[0] = Fraction(1, 3)
     PSI_S[1] = Fraction(2, 3)
@@ -1388,61 +1696,280 @@ def main(argv=None) -> int:
     bS2 = build_qutrit_base("base S'", [(5, 1, 2, 3)], (0, 0), PSI_S,
                             (1, 5) if M_ON["control-completion"] else None,
                             "the exchange-equivariant control: the bare Householder")
+    # the counter-instance: the lexicographically first member of the declared
+    # completion family whose defect has order three -- computed, not chosen.
+    fam = completion_family_census(3)
+    t3 = fam["the_lex_first_completion_whose_defect_has_order_3"]
+    if M_ON["counter-lax"]:
+        t3 = fam["the_lex_first_completion_whose_defect_has_order_2"]
+    bT = build_qutrit_base("base T", [(5, 1, 2, 3)], (0, 0), PSI_S, tuple(t3),
+                           "the counter-instance: E0-E4 hold, the defect has "
+                           "order three, the connection is not Klein-valued")
+    # the THIRD SPECIES: wings and pointers of dimension four, carrier 256.
+    R4 = [[[Fraction(3, 5), Fraction(-4, 5), Fraction(0), Fraction(0)],
+           [Fraction(4, 5), Fraction(3, 5), Fraction(0), Fraction(0)],
+           [Fraction(0), Fraction(0), Fraction(5, 13), Fraction(-12, 13)],
+           [Fraction(0), Fraction(0), Fraction(12, 13), Fraction(5, 13)]]]
+    PSI4 = [Fraction(0)] * 16
+    PSI4[0] = Fraction(3, 5)
+    PSI4[5] = Fraction(4, 5)
+    fam4 = completion_family_census(4)
+    t4 = fam4["the_lex_first_completion_whose_defect_has_order_2"]
+    if M_ON["dim4-lax"]:
+        t4 = fam4["the_lex_first_completion_whose_defect_has_order_1"]
+    bD4 = build_species_instance("species 4", 4, 4, R4, (0, 0), PSI4, tuple(t4),
+                                 "the third SPECIES: wings and pointers of "
+                                 "dimension four, 256 configurations")
+
     third = {}
-    for tag, b in (("base S", bS), ("base S'", bS2)):
-        # measured by the gauge-free route: the raw matrix product along each
-        # of the 364 based closed walks, with no Klein structure assumed.
+    for tag, b in (("base S", bS), ("base S'", bS2), ("base T", bT),
+                   ("species 4", bD4)):
         cnt = collections.Counter()
+        model_dis = 0
+        names_b = b.group()
+        invb = {v: k for k, v in names_b.items()}
+        lab = b.gauge_fixed_labels(links)
+        degenerate = len({tuple(v) if v is not None else None
+                          for v in names_b.values()}) < 4
+        readable = (not degenerate) and all(v is not None for v in lab.values())
+        lb = ([NAME2V4[lab[NAMES[i]]] for i in range(len(links))]
+              if readable else None)
         for s in walks:
             A = b.I
             for (li, rev) in s:
                 A = sp_mul(b.K, b.link_matrix(links, li, rev), A)
-            cnt[perm_part(b.K, A, b.n)] += 1
+            pp = perm_part(b.K, A, b.n)
+            cnt[pp] += 1
+            if lb is not None:
+                h = 0
+                for (li, _rev) in s:
+                    h ^= lb[li]
+                if invb.get(pp) != V4NAME[h]:
+                    model_dis += 1
         counts = sorted(cnt.values())
-        distinct = len(cnt)
-        degenerate = len({tuple(v) if v is not None else None
-                          for v in b.group().values()}) < 4
-        lab = b.gauge_fixed_labels(links)
-        ok_in = (not degenerate) and all(v is not None for v in lab.values())
-        bt = None
-        if ok_in:
-            ph = tuple(NAME2V4[lab[NAMES[i]]] for i in cot)
-            bt = [V4NAME[v] for v in beta_of(ph)]
+        bt = ([V4NAME[v] for v in beta_of(tuple(NAME2V4[lab[NAMES[i]]] for i in cot))]
+              if readable else None)
+        K = b.K
+        UA, UB = b.legs["F1"][1], b.legs["F1"][2]
         third[tag] = {
-            "note": b.note, "W_fixed": b.fixed("W"), "D_fixed": b.fixed("D"),
+            "note": b.note, "carrier": b.n,
+            "W_fixed": b.fixed("W"), "D_fixed": b.fixed("D"),
             "D_is_the_identity": b.D == b.I,
+            "the_order_of_the_defect": operator_order(b.K, b.D, b.I),
+            "the_order_of_the_group_generated_by_W_and_D":
+                len(generated_operator_group(b)),
+            "E1_common_preparation_leg": b.legs["F1"][0] == b.legs["F2"][0],
+            "E2_local_legs_commute": sp_mul(K, UA, UB) == sp_mul(K, UB, UA),
+            "E3_W_intertwines_the_local_legs":
+                sp_mul(K, b.PW, sp_mul(K, UA, b.PW)) == UB,
+            "E4_W_does_not_intertwine_the_preparation_leg":
+                sp_mul(K, b.PW, sp_mul(K, b.legs["F1"][0], b.PW)) != b.legs["F1"][0],
+            "E5_the_defect_is_an_involution": sp_mul(K, b.D, b.D) == b.I,
+            "the_four_named_elements_close_under_multiplication": named_set_closes(b),
             "the_four_named_elements_are_distinct": not degenerate,
+            "the_thirteen_labels": {NAMES[i]: lab[NAMES[i]] for i in range(len(links))},
             "declared_basis": bt,
-            "distinct_holonomies_over_the_364_walks": distinct,
+            "distinct_holonomies_over_the_364_walks": len(cnt),
             "class_counts_sorted": counts,
+            "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy":
+                model_dis,
         }
-        say("   %-8s D fixes %s of 81; distinct holonomies %d; class counts %s; "
-            "declared basis %s"
-            % (tag, b.fixed("D"), distinct, counts, bt))
+        say("   %-10s carrier %3d  ord(D) %s  |<W,D>| %2d  E1-E4 %s  E5 %s  "
+            "distinct holonomies %d  class counts %s"
+            % (tag, b.n, third[tag]["the_order_of_the_defect"],
+               third[tag]["the_order_of_the_group_generated_by_W_and_D"],
+               all(third[tag][k] for k in ("E1_common_preparation_leg",
+                                           "E2_local_legs_commute",
+                                           "E3_W_intertwines_the_local_legs",
+                                           "E4_W_does_not_intertwine_the_preparation_leg")),
+               third[tag]["E5_the_defect_is_an_involution"],
+               len(cnt), counts))
     gate("XBA-THIRD-INSTANCE-PREDICTED",
          third["base S"]["class_counts_sorted"] == sorted(TARGET)
-         and third["base S"]["declared_basis"] == [V4NAME[v] for v in derived],
+         and DERIVED is not None
+         and third["base S"]["declared_basis"] == [V4NAME[v] for v in DERIVED],
          "must-pass", third["base S"])
     gate("XBA-EQUIVARIANT-CONTROL-BREAKS-IT",
          third["base S'"]["D_is_the_identity"]
          and third["base S'"]["class_counts_sorted"] != sorted(TARGET)
          and third["base S'"]["distinct_holonomies_over_the_364_walks"] == 2,
          "must-pass", third["base S'"])
+    # the counter-class: four clauses hold, the fifth fails, the SAME thirteen
+    # label names are measured -- and the profile is different.
+    tt = third["base T"]
+    same_labels = (tt["the_thirteen_labels"] == realized["base G @ GP-E"])
+    gate("XBA-COUNTER-CLASS",
+         tt["E1_common_preparation_leg"] and tt["E2_local_legs_commute"]
+         and tt["E3_W_intertwines_the_local_legs"]
+         and tt["E4_W_does_not_intertwine_the_preparation_leg"]
+         and not tt["E5_the_defect_is_an_involution"]
+         and not tt["the_four_named_elements_close_under_multiplication"]
+         and tt["the_order_of_the_defect"] == 3
+         and tt["distinct_holonomies_over_the_364_walks"] == 6
+         and tt["class_counts_sorted"] != sorted(TARGET)
+         and same_labels
+         and tt["walks_where_the_abelian_model_disagrees_with_the_raw_holonomy"] > 0,
+         "must-pass",
+         {"the_thirteen_label_names_are_the_realized_connection_s": same_labels,
+          "the_completion": list(t3),
+          **tt})
+    s4 = third["species 4"]
+    gate("XBA-THIRD-SPECIES",
+         s4["carrier"] == 256
+         and all(s4[k] for k in ("E1_common_preparation_leg",
+                                 "E2_local_legs_commute",
+                                 "E3_W_intertwines_the_local_legs",
+                                 "E4_W_does_not_intertwine_the_preparation_leg",
+                                 "E5_the_defect_is_an_involution"))
+         and s4["class_counts_sorted"] == sorted(TARGET)
+         and DERIVED is not None
+         and s4["declared_basis"] == [V4NAME[v] for v in DERIVED]
+         and s4["walks_where_the_abelian_model_disagrees_with_the_raw_holonomy"] == 0,
+         "must-pass", {"the_completion": list(t4), **s4})
+
+    # ---- 6.7c THE COMMUTATOR LAW and its three corollaries -----------------
+    progress("the commutator law D = [P, u] and its corollaries")
+    say("")
+    say("   The commutator law, on every committed instance: the defect each")
+    say("   terminal unit names is the commutator of the declared exchange with")
+    say("   the declared preparation leg, and the independent construction is")
+    say("   the completion's own law D = (Sigma V^T Sigma V) tensor I.")
+    say("")
+    say("   | instance | P^2=1 | D = [P,u] | D = the completion's own defect |"
+        " ord(D) | |<W,D>| | distinct holonomies | class counts |")
+    say("   |---|---|---|---|---|---|---|---|")
+    INSTANCES = [("base 1 @ SP-E", b1), ("base 1 @ SP-F", b1f),
+                 ("base G @ GP-E", bG), ("base G @ GP-F", bGf),
+                 ("base S", bS), ("base S'", bS2), ("base T", bT),
+                 ("species 4", bD4)]
+    comm_rows = {}
+    for tag, b in INSTANCES:
+        K = b.K
+        u = b.legs["F1"][0]
+        P = b.PW
+        p2 = sp_mul(K, P, P) == b.I
+        commutator = sp_mul(K, sp_T(P), sp_mul(K, sp_T(u), sp_mul(K, P, u)))
+        indep = independent_defect(K, b.V, b.ns, b.npt)
+        od = operator_order(K, b.D, b.I)
+        grp = generated_operator_group(b)
+        dih = sp_mul(K, P, sp_mul(K, b.D, P)) == sp_T(b.D)
+        if tag in third:
+            dh = third[tag]["distinct_holonomies_over_the_364_walks"]
+            cc = third[tag]["class_counts_sorted"]
+        elif tag in direct:
+            cc = sorted(direct[tag]["class_counts"].values())
+            dh = len([c for c in cc if c])
+        else:
+            cc = sorted(percounts[tag])
+            dh = len([c for c in cc if c])
+        comm_rows[tag] = {
+            "P_is_an_involution": p2,
+            "D_equals_the_commutator": commutator == b.D,
+            "D_equals_the_completion_s_own_defect": indep == b.D,
+            "P_D_P_equals_D_inverse": dih,
+            "the_order_of_the_defect": od,
+            "the_order_of_the_group_generated_by_W_and_D": len(grp),
+            "distinct_holonomies_over_the_364_walks": dh,
+            "class_counts_sorted": cc,
+        }
+        say("   | %-14s | %-5s | %-5s | %-5s | %d | %d | %s | %s |"
+            % (tag, p2, commutator == b.D, indep == b.D, od, len(grp), dh, cc))
+    gate("XBA-COMMUTATOR-LAW",
+         all(r["P_is_an_involution"] and r["D_equals_the_commutator"]
+             and r["D_equals_the_completion_s_own_defect"]
+             and r["P_D_P_equals_D_inverse"] for r in comm_rows.values()),
+         "must-pass",
+         {"the_law": "D = P u^-1 P u = [P, u], and P D P = D^-1",
+          "instances": len(comm_rows), **comm_rows})
+    # COROLLARY 1 -- existence: the geometry is there iff the commutator is
+    # non-trivial (the centraliser criterion, with <P> the chart group).
+    cor1 = all((r["the_order_of_the_defect"] > 1)
+               == (r["the_order_of_the_group_generated_by_W_and_D"] > 2)
+               for r in comm_rows.values())
+    cor1 &= any(r["the_order_of_the_defect"] == 1 for r in comm_rows.values())
+    cor1 &= any(r["the_order_of_the_defect"] > 1 for r in comm_rows.values())
+    gate("XBA-COROLLARY-EXISTENCE", cor1, "must-pass",
+         {"claim": "the holonomy group is larger than <W> exactly where P fails "
+                   "to centralise u -- both sides of the equivalence occur among "
+                   "the measured instances",
+          "instances_with_a_trivial_commutator":
+              [t for t, r in comm_rows.items() if r["the_order_of_the_defect"] == 1],
+          "instances_with_a_non_trivial_commutator":
+              [t for t, r in comm_rows.items() if r["the_order_of_the_defect"] > 1]})
+    # COROLLARY 2 -- order: the group is dihedral of order twice the
+    # commutator's order, and that is the number of distinct holonomies.
+    cor2 = all(r["the_order_of_the_group_generated_by_W_and_D"]
+               == 2 * r["the_order_of_the_defect"]
+               and (r["distinct_holonomies_over_the_364_walks"]
+                    == 2 * r["the_order_of_the_defect"])
+               for r in comm_rows.values())
+    gate("XBA-COROLLARY-ORDER", cor2, "must-pass",
+         {"claim": "|<W, D>| = 2 . ord([P,u]) = the number of distinct "
+                   "holonomies the 364 walks carry",
+          "orders_seen": sorted({r["the_order_of_the_defect"]
+                                 for r in comm_rows.values()})})
+    # COROLLARY 3 -- forcing: the profile is a function of the commutator's
+    # order alone, across every instance measured here.
+    byord = {}
+    ok3 = True
+    for t, r in comm_rows.items():
+        if r["class_counts_sorted"] is None:
+            continue
+        o = r["the_order_of_the_defect"]
+        if o in byord and byord[o] != r["class_counts_sorted"]:
+            ok3 = False
+        byord[o] = r["class_counts_sorted"]
+    ok3 &= len(byord) == len({tuple(v) for v in byord.values()}) == 3
+    gate("XBA-COROLLARY-FORCING", ok3, "must-pass",
+         {"claim": "across every instance measured, the class-count profile is a "
+                   "function of ord([P,u]) alone, and the three orders that occur "
+                   "give three different profiles",
+          "the_profile_by_the_order_of_the_commutator":
+              {str(k): v for k, v in sorted(byord.items())}})
+
+    # ---- 6.7d the inert parameters, and the completion family --------------
+    inert = inertness_sweep(PSI_G, PSI_S)
+    say("")
+    say("   inert parameters: the two declared preparations give the SAME defect "
+        "at %d of %d completions; the rotation enters neither the preparation "
+        "leg nor the wing exchange, and E2/E3 hold at all %d rotation pairs "
+        "swept."
+        % (inert["completions_where_the_two_preparations_give_the_same_defect"],
+           inert["completions_swept"], inert["rotation_pairs_swept"]))
+    gate("XBA-INERT-PARAMETERS",
+         inert["completions_where_the_two_preparations_give_the_same_defect"]
+         == inert["completions_swept"]
+         and inert["rotations_where_E2_and_E3_both_hold"]
+         == inert["rotation_pairs_swept"]
+         and inert["the_defect_depends_on_the_rotation"] is False,
+         "must-pass", inert)
+    say("   the declared completion family (%s members): %d have an involutive "
+        "non-trivial defect, %d are exchange-equivariant, and %d single "
+        "transpositions split %s by the order of the defect."
+        % (format(fam["family_size"], ","), fam["involutive_non_trivial"],
+           fam["equivariant"], fam["single_transpositions"],
+           fam["single_transpositions_by_the_order_of_the_defect"]))
+    gen_cls = gen["tables"]["completion_census"]["class_sizes"]
+    gate("XBA-COMPLETION-CENSUS",
+         fam["class_sizes"] == gen_cls
+         and fam["family_size"] == gen["tables"]["completion_census"]["family_size"],
+         "must-pass",
+         {"the_generality_receipt_s_own_class_sizes": gen_cls,
+          "recomputed_here_from_the_permutation_algebra_alone":
+              fam["class_sizes"], **fam})
+    anchor("A37 the completion family's involutive class",
+           fam["involutive_non_trivial"],
+           gen["tables"]["completion_census"]["class_sizes"]["ord=2,fixed=45"],
+           "the generality unit's own 864 of 40,320, recomputed here from the "
+           "permutation algebra alone")
+    anchor("A38 the completion family's equivariant locus", fam["equivariant"],
+           gen["tables"]["completion_census"]["members_whose_defect_is_the_identity"],
+           "the generality unit's own 96 exchange-equivariant completions")
 
     # ---- 6.8 controls -----------------------------------------------------
     progress("controls")
     say("")
     say("## 8  Controls")
-    say("")
-    pos_ok = (all(PROF[phis[tag]] == TARGET for tag in phis)
-              and len(phis) == len(realized) == 4)
-    if MUTANT == "control-lax":
-        pos_ok = False
-    say("   positive: all four readings of the two bases reproduce the profile : %s"
-        % pos_ok)
-    gate("XBA-POSITIVE-CONTROL", pos_ok, "must-pass",
-         {tag: list(PROF[p]) for tag, p in phis.items()})
-
     say("")
     say("   negative controls with teeth (one declared constructed violator each):")
     say("")
@@ -1504,14 +2031,27 @@ def main(argv=None) -> int:
 
     flip = tree_flip_test(links, walks, nnodes, PHI_R, CAND, ALLPHI, SORTED_TARGET,
                           BASIS, BKEYS,
-                          (len(prof_hist), len(hits_sorted), len(order4)))
+                          (len(prof_hist), len(hits_sorted), len(order4)), DERIVED)
     say("   spanning-tree flip-test : second tree %s; census identical %s; "
-        "candidate subset sizes identical %s"
-        % (flip["second_tree"], flip["census_identical"], flip["subsets_identical"]))
-    if MUTANT == "flip-lax":
-        flip["census_identical"] = False
-    gate("XBA-TREE-FLIP-TEST",
-         flip["census_identical"] and flip["subsets_identical"], "must-pass", flip)
+        "candidate subset sizes identical %s (%d of %d cells compared)"
+        % (flip["second_tree"], flip["census_identical"], flip["subsets_identical"],
+           flip["cells_compared"], len(CAND)))
+    gate("XBA-TREE-FLIP-CENSUS", flip["census_identical"], "disclosure",
+         {"note": "ANALYTICALLY FORCED and reported as a disclosure: a second "
+                  "spanning tree induces an INVERTIBLE change of cycle "
+                  "coordinates, and all three census numbers are invariant under "
+                  "any such change, so this clause cannot fail once the cycle "
+                  "rank gate passes. The genuinely independent census route is "
+                  "the ordered walk product of section 5",
+          **flip})
+    gate("XBA-CANDIDATE-CELL-COMPLETENESS",
+         flip["subsets_identical"] and flip["cells_compared"] == len(CAND)
+         and flip["the_two_cell_sets_are_equal"], "must-pass",
+         {"cells_compared": flip["cells_compared"],
+          "candidates": len(CAND),
+          "the_two_cell_sets_are_equal": flip["the_two_cell_sets_are_equal"],
+          "candidate_sizes_first_tree": flip["candidate_sizes_first_tree"],
+          "candidate_sizes_second_tree": flip["candidate_sizes_second_tree"]})
 
     rev_bad = 0
     for s in walks:
@@ -1524,6 +2064,19 @@ def main(argv=None) -> int:
          {"note": "analytically forced: every element of the group is an involution",
           "walks": len(walks), "walks_whose_reversal_differs": rev_bad})
 
+    # the steering residual, in its sharp measurable form
+    resid = some_basis_census(ALLPHI, BCLS, BKEYS)
+    say("   the declared basis is what C4 and C5 assert: %s of %s connections "
+        "admit the C5 shape on SOME basis of the cycle space, a basis exhibited "
+        "and verified for every one of them."
+        % (format(resid["connections_admitting_the_shape_on_some_basis"], ","),
+           format(len(ALLPHI), ",")))
+    gate("XBA-STEERING-RESIDUAL",
+         resid["connections_admitting_the_shape_on_some_basis"] == len(order4)
+         and (resid["for_how_many_a_basis_was_exhibited_and_verified"]
+              == resid["connections_admitting_the_shape_on_some_basis"]),
+         "must-pass", resid)
+
     # ---- 6.10 exactness, hygiene, verdict ---------------------------------
     src = Path(__file__).read_text()
     tree_ast = ast.parse(src)
@@ -1532,50 +2085,80 @@ def main(argv=None) -> int:
     floatcalls = [n for n in ast.walk(tree_ast)
                   if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
                   and n.func.id == "float"]
-    mutant_ne = count_mutant_exemptions(tree_ast)
+    mutant_ne, hoisted = count_mutant_exemptions(tree_ast)
     callsites, tainted = gate_callsites(tree_ast)
     if MUTANT == "float-lax":
         floats = floats + [None]
     if MUTANT == "exempt-lax":
         mutant_ne += 1
+    undeclared = [h for h in hoisted if h[1] not in MUTANTS]
     gate("XBA-EXACTNESS", len(floats) == 0 and len(floatcalls) == 0, "must-pass",
          {"float_literals": len(floats), "float_calls": len(floatcalls)})
-    gate("XBA-NO-MUTANT-EXEMPTION", mutant_ne == 0 and tainted == 0, "must-pass",
+    gate("XBA-NO-MUTANT-EXEMPTION",
+         mutant_ne == 0 and tainted == 0 and not undeclared, "must-pass",
          {"mutant_inequality_comparisons": mutant_ne,
           "gate_or_anchor_call_sites": callsites,
-          "call_sites_whose_arguments_reach_the_mutant_flag": tainted})
+          "call_sites_whose_arguments_reach_the_mutant_flag": tainted,
+          "the_flag_is_read_as": ["MUTANT", "M_ON"],
+          "assignments_to_a_gate_predicate_variable_guarded_by_the_flag":
+              ["%s <- %s" % (v, m) for v, m in hoisted],
+          "undeclared_guards": undeclared,
+          "note": "every such assignment is guarded by a DECLARED mutant, and "
+                  "the census measures that each of those mutants dies -- which "
+                  "is what 'in the falsifying direction' means as a measurement"})
 
     order_ok = all(g["index"] > DECLARATION_GATE_INDEX
                    for g in GATES if g["name"] in
                    ("XBA-CANDIDATES-MEASURED", "XBA-CLAUSE-CHAIN",
                     "XBA-CANDIDATE-CHAIN-CONSISTENCY", "XBA-NEGATIVE-CONTROLS"))
-    if M_ON["order-lax"]:
-        order_ok = False
-    gate("XBA-FREEZE-ORDER", order_ok, "must-pass",
-         {"declaration_gate_index": DECLARATION_GATE_INDEX,
+    gate("XBA-FREEZE-ORDER", order_ok, "disclosure",
+         {"note": "ANALYTICALLY FORCED and reported as a disclosure: gates are "
+                  "appended in execution order and these four calls textually "
+                  "follow the declaration, so no input can make this clause fail. "
+                  "The falsifiable content of the freeze is the profile counter "
+                  "above, which the freeze-lax mutant kills",
+          "declaration_gate_index": DECLARATION_GATE_INDEX,
           "every_constrained_subset_gate_comes_later": order_ok})
 
     say("")
     say("## 10  The verdict")
     say("")
     named = [n for n in forcing if results[n]["subset_size"] < len(ALLPHI)]
+    # the verdict is DERIVED from the measured lists ...
+    positive, partial_name = "XBA-SHARED-STRUCTURE-IDENTIFIED", "XBA-PARTIAL"
+    if M_ON["verdict-swap"]:
+        positive, partial_name = partial_name, positive
     if named:
-        verdict = "XBA-SHARED-STRUCTURE-IDENTIFIED"
+        verdict = positive
     elif partial:
-        verdict = "XBA-PARTIAL"
+        verdict = partial_name
     else:
         verdict = "XBA-COINCIDENCE-NOT-EXCLUDED"
-    if MUTANT == "verdict-lax":
+    if M_ON["verdict-lax"]:
         verdict = "XBA-EVERYTHING-IS-FINE"
+    # ... and gated against an independently written truth table over the same
+    # measured booleans, so that a swapped branch cannot survive.
     PREREGISTERED = ("XBA-SHARED-STRUCTURE-IDENTIFIED", "XBA-PARTIAL",
                      "XBA-COINCIDENCE-NOT-EXCLUDED")
-    gate("XBA-VOCABULARY", verdict in PREREGISTERED
-         or verdict.startswith("XBA-BLOCKED-AT-"), "must-pass",
-         {"verdict": verdict, "pre_registered": list(PREREGISTERED)})
+    TRUTH_TABLE = {(True, True): "XBA-SHARED-STRUCTURE-IDENTIFIED",
+                   (True, False): "XBA-SHARED-STRUCTURE-IDENTIFIED",
+                   (False, True): "XBA-PARTIAL",
+                   (False, False): "XBA-COINCIDENCE-NOT-EXCLUDED"}
+    want_verdict = TRUTH_TABLE[(bool(named), bool(partial))]
+    gate("XBA-VERDICT-DERIVED",
+         verdict == want_verdict and verdict in PREREGISTERED,
+         "must-pass",
+         {"verdict": verdict,
+          "the_verdict_the_measured_counts_require": want_verdict,
+          "a_forcing_candidate_both_bases_satisfy_exists": bool(named),
+          "a_shrinking_candidate_both_bases_satisfy_exists": bool(partial),
+          "pre_registered": list(PREREGISTERED)})
     say("   forcing candidates satisfied by both bases : %s" % (named or "none"))
     say("   shrinking but not forcing                  : %s" % (partial or "none"))
+    say("   the verdict the measured counts require    : %s" % want_verdict)
     say("")
     say("   >>> %s" % verdict)
+    say("   the property : COMPLETION-FORCED-SPLIT")
     say("")
 
     # ---- 6.11 mutant census ----------------------------------------------
@@ -1616,23 +2199,41 @@ def main(argv=None) -> int:
             "thesis": "The two bases' holonomy class-count profiles agree because "
                       "their two connections are ONE point of the 4,096-element "
                       "connection space on the common gauge-fixed graph, and that "
-                      "point is forced -- cycle by cycle -- by four species clauses "
-                      "both bases satisfy: a preparation leg common to the two "
-                      "frames, commuting local legs, a wing exchange that "
-                      "intertwines the local legs at a symmetric setting, and a "
-                      "wing exchange that does NOT intertwine the preparation leg. "
-                      "The agreement is not a 2.5% coincidence; the two bases are "
-                      "not two independent draws.",
+                      "point is forced -- cycle by cycle -- by FIVE clauses both "
+                      "bases satisfy: a preparation leg common to the two frames, "
+                      "commuting local legs, a wing exchange that intertwines the "
+                      "local legs at a symmetric setting, a wing exchange that "
+                      "does NOT intertwine the preparation leg, and the fifth "
+                      "premise that the resulting defect is an INVOLUTION. The "
+                      "first four are species facts; the fifth is a property of "
+                      "the declared completion, and it is what puts the two bases "
+                      "in one connection space at all. The agreement is not a "
+                      "2.5% coincidence; the two bases are not two independent "
+                      "draws.",
+            "the_central_law": "D = P u^-1 P u = [P, u]: the defect is the "
+                               "commutator of the declared exchange with the "
+                               "declared preparation leg. Existence of geometry = "
+                               "the commutator non-trivial; the holonomy group's "
+                               "order = twice the commutator's order; the forcing "
+                               "of the connection = the completion's own "
+                               "determination of that commutator.",
             "unit_verdict": verdict,
-            "the_property": "SPECIES-FORCED-SPLIT",
+            "the_property": "COMPLETION-FORCED-SPLIT",
             "forcing_candidates": named,
             "shrinking_but_not_forcing": partial,
             "the_shared_connection": {NAMES[cot[i]]: V4NAME[PHI_R[i]]
                                       for i in range(6)},
             "the_declared_basis_values": {k: V4NAME[v]
                                           for k, v in zip(BKEYS, beta_of(PHI_R))},
-            "residual_open": "why the two bases' 24-cell admission tables agree, "
-                             "hence why the graph is common, is not decided here",
+            "residual_open": [
+                "why the two bases' 24-cell admission tables agree, hence why the "
+                "graph is common, is not decided here",
+                "why both bases' completions have a NON-TRIVIAL INVOLUTIVE defect "
+                "-- %d of the %s members of the declared completion family, "
+                "reached by the two bases through unrelated routes -- is not "
+                "decided here either"
+                % (fam["involutive_non_trivial"], format(fam["family_size"], ",")),
+            ],
         },
         "tables": {
             "arena": {
@@ -1671,10 +2272,20 @@ def main(argv=None) -> int:
             },
             "candidates": results,
             "clause_chain": chain_rows,
+            "the_symbolic_derivation": DERIV,
             "third_instances": third,
+            "the_commutator_law": comm_rows,
+            "inert_parameters": inert,
+            "completion_family": fam,
+            "completion_family_at_dimension_four": fam4,
+            "the_steering_residual": resid,
             "negative_controls": negatives,
             "gauge_selftest": selftest,
             "tree_flip_test": flip,
+            "second_census_route": {
+                "distinct_profiles": len(hist2), "profile_hits": hits2,
+                "order_4_connections": order4_2,
+                "connections_where_the_two_routes_disagree": disagree2},
             "mutants": [{"name": k, "kind": v[0], "perturbs": v[1]}
                         for k, v in MUTANTS.items()],
             "gate_falsification": census,
@@ -1815,8 +2426,25 @@ def automorphisms(links, cot, coord, tree):
             out.append(c)
         return tuple(out)
 
+    # the mechanism, measured rather than asserted: what does the non-identity
+    # rule-preserving link map actually do to the thirteen links?
+    nontrivial = [m for m in lp_typed if any(m[i] != i for i in range(len(links)))]
+    fixedn = movedn = 0
+    moved_names = []
+    if nontrivial:
+        m0 = sorted(nontrivial)[0]
+        for i in range(len(links)):
+            if m0[i] == i:
+                fixedn += 1
+            else:
+                movedn += 1
+                moved_names.append("%s -> %s" % (links[i][3], links[m0[i]][3]))
+    detail = {"links_fixed_by_the_frame_swap": fixedn,
+              "links_moved_by_the_frame_swap": movedn,
+              "the_moved_links": moved_names}
     return (len(lp_typed), len(lp_full),
-            sorted({action(m) for m in lp_typed}), sorted({action(m) for m in lp_full}))
+            sorted({action(m) for m in lp_typed}), sorted({action(m) for m in lp_full}),
+            detail)
 
 
 def apply_action(act, phi):
@@ -1831,7 +2459,8 @@ def apply_action(act, phi):
     return tuple(out)
 
 
-def declare_candidates(BKEYS, BCLS, FULLCLS, REALCLS, BIGCLS, act_full, act_typed):
+def declare_candidates(BKEYS, BCLS, FULLCLS, REALCLS, BIGCLS, act_full, act_typed,
+                       derived):
     """the candidate family, DECLARED: predicate + statement, no profile read."""
     ix = {k: i for i, k in enumerate(BKEYS)}
 
@@ -1885,14 +2514,14 @@ def declare_candidates(BKEYS, BCLS, FULLCLS, REALCLS, BIGCLS, act_full, act_type
                      "constraint the 24-cell table places on a connection",
         "pred": lambda p: all(b != 0 for b in bigons(p)),
     }
-    C["C4 species-split (named)"] = {
+    C["C4 clause-split (named)"] = {
         "kind": "worker",
         "statement": "the six declared cycles take the values the species "
-                     "clauses force, with the group elements named: "
-                     "(1, 1, D, 1, 1, W)",
-        "pred": lambda p: beta(p) == derive_from_species(BKEYS),
+                     "clauses and the fifth premise DERIVE, with the group "
+                     "elements named",
+        "pred": lambda p: derived is not None and beta(p) == derived,
     }
-    C["C5 species-split (naming-closed)"] = {
+    C["C5 clause-split (naming-closed)"] = {
         "kind": "worker",
         "statement": "there are distinct non-identity d, w with the six declared "
                      "cycles at (1, 1, d, 1, 1, w)",
@@ -1930,7 +2559,7 @@ def declare_candidates(BKEYS, BCLS, FULLCLS, REALCLS, BIGCLS, act_full, act_type
         "pred": lambda p: len(generated_group(p)) == 4,
     }
     if MUTANT == "candidate-lax":
-        C["C5 species-split (naming-closed)"]["pred"] = lambda p: species_shape(beta(p)) or True
+        C["C5 clause-split (naming-closed)"]["pred"] = lambda p: species_shape(beta(p)) or True
     return C
 
 
@@ -1967,25 +2596,467 @@ def declared_clause_chain(BKEYS):
     return chain
 
 
-def derive_from_species(BKEYS):
-    """the declared-basis values the four species clauses force, derived
-    symbolically from the clauses and not read off any base.
+# ---------------------------------------------------------------------------
+# 7a.  THE SYMBOLIC DERIVATION
+# ---------------------------------------------------------------------------
+# The four species clauses PRESENT a group.  Writing u for the preparation
+# leg (E1: one leg, common to the two frames), a and b for the two local
+# legs, P for the wing exchange:
+#
+#     E2   a b = b a                    the two local legs commute
+#     E3   P a P = b ,  P b P = a       the wing exchange intertwines them
+#          P^2 = 1                      the exchange is an involution
+#
+# and NOTHING relates u to P.  So the presented group is the free product
+#
+#     G  =  ( Z^2  x|  C_2 )  *  Z            with  Z = <u>,
+#
+# in which every element has a normal form: an alternating list of syllables
+# a^alpha b^beta P^pi (the first factor) and u^n (the second).  Equality of
+# normal forms IS equality in G, so the six cycle words can be COMPUTED --
+# they are not typed anywhere in this file.
+#
+# The defect is the commutator  D = P u^-1 P u = [P, u], and D^2 is NOT the
+# identity in G: the fifth premise E5 is independent of E0-E4 and the
+# derivation is measured to be unable to return SQ_REAL_1 = D without it.
 
-    Writing u for the preparation leg, a and b for the two local legs, P for
-    the wing exchange and D = P u^-1 P u:
+H_ID = (0, 0, 0)                       # a^0 b^0 P^0
 
-      SQ_FULL_1 = u^-1 . u                             = 1     (E1)
-      CANON     = (a b u)^-1 (b a u)                   = 1     (E1, E2)
-      SQ_REAL_1 = (u)^-1 P (u) . P                     = D     (E4)
-      SQ_REAL_2 = (b u)^-1 P (a u) . (u^-1 P u)        = 1     (E1, E3)
-      SQ_REAL_3 = (a b u)^-1 P (b a u) . (b u)^-1 P(au)= 1     (E2, E3)
-      BIGON_0   = 1^-1 . P                             = W     (E0)
+
+def h_mul(x, y, swap):
+    """multiply in the first factor; `swap` is E3 (P exchanges a and b)."""
+    a1, b1, p1 = x
+    a2, b2, p2 = y
+    if p1 and swap:
+        a2, b2 = b2, a2
+    return (a1 + a2, b1 + b2, p1 ^ p2)
+
+
+def h_inv(x, swap):
+    a, b, p = x
+    if not p:
+        return (-a, -b, 0)
+    return (-b, -a, 1) if swap else (-a, -b, 1)
+
+
+def nf_mul(A, B, swap=True):
+    """product of two normal forms, reduced (free-product reduction)."""
+    out = list(A)
+    for item in B:
+        while out and out[-1][0] == item[0]:
+            last = out.pop()
+            if item[0] == "H":
+                m = h_mul(last[1], item[1], swap)
+                item = None if m == H_ID else ("H", m)
+            else:
+                m = last[1] + item[1]
+                item = None if m == 0 else ("K", m)
+            if item is None:
+                break
+        if item is not None:
+            out.append(item)
+    return out
+
+
+def nf_inv(A, swap=True):
+    return [("H", h_inv(v, swap)) if k == "H" else ("K", -v)
+            for k, v in reversed(A)]
+
+
+def nf(*words, swap=True):
+    r = []
+    for w in words:
+        r = nf_mul(r, w, swap)
+    return r
+
+
+def nf_show(A):
+    if not A:
+        return "e"
+    out = []
+    for k, v in A:
+        if k == "K":
+            out.append("u" if v == 1 else "u^%d" % v)
+        else:
+            a, b, p = v
+            s = ""
+            if a:
+                s += "a" if a == 1 else "a^%d" % a
+            if b:
+                s += "b" if b == 1 else "b^%d" % b
+            if p:
+                s += "P"
+            out.append(s or "e")
+    return ".".join(out)
+
+
+GEN_A = [("H", (1, 0, 0))]
+GEN_B = [("H", (0, 1, 0))]
+GEN_P = [("H", (0, 0, 1))]
+GEN_U = [("K", 1)]
+
+
+def symbolic_labels(links, nlegs, swap=True):
+    """the thirteen gauge-fixed link labels, DERIVED as words in G.
+
+    The transports are the ordered leg products of each frame (frame 1 carries
+    u, a, b; frame 2 carries u, b, a -- the two frames are two orders of the
+    same two local events, with the SAME preparation leg, which is E1), and
+    the label of a link x -> y carrying M is T_y^-1 M T_x.
     """
-    val = {"SQ_FULL_1": 0, "CANON": 0, "SQ_REAL_1": 2, "SQ_REAL_2": 0,
-           "SQ_REAL_3": 0, "BIGON_0": 1}
-    if MUTANT == "species-lax":
-        val["SQ_REAL_2"] = 1
-    return tuple(val[k] for k in BKEYS)
+    F1 = [GEN_U, GEN_A, GEN_B]
+    F2 = [GEN_U, GEN_B, GEN_A]
+    T = {("F1", 0): [], ("F2", 0): []}
+    for t in range(1, nlegs + 1):
+        T[("F1", t)] = nf(F1[t - 1], T[("F1", t - 1)], swap=swap)
+        T[("F2", t)] = nf(F2[t - 1], T[("F2", t - 1)], swap=swap)
+    lab = {}
+    for (a, b, kind, name) in links:
+        fa, ta = ("F1", a) if a < 4 else ("F2", a - 4)
+        fb, tb = ("F1", b) if b < 4 else ("F2", b - 4)
+        if kind == "LEG":
+            M = (F1 if fa == "F1" else F2)[ta]
+        elif kind == "FULL":
+            M = []
+        else:
+            M = GEN_P
+        lab[name] = nf(nf_inv(T[(fb, tb)], swap), M, T[(fa, ta)], swap=swap)
+    return lab
+
+
+def cycle_walk(links, edges):
+    """an ordered closed walk traversing each of a declared cycle's edges once."""
+    start = min(min(links[i][0], links[i][1]) for i in edges)
+
+    def rec(v, remaining, acc):
+        if not remaining:
+            return acc if v == start else None
+        for k, li in enumerate(remaining):
+            a, b = links[li][0], links[li][1]
+            for rv, (x, y) in ((False, (a, b)), (True, (b, a))):
+                if x == v:
+                    r = rec(y, remaining[:k] + remaining[k + 1:], acc + [(li, rv)])
+                    if r is not None:
+                        return r
+        return None
+    return rec(start, list(edges), [])
+
+
+def word_of_walk(links, walk, lab, swap=True):
+    """the holonomy word of an ordered walk, in the raw route's own
+    composition order (A <- M_link . A), a reversed link contributing M^-1."""
+    A = []
+    for (li, rv) in walk:
+        M = lab[links[li][3]]
+        A = nf(nf_inv(M, swap) if rv else M, A, swap=swap)
+    return A
+
+
+def match_PD(word, swap=True):
+    """express a word as P^i D^j with i in {0,1}, j in {-2..2}, or None."""
+    D = nf(GEN_P, nf_inv(GEN_U, swap), GEN_P, GEN_U, swap=swap)
+    for i in (0, 1):
+        for j in (0, 1, -1, 2, -2):
+            w = []
+            for _ in range(abs(j)):
+                w = nf(w, D if j > 0 else nf_inv(D, swap), swap=swap)
+            if i:
+                w = nf(GEN_P, w, swap=swap)
+            if w == word:
+                return (i, j)
+    return None
+
+
+def derive_from_species(links, BASIS, BKEYS):
+    """DERIVE the declared-basis values from the species clauses.
+
+    Returns (values, detail).  `values` is the tuple of Klein-group values in
+    BKEYS order, or None if the derivation does not land in the group -- which
+    is exactly what happens when the fifth premise is withheld.
+    """
+    swap = not M_ON["species-lax"]                 # E3
+    e5 = not M_ON["involutive-lax"]                # E5: D^2 = 1
+    lab = symbolic_labels(links, 3, swap=swap)
+    detail = {"the_presented_group": "(Z^2 x| C2) * Z, on a, b, P and u",
+              "the_thirteen_derived_labels":
+                  {k: nf_show(v) for k, v in lab.items()},
+              "D_squared_is_the_identity_in_the_presented_group":
+                  nf(nf(GEN_P, nf_inv(GEN_U, swap), GEN_P, GEN_U, swap=swap),
+                     nf(GEN_P, nf_inv(GEN_U, swap), GEN_P, GEN_U, swap=swap),
+                     swap=swap) == [],
+              "P_D_P_equals_D_inverse":
+                  nf(GEN_P, nf(GEN_P, nf_inv(GEN_U, swap), GEN_P, GEN_U,
+                               swap=swap), GEN_P, swap=swap)
+                  == nf_inv(nf(GEN_P, nf_inv(GEN_U, swap), GEN_P, GEN_U,
+                               swap=swap), swap),
+              "cycles": {}}
+    vals = []
+    for k in BKEYS:
+        w = cycle_walk(links, BASIS[k])
+        word = word_of_walk(links, w, lab, swap=swap)
+        pd = match_PD(word, swap=swap)
+        row = {"walk": [("~" if rv else "") + links[li][3] for li, rv in w],
+               "the_derived_word": nf_show(word),
+               "as_P_i_D_j": list(pd) if pd else None}
+        v = None
+        if pd is not None:
+            i, j = pd
+            if e5:
+                j = j % 2                          # E5: D^2 = 1
+            if j in (0, 1):
+                v = (2 if j else 0) ^ (1 if i else 0)
+        row["the_Klein_value"] = V4NAME[v] if v is not None else None
+        detail["cycles"][k] = row
+        vals.append(v)
+    detail["the_fifth_premise_was_supplied"] = e5
+    return (tuple(vals) if all(v is not None for v in vals) else None), detail
+
+
+def operator_order(K, M, I, cap=32):
+    """the order of an exact operator, or the cap."""
+    o = 1
+    X = M
+    while X != I and o < cap:
+        X = sp_mul(K, X, M)
+        o += 1
+    return o
+
+
+def generated_operator_group(b):
+    """the group the wing exchange and the defect generate, as a set of exact
+    operators (closed under multiplication by the two generators)."""
+    K = b.K
+    seen = {tuple(sorted(b.I.items())): b.I}
+    frontier = [b.I]
+    while frontier:
+        nxt = []
+        for m in frontier:
+            for g in (b.PW, b.D):
+                p = sp_mul(K, g, m)
+                key = tuple(sorted(p.items()))
+                if key not in seen:
+                    seen[key] = p
+                    nxt.append(p)
+        frontier = [] if M_ON["group-lax"] else nxt
+        if len(seen) > 64:
+            break
+    return seen
+
+
+def _perm_compose(p, q):
+    return tuple(p[q[i]] for i in range(len(q)))
+
+
+def _perm_inv(p):
+    o = [0] * len(p)
+    for i, v in enumerate(p):
+        o[v] = i
+    return tuple(o)
+
+
+def _perm_order_and_fixed(p):
+    """order (lcm of the cycle lengths) and fixed-point count, in one pass."""
+    n = len(p)
+    seen = [False] * n
+    o = 1
+    fix = 0
+    for i in range(n):
+        if seen[i]:
+            continue
+        ln = 0
+        j = i
+        while not seen[j]:
+            seen[j] = True
+            j = p[j]
+            ln += 1
+        if ln == 1:
+            fix += 1
+        o = o * ln // math.gcd(o, ln)
+    return o, fix
+
+
+def completion_family_census(ns):
+    """the completion family, at the level of the permutation algebra alone.
+
+    The declared family (the generality unit's) is V = H . Q with Q a
+    permutation of the ns^2 system-pair labels FIXING THE FIRST, so that the
+    completion carries the start state to the declared preparation.  The
+    Householder cancels out of the defect, which is therefore the permutation
+    D = Sigma Q^-1 Sigma Q.  The full family is swept exhaustively at ns = 3
+    ((ns^2-1)! = 40,320 members); at larger ns only the single-transposition
+    sub-family is swept, and the scope is declared.
+    """
+    m = ns * ns
+    s = pair_swap(ns)
+    out = {"the_declared_family": "V = H . Q, Q a permutation of the %d "
+                                  "system-pair labels fixing the first" % m,
+           "system_pair_labels": m}
+
+    def defect(pi, sw=s):
+        return _perm_compose(_perm_compose(sw, _perm_compose(_perm_inv(pi), sw)), pi)
+
+    # the single-transposition sub-family, exhaustive at every ns
+    split = collections.Counter()
+    lex = {}
+    for i in range(m):
+        for j in range(i + 1, m):
+            pi = list(range(m))
+            pi[i], pi[j] = pi[j], pi[i]
+            o, _f = _perm_order_and_fixed(defect(tuple(pi)))
+            split[o] += 1
+            if i > 0 and o not in lex:
+                lex[o] = (i, j)
+    out["single_transpositions"] = m * (m - 1) // 2
+    out["single_transpositions_by_the_order_of_the_defect"] = dict(sorted(split.items()))
+    for o in (1, 2, 3):
+        out["the_lex_first_completion_whose_defect_has_order_%d" % o] = (
+            list(lex[o]) if o in lex else None)
+    out["the_lex_first_completions_are_transpositions_fixing_the_first_label"] = True
+
+    if ns == 3:
+        cls = collections.Counter()
+        byfix = collections.Counter()
+        byord = collections.Counter()
+        sw = tuple(range(m)) if MUTANT == "family-lax" else s
+        for tail in itertools.permutations(range(1, m)):
+            o, f = _perm_order_and_fixed(defect((0,) + tail, sw))
+            cls["ord=%d,fixed=%d" % (o, f * m)] += 1
+            byfix[f * m] += 1
+            byord[o] += 1
+        out["scope"] = "EXHAUSTIVE over the whole declared family"
+        out["family_size"] = sum(cls.values())
+        out["class_sizes"] = dict(sorted(cls.items()))
+        out["members_by_the_fixed_configurations_of_the_defect"] = {
+            str(k): v for k, v in sorted(byfix.items())}
+        out["members_by_the_order_of_the_defect"] = {str(k): v for k, v
+                                                     in sorted(byord.items())}
+        out["involutive_non_trivial"] = cls.get("ord=2,fixed=%d" % (5 * m), 0)
+        out["equivariant"] = byord.get(1, 0)
+    else:
+        out["scope"] = ("the single-transposition sub-family only; the full "
+                        "family has (%d)! members and is not swept" % (m - 1))
+        out["family_size"] = None
+        out["class_sizes"] = None
+        out["involutive_non_trivial"] = None
+        out["equivariant"] = None
+    return out
+
+
+def inertness_sweep(psi_a, psi_b):
+    """which declared parameters can reach the connection at all?
+
+    (i) the preparation: over every single transposition of the nine
+        system-pair labels, the two declared exchange-invariant preparations
+        are measured to give the SAME defect -- the Householder cancels;
+    (ii) the rotation: over six integer quaternions the defect operator and
+        the wing exchange are measured identical, and E2 and E3 both hold.
+    """
+    K = RatRing
+    ns, npt = 3, 3
+    m = ns * ns
+    same = 0
+    total = 0
+
+    def completion(psi, transposition):
+        w = [psi[k] - (Fraction(1) if k == 0 else Fraction(0)) for k in range(m)]
+        ww = sum(t * t for t in w)
+        H = [[(Fraction(1) if a == b else Fraction(0)) - 2 * w[a] * w[b] / ww
+              for b in range(m)] for a in range(m)]
+        perm = list(range(m))
+        i, j = transposition
+        perm[i], perm[j] = perm[j], perm[i]
+        return [[H[a][perm[b]] for b in range(m)] for a in range(m)]
+
+    psi_2 = list(psi_b)
+    if MUTANT == "inert-lax":
+        psi_2 = [Fraction(0)] * m
+        psi_2[0] = Fraction(3, 5)
+        psi_2[1] = Fraction(4, 5)
+    for i in range(m):
+        for j in range(i + 1, m):
+            total += 1
+            da = independent_defect(K, completion(psi_a, (i, j)), ns, npt)
+            db = independent_defect(K, completion(psi_2, (i, j)), ns, npt)
+            if da == db:
+                same += 1
+    quats = [(1, 0, 0, 0), (2, 1, 0, 0), (3, 0, 0, 2), (5, 1, 2, 3),
+             (1, 1, 1, 1), (7, 2, 1, 0)]
+    defects = []
+    e23 = 0
+    for q in quats:
+        b = build_species_instance("probe", ns, npt, [euler_rodrigues(q)], (0, 0),
+                                   psi_a, (1, 2), "rotation probe")
+        UA, UB = b.legs["F1"][1], b.legs["F1"][2]
+        if (sp_mul(K, UA, UB) == sp_mul(K, UB, UA)
+                and sp_mul(K, b.PW, sp_mul(K, UA, b.PW)) == UB):
+            e23 += 1
+        defects.append(b.D)
+    return {"completions_swept": total,
+            "completions_where_the_two_preparations_give_the_same_defect": same,
+            "rotation_pairs_swept": len(quats),
+            "rotations_where_E2_and_E3_both_hold": e23,
+            "the_defect_depends_on_the_rotation":
+                any(d != defects[0] for d in defects),
+            "note": "the preparation cancels out of the defect and the rotation "
+                    "enters neither the preparation leg nor the wing exchange, so "
+                    "two of the third instance's three declared variations cannot "
+                    "reach the connection"}
+
+
+def some_basis_census(ALLPHI, BCLS, BKEYS):
+    """R1's sharp form of the steering residual: on how many connections is the
+    C5 SHAPE (1,1,d,1,1,w) available on SOME basis of the cycle space?
+
+    For each connection an explicit basis is CONSTRUCTED and verified: four
+    kernel vectors in the four flat slots, and two vectors carrying distinct
+    non-identity values in the other two.
+    """
+    ok = 0
+    exhibited = 0
+    for phi in ALLPHI:
+        img = generated_group(phi)
+        if len(img) != 4:
+            continue
+        ok += 1
+        ker = [c for c in range(1, 64) if hol_of_class(phi, c) == 0]
+        piv = []
+        for c in ker:
+            r = c
+            for p in piv:
+                r = min(r, r ^ p)
+            if r:
+                piv.append(r)
+                piv.sort(reverse=True)
+        if len(piv) != 4:
+            continue
+        vals = sorted({hol_of_class(phi, c) for c in range(1, 64)} - {0})
+        d = next((c for c in range(1, 64) if hol_of_class(phi, c) == vals[0]), None)
+        w = next((c for c in range(1, 64) if hol_of_class(phi, c) == vals[1]), None)
+        if d is None or w is None:
+            continue
+        basis = [piv[0], piv[1], d, piv[2], piv[3], w]
+        if M_ON["residual-lax"]:
+            basis = [piv[0], piv[0], d, piv[2], piv[3], w]
+        rank = 0
+        pv = []
+        for c in basis:
+            r = c
+            for p in pv:
+                r = min(r, r ^ p)
+            if r:
+                pv.append(r)
+                pv.sort(reverse=True)
+                rank += 1
+        shape = tuple(hol_of_class(phi, c) for c in basis)
+        if rank == 6 and species_shape(shape):
+            exhibited += 1
+    return {"connections_admitting_the_shape_on_some_basis": ok,
+            "for_how_many_a_basis_was_exhibited_and_verified": exhibited,
+            "the_others_cannot":
+                "a connection whose image is smaller than the group cannot take "
+                "two distinct non-identity values on any basis",
+            "note": "so the declared basis, not the freeze, is what C4 and C5 "
+                    "assert"}
 
 
 def build_violator(rec, PHI_R, ALLPHI, beta_of, phi_of_beta, BKEYS):
@@ -2033,14 +3104,18 @@ def gauge_selftest(links, walks, PHI_R, cot, coord, TARGET):
     HOLCACHE.clear()
     CACHE_STATS.update({"hits": 0, "misses": 0, "bypassed_lookups": 0,
                         "primed": 0, "reserved_returns": 0})
+    stored = {}
     for m, bits, _c in mask_bits:
         x = 0
         for bi in bits:
             x ^= labels0[bi]
-        HOLCACHE[("selftest", m)] = x
+        HOLCACHE[("selftest", m)] = (x ^ 1) if MUTANT == "cache-garbage" else x
+        stored[m] = x
         CACHE_STATS["primed"] += 1
+    # READ the primed keys back and compare with what was stored -- the claim
+    # is that the cache returns its values, so the values are read, not the keys.
     CACHE_STATS["reserved_returns"] = sum(
-        1 for m in masks if ("selftest", m) in HOLCACHE)
+        1 for m in masks if HOLCACHE.get(("selftest", m)) == stored[m])
 
     deviations = 0
     misconv = 0
@@ -2094,7 +3169,7 @@ def gauge_selftest(links, walks, PHI_R, cot, coord, TARGET):
 
 
 def tree_flip_test(links, walks, nnodes, PHI_R, CAND, ALLPHI, SORTED_TARGET,
-                   BASIS, BKEYS, expected):
+                   BASIS, BKEYS, expected, derived):
     """the whole census recomputed on a SECOND declared spanning tree: the
     bookkeeping split this unit carries."""
     order = [i for i, (_a, _b, k, n) in enumerate(links) if k != "FULL"] + \
@@ -2109,8 +3184,11 @@ def tree_flip_test(links, walks, nnodes, PHI_R, CAND, ALLPHI, SORTED_TARGET,
     hits2 = sum(1 for p in ALLPHI if tuple(sorted(P2[p])) == SORTED_TARGET)
     order4_2 = sum(1 for p in ALLPHI if len(generated_group(p)) == 4)
     census_ok = ([len(hist_p2), hits2, order4_2] == list(expected))
-    # candidate subsets are cycle-space predicates: they must not move
+    # candidate subsets are cycle-space predicates: they must not move.  ALL
+    # twelve are compared -- the automorphism actions are recomputed in the
+    # second tree's own coordinates rather than passed as empty lists.
     sizes1 = {n: sum(1 for p in ALLPHI if r["pred"](p)) for n, r in CAND.items()}
+    _at2, _af2, act_typed2, act_full2, _d2 = automorphisms(links, cot2, coord2, tree2)
     CAND2 = declare_candidates(BKEYS, BCLS2, sorted({walk_class(s, coord2) for s in
                                                      enumerate_walks(links, 0, 8,
                                                      allowed=[i for i, l in enumerate(links)
@@ -2122,30 +3200,88 @@ def tree_flip_test(links, walks, nnodes, PHI_R, CAND, ALLPHI, SORTED_TARGET,
                                {t: edgeset_class([i for i, l in enumerate(links)
                                                   if l[3] in ("FULL@%d" % t, "REAL@%d" % t)],
                                                  coord2) for t in (0, 1, 3)},
-                               [], [])
-    sizes2 = {n: sum(1 for p in ALLPHI if r["pred"](p)) for n, r in CAND2.items()
-              if not n.startswith("C2")}
-    subsets_ok = all(sizes1[n] == sizes2[n] for n in sizes2)
+                               act_full2, act_typed2, derived)
+    sizes2 = {n: sum(1 for p in ALLPHI if r["pred"](p)) for n, r in CAND2.items()}
+    if M_ON["cells-lax"]:
+        sizes2 = {}
+    subsets_ok = (bool(sizes2) and all(sizes1[n] == sizes2[n] for n in sizes2))
     return {"second_tree": [links[i][3] for i in tree2],
             "distinct_profiles": len(hist_p2), "profile_hits": hits2,
             "order_4": order4_2,
             "the_first_tree_s_values": list(expected),
             "census_identical": census_ok,
             "subsets_identical": subsets_ok,
+            "cells_compared": len(sizes2),
+            "the_two_cell_sets_are_equal": set(sizes1) == set(sizes2),
             "candidate_sizes_first_tree": sizes1,
             "candidate_sizes_second_tree": sizes2}
 
 
+FLAG_NAMES = ("MUTANT", "M_ON")
+
+
+def _flag_read(node):
+    """the mutant names an expression tests, if it reads the flag at all."""
+    out = set()
+    for x in ast.walk(node):
+        if isinstance(x, ast.Name) and x.id in FLAG_NAMES:
+            out.add(None)
+        if isinstance(x, ast.Constant) and isinstance(x.value, str) \
+                and x.value in MUTANTS:
+            out.add(x.value)
+    return out
+
+
 def count_mutant_exemptions(tree_ast):
+    """(i) inequality comparisons against the mutant flag; and (ii) every
+    assignment to a variable that some gate's predicate tests, made under a
+    test of the mutant flag -- the hoist R3's MINOR-3 asks for."""
     n = 0
     for node in ast.walk(tree_ast):
         if isinstance(node, ast.Compare):
             names = {x.id for x in ast.walk(node) if isinstance(x, ast.Name)}
-            if "MUTANT" in names:
+            if names & set(FLAG_NAMES):
                 for op in node.ops:
                     if isinstance(op, (ast.NotEq, ast.NotIn, ast.IsNot)):
                         n += 1
-    return n
+    def predicate_vars(scope):
+        """the free variables a gate predicate tests, inside `scope`."""
+        out = set()
+        for node in ast.walk(scope):
+            if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) \
+                    and node.func.id in ("gate", "anchor"):
+                for a in node.args[1:2]:
+                    names = {x.id for x in ast.walk(a) if isinstance(x, ast.Name)}
+                    bound = set()
+                    for c in ast.walk(a):
+                        if isinstance(c, ast.comprehension):
+                            bound |= {x.id for x in ast.walk(c.target)
+                                      if isinstance(x, ast.Name)}
+                        if isinstance(c, ast.Lambda):
+                            bound |= {x.arg for x in c.args.args}
+                    out |= (names - bound)
+        return out
+
+    gate_vars = predicate_vars(tree_ast)
+    hoisted = []
+    for node in ast.walk(tree_ast):
+        if not isinstance(node, ast.If):
+            continue
+        flags = _flag_read(node.test)
+        if not flags:
+            continue
+        scoped = predicate_vars(node)     # a gate INSIDE the guarded block
+        for st in ast.walk(node):
+            if isinstance(st, (ast.Assign, ast.AugAssign)):
+                tgts = st.targets if isinstance(st, ast.Assign) else [st.target]
+                for t in tgts:
+                    for x in ast.walk(t):
+                        if isinstance(x, ast.Name) and x.id in gate_vars \
+                                and x.id not in scoped:
+                            named = sorted(f for f in flags if f is not None)
+                            for f in (named or ["UNNAMED-GUARD"]):
+                                hoisted.append((x.id, f))
+    return n, sorted(set(hoisted))
 
 
 def gate_callsites(tree_ast):
@@ -2155,26 +3291,36 @@ def gate_callsites(tree_ast):
                 and node.func.id in ("gate", "anchor"):
             sites += 1
             names = {x.id for x in ast.walk(node) if isinstance(x, ast.Name)}
-            if "MUTANT" in names:
+            if names & set(FLAG_NAMES):
                 tainted += 1
     return sites, tainted
 
 
-def run_mutant_census():
+def _run_one_mutant(name):
     import subprocess
     me = str(Path(__file__).resolve())
+    r = subprocess.run([sys.executable, me, "--mutant", name],
+                       capture_output=True, text=True)
+    killed = (r.returncode != 0)
+    why = []
+    for ln in r.stdout.splitlines():
+        if ln.startswith("ANCHOR FAILURE"):
+            why.append(ln[len("ANCHOR FAILURE"):].strip())     # the FULL name
+        if ln.startswith("FAILED:"):
+            why.extend(x.strip() for x in ln[len("FAILED:"):].split(","))
+    return name, killed, why
+
+
+def run_mutant_census():
+    import concurrent.futures
     died, survived, per = 0, [], {}
     falsified = collections.defaultdict(list)
-    for name in MUTANTS:
-        r = subprocess.run([sys.executable, me, "--mutant", name],
-                           capture_output=True, text=True)
-        killed = (r.returncode != 0)
-        why = []
-        for ln in r.stdout.splitlines():
-            if ln.startswith("ANCHOR FAILURE"):
-                why.append(ln.split()[-1])
-            if ln.startswith("FAILED:"):
-                why.extend(x.strip() for x in ln[len("FAILED:"):].split(","))
+    results = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for name, killed, why in ex.map(_run_one_mutant, list(MUTANTS)):
+            results[name] = (killed, why)
+    for name in MUTANTS:                       # declared order: deterministic
+        killed, why = results[name]
         per[name] = {"kind": MUTANTS[name][0], "died": killed, "falsified": why}
         if killed:
             died += 1

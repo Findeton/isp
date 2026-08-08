@@ -585,14 +585,31 @@
     "WD": 106
    },
    "why": "the NT receipt names its elements; the counts must match element by element"
+  },
+  {
+   "got": 864,
+   "name": "A37 the completion family's involutive class",
+   "ok": true,
+   "want": 864,
+   "why": "the generality unit's own 864 of 40,320, recomputed here from the permutation algebra alone"
+  },
+  {
+   "got": 96,
+   "name": "A38 the completion family's equivariant locus",
+   "ok": true,
+   "want": 96,
+   "why": "the generality unit's own 96 exchange-equivariant completions"
   }
  ],
  "findings": {
   "forcing_candidates": [
-   "C4 species-split (named)",
-   "C5 species-split (naming-closed)"
+   "C4 clause-split (named)",
+   "C5 clause-split (naming-closed)"
   ],
-  "residual_open": "why the two bases' 24-cell admission tables agree, hence why the graph is common, is not decided here",
+  "residual_open": [
+   "why the two bases' 24-cell admission tables agree, hence why the graph is common, is not decided here",
+   "why both bases' completions have a NON-TRIVIAL INVOLUTIVE defect -- 864 of the 40,320 members of the declared completion family, reached by the two bases through unrelated routes -- is not decided here either"
+  ],
   "shrinking_but_not_forcing": [
    "C1 source-split",
    "C3 admission-pattern",
@@ -602,6 +619,7 @@
    "C9 unintertwined preparation leg",
    "C10 group of order four"
   ],
+  "the_central_law": "D = P u^-1 P u = [P, u]: the defect is the commutator of the declared exchange with the declared preparation leg. Existence of geometry = the commutator non-trivial; the holonomy group's order = twice the commutator's order; the forcing of the connection = the completion's own determination of that commutator.",
   "the_declared_basis_values": {
    "BIGON_0": "W",
    "CANON": "1",
@@ -610,7 +628,7 @@
    "SQ_REAL_2": "1",
    "SQ_REAL_3": "1"
   },
-  "the_property": "SPECIES-FORCED-SPLIT",
+  "the_property": "COMPLETION-FORCED-SPLIT",
   "the_shared_connection": {
    "FULL@1": "1",
    "FULL@3": "1",
@@ -619,14 +637,20 @@
    "REAL@2": "WD",
    "REAL@3": "WD"
   },
-  "thesis": "The two bases' holonomy class-count profiles agree because their two connections are ONE point of the 4,096-element connection space on the common gauge-fixed graph, and that point is forced -- cycle by cycle -- by four species clauses both bases satisfy: a preparation leg common to the two frames, commuting local legs, a wing exchange that intertwines the local legs at a symmetric setting, and a wing exchange that does NOT intertwine the preparation leg. The agreement is not a 2.5% coincidence; the two bases are not two independent draws.",
+  "thesis": "The two bases' holonomy class-count profiles agree because their two connections are ONE point of the 4,096-element connection space on the common gauge-fixed graph, and that point is forced -- cycle by cycle -- by FIVE clauses both bases satisfy: a preparation leg common to the two frames, commuting local legs, a wing exchange that intertwines the local legs at a symmetric setting, a wing exchange that does NOT intertwine the preparation leg, and the fifth premise that the resulting defect is an INVOLUTION. The first four are species facts; the fifth is a property of the declared completion, and it is what puts the two bases in one connection space at all. The agreement is not a 2.5% coincidence; the two bases are not two independent draws.",
   "unit_verdict": "XBA-SHARED-STRUCTURE-IDENTIFIED"
  },
  "gates": [
   {
    "evidence": {
     "agreeing": 24,
-    "cells": 24
+    "cells": 24,
+    "distinct_cell_values": 4,
+    "the_drawn_permutations": [
+     "FULL -> the identity",
+     "REAL -> the wing exchange"
+    ],
+    "the_permutation_coordinate_is_constant_per_rule": true
    },
    "index": 0,
    "kind": "must-pass",
@@ -700,7 +724,8 @@
      "common_preparation_leg": true,
      "every_declared_operator_is_orthogonal": true,
      "legs_commute": true,
-     "the_four_named_elements_are_distinct": true
+     "the_four_named_elements_are_distinct": true,
+     "the_four_named_elements_close_under_multiplication": true
     },
     "base 1 @ SP-F": {
      "D_fixed": 18,
@@ -711,7 +736,8 @@
      "common_preparation_leg": true,
      "every_declared_operator_is_orthogonal": true,
      "legs_commute": true,
-     "the_four_named_elements_are_distinct": true
+     "the_four_named_elements_are_distinct": true,
+     "the_four_named_elements_close_under_multiplication": true
     },
     "base G @ GP-E": {
      "D_fixed": 45,
@@ -722,7 +748,8 @@
      "common_preparation_leg": true,
      "every_declared_operator_is_orthogonal": true,
      "legs_commute": true,
-     "the_four_named_elements_are_distinct": true
+     "the_four_named_elements_are_distinct": true,
+     "the_four_named_elements_close_under_multiplication": true
     },
     "base G @ GP-F": {
      "D_fixed": 45,
@@ -733,8 +760,10 @@
      "common_preparation_leg": true,
      "every_declared_operator_is_orthogonal": true,
      "legs_commute": true,
-     "the_four_named_elements_are_distinct": true
-    }
+     "the_four_named_elements_are_distinct": true,
+     "the_four_named_elements_close_under_multiplication": true
+    },
+    "note": "E1 common_preparation_leg, E2 legs_commute, E3 W_intertwines_local_leg, E4 NOT W_intertwines_prep, and the FIFTH premise E5 D_is_an_involution -- equivalently that the four named elements close into a group"
    },
    "index": 5,
    "kind": "must-pass",
@@ -801,9 +830,57 @@
   },
   {
    "evidence": {
-    "profiles_computed_before_the_declaration": 0
+    "per_reading_class_counts": {
+     "base 1 @ SP-E": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "base 1 @ SP-F": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "base G @ GP-E": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "base G @ GP-F": [
+      82,
+      86,
+      90,
+      106
+     ]
+    },
+    "readings": 4,
+    "the_element_wise_counts_read_from_the_transport_receipt": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "the_multiset_counts_read_from_the_generality_receipt": [
+     82,
+     86,
+     90,
+     106
+    ]
    },
    "index": 9,
+   "kind": "must-pass",
+   "name": "XBA-POSITIVE-CONTROL",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "census_profile_evaluations_before_the_declaration": 0,
+    "note": "the realized class counts are an ANCHORED INPUT, read out of the two terminal receipts, and are recomputed from the rebuilt bases by the comparator and by the positive control before this point; what this counter measures is that no profile of any member of the 4,096 had been evaluated"
+   },
+   "index": 10,
    "kind": "must-pass",
    "name": "XBA-CANDIDATE-FREEZE",
    "ok": true
@@ -816,8 +893,8 @@
      "C2b aut-equivariance (full)",
      "C2c aut-equivariance up to naming",
      "C3 admission-pattern",
-     "C4 species-split (named)",
-     "C5 species-split (naming-closed)",
+     "C4 clause-split (named)",
+     "C5 clause-split (naming-closed)",
      "C6 common preparation leg",
      "C7 commuting local legs",
      "C8 intertwined local legs",
@@ -826,16 +903,42 @@
     ],
     "note": "the declaration itself is a disclosure; its teeth are the freeze gate before it and the consistency gate after it"
    },
-   "index": 10,
+   "index": 11,
    "kind": "disclosure",
    "name": "XBA-CANDIDATES-DECLARED",
    "ok": true
   },
   {
    "evidence": {
+    "connections_where_the_two_routes_disagree": 0,
+    "distinct_profiles": [
+     89,
+     89
+    ],
+    "distinct_walk_parity_vectors_vs_distinct_cycle_classes": [
+     27,
+     27
+    ],
+    "note": "route 2 is a different algorithm, not a change of coordinates: it reconstructs the thirteen link labels and takes the ordered walk product, so it does not use cycle_coords or walk_class at all",
+    "order_4_connections": [
+     3906,
+     3906
+    ],
+    "profile_hits": [
+     96,
+     96
+    ]
+   },
+   "index": 12,
+   "kind": "must-pass",
+   "name": "XBA-SECOND-ROUTE-CENSUS",
+   "ok": true
+  },
+  {
+   "evidence": {
     "forcing": [
-     "C4 species-split (named)",
-     "C5 species-split (naming-closed)"
+     "C4 clause-split (named)",
+     "C5 clause-split (naming-closed)"
     ],
     "shrinking_but_not_forcing": [
      "C1 source-split",
@@ -847,7 +950,7 @@
      "C10 group of order four"
     ]
    },
-   "index": 11,
+   "index": 13,
    "kind": "disclosure",
    "name": "XBA-CANDIDATES-MEASURED",
    "ok": true
@@ -882,7 +985,7 @@
      }
     ]
    },
-   "index": 12,
+   "index": 14,
    "kind": "must-pass",
    "name": "XBA-CLAUSE-CHAIN",
    "ok": true
@@ -893,13 +996,103 @@
     "the_named_candidate_s_subset_is_exactly_the_realized_connection": true,
     "the_naming_closed_subset_equals_the_clause_chain_s_survivors": true
    },
-   "index": 13,
+   "index": 15,
    "kind": "must-pass",
    "name": "XBA-CANDIDATE-CHAIN-CONSISTENCY",
    "ok": true
   },
   {
    "evidence": {
+    "D_squared_is_the_identity_in_the_presented_group": false,
+    "P_D_P_equals_D_inverse": true,
+    "cycles": {
+     "BIGON_0": {
+      "as_P_i_D_j": [
+       1,
+       0
+      ],
+      "the_Klein_value": "W",
+      "the_derived_word": "P",
+      "walk": [
+       "FULL@0",
+       "~REAL@0"
+      ]
+     },
+     "CANON": {
+      "as_P_i_D_j": [
+       0,
+       0
+      ],
+      "the_Klein_value": "1",
+      "the_derived_word": "e",
+      "walk": [
+       "FULL@0",
+       "LEG_F2_1",
+       "LEG_F2_2",
+       "LEG_F2_3",
+       "~FULL@3",
+       "~LEG_F1_3",
+       "~LEG_F1_2",
+       "~LEG_F1_1"
+      ]
+     },
+     "SQ_FULL_1": {
+      "as_P_i_D_j": [
+       0,
+       0
+      ],
+      "the_Klein_value": "1",
+      "the_derived_word": "e",
+      "walk": [
+       "FULL@0",
+       "LEG_F2_1",
+       "~FULL@1",
+       "~LEG_F1_1"
+      ]
+     },
+     "SQ_REAL_1": {
+      "as_P_i_D_j": [
+       0,
+       -1
+      ],
+      "the_Klein_value": "D",
+      "the_derived_word": "u^-1.P.u.P",
+      "walk": [
+       "REAL@0",
+       "LEG_F2_1",
+       "~REAL@1",
+       "~LEG_F1_1"
+      ]
+     },
+     "SQ_REAL_2": {
+      "as_P_i_D_j": [
+       0,
+       0
+      ],
+      "the_Klein_value": "1",
+      "the_derived_word": "e",
+      "walk": [
+       "REAL@1",
+       "LEG_F2_2",
+       "~REAL@2",
+       "~LEG_F1_2"
+      ]
+     },
+     "SQ_REAL_3": {
+      "as_P_i_D_j": [
+       0,
+       0
+      ],
+      "the_Klein_value": "1",
+      "the_derived_word": "e",
+      "walk": [
+       "REAL@2",
+       "LEG_F2_3",
+       "~REAL@3",
+       "~LEG_F1_3"
+      ]
+     }
+    },
     "derived": [
      "1",
      "1",
@@ -915,18 +1108,54 @@
      "1",
      "1",
      "W"
-    ]
+    ],
+    "the_fifth_premise_was_supplied": true,
+    "the_presented_group": "(Z^2 x| C2) * Z, on a, b, P and u",
+    "the_thirteen_derived_labels": {
+     "FULL@0": "e",
+     "FULL@1": "e",
+     "FULL@3": "e",
+     "LEG_F1_1": "e",
+     "LEG_F1_2": "e",
+     "LEG_F1_3": "e",
+     "LEG_F2_1": "e",
+     "LEG_F2_2": "e",
+     "LEG_F2_3": "e",
+     "REAL@0": "P",
+     "REAL@1": "u^-1.P.u",
+     "REAL@2": "u^-1.P.u",
+     "REAL@3": "u^-1.P.u"
+    },
+    "the_thirteen_symbolic_labels_match_the_measured_ones": true
    },
-   "index": 14,
+   "index": 16,
    "kind": "must-pass",
-   "name": "XBA-DERIVATION-MATCHES-THE-BASES",
+   "name": "XBA-DERIVATION-COMPUTED",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "D_and_its_inverse_are_distinct_in_the_presented_group": true,
+    "note": "the four clauses E0-E4 derive SQ_REAL_1 = D^-1; the step to D is the fifth premise, and the derivation cannot take it unsupplied",
+    "the_preparation_square_derives_as": "D^-1",
+    "the_value_it_reaches_once_the_premise_is_supplied": "D"
+   },
+   "index": 17,
+   "kind": "must-pass",
+   "name": "XBA-FIFTH-PREMISE",
    "ok": true
   },
   {
    "evidence": {
     "D_fixed": 45,
     "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": true,
     "W_fixed": 9,
+    "carrier": 81,
     "class_counts_sorted": [
      82,
      86,
@@ -943,9 +1172,28 @@
     ],
     "distinct_holonomies_over_the_364_walks": 4,
     "note": "the third instance: fresh quaternion, different preparation, different completion",
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
    },
-   "index": 15,
+   "index": 18,
    "kind": "must-pass",
    "name": "XBA-THIRD-INSTANCE-PREDICTED",
    "ok": true
@@ -954,7 +1202,13 @@
    "evidence": {
     "D_fixed": 81,
     "D_is_the_identity": true,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": false,
+    "E5_the_defect_is_an_involution": true,
     "W_fixed": 9,
+    "carrier": 81,
     "class_counts_sorted": [
      172,
      192
@@ -962,43 +1216,449 @@
     "declared_basis": null,
     "distinct_holonomies_over_the_364_walks": 2,
     "note": "the exchange-equivariant control: the bare Householder",
-    "the_four_named_elements_are_distinct": false
+    "the_four_named_elements_are_distinct": false,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 1,
+    "the_order_of_the_group_generated_by_W_and_D": 2,
+    "the_thirteen_labels": {
+     "FULL@0": "D",
+     "FULL@1": "D",
+     "FULL@3": "D",
+     "LEG_F1_1": "D",
+     "LEG_F1_2": "D",
+     "LEG_F1_3": "D",
+     "LEG_F2_1": "D",
+     "LEG_F2_2": "D",
+     "LEG_F2_3": "D",
+     "REAL@0": "WD",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
    },
-   "index": 16,
+   "index": 19,
    "kind": "must-pass",
    "name": "XBA-EQUIVARIANT-CONTROL-BREAKS-IT",
    "ok": true
   },
   {
    "evidence": {
-    "base 1 @ SP-E": [
+    "D_fixed": 54,
+    "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": false,
+    "W_fixed": 9,
+    "carrier": 81,
+    "class_counts_sorted": [
+     42,
+     46,
+     46,
+     72,
+     78,
+     80
+    ],
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "distinct_holonomies_over_the_364_walks": 6,
+    "note": "the counter-instance: E0-E4 hold, the defect has order three, the connection is not Klein-valued",
+    "the_completion": [
+     1,
+     4
+    ],
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": false,
+    "the_order_of_the_defect": 3,
+    "the_order_of_the_group_generated_by_W_and_D": 6,
+    "the_thirteen_label_names_are_the_realized_connection_s": true,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 89
+   },
+   "index": 20,
+   "kind": "must-pass",
+   "name": "XBA-COUNTER-CLASS",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "D_fixed": 192,
+    "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": true,
+    "W_fixed": 16,
+    "carrier": 256,
+    "class_counts_sorted": [
      82,
      86,
      90,
      106
     ],
-    "base 1 @ SP-F": [
-     82,
-     86,
-     90,
-     106
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
     ],
-    "base G @ GP-E": [
-     82,
-     86,
-     90,
-     106
+    "distinct_holonomies_over_the_364_walks": 4,
+    "note": "the third SPECIES: wings and pointers of dimension four, 256 configurations",
+    "the_completion": [
+     1,
+     2
     ],
-    "base G @ GP-F": [
-     82,
-     86,
-     90,
-     106
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
+   },
+   "index": 21,
+   "kind": "must-pass",
+   "name": "XBA-THIRD-SPECIES",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "base 1 @ SP-E": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "base 1 @ SP-F": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "base G @ GP-E": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "base G @ GP-F": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "base S": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "base S'": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      172,
+      192
+     ],
+     "distinct_holonomies_over_the_364_walks": 2,
+     "the_order_of_the_defect": 1,
+     "the_order_of_the_group_generated_by_W_and_D": 2
+    },
+    "base T": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      42,
+      46,
+      46,
+      72,
+      78,
+      80
+     ],
+     "distinct_holonomies_over_the_364_walks": 6,
+     "the_order_of_the_defect": 3,
+     "the_order_of_the_group_generated_by_W_and_D": 6
+    },
+    "instances": 8,
+    "species 4": {
+     "D_equals_the_commutator": true,
+     "D_equals_the_completion_s_own_defect": true,
+     "P_D_P_equals_D_inverse": true,
+     "P_is_an_involution": true,
+     "class_counts_sorted": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "distinct_holonomies_over_the_364_walks": 4,
+     "the_order_of_the_defect": 2,
+     "the_order_of_the_group_generated_by_W_and_D": 4
+    },
+    "the_law": "D = P u^-1 P u = [P, u], and P D P = D^-1"
+   },
+   "index": 22,
+   "kind": "must-pass",
+   "name": "XBA-COMMUTATOR-LAW",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "claim": "the holonomy group is larger than <W> exactly where P fails to centralise u -- both sides of the equivalence occur among the measured instances",
+    "instances_with_a_non_trivial_commutator": [
+     "base 1 @ SP-E",
+     "base 1 @ SP-F",
+     "base G @ GP-E",
+     "base G @ GP-F",
+     "base S",
+     "base T",
+     "species 4"
+    ],
+    "instances_with_a_trivial_commutator": [
+     "base S'"
     ]
    },
-   "index": 17,
+   "index": 23,
    "kind": "must-pass",
-   "name": "XBA-POSITIVE-CONTROL",
+   "name": "XBA-COROLLARY-EXISTENCE",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "claim": "|<W, D>| = 2 . ord([P,u]) = the number of distinct holonomies the 364 walks carry",
+    "orders_seen": [
+     1,
+     2,
+     3
+    ]
+   },
+   "index": 24,
+   "kind": "must-pass",
+   "name": "XBA-COROLLARY-ORDER",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "claim": "across every instance measured, the class-count profile is a function of ord([P,u]) alone, and the three orders that occur give three different profiles",
+    "the_profile_by_the_order_of_the_commutator": {
+     "1": [
+      172,
+      192
+     ],
+     "2": [
+      82,
+      86,
+      90,
+      106
+     ],
+     "3": [
+      42,
+      46,
+      46,
+      72,
+      78,
+      80
+     ]
+    }
+   },
+   "index": 25,
+   "kind": "must-pass",
+   "name": "XBA-COROLLARY-FORCING",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "completions_swept": 36,
+    "completions_where_the_two_preparations_give_the_same_defect": 36,
+    "note": "the preparation cancels out of the defect and the rotation enters neither the preparation leg nor the wing exchange, so two of the third instance's three declared variations cannot reach the connection",
+    "rotation_pairs_swept": 6,
+    "rotations_where_E2_and_E3_both_hold": 6,
+    "the_defect_depends_on_the_rotation": false
+   },
+   "index": 26,
+   "kind": "must-pass",
+   "name": "XBA-INERT-PARAMETERS",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "class_sizes": {
+     "ord=1,fixed=81": 96,
+     "ord=15,fixed=9": 9216,
+     "ord=2,fixed=45": 864,
+     "ord=2,fixed=9": 576,
+     "ord=3,fixed=27": 3072,
+     "ord=3,fixed=54": 1152,
+     "ord=4,fixed=27": 2304,
+     "ord=4,fixed=9": 2304,
+     "ord=5,fixed=36": 4608,
+     "ord=6,fixed=18": 2304,
+     "ord=6,fixed=9": 4608,
+     "ord=7,fixed=18": 9216
+    },
+    "equivariant": 96,
+    "family_size": 40320,
+    "involutive_non_trivial": 864,
+    "members_by_the_fixed_configurations_of_the_defect": {
+     "18": 11520,
+     "27": 5376,
+     "36": 4608,
+     "45": 864,
+     "54": 1152,
+     "81": 96,
+     "9": 16704
+    },
+    "members_by_the_order_of_the_defect": {
+     "1": 96,
+     "15": 9216,
+     "2": 1440,
+     "3": 4224,
+     "4": 4608,
+     "5": 4608,
+     "6": 6912,
+     "7": 9216
+    },
+    "recomputed_here_from_the_permutation_algebra_alone": {
+     "ord=1,fixed=81": 96,
+     "ord=15,fixed=9": 9216,
+     "ord=2,fixed=45": 864,
+     "ord=2,fixed=9": 576,
+     "ord=3,fixed=27": 3072,
+     "ord=3,fixed=54": 1152,
+     "ord=4,fixed=27": 2304,
+     "ord=4,fixed=9": 2304,
+     "ord=5,fixed=36": 4608,
+     "ord=6,fixed=18": 2304,
+     "ord=6,fixed=9": 4608,
+     "ord=7,fixed=18": 9216
+    },
+    "scope": "EXHAUSTIVE over the whole declared family",
+    "single_transpositions": 36,
+    "single_transpositions_by_the_order_of_the_defect": {
+     "1": 6,
+     "2": 12,
+     "3": 18
+    },
+    "system_pair_labels": 9,
+    "the_declared_family": "V = H . Q, Q a permutation of the 9 system-pair labels fixing the first",
+    "the_generality_receipt_s_own_class_sizes": {
+     "ord=1,fixed=81": 96,
+     "ord=15,fixed=9": 9216,
+     "ord=2,fixed=45": 864,
+     "ord=2,fixed=9": 576,
+     "ord=3,fixed=27": 3072,
+     "ord=3,fixed=54": 1152,
+     "ord=4,fixed=27": 2304,
+     "ord=4,fixed=9": 2304,
+     "ord=5,fixed=36": 4608,
+     "ord=6,fixed=18": 2304,
+     "ord=6,fixed=9": 4608,
+     "ord=7,fixed=18": 9216
+    },
+    "the_lex_first_completion_whose_defect_has_order_1": [
+     1,
+     3
+    ],
+    "the_lex_first_completion_whose_defect_has_order_2": [
+     1,
+     2
+    ],
+    "the_lex_first_completion_whose_defect_has_order_3": [
+     1,
+     4
+    ],
+    "the_lex_first_completions_are_transpositions_fixing_the_first_label": true
+   },
+   "index": 27,
+   "kind": "must-pass",
+   "name": "XBA-COMPLETION-CENSUS",
    "ok": true
   },
   {
@@ -1010,8 +1670,8 @@
      "C2b aut-equivariance (full)": "SQ_FULL_1 := W",
      "C2c aut-equivariance up to naming": "SQ_FULL_1 := W",
      "C3 admission-pattern": "SQ_FULL_1 := WD",
-     "C4 species-split (named)": "SQ_FULL_1 := W",
-     "C5 species-split (naming-closed)": "SQ_FULL_1 := W",
+     "C4 clause-split (named)": "SQ_FULL_1 := W",
+     "C5 clause-split (naming-closed)": "SQ_FULL_1 := W",
      "C6 common preparation leg": "SQ_FULL_1 := W",
      "C7 commuting local legs": "CANON := W",
      "C8 intertwined local legs": "SQ_REAL_2 := W",
@@ -1019,7 +1679,7 @@
     },
     "every_declared_violator_breaks_the_profile": true
    },
-   "index": 18,
+   "index": 28,
    "kind": "must-pass",
    "name": "XBA-NEGATIVE-CONTROLS",
    "ok": true
@@ -1039,7 +1699,7 @@
     "refused_lookups": 442368,
     "reserved_returns": 27
    },
-   "index": 19,
+   "index": 29,
    "kind": "disclosure",
    "name": "XBA-GAUGE-INVARIANCE",
    "ok": true
@@ -1058,7 +1718,7 @@
     "refused_lookups": 442368,
     "reserved_returns": 27
    },
-   "index": 20,
+   "index": 30,
    "kind": "must-pass",
    "name": "XBA-GAUGE-SELFTEST-HAS-TEETH",
    "ok": true
@@ -1072,8 +1732,8 @@
      "C2b aut-equivariance (full)": 64,
      "C2c aut-equivariance up to naming": 136,
      "C3 admission-pattern": 1728,
-     "C4 species-split (named)": 1,
-     "C5 species-split (naming-closed)": 6,
+     "C4 clause-split (named)": 1,
+     "C5 clause-split (naming-closed)": 6,
      "C6 common preparation leg": 1024,
      "C7 commuting local legs": 1024,
      "C8 intertwined local legs": 256,
@@ -1082,16 +1742,21 @@
     "candidate_sizes_second_tree": {
      "C1 source-split": 42,
      "C10 group of order four": 3906,
+     "C2a aut-equivariance (rule-preserving)": 4096,
+     "C2b aut-equivariance (full)": 64,
+     "C2c aut-equivariance up to naming": 136,
      "C3 admission-pattern": 1728,
-     "C4 species-split (named)": 1,
-     "C5 species-split (naming-closed)": 6,
+     "C4 clause-split (named)": 1,
+     "C5 clause-split (naming-closed)": 6,
      "C6 common preparation leg": 1024,
      "C7 commuting local legs": 1024,
      "C8 intertwined local legs": 256,
      "C9 unintertwined preparation leg": 2304
     },
+    "cells_compared": 12,
     "census_identical": true,
     "distinct_profiles": 89,
+    "note": "ANALYTICALLY FORCED and reported as a disclosure: a second spanning tree induces an INVERTIBLE change of cycle coordinates, and all three census numbers are invariant under any such change, so this clause cannot fail once the cycle rank gate passes. The genuinely independent census route is the ordered walk product of section 5",
     "order_4": 3906,
     "profile_hits": 96,
     "second_tree": [
@@ -1108,11 +1773,51 @@
      89,
      96,
      3906
-    ]
+    ],
+    "the_two_cell_sets_are_equal": true
    },
-   "index": 21,
+   "index": 31,
+   "kind": "disclosure",
+   "name": "XBA-TREE-FLIP-CENSUS",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "candidate_sizes_first_tree": {
+     "C1 source-split": 42,
+     "C10 group of order four": 3906,
+     "C2a aut-equivariance (rule-preserving)": 4096,
+     "C2b aut-equivariance (full)": 64,
+     "C2c aut-equivariance up to naming": 136,
+     "C3 admission-pattern": 1728,
+     "C4 clause-split (named)": 1,
+     "C5 clause-split (naming-closed)": 6,
+     "C6 common preparation leg": 1024,
+     "C7 commuting local legs": 1024,
+     "C8 intertwined local legs": 256,
+     "C9 unintertwined preparation leg": 2304
+    },
+    "candidate_sizes_second_tree": {
+     "C1 source-split": 42,
+     "C10 group of order four": 3906,
+     "C2a aut-equivariance (rule-preserving)": 4096,
+     "C2b aut-equivariance (full)": 64,
+     "C2c aut-equivariance up to naming": 136,
+     "C3 admission-pattern": 1728,
+     "C4 clause-split (named)": 1,
+     "C5 clause-split (naming-closed)": 6,
+     "C6 common preparation leg": 1024,
+     "C7 commuting local legs": 1024,
+     "C8 intertwined local legs": 256,
+     "C9 unintertwined preparation leg": 2304
+    },
+    "candidates": 12,
+    "cells_compared": 12,
+    "the_two_cell_sets_are_equal": true
+   },
+   "index": 32,
    "kind": "must-pass",
-   "name": "XBA-TREE-FLIP-TEST",
+   "name": "XBA-CANDIDATE-CELL-COMPLETENESS",
    "ok": true
   },
   {
@@ -1121,9 +1826,21 @@
     "walks": 364,
     "walks_whose_reversal_differs": 0
    },
-   "index": 22,
+   "index": 33,
    "kind": "disclosure",
    "name": "XBA-DIRECTION-FLIP",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "connections_admitting_the_shape_on_some_basis": 3906,
+    "for_how_many_a_basis_was_exhibited_and_verified": 3906,
+    "note": "so the declared basis, not the freeze, is what C4 and C5 assert",
+    "the_others_cannot": "a connection whose image is smaller than the group cannot take two distinct non-identity values on any basis"
+   },
+   "index": 34,
+   "kind": "must-pass",
+   "name": "XBA-STEERING-RESIDUAL",
    "ok": true
   },
   {
@@ -1131,66 +1848,130 @@
     "float_calls": 0,
     "float_literals": 0
    },
-   "index": 23,
+   "index": 35,
    "kind": "must-pass",
    "name": "XBA-EXACTNESS",
    "ok": true
   },
   {
    "evidence": {
+    "assignments_to_a_gate_predicate_variable_guarded_by_the_flag": [
+     "cot <- cycle-lax",
+     "floats <- float-lax",
+     "h_gen <- anchor-gen-hash",
+     "h_nt <- anchor-nt-hash",
+     "h_pin <- anchor-pin-hash",
+     "h_rev <- anchor-review-hash",
+     "mutant_ne <- exempt-lax",
+     "tree <- tree-lax",
+     "verdict <- verdict-lax"
+    ],
     "call_sites_whose_arguments_reach_the_mutant_flag": 0,
-    "gate_or_anchor_call_sites": 64,
-    "mutant_inequality_comparisons": 0
+    "gate_or_anchor_call_sites": 78,
+    "mutant_inequality_comparisons": 0,
+    "note": "every such assignment is guarded by a DECLARED mutant, and the census measures that each of those mutants dies -- which is what 'in the falsifying direction' means as a measurement",
+    "the_flag_is_read_as": [
+     "MUTANT",
+     "M_ON"
+    ],
+    "undeclared_guards": []
    },
-   "index": 24,
+   "index": 36,
    "kind": "must-pass",
    "name": "XBA-NO-MUTANT-EXEMPTION",
    "ok": true
   },
   {
    "evidence": {
-    "declaration_gate_index": 10,
-    "every_constrained_subset_gate_comes_later": true
+    "declaration_gate_index": 11,
+    "every_constrained_subset_gate_comes_later": true,
+    "note": "ANALYTICALLY FORCED and reported as a disclosure: gates are appended in execution order and these four calls textually follow the declaration, so no input can make this clause fail. The falsifiable content of the freeze is the profile counter above, which the freeze-lax mutant kills"
    },
-   "index": 25,
-   "kind": "must-pass",
+   "index": 37,
+   "kind": "disclosure",
    "name": "XBA-FREEZE-ORDER",
    "ok": true
   },
   {
    "evidence": {
+    "a_forcing_candidate_both_bases_satisfy_exists": true,
+    "a_shrinking_candidate_both_bases_satisfy_exists": true,
     "pre_registered": [
      "XBA-SHARED-STRUCTURE-IDENTIFIED",
      "XBA-PARTIAL",
      "XBA-COINCIDENCE-NOT-EXCLUDED"
     ],
+    "the_verdict_the_measured_counts_require": "XBA-SHARED-STRUCTURE-IDENTIFIED",
     "verdict": "XBA-SHARED-STRUCTURE-IDENTIFIED"
    },
-   "index": 26,
+   "index": 38,
    "kind": "must-pass",
-   "name": "XBA-VOCABULARY",
+   "name": "XBA-VERDICT-DERIVED",
    "ok": true
   },
   {
    "evidence": {
-    "died": 35,
-    "falsified_by_computation": 19,
-    "falsified_by_some": 23,
-    "falsified_only_by_a_waiver": [
-     "XBA-POSITIVE-CONTROL",
-     "XBA-TREE-FLIP-TEST",
-     "XBA-FREEZE-ORDER",
-     "XBA-VOCABULARY"
-    ],
-    "must_pass": 23,
-    "mutants": 35,
+    "died": 44,
+    "falsified_by_computation": 33,
+    "falsified_by_some": 33,
+    "falsified_only_by_a_waiver": [],
+    "must_pass": 33,
+    "mutants": 44,
     "never_falsified": [],
     "per_gate_falsifiers": {
-     "R1": [
+     "A01 pin sha256": [
+      "anchor-pin-hash"
+     ],
+     "A02 NT terminal receipt sha256": [
+      "anchor-nt-hash"
+     ],
+     "A03 GEN terminal receipt sha256": [
+      "anchor-gen-hash"
+     ],
+     "A04 frozen operator review sha256": [
+      "anchor-review-hash"
+     ],
+     "A05 review: distinct profiles": [
+      "anchor-census"
+     ],
+     "A10 GEN cross-base admission agreement": [
+      "admission-lax"
+     ],
+     "A11 links at a symmetric setting": [
+      "graph-drop-real2",
+      "graph-add-full2"
+     ],
+     "A13 reduced walks at a symmetric setting": [
+      "reduce-lax"
+     ],
+     "A15 based closed walks": [
+      "lmax-lax"
+     ],
+     "A19 base G rotation R1": [
       "rot-lax"
      ],
-     "V": [
+     "A21 base G completion V": [
       "completion-lax"
+     ],
+     "A22 base 1 wing exchange fixed points": [
+      "wingswap-lax"
+     ],
+     "A23 base 1 defect fixed points": [
+      "field-lax"
+     ],
+     "A32 the realized class counts": [
+      "anchor-classcounts"
+     ],
+     "A34 spanning tree, cotree, nodes reached": [
+      "tree-lax"
+     ],
+     "A36 the 364-walk model agreement": [
+      "base1-angle",
+      "direct-order",
+      "reverse-lax"
+     ],
+     "A37 the completion family's involutive class": [
+      "family-lax"
      ],
      "XBA-ADMISSION-AGREEMENT": [
       "admission-lax"
@@ -1203,10 +1984,13 @@
       "cycle-lax",
       "basis-lax"
      ],
+     "XBA-CANDIDATE-CELL-COMPLETENESS": [
+      "cells-lax"
+     ],
      "XBA-CANDIDATE-CHAIN-CONSISTENCY": [
       "candidate-lax",
       "species-lax",
-      "chain-lax"
+      "involutive-lax"
      ],
      "XBA-CANDIDATE-FREEZE": [
       "freeze-lax"
@@ -1214,11 +1998,31 @@
      "XBA-CLAUSE-CHAIN": [
       "species-lax"
      ],
+     "XBA-COMMUTATOR-LAW": [
+      "defect-lax"
+     ],
+     "XBA-COMPLETION-CENSUS": [
+      "family-lax"
+     ],
+     "XBA-COROLLARY-EXISTENCE": [
+      "control-completion"
+     ],
+     "XBA-COROLLARY-FORCING": [
+      "control-completion",
+      "counter-lax"
+     ],
+     "XBA-COROLLARY-ORDER": [
+      "group-lax"
+     ],
+     "XBA-COUNTER-CLASS": [
+      "counter-lax"
+     ],
      "XBA-CYCLE-RANK": [
       "tree-lax"
      ],
-     "XBA-DERIVATION-MATCHES-THE-BASES": [
-      "species-lax"
+     "XBA-DERIVATION-COMPUTED": [
+      "species-lax",
+      "involutive-lax"
      ],
      "XBA-DIRECT-COMPARATOR": [
       "base1-angle",
@@ -1231,12 +2035,16 @@
      "XBA-EXACTNESS": [
       "float-lax"
      ],
-     "XBA-FREEZE-ORDER": [
-      "order-lax"
+     "XBA-FIFTH-PREMISE": [
+      "involutive-lax"
      ],
      "XBA-GAUGE-SELFTEST-HAS-TEETH": [
       "gauge-head",
-      "memo-lax"
+      "memo-lax",
+      "cache-garbage"
+     ],
+     "XBA-INERT-PARAMETERS": [
+      "inert-lax"
      ],
      "XBA-LABELS-IN-THE-KLEIN-GROUP": [
       "base1-angle",
@@ -1249,67 +2057,45 @@
       "exempt-lax"
      ],
      "XBA-POSITIVE-CONTROL": [
-      "control-lax"
+      "anchor-classcounts"
+     ],
+     "XBA-SECOND-ROUTE-CENSUS": [
+      "route2-lax"
      ],
      "XBA-SPECIES-CLAUSES-MEASURED": [
       "base1-angle",
       "prep-lax"
      ],
+     "XBA-STEERING-RESIDUAL": [
+      "residual-lax"
+     ],
      "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION": [
       "base1-angle"
      ],
      "XBA-THIRD-INSTANCE-PREDICTED": [
-      "species-lax"
+      "species-lax",
+      "involutive-lax"
      ],
-     "XBA-TREE-FLIP-TEST": [
-      "flip-lax"
+     "XBA-THIRD-SPECIES": [
+      "species-lax",
+      "involutive-lax",
+      "dim4-lax"
      ],
-     "XBA-VOCABULARY": [
+     "XBA-VERDICT-DERIVED": [
+      "verdict-swap",
       "verdict-lax"
      ],
      "XBA-WALK-AUDIT": [
       "graph-drop-real2",
       "graph-add-full2",
       "reduce-lax"
-     ],
-     "agreement": [
-      "base1-angle",
-      "direct-order",
-      "reverse-lax",
-      "admission-lax"
-     ],
-     "counts": [
-      "anchor-classcounts"
-     ],
-     "points": [
-      "field-lax",
-      "wingswap-lax"
-     ],
-     "profiles": [
-      "anchor-census"
-     ],
-     "reached": [
-      "tree-lax"
-     ],
-     "setting": [
-      "graph-drop-real2",
-      "graph-add-full2",
-      "reduce-lax"
-     ],
-     "sha256": [
-      "anchor-review-hash",
-      "anchor-nt-hash",
-      "anchor-gen-hash"
-     ],
-     "walks": [
-      "lmax-lax"
      ]
     },
     "per_mutant": {
      "admission-lax": {
       "died": true,
       "falsified": [
-       "agreement",
+       "A10 GEN cross-base admission agreement",
        "XBA-ADMISSION-AGREEMENT"
       ],
       "kind": "computation"
@@ -1317,42 +2103,50 @@
      "anchor-census": {
       "died": true,
       "falsified": [
-       "profiles"
+       "A05 review: distinct profiles"
       ],
       "kind": "computation"
      },
      "anchor-classcounts": {
       "died": true,
       "falsified": [
-       "counts"
+       "A32 the realized class counts",
+       "XBA-POSITIVE-CONTROL"
       ],
       "kind": "computation"
      },
      "anchor-gen-hash": {
       "died": true,
       "falsified": [
-       "sha256"
+       "A03 GEN terminal receipt sha256"
       ],
       "kind": "computation"
      },
      "anchor-nt-hash": {
       "died": true,
       "falsified": [
-       "sha256"
+       "A02 NT terminal receipt sha256"
+      ],
+      "kind": "computation"
+     },
+     "anchor-pin-hash": {
+      "died": true,
+      "falsified": [
+       "A01 pin sha256"
       ],
       "kind": "computation"
      },
      "anchor-review-hash": {
       "died": true,
       "falsified": [
-       "sha256"
+       "A04 frozen operator review sha256"
       ],
       "kind": "computation"
      },
      "base1-angle": {
       "died": true,
       "falsified": [
-       "agreement",
+       "A36 the 364-walk model agreement",
        "XBA-SPECIES-CLAUSES-MEASURED",
        "XBA-LABELS-IN-THE-KLEIN-GROUP",
        "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION",
@@ -1368,6 +2162,13 @@
       ],
       "kind": "computation"
      },
+     "cache-garbage": {
+      "died": true,
+      "falsified": [
+       "XBA-GAUGE-SELFTEST-HAS-TEETH"
+      ],
+      "kind": "computation"
+     },
      "candidate-lax": {
       "died": true,
       "falsified": [
@@ -1375,33 +2176,36 @@
       ],
       "kind": "computation"
      },
-     "chain-lax": {
+     "cells-lax": {
       "died": true,
       "falsified": [
-       "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+       "XBA-CANDIDATE-CELL-COMPLETENESS"
       ],
-      "kind": "waiver"
+      "kind": "computation"
      },
      "completion-lax": {
       "died": true,
       "falsified": [
-       "V"
+       "A21 base G completion V"
       ],
       "kind": "computation"
      },
      "control-completion": {
       "died": true,
       "falsified": [
-       "XBA-EQUIVARIANT-CONTROL-BREAKS-IT"
+       "XBA-EQUIVARIANT-CONTROL-BREAKS-IT",
+       "XBA-COROLLARY-EXISTENCE",
+       "XBA-COROLLARY-FORCING"
       ],
       "kind": "computation"
      },
-     "control-lax": {
+     "counter-lax": {
       "died": true,
       "falsified": [
-       "XBA-POSITIVE-CONTROL"
+       "XBA-COUNTER-CLASS",
+       "XBA-COROLLARY-FORCING"
       ],
-      "kind": "waiver"
+      "kind": "computation"
      },
      "cycle-lax": {
       "died": true,
@@ -1411,10 +2215,24 @@
       ],
       "kind": "computation"
      },
+     "defect-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-COMMUTATOR-LAW"
+      ],
+      "kind": "computation"
+     },
+     "dim4-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-THIRD-SPECIES"
+      ],
+      "kind": "computation"
+     },
      "direct-order": {
       "died": true,
       "falsified": [
-       "agreement",
+       "A36 the 364-walk model agreement",
        "XBA-DIRECT-COMPARATOR"
       ],
       "kind": "computation"
@@ -1426,19 +2244,20 @@
       ],
       "kind": "computation"
      },
-     "field-lax": {
+     "family-lax": {
       "died": true,
       "falsified": [
-       "points"
+       "A37 the completion family's involutive class",
+       "XBA-COMPLETION-CENSUS"
       ],
       "kind": "computation"
      },
-     "flip-lax": {
+     "field-lax": {
       "died": true,
       "falsified": [
-       "XBA-TREE-FLIP-TEST"
+       "A23 base 1 defect fixed points"
       ],
-      "kind": "waiver"
+      "kind": "computation"
      },
      "float-lax": {
       "died": true,
@@ -1464,7 +2283,7 @@
      "graph-add-full2": {
       "died": true,
       "falsified": [
-       "setting",
+       "A11 links at a symmetric setting",
        "XBA-WALK-AUDIT"
       ],
       "kind": "computation"
@@ -1472,15 +2291,40 @@
      "graph-drop-real2": {
       "died": true,
       "falsified": [
-       "setting",
+       "A11 links at a symmetric setting",
        "XBA-WALK-AUDIT"
+      ],
+      "kind": "computation"
+     },
+     "group-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-COROLLARY-ORDER"
+      ],
+      "kind": "computation"
+     },
+     "inert-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-INERT-PARAMETERS"
+      ],
+      "kind": "computation"
+     },
+     "involutive-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-CANDIDATE-CHAIN-CONSISTENCY",
+       "XBA-DERIVATION-COMPUTED",
+       "XBA-FIFTH-PREMISE",
+       "XBA-THIRD-INSTANCE-PREDICTED",
+       "XBA-THIRD-SPECIES"
       ],
       "kind": "computation"
      },
      "lmax-lax": {
       "died": true,
       "falsified": [
-       "walks"
+       "A15 based closed walks"
       ],
       "kind": "computation"
      },
@@ -1490,13 +2334,6 @@
        "XBA-GAUGE-SELFTEST-HAS-TEETH"
       ],
       "kind": "computation"
-     },
-     "order-lax": {
-      "died": true,
-      "falsified": [
-       "XBA-FREEZE-ORDER"
-      ],
-      "kind": "waiver"
      },
      "prep-lax": {
       "died": true,
@@ -1509,15 +2346,22 @@
      "reduce-lax": {
       "died": true,
       "falsified": [
-       "setting",
+       "A13 reduced walks at a symmetric setting",
        "XBA-WALK-AUDIT"
+      ],
+      "kind": "computation"
+     },
+     "residual-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-STEERING-RESIDUAL"
       ],
       "kind": "computation"
      },
      "reverse-lax": {
       "died": true,
       "falsified": [
-       "agreement",
+       "A36 the 364-walk model agreement",
        "XBA-DIRECT-COMPARATOR"
       ],
       "kind": "computation"
@@ -1525,7 +2369,14 @@
      "rot-lax": {
       "died": true,
       "falsified": [
-       "R1"
+       "A19 base G rotation R1"
+      ],
+      "kind": "computation"
+     },
+     "route2-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-SECOND-ROUTE-CENSUS"
       ],
       "kind": "computation"
      },
@@ -1534,15 +2385,16 @@
       "falsified": [
        "XBA-CLAUSE-CHAIN",
        "XBA-CANDIDATE-CHAIN-CONSISTENCY",
-       "XBA-DERIVATION-MATCHES-THE-BASES",
-       "XBA-THIRD-INSTANCE-PREDICTED"
+       "XBA-DERIVATION-COMPUTED",
+       "XBA-THIRD-INSTANCE-PREDICTED",
+       "XBA-THIRD-SPECIES"
       ],
       "kind": "computation"
      },
      "tree-lax": {
       "died": true,
       "falsified": [
-       "reached",
+       "A34 spanning tree, cotree, nodes reached",
        "XBA-CYCLE-RANK"
       ],
       "kind": "computation"
@@ -1550,9 +2402,16 @@
      "verdict-lax": {
       "died": true,
       "falsified": [
-       "XBA-VOCABULARY"
+       "XBA-VERDICT-DERIVED"
       ],
       "kind": "waiver"
+     },
+     "verdict-swap": {
+      "died": true,
+      "falsified": [
+       "XBA-VERDICT-DERIVED"
+      ],
+      "kind": "computation"
      },
      "violator-lax": {
       "died": true,
@@ -1564,7 +2423,7 @@
      "wingswap-lax": {
       "died": true,
       "falsified": [
-       "points"
+       "A22 base 1 wing exchange fixed points"
       ],
       "kind": "computation"
      }
@@ -1572,7 +2431,7 @@
     "survived": 0,
     "survivors": []
    },
-   "index": 27,
+   "index": 39,
    "kind": "must-pass",
    "name": "XBA-FALSIFICATION-CENSUS",
    "ok": true
@@ -1586,7 +2445,7 @@
   "review": "1d17534ef9f4c6e1d1c590800a95114c0e0f754f84822d0240ba28685b897796"
  },
  "schema": "xba-crossbase-receipt-v1",
- "source_sha256": "91677df8bbc71708bafc9bd978fb51cf24dde36893304ef968aae9cbf0181962",
+ "source_sha256": "3619f49ae33f47edf914a52de19043fb79c9c1ff454a371ce5cd6744ab1b143a",
  "tables": {
   "admission": {
    "agreeing": 24,
@@ -1695,7 +2554,8 @@
      "REAL@3": "WD"
     },
     "legs_commute": true,
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true
    },
    "base 1 @ SP-F": {
     "D_fixed": 18,
@@ -1727,7 +2587,8 @@
      "REAL@3": "WD"
     },
     "legs_commute": true,
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true
    },
    "base G @ GP-E": {
     "D_fixed": 45,
@@ -1759,7 +2620,8 @@
      "REAL@3": "WD"
     },
     "legs_commute": true,
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true
    },
    "base G @ GP-F": {
     "D_fixed": 45,
@@ -1791,7 +2653,8 @@
      "REAL@3": "WD"
     },
     "legs_commute": true,
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true
    }
   },
   "candidates": {
@@ -1873,7 +2736,7 @@
     "statement": "every coordinate at which the two rules draw DIFFERENT permutations carries a non-flat bigon -- the only constraint the 24-cell table places on a connection",
     "subset_size": 1728
    },
-   "C4 species-split (named)": {
+   "C4 clause-split (named)": {
     "both_bases_satisfy": true,
     "forces_the_element_wise_profile": true,
     "forces_the_multiset_profile": true,
@@ -1883,10 +2746,10 @@
     "non_members": 4095,
     "profile_hits_outside_the_subset": 95,
     "shrink_factor": "4096",
-    "statement": "the six declared cycles take the values the species clauses force, with the group elements named: (1, 1, D, 1, 1, W)",
+    "statement": "the six declared cycles take the values the species clauses and the fifth premise DERIVE, with the group elements named",
     "subset_size": 1
    },
-   "C5 species-split (naming-closed)": {
+   "C5 clause-split (naming-closed)": {
     "both_bases_satisfy": true,
     "forces_the_element_wise_profile": false,
     "forces_the_multiset_profile": true,
@@ -2002,6 +2865,94 @@
     "survivors": 6
    }
   ],
+  "completion_family": {
+   "class_sizes": {
+    "ord=1,fixed=81": 96,
+    "ord=15,fixed=9": 9216,
+    "ord=2,fixed=45": 864,
+    "ord=2,fixed=9": 576,
+    "ord=3,fixed=27": 3072,
+    "ord=3,fixed=54": 1152,
+    "ord=4,fixed=27": 2304,
+    "ord=4,fixed=9": 2304,
+    "ord=5,fixed=36": 4608,
+    "ord=6,fixed=18": 2304,
+    "ord=6,fixed=9": 4608,
+    "ord=7,fixed=18": 9216
+   },
+   "equivariant": 96,
+   "family_size": 40320,
+   "involutive_non_trivial": 864,
+   "members_by_the_fixed_configurations_of_the_defect": {
+    "18": 11520,
+    "27": 5376,
+    "36": 4608,
+    "45": 864,
+    "54": 1152,
+    "81": 96,
+    "9": 16704
+   },
+   "members_by_the_order_of_the_defect": {
+    "1": 96,
+    "15": 9216,
+    "2": 1440,
+    "3": 4224,
+    "4": 4608,
+    "5": 4608,
+    "6": 6912,
+    "7": 9216
+   },
+   "scope": "EXHAUSTIVE over the whole declared family",
+   "single_transpositions": 36,
+   "single_transpositions_by_the_order_of_the_defect": {
+    "1": 6,
+    "2": 12,
+    "3": 18
+   },
+   "system_pair_labels": 9,
+   "the_declared_family": "V = H . Q, Q a permutation of the 9 system-pair labels fixing the first",
+   "the_lex_first_completion_whose_defect_has_order_1": [
+    1,
+    3
+   ],
+   "the_lex_first_completion_whose_defect_has_order_2": [
+    1,
+    2
+   ],
+   "the_lex_first_completion_whose_defect_has_order_3": [
+    1,
+    4
+   ],
+   "the_lex_first_completions_are_transpositions_fixing_the_first_label": true
+  },
+  "completion_family_at_dimension_four": {
+   "class_sizes": null,
+   "equivariant": null,
+   "family_size": null,
+   "involutive_non_trivial": null,
+   "scope": "the single-transposition sub-family only; the full family has (15)! members and is not swept",
+   "single_transpositions": 120,
+   "single_transpositions_by_the_order_of_the_defect": {
+    "1": 12,
+    "2": 60,
+    "3": 48
+   },
+   "system_pair_labels": 16,
+   "the_declared_family": "V = H . Q, Q a permutation of the 16 system-pair labels fixing the first",
+   "the_lex_first_completion_whose_defect_has_order_1": [
+    1,
+    4
+   ],
+   "the_lex_first_completion_whose_defect_has_order_2": [
+    1,
+    2
+   ],
+   "the_lex_first_completion_whose_defect_has_order_3": [
+    1,
+    5
+   ],
+   "the_lex_first_completions_are_transpositions_fixing_the_first_label": true
+  },
   "direct_comparator": {
    "base 1 @ SP-E": {
     "class_counts": {
@@ -2023,24 +2974,67 @@
    }
   },
   "gate_falsification": {
-   "died": 35,
-   "falsified_by_computation": 19,
-   "falsified_by_some": 23,
-   "falsified_only_by_a_waiver": [
-    "XBA-POSITIVE-CONTROL",
-    "XBA-TREE-FLIP-TEST",
-    "XBA-FREEZE-ORDER",
-    "XBA-VOCABULARY"
-   ],
-   "must_pass": 23,
-   "mutants": 35,
+   "died": 44,
+   "falsified_by_computation": 33,
+   "falsified_by_some": 33,
+   "falsified_only_by_a_waiver": [],
+   "must_pass": 33,
+   "mutants": 44,
    "never_falsified": [],
    "per_gate_falsifiers": {
-    "R1": [
+    "A01 pin sha256": [
+     "anchor-pin-hash"
+    ],
+    "A02 NT terminal receipt sha256": [
+     "anchor-nt-hash"
+    ],
+    "A03 GEN terminal receipt sha256": [
+     "anchor-gen-hash"
+    ],
+    "A04 frozen operator review sha256": [
+     "anchor-review-hash"
+    ],
+    "A05 review: distinct profiles": [
+     "anchor-census"
+    ],
+    "A10 GEN cross-base admission agreement": [
+     "admission-lax"
+    ],
+    "A11 links at a symmetric setting": [
+     "graph-drop-real2",
+     "graph-add-full2"
+    ],
+    "A13 reduced walks at a symmetric setting": [
+     "reduce-lax"
+    ],
+    "A15 based closed walks": [
+     "lmax-lax"
+    ],
+    "A19 base G rotation R1": [
      "rot-lax"
     ],
-    "V": [
+    "A21 base G completion V": [
      "completion-lax"
+    ],
+    "A22 base 1 wing exchange fixed points": [
+     "wingswap-lax"
+    ],
+    "A23 base 1 defect fixed points": [
+     "field-lax"
+    ],
+    "A32 the realized class counts": [
+     "anchor-classcounts"
+    ],
+    "A34 spanning tree, cotree, nodes reached": [
+     "tree-lax"
+    ],
+    "A36 the 364-walk model agreement": [
+     "base1-angle",
+     "direct-order",
+     "reverse-lax"
+    ],
+    "A37 the completion family's involutive class": [
+     "family-lax"
     ],
     "XBA-ADMISSION-AGREEMENT": [
      "admission-lax"
@@ -2053,10 +3047,13 @@
      "cycle-lax",
      "basis-lax"
     ],
+    "XBA-CANDIDATE-CELL-COMPLETENESS": [
+     "cells-lax"
+    ],
     "XBA-CANDIDATE-CHAIN-CONSISTENCY": [
      "candidate-lax",
      "species-lax",
-     "chain-lax"
+     "involutive-lax"
     ],
     "XBA-CANDIDATE-FREEZE": [
      "freeze-lax"
@@ -2064,11 +3061,31 @@
     "XBA-CLAUSE-CHAIN": [
      "species-lax"
     ],
+    "XBA-COMMUTATOR-LAW": [
+     "defect-lax"
+    ],
+    "XBA-COMPLETION-CENSUS": [
+     "family-lax"
+    ],
+    "XBA-COROLLARY-EXISTENCE": [
+     "control-completion"
+    ],
+    "XBA-COROLLARY-FORCING": [
+     "control-completion",
+     "counter-lax"
+    ],
+    "XBA-COROLLARY-ORDER": [
+     "group-lax"
+    ],
+    "XBA-COUNTER-CLASS": [
+     "counter-lax"
+    ],
     "XBA-CYCLE-RANK": [
      "tree-lax"
     ],
-    "XBA-DERIVATION-MATCHES-THE-BASES": [
-     "species-lax"
+    "XBA-DERIVATION-COMPUTED": [
+     "species-lax",
+     "involutive-lax"
     ],
     "XBA-DIRECT-COMPARATOR": [
      "base1-angle",
@@ -2081,12 +3098,16 @@
     "XBA-EXACTNESS": [
      "float-lax"
     ],
-    "XBA-FREEZE-ORDER": [
-     "order-lax"
+    "XBA-FIFTH-PREMISE": [
+     "involutive-lax"
     ],
     "XBA-GAUGE-SELFTEST-HAS-TEETH": [
      "gauge-head",
-     "memo-lax"
+     "memo-lax",
+     "cache-garbage"
+    ],
+    "XBA-INERT-PARAMETERS": [
+     "inert-lax"
     ],
     "XBA-LABELS-IN-THE-KLEIN-GROUP": [
      "base1-angle",
@@ -2099,67 +3120,45 @@
      "exempt-lax"
     ],
     "XBA-POSITIVE-CONTROL": [
-     "control-lax"
+     "anchor-classcounts"
+    ],
+    "XBA-SECOND-ROUTE-CENSUS": [
+     "route2-lax"
     ],
     "XBA-SPECIES-CLAUSES-MEASURED": [
      "base1-angle",
      "prep-lax"
     ],
+    "XBA-STEERING-RESIDUAL": [
+     "residual-lax"
+    ],
     "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION": [
      "base1-angle"
     ],
     "XBA-THIRD-INSTANCE-PREDICTED": [
-     "species-lax"
+     "species-lax",
+     "involutive-lax"
     ],
-    "XBA-TREE-FLIP-TEST": [
-     "flip-lax"
+    "XBA-THIRD-SPECIES": [
+     "species-lax",
+     "involutive-lax",
+     "dim4-lax"
     ],
-    "XBA-VOCABULARY": [
+    "XBA-VERDICT-DERIVED": [
+     "verdict-swap",
      "verdict-lax"
     ],
     "XBA-WALK-AUDIT": [
      "graph-drop-real2",
      "graph-add-full2",
      "reduce-lax"
-    ],
-    "agreement": [
-     "base1-angle",
-     "direct-order",
-     "reverse-lax",
-     "admission-lax"
-    ],
-    "counts": [
-     "anchor-classcounts"
-    ],
-    "points": [
-     "field-lax",
-     "wingswap-lax"
-    ],
-    "profiles": [
-     "anchor-census"
-    ],
-    "reached": [
-     "tree-lax"
-    ],
-    "setting": [
-     "graph-drop-real2",
-     "graph-add-full2",
-     "reduce-lax"
-    ],
-    "sha256": [
-     "anchor-review-hash",
-     "anchor-nt-hash",
-     "anchor-gen-hash"
-    ],
-    "walks": [
-     "lmax-lax"
     ]
    },
    "per_mutant": {
     "admission-lax": {
      "died": true,
      "falsified": [
-      "agreement",
+      "A10 GEN cross-base admission agreement",
       "XBA-ADMISSION-AGREEMENT"
      ],
      "kind": "computation"
@@ -2167,42 +3166,50 @@
     "anchor-census": {
      "died": true,
      "falsified": [
-      "profiles"
+      "A05 review: distinct profiles"
      ],
      "kind": "computation"
     },
     "anchor-classcounts": {
      "died": true,
      "falsified": [
-      "counts"
+      "A32 the realized class counts",
+      "XBA-POSITIVE-CONTROL"
      ],
      "kind": "computation"
     },
     "anchor-gen-hash": {
      "died": true,
      "falsified": [
-      "sha256"
+      "A03 GEN terminal receipt sha256"
      ],
      "kind": "computation"
     },
     "anchor-nt-hash": {
      "died": true,
      "falsified": [
-      "sha256"
+      "A02 NT terminal receipt sha256"
+     ],
+     "kind": "computation"
+    },
+    "anchor-pin-hash": {
+     "died": true,
+     "falsified": [
+      "A01 pin sha256"
      ],
      "kind": "computation"
     },
     "anchor-review-hash": {
      "died": true,
      "falsified": [
-      "sha256"
+      "A04 frozen operator review sha256"
      ],
      "kind": "computation"
     },
     "base1-angle": {
      "died": true,
      "falsified": [
-      "agreement",
+      "A36 the 364-walk model agreement",
       "XBA-SPECIES-CLAUSES-MEASURED",
       "XBA-LABELS-IN-THE-KLEIN-GROUP",
       "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION",
@@ -2218,6 +3225,13 @@
      ],
      "kind": "computation"
     },
+    "cache-garbage": {
+     "died": true,
+     "falsified": [
+      "XBA-GAUGE-SELFTEST-HAS-TEETH"
+     ],
+     "kind": "computation"
+    },
     "candidate-lax": {
      "died": true,
      "falsified": [
@@ -2225,33 +3239,36 @@
      ],
      "kind": "computation"
     },
-    "chain-lax": {
+    "cells-lax": {
      "died": true,
      "falsified": [
-      "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+      "XBA-CANDIDATE-CELL-COMPLETENESS"
      ],
-     "kind": "waiver"
+     "kind": "computation"
     },
     "completion-lax": {
      "died": true,
      "falsified": [
-      "V"
+      "A21 base G completion V"
      ],
      "kind": "computation"
     },
     "control-completion": {
      "died": true,
      "falsified": [
-      "XBA-EQUIVARIANT-CONTROL-BREAKS-IT"
+      "XBA-EQUIVARIANT-CONTROL-BREAKS-IT",
+      "XBA-COROLLARY-EXISTENCE",
+      "XBA-COROLLARY-FORCING"
      ],
      "kind": "computation"
     },
-    "control-lax": {
+    "counter-lax": {
      "died": true,
      "falsified": [
-      "XBA-POSITIVE-CONTROL"
+      "XBA-COUNTER-CLASS",
+      "XBA-COROLLARY-FORCING"
      ],
-     "kind": "waiver"
+     "kind": "computation"
     },
     "cycle-lax": {
      "died": true,
@@ -2261,10 +3278,24 @@
      ],
      "kind": "computation"
     },
+    "defect-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-COMMUTATOR-LAW"
+     ],
+     "kind": "computation"
+    },
+    "dim4-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-THIRD-SPECIES"
+     ],
+     "kind": "computation"
+    },
     "direct-order": {
      "died": true,
      "falsified": [
-      "agreement",
+      "A36 the 364-walk model agreement",
       "XBA-DIRECT-COMPARATOR"
      ],
      "kind": "computation"
@@ -2276,19 +3307,20 @@
      ],
      "kind": "computation"
     },
-    "field-lax": {
+    "family-lax": {
      "died": true,
      "falsified": [
-      "points"
+      "A37 the completion family's involutive class",
+      "XBA-COMPLETION-CENSUS"
      ],
      "kind": "computation"
     },
-    "flip-lax": {
+    "field-lax": {
      "died": true,
      "falsified": [
-      "XBA-TREE-FLIP-TEST"
+      "A23 base 1 defect fixed points"
      ],
-     "kind": "waiver"
+     "kind": "computation"
     },
     "float-lax": {
      "died": true,
@@ -2314,7 +3346,7 @@
     "graph-add-full2": {
      "died": true,
      "falsified": [
-      "setting",
+      "A11 links at a symmetric setting",
       "XBA-WALK-AUDIT"
      ],
      "kind": "computation"
@@ -2322,15 +3354,40 @@
     "graph-drop-real2": {
      "died": true,
      "falsified": [
-      "setting",
+      "A11 links at a symmetric setting",
       "XBA-WALK-AUDIT"
+     ],
+     "kind": "computation"
+    },
+    "group-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-COROLLARY-ORDER"
+     ],
+     "kind": "computation"
+    },
+    "inert-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-INERT-PARAMETERS"
+     ],
+     "kind": "computation"
+    },
+    "involutive-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-CANDIDATE-CHAIN-CONSISTENCY",
+      "XBA-DERIVATION-COMPUTED",
+      "XBA-FIFTH-PREMISE",
+      "XBA-THIRD-INSTANCE-PREDICTED",
+      "XBA-THIRD-SPECIES"
      ],
      "kind": "computation"
     },
     "lmax-lax": {
      "died": true,
      "falsified": [
-      "walks"
+      "A15 based closed walks"
      ],
      "kind": "computation"
     },
@@ -2340,13 +3397,6 @@
       "XBA-GAUGE-SELFTEST-HAS-TEETH"
      ],
      "kind": "computation"
-    },
-    "order-lax": {
-     "died": true,
-     "falsified": [
-      "XBA-FREEZE-ORDER"
-     ],
-     "kind": "waiver"
     },
     "prep-lax": {
      "died": true,
@@ -2359,15 +3409,22 @@
     "reduce-lax": {
      "died": true,
      "falsified": [
-      "setting",
+      "A13 reduced walks at a symmetric setting",
       "XBA-WALK-AUDIT"
+     ],
+     "kind": "computation"
+    },
+    "residual-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-STEERING-RESIDUAL"
      ],
      "kind": "computation"
     },
     "reverse-lax": {
      "died": true,
      "falsified": [
-      "agreement",
+      "A36 the 364-walk model agreement",
       "XBA-DIRECT-COMPARATOR"
      ],
      "kind": "computation"
@@ -2375,7 +3432,14 @@
     "rot-lax": {
      "died": true,
      "falsified": [
-      "R1"
+      "A19 base G rotation R1"
+     ],
+     "kind": "computation"
+    },
+    "route2-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-SECOND-ROUTE-CENSUS"
      ],
      "kind": "computation"
     },
@@ -2384,15 +3448,16 @@
      "falsified": [
       "XBA-CLAUSE-CHAIN",
       "XBA-CANDIDATE-CHAIN-CONSISTENCY",
-      "XBA-DERIVATION-MATCHES-THE-BASES",
-      "XBA-THIRD-INSTANCE-PREDICTED"
+      "XBA-DERIVATION-COMPUTED",
+      "XBA-THIRD-INSTANCE-PREDICTED",
+      "XBA-THIRD-SPECIES"
      ],
      "kind": "computation"
     },
     "tree-lax": {
      "died": true,
      "falsified": [
-      "reached",
+      "A34 spanning tree, cotree, nodes reached",
       "XBA-CYCLE-RANK"
      ],
      "kind": "computation"
@@ -2400,9 +3465,16 @@
     "verdict-lax": {
      "died": true,
      "falsified": [
-      "XBA-VOCABULARY"
+      "XBA-VERDICT-DERIVED"
      ],
      "kind": "waiver"
+    },
+    "verdict-swap": {
+     "died": true,
+     "falsified": [
+      "XBA-VERDICT-DERIVED"
+     ],
+     "kind": "computation"
     },
     "violator-lax": {
      "died": true,
@@ -2414,7 +3486,7 @@
     "wingswap-lax": {
      "died": true,
      "falsified": [
-      "points"
+      "A22 base 1 wing exchange fixed points"
      ],
      "kind": "computation"
     }
@@ -2435,7 +3507,20 @@
    "refused_lookups": 442368,
    "reserved_returns": 27
   },
+  "inert_parameters": {
+   "completions_swept": 36,
+   "completions_where_the_two_preparations_give_the_same_defect": 36,
+   "note": "the preparation cancels out of the defect and the rotation enters neither the preparation leg nor the wing exchange, so two of the third instance's three declared variations cannot reach the connection",
+   "rotation_pairs_swept": 6,
+   "rotations_where_E2_and_E3_both_hold": 6,
+   "the_defect_depends_on_the_rotation": false
+  },
   "mutants": [
+   {
+    "kind": "computation",
+    "name": "anchor-pin-hash",
+    "perturbs": "the XBA pin's own sha256"
+   },
    {
     "kind": "computation",
     "name": "anchor-review-hash",
@@ -2573,8 +3658,68 @@
    },
    {
     "kind": "computation",
+    "name": "cache-garbage",
+    "perturbs": "primes the value cache with a wrong value"
+   },
+   {
+    "kind": "computation",
     "name": "species-lax",
-    "perturbs": "drops one species clause from the derivation"
+    "perturbs": "drops one species clause (E3) from the derivation and from the clause chain"
+   },
+   {
+    "kind": "computation",
+    "name": "involutive-lax",
+    "perturbs": "withholds the fifth premise D^2 = 1 from the derivation"
+   },
+   {
+    "kind": "computation",
+    "name": "defect-lax",
+    "perturbs": "wrong order in the independent defect law"
+   },
+   {
+    "kind": "computation",
+    "name": "counter-lax",
+    "perturbs": "gives the order-3 counter-instance an order-2 completion"
+   },
+   {
+    "kind": "computation",
+    "name": "dim4-lax",
+    "perturbs": "gives the third species an exchange-symmetric completion"
+   },
+   {
+    "kind": "computation",
+    "name": "inert-lax",
+    "perturbs": "perturbs one preparation in the inertness sweep"
+   },
+   {
+    "kind": "computation",
+    "name": "route2-lax",
+    "perturbs": "drops one link from the second route's walk product"
+   },
+   {
+    "kind": "computation",
+    "name": "cells-lax",
+    "perturbs": "drops a compared cell from the flip-test"
+   },
+   {
+    "kind": "computation",
+    "name": "residual-lax",
+    "perturbs": "exhibits a basis that is not a basis"
+   },
+   {
+    "kind": "computation",
+    "name": "family-lax",
+    "perturbs": "wrong exchange in the completion-family census"
+   },
+   {
+    "kind": "computation",
+    "name": "group-lax",
+    "perturbs": "stops the generated-group closure after one step"
+   },
+   {
+    "kind": "computation",
+    "name": "verdict-swap",
+    "perturbs": "swaps the verdict derivation's two branches"
    },
    {
     "kind": "computation",
@@ -2588,28 +3733,8 @@
    },
    {
     "kind": "waiver",
-    "name": "control-lax",
-    "perturbs": "waives the positive control"
-   },
-   {
-    "kind": "waiver",
-    "name": "chain-lax",
-    "perturbs": "waives the chain/candidate consistency"
-   },
-   {
-    "kind": "waiver",
-    "name": "order-lax",
-    "perturbs": "waives the freeze-order predicate"
-   },
-   {
-    "kind": "waiver",
     "name": "verdict-lax",
-    "perturbs": "waives the verdict vocabulary"
-   },
-   {
-    "kind": "waiver",
-    "name": "flip-lax",
-    "perturbs": "waives the spanning-tree flip-test"
+    "perturbs": "overwrites the derived verdict with an out-of-vocabulary string"
    }
   ],
   "negative_controls": {
@@ -2682,7 +3807,7 @@
     "violator": "SQ_FULL_1 := WD",
     "violators_reproducing_the_profile_anyway": 0
    },
-   "C4 species-split (named)": {
+   "C4 clause-split (named)": {
     "breaks_the_profile": true,
     "non_members": 4095,
     "profile": [
@@ -2695,7 +3820,7 @@
     "violator": "SQ_FULL_1 := W",
     "violators_reproducing_the_profile_anyway": 95
    },
-   "C5 species-split (naming-closed)": {
+   "C5 clause-split (naming-closed)": {
     "breaks_the_profile": true,
     "non_members": 4090,
     "profile": [
@@ -2761,11 +3886,260 @@
     "violators_reproducing_the_profile_anyway": 48
    }
   },
+  "second_census_route": {
+   "connections_where_the_two_routes_disagree": 0,
+   "distinct_profiles": 89,
+   "order_4_connections": 3906,
+   "profile_hits": 96
+  },
+  "the_commutator_law": {
+   "base 1 @ SP-E": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   },
+   "base 1 @ SP-F": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   },
+   "base G @ GP-E": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   },
+   "base G @ GP-F": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   },
+   "base S": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   },
+   "base S'": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     172,
+     192
+    ],
+    "distinct_holonomies_over_the_364_walks": 2,
+    "the_order_of_the_defect": 1,
+    "the_order_of_the_group_generated_by_W_and_D": 2
+   },
+   "base T": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     42,
+     46,
+     46,
+     72,
+     78,
+     80
+    ],
+    "distinct_holonomies_over_the_364_walks": 6,
+    "the_order_of_the_defect": 3,
+    "the_order_of_the_group_generated_by_W_and_D": 6
+   },
+   "species 4": {
+    "D_equals_the_commutator": true,
+    "D_equals_the_completion_s_own_defect": true,
+    "P_D_P_equals_D_inverse": true,
+    "P_is_an_involution": true,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4
+   }
+  },
+  "the_steering_residual": {
+   "connections_admitting_the_shape_on_some_basis": 3906,
+   "for_how_many_a_basis_was_exhibited_and_verified": 3906,
+   "note": "so the declared basis, not the freeze, is what C4 and C5 assert",
+   "the_others_cannot": "a connection whose image is smaller than the group cannot take two distinct non-identity values on any basis"
+  },
+  "the_symbolic_derivation": {
+   "D_squared_is_the_identity_in_the_presented_group": false,
+   "P_D_P_equals_D_inverse": true,
+   "cycles": {
+    "BIGON_0": {
+     "as_P_i_D_j": [
+      1,
+      0
+     ],
+     "the_Klein_value": "W",
+     "the_derived_word": "P",
+     "walk": [
+      "FULL@0",
+      "~REAL@0"
+     ]
+    },
+    "CANON": {
+     "as_P_i_D_j": [
+      0,
+      0
+     ],
+     "the_Klein_value": "1",
+     "the_derived_word": "e",
+     "walk": [
+      "FULL@0",
+      "LEG_F2_1",
+      "LEG_F2_2",
+      "LEG_F2_3",
+      "~FULL@3",
+      "~LEG_F1_3",
+      "~LEG_F1_2",
+      "~LEG_F1_1"
+     ]
+    },
+    "SQ_FULL_1": {
+     "as_P_i_D_j": [
+      0,
+      0
+     ],
+     "the_Klein_value": "1",
+     "the_derived_word": "e",
+     "walk": [
+      "FULL@0",
+      "LEG_F2_1",
+      "~FULL@1",
+      "~LEG_F1_1"
+     ]
+    },
+    "SQ_REAL_1": {
+     "as_P_i_D_j": [
+      0,
+      -1
+     ],
+     "the_Klein_value": "D",
+     "the_derived_word": "u^-1.P.u.P",
+     "walk": [
+      "REAL@0",
+      "LEG_F2_1",
+      "~REAL@1",
+      "~LEG_F1_1"
+     ]
+    },
+    "SQ_REAL_2": {
+     "as_P_i_D_j": [
+      0,
+      0
+     ],
+     "the_Klein_value": "1",
+     "the_derived_word": "e",
+     "walk": [
+      "REAL@1",
+      "LEG_F2_2",
+      "~REAL@2",
+      "~LEG_F1_2"
+     ]
+    },
+    "SQ_REAL_3": {
+     "as_P_i_D_j": [
+      0,
+      0
+     ],
+     "the_Klein_value": "1",
+     "the_derived_word": "e",
+     "walk": [
+      "REAL@2",
+      "LEG_F2_3",
+      "~REAL@3",
+      "~LEG_F1_3"
+     ]
+    }
+   },
+   "the_fifth_premise_was_supplied": true,
+   "the_presented_group": "(Z^2 x| C2) * Z, on a, b, P and u",
+   "the_thirteen_derived_labels": {
+    "FULL@0": "e",
+    "FULL@1": "e",
+    "FULL@3": "e",
+    "LEG_F1_1": "e",
+    "LEG_F1_2": "e",
+    "LEG_F1_3": "e",
+    "LEG_F2_1": "e",
+    "LEG_F2_2": "e",
+    "LEG_F2_3": "e",
+    "REAL@0": "P",
+    "REAL@1": "u^-1.P.u",
+    "REAL@2": "u^-1.P.u",
+    "REAL@3": "u^-1.P.u"
+   }
+  },
   "third_instances": {
    "base S": {
     "D_fixed": 45,
     "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": true,
     "W_fixed": 9,
+    "carrier": 81,
     "class_counts_sorted": [
      82,
      86,
@@ -2782,12 +4156,37 @@
     ],
     "distinct_holonomies_over_the_364_walks": 4,
     "note": "the third instance: fresh quaternion, different preparation, different completion",
-    "the_four_named_elements_are_distinct": true
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
    },
    "base S'": {
     "D_fixed": 81,
     "D_is_the_identity": true,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": false,
+    "E5_the_defect_is_an_involution": true,
     "W_fixed": 9,
+    "carrier": 81,
     "class_counts_sorted": [
      172,
      192
@@ -2795,7 +4194,122 @@
     "declared_basis": null,
     "distinct_holonomies_over_the_364_walks": 2,
     "note": "the exchange-equivariant control: the bare Householder",
-    "the_four_named_elements_are_distinct": false
+    "the_four_named_elements_are_distinct": false,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 1,
+    "the_order_of_the_group_generated_by_W_and_D": 2,
+    "the_thirteen_labels": {
+     "FULL@0": "D",
+     "FULL@1": "D",
+     "FULL@3": "D",
+     "LEG_F1_1": "D",
+     "LEG_F1_2": "D",
+     "LEG_F1_3": "D",
+     "LEG_F2_1": "D",
+     "LEG_F2_2": "D",
+     "LEG_F2_3": "D",
+     "REAL@0": "WD",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
+   },
+   "base T": {
+    "D_fixed": 54,
+    "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": false,
+    "W_fixed": 9,
+    "carrier": 81,
+    "class_counts_sorted": [
+     42,
+     46,
+     46,
+     72,
+     78,
+     80
+    ],
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "distinct_holonomies_over_the_364_walks": 6,
+    "note": "the counter-instance: E0-E4 hold, the defect has order three, the connection is not Klein-valued",
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": false,
+    "the_order_of_the_defect": 3,
+    "the_order_of_the_group_generated_by_W_and_D": 6,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 89
+   },
+   "species 4": {
+    "D_fixed": 192,
+    "D_is_the_identity": false,
+    "E1_common_preparation_leg": true,
+    "E2_local_legs_commute": true,
+    "E3_W_intertwines_the_local_legs": true,
+    "E4_W_does_not_intertwine_the_preparation_leg": true,
+    "E5_the_defect_is_an_involution": true,
+    "W_fixed": 16,
+    "carrier": 256,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "note": "the third SPECIES: wings and pointers of dimension four, 256 configurations",
+    "the_four_named_elements_are_distinct": true,
+    "the_four_named_elements_close_under_multiplication": true,
+    "the_order_of_the_defect": 2,
+    "the_order_of_the_group_generated_by_W_and_D": 4,
+    "the_thirteen_labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "walks_where_the_abelian_model_disagrees_with_the_raw_holonomy": 0
    }
   },
   "tree_flip_test": {
@@ -2806,8 +4320,8 @@
     "C2b aut-equivariance (full)": 64,
     "C2c aut-equivariance up to naming": 136,
     "C3 admission-pattern": 1728,
-    "C4 species-split (named)": 1,
-    "C5 species-split (naming-closed)": 6,
+    "C4 clause-split (named)": 1,
+    "C5 clause-split (naming-closed)": 6,
     "C6 common preparation leg": 1024,
     "C7 commuting local legs": 1024,
     "C8 intertwined local legs": 256,
@@ -2816,14 +4330,18 @@
    "candidate_sizes_second_tree": {
     "C1 source-split": 42,
     "C10 group of order four": 3906,
+    "C2a aut-equivariance (rule-preserving)": 4096,
+    "C2b aut-equivariance (full)": 64,
+    "C2c aut-equivariance up to naming": 136,
     "C3 admission-pattern": 1728,
-    "C4 species-split (named)": 1,
-    "C5 species-split (naming-closed)": 6,
+    "C4 clause-split (named)": 1,
+    "C5 clause-split (naming-closed)": 6,
     "C6 common preparation leg": 1024,
     "C7 commuting local legs": 1024,
     "C8 intertwined local legs": 256,
     "C9 unintertwined preparation leg": 2304
    },
+   "cells_compared": 12,
    "census_identical": true,
    "distinct_profiles": 89,
    "order_4": 3906,
@@ -2842,14 +4360,15 @@
     89,
     96,
     3906
-   ]
+   ],
+   "the_two_cell_sets_are_equal": true
   }
  },
  "totals": {
-  "anchors": 36,
-  "disclosures": 4,
-  "gates": 28,
+  "anchors": 38,
+  "disclosures": 6,
+  "gates": 40,
   "must_pass_failures": 0,
-  "must_pass_gates": 24
+  "must_pass_gates": 34
  }
 }

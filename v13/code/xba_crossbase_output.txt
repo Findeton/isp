@@ -14,6 +14,12 @@ what shared structure forces the 82/86/90/106 profile on both bases
 
    cells compared (setting index x checkpoint) : 24
    cells where the two bases draw the same rule/permutation : 24
+   distinct values those cells take : 4
+      FULL the identity   REAL -                  x 12
+      FULL the identity   REAL the wing exchange  x 6
+      FULL -              REAL -                  x 4
+      FULL -              REAL the wing exchange  x 2
+   the permutation each rule draws, wherever it draws at all : FULL -> the identity, REAL -> the wing exchange
 
    nodes 8   links 13   identification links 7   components 1
    reduced walks (all base points, length 0 included) : 16,168
@@ -48,18 +54,26 @@ what shared structure forces the 82/86/90/106 profile on both bases
       SQ_REAL_3    = 1
       BIGON_0      = W
 
-## 4  The candidate properties, declared (frozen before any profile)
+   positive control: each reading's class counts, recomputed from its own
+   thirteen labels by the ordered walk product, against the two receipts:
+      base 1 @ SP-E  [82, 86, 90, 106]
+      base 1 @ SP-F  [82, 86, 90, 106]
+      base G @ GP-E  [82, 86, 90, 106]
+      base G @ GP-F  [82, 86, 90, 106]
 
-   profiles computed at the declaration point : 0
+## 4  The candidate properties, declared (frozen before any census profile)
+
+   census profiles computed at the declaration point : 0
    |Aut(graph)| rule-preserving 2, full multigraph 16;
    distinct induced actions on the cycle space: 1 (rule-preserving), 8 (full)
+   the non-identity rule-preserving link map fixes 7 of the 13 links (every identification link) and moves 6 (the two frames' legs, in matching pairs); it carries every declared cycle's edge set to itself, which is why its induced action is trivial.
    C1 source-split                    the full-leg sub-connection is flat, the realized-rule sub-connection carries a group of order two, every two-rule coordinate has a non-flat bigon, and the whole connection generates the group
    C2a aut-equivariance (rule-preserving) invariant under the induced action of the rule-preserving automorphism group of the graph
    C2b aut-equivariance (full)        invariant under the induced action of the full multigraph automorphism group
    C2c aut-equivariance up to naming  for every graph automorphism there is an automorphism of the Klein group carrying the pullback back to the connection
    C3 admission-pattern               every coordinate at which the two rules draw DIFFERENT permutations carries a non-flat bigon -- the only constraint the 24-cell table places on a connection
-   C4 species-split (named)           the six declared cycles take the values the species clauses force, with the group elements named: (1, 1, D, 1, 1, W)
-   C5 species-split (naming-closed)   there are distinct non-identity d, w with the six declared cycles at (1, 1, d, 1, 1, w)
+   C4 clause-split (named)            the six declared cycles take the values the species clauses and the fifth premise DERIVE, with the group elements named
+   C5 clause-split (naming-closed)    there are distinct non-identity d, w with the six declared cycles at (1, 1, d, 1, 1, w)
    C6 common preparation leg          the full-leg square around the preparation leg is flat (the two frames share that leg)
    C7 commuting local legs            the canonical loop is flat (the two local legs commute)
    C8 intertwined local legs          the two realized-rule squares around the local legs are flat (the wing exchange intertwines them)
@@ -76,6 +90,7 @@ what shared structure forces the 82/86/90/106 profile on both bases
    connections whose labels generate the group : 3906
    of those, reproducing the profile           : 96
    most common profile           : [78, 90, 94, 102] at 384 connections
+   second route (ordered walk product over the 13 labels): 89 distinct profiles, 96 hits, 3906 of order four; connections where the two routes disagree : 0
 
 ## 6  The candidates, measured
 
@@ -86,8 +101,8 @@ what shared structure forces the 82/86/90/106 profile on both bases
    | C2b aut-equivariance (full)  | False |    64 | False | False |    0 | 64 |
    | C2c aut-equivariance up to naming | False |   136 | False | False |    0 | 512/17 |
    | C3 admission-pattern         | True  |  1728 | False | False |   96 | 64/27 |
-   | C4 species-split (named)     | True  |     1 | True  | True  |    1 | 4096 |
-   | C5 species-split (naming-closed) | True  |     6 | True  | False |    6 | 2048/3 |
+   | C4 clause-split (named)      | True  |     1 | True  | True  |    1 | 4096 |
+   | C5 clause-split (naming-closed) | True  |     6 | True  | False |    6 | 2048/3 |
    | C6 common preparation leg    | True  |  1024 | False | False |   24 | 4 |
    | C7 commuting local legs      | True  |  1024 | False | False |   24 | 4 |
    | C8 intertwined local legs    | True  |   256 | False | False |   24 | 16 |
@@ -104,16 +119,49 @@ what shared structure forces the 82/86/90/106 profile on both bases
    | E3  the wing exchange intertwines both local legs |    12 |    6 |
    | E4  the wing exchange does not intertwine the preparation leg |     6 |    6 |
 
-## 7  The derivation, and a third instance built to test it
+## 7  The derivation, computed, and the four instances that test it
 
-   derived from the species clauses : SQ_FULL_1=1  CANON=1  SQ_REAL_1=D  SQ_REAL_2=1  SQ_REAL_3=1  BIGON_0=W
+   The species clauses present a group -- (Z^2 x| C2) * Z on a, b, P, u.
+   The thirteen labels and the six cycle values are evaluated in it by
+   normal forms; nothing below is typed.
+
+      SQ_FULL_1    = e              = P^0 D^0  -> 1
+      CANON        = e              = P^0 D^0  -> 1
+      SQ_REAL_1    = u^-1.P.u.P     = P^0 D^-1 -> D
+      SQ_REAL_2    = e              = P^0 D^0  -> 1
+      SQ_REAL_3    = e              = P^0 D^0  -> 1
+      BIGON_0      = P              = P^1 D^0  -> W
+
+   D^2 = 1 in that group : False  (so the fifth premise is independent)
+   P D P = D^-1 in that group : True
+   the fifth premise supplied to the derivation : True
+   derived : SQ_FULL_1=1  CANON=1  SQ_REAL_1=D  SQ_REAL_2=1  SQ_REAL_3=1  BIGON_0=W
    measured on the realized bases   : SQ_FULL_1=1  CANON=1  SQ_REAL_1=D  SQ_REAL_2=1  SQ_REAL_3=1  BIGON_0=W
-   base S   D fixes 45 of 81; distinct holonomies 4; class counts [82, 86, 90, 106]; declared basis ['1', '1', 'D', '1', '1', 'W']
-   base S'  D fixes 81 of 81; distinct holonomies 2; class counts [172, 192]; declared basis None
+   base S     carrier  81  ord(D) 2  |<W,D>|  4  E1-E4 True  E5 True  distinct holonomies 4  class counts [82, 86, 90, 106]
+   base S'    carrier  81  ord(D) 1  |<W,D>|  2  E1-E4 False  E5 True  distinct holonomies 2  class counts [172, 192]
+   base T     carrier  81  ord(D) 3  |<W,D>|  6  E1-E4 True  E5 False  distinct holonomies 6  class counts [42, 46, 46, 72, 78, 80]
+   species 4  carrier 256  ord(D) 2  |<W,D>|  4  E1-E4 True  E5 True  distinct holonomies 4  class counts [82, 86, 90, 106]
+
+   The commutator law, on every committed instance: the defect each
+   terminal unit names is the commutator of the declared exchange with
+   the declared preparation leg, and the independent construction is
+   the completion's own law D = (Sigma V^T Sigma V) tensor I.
+
+   | instance | P^2=1 | D = [P,u] | D = the completion's own defect | ord(D) | |<W,D>| | distinct holonomies | class counts |
+   |---|---|---|---|---|---|---|---|
+   | base 1 @ SP-E  | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+   | base 1 @ SP-F  | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+   | base G @ GP-E  | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+   | base G @ GP-F  | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+   | base S         | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+   | base S'        | True  | True  | True  | 1 | 2 | 2 | [172, 192] |
+   | base T         | True  | True  | True  | 3 | 6 | 6 | [42, 46, 46, 72, 78, 80] |
+   | species 4      | True  | True  | True  | 2 | 4 | 4 | [82, 86, 90, 106] |
+
+   inert parameters: the two declared preparations give the SAME defect at 36 of 36 completions; the rotation enters neither the preparation leg nor the wing exchange, and E2/E3 hold at all 6 rotation pairs swept.
+   the declared completion family (40,320 members): 864 have an involutive non-trivial defect, 96 are exchange-equivariant, and 36 single transpositions split {1: 6, 2: 12, 3: 18} by the order of the defect.
 
 ## 8  Controls
-
-   positive: all four readings of the two bases reproduce the profile : True
 
    negative controls with teeth (one declared constructed violator each):
 
@@ -124,8 +172,8 @@ what shared structure forces the 82/86/90/106 profile on both bases
    | C2b aut-equivariance (full)  | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 96 |
    | C2c aut-equivariance up to naming | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 96 |
    | C3 admission-pattern         | SQ_FULL_1 := WD        | True  | [90, 86, 90, 98]       | True  | 0 |
-   | C4 species-split (named)     | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 95 |
-   | C5 species-split (naming-closed) | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 90 |
+   | C4 clause-split (named)      | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 95 |
+   | C5 clause-split (naming-closed) | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 90 |
    | C6 common preparation leg    | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 72 |
    | C7 commuting local legs      | CANON := W             | True  | [80, 88, 96, 100]      | True  | 72 |
    | C8 intertwined local legs    | SQ_REAL_2 := W         | True  | [80, 88, 96, 100]      | True  | 72 |
@@ -136,21 +184,24 @@ what shared structure forces the 82/86/90/106 profile on both bases
 
    gauge sweep : 16,384 elements, 0 deviations, 442,368 fresh evaluations, cache hits 0 (of 442,368 refused lookups into a populated cache)
    mis-conventioned control (head-only action) moves the profile at 12,288 of 16,384
-   spanning-tree flip-test : second tree ['LEG_F1_1', 'LEG_F1_2', 'LEG_F1_3', 'LEG_F2_1', 'LEG_F2_2', 'LEG_F2_3', 'REAL@0']; census identical True; candidate subset sizes identical True
+   spanning-tree flip-test : second tree ['LEG_F1_1', 'LEG_F1_2', 'LEG_F1_3', 'LEG_F2_1', 'LEG_F2_2', 'LEG_F2_3', 'REAL@0']; census identical True; candidate subset sizes identical True (12 of 12 cells compared)
+   the declared basis is what C4 and C5 assert: 3,906 of 4,096 connections admit the C5 shape on SOME basis of the cycle space, a basis exhibited and verified for every one of them.
 
 ## 10  The verdict
 
-   forcing candidates satisfied by both bases : ['C4 species-split (named)', 'C5 species-split (naming-closed)']
+   forcing candidates satisfied by both bases : ['C4 clause-split (named)', 'C5 clause-split (naming-closed)']
    shrinking but not forcing                  : ['C1 source-split', 'C3 admission-pattern', 'C6 common preparation leg', 'C7 commuting local legs', 'C8 intertwined local legs', 'C9 unintertwined preparation leg', 'C10 group of order four']
+   the verdict the measured counts require    : XBA-SHARED-STRUCTURE-IDENTIFIED
 
    >>> XBA-SHARED-STRUCTURE-IDENTIFIED
+   the property : COMPLETION-FORCED-SPLIT
 
 ## 11  The falsification census
 
-   mutants declared 35; died 35; survived 0
-   must-pass gates 23; falsified by some mutant 23; by a computation mutant 19
+   mutants declared 44; died 44; survived 0
+   must-pass gates 33; falsified by some mutant 33; by a computation mutant 33
    never falsified : EMPTY
 
 ==============================================================================
-gates 28 (must-pass 24, disclosures 4); anchors 36; must-pass failures 0
+gates 40 (must-pass 34, disclosures 6); anchors 38; must-pass failures 0
 ==============================================================================
