@@ -8866,3 +8866,45 @@ the τ-conjugate cell's legitimacy, the corrected unit reads
 EMPTY + PRIME-DERIVED-AT-7 — the absolute-answer branch of
 Open 1, at the same prime TB3's three-wing torsion celebrates.
 R2/R3 pending; adjudication after all three.
+
+## 2026-08-08 — LCB R2 (EFFECTUS) FROZEN: THE OBSTRUCTION IS
+## ARENA-FREE — S1a ∧ S3 UNSATISFIABLE EVERYWHERE (v13 LEDGER #288)
+review-lcb-effectus.md frozen as delivered (sha256-12
+6b81699940ce).  Grade AWF; 55 recomputations, 55/55 agree,
+byte-identical rerun; "no false computed number exists in
+this paper; both verdicts are correct."  **F-1
+(VERDICT-STRENGTHENING): THE OBSTRUCTION IS ARENA-FREE — δ
+has exactly ONE fixed point at any arena while E always has a
+nontrivial fixed space, so the square collapses ≥ p record
+cells to identity: S1a ∧ S3 — BOTH BRG-REGISTERED CLAUSES —
+are JOINTLY UNSATISFIABLE at every arena, prime, d, direction
+and identification.**  This DEFUSES R1's clause-forcing
+concern (no verdict depends on S1b/S1c/S1d — EMPTY rests on
+the registered standard itself) and UNIVERSALIZES the wall:
+the strengthened bridge as posed is impossible for the whole
+species; §16's sixteen-label hope false; X07 closed negative.
+F-2: S1b is a THIRD undeclared addition — the set-level
+census is 8.16×10⁵⁶ solutions, not zero (the boxed 0 was
+S1b's product; BRG's square lives in Set since δ is a twisted
+cocycle, not a morphism).  F-3/4: the declaration-free column
+is TYPED (a single mis-classification invisible to the
+wholesale mutant); **P8/P9 mis-classified — P8 carries the
+DIRECTION declaration: "the square wants p = 3" was
+declaration-relative** ({3} registered vs all 17 primes
+reversed); PRIME-DECLARED STANDS per R2 (P8 excluded either
+way) — **DIRECT CONFLICT WITH R1's flip-to-DERIVED-at-7 (the
+τ-conjugate cell): THE ADJUDICATION'S CENTERPIECE**; F-6: the
+{5,7} narrowing is a nine-label artifact (widens to
+{5,7,11,13} at 16 labels) — cuts toward R2.  F-10 (the
+successor, MEASURED): the encodings DO change at three wings;
+the Z/2 sign becomes an 𝔽ₚ[S₃]-module condition; **the
+spectral obstruction does NOT transport — at p = 7 the
+required eigenvalue set {4,6} MEETS HA's 1/2 mod 7 = 4**; BUT
+F-1's arena-free wall applies UNCHANGED at three wings, and
+matching S₃ needs HA at d = 3 (answering Open 3 NO for the
+whole d-family); TB3's δ not yet decided, so S1 is not yet
+posable there.  THE STRATEGIC UPSHOT: the from-question needs
+A DIFFERENT SQUARE (a different encoding pairing), not a
+richer carrier.  R3 pending; adjudication after it — the
+prime-verdict reconciliation (R1's widened cells vs R2's
+label-artifact widening) is its hardest task.
