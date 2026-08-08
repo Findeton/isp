@@ -7016,3 +7016,19 @@ variation is discovery; two sources; prep-defect ∈ group;
 non-principality); outcomes REPRODUCES / VARIES-⟨list⟩ /
 ABSENT (downgrade to the user) / BLOCKED.  All terminal
 lessons binding.  Construction dispatch next.
+
+## 2026-08-07 — GEN CONSTRUCTION DISPATCHED (v13 LEDGER #213)
+Construction worker dispatched (Opus 5, freeze-on-delivery, no
+git) against pin 0da6205815a6 @ 5e8bc58: the second base
+declared as data first (different dimensions + different
+preparation, completion PINNED and printed), the NT transport
+machinery rebuilt on it (no W6 fixture reuse), patterns P1–P5
+gated separately (nontrivial holonomy; the group computed
+whatever it is; the two sources isolated via single-rule
+sub-connections + the prep swap-defect; prep-defect ∈ group;
+non-principality membership table), verdict from the pin's four
+outcomes.  All terminal lessons binding.  On delivery:
+COMMIT-AS-IS, verify byte-identity, §13 freeze → panel →
+adjudication.  Per the pin: REPRODUCES/VARIES → overlaps
+(cocycle) next; ABSENT → the downgrade returns to the user.
+Recorded after it occurs.
