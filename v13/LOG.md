@@ -7594,3 +7594,36 @@ self-test 4,860/0 w/ cache exercised / byte-identical ×2.  md5
 output ee8cdfe9 / receipt 5a785e7b.  NO Einstein-dynamics
 claim, NO metric recovered, NO continuum limit — the paper
 says so.  Adjudicator verification next; panel follows.
+
+## 2026-08-08 — XBA DELIVERED, COMMITTED AS-IS (v13 LEDGER #237)
+Delivery committed as-is.  VERDICT:
+**XBA-SHARED-STRUCTURE-IDENTIFIED — the property named
+SPECIES-FORCED-SPLIT.  The two bases' connections are ONE
+POINT of the 4,096-element space, forced cycle-by-cycle by
+four species clauses**; the "2.5% coincidence" dissolves — the
+bases were never independent draws.  THE CHAIN (each clause
+gated): 4,096 → 3,072 (admission) → 768 (common prep leg) →
+192 (commuting legs) → 12 (W intertwines the local legs) → 6
+(W does NOT intertwine the prep leg) — all six survivors carry
+82/86/90/106.  **PREDICTIVELY VERIFIED: a THIRD instance
+(fresh quaternion (5,1,2,3), rank-2 ψ, different completion
+transposition) built for the purpose → 82/86/90/106.**  The
+equivariant control → 172/192 (the profile MOVES when the
+species clause breaks).  Candidate table honest: C4 forces
+(subset size 1 — trivial AS A SUBSET STATEMENT, the content
+being the symbolic derivation + chain + prediction, stated at
+the claim); C5 naming-closed forces at 6, sufficient-not-
+necessary (90 outside also hit); C3 admission necessary-not-
+forcing (1,728); C2a equivariance MEASURED VACUOUS (no
+violator exists — named as control gap); **the 24-cell
+admission-table agreement is an INPUT, not explained — the
+graph commonality stays open.**  Rebuilt graph: 8 nodes / 13
+links / rank 6 / 364 based walks / 27 classes; Aut
+rule-preserving 2 acting trivially on H₁.  36 anchors (three
+hash pins) / 28 gates (24 must-pass, 0 failures) / 35/35
+mutants died, never_falsified EMPTY at 23 / gauge sweep 16,384
+w/ 0 cache hits vs 442,368 refused primed lookups /
+byte-identical ×2.  10 deviations (D1 the freeze-vs-realized-
+labels residual answered by the third instance, recorded not
+argued away).  md5 output 2df4bbfb / receipt 5624f153.
+Adjudicator verification next; panel follows.

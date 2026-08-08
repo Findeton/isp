@@ -1,0 +1,2855 @@
+{
+ "anchors": [
+  {
+   "got": "7cbde5da42805e454628a99e7e2f6aea2783583b174d024a38cd2f9fe49e9722",
+   "name": "A01 pin sha256",
+   "ok": true,
+   "want": "7cbde5da42805e454628a99e7e2f6aea2783583b174d024a38cd2f9fe49e9722",
+   "why": "the XBA pin this unit is bound to"
+  },
+  {
+   "got": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "name": "A02 NT terminal receipt sha256",
+   "ok": true,
+   "want": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+   "why": "the first base's committed terminal receipt"
+  },
+  {
+   "got": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "name": "A03 GEN terminal receipt sha256",
+   "ok": true,
+   "want": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+   "why": "base G's committed terminal receipt"
+  },
+  {
+   "got": "1d17534ef9f4c6e1d1c590800a95114c0e0f754f84822d0240ba28685b897796",
+   "name": "A04 frozen operator review sha256",
+   "ok": true,
+   "want": "1d17534ef9f4c6e1d1c590800a95114c0e0f754f84822d0240ba28685b897796",
+   "why": "the frozen review whose 4,096-enumeration supplies the external anchors"
+  },
+  {
+   "got": [
+    89
+   ],
+   "name": "A05 review: distinct profiles",
+   "ok": true,
+   "want": [
+    89
+   ],
+   "why": "the frozen review's own table must agree with the GEN receipt"
+  },
+  {
+   "got": [
+    96,
+    4096
+   ],
+   "name": "A06 review: profile hits / space",
+   "ok": true,
+   "want": [
+    96,
+    4096
+   ],
+   "why": "96 of 4,096, read from the frozen review"
+  },
+  {
+   "got": [
+    3906
+   ],
+   "name": "A07 review: order-4 connections",
+   "ok": true,
+   "want": [
+    3906
+   ],
+   "why": "3,906, read from the frozen review"
+  },
+  {
+   "got": [
+    102,
+    94,
+    90,
+    78,
+    384
+   ],
+   "name": "A08 review: most common profile count",
+   "ok": true,
+   "want": [
+    102,
+    94,
+    90,
+    78,
+    384
+   ],
+   "why": "the review prints the most common profile descending; the receipt ascending"
+  },
+  {
+   "got": 24,
+   "name": "A09 GEN cross-base admission cells",
+   "ok": true,
+   "want": 24,
+   "why": "the 24 matched cells GEN compared"
+  },
+  {
+   "got": 24,
+   "name": "A10 GEN cross-base admission agreement",
+   "ok": true,
+   "want": 24,
+   "why": "GEN's 24/24 agreement, recomputed here from both receipts"
+  },
+  {
+   "got": 13,
+   "name": "A11 links at a symmetric setting",
+   "ok": true,
+   "want": 13,
+   "why": "the NT receipt's own link count"
+  },
+  {
+   "got": 7,
+   "name": "A12 identification links",
+   "ok": true,
+   "want": 7,
+   "why": "the NT receipt's own count"
+  },
+  {
+   "got": 16168,
+   "name": "A13 reduced walks at a symmetric setting",
+   "ok": true,
+   "want": 16168,
+   "why": "GEN's own path count"
+  },
+  {
+   "got": 2820,
+   "name": "A14 closed walks at a symmetric setting",
+   "ok": true,
+   "want": 2820,
+   "why": "GEN's own count"
+  },
+  {
+   "got": 364,
+   "name": "A15 based closed walks",
+   "ok": true,
+   "want": 364,
+   "why": "the 364 walks the frozen review re-counted combinatorially"
+  },
+  {
+   "got": 364,
+   "name": "A16 based closed walks (NT)",
+   "ok": true,
+   "want": 364,
+   "why": "the NT receipt's own count"
+  },
+  {
+   "got": [
+    7,
+    6,
+    8
+   ],
+   "name": "A34 spanning tree, cotree, nodes reached",
+   "ok": true,
+   "want": [
+    7,
+    6,
+    8
+   ],
+   "why": "the frozen review's own gauge-fixing shape, read from the GEN receipt"
+  },
+  {
+   "got": 18,
+   "name": "A17 REAL-only closed walks",
+   "ok": true,
+   "want": 18,
+   "why": "the NT receipt's own realized-rule sub-connection count"
+  },
+  {
+   "got": 8,
+   "name": "A18 FULL-only closed walks",
+   "ok": true,
+   "want": 8,
+   "why": "the NT receipt's own full-leg sub-connection count"
+  },
+  {
+   "got": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "3/5",
+     "-4/5"
+    ],
+    [
+     "0",
+     "4/5",
+     "3/5"
+    ]
+   ],
+   "name": "A19 base G rotation R1",
+   "ok": true,
+   "want": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "3/5",
+     "-4/5"
+    ],
+    [
+     "0",
+     "4/5",
+     "3/5"
+    ]
+   ],
+   "why": "the rotation printed in the generality paper"
+  },
+  {
+   "got": [
+    [
+     "5/13",
+     "-12/13",
+     "0"
+    ],
+    [
+     "12/13",
+     "5/13",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "name": "A20 base G rotation R2",
+   "ok": true,
+   "want": [
+    [
+     "5/13",
+     "-12/13",
+     "0"
+    ],
+    [
+     "12/13",
+     "5/13",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ]
+   ],
+   "why": "the rotation printed in the generality paper"
+  },
+  {
+   "got": [
+    [
+     "0",
+     "0",
+     "2/3",
+     "2/3",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1/3"
+    ],
+    [
+     "2/3",
+     "0",
+     "5/9",
+     "-4/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "2/3",
+     "0",
+     "-4/9",
+     "5/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "1/3",
+     "0",
+     "-2/9",
+     "-2/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "8/9"
+    ]
+   ],
+   "name": "A21 base G completion V",
+   "ok": true,
+   "want": [
+    [
+     "0",
+     "0",
+     "2/3",
+     "2/3",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1/3"
+    ],
+    [
+     "2/3",
+     "0",
+     "5/9",
+     "-4/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "2/3",
+     "0",
+     "-4/9",
+     "5/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "-2/9"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "1/3",
+     "0",
+     "-2/9",
+     "-2/9",
+     "0",
+     "0",
+     "0",
+     "0",
+     "8/9"
+    ]
+   ],
+   "why": "the 9x9 completion printed in the generality paper, entry by entry"
+  },
+  {
+   "got": 6,
+   "name": "A22 base 1 wing exchange fixed points",
+   "ok": true,
+   "want": 6,
+   "why": "the transport paper's own count (6 of 36)"
+  },
+  {
+   "got": 18,
+   "name": "A23 base 1 defect fixed points",
+   "ok": true,
+   "want": 18,
+   "why": "the qubit-only wing swap, 18 of 36, named in the transport paper"
+  },
+  {
+   "got": 9,
+   "name": "A24 base G wing exchange fixed points",
+   "ok": true,
+   "want": 9,
+   "why": "the generality paper's own count (9 of 81)"
+  },
+  {
+   "got": 45,
+   "name": "A25 base G defect fixed points",
+   "ok": true,
+   "want": 45,
+   "why": "the generality paper's own count (45 of 81)"
+  },
+  {
+   "got": 0,
+   "name": "A36 the 364-walk model agreement",
+   "ok": true,
+   "want": 0,
+   "why": "the frozen review's step 1: the combinatorial model reproduces the direct holonomy at every one of the 364 based closed walks"
+  },
+  {
+   "got": 0,
+   "name": "A35 links whose gauge-fixed label leaves the group",
+   "ok": true,
+   "want": 0,
+   "why": "the frozen review measured every one of the 13 labels inside the group"
+  },
+  {
+   "got": 4096,
+   "name": "A26 connection space size",
+   "ok": true,
+   "want": 4096,
+   "why": "the frozen review's 4,096"
+  },
+  {
+   "got": 89,
+   "name": "A27 distinct profiles",
+   "ok": true,
+   "want": 89,
+   "why": "the frozen review's 89"
+  },
+  {
+   "got": 96,
+   "name": "A28 profile hits",
+   "ok": true,
+   "want": 96,
+   "why": "the frozen review's 96"
+  },
+  {
+   "got": 3906,
+   "name": "A29 order-4 connections",
+   "ok": true,
+   "want": 3906,
+   "why": "the frozen review's 3,906"
+  },
+  {
+   "got": 96,
+   "name": "A30 order-4 profile hits",
+   "ok": true,
+   "want": 96,
+   "why": "the frozen review's 96 of 3,906"
+  },
+  {
+   "got": [
+    [
+     78,
+     90,
+     94,
+     102
+    ],
+    384
+   ],
+   "name": "A31 most common profile",
+   "ok": true,
+   "want": [
+    [
+     78,
+     90,
+     94,
+     102
+    ],
+    384
+   ],
+   "why": "the frozen review's (102,94,90,78) at 384"
+  },
+  {
+   "got": [
+    82,
+    86,
+    90,
+    106
+   ],
+   "name": "A32 the realized class counts",
+   "ok": true,
+   "want": [
+    82,
+    86,
+    90,
+    106
+   ],
+   "why": "82/86/90/106, the profile both terminal receipts record"
+  },
+  {
+   "got": {
+    "1": 82,
+    "D": 90,
+    "W": 86,
+    "WD": 106
+   },
+   "name": "A33 the realized class counts, element by element",
+   "ok": true,
+   "want": {
+    "1": 82,
+    "D": 90,
+    "W": 86,
+    "WD": 106
+   },
+   "why": "the NT receipt names its elements; the counts must match element by element"
+  }
+ ],
+ "findings": {
+  "forcing_candidates": [
+   "C4 species-split (named)",
+   "C5 species-split (naming-closed)"
+  ],
+  "residual_open": "why the two bases' 24-cell admission tables agree, hence why the graph is common, is not decided here",
+  "shrinking_but_not_forcing": [
+   "C1 source-split",
+   "C3 admission-pattern",
+   "C6 common preparation leg",
+   "C7 commuting local legs",
+   "C8 intertwined local legs",
+   "C9 unintertwined preparation leg",
+   "C10 group of order four"
+  ],
+  "the_declared_basis_values": {
+   "BIGON_0": "W",
+   "CANON": "1",
+   "SQ_FULL_1": "1",
+   "SQ_REAL_1": "D",
+   "SQ_REAL_2": "1",
+   "SQ_REAL_3": "1"
+  },
+  "the_property": "SPECIES-FORCED-SPLIT",
+  "the_shared_connection": {
+   "FULL@1": "1",
+   "FULL@3": "1",
+   "REAL@0": "W",
+   "REAL@1": "WD",
+   "REAL@2": "WD",
+   "REAL@3": "WD"
+  },
+  "thesis": "The two bases' holonomy class-count profiles agree because their two connections are ONE point of the 4,096-element connection space on the common gauge-fixed graph, and that point is forced -- cycle by cycle -- by four species clauses both bases satisfy: a preparation leg common to the two frames, commuting local legs, a wing exchange that intertwines the local legs at a symmetric setting, and a wing exchange that does NOT intertwine the preparation leg. The agreement is not a 2.5% coincidence; the two bases are not two independent draws.",
+  "unit_verdict": "XBA-SHARED-STRUCTURE-IDENTIFIED"
+ },
+ "gates": [
+  {
+   "evidence": {
+    "agreeing": 24,
+    "cells": 24
+   },
+   "index": 0,
+   "kind": "must-pass",
+   "name": "XBA-ADMISSION-AGREEMENT",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "components": 1,
+    "cycle_rank": 6,
+    "immediate_repeats": 0,
+    "not_a_walk": 0
+   },
+   "index": 1,
+   "kind": "must-pass",
+   "name": "XBA-WALK-AUDIT",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "cotree": 6,
+    "rank": 6,
+    "tree": 7
+   },
+   "index": 2,
+   "kind": "must-pass",
+   "name": "XBA-CYCLE-RANK",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "cycles": [
+     "SQ_FULL_1",
+     "CANON",
+     "SQ_REAL_1",
+     "SQ_REAL_2",
+     "SQ_REAL_3",
+     "BIGON_0"
+    ],
+    "rank": 6
+   },
+   "index": 3,
+   "kind": "must-pass",
+   "name": "XBA-BASIS-INDEPENDENT",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "declared_basis": [
+     "SQ_FULL_1",
+     "CANON",
+     "SQ_REAL_1",
+     "SQ_REAL_2",
+     "SQ_REAL_3",
+     "BIGON_0"
+    ]
+   },
+   "index": 4,
+   "kind": "must-pass",
+   "name": "XBA-BASIS-INVERTIBLE",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "base 1 @ SP-E": {
+     "D_fixed": 18,
+     "D_is_an_involution": true,
+     "W_fixed": 6,
+     "W_intertwines_local_leg": true,
+     "W_intertwines_prep": false,
+     "common_preparation_leg": true,
+     "every_declared_operator_is_orthogonal": true,
+     "legs_commute": true,
+     "the_four_named_elements_are_distinct": true
+    },
+    "base 1 @ SP-F": {
+     "D_fixed": 18,
+     "D_is_an_involution": true,
+     "W_fixed": 6,
+     "W_intertwines_local_leg": true,
+     "W_intertwines_prep": false,
+     "common_preparation_leg": true,
+     "every_declared_operator_is_orthogonal": true,
+     "legs_commute": true,
+     "the_four_named_elements_are_distinct": true
+    },
+    "base G @ GP-E": {
+     "D_fixed": 45,
+     "D_is_an_involution": true,
+     "W_fixed": 9,
+     "W_intertwines_local_leg": true,
+     "W_intertwines_prep": false,
+     "common_preparation_leg": true,
+     "every_declared_operator_is_orthogonal": true,
+     "legs_commute": true,
+     "the_four_named_elements_are_distinct": true
+    },
+    "base G @ GP-F": {
+     "D_fixed": 45,
+     "D_is_an_involution": true,
+     "W_fixed": 9,
+     "W_intertwines_local_leg": true,
+     "W_intertwines_prep": false,
+     "common_preparation_leg": true,
+     "every_declared_operator_is_orthogonal": true,
+     "legs_commute": true,
+     "the_four_named_elements_are_distinct": true
+    }
+   },
+   "index": 5,
+   "kind": "must-pass",
+   "name": "XBA-SPECIES-CLAUSES-MEASURED",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "links_whose_label_is_outside_the_group": {
+     "base 1 @ SP-E": [],
+     "base 1 @ SP-F": [],
+     "base G @ GP-E": [],
+     "base G @ GP-F": []
+    }
+   },
+   "index": 6,
+   "kind": "must-pass",
+   "name": "XBA-LABELS-IN-THE-KLEIN-GROUP",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "distinct_gauge_classes_over_all_four_readings": 1,
+    "readable_readings": 4,
+    "the_connection": {
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    }
+   },
+   "index": 7,
+   "kind": "must-pass",
+   "name": "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "base 1 @ SP-E": {
+     "class_counts": {
+      "1": 82,
+      "D": 90,
+      "W": 86,
+      "WD": 106
+     },
+     "walks_where_the_two_routes_disagree": 0
+    },
+    "base G @ GP-E": {
+     "class_counts": {
+      "1": 82,
+      "D": 90,
+      "W": 86,
+      "WD": 106
+     },
+     "walks_where_the_two_routes_disagree": 0
+    }
+   },
+   "index": 8,
+   "kind": "must-pass",
+   "name": "XBA-DIRECT-COMPARATOR",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "profiles_computed_before_the_declaration": 0
+   },
+   "index": 9,
+   "kind": "must-pass",
+   "name": "XBA-CANDIDATE-FREEZE",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "candidates": [
+     "C1 source-split",
+     "C2a aut-equivariance (rule-preserving)",
+     "C2b aut-equivariance (full)",
+     "C2c aut-equivariance up to naming",
+     "C3 admission-pattern",
+     "C4 species-split (named)",
+     "C5 species-split (naming-closed)",
+     "C6 common preparation leg",
+     "C7 commuting local legs",
+     "C8 intertwined local legs",
+     "C9 unintertwined preparation leg",
+     "C10 group of order four"
+    ],
+    "note": "the declaration itself is a disclosure; its teeth are the freeze gate before it and the consistency gate after it"
+   },
+   "index": 10,
+   "kind": "disclosure",
+   "name": "XBA-CANDIDATES-DECLARED",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "forcing": [
+     "C4 species-split (named)",
+     "C5 species-split (naming-closed)"
+    ],
+    "shrinking_but_not_forcing": [
+     "C1 source-split",
+     "C3 admission-pattern",
+     "C6 common preparation leg",
+     "C7 commuting local legs",
+     "C8 intertwined local legs",
+     "C9 unintertwined preparation leg",
+     "C10 group of order four"
+    ]
+   },
+   "index": 11,
+   "kind": "disclosure",
+   "name": "XBA-CANDIDATES-MEASURED",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "chain": [
+     {
+      "clause": "E0  the two rules draw different maps at t=0 (admission table)",
+      "hits": 96,
+      "survivors": 3072
+     },
+     {
+      "clause": "E1  the preparation leg is common to the two frames",
+      "hits": 24,
+      "survivors": 768
+     },
+     {
+      "clause": "E2  the two local legs commute",
+      "hits": 12,
+      "survivors": 192
+     },
+     {
+      "clause": "E3  the wing exchange intertwines both local legs",
+      "hits": 6,
+      "survivors": 12
+     },
+     {
+      "clause": "E4  the wing exchange does not intertwine the preparation leg",
+      "hits": 6,
+      "survivors": 6
+     }
+    ]
+   },
+   "index": 12,
+   "kind": "must-pass",
+   "name": "XBA-CLAUSE-CHAIN",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "and_is_the_naming_orbit_of_the_named_one": true,
+    "the_named_candidate_s_subset_is_exactly_the_realized_connection": true,
+    "the_naming_closed_subset_equals_the_clause_chain_s_survivors": true
+   },
+   "index": 13,
+   "kind": "must-pass",
+   "name": "XBA-CANDIDATE-CHAIN-CONSISTENCY",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "derived": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "measured": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ]
+   },
+   "index": 14,
+   "kind": "must-pass",
+   "name": "XBA-DERIVATION-MATCHES-THE-BASES",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "D_fixed": 45,
+    "D_is_the_identity": false,
+    "W_fixed": 9,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "note": "the third instance: fresh quaternion, different preparation, different completion",
+    "the_four_named_elements_are_distinct": true
+   },
+   "index": 15,
+   "kind": "must-pass",
+   "name": "XBA-THIRD-INSTANCE-PREDICTED",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "D_fixed": 81,
+    "D_is_the_identity": true,
+    "W_fixed": 9,
+    "class_counts_sorted": [
+     172,
+     192
+    ],
+    "declared_basis": null,
+    "distinct_holonomies_over_the_364_walks": 2,
+    "note": "the exchange-equivariant control: the bare Householder",
+    "the_four_named_elements_are_distinct": false
+   },
+   "index": 16,
+   "kind": "must-pass",
+   "name": "XBA-EQUIVARIANT-CONTROL-BREAKS-IT",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "base 1 @ SP-E": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "base 1 @ SP-F": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "base G @ GP-E": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "base G @ GP-F": [
+     82,
+     86,
+     90,
+     106
+    ]
+   },
+   "index": 17,
+   "kind": "must-pass",
+   "name": "XBA-POSITIVE-CONTROL",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "declared_violators": {
+     "C1 source-split": "SQ_FULL_1 := W",
+     "C10 group of order four": "SQ_REAL_1 := 1",
+     "C2a aut-equivariance (rule-preserving)": null,
+     "C2b aut-equivariance (full)": "SQ_FULL_1 := W",
+     "C2c aut-equivariance up to naming": "SQ_FULL_1 := W",
+     "C3 admission-pattern": "SQ_FULL_1 := WD",
+     "C4 species-split (named)": "SQ_FULL_1 := W",
+     "C5 species-split (naming-closed)": "SQ_FULL_1 := W",
+     "C6 common preparation leg": "SQ_FULL_1 := W",
+     "C7 commuting local legs": "CANON := W",
+     "C8 intertwined local legs": "SQ_REAL_2 := W",
+     "C9 unintertwined preparation leg": "SQ_REAL_1 := 1"
+    },
+    "every_declared_violator_breaks_the_profile": true
+   },
+   "index": 18,
+   "kind": "must-pass",
+   "name": "XBA-NEGATIVE-CONTROLS",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "cache_hits": 0,
+    "cache_misses": 442368,
+    "declared_group": "one Klein-group value per node, the constant subgroup fixed by the declared section h(F1@t0)=1",
+    "deviations": 0,
+    "distinct_walk_masks": 27,
+    "fresh_evaluations": 442368,
+    "group_elements": 16384,
+    "misconvention_moves": 12288,
+    "note": "with the correct convention the invariance is analytically forced: a closed walk enters and leaves every node the same number of times, so a node-valued gauge telescopes away; the measurement is that the instrument implements that convention",
+    "primed": 27,
+    "refused_lookups": 442368,
+    "reserved_returns": 27
+   },
+   "index": 19,
+   "kind": "disclosure",
+   "name": "XBA-GAUGE-INVARIANCE",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "cache_hits": 0,
+    "cache_misses": 442368,
+    "declared_group": "one Klein-group value per node, the constant subgroup fixed by the declared section h(F1@t0)=1",
+    "deviations": 0,
+    "distinct_walk_masks": 27,
+    "fresh_evaluations": 442368,
+    "group_elements": 16384,
+    "misconvention_moves": 12288,
+    "primed": 27,
+    "refused_lookups": 442368,
+    "reserved_returns": 27
+   },
+   "index": 20,
+   "kind": "must-pass",
+   "name": "XBA-GAUGE-SELFTEST-HAS-TEETH",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "candidate_sizes_first_tree": {
+     "C1 source-split": 42,
+     "C10 group of order four": 3906,
+     "C2a aut-equivariance (rule-preserving)": 4096,
+     "C2b aut-equivariance (full)": 64,
+     "C2c aut-equivariance up to naming": 136,
+     "C3 admission-pattern": 1728,
+     "C4 species-split (named)": 1,
+     "C5 species-split (naming-closed)": 6,
+     "C6 common preparation leg": 1024,
+     "C7 commuting local legs": 1024,
+     "C8 intertwined local legs": 256,
+     "C9 unintertwined preparation leg": 2304
+    },
+    "candidate_sizes_second_tree": {
+     "C1 source-split": 42,
+     "C10 group of order four": 3906,
+     "C3 admission-pattern": 1728,
+     "C4 species-split (named)": 1,
+     "C5 species-split (naming-closed)": 6,
+     "C6 common preparation leg": 1024,
+     "C7 commuting local legs": 1024,
+     "C8 intertwined local legs": 256,
+     "C9 unintertwined preparation leg": 2304
+    },
+    "census_identical": true,
+    "distinct_profiles": 89,
+    "order_4": 3906,
+    "profile_hits": 96,
+    "second_tree": [
+     "LEG_F1_1",
+     "LEG_F1_2",
+     "LEG_F1_3",
+     "LEG_F2_1",
+     "LEG_F2_2",
+     "LEG_F2_3",
+     "REAL@0"
+    ],
+    "subsets_identical": true,
+    "the_first_tree_s_values": [
+     89,
+     96,
+     3906
+    ]
+   },
+   "index": 21,
+   "kind": "must-pass",
+   "name": "XBA-TREE-FLIP-TEST",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "note": "analytically forced: every element of the group is an involution",
+    "walks": 364,
+    "walks_whose_reversal_differs": 0
+   },
+   "index": 22,
+   "kind": "disclosure",
+   "name": "XBA-DIRECTION-FLIP",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "float_calls": 0,
+    "float_literals": 0
+   },
+   "index": 23,
+   "kind": "must-pass",
+   "name": "XBA-EXACTNESS",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "call_sites_whose_arguments_reach_the_mutant_flag": 0,
+    "gate_or_anchor_call_sites": 64,
+    "mutant_inequality_comparisons": 0
+   },
+   "index": 24,
+   "kind": "must-pass",
+   "name": "XBA-NO-MUTANT-EXEMPTION",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "declaration_gate_index": 10,
+    "every_constrained_subset_gate_comes_later": true
+   },
+   "index": 25,
+   "kind": "must-pass",
+   "name": "XBA-FREEZE-ORDER",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "pre_registered": [
+     "XBA-SHARED-STRUCTURE-IDENTIFIED",
+     "XBA-PARTIAL",
+     "XBA-COINCIDENCE-NOT-EXCLUDED"
+    ],
+    "verdict": "XBA-SHARED-STRUCTURE-IDENTIFIED"
+   },
+   "index": 26,
+   "kind": "must-pass",
+   "name": "XBA-VOCABULARY",
+   "ok": true
+  },
+  {
+   "evidence": {
+    "died": 35,
+    "falsified_by_computation": 19,
+    "falsified_by_some": 23,
+    "falsified_only_by_a_waiver": [
+     "XBA-POSITIVE-CONTROL",
+     "XBA-TREE-FLIP-TEST",
+     "XBA-FREEZE-ORDER",
+     "XBA-VOCABULARY"
+    ],
+    "must_pass": 23,
+    "mutants": 35,
+    "never_falsified": [],
+    "per_gate_falsifiers": {
+     "R1": [
+      "rot-lax"
+     ],
+     "V": [
+      "completion-lax"
+     ],
+     "XBA-ADMISSION-AGREEMENT": [
+      "admission-lax"
+     ],
+     "XBA-BASIS-INDEPENDENT": [
+      "cycle-lax",
+      "basis-lax"
+     ],
+     "XBA-BASIS-INVERTIBLE": [
+      "cycle-lax",
+      "basis-lax"
+     ],
+     "XBA-CANDIDATE-CHAIN-CONSISTENCY": [
+      "candidate-lax",
+      "species-lax",
+      "chain-lax"
+     ],
+     "XBA-CANDIDATE-FREEZE": [
+      "freeze-lax"
+     ],
+     "XBA-CLAUSE-CHAIN": [
+      "species-lax"
+     ],
+     "XBA-CYCLE-RANK": [
+      "tree-lax"
+     ],
+     "XBA-DERIVATION-MATCHES-THE-BASES": [
+      "species-lax"
+     ],
+     "XBA-DIRECT-COMPARATOR": [
+      "base1-angle",
+      "direct-order",
+      "reverse-lax"
+     ],
+     "XBA-EQUIVARIANT-CONTROL-BREAKS-IT": [
+      "control-completion"
+     ],
+     "XBA-EXACTNESS": [
+      "float-lax"
+     ],
+     "XBA-FREEZE-ORDER": [
+      "order-lax"
+     ],
+     "XBA-GAUGE-SELFTEST-HAS-TEETH": [
+      "gauge-head",
+      "memo-lax"
+     ],
+     "XBA-LABELS-IN-THE-KLEIN-GROUP": [
+      "base1-angle",
+      "prep-lax"
+     ],
+     "XBA-NEGATIVE-CONTROLS": [
+      "violator-lax"
+     ],
+     "XBA-NO-MUTANT-EXEMPTION": [
+      "exempt-lax"
+     ],
+     "XBA-POSITIVE-CONTROL": [
+      "control-lax"
+     ],
+     "XBA-SPECIES-CLAUSES-MEASURED": [
+      "base1-angle",
+      "prep-lax"
+     ],
+     "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION": [
+      "base1-angle"
+     ],
+     "XBA-THIRD-INSTANCE-PREDICTED": [
+      "species-lax"
+     ],
+     "XBA-TREE-FLIP-TEST": [
+      "flip-lax"
+     ],
+     "XBA-VOCABULARY": [
+      "verdict-lax"
+     ],
+     "XBA-WALK-AUDIT": [
+      "graph-drop-real2",
+      "graph-add-full2",
+      "reduce-lax"
+     ],
+     "agreement": [
+      "base1-angle",
+      "direct-order",
+      "reverse-lax",
+      "admission-lax"
+     ],
+     "counts": [
+      "anchor-classcounts"
+     ],
+     "points": [
+      "field-lax",
+      "wingswap-lax"
+     ],
+     "profiles": [
+      "anchor-census"
+     ],
+     "reached": [
+      "tree-lax"
+     ],
+     "setting": [
+      "graph-drop-real2",
+      "graph-add-full2",
+      "reduce-lax"
+     ],
+     "sha256": [
+      "anchor-review-hash",
+      "anchor-nt-hash",
+      "anchor-gen-hash"
+     ],
+     "walks": [
+      "lmax-lax"
+     ]
+    },
+    "per_mutant": {
+     "admission-lax": {
+      "died": true,
+      "falsified": [
+       "agreement",
+       "XBA-ADMISSION-AGREEMENT"
+      ],
+      "kind": "computation"
+     },
+     "anchor-census": {
+      "died": true,
+      "falsified": [
+       "profiles"
+      ],
+      "kind": "computation"
+     },
+     "anchor-classcounts": {
+      "died": true,
+      "falsified": [
+       "counts"
+      ],
+      "kind": "computation"
+     },
+     "anchor-gen-hash": {
+      "died": true,
+      "falsified": [
+       "sha256"
+      ],
+      "kind": "computation"
+     },
+     "anchor-nt-hash": {
+      "died": true,
+      "falsified": [
+       "sha256"
+      ],
+      "kind": "computation"
+     },
+     "anchor-review-hash": {
+      "died": true,
+      "falsified": [
+       "sha256"
+      ],
+      "kind": "computation"
+     },
+     "base1-angle": {
+      "died": true,
+      "falsified": [
+       "agreement",
+       "XBA-SPECIES-CLAUSES-MEASURED",
+       "XBA-LABELS-IN-THE-KLEIN-GROUP",
+       "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION",
+       "XBA-DIRECT-COMPARATOR"
+      ],
+      "kind": "computation"
+     },
+     "basis-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-BASIS-INDEPENDENT",
+       "XBA-BASIS-INVERTIBLE"
+      ],
+      "kind": "computation"
+     },
+     "candidate-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+      ],
+      "kind": "computation"
+     },
+     "chain-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+      ],
+      "kind": "waiver"
+     },
+     "completion-lax": {
+      "died": true,
+      "falsified": [
+       "V"
+      ],
+      "kind": "computation"
+     },
+     "control-completion": {
+      "died": true,
+      "falsified": [
+       "XBA-EQUIVARIANT-CONTROL-BREAKS-IT"
+      ],
+      "kind": "computation"
+     },
+     "control-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-POSITIVE-CONTROL"
+      ],
+      "kind": "waiver"
+     },
+     "cycle-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-BASIS-INDEPENDENT",
+       "XBA-BASIS-INVERTIBLE"
+      ],
+      "kind": "computation"
+     },
+     "direct-order": {
+      "died": true,
+      "falsified": [
+       "agreement",
+       "XBA-DIRECT-COMPARATOR"
+      ],
+      "kind": "computation"
+     },
+     "exempt-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-NO-MUTANT-EXEMPTION"
+      ],
+      "kind": "computation"
+     },
+     "field-lax": {
+      "died": true,
+      "falsified": [
+       "points"
+      ],
+      "kind": "computation"
+     },
+     "flip-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-TREE-FLIP-TEST"
+      ],
+      "kind": "waiver"
+     },
+     "float-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-EXACTNESS"
+      ],
+      "kind": "computation"
+     },
+     "freeze-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-CANDIDATE-FREEZE"
+      ],
+      "kind": "computation"
+     },
+     "gauge-head": {
+      "died": true,
+      "falsified": [
+       "XBA-GAUGE-SELFTEST-HAS-TEETH"
+      ],
+      "kind": "computation"
+     },
+     "graph-add-full2": {
+      "died": true,
+      "falsified": [
+       "setting",
+       "XBA-WALK-AUDIT"
+      ],
+      "kind": "computation"
+     },
+     "graph-drop-real2": {
+      "died": true,
+      "falsified": [
+       "setting",
+       "XBA-WALK-AUDIT"
+      ],
+      "kind": "computation"
+     },
+     "lmax-lax": {
+      "died": true,
+      "falsified": [
+       "walks"
+      ],
+      "kind": "computation"
+     },
+     "memo-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-GAUGE-SELFTEST-HAS-TEETH"
+      ],
+      "kind": "computation"
+     },
+     "order-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-FREEZE-ORDER"
+      ],
+      "kind": "waiver"
+     },
+     "prep-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-SPECIES-CLAUSES-MEASURED",
+       "XBA-LABELS-IN-THE-KLEIN-GROUP"
+      ],
+      "kind": "computation"
+     },
+     "reduce-lax": {
+      "died": true,
+      "falsified": [
+       "setting",
+       "XBA-WALK-AUDIT"
+      ],
+      "kind": "computation"
+     },
+     "reverse-lax": {
+      "died": true,
+      "falsified": [
+       "agreement",
+       "XBA-DIRECT-COMPARATOR"
+      ],
+      "kind": "computation"
+     },
+     "rot-lax": {
+      "died": true,
+      "falsified": [
+       "R1"
+      ],
+      "kind": "computation"
+     },
+     "species-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-CLAUSE-CHAIN",
+       "XBA-CANDIDATE-CHAIN-CONSISTENCY",
+       "XBA-DERIVATION-MATCHES-THE-BASES",
+       "XBA-THIRD-INSTANCE-PREDICTED"
+      ],
+      "kind": "computation"
+     },
+     "tree-lax": {
+      "died": true,
+      "falsified": [
+       "reached",
+       "XBA-CYCLE-RANK"
+      ],
+      "kind": "computation"
+     },
+     "verdict-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-VOCABULARY"
+      ],
+      "kind": "waiver"
+     },
+     "violator-lax": {
+      "died": true,
+      "falsified": [
+       "XBA-NEGATIVE-CONTROLS"
+      ],
+      "kind": "computation"
+     },
+     "wingswap-lax": {
+      "died": true,
+      "falsified": [
+       "points"
+      ],
+      "kind": "computation"
+     }
+    },
+    "survived": 0,
+    "survivors": []
+   },
+   "index": 27,
+   "kind": "must-pass",
+   "name": "XBA-FALSIFICATION-CENSUS",
+   "ok": true
+  }
+ ],
+ "pin_sha256_prefix": "7cbde5da4280",
+ "pinned_sources": {
+  "gen": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
+  "nt": "d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e",
+  "pin": "7cbde5da42805e454628a99e7e2f6aea2783583b174d024a38cd2f9fe49e9722",
+  "review": "1d17534ef9f4c6e1d1c590800a95114c0e0f754f84822d0240ba28685b897796"
+ },
+ "schema": "xba-crossbase-receipt-v1",
+ "source_sha256": "91677df8bbc71708bafc9bd978fb51cf24dde36893304ef968aae9cbf0181962",
+ "tables": {
+  "admission": {
+   "agreeing": 24,
+   "cells": 24
+  },
+  "arena": {
+   "automorphisms_full_multigraph": 16,
+   "automorphisms_rule_preserving": 2,
+   "closed_walks_all_base_points": 2820,
+   "closed_walks_at_the_base_point": 364,
+   "cotree": [
+    "FULL@1",
+    "FULL@3",
+    "REAL@0",
+    "REAL@1",
+    "REAL@2",
+    "REAL@3"
+   ],
+   "cycle_rank": 6,
+   "declared_cycle_basis": {
+    "BIGON_0": [
+     "FULL@0",
+     "REAL@0"
+    ],
+    "CANON": [
+     "FULL@0",
+     "LEG_F1_1",
+     "LEG_F1_2",
+     "LEG_F1_3",
+     "FULL@3",
+     "LEG_F2_1",
+     "LEG_F2_2",
+     "LEG_F2_3"
+    ],
+    "SQ_FULL_1": [
+     "FULL@0",
+     "LEG_F1_1",
+     "FULL@1",
+     "LEG_F2_1"
+    ],
+    "SQ_REAL_1": [
+     "REAL@0",
+     "LEG_F1_1",
+     "REAL@1",
+     "LEG_F2_1"
+    ],
+    "SQ_REAL_2": [
+     "REAL@1",
+     "LEG_F1_2",
+     "REAL@2",
+     "LEG_F2_2"
+    ],
+    "SQ_REAL_3": [
+     "REAL@2",
+     "LEG_F1_3",
+     "REAL@3",
+     "LEG_F2_3"
+    ]
+   },
+   "distinct_cycle_classes": 27,
+   "identification_links": 7,
+   "induced_actions_on_the_cycle_space_full": 8,
+   "induced_actions_on_the_cycle_space_rule_preserving": 1,
+   "links": 13,
+   "nodes": 8,
+   "path_length_bound": 8,
+   "reduced_walks_all_base_points": 16168,
+   "spanning_tree": [
+    "LEG_F1_1",
+    "LEG_F1_2",
+    "LEG_F1_3",
+    "LEG_F2_1",
+    "LEG_F2_2",
+    "LEG_F2_3",
+    "FULL@0"
+   ]
+  },
+  "bases": {
+   "base 1 @ SP-E": {
+    "D_fixed": 18,
+    "D_is_an_involution": true,
+    "W_fixed": 6,
+    "W_intertwines_local_leg": true,
+    "W_intertwines_prep": false,
+    "class_counts": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "common_preparation_leg": true,
+    "every_declared_operator_is_orthogonal": true,
+    "labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "legs_commute": true,
+    "the_four_named_elements_are_distinct": true
+   },
+   "base 1 @ SP-F": {
+    "D_fixed": 18,
+    "D_is_an_involution": true,
+    "W_fixed": 6,
+    "W_intertwines_local_leg": true,
+    "W_intertwines_prep": false,
+    "class_counts": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "common_preparation_leg": true,
+    "every_declared_operator_is_orthogonal": true,
+    "labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "legs_commute": true,
+    "the_four_named_elements_are_distinct": true
+   },
+   "base G @ GP-E": {
+    "D_fixed": 45,
+    "D_is_an_involution": true,
+    "W_fixed": 9,
+    "W_intertwines_local_leg": true,
+    "W_intertwines_prep": false,
+    "class_counts": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "common_preparation_leg": true,
+    "every_declared_operator_is_orthogonal": true,
+    "labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "legs_commute": true,
+    "the_four_named_elements_are_distinct": true
+   },
+   "base G @ GP-F": {
+    "D_fixed": 45,
+    "D_is_an_involution": true,
+    "W_fixed": 9,
+    "W_intertwines_local_leg": true,
+    "W_intertwines_prep": false,
+    "class_counts": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "common_preparation_leg": true,
+    "every_declared_operator_is_orthogonal": true,
+    "labels": {
+     "FULL@0": "1",
+     "FULL@1": "1",
+     "FULL@3": "1",
+     "LEG_F1_1": "1",
+     "LEG_F1_2": "1",
+     "LEG_F1_3": "1",
+     "LEG_F2_1": "1",
+     "LEG_F2_2": "1",
+     "LEG_F2_3": "1",
+     "REAL@0": "W",
+     "REAL@1": "WD",
+     "REAL@2": "WD",
+     "REAL@3": "WD"
+    },
+    "legs_commute": true,
+    "the_four_named_elements_are_distinct": true
+   }
+  },
+  "candidates": {
+   "C1 source-split": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "pin",
+    "members_reproducing_the_profile_as_a_multiset": 6,
+    "members_reproducing_the_profile_element_by_element": 1,
+    "non_members": 4054,
+    "profile_hits_outside_the_subset": 90,
+    "shrink_factor": "2048/21",
+    "statement": "the full-leg sub-connection is flat, the realized-rule sub-connection carries a group of order two, every two-rule coordinate has a non-flat bigon, and the whole connection generates the group",
+    "subset_size": 42
+   },
+   "C10 group of order four": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 96,
+    "members_reproducing_the_profile_element_by_element": 16,
+    "non_members": 190,
+    "profile_hits_outside_the_subset": 0,
+    "shrink_factor": "2048/1953",
+    "statement": "the connection's labels generate a group of order four -- the explanation the generality unit offered",
+    "subset_size": 3906
+   },
+   "C2a aut-equivariance (rule-preserving)": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "pin",
+    "members_reproducing_the_profile_as_a_multiset": 96,
+    "members_reproducing_the_profile_element_by_element": 16,
+    "non_members": 0,
+    "profile_hits_outside_the_subset": 0,
+    "shrink_factor": "1",
+    "statement": "invariant under the induced action of the rule-preserving automorphism group of the graph",
+    "subset_size": 4096
+   },
+   "C2b aut-equivariance (full)": {
+    "both_bases_satisfy": false,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "pin",
+    "members_reproducing_the_profile_as_a_multiset": 0,
+    "members_reproducing_the_profile_element_by_element": 0,
+    "non_members": 4032,
+    "profile_hits_outside_the_subset": 96,
+    "shrink_factor": "64",
+    "statement": "invariant under the induced action of the full multigraph automorphism group",
+    "subset_size": 64
+   },
+   "C2c aut-equivariance up to naming": {
+    "both_bases_satisfy": false,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "pin",
+    "members_reproducing_the_profile_as_a_multiset": 0,
+    "members_reproducing_the_profile_element_by_element": 0,
+    "non_members": 3960,
+    "profile_hits_outside_the_subset": 96,
+    "shrink_factor": "512/17",
+    "statement": "for every graph automorphism there is an automorphism of the Klein group carrying the pullback back to the connection",
+    "subset_size": 136
+   },
+   "C3 admission-pattern": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "pin",
+    "members_reproducing_the_profile_as_a_multiset": 96,
+    "members_reproducing_the_profile_element_by_element": 16,
+    "non_members": 2368,
+    "profile_hits_outside_the_subset": 0,
+    "shrink_factor": "64/27",
+    "statement": "every coordinate at which the two rules draw DIFFERENT permutations carries a non-flat bigon -- the only constraint the 24-cell table places on a connection",
+    "subset_size": 1728
+   },
+   "C4 species-split (named)": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": true,
+    "forces_the_multiset_profile": true,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 1,
+    "members_reproducing_the_profile_element_by_element": 1,
+    "non_members": 4095,
+    "profile_hits_outside_the_subset": 95,
+    "shrink_factor": "4096",
+    "statement": "the six declared cycles take the values the species clauses force, with the group elements named: (1, 1, D, 1, 1, W)",
+    "subset_size": 1
+   },
+   "C5 species-split (naming-closed)": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": true,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 6,
+    "members_reproducing_the_profile_element_by_element": 1,
+    "non_members": 4090,
+    "profile_hits_outside_the_subset": 90,
+    "shrink_factor": "2048/3",
+    "statement": "there are distinct non-identity d, w with the six declared cycles at (1, 1, d, 1, 1, w)",
+    "subset_size": 6
+   },
+   "C6 common preparation leg": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 24,
+    "members_reproducing_the_profile_element_by_element": 4,
+    "non_members": 3072,
+    "profile_hits_outside_the_subset": 72,
+    "shrink_factor": "4",
+    "statement": "the full-leg square around the preparation leg is flat (the two frames share that leg)",
+    "subset_size": 1024
+   },
+   "C7 commuting local legs": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 24,
+    "members_reproducing_the_profile_element_by_element": 4,
+    "non_members": 3072,
+    "profile_hits_outside_the_subset": 72,
+    "shrink_factor": "4",
+    "statement": "the canonical loop is flat (the two local legs commute)",
+    "subset_size": 1024
+   },
+   "C8 intertwined local legs": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 24,
+    "members_reproducing_the_profile_element_by_element": 4,
+    "non_members": 3840,
+    "profile_hits_outside_the_subset": 72,
+    "shrink_factor": "16",
+    "statement": "the two realized-rule squares around the local legs are flat (the wing exchange intertwines them)",
+    "subset_size": 256
+   },
+   "C9 unintertwined preparation leg": {
+    "both_bases_satisfy": true,
+    "forces_the_element_wise_profile": false,
+    "forces_the_multiset_profile": false,
+    "kind": "worker",
+    "members_reproducing_the_profile_as_a_multiset": 48,
+    "members_reproducing_the_profile_element_by_element": 8,
+    "non_members": 1792,
+    "profile_hits_outside_the_subset": 48,
+    "shrink_factor": "16/9",
+    "statement": "the realized-rule square around the preparation leg is neither flat nor the wing exchange",
+    "subset_size": 2304
+   }
+  },
+  "census": {
+   "connection_space": 4096,
+   "distinct_profiles": 89,
+   "most_common_profile": [
+    [
+     78,
+     90,
+     94,
+     102
+    ],
+    384
+   ],
+   "order_4_connections": 3906,
+   "order_4_profile_hits": 96,
+   "profile_hits_as_a_multiset": 96,
+   "profile_hits_element_by_element": 16,
+   "the_realized_profile": [
+    82,
+    86,
+    90,
+    106
+   ]
+  },
+  "clause_chain": [
+   {
+    "clause": "E0  the two rules draw different maps at t=0 (admission table)",
+    "hits": 96,
+    "survivors": 3072
+   },
+   {
+    "clause": "E1  the preparation leg is common to the two frames",
+    "hits": 24,
+    "survivors": 768
+   },
+   {
+    "clause": "E2  the two local legs commute",
+    "hits": 12,
+    "survivors": 192
+   },
+   {
+    "clause": "E3  the wing exchange intertwines both local legs",
+    "hits": 6,
+    "survivors": 12
+   },
+   {
+    "clause": "E4  the wing exchange does not intertwine the preparation leg",
+    "hits": 6,
+    "survivors": 6
+   }
+  ],
+  "direct_comparator": {
+   "base 1 @ SP-E": {
+    "class_counts": {
+     "1": 82,
+     "D": 90,
+     "W": 86,
+     "WD": 106
+    },
+    "walks_where_the_two_routes_disagree": 0
+   },
+   "base G @ GP-E": {
+    "class_counts": {
+     "1": 82,
+     "D": 90,
+     "W": 86,
+     "WD": 106
+    },
+    "walks_where_the_two_routes_disagree": 0
+   }
+  },
+  "gate_falsification": {
+   "died": 35,
+   "falsified_by_computation": 19,
+   "falsified_by_some": 23,
+   "falsified_only_by_a_waiver": [
+    "XBA-POSITIVE-CONTROL",
+    "XBA-TREE-FLIP-TEST",
+    "XBA-FREEZE-ORDER",
+    "XBA-VOCABULARY"
+   ],
+   "must_pass": 23,
+   "mutants": 35,
+   "never_falsified": [],
+   "per_gate_falsifiers": {
+    "R1": [
+     "rot-lax"
+    ],
+    "V": [
+     "completion-lax"
+    ],
+    "XBA-ADMISSION-AGREEMENT": [
+     "admission-lax"
+    ],
+    "XBA-BASIS-INDEPENDENT": [
+     "cycle-lax",
+     "basis-lax"
+    ],
+    "XBA-BASIS-INVERTIBLE": [
+     "cycle-lax",
+     "basis-lax"
+    ],
+    "XBA-CANDIDATE-CHAIN-CONSISTENCY": [
+     "candidate-lax",
+     "species-lax",
+     "chain-lax"
+    ],
+    "XBA-CANDIDATE-FREEZE": [
+     "freeze-lax"
+    ],
+    "XBA-CLAUSE-CHAIN": [
+     "species-lax"
+    ],
+    "XBA-CYCLE-RANK": [
+     "tree-lax"
+    ],
+    "XBA-DERIVATION-MATCHES-THE-BASES": [
+     "species-lax"
+    ],
+    "XBA-DIRECT-COMPARATOR": [
+     "base1-angle",
+     "direct-order",
+     "reverse-lax"
+    ],
+    "XBA-EQUIVARIANT-CONTROL-BREAKS-IT": [
+     "control-completion"
+    ],
+    "XBA-EXACTNESS": [
+     "float-lax"
+    ],
+    "XBA-FREEZE-ORDER": [
+     "order-lax"
+    ],
+    "XBA-GAUGE-SELFTEST-HAS-TEETH": [
+     "gauge-head",
+     "memo-lax"
+    ],
+    "XBA-LABELS-IN-THE-KLEIN-GROUP": [
+     "base1-angle",
+     "prep-lax"
+    ],
+    "XBA-NEGATIVE-CONTROLS": [
+     "violator-lax"
+    ],
+    "XBA-NO-MUTANT-EXEMPTION": [
+     "exempt-lax"
+    ],
+    "XBA-POSITIVE-CONTROL": [
+     "control-lax"
+    ],
+    "XBA-SPECIES-CLAUSES-MEASURED": [
+     "base1-angle",
+     "prep-lax"
+    ],
+    "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION": [
+     "base1-angle"
+    ],
+    "XBA-THIRD-INSTANCE-PREDICTED": [
+     "species-lax"
+    ],
+    "XBA-TREE-FLIP-TEST": [
+     "flip-lax"
+    ],
+    "XBA-VOCABULARY": [
+     "verdict-lax"
+    ],
+    "XBA-WALK-AUDIT": [
+     "graph-drop-real2",
+     "graph-add-full2",
+     "reduce-lax"
+    ],
+    "agreement": [
+     "base1-angle",
+     "direct-order",
+     "reverse-lax",
+     "admission-lax"
+    ],
+    "counts": [
+     "anchor-classcounts"
+    ],
+    "points": [
+     "field-lax",
+     "wingswap-lax"
+    ],
+    "profiles": [
+     "anchor-census"
+    ],
+    "reached": [
+     "tree-lax"
+    ],
+    "setting": [
+     "graph-drop-real2",
+     "graph-add-full2",
+     "reduce-lax"
+    ],
+    "sha256": [
+     "anchor-review-hash",
+     "anchor-nt-hash",
+     "anchor-gen-hash"
+    ],
+    "walks": [
+     "lmax-lax"
+    ]
+   },
+   "per_mutant": {
+    "admission-lax": {
+     "died": true,
+     "falsified": [
+      "agreement",
+      "XBA-ADMISSION-AGREEMENT"
+     ],
+     "kind": "computation"
+    },
+    "anchor-census": {
+     "died": true,
+     "falsified": [
+      "profiles"
+     ],
+     "kind": "computation"
+    },
+    "anchor-classcounts": {
+     "died": true,
+     "falsified": [
+      "counts"
+     ],
+     "kind": "computation"
+    },
+    "anchor-gen-hash": {
+     "died": true,
+     "falsified": [
+      "sha256"
+     ],
+     "kind": "computation"
+    },
+    "anchor-nt-hash": {
+     "died": true,
+     "falsified": [
+      "sha256"
+     ],
+     "kind": "computation"
+    },
+    "anchor-review-hash": {
+     "died": true,
+     "falsified": [
+      "sha256"
+     ],
+     "kind": "computation"
+    },
+    "base1-angle": {
+     "died": true,
+     "falsified": [
+      "agreement",
+      "XBA-SPECIES-CLAUSES-MEASURED",
+      "XBA-LABELS-IN-THE-KLEIN-GROUP",
+      "XBA-THE-TWO-BASES-SHARE-ONE-CONNECTION",
+      "XBA-DIRECT-COMPARATOR"
+     ],
+     "kind": "computation"
+    },
+    "basis-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-BASIS-INDEPENDENT",
+      "XBA-BASIS-INVERTIBLE"
+     ],
+     "kind": "computation"
+    },
+    "candidate-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+     ],
+     "kind": "computation"
+    },
+    "chain-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-CANDIDATE-CHAIN-CONSISTENCY"
+     ],
+     "kind": "waiver"
+    },
+    "completion-lax": {
+     "died": true,
+     "falsified": [
+      "V"
+     ],
+     "kind": "computation"
+    },
+    "control-completion": {
+     "died": true,
+     "falsified": [
+      "XBA-EQUIVARIANT-CONTROL-BREAKS-IT"
+     ],
+     "kind": "computation"
+    },
+    "control-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-POSITIVE-CONTROL"
+     ],
+     "kind": "waiver"
+    },
+    "cycle-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-BASIS-INDEPENDENT",
+      "XBA-BASIS-INVERTIBLE"
+     ],
+     "kind": "computation"
+    },
+    "direct-order": {
+     "died": true,
+     "falsified": [
+      "agreement",
+      "XBA-DIRECT-COMPARATOR"
+     ],
+     "kind": "computation"
+    },
+    "exempt-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-NO-MUTANT-EXEMPTION"
+     ],
+     "kind": "computation"
+    },
+    "field-lax": {
+     "died": true,
+     "falsified": [
+      "points"
+     ],
+     "kind": "computation"
+    },
+    "flip-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-TREE-FLIP-TEST"
+     ],
+     "kind": "waiver"
+    },
+    "float-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-EXACTNESS"
+     ],
+     "kind": "computation"
+    },
+    "freeze-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-CANDIDATE-FREEZE"
+     ],
+     "kind": "computation"
+    },
+    "gauge-head": {
+     "died": true,
+     "falsified": [
+      "XBA-GAUGE-SELFTEST-HAS-TEETH"
+     ],
+     "kind": "computation"
+    },
+    "graph-add-full2": {
+     "died": true,
+     "falsified": [
+      "setting",
+      "XBA-WALK-AUDIT"
+     ],
+     "kind": "computation"
+    },
+    "graph-drop-real2": {
+     "died": true,
+     "falsified": [
+      "setting",
+      "XBA-WALK-AUDIT"
+     ],
+     "kind": "computation"
+    },
+    "lmax-lax": {
+     "died": true,
+     "falsified": [
+      "walks"
+     ],
+     "kind": "computation"
+    },
+    "memo-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-GAUGE-SELFTEST-HAS-TEETH"
+     ],
+     "kind": "computation"
+    },
+    "order-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-FREEZE-ORDER"
+     ],
+     "kind": "waiver"
+    },
+    "prep-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-SPECIES-CLAUSES-MEASURED",
+      "XBA-LABELS-IN-THE-KLEIN-GROUP"
+     ],
+     "kind": "computation"
+    },
+    "reduce-lax": {
+     "died": true,
+     "falsified": [
+      "setting",
+      "XBA-WALK-AUDIT"
+     ],
+     "kind": "computation"
+    },
+    "reverse-lax": {
+     "died": true,
+     "falsified": [
+      "agreement",
+      "XBA-DIRECT-COMPARATOR"
+     ],
+     "kind": "computation"
+    },
+    "rot-lax": {
+     "died": true,
+     "falsified": [
+      "R1"
+     ],
+     "kind": "computation"
+    },
+    "species-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-CLAUSE-CHAIN",
+      "XBA-CANDIDATE-CHAIN-CONSISTENCY",
+      "XBA-DERIVATION-MATCHES-THE-BASES",
+      "XBA-THIRD-INSTANCE-PREDICTED"
+     ],
+     "kind": "computation"
+    },
+    "tree-lax": {
+     "died": true,
+     "falsified": [
+      "reached",
+      "XBA-CYCLE-RANK"
+     ],
+     "kind": "computation"
+    },
+    "verdict-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-VOCABULARY"
+     ],
+     "kind": "waiver"
+    },
+    "violator-lax": {
+     "died": true,
+     "falsified": [
+      "XBA-NEGATIVE-CONTROLS"
+     ],
+     "kind": "computation"
+    },
+    "wingswap-lax": {
+     "died": true,
+     "falsified": [
+      "points"
+     ],
+     "kind": "computation"
+    }
+   },
+   "survived": 0,
+   "survivors": []
+  },
+  "gauge_selftest": {
+   "cache_hits": 0,
+   "cache_misses": 442368,
+   "declared_group": "one Klein-group value per node, the constant subgroup fixed by the declared section h(F1@t0)=1",
+   "deviations": 0,
+   "distinct_walk_masks": 27,
+   "fresh_evaluations": 442368,
+   "group_elements": 16384,
+   "misconvention_moves": 12288,
+   "primed": 27,
+   "refused_lookups": 442368,
+   "reserved_returns": 27
+  },
+  "mutants": [
+   {
+    "kind": "computation",
+    "name": "anchor-review-hash",
+    "perturbs": "the frozen review's sha256 pin"
+   },
+   {
+    "kind": "computation",
+    "name": "anchor-nt-hash",
+    "perturbs": "the NT terminal receipt's sha256 pin"
+   },
+   {
+    "kind": "computation",
+    "name": "anchor-gen-hash",
+    "perturbs": "the GEN terminal receipt's sha256 pin"
+   },
+   {
+    "kind": "computation",
+    "name": "anchor-classcounts",
+    "perturbs": "the reused 82/86/90/106 class counts"
+   },
+   {
+    "kind": "computation",
+    "name": "anchor-census",
+    "perturbs": "the reused 4,096 / 89 / 96 census numbers"
+   },
+   {
+    "kind": "computation",
+    "name": "graph-drop-real2",
+    "perturbs": "drops the t=2 realized-rule link"
+   },
+   {
+    "kind": "computation",
+    "name": "graph-add-full2",
+    "perturbs": "adds a full-leg link at t=2"
+   },
+   {
+    "kind": "computation",
+    "name": "reduce-lax",
+    "perturbs": "allows immediate backtracking in the walks"
+   },
+   {
+    "kind": "computation",
+    "name": "lmax-lax",
+    "perturbs": "shortens the declared path bound"
+   },
+   {
+    "kind": "computation",
+    "name": "tree-lax",
+    "perturbs": "uses a link set that is not a spanning tree"
+   },
+   {
+    "kind": "computation",
+    "name": "cycle-lax",
+    "perturbs": "drops one link from every cycle class"
+   },
+   {
+    "kind": "computation",
+    "name": "field-lax",
+    "perturbs": "wrong reduction x^4 = x^2 - 1/4 in Q(cos pi/8)"
+   },
+   {
+    "kind": "computation",
+    "name": "rot-lax",
+    "perturbs": "perturbs one entry of the declared rotation R1"
+   },
+   {
+    "kind": "computation",
+    "name": "completion-lax",
+    "perturbs": "perturbs one entry of the declared completion V"
+   },
+   {
+    "kind": "computation",
+    "name": "wingswap-lax",
+    "perturbs": "wing exchange moves the systems only"
+   },
+   {
+    "kind": "computation",
+    "name": "base1-angle",
+    "perturbs": "reads the first base at an asymmetric setting"
+   },
+   {
+    "kind": "computation",
+    "name": "direct-order",
+    "perturbs": "wrong composition order in the direct comparator"
+   },
+   {
+    "kind": "computation",
+    "name": "reverse-lax",
+    "perturbs": "reverse traversal without transposing"
+   },
+   {
+    "kind": "computation",
+    "name": "admission-lax",
+    "perturbs": "flips one cell of the read admission table"
+   },
+   {
+    "kind": "computation",
+    "name": "basis-lax",
+    "perturbs": "duplicates one declared cycle in the basis"
+   },
+   {
+    "kind": "computation",
+    "name": "control-completion",
+    "perturbs": "gives the equivariant control a defect"
+   },
+   {
+    "kind": "computation",
+    "name": "prep-lax",
+    "perturbs": "gives the two frames different preparation legs"
+   },
+   {
+    "kind": "computation",
+    "name": "freeze-lax",
+    "perturbs": "computes a profile before the candidate freeze"
+   },
+   {
+    "kind": "computation",
+    "name": "candidate-lax",
+    "perturbs": "weakens a declared candidate predicate"
+   },
+   {
+    "kind": "computation",
+    "name": "violator-lax",
+    "perturbs": "builds a violator that does not violate"
+   },
+   {
+    "kind": "computation",
+    "name": "gauge-head",
+    "perturbs": "mis-conventioned gauge action (head only)"
+   },
+   {
+    "kind": "computation",
+    "name": "memo-lax",
+    "perturbs": "lets the self-test read the value cache"
+   },
+   {
+    "kind": "computation",
+    "name": "species-lax",
+    "perturbs": "drops one species clause from the derivation"
+   },
+   {
+    "kind": "computation",
+    "name": "float-lax",
+    "perturbs": "introduces a float into a gated value"
+   },
+   {
+    "kind": "computation",
+    "name": "exempt-lax",
+    "perturbs": "registers a mutant-identity comparison"
+   },
+   {
+    "kind": "waiver",
+    "name": "control-lax",
+    "perturbs": "waives the positive control"
+   },
+   {
+    "kind": "waiver",
+    "name": "chain-lax",
+    "perturbs": "waives the chain/candidate consistency"
+   },
+   {
+    "kind": "waiver",
+    "name": "order-lax",
+    "perturbs": "waives the freeze-order predicate"
+   },
+   {
+    "kind": "waiver",
+    "name": "verdict-lax",
+    "perturbs": "waives the verdict vocabulary"
+   },
+   {
+    "kind": "waiver",
+    "name": "flip-lax",
+    "perturbs": "waives the spanning-tree flip-test"
+   }
+  ],
+  "negative_controls": {
+   "C1 source-split": {
+    "breaks_the_profile": true,
+    "non_members": 4054,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 90
+   },
+   "C10 group of order four": {
+    "breaks_the_profile": true,
+    "non_members": 190,
+    "profile": [
+     172,
+     192,
+     0,
+     0
+    ],
+    "violates": true,
+    "violator": "SQ_REAL_1 := 1",
+    "violators_reproducing_the_profile_anyway": 0
+   },
+   "C2a aut-equivariance (rule-preserving)": {
+    "note": "no violator exists: the subset is the whole space",
+    "violator": null
+   },
+   "C2b aut-equivariance (full)": {
+    "breaks_the_profile": true,
+    "non_members": 4032,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 96
+   },
+   "C2c aut-equivariance up to naming": {
+    "breaks_the_profile": true,
+    "non_members": 3960,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 96
+   },
+   "C3 admission-pattern": {
+    "breaks_the_profile": true,
+    "non_members": 2368,
+    "profile": [
+     90,
+     86,
+     90,
+     98
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := WD",
+    "violators_reproducing_the_profile_anyway": 0
+   },
+   "C4 species-split (named)": {
+    "breaks_the_profile": true,
+    "non_members": 4095,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 95
+   },
+   "C5 species-split (naming-closed)": {
+    "breaks_the_profile": true,
+    "non_members": 4090,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 90
+   },
+   "C6 common preparation leg": {
+    "breaks_the_profile": true,
+    "non_members": 3072,
+    "profile": [
+     80,
+     88,
+     100,
+     96
+    ],
+    "violates": true,
+    "violator": "SQ_FULL_1 := W",
+    "violators_reproducing_the_profile_anyway": 72
+   },
+   "C7 commuting local legs": {
+    "breaks_the_profile": true,
+    "non_members": 3072,
+    "profile": [
+     80,
+     88,
+     96,
+     100
+    ],
+    "violates": true,
+    "violator": "CANON := W",
+    "violators_reproducing_the_profile_anyway": 72
+   },
+   "C8 intertwined local legs": {
+    "breaks_the_profile": true,
+    "non_members": 3840,
+    "profile": [
+     80,
+     88,
+     96,
+     100
+    ],
+    "violates": true,
+    "violator": "SQ_REAL_2 := W",
+    "violators_reproducing_the_profile_anyway": 72
+   },
+   "C9 unintertwined preparation leg": {
+    "breaks_the_profile": true,
+    "non_members": 1792,
+    "profile": [
+     172,
+     192,
+     0,
+     0
+    ],
+    "violates": true,
+    "violator": "SQ_REAL_1 := 1",
+    "violators_reproducing_the_profile_anyway": 48
+   }
+  },
+  "third_instances": {
+   "base S": {
+    "D_fixed": 45,
+    "D_is_the_identity": false,
+    "W_fixed": 9,
+    "class_counts_sorted": [
+     82,
+     86,
+     90,
+     106
+    ],
+    "declared_basis": [
+     "1",
+     "1",
+     "D",
+     "1",
+     "1",
+     "W"
+    ],
+    "distinct_holonomies_over_the_364_walks": 4,
+    "note": "the third instance: fresh quaternion, different preparation, different completion",
+    "the_four_named_elements_are_distinct": true
+   },
+   "base S'": {
+    "D_fixed": 81,
+    "D_is_the_identity": true,
+    "W_fixed": 9,
+    "class_counts_sorted": [
+     172,
+     192
+    ],
+    "declared_basis": null,
+    "distinct_holonomies_over_the_364_walks": 2,
+    "note": "the exchange-equivariant control: the bare Householder",
+    "the_four_named_elements_are_distinct": false
+   }
+  },
+  "tree_flip_test": {
+   "candidate_sizes_first_tree": {
+    "C1 source-split": 42,
+    "C10 group of order four": 3906,
+    "C2a aut-equivariance (rule-preserving)": 4096,
+    "C2b aut-equivariance (full)": 64,
+    "C2c aut-equivariance up to naming": 136,
+    "C3 admission-pattern": 1728,
+    "C4 species-split (named)": 1,
+    "C5 species-split (naming-closed)": 6,
+    "C6 common preparation leg": 1024,
+    "C7 commuting local legs": 1024,
+    "C8 intertwined local legs": 256,
+    "C9 unintertwined preparation leg": 2304
+   },
+   "candidate_sizes_second_tree": {
+    "C1 source-split": 42,
+    "C10 group of order four": 3906,
+    "C3 admission-pattern": 1728,
+    "C4 species-split (named)": 1,
+    "C5 species-split (naming-closed)": 6,
+    "C6 common preparation leg": 1024,
+    "C7 commuting local legs": 1024,
+    "C8 intertwined local legs": 256,
+    "C9 unintertwined preparation leg": 2304
+   },
+   "census_identical": true,
+   "distinct_profiles": 89,
+   "order_4": 3906,
+   "profile_hits": 96,
+   "second_tree": [
+    "LEG_F1_1",
+    "LEG_F1_2",
+    "LEG_F1_3",
+    "LEG_F2_1",
+    "LEG_F2_2",
+    "LEG_F2_3",
+    "REAL@0"
+   ],
+   "subsets_identical": true,
+   "the_first_tree_s_values": [
+    89,
+    96,
+    3906
+   ]
+  }
+ },
+ "totals": {
+  "anchors": 36,
+  "disclosures": 4,
+  "gates": 28,
+  "must_pass_failures": 0,
+  "must_pass_gates": 24
+ }
+}

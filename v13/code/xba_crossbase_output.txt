@@ -1,0 +1,156 @@
+==============================================================================
+XBA -- THE CROSS-BASE AGREEMENT HUNT
+what shared structure forces the 82/86/90/106 profile on both bases
+==============================================================================
+
+## 1  The frozen sources, pinned
+
+   pin      sha256 7cbde5da42805e454628a99e7e2f6aea2783583b174d024a38cd2f9fe49e9722
+   nt       sha256 d256891b479a8636fe88df5e9b0f553998140f1553fdfc167662220b44eeb03e
+   gen      sha256 e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292
+   review   sha256 1d17534ef9f4c6e1d1c590800a95114c0e0f754f84822d0240ba28685b897796
+
+## 2  The common arena, rebuilt from the two receipts' admission tables
+
+   cells compared (setting index x checkpoint) : 24
+   cells where the two bases draw the same rule/permutation : 24
+
+   nodes 8   links 13   identification links 7   components 1
+   reduced walks (all base points, length 0 included) : 16,168
+   closed walks (length 0 excluded)                   : 2,820
+   closed walks based at F1@t0                        : 364
+   spanning tree : LEG_F1_1, LEG_F1_2, LEG_F1_3, LEG_F2_1, LEG_F2_2, LEG_F2_3, FULL@0
+   cotree        : FULL@1, FULL@3, REAL@0, REAL@1, REAL@2, REAL@3
+   distinct cycle classes carried by the 364 walks    : 27
+   FULL-only closed walks 8 (cycle classes 4);  REAL-only 18 (7)
+
+## 3  Both bases, rebuilt from scratch, and their connections
+
+   | instance | carrier | W fixed | D fixed | D order 2 | legs commute | W intertwines leg2 | W intertwines prep |
+   |---|---|---|---|---|---|---|---|
+   | base 1 @ SP-E | 36 | 6 | 18 | True | True | True | False |
+   | base 1 @ SP-F | 36 | 6 | 18 | True | True | True | False |
+   | base G @ GP-E | 81 | 9 | 45 | True | True | True | False |
+   | base G @ GP-F | 81 | 9 | 45 | True | True | True | False |
+
+   the gauge-fixed labels, computed on each rebuilt base:
+
+   base 1 @ SP-E  LEG_F1_1=1  LEG_F1_2=1  LEG_F1_3=1  LEG_F2_1=1  LEG_F2_2=1  LEG_F2_3=1  FULL@0=1  FULL@1=1  FULL@3=1  REAL@0=W  REAL@1=WD  REAL@2=WD  REAL@3=WD
+   base 1 @ SP-F  LEG_F1_1=1  LEG_F1_2=1  LEG_F1_3=1  LEG_F2_1=1  LEG_F2_2=1  LEG_F2_3=1  FULL@0=1  FULL@1=1  FULL@3=1  REAL@0=W  REAL@1=WD  REAL@2=WD  REAL@3=WD
+   base G @ GP-E  LEG_F1_1=1  LEG_F1_2=1  LEG_F1_3=1  LEG_F2_1=1  LEG_F2_2=1  LEG_F2_3=1  FULL@0=1  FULL@1=1  FULL@3=1  REAL@0=W  REAL@1=WD  REAL@2=WD  REAL@3=WD
+   base G @ GP-F  LEG_F1_1=1  LEG_F1_2=1  LEG_F1_3=1  LEG_F2_1=1  LEG_F2_2=1  LEG_F2_3=1  FULL@0=1  FULL@1=1  FULL@3=1  REAL@0=W  REAL@1=WD  REAL@2=WD  REAL@3=WD
+
+   the declared cycle basis, on the realized connection:
+      SQ_FULL_1    = 1
+      CANON        = 1
+      SQ_REAL_1    = D
+      SQ_REAL_2    = 1
+      SQ_REAL_3    = 1
+      BIGON_0      = W
+
+## 4  The candidate properties, declared (frozen before any profile)
+
+   profiles computed at the declaration point : 0
+   |Aut(graph)| rule-preserving 2, full multigraph 16;
+   distinct induced actions on the cycle space: 1 (rule-preserving), 8 (full)
+   C1 source-split                    the full-leg sub-connection is flat, the realized-rule sub-connection carries a group of order two, every two-rule coordinate has a non-flat bigon, and the whole connection generates the group
+   C2a aut-equivariance (rule-preserving) invariant under the induced action of the rule-preserving automorphism group of the graph
+   C2b aut-equivariance (full)        invariant under the induced action of the full multigraph automorphism group
+   C2c aut-equivariance up to naming  for every graph automorphism there is an automorphism of the Klein group carrying the pullback back to the connection
+   C3 admission-pattern               every coordinate at which the two rules draw DIFFERENT permutations carries a non-flat bigon -- the only constraint the 24-cell table places on a connection
+   C4 species-split (named)           the six declared cycles take the values the species clauses force, with the group elements named: (1, 1, D, 1, 1, W)
+   C5 species-split (naming-closed)   there are distinct non-identity d, w with the six declared cycles at (1, 1, d, 1, 1, w)
+   C6 common preparation leg          the full-leg square around the preparation leg is flat (the two frames share that leg)
+   C7 commuting local legs            the canonical loop is flat (the two local legs commute)
+   C8 intertwined local legs          the two realized-rule squares around the local legs are flat (the wing exchange intertwines them)
+   C9 unintertwined preparation leg   the realized-rule square around the preparation leg is neither flat nor the wing exchange
+   C10 group of order four            the connection's labels generate a group of order four -- the explanation the generality unit offered
+
+## 5  The connection space, enumerated exhaustively
+
+   connection space              : 4,096
+   distinct class-count profiles : 89
+   the realized profile          : 1=82 W=86 D=90 WD=106
+   connections reproducing it (as a multiset)  : 96 of 4096
+   connections reproducing it element by element : 16
+   connections whose labels generate the group : 3906
+   of those, reproducing the profile           : 96
+   most common profile           : [78, 90, 94, 102] at 384 connections
+
+## 6  The candidates, measured
+
+   | candidate | both bases satisfy | subset | forces (multiset) | forces (element-wise) | hits in subset | shrink |
+   |---|---|---|---|---|---|---|
+   | C1 source-split              | True  |    42 | False | False |    6 | 2048/21 |
+   | C2a aut-equivariance (rule-preserving) | True  |  4096 | False | False |   96 | 1 |
+   | C2b aut-equivariance (full)  | False |    64 | False | False |    0 | 64 |
+   | C2c aut-equivariance up to naming | False |   136 | False | False |    0 | 512/17 |
+   | C3 admission-pattern         | True  |  1728 | False | False |   96 | 64/27 |
+   | C4 species-split (named)     | True  |     1 | True  | True  |    1 | 4096 |
+   | C5 species-split (naming-closed) | True  |     6 | True  | False |    6 | 2048/3 |
+   | C6 common preparation leg    | True  |  1024 | False | False |   24 | 4 |
+   | C7 commuting local legs      | True  |  1024 | False | False |   24 | 4 |
+   | C8 intertwined local legs    | True  |   256 | False | False |   24 | 16 |
+   | C9 unintertwined preparation leg | True  |  2304 | False | False |   48 | 16/9 |
+   | C10 group of order four      | True  |  3906 | False | False |   96 | 2048/1953 |
+
+   the declared clause chain (each clause a species or admission fact):
+
+   | clause added | survivors | profile hits among them |
+   |---|---|---|
+   | E0  the two rules draw different maps at t=0 (admission table) |  3072 |   96 |
+   | E1  the preparation leg is common to the two frames |   768 |   24 |
+   | E2  the two local legs commute                 |   192 |   12 |
+   | E3  the wing exchange intertwines both local legs |    12 |    6 |
+   | E4  the wing exchange does not intertwine the preparation leg |     6 |    6 |
+
+## 7  The derivation, and a third instance built to test it
+
+   derived from the species clauses : SQ_FULL_1=1  CANON=1  SQ_REAL_1=D  SQ_REAL_2=1  SQ_REAL_3=1  BIGON_0=W
+   measured on the realized bases   : SQ_FULL_1=1  CANON=1  SQ_REAL_1=D  SQ_REAL_2=1  SQ_REAL_3=1  BIGON_0=W
+   base S   D fixes 45 of 81; distinct holonomies 4; class counts [82, 86, 90, 106]; declared basis ['1', '1', 'D', '1', '1', 'W']
+   base S'  D fixes 81 of 81; distinct holonomies 2; class counts [172, 192]; declared basis None
+
+## 8  Controls
+
+   positive: all four readings of the two bases reproduce the profile : True
+
+   negative controls with teeth (one declared constructed violator each):
+
+   | candidate | violator | violates? | its profile | breaks the profile? | violators reproducing it anyway |
+   |---|---|---|---|---|---|
+   | C1 source-split              | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 90 |
+   | C2a aut-equivariance (rule-preserving) | - | - | - | - | - |
+   | C2b aut-equivariance (full)  | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 96 |
+   | C2c aut-equivariance up to naming | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 96 |
+   | C3 admission-pattern         | SQ_FULL_1 := WD        | True  | [90, 86, 90, 98]       | True  | 0 |
+   | C4 species-split (named)     | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 95 |
+   | C5 species-split (naming-closed) | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 90 |
+   | C6 common preparation leg    | SQ_FULL_1 := W         | True  | [80, 88, 100, 96]      | True  | 72 |
+   | C7 commuting local legs      | CANON := W             | True  | [80, 88, 96, 100]      | True  | 72 |
+   | C8 intertwined local legs    | SQ_REAL_2 := W         | True  | [80, 88, 96, 100]      | True  | 72 |
+   | C9 unintertwined preparation leg | SQ_REAL_1 := 1         | True  | [172, 192, 0, 0]       | True  | 48 |
+   | C10 group of order four      | SQ_REAL_1 := 1         | True  | [172, 192, 0, 0]       | True  | 0 |
+
+## 9  Symmetry self-tests
+
+   gauge sweep : 16,384 elements, 0 deviations, 442,368 fresh evaluations, cache hits 0 (of 442,368 refused lookups into a populated cache)
+   mis-conventioned control (head-only action) moves the profile at 12,288 of 16,384
+   spanning-tree flip-test : second tree ['LEG_F1_1', 'LEG_F1_2', 'LEG_F1_3', 'LEG_F2_1', 'LEG_F2_2', 'LEG_F2_3', 'REAL@0']; census identical True; candidate subset sizes identical True
+
+## 10  The verdict
+
+   forcing candidates satisfied by both bases : ['C4 species-split (named)', 'C5 species-split (naming-closed)']
+   shrinking but not forcing                  : ['C1 source-split', 'C3 admission-pattern', 'C6 common preparation leg', 'C7 commuting local legs', 'C8 intertwined local legs', 'C9 unintertwined preparation leg', 'C10 group of order four']
+
+   >>> XBA-SHARED-STRUCTURE-IDENTIFIED
+
+## 11  The falsification census
+
+   mutants declared 35; died 35; survived 0
+   must-pass gates 23; falsified by some mutant 23; by a computation mutant 19
+   never falsified : EMPTY
+
+==============================================================================
+gates 28 (must-pass 24, disclosures 4); anchors 36; must-pass failures 0
+==============================================================================
