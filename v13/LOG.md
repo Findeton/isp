@@ -7742,3 +7742,40 @@ whole two-sided closure STAND; the bridge secondary must be
 RE-INSTRUMENTED OR DEMOTED to a coordinate audit.  R2/R3
 (resumed after API failures) pending; adjudication after all
 three.
+
+## 2026-08-08 — HA R2 (EFFECTUS) FROZEN (v13 LEDGER #243)
+review-ha-effectus.md frozen as delivered.  Grade AWF; 32
+recomputations from scratch AT A BASE FRONT THE INSTRUMENT
+NEVER USED — the full 11×9×132 closure table by literal
+five-map composition, ZERO discrepancies: **HA-RUNNABLE is
+earned.**  K3 — THE READOUT DEVIATION: **the worker was right,
+twice over** — the v6_task2b rejection is correct and
+UNDERSTATED (four embedding insertions beyond GW1's three,
+plus an unstated TYPE MISMATCH: constant float matrix vs exact
+site-dependent rational field); the substitute passes §1.2's
+bans cleanly; BUT its provenance claim fails (v4p7 Def 1.4 is
+a placeholder, and the v6 relation uses exponent 2/d not
+cardinality-linear) — AND THE CONCEPTUAL FINDING: counts→q is
+an INVERTIBLE LINEAR RE-ENCODING — **"the record IS the metric
+in count coordinates"** — the no-smuggling story must be
+restated at that strength.  K4 — THE BRIDGE NEGATIVE COLLAPSES
+ON FOUR MEASURED DEFECTS (convergent with R1): the spectrum
+criterion compares HA-vs-holonomy but GEN-vs-defect (order 5
+IS in the defect spectrum at 4,608/40,320 — WHICH THIS
+INSTRUMENT COMPUTES ITSELF AT A14 then ignores for a typed
+tuple literal — failure-catalogue #24); ha_order = the
+declared prime (5,7,11,13 measured at p = 5,7,11,13, the
+residual (1/6,1/6) identical throughout); the posability
+predicate UNREACHABLE (carrier_match impossible; in_spectrum
+false for every odd prime BY PARITY) — contradicting the pin's
+"by measurement"; the "17 of 24" is 17/17 VACUOUS identity
+cells while the relation fails 7/7 nontrivial ones — **the
+repair makes the conclusion STRONGER.**  Neither theorem nor
+search: no morphism census receipted; the HA-BRIDGE vocabulary
+used honestly, the overreach confined to §10.4's "measured
+consequences" dressing.  CLOSURE-IS-INSERTION: well-disclosed,
+one register hot; the kill's SECOND disjunct fires (11 rules
+give 11 different q̃), not the first as framed.  New mechanism:
+the HHH displacement = Λ(B∂C + A∂B + A∂C) exactly (108/108) —
+a corrected pair against an uncorrected triple.  R3 (resumed)
+pending; adjudication after all three.
