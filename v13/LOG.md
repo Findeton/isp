@@ -6812,3 +6812,42 @@ ELEMENTS LIE OUTSIDE the declared 72-element scope and its
 96-extension — the connection generates transformations beyond
 the declared arena group.**  R2/R3 pending; adjudication after
 all three.
+
+## 2026-08-07 — NT R2 (EFFECTUS) FROZEN (v13 LEDGER #206)
+review-nt-effectus.md frozen as delivered (sha256-12
+9c194d185c3b).  Grade ACCEPT-WITH-FIXES, four blocking; 45
+recomputations on the reviewer's own instrument.  "I could not
+refute the refutation" — all four pre-registered verdicts
+survive every attack; the ENTIRE 18-cell matched pair table
+reproduces to the digit (brute-force validation at SP-A).
+**F1 (CRITICAL): independent confirmation of the FALSE NUMBER**
+(value set 4 not 3; string-set accumulation collapses two
+distinct permutations into "another permutation"; correctly
+counted the value set EQUALS the generated group at every
+setting — D5's "different objects" defeated).  **F2 (CRITICAL —
+K2 KILLED AS BICONDITIONAL): the multiplicity mechanism is TRUE
+AS SUFFICIENT, FALSE AS "ONLY THERE"** — the REALIZED rule
+ALONE (multiplicity 1 at every coordinate) has 8/18 non-flat
+closed loops, 348 per setting non-flat without ever traversing
+two maps at one coordinate; **THE SECOND CURVATURE SOURCE
+NAMED: P_W·U_prep·P_W ≠ U_prep at every setting — the wing
+exchange fails to intertwine the prep leg** (diagnosed by a
+three-line single-rule sub-connection table).  **F3 (MAJOR):
+the earned group is Klein four {1, W, X, WX}, X = qubit-only
+swap, WX = pointer-only swap, and NEITHER lies in the declared
+72 or 96 scope — the connection is NOT PRINCIPAL for the base's
+certified isomorphisms** (confirms R1's escape finding; §8.3's
+"two-element" contradicts §8.2's own order 4).  **F4 (MAJOR):
+the weld is ENTAILED by clause 2, is precisely paper 1 §2.4's
+engraved exemption, and W5's M4 already recorded it at the t=2
+cut — NT's real contribution is the extension to all four cuts;
+cite both sources; the residual is hand-transcribed, not
+imported.**  Non-blocking: the gauge sweep's headline clause
+cannot fail (global scalar — confirms R1; answers D2 outright);
+"certified" used for transports O4's certificate REFUSES (the
+D3 demotion biting in prose); the t=0 rows are outside O4's
+read times (identify a context with itself); THE FLAT CROSSING
+IS COMPARATOR-DEPENDENT (only 480/1,268 crossing loops flat);
+600–820/2,820 closed loops are not signed permutations and are
+SILENTLY DROPPED; one paper-1 citation error (outer-slot law,
+not conjugation).  R3 pending; adjudication after all three.
