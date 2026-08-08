@@ -8153,3 +8153,15 @@ reproduction-not-prediction relabel — the adjudicator's own
 #241 wording corrected by name); the orthogonal witness pair
 incorporated.  STATUS updated this commit.  Repair dispatch
 next.
+
+## 2026-08-08 — PSI REPAIR DISPATCHED (P-1..P-5) (v13 LEDGER #258)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+psi_* only) with the #257 order: the one law central w/ the
+cocycle mechanism and four corollaries gated; the verdict incl.
+its COMPUTED qualifier derived inside a gate w/ verdict-flip +
+no-witness mutants; cell-completeness both censuses; scoping
+honesty (declared-basis Born; 1/9; the 21/48 correction; the
+readable-collapse result); the orthogonal witness pair gated;
+the reproduction relabel w/ GEN's free anchors; the provenance
+fix.  On delivery: COMMIT-AS-IS, verify, terminal-or-bounce.
+Recorded after it occurs.
