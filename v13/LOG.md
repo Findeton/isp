@@ -7890,3 +7890,15 @@ gates; instrument repairs per the #234 rules (verdict-in-gate,
 cell-completeness, fresh-eval honesty); addenda-bind-at-
 delivery-time recorded as precedent.  STATUS updated this
 commit.  Repair dispatch next.
+
+## 2026-08-08 — HA REPAIR DISPATCHED (H-1..H-4) (v13 LEDGER #247)
+Repair worker dispatched (Opus 5, freeze-on-delivery, no git,
+ha_* only) with the #246 order: the bridge demoted to a
+coordinate audit w/ the morphism question registered open and
+successor requirements stated; the closure restated at true
+register (record-is-metric identity; G09 as theorem w/ R1's
+proof; the firing disjunct; the HHH formula); the instrument
+brought under the #234 rules (verdict-in-gate + verdict-flip
+mutant; cell-completeness gate; fresh-eval honesty; G14 full
+group).  On delivery: COMMIT-AS-IS, verify, terminal-or-
+bounce.  Recorded after it occurs.
