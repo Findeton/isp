@@ -8075,3 +8075,35 @@ negative control's transpositions lie inside GEN's rebuilt
 cell-completeness ungated (#234); the "permutation part
 differs" column not independent (all 206 rows readability
 flips).  R2/R3 pending; adjudication after all three.
+
+## 2026-08-08 — PSI R3 (INSTRUMENT) FROZEN (v13 LEDGER #255)
+review-psi-instrument.md frozen as delivered.  Grade AWF; 190
+recomputations; NO false number, NO false theorem.  **THE
+ASSIGNED RULING: #234 NONCOMPLIANT, demonstrated** —
+PSI-VERDICT's predicate is vocabulary-membership only; the
+branch swap prints PSI-DECLARATION-ONLY (the NEGATION of the
+finding) at exit 0 / 0 must-pass failures, in the same
+evidence line recording a_common_loop_differs: True;
+aggravating: §9 AND the gate's own claim text assert
+"re-derived inside this gate" — nothing is; §11's excuse is
+exactly what the probe refutes.  REQUIRED repair.  **F2:
+cell-completeness fails BOTH censuses** (a dropped admission
+cell silently prints 7-of-48; a halved sign-flip census prints
+sub_family_size 26 under a gate claiming EXHAUSTIVE with only
+total>14 as its size clause); the one working route (the
+admission-table anchor) reaches only the reference member.
+**F4: §2.2's provenance claim FALSE** — the 81 V-anchors are
+SELF-anchors against a matrix typed in the same file (GEN's
+receipt does not contain V), while §11 describes them
+correctly — the paper contradicts itself; the value is right
+(V rebuilt 81/81); the cheap repair supplied (anchor δ(Q)
+against GEN's recorded defect permutation).  WHAT HELD: the
+ψ-law 11/11, the iff both directions, the census 48/26/22/0,
+both witnesses incl. the flat→non-flat loop, all 37 external
+anchors traced (one corrupt byte kills the run), the refusal
+mechanism PROVED non-vacuous by an exception-throwing builder,
+never_falsified honestly EMPTY at 20.  "The verdict itself
+appears to be true — it is simply not gated."  Caveat owned in
+the review: three prose-reconstructed mutants still executing
+at freeze (host contention), no finding rests on them.  R2
+(the one-law lens) pending; adjudication after it lands.
