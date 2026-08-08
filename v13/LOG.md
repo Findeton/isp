@@ -7902,3 +7902,40 @@ brought under the #234 rules (verdict-in-gate + verdict-flip
 mutant; cell-completeness gate; fresh-eval honesty; G14 full
 group).  On delivery: COMMIT-AS-IS, verify, terminal-or-
 bounce.  Recorded after it occurs.
+
+## 2026-08-08 — COC RE-DERIVATION DELIVERED, COMMITTED AS-IS (v13
+## LEDGER #248)
+Re-derivation C-1..C-5 delivered complete; committed as-is.
+VERDICT (verbatim):
+**COC-HIGHER-OBSTRUCTION-AT-THE-EXTENSION-ORBIT-ATLAS** —
+scoped: committed finite scope; base G's declared 216-extension
+admission scope; the atlas the declared chart rule generates
+from the group that scope admits; the pinned completion; per
+coordinate; with the 162-scope atlas measured to close, that
+closure ANALYTICALLY FORCED.  THE CRITERION GATED AT BOTH
+ATLASES: abelian (2/2 centralise → 0/1,824 outside) vs
+extension (4/8 → 32,256/333,312 outside; 0 telescoping
+violations).  THE EXTENSION CENSUS EXHAUSTIVE IN-DELIVERY
+(no [SAMP]): 16 charts distinct at all six settings; routes
+P = Q (Q a genuinely independent relational join); 24/24 cells;
+**the defect set is RICHER than the panel reported — order-4
+group with a THIRD nontrivial element: the wing exchange ∘
+both pointer transpositions (32,256 more)**; one escaping
+triangle recorded in full.  Mechanism stack native as three
+theorems (equivariance 576+11,520/0; coboundary 48/48; the
+closed form 0/1,824) — entered as DISCLOSURE per the
+forced-clause rule (D10, the worker's judgment call, disclosed
+for the adjudicator; must-pass weight sits on the censuses,
+criterion, completeness, routes, tabulation, verdict
+derivation).  Instrument: the verdict derived inside
+COC-VOCABULARY w/ verdict-rule dying there; cell-completeness
+w/ cell-skip dying at BOTH censuses; membership tabulation
+gated w/ its mutant; SPLIT-TO-SPLIT measured (368/3,552/0 at
+GP-E; 144/288/0 at GP-A); D confinement measured in NO
+declared scope.  24 anchors / 37 gates (31 must-pass, 0
+failures) / 33 mutants died, never_falsified EMPTY at 30 (28
+computation; waiver-only down to EXACT + NO-MUTANT-EXEMPTION).
+13 deviations incl. D5 (the switching sweep does NOT cover the
+extension atlas's loops — an honest scope line for the panel's
+eye).  md5 output 08c0c5f4 / receipt 943af63f.  Adjudicator
+verification next.

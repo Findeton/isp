@@ -6,7 +6,7 @@ question against the bigon-generated holonomy group
 schema        coc-cocycle-receipt-v1
 pin           9e2b95b (sha 2ba34071c18f)
 immutable base 20b8df2  (GEN TERMINAL)
-instrument    sha256 0c0592a15d2eacabcfb62ac656b11b758189c074cdbdd583cce70c16906c1d38
+instrument    sha256 0b640fc744ee406f72641a98b8e48a0915797bcfecb209624660f622f97dc03a
 
 ------------------------------------------------------------------------------
 THE DECLARED TRIPLE STRUCTURE (declared before any fixture truth)
@@ -85,8 +85,10 @@ THE DECLARED ARENA (RUNBOOK section 15; every size computed)
 ------------------------------------------------------------------------------
 THE TRIANGLE CENSUS
 ------------------------------------------------------------------------------
-  size (enumerated)                                    1824
-  size (recomputed by an independent route)            1824
+  size (route P: the chart-triple walk)                1824
+  size (route Q: the relational join)                  1824
+  coordinate cells walked / expected by the arena      24 of 24
+  cells where the two routes disagree                  0
   coordinate cells carrying a triangle                 20 of 24
   cells carrying none: GP-A/t2, GP-B/t2, GP-C/t2, GP-D/t2
   scope: EXHAUSTIVE over the declared triple family: every ordered triple of pairwise distinct charts, every rule assignment to the three ordered edges, every declared coordinate
@@ -132,12 +134,73 @@ THE DEFECT SET AND THE MEMBERSHIP VERDICT, PER SETTING
   GP-E          624        4          0  the identity, the wing exchange
   GP-F          624        4          0  the identity, the wing exchange
 
-  GP-A: A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction
-  GP-B: A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction
-  GP-C: A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction
-  GP-D: A FREE MEASUREMENT: the admitted set is NOT contained in this setting's group, so a single non-identity defect here would have been a higher obstruction
+  GP-A: FORCED BY THE TELESCOPING IDENTITY: the admitted set is not contained in this setting's group, but the defect telescopes to a conjugate -- by this atlas's own abelian relabelling group, hence trivially -- of a product of committed-frame maps on one unordered pair, and at multiplicity one those two maps coincide, so the identity is forced here by the pair table alone
+  GP-B: FORCED BY THE TELESCOPING IDENTITY: the admitted set is not contained in this setting's group, but the defect telescopes to a conjugate -- by this atlas's own abelian relabelling group, hence trivially -- of a product of committed-frame maps on one unordered pair, and at multiplicity one those two maps coincide, so the identity is forced here by the pair table alone
+  GP-C: FORCED BY THE TELESCOPING IDENTITY: the admitted set is not contained in this setting's group, but the defect telescopes to a conjugate -- by this atlas's own abelian relabelling group, hence trivially -- of a product of committed-frame maps on one unordered pair, and at multiplicity one those two maps coincide, so the identity is forced here by the pair table alone
+  GP-D: FORCED BY THE TELESCOPING IDENTITY: the admitted set is not contained in this setting's group, but the defect telescopes to a conjugate -- by this atlas's own abelian relabelling group, hence trivially -- of a product of committed-frame maps on one unordered pair, and at multiplicity one those two maps coincide, so the identity is forced here by the pair table alone
   GP-E: FORCED by the admitted set's containment
   GP-F: FORCED by the admitted set's containment
+
+------------------------------------------------------------------------------
+THE CRITERION: CLOSURE <=> THE CHART GROUP CENTRALISES LEVEL ONE
+------------------------------------------------------------------------------
+  THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY
+  the level-1 holonomy: the wing exchange
+
+                                      abelian atlas      extension
+  chart-generating group order                    2              8
+  elements centralising level 1                   2              4
+  the group centralises it                     True          False
+  admissible triangles                         1824         333312
+  defects OUTSIDE the bigon group                 0          32256
+  per-triangle criterion mismatches               0              0
+  telescoping violations                          0              0
+
+      forced / free: the sufficiency direction is FORCED: at an atlas whose
+      generating group centralises the level-1 holonomy the conjugation in
+      the telescoped defect is trivial, so nothing can escape, whatever the
+      geometry does. The necessity direction is NOT forced: a
+      non-centralising element makes an escaping conjugate available, but
+      whether an ADMISSIBLE TRIANGLE realises it is a measurement -- the
+      predicate had to draw all three edges of some triangle whose first
+      chart carries such an element
+
+------------------------------------------------------------------------------
+THE EXTENSION ATLAS (the same chart rule, the base's other group)
+------------------------------------------------------------------------------
+  generating group order / abelian                     8 / False
+  element orders / fixed-point counts                  (1,2,4) / (3,3,9,9,9,27,27,81)
+  elements centralising the level-1 holonomy           4 of 8
+  charts (orbit, deduplicated)                         16
+  admissible triangles, route P / route Q              333312 / 333312
+  defects OUTSIDE the bigon group                      32256 of 333312
+  the same, recomputed by an independent pass          32256
+  per setting: GP-A 0, GP-B 0, GP-C 0, GP-D 0, GP-E 16128, GP-F 16128
+  defect set: the identity x268800, the wing exchange x32256, the wing exchange composed with both pointer transpositions x32256
+  the group the defect set generates                   4
+  the escaping defect: 9 fixed configurations, order 2
+      = the wing exchange composed with both pointer transpositions: True
+      in the 162-scope False / in the 216-extension True / in the bigon group False
+  one escaping triangle in full: GP-E at t=0, charts (g2.F1,F1,F2), rules (FULL,FULL,REAL)
+      drawn maps: (a pointer transposition of the declared extension on the other wing,the identity,the wing exchange composed with one pointer transposition)
+
+------------------------------------------------------------------------------
+THE MECHANISM STACK (three forced identities, verified)
+------------------------------------------------------------------------------
+  equivariance lemma, abelian atlas    576 cases, 0 violations
+  equivariance lemma, extension atlas  11520 cases, 0 violations
+  Z/2 coboundary                       48 of 48 coordinate-and-rule cells
+  its closed-form potential fails at   0 cells
+  the defect's closed form             0 mismatches of 1824
+  rule-inert coordinates               18 of 24
+  flat-setting triangles sitting there 576 of 576
+
+------------------------------------------------------------------------------
+ROUTE R1 COMPLETED: THE SPLIT CHARTS GLUED TO EACH OTHER
+------------------------------------------------------------------------------
+  setting    charts     ident.    triangles    outside
+  GP-A            8        144          288          0
+  GP-E            8        368         3552          0
 
 ------------------------------------------------------------------------------
 THE BIGON-GENERATED HOLONOMY GROUP (rebuilt natively, anchored)
@@ -216,6 +279,19 @@ GATES
       value:
       {anchors_in_the_external_receipt:17,gates_in_the_external_receipt:36,schema:gen-generality-receipt-v1,sha256:e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292}
 
+  COC-REVIEWS-PINNED                         measurement  PASS
+      THE EXTERNAL CONSTRUCTION IS PINNED BY HASH, NOT BY CAPTION. The
+      extension atlas whose census carries this unit's verdict was
+      constructed by two of the three frozen external reviews. Each review
+      file is read as bytes and its sha256 measured against the value pinned
+      in this file, and every count taken from those reviews is anchored
+      twice over: as a number recomputed here from base G's own
+      declarations, and as the exact string measured PRESENT in the pinned
+      file it is quoted from. The `review-hash` mutant perturbs one review's
+      bytes before they are hashed and must die here
+      value:
+      {reviews:(R1-operator,R2-effectus,R3-instrument),sha256:{R1-operator:fd8fe8abf9d468825239938c461f2f81f53263be79809bcbf78edc633b7709de,R2-effectus:81cc0970212ab9f51629a4040a02601ff7470b17acabfb3e7fb10e60c9e19534,R3-instrument:88a011e1dc1c0582ae4b47b302601fd7743cec38279b4f6c310b148877702124}}
+
   COC-TRIPLE-DECLARED                        measurement  PASS
       THE DECLARED TRIPLE STRUCTURE IS WELL-POSED, AND ITS THIRD CHART IS
       MANUFACTURED BY THE COMPLETION. The chart family is the ORBIT of the
@@ -237,6 +313,68 @@ GATES
       collapses, and must die here too
       value:
       {distinct_charts_per_setting:{GP-A:4,GP-B:4,GP-C:4,GP-D:4,GP-E:4,GP-F:4},distinct_members:4,every_member_carries_the_declared_initial_configuration:True,generated_members:4,members:(F1,W.F1,F2,W.F2),orbit_group_size:2,pairwise_distinct_at_every_setting:True,the_defect_is_the_identity:False,the_wing_exchange_intertwines_the_preparation_leg:False}
+
+  COC-ATLASES-DECLARED                       measurement  PASS
+      THE CHART RULE IS APPLIED TO BOTH GROUPS BASE G DECLARES, AND THE
+      CRITERION IS PRE-REGISTERED. The rule -- the orbit of the two
+      committed frames under a declared admitted group, with the
+      identification search running over THE SAME group -- is stated once
+      and instantiated twice: at the group the 162-element scope admits, and
+      at the group the declared 216-element extension admits. Both group
+      sizes are computed here, both are measured distinct, and the criterion
+      under test and the verdict's decision rule are recorded as data BEFORE
+      either census runs, with the cocycle-defect counter measured at zero
+      at this point. Each atlas is measured CLOSED under its own search
+      scope rather than merely chosen: the orbit of the two committed frames
+      under a WHOLE declared scope realises every initial configuration that
+      scope reaches, only the orbit of the admitted subgroup carries the
+      declared one, and no admitted element is measured to carry any other
+      configuration to it -- so the first admissibility clause forbids
+      gluing a chart outside the orbit to a chart inside it. The `scope-lax`
+      mutant subsamples the admitted group so the two declared sizes
+      collapse, and must die here
+      value:
+      {atlas_1_group_order:2,atlas_2_group_order:8,cocycle_defects_evaluated_at_this_point:0,declaration:{atlas
+      1 (the abelian atlas):G = the group admitted after the j0 filter of
+      the declared 162-element relabelling scope,atlas 2 (the extension
+      atlas):G = the group admitted after the j0 filter of the declared
+      216-element extension scope, i.e. base G's own second declared
+      admitted group; the SAME chart rule, the SAME four-clause predicate,
+      the SAME two gluing rules, the SAME coordinates, the SAME pinned
+      completion,each atlas is closed under its own search scope:{the
+      162-element relabelling scope:{distinct initial configurations
+      realised:81,no admitted element carries another configuration to
+      it:True,orbit members carrying the declared initial
+      configuration:4,orbit members generated:324},the 216-element
+      extension:{distinct initial configurations realised:81,no admitted
+      element carries another configuration to it:True,orbit members
+      carrying the declared initial configuration:16,orbit members
+      generated:432}},the chart rule:given a declared admitted group G of
+      relabellings of the carrier, the atlas is the orbit of the two
+      committed frames under G, deduplicated by chart identity, and the
+      identification search at every ordered pair runs over THE SAME G,the
+      criterion under test:THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE
+      CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY. The declared
+      prediction, recorded before the extension census is run: at an atlas
+      whose generating group centralises the level-1 holonomy every defect
+      is confined to the bigon-generated group by algebra alone; at an atlas
+      whose generating group does not, the escaping conjugate is available
+      and the question is whether an admissible triangle realises it,the
+      decision rule:COC-TRIANGLES-ABSENT if no admissible triangle exists at
+      any censused atlas; COC-HIGHER-OBSTRUCTION if some admissible triangle
+      at some censused atlas carries a defect outside the bigon-generated
+      holonomy group at its own setting; COC-COCYCLE-CLOSES if triangles
+      exist and none does; COC-BLOCKED-AT-<object> where a census cannot be
+      posed,the two declared admitted groups, sizes computed:{atlas
+      1:2,atlas 2:8}},each_atlas_is_closed_under_its_own_search_scope:{the
+      162-element relabelling scope:{distinct initial configurations
+      realised:81,no admitted element carries another configuration to
+      it:True,orbit members carrying the declared initial
+      configuration:4,orbit members generated:324},the 216-element
+      extension:{distinct initial configurations realised:81,no admitted
+      element carries another configuration to it:True,orbit members
+      carrying the declared initial configuration:16,orbit members
+      generated:432}}}
 
   COC-ARENA                                  measurement  PASS
       THE ARENA, DECLARED AS DATA WITH EVERY SIZE COMPUTED (RUNBOOK section
@@ -336,57 +474,81 @@ GATES
       defect),generated_group_order:4,the_value_set_is_closed_under_composition:True,value_set_size:4}}
 
   COC-CENSUS                                 measurement  PASS
-      THE TRIANGLE CENSUS IS EXHAUSTIVE AND ITS SIZE IS COMPUTED TWICE, BY
-      INDEPENDENT ROUTES. The enumerator walks every ordered triple of
-      pairwise distinct charts, every assignment of a committed gluing rule
-      to each of the three ordered edges, and every declared coordinate,
-      keeping a triangle exactly when all three edges are drawn. The
-      COMPARATOR does not walk triangles at all: it sums, over the same
-      triples and coordinates, the PRODUCT of the number of rules that draw
-      on each ordered edge -- a count built from the pair table and not from
-      the census -- and the two are measured equal. The cells that carry no
-      triangle are named rather than dropped. The `triangle-drop` mutant
-      keeps only the triangles whose three rules agree and must die here
+      THE TRIANGLE CENSUS IS EXHAUSTIVE, ITS CELL COVERAGE IS GATED AGAINST
+      THE ARENA, AND ITS SIZE IS COMPUTED TWICE BY GENUINELY INDEPENDENT
+      ROUTES (RUNBOOK section 13 addendum). Route P walks every ordered
+      triple of pairwise distinct charts, every assignment of a committed
+      gluing rule to each of the three ordered edges, and every declared
+      coordinate, keeping a triangle exactly when all three edges are drawn.
+      Route Q never walks a triple: it builds the explicit list of
+      admissible directed edges from an INDEPENDENTLY WRITTEN four-clause
+      predicate with its own memo, over its own coordinate list and its own
+      distinct-chart list, and then ASSEMBLES each triangle from three edge
+      records. It is not a distributive-law restatement of route P and is
+      not equal to it for every oracle: a dropped coordinate, chart, triple
+      or rule assignment moves one route and not the other. Three clauses:
+      the two totals are measured equal; the per-cell counts are measured
+      equal CELL BY CELL; and route P's coordinate key set is measured to be
+      exactly the arena's own computed coordinate set, so no cell can be
+      silently absent. The cells that carry no triangle are named rather
+      than dropped. The `triangle-drop` mutant keeps only the triangles
+      whose three rules agree, and the `cell-skip` mutant omits one
+      coordinate cell from route P's walk; both must die here
       value:
-      {cells_carrying_a_triangle:20,cells_carrying_no_triangle:(GP-A/t2,GP-B/t2,GP-C/t2,GP-D/t2),defect_evaluations:1824,size:1824,size_recomputed_independently:1824}
+      {cells_carrying_a_triangle:20,cells_carrying_no_triangle:(GP-A/t2,GP-B/t2,GP-C/t2,GP-D/t2),cells_where_the_two_routes_disagree:(),coordinate_cells_expected:24,coordinate_cells_missing_from_the_walk:(),coordinate_cells_not_in_the_arena:(),coordinate_cells_walked:24,defect_evaluations:1824,size:1824,size_by_the_second_route:1824}
 
-  COC-MEMBERSHIP                             measurement  PASS
-      THE MEMBERSHIP QUESTION, GATED PER TRIANGLE AT MATCHED COORDINATES.
-      Every one of the census's triangle defects is tested for membership in
-      the bigon-generated holonomy group AT ITS OWN SETTING -- the
-      comparison object is read at the same coordinate as the object
-      compared, never at another one -- and the number lying outside is
-      gated at ZERO against the printed denominator. The gate is not one
-      measurement but two, and the second is the one with teeth: at the two
-      symmetric settings the declared admitted set IS a subgroup of the
-      group, so membership there is forced by the containment and is
-      reported as such; at the four settings whose connection is measured
-      FLAT the group is trivial and the admitted set is measured NOT to be
-      contained in it, so every triangle there could have carried a
-      non-identity defect that no bigon holonomy generates -- a pure level-2
-      obstruction at a flat setting -- and the gate measures that none does.
-      The `edge-perturb` mutant replaces one drawn map by a permutation
-      outside the admitted set and must die here; the `label-collapse`
-      mutant counts defects as labels rather than permutations and must die
-      here too
+  COC-MEMBERSHIP                             disclosure   PASS
+      THE MEMBERSHIP ZERO AT THE ABELIAN ATLAS IS ANALYTICALLY FORCED IN
+      FULL, AND IS ENTERED AS A DISCLOSURE. Every one of this census's
+      triangle defects is tested for membership in the bigon-generated
+      holonomy group AT ITS OWN SETTING -- the comparison object read at the
+      same coordinate as the object compared -- and the number lying outside
+      is printed against its denominator. It could not have come out
+      otherwise, and this gate does not pretend it could: by the
+      equivariance lemma and its telescoping corollary the defect is a
+      conjugate, by the FIRST chart's relabelling, of a product of
+      committed-frame maps on one unordered pair; this atlas's generating
+      group is measured ABELIAN of exponent two, so the conjugation is
+      trivial; at a coordinate of multiplicity one the two remaining maps
+      coincide and the identity is forced; at a coordinate of multiplicity
+      two the defect IS the multiplicity bigon, which is a closed loop of
+      the two-chart graph and therefore an element of its group. Membership
+      is therefore forced at EVERY setting of this atlas, not only at the
+      two symmetric ones. What was genuinely free, and is measured, is the
+      PAIR TABLE -- which coordinates carry multiplicity -- gated at
+      COC-PAIR-TABLE; and the membership question itself has teeth at the
+      EXTENSION atlas, where the generating group does not centralise the
+      level-1 holonomy and 32,256 defects are measured outside the group
       value: {defect_set:(the identity,the wing
       exchange),defects_outside_the_bigon_group:0,denominator:1824,per_setting:{GP-A:{bigon_group_order:1,defect_names:(the
-      identity),defects_outside_the_bigon_group:0,membership_here_is:A FREE
-      MEASUREMENT: the admitted set is NOT contained in this setting's
-      group, so a single non-identity defect here would have been a higher
-      obstruction,triangles:144},GP-B:{bigon_group_order:1,defect_names:(the
-      identity),defects_outside_the_bigon_group:0,membership_here_is:A FREE
-      MEASUREMENT: the admitted set is NOT contained in this setting's
-      group, so a single non-identity defect here would have been a higher
-      obstruction,triangles:144},GP-C:{bigon_group_order:1,defect_names:(the
-      identity),defects_outside_the_bigon_group:0,membership_here_is:A FREE
-      MEASUREMENT: the admitted set is NOT contained in this setting's
-      group, so a single non-identity defect here would have been a higher
-      obstruction,triangles:144},GP-D:{bigon_group_order:1,defect_names:(the
-      identity),defects_outside_the_bigon_group:0,membership_here_is:A FREE
-      MEASUREMENT: the admitted set is NOT contained in this setting's
-      group, so a single non-identity defect here would have been a higher
-      obstruction,triangles:144},GP-E:{bigon_group_order:4,defect_names:(the
+      identity),defects_outside_the_bigon_group:0,membership_here_is:FORCED
+      BY THE TELESCOPING IDENTITY: the admitted set is not contained in this
+      setting's group, but the defect telescopes to a conjugate -- by this
+      atlas's own abelian relabelling group, hence trivially -- of a product
+      of committed-frame maps on one unordered pair, and at multiplicity one
+      those two maps coincide, so the identity is forced here by the pair
+      table alone,triangles:144},GP-B:{bigon_group_order:1,defect_names:(the
+      identity),defects_outside_the_bigon_group:0,membership_here_is:FORCED
+      BY THE TELESCOPING IDENTITY: the admitted set is not contained in this
+      setting's group, but the defect telescopes to a conjugate -- by this
+      atlas's own abelian relabelling group, hence trivially -- of a product
+      of committed-frame maps on one unordered pair, and at multiplicity one
+      those two maps coincide, so the identity is forced here by the pair
+      table alone,triangles:144},GP-C:{bigon_group_order:1,defect_names:(the
+      identity),defects_outside_the_bigon_group:0,membership_here_is:FORCED
+      BY THE TELESCOPING IDENTITY: the admitted set is not contained in this
+      setting's group, but the defect telescopes to a conjugate -- by this
+      atlas's own abelian relabelling group, hence trivially -- of a product
+      of committed-frame maps on one unordered pair, and at multiplicity one
+      those two maps coincide, so the identity is forced here by the pair
+      table alone,triangles:144},GP-D:{bigon_group_order:1,defect_names:(the
+      identity),defects_outside_the_bigon_group:0,membership_here_is:FORCED
+      BY THE TELESCOPING IDENTITY: the admitted set is not contained in this
+      setting's group, but the defect telescopes to a conjugate -- by this
+      atlas's own abelian relabelling group, hence trivially -- of a product
+      of committed-frame maps on one unordered pair, and at multiplicity one
+      those two maps coincide, so the identity is forced here by the pair
+      table alone,triangles:144},GP-E:{bigon_group_order:4,defect_names:(the
       identity,the wing
       exchange),defects_outside_the_bigon_group:0,membership_here_is:FORCED
       by the admitted set's
@@ -394,7 +556,8 @@ GATES
       identity,the wing
       exchange),defects_outside_the_bigon_group:0,membership_here_is:FORCED
       by the admitted set's
-      containment,triangles:624}},settings_where_membership_is_a_free_measurement:(GP-A,GP-B,GP-C,GP-D),triangles_at_those_settings:576}
+      containment,triangles:624}},settings_where_the_admitted_set_is_not_contained_in_the_group:(GP-A,GP-B,GP-C,GP-D),triangles_at_those_settings:576,where_the_teeth_are:(COC-PAIR-TABLE,COC-EXTENSION-ESCAPE,COC-CRITERION),why_it_could_not_have_been_otherwise:the
+      telescoping corollary plus an abelian generating group}
 
   COC-DEFECT-IS-A-BIGON-HOLONOMY             measurement  PASS
       EVERY TRIANGLE DEFECT IS EITHER THE IDENTITY OR THE BIGON HOLONOMY AT
@@ -411,28 +574,162 @@ GATES
       not the other. What the two sides DO share is disclosed: the drawn
       maps themselves, which are the atlas's own gluing data and cannot be
       independent of either side. Level two therefore adds no VALUE to level
-      one, which is a stronger reading than membership. The `edge-perturb`,
+      one, which is a stronger reading than membership. Two disclosures
+      belong beside it. The EQUAL half of clause (1) is forced once
+      confinement is: the drawn maps lie in an admitted group of order two,
+      so a non-identity defect has only one value it can take, and that
+      value is measured to be the bigon's -- what is not forced is that the
+      bigon's holonomy is the wing exchange rather than the completion's
+      defect, which is measured. And the CONVERSE of clause (2) -- that a
+      coordinate carrying a bigon carries some non-identity defect -- is
+      gated here too, not merely tabulated. The `edge-perturb`,
       `compose-order` and `label-collapse` mutants must die here
       value:
-      {coordinates_carrying_a_multiplicity_bigon:6,coordinates_carrying_none:18,non_identity_defects:576,non_identity_defects_at_a_coordinate_with_no_bigon:(),non_identity_defects_that_differ_from_the_bigon:()}
+      {coordinates_carrying_a_multiplicity_bigon:6,coordinates_carrying_none:18,coordinates_with_a_bigon_carrying_no_non_identity_defect:(),non_identity_defects:576,non_identity_defects_at_a_coordinate_with_no_bigon:(),non_identity_defects_that_differ_from_the_bigon:()}
 
   COC-CONFINEMENT                            disclosure   PASS
-      WHY IT CLOSES, STATED AS THE DISCLOSURE IT IS. Every admissible
+      WHY THIS ATLAS CLOSES, AND WHY D IS NEVER A TRIANGLE DEFECT: BOTH
+      ANALYTICALLY FORCED, BOTH STATED AS DISCLOSURES. Every admissible
       identification of this atlas is by construction an element of the
-      declared admitted set, and that set is MEASURED closed under
-      composition -- a group of order two. A triangle defect is a composite
-      of three of them, so it lies in that group for every input: the
-      confinement is ANALYTICALLY FORCED and is recorded here as a
-      disclosure and not as a must-pass gate. What is NOT forced is the
-      relation between that group and the bigon-generated one, and this gate
-      prints the split: at the settings where the admitted set is contained
-      in the holonomy group, membership follows from the containment; at the
-      settings where it is not, membership is a free measurement whose
-      failure was available
-      value:
-      {every_defect_lies_in_the_admitted_set:True,membership_is_a_free_measurement_at:(GP-A,GP-B,GP-C,GP-D),membership_is_forced_at:(GP-E,GP-F),the_admitted_set:(the
+      declared admitted group, which is MEASURED closed under composition; a
+      triangle defect is a composite of three of its elements, so it lies in
+      that group for every input. The set of all such composites is computed
+      here and measured to be the group itself. The completion's defect D
+      and its companion W.D are NOT 'measured' never to be triangle defects:
+      they are measured to lie in NO declared search scope on this base --
+      not in the 162-element relabelling scope, not in the 216-element
+      extension, and so not in either group either -- and since both scopes
+      are groups, no composite of three drawn maps can reach them. The
+      exclusion is settled before any chart is built and before any triangle
+      is drawn, and it carries no information about triangle geometry.
+      Structurally: D is manufactured by the PREPARATION LEG, which no
+      relabelling in the declared scopes intertwines, and a triangle at a
+      fixed coordinate traverses no leg at all
+      value: {D_is_in_no_declared_search_scope:{the declared 162-element
+      relabelling scope:False,the declared 216-element extension:False,the
+      group admitted after the j0 filter:False,the group admitted at the
+      extension:False},W_times_D_is_in_no_declared_search_scope:{the
+      declared 162-element relabelling scope:False,the declared 216-element
+      extension:False,the group admitted after the j0 filter:False,the group
+      admitted at the
+      extension:False},composites_of_three_admitted_maps:(the identity,the
+      wing
+      exchange),every_defect_lies_in_the_admitted_set:True,membership_is_forced_by_containment_at:(GP-E,GP-F),membership_is_forced_by_the_telescoping_identity_at:(GP-A,GP-B,GP-C,GP-D),the_admitted_set:(the
       identity,the wing
       exchange),the_admitted_set_is_closed_under_composition:True,the_group_the_defect_set_generates:2}
+
+  COC-MECHANISM-STACK                        disclosure   PASS
+      THE THREE FORCED IDENTITIES THAT DECIDE BOTH ATLASES, VERIFIED AND
+      ENTERED AS DISCLOSURES. (1) THE EQUIVARIANCE LEMMA. The four-clause
+      predicate is stated on conjugated legs and pushed-forward laws, and
+      conjugation is a bijection preserving Born leg keys and multiset
+      equality, so Adm(sigma.X, tau.Y) = tau . Adm(X, Y) . sigma^-1 --
+      measured here as an equality of SETS at every coordinate, rule and
+      ordered pair of BOTH atlases, with the violation list printed. (2) ITS
+      TELESCOPING COROLLARY. Every relabelling except the FIRST cancels, so
+      delta = sigma_A . h . sigma_A^-1 with h a product of committed-frame
+      maps; with two seeds some pair repeats and the seed self-map is
+      measured uniquely the identity, so h is the identity or the
+      coordinate's multiplicity bigon. (3) THE Z/2 COBOUNDARY, per rule,
+      with its closed-form potential f_FULL = [sigma = W], and the resulting
+      closed form delta = the product of w_X . w_Y over the
+      REALIZED-assigned edges. Every count here is printed against its
+      denominator. These are theorems, not measurements: they hold for every
+      input, which is precisely why the abelian atlas's zero is a disclosure
+      and why the extension atlas's escape is the thing worth measuring
+      value:
+      {coboundary_cells:48,coboundary_cells_with_a_potential:48,coboundary_closed_form_failures:(),defect_closed_form_mismatches:0,defect_closed_form_triangles:1824,equivariance_cases_at_the_abelian_atlas:576,equivariance_cases_at_the_extension_atlas:11520,equivariance_violations_at_the_abelian_atlas:0,equivariance_violations_at_the_extension_atlas:0,flat_setting_triangles_at_a_rule_inert_coordinate:576
+      of 576,rule_inert_coordinates:18,rule_inert_denominator:24}
+
+  COC-EXTENSION-CENSUS                       measurement  PASS
+      THE EXTENSION ATLAS IS BUILT BY THE SAME CHART RULE FROM THE BASE'S
+      OWN SECOND DECLARED GROUP, AND ITS CENSUS IS EXHAUSTIVE. Nothing
+      changes but the declared group: the same orbit rule, the same
+      four-clause predicate, the same two gluing rules, the same
+      coordinates, the same pinned completion, the same membership
+      comparator. The group is measured to have order eight, to be
+      NON-ABELIAN, with element orders and fixed-point counts printed; its
+      orbit is measured to have sixteen distinct members, distinct at every
+      setting, every one carrying the declared initial configuration. The
+      census's size is computed by the same two GENUINELY INDEPENDENT routes
+      as the abelian atlas's -- the chart-triple walk and the relational
+      join over an independently drawn edge list -- gated equal in total and
+      CELL BY CELL, with route P's coordinate key set gated against the
+      arena's own. The counts are anchored exit-1 both against this
+      instrument's own recomputation and against the hash-pinned reviews
+      that first constructed this atlas. The `ext-orbit` mutant builds the
+      orbit from the narrower group and must die here; `cell-skip` omits a
+      coordinate cell and must die here too
+      value:
+      {cells_where_the_two_routes_disagree:(),charts:16,coordinate_cells_expected:24,coordinate_cells_missing_from_the_walk:(),coordinate_cells_walked:24,distinct_charts_per_setting:{GP-A:16,GP-B:16,GP-C:16,GP-D:16,GP-E:16,GP-F:16},generating_group_is_abelian:False,generating_group_order:8,per_setting:{GP-A:37632,GP-B:37632,GP-C:37632,GP-D:37632,GP-E:91392,GP-F:91392},size:333312,size_by_the_second_route:333312}
+
+  COC-EXTENSION-ESCAPE                       measurement  PASS
+      THE PRE-REGISTERED HIGHER OBSTRUCTION IS REALISED ON BASE G, AND THE
+      ESCAPING ELEMENT IS NAMED. Of this atlas's admissible triangles, the
+      number whose defect lies OUTSIDE the bigon-generated holonomy group at
+      its own setting is measured POSITIVE against the printed denominator,
+      and the split is printed per setting and per cell: the escapes sit at
+      the two geometry-bearing settings only. The escaping defect is
+      identified as a permutation and not as a label: its
+      fixed-configuration count and order are computed, it is measured EQUAL
+      to the wing exchange composed with both pointer transpositions, it is
+      measured INSIDE base G's declared 216-element extension and OUTSIDE
+      its 162-element relabelling scope, and it is measured NOT to be an
+      element of the bigon-generated group at any setting. One escaping
+      triangle is recorded in full -- its charts, its three rules and its
+      three drawn maps. The escape total is computed twice, the second time
+      from an independently accumulated (setting, defect) histogram.
+      `membership-lax`, which answers every membership question yes, and
+      `membership-tab`, which zeroes the tabulation, both must die here
+      value: {defect_set:{the identity:268800,the wing exchange composed
+      with both pointer transpositions:32256,the wing
+      exchange:32256},defects_outside_per_cell:{GP-E/t0:5376,GP-E/t1:5376,GP-E/t3:5376,GP-F/t0:5376,GP-F/t1:5376,GP-F/t3:5376},defects_outside_per_setting:{GP-A:0,GP-B:0,GP-C:0,GP-D:0,GP-E:16128,GP-F:16128},defects_outside_the_bigon_group:32256,denominator:333312,one_escaping_triangle_in_full:{charts:(g2.F1,F1,F2),checkpoint:0,defect_fixed_points:9,defect_order:2,maps:(a
+      pointer transposition of the declared extension on the other wing,the
+      identity,the wing exchange composed with one pointer
+      transposition),rules:(FULL,FULL,REAL),setting:GP-E},recomputed_independently:32256,the_escaping_defects:({equals_the_wing_exchange_composed_with_both_pointer_transpositions:True,fixed_configurations:9,in_the_bigon_generated_group_at_a_symmetric_setting:False,in_the_declared_162_element_relabelling_scope:False,in_the_declared_216_element_extension:True,in_the_group_admitted_at_the_extension:True,order:2}),the_group_the_defect_set_generates:4}
+
+  COC-CRITERION                              measurement  PASS
+      CLOSURE IF AND ONLY IF THE CHART-GENERATING GROUP CENTRALISES THE
+      LEVEL-1 HOLONOMY -- THE UNIT'S CENTRAL RESULT, GATED AT BOTH ATLASES.
+      The level-1 holonomy of the two-chart geometry is the wing exchange.
+      At the abelian atlas the generating group is measured to centralise it
+      -- every one of its elements does -- and the escape count is measured
+      ZERO; that half is ANALYTICALLY FORCED by the telescoping corollary
+      and is printed as forced. At the extension atlas the generating group
+      is measured NOT to centralise it -- exactly half of its elements do --
+      and the escape count is measured POSITIVE; that half is FREE, because
+      a non-centralising element only makes the escaping conjugate AVAILABLE
+      and an admissible triangle had to realise it. The criterion is then
+      gated PER TRIANGLE at both atlases, with the group read at the
+      triangle's own setting: a defect lies outside the group exactly when
+      its seed-level part is the multiplicity bigon AND the first chart's
+      relabelling fails to centralise it, with the mismatch count gated at
+      zero against the printed denominators. The telescoping identity itself
+      is verified on every triangle of both censuses. This gate reads its
+      escape counts from its own (setting, first relabelling, defect)
+      histogram, not from the census's tabulation, so a tabulation mutant
+      does not reach it; what does is `ext-orbit`, which builds the second
+      atlas from the first atlas's group and so removes the non-centralising
+      elements entirely, and it must die here
+      value:
+      {abelian_atlas_centralising_elements:2,abelian_atlas_criterion_mismatches:0,abelian_atlas_escapes:0,abelian_atlas_group_order:2,abelian_atlas_telescoping_violations:0,abelian_atlas_triangles:1824,extension_atlas_centralising_elements:4,extension_atlas_criterion_mismatches:0,extension_atlas_escapes:32256,extension_atlas_group_order:8,extension_atlas_telescoping_violations:0,extension_atlas_triangles:333312,the_forced_half:the
+      abelian atlas's zero,the_free_half:the extension atlas's positive
+      count,the_level_1_holonomy:the wing exchange}
+
+  COC-MEMBERSHIP-TABULATION                  measurement  PASS
+      THE MEMBERSHIP TABULATION IS ITSELF TESTED, NOT ONLY ITS INPUTS. A
+      gate on the number of defects outside the group is worthless if the
+      routine that counts them can silently return zero, so the count is
+      produced twice at BOTH atlases by passes written separately: at the
+      abelian atlas by the per-setting tabulation and then by a plain
+      re-walk of the census with the group looked up per row; at the
+      extension atlas by the per-triangle counter and then from an
+      independently accumulated (setting, defect) histogram. The two are
+      gated equal at each atlas and both denominators are printed. The
+      `membership-tab` mutant makes one tabulation report no defect as
+      outside -- the false-zero path -- and must die here
+      value:
+      {abelian_atlas_denominator:1824,abelian_atlas_outside:0,abelian_atlas_outside_recomputed:0,extension_atlas_denominator:333312,extension_atlas_outside:32256,extension_atlas_outside_recomputed:32256}
 
   COC-POSITIVE-CONTROL                       measurement  PASS
       THE POSITIVE CONTROL: THE DEGENERATE TRIANGLE MUST REPRODUCE THE
@@ -452,19 +749,22 @@ GATES
       {degenerate_triangles_measured:152,disagreements:(),the_self_identification_is_uniquely_the_identity_everywhere:True}
 
   COC-NEGATIVE-CONTROL                       measurement  PASS
-      THE NEGATIVE CONTROL, WITH TEETH. Two triangles are deliberately
-      mis-glued at a coordinate where the base itself draws an admitted map.
-      The first injects the COMPLETION'S OWN DEFECT, which is measured to
-      lie inside the bigon group but outside the measured defect set -- so
-      the census's defect set is measured to be a PROPER part of what the
-      group contains, and a defect set gate could have failed. The second
-      injects a POINTER TRANSPOSITION of the declared extension, measured
-      outside the admitted set, and its defect is measured to lie OUTSIDE
-      the bigon group: the membership predicate is therefore measured able
-      to FIRE, and the zero it reports on the census is not the only answer
-      it can give. If this gate had failed the membership gate would be dead
-      and the run would say so. The `membership-lax` mutant answers yes to
-      every membership question and must die here
+      THE TWO INJECTIONS ARE INSTRUMENT CONTROLS ON THE MEMBERSHIP
+      PREDICATE'S TWO BRANCHES, AND ARE ENTERED AS SUCH. Two triangles are
+      deliberately mis-glued at a coordinate where the base itself draws an
+      admitted map. The first injects the COMPLETION'S OWN DEFECT, measured
+      inside the bigon group and outside the measured defect set: a positive
+      control on the predicate's AFFIRMATIVE branch. The second injects a
+      POINTER TRANSPOSITION of the declared extension, measured outside the
+      admitted group, whose defect is measured OUTSIDE the bigon group: a
+      control on the predicate's NEGATIVE branch. What these certify is the
+      PREDICATE, not the census: the admission pipeline can produce neither
+      injected map, so neither shows that this census's own zero could have
+      been otherwise -- it could not, and COC-MEMBERSHIP says why. The
+      census-level teeth are at the EXTENSION atlas, where 32,256
+      non-injected defects are measured outside the group. The
+      `membership-lax` mutant answers yes to every membership question and
+      must die here
       value: {a pointer transposition of the declared
       extension:{defect_fixed_points:27,defect_is_in_the_bigon_group:False,defect_is_in_the_measured_defect_set:False,injected_map_fixed_points:27,injected_map_is_in_the_declared_admitted_set:False,injected_map_is_in_the_declared_extension:True},the
       completion's non-equivariance
@@ -562,23 +862,51 @@ GATES
       {failures:(),triangles_flipped:1824,triangles_whose_defect_is_its_own_inverse:1824,triangles_whose_reversal_is_not_the_inverse_defect:0,two_chart_loops_flipped:8,two_chart_loops_whose_matrix_is_its_own_inverse:8}
 
   COC-ROUTE-CENSUS                           measurement  PASS
-      ALL THREE OF THE PIN'S CANDIDATE ROUTES ARE MEASURED, AND THE ONE THAT
-      FAILS IS MEASURED TO FAIL AT A NAMED CLAUSE. Route 1, the sub-leg
-      splitting: the committed local leg is measured to factorise EXACTLY
-      into three declared orthogonal sub-legs, so the split chart exists as
-      an object; but every candidate map between it and a committed chart,
-      under both rules, at both matchable read times, over the whole
-      declared admitted set, is measured to fail -- and to fail at the
-      LEG-LIST clause, since a five-leg chart cannot match a three-leg chart
-      as a multiset of Born leg keys. Route 1 therefore yields no admissible
-      pair and no triangle, and the count admitted is gated at zero. Route 2
-      is the declared route. Route 3 is measured as the degenerate triangle
-      and is this unit's positive control. The `route-lax` mutant skips the
-      leg clause and must die here
+      ALL THREE OF THE PIN'S CANDIDATE ROUTES ARE MEASURED, AND WHAT FAILS
+      IS MEASURED TO FAIL AT A NAMED CLAUSE -- AGAINST A NAMED TARGET. Route
+      1, the sub-leg splitting: the committed local leg is measured to
+      factorise EXACTLY into three declared orthogonal sub-legs, and the
+      factorisation is SWEPT over every declared rotation on both wings
+      rather than tested at the one setting where the rotation is the
+      identity and the conjugation therefore cannot fail; the case count and
+      the failure list are printed. The split chart exists as an object, and
+      every candidate map between it and a COMMITTED chart, under both
+      rules, at both matchable read times, over the whole declared admitted
+      group, is measured to fail at the LEG-LIST clause, since a five-leg
+      chart cannot match a three-leg chart as a multiset of Born leg keys.
+      What is gated at zero is therefore the split-to-COMMITTED count, and
+      nothing wider: the split charts DO glue to each other, and that atlas
+      is censused at COC-SPLIT-TO-SPLIT. Route 2 is the declared route.
+      Route 3 is measured as the degenerate triangle and is this unit's
+      positive control. The `route-lax` mutant skips the leg clause and must
+      die here
       value:
-      {admitted:0,candidate_maps_tested:32,committed_chart_legs:3,failures_by_clause:{exact
+      {admitted:0,candidate_maps_tested:32,committed_chart_legs:3,factorisation_cases_swept:6,factorisation_failures:(),failures_by_clause:{exact
       law:0,initial configuration:0,leg list:32,occupied
       set:0},split_chart_legs:5,the_committed_local_leg_factorises_exactly:True}
+
+  COC-SPLIT-TO-SPLIT                         measurement  PASS
+      ROUTE R1'S ATLAS EXISTS AND CARRIES TRIANGLES -- WHICH IS WHY THE
+      ROUTE'S 'ABSENT' READING IS SCOPED HERE TO WHAT WAS MEASURED. The
+      sub-leg split chart admits no identification to a COMMITTED chart, for
+      the reason gated at COC-ROUTE-CENSUS: a five-leg chart cannot match a
+      three-leg one as a multiset of Born leg keys. But split charts glue to
+      EACH OTHER. The eight five-leg split charts -- either local leg of
+      either committed frame replaced by its three declared orthogonal
+      sub-legs, each relabelled by the declared admitted group -- are
+      censused among themselves at their own six checkpoints, by base G's
+      own four-clause predicate. The identifications drawn and the
+      admissible triangles are both measured POSITIVE, both counts anchored
+      against the hash-pinned review that first measured them, and every
+      defect is measured INSIDE the bigon-generated group: this atlas's
+      generating group is the abelian one, so by the criterion no escape is
+      available here, and none is found. The `route-lax` mutant skips the
+      leg-list clause and must die here
+      value:
+      {GP-A:{admissible_triangles:288,checkpoints_of_a_split_chart:6,defects:{the
+      identity:288},defects_outside_the_bigon_group:0,distinct_split_charts:8,legs_per_split_chart:5,split_charts_generated:8,split_to_split_identifications_drawn:144},GP-E:{admissible_triangles:3552,checkpoints_of_a_split_chart:6,defects:{the
+      identity:2208,the wing
+      exchange:1344},defects_outside_the_bigon_group:0,distinct_split_charts:8,legs_per_split_chart:5,split_charts_generated:8,split_to_split_identifications_drawn:368}}
 
   COC-COMPLETION-DEPENDENCE                  measurement  PASS
       AT THE GEOMETRY-BEARING SETTINGS THE TRIPLE STRUCTURE EXISTS BECAUSE
@@ -599,39 +927,66 @@ GATES
       collapse criterion is then swept EXHAUSTIVELY over the whole declared
       completion family at the 9x9 level the GEN defect law licenses, and
       the split is anchored exit-1 against the committed completion census.
-      The `completion-Q` mutant makes the DECLARED completion the
-      equivariant one and must die here
+      The swept collapse count is also DERIVED and gated against the sweep:
+      the criterion says the completion's permutation centralises a measured
+      involution, whose cycle type is computed here, and the order of that
+      involution's centraliser -- restricted to the permutations fixing the
+      first index -- is measured EQUAL to the swept count, so the number is
+      structural rather than merely observed. The `completion-Q` mutant
+      makes the DECLARED completion the equivariant one and must die here
       value:
-      {admissible_triangles_per_setting_at_the_equivariant_completion:{GP-A:144,GP-B:144,GP-C:144,GP-D:144,GP-E:0,GP-F:0},admissible_triangles_per_setting_at_the_pinned_completion:{GP-A:144,GP-B:144,GP-C:144,GP-D:144,GP-E:624,GP-F:624},distinct_charts_per_setting_at_the_equivariant_completion:{GP-A:4,GP-B:4,GP-C:4,GP-D:4,GP-E:2,GP-F:2},distinct_charts_per_setting_at_the_pinned_completion:{GP-A:4,GP-B:4,GP-C:4,GP-D:4,GP-E:4,GP-F:4},family_size:40320,members_at_which_the_criterion_collapses:96,members_at_which_the_criterion_holds:40224,the_geometry_bearing_settings:(GP-E,GP-F)}
+      {admissible_triangles_per_setting_at_the_equivariant_completion:{GP-A:144,GP-B:144,GP-C:144,GP-D:144,GP-E:0,GP-F:0},admissible_triangles_per_setting_at_the_pinned_completion:{GP-A:144,GP-B:144,GP-C:144,GP-D:144,GP-E:624,GP-F:624},distinct_charts_per_setting_at_the_equivariant_completion:{GP-A:4,GP-B:4,GP-C:4,GP-D:4,GP-E:2,GP-F:2},distinct_charts_per_setting_at_the_pinned_completion:{GP-A:4,GP-B:4,GP-C:4,GP-D:4,GP-E:4,GP-F:4},family_size:40320,members_at_which_the_criterion_collapses:96,members_at_which_the_criterion_holds:40224,the_collapse_count_in_closed_form:96,the_geometry_bearing_settings:(GP-E,GP-F),the_involutions_cycle_type:{1:3,2:3}}
 
   COC-ADMISSION-SCOPE                        disclosure   PASS
-      THE ADMISSION SCOPE IS A DECLARATION, AND WHAT DEPENDS ON IT IS
-      MEASURED. The declared 216-element extension, which admits eight maps
-      after the initial-configuration filter and is measured to be a group
-      that is NOT contained in the bigon-generated holonomy group, is
-      searched with the same four-clause predicate at every ordered pair and
-      every coordinate. It is measured to draw the SAME map everywhere the
-      declared scope does, so the triangle census and every defect are
-      unchanged by it: the wider scope supplies no escaping identification
-      even though it contains escaping permutations. Folded into no verdict
+      THE WIDER SCOPE DRAWS THE SAME MAPS BETWEEN THE FOUR CHARTS OF THE
+      NARROWER ATLAS -- AND THAT IS ALL THIS MEASURES. The declared
+      216-element extension, which admits eight maps after the
+      initial-configuration filter, is searched with the same four-clause
+      predicate at every ordered pair of the ABELIAN atlas's four charts and
+      at every coordinate: it draws the same map everywhere the narrower
+      scope does, so that census is therefore unchanged -- an inference from
+      the identity of the drawn maps, not a recomputation, and printed as
+      one. This is a statement about MAPS BETWEEN THE FOUR CHARTS, and
+      nothing wider. The datum that decides the wider question is printed
+      beside it and is not this one: the admitted extension is measured
+      NON-ABELIAN, with element orders 1, 2 and 4, and only half of its
+      eight elements centralise the level-1 holonomy. Allowed to build its
+      OWN charts by the same declared rule, it is measured to supply
+      escaping identifications at 32,256 admissible triangles -- see
+      COC-EXTENSION-CENSUS and COC-EXTENSION-ESCAPE, which is where this
+      unit's verdict comes from
       value:
-      {census_size_at_the_extension:1824,coordinates_where_the_wider_scope_changes_what_is_drawn:(),declared_admitted_extension:8,declared_admitted_set:2,drawn_maps_at_the_extension:400}
+      {census_size_at_the_extension_ON_THE_FOUR_CHART_FAMILY:1824,coordinates_where_the_wider_scope_changes_what_is_drawn:(),declared_admitted_extension:8,declared_admitted_set:2,drawn_maps_at_the_extension:400,how_that_census_size_was_obtained:INFERRED,
+      not recomputed: the drawn maps are measured identical at every
+      coordinate, therefore the census is
+      unchanged,its_element_orders:(1,2,4),its_elements_centralising_the_level_1_holonomy:4,the_admitted_extension_is_abelian:False}
 
-  COC-VOCABULARY                             derivation   PASS
-      THE VERDICT IS ONE OF THE PIN'S PRE-REGISTERED NAMES, AND IT IS
-      DERIVED FROM THE GATE RESULTS RATHER THAN CHOSEN. The decision rule is
-      fixed in advance: COC-TRIANGLES-ABSENT if the census is empty;
-      COC-HIGHER-OBSTRUCTION if any admissible triangle's defect lies
-      outside the bigon-generated holonomy group at its own setting;
-      COC-COCYCLE-CLOSES otherwise. The qualifier slot of the pre-registered
-      UNIT-OUTCOME(-QUALIFIER) form carries the scope, and the declared
-      triple structure is the parameter it names. The `verdict-lax` waiver
-      emits a name outside the vocabulary and must die here
+  COC-VOCABULARY                             measurement  PASS
+      THE VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS, AND
+      IS ONE OF THE PIN'S PRE-REGISTERED NAMES (RUNBOOK section 13
+      addendum). The decision rule is fixed in advance and recorded in the
+      atlas declaration: COC-TRIANGLES-ABSENT if no admissible triangle
+      exists at any censused atlas; COC-HIGHER-OBSTRUCTION if some
+      admissible triangle at some censused atlas carries a defect outside
+      the bigon-generated holonomy group at its own setting;
+      COC-COCYCLE-CLOSES if triangles exist and none does. Two clauses. (1)
+      The printed verdict string is measured EQUAL to the string a
+      SEPARATELY WRITTEN expression selects from the two censuses' sizes and
+      their two escape counts -- an ungated verdict is a typo away from
+      fiction, so the derivation is the gate. (2) The string lies in the
+      pre-registered vocabulary. The `verdict-rule` mutant inverts one
+      comparison of the decision rule, which flips the verdict to its
+      opposite while every count stays where it is, and must die at the
+      first clause; the `verdict-lax` waiver emits a name outside the
+      vocabulary and must die at the second
       value:
-      {base:COC-COCYCLE-CLOSES,defects_outside_the_bigon_group:0,pre_registered:(COC-COCYCLE-CLOSES,COC-HIGHER-OBSTRUCTION,COC-TRIANGLES-ABSENT,COC-BLOCKED-AT-),scope:(at
-      the committed finite scope,at the declared admission scope,at the
-      declared triple structure,at the pinned completion,per
-      coordinate),triangles:1824,verdict:COC-COCYCLE-CLOSES-AT-THE-DECLARED-TRIPLE-STRUCTURE}
+      {base:COC-HIGHER-OBSTRUCTION,escapes_at_the_abelian_atlas:0,escapes_at_the_extension_atlas:32256,pre_registered:(COC-COCYCLE-CLOSES,COC-HIGHER-OBSTRUCTION,COC-TRIANGLES-ABSENT,COC-BLOCKED-AT-),scope:(at
+      the committed finite scope,at base G's declared 216-element extension
+      admission scope,at the atlas the declared chart rule generates from
+      the group that scope admits,at the pinned completion,per
+      coordinate,with the atlas the narrower 162-element scope generates
+      measured to close, that closure analytically
+      forced),the_two_derivations_agree:True,triangles_at_the_abelian_atlas:1824,triangles_at_the_extension_atlas:333312,verdict:COC-HIGHER-OBSTRUCTION-AT-THE-EXTENSION-ORBIT-ATLAS,verdict_rederived_independently:COC-HIGHER-OBSTRUCTION-AT-THE-EXTENSION-ORBIT-ATLAS}
 
   COC-DECLARATION-ORDER                      derivation   PASS
       THE RECEIPT'S GATE ORDER PROVES THE FREEZE. The pin requires the
@@ -644,7 +999,7 @@ GATES
       gate of the run. The `order-lax` mutant emits a census gate before the
       declarations and must die here
       value:
-      {declaration_gates:(COC-FREEZE,COC-BASE-PINNED,COC-EXTERNAL-SOURCE-PINNED,COC-TRIPLE-DECLARED,COC-ARENA,COC-READ-TIME-COORDINATE),first_fixture_truth_gate_index:9,first_gate:COC-FREEZE,fixture_truth_gates:(COC-CENSUS,COC-MEMBERSHIP,COC-DEFECT-IS-A-BIGON-HOLONOMY),gate_order:(COC-FREEZE,COC-BASE-PINNED,COC-EXTERNAL-SOURCE-PINNED,COC-TRIPLE-DECLARED,COC-ARENA,COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE,COC-READ-TIME-COORDINATE,COC-PAIR-TABLE,COC-BIGON-GROUP,COC-CENSUS,COC-MEMBERSHIP,COC-DEFECT-IS-A-BIGON-HOLONOMY,COC-CONFINEMENT,COC-POSITIVE-CONTROL,COC-NEGATIVE-CONTROL,COC-MISCOMPOSITION,COC-COMPOSE-WITNESS,COC-GAUGE-COVARIANCE,COC-GAUGE-PERMUTATION-FORCED,COC-FRESH-EVAL,COC-FLIP-DIRECTION,COC-ROUTE-CENSUS,COC-COMPLETION-DEPENDENCE,COC-ADMISSION-SCOPE,COC-VOCABULARY),last_declaration_gate_index:6}
+      {declaration_gates:(COC-FREEZE,COC-BASE-PINNED,COC-EXTERNAL-SOURCE-PINNED,COC-REVIEWS-PINNED,COC-TRIPLE-DECLARED,COC-ATLASES-DECLARED,COC-ARENA,COC-READ-TIME-COORDINATE),first_fixture_truth_gate_index:11,first_gate:COC-FREEZE,fixture_truth_gates:(COC-CENSUS,COC-MEMBERSHIP,COC-DEFECT-IS-A-BIGON-HOLONOMY,COC-EXTENSION-CENSUS,COC-EXTENSION-ESCAPE,COC-CRITERION),gate_order:(COC-FREEZE,COC-BASE-PINNED,COC-EXTERNAL-SOURCE-PINNED,COC-REVIEWS-PINNED,COC-TRIPLE-DECLARED,COC-ATLASES-DECLARED,COC-ARENA,COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE,COC-READ-TIME-COORDINATE,COC-PAIR-TABLE,COC-BIGON-GROUP,COC-CENSUS,COC-MEMBERSHIP,COC-DEFECT-IS-A-BIGON-HOLONOMY,COC-CONFINEMENT,COC-MECHANISM-STACK,COC-EXTENSION-CENSUS,COC-EXTENSION-ESCAPE,COC-CRITERION,COC-MEMBERSHIP-TABULATION,COC-POSITIVE-CONTROL,COC-NEGATIVE-CONTROL,COC-MISCOMPOSITION,COC-COMPOSE-WITNESS,COC-GAUGE-COVARIANCE,COC-GAUGE-PERMUTATION-FORCED,COC-FRESH-EVAL,COC-FLIP-DIRECTION,COC-ROUTE-CENSUS,COC-SPLIT-TO-SPLIT,COC-COMPLETION-DEPENDENCE,COC-ADMISSION-SCOPE,COC-VOCABULARY),last_declaration_gate_index:8}
 
   COC-NO-MUTANT-EXEMPTION                    derivation   PASS
       NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14
@@ -662,8 +1017,8 @@ GATES
       value:
       {all_of_them_outside_any_gate_or_anchor_call_site:True,call_sites_reaching_the_mutant_flag:(),comparisons_found:0,exemption_forms_found_anywhere_in_the_source:{MUTANT
       != ...:0,MUTANT is not ...:0,MUTANT not in ...:1,not (MUTANT ==
-      ...):0},gate_and_anchor_call_sites:49,their_line_numbers:{MUTANT not
-      in ...:(3447)}}
+      ...):0},gate_and_anchor_call_sites:62,their_line_numbers:{MUTANT not
+      in ...:(5049)}}
 
   COC-EXACT                                  derivation   PASS
       EXACT ARITHMETIC EVERYWHERE. An AST sweep of this module finds no
@@ -688,10 +1043,12 @@ GATES
       predicate is load-bearing for the exit code, not that the gate would
       catch a computational defect, and the two are not claimed to be the
       same thing. BOTH DENOMINATORS ARE REPORTED. The one gate excluded from
-      the denominator is this one: the census does not run inside a mutant,
-      so it cannot be falsified by this mechanism at all
+      the denominator is THIS FALSIFICATION GATE ITSELF, which does not run
+      inside a mutant and so cannot be falsified by this mechanism at all.
+      Every other must-pass gate, the census gate included, is in the
+      denominator
       value:
-      {died:28,falsified_by_a_computation_mutant:21,falsified_by_some_mutant:24,falsified_only_by_a_waiver:(COC-EXACT,COC-NO-MUTANT-EXEMPTION,COC-VOCABULARY),must_pass_gate_denominator:24,mutants:28,never_falsified:(),perturb_a_computation:23,the_gate_excluded_from_the_denominator:COC-FALSIFICATION,waivers:5}
+      {died:33,falsified_by_a_computation_mutant:28,falsified_by_some_mutant:30,falsified_only_by_a_waiver:(COC-EXACT,COC-NO-MUTANT-EXEMPTION),must_pass_gate_denominator:30,mutants:33,never_falsified:(),perturb_a_computation:28,the_gate_excluded_from_the_denominator:COC-FALSIFICATION,waivers:5}
 
 ------------------------------------------------------------------------------
 ANCHORS (exit-1 only)
@@ -714,6 +1071,8 @@ ANCHORS (exit-1 only)
       source: this unit's own measurement of the pinned declaration
   A07      PASS     the sha256 of the committed GEN terminal receipt, its recorded instrument hash, its schema, and its pin/base commits
       source: v13/code/gen_generality_receipt.json
+  A17      PASS     the sha256 of each frozen review file, in the declared order
+      source: the three frozen COC hostile reviews
   A08      PASS     base G's declared arena: carrier, settings, frames, legs, checkpoints, path bound, both scopes, both admitted sets, the initial configuration and the three exchange fixed-point counts
       source: the GEN terminal receipt, tables.arena
   A08b     PASS     the symmetric-setting count and the admitted map names
@@ -732,90 +1091,128 @@ ANCHORS (exit-1 only)
       source: the GEN terminal receipt, findings.holonomy_group
   A15      PASS     the completion's non-equivariance defect: its order and its fixed configurations
       source: the GEN terminal receipt, tables.completion_census
+  A18      PASS     the two mechanism counts the reviews report, each measured present as a string in its pinned review AND recomputed here
+      source: the frozen reviews R2 and R3, hash-pinned
+  A19      PASS     the extension atlas's chart count, census size and escape count, each measured present as a string in the pinned review AND recomputed here from base G's own declarations
+      source: the frozen review R1 (operator lens), hash-pinned
+  A20      PASS     the per-setting escape count at each geometry-bearing setting and the centraliser count, each measured present as a string in the pinned review AND recomputed here
+      source: the frozen review R2 (effectus lens), hash-pinned
+  A21      PASS     route R1's split-to-split identification count and triangle count at the declared setting, each measured present as a string in the pinned review AND recomputed here
+      source: the frozen review R1 (operator lens), hash-pinned
   A16      PASS     the declared completion family's size, the members whose defect is the identity, and the members that bear geometry
       source: the GEN terminal receipt, tables.completion_census
 
 ------------------------------------------------------------------------------
 MUTANTS
 ------------------------------------------------------------------------------
-  admit-lax            computation  exit 1  A09, A10, A11, A12, A13, A14, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-CENSUS, COC-MEMBERSHIP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-POSITIVE-CONTROL, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-FRESH-EVAL, COC-FLIP-DIRECTION, COC-COMPLETION-DEPENDENCE
+  admit-lax            computation  exit 1  A09, A10, A11, A12, A13, A14, A19, A20, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-CENSUS, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-POSITIVE-CONTROL, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-FRESH-EVAL, COC-FLIP-DIRECTION, COC-SPLIT-TO-SPLIT, COC-COMPLETION-DEPENDENCE
   anchor-completion    computation  exit 1  A03, A04, A11, A13, A14, A15, COC-BASE-PINNED, COC-BIGON-GROUP, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE
   anchor-gen           computation  exit 1  A08, A08b, A11, A12, COC-ARENA, COC-BIGON-GROUP
-  anchor-record        computation  exit 1  A06, A09, A10, A11, A12, A14, COC-BASE-PINNED, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-BIGON-GROUP, COC-COMPLETION-DEPENDENCE
+  anchor-record        computation  exit 1  A06, A09, A10, A11, A12, A14, A19, COC-BASE-PINNED, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-BIGON-GROUP, COC-EXTENSION-CENSUS, COC-COMPLETION-DEPENDENCE
   anchor-rot           computation  exit 1  A01-R1, A04, A06, COC-BASE-PINNED
   bigon-lax            computation  exit 1  A11, A12, A13, A14, COC-BIGON-GROUP
-  chart-merge          computation  exit 1  COC-TRIPLE-DECLARED, COC-ARENA, COC-PAIR-TABLE, COC-CENSUS, COC-MEMBERSHIP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-COMPLETION-DEPENDENCE
-  completion-Q         computation  exit 1  A03, A09, A10, A11, A12, A13, A14, A15, COC-BASE-PINNED, COC-TRIPLE-DECLARED, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-POSITIVE-CONTROL, COC-NEGATIVE-CONTROL, COC-COMPLETION-DEPENDENCE
-  compose-order        computation  exit 1  COC-COMPOSE-WITNESS
+  cell-skip            computation  exit 1  A19, A20, COC-CENSUS, COC-EXTENSION-CENSUS
+  chart-merge          computation  exit 1  A18, A19, A20, COC-TRIPLE-DECLARED, COC-ARENA, COC-PAIR-TABLE, COC-CENSUS, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-COMPLETION-DEPENDENCE
+  completion-Q         computation  exit 1  A03, A09, A10, A11, A12, A13, A14, A15, A19, A20, A21, COC-BASE-PINNED, COC-TRIPLE-DECLARED, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-POSITIVE-CONTROL, COC-NEGATIVE-CONTROL, COC-SPLIT-TO-SPLIT, COC-COMPLETION-DEPENDENCE
+  compose-order        computation  exit 1  A19, A20, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-COMPOSE-WITNESS
   control-lax          waiver       exit 1  COC-POSITIVE-CONTROL
   defect-order         computation  exit 1  A13, A15, COC-BIGON-GROUP, COC-NEGATIVE-CONTROL
-  edge-perturb         computation  exit 1  COC-PAIR-TABLE, COC-MEMBERSHIP, COC-DEFECT-IS-A-BIGON-HOLONOMY
+  edge-perturb         computation  exit 1  COC-PAIR-TABLE, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-CRITERION
   exempt-lax           waiver       exit 1  COC-NO-MUTANT-EXEMPTION
+  ext-orbit            computation  exit 1  A19, A20, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION
   flip-lax             waiver       exit 1  COC-FLIP-DIRECTION
   float-lax            waiver       exit 1  COC-EXACT
-  freeze-lax           computation  exit 1  COC-FREEZE
+  freeze-lax           computation  exit 1  COC-FREEZE, COC-ATLASES-DECLARED
   gen-hash             computation  exit 1  A07, COC-EXTERNAL-SOURCE-PINNED
-  label-collapse       computation  exit 1  COC-MEMBERSHIP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-POSITIVE-CONTROL
-  membership-lax       computation  exit 1  COC-NEGATIVE-CONTROL
+  label-collapse       computation  exit 1  A19, A20, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-POSITIVE-CONTROL, COC-SPLIT-TO-SPLIT
+  membership-lax       computation  exit 1  A19, A20, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-MEMBERSHIP-TABULATION, COC-NEGATIVE-CONTROL
+  membership-tab       computation  exit 1  A19, A20, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-MEMBERSHIP-TABULATION
   memo-lax             computation  exit 1  COC-FRESH-EVAL
   order-lax            computation  exit 1  COC-DECLARATION-ORDER
-  orient-flip          computation  exit 1  A11, A13, A14, A15, COC-BIGON-GROUP, COC-NEGATIVE-CONTROL, COC-COMPOSE-WITNESS, COC-GAUGE-COVARIANCE, COC-FLIP-DIRECTION
-  readtime-conflate    computation  exit 1  A09, A10, A12, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-READ-TIME-COORDINATE, COC-BIGON-GROUP
-  route-lax            computation  exit 1  COC-ROUTE-CENSUS
-  scope-lax            computation  exit 1  A08, A08b, A09, A10, A11, A12, A13, A14, COC-TRIPLE-DECLARED, COC-ARENA, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-CENSUS, COC-MEMBERSHIP, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-FRESH-EVAL, COC-FLIP-DIRECTION, COC-COMPLETION-DEPENDENCE
+  orient-flip          computation  exit 1  A11, A13, A14, A15, COC-BIGON-GROUP, COC-NEGATIVE-CONTROL, COC-COMPOSE-WITNESS, COC-GAUGE-COVARIANCE, COC-FLIP-DIRECTION, COC-ROUTE-CENSUS
+  readtime-conflate    computation  exit 1  A09, A10, A12, A19, A20, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-READ-TIME-COORDINATE, COC-BIGON-GROUP, COC-EXTENSION-CENSUS
+  review-hash          computation  exit 1  A17, COC-REVIEWS-PINNED
+  route-lax            computation  exit 1  A21, COC-ROUTE-CENSUS, COC-SPLIT-TO-SPLIT
+  scope-lax            computation  exit 1  A08, A08b, A09, A10, A11, A12, A13, A14, A18, A19, A20, A21, COC-TRIPLE-DECLARED, COC-ATLASES-DECLARED, COC-ARENA, COC-ADMISSION-REPRODUCES-THE-COMMITTED-TABLE, COC-PAIR-TABLE, COC-BIGON-GROUP, COC-CENSUS, COC-DEFECT-IS-A-BIGON-HOLONOMY, COC-EXTENSION-CENSUS, COC-EXTENSION-ESCAPE, COC-CRITERION, COC-NEGATIVE-CONTROL, COC-GAUGE-COVARIANCE, COC-FRESH-EVAL, COC-FLIP-DIRECTION, COC-SPLIT-TO-SPLIT, COC-COMPLETION-DEPENDENCE
   sign-flip            computation  exit 1  COC-GAUGE-COVARIANCE
   triangle-drop        computation  exit 1  COC-CENSUS, COC-DEFECT-IS-A-BIGON-HOLONOMY
   verdict-lax          waiver       exit 1  COC-VOCABULARY
+  verdict-rule         computation  exit 1  COC-VOCABULARY
 
-  must-pass gates                        24
-  falsified by some mutant               24
-  falsified by a computation mutant      21
-  falsified ONLY by a waiver             COC-EXACT, COC-NO-MUTANT-EXEMPTION, COC-VOCABULARY
+  must-pass gates                        30
+  falsified by some mutant               30
+  falsified by a computation mutant      28
+  falsified ONLY by a waiver             COC-EXACT, COC-NO-MUTANT-EXEMPTION
   NEVER FALSIFIED                        EMPTY
 
 ------------------------------------------------------------------------------
 THESIS
 ------------------------------------------------------------------------------
-  THE TRIPLE STRUCTURE. Base G carries two frames per setting, so a third
-  chart had to be constructed from the base's own admitted material. The
-  declared route is the pin's second candidate -- a relabelled frame via a
-  declared ADMITTED isomorphism -- in its principled form: the chart family
-  is the ORBIT of the two committed frames under the declared admitted
-  group, 4 members, measured pairwise distinct at every setting. The
-  relabelled first frame is measured DIFFERENT from the second committed
-  frame, and the mechanism is measured: the wing exchange does not
-  intertwine the preparation leg, so the third chart exists exactly because
-  the completion is non-equivariant. At the exchange-equivariant completion
-  the atlas collapses to 2 charts at exactly the two geometry-bearing
-  settings and no triangle survives there; over the whole declared
-  completion family, swept exhaustively, 40224 of 40320 members meet the
-  criterion and 96 do not. THE CENSUS. 1824 admissible triangles -- every
-  ordered triple of distinct charts, every assignment of a committed gluing
-  rule to each of the three ordered edges, every declared coordinate -- with
-  the size computed twice by independent routes, at 20 of the 24 declared
+  THE CRITERION. Base G declares TWO groups of admitted relabellings, and
+  the declared chart rule -- the orbit of the two committed frames under a
+  declared admitted group, with the identification search over the same
+  group -- applies to both. The unit's central result is the criterion that
+  decides what the resulting atlas does: THE COCYCLE CLOSES AT AN ATLAS IF
+  AND ONLY IF THE CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY.
+  It is gated at both atlases. At the abelian atlas the generating group has
+  order 2 and ALL 2 of its elements centralise the wing exchange; 1824
+  triangles, 0 outside the bigon-generated group -- and that zero is
+  ANALYTICALLY FORCED, not measured: by the equivariance lemma (576 of 576
+  cases, 0 violations) and its telescoping corollary the defect is a
+  conjugate, by the FIRST chart's relabelling, of a committed-frame product,
+  and an abelian generating group makes that conjugation trivial. At the
+  extension atlas -- base G's own declared order-8 admitted group, measured
+  NON-ABELIAN, exactly 4 of whose elements centralise the wing exchange --
+  the same rule gives 16 charts and 333312 admissible triangles, of which
+  32256 carry a defect OUTSIDE the bigon-generated group, GP-E 16128, GP-F
+  16128. The escaping element is named: the wing exchange composed with both
+  pointer transpositions, order 2, 9 fixed configurations, inside base G's
+  declared 216-element extension, outside its 162-element relabelling scope
+  and outside the Klein four-group the two-chart loops generate. The
+  per-triangle criterion is gated at both atlases with the group read at the
+  triangle's own setting: 0 and 0 mismatches. THE TRIPLE STRUCTURE. Base G
+  carries two frames per setting, so a third chart had to be constructed
+  from the base's own admitted material. The declared route is the pin's
+  second candidate -- a relabelled frame via a declared ADMITTED isomorphism
+  -- in its principled form: the chart family is the ORBIT of the two
+  committed frames under the declared admitted group, 4 members, measured
+  pairwise distinct at every setting. The relabelled first frame is measured
+  DIFFERENT from the second committed frame, and the mechanism is measured:
+  the wing exchange does not intertwine the preparation leg, so the third
+  chart exists exactly because the completion is non-equivariant. At the
+  exchange-equivariant completion the atlas collapses to 2 charts at exactly
+  the two geometry-bearing settings and no triangle survives there; over the
+  whole declared completion family, swept exhaustively, 40224 of 40320
+  members meet the criterion and 96 do not. THE CENSUS AT THE ABELIAN ATLAS.
+  1824 admissible triangles -- every ordered triple of distinct charts,
+  every assignment of a committed gluing rule to each of the three ordered
+  edges, every declared coordinate -- with the size computed twice by
+  GENUINELY INDEPENDENT routes, the chart-triple walk against a relational
+  join over an independently drawn edge list, gated equal cell by cell and
+  gated against the arena's own coordinate set, at 20 of the 24 declared
   coordinate cells. THE DEFECT SET has 2 members: the identity, the wing
   exchange. THE MEMBERSHIP QUESTION. Every defect lies in the
-  bigon-generated holonomy group at its own setting: 0 outside, of 1824. The
+  bigon-generated holonomy group at its own setting: 0 outside, of 1824 --
+  reported as a DISCLOSURE, because it could not have been otherwise. The
   reading is stronger than membership and is gated as an if and only if:
   every non-identity defect is measured EQUAL to the multiplicity bigon's
   holonomy at its own coordinate, and every coordinate carrying no such
   bigon carries only identity defects -- so level two adds no VALUE to level
-  one, not merely no element. The defect set generates a group of order 2, a
-  PROPER subgroup of the order-4 group at the symmetric settings: the
-  completion's own defect is measured never to be a triangle defect. WHAT IS
-  FORCED AND WHAT IS FREE, disclosed. Every admissible identification is an
-  element of the declared admitted set, which is measured closed under
-  composition, so the confinement of the defect is analytically forced.
-  Membership is forced only where that set is contained in the holonomy
-  group -- the two symmetric settings. At the four settings whose connection
-  is measured FLAT the admitted set is measured NOT contained in the trivial
-  group, so each of the 576 triangles there could have carried a defect that
-  no bigon generates, a pure level-2 obstruction at a flat setting, and the
-  gate measures that none does. Stated at the committed finite scope, at the
-  declared admission scope, at the declared triple structure, at the pinned
-  completion, per coordinate; nothing is claimed about nature.
+  one at THIS atlas. The defect set generates a group of order 2, a PROPER
+  subgroup of the order-4 group at the symmetric settings; that D and W.D
+  are not triangle defects is FORCED and is disclosed as such -- they lie in
+  no declared search scope, and the scopes are groups. WHAT IS FORCED AND
+  WHAT IS FREE, separated. The whole membership zero at this atlas is forced
+  by the mechanism stack. What was free here is the PAIR TABLE -- which
+  coordinates carry multiplicity, 18 rule-inert coordinates of 24 -- and
+  what is free at the level of the unit's question is the extension atlas's
+  escape count, which had to be realised by admissible triangles and is
+  measured to be. Stated at the committed finite scope, at base G's declared
+  216-element extension admission scope, at the atlas the declared chart
+  rule generates from the group that scope admits, at the pinned completion,
+  per coordinate; nothing is claimed about nature.
 
-UNIT VERDICT: COC-COCYCLE-CLOSES-AT-THE-DECLARED-TRIPLE-STRUCTURE
-  scope: at the committed finite scope; at the declared admission scope; at the declared triple structure; at the pinned completion; per coordinate
+UNIT VERDICT: COC-HIGHER-OBSTRUCTION-AT-THE-EXTENSION-ORBIT-ATLAS
+  scope: at the committed finite scope; at base G's declared 216-element extension admission scope; at the atlas the declared chart rule generates from the group that scope admits; at the pinned completion; per coordinate; with the atlas the narrower 162-element scope generates measured to close, that closure analytically forced
 
-totals: 19 anchors, 29 gates (25 must-pass, 4 disclosures), 0 must-pass failures
+totals: 24 anchors, 37 gates (31 must-pass, 6 disclosures), 0 must-pass failures

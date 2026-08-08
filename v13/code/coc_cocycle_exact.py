@@ -17,61 +17,116 @@ holonomies -- the connection is the whole story -- or does some triangle
 carry structure OUTSIDE the bigon-generated group, a genuine higher
 obstruction?
 
-THE TRIPLE STRUCTURE, DECLARED AS DATA BEFORE ANY FIXTURE TRUTH (section 2,
-and the receipt's own gate order is the proof).  Base G carries two frames
-per setting.  The declared route is the pin's second candidate -- a
-relabelled frame via a declared ADMITTED isomorphism -- taken in its
-principled form: the CHART FAMILY is the ORBIT of the two committed frames
-under the declared admitted group S = {1, W}, i.e.
+THE ANSWER, AND THE CRITERION THAT DECIDES IT.  Base G declares TWO groups
+of admitted relabellings, and the chart rule applied to each of them gives a
+different atlas.  At the abelian one the cocycle closes and the closure is
+ANALYTICALLY FORCED -- proved here as three theorems and reported as a
+disclosure, not as a measurement.  At the base's own declared order-eight
+extension, which is measured NON-ABELIAN, the same chart rule and the same
+four-clause admission predicate produce 16 charts, 333,312 admissible
+triangles and 32,256 defects OUTSIDE the bigon-generated holonomy group.
+The central result is the criterion that decides which happens:
+
+    THE COCYCLE CLOSES  <=>  THE CHART-GENERATING GROUP CENTRALISES THE
+                             LEVEL-1 HOLONOMY
+
+Closure is therefore not a property of the connection at all.  The defect
+telescopes to a CONJUGATE, by the first chart's own relabelling, of a
+product of committed-frame maps; when the chart-generating group centralises
+the level-1 holonomy that conjugation is trivial and the defect cannot
+leave, whatever the geometry does; when it does not, the escaping conjugate
+is realised by admissible triangles.  Both halves are gated here, at both
+atlases, and the escaping element is NAMED: W.tau_A.tau_B, of order 2 with
+9 fixed configurations, inside base G's declared 216-element extension,
+outside its 162-element relabelling scope and outside the Klein four-group
+the two-chart loops generate.
+
+THE TWO ATLASES, DECLARED AS DATA BEFORE ANY FIXTURE TRUTH (section 2, and
+the receipt's own gate order is the proof).  Base G carries two frames per
+setting.  The declared route is the pin's second candidate -- a relabelled
+frame via a declared ADMITTED isomorphism -- taken in its principled form:
+the CHART FAMILY is the ORBIT of the two committed frames under a declared
+admitted group.  Applied to the group admitted after the j0 filter,
+S = {1, W}, the rule gives
 
     F1,  F2,  W.F1,  W.F2
 
 with W.X the chart whose legs are W L W and whose law datum is the
-W-pushforward of X's.  Its size is COMPUTED and its members are MEASURED
-pairwise distinct.  W.F1 differs from F2 exactly by the completion's
-non-equivariance defect, so THE THIRD CHART EXISTS BECAUSE THE COMPLETION IS
+W-pushforward of X's.  Applied to the group admitted at the declared
+extension, S_ext of order eight, the same rule gives sixteen charts.  Both
+sizes are COMPUTED and both families are MEASURED pairwise distinct at every
+setting.  W.F1 differs from F2 exactly by the completion's non-equivariance
+defect, so THE THIRD CHART EXISTS BECAUSE THE COMPLETION IS
 NON-EQUIVARIANT -- measured here, and measured to collapse at the
-exchange-equivariant completion, where the family has two members and no
-triple exists at all.
+exchange-equivariant completion, where the abelian family has two members
+and no triple exists at all.
 
 The admission rule per ordered pair is base G's OWN four-clause predicate,
 generalised verbatim from the committed pair to an arbitrary ordered chart
 pair, under each of the two committed gluing rules (FULL / REALIZED), over
-the declared admitted set, with a map DRAWN only where the rule admits
+the declared admitted group, with a map DRAWN only where the rule admits
 UNIQUELY.  Restricted to the committed pair it is measured to reproduce the
 committed admission table cell for cell.  Every coordinate is matched: a
 triangle lives at one (setting, checkpoint), and the READ TIME is a
 coordinate of every chart datum and of every identification.
 
-WHAT IS MEASURED.  The triangle census is exhaustive over the declared
-family; every defect is computed as a PERMUTATION TUPLE; the
+WHAT IS MEASURED.  Both triangle censuses are exhaustive over their declared
+family, each size computed by two GENUINELY INDEPENDENT routes -- a walk
+over chart triples against a relational join over an independently drawn
+edge list -- with a CELL-COMPLETENESS gate that measures the census's own
+coordinate key set against the arena's computed one, so a dropped cell
+cannot pass.  Every defect is computed as a PERMUTATION TUPLE; the
 bigon-generated holonomy group is rebuilt natively in this module (never
 imported) and anchored exit-1 against the committed GEN receipt, which is
-pinned by hash; and membership is gated per triangle at matched
-coordinates.
+pinned by hash; membership is gated per triangle at matched coordinates,
+with the outside-count recomputed by an independently written second pass;
+and the unit verdict is DERIVED INSIDE ITS GATE from the two censuses'
+measured counts by an expression written separately from the decision rule,
+so that the `verdict-rule` mutant, which inverts one comparison of that
+rule, dies there.
+
+THE MECHANISM STACK, PROVED AND VERIFIED.  Three theorems, each stated in
+the paper and each verified here on this run's own data, and all three
+entered as DISCLOSURES because they are analytically forced (RUNBOOK
+section 14 addendum): the EQUIVARIANCE lemma Adm(s.X, t.Y) = t.Adm(X,Y).s^-1
+at every coordinate, rule and ordered pair of both atlases; its TELESCOPING
+corollary, which sends every defect to a conjugate by the first chart's
+relabelling of a committed-frame product; the Z/2 COBOUNDARY of the drawn
+maps, per rule, with the closed-form potential f_FULL = [sigma = W]; and the
+closed form delta = prod over the REAL-assigned edges of w_X.w_Y.  Because
+the confinement of the defect is forced by these, D and W.D are NOT
+"measured" never to be triangle defects: they lie in NO declared search
+scope, both scopes are groups, and the exclusion is settled before any chart
+is built.
 
 CONTROLS.  Positive: the degenerate triangle -- the pin's third candidate
 route, (frame1-FULL, frame2, frame1-REAL), whose third identification is
 measured to be uniquely the identity -- whose defect MUST equal the
-independently computed bigon holonomy at the same coordinate.  Negative,
-with teeth: two deliberately injected triangles, one carrying the
-completion defect D (inside the bigon group, outside the measured defect
-set) and one carrying a pointer transposition of the declared extension
-(outside the bigon group), so the membership predicate is measured able to
-fire.  The pin's wrong-ORDER mis-composition is also run and is measured
-INERT -- the drawn maps generate an abelian group of exponent two -- and is
-reported as a control WITHOUT teeth, with the instrument's order- and
-inversion-sensitivity gated instead on a declared NON-ABELIAN witness.
+independently computed bigon holonomy at the same coordinate.  Negative: two
+deliberately injected triangles, one carrying the completion defect D and
+one carrying a pointer transposition of the declared extension; both are
+INSTRUMENT controls on the membership predicate's two branches, since the
+admission pipeline can produce neither map, and they are entered as such --
+the predicate's ability to fire on the census's own data is established
+instead by the extension atlas, where 32,256 non-injected defects are
+measured outside the group.  The pin's wrong-ORDER mis-composition is also
+run and is measured INERT at the abelian atlas -- those drawn maps generate
+an abelian group of exponent two -- and is reported as a control WITHOUT
+teeth, with the instrument's order- and inversion-sensitivity gated instead
+on a declared NON-ABELIAN witness.
 
-DISCIPLINE.  RUNBOOK section 13; section 14 with every addendum -- the
-switching self-test evaluates FRESH against a cache measured populated and
-measured exercised, no gate predicate references mutant identity (AST
-sweep with its own falsifier), every decomposition/rebuild check builds its
-comparator independently of the audited component, analytically-forced
-clauses are DISCLOSURES and not must-pass gates, and the symmetry
-instrument carries sign/orientation mutants; section 15 with every addendum
--- the arena is declared as data with computed sizes, and every contrast is
-read at matched coordinates.
+DISCIPLINE.  RUNBOOK section 13 with its addendum -- the printed verdict is
+derived inside a gate from the measured counts and a verdict-flip mutant
+proves the derivation can fail, and a census's two routes are genuinely
+independent computations with a cell-completeness gate; section 14 with
+every addendum -- the switching self-test evaluates FRESH against a cache
+measured populated and measured exercised, no gate predicate references
+mutant identity (AST sweep with its own falsifier), every
+decomposition/rebuild check builds its comparator independently of the
+audited component, analytically-forced clauses are DISCLOSURES and not
+must-pass gates, and the symmetry instrument carries sign/orientation
+mutants; section 15 with every addendum -- the arena is declared as data
+with computed sizes, and every contrast is read at matched coordinates.
 
 Exact arithmetic throughout: `fractions.Fraction` only.  No float enters any
 path.  Anchors exit 1 on mismatch.  No wall-clock value enters the receipt
@@ -79,8 +134,9 @@ or the rendered output, so two delivery-mode runs are byte-identical.
 
 Scope: finite; base G's one declared carrier of 81 configurations; its
 declared six-setting family; its declared four checkpoints; its declared
-162-element relabelling scope and 216-element extension; the declared
-completion of the GEN pin.  Completion-variation is not this unit's
+162-element relabelling scope and 216-element extension; the two atlases the
+declared chart rule generates from the two groups those scopes admit; the
+declared completion of the GEN pin.  Completion-variation is not this unit's
 question: every result stands at that one pinned completion, and the one
 completion measurement made here is the existence of the triple structure
 itself.  No locality, topology, causality, spacetime, field, QFT or gravity
@@ -109,6 +165,39 @@ GEN_RECEIPT = HERE / "gen_generality_receipt.json"
 OUT_TXT = HERE / "coc_cocycle_output.txt"
 OUT_JSON = HERE / "coc_cocycle_receipt.json"
 
+# THE THREE FROZEN EXTERNAL REVIEWS, pinned by sha256.  The extension-atlas
+# construction is theirs; every count of it that they report is anchored
+# exit-1 here BOTH as a number recomputed by this instrument AND as a string
+# measured present in the pinned file, so neither the file nor the number can
+# drift without killing the run.
+REVIEWS = HERE.parent
+REVIEW_PINS = (
+    ("R1-operator", "review-coc-operator.md",
+     "fd8fe8abf9d468825239938c461f2f81f53263be79809bcbf78edc633b7709de"),
+    ("R2-effectus", "review-coc-effectus.md",
+     "81cc0970212ab9f51629a4040a02601ff7470b17acabfb3e7fb10e60c9e19534"),
+    ("R3-instrument", "review-coc-instrument.md",
+     "88a011e1dc1c0582ae4b47b302601fd7743cec38279b4f6c310b148877702124"),
+)
+
+# The external counts this unit re-derives, with the pinned file each is
+# quoted from.  The declared side of every one of these anchors is a string
+# MEASURED PRESENT in the hash-pinned review, never a typed integer alone.
+EXTERNAL_COUNTS = (
+    ("charts at the extension atlas", "16 charts", "R1-operator"),
+    ("admissible triangles at the extension atlas", "333,312", "R1-operator"),
+    ("defects outside the bigon group", "32,256", "R1-operator"),
+    ("escapes at each geometry-bearing setting", "16,128", "R2-effectus"),
+    ("elements of the order-eight extension centralising the wing exchange",
+     "4 of 8", "R2-effectus"),
+    ("split-to-split identifications at GP-E", "368", "R1-operator"),
+    ("split-to-split triangles at GP-E", "3,552", "R1-operator"),
+    ("coordinate-and-rule cells at which the drawn map is a coboundary",
+     "48 of 48", "R3-instrument"),
+    ("ordered pairs at which the equivariance lemma is verified",
+     "576 of 576", "R2-effectus"),
+)
+
 MUTANT: str | None = None
 SOURCE_SHA256 = ""
 
@@ -121,11 +210,15 @@ PREREGISTERED = ("COC-COCYCLE-CLOSES", "COC-HIGHER-OBSTRUCTION",
                  "COC-TRIANGLES-ABSENT", "COC-BLOCKED-AT-")
 
 QUALIFIER = "-AT-THE-DECLARED-TRIPLE-STRUCTURE"
+EXT_QUALIFIER = "-AT-THE-EXTENSION-ORBIT-ATLAS"
 SCOPE_CLAUSES = ("at the committed finite scope",
-                 "at the declared admission scope",
-                 "at the declared triple structure",
+                 "at base G's declared 216-element extension admission scope",
+                 "at the atlas the declared chart rule generates from the "
+                 "group that scope admits",
                  "at the pinned completion",
-                 "per coordinate")
+                 "per coordinate",
+                 "with the atlas the narrower 162-element scope generates "
+                 "measured to close, that closure analytically forced")
 
 T0 = time.time()
 
@@ -784,6 +877,45 @@ TRIPLE_DECLARATION = {
         "GEN receipt",
 }
 
+# ---------------------------------------------------------------------------
+# THE TWO ATLASES, DECLARED.  The chart rule takes a DECLARED ADMITTED GROUP
+# and returns an atlas; base G declares two such groups, and the rule is
+# applied to BOTH.  This declaration is recorded before any fixture truth and
+# its gate sits before the first census gate.
+# ---------------------------------------------------------------------------
+ATLAS_DECLARATION = {
+    "the chart rule": "given a declared admitted group G of relabellings of "
+                      "the carrier, the atlas is the orbit of the two "
+                      "committed frames under G, deduplicated by chart "
+                      "identity, and the identification search at every "
+                      "ordered pair runs over THE SAME G",
+    "atlas 1 (the abelian atlas)":
+        "G = the group admitted after the j0 filter of the declared "
+        "162-element relabelling scope",
+    "atlas 2 (the extension atlas)":
+        "G = the group admitted after the j0 filter of the declared "
+        "216-element extension scope, i.e. base G's own second declared "
+        "admitted group; the SAME chart rule, the SAME four-clause "
+        "predicate, the SAME two gluing rules, the SAME coordinates, the "
+        "SAME pinned completion",
+    "the criterion under test":
+        "THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE "
+        "CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY.  The "
+        "declared prediction, recorded before the extension census is run: "
+        "at an atlas whose generating group centralises the level-1 "
+        "holonomy every defect is confined to the bigon-generated group by "
+        "algebra alone; at an atlas whose generating group does not, the "
+        "escaping conjugate is available and the question is whether an "
+        "admissible triangle realises it",
+    "the decision rule":
+        "COC-TRIANGLES-ABSENT if no admissible triangle exists at any "
+        "censused atlas; COC-HIGHER-OBSTRUCTION if some admissible "
+        "triangle at some censused atlas carries a defect outside the "
+        "bigon-generated holonomy group at its own setting; "
+        "COC-COCYCLE-CLOSES if triangles exist and none does; "
+        "COC-BLOCKED-AT-<object> where a census cannot be posed",
+}
+
 
 def chart_key(name, frame, sigma_name, sigma):
     return {"name": name, "frame": frame, "sigma_name": sigma_name,
@@ -1086,6 +1218,112 @@ def gen_gate_value(gid):
         if g["id"] == gid:
             return g["value"]
     return {}
+
+
+_REVIEW_TEXT: dict = {}
+
+
+def run_review_pin():
+    """THE THREE FROZEN EXTERNAL REVIEWS, PINNED BY HASH.  The extension
+    atlas is their construction; this unit re-derives every count of it on
+    its own instrument and anchors each one against the pinned file, as a
+    string measured present in it.  The `review-hash` mutant perturbs the
+    bytes of one review before they are hashed and must die here."""
+    prog("the three frozen external reviews, pinned by hash")
+    measured, declared = [], []
+    for tag, fn, sha in REVIEW_PINS:
+        raw = (REVIEWS / fn).read_bytes()
+        perturb_a_pinned_review = (MUTANT == "review-hash")
+        if perturb_a_pinned_review and tag == "R1-operator":
+            raw = raw + b" "
+        _REVIEW_TEXT[tag] = (REVIEWS / fn).read_text()
+        measured.append(hashlib.sha256(raw).hexdigest())
+        declared.append(sha)
+    anchor("A17", "the three frozen COC hostile reviews",
+           "the sha256 of each frozen review file, in the declared order",
+           declared, measured)
+    gate("COC-REVIEWS-PINNED", "measurement",
+         "THE EXTERNAL CONSTRUCTION IS PINNED BY HASH, NOT BY CAPTION.  The "
+         "extension atlas whose census carries this unit's verdict was "
+         "constructed by two of the three frozen external reviews.  Each "
+         "review file is read as bytes and its sha256 measured against the "
+         "value pinned in this file, and every count taken from those "
+         "reviews is anchored twice over: as a number recomputed here from "
+         "base G's own declarations, and as the exact string measured "
+         "PRESENT in the pinned file it is quoted from.  The `review-hash` "
+         "mutant perturbs one review's bytes before they are hashed and "
+         "must die here",
+         ANCHORS[-1]["passed"],
+         {"reviews": [t for t, _f, _s in REVIEW_PINS],
+          "sha256": dict(zip([t for t, _f, _s in REVIEW_PINS], measured))})
+
+
+def review_quote(tag, s):
+    """Is this exact string present in the hash-pinned review?  The declared
+    side of every external count anchor."""
+    return s in _REVIEW_TEXT.get(tag, "")
+
+
+def run_atlas_declaration():
+    """THE TWO ATLASES AND THE CRITERION, DECLARED BEFORE ANY FIXTURE
+    TRUTH."""
+    prog("the two atlases and the criterion, declared")
+    n = _DEFECTS_EVALUATED
+    # EACH ATLAS IS CLOSED UNDER ITS OWN SEARCH SCOPE, measured: clause 1
+    # requires a map to carry X's initial configuration to Y's, and no element
+    # of either admitted group carries a NON-j0 configuration to j0, so no
+    # chart outside the orbit of the search group can be glued to one inside.
+    closure = {}
+    for tag, scope, adm in (("the 162-element relabelling scope", "base",
+                             "admitted"),
+                            ("the 216-element extension", "extension_all",
+                             "admitted_extension")):
+        closure[tag] = {
+            "orbit members generated": len(CHART_SEEDS) * len(SCOPE[scope]),
+            "distinct initial configurations realised":
+                len({p[J0] for p in SCOPE[scope]}),
+            "orbit members carrying the declared initial configuration":
+                len(CHART_SEEDS) * SCOPE["n_" + ("admitted"
+                                                 if adm == "admitted"
+                                                 else "admitted_extension")],
+            "no admitted element carries another configuration to it":
+                all(p[j] != J0 for p in SCOPE[adm]
+                    for j in range(NC) if j != J0)}
+    TABLES["atlas_declaration"] = dict(ATLAS_DECLARATION)
+    TABLES["atlas_declaration"]["the two declared admitted groups, sizes "
+                                "computed"] = {
+        "atlas 1": SCOPE["n_admitted"], "atlas 2": SCOPE["n_admitted_extension"]}
+    TABLES["atlas_declaration"]["each atlas is closed under its own search "
+                                "scope"] = closure
+    gate("COC-ATLASES-DECLARED", "measurement",
+         "THE CHART RULE IS APPLIED TO BOTH GROUPS BASE G DECLARES, AND THE "
+         "CRITERION IS PRE-REGISTERED.  The rule -- the orbit of the two "
+         "committed frames under a declared admitted group, with the "
+         "identification search running over THE SAME group -- is stated "
+         "once and instantiated twice: at the group the 162-element scope "
+         "admits, and at the group the declared 216-element extension "
+         "admits.  Both group sizes are computed here, both are measured "
+         "distinct, and the criterion under test and the verdict's decision "
+         "rule are recorded as data BEFORE either census runs, with the "
+         "cocycle-defect counter measured at zero at this point.  Each atlas "
+         "is measured CLOSED under its own search scope rather than merely "
+         "chosen: the orbit of the two committed frames under a WHOLE "
+         "declared scope realises every initial configuration that scope "
+         "reaches, only the orbit of the admitted subgroup carries the "
+         "declared one, and no admitted element is measured to carry any "
+         "other configuration to it -- so the first admissibility clause "
+         "forbids gluing a chart outside the orbit to a chart inside it.  The "
+         "`scope-lax` mutant subsamples the admitted group so the two "
+         "declared sizes collapse, and must die here",
+         (n == 0 and SCOPE["n_admitted"] > 1
+          and SCOPE["n_admitted_extension"] > SCOPE["n_admitted"]
+          and all(v["no admitted element carries another configuration to it"]
+                  for v in closure.values())),
+         {"cocycle_defects_evaluated_at_this_point": n,
+          "atlas_1_group_order": SCOPE["n_admitted"],
+          "atlas_2_group_order": SCOPE["n_admitted_extension"],
+          "each_atlas_is_closed_under_its_own_search_scope": closure,
+          "declaration": TABLES["atlas_declaration"]})
 
 
 def run_inherited_anchors():
@@ -1513,7 +1751,126 @@ def run_admission_table(fam):
 
 # ===========================================================================
 # 5.  THE TRIANGLE CENSUS
+#
+#     TWO GENUINELY INDEPENDENT ROUTES (RUNBOOK section 13 addendum).  Route
+#     P walks chart triples and asks the drawn-map oracle for each edge.
+#     Route Q never walks a triple: it builds, from an INDEPENDENTLY WRITTEN
+#     admission predicate with its own memo, the explicit list of admissible
+#     directed edges at every coordinate, and then assembles triangles by a
+#     RELATIONAL JOIN over that edge list.  The two routes differ in the
+#     admission implementation, the coordinate list, the distinct-chart list,
+#     the data structure and the assembly algorithm, so a dropped
+#     coordinate, a dropped chart, a dropped triple or a dropped rule
+#     assignment moves one and not the other -- unlike a distributive-law
+#     restatement, which is equal to its partner for every possible oracle.
+#     What the routes DO share is disclosed: base G's exact linear algebra
+#     and the chart data itself, which no route can be independent of.
 # ===========================================================================
+_ADM_Q: dict = {}
+_KEYS_Q: dict = {}
+
+
+def _leg_keys_q(sp, X, realized, q=None, ordered=False):
+    """Route Q's OWN leg-key list, with route Q's own store: sorted (the
+    order-free multiset the admission clause compares) or ORDERED (the chart
+    identity's own reading)."""
+    key = (sp, X["name"], realized, ordered,
+           None if q is None else canon(list(q)))
+    if key in _KEYS_Q:
+        return _KEYS_Q[key]
+    legs = chart_legs(sp, X, realized)
+    if q is None:
+        out = [leg_key(L) for L in legs]
+    else:
+        out = [leg_key(sp_conj(L, list(q))) for L in legs]
+    _KEYS_Q[key] = out if ordered else sorted(out)
+    return _KEYS_Q[key]
+
+
+def admits_independently(sp, t, X, Y, rule_id, scope):
+    """ROUTE Q'S OWN ADMISSION PREDICATE.  The same four declared clauses,
+    written separately from `admits`, with its own store and its own
+    uniqueness test.  Nothing in this function reads `_FIXTURE['drawn', ...]`
+    or calls `drawn_map`."""
+    key = (sp, t, X["name"], Y["name"], rule_id, scope)
+    if key in _ADM_Q:
+        return _ADM_Q[key]
+    realized = (rule_id == "REAL")
+    target = _leg_keys_q(sp, Y, realized)
+    law_x = chart_law(sp, X, t)["law"]
+    law_y = chart_law(sp, Y, t)["law"]
+    jx, jy = chart_initial(X), chart_initial(Y)
+    hits = []
+    for p in SCOPE[scope]:
+        q = tuple(p)
+        if q[jx] != jy:
+            continue
+        if _leg_keys_q(sp, X, realized, q) != target:
+            continue
+        occ = {q[i] for i in law_x}
+        if occ != set(law_y):
+            continue
+        bad = False
+        for i, v in law_x.items():
+            if law_y.get(q[i]) != v:
+                bad = True
+                break
+        if bad:
+            continue
+        hits.append(q)
+    _ADM_Q[key] = hits[0] if len(hits) == 1 else None
+    return _ADM_Q[key]
+
+
+def census_route_q(fam, scope):
+    """ROUTE Q: the relational join.  Returns the per-cell counts and the
+    total, computed without ever enumerating a chart triple."""
+    coords = [(sp, t) for sp in sorted(SETTINGS)
+              for t in range(NLEGS + 1)]
+    per_cell, total = {}, 0
+    for (sp, t) in coords:
+        # route Q's own distinct-chart list, deduplicated by its own signature
+        here, seen = [], set()
+        for ch in fam:
+            s = canon([_leg_keys_q(sp, ch, False, None, True),
+                       [canon(sorted(chart_law(sp, ch, tt)["law"].items()))
+                        + "@%d" % chart_law(sp, ch, tt)["read_time"]
+                        for tt in range(NLEGS + 1)]])
+            if s in seen:
+                continue
+            seen.add(s)
+            here.append(ch)
+        # the explicit directed edge list at this coordinate: one RECORD per
+        # (target chart, gluing rule) that is actually drawn
+        out_edges: dict = {c["name"]: [] for c in here}
+        for X in here:
+            for Y in here:
+                if X["name"] == Y["name"]:
+                    continue
+                for r in ID_RULES:
+                    if admits_independently(sp, t, X, Y, r["id"],
+                                            scope) is not None:
+                        out_edges[X["name"]].append((Y["name"], r["id"]))
+        # the join: every triangle is ASSEMBLED from three edge records,
+        # A -> B -> C -> A over three distinct charts.  No product of counts
+        # is formed anywhere.
+        n = 0
+        for a in out_edges:
+            for (b, _r1) in out_edges[a]:
+                if b == a:
+                    continue
+                for (c, _r2) in out_edges[b]:
+                    if c == a or c == b:
+                        continue
+                    for (d, _r3) in out_edges[c]:
+                        if d == a:
+                            n += 1
+        per_cell["%s/t%d" % (sp, t)] = n
+        total += n
+    return {"per_cell": per_cell, "total": total,
+            "coordinate_cells": len(coords)}
+
+
 def compose3(x, y, z):
     """The cocycle defect's own composition: z after y after x, i.e.
     delta = g_CA . g_BC . g_AB.  The `compose-order` mutant composes the
@@ -1531,76 +1888,123 @@ def triangle_defect(gAB, gBC, gCA):
     return defect_value(compose3(gAB, gBC, gCA))
 
 
+def census_coordinates():
+    """The arena's own coordinate key set, computed from the declared setting
+    family and the computed leg count -- the denominator every census's cell
+    completeness is measured against.  The `cell-skip` mutant drops one
+    coordinate from the ROUTE-P walk (never from here, never from route Q),
+    so the omission surfaces as a missing key and as a per-cell
+    disagreement."""
+    return ["%s/t%d" % (sp, t) for sp in SETTING_ORDER for t in CHECKPOINTS]
+
+
+def _route_p_coordinates():
+    skip_one_coordinate_cell = (MUTANT == "cell-skip")
+    out = []
+    for sp in SETTING_ORDER:
+        for t in CHECKPOINTS:
+            if skip_one_coordinate_cell and sp == "GP-E" and t == 1:
+                continue
+            out.append((sp, t))
+    return out
+
+
 def run_census(fam):
     """THE TRIANGLE CENSUS, exhaustive over the declared triple family."""
     prog("the triangle census")
     rows = []
     per_cell = {}
-    independent = 0
-    for sp in SETTING_ORDER:
+    for (sp, t) in _route_p_coordinates():
         here = charts_at(sp, fam)
-        for t in CHECKPOINTS:
-            n_here = 0
-            for (A, B, C) in itertools.permutations(here, 3):
-                # the independent count: the product of the number of rules
-                # that draw on each of the three ordered edges
-                nAB = sum(1 for r in ID_RULES
-                          if drawn_map(sp, t, A, B, r) is not None)
-                nBC = sum(1 for r in ID_RULES
-                          if drawn_map(sp, t, B, C, r) is not None)
-                nCA = sum(1 for r in ID_RULES
-                          if drawn_map(sp, t, C, A, r) is not None)
-                independent += nAB * nBC * nCA
-                for rAB in ID_RULES:
-                    for rBC in ID_RULES:
-                        for rCA in ID_RULES:
-                            gAB = drawn_map(sp, t, A, B, rAB)
-                            gBC = drawn_map(sp, t, B, C, rBC)
-                            gCA = drawn_map(sp, t, C, A, rCA)
-                            if gAB is None or gBC is None or gCA is None:
-                                continue
-                            keep_only_the_unmixed_triangles = (
-                                MUTANT == "triangle-drop")
-                            if (keep_only_the_unmixed_triangles
-                                    and len({rAB["id"], rBC["id"],
-                                             rCA["id"]}) > 1):
-                                continue
-                            d = triangle_defect(gAB, gBC, gCA)
-                            rows.append({
-                                "setting": sp, "t": t,
-                                "charts": (A["name"], B["name"], C["name"]),
-                                "rules": (rAB["id"], rBC["id"], rCA["id"]),
-                                "maps": (name_perm(gAB), name_perm(gBC),
-                                         name_perm(gCA)),
-                                "delta": d})
-                            n_here += 1
-            per_cell["%s/t%d" % (sp, t)] = n_here
+        n_here = 0
+        for (A, B, C) in itertools.permutations(here, 3):
+            for rAB in ID_RULES:
+                for rBC in ID_RULES:
+                    for rCA in ID_RULES:
+                        gAB = drawn_map(sp, t, A, B, rAB)
+                        gBC = drawn_map(sp, t, B, C, rBC)
+                        gCA = drawn_map(sp, t, C, A, rCA)
+                        if gAB is None or gBC is None or gCA is None:
+                            continue
+                        keep_only_the_unmixed_triangles = (
+                            MUTANT == "triangle-drop")
+                        if (keep_only_the_unmixed_triangles
+                                and len({rAB["id"], rBC["id"],
+                                         rCA["id"]}) > 1):
+                            continue
+                        d = triangle_defect(gAB, gBC, gCA)
+                        rows.append({
+                            "setting": sp, "t": t,
+                            "charts": (A["name"], B["name"], C["name"]),
+                            "rules": (rAB["id"], rBC["id"], rCA["id"]),
+                            "maps": (name_perm(gAB), name_perm(gBC),
+                                     name_perm(gCA)),
+                            "delta": d})
+                        n_here += 1
+        per_cell["%s/t%d" % (sp, t)] = n_here
+    prog("  the census's second route: the relational join")
+    q = census_route_q(fam, "admitted")
+    expect = census_coordinates()
+    missing = sorted(set(expect) - set(per_cell))
+    extra = sorted(set(per_cell) - set(expect))
+    cell_diff = sorted(k for k in expect
+                       if per_cell.get(k, 0) != q["per_cell"].get(k, 0))
     TABLES["census"] = {
         "route": ROUTE_DECLARED,
         "size": len(rows),
-        "size_recomputed_independently": independent,
+        "size_by_the_second_route": q["total"],
         "per_cell": per_cell,
+        "per_cell_by_the_second_route": q["per_cell"],
+        "coordinate_cells_expected": len(expect),
+        "coordinate_cells_walked": len(per_cell),
+        "coordinate_cells_missing_from_the_walk": missing,
+        "coordinate_cells_not_in_the_arena": extra,
+        "cells_where_the_two_routes_disagree": cell_diff,
         "cells_carrying_no_triangle": sorted(k for k, v in per_cell.items()
                                              if v == 0),
         "cells_carrying_a_triangle": sum(1 for v in per_cell.values() if v),
+        "the_second_route": "a RELATIONAL JOIN over an independently drawn "
+                            "edge list: its own coordinate list, its own "
+                            "distinct-chart list, its own implementation of "
+                            "the four clauses with its own memo, and its own "
+                            "assembly of each triangle from three edge "
+                            "records -- no product of counts is formed",
+        "what_the_two_routes_share": "base G's exact linear algebra and the "
+                                     "chart data, which no route can be "
+                                     "independent of",
         "scope": "EXHAUSTIVE over the declared triple family: every ordered "
                  "triple of pairwise distinct charts, every rule assignment "
                  "to the three ordered edges, every declared coordinate"}
     gate("COC-CENSUS", "measurement",
-         "THE TRIANGLE CENSUS IS EXHAUSTIVE AND ITS SIZE IS COMPUTED TWICE, "
-         "BY INDEPENDENT ROUTES.  The enumerator walks every ordered triple "
-         "of pairwise distinct charts, every assignment of a committed "
-         "gluing rule to each of the three ordered edges, and every "
-         "declared coordinate, keeping a triangle exactly when all three "
-         "edges are drawn.  The COMPARATOR does not walk triangles at all: "
-         "it sums, over the same triples and coordinates, the PRODUCT of "
-         "the number of rules that draw on each ordered edge -- a count "
-         "built from the pair table and not from the census -- and the two "
-         "are measured equal.  The cells that carry no triangle are named "
-         "rather than dropped.  The `triangle-drop` mutant keeps only the "
-         "triangles whose three rules agree and must die here",
-         len(rows) == independent and len(rows) > 0,
-         {"size": len(rows), "size_recomputed_independently": independent,
+         "THE TRIANGLE CENSUS IS EXHAUSTIVE, ITS CELL COVERAGE IS GATED "
+         "AGAINST THE ARENA, AND ITS SIZE IS COMPUTED TWICE BY GENUINELY "
+         "INDEPENDENT ROUTES (RUNBOOK section 13 addendum).  Route P walks "
+         "every ordered triple of pairwise distinct charts, every assignment "
+         "of a committed gluing rule to each of the three ordered edges, and "
+         "every declared coordinate, keeping a triangle exactly when all "
+         "three edges are drawn.  Route Q never walks a triple: it builds "
+         "the explicit list of admissible directed edges from an "
+         "INDEPENDENTLY WRITTEN four-clause predicate with its own memo, "
+         "over its own coordinate list and its own distinct-chart list, and "
+         "then ASSEMBLES each triangle from three edge records.  It is not a "
+         "distributive-law restatement of route P and is not equal to it for "
+         "every oracle: a dropped coordinate, chart, triple or rule "
+         "assignment moves one route and not the other.  Three clauses: the "
+         "two totals are measured equal; the per-cell counts are measured "
+         "equal CELL BY CELL; and route P's coordinate key set is measured "
+         "to be exactly the arena's own computed coordinate set, so no cell "
+         "can be silently absent.  The cells that carry no triangle are "
+         "named rather than dropped.  The `triangle-drop` mutant keeps only "
+         "the triangles whose three rules agree, and the `cell-skip` mutant "
+         "omits one coordinate cell from route P's walk; both must die here",
+         (len(rows) == q["total"] and len(rows) > 0 and not missing
+          and not extra and not cell_diff),
+         {"size": len(rows), "size_by_the_second_route": q["total"],
+          "coordinate_cells_expected": len(expect),
+          "coordinate_cells_walked": len(per_cell),
+          "coordinate_cells_missing_from_the_walk": missing,
+          "coordinate_cells_not_in_the_arena": extra,
+          "cells_where_the_two_routes_disagree": cell_diff,
           "cells_carrying_a_triangle":
               TABLES["census"]["cells_carrying_a_triangle"],
           "cells_carrying_no_triangle":
@@ -1894,6 +2298,9 @@ def run_membership(rows, hol):
             continue
         grp = set(hol[sp]["_group"])
         outside = [r for r in sub if not in_group(r["delta"], grp)]
+        report_no_defect_as_outside = (MUTANT == "membership-tab")
+        if report_no_defect_as_outside:
+            outside = []
         outside_total += len(outside)
         vals = {canon(r["delta"]) for r in sub}
         per_setting[sp] = {
@@ -1909,9 +2316,14 @@ def run_membership(rows, hol):
             "membership_here_is": (
                 "FORCED by the admitted set's containment"
                 if all(tuple(p) in grp for p in SCOPE["admitted"])
-                else "A FREE MEASUREMENT: the admitted set is NOT contained "
-                     "in this setting's group, so a single non-identity "
-                     "defect here would have been a higher obstruction")}
+                else "FORCED BY THE TELESCOPING IDENTITY: the admitted set "
+                     "is not contained in this setting's group, but the "
+                     "defect telescopes to a conjugate -- by this atlas's "
+                     "own abelian relabelling group, hence trivially -- of "
+                     "a product of committed-frame maps on one unordered "
+                     "pair, and at multiplicity one those two maps "
+                     "coincide, so the identity is forced here by the pair "
+                     "table alone")}
     per_cell = {}
     for r in rows:
         k = "%s/t%d" % (r["setting"], r["t"])
@@ -1920,13 +2332,24 @@ def run_membership(rows, hol):
         cell["triangles"] += 1
         if isinstance(r["delta"], str) or tuple(r["delta"]) != tuple(IDPERM):
             cell["non_identity_defects"] += 1
+    # THE INDEPENDENT RECOUNT (R3's false-zero probe, closed).  The
+    # outside-count is recomputed by a separately written pass that never
+    # touches the per-setting tabulation above: it walks the census once,
+    # looks the setting's group up per row, and counts.  The
+    # `membership-tab` mutant zeroes the first tabulation and must die on the
+    # disagreement.
+    outside_recount = 0
+    for r in rows:
+        if not in_group(r["delta"], set(hol[r["setting"]]["_group"])):
+            outside_recount += 1
     defect_set = sorted(values, key=str)
     gen = generate_group([values[k] for k in defect_set]) \
         if all(not isinstance(values[k], str) for k in defect_set) else None
     free = [sp for sp, v in per_setting.items()
-            if v["membership_here_is"].startswith("A FREE")]
+            if not v["the_admitted_set_is_a_subgroup_of_the_bigon_group"]]
     free_triangles = sum(per_setting[sp]["triangles"] for sp in free)
     TABLES["membership"] = {
+        "defects_outside_recomputed_by_an_independent_pass": outside_recount,
         "per_setting": per_setting,
         "per_coordinate_cell": per_cell,
         "defect_set": [canon(values[k]) if not isinstance(values[k], str)
@@ -1937,35 +2360,44 @@ def run_membership(rows, hol):
         "defect_set_size": len(defect_set),
         "the_group_the_defect_set_generates":
             None if gen is None else len(gen),
-        "settings_where_membership_is_a_free_measurement": sorted(free),
+        "settings_where_the_admitted_set_is_not_contained_in_the_group":
+            sorted(free),
         "triangles_at_those_settings": free_triangles,
         "defects_outside_the_bigon_group": outside_total,
         "denominator": len(rows)}
-    gate("COC-MEMBERSHIP", "measurement",
-         "THE MEMBERSHIP QUESTION, GATED PER TRIANGLE AT MATCHED "
-         "COORDINATES.  Every one of the census's triangle defects is "
-         "tested for membership in the bigon-generated holonomy group AT "
-         "ITS OWN SETTING -- the comparison object is read at the same "
-         "coordinate as the object compared, never at another one -- and "
-         "the number lying outside is gated at ZERO against the printed "
-         "denominator.  The gate is not one measurement but two, and the "
-         "second is the one with teeth: at the two symmetric settings the "
-         "declared admitted set IS a subgroup of the group, so membership "
-         "there is forced by the containment and is reported as such; at "
-         "the four settings whose connection is measured FLAT the group is "
-         "trivial and the admitted set is measured NOT to be contained in "
-         "it, so every triangle there could have carried a non-identity "
-         "defect that no bigon holonomy generates -- a pure level-2 "
-         "obstruction at a flat setting -- and the gate measures that none "
-         "does.  The `edge-perturb` mutant replaces one drawn map by a "
-         "permutation outside the admitted set and must die here; the "
-         "`label-collapse` mutant counts defects as labels rather than "
-         "permutations and must die here too",
-         outside_total == 0 and len(rows) > 0 and free_triangles > 0,
+    gate("COC-MEMBERSHIP", "disclosure",
+         "THE MEMBERSHIP ZERO AT THE ABELIAN ATLAS IS ANALYTICALLY FORCED IN "
+         "FULL, AND IS ENTERED AS A DISCLOSURE.  Every one of this census's "
+         "triangle defects is tested for membership in the bigon-generated "
+         "holonomy group AT ITS OWN SETTING -- the comparison object read at "
+         "the same coordinate as the object compared -- and the number lying "
+         "outside is printed against its denominator.  It could not have come "
+         "out otherwise, and this gate does not pretend it could: by the "
+         "equivariance lemma and its telescoping corollary the defect is a "
+         "conjugate, by the FIRST chart's relabelling, of a product of "
+         "committed-frame maps on one unordered pair; this atlas's "
+         "generating group is measured ABELIAN of exponent two, so the "
+         "conjugation is trivial; at a coordinate of multiplicity one the "
+         "two remaining maps coincide and the identity is forced; at a "
+         "coordinate of multiplicity two the defect IS the multiplicity "
+         "bigon, which is a closed loop of the two-chart graph and therefore "
+         "an element of its group.  Membership is therefore forced at EVERY "
+         "setting of this atlas, not only at the two symmetric ones.  What "
+         "was genuinely free, and is measured, is the PAIR TABLE -- which "
+         "coordinates carry multiplicity -- gated at COC-PAIR-TABLE; and the "
+         "membership question itself has teeth at the EXTENSION atlas, where "
+         "the generating group does not centralise the level-1 holonomy and "
+         "32,256 defects are measured outside the group",
+         True,
          {"defects_outside_the_bigon_group": outside_total,
           "denominator": len(rows),
           "defect_set": TABLES["membership"]["defect_set_names"],
-          "settings_where_membership_is_a_free_measurement": sorted(free),
+          "why_it_could_not_have_been_otherwise":
+              "the telescoping corollary plus an abelian generating group",
+          "where_the_teeth_are":
+              ["COC-PAIR-TABLE", "COC-EXTENSION-ESCAPE", "COC-CRITERION"],
+          "settings_where_the_admitted_set_is_not_contained_in_the_group":
+              sorted(free),
           "triangles_at_those_settings": free_triangles,
           "per_setting": {sp: {k: v[k] for k in
                                ("triangles", "bigon_group_order",
@@ -2001,7 +2433,24 @@ def run_defect_is_a_bigon(rows, hol):
     for k, b in bigons.items():
         if b is None:
             n_trivial_cells += 1
+    # THE CONVERSE, GATED (R3's MINOR-2): every coordinate that carries a
+    # multiplicity bigon AND at least one triangle must carry a non-identity
+    # defect.  Tabulating it is not gating it.
+    per_cell_nontrivial: dict = {}
+    per_cell_total: dict = {}
+    for r in rows:
+        k = (r["setting"], r["t"])
+        per_cell_total[k] = per_cell_total.get(k, 0) + 1
+        if isinstance(r["delta"], str) or tuple(r["delta"]) != tuple(IDPERM):
+            per_cell_nontrivial[k] = per_cell_nontrivial.get(k, 0) + 1
+    converse_bad = sorted("%s/t%d" % k for k, b in bigons.items()
+                          if b is not None and per_cell_total.get(k, 0) > 0
+                          and per_cell_nontrivial.get(k, 0) == 0)
     TABLES["defect_is_a_bigon"] = {
+        "coordinates_with_a_bigon_carrying_no_non_identity_defect":
+            converse_bad,
+        "non_identity_defects_per_cell":
+            {"%s/t%d" % k: v for k, v in sorted(per_cell_nontrivial.items())},
         "multiplicity_bigons": {"%s/t%d" % k: (v["name"] if v else None)
                                 for k, v in sorted(bigons.items())},
         "coordinates_carrying_a_multiplicity_bigon":
@@ -2037,10 +2486,21 @@ def run_defect_is_a_bigon(rows, hol):
          "drawn maps themselves, which are the atlas's own gluing data and "
          "cannot be independent of either side.  Level two therefore adds "
          "no VALUE to level one, which is a stronger reading than "
-         "membership.  The `edge-perturb`, `compose-order` and "
+         "membership.  Two disclosures belong beside it.  The EQUAL half of "
+         "clause (1) is forced once confinement is: the drawn maps lie in an "
+         "admitted group of order two, so a non-identity defect has only one "
+         "value it can take, and that value is measured to be the bigon's -- "
+         "what is not forced is that the bigon's holonomy is the wing "
+         "exchange rather than the completion's defect, which is measured.  "
+         "And the CONVERSE of clause (2) -- that a coordinate carrying a "
+         "bigon carries some non-identity defect -- is gated here too, not "
+         "merely tabulated.  The `edge-perturb`, `compose-order` and "
          "`label-collapse` mutants must die here",
-         not bad_equal and not bad_absent and n_nontrivial > 0,
+         (not bad_equal and not bad_absent and n_nontrivial > 0
+          and not converse_bad),
          {"non_identity_defects": n_nontrivial,
+          "coordinates_with_a_bigon_carrying_no_non_identity_defect":
+              converse_bad,
           "coordinates_carrying_a_multiplicity_bigon":
               len(TABLES["defect_is_a_bigon"]
                   ["coordinates_carrying_a_multiplicity_bigon"]),
@@ -2061,28 +2521,52 @@ def run_confinement(rows, hol, gen):
     forced = {sp: all(p in set(hol[sp]["_group"]) for p in S)
               for sp in SETTING_ORDER if any(r["setting"] == sp
                                              for r in rows)}
+    products3 = {perm_compose(x, perm_compose(y, z))
+                 for x in S for y in S for z in S}
+    D = prep_defect()
+    Dt = None if D["perm"] is None else tuple(D["perm"])
+    WD = None if Dt is None else perm_compose(tuple(WSWAP), Dt)
+    scopes = {"the declared 162-element relabelling scope":
+              {tuple(p) for p in SCOPE["base"]},
+              "the declared 216-element extension":
+              {tuple(p) for p in SCOPE["extension_all"]},
+              "the group admitted after the j0 filter": S,
+              "the group admitted at the extension":
+              {tuple(p) for p in SCOPE["admitted_extension"]}}
     gate("COC-CONFINEMENT", "disclosure",
-         "WHY IT CLOSES, STATED AS THE DISCLOSURE IT IS.  Every admissible "
+         "WHY THIS ATLAS CLOSES, AND WHY D IS NEVER A TRIANGLE DEFECT: BOTH "
+         "ANALYTICALLY FORCED, BOTH STATED AS DISCLOSURES.  Every admissible "
          "identification of this atlas is by construction an element of the "
-         "declared admitted set, and that set is MEASURED closed under "
-         "composition -- a group of order two.  A triangle defect is a "
-         "composite of three of them, so it lies in that group for every "
-         "input: the confinement is ANALYTICALLY FORCED and is recorded "
-         "here as a disclosure and not as a must-pass gate.  What is NOT "
-         "forced is the relation between that group and the bigon-generated "
-         "one, and this gate prints the split: at the settings where the "
-         "admitted set is contained in the holonomy group, membership "
-         "follows from the containment; at the settings where it is not, "
-         "membership is a free measurement whose failure was available",
+         "declared admitted group, which is MEASURED closed under "
+         "composition; a triangle defect is a composite of three of its "
+         "elements, so it lies in that group for every input.  The set of "
+         "all such composites is computed here and measured to be the group "
+         "itself.  The completion's defect D and its companion W.D are NOT "
+         "'measured' never to be triangle defects: they are measured to lie "
+         "in NO declared search scope on this base -- not in the 162-element "
+         "relabelling scope, not in the 216-element extension, and so not in "
+         "either group either -- and since both scopes are groups, no "
+         "composite of three drawn maps can reach them.  The exclusion is "
+         "settled before any chart is built and before any triangle is "
+         "drawn, and it carries no information about triangle geometry.  "
+         "Structurally: D is manufactured by the PREPARATION LEG, which no "
+         "relabelling in the declared scopes intertwines, and a triangle at "
+         "a fixed coordinate traverses no leg at all",
          True,
          {"the_admitted_set_is_closed_under_composition": closed,
           "the_admitted_set": sorted(name_perm(p) for p in S),
           "every_defect_lies_in_the_admitted_set": all_in_S,
+          "composites_of_three_admitted_maps":
+              sorted(name_perm(p) for p in products3),
           "the_group_the_defect_set_generates": None if gen is None
           else len(gen),
-          "membership_is_forced_at": sorted(k for k, v in forced.items()
-                                            if v),
-          "membership_is_a_free_measurement_at":
+          "D_is_in_no_declared_search_scope":
+              {k: (Dt in v) for k, v in scopes.items()},
+          "W_times_D_is_in_no_declared_search_scope":
+              {k: (WD in v) for k, v in scopes.items()},
+          "membership_is_forced_by_containment_at":
+              sorted(k for k, v in forced.items() if v),
+          "membership_is_forced_by_the_telescoping_identity_at":
               sorted(k for k, v in forced.items() if not v)})
 
 
@@ -2261,20 +2745,23 @@ def run_negative_controls(rows, hol):
         "the_drawn_maps_generate_an_abelian_group": abelian,
         "every_drawn_map_is_an_involution": exponent_two}
     gate("COC-NEGATIVE-CONTROL", "measurement",
-         "THE NEGATIVE CONTROL, WITH TEETH.  Two triangles are deliberately "
-         "mis-glued at a coordinate where the base itself draws an admitted "
-         "map.  The first injects the COMPLETION'S OWN DEFECT, which is "
-         "measured to lie inside the bigon group but outside the measured "
-         "defect set -- so the census's defect set is measured to be a "
-         "PROPER part of what the group contains, and a defect set gate "
-         "could have failed.  The second injects a POINTER TRANSPOSITION of "
-         "the declared extension, measured outside the admitted set, and "
-         "its defect is measured to lie OUTSIDE the bigon group: the "
-         "membership predicate is therefore measured able to FIRE, and the "
-         "zero it reports on the census is not the only answer it can give. "
-         "If this gate had failed the membership gate would be dead and the "
-         "run would say so.  The `membership-lax` mutant answers yes to "
-         "every membership question and must die here",
+         "THE TWO INJECTIONS ARE INSTRUMENT CONTROLS ON THE MEMBERSHIP "
+         "PREDICATE'S TWO BRANCHES, AND ARE ENTERED AS SUCH.  Two triangles "
+         "are deliberately mis-glued at a coordinate where the base itself "
+         "draws an admitted map.  The first injects the COMPLETION'S OWN "
+         "DEFECT, measured inside the bigon group and outside the measured "
+         "defect set: a positive control on the predicate's AFFIRMATIVE "
+         "branch.  The second injects a POINTER TRANSPOSITION of the "
+         "declared extension, measured outside the admitted group, whose "
+         "defect is measured OUTSIDE the bigon group: a control on the "
+         "predicate's NEGATIVE branch.  What these certify is the "
+         "PREDICATE, not the census: the admission pipeline can produce "
+         "neither injected map, so neither shows that this census's own zero "
+         "could have been otherwise -- it could not, and COC-MEMBERSHIP says "
+         "why.  The census-level teeth are at the EXTENSION atlas, where "
+         "32,256 non-injected defects are measured outside the group.  The "
+         "`membership-lax` mutant answers yes to every membership question "
+         "and must die here",
          (not d_in["defect_is_in_the_measured_defect_set"]
           and d_in["defect_is_in_the_bigon_group"]
           and not t_in["defect_is_in_the_bigon_group"]
@@ -2647,7 +3134,20 @@ def run_route_census(fam):
     sp0 = "GP-E"
     g = SETTINGS[sp0][0]
     RA, CA = wing_rotation("A", g), wing_record("A")
-    factorises = (mm(RA, mm(CA, minv(RA))) == U_local("A", g))
+    # THE FACTORISATION, SWEPT (R3's MINOR-1): at GP-E the wing-A rotation is
+    # the identity, so testing the conjugation there alone would test it
+    # where it cannot fail.  It is swept over every declared rotation on both
+    # wings, and the count is printed.
+    fact_cases, fact_bad = 0, []
+    for wing in ("A", "B"):
+        for gg in ROT_ORDER:
+            R = wing_rotation(wing, gg)
+            C = wing_record(wing)
+            fact_cases += 1
+            if mm(R, mm(C, minv(R))) != U_local(wing, gg):
+                fact_bad.append("%s/%s" % (wing, gg))
+    factorises = (mm(RA, mm(CA, minv(RA))) == U_local("A", g)
+                  and not fact_bad and fact_cases > 0)
     split_legs = [U_prep(), minv(RA), CA, RA, U_local("B", SETTINGS[sp0][1])]
     # the split chart's own supports and law, from its own leg list
     acc, supp, law = sp_id(), [], []
@@ -2694,6 +3194,8 @@ def run_route_census(fam):
                        for r in ROUTE_CANDIDATES},
         "R1_sub_leg_split": {
             "the_committed_local_leg_factorises_exactly": factorises,
+            "factorisation_cases_swept": fact_cases,
+            "factorisation_failures": fact_bad,
             "declared_legs_in_the_split_chart": len(split_legs),
             "declared_legs_in_a_committed_chart": NLEGS,
             "checkpoints_in_the_split_chart": len(split_legs) + 1,
@@ -2702,34 +3204,43 @@ def run_route_census(fam):
             "failures_by_clause": {k: v for k, v in clauses.items()
                                    if k != "ADMITTED"},
             "admitted": clauses["ADMITTED"],
-            "verdict": "ABSENT: no map is admitted between a split chart and "
-                       "any committed chart, and every candidate fails at "
-                       "the LEG-LIST clause, since a five-leg chart cannot "
-                       "match a three-leg one as a multiset of Born leg "
-                       "keys; the read-time coordinate cannot be matched "
-                       "either, the two charts carrying different checkpoint "
-                       "sets"},
+            "verdict": "NO ADMISSIBLE IDENTIFICATION BETWEEN A SPLIT CHART "
+                       "AND A COMMITTED CHART: every candidate fails at the "
+                       "LEG-LIST clause, since a five-leg chart cannot match "
+                       "a three-leg one as a multiset of Born leg keys, and "
+                       "the read-time coordinate cannot be matched either, "
+                       "the two charts carrying different checkpoint sets.  "
+                       "This is NOT the absence of route R1's atlas: the "
+                       "split charts glue to EACH OTHER, and that census is "
+                       "measured at COC-SPLIT-TO-SPLIT"},
         "R2_admitted_relabelling": {"status": "THE DECLARED ROUTE",
                                     "charts": [c["name"] for c in fam]},
         "R3_parallel_atlases": {"status": "the degenerate triangle; see the "
                                           "positive control"}}
     gate("COC-ROUTE-CENSUS", "measurement",
-         "ALL THREE OF THE PIN'S CANDIDATE ROUTES ARE MEASURED, AND THE ONE "
-         "THAT FAILS IS MEASURED TO FAIL AT A NAMED CLAUSE.  Route 1, the "
-         "sub-leg splitting: the committed local leg is measured to "
-         "factorise EXACTLY into three declared orthogonal sub-legs, so the "
-         "split chart exists as an object; but every candidate map between "
-         "it and a committed chart, under both rules, at both matchable "
-         "read times, over the whole declared admitted set, is measured to "
-         "fail -- and to fail at the LEG-LIST clause, since a five-leg "
-         "chart cannot match a three-leg chart as a multiset of Born leg "
-         "keys.  Route 1 therefore yields no admissible pair and no "
-         "triangle, and the count admitted is gated at zero.  Route 2 is "
-         "the declared route.  Route 3 is measured as the degenerate "
-         "triangle and is this unit's positive control.  The `route-lax` "
-         "mutant skips the leg clause and must die here",
+         "ALL THREE OF THE PIN'S CANDIDATE ROUTES ARE MEASURED, AND WHAT "
+         "FAILS IS MEASURED TO FAIL AT A NAMED CLAUSE -- AGAINST A NAMED "
+         "TARGET.  Route 1, the sub-leg splitting: the committed local leg is "
+         "measured to factorise EXACTLY into three declared orthogonal "
+         "sub-legs, and the factorisation is SWEPT over every declared "
+         "rotation on both wings rather than tested at the one setting where "
+         "the rotation is the identity and the conjugation therefore cannot "
+         "fail; the case count and the failure list are printed.  The split "
+         "chart exists as an object, and every candidate map between it and a "
+         "COMMITTED chart, under both rules, at both matchable read times, "
+         "over the whole declared admitted group, is measured to fail at the "
+         "LEG-LIST clause, since a five-leg chart cannot match a three-leg "
+         "chart as a multiset of Born leg keys.  What is gated at zero is "
+         "therefore the split-to-COMMITTED count, and nothing wider: the "
+         "split charts DO glue to each other, and that atlas is censused at "
+         "COC-SPLIT-TO-SPLIT.  Route 2 is the declared route.  Route 3 is "
+         "measured as the degenerate triangle and is this unit's positive "
+         "control.  The `route-lax` mutant skips the leg clause and must die "
+         "here",
          factorises and route1_absent,
          {"the_committed_local_leg_factorises_exactly": factorises,
+          "factorisation_cases_swept": fact_cases,
+          "factorisation_failures": fact_bad,
           "split_chart_legs": len(split_legs),
           "committed_chart_legs": NLEGS,
           "candidate_maps_tested": sum(clauses.values()),
@@ -2814,6 +3325,27 @@ def run_completion_dependence(fam):
             collapse += 1
         else:
             present += 1
+    # THE CLOSED FORM for the collapse count, derived from the MEASURED cycle
+    # type of the criterion's involution rather than only swept: the criterion
+    # says Q centralises sigma_9, and the centraliser of a permutation of
+    # cycle type 1^a 2^b in S_n has order a! . (2^b . b!); those fixing the
+    # first index are a fraction 1/a of it.
+    seen9, cyc = set(), {}
+    for i in range(NS * NS):
+        if i in seen9:
+            continue
+        n9, j = 0, i
+        while j not in seen9:
+            seen9.add(j)
+            j = sig[j]
+            n9 += 1
+        cyc[n9] = cyc.get(n9, 0) + 1
+    fixed9, two9 = cyc.get(1, 0), cyc.get(2, 0)
+    fact = {0: 1}
+    for i in range(1, 12):
+        fact[i] = fact[i - 1] * i
+    centraliser = fact[fixed9] * ((2 ** two9) * fact[two9])
+    closed_form = centraliser // fixed9 if fixed9 else 0
     cen = _GEN["tables"]["completion_census"]
     anchor("A16", "the GEN terminal receipt, tables.completion_census",
            "the declared completion family's size, the members whose defect "
@@ -2830,6 +3362,13 @@ def run_completion_dependence(fam):
         "members_at_which_the_chart_family_collapses_to_two": collapse,
         "members_at_which_the_triple_structure_exists": present,
         "the_geometry_bearing_settings": sym,
+        "the_collapse_locus_in_closed_form": {
+            "the_criterions_involution_has_cycle_type":
+                {str(k): v for k, v in sorted(cyc.items())},
+            "its_centraliser_in_the_symmetric_group": centraliser,
+            "those_fixing_the_first_index": closed_form,
+            "the_swept_count": collapse,
+            "the_closed_form_equals_the_sweep": closed_form == collapse},
         "sweep": "EXHAUSTIVE (every member), at the 9x9 level the GEN "
                  "defect law licenses, with the criterion measured against "
                  "a full 81-configuration rebuild at both endpoints"}
@@ -2843,6 +3382,7 @@ def run_completion_dependence(fam):
           and all(alt["distinct_charts_per_setting"][sp] == 4 for sp in asym)
           and alt["defect_is_the_identity"]
           and not declared["defect_is_the_identity"]
+          and closed_form == collapse
           and ANCHORS[-1]["passed"])
     gate("COC-COMPLETION-DEPENDENCE", "measurement",
          "AT THE GEOMETRY-BEARING SETTINGS THE TRIPLE STRUCTURE EXISTS "
@@ -2864,7 +3404,13 @@ def run_completion_dependence(fam):
          "printed rather than smoothed away.  The collapse criterion is "
          "then swept EXHAUSTIVELY over the whole declared completion family "
          "at the 9x9 level the GEN defect law licenses, and the split is "
-         "anchored exit-1 against the committed completion census.  The "
+         "anchored exit-1 against the committed completion census.  The swept "
+         "collapse count is also DERIVED and gated against the sweep: the "
+         "criterion says the completion's permutation centralises a measured "
+         "involution, whose cycle type is computed here, and the order of "
+         "that involution's centraliser -- restricted to the permutations "
+         "fixing the first index -- is measured EQUAL to the swept count, so "
+         "the number is structural rather than merely observed.  The "
          "`completion-Q` mutant makes the DECLARED completion the "
          "equivariant one and must die here",
          ok,
@@ -2879,7 +3425,10 @@ def run_completion_dependence(fam):
           "the_geometry_bearing_settings": sym,
           "family_size": collapse + present,
           "members_at_which_the_criterion_collapses": collapse,
-          "members_at_which_the_criterion_holds": present})
+          "members_at_which_the_criterion_holds": present,
+          "the_collapse_count_in_closed_form": closed_form,
+          "the_involutions_cycle_type":
+              {str(k): v for k, v in sorted(cyc.items())}})
 
 
 def run_scope_disclosure(fam, rows):
@@ -2904,63 +3453,972 @@ def run_scope_disclosure(fam, rows):
     n_ext = 0
     if not changed:
         n_ext = len(rows)
+    Sext = [tuple(p) for p in SCOPE["admitted_extension"]]
+    W = tuple(WSWAP)
+    cen = [p for p in Sext if perm_compose(p, W) == perm_compose(W, p)]
     TABLES["admission_scope"] = {
         "declared_admitted_set": SCOPE["n_admitted"],
         "declared_admitted_extension": SCOPE["n_admitted_extension"],
+        "the_admitted_extension_is_abelian":
+            all(perm_compose(x, y) == perm_compose(y, x)
+                for x in Sext for y in Sext),
+        "its_element_orders": sorted({perm_order(p) for p in Sext}),
+        "its_elements_centralising_the_level_1_holonomy": len(cen),
         "coordinates_where_the_wider_scope_changes_what_is_drawn": changed,
         "drawn_maps_at_the_extension": ext_drawn,
-        "census_size_at_the_extension": n_ext}
+        "census_size_at_the_extension_ON_THE_FOUR_CHART_FAMILY": n_ext,
+        "how_that_census_size_was_obtained":
+            "INFERRED, not recomputed: the drawn maps are measured identical "
+            "at every coordinate, therefore the census is unchanged"}
     gate("COC-ADMISSION-SCOPE", "disclosure",
-         "THE ADMISSION SCOPE IS A DECLARATION, AND WHAT DEPENDS ON IT IS "
-         "MEASURED.  The declared 216-element extension, which admits eight "
-         "maps after the initial-configuration filter and is measured to be "
-         "a group that is NOT contained in the bigon-generated holonomy "
-         "group, is searched with the same four-clause predicate at every "
-         "ordered pair and every coordinate.  It is measured to draw the "
-         "SAME map everywhere the declared scope does, so the triangle "
-         "census and every defect are unchanged by it: the wider scope "
-         "supplies no escaping identification even though it contains "
-         "escaping permutations.  Folded into no verdict",
+         "THE WIDER SCOPE DRAWS THE SAME MAPS BETWEEN THE FOUR CHARTS OF THE "
+         "NARROWER ATLAS -- AND THAT IS ALL THIS MEASURES.  The declared "
+         "216-element extension, which admits eight maps after the "
+         "initial-configuration filter, is searched with the same "
+         "four-clause predicate at every ordered pair of the ABELIAN "
+         "atlas's four charts and at every coordinate: it draws the same map "
+         "everywhere the narrower scope does, so that census is therefore "
+         "unchanged -- an inference from the identity of the drawn maps, not "
+         "a recomputation, and printed as one.  This is a statement about "
+         "MAPS BETWEEN THE FOUR CHARTS, and nothing wider.  The datum that "
+         "decides the wider question is printed beside it and is not this "
+         "one: the admitted extension is measured NON-ABELIAN, with element "
+         "orders 1, 2 and 4, and only half of its eight elements centralise "
+         "the level-1 holonomy.  Allowed to build its OWN charts by the same "
+         "declared rule, it is measured to supply escaping identifications "
+         "at 32,256 admissible triangles -- see COC-EXTENSION-CENSUS and "
+         "COC-EXTENSION-ESCAPE, which is where this unit's verdict comes "
+         "from",
          True,
          TABLES["admission_scope"])
 
 
 # ===========================================================================
+# 10b.  THE MECHANISM STACK: THREE FORCED IDENTITIES, VERIFIED
+#
+#      All three are DISCLOSURES (RUNBOOK section 14 addendum: an
+#      analytically-forced clause is a disclosure, not a must-pass gate).
+#      They are what makes the abelian atlas's closure forced, and -- read
+#      the other way -- what makes the extension atlas's escape available.
+# ===========================================================================
+def seed_of(fam, ch):
+    for c in fam:
+        if c["frame"] == ch["frame"] and c["sigma"] == tuple(IDPERM):
+            return c
+    return None
+
+
+def check_equivariance(fam, scope):
+    """R2'S EQUIVARIANCE LEMMA: Adm(sigma.X, tau.Y) = tau . Adm(X, Y) .
+    sigma^-1, as SETS of admitted candidates, at every coordinate, every rule
+    and every ordered pair of the atlas."""
+    tested, viol = 0, []
+    for sp in SETTING_ORDER:
+        for t in CHECKPOINTS:
+            for X in fam:
+                sx = seed_of(fam, X)
+                for Y in fam:
+                    if X["name"] == Y["name"]:
+                        continue
+                    sy = seed_of(fam, Y)
+                    for rule in ID_RULES:
+                        tested += 1
+                        lhs = {tuple(p) for p in admits(sp, t, X, Y, rule,
+                                                        scope)}
+                        base = {tuple(p) for p in admits(sp, t, sx, sy, rule,
+                                                         scope)}
+                        s, u = X["sigma"], Y["sigma"]
+                        rhs = {perm_compose(u, perm_compose(b,
+                                                            perm_inverse(s)))
+                               for b in base}
+                        if lhs != rhs:
+                            viol.append("%s/t%d %s->%s/%s"
+                                        % (sp, t, X["name"], Y["name"],
+                                           rule["id"]))
+    return tested, viol
+
+
+def check_telescoping(counts):
+    """THE TELESCOPING COROLLARY, verified on a census: every defect equals
+    sigma_A . h . sigma_A^-1 with h in the SEED-level admitted set, i.e. the
+    identity or the level-1 multiplicity bigon.  `counts` maps
+    (sigma_A, delta) to the number of triangles carrying it."""
+    S = {tuple(p) for p in SCOPE["admitted"]}
+    tested, viol, hhist = 0, 0, {}
+    for (sig, d), n in counts.items():
+        tested += n
+        if isinstance(d, str):
+            viol += n
+            hhist["not a permutation"] = hhist.get("not a permutation", 0) + n
+            continue
+        h = perm_compose(perm_inverse(sig), perm_compose(d, sig))
+        hhist[name_perm(h)] = hhist.get(name_perm(h), 0) + n
+        if h not in S:
+            viol += n
+    return tested, viol, hhist
+
+
+def run_mechanisms(rows, hol, fam16):
+    """THE THREE FORCED IDENTITIES, EACH VERIFIED ON THIS RUN'S OWN DATA."""
+    prog("the mechanism stack: equivariance, coboundary, closed form")
+    t4, v4 = check_equivariance(CHART_FAMILY, "admitted")
+    prog("  equivariance at the extension atlas")
+    t16, v16 = check_equivariance(fam16, "admitted_extension")
+    # --- R1's Z/2 coboundary, per rule, with its closed-form potential
+    W = tuple(WSWAP)
+    cells, solvable, exceptions, closed_form_bad = 0, 0, [], []
+    sym = [sp for sp in SETTING_ORDER if SETTINGS[sp][0] == SETTINGS[sp][1]]
+    names = [c["name"] for c in CHART_FAMILY]
+    for sp in SETTING_ORDER:
+        for t in CHECKPOINTS:
+            for rule in ID_RULES:
+                cells += 1
+                eps = {}
+                for X in CHART_FAMILY:
+                    for Y in CHART_FAMILY:
+                        if X["name"] == Y["name"]:
+                            continue
+                        m = drawn_map(sp, t, X, Y, rule)
+                        if m is None:
+                            continue
+                        eps[(X["name"], Y["name"])] = (
+                            0 if tuple(m) == tuple(IDPERM) else 1)
+                found = None
+                for bits in itertools.product((0, 1), repeat=len(names)):
+                    f = dict(zip(names, bits))
+                    if all((f[a] + f[b]) % 2 == v for (a, b), v in eps.items()):
+                        found = f
+                        break
+                if found is None:
+                    exceptions.append("%s/t%d/%s" % (sp, t, rule["id"]))
+                    continue
+                solvable += 1
+                # the declared closed form, up to the potential's global flip
+                ok = False
+                for flip in (0, 1):
+                    good = True
+                    for c in CHART_FAMILY:
+                        want = 1 if c["sigma"] == W else 0
+                        if rule["id"] == "REAL" and sp in sym \
+                                and c["frame"] == "F2":
+                            want = (want + 1) % 2
+                        if (found[c["name"]] + flip) % 2 != want:
+                            good = False
+                            break
+                    if good:
+                        ok = True
+                        break
+                if not ok:
+                    closed_form_bad.append("%s/t%d/%s"
+                                           % (sp, t, rule["id"]))
+    # --- R3's closed form for the defect itself
+    w = {c["name"]: (W if c["frame"] == "F2" else tuple(IDPERM))
+         for c in CHART_FAMILY}
+    cf_n, cf_bad = 0, 0
+    for r in rows:
+        acc = tuple(IDPERM)
+        for (x, y, rr) in ((r["charts"][0], r["charts"][1], r["rules"][0]),
+                           (r["charts"][1], r["charts"][2], r["rules"][1]),
+                           (r["charts"][2], r["charts"][0], r["rules"][2])):
+            if rr == "REAL":
+                acc = perm_compose(acc, perm_compose(w[x], w[y]))
+        cf_n += 1
+        if isinstance(r["delta"], str) or tuple(r["delta"]) != acc:
+            cf_bad += 1
+    # --- rule-inert coordinates, and where the flat-setting triangles sit
+    inert = []
+    for sp in SETTING_ORDER:
+        for t in CHECKPOINTS:
+            mx = 0
+            for X in CHART_FAMILY:
+                for Y in CHART_FAMILY:
+                    if X["name"] == Y["name"]:
+                        continue
+                    dm = {drawn_map(sp, t, X, Y, r) for r in ID_RULES}
+                    dm.discard(None)
+                    mx = max(mx, len(dm))
+            if mx <= 1:
+                inert.append("%s/t%d" % (sp, t))
+    flat_rows = [r for r in rows if SETTINGS[r["setting"]][0]
+                 != SETTINGS[r["setting"]][1]]
+    flat_at_inert = sum(1 for r in flat_rows
+                        if "%s/t%d" % (r["setting"], r["t"]) in inert)
+    # --- the four empty cells, with their structural reason
+    empty_cells = {}
+    for k, v in TABLES["census"]["per_cell"].items():
+        if v:
+            continue
+        sp, tt = k.split("/t")
+        pairs = set()
+        for X in CHART_FAMILY:
+            for Y in CHART_FAMILY:
+                if X["name"] == Y["name"]:
+                    continue
+                for r in ID_RULES:
+                    if drawn_map(sp, int(tt), X, Y, r) is not None:
+                        pairs.add(tuple(sorted((X["name"], Y["name"]))))
+        empty_cells[k] = sorted(pairs)
+    TABLES["mechanisms"] = {
+        "equivariance_lemma": {
+            "statement": "Adm(sigma.X, tau.Y) = tau . Adm(X, Y) . sigma^-1, "
+                         "as sets of admitted candidates",
+            "cases_tested_at_the_abelian_atlas": t4,
+            "violations_at_the_abelian_atlas": v4,
+            "cases_tested_at_the_extension_atlas": t16,
+            "violations_at_the_extension_atlas": v16},
+        "coboundary": {
+            "statement": "the drawn map, read in Z/2 as 0 = the identity and "
+                         "1 = the wing exchange, is a COBOUNDARY at every "
+                         "coordinate and rule: eps_r(X, Y) = f_r(X) + f_r(Y)",
+            "coordinate_and_rule_cells": cells,
+            "cells_where_a_potential_exists": solvable,
+            "cells_where_none_exists": exceptions,
+            "closed_form": "f_FULL(sigma.F_i) = [sigma = W]; f_REAL = f_FULL "
+                           "at the four flat settings and f_REAL = f_FULL + "
+                           "[i = 2] at the two symmetric ones, each up to the "
+                           "potential's global flip",
+            "cells_where_the_closed_form_fails": closed_form_bad},
+        "defect_closed_form": {
+            "statement": "delta = the product, over the edges assigned the "
+                         "REALIZED rule, of w_X . w_Y, with w_X the wing "
+                         "exchange iff the chart's frame is the second one",
+            "triangles_tested": cf_n,
+            "mismatches": cf_bad},
+        "rule_inert_coordinates": {
+            "definition": "a coordinate at which no ordered pair carries two "
+                          "distinct maps, so no rule assignment can change "
+                          "any edge",
+            "count": len(inert), "denominator": len(census_coordinates()),
+            "coordinates": inert,
+            "flat_setting_triangles": len(flat_rows),
+            "flat_setting_triangles_at_a_rule_inert_coordinate":
+                flat_at_inert},
+        "cells_carrying_no_triangle": {
+            "reason": "the drawn ordered pairs at these coordinates form a "
+                      "graph of two DISJOINT unordered pairs, so no closed "
+                      "walk on three distinct charts exists there",
+            "the_unordered_pairs_that_draw": empty_cells}}
+    ext = [(nm, s, tag) for (nm, s, tag) in EXTERNAL_COUNTS
+           if s in ("48 of 48", "576 of 576")]
+    anchor("A18", "the frozen reviews R2 and R3, hash-pinned",
+           "the two mechanism counts the reviews report, each measured "
+           "present as a string in its pinned review AND recomputed here",
+           [True, True, "48 of 48", "576 of 576"],
+           [review_quote(ext[0][2], ext[0][1]),
+            review_quote(ext[1][2], ext[1][1]),
+            "%d of %d" % (solvable, cells), "%d of %d" % (t4 - len(v4), t4)])
+    gate("COC-MECHANISM-STACK", "disclosure",
+         "THE THREE FORCED IDENTITIES THAT DECIDE BOTH ATLASES, VERIFIED AND "
+         "ENTERED AS DISCLOSURES.  (1) THE EQUIVARIANCE LEMMA.  The "
+         "four-clause predicate is stated on conjugated legs and "
+         "pushed-forward laws, and conjugation is a bijection preserving Born "
+         "leg keys and multiset equality, so Adm(sigma.X, tau.Y) = tau . "
+         "Adm(X, Y) . sigma^-1 -- measured here as an equality of SETS at "
+         "every coordinate, rule and ordered pair of BOTH atlases, with the "
+         "violation list printed.  (2) ITS TELESCOPING COROLLARY.  Every "
+         "relabelling except the FIRST cancels, so delta = sigma_A . h . "
+         "sigma_A^-1 with h a product of committed-frame maps; with two "
+         "seeds some pair repeats and the seed self-map is measured uniquely "
+         "the identity, so h is the identity or the coordinate's "
+         "multiplicity bigon.  (3) THE Z/2 COBOUNDARY, per rule, with its "
+         "closed-form potential f_FULL = [sigma = W], and the resulting "
+         "closed form delta = the product of w_X . w_Y over the "
+         "REALIZED-assigned edges.  Every count here is printed against its "
+         "denominator.  These are theorems, not measurements: they hold for "
+         "every input, which is precisely why the abelian atlas's zero is a "
+         "disclosure and why the extension atlas's escape is the thing worth "
+         "measuring",
+         True,
+         {"equivariance_cases_at_the_abelian_atlas": t4,
+          "equivariance_violations_at_the_abelian_atlas": len(v4),
+          "equivariance_cases_at_the_extension_atlas": t16,
+          "equivariance_violations_at_the_extension_atlas": len(v16),
+          "coboundary_cells": cells,
+          "coboundary_cells_with_a_potential": solvable,
+          "coboundary_closed_form_failures": closed_form_bad,
+          "defect_closed_form_triangles": cf_n,
+          "defect_closed_form_mismatches": cf_bad,
+          "rule_inert_coordinates": len(inert),
+          "rule_inert_denominator": len(census_coordinates()),
+          "flat_setting_triangles_at_a_rule_inert_coordinate":
+              "%d of %d" % (flat_at_inert, len(flat_rows))})
+
+
+# ===========================================================================
+# 10c.  THE EXTENSION ATLAS: THE SAME CHART RULE, THE BASE'S OTHER GROUP
+# ===========================================================================
+def build_extension_family():
+    """THE EXTENSION ATLAS, built by the DECLARED CHART RULE from base G's
+    own second declared admitted group.  The `ext-orbit` mutant builds it
+    from the narrower group instead, so the atlas is not the one declared,
+    and the size gate must catch it blind."""
+    build_the_orbit_from_the_narrower_group = (MUTANT == "ext-orbit")
+    grp = (SCOPE["admitted"] if build_the_orbit_from_the_narrower_group
+           else SCOPE["admitted_extension"])
+    fam = []
+    for fr in CHART_SEEDS:
+        for k, sig in enumerate(grp):
+            s = tuple(sig)
+            nm = fr if s == tuple(IDPERM) else "g%d.%s" % (k, fr)
+            fam.append(chart_key(nm, fr, name_perm(s), s))
+    keep, seen = [], set()
+    for ch in fam:
+        sig = canon([chart_signature_at(sp, ch) for sp in SETTING_ORDER])
+        if sig in seen:
+            continue
+        seen.add(sig)
+        keep.append(ch)
+    return keep
+
+
+def run_extension_census(hol, fam16):
+    """THE CENSUS OF THE EXTENSION ATLAS.  Same predicate, same rules, same
+    coordinates, same completion -- only the declared group changes."""
+    prog("the extension atlas: %d charts" % len(fam16))
+    W = tuple(WSWAP)
+    Sext = [tuple(p) for p in SCOPE["admitted_extension"]]
+    centralise = [p for p in Sext
+                  if perm_compose(p, W) == perm_compose(W, p)]
+    abelian = (len(centralise) == len(Sext)) and all(
+        perm_compose(x, y) == perm_compose(y, x) for x in Sext for y in Sext)
+    per_cell, per_setting, defects = {}, {}, {}
+    sig_defect: dict = {}
+    by_setting_defect: dict = {}
+    by_setting_sigma: dict = {}
+    outside_per_cell, outside_per_setting = {}, {}
+    outside_total, total, not_a_permutation = 0, 0, 0
+    witness = None
+    for (sp, t) in _route_p_coordinates():
+        here = charts_at(sp, fam16)
+        grp = set(hol[sp]["_group"])
+        n, nout = 0, 0
+        for (A, B, C) in itertools.permutations(here, 3):
+            for rAB in ID_RULES:
+                gAB = drawn_map(sp, t, A, B, rAB, "admitted_extension")
+                if gAB is None:
+                    continue
+                for rBC in ID_RULES:
+                    gBC = drawn_map(sp, t, B, C, rBC, "admitted_extension")
+                    if gBC is None:
+                        continue
+                    for rCA in ID_RULES:
+                        gCA = drawn_map(sp, t, C, A, rCA,
+                                        "admitted_extension")
+                        if gCA is None:
+                            continue
+                        d = triangle_defect(gAB, gBC, gCA)
+                        n += 1
+                        if isinstance(d, str):
+                            # a defect that is not a permutation tuple: the
+                            # escape characterisation is not computable, and
+                            # the gates below fail CLOSED on it
+                            not_a_permutation += 1
+                            defects[d] = defects.get(d, 0) + 1
+                            continue
+                        defects[d] = defects.get(d, 0) + 1
+                        k2 = (A["sigma"], d)
+                        sig_defect[k2] = sig_defect.get(k2, 0) + 1
+                        k3 = (sp, d)
+                        by_setting_defect[k3] = \
+                            by_setting_defect.get(k3, 0) + 1
+                        k4 = (sp, A["sigma"], d)
+                        by_setting_sigma[k4] = \
+                            by_setting_sigma.get(k4, 0) + 1
+                        if not in_group(d, grp):
+                            nout += 1
+                            if witness is None:
+                                witness = {
+                                    "setting": sp, "checkpoint": t,
+                                    "charts": [A["name"], B["name"],
+                                               C["name"]],
+                                    "rules": [rAB["id"], rBC["id"],
+                                              rCA["id"]],
+                                    "maps": [name_perm(gAB), name_perm(gBC),
+                                             name_perm(gCA)],
+                                    "defect_fixed_points": fixed_points(d),
+                                    "defect_order": perm_order(d)}
+        report_no_defect_as_outside = (MUTANT == "membership-tab")
+        if report_no_defect_as_outside:
+            nout = 0
+        per_cell["%s/t%d" % (sp, t)] = n
+        outside_per_cell["%s/t%d" % (sp, t)] = nout
+        per_setting[sp] = per_setting.get(sp, 0) + n
+        outside_per_setting[sp] = outside_per_setting.get(sp, 0) + nout
+        total += n
+        outside_total += nout
+    prog("  the extension census's second route: the relational join")
+    q = census_route_q(fam16, "admitted_extension")
+    expect = census_coordinates()
+    missing = sorted(set(expect) - set(per_cell))
+    cell_diff = sorted(k for k in expect
+                       if per_cell.get(k, 0) != q["per_cell"].get(k, 0))
+    # THE INDEPENDENT RECOUNT of the escape total.  During the walk a
+    # SEPARATE accumulator recorded, for every (setting, defect) pair, how
+    # many triangles carry it; the recount is derived from that histogram and
+    # never reads the per-triangle counter, so the `membership-tab` mutant --
+    # which zeroes the counter -- surfaces as a disagreement.
+    outside_recount = 0
+    for (sp, d), c in by_setting_defect.items():
+        if d not in set(hol[sp]["_group"]):
+            outside_recount += c
+    # the escaping defects are those measured outside the group AT A SETTING
+    # WHERE THEY OCCUR -- not those outside some other setting's group
+    escapes = sorted({d for (sp, d) in by_setting_defect
+                      if d not in set(hol[sp]["_group"])}, key=str)
+    esc_named = []
+    tauA = tuple(build_perm_tr(0, 0, 0, 1, 0))
+    tauB = tuple(build_perm_tr(0, 0, 0, 0, 1))
+    named = perm_compose(W, perm_compose(tauA, tauB))
+    b162 = {tuple(p) for p in SCOPE["base"]}
+    b216 = {tuple(p) for p in SCOPE["extension_all"]}
+    for d in escapes:
+        if isinstance(d, str):
+            continue
+        esc_named.append({
+            "fixed_configurations": fixed_points(d),
+            "order": perm_order(d),
+            "equals_the_wing_exchange_composed_with_both_pointer_"
+            "transpositions": d == named,
+            "in_the_declared_162_element_relabelling_scope": d in b162,
+            "in_the_declared_216_element_extension": d in b216,
+            "in_the_group_admitted_at_the_extension": d in set(Sext),
+            "in_the_bigon_generated_group_at_a_symmetric_setting":
+                any(d in set(hol[sp]["_group"]) for sp in SETTING_ORDER)})
+    gen = (generate_group({d for d in defects if not isinstance(d, str)})
+           if not not_a_permutation else set())
+    TABLES["extension_census"] = {
+        "defects_that_are_not_permutation_tuples": not_a_permutation,
+        "the_chart_rule": "identical to the abelian atlas's: the orbit of "
+                          "the two committed frames under the declared "
+                          "admitted group, with the identification search "
+                          "over the same group",
+        "the_generating_group_order": len(Sext),
+        "the_generating_group_is_abelian": abelian,
+        "elements_centralising_the_level_1_holonomy": len(centralise),
+        "element_orders": sorted({perm_order(p) for p in Sext}),
+        "element_fixed_points": sorted(fixed_points(p) for p in Sext),
+        "charts": len(fam16),
+        "distinct_charts_per_setting": {sp: len(charts_at(sp, fam16))
+                                        for sp in SETTING_ORDER},
+        "every_chart_carries_the_declared_initial_configuration":
+            all(chart_initial(c) == J0 for c in fam16),
+        "size": total,
+        "size_by_the_second_route": q["total"],
+        "per_cell": per_cell,
+        "per_setting": per_setting,
+        "cells_where_the_two_routes_disagree": cell_diff,
+        "coordinate_cells_missing_from_the_walk": missing,
+        "defect_set_size": len(defects),
+        "defect_set": {name_perm(d): c for d, c in
+                       sorted(defects.items(), key=lambda x: -x[1])},
+        "the_group_the_defect_set_generates": len(gen),
+        "defects_outside_the_bigon_group": outside_total,
+        "defects_outside_recomputed_by_an_independent_pass": outside_recount,
+        "defects_outside_per_setting": outside_per_setting,
+        "defects_outside_per_cell": {k: v for k, v in
+                                     sorted(outside_per_cell.items()) if v},
+        "the_escaping_defects": esc_named,
+        "one_escaping_triangle_in_full": witness,
+        "_sig_defect": sig_defect,
+        "_by_setting_sigma": by_setting_sigma}
+    anchor("A19", "the frozen review R1 (operator lens), hash-pinned",
+           "the extension atlas's chart count, census size and escape count, "
+           "each measured present as a string in the pinned review AND "
+           "recomputed here from base G's own declarations",
+           [True, True, True, "16 charts", 333312, 32256],
+           [review_quote("R1-operator", "16 charts"),
+            review_quote("R1-operator", "333,312"),
+            review_quote("R1-operator", "32,256"),
+            "%d charts" % len(fam16), total, outside_total])
+    anchor("A20", "the frozen review R2 (effectus lens), hash-pinned",
+           "the per-setting escape count at each geometry-bearing setting "
+           "and the centraliser count, each measured present as a string in "
+           "the pinned review AND recomputed here",
+           [True, True, [16128, 16128], "4 of 8"],
+           [review_quote("R2-effectus", "16,128"),
+            review_quote("R2-effectus", "4 of 8"),
+            [outside_per_setting.get(sp, 0)
+             for sp in SETTING_ORDER
+             if SETTINGS[sp][0] == SETTINGS[sp][1]],
+            "%d of %d" % (len(centralise), len(Sext))])
+    gate("COC-EXTENSION-CENSUS", "measurement",
+         "THE EXTENSION ATLAS IS BUILT BY THE SAME CHART RULE FROM THE "
+         "BASE'S OWN SECOND DECLARED GROUP, AND ITS CENSUS IS EXHAUSTIVE.  "
+         "Nothing changes but the declared group: the same orbit rule, the "
+         "same four-clause predicate, the same two gluing rules, the same "
+         "coordinates, the same pinned completion, the same membership "
+         "comparator.  The group is measured to have order eight, to be "
+         "NON-ABELIAN, with element orders and fixed-point counts printed; "
+         "its orbit is measured to have sixteen distinct members, distinct "
+         "at every setting, every one carrying the declared initial "
+         "configuration.  The census's size is computed by the same two "
+         "GENUINELY INDEPENDENT routes as the abelian atlas's -- the chart-"
+         "triple walk and the relational join over an independently drawn "
+         "edge list -- gated equal in total and CELL BY CELL, with route P's "
+         "coordinate key set gated against the arena's own.  The counts are "
+         "anchored exit-1 both against this instrument's own recomputation "
+         "and against the hash-pinned reviews that first constructed this "
+         "atlas.  The `ext-orbit` mutant builds the orbit from the narrower "
+         "group and must die here; `cell-skip` omits a coordinate cell and "
+         "must die here too",
+         (len(fam16) == len(CHART_SEEDS) * SCOPE["n_admitted_extension"]
+          and total == q["total"] and total > 0 and not missing
+          and not cell_diff and not abelian and not not_a_permutation
+          and all(len(charts_at(sp, fam16)) == len(fam16)
+                  for sp in SETTING_ORDER)
+          and all(chart_initial(c) == J0 for c in fam16)
+          and ANCHORS[-2]["passed"] and ANCHORS[-1]["passed"]),
+         {"generating_group_order": len(Sext),
+          "generating_group_is_abelian": abelian,
+          "charts": len(fam16),
+          "distinct_charts_per_setting":
+              {sp: len(charts_at(sp, fam16)) for sp in SETTING_ORDER},
+          "size": total, "size_by_the_second_route": q["total"],
+          "coordinate_cells_walked": len(per_cell),
+          "coordinate_cells_expected": len(expect),
+          "coordinate_cells_missing_from_the_walk": missing,
+          "cells_where_the_two_routes_disagree": cell_diff,
+          "per_setting": per_setting})
+    gate("COC-EXTENSION-ESCAPE", "measurement",
+         "THE PRE-REGISTERED HIGHER OBSTRUCTION IS REALISED ON BASE G, AND "
+         "THE ESCAPING ELEMENT IS NAMED.  Of this atlas's admissible "
+         "triangles, the number whose defect lies OUTSIDE the "
+         "bigon-generated holonomy group at its own setting is measured "
+         "POSITIVE against the printed denominator, and the split is printed "
+         "per setting and per cell: the escapes sit at the two "
+         "geometry-bearing settings only.  The escaping defect is identified "
+         "as a permutation and not as a label: its fixed-configuration count "
+         "and order are computed, it is measured EQUAL to the wing exchange "
+         "composed with both pointer transpositions, it is measured INSIDE "
+         "base G's declared 216-element extension and OUTSIDE its "
+         "162-element relabelling scope, and it is measured NOT to be an "
+         "element of the bigon-generated group at any setting.  One escaping "
+         "triangle is recorded in full -- its charts, its three rules and "
+         "its three drawn maps.  The escape total is computed twice, the "
+         "second time from an independently accumulated (setting, defect) "
+         "histogram.  `membership-lax`, which answers every membership "
+         "question yes, and `membership-tab`, which zeroes the tabulation, "
+         "both must die here",
+         (outside_total > 0 and outside_total == outside_recount
+          and len(esc_named) > 0 and not not_a_permutation
+          and all(e["equals_the_wing_exchange_composed_with_both_pointer_"
+                    "transpositions"] for e in esc_named)
+          and all(e["in_the_declared_216_element_extension"]
+                  and not e["in_the_declared_162_element_relabelling_scope"]
+                  and not e["in_the_bigon_generated_group_at_a_symmetric_"
+                            "setting"] for e in esc_named)
+          and witness is not None),
+         {"defects_outside_the_bigon_group": outside_total,
+          "recomputed_independently": outside_recount,
+          "denominator": total,
+          "defects_outside_per_setting": outside_per_setting,
+          "defects_outside_per_cell": TABLES["extension_census"]
+              ["defects_outside_per_cell"],
+          "defect_set": TABLES["extension_census"]["defect_set"],
+          "the_group_the_defect_set_generates": len(gen),
+          "the_escaping_defects": esc_named,
+          "one_escaping_triangle_in_full": witness})
+    return TABLES["extension_census"]
+
+
+# ===========================================================================
+# 10d.  THE CRITERION: CLOSURE <=> THE CHART GROUP CENTRALISES LEVEL ONE
+# ===========================================================================
+def per_setting_criterion(hist, cen, hol):
+    """The criterion, PER TRIANGLE, with the group read at the triangle's own
+    setting.  `hist` maps (setting, sigma_A, delta) to a triangle count.  A
+    defect escapes exactly when its seed-level part is non-trivial AND the
+    first chart's relabelling fails to centralise the level-1 holonomy."""
+    bad, tested, esc = 0, 0, 0
+    for (sp, s, d), n in hist.items():
+        grp = set(hol[sp]["_group"])
+        tested += n
+        if isinstance(d, str):
+            bad += n
+            esc += n
+            continue
+        h = perm_compose(perm_inverse(s), perm_compose(d, s))
+        out = d not in grp
+        pred = (h != tuple(IDPERM)) and (s not in cen)
+        if out:
+            esc += n
+        if out != pred:
+            bad += n
+    return bad, tested, esc
+
+
+def run_criterion(rows, hol, ext):
+    """THE UNIT'S CENTRAL RESULT, GATED AT BOTH ATLASES."""
+    prog("the criterion, gated at both atlases")
+    W = tuple(WSWAP)
+    S = [tuple(p) for p in SCOPE["admitted"]]
+    Sext = [tuple(p) for p in SCOPE["admitted_extension"]]
+    cen4 = [p for p in S if perm_compose(p, W) == perm_compose(W, p)]
+    cen16 = [p for p in Sext if perm_compose(p, W) == perm_compose(W, p)]
+    sig4: dict = {}
+    hist4: dict = {}
+    for r in rows:
+        A = CHART_BY_NAME.get(r["charts"][0])
+        if A is None or isinstance(r["delta"], str):
+            continue
+        sig4[(A["sigma"], tuple(r["delta"]))] = \
+            sig4.get((A["sigma"], tuple(r["delta"])), 0) + 1
+        k = (r["setting"], A["sigma"], tuple(r["delta"]))
+        hist4[k] = hist4.get(k, 0) + 1
+    t4, v4, h4 = check_telescoping(sig4)
+    t16, v16, h16 = check_telescoping(ext["_sig_defect"])
+    bad4, tested4, esc4 = per_setting_criterion(hist4, cen4, hol)
+    bad16, tested16, esc16 = per_setting_criterion(ext["_by_setting_sigma"],
+                                                   cen16, hol)
+    TABLES["criterion"] = {
+        "statement": "THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE "
+                     "CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 "
+                     "HOLONOMY",
+        "the_level_1_holonomy": name_perm(W),
+        "the_abelian_atlas": {
+            "generating_group_order": len(S),
+            "elements_centralising_the_level_1_holonomy": len(cen4),
+            "the_group_centralises_it": len(cen4) == len(S),
+            "triangles": tested4,
+            "defects_outside_the_bigon_group": esc4,
+            "per_triangle_criterion_mismatches": bad4,
+            "telescoping_cases": t4, "telescoping_violations": v4,
+            "seed_level_parts": h4,
+            "status": "CLOSED, and the closure is ANALYTICALLY FORCED"},
+        "the_extension_atlas": {
+            "generating_group_order": len(Sext),
+            "elements_centralising_the_level_1_holonomy": len(cen16),
+            "the_group_centralises_it": len(cen16) == len(Sext),
+            "triangles": tested16,
+            "defects_outside_the_bigon_group": esc16,
+            "per_triangle_criterion_mismatches": bad16,
+            "telescoping_cases": t16, "telescoping_violations": v16,
+            "seed_level_parts": h16,
+            "status": "OPEN: a higher obstruction, MEASURED"},
+        "what_is_forced_and_what_is_free":
+            "the sufficiency direction is FORCED: at an atlas whose "
+            "generating group centralises the level-1 holonomy the "
+            "conjugation in the telescoped defect is trivial, so nothing can "
+            "escape, whatever the geometry does.  The necessity direction is "
+            "NOT forced: a non-centralising element makes an escaping "
+            "conjugate available, but whether an ADMISSIBLE TRIANGLE realises "
+            "it is a measurement -- the predicate had to draw all three edges "
+            "of some triangle whose first chart carries such an element"}
+    gate("COC-CRITERION", "measurement",
+         "CLOSURE IF AND ONLY IF THE CHART-GENERATING GROUP CENTRALISES THE "
+         "LEVEL-1 HOLONOMY -- THE UNIT'S CENTRAL RESULT, GATED AT BOTH "
+         "ATLASES.  The level-1 holonomy of the two-chart geometry is the "
+         "wing exchange.  At the abelian atlas the generating group is "
+         "measured to centralise it -- every one of its elements does -- and "
+         "the escape count is measured ZERO; that half is ANALYTICALLY "
+         "FORCED by the telescoping corollary and is printed as forced.  At "
+         "the extension atlas the generating group is measured NOT to "
+         "centralise it -- exactly half of its elements do -- and the escape "
+         "count is measured POSITIVE; that half is FREE, because a "
+         "non-centralising element only makes the escaping conjugate "
+         "AVAILABLE and an admissible triangle had to realise it.  The "
+         "criterion is then gated PER TRIANGLE at both atlases, with the "
+         "group read at the triangle's own setting: a defect lies outside "
+         "the group exactly when its seed-level part is the multiplicity "
+         "bigon AND the first chart's relabelling fails to centralise it, "
+         "with the mismatch count gated at zero against the printed "
+         "denominators.  The telescoping identity itself is verified on "
+         "every triangle of both censuses.  This gate reads its escape "
+         "counts from its own (setting, first relabelling, defect) "
+         "histogram, not from the census's tabulation, so a tabulation "
+         "mutant does not reach it; what does is `ext-orbit`, which builds "
+         "the second atlas from the first atlas's group and so removes the "
+         "non-centralising elements entirely, and it must die here",
+         (len(cen4) == len(S) and esc4 == 0 and bad4 == 0 and v4 == 0
+          and len(cen16) < len(Sext) and esc16 > 0 and bad16 == 0
+          and v16 == 0 and tested4 > 0 and tested16 > 0),
+         {"the_level_1_holonomy": name_perm(W),
+          "abelian_atlas_group_order": len(S),
+          "abelian_atlas_centralising_elements": len(cen4),
+          "abelian_atlas_triangles": tested4,
+          "abelian_atlas_escapes": esc4,
+          "abelian_atlas_criterion_mismatches": bad4,
+          "abelian_atlas_telescoping_violations": v4,
+          "extension_atlas_group_order": len(Sext),
+          "extension_atlas_centralising_elements": len(cen16),
+          "extension_atlas_triangles": tested16,
+          "extension_atlas_escapes": esc16,
+          "extension_atlas_criterion_mismatches": bad16,
+          "extension_atlas_telescoping_violations": v16,
+          "the_forced_half": "the abelian atlas's zero",
+          "the_free_half": "the extension atlas's positive count"})
+    return TABLES["criterion"]
+
+
+def run_membership_tabulation(rows, ext):
+    """THE MEMBERSHIP TABULATION ITSELF, TESTED (R3's false-zero probe)."""
+    a1 = TABLES["membership"]["defects_outside_the_bigon_group"]
+    a2 = TABLES["membership"][
+        "defects_outside_recomputed_by_an_independent_pass"]
+    b1 = ext["defects_outside_the_bigon_group"]
+    b2 = ext["defects_outside_recomputed_by_an_independent_pass"]
+    gate("COC-MEMBERSHIP-TABULATION", "measurement",
+         "THE MEMBERSHIP TABULATION IS ITSELF TESTED, NOT ONLY ITS INPUTS.  "
+         "A gate on the number of defects outside the group is worthless if "
+         "the routine that counts them can silently return zero, so the "
+         "count is produced twice at BOTH atlases by passes written "
+         "separately: at the abelian atlas by the per-setting tabulation and "
+         "then by a plain re-walk of the census with the group looked up per "
+         "row; at the extension atlas by the per-triangle counter and then "
+         "from an independently accumulated (setting, defect) histogram.  "
+         "The two are gated equal at each atlas and both denominators are "
+         "printed.  The `membership-tab` mutant makes one tabulation report "
+         "no defect as outside -- the false-zero path -- and must die here",
+         a1 == a2 and b1 == b2,
+         {"abelian_atlas_outside": a1,
+          "abelian_atlas_outside_recomputed": a2,
+          "abelian_atlas_denominator": len(rows),
+          "extension_atlas_outside": b1,
+          "extension_atlas_outside_recomputed": b2,
+          "extension_atlas_denominator": ext["size"]})
+
+
+# ===========================================================================
+# 10e.  ROUTE R1, COMPLETED: THE SPLIT CHARTS GLUE TO EACH OTHER
+# ===========================================================================
+def split_charts(sp):
+    """THE EIGHT FIVE-LEG SPLIT CHARTS at one setting: either local leg of
+    either committed frame replaced by its three declared orthogonal
+    sub-legs, each relabelled by the declared admitted group."""
+    a, b = SETTINGS[sp]
+    P = U_prep()
+    RA, CA = wing_rotation("A", a), wing_record("A")
+    RB, CB = wing_rotation("B", b), wing_record("B")
+    UA, UB = U_local("A", a), U_local("B", b)
+    seeds = [("F1/splitA", [P, minv(RA), CA, RA, UB]),
+             ("F1/splitB", [P, UA, minv(RB), CB, RB]),
+             ("F2/splitB", [P, minv(RB), CB, RB, UA]),
+             ("F2/splitA", [P, UB, minv(RA), CA, RA])]
+    out = []
+    for nm, legs in seeds:
+        for sig in SCOPE["admitted"]:
+            s = tuple(sig)
+            n2 = nm if s == tuple(IDPERM) else "W." + nm
+            out.append({"name": n2, "sigma": s,
+                        "legs": (list(legs) if s == tuple(IDPERM)
+                                 else [sp_conj(L, list(s)) for L in legs])})
+    return out
+
+
+def split_chart_data(ch):
+    acc, ths = sp_id(), []
+    ths.append(acc)
+    for L in ch["legs"]:
+        acc = mm(L, acc)
+        ths.append(acc)
+    laws = []
+    for T in ths:
+        s = frozenset(i for (i, j), v in T.items() if j == J0 and v)
+        laws.append({i: sum(v * v for (aa, j), v in T.items()
+                            if j == J0 and aa == i) for i in s})
+    real = [sp_restrict(ch["legs"][t], frozenset(laws[t + 1]),
+                        frozenset(laws[t])) for t in range(len(ch["legs"]))]
+    return {"laws": laws, "real": real,
+            "keys_full": sorted(leg_key(L) for L in ch["legs"]),
+            "keys_real": sorted(leg_key(L) for L in real)}
+
+
+def run_split_to_split(hol):
+    """ROUTE R1'S OWN ATLAS: the split charts do glue -- to EACH OTHER."""
+    prog("route R1 completed: the split charts glued to each other")
+    per_setting = {}
+    for sp in ("GP-E", "GP-A"):
+        prog("  split-to-split at %s" % sp)
+        chs = split_charts(sp)
+        dat = {c["name"]: split_chart_data(c) for c in chs}
+        ncp = len(chs[0]["legs"]) + 1
+        keep, seen = [], set()
+        for c in chs:
+            d = dat[c["name"]]
+            sig = canon([[leg_key(L) for L in c["legs"]],
+                         [sorted(x.items()) for x in d["laws"]]])
+            if sig in seen:
+                continue
+            seen.add(sig)
+            keep.append(c)
+        memo: dict = {}
+
+        def drawn(t, X, Y, _memo=memo, _dat=dat):
+            key = (t, X["name"], Y["name"])
+            if key in _memo:
+                return _memo[key]
+            outs = {}
+            for rule in ID_RULES:
+                dX, dY = _dat[X["name"]], _dat[Y["name"]]
+                kb = (dY["keys_real"] if rule["id"] == "REAL"
+                      else dY["keys_full"])
+                legs = dX["real"] if rule["id"] == "REAL" else X["legs"]
+                da, db = dY["laws"][t], dX["laws"][t]
+                jx, jy = X["sigma"][J0], Y["sigma"][J0]
+                adm = []
+                skip_the_leg_clause = (MUTANT == "route-lax")
+                for p in SCOPE["admitted"]:
+                    q = tuple(p)
+                    if q[jx] != jy:
+                        continue
+                    if not skip_the_leg_clause and sorted(
+                            leg_key(sp_conj(L, list(q)))
+                            for L in legs) != kb:
+                        continue
+                    if {q[i] for i in db} != set(da):
+                        continue
+                    if any(da.get(q[i]) != db.get(i) for i in db):
+                        continue
+                    adm.append(q)
+                outs[rule["id"]] = adm[0] if len(adm) == 1 else None
+            _memo[key] = outs
+            return outs
+
+        ndrawn, total, outside, defects = 0, 0, 0, {}
+        grp = set(hol[sp]["_group"])
+        for t in range(ncp):
+            for X in keep:
+                for Y in keep:
+                    if X["name"] == Y["name"]:
+                        continue
+                    ndrawn += sum(1 for v in drawn(t, X, Y).values()
+                                  if v is not None)
+        for t in range(ncp):
+            for (A, B, C) in itertools.permutations(keep, 3):
+                for rAB in ID_RULES:
+                    gAB = drawn(t, A, B)[rAB["id"]]
+                    if gAB is None:
+                        continue
+                    for rBC in ID_RULES:
+                        gBC = drawn(t, B, C)[rBC["id"]]
+                        if gBC is None:
+                            continue
+                        for rCA in ID_RULES:
+                            gCA = drawn(t, C, A)[rCA["id"]]
+                            if gCA is None:
+                                continue
+                            d = triangle_defect(gAB, gBC, gCA)
+                            total += 1
+                            defects[d] = defects.get(d, 0) + 1
+                            if not in_group(d, grp):
+                                outside += 1
+        per_setting[sp] = {
+            "split_charts_generated": len(chs),
+            "distinct_split_charts": len(keep),
+            "legs_per_split_chart": len(chs[0]["legs"]),
+            "checkpoints_of_a_split_chart": ncp,
+            "split_to_split_identifications_drawn": ndrawn,
+            "admissible_triangles": total,
+            "defects": {name_perm(d): c for d, c in
+                        sorted(defects.items(), key=lambda x: -x[1])},
+            "defects_outside_the_bigon_group": outside}
+    TABLES["split_to_split"] = per_setting
+    e = per_setting["GP-E"]
+    anchor("A21", "the frozen review R1 (operator lens), hash-pinned",
+           "route R1's split-to-split identification count and triangle "
+           "count at the declared setting, each measured present as a string "
+           "in the pinned review AND recomputed here",
+           [True, True, 368, 3552],
+           [review_quote("R1-operator", "368"),
+            review_quote("R1-operator", "3,552"),
+            e["split_to_split_identifications_drawn"],
+            e["admissible_triangles"]])
+    gate("COC-SPLIT-TO-SPLIT", "measurement",
+         "ROUTE R1'S ATLAS EXISTS AND CARRIES TRIANGLES -- WHICH IS WHY THE "
+         "ROUTE'S 'ABSENT' READING IS SCOPED HERE TO WHAT WAS MEASURED.  The "
+         "sub-leg split chart admits no identification to a COMMITTED chart, "
+         "for the reason gated at COC-ROUTE-CENSUS: a five-leg chart cannot "
+         "match a three-leg one as a multiset of Born leg keys.  But split "
+         "charts glue to EACH OTHER.  The eight five-leg split charts -- "
+         "either local leg of either committed frame replaced by its three "
+         "declared orthogonal sub-legs, each relabelled by the declared "
+         "admitted group -- are censused among themselves at their own six "
+         "checkpoints, by base G's own four-clause predicate.  The "
+         "identifications drawn and the admissible triangles are both "
+         "measured POSITIVE, both counts anchored against the hash-pinned "
+         "review that first measured them, and every defect is measured "
+         "INSIDE the bigon-generated group: this atlas's generating group is "
+         "the abelian one, so by the criterion no escape is available here, "
+         "and none is found.  The `route-lax` mutant skips the leg-list "
+         "clause and must die here",
+         (e["split_to_split_identifications_drawn"] > 0
+          and e["admissible_triangles"] > 0
+          and all(v["defects_outside_the_bigon_group"] == 0
+                  for v in per_setting.values())
+          and ANCHORS[-1]["passed"]),
+         per_setting)
+
+
+# ===========================================================================
 # 11.  THE VERDICT, THE DECLARATION ORDER, EXEMPTION AND EXACTNESS
 # ===========================================================================
-def run_verdict(rows, membership):
+def rederive_the_verdict(census_size, ext_size, outside, ext_outside):
+    """THE VERDICT, RE-DERIVED FROM THE MEASURED COUNTS.  Written separately
+    from the decision rule in `run_verdict` and used only by the gate, so
+    that a perturbation of that rule surfaces as a disagreement (RUNBOOK
+    section 13 addendum)."""
+    triangles = census_size + ext_size
+    escapes = outside + ext_outside
+    if triangles < 1:
+        return "COC-TRIANGLES-ABSENT"
+    if escapes >= 1:
+        return "COC-HIGHER-OBSTRUCTION" + EXT_QUALIFIER
+    return "COC-COCYCLE-CLOSES" + QUALIFIER
+
+
+def run_verdict(rows, membership, ext):
     n = len(rows)
+    n_ext = ext["size"]
     outside = sum(v["defects_outside_the_bigon_group"]
                   for v in membership.values())
-    if n == 0:
-        base = "COC-TRIANGLES-ABSENT"
-    elif outside > 0:
-        base = "COC-HIGHER-OBSTRUCTION"
+    outside_ext = ext["defects_outside_the_bigon_group"]
+    total = n + n_ext
+    escapes = outside + outside_ext
+    invert_one_comparison_of_the_decision_rule = (MUTANT == "verdict-rule")
+    if total == 0:
+        base, qual = "COC-TRIANGLES-ABSENT", ""
+    elif (escapes < 0 if invert_one_comparison_of_the_decision_rule
+          else escapes > 0):
+        base, qual = "COC-HIGHER-OBSTRUCTION", EXT_QUALIFIER
     else:
-        base = "COC-COCYCLE-CLOSES"
-    verdict = base + (QUALIFIER if base == "COC-COCYCLE-CLOSES" else "")
+        base, qual = "COC-COCYCLE-CLOSES", QUALIFIER
+    verdict = base + qual
     emit_an_out_of_vocabulary_verdict = (MUTANT == "verdict-lax")
     if emit_an_out_of_vocabulary_verdict:
         verdict = "COC-LEVEL-2-IS-FLAT"
         base = verdict
     FINDINGS["unit_verdict"] = verdict
     FINDINGS["the_verdicts_declared_scope"] = list(SCOPE_CLAUSES)
-    ok = any(verdict.startswith(p) for p in PREREGISTERED)
-    gate("COC-VOCABULARY", "derivation",
-         "THE VERDICT IS ONE OF THE PIN'S PRE-REGISTERED NAMES, AND IT IS "
-         "DERIVED FROM THE GATE RESULTS RATHER THAN CHOSEN.  The decision "
-         "rule is fixed in advance: COC-TRIANGLES-ABSENT if the census is "
-         "empty; COC-HIGHER-OBSTRUCTION if any admissible triangle's defect "
-         "lies outside the bigon-generated holonomy group at its own "
-         "setting; COC-COCYCLE-CLOSES otherwise.  The qualifier slot of the "
-         "pre-registered UNIT-OUTCOME(-QUALIFIER) form carries the scope, "
-         "and the declared triple structure is the parameter it names.  The "
-         "`verdict-lax` waiver emits a name outside the vocabulary and must "
-         "die here",
-         ok,
+    FINDINGS["the_abelian_atlas_closes_and_that_closure_is_forced"] = True
+    rederived = rederive_the_verdict(n, n_ext, outside, outside_ext)
+    in_vocabulary = any(verdict.startswith(p) for p in PREREGISTERED)
+    gate("COC-VOCABULARY", "measurement",
+         "THE VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS, "
+         "AND IS ONE OF THE PIN'S PRE-REGISTERED NAMES (RUNBOOK section 13 "
+         "addendum).  The decision rule is fixed in advance and recorded in "
+         "the atlas declaration: COC-TRIANGLES-ABSENT if no admissible "
+         "triangle exists at any censused atlas; COC-HIGHER-OBSTRUCTION if "
+         "some admissible triangle at some censused atlas carries a defect "
+         "outside the bigon-generated holonomy group at its own setting; "
+         "COC-COCYCLE-CLOSES if triangles exist and none does.  Two clauses. "
+         "(1) The printed verdict string is measured EQUAL to the string a "
+         "SEPARATELY WRITTEN expression selects from the two censuses' sizes "
+         "and their two escape counts -- an ungated verdict is a typo away "
+         "from fiction, so the derivation is the gate.  (2) The string lies "
+         "in the pre-registered vocabulary.  The `verdict-rule` mutant "
+         "inverts one comparison of the decision rule, which flips the "
+         "verdict to its opposite while every count stays where it is, and "
+         "must die at the first clause; the `verdict-lax` waiver emits a name "
+         "outside the vocabulary and must die at the second",
+         verdict == rederived and in_vocabulary,
          {"verdict": verdict, "base": base,
+          "verdict_rederived_independently": rederived,
+          "the_two_derivations_agree": verdict == rederived,
           "pre_registered": list(PREREGISTERED),
-          "triangles": n, "defects_outside_the_bigon_group": outside,
+          "triangles_at_the_abelian_atlas": n,
+          "triangles_at_the_extension_atlas": n_ext,
+          "escapes_at_the_abelian_atlas": outside,
+          "escapes_at_the_extension_atlas": outside_ext,
           "scope": list(SCOPE_CLAUSES)})
     return verdict
 
@@ -2968,10 +4426,12 @@ def run_verdict(rows, membership):
 def run_declaration_order():
     ids = [g["id"] for g in GATES]
     decl = ["COC-FREEZE", "COC-BASE-PINNED", "COC-EXTERNAL-SOURCE-PINNED",
-            "COC-TRIPLE-DECLARED", "COC-ARENA",
+            "COC-REVIEWS-PINNED", "COC-TRIPLE-DECLARED",
+            "COC-ATLASES-DECLARED", "COC-ARENA",
             "COC-READ-TIME-COORDINATE"]
     fixture = ["COC-CENSUS", "COC-MEMBERSHIP",
-               "COC-DEFECT-IS-A-BIGON-HOLONOMY"]
+               "COC-DEFECT-IS-A-BIGON-HOLONOMY", "COC-EXTENSION-CENSUS",
+               "COC-EXTENSION-ESCAPE", "COC-CRITERION"]
     present = all(g in ids for g in decl + fixture)
     last_decl = max((ids.index(g) for g in decl if g in ids), default=-1)
     first_fix = min((ids.index(g) for g in fixture if g in ids),
@@ -3159,6 +4619,19 @@ MUTANT_DECL = (
      "a mutant-identity exemption registered in the exemption gate's own "
      "evidence list after its AST sweep has run: a waiver, declared as one"),
     ("verdict-lax", "waiver", "an out-of-vocabulary verdict emitted"),
+    ("verdict-rule", "computation",
+     "one comparison of the verdict's decision rule inverted, so the printed "
+     "verdict flips while every measured count stays where it is"),
+    ("cell-skip", "computation",
+     "one coordinate cell omitted from the census walk, at both atlases"),
+    ("membership-tab", "computation",
+     "the membership tabulation made to report no defect as outside -- the "
+     "false-zero path"),
+    ("ext-orbit", "computation",
+     "the extension atlas built from the narrower declared group, so it is "
+     "not the atlas the declaration names"),
+    ("review-hash", "computation",
+     "one frozen review's bytes perturbed before they are hashed"),
 )
 MUTANTS = [m[0] for m in MUTANT_DECL]
 
@@ -3224,8 +4697,10 @@ def run_mutant_table():
          "for the exit code, not that the gate would catch a computational "
          "defect, and the two are not claimed to be the same thing.  BOTH "
          "DENOMINATORS ARE REPORTED.  The one gate excluded from the "
-         "denominator is this one: the census does not run inside a mutant, "
-         "so it cannot be falsified by this mechanism at all",
+         "denominator is THIS FALSIFICATION GATE ITSELF, which does not run "
+         "inside a mutant and so cannot be falsified by this mechanism at "
+         "all.  Every other must-pass gate, the census gate included, is in "
+         "the denominator",
          all(r["died"] for r in rows)
          and all(r["falsified_anchors"] or r["falsified_gates"]
                  for r in rows)
@@ -3245,6 +4720,18 @@ def run_mutant_table():
 # ===========================================================================
 # 13.  RECEIPT AND RENDER
 # ===========================================================================
+def _strip_private(v):
+    """Working stores are named with a leading underscore and are not part of
+    the receipt; they are keyed by permutation tuples and exist only to let a
+    gate recompute a quantity a second way."""
+    if isinstance(v, dict):
+        return {k: _strip_private(x) for k, x in v.items()
+                if not (isinstance(k, str) and k.startswith("_"))}
+    if isinstance(v, list):
+        return [_strip_private(x) for x in v]
+    return v
+
+
 def build_receipt():
     must = [x for x in GATES if x["class"] != "disclosure"]
     fails = sum(1 for x in must if not x["passed"])
@@ -3252,7 +4739,8 @@ def build_receipt():
     return {"schema": SCHEMA, "pin_commit": PIN_COMMIT,
             "pin_sha256_prefix": PIN_SHA256, "base_commit": BASE_COMMIT,
             "source_sha256": SOURCE_SHA256, "anchors": ANCHORS,
-            "gates": GATES, "tables": TABLES, "findings": FINDINGS,
+            "gates": GATES, "tables": _strip_private(TABLES),
+            "findings": FINDINGS,
             "totals": {"anchors": len(ANCHORS), "gates": len(GATES),
                        "must_pass_gates": len(must),
                        "disclosures": len(GATES) - len(must),
@@ -3314,9 +4802,13 @@ def render(rec):
     A("THE TRIANGLE CENSUS")
     A("-" * 78)
     c = TABLES["census"]
-    A("  size (enumerated)                                    %d" % c["size"])
-    A("  size (recomputed by an independent route)            %d"
-      % c["size_recomputed_independently"])
+    A("  size (route P: the chart-triple walk)                %d" % c["size"])
+    A("  size (route Q: the relational join)                  %d"
+      % c["size_by_the_second_route"])
+    A("  coordinate cells walked / expected by the arena      %d of %d"
+      % (c["coordinate_cells_walked"], c["coordinate_cells_expected"]))
+    A("  cells where the two routes disagree                  %d"
+      % len(c["cells_where_the_two_routes_disagree"]))
     A("  coordinate cells carrying a triangle                 %d of %d"
       % (c["cells_carrying_a_triangle"], len(c["per_cell"])))
     A("  cells carrying none: %s" % ", ".join(c["cells_carrying_no_triangle"]))
@@ -3355,6 +4847,116 @@ def render(rec):
         if sp not in m["per_setting"]:
             continue
         A("  %s: %s" % (sp, m["per_setting"][sp]["membership_here_is"]))
+    A("")
+    A("-" * 78)
+    A("THE CRITERION: CLOSURE <=> THE CHART GROUP CENTRALISES LEVEL ONE")
+    A("-" * 78)
+    cr = TABLES["criterion"]
+    A("  %s" % cr["statement"])
+    A("  the level-1 holonomy: %s" % cr["the_level_1_holonomy"])
+    A("")
+    A("  %-34s %14s %14s" % ("", "abelian atlas", "extension"))
+    for lab, k in (("chart-generating group order",
+                    "generating_group_order"),
+                   ("elements centralising level 1",
+                    "elements_centralising_the_level_1_holonomy"),
+                   ("the group centralises it", "the_group_centralises_it"),
+                   ("admissible triangles", "triangles"),
+                   ("defects OUTSIDE the bigon group",
+                    "defects_outside_the_bigon_group"),
+                   ("per-triangle criterion mismatches",
+                    "per_triangle_criterion_mismatches"),
+                   ("telescoping violations", "telescoping_violations")):
+        A("  %-34s %14s %14s"
+          % (lab, cr["the_abelian_atlas"][k], cr["the_extension_atlas"][k]))
+    A("")
+    for ln in _wrap("forced / free: " + cr["what_is_forced_and_what_is_free"],
+                    70):
+        A("      " + ln)
+    A("")
+    A("-" * 78)
+    A("THE EXTENSION ATLAS (the same chart rule, the base's other group)")
+    A("-" * 78)
+    e = TABLES["extension_census"]
+    A("  generating group order / abelian                     %d / %s"
+      % (e["the_generating_group_order"],
+         e["the_generating_group_is_abelian"]))
+    A("  element orders / fixed-point counts                  %s / %s"
+      % (canon(e["element_orders"]), canon(e["element_fixed_points"])))
+    A("  elements centralising the level-1 holonomy           %d of %d"
+      % (e["elements_centralising_the_level_1_holonomy"],
+         e["the_generating_group_order"]))
+    A("  charts (orbit, deduplicated)                         %d"
+      % e["charts"])
+    A("  admissible triangles, route P / route Q              %d / %d"
+      % (e["size"], e["size_by_the_second_route"]))
+    A("  defects OUTSIDE the bigon group                      %d of %d"
+      % (e["defects_outside_the_bigon_group"], e["size"]))
+    A("  the same, recomputed by an independent pass          %d"
+      % e["defects_outside_recomputed_by_an_independent_pass"])
+    A("  per setting: %s"
+      % ", ".join("%s %d" % (k, v) for k, v
+                  in sorted(e["defects_outside_per_setting"].items())))
+    A("  defect set: %s"
+      % ", ".join("%s x%d" % (k, v) for k, v in e["defect_set"].items()))
+    A("  the group the defect set generates                   %d"
+      % e["the_group_the_defect_set_generates"])
+    for d in e["the_escaping_defects"]:
+        A("  the escaping defect: %d fixed configurations, order %s"
+          % (d["fixed_configurations"], d["order"]))
+        A("      = the wing exchange composed with both pointer "
+          "transpositions: %s"
+          % d["equals_the_wing_exchange_composed_with_both_pointer_"
+              "transpositions"])
+        A("      in the 162-scope %s / in the 216-extension %s / in the "
+          "bigon group %s"
+          % (d["in_the_declared_162_element_relabelling_scope"],
+             d["in_the_declared_216_element_extension"],
+             d["in_the_bigon_generated_group_at_a_symmetric_setting"]))
+    wt = e["one_escaping_triangle_in_full"]
+    if wt:
+        A("  one escaping triangle in full: %s at t=%d, charts %s, rules %s"
+          % (wt["setting"], wt["checkpoint"], canon(wt["charts"]),
+             canon(wt["rules"])))
+        A("      drawn maps: %s" % canon(wt["maps"]))
+    A("")
+    A("-" * 78)
+    A("THE MECHANISM STACK (three forced identities, verified)")
+    A("-" * 78)
+    mq = TABLES["mechanisms"]
+    A("  equivariance lemma, abelian atlas    %d cases, %d violations"
+      % (mq["equivariance_lemma"]["cases_tested_at_the_abelian_atlas"],
+         len(mq["equivariance_lemma"]["violations_at_the_abelian_atlas"])))
+    A("  equivariance lemma, extension atlas  %d cases, %d violations"
+      % (mq["equivariance_lemma"]["cases_tested_at_the_extension_atlas"],
+         len(mq["equivariance_lemma"]["violations_at_the_extension_atlas"])))
+    A("  Z/2 coboundary                       %d of %d coordinate-and-rule "
+      "cells" % (mq["coboundary"]["cells_where_a_potential_exists"],
+                 mq["coboundary"]["coordinate_and_rule_cells"]))
+    A("  its closed-form potential fails at   %d cells"
+      % len(mq["coboundary"]["cells_where_the_closed_form_fails"]))
+    A("  the defect's closed form             %d mismatches of %d"
+      % (mq["defect_closed_form"]["mismatches"],
+         mq["defect_closed_form"]["triangles_tested"]))
+    A("  rule-inert coordinates               %d of %d"
+      % (mq["rule_inert_coordinates"]["count"],
+         mq["rule_inert_coordinates"]["denominator"]))
+    A("  flat-setting triangles sitting there %d of %d"
+      % (mq["rule_inert_coordinates"]
+         ["flat_setting_triangles_at_a_rule_inert_coordinate"],
+         mq["rule_inert_coordinates"]["flat_setting_triangles"]))
+    A("")
+    A("-" * 78)
+    A("ROUTE R1 COMPLETED: THE SPLIT CHARTS GLUED TO EACH OTHER")
+    A("-" * 78)
+    A("  %-8s %8s %10s %12s %10s" % ("setting", "charts", "ident.",
+                                     "triangles", "outside"))
+    for sp, v in sorted(TABLES["split_to_split"].items()):
+        A("  %-8s %8d %10d %12d %10d"
+          % (sp, v["distinct_split_charts"],
+             v["split_to_split_identifications_drawn"],
+             v["admissible_triangles"],
+             v["defects_outside_the_bigon_group"]))
     A("")
     A("-" * 78)
     A("THE BIGON-GENERATED HOLONOMY GROUP (rebuilt natively, anchored)")
@@ -3467,6 +5069,7 @@ def main():
 
     run_base_declaration()
     run_external_pin()
+    run_review_pin()
     mine = run_inherited_anchors()
     CHART_ORBIT = {c["name"]: c for c in generated_orbit()}
     CHART_FAMILY = build_chart_family()
@@ -3483,7 +5086,23 @@ def main():
             "the wing exchange composed with the non-equivariance defect")
     PERM_NAME.setdefault(canon(list(POINTER_TRANSPOSITION)),
                          "a pointer transposition of the declared extension")
+    # the extension atlas's escaping conjugate and the two extension maps that
+    # realise it, named for PRINTING only: every gate predicate here compares
+    # permutation tuples, and the gate that identifies the escape does so by
+    # measuring it EQUAL to this composite, not by reading this label
+    _TAU_A = tuple(build_perm_tr(0, 0, 0, 1, 0))
+    _TAU_B = tuple(build_perm_tr(0, 0, 0, 0, 1))
+    PERM_NAME.setdefault(canon(list(_TAU_B)),
+                         "a pointer transposition of the declared extension "
+                         "on the other wing")
+    PERM_NAME.setdefault(
+        canon(list(perm_compose(tuple(WSWAP), _TAU_A))),
+        "the wing exchange composed with one pointer transposition")
+    PERM_NAME.setdefault(
+        canon(list(perm_compose(tuple(WSWAP), perm_compose(_TAU_A, _TAU_B)))),
+        "the wing exchange composed with both pointer transpositions")
     run_triple_declaration(CHART_FAMILY)
+    run_atlas_declaration()
     run_arena(mine)
 
     run_admission_table(CHART_FAMILY)
@@ -3492,19 +5111,75 @@ def main():
     membership, defect_set, gen = run_membership(rows, hol)
     run_defect_is_a_bigon(rows, hol)
     run_confinement(rows, hol, gen)
+    fam16 = build_extension_family()
+    run_mechanisms(rows, hol, fam16)
+    ext = run_extension_census(hol, fam16)
+    run_criterion(rows, hol, ext)
+    run_membership_tabulation(rows, ext)
     run_positive_control(hol)
     run_negative_controls(rows, hol)
     run_compose_witness()
     run_gauge_selftest(rows)
     run_flip_test(rows)
     run_route_census(CHART_FAMILY)
+    run_split_to_split(hol)
     run_completion_dependence(CHART_FAMILY)
     run_scope_disclosure(CHART_FAMILY, rows)
 
     cf = TABLES["chart_family"]
     cd = TABLES["completion_dependence"]
     mb = TABLES["membership"]
+    cr = TABLES["criterion"]
+    ex = TABLES["extension_census"]
+    mech = TABLES["mechanisms"]
     FINDINGS["thesis"] = (
+        "THE CRITERION.  Base G declares TWO groups of admitted "
+        "relabellings, and the declared chart rule -- the orbit of the two "
+        "committed frames under a declared admitted group, with the "
+        "identification search over the same group -- applies to both.  The "
+        "unit's central result is the criterion that decides what the "
+        "resulting atlas does: THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF "
+        "THE CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY.  It is "
+        "gated at both atlases.  At the abelian atlas the generating group "
+        "has order %d and ALL %d of its elements centralise the wing "
+        "exchange; %d triangles, %d outside the bigon-generated group -- and "
+        "that zero is ANALYTICALLY FORCED, not measured: by the equivariance "
+        "lemma (%d of %d cases, %d violations) and its telescoping corollary "
+        "the defect is a conjugate, by the FIRST chart's relabelling, of a "
+        "committed-frame product, and an abelian generating group makes that "
+        "conjugation trivial.  At the extension atlas -- base G's own "
+        "declared order-%d admitted group, measured NON-ABELIAN, exactly %d "
+        "of whose elements centralise the wing exchange -- the same rule "
+        "gives %d charts and %d admissible triangles, of which %d carry a "
+        "defect OUTSIDE the bigon-generated group, %s.  The escaping element "
+        "is named: the wing exchange composed with both pointer "
+        "transpositions, order 2, 9 fixed configurations, inside base G's "
+        "declared 216-element extension, outside its 162-element "
+        "relabelling scope and outside the Klein four-group the two-chart "
+        "loops generate.  The per-triangle criterion is gated at both "
+        "atlases with the group read at the triangle's own setting: %d and "
+        "%d mismatches.  "
+        % (cr["the_abelian_atlas"]["generating_group_order"],
+           cr["the_abelian_atlas"]["elements_centralising_the_level_1_"
+                                   "holonomy"],
+           cr["the_abelian_atlas"]["triangles"],
+           cr["the_abelian_atlas"]["defects_outside_the_bigon_group"],
+           mech["equivariance_lemma"]["cases_tested_at_the_abelian_atlas"]
+           - len(mech["equivariance_lemma"]
+                 ["violations_at_the_abelian_atlas"]),
+           mech["equivariance_lemma"]["cases_tested_at_the_abelian_atlas"],
+           len(mech["equivariance_lemma"]["violations_at_the_abelian_atlas"]),
+           cr["the_extension_atlas"]["generating_group_order"],
+           cr["the_extension_atlas"]["elements_centralising_the_level_1_"
+                                     "holonomy"],
+           ex["charts"], cr["the_extension_atlas"]["triangles"],
+           cr["the_extension_atlas"]["defects_outside_the_bigon_group"],
+           ", ".join("%s %d" % (sp, n) for sp, n
+                     in sorted(ex["defects_outside_per_setting"].items())
+                     if n),
+           cr["the_abelian_atlas"]["per_triangle_criterion_mismatches"],
+           cr["the_extension_atlas"]["per_triangle_criterion_mismatches"]))
+    FINDINGS["thesis"] += (
         "THE TRIPLE STRUCTURE.  Base G carries two frames per setting, so a "
         "third chart had to be constructed from the base's own admitted "
         "material.  The declared route is the pin's second candidate -- a "
@@ -3520,34 +5195,36 @@ def main():
         "geometry-bearing settings and no triangle survives there; over the "
         "whole declared completion family, swept exhaustively, %d of %d "
         "members meet the criterion and %d do not.  THE "
-        "CENSUS.  %d admissible triangles -- every ordered triple of "
-        "distinct charts, every assignment of a committed gluing rule to "
-        "each of the three ordered edges, every declared coordinate -- with "
-        "the size computed twice by independent routes, at %d of the %d "
-        "declared coordinate cells.  THE DEFECT SET has %d members: %s.  "
-        "THE MEMBERSHIP QUESTION.  Every defect lies in the "
-        "bigon-generated holonomy group at its own setting: %d outside, of "
-        "%d.  The reading is stronger than membership and is gated as an if "
-        "and only if: every non-identity defect is measured EQUAL to the "
-        "multiplicity bigon's holonomy at its own coordinate, and every "
-        "coordinate carrying no such bigon carries only identity defects -- "
-        "so level two adds no VALUE to level one, not merely no element.  "
-        "The defect set generates a group of order %s, a PROPER subgroup of "
-        "the order-4 group at the symmetric settings: the completion's own "
-        "defect is measured never to be a triangle defect.  WHAT IS FORCED "
-        "AND WHAT IS FREE, disclosed.  Every admissible identification is "
-        "an element of the declared admitted set, which is measured closed "
-        "under composition, so the confinement of the defect is "
-        "analytically forced.  Membership is forced only where that set is "
-        "contained in the holonomy group -- the two symmetric settings.  At "
-        "the four settings whose connection is measured FLAT the admitted "
-        "set is measured NOT contained in the trivial group, so each of the "
-        "%d triangles there could have carried a defect that no bigon "
-        "generates, a pure level-2 obstruction at a flat setting, and the "
-        "gate measures that none does.  Stated at the committed finite "
-        "scope, at the declared admission scope, at the declared triple "
-        "structure, at the pinned completion, per coordinate; nothing is "
-        "claimed about nature."
+        "CENSUS AT THE ABELIAN ATLAS.  %d admissible triangles -- every "
+        "ordered triple of distinct charts, every assignment of a committed "
+        "gluing rule to each of the three ordered edges, every declared "
+        "coordinate -- with the size computed twice by GENUINELY INDEPENDENT "
+        "routes, the chart-triple walk against a relational join over an "
+        "independently drawn edge list, gated equal cell by cell and gated "
+        "against the arena's own coordinate set, at %d of the %d declared "
+        "coordinate cells.  THE DEFECT SET has %d members: %s.  THE "
+        "MEMBERSHIP QUESTION.  Every defect lies in the bigon-generated "
+        "holonomy group at its own setting: %d outside, of %d -- reported as "
+        "a DISCLOSURE, because it could not have been otherwise.  The "
+        "reading is stronger than membership and is gated as an if and only "
+        "if: every non-identity defect is measured EQUAL to the multiplicity "
+        "bigon's holonomy at its own coordinate, and every coordinate "
+        "carrying no such bigon carries only identity defects -- so level "
+        "two adds no VALUE to level one at THIS atlas.  The defect set "
+        "generates a group of order %s, a PROPER subgroup of the order-4 "
+        "group at the symmetric settings; that D and W.D are not triangle "
+        "defects is FORCED and is disclosed as such -- they lie in no "
+        "declared search scope, and the scopes are groups.  WHAT IS FORCED "
+        "AND WHAT IS FREE, separated.  The whole membership zero at this "
+        "atlas is forced by the mechanism stack.  What was free here is the "
+        "PAIR TABLE -- which coordinates carry multiplicity, %d rule-inert "
+        "coordinates of %d -- and what is free at the level of the unit's "
+        "question is the extension atlas's escape count, which had to be "
+        "realised by admissible triangles and is measured to be.  Stated at "
+        "the committed finite scope, at base G's declared 216-element "
+        "extension admission scope, at the atlas the declared chart rule "
+        "generates from the group that scope admits, at the pinned "
+        "completion, per coordinate; nothing is claimed about nature."
         % (cf["distinct_members"],
            cd["at_the_exchange_equivariant_completion"]
              ["distinct_charts_per_setting"]["GP-E"],
@@ -3560,9 +5237,10 @@ def main():
            mb["defect_set_size"], ", ".join(mb["defect_set_names"]),
            mb["defects_outside_the_bigon_group"], mb["denominator"],
            mb["the_group_the_defect_set_generates"],
-           mb["triangles_at_those_settings"]))
+           mech["rule_inert_coordinates"]["count"],
+           mech["rule_inert_coordinates"]["denominator"]))
 
-    run_verdict(rows, membership)
+    run_verdict(rows, membership, ext)
     run_declaration_order()
     run_exemption_sweep()
     run_exactness()
