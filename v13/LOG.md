@@ -8536,3 +8536,14 @@ set_int_max_str_digits a verified no-op.  PANEL COMPLETE:
 3× AWF; ~286 recomputations + adversarial batteries; zero
 number errors; the verdict survives all three lenses.
 Adjudication next.
+
+## 2026-08-08 — BRG JOINT ADJUDICATION: ACCEPT-WITH-MAJOR-REPAIRS;
+## B-1..B-7 ORDERED (v13 LEDGER #273)
+note-brg-adjudication.md committed.  The verdict survives;
+the theorem strengthened to the one-law family; the two
+obstructions named; the unreported FOUNDs reported at their
+honest standard w/ the vacuity reconciliation; the sector
+concentration + the p-declaration crux registered as the
+opens; the adjudicator's #267 overstatement owned; the
+instrument brought under the full modern rules.  STATUS
+updated this commit.  Repair dispatch next.
