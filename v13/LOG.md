@@ -8685,3 +8685,19 @@ the not-a-group / K5 the self-anchor honesty + the control's
 scope + route independence).  Frozen SHAs in the freeze output
 with this commit.  Three-lens panel (Opus 5) dispatched
 immediately after — running beside the LCB construction.
+
+## 2026-08-08 — TB3 PANEL DISPATCHED (v13 LEDGER #280)
+Three-lens panel dispatched (Opus 5, parallel-safe with LCB):
+R1 operator (the ord census + the four target groups NAMED
+incl. the 15,120 and the 360-order commutator subgroup; the
+generalized law at 54/54 + the two-wing coherence
+restriction); R2 effectus (GENERALIZES-vs-HOLDS naming; the
+semidirect meaning; **the cross-unit spark: 15,120 =
+2⁴·3³·5·7 — the bridge primes 5 AND 7 divide it: does TB3's
+family reopen BRG's live cells at three wings, and does the
+paper notice?**; the criterion correction vs COC's scope; the
+GHZ/W framing); R3 instrument (the 576 self-anchors audited;
+the two-wing control's scope vs the ord-2-unrealizable gap;
+route independence per #234; the inert-clauses re-targeting).
+Reviews frozen on return.  Five agents in flight: TB3 panel
+×3 + LCB construction + (none other).
