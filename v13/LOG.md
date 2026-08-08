@@ -8279,3 +8279,17 @@ in count coordinates, gated); the cross-term boundary is
 G09's theorem; the bridge question is formally OPEN with its
 successor requirements in §14.**  Successor: the BRG
 (morphism-census bridge) unit — pinned next.
+
+## 2026-08-08 — BRG (MORPHISM-CENSUS BRIDGE) PINNED + DISPATCHED
+## (v13 LEDGER #263)
+note-brg-bridge-pin.md frozen this commit: the
+spacetime-from-vs-alongside question posed properly at last —
+a declared carrier functor; a morphism CENSUS over a declared
+finite scope w/ the preservation predicate as data; two-way
+gates (FOUND requires held-out predictive verification; EMPTY
+requires exhaustiveness w/ the obstruction named; both
+reachable w/ mutants proving it); arena-invariance gating
+(prime-tracking candidates gated out — the #246 lesson
+structural).  The record-is-metric ↔ completion-encoding
+dictionary the declared lead.  Construction dispatch with
+this commit (Opus 5, freeze-on-delivery, brg_* namespace).
