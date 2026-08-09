@@ -1808,3 +1808,18 @@ doctrine for census units. A precheck-level quantity may gate
 which candidates are censused, but may never by itself name
 the verdict. Verdict-naming facts must be measured on the
 censused objects.
+
+**§14 addendum (2026-08-09, from v14 #10 — containment is not
+equality):** a verdict gate compares the complete emitted
+string for equality against a string rebuilt segment-by-
+segment from the measured values; substring, prefix, or
+containment checks are not verdict gates (the R1 INJ_B/C/E
+class: value-name swaps, typed segments, and appended text
+all survived containment).
+
+**§13 addendum (2026-08-09, from v14 #10 — render from the
+gated object):** the object the gates check must be the
+object the receipt and paper render from — one object, one
+source of truth; a rendering path that bypasses the gated
+object is an ungated verdict (the R1 INJ_D class: a corrupted
+trajectory cell reached the delivered receipt at exit 0).

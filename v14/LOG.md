@@ -255,3 +255,40 @@ Sound: G33 legitimate; the boundary-parity degenerate probe
 a REAL death certificate (ablation lets parity-lax survive);
 cache gating non-vacuous; byte-identity reproduced.
 **PANEL COMPLETE: 3× AWF.**  Joint adjudication next.
+
+## 2026-08-09 — R1 JOINT ADJUDICATION (v14 LEDGER #10)
+note-r1-adjudication.md (`4115dcd83cfa`) committed.  Grade AWF
+unanimous (~1,878 recomputations + ~64,000 sweeps + 220
+process executions; zero numerical disagreements; zero false
+numbers) — and THE LARGEST MEANING CORRECTION OF v14 SO FAR.
+Settled mathematics: the copy-forcing theorem (proved twice +
+instrument-corroborated; 37/27 and 20/37 HOLD AT m=1, nothing
+converges, the window carries one block census); the paper's
+mechanism sentence FALSE AS WRITTEN (MX_m counterexample —
+the hypothesis is ISOMORPHIC copying); the atlas
+VERDICT-DETERMINING (Atlas-C flips the head to
+NO-CONTINUUM-LIMIT; ALT-D → UNDEFINED); the gateway FORCED
+(R2-C: φ<1 cannot fail; A₁ attains the forced maximum =
+least local; componentwise completeness ≡ 1 — the inherited
+requirement met in letter, defeated in purpose; GATEWAY
+WITHDRAWN → NONE-EARNED; R2-A gives the successor recipe:
+locality only by declared PARTIAL orbit overlap — cliques
+are all there is under regular-orbit drawing, 43,537/43,537).
+Twelve binding orders R-R1-1..12 (the verdict rewrite to
+R1-STABILIZES-BY-DISJOINT-COPYING w/ atlas as named
+coordinate; the theorem + MX_m shipped; #208
+reclassifications incl. the eigenvalue chain's
+different-operator disclosure; the five injection-class gate
+hardenings + five mutants; the sixth stabilizer; both
+denominators; tail reading; paper rewrite; the
+continuum-question scoping note).  TWO RUNBOOK ENGRAVINGS:
+§14 containment-is-not-equality; §13 render-from-the-gated-
+object.  ADJUDICATOR'S OWN ACCOUNT: the pin's gateway
+criterion was degenerate BY DESIGN (mine); the pin's
+invariant wording ambiguous (mine); my reports narrated
+"locality everywhere" + "first stabilized constants" before
+the panel ruled — the FIFTH
+coordinator-narrative-outran-measurement instance (#241,
+#267, exclusive-Fano, scale-thesis, this); standing sentence
+adopted: between delivery and adjudication, headline readings
+are CANDIDATE readings.  Repair worker next.
