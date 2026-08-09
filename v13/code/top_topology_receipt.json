@@ -1732,7 +1732,7 @@
    "id": "A-TG-NODES-equivariant completion",
    "passed": true,
    "quantity": "transport nodes at equivariant completion",
-   "source": "TB3 committed receipt"
+   "source": "DECLARED-STRUCTURAL (a size forced by the declared base)"
   },
   {
    "computed": 99,
@@ -1764,7 +1764,7 @@
    "id": "A-TG-NODES-a different declared transposition",
    "passed": true,
    "quantity": "transport nodes at a different declared transposition",
-   "source": "TB3 committed receipt"
+   "source": "DECLARED-STRUCTURAL (a size forced by the declared base)"
   },
   {
    "computed": 111,
@@ -1796,7 +1796,7 @@
    "id": "A-TG-NODES-an asymmetric setting",
    "passed": true,
    "quantity": "transport nodes at an asymmetric setting",
-   "source": "TB3 committed receipt"
+   "source": "DECLARED-STRUCTURAL (a size forced by the declared base)"
   },
   {
    "computed": 75,
@@ -1825,8 +1825,9 @@
  ],
  "base_commit": "e82c647",
  "findings": {
-  "manifold_verdict": "TOP-MANIFOLD-READING-CONSISTENT<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>",
-  "selector_verdict": "TOP-FANO-SELECTOR-NOT-FOUND<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit>",
+  "cross_cell_outcome": "CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS",
+  "manifold_verdict": "TOP-MANIFOLD-READING-CONSISTENT-AT-3-OF-5-INSTANCES-DIMENSIONS-11-AND-35-LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; the drawn table of that instance is measured to have 1 chart-orbit(s) under its 36 measured automorphisms, so chart-independence there is FORCED and is entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>",
+  "selector_verdict": "TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-TRANSPOSITION-CLASS<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus at the declared P* = ACB holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit.  The locus is an ARENA COORDINATE: the 3 transposition symmetries agree at locus 384 / on-locus 48, the 2 3-cycles give locus 270 / on-locus 0, so both counts are P*-relative and only the 252 completions reaching GL(3,2) as a set are not>",
   "the_verdicts_declared_scope": [
    "at TB3's declared finite three-wing base, rebuilt from its section-2 declaration",
    "at the five declared A3 atlas instances, the reference instance being psi-G1 at TB-000 with the rule-selected completion",
@@ -1834,8 +1835,8 @@
    "at the exhaustive 5,040-member completion family for the selector census",
    "over F_2 coefficients only -- no integral torsion is computed or claimed"
   ],
-  "thesis": "THE ATLAS HAS A SHAPE AND IT IS NOT A MANIFOLD'S.  At the reference instance the overlap graph is COMPLETE, so the simplicial nerve is a full simplex and contractible; all of the atlas's topology lives in the COORDINATE-RESOLVED nerve, which is connected with b_1 = 140 and b_2 = 199123 over F_2.  That b_1 is measured, by a second route that shares no code with the first, to be ENTIRELY the gluing of the checkpoints: each checkpoint's own sub-nerve is simply connected, and the whole first homology is (checkpoints - 1) x (charts - 1).  The local-dimension estimator is chart-independent -- one reading everywhere -- but the link is not a circle, so the uniformity is not manifoldhood, and the declared 2-sphere and 2-torus controls show what the difference looks like.  The wing factor acts freely on the charts and not on the higher cells, and the quotient's Euler characteristic differs from chi(N)/6 by exactly the correction the fixed-cell census forces.  THE FANO RUNG IS NOT SELECTED BY ITS LOCUS: of thirteen declared candidates none passes all three clauses, only 48 of the 384 order-2 completions reach GL(3,2), and GL(3,2) is reached at 252 completions spread across four defect orders -- the exclusivity of the visit is a property of the lex-first SELECTION RULE, not of the order-2 locus.",
-  "unit_verdict": "TOP-GLOBAL-STRUCTURE-<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>"
+  "thesis": "THE ATLAS HAS A SHAPE AND IT IS NOT A MANIFOLD'S.  At the reference instance the overlap graph is COMPLETE, so the simplicial nerve is the whole chart set, a cone, contractible; whatever topology the atlas has lives in the COORDINATE-RESOLVED nerve, which is connected with b_1 = 140 and b_2 = 199123 over F_2.  WHAT b_1 MEASURES IS THE COORDINATE GRID, not the identifications: it equals (read times - 1) x (charts - 1) = 140 whenever each read time is connected and simply connected, and the SCRAMBLED negative control -- whose identification data is destroyed -- returns 140 as well, while b_2 moves from 199123 to 81748.  A read time's own topology is measured to be exactly the NESTING of the two rules' block partitions.  And the degree-one classes are measured NOT to be a cross-read-time obstruction: filling only the digons whose two drawn maps AGREE already reduces b_1 to 0, so the surviving cycles are an artifact of the declared same-checkpoint 2-cell scope.  The local-dimension estimator is chart-independent at the reference -- but the drawn table there is chart-transitive under 36 measured automorphisms with 1 orbit, so that uniformity is FORCED and is a disclosure; what is measured is the contrast at the two instances where the table is not chart-transitive and the estimator splits the charts.  The link is never a circle, so uniformity is not manifoldhood.  The wing factor acts freely on the charts and not on the higher cells, and the quotient's Euler characteristic differs from chi(N)/6 by exactly the correction the fixed-cell census forces.  THE FANO RUNG IS NOT SELECTED BY ITS LOCUS: of thirteen declared names -- 11 distinct predicates -- none passes all three clauses, only 48 of the 384 order-2 completions reach GL(3,2), and GL(3,2) is reached at 252 completions spread across four defect orders.  The locus itself is P*-RELATIVE: at a 3-cycle wing symmetry it holds 270 completions of which 0 reach GL(3,2).  The exclusivity of the visit is a property of the lex-first SELECTION RULE, not of the order-2 locus, and no purely order-theoretic condition captures it -- the finest one measured still admits 432 false positives.",
+  "unit_verdict": "TOP-GLOBAL-STRUCTURE-OF-THE-COORDINATE-RESOLVED-NERVE-DEGREE-1-IS-THE-COORDINATE-COUNT-4x35-UNMOVED-BY-THE-SCRAMBLE<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); b_1 = (T-1)(|V|-1) = 4 x 35 = 140 and the scrambled control returns b_1 = 140 as well, so degree one is the coordinate count and only b_2 (199123 -> 81748) sees the identification data; the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>"
  },
  "gates": [
   {
@@ -1923,31 +1924,101 @@
    }
   },
   {
-   "claim": "THE COHERENT 2-CELLS ARE COUNTED TWICE, INDEPENDENTLY.  A 2-cell is coherent when its three drawn maps compose to the identity -- the strict cocycle condition.  Route 1 flags it while the cell is built; route 2 reads the ORDERED DEFECT MULTISET, itself anchored against the committed receipt, and takes the entry at the identity.  The two are gated equal through the exact traversal multiplicity at every instance, so a coherence test that answered yes to everything would be caught by a census it does not touch",
+   "claim": "THE COHERENT 2-CELL COUNT IS ONE ROUTE, EXTERNALLY ANCHORED -- and the instrument says so rather than claiming two.  A 2-cell is coherent when its three drawn maps compose to the identity, the strict cocycle condition.  The count is flagged while the cell is built; the ORDERED DEFECT MULTISET's entry at the identity is NOT an independent second census of it, because the three traversal defects are CONJUGATE -- d_2 = p_1 d_1 p_1^-1 and d_3 = (p_2 p_1) d_1 (p_2 p_1)^-1, MEASURED here at every 2-cell of every instance -- so the pattern (d_1,d_2,d_3) is never mixed and the identity entry is IDENTICALLY six times the coherent count (RUNBOOK section 13 addendum, #234: a pair related by an algebraic identity is one route).  What the second computation buys is not independence but an EXTERNAL ANCHOR: the multiset is gated exit-1 against TB3's committed receipt, so the coherent count is pinned to bytes outside this file.  The `coh-lax` mutant answers yes to every triangle and must die on that anchored relation.  The conjugacy itself is ANALYTICALLY FORCED -- p_1 (p_3 p_2 p_1) p_1^-1 = p_1 p_3 p_2 for any three maps -- so it is computed and recorded as evidence and enters TOP-FORCED-CLAUSES as a disclosure, never as a must-pass clause of this gate",
    "class": "measurement",
    "id": "TOP-COHERENCE",
    "passed": true,
    "value": {
-    "a W-class preparation at a fully symmetric setting": [
-     249120,
-     249120
-    ],
-    "a partially symmetric setting": [
-     249120,
-     249120
-    ],
-    "an asymmetric setting": [
-     216720,
-     216720
-    ],
-    "the declared base at a fully symmetric setting": [
-     508320,
-     508320
-    ],
-    "the equivariant-completion control": [
-     600,
-     600
-    ]
+    "six_times_the_coherent_count_against_the_multiset_identity_entry": {
+     "a W-class preparation at a fully symmetric setting": [
+      249120,
+      249120
+     ],
+     "a partially symmetric setting": [
+      249120,
+      249120
+     ],
+     "an asymmetric setting": [
+      216720,
+      216720
+     ],
+     "the declared base at a fully symmetric setting": [
+      508320,
+      508320
+     ],
+     "the equivariant-completion control": [
+      600,
+      600
+     ]
+    },
+    "the_conjugacy_that_makes_it_one_route": {
+     "a W-class preparation at a fully symmetric setting": {
+      "the_pattern_is_never_mixed": true,
+      "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+      "the_traversal_defect_patterns": {
+       "(False,False,False)": 15696,
+       "(True,True,True)": 41520
+      }
+     },
+     "a partially symmetric setting": {
+      "the_pattern_is_never_mixed": true,
+      "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+      "the_traversal_defect_patterns": {
+       "(False,False,False)": 15696,
+       "(True,True,True)": 41520
+      }
+     },
+     "an asymmetric setting": {
+      "the_pattern_is_never_mixed": true,
+      "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+      "the_traversal_defect_patterns": {
+       "(True,True,True)": 36120
+      }
+     },
+     "the declared base at a fully symmetric setting": {
+      "the_pattern_is_never_mixed": true,
+      "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+      "the_traversal_defect_patterns": {
+       "(False,False,False)": 119664,
+       "(True,True,True)": 84720
+      }
+     },
+     "the equivariant-completion control": {
+      "the_pattern_is_never_mixed": true,
+      "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+      "the_traversal_defect_patterns": {
+       "(True,True,True)": 100
+      }
+     }
+    }
+   }
+  },
+  {
+   "claim": "THE ADMISSION RELATION IS MEASURED SYMMETRIC, not assumed.  A 1-cell is drawn for the unordered pair (a,b) from the ORDERED entry with a < b, so if admission were not symmetric the whole complex would depend on the chart indexing.  The relation is measured symmetric at all 10 coordinate cells of all 5 declared instances, and the `sym-lax` mutant deletes one direction of one admitted pair and must die here",
+   "class": "measurement",
+   "id": "TOP-PAIR-SYMMETRY",
+   "passed": true,
+   "value": {
+    "a W-class preparation at a fully symmetric setting": {
+     "cells_whose_drawn_relation_is_not_symmetric": [],
+     "the_relation_is_symmetric_at_every_cell": true
+    },
+    "a partially symmetric setting": {
+     "cells_whose_drawn_relation_is_not_symmetric": [],
+     "the_relation_is_symmetric_at_every_cell": true
+    },
+    "an asymmetric setting": {
+     "cells_whose_drawn_relation_is_not_symmetric": [],
+     "the_relation_is_symmetric_at_every_cell": true
+    },
+    "the declared base at a fully symmetric setting": {
+     "cells_whose_drawn_relation_is_not_symmetric": [],
+     "the_relation_is_symmetric_at_every_cell": true
+    },
+    "the equivariant-completion control": {
+     "cells_whose_drawn_relation_is_not_symmetric": [],
+     "the_relation_is_symmetric_at_every_cell": true
+    }
    }
   },
   {
@@ -1962,6 +2033,396 @@
     "BCA": 132192,
     "CAB": 132192,
     "CBA": 151200
+   }
+  },
+  {
+   "claim": "A READ TIME'S OWN TOPOLOGY IS THE NESTING OF THE TWO RULES' PARTITIONS, and that is a THIRD route to the per-checkpoint numbers, taken with no elimination at all.  At each checkpoint the FULL and REALIZED rules partition the charts into the components of their drawn relations; the bipartite BLOCK-INCIDENCE GRAPH joins two blocks that share a chart, and its b_0 and its cycle rank are measured EQUAL to the sub-nerve's b_0 and b_1 at every one of the 25 (instance, checkpoint) pairs.  So `every checkpoint sub-nerve has vanishing first homology' says exactly `at every read time the two block partitions are NESTED, their incidence graph a forest' -- and where they are not nested, at checkpoints 2 and 3 of the partially symmetric and W-class instances, the incidence graph carries the cycle the sub-nerve carries.  The comparator touches neither the sub-complex nor its elimination (RUNBOOK section 14 addendum, #219).  The `block-lax` mutant builds the incidence graph from one rule's partition alone and must die here",
+   "class": "measurement",
+   "id": "TOP-BLOCK-INCIDENCE",
+   "passed": true,
+   "value": {
+    "per_instance": {
+     "a W-class preparation at a fully symmetric setting": {
+      "agrees": true,
+      "per_checkpoint": {
+       "0": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "1": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "2": {
+        "b0_of_the_incidence_graph": 2,
+        "blocks_per_rule": [
+         3,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 1,
+        "incidence_E": 5,
+        "incidence_V": 6
+       },
+       "3": {
+        "b0_of_the_incidence_graph": 2,
+        "blocks_per_rule": [
+         3,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 1,
+        "incidence_E": 5,
+        "incidence_V": 6
+       },
+       "4": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       }
+      }
+     },
+     "a partially symmetric setting": {
+      "agrees": true,
+      "per_checkpoint": {
+       "0": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "1": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "2": {
+        "b0_of_the_incidence_graph": 2,
+        "blocks_per_rule": [
+         3,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 1,
+        "incidence_E": 5,
+        "incidence_V": 6
+       },
+       "3": {
+        "b0_of_the_incidence_graph": 2,
+        "blocks_per_rule": [
+         3,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 1,
+        "incidence_E": 5,
+        "incidence_V": 6
+       },
+       "4": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         3
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       }
+      }
+     },
+     "an asymmetric setting": {
+      "agrees": true,
+      "per_checkpoint": {
+       "0": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         6
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "1": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         6
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "2": {
+        "b0_of_the_incidence_graph": 3,
+        "blocks_per_rule": [
+         3,
+         6
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 9
+       },
+       "3": {
+        "b0_of_the_incidence_graph": 3,
+        "blocks_per_rule": [
+         3,
+         6
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 9
+       },
+       "4": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         6
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       }
+      }
+     },
+     "the declared base at a fully symmetric setting": {
+      "agrees": true,
+      "per_checkpoint": {
+       "0": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 1,
+        "incidence_V": 2
+       },
+       "1": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 1,
+        "incidence_V": 2
+       },
+       "2": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         3,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "3": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         3,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 3,
+        "incidence_V": 4
+       },
+       "4": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         1,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 1,
+        "incidence_V": 2
+       }
+      }
+     },
+     "the equivariant-completion control": {
+      "agrees": true,
+      "per_checkpoint": {
+       "0": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         6,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "1": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         6,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "2": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         6,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "3": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         6,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       },
+       "4": {
+        "b0_of_the_incidence_graph": 1,
+        "blocks_per_rule": [
+         6,
+         1
+        ],
+        "cycle_rank_of_the_incidence_graph": 0,
+        "incidence_E": 6,
+        "incidence_V": 7
+       }
+      }
+     }
+    },
+    "the_instance_checkpoint_pairs_compared": 25,
+    "the_route_agrees_at_every_pair": true
+   }
+  },
+  {
+   "claim": "DO THE MAPS DRAWN FOR ONE PAIR AGREE ACROSS COORDINATE CELLS, AND WHAT DOES THAT DECIDE?  Declared in D3b before it was run, with BOTH outcomes pre-registered and neither favoured.  Two charts identified at k coordinate cells carry k parallel 1-cells and C(k,2) digons; a digon is COHERENT when its two drawn maps agree.  The digon census is gated complete against the multiplicities (sum of C(k,2)); the pair-level agreement is computed TWICE, once from the set of drawn maps and once from the digon flags, and the two must agree at every pair -- the `digon-lax` mutant calls every digon coherent and must die on that differential.  The same-checkpoint digons are measured to kill NOTHING, so no degree-one class compares two rules at one read time.  The OUTCOME is then re-derived inside this gate from the measured residual b_1 that survives filling the COHERENT cross-read-time digons, and gated byte-for-byte against the emitted one; the `crosscell-typed` mutant emits the other outcome with the tables unchanged and must die here.  The gate checks the DERIVATION, not a favoured value",
+   "class": "derivation",
+   "id": "TOP-CROSS-CELL",
+   "passed": true,
+   "value": {
+    "per_instance": {
+     "a W-class preparation at a fully symmetric setting": {
+      "b1_of_N": 140,
+      "b1_with_every_coherent_digon_filled": 0,
+      "b1_with_every_cross_checkpoint_digon_filled": 0,
+      "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+      "b1_with_the_same_checkpoint_digons_filled": 140,
+      "cross_checkpoint_digons": 8532,
+      "cross_checkpoint_digons_that_are_coherent": 6948,
+      "digons_built": 9378,
+      "digons_expected_from_the_multiplicities": 9378,
+      "pairs_drawn_at_two_or_more_cells": 630,
+      "pairs_whose_drawn_maps_all_agree": 522,
+      "pairs_whose_drawn_maps_disagree_somewhere": 108,
+      "same_checkpoint_digons": 846,
+      "same_checkpoint_digons_that_are_coherent": 450,
+      "the_same_count_from_the_digon_flags": 522,
+      "the_two_agreement_routes_disagree_at": 0
+     },
+     "a partially symmetric setting": {
+      "b1_of_N": 140,
+      "b1_with_every_coherent_digon_filled": 0,
+      "b1_with_every_cross_checkpoint_digon_filled": 0,
+      "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+      "b1_with_the_same_checkpoint_digons_filled": 140,
+      "cross_checkpoint_digons": 8532,
+      "cross_checkpoint_digons_that_are_coherent": 6948,
+      "digons_built": 9378,
+      "digons_expected_from_the_multiplicities": 9378,
+      "pairs_drawn_at_two_or_more_cells": 630,
+      "pairs_whose_drawn_maps_all_agree": 522,
+      "pairs_whose_drawn_maps_disagree_somewhere": 108,
+      "same_checkpoint_digons": 846,
+      "same_checkpoint_digons_that_are_coherent": 450,
+      "the_same_count_from_the_digon_flags": 522,
+      "the_two_agreement_routes_disagree_at": 0
+     },
+     "an asymmetric setting": {
+      "b1_of_N": 136,
+      "b1_with_every_coherent_digon_filled": 0,
+      "b1_with_every_cross_checkpoint_digon_filled": 0,
+      "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+      "b1_with_the_same_checkpoint_digons_filled": 136,
+      "cross_checkpoint_digons": 5868,
+      "cross_checkpoint_digons_that_are_coherent": 5868,
+      "digons_built": 6318,
+      "digons_expected_from_the_multiplicities": 6318,
+      "pairs_drawn_at_two_or_more_cells": 630,
+      "pairs_whose_drawn_maps_all_agree": 630,
+      "pairs_whose_drawn_maps_disagree_somewhere": 0,
+      "same_checkpoint_digons": 450,
+      "same_checkpoint_digons_that_are_coherent": 450,
+      "the_same_count_from_the_digon_flags": 630,
+      "the_two_agreement_routes_disagree_at": 0
+     },
+     "the declared base at a fully symmetric setting": {
+      "b1_of_N": 140,
+      "b1_with_every_coherent_digon_filled": 0,
+      "b1_with_every_cross_checkpoint_digon_filled": 0,
+      "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+      "b1_with_the_same_checkpoint_digons_filled": 140,
+      "cross_checkpoint_digons": 18612,
+      "cross_checkpoint_digons_that_are_coherent": 11268,
+      "digons_built": 20898,
+      "digons_expected_from_the_multiplicities": 20898,
+      "pairs_drawn_at_two_or_more_cells": 630,
+      "pairs_whose_drawn_maps_all_agree": 90,
+      "pairs_whose_drawn_maps_disagree_somewhere": 540,
+      "same_checkpoint_digons": 2286,
+      "same_checkpoint_digons_that_are_coherent": 450,
+      "the_same_count_from_the_digon_flags": 90,
+      "the_two_agreement_routes_disagree_at": 0
+     },
+     "the equivariant-completion control": {
+      "b1_of_N": 20,
+      "b1_with_every_coherent_digon_filled": 0,
+      "b1_with_every_cross_checkpoint_digon_filled": 0,
+      "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+      "b1_with_the_same_checkpoint_digons_filled": 20,
+      "cross_checkpoint_digons": 150,
+      "cross_checkpoint_digons_that_are_coherent": 150,
+      "digons_built": 150,
+      "digons_expected_from_the_multiplicities": 150,
+      "pairs_drawn_at_two_or_more_cells": 15,
+      "pairs_whose_drawn_maps_all_agree": 15,
+      "pairs_whose_drawn_maps_disagree_somewhere": 0,
+      "same_checkpoint_digons": 0,
+      "same_checkpoint_digons_that_are_coherent": 0,
+      "the_same_count_from_the_digon_flags": 15,
+      "the_two_agreement_routes_disagree_at": 0
+     }
+    },
+    "the_outcome": "CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS",
+    "the_outcome_re_derived_in_this_gate": "CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS",
+    "the_two_are_byte_identical": true
    }
   },
   {
@@ -2038,49 +2499,137 @@
    }
   },
   {
-   "claim": "DISCLOSURE, ANALYTICALLY FORCED.  chi computed from the Betti numbers equals chi computed from the cell counts for EVERY input, because the ranks cancel identically; it is printed as evidence that the ranks were assembled consistently and is NOT a second route to chi.  Likewise d_1 d_2 = 0 holds by construction for a simplicial boundary and is recorded, not gated",
+   "claim": "DISCLOSURE, ANALYTICALLY FORCED.  chi computed from the Betti numbers equals chi computed from the cell counts for EVERY input, because the ranks cancel identically; it is printed as evidence that the ranks were assembled consistently and is NOT a second route to chi.  Likewise d_1 d_2 = 0 holds for EVERY input here by the same algebra -- each 2-cell's three 1-cells are the three sides of a triangle, so their six endpoint bits cancel in pairs -- and the guard that evaluates it is a SAMPLE, capped at the number printed below out of the 2-cell count printed beside it; the argument, not the sample, is what carries it",
    "class": "disclosure",
    "id": "TOP-EULER-POINCARE",
    "passed": true,
    "value": {
-    "a W-class preparation at a fully symmetric setting": [
-     53976,
-     53976,
-     true
-    ],
-    "a partially symmetric setting": [
-     53976,
-     53976,
-     true
-    ],
-    "an asymmetric setting": [
-     33420,
-     33420,
-     true
-    ],
-    "the declared base at a fully symmetric setting": [
-     198984,
-     198984,
-     true
-    ],
-    "the equivariant-completion control": [
-     31,
-     31,
-     true
-    ]
+    "a W-class preparation at a fully symmetric setting": {
+     "chi_from_betti": 53976,
+     "chi_from_cell_counts": 53976,
+     "d1_d2_zero_on_the_sample": true,
+     "the_2_cells_in_all": 57216,
+     "the_sample_cap": 2000
+    },
+    "a partially symmetric setting": {
+     "chi_from_betti": 53976,
+     "chi_from_cell_counts": 53976,
+     "d1_d2_zero_on_the_sample": true,
+     "the_2_cells_in_all": 57216,
+     "the_sample_cap": 2000
+    },
+    "an asymmetric setting": {
+     "chi_from_betti": 33420,
+     "chi_from_cell_counts": 33420,
+     "d1_d2_zero_on_the_sample": true,
+     "the_2_cells_in_all": 36120,
+     "the_sample_cap": 2000
+    },
+    "the declared base at a fully symmetric setting": {
+     "chi_from_betti": 198984,
+     "chi_from_cell_counts": 198984,
+     "d1_d2_zero_on_the_sample": true,
+     "the_2_cells_in_all": 204384,
+     "the_sample_cap": 2000
+    },
+    "the equivariant-completion control": {
+     "chi_from_betti": 31,
+     "chi_from_cell_counts": 31,
+     "d1_d2_zero_on_the_sample": true,
+     "the_2_cells_in_all": 100,
+     "the_sample_cap": 2000
+    }
    }
   },
   {
-   "claim": "THE SIMPLICIAL NERVE IS A FULL SIMPLEX AT THE REFERENCE INSTANCE, hence contractible.  Every coordinate cell's overlap graph is MEASURED to be a disjoint union of complete graphs, so the faces are exactly the subsets of those components; at the reference instance eight of the ten cells give the whole chart set, so the unique maximal face is everything.  Its Euler characteristic is computed as the alternating binomial sum over all non-empty subsets and is measured to be 1, which the cone argument predicts",
+   "claim": "DISCLOSURE, ALGEBRAICALLY FORCED -- WHAT b_1 = 140 ACTUALLY SAYS.  Rearranging the gluing formula, b_1(N) - (T-1)(|V|-1) = sum_t b_1^t - ( sum_t b_0^t - T ), so b_1 equals the pure COORDINATE COUNT (read times minus one) x (charts minus one) exactly when the per-checkpoint excess sum_t b_0^t - T equals sum_t b_1^t.  That equivalence is an identity, not a measurement: the measured content of the degree-one claim is the per-checkpoint census (sum b_0, sum b_1) recorded above, and nothing else.  Four of the five declared instances return the coordinate count, the asymmetric setting does not, and -- printed here rather than worked around -- the SCRAMBLED negative control returns it too, so b_1 is insensitive to the identification data while b_2 is not.  The identification-carrying invariants are b_2 and the coherent sub-nerve",
+   "class": "disclosure",
+   "id": "TOP-COORDINATE-COUNT",
+   "passed": true,
+   "value": {
+    "a W-class preparation at a fully symmetric setting": {
+     "T_minus_1_times_V_minus_1": 140,
+     "b1": 140,
+     "b1_equals_the_coordinate_count": true,
+     "charts": 36,
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 7,
+     "sum_of_per_checkpoint_b1": 2
+    },
+    "a partially symmetric setting": {
+     "T_minus_1_times_V_minus_1": 140,
+     "b1": 140,
+     "b1_equals_the_coordinate_count": true,
+     "charts": 36,
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 7,
+     "sum_of_per_checkpoint_b1": 2
+    },
+    "an asymmetric setting": {
+     "T_minus_1_times_V_minus_1": 140,
+     "b1": 136,
+     "b1_equals_the_coordinate_count": false,
+     "charts": 36,
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 9,
+     "sum_of_per_checkpoint_b1": 0
+    },
+    "the declared base at a fully symmetric setting": {
+     "T_minus_1_times_V_minus_1": 140,
+     "b1": 140,
+     "b1_equals_the_coordinate_count": true,
+     "charts": 36,
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 5,
+     "sum_of_per_checkpoint_b1": 0
+    },
+    "the equivariant-completion control": {
+     "T_minus_1_times_V_minus_1": 20,
+     "b1": 20,
+     "b1_equals_the_coordinate_count": true,
+     "charts": 6,
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 5,
+     "sum_of_per_checkpoint_b1": 0
+    }
+   }
+  },
+  {
+   "claim": "THE SIMPLICIAL NERVE IS THE WHOLE CHART SET, hence a cone, hence contractible.  Every coordinate cell's overlap graph is MEASURED to be a disjoint union of complete graphs, so the faces are exactly the subsets of those components; the measured content is then that the UNIQUE MAXIMAL FACE IS THE WHOLE CHART SET at every declared instance -- gated here as maximal_face_sizes == [charts], which is the number the unit defends and which a smaller maximal face would break.  The alternating binomial sum is NOT part of this predicate: sum_{j=1..k} (-1)^{j+1} C(k,j) = 1 for every k >= 1, evaluated here at k = 1..40 with a one-element value set, so it is ANALYTICALLY FORCED and is entered in TOP-FORCED-CLAUSES as a disclosure (RUNBOOK section 14 addendum, #208).  The `simp-lax` mutant replaces the maximal face by a proper subset of itself -- a perturbation the binomial clause cannot see and this one does",
    "class": "measurement",
    "id": "TOP-SIMPLICIAL",
    "passed": true,
    "value": {
     "all_cell_graphs_are_unions_of_complete_graphs": true,
-    "chi": 1,
-    "maximal_face_sizes": [
-     36
-    ]
+    "charts": {
+     "a W-class preparation at a fully symmetric setting": 36,
+     "a partially symmetric setting": 36,
+     "an asymmetric setting": 36,
+     "the declared base at a fully symmetric setting": 36,
+     "the equivariant-completion control": 6
+    },
+    "chi_of_the_reference_simplicial_nerve": 1,
+    "maximal_face_sizes": {
+     "a W-class preparation at a fully symmetric setting": [
+      36
+     ],
+     "a partially symmetric setting": [
+      36
+     ],
+     "an asymmetric setting": [
+      36
+     ],
+     "the declared base at a fully symmetric setting": [
+      36
+     ],
+     "the equivariant-completion control": [
+      6
+     ]
+    },
+    "the_alternating_binomial_sum_at_k_1_to_40": [
+     1
+    ],
+    "the_maximal_face_is_the_whole_chart_set": true
    }
   },
   {
@@ -2157,7 +2706,7 @@
    }
   },
   {
-   "claim": "THE DIMENSION VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNT of distinct estimator values, re-derived here independently of the emitter, and the two must agree; the `verdict-flip` mutant moves the emitter alone and must die here.  The estimator is the DECLARED one -- per-coordinate-cell local simplex dimension, star profile and the F_2 homology of the vertex link -- evaluated at EVERY chart, and its per-cell dimension is cross-checked against a component census run in this gate from the pair table alone, a comparator built independently of the estimator it audits.  CONSISTENT means UNIFORM, not manifold: the link is reported beside it and the manifold controls show what a circle link looks like.  The reading is measured INSTANCE-SPECIFIC: it FAILS at two of the five declared instances, whose witnesses are exhibited here, so consistency at the reference is a measurement about that instance and not a property of the construction",
+   "claim": "THE DIMENSION VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED TABLE AND GATED BYTE-FOR-BYTE AGAINST THE EMITTED STRING -- head, computed qualifiers and body alike, not a prefix (RUNBOOK section 13 addendum, #234, and #257: a qualifier is part of the verdict).  The head itself carries the restrictions: how many of the declared instances the reading holds at, which dimensions the profile realises, that no link is a circle, and that chart-independence at the reference is SYMMETRY-FORCED.  The `verdict-flip` mutant moves the branch and the `manifold-typed` mutant moves ONE COMPUTED QUALIFIER of the emitter with every recorded table left at its measured value; both must die here.  The estimator is the DECLARED one -- per-coordinate-cell local simplex dimension, star profile and the F_2 homology of the vertex link -- evaluated at EVERY chart, and ALL THREE components are cross-checked: the per-cell dimension against a component census run from the pair table alone, and the star and the link against a comparator that never touches `local_profiles` and reads the link's homology by union-find and Euler instead of by an F_2 rank, with the global identities sum star_E = 2E and sum star_F = 3F gated beside it.  CONSISTENT means UNIFORM, not manifold.  Whether the uniformity is a MEASUREMENT is itself measured: the drawn table's chart-orbit count under its declared automorphism candidates is reported per instance, and where it is 1 the reading could not have come out otherwise and is entered as a disclosure",
    "class": "derivation",
    "id": "TOP-DIM-READING",
    "passed": true,
@@ -2169,11 +2718,47 @@
      "a partially symmetric setting"
     ],
     "the_estimator_agrees_with_an_independent_component_census": true,
+    "the_link_agrees_with_an_independent_comparator": true,
     "the_local_dimension_is_a_single_number": false,
     "the_local_dimensions_realised": [
      11,
      35
     ],
+    "the_star_agrees_with_an_independent_comparator": true,
+    "the_star_sum_identities": {
+     "a W-class preparation at a fully symmetric setting": {
+      "sum_star_1_cells": 6552,
+      "sum_star_2_cells": 171648,
+      "three_times_the_2_cells": 171648,
+      "twice_the_1_cells": 6552
+     },
+     "a partially symmetric setting": {
+      "sum_star_1_cells": 6552,
+      "sum_star_2_cells": 171648,
+      "three_times_the_2_cells": 171648,
+      "twice_the_1_cells": 6552
+     },
+     "an asymmetric setting": {
+      "sum_star_1_cells": 5472,
+      "sum_star_2_cells": 108360,
+      "three_times_the_2_cells": 108360,
+      "twice_the_1_cells": 5472
+     },
+     "the declared base at a fully symmetric setting": {
+      "sum_star_1_cells": 10872,
+      "sum_star_2_cells": 613152,
+      "three_times_the_2_cells": 613152,
+      "twice_the_1_cells": 10872
+     },
+     "the equivariant-completion control": {
+      "sum_star_1_cells": 150,
+      "sum_star_2_cells": 300,
+      "three_times_the_2_cells": 300,
+      "twice_the_1_cells": 150
+     }
+    },
+    "the_two_strings_are_byte_identical": true,
+    "the_verdict_rebuilt_from_the_recorded_table": "TOP-MANIFOLD-READING-CONSISTENT-AT-3-OF-5-INSTANCES-DIMENSIONS-11-AND-35-LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; the drawn table of that instance is measured to have 1 chart-orbit(s) under its 36 measured automorphisms, so chart-independence there is FORCED and is entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>",
     "the_witnesses": {
      "a W-class preparation at a fully symmetric setting": {
       "chart": "ABC|BAC",
@@ -2232,18 +2817,79 @@
       }
      }
     },
-    "verdict": "TOP-MANIFOLD-READING-CONSISTENT<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>"
+    "verdict": "TOP-MANIFOLD-READING-CONSISTENT-AT-3-OF-5-INSTANCES-DIMENSIONS-11-AND-35-LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; the drawn table of that instance is measured to have 1 chart-orbit(s) under its 36 measured automorphisms, so chart-independence there is FORCED and is entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>"
    }
   },
   {
-   "claim": "THE CANDIDATE FAMILY IS FROZEN BEFORE ANY FIXTURE TRUTH.  The thirteen candidate selectors and the three clauses are declared in this source above every measurement, and the count of defect subgroups K(q) built at the moment the declaration is registered is measured to be ZERO.  The `selfreeze-lax` mutant builds one first and must die here",
+   "claim": "WHETHER A CONSISTENT READING IS A MEASUREMENT AT ALL.  The declared estimator is a chart-invariant of the drawn table, so where the drawn table has an automorphism group TRANSITIVE ON CHARTS the reading could not have come out otherwise.  The declared automorphism candidates -- the 36 left translations (sigma, seed) -> (g sigma, h seed) -- are each TESTED against the drawn relation at every coordinate cell, and the chart-orbit count of the ones that pass is measured per instance.  Where the orbit count is 1 the reading is measured CONSISTENT and entered as a DISCLOSURE, not as a measurement (RUNBOOK section 14 addendum, #208); where it is not, the split is a genuine measurement.  This gate carries the implication: every instance whose orbit count is 1 must read CONSISTENT.  The `auto-lax` mutant accepts every candidate without testing it against the drawn table and must die here",
+   "class": "measurement",
+   "id": "TOP-AUTOMORPHISM",
+   "passed": true,
+   "value": {
+    "distinct_estimator_values": {
+     "a W-class preparation at a fully symmetric setting": 2,
+     "a partially symmetric setting": 2,
+     "an asymmetric setting": 1,
+     "the declared base at a fully symmetric setting": 1,
+     "the equivariant-completion control": 1
+    },
+    "per_instance": {
+     "a W-class preparation at a fully symmetric setting": {
+      "chart_orbits": 3,
+      "declared_candidates": 36,
+      "measured_automorphisms": 12
+     },
+     "a partially symmetric setting": {
+      "chart_orbits": 3,
+      "declared_candidates": 36,
+      "measured_automorphisms": 12
+     },
+     "an asymmetric setting": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 36
+     },
+     "the declared base at a fully symmetric setting": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 36
+     },
+     "the equivariant-completion control": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 6
+     }
+    },
+    "the_instances_where_it_is_forced": [
+     "an asymmetric setting",
+     "the declared base at a fully symmetric setting",
+     "the equivariant-completion control"
+    ],
+    "the_instances_whose_reading_is_consistent": [
+     "an asymmetric setting",
+     "the declared base at a fully symmetric setting",
+     "the equivariant-completion control"
+    ]
+   }
+  },
+  {
+   "claim": "THE CANDIDATE FAMILY IS DECLARED ABOVE EVERY MEASUREMENT.  The thirteen candidate selectors and the three clauses are declared in this source above every measurement, and the count of defect subgroups K(q) built at the moment the declaration is registered is measured to be ZERO.  That records the ordering WITHIN ONE EXECUTION; it is NOT offered as proof that the declarations were fixed before any fixture truth was seen, which no in-run measurement can establish -- the process fact is the commit, not this counter.  Each candidate's ORIGIN is one of the declared labels and is gated against them: `pin-derived` means it restates the pin's own order-2-locus language, and is NOT a claim that the pin lists it -- THE PIN CONTAINS NO CANDIDATE LIST.  The `selfreeze-lax` mutant builds a subgroup first and must die here",
    "class": "measurement",
    "id": "TOP-SELECTOR-FREEZE",
    "passed": true,
    "value": {
     "candidates_declared": 13,
     "clauses_declared": 3,
-    "defect_subgroups_built_at_declaration_time": 0
+    "defect_subgroups_built_at_declaration_time": 0,
+    "every_origin_is_a_declared_label": true,
+    "origins_used": [
+     "pin-derived",
+     "worker"
+    ],
+    "the_origin_legend": {
+     "pin-derived": "restates the pin's own order-2-locus language.  THE PIN CONTAINS NO CANDIDATE LIST: no candidate is quoted from it and none may be labelled as if it were",
+     "worker": "introduced by this instrument, in this source, above every measurement"
+    }
    }
   },
   {
@@ -2335,7 +2981,179 @@
    }
   },
   {
-   "claim": "THE SELECTOR VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED CONTINGENCY TABLE.  Each of the thirteen declared candidates is measured on the three declared clauses over the EXHAUSTIVE completion family, and the verdict string is re-derived here from the count of candidates passing all three; the emitter is a separate computation and the two must agree.  Clause (c) is additionally cross-checked against a count taken OUTSIDE the candidate loop -- the number of completions in the whole family whose defect subgroup is F_2-linear -- which no candidate's linear sub-count may exceed; the `sel-clause-lax` mutant reports clause (c) as passing for every candidate and must die on that bound",
+   "claim": "THE MEMOIZATION IS AUDITED.  The census caches the defect subgroup by its generator multiset; the cache is measured to be EXERCISED (the hit count is gated non-zero, so this is not a zero-lookup gate), and a declared sample of 24 completions -- every 211th of the family, chosen by index and not by outcome -- is recomputed FRESH with the cache bypassed, order, linear count and set equality alike.  The `cache-lax` mutant perturbs the value returned on a hit and must die here",
+   "class": "measurement",
+   "id": "TOP-CACHE",
+   "passed": true,
+   "value": {
+    "cache_entries": 2502,
+    "cache_hits": 2538,
+    "the_sample_recomputes_fresh": true,
+    "the_sample_size": 24
+   }
+  },
+  {
+   "claim": "THE LOCUS IS AN ARENA COORDINATE AND THE DEPENDENCE IS MEASURED (RUNBOOK section 15).  The defect d_P(q), the order-2 LOCUS and the defect-order axis of the census are all defined relative to the declared wing symmetry P*, which this instrument selects as the first non-identity element of the enumerated wing group -- a TRANSPOSITION.  All five non-identity symmetries are swept: the three transpositions are measured to AGREE, locus and on-locus count alike, the two 3-cycles are measured to agree with each other and to DIFFER from the transpositions, and every locus is measured non-empty.  So the locus size and the on-locus count are P*-RELATIVE and the verdict says so in its own head; the count of completions reaching GL(3,2) as a set is not, since K does not depend on P*.  The `defect-lax` mutant composes the defect in the wrong order, emptying every locus, and must die here",
+   "class": "measurement",
+   "id": "TOP-PSTAR-SWEEP",
+   "passed": true,
+   "value": {
+    "every_locus_is_non_empty": true,
+    "its_type": "transposition",
+    "per_symmetry": {
+     "ACB": {
+      "K_equals_GL_3_2_by_defect_order": {
+       "1": 4,
+       "2": 48,
+       "3": 72,
+       "4": 128
+      },
+      "on_the_locus_K_equals_GL_3_2": 48,
+      "the_defect_order_distribution": {
+       "1": 48,
+       "2": 384,
+       "3": 1728,
+       "4": 1152,
+       "5": 1152,
+       "6": 576
+      },
+      "the_order_2_locus": 384,
+      "the_type_of_the_symmetry": "transposition"
+     },
+     "BAC": {
+      "K_equals_GL_3_2_by_defect_order": {
+       "1": 4,
+       "2": 48,
+       "3": 72,
+       "4": 128
+      },
+      "on_the_locus_K_equals_GL_3_2": 48,
+      "the_defect_order_distribution": {
+       "1": 48,
+       "2": 384,
+       "3": 1728,
+       "4": 1152,
+       "5": 1152,
+       "6": 576
+      },
+      "the_order_2_locus": 384,
+      "the_type_of_the_symmetry": "transposition"
+     },
+     "BCA": {
+      "K_equals_GL_3_2_by_defect_order": {
+       "3": 72,
+       "4": 72,
+       "7": 108
+      },
+      "on_the_locus_K_equals_GL_3_2": 0,
+      "the_defect_order_distribution": {
+       "1": 18,
+       "2": 270,
+       "3": 1080,
+       "4": 1296,
+       "5": 648,
+       "6": 432,
+       "7": 1296
+      },
+      "the_order_2_locus": 270,
+      "the_type_of_the_symmetry": "3-cycle"
+     },
+     "CAB": {
+      "K_equals_GL_3_2_by_defect_order": {
+       "3": 72,
+       "4": 72,
+       "7": 108
+      },
+      "on_the_locus_K_equals_GL_3_2": 0,
+      "the_defect_order_distribution": {
+       "1": 18,
+       "2": 270,
+       "3": 1080,
+       "4": 1296,
+       "5": 648,
+       "6": 432,
+       "7": 1296
+      },
+      "the_order_2_locus": 270,
+      "the_type_of_the_symmetry": "3-cycle"
+     },
+     "CBA": {
+      "K_equals_GL_3_2_by_defect_order": {
+       "1": 4,
+       "2": 48,
+       "3": 72,
+       "4": 128
+      },
+      "on_the_locus_K_equals_GL_3_2": 48,
+      "the_defect_order_distribution": {
+       "1": 48,
+       "2": 384,
+       "3": 1728,
+       "4": 1152,
+       "5": 1152,
+       "6": 576
+      },
+      "the_order_2_locus": 384,
+      "the_type_of_the_symmetry": "transposition"
+     }
+    },
+    "the_classes_are_separated": true,
+    "the_declared_P_star": "ACB",
+    "the_symmetry_classes_agree_internally": true
+   }
+  },
+  {
+   "claim": "HOW FAR THE ORDER-THEORETIC CONDITION GOES, AND WHERE IT STOPS.  GL(3,2)'s element orders are measured, d_{P*}(q) lies in K(q), so an order outside that spectrum makes the containment impossible -- the necessary condition the census reports biting at orders 5 and 6.  It is NOT the finest order-theoretic condition available, and that is measured here rather than asserted: a strictly nested ladder of purely order-theoretic conditions is built, each measured to contain every completion whose K lies in GL(3,2), and each measured strictly smaller than the last.  The measured content is the last row: even the finest of them still admits false positives, so NO purely order-theoretic condition characterises the visit and linearity does irreducible work.  The `defect-lax` mutant collapses every defect to the identity, flattening the ladder, and must die here",
+   "class": "measurement",
+   "id": "TOP-ORDER-LADDER",
+   "passed": true,
+   "value": {
+    "5_divides_the_order_of_GL_3_2": false,
+    "6_divides_the_order_of_GL_3_2": true,
+    "completions_at_admissible_orders_whose_K_is_not_GL_3_2": 3060,
+    "every_level_contains_the_targets": true,
+    "linear_completions": 168,
+    "linear_completions_whose_K_equals_GL_3_2": 126,
+    "on_the_locus_linear": 32,
+    "on_the_locus_linear_and_K_equals_GL_3_2": 24,
+    "on_the_locus_non_linear_and_K_equals_GL_3_2": 24,
+    "so_order_5_is_excluded_by_Lagrange_and_order_6_only_by_the_spectrum": true,
+    "the_element_orders_of_GL_3_2": [
+     1,
+     2,
+     3,
+     4,
+     7
+    ],
+    "the_finest_level_still_leaks": true,
+    "the_ladder": [
+     {
+      "completions_passing": 3312,
+      "false_positives_against_K_contained_in_GL_3_2": 2976,
+      "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+      "it_contains_every_completion_with_K_in_GL_3_2": true,
+      "the_condition": "ord[P*,u] lies in GL(3,2)'s element spectrum"
+     },
+     {
+      "completions_passing": 1176,
+      "false_positives_against_K_contained_in_GL_3_2": 840,
+      "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+      "it_contains_every_completion_with_K_in_GL_3_2": true,
+      "the_condition": "the whole S_3 defect-order profile lies in the spectrum"
+     },
+     {
+      "completions_passing": 768,
+      "false_positives_against_K_contained_in_GL_3_2": 432,
+      "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+      "it_contains_every_completion_with_K_in_GL_3_2": true,
+      "the_condition": "every element order of K itself lies in the spectrum"
+     }
+    ],
+    "the_ladder_is_strictly_nested": true
+   }
+  },
+  {
+   "claim": "THE SELECTOR VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED CONTINGENCY TABLE AND GATED BYTE-FOR-BYTE against the emitted string -- head, computed qualifiers and body alike, not a prefix (RUNBOOK section 13 addendum, #234; #257).  The head carries the restriction the census actually has: the locus is P*-RELATIVE, and which class of wing symmetry P* belongs to is interpolated from the measured cycle type.  Each of the thirteen declared candidates is measured on the three declared clauses over the EXHAUSTIVE completion family.  Clause (c) is cross-checked against a count taken OUTSIDE the candidate loop -- the completions in the whole family whose defect subgroup is F_2-linear -- which no candidate's linear sub-count may exceed; the `sel-clause-lax` mutant reports clause (c) as passing for every candidate and must die on that bound, and the `selector-typed` mutant moves ONE COMPUTED QUALIFIER of the emitter with the table left at its measured value",
    "class": "derivation",
    "id": "TOP-SELECTOR",
    "passed": true,
@@ -2343,7 +3161,123 @@
     "clause_c_is_bounded_by_the_family_wide_count": true,
     "completions_with_an_F2_linear_K": 336,
     "named": [],
-    "verdict": "TOP-FANO-SELECTOR-NOT-FOUND<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit>"
+    "the_two_strings_are_byte_identical": true,
+    "the_verdict_rebuilt_from_the_recorded_table": "TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-TRANSPOSITION-CLASS<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus at the declared P* = ACB holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit.  The locus is an ARENA COORDINATE: the 3 transposition symmetries agree at locus 384 / on-locus 48, the 2 3-cycles give locus 270 / on-locus 0, so both counts are P*-relative and only the 252 completions reaching GL(3,2) as a set are not>",
+    "verdict": "TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-TRANSPOSITION-CLASS<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus at the declared P* = ACB holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit.  The locus is an ARENA COORDINATE: the 3 transposition symmetries agree at locus 384 / on-locus 48, the 2 3-cycles give locus 270 / on-locus 0, so both counts are P*-relative and only the 252 completions reaching GL(3,2) as a set are not>"
+   }
+  },
+  {
+   "claim": "DISCLOSURE: WHAT IN THIS UNIT IS FORCED RATHER THAN MEASURED (RUNBOOK section 14 addendum, #208).  Five items, each computed here and none of them a must-pass clause anywhere.  (i) CLAUSE (c) IS A CONTAINMENT: its count for a candidate C is measured to be |C \\ C4| for every one of the thirteen, and C4 is measured EQUAL as a set to {q : K(q) contained in GL(3,2)}, so `clause (c) passes' is literally C contained in C4 and every passer's zero is algebra -- C4 because a group generated by linear maps is linear, C5 and C10 because all six sigma_P are measured F_2-linear, C9 because q normalising the wing group puts every defect inside it, all four measured as set containments here.  (ii) THE EXTENSIONAL DUPLICATES: the declared thirteen names carry fewer distinct predicates, and every coincidence is listed rather than the first one only.  (iii) THE ALTERNATING BINOMIAL SUM of TOP-SIMPLICIAL is 1 for every k, so it is a print and not a route.  (iv) THE THREE TRAVERSAL DEFECTS of a 2-cell are CONJUGATE, which is why the coherent count has one route and not two.  (v) CHART-INDEPENDENCE at an instance whose drawn table is chart-transitive could not have come out otherwise, so CONSISTENT is a disclosure there",
+   "class": "disclosure",
+   "id": "TOP-FORCED-CLAUSES",
+   "passed": true,
+   "value": {
+    "C4_the_predicate_equals_the_set_where_K_is_contained_in_GL_3_2": true,
+    "C9_puts_every_defect_inside_the_wing_group": true,
+    "clause_c_equals_the_containment_deficit_for_every_candidate": true,
+    "distinct_predicates_among_the_declared_names": 11,
+    "every_sigma_P_is_F2_linear": true,
+    "per_candidate": {
+     "C1": {
+      "clause_c_count": 320,
+      "holds_at": 384,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 320
+     },
+     "C10": {
+      "clause_c_count": 0,
+      "holds_at": 168,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C11": {
+      "clause_c_count": 126,
+      "holds_at": 150,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 126
+     },
+     "C2": {
+      "clause_c_count": 320,
+      "holds_at": 384,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 320
+     },
+     "C3": {
+      "clause_c_count": 288,
+      "holds_at": 315,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 288
+     },
+     "C3b": {
+      "clause_c_count": 84,
+      "holds_at": 105,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 84
+     },
+     "C4": {
+      "clause_c_count": 0,
+      "holds_at": 336,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C4b": {
+      "clause_c_count": 672,
+      "holds_at": 1008,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 672
+     },
+     "C5": {
+      "clause_c_count": 0,
+      "holds_at": 168,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C6": {
+      "clause_c_count": 36,
+      "holds_at": 48,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 36
+     },
+     "C7": {
+      "clause_c_count": 6,
+      "holds_at": 20,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 6
+     },
+     "C8": {
+      "clause_c_count": 128,
+      "holds_at": 192,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 128
+     },
+     "C9": {
+      "clause_c_count": 0,
+      "holds_at": 12,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     }
+    },
+    "the_candidates_contained_in_C4": [
+     "C10",
+     "C4",
+     "C5",
+     "C9"
+    ],
+    "the_candidates_passing_clause_c": [
+     "C10",
+     "C4",
+     "C5",
+     "C9"
+    ],
+    "the_clause_c_disclosure": "CLAUSE (c) HAS NO MEASURED CONTENT OF ITS OWN.  Its count for a candidate C is measured to be |C \\ C4| for every one of the thirteen, so clause (c) passes exactly when C is CONTAINED IN C4, and every passer's zero is forced: C4 because a group generated by F_2-linear maps is F_2-linear; C5 and C10 because all six sigma_P are measured F_2-linear, so d_P = sigma_P^-1 q^-1 sigma_P q is linear whenever q is; C9 because q normalising the wing group puts every d_P inside it.  All four forcings are measured here as set containments, not asserted.",
+    "the_extensional_duplicates": [
+     "C1 = C2",
+     "C5 = C10"
+    ],
+    "their_sizes": [
+     336,
+     336
+    ]
    }
   },
   {
@@ -2404,7 +3338,53 @@
    }
   },
   {
-   "claim": "THE QUOTIENT COMPLEX'S INVARIANTS.  The quotient is the ORBIT CELL COMPLEX -- cells are orbits, the boundary is induced mod 2 -- and its components, cycle rank, Euler characteristic and F_2 ranks are computed by the same two-route standard as the nerve's.  The action is measured FREE on 0-cells but NOT on 1- and 2-cells, so the orbit complex is reported as the orbit CHAIN complex and the difference from a free quotient is derived from the fixed-cell census rather than assumed away: chi of the orbit complex minus chi(N)/|S_3| is measured, and equals the correction Burnside's lemma predicts from the fixed cells",
+   "claim": "BURNSIDE'S SUM DIVIDES EXACTLY, AND THE ORBIT-SIZE HISTOGRAMS PIN THE CENSUS.  The orbit counts are floor divisions, so an error of one to five in the fixed-cell census's TOTAL would be absorbed silently and TOP-ORBITS would not see it.  Two clauses close that: the sum of fixed cells is measured to be EXACTLY divisible by the group order in all three dimensions -- the residues are printed and must be zero -- and the orbit-size histograms are gated against the cell counts, sum(size x count) = |E| and = |F| with the number of orbits recovered as sum(count).  The `fixcell-lax` mutant inflates every non-identity fixed-cell count by one -- an error the floor division absorbs, TOP-ORBITS cannot see, and this gate must -- and it dies here.  A mutant that divides by the WRONG ORDER leaves both of these clauses true and is not this gate's business: it moves the orbit counts, and is caught where those are compared against direct enumeration, which is TOP-ORBITS",
+   "class": "measurement",
+   "id": "TOP-BURNSIDE-EXACT",
+   "passed": true,
+   "value": {
+    "orbit_size_histogram_1_cells": {
+     "3": 180,
+     "6": 816
+    },
+    "orbit_size_histogram_2_cells": {
+     "2": 60,
+     "6": 34044
+    },
+    "the_fixed_cell_sums": {
+     "0_cells": 36,
+     "1_cells": 5976,
+     "2_cells": 204624
+    },
+    "the_group_order": 6,
+    "the_histograms_recover_the_cell_counts": true,
+    "the_residues_of_the_fixed_cell_sums": {
+     "0_cells": 0,
+     "1_cells": 0,
+     "2_cells": 0
+    }
+   }
+  },
+  {
+   "claim": "THE BOOLEAN CONNECTIVE OF THE BOUNDARY IS GATED BY ITS OWN DELTA (RUNBOOK section 14 addendum, #313).  Assembling an incidence bit pattern with OR instead of the mod-2 XOR is inert wherever every 1-cell joins two distinct 0-cells, and bites exactly where a cell meets a face twice -- which is the wing quotient, whose 1-skeleton is measured to carry a non-zero number of LOOP 1-cells, gated here so the convention is exercised by construction and not by circumstance.  Both connectives are evaluated on the same quotient and their DELTA is measured and printed; the gate requires the delta to be non-zero -- so the convention is load-bearing -- and the delivered b_1 to be the XOR one.  The `or-lax` mutant assembles the boundary rows with OR and the `or-lax-T` mutant does it in the transposed accumulation; both must die here or on the four-route component check below",
+   "class": "measurement",
+   "id": "TOP-BOUNDARY-PARITY",
+   "passed": true,
+   "value": {
+    "b0_with_OR": 0,
+    "b0_with_XOR": 1,
+    "b1_with_OR": 24,
+    "b1_with_XOR": 25,
+    "loop_1_cells_in_the_quotient": 240,
+    "rank_d1_with_OR": 6,
+    "rank_d1_with_XOR": 5,
+    "the_delivered_assembly_is_XOR": true,
+    "the_delivered_b1": 25,
+    "the_measured_delta": 1
+   }
+  },
+  {
+   "claim": "THE QUOTIENT COMPLEX'S INVARIANTS.  The quotient is the ORBIT CELL COMPLEX -- cells are orbits, the boundary is induced mod 2 -- and its components, cycle rank, Euler characteristic and F_2 ranks are computed by the same two-route standard as the nerve's.  ALL FOUR component routes are compared here, not two: union-find, the F_2 rank of the boundary matrix, the rank of its TRANSPOSE and a spanning forest.  The transpose route is the one that only the quotient can exercise -- on the nerve routes 2 and 3 agree trivially because there are no loops -- and without it a quotient could publish a component count of zero for a non-empty complex.  The action is measured FREE on 0-cells but NOT on 1- and 2-cells, so the orbit complex is reported as the orbit CHAIN complex and the difference from a free quotient is derived from the fixed-cell census rather than assumed away: chi of the orbit complex minus chi(N)/|S_3| is measured, and equals the correction Burnside's lemma predicts from the fixed cells",
    "class": "measurement",
    "id": "TOP-QUOTIENT",
    "passed": true,
@@ -2432,18 +3412,34 @@
      "rank_d1": 5,
      "rank_d1_transposed": 5,
      "rank_d2_route_1_high_pivot": 966,
-     "rank_d2_route_2_cotree_low_pivot": 966
+     "rank_d2_route_2_cotree_low_pivot": 966,
+     "the_2_cells_in_all": 34104,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_boundary_parity_witness": {
+     "b0_with_OR": 0,
+     "b0_with_XOR": 1,
+     "b1_with_OR": 24,
+     "b1_with_XOR": 25,
+     "loop_1_cells_in_the_quotient": 240,
+     "rank_d1_with_OR": 6,
+     "rank_d1_with_XOR": 5,
+     "the_delivered_assembly_is_XOR": true,
+     "the_delivered_b1": 25,
+     "the_measured_delta": 1
     },
     "the_correction": -50
    }
   },
   {
-   "claim": "THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS.  Instantiated at a 16-configuration carrier neither committed unit used, the machinery reproduces the committed two-wing transport graph at BOTH realised defect orders -- nodes, links, identification links, cycle rank and the completion itself, every one anchored exit-1 against the hash-pinned receipt -- and the F_2 homology machinery returns b_1 equal to the committed cycle rank 6, so the homology route is anchored to a committed number and not only to itself.  The two-wing ATLAS is then run through the same nerve machinery, and its invariants are printed",
+   "claim": "THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS, AND EXACTLY WHAT IT ANCHORS.  Instantiated at a 16-configuration carrier neither committed unit used, the machinery reproduces the committed two-wing transport graph at BOTH realised defect orders -- nodes, links, identification links, cycle rank and the completion itself, every one anchored exit-1 against the hash-pinned receipt.  That anchors the ONE-DIMENSIONAL route and only it.  The b_1 column is NOT a second anchor: the control graph carries no 2-cells, so rank(d_2) = 0 and b_1 equals the cycle rank IDENTICALLY -- the identity is printed here rather than counted as evidence, on deviation 3's own standard.  NO COMMITTED NUMBER ANCHORS rank(d_2) ANYWHERE IN THIS UNIT; the two-dimensional half of the homology machinery is calibrated by the DECLARED-STANDARD control complexes alone, which buy calibration and not independence, and that is disclosed rather than smoothed.  The two-wing ATLAS is then run through the same nerve machinery, and its invariants are printed",
    "class": "control",
    "id": "TOP-POS-2WING",
    "passed": true,
    "value": {
     "b1_equals_the_committed_cycle_rank": true,
+    "b1_equals_the_cycle_rank_identically_because_there_are_no_2_cells": true,
+    "no_committed_number_anchors_rank_d2": true,
     "per_defect_order": {
      "1": {
       "Q": [
@@ -2527,7 +3523,7 @@
    }
   },
   {
-   "claim": "THE NEGATIVE CONTROL HAS TEETH.  A declared deterministically scrambled atlas -- three quarters of each coordinate cell's links redrawn from all chart pairs by an exact integer recurrence seeded by the SHA-256 of the declared data alone -- is measured to MOVE the invariant table and to BREAK the dimension reading, which then returns INCONSISTENT with a named witness chart.  The `scramble-off` mutant leaves the atlas alone and must die here, which is what shows the two clauses are measurements and not restatements",
+   "claim": "THE NEGATIVE CONTROL HAS TEETH.  A declared deterministically scrambled atlas -- three quarters of each coordinate cell's links redrawn from all chart pairs by an exact integer recurrence seeded by the SHA-256 of the declared data alone -- is measured to MOVE the invariant table and to BREAK the dimension reading, which then returns INCONSISTENT with a named witness chart.  The `scramble-off` mutant leaves the atlas alone and must die here, which is what shows the two clauses are measurements and not restatements.  WHAT DOES NOT MOVE IS ALSO MEASURED: b_0 and b_1 are unchanged, and the reason is not narrated but computed -- the scrambled atlas's OWN per-checkpoint census is taken here and returns the same connected, simply connected read times, so the gluing formula pins b_1 to the coordinate count (T-1)(|V|-1) at the scrambled atlas exactly as at the reference.  The degree-one invariant is therefore measured INSENSITIVE to the identification data; b_2 is not",
    "class": "control",
    "id": "TOP-NEG-SCRAMBLE",
    "passed": true,
@@ -2558,6 +3554,52 @@
      "chi_from_cell_counts": 81609
     },
     "the_dimension_reading_breaks": true,
+    "the_scrambled_atlas_per_checkpoint_census": {
+     "b1": 140,
+     "b1_equals_the_coordinate_count": true,
+     "b1_is_unmoved_by_the_scramble": true,
+     "b2_moves_from_to": [
+      199123,
+      81748
+     ],
+     "per_checkpoint": {
+      "0": {
+       "E": 944,
+       "F": 23972,
+       "b0": 1,
+       "b1": 0
+      },
+      "1": {
+       "E": 944,
+       "F": 24174,
+       "b0": 1,
+       "b1": 0
+      },
+      "2": {
+       "E": 620,
+       "F": 6718,
+       "b0": 1,
+       "b1": 0
+      },
+      "3": {
+       "E": 620,
+       "F": 6703,
+       "b0": 1,
+       "b1": 0
+      },
+      "4": {
+       "E": 944,
+       "F": 24078,
+       "b0": 1,
+       "b1": 0
+      }
+     },
+     "read_times_carrying_cells": 5,
+     "sum_of_per_checkpoint_b0": 5,
+     "sum_of_per_checkpoint_b1": 0,
+     "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+     "the_reference_b1": 140
+    },
     "the_witness": {
      "chart": "ABC|ACB",
      "profile": {
@@ -2588,15 +3630,17 @@
    }
   },
   {
-   "claim": "THE UNIT VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED GATE OUTCOMES, not typed: the structure verdict is emitted only if every measurement, control and anchor gate passed, and the alternative branch is the pre-registered census outcome TOP-BLOCKED-AT-<object>.  The `verdict-flip` mutant moves the emitter alone and must die here.  Only pre-registered names are emitted, and the vocabulary is checked against the pin's list",
+   "claim": "THE UNIT VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED TABLES AND GATED BYTE-FOR-BYTE against the emitted string -- head, computed qualifiers and body alike, not a prefix (RUNBOOK section 13 addendum, #234; #257: a qualifier is part of the verdict).  The BRANCH is derived from the measured gate outcomes -- the structure verdict is emitted only if every measurement, control and anchor gate passed, the alternative being the pre-registered TOP-BLOCKED-AT-<object> -- and the head then carries the restriction the measurement actually supports: the topology is the COORDINATE-RESOLVED nerve's, its degree-one rank is the coordinate count (read times - 1) x (charts - 1) with both factors interpolated from measured counts, and the SCRAMBLED control returns the same b_1.  The `verdict-flip` mutant moves the branch and the `unit-typed` mutant moves ONE COMPUTED QUALIFIER of the emitter with every recorded table left at its measured value; both must die here.  Only pre-registered names are emitted and the vocabulary is checked against the pin's list",
    "class": "derivation",
    "id": "TOP-VERDICT",
    "passed": true,
    "value": {
     "blocked_object": null,
-    "manifold": "TOP-MANIFOLD-READING-CONSISTENT<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>",
-    "selector": "TOP-FANO-SELECTOR-NOT-FOUND<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit>",
-    "unit": "TOP-GLOBAL-STRUCTURE-<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>"
+    "manifold": "TOP-MANIFOLD-READING-CONSISTENT-AT-3-OF-5-INSTANCES-DIMENSIONS-11-AND-35-LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; the drawn table of that instance is measured to have 1 chart-orbit(s) under its 36 measured automorphisms, so chart-independence there is FORCED and is entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>",
+    "selector": "TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-TRANSPOSITION-CLASS<no candidate of the 13 declared passes all three clauses; the best reach 2 of 3, the order-2 locus at the declared P* = ACB holds 384 completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit.  The locus is an ARENA COORDINATE: the 3 transposition symmetries agree at locus 384 / on-locus 48, the 2 3-cycles give locus 270 / on-locus 0, so both counts are P*-relative and only the 252 completions reaching GL(3,2) as a set are not>",
+    "the_two_strings_are_byte_identical": true,
+    "the_verdict_rebuilt_from_the_recorded_tables": "TOP-GLOBAL-STRUCTURE-OF-THE-COORDINATE-RESOLVED-NERVE-DEGREE-1-IS-THE-COORDINATE-COUNT-4x35-UNMOVED-BY-THE-SCRAMBLE<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); b_1 = (T-1)(|V|-1) = 4 x 35 = 140 and the scrambled control returns b_1 = 140 as well, so degree one is the coordinate count and only b_2 (199123 -> 81748) sees the identification data; the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>",
+    "unit": "TOP-GLOBAL-STRUCTURE-OF-THE-COORDINATE-RESOLVED-NERVE-DEGREE-1-IS-THE-COORDINATE-COUNT-4x35-UNMOVED-BY-THE-SCRAMBLE<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); b_1 = (T-1)(|V|-1) = 4 x 35 = 140 and the scrambled control returns b_1 = 140 as well, so degree one is the coordinate count and only b_2 (199123 -> 81748) sees the identification data; the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>"
    }
   },
   {
@@ -2609,18 +3653,26 @@
     "defect_subgroups_at_the_candidate_declaration": 0,
     "gates_before_the_first_measurement": 1,
     "topology_data_at_the_freeze": 0,
-    "topology_data_evaluated_in_all": 149
+    "topology_data_evaluated_in_all": 174
    }
   },
   {
-   "claim": "EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed, never averaged.  An EXTERNAL anchor's declared side comes from bytes outside this file -- TB3's hash-pinned committed receipt; a DECLARED-STANDARD anchor's declared side is a standard invariant of a control complex typed in this source, which buys calibration and not independence, and is labelled as such",
+   "claim": "EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed in FOUR classes, never averaged and never rounded up to `external'.  EXTERNAL: the declared side is read from bytes outside this file, TB3's hash-pinned committed receipt.  SELF-PIN: the declared side is the SHA-256 typed in this source and the computed side is the hash of the foundation's bytes -- it pins the foundation and is not an external reading, so it is counted apart.  STRUCTURAL: the declared side is a size FORCED by the declared base (the transport graph's |FRAMES| x |CHECKPOINTS| nodes, which TB3's negative-control rows do not carry), computed from the declaration rather than typed, and incapable of failing -- named here rather than counted as evidence.  DECLARED-STANDARD: a standard invariant of a control complex typed in this source, which buys calibration and not independence.  This gate is a VOCABULARY check and says so: it verifies that every anchor names a declared class, not that an external anchor's bytes were read.  Its only falsifier is the `provenance-lax` WAIVER, which registers a bad label after the sweep, and it is classified as a waiver rather than a computation mutant for exactly that reason",
    "class": "derivation",
    "id": "TOP-ANCHOR-PROVENANCE",
    "passed": true,
    "value": {
     "by_provenance": {
      "declared": 24,
-     "external": 172
+     "external": 168,
+     "self-pin": 1,
+     "structural": 3
+    },
+    "the_declared_classes": {
+     "DECLARED-STANDARD (the complex's standard invariants)": "declared",
+     "DECLARED-STRUCTURAL (a size forced by the declared base)": "structural",
+     "TB3 committed receipt": "external",
+     "this file, pinned SHA-256": "self-pin"
     },
     "total": 196,
     "unknown": []
@@ -2648,7 +3700,7 @@
    "passed": true,
    "value": {
     "float_literals": [],
-    "source_lines": 3290
+    "source_lines": 4726
    }
   },
   {
@@ -2657,25 +3709,26 @@
    "id": "TOP-FALSIFICATION",
    "passed": true,
    "value": {
-    "died": 29,
-    "falsified_by_a_computation_mutant": 26,
-    "falsified_by_some_mutant": 28,
+    "died": 44,
+    "falsified_by_a_computation_mutant": 34,
+    "falsified_by_some_mutant": 37,
     "falsified_only_by_a_waiver": [
+     "TOP-ANCHOR-PROVENANCE",
      "TOP-EXACTNESS",
      "TOP-NO-MUTANT-EXEMPTION"
     ],
-    "must_pass_gate_denominator": 28,
-    "mutants": 29,
+    "must_pass_gate_denominator": 37,
+    "mutants": 44,
     "never_falsified": [],
-    "perturb_a_computation": 27,
-    "waivers": 2
+    "perturb_a_computation": 41,
+    "waivers": 3
    }
   }
  ],
  "pin_commit": "d9e3a66",
  "pin_sha256_prefix": "74a472b54b85",
  "schema": "top-topology-receipt-v1",
- "source_sha256": "e2d0200e4a0605442c7ba512742096591b75437792788722f91e262e58adb628",
+ "source_sha256": "81d07ffebd821f6948b33479a034eb1e5d9485444f1728251222d19a749a41a9",
  "tables": {
   "base": {
    "admitted_group_order": 6,
@@ -2685,7 +3738,8 @@
     "coordinate cells of the nerve": "(checkpoint, rule), the rules being FULL and REALIZED",
     "family": "the 27 declared settings and the 9 declared preparations; this unit reads the five declared A3 instances",
     "law": "the exact Born law of the declared leg sequence, read at the node's declared read time",
-    "state": "p(0) = delta_{j0}"
+    "state": "p(0) = delta_{j0}",
+    "the declared wing symmetry P*": "the FIRST NON-IDENTITY element of the enumerated wing group -- a TRANSPOSITION.  P* is an ARENA COORDINATE, not a fact about the base: the defect d_P(q), the order-2 LOCUS and the defect-order axis of the selector census are all defined relative to it.  All five non-identity wing symmetries are swept and the sweep is reported (RUNBOOK section 15: an arena coordinate is declared as data and its dependence is measured)"
    },
    "carrier": 64,
    "checkpoints": 5,
@@ -2706,13 +3760,18 @@
   },
   "gate_falsification": {
    "falsified_by_a_computation_mutant": [
-    "TOP-ANCHOR-PROVENANCE",
+    "TOP-AUTOMORPHISM",
     "TOP-BASE",
+    "TOP-BLOCK-INCIDENCE",
+    "TOP-BOUNDARY-PARITY",
+    "TOP-BURNSIDE-EXACT",
+    "TOP-CACHE",
     "TOP-CELL-COMPLETENESS",
     "TOP-CENSUS-ROUTES",
     "TOP-CHI",
     "TOP-COHERENCE",
     "TOP-COMPONENTS",
+    "TOP-CROSS-CELL",
     "TOP-CYCLERANK",
     "TOP-DECLARATION-ORDER",
     "TOP-DEFECTS",
@@ -2722,9 +3781,12 @@
     "TOP-HOMOLOGY",
     "TOP-NEG-SCRAMBLE",
     "TOP-ORBITS",
+    "TOP-ORDER-LADDER",
+    "TOP-PAIR-SYMMETRY",
     "TOP-PIN-TB3",
     "TOP-POS-2WING",
     "TOP-POS-TRANSPORT",
+    "TOP-PSTAR-SWEEP",
     "TOP-QUOTIENT",
     "TOP-SELECTOR",
     "TOP-SELECTOR-ANCHORS",
@@ -2735,12 +3797,18 @@
    ],
    "falsified_by_some_mutant": [
     "TOP-ANCHOR-PROVENANCE",
+    "TOP-AUTOMORPHISM",
     "TOP-BASE",
+    "TOP-BLOCK-INCIDENCE",
+    "TOP-BOUNDARY-PARITY",
+    "TOP-BURNSIDE-EXACT",
+    "TOP-CACHE",
     "TOP-CELL-COMPLETENESS",
     "TOP-CENSUS-ROUTES",
     "TOP-CHI",
     "TOP-COHERENCE",
     "TOP-COMPONENTS",
+    "TOP-CROSS-CELL",
     "TOP-CYCLERANK",
     "TOP-DECLARATION-ORDER",
     "TOP-DEFECTS",
@@ -2752,9 +3820,12 @@
     "TOP-NEG-SCRAMBLE",
     "TOP-NO-MUTANT-EXEMPTION",
     "TOP-ORBITS",
+    "TOP-ORDER-LADDER",
+    "TOP-PAIR-SYMMETRY",
     "TOP-PIN-TB3",
     "TOP-POS-2WING",
     "TOP-POS-TRANSPORT",
+    "TOP-PSTAR-SWEEP",
     "TOP-QUOTIENT",
     "TOP-SELECTOR",
     "TOP-SELECTOR-ANCHORS",
@@ -2764,6 +3835,7 @@
     "TOP-WING-ACTION"
    ],
    "falsified_only_by_a_waiver": [
+    "TOP-ANCHOR-PROVENANCE",
     "TOP-EXACTNESS",
     "TOP-NO-MUTANT-EXEMPTION"
    ],
@@ -2774,7 +3846,10 @@
     "TOP-CENSUS-ROUTES",
     "TOP-CELL-COMPLETENESS",
     "TOP-COHERENCE",
+    "TOP-PAIR-SYMMETRY",
     "TOP-DEFECTS",
+    "TOP-BLOCK-INCIDENCE",
+    "TOP-CROSS-CELL",
     "TOP-COMPONENTS",
     "TOP-CYCLERANK",
     "TOP-HOMOLOGY",
@@ -2782,11 +3857,17 @@
     "TOP-SIMPLICIAL",
     "TOP-DIM-CONTROLS",
     "TOP-DIM-READING",
+    "TOP-AUTOMORPHISM",
     "TOP-SELECTOR-FREEZE",
     "TOP-SELECTOR-ANCHORS",
+    "TOP-CACHE",
+    "TOP-PSTAR-SWEEP",
+    "TOP-ORDER-LADDER",
     "TOP-SELECTOR",
     "TOP-WING-ACTION",
     "TOP-ORBITS",
+    "TOP-BURNSIDE-EXACT",
+    "TOP-BOUNDARY-PARITY",
     "TOP-QUOTIENT",
     "TOP-POS-2WING",
     "TOP-POS-TRANSPORT",
@@ -2800,8 +3881,15 @@
    "never_falsified": [],
    "per_gate_falsifiers": {
     "TOP-ANCHOR-PROVENANCE": {
-     "computation": [
+     "computation": [],
+     "waiver": [
       "provenance-lax"
+     ]
+    },
+    "TOP-AUTOMORPHISM": {
+     "computation": [
+      "auto-lax",
+      "cell-drop"
      ],
      "waiver": []
     },
@@ -2812,11 +3900,44 @@
      ],
      "waiver": []
     },
+    "TOP-BLOCK-INCIDENCE": {
+     "computation": [
+      "block-lax",
+      "rank-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-BOUNDARY-PARITY": {
+     "computation": [
+      "legkey-lax",
+      "or-lax",
+      "orbit-lax",
+      "rank-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-BURNSIDE-EXACT": {
+     "computation": [
+      "carrier-lax",
+      "cell-drop",
+      "fixcell-lax",
+      "qrule-lax",
+      "sym-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-CACHE": {
+     "computation": [
+      "cache-lax"
+     ],
+     "waiver": []
+    },
     "TOP-CELL-COMPLETENESS": {
      "computation": [
       "cell-drop",
       "legkey-lax",
-      "route1-drop"
+      "route1-drop",
+      "sym-lax"
      ],
      "waiver": []
     },
@@ -2828,7 +3949,8 @@
     },
     "TOP-CHI": {
      "computation": [
-      "cell-drop"
+      "cell-drop",
+      "sym-lax"
      ],
      "waiver": []
     },
@@ -2841,6 +3963,13 @@
     "TOP-COMPONENTS": {
      "computation": [
       "rank-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-CROSS-CELL": {
+     "computation": [
+      "crosscell-typed",
+      "digon-lax"
      ],
      "waiver": []
     },
@@ -2863,13 +3992,14 @@
       "carrier-lax",
       "legkey-lax",
       "qrule-lax",
-      "s3-lax"
+      "s3-lax",
+      "sym-lax"
      ],
      "waiver": []
     },
     "TOP-DIM-CONTROLS": {
      "computation": [
-      "link-lax",
+      "link-lax-control",
       "rank-lax"
      ],
      "waiver": []
@@ -2877,6 +4007,10 @@
     "TOP-DIM-READING": {
      "computation": [
       "dim-lax",
+      "link-lax-atlas",
+      "manifold-typed",
+      "rank-lax",
+      "star-lax",
       "verdict-flip"
      ],
      "waiver": []
@@ -2896,7 +4030,8 @@
     "TOP-HOMOLOGY": {
      "computation": [
       "glue-lax",
-      "rank-lax"
+      "rank-lax",
+      "subcell-drop"
      ],
      "waiver": []
     },
@@ -2919,7 +4054,20 @@
       "carrier-lax",
       "cell-drop",
       "orbit-lax",
-      "qrule-lax"
+      "qrule-lax",
+      "sym-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-ORDER-LADDER": {
+     "computation": [
+      "defect-lax"
+     ],
+     "waiver": []
+    },
+    "TOP-PAIR-SYMMETRY": {
+     "computation": [
+      "sym-lax"
      ],
      "waiver": []
     },
@@ -2951,15 +4099,25 @@
      ],
      "waiver": []
     },
+    "TOP-PSTAR-SWEEP": {
+     "computation": [
+      "defect-lax"
+     ],
+     "waiver": []
+    },
     "TOP-QUOTIENT": {
      "computation": [
+      "or-lax",
+      "or-lax-T",
       "rank-lax"
      ],
      "waiver": []
     },
     "TOP-SELECTOR": {
      "computation": [
-      "sel-clause-lax"
+      "cache-lax",
+      "sel-clause-lax",
+      "selector-typed"
      ],
      "waiver": []
     },
@@ -2980,6 +4138,7 @@
      "computation": [
       "carrier-lax",
       "legkey-lax",
+      "qrule-lax",
       "simp-lax"
      ],
      "waiver": []
@@ -2987,17 +4146,23 @@
     "TOP-VERDICT": {
      "computation": [
       "act-lax",
+      "auto-lax",
+      "block-lax",
       "burnside-lax",
+      "cache-lax",
       "carrier-lax",
       "cell-drop",
       "coh-lax",
       "defect-lax",
+      "fixcell-lax",
       "freeze-lax",
       "glue-lax",
       "id-lax",
       "legkey-lax",
-      "link-lax",
+      "link-lax-control",
       "negctl-lax",
+      "or-lax",
+      "or-lax-T",
       "orbit-lax",
       "pin-hash",
       "qrule-lax",
@@ -3007,8 +4172,11 @@
       "scramble-off",
       "selfreeze-lax",
       "simp-lax",
+      "subcell-drop",
+      "sym-lax",
       "tree-lax",
       "twowing-lax",
+      "unit-typed",
       "verdict-flip"
      ],
      "waiver": []
@@ -3018,7 +4186,8 @@
       "act-lax",
       "carrier-lax",
       "qrule-lax",
-      "s3-lax"
+      "s3-lax",
+      "sym-lax"
      ],
      "waiver": []
     }
@@ -3057,7 +4226,16 @@
     },
     "seeds": 6,
     "setting": "TB-000",
+    "the_drawn_relation_is_symmetric": true,
     "the_multiplicity_is_exact": true,
+    "the_traversal_defect_conjugacy": {
+     "the_pattern_is_never_mixed": true,
+     "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+     "the_traversal_defect_patterns": {
+      "(False,False,False)": 15696,
+      "(True,True,True)": 41520
+     }
+    },
     "the_two_routes_agree": true
    },
    "a partially symmetric setting": {
@@ -3092,7 +4270,16 @@
     },
     "seeds": 6,
     "setting": "TB-001",
+    "the_drawn_relation_is_symmetric": true,
     "the_multiplicity_is_exact": true,
+    "the_traversal_defect_conjugacy": {
+     "the_pattern_is_never_mixed": true,
+     "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+     "the_traversal_defect_patterns": {
+      "(False,False,False)": 15696,
+      "(True,True,True)": 41520
+     }
+    },
     "the_two_routes_agree": true
    },
    "an asymmetric setting": {
@@ -3124,7 +4311,15 @@
     },
     "seeds": 6,
     "setting": "TB-012",
+    "the_drawn_relation_is_symmetric": true,
     "the_multiplicity_is_exact": true,
+    "the_traversal_defect_conjugacy": {
+     "the_pattern_is_never_mixed": true,
+     "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+     "the_traversal_defect_patterns": {
+      "(True,True,True)": 36120
+     }
+    },
     "the_two_routes_agree": true
    },
    "the declared base at a fully symmetric setting": {
@@ -3161,7 +4356,16 @@
     },
     "seeds": 6,
     "setting": "TB-000",
+    "the_drawn_relation_is_symmetric": true,
     "the_multiplicity_is_exact": true,
+    "the_traversal_defect_conjugacy": {
+     "the_pattern_is_never_mixed": true,
+     "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+     "the_traversal_defect_patterns": {
+      "(False,False,False)": 119664,
+      "(True,True,True)": 84720
+     }
+    },
     "the_two_routes_agree": true
    },
    "the equivariant-completion control": {
@@ -3193,7 +4397,15 @@
     },
     "seeds": 6,
     "setting": "TB-000",
+    "the_drawn_relation_is_symmetric": true,
     "the_multiplicity_is_exact": true,
+    "the_traversal_defect_conjugacy": {
+     "the_pattern_is_never_mixed": true,
+     "the_three_traversal_defects_are_conjugate_at_every_2_cell": true,
+     "the_traversal_defect_patterns": {
+      "(True,True,True)": 100
+     }
+    },
     "the_two_routes_agree": true
    }
   },
@@ -3250,6 +4462,7 @@
      "TOP-SIMPLICIAL",
      "TOP-WING-ACTION",
      "TOP-ORBITS",
+     "TOP-BURNSIDE-EXACT",
      "TOP-POS-2WING",
      "TOP-POS-TRANSPORT",
      "TOP-VERDICT"
@@ -3273,9 +4486,11 @@
     "falsified_gates": [
      "TOP-BASE",
      "TOP-DEFECTS",
+     "TOP-SIMPLICIAL",
      "TOP-SELECTOR-ANCHORS",
      "TOP-WING-ACTION",
      "TOP-ORBITS",
+     "TOP-BURNSIDE-EXACT",
      "TOP-POS-TRANSPORT",
      "TOP-VERDICT"
     ],
@@ -3299,6 +4514,7 @@
      "TOP-CELL-COMPLETENESS",
      "TOP-DEFECTS",
      "TOP-SIMPLICIAL",
+     "TOP-BOUNDARY-PARITY",
      "TOP-POS-2WING",
      "TOP-POS-TRANSPORT",
      "TOP-NEG-SCRAMBLE",
@@ -3358,7 +4574,9 @@
     "falsified_gates": [
      "TOP-CELL-COMPLETENESS",
      "TOP-CHI",
+     "TOP-AUTOMORPHISM",
      "TOP-ORBITS",
+     "TOP-BURNSIDE-EXACT",
      "TOP-VERDICT"
     ],
     "kind": "computation",
@@ -3378,10 +4596,13 @@
      "A-CTRL-a 9-vertex torus-every link is a circle"
     ],
     "falsified_gates": [
+     "TOP-BLOCK-INCIDENCE",
      "TOP-COMPONENTS",
      "TOP-CYCLERANK",
      "TOP-HOMOLOGY",
      "TOP-DIM-CONTROLS",
+     "TOP-DIM-READING",
+     "TOP-BOUNDARY-PARITY",
      "TOP-QUOTIENT",
      "TOP-POS-2WING",
      "TOP-VERDICT"
@@ -3464,7 +4685,19 @@
    },
    {
     "crashed_before_reporting": false,
-    "declaration": "the vertex link built from the 1-cells alone rather than from the 2-cells, so it is a star and never a circle",
+    "declaration": "the ATLAS's vertex link built from the 1-cells alone rather than from the 2-cells, so it is a star and never a circle -- injected in the audited path only, with the control path untouched",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-DIM-READING"
+    ],
+    "kind": "computation",
+    "mutant": "link-lax-atlas"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the CONTROL complexes' vertex link built from the 1-cells alone, injected in the control path only, with the atlas path untouched",
     "died": true,
     "exit": 1,
     "falsified_anchors": [
@@ -3476,7 +4709,198 @@
      "TOP-VERDICT"
     ],
     "kind": "computation",
-    "mutant": "link-lax"
+    "mutant": "link-lax-control"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the star profile inflated by one 1-cell and one 2-cell at every chart",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-DIM-READING"
+    ],
+    "kind": "computation",
+    "mutant": "star-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one direction of one admitted ordered pair deleted, so the drawn relation stops being symmetric",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-EDGES-the declared base at a fully symmetric setting-0/FULL",
+     "A-TRI-the declared base at a fully symmetric setting",
+     "A-TRICK-the declared base at a fully symmetric setting-0",
+     "A-DEFECT-ABC",
+     "A-DEFECT-ACB",
+     "A-DEFECT-BAC"
+    ],
+    "falsified_gates": [
+     "TOP-CELL-COMPLETENESS",
+     "TOP-PAIR-SYMMETRY",
+     "TOP-DEFECTS",
+     "TOP-CHI",
+     "TOP-WING-ACTION",
+     "TOP-ORBITS",
+     "TOP-BURNSIDE-EXACT",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "sym-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the block-incidence graph built from one rule's partition alone",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-BLOCK-INCIDENCE",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "block-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every digon reported coherent regardless of its two drawn maps",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-CROSS-CELL"
+    ],
+    "kind": "computation",
+    "mutant": "digon-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every automorphism candidate accepted without testing it against the drawn table",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-AUTOMORPHISM",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "auto-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the memoized defect subgroup perturbed on a cache hit",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-CACHE",
+     "TOP-SELECTOR",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "cache-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "every non-identity fixed-cell count inflated by one -- an error Burnside's floor division absorbs",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-BURNSIDE-EXACT",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "fixcell-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the mod-2 boundary rows assembled with OR instead of XOR, so a cell meeting a face twice contributes an incidence bit rather than zero",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-BOUNDARY-PARITY",
+     "TOP-QUOTIENT",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "or-lax"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the same OR-for-XOR substitution in the TRANSPOSED column accumulation",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-QUOTIENT",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "or-lax-T"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one 2-cell dropped from each per-checkpoint sub-complex only, so H_2 stops being additive over the checkpoints",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-HOMOLOGY",
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "subcell-drop"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one COMPUTED QUALIFIER of the unit verdict replaced in the emitter while every recorded table keeps its measured value",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-VERDICT"
+    ],
+    "kind": "computation",
+    "mutant": "unit-typed"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one COMPUTED QUALIFIER of the manifold verdict replaced in the emitter while every recorded table keeps its measured value",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-DIM-READING"
+    ],
+    "kind": "computation",
+    "mutant": "manifold-typed"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one COMPUTED QUALIFIER of the selector verdict replaced in the emitter while every recorded table keeps its measured value",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-SELECTOR"
+    ],
+    "kind": "computation",
+    "mutant": "selector-typed"
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the cross-coordinate outcome emitted at the other pre-registered branch while the measured residual is left unchanged",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "TOP-CROSS-CELL"
+    ],
+    "kind": "computation",
+    "mutant": "crosscell-typed"
    },
    {
     "crashed_before_reporting": false,
@@ -3512,6 +4936,7 @@
     "falsified_anchors": [],
     "falsified_gates": [
      "TOP-ORBITS",
+     "TOP-BOUNDARY-PARITY",
      "TOP-VERDICT"
     ],
     "kind": "computation",
@@ -3545,6 +4970,8 @@
     ],
     "falsified_gates": [
      "TOP-SELECTOR-ANCHORS",
+     "TOP-PSTAR-SWEEP",
+     "TOP-ORDER-LADDER",
      "TOP-VERDICT"
     ],
     "kind": "computation",
@@ -3632,14 +5059,14 @@
    },
    {
     "crashed_before_reporting": false,
-    "declaration": "an anchor registered with an undeclared provenance",
+    "declaration": "an undeclared provenance label registered in the provenance gate's own evidence list AFTER its sweep over the anchors has run: no anchor is ever built with a bad label and no computation is perturbed, so this is a WAIVER by the unit's own definition and is declared as one",
     "died": true,
     "exit": 1,
     "falsified_anchors": [],
     "falsified_gates": [
      "TOP-ANCHOR-PROVENANCE"
     ],
-    "kind": "computation",
+    "kind": "waiver",
     "mutant": "provenance-lax"
    },
    {
@@ -3706,6 +5133,52 @@
     "b1": 140,
     "b2": 81748,
     "chi_from_cell_counts": 81609
+   },
+   "the_per_checkpoint_census": {
+    "b1": 140,
+    "b1_equals_the_coordinate_count": true,
+    "b1_is_unmoved_by_the_scramble": true,
+    "b2_moves_from_to": [
+     199123,
+     81748
+    ],
+    "per_checkpoint": {
+     "0": {
+      "E": 944,
+      "F": 23972,
+      "b0": 1,
+      "b1": 0
+     },
+     "1": {
+      "E": 944,
+      "F": 24174,
+      "b0": 1,
+      "b1": 0
+     },
+     "2": {
+      "E": 620,
+      "F": 6718,
+      "b0": 1,
+      "b1": 0
+     },
+     "3": {
+      "E": 620,
+      "F": 6703,
+      "b0": 1,
+      "b1": 0
+     },
+     "4": {
+      "E": 944,
+      "F": 24078,
+      "b0": 1,
+      "b1": 0
+     }
+    },
+    "read_times_carrying_cells": 5,
+    "sum_of_per_checkpoint_b0": 5,
+    "sum_of_per_checkpoint_b1": 0,
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+    "the_reference_b1": 140
    },
    "the_witness": {
     "chart": "ABC|ACB",
@@ -3787,6 +5260,7 @@
     "H2_is_additive_coherent": true,
     "H2_is_additive_over_the_checkpoint_decomposition": true,
     "b1_coherent_route_2_per_checkpoint_gluing": 151,
+    "b1_equals_the_coordinate_count": true,
     "b1_route_2_per_checkpoint_gluing": 140,
     "per_checkpoint": {
      "0": {
@@ -3833,6 +5307,59 @@
     "sum_of_per_checkpoint_b0": 7,
     "sum_of_per_checkpoint_b1": 2,
     "sum_of_per_checkpoint_b2": 54115,
+    "the_block_incidence_route": {
+     "0": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "1": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "2": {
+      "b0_of_the_incidence_graph": 2,
+      "blocks_per_rule": [
+       3,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 1,
+      "incidence_E": 5,
+      "incidence_V": 6
+     },
+     "3": {
+      "b0_of_the_incidence_graph": 2,
+      "blocks_per_rule": [
+       3,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 1,
+      "incidence_E": 5,
+      "incidence_V": 6
+     },
+     "4": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     }
+    },
+    "the_block_incidence_route_agrees": true,
     "the_coherent_sub_nerve": {
      "E": 3276,
      "F": 41520,
@@ -3852,7 +5379,28 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 3090,
-     "rank_d2_route_2_cotree_low_pivot": 3090
+     "rank_d2_route_2_cotree_low_pivot": 3090,
+     "the_2_cells_in_all": 41520,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+    "the_cross_coordinate_drawn_map_comparison": {
+     "b1_of_N": 140,
+     "b1_with_every_coherent_digon_filled": 0,
+     "b1_with_every_cross_checkpoint_digon_filled": 0,
+     "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+     "b1_with_the_same_checkpoint_digons_filled": 140,
+     "cross_checkpoint_digons": 8532,
+     "cross_checkpoint_digons_that_are_coherent": 6948,
+     "digons_built": 9378,
+     "digons_expected_from_the_multiplicities": 9378,
+     "pairs_drawn_at_two_or_more_cells": 630,
+     "pairs_whose_drawn_maps_all_agree": 522,
+     "pairs_whose_drawn_maps_disagree_somewhere": 108,
+     "same_checkpoint_digons": 846,
+     "same_checkpoint_digons_that_are_coherent": 450,
+     "the_same_count_from_the_digon_flags": 522,
+     "the_two_agreement_routes_disagree_at": 0
     },
     "the_gluing_term": 144,
     "the_nerve_N": {
@@ -3874,7 +5422,9 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 3101,
-     "rank_d2_route_2_cotree_low_pivot": 3101
+     "rank_d2_route_2_cotree_low_pivot": 3101,
+     "the_2_cells_in_all": 57216,
+     "the_d1_d2_sample_cap": 2000
     },
     "the_overlap_graph": {
      "components": 1,
@@ -3885,6 +5435,7 @@
      "it_is_complete": true,
      "nodes": 36
     },
+    "the_read_times_carrying_cells": 5,
     "the_simplicial_nerve": {
      "chi_route_1_alternating_binomial_sum": 1,
      "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs": true,
@@ -3939,6 +5490,7 @@
     "H2_is_additive_coherent": true,
     "H2_is_additive_over_the_checkpoint_decomposition": true,
     "b1_coherent_route_2_per_checkpoint_gluing": 151,
+    "b1_equals_the_coordinate_count": true,
     "b1_route_2_per_checkpoint_gluing": 140,
     "per_checkpoint": {
      "0": {
@@ -3985,6 +5537,59 @@
     "sum_of_per_checkpoint_b0": 7,
     "sum_of_per_checkpoint_b1": 2,
     "sum_of_per_checkpoint_b2": 54115,
+    "the_block_incidence_route": {
+     "0": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "1": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "2": {
+      "b0_of_the_incidence_graph": 2,
+      "blocks_per_rule": [
+       3,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 1,
+      "incidence_E": 5,
+      "incidence_V": 6
+     },
+     "3": {
+      "b0_of_the_incidence_graph": 2,
+      "blocks_per_rule": [
+       3,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 1,
+      "incidence_E": 5,
+      "incidence_V": 6
+     },
+     "4": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       3
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     }
+    },
+    "the_block_incidence_route_agrees": true,
     "the_coherent_sub_nerve": {
      "E": 3276,
      "F": 41520,
@@ -4004,7 +5609,28 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 3090,
-     "rank_d2_route_2_cotree_low_pivot": 3090
+     "rank_d2_route_2_cotree_low_pivot": 3090,
+     "the_2_cells_in_all": 41520,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+    "the_cross_coordinate_drawn_map_comparison": {
+     "b1_of_N": 140,
+     "b1_with_every_coherent_digon_filled": 0,
+     "b1_with_every_cross_checkpoint_digon_filled": 0,
+     "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+     "b1_with_the_same_checkpoint_digons_filled": 140,
+     "cross_checkpoint_digons": 8532,
+     "cross_checkpoint_digons_that_are_coherent": 6948,
+     "digons_built": 9378,
+     "digons_expected_from_the_multiplicities": 9378,
+     "pairs_drawn_at_two_or_more_cells": 630,
+     "pairs_whose_drawn_maps_all_agree": 522,
+     "pairs_whose_drawn_maps_disagree_somewhere": 108,
+     "same_checkpoint_digons": 846,
+     "same_checkpoint_digons_that_are_coherent": 450,
+     "the_same_count_from_the_digon_flags": 522,
+     "the_two_agreement_routes_disagree_at": 0
     },
     "the_gluing_term": 144,
     "the_nerve_N": {
@@ -4026,7 +5652,9 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 3101,
-     "rank_d2_route_2_cotree_low_pivot": 3101
+     "rank_d2_route_2_cotree_low_pivot": 3101,
+     "the_2_cells_in_all": 57216,
+     "the_d1_d2_sample_cap": 2000
     },
     "the_overlap_graph": {
      "components": 1,
@@ -4037,6 +5665,7 @@
      "it_is_complete": true,
      "nodes": 36
     },
+    "the_read_times_carrying_cells": 5,
     "the_simplicial_nerve": {
      "chi_route_1_alternating_binomial_sum": 1,
      "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs": true,
@@ -4091,6 +5720,7 @@
     "H2_is_additive_coherent": true,
     "H2_is_additive_over_the_checkpoint_decomposition": true,
     "b1_coherent_route_2_per_checkpoint_gluing": 136,
+    "b1_equals_the_coordinate_count": false,
     "b1_route_2_per_checkpoint_gluing": 136,
     "per_checkpoint": {
      "0": {
@@ -4137,6 +5767,59 @@
     "sum_of_per_checkpoint_b0": 9,
     "sum_of_per_checkpoint_b1": 0,
     "sum_of_per_checkpoint_b2": 33555,
+    "the_block_incidence_route": {
+     "0": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       6
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "1": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       6
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "2": {
+      "b0_of_the_incidence_graph": 3,
+      "blocks_per_rule": [
+       3,
+       6
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 9
+     },
+     "3": {
+      "b0_of_the_incidence_graph": 3,
+      "blocks_per_rule": [
+       3,
+       6
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 9
+     },
+     "4": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       6
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     }
+    },
+    "the_block_incidence_route_agrees": true,
     "the_coherent_sub_nerve": {
      "E": 2736,
      "F": 36120,
@@ -4156,7 +5839,28 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 2565,
-     "rank_d2_route_2_cotree_low_pivot": 2565
+     "rank_d2_route_2_cotree_low_pivot": 2565,
+     "the_2_cells_in_all": 36120,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+    "the_cross_coordinate_drawn_map_comparison": {
+     "b1_of_N": 136,
+     "b1_with_every_coherent_digon_filled": 0,
+     "b1_with_every_cross_checkpoint_digon_filled": 0,
+     "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+     "b1_with_the_same_checkpoint_digons_filled": 136,
+     "cross_checkpoint_digons": 5868,
+     "cross_checkpoint_digons_that_are_coherent": 5868,
+     "digons_built": 6318,
+     "digons_expected_from_the_multiplicities": 6318,
+     "pairs_drawn_at_two_or_more_cells": 630,
+     "pairs_whose_drawn_maps_all_agree": 630,
+     "pairs_whose_drawn_maps_disagree_somewhere": 0,
+     "same_checkpoint_digons": 450,
+     "same_checkpoint_digons_that_are_coherent": 450,
+     "the_same_count_from_the_digon_flags": 630,
+     "the_two_agreement_routes_disagree_at": 0
     },
     "the_gluing_term": 144,
     "the_nerve_N": {
@@ -4178,7 +5882,9 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 2565,
-     "rank_d2_route_2_cotree_low_pivot": 2565
+     "rank_d2_route_2_cotree_low_pivot": 2565,
+     "the_2_cells_in_all": 36120,
+     "the_d1_d2_sample_cap": 2000
     },
     "the_overlap_graph": {
      "components": 1,
@@ -4189,6 +5895,7 @@
      "it_is_complete": true,
      "nodes": 36
     },
+    "the_read_times_carrying_cells": 5,
     "the_simplicial_nerve": {
      "chi_route_1_alternating_binomial_sum": 1,
      "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs": true,
@@ -4243,6 +5950,7 @@
     "H2_is_additive_coherent": true,
     "H2_is_additive_over_the_checkpoint_decomposition": true,
     "b1_coherent_route_2_per_checkpoint_gluing": 161,
+    "b1_equals_the_coordinate_count": true,
     "b1_route_2_per_checkpoint_gluing": 140,
     "per_checkpoint": {
      "0": {
@@ -4289,6 +5997,59 @@
     "sum_of_per_checkpoint_b0": 5,
     "sum_of_per_checkpoint_b1": 0,
     "sum_of_per_checkpoint_b2": 199123,
+    "the_block_incidence_route": {
+     "0": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 1,
+      "incidence_V": 2
+     },
+     "1": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 1,
+      "incidence_V": 2
+     },
+     "2": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       3,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "3": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       3,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 3,
+      "incidence_V": 4
+     },
+     "4": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       1,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 1,
+      "incidence_V": 2
+     }
+    },
+    "the_block_incidence_route_agrees": true,
     "the_coherent_sub_nerve": {
      "E": 5436,
      "F": 84720,
@@ -4308,7 +6069,28 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 5240,
-     "rank_d2_route_2_cotree_low_pivot": 5240
+     "rank_d2_route_2_cotree_low_pivot": 5240,
+     "the_2_cells_in_all": 84720,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 140,
+    "the_cross_coordinate_drawn_map_comparison": {
+     "b1_of_N": 140,
+     "b1_with_every_coherent_digon_filled": 0,
+     "b1_with_every_cross_checkpoint_digon_filled": 0,
+     "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+     "b1_with_the_same_checkpoint_digons_filled": 140,
+     "cross_checkpoint_digons": 18612,
+     "cross_checkpoint_digons_that_are_coherent": 11268,
+     "digons_built": 20898,
+     "digons_expected_from_the_multiplicities": 20898,
+     "pairs_drawn_at_two_or_more_cells": 630,
+     "pairs_whose_drawn_maps_all_agree": 90,
+     "pairs_whose_drawn_maps_disagree_somewhere": 540,
+     "same_checkpoint_digons": 2286,
+     "same_checkpoint_digons_that_are_coherent": 450,
+     "the_same_count_from_the_digon_flags": 90,
+     "the_two_agreement_routes_disagree_at": 0
     },
     "the_gluing_term": 144,
     "the_nerve_N": {
@@ -4330,7 +6112,9 @@
      "rank_d1": 35,
      "rank_d1_transposed": 35,
      "rank_d2_route_1_high_pivot": 5261,
-     "rank_d2_route_2_cotree_low_pivot": 5261
+     "rank_d2_route_2_cotree_low_pivot": 5261,
+     "the_2_cells_in_all": 204384,
+     "the_d1_d2_sample_cap": 2000
     },
     "the_overlap_graph": {
      "components": 1,
@@ -4341,6 +6125,7 @@
      "it_is_complete": true,
      "nodes": 36
     },
+    "the_read_times_carrying_cells": 5,
     "the_simplicial_nerve": {
      "chi_route_1_alternating_binomial_sum": 1,
      "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs": true,
@@ -4395,6 +6180,7 @@
     "H2_is_additive_coherent": true,
     "H2_is_additive_over_the_checkpoint_decomposition": true,
     "b1_coherent_route_2_per_checkpoint_gluing": 20,
+    "b1_equals_the_coordinate_count": true,
     "b1_route_2_per_checkpoint_gluing": 20,
     "per_checkpoint": {
      "0": {
@@ -4441,6 +6227,59 @@
     "sum_of_per_checkpoint_b0": 5,
     "sum_of_per_checkpoint_b1": 0,
     "sum_of_per_checkpoint_b2": 50,
+    "the_block_incidence_route": {
+     "0": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       6,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "1": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       6,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "2": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       6,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "3": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       6,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     },
+     "4": {
+      "b0_of_the_incidence_graph": 1,
+      "blocks_per_rule": [
+       6,
+       1
+      ],
+      "cycle_rank_of_the_incidence_graph": 0,
+      "incidence_E": 6,
+      "incidence_V": 7
+     }
+    },
+    "the_block_incidence_route_agrees": true,
     "the_coherent_sub_nerve": {
      "E": 75,
      "F": 100,
@@ -4460,7 +6299,28 @@
      "rank_d1": 5,
      "rank_d1_transposed": 5,
      "rank_d2_route_1_high_pivot": 50,
-     "rank_d2_route_2_cotree_low_pivot": 50
+     "rank_d2_route_2_cotree_low_pivot": 50,
+     "the_2_cells_in_all": 100,
+     "the_d1_d2_sample_cap": 2000
+    },
+    "the_coordinate_count_T_minus_1_times_V_minus_1": 20,
+    "the_cross_coordinate_drawn_map_comparison": {
+     "b1_of_N": 20,
+     "b1_with_every_coherent_digon_filled": 0,
+     "b1_with_every_cross_checkpoint_digon_filled": 0,
+     "b1_with_the_COHERENT_cross_checkpoint_digons_filled": 0,
+     "b1_with_the_same_checkpoint_digons_filled": 20,
+     "cross_checkpoint_digons": 150,
+     "cross_checkpoint_digons_that_are_coherent": 150,
+     "digons_built": 150,
+     "digons_expected_from_the_multiplicities": 150,
+     "pairs_drawn_at_two_or_more_cells": 15,
+     "pairs_whose_drawn_maps_all_agree": 15,
+     "pairs_whose_drawn_maps_disagree_somewhere": 0,
+     "same_checkpoint_digons": 0,
+     "same_checkpoint_digons_that_are_coherent": 0,
+     "the_same_count_from_the_digon_flags": 15,
+     "the_two_agreement_routes_disagree_at": 0
     },
     "the_gluing_term": 24,
     "the_nerve_N": {
@@ -4482,7 +6342,9 @@
      "rank_d1": 5,
      "rank_d1_transposed": 5,
      "rank_d2_route_1_high_pivot": 50,
-     "rank_d2_route_2_cotree_low_pivot": 50
+     "rank_d2_route_2_cotree_low_pivot": 50,
+     "the_2_cells_in_all": 100,
+     "the_d1_d2_sample_cap": 2000
     },
     "the_overlap_graph": {
      "components": 1,
@@ -4493,6 +6355,7 @@
      "it_is_complete": true,
      "nodes": 6
     },
+    "the_read_times_carrying_cells": 5,
     "the_simplicial_nerve": {
      "chi_route_1_alternating_binomial_sum": 1,
      "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs": true,
@@ -4584,11 +6447,17 @@
    },
    "per_instance": {
     "a W-class preparation at a fully symmetric setting": {
+     "chart_independence_is_symmetry_forced": false,
      "charts": 36,
      "distinct_estimator_values": 2,
      "every_link_is_a_circle": false,
      "local_dimension_is_one_number": false,
      "the_common_profile": null,
+     "the_drawn_table_automorphisms": {
+      "chart_orbits": 3,
+      "declared_candidates": 36,
+      "measured_automorphisms": 12
+     },
      "the_local_dimensions_realised": null,
      "the_majority": {
       "chart": "ABC|ABC",
@@ -4649,11 +6518,17 @@
      }
     },
     "a partially symmetric setting": {
+     "chart_independence_is_symmetry_forced": false,
      "charts": 36,
      "distinct_estimator_values": 2,
      "every_link_is_a_circle": false,
      "local_dimension_is_one_number": false,
      "the_common_profile": null,
+     "the_drawn_table_automorphisms": {
+      "chart_orbits": 3,
+      "declared_candidates": 36,
+      "measured_automorphisms": 12
+     },
      "the_local_dimensions_realised": null,
      "the_majority": {
       "chart": "ABC|ABC",
@@ -4714,6 +6589,7 @@
      }
     },
     "an asymmetric setting": {
+     "chart_independence_is_symmetry_forced": true,
      "charts": 36,
      "distinct_estimator_values": 1,
      "every_link_is_a_circle": false,
@@ -4742,6 +6618,11 @@
        3010
       ]
      },
+     "the_drawn_table_automorphisms": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 36
+     },
      "the_local_dimensions_realised": [
       5,
       11,
@@ -4752,6 +6633,7 @@
      "the_witness": null
     },
     "the declared base at a fully symmetric setting": {
+     "chart_independence_is_symmetry_forced": true,
      "charts": 36,
      "distinct_estimator_values": 1,
      "every_link_is_a_circle": false,
@@ -4780,6 +6662,11 @@
        17032
       ]
      },
+     "the_drawn_table_automorphisms": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 36
+     },
      "the_local_dimensions_realised": [
       11,
       35
@@ -4789,6 +6676,7 @@
      "the_witness": null
     },
     "the equivariant-completion control": {
+     "chart_independence_is_symmetry_forced": true,
      "charts": 6,
      "distinct_estimator_values": 1,
      "every_link_is_a_circle": false,
@@ -4817,6 +6705,11 @@
        50
       ]
      },
+     "the_drawn_table_automorphisms": {
+      "chart_orbits": 1,
+      "declared_candidates": 36,
+      "measured_automorphisms": 6
+     },
      "the_local_dimensions_realised": [
       -1,
       5
@@ -4830,6 +6723,43 @@
     "dimprofile": "per coordinate cell, |component of X| - 1",
     "link": "(V, E, b0, b1) over F_2 of the link graph of X",
     "star": "(1-cells at X, 2-cells at X)"
+   },
+   "the_instances_where_chart_independence_is_symmetry_forced": [
+    "an asymmetric setting",
+    "the declared base at a fully symmetric setting",
+    "the equivariant-completion control"
+   ],
+   "the_star_and_link_comparator": {
+    "a W-class preparation at a fully symmetric setting": {
+     "sum_star_1_cells": 6552,
+     "sum_star_2_cells": 171648,
+     "three_times_the_2_cells": 171648,
+     "twice_the_1_cells": 6552
+    },
+    "a partially symmetric setting": {
+     "sum_star_1_cells": 6552,
+     "sum_star_2_cells": 171648,
+     "three_times_the_2_cells": 171648,
+     "twice_the_1_cells": 6552
+    },
+    "an asymmetric setting": {
+     "sum_star_1_cells": 5472,
+     "sum_star_2_cells": 108360,
+     "three_times_the_2_cells": 108360,
+     "twice_the_1_cells": 5472
+    },
+    "the declared base at a fully symmetric setting": {
+     "sum_star_1_cells": 10872,
+     "sum_star_2_cells": 613152,
+     "three_times_the_2_cells": 613152,
+     "twice_the_1_cells": 10872
+    },
+    "the equivariant-completion control": {
+     "sum_star_1_cells": 150,
+     "sum_star_2_cells": 300,
+     "three_times_the_2_cells": 300,
+     "twice_the_1_cells": 150
+    }
    }
   },
   "q3_selector": {
@@ -4857,6 +6787,104 @@
    "completions_whose_K_is_contained_in_GL_3_2": 336,
    "distinct_defect_subgroups_built": 2502,
    "of_those_on_the_order_2_locus": 48,
+   "the_P_star_sweep": {
+    "ACB": {
+     "K_equals_GL_3_2_by_defect_order": {
+      "1": 4,
+      "2": 48,
+      "3": 72,
+      "4": 128
+     },
+     "on_the_locus_K_equals_GL_3_2": 48,
+     "the_defect_order_distribution": {
+      "1": 48,
+      "2": 384,
+      "3": 1728,
+      "4": 1152,
+      "5": 1152,
+      "6": 576
+     },
+     "the_order_2_locus": 384,
+     "the_type_of_the_symmetry": "transposition"
+    },
+    "BAC": {
+     "K_equals_GL_3_2_by_defect_order": {
+      "1": 4,
+      "2": 48,
+      "3": 72,
+      "4": 128
+     },
+     "on_the_locus_K_equals_GL_3_2": 48,
+     "the_defect_order_distribution": {
+      "1": 48,
+      "2": 384,
+      "3": 1728,
+      "4": 1152,
+      "5": 1152,
+      "6": 576
+     },
+     "the_order_2_locus": 384,
+     "the_type_of_the_symmetry": "transposition"
+    },
+    "BCA": {
+     "K_equals_GL_3_2_by_defect_order": {
+      "3": 72,
+      "4": 72,
+      "7": 108
+     },
+     "on_the_locus_K_equals_GL_3_2": 0,
+     "the_defect_order_distribution": {
+      "1": 18,
+      "2": 270,
+      "3": 1080,
+      "4": 1296,
+      "5": 648,
+      "6": 432,
+      "7": 1296
+     },
+     "the_order_2_locus": 270,
+     "the_type_of_the_symmetry": "3-cycle"
+    },
+    "CAB": {
+     "K_equals_GL_3_2_by_defect_order": {
+      "3": 72,
+      "4": 72,
+      "7": 108
+     },
+     "on_the_locus_K_equals_GL_3_2": 0,
+     "the_defect_order_distribution": {
+      "1": 18,
+      "2": 270,
+      "3": 1080,
+      "4": 1296,
+      "5": 648,
+      "6": 432,
+      "7": 1296
+     },
+     "the_order_2_locus": 270,
+     "the_type_of_the_symmetry": "3-cycle"
+    },
+    "CBA": {
+     "K_equals_GL_3_2_by_defect_order": {
+      "1": 4,
+      "2": 48,
+      "3": 72,
+      "4": 128
+     },
+     "on_the_locus_K_equals_GL_3_2": 48,
+     "the_defect_order_distribution": {
+      "1": 48,
+      "2": 384,
+      "3": 1728,
+      "4": 1152,
+      "5": 1152,
+      "6": 576
+     },
+     "the_order_2_locus": 384,
+     "the_type_of_the_symmetry": "transposition"
+    }
+   },
+   "the_P_star_type": "transposition",
    "the_candidate_table": {
     "C1": {
      "NAMED": false,
@@ -4870,7 +6898,7 @@
      "completions_satisfying_it": 384,
      "name": "involutivity",
      "of_those_with_K_equal_to_GL_3_2": 48,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "ord(d_{P*}(q)) = 2 -- the locus's own defining property",
      "the_locus_size": 384
     },
@@ -4918,7 +6946,7 @@
      "completions_satisfying_it": 384,
      "name": "defect fixed-point count",
      "of_those_with_K_equal_to_GL_3_2": 48,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "|Fix(d_{P*}(q))| equals the reference value",
      "the_locus_size": 384
     },
@@ -4934,7 +6962,7 @@
      "completions_satisfying_it": 315,
      "name": "completion support",
      "of_those_with_K_equal_to_GL_3_2": 6,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "|supp(q)| equals the reference value",
      "the_locus_size": 384
     },
@@ -4950,7 +6978,7 @@
      "completions_satisfying_it": 105,
      "name": "completion cycle type",
      "of_those_with_K_equal_to_GL_3_2": 6,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "the cycle type of q equals the reference cycle type",
      "the_locus_size": 384
     },
@@ -4966,7 +6994,7 @@
      "completions_satisfying_it": 336,
      "name": "defect F2-linearity",
      "of_those_with_K_equal_to_GL_3_2": 252,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "every d_P(q), P in S_3, is an F_2-linear permutation of the labels",
      "the_locus_size": 384
     },
@@ -4982,7 +7010,7 @@
      "completions_satisfying_it": 1008,
      "name": "declared-symmetry defect F2-linearity",
      "of_those_with_K_equal_to_GL_3_2": 252,
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "d_{P*}(q) is an F_2-linear permutation of the labels",
      "the_locus_size": 384
     },
@@ -5145,41 +7173,42 @@
     }
    },
    "the_completion_family": 5040,
+   "the_declared_P_star": "ACB",
    "the_declared_candidate_family": [
     {
      "id": "C1",
      "name": "involutivity",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "ord(d_{P*}(q)) = 2 -- the locus's own defining property"
     },
     {
      "id": "C2",
      "name": "defect fixed-point count",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "|Fix(d_{P*}(q))| equals the reference value"
     },
     {
      "id": "C3",
      "name": "completion support",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "|supp(q)| equals the reference value"
     },
     {
      "id": "C3b",
      "name": "completion cycle type",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "the cycle type of q equals the reference cycle type"
     },
     {
      "id": "C4",
      "name": "defect F2-linearity",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "every d_P(q), P in S_3, is an F_2-linear permutation of the labels"
     },
     {
      "id": "C4b",
      "name": "declared-symmetry defect F2-linearity",
-     "origin": "pin",
+     "origin": "pin-derived",
      "predicate": "d_{P*}(q) is an F_2-linear permutation of the labels"
     },
     {
@@ -5253,7 +7282,142 @@
     4,
     7
    ],
+   "the_forced_structure_of_the_family": {
+    "C4_the_predicate_equals_the_set_where_K_is_contained_in_GL_3_2": true,
+    "C9_puts_every_defect_inside_the_wing_group": true,
+    "clause_c_equals_the_containment_deficit_for_every_candidate": true,
+    "distinct_predicates_among_the_declared_names": 11,
+    "every_sigma_P_is_F2_linear": true,
+    "per_candidate": {
+     "C1": {
+      "clause_c_count": 320,
+      "holds_at": 384,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 320
+     },
+     "C10": {
+      "clause_c_count": 0,
+      "holds_at": 168,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C11": {
+      "clause_c_count": 126,
+      "holds_at": 150,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 126
+     },
+     "C2": {
+      "clause_c_count": 320,
+      "holds_at": 384,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 320
+     },
+     "C3": {
+      "clause_c_count": 288,
+      "holds_at": 315,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 288
+     },
+     "C3b": {
+      "clause_c_count": 84,
+      "holds_at": 105,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 84
+     },
+     "C4": {
+      "clause_c_count": 0,
+      "holds_at": 336,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C4b": {
+      "clause_c_count": 672,
+      "holds_at": 1008,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 672
+     },
+     "C5": {
+      "clause_c_count": 0,
+      "holds_at": 168,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     },
+     "C6": {
+      "clause_c_count": 36,
+      "holds_at": 48,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 36
+     },
+     "C7": {
+      "clause_c_count": 6,
+      "holds_at": 20,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 6
+     },
+     "C8": {
+      "clause_c_count": 128,
+      "holds_at": 192,
+      "is_contained_in_C4": false,
+      "the_containment_deficit": 128
+     },
+     "C9": {
+      "clause_c_count": 0,
+      "holds_at": 12,
+      "is_contained_in_C4": true,
+      "the_containment_deficit": 0
+     }
+    },
+    "the_candidates_contained_in_C4": [
+     "C10",
+     "C4",
+     "C5",
+     "C9"
+    ],
+    "the_candidates_passing_clause_c": [
+     "C10",
+     "C4",
+     "C5",
+     "C9"
+    ],
+    "the_clause_c_disclosure": "CLAUSE (c) HAS NO MEASURED CONTENT OF ITS OWN.  Its count for a candidate C is measured to be |C \\ C4| for every one of the thirteen, so clause (c) passes exactly when C is CONTAINED IN C4, and every passer's zero is forced: C4 because a group generated by F_2-linear maps is F_2-linear; C5 and C10 because all six sigma_P are measured F_2-linear, so d_P = sigma_P^-1 q^-1 sigma_P q is linear whenever q is; C9 because q normalising the wing group puts every d_P inside it.  All four forcings are measured here as set containments, not asserted.",
+    "the_extensional_duplicates": [
+     "C1 = C2",
+     "C5 = C10"
+    ],
+    "their_sizes": [
+     336,
+     336
+    ]
+   },
    "the_locus_size": 384,
+   "the_order_theoretic_ladder": [
+    {
+     "completions_passing": 3312,
+     "false_positives_against_K_contained_in_GL_3_2": 2976,
+     "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+     "it_contains_every_completion_with_K_in_GL_3_2": true,
+     "the_condition": "ord[P*,u] lies in GL(3,2)'s element spectrum"
+    },
+    {
+     "completions_passing": 1176,
+     "false_positives_against_K_contained_in_GL_3_2": 840,
+     "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+     "it_contains_every_completion_with_K_in_GL_3_2": true,
+     "the_condition": "the whole S_3 defect-order profile lies in the spectrum"
+    },
+    {
+     "completions_passing": 768,
+     "false_positives_against_K_contained_in_GL_3_2": 432,
+     "it_contains_every_completion_with_K_equal_to_GL_3_2": true,
+     "it_contains_every_completion_with_K_in_GL_3_2": true,
+     "the_condition": "every element order of K itself lies in the spectrum"
+    }
+   ],
+   "the_origin_legend": {
+    "pin-derived": "restates the pin's own order-2-locus language.  THE PIN CONTAINS NO CANDIDATE LIST: no candidate is quoted from it and none may be labelled as if it were",
+    "worker": "introduced by this instrument, in this source, above every measurement"
+   },
    "the_reference_values_computed_at_the_ord_2_target": {
     "completion_cycle_type": [
      1,
@@ -5355,6 +7519,42 @@
      ],
      "ord_at_P_star": 3
     }
+   },
+   "the_section_5_2_tables_as_markdown": {
+    "the_candidate_table": [
+     "| id | candidate | (a) on the locus | (b) off it | (c) non-linear $K$ | holds at | of those $=\\mathrm{GL}(3,2)$ | clauses |",
+     "|---|---|---|---|---|---|---|---|",
+     "| C1 | involutivity | **384/384** | **0** | 320 | 384 | 48 | 2 |",
+     "| C2 | defect fixed-point count | **384/384** | **0** | 320 | 384 | 48 | 2 |",
+     "| C3 | completion support | 40/384 | 275 | 288 | 315 | 6 | 0 |",
+     "| C3b | completion cycle type | 24/384 | 81 | 84 | 105 | 6 | 0 |",
+     "| C4 | defect $\\mathbb F_2$-linearity | 64/384 | 272 | **0** | 336 | 252 | 1 |",
+     "| C4b | declared-symmetry defect linearity | 192/384 | 816 | 672 | 1,008 | 252 | 0 |",
+     "| C5 | completion $\\mathbb F_2$-linearity | 32/384 | 136 | **0** | 168 | 126 | 1 |",
+     "| C6 | defect order profile | 16/384 | 32 | 36 | 48 | 12 | 0 |",
+     "| C7 | involutive profile | 12/384 | 8 | 6 | 20 | 0 | 0 |",
+     "| C8 | transvection | 192/384 | **0** | 128 | 192 | 48 | 1 |",
+     "| C9 | $q$ normalises the wing group | 0/384 | 12 | **0** | 12 | 0 | 1 |",
+     "| C10 | Fano collineation | 32/384 | 136 | **0** | 168 | 126 | 1 |",
+     "| C11 | abelian defect set | 20/384 | 130 | 126 | 150 | 0 | 0 |"
+    ],
+    "the_clause_c_containment": [
+     "| id | holds at | clause (c) | $\\lvert C\\setminus C4\\rvert$ | $C \\subseteq C4$ |",
+     "|---|---|---|---|---|",
+     "| C1 | 384 | 320 | 320 | no |",
+     "| C2 | 384 | 320 | 320 | no |",
+     "| C3 | 315 | 288 | 288 | no |",
+     "| C3b | 105 | 84 | 84 | no |",
+     "| C4 | 336 | 0 | 0 | **yes** |",
+     "| C4b | 1,008 | 672 | 672 | no |",
+     "| C5 | 168 | 0 | 0 | **yes** |",
+     "| C6 | 48 | 36 | 36 | no |",
+     "| C7 | 20 | 6 | 6 | no |",
+     "| C8 | 192 | 128 | 128 | no |",
+     "| C9 | 12 | 0 | 0 | **yes** |",
+     "| C10 | 168 | 0 | 0 | **yes** |",
+     "| C11 | 150 | 126 | 126 | no |"
+    ]
    }
   },
   "q4_quotient": {
@@ -5404,8 +7604,26 @@
     34104
    ],
    "the_action": "sigma' . (sigma, seed) = (sigma' sigma, seed), the wing factor of Hol = K x| S_3",
+   "the_boundary_parity_witness": {
+    "b0_with_OR": 0,
+    "b0_with_XOR": 1,
+    "b1_with_OR": 24,
+    "b1_with_XOR": 25,
+    "loop_1_cells_in_the_quotient": 240,
+    "rank_d1_with_OR": 6,
+    "rank_d1_with_XOR": 5,
+    "the_delivered_assembly_is_XOR": true,
+    "the_delivered_b1": 25,
+    "the_measured_delta": 1
+   },
    "the_correction_from_the_fixed_cells": -50,
    "the_drawn_table_is_preserved_with_conjugated_maps": true,
+   "the_fixed_cell_sum_residues": {
+    "0_cells": 0,
+    "1_cells": 0,
+    "2_cells": 0
+   },
+   "the_orbit_size_histograms_pin_the_census": true,
    "the_quotient_complex": {
     "E": 996,
     "F": 34104,
@@ -5425,7 +7643,9 @@
     "rank_d1": 5,
     "rank_d1_transposed": 5,
     "rank_d2_route_1_high_pivot": 966,
-    "rank_d2_route_2_cotree_low_pivot": 966
+    "rank_d2_route_2_cotree_low_pivot": 966,
+    "the_2_cells_in_all": 34104,
+    "the_d1_d2_sample_cap": 2000
    }
   },
   "transport_controls": {
@@ -5461,9 +7681,9 @@
  },
  "totals": {
   "anchors": 196,
-  "disclosures": 1,
-  "gates": 30,
+  "disclosures": 3,
+  "gates": 41,
   "must_pass_failures": 0,
-  "must_pass_gates": 29
+  "must_pass_gates": 38
  }
 }

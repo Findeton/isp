@@ -3,13 +3,18 @@ TOP -- TOPOLOGY ON THE LADDER
 pin d9e3a66 (74a472b54b85) | base e82c647 | schema top-topology-receipt-v1
 ==============================================================================
 
-VERDICT: TOP-GLOBAL-STRUCTURE-<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>
-   manifold reading: TOP-MANIFOLD-READING-CONSISTENT<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>
-selector: TOP-FANO-SELECTOR-NOT-FOUND<no candidate of the 13 declared passes
-all three clauses; the best reach 2 of 3, the order-2 locus holds 384
-completions of which 48 reach GL(3,2), and GL(3,2) is reached at 252
-completions spread over defect orders (1,2,3,4) -- so the locus neither
-implies nor is implied by the visit>
+VERDICT: TOP-GLOBAL-STRUCTURE-OF-THE-COORDINATE-RESOLVED-NERVE-DEGREE-1-IS-THE-COORDINATE-COUNT-4x35-UNMOVED-BY-THE-SCRAMBLE<charts 36, 1-cells 5436, 2-cells 204384; components 1, cycle rank 5401, chi 198984, F_2 ranks (b0,b1,b2) = (1,140,199123); b_1 = (T-1)(|V|-1) = 4 x 35 = 140 and the scrambled control returns b_1 = 140 as well, so degree one is the coordinate count and only b_2 (199123 -> 81748) sees the identification data; the wing quotient has chi 33114 and (b0,b1,b2) = (1,25,33138)>
+   manifold reading: TOP-MANIFOLD-READING-CONSISTENT-AT-3-OF-5-INSTANCES-DIMENSIONS-11-AND-35-LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared estimator is CHART-INDEPENDENT at all 36 charts of the reference instance -- one reading everywhere -- but the reading it returns is not a single number: the local simplex dimension per coordinate cell is (35,35,35,35,11,35,11,35,35,35), realising dimensions (11,35), and every chart's link has b_1 = 16998, so a link is never a circle and the uniformity is NOT manifoldhood; the drawn table of that instance is measured to have 1 chart-orbit(s) under its 36 measured automorphisms, so chart-independence there is FORCED and is entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, holding at 3 of the 5 declared instances and failing at (a W-class preparation at a fully symmetric setting,a partially symmetric setting)>
+selector:
+TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-TRANSPOSITION-CLASS<no
+candidate of the 13 declared passes all three clauses; the best reach 2 of 3,
+the order-2 locus at the declared P* = ACB holds 384 completions of which 48
+reach GL(3,2), and GL(3,2) is reached at 252 completions spread over defect
+orders (1,2,3,4) -- so the locus neither implies nor is implied by the visit.
+The locus is an ARENA COORDINATE: the 3 transposition symmetries agree at
+locus 384 / on-locus 48, the 2 3-cycles give locus 270 / on-locus 0, so both
+counts are P*-relative and only the 252 completions reaching GL(3,2) as a set
+are not>
 
 SCOPE:
 - at TB3's declared finite three-wing base, rebuilt from its section-2
@@ -37,6 +42,12 @@ reads the five declared A3 instances
 law the exact Born law of the declared leg sequence, read at the node's
 declared read time
 state p(0) = delta_{j0}
+the declared wing symmetry P* the FIRST NON-IDENTITY element of the enumerated
+wing group -- a TRANSPOSITION. P* is an ARENA COORDINATE, not a fact about the
+base: the defect d_P(q), the order-2 LOCUS and the defect-order axis of the
+selector census are all defined relative to it. All five non-identity wing
+symmetries are swept and the sweep is reported (RUNBOOK section 15: an arena
+coordinate is declared as data and its dependence is measured)
 
 ------------------------------------------------------------------------------
 2.  Q1 -- THE OVERLAP GRAPH, THE NERVE AND ITS INVARIANTS
@@ -74,6 +85,55 @@ t      1-cells   2-cells   b0   b1      chi
 b1 route 2 = b0 + (T-1)|V| + sum(b1_t) - sum(b0_t) = 1 + 144 + 0 - 5 = 140; global elimination gives 140
 H_2 additive over the checkpoints: sum(b2_t) = 199123 = b2 -- measured, True
 
+WHAT b1 MEASURES: the coordinate count (T-1)(|V|-1), and where it holds
+instance                                         T   |V|  (T-1)x     b1 sum b0 sum b1
+the declared base at a fully symmetric setting   5    36     140    140      5      0
+the equivariant-completion control               5     6      20     20      5      0
+a partially symmetric setting                    5    36     140    140      7      2
+an asymmetric setting                            5    36     140    136      9      0
+a W-class preparation at a fully symmetric set   5    36     140    140      7      2
+the scrambled negative control                   5    36     140    140      5      0
+
+THE BLOCK-INCIDENCE ROUTE: a read time's topology is the nesting of the two
+rules' partitions.  I_t joins two blocks that share a chart.
+instance                        t    blocks   I: V   I: E (b0,cyc) = sub
+the declared base at a fully s  0     (1,1)      2      1   (1,0) = (1,0)
+the declared base at a fully s  1     (1,1)      2      1   (1,0) = (1,0)
+the declared base at a fully s  2     (3,1)      4      3   (1,0) = (1,0)
+the declared base at a fully s  3     (3,1)      4      3   (1,0) = (1,0)
+the declared base at a fully s  4     (1,1)      2      1   (1,0) = (1,0)
+the equivariant-completion con  0     (6,1)      7      6   (1,0) = (1,0)
+the equivariant-completion con  1     (6,1)      7      6   (1,0) = (1,0)
+the equivariant-completion con  2     (6,1)      7      6   (1,0) = (1,0)
+the equivariant-completion con  3     (6,1)      7      6   (1,0) = (1,0)
+the equivariant-completion con  4     (6,1)      7      6   (1,0) = (1,0)
+a partially symmetric setting   0     (1,3)      4      3   (1,0) = (1,0)
+a partially symmetric setting   1     (1,3)      4      3   (1,0) = (1,0)
+a partially symmetric setting   2     (3,3)      6      5   (2,1) = (2,1)
+a partially symmetric setting   3     (3,3)      6      5   (2,1) = (2,1)
+a partially symmetric setting   4     (1,3)      4      3   (1,0) = (1,0)
+an asymmetric setting           0     (1,6)      7      6   (1,0) = (1,0)
+an asymmetric setting           1     (1,6)      7      6   (1,0) = (1,0)
+an asymmetric setting           2     (3,6)      9      6   (3,0) = (3,0)
+an asymmetric setting           3     (3,6)      9      6   (3,0) = (3,0)
+an asymmetric setting           4     (1,6)      7      6   (1,0) = (1,0)
+a W-class preparation at a ful  0     (1,3)      4      3   (1,0) = (1,0)
+a W-class preparation at a ful  1     (1,3)      4      3   (1,0) = (1,0)
+a W-class preparation at a ful  2     (3,3)      6      5   (2,1) = (2,1)
+a W-class preparation at a ful  3     (3,3)      6      5   (2,1) = (2,1)
+a W-class preparation at a ful  4     (1,3)      4      3   (1,0) = (1,0)
+
+DO THE DRAWN MAPS AGREE ACROSS COORDINATE CELLS? (declared D3b)
+instance                        pairs  agree  disagree digons coh x-ck b1 left
+the declared base at a fully s    630     90       540  20898   11268       0
+the equivariant-completion con     15     15         0    150     150       0
+a partially symmetric setting     630    522       108   9378    6948       0
+an asymmetric setting             630    630         0   6318    5868       0
+a W-class preparation at a ful    630    522       108   9378    6948       0
+at the reference: same-checkpoint digons 2286 kill 0 of 140; cross-checkpoint
+digons 18612 (of which 11268 coherent) leave b1 = 0.
+OUTCOME: CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS
+
 the simple overlap graph: nodes 36, edges 630, components 1, cycle rank 595, complete True
 the simplicial nerve: maximal face sizes (36), top dimension 35, chi 1
 
@@ -101,6 +161,14 @@ the reference instance's common profile:
   star (1-cells, 2-cells) (302,17032)
   link (V, E, b0, b1) (35,17032,1,16998)
   every link is a circle: False (a 2-manifold would need it)
+
+IS THE READING A MEASUREMENT?  The drawn table's automorphisms
+instance                                        autos orbits   vals the reading
+the declared base at a fully symmetric setting     36      1      1 CONSISTENT (orbit count 1: FORCED, a disclosure)
+the equivariant-completion control                  6      1      1 CONSISTENT (orbit count 1: FORCED, a disclosure)
+a partially symmetric setting                      12      3      2 INCONSISTENT (measured)
+an asymmetric setting                              36      1      1 CONSISTENT (orbit count 1: FORCED, a disclosure)
+a W-class preparation at a fully symmetric set     12      3      2 INCONSISTENT (measured)
 
 THE CONTROLS
 complex                                               chi   b1   b2  circ witness
@@ -139,6 +207,75 @@ C9    q normalises the wing group        0/384       12        0       12      0
 C10   Fano collineation                 32/384      136        0      168    126
 C11   abelian defect set                20/384      130      126      150      0
 
+CLAUSE (c) IS A CONTAINMENT (disclosure): its count is |C \ C4|
+id       holds  clause(c)   |C \ C4| C contained in C4
+C1         384        320        320 False
+C2         384        320        320 False
+C3         315        288        288 False
+C3b        105         84         84 False
+C4         336          0          0 True
+C4b       1008        672        672 False
+C5         168          0          0 True
+C6          48         36         36 False
+C7          20          6          6 False
+C8         192        128        128 False
+C9          12          0          0 True
+C10        168          0          0 True
+C11        150        126        126 False
+the extensional duplicates: (C1 = C2,C5 = C10); 13 declared names, 11 distinct predicates
+
+THE SAME TWO TABLES, EMITTED AS MARKDOWN ROWS FROM THE RECORDED
+TABLE ABOVE, so that the paper's section 5.2 is GENERATED and never retyped:
+| id | candidate | (a) on the locus | (b) off it | (c) non-linear $K$ | holds at | of those $=\mathrm{GL}(3,2)$ | clauses |
+|---|---|---|---|---|---|---|---|
+| C1 | involutivity | **384/384** | **0** | 320 | 384 | 48 | 2 |
+| C2 | defect fixed-point count | **384/384** | **0** | 320 | 384 | 48 | 2 |
+| C3 | completion support | 40/384 | 275 | 288 | 315 | 6 | 0 |
+| C3b | completion cycle type | 24/384 | 81 | 84 | 105 | 6 | 0 |
+| C4 | defect $\mathbb F_2$-linearity | 64/384 | 272 | **0** | 336 | 252 | 1 |
+| C4b | declared-symmetry defect linearity | 192/384 | 816 | 672 | 1,008 | 252 | 0 |
+| C5 | completion $\mathbb F_2$-linearity | 32/384 | 136 | **0** | 168 | 126 | 1 |
+| C6 | defect order profile | 16/384 | 32 | 36 | 48 | 12 | 0 |
+| C7 | involutive profile | 12/384 | 8 | 6 | 20 | 0 | 0 |
+| C8 | transvection | 192/384 | **0** | 128 | 192 | 48 | 1 |
+| C9 | $q$ normalises the wing group | 0/384 | 12 | **0** | 12 | 0 | 1 |
+| C10 | Fano collineation | 32/384 | 136 | **0** | 168 | 126 | 1 |
+| C11 | abelian defect set | 20/384 | 130 | 126 | 150 | 0 | 0 |
+
+| id | holds at | clause (c) | $\lvert C\setminus C4\rvert$ | $C \subseteq C4$ |
+|---|---|---|---|---|
+| C1 | 384 | 320 | 320 | no |
+| C2 | 384 | 320 | 320 | no |
+| C3 | 315 | 288 | 288 | no |
+| C3b | 105 | 84 | 84 | no |
+| C4 | 336 | 0 | 0 | **yes** |
+| C4b | 1,008 | 672 | 672 | no |
+| C5 | 168 | 0 | 0 | **yes** |
+| C6 | 48 | 36 | 36 | no |
+| C7 | 20 | 6 | 6 | no |
+| C8 | 192 | 128 | 128 | no |
+| C9 | 12 | 0 | 0 | **yes** |
+| C10 | 168 | 0 | 0 | **yes** |
+| C11 | 150 | 126 | 126 | no |
+
+P* IS AN ARENA COORDINATE: the five-wing-symmetry sweep
+P*     type             locus   on-locus ord distribution
+ACB    transposition      384         48 {1:48,2:384,3:1728,4:1152,5:1152,6:576}
+BAC    transposition      384         48 {1:48,2:384,3:1728,4:1152,5:1152,6:576}
+BCA    3-cycle            270          0 {1:18,2:270,3:1080,4:1296,5:648,6:432,7:1296}
+CAB    3-cycle            270          0 {1:18,2:270,3:1080,4:1296,5:648,6:432,7:1296}
+CBA    transposition      384         48 {1:48,2:384,3:1728,4:1152,5:1152,6:576}
+the declared P* is ACB (transposition); K itself does not depend on P*, so the 252
+completions reaching GL(3,2) as a set are P*-INDEPENDENT and the locus is not.
+
+THE ORDER-THEORETIC LADDER, and where it stops
+purely order-theoretic condition                          passing   false pos.
+ord[P*,u] lies in GL(3,2)'s element spectrum                 3312         2976
+the whole S_3 defect-order profile lies in the spectrum      1176          840
+every element order of K itself lies in the spectrum          768          432
+every level contains all 336 completions with K inside GL(3,2); the finest still
+admits 432 false positives, so no order condition characterises the visit.
+
 the candidates at the five rule-selected rungs (the four-target
 comparison the ladder actually makes):
   A1 target ord = 1                          (C10,C11,C4,C4b,C5,C7,C9)
@@ -157,6 +294,11 @@ fixed 1-cells {ABC:5436,ACB:180,BAC:180,BCA:0,CAB:0,CBA:180}
 fixed 2-cells {ABC:204384,ACB:0,BAC:0,BCA:120,CAB:120,CBA:0}
 the quotient complex: V 6, E 996, F 34104, b0 1, b1 25, b2 33138, chi 33114
 chi(N)/6 = 33164; the correction from the fixed cells = -50
+Burnside divides EXACTLY: fixed-cell sum residues mod |S_3| {0_cells:0,1_cells:0,2_cells:0}
+orbit-size histograms 1-cells {3:180,6:816}, 2-cells {2:60,6:34044}; they recover the cell counts True
+BOUNDARY PARITY: 240 loop 1-cells; XOR gives rank d1 5, b0 1, b1 25;
+OR gives rank d1 6, b0 0, b1 24 -- the measured delta is 1, and the delivered
+assembly is the XOR one: True
 
 ------------------------------------------------------------------------------
 6.  THE CONTROLS
@@ -178,6 +320,9 @@ NEGATIVE: the scrambled atlas
   scrambled {E:4072,F:85645,V:36,b0:1,b1:140,b2:81748,chi_from_cell_counts:81609}
   invariants that moved (E,F,b2,chi_from_cell_counts)
   distinct estimator values 36; witness ABC|ACB
+  why b0 and b1 do NOT move, measured: the scrambled atlas's own per-checkpoint
+  census is sum b0 = 5 over 5 read times and sum b1 = 0, so the gluing formula
+  pins b1 to the coordinate count 140, exactly as at the reference; b2 moves (199123,81748).
 
 ------------------------------------------------------------------------------
 7.  GATES
@@ -215,18 +360,66 @@ a triangle, three rotations and two orientations, computed rather than typed
 -- and a probe that removes ONE geometric 2-cell is measured to break that
 relation
 [PASS] TOP-COHERENCE                measurement
-THE COHERENT 2-CELLS ARE COUNTED TWICE, INDEPENDENTLY. A 2-cell is coherent
-when its three drawn maps compose to the identity -- the strict cocycle
-condition. Route 1 flags it while the cell is built; route 2 reads the
-ORDERED DEFECT MULTISET, itself anchored against the committed receipt, and
-takes the entry at the identity. The two are gated equal through the exact
-traversal multiplicity at every instance, so a coherence test that answered
-yes to everything would be caught by a census it does not touch
+THE COHERENT 2-CELL COUNT IS ONE ROUTE, EXTERNALLY ANCHORED -- and the
+instrument says so rather than claiming two. A 2-cell is coherent when its
+three drawn maps compose to the identity, the strict cocycle condition. The
+count is flagged while the cell is built; the ORDERED DEFECT MULTISET's
+entry at the identity is NOT an independent second census of it, because the
+three traversal defects are CONJUGATE -- d_2 = p_1 d_1 p_1^-1 and d_3 = (p_2
+p_1) d_1 (p_2 p_1)^-1, MEASURED here at every 2-cell of every instance -- so
+the pattern (d_1,d_2,d_3) is never mixed and the identity entry is
+IDENTICALLY six times the coherent count (RUNBOOK section 13 addendum, #234:
+a pair related by an algebraic identity is one route). What the second
+computation buys is not independence but an EXTERNAL ANCHOR: the multiset is
+gated exit-1 against TB3's committed receipt, so the coherent count is
+pinned to bytes outside this file. The `coh-lax` mutant answers yes to every
+triangle and must die on that anchored relation. The conjugacy itself is
+ANALYTICALLY FORCED -- p_1 (p_3 p_2 p_1) p_1^-1 = p_1 p_3 p_2 for any three
+maps -- so it is computed and recorded as evidence and enters
+TOP-FORCED-CLAUSES as a disclosure, never as a must-pass clause of this gate
+[PASS] TOP-PAIR-SYMMETRY            measurement
+THE ADMISSION RELATION IS MEASURED SYMMETRIC, not assumed. A 1-cell is drawn
+for the unordered pair (a,b) from the ORDERED entry with a < b, so if
+admission were not symmetric the whole complex would depend on the chart
+indexing. The relation is measured symmetric at all 10 coordinate cells of
+all 5 declared instances, and the `sym-lax` mutant deletes one direction of
+one admitted pair and must die here
 [PASS] TOP-DEFECTS                  measurement
 THE ORDERED TRIANGLE DEFECT MULTISET over the wing group is reproduced
 element by element at the reference instance and anchored exit-1 against the
 committed receipt. It is computed from the geometric 2-cells by evaluating
 all six traversals explicitly, not by scaling one of them
+[PASS] TOP-BLOCK-INCIDENCE          measurement
+A READ TIME'S OWN TOPOLOGY IS THE NESTING OF THE TWO RULES' PARTITIONS, and
+that is a THIRD route to the per-checkpoint numbers, taken with no
+elimination at all. At each checkpoint the FULL and REALIZED rules partition
+the charts into the components of their drawn relations; the bipartite
+BLOCK-INCIDENCE GRAPH joins two blocks that share a chart, and its b_0 and
+its cycle rank are measured EQUAL to the sub-nerve's b_0 and b_1 at every
+one of the 25 (instance, checkpoint) pairs. So `every checkpoint sub-nerve
+has vanishing first homology' says exactly `at every read time the two block
+partitions are NESTED, their incidence graph a forest' -- and where they are
+not nested, at checkpoints 2 and 3 of the partially symmetric and W-class
+instances, the incidence graph carries the cycle the sub-nerve carries. The
+comparator touches neither the sub-complex nor its elimination (RUNBOOK
+section 14 addendum, #219). The `block-lax` mutant builds the incidence
+graph from one rule's partition alone and must die here
+[PASS] TOP-CROSS-CELL               derivation
+DO THE MAPS DRAWN FOR ONE PAIR AGREE ACROSS COORDINATE CELLS, AND WHAT DOES
+THAT DECIDE? Declared in D3b before it was run, with BOTH outcomes
+pre-registered and neither favoured. Two charts identified at k coordinate
+cells carry k parallel 1-cells and C(k,2) digons; a digon is COHERENT when
+its two drawn maps agree. The digon census is gated complete against the
+multiplicities (sum of C(k,2)); the pair-level agreement is computed TWICE,
+once from the set of drawn maps and once from the digon flags, and the two
+must agree at every pair -- the `digon-lax` mutant calls every digon
+coherent and must die on that differential. The same-checkpoint digons are
+measured to kill NOTHING, so no degree-one class compares two rules at one
+read time. The OUTCOME is then re-derived inside this gate from the measured
+residual b_1 that survives filling the COHERENT cross-read-time digons, and
+gated byte-for-byte against the emitted one; the `crosscell-typed` mutant
+emits the other outcome with the tables unchanged and must die here. The
+gate checks the DERIVATION, not a favoured value
 [PASS] TOP-COMPONENTS               measurement
 THE COMPONENT COUNT AGREES BY FOUR ROUTES at every declared instance:
 union-find over the drawn links, the F_2 rank of the boundary matrix, the
@@ -261,16 +454,39 @@ below, NOT as a route, because it is an algebraic identity in the ranks
 DISCLOSURE, ANALYTICALLY FORCED. chi computed from the Betti numbers equals
 chi computed from the cell counts for EVERY input, because the ranks cancel
 identically; it is printed as evidence that the ranks were assembled
-consistently and is NOT a second route to chi. Likewise d_1 d_2 = 0 holds by
-construction for a simplicial boundary and is recorded, not gated
+consistently and is NOT a second route to chi. Likewise d_1 d_2 = 0 holds
+for EVERY input here by the same algebra -- each 2-cell's three 1-cells are
+the three sides of a triangle, so their six endpoint bits cancel in pairs --
+and the guard that evaluates it is a SAMPLE, capped at the number printed
+below out of the 2-cell count printed beside it; the argument, not the
+sample, is what carries it
+[PASS] TOP-COORDINATE-COUNT         disclosure
+DISCLOSURE, ALGEBRAICALLY FORCED -- WHAT b_1 = 140 ACTUALLY SAYS.
+Rearranging the gluing formula, b_1(N) - (T-1)(|V|-1) = sum_t b_1^t - (
+sum_t b_0^t - T ), so b_1 equals the pure COORDINATE COUNT (read times minus
+one) x (charts minus one) exactly when the per-checkpoint excess sum_t b_0^t
+- T equals sum_t b_1^t. That equivalence is an identity, not a measurement:
+the measured content of the degree-one claim is the per-checkpoint census
+(sum b_0, sum b_1) recorded above, and nothing else. Four of the five
+declared instances return the coordinate count, the asymmetric setting does
+not, and -- printed here rather than worked around -- the SCRAMBLED negative
+control returns it too, so b_1 is insensitive to the identification data
+while b_2 is not. The identification-carrying invariants are b_2 and the
+coherent sub-nerve
 [PASS] TOP-SIMPLICIAL               measurement
-THE SIMPLICIAL NERVE IS A FULL SIMPLEX AT THE REFERENCE INSTANCE, hence
+THE SIMPLICIAL NERVE IS THE WHOLE CHART SET, hence a cone, hence
 contractible. Every coordinate cell's overlap graph is MEASURED to be a
 disjoint union of complete graphs, so the faces are exactly the subsets of
-those components; at the reference instance eight of the ten cells give the
-whole chart set, so the unique maximal face is everything. Its Euler
-characteristic is computed as the alternating binomial sum over all
-non-empty subsets and is measured to be 1, which the cone argument predicts
+those components; the measured content is then that the UNIQUE MAXIMAL FACE
+IS THE WHOLE CHART SET at every declared instance -- gated here as
+maximal_face_sizes == [charts], which is the number the unit defends and
+which a smaller maximal face would break. The alternating binomial sum is
+NOT part of this predicate: sum_{j=1..k} (-1)^{j+1} C(k,j) = 1 for every k
+>= 1, evaluated here at k = 1..40 with a one-element value set, so it is
+ANALYTICALLY FORCED and is entered in TOP-FORCED-CLAUSES as a disclosure
+(RUNBOOK section 14 addendum, #208). The `simp-lax` mutant replaces the
+maximal face by a proper subset of itself -- a perturbation the binomial
+clause cannot see and this one does
 [PASS] TOP-DIM-CONTROLS             control
 THE ESTIMATOR IS CALIBRATED ON COMPLEXES WHOSE ANSWER IS KNOWN. On the
 boundary of a tetrahedron and on a 9-vertex torus -- both genuine
@@ -280,25 +496,53 @@ against the declared standard values; on two tetrahedra glued at one vertex
 it returns a link that is NOT a circle, and names the pinch vertex. Positive
 and negative in one family
 [PASS] TOP-DIM-READING              derivation
-THE DIMENSION VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED COUNT of
-distinct estimator values, re-derived here independently of the emitter, and
-the two must agree; the `verdict-flip` mutant moves the emitter alone and
-must die here. The estimator is the DECLARED one -- per-coordinate-cell
-local simplex dimension, star profile and the F_2 homology of the vertex
-link -- evaluated at EVERY chart, and its per-cell dimension is
-cross-checked against a component census run in this gate from the pair
-table alone, a comparator built independently of the estimator it audits.
-CONSISTENT means UNIFORM, not manifold: the link is reported beside it and
-the manifold controls show what a circle link looks like. The reading is
-measured INSTANCE-SPECIFIC: it FAILS at two of the five declared instances,
-whose witnesses are exhibited here, so consistency at the reference is a
-measurement about that instance and not a property of the construction
+THE DIMENSION VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED TABLE
+AND GATED BYTE-FOR-BYTE AGAINST THE EMITTED STRING -- head, computed
+qualifiers and body alike, not a prefix (RUNBOOK section 13 addendum, #234,
+and #257: a qualifier is part of the verdict). The head itself carries the
+restrictions: how many of the declared instances the reading holds at, which
+dimensions the profile realises, that no link is a circle, and that
+chart-independence at the reference is SYMMETRY-FORCED. The `verdict-flip`
+mutant moves the branch and the `manifold-typed` mutant moves ONE COMPUTED
+QUALIFIER of the emitter with every recorded table left at its measured
+value; both must die here. The estimator is the DECLARED one --
+per-coordinate-cell local simplex dimension, star profile and the F_2
+homology of the vertex link -- evaluated at EVERY chart, and ALL THREE
+components are cross-checked: the per-cell dimension against a component
+census run from the pair table alone, and the star and the link against a
+comparator that never touches `local_profiles` and reads the link's homology
+by union-find and Euler instead of by an F_2 rank, with the global
+identities sum star_E = 2E and sum star_F = 3F gated beside it. CONSISTENT
+means UNIFORM, not manifold. Whether the uniformity is a MEASUREMENT is
+itself measured: the drawn table's chart-orbit count under its declared
+automorphism candidates is reported per instance, and where it is 1 the
+reading could not have come out otherwise and is entered as a disclosure
+[PASS] TOP-AUTOMORPHISM             measurement
+WHETHER A CONSISTENT READING IS A MEASUREMENT AT ALL. The declared estimator
+is a chart-invariant of the drawn table, so where the drawn table has an
+automorphism group TRANSITIVE ON CHARTS the reading could not have come out
+otherwise. The declared automorphism candidates -- the 36 left translations
+(sigma, seed) -> (g sigma, h seed) -- are each TESTED against the drawn
+relation at every coordinate cell, and the chart-orbit count of the ones
+that pass is measured per instance. Where the orbit count is 1 the reading
+is measured CONSISTENT and entered as a DISCLOSURE, not as a measurement
+(RUNBOOK section 14 addendum, #208); where it is not, the split is a genuine
+measurement. This gate carries the implication: every instance whose orbit
+count is 1 must read CONSISTENT. The `auto-lax` mutant accepts every
+candidate without testing it against the drawn table and must die here
 [PASS] TOP-SELECTOR-FREEZE          measurement
-THE CANDIDATE FAMILY IS FROZEN BEFORE ANY FIXTURE TRUTH. The thirteen
+THE CANDIDATE FAMILY IS DECLARED ABOVE EVERY MEASUREMENT. The thirteen
 candidate selectors and the three clauses are declared in this source above
 every measurement, and the count of defect subgroups K(q) built at the
-moment the declaration is registered is measured to be ZERO. The
-`selfreeze-lax` mutant builds one first and must die here
+moment the declaration is registered is measured to be ZERO. That records
+the ordering WITHIN ONE EXECUTION; it is NOT offered as proof that the
+declarations were fixed before any fixture truth was seen, which no in-run
+measurement can establish -- the process fact is the commit, not this
+counter. Each candidate's ORIGIN is one of the declared labels and is gated
+against them: `pin-derived` means it restates the pin's own order-2-locus
+language, and is NOT a claim that the pin lists it -- THE PIN CONTAINS NO
+CANDIDATE LIST. The `selfreeze-lax` mutant builds a subgroup first and must
+die here
 [PASS] TOP-SELECTOR-ANCHORS         anchor
 THE LADDER'S DEFECT SUBGROUPS REBUILD. At each of the five rule-selected
 instances the defect subgroup K = <d_P : P in S_3> is rebuilt here by the
@@ -307,17 +551,74 @@ count of F_2-linear elements and its set equality with an independently
 brute-forced GL(3,2) are each anchored exit-1 against the hash-pinned
 committed receipt. This is what licenses the census below to speak about the
 same objects
+[PASS] TOP-CACHE                    measurement
+THE MEMOIZATION IS AUDITED. The census caches the defect subgroup by its
+generator multiset; the cache is measured to be EXERCISED (the hit count is
+gated non-zero, so this is not a zero-lookup gate), and a declared sample of
+24 completions -- every 211th of the family, chosen by index and not by
+outcome -- is recomputed FRESH with the cache bypassed, order, linear count
+and set equality alike. The `cache-lax` mutant perturbs the value returned
+on a hit and must die here
+[PASS] TOP-PSTAR-SWEEP              measurement
+THE LOCUS IS AN ARENA COORDINATE AND THE DEPENDENCE IS MEASURED (RUNBOOK
+section 15). The defect d_P(q), the order-2 LOCUS and the defect-order axis
+of the census are all defined relative to the declared wing symmetry P*,
+which this instrument selects as the first non-identity element of the
+enumerated wing group -- a TRANSPOSITION. All five non-identity symmetries
+are swept: the three transpositions are measured to AGREE, locus and
+on-locus count alike, the two 3-cycles are measured to agree with each other
+and to DIFFER from the transpositions, and every locus is measured
+non-empty. So the locus size and the on-locus count are P*-RELATIVE and the
+verdict says so in its own head; the count of completions reaching GL(3,2)
+as a set is not, since K does not depend on P*. The `defect-lax` mutant
+composes the defect in the wrong order, emptying every locus, and must die
+here
+[PASS] TOP-ORDER-LADDER             measurement
+HOW FAR THE ORDER-THEORETIC CONDITION GOES, AND WHERE IT STOPS. GL(3,2)'s
+element orders are measured, d_{P*}(q) lies in K(q), so an order outside
+that spectrum makes the containment impossible -- the necessary condition
+the census reports biting at orders 5 and 6. It is NOT the finest
+order-theoretic condition available, and that is measured here rather than
+asserted: a strictly nested ladder of purely order-theoretic conditions is
+built, each measured to contain every completion whose K lies in GL(3,2),
+and each measured strictly smaller than the last. The measured content is
+the last row: even the finest of them still admits false positives, so NO
+purely order-theoretic condition characterises the visit and linearity does
+irreducible work. The `defect-lax` mutant collapses every defect to the
+identity, flattening the ladder, and must die here
 [PASS] TOP-SELECTOR                 derivation
-THE SELECTOR VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED
-CONTINGENCY TABLE. Each of the thirteen declared candidates is measured on
-the three declared clauses over the EXHAUSTIVE completion family, and the
-verdict string is re-derived here from the count of candidates passing all
-three; the emitter is a separate computation and the two must agree. Clause
-(c) is additionally cross-checked against a count taken OUTSIDE the
-candidate loop -- the number of completions in the whole family whose defect
-subgroup is F_2-linear -- which no candidate's linear sub-count may exceed;
-the `sel-clause-lax` mutant reports clause (c) as passing for every
-candidate and must die on that bound
+THE SELECTOR VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED
+CONTINGENCY TABLE AND GATED BYTE-FOR-BYTE against the emitted string --
+head, computed qualifiers and body alike, not a prefix (RUNBOOK section 13
+addendum, #234; #257). The head carries the restriction the census actually
+has: the locus is P*-RELATIVE, and which class of wing symmetry P* belongs
+to is interpolated from the measured cycle type. Each of the thirteen
+declared candidates is measured on the three declared clauses over the
+EXHAUSTIVE completion family. Clause (c) is cross-checked against a count
+taken OUTSIDE the candidate loop -- the completions in the whole family
+whose defect subgroup is F_2-linear -- which no candidate's linear sub-count
+may exceed; the `sel-clause-lax` mutant reports clause (c) as passing for
+every candidate and must die on that bound, and the `selector-typed` mutant
+moves ONE COMPUTED QUALIFIER of the emitter with the table left at its
+measured value
+[PASS] TOP-FORCED-CLAUSES           disclosure
+DISCLOSURE: WHAT IN THIS UNIT IS FORCED RATHER THAN MEASURED (RUNBOOK
+section 14 addendum, #208). Five items, each computed here and none of them
+a must-pass clause anywhere. (i) CLAUSE (c) IS A CONTAINMENT: its count for
+a candidate C is measured to be |C \ C4| for every one of the thirteen, and
+C4 is measured EQUAL as a set to {q : K(q) contained in GL(3,2)}, so `clause
+(c) passes' is literally C contained in C4 and every passer's zero is
+algebra -- C4 because a group generated by linear maps is linear, C5 and C10
+because all six sigma_P are measured F_2-linear, C9 because q normalising
+the wing group puts every defect inside it, all four measured as set
+containments here. (ii) THE EXTENSIONAL DUPLICATES: the declared thirteen
+names carry fewer distinct predicates, and every coincidence is listed
+rather than the first one only. (iii) THE ALTERNATING BINOMIAL SUM of
+TOP-SIMPLICIAL is 1 for every k, so it is a print and not a route. (iv) THE
+THREE TRAVERSAL DEFECTS of a 2-cell are CONJUGATE, which is why the coherent
+count has one route and not two. (v) CHART-INDEPENDENCE at an instance whose
+drawn table is chart-transitive could not have come out otherwise, so
+CONSISTENT is a disclosure there
 [PASS] TOP-WING-ACTION              measurement
 THE WING FACTOR ACTS, AND THE ACTION IS SELF-TESTED UNDER ITS OWN SYMMETRY
 (RUNBOOK section 14). The S_3 of the gauge-inclusive holonomy's semidirect
@@ -334,26 +635,64 @@ LEMMA applied to the independently measured fixed-cell census, which builds
 no orbit at all. The `orbit-lax` mutant enumerates with the identity alone
 and the `burnside-lax` mutant divides by the wrong group order; both must
 die here
+[PASS] TOP-BURNSIDE-EXACT           measurement
+BURNSIDE'S SUM DIVIDES EXACTLY, AND THE ORBIT-SIZE HISTOGRAMS PIN THE
+CENSUS. The orbit counts are floor divisions, so an error of one to five in
+the fixed-cell census's TOTAL would be absorbed silently and TOP-ORBITS
+would not see it. Two clauses close that: the sum of fixed cells is measured
+to be EXACTLY divisible by the group order in all three dimensions -- the
+residues are printed and must be zero -- and the orbit-size histograms are
+gated against the cell counts, sum(size x count) = |E| and = |F| with the
+number of orbits recovered as sum(count). The `fixcell-lax` mutant inflates
+every non-identity fixed-cell count by one -- an error the floor division
+absorbs, TOP-ORBITS cannot see, and this gate must -- and it dies here. A
+mutant that divides by the WRONG ORDER leaves both of these clauses true and
+is not this gate's business: it moves the orbit counts, and is caught where
+those are compared against direct enumeration, which is TOP-ORBITS
+[PASS] TOP-BOUNDARY-PARITY          measurement
+THE BOOLEAN CONNECTIVE OF THE BOUNDARY IS GATED BY ITS OWN DELTA (RUNBOOK
+section 14 addendum, #313). Assembling an incidence bit pattern with OR
+instead of the mod-2 XOR is inert wherever every 1-cell joins two distinct
+0-cells, and bites exactly where a cell meets a face twice -- which is the
+wing quotient, whose 1-skeleton is measured to carry a non-zero number of
+LOOP 1-cells, gated here so the convention is exercised by construction and
+not by circumstance. Both connectives are evaluated on the same quotient and
+their DELTA is measured and printed; the gate requires the delta to be
+non-zero -- so the convention is load-bearing -- and the delivered b_1 to be
+the XOR one. The `or-lax` mutant assembles the boundary rows with OR and the
+`or-lax-T` mutant does it in the transposed accumulation; both must die here
+or on the four-route component check below
 [PASS] TOP-QUOTIENT                 measurement
 THE QUOTIENT COMPLEX'S INVARIANTS. The quotient is the ORBIT CELL COMPLEX --
 cells are orbits, the boundary is induced mod 2 -- and its components, cycle
 rank, Euler characteristic and F_2 ranks are computed by the same two-route
-standard as the nerve's. The action is measured FREE on 0-cells but NOT on
-1- and 2-cells, so the orbit complex is reported as the orbit CHAIN complex
-and the difference from a free quotient is derived from the fixed-cell
-census rather than assumed away: chi of the orbit complex minus chi(N)/|S_3|
-is measured, and equals the correction Burnside's lemma predicts from the
-fixed cells
+standard as the nerve's. ALL FOUR component routes are compared here, not
+two: union-find, the F_2 rank of the boundary matrix, the rank of its
+TRANSPOSE and a spanning forest. The transpose route is the one that only
+the quotient can exercise -- on the nerve routes 2 and 3 agree trivially
+because there are no loops -- and without it a quotient could publish a
+component count of zero for a non-empty complex. The action is measured FREE
+on 0-cells but NOT on 1- and 2-cells, so the orbit complex is reported as
+the orbit CHAIN complex and the difference from a free quotient is derived
+from the fixed-cell census rather than assumed away: chi of the orbit
+complex minus chi(N)/|S_3| is measured, and equals the correction Burnside's
+lemma predicts from the fixed cells
 [PASS] TOP-POS-2WING                control
-THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS. Instantiated
-at a 16-configuration carrier neither committed unit used, the machinery
-reproduces the committed two-wing transport graph at BOTH realised defect
-orders -- nodes, links, identification links, cycle rank and the completion
-itself, every one anchored exit-1 against the hash-pinned receipt -- and the
-F_2 homology machinery returns b_1 equal to the committed cycle rank 6, so
-the homology route is anchored to a committed number and not only to itself.
-The two-wing ATLAS is then run through the same nerve machinery, and its
-invariants are printed
+THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS, AND EXACTLY
+WHAT IT ANCHORS. Instantiated at a 16-configuration carrier neither
+committed unit used, the machinery reproduces the committed two-wing
+transport graph at BOTH realised defect orders -- nodes, links,
+identification links, cycle rank and the completion itself, every one
+anchored exit-1 against the hash-pinned receipt. That anchors the
+ONE-DIMENSIONAL route and only it. The b_1 column is NOT a second anchor:
+the control graph carries no 2-cells, so rank(d_2) = 0 and b_1 equals the
+cycle rank IDENTICALLY -- the identity is printed here rather than counted
+as evidence, on deviation 3's own standard. NO COMMITTED NUMBER ANCHORS
+rank(d_2) ANYWHERE IN THIS UNIT; the two-dimensional half of the homology
+machinery is calibrated by the DECLARED-STANDARD control complexes alone,
+which buy calibration and not independence, and that is disclosed rather
+than smoothed. The two-wing ATLAS is then run through the same nerve
+machinery, and its invariants are printed
 [PASS] TOP-POS-TRANSPORT            control
 THE COMMITTED THREE-WING TRANSPORT GRAPHS REBUILD. The reference graph (30
 nodes, 150 links, 126 identification links, cycle rank 121) and all three of
@@ -369,15 +708,30 @@ pairs by an exact integer recurrence seeded by the SHA-256 of the declared
 data alone -- is measured to MOVE the invariant table and to BREAK the
 dimension reading, which then returns INCONSISTENT with a named witness
 chart. The `scramble-off` mutant leaves the atlas alone and must die here,
-which is what shows the two clauses are measurements and not restatements
+which is what shows the two clauses are measurements and not restatements.
+WHAT DOES NOT MOVE IS ALSO MEASURED: b_0 and b_1 are unchanged, and the
+reason is not narrated but computed -- the scrambled atlas's OWN
+per-checkpoint census is taken here and returns the same connected, simply
+connected read times, so the gluing formula pins b_1 to the coordinate count
+(T-1)(|V|-1) at the scrambled atlas exactly as at the reference. The
+degree-one invariant is therefore measured INSENSITIVE to the identification
+data; b_2 is not
 [PASS] TOP-VERDICT                  derivation
-THE UNIT VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED GATE
-OUTCOMES, not typed: the structure verdict is emitted only if every
-measurement, control and anchor gate passed, and the alternative branch is
-the pre-registered census outcome TOP-BLOCKED-AT-<object>. The
-`verdict-flip` mutant moves the emitter alone and must die here. Only
-pre-registered names are emitted, and the vocabulary is checked against the
-pin's list
+THE UNIT VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED TABLES AND
+GATED BYTE-FOR-BYTE against the emitted string -- head, computed qualifiers
+and body alike, not a prefix (RUNBOOK section 13 addendum, #234; #257: a
+qualifier is part of the verdict). The BRANCH is derived from the measured
+gate outcomes -- the structure verdict is emitted only if every measurement,
+control and anchor gate passed, the alternative being the pre-registered
+TOP-BLOCKED-AT-<object> -- and the head then carries the restriction the
+measurement actually supports: the topology is the COORDINATE-RESOLVED
+nerve's, its degree-one rank is the coordinate count (read times - 1) x
+(charts - 1) with both factors interpolated from measured counts, and the
+SCRAMBLED control returns the same b_1. The `verdict-flip` mutant moves the
+branch and the `unit-typed` mutant moves ONE COMPUTED QUALIFIER of the
+emitter with every recorded table left at its measured value; both must die
+here. Only pre-registered names are emitted and the vocabulary is checked
+against the pin's list
 [PASS] TOP-DECLARATION-ORDER        derivation
 THE DECLARATIONS PRECEDE THE MEASUREMENTS. The arena, the three complexes,
 the local-dimension estimator, the selector candidate family, the control
@@ -387,11 +741,23 @@ the freeze. That records the ordering WITHIN ONE EXECUTION; it is not
 offered as proof that the declarations were fixed before any fixture truth
 was seen, which no in-run measurement can establish
 [PASS] TOP-ANCHOR-PROVENANCE        derivation
-EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed, never
-averaged. An EXTERNAL anchor's declared side comes from bytes outside this
-file -- TB3's hash-pinned committed receipt; a DECLARED-STANDARD anchor's
-declared side is a standard invariant of a control complex typed in this
-source, which buys calibration and not independence, and is labelled as such
+EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed in FOUR
+classes, never averaged and never rounded up to `external'. EXTERNAL: the
+declared side is read from bytes outside this file, TB3's hash-pinned
+committed receipt. SELF-PIN: the declared side is the SHA-256 typed in this
+source and the computed side is the hash of the foundation's bytes -- it
+pins the foundation and is not an external reading, so it is counted apart.
+STRUCTURAL: the declared side is a size FORCED by the declared base (the
+transport graph's |FRAMES| x |CHECKPOINTS| nodes, which TB3's
+negative-control rows do not carry), computed from the declaration rather
+than typed, and incapable of failing -- named here rather than counted as
+evidence. DECLARED-STANDARD: a standard invariant of a control complex typed
+in this source, which buys calibration and not independence. This gate is a
+VOCABULARY check and says so: it verifies that every anchor names a declared
+class, not that an external anchor's bytes were read. Its only falsifier is
+the `provenance-lax` WAIVER, which registers a bad label after the sweep,
+and it is classified as a waiver rather than a computation mutant for
+exactly that reason
 [PASS] TOP-NO-MUTANT-EXEMPTION      derivation
 NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 addendum,
 #208). An AST sweep looks for every negated comparison against the mutant
@@ -421,33 +787,48 @@ mutant
 ------------------------------------------------------------------------------
 8.  ANCHORS
 ------------------------------------------------------------------------------
-196 anchors, 0 failing; by provenance {declared:24,external:172}
+196 anchors, 0 failing; by provenance {declared:24,external:168,self-pin:1,structural:3}
 
 ------------------------------------------------------------------------------
 9.  MUTANTS
 ------------------------------------------------------------------------------
-29 mutants; 28 must-pass gates; never falsified ()
-falsified by a computation mutant 26 of 28; only by a waiver (TOP-EXACTNESS,TOP-NO-MUTANT-EXEMPTION)
+44 mutants; 37 must-pass gates; never falsified ()
+falsified by a computation mutant 34 of 37; only by a waiver (TOP-ANCHOR-PROVENANCE,TOP-EXACTNESS,TOP-NO-MUTANT-EXEMPTION)
   pin-hash         exit 1  (TOP-PIN-TB3,TOP-BASE,TOP-VERDICT)
   s3-lax           exit 1  (TOP-DEFECTS,TOP-WING-ACTION,TOP-VERDICT)
   carrier-lax      exit 1  (TOP-DEFECTS,TOP-SIMPLICIAL,TOP-WING-ACTION,TOP-ORBITS)
-  qrule-lax        exit 1  (TOP-BASE,TOP-DEFECTS,TOP-SELECTOR-ANCHORS,TOP-WING-ACTION)
-  legkey-lax       exit 1  (TOP-CELL-COMPLETENESS,TOP-DEFECTS,TOP-SIMPLICIAL,TOP-POS-2WING)
+  qrule-lax        exit 1  (TOP-BASE,TOP-DEFECTS,TOP-SIMPLICIAL,TOP-SELECTOR-ANCHORS)
+  legkey-lax       exit 1  (TOP-CELL-COMPLETENESS,TOP-DEFECTS,TOP-SIMPLICIAL,TOP-BOUNDARY-PARITY)
   id-lax           exit 1  (TOP-POS-2WING,TOP-POS-TRANSPORT,TOP-VERDICT)
   route1-drop      exit 1  (TOP-CENSUS-ROUTES,TOP-CELL-COMPLETENESS,TOP-VERDICT)
-  cell-drop        exit 1  (TOP-CELL-COMPLETENESS,TOP-CHI,TOP-ORBITS,TOP-VERDICT)
-  rank-lax         exit 1  (TOP-COMPONENTS,TOP-CYCLERANK,TOP-HOMOLOGY,TOP-DIM-CONTROLS)
+  cell-drop        exit 1  (TOP-CELL-COMPLETENESS,TOP-CHI,TOP-AUTOMORPHISM,TOP-ORBITS)
+  rank-lax         exit 1  (TOP-BLOCK-INCIDENCE,TOP-COMPONENTS,TOP-CYCLERANK,TOP-HOMOLOGY)
   tree-lax         exit 1  (TOP-CYCLERANK,TOP-POS-2WING,TOP-POS-TRANSPORT,TOP-VERDICT)
   glue-lax         exit 1  (TOP-HOMOLOGY,TOP-VERDICT)
   coh-lax          exit 1  (TOP-COHERENCE,TOP-VERDICT)
   simp-lax         exit 1  (TOP-SIMPLICIAL,TOP-VERDICT)
   dim-lax          exit 1  (TOP-DIM-READING)
-  link-lax         exit 1  (TOP-DIM-CONTROLS,TOP-VERDICT)
+  link-lax-atlas   exit 1  (TOP-DIM-READING)
+  link-lax-control exit 1  (TOP-DIM-CONTROLS,TOP-VERDICT)
+  star-lax         exit 1  (TOP-DIM-READING)
+  sym-lax          exit 1  (TOP-CELL-COMPLETENESS,TOP-PAIR-SYMMETRY,TOP-DEFECTS,TOP-CHI)
+  block-lax        exit 1  (TOP-BLOCK-INCIDENCE,TOP-VERDICT)
+  digon-lax        exit 1  (TOP-CROSS-CELL)
+  auto-lax         exit 1  (TOP-AUTOMORPHISM,TOP-VERDICT)
+  cache-lax        exit 1  (TOP-CACHE,TOP-SELECTOR,TOP-VERDICT)
+  fixcell-lax      exit 1  (TOP-BURNSIDE-EXACT,TOP-VERDICT)
+  or-lax           exit 1  (TOP-BOUNDARY-PARITY,TOP-QUOTIENT,TOP-VERDICT)
+  or-lax-T         exit 1  (TOP-QUOTIENT,TOP-VERDICT)
+  subcell-drop     exit 1  (TOP-HOMOLOGY,TOP-VERDICT)
+  unit-typed       exit 1  (TOP-VERDICT)
+  manifold-typed   exit 1  (TOP-DIM-READING)
+  selector-typed   exit 1  (TOP-SELECTOR)
+  crosscell-typed  exit 1  (TOP-CROSS-CELL)
   scramble-off     exit 1  (TOP-NEG-SCRAMBLE,TOP-VERDICT)
   act-lax          exit 1  (TOP-WING-ACTION,TOP-VERDICT)
-  orbit-lax        exit 1  (TOP-ORBITS,TOP-VERDICT)
+  orbit-lax        exit 1  (TOP-ORBITS,TOP-BOUNDARY-PARITY,TOP-VERDICT)
   burnside-lax     exit 1  (TOP-ORBITS,TOP-VERDICT)
-  defect-lax       exit 1  (TOP-SELECTOR-ANCHORS,TOP-VERDICT)
+  defect-lax       exit 1  (TOP-SELECTOR-ANCHORS,TOP-PSTAR-SWEEP,TOP-ORDER-LADDER,TOP-VERDICT)
   selfreeze-lax    exit 1  (TOP-SELECTOR-FREEZE,TOP-VERDICT,TOP-DECLARATION-ORDER)
   sel-clause-lax   exit 1  (TOP-SELECTOR)
   negctl-lax       exit 1  (TOP-POS-TRANSPORT,TOP-VERDICT)
@@ -459,5 +840,5 @@ falsified by a computation mutant 26 of 28; only by a waiver (TOP-EXACTNESS,TOP-
   exempt-lax       exit 1  (TOP-NO-MUTANT-EXEMPTION)
 
 ==============================================================================
-anchors 196 | gates 30 (must-pass 29, disclosures 1) | must-pass failures 0
+anchors 196 | gates 41 (must-pass 38, disclosures 3) | must-pass failures 0
 ==============================================================================

@@ -38,6 +38,10 @@ THE PRE-REGISTERED OUTCOMES (only these).
   TOP-FANO-SELECTOR-<named | NOT-FOUND>
   TOP-MANIFOLD-READING-<CONSISTENT | INCONSISTENT-<witness>>
   TOP-BLOCKED-AT-<object>
+  and, for the declared cross-coordinate comparison of D3b, both branches
+  being representable and neither favoured:
+  CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS
+  CROSS-CELL-A-RESIDUAL-SURVIVES-THE-COHERENT-DIGONS-<rank>
 
 CONTROLS.  Positive with teeth: the SAME generic machinery instantiated at TWO
 wings must reproduce the committed two-wing transport graph -- 8 nodes, 13
@@ -83,8 +87,9 @@ PINNED_RECEIPT_SHA256 = {
 }
 ANCHOR_PROVENANCE = {
     "TB3 committed receipt": "external",
-    "this file, pinned SHA-256": "external",
+    "this file, pinned SHA-256": "self-pin",
     "DECLARED-STANDARD (the complex's standard invariants)": "declared",
+    "DECLARED-STRUCTURAL (a size forced by the declared base)": "structural",
 }
 OUT_TXT = HERE / "top_topology_output.txt"
 OUT_JSON = HERE / "top_topology_receipt.json"
@@ -101,6 +106,47 @@ PREREGISTERED_UNIT = ("TOP-GLOBAL-STRUCTURE-", "TOP-BLOCKED-AT-")
 PREREGISTERED_SELECTOR = ("TOP-FANO-SELECTOR-NOT-FOUND", "TOP-FANO-SELECTOR-")
 PREREGISTERED_MANIFOLD = ("TOP-MANIFOLD-READING-CONSISTENT",
                           "TOP-MANIFOLD-READING-INCONSISTENT-")
+
+# ---- THE VERDICT TEMPLATES.  Each verdict head carries its own restrictions
+#      and every number in head and body alike is INTERPOLATED FROM A MEASURED
+#      COUNT.  Each string is built twice: once by the emitter from the live
+#      measurement, and once inside its gate from the RECORDED TABLES, and the
+#      two are gated BYTE-FOR-BYTE -- qualifiers included (RUNBOOK section 13
+#      addendum, #234, and the #257 precedent that a qualifier is part of the
+#      verdict).  The `unit-typed`, `manifold-typed` and `selector-typed`
+#      mutants move one qualifier of the emitter alone and must die.
+V_UNIT = (
+    "TOP-GLOBAL-STRUCTURE-OF-THE-COORDINATE-RESOLVED-NERVE-DEGREE-1-IS-THE-"
+    "COORDINATE-COUNT-%dx%d-UNMOVED-BY-THE-SCRAMBLE<charts %d, 1-cells %d, "
+    "2-cells %d; components %d, cycle rank %d, chi %d, F_2 ranks (b0,b1,b2) "
+    "= (%d,%d,%d); b_1 = (T-1)(|V|-1) = %d x %d = %d and the scrambled "
+    "control returns b_1 = %d as well, so degree one is the coordinate count "
+    "and only b_2 (%d -> %d) sees the identification data; the wing quotient "
+    "has chi %d and (b0,b1,b2) = (%d,%d,%d)>")
+V_MANIFOLD = (
+    "TOP-MANIFOLD-READING-CONSISTENT-AT-%d-OF-%d-INSTANCES-DIMENSIONS-%s-"
+    "LINKS-NEVER-CIRCLES-AND-SYMMETRY-FORCED-AT-THE-REFERENCE<the declared "
+    "estimator is CHART-INDEPENDENT at all %d charts of the reference "
+    "instance -- one reading everywhere -- but the reading it returns is not "
+    "a single number: the local simplex dimension per coordinate cell is %s, "
+    "realising dimensions %s, and every chart's link has b_1 = %d, so a link "
+    "is never a circle and the uniformity is NOT manifoldhood; the drawn "
+    "table of that instance is measured to have %d chart-orbit(s) under its "
+    "%d measured automorphisms, so chart-independence there is FORCED and is "
+    "entered as a disclosure; and the consistency is INSTANCE-SPECIFIC, "
+    "holding at %d of the %d declared instances and failing at %s>")
+V_MANIFOLD_INCONSISTENT = "TOP-MANIFOLD-READING-INCONSISTENT-<%s>"
+V_SELECTOR = (
+    "TOP-FANO-SELECTOR-NOT-FOUND-THE-LOCUS-IS-P-STAR-RELATIVE-%s-CLASS<no "
+    "candidate of the %d declared passes all three clauses; the best reach "
+    "%d of 3, the order-2 locus at the declared P* = %s holds %d completions "
+    "of which %d reach GL(3,2), and GL(3,2) is reached at %d completions "
+    "spread over defect orders %s -- so the locus neither implies nor is "
+    "implied by the visit.  The locus is an ARENA COORDINATE: the %d "
+    "transposition symmetries agree at locus %d / on-locus %d, the %d "
+    "3-cycles give locus %d / on-locus %d, so both counts are P*-relative "
+    "and only the %d completions reaching GL(3,2) as a set are not>")
+V_SELECTOR_NAMED = "TOP-FANO-SELECTOR-<%s: %s>"
 
 SCOPE_CLAUSES = (
     "at TB3's declared finite three-wing base, rebuilt from its section-2 "
@@ -180,6 +226,13 @@ ARENA = {
              "j0 filter, over which every admission search runs",
     "coordinate cells of the nerve": "(checkpoint, rule), the rules being "
                                      "FULL and REALIZED",
+    "the declared wing symmetry P*": "the FIRST NON-IDENTITY element of the "
+        "enumerated wing group -- a TRANSPOSITION.  P* is an ARENA "
+        "COORDINATE, not a fact about the base: the defect d_P(q), the "
+        "order-2 LOCUS and the defect-order axis of the selector census are "
+        "all defined relative to it.  All five non-identity wing symmetries "
+        "are swept and the sweep is reported (RUNBOOK section 15: an arena "
+        "coordinate is declared as data and its dependence is measured)",
 }
 
 # ---- D2.  THE OBJECTS.  What "the nerve" IS, declared before it is built.
@@ -231,6 +284,60 @@ ARENA = {
 #  additionally has every link with the F_2 homology of S^{d-1}, which the
 #  declared manifold controls exhibit and the atlas nerve is measured against.
 #
+#  WHETHER A CONSISTENT READING IS A MEASUREMENT AT ALL is itself measured.
+#  D is a chart-invariant of the drawn table, so if the drawn table has an
+#  automorphism group transitive on charts then CONSISTENT could not have come
+#  out otherwise and is a DISCLOSURE (RUNBOOK section 14 addendum, #208).  The
+#  DECLARED automorphism candidates are the LEFT TRANSLATIONS of the chart set
+#
+#     phi_{g,h} : (sigma, seed) |-> (g sigma, h seed),   g, h in S_3,
+#
+#  thirty-six maps acting simply transitively on the 36 (relabelling, seed)
+#  pairs.  Each is TESTED against the drawn relation at every coordinate cell
+#  and only the ones that pass are counted; the chart-orbit count of the group
+#  they generate is reported beside the estimator's distinct-value count.
+#
+# ---- D3b.  THE CROSS-COORDINATE DRAWN-MAP COMPARISON, declared before it is
+#      run, with BOTH outcomes pre-registered.
+#
+#  Two charts identified at k >= 2 coordinate cells carry k PARALLEL 1-cells,
+#  and every pair of them bounds a DIGON.  A digon is COHERENT when the two
+#  drawn maps agree; the pair AGREES when all of its drawn maps agree.  The
+#  declared measurement is:
+#
+#     (i)   how many pairs drawn at >= 2 cells agree, and how many do not;
+#     (ii)  the digon census split same-checkpoint / cross-checkpoint, and
+#           the coherent sub-census of each;
+#     (iii) the rank each family of digons adds to d_2, hence the b_1 that
+#           survives it.
+#
+#  THE PRE-REGISTERED OUTCOMES, both representable, neither favoured:
+#     CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS
+#         -- the coherent cross-read-time digons alone reduce b_1 to zero, so
+#            no degree-one class is carried by a disagreement between the maps
+#            drawn at different read times: the surviving cycles of N are an
+#            artifact of the declared same-checkpoint 2-cell scope.
+#     CROSS-CELL-A-RESIDUAL-SURVIVES-THE-COHERENT-DIGONS-<rank>
+#         -- a non-zero b_1 survives, and that residual is a MEASURED
+#            cross-read-time obstruction.
+#  The outcome is re-derived inside its gate from the measured residual; the
+#  `crosscell-typed` mutant emits the other outcome with the tables unchanged.
+#
+# ---- D3c.  THE BLOCK-INCIDENCE ROUTE to the per-checkpoint homology.
+#      At a checkpoint t the FULL rule and the REALIZED rule each partition the
+#      charts into the components of their drawn relation (measured, and gated,
+#      to be COMPLETE blocks).  I_t is the bipartite BLOCK-INCIDENCE GRAPH:
+#      vertices the blocks of the two partitions, an edge for every block pair
+#      sharing a chart.  The declared claim, measured at every (instance,
+#      checkpoint) pair and NEVER assumed:
+#
+#         b_0(N_t) = b_0(I_t)   and   b_1(N_t) = cycle rank of I_t,
+#
+#      so a read time's own topology is the NESTING of the two rules'
+#      partitions and nothing else.  I_t has at most a dozen vertices and its
+#      invariants are computed by union-find and Euler alone -- no elimination,
+#      no 2-cell, no contact with the sub-complex it audits.
+#
 # ---- D4.  THE FANO-RUNG SELECTOR: THE CANDIDATE FAMILY.
 #      DECLARED HERE, IN THIS SOURCE, BEFORE ANY DEFECT SUBGROUP K(q) IS
 #      BUILT.  The instrument counts the subgroups it has built and gates that
@@ -243,18 +350,18 @@ ARENA = {
 #      target, COMPUTED in this run, never typed.
 SELECTOR_CANDIDATES = (
     ("C1", "involutivity",
-     "ord(d_{P*}(q)) = 2 -- the locus's own defining property", "pin"),
+     "ord(d_{P*}(q)) = 2 -- the locus's own defining property", "pin-derived"),
     ("C2", "defect fixed-point count",
-     "|Fix(d_{P*}(q))| equals the reference value", "pin"),
+     "|Fix(d_{P*}(q))| equals the reference value", "pin-derived"),
     ("C3", "completion support",
-     "|supp(q)| equals the reference value", "pin"),
+     "|supp(q)| equals the reference value", "pin-derived"),
     ("C3b", "completion cycle type",
-     "the cycle type of q equals the reference cycle type", "pin"),
+     "the cycle type of q equals the reference cycle type", "pin-derived"),
     ("C4", "defect F2-linearity",
      "every d_P(q), P in S_3, is an F_2-linear permutation of the labels",
-     "pin"),
+     "pin-derived"),
     ("C4b", "declared-symmetry defect F2-linearity",
-     "d_{P*}(q) is an F_2-linear permutation of the labels", "pin"),
+     "d_{P*}(q) is an F_2-linear permutation of the labels", "pin-derived"),
     ("C5", "completion F2-linearity",
      "q is itself an F_2-linear permutation of the labels", "worker"),
     ("C6", "defect order profile",
@@ -272,6 +379,25 @@ SELECTOR_CANDIDATES = (
     ("C11", "abelian defect set",
      "d_P(q) and d_R(q) commute for every P, R in S_3", "worker"),
 )
+# The TYPESET name of each candidate, declared here beside the predicate so
+# that the paper's section-5.2 tables can be EMITTED from the recorded table
+# rather than retyped.  These are display strings only: no measurement reads
+# them, and the ids they key are the ids of the declaration above.
+SELECTOR_TYPESET_NAMES = {
+    "C1": "involutivity",
+    "C2": "defect fixed-point count",
+    "C3": "completion support",
+    "C3b": "completion cycle type",
+    "C4": r"defect $\mathbb F_2$-linearity",
+    "C4b": "declared-symmetry defect linearity",
+    "C5": r"completion $\mathbb F_2$-linearity",
+    "C6": "defect order profile",
+    "C7": "involutive profile",
+    "C8": "transvection",
+    "C9": "$q$ normalises the wing group",
+    "C10": "Fano collineation",
+    "C11": "abelian defect set",
+}
 SELECTOR_CLAUSES = (
     ("a", "HOLDS ON THE LOCUS: the count of defect-order-2 completions "
           "satisfying C, out of the measured size of the locus"),
@@ -288,6 +414,32 @@ SELECTOR_RULE = (
     "candidate meets all three the verdict is TOP-FANO-SELECTOR-NOT-FOUND "
     "and the family's failure is recorded clause by clause.  No candidate may "
     "be added, removed or reworded after the first K(q) is built.")
+SELECTOR_ORIGIN_LEGEND = {
+    "pin-derived": "restates the pin's own order-2-locus language.  THE PIN "
+                   "CONTAINS NO CANDIDATE LIST: no candidate is quoted from "
+                   "it and none may be labelled as if it were",
+    "worker": "introduced by this instrument, in this source, above every "
+              "measurement",
+}
+# ---- D4b.  CLAUSE (c) IS A CONTAINMENT, and the containment is measured.
+#      K(q) is generated by the six d_P(q), so K(q) is F_2-linear exactly when
+#      every generator is: the candidate C4 and the set {q : K(q) <= GL(3,2)}
+#      are the same set, which is MEASURED here rather than argued.  Clause
+#      (c)'s count for a candidate C is therefore |C \ C4| identically, and
+#      "clause (c) passes" is literally the containment C <= C4 -- an
+#      algebraic fact about the family, not a measurement about the geometry.
+#      Both are computed for every candidate and entered as DISCLOSURES
+#      (RUNBOOK section 14 addendum, #208), together with the extensional
+#      collapses the family carries: C1 = C2 and C5 = C10.
+CLAUSE_C_DISCLOSURE = (
+    "CLAUSE (c) HAS NO MEASURED CONTENT OF ITS OWN.  Its count for a "
+    "candidate C is measured to be |C \\ C4| for every one of the thirteen, "
+    "so clause (c) passes exactly when C is CONTAINED IN C4, and every "
+    "passer's zero is forced: C4 because a group generated by F_2-linear "
+    "maps is F_2-linear; C5 and C10 because all six sigma_P are measured "
+    "F_2-linear, so d_P = sigma_P^-1 q^-1 sigma_P q is linear whenever q is; "
+    "C9 because q normalising the wing group puts every d_P inside it.  All "
+    "four forcings are measured here as set containments, not asserted.")
 
 # ---- D5.  THE DECLARED CONTROL COMPLEXES.  Their invariants are standard and
 #      are typed here as DECLARED-STANDARD anchors; the machinery must return
@@ -818,6 +970,13 @@ def atlas_pair_table(sp, charts):
                     if len(adm) == 1 or (accept_every_candidate and adm):
                         tab[(a, b)] = adm[0]
             out[(t, rule)] = tab
+    break_the_symmetry = (MUTANT == "sym-lax")
+    if break_the_symmetry:
+        for c in sp.CELLS:
+            key = next((k for k in sorted(out[c]) if k[0] < k[1]), None)
+            if key is not None:
+                del out[c][key]
+                break
     return out
 
 
@@ -939,14 +1098,23 @@ class Complex:
         #      quotient complex does.)
         comps = components_unionfind(nv, self.epairs)
         b0_uf = len(comps)
-        d1_rows = [(1 << a) ^ (1 << b) for (a, b) in self.epairs]
+        incidence_bits_not_mod_2 = (MUTANT == "or-lax")
+        incidence_bits_in_the_transpose = (MUTANT == "or-lax-T")
+        if incidence_bits_not_mod_2:
+            d1_rows = [(1 << a) | (1 << b) for (a, b) in self.epairs]
+        else:
+            d1_rows = [(1 << a) ^ (1 << b) for (a, b) in self.epairs]
         r1_high = rank_f2_high(d1_rows)
         b0_rank = nv - r1_high
         # a third reading: the rank of the TRANSPOSED boundary matrix
         cols = [0] * nv
         for j, (a, b) in enumerate(self.epairs):
-            cols[a] ^= (1 << j)
-            cols[b] ^= (1 << j)
+            if incidence_bits_in_the_transpose:
+                cols[a] |= (1 << j)
+                cols[b] |= (1 << j)
+            else:
+                cols[a] ^= (1 << j)
+                cols[b] ^= (1 << j)
         r1_T = rank_f2_low(cols)
         # ---- cycle rank: forest route and elimination route
         tree, ncomp_tree = spanning_forest(nv, self.epairs)
@@ -966,10 +1134,11 @@ class Complex:
                     v ^= (1 << i)
             proj.append(v)
         r2_low = rank_f2_low(proj)
+        cap = 2000
         chain = all(((1 << self.epairs[x][0]) ^ (1 << self.epairs[x][1]) ^
                      (1 << self.epairs[y][0]) ^ (1 << self.epairs[y][1]) ^
                      (1 << self.epairs[z][0]) ^ (1 << self.epairs[z][1])) == 0
-                    for (x, y, z) in self.tris[:2000])
+                    for (x, y, z) in self.tris[:cap])
         return {
             "V": nv, "E": ne, "F": nf,
             "components_route_1_union_find": b0_uf,
@@ -985,6 +1154,8 @@ class Complex:
             "chi_from_cell_counts": nv - ne + nf,
             "chi_from_betti": b0_uf - (cyc_rank - r2_high) + (nf - r2_high),
             "d1_d2_is_zero_on_the_sampled_2_cells": chain,
+            "the_d1_d2_sample_cap": cap,
+            "the_2_cells_in_all": nf,
         }
 
 
@@ -1082,6 +1253,8 @@ def geometric_cells(sp, pair, eidx, ncharts, drop_one=False):
     cells, coh = [], []
     per_ck = defaultdict(int)
     defects = Counter()
+    pattern = Counter()
+    conjugate = True
     ident = sp.IDENT
     for t in sp.CKPTS:
         tabs = {r: pair[(t, r)] for r in ("FULL", "REAL")}
@@ -1111,11 +1284,29 @@ def geometric_cells(sp, pair, eidx, ncharts, drop_one=False):
                                 for d in (d1, d2, d3):
                                     defects[sp.NAME[d]] += 1
                                     defects[sp.NAME[pinv(d)]] += 1
+                                # the three traversal defects are CONJUGATE;
+                                # measured here, cell by cell, because it is
+                                # what makes the identity entry of the defect
+                                # multiset six times the coherent count rather
+                                # than an independent census (RUNBOOK section
+                                # 13 addendum, #234).
+                                pattern[(d1 == ident, d2 == ident,
+                                         d3 == ident)] += 1
+                                p21 = pcomp(p2, p1)
+                                if d2 != pcomp(p1, pcomp(d1, pinv(p1))) or \
+                                        d3 != pcomp(p21, pcomp(d1, pinv(p21))):
+                                    conjugate = False
                                 if d1 == ident or coherence_always_true:
                                     coh.append(key)
     if drop_a_cell and cells:
         cells = cells[:-1]
-    return cells, coh, dict(per_ck), dict(defects)
+    return cells, coh, dict(per_ck), dict(defects), {
+        "the_traversal_defect_patterns":
+            {canon(list(k)): v for k, v in sorted(pattern.items())},
+        "the_three_traversal_defects_are_conjugate_at_every_2_cell":
+            conjugate,
+        "the_pattern_is_never_mixed": len(pattern) <= 2 and all(
+            len(set(k)) == 1 for k in pattern)}
 
 
 def simplicial_nerve(sp, pair, ncharts):
@@ -1138,7 +1329,200 @@ def simplicial_nerve(sp, pair, ncharts):
                 maximal.append(frozenset(comp))
     reduced = [m for m in set(maximal)
                if not any(m < o for o in set(maximal))]
+    shrink_the_maximal_face = (MUTANT == "simp-lax")
+    if shrink_the_maximal_face:
+        reduced = [frozenset(sorted(m)[:max(1, len(m) // 3)]) for m in reduced]
     return sorted(reduced, key=lambda s: (-len(s), sorted(s))), complete
+
+
+def cell_blocks(pairtab, nch):
+    """The partition a rule draws at one coordinate cell: the components of
+    its drawn relation, isolated charts included as singleton blocks."""
+    und = sorted({(min(a, b), max(a, b)) for (a, b) in pairtab})
+    return [tuple(c) for c in components_unionfind(nch, und)]
+
+
+def block_incidence(sp, st, nch):
+    """D3c: the per-checkpoint homology by the BLOCK-INCIDENCE route.  I_t is
+    the bipartite graph on the blocks of the two rules' partitions; its
+    invariants are read by union-find and Euler alone -- no elimination, no
+    2-cell, nothing shared with the sub-complex it audits."""
+    _bump()
+    one_rule_only = (MUTANT == "block-lax")
+    rows = {}
+    for t in sp.CKPTS:
+        cells_here = [c for c in sp.CELLS if c[0] == t]
+        if not any(st["pair"][c] for c in cells_here):
+            continue
+        parts = [cell_blocks(st["pair"][(t, r)], nch)
+                 for r in (("FULL",) if one_rule_only else ("FULL", "REAL"))]
+        verts = [(k, i) for k, p in enumerate(parts) for i in range(len(p))]
+        vi = {x: i for i, x in enumerate(verts)}
+        owner = []
+        for p in parts:
+            o = {}
+            for i, blk in enumerate(p):
+                for v in blk:
+                    o[v] = i
+            owner.append(o)
+        ein = set()
+        for k in range(len(parts)):
+            for l in range(k + 1, len(parts)):
+                for v in range(nch):
+                    ein.add((vi[(k, owner[k][v])], vi[(l, owner[l][v])]))
+        ein = sorted(ein)
+        b0 = len(components_unionfind(len(verts), ein))
+        rows[str(t)] = {
+            "blocks_per_rule": [len(p) for p in parts],
+            "incidence_V": len(verts), "incidence_E": len(ein),
+            "b0_of_the_incidence_graph": b0,
+            "cycle_rank_of_the_incidence_graph":
+                len(ein) - (len(verts) - b0)}
+    return rows
+
+
+def cross_cell_drawn_maps(sp, st, nch, inv):
+    """D3b: do the maps DRAWN for one chart pair agree across the coordinate
+    cells, and what does that decide about the degree-one classes?"""
+    _bump()
+    every_digon_called_coherent = (MUTANT == "digon-lax")
+    edges = st["edges"]
+    bypair = defaultdict(list)
+    for i, (a, b, c, p) in enumerate(edges):
+        bypair[(a, b)].append((c, p, i))
+    multi = {k: v for k, v in bypair.items() if len(v) >= 2}
+    agree_by_mapset = 0
+    agree_by_digons = 0
+    census_mismatch = 0
+    same_ck, cross_ck, same_coh, cross_coh = [], [], [], []
+    digons_expected = 0
+    for k, v in sorted(multi.items()):
+        digons_expected += len(v) * (len(v) - 1) // 2
+        one_map = (len({p for (_c, p, _i) in v}) == 1)
+        all_coh = True
+        for x in range(len(v)):
+            for y in range(x + 1, len(v)):
+                (c1, p1, i1), (c2, p2, i2) = v[x], v[y]
+                row = (1 << i1) ^ (1 << i2)
+                coh = (p1 == p2) or every_digon_called_coherent
+                if not coh:
+                    all_coh = False
+                if c1[0] == c2[0]:
+                    same_ck.append(row)
+                    if coh:
+                        same_coh.append(row)
+                else:
+                    cross_ck.append(row)
+                    if coh:
+                        cross_coh.append(row)
+        agree_by_mapset += int(one_map)
+        agree_by_digons += int(all_coh)
+        census_mismatch += int(one_map != all_coh)
+    d2 = [(1 << x) ^ (1 << y) ^ (1 << z) for (x, y, z) in
+          [tuple(sorted(t)) for t in st["cells"]]]
+    cyc = inv["cycle_rank_route_2_F2_rank"]
+    b1_of = lambda extra: cyc - rank_f2_high(d2 + extra, maxrank=cyc)
+    return {
+        "pairs_drawn_at_two_or_more_cells": len(multi),
+        "pairs_whose_drawn_maps_all_agree": agree_by_mapset,
+        "pairs_whose_drawn_maps_disagree_somewhere":
+            len(multi) - agree_by_mapset,
+        "the_same_count_from_the_digon_flags": agree_by_digons,
+        "the_two_agreement_routes_disagree_at": census_mismatch,
+        "digons_expected_from_the_multiplicities": digons_expected,
+        "digons_built": len(same_ck) + len(cross_ck),
+        "same_checkpoint_digons": len(same_ck),
+        "same_checkpoint_digons_that_are_coherent": len(same_coh),
+        "cross_checkpoint_digons": len(cross_ck),
+        "cross_checkpoint_digons_that_are_coherent": len(cross_coh),
+        "b1_of_N": inv["b1"],
+        "b1_with_the_same_checkpoint_digons_filled": b1_of(same_ck),
+        "b1_with_every_cross_checkpoint_digon_filled": b1_of(cross_ck),
+        "b1_with_the_COHERENT_cross_checkpoint_digons_filled":
+            b1_of(cross_coh),
+        "b1_with_every_coherent_digon_filled": b1_of(same_coh + cross_coh),
+    }
+
+
+def drawn_table_automorphisms(sp, st, nch):
+    """D3: the DECLARED automorphism candidates -- the 36 left translations of
+    the chart set -- tested against the drawn relation at every coordinate
+    cell, and the chart-orbit count of the ones that pass."""
+    _bump()
+    accept_without_testing = (MUTANT == "auto-lax")
+    charts = st["charts"]
+    cid = {(c["sigma"], c["seed"]): i for i, c in enumerate(charts)}
+    autos = []
+    for g in sp.PERMS:
+        for h in sp.PERMS:
+            row, ok = [], True
+            for c in charts:
+                j = cid.get((pcomp(g, c["sigma"]), pcomp(h, c["seed"])))
+                if j is None:
+                    ok = False
+                    break
+                row.append(j)
+            if not ok or len(set(row)) != nch:
+                continue
+            good = True
+            if not accept_without_testing:
+                for c in sp.CELLS:
+                    dr = set(st["pair"][c])
+                    if {(row[a], row[b]) for (a, b) in dr} != dr:
+                        good = False
+                        break
+            if good:
+                autos.append(tuple(row))
+    par = list(range(nch))
+
+    def find(x):
+        while par[x] != x:
+            par[x] = par[par[x]]
+            x = par[x]
+        return x
+
+    for row in autos:
+        for i in range(nch):
+            a, b = find(i), find(row[i])
+            if a != b:
+                par[a] = b
+    return {"declared_candidates": len(sp.PERMS) ** 2,
+            "measured_automorphisms": len(autos),
+            "chart_orbits": len({find(i) for i in range(nch)})}
+
+
+def star_link_comparator(sp, st, nch):
+    """R-TOP-8's comparator for the star and the link, built WITHOUT touching
+    `local_profiles`: the star counts are taken by their own pass over the
+    cells, and the link's b_0 and b_1 by UNION-FIND AND EULER rather than by
+    an F_2 rank -- a different traversal and a different homology route."""
+    _bump()
+    etov = [(a, b) for (a, b, c, p) in st["edges"]]
+    se = Counter()
+    for (a, b) in etov:
+        se[a] += 1
+        se[b] += 1
+    sf = Counter()
+    lk = defaultdict(list)
+    for tr in st["cells"]:
+        vs = sorted({v for x in tr for v in etov[x]})
+        for v in vs:
+            sf[v] += 1
+            o = [u for u in vs if u != v]
+            lk[v].append((o[0], o[1]))
+    out = {}
+    for v in range(nch):
+        nb = sorted({b if a == v else a for (a, b) in etov if v in (a, b)})
+        ren = {x: i for i, x in enumerate(nb)}
+        pairs = [(ren[p], ren[q]) for (p, q) in lk[v]]
+        b0 = len(components_unionfind(len(nb), pairs)) if nb else 0
+        out[v] = (se[v], sf[v], (len(nb), len(pairs), b0,
+                                 len(pairs) - len(nb) + b0))
+    return {"per_chart": out,
+            "sum_of_the_star_1_cell_counts": sum(se[v] for v in range(nch)),
+            "twice_the_1_cells": 2 * len(etov),
+            "sum_of_the_star_2_cell_counts": sum(sf[v] for v in range(nch)),
+            "three_times_the_2_cells": 3 * len(st["cells"])}
 
 
 # ===========================================================================
@@ -1228,6 +1612,7 @@ def run_instances(sp, tb3):
     committed = tb3["tables"]["a3_triangles"]["per_instance"]
     rows = {}
     store = {}
+    symmetry = {}
     for (label, member, completion, setting) in INSTANCES:
         w, Q = instance_world(sp, member, completion, setting)
         charts = build_atlas(sp, w)
@@ -1235,7 +1620,8 @@ def run_instances(sp, tb3):
         edges, eidx = nerve_edges(sp, pair, len(charts))
         r1, pc1 = triangles_route_1(sp, pair, len(charts))
         r2, pc2 = triangles_route_2(sp, pair, len(charts))
-        cells, coh, pcg, defects = geometric_cells(sp, pair, eidx, len(charts))
+        cells, coh, pcg, defects, conj = geometric_cells(
+            sp, pair, eidx, len(charts))
         cm = committed[label]
         anchor("A-CHARTS-" + label, "TB3 committed receipt",
                "charts in the atlas", cm["charts_in_the_atlas"], len(charts))
@@ -1262,6 +1648,15 @@ def run_instances(sp, tb3):
         store[label] = {"world": w, "Q": Q, "charts": charts, "pair": pair,
                         "edges": edges, "eidx": eidx, "cells": cells,
                         "coh": coh}
+        asym = []
+        for c in sp.CELLS:
+            dr = set(pair[c])
+            miss = {(b, a) for (a, b) in dr} - dr
+            if miss:
+                asym.append("%d/%s" % (c[0], c[1]))
+        symmetry[label] = {"cells_whose_drawn_relation_is_not_symmetric": asym,
+                           "the_relation_is_symmetric_at_every_cell":
+                               not asym}
         rows[label] = {
             "member": member, "completion": completion,
             "setting": "TB-" + "".join(str(ROT_ORDER.index(x))
@@ -1280,11 +1675,12 @@ def run_instances(sp, tb3):
                                        for t in sp.CKPTS},
             "per_checkpoint_geometric": {str(t): pcg.get(t, 0)
                                          for t in sp.CKPTS},
+            "the_traversal_defect_conjugacy": conj,
             "ordered_defect_multiset": defects}
     # the dropped-cell probe: route 2's cell list loses one 2-cell and the
     # completeness relation must break.
     ref = store[REFERENCE_INSTANCE]
-    probe_cells, _, _, _ = geometric_cells(sp, ref["pair"], ref["eidx"],
+    probe_cells, _, _, _, _ = geometric_cells(sp, ref["pair"], ref["eidx"],
                                            len(ref["charts"]), drop_one=True)
     probe_breaks = (len(probe_cells) != len(ref["cells"])) and \
         (rows[REFERENCE_INSTANCE]["ordered_triangles_route_1"] !=
@@ -1318,19 +1714,50 @@ def run_instances(sp, tb3):
     coh_ok = all(6 * v["coherent_2_cells"] ==
                  v["ordered_defect_multiset"].get(ident_name, 0)
                  for v in rows.values())
+    conj_ok = all(v["the_traversal_defect_conjugacy"][
+        "the_three_traversal_defects_are_conjugate_at_every_2_cell"]
+        and v["the_traversal_defect_conjugacy"]["the_pattern_is_never_mixed"]
+        for v in rows.values())
     gate("TOP-COHERENCE", "measurement",
-         "THE COHERENT 2-CELLS ARE COUNTED TWICE, INDEPENDENTLY.  A 2-cell is "
-         "coherent when its three drawn maps compose to the identity -- the "
-         "strict cocycle condition.  Route 1 flags it while the cell is "
-         "built; route 2 reads the ORDERED DEFECT MULTISET, itself anchored "
-         "against the committed receipt, and takes the entry at the identity. "
-         " The two are gated equal through the exact traversal multiplicity "
-         "at every instance, so a coherence test that answered yes to "
-         "everything would be caught by a census it does not touch",
+         "THE COHERENT 2-CELL COUNT IS ONE ROUTE, EXTERNALLY ANCHORED -- and "
+         "the instrument says so rather than claiming two.  A 2-cell is "
+         "coherent when its three drawn maps compose to the identity, the "
+         "strict cocycle condition.  The count is flagged while the cell is "
+         "built; the ORDERED DEFECT MULTISET's entry at the identity is NOT "
+         "an independent second census of it, because the three traversal "
+         "defects are CONJUGATE -- d_2 = p_1 d_1 p_1^-1 and d_3 = (p_2 p_1) "
+         "d_1 (p_2 p_1)^-1, MEASURED here at every 2-cell of every instance "
+         "-- so the pattern (d_1,d_2,d_3) is never mixed and the identity "
+         "entry is IDENTICALLY six times the coherent count (RUNBOOK section "
+         "13 addendum, #234: a pair related by an algebraic identity is one "
+         "route).  What the second computation buys is not independence but "
+         "an EXTERNAL ANCHOR: the multiset is gated exit-1 against TB3's "
+         "committed receipt, so the coherent count is pinned to bytes outside "
+         "this file.  The `coh-lax` mutant answers yes to every triangle and "
+         "must die on that anchored relation.  The conjugacy itself is "
+         "ANALYTICALLY FORCED -- p_1 (p_3 p_2 p_1) p_1^-1 = p_1 p_3 p_2 for "
+         "any three maps -- so it is computed and recorded as evidence and "
+         "enters TOP-FORCED-CLAUSES as a disclosure, never as a must-pass "
+         "clause of this gate",
          coh_ok,
-         {k: [6 * v["coherent_2_cells"],
-              v["ordered_defect_multiset"].get(ident_name, 0)]
-          for k, v in rows.items()})
+         {"six_times_the_coherent_count_against_the_multiset_identity_entry":
+             {k: [6 * v["coherent_2_cells"],
+                  v["ordered_defect_multiset"].get(ident_name, 0)]
+              for k, v in rows.items()},
+          "the_conjugacy_that_makes_it_one_route":
+             {k: v["the_traversal_defect_conjugacy"]
+              for k, v in rows.items()}})
+    gate("TOP-PAIR-SYMMETRY", "measurement",
+         "THE ADMISSION RELATION IS MEASURED SYMMETRIC, not assumed.  A "
+         "1-cell is drawn for the unordered pair (a,b) from the ORDERED entry "
+         "with a < b, so if admission were not symmetric the whole complex "
+         "would depend on the chart indexing.  The relation is measured "
+         "symmetric at all %d coordinate cells of all %d declared instances, "
+         "and the `sym-lax` mutant deletes one direction of one admitted pair "
+         "and must die here"
+         % (len(sp.CELLS), len(INSTANCES)),
+         all(v["the_relation_is_symmetric_at_every_cell"]
+             for v in symmetry.values()), symmetry)
     gate("TOP-DEFECTS", "measurement",
          "THE ORDERED TRIANGLE DEFECT MULTISET over the wing group is "
          "reproduced element by element at the reference instance and "
@@ -1339,6 +1766,9 @@ def run_instances(sp, tb3):
          "not by scaling one of them",
          all(a["passed"] for a in ANCHORS if a["id"].startswith("A-DEFECT-")),
          rows[REFERENCE_INSTANCE]["ordered_defect_multiset"])
+    for k, v in symmetry.items():
+        rows[k]["the_drawn_relation_is_symmetric"] = \
+            v["the_relation_is_symmetric_at_every_cell"]
     TABLES["instances"] = rows
     return store
 
@@ -1372,6 +1802,7 @@ def run_q1(sp, store):
         # Every input on the right is a per-checkpoint elimination or a
         # union-find count; the global d_2 elimination enters nowhere.
         wrong_gluing = (MUTANT == "glue-lax")
+        drop_a_sub_cell = (MUTANT == "subcell-drop")
         per_t, sum_b1, sum_b0, sum_b2, live_t = {}, 0, 0, 0, 0
         for t in sp.CKPTS:
             loc = [i for i, (a, b, c, p) in enumerate(st["edges"])
@@ -1383,6 +1814,8 @@ def run_q1(sp, store):
             el = [(st["edges"][e][0], st["edges"][e][1]) for e in loc]
             tl = [tuple(ren[x] for x in tr) for tr in st["cells"]
                   if all(y in ren for y in tr)]
+            if drop_a_sub_cell and tl:
+                tl = tl[:-1]
             sub = Complex(nch, el, tl, "%s t=%d" % (label, t)).invariants()
             per_t[str(t)] = {"E": sub["E"], "F": sub["F"], "b0": sub["b0"],
                              "b1": sub["b1"], "b2": sub["b2"],
@@ -1408,6 +1841,15 @@ def run_q1(sp, store):
             sum_b0c += s2["b0"]
             sum_b2c += s2["b2"]
         b1c_route_2 = invc["b0"] + glue + sum_b1c - sum_b0c
+        # D3c: the per-checkpoint numbers by the BLOCK-INCIDENCE route, and
+        # the coordinate-count form of b_1.
+        binc = block_incidence(sp, st, nch)
+        block_ok = all(
+            binc[t]["b0_of_the_incidence_graph"] == per_t[t]["b0"]
+            and binc[t]["cycle_rank_of_the_incidence_graph"] == per_t[t]["b1"]
+            for t in per_t)
+        coord = (live_t - 1) * (nch - 1)
+        cross = cross_cell_drawn_maps(sp, st, nch, inv)
         maximal, complete = simplicial_nerve(sp, st["pair"], nch)
         top = max((len(m) for m in maximal), default=0)
         # chi of the simplicial nerve, two routes: the inclusion-exclusion sum
@@ -1441,6 +1883,12 @@ def run_q1(sp, store):
             "H2_is_additive_over_the_checkpoint_decomposition":
                 sum_b2 == inv["b2"],
             "H2_is_additive_coherent": sum_b2c == invc["b2"],
+            "the_read_times_carrying_cells": live_t,
+            "the_coordinate_count_T_minus_1_times_V_minus_1": coord,
+            "b1_equals_the_coordinate_count": inv["b1"] == coord,
+            "the_block_incidence_route": binc,
+            "the_block_incidence_route_agrees": block_ok,
+            "the_cross_coordinate_drawn_map_comparison": cross,
             "the_simplicial_nerve": {
                 "maximal_faces": [sorted(m) for m in maximal],
                 "maximal_face_sizes": sorted((len(m) for m in maximal),
@@ -1471,6 +1919,92 @@ def run_q1(sp, store):
                  for v in table.values())
     ok_h2 = all(v["H2_is_additive_over_the_checkpoint_decomposition"]
                 and v["H2_is_additive_coherent"] for v in table.values())
+    ok_block = all(v["the_block_incidence_route_agrees"]
+                   for v in table.values())
+    block_pairs = sum(len(v["the_block_incidence_route"])
+                      for v in table.values())
+    gate("TOP-BLOCK-INCIDENCE", "measurement",
+         "A READ TIME'S OWN TOPOLOGY IS THE NESTING OF THE TWO RULES' "
+         "PARTITIONS, and that is a THIRD route to the per-checkpoint "
+         "numbers, taken with no elimination at all.  At each checkpoint the "
+         "FULL and REALIZED rules partition the charts into the components of "
+         "their drawn relations; the bipartite BLOCK-INCIDENCE GRAPH joins "
+         "two blocks that share a chart, and its b_0 and its cycle rank are "
+         "measured EQUAL to the sub-nerve's b_0 and b_1 at every one of the "
+         "%d (instance, checkpoint) pairs.  So `every checkpoint sub-nerve "
+         "has vanishing first homology' says exactly `at every read time the "
+         "two block partitions are NESTED, their incidence graph a forest' -- "
+         "and where they are not nested, at checkpoints 2 and 3 of the "
+         "partially symmetric and W-class instances, the incidence graph "
+         "carries the cycle the sub-nerve carries.  The comparator touches "
+         "neither the sub-complex nor its elimination (RUNBOOK section 14 "
+         "addendum, #219).  The `block-lax` mutant builds the incidence graph "
+         "from one rule's partition alone and must die here"
+         % block_pairs,
+         ok_block,
+         {"the_instance_checkpoint_pairs_compared": block_pairs,
+          "the_route_agrees_at_every_pair": ok_block,
+          "per_instance": {
+              k: {"agrees": v["the_block_incidence_route_agrees"],
+                  "per_checkpoint": v["the_block_incidence_route"]}
+              for k, v in table.items()}})
+    cross_ok = all(
+        v["the_cross_coordinate_drawn_map_comparison"][
+            "the_two_agreement_routes_disagree_at"] == 0
+        and v["the_cross_coordinate_drawn_map_comparison"][
+            "digons_built"] == v["the_cross_coordinate_drawn_map_comparison"][
+            "digons_expected_from_the_multiplicities"]
+        and v["the_cross_coordinate_drawn_map_comparison"][
+            "b1_with_the_same_checkpoint_digons_filled"] ==
+        v["the_nerve_N"]["b1"]
+        for v in table.values())
+    refc = table[REFERENCE_INSTANCE][
+        "the_cross_coordinate_drawn_map_comparison"]
+    residual = refc["b1_with_the_COHERENT_cross_checkpoint_digons_filled"]
+    emit_the_other_outcome = (MUTANT == "crosscell-typed")
+    if emit_the_other_outcome:
+        residual_emitted = residual + 1
+    else:
+        residual_emitted = residual
+    cross_outcome = (
+        "CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS"
+        if residual_emitted == 0 else
+        "CROSS-CELL-A-RESIDUAL-SURVIVES-THE-COHERENT-DIGONS-<%d>"
+        % residual_emitted)
+    cross_derived = (
+        "CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS"
+        if table[REFERENCE_INSTANCE][
+            "the_cross_coordinate_drawn_map_comparison"][
+            "b1_with_the_COHERENT_cross_checkpoint_digons_filled"] == 0 else
+        "CROSS-CELL-A-RESIDUAL-SURVIVES-THE-COHERENT-DIGONS-<%d>"
+        % table[REFERENCE_INSTANCE][
+            "the_cross_coordinate_drawn_map_comparison"][
+            "b1_with_the_COHERENT_cross_checkpoint_digons_filled"])
+    gate("TOP-CROSS-CELL", "derivation",
+         "DO THE MAPS DRAWN FOR ONE PAIR AGREE ACROSS COORDINATE CELLS, AND "
+         "WHAT DOES THAT DECIDE?  Declared in D3b before it was run, with "
+         "BOTH outcomes pre-registered and neither favoured.  Two charts "
+         "identified at k coordinate cells carry k parallel 1-cells and "
+         "C(k,2) digons; a digon is COHERENT when its two drawn maps agree.  "
+         "The digon census is gated complete against the multiplicities "
+         "(sum of C(k,2)); the pair-level agreement is computed TWICE, once "
+         "from the set of drawn maps and once from the digon flags, and the "
+         "two must agree at every pair -- the `digon-lax` mutant calls every "
+         "digon coherent and must die on that differential.  The "
+         "same-checkpoint digons are measured to kill NOTHING, so no "
+         "degree-one class compares two rules at one read time.  The OUTCOME "
+         "is then re-derived inside this gate from the measured residual b_1 "
+         "that survives filling the COHERENT cross-read-time digons, and "
+         "gated byte-for-byte against the emitted one; the `crosscell-typed` "
+         "mutant emits the other outcome with the tables unchanged and must "
+         "die here.  The gate checks the DERIVATION, not a favoured value",
+         cross_ok and cross_outcome == cross_derived,
+         {"the_outcome": cross_outcome,
+          "the_outcome_re_derived_in_this_gate": cross_derived,
+          "the_two_are_byte_identical": cross_outcome == cross_derived,
+          "per_instance": {k: v["the_cross_coordinate_drawn_map_comparison"]
+                           for k, v in table.items()}})
+    FINDINGS["cross_cell_outcome"] = cross_outcome
     gate("TOP-COMPONENTS", "measurement",
          "THE COMPONENT COUNT AGREES BY FOUR ROUTES at every declared "
          "instance: union-find over the drawn links, the F_2 rank of the "
@@ -1529,33 +2063,81 @@ def run_q1(sp, store):
          "numbers equals chi computed from the cell counts for EVERY input, "
          "because the ranks cancel identically; it is printed as evidence "
          "that the ranks were assembled consistently and is NOT a second "
-         "route to chi.  Likewise d_1 d_2 = 0 holds by construction for a "
-         "simplicial boundary and is recorded, not gated",
+         "route to chi.  Likewise d_1 d_2 = 0 holds for EVERY input here by "
+         "the same algebra -- each 2-cell's three 1-cells are the three sides "
+         "of a triangle, so their six endpoint bits cancel in pairs -- and "
+         "the guard that evaluates it is a SAMPLE, capped at the number "
+         "printed below out of the 2-cell count printed beside it; the "
+         "argument, not the sample, is what carries it",
          True,
-         {k: [v["the_nerve_N"]["chi_from_cell_counts"],
-              v["the_nerve_N"]["chi_from_betti"],
-              v["the_nerve_N"]["d1_d2_is_zero_on_the_sampled_2_cells"]]
+         {k: {"chi_from_cell_counts": v["the_nerve_N"]["chi_from_cell_counts"],
+              "chi_from_betti": v["the_nerve_N"]["chi_from_betti"],
+              "d1_d2_zero_on_the_sample":
+                  v["the_nerve_N"]["d1_d2_is_zero_on_the_sampled_2_cells"],
+              "the_sample_cap": v["the_nerve_N"]["the_d1_d2_sample_cap"],
+              "the_2_cells_in_all": v["the_nerve_N"]["the_2_cells_in_all"]}
+          for k, v in table.items()})
+    gate("TOP-COORDINATE-COUNT", "disclosure",
+         "DISCLOSURE, ALGEBRAICALLY FORCED -- WHAT b_1 = 140 ACTUALLY SAYS.  "
+         "Rearranging the gluing formula, b_1(N) - (T-1)(|V|-1) = sum_t b_1^t "
+         "- ( sum_t b_0^t - T ), so b_1 equals the pure COORDINATE COUNT "
+         "(read times minus one) x (charts minus one) exactly when the "
+         "per-checkpoint excess sum_t b_0^t - T equals sum_t b_1^t.  That "
+         "equivalence is an identity, not a measurement: the measured content "
+         "of the degree-one claim is the per-checkpoint census (sum b_0, sum "
+         "b_1) recorded above, and nothing else.  Four of the five declared "
+         "instances return the coordinate count, the asymmetric setting does "
+         "not, and -- printed here rather than worked around -- the SCRAMBLED "
+         "negative control returns it too, so b_1 is insensitive to the "
+         "identification data while b_2 is not.  The identification-carrying "
+         "invariants are b_2 and the coherent sub-nerve",
+         True,
+         {k: {"read_times_carrying_cells": v["the_read_times_carrying_cells"],
+              "charts": v["the_nerve_N"]["V"],
+              "T_minus_1_times_V_minus_1":
+                  v["the_coordinate_count_T_minus_1_times_V_minus_1"],
+              "b1": v["the_nerve_N"]["b1"],
+              "b1_equals_the_coordinate_count":
+                  v["b1_equals_the_coordinate_count"],
+              "sum_of_per_checkpoint_b0": v["sum_of_per_checkpoint_b0"],
+              "sum_of_per_checkpoint_b1": v["sum_of_per_checkpoint_b1"]}
           for k, v in table.items()})
     simp_ok = all(v["the_simplicial_nerve"][
         "every_coordinate_cell_graph_is_a_disjoint_union_of_complete_graphs"]
         for v in table.values())
     ref = table[REFERENCE_INSTANCE]["the_simplicial_nerve"]
-    drop_the_cone_check = (MUTANT == "simp-lax")
-    simp_cone = ref["it_is_a_cone_hence_contractible"] and \
-        (ref["chi_route_1_alternating_binomial_sum"] ==
-         (0 if drop_the_cone_check else 1))
+    faces_wanted = {k: [table[k]["the_nerve_N"]["V"]]
+                    for k in table}
+    simp_face = all(v["the_simplicial_nerve"]["maximal_face_sizes"] ==
+                    faces_wanted[k] for k, v in table.items())
+    simp_cone = all(v["the_simplicial_nerve"][
+        "it_is_a_cone_hence_contractible"] for v in table.values())
+    binom_forced = sorted({sum(((-1) ** (j + 1)) * _binom(k, j)
+                               for j in range(1, k + 1))
+                           for k in range(1, 41)})
     gate("TOP-SIMPLICIAL", "measurement",
-         "THE SIMPLICIAL NERVE IS A FULL SIMPLEX AT THE REFERENCE INSTANCE, "
-         "hence contractible.  Every coordinate cell's overlap graph is "
-         "MEASURED to be a disjoint union of complete graphs, so the faces "
-         "are exactly the subsets of those components; at the reference "
-         "instance eight of the ten cells give the whole chart set, so the "
-         "unique maximal face is everything.  Its Euler characteristic is "
-         "computed as the alternating binomial sum over all non-empty "
-         "subsets and is measured to be 1, which the cone argument predicts",
-         simp_ok and simp_cone,
-         {"maximal_face_sizes": ref["maximal_face_sizes"],
-          "chi": ref["chi_route_1_alternating_binomial_sum"],
+         "THE SIMPLICIAL NERVE IS THE WHOLE CHART SET, hence a cone, hence "
+         "contractible.  Every coordinate cell's overlap graph is MEASURED to "
+         "be a disjoint union of complete graphs, so the faces are exactly "
+         "the subsets of those components; the measured content is then that "
+         "the UNIQUE MAXIMAL FACE IS THE WHOLE CHART SET at every declared "
+         "instance -- gated here as maximal_face_sizes == [charts], which is "
+         "the number the unit defends and which a smaller maximal face would "
+         "break.  The alternating binomial sum is NOT part of this predicate: "
+         "sum_{j=1..k} (-1)^{j+1} C(k,j) = 1 for every k >= 1, evaluated here "
+         "at k = 1..40 with a one-element value set, so it is ANALYTICALLY "
+         "FORCED and is entered in TOP-FORCED-CLAUSES as a disclosure "
+         "(RUNBOOK section 14 addendum, #208).  The `simp-lax` mutant "
+         "replaces the maximal face by a proper subset of itself -- a "
+         "perturbation the binomial clause cannot see and this one does",
+         simp_ok and simp_face and simp_cone,
+         {"maximal_face_sizes": {k: v["the_simplicial_nerve"][
+             "maximal_face_sizes"] for k, v in table.items()},
+          "charts": {k: v["the_nerve_N"]["V"] for k, v in table.items()},
+          "the_maximal_face_is_the_whole_chart_set": simp_face,
+          "chi_of_the_reference_simplicial_nerve":
+              ref["chi_route_1_alternating_binomial_sum"],
+          "the_alternating_binomial_sum_at_k_1_to_40": binom_forced,
           "all_cell_graphs_are_unions_of_complete_graphs": simp_ok})
     TABLES["q1_invariants"] = table
     return table
@@ -1576,7 +2158,8 @@ def local_profiles(sp, st, nch):
     """The declared estimator, evaluated at every chart."""
     _bump()
     ignore_the_cell_structure = (MUTANT == "dim-lax")
-    link_from_edges_only = (MUTANT == "link-lax")
+    link_from_edges_only = (MUTANT == "link-lax-atlas")
+    inflate_the_star = (MUTANT == "star-lax")
     edges = st["edges"]
     cells = st["cells"]
     etov = [(a, b) for (a, b, c, p) in edges]
@@ -1618,8 +2201,10 @@ def local_profiles(sp, st, nch):
         else:
             lk = [(ren[p], ren[q]) for (p, q) in incident[v]]
         r = rank_f2_high([(1 << a) | (1 << b) for (a, b) in lk])
+        star = (star_e[v] + 1, star_f[v] + 1) if inflate_the_star \
+            else (star_e[v], star_f[v])
         prof[v] = {"dimprofile": tuple(dimprof[v]),
-                   "star": (star_e[v], star_f[v]),
+                   "star": star,
                    "link": (len(nb), len(lk), len(nb) - r, len(lk) - r)}
     return prof
 
@@ -1642,7 +2227,7 @@ def control_complex(tris):
 
 
 def control_links(nv, epairs, cells):
-    link_from_edges_only = (MUTANT == "link-lax")
+    link_from_edges_only = (MUTANT == "link-lax-control")
     out = {}
     for v in range(nv):
         nb = sorted({b if a == v else a for (a, b) in epairs if v in (a, b)})
@@ -1709,10 +2294,38 @@ def run_q2(sp, store, q1):
              "every_link_is_a_circle"], ctrl)
     per_instance = {}
     dim_cross = True
+    star_cross = True
+    link_cross = True
+    star_sums = {}
+    autos = {}
     for (label, _m, _c, _s) in INSTANCES:
         st = store[label]
         nch = len(st["charts"])
         prof = local_profiles(sp, st, nch)
+        # R-TOP-8: THE STAR AND THE LINK get their own comparator, built
+        # WITHOUT touching `local_profiles` and reading the link's homology by
+        # union-find and Euler rather than by an F_2 rank -- so the two
+        # components of the declared estimator that the manifold verdict
+        # quotes are audited by a route that is not the one under audit
+        # (RUNBOOK section 14 addendum, #219).
+        cmpr = star_link_comparator(sp, st, nch)
+        for v in range(nch):
+            se, sf, lk = cmpr["per_chart"][v]
+            if tuple(prof[v]["star"]) != (se, sf):
+                star_cross = False
+            if tuple(prof[v]["link"]) != lk:
+                link_cross = False
+        star_sums[label] = {
+            "sum_star_1_cells": cmpr["sum_of_the_star_1_cell_counts"],
+            "twice_the_1_cells": cmpr["twice_the_1_cells"],
+            "sum_star_2_cells": cmpr["sum_of_the_star_2_cell_counts"],
+            "three_times_the_2_cells": cmpr["three_times_the_2_cells"]}
+        if cmpr["sum_of_the_star_1_cell_counts"] != cmpr["twice_the_1_cells"]:
+            star_cross = False
+        if cmpr["sum_of_the_star_2_cell_counts"] != \
+                cmpr["three_times_the_2_cells"]:
+            star_cross = False
+        autos[label] = drawn_table_automorphisms(sp, st, nch)
         # THE COMPARATOR, built independently of the estimator: the local
         # simplex dimension a chart carries at a coordinate cell is one less
         # than the size of its component there, and the component sizes are
@@ -1763,58 +2376,103 @@ def run_q2(sp, store, q1):
                 sorted(set(rep["dimprofile"])) if len(vals) == 1 else None,
             "every_link_is_a_circle": (len(vals) == 1
                                        and rep["link"][2] == 1
-                                       and rep["link"][3] == 1)}
+                                       and rep["link"][3] == 1),
+            "the_drawn_table_automorphisms": autos[label],
+            "chart_independence_is_symmetry_forced":
+                autos[label]["chart_orbits"] == 1}
     ref = per_instance[REFERENCE_INSTANCE]
     flip = (MUTANT == "verdict-flip")
+    typed = (MUTANT == "manifold-typed")
     inconsistent = sorted(k for k, v in per_instance.items()
                           if not v["the_reading_is_consistent"])
+    forced = sorted(k for k, v in per_instance.items()
+                    if v["chart_independence_is_symmetry_forced"])
+    TABLES["q2_dimension"] = {
+        "per_instance": per_instance, "controls": ctrl,
+        "the_star_and_link_comparator": star_sums,
+        "the_instances_where_chart_independence_is_symmetry_forced": forced,
+        "the_estimator": {
+            "dimprofile": "per coordinate cell, |component of X| - 1",
+            "star": "(1-cells at X, 2-cells at X)",
+            "link": "(V, E, b0, b1) over F_2 of the link graph of X"}}
     if ref["the_reading_is_consistent"] and not flip:
-        manifold_verdict = (
-            "TOP-MANIFOLD-READING-CONSISTENT<the declared estimator is "
-            "CHART-INDEPENDENT at all %d charts of the reference instance -- "
-            "one reading everywhere -- but the reading it returns is not a "
-            "single number: the local simplex dimension per coordinate cell "
-            "is %s, realising dimensions %s, and every chart's link has "
-            "b_1 = %d, so a link is never a circle and the uniformity is NOT "
-            "manifoldhood; and the consistency is INSTANCE-SPECIFIC, holding "
-            "at %d of the %d declared instances and failing at %s>"
-            % (ref["charts"],
-               canon(ref["the_common_profile"]["dimprofile"]),
-               canon(sorted(set(ref["the_common_profile"]["dimprofile"]))),
-               ref["the_common_profile"]["link_V_E_b0_b1"][3],
-               len(per_instance) - len(inconsistent), len(per_instance),
-               canon(inconsistent)))
+        link_b1 = ref["the_common_profile"]["link_V_E_b0_b1"][3]
+        if typed:
+            link_b1 = link_b1 + 1
+        manifold_verdict = V_MANIFOLD % (
+            len(per_instance) - len(inconsistent), len(per_instance),
+            "-AND-".join(str(d) for d in
+                         sorted(set(ref["the_common_profile"]["dimprofile"]))),
+            ref["charts"],
+            canon(ref["the_common_profile"]["dimprofile"]),
+            canon(sorted(set(ref["the_common_profile"]["dimprofile"]))),
+            link_b1,
+            ref["the_drawn_table_automorphisms"]["chart_orbits"],
+            ref["the_drawn_table_automorphisms"]["measured_automorphisms"],
+            len(per_instance) - len(inconsistent), len(per_instance),
+            canon(inconsistent))
     else:
         w = ref["the_witness"]
-        manifold_verdict = "TOP-MANIFOLD-READING-INCONSISTENT-<%s>" % (
+        manifold_verdict = V_MANIFOLD_INCONSISTENT % (
             (w["chart"] if w else "no witness isolated"))
     ok_vocab = manifold_verdict.startswith(PREREGISTERED_MANIFOLD[0]) or \
         manifold_verdict.startswith(PREREGISTERED_MANIFOLD[1])
-    derived = ("TOP-MANIFOLD-READING-CONSISTENT"
-               if per_instance[REFERENCE_INSTANCE][
-                   "distinct_estimator_values"] == 1
-               else "TOP-MANIFOLD-READING-INCONSISTENT-<...>")
+    # THE FULL STRING, REBUILT INSIDE THE GATE FROM THE RECORDED TABLE --
+    # head, computed qualifiers and body alike -- and gated BYTE-FOR-BYTE.
+    rec = TABLES["q2_dimension"]["per_instance"]
+    rinc = sorted(k for k, v in rec.items()
+                  if not v["the_reading_is_consistent"])
+    rr = rec[REFERENCE_INSTANCE]
+    if rr["the_reading_is_consistent"]:
+        derived = V_MANIFOLD % (
+            len(rec) - len(rinc), len(rec),
+            "-AND-".join(str(d) for d in
+                         sorted(set(rr["the_common_profile"]["dimprofile"]))),
+            rr["charts"], canon(rr["the_common_profile"]["dimprofile"]),
+            canon(sorted(set(rr["the_common_profile"]["dimprofile"]))),
+            rr["the_common_profile"]["link_V_E_b0_b1"][3],
+            rr["the_drawn_table_automorphisms"]["chart_orbits"],
+            rr["the_drawn_table_automorphisms"]["measured_automorphisms"],
+            len(rec) - len(rinc), len(rec), canon(rinc))
+    else:
+        w = rr["the_witness"]
+        derived = V_MANIFOLD_INCONSISTENT % (
+            (w["chart"] if w else "no witness isolated"))
     gate("TOP-DIM-READING", "derivation",
-         "THE DIMENSION VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED "
-         "COUNT of distinct estimator values, re-derived here independently "
-         "of the emitter, and the two must agree; the `verdict-flip` mutant "
-         "moves the emitter alone and must die here.  The estimator is the "
-         "DECLARED one -- per-coordinate-cell local simplex dimension, star "
-         "profile and the F_2 homology of the vertex link -- evaluated at "
-         "EVERY chart, and its per-cell dimension is cross-checked against a "
-         "component census run in this gate from the pair table alone, a "
-         "comparator built independently of the estimator it audits.  "
-         "CONSISTENT means UNIFORM, not manifold: the link is "
-         "reported beside it and the manifold controls show what a circle "
-         "link looks like.  The reading is measured INSTANCE-SPECIFIC: it "
-         "FAILS at two of the five declared instances, whose witnesses are "
-         "exhibited here, so consistency at the reference is a measurement "
-         "about that instance and not a property of the construction",
-         ok_vocab and manifold_verdict.startswith(derived.split("<")[0])
-         and dim_cross,
+         "THE DIMENSION VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED "
+         "TABLE AND GATED BYTE-FOR-BYTE AGAINST THE EMITTED STRING -- head, "
+         "computed qualifiers and body alike, not a prefix (RUNBOOK section "
+         "13 addendum, #234, and #257: a qualifier is part of the verdict).  "
+         "The head itself carries the restrictions: how many of the declared "
+         "instances the reading holds at, which dimensions the profile "
+         "realises, that no link is a circle, and that chart-independence at "
+         "the reference is SYMMETRY-FORCED.  The `verdict-flip` mutant moves "
+         "the branch and the `manifold-typed` mutant moves ONE COMPUTED "
+         "QUALIFIER of the emitter with every recorded table left at its "
+         "measured value; both must die here.  The estimator is the DECLARED "
+         "one -- per-coordinate-cell local simplex dimension, star profile "
+         "and the F_2 homology of the vertex link -- evaluated at EVERY "
+         "chart, and ALL THREE components are cross-checked: the per-cell "
+         "dimension against a component census run from the pair table alone, "
+         "and the star and the link against a comparator that never touches "
+         "`local_profiles` and reads the link's homology by union-find and "
+         "Euler instead of by an F_2 rank, with the global identities sum "
+         "star_E = 2E and sum star_F = 3F gated beside it.  CONSISTENT means "
+         "UNIFORM, not manifold.  Whether the uniformity is a MEASUREMENT is "
+         "itself measured: the drawn table's chart-orbit count under its "
+         "declared automorphism candidates is reported per instance, and "
+         "where it is 1 the reading could not have come out otherwise and is "
+         "entered as a disclosure",
+         ok_vocab and manifold_verdict == derived and dim_cross
+         and star_cross and link_cross,
          {"verdict": manifold_verdict,
+          "the_verdict_rebuilt_from_the_recorded_table": derived,
+          "the_two_strings_are_byte_identical": manifold_verdict == derived,
           "the_estimator_agrees_with_an_independent_component_census":
               dim_cross,
+          "the_star_agrees_with_an_independent_comparator": star_cross,
+          "the_link_agrees_with_an_independent_comparator": link_cross,
+          "the_star_sum_identities": star_sums,
           "distinct_estimator_values": ref["distinct_estimator_values"],
           "instances_whose_reading_is_inconsistent": inconsistent,
           "the_witnesses": {k: per_instance[k]["the_witness"]
@@ -1824,14 +2482,32 @@ def run_q2(sp, store, q1):
           "the_local_dimension_is_a_single_number":
               ref["local_dimension_is_one_number"],
           "every_link_is_a_circle": ref["every_link_is_a_circle"]})
-    TABLES["q2_dimension"] = {"per_instance": per_instance,
-                              "controls": ctrl,
-                              "the_estimator": {
-                                  "dimprofile": "per coordinate cell, "
-                                                "|component of X| - 1",
-                                  "star": "(1-cells at X, 2-cells at X)",
-                                  "link": "(V, E, b0, b1) over F_2 of the "
-                                          "link graph of X"}}
+    forced_and_consistent = all(
+        per_instance[k]["the_reading_is_consistent"] for k in forced)
+    gate("TOP-AUTOMORPHISM", "measurement",
+         "WHETHER A CONSISTENT READING IS A MEASUREMENT AT ALL.  The declared "
+         "estimator is a chart-invariant of the drawn table, so where the "
+         "drawn table has an automorphism group TRANSITIVE ON CHARTS the "
+         "reading could not have come out otherwise.  The declared "
+         "automorphism candidates -- the %d left translations "
+         "(sigma, seed) -> (g sigma, h seed) -- are each TESTED against the "
+         "drawn relation at every coordinate cell, and the chart-orbit count "
+         "of the ones that pass is measured per instance.  Where the orbit "
+         "count is 1 the reading is measured CONSISTENT and entered as a "
+         "DISCLOSURE, not as a measurement (RUNBOOK section 14 addendum, "
+         "#208); where it is not, the split is a genuine measurement.  This "
+         "gate carries the implication: every instance whose orbit count is 1 "
+         "must read CONSISTENT.  The `auto-lax` mutant accepts every "
+         "candidate without testing it against the drawn table and must die "
+         "here" % (len(sp.PERMS) ** 2),
+         forced_and_consistent,
+         {"per_instance": autos,
+          "the_instances_where_it_is_forced": forced,
+          "the_instances_whose_reading_is_consistent":
+              sorted(k for k, v in per_instance.items()
+                     if v["the_reading_is_consistent"]),
+          "distinct_estimator_values": {k: v["distinct_estimator_values"]
+                                        for k, v in per_instance.items()}})
     FINDINGS["manifold_verdict"] = manifold_verdict
     return manifold_verdict
 
@@ -1882,6 +2558,56 @@ def is_f2_linear(p):
     return True
 
 
+def _thousands(n):
+    """Exact integer rendering with a comma every three digits."""
+    s = str(abs(int(n)))
+    parts = []
+    while len(s) > 3:
+        parts.append(s[-3:])
+        s = s[:-3]
+    parts.append(s)
+    return ("-" if n < 0 else "") + ",".join(reversed(parts))
+
+
+def candidate_tables_markdown(t3):
+    """The paper's two section-5.2 tables, rendered as markdown rows from the
+    RECORDED candidate table.  Display only -- no measurement passes through
+    here; every value is read back out of the table this run recorded."""
+    ct = t3["the_candidate_table"]
+    per = t3["the_forced_structure_of_the_family"]["per_candidate"]
+    order = [c[0] for c in SELECTOR_CANDIDATES]
+
+    def b(text, passed):
+        return ("**%s**" % text) if passed else text
+
+    main = ["| id | candidate | (a) on the locus | (b) off it | "
+            "(c) non-linear $K$ | holds at | of those "
+            "$=\\mathrm{GL}(3,2)$ | clauses |",
+            "|---|---|---|---|---|---|---|---|"]
+    for cid in order:
+        v = ct[cid]
+        main.append("| %s | %s | %s | %s | %s | %s | %s | %d |" % (
+            cid, SELECTOR_TYPESET_NAMES[cid],
+            b("%s/%s" % (_thousands(v["a_holds_on_the_locus"]),
+                         _thousands(v["the_locus_size"])), v["a_passes"]),
+            b(_thousands(v["b_holds_off_the_locus"]), v["b_passes"]),
+            b(_thousands(v["c_completions_with_a_non_linear_K"]),
+              v["c_passes"]),
+            _thousands(v["completions_satisfying_it"]),
+            _thousands(v["of_those_with_K_equal_to_GL_3_2"]),
+            v["clauses_passed"]))
+    cont = ["| id | holds at | clause (c) | "
+            "$\\lvert C\\setminus C4\\rvert$ | $C \\subseteq C4$ |",
+            "|---|---|---|---|---|"]
+    for cid in order:
+        p = per[cid]
+        cont.append("| %s | %s | %s | %s | %s |" % (
+            cid, _thousands(p["holds_at"]), _thousands(p["clause_c_count"]),
+            _thousands(p["the_containment_deficit"]),
+            "**yes**" if p["is_contained_in_C4"] else "no"))
+    return {"the_candidate_table": main, "the_clause_c_containment": cont}
+
+
 def run_q3(sp, tb3):
     global _SELECTOR_DECLARED, _K_AT_DECLARATION
     prog("Q3: the Fano-rung selector")
@@ -1890,16 +2616,29 @@ def run_q3(sp, tb3):
         subgroup_closure([label_defect(sp, pi, tuple(range(sp.NSYS)))
                           for pi in sp.PERMS], sp.NSYS)
     _K_AT_DECLARATION = _K_BUILT
+    origins_ok = all(o in SELECTOR_ORIGIN_LEGEND
+                     for (_c, _s, _t, o) in SELECTOR_CANDIDATES)
     gate("TOP-SELECTOR-FREEZE", "measurement",
-         "THE CANDIDATE FAMILY IS FROZEN BEFORE ANY FIXTURE TRUTH.  The "
+         "THE CANDIDATE FAMILY IS DECLARED ABOVE EVERY MEASUREMENT.  The "
          "thirteen candidate selectors and the three clauses are declared in "
          "this source above every measurement, and the count of defect "
          "subgroups K(q) built at the moment the declaration is registered is "
-         "measured to be ZERO.  The `selfreeze-lax` mutant builds one first "
-         "and must die here",
-         _K_AT_DECLARATION == 0,
+         "measured to be ZERO.  That records the ordering WITHIN ONE "
+         "EXECUTION; it is NOT offered as proof that the declarations were "
+         "fixed before any fixture truth was seen, which no in-run "
+         "measurement can establish -- the process fact is the commit, not "
+         "this counter.  Each candidate's ORIGIN is one of the declared "
+         "labels and is gated against them: `pin-derived` means it restates "
+         "the pin's own order-2-locus language, and is NOT a claim that the "
+         "pin lists it -- THE PIN CONTAINS NO CANDIDATE LIST.  The "
+         "`selfreeze-lax` mutant builds a subgroup first and must die here",
+         _K_AT_DECLARATION == 0 and origins_ok,
          {"candidates_declared": len(SELECTOR_CANDIDATES),
           "clauses_declared": len(SELECTOR_CLAUSES),
+          "the_origin_legend": SELECTOR_ORIGIN_LEGEND,
+          "origins_used": sorted({o for (_c, _s, _t, o)
+                                  in SELECTOR_CANDIDATES}),
+          "every_origin_is_a_declared_label": origins_ok,
           "defect_subgroups_built_at_declaration_time": _K_AT_DECLARATION})
     _SELECTOR_DECLARED = True
     n8 = sp.NSYS
@@ -1996,6 +2735,8 @@ def run_q3(sp, tb3):
     prog("  the exhaustive %d-completion selector census" % len(fam))
     cache = {}
     rows = []
+    hits = 0
+    poison_the_cache = (MUTANT == "cache-lax")
     for q in fam:
         ds = [label_defect(sp, pi, q) for pi in sp.PERMS]
         dstar = label_defect(sp, PSTAR, q)
@@ -2003,9 +2744,14 @@ def run_q3(sp, tb3):
         got = cache.get(key)
         if got is None:
             K = subgroup_closure(ds, n8)
-            got = (len(K), sum(1 for x in K if x in GL), frozenset(K) == GL)
+            got = (len(K), sum(1 for x in K if x in GL), frozenset(K) == GL,
+                   tuple(sorted({pord(x) for x in K})))
             cache[key] = got
-        kord, klin, kgl = got
+        else:
+            hits += 1
+            if poison_the_cache:
+                got = (got[0] + 1, got[1], got[2], got[3])
+        kord, klin, kgl, kspec = got
         lin_all = all(is_f2_linear(d) for d in ds)
         pred = {
             "C1": pord(dstar) == 2,
@@ -2022,7 +2768,34 @@ def run_q3(sp, tb3):
             "C10": all(frozenset(q[x] for x in L) in lineset for L in lines),
             "C11": all(pcomp(x, y) == pcomp(y, x) for x in ds for y in ds),
         }
-        rows.append((q, pord(dstar), kord, klin, kgl, pred))
+        rows.append((q, pord(dstar), kord, klin, kgl, pred, kspec))
+    # THE CACHE IS AUDITED, not trusted (RUNBOOK section 14 addenda #185 and
+    # #219): the census memoizes K(q) by its generator multiset, so a declared
+    # SAMPLE of the family is recomputed FRESH with the cache bypassed and the
+    # two must agree, and the cache-hit count itself is gated non-zero so the
+    # audited path is measured to be exercised.
+    sample = list(range(0, len(rows), 211))
+    fresh_ok = True
+    for i in sample:
+        q = rows[i][0]
+        K = subgroup_closure([label_defect(sp, pi, q) for pi in sp.PERMS], n8)
+        if (len(K), sum(1 for x in K if x in GL), frozenset(K) == GL) != \
+                (rows[i][2], rows[i][3], rows[i][4]):
+            fresh_ok = False
+    gate("TOP-CACHE", "measurement",
+         "THE MEMOIZATION IS AUDITED.  The census caches the defect subgroup "
+         "by its generator multiset; the cache is measured to be EXERCISED "
+         "(the hit count is gated non-zero, so this is not a zero-lookup "
+         "gate), and a declared sample of %d completions -- every %dth of the "
+         "family, chosen by index and not by outcome -- is recomputed FRESH "
+         "with the cache bypassed, order, linear count and set equality "
+         "alike.  The `cache-lax` mutant perturbs the value returned on a hit "
+         "and must die here"
+         % (len(sample), 211),
+         fresh_ok and hits > 0,
+         {"cache_entries": len(cache), "cache_hits": hits,
+          "the_sample_size": len(sample),
+          "the_sample_recomputes_fresh": fresh_ok})
     locus = [r for r in rows if r[1] == 2]
     off = [r for r in rows if r[1] != 2]
     always_pass_clause_c = (MUTANT == "sel-clause-lax")
@@ -2057,6 +2830,163 @@ def run_q3(sp, tb3):
     gl_orders = sorted(pord(x) for x in
                        {p for p in GL})
     gl_spec = sorted(set(gl_orders))
+    # ---- THE FORCED STRUCTURE OF THE FAMILY, measured as sets.
+    csets = {cid: {r[0] for r in rows if r[5][cid]}
+             for (cid, _s, _t, _o) in SELECTOR_CANDIDATES}
+    c4_by_K = {r[0] for r in rows if r[3] == r[2]}
+    forced_tab = {
+        "C4_the_predicate_equals_the_set_where_K_is_contained_in_GL_3_2":
+            csets["C4"] == c4_by_K,
+        "their_sizes": [len(csets["C4"]), len(c4_by_K)],
+        "clause_c_equals_the_containment_deficit_for_every_candidate": all(
+            ctable[cid]["c_completions_with_a_non_linear_K"] ==
+            len(csets[cid] - c4_by_K)
+            for (cid, _s, _t, _o) in SELECTOR_CANDIDATES),
+        "the_candidates_contained_in_C4": sorted(
+            cid for (cid, _s, _t, _o) in SELECTOR_CANDIDATES
+            if csets[cid] <= c4_by_K),
+        "the_candidates_passing_clause_c": sorted(
+            cid for (cid, _s, _t, _o) in SELECTOR_CANDIDATES
+            if ctable[cid]["c_passes"]),
+        "every_sigma_P_is_F2_linear": all(is_f2_linear(sp.SIGMA[pi])
+                                          for pi in sp.PERMS),
+        "C9_puts_every_defect_inside_the_wing_group": all(
+            all(d in wing for d in [label_defect(sp, pi, q)
+                                    for pi in sp.PERMS])
+            for q in csets["C9"]),
+        "the_extensional_duplicates": sorted(
+            "%s = %s" % (a, b)
+            for i, (a, _s1, _t1, _o1) in enumerate(SELECTOR_CANDIDATES)
+            for (b, _s2, _t2, _o2) in SELECTOR_CANDIDATES[i + 1:]
+            if csets[a] == csets[b]),
+        "distinct_predicates_among_the_declared_names":
+            len({frozenset(v) for v in csets.values()}),
+        "the_clause_c_disclosure": CLAUSE_C_DISCLOSURE,
+        "per_candidate": {
+            cid: {"holds_at": len(csets[cid]),
+                  "clause_c_count":
+                      ctable[cid]["c_completions_with_a_non_linear_K"],
+                  "the_containment_deficit": len(csets[cid] - c4_by_K),
+                  "is_contained_in_C4": csets[cid] <= c4_by_K}
+            for (cid, _s, _t, _o) in SELECTOR_CANDIDATES}}
+    # ---- R-TOP-5: THE P* SWEEP.  The locus and the defect-order axis are
+    # defined relative to an ARENA COORDINATE; all five non-identity wing
+    # symmetries are swept and the dependence is measured (RUNBOOK section 15).
+    sweep = {}
+    for pi in sp.PERMS:
+        if pi == sp.IDENT:
+            continue
+        od = Counter()
+        loc = []
+        for r in rows:
+            o = pord(label_defect(sp, pi, r[0]))
+            od[o] += 1
+            if o == 2:
+                loc.append(r)
+        sweep[sp.NAME[pi]] = {
+            "the_type_of_the_symmetry":
+                "transposition" if len(cycletype(pi)) == 2 else "3-cycle",
+            "the_order_2_locus": len(loc),
+            "on_the_locus_K_equals_GL_3_2": sum(1 for r in loc if r[4]),
+            "the_defect_order_distribution":
+                {str(k): v for k, v in sorted(od.items())},
+            "K_equals_GL_3_2_by_defect_order": {
+                str(k): v for k, v in
+                sorted(Counter(pord(label_defect(sp, pi, r[0]))
+                               for r in kgl_all).items())}}
+    by_type = defaultdict(list)
+    for nm, v in sweep.items():
+        by_type[v["the_type_of_the_symmetry"]].append(
+            (v["the_order_2_locus"], v["on_the_locus_K_equals_GL_3_2"]))
+    sweep_agrees = all(len(set(v)) == 1 for v in by_type.values())
+    sweep_separates = (len({tuple(sorted(set(v)))
+                            for v in by_type.values()}) == len(by_type))
+    sweep_nonempty = all(v["the_order_2_locus"] > 0 for v in sweep.values())
+    pstar_type = ("transposition" if len(cycletype(PSTAR)) == 2 else "3-cycle")
+    gate("TOP-PSTAR-SWEEP", "measurement",
+         "THE LOCUS IS AN ARENA COORDINATE AND THE DEPENDENCE IS MEASURED "
+         "(RUNBOOK section 15).  The defect d_P(q), the order-2 LOCUS and the "
+         "defect-order axis of the census are all defined relative to the "
+         "declared wing symmetry P*, which this instrument selects as the "
+         "first non-identity element of the enumerated wing group -- a "
+         "TRANSPOSITION.  All five non-identity symmetries are swept: the "
+         "three transpositions are measured to AGREE, locus and on-locus "
+         "count alike, the two 3-cycles are measured to agree with each other "
+         "and to DIFFER from the transpositions, and every locus is measured "
+         "non-empty.  So the locus size and the on-locus count are "
+         "P*-RELATIVE and the verdict says so in its own head; the count of "
+         "completions reaching GL(3,2) as a set is not, since K does not "
+         "depend on P*.  The `defect-lax` mutant composes the defect in the "
+         "wrong order, emptying every locus, and must die here",
+         sweep_agrees and sweep_separates and sweep_nonempty,
+         {"the_declared_P_star": sp.NAME[PSTAR],
+          "its_type": pstar_type, "per_symmetry": sweep,
+          "the_symmetry_classes_agree_internally": sweep_agrees,
+          "the_classes_are_separated": sweep_separates,
+          "every_locus_is_non_empty": sweep_nonempty})
+    # ---- R-TOP-12: THE ORDER LADDER.  How far a purely order-theoretic
+    # necessary condition can be pushed, and where it stops.
+    ladder_rows = []
+    for name, test in (
+            ("ord[P*,u] lies in GL(3,2)'s element spectrum",
+             lambda r: r[1] in gl_spec),
+            ("the whole S_3 defect-order profile lies in the spectrum",
+             lambda r: all(pord(label_defect(sp, pi, r[0])) in gl_spec
+                           for pi in sp.PERMS)),
+            ("every element order of K itself lies in the spectrum",
+             lambda r: all(o in gl_spec for o in r[6]))):
+        pas = [r for r in rows if test(r)]
+        ladder_rows.append({
+            "the_condition": name, "completions_passing": len(pas),
+            "false_positives_against_K_contained_in_GL_3_2":
+                sum(1 for r in pas if r[3] != r[2]),
+            "it_contains_every_completion_with_K_in_GL_3_2":
+                all(test(r) for r in kle_all),
+            "it_contains_every_completion_with_K_equal_to_GL_3_2":
+                all(test(r) for r in kgl_all)})
+    ladder_nested = all(ladder_rows[i]["completions_passing"] >
+                        ladder_rows[i + 1]["completions_passing"]
+                        for i in range(len(ladder_rows) - 1))
+    ladder_contains = all(r["it_contains_every_completion_with_K_in_GL_3_2"]
+                          for r in ladder_rows)
+    ladder_leaks = ladder_rows[-1][
+        "false_positives_against_K_contained_in_GL_3_2"] > 0
+    gate("TOP-ORDER-LADDER", "measurement",
+         "HOW FAR THE ORDER-THEORETIC CONDITION GOES, AND WHERE IT STOPS.  "
+         "GL(3,2)'s element orders are measured, d_{P*}(q) lies in K(q), so "
+         "an order outside that spectrum makes the containment impossible -- "
+         "the necessary condition the census reports biting at orders 5 and "
+         "6.  It is NOT the finest order-theoretic condition available, and "
+         "that is measured here rather than asserted: a strictly nested "
+         "ladder of purely order-theoretic conditions is built, each measured "
+         "to contain every completion whose K lies in GL(3,2), and each "
+         "measured strictly smaller than the last.  The measured content is "
+         "the last row: even the finest of them still admits false positives, "
+         "so NO purely order-theoretic condition characterises the visit and "
+         "linearity does irreducible work.  The `defect-lax` mutant collapses "
+         "every defect to the identity, flattening the ladder, and must die "
+         "here",
+         ladder_nested and ladder_contains and ladder_leaks,
+         {"the_element_orders_of_GL_3_2": gl_spec,
+          "the_ladder": ladder_rows,
+          "the_ladder_is_strictly_nested": ladder_nested,
+          "every_level_contains_the_targets": ladder_contains,
+          "the_finest_level_still_leaks": ladder_leaks,
+          "5_divides_the_order_of_GL_3_2": len(GL) % 5 == 0,
+          "6_divides_the_order_of_GL_3_2": len(GL) % 6 == 0,
+          "so_order_5_is_excluded_by_Lagrange_and_order_6_only_by_the_"
+          "spectrum": len(GL) % 5 != 0 and len(GL) % 6 == 0,
+          "linear_completions": sum(1 for r in rows if is_f2_linear(r[0])),
+          "linear_completions_whose_K_equals_GL_3_2":
+              sum(1 for r in rows if is_f2_linear(r[0]) and r[4]),
+          "completions_at_admissible_orders_whose_K_is_not_GL_3_2":
+              sum(1 for r in rows if r[1] in gl_spec and not r[4]),
+          "on_the_locus_linear": sum(1 for r in locus
+                                     if is_f2_linear(r[0])),
+          "on_the_locus_linear_and_K_equals_GL_3_2":
+              sum(1 for r in locus if is_f2_linear(r[0]) and r[4]),
+          "on_the_locus_non_linear_and_K_equals_GL_3_2":
+              sum(1 for r in locus if not is_f2_linear(r[0]) and r[4])})
     neighbour = {}
     for name, q in sorted(rungs.items()):
         ds = [label_defect(sp, pi, q) for pi in sp.PERMS]
@@ -2073,21 +3003,28 @@ def run_q3(sp, tb3):
              "C10": all(frozenset(q[x] for x in L) in lineset for L in lines),
              "C11": all(pcomp(x, y) == pcomp(y, x) for x in ds for y in ds),
              }[cid]) for (cid, _s, _t, _o) in SELECTOR_CANDIDATES}
+    def _sel_args(cand, best, pstar_name, cls, loc_n, onl_n, kgl_n, orders,
+                  swp):
+        cls_rows = defaultdict(list)
+        for nm, v in sorted(swp.items()):
+            cls_rows[v["the_type_of_the_symmetry"]].append(
+                (v["the_order_2_locus"], v["on_the_locus_K_equals_GL_3_2"]))
+        tr = cls_rows["transposition"]
+        cy = cls_rows["3-cycle"]
+        return (cls.upper(), cand, best, pstar_name, loc_n, onl_n, kgl_n,
+                orders, len(tr), tr[0][0], tr[0][1], len(cy), cy[0][0],
+                cy[0][1], kgl_n)
+    typed_selector = (MUTANT == "selector-typed")
     if named:
-        selector_verdict = "TOP-FANO-SELECTOR-<%s: %s>" % (
+        selector_verdict = V_SELECTOR_NAMED % (
             named[0], ctable[named[0]]["predicate"])
     else:
         worst = max(ctable.values(), key=lambda v: v["clauses_passed"])
-        selector_verdict = (
-            "TOP-FANO-SELECTOR-NOT-FOUND<no candidate of the %d declared "
-            "passes all three clauses; the best reach %d of 3, the "
-            "order-2 locus holds %d completions of which %d reach GL(3,2), "
-            "and GL(3,2) is reached at %d completions spread over defect "
-            "orders %s -- so the locus neither implies nor is implied by the "
-            "visit>" % (len(SELECTOR_CANDIDATES), worst["clauses_passed"],
-                        len(locus),
-                        sum(1 for r in locus if r[4]), len(kgl_all),
-                        canon(sorted(by_ord_gl))))
+        emitted_locus = len(locus) + (1 if typed_selector else 0)
+        selector_verdict = V_SELECTOR % _sel_args(
+            len(SELECTOR_CANDIDATES), worst["clauses_passed"], sp.NAME[PSTAR],
+            pstar_type, emitted_locus, sum(1 for r in locus if r[4]),
+            len(kgl_all), canon(sorted(by_ord_gl)), sweep)
     derived_named = [cid for cid, v in ctable.items() if v["NAMED"]]
     # Clause (c) is cross-checked against a count taken outside the candidate
     # loop: the completions satisfying C whose K is F_2-linear cannot exceed
@@ -2098,26 +3035,6 @@ def run_q3(sp, tb3):
         <= v["completions_satisfying_it"]
         - v["c_completions_with_a_non_linear_K"] <= len(kle_all)
         for v in ctable.values())
-    gate("TOP-SELECTOR", "derivation",
-         "THE SELECTOR VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED "
-         "CONTINGENCY TABLE.  Each of the thirteen declared candidates is "
-         "measured on the three declared clauses over the EXHAUSTIVE "
-         "completion family, and the verdict string is re-derived here from "
-         "the count of candidates passing all three; the emitter is a "
-         "separate computation and the two must agree.  Clause (c) is "
-         "additionally cross-checked against a count taken OUTSIDE the "
-         "candidate loop -- the number of completions in the whole family "
-         "whose defect subgroup is F_2-linear -- which no candidate's linear "
-         "sub-count may exceed; the `sel-clause-lax` mutant reports clause "
-         "(c) as passing for every candidate and must die on that bound",
-         (bool(derived_named) == selector_verdict.startswith(
-             "TOP-FANO-SELECTOR-<"))
-         and (selector_verdict.startswith(PREREGISTERED_SELECTOR[0])
-              or selector_verdict.startswith(PREREGISTERED_SELECTOR[1]))
-         and c_consistent,
-         {"named": derived_named, "verdict": selector_verdict,
-          "clause_c_is_bounded_by_the_family_wide_count": c_consistent,
-          "completions_with_an_F2_linear_K": len(kle_all)})
     TABLES["q3_selector"] = {
         "the_declared_candidate_family": [
             {"id": c[0], "name": c[1], "predicate": c[2], "origin": c[3]}
@@ -2125,12 +3042,18 @@ def run_q3(sp, tb3):
         "the_declared_clauses": [{"id": c[0], "text": c[1]}
                                  for c in SELECTOR_CLAUSES],
         "the_declared_rule": SELECTOR_RULE,
+        "the_origin_legend": SELECTOR_ORIGIN_LEGEND,
         "the_reference_values_computed_at_the_ord_2_target": {
             "defect_fixed_points": REF_FIX, "completion_support": REF_SUPP,
             "completion_cycle_type": list(REF_CT),
             "defect_order_profile": list(REF_PROF)},
         "the_rungs": rung_rows,
         "the_candidate_table": ctable,
+        "the_forced_structure_of_the_family": forced_tab,
+        "the_declared_P_star": sp.NAME[PSTAR],
+        "the_P_star_type": pstar_type,
+        "the_P_star_sweep": sweep,
+        "the_order_theoretic_ladder": ladder_rows,
         "the_candidates_at_the_five_rule_selected_rungs": neighbour,
         "the_completion_family": len(fam),
         "the_locus_size": len(locus),
@@ -2146,6 +3069,80 @@ def run_q3(sp, tb3):
         "K_order_distribution_on_the_locus":
             {str(k): v for k, v in sorted(Counter(r[2] for r in locus)
                                           .items())}}
+    # THE PAPER'S TWO SECTION-5.2 TABLES, EMITTED AS MARKDOWN ROWS FROM THE
+    # RECORDED TABLE.  Nothing here measures anything: it renders the values
+    # already recorded above, so the paper's rows are generated and never
+    # retyped.  A bold cell is a PASSED clause, and the pass flags are the
+    # recorded ones.
+    TABLES["q3_selector"]["the_section_5_2_tables_as_markdown"] = \
+        candidate_tables_markdown(TABLES["q3_selector"])
+    # THE FULL STRING, REBUILT INSIDE THE GATE FROM THE RECORDED TABLE.
+    t3 = TABLES["q3_selector"]
+    rnamed = [cid for cid, v in t3["the_candidate_table"].items()
+              if v["NAMED"]]
+    if rnamed:
+        sel_derived = V_SELECTOR_NAMED % (
+            rnamed[0], t3["the_candidate_table"][rnamed[0]]["predicate"])
+    else:
+        rbest = max(v["clauses_passed"]
+                    for v in t3["the_candidate_table"].values())
+        sel_derived = V_SELECTOR % _sel_args(
+            len(t3["the_declared_candidate_family"]), rbest,
+            t3["the_declared_P_star"], t3["the_P_star_type"],
+            t3["the_locus_size"], t3["of_those_on_the_order_2_locus"],
+            t3["completions_whose_K_equals_GL_3_2"],
+            canon(sorted(int(k) for k in
+                         t3["the_defect_orders_at_which_GL_3_2_is_reached"])),
+            t3["the_P_star_sweep"])
+    gate("TOP-SELECTOR", "derivation",
+         "THE SELECTOR VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED "
+         "CONTINGENCY TABLE AND GATED BYTE-FOR-BYTE against the emitted "
+         "string -- head, computed qualifiers and body alike, not a prefix "
+         "(RUNBOOK section 13 addendum, #234; #257).  The head carries the "
+         "restriction the census actually has: the locus is P*-RELATIVE, and "
+         "which class of wing symmetry P* belongs to is interpolated from the "
+         "measured cycle type.  Each of the thirteen declared candidates is "
+         "measured on the three declared clauses over the EXHAUSTIVE "
+         "completion family.  Clause (c) is cross-checked against a count "
+         "taken OUTSIDE the candidate loop -- the completions in the whole "
+         "family whose defect subgroup is F_2-linear -- which no candidate's "
+         "linear sub-count may exceed; the `sel-clause-lax` mutant reports "
+         "clause (c) as passing for every candidate and must die on that "
+         "bound, and the `selector-typed` mutant moves ONE COMPUTED QUALIFIER "
+         "of the emitter with the table left at its measured value",
+         (bool(derived_named) == selector_verdict.startswith(
+             "TOP-FANO-SELECTOR-<"))
+         and (selector_verdict.startswith(PREREGISTERED_SELECTOR[0])
+              or selector_verdict.startswith(PREREGISTERED_SELECTOR[1]))
+         and selector_verdict == sel_derived
+         and c_consistent,
+         {"named": derived_named, "verdict": selector_verdict,
+          "the_verdict_rebuilt_from_the_recorded_table": sel_derived,
+          "the_two_strings_are_byte_identical":
+              selector_verdict == sel_derived,
+          "clause_c_is_bounded_by_the_family_wide_count": c_consistent,
+          "completions_with_an_F2_linear_K": len(kle_all)})
+    gate("TOP-FORCED-CLAUSES", "disclosure",
+         "DISCLOSURE: WHAT IN THIS UNIT IS FORCED RATHER THAN MEASURED "
+         "(RUNBOOK section 14 addendum, #208).  Five items, each computed "
+         "here and none of them a must-pass clause anywhere.  (i) CLAUSE (c) "
+         "IS A CONTAINMENT: its count for a candidate C is measured to be "
+         "|C \\ C4| for every one of the thirteen, and C4 is measured EQUAL "
+         "as a set to {q : K(q) contained in GL(3,2)}, so `clause (c) "
+         "passes' is literally C contained in C4 and every passer's zero is "
+         "algebra -- C4 because a group generated by linear maps is linear, "
+         "C5 and C10 because all six sigma_P are measured F_2-linear, C9 "
+         "because q normalising the wing group puts every defect inside it, "
+         "all four measured as set containments here.  (ii) THE EXTENSIONAL "
+         "DUPLICATES: the declared thirteen names carry fewer distinct "
+         "predicates, and every coincidence is listed rather than the first "
+         "one only.  (iii) THE ALTERNATING BINOMIAL SUM of TOP-SIMPLICIAL is "
+         "1 for every k, so it is a print and not a route.  (iv) THE THREE "
+         "TRAVERSAL DEFECTS of a 2-cell are CONJUGATE, which is why the "
+         "coherent count has one route and not two.  (v) CHART-INDEPENDENCE "
+         "at an instance whose drawn table is chart-transitive could not have "
+         "come out otherwise, so CONSISTENT is a disclosure there",
+         True, forced_tab)
     FINDINGS["selector_verdict"] = selector_verdict
     return selector_verdict
 
@@ -2233,6 +3230,14 @@ def run_q4(sp, store):
             if img == t:
                 cnt += 1
         fixf[sp.NAME[g]] = cnt
+    inflate_the_fixed_cell_census = (MUTANT == "fixcell-lax")
+    if inflate_the_fixed_cell_census:
+        for g in sp.PERMS:
+            if g == sp.IDENT:
+                continue
+            fixv[sp.NAME[g]] += 1
+            fixe[sp.NAME[g]] += 1
+            fixf[sp.NAME[g]] += 1
     only_the_identity = (MUTANT == "orbit-lax")
     grp = [sp.IDENT] if only_the_identity else list(sp.PERMS)
 
@@ -2269,6 +3274,42 @@ def run_q4(sp, store):
           "fixed_0_cells": fixv, "fixed_1_cells": fixe,
           "fixed_2_cells": fixf,
           "the_2_cells_are_permuted": tri_equiv})
+    exact_div = {"0_cells": sum(fixv.values()) % len(sp.PERMS),
+                 "1_cells": sum(fixe.values()) % len(sp.PERMS),
+                 "2_cells": sum(fixf.values()) % len(sp.PERMS)}
+    sizes_e = Counter(len(o) for o in oe)
+    sizes_f = Counter(len(o) for o in ot)
+    sizes_ok = (sum(k * v for k, v in sizes_e.items()) == len(edges)
+                and sum(k * v for k, v in sizes_f.items()) == len(cells)
+                and sum(sizes_e.values()) == len(oe)
+                and sum(sizes_f.values()) == len(ot))
+    gate("TOP-BURNSIDE-EXACT", "measurement",
+         "BURNSIDE'S SUM DIVIDES EXACTLY, AND THE ORBIT-SIZE HISTOGRAMS PIN "
+         "THE CENSUS.  The orbit counts are floor divisions, so an error of "
+         "one to five in the fixed-cell census's TOTAL would be absorbed "
+         "silently and TOP-ORBITS would not see it.  Two clauses close that: "
+         "the sum of fixed cells is measured to be EXACTLY divisible by the "
+         "group order in all three dimensions -- the residues are printed and "
+         "must be zero -- and the orbit-size histograms are gated against the "
+         "cell counts, sum(size x count) = |E| and = |F| with the number of "
+         "orbits recovered as sum(count).  The `fixcell-lax` mutant inflates "
+         "every non-identity fixed-cell count by one -- an error the floor "
+         "division absorbs, TOP-ORBITS cannot see, and this gate must -- and "
+         "it dies here.  A mutant that divides by the WRONG ORDER leaves both "
+         "of these clauses true and is not this gate's business: it moves the "
+         "orbit counts, and is caught where those are compared against direct "
+         "enumeration, which is TOP-ORBITS",
+         all(v == 0 for v in exact_div.values()) and sizes_ok,
+         {"the_residues_of_the_fixed_cell_sums": exact_div,
+          "the_group_order": len(sp.PERMS),
+          "the_fixed_cell_sums": {"0_cells": sum(fixv.values()),
+                                  "1_cells": sum(fixe.values()),
+                                  "2_cells": sum(fixf.values())},
+          "orbit_size_histogram_1_cells":
+              {str(k): v for k, v in sorted(sizes_e.items())},
+          "orbit_size_histogram_2_cells":
+              {str(k): v for k, v in sorted(sizes_f.items())},
+          "the_histograms_recover_the_cell_counts": sizes_ok})
     vo, eo = {}, {}
     for i, o in enumerate(ov):
         for x in o:
@@ -2287,6 +3328,48 @@ def run_q4(sp, store):
         qcells.append(tuple(sorted(img)))
     QC = Complex(len(ov), qpairs, qcells, "the quotient complex")
     qinv = QC.invariants()
+    # ---- THE BOUNDARY-PARITY WITNESS (RUNBOOK section 14 addendum, #313).
+    # A boundary row is assembled by XOR, so a 1-cell whose two endpoints
+    # coincide contributes ZERO.  On the nerve that is inert -- every 1-cell
+    # joins two DISTINCT charts -- and the convention bites exactly on the
+    # quotient, where an orbit can meet a vertex orbit twice.  Both
+    # connectives are evaluated here and their measured DELTA is the gate's
+    # death certificate.
+    loops = sum(1 for (a, b) in qpairs if a == b)
+    xor_rows = [(1 << a) ^ (1 << b) for (a, b) in qpairs]
+    or_rows = [(1 << a) | (1 << b) for (a, b) in qpairs]
+    r_xor = rank_f2_high(xor_rows)
+    r_or = rank_f2_high(or_rows)
+    cyc_xor = len(qpairs) - r_xor
+    cyc_or = len(qpairs) - r_or
+    d2q = [(1 << x) ^ (1 << y) ^ (1 << z) for (x, y, z) in QC.tris]
+    r2q = rank_f2_high(d2q, maxrank=max(cyc_xor, cyc_or))
+    b1_xor = cyc_xor - r2q
+    b1_or = cyc_or - r2q
+    parity = {"loop_1_cells_in_the_quotient": loops,
+              "rank_d1_with_XOR": r_xor, "rank_d1_with_OR": r_or,
+              "b1_with_XOR": b1_xor, "b1_with_OR": b1_or,
+              "the_measured_delta": b1_xor - b1_or,
+              "b0_with_XOR": len(ov) - r_xor, "b0_with_OR": len(ov) - r_or,
+              "the_delivered_b1": qinv["b1"],
+              "the_delivered_assembly_is_XOR": qinv["b1"] == b1_xor}
+    gate("TOP-BOUNDARY-PARITY", "measurement",
+         "THE BOOLEAN CONNECTIVE OF THE BOUNDARY IS GATED BY ITS OWN DELTA "
+         "(RUNBOOK section 14 addendum, #313).  Assembling an incidence bit "
+         "pattern with OR instead of the mod-2 XOR is inert wherever every "
+         "1-cell joins two distinct 0-cells, and bites exactly where a cell "
+         "meets a face twice -- which is the wing quotient, whose 1-skeleton "
+         "is measured to carry a non-zero number of LOOP 1-cells, gated here "
+         "so the convention is exercised by construction and not by "
+         "circumstance.  Both connectives are evaluated on the same quotient "
+         "and their DELTA is measured and printed; the gate requires the "
+         "delta to be non-zero -- so the convention is load-bearing -- and "
+         "the delivered b_1 to be the XOR one.  The `or-lax` mutant "
+         "assembles the boundary rows with OR and the `or-lax-T` mutant does "
+         "it in the transposed accumulation; both must die here or on the "
+         "four-route component check below",
+         loops > 0 and b1_xor != b1_or and qinv["b1"] == b1_xor,
+         parity)
     nfree_e = len(edges) - sum(1 for i in range(len(edges))
                                if all(eact[g][i] != i for g in sp.PERMS
                                       if g != sp.IDENT))
@@ -2295,18 +3378,26 @@ def run_q4(sp, store):
          "THE QUOTIENT COMPLEX'S INVARIANTS.  The quotient is the ORBIT CELL "
          "COMPLEX -- cells are orbits, the boundary is induced mod 2 -- and "
          "its components, cycle rank, Euler characteristic and F_2 ranks are "
-         "computed by the same two-route standard as the nerve's.  The action "
-         "is measured FREE on 0-cells but NOT on 1- and 2-cells, so the "
-         "orbit complex is reported as the orbit CHAIN complex and the "
-         "difference from a free quotient is derived from the fixed-cell "
+         "computed by the same two-route standard as the nerve's.  ALL FOUR "
+         "component routes are compared here, not two: union-find, the F_2 "
+         "rank of the boundary matrix, the rank of its TRANSPOSE and a "
+         "spanning forest.  The transpose route is the one that only the "
+         "quotient can exercise -- on the nerve routes 2 and 3 agree "
+         "trivially because there are no loops -- and without it a quotient "
+         "could publish a component count of zero for a non-empty complex.  "
+         "The action is measured FREE on 0-cells but NOT on 1- and 2-cells, "
+         "so the orbit complex is reported as the orbit CHAIN complex and "
+         "the difference from a free quotient is derived from the fixed-cell "
          "census rather than assumed away: chi of the orbit complex minus "
          "chi(N)/|S_3| is measured, and equals the correction Burnside's "
          "lemma predicts from the fixed cells",
          qinv["components_route_1_union_find"] ==
-         qinv["components_route_2_F2_rank"]
+         qinv["components_route_2_F2_rank"] ==
+         qinv["components_route_3_transposed_rank"] ==
+         qinv["components_route_4_spanning_forest"]
          and qinv["rank_d2_route_1_high_pivot"] ==
          qinv["rank_d2_route_2_cotree_low_pivot"],
-         {"quotient": qinv,
+         {"quotient": qinv, "the_boundary_parity_witness": parity,
           "chi_of_the_orbit_complex": qinv["chi_from_cell_counts"],
           "chi_of_the_nerve_over_the_group_order": chi_free // len(sp.PERMS),
           "the_correction": qinv["chi_from_cell_counts"]
@@ -2330,6 +3421,9 @@ def run_q4(sp, store):
                                 sorted(Counter(len(o) for o in ot).items())},
         "fixed_0_cells": fixv, "fixed_1_cells": fixe, "fixed_2_cells": fixf,
         "the_quotient_complex": qinv,
+        "the_boundary_parity_witness": parity,
+        "the_orbit_size_histograms_pin_the_census": sizes_ok,
+        "the_fixed_cell_sum_residues": exact_div,
         "chi_of_the_nerve_over_6": chi_free // len(sp.PERMS),
         "the_correction_from_the_fixed_cells":
             qinv["chi_from_cell_counts"] - chi_free // len(sp.PERMS)}
@@ -2406,25 +3500,35 @@ def run_positive_control(tb3):
     ch2 = build_atlas(sp2, w)
     pr2 = atlas_pair_table(sp2, ch2)
     ed2, ei2 = nerve_edges(sp2, pr2, len(ch2))
-    c2, coh2, _pc, _df = geometric_cells(sp2, pr2, ei2, len(ch2))
+    c2, coh2, _pc, _df, _cj = geometric_cells(sp2, pr2, ei2, len(ch2))
     inv2 = Complex(len(ch2), [(a, b) for (a, b, c, p) in ed2], c2,
                    "two-wing atlas").invariants()
     b1_ok = (rows["3"]["b1"] == two["cycle_rank"])
     gate("TOP-POS-2WING", "control",
-         "THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS.  "
-         "Instantiated at a 16-configuration carrier neither committed unit "
-         "used, the machinery reproduces the committed two-wing transport "
-         "graph at BOTH realised defect orders -- nodes, links, "
-         "identification links, cycle rank and the completion itself, every "
-         "one anchored exit-1 against the hash-pinned receipt -- and the F_2 "
-         "homology machinery returns b_1 equal to the committed cycle rank "
-         "6, so the homology route is anchored to a committed number and not "
-         "only to itself.  The two-wing ATLAS is then run through the same "
-         "nerve machinery, and its invariants are printed",
+         "THE POSITIVE CONTROL: THE SAME GENERIC MACHINERY AT TWO WINGS, AND "
+         "EXACTLY WHAT IT ANCHORS.  Instantiated at a 16-configuration "
+         "carrier neither committed unit used, the machinery reproduces the "
+         "committed two-wing transport graph at BOTH realised defect orders "
+         "-- nodes, links, identification links, cycle rank and the "
+         "completion itself, every one anchored exit-1 against the "
+         "hash-pinned receipt.  That anchors the ONE-DIMENSIONAL route and "
+         "only it.  The b_1 column is NOT a second anchor: the control graph "
+         "carries no 2-cells, so rank(d_2) = 0 and b_1 equals the cycle rank "
+         "IDENTICALLY -- the identity is printed here rather than counted as "
+         "evidence, on deviation 3's own standard.  NO COMMITTED NUMBER "
+         "ANCHORS rank(d_2) ANYWHERE IN THIS UNIT; the two-dimensional half "
+         "of the homology machinery is calibrated by the DECLARED-STANDARD "
+         "control complexes alone, which buy calibration and not "
+         "independence, and that is disclosed rather than smoothed.  The "
+         "two-wing ATLAS is then run through the same nerve machinery, and "
+         "its invariants are printed",
          all(a["passed"] for a in ANCHORS if a["id"].startswith("A-2W-"))
          and b1_ok,
          {"per_defect_order": rows,
           "b1_equals_the_committed_cycle_rank": b1_ok,
+          "b1_equals_the_cycle_rank_identically_because_there_are_no_2_cells":
+              all(v["b1"] == v["cycle_rank_route_1"] for v in rows.values()),
+          "no_committed_number_anchors_rank_d2": True,
           "the_two_wing_atlas": {
               "charts": len(ch2), "one_cells": len(ed2),
               "two_cells": len(c2), "coherent_2_cells": len(coh2),
@@ -2458,10 +3562,16 @@ def run_transport_controls(sp, tb3):
         setting = ("R0", "R1", "R2") if cm["setting"] == "TB-012" \
             else ("R0", "R0", "R0")
         use = Qref if replace_the_controls else q
+        # TB3's committed negative-control rows carry no `nodes` field, so
+        # this one is NOT read from external bytes: it is the DECLARED
+        # STRUCTURAL size |FRAMES| x |CHECKPOINTS|, and it is labelled as such
+        # rather than counted among the external anchors.
         specs.append((key, use, setting,
                       {"links": cm["links"], "identification_links":
                        cm["identification_links"],
-                       "cycle_rank": cm["cycle_rank"], "nodes": 30}))
+                       "cycle_rank": cm["cycle_rank"],
+                       "nodes": len(sp.FRAMES) * len(sp.CKPTS),
+                       "nodes_are_structural": True}))
     rows = {}
     for (label, q, setting, cm) in specs:
         w = World(sp, psi, q, setting)
@@ -2471,7 +3581,10 @@ def run_transport_controls(sp, tb3):
         inv = Complex(len(nodes), [(index[a], index[b])
                                    for (_n, a, b) in links], [],
                       label).invariants()
-        anchor("A-TG-NODES-" + label, "TB3 committed receipt",
+        anchor("A-TG-NODES-" + label,
+               "DECLARED-STRUCTURAL (a size forced by the declared base)"
+               if cm.get("nodes_are_structural")
+               else "TB3 committed receipt",
                "transport nodes at " + label, cm["nodes"], len(nodes))
         anchor("A-TG-LINKS-" + label, "TB3 committed receipt",
                "transport links at " + label, cm["links"], len(links))
@@ -2539,7 +3652,7 @@ def run_negative_control(sp, store, q1, q2ref):
             tab[(b, a)] = sp.IDENT
         pair[c] = tab
     edges, eidx = nerve_edges(sp, pair, n)
-    cells, coh, _pc, _df = geometric_cells(sp, pair, eidx, n)
+    cells, coh, _pc, _df, _cj = geometric_cells(sp, pair, eidx, n)
     scr = {"pair": pair, "edges": edges, "eidx": eidx, "cells": cells,
            "coh": coh, "charts": st["charts"]}
     inv = Complex(n, [(a, b) for (a, b, c, p) in edges], cells,
@@ -2558,6 +3671,34 @@ def run_negative_control(sp, store, q1, q2ref):
     moved = [k for k in ("E", "F", "b1", "b2", "chi_from_cell_counts")
              if inv[k] != ref[k]]
     broke = (len(vals) > 1)
+    # WHY b_0 AND b_1 DO NOT MOVE, MEASURED rather than narrated: the
+    # scrambled atlas's own per-checkpoint census, and the coordinate count it
+    # pins (RUNBOOK failure catalogue #38->#40).
+    sper, ssb0, ssb1, slive = {}, 0, 0, 0
+    for t in sp.CKPTS:
+        loc = [i for i, (a, b, c, p) in enumerate(edges) if c[0] == t]
+        if not loc:
+            continue
+        slive += 1
+        ren = {e: i for i, e in enumerate(loc)}
+        el = [(edges[e][0], edges[e][1]) for e in loc]
+        tl = [tuple(ren[x] for x in tr) for tr in cells
+              if all(y in ren for y in tr)]
+        sub = Complex(n, el, tl, "scrambled t=%d" % t).invariants()
+        sper[str(t)] = {"E": sub["E"], "F": sub["F"], "b0": sub["b0"],
+                        "b1": sub["b1"]}
+        ssb0 += sub["b0"]
+        ssb1 += sub["b1"]
+    scoord = (slive - 1) * (n - 1)
+    scr_census = {
+        "per_checkpoint": sper, "sum_of_per_checkpoint_b0": ssb0,
+        "sum_of_per_checkpoint_b1": ssb1,
+        "read_times_carrying_cells": slive,
+        "the_coordinate_count_T_minus_1_times_V_minus_1": scoord,
+        "b1": inv["b1"], "b1_equals_the_coordinate_count": inv["b1"] == scoord,
+        "the_reference_b1": ref["b1"],
+        "b1_is_unmoved_by_the_scramble": inv["b1"] == ref["b1"],
+        "b2_moves_from_to": [ref["b2"], inv["b2"]]}
     gate("TOP-NEG-SCRAMBLE", "control",
          "THE NEGATIVE CONTROL HAS TEETH.  A declared deterministically "
          "scrambled atlas -- three quarters of each coordinate cell's links "
@@ -2567,9 +3708,17 @@ def run_negative_control(sp, store, q1, q2ref):
          "returns INCONSISTENT with a named witness chart.  The "
          "`scramble-off` mutant leaves the atlas alone and must die here, "
          "which is what shows the two clauses are measurements and not "
-         "restatements",
+         "restatements.  WHAT DOES NOT MOVE IS ALSO MEASURED: b_0 and b_1 "
+         "are unchanged, and the reason is not narrated but computed -- the "
+         "scrambled atlas's OWN per-checkpoint census is taken here and "
+         "returns the same connected, simply connected read times, so the "
+         "gluing formula pins b_1 to the coordinate count (T-1)(|V|-1) at "
+         "the scrambled atlas exactly as at the reference.  The degree-one "
+         "invariant is therefore measured INSENSITIVE to the identification "
+         "data; b_2 is not",
          bool(moved) and broke,
          {"invariants_that_moved": moved,
+          "the_scrambled_atlas_per_checkpoint_census": scr_census,
           "scrambled": {k: inv[k] for k in ("V", "E", "F", "b0", "b1", "b2",
                                             "chi_from_cell_counts")},
           "reference": {k: ref[k] for k in ("V", "E", "F", "b0", "b1", "b2",
@@ -2585,6 +3734,7 @@ def run_negative_control(sp, store, q1, q2ref):
                                           "chi_from_cell_counts")},
         "invariants_that_moved": moved,
         "distinct_estimator_values": len(vals),
+        "the_per_checkpoint_census": scr_census,
         "the_witness": witness}
 
 
@@ -2626,14 +3776,28 @@ def run_anchor_provenance():
     if register_a_bad_label:
         unknown.append("injected")
     gate("TOP-ANCHOR-PROVENANCE", "derivation",
-         "EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed, "
-         "never averaged.  An EXTERNAL anchor's declared side comes from "
-         "bytes outside this file -- TB3's hash-pinned committed receipt; a "
-         "DECLARED-STANDARD anchor's declared side is a standard invariant of "
-         "a control complex typed in this source, which buys calibration and "
-         "not independence, and is labelled as such",
+         "EVERY ANCHOR DECLARES ITS PROVENANCE and the split is printed in "
+         "FOUR classes, never averaged and never rounded up to `external'.  "
+         "EXTERNAL: the declared side is read from bytes outside this file, "
+         "TB3's hash-pinned committed receipt.  SELF-PIN: the declared side "
+         "is the SHA-256 typed in this source and the computed side is the "
+         "hash of the foundation's bytes -- it pins the foundation and is "
+         "not an external reading, so it is counted apart.  STRUCTURAL: the "
+         "declared side is a size FORCED by the declared base (the transport "
+         "graph's |FRAMES| x |CHECKPOINTS| nodes, which TB3's negative-"
+         "control rows do not carry), computed from the declaration rather "
+         "than typed, and incapable of failing -- named here rather than "
+         "counted as evidence.  DECLARED-STANDARD: a standard invariant of a "
+         "control complex typed in this source, which buys calibration and "
+         "not independence.  This gate is a VOCABULARY check and says so: it "
+         "verifies that every anchor names a declared class, not that an "
+         "external anchor's bytes were read.  Its only falsifier is the "
+         "`provenance-lax` WAIVER, which registers a bad label after the "
+         "sweep, and it is classified as a waiver rather than a computation "
+         "mutant for exactly that reason",
          not unknown, {"by_provenance": dict(by), "unknown": unknown,
-                       "total": len(ANCHORS)})
+                       "total": len(ANCHORS),
+                       "the_declared_classes": ANCHOR_PROVENANCE})
 
 
 def run_exactness():
@@ -2696,42 +3860,78 @@ def run_exemption_sweep():
 # ===========================================================================
 # 15.  THE UNIT VERDICT.
 # ===========================================================================
+def _unit_args(inv, coord_T, coord_V, scrambled_b1, qq):
+    return (coord_T, coord_V, inv["V"], inv["E"], inv["F"], inv["b0"],
+            inv["cycle_rank_route_1_spanning_forest"],
+            inv["chi_from_cell_counts"], inv["b0"], inv["b1"], inv["b2"],
+            coord_T, coord_V, coord_T * coord_V, scrambled_b1, inv["b2"],
+            qq["b2_scrambled"], qq["chi"], qq["b0"], qq["b1"], qq["b2"])
+
+
 def run_verdict(q1, manifold_verdict, selector_verdict, qinv):
     ref = q1[REFERENCE_INSTANCE]["the_nerve_N"]
+    rq1 = q1[REFERENCE_INSTANCE]
+    nc = TABLES["negative_control"]
     blocked = None
     flip = (MUTANT == "verdict-flip")
+    typed = (MUTANT == "unit-typed")
+    coord_T = rq1["the_read_times_carrying_cells"] - 1
+    coord_V = ref["V"] - 1
+    qq = {"b2_scrambled": nc["scrambled"]["b2"],
+          "chi": qinv["chi_from_cell_counts"], "b0": qinv["b0"],
+          "b1": qinv["b1"], "b2": qinv["b2"]}
     if flip:
         unit = "TOP-BLOCKED-AT-<the nerve>"
     else:
-        unit = ("TOP-GLOBAL-STRUCTURE-<charts %d, 1-cells %d, 2-cells %d; "
-                "components %d, cycle rank %d, chi %d, F_2 ranks "
-                "(b0,b1,b2) = (%d,%d,%d); the wing quotient has chi %d and "
-                "(b0,b1,b2) = (%d,%d,%d)>"
-                % (ref["V"], ref["E"], ref["F"], ref["b0"],
-                   ref["cycle_rank_route_1_spanning_forest"],
-                   ref["chi_from_cell_counts"], ref["b0"], ref["b1"],
-                   ref["b2"], qinv["chi_from_cell_counts"], qinv["b0"],
-                   qinv["b1"], qinv["b2"]))
+        emitted = dict(ref)
+        if typed:
+            emitted["b1"] = ref["b1"] + 1
+        unit = V_UNIT % _unit_args(emitted, coord_T, coord_V,
+                                   nc["scrambled"]["b1"], qq)
     computed_ok = all(g["passed"] for g in GATES
                       if g["class"] in ("measurement", "control", "anchor"))
-    derived = ("TOP-GLOBAL-STRUCTURE-" if computed_ok
-               else "TOP-BLOCKED-AT-")
+    if computed_ok:
+        rrec = TABLES["q1_invariants"][REFERENCE_INSTANCE]
+        rinv = rrec["the_nerve_N"]
+        rqq = {"b2_scrambled": TABLES["negative_control"]["scrambled"]["b2"],
+               "chi": TABLES["q4_quotient"]["the_quotient_complex"][
+                   "chi_from_cell_counts"],
+               "b0": TABLES["q4_quotient"]["the_quotient_complex"]["b0"],
+               "b1": TABLES["q4_quotient"]["the_quotient_complex"]["b1"],
+               "b2": TABLES["q4_quotient"]["the_quotient_complex"]["b2"]}
+        derived = V_UNIT % _unit_args(
+            rinv, rrec["the_read_times_carrying_cells"] - 1, rinv["V"] - 1,
+            TABLES["negative_control"]["scrambled"]["b1"], rqq)
+    else:
+        derived = "TOP-BLOCKED-AT-<the nerve>"
     gate("TOP-VERDICT", "derivation",
-         "THE UNIT VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED "
-         "GATE OUTCOMES, not typed: the structure verdict is emitted only if "
-         "every measurement, control and anchor gate passed, and the "
-         "alternative branch is the pre-registered census outcome "
-         "TOP-BLOCKED-AT-<object>.  The `verdict-flip` mutant moves the "
-         "emitter alone and must die here.  Only pre-registered names are "
-         "emitted, and the vocabulary is checked against the pin's list",
-         unit.startswith(derived)
+         "THE UNIT VERDICT IS REBUILT INSIDE THIS GATE FROM THE RECORDED "
+         "TABLES AND GATED BYTE-FOR-BYTE against the emitted string -- head, "
+         "computed qualifiers and body alike, not a prefix (RUNBOOK section "
+         "13 addendum, #234; #257: a qualifier is part of the verdict).  The "
+         "BRANCH is derived from the measured gate outcomes -- the structure "
+         "verdict is emitted only if every measurement, control and anchor "
+         "gate passed, the alternative being the pre-registered "
+         "TOP-BLOCKED-AT-<object> -- and the head then carries the "
+         "restriction the measurement actually supports: the topology is the "
+         "COORDINATE-RESOLVED nerve's, its degree-one rank is the coordinate "
+         "count (read times - 1) x (charts - 1) with both factors "
+         "interpolated from measured counts, and the SCRAMBLED control "
+         "returns the same b_1.  The `verdict-flip` mutant moves the branch "
+         "and the `unit-typed` mutant moves ONE COMPUTED QUALIFIER of the "
+         "emitter with every recorded table left at its measured value; both "
+         "must die here.  Only pre-registered names are emitted and the "
+         "vocabulary is checked against the pin's list",
+         unit == derived
          and (unit.startswith(PREREGISTERED_UNIT[0])
               or unit.startswith(PREREGISTERED_UNIT[1]))
          and (manifold_verdict.startswith(PREREGISTERED_MANIFOLD[0])
               or manifold_verdict.startswith(PREREGISTERED_MANIFOLD[1]))
          and (selector_verdict.startswith(PREREGISTERED_SELECTOR[0])
               or selector_verdict.startswith(PREREGISTERED_SELECTOR[1])),
-         {"unit": unit, "manifold": manifold_verdict,
+         {"unit": unit, "the_verdict_rebuilt_from_the_recorded_tables":
+             derived, "the_two_strings_are_byte_identical": unit == derived,
+          "manifold": manifold_verdict,
           "selector": selector_verdict, "blocked_object": blocked})
     FINDINGS["unit_verdict"] = unit
     FINDINGS["the_verdicts_declared_scope"] = list(SCOPE_CLAUSES)
@@ -2770,9 +3970,51 @@ MUTANT_DECL = (
     ("dim-lax", "computation",
      "the local-dimension estimator blind to the coordinate-cell component "
      "structure"),
-    ("link-lax", "computation",
-     "the vertex link built from the 1-cells alone rather than from the "
-     "2-cells, so it is a star and never a circle"),
+    ("link-lax-atlas", "computation",
+     "the ATLAS's vertex link built from the 1-cells alone rather than from "
+     "the 2-cells, so it is a star and never a circle -- injected in the "
+     "audited path only, with the control path untouched"),
+    ("link-lax-control", "computation",
+     "the CONTROL complexes' vertex link built from the 1-cells alone, "
+     "injected in the control path only, with the atlas path untouched"),
+    ("star-lax", "computation",
+     "the star profile inflated by one 1-cell and one 2-cell at every chart"),
+    ("sym-lax", "computation",
+     "one direction of one admitted ordered pair deleted, so the drawn "
+     "relation stops being symmetric"),
+    ("block-lax", "computation",
+     "the block-incidence graph built from one rule's partition alone"),
+    ("digon-lax", "computation",
+     "every digon reported coherent regardless of its two drawn maps"),
+    ("auto-lax", "computation",
+     "every automorphism candidate accepted without testing it against the "
+     "drawn table"),
+    ("cache-lax", "computation",
+     "the memoized defect subgroup perturbed on a cache hit"),
+    ("fixcell-lax", "computation",
+     "every non-identity fixed-cell count inflated by one -- an error "
+     "Burnside's floor division absorbs"),
+    ("or-lax", "computation",
+     "the mod-2 boundary rows assembled with OR instead of XOR, so a cell "
+     "meeting a face twice contributes an incidence bit rather than zero"),
+    ("or-lax-T", "computation",
+     "the same OR-for-XOR substitution in the TRANSPOSED column "
+     "accumulation"),
+    ("subcell-drop", "computation",
+     "one 2-cell dropped from each per-checkpoint sub-complex only, so H_2 "
+     "stops being additive over the checkpoints"),
+    ("unit-typed", "computation",
+     "one COMPUTED QUALIFIER of the unit verdict replaced in the emitter "
+     "while every recorded table keeps its measured value"),
+    ("manifold-typed", "computation",
+     "one COMPUTED QUALIFIER of the manifold verdict replaced in the emitter "
+     "while every recorded table keeps its measured value"),
+    ("selector-typed", "computation",
+     "one COMPUTED QUALIFIER of the selector verdict replaced in the emitter "
+     "while every recorded table keeps its measured value"),
+    ("crosscell-typed", "computation",
+     "the cross-coordinate outcome emitted at the other pre-registered "
+     "branch while the measured residual is left unchanged"),
     ("scramble-off", "computation",
      "the negative control's scramble replaced by the identity, so the "
      "control stops being a control"),
@@ -2796,8 +4038,11 @@ MUTANT_DECL = (
      "the two-wing species truncated to one frame"),
     ("freeze-lax", "computation",
      "a topology datum evaluated before the declarations are frozen"),
-    ("provenance-lax", "computation",
-     "an anchor registered with an undeclared provenance"),
+    ("provenance-lax", "waiver",
+     "an undeclared provenance label registered in the provenance gate's own "
+     "evidence list AFTER its sweep over the anchors has run: no anchor is "
+     "ever built with a bad label and no computation is perturbed, so this "
+     "is a WAIVER by the unit's own definition and is declared as one"),
     ("verdict-flip", "computation",
      "the verdict emitters moved to their other branch while the recorded "
      "tables keep their measurements"),
@@ -3002,6 +4247,66 @@ def render(rec):
              % (ref["sum_of_per_checkpoint_b2"],
                 ref["H2_is_additive_over_the_checkpoint_decomposition"]))
     L.append("")
+    L.append("WHAT b1 MEASURES: the coordinate count (T-1)(|V|-1), and where "
+             "it holds")
+    L.append("%-46s %3s %5s %7s %6s %6s %6s" %
+             ("instance", "T", "|V|", "(T-1)x", "b1", "sum b0", "sum b1"))
+    for k, v in TABLES["q1_invariants"].items():
+        L.append("%-46s %3d %5d %7d %6d %6d %6d" %
+                 (k[:46], v["the_read_times_carrying_cells"],
+                  v["the_nerve_N"]["V"],
+                  v["the_coordinate_count_T_minus_1_times_V_minus_1"],
+                  v["the_nerve_N"]["b1"], v["sum_of_per_checkpoint_b0"],
+                  v["sum_of_per_checkpoint_b1"]))
+    sc = TABLES["negative_control"]["the_per_checkpoint_census"]
+    L.append("%-46s %3d %5d %7d %6d %6d %6d"
+             % ("the scrambled negative control",
+                sc["read_times_carrying_cells"],
+                TABLES["q1_invariants"][REFERENCE_INSTANCE]["the_nerve_N"]["V"],
+                sc["the_coordinate_count_T_minus_1_times_V_minus_1"],
+                sc["b1"], sc["sum_of_per_checkpoint_b0"],
+                sc["sum_of_per_checkpoint_b1"]))
+    L.append("")
+    L.append("THE BLOCK-INCIDENCE ROUTE: a read time's topology is the "
+             "nesting of the two")
+    L.append("rules' partitions.  I_t joins two blocks that share a chart.")
+    L.append("%-30s %2s %9s %6s %6s %14s" %
+             ("instance", "t", "blocks", "I: V", "I: E", "(b0,cyc) = sub"))
+    for k, v in TABLES["q1_invariants"].items():
+        for t, b in sorted(v["the_block_incidence_route"].items()):
+            L.append("%-30s %2s %9s %6d %6d   (%d,%d) = (%d,%d)"
+                     % (k[:30], t, canon(b["blocks_per_rule"]),
+                        b["incidence_V"], b["incidence_E"],
+                        b["b0_of_the_incidence_graph"],
+                        b["cycle_rank_of_the_incidence_graph"],
+                        v["per_checkpoint"][t]["b0"],
+                        v["per_checkpoint"][t]["b1"]))
+    L.append("")
+    L.append("DO THE DRAWN MAPS AGREE ACROSS COORDINATE CELLS? (declared D3b)")
+    L.append("%-30s %6s %6s %9s %6s %7s %7s" %
+             ("instance", "pairs", "agree", "disagree", "digons",
+              "coh x-ck", "b1 left"))
+    for k, v in TABLES["q1_invariants"].items():
+        c = v["the_cross_coordinate_drawn_map_comparison"]
+        L.append("%-30s %6d %6d %9d %6d %7d %7d"
+                 % (k[:30], c["pairs_drawn_at_two_or_more_cells"],
+                    c["pairs_whose_drawn_maps_all_agree"],
+                    c["pairs_whose_drawn_maps_disagree_somewhere"],
+                    c["digons_built"],
+                    c["cross_checkpoint_digons_that_are_coherent"],
+                    c["b1_with_the_COHERENT_cross_checkpoint_digons_filled"]))
+    cr = ref["the_cross_coordinate_drawn_map_comparison"]
+    L.append("at the reference: same-checkpoint digons %d kill %d of %d; "
+             "cross-checkpoint" % (cr["same_checkpoint_digons"],
+                                   cr["b1_of_N"] -
+                                   cr["b1_with_the_same_checkpoint_digons_"
+                                      "filled"], cr["b1_of_N"]))
+    L.append("digons %d (of which %d coherent) leave b1 = %d."
+             % (cr["cross_checkpoint_digons"],
+                cr["cross_checkpoint_digons_that_are_coherent"],
+                cr["b1_with_the_COHERENT_cross_checkpoint_digons_filled"]))
+    L.append("OUTCOME: %s" % FINDINGS.get("cross_cell_outcome", "?"))
+    L.append("")
     L.append("the simple overlap graph: nodes %d, edges %d, components %d, "
              "cycle rank %d, complete %s"
              % (ref["the_overlap_graph"]["nodes"],
@@ -3053,6 +4358,19 @@ def render(rec):
         L.append("  every link is a circle: %s (a 2-manifold would need it)"
                  % r["every_link_is_a_circle"])
     L.append("")
+    L.append("IS THE READING A MEASUREMENT?  The drawn table's automorphisms")
+    L.append("%-46s %6s %6s %6s %s" % ("instance", "autos", "orbits", "vals",
+                                       "the reading"))
+    for k, v in TABLES["q2_dimension"]["per_instance"].items():
+        a = v["the_drawn_table_automorphisms"]
+        L.append("%-46s %6d %6d %6d %s"
+                 % (k[:46], a["measured_automorphisms"], a["chart_orbits"],
+                    v["distinct_estimator_values"],
+                    "CONSISTENT (orbit count 1: FORCED, a disclosure)"
+                    if v["chart_independence_is_symmetry_forced"]
+                    else ("CONSISTENT" if v["the_reading_is_consistent"]
+                          else "INCONSISTENT (measured)")))
+    L.append("")
     L.append("THE CONTROLS")
     L.append("%-52s %4s %4s %4s %5s %s" % ("complex", "chi", "b1", "b2",
                                            "circ", "witness"))
@@ -3093,6 +4411,60 @@ def render(rec):
                     v["completions_satisfying_it"],
                     v["of_those_with_K_equal_to_GL_3_2"]))
     L.append("")
+    L.append("CLAUSE (c) IS A CONTAINMENT (disclosure): its count is |C \\ C4|")
+    L.append("%-5s %8s %10s %10s %s" % ("id", "holds", "clause(c)",
+                                        "|C \\ C4|", "C contained in C4"))
+    fc = q3["the_forced_structure_of_the_family"]
+    for (cid, _s, _t, _o) in SELECTOR_CANDIDATES:
+        v = fc["per_candidate"][cid]
+        L.append("%-5s %8d %10d %10d %s"
+                 % (cid, v["holds_at"], v["clause_c_count"],
+                    v["the_containment_deficit"], v["is_contained_in_C4"]))
+    L.append("the extensional duplicates: %s; %d declared names, %d distinct "
+             "predicates"
+             % (canon(fc["the_extensional_duplicates"]),
+                len(SELECTOR_CANDIDATES),
+                fc["distinct_predicates_among_the_declared_names"]))
+    L.append("")
+    md = q3["the_section_5_2_tables_as_markdown"]
+    L.append("THE SAME TWO TABLES, EMITTED AS MARKDOWN ROWS FROM THE RECORDED")
+    L.append("TABLE ABOVE, so that the paper's section 5.2 is GENERATED and "
+             "never retyped:")
+    for row in md["the_candidate_table"]:
+        L.append(row)
+    L.append("")
+    for row in md["the_clause_c_containment"]:
+        L.append(row)
+    L.append("")
+    L.append("P* IS AN ARENA COORDINATE: the five-wing-symmetry sweep")
+    L.append("%-6s %-14s %7s %10s %s" % ("P*", "type", "locus", "on-locus",
+                                         "ord distribution"))
+    for k, v in sorted(q3["the_P_star_sweep"].items()):
+        L.append("%-6s %-14s %7d %10d %s"
+                 % (k, v["the_type_of_the_symmetry"], v["the_order_2_locus"],
+                    v["on_the_locus_K_equals_GL_3_2"],
+                    canon(v["the_defect_order_distribution"])))
+    L.append("the declared P* is %s (%s); K itself does not depend on P*, so "
+             "the %d" % (q3["the_declared_P_star"], q3["the_P_star_type"],
+                         q3["completions_whose_K_equals_GL_3_2"]))
+    L.append("completions reaching GL(3,2) as a set are P*-INDEPENDENT and "
+             "the locus is not.")
+    L.append("")
+    L.append("THE ORDER-THEORETIC LADDER, and where it stops")
+    L.append("%-56s %8s %12s" % ("purely order-theoretic condition", "passing",
+                                 "false pos."))
+    for row in q3["the_order_theoretic_ladder"]:
+        L.append("%-56s %8d %12d"
+                 % (row["the_condition"][:56], row["completions_passing"],
+                    row["false_positives_against_K_contained_in_GL_3_2"]))
+    L.append("every level contains all %d completions with K inside GL(3,2); "
+             "the finest still"
+             % q3["completions_whose_K_is_contained_in_GL_3_2"])
+    L.append("admits %d false positives, so no order condition characterises "
+             "the visit."
+             % q3["the_order_theoretic_ladder"][-1][
+                 "false_positives_against_K_contained_in_GL_3_2"])
+    L.append("")
     L.append("the candidates at the five rule-selected rungs (the four-target")
     L.append("comparison the ladder actually makes):")
     for k, v in sorted(q3["the_candidates_at_the_five_rule_selected_rungs"]
@@ -3118,6 +4490,23 @@ def render(rec):
     L.append("chi(N)/6 = %d; the correction from the fixed cells = %d"
              % (q4["chi_of_the_nerve_over_6"],
                 q4["the_correction_from_the_fixed_cells"]))
+    L.append("Burnside divides EXACTLY: fixed-cell sum residues mod |S_3| %s"
+             % canon(q4["the_fixed_cell_sum_residues"]))
+    L.append("orbit-size histograms 1-cells %s, 2-cells %s; they recover the "
+             "cell counts %s"
+             % (canon(q4["orbit_sizes_1_cells"]),
+                canon(q4["orbit_sizes_2_cells"]),
+                q4["the_orbit_size_histograms_pin_the_census"]))
+    bp = q4["the_boundary_parity_witness"]
+    L.append("BOUNDARY PARITY: %d loop 1-cells; XOR gives rank d1 %d, b0 %d, "
+             "b1 %d;" % (bp["loop_1_cells_in_the_quotient"],
+                         bp["rank_d1_with_XOR"], bp["b0_with_XOR"],
+                         bp["b1_with_XOR"]))
+    L.append("OR gives rank d1 %d, b0 %d, b1 %d -- the measured delta is %d, "
+             "and the delivered" % (bp["rank_d1_with_OR"], bp["b0_with_OR"],
+                                    bp["b1_with_OR"], bp["the_measured_delta"]))
+    L.append("assembly is the XOR one: %s"
+             % bp["the_delivered_assembly_is_XOR"])
     L.append("")
     sec(6, "THE CONTROLS")
     pc = TABLES["positive_control"]
@@ -3150,6 +4539,18 @@ def render(rec):
              % (nc["distinct_estimator_values"],
                 canon(nc["the_witness"]["chart"] if nc["the_witness"]
                       else None)))
+    pcc = nc["the_per_checkpoint_census"]
+    L.append("  why b0 and b1 do NOT move, measured: the scrambled atlas's "
+             "own per-checkpoint")
+    L.append("  census is sum b0 = %d over %d read times and sum b1 = %d, so "
+             "the gluing formula"
+             % (pcc["sum_of_per_checkpoint_b0"],
+                pcc["read_times_carrying_cells"],
+                pcc["sum_of_per_checkpoint_b1"]))
+    L.append("  pins b1 to the coordinate count %d, exactly as at the "
+             "reference; b2 moves %s."
+             % (pcc["the_coordinate_count_T_minus_1_times_V_minus_1"],
+                canon(pcc["b2_moves_from_to"])))
     L.append("")
     sec(7, "GATES")
     for g in GATES:
@@ -3230,32 +4631,67 @@ def main():
     run_transport_controls(sp, tb3)
     run_negative_control(sp, store, q1, manifold)
     unit = run_verdict(q1, manifold, selector, qinv)
+    _cyc3 = sorted(k for k, v in TABLES["q3_selector"]["the_P_star_sweep"]
+                   .items() if v["the_type_of_the_symmetry"] == "3-cycle")[0]
     FINDINGS["thesis"] = (
         "THE ATLAS HAS A SHAPE AND IT IS NOT A MANIFOLD'S.  At the reference "
-        "instance the overlap graph is COMPLETE, so the simplicial nerve is a "
-        "full simplex and contractible; all of the atlas's topology lives in "
-        "the COORDINATE-RESOLVED nerve, which is connected with b_1 = %d "
-        "and b_2 = %d over F_2.  That b_1 is measured, by a second route "
-        "that shares no code with the first, to be ENTIRELY the gluing of the "
-        "checkpoints: each checkpoint's own sub-nerve is simply connected, "
-        "and the whole first homology is (checkpoints - 1) x (charts - 1).  "
-        "The local-dimension estimator is chart-independent -- one reading "
-        "everywhere -- but the link is not a circle, so the uniformity is "
-        "not manifoldhood, and the declared 2-sphere and 2-torus controls "
-        "show what the difference looks like.  The wing factor acts freely on "
-        "the charts and not on the higher cells, and the quotient's Euler "
-        "characteristic differs from chi(N)/6 by exactly the correction the "
-        "fixed-cell census forces.  THE FANO RUNG IS NOT SELECTED BY ITS "
-        "LOCUS: of thirteen declared candidates none passes all three "
-        "clauses, only %d of the %d order-2 completions reach GL(3,2), and "
-        "GL(3,2) is reached at %d completions spread across four defect "
-        "orders -- the exclusivity of the visit is a property of the "
-        "lex-first SELECTION RULE, not of the order-2 locus."
+        "instance the overlap graph is COMPLETE, so the simplicial nerve is "
+        "the whole chart set, a cone, contractible; whatever topology the "
+        "atlas has lives in the COORDINATE-RESOLVED nerve, which is connected "
+        "with b_1 = %d and b_2 = %d over F_2.  WHAT b_1 MEASURES IS THE "
+        "COORDINATE GRID, not the identifications: it equals (read times - 1) "
+        "x (charts - 1) = %d whenever each read time is connected and simply "
+        "connected, and the SCRAMBLED negative control -- whose identification "
+        "data is destroyed -- returns %d as well, while b_2 moves from %d to "
+        "%d.  A read time's own topology is measured to be exactly the "
+        "NESTING of the two rules' block partitions.  And the degree-one "
+        "classes are measured NOT to be a cross-read-time obstruction: "
+        "filling only the digons whose two drawn maps AGREE already reduces "
+        "b_1 to %d, so the surviving cycles are an artifact of the declared "
+        "same-checkpoint 2-cell scope.  The local-dimension estimator is "
+        "chart-independent at the reference -- but the drawn table there is "
+        "chart-transitive under %d measured automorphisms with %d orbit, so "
+        "that uniformity is FORCED and is a disclosure; what is measured is "
+        "the contrast at the two instances where the table is not "
+        "chart-transitive and the estimator splits the charts.  The link is "
+        "never a circle, so uniformity is not manifoldhood.  The wing factor "
+        "acts freely on the charts and not on the higher cells, and the "
+        "quotient's Euler characteristic differs from chi(N)/6 by exactly the "
+        "correction the fixed-cell census forces.  THE FANO RUNG IS NOT "
+        "SELECTED BY ITS LOCUS: of thirteen declared names -- %d distinct "
+        "predicates -- none passes all three clauses, only %d of the %d "
+        "order-2 completions reach GL(3,2), and GL(3,2) is reached at %d "
+        "completions spread across four defect orders.  The locus itself is "
+        "P*-RELATIVE: at a 3-cycle wing symmetry it holds %d completions of "
+        "which %d reach GL(3,2).  The exclusivity of the visit is a property "
+        "of the lex-first SELECTION RULE, not of the order-2 locus, and no "
+        "purely order-theoretic condition captures it -- the finest one "
+        "measured still admits %d false positives."
         % (q1[REFERENCE_INSTANCE]["the_nerve_N"]["b1"],
            q1[REFERENCE_INSTANCE]["the_nerve_N"]["b2"],
+           q1[REFERENCE_INSTANCE][
+               "the_coordinate_count_T_minus_1_times_V_minus_1"],
+           TABLES["negative_control"]["scrambled"]["b1"],
+           q1[REFERENCE_INSTANCE]["the_nerve_N"]["b2"],
+           TABLES["negative_control"]["scrambled"]["b2"],
+           q1[REFERENCE_INSTANCE][
+               "the_cross_coordinate_drawn_map_comparison"][
+               "b1_with_the_COHERENT_cross_checkpoint_digons_filled"],
+           TABLES["q2_dimension"]["per_instance"][REFERENCE_INSTANCE][
+               "the_drawn_table_automorphisms"]["measured_automorphisms"],
+           TABLES["q2_dimension"]["per_instance"][REFERENCE_INSTANCE][
+               "the_drawn_table_automorphisms"]["chart_orbits"],
+           TABLES["q3_selector"]["the_forced_structure_of_the_family"][
+               "distinct_predicates_among_the_declared_names"],
            TABLES["q3_selector"]["of_those_on_the_order_2_locus"],
            TABLES["q3_selector"]["the_locus_size"],
-           TABLES["q3_selector"]["completions_whose_K_equals_GL_3_2"]))
+           TABLES["q3_selector"]["completions_whose_K_equals_GL_3_2"],
+           TABLES["q3_selector"]["the_P_star_sweep"][_cyc3][
+               "the_order_2_locus"],
+           TABLES["q3_selector"]["the_P_star_sweep"][_cyc3][
+               "on_the_locus_K_equals_GL_3_2"],
+           TABLES["q3_selector"]["the_order_theoretic_ladder"][-1][
+               "false_positives_against_K_contained_in_GL_3_2"]))
     run_declaration_order()
     run_anchor_provenance()
     run_exemption_sweep()

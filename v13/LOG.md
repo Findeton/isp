@@ -9623,3 +9623,53 @@ record-IS-metric); all v13 discipline carries unchanged;
 publication route the USER'S.  v14/LOG.md does NOT open until
 R0, after the v13 close.  Repair continuations for TOP + RSQ
 in flight at this entry.
+
+## 2026-08-09 — TOP REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #316)
+Repair continuation delivered; all twelve orders R-TOP-1..12
+executed; committed exactly as delivered BEFORE adjudicator
+verification (the #177 discipline).  Hashes: paper
+4e4cd4f11bab, code 81d07ffebd82, output 109302d0d036, receipt
+65bb1fc5231f.  **R-TOP-7 — THE DECIDING MEASUREMENT, OUTCOME:
+CROSS-CELL-COHERENT-DIGONS-FILL-EVERY-DEGREE-1-CLASS.**  At
+the reference: 630 pairs drawn at ≥2 cells, 540 disagree
+somewhere (90 agree everywhere); 20,898 digons (= expected
+from multiplicities), 2,286 same-checkpoint + 18,612
+cross-checkpoint, 11,268 of the latter coherent;
+same-checkpoint digons kill 0 of 140; **filling only the
+coherent cross-read-time digons drops b₁ 140 → 0.  The
+degree-one classes are NOT a measured cross-read-time
+obstruction — they are an artifact of the declared
+same-checkpoint 2-cell scope, and THE CONTINUUM RUNG INHERITS
+A TRIVIAL H₁ FROM THIS BASE** (the fifth beautiful-story
+death: the temporal-topology reading, dissolved by its own
+ordered measurement; gated as a derivation, both branches
+representable, crosscell-typed dies).  Verdict heads renamed
+w/ computed qualifiers (DEGREE-1-IS-THE-COORDINATE-COUNT-
+4x35-UNMOVED-BY-THE-SCRAMBLE; CONSISTENT-AT-3-OF-5-...-
+SYMMETRY-FORCED-AT-THE-REFERENCE; NOT-FOUND-THE-LOCUS-IS-
+P-STAR-RELATIVE-TRANSPOSITION-CLASS).  P* sweep printed
+(3-cycles 270/0, 1,296 order-7 defects); §5.2 tables now
+MACHINE-EMITTED and byte-identical to the paper; block-
+incidence 25/25 in-unit; boundary-parity gate (XOR 25 / OR
+24, delta gated); ladder false-positive census (2,976/840/
+432); frozen-vs-repaired receipt: 1,967 common leaves, 0
+numeric moved, 0 boolean moved.  **FOUR PREDECESSOR DEFECTS
+found+fixed by the continuation** (the audit protocol paying
+again): a broken %d format string shipped into two artifacts;
+R-TOP-1 PRESENTED AS DONE, NOT DONE (rows hand-typed under a
+false "regenerated" claim); a false gate claim
+(burnside-lax's declared death unmet — systematic sweep now:
+31 declared-falsifier claims, 0 unmet); correction narrative
+in the paper body (single-threaded order violated; rewritten
+content-only).  Counts: 196 anchors (168 external/1 pin/3
+declared-structural/24 declared-standard), 41 gates (38
+must-pass + 3 disclosures), 44 mutants all exit 1,
+never_falsified EMPTY at denominator 37 (34 computation / 3
+waiver-only).  Worker self-verification: 290 independent
+recomputations of the new measurements (different rank
+algorithm), 0 mismatches; 396 paper-vs-receipt cells, 0
+mismatches; two full CLI deliveries byte-identical.
+Engraved-rule sweep passed (incl. both 2026-08-09 addenda;
+#314 precheck doctrine vacuously satisfied — census
+exhaustive, no precheck filter).  Adjudicator verification
+next: CLI-checked independent re-run.
