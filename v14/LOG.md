@@ -397,3 +397,55 @@ the thin 5-anchor surface vs JSON-path reads; paper↔receipt;
 verdict rebuild w/ all nine segments flippable).  Three-lens
 panel dispatched (Opus ×3), running ALONGSIDE the R1 repair
 continuation (its files off-limits to reviewers).
+
+## 2026-08-09 — R1 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #15)
+Repair continuation delivered; ALL TWELVE ORDERS R-R1-1..12
+executed; committed exactly as delivered BEFORE adjudicator
+verification.  Hashes: paper b373fcf7b3ea, code e5a895c894d0,
+output 9bd862877d6d, receipt 3312b757b757.  INVENTORY: the
+sleep kill was mid-mutant-table (run1.err no traceback; work
+unfinished, not failed); predecessor had done orders 1–10 in
+code, paper NOT STARTED.  **FIVE PREDECESSOR DEFECTS
+found+fixed by the continuation** (audited claim-by-claim):
+a FALSE CLAIM IN A PASSING GATE (G27's "maximally
+destructive: coherent→0, B2→UNDEFINED" while its own dict
+recorded 222→48 and is_undefined=False — cause: adding the
+MIXED control reseeded scramble_shift 6→3; the sentence now
+BUILT FROM THE MEASUREMENT + a coh_after<coh_before clause);
+R2-A shipped as the successor recipe with NO in-unit
+verification (added G42: 94 cells, 379,388 ordered pairs, 0
+disagreements, drawn-lax kills; + X-ADMISSION-THEOREM 872
+perms, split so the forced half is a disclosure per #208);
+rendered mutant kill-lists TRUNCATED to 4 (the §4 disease;
+unwrapped; + an anchor-falsification census: 34 of 62
+exercised, 28 never, PRINTED not waived); M8-class typed
+counts in prose (computed now); ALT-D's order-21 claim
+unbacked in artifacts (coordinate_cells +
+transport_group_orders added).  **THE MEASURED ATLAS SWEEP
+(6 declarations)**: ALT-A/B/C invariant 3/3 (37/27, 20/37
+hold); B1 stabilises w/ VALUES MOVED (5/3, 4/7); **ATLAS-C
+0-of-5 → head flips to R1-NO-CONTINUUM-LIMIT-AT-THIS-
+SUBSTRATE (φ strictly INCREASING there)**; **ALT-D draws
+nothing → both densities UNDEFINED (the live UNDEFINED
+path)**.  G35 fits the affine law from m=1,2 and PREDICTS
+m=3..12 at 100/100; MX gated negative control (densities
+move); G34 parses the R0 pin's markdown AT RUN TIME (7 rows,
+15 hashes, set equality both directions) + the LOG#4 erratum
+values anchored.  THE NEW VERDICT: head
+R1-STABILIZES-BY-DISJOINT-COPYING-AT-<...> — 11 segments,
+all computed in-gate, all flippable: both denominator
+conventions; MEASURED|FORCED split; INDEPENDENT-CONTENT=
+ONE-BLOCK-CENSUS(26-OF-26-FORCED); the sixth stabiliser
+4/37 + SCORE-RESTATED=3-OF-6; tail-restricted
+FAMILY-FUNCTORIAL; ATLAS=THIS-UNITS-DECLARATION-VERDICT-
+DETERMINING(...); R2-GATEWAY=NONE-EARNED w/ successor
+criterion + recipe.  Counts 60→62 anchors, 33→42 gates,
+47→59 mutants (59/59 exit 1, 0 tracebacks), 4→7 disclosures,
+177→381 measured data, never-falsified EMPTY at 41.  Two
+plain runs byte-identical; selftest names A-R0-I5, writes
+nothing.  Full compliance sweep incl. both #10 engravings.
+Paper: full single-threaded rewrite (859 lines), Theorems
+A/B/B′/C verified in-unit, §14 the scoping note.  27/7 the
+one paper number derived-in-text from printed closed forms
+(declared).  Adjudicator verification next; R2 panel
+running in parallel.

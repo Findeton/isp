@@ -8,29 +8,47 @@ QUESTION
   PRE-REGISTERED INTENSIVE invariant that stabilizes under refinement?
 
 VERDICT
-  R1-STABILIZES-AT-<NCOH_DENSITY=37/27;B2_DENSITY=20/37|DIVERGENT=PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING|WINDOW=K=3-OF-5-MEMBERS-NO-CAP|FUNCTORIALITY=FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS|R2-GATEWAY=A1>
+  R1-STABILIZES-BY-DISJOINT-COPYING-AT-<NCOH_DENSITY=37/27-PER-INCIDENCE=37/21-PER-DRAWN-PAIR;B2_DENSITY=20/37-PER-N_COH-2-CELL=20/73-PER-N-2-CELL|MECHANISM=DISJOINT-BLOCK-ADDITION:B0=BLOCKS+1-AT-5-OF-5;PER-BLOCK-CENSUS-CONSTANT(E=27;F_COH=37;B2=20);RATIO-OF-ADDITIVES-FORCED|MEASURED=BLOCK-ISOMORPHISM-BY-INTERTWINER-AT-4-OF-5;PER-BLOCK-CENSUS;ATLAS-SWEEP-OF-6-DECLARATIONS|FORCED=THE-CONSTANCY|INDEPENDENT-CONTENT=ONE-BLOCK-CENSUS(TAIL-DATA-POINTS-FORCED=26-OF-26)|DIVERGENT=PHI:STRICTLY-DECREASING-AS-(BLOCKSIZE-1)/N;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING-BY-BASEPOINT-SHARE-ONLY;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING-BY-BASEPOINT-SHARE-ONLY|BASEPOINT-DELETED-STABILISING-SET=4-OF-5;SIXTH-STABILISER=B1_NCOH_DENSITY=4/37-PIN-EXCLUDED;SCORE-RESTATED=3-OF-6|WINDOW=K=3-OF-5-MEMBERS-NO-CAP-ALL-3-ON-ONE-GENERATOR-RULE|FUNCTORIALITY=FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS-TAIL-RESTRICTED-FAMILY-FUNCTORIAL|ATLAS=THIS-UNITS-DECLARATION-VERDICT-DETERMINING(TRANSPORT-CONVENTION-INVARIANT-3-OF-3;CELL-SET-VARIANT-VALUES-MOVE-TO-5/3-AND-4/7;NON-BLOCK-LOCAL-VARIANT-STABILISES-0-OF-5-HEAD-FLIPS-TO-NO-CONTINUUM-LIMIT;CELL-STRUCTURE-VARIANT-BOTH-DENSITIES-UNDEFINED-AT-A-MEMBER)|R2-GATEWAY=NONE-EARNED:PHI<1-FORCED-AT-7-OF-7;COMPONENTWISE-OVERLAP-COMPLETENESS=1-AT-7-OF-7;SUCCESSOR-CRITERION=FIRST-COMPONENT-WITH-AN-INCOMPLETE-OVERLAP-GRAPH-EMPTY;SUCCESSOR-RECIPE=DECLARE-CELLS-WITH-PARTIALLY-OVERLAPPING-REGULAR-ORBITS>
 
 THESIS
-  THE DECLARED REFINEMENT FAMILY REFINES BY DISJOINT ADDITION, AND EXACTLY THE
-  TWO IDENTIFICATION-CARRYING DENSITIES STABILIZE. Over the pin's five-member
-  family the overlap-completeness fraction is measured strictly below 1 at every
-  member -- so locality exists at this substrate and R2's gateway arena is A1 --
-  and it does not stabilize: it is STRICTLY-DECREASING on the declared window.
-  Of the five pre-registered intensive invariants exactly 2 are exactly constant
-  on the final 3 members, NCOH_DENSITY=37/27;B2_DENSITY=20/37, and the same two
-  values reproduce at the members the growth rule's prime-indexed selection
-  picks instead. The mechanism is measured rather than inferred: at every grown
-  member b_0 of the nerve equals the block count plus the basepoint, so the
-  refinement is a disjoint sum of identical block atlases, the per-block 1-cell
-  and coherent-2-cell counts are equal across members, and a growth rule that
-  widens a block instead of copying it moves both densities. The three that do
-  not stabilize fail in a named way:
-  PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING.
-  The family is NOT functorial: no admissible arena morphism exists at 2 of its
-  4 steps, and the obstructions are measured -- a block width that decreases,
-  and a symmetry orbit size the successor arena does not carry. I2's
-  eigenvalue-1 row rides along as an anchor at every readout of every member: 0
-  lies in spec(I - E) all the way up the family.
+  THE DECLARED REFINEMENT FAMILY COPIES AN ISOMORPHIC BLOCK, AND THE TWO
+  CONSTANT DENSITIES ARE THAT COPYING RESTATED. Measured at the five declared
+  members: b_0 of the nerve equals the block count plus the basepoint at 5 of 5,
+  no 1-cell crosses a block anywhere, and at every window member the bijection
+  the declared cyclic orders name is measured to intertwine the arena symmetry
+  and to carry block 1's cyclic order to block k -- so the nerve and its
+  coherent sub-nerve are m disjoint copies of ONE block atlas together with an
+  isolated basepoint. Every ratio of two block-additive, point-vanishing counts
+  is then independent of m; the affine law of every counting quantity, fitted
+  from the one- and two-block censuses alone, is measured to PREDICT every
+  member at m = 3..12 (100 of 100), and 26 of the 26 data points the window's
+  second and third members contribute are exactly those predictions. THE TWO
+  STABILISED VALUES ALREADY HOLD AT m = 1, THE SINGLE-BLOCK MEMBER: 37/27 and
+  20/37. Nothing converges; the window carries one block's census. What
+  discriminates the mechanism is ISOMORPHIC copying, not addition: a mixed-block
+  family with the same disjoint addition, the same symmetry-stable blocks and
+  the same b_0 = blocks + 1, differing only in that its blocks are not
+  isomorphic, MOVES both densities. Of the five registered invariants 2 are
+  constant on the final 3 members, NCOH_DENSITY=37/27;B2_DENSITY=20/37; the
+  other three fail in a named way,
+  PHI:STRICTLY-DECREASING-AS-(BLOCKSIZE-1)/N;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING-BY-BASEPOINT-SHARE-ONLY;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING-BY-BASEPOINT-SHARE-ONLY
+  -- and with the single structureless basepoint deleted, 4 of 5 are constant,
+  so the split is between basepoint-blind and basepoint-sensitive rather than
+  between substantive and not. A sixth intensive quantity the pin excludes by
+  declaration, b_1 of N_coh per coherent 2-cell, is measured constant at 4/37.
+  THE ATLAS IS VERDICT-DETERMINING: over the same arenas and the same five
+  invariant definitions, three transport-convention re-declarations leave both
+  values fixed, dropping the realised cell moves them, a non-block-local
+  declaration stabilises NOTHING and flips the head to NO-CONTINUUM-LIMIT, and a
+  one-cell-per-block declaration leaves both headline invariants UNDEFINED. THE
+  INHERITED GATEWAY IS WITHDRAWN: phi < 1 is forced by an isolated basepoint at
+  every member, componentwise overlap completeness is 1 at 7 of 7 members and
+  probes -- every component is a complete graph, so every phi < 1 here is
+  achieved by disconnection and carries no locality content -- and the successor
+  criterion, the first component with an incomplete overlap graph, is measured
+  EMPTY. The family is not functorial at 2 of its 4 steps; restricted to the
+  homogeneous tail its own generator rule produces, it is FAMILY-FUNCTORIAL and
+  every stabilised value and divergence mode is unchanged.
 
 ------------------------------------------------------------------------------
 1. THE INHERITANCE (R0 rows, verified at run time)
@@ -44,15 +62,17 @@ THESIS
   I6   v13/code/tb3_third_base_receipt.json           c9bc956fe751
   I7   v13/code/ha_successor_receipt.json             542b8735daf0
 
+  the pin's own table, parsed at run time: 7 rows, 9 (artifact, hash) pairs
+
   companion artifacts named by R0, censused: 8
-    I2-output  v13/code/rsq_reposed_square_output.txt       a5266012ebd3 OK
-    I2-paper   v13/paper-rsq-reposed-square.md              f80317a25037 MISMATCH (declared 07bea42728a2)
-    I2-code    v13/code/rsq_reposed_square_exact.py         8c7705f55fa6 OK
-    I3-output  v13/code/top_topology_output.txt             109302d0d036 OK
-    I3-paper   v13/paper-top-topology.md                    379194959fbc MISMATCH (declared 4e4cd4f11bab)
-    I3-code    v13/code/top_topology_exact.py               81d07ffebd82 OK
-    I6-gen     v13/code/gen_generality_receipt.json         e0b2f444f6a9 OK
-    I6-psi     v13/code/psi_curvature_receipt.json          7c7b91a9257e OK
+    I2-output  v13/code/rsq_reposed_square_output.txt     a5266012ebd3  cited a5266012ebd3 (R0)
+    I2-paper   v13/paper-rsq-reposed-square.md            f80317a25037  cited f80317a25037 (v14 LOG #4 erratum)
+    I2-code    v13/code/rsq_reposed_square_exact.py       8c7705f55fa6  cited 8c7705f55fa6 (R0)
+    I3-output  v13/code/top_topology_output.txt           109302d0d036  cited 109302d0d036 (R0)
+    I3-paper   v13/paper-top-topology.md                  379194959fbc  cited 379194959fbc (v14 LOG #4 erratum)
+    I3-code    v13/code/top_topology_exact.py             81d07ffebd82  cited 81d07ffebd82 (R0)
+    I6-gen     v13/code/gen_generality_receipt.json       e0b2f444f6a9  cited e0b2f444f6a9 (R0)
+    I6-psi     v13/code/psi_curvature_receipt.json        7c7b91a9257e  cited 7c7b91a9257e (R0)
 
 ------------------------------------------------------------------------------
 2. THE DECLARED FAMILY (every label count derived, none typed)
@@ -74,6 +94,7 @@ THESIS
     A3->A4     ADMISSIBLE     CONSTRUCTED
     A4->A5     ADMISSIBLE     CONSTRUCTED
     qualifier: FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS
+    tail-restricted: FAMILY-FUNCTORIAL ; window members on one generator rule 3
 
 ------------------------------------------------------------------------------
 3. THE TRAJECTORY TABLE (5 registered invariants x 5 members)
@@ -102,21 +123,214 @@ THESIS
   cells written 25 of the forced 25
 
 ------------------------------------------------------------------------------
-4. CONTROLS
+4. THE COPYING MECHANISM
+------------------------------------------------------------------------------
+  member blocks  b0(N)  cross    beta_k     E/block      F_coh/block
+  A1     1       2      0        YES        40/1         96/1
+  A2     3       4      0        no         10/1         10/1
+  A3     6       7      0        YES        27/1         37/1
+  A4     7       8      0        YES        27/1         37/1
+  A5     8       9      0        YES        27/1         37/1
+
+  the copy-forcing law, fitted from m = 1 and m = 2 and PREDICTING the
+  rest: 100 of 100 predictions agree at m = 3..12
+  m    labels  E      ov     F       F_coh   b2coh   NCOH      B2        PHI
+  1    8       27     21     73      37      20      37/27     20/37     3/4
+  2    15      54     42     146     74      40      37/27     20/37     2/5
+  3    22      81     63     219     111     60      37/27     20/37     3/11
+  4    29      108    84     292     148     80      37/27     20/37     6/29
+  5    36      135    105    365     185     100     37/27     20/37     1/6
+  6    43      162    126    438     222     120     37/27     20/37     6/43
+  7    50      189    147    511     259     140     37/27     20/37     3/25
+  8    57      216    168    584     296     160     37/27     20/37     2/19
+  9    64      243    189    657     333     180     37/27     20/37     3/32
+  10   71      270    210    730     370     200     37/27     20/37     6/71
+  11   78      297    231    803     407     220     37/27     20/37     1/13
+  12   85      324    252    876     444     240     37/27     20/37     6/85
+
+  THE BASE CASE IS THE CLAIM'S CONTENT: at m = 1, the single-block
+  member, NCOH_DENSITY = 37/27 and B2_DENSITY = 20/37 already.
+  window tail data points forced by the one-block census: 26 of 26
+
+  the mixed-block control (disjoint addition, NON-isomorphic blocks):
+  member  labels  blocks  b0(N)   cross    all iso  NCOH       B2
+  MX6     46      7       8       0        no       115/84     62/115
+  MX7     53      8       9       0        no       89/65      48/89
+  MX8     60      9       10      0        no       152/111    41/76
+  both densities move: True ; disjoint addition holds: True
+
+------------------------------------------------------------------------------
+5. THE ATLAS SWEEP (the atlas is a named verdict coordinate)
+------------------------------------------------------------------------------
+  atlas     head                                   stab.     values
+  ALT-A     R1-STABILIZES-AT                       2         {B2_DENSITY: 20/37, NCOH_DENSITY: 37/27}
+  ALT-B     R1-STABILIZES-AT                       2         {B2_DENSITY: 20/37, NCOH_DENSITY: 37/27}
+  ALT-C     R1-STABILIZES-AT                       2         {B2_DENSITY: 20/37, NCOH_DENSITY: 37/27}
+  B1        R1-STABILIZES-AT                       2         {B2_DENSITY: 4/7, NCOH_DENSITY: 5/3}
+  ATLAS-C   R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE 0         {}
+  ALT-D     R1-STABILIZES-AT                       2         {}
+
+  ALT-A:
+      transport convention: REAL := gamma_k . Sigma_k (the composition order
+      swapped)
+      modes  {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 7    blocks 6   cells 12  transport orders [3, 7]   
+           E 162    F_coh 222    PHI 6/43     NCOH 37/27        B2 20/37
+      A4   b0 8    blocks 7   cells 14  transport orders [3, 7]   
+           E 189    F_coh 259    PHI 3/25     NCOH 37/27        B2 20/37
+      A5   b0 9    blocks 8   cells 16  transport orders [3, 7]   
+           E 216    F_coh 296    PHI 2/19     NCOH 37/27        B2 20/37
+  ALT-B:
+      transport convention: the block's declared cyclic order reversed
+      (gamma := gamma^-1)
+      modes  {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 7    blocks 6   cells 12  transport orders [3, 7]   
+           E 162    F_coh 222    PHI 6/43     NCOH 37/27        B2 20/37
+      A4   b0 8    blocks 7   cells 14  transport orders [3, 7]   
+           E 189    F_coh 259    PHI 3/25     NCOH 37/27        B2 20/37
+      A5   b0 9    blocks 8   cells 16  transport orders [3, 7]   
+           E 216    F_coh 296    PHI 2/19     NCOH 37/27        B2 20/37
+  ALT-C:
+      transport convention: the block's cyclic order taken in steps of two
+      (gamma := gamma^2)
+      modes  {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 7    blocks 6   cells 12  transport orders [3, 7]   
+           E 162    F_coh 222    PHI 6/43     NCOH 37/27        B2 20/37
+      A4   b0 8    blocks 7   cells 14  transport orders [3, 7]   
+           E 189    F_coh 259    PHI 3/25     NCOH 37/27        B2 20/37
+      A5   b0 9    blocks 8   cells 16  transport orders [3, 7]   
+           E 216    F_coh 296    PHI 2/19     NCOH 37/27        B2 20/37
+  B1:
+      cell set: drop the REAL cell -- coordinate cells are (k, FULL) only,
+      this unit's own first rule unchanged
+      modes  {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 7    blocks 6   cells 6   transport orders [7]      
+           E 126    F_coh 210    PHI 6/43     NCOH 5/3          B2 4/7
+      A4   b0 8    blocks 7   cells 7   transport orders [7]      
+           E 147    F_coh 245    PHI 3/25     NCOH 5/3          B2 4/7
+      A5   b0 9    blocks 8   cells 8   transport orders [7]      
+           E 168    F_coh 280    PHI 2/19     NCOH 5/3          B2 4/7
+  ATLAS-C:
+      NOT BLOCK-LOCAL: one further coordinate index carrying the same
+      construction rule the unit uses for its FULL cells -- the
+      increasing-index cycle -- applied to the WHOLE moved-label set instead
+      of block by block. It uses LESS arena data than the unit's own atlas
+      (no block partition)
+      modes  {B2_DENSITY: STRICTLY-INCREASING, DIMENSION_PROFILE: SUPPORT-MOVING, NCOH_DENSITY: STRICTLY-INCREASING, PHI: STRICTLY-INCREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 2    blocks 6   cells 13  transport orders [3, 7, 42]
+           E 1023   F_coh 11702  PHI 41/43    NCOH 11702/1023   B2 5390/5851
+      A4   b0 2    blocks 7   cells 15  transport orders [3, 7, 49]
+           E 1365   F_coh 18683  PHI 24/25    NCOH 2669/195     B2 17436/18683
+      A5   b0 2    blocks 8   cells 17  transport orders [3, 7, 56]
+           E 1756   F_coh 28016  PHI 55/57    NCOH 7004/439     B2 26395/28016
+  ALT-D:
+      cell structure: ONE cell per block, carrying the group GENERATED by
+      both transports, instead of two cyclic cells
+      modes  {B2_DENSITY: UNDEFINED-AT-A-MEMBER, DIMENSION_PROFILE: CONSTANT, NCOH_DENSITY: UNDEFINED-AT-A-MEMBER, PHI: CONSTANT, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+      A3   b0 43   blocks 6   cells 6   transport orders [21]     
+           E 0      F_coh 0      PHI 0/1      NCOH None         B2 None
+      A4   b0 50   blocks 7   cells 7   transport orders [21]     
+           E 0      F_coh 0      PHI 0/1      NCOH None         B2 None
+      A5   b0 57   blocks 8   cells 8   transport orders [21]     
+           E 0      F_coh 0      PHI 0/1      NCOH None         B2 None
+
+------------------------------------------------------------------------------
+6. THE BASEPOINT AUDIT AND THE NON-COPIED HUNT
+------------------------------------------------------------------------------
+  basepoint deleted: 4 of 5 registered invariants constant
+    A3   charts 42   PHI 6/41       SPEC [[[1, 3/7], [3, 2/7]]]       DIM [[6, 1/1]]
+    A4   charts 49   PHI 1/8        SPEC [[[1, 3/7], [3, 2/7]]]       DIM [[6, 1/1]]
+    A5   charts 56   PHI 6/55       SPEC [[[1, 3/7], [3, 2/7]]]       DIM [[6, 1/1]]
+    modes {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: CONSTANT, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: CONSTANT}
+
+  the 24-quantity grid, classified BEFORE evaluation, at [A3, A4, A5, L10, L12]:
+  quantity                               class                constant  values
+  NCOH_DENSITY                           copied               CONSTANT  [37/27]
+  B2_DENSITY                             copied               CONSTANT  [20/37]
+  B2_N_PER_TWO_CELL                      copied               CONSTANT  [52/73]
+  B1_NCOH_DENSITY                        copied               CONSTANT  [4/37]
+  ONE_CELLS_PER_OVERLAP_EDGE             copied               CONSTANT  [9/7]
+  TWO_CELLS_PER_ONE_CELL                 copied               CONSTANT  [73/27]
+  COHERENT_FRACTION                      copied               CONSTANT  [37/73]
+  B2_NCOH_PER_ONE_CELL                   copied               CONSTANT  [20/27]
+  OVERLAP_EDGES_PER_TWO_CELL             copied               CONSTANT  [21/73]
+  B1_NCOH_PER_ONE_CELL                   copied               CONSTANT  [4/27]
+  ONE_CELLS_PER_CHART                    basepoint-involving  -         [162/43, 189/50, 72/19, 270/71, 324/85]
+  COHERENT_PER_CHART                     basepoint-involving  -         [222/43, 259/50, 296/57, 370/71, 444/85]
+  B2_NCOH_PER_CHART                      basepoint-involving  -         [120/43, 14/5, 160/57, 200/71, 48/17]
+  OVERLAP_EDGES_PER_CHART                basepoint-involving  -         [126/43, 147/50, 56/19, 210/71, 252/85]
+  COMPONENTS_PER_CHART                   basepoint-involving  -         [7/43, 4/25, 3/19, 11/71, 13/85]
+  SPECTRAL_WEIGHT_AT_PHI_1               basepoint-involving  -         [19/43, 11/25, 25/57, 31/71, 37/85]
+  SPECTRAL_WEIGHT_AT_PHI_3               basepoint-involving  -         [12/43, 7/25, 16/57, 20/71, 24/85]
+  DIMENSION_WEIGHT_AT_FULL_LINK          basepoint-involving  -         [7/43, 7/50, 7/57, 7/71, 7/85]
+  PHI                                    cross-block          -         [6/43, 3/25, 2/19, 6/71, 6/85]
+  COMPONENTWISE_OVERLAP_COMPLETENESS     cross-block          CONSTANT  [1/1]
+        declared vacuity: DEGENERATE-AT-1: every component is a complete
+        graph
+  CROSS_BLOCK_ONE_CELL_DENSITY           cross-block          CONSTANT  [0/1]
+        declared vacuity: IDENTICALLY-ZERO: no 1-cell crosses a block
+  B0_NCOH_OVER_B0_N                      cross-block          CONSTANT  [1/1]
+        declared vacuity: DEGENERATE-AT-1: the two complexes share a
+        1-skeleton
+  COMPONENT_SIZE_TYPES                   cross-block          CONSTANT  [2/1]
+        declared vacuity: THE-COPYING-STATEMENT-ITSELF: two types, the
+        copies and the basepoint
+  LARGEST_COMPONENT_CHART_SHARE          cross-block          -         [7/43, 7/50, 7/57, 7/71, 7/85]
+
+  phi's closed law (block size - 1)/labels: 7 of 7 members and probes
+    A1    block 8   labels 9    phi 7/9      law 7/9      OK
+    A2    block 5   labels 16   phi 1/4      law 1/4      OK
+    A3    block 7   labels 43   phi 6/43     law 6/43     OK
+    A4    block 7   labels 50   phi 3/25     law 3/25     OK
+    A5    block 7   labels 57   phi 2/19     law 2/19     OK
+    L10   block 7   labels 71   phi 6/71     law 6/71     OK
+    L12   block 7   labels 85   phi 6/85     law 6/85     OK
+
+------------------------------------------------------------------------------
+7. BOTH DENOMINATOR CONVENTIONS, AND THE TAIL-RESTRICTED READING
+------------------------------------------------------------------------------
+  member F_coh     |E(N)|    |E(G)|    |F(N)|    NCOH/inc     NCOH/pair    B2/F(Ncoh)   B2/F(N)
+  A1     96        40        28        160       12/5         24/7         65/96        13/32
+  A2     30        30        30        30        1/1          1/1          2/5          2/5
+  A3     222       162       126       438       37/27        37/21        20/37        20/73
+  A4     259       189       147       511       37/27        37/21        20/37        20/73
+  A5     296       216       168       584       37/27        37/21        20/37        20/73
+
+  tail-restricted to [A3, A4, A5]: FAMILY-FUNCTORIAL ; stabilised [B2_DENSITY, NCOH_DENSITY] = {B2_DENSITY: 20/37, NCOH_DENSITY: 37/27}
+  modes {B2_DENSITY: CONSTANT, DIMENSION_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING, NCOH_DENSITY: CONSTANT, PHI: STRICTLY-DECREASING, SPECTRAL_PROFILE: SUPPORT-CONSTANT-WEIGHTS-MOVING}
+  the inherited criterion applied to the tail alone would name: A3
+
+------------------------------------------------------------------------------
+8. THE SUCCESSOR GATEWAY
+------------------------------------------------------------------------------
+  member components  sizes            completeness  phi         forced bound
+  A1     2           [1, 8]           1/1           7/9         7/9
+  A2     4           [1, 5]           1/1           1/4         7/8
+  A3     7           [1, 7]           1/1           6/43        41/43
+  A4     8           [1, 7]           1/1           3/25        24/25
+  A5     9           [1, 7]           1/1           2/19        55/57
+  L10    11          [1, 7]           1/1           6/71        69/71
+  L12    13          [1, 7]           1/1           6/85        83/85
+
+  every component complete at 7 of 7 ; successor criterion returns None
+
+------------------------------------------------------------------------------
+9. CONTROLS
 ------------------------------------------------------------------------------
   positive       : R1-STABILIZES-AT  stabilised [B2_DENSITY, DIMENSION_PROFILE, NCOH_DENSITY, PHI, SPECTRAL_PROFILE]
   negative       : R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE  stabilised []
-  scramble       : moved [B2_DENSITY, NCOH_DENSITY] ; fixed [DIMENSION_PROFILE, PHI, SPECTRAL_PROFILE] ; drawn maps moved 240
+  scramble       : moved [B2_DENSITY, NCOH_DENSITY] ; fixed [DIMENSION_PROFILE, PHI, SPECTRAL_PROFILE] ; drawn maps moved 276
   discrimination : moved [B2_DENSITY, NCOH_DENSITY]
+  mixed-block    : moved [NCOH_DENSITY, B2_DENSITY]
   index sweep    : [L10, L12]
 
 ------------------------------------------------------------------------------
-5. ANCHORS  (60, all exit-1)
+10. ANCHORS  (62, all exit-1)
 ------------------------------------------------------------------------------
   failures: 0
 
 ------------------------------------------------------------------------------
-6. GATES
+11. GATES
 ------------------------------------------------------------------------------
   [PASS] G01  measurement
         THE DECLARATIONS ARE FROZEN BEFORE ANY MEASURED DATUM. Every measured
@@ -131,14 +345,29 @@ THESIS
         row count, so a dropped row is caught even when every surviving hash
         matches
   [PASS] G03  measurement
-        THE COMPANION-ARTIFACT CENSUS IS COMPLETE AND ITS MEASURED MISMATCH SET
-        IS REPORTED EXACTLY. R0's I2, I3 and I6 rows name companion artifacts in
-        parentheses; every one of them is hashed here and the set whose recorded
-        hash does NOT reproduce is computed and printed rather than smoothed.
-        The gate is on the CENSUS being complete -- a dropped companion is
-        caught -- and the mismatch set is carried as a finding for the
-        adjudicator, because no number of this unit is read from a companion
-        artifact
+        THE COMPANION-ARTIFACT CENSUS IS COMPLETE AND EVERY COMPANION IS HASHED
+        AGAINST THE VALUE THIS UNIT CITES. R0's I2, I3 and I6 rows name
+        companion artifacts in parentheses. For six of them the citation is R0's
+        own recorded value; for the two v13 PAPERS the citation is the v14 LOG
+        #4 ERRATUM OF RECORD, R0's parenthetical values for those two being
+        stale by one commit. The gate measures three things at once: the census
+        is complete, so a dropped companion is caught; every companion's cited
+        hash reproduces against the bytes on disk; and the erratum set is
+        exactly the set on which the cited value DIFFERS from R0's own -- so a
+        silent substitution of an erratum where none was recorded, or a failure
+        to apply one where it was, is caught by the same predicate
+  [PASS] G34  measurement
+        THE TYPED INHERITANCE TABLE IS GATED AGAINST THE PIN'S OWN TABLE, PARSED
+        AT RUN TIME. The founding pin's markdown inheritance table is parsed
+        here -- rows split on pipes, artifacts and twelve-hex hashes taken from
+        the backticked tokens, a row naming no artifact inheriting the previous
+        row's by the pin's own words -- and three things are measured: every
+        (artifact, hash) PAIR the pin states appears in the typed table; the SET
+        of hashes the pin records equals the set of hashes this unit types, in
+        both directions, so a typed hash absent from the pin and a pinned hash
+        absent from the code are equally caught; and every path the pin names is
+        one this run hashes. This is what the provenance docstring promises: the
+        table is read from the pin, not merely typed beside it
   [PASS] G04  measurement
         THE GENERATOR RULE IS DATA, NOT A GUESS: the family L_m is read out of
         the pinned receipt's own declaration string, its block width is
@@ -242,24 +471,32 @@ THESIS
         and 0 <= PHI <= 1 at every member, with the denominator the forced pair
         count n(n-1)/2 recomputed from the printed label count
   [PASS] G16  computation
-        THE COHERENT 2-CELL COUNT IS RECOUNTED BY A COMPARATOR THAT DOES NOT
-        ROUTE THROUGH THE COMPONENT UNDER TEST (RUNBOOK section 14 addendum
-        #219): the construction flags coherence while it builds the cell, and
-        the recount reconstructs each cell's three drawn maps from the EDGE
-        table alone and re-composes them. The two agree at every member, and the
-        density's denominator -- the drawn 1-cell count -- is measured non-zero
+        THE COHERENT 2-CELL COUNT IS RECOUNTED FROM THE UNFILTERED SOURCE BY A
+        COMPARATOR THAT DOES NOT ROUTE THROUGH THE COMPONENT UNDER TEST (RUNBOOK
+        section 14 addendum #219). The construction flags coherence while it
+        builds the cell; the recount ranges over EVERY 2-cell of N -- not over
+        the list the construction already filtered -- rebuilds each cell's three
+        drawn maps from the EDGE table alone and re-composes them. A coherent
+        cell wrongly EXCLUDED by the construction therefore moves the recount
+        and not the flag, which a recount over the filtered list structurally
+        cannot detect. The two counts agree at every member, and the density's
+        denominator -- the drawn 1-cell count -- is measured non-zero
   [PASS] G17  computation
-        THE SPECTRAL PROFILE IS COMPUTED TWICE AND I2's EIGENVALUE-1 ROW RIDES
-        ALONG AS AN ANCHOR AT EVERY MEMBER. The multiplicity of the trivial
-        cyclotomic factor -- which IS dim ker(I - E) -- is taken once as the
-        readout's cycle count and once as the exact rational kernel dimension of
-        I - E computed by elimination over Q, and the two agree at every readout
-        of every member; the profile's degrees are checked to sum to the
-        dimension; and the eigenvalue-1 row is confirmed present at every
-        readout, so 0 lies in spec(I - E) all along the family. The wall is
-        confirmed, never re-censused. The anchor predicate is calibrated the
-        other way inside this gate: on a multiplicity of zero it must return
-        FALSE, so a chain that always said yes is caught here
+        THE SPECTRAL PROFILE IS COMPUTED TWICE, AND THE ONLY CLAUSE THIS GATE
+        CARRIES IS THE ONE THAT CAN FAIL. The multiplicity of the trivial
+        cyclotomic factor is taken once as the readout's cycle count and once as
+        the exact rational kernel dimension of I - E by elimination over Q, and
+        the two agree at every readout of every member -- a numerical
+        implementation comparator between two expressions of ONE invariant,
+        related by orbit counting, and described as that rather than as two
+        independent routes. The eigenvalue-1 presence clause and the degree
+        identity are ANALYTICALLY FORCED for every permutation readout and are
+        therefore DISCLOSURES, not clauses of this gate (RUNBOOK section 14
+        addendum #208); the forcing is measured exhaustively over all
+        permutations of n <= 6 and reported at disclosure X-FORCED-SPECTRAL.
+        What remains here that could fail: the two expressions disagreeing, and
+        the anchor predicate's calibration -- on a multiplicity of zero it must
+        return FALSE, so a chain that always said yes is caught
   [PASS] G18  computation
         THE DIMENSION PROFILE IS COMPUTED BY TWO ROUTES: the link-vertex count
         per chart read off the overlap edge list, against a second pass that
@@ -277,12 +514,18 @@ THESIS
         and the two complexes are measured to DIFFER at some member, so reading
         the wrong one is a detectable error
   [PASS] G20  measurement
-        THE TRAJECTORY TABLE IS CELL-COMPLETE AGAINST ITS FORCED PRODUCT
-        (RUNBOOK section 13 addendum #234): the number of cells actually written
-        is counted and compared with the product of the registered invariant
-        count and the built family length, the row-name set is compared with the
-        registry, and no cell is permitted to be absent. A dropped row or a
-        dropped cell is caught here
+        THE EMITTED TRAJECTORY TABLE IS THE GATED OBJECT (RUNBOOK section 13
+        addendum, render from the gated object; section 13 addendum #234). The
+        table this gate checks is the same dictionary the receipt serialises and
+        the paper renders from -- there is no second rendering path. Two things
+        are measured on it: CELL-COMPLETENESS, the number of cells actually
+        written against the product of the registered invariant count and the
+        built family length, with the row-name set compared against the registry
+        and no cell permitted to be absent; and VALUE EQUALITY, every emitted
+        cell compared for string equality against the canonical form of the live
+        measurement at that coordinate. A dropped row, a dropped cell and a
+        corrupted cell are all caught here, the last one being invisible to a
+        completeness count alone
   [PASS] G21  measurement
         THE STABILISATION WINDOW IS LOAD-BEARING AND IS CALIBRATED BOTH WAYS ON
         A CRAFTED FIXTURE DECLARED IN ADVANCE. The fixture's last two entries
@@ -290,32 +533,179 @@ THESIS
         NOT stabilised and at K = 1 it IS: a window shrink therefore flips a
         verdict, which is exactly what the pin requires the window mutant to
         prove. The instrument's window is measured equal to the pin's declared K
-  [PASS] G22  derivation
-        THE VERDICT STRING IS DERIVED INSIDE THIS GATE FROM THE MEASURED
-        TRAJECTORY TABLE AND EVERY QUALIFIER IS COMPUTED (RUNBOOK section 13
-        addendum #234, #257). The HEAD is STABILIZES exactly when the measured
-        set of registered invariants constant on the final K members is
-        non-empty and NO-CONTINUUM-LIMIT exactly when it is empty; the
-        stabilised values, each divergent invariant's measured failure mode, the
-        window with the family length and cap state, the functoriality qualifier
-        and R2's gateway are each read out of the measurement and each is
-        required to appear verbatim in the emitted string. Inverting the head,
-        typing a qualifier, dropping a row or shrinking the window all break
-        this derivation
-  [PASS] G23  measurement
-        R2's GATEWAY IS COMPUTED, NOT NAMED. The set of members whose
-        overlap-completeness fraction is strictly below 1 is computed from the
-        trajectory table and the FIRST such member is handed forward as R2's
-        arena; the criterion is measured to be non-vacuous, since PHI is
-        measured strictly below 1 somewhere and its declared range admits 1
   [PASS] G24  measurement
-        THE DECLARED GROWTH RULE IS MEASURED TO REFINE BY DISJOINT ADDITION, AND
-        THAT IS WHAT CARRIES THE CONSTANT DENSITIES. At each grown member b_0 of
-        the nerve is measured equal to the block count plus one -- the basepoint
-        -- so the complex is a disjoint sum of one copy per block; and the
-        per-block 1-cell and coherent 2-cell counts are measured EQUAL across
-        the grown members. The constancy of the two densities is therefore
-        located, not merely observed
+        THE DECLARED GROWTH RULE IS MEASURED TO COPY AN ISOMORPHIC BLOCK, AND
+        THAT -- NOT ADDITION -- IS WHAT CARRIES THE CONSTANT DENSITIES. Four
+        things are measured, not assumed. (i) At every member b_0 of the nerve
+        equals the block count plus one, the basepoint. (ii) No 1-cell crosses a
+        block at any member, so every transport's support lies inside one block.
+        (iii) At every window member the candidate bijection beta_k the declared
+        cyclic orders name is measured to INTERTWINE the arena symmetry and to
+        CARRY block 1's cyclic order to block k -- the blocks are isomorphic AS
+        ATLAS PIECES, which is the load-bearing hypothesis and the one the
+        mixed-block control below discriminates. (iv) The per-block 1-cell,
+        coherent-2-cell and b_2 counts are measured equal across the window.
+        Disjoint addition alone would not do it: the mixed-block control
+        satisfies (i), (ii) and (iv)'s form in full and moves both densities
+  [PASS] G35  measurement
+        THE COPY-FORCING THEOREM IS VERIFIED IN-CODE, AND ITS BASE CASE IS THE
+        CLAIM'S TRUE CONTENT. The affine law a*m + b of every counting quantity
+        is FITTED FROM THE ONE-BLOCK AND TWO-BLOCK CENSUSES ALONE -- a the
+        per-block increment, b the isolated basepoint's constant share -- and
+        every later member is then a PREDICTION. It is measured to hold for all
+        ten counting quantities at m = 3..12. Two consequences are measured
+        rather than argued. First, THE TWO STABILISED VALUES ALREADY HOLD AT m =
+        1, the single-block member: nothing converges, and the window's values
+        are the one block's. Second, of the data points the window's second and
+        third members contribute, EVERY ONE is the value the one-block census
+        predicts, so their independent content is zero. A prediction taken from
+        the measured member instead of from the one-block census breaks this
+        gate, which is the difference between a fit and a theorem
+  [PASS] G36  control
+        THE MIXED-BLOCK CONTROL DISCRIMINATES ISOMORPHIC COPYING FROM MERE
+        ADDITION. MX_m is {0} plus m copies of the standard block plus ONE
+        further block of three labels carrying a 3-cycle of the symmetry. It is
+        measured to satisfy every property the additive reading names -- pure
+        disjoint addition, symmetry-stable blocks, no 1-cell crossing a block,
+        b_0 equal to the block count plus one at every member -- and its blocks
+        are measured NOT all isomorphic to one another. Both densities are then
+        measured to MOVE across its three members. So 'disjoint addition' is NOT
+        the hypothesis that carries the constancy; ISOMORPHIC copying is. The
+        widening control varies block SIZE and separates same-block from
+        different-block; this one separates additive from
+        additive-with-isomorphic-blocks, which is the distinction the mechanism
+        actually turns on
+  [PASS] G37  measurement
+        THE ATLAS IS A NAMED ARENA COORDINATE AND ITS DEPENDENCE IS SWEPT
+        IN-UNIT (RUNBOOK section 15; the P* precedent). Six alternative declared
+        atlases, each stated in the declaration block before it is built and
+        each using this unit's own drawn rule, 2-cell rule and five invariant
+        definitions verbatim, are run over the window and read by the SAME
+        derivation. Four outcomes are measured. The three transport-convention
+        re-declarations leave BOTH stabilised values exactly where they were --
+        a robustness result. Dropping the realised cell keeps both invariants
+        constant and MOVES their values, so the values are the atlas's, not the
+        arena's. The non-block-local atlas -- which uses LESS arena data than
+        this unit's own, no block partition at all -- stabilises NOTHING and
+        flips the head to NO-CONTINUUM-LIMIT over the same arenas. And the
+        cell-structure variant, one cell per block carrying the group generated
+        by both transports, draws nothing and leaves both headline invariants
+        UNDEFINED at every member -- which is the declared failure mode reached
+        by a shipped input rather than by construction
+  [PASS] G38  measurement
+        THE 2-OF-5 SPLIT IS MEASURED TO BE A BASEPOINT ARTEFACT. One
+        structureless label -- the arena's declared basepoint, fixed by the
+        symmetry, of degree zero in every complex of every member, lying in no
+        coordinate cell's support -- is deleted, the profiles are renormalised
+        over the surviving charts and the overlap fraction is taken over the
+        surviving chart pairs. FOUR of the five registered invariants are then
+        exactly constant on the window, and the one that still moves is the
+        overlap fraction, whose denominator grows quadratically while its
+        numerator grows linearly. So the split the verdict reports is not
+        between substantive and non-substantive quantities: it is between
+        basepoint-blind and basepoint-sensitive, and the stabilised SET is
+        declaration-relative
+  [PASS] G39  measurement
+        THE NON-COPIED HUNT, ON A GRID DECLARED AND CLASSIFIED BEFORE IT WAS
+        EVALUATED. Twenty-four intensive quantities, each assigned in the
+        declaration block to one of three classes -- COPIED (numerator and
+        denominator both block-additive and vanishing on the isolated
+        basepoint), BASEPOINT-INVOLVING (a chart count enters), CROSS-BLOCK (the
+        quantity reads structure between blocks) -- are measured at five growth
+        members. Three things are measured: every copied quantity is constant;
+        NO basepoint-involving quantity is constant; and among the cross-block
+        quantities, constancy holds exactly where a vacuity reason was DECLARED
+        IN ADVANCE and nowhere else. So nothing that is neither copied nor
+        vacuous stabilises. The gate also carries the SIXTH stabiliser the
+        registry misses: b_1 of N_coh per coherent 2-cell, constant across all
+        five, a quantity the pin excludes by declaration -- and this unit's own
+        b_1 of N_coh is measured non-zero and growing, so the exclusion is a
+        declaration, not a measured triviality
+  [PASS] G40  measurement
+        BOTH DENOMINATOR CONVENTIONS ARE COMPUTED AND BOTH ARE PRINTED. The pin
+        registers the coherence density 'per drawn chart pair' and the second
+        density 'per 2-cell' without naming the complex. This unit's first value
+        divides by the COORDINATE-RESOLVED 1-cell count -- one per drawn pair
+        per coordinate cell -- and its second by N_coh's own 2-cell count. The
+        pin-literal readings, dividing by the overlap-graph edge count and by
+        N's 2-cell count, are computed here beside them and measured to be
+        constant on the window TOO, and measured to DIFFER from the delivered
+        ones. The verdict head is therefore safe under either reading and the
+        values are disclosed AS convention-relative; both go into the verdict
+        string
+  [PASS] G41  measurement
+        THE TAIL-RESTRICTED READING IS COMPUTED AND PRINTED BESIDE THE
+        FULL-FAMILY ONE. The declared family glues three constructions; its
+        stabilisation window is exactly the homogeneous tail, every member of
+        which the extracted generator rule produces. Restricting to that tail
+        and re-deriving: the stabilised set and both values are measured
+        UNCHANGED, every divergence mode is measured UNCHANGED, and the
+        functoriality qualifier becomes FAMILY-FUNCTORIAL -- so the
+        non-functoriality is a statement about the GLUING, not about the growth
+        rule, whose own members are joined by constructed morphisms at every
+        step. The window's homogeneity is measured from the block sizes rather
+        than named, and the inherited gateway criterion applied to the tail
+        alone is measured to select the tail's first member
+  [PASS] G42  computation
+        THE ADMISSION-RULE THEOREM IS CONFRONTED WITH THIS UNIT'S OWN ATLAS, AND
+        THAT CONFRONTATION IS WHAT CAN FAIL. The theorem: a cell's transport
+        group being cyclic of order N, the exponents carrying a to b form the
+        empty set when b is outside a's orbit and otherwise a coset of a's
+        stabiliser, of size N over the orbit length; so the uniqueness rule
+        admits (a, b) IFF b lies in a's orbit AND that orbit is REGULAR. What is
+        measured here is not the theorem -- that is algebra, and is disclosed
+        with its exhaustive check rather than gated (#208) -- but the claim that
+        THIS unit's atlas is an instance of it: at every coordinate cell of
+        every member and every probe, the cell's drawn table is compared for SET
+        EQUALITY against the ordered pairs lying inside its REGULAR orbits, and
+        the disagreeing-cell count is measured ZERO. A relaxed or widened
+        admission rule makes a cell draw pairs outside its regular orbits, the
+        set equality fails, and this gate dies. The clause is therefore about
+        the instrument, and it earns the reading that every drawn count this
+        unit reports is a corollary rather than a coincidence: the drawn
+        relation at each cell is measured to be the disjoint union of COMPLETE
+        graphs on its regular orbits, with non-regular orbits drawing nothing,
+        so the overlap graph this atlas builds is a union of cliques by
+        construction. That is why the realised rule draws nothing where its
+        orbit is non-regular, and it is why locality at the successor must be
+        EARNED by declaring cells whose regular orbits overlap PARTIALLY -- a
+        union of two cliques that is not itself a clique is the only way this
+        atlas schema can produce an incomplete overlap graph
+  [PASS] G23  measurement
+        THE INHERITED GATEWAY CRITERION IS MEASURED TO BE FORCED, AND THE
+        SUCCESSOR CRITERION THAT REPLACES IT RETURNS NOTHING. The basepoint is
+        symmetry-fixed and lies in no coordinate cell's support, so it is
+        isolated in the overlap graph and at least n-1 chart pairs are undrawn:
+        phi is bounded by (n-2)/n at every member -- measured at every member
+        and probe -- and 'the first member with phi < 1' therefore cannot fail
+        and is not a selection. What is measured instead is COMPONENTWISE
+        overlap completeness, and it is 1 everywhere: every connected component
+        is a COMPLETE graph, so every phi < 1 in this unit is achieved by
+        DISCONNECTION and carries no locality content. The successor criterion
+        -- the first member carrying a component whose overlap graph is
+        incomplete -- is therefore measured EMPTY, and the gateway is handed
+        forward as NONE-EARNED rather than as an arena. A typed gateway breaks
+        this gate
+  [PASS] G22  derivation
+        THE COMPLETE VERDICT STRING IS REBUILT SEGMENT BY SEGMENT FROM THE
+        MEASURED TABLES AND COMPARED FOR EQUALITY (RUNBOOK section 14 addendum,
+        CONTAINMENT IS NOT EQUALITY; section 13 addendum #234, #257). The
+        emitted string is assembled from the live measurement objects; inside
+        this gate the whole string is assembled a second time from the
+        RECEIPT-FACING tables -- the same dictionaries the receipt serialises
+        and the paper renders from -- with the head, the window qualifier and
+        the gateway each RECOMPUTED there rather than read back as text, and the
+        two strings are required to be EQUAL character for character. No clause
+        of this gate is a containment test. Consequently a value swapped between
+        two names, a typed segment and text appended to a segment are each
+        caught, none of which a substring check can see. Every segment is
+        computed: the stabilised values under BOTH denominator conventions, the
+        mechanism with its measured block census, the measured-versus-forced
+        split, the independent content, each divergence mode with its measured
+        cause, the basepoint-deleted stabilising set with the sixth stabiliser,
+        the window with its measured homogeneity, the functoriality qualifier
+        with its tail-restricted reading, the atlas coordinate with its measured
+        sweep, and the successor gateway
   [PASS] G25  control
         POSITIVE CONTROL: a family that is constant by construction returns the
         STABILIZES head naming ALL FIVE registered invariants. The control runs
@@ -337,11 +727,13 @@ THESIS
         identification-sensitive set, and the measured set that did NOT move
         against the relation-only set. The scramble is measured non-trivial --
         the count of drawn maps it actually changed is printed and required
-        positive -- so a no-op scramble cannot pass. At this substrate the
-        scramble is maximally destructive: the coherent 2-cell count falls to
-        zero, so NCOH_DENSITY moves to 0 and B2_DENSITY moves to UNDEFINED (its
-        denominator vanishes). That is recorded as measured rather than smoothed
-        into a number
+        positive -- so a no-op scramble cannot pass. The destruction the
+        scramble actually does is BUILT FROM THE MEASUREMENT rather than typed
+        beside it, and at this substrate it is: the coherent 2-cell count falls
+        from 222 to 48, so the coherence density moves to 8/27 and the b_2
+        density moves to 0/1. The coherent count is measured to have fallen, so
+        a scramble that left the identification data intact could not pass this
+        gate either
   [PASS] G28  control
         DISCRIMINATION CONTROL: a growth rule that is NOT a disjoint addition --
         the widening family, whose single block grows rather than being copied
@@ -398,104 +790,185 @@ THESIS
         one, which does not run inside a mutant process
 
 ------------------------------------------------------------------------------
-7. DISCLOSURES
+12. DISCLOSURES
 ------------------------------------------------------------------------------
   X-COMPANION-HASH
       R0's parenthetical companion hashes for the two v13 PAPERS do not
-      reproduce against the artifacts on disk. What this instrument measures
-      is exactly that: the declared and the computed sha256-12 of each
-      companion, and the set on which they differ. The rows' CARRYING receipts
-      -- the primary key of every R0 row -- all verify, all six other
-      companions verify, and no number of this unit is read from a paper, so
-      the run proceeds and the delta is reported here rather than silently
-      ignored.
+      reproduce against the artifacts on disk, and this unit cites the v14 LOG
+      #4 erratum of record for them instead. What the instrument measures is
+      exactly that: R0's recorded value, the erratum's value, and the computed
+      sha256-12, for each of the eight companions. The provenance is that R0's
+      two values are each the paper's hash at its REPAIR commit and each paper
+      was edited once more at its terminal commit. The rows' CARRYING receipts
+      -- the primary key of every R0 row -- all verify against R0 itself, all
+      six other companions verify against R0, and no number of this unit is
+      read from a paper.
+  X-FORCED-ANCHORS
+      TWO OF THIS UNIT'S ANCHORS HAVE AN ANALYTICALLY FORCED COMPUTED SIDE AND
+      ARE RECORDED AS INHERITANCE CHECKS RATHER THAN AS ARENA CALIBRATION
+      (#208). A-LCB-A1-FIX and A-LCB-A2-FIX compare the pinned receipt's
+      recorded delta-fixed-point count against a recomputation of the size of
+      {q : delta(q) = q} with delta(q) = sigma(q)^-1 q. But delta(q) = q iff
+      sigma(q) is the identity iff q is the identity, for EVERY symmetry --
+      measured here exhaustively over Sym(4) and Sym(5): every (Sigma, q) pair
+      swept, the set of distinct fixed-point counts is {1} and the number of
+      non-identity fixed points is 0. So the two anchors carry no information
+      about A1's or A2's arena; what they do still catch is a DRIFTED pinned
+      receipt, which is why they stay exit-1. The arena-calibration count
+      excludes them.
   X-CHI-IDENTITY
       chi from the cell counts and chi from the Betti numbers agree at every
       complex of every member. This is an algebraic identity in the ranks, not
       a second route, and is recorded as a disclosure.
+  X-FORCED-SPECTRAL
+      TWO CLAUSES OF THE SPECTRAL CENSUS ARE ANALYTICALLY FORCED AND ARE
+      RECORDED HERE RATHER THAN GATED (#208). (a) The eigenvalue-1 presence
+      clause is mu_1 >= 1 with mu_1 the readout's cycle count: every
+      permutation of a non-empty set has at least one cycle, so the clause
+      cannot fail on any input this instrument can produce -- measured over
+      ALL permutations of n = 2..6, zero absences. Equivalently, a permutation
+      matrix fixes the all-ones vector. (b) The degree identity sum_d phi(d)
+      mult(Phi_d) = n is a permutation identity -- measured over the same 872
+      permutations, zero violations. AND THE CHAIN IS ABOUT A DIFFERENT
+      OPERATOR FROM I2's WALL. I2's E is the record-metric readout over F_p:
+      its 112 pinned rows are indexed by dimension d = 2..5, direction,
+      ordering and prime, and carry dim ker(E - I) there. This unit's E is the
+      arena's chart-symmetry permutation matrix over Q, indexed by member and
+      readout; the two coordinate sets are measured DISJOINT. What this unit
+      confirms -- 0 in spec(I - E) for a permutation readout -- is implied by
+      the permutation form alone; it does NOT re-confirm I2's criterion, its
+      unit-circle clause, or its prime-indexed universality. It is a strictly
+      weaker statement about a different operator, and the walls are cited,
+      not re-derived.
   X-REAL-EMPTY
-      The REALISED rule draws NOTHING at A2, and that is measured rather than
-      assumed: at that member the realised transport has order 10 on a
-      seven-label symmetry saturation, so no ordered pair has a UNIQUE power
+      The REALISED rule draws NOTHING at [A2], and that is measured rather
+      than assumed: at that member the realised transport has order [10] on a
+      symmetry saturation of [7] labels, so no ordered pair has a UNIQUE power
       carrying one label to the other and the admission rule refuses every
-      candidate. Consequently at A2 alone every 2-cell draws its three maps
+      candidate. Consequently there alone every 2-cell draws its three maps
       from one cyclic group, which acts regularly on its block, so coherence
-      is ANALYTICALLY FORCED there and N coincides with N_coh. At the other
-      four members two distinct transport groups meet at a common block and
-      coherence is contingent -- it is measured 96 of 160 at A1 and 222 of
-      438, 259 of 511, 296 of 584 at the grown members. This is a disclosure,
-      not a must-pass gate.
+      is ANALYTICALLY FORCED and N coincides with N_coh. At the other members
+      two distinct transport groups meet at a common block and coherence is
+      contingent -- measured, and every count in this sentence is BUILT from
+      the measurement rather than typed beside it: 96 of 160 at A1, 222 of 438
+      at A3, 259 of 511 at A4, 296 of 584 at A5. This is a disclosure, not a
+      must-pass gate.
   X-B1
-      b_1 is excluded as a candidate by the pin and is printed once here as a
-      disclosure. On N it is measured ZERO at every member -- the trivial H_1
-      I3 reports, reproduced at this substrate -- while on N_coh it is
-      non-zero and grows: coherence costs cycles, exactly as I3 measured at
-      its own scale.
+      b_1 IS EXCLUDED BY PIN DECLARATION, NOT BECAUSE IT IS TRIVIAL HERE. The
+      pin's stated ground for excluding it is that it is trivial by the
+      topology base's ordered measurement and carries no identification
+      content. On N that reproduces exactly: b_1 is measured ZERO at every
+      member. On N_coh it does NOT: b_1 is measured non-zero and growing, and
+      it is non-zero exactly where the identification data is imposed. Its
+      density -- b_1 of N_coh per coherent 2-cell -- is measured CONSTANT on
+      the window and at both index probes, so a SIXTH intensive quantity of
+      this substrate stabilises and was excluded by declaration. The
+      registered score of 2 of 5 is therefore a registry fact; counting the
+      excluded candidate the score is 3 of 6. This is recorded here and
+      carried in the verdict string.
+  X-ADMISSION-THEOREM
+      THE ADMISSION-RULE THEOREM IS ANALYTICALLY FORCED AND IS RECORDED HERE
+      RATHER THAN GATED (#208). STATEMENT: let a cyclic group of order N act
+      on a finite set and admit an ordered pair (a, b), a != b, iff EXACTLY
+      ONE group element carries a to b. Then (a, b) is admitted iff b lies in
+      the orbit of a AND that orbit is REGULAR, i.e. has size N. PROOF: the
+      exponents k with tau^k a = b are empty when b is outside the orbit, and
+      otherwise form a coset of the stabiliser of a, whose size is N divided
+      by the orbit length; that coset is a singleton exactly when the orbit
+      length is N. COROLLARY: the admitted relation at a cell is the disjoint
+      union of COMPLETE graphs on the regular orbits, and an overlap graph
+      assembled from such cells is always a union of cliques -- so within this
+      atlas schema no member can exhibit a non-complete component, and a
+      successor that wants one must declare cells whose regular orbits overlap
+      PARTIALLY. The statement is true by algebra for every input and
+      therefore cannot fail as a gate; it is checked EXHAUSTIVELY all the
+      same, over every cyclic action generated by a permutation of n = 2..6
+      points -- 872 permutations, counterexamples 0. What this unit gates
+      instead is the measured claim that its own atlas is an instance (G42).
 
 ------------------------------------------------------------------------------
-8. TOTALS
+13. TOTALS
 ------------------------------------------------------------------------------
   anchor_failures                0
-  anchors                        60
-  disclosures                    4
-  gates                          33
-  measured_data_evaluated        177
+  anchors                        62
+  disclosures                    7
+  gates                          42
+  measured_data_evaluated        381
   must_pass_failures             0
-  must_pass_gates                33
+  must_pass_gates                42
   mutant_survivors               0
-  mutants                        47
+  mutants                        59
+
 
 ------------------------------------------------------------------------------
-9. MUTANT TABLE
+14. MUTANT TABLE
 ------------------------------------------------------------------------------
-  anchor-I1        exit 1  waiver      kills [G02]
-  anchor-I3        exit 1  waiver      kills [G02]
-  anchor-I4a       exit 1  waiver      kills [G02]
-  anchor-I4b       exit 1  waiver      kills [G02]
-  anchor-I5        exit 1  waiver      kills [G02]
-  anchor-I6        exit 1  waiver      kills [G02]
-  anchor-I7        exit 1  waiver      kills [G02]
-  arena-a1         exit 1  computation kills [G05]
-  arena-a2         exit 1  computation kills [G05, G08, G24]
-  arena-sigma      exit 1  computation kills [G24, G30]
-  b0-lax           exit 1  computation kills [G12, G24]
-  blocks-lax       exit 1  computation kills [G05, G08, G24, G30]
-  cap-lax          exit 1  computation kills [G07, G30]
-  cell-drop        exit 1  computation kills [G11]
-  coh-lax          exit 1  computation kills [G16, G19, G27]
-  companion-drop   exit 1  waiver      kills [G03]
-  disc-lax         exit 1  computation kills [G28]
-  drawn-lax        exit 1  computation kills [G11, G24, G29]
-  embed-blind      exit 1  computation kills [G09]
-  embed-lax        exit 1  computation kills [G09]
-  exempt-lax       exit 1  waiver      kills [G32]
-  family-rule      exit 1  computation kills [G04]
-  family-sel       exit 1  computation kills [G04]
-  float-lax        exit 1  waiver      kills [G31]
-  freeze-lax       exit 1  waiver      kills [G01]
-  gateway-lax      exit 1  computation kills [G23]
-  inv-b2           exit 1  computation kills [G19]
-  inv-dim          exit 1  computation kills [G18]
-  inv-ncoh         exit 1  computation kills [G16]
-  inv-phi          exit 1  computation kills [G15]
-  inv-spec         exit 1  computation kills [G17]
-  k-window         exit 1  computation kills [G21, G26, G28]
-  machinery-lax    exit 1  computation kills [G10]
-  map-func         exit 1  computation kills [G09]
-  neg-lax          exit 1  computation kills [G26]
-  parity-lax       exit 1  computation kills [G14]
-  pin-drop         exit 1  waiver      kills [G02]
-  pos-lax          exit 1  computation kills [G25]
-  qual-flip        exit 1  computation kills [G22]
-  rank-lax         exit 1  computation kills [G13]
-  regen-cache      exit 1  computation kills [G06]
-  robust-lax       exit 1  computation kills [G30]
-  row-drop         exit 1  computation kills [G20, G22, G30]
-  scramble-lax     exit 1  computation kills [G27]
-  selftest-select  exit 1  computation kills [G29]
-  spec-anchor      exit 1  computation kills [G17]
-  verdict-flip     exit 1  computation kills [G22]
+  anchor-I1          exit 1  waiver      kills [G02, G34]
+  anchor-I3          exit 1  waiver      kills [G02, G34]
+  anchor-I4a         exit 1  waiver      kills [G02, G34]
+  anchor-I4b         exit 1  waiver      kills [G02, G34]
+  anchor-I5          exit 1  waiver      kills [G02, G34]
+  anchor-I6          exit 1  waiver      kills [G02, G34]
+  anchor-I7          exit 1  waiver      kills [G02, G34]
+  arena-a1           exit 1  computation kills [G05]
+  arena-a2           exit 1  computation kills [G05, G08, G24]
+  arena-sigma        exit 1  computation kills [G23, G24, G30, G35, G37, G38,
+                                               G39, G40]
+  atlas-lax          exit 1  computation kills [G37]
+  b0-lax             exit 1  computation kills [G12, G24, G36]
+  blocks-lax         exit 1  computation kills [G05, G08, G23, G24, G30, G35,
+                                               G36, G37, G38, G39, G40, G41]
+  bp-lax             exit 1  computation kills [G38]
+  cap-lax            exit 1  computation kills [G07, G24, G30, G35, G37, G38,
+                                               G39, G40, G41]
+  cell-drop          exit 1  computation kills [G11, G16, G39, G40]
+  coh-block-uniform  exit 1  computation kills [G16]
+  coh-lax            exit 1  computation kills [G16, G19, G27, G40]
+  companion-drop     exit 1  waiver      kills [G03, G34]
+  copy-law           exit 1  computation kills [G35]
+  den-lax            exit 1  computation kills [G40]
+  disc-lax           exit 1  computation kills [G28]
+  drawn-lax          exit 1  computation kills [G11, G23, G24, G29, G37, G42]
+  embed-blind        exit 1  computation kills [G09, G41]
+  embed-lax          exit 1  computation kills [G09]
+  exempt-lax         exit 1  waiver      kills [G32]
+  family-rule        exit 1  computation kills [G04, G37, G40]
+  family-sel         exit 1  computation kills [G04]
+  float-lax          exit 1  waiver      kills [G31]
+  freeze-lax         exit 1  waiver      kills [G01]
+  gateway-lax        exit 1  computation kills [G22, G23]
+  grid-lax           exit 1  computation kills [G39]
+  inv-b2             exit 1  computation kills [G19, G35, G37]
+  inv-dim            exit 1  computation kills [G18]
+  inv-ncoh           exit 1  computation kills [G16]
+  inv-phi            exit 1  computation kills [G15]
+  inv-spec           exit 1  computation kills [G17]
+  k-window           exit 1  computation kills [G21, G26, G28, G35, G37, G38,
+                                               G39]
+  machinery-lax      exit 1  computation kills [G10]
+  map-func           exit 1  computation kills [G09, G41]
+  mx-lax             exit 1  computation kills [G36]
+  neg-lax            exit 1  computation kills [G26]
+  parity-lax         exit 1  computation kills [G14]
+  pin-drop           exit 1  waiver      kills [G02, G34]
+  pos-lax            exit 1  computation kills [G25]
+  qual-flip          exit 1  computation kills [G22]
+  rank-lax           exit 1  computation kills [G13]
+  regen-cache        exit 1  computation kills [G06]
+  robust-lax         exit 1  computation kills [G30, G39]
+  row-drop           exit 1  computation kills [G20, G22, G30, G35, G37, G41]
+  scramble-lax       exit 1  computation kills [G27]
+  selftest-select    exit 1  computation kills [G29]
+  spec-anchor        exit 1  computation kills [G17]
+  tail-lax           exit 1  computation kills [G24, G35, G37, G38, G39, G40,
+                                               G41]
+  traj-cell          exit 1  computation kills [G20]
+  verdict-append     exit 1  computation kills [G22]
+  verdict-flip       exit 1  computation kills [G22, G37]
+  verdict-gateway    exit 1  computation kills [G22]
+  verdict-swap       exit 1  computation kills [G22]
 
-  must-pass gates 32 ; falsified by some mutant 32 ; never falsified []
+  must-pass gates 41 ; falsified by some mutant 41 ; never falsified []
+  anchors 62 ; exercised by some mutant 34 ; never exercised 28
 
 ==============================================================================

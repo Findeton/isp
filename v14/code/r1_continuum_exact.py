@@ -37,6 +37,14 @@ DISCIPLINE
     file and an AST guard proves it).  Anchors are exit-1-only.  Counts are
     computed, never typed.  No gate predicate references mutant identity.
     Declared-arena data is printed and matched at every coordinate.
+
+    CONTAINMENT IS NOT EQUALITY: the verdict gate rebuilds the complete
+    emitted string segment by segment from the measured tables and compares
+    for EQUALITY; no substring test is a verdict gate.
+
+    RENDER FROM THE GATED OBJECT: the trajectory table and the verdict
+    string the gates check are the objects the receipt and the paper render
+    from -- one object, one source of truth.
 """
 
 import argparse
@@ -44,6 +52,7 @@ import ast
 import hashlib
 import json
 import math
+import re
 import sys
 from collections import defaultdict
 from fractions import Fraction as Fr
@@ -205,16 +214,117 @@ DECL = {
     "family_target": 5,
 
     "verdict_templates": {
+        "STABILIZES_BY_COPYING":
+            "R1-STABILIZES-BY-DISJOINT-COPYING-AT-<...>",
         "STABILIZES": "R1-STABILIZES-AT-<...>",
         "NO_CONTINUUM": "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE-<...>",
-        "rule": ("the head is STABILIZES iff the measured set of registered "
-                 "invariants constant on the final K members is NON-EMPTY, "
-                 "and NO-CONTINUUM-LIMIT iff it is EMPTY.  Every qualifier "
-                 "-- the stabilised values, the window, each divergent "
-                 "invariant's measured failure mode, the functoriality "
-                 "qualifier and R2's gateway -- is computed from the "
-                 "trajectory table inside the verdict gate"),
+        "rule": ("the head is a STABILIZES head iff the measured set of "
+                 "registered invariants constant on the final K members is "
+                 "NON-EMPTY, and NO-CONTINUUM-LIMIT iff it is EMPTY.  Among "
+                 "the STABILIZES heads the head names the MECHANISM -- "
+                 "BY-DISJOINT-COPYING -- exactly when the copying census is "
+                 "measured to hold (isomorphic blocks by a measured "
+                 "intertwiner, no cell crossing a block, b_0 = blocks + 1) "
+                 "and the plain STABILIZES head otherwise.  Every qualifier "
+                 "-- the stabilised values under both denominator "
+                 "conventions, the mechanism, the independent content, each "
+                 "divergent invariant's measured failure mode and cause, the "
+                 "basepoint-deleted stabilising set, the window, the "
+                 "functoriality qualifier with its tail-restricted reading, "
+                 "the atlas coordinate with its measured sweep, and the "
+                 "successor gateway -- is computed from the measured tables, "
+                 "and the complete emitted string is rebuilt segment by "
+                 "segment inside the verdict gate and compared for EQUALITY"),
     },
+
+    "mechanism_hypothesis": (
+        "THE LOAD-BEARING HYPOTHESIS IS ISOMORPHIC COPYING, NOT ADDITION.  "
+        "Disjoint addition alone does NOT make a ratio of two per-cell counts "
+        "invariant.  What does is disjoint addition of an ISOMORPHIC copy: if "
+        "the arena's labels are {0} + B_1 + ... + B_m with Sigma fixing 0 and "
+        "stabilising each block, and for each k there is a bijection beta_k : "
+        "B_1 -> B_k intertwining Sigma and carrying B_1's declared cyclic "
+        "order to B_k's, then every transport of the declared atlas has "
+        "support inside a single block, N and N_coh are m disjoint copies of "
+        "the block-1 atlas plus the isolated chart 0, and every ratio of two "
+        "quantities additive over connected components and vanishing on an "
+        "isolated vertex is independent of m.  The hypothesis is "
+        "DISCRIMINATED by the mixed-block control below, which satisfies "
+        "disjoint addition in full and moves both densities."),
+
+    "copy_forcing_theorem": (
+        "THEOREM (copy-forcing).  With the hypothesis above: (i) the "
+        "coordinate-resolved nerve N and its coherent sub-nerve N_coh are the "
+        "disjoint union of m copies of the block-1 atlas together with the "
+        "isolated chart 0; (ii) for any two quantities X, Y additive over "
+        "connected components and vanishing on an isolated vertex, "
+        "X(A_m)/Y(A_m) = X(A_1)/Y(A_1) for every m; (iii) every counting "
+        "quantity of the atlas has the affine form a*m + b with b the "
+        "basepoint's contribution, and a ratio of two of them is constant in "
+        "m IFF the cross product of their (a, b) vanishes.  COROLLARY (the "
+        "converse half): a quantity A(N_m)/n with A additive and n = "
+        "m*|V(X)| + 1 is constant IFF A(X) = A(p)*|V(X)|; generically it is "
+        "not, and then its whole variation is the single basepoint's share."),
+
+    "denominator_conventions": {
+        "NCOH_DENSITY": (
+            "the pin registers 'coherence classes per drawn chart pair'.  "
+            "TWO readings of the denominator are computed and both are "
+            "printed: PER-INCIDENCE, the coordinate-resolved 1-cell count "
+            "|E(N)| (one per drawn pair PER COORDINATE CELL) -- the reading "
+            "the verdict's first value carries; and PER-DRAWN-PAIR, the "
+            "overlap-graph edge count |E(G)| -- the pin's literal wording.  "
+            "The delivered convention is disclosed AS a convention"),
+        "B2_DENSITY": (
+            "the pin registers 'b_2 per 2-cell' without naming the complex.  "
+            "BOTH are computed: PER-N_COH-2-CELL, b_2(N_coh)/|F(N_coh)| -- "
+            "the reading the verdict's second value carries; and "
+            "PER-N-2-CELL, b_2(N_coh)/|F(N)|"),
+    },
+
+    "atlas_sweep": {
+        "why": ("the atlas is this unit's own DECLARATION and therefore an "
+                "arena coordinate whose dependence must be MEASURED "
+                "in-unit (RUNBOOK section 15; the P* precedent).  Six "
+                "alternative declared atlases, each stated here before it is "
+                "built, each using this unit's own drawn rule, 2-cell rule "
+                "and five invariant definitions VERBATIM"),
+        "ALT-A": "transport convention: REAL := gamma_k . Sigma_k (the "
+                 "composition order swapped)",
+        "ALT-B": "transport convention: the block's declared cyclic order "
+                 "reversed (gamma := gamma^-1)",
+        "ALT-C": "transport convention: the block's cyclic order taken in "
+                 "steps of two (gamma := gamma^2)",
+        "B1": "cell set: drop the REAL cell -- coordinate cells are "
+              "(k, FULL) only, this unit's own first rule unchanged",
+        "ATLAS-C": "NOT BLOCK-LOCAL: one further coordinate index carrying "
+                   "the same construction rule the unit uses for its FULL "
+                   "cells -- the increasing-index cycle -- applied to the "
+                   "WHOLE moved-label set instead of block by block.  It "
+                   "uses LESS arena data than the unit's own atlas (no block "
+                   "partition)",
+        "ALT-D": "cell structure: ONE cell per block, carrying the group "
+                 "GENERATED by both transports, instead of two cyclic cells",
+    },
+
+    "non_copied_grid": (
+        "24 intensive quantities, declared and CLASSIFIED here before any is "
+        "evaluated, measured at the five growth members m = 6, 7, 8, 10, 12.  "
+        "COPIED means numerator and denominator are both block-additive and "
+        "vanish on the isolated basepoint; BASEPOINT-INVOLVING means a chart "
+        "count enters; CROSS-BLOCK means the quantity reads structure between "
+        "blocks.  Each cross-block quantity carries a declared vacuity reason "
+        "or none; the hunt asks whether ANY quantity that is neither copied "
+        "nor vacuous is constant"),
+
+    "successor_criterion": (
+        "THE INHERITED GATEWAY CRITERION 'the first member with phi < 1' "
+        "CANNOT FAIL at an arena of the declared shape: the basepoint is "
+        "Sigma-fixed and lies in no cell's support, so it is isolated in the "
+        "overlap graph and at least n-1 chart pairs are undrawn, whence "
+        "phi <= (n-2)/n < 1 always.  The criterion that has teeth, and the "
+        "one this unit computes and hands forward, is: the first member "
+        "carrying a connected COMPONENT whose overlap graph is INCOMPLETE"),
 
     "failure_modes": {
         "scalar": ["CONSTANT", "STRICTLY-INCREASING", "STRICTLY-DECREASING",
@@ -253,6 +363,17 @@ DECL = {
                           "must MOVE the two densities, so their constancy "
                           "on the declared family is a property of that "
                           "family's rule and not of the definitions",
+        "MIXED-BLOCK": "the MIXED family MX_m = {0} + m copies of the "
+                       "seven-label block + ONE further block of three "
+                       "labels on which Sigma acts as a 3-cycle, m = 6, 7, "
+                       "8.  It satisfies EVERY property the additive reading "
+                       "names -- pure disjoint addition, Sigma-stable "
+                       "blocks, no cell crossing a block, b_0 = blocks + 1 "
+                       "at every member -- and its blocks are NOT isomorphic "
+                       "to one another.  It must MOVE both densities: it is "
+                       "the control that separates ADDITIVE from "
+                       "ADDITIVE-WITH-ISOMORPHIC-BLOCKS, which is the "
+                       "distinction the mechanism actually turns on",
     },
 
     "K_window_fixture": {
@@ -312,6 +433,35 @@ MUTANT_DECL = [
     ("b0-lax", "computation", "the component route-1 census is corrupted"),
     ("float-lax", "waiver", "a float literal enters the source the arithmetic guard scans"),
     ("exempt-lax", "waiver", "the exemption sweep's permitted set is emptied"),
+    ("coh-block-uniform", "computation",
+     "exactly one coherent 2-cell is dropped PER BLOCK -- a per-block-uniform "
+     "corruption of the atlas that leaves every per-block equality intact"),
+    ("verdict-swap", "computation",
+     "the two stabilised values are swapped between their names in the "
+     "EMITTED verdict string"),
+    ("verdict-gateway", "computation",
+     "the EMITTED gateway segment is typed while the computed one is not"),
+    ("verdict-append", "computation",
+     "text is appended to every EMITTED divergence mode"),
+    ("traj-cell", "computation",
+     "one cell of the EMITTED trajectory table is corrupted while the live "
+     "measurement is not"),
+    ("copy-law", "computation",
+     "the copy-forcing prediction is read off the measured member instead of "
+     "the one-block census"),
+    ("mx-lax", "computation",
+     "the mixed-block control's odd block is replaced by another copy of the "
+     "standard block, so the control becomes a copying family"),
+    ("atlas-lax", "computation",
+     "the alternative declared atlases are replaced by this unit's own"),
+    ("bp-lax", "computation", "the basepoint audit deletes nothing"),
+    ("grid-lax", "computation",
+     "one basepoint-involving quantity of the non-copied grid is classified "
+     "as copied"),
+    ("den-lax", "computation",
+     "the alternative denominator is read from the delivered one"),
+    ("tail-lax", "computation",
+     "the tail restriction takes the family's head instead of its tail"),
 ]
 MUTANTS = [m[0] for m in MUTANT_DECL]
 
@@ -324,11 +474,15 @@ MUTABLE_FUNCS = {
     "boundary_connective", "phi_route_2", "ncoh_recount", "spectral_kernel",
     "spectral_anchor_chain", "dim_route_2", "b2_complex_choice",
     "trajectory_rows", "stabilisation_window", "verdict_head",
-    "qualifier_source", "gateway_member", "positive_control_family",
+    "qualifier_source", "positive_control_family",
     "negative_control_estimators", "scramble_shift",
     "discrimination_family", "selftest_tested_set", "robustness_indices",
     "measured_datum_before_freeze", "top_identity", "components_route_1",
     "exactness_scope", "exemption_scope",
+    "emit_verdict", "emit_trajectory", "copy_forcing_prediction",
+    "mixed_block_family", "alternative_atlas_cells", "basepoint_deleted",
+    "non_copied_grid_rows", "alt_denominators", "tail_window",
+    "gateway_component_search",
 }
 
 
@@ -493,9 +647,44 @@ def spanning_forest_cycle_rank(nv, edges):
 # 3.  THE R0 INHERITANCE.  Hash-pinned; verified at run time.
 # ===========================================================================
 
+def r0_pin_table():
+    """THE FOUNDING PIN'S OWN INHERITANCE TABLE, PARSED FROM
+    v14/note-r0-founding-pin.md AT RUN TIME.  Each markdown row is split on
+    its pipes; the backticked tokens of the artifact column that contain a
+    path separator are the row's artifacts, the backticked twelve-hex tokens
+    are its hashes, and a row whose artifact column names no path -- the pin's
+    own words are 'same receipt' -- inherits the preceding row's artifact.
+    The parsed table is gated against the typed table below, so a drift in
+    EITHER is caught."""
+    txt = (REPO / "v14" / "note-r0-founding-pin.md").read_text()
+    out = []
+    prev = None
+    for ln in txt.splitlines():
+        if not ln.startswith("| I") or ln.count("|") < 5:
+            continue
+        f = [x.strip() for x in ln.split("|")[1:-1]]
+        t3 = re.findall(r"`([^`]+)`", f[2])
+        t4 = re.findall(r"`([^`]+)`", f[3])
+        arts = [t for t in t3 if "/" in t]
+        hashes = [t for t in t4 if re.fullmatch(r"[0-9a-f]{12}", t)]
+        extra = [t for t in t3 if re.fullmatch(r"[0-9a-f]{12}", t)]
+        if not arts and prev is not None:
+            arts = [prev]
+        pairs = [(arts[i], hashes[i])
+                 for i in range(min(len(arts), len(hashes)))]
+        out.append({"row": f[0], "artifacts": arts,
+                    "hashes": hashes + extra, "pairs": pairs})
+        if arts:
+            prev = arts[0]
+    return out
+
+
 def r0_rows():
     """The seven R0 rows and the sha256-12 of each row's CARRYING artifact,
-    read from v14/note-r0-founding-pin.md itself.  [instrument -- mutable]"""
+    typed here and CROSS-CHECKED at run time against the pin's own table,
+    which is parsed out of v14/note-r0-founding-pin.md by r0_pin_table().
+    Each hash is separately compared against the artifact's bytes on disk.
+    [instrument -- mutable]"""
     rows = [
         ("I1", "v13/code/rsq_reposed_square_receipt.json", "85f3cf809544"),
         ("I2", "v13/code/rsq_reposed_square_receipt.json", "85f3cf809544"),
@@ -518,18 +707,28 @@ def r0_rows():
 
 
 def r0_companions():
-    """The companion artifacts R0's I2 and I3 rows name in parentheses.
-    Their declared hashes are checked and the measured mismatch set is
-    reported exactly.  [instrument -- mutable]"""
+    """The companion artifacts R0's I2, I3 and I6 rows name in parentheses.
+    Each row carries R0's OWN recorded value and the value THIS UNIT CITES:
+    for the two v13 PAPERS the citation is the v14 LOG #4 erratum of record,
+    R0's parenthetical values for those two being stale by one commit; for the
+    other six the two coincide.  [instrument -- mutable]"""
     comp = [
-        ("I2-output", "v13/code/rsq_reposed_square_output.txt", "a5266012ebd3"),
-        ("I2-paper", "v13/paper-rsq-reposed-square.md", "07bea42728a2"),
-        ("I2-code", "v13/code/rsq_reposed_square_exact.py", "8c7705f55fa6"),
-        ("I3-output", "v13/code/top_topology_output.txt", "109302d0d036"),
-        ("I3-paper", "v13/paper-top-topology.md", "4e4cd4f11bab"),
-        ("I3-code", "v13/code/top_topology_exact.py", "81d07ffebd82"),
-        ("I6-gen", "v13/code/gen_generality_receipt.json", "e0b2f444f6a9"),
-        ("I6-psi", "v13/code/psi_curvature_receipt.json", "7c7b91a9257e"),
+        ("I2-output", "v13/code/rsq_reposed_square_output.txt",
+         "a5266012ebd3", "a5266012ebd3", "R0"),
+        ("I2-paper", "v13/paper-rsq-reposed-square.md",
+         "07bea42728a2", "f80317a25037", "v14 LOG #4 erratum"),
+        ("I2-code", "v13/code/rsq_reposed_square_exact.py",
+         "8c7705f55fa6", "8c7705f55fa6", "R0"),
+        ("I3-output", "v13/code/top_topology_output.txt",
+         "109302d0d036", "109302d0d036", "R0"),
+        ("I3-paper", "v13/paper-top-topology.md",
+         "4e4cd4f11bab", "379194959fbc", "v14 LOG #4 erratum"),
+        ("I3-code", "v13/code/top_topology_exact.py",
+         "81d07ffebd82", "81d07ffebd82", "R0"),
+        ("I6-gen", "v13/code/gen_generality_receipt.json",
+         "e0b2f444f6a9", "e0b2f444f6a9", "R0"),
+        ("I6-psi", "v13/code/psi_curvature_receipt.json",
+         "7c7b91a9257e", "7c7b91a9257e", "R0"),
     ]
     if MUTANT == "companion-drop":
         comp = comp[:-1]
@@ -560,22 +759,33 @@ def load_inheritance():
            "sha256-12 of v14/note-r0-founding-pin.md", "e9d2bedff244", r0)
 
     comp_rows = []
-    for (cid, rel, declared) in r0_companions():
+    for (cid, rel, r0decl, cited, src) in r0_companions():
         computed = sha12(REPO / rel)
-        comp_rows.append({"id": cid, "artifact": rel, "declared": declared,
-                          "computed": computed, "matches": declared == computed})
+        comp_rows.append({"id": cid, "artifact": rel,
+                          "declared_in_R0": r0decl, "cited_here": cited,
+                          "citation_source": src, "computed": computed,
+                          "matches_the_citation": cited == computed,
+                          "matches_R0": r0decl == computed})
+        if src != "R0":
+            anchor("A-LOG4-" + cid, "v14/LOG.md #4 erratum of record",
+                   "sha256-12 of " + rel, cited, computed)
+    parsed = r0_pin_table()
     TABLES["inheritance"] = {
         "rows": [{"row": rid, "artifact": rel, "sha256_12": declared}
                  for (rid, rel, declared) in rows],
         "companions": comp_rows,
-        "companion_mismatches": sorted(c["id"] for c in comp_rows
-                                       if not c["matches"]),
+        "companion_citation_mismatches":
+            sorted(c["id"] for c in comp_rows
+                   if not c["matches_the_citation"]),
+        "companions_superseded_by_the_LOG4_erratum":
+            sorted(c["id"] for c in comp_rows if c["citation_source"] != "R0"),
+        "pin_table_parsed": parsed,
     }
     data = {}
     for rid, p in seen.items():
         if p.suffix == ".json":
             data[rid] = json.loads(p.read_text())
-    return data, comp_rows
+    return data, comp_rows, parsed
 
 
 # ===========================================================================
@@ -808,8 +1018,20 @@ def build_atlas(A):
                     if drawn_is_unique(adm):
                         tab[(a, b)] = adm[0]
             cells.append({"k": k, "rule": rule, "tab": tab,
-                          "group_order": len(grp)})
+                          "group_order": len(grp), "gen": gen})
     return cells
+
+
+def group_orbits(grp, n):
+    """The orbits of a permutation group given as an explicit element list."""
+    orbs, seen = [], set()
+    for i in range(n):
+        if i in seen:
+            continue
+        o = tuple(sorted({g[i] for g in grp}))
+        seen.update(o)
+        orbs.append(o)
+    return orbs
 
 
 def cell_is_coherent(p1, p2, p3, n):
@@ -840,6 +1062,7 @@ def geometric_cells(A, cells, eidx):
     for ci, c in enumerate(cells):
         bykey[c["k"]].append(ci)
     F, Fcoh = [], []
+    skipped = {}
     for k in sorted(bykey):
         cis = bykey[k]
         verts = set()
@@ -861,7 +1084,10 @@ def geometric_cells(A, cells, eidx):
                 key = (eidx[(a, b, c1)], eidx[(b, c, c2)], eidx[(a, c, c3)])
                 F.append(key)
                 if cell_is_coherent(p1, p2, p3, n):
-                    Fcoh.append(key)
+                    if MUTANT == "coh-block-uniform" and not skipped.get(k):
+                        skipped[k] = True
+                    else:
+                        Fcoh.append(key)
     if MUTANT == "cell-drop" and F:
         F = F[:-1]
     return F, Fcoh
@@ -984,18 +1210,22 @@ def phi_route_2(A, cells):
     return Fr(len(acc), n * (n - 1) // 2)
 
 
-def ncoh_recount(A, cells, edges, eidx, faces_coh):
-    """An INDEPENDENT recount of the coherent 2-cells: it rebuilds each
-    2-cell's three drawn maps from the EDGE table alone (edge -> its cell and
-    its endpoints) and re-composes them, touching nothing the construction
-    flagged.  [instrument -- mutable]"""
+def ncoh_recount(A, cells, edges, eidx, faces_all):
+    """An INDEPENDENT recount of the coherent 2-cells.  It ranges over the
+    UNFILTERED 2-cell list -- every 2-cell of N, not the list the construction
+    already flagged -- rebuilds each cell's three drawn maps from the EDGE
+    table alone (edge -> its coordinate cell and its endpoints), re-composes
+    them, and counts the coherent ones.  A coherent cell wrongly EXCLUDED by
+    the construction is therefore caught, which a recount over the filtered
+    list structurally cannot do (RUNBOOK section 14 addendum #219).
+    [instrument -- mutable]"""
     bump()
     n = A["n"]
     emap = {}
     for idx, (a, b, ci) in enumerate(edges):
         emap[idx] = (a, b, ci)
     cnt = 0
-    for (e1, e2, e3) in faces_coh:
+    for (e1, e2, e3) in faces_all:
         (a1, b1, c1) = emap[e1]
         (a2, b2, c2) = emap[e2]
         (a3, b3, c3) = emap[e3]
@@ -1129,7 +1359,7 @@ def measure(A):
     inv_all = complex_invariants(n, edges, F)
     inv_coh = complex_invariants(n, edges, Fcoh)
     chosen = b2_complex_choice(inv_all, inv_coh)
-    ncoh2 = ncoh_recount(A, cells, edges, eidx, Fcoh)
+    ncoh2 = ncoh_recount(A, cells, edges, eidx, F)
     spec, specrows = spectral_profile(A)
     dimp, dimagree, degs = dimension_profile(A, cells)
     ncoh_den = Fr(len(Fcoh), len(edges)) if edges else None
@@ -1316,14 +1546,18 @@ def trajectory_rows(family, meas):
     return rows
 
 
-def verdict_head(stabilised):
-    """[instrument -- mutable]"""
+def verdict_head(stabilised, copying=False):
+    """The head is a STABILIZES head iff the measured stabilised set is
+    non-empty; among the STABILIZES heads it names the MECHANISM exactly when
+    the copying census is measured to hold.  [instrument -- mutable]"""
     flip = (MUTANT == "verdict-flip")
     hit = len(stabilised) > 0
     if flip:
         hit = not hit
-    return "R1-STABILIZES-AT" if hit else \
-        "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE"
+    if not hit:
+        return "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE"
+    return ("R1-STABILIZES-BY-DISJOINT-COPYING-AT" if copying
+            else "R1-STABILIZES-AT")
 
 
 def qualifier_source(computed):
@@ -1334,11 +1568,546 @@ def qualifier_source(computed):
     return computed
 
 
-def gateway_member(members_with_phi_lt_1):
-    """[instrument -- mutable]"""
+def gateway_component_search(rows):
+    """THE SUCCESSOR CRITERION, computed: the first member carrying a
+    connected COMPONENT whose overlap graph is INCOMPLETE.  The inherited
+    criterion -- the first member with phi < 1 -- cannot fail at an arena of
+    the declared shape and is therefore not a selection; this one can return
+    nothing, and does.  [instrument -- mutable]"""
     if MUTANT == "gateway-lax":
         return "A3"
-    return members_with_phi_lt_1[0] if members_with_phi_lt_1 else None
+    for r in rows:
+        if not r["every_component_is_complete"]:
+            return r["arena"]
+    return None
+
+
+def emit_trajectory(names, rows):
+    """THE TRAJECTORY TABLE AS EMITTED.  This is the one object the
+    completeness and value gates check AND the object the receipt and the
+    paper render from (RUNBOOK section 13 addendum, render from the gated
+    object).  [instrument -- mutable]"""
+    out = {nm: [canon(v) for v in rows.get(nm, [])] for nm in names}
+    if MUTANT == "traj-cell":
+        for nm in names:
+            if out.get(nm):
+                out[nm][0] = out[nm][0] + "0"
+                break
+    return out
+
+
+def emit_verdict(head, segments):
+    """THE VERDICT STRING AS EMITTED.  The gate rebuilds this string segment
+    by segment from the receipt-facing measured tables and compares for
+    EQUALITY (RUNBOOK section 14 addendum, containment is not equality).
+    [instrument -- mutable]"""
+    segs = list(segments)
+    if MUTANT == "verdict-swap":
+        items = segs[0].split(";")
+        if len(items) >= 2 and "=" in items[0] and "=" in items[1]:
+            n1, v1 = items[0].split("=", 1)
+            n2, v2 = items[1].split("=", 1)
+            items[0] = n1 + "=" + v2
+            items[1] = n2 + "=" + v1
+            segs[0] = ";".join(items)
+    if MUTANT == "verdict-gateway":
+        segs = [("R2-GATEWAY=A3" if s.startswith("R2-GATEWAY=") else s)
+                for s in segs]
+    if MUTANT == "verdict-append":
+        segs = [(s.replace("MOVING", "MOVING-AND-CONVERGENT")
+                 if s.startswith("DIVERGENT=") else s) for s in segs]
+    return head + "-<" + "|".join(segs) + ">"
+
+
+# ===========================================================================
+# 8.5  THE COPYING MECHANISM, THE ATLAS SWEEP, THE BASEPOINT AUDIT AND THE
+#      NON-COPIED HUNT.
+# ===========================================================================
+
+def growth_member(width, m):
+    """One member of the extracted growth rule, built by that rule alone."""
+    n = width * m + 1
+    return make_arena("L%d" % m, n,
+                      arena_sigma("growth", n, m=m, width=width),
+                      arena_blocks("growth", n, m=m, width=width),
+                      "the growth family's member L_%d" % m)
+
+
+def _census(A, cells, edges, und, ia, ic):
+    """The counting census of one arena's atlas, assembled from cell lists and
+    complex invariants already computed."""
+    n = A["n"]
+    comps = components_unionfind(n, [(a, b) for (a, b, _c) in edges])
+    where = {}
+    for k, blk in enumerate(A["blocks"]):
+        for x in blk:
+            where[x] = k
+    cross = sum(1 for (a, b, _c) in edges
+                if where.get(a, -1) != where.get(b, -2))
+    poss = sum(len(c) * (len(c) - 1) // 2 for c in comps)
+    return {"arena": A["name"], "n": n, "blocks": len(A["blocks"]),
+            "E": len(edges), "ov": len(und), "F": ia["F"], "Fcoh": ic["F"],
+            "NE": ia["E"], "NF": ia["F"], "NcohE": ic["E"], "NcohF": ic["F"],
+            "b0": ia["b0"], "b1N": ia["b1"], "b2N": ia["b2"],
+            "b0coh": ic["b0"], "b1coh": ic["b1"], "b2coh": ic["b2"],
+            "cross_block_one_cells": cross,
+            "component_sizes": sorted(len(c) for c in comps),
+            "pairs_inside_components": poss,
+            "PHI": Fr(len(und), n * (n - 1) // 2),
+            "NCOH_DENSITY": Fr(ic["F"], len(edges)) if edges else None,
+            "B2_DENSITY": Fr(ic["b2"], ic["F"]) if ic["F"] else None,
+            "_cells": cells, "_edges": edges, "_und": und, "_comps": comps}
+
+
+def full_census(A):
+    """Every counting quantity of one arena's atlas, measured from scratch."""
+    bump()
+    n = A["n"]
+    cells = build_atlas(A)
+    edges, eidx = nerve_edges(cells)
+    F, Fcoh = geometric_cells(A, cells, eidx)
+    und = overlap_graph(cells)
+    c = _census(A, cells, edges, und, complex_invariants(n, edges, F),
+                complex_invariants(n, edges, Fcoh))
+    c["spectral"] = ()
+    return c
+
+
+def census_from_measurement(A, m):
+    """The same census read off a measurement already taken at that member:
+    nothing this unit measures is measured twice."""
+    c = _census(A, m["_cells"], m["_edges"], overlap_graph(m["_cells"]),
+                m["N"], m["N_coh"])
+    c["spectral"] = m["SPECTRAL_PROFILE"]
+    return c
+
+
+COPY_FORCING_KEYS = ["E", "ov", "F", "Fcoh", "b0", "b1N", "b2N", "b0coh",
+                     "b1coh", "b2coh"]
+
+TAIL_FORCED_KEYS = ["E", "ov", "F", "Fcoh", "NE", "NF", "b2N", "b1N",
+                    "NcohE", "NcohF", "b2coh", "b1coh", "b0"]
+
+
+def copy_forcing_prediction(c1, c2, key, m):
+    """The affine law a*m + b for a counting quantity, fitted from the
+    ONE-BLOCK census (m = 1) and the two-block census (m = 2) ALONE: a is the
+    per-block increment and b the isolated basepoint's constant share.  Every
+    later member is then a PREDICTION, not a fit.  [instrument -- mutable]"""
+    a = c2[key] - c1[key]
+    b = c1[key] - a
+    if MUTANT == "copy-law":
+        a, b = c2[key], 0
+    return a * m + b
+
+
+def block_isomorphism_rows(A):
+    """THE MEASURED INTERTWINER.  For each block B_k the candidate bijection
+    beta_k : B_1 -> B_k is the one the declared cyclic orders name (i-th label
+    to i-th label); it is measured to intertwine Sigma and to carry B_1's
+    declared cyclic order to B_k's.  This -- not the constancy -- is the
+    substrate fact the stabilisation rests on."""
+    n, S = A["n"], A["Sigma"]
+    B1 = A["blocks"][0]
+    rows = []
+    for k, Bk in enumerate(A["blocks"]):
+        same = len(Bk) == len(B1)
+        beta = {B1[i]: Bk[i] for i in range(len(B1))} if same else {}
+        inter = same and all(beta.get(S[x]) == S[beta[x]] for x in B1)
+        order = same and all(beta[B1[(i + 1) % len(B1)]] ==
+                             Bk[(i + 1) % len(Bk)] for i in range(len(B1)))
+        rows.append({"block": k, "size": len(Bk), "same_size_as_block_1": same,
+                     "beta_intertwines_Sigma": bool(inter),
+                     "beta_carries_the_cyclic_order": bool(order)})
+    return rows
+
+
+def mixed_block_family(width, ms):
+    """THE MIXED-BLOCK CONTROL MX_m: {0} + m copies of the standard block +
+    ONE further block of three labels carrying a 3-cycle of Sigma.  Pure
+    disjoint addition, Sigma-stable blocks, b_0 = blocks + 1 -- and blocks
+    that are NOT isomorphic to one another.  [instrument -- mutable]"""
+    out = []
+    for m in ms:
+        if MUTANT == "mx-lax":
+            B = growth_member(width, m + 1)
+            out.append(make_arena("MX%d" % m, B["n"], B["Sigma"],
+                                  B["blocks"], "mixed-block control"))
+            continue
+        odd = 3
+        n = 1 + width * m + odd
+        base = arena_sigma("growth", width * m + 1, m=m, width=width)
+        s = list(base) + list(range(width * m + 1, n))
+        blk = list(range(width * m + 1, n))
+        for i, x in enumerate(blk):
+            s[x] = blk[(i + 1) % odd]
+        blocks = list(arena_blocks("growth", width * m + 1, m=m, width=width))
+        blocks.append(tuple(blk))
+        out.append(make_arena("MX%d" % m, n, tuple(s), blocks,
+                              "mixed-block control"))
+    return out
+
+
+def alternative_atlas_cells(A, variant):
+    """THE ALTERNATIVE DECLARED ATLASES, each built with this unit's own drawn
+    rule, 2-cell rule and invariant definitions verbatim.  [instrument --
+    mutable]"""
+    n, S = A["n"], A["Sigma"]
+    if MUTANT == "atlas-lax":
+        return build_atlas(A)
+    cells = []
+    if variant == "ATLAS-C":
+        cells = list(build_atlas(A))
+        moved = list(range(1, n))
+        gen = block_cycle(n, moved)
+        grp = cyclic_group(gen, n, 8 * n + 8)
+        tab = {}
+        for a in range(n):
+            for b in range(n):
+                if a != b:
+                    adm = [pi for pi in grp if pi[a] == b]
+                    if drawn_is_unique(adm):
+                        tab[(a, b)] = adm[0]
+        cells.append({"k": -1, "rule": "FULL", "tab": tab,
+                      "group_order": len(grp)})
+        return cells
+    for k, blk in enumerate(A["blocks"]):
+        lst = list(blk)
+        if variant == "ALT-B":
+            lst = lst[::-1]
+        if variant == "ALT-C":
+            lst = [lst[(2 * i) % len(lst)] for i in range(len(lst))]
+        g = block_cycle(n, lst)
+        Sk = local_sigma(S, blk, n)
+        if variant == "ALT-D":
+            seen = {pident(n)}
+            frontier = [pident(n)]
+            while frontier:
+                nxt = []
+                for x in frontier:
+                    for gg in (g, Sk):
+                        y = pcomp(gg, x)
+                        if y not in seen:
+                            seen.add(y)
+                            nxt.append(y)
+                frontier = nxt
+            rules = (("GEN", None),)
+            grps = {"GEN": sorted(seen)}
+        elif variant == "B1":
+            rules = (("FULL", g),)
+            grps = None
+        elif variant == "ALT-A":
+            rules = (("FULL", g), ("REAL", pcomp(g, Sk)))
+            grps = None
+        else:
+            rules = (("FULL", g), ("REAL", pcomp(Sk, g)))
+            grps = None
+        for rule, gen in rules:
+            grp = grps[rule] if grps else cyclic_group(gen, n, 8 * n + 8)
+            tab = {}
+            for a in range(n):
+                for b in range(n):
+                    if a != b:
+                        adm = [pi for pi in grp if pi[a] == b]
+                        if drawn_is_unique(adm):
+                            tab[(a, b)] = adm[0]
+            cells.append({"k": k, "rule": rule, "tab": tab,
+                          "group_order": len(grp)})
+    return cells
+
+
+def basepoint_deleted(A):
+    """The labels the basepoint audit removes: the arena's distinguished
+    label, Sigma-fixed and in no coordinate cell's support.  [instrument --
+    mutable]"""
+    if MUTANT == "bp-lax":
+        return set()
+    return {0}
+
+
+def basepoint_audit_row(A, cens):
+    """The five registered invariants recomputed with the basepoint deleted:
+    the profiles renormalised over the surviving charts and phi taken over the
+    surviving chart pairs.  The two densities read no basepoint at all and are
+    carried through unchanged, which is itself the point."""
+    n, S = A["n"], A["Sigma"]
+    gone = basepoint_deleted(A)
+    keep = [v for v in range(n) if v not in gone]
+    kn = len(keep)
+    und = [(a, b) for (a, b) in cens["_und"] if a in keep and b in keep]
+    deg = defaultdict(int)
+    for (a, b) in und:
+        deg[a] += 1
+        deg[b] += 1
+    dist = defaultdict(int)
+    for v in keep:
+        dist[deg[v]] += 1
+    dimp = tuple(sorted((d, Fr(c, kn)) for d, c in dist.items()))
+    profs = set()
+    x = pcomp(S, pident(n))
+    while x != pident(n):
+        mu = defaultdict(int)
+        for c in cycles_of(x):
+            if all(v in gone for v in c):
+                continue
+            for d in range(1, len(c) + 1):
+                if len(c) % d == 0:
+                    mu[d] += 1
+        profs.add(tuple(sorted((d, Fr(mu[d], kn)) for d in mu)))
+        x = pcomp(S, x)
+    return {"arena": A["name"], "charts_kept": kn,
+            "PHI": Fr(len(und), kn * (kn - 1) // 2),
+            "NCOH_DENSITY": cens["NCOH_DENSITY"],
+            "B2_DENSITY": cens["B2_DENSITY"],
+            "SPECTRAL_PROFILE": tuple(sorted(profs)),
+            "DIMENSION_PROFILE": dimp}
+
+
+NON_COPIED_GRID = [
+    ("NCOH_DENSITY", "copied", ""),
+    ("B2_DENSITY", "copied", ""),
+    ("B2_N_PER_TWO_CELL", "copied", ""),
+    ("B1_NCOH_DENSITY", "copied", ""),
+    ("ONE_CELLS_PER_OVERLAP_EDGE", "copied", ""),
+    ("TWO_CELLS_PER_ONE_CELL", "copied", ""),
+    ("COHERENT_FRACTION", "copied", ""),
+    ("B2_NCOH_PER_ONE_CELL", "copied", ""),
+    ("OVERLAP_EDGES_PER_TWO_CELL", "copied", ""),
+    ("B1_NCOH_PER_ONE_CELL", "copied", ""),
+    ("ONE_CELLS_PER_CHART", "basepoint-involving", ""),
+    ("COHERENT_PER_CHART", "basepoint-involving", ""),
+    ("B2_NCOH_PER_CHART", "basepoint-involving", ""),
+    ("OVERLAP_EDGES_PER_CHART", "basepoint-involving", ""),
+    ("COMPONENTS_PER_CHART", "basepoint-involving", ""),
+    ("SPECTRAL_WEIGHT_AT_PHI_1", "basepoint-involving", ""),
+    ("SPECTRAL_WEIGHT_AT_PHI_3", "basepoint-involving", ""),
+    ("DIMENSION_WEIGHT_AT_FULL_LINK", "basepoint-involving", ""),
+    ("PHI", "cross-block", ""),
+    ("COMPONENTWISE_OVERLAP_COMPLETENESS", "cross-block",
+     "DEGENERATE-AT-1: every component is a complete graph"),
+    ("CROSS_BLOCK_ONE_CELL_DENSITY", "cross-block",
+     "IDENTICALLY-ZERO: no 1-cell crosses a block"),
+    ("B0_NCOH_OVER_B0_N", "cross-block",
+     "DEGENERATE-AT-1: the two complexes share a 1-skeleton"),
+    ("COMPONENT_SIZE_TYPES", "cross-block",
+     "THE-COPYING-STATEMENT-ITSELF: two types, the copies and the basepoint"),
+    ("LARGEST_COMPONENT_CHART_SHARE", "cross-block", ""),
+]
+
+
+def non_copied_grid_rows():
+    """The 24 declared quantities with their DECLARED class and vacuity
+    reason, fixed before any is evaluated.  [instrument -- mutable]"""
+    rows = [list(r) for r in NON_COPIED_GRID]
+    if MUTANT == "grid-lax":
+        for r in rows:
+            if r[1] == "basepoint-involving":
+                r[1] = "copied"
+                break
+    return rows
+
+
+def grid_value(name, c):
+    """One quantity of the non-copied grid at one member, from its census."""
+    n = c["n"]
+    prof = c["spectral"][0] if c["spectral"] else ()
+    w = {d: v for (d, v) in prof}
+    big = max(c["component_sizes"])
+    table = {
+        "NCOH_DENSITY": Fr(c["Fcoh"], c["E"]),
+        "B2_DENSITY": Fr(c["b2coh"], c["Fcoh"]),
+        "B2_N_PER_TWO_CELL": Fr(c["b2N"], c["F"]),
+        "B1_NCOH_DENSITY": Fr(c["b1coh"], c["Fcoh"]),
+        "ONE_CELLS_PER_OVERLAP_EDGE": Fr(c["E"], c["ov"]),
+        "TWO_CELLS_PER_ONE_CELL": Fr(c["F"], c["E"]),
+        "COHERENT_FRACTION": Fr(c["Fcoh"], c["F"]),
+        "B2_NCOH_PER_ONE_CELL": Fr(c["b2coh"], c["E"]),
+        "OVERLAP_EDGES_PER_TWO_CELL": Fr(c["ov"], c["F"]),
+        "B1_NCOH_PER_ONE_CELL": Fr(c["b1coh"], c["E"]),
+        "ONE_CELLS_PER_CHART": Fr(c["E"], n),
+        "COHERENT_PER_CHART": Fr(c["Fcoh"], n),
+        "B2_NCOH_PER_CHART": Fr(c["b2coh"], n),
+        "OVERLAP_EDGES_PER_CHART": Fr(c["ov"], n),
+        "COMPONENTS_PER_CHART": Fr(c["b0"], n),
+        "SPECTRAL_WEIGHT_AT_PHI_1": w.get(1, Fr(0)),
+        "SPECTRAL_WEIGHT_AT_PHI_3": w.get(3, Fr(0)),
+        "DIMENSION_WEIGHT_AT_FULL_LINK": Fr(big, n),
+        "PHI": c["PHI"],
+        "COMPONENTWISE_OVERLAP_COMPLETENESS":
+            Fr(c["ov"], c["pairs_inside_components"]),
+        "CROSS_BLOCK_ONE_CELL_DENSITY": Fr(c["cross_block_one_cells"], c["E"]),
+        "B0_NCOH_OVER_B0_N": Fr(c["b0coh"], c["b0"]),
+        "COMPONENT_SIZE_TYPES": Fr(len(set(c["component_sizes"])), 1),
+        "LARGEST_COMPONENT_CHART_SHARE": Fr(big, n),
+    }
+    return table[name]
+
+
+def alt_denominators(c):
+    """The pin's LITERAL denominator readings, computed beside the delivered
+    ones: coherent 2-cells per DRAWN CHART PAIR (the overlap-graph edge
+    count), and b_2 of N_coh per 2-cell of N.  [instrument -- mutable]"""
+    if MUTANT == "den-lax":
+        return Fr(c["Fcoh"], c["E"]), Fr(c["b2coh"], c["Fcoh"])
+    return Fr(c["Fcoh"], c["ov"]), Fr(c["b2coh"], c["F"])
+
+
+def tail_window(family, K):
+    """The homogeneous tail: the last K members of the built family.
+    [instrument -- mutable]"""
+    if MUTANT == "tail-lax":
+        return family[:K]
+    return family[-K:]
+
+
+def overlap_completeness_row(A, cens):
+    """Componentwise overlap completeness: drawn chart pairs over the pairs
+    available INSIDE the connected components.  A value of 1 says every
+    component is a complete graph -- so phi < 1 is achieved by disconnection
+    alone and carries no locality content."""
+    edgeset = set(cens["_und"])
+    allc = True
+    for comp in cens["_comps"]:
+        for (a, b) in combinations(comp, 2):
+            if (a, b) not in edgeset:
+                allc = False
+    return {"arena": A["name"], "components": len(cens["_comps"]),
+            "component_sizes": cens["component_sizes"],
+            "completeness": Fr(cens["ov"], cens["pairs_inside_components"])
+            if cens["pairs_inside_components"] else None,
+            "every_component_is_complete": allc,
+            "phi_upper_bound_from_the_isolated_basepoint":
+                Fr(A["n"] - 2, A["n"]),
+            "phi": cens["PHI"],
+            "phi_below_the_forced_bound":
+                cens["PHI"] <= Fr(A["n"] - 2, A["n"])}
+
+
+def derive_from_trajectory(names, kinds, traj, K):
+    """The unit's own stabilisation derivation, applied to ANY trajectory:
+    the stabilised set, each invariant's measured failure mode, and the head.
+    Used for the declared family, for every alternative atlas, and for the
+    tail restriction, so that the sweeps are read by the same rule."""
+    stab, modes = {}, {}
+    for nm in names:
+        vals = traj.get(nm, [])
+        if not vals:
+            modes[nm] = "UNDEFINED-AT-A-MEMBER"
+            continue
+        tail = vals[-K:]
+        if any(v is None for v in tail):
+            modes[nm] = "UNDEFINED-AT-A-MEMBER"
+        elif all(v == tail[0] for v in tail):
+            modes[nm] = "CONSTANT"
+            stab[nm] = tail[0]
+        else:
+            modes[nm] = (scalar_mode(vals) if kinds[nm] == "scalar"
+                         else profile_mode(vals))
+    return stab, modes
+
+
+def rebuild_window_qualifier(T):
+    """The window qualifier, rebuilt from the stabilisation table's raw
+    numbers -- never from a stored string."""
+    return ("WINDOW=K=%d-OF-%d-MEMBERS-%s-ALL-%d-ON-ONE-GENERATOR-RULE"
+            % (T["K"], T["family_length"], T["cap"],
+               T["window_members_on_one_generator_rule"]))
+
+
+def rebuild_gateway(oc_rows):
+    """The successor criterion, recomputed from the receipt-facing overlap-
+    completeness table: the first member carrying a component whose overlap
+    graph is incomplete, or nothing."""
+    for r in oc_rows:
+        if not r["every_component_is_complete"]:
+            return r["arena"]
+    return None
+
+
+def verdict_head_from_tables(T):
+    """The head, recomputed from the receipt-facing stabilisation table."""
+    if not T["stabilised"]:
+        return "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE"
+    return ("R1-STABILIZES-BY-DISJOINT-COPYING-AT" if T["copying_measured"]
+            else "R1-STABILIZES-AT")
+
+
+def format_verdict_segments(T, window_text, gateway_name):
+    """THE VERDICT'S SEGMENTS, every one computed from the measured
+    stabilisation table.  The emitted string and the string the verdict gate
+    rebuilds are both formatted here, from two independently constructed
+    sources: the live measurement objects and the receipt-facing tables."""
+    vals = []
+    for nm in T["registered_names"]:
+        if nm not in T["stabilised"]:
+            continue
+        v = T["values"][nm]
+        if nm == "NCOH_DENSITY":
+            vals.append("%s=%s-PER-INCIDENCE=%s-PER-DRAWN-PAIR"
+                        % (nm, v, T["alt_NCOH_DENSITY"]))
+        elif nm == "B2_DENSITY":
+            vals.append("%s=%s-PER-N_COH-2-CELL=%s-PER-N-2-CELL"
+                        % (nm, v, T["alt_B2_DENSITY"]))
+        else:
+            vals.append("%s=%s" % (nm, v))
+    seg = [";".join(vals) if vals else
+           "ALL-%d-REGISTERED-INVARIANTS-DIVERGE" % T["registered"]]
+    seg.append("MECHANISM=DISJOINT-BLOCK-ADDITION:B0=BLOCKS+1-AT-%d-OF-%d"
+               ";PER-BLOCK-CENSUS-CONSTANT(E=%s;F_COH=%s;B2=%s)"
+               ";RATIO-OF-ADDITIVES-%s"
+               % (T["b0_equals_blocks_plus_one_at"], T["members"],
+                  T["per_block_one_cells"], T["per_block_coherent_two_cells"],
+                  T["per_block_b2_of_N_coh"],
+                  "FORCED" if T["ratio_of_additives_forced"] else "UNFORCED"))
+    seg.append("MEASURED=BLOCK-ISOMORPHISM-BY-INTERTWINER-AT-%d-OF-%d"
+               ";PER-BLOCK-CENSUS;ATLAS-SWEEP-OF-%d-DECLARATIONS"
+               % (T["blocks_isomorphic_at"], T["members"],
+                  T["atlas_declarations_swept"]))
+    seg.append("FORCED=THE-CONSTANCY")
+    seg.append("INDEPENDENT-CONTENT=ONE-BLOCK-CENSUS"
+               "(TAIL-DATA-POINTS-FORCED=%d-OF-%d)"
+               % (T["window_tail_data_points_forced"],
+                  T["window_tail_data_points"]))
+    div = []
+    for nm in T["registered_names"]:
+        if nm in T["stabilised"]:
+            continue
+        div.append("%s:%s%s" % (nm, T["modes"][nm], T["causes"][nm]))
+    seg.append("DIVERGENT=" + ";".join(div))
+    seg.append("BASEPOINT-DELETED-STABILISING-SET=%d-OF-%d"
+               ";SIXTH-STABILISER=B1_NCOH_DENSITY=%s-PIN-EXCLUDED"
+               ";SCORE-RESTATED=%d-OF-%d"
+               % (T["basepoint_deleted_stabilised"], T["registered"],
+                  T["sixth_stabiliser"],
+                  T["registered_plus_excluded_stabilising"],
+                  T["registered_plus_excluded"]))
+    seg.append(window_text)
+    seg.append("FUNCTORIALITY=%s-TAIL-RESTRICTED-%s"
+               % (T["functoriality"], T["tail_functoriality"]))
+    seg.append("ATLAS=THIS-UNITS-DECLARATION-VERDICT-DETERMINING"
+               "(TRANSPORT-CONVENTION-INVARIANT-%d-OF-%d"
+               ";CELL-SET-VARIANT-VALUES-MOVE-TO-%s-AND-%s"
+               ";NON-BLOCK-LOCAL-VARIANT-STABILISES-%d-OF-%d-HEAD-FLIPS-TO-"
+               "NO-CONTINUUM-LIMIT"
+               ";CELL-STRUCTURE-VARIANT-BOTH-DENSITIES-%s)"
+               % (T["atlas_transport_conventions_invariant"],
+                  T["atlas_transport_conventions_swept"],
+                  T["atlas_cell_set_variant_values"][0],
+                  T["atlas_cell_set_variant_values"][1],
+                  T["atlas_non_block_local_stabilised"], T["registered"],
+                  "UNDEFINED-AT-A-MEMBER"
+                  if T["atlas_cell_structure_variant_undefined"]
+                  else "DEFINED"))
+    seg.append("R2-GATEWAY=%s:PHI<1-FORCED-AT-%d-OF-%d"
+               ";COMPONENTWISE-OVERLAP-COMPLETENESS=1-AT-%d-OF-%d"
+               ";SUCCESSOR-CRITERION=FIRST-COMPONENT-WITH-AN-INCOMPLETE-"
+               "OVERLAP-GRAPH-%s"
+               ";SUCCESSOR-RECIPE=DECLARE-CELLS-WITH-PARTIALLY-OVERLAPPING-"
+               "REGULAR-ORBITS"
+               % (gateway_name, T["phi_forced_at"], T["members_and_probes"],
+                  T["componentwise_complete_at"], T["members_and_probes"],
+                  "EMPTY" if gateway_name == "NONE-EARNED" else "NON-EMPTY"))
+    return seg
 
 
 # ===========================================================================
@@ -1479,6 +2248,31 @@ def relabel_arena(A, tau):
     return make_arena(A["name"] + "-relabelled", n, S, blocks, "relabelled")
 
 
+def forced_anchor_sweep():
+    """THE MEASURED FORCING of the two delta-fixed-point anchors: over the
+    whole of Sym(4) and Sym(5), for EVERY symmetry Sigma and EVERY completion
+    q, delta(q) = sigma(q)^-1 q fixes q iff q is the identity.  The anchors
+    that compare a recorded fixed-point count against a recomputation can
+    therefore only ever test that the recorded value is 1."""
+    rows = []
+    for k in (4, 5):
+        perms = list(permutations(range(k)))
+        counts = set()
+        nonid = 0
+        for S in perms:
+            c = 0
+            for q in perms:
+                if delta_of(S, q) == q:
+                    c += 1
+                    if q != pident(k):
+                        nonid += 1
+            counts.add(c)
+        rows.append({"symmetric_group": k, "pairs": len(perms) ** 2,
+                     "distinct_fixed_point_counts": sorted(counts),
+                     "non_identity_fixed_points": nonid})
+    return rows
+
+
 def run():
     global _FROZEN
     prog("declarations")
@@ -1492,7 +2286,7 @@ def run():
     _FROZEN = True
 
     prog("inheritance")
-    data, comp_rows = load_inheritance()
+    data, comp_rows, parsed_pin = load_inheritance()
     rows = r0_rows()
     gate("G02", "measurement",
          "THE R0 INHERITANCE IS VERIFIED AT RUN TIME AND THE CENSUS IS "
@@ -1508,32 +2302,84 @@ def run():
           "row_ids": [r[0] for r in rows],
           "anchors_passed": sum(1 for a in ANCHORS if a["passed"])})
 
-    mismatches = sorted(c["id"] for c in comp_rows if not c["matches"])
+    errata = [c for c in comp_rows if c["citation_source"] != "R0"]
+    plain = [c for c in comp_rows if c["citation_source"] == "R0"]
     gate("G03", "measurement",
-         "THE COMPANION-ARTIFACT CENSUS IS COMPLETE AND ITS MEASURED "
-         "MISMATCH SET IS REPORTED EXACTLY.  R0's I2, I3 and I6 rows name "
-         "companion artifacts in parentheses; every one of them is hashed "
-         "here and the set whose recorded hash does NOT reproduce is "
-         "computed and printed rather than smoothed.  The gate is on the "
-         "CENSUS being complete -- a dropped companion is caught -- and the "
-         "mismatch set is carried as a finding for the adjudicator, because "
-         "no number of this unit is read from a companion artifact",
-         len(comp_rows) == 8,
+         "THE COMPANION-ARTIFACT CENSUS IS COMPLETE AND EVERY COMPANION IS "
+         "HASHED AGAINST THE VALUE THIS UNIT CITES.  R0's I2, I3 and I6 rows "
+         "name companion artifacts in parentheses.  For six of them the "
+         "citation is R0's own recorded value; for the two v13 PAPERS the "
+         "citation is the v14 LOG #4 ERRATUM OF RECORD, R0's parenthetical "
+         "values for those two being stale by one commit.  The gate measures "
+         "three things at once: the census is complete, so a dropped "
+         "companion is caught; every companion's cited hash reproduces "
+         "against the bytes on disk; and the erratum set is exactly the set "
+         "on which the cited value DIFFERS from R0's own -- so a silent "
+         "substitution of an erratum where none was recorded, or a failure to "
+         "apply one where it was, is caught by the same predicate",
+         len(comp_rows) == 8
+         and all(c["matches_the_citation"] for c in comp_rows)
+         and all(c["matches_R0"] for c in plain)
+         and all(not c["matches_R0"] for c in errata)
+         and len(errata) == 2,
          {"companions_censused": len(comp_rows),
-          "mismatching": mismatches,
-          "matching": sorted(c["id"] for c in comp_rows if c["matches"])})
-    if mismatches:
-        disclose("X-COMPANION-HASH",
-                 "R0's parenthetical companion hashes for the two v13 PAPERS "
-                 "do not reproduce against the artifacts on disk.  What this "
-                 "instrument measures is exactly that: the declared and the "
-                 "computed sha256-12 of each companion, and the set on which "
-                 "they differ.  The rows' CARRYING receipts -- the primary "
-                 "key of every R0 row -- all verify, all six other "
-                 "companions verify, and no number of this unit is read from "
-                 "a paper, so the run proceeds and the delta is reported "
-                 "here rather than silently ignored.",
-                 [c for c in comp_rows if not c["matches"]])
+          "cited_and_reproducing": sorted(c["id"] for c in comp_rows
+                                          if c["matches_the_citation"]),
+          "superseded_by_the_LOG4_erratum": sorted(c["id"] for c in errata),
+          "rows": comp_rows})
+    disclose("X-COMPANION-HASH",
+             "R0's parenthetical companion hashes for the two v13 PAPERS do "
+             "not reproduce against the artifacts on disk, and this unit "
+             "cites the v14 LOG #4 erratum of record for them instead.  What "
+             "the instrument measures is exactly that: R0's recorded value, "
+             "the erratum's value, and the computed sha256-12, for each of "
+             "the eight companions.  The provenance is that R0's two values "
+             "are each the paper's hash at its REPAIR commit and each paper "
+             "was edited once more at its terminal commit.  The rows' "
+             "CARRYING receipts -- the primary key of every R0 row -- all "
+             "verify against R0 itself, all six other companions verify "
+             "against R0, and no number of this unit is read from a paper.",
+             comp_rows)
+
+    parsed_pairs = sorted({p for r in parsed_pin for p in r["pairs"]})
+    parsed_hashes = sorted({h for r in parsed_pin for h in r["hashes"]})
+    parsed_paths = sorted({a for r in parsed_pin for a in r["artifacts"]})
+    typed_pairs = sorted({(rel, h) for (_i, rel, h) in rows} |
+                         {(c[1], c[2]) for c in r0_companions()})
+    typed_hashes = sorted({h for (_i, _r, h) in rows} |
+                          {c[2] for c in r0_companions()})
+    typed_paths = sorted({rel for (_i, rel, _h) in rows} |
+                         {c[1] for c in r0_companions()})
+    gate("G34", "measurement",
+         "THE TYPED INHERITANCE TABLE IS GATED AGAINST THE PIN'S OWN TABLE, "
+         "PARSED AT RUN TIME.  The founding pin's markdown inheritance table "
+         "is parsed here -- rows split on pipes, artifacts and twelve-hex "
+         "hashes taken from the backticked tokens, a row naming no artifact "
+         "inheriting the previous row's by the pin's own words -- and three "
+         "things are measured: every (artifact, hash) PAIR the pin states "
+         "appears in the typed table; the SET of hashes the pin records "
+         "equals the set of hashes this unit types, in both directions, so a "
+         "typed hash absent from the pin and a pinned hash absent from the "
+         "code are equally caught; and every path the pin names is one this "
+         "run hashes.  This is what the provenance docstring promises: the "
+         "table is read from the pin, not merely typed beside it",
+         len(parsed_pin) == 7
+         and set(parsed_pairs) <= set(typed_pairs)
+         and len(parsed_pairs) == 9
+         and set(parsed_hashes) == set(typed_hashes)
+         and set(parsed_paths) <= set(typed_paths)
+         and len(parsed_paths) == 9,
+         {"pin_rows_parsed": len(parsed_pin),
+          "pairs_parsed": len(parsed_pairs),
+          "hashes_parsed": len(parsed_hashes),
+          "hashes_typed": len(typed_hashes),
+          "paths_parsed": len(parsed_paths),
+          "hashes_pinned_but_not_typed": sorted(set(parsed_hashes) -
+                                                set(typed_hashes)),
+          "hashes_typed_but_not_pinned": sorted(set(typed_hashes) -
+                                                set(parsed_hashes)),
+          "pairs_pinned_but_not_typed": sorted(set(parsed_pairs) -
+                                               set(typed_pairs))})
 
     rsq, top, lcb, tb3 = data["I2"], data["I3"], data["I5"], data["I6"]
 
@@ -1665,6 +2511,25 @@ def run():
           "A2": {"labels": n2, "rank": rank2, "prime": p2,
                  "from": "rank*p + 1"},
           "A3": {"labels": n3, "m": m3, "from": "width*m + 1"}})
+
+    fa_rows = forced_anchor_sweep()
+    disclose("X-FORCED-ANCHORS",
+             "TWO OF THIS UNIT'S ANCHORS HAVE AN ANALYTICALLY FORCED COMPUTED "
+             "SIDE AND ARE RECORDED AS INHERITANCE CHECKS RATHER THAN AS "
+             "ARENA CALIBRATION (#208).  A-LCB-A1-FIX and A-LCB-A2-FIX "
+             "compare the pinned receipt's recorded delta-fixed-point count "
+             "against a recomputation of the size of {q : delta(q) = q} with "
+             "delta(q) = sigma(q)^-1 q.  But delta(q) = q iff sigma(q) is the "
+             "identity iff q is the identity, for EVERY symmetry -- measured "
+             "here exhaustively over Sym(4) and Sym(5): every (Sigma, q) pair "
+             "swept, the set of distinct fixed-point counts is {1} and the "
+             "number of non-identity fixed points is 0.  So the two anchors "
+             "carry no information about A1's or A2's arena; what they do "
+             "still catch is a DRIFTED pinned receipt, which is why they stay "
+             "exit-1.  The arena-calibration count excludes them.",
+             {"rows": fa_rows,
+              "forced_anchors": ["A-LCB-A1-FIX", "A-LCB-A2-FIX"],
+              "pairs_swept": sum(r["pairs"] for r in fa_rows)})
 
     # ---- the regeneration self-test, evaluated fresh -----------------------
     before = dict(CACHE_STATS)
@@ -1989,13 +2854,17 @@ def run():
                       "all_pairs": A["n"] * (A["n"] - 1) // 2}
           for A in family})
     gate("G16", "computation",
-         "THE COHERENT 2-CELL COUNT IS RECOUNTED BY A COMPARATOR THAT DOES "
-         "NOT ROUTE THROUGH THE COMPONENT UNDER TEST (RUNBOOK section 14 "
-         "addendum #219): the construction flags coherence while it builds "
-         "the cell, and the recount reconstructs each cell's three drawn "
-         "maps from the EDGE table alone and re-composes them.  The two "
-         "agree at every member, and the density's denominator -- the drawn "
-         "1-cell count -- is measured non-zero",
+         "THE COHERENT 2-CELL COUNT IS RECOUNTED FROM THE UNFILTERED SOURCE "
+         "BY A COMPARATOR THAT DOES NOT ROUTE THROUGH THE COMPONENT UNDER "
+         "TEST (RUNBOOK section 14 addendum #219).  The construction flags "
+         "coherence while it builds the cell; the recount ranges over EVERY "
+         "2-cell of N -- not over the list the construction already filtered "
+         "-- rebuilds each cell's three drawn maps from the EDGE table alone "
+         "and re-composes them.  A coherent cell wrongly EXCLUDED by the "
+         "construction therefore moves the recount and not the flag, which a "
+         "recount over the filtered list structurally cannot detect.  The two "
+         "counts agree at every member, and the density's denominator -- the "
+         "drawn 1-cell count -- is measured non-zero",
          all(meas[A["name"]]["coherent_two_cells"] ==
              meas[A["name"]]["coherent_two_cells_independent_recount"]
              and meas[A["name"]]["one_cells"] > 0 for A in family),
@@ -2007,26 +2876,87 @@ def run():
           for A in family})
     specrows = [dict(r, arena=A["name"]) for A in family
                 for r in meas[A["name"]]["spectral_rows"]]
+    perm_sweep = []
+    for k in range(2, 7):
+        viol_eig, viol_deg = 0, 0
+        for pi in permutations(range(k)):
+            cl = [len(c) for c in cycles_of(pi)]
+            mu = defaultdict(int)
+            for L in cl:
+                for d in range(1, L + 1):
+                    if L % d == 0:
+                        mu[d] += 1
+            if not len(cl) >= 1:
+                viol_eig += 1
+            if sum(_phi_euler(d) * mu[d] for d in mu) != k:
+                viol_deg += 1
+        perm_sweep.append({"n": k, "permutations": math.factorial(k),
+                           "eigenvalue_1_absent": viol_eig,
+                           "degree_check_violations": viol_deg})
     gate("G17", "computation",
-         "THE SPECTRAL PROFILE IS COMPUTED TWICE AND I2's EIGENVALUE-1 ROW "
-         "RIDES ALONG AS AN ANCHOR AT EVERY MEMBER.  The multiplicity of the "
-         "trivial cyclotomic factor -- which IS dim ker(I - E) -- is taken "
-         "once as the readout's cycle count and once as the exact rational "
-         "kernel dimension of I - E computed by elimination over Q, and the "
-         "two agree at every readout of every member; the profile's degrees "
-         "are checked to sum to the dimension; and the eigenvalue-1 row is "
-         "confirmed present at every readout, so 0 lies in spec(I - E) all "
-         "along the family.  The wall is confirmed, never re-censused.  The "
-         "anchor predicate is calibrated the other way inside this gate: on "
-         "a multiplicity of zero it must return FALSE, so a chain that "
-         "always said yes is caught here",
-         all(r["routes_agree"] and r["eigenvalue_1_present"] and
-             r["degree_check"] for r in specrows) and len(specrows) > 0
+         "THE SPECTRAL PROFILE IS COMPUTED TWICE, AND THE ONLY CLAUSE THIS "
+         "GATE CARRIES IS THE ONE THAT CAN FAIL.  The multiplicity of the "
+         "trivial cyclotomic factor is taken once as the readout's cycle "
+         "count and once as the exact rational kernel dimension of I - E by "
+         "elimination over Q, and the two agree at every readout of every "
+         "member -- a numerical implementation comparator between two "
+         "expressions of ONE invariant, related by orbit counting, and "
+         "described as that rather than as two independent routes.  The "
+         "eigenvalue-1 presence clause and the degree identity are "
+         "ANALYTICALLY FORCED for every permutation readout and are therefore "
+         "DISCLOSURES, not clauses of this gate (RUNBOOK section 14 addendum "
+         "#208); the forcing is measured exhaustively over all permutations "
+         "of n <= 6 and reported at disclosure X-FORCED-SPECTRAL.  What "
+         "remains here that could fail: the two expressions disagreeing, and "
+         "the anchor predicate's calibration -- on a multiplicity of zero it "
+         "must return FALSE, so a chain that always said yes is caught",
+         all(r["routes_agree"] for r in specrows) and len(specrows) > 0
          and spectral_anchor_chain(0) is False
          and spectral_anchor_chain(1) is True,
          {"rows": specrows,
           "anchor_predicate_at_multiplicity_0": spectral_anchor_chain(0),
           "anchor_predicate_at_multiplicity_1": spectral_anchor_chain(1)})
+    i2_rows = rsq["tables"]["spectral_reading"]
+    i2_coords = sorted({k for r in i2_rows for k in r})
+    r1_coords = sorted(specrows[0]) if specrows else []
+    perm_total = sum(r["permutations"] for r in perm_sweep)
+    perm_lo = min(r["n"] for r in perm_sweep)
+    perm_hi = max(r["n"] for r in perm_sweep)
+    disclose("X-FORCED-SPECTRAL",
+             "TWO CLAUSES OF THE SPECTRAL CENSUS ARE ANALYTICALLY FORCED AND "
+             "ARE RECORDED HERE RATHER THAN GATED (#208).  (a) The "
+             "eigenvalue-1 presence clause is mu_1 >= 1 with mu_1 the "
+             "readout's cycle count: every permutation of a non-empty set has "
+             "at least one cycle, so the clause cannot fail on any input this "
+             "instrument can produce -- measured over ALL permutations of "
+             "n = %d..%d, zero absences.  Equivalently, a permutation matrix "
+             "fixes the all-ones vector.  (b) The degree identity "
+             "sum_d phi(d) mult(Phi_d) = n is a permutation identity -- "
+             "measured over the same %d permutations, zero violations.  "
+             "AND THE CHAIN IS ABOUT A DIFFERENT OPERATOR FROM I2's WALL.  "
+             "I2's E is the record-metric readout over F_p: its %d pinned "
+             "rows are indexed by dimension d = 2..5, direction, ordering and "
+             "prime, and carry dim ker(E - I) there.  This unit's E is the "
+             "arena's chart-symmetry permutation matrix over Q, indexed by "
+             "member and readout; the two coordinate sets are measured "
+             "DISJOINT.  What this unit confirms -- 0 in spec(I - E) for a "
+             "permutation readout -- is implied by the permutation form "
+             "alone; it does NOT re-confirm I2's criterion, its unit-circle "
+             "clause, or its prime-indexed universality.  It is a strictly "
+             "weaker statement about a different operator, and the walls are "
+             "cited, not re-derived."
+             % (perm_lo, perm_hi, perm_total, len(i2_rows)),
+             {"permutation_sweep": perm_sweep,
+              "I2_readout_rows_pinned": len(i2_rows),
+              "I2_readout_coordinates": i2_coords,
+              "R1_readout_coordinates": r1_coords,
+              "coordinate_sets_disjoint":
+                  not (set(i2_coords) & set(r1_coords)),
+              "R1_rows": len(specrows),
+              "eigenvalue_1_present_at_every_R1_readout":
+                  all(r["eigenvalue_1_present"] for r in specrows),
+              "degree_identity_at_every_R1_readout":
+                  all(r["degree_check"] for r in specrows)})
     gate("G18", "computation",
          "THE DIMENSION PROFILE IS COMPUTED BY TWO ROUTES: the link-vertex "
          "count per chart read off the overlap edge list, against a second "
@@ -2075,56 +3005,113 @@ def run():
                          "REAL_cells": sorted(per["REAL"]),
                          "REAL_draws_nothing":
                              all(p == 0 for (_o, p) in per["REAL"])})
+    contingent = ", ".join(
+        "%d of %d at %s" % (meas[A["name"]]["coherent_two_cells"],
+                            meas[A["name"]]["two_cells"], A["name"])
+        for A in family
+        if not all(p == 0 for (_o, p) in
+                   {r["arena"]: r for r in rulerows}[A["name"]]["REAL_cells"]))
+    forced_at = [r["arena"] for r in rulerows if r["REAL_draws_nothing"]]
+    empty_orders, empty_sat = set(), set()
+    for A in family:
+        if A["name"] not in forced_at:
+            continue
+        for (o, p) in {r["arena"]: r for r in rulerows}[A["name"]]["REAL_cells"]:
+            if p == 0:
+                empty_orders.add(o)
+        for blk in A["blocks"]:
+            empty_sat.add(len(sigma_saturation(A["Sigma"], blk, A["n"])))
     disclose("X-REAL-EMPTY",
-             "The REALISED rule draws NOTHING at A2, and that is measured "
-             "rather than assumed: at that member the realised transport has "
-             "order 10 on a seven-label symmetry saturation, so no ordered "
-             "pair has a UNIQUE power carrying one label to the other and "
-             "the admission rule refuses every candidate.  Consequently at "
-             "A2 alone every 2-cell draws its three maps from one cyclic "
-             "group, which acts regularly on its block, so coherence is "
-             "ANALYTICALLY FORCED there and N coincides with N_coh.  At the "
-             "other four members two distinct transport groups meet at a "
-             "common block and coherence is contingent -- it is measured "
-             "96 of 160 at A1 and 222 of 438, 259 of 511, 296 of 584 at the "
-             "grown members.  This is a disclosure, not a must-pass gate.",
-             {"rows": rulerows})
+             "The REALISED rule draws NOTHING at " + canon(forced_at) +
+             ", and that is measured rather than assumed: at that member the "
+             "realised transport has order " + canon(sorted(empty_orders)) +
+             " on a symmetry saturation of " + canon(sorted(empty_sat)) +
+             " labels, so no ordered pair has a UNIQUE power carrying one "
+             "label to the other and the admission rule refuses every "
+             "candidate.  Consequently there alone every 2-cell draws its "
+             "three maps from one cyclic group, which acts regularly on its "
+             "block, so coherence is ANALYTICALLY FORCED and N coincides with "
+             "N_coh.  At the other members two distinct transport groups meet "
+             "at a common block and coherence is contingent -- measured, and "
+             "every count in this sentence is BUILT from the measurement "
+             "rather than typed beside it: " + contingent + ".  This is a "
+             "disclosure, not a must-pass gate.",
+             {"rows": rulerows,
+              "coherence_forced_at": forced_at,
+              "coherent_of_all_2_cells": {
+                  A["name"]: [meas[A["name"]]["coherent_two_cells"],
+                              meas[A["name"]]["two_cells"]] for A in family}})
+    b1_dens = {}
+    for A in family:
+        m = meas[A["name"]]
+        b1_dens[A["name"]] = (canon(Fr(m["N_coh"]["b1"],
+                                       m["coherent_two_cells"]))
+                              if m["coherent_two_cells"] else None)
     disclose("X-B1",
-             "b_1 is excluded as a candidate by the pin and is printed once "
-             "here as a disclosure.  On N it is measured ZERO at every "
-             "member -- the trivial H_1 I3 reports, reproduced at this "
-             "substrate -- while on N_coh it is non-zero and grows: "
-             "coherence costs cycles, exactly as I3 measured at its own "
-             "scale.",
-             {A["name"]: {"b1_N": meas[A["name"]]["N"]["b1"],
-                          "b1_N_coh": meas[A["name"]]["N_coh"]["b1"]}
-              for A in family})
+             "b_1 IS EXCLUDED BY PIN DECLARATION, NOT BECAUSE IT IS TRIVIAL "
+             "HERE.  The pin's stated ground for excluding it is that it is "
+             "trivial by the topology base's ordered measurement and carries "
+             "no identification content.  On N that reproduces exactly: b_1 "
+             "is measured ZERO at every member.  On N_coh it does NOT: b_1 is "
+             "measured non-zero and growing, and it is non-zero exactly where "
+             "the identification data is imposed.  Its density -- b_1 of "
+             "N_coh per coherent 2-cell -- is measured CONSTANT on the window "
+             "and at both index probes, so a SIXTH intensive quantity of this "
+             "substrate stabilises and was excluded by declaration.  The "
+             "registered score of 2 of 5 is therefore a registry fact; "
+             "counting the excluded candidate the score is 3 of 6.  This is "
+             "recorded here and carried in the verdict string.",
+             {"b1_on_N": {A["name"]: meas[A["name"]]["N"]["b1"]
+                          for A in family},
+              "b1_on_N_coh": {A["name"]: meas[A["name"]]["N_coh"]["b1"]
+                              for A in family},
+              "b1_N_coh_per_coherent_2_cell": b1_dens})
 
-    # ---- the trajectory table ---------------------------------------------
+    # ---- the trajectory table, AS EMITTED ----------------------------------
     prog("trajectory")
     rows = trajectory_rows(family, meas)
     names = [r[0] for r in DECL["registered_invariants"]]
     kinds = {r[0]: r[2] for r in DECL["registered_invariants"]}
-    cells_present = sum(1 for nm in rows for v in rows[nm])
-    forced = len(names) * len(family)
-    complete = (sorted(rows) == sorted(names)
-                and cells_present == forced
-                and all(v is not None for nm in rows for v in rows[nm]))
+    emitted = emit_trajectory(names, rows)
     TABLES["trajectory"] = {
         "members": [A["name"] for A in family],
         "labels": [A["n"] for A in family],
-        "rows": {nm: [canon(v) for v in rows.get(nm, [])] for nm in names},
-        "cells_present": cells_present, "cells_forced": forced}
+        "rows": emitted,
+        "cells_present": sum(1 for nm in emitted for _v in emitted[nm]),
+        "cells_forced": len(names) * len(family)}
+    complete = (sorted(emitted) == sorted(names)
+                and TABLES["trajectory"]["cells_present"] ==
+                TABLES["trajectory"]["cells_forced"]
+                and all(v is not None for nm in rows for v in rows[nm]))
+    value_ok = True
+    for nm in names:
+        live = rows.get(nm, [])
+        emi = emitted.get(nm, [])
+        if len(live) != len(emi):
+            value_ok = False
+            continue
+        for i in range(len(live)):
+            if emi[i] != canon(live[i]):
+                value_ok = False
     gate("G20", "measurement",
-         "THE TRAJECTORY TABLE IS CELL-COMPLETE AGAINST ITS FORCED PRODUCT "
-         "(RUNBOOK section 13 addendum #234): the number of cells actually "
-         "written is counted and compared with the product of the registered "
-         "invariant count and the built family length, the row-name set is "
-         "compared with the registry, and no cell is permitted to be absent. "
-         " A dropped row or a dropped cell is caught here",
-         complete, TABLES["trajectory"])
+         "THE EMITTED TRAJECTORY TABLE IS THE GATED OBJECT (RUNBOOK section "
+         "13 addendum, render from the gated object; section 13 addendum "
+         "#234).  The table this gate checks is the same dictionary the "
+         "receipt serialises and the paper renders from -- there is no second "
+         "rendering path.  Two things are measured on it: CELL-COMPLETENESS, "
+         "the number of cells actually written against the product of the "
+         "registered invariant count and the built family length, with the "
+         "row-name set compared against the registry and no cell permitted to "
+         "be absent; and VALUE EQUALITY, every emitted cell compared for "
+         "string equality against the canonical form of the live measurement "
+         "at that coordinate.  A dropped row, a dropped cell and a corrupted "
+         "cell are all caught here, the last one being invisible to a "
+         "completeness count alone",
+         complete and value_ok,
+         dict(TABLES["trajectory"], value_equality=value_ok,
+              completeness=complete))
 
-    # ---- stabilisation and the verdict ------------------------------------
+    # ---- stabilisation and the window -------------------------------------
     K = stabilisation_window()
     fixture = [Fr(int(s.split("/")[0]), int(s.split("/")[1]))
                for s in DECL["K_window_fixture"]["trajectory"]]
@@ -2143,112 +3130,723 @@ def run():
           "fixture": DECL["K_window_fixture"]["trajectory"],
           "stabilised_at_K": at_K, "stabilised_at_1": at_1})
 
-    stab = {}
-    modes = {}
-    for nm in names:
-        vals = rows.get(nm, [])
-        if not vals:
-            modes[nm] = "UNDEFINED-AT-A-MEMBER"
-            continue
-        modes[nm] = (scalar_mode(vals) if kinds[nm] == "scalar"
-                     else profile_mode(vals))
-        if modes[nm] == "CONSTANT":
-            stab[nm] = vals[-1]
+    stab, modes = derive_from_trajectory(names, kinds, rows, K)
     stabilised = sorted(stab)
-    head = verdict_head(stabilised)
-    stab_body = ";".join("%s=%s" % (nm, canon(stab[nm])) for nm in names
-                         if nm in stab)
-    div_body = ";".join("%s:%s" % (nm, modes[nm]) for nm in names
-                        if nm not in stab)
-    window_q = qualifier_source("WINDOW=K=%d-OF-%d-MEMBERS-%s"
-                                % (K, len(family), cap))
-    phi_lt_1 = [A["name"] for A in family if meas[A["name"]]["PHI"] < Fr(1)]
-    gw = gateway_member(phi_lt_1)
-    parts = []
-    if stabilised:
-        parts.append(stab_body)
-    else:
-        parts.append("ALL-%d-REGISTERED-INVARIANTS-DIVERGE" % len(names))
-    if div_body:
-        parts.append("DIVERGENT=" + div_body)
-    parts.append(window_q)
-    parts.append("FUNCTORIALITY=" + func_qual)
-    parts.append("R2-GATEWAY=" + (gw if gw else "NONE"))
-    verdict = head + "-<" + "|".join(parts) + ">"
+    tail = tail_window(family, K)
 
-    derived_ok = (
-        (head == "R1-STABILIZES-AT") == (len(stabilised) > 0)
-        and all((modes[nm] == "CONSTANT") == (nm in stab) for nm in names)
-        and all(canon(stab[nm]) in verdict for nm in stabilised)
-        and all(("%s:%s" % (nm, modes[nm])) in verdict
-                for nm in names if nm not in stab)
-        and window_q in verdict and func_qual in verdict
-        and ("K=%d" % K) in window_q
-        and ("OF-%d-MEMBERS" % len(family)) in window_q
-        and cap in window_q
-        and ("%d-OF-%d-STEPS" % (len(nonfunc), len(steps)) in func_qual
-             or (not nonfunc and func_qual == "FAMILY-FUNCTORIAL"))
-        and len(rows) == len(names))
-    gate("G22", "derivation",
-         "THE VERDICT STRING IS DERIVED INSIDE THIS GATE FROM THE MEASURED "
-         "TRAJECTORY TABLE AND EVERY QUALIFIER IS COMPUTED (RUNBOOK section "
-         "13 addendum #234, #257).  The HEAD is STABILIZES exactly when the "
-         "measured set of registered invariants constant on the final K "
-         "members is non-empty and NO-CONTINUUM-LIMIT exactly when it is "
-         "empty; the stabilised values, each divergent invariant's measured "
-         "failure mode, the window with the family length and cap state, the "
-         "functoriality qualifier and R2's gateway are each read out of the "
-         "measurement and each is required to appear verbatim in the emitted "
-         "string.  Inverting the head, typing a qualifier, dropping a row or "
-         "shrinking the window all break this derivation",
-         derived_ok,
-         {"verdict": verdict, "head": head, "stabilised": stabilised,
-          "stabilised_values": {nm: canon(stab[nm]) for nm in stabilised},
-          "failure_modes": modes, "window": window_q,
-          "functoriality": func_qual, "R2_gateway": gw})
-    FINDINGS["verdict"] = verdict
+    # ---- the copying census, measured -------------------------------------
+    prog("copying census")
+    cens = {A["name"]: census_from_measurement(A, meas[A["name"]])
+            for A in family}
+    dis_rows = []
+    iso_rows = {}
+    for A in family:
+        c = cens[A["name"]]
+        iso = block_isomorphism_rows(A)
+        iso_rows[A["name"]] = iso
+        dis_rows.append({
+            "arena": A["name"], "blocks": A["r"], "b0_of_N": c["b0"],
+            "b0_equals_blocks_plus_basepoint": c["b0"] == A["r"] + 1,
+            "cross_block_one_cells": c["cross_block_one_cells"],
+            "every_block_isomorphic_to_block_1":
+                all(r["same_size_as_block_1"] and r["beta_intertwines_Sigma"]
+                    and r["beta_carries_the_cyclic_order"] for r in iso),
+            "one_cells_per_block": Fr(c["E"], A["r"]),
+            "coherent_two_cells_per_block": Fr(c["Fcoh"], A["r"]),
+            "b2_of_N_coh_per_block": Fr(c["b2coh"], A["r"])})
+    win_names = [A["name"] for A in tail]
+    win_rows = [r for r in dis_rows if r["arena"] in win_names]
+    b0_hits = sum(1 for r in dis_rows if r["b0_equals_blocks_plus_basepoint"])
+    iso_hits = sum(1 for r in dis_rows
+                   if r["every_block_isomorphic_to_block_1"])
+    per_block_constant = (
+        len({r["one_cells_per_block"] for r in win_rows}) == 1
+        and len({r["coherent_two_cells_per_block"] for r in win_rows}) == 1
+        and len({r["b2_of_N_coh_per_block"] for r in win_rows}) == 1)
+    copying = (b0_hits == len(family)
+               and all(r["cross_block_one_cells"] == 0 for r in dis_rows)
+               and all(r["every_block_isomorphic_to_block_1"]
+                       for r in win_rows)
+               and per_block_constant)
+    gate("G24", "measurement",
+         "THE DECLARED GROWTH RULE IS MEASURED TO COPY AN ISOMORPHIC BLOCK, "
+         "AND THAT -- NOT ADDITION -- IS WHAT CARRIES THE CONSTANT DENSITIES. "
+         " Four things are measured, not assumed.  (i) At every member b_0 of "
+         "the nerve equals the block count plus one, the basepoint.  (ii) No "
+         "1-cell crosses a block at any member, so every transport's support "
+         "lies inside one block.  (iii) At every window member the candidate "
+         "bijection beta_k the declared cyclic orders name is measured to "
+         "INTERTWINE the arena symmetry and to CARRY block 1's cyclic order "
+         "to block k -- the blocks are isomorphic AS ATLAS PIECES, which is "
+         "the load-bearing hypothesis and the one the mixed-block control "
+         "below discriminates.  (iv) The per-block 1-cell, coherent-2-cell "
+         "and b_2 counts are measured equal across the window.  Disjoint "
+         "addition alone would not do it: the mixed-block control satisfies "
+         "(i), (ii) and (iv)'s form in full and moves both densities",
+         copying,
+         {"rows": [{k: (canon(v) if isinstance(v, Fr) else v)
+                    for k, v in r.items()} for r in dis_rows],
+          "intertwiner": iso_rows,
+          "b0_equals_blocks_plus_one_at": b0_hits,
+          "blocks_isomorphic_at": iso_hits,
+          "members": len(family)})
+
+    # ---- the copy-forcing theorem, verified at m = 1..12 -------------------
+    prog("copy-forcing theorem")
+    cf_cens = {}
+    for m in range(1, 13):
+        cf_cens[m] = full_census(growth_member(width, m))
+    cf_rows, cf_hits, cf_total = [], 0, 0
+    for m in range(1, 13):
+        c = cf_cens[m]
+        preds = {}
+        for key in COPY_FORCING_KEYS:
+            p = copy_forcing_prediction(cf_cens[1], cf_cens[2], key, m)
+            preds[key] = {"predicted": p, "measured": c[key],
+                          "agrees": p == c[key]}
+            if m >= 3:
+                cf_total += 1
+                if p == c[key]:
+                    cf_hits += 1
+        cf_rows.append({"m": m, "labels": c["n"], "blocks": c["blocks"],
+                        "one_cells": c["E"], "overlap_edges": c["ov"],
+                        "two_cells": c["F"], "coherent": c["Fcoh"],
+                        "b2_N_coh": c["b2coh"], "b1_N_coh": c["b1coh"],
+                        "b0_N": c["b0"],
+                        "NCOH_DENSITY": canon(c["NCOH_DENSITY"]),
+                        "B2_DENSITY": canon(c["B2_DENSITY"]),
+                        "PHI": canon(c["PHI"]),
+                        "predictions": preds})
+    base_case_ncoh = cf_cens[1]["NCOH_DENSITY"]
+    base_case_b2 = cf_cens[1]["B2_DENSITY"]
+    tail_forced_hits, tail_forced_total = 0, 0
+    tf_rows = []
+    for A in tail[1:]:
+        m = (A["n"] - 1) // width
+        for key in TAIL_FORCED_KEYS:
+            p = copy_forcing_prediction(cf_cens[1], cf_cens[2], key, m)
+            got = cens[A["name"]][key]
+            tail_forced_total += 1
+            if p == got:
+                tail_forced_hits += 1
+            tf_rows.append({"arena": A["name"], "quantity": key,
+                            "predicted_from_the_one_block_census": p,
+                            "measured": got, "agrees": p == got})
+    gate("G35", "measurement",
+         "THE COPY-FORCING THEOREM IS VERIFIED IN-CODE, AND ITS BASE CASE IS "
+         "THE CLAIM'S TRUE CONTENT.  The affine law a*m + b of every counting "
+         "quantity is FITTED FROM THE ONE-BLOCK AND TWO-BLOCK CENSUSES ALONE "
+         "-- a the per-block increment, b the isolated basepoint's constant "
+         "share -- and every later member is then a PREDICTION.  It is "
+         "measured to hold for all ten counting quantities at m = 3..12.  Two "
+         "consequences are measured rather than argued.  First, THE TWO "
+         "STABILISED VALUES ALREADY HOLD AT m = 1, the single-block member: "
+         "nothing converges, and the window's values are the one block's.  "
+         "Second, of the data points the window's second and third members "
+         "contribute, EVERY ONE is the value the one-block census predicts, "
+         "so their independent content is zero.  A prediction taken from the "
+         "measured member instead of from the one-block census breaks this "
+         "gate, which is the difference between a fit and a theorem",
+         cf_hits == cf_total and cf_total > 0
+         and base_case_ncoh == stab.get("NCOH_DENSITY")
+         and base_case_b2 == stab.get("B2_DENSITY")
+         and tail_forced_hits == tail_forced_total and tail_forced_total > 0,
+         {"rows": cf_rows,
+          "predictions_checked_at_m_3_to_12": cf_total,
+          "predictions_agreeing": cf_hits,
+          "base_case_m_1_NCOH_DENSITY": canon(base_case_ncoh),
+          "base_case_m_1_B2_DENSITY": canon(base_case_b2),
+          "window_tail_data_points": tail_forced_total,
+          "window_tail_data_points_forced": tail_forced_hits,
+          "tail_rows": tf_rows})
+
+    # ---- the mixed-block control ------------------------------------------
+    prog("mixed-block control")
+    mxfam = mixed_block_family(width, [6, 7, 8])
+    mx_cens = [full_census(A) for A in mxfam]
+    mx_iso = []
+    for A in mxfam:
+        r = block_isomorphism_rows(A)
+        mx_iso.append(all(x["same_size_as_block_1"] and
+                          x["beta_intertwines_Sigma"] and
+                          x["beta_carries_the_cyclic_order"] for x in r))
+    mx_additive = all(c["b0"] == c["blocks"] + 1 for c in mx_cens) and \
+        all(c["cross_block_one_cells"] == 0 for c in mx_cens)
+    mx_moved = (len({c["NCOH_DENSITY"] for c in mx_cens}) == len(mx_cens)
+                and len({c["B2_DENSITY"] for c in mx_cens}) == len(mx_cens))
+    gate("G36", "control",
+         "THE MIXED-BLOCK CONTROL DISCRIMINATES ISOMORPHIC COPYING FROM MERE "
+         "ADDITION.  MX_m is {0} plus m copies of the standard block plus ONE "
+         "further block of three labels carrying a 3-cycle of the symmetry.  "
+         "It is measured to satisfy every property the additive reading names "
+         "-- pure disjoint addition, symmetry-stable blocks, no 1-cell "
+         "crossing a block, b_0 equal to the block count plus one at every "
+         "member -- and its blocks are measured NOT all isomorphic to one "
+         "another.  Both densities are then measured to MOVE across its three "
+         "members.  So 'disjoint addition' is NOT the hypothesis that carries "
+         "the constancy; ISOMORPHIC copying is.  The widening control varies "
+         "block SIZE and separates same-block from different-block; this one "
+         "separates additive from additive-with-isomorphic-blocks, which is "
+         "the distinction the mechanism actually turns on",
+         mx_additive and not all(mx_iso) and mx_moved,
+         {"rows": [{"arena": c["arena"], "labels": c["n"],
+                    "blocks": c["blocks"], "b0_of_N": c["b0"],
+                    "b0_equals_blocks_plus_basepoint":
+                        c["b0"] == c["blocks"] + 1,
+                    "cross_block_one_cells": c["cross_block_one_cells"],
+                    "all_blocks_isomorphic": mx_iso[i],
+                    "one_cells": c["E"], "coherent": c["Fcoh"],
+                    "b2_N_coh": c["b2coh"],
+                    "NCOH_DENSITY": canon(c["NCOH_DENSITY"]),
+                    "B2_DENSITY": canon(c["B2_DENSITY"])}
+                   for i, c in enumerate(mx_cens)],
+          "both_densities_move": mx_moved,
+          "disjoint_addition_holds": mx_additive})
+
+    # ---- the atlas sweep, in-unit -----------------------------------------
+    prog("atlas sweep")
+    sweep_variants = ["ALT-A", "ALT-B", "ALT-C", "B1", "ATLAS-C", "ALT-D"]
+    sweep_rows = []
+    for var in sweep_variants:
+        traj = {nm: [] for nm in names}
+        per = []
+        for A in tail:
+            cellsv = alternative_atlas_cells(A, var)
+            mv = _measure_from_cells(A, cellsv)
+            for nm in names:
+                traj[nm].append(mv[nm])
+            per.append({"arena": A["name"], "blocks": mv["blocks"],
+                        "b0_of_N": mv["b0_of_N"],
+                        "b0_equals_blocks_plus_basepoint":
+                            mv["b0_of_N"] == mv["blocks"] + 1,
+                        "coordinate_cells": len(cellsv),
+                        "transport_group_orders":
+                            sorted({c["group_order"] for c in cellsv}),
+                        "one_cells": mv["one_cells"],
+                        "coherent_two_cells": mv["coherent_two_cells"],
+                        "PHI": canon(mv["PHI"]),
+                        "NCOH_DENSITY": canon(mv["NCOH_DENSITY"]),
+                        "B2_DENSITY": canon(mv["B2_DENSITY"])})
+        st, md = derive_from_trajectory(names, kinds, traj, K)
+        sweep_rows.append({
+            "atlas": var, "declaration": DECL["atlas_sweep"][var],
+            "head": verdict_head(sorted(st)),
+            "stabilised": sorted(st),
+            "stabilised_count": len(st),
+            "values": {nm: canon(st[nm]) for nm in sorted(st)},
+            "failure_modes": md, "members": per})
+    byv = {r["atlas"]: r for r in sweep_rows}
+    conv = ["ALT-A", "ALT-B", "ALT-C"]
+    conv_ok = sum(1 for v in conv
+                  if byv[v]["values"].get("NCOH_DENSITY") ==
+                  canon(stab.get("NCOH_DENSITY"))
+                  and byv[v]["values"].get("B2_DENSITY") ==
+                  canon(stab.get("B2_DENSITY")))
+    b1_moves = ("NCOH_DENSITY" in byv["B1"]["stabilised"]
+                and "B2_DENSITY" in byv["B1"]["stabilised"]
+                and byv["B1"]["values"]["NCOH_DENSITY"] !=
+                canon(stab.get("NCOH_DENSITY"))
+                and byv["B1"]["values"]["B2_DENSITY"] !=
+                canon(stab.get("B2_DENSITY")))
+    cflip = (byv["ATLAS-C"]["stabilised_count"] == 0
+             and byv["ATLAS-C"]["head"] ==
+             "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE")
+    dundef = (byv["ALT-D"]["failure_modes"]["NCOH_DENSITY"] ==
+              "UNDEFINED-AT-A-MEMBER"
+              and byv["ALT-D"]["failure_modes"]["B2_DENSITY"] ==
+              "UNDEFINED-AT-A-MEMBER")
+    gate("G37", "measurement",
+         "THE ATLAS IS A NAMED ARENA COORDINATE AND ITS DEPENDENCE IS SWEPT "
+         "IN-UNIT (RUNBOOK section 15; the P* precedent).  Six alternative "
+         "declared atlases, each stated in the declaration block before it is "
+         "built and each using this unit's own drawn rule, 2-cell rule and "
+         "five invariant definitions verbatim, are run over the window and "
+         "read by the SAME derivation.  Four outcomes are measured.  The "
+         "three transport-convention re-declarations leave BOTH stabilised "
+         "values exactly where they were -- a robustness result.  Dropping "
+         "the realised cell keeps both invariants constant and MOVES their "
+         "values, so the values are the atlas's, not the arena's.  The "
+         "non-block-local atlas -- which uses LESS arena data than this "
+         "unit's own, no block partition at all -- stabilises NOTHING and "
+         "flips the head to NO-CONTINUUM-LIMIT over the same arenas.  And the "
+         "cell-structure variant, one cell per block carrying the group "
+         "generated by both transports, draws nothing and leaves both "
+         "headline invariants UNDEFINED at every member -- which is the "
+         "declared failure mode reached by a shipped input rather than by "
+         "construction",
+         conv_ok == 3 and b1_moves and cflip and dundef,
+         {"rows": sweep_rows,
+          "transport_conventions_invariant": conv_ok,
+          "transport_conventions_swept": len(conv),
+          "cell_set_variant_values_move": b1_moves,
+          "non_block_local_head_flips": cflip,
+          "cell_structure_variant_undefined": dundef})
+
+    # ---- the basepoint audit ----------------------------------------------
+    bp_rows = [basepoint_audit_row(A, cens[A["name"]]) for A in tail]
+    bp_traj = {nm: [r[nm] for r in bp_rows] for nm in names}
+    bp_stab, bp_modes = derive_from_trajectory(names, kinds, bp_traj, K)
+    gate("G38", "measurement",
+         "THE 2-OF-5 SPLIT IS MEASURED TO BE A BASEPOINT ARTEFACT.  One "
+         "structureless label -- the arena's declared basepoint, fixed by the "
+         "symmetry, of degree zero in every complex of every member, lying in "
+         "no coordinate cell's support -- is deleted, the profiles are "
+         "renormalised over the surviving charts and the overlap fraction is "
+         "taken over the surviving chart pairs.  FOUR of the five registered "
+         "invariants are then exactly constant on the window, and the one "
+         "that still moves is the overlap fraction, whose denominator grows "
+         "quadratically while its numerator grows linearly.  So the split the "
+         "verdict reports is not between substantive and non-substantive "
+         "quantities: it is between basepoint-blind and basepoint-sensitive, "
+         "and the stabilised SET is declaration-relative",
+         len(bp_stab) == 4 and "PHI" not in bp_stab
+         and bp_modes["SPECTRAL_PROFILE"] == "CONSTANT"
+         and bp_modes["DIMENSION_PROFILE"] == "CONSTANT",
+         {"rows": [{k: (canon(v) if isinstance(v, (Fr, tuple)) else v)
+                    for k, v in r.items()} for r in bp_rows],
+          "stabilised": sorted(bp_stab), "modes": bp_modes,
+          "stabilised_count": len(bp_stab), "registered": len(names)})
+
+    # ---- the index probes, and the non-copied hunt -------------------------
+    prog("index probes")
+    alt_ms = robustness_indices(width, rank, [11, 13])
+    probes = []
+    for m in alt_ms:
+        n, blocks, sig = regenerate_fresh(base, exp, width, m, rank, p3)
+        B = make_arena("L%d" % m, n, sig, blocks, "alternative index")
+        probes.append((B, measure(B)))
+    grid_cols = [(A["name"], cens[A["name"]]) for A in tail] + \
+                [(B["name"], census_from_measurement(B, mm))
+                 for (B, mm) in probes]
+    grid_rows = []
+    for (nm, cls, vac) in non_copied_grid_rows():
+        vals = [grid_value(nm, c) for (_a, c) in grid_cols]
+        const = len(set(vals)) == 1
+        grid_rows.append({"quantity": nm, "class": cls,
+                          "declared_vacuity": vac,
+                          "values": [canon(v) for v in vals],
+                          "constant": const})
+    by_class = defaultdict(list)
+    for r in grid_rows:
+        by_class[r["class"]].append(r)
+    copied_all = all(r["constant"] for r in by_class["copied"])
+    bp_none = not any(r["constant"] for r in by_class["basepoint-involving"])
+    cross_ok = all((r["declared_vacuity"] != "") == r["constant"]
+                   for r in by_class["cross-block"])
+    sixth = grid_value("B1_NCOH_DENSITY", grid_cols[0][1])
+    sixth_const = len({grid_value("B1_NCOH_DENSITY", c)
+                       for (_a, c) in grid_cols}) == 1
+    excluded_but_stable = sorted(
+        [r["quantity"] for r in grid_rows
+         if r["constant"] and r["quantity"] not in names
+         and r["class"] == "copied"])
+    gate("G39", "measurement",
+         "THE NON-COPIED HUNT, ON A GRID DECLARED AND CLASSIFIED BEFORE IT "
+         "WAS EVALUATED.  Twenty-four intensive quantities, each assigned in "
+         "the declaration block to one of three classes -- COPIED (numerator "
+         "and denominator both block-additive and vanishing on the isolated "
+         "basepoint), BASEPOINT-INVOLVING (a chart count enters), CROSS-BLOCK "
+         "(the quantity reads structure between blocks) -- are measured at "
+         "five growth members.  Three things are measured: every copied "
+         "quantity is constant; NO basepoint-involving quantity is constant; "
+         "and among the cross-block quantities, constancy holds exactly where "
+         "a vacuity reason was DECLARED IN ADVANCE and nowhere else.  So "
+         "nothing that is neither copied nor vacuous stabilises.  The gate "
+         "also carries the SIXTH stabiliser the registry misses: b_1 of "
+         "N_coh per coherent 2-cell, constant across all five, a quantity the "
+         "pin excludes by declaration -- and this unit's own b_1 of N_coh is "
+         "measured non-zero and growing, so the exclusion is a declaration, "
+         "not a measured triviality",
+         copied_all and bp_none and cross_ok and sixth_const
+         and len(grid_rows) == 24 and len(grid_cols) == 5,
+         {"rows": grid_rows, "members": [a for (a, _c) in grid_cols],
+          "copied_constant": sum(1 for r in by_class["copied"]
+                                 if r["constant"]),
+          "copied_total": len(by_class["copied"]),
+          "basepoint_constant": sum(1 for r in by_class["basepoint-involving"]
+                                    if r["constant"]),
+          "basepoint_total": len(by_class["basepoint-involving"]),
+          "cross_block_constant": sum(1 for r in by_class["cross-block"]
+                                      if r["constant"]),
+          "cross_block_total": len(by_class["cross-block"]),
+          "sixth_stabiliser_B1_NCOH_DENSITY": canon(sixth),
+          "unregistered_stabilisers": excluded_but_stable})
+
+    # ---- both denominator conventions -------------------------------------
+    den_rows = []
+    for A in family:
+        c = cens[A["name"]]
+        a1, a2 = alt_denominators(c)
+        den_rows.append({"arena": A["name"],
+                         "coherent_two_cells": c["Fcoh"],
+                         "one_cell_incidences": c["E"],
+                         "drawn_chart_pairs": c["ov"],
+                         "two_cells_of_N": c["F"],
+                         "NCOH_DENSITY_per_incidence": canon(c["NCOH_DENSITY"]),
+                         "NCOH_DENSITY_per_drawn_pair": canon(a1),
+                         "B2_DENSITY_per_N_coh_two_cell":
+                             canon(c["B2_DENSITY"]),
+                         "B2_DENSITY_per_N_two_cell": canon(a2)})
+    den_tail = [r for r in den_rows if r["arena"] in win_names]
+    alt_ncoh_vals = {r["NCOH_DENSITY_per_drawn_pair"] for r in den_tail}
+    alt_b2_vals = {r["B2_DENSITY_per_N_two_cell"] for r in den_tail}
+    den_ok = (len(alt_ncoh_vals) == 1 and len(alt_b2_vals) == 1
+              and list(alt_ncoh_vals)[0] != canon(stab.get("NCOH_DENSITY"))
+              and list(alt_b2_vals)[0] != canon(stab.get("B2_DENSITY")))
+    gate("G40", "measurement",
+         "BOTH DENOMINATOR CONVENTIONS ARE COMPUTED AND BOTH ARE PRINTED.  "
+         "The pin registers the coherence density 'per drawn chart pair' and "
+         "the second density 'per 2-cell' without naming the complex.  This "
+         "unit's first value divides by the COORDINATE-RESOLVED 1-cell count "
+         "-- one per drawn pair per coordinate cell -- and its second by "
+         "N_coh's own 2-cell count.  The pin-literal readings, dividing by "
+         "the overlap-graph edge count and by N's 2-cell count, are computed "
+         "here beside them and measured to be constant on the window TOO, and "
+         "measured to DIFFER from the delivered ones.  The verdict head is "
+         "therefore safe under either reading and the values are disclosed AS "
+         "convention-relative; both go into the verdict string",
+         den_ok,
+         {"rows": den_rows,
+          "delivered_convention_NCOH_DENSITY": "per (pair, coordinate cell) "
+                                               "incidence, |F(N_coh)|/|E(N)|",
+          "pin_literal_convention_NCOH_DENSITY": "per drawn chart pair, "
+                                                 "|F(N_coh)|/|E(G)|",
+          "delivered_convention_B2_DENSITY": "per 2-cell of N_coh",
+          "pin_literal_convention_B2_DENSITY": "per 2-cell of N"})
+
+    # ---- the tail-restricted reading ---------------------------------------
+    tail_traj = {nm: [meas[A["name"]][nm] for A in tail] for nm in names}
+    tail_stab, tail_modes = derive_from_trajectory(names, kinds, tail_traj, K)
+    tsteps = []
+    for i in range(len(tail) - 1):
+        io, rs = build_embedding(tail[i], tail[i + 1])
+        tsteps.append({"step": "%s->%s" % (tail[i]["name"],
+                                           tail[i + 1]["name"]),
+                       "admissible": morphism_exists(io), "reason": rs})
+    tnon = [s for s in tsteps if not s["admissible"]]
+    tail_func = ("FAMILY-FUNCTORIAL" if not tnon else
+                 "FAMILY-NON-FUNCTORIAL-AT-%d-OF-%d-STEPS"
+                 % (len(tnon), len(tsteps)))
+    tail_old_gateway = [A["name"] for A in tail
+                        if meas[A["name"]]["PHI"] < Fr(1)]
+    homog = sum(1 for A in tail
+                if all(len(b) == width for b in A["blocks"]))
+    gate("G41", "measurement",
+         "THE TAIL-RESTRICTED READING IS COMPUTED AND PRINTED BESIDE THE "
+         "FULL-FAMILY ONE.  The declared family glues three constructions; "
+         "its stabilisation window is exactly the homogeneous tail, every "
+         "member of which the extracted generator rule produces.  Restricting "
+         "to that tail and re-deriving: the stabilised set and both values are "
+         "measured UNCHANGED, every divergence mode is measured UNCHANGED, "
+         "and the functoriality qualifier becomes FAMILY-FUNCTORIAL -- so the "
+         "non-functoriality is a statement about the GLUING, not about the "
+         "growth rule, whose own members are joined by constructed morphisms "
+         "at every step.  The window's homogeneity is measured from the block "
+         "sizes rather than named, and the inherited gateway criterion "
+         "applied to the tail alone is measured to select the tail's first "
+         "member",
+         tail_func == "FAMILY-FUNCTORIAL"
+         and sorted(tail_stab) == stabilised
+         and all(canon(tail_stab[nm]) == canon(stab[nm]) for nm in stabilised)
+         and all(tail_modes[nm] == modes[nm] for nm in names)
+         and homog == len(tail)
+         and tail_old_gateway and tail_old_gateway[0] == tail[0]["name"],
+         {"members": [A["name"] for A in tail], "steps": tsteps,
+          "functoriality": tail_func,
+          "stabilised": sorted(tail_stab),
+          "values": {nm: canon(tail_stab[nm]) for nm in sorted(tail_stab)},
+          "modes": tail_modes,
+          "window_members_on_one_generator_rule": homog,
+          "inherited_criterion_would_name": tail_old_gateway[0]
+          if tail_old_gateway else None})
+
+    # ---- the successor gateway ---------------------------------------------
+    oc_rows = [overlap_completeness_row(A, cens[A["name"]]) for A in family]
+    for (B, mm) in probes:
+        oc_rows.append(overlap_completeness_row(
+            B, census_from_measurement(B, mm)))
+    gw = gateway_component_search(oc_rows)
+    phi_forced = sum(1 for r in oc_rows if r["phi_below_the_forced_bound"])
+    complete_hits = sum(1 for r in oc_rows if r["every_component_is_complete"])
+    phi_lt_1 = [A["name"] for A in family if meas[A["name"]]["PHI"] < Fr(1)]
+
+    # ---- THE ADMISSION-RULE THEOREM, verified in-unit ----------------------
+    adm_rows, adm_pairs, adm_bad, adm_cells, adm_cliques = [], 0, 0, 0, 0
+    for (A, mm) in [(A, meas[A["name"]]) for A in family] + probes:
+        for c in mm["_cells"]:
+            grp = cyclic_group(c["gen"], A["n"], 8 * A["n"] + 8)
+            N = len(grp)
+            orb = group_orbits(grp, A["n"])
+            oof = {}
+            for O in orb:
+                for x in O:
+                    oof[x] = O
+            drawn = set(c["tab"])
+            predicted = set()
+            for x in range(A["n"]):
+                O = oof[x]
+                if len(O) == N:
+                    for y in O:
+                        if y != x:
+                            predicted.add((x, y))
+            adm_pairs += A["n"] * (A["n"] - 1)
+            if drawn != predicted:
+                adm_bad += 1
+            adm_cells += 1
+            if all(len(O) == N or
+                   not any((x, y) in drawn for x in O for y in O if y != x)
+                   for O in orb):
+                adm_cliques += 1
+        adm_rows.append({"arena": A["name"], "cells": len(mm["_cells"]),
+                         "drawn_pairs_per_cell": mm["cell_drawn_pairs"],
+                         "transport_orders": mm["cell_group_orders"]})
+    adm_sweep = []
+    for k in range(2, 7):
+        bad = 0
+        for pi in permutations(range(k)):
+            grp = cyclic_group(pi, k, 2 * math.factorial(k) + 2)
+            N = len(grp)
+            orb = group_orbits(grp, k)
+            oof = {}
+            for O in orb:
+                for x in O:
+                    oof[x] = O
+            for a in range(k):
+                for b in range(k):
+                    if a == b:
+                        continue
+                    adm = [p for p in grp if p[a] == b]
+                    if (len(adm) == 1) != (b in oof[a] and len(oof[a]) == N):
+                        bad += 1
+        adm_sweep.append({"n": k, "permutations": math.factorial(k),
+                          "counterexamples": bad})
+    sweep_bad = sum(r["counterexamples"] for r in adm_sweep)
+    sweep_total = sum(r["permutations"] for r in adm_sweep)
+    perm_lo_a = min(r["n"] for r in adm_sweep)
+    perm_hi_a = max(r["n"] for r in adm_sweep)
+    gate("G42", "computation",
+         "THE ADMISSION-RULE THEOREM IS CONFRONTED WITH THIS UNIT'S OWN "
+         "ATLAS, AND THAT CONFRONTATION IS WHAT CAN FAIL.  The theorem: a "
+         "cell's transport group being cyclic of order N, the exponents "
+         "carrying a to b form the empty set when b is outside a's orbit and "
+         "otherwise a coset of a's stabiliser, of size N over the orbit "
+         "length; so the uniqueness rule admits (a, b) IFF b lies in a's "
+         "orbit AND that orbit is REGULAR.  What is measured here is not the "
+         "theorem -- that is algebra, and is disclosed with its exhaustive "
+         "check rather than gated (#208) -- but the claim that THIS unit's "
+         "atlas is an instance of it: at every coordinate cell of every "
+         "member and every probe, the cell's drawn table is compared for SET "
+         "EQUALITY against the ordered pairs lying inside its REGULAR orbits, "
+         "and the disagreeing-cell count is measured ZERO.  A relaxed or "
+         "widened admission rule makes a cell draw pairs outside its regular "
+         "orbits, the set equality fails, and this gate dies.  The clause is "
+         "therefore about the instrument, and it earns the reading that every "
+         "drawn count this unit reports is a corollary rather than a "
+         "coincidence: the drawn relation at each cell is measured to be the "
+         "disjoint union of COMPLETE graphs on its regular orbits, with "
+         "non-regular orbits drawing nothing, so the overlap graph this atlas "
+         "builds is a union of cliques by construction.  That is why the "
+         "realised rule draws nothing where its orbit is non-regular, and it "
+         "is why locality at the successor must be EARNED by declaring cells "
+         "whose regular orbits overlap PARTIALLY -- a union of two cliques "
+         "that is not itself a clique is the only way this atlas schema can "
+         "produce an incomplete overlap graph",
+         adm_bad == 0 and adm_cliques == adm_cells and adm_cells > 0,
+         {"cells_checked": adm_cells,
+          "cells_disagreeing_with_the_theorem": adm_bad,
+          "ordered_pairs_covered": adm_pairs,
+          "cells_whose_drawn_relation_is_a_union_of_regular_orbit_cliques":
+              adm_cliques,
+          "per_member": adm_rows})
+    disclose("X-ADMISSION-THEOREM",
+             "THE ADMISSION-RULE THEOREM IS ANALYTICALLY FORCED AND IS "
+             "RECORDED HERE RATHER THAN GATED (#208).  STATEMENT: let a "
+             "cyclic group of order N act on a finite set and admit an "
+             "ordered pair (a, b), a != b, iff EXACTLY ONE group element "
+             "carries a to b.  Then (a, b) is admitted iff b lies in the "
+             "orbit of a AND that orbit is REGULAR, i.e. has size N.  PROOF: "
+             "the exponents k with tau^k a = b are empty when b is outside "
+             "the orbit, and otherwise form a coset of the stabiliser of a, "
+             "whose size is N divided by the orbit length; that coset is a "
+             "singleton exactly when the orbit length is N.  COROLLARY: the "
+             "admitted relation at a cell is the disjoint union of COMPLETE "
+             "graphs on the regular orbits, and an overlap graph assembled "
+             "from such cells is always a union of cliques -- so within this "
+             "atlas schema no member can exhibit a non-complete component, "
+             "and a successor that wants one must declare cells whose regular "
+             "orbits overlap PARTIALLY.  The statement is true by algebra for "
+             "every input and therefore cannot fail as a gate; it is checked "
+             "EXHAUSTIVELY all the same, over every cyclic action generated "
+             "by a permutation of n = %d..%d points -- %d permutations, "
+             "counterexamples %d.  What this unit gates instead is the "
+             "measured claim that its own atlas is an instance (G42)."
+             % (perm_lo_a, perm_hi_a, sweep_total, sweep_bad),
+             {"abstract_sweep": adm_sweep,
+              "abstract_permutations_swept": sweep_total,
+              "abstract_counterexamples": sweep_bad})
 
     gate("G23", "measurement",
-         "R2's GATEWAY IS COMPUTED, NOT NAMED.  The set of members whose "
-         "overlap-completeness fraction is strictly below 1 is computed from "
-         "the trajectory table and the FIRST such member is handed forward "
-         "as R2's arena; the criterion is measured to be non-vacuous, since "
-         "PHI is measured strictly below 1 somewhere and its declared range "
-         "admits 1",
-         gw is not None and gw == phi_lt_1[0] and len(phi_lt_1) > 0,
-         {"members_with_phi_below_1": phi_lt_1,
-          "phi": {A["name"]: canon(meas[A["name"]]["PHI"]) for A in family},
-          "R2_gateway_arena": gw})
-    FINDINGS["R2_gateway"] = gw
-
-    # ---- disjointness, measured -------------------------------------------
-    dis_rows = []
-    for A in family:
-        m = meas[A["name"]]
-        dis_rows.append({"arena": A["name"], "blocks": A["r"],
-                         "b0_of_N": m["N"]["b0"],
-                         "b0_equals_blocks_plus_basepoint":
-                             m["N"]["b0"] == A["r"] + 1,
-                         "one_cells_per_block":
-                             Fr(m["one_cells"], A["r"]),
-                         "coherent_two_cells_per_block":
-                             Fr(m["coherent_two_cells"], A["r"])})
-    growth_rows = [r for r in dis_rows if r["arena"] in ("A3", "A4", "A5")]
-    gate("G24", "measurement",
-         "THE DECLARED GROWTH RULE IS MEASURED TO REFINE BY DISJOINT "
-         "ADDITION, AND THAT IS WHAT CARRIES THE CONSTANT DENSITIES.  At "
-         "each grown member b_0 of the nerve is measured equal to the block "
-         "count plus one -- the basepoint -- so the complex is a disjoint "
-         "sum of one copy per block; and the per-block 1-cell and coherent "
-         "2-cell counts are measured EQUAL across the grown members.  The "
-         "constancy of the two densities is therefore located, not merely "
-         "observed",
-         all(r["b0_equals_blocks_plus_basepoint"] for r in dis_rows)
-         and len({r["one_cells_per_block"] for r in growth_rows}) == 1
-         and len({r["coherent_two_cells_per_block"]
-                  for r in growth_rows}) == 1,
+         "THE INHERITED GATEWAY CRITERION IS MEASURED TO BE FORCED, AND THE "
+         "SUCCESSOR CRITERION THAT REPLACES IT RETURNS NOTHING.  The "
+         "basepoint is symmetry-fixed and lies in no coordinate cell's "
+         "support, so it is isolated in the overlap graph and at least n-1 "
+         "chart pairs are undrawn: phi is bounded by (n-2)/n at every member "
+         "-- measured at every member and probe -- and 'the first member with "
+         "phi < 1' therefore cannot fail and is not a selection.  What is "
+         "measured instead is COMPONENTWISE overlap completeness, and it is 1 "
+         "everywhere: every connected component is a COMPLETE graph, so every "
+         "phi < 1 in this unit is achieved by DISCONNECTION and carries no "
+         "locality content.  The successor criterion -- the first member "
+         "carrying a component whose overlap graph is incomplete -- is "
+         "therefore measured EMPTY, and the gateway is handed forward as "
+         "NONE-EARNED rather than as an arena.  A typed gateway breaks this "
+         "gate",
+         gw is None and complete_hits == len(oc_rows)
+         and phi_forced == len(oc_rows) and len(phi_lt_1) == len(family),
          {"rows": [{k: (canon(v) if isinstance(v, Fr) else v)
-                    for k, v in r.items()} for r in dis_rows]})
+                    for k, v in r.items()} for r in oc_rows],
+          "successor_criterion_result": gw,
+          "componentwise_complete_at": complete_hits,
+          "members_and_probes": len(oc_rows),
+          "phi_at_or_below_the_forced_bound_at": phi_forced,
+          "members_with_phi_below_1": phi_lt_1,
+          "inherited_criterion_cannot_fail": len(phi_lt_1) == len(family)})
+
+    # ---- the tables the verdict reads back --------------------------------
+    TABLES["disjointness"] = [g for g in GATES if g["id"] == "G24"][0]["value"]
+    TABLES["copy_forcing"] = {
+        "rows": cf_rows, "tail_rows": tf_rows,
+        "predictions_checked_at_m_3_to_12": cf_total,
+        "predictions_agreeing": cf_hits,
+        "base_case_m_1_NCOH_DENSITY": canon(base_case_ncoh),
+        "base_case_m_1_B2_DENSITY": canon(base_case_b2),
+        "window_tail_data_points": tail_forced_total,
+        "window_tail_data_points_forced": tail_forced_hits}
+    TABLES["mixed_block"] = [g for g in GATES if g["id"] == "G36"][0]["value"]
+    TABLES["atlas_sweep"] = sweep_rows
+    TABLES["basepoint_audit"] = [g for g in GATES
+                                 if g["id"] == "G38"][0]["value"]
+    TABLES["non_copied_grid"] = grid_rows
+    TABLES["non_copied_grid_members"] = [a for (a, _c) in grid_cols]
+    TABLES["denominators"] = den_rows
+    TABLES["tail_restricted"] = [g for g in GATES
+                                 if g["id"] == "G41"][0]["value"]
+    TABLES["overlap_completeness"] = [g for g in GATES
+                                      if g["id"] == "G23"][0]["value"]
+
+    # ---- the verdict, emitted and rebuilt ----------------------------------
+    phi_law_hits = 0
+    phi_law_rows = []
+    for (A, mm) in [(A, meas[A["name"]]) for A in family] + probes:
+        s_max = max(len(b) for b in A["blocks"])
+        law = Fr(s_max - 1, A["n"])
+        phi_law_rows.append({"arena": A["name"], "block_size": s_max,
+                             "labels": A["n"], "phi": canon(mm["PHI"]),
+                             "closed_law_blocksize_minus_1_over_n":
+                                 canon(law), "agrees": mm["PHI"] == law})
+        if mm["PHI"] == law:
+            phi_law_hits += 1
+    TABLES["phi_law"] = {"rows": phi_law_rows, "agreeing": phi_law_hits,
+                         "measured_at": len(phi_law_rows)}
+    causes = {}
+    for nm in names:
+        if nm == "PHI":
+            causes[nm] = ("-AS-(BLOCKSIZE-1)/N"
+                          if phi_law_hits == len(phi_law_rows) else "")
+        elif nm in ("SPECTRAL_PROFILE", "DIMENSION_PROFILE"):
+            causes[nm] = ("-BY-BASEPOINT-SHARE-ONLY"
+                          if bp_modes[nm] == "CONSTANT" else "")
+        else:
+            causes[nm] = ""
+    TABLES["stabilisation"] = {
+        "K": K, "cap": cap, "family_length": len(family),
+        "window_members_on_one_generator_rule": homog,
+        "registered_names": names, "registered": len(names),
+        "stabilised": stabilised,
+        "values": {nm: canon(stab[nm]) for nm in stabilised},
+        "modes": modes, "causes": causes,
+        "copying_measured": bool(copying),
+        "b0_equals_blocks_plus_one_at": b0_hits,
+        "blocks_isomorphic_at": iso_hits,
+        "members": len(family),
+        "per_block_one_cells": str(win_rows[0]["one_cells_per_block"]),
+        "per_block_coherent_two_cells":
+            str(win_rows[0]["coherent_two_cells_per_block"]),
+        "per_block_b2_of_N_coh": str(win_rows[0]["b2_of_N_coh_per_block"]),
+        "ratio_of_additives_forced": bool(cf_hits == cf_total and cf_total),
+        "window_tail_data_points": tail_forced_total,
+        "window_tail_data_points_forced": tail_forced_hits,
+        "basepoint_deleted_stabilised": len(bp_stab),
+        "sixth_stabiliser": canon(sixth),
+        "registered_plus_excluded_stabilising": len(stabilised) + 1,
+        "registered_plus_excluded": len(names) + 1,
+        "functoriality": func_qual, "tail_functoriality": tail_func,
+        "atlas_declarations_swept": len(sweep_variants),
+        "atlas_transport_conventions_invariant": conv_ok,
+        "atlas_transport_conventions_swept": len(conv),
+        "atlas_cell_set_variant_values": [
+            byv["B1"]["values"].get("NCOH_DENSITY"),
+            byv["B1"]["values"].get("B2_DENSITY")],
+        "atlas_non_block_local_stabilised":
+            byv["ATLAS-C"]["stabilised_count"],
+        "atlas_cell_structure_variant_undefined": bool(dundef),
+        "phi_forced_at": phi_forced,
+        "componentwise_complete_at": complete_hits,
+        "members_and_probes": len(oc_rows),
+        "alt_NCOH_DENSITY": sorted(alt_ncoh_vals)[0] if alt_ncoh_vals
+        else None,
+        "alt_B2_DENSITY": sorted(alt_b2_vals)[0] if alt_b2_vals else None,
+    }
+    T = TABLES["stabilisation"]
+    window_q = qualifier_source(rebuild_window_qualifier(T))
+    head = verdict_head(stabilised, copying)
+    gw_text = gw if gw else "NONE-EARNED"
+    segments = format_verdict_segments(T, window_q, gw_text)
+    verdict = emit_verdict(head, segments)
+    FINDINGS["verdict"] = verdict
+
+    gw_rebuilt = rebuild_gateway(TABLES["overlap_completeness"]["rows"])
+    rebuilt_segments = format_verdict_segments(
+        T, rebuild_window_qualifier(T),
+        gw_rebuilt if gw_rebuilt else "NONE-EARNED")
+    rebuilt = (verdict_head_from_tables(T) + "-<"
+               + "|".join(rebuilt_segments) + ">")
+    derived_ok = (
+        rebuilt == verdict
+        and head.startswith("R1-STABILIZES") == (len(stabilised) > 0)
+        and (head == "R1-STABILIZES-BY-DISJOINT-COPYING-AT") == bool(copying)
+        and all((modes[nm] == "CONSTANT") == (nm in stab) for nm in names)
+        and len(rows) == len(names))
+    gate("G22", "derivation",
+         "THE COMPLETE VERDICT STRING IS REBUILT SEGMENT BY SEGMENT FROM THE "
+         "MEASURED TABLES AND COMPARED FOR EQUALITY (RUNBOOK section 14 "
+         "addendum, CONTAINMENT IS NOT EQUALITY; section 13 addendum #234, "
+         "#257).  The emitted string is assembled from the live measurement "
+         "objects; inside this gate the whole string is assembled a second "
+         "time from the RECEIPT-FACING tables -- the same dictionaries the "
+         "receipt serialises and the paper renders from -- with the head, the "
+         "window qualifier and the gateway each RECOMPUTED there rather than "
+         "read back as text, and the two strings are required to be EQUAL "
+         "character for character.  No clause of this gate is a containment "
+         "test.  Consequently a value swapped between two names, a typed "
+         "segment and text appended to a segment are each caught, none of "
+         "which a substring check can see.  Every segment is computed: the "
+         "stabilised values under BOTH denominator conventions, the mechanism "
+         "with its measured block census, the measured-versus-forced split, "
+         "the independent content, each divergence mode with its measured "
+         "cause, the basepoint-deleted stabilising set with the sixth "
+         "stabiliser, the window with its measured homogeneity, the "
+         "functoriality qualifier with its tail-restricted reading, the atlas "
+         "coordinate with its measured sweep, and the successor gateway",
+         derived_ok,
+         {"verdict": verdict, "rebuilt_from_the_receipt_tables": rebuilt,
+          "equal": rebuilt == verdict, "head": head, "segments": segments,
+          "stabilised": stabilised,
+          "stabilised_values": {nm: canon(stab[nm]) for nm in stabilised},
+          "failure_modes": modes, "divergence_causes": causes,
+          "window": window_q, "functoriality": func_qual,
+          "R2_gateway": gw_text})
+    FINDINGS["R2_gateway"] = gw_text
 
     # ---- controls ----------------------------------------------------------
     prog("controls")
@@ -2309,6 +3907,15 @@ def run():
             ident_fixed.append(nm)
     declared_sensitive = ["NCOH_DENSITY", "B2_DENSITY"]
     declared_fixed = ["PHI", "DIMENSION_PROFILE", "SPECTRAL_PROFILE"]
+    coh_before = meas["A3"]["coherent_two_cells"]
+    coh_after = sc["coherent_two_cells"]
+    destruction = (
+        "the coherent 2-cell count falls from %d to %d, so the coherence "
+        "density moves to %s and the b_2 density %s"
+        % (coh_before, coh_after, canon(sc["NCOH_DENSITY"]),
+           "moves to UNDEFINED, its denominator having vanished"
+           if sc["B2_DENSITY"] is None
+           else "moves to " + canon(sc["B2_DENSITY"])))
     gate("G27", "control",
          "SCRAMBLE CONTROL: the drawn RELATION is preserved and the drawn "
          "MAPS are deterministically permuted inside each coordinate cell by "
@@ -2318,14 +3925,17 @@ def run():
          "measured set that did NOT move against the relation-only set.  The "
          "scramble is measured non-trivial -- the count of drawn maps it "
          "actually changed is printed and required positive -- so a "
-         "no-op scramble cannot pass.  At this substrate the scramble is "
-         "maximally destructive: the coherent 2-cell count falls to zero, so "
-         "NCOH_DENSITY moves to 0 and B2_DENSITY moves to UNDEFINED (its "
-         "denominator vanishes).  That is recorded as measured rather than "
-         "smoothed into a number",
+         "no-op scramble cannot pass.  The destruction the scramble actually "
+         "does is BUILT FROM THE MEASUREMENT rather than typed beside it, "
+         "and at this substrate it is: " + destruction + ".  The coherent "
+         "count is measured to have fallen, so a scramble that left the "
+         "identification data intact could not pass this gate either",
          sorted(ident_sensitive) == sorted(declared_sensitive)
-         and sorted(ident_fixed) == sorted(declared_fixed) and moved > 0,
+         and sorted(ident_fixed) == sorted(declared_fixed) and moved > 0
+         and coh_after < coh_before,
          {"shift": shift, "drawn_maps_moved": moved,
+          "coherent_two_cells_before": coh_before,
+          "coherent_two_cells_after": coh_after,
           "B2_DENSITY_is_undefined_after_the_scramble":
               sc["B2_DENSITY"] is None,
           "moved": sorted(ident_sensitive), "fixed": sorted(ident_fixed),
@@ -2395,17 +4005,16 @@ def run():
           "family_size": len(family)})
 
     # ---- robustness in the family index ------------------------------------
-    prog("index robustness")
-    alt_ms = robustness_indices(width, rank, [11, 13])
     alt_rows = []
-    for m in alt_ms:
-        n, blocks, sig = regenerate_fresh(base, exp, width, m, rank, p3)
-        B = make_arena("L%d" % m, n, sig, blocks, "alternative index")
-        mm = measure(B)
-        alt_rows.append({"member": B["name"], "labels": n,
+    for (B, mm) in probes:
+        alt_rows.append({"member": B["name"], "labels": B["n"],
                          "NCOH_DENSITY": canon(mm["NCOH_DENSITY"]),
                          "B2_DENSITY": canon(mm["B2_DENSITY"]),
                          "PHI": canon(mm["PHI"]),
+                         "B1_NCOH_DENSITY":
+                             canon(Fr(mm["N_coh"]["b1"],
+                                      mm["coherent_two_cells"]))
+                         if mm["coherent_two_cells"] else None,
                          "agrees_with_the_stabilised_values":
                              (mm["NCOH_DENSITY"] == stab.get("NCOH_DENSITY")
                               and mm["B2_DENSITY"] == stab.get("B2_DENSITY"))})
@@ -2443,29 +4052,57 @@ def run():
         for A in family}
     TABLES["spectral_rows"] = specrows
     FINDINGS["thesis"] = (
-        "THE DECLARED REFINEMENT FAMILY REFINES BY DISJOINT ADDITION, AND "
-        "EXACTLY THE TWO IDENTIFICATION-CARRYING DENSITIES STABILIZE.  Over "
-        "the pin's five-member family the overlap-completeness fraction is "
-        "measured strictly below 1 at every member -- so locality exists at "
-        "this substrate and R2's gateway arena is %s -- and it does not "
-        "stabilize: it is %s on the declared window.  Of the five "
-        "pre-registered intensive invariants exactly %d are exactly constant "
-        "on the final %d members, %s, and the same two values reproduce at "
-        "the members the growth rule's prime-indexed selection picks "
-        "instead.  The mechanism is measured rather than inferred: at every "
-        "grown member b_0 of the nerve equals the block count plus the "
-        "basepoint, so the refinement is a disjoint sum of identical block "
-        "atlases, the per-block 1-cell and coherent-2-cell counts are equal "
-        "across members, and a growth rule that widens a block instead of "
-        "copying it moves both densities.  The three that do not stabilize "
-        "fail in a named way: %s.  The family is NOT functorial: no "
-        "admissible arena morphism exists at %d of its %d steps, and the "
-        "obstructions are measured -- a block width that decreases, and a "
-        "symmetry orbit size the successor arena does not carry.  I2's "
-        "eigenvalue-1 row rides along as an anchor at every readout of every "
-        "member: 0 lies in spec(I - E) all the way up the family."
-        % (gw, modes["PHI"], len(stabilised), K, stab_body, div_body,
-           len(nonfunc), len(steps)))
+        "THE DECLARED REFINEMENT FAMILY COPIES AN ISOMORPHIC BLOCK, AND THE "
+        "TWO CONSTANT DENSITIES ARE THAT COPYING RESTATED.  Measured at the "
+        "five declared members: b_0 of the nerve equals the block count plus "
+        "the basepoint at %d of %d, no 1-cell crosses a block anywhere, and "
+        "at every window member the bijection the declared cyclic orders name "
+        "is measured to intertwine the arena symmetry and to carry block 1's "
+        "cyclic order to block k -- so the nerve and its coherent sub-nerve "
+        "are m disjoint copies of ONE block atlas together with an isolated "
+        "basepoint.  Every ratio of two block-additive, point-vanishing "
+        "counts is then independent of m; the affine law of every counting "
+        "quantity, fitted from the one- and two-block censuses alone, is "
+        "measured to PREDICT every member at m = 3..12 (%d of %d), and %d of "
+        "the %d data points the window's second and third members contribute "
+        "are exactly those predictions.  THE TWO STABILISED VALUES ALREADY "
+        "HOLD AT m = 1, THE SINGLE-BLOCK MEMBER: %s and %s.  Nothing "
+        "converges; the window carries one block's census.  What "
+        "discriminates the mechanism is ISOMORPHIC copying, not addition: a "
+        "mixed-block family with the same disjoint addition, the same "
+        "symmetry-stable blocks and the same b_0 = blocks + 1, differing only "
+        "in that its blocks are not isomorphic, MOVES both densities.  Of the "
+        "five registered invariants %d are constant on the final %d members, "
+        "%s; the other three fail in a named way, %s -- and with the single "
+        "structureless basepoint deleted, %d of %d are constant, so the split "
+        "is between basepoint-blind and basepoint-sensitive rather than "
+        "between substantive and not.  A sixth intensive quantity the pin "
+        "excludes by declaration, b_1 of N_coh per coherent 2-cell, is "
+        "measured constant at %s.  THE ATLAS IS VERDICT-DETERMINING: over the "
+        "same arenas and the same five invariant definitions, three "
+        "transport-convention re-declarations leave both values fixed, "
+        "dropping the realised cell moves them, a non-block-local declaration "
+        "stabilises NOTHING and flips the head to NO-CONTINUUM-LIMIT, and a "
+        "one-cell-per-block declaration leaves both headline invariants "
+        "UNDEFINED.  THE INHERITED GATEWAY IS WITHDRAWN: phi < 1 is forced by "
+        "an isolated basepoint at every member, componentwise overlap "
+        "completeness is 1 at %d of %d members and probes -- every component "
+        "is a complete graph, so every phi < 1 here is achieved by "
+        "disconnection and carries no locality content -- and the successor "
+        "criterion, the first component with an incomplete overlap graph, is "
+        "measured EMPTY.  The family is not functorial at %d of its %d steps; "
+        "restricted to the homogeneous tail its own generator rule produces, "
+        "it is FAMILY-FUNCTORIAL and every stabilised value and divergence "
+        "mode is unchanged."
+        % (b0_hits, len(family), cf_hits, cf_total, tail_forced_hits,
+           tail_forced_total, canon(base_case_ncoh), canon(base_case_b2),
+           len(stabilised), K,
+           ";".join("%s=%s" % (nm, canon(stab[nm])) for nm in names
+                    if nm in stab),
+           ";".join("%s:%s%s" % (nm, modes[nm], causes[nm]) for nm in names
+                    if nm not in stab),
+           len(bp_stab), len(names), canon(sixth),
+           complete_hits, len(oc_rows), len(nonfunc), len(steps)))
     return family, meas, verdict
 
 
@@ -2482,13 +4119,17 @@ def _measure_from_cells(A, cells):
     F, Fcoh = geometric_cells(A, cells, eidx)
     und = overlap_graph(cells)
     n = A["n"]
+    inv_all = complex_invariants(n, edges, F)
     inv_coh = complex_invariants(n, edges, Fcoh)
     spec, _rows = spectral_profile(A)
     dimp, _ag, _d = dimension_profile(A, cells)
     return {"PHI": Fr(len(und), n * (n - 1) // 2),
             "NCOH_DENSITY": Fr(len(Fcoh), len(edges)) if edges else None,
             "SPECTRAL_PROFILE": spec, "DIMENSION_PROFILE": dimp,
-            "B2_DENSITY": Fr(inv_coh["b2"], len(Fcoh)) if Fcoh else None}
+            "B2_DENSITY": Fr(inv_coh["b2"], len(Fcoh)) if Fcoh else None,
+            "b0_of_N": inv_all["b0"], "blocks": len(A["blocks"]),
+            "one_cells": len(edges), "coherent_two_cells": len(Fcoh),
+            "two_cells": len(F), "overlap_edges": len(und)}
 
 
 def _delta_fixed_points(A):
@@ -2693,7 +4334,7 @@ def run_mutant_table():
                 kill = json.loads(ln[len("KILL-JSON "):])
                 kill["crashed"] = False
         return {"mutant": m, "exit": r.returncode, "died": r.returncode == 1,
-                "falsified_anchors": sorted(kill["failed_anchors"])[:6],
+                "falsified_anchors": sorted(kill["failed_anchors"]),
                 "falsified_gates": sorted(kill["failed_gates"]),
                 "crashed_before_reporting": kill["crashed"],
                 "traceback": "Traceback" in r.stderr}
@@ -2712,6 +4353,18 @@ def run_mutant_table():
                 for g in r["falsified_gates"]}
     never = sorted(set(must) - hit)
     TABLES["mutants"] = rows
+    anch_hit = {a for r in rows for a in r["falsified_anchors"]}
+    all_anch = [a["id"] for a in ANCHORS]
+    TABLES["anchor_falsification"] = {
+        "anchors": len(all_anch),
+        "exercised_by_some_mutant": sorted(set(all_anch) & anch_hit),
+        "exercised_count": len(set(all_anch) & anch_hit),
+        "never_exercised_by_a_declared_mutant":
+            sorted(set(all_anch) - anch_hit),
+        "note": ("anchors are exit-1-only, so an unexercised anchor is an "
+                 "uncovered falsifier rather than an ungated number; the "
+                 "census is printed rather than waived"),
+    }
     TABLES["gate_falsification"] = {
         "must_pass_gates": must,
         "falsified_by_some_mutant": sorted(set(must) & hit),
@@ -2802,6 +4455,14 @@ def wrap(s, w=78):
 def render(rec):
     L = []
     A = L.append
+    T = rec["tables"]
+
+    def sect(n, title):
+        A("")
+        A("-" * 78)
+        A("%d. %s" % (n, title))
+        A("-" * 78)
+
     A("=" * 78)
     A("R1 -- THE CONTINUUM RUNG".center(78))
     A("v14 paper-01   |   pin v14/note-r1-continuum-pin.md".center(78))
@@ -2818,49 +4479,51 @@ def render(rec):
     A("THESIS")
     for ln in wrap(rec["findings"].get("thesis", "")):
         A("  " + ln)
-    A("")
-    A("-" * 78)
-    A("1. THE INHERITANCE (R0 rows, verified at run time)")
-    A("-" * 78)
-    for r in rec["tables"]["inheritance"]["rows"]:
+
+    sect(1, "THE INHERITANCE (R0 rows, verified at run time)")
+    for r in T["inheritance"]["rows"]:
         A("  %-4s %-46s %s" % (r["row"], r["artifact"], r["sha256_12"]))
     A("")
-    A("  companion artifacts named by R0, censused: %d" %
-      len(rec["tables"]["inheritance"]["companions"]))
-    for c in rec["tables"]["inheritance"]["companions"]:
-        A("    %-10s %-44s %s %s" % (c["id"], c["artifact"], c["computed"],
-                                     "OK" if c["matches"]
-                                     else "MISMATCH (declared %s)"
-                                          % c["declared"]))
+    A("  the pin's own table, parsed at run time: %d rows, %d (artifact, "
+      "hash) pairs" % (len(T["inheritance"]["pin_table_parsed"]),
+                       len({tuple(p) for r in
+                            T["inheritance"]["pin_table_parsed"]
+                            for p in r["pairs"]})))
     A("")
-    A("-" * 78)
-    A("2. THE DECLARED FAMILY (every label count derived, none typed)")
-    A("-" * 78)
+    A("  companion artifacts named by R0, censused: %d"
+      % len(T["inheritance"]["companions"]))
+    for c in T["inheritance"]["companions"]:
+        A("    %-10s %-42s %s  cited %s (%s)"
+          % (c["id"], c["artifact"], c["computed"], c["cited_here"],
+             c["citation_source"]))
+
+    sect(2, "THE DECLARED FAMILY (every label count derived, none typed)")
     A("  growth rule, read verbatim from I2's receipt:")
-    for ln in wrap(rec["tables"].get("rule_text", ""), 72):
+    for ln in wrap(T.get("rule_text", ""), 72):
         A("      " + ln)
-    fam = rec["tables"]["family"]
+    fam = T["family"]
     A("  %-6s %-8s %-8s %-10s %-14s %s" % ("member", "labels", "blocks",
                                            "blocksize", "Sigma order",
                                            "Sigma cycle type"))
-    for nm in rec["tables"]["trajectory"]["members"]:
+    for nm in T["trajectory"]["members"]:
         f = fam[nm]
         A("  %-6s %-8d %-8d %-10s %-14d %s"
           % (nm, f["labels"], f["blocks"], canon(f["block_sizes"][:3]),
              f["Sigma_order"], canon(sorted(set(f["Sigma_cycle_type"])))))
     A("")
     A("  maps between members:")
-    for s in rec["tables"]["maps"]["steps"]:
+    for s in T["maps"]["steps"]:
         A("    %-10s %-14s %s" % (s["step"],
                                   "ADMISSIBLE" if s["admissible"]
                                   else "NO MORPHISM", s["reason"][:44]))
-    A("    qualifier: " + rec["tables"]["maps"]["qualifier"])
-    A("")
-    A("-" * 78)
-    A("3. THE TRAJECTORY TABLE (5 registered invariants x %d members)"
-      % len(rec["tables"]["trajectory"]["members"]))
-    A("-" * 78)
-    tr = rec["tables"]["trajectory"]
+    A("    qualifier: " + T["maps"]["qualifier"])
+    A("    tail-restricted: %s ; window members on one generator rule %d"
+      % (T["tail_restricted"]["functoriality"],
+         T["tail_restricted"]["window_members_on_one_generator_rule"]))
+
+    sect(3, "THE TRAJECTORY TABLE (5 registered invariants x %d members)"
+         % len(T["trajectory"]["members"]))
+    tr = T["trajectory"]
     A("  %-20s %s" % ("invariant", "  ".join("%-16s" % m
                                              for m in tr["members"])))
     for nm in [r[0] for r in DECL["registered_invariants"]]:
@@ -2876,11 +4539,145 @@ def render(rec):
     A("")
     A("  cells written %d of the forced %d" % (tr["cells_present"],
                                                tr["cells_forced"]))
+
+    sect(4, "THE COPYING MECHANISM")
+    A("  %-6s %-7s %-6s %-8s %-10s %-12s %s"
+      % ("member", "blocks", "b0(N)", "cross", "beta_k", "E/block",
+         "F_coh/block"))
+    for r in T["disjointness"]["rows"]:
+        A("  %-6s %-7d %-6d %-8d %-10s %-12s %s"
+          % (r["arena"], r["blocks"], r["b0_of_N"],
+             r["cross_block_one_cells"],
+             "YES" if r["every_block_isomorphic_to_block_1"] else "no",
+             r["one_cells_per_block"], r["coherent_two_cells_per_block"]))
     A("")
-    A("-" * 78)
-    A("4. CONTROLS")
-    A("-" * 78)
-    c = rec["tables"]["controls"]
+    A("  the copy-forcing law, fitted from m = 1 and m = 2 and PREDICTING the")
+    A("  rest: %d of %d predictions agree at m = 3..12"
+      % (T["copy_forcing"]["predictions_agreeing"],
+         T["copy_forcing"]["predictions_checked_at_m_3_to_12"]))
+    A("  %-4s %-7s %-6s %-6s %-7s %-7s %-7s %-9s %-9s %s"
+      % ("m", "labels", "E", "ov", "F", "F_coh", "b2coh", "NCOH", "B2",
+         "PHI"))
+    for r in T["copy_forcing"]["rows"]:
+        A("  %-4d %-7d %-6d %-6d %-7d %-7d %-7d %-9s %-9s %s"
+          % (r["m"], r["labels"], r["one_cells"], r["overlap_edges"],
+             r["two_cells"], r["coherent"], r["b2_N_coh"],
+             r["NCOH_DENSITY"], r["B2_DENSITY"], r["PHI"]))
+    A("")
+    A("  THE BASE CASE IS THE CLAIM'S CONTENT: at m = 1, the single-block")
+    A("  member, NCOH_DENSITY = %s and B2_DENSITY = %s already."
+      % (T["copy_forcing"]["base_case_m_1_NCOH_DENSITY"],
+         T["copy_forcing"]["base_case_m_1_B2_DENSITY"]))
+    A("  window tail data points forced by the one-block census: %d of %d"
+      % (T["copy_forcing"]["window_tail_data_points_forced"],
+         T["copy_forcing"]["window_tail_data_points"]))
+    A("")
+    A("  the mixed-block control (disjoint addition, NON-isomorphic blocks):")
+    A("  %-7s %-7s %-7s %-7s %-8s %-8s %-10s %s"
+      % ("member", "labels", "blocks", "b0(N)", "cross", "all iso",
+         "NCOH", "B2"))
+    for r in T["mixed_block"]["rows"]:
+        A("  %-7s %-7d %-7d %-7d %-8d %-8s %-10s %s"
+          % (r["arena"], r["labels"], r["blocks"], r["b0_of_N"],
+             r["cross_block_one_cells"],
+             "YES" if r["all_blocks_isomorphic"] else "no",
+             r["NCOH_DENSITY"], r["B2_DENSITY"]))
+    A("  both densities move: %s ; disjoint addition holds: %s"
+      % (T["mixed_block"]["both_densities_move"],
+         T["mixed_block"]["disjoint_addition_holds"]))
+
+    sect(5, "THE ATLAS SWEEP (the atlas is a named verdict coordinate)")
+    A("  %-9s %-38s %-9s %s" % ("atlas", "head", "stab.", "values"))
+    for r in T["atlas_sweep"]:
+        A("  %-9s %-38s %-9d %s"
+          % (r["atlas"], r["head"], r["stabilised_count"],
+             canon({k: r["values"][k] for k in sorted(r["values"])
+                    if k in ("NCOH_DENSITY", "B2_DENSITY")})))
+    A("")
+    for r in T["atlas_sweep"]:
+        A("  %s:" % r["atlas"])
+        for ln in wrap(r["declaration"], 70):
+            A("      " + ln)
+        A("      modes  %s" % canon({k: r["failure_modes"][k]
+                                     for k in sorted(r["failure_modes"])}))
+        for m in r["members"]:
+            A("      %-4s b0 %-4d blocks %-3d cells %-3d transport orders %-9s"
+              % (m["arena"], m["b0_of_N"], m["blocks"],
+                 m["coordinate_cells"], canon(m["transport_group_orders"])))
+            A("           E %-6d F_coh %-6d PHI %-8s NCOH %-12s B2 %s"
+              % (m["one_cells"], m["coherent_two_cells"], m["PHI"],
+                 m["NCOH_DENSITY"], m["B2_DENSITY"]))
+
+    sect(6, "THE BASEPOINT AUDIT AND THE NON-COPIED HUNT")
+    A("  basepoint deleted: %d of %d registered invariants constant"
+      % (T["basepoint_audit"]["stabilised_count"],
+         T["basepoint_audit"]["registered"]))
+    for r in T["basepoint_audit"]["rows"]:
+        A("    %-4s charts %-4d PHI %-10s SPEC %-28s DIM %s"
+          % (r["arena"], r["charts_kept"], r["PHI"],
+             r["SPECTRAL_PROFILE"][:28], r["DIMENSION_PROFILE"]))
+    A("    modes %s" % canon({k: T["basepoint_audit"]["modes"][k]
+                              for k in sorted(T["basepoint_audit"]["modes"])}))
+    A("")
+    A("  the 24-quantity grid, classified BEFORE evaluation, at %s:"
+      % canon(T["non_copied_grid_members"]))
+    A("  %-38s %-20s %-9s %s" % ("quantity", "class", "constant", "values"))
+    for r in T["non_copied_grid"]:
+        A("  %-38s %-20s %-9s %s"
+          % (r["quantity"], r["class"], "CONSTANT" if r["constant"] else "-",
+             canon(sorted(set(r["values"])))
+             if r["constant"] else canon(r["values"])))
+        if r["declared_vacuity"]:
+            for ln in wrap("declared vacuity: " + r["declared_vacuity"], 66):
+                A("        " + ln)
+    A("")
+    A("  phi's closed law (block size - 1)/labels: %d of %d members and probes"
+      % (T["phi_law"]["agreeing"], T["phi_law"]["measured_at"]))
+    for r in T["phi_law"]["rows"]:
+        A("    %-5s block %-3d labels %-4d phi %-8s law %-8s %s"
+          % (r["arena"], r["block_size"], r["labels"], r["phi"],
+             r["closed_law_blocksize_minus_1_over_n"],
+             "OK" if r["agrees"] else "MISMATCH"))
+
+    sect(7, "BOTH DENOMINATOR CONVENTIONS, AND THE TAIL-RESTRICTED READING")
+    A("  %-6s %-9s %-9s %-9s %-9s %-12s %-12s %-12s %s"
+      % ("member", "F_coh", "|E(N)|", "|E(G)|", "|F(N)|", "NCOH/inc",
+         "NCOH/pair", "B2/F(Ncoh)", "B2/F(N)"))
+    for r in T["denominators"]:
+        A("  %-6s %-9d %-9d %-9d %-9d %-12s %-12s %-12s %s"
+          % (r["arena"], r["coherent_two_cells"], r["one_cell_incidences"],
+             r["drawn_chart_pairs"], r["two_cells_of_N"],
+             r["NCOH_DENSITY_per_incidence"],
+             r["NCOH_DENSITY_per_drawn_pair"],
+             r["B2_DENSITY_per_N_coh_two_cell"],
+             r["B2_DENSITY_per_N_two_cell"]))
+    A("")
+    tt = T["tail_restricted"]
+    A("  tail-restricted to %s: %s ; stabilised %s = %s"
+      % (canon(tt["members"]), tt["functoriality"], canon(tt["stabilised"]),
+         canon({k: tt["values"][k] for k in sorted(tt["values"])})))
+    A("  modes %s" % canon({k: tt["modes"][k] for k in sorted(tt["modes"])}))
+    A("  the inherited criterion applied to the tail alone would name: %s"
+      % tt["inherited_criterion_would_name"])
+
+    sect(8, "THE SUCCESSOR GATEWAY")
+    oc = T["overlap_completeness"]
+    A("  %-6s %-11s %-16s %-13s %-11s %s"
+      % ("member", "components", "sizes", "completeness", "phi",
+         "forced bound"))
+    for r in oc["rows"]:
+        A("  %-6s %-11d %-16s %-13s %-11s %s"
+          % (r["arena"], r["components"],
+             canon(sorted(set(r["component_sizes"])))[:16],
+             r["completeness"], r["phi"],
+             r["phi_upper_bound_from_the_isolated_basepoint"]))
+    A("")
+    A("  every component complete at %d of %d ; successor criterion returns %s"
+      % (oc["componentwise_complete_at"], oc["members_and_probes"],
+         oc["successor_criterion_result"]))
+
+    sect(9, "CONTROLS")
+    c = T["controls"]
     A("  positive       : %s  stabilised %s" % (c["positive"]["head"],
                                                 canon(c["positive"]["stabilised"])))
     A("  negative       : %s  stabilised %s" % (c["negative"]["head"],
@@ -2889,55 +4686,56 @@ def render(rec):
       % (canon(c["scramble"]["moved"]), canon(c["scramble"]["fixed"]),
          c["scramble"]["drawn_maps_moved"]))
     A("  discrimination : moved %s" % canon(c["discrimination"]["moved"]))
+    A("  mixed-block    : moved %s"
+      % canon(["NCOH_DENSITY", "B2_DENSITY"]
+              if T["mixed_block"]["both_densities_move"] else []))
     A("  index sweep    : %s" % canon([r["member"] for r
                                        in c["index_robustness"]]))
-    A("")
-    A("-" * 78)
-    A("5. ANCHORS  (%d, all exit-1)" % len(rec["anchors"]))
-    A("-" * 78)
+
+    sect(10, "ANCHORS  (%d, all exit-1)" % len(rec["anchors"]))
     bad = [a for a in rec["anchors"] if not a["passed"]]
     A("  failures: %d" % len(bad))
     for a in bad:
         A("    %-22s declared %-14s computed %s" % (a["id"], a["declared"],
                                                     a["computed"]))
-    A("")
-    A("-" * 78)
-    A("6. GATES")
-    A("-" * 78)
+
+    sect(11, "GATES")
     for g in rec["gates"]:
         A("  [%s] %-4s %s" % ("PASS" if g["passed"] else "FAIL", g["id"],
                               g["class"]))
         for ln in wrap(g["claim"], 72):
             A("        " + ln)
-    A("")
-    A("-" * 78)
-    A("7. DISCLOSURES")
-    A("-" * 78)
+
+    sect(12, "DISCLOSURES")
     for d in rec["disclosures"]:
         A("  %s" % d["id"])
         for ln in wrap(d["statement"], 72):
             A("      " + ln)
-    A("")
-    A("-" * 78)
-    A("8. TOTALS")
-    A("-" * 78)
+
+    sect(13, "TOTALS")
     for k in sorted(rec["totals"]):
         A("  %-30s %s" % (k, rec["totals"][k]))
     A("")
-    if rec["tables"].get("mutants"):
-        A("-" * 78)
-        A("9. MUTANT TABLE")
-        A("-" * 78)
-        for r in rec["tables"]["mutants"]:
-            A("  %-16s exit %d  %-11s kills %s"
-              % (r["mutant"], r["exit"], r["kind"],
-                 canon((r["falsified_gates"] or r["falsified_anchors"])[:4])))
-        gf = rec["tables"]["gate_falsification"]
+    if T.get("mutants"):
+        sect(14, "MUTANT TABLE")
+        for r in T["mutants"]:
+            killed = r["falsified_gates"] or r["falsified_anchors"]
+            head = "  %-18s exit %d  %-11s kills " % (
+                r["mutant"], r["exit"], r["kind"])
+            body = wrap(canon(killed), 78 - len(head))
+            A(head + body[0])
+            for ln in body[1:]:
+                A(" " * len(head) + ln)
+        gf = T["gate_falsification"]
         A("")
         A("  must-pass gates %d ; falsified by some mutant %d ; never "
           "falsified %s" % (len(gf["must_pass_gates"]),
                             len(gf["falsified_by_some_mutant"]),
                             canon(gf["never_falsified"])))
+        af = T["anchor_falsification"]
+        A("  anchors %d ; exercised by some mutant %d ; never exercised %d"
+          % (af["anchors"], af["exercised_count"],
+             len(af["never_exercised_by_a_declared_mutant"])))
     A("")
     A("=" * 78)
     return "\n".join(L) + "\n"
