@@ -993,3 +993,37 @@ reduces to f₀≠f₁ (wider census 92.3%); F8 an unrendered
 odd-count omission.  K4: the per-class table is the right
 carrier; both R1-copy fingerprints verified genuinely
 different.  One reviewer pending (instrument).
+
+## 2026-08-09 — R6a REVIEW: INSTRUMENT FROZEN (v14 LEDGER #33)
+review-r6a-instrument.md (8d05097f3d0f) frozen as delivered.
+Grade AWF; 116 CLI executions, 624 cells recomputed zero
+mismatches (the 11,088-cell defect census twice), verdict
+rebuilt byte-identically, 12/12 segments flipped, both
+alternative heads reached.  **12 INJECTION CLASSES SURVIVE
+UNDETECTED** incl. a whole move class dropped w/
+cell-completeness GREEN (#219: the gate compares its census
+against a second call of its own constructor), split-fiber
+corruption green, 16,079 defect values zeroed w/ all four
+defect gates green, #24 typed constants ×4.  **THE WAIVER
+AUDIT: 12 FALSE WAIVERS BY NAME — 10 gates SHADOWED (never
+evaluated on any path), 11 of 20 waived gates killed by
+targeted injections; 6 genuine.**  VERBATIM-TEXT ANCHORS:
+ADOPT WITH MODIFICATION (they bind existence, not meaning —
+a semantic inversion of the strictly-positive declaration
+survived w/ 10/10 anchors green; fixes: evaluate before byte
+anchors, bind each row to a named consumer gate, anchor
+context windows).  **ZERO FALSE NUMBERS — the campaign's
+first clean prose surface (the prose-render engraving
+worked).**  **THE MAJOR SUBSTANTIVE FINDING: the no-potential
+theorem is scoped to the PERIODIC lattice — five of nine
+admissible records (the q₁₂=0 sector incl. G-FLAT, G-DIAG2)
+ARE coboundaries on the universal cover ℤ²; and for G-DIAG2
+the potential interpolated by §6.1's own dynamics-forced rule
+yields a FULLY ADMISSIBLE CANONICAL REFINEMENT — split fiber
+1, coarse record recovered 9/9 — sitting in the unit's build
+set classified class-(iii) w/ fiber 19,683.  The obstruction
+on that sector is PERIODIC HOLONOMY, not information; §2's
+"mechanism of everything" sentence must be retired.**
+Confirmed sound: the verdict comparator genuinely
+independent (the R2 disease repaired); the prose gate works.
+**PANEL COMPLETE: 3× AWF.**  Joint adjudication next.
