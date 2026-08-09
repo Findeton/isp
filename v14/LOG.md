@@ -1189,3 +1189,45 @@ R4's mandatory REALIZATION-CENSUS GATE (D-REG/D-TOT/D-FULL)
 "the record does not transport" (R3-F5) = "no geometry-update
 law" (CR-A) — the SAME missing object, now named four times
 across four routes.  Two R3 reviewers pending.
+
+## 2026-08-09 — R3 REVIEW: OPERATOR FROZEN (v14 LEDGER #40)
+review-r3-operator.md frozen as delivered.  Grade AWF; 37,312
+recomputations (~1.03M evaluations) + five censuses the
+delivery lacks; ZERO false physics numbers.  **K1 DERIVABLE,
+theorem checked 476/476**: residual = (W−B)Ω; CLOSES ⟺ W≡B;
+coefficient class = a pure function of (rule, readout), no
+bracket in it — **the one unmeasured ingredient is the
+SPANNING HYPOTHESIS (the delivery never measures it; the
+reviewer did: full rank 460/460)**.  **K1(d): 32/120 IS A
+COROLLARY, NOT A DISCOVERY** (16 = the metric-inserted
+control w/ site-variation forced by inhomogeneity —
+demonstrated on three synthetic records; 16 = the diagonal
+record where the link-local rule IS q⁻¹ identically — I7's
+own sector; NO cell exists where a non-metric rule gives a
+site-varying metric coefficient).  **K2 — THE 27-REALIZATION
+CENSUS: the defect survives AS A FIELD (100% nonzero at all
+18 front-dragging realizations) and ABSOLUTELY as
+IN-CONSTRAINT AT 0 OF 73,872 — no declared-expressible
+realization closes {D,H} strictly; but the OUTSIDE-basis
+status is realization-relative: at (1,1,1) the bracket lands
+IN-EXTENDED at 972/1188 (d2) / 270/360 (d3), and THE CELLS
+THAT RESIST ARE EXACTLY THE INHOMOGENEOUS RECORDS** — §6's
+"transport, not curvature" reverses at the full realization:
+what survives maximal transport is CURVATURE-SUPPORTED.
+K4: L-stability = HALF a theorem (pointwise-ness + raw-count
+nesting; verified at a third L incl. the excluded d3L3);
+scope-stability a FULL theorem given spanning.  **M1 MAJOR:
+G-CONVENTION-RULE-INDEPENDENT is a TAUTOLOGY (x%n==0 on a
+number built as ×n), unreachable by any mutant, CITED AS
+#208 COMPLIANCE EVIDENCE, w/ 30.8× denominator inflation
+(21,126 vs 685 actual evaluations).**  D3: the boundary
+test's "degenerate probe" DOES NOT EXIST —
+degenerate_probe_sums_to_zero: True is a HARD-CODED LITERAL
+rendered into the paper as a measurement (#24; real repair:
+the constant lapse gives a genuine zero-defect probe).  D1:
+the "architecture-B" inconsistency claim FALSE (only B-all;
+repeated in X05 + verdict + gate).  D4: 62-of-476 mixes
+pair/cell denominators.  Two NOTES STRENGTHEN: the defect
+survives the other bracket order (0/3096) AND non-constant
+bijective tangential fields.  One reviewer pending
+(instrument).
