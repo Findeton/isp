@@ -9395,3 +9395,35 @@ still passed).  FAVOURABLE: the build cap conservative — the
 carrier built at ALL FOUR excluded primes (13/17/19/23);
 **G29's Z/p claim holds at 7 OF 7 declared primes.**  Four
 reviewers pending across the two panels.
+
+## 2026-08-09 — RSQ R1 (OPERATOR) FROZEN (v13 LEDGER #309)
+review-rsq-operator.md frozen as delivered.  Grade AWF; 84
+recomputations, zero disagreements; byte-identical re-runs.
+**K1 — THE OBSTRUCTION IS GENUINELY NEW, decisively: the
+module-forced E = I − ρ_V(π) PASSES LCB's precheck (dim
+ker(E−I) = 0 at 10/10) and SATISFIES the order criterion — it
+is arena-free AND transport-free, not the LCB wall in module
+clothing.  THE MASTER EQUATION derived: I − E = α⁻¹ρα, with
+the three walls as three readings (LCB = ρ invertible; RSQ
+order = ρ^ord = I, strictly stronger; module = ρ = ρ_V(π)).
+REVIEWER CONTRIBUTION: the whole 20,160-row sweep is a
+THEOREM, not a census — every readout row has profile
+(0,0,0,0,0,1) or (0,0,0,1,1,2), killing all four branches at
+EVERY p ≥ 5; the sweep extended to 50,400 rows, still 0 — the
+result is STRONGER than claimed.**  K2: every number
+reproduces; the exemption legitimate (the exempt set
+independently enumerated as {r=0}); NEW: the control's A is
+stable only under the Z/3 — the involutions do NOT normalise
+it, undisclosed; the control = synthetic detectability + a
+real reachability gate.  FIVE MAJORS, four killed with the
+REVIEWER'S OWN mutants: F1 verdict sources one function
+(confirms R3); F2 G19 no containment (confirms R3); F3 S4's
+per-base emptiness TYPED True (flipping one leaves G28
+passing — counts-computed-never-typed); F4 the grown arena
+never enters the EMPTY branch (deleting it entirely passes);
+**F5 NO FITTING OCCURS in the "held-out" test — H1 and H2 are
+the same boolean; H3 an unconditional counter** (the FOUND
+control's held-out language overstated).  None moves the
+verdict — source 2 carries it and R1 confirms it
+ANALYTICALLY.  Plus the unstated favourable lemma (route A's
+completeness from v_p(5040) = 1).  Three reviewers pending.
