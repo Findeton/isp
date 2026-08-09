@@ -129,3 +129,47 @@ K5 instrument (falsifier audit w/ uncovered-class injections,
 verdict rebuilt from receipt alone, the 28+1 anchors traced,
 paper↔receipt numbers, byte-identity).  Three-lens panel
 dispatched (operator / effectus / instrument, all Opus).
+
+## 2026-08-09 — R1 REVIEW: OPERATOR FROZEN (v14 LEDGER #7)
+review-r1-operator.md (f869eee604a7) frozen as delivered.
+Grade AWF; 1,620 recomputations (820 substantive + 800
+tautology sweep), ZERO diffs against the delivery.  **K1
+DECIDED: THE CONSTANCY IS ALGEBRAICALLY FORCED — the
+copy-forcing theorem proved** (Σ-stable isomorphic blocks,
+measured intertwiner β_k; cross-block 1-cells = 0; N and
+N_coh = m disjoint copies + isolated basepoint; any ratio of
+component-additive quantities is m-independent; the entire
+A₃–A₅ trajectory = the L₁ census × m, verified m=1..12).
+**37/27 AND 20/37 ALREADY HOLD AT L₁, THE SINGLE-BLOCK
+MEMBER: NOTHING CONVERGES** — the sixth beautiful-story death
+(the continuum rung's "first yes" was the copying rule).
+NON-COPIED HUNT: NOTHING stabilises non-vacuously (24-
+quantity pre-declared grid: copied 10/10 forced-constant;
+basepoint-involving 0/8; cross-block 3/6 all vacuous;
+exhaustive ad=bc scan over 182 pairs: 0 basepoint-involving
+constant ratios).  F1 MAJOR: **the paper's mechanism sentence
+is FALSE AS WRITTEN** — measured counterexample MX_m (mixed
+7-blocks + one 3-block: pure disjoint addition, densities
+MOVE 115/84→89/65→152/111); the true hypothesis is
+ISOMORPHIC copying; the widening control never tests it.
+F2 MAJOR: the atlas is an UN-SWEPT ARENA COORDINATE (§15 +
+the TOP P* precedent) — survives 3 transport-convention
+re-declarations (favourable, unclaimed) but under ALT-D
+(⟨γ,Σ⟩ order 21) **both headline invariants become UNDEFINED
+at all three tail members**.  F3: pin-literal denominator
+gives 37/21 not 37/27 (convention-dependent; head safe).
+F4: the eigenvalue-1 anchor chain is a TAUTOLOGY (0/400
+random failures) AND I2's E is HA's F_p readout, not R1's
+chart-permutation over Q — a different operator; the
+walls-ride-along chain does not connect to I2's wall.
+F5: UNDEFINED-AT-A-MEMBER is dead code (partiality by
+exclusion).  F6: tail restriction → FAMILY-FUNCTORIAL and
+gateway A₃ (R2 currently handed an arena OUTSIDE the growth
+rule).  F7: A SIXTH STABILISER EXISTS — b₁(N_coh)/|F(N_coh)|
+= 4/37 constant on tail+probes, excluded on a rationale the
+unit's own b₁(N_coh)=24,28,32 contradicts; the score is
+3-of-6.  F8: the spectral/dimension "divergences" vanish
+under moved-label normalisation — only φ diverges
+structurally.  K5 PASS: the verdict regenerates VERBATIM;
+28+1 anchors trace; NO false numbers.  Two reviewers
+(effectus, instrument) resumed post-stall, in flight.
