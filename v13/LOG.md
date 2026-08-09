@@ -9533,3 +9533,31 @@ eigenvalue 1 at every dimension, so 0 ∈ spec(I−E) lies on no
 unit circle — the continuum rung can inherit a PROOF rather
 than a census (S-1..S-5 written out).  RSQ PANEL COMPLETE
 (R3 #308, R1 #309, R2 #312) — three AWF.  Adjudication next.
+
+## 2026-08-09 — TOP JOINT ADJUDICATION (v13 LEDGER #313)
+note-top-adjudication.md committed.  Grade AWF unanimous
+(~1,090 combined recomputations, zero instrument
+disagreements; the one false number is in the PAPER).  Twelve
+binding orders R-TOP-1..12, the spine: fix the programme's
+second false paper number (C7 0→6, regenerated from the
+receipt, never retyped); gate full verdict strings with
+computed qualifiers (#257 — the R3-F1 recurrence owned as a
+COORDINATION-LAYER process failure: TB3's repair and TOP's
+construction ran concurrently with no rule-diff at delivery);
+reclassify the forced-clause cluster (vertex-forced
+CONSISTENT, |C\C4|, C5≡C10, the χ clause) as disclosures per
+#208; declare P* as arena datum + print the five-symmetry
+sweep (3-cycles: locus 270/0, order-7 defects) with the
+verdict P*-relative; restate temporal-b₁ as a
+partition-nesting census (the (T−1)(|V|−1) identity + the
+scrambled control + R1's block-incidence route as the exact
+statement), b₂/N_coh the identification-carrying invariants;
+**R-TOP-7: TAKE THE DECIDING MEASUREMENT (drawn-map agreement
+across coordinate cells for one pair — R2-F3, "one loop away,
+decides what the continuum rung inherits")**; link/star
+falsifier; boundary-parity gate class.  TWO RUNBOOK
+ENGRAVINGS: §13 repair-propagation (parallel-built units
+diff their gates against rules engraved since pin-freeze);
+§14 boundary parity.  Continuum inheritance consolidated
+(non-complete overlap graph; refinement family; intensive
+invariant; R-TOP-7 settled; N_coh primary).

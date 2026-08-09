@@ -1786,3 +1786,25 @@ And "two independent routes" for a census must be genuinely
 independent computations; a pair related by an algebraic
 identity is one route, and a cell-completeness gate must catch
 a dropped cell.
+
+**§13 addendum (2026-08-09, from v13 #313 — repair
+propagation):** parallel-built units inherit repairs. Before
+delivery, a worker must diff its gates against every rule
+engraved since its pin froze (rules bind at delivery time,
+#246). A recurrence of an already-engraved disease is a MAJOR
+by default and is named as a recurrence in the review (the
+TOP qualifier recurrence against #257).
+
+**§14 addendum (2026-08-09, from v13 #313 — boundary
+parity):** Boolean-connective boundaries in incidence/complex
+constructions carry a parity-witness gate whose death
+certificate is the measured delta of the alternative
+connective (the OR-vs-XOR class: quotient b₁ 25 vs 24, caught
+only incidentally at TOP).
+
+**§13 addendum (2026-08-09, from v13 #314 — precheck
+doctrine):** stillborn-precheck-before-census is standing
+doctrine for census units. A precheck-level quantity may gate
+which candidates are censused, but may never by itself name
+the verdict. Verdict-naming facts must be measured on the
+censused objects.
