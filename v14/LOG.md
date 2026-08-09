@@ -1356,3 +1356,28 @@ DURING the review (+7,972 bytes by a concurrent worker) and
 the delivery survived only because the new text contains none
 of the six fraction patterns.  PANEL COMPLETE: 3× AWF.
 Joint adjudication next.
+
+## 2026-08-09 — R3 JOINT ADJUDICATION (v14 LEDGER #46)
+note-r3-adjudication.md (`dc2c2525e1f2`) committed.  Grade AWF
+unanimous.  Settled: the census ANALYTIC (FORCED labels; the
+spanning hypothesis = the real measured ingredient, to be
+measured in-unit); the positive claim restated —
+**FIXED-BACKGROUND COVARIANCE WITH GR'S BRACKET FORM, not the
+HDA** (central extension, background coefficient; the three
+relations not simultaneously realizable here); **the defect's
+final anatomy: ABSOLUTE (IN-CONSTRAINT 0-of-73,872, surviving
+reverse order + non-constant fields) / RELATIVE (D-FULL
+absorbs OUTSIDE; THE COVARIANCE THEOREM — the record does not
+transport, the geometry is background) / the D-FULL residue
+CURVATURE-SUPPORTED**.  Adjudicator errors owned: the
+unreachable RIGID branch (pin-design, my second); the
+deviation-from-GR framing (retired, my sixth).  Ten orders
+R-R3-1..10 (verdict recomposition; the rigid branch made
+reachable; M1 eliminated; the ten injection hardenings; the
+waiver ledger at the #34 standard; the two mechanism claims;
+honest denominators; FR1–FR11 recorded; paper rewrite; **the
+R4 ruling formalized: seed from Δᴮ, the realization-census
+gate mandatory**).  ONE RUNBOOK ENGRAVING:
+no-unanchored-runtime-inputs (the M1 class).  R3 repair
+dispatched; THE R4 PIN NEXT (paper-10) per the standing
+order.

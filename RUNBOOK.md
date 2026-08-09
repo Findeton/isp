@@ -1858,3 +1858,12 @@ with three binding modifications: evaluated before byte
 anchors; each row bound to a named consumer gate; context
 windows anchored rather than fragments (they bind meaning to
 use, not existence).
+
+**§14 addendum (2026-08-09, from v14 #46 — no unanchored
+runtime inputs):** every input a unit reads at run time is
+either a hash-pinned artifact (byte + path-value anchored) or
+the unit's own frozen declaration; reading mutable repo state
+(ledgers, STATUS, other units' working files) is forbidden —
+a verdict segment depending on an unanchored read is an
+ungated verdict (the R3 M1 class: one appended ledger
+sentence flipped a verdict at exit 0).
