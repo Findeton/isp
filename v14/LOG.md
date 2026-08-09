@@ -320,3 +320,48 @@ banned from the verdict.  paper-02 assigned.  Construction
 dispatched in parallel with the R1 repair continuation
 (the sleep killed the first repair worker at 09:10 — only
 code-layer partials; relaunched with inventory+audit orders).
+
+## 2026-08-09 — R2 DELIVERED, COMMITTED AS-IS (v14 LEDGER #12)
+paper-02-manifold-rung.md (cc78e9373bbe) + r2_manifold_
+exact.py (36a10324b93f) + _output.txt (cb8493a13c39) +
+_receipt.json (7b128499b246) committed exactly as delivered
+BEFORE adjudicator verification.  **THE VERDICT AS EMITTED:
+R2-LOCALITY-AT<RULES=14-OF-109:...|MECHANISM=DECLARED-
+PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)|
+...|NULL=G0-CLIQUE-ONLY;ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-
+AT-38-OF-38(R2-A-VERIFIED-40320-SWEPT-ACTIONS-0-
+COUNTEREXAMPLES)|...>** — THE RECIPE WORKED: 14 of 109
+declared rules produce a NON-COMPLETE COMPONENT, every one a
+SLIDING coset-union rule (the declared partial-overlap
+mechanism, exactly as R2-A prescribed); every orbit-partition
+rule clique-only (R2-A re-proved in-unit over ALL 40,320
+cyclic actions + the partition corollary).  **LOCALITY IS A
+WINDOW-WIDTH EFFECT**: present at window widths c=2..4 (T7) /
+c=2..3 (T4), gone at wider windows — measured, not inferred.
+**FIRST NON-TRIVIAL DEGREE-1 TOPOLOGY IN THESE ARENAS**:
+b₁ > 0 at 9 of 14 locality rules (cycle ranks to 12, b₁(N)
+to 14).  Standards where locality exists: links are circles
+at 1 of 80 charts (R051 chart 4); dimension reading
+INCONSISTENT at 14/14 w/ local dimensions 1,2,3 TRACKING THE
+DECLARED WINDOW WIDTH.  **B₂ PERSISTENCE: locality SURVIVES
+block addition at 14/14 — components double exactly (one per
+block): block addition COPIES locality, neither creating nor
+destroying it.**  Block constants: densities constant B→B₂
+at 109/109 (the copy-forcing invariance verified for EVERY
+atlas incl. locality-bearing ones) but strongly
+ATLAS-DEPENDENT (per-incidence span 0/1..25/18); b₂-density
+UNDEFINED path LIVE at 28 rules (the R1 order-8 lesson
+applied at birth).  The coherence corollary: N_coh = N
+identically at this drawing relation (forced disclosure per
+#208, scramble-verified non-vacuous).  Grid: 109 rules at
+TWO transports (T7 ×7-witness / T4 lex-first, both read from
+I6 by JSON path) — **the worker's scope decision, flagged for
+adjudication**: the pin's singular "the transport action"
+widened to transport-as-arena-datum w/ both values censused
+(§15 rationale; the strict T7-only reading separable: 8 of
+51).  5 REFUSES recorded.  Counts: 5 anchors, 42 gates all
+pass, 14 mutants all dead; positive toy non-complete;
+scramble 81/81 split; 20-rule compliance sweep ALL APPLIED
+(incl. both #10 engravings at birth).  Two plain runs
+byte-identical.  Adjudicator verification next; R1 repair
+continuation running in parallel.

@@ -1,0 +1,864 @@
+==============================================================================
+v14 R2 -- THE MANIFOLD RUNG.  Exact instrument, plain delivery run.
+==============================================================================
+
+PIN: v14/note-r2-manifold-pin.md (v14 ledger #11).
+THE QUESTION: does any drawing rule in the declared finite grid of atlas
+declarations produce a component with a NON-COMPLETE overlap graph?
+
+------------------------------------------------------------------------------
+1.  ANCHORS (every inherited number arrives hash-verified)
+------------------------------------------------------------------------------
+  A-PIN-R2               v14/note-r2-manifold-pin.md                    76d42dfbc900  OK
+      this unit's pin, frozen at v14 ledger #11
+  A-R1-ADJ               v14/note-r1-adjudication.md                    4115dcd83cfa  OK
+      the R1 joint adjudication: the criterion, the recipe (R2-A), the null
+  A-R0-I6                v13/code/tb3_third_base_receipt.json           c9bc956fe751  OK
+      R0 row I6 -- TB3's third base: the 8-label arena, its declared permutations
+  A-R0-I3                v13/code/top_topology_receipt.json             65bb1fc5231f  OK
+      R0 row I3 -- the topology base: nerve / link / dimension definitions and the sphere / torus / pinch-point controls
+  A-ERRATUM-TOP-PAPER    v13/paper-top-topology.md                      379194959fbc  OK
+      v14 LOG #4 erratum -- the TOP paper's terminal companion hash, the written source of the I3 definitions reimplemented here
+
+------------------------------------------------------------------------------
+2.  THE ARENAS AND THE TRANSPORTS (declared data, RUNBOOK section 15)
+------------------------------------------------------------------------------
+  B  : 8 labels, 1 block, basepoint None -- the single block L1 -- TB3's native 8-label arena (I6)
+  B2 : 17 labels, 2 blocks, basepoint 16 -- L2 -- two isomorphic blocks plus an isolated basepoint (16)
+       BLOCK-LOCAL: the rule's cells are copied into each block; the basepoint lies in no cell
+  T4 : gamma = [0, 1, 3, 4, 5, 2, 7, 6]  (order 4)
+       I6 tables.ord_census.lex_first_Q_per_order['4'] -- the lex-first completion permutation at defect order 4
+       Sigma = [0, 3, 2, 1, 4, 5, 6, 7]  (order 2)
+       I6 tables.arena.the_declared_completion_transposition
+       drawing group |<gamma>| = 4 ; |<gamma,Sigma>| = 240
+       cyclic lattice        : [('C4', 4), ('C2', 2), ('C1', 1)]
+       declared Sigma lattice: [('<e>', 1), ('<g>', 4), ('<s>', 2), ('<gs>', 10), ('<sg>', 10), ('<ggs>', 6), ('<gsgs>', 5), ('<g,s>', 240)]
+  T7 : gamma = [0, 2, 3, 4, 5, 6, 7, 1]  (order 7)
+       I6 tables.the_ladder.the_embedding.the_witness_system_part -- the x7=[A7:A6] embedding witness, a 7-cycle on the seven non-zero labels
+       Sigma = [0, 3, 2, 1, 4, 5, 6, 7]  (order 2)
+       I6 tables.arena.the_declared_completion_transposition
+       drawing group |<gamma>| = 7 ; |<gamma,Sigma>| = 5040
+       cyclic lattice        : [('C7', 7), ('C1', 1)]
+       declared Sigma lattice: [('<e>', 1), ('<g>', 7), ('<s>', 2), ('<gs>', 10), ('<sg>', 10), ('<ggs>', 6), ('<gsgs>', 5), ('<g,s>', 5040)]
+  modes declared: ALL, BLOCKWISE, SLIDING
+  drawing relation: drawn iff a UNIQUE transport element carries a -> b (R1's relation verbatim); the drawing group is <gamma>, fixed across the whole grid -- only the declared cell structure varies
+  coset convention: H-orbits ordered by minimum label; ALL = every c-subset, BLOCKWISE = disjoint consecutive windows, SLIDING = every cyclic window of length c
+
+------------------------------------------------------------------------------
+3.  THE DECLARED ATLAS GRID (arena data: printed, matched, and a named
+    verdict coordinate)
+------------------------------------------------------------------------------
+  grid size (computed): 109 rules; truncated: False
+    T4/G0            1
+    T4/G1            2
+    T4/G2            24
+    T4/G3-ORBITS     7
+    T4/G3-UNIONS     24
+    T7/G0            1
+    T7/G1            1
+    T7/G2            18
+    T7/G3-ORBITS     7
+    T7/G3-UNIONS     24
+
+  rid    class       T   H         |H| c    mode      
+  R001   G0          T7  C7          7 -    -         
+  R002   G1          T7  C1          1 -    -         
+  R003   G2          T7  C1          1 2    ALL       
+  R004   G2          T7  C1          1 2    BLOCKWISE 
+  R005   G2          T7  C1          1 2    SLIDING   
+  R006   G2          T7  C1          1 3    ALL       
+  R007   G2          T7  C1          1 3    BLOCKWISE 
+  R008   G2          T7  C1          1 3    SLIDING   
+  R009   G2          T7  C1          1 4    ALL       
+  R010   G2          T7  C1          1 4    BLOCKWISE 
+  R011   G2          T7  C1          1 4    SLIDING   
+  R012   G2          T7  C1          1 5    ALL       
+  R013   G2          T7  C1          1 5    BLOCKWISE 
+  R014   G2          T7  C1          1 5    SLIDING   
+  R015   G2          T7  C1          1 6    ALL       
+  R016   G2          T7  C1          1 6    BLOCKWISE 
+  R017   G2          T7  C1          1 6    SLIDING   
+  R018   G2          T7  C1          1 7    ALL       
+  R019   G2          T7  C1          1 7    BLOCKWISE 
+  R020   G2          T7  C1          1 7    SLIDING   
+  R021   G3-ORBITS   T7  <e>         1 -    -         
+  R022   G3-ORBITS   T7  <g>         7 -    -         
+  R023   G3-ORBITS   T7  <s>         2 -    -         
+  R024   G3-ORBITS   T7  <gs>       10 -    -         
+  R025   G3-ORBITS   T7  <sg>       10 -    -         
+  R026   G3-ORBITS   T7  <ggs>       6 -    -         
+  R027   G3-ORBITS   T7  <gsgs>      5 -    -         
+  R028   G3-UNIONS   T7  <e>         1 2    ALL       
+  R029   G3-UNIONS   T7  <e>         1 2    BLOCKWISE 
+  R030   G3-UNIONS   T7  <e>         1 2    SLIDING   
+  R031   G3-UNIONS   T7  <e>         1 3    ALL       
+  R032   G3-UNIONS   T7  <e>         1 3    BLOCKWISE 
+  R033   G3-UNIONS   T7  <e>         1 3    SLIDING   
+  R034   G3-UNIONS   T7  <e>         1 4    ALL       
+  R035   G3-UNIONS   T7  <e>         1 4    BLOCKWISE 
+  R036   G3-UNIONS   T7  <e>         1 4    SLIDING   
+  R037   G3-UNIONS   T7  <e>         1 5    ALL       
+  R038   G3-UNIONS   T7  <e>         1 5    BLOCKWISE 
+  R039   G3-UNIONS   T7  <e>         1 5    SLIDING   
+  R040   G3-UNIONS   T7  <e>         1 6    ALL       
+  R041   G3-UNIONS   T7  <e>         1 6    BLOCKWISE 
+  R042   G3-UNIONS   T7  <e>         1 6    SLIDING   
+  R043   G3-UNIONS   T7  <e>         1 7    ALL       
+  R044   G3-UNIONS   T7  <e>         1 7    BLOCKWISE 
+  R045   G3-UNIONS   T7  <e>         1 7    SLIDING   
+  R046   G3-UNIONS   T7  <s>         2 2    ALL       
+  R047   G3-UNIONS   T7  <s>         2 2    BLOCKWISE 
+  R048   G3-UNIONS   T7  <s>         2 2    SLIDING   
+  R049   G3-UNIONS   T7  <s>         2 3    ALL       
+  R050   G3-UNIONS   T7  <s>         2 3    BLOCKWISE 
+  R051   G3-UNIONS   T7  <s>         2 3    SLIDING   
+  R052   G0          T4  C4          4 -    -         
+  R053   G1          T4  C2          2 -    -         
+  R054   G1          T4  C1          1 -    -         
+  R055   G2          T4  C2          2 2    ALL       
+  R056   G2          T4  C2          2 2    BLOCKWISE 
+  R057   G2          T4  C2          2 2    SLIDING   
+  R058   G2          T4  C2          2 3    ALL       
+  R059   G2          T4  C2          2 3    BLOCKWISE 
+  R060   G2          T4  C2          2 3    SLIDING   
+  R061   G2          T4  C1          1 2    ALL       
+  R062   G2          T4  C1          1 2    BLOCKWISE 
+  R063   G2          T4  C1          1 2    SLIDING   
+  R064   G2          T4  C1          1 3    ALL       
+  R065   G2          T4  C1          1 3    BLOCKWISE 
+  R066   G2          T4  C1          1 3    SLIDING   
+  R067   G2          T4  C1          1 4    ALL       
+  R068   G2          T4  C1          1 4    BLOCKWISE 
+  R069   G2          T4  C1          1 4    SLIDING   
+  R070   G2          T4  C1          1 5    ALL       
+  R071   G2          T4  C1          1 5    BLOCKWISE 
+  R072   G2          T4  C1          1 5    SLIDING   
+  R073   G2          T4  C1          1 6    ALL       
+  R074   G2          T4  C1          1 6    BLOCKWISE 
+  R075   G2          T4  C1          1 6    SLIDING   
+  R076   G2          T4  C1          1 7    ALL       
+  R077   G2          T4  C1          1 7    BLOCKWISE 
+  R078   G2          T4  C1          1 7    SLIDING   
+  R079   G3-ORBITS   T4  <e>         1 -    -         
+  R080   G3-ORBITS   T4  <g>         4 -    -         
+  R081   G3-ORBITS   T4  <s>         2 -    -         
+  R082   G3-ORBITS   T4  <gs>       10 -    -         
+  R083   G3-ORBITS   T4  <sg>       10 -    -         
+  R084   G3-ORBITS   T4  <ggs>       6 -    -         
+  R085   G3-ORBITS   T4  <gsgs>      5 -    -         
+  R086   G3-UNIONS   T4  <e>         1 2    ALL       
+  R087   G3-UNIONS   T4  <e>         1 2    BLOCKWISE 
+  R088   G3-UNIONS   T4  <e>         1 2    SLIDING   
+  R089   G3-UNIONS   T4  <e>         1 3    ALL       
+  R090   G3-UNIONS   T4  <e>         1 3    BLOCKWISE 
+  R091   G3-UNIONS   T4  <e>         1 3    SLIDING   
+  R092   G3-UNIONS   T4  <e>         1 4    ALL       
+  R093   G3-UNIONS   T4  <e>         1 4    BLOCKWISE 
+  R094   G3-UNIONS   T4  <e>         1 4    SLIDING   
+  R095   G3-UNIONS   T4  <e>         1 5    ALL       
+  R096   G3-UNIONS   T4  <e>         1 5    BLOCKWISE 
+  R097   G3-UNIONS   T4  <e>         1 5    SLIDING   
+  R098   G3-UNIONS   T4  <e>         1 6    ALL       
+  R099   G3-UNIONS   T4  <e>         1 6    BLOCKWISE 
+  R100   G3-UNIONS   T4  <e>         1 6    SLIDING   
+  R101   G3-UNIONS   T4  <e>         1 7    ALL       
+  R102   G3-UNIONS   T4  <e>         1 7    BLOCKWISE 
+  R103   G3-UNIONS   T4  <e>         1 7    SLIDING   
+  R104   G3-UNIONS   T4  <s>         2 2    ALL       
+  R105   G3-UNIONS   T4  <s>         2 2    BLOCKWISE 
+  R106   G3-UNIONS   T4  <s>         2 2    SLIDING   
+  R107   G3-UNIONS   T4  <s>         2 3    ALL       
+  R108   G3-UNIONS   T4  <s>         2 3    BLOCKWISE 
+  R109   G3-UNIONS   T4  <s>         2 3    SLIDING   
+
+------------------------------------------------------------------------------
+4.  THE LOCALITY CENSUS AT B  (the criterion: does ANY component have a
+    non-complete overlap graph?)
+------------------------------------------------------------------------------
+  rid    class       T   H       c    mode       cells edges  comp sizes     cmplness  STATUS
+  R001   G0          T7  C7      -    -              2    21     2 7,1       1/1       clique-only
+  R002   G1          T7  C1      -    -              8     0     8 1,1,1,1   UNDEFINED REFUSES
+  R003   G2          T7  C1      2    ALL           28    21     2 7,1       1/1       clique-only
+  R004   G2          T7  C1      2    BLOCKWISE      4     3     5 2,2,2,1   1/1       clique-only
+  R005   G2          T7  C1      2    SLIDING        8     6     2 7,1       2/7       NON-COMPLETE
+  R006   G2          T7  C1      3    ALL           56    21     2 7,1       1/1       clique-only
+  R007   G2          T7  C1      3    BLOCKWISE      3     5     4 3,2,2,1   1/1       clique-only
+  R008   G2          T7  C1      3    SLIDING        8    12     2 7,1       4/7       NON-COMPLETE
+  R009   G2          T7  C1      4    ALL           70    21     2 7,1       1/1       clique-only
+  R010   G2          T7  C1      4    BLOCKWISE      2     9     3 4,3,1     1/1       clique-only
+  R011   G2          T7  C1      4    SLIDING        8    18     2 7,1       6/7       NON-COMPLETE
+  R012   G2          T7  C1      5    ALL           56    21     2 7,1       1/1       clique-only
+  R013   G2          T7  C1      5    BLOCKWISE      2     9     3 4,3,1     1/1       clique-only
+  R014   G2          T7  C1      5    SLIDING        8    21     2 7,1       1/1       clique-only
+  R015   G2          T7  C1      6    ALL           28    21     2 7,1       1/1       clique-only
+  R016   G2          T7  C1      6    BLOCKWISE      2    11     3 5,2,1     1/1       clique-only
+  R017   G2          T7  C1      6    SLIDING        8    21     2 7,1       1/1       clique-only
+  R018   G2          T7  C1      7    ALL            8    21     2 7,1       1/1       clique-only
+  R019   G2          T7  C1      7    BLOCKWISE      2    15     3 6,1,1     1/1       clique-only
+  R020   G2          T7  C1      7    SLIDING        8    21     2 7,1       1/1       clique-only
+  R021   G3-ORBITS   T7  <e>     -    -              8     0     8 1,1,1,1   UNDEFINED REFUSES
+  R022   G3-ORBITS   T7  <g>     -    -              2    21     2 7,1       1/1       clique-only
+  R023   G3-ORBITS   T7  <s>     -    -              7     1     7 2,1,1,1   1/1       clique-only
+  R024   G3-ORBITS   T7  <gs>    -    -              3    11     3 5,2,1     1/1       clique-only
+  R025   G3-ORBITS   T7  <sg>    -    -              3    11     3 5,2,1     1/1       clique-only
+  R026   G3-ORBITS   T7  <ggs>   -    -              3    15     3 6,1,1     1/1       clique-only
+  R027   G3-ORBITS   T7  <gsgs>  -    -              4    10     4 5,1,1,1   1/1       clique-only
+  R028   G3-UNIONS   T7  <e>     2    ALL           28    21     2 7,1       1/1       clique-only
+  R029   G3-UNIONS   T7  <e>     2    BLOCKWISE      4     3     5 2,2,2,1   1/1       clique-only
+  R030   G3-UNIONS   T7  <e>     2    SLIDING        8     6     2 7,1       2/7       NON-COMPLETE
+  R031   G3-UNIONS   T7  <e>     3    ALL           56    21     2 7,1       1/1       clique-only
+  R032   G3-UNIONS   T7  <e>     3    BLOCKWISE      3     5     4 3,2,2,1   1/1       clique-only
+  R033   G3-UNIONS   T7  <e>     3    SLIDING        8    12     2 7,1       4/7       NON-COMPLETE
+  R034   G3-UNIONS   T7  <e>     4    ALL           70    21     2 7,1       1/1       clique-only
+  R035   G3-UNIONS   T7  <e>     4    BLOCKWISE      2     9     3 4,3,1     1/1       clique-only
+  R036   G3-UNIONS   T7  <e>     4    SLIDING        8    18     2 7,1       6/7       NON-COMPLETE
+  R037   G3-UNIONS   T7  <e>     5    ALL           56    21     2 7,1       1/1       clique-only
+  R038   G3-UNIONS   T7  <e>     5    BLOCKWISE      2     9     3 4,3,1     1/1       clique-only
+  R039   G3-UNIONS   T7  <e>     5    SLIDING        8    21     2 7,1       1/1       clique-only
+  R040   G3-UNIONS   T7  <e>     6    ALL           28    21     2 7,1       1/1       clique-only
+  R041   G3-UNIONS   T7  <e>     6    BLOCKWISE      2    11     3 5,2,1     1/1       clique-only
+  R042   G3-UNIONS   T7  <e>     6    SLIDING        8    21     2 7,1       1/1       clique-only
+  R043   G3-UNIONS   T7  <e>     7    ALL            8    21     2 7,1       1/1       clique-only
+  R044   G3-UNIONS   T7  <e>     7    BLOCKWISE      2    15     3 6,1,1     1/1       clique-only
+  R045   G3-UNIONS   T7  <e>     7    SLIDING        8    21     2 7,1       1/1       clique-only
+  R046   G3-UNIONS   T7  <s>     2    ALL           21    21     2 7,1       1/1       clique-only
+  R047   G3-UNIONS   T7  <s>     2    BLOCKWISE      4     3     5 2,2,2,1   1/1       clique-only
+  R048   G3-UNIONS   T7  <s>     2    SLIDING        7     7     2 7,1       1/3       NON-COMPLETE
+  R049   G3-UNIONS   T7  <s>     3    ALL           35    21     2 7,1       1/1       clique-only
+  R050   G3-UNIONS   T7  <s>     3    BLOCKWISE      3     6     4 3,3,1,1   1/1       clique-only
+  R051   G3-UNIONS   T7  <s>     3    SLIDING        7    14     2 7,1       2/3       NON-COMPLETE
+  R052   G0          T4  C4      -    -              4     6     5 4,1,1,1   1/1       clique-only
+  R053   G1          T4  C2      -    -              6     2     6 2,2,1,1   1/1       clique-only
+  R054   G1          T4  C1      -    -              8     0     8 1,1,1,1   UNDEFINED REFUSES
+  R055   G2          T4  C2      2    ALL           15     6     5 4,1,1,1   1/1       clique-only
+  R056   G2          T4  C2      2    BLOCKWISE      3     6     5 4,1,1,1   1/1       clique-only
+  R057   G2          T4  C2      2    SLIDING        6     6     5 4,1,1,1   1/1       clique-only
+  R058   G2          T4  C2      3    ALL           20     6     5 4,1,1,1   1/1       clique-only
+  R059   G2          T4  C2      3    BLOCKWISE      2     2     6 2,2,1,1   1/1       clique-only
+  R060   G2          T4  C2      3    SLIDING        6     6     5 4,1,1,1   1/1       clique-only
+  R061   G2          T4  C1      2    ALL           28     6     5 4,1,1,1   1/1       clique-only
+  R062   G2          T4  C1      2    BLOCKWISE      4     2     6 2,2,1,1   1/1       clique-only
+  R063   G2          T4  C1      2    SLIDING        8     3     5 4,1,1,1   1/2       NON-COMPLETE
+  R064   G2          T4  C1      3    ALL           56     6     5 4,1,1,1   1/1       clique-only
+  R065   G2          T4  C1      3    BLOCKWISE      3     3     6 3,1,1,1   1/1       clique-only
+  R066   G2          T4  C1      3    SLIDING        8     5     5 4,1,1,1   5/6       NON-COMPLETE
+  R067   G2          T4  C1      4    ALL           70     6     5 4,1,1,1   1/1       clique-only
+  R068   G2          T4  C1      4    BLOCKWISE      2     2     6 2,2,1,1   1/1       clique-only
+  R069   G2          T4  C1      4    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R070   G2          T4  C1      5    ALL           56     6     5 4,1,1,1   1/1       clique-only
+  R071   G2          T4  C1      5    BLOCKWISE      2     3     6 3,1,1,1   1/1       clique-only
+  R072   G2          T4  C1      5    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R073   G2          T4  C1      6    ALL           28     6     5 4,1,1,1   1/1       clique-only
+  R074   G2          T4  C1      6    BLOCKWISE      2     6     5 4,1,1,1   1/1       clique-only
+  R075   G2          T4  C1      6    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R076   G2          T4  C1      7    ALL            8     6     5 4,1,1,1   1/1       clique-only
+  R077   G2          T4  C1      7    BLOCKWISE      2     6     5 4,1,1,1   1/1       clique-only
+  R078   G2          T4  C1      7    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R079   G3-ORBITS   T4  <e>     -    -              8     0     8 1,1,1,1   UNDEFINED REFUSES
+  R080   G3-ORBITS   T4  <g>     -    -              4     6     5 4,1,1,1   1/1       clique-only
+  R081   G3-ORBITS   T4  <s>     -    -              7     0     8 1,1,1,1   UNDEFINED REFUSES
+  R082   G3-ORBITS   T4  <gs>    -    -              3     6     5 4,1,1,1   1/1       clique-only
+  R083   G3-ORBITS   T4  <sg>    -    -              3     6     5 4,1,1,1   1/1       clique-only
+  R084   G3-ORBITS   T4  <ggs>   -    -              5     2     6 2,2,1,1   1/1       clique-only
+  R085   G3-ORBITS   T4  <gsgs>  -    -              4     6     5 4,1,1,1   1/1       clique-only
+  R086   G3-UNIONS   T4  <e>     2    ALL           28     6     5 4,1,1,1   1/1       clique-only
+  R087   G3-UNIONS   T4  <e>     2    BLOCKWISE      4     2     6 2,2,1,1   1/1       clique-only
+  R088   G3-UNIONS   T4  <e>     2    SLIDING        8     3     5 4,1,1,1   1/2       NON-COMPLETE
+  R089   G3-UNIONS   T4  <e>     3    ALL           56     6     5 4,1,1,1   1/1       clique-only
+  R090   G3-UNIONS   T4  <e>     3    BLOCKWISE      3     3     6 3,1,1,1   1/1       clique-only
+  R091   G3-UNIONS   T4  <e>     3    SLIDING        8     5     5 4,1,1,1   5/6       NON-COMPLETE
+  R092   G3-UNIONS   T4  <e>     4    ALL           70     6     5 4,1,1,1   1/1       clique-only
+  R093   G3-UNIONS   T4  <e>     4    BLOCKWISE      2     2     6 2,2,1,1   1/1       clique-only
+  R094   G3-UNIONS   T4  <e>     4    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R095   G3-UNIONS   T4  <e>     5    ALL           56     6     5 4,1,1,1   1/1       clique-only
+  R096   G3-UNIONS   T4  <e>     5    BLOCKWISE      2     3     6 3,1,1,1   1/1       clique-only
+  R097   G3-UNIONS   T4  <e>     5    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R098   G3-UNIONS   T4  <e>     6    ALL           28     6     5 4,1,1,1   1/1       clique-only
+  R099   G3-UNIONS   T4  <e>     6    BLOCKWISE      2     6     5 4,1,1,1   1/1       clique-only
+  R100   G3-UNIONS   T4  <e>     6    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R101   G3-UNIONS   T4  <e>     7    ALL            8     6     5 4,1,1,1   1/1       clique-only
+  R102   G3-UNIONS   T4  <e>     7    BLOCKWISE      2     6     5 4,1,1,1   1/1       clique-only
+  R103   G3-UNIONS   T4  <e>     7    SLIDING        8     6     5 4,1,1,1   1/1       clique-only
+  R104   G3-UNIONS   T4  <s>     2    ALL           21     6     5 4,1,1,1   1/1       clique-only
+  R105   G3-UNIONS   T4  <s>     2    BLOCKWISE      4     1     7 2,1,1,1   1/1       clique-only
+  R106   G3-UNIONS   T4  <s>     2    SLIDING        7     3     5 4,1,1,1   1/2       NON-COMPLETE
+  R107   G3-UNIONS   T4  <s>     3    ALL           35     6     5 4,1,1,1   1/1       clique-only
+  R108   G3-UNIONS   T4  <s>     3    BLOCKWISE      3     2     6 2,2,1,1   1/1       clique-only
+  R109   G3-UNIONS   T4  <s>     3    SLIDING        7     5     5 4,1,1,1   5/6       NON-COMPLETE
+
+  criterion: locality exists at a rule iff SOME connected component of that rule's overlap graph is NOT complete (the R1 adjudication's criterion, section 6)
+  locality-bearing rules at B  (computed): 14 -- R005, R008, R011, R030, R033, R036, R048, R051, R063, R066, R088, R091, R106, R109
+  locality-bearing rules at B2 (computed): 14 -- R005, R008, R011, R030, R033, R036, R048, R051, R063, R066, R088, R091, R106, R109
+  refusing rules at B (computed): 5 -- R002, R021, R054, R079, R081
+
+------------------------------------------------------------------------------
+5.  THE NON-COMPLETE COMPONENTS, in detail
+------------------------------------------------------------------------------
+  R005  ['G2', 'T7', 'C1', 1, 2, 'SLIDING']
+      component size 7: 6 of 21 pairs drawn, graph b1 = 0, members [1, 2, 3, 4, 5, 6, 7]
+  R008  ['G2', 'T7', 'C1', 1, 3, 'SLIDING']
+      component size 7: 12 of 21 pairs drawn, graph b1 = 6, members [1, 2, 3, 4, 5, 6, 7]
+  R011  ['G2', 'T7', 'C1', 1, 4, 'SLIDING']
+      component size 7: 18 of 21 pairs drawn, graph b1 = 12, members [1, 2, 3, 4, 5, 6, 7]
+  R030  ['G3-UNIONS', 'T7', '<e>', 1, 2, 'SLIDING']
+      component size 7: 6 of 21 pairs drawn, graph b1 = 0, members [1, 2, 3, 4, 5, 6, 7]
+  R033  ['G3-UNIONS', 'T7', '<e>', 1, 3, 'SLIDING']
+      component size 7: 12 of 21 pairs drawn, graph b1 = 6, members [1, 2, 3, 4, 5, 6, 7]
+  R036  ['G3-UNIONS', 'T7', '<e>', 1, 4, 'SLIDING']
+      component size 7: 18 of 21 pairs drawn, graph b1 = 12, members [1, 2, 3, 4, 5, 6, 7]
+  R048  ['G3-UNIONS', 'T7', '<s>', 2, 2, 'SLIDING']
+      component size 7: 7 of 21 pairs drawn, graph b1 = 1, members [1, 2, 3, 4, 5, 6, 7]
+  R051  ['G3-UNIONS', 'T7', '<s>', 2, 3, 'SLIDING']
+      component size 7: 14 of 21 pairs drawn, graph b1 = 8, members [1, 2, 3, 4, 5, 6, 7]
+  R063  ['G2', 'T4', 'C1', 1, 2, 'SLIDING']
+      component size 4: 3 of 6 pairs drawn, graph b1 = 0, members [2, 3, 4, 5]
+  R066  ['G2', 'T4', 'C1', 1, 3, 'SLIDING']
+      component size 4: 5 of 6 pairs drawn, graph b1 = 2, members [2, 3, 4, 5]
+  R088  ['G3-UNIONS', 'T4', '<e>', 1, 2, 'SLIDING']
+      component size 4: 3 of 6 pairs drawn, graph b1 = 0, members [2, 3, 4, 5]
+  R091  ['G3-UNIONS', 'T4', '<e>', 1, 3, 'SLIDING']
+      component size 4: 5 of 6 pairs drawn, graph b1 = 2, members [2, 3, 4, 5]
+  R106  ['G3-UNIONS', 'T4', '<s>', 2, 2, 'SLIDING']
+      component size 4: 3 of 6 pairs drawn, graph b1 = 0, members [2, 3, 4, 5]
+  R109  ['G3-UNIONS', 'T4', '<s>', 2, 3, 'SLIDING']
+      component size 4: 5 of 6 pairs drawn, graph b1 = 2, members [2, 3, 4, 5]
+
+------------------------------------------------------------------------------
+6.  THE PORTED STANDARDS at the locality-bearing rules
+    (I3's definitions reimplemented; dimprofile is EXTENSIVE-EXCLUDED)
+------------------------------------------------------------------------------
+  controls (the instrument must be able to see a sphere):
+    a 9-vertex torus                                     V= 9 E= 27 F= 18 b=(1,2,1) every-link-a-circle=True
+    the boundary of a tetrahedron (a 2-sphere)           V= 4 E=  6 F=  4 b=(1,0,1) every-link-a-circle=True
+    two tetrahedra sharing one vertex (a pinch point)    V= 7 E= 12 F=  8 b=(1,0,2) every-link-a-circle=False
+
+  R005  ['G2', 'T7', 'C1', 1, 2, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[1, 0, 1, 0] star=[1, 0]
+          chart 2   link=[2, 0, 2, 0] star=[2, 0]
+          chart 3   link=[2, 0, 2, 0] star=[2, 0]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[2, 0, 2, 0] star=[2, 0]
+          chart 6   link=[2, 0, 2, 0] star=[2, 0]
+          chart 7   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [1]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R008  ['G2', 'T7', 'C1', 1, 3, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[3, 1, 2, 0] star=[4, 1]
+          chart 2   link=[3, 2, 1, 0] star=[5, 2]
+          chart 3   link=[4, 3, 1, 0] star=[6, 3]
+          chart 4   link=[4, 3, 1, 0] star=[6, 3]
+          chart 5   link=[4, 3, 1, 0] star=[6, 3]
+          chart 6   link=[3, 2, 1, 0] star=[5, 2]
+          chart 7   link=[3, 1, 2, 0] star=[4, 1]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R011  ['G2', 'T7', 'C1', 1, 4, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[5, 6, 1, 2] star=[9, 6]
+          chart 2   link=[5, 8, 1, 4] star=[10, 8]
+          chart 3   link=[5, 10, 1, 6] star=[11, 10]
+          chart 4   link=[6, 12, 1, 7] star=[12, 12]
+          chart 5   link=[5, 10, 1, 6] star=[11, 10]
+          chart 6   link=[5, 8, 1, 4] star=[10, 8]
+          chart 7   link=[5, 6, 1, 2] star=[9, 6]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [2, 3]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R030  ['G3-UNIONS', 'T7', '<e>', 1, 2, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[1, 0, 1, 0] star=[1, 0]
+          chart 2   link=[2, 0, 2, 0] star=[2, 0]
+          chart 3   link=[2, 0, 2, 0] star=[2, 0]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[2, 0, 2, 0] star=[2, 0]
+          chart 6   link=[2, 0, 2, 0] star=[2, 0]
+          chart 7   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [1]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R033  ['G3-UNIONS', 'T7', '<e>', 1, 3, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[3, 1, 2, 0] star=[4, 1]
+          chart 2   link=[3, 2, 1, 0] star=[5, 2]
+          chart 3   link=[4, 3, 1, 0] star=[6, 3]
+          chart 4   link=[4, 3, 1, 0] star=[6, 3]
+          chart 5   link=[4, 3, 1, 0] star=[6, 3]
+          chart 6   link=[3, 2, 1, 0] star=[5, 2]
+          chart 7   link=[3, 1, 2, 0] star=[4, 1]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R036  ['G3-UNIONS', 'T7', '<e>', 1, 4, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[5, 6, 1, 2] star=[9, 6]
+          chart 2   link=[5, 8, 1, 4] star=[10, 8]
+          chart 3   link=[5, 10, 1, 6] star=[11, 10]
+          chart 4   link=[6, 12, 1, 7] star=[12, 12]
+          chart 5   link=[5, 10, 1, 6] star=[11, 10]
+          chart 6   link=[5, 8, 1, 4] star=[10, 8]
+          chart 7   link=[5, 6, 1, 2] star=[9, 6]
+      dimension reading: INCONSISTENT (7 distinct over 7 charts with links)
+      local dimensions realised: [2, 3]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R048  ['G3-UNIONS', 'T7', '<s>', 2, 2, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[2, 1, 1, 0] star=[3, 1]
+          chart 2   link=[3, 1, 2, 0] star=[3, 1]
+          chart 3   link=[2, 1, 1, 0] star=[3, 1]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[2, 0, 2, 0] star=[2, 0]
+          chart 6   link=[2, 0, 2, 0] star=[2, 0]
+          chart 7   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (6 distinct over 7 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 7 charts with links; every-link-a-circle = False
+  R051  ['G3-UNIONS', 'T7', '<s>', 2, 3, 'SLIDING']
+      charts of the non-complete component: [1, 2, 3, 4, 5, 6, 7]
+      link (V,E,b0,b1) at those charts:
+          chart 1   link=[4, 5, 1, 2] star=[7, 5]
+          chart 2   link=[4, 5, 1, 2] star=[7, 5]
+          chart 3   link=[4, 5, 1, 2] star=[7, 5]
+          chart 4   link=[5, 5, 1, 1] star=[7, 5]
+          chart 5   link=[4, 3, 1, 0] star=[6, 3]
+          chart 6   link=[3, 2, 1, 0] star=[5, 2]
+          chart 7   link=[4, 2, 2, 0] star=[5, 2]
+      dimension reading: INCONSISTENT (6 distinct over 7 charts with links)
+      local dimensions realised: [1, 2, 3]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 1 of 7 charts with links; every-link-a-circle = False
+  R063  ['G2', 'T4', 'C1', 1, 2, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[1, 0, 1, 0] star=[1, 0]
+          chart 3   link=[2, 0, 2, 0] star=[2, 0]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+  R066  ['G2', 'T4', 'C1', 1, 3, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[2, 1, 1, 0] star=[3, 1]
+          chart 3   link=[3, 2, 1, 0] star=[5, 2]
+          chart 4   link=[3, 2, 1, 0] star=[5, 2]
+          chart 5   link=[2, 1, 1, 0] star=[3, 1]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+  R088  ['G3-UNIONS', 'T4', '<e>', 1, 2, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[1, 0, 1, 0] star=[1, 0]
+          chart 3   link=[2, 0, 2, 0] star=[2, 0]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+  R091  ['G3-UNIONS', 'T4', '<e>', 1, 3, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[2, 1, 1, 0] star=[3, 1]
+          chart 3   link=[3, 2, 1, 0] star=[5, 2]
+          chart 4   link=[3, 2, 1, 0] star=[5, 2]
+          chart 5   link=[2, 1, 1, 0] star=[3, 1]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+  R106  ['G3-UNIONS', 'T4', '<s>', 2, 2, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[2, 0, 2, 0] star=[2, 0]
+          chart 3   link=[1, 0, 1, 0] star=[1, 0]
+          chart 4   link=[2, 0, 2, 0] star=[2, 0]
+          chart 5   link=[1, 0, 1, 0] star=[1, 0]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+  R109  ['G3-UNIONS', 'T4', '<s>', 2, 3, 'SLIDING']
+      charts of the non-complete component: [2, 3, 4, 5]
+      link (V,E,b0,b1) at those charts:
+          chart 2   link=[3, 2, 1, 0] star=[5, 2]
+          chart 3   link=[2, 1, 1, 0] star=[3, 1]
+          chart 4   link=[3, 2, 1, 0] star=[5, 2]
+          chart 5   link=[2, 1, 1, 0] star=[3, 1]
+      dimension reading: INCONSISTENT (4 distinct over 4 charts with links)
+      local dimensions realised: [1, 2]   [EXTENSIVE-EXCLUDED (I3 / R0 row I3)]
+      links that are circles: 0 of 4 charts with links; every-link-a-circle = False
+
+------------------------------------------------------------------------------
+7.  b1 PER COMPONENT at the locality-bearing rules (measured, disclosed)
+------------------------------------------------------------------------------
+  R005  per-component [size, edges, cycle rank] = [[7, 6, 0], [1, 0, 0]] ; b1(N) = 0 ; b1(N_coh) = 0
+  R008  per-component [size, edges, cycle rank] = [[7, 12, 6], [1, 0, 0]] ; b1(N) = 7 ; b1(N_coh) = 7
+  R011  per-component [size, edges, cycle rank] = [[7, 18, 12], [1, 0, 0]] ; b1(N) = 14 ; b1(N_coh) = 14
+  R030  per-component [size, edges, cycle rank] = [[7, 6, 0], [1, 0, 0]] ; b1(N) = 0 ; b1(N_coh) = 0
+  R033  per-component [size, edges, cycle rank] = [[7, 12, 6], [1, 0, 0]] ; b1(N) = 7 ; b1(N_coh) = 7
+  R036  per-component [size, edges, cycle rank] = [[7, 18, 12], [1, 0, 0]] ; b1(N) = 14 ; b1(N_coh) = 14
+  R048  per-component [size, edges, cycle rank] = [[7, 7, 1], [1, 0, 0]] ; b1(N) = 1 ; b1(N_coh) = 1
+  R051  per-component [size, edges, cycle rank] = [[7, 14, 8], [1, 0, 0]] ; b1(N) = 8 ; b1(N_coh) = 8
+  R063  per-component [size, edges, cycle rank] = [[4, 3, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 0 ; b1(N_coh) = 0
+  R066  per-component [size, edges, cycle rank] = [[4, 5, 2], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 3 ; b1(N_coh) = 3
+  R088  per-component [size, edges, cycle rank] = [[4, 3, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 0 ; b1(N_coh) = 0
+  R091  per-component [size, edges, cycle rank] = [[4, 5, 2], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 3 ; b1(N_coh) = 3
+  R106  per-component [size, edges, cycle rank] = [[4, 3, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 0 ; b1(N_coh) = 0
+  R109  per-component [size, edges, cycle rank] = [[4, 5, 2], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0]] ; b1(N) = 3 ; b1(N_coh) = 3
+  rules with a non-trivial degree-1 component (computed): R008, R011, R033, R036, R048, R051, R066, R091, R109
+
+------------------------------------------------------------------------------
+8.  THE BLOCK CONSTANTS UNDER THE NEW ATLASES (a table, not a verdict)
+    both denominator conventions; B against B2
+------------------------------------------------------------------------------
+  rid    class       T   c    mode       |   E_N pairs     F F_coh | F_coh/E_N  F_coh/pair b2/F_coh  | B->B2
+  R001   G0          T7  -    -          |    21    21    35    35 | 5/3        5/3        4/7       | constant
+  R002   G1          T7  -    -          |     0     0     0     0 | UNDEFINED  UNDEFINED  UNDEFINED | constant
+  R003   G2          T7  2    ALL        |    21    21     0     0 | 0/1        0/1        UNDEFINED | constant
+  R004   G2          T7  2    BLOCKWISE  |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R005   G2          T7  2    SLIDING    |     6     6     0     0 | 0/1        0/1        UNDEFINED | constant
+  R006   G2          T7  3    ALL        |   126    21    35    35 | 5/18       5/3        0/1       | constant
+  R007   G2          T7  3    BLOCKWISE  |     5     5     1     1 | 1/5        1/5        0/1       | constant
+  R008   G2          T7  3    SLIDING    |    18    12     5     5 | 5/18       5/12       0/1       | constant
+  R009   G2          T7  4    ALL        |   315    21   175   175 | 5/9        25/3       1/5       | constant
+  R010   G2          T7  4    BLOCKWISE  |     9     9     5     5 | 5/9        5/9        1/5       | constant
+  R011   G2          T7  4    SLIDING    |    36    18    20    20 | 5/9        10/9       1/5       | constant
+  R012   G2          T7  5    ALL        |   420    21   350   350 | 5/6        50/3       17/50     | constant
+  R013   G2          T7  5    BLOCKWISE  |     9     9     5     5 | 5/9        5/9        1/5       | constant
+  R014   G2          T7  5    SLIDING    |    60    21    50    50 | 5/6        50/21      17/50     | constant
+  R015   G2          T7  6    ALL        |   315    21   350   350 | 10/9       50/3       11/25     | constant
+  R016   G2          T7  6    BLOCKWISE  |    11    11    10    10 | 10/11      10/11      2/5       | constant
+  R017   G2          T7  6    SLIDING    |    90    21   100   100 | 10/9       100/21     11/25     | constant
+  R018   G2          T7  7    ALL        |   126    21   175   175 | 25/18      25/3       18/35     | constant
+  R019   G2          T7  7    BLOCKWISE  |    15    15    20    20 | 4/3        4/3        1/2       | constant
+  R020   G2          T7  7    SLIDING    |   126    21   175   175 | 25/18      25/3       18/35     | constant
+  R021   G3-ORBITS   T7  -    -          |     0     0     0     0 | UNDEFINED  UNDEFINED  UNDEFINED | constant
+  R022   G3-ORBITS   T7  -    -          |    21    21    35    35 | 5/3        5/3        4/7       | constant
+  R023   G3-ORBITS   T7  -    -          |     1     1     0     0 | 0/1        0/1        UNDEFINED | constant
+  R024   G3-ORBITS   T7  -    -          |    11    11    10    10 | 10/11      10/11      2/5       | constant
+  R025   G3-ORBITS   T7  -    -          |    11    11    10    10 | 10/11      10/11      2/5       | constant
+  R026   G3-ORBITS   T7  -    -          |    15    15    20    20 | 4/3        4/3        1/2       | constant
+  R027   G3-ORBITS   T7  -    -          |    10    10    10    10 | 1/1        1/1        2/5       | constant
+  R028   G3-UNIONS   T7  2    ALL        |    21    21     0     0 | 0/1        0/1        UNDEFINED | constant
+  R029   G3-UNIONS   T7  2    BLOCKWISE  |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R030   G3-UNIONS   T7  2    SLIDING    |     6     6     0     0 | 0/1        0/1        UNDEFINED | constant
+  R031   G3-UNIONS   T7  3    ALL        |   126    21    35    35 | 5/18       5/3        0/1       | constant
+  R032   G3-UNIONS   T7  3    BLOCKWISE  |     5     5     1     1 | 1/5        1/5        0/1       | constant
+  R033   G3-UNIONS   T7  3    SLIDING    |    18    12     5     5 | 5/18       5/12       0/1       | constant
+  R034   G3-UNIONS   T7  4    ALL        |   315    21   175   175 | 5/9        25/3       1/5       | constant
+  R035   G3-UNIONS   T7  4    BLOCKWISE  |     9     9     5     5 | 5/9        5/9        1/5       | constant
+  R036   G3-UNIONS   T7  4    SLIDING    |    36    18    20    20 | 5/9        10/9       1/5       | constant
+  R037   G3-UNIONS   T7  5    ALL        |   420    21   350   350 | 5/6        50/3       17/50     | constant
+  R038   G3-UNIONS   T7  5    BLOCKWISE  |     9     9     5     5 | 5/9        5/9        1/5       | constant
+  R039   G3-UNIONS   T7  5    SLIDING    |    60    21    50    50 | 5/6        50/21      17/50     | constant
+  R040   G3-UNIONS   T7  6    ALL        |   315    21   350   350 | 10/9       50/3       11/25     | constant
+  R041   G3-UNIONS   T7  6    BLOCKWISE  |    11    11    10    10 | 10/11      10/11      2/5       | constant
+  R042   G3-UNIONS   T7  6    SLIDING    |    90    21   100   100 | 10/9       100/21     11/25     | constant
+  R043   G3-UNIONS   T7  7    ALL        |   126    21   175   175 | 25/18      25/3       18/35     | constant
+  R044   G3-UNIONS   T7  7    BLOCKWISE  |    15    15    20    20 | 4/3        4/3        1/2       | constant
+  R045   G3-UNIONS   T7  7    SLIDING    |   126    21   175   175 | 25/18      25/3       18/35     | constant
+  R046   G3-UNIONS   T7  2    ALL        |    26    21     5     5 | 5/26       5/21       0/1       | constant
+  R047   G3-UNIONS   T7  2    BLOCKWISE  |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R048   G3-UNIONS   T7  2    SLIDING    |     8     7     1     1 | 1/8        1/7        0/1       | constant
+  R049   G3-UNIONS   T7  3    ALL        |   115    21    55    55 | 11/23      55/21      2/11      | constant
+  R050   G3-UNIONS   T7  3    BLOCKWISE  |     6     6     2     2 | 1/3        1/3        0/1       | constant
+  R051   G3-UNIONS   T7  3    SLIDING    |    22    14     9     9 | 9/22       9/14       1/9       | constant
+  R052   G0          T4  -    -          |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R053   G1          T4  -    -          |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R054   G1          T4  -    -          |     0     0     0     0 | UNDEFINED  UNDEFINED  UNDEFINED | constant
+  R055   G2          T4  2    ALL        |    14     6     4     4 | 2/7        2/3        1/4       | constant
+  R056   G2          T4  2    BLOCKWISE  |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R057   G2          T4  2    SLIDING    |     8     6     4     4 | 1/2        2/3        1/4       | constant
+  R058   G2          T4  3    ALL        |    36     6    16    16 | 4/9        8/3        1/4       | constant
+  R059   G2          T4  3    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R060   G2          T4  3    SLIDING    |    14     6     8     8 | 4/7        4/3        1/4       | constant
+  R061   G2          T4  2    ALL        |     6     6     0     0 | 0/1        0/1        UNDEFINED | constant
+  R062   G2          T4  2    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R063   G2          T4  2    SLIDING    |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R064   G2          T4  3    ALL        |    36     6     4     4 | 1/9        2/3        0/1       | constant
+  R065   G2          T4  3    BLOCKWISE  |     3     3     1     1 | 1/3        1/3        0/1       | constant
+  R066   G2          T4  3    SLIDING    |     8     5     2     2 | 1/4        2/5        0/1       | constant
+  R067   G2          T4  4    ALL        |    90     6    20    20 | 2/9        10/3       1/20      | constant
+  R068   G2          T4  4    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R069   G2          T4  4    SLIDING    |    14     6     6     6 | 3/7        1/1        1/6       | constant
+  R070   G2          T4  5    ALL        |   120     6    40    40 | 1/3        20/3       1/10      | constant
+  R071   G2          T4  5    BLOCKWISE  |     3     3     1     1 | 1/3        1/3        0/1       | constant
+  R072   G2          T4  5    SLIDING    |    20     6    10    10 | 1/2        5/3        1/5       | constant
+  R073   G2          T4  6    ALL        |    90     6    40    40 | 4/9        20/3       3/20      | constant
+  R074   G2          T4  6    BLOCKWISE  |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R075   G2          T4  6    SLIDING    |    27     6    14    14 | 14/27      7/3        3/14      | constant
+  R076   G2          T4  7    ALL        |    36     6    20    20 | 5/9        10/3       1/5       | constant
+  R077   G2          T4  7    BLOCKWISE  |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R078   G2          T4  7    SLIDING    |    36     6    20    20 | 5/9        10/3       1/5       | constant
+  R079   G3-ORBITS   T4  -    -          |     0     0     0     0 | UNDEFINED  UNDEFINED  UNDEFINED | constant
+  R080   G3-ORBITS   T4  -    -          |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R081   G3-ORBITS   T4  -    -          |     0     0     0     0 | UNDEFINED  UNDEFINED  UNDEFINED | constant
+  R082   G3-ORBITS   T4  -    -          |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R083   G3-ORBITS   T4  -    -          |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R084   G3-ORBITS   T4  -    -          |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R085   G3-ORBITS   T4  -    -          |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R086   G3-UNIONS   T4  2    ALL        |     6     6     0     0 | 0/1        0/1        UNDEFINED | constant
+  R087   G3-UNIONS   T4  2    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R088   G3-UNIONS   T4  2    SLIDING    |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R089   G3-UNIONS   T4  3    ALL        |    36     6     4     4 | 1/9        2/3        0/1       | constant
+  R090   G3-UNIONS   T4  3    BLOCKWISE  |     3     3     1     1 | 1/3        1/3        0/1       | constant
+  R091   G3-UNIONS   T4  3    SLIDING    |     8     5     2     2 | 1/4        2/5        0/1       | constant
+  R092   G3-UNIONS   T4  4    ALL        |    90     6    20    20 | 2/9        10/3       1/20      | constant
+  R093   G3-UNIONS   T4  4    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R094   G3-UNIONS   T4  4    SLIDING    |    14     6     6     6 | 3/7        1/1        1/6       | constant
+  R095   G3-UNIONS   T4  5    ALL        |   120     6    40    40 | 1/3        20/3       1/10      | constant
+  R096   G3-UNIONS   T4  5    BLOCKWISE  |     3     3     1     1 | 1/3        1/3        0/1       | constant
+  R097   G3-UNIONS   T4  5    SLIDING    |    20     6    10    10 | 1/2        5/3        1/5       | constant
+  R098   G3-UNIONS   T4  6    ALL        |    90     6    40    40 | 4/9        20/3       3/20      | constant
+  R099   G3-UNIONS   T4  6    BLOCKWISE  |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R100   G3-UNIONS   T4  6    SLIDING    |    27     6    14    14 | 14/27      7/3        3/14      | constant
+  R101   G3-UNIONS   T4  7    ALL        |    36     6    20    20 | 5/9        10/3       1/5       | constant
+  R102   G3-UNIONS   T4  7    BLOCKWISE  |     6     6     4     4 | 2/3        2/3        1/4       | constant
+  R103   G3-UNIONS   T4  7    SLIDING    |    36     6    20    20 | 5/9        10/3       1/5       | constant
+  R104   G3-UNIONS   T4  2    ALL        |     6     6     0     0 | 0/1        0/1        UNDEFINED | constant
+  R105   G3-UNIONS   T4  2    BLOCKWISE  |     1     1     0     0 | 0/1        0/1        UNDEFINED | constant
+  R106   G3-UNIONS   T4  2    SLIDING    |     3     3     0     0 | 0/1        0/1        UNDEFINED | constant
+  R107   G3-UNIONS   T4  3    ALL        |    30     6     4     4 | 2/15       2/3        0/1       | constant
+  R108   G3-UNIONS   T4  3    BLOCKWISE  |     2     2     0     0 | 0/1        0/1        UNDEFINED | constant
+  R109   G3-UNIONS   T4  3    SLIDING    |     8     5     2     2 | 1/4        2/5        0/1       | constant
+
+------------------------------------------------------------------------------
+9.  B2 PERSISTENCE for the locality-bearing rules
+------------------------------------------------------------------------------
+  R005  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 2/7 -> 2/7 (unchanged=True)
+  R008  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 4/7 -> 4/7 (unchanged=True)
+  R011  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 6/7 -> 6/7 (unchanged=True)
+  R030  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 2/7 -> 2/7 (unchanged=True)
+  R033  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 4/7 -> 4/7 (unchanged=True)
+  R036  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 6/7 -> 6/7 (unchanged=True)
+  R048  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 1/3 -> 1/3 (unchanged=True)
+  R051  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 2/3 -> 2/3 (unchanged=True)
+  R063  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 1/2 -> 1/2 (unchanged=True)
+  R066  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 5/6 -> 5/6 (unchanged=True)
+  R088  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 1/2 -> 1/2 (unchanged=True)
+  R091  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 5/6 -> 5/6 (unchanged=True)
+  R106  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 1/2 -> 1/2 (unchanged=True)
+  R109  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 5/6 -> 5/6 (unchanged=True)
+
+------------------------------------------------------------------------------
+10. CONTROLS
+------------------------------------------------------------------------------
+  POSITIVE CONTROL: two coset-union cells sharing exactly one label, hand-declared OUTSIDE the grid (pin section 6)
+      cells [[1, 2, 3], [3, 4, 5]] share exactly the label(s) [3]; 6 edges drawn
+      components: [{'size': 5, 'edges': 6, 'pairs': 10, 'complete': False}, {'size': 1, 'edges': 0, 'pairs': 0, 'complete': True}, {'size': 1, 'edges': 0, 'pairs': 0, 'complete': True}, {'size': 1, 'edges': 0, 'pairs': 0, 'complete': True}]
+      returns a non-complete component: True
+  SCRAMBLE CONTROL: every grid rule with F(N) > 0 -- fixed by declaration, never selected by the verdicts under audit
+      rules tested 81; identification measure moved at 81; component census unchanged at 81
+  SYMMETRY SELF-TEST (fresh, memo bypassed): gamma=True, sigma=True, gamma.sigma=True, wild=(01)(23)(45)(67)=True
+  BOUNDARY PARITY WITNESS: every grid rule at B with a cell of three or more labels -- fixed by declaration
+      rules tested 90; the connective matters at 78; total measured delta 4000
+      R001: 2-cells under AND = 35, under OR = 35, delta = 0
+      R006: 2-cells under AND = 35, under OR = 56, delta = 21
+      R007: 2-cells under AND = 1, under OR = 2, delta = 1
+      R008: 2-cells under AND = 5, under OR = 8, delta = 3
+      R009: 2-cells under AND = 175, under OR = 280, delta = 105
+      R010: 2-cells under AND = 5, under OR = 8, delta = 3
+  ALT DRAWING-GROUP PROBE: the pin fixes the drawing relation across the grid (only the cell structure varies); this probe records what would happen if <gamma,Sigma> were used as the DRAWING group instead
+      T4: |<gamma,Sigma>| = 240, pairs drawn = 0
+      T7: |<gamma,Sigma>| = 5040, pairs drawn = 0
+      a drawn pair forces a trivial stabiliser, so |T| must divide and equal an orbit size; |<gamma,Sigma>| exceeds the label count at both transports, so nothing is drawn
+
+------------------------------------------------------------------------------
+11. THEOREMS VERIFIED IN UNIT
+------------------------------------------------------------------------------
+  R2-A               drawn <=> b in orbit(a) and orbit(a) regular; the drawn relation at a cell is a disjoint union of complete graphs on the regular orbits.  Re-proved in the paper, verified at 10 actions with 0 counterexamples.
+  R2-A-coherence     a drawn pair forces a trivial stabiliser, so the three drawn maps of any 2-cell compose to the identity: N_coh = N identically (FORCED, disclosed).
+  R2-C-inherited     the R1 gateway phi < 1 is forced by the basepoint; R2 does not use phi (anchor A-R1-ADJ).
+  R2-partition       an atlas whose cells PARTITION the labels can never produce a non-complete component; locality requires cells that overlap partially (G0/G1/G3-ORBITS verified clique-only).
+  R2-A verification: 10 actions this unit uses (0 counterexamples); 40320 cyclic actions swept on the block (0 counterexamples)
+
+------------------------------------------------------------------------------
+12. GATES (42, all passed)
+------------------------------------------------------------------------------
+  [PASS] G-FLOATGUARD
+       no float literal, no true division, no float/math/random/numpy/statistics/decimal anywhere in this source
+  [PASS] A-PIN-R2
+       external anchor 76d42dfbc900 verifies at v14/note-r2-manifold-pin.md
+  [PASS] A-R1-ADJ
+       external anchor 4115dcd83cfa verifies at v14/note-r1-adjudication.md
+  [PASS] A-R0-I6
+       external anchor c9bc956fe751 verifies at v13/code/tb3_third_base_receipt.json
+  [PASS] A-R0-I3
+       external anchor 65bb1fc5231f verifies at v13/code/top_topology_receipt.json
+  [PASS] A-ERRATUM-TOP-PAPER
+       external anchor 379194959fbc verifies at v13/paper-top-topology.md
+  [PASS] G-ANCHOR-COUNT
+       every declared R0/pin anchor was evaluated
+  [PASS] G-BLOCKSIZE-FROM-I6
+       the block size is READ from I6 (system_triple_dimension), not typed
+  [PASS] G-GROUP-CAP
+       every declared group closure stays under the printed cap (no silent truncation)
+  [PASS] G-ARENA-DECL-MATCHED
+       every declared arena coordinate is printed and matches its computed value (RUNBOOK section 15)
+  [PASS] G-GRID-CELL-COMPLETE
+       the enumerated grid equals an INDEPENDENTLY rebuilt coordinate set (a dropped (H,c,mode) cell is fatal; RUNBOOK #234/#219)
+  [PASS] G-GRID-NO-DUPLICATES
+       every grid coordinate occurs exactly once
+  [PASS] G-GRID-NOT-TRUNCATED
+       no silent cap: the grid is enumerated exhaustively from the declarations
+  [PASS] G-EVERY-RULE-RECORDED
+       every grid rule is recorded at both arenas -- a rule that draws nothing is REFUSES, never skipped
+  [PASS] G-DRAW-TWO-ROUTES
+       the orbit/stabiliser route (THEOREM R2-A) and the definitional brute-force route agree on the drawn relation at every rule and arena
+  [PASS] G-R2A-AT-THIS-UNITS-ACTIONS
+       THEOREM R2-A holds at every cyclic action this unit uses (drawn <=> regular orbit); zero counterexamples
+  [PASS] G-R2A-EXHAUSTIVE
+       THEOREM R2-A holds at EVERY cyclic action on the block's 8 labels (one per permutation), zero counterexamples
+  [PASS] G-R2A-NULL-CLIQUE-ONLY
+       the G0 null (regular <gamma>-orbits) returns clique-only components at every transport and arena -- the R2-A theorem check
+  [PASS] G-ORBIT-CLASSES-CLIQUE-ONLY
+       every orbit-partition class (G0, G1, G3-ORBITS) returns clique-only components: disjoint cells cannot make a non-complete component
+  [PASS] G-COMPONENTS-TWO-ROUTES
+       b0 by union-find equals |V| - rank(d1) over F_2 at every rule and arena
+  [PASS] G-COMPLETENESS-TWO-ROUTES
+       per-component completeness by stored edge count agrees with an explicit pair scan at every component of every rule
+  [PASS] G-COHERENCE-FORCED
+       every 2-cell of N is coherent at every rule and arena: a drawn pair forces a trivial stabiliser, so the three drawn maps compose to the identity (FORCED -- entered as a disclosure, #208)
+  [PASS] G-UNDEFINED-PATH-LIVE
+       the b2-density UNDEFINED path is reached by shipped inputs (F_COH=0) and is recorded with its reason -- not dead code
+  [PASS] G-STANDARDS-CONTROLS
+       the reimplemented standards see I3's controls: the 2-sphere and the 2-torus return every-link-a-circle, the pinch point does not
+  [PASS] G-STANDARDS-CONTROL-BETTI
+       the controls' Betti numbers reproduce I3's table exactly
+  [PASS] G-STANDARDS-IDENTITIES
+       sum_v star_E(v) = 2|E(N)| and sum_v star_F(v) = 3|F(N)| at every rule where the standards are measured, and the per-cell dimension agrees with an independent component census
+  [PASS] G-COPY-REDUCTION
+       the per-block reduction is VERIFIED, not assumed: at every rule the additive counts at B2 are exactly twice B's and all three densities are unchanged (the copy-forcing theorem's content at this scale)
+  [PASS] G-B2-PERSISTENCE-MEASURED
+       every locality-bearing rule is re-measured at B2 and its persistence recorded (survival is measured, never assumed)
+  [PASS] G-POSITIVE-CONTROL
+       the hand-declared toy (two cells sharing exactly one label) returns a NON-COMPLETE component -- the criterion's instrument has teeth
+  [PASS] G-MODES-DISTINCT
+       SLIDING and BLOCKWISE build different cell sets at every grid coordinate that declares both -- checked through the very function the rules use, so a mode collapse is fatal.  Where SLIDING and ALL coincide it is a MEASURED coincidence (it happens exactly at c = |orbits| - 1, where a cyclic window omits one coset) and is counted, not gated away.
+  [PASS] G-SCRAMBLE-CONTROL
+       scrambling the drawn maps MOVES the identification-sensitive measure (coherent 2-cells) at a positive number of rules and FIXES the component census at every rule of the declared tested set
+  [PASS] G-SYMMETRY-SELFTEST
+       the census is invariant under every declared relabelling of the arena (cells and transport conjugated together), evaluated FRESH with the memo bypassed
+  [PASS] G-CACHE-EXERCISED
+       the memo path is exercised on both branches (a zero-hit or zero-lookup cache gate is vacuous, RUNBOOK #219)
+  [PASS] G-BOUNDARY-PARITY
+       the Boolean connective at the 2-cell boundary is witnessed: over the declared tested set the alternative connective (any-pair-drawn instead of pairwise-drawn) has a non-zero measured delta at a positive number of rules, and every delta is printed
+  [PASS] G-ALT-DRAW-PROBE
+       the alternative drawing-group reading is measured and recorded (it draws nothing at both transports)
+  [PASS] G-LATTICE-CROSSCHECK
+       the Sigma-mixed lattice's trivial subgroup reproduces the cyclic lattice's trivial subgroup exactly (two independently declared lattices, same measured census)
+  [PASS] G-VERDICT-STRING-EQUALITY
+       the complete emitted verdict string equals a string rebuilt segment-by-segment from the measured values (equality, not containment)
+  [PASS] G-VERDICT-SEGMENTS-FLIPPABLE
+       perturbing any one measured segment changes the emitted string: every segment carries content
+  [PASS] G-VERDICT-BOTH-HEADS-REACHABLE
+       both verdict heads are derivable by the same derivation: the instrument can emit either outcome
+  [PASS] G-COUNTS-COMPUTED
+       every total is recomputed by an independent expression and matches (#24: counts computed, never typed)
+  [PASS] G-RENDER-FROM-GATED-OBJECT
+       every rendered table cell equals the corresponding cell of the gated measurement object -- the receipt and the output render from one object, no bypass path
+  [PASS] G-NO-FLOATS-IN-RECEIPT
+       the emitted receipt contains no float
+
+------------------------------------------------------------------------------
+13. MUTANTS DECLARED (14) -- each must exit 1 on a NAMED gate
+------------------------------------------------------------------------------
+  grid-drop            silently drops one (H,c,mode) grid cell
+  census-corrupt       drops one drawn edge from a rule's census
+  complete-flip        flips the per-component completeness verdict, and the rule's locality flag with it, at a locality-bearing rule
+  refuses-skip         skips rules that draw nothing instead of recording REFUSES
+  verdict-pair-swap    swaps two verdict segments' names against their values
+  table-corrupt        corrupts one block-constants table cell after measurement
+  anchor-hash          corrupts the I6 anchor hash
+  orbit-corrupt        corrupts the orbit machinery at the G0 null
+  locality-erase       collapses SLIDING onto BLOCKWISE, erasing all locality
+  locality-inject      injects a spurious non-complete component at the null
+  toy-broken           breaks the positive control's partial overlap
+  scramble-inert       makes the scramble control a no-op
+  census-row-corrupt   corrupts one rendered census row after measurement
+  float-leak           reports a float offence in the source scan
+
+------------------------------------------------------------------------------
+14. COMPLIANCE SWEEP, rule by rule
+------------------------------------------------------------------------------
+  RULE   : RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)
+  STATUS : APPLIED -- this sweep enumerates each rule and its status
+  RULE   : #10 containment is not equality (verdict gate compares the COMPLETE string against a segment rebuild)
+  STATUS : G-VERDICT-STRING-EQUALITY
+  RULE   : #10 render from the gated object (one object, one source of truth)
+  STATUS : G-RENDER-FROM-GATED-OBJECT (evaluated at write time)
+  RULE   : #234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail
+  STATUS : G-VERDICT-SEGMENTS-FLIPPABLE + mutants verdict-pair-swap / locality-erase / locality-inject
+  RULE   : #234 cell-completeness gate catches a dropped cell
+  STATUS : G-GRID-CELL-COMPLETE + mutant grid-drop
+  RULE   : #234/#219 two independent routes are genuinely independent
+  STATUS : G-DRAW-TWO-ROUTES (orbit/stabiliser vs brute force over the group), G-COMPONENTS-TWO-ROUTES (union-find vs F_2 rank), G-COMPLETENESS-TWO-ROUTES (stored count vs pair scan)
+  RULE   : #257 computed qualifiers (no typed qualifier segment)
+  STATUS : every verdict segment is built from measured counts; G-VERDICT-SEGMENTS-FLIPPABLE proves each carries content
+  RULE   : #208 forced clauses are disclosures, not must-pass claims
+  STATUS : coherence (N_coh = N) and the orbit-partition clique-only result are recorded as FORCED disclosures with their proofs
+  RULE   : #208 no gate predicate references mutant identity
+  STATUS : no gate reads MUTANT; injections live in the measured functions
+  RULE   : #219 a zero-hit or zero-lookup cache gate is vacuous
+  STATUS : G-CACHE-EXERCISED gates hits > 0 AND misses > 0
+  RULE   : #24 counts are computed, never typed
+  STATUS : every total in R['totals'] is a len() or a comprehension count
+  RULE   : section 15 declared-arena discipline: the arena and the grid are printed and matched at every coordinate
+  STATUS : G-ARENA-DECL-MATCHED + G-GRID-CELL-COMPLETE + the grid is a named verdict coordinate (segment GRID)
+  RULE   : section 14 #175 symmetry self-tests, evaluated fresh
+  STATUS : G-SYMMETRY-SELFTEST (memo bypassed, fresh-call count gated)
+  RULE   : section 14 #185 self-tests must not reach their quantity through the memo
+  STATUS : f2_rank(fresh=True) in the self-test path
+  RULE   : section 13 #313 boundary parity witness with a measured delta
+  STATUS : G-BOUNDARY-PARITY
+  RULE   : section 13 #314 precheck doctrine: a precheck may gate what is censused but never name the verdict
+  STATUS : no precheck exists; the verdict is named by the censused objects only
+  RULE   : exact arithmetic only
+  STATUS : G-FLOATGUARD (AST scan) + G-NO-FLOATS-IN-RECEIPT (evaluated at write time)
+  RULE   : REFUSES is recorded, never skipped
+  STATUS : G-EVERY-RULE-RECORDED + mutant refuses-skip
+  RULE   : the UNDEFINED path is live or the exclusion is stated (R1 repair order 8)
+  STATUS : G-UNDEFINED-PATH-LIVE -- reached by shipped inputs
+  RULE   : no claim about the continuum; the word 'manifold' appears only in the rung's name
+  STATUS : the verdict string uses LINK-CIRCLES / DIMREAD / LOCAL-DIMENSIONS
+
+------------------------------------------------------------------------------
+15. TOTALS (computed, never typed)
+------------------------------------------------------------------------------
+  anchors                          5
+  declared_modes                   3
+  declared_transports              2
+  gates                            42
+  grid_rules                       109
+  locality_bearing_rules_B         14
+  mutants_declared                 14
+  refusing_rules_B                 5
+  rule_arena_measurements          218
+
+==============================================================================
+THE VERDICT
+==============================================================================
+R2-LOCALITY-AT<RULES=14-OF-109:R005,R008,R011,R030,R033,R036,R048,R051,R063,R066,R088,R091,R106,R109|GRID=T4:G0=1;G1=2;G2=24;G3-ORBITS=7;G3-UNIONS=24|T7:G0=1;G1=1;G2=18;G3-ORBITS=7;G3-UNIONS=24|TOTAL=109|MECHANISM=DECLARED-PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)|COMPONENTS=NONCOMPLETE-COMPONENT-SIZES=4+7;RULES-WITH-NONTRIVIAL-B1=9|STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT;LOCAL-DIMENSIONS=1+2+3;DIMPROFILE=EXTENSIVE-EXCLUDED|B2-PERSISTENCE=SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14|NULL=G0-CLIQUE-ONLY-AT-4-OF-4;ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-38-OF-38(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-0-COUNTEREXAMPLES)|REFUSES=5-OF-109|BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109;UNDEFINED-B2-DENSITY-AT-28>
+
+segments:
+  RULES        RULES=14-OF-109:R005,R008,R011,R030,R033,R036,R048,R051,R063,R066,R088,R091,R106,R109
+  GRID         GRID=T4:G0=1;G1=2;G2=24;G3-ORBITS=7;G3-UNIONS=24|T7:G0=1;G1=1;G2=18;G3-ORBITS=7;G3-UNIONS=24|TOTAL=109
+  MECHANISM    MECHANISM=DECLARED-PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)
+  COMPONENTS   COMPONENTS=NONCOMPLETE-COMPONENT-SIZES=4+7;RULES-WITH-NONTRIVIAL-B1=9
+  STANDARDS    STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT;LOCAL-DIMENSIONS=1+2+3;DIMPROFILE=EXTENSIVE-EXCLUDED
+  B2           B2-PERSISTENCE=SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14
+  NULL         NULL=G0-CLIQUE-ONLY-AT-4-OF-4;ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-38-OF-38(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-0-COUNTEREXAMPLES)
+  REFUSES      REFUSES=5-OF-109
+  CONSTANTS    BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109;UNDEFINED-B2-DENSITY-AT-28
+
+declared scope: at the single block B (TB3's native 8-label arena via I6) and at B2 (two blocks plus basepoint), over the exhaustively enumerated declared atlas grid of 109 rules at two declared transports
+
