@@ -1027,3 +1027,36 @@ on that sector is PERIODIC HOLONOMY, not information; §2's
 Confirmed sound: the verdict comparator genuinely
 independent (the R2 disease repaired); the prose gate works.
 **PANEL COMPLETE: 3× AWF.**  Joint adjudication next.
+
+## 2026-08-09 — R6a JOINT ADJUDICATION (v14 LEDGER #34)
+note-r6a-adjudication.md (`0ee128f6cd19`) committed.  Grade AWF
+unanimous (~975 recomputations + ~61M sweeps; ZERO false
+numbers — the campaign's first clean prose surface).  **THE
+VERDICT HOLDS** (no missed forcing anywhere; the split not
+gauge; both heads reachable) **with the mechanism anatomy
+rewritten — THE THREE WALLS**: the split's wall =
+combinatorial multiplicity ∏(n_ℓ−1) (a potential changes
+nothing); the transverse links' wall = the torus coboundary
+theorem (grammar-wide there); **the q₁₂=0 sector's wall =
+PERIODIC HOLONOMY ALONE — on the universal cover ℤ² five of
+nine records are coboundaries and G-DIAG2 refines CANONICALLY
+(fiber 1) via the very lift the delivery called
+dynamics-forced** (cover objects unpinned ⟹ cannot flip the
+verdict; measured as a disclosure).  Dynamics-vetoes
+rule-scoped (2 count-weighted / 2 RIGHT-integral w/
+4,536/4,536 agreement / 1 underdetermined / 6 third-form;
+A-notransport ≡ A-insert fixed to 10 rules).  Count-1 floor
+retired (scale artifact).  Ten binding orders R-R6A-1..10
+(mechanism rewrite; head + five relativity segments; the 12
+injection hardenings; **the waiver ledger rebuilt — shadowed
+gates wired or removed**; verbatim anchors per the adopted
+modification; scope fixes; weak controls; the
+reopening-leads register).  TWO RUNBOOK ENGRAVINGS:
+waiver-claims-are-gate-claims; verbatim-text-anchors-adopted.
+**THE PROGRAMME STATEMENT CORRECTED: earned =
+CONTINUUM-NOT-POSABLE-AT-THE-PINNED-GRAMMAR-ROWS (2 of 2,
+different walls); "at most effective" retired from
+adjudicator language.  R6b RE-SCOPED not retired → R6b′ the
+record-type discriminator; THREE REOPENING LEADS registered
+(record-type row / extremal principle / universal-cover) —
+charter decisions the USER'S.**  Repair worker next.

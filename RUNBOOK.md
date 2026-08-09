@@ -1843,3 +1843,18 @@ very gate the #10 engraving created).
 anchoring):** a read-by-path from a pinned artifact anchors
 the (path, value) pair, not only the file bytes; a path drift
 that changes the arena or the verdict must die by anchor.
+
+**§14 addendum (2026-08-09, from v14 #34 — waiver claims are
+gate claims):** a never-falsified waiver naming a mutant or a
+forcing is itself a claim requiring verification — the named
+mutant must reach and be killed by the gate, or the forcing
+must be machine-checked; a gate no execution path evaluates
+is dead code and may not appear as waived (the R6a audit: 12
+false waivers, 10 shadowed gates).
+
+**§14 addendum (2026-08-09, from v14 #34 — verbatim-text
+anchors adopted):** the verbatim-text anchor kind is standard,
+with three binding modifications: evaluated before byte
+anchors; each row bound to a named consumer gate; context
+windows anchored rather than fragments (they bind meaning to
+use, not existence).
