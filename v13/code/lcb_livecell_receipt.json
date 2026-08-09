@@ -349,22 +349,22 @@
  "declarations": {
   "arena": {
    "admission": "a candidate is ACCEPTED at the strengthened standard only if every clause of S1 holds and S2, S3 hold; the clause that fails FIRST in the declared clause order is the named obstruction of that cell",
-   "arena action": "the identification sweep (natural / index); the DIRECTION sweep (counts->q / q->counts) -- the orientation convention RUNBOOK 14 requires to be swept; relabelling of the 9 completion labels by a permutation fixing label 0; change of basis of the record datum space by an element of GL_3(F_p); the prime sweep; the choice of completion inside the declared ord-5 class",
+   "arena action": "the metric-slot relabelling group S_3, whose orbit on the declared identifications is the covariant cell family; the DIRECTION sweep (counts->q / q->counts) -- the orientation convention RUNBOOK 14 requires to be swept; relabelling of the 9 completion labels by a permutation fixing label 0; change of basis of the record datum space by an element of GL_3(F_p); the prime sweep; the choice of completion inside the declared ord-5 class; the choice of BASE RECORD (the state coordinate) among HA's 9 admissible records.  These seven are THIS UNIT'S OWN declared choices and they are the ones the Open-1 declaration-freeness criterion measures invariance under.  The nine-label completion arena is INHERITED from GEN/BRG, not chosen here; its effect is reported separately at both scales.",
    "boundary": "one PAIRING.  Transport side: base G's carrier (81 = the system pair x the pointer pair, 9 labels each), a completion Q0 of the 9 system-pair labels fixing label 0, its defect D = delta(Q0) = Sigma Q0^T Sigma Q0 (GEN 8.1), and the group <W,D> with W = Sigma (x) Sigma.  Deformation side: C_HA(5) = F_5^k x F_5^d, k = d = 2, with <R_HH> = Z/5 acting by translation of the address register by rho mod 5.  Encoding layer: the record datum space V = F_p^3 (the three link counts at a site) with HA's record<->metric readout E, and the completion group G_C with GEN's completion->commutator map delta.",
-   "family": "4 declared ENCODING CELLS = 2 identifications x 2 directions; 7 declared primes; 8 measured defect-order classes; the 4,608-member ord-5 completion class; HA's 9 admissible geometry records + 2 declared negative controls",
+   "family": "the COVARIANT ENCODING-CELL FAMILY = the orbit of the declared identifications under the metric-slot relabelling group S_3 (all 3! slot identifications, the two declared ones among them) x 2 directions; the cell count is computed from the declared metric slot triple and never typed; 7 declared primes; 8 measured defect-order classes; the 4,608-member ord-5 completion class; HA's 9 admissible geometry records (all of them swept at the base-point clause) + 2 declared negative controls; the dimensions d = 2,3,4,5 at the fixed-space sweep",
    "law": "the strengthened standard S1-S6 as BRG's terminal paper section 2.6 registers it, operationalised clause by clause below; a candidate morphism is a map alpha : V -> G_C",
    "provenance": "BRG (terminal), HA, GEN, XBA, PSI receipts and papers, hash-pinned; every reused number read from them and recomputed here",
    "state": "the deformation side's declared base geometry record r0 = G-FLAT's count triple (1,1,2); the transport side's declared base completion Q0 (the lex-first ord-5 member); the transport side's initial configuration j0 = 0"
   },
   "controls": {
    "BREAK-HOM": "NEGATIVE CONTROL WITH TEETH: the accepted candidate's exponent lambda(r) is replaced by lambda(r)*mu(r)^(p-1) with mu a declared 1-eigencovector.  It satisfies the commuting square S1a at EVERY cell -- it differs from an ACCEPTED candidate only in the linearity of its exponent -- and must be rejected by S1b alone, with the rejecting clause named.",
-   "F0-IDENT": "POSITIVE CONTROL: the identity self-morphism of the transport arena -- source and target both the completion group with the encoding delta, alpha = the identity.  The census machinery must FIND it, at every one of the 40,320 cells, and it must pass S1a, S1c, S1d and S3.",
-   "SYNTH-COMPATIBLE": "a declared synthetic compatible pair: the same transport side against a synthetic chart map E~ whose 2-eigencovector is chart-ANTIsymmetric.  The machinery must FIND candidates and they must pass S1a-S1d.",
+   "F0-IDENT": "DISCLOSURE, NOT A CONTROL (RUNBOOK 14 addendum #208).  The identity self-morphism of the transport arena commutes with any encoding by construction: with alpha = the identity every clause of the check reads x == x.  Its 0 violations at all 40,320 cells record that the identity candidate is the identity and nothing about the square, so it is registered as an analytically-forced disclosure gate and carries no mutant. THE POSITIVE CONTROL OF THIS UNIT IS SYNTH-COMPATIBLE.",
+   "SYNTH-COMPATIBLE": "THE POSITIVE CONTROL: a declared synthetic compatible pair -- the same transport side against a synthetic chart map E~ whose 2-eigencovector is chart-ANTIsymmetric.  The machinery must FIND candidates and they must pass S1a, S1b, S1c and S1d. ITS BASE-POINT CLAUSE IS EVALUATED AT THE DECLARED tau-ASYMMETRIC RECORD G-ANISO, and the reason is measured, not conventional: S1c forces the exponent covector to be chart-antisymmetric, an antisymmetric covector annihilates any tau-FIXED record, and the declared base record G-FLAT is tau-fixed -- so S1c and S1d are jointly unsatisfiable at G-FLAT for EVERY chart map whatsoever, measured exhaustively over all (generator, covector) pairs.  The base record used by the control is recorded in its gate.",
    "SYNTH-EMPTY": "a declared synthetic incompatible pair: a scalar chart map with no eigenvalue 2.  The machinery must report EMPTY."
   },
   "held_out": {
    "H1": "the square at every HELD cell, as 9x9 permutation matrices",
-   "H2": "ord(delta(alpha(r))) at every HELD cell -- a transport-side physical quantity",
+   "H2": "the DEFECT PERMUTATION delta(alpha(r)) itself, entry by entry, at every HELD cell -- a transport-side physical quantity, and the strictly stronger reading of the two (it implies the order)",
    "H3": "fix81(delta(alpha(r))) at every HELD cell -- GEN's own fixed-configuration stratification",
    "fit_rule": "the candidate (g, lambda) is admitted if the square holds at the FIT cell ALONE; nothing on HELD is consulted.",
    "split_rule": "FIT = the single declared basis record e1 = (1,0,0); HELD = every other element of V.  Sizes computed.  Frozen before any candidate is fitted.",
@@ -387,7 +387,14 @@
    "P8": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
    "P9": "the joint system P7 and P8"
   },
+  "open1_criterion": {
+   "declaration_freeness": "COMPUTED PER CANDIDATE, NEVER TYPED.  A candidate is DECLARATION-FREE iff its admitted prime set is INVARIANT under every re-declaration of a choice THIS UNIT makes: the prime together with its selection rule (p := 7 with ord(D) := 7, whose completion class is measured non-empty and whose lex-first member is rebuilt here), the DIRECTION (registered -> reversed), the IDENTIFICATION (the declared cell family -> a single slot identification), the BASE RECORD (G-FLAT -> G-ANISO), the completion inside the ord-5 class, the completion-label relabelling, and the record-space basis.  Each candidate is a FUNCTION of that declaration record and is re-evaluated at each counterfactual; the classification is the measured invariance, and a single flipped entry is caught.",
+   "scales": "the nine-label completion arena is INHERITED (GEN/BRG), not a choice of this unit, so it is not one of the re-declarations; instead every candidate is reported at BOTH declared scales -- the nine-label arena of this pairing and the sixteen-label successor arena of G15 -- and the arena's own dependence on the declared prime (the smallest arena admitting an injective candidate has 3p + 1 labels: 16 at p = 5, 22 at p = 7) is measured and reported with them.",
+   "verdict_rule": "LCB-PRIME-DERIVED iff, at the arena being reported, some declaration-free NARROWING candidate other than the intersection itself admits exactly one admissible prime, OR the intersection of every declaration-free narrowing is a singleton.  Otherwise LCB-PRIME-DECLARED.  The unit's verdict is entered at the DECLARED nine-label arena."
+  },
+  "outcome_qualifier": "UNIVERSAL-FOR-THIS-SQUARE is EARNED, not asserted: it is entered only if the census is empty at EVERY cell of the covariant family, in BOTH directions, at EVERY declared prime and at every cell of the (prime, defect-order) grid, AND the S1a-and-S3 obstruction is measured to cover every one of those cells -- arena-free where the re-encoding's fixed space is nonzero, by the arena's own p-part where it is not.  If any of that fails the unqualified name is returned.",
   "outcomes": [
+   "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE",
    "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
    "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD",
    "LCB-BLOCKED-AT-CENSUS-DISCIPLINE"
@@ -402,6 +409,7 @@
     "q->counts": "geometry -> data, the reverse; HA's own measured determinant-2 matrix sits in this direction, so both are swept and both are reported"
    },
    "identifications": {
+    "COVARIANT COMPLETION": "an identification is a NAMING of the metric's three slots, so RUNBOOK 15 requires the declared ones to be swept together with their whole orbit under the slot-relabelling group S_3.  That orbit is all 3! slot orders; two of them are the declared cells, two more are their chart-involution conjugates, and two more complete the orbit.  Each is built from the same declared metric slot triple; nothing is added to the declaration.",
     "index": "the two coordinate triples are paired slot by slot in index order: n_e1 <-> q11, n_e2 <-> q12, n_diag <-> q22",
     "natural": "the link is paired with the metric component it determines: n_e1 <-> q11, n_e2 <-> q22, n_diag <-> q12"
    },
@@ -505,6 +513,47 @@
   },
   {
    "detail": {
+    "arena_free_cells": [
+     [
+      "index",
+      "counts->q"
+     ],
+     [
+      "index",
+      "q->counts"
+     ],
+     [
+      "natural",
+      "counts->q"
+     ],
+     [
+      "natural",
+      "q->counts"
+     ],
+     [
+      "tau-alt",
+      "counts->q"
+     ],
+     [
+      "tau-alt",
+      "q->counts"
+     ],
+     [
+      "tau-natural",
+      "counts->q"
+     ],
+     [
+      "tau-natural",
+      "q->counts"
+     ]
+    ],
+    "cells": 12
+   },
+   "id": "X11",
+   "statement": "THE OBSTRUCTION IS ARENA-FREE WHERE THE RE-ENCODING FIXES A NONZERO VECTOR, AND THAT IS NOT EVERYWHERE.  delta has exactly one fixed point at every arena (G35), so S1a forces alpha(fix E) = {e} and S3 fails whenever dim ker(E - I) >= 1.  Measured over the covariant family, that holds at 8 of the 12 cells at every declared prime; at the remaining 4 the re-encoding's spectrum carries primitive cube roots of unity instead of 1 and the fixed space is trivial, so there the emptiness is carried by the arena's own p-part (p^1 against p^3) and is arena-RELATIVE.  The universality is over this square's own cell family, not over arenas at those four cells."
+  },
+  {
+   "detail": {
     "p_part_16": 3,
     "p_part_9": 1,
     "|V|": 125
@@ -541,12 +590,12 @@
   {
    "detail": null,
    "id": "X07",
-   "statement": "THE UNIT DECIDES NOTHING ABOUT THE SIXTEEN-LABEL ARENA BEYOND ITS ARITHMETIC: G15 measures that an injective candidate into the sixteen-label completion group EXISTS and exhibits one. Whether any of them satisfies the commuting square there is NOT tested and is registered as an open question."
+   "statement": "WHAT THE SIXTEEN-LABEL ARENA IS AND IS NOT DECIDED BY, STATED AT THE SCOPE THE MEASUREMENT SUPPORTS.  G15 measures that an injective candidate into the sixteen-label completion group EXISTS and exhibits one, so the CARDINALITY branch of the obstruction dies there.  The ARENA-FREE branch does not: G35 measures fix(delta) = {e} INSIDE that arena's own order-p^3 witness subgroup, so at every cell whose re-encoding fixes a nonzero vector S1a and S3 remain jointly unsatisfiable at sixteen labels exactly as they are at nine.  At the four cells where the fixed space is trivial neither branch bites at sixteen labels, and the square there is NOT tested: that residue, and not the whole arena, is what stays open."
   },
   {
    "detail": null,
    "id": "X08",
-   "statement": "TWO OF THE FOUR ENCODING CELLS RETURN A NON-EMPTY S1a/S1b CENSUS -- 48 candidates each -- and every one of them is rejected by S1c at exactly 100 of the 125 record cells.  Measured, reported, and not counted as a FOUND, because S1c is a declared clause of S1 and the verdict is taken at the full clause list."
+   "statement": "SIX OF THE TWELVE COVARIANT ENCODING CELLS RETURN A NON-EMPTY S1a/S1b CENSUS -- 48 candidates each, the whole geometry->data direction -- and every one of them is rejected by S1c at exactly 100 of the 125 record cells.  Measured, reported, and not counted as a FOUND, because S1c is a declared clause of S1 and the verdict is taken at the full clause list."
   },
   {
    "detail": null,
@@ -554,9 +603,36 @@
    "statement": "THE ENUMERATION ROUTE AND THE LINEAR-ALGEBRA ROUTE SHARE THEIR INPUT DATA (the same chart matrices, the same defect map) but not their computations: one enumerates 41,665 homomorphisms and compares permutation matrices, the other solves a 3x3 kernel over F_p and multiplies by a counted set.  They are disclosed as two computations over shared data, which is what they are."
   },
   {
-   "detail": null,
+   "detail": {
+    "identifications_admitting_7": [
+     "alt",
+     "tau-index"
+    ],
+    "primes_with_2_in_spectrum_by_identification": {
+     "alt": [
+      3,
+      7
+     ],
+     "index": [
+      3
+     ],
+     "natural": [
+      3
+     ],
+     "tau-alt": [
+      3
+     ],
+     "tau-index": [
+      3,
+      7
+     ],
+     "tau-natural": [
+      3
+     ]
+    }
+   },
    "id": "X10",
-   "statement": "THE PRIME 3 IS THE ONLY PRIME AT WHICH THE REGISTERED INTERTWINING IS SOLVABLE, AND IT IS INADMISSIBLE ON THE DEFORMATION SIDE.  The chart map's spectrum contains 1, 1/2 and (in the index identification) -1; 2 joins it only when 2 = 1/2 or 2 = -1 mod p, i.e. only at p = 3, where HA's residual (1/6,1/6) does not reduce.  This is measured over a prime range wider than the declared sweep."
+   "statement": "THE SPECTRAL CONDITION IS IDENTIFICATION-RELATIVE, AND THE PRIME IT PICKS IS NOT ALWAYS 3.  In the registered direction 2 enters the chart map's spectrum at p = 3 at EVERY identification of the covariant family -- and at p = 7 as well at 2 of the 6, alt and tau-index, the second of which is the chart-involution conjugate of the declared index cell.  p = 7 IS admissible on the deformation side (96 anti-invariant order-7 elements exist), so the registered direction's census there is non-empty at S1a and S1b and is emptied by S1c, exhibited in gate G38.  Swept over every prime below 60, a range wider than the declared sweep.  The delivered reading that the intertwining 'wants p = 3' was carried by the two-of-six identification scope and does not survive the covariant one."
   }
  ],
  "gates": [
@@ -569,6 +645,8 @@
      "controls",
      "held_out",
      "open1_candidates",
+     "open1_criterion",
+     "outcome_qualifier",
      "outcomes",
      "pairing",
      "prime_outcomes",
@@ -745,7 +823,7 @@
    "passed": true
   },
   {
-   "claim": "THE FOUR DECLARED ENCODING CELLS ARE BUILT AND CELL-COMPLETE (2 identifications x 2 directions), EACH ONE INVERTIBLE MOD p, AND THE CHART INVOLUTION IS READ IN BOTH COORDINATE ORDERS: the NATURAL identification carries the chart involution -- the axis swap induces the SAME slot permutation on counts and on the metric, and the re-encoding is measured to COMMUTE with it, so the deformation side's encoding is chart-EQUIVARIANT -- while the INDEX identification is measured NOT to carry it.  Exactly one of the two identifications is chart-compatible, and that is a measurement",
+   "claim": "THE ENCODING-CELL FAMILY IS THE COVARIANT ORBIT OF THE DECLARED CELLS AND IS CELL-COMPLETE (RUNBOOK 15): an identification is a NAMING of the metric's three slots, so the declared identifications are swept together with their whole orbit under the slot-relabelling group S_3.  That orbit is measured to be every ordering of the declared metric slot triple -- 3! of them, computed from the triple and never typed -- the two declared ones among them, each cell invertible mod p; and the chart involution is read in both coordinate orders, so the identifications that CARRY it (the axis swap inducing the same slot permutation on counts and on the metric, the re-encoding measured to commute with it) are separated from those that do not, by measurement",
    "detail": {
     "cells": [
      [
@@ -757,19 +835,112 @@
       "q->counts"
      ],
      [
+      "tau-natural",
+      "counts->q"
+     ],
+     [
+      "tau-natural",
+      "q->counts"
+     ],
+     [
       "index",
       "counts->q"
      ],
      [
       "index",
       "q->counts"
+     ],
+     [
+      "tau-index",
+      "counts->q"
+     ],
+     [
+      "tau-index",
+      "q->counts"
+     ],
+     [
+      "alt",
+      "counts->q"
+     ],
+     [
+      "alt",
+      "q->counts"
+     ],
+     [
+      "tau-alt",
+      "counts->q"
+     ],
+     [
+      "tau-alt",
+      "q->counts"
      ]
     ],
     "chart_compatible": {
+     "alt": false,
      "index": false,
-     "natural": true
+     "natural": true,
+     "tau-alt": false,
+     "tau-index": false,
+     "tau-natural": true
     },
+    "declared_identifications": [
+     "index",
+     "natural"
+    ],
+    "family_closed_under_the_chart_involution": true,
     "matrices": {
+     "alt|counts->q": {
+      "charpoly": [
+       "-1/2",
+       "1/2",
+       "1/2",
+       "1"
+      ],
+      "det": "1/2",
+      "mod_p": [
+       [
+        2,
+        2,
+        3
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        0,
+        1,
+        0
+       ]
+      ]
+     },
+     "alt|q->counts": {
+      "charpoly": [
+       "-2",
+       "-1",
+       "-1",
+       "1"
+      ],
+      "det": "2",
+      "mod_p": [
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        2,
+        1,
+        1
+       ]
+      ]
+     },
      "index|counts->q": {
       "charpoly": [
        "1/2",
@@ -873,16 +1044,279 @@
         2
        ]
       ]
+     },
+     "tau-alt|counts->q": {
+      "charpoly": [
+       "1/2",
+       "-1",
+       "-1/2",
+       "1"
+      ],
+      "det": "-1/2",
+      "mod_p": [
+       [
+        2,
+        2,
+        3
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ]
+      ]
+     },
+     "tau-alt|q->counts": {
+      "charpoly": [
+       "2",
+       "-1",
+       "-2",
+       "1"
+      ],
+      "det": "-2",
+      "mod_p": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        2,
+        1,
+        1
+       ]
+      ]
+     },
+     "tau-index|counts->q": {
+      "charpoly": [
+       "-1/2",
+       "1/2",
+       "1/2",
+       "1"
+      ],
+      "det": "1/2",
+      "mod_p": [
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        2,
+        2,
+        3
+       ],
+       [
+        1,
+        0,
+        0
+       ]
+      ]
+     },
+     "tau-index|q->counts": {
+      "charpoly": [
+       "-2",
+       "-1",
+       "-1",
+       "1"
+      ],
+      "det": "2",
+      "mod_p": [
+       [
+        0,
+        0,
+        1
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        2,
+        1
+       ]
+      ]
+     },
+     "tau-natural|counts->q": {
+      "charpoly": [
+       "1/2",
+       "-1",
+       "-1/2",
+       "1"
+      ],
+      "det": "-1/2",
+      "mod_p": [
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        2,
+        2,
+        3
+       ]
+      ]
+     },
+     "tau-natural|q->counts": {
+      "charpoly": [
+       "2",
+       "-1",
+       "-2",
+       "1"
+      ],
+      "det": "-2",
+      "mod_p": [
+       [
+        0,
+        1,
+        0
+       ],
+       [
+        1,
+        0,
+        0
+       ],
+       [
+        1,
+        1,
+        2
+       ]
+      ]
      }
     },
-    "tau_equivariant_cells": 2,
+    "orbit_is_the_full_slot_relabelling_orbit": true,
+    "slot_orders": {
+     "alt": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "index": [
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     "natural": [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "tau-alt": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "tau-index": [
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "tau-natural": [
+      [
+       1,
+       1
+      ],
+      [
+       0,
+       0
+      ],
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    "tau_equivariant_cells": 4,
     "tau_induced_slot_permutation": {
+     "alt": [
+      0,
+      2,
+      1
+     ],
      "index": [
       2,
       1,
       0
      ],
      "natural": [
+      1,
+      0,
+      2
+     ],
+     "tau-alt": [
+      0,
+      2,
+      1
+     ],
+     "tau-index": [
+      2,
+      1,
+      0
+     ],
+     "tau-natural": [
       1,
       0,
       2
@@ -908,8 +1342,8 @@
      "5": 41664
     },
     "route_calls": {
-     "A": 4,
-     "B": 4,
+     "A": 12,
+     "B": 12,
      "taint": 0
     },
     "rows": [
@@ -929,6 +1363,20 @@
      },
      {
       "direction": "counts->q",
+      "identification": "tau-natural",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-natural",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     },
+     {
+      "direction": "counts->q",
       "identification": "index",
       "kernel_dim": 0,
       "route_A_linear_algebra": 0,
@@ -937,6 +1385,48 @@
      {
       "direction": "q->counts",
       "identification": "index",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "tau-index",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-index",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "alt",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "alt",
+      "kernel_dim": 1,
+      "route_A_linear_algebra": 48,
+      "route_B_enumeration": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "tau-alt",
+      "kernel_dim": 0,
+      "route_A_linear_algebra": 0,
+      "route_B_enumeration": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-alt",
       "kernel_dim": 1,
       "route_A_linear_algebra": 48,
       "route_B_enumeration": 48
@@ -950,9 +1440,9 @@
   {
    "claim": "THE CENSUS IS CELL-COMPLETE AND EXHAUSTIVE AT ITS DECLARED SCOPE: the declared encoding cells are visited exactly once each; every candidate is tested at every one of the p^3 record cells; and the ENUMERATION'S OWN SIZE is checked against an independent count built from the measured order-p element count alone -- the cyclic subgroups of order p number (elements)/(p-1), each carrying (p^3 - 1) surjections plus the one trivial map -- so a dropped basis image cannot pass silently",
    "detail": {
-    "cells_visited": 4,
+    "cells_visited": 12,
     "distinct": 41665,
-    "distinct_cells": 4,
+    "distinct_cells": 12,
     "homomorphisms": 41665,
     "homomorphisms_predicted_independently": 41665,
     "order_p_elements": 1344,
@@ -972,6 +1462,1199 @@
     "squaring_identity_cells_verified": 40
    },
    "id": "G12",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TRANSPORT SIDE'S ENCODING HAS EXACTLY ONE FIXED POINT, AND THAT IS ARENA-FREE: delta(x) = sigma(x)^-1 x, so delta(x) = x holds exactly when sigma(x) = e, and conjugation by the label exchange is injective.  Measured by exhaustive sweep at three different arenas -- the four-label completion group, the nine-label one this pairing declares, and the order-125 subgroup the sixteen-label control builds -- the fixed-point set is a SINGLETON at each, and its element is the identity",
+   "detail": {
+    "non_identity_elements_conjugation_sends_to_the_identity": 0,
+    "rows": [
+     {
+      "arena": "4 labels",
+      "delta_fixed_points": 1,
+      "members": 6,
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "arena": "9 labels",
+      "delta_fixed_points": 1,
+      "members": 40320,
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "arena": "16 labels (the order-125 witness subgroup)",
+      "delta_fixed_points": 1,
+      "members": 125,
+      "the_fixed_point_is_the_identity": true
+     }
+    ]
+   },
+   "id": "G35",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE DEFORMATION SIDE'S RE-ENCODING FIXES A NONZERO VECTOR -- MEASURED, NOT ASSUMED, AND NOT EVERYWHERE: dim ker(E - I) is computed at EVERY covariant cell and EVERY declared prime by Gaussian elimination and independently by the vanishing of det(E - I) mod p, and the two agree at every one of them; and the same quantity is recomputed over Q at the declared dimensions d = 2,3,4,5 for both the natural and the lexicographic slot orderings, where it is measured to be d and 1 respectively -- never zero.  At d = 2 the measurement separates the cells: the fixed space is nonzero at some identifications at every prime and ZERO at others, and that is what decides where the obstruction below is arena-free",
+   "detail": {
+    "cells_total": 12,
+    "cells_with_a_nonzero_fixed_space_at_every_declared_prime": [
+     [
+      "index",
+      "counts->q"
+     ],
+     [
+      "index",
+      "q->counts"
+     ],
+     [
+      "natural",
+      "counts->q"
+     ],
+     [
+      "natural",
+      "q->counts"
+     ],
+     [
+      "tau-alt",
+      "counts->q"
+     ],
+     [
+      "tau-alt",
+      "q->counts"
+     ],
+     [
+      "tau-natural",
+      "counts->q"
+     ],
+     [
+      "tau-natural",
+      "q->counts"
+     ]
+    ],
+    "disagreements": [],
+    "general_dimension_rows": [
+     {
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 2,
+      "dim_fix": 2,
+      "ordering": "natural",
+      "size": 3
+     },
+     {
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 2,
+      "dim_fix": 1,
+      "ordering": "lex",
+      "size": 3
+     },
+     {
+      "column_sums": [
+       "3",
+       "3",
+       "3",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 3,
+      "dim_fix": 3,
+      "ordering": "natural",
+      "size": 6
+     },
+     {
+      "column_sums": [
+       "3",
+       "2",
+       "2",
+       "3",
+       "2",
+       "3"
+      ],
+      "d": 3,
+      "dim_fix": 1,
+      "ordering": "lex",
+      "size": 6
+     },
+     {
+      "column_sums": [
+       "4",
+       "4",
+       "4",
+       "4",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 4,
+      "dim_fix": 4,
+      "ordering": "natural",
+      "size": 10
+     },
+     {
+      "column_sums": [
+       "4",
+       "2",
+       "2",
+       "2",
+       "4",
+       "2",
+       "2",
+       "4",
+       "2",
+       "4"
+      ],
+      "d": 4,
+      "dim_fix": 1,
+      "ordering": "lex",
+      "size": 10
+     },
+     {
+      "column_sums": [
+       "5",
+       "5",
+       "5",
+       "5",
+       "5",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 5,
+      "dim_fix": 5,
+      "ordering": "natural",
+      "size": 15
+     },
+     {
+      "column_sums": [
+       "5",
+       "2",
+       "2",
+       "2",
+       "2",
+       "5",
+       "2",
+       "2",
+       "2",
+       "5",
+       "2",
+       "2",
+       "5",
+       "2",
+       "5"
+      ],
+      "d": 5,
+      "dim_fix": 1,
+      "ordering": "lex",
+      "size": 15
+     }
+    ],
+    "rows": [
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 25,
+      "identification": "natural",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 49,
+      "identification": "natural",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 121,
+      "identification": "natural",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 169,
+      "identification": "natural",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 289,
+      "identification": "natural",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 361,
+      "identification": "natural",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "fixed_space_size": 529,
+      "identification": "natural",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 25,
+      "identification": "natural",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 49,
+      "identification": "natural",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 121,
+      "identification": "natural",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 169,
+      "identification": "natural",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 289,
+      "identification": "natural",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 361,
+      "identification": "natural",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "fixed_space_size": 529,
+      "identification": "natural",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 5,
+      "identification": "tau-natural",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 7,
+      "identification": "tau-natural",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 11,
+      "identification": "tau-natural",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 13,
+      "identification": "tau-natural",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 17,
+      "identification": "tau-natural",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 19,
+      "identification": "tau-natural",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 23,
+      "identification": "tau-natural",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 5,
+      "identification": "tau-natural",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 7,
+      "identification": "tau-natural",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 11,
+      "identification": "tau-natural",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 13,
+      "identification": "tau-natural",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 17,
+      "identification": "tau-natural",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 19,
+      "identification": "tau-natural",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 23,
+      "identification": "tau-natural",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 5,
+      "identification": "index",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 7,
+      "identification": "index",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 11,
+      "identification": "index",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 13,
+      "identification": "index",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 17,
+      "identification": "index",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 19,
+      "identification": "index",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 23,
+      "identification": "index",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 5,
+      "identification": "index",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 7,
+      "identification": "index",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 11,
+      "identification": "index",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 13,
+      "identification": "index",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 17,
+      "identification": "index",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 19,
+      "identification": "index",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 23,
+      "identification": "index",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 1,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 2,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 4,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 5,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 7,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 8,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 10,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "tau-index",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 1,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 2,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 4,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 5,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 7,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 8,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 10,
+      "dim_fix_E": 0,
+      "direction": "counts->q",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 3,
+      "dim_fix_E": 0,
+      "direction": "q->counts",
+      "fixed_space_size": 1,
+      "identification": "alt",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 5,
+      "identification": "tau-alt",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 7,
+      "identification": "tau-alt",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 11,
+      "identification": "tau-alt",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 13,
+      "identification": "tau-alt",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 17,
+      "identification": "tau-alt",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 19,
+      "identification": "tau-alt",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "fixed_space_size": 23,
+      "identification": "tau-alt",
+      "p": 23
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 5,
+      "identification": "tau-alt",
+      "p": 5
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 7,
+      "identification": "tau-alt",
+      "p": 7
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 11,
+      "identification": "tau-alt",
+      "p": 11
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 13,
+      "identification": "tau-alt",
+      "p": 13
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 17,
+      "identification": "tau-alt",
+      "p": 17
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 19,
+      "identification": "tau-alt",
+      "p": 19
+     },
+     {
+      "det_E_minus_I_mod_p": 0,
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "fixed_space_size": 23,
+      "identification": "tau-alt",
+      "p": 23
+     }
+    ]
+   },
+   "id": "G36",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S1a AND S3 -- BOTH OF THEM CLAUSES BRG REGISTERED -- ARE JOINTLY UNSATISFIABLE AT EVERY CELL OF THE COVARIANT FAMILY AND EVERY DECLARED PRIME, AND THE MECHANISM IS MEASURED LIVE: the square sends the re-encoding's fixed space into the transport encoding's fixed-point set, which G35 measures to be a single point, so a candidate satisfying S1a collapses the whole fixed space onto the identity and cannot be injective.  Where the fixed space is nonzero that argument needs NO arena hypothesis; where it is zero the arena's own p-part decides instead, and every (cell, prime) is measured to be covered by one branch or the other.  The collapse itself is measured on the census's own survivors: every survivor sends every fixed record to the identity and none is injective",
+   "detail": {
+    "cells_covered": 84,
+    "covered_by_the_arena_free_branch": 56,
+    "covered_by_the_p_part_branch_only": 28,
+    "mechanism_rows": [
+     {
+      "arena_free_branch_bites_here": true,
+      "direction": "q->counts",
+      "fixed_records": 25,
+      "fixed_records_sent_to_the_identity": 25,
+      "identification": "natural",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     },
+     {
+      "arena_free_branch_bites_here": true,
+      "direction": "q->counts",
+      "fixed_records": 5,
+      "fixed_records_sent_to_the_identity": 5,
+      "identification": "tau-natural",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     },
+     {
+      "arena_free_branch_bites_here": true,
+      "direction": "q->counts",
+      "fixed_records": 5,
+      "fixed_records_sent_to_the_identity": 5,
+      "identification": "index",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     },
+     {
+      "arena_free_branch_bites_here": false,
+      "direction": "q->counts",
+      "fixed_records": 1,
+      "fixed_records_sent_to_the_identity": 1,
+      "identification": "tau-index",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     },
+     {
+      "arena_free_branch_bites_here": false,
+      "direction": "q->counts",
+      "fixed_records": 1,
+      "fixed_records_sent_to_the_identity": 1,
+      "identification": "alt",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     },
+     {
+      "arena_free_branch_bites_here": true,
+      "direction": "q->counts",
+      "fixed_records": 5,
+      "fixed_records_sent_to_the_identity": 5,
+      "identification": "tau-alt",
+      "image_size": 5,
+      "injective": false,
+      "record_space": 125
+     }
+    ],
+    "uncovered": []
+   },
+   "id": "G37",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "WHY THE GEOMETRY->DATA DIRECTION IS LIVE AT EVERY IDENTIFICATION AND DIES AT THE SAME CLAUSE EVERY TIME, MEASURED: at d = 2 every column of the readout sums to exactly 2 -- each diagonal slot is hit by its own axis link and by the diagonal link, each off-diagonal slot by the diagonal link with coefficient 2 -- so the all-ones covector is a 2-eigencovector of the geometry->data map at EVERY identification and every prime, which is why that direction's census is never empty; and the all-ones covector is measured chart-SYMMETRIC while S1c demands chart-antisymmetry, which is why it is always emptied by the same clause.  The fact is d = 2-specific and is measured to be so: at d = 3,4,5 the diagonal columns sum to d, not 2",
+   "detail": {
+    "chart_symmetric": true,
+    "higher_dimension_column_sums": {
+     "3|lex": [
+      "3",
+      "2",
+      "2",
+      "3",
+      "2",
+      "3"
+     ],
+     "3|natural": [
+      "3",
+      "3",
+      "3",
+      "2",
+      "2",
+      "2"
+     ],
+     "4|lex": [
+      "4",
+      "2",
+      "2",
+      "2",
+      "4",
+      "2",
+      "2",
+      "4",
+      "2",
+      "4"
+     ],
+     "4|natural": [
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2"
+     ],
+     "5|lex": [
+      "5",
+      "2",
+      "2",
+      "2",
+      "2",
+      "5",
+      "2",
+      "2",
+      "2",
+      "5",
+      "2",
+      "2",
+      "5",
+      "2",
+      "5"
+     ],
+     "5|natural": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2"
+     ]
+    },
+    "ones_covector": [
+     1,
+     1,
+     1
+    ],
+    "rows": [
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "natural",
+      "ones_covector_is_a_2_eigencovector": true
+     },
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "tau-natural",
+      "ones_covector_is_a_2_eigencovector": true
+     },
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "index",
+      "ones_covector_is_a_2_eigencovector": true
+     },
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "tau-index",
+      "ones_covector_is_a_2_eigencovector": true
+     },
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "alt",
+      "ones_covector_is_a_2_eigencovector": true
+     },
+     {
+      "all_columns_sum_to_two": true,
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "identification": "tau-alt",
+      "ones_covector_is_a_2_eigencovector": true
+     }
+    ],
+    "tau_image_of_the_ones_covector": [
+     1,
+     1,
+     1
+    ]
+   },
+   "id": "G39",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "WHAT THE HOMOMORPHISM CLAUSE CARRIES IS MEASURED, NOT ARGUED: BRG's S1 registers a commuting square, and delta is a TWISTED COCYCLE rather than a homomorphism, so the square as registered lives in Set and S1b is a third addition of this unit.  Posed at the registered cell WITHOUT S1b the census is not empty: the square determines a candidate on each E-orbit from its value at a representative subject to delta^L fixing it, so the count is the product over the measured orbit spectrum of the measured delta^L fixed-point counts -- computed here two ways, orbit by orbit and by exponentiating the per-length factors, and the two agree",
+   "detail": {
+    "E_orbit_spectrum": {
+     "1": 25,
+     "4": 25
+    },
+    "delta_L_fixed_point_counts": {
+     "1": 1,
+     "4": 189
+    },
+    "record_cells_covered": 125,
+    "second_computation": "815727501386186588190430395382342267781393000859545374749",
+    "set_level_census_absent_S1b": "815727501386186588190430395382342267781393000859545374749"
+   },
+   "id": "G40",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ONE CELL OF THE COVARIANT FAMILY WHERE THE REGISTERED DIRECTION IS SOLVABLE AT AN ADMISSIBLE PRIME IS EXHIBITED AND VERIFIED HERE, AS A DIAGNOSTIC: at the chart-involution conjugate of a declared identification the re-encoding's spectrum carries primitive cube roots of unity, so 2 enters it at p = 7 as well as at p = 3, and an explicit candidate -- an anti-invariant generator of order 7 with the measured 2-eigencovector as exponent -- satisfies S1a at every one of the p^3 record cells and S1b at every one of the p^6 composition cells.  It is not a FOUND: it violates S1c, its base-point clause fails against the declared ord-5 transport base, and its image has p elements against a record space of p^3, so S3 fails by the arena's p-part",
+   "detail": {
+    "E_mod_7": [
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      3,
+      3,
+      4
+     ],
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "S1a_violations": 0,
+    "S1b_violations": 0,
+    "S1c_violations": 294,
+    "S1d_against_an_ord7_base": true,
+    "S1d_against_the_declared_ord5_base": false,
+    "cell": [
+     "tau-index",
+     "counts->q"
+    ],
+    "composition_cells": 117649,
+    "defect_fixed_configurations": 18,
+    "defect_order_at_the_base_record": 7,
+    "fixed_space_dim": 0,
+    "generator": [
+     0,
+     2,
+     4,
+     5,
+     6,
+     7,
+     3,
+     1,
+     8
+    ],
+    "generator_anti_invariant": true,
+    "generator_order": 7,
+    "image_size": 7,
+    "lambda_at_the_base_record": 2,
+    "ord7_completion_class_size": 9216,
+    "p": 7,
+    "record_cells": 343,
+    "record_space_size": 343,
+    "two_eigencovector": [
+     3,
+     4,
+     1
+    ]
+   },
+   "id": "G38",
    "must_pass": true,
    "passed": true
   },
@@ -1014,6 +2697,26 @@
      },
      {
       "direction": "counts->q",
+      "identification": "tau-natural",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-natural",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
+     },
+     {
+      "direction": "counts->q",
       "identification": "index",
       "s1_pass": 0,
       "s1ab": 0,
@@ -1031,11 +2734,225 @@
        100
       ],
       "s1d_pass": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "tau-index",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-index",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "alt",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "alt",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
+     },
+     {
+      "direction": "counts->q",
+      "identification": "tau-alt",
+      "s1_pass": 0,
+      "s1ab": 0,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [],
+      "s1d_pass": 0
+     },
+     {
+      "direction": "q->counts",
+      "identification": "tau-alt",
+      "s1_pass": 0,
+      "s1ab": 48,
+      "s1c_pass": 0,
+      "s1c_violation_counts": [
+       100
+      ],
+      "s1d_pass": 48
      }
     ],
     "s1c_cells_evaluated": 125
    },
    "id": "G13",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE STATE COORDINATE IS SWEPT, AND THE COLLISION BETWEEN THE TWO ADDED CLAUSES IS MEASURED WITH NO CHART MAP IN THE COMPUTATION AT ALL: S1d is evaluated at every one of HA's admissible geometry records, not only at the declared one, and it passes at some and fails at others -- so the base point is a declaration and is measured to be one.  Separately, over ALL (order-p generator, nonzero covector) pairs, the pairs satisfying S1c are counted and their base-point clause is evaluated at the declared tau-FIXED record and at a declared tau-ASYMMETRIC one: S1c forces the exponent covector to be chart-antisymmetric, an antisymmetric covector annihilates any tau-fixed record, and the two clauses are therefore jointly unsatisfiable at the declared base record for EVERY chart map whatsoever",
+   "detail": {
+    "admissible_records": 9,
+    "chart_antisymmetric_covectors": 4,
+    "declared_base_record_is_tau_fixed": true,
+    "generator_covector_pairs": 166656,
+    "pairs_satisfying_S1c": 192,
+    "pairs_satisfying_S1c_and_S1d_at_G-ANISO": 192,
+    "pairs_satisfying_S1c_and_S1d_at_the_declared_base_record": 0,
+    "records_swept": 9,
+    "records_where_S1d_passes": 5,
+    "rows": [
+     {
+      "candidates_passing_S1d": 0,
+      "counts": [
+       1,
+       4,
+       5
+      ],
+      "mod_p": [
+       1,
+       4,
+       0
+      ],
+      "record": "G-ANISO",
+      "tau_fixed": false
+     },
+     {
+      "candidates_passing_S1d": 288,
+      "counts": [
+       4,
+       9,
+       13
+      ],
+      "mod_p": [
+       4,
+       4,
+       3
+      ],
+      "record": "G-ANISO2",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 288,
+      "counts": [
+       1,
+       1,
+       2
+      ],
+      "mod_p": [
+       1,
+       1,
+       2
+      ],
+      "record": "G-CURVED",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 0,
+      "counts": [
+       2,
+       2,
+       6
+      ],
+      "mod_p": [
+       2,
+       2,
+       1
+      ],
+      "record": "G-CURVOFF",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 288,
+      "counts": [
+       2,
+       2,
+       4
+      ],
+      "mod_p": [
+       2,
+       2,
+       4
+      ],
+      "record": "G-DIAG2",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 288,
+      "counts": [
+       1,
+       1,
+       2
+      ],
+      "mod_p": [
+       1,
+       1,
+       2
+      ],
+      "record": "G-FLAT",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 0,
+      "counts": [
+       2,
+       2,
+       6
+      ],
+      "mod_p": [
+       2,
+       2,
+       1
+      ],
+      "record": "G-OFFDIAG",
+      "tau_fixed": true
+     },
+     {
+      "candidates_passing_S1d": 0,
+      "counts": [
+       3,
+       5,
+       12
+      ],
+      "mod_p": [
+       3,
+       0,
+       2
+      ],
+      "record": "G-OFFDIAG2",
+      "tau_fixed": false
+     },
+     {
+      "candidates_passing_S1d": 288,
+      "counts": [
+       3,
+       5,
+       4
+      ],
+      "mod_p": [
+       3,
+       0,
+       4
+      ],
+      "record": "G-OFFNEG",
+      "tau_fixed": false
+     }
+    ]
+   },
+   "id": "G42",
    "must_pass": true,
    "passed": true
   },
@@ -1085,6 +3002,31 @@
       "candidates": 0,
       "determined": false,
       "direction": "counts->q",
+      "identification": "tau-natural",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "tau-natural",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     },
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
       "identification": "index",
       "image_size": null,
       "injective": false,
@@ -1097,6 +3039,81 @@
       "determined": false,
       "direction": "q->counts",
       "identification": "index",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     },
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
+      "identification": "tau-index",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "tau-index",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     },
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
+      "identification": "alt",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "alt",
+      "image_size": 5,
+      "injective": false,
+      "kernel_size": 25,
+      "strata_declared": 7,
+      "strata_hit": [
+       36,
+       81
+      ]
+     },
+     {
+      "candidates": 0,
+      "determined": false,
+      "direction": "counts->q",
+      "identification": "tau-alt",
+      "image_size": null,
+      "injective": false,
+      "kernel_size": null,
+      "strata_declared": 7,
+      "strata_hit": []
+     },
+     {
+      "candidates": 48,
+      "determined": false,
+      "direction": "q->counts",
+      "identification": "tau-alt",
       "image_size": 5,
       "injective": false,
       "kernel_size": 25,
@@ -1127,7 +3144,7 @@
    "passed": true
   },
   {
-   "claim": "S4 IS A CELL-COMPLETE CENSUS OVER THE WHOLE DECLARED (prime, defect-order) GRID AT EVERY ENCODING CELL: each cell is visited exactly once, the count is computed from the declared sets rather than typed, and the narrowing the strengthened standard performs on BRG's live cells is read off it",
+   "claim": "S4 IS A CELL-COMPLETE CENSUS OVER THE WHOLE DECLARED (prime, defect-order) GRID AT EVERY COVARIANT ENCODING CELL: each cell is visited exactly once, the count is computed from the declared sets rather than typed, and the narrowing the strengthened standard performs on BRG's live cells is read off it.  The grid's INDEPENDENT content is reported with it: the kernel computations are one per (encoding cell, prime), so the grid is that many linear-algebra decisions replicated across the defect-order axis, which enters the clause list only through the base-point condition",
    "detail": {
     "anti_invariant_elements_by_prime": {
      "5": 48,
@@ -1138,9 +3155,9 @@
      "19": 0,
      "23": 0
     },
-    "cells": 224,
-    "cells_live_after_the_base_point_clause": 4,
-    "cells_live_at_S1ab": 32,
+    "cells": 672,
+    "cells_live_after_the_base_point_clause": 28,
+    "cells_live_at_S1ab": 112,
     "cells_live_at_the_full_S1_clause_list": 0,
     "defect_orders": [
      1,
@@ -1152,8 +3169,10 @@
      7,
      15
     ],
-    "encoding_cells": 4,
-    "primes": 7
+    "encoding_cells": 12,
+    "independent_kernel_decisions": 84,
+    "primes": 7,
+    "replication_along_the_defect_order_axis": 8
    },
    "id": "G16",
    "must_pass": true,
@@ -1262,7 +3281,7 @@
    "passed": true
   },
   {
-   "claim": "THE HELD-OUT VERIFICATION IS PREDICTIVE, NOT IMPOSED: the split is declared before any candidate is fitted, candidates are admitted by the square at the FIT cell ALONE, and the square is then VERIFIED at every HELD cell -- where most FIT-admitted candidates die.  A protocol under which nothing died out of sample would verify nothing",
+   "claim": "THE HELD-OUT VERIFICATION IS PREDICTIVE, NOT IMPOSED, AND IT IS RUN AGAINST THE PAIRING'S OWN DEFORMATION SIDE: the chart map is HA's own readout at the declared identification -- measured identical to the matrix section 2.4 builds -- not the synthetic control map; the split is declared before any candidate is fitted; candidates are admitted by the square at the FIT cell ALONE; and the square is then VERIFIED at every HELD cell, where most FIT-admitted candidates die.  A protocol under which nothing died out of sample would verify nothing.  The registered direction of the same readout is run too, and there the out-of-sample deaths are TOTAL -- the contrast is the measurement",
    "detail": {
     "FIT": [
      [
@@ -1272,13 +3291,64 @@
      ]
     ],
     "HELD_cells": 124,
+    "chart_map_is_the_pairings_own_readout": true,
+    "chart_map_used": [
+     [
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      2
+     ]
+    ],
+    "direction": "q->counts",
     "fit_admitted": 6336,
+    "identification": "natural",
+    "registered_direction_fit_admitted": 6336,
+    "registered_direction_survivors": 0,
     "rejected_out_of_sample": 6144,
     "survived_held_out": 192,
     "total_held_out_violations": 100
    },
    "id": "G18",
    "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "DISCLOSURE GATE (not must-pass): WHICH DEFORMATION SIDE EACH BLOCK OF THIS UNIT RUNS AGAINST.  S5 runs against the pairing's own readout in both directions; the SYNTHETIC compatible map is a declared control and is used only where it is named -- the FOUND-reachability control and the EMPTY-reachability control.  The three S5 counts are reported for the pairing's own map and for the synthetic one side by side, so the reader can see exactly what the synthetic map does and does not change",
+   "detail": {
+    "S5_chart_map": "the pairing's own readout (natural, q->counts)",
+    "S5_registered_direction": "the pairing's own readout (natural, counts->q)",
+    "counts_on_the_pairings_own_map": [
+     6336,
+     6144,
+     192
+    ],
+    "counts_on_the_registered_direction": [
+     6336,
+     6336,
+     0
+    ],
+    "counts_on_the_synthetic_map": [
+     6336,
+     6144,
+     192
+    ],
+    "synthetic_map_used_by": [
+     "SYNTH-COMPATIBLE (FOUND reachable)",
+     "SYNTH-EMPTY (EMPTY reachable)"
+    ]
+   },
+   "id": "G41",
+   "must_pass": false,
    "passed": true
   },
   {
@@ -1303,8 +3373,8 @@
     ],
     "witness_lambda": [
      1,
-     4,
-     0
+     1,
+     1
     ]
    },
    "id": "G19",
@@ -1320,15 +3390,15 @@
     "per_prime": [
      {
       "anti_elements": 48,
-      "cells_live_after_S1d": 2,
-      "cells_live_at_S1ab": 16,
+      "cells_live_after_S1d": 12,
+      "cells_live_at_S1ab": 48,
       "cells_live_at_the_full_S1": 0,
       "p": 5
      },
      {
       "anti_elements": 96,
-      "cells_live_after_S1d": 2,
-      "cells_live_at_S1ab": 16,
+      "cells_live_after_S1d": 16,
+      "cells_live_at_S1ab": 64,
       "cells_live_at_the_full_S1": 0,
       "p": 7
      },
@@ -1375,21 +3445,39 @@
    "passed": true
   },
   {
-   "claim": "POSITIVE CONTROL: THE CENSUS MACHINERY FINDS THE IDENTITY SELF-MORPHISM.  The transport arena is paired with itself -- the completion group with the encoding delta on both sides -- and the identity candidate is run through the SAME square comparison, at every one of the family's cells, and through the same S1c, S1d and S3 clauses.  A predicate that could not accept the identity would decide nothing",
+   "claim": "DISCLOSURE GATE (not must-pass): F0-IDENT IS ANALYTICALLY FORCED AND IS NOT THIS UNIT'S POSITIVE CONTROL (RUNBOOK 14 addendum #208).  With alpha the identity and the transport arena paired with itself, every clause of the check reads x == x: the square is delta(q) = delta(q), the involution clause is sigma(q) = sigma(q), and injectivity is |{q}| = |COMPL|.  Its zero violations at all of the family's cells record that the identity candidate is the identity and nothing about the square, so it is registered as a disclosure and carries no mutant.  THE POSITIVE CONTROL IS SYNTH-COMPATIBLE (G22), which a broken square predicate does kill",
    "detail": {
+    "analytically_forced": true,
     "cells": 40320,
     "injective": true,
     "s1c": true,
     "s1d": true,
-    "square_violations": 0
+    "square_violations": 0,
+    "the_positive_control_of_this_unit": "SYNTH-COMPATIBLE (G22)"
    },
    "id": "G21",
-   "must_pass": true,
+   "must_pass": false,
    "passed": true
   },
   {
-   "claim": "FOUND IS REACHABLE BY THIS MACHINERY, AND ITS WITNESS IS EXHIBITED AND INDEPENDENTLY RE-VERIFIED: a declared synthetic compatible pair -- the same transport side against a synthetic chart map whose 2-eigencovector is chart-ANTIsymmetric -- yields candidates that pass S1a, S1b, S1c AND S1d, and the exhibited witness is re-checked here from its own two data at every cell",
+   "claim": "THE POSITIVE CONTROL OF THIS UNIT, AND FOUND IS REACHABLE BY THIS MACHINERY: a declared synthetic compatible pair -- the same transport side against a synthetic chart map whose 2-eigencovector is chart-ANTIsymmetric -- yields candidates that pass S1a, S1b, S1c AND S1d, and the exhibited witness is re-checked here from its own two data at every cell.  ITS BASE-POINT CLAUSE IS EVALUATED AT THE DECLARED tau-ASYMMETRIC RECORD, RECORDED HERE, and it must be: G42 measures that S1c and S1d are jointly unsatisfiable at the tau-fixed declared base record for every chart map whatsoever, so a control run there could not pass whatever the machinery did",
    "detail": {
+    "base_record_counts": [
+     1,
+     4,
+     5
+    ],
+    "base_record_mod_p": [
+     1,
+     4,
+     0
+    ],
+    "base_record_of_the_base_point_clause": "G-ANISO",
+    "declared_base_record_of_the_census": [
+     1,
+     1,
+     2
+    ],
     "distinct_maps": 48,
     "pairs_passing_S1a_S1b": 192,
     "passing_S1c": 192,
@@ -1543,12 +3631,52 @@
       "kernel_dim_after_basis_change": 1
      },
      {
+      "cell": "tau-natural|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "tau-natural|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     },
+     {
       "cell": "index|counts->q",
       "kernel_dim": 0,
       "kernel_dim_after_basis_change": 0
      },
      {
       "cell": "index|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     },
+     {
+      "cell": "tau-index|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "tau-index|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     },
+     {
+      "cell": "alt|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "alt|q->counts",
+      "kernel_dim": 1,
+      "kernel_dim_after_basis_change": 1
+     },
+     {
+      "cell": "tau-alt|counts->q",
+      "kernel_dim": 0,
+      "kernel_dim_after_basis_change": 0
+     },
+     {
+      "cell": "tau-alt|q->counts",
       "kernel_dim": 1,
       "kernel_dim_after_basis_change": 1
      }
@@ -1559,23 +3687,43 @@
    "passed": true
   },
   {
-   "claim": "THE SELF-TESTS' TESTED SET IS FIXED BY DECLARATION AND NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum #185): the declared set is the full 2 x 2 sweep including the cells whose census is empty, and it is measured equal to the declaration and strictly larger than the set the verdicts would have selected",
+   "claim": "THE SELF-TESTS' TESTED SET IS FIXED BY DECLARATION AND NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum #185): the declared set is the WHOLE COVARIANT CELL FAMILY -- every identification in the declared orbit x both directions, including the cells whose census is empty -- and it is measured equal to the declaration and strictly larger than the set the verdicts would have selected",
    "detail": {
     "declared": [
+     "alt|counts->q",
+     "alt|q->counts",
      "index|counts->q",
      "index|q->counts",
      "natural|counts->q",
-     "natural|q->counts"
+     "natural|q->counts",
+     "tau-alt|counts->q",
+     "tau-alt|q->counts",
+     "tau-index|counts->q",
+     "tau-index|q->counts",
+     "tau-natural|counts->q",
+     "tau-natural|q->counts"
     ],
     "tested": [
+     "alt|counts->q",
+     "alt|q->counts",
      "index|counts->q",
      "index|q->counts",
      "natural|counts->q",
-     "natural|q->counts"
+     "natural|q->counts",
+     "tau-alt|counts->q",
+     "tau-alt|q->counts",
+     "tau-index|counts->q",
+     "tau-index|q->counts",
+     "tau-natural|counts->q",
+     "tau-natural|q->counts"
     ],
     "verdict_selected": [
+     "alt|q->counts",
      "index|q->counts",
-     "natural|q->counts"
+     "natural|q->counts",
+     "tau-alt|q->counts",
+     "tau-index|q->counts",
+     "tau-natural|q->counts"
     ]
    },
    "id": "G27",
@@ -1586,8 +3734,8 @@
    "claim": "CACHE DISCIPLINE (RUNBOOK 14 addenda #185 and #219): every self-test evaluation of the defect map BYPASSES the memo cache, the self-test's cache-hit count is measured ZERO, and the cache path is measured to have been exercised elsewhere in the run -- so the zero-hit clause is not the signature of a cache nobody uses",
    "detail": {
     "cache_entries": 40320,
-    "cache_hits_before_the_selftests": 650173,
-    "cache_lookups_before_the_selftests": 690493,
+    "cache_hits_before_the_selftests": 1492458,
+    "cache_lookups_before_the_selftests": 1532778,
     "selftest_bypasses": 40320,
     "selftest_cache_hits": 0
    },
@@ -1596,7 +3744,196 @@
    "passed": true
   },
   {
-   "claim": "OPEN 1 IS MEASURED, NOT ARGUED: every declared candidate structure is evaluated for (i) whether its admitted prime set is a SINGLETON and (ii) whether it is itself declaration-free (RUNBOOK 15: a quantity that is itself a declaration cannot derive p).  Both properties are computed; the intersection of the declaration-free candidates is taken; and the candidates that carry a declaration are measured to do so rather than being excluded by assertion",
+   "claim": "DECLARATION-FREENESS IS COMPUTED PER CANDIDATE BY A DECLARED CRITERION AND IS NEVER TYPED: every candidate is a FUNCTION of the declaration record, and is re-evaluated at every counterfactual re-declaration of a choice THIS UNIT makes -- the prime with its selection rule, the direction, the identification, the base record, the completion, the arena relabelling and the record-space basis.  A candidate is declaration-free exactly when its admitted set does not move, the re-declaration that moves it is recorded, and the classification the table uses is measured equal to that invariance -- so a single flipped entry is caught.  The criterion has teeth in both directions: some candidates are measured to move and some are measured not to",
+   "detail": {
+    "arena_candidate_routes_agree_at_the_declared_arena": true,
+    "counterfactuals": [
+     {
+      "candidates_that_moved": [
+       "P1",
+       "P3"
+      ],
+      "re_declaration": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])"
+     },
+     {
+      "candidates_that_moved": [
+       "P8",
+       "P9"
+      ],
+      "re_declaration": "direction := the reversed one"
+     },
+     {
+      "candidates_that_moved": [
+       "P8",
+       "P9"
+      ],
+      "re_declaration": "identification := the declared natural cell alone"
+     },
+     {
+      "candidates_that_moved": [],
+      "re_declaration": "identification := the tau-conjugate of the declared index cell alone"
+     },
+     {
+      "candidates_that_moved": [],
+      "re_declaration": "base record := G-ANISO"
+     },
+     {
+      "candidates_that_moved": [],
+      "re_declaration": "completion := the lex-last member of the ord-5 class"
+     },
+     {
+      "candidates_that_moved": [],
+      "re_declaration": "record-space basis := the declared GL_3 element"
+     }
+    ],
+    "criterion": "COMPUTED PER CANDIDATE, NEVER TYPED.  A candidate is DECLARATION-FREE iff its admitted prime set is INVARIANT under every re-declaration of a choice THIS UNIT makes: the prime together with its selection rule (p := 7 with ord(D) := 7, whose completion class is measured non-empty and whose lex-first member is rebuilt here), the DIRECTION (registered -> reversed), the IDENTIFICATION (the declared cell family -> a single slot identification), the BASE RECORD (G-FLAT -> G-ANISO), the completion inside the ord-5 class, the completion-label relabelling, and the record-space basis.  Each candidate is a FUNCTION of that declaration record and is re-evaluated at each counterfactual; the classification is the measured invariance, and a single flipped entry is caught.",
+    "declaration_carrying": [
+     "P1",
+     "P3",
+     "P8",
+     "P9"
+    ],
+    "re_declaration_that_moves_each": {
+     "P1": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
+     "P3": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
+     "P8": "direction := the reversed one",
+     "P9": "direction := the reversed one"
+    }
+   },
+   "id": "G43",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE OPEN-1 VERDICT IS DERIVED BY TWO COMPUTATIONS THAT SHARE NO DECIDING VARIABLE, AND IT IS REPORTED AT BOTH DECLARED SCALES: source 1 reads the candidate table, excludes the intersection candidate from the uniqueness test (it is the intersection, not an independent candidate) and forms the intersection; source 2 never forms an intersection and never reads the table -- it eliminates prime by prime, recomputing each candidate's membership from its own primitive measurement with the memo bypassed.  The two agree at both scales.  The scales are measured to DIFFER, which is the point: the narrowing is arena-relative, and the arena that produces the tighter one is itself a function of the declared prime",
+   "detail": {
+    "P11_admissible_part_at_that_arena": {
+     "5": [
+      5
+     ],
+     "7": [
+      5,
+      7
+     ]
+    },
+    "arena_rule_smallest_arena_admitting_injectivity": {
+     "5": 16,
+     "7": 22
+    },
+    "scales": {
+     "9": {
+      "declaration_free_narrowing_candidates": [
+       "P10",
+       "P2",
+       "P4",
+       "P5",
+       "P6",
+       "P7"
+      ],
+      "labels": 9,
+      "narrowing_source_1": [
+       5,
+       7
+      ],
+      "narrowing_source_2": [
+       5,
+       7
+      ],
+      "single_candidate_source_1": [],
+      "single_candidate_source_2": [],
+      "verdict_source_1": "LCB-PRIME-DECLARED",
+      "verdict_source_2": "LCB-PRIME-DECLARED"
+     },
+     "16": {
+      "declaration_free_narrowing_candidates": [
+       "P10",
+       "P11",
+       "P2",
+       "P4",
+       "P5",
+       "P6",
+       "P7"
+      ],
+      "labels": 16,
+      "narrowing_source_1": [
+       5
+      ],
+      "narrowing_source_2": [
+       5
+      ],
+      "single_candidate_source_1": [
+       "P11"
+      ],
+      "single_candidate_source_2": [
+       "P11"
+      ],
+      "verdict_source_1": "LCB-PRIME-DERIVED",
+      "verdict_source_2": "LCB-PRIME-DERIVED"
+     }
+    },
+    "verdict_rule": "LCB-PRIME-DERIVED iff, at the arena being reported, some declaration-free NARROWING candidate other than the intersection itself admits exactly one admissible prime, OR the intersection of every declaration-free narrowing is a singleton.  Otherwise LCB-PRIME-DECLARED.  The unit's verdict is entered at the DECLARED nine-label arena."
+   },
+   "id": "G44",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "BOTH OPEN-1 OUTCOMES ARE REACHABLE BY THE SAME DERIVATION, MEASURED ON DECLARED SYNTHETIC TABLES: a table on which one declaration-free narrowing pins a single admissible prime returns LCB-PRIME-DERIVED, and a table on which two survive returns LCB-PRIME-DECLARED, through the same function that produces the unit's own verdict.  A derivation that could only ever return one of the two would decide nothing",
+   "detail": {
+    "returns": "LCB-PRIME-DERIVED",
+    "returns_2": "LCB-PRIME-DECLARED",
+    "synthetic_declared_table": [
+     {
+      "admissible_part": [
+       5,
+       7
+      ],
+      "declaration_free": true,
+      "id": "S1",
+      "role": "NARROWING",
+      "unique": false
+     },
+     {
+      "admissible_part": [
+       5,
+       7,
+       11
+      ],
+      "declaration_free": true,
+      "id": "S2",
+      "role": "NARROWING",
+      "unique": false
+     }
+    ],
+    "synthetic_derived_table": [
+     {
+      "admissible_part": [
+       5
+      ],
+      "declaration_free": true,
+      "id": "S1",
+      "role": "NARROWING",
+      "unique": true
+     },
+     {
+      "admissible_part": [
+       5,
+       7,
+       11
+      ],
+      "declaration_free": true,
+      "id": "S2",
+      "role": "NARROWING",
+      "unique": false
+     }
+    ]
+   },
+   "id": "G45",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "OPEN 1 IS MEASURED, NOT ARGUED: every declared candidate structure is evaluated for (i) whether its admitted prime set is a SINGLETON and (ii) whether it is declaration-free by the computed criterion of G43 (RUNBOOK 15: a quantity that is itself a declaration cannot derive p).  Both properties are computed; the intersection of the declaration-free candidates is taken; and the candidates that carry a declaration are measured to do so rather than being excluded by assertion",
    "detail": {
     "a_declaration_free_singleton_inside_the_admissible_set": false,
     "admissible_primes": [
@@ -1621,10 +3958,18 @@
       "admissible_part": [
        5
       ],
+      "admissible_part_at_16_labels": [
+       5
+      ],
+      "admissible_part_at_9_labels": [
+       5
+      ],
+      "broken_by": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
       "candidate": "the deformation carrier's size p^(k+d)",
       "declaration_free": false,
+      "declaration_freeness_measured": false,
       "id": "P1",
-      "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p; it cannot derive it",
+      "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p",
       "primes_it_admits": [
        5
       ],
@@ -1649,8 +3994,44 @@
        53,
        59
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "broken_by": null,
       "candidate": "the deformation arena's front structure (k, d, L, sites, links)",
-      "declaration_free": false,
+      "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P2",
       "note": "k, d, L and the link set are declared arena data and constrain no prime",
       "primes_it_admits": [
@@ -1679,8 +4060,16 @@
       "admissible_part": [
        5
       ],
+      "admissible_part_at_16_labels": [
+       5
+      ],
+      "admissible_part_at_9_labels": [
+       5
+      ],
+      "broken_by": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
       "candidate": "the transport group's order 2*ord(D) and its prime divisors",
       "declaration_free": false,
+      "declaration_freeness_measured": false,
       "id": "P3",
       "note": "2*ord(D) = 10, but ord(D) = 5 is THIS unit's declared selection rule; the candidate contains its own conclusion",
       "primes_it_admits": [
@@ -1695,10 +4084,22 @@
        5,
        7
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7
+      ],
+      "broken_by": null,
       "candidate": "the transport FAMILY's defect-order spectrum and the primes dividing some 2*ord(D) in it",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P4",
-      "note": "the family's own defect orders admit [2, 3, 5, 7]; intersected with admissibility, two survive",
+      "note": "the family's own defect orders, read at the arena being reported",
       "primes_it_admits": [
        2,
        3,
@@ -1713,10 +4114,22 @@
        5,
        7
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7
+      ],
+      "broken_by": null,
       "candidate": "the completion group's element orders: the primes p for which an element of order p exists",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P5",
-      "note": "the completion group has elements of order p for p in [2, 3, 5, 7]; intersected with admissibility, two survive",
+      "note": "the completion group's element orders at the arena being reported",
       "primes_it_admits": [
        2,
        3,
@@ -1744,8 +4157,44 @@
        53,
        59
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "broken_by": null,
       "candidate": "the record<->metric readout's determinant",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P6",
       "note": "the readout determinant is 2, so the re-encoding is invertible at every prime but 2 -- a single exclusion, not a derivation",
       "primes_it_admits": [
@@ -1787,8 +4236,44 @@
        53,
        59
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7,
+       11,
+       13,
+       17,
+       19,
+       23,
+       29,
+       31,
+       37,
+       41,
+       43,
+       47,
+       53,
+       59
+      ],
+      "broken_by": null,
       "candidate": "the denominator of HA's exact residual rho",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P7",
       "note": "rho's denominator is 6, so the deformation side does not exist at 2 or 3",
       "primes_it_admits": [
@@ -1812,37 +4297,74 @@
       "unique": false
      },
      {
-      "admissible_part": [],
-      "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
-      "declaration_free": true,
-      "id": "P8",
-      "note": "the intertwining is solvable at exactly one prime in the registered direction, swept over every prime below 60 -- and it is a prime the deformation side cannot be built at; the re-encoding is undefined at [2]",
-      "primes_it_admits": [
-       3
+      "admissible_part": [
+       7
       ],
-      "role": "NO-ADMISSIBLE-PRIME",
-      "unique": true
+      "admissible_part_at_16_labels": [
+       7
+      ],
+      "admissible_part_at_9_labels": [
+       7
+      ],
+      "broken_by": "direction := the reversed one",
+      "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
+      "declaration_free": false,
+      "declaration_freeness_measured": false,
+      "id": "P8",
+      "note": "the intertwining condition itself, over the covariant cell family in the registered direction",
+      "primes_it_admits": [
+       3,
+       7
+      ],
+      "role": "NARROWING",
+      "unique": false
      },
      {
-      "admissible_part": [],
+      "admissible_part": [
+       7
+      ],
+      "admissible_part_at_16_labels": [
+       7
+      ],
+      "admissible_part_at_9_labels": [
+       7
+      ],
+      "broken_by": "direction := the reversed one",
       "candidate": "the joint system P7 and P8",
-      "declaration_free": true,
+      "declaration_free": false,
+      "declaration_freeness_measured": false,
       "id": "P9",
-      "note": "the joint system is EMPTY: the only prime that solves the intertwining is one of the two at which rho fails to reduce",
-      "primes_it_admits": [],
-      "role": "NO-ADMISSIBLE-PRIME",
-      "unique": false
+      "note": "the joint system P7 and P8",
+      "primes_it_admits": [
+       7
+      ],
+      "role": "NARROWING",
+      "unique": true
      },
      {
       "admissible_part": [
        5,
        7
       ],
+      "admissible_part_at_16_labels": [
+       5,
+       7,
+       11,
+       13
+      ],
+      "admissible_part_at_9_labels": [
+       5,
+       7
+      ],
+      "broken_by": null,
       "candidate": "the count of label-exchange-anti-invariant elements of order p",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P10",
-      "note": "48 at p = 5 and 96 at p = 7; zero at every larger declared prime",
+      "note": "the count of label-exchange-anti-invariant elements of order p at the arena being reported",
       "primes_it_admits": [
+       2,
+       3,
        5,
        7
       ],
@@ -1851,23 +4373,33 @@
      },
      {
       "admissible_part": [],
+      "admissible_part_at_16_labels": [
+       5
+      ],
+      "admissible_part_at_9_labels": [],
+      "broken_by": null,
       "candidate": "the p-part of the completion group's order against |V| = p^3",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P11",
-      "note": "the p-part of the completion group's order is p^1 at every prime, against |V| = p^3: no prime admits an injective candidate here",
-      "primes_it_admits": [],
+      "note": "the p-part of the completion group's order against |V| = p^3 at the arena being reported",
+      "primes_it_admits": [
+       2
+      ],
       "role": "NO-ADMISSIBLE-PRIME",
-      "unique": false
+      "unique": true
      },
      {
       "admissible_part": [
        5,
        7
       ],
+      "broken_by": null,
       "candidate": "the intersection of every declaration-free candidate",
       "declaration_free": true,
+      "declaration_freeness_measured": true,
       "id": "P12",
-      "note": "the tightest declaration-free NARROWING: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11, P8, P9",
+      "note": "the tightest declaration-free NARROWING at the declared arena: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11",
       "primes_it_admits": [
        5,
        7
@@ -1877,9 +4409,7 @@
      }
     ],
     "declaration_free_candidates_admitting_no_admissible_prime": [
-     "P11",
-     "P8",
-     "P9"
+     "P11"
     ],
     "tightest_declaration_free_narrowing": [
      5,
@@ -1891,75 +4421,115 @@
    "passed": true
   },
   {
-   "claim": "THE TWO VERDICT STRINGS AND EVERY ONE OF THEIR QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234): the bridge verdict is derived once from the emptiness decision, recomputed by a second expression over the same booleans, and derived a THIRD time from the recorded clause table by re-reading the per-cell survivor counts; the prime verdict is derived and recomputed from the candidate table's own intersection; and every printed qualifier is recomputed here from its own source",
+   "claim": "THE NAMED OBSTRUCTION IS TOKEN-GATED AGAINST THE MEASURED BOOLEANS, NOT COMPARED WITH A SECOND CALL TO ITS OWN CONSTRUCTOR (RUNBOOK 14 addendum, v13 #219): the expected tokens are assembled here from the measured coverage counts and the measured per-direction clause failures, and each is required to be present exactly when its own boolean holds -- so a plausible-but-wrong obstruction string cannot reach the receipt, and neither can a cardinality claim",
+   "detail": {
+    "expected_tokens": {
+     "8 of the 12": true,
+     "ARENA-FREE": true,
+     "CHART-PARITY": true,
+     "FIXED-POINT MISMATCH": true,
+     "SPECTRAL": true,
+     "data->geometry": true,
+     "geometry->data": true
+    },
+    "obstruction": "S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.",
+    "tokens_that_disagree": []
+   },
+   "id": "G46",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE TWO VERDICT STRINGS AND EVERY ONE OF THEIR NUMERIC QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED COUNTS (RUNBOOK 13 addendum, v13 #234).  The bridge verdict has THREE sources that do not share a deciding variable: the clause table's own survivor sum; the S4 grid's Gaussian-elimination decision, which never touches the enumeration; and the arena-free lemma of section 4b, which touches neither and forbids S1a with S3 at every (cell, prime) with no census at all.  Its UNIVERSAL qualifier is earned from the measured coverage and its own negative case is evaluated here, so a blinded measurement cannot pass.  The prime verdict is derived from the candidate table and recomputed by the per-prime elimination that never forms an intersection.  Every printed numeric qualifier is recomputed from a different source than the one it was printed from",
    "detail": {
     "emptiness": {
      "at_source": true,
      "from_tables": true,
-     "recount": true
+     "from_the_arena_free_lemma": true,
+     "grid_recount": true
     },
-    "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+    "obstruction": "S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.",
     "prime_verdict": "LCB-PRIME-DECLARED",
+    "prime_verdict_at_every_scale": {
+     "16": "LCB-PRIME-DERIVED",
+     "9": "LCB-PRIME-DECLARED"
+    },
     "prime_verdict_recomputed": "LCB-PRIME-DECLARED",
     "qualifiers": {
      "accepted_at_the_strengthened_standard": 0,
-     "candidates_passing_S1a_S1b": 96,
+     "admissible_records_passing_the_base_point_clause": 5,
+     "candidates_passing_S1a_S1b": 288,
      "candidates_passing_all_of_S1": 0,
      "cells_passing_S2": 0,
      "cells_passing_S3": 0,
+     "cells_where_the_obstruction_is_arena_free": 8,
      "completion_family_members": 40320,
-     "encoding_cells": 4,
-     "grid_cells": 224,
+     "encoding_cells": 12,
+     "grid_cells": 672,
      "homomorphisms_enumerated": 41665,
-     "live_grid_cells_after_the_base_point_clause": 4,
-     "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
-     "open1_declaration_free_intersection": [
+     "live_grid_cells_after_the_base_point_clause": 28,
+     "obstruction": "S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.",
+     "open1_declaration_free_intersection_at_16_labels": [
+      5
+     ],
+     "open1_declaration_free_intersection_at_9_labels": [
       5,
       7
      ],
      "ord5_class_size": 4608,
      "primes": 7,
-     "record_cells_per_candidate": 125
+     "record_cells_per_candidate": 125,
+     "set_level_census_absent_S1b": "815727501386186588190430395382342267781393000859545374749"
     },
     "qualifiers_recomputed_in_gate": {
      "accepted_at_the_strengthened_standard": 0,
-     "candidates_passing_S1a_S1b": 96,
+     "admissible_records_passing_the_base_point_clause": 5,
+     "candidates_passing_S1a_S1b": 288,
      "candidates_passing_all_of_S1": 0,
      "cells_passing_S2": 0,
      "cells_passing_S3": 0,
+     "cells_where_the_obstruction_is_arena_free": 8,
      "completion_family_members": 40320,
-     "encoding_cells": 4,
-     "grid_cells": 224,
+     "encoding_cells": 12,
+     "grid_cells": 672,
      "homomorphisms_enumerated": 41665,
-     "live_grid_cells_after_the_base_point_clause": 4,
-     "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
-     "open1_declaration_free_intersection": [
+     "live_grid_cells_after_the_base_point_clause": 28,
+     "open1_declaration_free_intersection_at_16_labels": [
+      5
+     ],
+     "open1_declaration_free_intersection_at_9_labels": [
       5,
       7
      ],
      "ord5_class_size": 4608,
      "primes": 7,
-     "record_cells_per_candidate": 125
+     "record_cells_per_candidate": 125,
+     "set_level_census_absent_S1b": "815727501386186588190430395382342267781393000859545374749"
     },
     "qualifiers_that_disagree": [],
-    "recomputed": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
-    "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
-    "verdict_from_the_clause_table": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+    "recomputed": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE",
+    "universality": {
+     "cell_prime_pairs": 84,
+     "measured": true,
+     "negative_case": false,
+     "uncovered": 0
+    },
+    "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE",
+    "verdict_from_the_clause_table": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE"
    },
    "id": "G30",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE NAMED OBSTRUCTION IS MEASURED COEXTENSIVE WITH THE CLAUSE FAILURES AND IS NOT A CARDINALITY CLAIM: the data->geometry direction's cells are empty at S1a exactly where 2 is absent from the chart map's spectrum, and the geometry->data direction's cells are non-empty at S1a and empty at S1c exactly where the 2-eigencovector is chart-symmetric.  No cardinality test is used as a criterion anywhere in this unit",
+   "claim": "THE PER-CELL DIAGNOSTICS ARE MEASURED COEXTENSIVE WITH THE CLAUSE FAILURES THEY NAME, AND NEITHER IS A CARDINALITY CLAIM: the data->geometry direction's cells are empty at S1a exactly where 2 is absent from the chart map's spectrum, and the geometry->data direction's cells are non-empty at S1a and empty at S1c exactly where the 2-eigencovector is chart-symmetric.  These are DIAGNOSTICS of the fixed-point wall, not the obstruction: the wall stands at cells where neither bites",
    "detail": {
-    "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
+    "diagnostics_are_not_the_obstruction": true,
+    "obstruction": "S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.",
     "parity_cells_empty_at_S1c": [
-     "q->counts",
      "q->counts"
     ],
     "spectral_cells_empty_at_S1a": [
-     "counts->q",
      "counts->q"
     ]
    },
@@ -2182,6 +4752,27 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the covariant cell family is truncated to the two declared identifications",
+   "killed": true,
+   "mutant": "cell-orbit-drop",
+   "named_kills": [
+    "G:G09",
+    "G:G11",
+    "G:G36",
+    "G:G38"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the readout's column sums are read off its rows",
+   "killed": true,
+   "mutant": "colsum-lax",
+   "named_kills": [
+    "G:G39"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the live-cell divisibility clause is blinded",
    "killed": true,
    "mutant": "compat-lax",
@@ -2205,6 +4796,16 @@
    "mutant": "count-flip",
    "named_kills": [
     "G:G30"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the general-dimension fixed-space sweep is collapsed to one dimension",
+   "killed": true,
+   "mutant": "dsweep-lax",
+   "named_kills": [
+    "G:G36",
+    "G:G39"
    ]
   },
   {
@@ -2249,6 +4850,25 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the fixed-point set of the transport encoding is read off the wrong law",
+   "killed": true,
+   "mutant": "fixpoint-lax",
+   "named_kills": [
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the deformation side's fixed-space dimension is blinded",
+   "killed": true,
+   "mutant": "fixspace-lax",
+   "named_kills": [
+    "G:G36",
+    "G:G38"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the exact-arithmetic scanner is blinded",
    "killed": true,
    "mutant": "float-lax",
@@ -2262,7 +4882,6 @@
    "killed": true,
    "mutant": "found-block",
    "named_kills": [
-    "G:G19",
     "G:G22",
     "G:G23",
     "G:G30"
@@ -2319,26 +4938,30 @@
   },
   {
    "exit": 1,
-   "expected_kill": "the identity self-morphism is made unfindable",
-   "killed": true,
-   "mutant": "ident-block",
-   "named_kills": [
-    "G:G21",
-    "G:G30"
-   ]
-  },
-  {
-   "exit": 1,
    "expected_kill": "the square is compared as group elements instead of as 9x9 permutation matrices",
    "killed": true,
    "mutant": "matrix-lax",
    "named_kills": [
     "G:G10",
     "G:G13",
+    "G:G18",
     "G:G23",
     "G:G27",
     "G:G30",
-    "G:G31"
+    "G:G31",
+    "G:G37",
+    "G:G42",
+    "G:G46"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the named obstruction is replaced by a plausible wrong clause",
+   "killed": true,
+   "mutant": "obstruction-fabricate",
+   "named_kills": [
+    "G:G30",
+    "G:G46"
    ]
   },
   {
@@ -2347,7 +4970,29 @@
    "killed": true,
    "mutant": "obstruction-misname",
    "named_kills": [
-    "G:G30"
+    "G:G30",
+    "G:G46"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "exactly one candidate's measured declaration-freeness is flipped",
+   "killed": true,
+   "mutant": "open1-free-flip",
+   "named_kills": [
+    "G:G43",
+    "G:G44"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declaration-free intersection is perturbed to a singleton at its own source",
+   "killed": true,
+   "mutant": "open1-inter",
+   "named_kills": [
+    "G:G30",
+    "G:G44",
+    "G:G45"
    ]
   },
   {
@@ -2356,7 +5001,27 @@
    "killed": true,
    "mutant": "open1-lax",
    "named_kills": [
-    "G:G29"
+    "G:G29",
+    "G:G43",
+    "G:G44"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the two synthetic Open-1 tables are made to return the same verdict",
+   "killed": true,
+   "mutant": "open1-reach",
+   "named_kills": [
+    "G:G45"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the sixteen-label scale is read at the nine-label arena",
+   "killed": true,
+   "mutant": "open1-scale",
+   "named_kills": [
+    "G:G44"
    ]
   },
   {
@@ -2384,6 +5049,15 @@
    "mutant": "quantity-lax",
    "named_kills": [
     "G:G19"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the base-record sweep is collapsed to the declared record",
+   "killed": true,
+   "mutant": "records-lax",
+   "named_kills": [
+    "G:G42"
    ]
   },
   {
@@ -2423,7 +5097,8 @@
    "named_kills": [
     "G:G13",
     "G:G30",
-    "G:G31"
+    "G:G31",
+    "G:G46"
    ]
   },
   {
@@ -2432,7 +5107,8 @@
    "killed": true,
    "mutant": "s1d-lax",
    "named_kills": [
-    "G:G13"
+    "G:G13",
+    "G:G42"
    ]
   },
   {
@@ -2455,6 +5131,15 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the held-out block reads the synthetic chart map instead of the pairing's own",
+   "killed": true,
+   "mutant": "s5map-lax",
+   "named_kills": [
+    "G:G18"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the declared lex-first selection rule is replaced by an arbitrary member of the class",
    "killed": true,
    "mutant": "select-lax",
@@ -2469,6 +5154,15 @@
    "mutant": "selftest-select",
    "named_kills": [
     "G:G27"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the set-level census's per-orbit factor is typed",
+   "killed": true,
+   "mutant": "setlevel-lax",
+   "named_kills": [
+    "G:G40"
    ]
   },
   {
@@ -2488,7 +5182,9 @@
    "mutant": "sylow-lax",
    "named_kills": [
     "G:G12",
-    "G:G15"
+    "G:G15",
+    "G:G30",
+    "G:G37"
    ]
   },
   {
@@ -2499,7 +5195,8 @@
    "named_kills": [
     "G:G09",
     "G:G22",
-    "G:G30"
+    "G:G30",
+    "G:G42"
    ]
   },
   {
@@ -2526,6 +5223,17 @@
    "killed": true,
    "mutant": "unique-lax",
    "named_kills": [
+    "G:G30",
+    "G:G44",
+    "G:G45"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the universality qualifier is asserted instead of measured",
+   "killed": true,
+   "mutant": "universal-lax",
+   "named_kills": [
     "G:G30"
    ]
   },
@@ -2535,7 +5243,8 @@
    "killed": true,
    "mutant": "verdict-flip",
    "named_kills": [
-    "G:G30"
+    "G:G30",
+    "G:G45"
    ]
   },
   {
@@ -2547,6 +5256,15 @@
     "G:G22",
     "G:G30"
    ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the tau-conjugate witness's exponent covector is perturbed",
+   "killed": true,
+   "mutant": "witness7-lax",
+   "named_kills": [
+    "G:G38"
+   ]
   }
  ],
  "never_falsified": [],
@@ -2556,26 +5274,32 @@
  "python": "3.13.2",
  "qualifiers": {
   "accepted_at_the_strengthened_standard": 0,
-  "candidates_passing_S1a_S1b": 96,
+  "admissible_records_passing_the_base_point_clause": 5,
+  "candidates_passing_S1a_S1b": 288,
   "candidates_passing_all_of_S1": 0,
   "cells_passing_S2": 0,
   "cells_passing_S3": 0,
+  "cells_where_the_obstruction_is_arena_free": 8,
   "completion_family_members": 40320,
-  "encoding_cells": 4,
-  "grid_cells": 224,
+  "encoding_cells": 12,
+  "grid_cells": 672,
   "homomorphisms_enumerated": 41665,
-  "live_grid_cells_after_the_base_point_clause": 4,
-  "obstruction": "S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)",
-  "open1_declaration_free_intersection": [
+  "live_grid_cells_after_the_base_point_clause": 28,
+  "obstruction": "S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.",
+  "open1_declaration_free_intersection_at_16_labels": [
+   5
+  ],
+  "open1_declaration_free_intersection_at_9_labels": [
    5,
    7
   ],
   "ord5_class_size": 4608,
   "primes": 7,
-  "record_cells_per_candidate": 125
+  "record_cells_per_candidate": 125,
+  "set_level_census_absent_S1b": "815727501386186588190430395382342267781393000859545374749"
  },
  "schema": "lcb-livecell-receipt-v1",
- "source_sha256": "57d3072b1031394a71826c3c38200c9326059c4f8a01dff36a017158601b4e8a",
+ "source_sha256": "cde7557a2f8d077dba49540eb5b4a2092d84522c688d2a4bccce82a785496485",
  "tables": {
   "base_change": [
    {
@@ -2669,6 +5393,143 @@
     "ord": 5
    }
   ],
+  "base_record_sweep": [
+   {
+    "candidates_passing_S1d": 0,
+    "counts": [
+     1,
+     4,
+     5
+    ],
+    "mod_p": [
+     1,
+     4,
+     0
+    ],
+    "record": "G-ANISO",
+    "tau_fixed": false
+   },
+   {
+    "candidates_passing_S1d": 288,
+    "counts": [
+     4,
+     9,
+     13
+    ],
+    "mod_p": [
+     4,
+     4,
+     3
+    ],
+    "record": "G-ANISO2",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 288,
+    "counts": [
+     1,
+     1,
+     2
+    ],
+    "mod_p": [
+     1,
+     1,
+     2
+    ],
+    "record": "G-CURVED",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 0,
+    "counts": [
+     2,
+     2,
+     6
+    ],
+    "mod_p": [
+     2,
+     2,
+     1
+    ],
+    "record": "G-CURVOFF",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 288,
+    "counts": [
+     2,
+     2,
+     4
+    ],
+    "mod_p": [
+     2,
+     2,
+     4
+    ],
+    "record": "G-DIAG2",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 288,
+    "counts": [
+     1,
+     1,
+     2
+    ],
+    "mod_p": [
+     1,
+     1,
+     2
+    ],
+    "record": "G-FLAT",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 0,
+    "counts": [
+     2,
+     2,
+     6
+    ],
+    "mod_p": [
+     2,
+     2,
+     1
+    ],
+    "record": "G-OFFDIAG",
+    "tau_fixed": true
+   },
+   {
+    "candidates_passing_S1d": 0,
+    "counts": [
+     3,
+     5,
+     12
+    ],
+    "mod_p": [
+     3,
+     0,
+     2
+    ],
+    "record": "G-OFFDIAG2",
+    "tau_fixed": false
+   },
+   {
+    "candidates_passing_S1d": 288,
+    "counts": [
+     3,
+     5,
+     4
+    ],
+    "mod_p": [
+     3,
+     0,
+     4
+    ],
+    "record": "G-OFFNEG",
+    "tau_fixed": false
+   }
+  ],
   "controls": {
    "break_hom_s1a": 0,
    "break_hom_s1b": 6000,
@@ -2678,6 +5539,40 @@
    "synthetic_incompatible_candidates": 0
   },
   "encoding_cells": {
+   "alt|counts->q": [
+    [
+     2,
+     2,
+     3
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "alt|q->counts": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
    "index|counts->q": [
     [
      1,
@@ -2745,7 +5640,945 @@
      1,
      2
     ]
+   ],
+   "tau-alt|counts->q": [
+    [
+     2,
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "tau-alt|q->counts": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     1,
+     1
+    ]
+   ],
+   "tau-index|counts->q": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     2,
+     2,
+     3
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "tau-index|q->counts": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     2,
+     1
+    ]
+   ],
+   "tau-natural|counts->q": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     2,
+     3
+    ]
+   ],
+   "tau-natural|q->counts": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     2
+    ]
    ]
+  },
+  "fixed_point_lemma": {
+   "coverage": {
+    "arena_free": 56,
+    "cells_times_primes": 84,
+    "p_part_only": 28
+   },
+   "delta_fixed_points": [
+    {
+     "arena": "4 labels",
+     "delta_fixed_points": 1,
+     "members": 6,
+     "the_fixed_point_is_the_identity": true
+    },
+    {
+     "arena": "9 labels",
+     "delta_fixed_points": 1,
+     "members": 40320,
+     "the_fixed_point_is_the_identity": true
+    },
+    {
+     "arena": "16 labels (the order-125 witness subgroup)",
+     "delta_fixed_points": 1,
+     "members": 125,
+     "the_fixed_point_is_the_identity": true
+    }
+   ],
+   "fix_E_rows": [
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 25,
+     "identification": "natural",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 49,
+     "identification": "natural",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 121,
+     "identification": "natural",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 169,
+     "identification": "natural",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 289,
+     "identification": "natural",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 361,
+     "identification": "natural",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "fixed_space_size": 529,
+     "identification": "natural",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 25,
+     "identification": "natural",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 49,
+     "identification": "natural",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 121,
+     "identification": "natural",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 169,
+     "identification": "natural",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 289,
+     "identification": "natural",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 361,
+     "identification": "natural",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "fixed_space_size": 529,
+     "identification": "natural",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 5,
+     "identification": "tau-natural",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 7,
+     "identification": "tau-natural",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 11,
+     "identification": "tau-natural",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 13,
+     "identification": "tau-natural",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 17,
+     "identification": "tau-natural",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 19,
+     "identification": "tau-natural",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 23,
+     "identification": "tau-natural",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 5,
+     "identification": "tau-natural",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 7,
+     "identification": "tau-natural",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 11,
+     "identification": "tau-natural",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 13,
+     "identification": "tau-natural",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 17,
+     "identification": "tau-natural",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 19,
+     "identification": "tau-natural",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 23,
+     "identification": "tau-natural",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 5,
+     "identification": "index",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 7,
+     "identification": "index",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 11,
+     "identification": "index",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 13,
+     "identification": "index",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 17,
+     "identification": "index",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 19,
+     "identification": "index",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 23,
+     "identification": "index",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 5,
+     "identification": "index",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 7,
+     "identification": "index",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 11,
+     "identification": "index",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 13,
+     "identification": "index",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 17,
+     "identification": "index",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 19,
+     "identification": "index",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 23,
+     "identification": "index",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 1,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 2,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 4,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 5,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 7,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 8,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 10,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "tau-index",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 1,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 2,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 4,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 5,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 7,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 8,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 10,
+     "dim_fix_E": 0,
+     "direction": "counts->q",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 3,
+     "dim_fix_E": 0,
+     "direction": "q->counts",
+     "fixed_space_size": 1,
+     "identification": "alt",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 5,
+     "identification": "tau-alt",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 7,
+     "identification": "tau-alt",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 11,
+     "identification": "tau-alt",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 13,
+     "identification": "tau-alt",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 17,
+     "identification": "tau-alt",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 19,
+     "identification": "tau-alt",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "fixed_space_size": 23,
+     "identification": "tau-alt",
+     "p": 23
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 5,
+     "identification": "tau-alt",
+     "p": 5
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 7,
+     "identification": "tau-alt",
+     "p": 7
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 11,
+     "identification": "tau-alt",
+     "p": 11
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 13,
+     "identification": "tau-alt",
+     "p": 13
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 17,
+     "identification": "tau-alt",
+     "p": 17
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 19,
+     "identification": "tau-alt",
+     "p": 19
+    },
+    {
+     "det_E_minus_I_mod_p": 0,
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "fixed_space_size": 23,
+     "identification": "tau-alt",
+     "p": 23
+    }
+   ],
+   "general_dimension": [
+    {
+     "column_sums": [
+      "2",
+      "2",
+      "2"
+     ],
+     "d": 2,
+     "dim_fix": 2,
+     "ordering": "natural",
+     "size": 3
+    },
+    {
+     "column_sums": [
+      "2",
+      "2",
+      "2"
+     ],
+     "d": 2,
+     "dim_fix": 1,
+     "ordering": "lex",
+     "size": 3
+    },
+    {
+     "column_sums": [
+      "3",
+      "3",
+      "3",
+      "2",
+      "2",
+      "2"
+     ],
+     "d": 3,
+     "dim_fix": 3,
+     "ordering": "natural",
+     "size": 6
+    },
+    {
+     "column_sums": [
+      "3",
+      "2",
+      "2",
+      "3",
+      "2",
+      "3"
+     ],
+     "d": 3,
+     "dim_fix": 1,
+     "ordering": "lex",
+     "size": 6
+    },
+    {
+     "column_sums": [
+      "4",
+      "4",
+      "4",
+      "4",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2"
+     ],
+     "d": 4,
+     "dim_fix": 4,
+     "ordering": "natural",
+     "size": 10
+    },
+    {
+     "column_sums": [
+      "4",
+      "2",
+      "2",
+      "2",
+      "4",
+      "2",
+      "2",
+      "4",
+      "2",
+      "4"
+     ],
+     "d": 4,
+     "dim_fix": 1,
+     "ordering": "lex",
+     "size": 10
+    },
+    {
+     "column_sums": [
+      "5",
+      "5",
+      "5",
+      "5",
+      "5",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2"
+     ],
+     "d": 5,
+     "dim_fix": 5,
+     "ordering": "natural",
+     "size": 15
+    },
+    {
+     "column_sums": [
+      "5",
+      "2",
+      "2",
+      "2",
+      "2",
+      "5",
+      "2",
+      "2",
+      "2",
+      "5",
+      "2",
+      "2",
+      "5",
+      "2",
+      "5"
+     ],
+     "d": 5,
+     "dim_fix": 1,
+     "ordering": "lex",
+     "size": 15
+    }
+   ],
+   "set_level_census_absent_S1b": "815727501386186588190430395382342267781393000859545374749"
   },
   "held_out": {
    "fit_admitted": 6336,
@@ -2759,10 +6592,18 @@
     "admissible_part": [
      5
     ],
+    "admissible_part_at_16_labels": [
+     5
+    ],
+    "admissible_part_at_9_labels": [
+     5
+    ],
+    "broken_by": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
     "candidate": "the deformation carrier's size p^(k+d)",
     "declaration_free": false,
+    "declaration_freeness_measured": false,
     "id": "P1",
-    "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p; it cannot derive it",
+    "note": "the carrier size p^(k+d) = 625 is a FUNCTION of the declared p",
     "primes_it_admits": [
      5
     ],
@@ -2787,8 +6628,44 @@
      53,
      59
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "broken_by": null,
     "candidate": "the deformation arena's front structure (k, d, L, sites, links)",
-    "declaration_free": false,
+    "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P2",
     "note": "k, d, L and the link set are declared arena data and constrain no prime",
     "primes_it_admits": [
@@ -2817,8 +6694,16 @@
     "admissible_part": [
      5
     ],
+    "admissible_part_at_16_labels": [
+     5
+    ],
+    "admissible_part_at_9_labels": [
+     5
+    ],
+    "broken_by": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])",
     "candidate": "the transport group's order 2*ord(D) and its prime divisors",
     "declaration_free": false,
+    "declaration_freeness_measured": false,
     "id": "P3",
     "note": "2*ord(D) = 10, but ord(D) = 5 is THIS unit's declared selection rule; the candidate contains its own conclusion",
     "primes_it_admits": [
@@ -2833,10 +6718,22 @@
      5,
      7
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7
+    ],
+    "broken_by": null,
     "candidate": "the transport FAMILY's defect-order spectrum and the primes dividing some 2*ord(D) in it",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P4",
-    "note": "the family's own defect orders admit [2, 3, 5, 7]; intersected with admissibility, two survive",
+    "note": "the family's own defect orders, read at the arena being reported",
     "primes_it_admits": [
      2,
      3,
@@ -2851,10 +6748,22 @@
      5,
      7
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7
+    ],
+    "broken_by": null,
     "candidate": "the completion group's element orders: the primes p for which an element of order p exists",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P5",
-    "note": "the completion group has elements of order p for p in [2, 3, 5, 7]; intersected with admissibility, two survive",
+    "note": "the completion group's element orders at the arena being reported",
     "primes_it_admits": [
      2,
      3,
@@ -2882,8 +6791,44 @@
      53,
      59
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "broken_by": null,
     "candidate": "the record<->metric readout's determinant",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P6",
     "note": "the readout determinant is 2, so the re-encoding is invertible at every prime but 2 -- a single exclusion, not a derivation",
     "primes_it_admits": [
@@ -2925,8 +6870,44 @@
      53,
      59
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23,
+     29,
+     31,
+     37,
+     41,
+     43,
+     47,
+     53,
+     59
+    ],
+    "broken_by": null,
     "candidate": "the denominator of HA's exact residual rho",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P7",
     "note": "rho's denominator is 6, so the deformation side does not exist at 2 or 3",
     "primes_it_admits": [
@@ -2950,37 +6931,74 @@
     "unique": false
    },
    {
-    "admissible_part": [],
-    "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
-    "declaration_free": true,
-    "id": "P8",
-    "note": "the intertwining is solvable at exactly one prime in the registered direction, swept over every prime below 60 -- and it is a prime the deformation side cannot be built at; the re-encoding is undefined at [2]",
-    "primes_it_admits": [
-     3
+    "admissible_part": [
+     7
     ],
-    "role": "NO-ADMISSIBLE-PRIME",
-    "unique": true
+    "admissible_part_at_16_labels": [
+     7
+    ],
+    "admissible_part_at_9_labels": [
+     7
+    ],
+    "broken_by": "direction := the reversed one",
+    "candidate": "the S1 intertwining condition itself: the primes at which 2 lies in the spectrum of the chart map E",
+    "declaration_free": false,
+    "declaration_freeness_measured": false,
+    "id": "P8",
+    "note": "the intertwining condition itself, over the covariant cell family in the registered direction",
+    "primes_it_admits": [
+     3,
+     7
+    ],
+    "role": "NARROWING",
+    "unique": false
    },
    {
-    "admissible_part": [],
+    "admissible_part": [
+     7
+    ],
+    "admissible_part_at_16_labels": [
+     7
+    ],
+    "admissible_part_at_9_labels": [
+     7
+    ],
+    "broken_by": "direction := the reversed one",
     "candidate": "the joint system P7 and P8",
-    "declaration_free": true,
+    "declaration_free": false,
+    "declaration_freeness_measured": false,
     "id": "P9",
-    "note": "the joint system is EMPTY: the only prime that solves the intertwining is one of the two at which rho fails to reduce",
-    "primes_it_admits": [],
-    "role": "NO-ADMISSIBLE-PRIME",
-    "unique": false
+    "note": "the joint system P7 and P8",
+    "primes_it_admits": [
+     7
+    ],
+    "role": "NARROWING",
+    "unique": true
    },
    {
     "admissible_part": [
      5,
      7
     ],
+    "admissible_part_at_16_labels": [
+     5,
+     7,
+     11,
+     13
+    ],
+    "admissible_part_at_9_labels": [
+     5,
+     7
+    ],
+    "broken_by": null,
     "candidate": "the count of label-exchange-anti-invariant elements of order p",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P10",
-    "note": "48 at p = 5 and 96 at p = 7; zero at every larger declared prime",
+    "note": "the count of label-exchange-anti-invariant elements of order p at the arena being reported",
     "primes_it_admits": [
+     2,
+     3,
      5,
      7
     ],
@@ -2989,23 +7007,33 @@
    },
    {
     "admissible_part": [],
+    "admissible_part_at_16_labels": [
+     5
+    ],
+    "admissible_part_at_9_labels": [],
+    "broken_by": null,
     "candidate": "the p-part of the completion group's order against |V| = p^3",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P11",
-    "note": "the p-part of the completion group's order is p^1 at every prime, against |V| = p^3: no prime admits an injective candidate here",
-    "primes_it_admits": [],
+    "note": "the p-part of the completion group's order against |V| = p^3 at the arena being reported",
+    "primes_it_admits": [
+     2
+    ],
     "role": "NO-ADMISSIBLE-PRIME",
-    "unique": false
+    "unique": true
    },
    {
     "admissible_part": [
      5,
      7
     ],
+    "broken_by": null,
     "candidate": "the intersection of every declaration-free candidate",
     "declaration_free": true,
+    "declaration_freeness_measured": true,
     "id": "P12",
-    "note": "the tightest declaration-free NARROWING: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11, P8, P9",
+    "note": "the tightest declaration-free NARROWING at the declared arena: the intersection over every declaration-free candidate that admits an admissible prime at all.  The declaration-free candidates that admit NONE are P11",
     "primes_it_admits": [
      5,
      7
@@ -3014,18 +7042,108 @@
     "unique": false
    }
   ],
+  "open1_counterfactuals": [
+   {
+    "candidates_that_moved": [
+     "P1",
+     "P3"
+    ],
+    "re_declaration": "prime := 7, selection rule ord(D) := 7 (class size 9216, lex-first [0, 1, 2, 4, 5, 3, 7, 6, 8])"
+   },
+   {
+    "candidates_that_moved": [
+     "P8",
+     "P9"
+    ],
+    "re_declaration": "direction := the reversed one"
+   },
+   {
+    "candidates_that_moved": [
+     "P8",
+     "P9"
+    ],
+    "re_declaration": "identification := the declared natural cell alone"
+   },
+   {
+    "candidates_that_moved": [],
+    "re_declaration": "identification := the tau-conjugate of the declared index cell alone"
+   },
+   {
+    "candidates_that_moved": [],
+    "re_declaration": "base record := G-ANISO"
+   },
+   {
+    "candidates_that_moved": [],
+    "re_declaration": "completion := the lex-last member of the ord-5 class"
+   },
+   {
+    "candidates_that_moved": [],
+    "re_declaration": "record-space basis := the declared GL_3 element"
+   }
+  ],
+  "open1_scales": {
+   "9": {
+    "declaration_free_narrowing_candidates": [
+     "P10",
+     "P2",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "labels": 9,
+    "narrowing_source_1": [
+     5,
+     7
+    ],
+    "narrowing_source_2": [
+     5,
+     7
+    ],
+    "single_candidate_source_1": [],
+    "single_candidate_source_2": [],
+    "verdict_source_1": "LCB-PRIME-DECLARED",
+    "verdict_source_2": "LCB-PRIME-DECLARED"
+   },
+   "16": {
+    "declaration_free_narrowing_candidates": [
+     "P10",
+     "P11",
+     "P2",
+     "P4",
+     "P5",
+     "P6",
+     "P7"
+    ],
+    "labels": 16,
+    "narrowing_source_1": [
+     5
+    ],
+    "narrowing_source_2": [
+     5
+    ],
+    "single_candidate_source_1": [
+     "P11"
+    ],
+    "single_candidate_source_2": [
+     "P11"
+    ],
+    "verdict_source_1": "LCB-PRIME-DERIVED",
+    "verdict_source_2": "LCB-PRIME-DERIVED"
+   }
+  },
   "per_prime": [
    {
     "anti_elements": 48,
-    "cells_live_after_S1d": 2,
-    "cells_live_at_S1ab": 16,
+    "cells_live_after_S1d": 12,
+    "cells_live_at_S1ab": 48,
     "cells_live_at_the_full_S1": 0,
     "p": 5
    },
    {
     "anti_elements": 96,
-    "cells_live_after_S1d": 2,
-    "cells_live_at_S1ab": 16,
+    "cells_live_after_S1d": 16,
+    "cells_live_at_S1ab": 64,
     "cells_live_at_the_full_S1": 0,
     "p": 7
    },
@@ -3088,6 +7206,26 @@
    },
    {
     "direction": "counts->q",
+    "identification": "tau-natural",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-natural",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   },
+   {
+    "direction": "counts->q",
     "identification": "index",
     "s1_pass": 0,
     "s1ab": 0,
@@ -3098,6 +7236,66 @@
    {
     "direction": "q->counts",
     "identification": "index",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "tau-index",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-index",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "alt",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "alt",
+    "s1_pass": 0,
+    "s1ab": 48,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [
+     100
+    ],
+    "s1d_pass": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "tau-alt",
+    "s1_pass": 0,
+    "s1ab": 0,
+    "s1c_pass": 0,
+    "s1c_violation_counts": [],
+    "s1d_pass": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-alt",
     "s1_pass": 0,
     "s1ab": 48,
     "s1c_pass": 0,
@@ -3124,6 +7322,20 @@
    },
    {
     "direction": "counts->q",
+    "identification": "tau-natural",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-natural",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   },
+   {
+    "direction": "counts->q",
     "identification": "index",
     "kernel_dim": 0,
     "route_A_linear_algebra": 0,
@@ -3132,6 +7344,48 @@
    {
     "direction": "q->counts",
     "identification": "index",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "tau-index",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-index",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "alt",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "alt",
+    "kernel_dim": 1,
+    "route_A_linear_algebra": 48,
+    "route_B_enumeration": 48
+   },
+   {
+    "direction": "counts->q",
+    "identification": "tau-alt",
+    "kernel_dim": 0,
+    "route_A_linear_algebra": 0,
+    "route_B_enumeration": 0
+   },
+   {
+    "direction": "q->counts",
+    "identification": "tau-alt",
     "kernel_dim": 1,
     "route_A_linear_algebra": 48,
     "route_B_enumeration": 48
@@ -3167,6 +7421,31 @@
     "candidates": 0,
     "determined": false,
     "direction": "counts->q",
+    "identification": "tau-natural",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "tau-natural",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
+   },
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
     "identification": "index",
     "image_size": null,
     "injective": false,
@@ -3187,44 +7466,261 @@
      36,
      81
     ]
+   },
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
+    "identification": "tau-index",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "tau-index",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
+   },
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
+    "identification": "alt",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "alt",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
+   },
+   {
+    "candidates": 0,
+    "determined": false,
+    "direction": "counts->q",
+    "identification": "tau-alt",
+    "image_size": null,
+    "injective": false,
+    "kernel_size": null,
+    "strata_declared": 7,
+    "strata_hit": []
+   },
+   {
+    "candidates": 48,
+    "determined": false,
+    "direction": "q->counts",
+    "identification": "tau-alt",
+    "image_size": 5,
+    "injective": false,
+    "kernel_size": 25,
+    "strata_declared": 7,
+    "strata_hit": [
+     36,
+     81
+    ]
    }
   ],
   "s4_grid_summary": {
    "by_direction": {
-    "counts->q": 0,
-    "q->counts": 4
+    "counts->q": 4,
+    "q->counts": 24
    },
-   "cells": 224,
+   "cells": 672,
    "distinct_p_ord_pairs": {
     "full": 0,
     "s1ab": 16,
-    "s1d": 2
+    "s1d": 4
    },
    "live_full_s1": 0,
-   "live_s1ab": 32,
-   "live_s1d": 4
+   "live_s1ab": 112,
+   "live_s1d": 28
+  },
+  "slot_orders": {
+   "alt": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "index": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "natural": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "tau-alt": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "tau-index": [
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "tau-natural": [
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  },
+  "tau_conjugate_witness": {
+   "E_mod_7": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     3,
+     3,
+     4
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "S1a_violations": 0,
+   "S1b_violations": 0,
+   "S1c_violations": 294,
+   "S1d_against_an_ord7_base": true,
+   "S1d_against_the_declared_ord5_base": false,
+   "cell": [
+    "tau-index",
+    "counts->q"
+   ],
+   "composition_cells": 117649,
+   "defect_fixed_configurations": 18,
+   "defect_order_at_the_base_record": 7,
+   "fixed_space_dim": 0,
+   "generator": [
+    0,
+    2,
+    4,
+    5,
+    6,
+    7,
+    3,
+    1,
+    8
+   ],
+   "generator_anti_invariant": true,
+   "generator_order": 7,
+   "image_size": 7,
+   "lambda_at_the_base_record": 2,
+   "ord7_completion_class_size": 9216,
+   "p": 7,
+   "record_cells": 343,
+   "record_space_size": 343,
+   "two_eigencovector": [
+    3,
+    4,
+    1
+   ]
   }
  },
  "totals": {
   "anchors": 30,
   "cache": {
    "bypasses": 40320,
-   "hits": 650173,
-   "lookups": 690493,
+   "hits": 1532778,
+   "lookups": 1573098,
    "misses": 40320,
    "selftest_hits": 0
   },
-  "disclosures": 10,
+  "disclosures": 11,
   "gate_failures": 0,
-  "gates": 34,
-  "must_pass_gates": 34,
+  "gates": 46,
+  "must_pass_gates": 44,
   "mutant_survivors": 0,
-  "mutants": 55,
+  "mutants": 69,
   "route_calls": {
-   "A": 4,
-   "B": 4,
+   "A": 12,
+   "B": 12,
    "taint": 0
   }
  },
- "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+ "verdict": "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE"
 }

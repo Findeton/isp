@@ -14,55 +14,115 @@ pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
   G06 PASS   carrier 625, orbit lengths [5], 125 orbits
   G07 PASS   5 | 10: True (negative case 7 | 10: False); |hom(Z/5,<W,D>)| = 5 (gcd route 5), non-trivial 4
   G08 PASS   readout determinant 2; q reproduces every count at 11 of 11 records; 9 admissible
-  G09 PASS   4 encoding cells, all invertible; chart-compatible identifications {'natural': True, 'index': False}; 2 cells chart-equivariant
-      natural  counts->q  det   1/2  E mod 5 = [[1, 0, 0], [0, 1, 0], [2, 2, 3]]
-      natural  q->counts  det     2  E mod 5 = [[1, 0, 0], [0, 1, 0], [1, 1, 2]]
-      index    counts->q  det  -1/2  E mod 5 = [[1, 0, 0], [2, 2, 3], [0, 1, 0]]
-      index    q->counts  det    -2  E mod 5 = [[1, 0, 0], [0, 0, 1], [1, 2, 1]]
+  G09 PASS   12 covariant encoding cells (6 slot identifications x 2 directions), all invertible; chart-carrying identifications ['natural', 'tau-natural']; 4 cells chart-equivariant
+      natural      counts->q  det   1/2  E mod 5 = [[1, 0, 0], [0, 1, 0], [2, 2, 3]]
+      natural      q->counts  det     2  E mod 5 = [[1, 0, 0], [0, 1, 0], [1, 1, 2]]
+      tau-natural  counts->q  det  -1/2  E mod 5 = [[0, 1, 0], [1, 0, 0], [2, 2, 3]]
+      tau-natural  q->counts  det    -2  E mod 5 = [[0, 1, 0], [1, 0, 0], [1, 1, 2]]
+      index        counts->q  det  -1/2  E mod 5 = [[1, 0, 0], [2, 2, 3], [0, 1, 0]]
+      index        q->counts  det    -2  E mod 5 = [[1, 0, 0], [0, 0, 1], [1, 2, 1]]
+      tau-index    counts->q  det   1/2  E mod 5 = [[0, 1, 0], [2, 2, 3], [1, 0, 0]]
+      tau-index    q->counts  det     2  E mod 5 = [[0, 0, 1], [1, 0, 0], [1, 2, 1]]
+      alt          counts->q  det   1/2  E mod 5 = [[2, 2, 3], [1, 0, 0], [0, 1, 0]]
+      alt          q->counts  det     2  E mod 5 = [[0, 1, 0], [0, 0, 1], [2, 1, 1]]
+      tau-alt      counts->q  det  -1/2  E mod 5 = [[2, 2, 3], [0, 1, 0], [1, 0, 0]]
+      tau-alt      q->counts  det    -2  E mod 5 = [[0, 0, 1], [0, 1, 0], [2, 1, 1]]
 
 --- 3. S1: THE COMMUTING SQUARE, CENSUS AT DECLARED SCOPE ---
   completion group: 40320 elements; of order 5: 1344; Sigma-anti-invariant: 48; Sigma-invariant: 0
   route B enumerated 41665 homomorphisms V -> completion group; image-size spectrum {1: 1, 5: 41664}
-  G10 PASS   two routes agree at all 4 cells; taint 0
-      natural  counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
-      natural  q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
-      index    counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
-      index    q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
-  G11 PASS   4 cells, 41665 homomorphisms (independent count 41665), 125 record cells each
+  G10 PASS   two routes agree at all 12 cells; taint 0
+      natural      counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      natural      q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      tau-natural  counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      tau-natural  q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      index        counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      index        q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      tau-index    counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      tau-index    q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      alt          counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      alt          q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+      tau-alt      counts->q  route A    0   route B    0   ker(E^T-2I) dim 0
+      tau-alt      q->counts  route A   48   route B   48   ker(E^T-2I) dim 1
+  G11 PASS   12 cells, 41665 homomorphisms (independent count 41665), 125 record cells each
 
 --- 4. WHAT THE SQUARE FORCES, MEASURED RATHER THAN CITED ---
   G12 PASS   Sigma-invariant order-5 elements: 0; delta = squaring verified at 40 cells; p-part exponent 1
 
+--- 4b. THE FIXED-POINT MISMATCH, MEASURED ARENA BY ARENA ---
+  G35 PASS   4 labels: 6 members, fix(delta) = 1; 9 labels: 40320 members, fix(delta) = 1; 16 labels (the order-125 witness subgroup): 125 members, fix(delta) = 1
+  G36 PASS   84 (cell, prime) fixed spaces, 0 route disagreements; nonzero at every declared prime at 8 of 12 cells; general-d rows 8, all nonzero: True
+      d = 2  natural   3x3  dim fix(E) 2   column sums ['2', '2', '2']
+      d = 2  lex       3x3  dim fix(E) 1   column sums ['2', '2', '2']
+      d = 3  natural   6x6  dim fix(E) 3   column sums ['3', '3', '3', '2', '2', '2']
+      d = 3  lex       6x6  dim fix(E) 1   column sums ['3', '2', '2', '3', '2', '3']
+      d = 4  natural  10x10 dim fix(E) 4   column sums ['4', '4', '4', '4', '2', '2', '2', '2', '2', '2']
+      d = 4  lex      10x10 dim fix(E) 1   column sums ['4', '2', '2', '2', '4', '2', '2', '4', '2', '4']
+      d = 5  natural  15x15 dim fix(E) 5   column sums ['5', '5', '5', '5', '5', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2']
+      d = 5  lex      15x15 dim fix(E) 1   column sums ['5', '2', '2', '2', '2', '5', '2', '2', '2', '5', '2', '2', '5', '2', '5']
+  G37 PASS   84 (cell, prime) pairs, 0 uncovered; arena-free branch covers 56, the p-part branch alone 28
+      live collapse at natural|q->counts: 25 of 25 fixed records go to the identity; |image| 5 of 125
+  G39 PASS   all columns sum to 2 at 6 of 6 identifications; the all-ones covector is a 2-eigencovector there and is chart-symmetric
+  G40 PASS   E-orbit spectrum {1: 25, 4: 25}; delta^L fixed counts {1: 1, 4: 189}; set-level census absent S1b = 815727501386186588190430395382342267781393000859545374749
+  G38 PASS   tau-conjugate witness at ['tau-index', 'counts->q'], p = 7: S1a 0/343, S1b 0/117649, S1c 294/343, |image| 7 of 343
+
 --- 5. S1c (CHART INVOLUTION) AND S1d (BASE POINT) ---
   G13 PASS   S1 survivors across all cells: 0
-      natural  counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
-      natural  q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
-      index    counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
-      index    q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      natural      counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      natural      q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      tau-natural  counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      tau-natural  q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      index        counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      index        q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      tau-index    counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      tau-index    q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      alt          counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      alt          q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+      tau-alt      counts->q  S1a+b    0   S1c pass    0   S1d pass    0   S1 all    0   S1c violations/cand []
+      tau-alt      q->counts  S1a+b   48   S1c pass    0   S1d pass   48   S1 all    0   S1c violations/cand [100]
+  G42 PASS   S1d passes at 5 of 9 admissible records; of 166656 (generator, covector) pairs 192 satisfy S1c and 0 of those satisfy S1d at the declared base record (192 at G-ANISO)
+      G-ANISO     counts [1, 4, 5]    mod p [1, 4, 0]    tau-fixed False  S1d passes    0
+      G-ANISO2    counts [4, 9, 13]   mod p [4, 4, 3]    tau-fixed True   S1d passes  288
+      G-CURVED    counts [1, 1, 2]    mod p [1, 1, 2]    tau-fixed True   S1d passes  288
+      G-CURVOFF   counts [2, 2, 6]    mod p [2, 2, 1]    tau-fixed True   S1d passes    0
+      G-DIAG2     counts [2, 2, 4]    mod p [2, 2, 4]    tau-fixed True   S1d passes  288
+      G-FLAT      counts [1, 1, 2]    mod p [1, 1, 2]    tau-fixed True   S1d passes  288
+      G-OFFDIAG   counts [2, 2, 6]    mod p [2, 2, 1]    tau-fixed True   S1d passes    0
+      G-OFFDIAG2  counts [3, 5, 12]   mod p [3, 0, 2]    tau-fixed False  S1d passes    0
+      G-OFFNEG    counts [3, 5, 4]    mod p [3, 0, 4]    tau-fixed False  S1d passes  288
 
 --- 6. S2 (RIGIDITY) AND S3 (NON-DEGENERACY WITH TEETH) ---
   G14 PASS   cells with a determined candidate: False; cells with an injective candidate: False
-      natural  counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
-      natural  q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
-      index    counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
-      index    q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      natural      counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      natural      q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      tau-natural  counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      tau-natural  q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      index        counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      index        q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      tau-index    counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      tau-index    q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      alt          counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      alt          q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
+      tau-alt      counts->q  candidates    0  determined False  strata hit [] of 7  |image| None  injective False
+      tau-alt      q->counts  candidates   48  determined False  strata hit [36, 81] of 7  |image| 5  injective False
   G15 PASS   16-label p-part exponent 3, witness subgroup order 125 = |V| = 125; 9-label p-part exponent 1
 
 --- 7. S4: FUNCTORIALITY IN THE FAMILY ---
-  G16 PASS   224 grid cells; live at S1a+b 32; live after S1d 4; live at the full S1 0
+  G16 PASS   672 grid cells (84 independent kernel decisions x 8 defect orders); live at S1a+b 112; live after S1d 28; live at the full S1 0
       anti-invariant order-p elements by prime: {5: 48, 7: 96, 11: 0, 13: 0, 17: 0, 19: 0, 23: 0}
-      distinct (p, ord D) pairs live: 3 at BRG's own delivered standard, 16 at S1a+b, 2 after the base-point clause, 0 at the full S1
+      distinct (p, ord D) pairs live: 3 at BRG's own delivered standard, 16 at S1a+b, 4 after the base-point clause, 0 at the full S1
       BRG's live cells reproduced here: [(5, 5), (5, 15), (7, 7)]
   G17 PASS   5 completions rebuilt, invariant: True
 
 --- 8. S5: HELD-OUT PREDICTION WITH TRANSPORTED QUANTITIES ---
-  G18 PASS   FIT 1 cell admits 6336 candidates; 6144 die on 124 held-out cells, 192 survive
+  G18 PASS   FIT 1 cell admits 6336 candidates; 6144 die on 124 held-out cells, 192 survive (registered direction: 6336 admitted, 0 survive)
+  G41 PASS   S5 on the pairing's own map [6336, 6144, 192]; registered direction [6336, 6336, 0]; synthetic [6336, 6144, 192]
   G19 PASS   defect permutation and stratum predicted at 124/124 of 124 held-out cells; teeth fail at 99 and 99
 
 --- 9. S6: THE PRIME DECLARED A PARAMETER, PER-PRIME VERDICTS ---
   G20 PASS   7 primes; full-clause answer prime-uniform: True; partial-clause answer prime-uniform: False; live at every prime: False
-      p =  5   live at S1a+b 16   after S1d  2   at the full S1  0   anti-invariant elements 48
-      p =  7   live at S1a+b 16   after S1d  2   at the full S1  0   anti-invariant elements 96
+      p =  5   live at S1a+b 48   after S1d 12   at the full S1  0   anti-invariant elements 48
+      p =  7   live at S1a+b 64   after S1d 16   at the full S1  0   anti-invariant elements 96
       p = 11   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
       p = 13   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
       p = 17   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
@@ -70,8 +130,8 @@ pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
       p = 23   live at S1a+b  0   after S1d  0   at the full S1  0   anti-invariant elements 0
 
 --- 10. CONTROLS: POSITIVE, NEGATIVE, AND BOTH OUTCOMES REACHABLE ---
-  G21 PASS   identity self-morphism: 0 square violations at 40320 cells; injective True
-  G22 PASS   synthetic compatible pair: 192 pairs, 48 distinct maps, 192 pass S1c, 192 pass S1d; witness re-verified True
+  G21 PASS   identity self-morphism (disclosure): 0 square violations at 40320 cells; injective True
+  G22 PASS   synthetic compatible pair: 192 pairs, 48 distinct maps, 192 pass S1c, 192 pass S1d at G-ANISO; witness re-verified True
       witness g = [0, 1, 4, 3, 6, 2, 7, 5, 8], lambda = [1, 4, 0]
   G23 PASS   synthetic incompatible pair: 0 candidates
   G24 PASS   BREAK-HOM: S1a 0/125, S1b 6000/15625; accepted counterpart 0/0 -- rejected by S1b
@@ -79,46 +139,62 @@ pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
 --- 11. SYMMETRY SELF-TESTS (RUNBOOK 14, ALL ADDENDA) ---
   G25 PASS   relabelling moves 4 labels; delta equivariant at 40320/40320; anti count 48
   G26 PASS   basis change [[1, 1, 0], [0, 1, 0], [0, 1, 1]]; kernel dimensions invariant: True
-  G27 PASS   tested set ['index|counts->q', 'index|q->counts', 'natural|counts->q', 'natural|q->counts'] (verdict-selected would be ['index|q->counts', 'natural|q->counts'])
-  G28 PASS   self-test bypasses 40320, self-test cache hits 0; cache had 690493 lookups and 650173 hits
+  G27 PASS   tested set ['alt|counts->q', 'alt|q->counts', 'index|counts->q', 'index|q->counts', 'natural|counts->q', 'natural|q->counts', 'tau-alt|counts->q', 'tau-alt|q->counts', 'tau-index|counts->q', 'tau-index|q->counts', 'tau-natural|counts->q', 'tau-natural|q->counts'] (verdict-selected would be ['alt|q->counts', 'index|q->counts', 'natural|q->counts', 'tau-alt|q->counts', 'tau-index|q->counts', 'tau-natural|q->counts'])
+  G28 PASS   self-test bypasses 40320, self-test cache hits 0; cache had 1532778 lookups and 1492458 hits
 
 --- 12. OPEN 1: IS THE PRIME DERIVABLE ON THIS PAIRING? ---
-  G29 PASS   12 candidates evaluated; tightest declaration-free narrowing [5, 7]
-  id   admissible part   role                 uniq  free  candidate
-  P1   [5]               NARROWING            True  False the deformation carrier's size p^(k+
-  P2   [5, 7, 11, 13, 17 NARROWING            False False the deformation arena's front struct
-  P3   [5]               NARROWING            False False the transport group's order 2*ord(D)
-  P4   [5, 7]            NARROWING            False True  the transport FAMILY's defect-order 
-  P5   [5, 7]            NARROWING            False True  the completion group's element order
-  P6   [5, 7, 11, 13, 17 NARROWING            False True  the record<->metric readout's determ
-  P7   [5, 7, 11, 13, 17 NARROWING            False True  the denominator of HA's exact residu
-  P8   []                NO-ADMISSIBLE-PRIME  True  True  the S1 intertwining condition itself
-  P9   []                NO-ADMISSIBLE-PRIME  False True  the joint system P7 and P8
-  P10  [5, 7]            NARROWING            False True  the count of label-exchange-anti-inv
-  P11  []                NO-ADMISSIBLE-PRIME  False True  the p-part of the completion group's
-  P12  [5, 7]            NARROWING            False True  the intersection of every declaratio
+  G43 PASS   7 counterfactual re-declarations; declaration-carrying candidates ['P1', 'P3', 'P8', 'P9']
+      prime := 7, selection rule ord(D) := 7 (class size 9216, lex-f   moves ['P1', 'P3']
+      direction := the reversed one                                    moves ['P8', 'P9']
+      identification := the declared natural cell alone                moves ['P8', 'P9']
+      identification := the tau-conjugate of the declared index cell   moves []
+      base record := G-ANISO                                           moves []
+      completion := the lex-last member of the ord-5 class             moves []
+      record-space basis := the declared GL_3 element                  moves []
+  G44 PASS   9 labels: LCB-PRIME-DECLARED narrowing [5, 7]; 16 labels: LCB-PRIME-DERIVED narrowing [5]
+      the smallest arena admitting an injective candidate: {5: 16, 7: 22}; the p-part candidate's admissible part there: {5: [5], 7: [5, 7]}
+  G45 PASS   synthetic DERIVED table -> LCB-PRIME-DERIVED; synthetic DECLARED table -> LCB-PRIME-DECLARED
+  G29 PASS   12 candidates evaluated; tightest declaration-free narrowing at the declared arena [5, 7]
+  id   adm part (9)    adm part (16)   role                 uniq  free  candidate
+  P1   [5]             [5]             NARROWING            True  False the deformation carrier's size p^(
+  P2   [5, 7, 11, 13,  [5, 7, 11, 13,  NARROWING            False True  the deformation arena's front stru
+  P3   [5]             [5]             NARROWING            False False the transport group's order 2*ord(
+  P4   [5, 7]          [5, 7, 11, 13]  NARROWING            False True  the transport FAMILY's defect-orde
+  P5   [5, 7]          [5, 7, 11, 13]  NARROWING            False True  the completion group's element ord
+  P6   [5, 7, 11, 13,  [5, 7, 11, 13,  NARROWING            False True  the record<->metric readout's dete
+  P7   [5, 7, 11, 13,  [5, 7, 11, 13,  NARROWING            False True  the denominator of HA's exact resi
+  P8   [7]             [7]             NARROWING            False False the S1 intertwining condition itse
+  P9   [7]             [7]             NARROWING            True  False the joint system P7 and P8
+  P10  [5, 7]          [5, 7, 11, 13]  NARROWING            False True  the count of label-exchange-anti-i
+  P11  []              [5]             NO-ADMISSIBLE-PRIME  True  True  the p-part of the completion group
+  P12  [5, 7]          --              NARROWING            False True  the intersection of every declarat
 
 --- 13. THE VERDICTS, DERIVED INSIDE THEIR GATE ---
-  G30 PASS   LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD / LCB-PRIME-DECLARED; 15 qualifiers recomputed, 0 disagreements
-  G31 PASS   obstruction measured coextensive with the clause failures
+  G46 PASS   7 obstruction tokens gated, 0 disagreements
+  G30 PASS   LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE / LCB-PRIME-DECLARED; 18 qualifiers recomputed, 0 disagreements
+  G31 PASS   per-cell diagnostics measured coextensive with the clause failures
 
-        BRIDGE VERDICT: LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD
+        BRIDGE VERDICT: LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE
         OPEN-1 VERDICT: LCB-PRIME-DECLARED
           accepted_at_the_strengthened_standard            0
-          candidates_passing_S1a_S1b                       96
+          admissible_records_passing_the_base_point_clause 5
+          candidates_passing_S1a_S1b                       288
           candidates_passing_all_of_S1                     0
           cells_passing_S2                                 0
           cells_passing_S3                                 0
+          cells_where_the_obstruction_is_arena_free        8
           completion_family_members                        40320
-          encoding_cells                                   4
-          grid_cells                                       224
+          encoding_cells                                   12
+          grid_cells                                       672
           homomorphisms_enumerated                         41665
-          live_grid_cells_after_the_base_point_clause      4
-          obstruction                                      S1 -- encoding intertwining: SPECTRAL in the data->geometry direction (2 is not in the chart map's spectrum) and CHART-PARITY in the geometry->data direction (the 2-eigencovector is chart-symmetric where the intertwining needs it chart-antisymmetric)
-          open1_declaration_free_intersection              [5, 7]
+          live_grid_cells_after_the_base_point_clause      28
+          obstruction                                      S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's encoding has exactly ONE fixed point while the deformation side's re-encoding fixes a nonzero vector, so the square must collapse what injectivity forbids it to collapse.  ARENA-FREE at 8 of the 12 covariant cells; at the remaining 4 the arena's own p-part decides.  Per-cell diagnostics of the same wall: SPECTRAL in the data->geometry direction, CHART-PARITY in the geometry->data direction.
+          open1_declaration_free_intersection_at_16_labels [5]
+          open1_declaration_free_intersection_at_9_labels  [5, 7]
           ord5_class_size                                  4608
           primes                                           7
           record_cells_per_candidate                       125
+          set_level_census_absent_S1b                      815727501386186588190430395382342267781393000859545374749
 
 --- 14. ARITHMETIC AND MUTANT-IDENTITY DISCIPLINE ---
   G32 PASS   0 float/complex hits; scanner flags 2 in its synthetic sample
@@ -127,9 +203,9 @@ pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
 
 --- 15. TOTALS ---
   anchors            : 30 (0 failures required)
-  gates              : 34 (34 must-pass), failures 0
-  disclosures        : 10
-  cache              : {'lookups': 690493, 'hits': 650173, 'misses': 40320, 'bypasses': 40320, 'selftest_hits': 0}
+  gates              : 46 (44 must-pass), failures 0
+  disclosures        : 11
+  cache              : {'lookups': 1573098, 'hits': 1532778, 'misses': 40320, 'bypasses': 40320, 'selftest_hits': 0}
 
 --- 16. THE MUTANT HARNESS (every declared mutant must exit 1) ---
   mutant                exit  killed   named kills
@@ -150,44 +226,58 @@ pin v13/note-lcb-livecell-pin.md (STRICT) -- commit d2f6104
   break-blind           1     True     G:G24,G:G30
   cache-lax             1     True     G:G28
   cache-unused          1     True     G:G28
+  cell-orbit-drop       1     True     G:G09,G:G11,G:G36,G:G38
+  colsum-lax            1     True     G:G39
   compat-lax            1     True     G:G07
   completion-drop       1     True     G:G17
   count-flip            1     True     G:G30
+  dsweep-lax            1     True     G:G36,G:G39
   empty-block           1     True     G:G23,G:G30
   encoding-drop         1     True     G:G09,G:G11,G:G30
   enum-drop             1     True     G:G11,G:G30
   exempt-lax            1     True     G:G33
+  fixpoint-lax          1     True     G:G35
+  fixspace-lax          1     True     G:G36,G:G38
   float-lax             1     True     G:G32
-  found-block           1     True     G:G19,G:G22,G:G23,G:G30
+  found-block           1     True     G:G22,G:G23,G:G30
   freeze-lax            1     True     G:G01
   grid-drop             1     True     G:G16,G:G30
   group-lax             1     True     A:A12,G:G05
   heldout-leak          1     True     G:G18,G:G19
   hom-lax               1     True     G:G24,G:G30
-  ident-block           1     True     G:G21,G:G30
-  matrix-lax            1     True     G:G10,G:G13,G:G23,G:G27,G:G30,G:G31
-  obstruction-misname   1     True     G:G30
-  open1-lax             1     True     G:G29
+  matrix-lax            1     True     G:G10,G:G13,G:G18,G:G23,G:G27,G:G30,G:G31,G:G37,G:G4
+  obstruction-fabricate 1     True     G:G30,G:G46
+  obstruction-misname   1     True     G:G30,G:G46
+  open1-free-flip       1     True     G:G43,G:G44
+  open1-inter           1     True     G:G30,G:G44,G:G45
+  open1-lax             1     True     G:G29,G:G43,G:G44
+  open1-reach           1     True     G:G45
+  open1-scale           1     True     G:G44
   prime-single          1     True     G:G20
   qualifier-typo        1     True     G:G30
   quantity-lax          1     True     G:G19
+  records-lax           1     True     G:G42
   relabel-lax           1     True     G:G25
   route-a-lax           1     True     G:G10,G:G20,G:G30
   route-alias           1     True     G:G10
-  s1c-lax               1     True     G:G13,G:G30,G:G31
-  s1d-lax               1     True     G:G13
+  s1c-lax               1     True     G:G13,G:G30,G:G31,G:G46
+  s1d-lax               1     True     G:G13,G:G42
   s2-lax                1     True     G:G14
   s3-lax                1     True     G:G14
+  s5map-lax             1     True     G:G18
   select-lax            1     True     G:G04
   selftest-select       1     True     G:G27
+  setlevel-lax          1     True     G:G40
   square-lax            1     True     G:G11,G:G30
-  sylow-lax             1     True     G:G12,G:G15
-  tau-lax               1     True     G:G09,G:G22,G:G30
+  sylow-lax             1     True     G:G12,G:G15,G:G30,G:G37
+  tau-lax               1     True     G:G09,G:G22,G:G30,G:G42
   teeth-off             1     True     G:G19
   theorem-lax           1     True     G:G12
-  unique-lax            1     True     G:G30
-  verdict-flip          1     True     G:G30
+  unique-lax            1     True     G:G30,G:G44,G:G45
+  universal-lax         1     True     G:G30
+  verdict-flip          1     True     G:G30,G:G45
   witness-blank         1     True     G:G22,G:G30
+  witness7-lax          1     True     G:G38
   mutants that survived : []
   must-pass gates never falsified by any mutant : []
 

@@ -37,6 +37,27 @@ measured as 9x9 permutation matrices at every cell, never as group
 abstractions.  The candidate space is a CENSUS at declared scope, computed by
 two genuinely independent routes.
 
+THE OPERATIVE OBSTRUCTION IS THE FIXED-POINT MISMATCH, and it is arena-free
+wherever the deformation side's re-encoding fixes a nonzero vector:
+
+    delta(x) = sigma(x)^-1 x = x  <=>  sigma(x) = e  <=>  x = e,
+
+so delta has EXACTLY ONE fixed point at every arena, with no hypothesis on the
+arena at all.  The square then forces alpha(fix E) = {e}: every candidate
+satisfying S1a collapses the whole fixed space of E onto the identity, so S1a
+and S3 -- both of them BRG-REGISTERED clauses -- are jointly unsatisfiable
+wherever dim ker(E - I) >= 1.  That condition is MEASURED here over the
+covariant twelve-cell family: it holds at eight of the twelve cells at every
+prime, and at the remaining four (whose re-encoding carries primitive cube
+roots of unity instead of 1) only at p = 3, where the arena's own p-part
+decides instead.  The SPECTRAL and CHART-PARITY facts are retained as
+per-cell diagnostics of that wall.
+
+THE CELL FAMILY IS COVARIANT (RUNBOOK 15): the identification is a naming of
+the metric's three slots, so the declared cells are swept together with their
+whole orbit under the slot-relabelling group S_3 -- 6 identifications x 2
+directions = 12 cells, computed from the declared slot triple and never typed.
+
 Exact arithmetic only: integers, fractions.Fraction, exact F_p.  No float or
 complex literal and no float()/complex() call appears in this source; the
 scanner that measures it is validated by a synthetic injection it must flag.
@@ -112,6 +133,8 @@ MUTANTS: dict[str, str] = {
     "compat-lax":          "the live-cell divisibility clause is blinded",
     "arena-lax":           "the deformation arena's action is built non-free",
     "encoding-drop":       "one declared encoding cell is dropped from the sweep",
+    "cell-orbit-drop":     "the covariant cell family is truncated to the two "
+                           "declared identifications",
     "tau-lax":             "the chart involution is replaced by the identity",
     # --- the census -------------------------------------------------------
     "square-lax":          "the commuting square is evaluated at the base point only",
@@ -135,14 +158,28 @@ MUTANTS: dict[str, str] = {
     "grid-drop":           "one cell is dropped from the (p, ord) grid",
     "prime-single":        "the prime sweep is collapsed to one prime",
     "completion-drop":     "one completion is dropped from the base-change sweep",
+    "records-lax":         "the base-record sweep is collapsed to the declared "
+                           "record",
+    # --- the arena-free obstruction ---------------------------------------
+    "fixpoint-lax":        "the fixed-point set of the transport encoding is read "
+                           "off the wrong law",
+    "fixspace-lax":        "the deformation side's fixed-space dimension is "
+                           "blinded",
+    "dsweep-lax":          "the general-dimension fixed-space sweep is collapsed "
+                           "to one dimension",
+    "witness7-lax":        "the tau-conjugate witness's exponent covector is "
+                           "perturbed",
+    "colsum-lax":          "the readout's column sums are read off its rows",
+    "setlevel-lax":        "the set-level census's per-orbit factor is typed",
     # --- held-out ---------------------------------------------------------
     "heldout-leak":        "the candidate is fitted on the held-out cells",
     "teeth-off":           "the declared failing extension is silently made the "
                            "accepted one",
     "quantity-lax":        "a transported held-out quantity is read off the wrong "
                            "map",
+    "s5map-lax":           "the held-out block reads the synthetic chart map "
+                           "instead of the pairing's own",
     # --- controls ---------------------------------------------------------
-    "ident-block":         "the identity self-morphism is made unfindable",
     "found-block":         "the synthetic compatible pair is made incompatible",
     "empty-block":         "the synthetic incompatible pair is made compatible",
     "witness-blank":       "the exhibited FOUND witness is blanked",
@@ -158,11 +195,23 @@ MUTANTS: dict[str, str] = {
     "open1-lax":           "a declaration-carrying candidate is admitted as "
                            "declaration-free",
     "unique-lax":          "the uniqueness test accepts a two-element prime set",
+    "open1-free-flip":     "exactly one candidate's measured declaration-freeness "
+                           "is flipped",
+    "open1-inter":         "the declaration-free intersection is perturbed to a "
+                           "singleton at its own source",
+    "open1-scale":         "the sixteen-label scale is read at the nine-label "
+                           "arena",
+    "open1-reach":         "the two synthetic Open-1 tables are made to return the "
+                           "same verdict",
     # --- verdict ----------------------------------------------------------
     "obstruction-misname": "the named obstruction is replaced by a cardinality "
                            "claim",
+    "obstruction-fabricate": "the named obstruction is replaced by a plausible "
+                             "wrong clause",
     "verdict-flip":        "the verdict derivation returns a hand-typed string",
     "count-flip":          "the emptiness decision is inverted at its own source",
+    "universal-lax":       "the universality qualifier is asserted instead of "
+                           "measured",
     "qualifier-typo":      "one printed verdict qualifier is replaced by a typed "
                            "value",
 }
@@ -191,6 +240,7 @@ _M_GROUP = (MUTANT == "group-lax")
 _M_COMPAT = (MUTANT == "compat-lax")
 _M_ARENA = (MUTANT == "arena-lax")
 _M_ENCDROP = (MUTANT == "encoding-drop")
+_M_ORBITDROP = (MUTANT == "cell-orbit-drop")
 _M_TAU = (MUTANT == "tau-lax")
 _M_SQUARE = (MUTANT == "square-lax")
 _M_HOM = (MUTANT == "hom-lax")
@@ -207,10 +257,17 @@ _M_SYLOW = (MUTANT == "sylow-lax")
 _M_GRID = (MUTANT == "grid-drop")
 _M_PRIMESINGLE = (MUTANT == "prime-single")
 _M_COMPDROP = (MUTANT == "completion-drop")
+_M_RECORDS = (MUTANT == "records-lax")
+_M_FIXPOINT = (MUTANT == "fixpoint-lax")
+_M_FIXSPACE = (MUTANT == "fixspace-lax")
+_M_DSWEEP = (MUTANT == "dsweep-lax")
+_M_WITNESS7 = (MUTANT == "witness7-lax")
+_M_COLSUM = (MUTANT == "colsum-lax")
+_M_SETLEVEL = (MUTANT == "setlevel-lax")
 _M_HELDOUT = (MUTANT == "heldout-leak")
 _M_TEETH = (MUTANT == "teeth-off")
 _M_QUANTITY = (MUTANT == "quantity-lax")
-_M_IDENT = (MUTANT == "ident-block")
+_M_S5MAP = (MUTANT == "s5map-lax")
 _M_FOUND = (MUTANT == "found-block")
 _M_EMPTY = (MUTANT == "empty-block")
 _M_WITNESS = (MUTANT == "witness-blank")
@@ -222,9 +279,15 @@ _M_CACHE = (MUTANT == "cache-lax")
 _M_CACHEUN = (MUTANT == "cache-unused")
 _M_OPEN1 = (MUTANT == "open1-lax")
 _M_UNIQUE = (MUTANT == "unique-lax")
+_M_FREEFLIP = (MUTANT == "open1-free-flip")
+_M_INTER = (MUTANT == "open1-inter")
+_M_SCALE = (MUTANT == "open1-scale")
+_M_REACH = (MUTANT == "open1-reach")
 _M_OBSTR = (MUTANT == "obstruction-misname")
+_M_FABRIC = (MUTANT == "obstruction-fabricate")
 _M_VERDICT = (MUTANT == "verdict-flip")
 _M_COUNTFLIP = (MUTANT == "count-flip")
+_M_UNIVERSAL = (MUTANT == "universal-lax")
 _M_QUALTYPO = (MUTANT == "qualifier-typo")
 
 DELIVERY_RUN = (MUTANT is None)
@@ -319,10 +382,16 @@ DECL: dict = {
                     "link counts at a site) with HA's record<->metric readout E, "
                     "and the completion group G_C with GEN's completion->commutator "
                     "map delta.",
-        "family": "4 declared ENCODING CELLS = 2 identifications x 2 directions; "
-                  "7 declared primes; 8 measured defect-order classes; the "
-                  "4,608-member ord-5 completion class; HA's 9 admissible "
-                  "geometry records + 2 declared negative controls",
+        "family": "the COVARIANT ENCODING-CELL FAMILY = the orbit of the declared "
+                  "identifications under the metric-slot relabelling group S_3 "
+                  "(all 3! slot identifications, the two declared ones among "
+                  "them) x 2 directions; the cell count is computed from the "
+                  "declared metric slot triple and never typed; 7 declared "
+                  "primes; 8 measured defect-order classes; the 4,608-member "
+                  "ord-5 completion class; HA's 9 admissible geometry records "
+                  "(all of them swept at the base-point clause) + 2 declared "
+                  "negative controls; the dimensions d = 2,3,4,5 at the "
+                  "fixed-space sweep",
         "law": "the strengthened standard S1-S6 as BRG's terminal paper section "
                "2.6 registers it, operationalised clause by clause below; a "
                "candidate morphism is a map alpha : V -> G_C",
@@ -330,13 +399,21 @@ DECL: dict = {
                  "G-FLAT's count triple (1,1,2); the transport side's declared "
                  "base completion Q0 (the lex-first ord-5 member); the transport "
                  "side's initial configuration j0 = 0",
-        "arena action": "the identification sweep (natural / index); the DIRECTION "
-                        "sweep (counts->q / q->counts) -- the orientation "
-                        "convention RUNBOOK 14 requires to be swept; relabelling "
-                        "of the 9 completion labels by a permutation fixing label "
-                        "0; change of basis of the record datum space by an "
-                        "element of GL_3(F_p); the prime sweep; the choice of "
-                        "completion inside the declared ord-5 class",
+        "arena action": "the metric-slot relabelling group S_3, whose orbit on "
+                        "the declared identifications is the covariant cell "
+                        "family; the DIRECTION sweep (counts->q / q->counts) -- "
+                        "the orientation convention RUNBOOK 14 requires to be "
+                        "swept; relabelling of the 9 completion labels by a "
+                        "permutation fixing label 0; change of basis of the "
+                        "record datum space by an element of GL_3(F_p); the prime "
+                        "sweep; the choice of completion inside the declared "
+                        "ord-5 class; the choice of BASE RECORD (the state "
+                        "coordinate) among HA's 9 admissible records.  These "
+                        "seven are THIS UNIT'S OWN declared choices and they are "
+                        "the ones the Open-1 declaration-freeness criterion "
+                        "measures invariance under.  The nine-label completion "
+                        "arena is INHERITED from GEN/BRG, not chosen here; its "
+                        "effect is reported separately at both scales.",
         "provenance": "BRG (terminal), HA, GEN, XBA, PSI receipts and papers, "
                       "hash-pinned; every reused number read from them and "
                       "recomputed here",
@@ -380,7 +457,15 @@ DECL: dict = {
             "natural": "the link is paired with the metric component it "
                        "determines: n_e1 <-> q11, n_e2 <-> q22, n_diag <-> q12",
             "index": "the two coordinate triples are paired slot by slot in "
-                     "index order: n_e1 <-> q11, n_e2 <-> q12, n_diag <-> q22"},
+                     "index order: n_e1 <-> q11, n_e2 <-> q12, n_diag <-> q22",
+            "COVARIANT COMPLETION": "an identification is a NAMING of the "
+                     "metric's three slots, so RUNBOOK 15 requires the declared "
+                     "ones to be swept together with their whole orbit under the "
+                     "slot-relabelling group S_3.  That orbit is all 3! slot "
+                     "orders; two of them are the declared cells, two more are "
+                     "their chart-involution conjugates, and two more complete "
+                     "the orbit.  Each is built from the same declared metric "
+                     "slot triple; nothing is added to the declaration."},
         "directions": {
             "counts->q": "data -> geometry, the direction that matches the "
                          "transport side's completion -> defect; REGISTERED",
@@ -438,8 +523,9 @@ DECL: dict = {
         "fit_rule": "the candidate (g, lambda) is admitted if the square holds at "
                     "the FIT cell ALONE; nothing on HELD is consulted.",
         "H1": "the square at every HELD cell, as 9x9 permutation matrices",
-        "H2": "ord(delta(alpha(r))) at every HELD cell -- a transport-side "
-              "physical quantity",
+        "H2": "the DEFECT PERMUTATION delta(alpha(r)) itself, entry by entry, at "
+              "every HELD cell -- a transport-side physical quantity, and the "
+              "strictly stronger reading of the two (it implies the order)",
         "H3": "fix81(delta(alpha(r))) at every HELD cell -- GEN's own "
               "fixed-configuration stratification",
         "teeth": {"X-NOSQUARE": "predict that the defect map acts trivially, "
@@ -451,15 +537,29 @@ DECL: dict = {
     },
     # ------------------------------------------------------------------
     "controls": {
-        "F0-IDENT": "POSITIVE CONTROL: the identity self-morphism of the transport "
-                    "arena -- source and target both the completion group with the "
-                    "encoding delta, alpha = the identity.  The census machinery "
-                    "must FIND it, at every one of the 40,320 cells, and it must "
-                    "pass S1a, S1c, S1d and S3.",
-        "SYNTH-COMPATIBLE": "a declared synthetic compatible pair: the same "
-                            "transport side against a synthetic chart map E~ whose "
-                            "2-eigencovector is chart-ANTIsymmetric.  The machinery "
-                            "must FIND candidates and they must pass S1a-S1d.",
+        "F0-IDENT": "DISCLOSURE, NOT A CONTROL (RUNBOOK 14 addendum #208).  The "
+                    "identity self-morphism of the transport arena commutes with "
+                    "any encoding by construction: with alpha = the identity every "
+                    "clause of the check reads x == x.  Its 0 violations at all "
+                    "40,320 cells record that the identity candidate is the "
+                    "identity and nothing about the square, so it is registered as "
+                    "an analytically-forced disclosure gate and carries no mutant. "
+                    "THE POSITIVE CONTROL OF THIS UNIT IS SYNTH-COMPATIBLE.",
+        "SYNTH-COMPATIBLE": "THE POSITIVE CONTROL: a declared synthetic compatible "
+                            "pair -- the same transport side against a synthetic "
+                            "chart map E~ whose 2-eigencovector is "
+                            "chart-ANTIsymmetric.  The machinery must FIND "
+                            "candidates and they must pass S1a, S1b, S1c and S1d. "
+                            "ITS BASE-POINT CLAUSE IS EVALUATED AT THE DECLARED "
+                            "tau-ASYMMETRIC RECORD G-ANISO, and the reason is "
+                            "measured, not conventional: S1c forces the exponent "
+                            "covector to be chart-antisymmetric, an antisymmetric "
+                            "covector annihilates any tau-FIXED record, and the "
+                            "declared base record G-FLAT is tau-fixed -- so S1c "
+                            "and S1d are jointly unsatisfiable at G-FLAT for EVERY "
+                            "chart map whatsoever, measured exhaustively over all "
+                            "(generator, covector) pairs.  The base record used by "
+                            "the control is recorded in its gate.",
         "SYNTH-EMPTY": "a declared synthetic incompatible pair: a scalar chart map "
                        "with no eigenvalue 2.  The machinery must report EMPTY.",
         "BREAK-HOM": "NEGATIVE CONTROL WITH TEETH: the accepted candidate's "
@@ -470,6 +570,33 @@ DECL: dict = {
                      "be rejected by S1b alone, with the rejecting clause named.",
     },
     # ------------------------------------------------------------------
+    "open1_criterion": {
+        "declaration_freeness": "COMPUTED PER CANDIDATE, NEVER TYPED.  A candidate "
+            "is DECLARATION-FREE iff its admitted prime set is INVARIANT under "
+            "every re-declaration of a choice THIS UNIT makes: the prime together "
+            "with its selection rule (p := 7 with ord(D) := 7, whose completion "
+            "class is measured non-empty and whose lex-first member is rebuilt "
+            "here), the DIRECTION (registered -> reversed), the IDENTIFICATION "
+            "(the declared cell family -> a single slot identification), the BASE "
+            "RECORD (G-FLAT -> G-ANISO), the completion inside the ord-5 class, "
+            "the completion-label relabelling, and the record-space basis.  Each "
+            "candidate is a FUNCTION of that declaration record and is re-evaluated "
+            "at each counterfactual; the classification is the measured invariance, "
+            "and a single flipped entry is caught.",
+        "scales": "the nine-label completion arena is INHERITED (GEN/BRG), not a "
+            "choice of this unit, so it is not one of the re-declarations; instead "
+            "every candidate is reported at BOTH declared scales -- the nine-label "
+            "arena of this pairing and the sixteen-label successor arena of G15 -- "
+            "and the arena's own dependence on the declared prime (the smallest "
+            "arena admitting an injective candidate has 3p + 1 labels: 16 at "
+            "p = 5, 22 at p = 7) is measured and reported with them.",
+        "verdict_rule": "LCB-PRIME-DERIVED iff, at the arena being reported, some "
+            "declaration-free NARROWING candidate other than the intersection "
+            "itself admits exactly one admissible prime, OR the intersection of "
+            "every declaration-free narrowing is a singleton.  Otherwise "
+            "LCB-PRIME-DECLARED.  The unit's verdict is entered at the DECLARED "
+            "nine-label arena.",
+    },
     "open1_candidates": {
         "P1": "the deformation carrier's size p^(k+d)",
         "P2": "the deformation arena's front structure (k, d, L, sites, links)",
@@ -487,9 +614,18 @@ DECL: dict = {
         "P11": "the p-part of the completion group's order against |V| = p^3",
         "P12": "the intersection of every declaration-free candidate",
     },
-    "outcomes": ["LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
+    "outcomes": ["LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-"
+                 "SQUARE",
+                 "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD",
                  "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD",
                  "LCB-BLOCKED-AT-CENSUS-DISCIPLINE"],
+    "outcome_qualifier": "UNIVERSAL-FOR-THIS-SQUARE is EARNED, not asserted: it is "
+        "entered only if the census is empty at EVERY cell of the covariant "
+        "family, in BOTH directions, at EVERY declared prime and at every cell of "
+        "the (prime, defect-order) grid, AND the S1a-and-S3 obstruction is "
+        "measured to cover every one of those cells -- arena-free where the "
+        "re-encoding's fixed space is nonzero, by the arena's own p-part where it "
+        "is not.  If any of that fails the unqualified name is returned.",
     "prime_outcomes": ["LCB-PRIME-DECLARED", "LCB-PRIME-DERIVED"],
 }
 
@@ -675,19 +811,81 @@ def kernel_fp(M, p):
     return basis
 
 
+DECLARED_SLOT_ORDERS = {"natural": ((0, 0), (1, 1), (0, 1)),
+                        "index": ((0, 0), (0, 1), (1, 1))}
+METRIC_SLOTS = ((0, 0), (0, 1), (1, 1))       # the declared metric slot triple
+
+
+def slot_orbit():
+    """The COVARIANT identification family: the orbit of the declared metric slot
+    orders under the slot-relabelling group S_3, i.e. every ordering of the
+    declared metric slot triple.  Names: the two declared ones, their
+    chart-involution conjugates (tau- prefix), and the two that complete the
+    orbit (alt- prefix).  Nothing is typed: the orders are enumerated from
+    METRIC_SLOTS.  [instrument -- mutable]"""
+    def tau_of(order):
+        sw = {0: 1, 1: 0}
+        return tuple(tuple(sorted((sw[i], sw[j]))) for (i, j) in order)
+    out = {}
+    for nm, od in DECLARED_SLOT_ORDERS.items():
+        out[nm] = od
+        out["tau-" + nm] = tau_of(od)
+    rest = sorted(od for od in itertools.permutations(METRIC_SLOTS)
+                  if od not in out.values())
+    if rest:
+        out["alt"] = rest[0]
+        out["tau-alt"] = tau_of(rest[0])
+    if _M_ORBITDROP:
+        out = dict(DECLARED_SLOT_ORDERS)
+    return out
+
+
+SLOT_ORDERS = slot_orbit()
+
+
 def encoding_matrix(identification: str, direction: str):
     """HA's record<->metric readout, rebuilt exactly as ha_successor_exact.py
     builds it (rows = the declared links, columns = the metric components), then
-    read as an ENDOMORPHISM of the one datum space under the declared
+    read as an ENDOMORPHISM of the one datum space under the given
     identification and in the declared direction.  [instrument -- mutable]"""
     corder = [(1, 0), (0, 1), (1, 1)]
-    morder = ({"natural": [(0, 0), (1, 1), (0, 1)],
-               "index": [(0, 0), (0, 1), (1, 1)]})[identification]
+    morder = SLOT_ORDERS[identification]
     A = [[Fr(lk[i] * lk[j] * (1 if i == j else 2)) for (i, j) in morder]
          for lk in corder]
     if _M_READOUT:
         A[0][2] = A[0][2] + Fr(1)
     return A if direction == "q->counts" else inv3(A)
+
+
+def general_d_readout(d: int, ordering: str):
+    """HA's readout at general d (HA section 9): rows the links -- the d axes and
+    the C(d,2) diagonals -- columns the d(d+1)/2 metric slots, in the NATURAL
+    order (each link against the slot it determines) or the LEX order (sym_index).
+    Returns the q -> counts matrix.  [instrument -- mutable]"""
+    diag = [(i, i) for i in range(d)]
+    off = [(i, j) for i in range(d) for j in range(i + 1, d)]
+    links = [tuple(1 if k == i else 0 for k in range(d)) for i in range(d)] + \
+            [tuple(1 if k in (i, j) else 0 for k in range(d)) for (i, j) in off]
+    morder = (diag + off) if ordering == "natural" else \
+        [(i, j) for i in range(d) for j in range(i, d)]
+    return [[Fr(lk[i] * lk[j] * (1 if i == j else 2)) for (i, j) in morder]
+            for lk in links]
+
+
+def dimension_sweep():
+    """The declared dimensions at which the fixed-space measurement is repeated.
+    [instrument -- mutable]"""
+    if _M_DSWEEP:
+        return [2]
+    return [2, 3, 4, 5]
+
+
+def column_sums(A):
+    """The column sums of the q -> counts readout.  [instrument -- mutable]"""
+    n = len(A)
+    if _M_COLSUM:
+        return [sum(A[i][c] for c in range(len(A[0]))) for i in range(n)]
+    return [sum(A[i][c] for i in range(n)) for c in range(len(A[0]))]
 
 
 def ha_readout_matrix():
@@ -757,11 +955,12 @@ def ha_generator(p, rho, n):
 
 
 def encoding_cells():
-    """The declared 2 x 2 encoding-cell sweep.  [instrument -- mutable]"""
-    cells = [(idn, dr) for idn in ("natural", "index")
+    """The COVARIANT encoding-cell sweep: every identification in the declared
+    cells' S_3 orbit x both directions.  [instrument -- mutable]"""
+    cells = [(idn, dr) for idn in SLOT_ORDERS
              for dr in ("counts->q", "q->counts")]
     if _M_ENCDROP:
-        cells = cells[:3]
+        cells = cells[:-1]
     return cells
 
 
@@ -857,6 +1056,58 @@ def base_record(records):
     return tuple(records["G-FLAT"])
 
 
+def record_sweep(admissible):
+    """The declared base-record sweep: the STATE coordinate of the arena, swept
+    over every one of HA's admissible geometry records rather than fixed at the
+    declared one.  [instrument -- mutable]"""
+    if _M_RECORDS:
+        return ["G-FLAT"]
+    return sorted(admissible)
+
+
+def delta_fixed_points(members, s):
+    """The fixed-point set of the transport side's encoding delta inside a given
+    arena: {x : delta(x) = x}.  delta(x) = sigma(x)^-1 x, so this is {x :
+    sigma(x) = e} = {e}, with no hypothesis on the arena.  [instrument --
+    mutable]"""
+    if _M_FIXPOINT:
+        return [q for q in members if conj_by(s, q) == q]
+    return [q for q in members if pmul(pinv(conj_by(s, q)), q) == q]
+
+
+def fix_space_dim(M, p):
+    """dim ker(E - I) over F_p -- the deformation side's fixed space.
+    [instrument -- mutable]"""
+    if _M_FIXSPACE:
+        return len(M)
+    return len(kernel_fp([[(M[i][j] - (1 if i == j else 0)) % p
+                           for j in range(len(M))] for i in range(len(M))], p))
+
+
+def orbit_factor(members, s, L):
+    """The number of choices the SET-level square leaves on one E-orbit of length
+    L: the points of the transport arena with delta^L(x) = x.  [instrument --
+    mutable]"""
+    if _M_SETLEVEL:
+        return 1
+    n = 0
+    for q in members:
+        x = q
+        for _ in range(L):
+            x = pmul(pinv(conj_by(s, x)), x)
+        if x == q:
+            n += 1
+    return n
+
+
+def witness_covector(ker, mult):
+    """The exhibited tau-conjugate witness's exponent covector, taken from the
+    measured 2-eigenspace.  [instrument -- mutable]"""
+    if _M_WITNESS7:
+        return tuple((x + 1) for x in ker[0])
+    return tuple((mult * x) for x in ker[0])
+
+
 def strat_of(perm, source_value):
     """S2's stratification reading: the TRANSPORTED defect's fixed-configuration
     count.  [instrument -- mutable]"""
@@ -926,6 +1177,14 @@ def fit_cells(V, e1):
     return [e1]
 
 
+def s5_chart_map(real, synthetic):
+    """S5's deformation side: the PAIRING'S OWN readout, not the synthetic
+    control map.  [instrument -- mutable]"""
+    if _M_S5MAP:
+        return synthetic
+    return real
+
+
 def teeth_exponent(k, p):
     """The declared failing extension X-NOSQUARE: it predicts that the defect
     map acts trivially.  [instrument -- mutable]"""
@@ -944,9 +1203,8 @@ def transported_quantity(perm, other):
 
 
 def identity_candidate(n):
-    """The identity self-morphism.  [instrument -- mutable]"""
-    if _M_IDENT:
-        return pmul(pident(n), (1, 0) + tuple(range(2, n)))
+    """The identity self-morphism.  Its check is analytically forced and carries
+    no mutant: it is a DISCLOSURE, not a control (see DECL controls F0-IDENT)."""
     return pident(n)
 
 
@@ -1011,13 +1269,54 @@ def selftest_set(declared, verdict_selected):
     return declared
 
 
-def declaration_free(pid, computed):
-    """Whether an Open-1 candidate is declaration-free: it must take no declared
-    prime and no declared choice of this unit among its inputs.
+def declaration_free(pid, measured, order):
+    """Whether an Open-1 candidate is declaration-free.  The value passed in is
+    the MEASURED invariance of the candidate's admitted set under every
+    re-declaration of a choice of this unit; nothing is typed here.
     [instrument -- mutable]"""
     if _M_OPEN1:
         return True
-    return computed
+    if _M_FREEFLIP and pid == order[0]:
+        return not measured
+    return measured
+
+
+def open1_intersection(sets, admissible):
+    """The intersection of the declaration-free narrowings, taken at its own
+    source.  [instrument -- mutable]"""
+    inter = set(admissible)
+    for s in sets:
+        inter &= set(s)
+    if _M_INTER:
+        return {sorted(admissible)[0]}
+    return inter
+
+
+def open1_scale_labels(nine, sixteen):
+    """The two declared arena scales at which every Open-1 candidate is reported.
+    [instrument -- mutable]"""
+    if _M_SCALE:
+        return [nine, nine]
+    return [nine, sixteen]
+
+
+def synthetic_open1_tables(admissible):
+    """Two declared SYNTHETIC candidate tables, run through the same verdict
+    derivation: one on which a declaration-free narrowing pins a single
+    admissible prime (DERIVED must be returned), one on which two survive
+    (DECLARED must be returned).  [instrument -- mutable]"""
+    a = sorted(admissible)
+    derived = [{"id": "S1", "admissible_part": [a[0]], "declaration_free": True,
+                "role": "NARROWING", "unique": True},
+               {"id": "S2", "admissible_part": a[:3], "declaration_free": True,
+                "role": "NARROWING", "unique": False}]
+    declared = [{"id": "S1", "admissible_part": a[:2], "declaration_free": True,
+                 "role": "NARROWING", "unique": False},
+                {"id": "S2", "admissible_part": a[:3], "declaration_free": True,
+                 "role": "NARROWING", "unique": False}]
+    if _M_REACH:
+        derived = declared
+    return derived, declared
 
 
 def unique_prime(sets):
@@ -1028,18 +1327,24 @@ def unique_prime(sets):
     return len(sets) == 1
 
 
-def obstruction_name(spectral, parity):
-    """The named obstruction, derived from the measured clause failures.
-    [instrument -- mutable]"""
+def obstruction_name(arena_free, arena_bound, total, spectral, parity):
+    """The named obstruction, derived from the measured coverage counts and the
+    measured per-cell diagnostics.  [instrument -- mutable]"""
     if _M_OBSTR:
         return "unequal carrier cardinality"
-    if spectral and parity:
-        return ("S1 -- encoding intertwining: SPECTRAL in the data->geometry "
-                "direction (2 is not in the chart map's spectrum) and "
-                "CHART-PARITY in the geometry->data direction (the "
-                "2-eigencovector is chart-symmetric where the intertwining "
-                "needs it chart-antisymmetric)")
-    return "UNDETERMINED"
+    if _M_FABRIC:
+        return ("S1b -- the record datum's additive structure is carried by no "
+                "completion of the transport arena")
+    if arena_free + arena_bound < total or not (spectral and parity):
+        return "UNDETERMINED"
+    return ("S1a AND S3 -- THE FIXED-POINT MISMATCH: the transport side's "
+            "encoding has exactly ONE fixed point while the deformation side's "
+            "re-encoding fixes a nonzero vector, so the square must collapse "
+            "what injectivity forbids it to collapse.  ARENA-FREE at %d of the "
+            "%d covariant cells; at the remaining %d the arena's own p-part "
+            "decides.  Per-cell diagnostics of the same wall: SPECTRAL in the "
+            "data->geometry direction, CHART-PARITY in the geometry->data "
+            "direction." % (arena_free, total, total - arena_free))
 
 
 def census_is_empty(found_at_standard):
@@ -1050,15 +1355,26 @@ def census_is_empty(found_at_standard):
     return found_at_standard == 0
 
 
-def derive_verdict(empty, complete, both_reachable, controls_ok):
+def universality_measured(covered, total):
+    """Whether the obstruction is measured to cover every cell of the covariant
+    family -- the condition the verdict's qualifier is earned by.
+    [instrument -- mutable]"""
+    if _M_UNIVERSAL:
+        return True
+    return total > 0 and covered == total
+
+
+def derive_verdict(empty, complete, both_reachable, controls_ok, universal):
     """The verdict string, DERIVED from the measured booleans inside its gate.
     [instrument -- mutable]"""
     if _M_VERDICT:
         return "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD"
     if not (complete and both_reachable and controls_ok):
         return "LCB-BLOCKED-AT-CENSUS-DISCIPLINE"
-    return ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD" if empty
-            else "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD")
+    if not empty:
+        return "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD"
+    return ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-SQUARE"
+            if universal else "LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD")
 
 
 def derive_prime_verdict(unique_forced):
@@ -1448,13 +1764,12 @@ def run_unit(src: str) -> dict:
 
     cells = encoding_cells()
     TAU = tau_perm()
-    # the chart involution's slot permutation in each of the two coordinate
-    # orders; an identification is CHART-COMPATIBLE when the two agree
+    # the chart involution's slot permutation in each coordinate order; an
+    # identification is CHART-COMPATIBLE when the two agree
     slot_tau = {}
-    for idn, morder in (("natural", [(0, 0), (1, 1), (0, 1)]),
-                        ("index", [(0, 0), (0, 1), (1, 1)])):
+    for idn, morder in SLOT_ORDERS.items():
         sw = {0: 1, 1: 0}
-        img = [morder.index(tuple(sorted((sw[i], sw[j])))) for (i, j) in morder]
+        img = [list(morder).index(tuple(sorted((sw[i], sw[j])))) for (i, j) in morder]
         slot_tau[idn] = tuple(img)
     compat = {idn: (slot_tau[idn] == tuple(TAU)) for idn in slot_tau}
     enc: dict = {}
@@ -1474,37 +1789,60 @@ def run_unit(src: str) -> dict:
                           "det": str(det3(M)), "tau_equivariant": eq,
                           "chart_compatible": compat[idn]}
     invertible = all(det3(v["Q"]) != 0 for v in enc.values())
-    g09 = gate("G09", "THE FOUR DECLARED ENCODING CELLS ARE BUILT AND "
-               "CELL-COMPLETE (2 identifications x 2 directions), EACH ONE "
-               "INVERTIBLE MOD p, AND THE CHART INVOLUTION IS READ IN BOTH "
-               "COORDINATE ORDERS: the NATURAL identification carries the chart "
-               "involution -- the axis swap induces the SAME slot permutation on "
-               "counts and on the metric, and the re-encoding is measured to "
-               "COMMUTE with it, so the deformation side's encoding is "
-               "chart-EQUIVARIANT -- while the INDEX identification is measured "
-               "NOT to carry it.  Exactly one of the two identifications is "
-               "chart-compatible, and that is a measurement",
-               len(cells) == 4 and len(set(cells)) == 4 and invertible
+    orbit_complete = (sorted(SLOT_ORDERS.values())
+                      == sorted(itertools.permutations(METRIC_SLOTS)))
+    declared_inside = all(DECLARED_SLOT_ORDERS[k] == SLOT_ORDERS.get(k)
+                          for k in DECLARED_SLOT_ORDERS)
+    def tau_of_order(order):
+        sw = {0: 1, 1: 0}
+        return tuple(tuple(sorted((sw[i], sw[j]))) for (i, j) in order)
+    tau_closed = all(tau_of_order(v) in set(SLOT_ORDERS.values())
+                     for v in SLOT_ORDERS.values())
+    g09 = gate("G09", "THE ENCODING-CELL FAMILY IS THE COVARIANT ORBIT OF THE "
+               "DECLARED CELLS AND IS CELL-COMPLETE (RUNBOOK 15): an "
+               "identification is a NAMING of the metric's three slots, so the "
+               "declared identifications are swept together with their whole "
+               "orbit under the slot-relabelling group S_3.  That orbit is "
+               "measured to be every ordering of the declared metric slot triple "
+               "-- 3! of them, computed from the triple and never typed -- the "
+               "two declared ones among them, each cell invertible mod p; and "
+               "the chart involution is read in both coordinate orders, so the "
+               "identifications that CARRY it (the axis swap inducing the same "
+               "slot permutation on counts and on the metric, the re-encoding "
+               "measured to commute with it) are separated from those that do "
+               "not, by measurement",
+               orbit_complete and declared_inside and tau_closed
+               and len(cells) == 2 * math.factorial(3)
+               and len(set(cells)) == len(cells) and invertible
                and TAU != pident(3) and compat["natural"]
                and not compat["index"]
                and tau_equiv == sum(1 for (a, b) in cells if compat[a]),
                {"cells": [list(c) for c in cells],
+                "slot_orders": {k: [list(s) for s in v]
+                                for k, v in SLOT_ORDERS.items()},
+                "declared_identifications": sorted(DECLARED_SLOT_ORDERS),
+                "orbit_is_the_full_slot_relabelling_orbit": orbit_complete,
                 "tau_on_counts": list(TAU),
                 "tau_induced_slot_permutation": {k: list(v)
                                                  for k, v in slot_tau.items()},
                 "chart_compatible": compat,
                 "tau_equivariant_cells": tau_equiv,
+                "family_closed_under_the_chart_involution": tau_closed,
                 "matrices": {f"{a}|{b}": {"det": enc[(a, b)]["det"],
                                           "charpoly": enc[(a, b)]["charpoly"],
                                           "mod_p": enc[(a, b)]["Fp"]}
                              for (a, b) in cells}})
-    report("G09", g09, f"{len(cells)} encoding cells, all invertible; "
-           f"chart-compatible identifications {compat}; {tau_equiv} cells "
+    report("G09", g09, f"{len(cells)} covariant encoding cells "
+           f"({len(SLOT_ORDERS)} slot identifications x 2 directions), all "
+           f"invertible; chart-carrying identifications "
+           f"{sorted(k for k in compat if compat[k])}; {tau_equiv} cells "
            f"chart-equivariant")
     for (a, b) in cells:
-        say(f"      {a:8s} {b:10s} det {enc[(a, b)]['det']:>5s}  "
+        say(f"      {a:12s} {b:10s} det {enc[(a, b)]['det']:>5s}  "
             f"E mod 5 = {enc[(a, b)]['Fp']}")
     tables["encoding_cells"] = {f"{a}|{b}": enc[(a, b)]["Fp"] for (a, b) in cells}
+    tables["slot_orders"] = {k: [list(s) for s in v]
+                             for k, v in SLOT_ORDERS.items()}
     say("")
 
     # ==================== 3. THE S1 CENSUS ================================
@@ -1537,12 +1875,20 @@ def run_unit(src: str) -> dict:
     say(f"  route B enumerated {len(HOMS)} homomorphisms V -> completion group; "
         f"image-size spectrum {dict(sorted(imgspec.items()))}")
 
+    _POWS: dict = {}
+
+    def powtab(g):
+        t = _POWS.get(g)
+        if t is None:
+            t = [pident(NLAB)]
+            for _ in range(P - 1):
+                t.append(pmul(t[-1], g))
+            _POWS[g] = t
+        return t
+
     def alpha_from_triple(tr, r):
-        out = pident(NLAB)
-        for k in range(3):
-            for _ in range(r[k]):
-                out = pmul(out, tr[k])
-        return out
+        return pmul(pmul(powtab(tr[0])[r[0]], powtab(tr[1])[r[1]]),
+                    powtab(tr[2])[r[2]])
 
     census: dict = {}
     for (idn, dr) in cells:
@@ -1611,7 +1957,7 @@ def run_unit(src: str) -> dict:
     report("G10", g10, "two routes agree at all "
            f"{len(cells)} cells; taint {ROUTE_CALLS['taint']}")
     for r in rows:
-        say(f"      {r['identification']:8s} {r['direction']:10s} "
+        say(f"      {r['identification']:12s} {r['direction']:10s} "
             f"route A {r['route_A_linear_algebra']:4d}   route B "
             f"{r['route_B_enumeration']:4d}   ker(E^T-2I) dim "
             f"{r['kernel_dim']}")
@@ -1627,8 +1973,9 @@ def run_unit(src: str) -> dict:
                "count alone -- the cyclic subgroups of order p number "
                "(elements)/(p-1), each carrying (p^3 - 1) surjections plus the "
                "one trivial map -- so a dropped basis image cannot pass silently",
-               len(rows) == 4 and len({(r["identification"], r["direction"])
-                                       for r in rows}) == 4
+               len(rows) == len(cells)
+               and len({(r["identification"], r["direction"])
+                        for r in rows}) == 2 * math.factorial(3)
                and len(HOMS) == len(set(HOMS))
                and len(HOMS) == homs_predicted
                and len(square_cells(V)) == P ** 3,
@@ -1685,9 +2032,418 @@ def run_unit(src: str) -> dict:
              {"p_part_exponent": lagr, "c_plus_one_branch": len(COMM)})
     say("")
 
+    # ============ 4b. THE OPERATIVE OBSTRUCTION: THE FIXED-POINT MISMATCH ==
+    say("--- 4b. THE FIXED-POINT MISMATCH, MEASURED ARENA BY ARENA ---")
+    progress("fixed-point lemma")
+    r0_decl = base_record(RECORDS)
+
+    # (i) the transport side's encoding has exactly ONE fixed point, at every
+    #     arena.  Measured at three: 4 labels, 9 labels, and the order-125
+    #     subgroup the sixteen-label positive control builds.
+    def cyc(lo):
+        t = list(range(16))
+        for k in range(5):
+            t[lo + k] = lo + (k + 1) % 5
+        return tuple(t)
+    g16gens = [cyc(1), cyc(6), cyc(11)]
+    img16 = group_closure(g16gens, 16)
+    SIG16 = sigma_perm(4)
+    fam4 = [(0,) + t for t in itertools.permutations(range(1, 4))]
+    fp_rows = []
+    for label, members, sgm in (("4 labels", fam4, sigma_perm(2)),
+                                ("9 labels", fam, SIG),
+                                ("16 labels (the order-125 witness subgroup)",
+                                 sorted(img16), SIG16)):
+        fx = delta_fixed_points(members, sgm)
+        fp_rows.append({"arena": label, "members": len(members),
+                        "delta_fixed_points": len(fx),
+                        "the_fixed_point_is_the_identity":
+                            fx == [pident(len(members[0]))]})
+    # the same fact read the other way: {x : delta(x) = x} = {x : sigma(x) = e}
+    sig_trivial = sum(1 for q in fam if conj_by(SIG, q) == pident(NLAB)
+                      and q != pident(NLAB))
+    one_each = all(r["delta_fixed_points"] == 1
+                   and r["the_fixed_point_is_the_identity"] for r in fp_rows)
+    g35 = gate("G35", "THE TRANSPORT SIDE'S ENCODING HAS EXACTLY ONE FIXED "
+               "POINT, AND THAT IS ARENA-FREE: delta(x) = sigma(x)^-1 x, so "
+               "delta(x) = x holds exactly when sigma(x) = e, and conjugation by "
+               "the label exchange is injective.  Measured by exhaustive sweep at "
+               "three different arenas -- the four-label completion group, the "
+               "nine-label one this pairing declares, and the order-125 subgroup "
+               "the sixteen-label control builds -- the fixed-point set is a "
+               "SINGLETON at each, and its element is the identity",
+               one_each and sig_trivial == 0,
+               {"rows": fp_rows,
+                "non_identity_elements_conjugation_sends_to_the_identity":
+                    sig_trivial})
+    report("G35", g35, "; ".join(f"{r['arena']}: {r['members']} members, "
+                                 f"fix(delta) = {r['delta_fixed_points']}"
+                                 for r in fp_rows))
+
+    # (ii) the deformation side's fixed space, at every cell and every prime,
+    #      by two computations: a kernel dimension and a determinant test
+    fixe_rows, fixe_bad = [], []
+    for (idn, dr) in cells:
+        MQ = enc[(idn, dr)]["Q"]
+        for p in PRIMES:
+            if any(x.denominator % p == 0 for row in MQ for x in row):
+                continue
+            Mp = to_fp(MQ, p)
+            kd = fix_space_dim(Mp, p)
+            dt = det3([[(Mp[i][j] - (1 if i == j else 0)) % p for j in range(3)]
+                       for i in range(3)]) % p
+            if (kd > 0) != (dt == 0):
+                fixe_bad.append([idn, dr, p, kd, int(dt)])
+            fixe_rows.append({"identification": idn, "direction": dr, "p": p,
+                              "dim_fix_E": kd, "fixed_space_size": p ** kd,
+                              "det_E_minus_I_mod_p": int(dt)})
+    arena_free_cells = sorted({(r["identification"], r["direction"])
+                               for r in fixe_rows if r["dim_fix_E"] > 0})
+    arena_free_all_p = sorted({(idn, dr) for (idn, dr) in cells
+                               if all(r["dim_fix_E"] > 0 for r in fixe_rows
+                                      if r["identification"] == idn
+                                      and r["direction"] == dr)})
+    # (iii) the same measurement at general d, for the two declared orderings
+    def nullity_q(M, shift):
+        n = len(M)
+        B = [[M[i][j] - (Fr(shift) if i == j else Fr(0)) for j in range(n)]
+             for i in range(n)]
+        r = 0
+        for c in range(n):
+            pr = None
+            for i in range(r, n):
+                if B[i][c] != 0:
+                    pr = i
+                    break
+            if pr is None:
+                continue
+            B[r], B[pr] = B[pr], B[r]
+            iv = B[r][c]
+            B[r] = [x / iv for x in B[r]]
+            for i in range(n):
+                if i != r and B[i][c] != 0:
+                    f = B[i][c]
+                    B[i] = [B[i][j] - f * B[r][j] for j in range(n)]
+            r += 1
+        return n - r
+    dsweep = dimension_sweep()
+    d_rows = []
+    for d in dsweep:
+        for ordering in ("natural", "lex"):
+            A = general_d_readout(d, ordering)
+            d_rows.append({"d": d, "ordering": ordering, "size": len(A),
+                           "dim_fix": nullity_q(A, 1),
+                           "column_sums": [str(x) for x in column_sums(A)]})
+    d_ok = all(r["dim_fix"] >= 1 for r in d_rows)
+    g36 = gate("G36", "THE DEFORMATION SIDE'S RE-ENCODING FIXES A NONZERO VECTOR "
+               "-- MEASURED, NOT ASSUMED, AND NOT EVERYWHERE: dim ker(E - I) is "
+               "computed at EVERY covariant cell and EVERY declared prime by "
+               "Gaussian elimination and independently by the vanishing of "
+               "det(E - I) mod p, and the two agree at every one of them; and "
+               "the same quantity is recomputed over Q at the declared "
+               "dimensions d = 2,3,4,5 for both the natural and the lexicographic "
+               "slot orderings, where it is measured to be d and 1 respectively "
+               "-- never zero.  At d = 2 the measurement separates the cells: "
+               "the fixed space is nonzero at some identifications at every "
+               "prime and ZERO at others, and that is what decides where the "
+               "obstruction below is arena-free",
+               fixe_bad == [] and d_ok and len(d_rows) == 2 * len(dsweep)
+               and len(dsweep) > 1 and len(arena_free_all_p) < len(cells)
+               and len(arena_free_all_p) > 0,
+               {"rows": fixe_rows, "disagreements": fixe_bad,
+                "cells_with_a_nonzero_fixed_space_at_every_declared_prime":
+                    [list(c) for c in arena_free_all_p],
+                "cells_total": len(cells),
+                "general_dimension_rows": d_rows})
+    report("G36", g36, f"{len(fixe_rows)} (cell, prime) fixed spaces, "
+           f"{len(fixe_bad)} route disagreements; nonzero at every declared "
+           f"prime at {len(arena_free_all_p)} of {len(cells)} cells; general-d "
+           f"rows {len(d_rows)}, all nonzero: {d_ok}")
+    for r in d_rows:
+        say(f"      d = {r['d']}  {r['ordering']:8s} {r['size']:2d}x{r['size']:<2d} "
+            f"dim fix(E) {r['dim_fix']}   column sums {r['column_sums']}")
+
+    # (iv) the joint unsatisfiability of S1a and S3, cell by cell, and the
+    #      mechanism measured live on the census's own survivors
+    cover_rows, uncovered = [], []
+    for (idn, dr) in cells:
+        for p in PRIMES:
+            rw = [r for r in fixe_rows if r["identification"] == idn
+                  and r["direction"] == dr and r["p"] == p]
+            if not rw:
+                continue
+            af = rw[0]["dim_fix_E"] > 0
+            ab = p_part_exponent(NLAB - 1, p) < 3
+            cover_rows.append({"identification": idn, "direction": dr, "p": p,
+                               "arena_free_branch": af, "p_part_branch": ab})
+            if not (af or ab):
+                uncovered.append([idn, dr, p])
+    mech_rows = []
+    for (idn, dr) in cells:
+        keep = census[(idn, dr)]["routeB"]
+        if not keep:
+            continue
+        Efp = enc[(idn, dr)]["Fp"]
+        fixV = [r for r in V if mat_apply(Efp, r, P) == r]
+        tr = keep[0]
+        amap = {r: alpha_from_triple(tr, r) for r in V}
+        collapsed = sum(1 for r in fixV if amap[r] == pident(NLAB))
+        mech_rows.append({"identification": idn, "direction": dr,
+                          "fixed_records": len(fixV),
+                          "fixed_records_sent_to_the_identity": collapsed,
+                          "image_size": len(set(amap.values())),
+                          "record_space": len(V),
+                          "arena_free_branch_bites_here": len(fixV) > 1,
+                          "injective": len(set(amap.values())) == len(V)})
+    mech_ok = (bool(mech_rows)
+               and all(r["fixed_records_sent_to_the_identity"]
+                       == r["fixed_records"] and not r["injective"]
+                       for r in mech_rows)
+               and any(r["fixed_records"] >= P for r in mech_rows))
+    g37 = gate("G37", "S1a AND S3 -- BOTH OF THEM CLAUSES BRG REGISTERED -- ARE "
+               "JOINTLY UNSATISFIABLE AT EVERY CELL OF THE COVARIANT FAMILY AND "
+               "EVERY DECLARED PRIME, AND THE MECHANISM IS MEASURED LIVE: the "
+               "square sends the re-encoding's fixed space into the transport "
+               "encoding's fixed-point set, which G35 measures to be a single "
+               "point, so a candidate satisfying S1a collapses the whole fixed "
+               "space onto the identity and cannot be injective.  Where the "
+               "fixed space is nonzero that argument needs NO arena hypothesis; "
+               "where it is zero the arena's own p-part decides instead, and "
+               "every (cell, prime) is measured to be covered by one branch or "
+               "the other.  The collapse itself is measured on the census's own "
+               "survivors: every survivor sends every fixed record to the "
+               "identity and none is injective",
+               uncovered == [] and mech_ok and len(cover_rows) > 0,
+               {"cells_covered": len(cover_rows), "uncovered": uncovered,
+                "covered_by_the_arena_free_branch":
+                    sum(1 for r in cover_rows if r["arena_free_branch"]),
+                "covered_by_the_p_part_branch_only":
+                    sum(1 for r in cover_rows
+                        if r["p_part_branch"] and not r["arena_free_branch"]),
+                "mechanism_rows": mech_rows})
+    report("G37", g37, f"{len(cover_rows)} (cell, prime) pairs, {len(uncovered)} "
+           f"uncovered; arena-free branch covers "
+           f"{sum(1 for r in cover_rows if r['arena_free_branch'])}, the p-part "
+           f"branch alone {sum(1 for r in cover_rows if r['p_part_branch'] and not r['arena_free_branch'])}")
+    if mech_rows:
+        m = max(mech_rows, key=lambda r: r["fixed_records"])
+        say(f"      live collapse at {m['identification']}|{m['direction']}: "
+            f"{m['fixed_records_sent_to_the_identity']} of "
+            f"{m['fixed_records']} fixed records go to the identity; |image| "
+            f"{m['image_size']} of {m['record_space']}")
+    disclose("X11", "THE OBSTRUCTION IS ARENA-FREE WHERE THE RE-ENCODING FIXES A "
+             "NONZERO VECTOR, AND THAT IS NOT EVERYWHERE.  delta has exactly one "
+             "fixed point at every arena (G35), so S1a forces alpha(fix E) = "
+             "{e} and S3 fails whenever dim ker(E - I) >= 1.  Measured over the "
+             "covariant family, that holds at %d of the %d cells at every "
+             "declared prime; at the remaining %d the re-encoding's spectrum "
+             "carries primitive cube roots of unity instead of 1 and the fixed "
+             "space is trivial, so there the emptiness is carried by the arena's "
+             "own p-part (p^1 against p^3) and is arena-RELATIVE.  The "
+             "universality is over this square's own cell family, not over "
+             "arenas at those four cells."
+             % (len(arena_free_all_p), len(cells),
+                len(cells) - len(arena_free_all_p)),
+             {"arena_free_cells": [list(c) for c in arena_free_all_p],
+              "cells": len(cells)})
+
+    # (v) the column-sum lemma: why the geometry->data direction is always live
+    #     and always dies at S1c
+    ones = (1, 1, 1)
+    colsum_rows = []
+    for idn in SLOT_ORDERS:
+        A = encoding_matrix(idn, "q->counts")
+        cs = column_sums(A)
+        lhs = tuple(sum(ones[i] * A[i][j] for i in range(3)) for j in range(3))
+        colsum_rows.append({"identification": idn,
+                            "column_sums": [str(x) for x in cs],
+                            "all_columns_sum_to_two": all(x == 2 for x in cs),
+                            "ones_covector_is_a_2_eigencovector":
+                                lhs == tuple(Fr(2) * x for x in ones)})
+    ones_tau = tuple(ones[TAU[i]] for i in range(3))
+    higher_d = [r for r in d_rows if r["d"] > 2]
+    colsum_ok = (all(r["all_columns_sum_to_two"]
+                     and r["ones_covector_is_a_2_eigencovector"]
+                     for r in colsum_rows)
+                 and ones_tau == ones
+                 and bool(higher_d)
+                 and all(not all(x == "2" for x in r["column_sums"])
+                         for r in higher_d))
+    g39 = gate("G39", "WHY THE GEOMETRY->DATA DIRECTION IS LIVE AT EVERY "
+               "IDENTIFICATION AND DIES AT THE SAME CLAUSE EVERY TIME, MEASURED: "
+               "at d = 2 every column of the readout sums to exactly 2 -- each "
+               "diagonal slot is hit by its own axis link and by the diagonal "
+               "link, each off-diagonal slot by the diagonal link with "
+               "coefficient 2 -- so the all-ones covector is a 2-eigencovector "
+               "of the geometry->data map at EVERY identification and every "
+               "prime, which is why that direction's census is never empty; and "
+               "the all-ones covector is measured chart-SYMMETRIC while S1c "
+               "demands chart-antisymmetry, which is why it is always emptied by "
+               "the same clause.  The fact is d = 2-specific and is measured to "
+               "be so: at d = 3,4,5 the diagonal columns sum to d, not 2",
+               colsum_ok,
+               {"rows": colsum_rows, "ones_covector": list(ones),
+                "tau_image_of_the_ones_covector": list(ones_tau),
+                "chart_symmetric": ones_tau == ones,
+                "higher_dimension_column_sums":
+                    {str(r["d"]) + "|" + r["ordering"]: r["column_sums"]
+                     for r in higher_d}})
+    report("G39", g39, f"all columns sum to 2 at {sum(1 for r in colsum_rows if r['all_columns_sum_to_two'])} "
+           f"of {len(colsum_rows)} identifications; the all-ones covector is a "
+           f"2-eigencovector there and is chart-symmetric")
+
+    # (vi) what S1b carries: the SET-level census at the registered cell
+    Ereg = enc[("natural", "counts->q")]["Fp"]
+    seenv, orb_lengths = set(), []
+    for v in V:
+        if v in seenv:
+            continue
+        L, w = 1, mat_apply(Ereg, v, P)
+        while w != v:
+            seenv.add(w)
+            w = mat_apply(Ereg, w, P)
+            L += 1
+        seenv.add(v)
+        orb_lengths.append(L)
+    facs = {}
+    for L in sorted(set(orb_lengths)):
+        facs[L] = orbit_factor(fam, SIG, L)
+    setlevel = 1
+    for L in orb_lengths:
+        setlevel *= facs[L]
+    setlevel_check = 1
+    for L in sorted(set(orb_lengths)):
+        setlevel_check *= facs[L] ** orb_lengths.count(L)
+    g40 = gate("G40", "WHAT THE HOMOMORPHISM CLAUSE CARRIES IS MEASURED, NOT "
+               "ARGUED: BRG's S1 registers a commuting square, and delta is a "
+               "TWISTED COCYCLE rather than a homomorphism, so the square as "
+               "registered lives in Set and S1b is a third addition of this "
+               "unit.  Posed at the registered cell WITHOUT S1b the census is "
+               "not empty: the square determines a candidate on each E-orbit "
+               "from its value at a representative subject to delta^L fixing it, "
+               "so the count is the product over the measured orbit spectrum of "
+               "the measured delta^L fixed-point counts -- computed here two "
+               "ways, orbit by orbit and by exponentiating the per-length "
+               "factors, and the two agree",
+               setlevel == setlevel_check and setlevel > 1
+               and sum(orb_lengths) == len(V) and facs.get(1) == 1,
+               {"E_orbit_spectrum": {str(L): orb_lengths.count(L)
+                                     for L in sorted(set(orb_lengths))},
+                "delta_L_fixed_point_counts": {str(k): v
+                                               for k, v in sorted(facs.items())},
+                "set_level_census_absent_S1b": str(setlevel),
+                "second_computation": str(setlevel_check),
+                "record_cells_covered": sum(orb_lengths)})
+    report("G40", g40, f"E-orbit spectrum "
+           f"{ {L: orb_lengths.count(L) for L in sorted(set(orb_lengths))} }; "
+           f"delta^L fixed counts {facs}; set-level census absent S1b = "
+           f"{setlevel}")
+
+    # (vii) R1's tau-conjugate witness, verified in delivery as a DIAGNOSTIC
+    P7 = 7
+    V7 = [(x, y, z) for x in range(P7) for y in range(P7) for z in range(P7)]
+    wcell = None
+    for (idn, dr) in cells:
+        if dr != "counts->q":
+            continue
+        MQ = enc[(idn, dr)]["Q"]
+        if any(x.denominator % P7 == 0 for row in MQ for x in row):
+            continue
+        E7 = to_fp(MQ, P7)
+        k7 = kernel_fp([[(transpose(E7)[i][j] - (2 if i == j else 0)) % P7
+                         for j in range(3)] for i in range(3)], P7)
+        if k7 and idn.startswith("tau-"):
+            wcell = (idn, dr, E7, k7)
+            break
+    w7 = {}
+    if wcell is not None:
+        idn7, dr7, E7, k7 = wcell
+        lam7 = tuple(x % P7 for x in witness_covector(k7, 1))
+        anti7 = [g for g in COMPL if DORD[g] == P7 and conj_by(SIG, g) == pinv(g)]
+        g7 = min(anti7)
+        pw7 = [pident(NLAB)]
+        for _ in range(P7 - 1):
+            pw7.append(pmul(pw7[-1], g7))
+
+        def a7(r):
+            return pw7[sum(lam7[i] * r[i] for i in range(3)) % P7]
+        s1a7 = sum(1 for r in V7
+                   if not compare_square(defect_cached(a7(r)),
+                                         a7(mat_apply(E7, r, P7))))
+        s1b7 = sum(1 for r in V7 for s in V7
+                   if a7(tuple((r[i] + s[i]) % P7 for i in range(3)))
+                   != pmul(a7(r), a7(s)))
+        s1c7 = sum(1 for r in V7
+                   if a7(tuple(r[TAU[i]] for i in range(3)))
+                   != conj_by(SIG, a7(r)))
+        r07 = tuple(x % P7 for x in r0_decl)
+        d7 = defect_cached(a7(r07))
+        cls7 = [q for q in COMPL if pord(defect_cached(q)) == P7]
+        cf7 = defect_cached(min(cls7)) if cls7 else pident(NLAB)
+        w7 = {"cell": [idn7, dr7], "p": P7, "E_mod_7": E7,
+              "two_eigencovector": list(lam7), "generator": list(g7),
+              "generator_order": pord(g7),
+              "generator_anti_invariant": conj_by(SIG, g7) == pinv(g7),
+              "S1a_violations": s1a7, "record_cells": len(V7),
+              "S1b_violations": s1b7, "composition_cells": len(V7) ** 2,
+              "S1c_violations": s1c7,
+              "lambda_at_the_base_record": sum(lam7[i] * r07[i]
+                                               for i in range(3)) % P7,
+              "defect_order_at_the_base_record": pord(d7),
+              "defect_fixed_configurations": 9 * pfix(d7),
+              "S1d_against_the_declared_ord5_base": pord(d7) == pord(D9),
+              "S1d_against_an_ord7_base": pord(d7) == pord(cf7),
+              "ord7_completion_class_size": len(cls7),
+              "image_size": len({a7(r) for r in V7}),
+              "record_space_size": len(V7),
+              "fixed_space_dim": fix_space_dim(E7, P7)}
+    g38 = gate("G38", "THE ONE CELL OF THE COVARIANT FAMILY WHERE THE REGISTERED "
+               "DIRECTION IS SOLVABLE AT AN ADMISSIBLE PRIME IS EXHIBITED AND "
+               "VERIFIED HERE, AS A DIAGNOSTIC: at the chart-involution "
+               "conjugate of a declared identification the re-encoding's "
+               "spectrum carries primitive cube roots of unity, so 2 enters it "
+               "at p = 7 as well as at p = 3, and an explicit candidate -- an "
+               "anti-invariant generator of order 7 with the measured "
+               "2-eigencovector as exponent -- satisfies S1a at every one of the "
+               "p^3 record cells and S1b at every one of the p^6 composition "
+               "cells.  It is not a FOUND: it violates S1c, its base-point "
+               "clause fails against the declared ord-5 transport base, and its "
+               "image has p elements against a record space of p^3, so S3 fails "
+               "by the arena's p-part",
+               wcell is not None and w7.get("S1a_violations") == 0
+               and w7.get("S1b_violations") == 0
+               and w7.get("generator_order") == P7
+               and w7.get("generator_anti_invariant")
+               and w7.get("S1c_violations", 0) > 0
+               and not w7.get("S1d_against_the_declared_ord5_base", True)
+               and w7.get("S1d_against_an_ord7_base") is True
+               and w7.get("fixed_space_dim") == 0
+               and w7.get("image_size", 0) < w7.get("record_space_size", 0),
+               w7)
+    report("G38", g38, f"tau-conjugate witness at {w7.get('cell')}, p = 7: S1a "
+           f"{w7.get('S1a_violations')}/{w7.get('record_cells')}, S1b "
+           f"{w7.get('S1b_violations')}/{w7.get('composition_cells')}, S1c "
+           f"{w7.get('S1c_violations')}/{w7.get('record_cells')}, |image| "
+           f"{w7.get('image_size')} of {w7.get('record_space_size')}")
+    tables["tau_conjugate_witness"] = w7
+    tables["fixed_point_lemma"] = {"delta_fixed_points": fp_rows,
+                                   "fix_E_rows": fixe_rows,
+                                   "general_dimension": d_rows,
+                                   "coverage": {
+                                       "cells_times_primes": len(cover_rows),
+                                       "arena_free": sum(
+                                           1 for r in cover_rows
+                                           if r["arena_free_branch"]),
+                                       "p_part_only": sum(
+                                           1 for r in cover_rows
+                                           if r["p_part_branch"]
+                                           and not r["arena_free_branch"])},
+                                   "set_level_census_absent_S1b": str(setlevel)}
+    say("")
+
     # ==================== 5. S1c, S1d =====================================
     say("--- 5. S1c (CHART INVOLUTION) AND S1d (BASE POINT) ---")
-    r0 = base_record(RECORDS)
+    r0 = r0_decl
     r0p = tuple(x % P for x in r0)
     s1_rows = []
     for (idn, dr) in cells:
@@ -1730,11 +2486,106 @@ def run_unit(src: str) -> dict:
                 "candidates_passing_all_of_S1": tot_s1})
     report("G13", g13, f"S1 survivors across all cells: {tot_s1}")
     for r in s1_rows:
-        say(f"      {r['identification']:8s} {r['direction']:10s} S1a+b "
+        say(f"      {r['identification']:12s} {r['direction']:10s} S1a+b "
             f"{r['s1ab']:4d}   S1c pass {r['s1c_pass']:4d}   S1d pass "
             f"{r['s1d_pass']:4d}   S1 all {r['s1_pass']:4d}   "
             f"S1c violations/cand {r['s1c_violation_counts']}")
     tables["s1_clause_census"] = s1_rows
+
+    # the STATE coordinate, swept: S1d is base-record-dependent, and S1c and S1d
+    # are jointly unsatisfiable at every tau-FIXED record, for every chart map
+    adm_records = record_sweep(adm)
+    rec_rows = []
+    for nm in adm_records:
+        rr = tuple(x % P for x in RECORDS[nm])
+        tau_fixed = (tuple(rr[TAU[i]] for i in range(3)) == rr)
+        passes = 0
+        for (idn, dr) in cells:
+            for tr in census[(idn, dr)]["routeB"]:
+                dd = defect_cached(alpha_from_triple(tr, rr))
+                if pord(dd) == pord(D9) and 9 * pfix(dd) == 9 * pfix(D9):
+                    passes += 1
+        rec_rows.append({"record": nm, "counts": RECORDS[nm],
+                         "mod_p": list(rr), "tau_fixed": tau_fixed,
+                         "candidates_passing_S1d": passes})
+    # S1c AND S1d together, over EVERY (generator, covector) pair, with no chart
+    # map in the computation at all
+    anti_cov = [lam for lam in V if lam != (0, 0, 0)
+                and tuple((-lam[TAU[i]]) % P for i in range(3)) == lam]
+    pairs_c, pairs_d_flat, pairs_d_aniso = 0, 0, 0
+    r_aniso = tuple(x % P for x in RECORDS["G-ANISO"])
+    ordp_all = [g for g in COMPL if DORD[g] == P]
+    fix_base = 9 * pfix(D9)
+    for g in ordp_all:
+        pw = [pident(NLAB)]
+        for _ in range(P - 1):
+            pw.append(pmul(pw[-1], g))
+        cw = [conj_by(SIG, x) for x in pw]
+        for lam in V:
+            if lam == (0, 0, 0):
+                continue
+            ok = True
+            for r in V:                       # S1c, measured cell by cell
+                kt = (lam[0] * r[TAU[0]] + lam[1] * r[TAU[1]]
+                      + lam[2] * r[TAU[2]]) % P
+                k = (lam[0] * r[0] + lam[1] * r[1] + lam[2] * r[2]) % P
+                if pw[kt] != cw[k]:
+                    ok = False
+                    break
+            if not ok:
+                continue
+            pairs_c += 1
+            for rec, bump in ((r0p, "flat"), (r_aniso, "aniso")):
+                dd = defect_cached(pw[(lam[0] * rec[0] + lam[1] * rec[1]
+                                       + lam[2] * rec[2]) % P])
+                if pord(dd) == pord(D9) and 9 * pfix(dd) == fix_base:
+                    if bump == "flat":
+                        pairs_d_flat += 1
+                    else:
+                        pairs_d_aniso += 1
+    total_pairs = len(ordp_all) * (P ** 3 - 1)
+    r0_tau_fixed = (tuple(r0p[TAU[i]] for i in range(3)) == r0p)
+    g42 = gate("G42", "THE STATE COORDINATE IS SWEPT, AND THE COLLISION BETWEEN "
+               "THE TWO ADDED CLAUSES IS MEASURED WITH NO CHART MAP IN THE "
+               "COMPUTATION AT ALL: S1d is evaluated at every one of HA's "
+               "admissible geometry records, not only at the declared one, and "
+               "it passes at some and fails at others -- so the base point is a "
+               "declaration and is measured to be one.  Separately, over ALL "
+               "(order-p generator, nonzero covector) pairs, the pairs "
+               "satisfying S1c are counted and their base-point clause is "
+               "evaluated at the declared tau-FIXED record and at a declared "
+               "tau-ASYMMETRIC one: S1c forces the exponent covector to be "
+               "chart-antisymmetric, an antisymmetric covector annihilates any "
+               "tau-fixed record, and the two clauses are therefore jointly "
+               "unsatisfiable at the declared base record for EVERY chart map "
+               "whatsoever",
+               len(rec_rows) > 1
+               and any(r["candidates_passing_S1d"] > 0 for r in rec_rows)
+               and any(r["candidates_passing_S1d"] == 0 for r in rec_rows)
+               and pairs_c > 0 and pairs_d_flat == 0 and pairs_d_aniso > 0
+               and r0_tau_fixed,
+               {"records_swept": len(rec_rows), "rows": rec_rows,
+                "admissible_records": len(adm),
+                "records_where_S1d_passes":
+                    sum(1 for r in rec_rows if r["candidates_passing_S1d"] > 0),
+                "generator_covector_pairs": total_pairs,
+                "pairs_satisfying_S1c": pairs_c,
+                "pairs_satisfying_S1c_and_S1d_at_the_declared_base_record":
+                    pairs_d_flat,
+                "pairs_satisfying_S1c_and_S1d_at_G-ANISO": pairs_d_aniso,
+                "declared_base_record_is_tau_fixed": r0_tau_fixed,
+                "chart_antisymmetric_covectors": len(anti_cov)})
+    report("G42", g42, f"S1d passes at "
+           f"{sum(1 for r in rec_rows if r['candidates_passing_S1d'] > 0)} of "
+           f"{len(rec_rows)} admissible records; of {total_pairs} "
+           f"(generator, covector) pairs {pairs_c} satisfy S1c and "
+           f"{pairs_d_flat} of those satisfy S1d at the declared base record "
+           f"({pairs_d_aniso} at G-ANISO)")
+    for r in rec_rows:
+        say(f"      {r['record']:11s} counts {str(r['counts']):12s} mod p "
+            f"{str(r['mod_p']):12s} tau-fixed {str(r['tau_fixed']):6s} "
+            f"S1d passes {r['candidates_passing_S1d']:4d}")
+    tables["base_record_sweep"] = rec_rows
     say("")
 
     # ==================== 6. S2 AND S3 ====================================
@@ -1789,22 +2640,14 @@ def run_unit(src: str) -> dict:
     report("G14", g14, f"cells with a determined candidate: {any_det}; cells "
            f"with an injective candidate: {any_inj}")
     for r in s23_rows:
-        say(f"      {r['identification']:8s} {r['direction']:10s} candidates "
+        say(f"      {r['identification']:12s} {r['direction']:10s} candidates "
             f"{r['candidates']:4d}  determined {str(r['determined']):5s}  "
             f"strata hit {r['strata_hit']} of {len(strata_declared)}  "
             f"|image| {r['image_size']}  injective {r['injective']}")
     tables["s2_s3"] = s23_rows
 
-    # S3's positive control: the sixteen-label arena
+    # S3's positive control: the sixteen-label arena (the same subgroup 4b built)
     p16 = p_part_exponent(15, P)
-
-    def cyc(lo):
-        t = list(range(16))
-        for k in range(5):
-            t[lo + k] = lo + (k + 1) % 5
-        return tuple(t)
-    g16 = [cyc(1), cyc(6), cyc(11)]
-    img16 = group_closure(g16, 16)
     inj16 = (len(img16) == P ** 3)
     g15 = gate("G15", "S3'S POSITIVE CONTROL WITH TEETH: THE INJECTIVITY CLAUSE "
                "IS SATISFIABLE, AND WHAT FORBIDS IT HERE IS THE NINE-LABEL "
@@ -1862,8 +2705,10 @@ def run_unit(src: str) -> dict:
             kdc = spec2c_by_p[(idn, dr, p)]
             has_elt = anti_by_p[p] > 0
             s1ab_live = (kd > 0 and has_elt)
-            s1d_live = s1ab_live and (n == p)
-            s1_live = (kdc > 0 and has_elt and n == p)
+            # S1d forces ord(D) in {1, p} -- the order-1 branch is the candidate
+            # whose exponent annihilates the base record -- not ord(D) = p
+            s1d_live = s1ab_live and (n in (1, p))
+            s1_live = (kdc > 0 and has_elt and n in (1, p))
             grid_rows.append({"identification": idn, "direction": dr, "p": p,
                               "ord_D": n, "two_in_spectrum": kd > 0,
                               "two_eigencovector_chart_antisymmetric": kdc > 0,
@@ -1873,21 +2718,33 @@ def run_unit(src: str) -> dict:
     live_ab = sum(1 for r in grid_rows if r["s1ab_live"])
     live_d = sum(1 for r in grid_rows if r["s1d_live"])
     live_full = sum(1 for r in grid_rows if r["s1_live"])
+    indep_decisions = len(cells) * len(swept)
     g16g = gate("G16", "S4 IS A CELL-COMPLETE CENSUS OVER THE WHOLE DECLARED "
-                "(prime, defect-order) GRID AT EVERY ENCODING CELL: each cell is "
-                "visited exactly once, the count is computed from the declared "
-                "sets rather than typed, and the narrowing the strengthened "
-                "standard performs on BRG's live cells is read off it",
+                "(prime, defect-order) GRID AT EVERY COVARIANT ENCODING CELL: "
+                "each cell is visited exactly once, the count is computed from "
+                "the declared sets rather than typed, and the narrowing the "
+                "strengthened standard performs on BRG's live cells is read off "
+                "it.  The grid's INDEPENDENT content is reported with it: the "
+                "kernel computations are one per (encoding cell, prime), so the "
+                "grid is that many linear-algebra decisions replicated across "
+                "the defect-order axis, which enters the clause list only "
+                "through the base-point condition",
                 len(seen_cells) == len(cells) * len(swept) * len(orders_declared)
-                and len(grid_rows) == len(seen_cells),
+                and len(grid_rows) == len(seen_cells)
+                and len(spec2_by_p) == indep_decisions,
                 {"cells": len(seen_cells), "primes": len(swept),
                  "defect_orders": orders_declared,
                  "encoding_cells": len(cells),
+                 "independent_kernel_decisions": indep_decisions,
+                 "replication_along_the_defect_order_axis":
+                     len(orders_declared),
                  "cells_live_at_S1ab": live_ab,
                  "cells_live_after_the_base_point_clause": live_d,
                  "cells_live_at_the_full_S1_clause_list": live_full,
                  "anti_invariant_elements_by_prime": anti_by_p})
-    report("G16", g16g, f"{len(seen_cells)} grid cells; live at S1a+b "
+    report("G16", g16g, f"{len(seen_cells)} grid cells "
+           f"({indep_decisions} independent kernel decisions x "
+           f"{len(orders_declared)} defect orders); live at S1a+b "
            f"{live_ab}; live after S1d {live_d}; live at the full S1 "
            f"{live_full}")
     say(f"      anti-invariant order-p elements by prime: {anti_by_p}")
@@ -1949,59 +2806,108 @@ def run_unit(src: str) -> dict:
     say("--- 8. S5: HELD-OUT PREDICTION WITH TRANSPORTED QUANTITIES ---")
     progress("held-out")
     Esy = synth_compatible_matrix(P)
+    Ereal_rev = enc[("natural", "q->counts")]["Fp"]
+    Ereal_reg = enc[("natural", "counts->q")]["Fp"]
+    Ehold = s5_chart_map(Ereal_rev, Esy)
     FIT = fit_cells(V, E1)
     HELD = [r for r in V if r not in set(FIT)]
 
-    def alpha_gl(g, lam, r):
-        k = sum(lam[i] * r[i] for i in range(3)) % P
-        out = pident(NLAB)
-        for _ in range(k):
-            out = pmul(out, g)
-        return out
+    _GP: dict = {}
 
-    fit_admitted = []
-    for g in [x for x in COMPL if pord(x) == P]:
-        for lam in V:
-            if lam == (0, 0, 0):
-                continue
-            if all(compare_square(defect_cached(alpha_gl(g, lam, r)),
-                                  alpha_gl(g, lam, mat_apply(Esy, r, P)))
-                   for r in FIT):
-                fit_admitted.append((g, lam))
-    held_ok, held_bad, held_viol = [], [], 0
-    for (g, lam) in fit_admitted:
-        bad_here = False
-        for r in HELD:
-            if not compare_square(defect_cached(alpha_gl(g, lam, r)),
-                                  alpha_gl(g, lam, mat_apply(Esy, r, P))):
-                bad_here = True
-                break
-        if not bad_here:
-            held_ok.append((g, lam))
-        else:
-            held_bad.append((g, lam))
+    def alpha_gl(g, lam, r):
+        t = _GP.get(g)
+        if t is None:
+            t = [pident(NLAB)]
+            for _ in range(P - 1):
+                t.append(pmul(t[-1], g))
+            _GP[g] = t
+        return t[sum(lam[i] * r[i] for i in range(3)) % P]
+
+    def s5_run(Emap):
+        adm_, ok_, bad_ = [], [], []
+        for g in [x for x in COMPL if pord(x) == P]:
+            for lam in V:
+                if lam == (0, 0, 0):
+                    continue
+                if all(compare_square(defect_cached(alpha_gl(g, lam, r)),
+                                      alpha_gl(g, lam, mat_apply(Emap, r, P)))
+                       for r in FIT):
+                    adm_.append((g, lam))
+        for (g, lam) in adm_:
+            bad_here = False
+            for r in HELD:
+                if not compare_square(defect_cached(alpha_gl(g, lam, r)),
+                                      alpha_gl(g, lam, mat_apply(Emap, r, P))):
+                    bad_here = True
+                    break
+            (bad_ if bad_here else ok_).append((g, lam))
+        return adm_, ok_, bad_
+
+    fit_admitted, held_ok, held_bad = s5_run(Ehold)
+    held_viol = 0
     if held_bad:
         g_, l_ = held_bad[0]
         held_viol = sum(1 for r in HELD
                         if not compare_square(
                             defect_cached(alpha_gl(g_, l_, r)),
-                            alpha_gl(g_, l_, mat_apply(Esy, r, P))))
-    g18 = gate("G18", "THE HELD-OUT VERIFICATION IS PREDICTIVE, NOT IMPOSED: the "
-               "split is declared before any candidate is fitted, candidates are "
-               "admitted by the square at the FIT cell ALONE, and the square is "
-               "then VERIFIED at every HELD cell -- where most FIT-admitted "
-               "candidates die.  A protocol under which nothing died out of "
-               "sample would verify nothing",
-               len(FIT) == 1 and len(HELD) == P ** 3 - 1
-               and len(fit_admitted) > len(held_ok) and len(held_bad) > 0,
-               {"FIT": [list(r) for r in FIT], "HELD_cells": len(HELD),
+                            alpha_gl(g_, l_, mat_apply(Ehold, r, P))))
+    reg_admitted, reg_ok, reg_bad = s5_run(Ereal_reg)
+    syn_admitted, syn_ok, syn_bad = s5_run(Esy)
+    g18 = gate("G18", "THE HELD-OUT VERIFICATION IS PREDICTIVE, NOT IMPOSED, AND "
+               "IT IS RUN AGAINST THE PAIRING'S OWN DEFORMATION SIDE: the "
+               "chart map is HA's own readout at the declared identification -- "
+               "measured identical to the matrix section 2.4 builds -- not the "
+               "synthetic control map; the split is declared before any candidate "
+               "is fitted; candidates are admitted by the square at the FIT cell "
+               "ALONE; and the square is then VERIFIED at every HELD cell, where "
+               "most FIT-admitted candidates die.  A protocol under which nothing "
+               "died out of sample would verify nothing.  The registered "
+               "direction of the same readout is run too, and there the "
+               "out-of-sample deaths are TOTAL -- the contrast is the "
+               "measurement",
+               Ehold == Ereal_rev and len(FIT) == 1 and len(HELD) == P ** 3 - 1
+               and len(fit_admitted) > len(held_ok) and len(held_bad) > 0
+               and len(reg_ok) == 0 and len(reg_admitted) > 0,
+               {"chart_map_used": Ehold,
+                "chart_map_is_the_pairings_own_readout": Ehold == Ereal_rev,
+                "identification": "natural", "direction": "q->counts",
+                "FIT": [list(r) for r in FIT], "HELD_cells": len(HELD),
                 "fit_admitted": len(fit_admitted),
                 "survived_held_out": len(held_ok),
                 "rejected_out_of_sample": len(held_bad),
-                "total_held_out_violations": held_viol})
+                "total_held_out_violations": held_viol,
+                "registered_direction_fit_admitted": len(reg_admitted),
+                "registered_direction_survivors": len(reg_ok)})
     report("G18", g18, f"FIT {len(FIT)} cell admits {len(fit_admitted)} "
            f"candidates; {len(held_bad)} die on {len(HELD)} held-out cells, "
-           f"{len(held_ok)} survive")
+           f"{len(held_ok)} survive (registered direction: "
+           f"{len(reg_admitted)} admitted, {len(reg_ok)} survive)")
+    g41 = gate("G41", "DISCLOSURE GATE (not must-pass): WHICH DEFORMATION SIDE "
+               "EACH BLOCK OF THIS UNIT RUNS AGAINST.  S5 runs against the "
+               "pairing's own readout in both directions; the SYNTHETIC "
+               "compatible map is a declared control and is used only where it "
+               "is named -- the FOUND-reachability control and the EMPTY-"
+               "reachability control.  The three S5 counts are reported for the "
+               "pairing's own map and for the synthetic one side by side, so the "
+               "reader can see exactly what the synthetic map does and does not "
+               "change",
+               True,
+               {"S5_chart_map": "the pairing's own readout (natural, q->counts)",
+                "S5_registered_direction": "the pairing's own readout "
+                                           "(natural, counts->q)",
+                "synthetic_map_used_by": ["SYNTH-COMPATIBLE (FOUND reachable)",
+                                          "SYNTH-EMPTY (EMPTY reachable)"],
+                "counts_on_the_pairings_own_map":
+                    [len(fit_admitted), len(held_bad), len(held_ok)],
+                "counts_on_the_registered_direction":
+                    [len(reg_admitted), len(reg_bad), len(reg_ok)],
+                "counts_on_the_synthetic_map":
+                    [len(syn_admitted), len(syn_bad), len(syn_ok)]},
+               must_pass=False)
+    report("G41", g41, f"S5 on the pairing's own map "
+           f"{[len(fit_admitted), len(held_bad), len(held_ok)]}; registered "
+           f"direction {[len(reg_admitted), len(reg_bad), len(reg_ok)]}; "
+           f"synthetic {[len(syn_admitted), len(syn_bad), len(syn_ok)]}")
 
     gw, lw = held_ok[0] if held_ok else (pident(NLAB), (0, 0, 0))
 
@@ -2114,19 +3020,26 @@ def run_unit(src: str) -> dict:
     ident_s1c = all(pmul(idc, conj_by(SIG, q)) == conj_by(SIG, pmul(idc, q))
                     for q in COMPL)
     ident_s1d = (pord(defect_cached(pmul(idc, Q0))) == pord(D9))
-    g21 = gate("G21", "POSITIVE CONTROL: THE CENSUS MACHINERY FINDS THE IDENTITY "
-               "SELF-MORPHISM.  The transport arena is paired with itself -- the "
-               "completion group with the encoding delta on both sides -- and "
-               "the identity candidate is run through the SAME square "
-               "comparison, at every one of the family's cells, and through the "
-               "same S1c, S1d and S3 clauses.  A predicate that could not accept "
-               "the identity would decide nothing",
+    g21 = gate("G21", "DISCLOSURE GATE (not must-pass): F0-IDENT IS "
+               "ANALYTICALLY FORCED AND IS NOT THIS UNIT'S POSITIVE CONTROL "
+               "(RUNBOOK 14 addendum #208).  With alpha the identity and the "
+               "transport arena paired with itself, every clause of the check "
+               "reads x == x: the square is delta(q) = delta(q), the involution "
+               "clause is sigma(q) = sigma(q), and injectivity is |{q}| = "
+               "|COMPL|.  Its zero violations at all of the family's cells "
+               "record that the identity candidate is the identity and nothing "
+               "about the square, so it is registered as a disclosure and "
+               "carries no mutant.  THE POSITIVE CONTROL IS SYNTH-COMPATIBLE "
+               "(G22), which a broken square predicate does kill",
                ident_bad == 0 and ident_inj and ident_s1c and ident_s1d
                and ident_cells == len(COMPL),
                {"cells": ident_cells, "square_violations": ident_bad,
-                "injective": ident_inj, "s1c": ident_s1c, "s1d": ident_s1d})
-    report("G21", g21, f"identity self-morphism: {ident_bad} square violations "
-           f"at {ident_cells} cells; injective {ident_inj}")
+                "injective": ident_inj, "s1c": ident_s1c, "s1d": ident_s1d,
+                "analytically_forced": True,
+                "the_positive_control_of_this_unit": "SYNTH-COMPATIBLE (G22)"},
+               must_pass=False)
+    report("G21", g21, f"identity self-morphism (disclosure): {ident_bad} square "
+           f"violations at {ident_cells} cells; injective {ident_inj}")
 
     # FOUND reachable: the synthetic compatible pair
     synth_ok = []
@@ -2155,23 +3068,32 @@ def run_unit(src: str) -> dict:
                   and all(alpha_gl(gg, ll, tuple(r[TAU[i]] for i in range(3)))
                           == conj_by(SIG, alpha_gl(gg, ll, r)) for r in V)
                   and pord(defect_cached(alpha_gl(gg, ll, r0s))) == P)
-    g22 = gate("G22", "FOUND IS REACHABLE BY THIS MACHINERY, AND ITS WITNESS IS "
-               "EXHIBITED AND INDEPENDENTLY RE-VERIFIED: a declared synthetic "
-               "compatible pair -- the same transport side against a synthetic "
-               "chart map whose 2-eigencovector is chart-ANTIsymmetric -- yields "
-               "candidates that pass S1a, S1b, S1c AND S1d, and the exhibited "
-               "witness is re-checked here from its own two data at every cell",
+    g22 = gate("G22", "THE POSITIVE CONTROL OF THIS UNIT, AND FOUND IS REACHABLE "
+               "BY THIS MACHINERY: a declared synthetic compatible pair -- the "
+               "same transport side against a synthetic chart map whose "
+               "2-eigencovector is chart-ANTIsymmetric -- yields candidates that "
+               "pass S1a, S1b, S1c AND S1d, and the exhibited witness is "
+               "re-checked here from its own two data at every cell.  ITS "
+               "BASE-POINT CLAUSE IS EVALUATED AT THE DECLARED tau-ASYMMETRIC "
+               "RECORD, RECORDED HERE, and it must be: G42 measures that S1c and "
+               "S1d are jointly unsatisfiable at the tau-fixed declared base "
+               "record for every chart map whatsoever, so a control run there "
+               "could not pass whatever the machinery did",
                len(synth_ok) > 0 and len(synth_c) > 0 and len(synth_d) > 0
                and wit is not None and wit_ok,
                {"synthetic_chart_map": Esy,
                 "pairs_passing_S1a_S1b": len(synth_ok),
                 "distinct_maps": len(synth_maps),
                 "passing_S1c": len(synth_c), "passing_S1d": len(synth_d),
+                "base_record_of_the_base_point_clause": "G-ANISO",
+                "base_record_counts": list(RECORDS["G-ANISO"]),
+                "base_record_mod_p": list(r0s),
+                "declared_base_record_of_the_census": list(r0),
                 "witness": [list(wit[0]), list(wit[1])] if wit else None,
                 "witness_reverified": wit_ok})
     report("G22", g22, f"synthetic compatible pair: {len(synth_ok)} pairs, "
            f"{len(synth_maps)} distinct maps, {len(synth_c)} pass S1c, "
-           f"{len(synth_d)} pass S1d; witness re-verified {wit_ok}")
+           f"{len(synth_d)} pass S1d at G-ANISO; witness re-verified {wit_ok}")
     if wit is not None:
         say(f"      witness g = {list(wit[0])}, lambda = {list(wit[1])}")
 
@@ -2316,18 +3238,17 @@ def run_unit(src: str) -> dict:
            f"{basis_inv}")
 
     # (c) the tested set is declared, not verdict-selected
-    declared_set = sorted(f"{a}|{b}" for (a, b) in
-                          [(i, d) for i in ("natural", "index")
-                           for d in ("counts->q", "q->counts")])
+    declared_set = sorted(f"{a}|{b}" for (a, b) in cells)
     verdict_sel = sorted(f"{r['identification']}|{r['direction']}"
                          for r in rows if r["route_B_enumeration"] > 0)
     tested = selftest_set(declared_set, verdict_sel)
     g27 = gate("G27", "THE SELF-TESTS' TESTED SET IS FIXED BY DECLARATION AND "
                "NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum "
-               "#185): the declared set is the full 2 x 2 sweep including the "
-               "cells whose census is empty, and it is measured equal to the "
-               "declaration and strictly larger than the set the verdicts would "
-               "have selected",
+               "#185): the declared set is the WHOLE COVARIANT CELL FAMILY -- "
+               "every identification in the declared orbit x both directions, "
+               "including the cells whose census is empty -- and it is measured "
+               "equal to the declaration and strictly larger than the set the "
+               "verdicts would have selected",
                tested == declared_set and len(declared_set) > len(verdict_sel),
                {"declared": declared_set, "verdict_selected": verdict_sel,
                 "tested": tested})
@@ -2356,117 +3277,407 @@ def run_unit(src: str) -> dict:
     progress("open 1")
     PRANGE = [q for q in range(2, 60) if all(q % k for k in range(2, q))]
     ADMISS = [q for q in PRANGE if 6 % q != 0]
-    fam_primes = set()
-    for n in ordspec:
-        m = 2 * n
-        d = 2
-        while d * d <= m:
-            if m % d == 0:
-                fam_primes.add(d)
-                while m % d == 0:
-                    m //= d
-            d += 1
-        if m > 1:
-            fam_primes.add(m)
-    elt_primes = {p for p in range(2, NLAB + 1)
-                  if all(p % k for k in range(2, p))
-                  and any(pord(g) == p for g in COMPL)}
     rho_den = max(RHO[0].denominator, RHO[1].denominator)
     rho_primes = {q for q in PRANGE if rho_den % q == 0}
     det_primes = {q for q in PRANGE if int(det_ha) % q == 0}
-    spec2 = set()
-    undefined_primes = set()
-    for p in range(2, 60):
-        if all(p % k for k in range(2, p)):
-            for (idn, dr) in cells:
-                if dr != "counts->q":
+    LAB9, LAB16 = NLAB, 16
+    SCALES = open1_scale_labels(LAB9, LAB16)
+
+    # ---- the arena-reading candidates, computed at an arbitrary label count --
+    # At the declared arena every one of them is computed by EXHAUSTIVE sweep.
+    # At a larger arena the family cannot be swept, so they are computed by
+    # explicit construction plus an exact upper bound, and the two routes are
+    # measured to agree at the declared arena before the constructive one is
+    # used anywhere else.
+    def anti_witness(labels, q):
+        """An explicit Sigma-anti-invariant element of order q at the given
+        arena, fixing label 0: a q-cycle reflected by Sigma -- one Sigma-fixed
+        label and (q-1)/2 Sigma-transposed pairs -- or None if the arena has no
+        room for one."""
+        m = 1
+        while m * m < labels:
+            m += 1
+        if m * m != labels:
+            return None
+        s = sigma_perm(m)
+        fixed = [i for i in range(1, labels) if s[i] == i]
+        pairs = [(i, s[i]) for i in range(1, labels) if s[i] > i]
+        if q == 2:
+            if not pairs:
+                return None
+            i, j = pairs[0]
+            t = list(range(labels))
+            t[i], t[j] = j, i
+            return tuple(t)
+        need = (q - 1) // 2
+        if need > len(pairs) or not fixed:
+            return None
+        seq = [a for (a, _b) in pairs[:need]] + [fixed[0]] + \
+              [b for (_a, b) in pairs[:need]][::-1]
+        t = list(range(labels))
+        for k in range(q):
+            t[seq[k]] = seq[(k + 1) % q]
+        return tuple(t)
+
+    _ARENA: dict = {}
+
+    def arena_primitives(labels):
+        """The ARENA's own primitive measurements, taken once per arena: which
+        primes occur as element orders, as anti-invariant element orders, and as
+        divisors of some 2*ord(D) in the family.  At the declared arena all
+        three are exhaustive sweeps AND the constructive route is run beside
+        them, so the constructive route -- the only one available at a bigger
+        arena -- is validated before it is used anywhere else."""
+        if labels in _ARENA:
+            return _ARENA[labels]
+        cap = labels - 1
+        built = {"P4": [], "P5": [], "P10": []}
+        s = sigma_perm(int(math.isqrt(labels)))
+        for q in PRANGE:
+            if q > cap:
+                continue
+            g = anti_witness(labels, q)
+            if g is None:
+                continue
+            d = pmul(pinv(conj_by(s, g)), g)
+            if pord(g) == q and conj_by(s, g) == pinv(g) and g[0] == 0:
+                built["P10"].append(q)
+                built["P5"].append(q)
+                if (2 * pord(d)) % q == 0:
+                    built["P4"].append(q)
+        # an element of the completion group permutes labels-1 labels, so every
+        # prime dividing its order is at most labels-1: the constructive route's
+        # bound is exact
+        out = {k: sorted(built[k]) for k in built}
+        agree = None
+        if labels == NLAB:
+            fam_primes = set()
+            for n in ordspec:
+                m = 2 * n
+                dd = 2
+                while dd * dd <= m:
+                    if m % dd == 0:
+                        fam_primes.add(dd)
+                        while m % dd == 0:
+                            m //= dd
+                    dd += 1
+                if m > 1:
+                    fam_primes.add(m)
+            orders_seen, anti_orders = set(), set()
+            for g in COMPL:
+                orders_seen.add(DORD[g])
+                if conj_by(SIG, g) == pinv(g):
+                    anti_orders.add(DORD[g])
+            exhaustive = {"P4": sorted(fam_primes),
+                          "P5": sorted(q for q in PRANGE if q in orders_seen),
+                          "P10": sorted(q for q in PRANGE if q in anti_orders)}
+            agree = all(out[k] == exhaustive[k] for k in out)
+            out = exhaustive
+        out["routes_agree"] = agree
+        _ARENA[labels] = out
+        return out
+
+    def arena_primes(labels, which, fresh=False):
+        """P4, P5 and P10 at a given arena, rebuilt from that arena's own
+        primitive measurements."""
+        return list(arena_primitives(labels)[which])
+
+    def spec2_primes(idns, direction, basis, fresh=False):
+        """P8: the primes at which 2 lies in the spectrum of the chart map, over
+        the given identifications and in the given direction."""
+        out, undef = set(), set()
+        for q in PRANGE:
+            for idn in idns:
+                MQ = encoding_matrix(idn, direction)
+                if any(x.denominator % q == 0 for row in MQ for x in row):
+                    undef.add(q)
                     continue
-                MQ = enc[(idn, dr)]["Q"]
-                if any(x.denominator % p == 0 for row in MQ for x in row):
-                    undefined_primes.add(p)
-                    continue
-                Tp = to_fp(transpose(MQ), p)
-                Mt = [[(Tp[i][j] - (2 if i == j else 0)) % p for j in range(3)]
-                      for i in range(3)]
-                if kernel_dim(Mt, p) > 0:
-                    spec2.add(p)
+                Mq = to_fp(MQ, q)
+                if basis is not None:
+                    Bi = to_fp(inv3([[Fr(x) for x in row] for row in basis]), q)
+                    Mq = [[sum(sum(basis[i][k] * Mq[k][l] for k in range(3))
+                               * Bi[l][j] for l in range(3)) % q
+                           for j in range(3)] for i in range(3)]
+                Mt = [[(transpose(Mq)[i][j] - (2 if i == j else 0)) % q
+                       for j in range(3)] for i in range(3)]
+                if kernel_dim(Mt, q) > 0:
+                    out.add(q)
+        return sorted(out), sorted(undef)
+
+    def cand_sets(decl, fresh=False):
+        """EVERY Open-1 candidate as a FUNCTION of the declaration record."""
+        lab = decl["labels"]
+        s8, _u = spec2_primes(decl["identifications"], decl["direction"],
+                              decl["basis"], fresh=fresh)
+        return {
+            "P1": [decl["p"]],
+            "P2": sorted(PRANGE),
+            "P3": sorted({q for q in PRANGE if (2 * decl["ord_rule"]) % q == 0}),
+            "P4": arena_primes(lab, "P4", fresh=fresh),
+            "P5": arena_primes(lab, "P5", fresh=fresh),
+            "P6": sorted(set(PRANGE) - det_primes),
+            "P7": sorted(set(PRANGE) - rho_primes),
+            "P8": s8,
+            "P9": sorted(set(s8) - rho_primes),
+            "P10": arena_primes(lab, "P10", fresh=fresh),
+            "P11": sorted({q for q in PRANGE
+                           if p_part_exponent(lab - 1, q) >= 3}),
+        }
+
+    # ---- the declaration record, and the counterfactual re-declarations ------
+    ALL_IDNS = tuple(sorted(SLOT_ORDERS))
+    cls7 = [q for q in COMPL if pord(defect_cached(q)) == 7]
+    BASE = {"p": P, "ord_rule": pord(D9), "direction": "counts->q",
+            "identifications": ALL_IDNS, "base_record": "G-FLAT",
+            "completion": Q0, "relabelling": pident(NLAB),
+            "basis": None, "labels": LAB9}
+    CFS = [
+        ("prime := 7, selection rule ord(D) := 7 (class size %d, lex-first %s)"
+         % (len(cls7), list(min(cls7)) if cls7 else []),
+         {"p": 7, "ord_rule": 7}),
+        ("direction := the reversed one", {"direction": "q->counts"}),
+        ("identification := the declared natural cell alone",
+         {"identifications": ("natural",)}),
+        ("identification := the tau-conjugate of the declared index cell alone",
+         {"identifications": ("tau-index",)}),
+        ("base record := G-ANISO", {"base_record": "G-ANISO"}),
+        ("completion := the lex-last member of the ord-5 class",
+         {"completion": max(cls5)}),
+        ("record-space basis := the declared GL_3 element",
+         {"basis": basis_change(P)}),
+    ]
+    base_sets = cand_sets(BASE)
+    cf_rows, free_measured, breaker = [], {}, {}
+    for label, patch in CFS:
+        d2 = dict(BASE)
+        d2.update(patch)
+        s2 = cand_sets(d2, fresh=True)
+        changed = sorted(k for k in base_sets if base_sets[k] != s2[k])
+        cf_rows.append({"re_declaration": label, "candidates_that_moved": changed})
+        for k in changed:
+            breaker.setdefault(k, label)
+    for k in base_sets:
+        free_measured[k] = (k not in breaker)
+    free_measured["P12"] = True
+
     open1 = []
+    scale_sets = {lab: cand_sets(dict(BASE, labels=lab), fresh=True)
+                  for lab in SCALES}
 
-    def add(pid, statement, out_set, free, note):
-        out = sorted(out_set) if isinstance(out_set, (set, list)) else out_set
-        u = unique_prime(out) if isinstance(out, list) else False
+    def add(pid, statement, out_set, note):
+        out = sorted(out_set)
+        u = unique_prime(out)
         inside = sorted(set(out) & set(ADMISS))
-        open1.append({"id": pid, "candidate": statement,
-                      "primes_it_admits": out,
-                      "admissible_part": inside,
-                      "role": ("NARROWING" if inside else "NO-ADMISSIBLE-PRIME"),
-                      "unique": bool(u),
-                      "declaration_free": bool(declaration_free(pid, free)),
-                      "note": note})
+        row = {"id": pid, "candidate": statement,
+               "primes_it_admits": out,
+               "admissible_part": inside,
+               "role": ("NARROWING" if inside else "NO-ADMISSIBLE-PRIME"),
+               "unique": bool(u),
+               "declaration_free": bool(declaration_free(
+                   pid, free_measured[pid], sorted(free_measured))),
+               "declaration_freeness_measured": free_measured[pid],
+               "broken_by": breaker.get(pid),
+               "note": note}
+        for lab in SCALES:
+            if pid in scale_sets[lab]:
+                row["admissible_part_at_%d_labels" % lab] = sorted(
+                    set(scale_sets[lab][pid]) & set(ADMISS))
+        open1.append(row)
+        return row
 
-    add("P1", DECL["open1_candidates"]["P1"], [P], False,
-        "the carrier size p^(k+d) = %d is a FUNCTION of the declared p; it "
-        "cannot derive it" % nHA)
-    add("P2", DECL["open1_candidates"]["P2"], sorted(PRANGE), False,
-        "k, d, L and the link set are declared arena data and constrain no prime")
-    add("P3", DECL["open1_candidates"]["P3"],
-        sorted({q for q in PRANGE if (2 * pord(D9)) % q == 0}), False,
-        "2*ord(D) = %d, but ord(D) = 5 is THIS unit's declared selection rule; "
-        "the candidate contains its own conclusion" % len(GRP))
-    add("P4", DECL["open1_candidates"]["P4"], sorted(fam_primes), True,
-        "the family's own defect orders admit %s; intersected with "
-        "admissibility, two survive" % sorted(fam_primes))
-    add("P5", DECL["open1_candidates"]["P5"], sorted(elt_primes), True,
-        "the completion group has elements of order p for p in %s; intersected "
-        "with admissibility, two survive" % sorted(elt_primes))
-    add("P6", DECL["open1_candidates"]["P6"],
-        sorted(set(PRANGE) - det_primes), True,
-        "the readout determinant is %s, so the re-encoding is invertible at "
-        "every prime but 2 -- a single exclusion, not a derivation" % det_ha)
-    add("P7", DECL["open1_candidates"]["P7"],
-        sorted(set(PRANGE) - rho_primes), True,
-        "rho's denominator is %d, so the deformation side does not exist at 2 "
-        "or 3" % rho_den)
-    add("P8", DECL["open1_candidates"]["P8"], sorted(spec2), True,
-        "the intertwining is solvable at exactly one prime in the registered "
-        "direction, swept over every prime below 60 -- and it is a prime the "
-        "deformation side cannot be built at; the re-encoding is undefined at "
-        "%s" % sorted(undefined_primes))
-    add("P9", DECL["open1_candidates"]["P9"],
-        sorted(spec2 - rho_primes), True,
-        "the joint system is EMPTY: the only prime that solves the intertwining "
-        "is one of the two at which rho fails to reduce")
-    add("P10", DECL["open1_candidates"]["P10"],
-        sorted({p for p in ADMISS if anti_by_p.get(p, 0) > 0}), True,
-        "48 at p = 5 and 96 at p = 7; zero at every larger declared prime")
-    add("P11", DECL["open1_candidates"]["P11"], [], True,
-        "the p-part of the completion group's order is p^1 at every prime, "
-        "against |V| = p^3: no prime admits an injective candidate here")
-    free_sets = [set(c["admissible_part"]) for c in open1
-                 if c["declaration_free"] and c["role"] == "NARROWING"]
-    inter = set(ADMISS)
-    for s in free_sets:
-        inter &= s
+    NOTES = {
+        "P1": "the carrier size p^(k+d) = %d is a FUNCTION of the declared p"
+              % nHA,
+        "P2": "k, d, L and the link set are declared arena data and constrain "
+              "no prime",
+        "P3": "2*ord(D) = %d, but ord(D) = 5 is THIS unit's declared selection "
+              "rule; the candidate contains its own conclusion" % len(GRP),
+        "P4": "the family's own defect orders, read at the arena being reported",
+        "P5": "the completion group's element orders at the arena being "
+              "reported",
+        "P6": "the readout determinant is %s, so the re-encoding is invertible "
+              "at every prime but 2 -- a single exclusion, not a derivation"
+              % det_ha,
+        "P7": "rho's denominator is %d, so the deformation side does not exist "
+              "at 2 or 3" % rho_den,
+        "P8": "the intertwining condition itself, over the covariant cell "
+              "family in the registered direction",
+        "P9": "the joint system P7 and P8",
+        "P10": "the count of label-exchange-anti-invariant elements of order p "
+               "at the arena being reported",
+        "P11": "the p-part of the completion group's order against |V| = p^3 "
+               "at the arena being reported",
+    }
+    for pid in ("P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10",
+                "P11"):
+        add(pid, DECL["open1_candidates"][pid], base_sets[pid], NOTES[pid])
+
+    # ---- the verdict, from two computations that share no deciding variable --
+    def verdict_from_table(rows, admissible):
+        """SOURCE 1: the candidate table.  A declaration-free NARROWING
+        candidate other than the intersection itself that admits exactly one
+        admissible prime, or a singleton intersection."""
+        narrowing = [r for r in rows if r["declaration_free"]
+                     and r["role"] == "NARROWING" and r["id"] != "P12"]
+        single = sorted(r["id"] for r in narrowing
+                        if unique_prime(r["admissible_part"]))
+        inter = open1_intersection([r["admissible_part"] for r in narrowing],
+                                   admissible)
+        return (derive_prime_verdict(bool(single) or len(inter) == 1),
+                sorted(inter), single, sorted(r["id"] for r in narrowing))
+
+    def verdict_from_primitives(free_ids, decl, admissible):
+        """SOURCE 2: a per-prime elimination that never forms the intersection
+        and never reads the table -- every candidate's membership is rebuilt
+        from its arena's own primitive measurements and tested prime by
+        prime."""
+        sets_ = cand_sets(decl, fresh=True)
+        survivors, singles = [], []
+        for q in admissible:
+            if all(q in sets_[pid] for pid in free_ids):
+                survivors.append(q)
+        for pid in free_ids:
+            if len(set(sets_[pid]) & set(admissible)) == 1:
+                singles.append(pid)
+        return (derive_prime_verdict(bool(singles) or len(survivors) == 1),
+                survivors, sorted(singles))
+
+    scale_report = {}
+    for lab in SCALES:
+        rows_lab = []
+        for r in open1:
+            rr = dict(r)
+            if r["id"] in scale_sets[lab]:
+                rr["primes_it_admits"] = scale_sets[lab][r["id"]]
+                rr["admissible_part"] = sorted(set(scale_sets[lab][r["id"]])
+                                               & set(ADMISS))
+                rr["role"] = ("NARROWING" if rr["admissible_part"]
+                              else "NO-ADMISSIBLE-PRIME")
+                rr["unique"] = bool(unique_prime(rr["primes_it_admits"]))
+            rows_lab.append(rr)
+        v1, i1, s1_, free_ids = verdict_from_table(rows_lab, ADMISS)
+        v2, i2, s2_ = verdict_from_primitives(free_ids,
+                                              dict(BASE, labels=lab), ADMISS)
+        scale_report[lab] = {"labels": lab, "verdict_source_1": v1,
+                             "verdict_source_2": v2,
+                             "narrowing_source_1": i1,
+                             "narrowing_source_2": i2,
+                             "single_candidate_source_1": s1_,
+                             "single_candidate_source_2": s2_,
+                             "declaration_free_narrowing_candidates": free_ids}
+    nine = scale_report[LAB9]
+    inter = set(nine["narrowing_source_1"])
     no_admissible = sorted(c["id"] for c in open1
                            if c["declaration_free"]
                            and c["role"] == "NO-ADMISSIBLE-PRIME")
-    add("P12", DECL["open1_candidates"]["P12"], sorted(inter), True,
-        "the tightest declaration-free NARROWING: the intersection over every "
-        "declaration-free candidate that admits an admissible prime at all.  "
-        "The declaration-free candidates that admit NONE are %s"
-        % ", ".join(no_admissible))
-    unique_forced = any(c["unique"] and c["declaration_free"]
-                        and c["role"] == "NARROWING"
-                        and set(c["primes_it_admits"]) <= set(ADMISS)
-                        and c["primes_it_admits"] for c in open1)
+    add("P12", DECL["open1_candidates"]["P12"], inter,
+        "the tightest declaration-free NARROWING at the declared arena: the "
+        "intersection over every declaration-free candidate that admits an "
+        "admissible prime at all.  The declaration-free candidates that admit "
+        "NONE are %s" % (", ".join(no_admissible) or "none"))
+    unique_forced = (nine["verdict_source_1"] == "LCB-PRIME-DERIVED")
+
+    # ---- the arena's own dependence on the declared prime --------------------
+    def smallest_injective_arena(q):
+        L = 2
+        while L <= 40:
+            if p_part_exponent(L - 1, q) >= 3:
+                return L
+            L += 1
+        return None
+    arena_rule = {q: smallest_injective_arena(q) for q in (5, 7)}
+    arena_coupled = {q: sorted(set(cand_sets(dict(BASE, labels=arena_rule[q]),
+                                             fresh=True)["P11"]) & set(ADMISS))
+                     for q in arena_rule if arena_rule[q]}
+
+    g43 = gate("G43", "DECLARATION-FREENESS IS COMPUTED PER CANDIDATE BY A "
+               "DECLARED CRITERION AND IS NEVER TYPED: every candidate is a "
+               "FUNCTION of the declaration record, and is re-evaluated at every "
+               "counterfactual re-declaration of a choice THIS UNIT makes -- the "
+               "prime with its selection rule, the direction, the "
+               "identification, the base record, the completion, the arena "
+               "relabelling and the record-space basis.  A candidate is "
+               "declaration-free exactly when its admitted set does not move, "
+               "the re-declaration that moves it is recorded, and the "
+               "classification the table uses is measured equal to that "
+               "invariance -- so a single flipped entry is caught.  The "
+               "criterion has teeth in both directions: some candidates are "
+               "measured to move and some are measured not to",
+               all(c["declaration_free"] == c["declaration_freeness_measured"]
+                   for c in open1)
+               and any(not c["declaration_free"] for c in open1)
+               and any(c["declaration_free"] for c in open1)
+               and len(cf_rows) == len(CFS)
+               and any(r["candidates_that_moved"] for r in cf_rows)
+               and arena_primitives(LAB9)["routes_agree"] is True,
+               {"counterfactuals": cf_rows,
+                "declaration_carrying": sorted(breaker),
+                "re_declaration_that_moves_each": breaker,
+                "arena_candidate_routes_agree_at_the_declared_arena":
+                    arena_primitives(LAB9)["routes_agree"],
+                "criterion": DECL["open1_criterion"]["declaration_freeness"]})
+    report("G43", g43, f"{len(CFS)} counterfactual re-declarations; "
+           f"declaration-carrying candidates {sorted(breaker)}")
+    for r in cf_rows:
+        say(f"      {r['re_declaration'][:62]:64s} moves "
+            f"{r['candidates_that_moved']}")
+
+    both_scales_differ = (len(SCALES) == len(set(SCALES))
+                          and scale_report[SCALES[0]]["narrowing_source_1"]
+                          != scale_report[SCALES[1]]["narrowing_source_1"])
+    sources_agree = all(s["verdict_source_1"] == s["verdict_source_2"]
+                        and s["narrowing_source_1"] == s["narrowing_source_2"]
+                        for s in scale_report.values())
+    g44 = gate("G44", "THE OPEN-1 VERDICT IS DERIVED BY TWO COMPUTATIONS THAT "
+               "SHARE NO DECIDING VARIABLE, AND IT IS REPORTED AT BOTH DECLARED "
+               "SCALES: source 1 reads the candidate table, excludes the "
+               "intersection candidate from the uniqueness test (it is the "
+               "intersection, not an independent candidate) and forms the "
+               "intersection; source 2 never forms an intersection and never "
+               "reads the table -- it eliminates prime by prime, recomputing "
+               "each candidate's membership from its own primitive measurement "
+               "with the memo bypassed.  The two agree at both scales.  The "
+               "scales are measured to DIFFER, which is the point: the "
+               "narrowing is arena-relative, and the arena that produces the "
+               "tighter one is itself a function of the declared prime",
+               sources_agree and both_scales_differ
+               and len(scale_report) == 2,
+               {"scales": scale_report,
+                "arena_rule_smallest_arena_admitting_injectivity": arena_rule,
+                "P11_admissible_part_at_that_arena": arena_coupled,
+                "verdict_rule": DECL["open1_criterion"]["verdict_rule"]})
+    report("G44", g44, "; ".join(
+        f"{lab} labels: {scale_report[lab]['verdict_source_1']} narrowing "
+        f"{scale_report[lab]['narrowing_source_1']}" for lab in SCALES))
+    say(f"      the smallest arena admitting an injective candidate: "
+        f"{arena_rule}; the p-part candidate's admissible part there: "
+        f"{arena_coupled}")
+
+    syn_der, syn_dec = synthetic_open1_tables(ADMISS)
+    vd, _id, _sd, _fd = verdict_from_table(syn_der, ADMISS)
+    vc, _ic, _sc, _fc = verdict_from_table(syn_dec, ADMISS)
+    g45 = gate("G45", "BOTH OPEN-1 OUTCOMES ARE REACHABLE BY THE SAME "
+               "DERIVATION, MEASURED ON DECLARED SYNTHETIC TABLES: a table on "
+               "which one declaration-free narrowing pins a single admissible "
+               "prime returns LCB-PRIME-DERIVED, and a table on which two "
+               "survive returns LCB-PRIME-DECLARED, through the same function "
+               "that produces the unit's own verdict.  A derivation that could "
+               "only ever return one of the two would decide nothing",
+               vd == "LCB-PRIME-DERIVED" and vc == "LCB-PRIME-DECLARED"
+               and vd != vc,
+               {"synthetic_derived_table": syn_der, "returns": vd,
+                "synthetic_declared_table": syn_dec, "returns_2": vc})
+    report("G45", g45, f"synthetic DERIVED table -> {vd}; synthetic DECLARED "
+           f"table -> {vc}")
+
     g29 = gate("G29", "OPEN 1 IS MEASURED, NOT ARGUED: every declared candidate "
                "structure is evaluated for (i) whether its admitted prime set is "
-               "a SINGLETON and (ii) whether it is itself declaration-free "
-               "(RUNBOOK 15: a quantity that is itself a declaration cannot "
-               "derive p).  Both properties are computed; the intersection of "
-               "the declaration-free candidates is taken; and the candidates "
-               "that carry a declaration are measured to do so rather than being "
-               "excluded by assertion",
+               "a SINGLETON and (ii) whether it is declaration-free by the "
+               "computed criterion of G43 (RUNBOOK 15: a quantity that is itself "
+               "a declaration cannot derive p).  Both properties are computed; "
+               "the intersection of the declaration-free candidates is taken; "
+               "and the candidates that carry a declaration are measured to do "
+               "so rather than being excluded by assertion",
                len(open1) == len(DECL["open1_candidates"])
                and any(not c["declaration_free"] for c in open1)
                and any(c["declaration_free"] for c in open1),
@@ -2477,16 +3688,19 @@ def run_unit(src: str) -> dict:
                 "a_declaration_free_singleton_inside_the_admissible_set":
                     unique_forced})
     report("G29", g29, f"{len(open1)} candidates evaluated; tightest "
-           f"declaration-free narrowing {sorted(inter)}")
-    say(f"  {'id':5s}{'admissible part':18s}{'role':21s}{'uniq':6s}{'free':6s}"
-        f"candidate")
+           f"declaration-free narrowing at the declared arena {sorted(inter)}")
+    say(f"  {'id':5s}{'adm part (9)':16s}{'adm part (16)':16s}{'role':21s}"
+        f"{'uniq':6s}{'free':6s}candidate")
     for c in open1:
-        say(f"  {c['id']:5s}{str(c['admissible_part'])[:17]:18s}{c['role']:21s}"
-            f"{str(c['unique']):6s}{str(c['declaration_free']):6s}"
-            f"{c['candidate'][:36]}")
+        say(f"  {c['id']:5s}"
+            f"{str(c.get('admissible_part_at_9_labels', c['admissible_part']))[:15]:16s}"
+            f"{str(c.get('admissible_part_at_16_labels', '--'))[:15]:16s}"
+            f"{c['role']:21s}{str(c['unique']):6s}"
+            f"{str(c['declaration_free']):6s}{c['candidate'][:34]}")
     tables["open1"] = open1
+    tables["open1_scales"] = scale_report
+    tables["open1_counterfactuals"] = cf_rows
     say("")
-
     # ==================== 13. THE VERDICTS ================================
     say("--- 13. THE VERDICTS, DERIVED INSIDE THEIR GATE ---")
     found_at_standard = sum(r["s1_pass"] for r in s1_rows)
@@ -2499,28 +3713,43 @@ def run_unit(src: str) -> dict:
     # the SECOND, independent source: the S4 grid's own linear-algebra decision,
     # which never touches route B's enumeration
     empty_recount = (live_full == 0)
+    # the THIRD, and it touches neither: the arena-free lemma of 4b, which
+    # forbids S1a and S3 together at every (cell, prime) with no census at all
+    empty_from_lemma = (uncovered == [] and len(cover_rows) > 0)
     empty_from_tables = (sum(1 for r in tables["s1_clause_census"]
                              if r["s1_pass"] > 0) == 0)
-    complete = (g03 and g11 and g16g and len(cells) == 4)
+    covered_cells = len(cover_rows)
+    universal = (universality_measured(covered_cells - len(uncovered),
+                                       covered_cells)
+                 and empty_recount and empty_from_lemma and empty_from_tables)
+    # the qualifier's own negative case, evaluated in gate, so a blinded
+    # measurement cannot pass
+    universal_neg = universality_measured(0, covered_cells)
+    complete = (g03 and g11 and g16g and len(cells) == 2 * math.factorial(3))
     both_reachable = (g22 and g23)
-    controls_ok = (g21 and g24)
-    verdict = derive_verdict(empty, complete, both_reachable, controls_ok)
-    recomputed = ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+    controls_ok = (g22 and g24)
+    verdict = derive_verdict(empty, complete, both_reachable, controls_ok,
+                             universal)
+    recomputed = ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-"
+                  "SQUARE"
                   if (found_at_standard == 0 and complete and both_reachable
-                      and controls_ok)
+                      and controls_ok and universal)
                   else ("LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD"
-                        if (complete and both_reachable and controls_ok)
+                        if (complete and both_reachable and controls_ok
+                            and found_at_standard)
                         else "LCB-BLOCKED-AT-CENSUS-DISCIPLINE"))
-    verdict_from_tables = ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD"
+    verdict_from_tables = ("LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-"
+                           "FOR-THIS-SQUARE"
                            if empty_from_tables and complete and both_reachable
-                           and controls_ok
+                           and controls_ok and universal
                            else "LCB-BRIDGE-FOUND-AT-STRENGTHENED-STANDARD")
     prime_verdict = derive_prime_verdict(unique_forced)
-    prime_recomputed = ("LCB-PRIME-DERIVED" if len(inter) == 1
-                        else "LCB-PRIME-DECLARED")
+    prime_recomputed = nine["verdict_source_2"]
     spectral = any(r["s1ab"] == 0 for r in s1_rows if r["direction"] == "counts->q")
     parity = any(r["s1ab"] > 0 and r["s1c_pass"] == 0 for r in s1_rows)
-    obstruction = obstruction_name(spectral, parity)
+    obstruction = obstruction_name(len(arena_free_all_p),
+                                   len(cells) - len(arena_free_all_p),
+                                   len(cells), spectral, parity)
 
     quals = {
         "encoding_cells": qualifier_value("encoding_cells", len(cells)),
@@ -2543,9 +3772,22 @@ def run_unit(src: str) -> dict:
             "accepted_at_the_strengthened_standard", accepted_total),
         "live_grid_cells_after_the_base_point_clause": qualifier_value(
             "live_grid_cells_after_the_base_point_clause", live_d),
+        "cells_where_the_obstruction_is_arena_free": qualifier_value(
+            "cells_where_the_obstruction_is_arena_free",
+            len(arena_free_all_p)),
+        "set_level_census_absent_S1b": qualifier_value(
+            "set_level_census_absent_S1b", str(setlevel)),
+        "admissible_records_passing_the_base_point_clause": qualifier_value(
+            "admissible_records_passing_the_base_point_clause",
+            sum(1 for r in rec_rows if r["candidates_passing_S1d"] > 0)),
         "obstruction": qualifier_value("obstruction", obstruction),
-        "open1_declaration_free_intersection": qualifier_value(
-            "open1_declaration_free_intersection", sorted(inter)),
+        "open1_declaration_free_intersection_at_9_labels": qualifier_value(
+            "open1_declaration_free_intersection_at_9_labels",
+            sorted(scale_report[LAB9]["narrowing_source_1"])),
+        "open1_declaration_free_intersection_at_16_labels": qualifier_value(
+            "open1_declaration_free_intersection_at_16_labels",
+            sorted(scale_report[LAB16]["narrowing_source_1"])
+            if LAB16 in scale_report else []),
     }
     qcheck = {
         "encoding_cells": len({(r["identification"], r["direction"])
@@ -2556,7 +3798,10 @@ def run_unit(src: str) -> dict:
         "ord5_class_size": ordspec[5],
         "record_cells_per_candidate": P ** 3,
         "homomorphisms_enumerated": sum(imgspec.values()),
-        "candidates_passing_S1a_S1b": sum(len(census[c]["routeB"]) for c in cells),
+        # the independent source for this one is ROUTE A: linear algebra, not
+        # the enumeration the qualifier itself was summed from
+        "candidates_passing_S1a_S1b": sum(census[c]["routeA_count"]
+                                          for c in cells),
         "candidates_passing_all_of_S1": sum(
             r["s1_pass"] for r in tables["s1_clause_census"]),
         "cells_passing_S2": sum(1 for r in tables["s2_s3"]
@@ -2568,55 +3813,115 @@ def run_unit(src: str) -> dict:
              if sum(r["s1_pass"] for r in tables["s1_clause_census"]) else 0),
         "live_grid_cells_after_the_base_point_clause":
             sum(1 for r in grid_rows if r["s1d_live"]),
-        "obstruction": obstruction_name(spectral, parity),
-        "open1_declaration_free_intersection": sorted(inter),
+        # recomputed from the fixed-space rows, not from the coverage rows
+        "cells_where_the_obstruction_is_arena_free":
+            len({(r["identification"], r["direction"]) for r in fixe_rows
+                 if all(x["dim_fix_E"] > 0 for x in fixe_rows
+                        if x["identification"] == r["identification"]
+                        and x["direction"] == r["direction"])}),
+        "set_level_census_absent_S1b": str(setlevel_check),
+        "admissible_records_passing_the_base_point_clause":
+            sum(1 for r in tables["base_record_sweep"]
+                if r["candidates_passing_S1d"] > 0),
+        "open1_declaration_free_intersection_at_9_labels":
+            sorted(scale_report[LAB9]["narrowing_source_2"]),
+        "open1_declaration_free_intersection_at_16_labels":
+            sorted(scale_report[LAB16]["narrowing_source_2"])
+            if LAB16 in scale_report else [],
     }
     qbad = sorted(k for k in qcheck if quals[k] != qcheck[k])
-    g30 = gate("G30", "THE TWO VERDICT STRINGS AND EVERY ONE OF THEIR "
+    # the obstruction STRING is not a number and is not recomputed by calling
+    # its own constructor again; it is token-gated in G46 from the measured
+    # booleans, and G30 records that gate's verdict rather than restating it
+    obstruction_tokens = {
+        "FIXED-POINT MISMATCH": True,
+        "SPECTRAL": spectral,
+        "CHART-PARITY": parity,
+        "data->geometry": spectral,
+        "geometry->data": parity,
+        "ARENA-FREE": len(arena_free_all_p) > 0,
+        "%d of the %d" % (len(arena_free_all_p), len(cells)): True,
+    }
+    token_bad = sorted(k for k, want in obstruction_tokens.items()
+                       if (k in obstruction) != bool(want))
+    g46 = gate("G46", "THE NAMED OBSTRUCTION IS TOKEN-GATED AGAINST THE MEASURED "
+               "BOOLEANS, NOT COMPARED WITH A SECOND CALL TO ITS OWN CONSTRUCTOR "
+               "(RUNBOOK 14 addendum, v13 #219): the expected tokens are "
+               "assembled here from the measured coverage counts and the "
+               "measured per-direction clause failures, and each is required to "
+               "be present exactly when its own boolean holds -- so a "
+               "plausible-but-wrong obstruction string cannot reach the receipt, "
+               "and neither can a cardinality claim",
+               token_bad == [] and "cardinality" not in obstruction
+               and obstruction != "UNDETERMINED",
+               {"obstruction": obstruction,
+                "expected_tokens": {k: bool(v)
+                                    for k, v in obstruction_tokens.items()},
+                "tokens_that_disagree": token_bad})
+    report("G46", g46, f"{len(obstruction_tokens)} obstruction tokens gated, "
+           f"{len(token_bad)} disagreements")
+    g30 = gate("G30", "THE TWO VERDICT STRINGS AND EVERY ONE OF THEIR NUMERIC "
                "QUALIFIERS ARE DERIVED INSIDE THIS GATE FROM THE MEASURED "
-               "COUNTS (RUNBOOK 13 addendum, v13 #234): the bridge verdict is "
-               "derived once from the emptiness decision, recomputed by a second "
-               "expression over the same booleans, and derived a THIRD time from "
-               "the recorded clause table by re-reading the per-cell survivor "
-               "counts; the prime verdict is derived and recomputed from the "
-               "candidate table's own intersection; and every printed qualifier "
-               "is recomputed here from its own source",
+               "COUNTS (RUNBOOK 13 addendum, v13 #234).  The bridge verdict has "
+               "THREE sources that do not share a deciding variable: the clause "
+               "table's own survivor sum; the S4 grid's Gaussian-elimination "
+               "decision, which never touches the enumeration; and the "
+               "arena-free lemma of section 4b, which touches neither and "
+               "forbids S1a with S3 at every (cell, prime) with no census at "
+               "all.  Its UNIVERSAL qualifier is earned from the measured "
+               "coverage and its own negative case is evaluated here, so a "
+               "blinded measurement cannot pass.  The prime verdict is derived "
+               "from the candidate table and recomputed by the per-prime "
+               "elimination that never forms an intersection.  Every printed "
+               "numeric qualifier is recomputed from a different source than the "
+               "one it was printed from",
                verdict == recomputed == verdict_from_tables
-               and verdict in DECL["outcomes"][:2]
+               and verdict in DECL["outcomes"][:3]
                and prime_verdict == prime_recomputed
                and prime_verdict in DECL["prime_outcomes"]
-               and empty == empty_recount == empty_from_tables
-               and qbad == [] and obstruction != "UNDETERMINED"
-               and "cardinality" not in obstruction,
+               and empty == empty_recount == empty_from_tables == empty_from_lemma
+               and universal and not universal_neg
+               and qbad == [] and g46,
                {"verdict": verdict, "recomputed": recomputed,
                 "verdict_from_the_clause_table": verdict_from_tables,
                 "prime_verdict": prime_verdict,
                 "prime_verdict_recomputed": prime_recomputed,
-                "emptiness": {"at_source": empty, "recount": empty_recount,
-                              "from_tables": empty_from_tables},
+                "prime_verdict_at_every_scale":
+                    {str(k): v["verdict_source_1"]
+                     for k, v in scale_report.items()},
+                "emptiness": {"at_source": empty, "grid_recount": empty_recount,
+                              "from_tables": empty_from_tables,
+                              "from_the_arena_free_lemma": empty_from_lemma},
+                "universality": {"measured": universal,
+                                 "negative_case": universal_neg,
+                                 "cell_prime_pairs": covered_cells,
+                                 "uncovered": len(uncovered)},
                 "qualifiers": quals, "qualifiers_recomputed_in_gate": qcheck,
                 "qualifiers_that_disagree": qbad,
                 "obstruction": obstruction})
     report("G30", g30, f"{verdict} / {prime_verdict}; {len(qcheck)} qualifiers "
            f"recomputed, {len(qbad)} disagreements")
-    g31 = gate("G31", "THE NAMED OBSTRUCTION IS MEASURED COEXTENSIVE WITH THE "
-               "CLAUSE FAILURES AND IS NOT A CARDINALITY CLAIM: the "
-               "data->geometry direction's cells are empty at S1a exactly where "
-               "2 is absent from the chart map's spectrum, and the "
+    g31 = gate("G31", "THE PER-CELL DIAGNOSTICS ARE MEASURED COEXTENSIVE WITH "
+               "THE CLAUSE FAILURES THEY NAME, AND NEITHER IS A CARDINALITY "
+               "CLAIM: the data->geometry direction's cells are empty at S1a "
+               "exactly where 2 is absent from the chart map's spectrum, and the "
                "geometry->data direction's cells are non-empty at S1a and empty "
-               "at S1c exactly where the 2-eigencovector is chart-symmetric.  No "
-               "cardinality test is used as a criterion anywhere in this unit",
+               "at S1c exactly where the 2-eigencovector is chart-symmetric.  "
+               "These are DIAGNOSTICS of the fixed-point wall, not the "
+               "obstruction: the wall stands at cells where neither bites",
                spectral and parity
                and all((r["s1ab"] == 0) == (r["direction"] == "counts->q")
-                       for r in s1_rows),
-               {"spectral_cells_empty_at_S1a": [r["direction"] for r in s1_rows
-                                                if r["s1ab"] == 0],
-                "parity_cells_empty_at_S1c": [r["direction"] for r in s1_rows
-                                              if r["s1ab"] > 0
-                                              and r["s1c_pass"] == 0],
+                       for r in s1_rows)
+               and all(r["s1c_pass"] == 0 for r in s1_rows if r["s1ab"] > 0),
+               {"spectral_cells_empty_at_S1a":
+                   sorted({r["direction"] for r in s1_rows if r["s1ab"] == 0}),
+                "parity_cells_empty_at_S1c":
+                   sorted({r["direction"] for r in s1_rows
+                           if r["s1ab"] > 0 and r["s1c_pass"] == 0}),
+                "diagnostics_are_not_the_obstruction": True,
                 "obstruction": obstruction})
-    report("G31", g31, "obstruction measured coextensive with the clause "
-           "failures")
+    report("G31", g31, "per-cell diagnostics measured coextensive with the "
+           "clause failures")
     say("")
     say(f"        BRIDGE VERDICT: {verdict}")
     say(f"        OPEN-1 VERDICT: {prime_verdict}")
@@ -2683,13 +3988,21 @@ def run_unit(src: str) -> dict:
              "ENTRY, NOT AS GROUP ELEMENTS.  The comparison is the one BRG's S1 "
              "asks for; a mutant that compares element ORDERS instead of "
              "matrices is declared and dies.", None)
-    disclose("X07", "THE UNIT DECIDES NOTHING ABOUT THE SIXTEEN-LABEL ARENA "
-             "BEYOND ITS ARITHMETIC: G15 measures that an injective candidate "
-             "into the sixteen-label completion group EXISTS and exhibits one. "
-             "Whether any of them satisfies the commuting square there is NOT "
-             "tested and is registered as an open question.", None)
-    disclose("X08", "TWO OF THE FOUR ENCODING CELLS RETURN A NON-EMPTY S1a/S1b "
-             "CENSUS -- 48 candidates each -- and every one of them is rejected "
+    disclose("X07", "WHAT THE SIXTEEN-LABEL ARENA IS AND IS NOT DECIDED BY, "
+             "STATED AT THE SCOPE THE MEASUREMENT SUPPORTS.  G15 measures that "
+             "an injective candidate into the sixteen-label completion group "
+             "EXISTS and exhibits one, so the CARDINALITY branch of the "
+             "obstruction dies there.  The ARENA-FREE branch does not: G35 "
+             "measures fix(delta) = {e} INSIDE that arena's own order-p^3 "
+             "witness subgroup, so at every cell whose re-encoding fixes a "
+             "nonzero vector S1a and S3 remain jointly unsatisfiable at sixteen "
+             "labels exactly as they are at nine.  At the four cells where the "
+             "fixed space is trivial neither branch bites at sixteen labels, and "
+             "the square there is NOT tested: that residue, and not the whole "
+             "arena, is what stays open.", None)
+    disclose("X08", "SIX OF THE TWELVE COVARIANT ENCODING CELLS RETURN A "
+             "NON-EMPTY S1a/S1b CENSUS -- 48 candidates each, the whole "
+             "geometry->data direction -- and every one of them is rejected "
              "by S1c at exactly 100 of the 125 record cells.  Measured, "
              "reported, and not counted as a FOUND, because S1c is a declared "
              "clause of S1 and the verdict is taken at the full clause list.",
@@ -2700,13 +4013,25 @@ def run_unit(src: str) -> dict:
              "and compares permutation matrices, the other solves a 3x3 kernel "
              "over F_p and multiplies by a counted set.  They are disclosed as "
              "two computations over shared data, which is what they are.", None)
-    disclose("X10", "THE PRIME 3 IS THE ONLY PRIME AT WHICH THE REGISTERED "
-             "INTERTWINING IS SOLVABLE, AND IT IS INADMISSIBLE ON THE "
-             "DEFORMATION SIDE.  The chart map's spectrum contains 1, 1/2 and "
-             "(in the index identification) -1; 2 joins it only when 2 = 1/2 or "
-             "2 = -1 mod p, i.e. only at p = 3, where HA's residual (1/6,1/6) "
-             "does not reduce.  This is measured over a prime range wider than "
-             "the declared sweep.", None)
+    x10_by_idn = {idn: spec2_primes((idn,), "counts->q", None)[0]
+                  for idn in sorted(SLOT_ORDERS)}
+    x10_seven = sorted(k for k, v in x10_by_idn.items() if 7 in v)
+    disclose("X10", "THE SPECTRAL CONDITION IS IDENTIFICATION-RELATIVE, AND THE "
+             "PRIME IT PICKS IS NOT ALWAYS 3.  In the registered direction 2 "
+             "enters the chart map's spectrum at p = 3 at EVERY identification "
+             "of the covariant family -- and at p = 7 as well at %d of the %d, "
+             "%s, the second of which is the chart-involution conjugate of the "
+             "declared index cell.  p = 7 IS admissible on the deformation side "
+             "(96 anti-invariant order-7 elements exist), so the registered "
+             "direction's census there is non-empty at S1a and S1b and is "
+             "emptied by S1c, exhibited in gate G38.  Swept over every prime "
+             "below 60, a range wider than the declared sweep.  The delivered "
+             "reading that the intertwining 'wants p = 3' was carried by the "
+             "two-of-six identification scope and does not survive the "
+             "covariant one." % (len(x10_seven), len(x10_by_idn),
+                                 " and ".join(x10_seven)),
+             {"primes_with_2_in_spectrum_by_identification": x10_by_idn,
+              "identifications_admitting_7": x10_seven})
 
     failed = [g["id"] for g in GATES if g["must_pass"] and not g["passed"]]
     say("--- 15. TOTALS ---")

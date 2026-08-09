@@ -9071,3 +9071,37 @@ partial edits preserved.  Also recorded: the user pushed to
 GitHub — origin/main now level with local main (the entire
 arc through #294 off-machine).  Recorded after each delivery
 occurs.
+
+## 2026-08-08 — LCB RE-DERIVATION DELIVERED (CONTINUATION),
+## COMMITTED AS-IS (v13 LEDGER #296)
+Delivery committed as-is.  The continuation inventoried the
+predecessor per item (code COMPLETE for L-1..L-5, paper
+ABSENT; the interruption point identified precisely — G27's
+stale hard-coded 2×2 tested set, the one failing gate) and
+completed everything.  VERDICT (verbatim):
+LCB-BRIDGE-EMPTY-AT-STRENGTHENED-STANDARD-UNIVERSAL-FOR-THIS-
+SQUARE.  THE UNIVERSAL OBSTRUCTION GATED: G35 fix(δ) = 1 at
+4/9/16 labels; G36 the 84 (cell,prime) fixed spaces (nonzero
+at every declared prime at 8/12 cells; general-d rows all
+nonzero); G37 84 pairs, 0 UNCOVERED (arena-free branch 56;
+p-part branch 28); the 12-cell table: FULL S1 SURVIVORS 0 AT
+ALL TWELVE (registered census 0 at all six identifications);
+R1's τ-conjugate witness reproduced as diagnostic (G38 — and
+sharpened: S1d fails vs the ord-5 base, passes vs an ord-7
+base).  **THE OPEN-1 RESULT (verbatim): "9 labels:
+LCB-PRIME-DECLARED narrowing [5, 7]; 16 labels:
+LCB-PRIME-DERIVED narrowing [5]" — SCALE-DEPENDENT: declared
+at the small arena, derived at the larger (from P11, shipping
+ARENA-COUPLED, not adopted); declaration-carrying computed:
+P1, P3, P8, P9 — R1's p = 7 flip CONFIRMED as a measurement
+and EXCLUDED as declaration-carried (P8/P9 move under
+direction AND identification).**  The meta-pattern at the
+top: whether the prime is derivable is itself arena-relative.
+"Wants p = 3" deleted and owned (X10 rewritten —
+direction/identification-carried).  S5 on the pairing's own
+map (the synthetic gap corrected, G41).  30 anchors / 46
+gates (44 must-pass, 0 failures) / 69 mutants, 0 survivors,
+never_falsified EMPTY / 18 qualifiers recomputed +
+token-gated / byte-identical ×2.  11 deviations incl. the
+predecessor line.  md5 output 3bdb2782 / receipt 670c65a0.
+Adjudicator verification next.
