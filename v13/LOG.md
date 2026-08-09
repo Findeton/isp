@@ -9427,3 +9427,35 @@ control's held-out language overstated).  None moves the
 verdict — source 2 carries it and R1 confirms it
 ANALYTICALLY.  Plus the unstated favourable lemma (route A's
 completeness from v_p(5040) = 1).  Three reviewers pending.
+
+## 2026-08-09 — TOP R1 (OPERATOR) FROZEN (v13 LEDGER #310)
+review-top-operator.md frozen as delivered.  Grade AWF; 590
+recomputations, zero disagreements with the instrument;
+byte-identical reruns ×2.  **F1 (MAJOR): A WRONG NUMBER IN
+THE FROZEN PAPER — §5.2 prints C7's clause (c) as 0 where the
+frozen output, the frozen receipt, and the reviewer's census
+all say 6** (a paper-vs-artifact transcription error — the
+programme's second false paper number; the consequential
+prose "C7 predicts linearity perfectly" false; verdict
+unaffected).  F3: clause (c) has no measured content (every
+passer ⊆ C4; the count is literally |C \ C4|; C5 ≡ C10
+extensionally — an undisclosed duplicate).  **F4: P* is an
+UNDECLARED ARENA COORDINATE** (swept all five wing symmetries:
+the transpositions agree; the 3-cycles give locus 270 and 0
+on-locus w/ order-7 defects appearing — the verdict's 384/48
+are P*-relative).  **F7/F15: b₁ = (T−1)(|V|−1) whenever each
+read time is simply connected — it returns 140 for the
+reference, the W-class, AND THE SCRAMBLED NEGATIVE CONTROL:
+the headline temporal invariant is INSENSITIVE to the
+identification data (only b₂ sees it).**  F9: the coherence
+routes are one route (conjugate boundary maps; never-mixed
+pattern measured).  F5/F6: the never-at-5,6 theorem CORRECT
+(order 5 Lagrange; order 6 needs the spectrum); §5.3's
+linearity explanation gives containment, not equality.
+F10: OR-vs-XOR reconstructed exactly (24 vs 25), caught only
+incidentally — a gate demanded.  **THE CONTRIBUTION: a third,
+elimination-free route — the checkpoint sub-nerves' b₀/b₁
+equal those of the BLOCK-INCIDENCE GRAPH of the two rules'
+partitions (25/25) — K2's deepest sentence made exact: the
+temporal b₁ is PARTITION-NESTING structure at each read
+time.**  Two reviewers pending (R2-RSQ, R3-TOP).
