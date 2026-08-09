@@ -9165,3 +9165,24 @@ mutants died, no empty-kill rows / never_falsified EMPTY,
 both denominators / byte-identical ×2.  11 deviations incl.
 the predecessor line.  md5 output 68e4896b / receipt
 4d36d63f.  Adjudicator verification next.
+
+## 2026-08-08 — TB3 TERMINAL; THE BATCH CLOSES (v13 LEDGER #299)
+Adjudicator verification PASSED (exit 0; output 68e4896b /
+receipt 4d36d63f; three identical runs).  TERMINAL CONFERRED:
+the continuation implemented #291 exactly, found-and-fixed
+three predecessor defects, and installed the panel's own
+constructions with better gates.  **TB3 CLOSES — and with it
+the era's batch: RQ0-SYNTH #188, O4 #199, NT #211, GEN #222,
+COC #252, XBA #260, HA #262, PSI #265, BRG #276, LCB #297,
+TB3 #299 — eleven terminal units.  TB3's bequests: THE LADDER
+(1 < A₄ < GL(3,2) < A₆ < A₇ by set equality; the exclusive
+Fano visit; the attained ceiling; the embedding with the
+|111⟩-stabiliser identity; the two-sevens-one-seven); the
+setting-scoped dihedral law; the confirmed group-level
+multipartite threshold (live {5,7} natively); psi-B and the
+non-monomial psi-W4 phenomenon; the equivariance-tracking
+route agreement.**  Successors per the standing order (#212):
+RSQ (the re-posed square at three wings — new encoding
+pairing per LCB's universal wall + the S₃-module machinery +
+HA at d=3) and TOP (topology on the ladder — the atlas's
+global structure with named groups).  Pinned next.
