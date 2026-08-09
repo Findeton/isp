@@ -677,3 +677,18 @@ falsifier.  Worker flags: Status-vocabulary
 the terminal stamp); the 60-vs-72 boundary counts both
 printed; effectus F8/F12 not ordered, not implemented.
 Adjudicator verification next.
+
+## 2026-08-09 — R2 TERMINAL (v14 LEDGER #22)
+Adjudicator verification CLEAN: plain run exit 0 BYTE-
+IDENTICAL; selftest exit 0, 54/54 mutants dead (path-value
+mutants confirmed dying by name).  Paper stamped TERMINAL;
+STATUS row written (✓adj).  **R2 / PAPER-02 IS TERMINAL #22.**
+Final form: R2-LOCALITY-DECLARABLE-AT<...> (14 computed
+segments); the census a theorem w/ two causes; MOTIVATION=
+NONE-INHERITED measured in-unit (the Fano 2-design result the
+paper's centerpiece); dimension ⊥ locality in-grid w/ the
+shipped fixed-point-free escape; the substrate's-own-locality
+question formally moved to I7's arena.  **THE R3 PIN NEXT:
+hypersurface deformation on the record lattice** (I7's sites;
+L ≥ 4 gated; motivated locality + consistent dimension
+inherited).

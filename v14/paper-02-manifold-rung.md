@@ -1,6 +1,10 @@
 # R2 — the manifold rung
 
-**Status:** `GREEN-REPAIRED` — 2026-08-09.
+**Status:** `TERMINAL` — panel #17/#18/#19 (3× ACCEPT-WITH-FIXES),
+adjudicated #20; repair R-R2-1…R-R2-12 delivered #21 and
+adjudicator-verified (plain-run byte-identical; selftest 54/54 mutants
+dead); v14 ledger #22, 2026-08-09.  Pin:
+`v14/note-r2-manifold-pin.md`, sha256-12 `76d42dfbc900`.
 
 ## Locality Is Declarable, and the Declaration Is the Whole of It
 
