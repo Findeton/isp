@@ -1,0 +1,5207 @@
+{
+ "anchors": [
+  {
+   "computed": "85f3cf809544",
+   "declared": "85f3cf809544",
+   "id": "A-R0-I1",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/rsq_reposed_square_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "85f3cf809544",
+   "declared": "85f3cf809544",
+   "id": "A-R0-I2",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/rsq_reposed_square_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "65bb1fc5231f",
+   "declared": "65bb1fc5231f",
+   "id": "A-R0-I3",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/top_topology_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "e4934f2525b0",
+   "declared": "e4934f2525b0",
+   "id": "A-R0-I4a",
+   "passed": true,
+   "quantity": "sha256-12 of v13/note-top-adjudication.md",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "31b70406c6e8",
+   "declared": "31b70406c6e8",
+   "id": "A-R0-I4b",
+   "passed": true,
+   "quantity": "sha256-12 of v13/note-rsq-adjudication.md",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "3e502f685ab3",
+   "declared": "3e502f685ab3",
+   "id": "A-R0-I5",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/lcb_livecell_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "c9bc956fe751",
+   "declared": "c9bc956fe751",
+   "id": "A-R0-I6",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/tb3_third_base_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "542b8735daf0",
+   "declared": "542b8735daf0",
+   "id": "A-R0-I7",
+   "passed": true,
+   "quantity": "sha256-12 of v13/code/ha_successor_receipt.json",
+   "source": "v14/note-r0-founding-pin.md"
+  },
+  {
+   "computed": "7a40eeea0df3",
+   "declared": "7a40eeea0df3",
+   "id": "A-R0-CHARTER",
+   "passed": true,
+   "quantity": "sha256-12 of v14/PLAN.md",
+   "source": "v14/LOG.md #1"
+  },
+  {
+   "computed": "27c9f1144ffa",
+   "declared": "27c9f1144ffa",
+   "id": "A-R1-PIN",
+   "passed": true,
+   "quantity": "sha256-12 of v14/note-r1-continuum-pin.md",
+   "source": "v14/LOG.md #2"
+  },
+  {
+   "computed": "e9d2bedff244",
+   "declared": "e9d2bedff244",
+   "id": "A-R0-PIN",
+   "passed": true,
+   "quantity": "sha256-12 of v14/note-r0-founding-pin.md",
+   "source": "v14/LOG.md #1"
+  },
+  {
+   "computed": "5",
+   "declared": "5",
+   "id": "A-RSQ-M-5",
+   "passed": true,
+   "quantity": "growth family member at p=5",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "36",
+   "declared": "36",
+   "id": "A-RSQ-N-5",
+   "passed": true,
+   "quantity": "growth family labels at p=5",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "31",
+   "declared": "31",
+   "id": "A-RSQ-EA-5",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=5",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "26",
+   "declared": "26",
+   "id": "A-RSQ-DV-5",
+   "passed": true,
+   "quantity": "divisibility threshold at p=5",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "6",
+   "declared": "6",
+   "id": "A-RSQ-M-7",
+   "passed": true,
+   "quantity": "growth family member at p=7",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "43",
+   "declared": "43",
+   "id": "A-RSQ-N-7",
+   "passed": true,
+   "quantity": "growth family labels at p=7",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "43",
+   "declared": "43",
+   "id": "A-RSQ-EA-7",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=7",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "43",
+   "declared": "43",
+   "id": "A-RSQ-DV-7",
+   "passed": true,
+   "quantity": "divisibility threshold at p=7",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "10",
+   "declared": "10",
+   "id": "A-RSQ-M-11",
+   "passed": true,
+   "quantity": "growth family member at p=11",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "71",
+   "declared": "71",
+   "id": "A-RSQ-N-11",
+   "passed": true,
+   "quantity": "growth family labels at p=11",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "67",
+   "declared": "67",
+   "id": "A-RSQ-EA-11",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=11",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "67",
+   "declared": "67",
+   "id": "A-RSQ-DV-11",
+   "passed": true,
+   "quantity": "divisibility threshold at p=11",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "12",
+   "declared": "12",
+   "id": "A-RSQ-M-13",
+   "passed": true,
+   "quantity": "growth family member at p=13",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "85",
+   "declared": "85",
+   "id": "A-RSQ-N-13",
+   "passed": true,
+   "quantity": "growth family labels at p=13",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "79",
+   "declared": "79",
+   "id": "A-RSQ-EA-13",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=13",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "79",
+   "declared": "79",
+   "id": "A-RSQ-DV-13",
+   "passed": true,
+   "quantity": "divisibility threshold at p=13",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "15",
+   "declared": "15",
+   "id": "A-RSQ-M-17",
+   "passed": true,
+   "quantity": "growth family member at p=17",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "106",
+   "declared": "106",
+   "id": "A-RSQ-N-17",
+   "passed": true,
+   "quantity": "growth family labels at p=17",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "103",
+   "declared": "103",
+   "id": "A-RSQ-EA-17",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=17",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "103",
+   "declared": "103",
+   "id": "A-RSQ-DV-17",
+   "passed": true,
+   "quantity": "divisibility threshold at p=17",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "17",
+   "declared": "17",
+   "id": "A-RSQ-M-19",
+   "passed": true,
+   "quantity": "growth family member at p=19",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "120",
+   "declared": "120",
+   "id": "A-RSQ-N-19",
+   "passed": true,
+   "quantity": "growth family labels at p=19",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "115",
+   "declared": "115",
+   "id": "A-RSQ-EA-19",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=19",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "115",
+   "declared": "115",
+   "id": "A-RSQ-DV-19",
+   "passed": true,
+   "quantity": "divisibility threshold at p=19",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "20",
+   "declared": "20",
+   "id": "A-RSQ-M-23",
+   "passed": true,
+   "quantity": "growth family member at p=23",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "141",
+   "declared": "141",
+   "id": "A-RSQ-N-23",
+   "passed": true,
+   "quantity": "growth family labels at p=23",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "139",
+   "declared": "139",
+   "id": "A-RSQ-EA-23",
+   "passed": true,
+   "quantity": "elementary abelian threshold at p=23",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "139",
+   "declared": "139",
+   "id": "A-RSQ-DV-23",
+   "passed": true,
+   "quantity": "divisibility threshold at p=23",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "7",
+   "declared": "7",
+   "id": "A-TB3-WIDTH",
+   "passed": true,
+   "quantity": "TB3's moved labels = the growth family's block width",
+   "source": "I6 base_declaration"
+  },
+  {
+   "computed": "8",
+   "declared": "8",
+   "id": "A-TB3-L1",
+   "passed": true,
+   "quantity": "L_1 is TB3's native arena",
+   "source": "I2 growth_family declaration"
+  },
+  {
+   "computed": "3",
+   "declared": "3",
+   "id": "A-TB3-WINGS",
+   "passed": true,
+   "quantity": "wings",
+   "source": "I6 base_declaration"
+  },
+  {
+   "computed": "40320",
+   "declared": "40320",
+   "id": "A-LCB-A1-MEMBERS",
+   "passed": true,
+   "quantity": "9-label completion family size",
+   "source": "I5 G35"
+  },
+  {
+   "computed": "1",
+   "declared": "1",
+   "id": "A-LCB-A1-FIX",
+   "passed": true,
+   "quantity": "fix(delta) at 9 labels",
+   "source": "I5 G35"
+  },
+  {
+   "computed": "125",
+   "declared": "125",
+   "id": "A-LCB-A2-ORDER",
+   "passed": true,
+   "quantity": "the 16-label witness subgroup order",
+   "source": "I5 G15"
+  },
+  {
+   "computed": "1",
+   "declared": "1",
+   "id": "A-LCB-A2-FIX",
+   "passed": true,
+   "quantity": "fix(delta) at the 16-label subgroup",
+   "source": "I5 G35"
+  },
+  {
+   "computed": "3",
+   "declared": "3",
+   "id": "A-LCB-A2-PPART",
+   "passed": true,
+   "quantity": "p-part exponent at 16 labels",
+   "source": "I5 G15"
+  },
+  {
+   "computed": "1",
+   "declared": "1",
+   "id": "A-LCB-A1-PPART",
+   "passed": true,
+   "quantity": "p-part exponent at 9 labels",
+   "source": "I5 G15"
+  },
+  {
+   "computed": "16",
+   "declared": "16",
+   "id": "A-LCB-ARENARULE-5",
+   "passed": true,
+   "quantity": "smallest arena admitting an injective candidate at p=5",
+   "source": "I5 G44"
+  },
+  {
+   "computed": "22",
+   "declared": "22",
+   "id": "A-LCB-ARENARULE-7",
+   "passed": true,
+   "quantity": "smallest arena admitting an injective candidate at p=7",
+   "source": "I5 G44"
+  },
+  {
+   "computed": "43",
+   "declared": "43",
+   "id": "A-RSQ-A3-LABELS",
+   "passed": true,
+   "quantity": "the grown arena's label count at p=7",
+   "source": "I2 scale_thresholds"
+  },
+  {
+   "computed": "198984",
+   "declared": "198984",
+   "id": "A-TOP-CHI-N",
+   "passed": true,
+   "quantity": "chi of N",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "5261",
+   "declared": "5261",
+   "id": "A-TOP-RANK-N",
+   "passed": true,
+   "quantity": "rank d_2 of N",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "5401",
+   "declared": "5401",
+   "id": "A-TOP-CYC-N",
+   "passed": true,
+   "quantity": "cycle rank of N",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "140",
+   "declared": "140",
+   "id": "A-TOP-B1-N",
+   "passed": true,
+   "quantity": "b_1 of N",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "79320",
+   "declared": "79320",
+   "id": "A-TOP-CHI-N_coh",
+   "passed": true,
+   "quantity": "chi of N_coh",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "5240",
+   "declared": "5240",
+   "id": "A-TOP-RANK-N_coh",
+   "passed": true,
+   "quantity": "rank d_2 of N_coh",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "5401",
+   "declared": "5401",
+   "id": "A-TOP-CYC-N_coh",
+   "passed": true,
+   "quantity": "cycle rank of N_coh",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "161",
+   "declared": "161",
+   "id": "A-TOP-B1-N_coh",
+   "passed": true,
+   "quantity": "b_1 of N_coh",
+   "source": "I3 q1_invariants"
+  },
+  {
+   "computed": "140",
+   "declared": "140",
+   "id": "A-TOP-COORD",
+   "passed": true,
+   "quantity": "(read times - 1)(charts - 1)",
+   "source": "I3 q1_invariants"
+  }
+ ],
+ "arithmetic": "exact: int and fractions.Fraction only; AST-guarded",
+ "declarations": {
+  "K": 3,
+  "K_window_fixture": {
+   "declaration": "a crafted scalar trajectory whose last two members agree and whose third-from-last does not: at K = 3 it is NOT stabilised, at K = 1 it IS.  The window is therefore load-bearing and a shrink flips a verdict",
+   "trajectory": [
+    "1/2",
+    "1/3",
+    "2/5",
+    "2/5"
+   ]
+  },
+  "arena": {
+   "admission": "a registered invariant STABILIZES iff it is exactly constant (exact-arithmetic equality) on the final K consecutive family members; K = 3, declared in the pin.",
+   "arena action": "the relabelling action of Sym(L) by conjugation -- an arena coordinate.  The invariants are self-tested under a declared non-trivial relabelling (RUNBOOK section 14).",
+   "boundary": "one ARENA per family member: a finite label set L with a distinguished label 0, a declared chart symmetry Sigma in Sym(L), and the declared block partition of L minus {0} -- the orbits of the arena's own declared completion subgroup.  Nothing outside (L, 0, Sigma, blocks) enters any construction.",
+   "family": "A1 = the nine-label completion arena of I5; A2 = the sixteen-label successor arena of I5's G15; A3 = the 43-label grown arena of I2's control; A4, A5 = the next two members of A3's own declared growth family L_m, the rule being extracted from the pinned receipt as data.  Every label count is DERIVED from pinned data; none is typed.",
+   "law": "the atlas over an arena: charts are the labels; the coordinate cells are (block, rule) with rule in {FULL, REAL}; the drawn identification at a cell is the UNIQUE element of that cell's cyclic transport group carrying one chart to the other.",
+   "provenance": "v13 enters only through the seven R0 rows, each verified by sha256-12 at run time; nothing of v13 is imported as code.",
+   "state": "the distinguished label 0, fixed by Sigma and by every block transport"
+  },
+  "atlas": {
+   "N": "0-cells the charts; 1-cells one per unordered drawn pair per coordinate cell; 2-cells the unordered chart triples pairwise drawn at a COMMON block index, one rule chosen per edge",
+   "N_coh": "the 2-cells of N whose three drawn maps compose to the identity -- the cocycle condition on transition maps",
+   "charts": "the labels of L",
+   "coordinate cells": "(k, rule) for k a block index and rule in {FULL, REAL}: the FULL transport at cell k is gamma_k, the increasing-index cycle on block B_k; the REAL transport is Sigma_k . gamma_k, where Sigma_k is the arena symmetry restricted to the <Sigma>-saturation of B_k and extended by the identity -- the block transport as the chart symmetry realises it on that patch",
+   "drawn": "an ordered pair (a, b) with a != b is DRAWN at a cell iff EXACTLY ONE element pi of that cell's cyclic transport group satisfies pi(a) = b; the drawn map is that pi.  This is I3's own admission rule -- draw iff the identification is unique",
+   "overlap graph G": "simple; an edge where an identification is drawn at SOME coordinate cell"
+  },
+  "controls": {
+   "DISCRIMINATION": "the WIDENING family W_s = ({0} + one block of s labels, Sigma the block reversal), s = 5, 6, 7: a growth rule that is NOT a disjoint addition.  It must MOVE the two densities, so their constancy on the declared family is a property of that family's rule and not of the definitions",
+   "NEGATIVE": "the extensive family: the same three arenas read with I3's EXCLUDED raw estimators (the unnormalised counts).  Every candidate grows, so the instrument must return the NO-CONTINUUM-LIMIT head",
+   "POSITIVE": "the constant family (A3, A3, A3): every registered invariant is constant by construction, so the instrument must return the STABILIZES head naming all five",
+   "SCRAMBLE": "at A3, the drawn RELATION is kept and the drawn MAPS are deterministically permuted within each cell.  The identification-sensitive invariants (NCOH_DENSITY, B2_DENSITY) must move and the relation-only invariants (PHI, DIMENSION_PROFILE) must not -- measured, not assumed"
+  },
+  "excluded": {
+   "b_1": "trivial by I3's ordered measurement and carries no identification content -- excluded as a candidate, printed once as a disclosure",
+   "the raw local-dimension estimator": "EXTENSIVE by I3 -- excluded as an intensive candidate"
+  },
+  "failure_modes": {
+   "profile": [
+    "CONSTANT",
+    "SUPPORT-CONSTANT-WEIGHTS-MOVING",
+    "SUPPORT-MOVING",
+    "UNDEFINED-AT-A-MEMBER"
+   ],
+   "scalar": [
+    "CONSTANT",
+    "STRICTLY-INCREASING",
+    "STRICTLY-DECREASING",
+    "NON-MONOTONE",
+    "UNDEFINED-AT-A-MEMBER"
+   ]
+  },
+  "family_target": 5,
+  "morphism_criterion": "an ADMISSIBLE ARENA MORPHISM iota : A -> A' is an injection of label sets with iota(0) = 0, iota . Sigma_A = Sigma_A' . iota, and a block-index injection sigma with iota(B_k) contained in B'_sigma(k).  Equivariance forces every <Sigma_A>-orbit to map bijectively onto a <Sigma_A'>-orbit of the SAME size; the search is therefore a finite orbit-and-block matching, decided exhaustively, and a witness is CONSTRUCTED whenever one exists",
+  "question": "does a DECLARED refinement family over the v13 substrate admit a PRE-REGISTERED INTENSIVE invariant that stabilizes under refinement?",
+  "registered_invariants": [
+   [
+    "PHI",
+    "the overlap-completeness fraction: drawn chart pairs over all chart pairs.  Also R2's gateway: any member with PHI < 1 unlocks the manifold rung",
+    "scalar"
+   ],
+   [
+    "NCOH_DENSITY",
+    "coherent 2-cells per drawn chart pair: |F(N_coh)| over |E(N)|",
+    "scalar"
+   ],
+   [
+    "SPECTRAL_PROFILE",
+    "the normalised cyclotomic profile of I - E over the arena's readouts E = rho_L(pi), pi in <Sigma> minus the identity: d -> mult(Phi_d) over dim.  I2's eigenvalue-1 row is confirmed as an anchor at every member",
+    "profile"
+   ],
+   [
+    "DIMENSION_PROFILE",
+    "the link-dimension distribution normalised by chart count: v -> #{charts of link-vertex count v} over |charts|.  The RAW estimator is extensive by I3 and is EXCLUDED",
+    "profile"
+   ],
+   [
+    "B2_DENSITY",
+    "b_2 of N_coh over F_2, per 2-cell of N_coh",
+    "scalar"
+   ]
+  ],
+  "verdict_templates": {
+   "NO_CONTINUUM": "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE-<...>",
+   "STABILIZES": "R1-STABILIZES-AT-<...>",
+   "rule": "the head is STABILIZES iff the measured set of registered invariants constant on the final K members is NON-EMPTY, and NO-CONTINUUM-LIMIT iff it is EMPTY.  Every qualifier -- the stabilised values, the window, each divergent invariant's measured failure mode, the functoriality qualifier and R2's gateway -- is computed from the trajectory table inside the verdict gate"
+  }
+ },
+ "disclosures": [
+  {
+   "id": "X-COMPANION-HASH",
+   "statement": "R0's parenthetical companion hashes for the two v13 PAPERS do not reproduce against the artifacts on disk.  What this instrument measures is exactly that: the declared and the computed sha256-12 of each companion, and the set on which they differ.  The rows' CARRYING receipts -- the primary key of every R0 row -- all verify, all six other companions verify, and no number of this unit is read from a paper, so the run proceeds and the delta is reported here rather than silently ignored.",
+   "value": [
+    {
+     "artifact": "v13/paper-rsq-reposed-square.md",
+     "computed": "f80317a25037",
+     "declared": "07bea42728a2",
+     "id": "I2-paper",
+     "matches": false
+    },
+    {
+     "artifact": "v13/paper-top-topology.md",
+     "computed": "379194959fbc",
+     "declared": "4e4cd4f11bab",
+     "id": "I3-paper",
+     "matches": false
+    }
+   ]
+  },
+  {
+   "id": "X-CHI-IDENTITY",
+   "statement": "chi from the cell counts and chi from the Betti numbers agree at every complex of every member.  This is an algebraic identity in the ranks, not a second route, and is recorded as a disclosure.",
+   "value": {
+    "rows": [
+     {
+      "agrees": true,
+      "arena": "A1",
+      "complex": "N"
+     },
+     {
+      "agrees": true,
+      "arena": "A1",
+      "complex": "N_coh"
+     },
+     {
+      "agrees": true,
+      "arena": "A2",
+      "complex": "N"
+     },
+     {
+      "agrees": true,
+      "arena": "A2",
+      "complex": "N_coh"
+     },
+     {
+      "agrees": true,
+      "arena": "A3",
+      "complex": "N"
+     },
+     {
+      "agrees": true,
+      "arena": "A3",
+      "complex": "N_coh"
+     },
+     {
+      "agrees": true,
+      "arena": "A4",
+      "complex": "N"
+     },
+     {
+      "agrees": true,
+      "arena": "A4",
+      "complex": "N_coh"
+     },
+     {
+      "agrees": true,
+      "arena": "A5",
+      "complex": "N"
+     },
+     {
+      "agrees": true,
+      "arena": "A5",
+      "complex": "N_coh"
+     }
+    ]
+   }
+  },
+  {
+   "id": "X-REAL-EMPTY",
+   "statement": "The REALISED rule draws NOTHING at A2, and that is measured rather than assumed: at that member the realised transport has order 10 on a seven-label symmetry saturation, so no ordered pair has a UNIQUE power carrying one label to the other and the admission rule refuses every candidate.  Consequently at A2 alone every 2-cell draws its three maps from one cyclic group, which acts regularly on its block, so coherence is ANALYTICALLY FORCED there and N coincides with N_coh.  At the other four members two distinct transport groups meet at a common block and coherence is contingent -- it is measured 96 of 160 at A1 and 222 of 438, 259 of 511, 296 of 584 at the grown members.  This is a disclosure, not a must-pass gate.",
+   "value": {
+    "rows": [
+     {
+      "FULL_cells": [
+       [
+        8,
+        56
+       ]
+      ],
+      "REAL_cells": [
+       [
+        4,
+        24
+       ]
+      ],
+      "REAL_draws_nothing": false,
+      "arena": "A1"
+     },
+     {
+      "FULL_cells": [
+       [
+        5,
+        20
+       ],
+       [
+        5,
+        20
+       ],
+       [
+        5,
+        20
+       ]
+      ],
+      "REAL_cells": [
+       [
+        10,
+        0
+       ],
+       [
+        10,
+        0
+       ],
+       [
+        10,
+        0
+       ]
+      ],
+      "REAL_draws_nothing": true,
+      "arena": "A2"
+     },
+     {
+      "FULL_cells": [
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ]
+      ],
+      "REAL_cells": [
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ]
+      ],
+      "REAL_draws_nothing": false,
+      "arena": "A3"
+     },
+     {
+      "FULL_cells": [
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ]
+      ],
+      "REAL_cells": [
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ]
+      ],
+      "REAL_draws_nothing": false,
+      "arena": "A4"
+     },
+     {
+      "FULL_cells": [
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ],
+       [
+        7,
+        42
+       ]
+      ],
+      "REAL_cells": [
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ],
+       [
+        3,
+        12
+       ]
+      ],
+      "REAL_draws_nothing": false,
+      "arena": "A5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "X-B1",
+   "statement": "b_1 is excluded as a candidate by the pin and is printed once here as a disclosure.  On N it is measured ZERO at every member -- the trivial H_1 I3 reports, reproduced at this substrate -- while on N_coh it is non-zero and grows: coherence costs cycles, exactly as I3 measured at its own scale.",
+   "value": {
+    "A1": {
+     "b1_N": 0,
+     "b1_N_coh": 2
+    },
+    "A2": {
+     "b1_N": 0,
+     "b1_N_coh": 0
+    },
+    "A3": {
+     "b1_N": 0,
+     "b1_N_coh": 24
+    },
+    "A4": {
+     "b1_N": 0,
+     "b1_N_coh": 28
+    },
+    "A5": {
+     "b1_N": 0,
+     "b1_N_coh": 32
+    }
+   }
+  }
+ ],
+ "findings": {
+  "R2_gateway": "A1",
+  "thesis": "THE DECLARED REFINEMENT FAMILY REFINES BY DISJOINT ADDITION, AND EXACTLY THE TWO IDENTIFICATION-CARRYING DENSITIES STABILIZE.  Over the pin's five-member family the overlap-completeness fraction is measured strictly below 1 at every member -- so locality exists at this substrate and R2's gateway arena is A1 -- and it does not stabilize: it is STRICTLY-DECREASING on the declared window.  Of the five pre-registered intensive invariants exactly 2 are exactly constant on the final 3 members, NCOH_DENSITY=37/27;B2_DENSITY=20/37, and the same two values reproduce at the members the growth rule's prime-indexed selection picks instead.  The mechanism is measured rather than inferred: at every grown member b_0 of the nerve equals the block count plus the basepoint, so the refinement is a disjoint sum of identical block atlases, the per-block 1-cell and coherent-2-cell counts are equal across members, and a growth rule that widens a block instead of copying it moves both densities.  The three that do not stabilize fail in a named way: PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING.  The family is NOT functorial: no admissible arena morphism exists at 2 of its 4 steps, and the obstructions are measured -- a block width that decreases, and a symmetry orbit size the successor arena does not carry.  I2's eigenvalue-1 row rides along as an anchor at every readout of every member: 0 lies in spec(I - E) all the way up the family.",
+  "verdict": "R1-STABILIZES-AT-<NCOH_DENSITY=37/27;B2_DENSITY=20/37|DIVERGENT=PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING|WINDOW=K=3-OF-5-MEMBERS-NO-CAP|FUNCTORIALITY=FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS|R2-GATEWAY=A1>"
+ },
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE ANY MEASURED DATUM.  Every measured datum of this unit passes through one counter, and that counter is measured to be ZERO at this gate, which sits after the declaration block and before the first construction",
+   "class": "measurement",
+   "id": "G01",
+   "passed": true,
+   "value": {
+    "measured_data_evaluated": 0
+   }
+  },
+  {
+   "claim": "THE R0 INHERITANCE IS VERIFIED AT RUN TIME AND THE CENSUS IS COMPLETE: every row of the founding pin's seven-row table is hashed here and compared against the pin's own recorded sha256-12, the charter and both pins included.  The census size is computed against the pin's declared row count, so a dropped row is caught even when every surviving hash matches",
+   "class": "measurement",
+   "id": "G02",
+   "passed": true,
+   "value": {
+    "anchors_passed": 11,
+    "row_ids": [
+     "I1",
+     "I2",
+     "I3",
+     "I4a",
+     "I4b",
+     "I5",
+     "I6",
+     "I7"
+    ],
+    "rows_censused": 8
+   }
+  },
+  {
+   "claim": "THE COMPANION-ARTIFACT CENSUS IS COMPLETE AND ITS MEASURED MISMATCH SET IS REPORTED EXACTLY.  R0's I2, I3 and I6 rows name companion artifacts in parentheses; every one of them is hashed here and the set whose recorded hash does NOT reproduce is computed and printed rather than smoothed.  The gate is on the CENSUS being complete -- a dropped companion is caught -- and the mismatch set is carried as a finding for the adjudicator, because no number of this unit is read from a companion artifact",
+   "class": "measurement",
+   "id": "G03",
+   "passed": true,
+   "value": {
+    "companions_censused": 8,
+    "matching": [
+     "I2-code",
+     "I2-output",
+     "I3-code",
+     "I3-output",
+     "I6-gen",
+     "I6-psi"
+    ],
+    "mismatching": [
+     "I2-paper",
+     "I3-paper"
+    ]
+   }
+  },
+  {
+   "claim": "THE GENERATOR RULE IS DATA, NOT A GUESS: the family L_m is read out of the pinned receipt's own declaration string, its block width is EXTRACTED from that string (base and exponent parsed, width = base**exp - 1) rather than typed, and the extracted rule is required to reproduce the receipt's whole scale-threshold table -- member, labels, elementary-abelian threshold and divisibility threshold -- at every one of its declared primes.  The width is cross-anchored against I6's own moved-label count",
+   "class": "measurement",
+   "id": "G04",
+   "passed": true,
+   "value": {
+    "base": 2,
+    "block_width": 7,
+    "exponent": 3,
+    "rank": 6,
+    "rows": [
+     {
+      "divisibility_threshold_computed": 26,
+      "divisibility_threshold_declared": 26,
+      "elementary_threshold_computed": 31,
+      "elementary_threshold_declared": 31,
+      "labels_computed": 36,
+      "labels_declared": 36,
+      "m_computed": 5,
+      "m_declared": 5,
+      "p": 5
+     },
+     {
+      "divisibility_threshold_computed": 43,
+      "divisibility_threshold_declared": 43,
+      "elementary_threshold_computed": 43,
+      "elementary_threshold_declared": 43,
+      "labels_computed": 43,
+      "labels_declared": 43,
+      "m_computed": 6,
+      "m_declared": 6,
+      "p": 7
+     },
+     {
+      "divisibility_threshold_computed": 67,
+      "divisibility_threshold_declared": 67,
+      "elementary_threshold_computed": 67,
+      "elementary_threshold_declared": 67,
+      "labels_computed": 71,
+      "labels_declared": 71,
+      "m_computed": 10,
+      "m_declared": 10,
+      "p": 11
+     },
+     {
+      "divisibility_threshold_computed": 79,
+      "divisibility_threshold_declared": 79,
+      "elementary_threshold_computed": 79,
+      "elementary_threshold_declared": 79,
+      "labels_computed": 85,
+      "labels_declared": 85,
+      "m_computed": 12,
+      "m_declared": 12,
+      "p": 13
+     },
+     {
+      "divisibility_threshold_computed": 103,
+      "divisibility_threshold_declared": 103,
+      "elementary_threshold_computed": 103,
+      "elementary_threshold_declared": 103,
+      "labels_computed": 106,
+      "labels_declared": 106,
+      "m_computed": 15,
+      "m_declared": 15,
+      "p": 17
+     },
+     {
+      "divisibility_threshold_computed": 115,
+      "divisibility_threshold_declared": 115,
+      "elementary_threshold_computed": 115,
+      "elementary_threshold_declared": 115,
+      "labels_computed": 120,
+      "labels_declared": 120,
+      "m_computed": 17,
+      "m_declared": 17,
+      "p": 19
+     },
+     {
+      "divisibility_threshold_computed": 139,
+      "divisibility_threshold_declared": 139,
+      "elementary_threshold_computed": 139,
+      "elementary_threshold_declared": 139,
+      "labels_computed": 141,
+      "labels_declared": 141,
+      "m_computed": 20,
+      "m_declared": 20,
+      "p": 23
+     }
+    ],
+    "rule_text": "L_m = {0} + (F_2^3 minus 0) x {1..m}: m copies of TB3's seven moved labels, with S_3 acting on the F_2^3 factor alone and fixing label 0.  m = 1 is TB3's native arena."
+   }
+  },
+  {
+   "claim": "EVERY ARENA IS REBUILT FROM PINNED DATA AND EVERY LABEL COUNT IS DERIVED, NEVER TYPED.  A1's nine labels come from inverting the factorial of I5's measured completion-family size; A2's sixteen come from I5's own arena rule rank*p + 1 with the rank read off the record-space size and the prime solved for; A3's forty-three come from the extracted growth rule at the member the rule itself selects.  Each rebuild is then anchored against the pinned receipts' measured quantities -- family size, fixed-point count, witness-subgroup order, p-part exponents and the arena rule at two primes",
+   "class": "measurement",
+   "id": "G05",
+   "passed": true,
+   "value": {
+    "A1": {
+     "from": "members = (n-1)! = 40320",
+     "labels": 9
+    },
+    "A2": {
+     "from": "rank*p + 1",
+     "labels": 16,
+     "prime": 5,
+     "rank": 3
+    },
+    "A3": {
+     "from": "width*m + 1",
+     "labels": 43,
+     "m": 6
+    }
+   }
+  },
+  {
+   "claim": "THE EXTRACTED RULE REGENERATES A3 FROM SCRATCH BEFORE A4 IS BUILT, AND THE SELF-TEST EVALUATES FRESH.  The second evaluation bypasses the memo, the bypass count is measured to have risen and the self-test's cache-hit count is measured to be zero against a non-zero lookup count, so a self-test that read the cache is caught.  The regenerated label set, block partition and symmetry are compared to A3's coordinate by coordinate",
+   "class": "measurement",
+   "id": "G06",
+   "passed": true,
+   "value": {
+    "cache_bypasses": 2,
+    "cache_hits": 0,
+    "cache_lookups": 2,
+    "regenerated_blocks": 6,
+    "regenerated_labels": 43,
+    "selftest_cache_hits": 0
+   }
+  },
+  {
+   "claim": "THE FAMILY LENGTH IS COMPUTED AND NO CAP IS SILENT.  The built length is measured against the pin's declared target of five and the cap state is derived from that comparison, not asserted; a truncation is caught here and would be carried into the verdict's window qualifier",
+   "class": "measurement",
+   "id": "G07",
+   "passed": true,
+   "value": {
+    "built": 5,
+    "cap_state": "NO-CAP",
+    "members": [
+     {
+      "blocks": 1,
+      "labels": 9,
+      "name": "A1"
+     },
+     {
+      "blocks": 3,
+      "labels": 16,
+      "name": "A2"
+     },
+     {
+      "blocks": 6,
+      "labels": 43,
+      "name": "A3"
+     },
+     {
+      "blocks": 7,
+      "labels": 50,
+      "name": "A4"
+     },
+     {
+      "blocks": 8,
+      "labels": 57,
+      "name": "A5"
+     }
+    ],
+    "target": 5
+   }
+  },
+  {
+   "claim": "THE DECLARED ARENA IS PRINTED AND MATCHED AT EVERY COORDINATE (RUNBOOK section 15).  For every member the label count, the basepoint's fixedness under the symmetry, the symmetry's order and cycle type, the block count, the block sizes, whether the blocks partition the moved labels and whether they are symmetry-stable are all computed and printed; the comparison across members is made on that table and never on a name",
+   "class": "measurement",
+   "id": "G08",
+   "passed": true,
+   "value": {
+    "A1": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+     ],
+     "Sigma_order": 2,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      8
+     ],
+     "blocks": 1,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 9,
+     "note": "I5's nine-label completion arena"
+    },
+    "A2": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "Sigma_order": 2,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      5,
+      5,
+      5
+     ],
+     "blocks": 3,
+     "blocks_are_Sigma_stable": false,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 16,
+     "note": "I5's sixteen-label successor arena (G15)"
+    },
+    "A3": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 6,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 43,
+     "note": "I2's grown arena L_6"
+    },
+    "A4": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 7,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 50,
+     "note": "the growth family's next member L_7"
+    },
+    "A5": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 8,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 57,
+     "note": "the growth family's next member L_8"
+    }
+   }
+  },
+  {
+   "claim": "FUNCTORIALITY IS GATED, NOT ASSUMED, AND THE CRITERION HAS TEETH IN BOTH DIRECTIONS.  The admissible-morphism criterion is applied at every consecutive step; where a morphism exists it is CONSTRUCTED and its equivariance, injectivity, basepoint preservation, identity and composition are each measured; where none exists the obstruction is NAMED from the measured orbit and block data.  The criterion is measured to admit some steps and to refuse others, so it is not a constant function",
+   "class": "measurement",
+   "id": "G09",
+   "passed": true,
+   "value": {
+    "functoriality_rows": [
+     {
+      "at": "A3->A4->A5",
+      "composition_agrees_with_the_maps": true,
+      "composition_is_equivariant": true,
+      "composition_is_injective": true,
+      "identity_is_the_identity": true
+     }
+    ],
+    "qualifier": "FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS",
+    "steps": [
+     {
+      "admissible": false,
+      "reason": "BLOCK-WIDTH-DECREASES: the largest source block has 8 labels and the largest target block has 5",
+      "step": "A1->A2",
+      "witness": null
+     },
+     {
+      "admissible": false,
+      "reason": "ORBIT-SIZE-UNAVAILABLE: <Sigma_A> has orbit sizes [1, 2] with multiplicities the target cannot supply at sizes [2]",
+      "step": "A2->A3",
+      "witness": null
+     },
+     {
+      "admissible": true,
+      "reason": "CONSTRUCTED",
+      "step": "A3->A4",
+      "witness": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42
+      ]
+     },
+     {
+      "admissible": true,
+      "reason": "CONSTRUCTED",
+      "step": "A4->A5",
+      "witness": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "claim": "THIS UNIT'S HOMOLOGY MACHINERY REPRODUCES I3's PUBLISHED INVARIANTS FROM I3's PUBLISHED CELL COUNTS.  The identities this instrument uses -- chi = V - E + F, rank d_2 = F - b_2, cycle rank = E - V + b_0, b_1 = cycle rank - rank d_2 -- are evaluated here on the pinned receipt's own V, E, F, b_0 and b_2 for BOTH the nerve and its coherent sub-nerve, and each result is anchored exit-1 against the receipt's independently recorded value.  This is the machinery's external calibration; nothing of I3's atlas is rebuilt here and nothing is imported",
+   "class": "measurement",
+   "id": "G10",
+   "passed": true,
+   "value": {
+    "coordinate_count": 140,
+    "rows": [
+     {
+      "b1_computed": 140,
+      "b1_declared": 140,
+      "chi_computed": 198984,
+      "chi_declared": 198984,
+      "complex": "N",
+      "cycle_rank_computed": 5401,
+      "cycle_rank_declared": 5401,
+      "rank_d2_computed": 5261,
+      "rank_d2_declared": 5261
+     },
+     {
+      "b1_computed": 161,
+      "b1_declared": 161,
+      "chi_computed": 79320,
+      "chi_declared": 79320,
+      "complex": "N_coh",
+      "cycle_rank_computed": 5401,
+      "cycle_rank_declared": 5401,
+      "rank_d2_computed": 5240,
+      "rank_d2_declared": 5240
+     }
+    ]
+   }
+  },
+  {
+   "claim": "THE ATLAS IS WELL FORMED AT EVERY MEMBER AND ITS CELL CENSUSES ARE TAKEN TWICE: the drawn relation is measured SYMMETRIC, the drawn map of the reversed pair is measured to be the inverse of the drawn map, the 1-cell census taken from the ordered pair tables agrees with the census taken from the unordered edge list, and the 2-cell census taken by the construction loop agrees with a multiplicity-product census taken from a per-block pair-multiplicity dictionary that shares no edge index, no triple key and no intermediate with it.  A dropped or duplicated cell of either degree is caught by the second count",
+   "class": "measurement",
+   "id": "G11",
+   "passed": true,
+   "value": {
+    "rows": [
+     {
+      "arena": "A1",
+      "census_agrees": true,
+      "drawn_maps_inverse_consistent": true,
+      "drawn_relation_symmetric": true,
+      "one_cells": 40,
+      "one_cells_from_the_pair_census": 40,
+      "two_cells_route_1": 160,
+      "two_cells_route_2": 160
+     },
+     {
+      "arena": "A2",
+      "census_agrees": true,
+      "drawn_maps_inverse_consistent": true,
+      "drawn_relation_symmetric": true,
+      "one_cells": 30,
+      "one_cells_from_the_pair_census": 30,
+      "two_cells_route_1": 30,
+      "two_cells_route_2": 30
+     },
+     {
+      "arena": "A3",
+      "census_agrees": true,
+      "drawn_maps_inverse_consistent": true,
+      "drawn_relation_symmetric": true,
+      "one_cells": 162,
+      "one_cells_from_the_pair_census": 162,
+      "two_cells_route_1": 438,
+      "two_cells_route_2": 438
+     },
+     {
+      "arena": "A4",
+      "census_agrees": true,
+      "drawn_maps_inverse_consistent": true,
+      "drawn_relation_symmetric": true,
+      "one_cells": 189,
+      "one_cells_from_the_pair_census": 189,
+      "two_cells_route_1": 511,
+      "two_cells_route_2": 511
+     },
+     {
+      "arena": "A5",
+      "census_agrees": true,
+      "drawn_maps_inverse_consistent": true,
+      "drawn_relation_symmetric": true,
+      "one_cells": 216,
+      "one_cells_from_the_pair_census": 216,
+      "two_cells_route_1": 584,
+      "two_cells_route_2": 584
+     }
+    ]
+   }
+  },
+  {
+   "claim": "COMPONENTS AND CYCLE RANK ARE COMPUTED BY TWO GENUINELY INDEPENDENT ROUTES AT EVERY COMPLEX OF EVERY MEMBER -- union-find over the drawn links against |V| minus the F_2 rank of the 1-boundary, and a breadth-first spanning forest that performs no elimination at all against the Euler count -- and they agree everywhere",
+   "class": "measurement",
+   "id": "G12",
+   "passed": true,
+   "value": {
+    "rows": [
+     {
+      "arena": "A1",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A1",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A2",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A2",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A3",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A3",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A4",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A4",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A5",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A5",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     }
+    ]
+   }
+  },
+  {
+   "claim": "THE 2-BOUNDARY RANK IS COMPUTED UNDER TWO PIVOT DISCIPLINES -- highest-bit pivots taking the rows forward, lowest-bit pivots taking them in reverse -- and they agree at every complex of every member.  These are two pivot disciplines on one rank and are described as that, never as two independent routes; so the gate also measures, on a declared probe, that the second discipline really is the other one: its PIVOT SET on the probe is required to equal the low-pivot set and to DIFFER from the high-pivot set, which is what a replacement of one discipline by the other breaks",
+   "class": "measurement",
+   "id": "G13",
+   "passed": true,
+   "value": {
+    "high_pivot_rank": 3,
+    "high_pivot_set": [
+     1,
+     2,
+     3
+    ],
+    "low_pivot_rank": 3,
+    "low_pivot_set": [
+     0,
+     1,
+     2
+    ],
+    "probe": [
+     6,
+     3,
+     12
+    ],
+    "rows": [
+     {
+      "arena": "A1",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A1",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A2",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A2",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A3",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A3",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A4",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A4",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A5",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     },
+     {
+      "arena": "A5",
+      "b0_routes_agree": true,
+      "chi_agrees": true,
+      "complex": "N_coh",
+      "cycle_rank_routes_agree": true,
+      "rank_d2_pivots_agree": true
+     }
+    ],
+    "second_discipline_pivot_set": [
+     0,
+     1,
+     2
+    ],
+    "second_discipline_rank": 3
+   }
+  },
+  {
+   "claim": "THE BOOLEAN CONNECTIVE AT THE INCIDENCE BOUNDARY CARRIES A PARITY-WITNESS GATE (RUNBOOK section 14 addendum, boundary parity).  The 2-boundary is the XOR of a 2-cell's three 1-cells.  On this substrate's realised cells the three 1-cells are measured PAIRWISE DISTINCT at every 2-cell of every member, so the OR returns the same rows and the measured rank delta is zero -- that is a measurement of the complex, not an assumption, and a degenerate 2-cell would break it.  The connective's own parity is then witnessed by a DEGENERATE PROBE pushed through the same instrument: on a repeated 1-cell the XOR cancels and the OR does not, and the death certificate is exactly that measured delta.  d_1 d_2 = 0 is verified on every coherent 2-cell of every member, exhaustively and without a sample cap",
+   "class": "measurement",
+   "id": "G14",
+   "passed": true,
+   "value": {
+    "degenerate_probe_OR": 3,
+    "degenerate_probe_XOR": 2,
+    "degenerate_probe_through_the_instrument": 2,
+    "rows": [
+     {
+      "arena": "A1",
+      "d1_d2_is_zero": true,
+      "delta_on_the_realised_cells": 0,
+      "rank_with_OR": 31,
+      "rank_with_XOR": 31,
+      "the_three_1_cells_are_distinct": true
+     },
+     {
+      "arena": "A2",
+      "d1_d2_is_zero": true,
+      "delta_on_the_realised_cells": 0,
+      "rank_with_OR": 18,
+      "rank_with_XOR": 18,
+      "the_three_1_cells_are_distinct": true
+     },
+     {
+      "arena": "A3",
+      "d1_d2_is_zero": true,
+      "delta_on_the_realised_cells": 0,
+      "rank_with_OR": 102,
+      "rank_with_XOR": 102,
+      "the_three_1_cells_are_distinct": true
+     },
+     {
+      "arena": "A4",
+      "d1_d2_is_zero": true,
+      "delta_on_the_realised_cells": 0,
+      "rank_with_OR": 119,
+      "rank_with_XOR": 119,
+      "the_three_1_cells_are_distinct": true
+     },
+     {
+      "arena": "A5",
+      "d1_d2_is_zero": true,
+      "delta_on_the_realised_cells": 0,
+      "rank_with_OR": 136,
+      "rank_with_XOR": 136,
+      "the_three_1_cells_are_distinct": true
+     }
+    ]
+   }
+  },
+  {
+   "claim": "PHI IS COMPUTED BY TWO ROUTES AND LIES IN ITS DECLARED RANGE: the overlap edge set built from the union of the per-cell relations, against a second accumulation that never forms the edge list, at every member; and 0 <= PHI <= 1 at every member, with the denominator the forced pair count n(n-1)/2 recomputed from the printed label count",
+   "class": "computation",
+   "id": "G15",
+   "passed": true,
+   "value": {
+    "A1": {
+     "PHI": "7/9",
+     "all_pairs": 36,
+     "overlap_edges": 28,
+     "route_2": "7/9"
+    },
+    "A2": {
+     "PHI": "1/4",
+     "all_pairs": 120,
+     "overlap_edges": 30,
+     "route_2": "1/4"
+    },
+    "A3": {
+     "PHI": "6/43",
+     "all_pairs": 903,
+     "overlap_edges": 126,
+     "route_2": "6/43"
+    },
+    "A4": {
+     "PHI": "3/25",
+     "all_pairs": 1225,
+     "overlap_edges": 147,
+     "route_2": "3/25"
+    },
+    "A5": {
+     "PHI": "2/19",
+     "all_pairs": 1596,
+     "overlap_edges": 168,
+     "route_2": "2/19"
+    }
+   }
+  },
+  {
+   "claim": "THE COHERENT 2-CELL COUNT IS RECOUNTED BY A COMPARATOR THAT DOES NOT ROUTE THROUGH THE COMPONENT UNDER TEST (RUNBOOK section 14 addendum #219): the construction flags coherence while it builds the cell, and the recount reconstructs each cell's three drawn maps from the EDGE table alone and re-composes them.  The two agree at every member, and the density's denominator -- the drawn 1-cell count -- is measured non-zero",
+   "class": "computation",
+   "id": "G16",
+   "passed": true,
+   "value": {
+    "A1": {
+     "NCOH_DENSITY": "12/5",
+     "flagged": 96,
+     "one_cells": 40,
+     "recount": 96
+    },
+    "A2": {
+     "NCOH_DENSITY": "1/1",
+     "flagged": 30,
+     "one_cells": 30,
+     "recount": 30
+    },
+    "A3": {
+     "NCOH_DENSITY": "37/27",
+     "flagged": 222,
+     "one_cells": 162,
+     "recount": 222
+    },
+    "A4": {
+     "NCOH_DENSITY": "37/27",
+     "flagged": 259,
+     "one_cells": 189,
+     "recount": 259
+    },
+    "A5": {
+     "NCOH_DENSITY": "37/27",
+     "flagged": 296,
+     "one_cells": 216,
+     "recount": 296
+    }
+   }
+  },
+  {
+   "claim": "THE SPECTRAL PROFILE IS COMPUTED TWICE AND I2's EIGENVALUE-1 ROW RIDES ALONG AS AN ANCHOR AT EVERY MEMBER.  The multiplicity of the trivial cyclotomic factor -- which IS dim ker(I - E) -- is taken once as the readout's cycle count and once as the exact rational kernel dimension of I - E computed by elimination over Q, and the two agree at every readout of every member; the profile's degrees are checked to sum to the dimension; and the eigenvalue-1 row is confirmed present at every readout, so 0 lies in spec(I - E) all along the family.  The wall is confirmed, never re-censused.  The anchor predicate is calibrated the other way inside this gate: on a multiplicity of zero it must return FALSE, so a chain that always said yes is caught here",
+   "class": "computation",
+   "id": "G17",
+   "passed": true,
+   "value": {
+    "anchor_predicate_at_multiplicity_0": false,
+    "anchor_predicate_at_multiplicity_1": true,
+    "rows": [
+     {
+      "arena": "A1",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 6,
+      "mu_1_by_exact_kernel_of_I_minus_E": 6,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       2,
+       2,
+       2
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A2",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 10,
+      "mu_1_by_exact_kernel_of_I_minus_E": 10,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A3",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 19,
+      "mu_1_by_exact_kernel_of_I_minus_E": 19,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A3",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 19,
+      "mu_1_by_exact_kernel_of_I_minus_E": 19,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A4",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 22,
+      "mu_1_by_exact_kernel_of_I_minus_E": 22,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A4",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 22,
+      "mu_1_by_exact_kernel_of_I_minus_E": 22,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A5",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 25,
+      "mu_1_by_exact_kernel_of_I_minus_E": 25,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     },
+     {
+      "arena": "A5",
+      "degree_check": true,
+      "eigenvalue_1_present": true,
+      "mu_1_by_cycle_count": 25,
+      "mu_1_by_exact_kernel_of_I_minus_E": 25,
+      "readout_cycle_type": [
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ],
+      "routes_agree": true
+     }
+    ]
+   }
+  },
+  {
+   "claim": "THE DIMENSION PROFILE IS COMPUTED BY TWO ROUTES: the link-vertex count per chart read off the overlap edge list, against a second pass that accumulates each chart's neighbours from the per-cell tables and never forms the edge list.  They agree at every chart of every member, and the profile's weights are measured to sum to 1 -- so a dropped chart is caught",
+   "class": "computation",
+   "id": "G18",
+   "passed": true,
+   "value": {
+    "A1": {
+     "profile": "[[0, 1/9], [7, 8/9]]",
+     "routes_agree": true
+    },
+    "A2": {
+     "profile": "[[0, 1/16], [4, 15/16]]",
+     "routes_agree": true
+    },
+    "A3": {
+     "profile": "[[0, 1/43], [6, 42/43]]",
+     "routes_agree": true
+    },
+    "A4": {
+     "profile": "[[0, 1/50], [6, 49/50]]",
+     "routes_agree": true
+    },
+    "A5": {
+     "profile": "[[0, 1/57], [6, 56/57]]",
+     "routes_agree": true
+    }
+   }
+  },
+  {
+   "claim": "B2_DENSITY IS READ ON THE COMPLEX THAT CARRIES THE IDENTIFICATION DATA.  b_2 is taken on N_coh -- not on N -- because I3 measures the identification content to sit in the coherent sub-nerve; the denominator is N_coh's own 2-cell count and is measured non-zero at every member; the emitted density is compared against a comparator formed from N_coh's own b_2 and 2-cell count without passing through the complex selector; and the two complexes are measured to DIFFER at some member, so reading the wrong one is a detectable error",
+   "class": "computation",
+   "id": "G19",
+   "passed": true,
+   "value": {
+    "A1": {
+     "B2_DENSITY": "65/96",
+     "F_N_coh": 96,
+     "b2_N": 127,
+     "b2_N_coh": 65,
+     "comparator": "65/96"
+    },
+    "A2": {
+     "B2_DENSITY": "2/5",
+     "F_N_coh": 30,
+     "b2_N": 12,
+     "b2_N_coh": 12,
+     "comparator": "2/5"
+    },
+    "A3": {
+     "B2_DENSITY": "20/37",
+     "F_N_coh": 222,
+     "b2_N": 312,
+     "b2_N_coh": 120,
+     "comparator": "20/37"
+    },
+    "A4": {
+     "B2_DENSITY": "20/37",
+     "F_N_coh": 259,
+     "b2_N": 364,
+     "b2_N_coh": 140,
+     "comparator": "20/37"
+    },
+    "A5": {
+     "B2_DENSITY": "20/37",
+     "F_N_coh": 296,
+     "b2_N": 416,
+     "b2_N_coh": 160,
+     "comparator": "20/37"
+    }
+   }
+  },
+  {
+   "claim": "THE TRAJECTORY TABLE IS CELL-COMPLETE AGAINST ITS FORCED PRODUCT (RUNBOOK section 13 addendum #234): the number of cells actually written is counted and compared with the product of the registered invariant count and the built family length, the row-name set is compared with the registry, and no cell is permitted to be absent.  A dropped row or a dropped cell is caught here",
+   "class": "measurement",
+   "id": "G20",
+   "passed": true,
+   "value": {
+    "cells_forced": 25,
+    "cells_present": 25,
+    "labels": [
+     9,
+     16,
+     43,
+     50,
+     57
+    ],
+    "members": [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ],
+    "rows": {
+     "B2_DENSITY": [
+      "65/96",
+      "2/5",
+      "20/37",
+      "20/37",
+      "20/37"
+     ],
+     "DIMENSION_PROFILE": [
+      "[[0, 1/9], [7, 8/9]]",
+      "[[0, 1/16], [4, 15/16]]",
+      "[[0, 1/43], [6, 42/43]]",
+      "[[0, 1/50], [6, 49/50]]",
+      "[[0, 1/57], [6, 56/57]]"
+     ],
+     "NCOH_DENSITY": [
+      "12/5",
+      "1/1",
+      "37/27",
+      "37/27",
+      "37/27"
+     ],
+     "PHI": [
+      "7/9",
+      "1/4",
+      "6/43",
+      "3/25",
+      "2/19"
+     ],
+     "SPECTRAL_PROFILE": [
+      "[[[1, 2/3], [2, 1/3]]]",
+      "[[[1, 5/8], [2, 3/8]]]",
+      "[[[1, 19/43], [3, 12/43]]]",
+      "[[[1, 11/25], [3, 7/25]]]",
+      "[[[1, 25/57], [3, 16/57]]]"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "THE STABILISATION WINDOW IS LOAD-BEARING AND IS CALIBRATED BOTH WAYS ON A CRAFTED FIXTURE DECLARED IN ADVANCE.  The fixture's last two entries agree and its third-from-last does not, so at the declared K = 3 it is NOT stabilised and at K = 1 it IS: a window shrink therefore flips a verdict, which is exactly what the pin requires the window mutant to prove.  The instrument's window is measured equal to the pin's declared K",
+   "class": "measurement",
+   "id": "G21",
+   "passed": true,
+   "value": {
+    "K": 3,
+    "declared_K": 3,
+    "fixture": [
+     "1/2",
+     "1/3",
+     "2/5",
+     "2/5"
+    ],
+    "stabilised_at_1": true,
+    "stabilised_at_K": false
+   }
+  },
+  {
+   "claim": "THE VERDICT STRING IS DERIVED INSIDE THIS GATE FROM THE MEASURED TRAJECTORY TABLE AND EVERY QUALIFIER IS COMPUTED (RUNBOOK section 13 addendum #234, #257).  The HEAD is STABILIZES exactly when the measured set of registered invariants constant on the final K members is non-empty and NO-CONTINUUM-LIMIT exactly when it is empty; the stabilised values, each divergent invariant's measured failure mode, the window with the family length and cap state, the functoriality qualifier and R2's gateway are each read out of the measurement and each is required to appear verbatim in the emitted string.  Inverting the head, typing a qualifier, dropping a row or shrinking the window all break this derivation",
+   "class": "derivation",
+   "id": "G22",
+   "passed": true,
+   "value": {
+    "R2_gateway": "A1",
+    "failure_modes": {
+     "B2_DENSITY": "CONSTANT",
+     "DIMENSION_PROFILE": "SUPPORT-CONSTANT-WEIGHTS-MOVING",
+     "NCOH_DENSITY": "CONSTANT",
+     "PHI": "STRICTLY-DECREASING",
+     "SPECTRAL_PROFILE": "SUPPORT-CONSTANT-WEIGHTS-MOVING"
+    },
+    "functoriality": "FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS",
+    "head": "R1-STABILIZES-AT",
+    "stabilised": [
+     "B2_DENSITY",
+     "NCOH_DENSITY"
+    ],
+    "stabilised_values": {
+     "B2_DENSITY": "20/37",
+     "NCOH_DENSITY": "37/27"
+    },
+    "verdict": "R1-STABILIZES-AT-<NCOH_DENSITY=37/27;B2_DENSITY=20/37|DIVERGENT=PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING|WINDOW=K=3-OF-5-MEMBERS-NO-CAP|FUNCTORIALITY=FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS|R2-GATEWAY=A1>",
+    "window": "WINDOW=K=3-OF-5-MEMBERS-NO-CAP"
+   }
+  },
+  {
+   "claim": "R2's GATEWAY IS COMPUTED, NOT NAMED.  The set of members whose overlap-completeness fraction is strictly below 1 is computed from the trajectory table and the FIRST such member is handed forward as R2's arena; the criterion is measured to be non-vacuous, since PHI is measured strictly below 1 somewhere and its declared range admits 1",
+   "class": "measurement",
+   "id": "G23",
+   "passed": true,
+   "value": {
+    "R2_gateway_arena": "A1",
+    "members_with_phi_below_1": [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ],
+    "phi": {
+     "A1": "7/9",
+     "A2": "1/4",
+     "A3": "6/43",
+     "A4": "3/25",
+     "A5": "2/19"
+    }
+   }
+  },
+  {
+   "claim": "THE DECLARED GROWTH RULE IS MEASURED TO REFINE BY DISJOINT ADDITION, AND THAT IS WHAT CARRIES THE CONSTANT DENSITIES.  At each grown member b_0 of the nerve is measured equal to the block count plus one -- the basepoint -- so the complex is a disjoint sum of one copy per block; and the per-block 1-cell and coherent 2-cell counts are measured EQUAL across the grown members.  The constancy of the two densities is therefore located, not merely observed",
+   "class": "measurement",
+   "id": "G24",
+   "passed": true,
+   "value": {
+    "rows": [
+     {
+      "arena": "A1",
+      "b0_equals_blocks_plus_basepoint": true,
+      "b0_of_N": 2,
+      "blocks": 1,
+      "coherent_two_cells_per_block": "96/1",
+      "one_cells_per_block": "40/1"
+     },
+     {
+      "arena": "A2",
+      "b0_equals_blocks_plus_basepoint": true,
+      "b0_of_N": 4,
+      "blocks": 3,
+      "coherent_two_cells_per_block": "10/1",
+      "one_cells_per_block": "10/1"
+     },
+     {
+      "arena": "A3",
+      "b0_equals_blocks_plus_basepoint": true,
+      "b0_of_N": 7,
+      "blocks": 6,
+      "coherent_two_cells_per_block": "37/1",
+      "one_cells_per_block": "27/1"
+     },
+     {
+      "arena": "A4",
+      "b0_equals_blocks_plus_basepoint": true,
+      "b0_of_N": 8,
+      "blocks": 7,
+      "coherent_two_cells_per_block": "37/1",
+      "one_cells_per_block": "27/1"
+     },
+     {
+      "arena": "A5",
+      "b0_equals_blocks_plus_basepoint": true,
+      "b0_of_N": 9,
+      "blocks": 8,
+      "coherent_two_cells_per_block": "37/1",
+      "one_cells_per_block": "27/1"
+     }
+    ]
+   }
+  },
+  {
+   "claim": "POSITIVE CONTROL: a family that is constant by construction returns the STABILIZES head naming ALL FIVE registered invariants.  The control runs the same instrument end to end -- the same atlas, the same five measurements, the same window -- so a defect that suppressed stabilisation everywhere would be caught here",
+   "class": "control",
+   "id": "G25",
+   "passed": true,
+   "value": {
+    "head": "R1-STABILIZES-AT",
+    "stabilised": [
+     "B2_DENSITY",
+     "DIMENSION_PROFILE",
+     "NCOH_DENSITY",
+     "PHI",
+     "SPECTRAL_PROFILE"
+    ],
+    "values": {
+     "B2_DENSITY": "20/37",
+     "DIMENSION_PROFILE": "[[0, 1/43], [6, 42/43]]",
+     "NCOH_DENSITY": "37/27",
+     "PHI": "6/43",
+     "SPECTRAL_PROFILE": "[[[1, 19/43], [3, 12/43]]]"
+    }
+   }
+  },
+  {
+   "claim": "NEGATIVE CONTROL: I3's EXCLUDED raw estimators -- the unnormalised overlap, coherent-cell, eigenvalue-multiplicity, chart and b_2 counts -- are read along the same three grown members and every one of them is measured to move, so the instrument returns the NO-CONTINUUM-LIMIT head.  Both heads are therefore reachable by the same derivation, on real measurements",
+   "class": "control",
+   "id": "G26",
+   "passed": true,
+   "value": {
+    "head": "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE",
+    "stabilised": [],
+    "trajectory": {
+     "RAW_B2": [
+      "120",
+      "140",
+      "160"
+     ],
+     "RAW_CHARTS": [
+      "43",
+      "50",
+      "57"
+     ],
+     "RAW_COHERENT": [
+      "222",
+      "259",
+      "296"
+     ],
+     "RAW_MU1": [
+      "19",
+      "22",
+      "25"
+     ],
+     "RAW_OVERLAP": [
+      "126",
+      "147",
+      "168"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "SCRAMBLE CONTROL: the drawn RELATION is preserved and the drawn MAPS are deterministically permuted inside each coordinate cell by an exact integer shift seeded from the declared control block alone.  The measured set of invariants that MOVED is compared against the pin's declared identification-sensitive set, and the measured set that did NOT move against the relation-only set.  The scramble is measured non-trivial -- the count of drawn maps it actually changed is printed and required positive -- so a no-op scramble cannot pass.  At this substrate the scramble is maximally destructive: the coherent 2-cell count falls to zero, so NCOH_DENSITY moves to 0 and B2_DENSITY moves to UNDEFINED (its denominator vanishes).  That is recorded as measured rather than smoothed into a number",
+   "class": "control",
+   "id": "G27",
+   "passed": true,
+   "value": {
+    "B2_DENSITY_is_undefined_after_the_scramble": true,
+    "after": {
+     "B2_DENSITY": "None",
+     "DIMENSION_PROFILE": "[[0, 1/43], [6, 42/43]]",
+     "NCOH_DENSITY": "0/1",
+     "PHI": "6/43",
+     "SPECTRAL_PROFILE": "[[[1, 19/43], [3, 12/43]]]"
+    },
+    "before": {
+     "B2_DENSITY": "20/37",
+     "DIMENSION_PROFILE": "[[0, 1/43], [6, 42/43]]",
+     "NCOH_DENSITY": "37/27",
+     "PHI": "6/43",
+     "SPECTRAL_PROFILE": "[[[1, 19/43], [3, 12/43]]]"
+    },
+    "declared_identification_sensitive": [
+     "NCOH_DENSITY",
+     "B2_DENSITY"
+    ],
+    "declared_relation_only": [
+     "PHI",
+     "DIMENSION_PROFILE",
+     "SPECTRAL_PROFILE"
+    ],
+    "drawn_maps_moved": 240,
+    "fixed": [
+     "DIMENSION_PROFILE",
+     "PHI",
+     "SPECTRAL_PROFILE"
+    ],
+    "moved": [
+     "B2_DENSITY",
+     "NCOH_DENSITY"
+    ],
+    "shift": 6
+   }
+  },
+  {
+   "claim": "DISCRIMINATION CONTROL: a growth rule that is NOT a disjoint addition -- the widening family, whose single block grows rather than being copied -- is run through the same instrument, and BOTH densities are measured to MOVE along it.  So their constancy on the declared family is a property of that family's additive rule and not an artefact of the definitions; the two-sided calibration of the stabilisation claim sits here",
+   "class": "control",
+   "id": "G28",
+   "passed": true,
+   "value": {
+    "family": [
+     "W5",
+     "W6",
+     "W7"
+    ],
+    "moved": [
+     "B2_DENSITY",
+     "NCOH_DENSITY"
+    ],
+    "trajectory": {
+     "B2_DENSITY": [
+      "2/5",
+      "1/2",
+      "4/7"
+     ],
+     "DIMENSION_PROFILE": [
+      "[[0, 1/6], [4, 5/6]]",
+      "[[0, 1/7], [5, 6/7]]",
+      "[[0, 1/8], [6, 7/8]]"
+     ],
+     "NCOH_DENSITY": [
+      "5/6",
+      "20/17",
+      "35/24"
+     ],
+     "PHI": [
+      "2/3",
+      "5/7",
+      "3/4"
+     ],
+     "SPECTRAL_PROFILE": [
+      "[[[1, 2/3], [2, 1/3]]]",
+      "[[[1, 4/7], [2, 3/7]]]",
+      "[[[1, 5/8], [2, 3/8]]]"
+     ]
+    }
+   }
+  },
+  {
+   "claim": "THE INSTRUMENT IS SELF-TESTED UNDER THE ARENA'S OWN ACTION (RUNBOOK section 14).  Each member is transported by a declared non-trivial relabelling -- the symmetry, the blocks and the atlas are all rebuilt inside the transported arena, not merely renamed -- and all five registered invariants are recomputed there and measured equal.  The tested set is fixed by DECLARATION as the whole family and never selected by the verdicts under audit, and the relabelling is measured to move labels",
+   "class": "measurement",
+   "id": "G29",
+   "passed": true,
+   "value": {
+    "family_size": 5,
+    "rows": [
+     {
+      "B2_invariant": true,
+      "DIM_invariant": true,
+      "NCOH_invariant": true,
+      "PHI_invariant": true,
+      "SPEC_invariant": true,
+      "arena": "A1",
+      "relabelling_moves": 2
+     },
+     {
+      "B2_invariant": true,
+      "DIM_invariant": true,
+      "NCOH_invariant": true,
+      "PHI_invariant": true,
+      "SPEC_invariant": true,
+      "arena": "A2",
+      "relabelling_moves": 2
+     },
+     {
+      "B2_invariant": true,
+      "DIM_invariant": true,
+      "NCOH_invariant": true,
+      "PHI_invariant": true,
+      "SPEC_invariant": true,
+      "arena": "A3",
+      "relabelling_moves": 2
+     },
+     {
+      "B2_invariant": true,
+      "DIM_invariant": true,
+      "NCOH_invariant": true,
+      "PHI_invariant": true,
+      "SPEC_invariant": true,
+      "arena": "A4",
+      "relabelling_moves": 2
+     },
+     {
+      "B2_invariant": true,
+      "DIM_invariant": true,
+      "NCOH_invariant": true,
+      "PHI_invariant": true,
+      "SPEC_invariant": true,
+      "arena": "A5",
+      "relabelling_moves": 2
+     }
+    ],
+    "tested_set_size": 5
+   }
+  },
+  {
+   "claim": "THE FAMILY INDEX IS AN ARENA COORDINATE AND ITS DEPENDENCE IS MEASURED (RUNBOOK section 15).  The pin's family walks the growth rule's OWN index m; the rule also carries a prime-indexed selection, and the members that selection picks at the next two declared primes are built and measured here.  The stabilised values are required to reproduce at those members too, so the stabilisation is not an artefact of which index the family walks",
+   "class": "measurement",
+   "id": "G30",
+   "passed": true,
+   "value": {
+    "alternative_members": [
+     {
+      "B2_DENSITY": "20/37",
+      "NCOH_DENSITY": "37/27",
+      "PHI": "6/71",
+      "agrees_with_the_stabilised_values": true,
+      "labels": 71,
+      "member": "L10"
+     },
+     {
+      "B2_DENSITY": "20/37",
+      "NCOH_DENSITY": "37/27",
+      "PHI": "6/85",
+      "agrees_with_the_stabilised_values": true,
+      "labels": 85,
+      "member": "L12"
+     }
+    ],
+    "stabilised_values": {
+     "B2_DENSITY": "20/37",
+     "NCOH_DENSITY": "37/27"
+    }
+   }
+  },
+  {
+   "claim": "THE ARITHMETIC IS EXACT AND THE GUARD IS MECHANICAL: this file's own abstract syntax tree is walked and measured to contain NO float literal, NO ARITHMETIC true-division operator and no call to a floating-point builtin or math function.  Every division node in the file is classified and the survivors are measured to be pathlib joins rooted at a declared path root, their count printed rather than waived.  Every ratio in the unit is a fractions.Fraction built from two integers, so every equality in the trajectory table is exact",
+   "class": "measurement",
+   "id": "G31",
+   "passed": true,
+   "value": {
+    "arithmetic_division_lines": [],
+    "ast_nodes_walked": 20122,
+    "banned_names": [],
+    "float_literals": [],
+    "path_join_divisions": 10
+   }
+  },
+  {
+   "claim": "NO GATE PREDICATE REFERENCES MUTANT IDENTITY (RUNBOOK section 14 addendum #208).  Every occurrence of the mutant variable in this file is located by AST walk and required to sit inside a function declared MUTABLE -- an instrument the mutants perturb -- and the argument expressions of every gate call are swept for the same name.  Both counts are measured zero outside the declared set, so no declared falsifier is exempted from its own gate.  The permitted set is measured non-empty, so a sweep that permitted nothing -- or everything -- is itself caught",
+   "class": "measurement",
+   "id": "G32",
+   "passed": true,
+   "value": {
+    "declared_mutable_functions": [
+     "a1_labels_from_receipt",
+     "a2_labels_from_receipt",
+     "arena_blocks",
+     "arena_sigma",
+     "b2_complex_choice",
+     "boundary_connective",
+     "build_embedding",
+     "cell_is_coherent",
+     "components_route_1",
+     "dim_route_2",
+     "discrimination_family",
+     "drawn_is_unique",
+     "exactness_scope",
+     "exemption_scope",
+     "family_cap",
+     "gateway_member",
+     "geometric_cells",
+     "growth_member_rule",
+     "growth_rule_from_receipt",
+     "measured_datum_before_freeze",
+     "morphism_exists",
+     "ncoh_recount",
+     "negative_control_estimators",
+     "phi_route_2",
+     "positive_control_family",
+     "qualifier_source",
+     "r0_companions",
+     "r0_rows",
+     "rank_f2_second",
+     "regenerate_fresh",
+     "robustness_indices",
+     "scramble_shift",
+     "selftest_tested_set",
+     "spectral_anchor_chain",
+     "spectral_kernel",
+     "stabilisation_window",
+     "top_identity",
+     "trajectory_rows",
+     "verdict_head"
+    ],
+    "gate_calls_referencing_MUTANT": [],
+    "offending_functions": [],
+    "permitted_functions": 39
+   }
+  },
+  {
+   "claim": "EVERY DECLARED MUTANT DIES AND EVERY MUST-PASS GATE IS FALSIFIED BY SOME MUTANT.  Each mutant runs the unit to completion in its own process, must exit 1, must reach the totals block without a traceback, and must falsify at least one NAMED gate or anchor; the clause that matters is the second -- the set of must-pass gates that NO mutant falsifies is measured to be EMPTY.  Each mutant declares its KIND and both denominators are reported, because a waiver proves a gate's predicate is load-bearing for the exit code and not that the gate would catch a computational defect.  The one gate excluded from the denominator is this one, which does not run inside a mutant process",
+   "class": "derivation",
+   "id": "G33",
+   "passed": true,
+   "value": {
+    "computation_mutants": 35,
+    "died": 47,
+    "falsified_by_a_computation_mutant": 27,
+    "falsified_by_some_mutant": 32,
+    "must_pass_gate_denominator": 32,
+    "mutants": 47,
+    "never_falsified": [],
+    "tracebacks": 0,
+    "waivers": 12
+   }
+  }
+ ],
+ "mutant_declarations": [
+  {
+   "declaration": "the R0 hash of I1/I2's carrying receipt is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I1"
+  },
+  {
+   "declaration": "the R0 hash of I3's carrying receipt is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I3"
+  },
+  {
+   "declaration": "the R0 hash of I4's TOP adjudication is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I4a"
+  },
+  {
+   "declaration": "the R0 hash of I4's RSQ adjudication is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I4b"
+  },
+  {
+   "declaration": "the R0 hash of I5's carrying receipt is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I5"
+  },
+  {
+   "declaration": "the R0 hash of I6's TB3 receipt is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I6"
+  },
+  {
+   "declaration": "the R0 hash of I7's carrying receipt is perturbed",
+   "kind": "waiver",
+   "mutant": "anchor-I7"
+  },
+  {
+   "declaration": "one R0 row is dropped from the hash census",
+   "kind": "waiver",
+   "mutant": "pin-drop"
+  },
+  {
+   "declaration": "one R0 companion artifact is dropped from the census",
+   "kind": "waiver",
+   "mutant": "companion-drop"
+  },
+  {
+   "declaration": "one measured datum is evaluated before the freeze gate",
+   "kind": "waiver",
+   "mutant": "freeze-lax"
+  },
+  {
+   "declaration": "the extracted growth rule's block width is perturbed",
+   "kind": "computation",
+   "mutant": "family-rule"
+  },
+  {
+   "declaration": "the growth family's member-selection rule is perturbed",
+   "kind": "computation",
+   "mutant": "family-sel"
+  },
+  {
+   "declaration": "A1's derived label count is perturbed",
+   "kind": "computation",
+   "mutant": "arena-a1"
+  },
+  {
+   "declaration": "A2's derived label count is perturbed",
+   "kind": "computation",
+   "mutant": "arena-a2"
+  },
+  {
+   "declaration": "the arena symmetry is perturbed",
+   "kind": "computation",
+   "mutant": "arena-sigma"
+  },
+  {
+   "declaration": "the block partition is perturbed",
+   "kind": "computation",
+   "mutant": "blocks-lax"
+  },
+  {
+   "declaration": "the regeneration self-test reads the memo instead of evaluating fresh",
+   "kind": "computation",
+   "mutant": "regen-cache"
+  },
+  {
+   "declaration": "the family is silently truncated below the declared target",
+   "kind": "computation",
+   "mutant": "cap-lax"
+  },
+  {
+   "declaration": "the constructed embedding is perturbed off equivariance",
+   "kind": "computation",
+   "mutant": "map-func"
+  },
+  {
+   "declaration": "the morphism criterion accepts every step",
+   "kind": "computation",
+   "mutant": "embed-lax"
+  },
+  {
+   "declaration": "the morphism criterion rejects every step",
+   "kind": "computation",
+   "mutant": "embed-blind"
+  },
+  {
+   "declaration": "the drawn-uniqueness rule accepts non-unique candidates",
+   "kind": "computation",
+   "mutant": "drawn-lax"
+  },
+  {
+   "declaration": "coherence is declared true at every 2-cell",
+   "kind": "computation",
+   "mutant": "coh-lax"
+  },
+  {
+   "declaration": "one geometric 2-cell is dropped",
+   "kind": "computation",
+   "mutant": "cell-drop"
+  },
+  {
+   "declaration": "the second pivot discipline is replaced by the first",
+   "kind": "computation",
+   "mutant": "rank-lax"
+  },
+  {
+   "declaration": "the F_2 boundary is replaced by the OR-connective",
+   "kind": "computation",
+   "mutant": "parity-lax"
+  },
+  {
+   "declaration": "PHI's second route is corrupted",
+   "kind": "computation",
+   "mutant": "inv-phi"
+  },
+  {
+   "declaration": "NCOH_DENSITY's independent recount is corrupted",
+   "kind": "computation",
+   "mutant": "inv-ncoh"
+  },
+  {
+   "declaration": "the spectral profile's kernel route is corrupted",
+   "kind": "computation",
+   "mutant": "inv-spec"
+  },
+  {
+   "declaration": "the eigenvalue-1 anchor chain is skipped",
+   "kind": "computation",
+   "mutant": "spec-anchor"
+  },
+  {
+   "declaration": "the dimension profile's second route is corrupted",
+   "kind": "computation",
+   "mutant": "inv-dim"
+  },
+  {
+   "declaration": "b_2 is read on N instead of N_coh",
+   "kind": "computation",
+   "mutant": "inv-b2"
+  },
+  {
+   "declaration": "one trajectory row is dropped",
+   "kind": "computation",
+   "mutant": "row-drop"
+  },
+  {
+   "declaration": "the stabilisation window is shrunk from K=3 to K=1",
+   "kind": "computation",
+   "mutant": "k-window"
+  },
+  {
+   "declaration": "the verdict head is inverted",
+   "kind": "computation",
+   "mutant": "verdict-flip"
+  },
+  {
+   "declaration": "one computed qualifier is replaced by a typed string",
+   "kind": "computation",
+   "mutant": "qual-flip"
+  },
+  {
+   "declaration": "R2's gateway member is typed rather than computed",
+   "kind": "computation",
+   "mutant": "gateway-lax"
+  },
+  {
+   "declaration": "the positive control's family is not constant",
+   "kind": "computation",
+   "mutant": "pos-lax"
+  },
+  {
+   "declaration": "the negative control reads normalised estimators",
+   "kind": "computation",
+   "mutant": "neg-lax"
+  },
+  {
+   "declaration": "the scramble leaves every drawn map in place",
+   "kind": "computation",
+   "mutant": "scramble-lax"
+  },
+  {
+   "declaration": "the discrimination family is replaced by a constant one",
+   "kind": "computation",
+   "mutant": "disc-lax"
+  },
+  {
+   "declaration": "the symmetry self-test's tested set is chosen by the verdict",
+   "kind": "computation",
+   "mutant": "selftest-select"
+  },
+  {
+   "declaration": "the alternative family index is not evaluated",
+   "kind": "computation",
+   "mutant": "robust-lax"
+  },
+  {
+   "declaration": "the homology identities used against I3's published counts are perturbed",
+   "kind": "computation",
+   "mutant": "machinery-lax"
+  },
+  {
+   "declaration": "the component route-1 census is corrupted",
+   "kind": "computation",
+   "mutant": "b0-lax"
+  },
+  {
+   "declaration": "a float literal enters the source the arithmetic guard scans",
+   "kind": "waiver",
+   "mutant": "float-lax"
+  },
+  {
+   "declaration": "the exemption sweep's permitted set is emptied",
+   "kind": "waiver",
+   "mutant": "exempt-lax"
+  }
+ ],
+ "pin": "v14/note-r1-continuum-pin.md",
+ "python": "3.13",
+ "schema": "r1-continuum/1",
+ "source_sha256": "7c04500ec178685ca49094d42ed85fa040e2c229951b7df0e2abc7bfbe8d6cb7",
+ "tables": {
+  "controls": {
+   "discrimination": {
+    "moved": [
+     "B2_DENSITY",
+     "NCOH_DENSITY"
+    ],
+    "trajectory": {
+     "B2_DENSITY": [
+      "2/5",
+      "1/2",
+      "4/7"
+     ],
+     "DIMENSION_PROFILE": [
+      "[[0, 1/6], [4, 5/6]]",
+      "[[0, 1/7], [5, 6/7]]",
+      "[[0, 1/8], [6, 7/8]]"
+     ],
+     "NCOH_DENSITY": [
+      "5/6",
+      "20/17",
+      "35/24"
+     ],
+     "PHI": [
+      "2/3",
+      "5/7",
+      "3/4"
+     ],
+     "SPECTRAL_PROFILE": [
+      "[[[1, 2/3], [2, 1/3]]]",
+      "[[[1, 4/7], [2, 3/7]]]",
+      "[[[1, 5/8], [2, 3/8]]]"
+     ]
+    }
+   },
+   "index_robustness": [
+    {
+     "B2_DENSITY": "20/37",
+     "NCOH_DENSITY": "37/27",
+     "PHI": "6/71",
+     "agrees_with_the_stabilised_values": true,
+     "labels": 71,
+     "member": "L10"
+    },
+    {
+     "B2_DENSITY": "20/37",
+     "NCOH_DENSITY": "37/27",
+     "PHI": "6/85",
+     "agrees_with_the_stabilised_values": true,
+     "labels": 85,
+     "member": "L12"
+    }
+   ],
+   "negative": {
+    "head": "R1-NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE",
+    "stabilised": [],
+    "trajectory": {
+     "RAW_B2": [
+      "120",
+      "140",
+      "160"
+     ],
+     "RAW_CHARTS": [
+      "43",
+      "50",
+      "57"
+     ],
+     "RAW_COHERENT": [
+      "222",
+      "259",
+      "296"
+     ],
+     "RAW_MU1": [
+      "19",
+      "22",
+      "25"
+     ],
+     "RAW_OVERLAP": [
+      "126",
+      "147",
+      "168"
+     ]
+    }
+   },
+   "positive": {
+    "head": "R1-STABILIZES-AT",
+    "stabilised": [
+     "B2_DENSITY",
+     "DIMENSION_PROFILE",
+     "NCOH_DENSITY",
+     "PHI",
+     "SPECTRAL_PROFILE"
+    ]
+   },
+   "scramble": {
+    "drawn_maps_moved": 240,
+    "fixed": [
+     "DIMENSION_PROFILE",
+     "PHI",
+     "SPECTRAL_PROFILE"
+    ],
+    "moved": [
+     "B2_DENSITY",
+     "NCOH_DENSITY"
+    ]
+   }
+  },
+  "family": {
+   "A1": {
+    "Sigma_cycle_type": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "Sigma_order": 2,
+    "basepoint_is_fixed_by_Sigma": true,
+    "block_sizes": [
+     8
+    ],
+    "blocks": 1,
+    "blocks_are_Sigma_stable": true,
+    "blocks_partition_the_moved_labels": true,
+    "labels": 9,
+    "note": "I5's nine-label completion arena"
+   },
+   "A2": {
+    "Sigma_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "Sigma_order": 2,
+    "basepoint_is_fixed_by_Sigma": true,
+    "block_sizes": [
+     5,
+     5,
+     5
+    ],
+    "blocks": 3,
+    "blocks_are_Sigma_stable": false,
+    "blocks_partition_the_moved_labels": true,
+    "labels": 16,
+    "note": "I5's sixteen-label successor arena (G15)"
+   },
+   "A3": {
+    "Sigma_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "Sigma_order": 3,
+    "basepoint_is_fixed_by_Sigma": true,
+    "block_sizes": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "blocks": 6,
+    "blocks_are_Sigma_stable": true,
+    "blocks_partition_the_moved_labels": true,
+    "labels": 43,
+    "note": "I2's grown arena L_6"
+   },
+   "A4": {
+    "Sigma_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "Sigma_order": 3,
+    "basepoint_is_fixed_by_Sigma": true,
+    "block_sizes": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "blocks": 7,
+    "blocks_are_Sigma_stable": true,
+    "blocks_partition_the_moved_labels": true,
+    "labels": 50,
+    "note": "the growth family's next member L_7"
+   },
+   "A5": {
+    "Sigma_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "Sigma_order": 3,
+    "basepoint_is_fixed_by_Sigma": true,
+    "block_sizes": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "blocks": 8,
+    "blocks_are_Sigma_stable": true,
+    "blocks_partition_the_moved_labels": true,
+    "labels": 57,
+    "note": "the growth family's next member L_8"
+   }
+  },
+  "gate_falsification": {
+   "falsified_by_a_computation_mutant": [
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30"
+   ],
+   "falsified_by_some_mutant": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32"
+   ],
+   "falsified_only_by_a_waiver": [
+    "G01",
+    "G02",
+    "G03",
+    "G31",
+    "G32"
+   ],
+   "must_pass_gates": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32"
+   ],
+   "never_falsified": [],
+   "per_gate_falsifiers": {
+    "G01": [
+     "freeze-lax"
+    ],
+    "G02": [
+     "anchor-I1",
+     "anchor-I3",
+     "anchor-I4a",
+     "anchor-I4b",
+     "anchor-I5",
+     "anchor-I6",
+     "anchor-I7",
+     "pin-drop"
+    ],
+    "G03": [
+     "companion-drop"
+    ],
+    "G04": [
+     "family-rule",
+     "family-sel"
+    ],
+    "G05": [
+     "arena-a1",
+     "arena-a2",
+     "blocks-lax"
+    ],
+    "G06": [
+     "regen-cache"
+    ],
+    "G07": [
+     "cap-lax"
+    ],
+    "G08": [
+     "arena-a2",
+     "blocks-lax"
+    ],
+    "G09": [
+     "embed-blind",
+     "embed-lax",
+     "map-func"
+    ],
+    "G10": [
+     "machinery-lax"
+    ],
+    "G11": [
+     "cell-drop",
+     "drawn-lax"
+    ],
+    "G12": [
+     "b0-lax"
+    ],
+    "G13": [
+     "rank-lax"
+    ],
+    "G14": [
+     "parity-lax"
+    ],
+    "G15": [
+     "inv-phi"
+    ],
+    "G16": [
+     "coh-lax",
+     "inv-ncoh"
+    ],
+    "G17": [
+     "inv-spec",
+     "spec-anchor"
+    ],
+    "G18": [
+     "inv-dim"
+    ],
+    "G19": [
+     "coh-lax",
+     "inv-b2"
+    ],
+    "G20": [
+     "row-drop"
+    ],
+    "G21": [
+     "k-window"
+    ],
+    "G22": [
+     "qual-flip",
+     "row-drop",
+     "verdict-flip"
+    ],
+    "G23": [
+     "gateway-lax"
+    ],
+    "G24": [
+     "arena-a2",
+     "arena-sigma",
+     "b0-lax",
+     "blocks-lax",
+     "drawn-lax"
+    ],
+    "G25": [
+     "pos-lax"
+    ],
+    "G26": [
+     "k-window",
+     "neg-lax"
+    ],
+    "G27": [
+     "coh-lax",
+     "scramble-lax"
+    ],
+    "G28": [
+     "disc-lax",
+     "k-window"
+    ],
+    "G29": [
+     "drawn-lax",
+     "selftest-select"
+    ],
+    "G30": [
+     "arena-sigma",
+     "blocks-lax",
+     "cap-lax",
+     "robust-lax",
+     "row-drop"
+    ],
+    "G31": [
+     "float-lax"
+    ],
+    "G32": [
+     "exempt-lax"
+    ]
+   }
+  },
+  "inheritance": {
+   "companion_mismatches": [
+    "I2-paper",
+    "I3-paper"
+   ],
+   "companions": [
+    {
+     "artifact": "v13/code/rsq_reposed_square_output.txt",
+     "computed": "a5266012ebd3",
+     "declared": "a5266012ebd3",
+     "id": "I2-output",
+     "matches": true
+    },
+    {
+     "artifact": "v13/paper-rsq-reposed-square.md",
+     "computed": "f80317a25037",
+     "declared": "07bea42728a2",
+     "id": "I2-paper",
+     "matches": false
+    },
+    {
+     "artifact": "v13/code/rsq_reposed_square_exact.py",
+     "computed": "8c7705f55fa6",
+     "declared": "8c7705f55fa6",
+     "id": "I2-code",
+     "matches": true
+    },
+    {
+     "artifact": "v13/code/top_topology_output.txt",
+     "computed": "109302d0d036",
+     "declared": "109302d0d036",
+     "id": "I3-output",
+     "matches": true
+    },
+    {
+     "artifact": "v13/paper-top-topology.md",
+     "computed": "379194959fbc",
+     "declared": "4e4cd4f11bab",
+     "id": "I3-paper",
+     "matches": false
+    },
+    {
+     "artifact": "v13/code/top_topology_exact.py",
+     "computed": "81d07ffebd82",
+     "declared": "81d07ffebd82",
+     "id": "I3-code",
+     "matches": true
+    },
+    {
+     "artifact": "v13/code/gen_generality_receipt.json",
+     "computed": "e0b2f444f6a9",
+     "declared": "e0b2f444f6a9",
+     "id": "I6-gen",
+     "matches": true
+    },
+    {
+     "artifact": "v13/code/psi_curvature_receipt.json",
+     "computed": "7c7b91a9257e",
+     "declared": "7c7b91a9257e",
+     "id": "I6-psi",
+     "matches": true
+    }
+   ],
+   "rows": [
+    {
+     "artifact": "v13/code/rsq_reposed_square_receipt.json",
+     "row": "I1",
+     "sha256_12": "85f3cf809544"
+    },
+    {
+     "artifact": "v13/code/rsq_reposed_square_receipt.json",
+     "row": "I2",
+     "sha256_12": "85f3cf809544"
+    },
+    {
+     "artifact": "v13/code/top_topology_receipt.json",
+     "row": "I3",
+     "sha256_12": "65bb1fc5231f"
+    },
+    {
+     "artifact": "v13/note-top-adjudication.md",
+     "row": "I4a",
+     "sha256_12": "e4934f2525b0"
+    },
+    {
+     "artifact": "v13/note-rsq-adjudication.md",
+     "row": "I4b",
+     "sha256_12": "31b70406c6e8"
+    },
+    {
+     "artifact": "v13/code/lcb_livecell_receipt.json",
+     "row": "I5",
+     "sha256_12": "3e502f685ab3"
+    },
+    {
+     "artifact": "v13/code/tb3_third_base_receipt.json",
+     "row": "I6",
+     "sha256_12": "c9bc956fe751"
+    },
+    {
+     "artifact": "v13/code/ha_successor_receipt.json",
+     "row": "I7",
+     "sha256_12": "542b8735daf0"
+    }
+   ]
+  },
+  "maps": {
+   "functoriality": [
+    {
+     "at": "A3->A4->A5",
+     "composition_agrees_with_the_maps": true,
+     "composition_is_equivariant": true,
+     "composition_is_injective": true,
+     "identity_is_the_identity": true
+    }
+   ],
+   "qualifier": "FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS",
+   "steps": [
+    {
+     "admissible": false,
+     "reason": "BLOCK-WIDTH-DECREASES: the largest source block has 8 labels and the largest target block has 5",
+     "step": "A1->A2",
+     "witness": null
+    },
+    {
+     "admissible": false,
+     "reason": "ORBIT-SIZE-UNAVAILABLE: <Sigma_A> has orbit sizes [1, 2] with multiplicities the target cannot supply at sizes [2]",
+     "step": "A2->A3",
+     "witness": null
+    },
+    {
+     "admissible": true,
+     "reason": "CONSTRUCTED",
+     "step": "A3->A4",
+     "witness": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+     ]
+    },
+    {
+     "admissible": true,
+     "reason": "CONSTRUCTED",
+     "step": "A4->A5",
+     "witness": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+     ]
+    }
+   ]
+  },
+  "measurements": {
+   "A1": {
+    "B2_DENSITY": "65/96",
+    "B2_DENSITY_from_N_coh": "65/96",
+    "DIMENSION_PROFILE": "[[0, 1/9], [7, 8/9]]",
+    "N": {
+     "E": 40,
+     "F": 160,
+     "V": 9,
+     "b0": 2,
+     "b0_route_1_union_find": 2,
+     "b0_route_2_F2_rank": 2,
+     "b1": 0,
+     "b2": 127,
+     "chi_from_betti": 129,
+     "chi_from_cell_counts": 129,
+     "cycle_rank_route_1_spanning_forest": 33,
+     "cycle_rank_route_2_euler": 33,
+     "rank_d2_high_pivot": 33,
+     "rank_d2_low_pivot": 33
+    },
+    "NCOH_DENSITY": "12/5",
+    "N_coh": {
+     "E": 40,
+     "F": 96,
+     "V": 9,
+     "b0": 2,
+     "b0_route_1_union_find": 2,
+     "b0_route_2_F2_rank": 2,
+     "b1": 2,
+     "b2": 65,
+     "chi_from_betti": 65,
+     "chi_from_cell_counts": 65,
+     "cycle_rank_route_1_spanning_forest": 33,
+     "cycle_rank_route_2_euler": 33,
+     "rank_d2_high_pivot": 31,
+     "rank_d2_low_pivot": 31
+    },
+    "PHI": "7/9",
+    "PHI_route_2": "7/9",
+    "SPECTRAL_PROFILE": "[[[1, 2/3], [2, 1/3]]]",
+    "arena": "A1",
+    "cell_drawn_pairs": [
+     56,
+     24
+    ],
+    "cell_group_orders": [
+     8,
+     4
+    ],
+    "cells": 2,
+    "coherent_two_cells": 96,
+    "coherent_two_cells_independent_recount": 96,
+    "coordinates": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+     ],
+     "Sigma_order": 2,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      8
+     ],
+     "blocks": 1,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 9
+    },
+    "dimension_routes_agree": true,
+    "one_cells": 40,
+    "overlap_edges": 28,
+    "two_cells": 160,
+    "two_cells_route_2": 160
+   },
+   "A2": {
+    "B2_DENSITY": "2/5",
+    "B2_DENSITY_from_N_coh": "2/5",
+    "DIMENSION_PROFILE": "[[0, 1/16], [4, 15/16]]",
+    "N": {
+     "E": 30,
+     "F": 30,
+     "V": 16,
+     "b0": 4,
+     "b0_route_1_union_find": 4,
+     "b0_route_2_F2_rank": 4,
+     "b1": 0,
+     "b2": 12,
+     "chi_from_betti": 16,
+     "chi_from_cell_counts": 16,
+     "cycle_rank_route_1_spanning_forest": 18,
+     "cycle_rank_route_2_euler": 18,
+     "rank_d2_high_pivot": 18,
+     "rank_d2_low_pivot": 18
+    },
+    "NCOH_DENSITY": "1/1",
+    "N_coh": {
+     "E": 30,
+     "F": 30,
+     "V": 16,
+     "b0": 4,
+     "b0_route_1_union_find": 4,
+     "b0_route_2_F2_rank": 4,
+     "b1": 0,
+     "b2": 12,
+     "chi_from_betti": 16,
+     "chi_from_cell_counts": 16,
+     "cycle_rank_route_1_spanning_forest": 18,
+     "cycle_rank_route_2_euler": 18,
+     "rank_d2_high_pivot": 18,
+     "rank_d2_low_pivot": 18
+    },
+    "PHI": "1/4",
+    "PHI_route_2": "1/4",
+    "SPECTRAL_PROFILE": "[[[1, 5/8], [2, 3/8]]]",
+    "arena": "A2",
+    "cell_drawn_pairs": [
+     20,
+     0,
+     20,
+     0,
+     20,
+     0
+    ],
+    "cell_group_orders": [
+     5,
+     10,
+     5,
+     10,
+     5,
+     10
+    ],
+    "cells": 6,
+    "coherent_two_cells": 30,
+    "coherent_two_cells_independent_recount": 30,
+    "coordinates": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "Sigma_order": 2,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      5,
+      5,
+      5
+     ],
+     "blocks": 3,
+     "blocks_are_Sigma_stable": false,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 16
+    },
+    "dimension_routes_agree": true,
+    "one_cells": 30,
+    "overlap_edges": 30,
+    "two_cells": 30,
+    "two_cells_route_2": 30
+   },
+   "A3": {
+    "B2_DENSITY": "20/37",
+    "B2_DENSITY_from_N_coh": "20/37",
+    "DIMENSION_PROFILE": "[[0, 1/43], [6, 42/43]]",
+    "N": {
+     "E": 162,
+     "F": 438,
+     "V": 43,
+     "b0": 7,
+     "b0_route_1_union_find": 7,
+     "b0_route_2_F2_rank": 7,
+     "b1": 0,
+     "b2": 312,
+     "chi_from_betti": 319,
+     "chi_from_cell_counts": 319,
+     "cycle_rank_route_1_spanning_forest": 126,
+     "cycle_rank_route_2_euler": 126,
+     "rank_d2_high_pivot": 126,
+     "rank_d2_low_pivot": 126
+    },
+    "NCOH_DENSITY": "37/27",
+    "N_coh": {
+     "E": 162,
+     "F": 222,
+     "V": 43,
+     "b0": 7,
+     "b0_route_1_union_find": 7,
+     "b0_route_2_F2_rank": 7,
+     "b1": 24,
+     "b2": 120,
+     "chi_from_betti": 103,
+     "chi_from_cell_counts": 103,
+     "cycle_rank_route_1_spanning_forest": 126,
+     "cycle_rank_route_2_euler": 126,
+     "rank_d2_high_pivot": 102,
+     "rank_d2_low_pivot": 102
+    },
+    "PHI": "6/43",
+    "PHI_route_2": "6/43",
+    "SPECTRAL_PROFILE": "[[[1, 19/43], [3, 12/43]]]",
+    "arena": "A3",
+    "cell_drawn_pairs": [
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12
+    ],
+    "cell_group_orders": [
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3
+    ],
+    "cells": 12,
+    "coherent_two_cells": 222,
+    "coherent_two_cells_independent_recount": 222,
+    "coordinates": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 6,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 43
+    },
+    "dimension_routes_agree": true,
+    "one_cells": 162,
+    "overlap_edges": 126,
+    "two_cells": 438,
+    "two_cells_route_2": 438
+   },
+   "A4": {
+    "B2_DENSITY": "20/37",
+    "B2_DENSITY_from_N_coh": "20/37",
+    "DIMENSION_PROFILE": "[[0, 1/50], [6, 49/50]]",
+    "N": {
+     "E": 189,
+     "F": 511,
+     "V": 50,
+     "b0": 8,
+     "b0_route_1_union_find": 8,
+     "b0_route_2_F2_rank": 8,
+     "b1": 0,
+     "b2": 364,
+     "chi_from_betti": 372,
+     "chi_from_cell_counts": 372,
+     "cycle_rank_route_1_spanning_forest": 147,
+     "cycle_rank_route_2_euler": 147,
+     "rank_d2_high_pivot": 147,
+     "rank_d2_low_pivot": 147
+    },
+    "NCOH_DENSITY": "37/27",
+    "N_coh": {
+     "E": 189,
+     "F": 259,
+     "V": 50,
+     "b0": 8,
+     "b0_route_1_union_find": 8,
+     "b0_route_2_F2_rank": 8,
+     "b1": 28,
+     "b2": 140,
+     "chi_from_betti": 120,
+     "chi_from_cell_counts": 120,
+     "cycle_rank_route_1_spanning_forest": 147,
+     "cycle_rank_route_2_euler": 147,
+     "rank_d2_high_pivot": 119,
+     "rank_d2_low_pivot": 119
+    },
+    "PHI": "3/25",
+    "PHI_route_2": "3/25",
+    "SPECTRAL_PROFILE": "[[[1, 11/25], [3, 7/25]]]",
+    "arena": "A4",
+    "cell_drawn_pairs": [
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12
+    ],
+    "cell_group_orders": [
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3
+    ],
+    "cells": 14,
+    "coherent_two_cells": 259,
+    "coherent_two_cells_independent_recount": 259,
+    "coordinates": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 7,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 50
+    },
+    "dimension_routes_agree": true,
+    "one_cells": 189,
+    "overlap_edges": 147,
+    "two_cells": 511,
+    "two_cells_route_2": 511
+   },
+   "A5": {
+    "B2_DENSITY": "20/37",
+    "B2_DENSITY_from_N_coh": "20/37",
+    "DIMENSION_PROFILE": "[[0, 1/57], [6, 56/57]]",
+    "N": {
+     "E": 216,
+     "F": 584,
+     "V": 57,
+     "b0": 9,
+     "b0_route_1_union_find": 9,
+     "b0_route_2_F2_rank": 9,
+     "b1": 0,
+     "b2": 416,
+     "chi_from_betti": 425,
+     "chi_from_cell_counts": 425,
+     "cycle_rank_route_1_spanning_forest": 168,
+     "cycle_rank_route_2_euler": 168,
+     "rank_d2_high_pivot": 168,
+     "rank_d2_low_pivot": 168
+    },
+    "NCOH_DENSITY": "37/27",
+    "N_coh": {
+     "E": 216,
+     "F": 296,
+     "V": 57,
+     "b0": 9,
+     "b0_route_1_union_find": 9,
+     "b0_route_2_F2_rank": 9,
+     "b1": 32,
+     "b2": 160,
+     "chi_from_betti": 137,
+     "chi_from_cell_counts": 137,
+     "cycle_rank_route_1_spanning_forest": 168,
+     "cycle_rank_route_2_euler": 168,
+     "rank_d2_high_pivot": 136,
+     "rank_d2_low_pivot": 136
+    },
+    "PHI": "2/19",
+    "PHI_route_2": "2/19",
+    "SPECTRAL_PROFILE": "[[[1, 25/57], [3, 16/57]]]",
+    "arena": "A5",
+    "cell_drawn_pairs": [
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12,
+     42,
+     12
+    ],
+    "cell_group_orders": [
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3,
+     7,
+     3
+    ],
+    "cells": 16,
+    "coherent_two_cells": 296,
+    "coherent_two_cells_independent_recount": 296,
+    "coordinates": {
+     "Sigma_cycle_type": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "Sigma_order": 3,
+     "basepoint_is_fixed_by_Sigma": true,
+     "block_sizes": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     "blocks": 8,
+     "blocks_are_Sigma_stable": true,
+     "blocks_partition_the_moved_labels": true,
+     "labels": 57
+    },
+    "dimension_routes_agree": true,
+    "one_cells": 216,
+    "overlap_edges": 168,
+    "two_cells": 584,
+    "two_cells_route_2": 584
+   }
+  },
+  "mutants": [
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I1/I2's carrying receipt is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I1"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I1",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I3's carrying receipt is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I3"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I3",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I4's TOP adjudication is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I4a"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I4a",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I4's RSQ adjudication is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I4b"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I4b",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I5's carrying receipt is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I5"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I5",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I6's TB3 receipt is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I6"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I6",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the R0 hash of I7's carrying receipt is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-R0-I7"
+    ],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "anchor-I7",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "A1's derived label count is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-LCB-A1-MEMBERS"
+    ],
+    "falsified_gates": [
+     "G05"
+    ],
+    "kind": "computation",
+    "mutant": "arena-a1",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "A2's derived label count is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G05",
+     "G08",
+     "G24"
+    ],
+    "kind": "computation",
+    "mutant": "arena-a2",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the arena symmetry is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G24",
+     "G30"
+    ],
+    "kind": "computation",
+    "mutant": "arena-sigma",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the component route-1 census is corrupted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G12",
+     "G24"
+    ],
+    "kind": "computation",
+    "mutant": "b0-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the block partition is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-LCB-A2-ORDER"
+    ],
+    "falsified_gates": [
+     "G05",
+     "G08",
+     "G24",
+     "G30"
+    ],
+    "kind": "computation",
+    "mutant": "blocks-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the family is silently truncated below the declared target",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G07",
+     "G30"
+    ],
+    "kind": "computation",
+    "mutant": "cap-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one geometric 2-cell is dropped",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G11"
+    ],
+    "kind": "computation",
+    "mutant": "cell-drop",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "coherence is declared true at every 2-cell",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G16",
+     "G19",
+     "G27"
+    ],
+    "kind": "computation",
+    "mutant": "coh-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one R0 companion artifact is dropped from the census",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G03"
+    ],
+    "kind": "waiver",
+    "mutant": "companion-drop",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the discrimination family is replaced by a constant one",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G28"
+    ],
+    "kind": "computation",
+    "mutant": "disc-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the drawn-uniqueness rule accepts non-unique candidates",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G11",
+     "G24",
+     "G29"
+    ],
+    "kind": "computation",
+    "mutant": "drawn-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the morphism criterion rejects every step",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G09"
+    ],
+    "kind": "computation",
+    "mutant": "embed-blind",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the morphism criterion accepts every step",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G09"
+    ],
+    "kind": "computation",
+    "mutant": "embed-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the exemption sweep's permitted set is emptied",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G32"
+    ],
+    "kind": "waiver",
+    "mutant": "exempt-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the extracted growth rule's block width is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-RSQ-A3-LABELS",
+     "A-RSQ-M-11",
+     "A-RSQ-M-13",
+     "A-RSQ-M-17",
+     "A-RSQ-M-19",
+     "A-RSQ-M-23"
+    ],
+    "falsified_gates": [
+     "G04"
+    ],
+    "kind": "computation",
+    "mutant": "family-rule",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the growth family's member-selection rule is perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-RSQ-A3-LABELS",
+     "A-RSQ-M-11",
+     "A-RSQ-M-13",
+     "A-RSQ-M-17",
+     "A-RSQ-M-19",
+     "A-RSQ-M-23"
+    ],
+    "falsified_gates": [
+     "G04"
+    ],
+    "kind": "computation",
+    "mutant": "family-sel",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "a float literal enters the source the arithmetic guard scans",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G31"
+    ],
+    "kind": "waiver",
+    "mutant": "float-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one measured datum is evaluated before the freeze gate",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G01"
+    ],
+    "kind": "waiver",
+    "mutant": "freeze-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "R2's gateway member is typed rather than computed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G23"
+    ],
+    "kind": "computation",
+    "mutant": "gateway-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "b_2 is read on N instead of N_coh",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G19"
+    ],
+    "kind": "computation",
+    "mutant": "inv-b2",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the dimension profile's second route is corrupted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G18"
+    ],
+    "kind": "computation",
+    "mutant": "inv-dim",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "NCOH_DENSITY's independent recount is corrupted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G16"
+    ],
+    "kind": "computation",
+    "mutant": "inv-ncoh",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "PHI's second route is corrupted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G15"
+    ],
+    "kind": "computation",
+    "mutant": "inv-phi",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the spectral profile's kernel route is corrupted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G17"
+    ],
+    "kind": "computation",
+    "mutant": "inv-spec",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the stabilisation window is shrunk from K=3 to K=1",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G21",
+     "G26",
+     "G28"
+    ],
+    "kind": "computation",
+    "mutant": "k-window",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the homology identities used against I3's published counts are perturbed",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [
+     "A-TOP-B1-N",
+     "A-TOP-B1-N_coh",
+     "A-TOP-CHI-N",
+     "A-TOP-CHI-N_coh",
+     "A-TOP-CYC-N",
+     "A-TOP-CYC-N_coh"
+    ],
+    "falsified_gates": [
+     "G10"
+    ],
+    "kind": "computation",
+    "mutant": "machinery-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the constructed embedding is perturbed off equivariance",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G09"
+    ],
+    "kind": "computation",
+    "mutant": "map-func",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the negative control reads normalised estimators",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G26"
+    ],
+    "kind": "computation",
+    "mutant": "neg-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the F_2 boundary is replaced by the OR-connective",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G14"
+    ],
+    "kind": "computation",
+    "mutant": "parity-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one R0 row is dropped from the hash census",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G02"
+    ],
+    "kind": "waiver",
+    "mutant": "pin-drop",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the positive control's family is not constant",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G25"
+    ],
+    "kind": "computation",
+    "mutant": "pos-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one computed qualifier is replaced by a typed string",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G22"
+    ],
+    "kind": "computation",
+    "mutant": "qual-flip",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the second pivot discipline is replaced by the first",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G13"
+    ],
+    "kind": "computation",
+    "mutant": "rank-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the regeneration self-test reads the memo instead of evaluating fresh",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G06"
+    ],
+    "kind": "computation",
+    "mutant": "regen-cache",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the alternative family index is not evaluated",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G30"
+    ],
+    "kind": "computation",
+    "mutant": "robust-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "one trajectory row is dropped",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G20",
+     "G22",
+     "G30"
+    ],
+    "kind": "computation",
+    "mutant": "row-drop",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the scramble leaves every drawn map in place",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G27"
+    ],
+    "kind": "computation",
+    "mutant": "scramble-lax",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the symmetry self-test's tested set is chosen by the verdict",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G29"
+    ],
+    "kind": "computation",
+    "mutant": "selftest-select",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the eigenvalue-1 anchor chain is skipped",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G17"
+    ],
+    "kind": "computation",
+    "mutant": "spec-anchor",
+    "traceback": false
+   },
+   {
+    "crashed_before_reporting": false,
+    "declaration": "the verdict head is inverted",
+    "died": true,
+    "exit": 1,
+    "falsified_anchors": [],
+    "falsified_gates": [
+     "G22"
+    ],
+    "kind": "computation",
+    "mutant": "verdict-flip",
+    "traceback": false
+   }
+  ],
+  "rule_text": "L_m = {0} + (F_2^3 minus 0) x {1..m}: m copies of TB3's seven moved labels, with S_3 acting on the F_2^3 factor alone and fixing label 0.  m = 1 is TB3's native arena.",
+  "spectral_rows": [
+   {
+    "arena": "A1",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 6,
+    "mu_1_by_exact_kernel_of_I_minus_E": 6,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A2",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 10,
+    "mu_1_by_exact_kernel_of_I_minus_E": 10,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A3",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 19,
+    "mu_1_by_exact_kernel_of_I_minus_E": 19,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A3",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 19,
+    "mu_1_by_exact_kernel_of_I_minus_E": 19,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A4",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 22,
+    "mu_1_by_exact_kernel_of_I_minus_E": 22,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A4",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 22,
+    "mu_1_by_exact_kernel_of_I_minus_E": 22,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A5",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 25,
+    "mu_1_by_exact_kernel_of_I_minus_E": 25,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   },
+   {
+    "arena": "A5",
+    "degree_check": true,
+    "eigenvalue_1_present": true,
+    "mu_1_by_cycle_count": 25,
+    "mu_1_by_exact_kernel_of_I_minus_E": 25,
+    "readout_cycle_type": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "routes_agree": true
+   }
+  ],
+  "trajectory": {
+   "cells_forced": 25,
+   "cells_present": 25,
+   "labels": [
+    9,
+    16,
+    43,
+    50,
+    57
+   ],
+   "members": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5"
+   ],
+   "rows": {
+    "B2_DENSITY": [
+     "65/96",
+     "2/5",
+     "20/37",
+     "20/37",
+     "20/37"
+    ],
+    "DIMENSION_PROFILE": [
+     "[[0, 1/9], [7, 8/9]]",
+     "[[0, 1/16], [4, 15/16]]",
+     "[[0, 1/43], [6, 42/43]]",
+     "[[0, 1/50], [6, 49/50]]",
+     "[[0, 1/57], [6, 56/57]]"
+    ],
+    "NCOH_DENSITY": [
+     "12/5",
+     "1/1",
+     "37/27",
+     "37/27",
+     "37/27"
+    ],
+    "PHI": [
+     "7/9",
+     "1/4",
+     "6/43",
+     "3/25",
+     "2/19"
+    ],
+    "SPECTRAL_PROFILE": [
+     "[[[1, 2/3], [2, 1/3]]]",
+     "[[[1, 5/8], [2, 3/8]]]",
+     "[[[1, 19/43], [3, 12/43]]]",
+     "[[[1, 11/25], [3, 7/25]]]",
+     "[[[1, 25/57], [3, 16/57]]]"
+    ]
+   }
+  }
+ },
+ "totals": {
+  "anchor_failures": 0,
+  "anchors": 60,
+  "disclosures": 4,
+  "gates": 33,
+  "measured_data_evaluated": 177,
+  "must_pass_failures": 0,
+  "must_pass_gates": 33,
+  "mutant_survivors": 0,
+  "mutants": 47
+ },
+ "unit": "R1 -- THE CONTINUUM RUNG (v14 paper-01)",
+ "verdict": "R1-STABILIZES-AT-<NCOH_DENSITY=37/27;B2_DENSITY=20/37|DIVERGENT=PHI:STRICTLY-DECREASING;SPECTRAL_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING;DIMENSION_PROFILE:SUPPORT-CONSTANT-WEIGHTS-MOVING|WINDOW=K=3-OF-5-MEMBERS-NO-CAP|FUNCTORIALITY=FAMILY-NON-FUNCTORIAL-AT-2-OF-4-STEPS|R2-GATEWAY=A1>"
+}
