@@ -1381,3 +1381,26 @@ gate mandatory**).  ONE RUNBOOK ENGRAVING:
 no-unanchored-runtime-inputs (the M1 class).  R3 repair
 dispatched; THE R4 PIN NEXT (paper-10) per the standing
 order.
+
+## 2026-08-09 — R4 PIN FROZEN: THE DEFECT ON THE STAGE (v14 LEDGER #47)
+note-r4-qft-pin.md (`1582cea5df51`) frozen; paper-10 assigned.
+Per the #46 formalized ruling: **THE SEED IS Δᴮ** (v12 paper 1
+81bdab5673fb + exact.py 8e90f6435922, TERMINAL-PUBLISHABLE,
+never-split standing) on **THE STAGE** (I7's lattice w/ the R2
+terminal's locality facts anchored); the gate design from the
+R3 adjudication (`dc2c2525e1f2`; R3's receipt NOT anchored —
+mid-repair; the realization-census gate self-contained).  THE
+QUESTION: does a spatially structured indivisible family on
+the record stage exhibit a nonzero composition defect w/
+excitation structure?  Registered: the family construction
+(choice-inventoried, §15); THE DEFECT CENSUS (Δᴮ per
+generator pair + separation; the Markovian control MUST
+return 0; locality dependence measured); TWO-POINT STRUCTURE
+(the free-field ANALOG — the word "field" so scoped);
+TRANSFORMATION-TYPE CLASSES (the Wigner move at finite scale
+— the programme's first excitation-type census; no "particle"
+language); the mandatory realization-census gate; the
+state-motion check (FR2).  Verdicts: DEFECT-PRESENT-<...> /
+DEFECT-ABSENT-<...> / BLOCKED.  All eight 2026-08-09
+engravings at birth.  Construction dispatched — running in
+parallel w/ the R3 repair, R6b′, CR-C, CR-D, the R6a repair.
