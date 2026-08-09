@@ -71,6 +71,16 @@ ledger opens at its founding pin after v13 closes.
   refinement — never a declared label-growth rule (the R1 lesson is
   binding).
 
+- **THE CONTINUUM-ROUTES BATCH CR-A..CR-D** *(added 2026-08-09 by
+  user order, v14 #30; run in parallel with each other and with
+  R3/R6a's cycles)*: four exploratory units probing continuum routes
+  that neither copy (R1's wall) nor require records to carry positions
+  (R6a's wall): CR-A refinement-by-accumulation (paper-05), CR-B
+  stochastic refinement / split-in-distribution (paper-06), CR-C the
+  coarse-graining semigroup / RG fixed points (paper-07), CR-D the
+  symmetry-tower limit at four wings (paper-08).  Each a full cycle;
+  BLOCKED verdicts first-class.
+
 Rungs run as full cycles (pin → construct → commit-as-is → verify →
 protocol freeze → three-lens panel → adjudicate → repair → terminal).
 A blocked rung halts and reports; rungs are not skipped.

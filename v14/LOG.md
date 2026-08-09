@@ -891,3 +891,31 @@ cross-route sparse; the {D,H} d=3 lapse scope = I7's probe
 convention (X07); non-constant tangential generators
 excluded (bijection requirement).  Adjudicator verification
 next; the R6a panel runs in parallel.
+
+## 2026-08-09 — THE CONTINUUM-ROUTES BATCH: FOUR PINS FROZEN (v14 LEDGER #30)
+USER ORDER of record: investigate the four continuum routes in
+parallel.  Charter noted (PLAN.md §2); note-cr-batch-pins.md
+(`1cfee4fc0891`) freezes all four pins in one document:
+**CR-A REFINEMENT-BY-ACCUMULATION (paper-05)** — does the
+pinned grammar contain a geometry-record-advancing move, and
+does rescaled q converge along it (BLOCKED-AT-STATIC-GEOMETRY
+first-class: H_a[N] advances the front, not the interval
+counts);  **CR-B STOCHASTIC REFINEMENT (paper-06)** — a
+motivated split DISTRIBUTION where R6a killed the split VALUE
+(orbit decomposition of the fibers under all pinned
+symmetries; unique invariant measure ⟺ transitivity, measured;
+BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW names the missing
+transition-layer object);  **CR-C THE COARSE-GRAINING
+SEMIGROUP (paper-07)** — merging is the licensed direction
+(counts SUM — R6a's dual): the merge choice-inventory on the
+FULL record incl. the matter register (m does not add), the
+transformation law, THE FIXED-POINT CENSUS (RG-fixed-point
+analogs), merge-dynamics commutation;  **CR-D THE
+SYMMETRY-TOWER LIMIT (paper-08)** — the four-wing base by
+TB3's own rule: ladder embedding, the ceiling analog, the
+tower growth law, alternating/linear family membership (the
+Lie-direction's first datum); BLOCKED-AT-SCALE honest.  All
+four cite R6a at DELIVERED-UNDER-PANEL status w/ gated hash
+reads; disjoint file surfaces; four construction workers
+dispatched (Opus ×4) — with the R3 verification + the R6a
+panel, EIGHT concurrent processes.
