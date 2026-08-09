@@ -9258,3 +9258,17 @@ theorem-or-coincidence / K5 instrument incl. the OR-vs-XOR
 reconstruction).  Three-lens panel (Opus 5) dispatched
 immediately after — running beside the resumed RSQ
 construction.
+
+## 2026-08-08 — TOP PANEL DISPATCHED (v13 LEDGER #303)
+Three-lens panel dispatched (Opus 5, parallel-safe with the
+resumed RSQ construction): R1 operator (the invariant table
+rebuilt; both halves of b₁-is-the-read-times; the
+never-at-5-6 argument derived exactly — GL(3,2)'s element
+orders {1,2,3,4,7}); R2 effectus (the manifold verdict's
+naming per the qualifiers precedent; the continuum-rung
+requirements written; the primary-complex choice audited;
+what survives of the self-recognition reading); R3 instrument
+(the OR-vs-XOR bug reconstructed and a gate demanded for its
+class; the route pairs probed; the standards calibrated).
+Reviews frozen on return.  Four agents in flight: TOP panel
+×3 + RSQ construction.
