@@ -365,3 +365,10 @@ scramble 81/81 split; 20-rule compliance sweep ALL APPLIED
 (incl. both #10 engravings at birth).  Two plain runs
 byte-identical.  Adjudicator verification next; R1 repair
 continuation running in parallel.
+
+## 2026-08-09 — R2 ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #13)
+Independent plain run exit 0, output+receipt BYTE-IDENTICAL;
+selftest exit 0, 14/14 mutants dead (named gates, artifacts
+unchanged, no tracebacks).  CLI contract confirmed in-code
+before invocation.  R2 stands GREEN-VERIFIED-UNREVIEWED.
+Hostile protocol next.
