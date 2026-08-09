@@ -268,14 +268,6 @@
   ],
   "drag_rule": "A-axis",
   "growth_family": "L_m = {0} + (F_2^3 minus 0) x {1..m}: m copies of TB3's seven moved labels, with S_3 acting on the F_2^3 factor alone and fixing label 0.  m = 1 is TB3's native arena.",
-  "held_out": {
-   "H1": "the square at every HELD cell, as permutation matrices",
-   "H2": "the defect permutation delta_pi(alpha(r)) itself, entry by entry, at every HELD cell",
-   "H3": "the fixed-label count of delta_pi(alpha(r)) at every HELD cell",
-   "fit rule": "a candidate is admitted if the square holds at the FIT cell ALONE; nothing on HELD is consulted",
-   "split rule": "FIT = the single declared basis record e_1 = (1,0,0,0,0,0); HELD = every other element of V; sizes computed",
-   "teeth": "X-NOSQUARE (predict delta_pi(alpha(r)) = alpha(r)) and X-FLATFIX (predict the identity stratum everywhere), both declared IN ADVANCE to fail"
-  },
   "ladder_completions": {
    "ord1": [
     0,
@@ -381,6 +373,14 @@
     4
    ]
   },
+  "verification_partition": {
+   "H1": "the square at every cell of the complement, as permutations",
+   "H2": "the defect permutation entry by entry -- the SAME boolean as H1, since a tuple equality IS the entry-by-entry comparison; reported once and disclosed",
+   "H3": "the fixed-label count of delta_pi(alpha(r)) at every cell of the complement, and the distinct values it takes",
+   "partition rule": "FIT = the single declared basis record e_1 = (1,0,0,0,0,0); COMPLEMENT = every other element of V; sizes computed.  NOTHING IS FITTED: the candidate is built from the declared exponents before any record cell is read, so this is a partition of the record space and not an estimation",
+   "teeth": "X-NOSQUARE (predict delta_pi(alpha(r)) = alpha(r)) and X-FLATFIX (predict the identity stratum everywhere), both declared IN ADVANCE to fail"
+  },
+  "wide_corroboration_prime_ceiling": 293,
   "wings": 3
  },
  "disclosures": [
@@ -391,6 +391,42 @@
    },
    "id": "X01",
    "statement": "The pin's phrase 'the encoding V: F_p^3 -> F_p^6' is read here as: the record datum space at d = 3 is F_p^6 (the six link counts at a site of a 3-dimensional chart), and the record-is-metric readout is the endomorphism of that space with determinant 8 and spectrum {1,1,1,2,2,2}.  That is the object R2-LCB's F-10(d) measured and the only reading under which the stated determinant and spectrum are correct."
+  },
+  {
+   "detail": {
+    "census_rows_with_p6_at_most_the_group_order": 0,
+    "family_wide_pairs_where_E_kills_the_all_ones": 0,
+    "v_p_of_the_completion_group_order": {
+     "5": 1,
+     "7": 1,
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0
+    }
+   },
+   "id": "X07",
+   "statement": "FORCED CLAUSES, DISCLOSED AND NOT CONJOINED (RUNBOOK 14 addendum, v13 #208).  (a) The census table's 'rows admitting an injective candidate' column is the ORDER CRITERION restricted to the declared cells -- a coverage check on the census, not an independent source -- and it is forced twice over: no census row has p^6 <= |G_C|, and v_p(|G_C|) <= 1 at every declared prime, so every additive candidate at the native arena has image of order at most p and injectivity fails on cardinality alone.  (b) The module table's two structural columns are analytically forced: (I - rho_V) kills the all-ones vector because rho_V is a permutation matrix, and E never does because E is invertible; the family-wide counts are reported as the reach of that algebra, not as a contingent measurement.  (c) The two declared extensions X-NOSQUARE and X-FLATFIX cannot pass off the zero record: E_tilde - I is invertible and the fixed-label count is 1 + 7*#{k : r_k = 0}.  (d) The matrix-power and polynomial writings of the criterion are ONE condition in two encodings.  None of these is a must-pass conjunct of the verdict gate."
+  },
+  {
+   "detail": {
+    "generic_cells": 1434,
+    "motivated_cells": 6,
+    "motivated_precheck_survivors": 0,
+    "verdict_at_the_motivated_sub_family": "RSQ-NO-COMPATIBLE-SQUARE"
+   },
+   "id": "X08",
+   "statement": "THE FOUND HALF'S SCOPE.  The precheck's survivors are measured to be exactly the identifications with no stated motivation: the S_3-equivariant identifications and HA's own sym_index ordering are STILLBORN at every declared prime, in both directions, so the FOUND half of the verdict is true of the arbitrary relabellings of the six metric slots and false of every identification anybody has argued for.  Restricted to that motivated sub-family this instrument's own pre-registered outcome is RSQ-NO-COMPATIBLE-SQUARE, and both readings ship."
+  },
+  {
+   "detail": {
+    "homomorphism_grid": 4096,
+    "master_equation_sample": 71,
+    "sufficiency_sample_per_pattern": 71
+   },
+   "id": "X09",
+   "statement": "SCOPES OF THE CONTROL MEASUREMENTS.  The homomorphism checks of the in-arena control and of BREAK-HOM run over the declared grid {0,1}^6 x {0,1}^6 = 4,096 pairs, where coordinate sums never exceed 2 and modular wrap-around is not exercised; the master equation is verified on the generating set and on a declared sample of records, and is equivalent to the square -- which is verified at every record cell -- given that alpha is a homomorphism.  The sufficiency census verifies the square at a declared sample of records per pattern, exhaustively at the one distinguished pattern.  BREAK-HOM is built at the NATIVE 8-label arena with a rank-1 exponent, not at the grown arena."
   },
   {
    "detail": {
@@ -431,10 +467,12 @@
   {
    "detail": {
     "arena_labels": 43,
-    "prime": 7
+    "prime": 7,
+    "rung_earned": "EMPTY is not an arena, prime or instrument artefact",
+    "rung_not_earned": "bridges in-family at scale"
    },
    "id": "X05",
-   "statement": "The in-arena FOUND control is a control, not a bridge: its encoding is the SYNTHETIC I - rho, not HA's readout.  What it establishes is that the machinery returns FOUND, with a witness verified out of sample, at the same arena and prime at which HA's own encoding returns EMPTY.  It does not satisfy the module clause, which the permutation-module obstruction kills for a different and universal reason."
+   "statement": "The in-arena FOUND control is a control, not a bridge: its encoding is the SYNTHETIC I - rho, not HA's readout, and no record, metric, chart or readout of the deformation side enters it.  What it establishes is exactly one thing -- that EMPTY is not caused by the arena, the prime or the instrument, because the same arena and the same prime return FOUND for a different encoding.  It does not establish that bridges exist in-family at scale, and it does not satisfy the module clause, which the permutation-module obstruction kills for a different and universal reason.  Its square is an algebraic identity in the record once the two measured premises hold (the wing symmetry normalises the generators with the declared exponents, and they commute), and it is reported at that strength."
   },
   {
    "detail": {
@@ -655,6 +693,7 @@
   {
    "claim": "THE d = 3 RESIDUAL RUNS, AND ITS TWO COMPARATORS AGREE. R_HH is computed both as the LITERAL five-map composition on exact rational fields and by the CLOSED FORM built from the drag rule and the record readout without touching the composition; the two agree at every site.  The residual is measured NONZERO at the detector site, so the arena it generates is not trivial",
    "detail": {
+    "link_set_determines_a_metric": true,
     "of_sites": 27,
     "residual_at_the_detector_site": [
      "1/6",
@@ -1000,9 +1039,10 @@
    "passed": true
   },
   {
-   "claim": "THE CENSUS CELLS ARE CHOSEN BY A DECLARED RULE, NOT BY A VERDICT.  The rule -- every equivariant identification, HA's own lex ordering, the lex-first trivial-fixed-space slot order per direction, and the lex-first slot order that both survives the precheck at p = 7 and admits the order-3 demanded eigenvalue there -- is stated in the instrument before any census runs, and it returns a set containing BOTH module cells and cells of every measured precheck status, so the census is not run only where it is expected to be empty",
+   "claim": "THE CENSUS CELLS ARE CHOSEN BY A DECLARED RULE, NOT BY A VERDICT, AND THE RULE'S RETURN IS REPRODUCED EXACTLY BY AN INDEPENDENT REBUILD.  The rule -- every equivariant identification, HA's own lex ordering, the lex-first trivial-fixed-space slot order per direction, and the lex-first slot order that both survives the precheck at the reference prime and admits the order-3 demanded eigenvalue there -- is stated in the instrument before any census runs.  Its return is rebuilt here cell by cell from a SECOND equivariance test that shares no code with it, and the two agree exactly, so the cell count is a measured equality and not a lower bound; and the set contains BOTH module cells and cells of every measured precheck status, so the census is not run only where it is expected to be empty",
    "detail": {
     "census_cells": 9,
+    "independent_rebuild_cells": 9,
     "rows": [
      {
       "direction": "q->counts",
@@ -1193,20 +1233,24 @@
        "(1, 2)"
       ]
      }
-    ]
+    ],
+    "rule_reproduced_exactly": true
    },
    "id": "G15",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE STILLBORN PRECHECK IS A MEASUREMENT WITH BOTH OUTCOMES REACHABLE.  The square forces alpha(fix E) into fix delta_pi, which is measured to be a single point, so an INJECTIVE candidate needs |fix E| = 1.  A synthetic pair whose re-encoding has trivial fixed space PASSES the precheck and a synthetic pair whose re-encoding fixes a nonzero vector FAILS it, through the same function -- so a blinded precheck cannot pass this gate in either direction",
+   "claim": "THE STILLBORN PRECHECK IS A MEASUREMENT WITH BOTH OUTCOMES REACHABLE, AND ITS NEGATIVE ARM IS INDEPENDENT OF THE OBJECT UNDER AUDIT.  The square forces alpha(fix E) into fix delta_pi, which is measured to be a single point, so an INJECTIVE candidate needs |fix E| = 1.  A synthetic pair whose re-encoding has trivial fixed space PASSES the precheck; a synthetic INVERTIBLE matrix with a one-dimensional fixed space, measured NOT to be any of the covariant family's encodings, FAILS it -- through the same function, so a blinded precheck cannot pass this gate in either direction and the negative control is not the candidate it is used to judge",
    "detail": {
     "fix_delta_size": 1,
+    "mismatched_control_is_invertible": true,
+    "mismatched_control_is_outside_the_covariant_family": true,
     "synthetic_compatible_fix_dim": 0,
     "synthetic_compatible_passes": true,
-    "synthetic_mismatched_fix_dim": 3,
-    "synthetic_mismatched_passes": false
+    "synthetic_mismatched_fix_dim": 1,
+    "synthetic_mismatched_passes": false,
+    "the_audited_minimum_candidate_also_fails": true
    },
    "id": "G16",
    "must_pass": true,
@@ -1217,6 +1261,8 @@
    "detail": {
     "cell_complete": true,
     "cells": 1440,
+    "mismatch_rows": 42,
+    "mismatches_matching_the_recomputed_value": 42,
     "module_candidates_all_stillborn": true,
     "rows": [
      {
@@ -1622,7 +1668,321 @@
    "passed": true
   },
   {
-   "claim": "THE ORDER CRITERION IS DERIVED, COMPUTED BY TWO ROUTES, AND REACHABLE IN BOTH DIRECTIONS.  S1a and S1b make the image an abelian Sigma-stable subgroup on which delta_pi acts as I - rho; S3 makes alpha an isomorphism, so rho = I - alpha E alpha^-1 and rho^ord(pi) = I, i.e. (I - E)^ord(pi) = I.  The matrix-power route and the polynomial route (E = 2I at an involution, E^2 - 3E + 3I = 0 at an order-3 wing symmetry, whose roots are exactly 1 - omega) agree at every cell; and the criterion is SATISFIED by a synthetic encoding, so it is not a condition nothing can meet",
+   "claim": "THE FOUND HALF IS NAMED BY THE IDENTIFICATION CLASS OF ITS SURVIVORS, MEASURED.  The identifications with a stated motivation -- the S_3-EQUIVARIANT ones, whose number is computed, and HA's own sym_index ordering, in both directions -- are censused as their own sub-family: every one of them is STILLBORN at every declared prime, so the precheck's survivors are exactly the identifications that are an arbitrary relabelling of the six metric slots.  The FOUND half's qualifier is DERIVED here from those two counts, and the verdict this instrument returns when it is restricted to the motivated sub-family is derived by the same function that returns the covariant-closure verdict, from that sub-family's OWN census -- run here over its own rows and calibrated the other way through the same counting call, which scores the synthetic encoding that does satisfy the criterion as a hit",
+   "detail": {
+    "counting_call_scores_the_synthetic_positive_control": true,
+    "generic_cells": 1434,
+    "generic_precheck_survivors": 4420,
+    "identification_qualifier": "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS",
+    "motivated_cells": 6,
+    "motivated_criterion_hits": 0,
+    "motivated_criterion_rows": 84,
+    "motivated_precheck_survivors": 0,
+    "motivated_rows": 42,
+    "rows": [
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "q->counts",
+      "p": 23,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 3,
+      "direction": "counts->q",
+      "p": 23,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "q->counts",
+      "p": 23,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "lex",
+      "dim_fix_E": 1,
+      "direction": "counts->q",
+      "p": 23,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "q->counts",
+      "p": 23,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 5,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 7,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 11,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 13,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 17,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 19,
+      "precheck": "STILLBORN"
+     },
+     {
+      "cell": "module",
+      "dim_fix_E": 2,
+      "direction": "counts->q",
+      "p": 23,
+      "precheck": "STILLBORN"
+     }
+    ],
+    "verdict_at_the_motivated_sub_family": "RSQ-NO-COMPATIBLE-SQUARE"
+   },
+   "id": "G39",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ORDER CRITERION IS DERIVED, REDUNDANTLY ENCODED, AND REACHABLE IN BOTH DIRECTIONS.  S1a and S1b make the image an abelian Sigma-stable subgroup on which delta_pi acts as I - rho; S3 makes alpha an isomorphism, so rho = I - alpha E alpha^-1 and rho^ord(pi) = I, i.e. (I - E)^ord(pi) = I.  The matrix-power writing and the polynomial writing (E = 2I at an involution, E^2 - 3E + 3I = 0 at an order-3 wing symmetry, whose roots are exactly 1 - omega) agree at every row -- these are ONE condition in two encodings, related by the identity (I-E)^3 - I = -E(E^2 - 3E + 3I), and the agreement is a redundant-encoding check, not a second route; and the criterion is SATISFIED by a synthetic encoding, so it is not a condition nothing can meet.  The DIRECTION convention -- the one orientation choice this instrument makes -- is SWEPT rather than chosen: both directions carry the same number of rows and the same number of hits, so the verdict cannot be an artefact of which way the readout is read (RUNBOOK 14)",
    "detail": {
     "cells": 20160,
     "cells_satisfying": 0,
@@ -1636,6 +1996,16 @@
      "23": 0
     },
     "route_disagreements": 0,
+    "rows_and_hits_per_direction": {
+     "counts->q": [
+      10080,
+      0
+     ],
+     "q->counts": [
+      10080,
+      0
+     ]
+    },
     "synthetic_positive_control_matrix_route": true,
     "synthetic_positive_control_polynomial_route": true
    },
@@ -1644,20 +2014,81 @@
    "passed": true
   },
   {
-   "claim": "THE ORDER CRITERION SUBSUMES THE PRECHECK, MEASURED.  (I - E)^ord = I forces I - E invertible, hence dim ker(E - I) = 0; so the set of cells satisfying the criterion is contained in the set surviving the precheck, and the containment is measured STRICT -- the precheck has survivors the criterion kills.  The precheck is therefore the structural SHADOW of the census criterion, exactly as the LCB lesson predicts",
+   "claim": "THE EMPTINESS IS A THEOREM, NOT A CENSUS: THE READOUT-PROFILE ARGUMENT, DERIVED HERE FROM THE READOUT'S OWN INTEGER STRUCTURE.  Every row of the record<->metric readout is a link's row in some column order, so its entries are one of exactly two multisets -- (0,0,0,0,0,1) for an axis link, (0,0,0,1,1,2) for a diagonal link -- and row 0 is therefore the unit vector e_k, k the position the identification gives the slot (0,0).  det = +-8 makes E invertible at every odd prime, so the criterion is equivalent to a polynomial identity in the INTEGER readout; read at row 0, with row_0(A^2) = row_k(A), it forces p to divide the gcd of an explicit integer witness.  Every witness gcd is measured to admit NO prime >= 5, so the criterion fails at EVERY such prime -- at every slot order, both directions, both wing-symmetry orders, and at the primes the carrier build cap excludes.  The decision function is calibrated the other way through the same call: a synthetic readout row of the forbidden profile (0,0,0,0,1,2) makes it report p = 7 admissible.  And the theorem is measured to be a route INDEPENDENT of the F_p sweep, structurally rather than by bookkeeping: the whole witness sweep is recomputed with the names of BOTH writings of the order criterion unbound in the module namespace, so a theorem that reached the criterion through any call could not answer, and it must both answer and return the same admitted-prime set",
    "detail": {
-    "cells_satisfying_the_criterion": 0,
-    "cells_surviving_the_precheck": 4420,
-    "containment_is_strict": true
+    "determinant_is_plus_or_minus_8": 720,
+    "floor_prime": 5,
+    "independent_of_the_Fp_criterion_with_its_names_unbound": true,
+    "primes_admitted_by_any_witness": [],
+    "primes_excluded_by_the_carrier_build_cap": [
+     13,
+     17,
+     19,
+     23
+    ],
+    "row_profiles": {
+     "(0, 0, 0, 0, 0, 1)": 2160,
+     "(0, 0, 0, 1, 1, 2)": 2160
+    },
+    "row_zero_is_a_unit_vector": 720,
+    "slot_orders": 720,
+    "synthetic_forbidden_profile_admits": [
+     7
+    ],
+    "unbound_probe_error": null,
+    "witness_gcds_seen": [
+     1,
+     2
+    ],
+    "witness_triples": 2880,
+    "witness_triples_forced": 2880
+   },
+   "id": "G40",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SWEEP'S EXACT EXTENSION, AND ITS CALIBRATION AGAINST THE FIELD COMPUTATION.  The criterion's polynomial identity has integer coefficients in the integer readout, so the primes at which it can hold are exactly the primes dividing the gcd of its entries: computing that gcd at every (slot order, direction, wing order) triple extends the 20,160-row sweep from the seven declared primes to EVERY prime, with the same answer.  The extension is calibrated against the field computation itself -- the integer identity and (I - E)^ord = I over F_p are measured to agree at every calibration row -- so the extension is not a different claim.  The same identities are then swept explicitly against every prime from the floor to the declared ceiling, row by row, as a WIDE corroboration census whose row count is checked against the product the declarations force",
+   "detail": {
+    "calibration_agreements": 252,
+    "calibration_rows": 252,
+    "primes_admitted_at_any_triple": [],
+    "triples": 2880,
+    "triples_forced": 2880,
+    "wide_census_hits": 0,
+    "wide_census_prime_range": [
+     5,
+     293
+    ],
+    "wide_census_primes": 60,
+    "wide_census_rows": 172800,
+    "wide_census_rows_forced": 172800
+   },
+   "id": "G41",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ORDER CRITERION SUBSUMES THE PRECHECK -- WHAT IS MEASURED, STATED AS WHAT IS MEASURED.  (I - E)^ord = I forces I - E invertible, hence dim ker(E - I) = 0; that implication is a theorem, and what this gate measures is (a) the two counts against their OWN denominators -- criterion-satisfying rows out of the swept rows, precheck survivors out of the (cell, prime) pairs -- (b) the implication itself as a set predicate, cell by cell, which at this family has ZERO witnesses and is therefore VACUOUS, and (c) the implication exercised on the one non-vacuous instance available, the synthetic encoding that satisfies the criterion and is measured to have trivial fixed space.  The precheck is the structural SHADOW of the census criterion, exactly as the LCB lesson predicts",
+   "detail": {
+    "cell_prime_pairs_surviving_the_precheck": 4420,
+    "cell_prime_pairs_swept": 10080,
+    "containment_is_vacuous_at_this_family": true,
+    "containment_violations": 0,
+    "containment_witnesses": 0,
+    "rows_satisfying_the_criterion": 0,
+    "rows_swept": 20160,
+    "synthetic_instance_satisfies_the_criterion": true,
+    "synthetic_instance_survives_the_precheck": true
    },
    "id": "G19",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE CENSUS IS COMPUTED BY TWO ROUTES THAT SHARE NO DECIDING VARIABLE, AND THEY AGREE EVERYWHERE.  Route A solves ker(E^T - (1-s)I) by Gaussian elimination and multiplies by the MEASURED count of normalised subgroups; route B enumerates every cyclic subgroup of order p, builds its delta-exponent table from PERMUTATIONS with no linear algebra in it, and enumerates every covector projectively with the measured redundancy restored.  The taint counter is zero and both invocation counters are nonzero",
+   "claim": "THE CENSUS IS COMPUTED BY TWO ROUTES AND THEY AGREE AT EVERY ROW.  Route A solves ker(E^T - (1-s)I) by Gaussian elimination and multiplies by the MEASURED count of normalised subgroups; route B enumerates every cyclic subgroup of order p, builds its delta-exponent table from PERMUTATIONS with no linear algebra in it, and enumerates every covector projectively with the measured redundancy restored.  What THIS gate measures is the agreement and the invocation counters; that the two routes are independent COMPUTATIONS is measured structurally at G42, not self-reported here",
    "detail": {
-    "candidate_evaluations_counted": 41653,
+    "candidate_evaluations_counted": 41992,
     "disagreements": 0,
     "route_calls": {
      "A": 315,
@@ -1667,6 +2098,19 @@
     "rows": 315
    },
    "id": "G20",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "ROUTE INDEPENDENCE IS MEASURED, NOT SELF-REPORTED.  A counter that a route must increment to declare itself tainted measures only the routes that agree to be counted.  Here route B is re-evaluated with the NAME of route A removed from the module namespace: a route B that reaches route A -- through a counted call or a silent one -- raises instead of answering, and the gate requires both that no error was raised and that the answer is unchanged.  The taint counter is retained as a disclosure",
+   "detail": {
+    "error_raised": null,
+    "route_b_answer": 745,
+    "route_b_answer_with_route_a_unbound": 745,
+    "structurally_independent": true,
+    "taint_counter": 0
+   },
+   "id": "G42",
    "must_pass": true,
    "passed": true
   },
@@ -1687,10 +2131,11 @@
    "passed": true
   },
   {
-   "claim": "ROUTE C -- THE LITERAL PERMUTATION VERIFICATION -- CONFIRMS THAT THE COUNTED SQUARE IS THE PERMUTATION SQUARE.  At declared instances a candidate route A admits is rebuilt as an ACTUAL permutation and the square is compared entry by entry at EVERY one of the p^6 record cells: zero violations.  A declared rejected covector is run through the same code and violates it at a positive count, so the verification is not vacuous",
+   "claim": "ROUTE C -- THE LITERAL PERMUTATION VERIFICATION -- CONFIRMS THAT THE COUNTED SQUARE IS THE PERMUTATION SQUARE.  At each declared INSTANCE a candidate route A admits is rebuilt as an ACTUAL permutation and the square is compared entry by entry at EVERY one of the p^6 record cells: zero violations.  A declared rejected covector is run through the same code at the same instance and violates it at a positive count, so the verification is not vacuous.  The row count is twice the instance count, and both are reported as what they are",
    "detail": {
     "a_rejected_candidate_violates": true,
     "admitted_all_clean": true,
+    "instances": 2,
     "rows": [
      {
       "cells": 15625,
@@ -1744,7 +2189,8 @@
       "status": "rejected",
       "violations": 100842
      }
-    ]
+    ],
+    "rows_are_two_per_instance": true
    },
    "id": "G22",
    "must_pass": true,
@@ -1755,11 +2201,29 @@
    "detail": {
     "E_kills_the_all_ones_at_no_row": true,
     "I_minus_rho_kills_the_all_ones_at_all_rows": true,
+    "family_wide_cell_prime_pairs": 10080,
+    "family_wide_pairs_where_E_kills_the_all_ones": 0,
     "rows": 210,
     "rows_where_E_equals_I_minus_rho": 0,
-    "synthetic_non_permutation_module_is_invertible": true
+    "synthetic_non_permutation_module_is_invertible": true,
+    "wing_symmetries_where_I_minus_rho_kills_the_all_ones": 6
    },
    "id": "G23",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY VERDICT-CARRYING TABLE IS CELL-COMPLETE AGAINST A FORCED PRODUCT (RUNBOOK 13 addendum, v13 #234).  The order-criterion sweep, the declared census and the permutation-module table each have their row count checked against the product the declarations force -- cells x primes x wing orders -- and their outcome columns checked to sum to that total, so a dropped row cannot pass unnoticed at any of them.  The completeness helper is calibrated the other way inside this same gate: it must REJECT a partition that does not sum",
+   "detail": {
+    "census_rows": 315,
+    "census_rows_forced": 315,
+    "completeness_rejects_a_short_partition": true,
+    "criterion_rows": 20160,
+    "criterion_rows_forced": 20160,
+    "module_rows": 210,
+    "module_rows_forced": 210
+   },
+   "id": "G43",
    "must_pass": true,
    "passed": true
   },
@@ -1783,11 +2247,15 @@
      4
     ],
     "generators_commute": true,
+    "homomorphism_grid": 4096,
     "homomorphism_violations": 0,
     "image_size": 117649,
     "injective": true,
     "labels": 43,
     "m": 6,
+    "master_equation_on_the_generating_set": 6,
+    "master_equation_sample": 71,
+    "master_equation_verified": 71,
     "normalisation_verified": true,
     "prime": 7,
     "record_cells": 117649,
@@ -1798,13 +2266,14 @@
    "passed": true
   },
   {
-   "claim": "THE HELD-OUT VERIFICATION IS PREDICTIVE.  The FIT/HELD split is declared before any candidate is fitted: the candidate is admitted on the single FIT cell alone and is then verified on every HELD cell -- the square (H1), the DEFECT PERMUTATION itself entry by entry (H2), and the fixed-label count (H3), a transport-side physical quantity that takes more than one value.  The two extensions declared IN ADVANCE to fail -- X-NOSQUARE and X-FLATFIX -- fail at every held-out cell except the ONE at which they are analytically forced, the zero record, where every candidate returns the identity and both predictions are true of any square whatsoever; that exempt count is COMPUTED and gated to be exactly one, so an instrument that exempted more could not pass here",
+   "claim": "THE VERIFICATION IS EXHAUSTIVE, AND NOTHING IN IT IS FITTED.  The candidate is built from the declared exponents before any record cell is read, so the declared FIT / COMPLEMENT split is a PARTITION of the record space and not an estimation: the square is verified at every cell of the complement of the FIT cell (H1), and the defect permutation's entry-by-entry comparison (H2) is the SAME boolean as H1, reported as such.  H3 counts the cells at which the fixed-label count is read and the distinct values it takes.  The two extensions declared IN ADVANCE to fail -- X-NOSQUARE and X-FLATFIX -- are analytically forced to fail off the zero record, and are carried as disclosures; what this gate must-passes is the COMPUTED exempt count, gated to be exactly one, so an instrument that exempted more could not pass here",
    "detail": {
-    "H1_square_verified_out_of_sample": 117648,
+    "H1_square_verified_at_every_cell": 117648,
     "H2_defect_permutation_verified": 117648,
     "H3_fixed_label_counts_verified": 117648,
     "X_FLATFIX_passes": 0,
     "X_NOSQUARE_passes": 0,
+    "cells_where_both_extensions_are_forced": 1,
     "distinct_fixed_label_values": [
      1,
      8,
@@ -1822,10 +2291,2182 @@
      0,
      0
     ],
-    "held_cells": 117648,
-    "held_cells_where_both_extensions_are_forced": 1
+    "verified_cells": 117648
    },
    "id": "G25",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE MASTER EQUATION, AND THE THREE WALLS AS ITS READINGS.  S1a forces the image to be Sigma-stable and S1b makes it abelian, so conjugation by Sigma_pi restricts to an automorphism rho of it; S3 makes alpha an isomorphism, and the square becomes I - E = alpha^-1 rho alpha.  Every obstruction this unit reports is a reading of that one equation: rho invertible gives the fixed-point mismatch, rho^ord = I gives the order obstruction, rho = rho_V(pi) gives the permutation-module obstruction.  The equation is VERIFIED at the in-arena control -- on its generating set and record by record on a declared sample -- and the module reading is measured INDEPENDENT of the other two: the module-forced E clears the precheck AND satisfies the order criterion at every (prime, wing) row and dies anyway, because E must be invertible and I - rho_V(pi) is not",
+   "detail": {
+    "independence_rejects_an_invertible_module_E": true,
+    "master_equation_on_the_generating_set": 6,
+    "master_equation_rejects_a_mismatch": true,
+    "master_equation_sample": 71,
+    "master_equation_verified": 71,
+    "module_independence_rows": [
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 5,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 5,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 5,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 5,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 5,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 7,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 7,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 7,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 7,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 7,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 11,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 11,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 11,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 11,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 11,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 13,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 13,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 13,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 13,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 13,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 17,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 17,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 17,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 17,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 17,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 19,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 19,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 19,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 19,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 19,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 23,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 23,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 23,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 2,
+      "ord": 3,
+      "p": 23,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "satisfies_the_order_criterion": true
+     },
+     {
+      "E_is_singular": true,
+      "clears_the_precheck": true,
+      "dim_ker_E": 4,
+      "ord": 2,
+      "p": 23,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "satisfies_the_order_criterion": true
+     }
+    ],
+    "readings": [
+     {
+      "consequence": "I - E invertible, i.e. dim ker(E - I) = 0",
+      "reading": "rho lies in GL(A)",
+      "wall": "the fixed-point mismatch (the stillborn precheck)"
+     },
+     {
+      "consequence": "(I - E)^ord(pi) = I",
+      "reading": "rho^ord(Sigma_pi) = I",
+      "wall": "the order obstruction"
+     },
+     {
+      "consequence": "E = I - rho_V(pi)",
+      "reading": "rho = rho_V(pi) (the module clause)",
+      "wall": "the permutation-module obstruction"
+     }
+    ],
+    "square_cells": 117649
+   },
+   "id": "G44",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "AT THE GROWN ARENA THE CRITERION IS NOT MERELY NECESSARY BUT SUFFICIENT, CENSUSED OVER EVERY PATTERN.  At p = 7 the polynomial x^3 - 1 is measured to have three distinct roots, so any rho with rho^3 = I is diagonalisable; invertibility of E = I - rho excludes the eigenvalue 1, so every E satisfying the criterion at an order-3 wing symmetry is conjugate to I - diag(c) with c a vector of primitive cube roots.  All 2^6 such patterns are censused: at every one the declared growth family realises the encoding -- generators of order p on disjoint supports, commuting, normalised with the demanded exponents, E invertible, the criterion satisfied, and the square holding at every record of a declared sample.  The converse therefore holds at this scope, and the bridge question reduces there to the criterion",
+   "detail": {
+    "all_patterns_realised": true,
+    "arena_labels": 43,
+    "cube_roots": [
+     1,
+     2,
+     4
+    ],
+    "patterns": 64,
+    "prime": 7,
+    "rows": [
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       6,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       2,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       6,
+       4,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       2,
+       4,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       6,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       2,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       6,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       2,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       6,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       2,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       6,
+       4,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       2,
+       4,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       6,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       2,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       6,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       2,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       6,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       2,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       6,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       2,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       6,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       2,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       4,
+       6,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       4,
+       2,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       4,
+       6,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       4,
+       2,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       6
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       2
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     },
+     {
+      "E_invertible": true,
+      "E_tilde": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "built": true,
+      "commute": true,
+      "criterion": true,
+      "exponents": [
+       4,
+       4,
+       4,
+       4,
+       4,
+       4
+      ],
+      "generator_orders_are_p": true,
+      "normalised": true,
+      "square_violations_on_the_sample": 0,
+      "supports_disjoint": true
+     }
+    ],
+    "sample_records_per_pattern": 71,
+    "separable": true
+   },
+   "id": "G45",
    "must_pass": true,
    "passed": true
   },
@@ -1853,8 +4494,9 @@
    "passed": true
   },
   {
-   "claim": "S2 (CARRIER RIGIDITY) AND S4 (FUNCTORIALITY IN THE FAMILY).  S2: the transport side's fixed-label stratification is measured CARRIED by the admitted candidate -- the held-out defect permutations take more than one fixed-label value, so the stratification is a real invariant and not a constant.  S4: the emptiness is measured at every one of TB3's five declared ladder bases -- whose defect subgroups differ by two orders of magnitude -- and at BOTH declared arena scales, and it does not move",
+   "claim": "S2 (CARRIER RIGIDITY).  The transport side's fixed-label stratification is measured CARRIED by the admitted candidate -- the defect permutations take more than one fixed-label value, so the stratification is a real invariant and not a constant -- and the clause that decides it is calibrated the other way inside this same gate: a constant stratification must be REJECTED by it",
    "detail": {
+    "S2_rejects_a_constant_stratification": true,
     "S2_stratification_values": [
      1,
      8,
@@ -1863,45 +4505,6 @@
      29,
      36,
      43
-    ],
-    "S4_bases": [
-     {
-      "K_order": 1,
-      "base": "ord1",
-      "census_empty_at_this_base": true,
-      "live_primes": []
-     },
-     {
-      "K_order": 168,
-      "base": "ord2",
-      "census_empty_at_this_base": true,
-      "live_primes": [
-       7
-      ]
-     },
-     {
-      "K_order": 12,
-      "base": "ord3",
-      "census_empty_at_this_base": true,
-      "live_primes": []
-     },
-     {
-      "K_order": 2520,
-      "base": "ord6",
-      "census_empty_at_this_base": true,
-      "live_primes": [
-       5,
-       7
-      ]
-     },
-     {
-      "K_order": 360,
-      "base": "reference",
-      "census_empty_at_this_base": true,
-      "live_primes": [
-       5
-      ]
-     }
     ],
     "S4_scales": [
      {
@@ -1917,6 +4520,73 @@
     ]
    },
    "id": "G28",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S4 (FUNCTORIALITY) IS COMPUTED, NOT TYPED.  The deciding quantity (I - E)^ord(pi) = I has NO base input: the candidate enumeration ranges over every cyclic subgroup of order p in G_C and every wing symmetry, and the completion that names a ladder base never enters it.  That is measured rather than asserted -- the census's deciding inputs are fingerprinted INSIDE the per-base loop and the fingerprint is identical at every base, while the bases themselves are measured genuinely different, their defect subgroups ranging over more than two orders of magnitude; and the criterion, re-evaluated at each base's own live primes, is hit nowhere.  Base-independence therefore holds BY CONSTRUCTION and the gate measures the construction",
+   "detail": {
+    "bases": 5,
+    "defect_subgroup_orders": [
+     1,
+     12,
+     168,
+     360,
+     2520
+    ],
+    "distinct_fingerprints": 1,
+    "fingerprint_separates_different_inputs": true,
+    "rows": [
+     {
+      "K_order": 1,
+      "base": "ord1",
+      "criterion_hits_at_this_base": 0,
+      "criterion_rows_at_this_base": 0,
+      "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
+      "live_primes": []
+     },
+     {
+      "K_order": 168,
+      "base": "ord2",
+      "criterion_hits_at_this_base": 0,
+      "criterion_rows_at_this_base": 18,
+      "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
+      "live_primes": [
+       7
+      ]
+     },
+     {
+      "K_order": 12,
+      "base": "ord3",
+      "criterion_hits_at_this_base": 0,
+      "criterion_rows_at_this_base": 0,
+      "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
+      "live_primes": []
+     },
+     {
+      "K_order": 2520,
+      "base": "ord6",
+      "criterion_hits_at_this_base": 0,
+      "criterion_rows_at_this_base": 36,
+      "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
+      "live_primes": [
+       5,
+       7
+      ]
+     },
+     {
+      "K_order": 360,
+      "base": "reference",
+      "criterion_hits_at_this_base": 0,
+      "criterion_rows_at_this_base": 18,
+      "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
+      "live_primes": [
+       5
+      ]
+     }
+    ]
+   },
+   "id": "G46",
    "must_pass": true,
    "passed": true
   },
@@ -2122,6 +4792,915 @@
    "passed": true
   },
   {
+   "claim": "THE SPECTRAL READING, MEASURED AT EVERY SWEPT DIMENSION.  At the motivated identifications HA's readout carries the eigenvalue 1 -- with multiplicity d at the natural identification and multiplicity 1 at HA's own lex ordering -- at d = 2,3,4,5, in both directions and at every declared prime.  Hence 0 lies in spec(I - E) there.  A bridge at a wing symmetry of order n forces spec(I - E) into the n-th roots of unity, and 0 is on no unit circle: the obstruction is dimension-independent in PROOF form, which is what a successor at a larger or continuous scale inherits from this unit",
+   "detail": {
+    "eigenvalue_one_present_at_every_row": true,
+    "lex_multiplicity_is_one": true,
+    "natural_multiplicity_equals_d": true,
+    "rows": [
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 5,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 7,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 11,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 13,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 17,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 19,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 23,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 5,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 7,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 11,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 13,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 17,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 19,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 2,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 23,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 5,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 7,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 11,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 13,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 17,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 19,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 23,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 5,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 7,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 11,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 13,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 17,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 19,
+      "size": 3
+     },
+     {
+      "d": 2,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 23,
+      "size": 3
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 5,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 7,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 11,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 13,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 17,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 19,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 23,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 5,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 7,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 11,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 13,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 17,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 19,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 3,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 23,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 5,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 7,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 11,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 13,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 17,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 19,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 23,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 5,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 7,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 11,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 13,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 17,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 19,
+      "size": 6
+     },
+     {
+      "d": 3,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 23,
+      "size": 6
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 5,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 7,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 11,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 13,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 17,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 19,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 23,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 5,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 7,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 11,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 13,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 17,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 19,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 4,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 23,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 5,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 7,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 11,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 13,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 17,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 19,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 23,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 5,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 7,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 11,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 13,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 17,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 19,
+      "size": 10
+     },
+     {
+      "d": 4,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 23,
+      "size": 10
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 5,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 7,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 11,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 13,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 17,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 19,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "q->counts",
+      "ordering": "natural",
+      "p": 23,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 5,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 7,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 11,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 13,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 17,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 19,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 5,
+      "direction": "counts->q",
+      "ordering": "natural",
+      "p": 23,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 5,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 7,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 11,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 13,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 17,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 19,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "q->counts",
+      "ordering": "lex",
+      "p": 23,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 5,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 7,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 11,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 13,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 17,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 19,
+      "size": 15
+     },
+     {
+      "d": 5,
+      "dim_ker_E_minus_I": 1,
+      "direction": "counts->q",
+      "ordering": "lex",
+      "p": 23,
+      "size": 15
+     }
+    ]
+   },
+   "id": "G47",
+   "must_pass": true,
+   "passed": true
+  },
+  {
    "claim": "THE SYMMETRY SELF-TEST, WITH THE CACHE DISCIPLINE.  The S_3-action on the record datum space is measured to be by PERMUTATION matrices at every group element and closed with six distinct images -- that is the fact the permutation-module obstruction turns on, and it is measured, not assumed.  fix(delta) is recounted INSIDE a declared relabelled arena, with a relabelling measured to move a positive number of labels, and it is still exactly one.  Every self-test evaluation BYPASSES the memo, self-test cache hits are zero, and the cache is measured to have been exercised before the self-tests began, so the zero-hit clause is not the signature of a cache nobody uses",
    "detail": {
     "cache_warmed_over": 2000,
@@ -2146,8 +5725,10 @@
    "passed": true
   },
   {
-   "claim": "THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION, NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum).  The declared set is the WHOLE covariant family -- every cell, including the ones the precheck kills -- and it is measured strictly larger than the set the verdicts would have selected",
+   "claim": "THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION, NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum) -- AND IT IS CONSUMED BY A SWEEP.  The declared set is the WHOLE covariant family -- every cell, including the ones the precheck kills -- measured strictly larger than the set the verdicts would have selected; and the decision quantity is RECOMPUTED at every cell of it and measured to agree with the family table, so a tested set selected by the verdicts shrinks a sweep that is counted here and not merely a list that is counted",
    "detail": {
+    "cells_agreeing_with_the_family_table": 1440,
+    "cells_swept_through_the_tested_set": 1440,
     "covariant_cells": 1440,
     "declared_tested_cells": 1440,
     "verdict_selected_cells": 508
@@ -2233,31 +5814,84 @@
    "passed": true
   },
   {
-   "claim": "THE VERDICT IS DERIVED HERE, INSIDE THE GATE, FROM THREE SOURCES THAT SHARE NO DECIDING VARIABLE, WITH BOTH BRANCHES REACHABLE.  Source 1 is the declared census's own live-row sum; source 2 is the order-criterion sweep over the WHOLE covariant family, which never runs a census; source 3 is the permutation-module equality count, which touches neither.  All three return zero, a candidate is measured to PASS the precheck, and the FOUND and EMPTY branches are both measured reachable, so the pre-registered outcome is RSQ-SQUARE-FOUND-BRIDGE-EMPTY and the verdict-flip mutant proves the derivation can fail",
+   "claim": "THE VERDICT IS DERIVED HERE, INSIDE THE GATE, FROM THREE SOURCES THAT ARE GENUINELY INDEPENDENT COMPUTATIONS, WITH BOTH BRANCHES REACHABLE AND BOTH HALVES OF THE NAME MEASURED.  Source 1 is the order-criterion sweep over the WHOLE covariant family, which runs no census; source 2 is the permutation-module equality count, which runs no criterion; source 3 is the readout-profile theorem, which evaluates no matrix over F_p at all and decides every prime from the integer readout's row profiles.  The census table's own injective column is the criterion RESTRICTED to the declared cells -- a coverage check on the census, forced twice over by cardinality, and it is reported as a disclosure and not conjoined here.  All three sources return zero, a candidate is measured to PASS the precheck, and the FOUND and EMPTY branches are both measured reachable, so the pre-registered outcome is RSQ-SQUARE-FOUND-BRIDGE-EMPTY; the FOUND half carries the identification class of its survivors and the EMPTY half carries the theorem's prime scope, both DERIVED here, and the verdict-flip, ident-flip and emptiness-flip mutants prove each derivation can fail on its own.  The motivated sub-family's own outcome is re-derived here with every argument measured and must agree with the one printed at the census",
    "detail": {
     "a_candidate_passes_the_precheck": true,
     "coverage_qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
     "d3_constructed": true,
+    "emptiness_qualifier": "UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-5",
     "empty_reachable": true,
     "found_reachable": true,
-    "obstruction": "THE ORDER OBSTRUCTION: S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION: S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does.",
-    "source_1_census_live_rows": 0,
-    "source_2_order_criterion_hits": 0,
-    "source_3_module_equalities": 0,
-    "verdict": "RSQ-SQUARE-FOUND-BRIDGE-EMPTY"
+    "identification_qualifier": "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS",
+    "obstruction": "THE MASTER EQUATION: S1a, S1b and S3 force I - E = alpha^-1 rho alpha, with rho the conjugation action of Sigma_pi on the image; every wall below is a reading of it.  THE ORDER OBSTRUCTION (rho^ord = I): S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows, and at NO prime >= 5 whatever, by the READOUT-PROFILE THEOREM: every row of the readout has one of two entry multisets, so row 0 is a 0/1 unit vector, and the criterion read at row 0 forces p to divide an integer witness whose gcd admits no prime >= 5.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION (rho = rho_V(pi)): S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does -- a wall that clears the other two and kills the candidate anyway.",
+    "restriction_census_live_rows": 0,
+    "source_1_order_criterion_hits": 0,
+    "source_2_module_equalities": 0,
+    "source_3_primes_admitted_by_the_profile_theorem": 0,
+    "verdict": "RSQ-SQUARE-FOUND-BRIDGE-EMPTY",
+    "verdict_at_the_motivated_sub_family": "RSQ-NO-COMPATIBLE-SQUARE",
+    "verdict_at_the_motivated_sub_family_all_arguments_measured": "RSQ-NO-COMPATIBLE-SQUARE"
    },
    "id": "G35",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE COVERAGE QUALIFIER IS MEASURED, AND EVERY TABLE IS CELL-COMPLETE.  Every one of the (cell, prime, wing-order) rows is covered by the arena-free order obstruction -- none is left to a cardinality argument, which is the respect in which this wall is stronger than LCB's -- and the precheck, census and criterion tables each sum to their swept totals",
+   "claim": "THE COVERAGE QUALIFIER IS MEASURED, AND ITS OWN FUNCTION IS CALIBRATED THE OTHER WAY.  The rows NOT satisfying the criterion are counted directly in the sweep, not subtracted from its total, and they are measured to be all of them: every (cell, prime, wing-order) row is covered by the arena-free order obstruction, none is left to a cardinality argument -- which is the respect in which this wall is stronger than LCB's.  The qualifier function must report PARTIAL on a partial input, evaluated here through the same call, so a qualifier asserted rather than measured cannot pass",
    "detail": {
     "qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
+    "qualifier_reports_PARTIAL_on_a_partial_input": true,
     "rows_covered_arena_free": 20160,
     "rows_total": 20160
    },
    "id": "G36",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY RECORDED QUALIFIER EQUALS ITS RECOMPUTED SOURCE.  The numeric qualifiers carried into the receipt are re-derived here from the measurements they name and compared one by one, so a qualifier replaced by a typed string is caught in the delivered run and not only by a synthetic probe",
+   "detail": {
+    "all_agree": true,
+    "ledger": {
+     "census_rows": [
+      315,
+      315
+     ],
+     "covariant_cells": [
+      1440,
+      1440
+     ],
+     "declared_primes": [
+      7,
+      7
+     ],
+     "equivariant_identifications": [
+      2,
+      2
+     ],
+     "module_obstruction_rows": [
+      210,
+      210
+     ],
+     "motivated_cells": [
+      6,
+      6
+     ],
+     "order_criterion_rows": [
+      20160,
+      20160
+     ],
+     "precheck_survivors_at_p7": [
+      580,
+      580
+     ],
+     "profile_theorem_triples": [
+      2880,
+      2880
+     ]
+    }
+   },
+   "id": "G48",
    "must_pass": true,
    "passed": true
   },
@@ -2267,27 +5901,49 @@
     "completeness_rejects_a_dropped_cell": true,
     "coverage_qualifier_reports_PARTIAL_when_partial": true,
     "derive_verdict_returns_NO_COMPATIBLE_SQUARE_when_all_stillborn": true,
+    "emptiness_qualifier_declines_the_theorem_name_without_the_theorem": true,
+    "emptiness_qualifier_passes_a_partial_coverage_through": true,
     "empty_branch_reports_what_it_is_given": true,
     "found_branch_rejects_a_violating_witness": true,
+    "identification_qualifier_names_a_motivated_survivor": true,
+    "identification_qualifier_names_an_empty_precheck": true,
     "ladder_measured_is_the_identity_on_its_input": true,
+    "master_equation_rejects_a_mismatch": true,
     "meeting_verdict_rejects_a_non_meeting": true,
+    "module_independence_rejects_an_invertible_module_E": true,
     "precheck_rejects_a_nonzero_fixed_space": true,
     "qualifier_value_returns_what_it_is_given": true,
     "s2_rejects_a_constant_stratification": true,
+    "spectral_multiplicity_returns_what_it_measures": true,
     "stillborn_mismatch_is_computed": true,
     "subsumption_rejects_the_wrong_direction": true,
-    "teeth_exempt_only_at_the_identity": true
+    "teeth_exempt_only_at_the_identity": true,
+    "the_all_prime_test_flags_an_identically_zero_identity": true,
+    "the_anchor_policy_is_fatal_on_a_failure": true,
+    "the_base_fingerprint_separates_different_inputs": true,
+    "the_extended_prime_range_is_sieved": true,
+    "the_module_obstruction_rejects_a_non_module_E": true,
+    "the_motivated_survivor_count_is_read_from_the_rows": true,
+    "the_order_criterion_accepts_the_synthetic_positive_control": true,
+    "the_order_criterion_rejects_an_invertible_non_root": true,
+    "the_polynomial_writing_accepts_the_involution_root": true,
+    "the_row_profile_reads_the_row_it_is_given": true,
+    "the_sufficiency_census_keeps_every_pattern": true,
+    "the_theorem_admits_a_witness_divisible_by_a_large_prime": true,
+    "the_theorem_honours_its_declared_prime_floor": true,
+    "the_theorem_rejects_a_witness_with_a_unit_gcd": true
    },
    "id": "G37",
    "must_pass": true,
    "passed": true
   },
   {
-   "claim": "THE ANCHOR POLICY IS FAIL-CLOSED AND MEASURED.  Every committed number this unit reuses carries an assertion that kills the run on mismatch; the count of anchor FAILURES is additionally gated here, so an instrument that softened the assertions into warnings would still be caught",
+   "claim": "THE ANCHOR POLICY IS FAIL-CLOSED AND MEASURED.  Every committed number this unit reuses carries an assertion whose failure kills the run; the failure is recorded and the run is carried to the totals block so that every falsifier is scored at a gate against the same denominators as the honest run.  The count of anchor FAILURES is gated here, and the policy function is calibrated the other way through the same call -- it must report FATAL on a synthetic single failure -- so an instrument that softened the assertions into warnings is caught by the calibration and not only by the count",
    "detail": {
     "anchor_failures": 0,
     "anchors": 26,
-    "fatal": 0
+    "fatal": 0,
+    "policy_reports_fatal_on_one_failure": true
    },
    "id": "G38",
    "must_pass": true,
@@ -2347,7 +6003,8 @@
    "killed": true,
    "mutant": "anchor-brg-sha",
    "named_kills": [
-    "A:A-SHA-brg_paper"
+    "A:A-SHA-brg_paper",
+    "G:G38"
    ]
   },
   {
@@ -2356,7 +6013,8 @@
    "killed": true,
    "mutant": "anchor-ha-sha",
    "named_kills": [
-    "A:A-SHA-ha_receipt"
+    "A:A-SHA-ha_receipt",
+    "G:G38"
    ]
   },
   {
@@ -2365,7 +6023,13 @@
    "killed": true,
    "mutant": "anchor-ladder",
    "named_kills": [
-    "A:A-TB3-K-ord1"
+    "A:A-TB3-K-ord1",
+    "A:A-TB3-K-ord2",
+    "A:A-TB3-K-ord3",
+    "A:A-TB3-K-ord6",
+    "A:A-TB3-K-reference",
+    "G:G37",
+    "G:G38"
    ]
   },
   {
@@ -2374,7 +6038,8 @@
    "killed": true,
    "mutant": "anchor-lcb-sha",
    "named_kills": [
-    "A:A-SHA-lcb_receipt"
+    "A:A-SHA-lcb_receipt",
+    "G:G38"
    ]
   },
   {
@@ -2383,7 +6048,8 @@
    "killed": true,
    "mutant": "anchor-pin-sha",
    "named_kills": [
-    "A:A-SHA-pin"
+    "A:A-SHA-pin",
+    "G:G38"
    ]
   },
   {
@@ -2392,7 +6058,8 @@
    "killed": true,
    "mutant": "anchor-psi-sha",
    "named_kills": [
-    "A:A-SHA-psi_receipt"
+    "A:A-SHA-psi_receipt",
+    "G:G38"
    ]
   },
   {
@@ -2402,7 +6069,9 @@
    "mutant": "anchor-rho",
    "named_kills": [
     "G:G07",
-    "G:G35"
+    "G:G35",
+    "G:G39",
+    "G:G47"
    ]
   },
   {
@@ -2412,6 +6081,7 @@
    "mutant": "anchor-soft",
    "named_kills": [
     "A:A-SHA-pin",
+    "G:G37",
     "G:G38"
    ]
   },
@@ -2421,7 +6091,8 @@
    "killed": true,
    "mutant": "anchor-tb3-sha",
    "named_kills": [
-    "A:A-SHA-tb3_receipt"
+    "A:A-SHA-tb3_receipt",
+    "G:G38"
    ]
   },
   {
@@ -2431,7 +6102,35 @@
    "mutant": "arena3-lax",
    "named_kills": [
     "G:G04",
-    "G:G05"
+    "G:G05",
+    "G:G06",
+    "G:G07",
+    "G:G08",
+    "G:G13",
+    "G:G14",
+    "G:G15",
+    "G:G18",
+    "G:G23",
+    "G:G26",
+    "G:G27",
+    "G:G28",
+    "G:G30",
+    "G:G32",
+    "G:G35",
+    "G:G39",
+    "G:G40",
+    "G:G41",
+    "G:G44"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the base-independence fingerprint is typed",
+   "killed": true,
+   "mutant": "baseindep-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G46"
    ]
   },
   {
@@ -2477,7 +6176,8 @@
    "mutant": "carrier3-lax",
    "named_kills": [
     "G:G07",
-    "G:G35"
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2488,7 +6188,7 @@
    "named_kills": [
     "G:G13",
     "G:G14",
-    "G:G15"
+    "G:G39"
    ]
   },
   {
@@ -2502,7 +6202,8 @@
     "G:G15",
     "G:G17",
     "G:G19",
-    "G:G35"
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2513,6 +6214,15 @@
    "named_kills": [
     "G:G20",
     "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one row is dropped from the census table",
+   "killed": true,
+   "mutant": "census-row-drop",
+   "named_kills": [
+    "G:G43"
    ]
   },
   {
@@ -2530,7 +6240,18 @@
    "killed": true,
    "mutant": "complete-lax",
    "named_kills": [
-    "G:G37"
+    "G:G37",
+    "G:G43"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one row is dropped from the order-criterion sweep",
+   "killed": true,
+   "mutant": "crit-row-drop",
+   "named_kills": [
+    "G:G18",
+    "G:G43"
    ]
   },
   {
@@ -2541,9 +6262,23 @@
    "named_kills": [
     "G:G18",
     "G:G19",
+    "G:G28",
     "G:G31",
     "G:G35",
-    "G:G36"
+    "G:G36",
+    "G:G37",
+    "G:G41",
+    "G:G46"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the emptiness qualifier is flipped back to the census-scoped name",
+   "killed": true,
+   "mutant": "emptiness-flip",
+   "named_kills": [
+    "G:G35",
+    "G:G37"
    ]
   },
   {
@@ -2564,8 +6299,14 @@
    "mutant": "encoding-lax",
    "named_kills": [
     "A:A-TB3-K-ord1",
+    "A:A-TB3-K-ord3",
     "G:G10",
-    "G:G11"
+    "G:G11",
+    "G:G12",
+    "G:G20",
+    "G:G22",
+    "G:G27",
+    "G:G38"
    ]
   },
   {
@@ -2589,13 +6330,24 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the exact all-prime extension of the sweep is truncated",
+   "killed": true,
+   "mutant": "extension-lax",
+   "named_kills": [
+    "G:G41"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "fix(delta) is read off the wrong law",
    "killed": true,
    "mutant": "fixpoint-lax",
    "named_kills": [
     "G:G12",
     "G:G16",
-    "G:G17"
+    "G:G17",
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2628,11 +6380,23 @@
   },
   {
    "exit": 1,
-   "expected_kill": "the held-out split is contaminated by the fit cell",
+   "expected_kill": "the identification qualifier is flipped",
    "killed": true,
-   "mutant": "heldout-lax",
+   "mutant": "ident-flip",
    "named_kills": [
-    "G:G25"
+    "G:G35",
+    "G:G37",
+    "G:G39"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the module obstruction's independence is asserted",
+   "killed": true,
+   "mutant": "independence-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G44"
    ]
   },
   {
@@ -2642,7 +6406,12 @@
    "mutant": "ladder-lax",
    "named_kills": [
     "A:A-TB3-K-ord2",
-    "G:G11"
+    "A:A-TB3-K-ord3",
+    "A:A-TB3-K-ord6",
+    "A:A-TB3-K-reference",
+    "G:G11",
+    "G:G38",
+    "G:G46"
    ]
   },
   {
@@ -2652,6 +6421,16 @@
    "mutant": "literal-lax",
    "named_kills": [
     "G:G22"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the master equation is asserted, not verified",
+   "killed": true,
+   "mutant": "master-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G44"
    ]
   },
   {
@@ -2680,7 +6459,45 @@
    "mutant": "module-lax",
    "named_kills": [
     "G:G23",
-    "G:G35"
+    "G:G35",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one row is dropped from the permutation-module table",
+   "killed": true,
+   "mutant": "module-row-drop",
+   "named_kills": [
+    "G:G43"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the motivated-identification census is typed rather than computed",
+   "killed": true,
+   "mutant": "motivated-lax",
+   "named_kills": [
+    "G:G35",
+    "G:G39"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the precheck's independent negative control is replaced by the object under audit",
+   "killed": true,
+   "mutant": "negcontrol-lax",
+   "named_kills": [
+    "G:G16"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared verification partition is contaminated by the fit cell",
+   "killed": true,
+   "mutant": "partition-lax",
+   "named_kills": [
+    "G:G25"
    ]
   },
   {
@@ -2690,7 +6507,8 @@
    "mutant": "posdef-lax",
    "named_kills": [
     "G:G04",
-    "G:G35"
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2702,7 +6520,8 @@
     "G:G16",
     "G:G17",
     "G:G19",
-    "G:G35"
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2713,7 +6532,9 @@
    "named_kills": [
     "G:G16",
     "G:G17",
-    "G:G37"
+    "G:G35",
+    "G:G37",
+    "G:G39"
    ]
   },
   {
@@ -2722,7 +6543,22 @@
    "killed": true,
    "mutant": "prime-single",
    "named_kills": [
-    "G:G08"
+    "G:G08",
+    "G:G27",
+    "G:G30",
+    "G:G31",
+    "G:G37",
+    "G:G39"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the readout row profiles are typed rather than measured",
+   "killed": true,
+   "mutant": "profile-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G40"
    ]
   },
   {
@@ -2731,7 +6567,8 @@
    "killed": true,
    "mutant": "qualifier-typo",
    "named_kills": [
-    "G:G37"
+    "G:G37",
+    "G:G48"
    ]
   },
   {
@@ -2740,8 +6577,14 @@
    "killed": true,
    "mutant": "readout3-lax",
    "named_kills": [
+    "A:A-HA-D2-DET",
+    "A:A-LCB-D3-LEX",
     "A:A-LCB-D3-NAT",
-    "G:G05"
+    "G:G05",
+    "G:G35",
+    "G:G38",
+    "G:G39",
+    "G:G40"
    ]
   },
   {
@@ -2752,7 +6595,8 @@
    "named_kills": [
     "G:G06",
     "G:G07",
-    "G:G35"
+    "G:G35",
+    "G:G39"
    ]
   },
   {
@@ -2770,7 +6614,7 @@
    "killed": true,
    "mutant": "route-alias",
    "named_kills": [
-    "G:G20"
+    "G:G42"
    ]
   },
   {
@@ -2785,10 +6629,20 @@
   },
   {
    "exit": 1,
+   "expected_kill": "route B returns route A's answer without recording it",
+   "killed": true,
+   "mutant": "route-silent-alias",
+   "named_kills": [
+    "G:G42"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the carrier-rigidity clause is blinded",
    "killed": true,
    "mutant": "s2-lax",
    "named_kills": [
+    "G:G28",
     "G:G37"
    ]
   },
@@ -2798,7 +6652,7 @@
    "killed": true,
    "mutant": "s4-lax",
    "named_kills": [
-    "G:G28"
+    "G:G46"
    ]
   },
   {
@@ -2821,10 +6675,21 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the eigenvalue-1 multiplicity is asserted",
+   "killed": true,
+   "mutant": "spectral-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G47"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the stillborn mismatch is typed rather than computed",
    "killed": true,
    "mutant": "stillborn-lax",
    "named_kills": [
+    "G:G17",
     "G:G37"
    ]
   },
@@ -2840,12 +6705,52 @@
   },
   {
    "exit": 1,
+   "expected_kill": "the sufficiency census is truncated to one pattern",
+   "killed": true,
+   "mutant": "sufficiency-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G45"
+   ]
+  },
+  {
+   "exit": 1,
    "expected_kill": "the declared-to-fail extensions are made to pass",
    "killed": true,
    "mutant": "teeth-off",
    "named_kills": [
     "G:G25",
     "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the readout-profile theorem reaches the F_p order criterion silently",
+   "killed": true,
+   "mutant": "theorem-alias",
+   "named_kills": [
+    "G:G40"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the readout-profile theorem drops its declared prime floor and admits a prime",
+   "killed": true,
+   "mutant": "theorem-floor",
+   "named_kills": [
+    "G:G35",
+    "G:G37",
+    "G:G40"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the readout-profile theorem's prime test is asserted, not derived",
+   "killed": true,
+   "mutant": "theorem-lax",
+   "named_kills": [
+    "G:G37",
+    "G:G40"
    ]
   },
   {
@@ -2863,6 +6768,7 @@
    "killed": true,
    "mutant": "universal-lax",
    "named_kills": [
+    "G:G36",
     "G:G37"
    ]
   },
@@ -2873,7 +6779,18 @@
    "mutant": "verdict-flip",
    "named_kills": [
     "G:G35",
-    "G:G37"
+    "G:G37",
+    "G:G39"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a prime is dropped from the wide corroboration census",
+   "killed": true,
+   "mutant": "wide-drop",
+   "named_kills": [
+    "G:G37",
+    "G:G41"
    ]
   },
   {
@@ -2882,8 +6799,26 @@
    "killed": true,
    "mutant": "wing-lax",
    "named_kills": [
+    "A:A-TB3-INVOL",
+    "A:A-TB3-K-ord2",
+    "A:A-TB3-K-ord3",
+    "A:A-TB3-K-ord6",
+    "A:A-TB3-K-reference",
     "A:A-TB3-WING",
-    "G:G09"
+    "G:G09",
+    "G:G11",
+    "G:G22",
+    "G:G24",
+    "G:G25",
+    "G:G26",
+    "G:G27",
+    "G:G28",
+    "G:G30",
+    "G:G31",
+    "G:G35",
+    "G:G38",
+    "G:G44",
+    "G:G45"
    ]
   },
   {
@@ -2900,7 +6835,7 @@
   }
  ],
  "never_falsified": [],
- "obstruction": "THE ORDER OBSTRUCTION: S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION: S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does.",
+ "obstruction": "THE MASTER EQUATION: S1a, S1b and S3 force I - E = alpha^-1 rho alpha, with rho the conjugation action of Sigma_pi on the image; every wall below is a reading of it.  THE ORDER OBSTRUCTION (rho^ord = I): S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows, and at NO prime >= 5 whatever, by the READOUT-PROFILE THEOREM: every row of the readout has one of two entry multisets, so row 0 is a 0/1 unit vector, and the criterion read at row 0 forces p to divide an integer witness whose gcd admits no prime >= 5.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION (rho = rho_V(pi)): S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does -- a wall that clears the other two and kills the candidate anyway.",
  "pin": "v13/note-rsq-reposed-square-pin.md",
  "pin_commit": "d9e3a66",
  "python": "3.13.2",
@@ -2909,9 +6844,13 @@
   "covariant_cells": 1440,
   "coverage_qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
   "declared_primes": 7,
+  "emptiness_qualifier": "UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-5",
   "equivariant_identifications": 2,
+  "identification_qualifier": "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS",
   "module_candidates_stillborn": 4,
   "module_obstruction_rows": 210,
+  "motivated_cells": 6,
+  "motivated_precheck_survivors": 0,
   "order_criterion_rows": 20160,
   "order_criterion_satisfied": 0,
   "precheck_survivors_at_p7": 580,
@@ -2924,14 +6863,16 @@
    "5": 580,
    "7": 580
   },
+  "profile_theorem_triples": 2880,
   "rows_admitting_an_injective_candidate": 0,
   "rows_live_at_S1a_S1b": 25,
   "spectral_meeting_primes": [
    7
-  ]
+  ],
+  "verdict_at_the_motivated_sub_family": "RSQ-NO-COMPATIBLE-SQUARE"
  },
  "schema": "rsq-reposed-square-receipt-v1",
- "source_sha256": "18eb651d1ab1053dd9f02038829614e2ba3494c1095a1284388e70b2636202a9",
+ "source_sha256": "8c7705f55fa6ac87bc3716ca137f43e2b4c0ac5f388387294defd41081de2418",
  "tables": {
   "census_cells": [
    {
@@ -3129,13 +7070,17 @@
     {
      "K_order": 1,
      "base": "ord1",
-     "census_empty_at_this_base": true,
+     "criterion_hits_at_this_base": 0,
+     "criterion_rows_at_this_base": 0,
+     "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
      "live_primes": []
     },
     {
      "K_order": 168,
      "base": "ord2",
-     "census_empty_at_this_base": true,
+     "criterion_hits_at_this_base": 0,
+     "criterion_rows_at_this_base": 18,
+     "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
      "live_primes": [
       7
      ]
@@ -3143,13 +7088,17 @@
     {
      "K_order": 12,
      "base": "ord3",
-     "census_empty_at_this_base": true,
+     "criterion_hits_at_this_base": 0,
+     "criterion_rows_at_this_base": 0,
+     "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
      "live_primes": []
     },
     {
      "K_order": 2520,
      "base": "ord6",
-     "census_empty_at_this_base": true,
+     "criterion_hits_at_this_base": 0,
+     "criterion_rows_at_this_base": 36,
+     "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
      "live_primes": [
       5,
       7
@@ -3158,7 +7107,9 @@
     {
      "K_order": 360,
      "base": "reference",
-     "census_empty_at_this_base": true,
+     "criterion_hits_at_this_base": 0,
+     "criterion_rows_at_this_base": 18,
+     "deciding_input_fingerprint": "{\"cells\": [\"((0, 1, 2, 3, 4, 5), 'counts->q')\", \"((0, 1, 2, 3, 4, 5), 'q->counts')\", \"((0, 3, 4, 1, 5, 2), 'counts->q')\", \"((0, 3, 4, 1, 5, 2), 'q->counts')\", \"((1, 2, 3, 0, 4, 5), 'counts->q')\", \"((1, 2, 3, 0, 4, 5), 'q->counts')\", \"((1, 2, 3, 4, 0, 5), 'q->counts')\", \"((5, 4, 3, 2, 1, 0), 'counts->q')\", \"((5, 4, 3, 2, 1, 0), 'q->counts')\"], \"primes\": [5, 7, 11, 13, 17, 19, 23], \"subgroup_counts\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 120, 120, 120, 120, 126, 126, 126, 126, 126], \"wing_orders\": [2, 2, 2, 3, 3]}",
      "live_primes": [
       5
      ]
@@ -3199,22 +7150,27 @@
      4
     ],
     "generators_commute": true,
+    "homomorphism_grid": 4096,
     "homomorphism_violations": 0,
     "image_size": 117649,
     "injective": true,
     "labels": 43,
     "m": 6,
+    "master_equation_on_the_generating_set": 6,
+    "master_equation_sample": 71,
+    "master_equation_verified": 71,
     "normalisation_verified": true,
     "prime": 7,
     "record_cells": 117649,
     "square_violations": 0
    },
-   "held_out": {
-    "H1_square_verified_out_of_sample": 117648,
+   "verification": {
+    "H1_square_verified_at_every_cell": 117648,
     "H2_defect_permutation_verified": 117648,
     "H3_fixed_label_counts_verified": 117648,
     "X_FLATFIX_passes": 0,
     "X_NOSQUARE_passes": 0,
+    "cells_where_both_extensions_are_forced": 1,
     "distinct_fixed_label_values": [
      1,
      8,
@@ -3232,8 +7188,7 @@
      0,
      0
     ],
-    "held_cells": 117648,
-    "held_cells_where_both_extensions_are_forced": 1
+    "verified_cells": 117648
    }
   },
   "fix_delta": [
@@ -3399,9 +7354,789 @@
     "translation": null
    }
   ],
+  "master_equation": {
+   "independence": [
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 5,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 5,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 5,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 5,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 5,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 7,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 7,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 7,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 7,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 7,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 11,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 11,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 11,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 11,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 11,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 13,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 13,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 13,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 13,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 13,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 17,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 17,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 17,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 17,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 17,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 19,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 19,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 19,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 19,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 19,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 23,
+     "pi": [
+      0,
+      2,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 23,
+     "pi": [
+      1,
+      0,
+      2
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 23,
+     "pi": [
+      1,
+      2,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 2,
+     "ord": 3,
+     "p": 23,
+     "pi": [
+      2,
+      0,
+      1
+     ],
+     "satisfies_the_order_criterion": true
+    },
+    {
+     "E_is_singular": true,
+     "clears_the_precheck": true,
+     "dim_ker_E": 4,
+     "ord": 2,
+     "p": 23,
+     "pi": [
+      2,
+      1,
+      0
+     ],
+     "satisfies_the_order_criterion": true
+    }
+   ],
+   "readings": [
+    {
+     "consequence": "I - E invertible, i.e. dim ker(E - I) = 0",
+     "reading": "rho lies in GL(A)",
+     "wall": "the fixed-point mismatch (the stillborn precheck)"
+    },
+    {
+     "consequence": "(I - E)^ord(pi) = I",
+     "reading": "rho^ord(Sigma_pi) = I",
+     "wall": "the order obstruction"
+    },
+    {
+     "consequence": "E = I - rho_V(pi)",
+     "reading": "rho = rho_V(pi) (the module clause)",
+     "wall": "the permutation-module obstruction"
+    }
+   ]
+  },
   "module_obstruction": {
    "equalities": 0,
+   "family_wide_E_kills_the_all_ones": 0,
+   "family_wide_pairs": 10080,
    "rows": 210
+  },
+  "motivated_sub_family": {
+   "cells": 6,
+   "qualifier": "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS",
+   "rows": [
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "q->counts",
+     "p": 23,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 3,
+     "direction": "counts->q",
+     "p": 23,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "q->counts",
+     "p": 23,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "lex",
+     "dim_fix_E": 1,
+     "direction": "counts->q",
+     "p": 23,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "q->counts",
+     "p": 23,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 5,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 7,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 11,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 13,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 17,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 19,
+     "precheck": "STILLBORN"
+    },
+    {
+     "cell": "module",
+     "dim_fix_E": 2,
+     "direction": "counts->q",
+     "p": 23,
+     "precheck": "STILLBORN"
+    }
+   ],
+   "survivors": 0,
+   "verdict": "RSQ-NO-COMPATIBLE-SQUARE"
   },
   "normalisation": [
    {
@@ -4305,6 +9040,17 @@
     "7": 580
    }
   },
+  "profile_theorem": {
+   "primes_admitted": [],
+   "profiles": {
+    "(0, 0, 0, 0, 0, 1)": 2160,
+    "(0, 0, 0, 1, 1, 2)": 2160
+   },
+   "synthetic_control_admits": [
+    7
+   ],
+   "witness_triples": 2880
+  },
   "scale_thresholds": [
    {
     "d2_elementary_abelian_threshold": 16,
@@ -4459,7 +9205,2574 @@
     "p": 23,
     "precheck_surviving_cells_admitting_it": 0
    }
-  ]
+  ],
+  "spectral_reading": [
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 5,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 7,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 11,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 13,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 17,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 19,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 23,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 5,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 7,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 11,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 13,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 17,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 19,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 2,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 23,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 5,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 7,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 11,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 13,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 17,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 19,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 23,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 5,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 7,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 11,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 13,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 17,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 19,
+    "size": 3
+   },
+   {
+    "d": 2,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 23,
+    "size": 3
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 5,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 7,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 11,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 13,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 17,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 19,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 23,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 5,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 7,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 11,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 13,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 17,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 19,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 3,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 23,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 5,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 7,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 11,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 13,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 17,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 19,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 23,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 5,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 7,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 11,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 13,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 17,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 19,
+    "size": 6
+   },
+   {
+    "d": 3,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 23,
+    "size": 6
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 5,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 7,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 11,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 13,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 17,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 19,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 23,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 5,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 7,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 11,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 13,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 17,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 19,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 4,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 23,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 5,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 7,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 11,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 13,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 17,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 19,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 23,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 5,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 7,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 11,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 13,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 17,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 19,
+    "size": 10
+   },
+   {
+    "d": 4,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 23,
+    "size": 10
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 5,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 7,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 11,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 13,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 17,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 19,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "q->counts",
+    "ordering": "natural",
+    "p": 23,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 5,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 7,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 11,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 13,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 17,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 19,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 5,
+    "direction": "counts->q",
+    "ordering": "natural",
+    "p": 23,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 5,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 7,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 11,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 13,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 17,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 19,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "q->counts",
+    "ordering": "lex",
+    "p": 23,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 5,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 7,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 11,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 13,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 17,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 19,
+    "size": 15
+   },
+   {
+    "d": 5,
+    "dim_ker_E_minus_I": 1,
+    "direction": "counts->q",
+    "ordering": "lex",
+    "p": 23,
+    "size": 15
+   }
+  ],
+  "sufficiency": {
+   "patterns": 64,
+   "rows": [
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      6,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      2,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      6,
+      4,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      2,
+      4,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      6,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      2,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      6,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      2,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      6,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      2,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      6,
+      4,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      2,
+      4,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      6,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      2,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      6,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      2,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      6,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      2,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      6,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      2,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      6,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      2,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      4,
+      6,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      4,
+      2,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      4,
+      6,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      4,
+      2,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      6
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      2
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    },
+    {
+     "E_invertible": true,
+     "E_tilde": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "built": true,
+     "commute": true,
+     "criterion": true,
+     "exponents": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+     ],
+     "generator_orders_are_p": true,
+     "normalised": true,
+     "square_violations_on_the_sample": 0,
+     "supports_disjoint": true
+    }
+   ]
+  }
  },
  "totals": {
   "anchors": 26,
@@ -4467,12 +11780,12 @@
   "anchors_self": 11,
   "census_rows": 315,
   "covariant_cells": 1440,
-  "disclosures": 6,
-  "gates": 38,
+  "disclosures": 9,
+  "gates": 48,
   "must_pass_failures": 0,
-  "must_pass_gates": 38,
+  "must_pass_gates": 48,
   "mutant_survivors": 0,
-  "mutants": 57,
+  "mutants": 76,
   "order_criterion_rows": 20160
  },
  "verdict": "RSQ-SQUARE-FOUND-BRIDGE-EMPTY"

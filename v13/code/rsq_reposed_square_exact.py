@@ -63,22 +63,36 @@ WHAT THE UNIT MEASURES, in one line each:
     with the front sector fixed, so <R_HH> = Z/p.
   * THE FIXED-POINT WALL TRANSPORTS.  fix(delta_pi) = {e} at all six wing
     symmetries, measured over the whole 5,040-member completion group.
-  * THE TWO S_3-EQUIVARIANT IDENTIFICATIONS ARE STILLBORN.  There are exactly
-    two (computed, never typed), and their fixed spaces have dimension 3 and 2
-    at every declared prime.  The pin's minimum candidate dies at the
-    precheck.
-  * THE SET-LEVEL COVARIANT FAMILY HAS SURVIVORS.  Over the whole covariant
+  * EVERY MOTIVATED IDENTIFICATION IS STILLBORN.  The two S_3-equivariant
+    identifications (computed, never typed) have fixed spaces of dimension 3
+    and 2, and HA's own sym_index ordering has dimension 1, at every declared
+    prime and in both directions: 6 cells, 42 rows, 0 survivors.  The pin's
+    minimum candidate dies at the precheck, and so does HA's own coordinate.
+  * THE GENERIC COVARIANT FAMILY HAS SURVIVORS.  Over the whole covariant
     orbit -- 720 slot orders x 2 directions = 1,440 cells -- a measured
-    majority-of-a-minority have trivial fixed space at every declared prime.
-    The precheck is passed; the census runs.
-  * THE CENSUS IS EMPTY, AND THE OBSTRUCTION IS NEW AND ARENA-FREE.  S1a
-    (BRG's registered square), S1b (additivity) and S3 (BRG's registered
-    injectivity horn) jointly force
+    minority have trivial fixed space at every declared prime, and every one
+    of them is an arbitrary relabelling of the six metric slots.  The precheck
+    is passed; the census runs; and the FOUND half of the verdict carries the
+    identification class it is true of, with the motivated sub-family's own
+    outcome (RSQ-NO-COMPATIBLE-SQUARE) reported beside it.
+  * THE MASTER EQUATION.  S1a, S1b and S3 force I - E = alpha^-1 rho alpha
+    with rho the conjugation action of Sigma_pi on the image.  Every wall
+    below is a reading of it: rho invertible is LCB's fixed-point mismatch,
+    rho^ord = I is the order obstruction, rho = rho_V(pi) is the
+    permutation-module obstruction -- and the third clears the other two and
+    kills the candidate anyway.
+  * THE CENSUS IS EMPTY, AND THE EMPTINESS IS A THEOREM.  S1a (BRG's
+    registered square), S1b (additivity) and S3 (BRG's registered injectivity
+    horn) jointly force
           (I - E)^ord(pi) = I,
     equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3
-    wing symmetry.  Measured 0 of 1,440 cells at every declared prime, and 0
-    at every swept dimension.  THAT IS THE ORDER OBSTRUCTION, and it is
-    strictly stronger than the fixed-point mismatch, which it subsumes.
+    wing symmetry.  Measured 0 of 20,160 rows -- and PROVED at every prime
+    p >= 5 by the READOUT-PROFILE THEOREM: every row of the readout has one of
+    exactly two entry multisets, so row 0 is a 0/1 unit vector e_k, and the
+    criterion read at row 0 (using row_0(A^2) = row_k(A)) forces p to divide an
+    explicit integer witness whose gcd is measured to admit no prime >= 5.
+    THAT IS THE ORDER OBSTRUCTION, and it is strictly stronger than the
+    fixed-point mismatch, which it subsumes.
   * THE MODULE CLAUSE DIES UNIVERSALLY, FOR A REASON.  S1c-module together
     with S1a, S1b and S3 force E = I - rho_V(pi).  The record datum space at
     d = 3 carries the S_3 PERMUTATION module -- the chart symmetry permutes
@@ -197,7 +211,8 @@ MUTANTS: dict[str, str] = {
     "found-block":        "the FOUND branch is blocked",
     "empty-block":        "the EMPTY branch is blocked",
     "witness-blank":      "the exhibited witness is blanked",
-    "heldout-lax":        "the held-out split is contaminated by the fit cell",
+    "partition-lax":      "the declared verification partition is "
+                          "contaminated by the fit cell",
     "teeth-off":          "the declared-to-fail extensions are made to pass",
     "break-blind":        "the negative-with-teeth is not rejected",
     "s2-lax":             "the carrier-rigidity clause is blinded",
@@ -216,6 +231,37 @@ MUTANTS: dict[str, str] = {
     "universal-lax":      "the coverage qualifier is asserted, not measured",
     "qualifier-typo":     "a computed qualifier is replaced by a typed string",
     "complete-lax":       "a table's cell-completeness check is blinded",
+    # --- the readout-profile theorem and the two verdict halves -----------
+    "profile-lax":        "the readout row profiles are typed rather than "
+                          "measured",
+    "theorem-lax":        "the readout-profile theorem's prime test is "
+                          "asserted, not derived",
+    "theorem-alias":      "the readout-profile theorem reaches the F_p order "
+                          "criterion silently",
+    "theorem-floor":      "the readout-profile theorem drops its declared "
+                          "prime floor and admits a prime",
+    "extension-lax":      "the exact all-prime extension of the sweep is "
+                          "truncated",
+    "motivated-lax":      "the motivated-identification census is typed "
+                          "rather than computed",
+    "ident-flip":         "the identification qualifier is flipped",
+    "emptiness-flip":     "the emptiness qualifier is flipped back to the "
+                          "census-scoped name",
+    "master-lax":         "the master equation is asserted, not verified",
+    "independence-lax":   "the module obstruction's independence is asserted",
+    "sufficiency-lax":    "the sufficiency census is truncated to one pattern",
+    "spectral-lax":       "the eigenvalue-1 multiplicity is asserted",
+    "baseindep-lax":      "the base-independence fingerprint is typed",
+    "negcontrol-lax":     "the precheck's independent negative control is "
+                          "replaced by the object under audit",
+    "route-silent-alias": "route B returns route A's answer without recording "
+                          "it",
+    "crit-row-drop":      "one row is dropped from the order-criterion sweep",
+    "census-row-drop":    "one row is dropped from the census table",
+    "module-row-drop":    "one row is dropped from the permutation-module "
+                          "table",
+    "wide-drop":          "a prime is dropped from the wide corroboration "
+                          "census",
 }
 
 _M_PIN_SHA     = (MUTANT == "anchor-pin-sha")
@@ -259,7 +305,7 @@ _M_MODBLIND    = (MUTANT == "module-blind")
 _M_FOUNDBLOCK  = (MUTANT == "found-block")
 _M_EMPTYBLOCK  = (MUTANT == "empty-block")
 _M_WITNESS     = (MUTANT == "witness-blank")
-_M_HELDOUT     = (MUTANT == "heldout-lax")
+_M_PARTITION     = (MUTANT == "partition-lax")
 _M_TEETH       = (MUTANT == "teeth-off")
 _M_BREAK       = (MUTANT == "break-blind")
 _M_S2          = (MUTANT == "s2-lax")
@@ -275,6 +321,25 @@ _M_VERDICT     = (MUTANT == "verdict-flip")
 _M_UNIVERSAL   = (MUTANT == "universal-lax")
 _M_QUALTYPO    = (MUTANT == "qualifier-typo")
 _M_COMPLETE    = (MUTANT == "complete-lax")
+_M_PROFILE     = (MUTANT == "profile-lax")
+_M_THEOREM     = (MUTANT == "theorem-lax")
+_M_THMALIAS    = (MUTANT == "theorem-alias")
+_M_THMFLOOR    = (MUTANT == "theorem-floor")
+_M_EXTENSION   = (MUTANT == "extension-lax")
+_M_MOTIVATED   = (MUTANT == "motivated-lax")
+_M_IDENT       = (MUTANT == "ident-flip")
+_M_EMPTFLIP    = (MUTANT == "emptiness-flip")
+_M_MASTER      = (MUTANT == "master-lax")
+_M_INDEP       = (MUTANT == "independence-lax")
+_M_SUFFICIENCY = (MUTANT == "sufficiency-lax")
+_M_SPECTRAL    = (MUTANT == "spectral-lax")
+_M_BASEINDEP   = (MUTANT == "baseindep-lax")
+_M_NEGCONTROL  = (MUTANT == "negcontrol-lax")
+_M_SILENT      = (MUTANT == "route-silent-alias")
+_M_CRITROW     = (MUTANT == "crit-row-drop")
+_M_CENSUSROW   = (MUTANT == "census-row-drop")
+_M_MODROW      = (MUTANT == "module-row-drop")
+_M_WIDEDROP    = (MUTANT == "wide-drop")
 
 DELIVERY_RUN = (MUTANT is None)
 WRITE_ARTIFACTS = (DELIVERY_RUN and not SELFTEST_ONLY)
@@ -296,6 +361,16 @@ _DELTA_MEMO: dict = {}
 ROUTE_CALLS = {"A": 0, "B": 0, "taint": 0}
 
 
+def anchor_policy_fatal(failures: int) -> bool:
+    """THE ANCHOR POLICY IS FAIL-CLOSED: any anchor failure kills the run.  The
+    run is nevertheless carried through to the totals block so that every
+    falsifier is scored at a gate and against the same denominators as the
+    honest run.  [instrument -- mutable]"""
+    if _M_SOFT:
+        return False
+    return failures > 0
+
+
 def anchor(aid: str, quantity: str, committed, computed, source: str) -> None:
     ok = (committed == computed)
     ANCHORS.append({"id": aid, "quantity": quantity, "source": source,
@@ -307,9 +382,6 @@ def anchor(aid: str, quantity: str, committed, computed, source: str) -> None:
                          f"  committed : {committed!r}\n"
                          f"  computed  : {computed!r}\n")
         sys.stdout.flush()
-        if not _M_SOFT:
-            ANCHOR_POLICY["fatal"] += 1
-            sys.exit(1)
 
 
 def gate(gid: str, claim: str, ok: bool, detail=None, must_pass: bool = True) -> bool:
@@ -420,6 +492,7 @@ DECL: dict = {
     "negative_records_d3": {"G3-SINGULAR": (1, 1, 1, 4, 2, 2),
                             "G3-INDEF": (1, 1, 1, 6, 2, 2)},
     "primes": [5, 7, 11, 13, 17, 19, 23],
+    "wide_corroboration_prime_ceiling": 293,
     "carrier_build_primes": [5, 7, 11],
     "dimension_sweep": [2, 3, 4, 5],
     "detector_site": (0, 0, 0),
@@ -431,16 +504,20 @@ DECL: dict = {
         "ord6": (0, 1, 3, 2, 5, 4, 7, 6),
         "reference": (0, 3, 2, 1, 4, 5, 6, 7),
     },
-    "held_out": {
-        "split rule": "FIT = the single declared basis record e_1 = "
-                      "(1,0,0,0,0,0); HELD = every other element of V; sizes "
-                      "computed",
-        "fit rule": "a candidate is admitted if the square holds at the FIT "
-                    "cell ALONE; nothing on HELD is consulted",
-        "H1": "the square at every HELD cell, as permutation matrices",
-        "H2": "the defect permutation delta_pi(alpha(r)) itself, entry by "
-              "entry, at every HELD cell",
-        "H3": "the fixed-label count of delta_pi(alpha(r)) at every HELD cell",
+    "verification_partition": {
+        "partition rule": "FIT = the single declared basis record e_1 = "
+                          "(1,0,0,0,0,0); COMPLEMENT = every other element of "
+                          "V; sizes computed.  NOTHING IS FITTED: the "
+                          "candidate is built from the declared exponents "
+                          "before any record cell is read, so this is a "
+                          "partition of the record space and not an "
+                          "estimation",
+        "H1": "the square at every cell of the complement, as permutations",
+        "H2": "the defect permutation entry by entry -- the SAME boolean as "
+              "H1, since a tuple equality IS the entry-by-entry comparison; "
+              "reported once and disclosed",
+        "H3": "the fixed-label count of delta_pi(alpha(r)) at every cell of "
+              "the complement, and the distinct values it takes",
         "teeth": "X-NOSQUARE (predict delta_pi(alpha(r)) = alpha(r)) and "
                  "X-FLATFIX (predict the identity stratum everywhere), both "
                  "declared IN ADVANCE to fail",
@@ -1082,8 +1159,10 @@ def s3_link_perm(pi):
         for i in range(D3):
             if lk[i]:
                 new[pi[i]] = 1
-        out.append(lks.index(tuple(new)))
-    return out
+        if tuple(new) not in lks:
+            return None          # a link set the chart symmetry does not
+        out.append(lks.index(tuple(new)))   # permute is a STRUCTURAL failure,
+    return out                              # recorded and scored at the gates
 
 
 def s3_slot_perm(pi):
@@ -1099,6 +1178,8 @@ def rho_V(pi):
     """rho_V(pi) as a MATRIX on the record datum space: a permutation matrix,
     because the chart symmetry permutes links and does not mix them."""
     lp = s3_link_perm(pi)
+    if lp is None:
+        return None
     M = [[0] * NV for _ in range(NV)]
     for k in range(NV):
         M[lp[k]][k] = 1
@@ -1129,6 +1210,9 @@ def equivariant_identifications():
         ok = True
         for pi in S3_ELEMS:
             lp, sp = s3_link_perm(pi), s3_slot_perm(pi)
+            if lp is None:
+                ok = False
+                break
             for k in range(NV):
                 if sp[perm[k]] != perm[lp[k]]:
                     ok = False
@@ -1409,6 +1493,9 @@ def route_b_count(E, p, pi, subs_all, ordpi, cellkey):
         ROUTE_CALLS["taint"] += 1
         return route_a_count(E, p, pi, [(g, s) for (g, s) in subs_all
                                         if s is not None], ordpi)[0]
+    if _M_SILENT:
+        return route_a_count(E, p, pi, [(g, s) for (g, s) in subs_all
+                                        if s is not None], ordpi)[0]
     slopes = [dexp_slope(delta_exponent_table(pi, g, p), p)
               for (g, _s) in subs_all]
     live = [c for c in slopes if c is not None]
@@ -1527,7 +1614,9 @@ def control_blocks(m, p, cs):
     Returns the generators as permutations of L_m."""
     n = growth_labels(m)
     SIG = growth_sigma((1, 2, 0), m)
-    gens = []
+    if sorted(SIG) != list(range(n)):
+        return None, None    # the wing symmetry is not a permutation of L_m,
+    gens = []                # so the control's arena does not construct
     for k in range(m):
         blk = [1 + k * 7 + (v - 1) for v in range(1, 8)]
         fixed = [x for x in blk if SIG[x] == x]
@@ -1593,10 +1682,11 @@ def synthetic_module_action(p):
     return [[0, (p - 1) % p], [1, (p - 1) % p]]
 
 
-def held_out_split(p):
-    """FIT = the single declared basis record e_1; HELD = every other element
+def verification_partition(p):
+    """FIT = the single declared basis record e_1; the COMPLEMENT is every
+    other element
     of V.  Declared before any candidate is fitted.  [instrument -- mutable]"""
-    if _M_HELDOUT:
+    if _M_PARTITION:
         return tuple([0] * NV), None
     return tuple([1] + [0] * (NV - 1)), None
 
@@ -1718,7 +1808,7 @@ def empty_branch(result: bool):
 
 def s2_stratification_carried(values):
     """S2: the transport side's fixed-label stratification is CARRIED -- the
-    held-out defect permutations must take more than one value.
+    verified defect permutations must take more than one value.
     [instrument -- mutable]"""
     if _M_S2:
         return True
@@ -1742,7 +1832,7 @@ def meeting_verdict(ha_half, demanded, inarena):
 
 
 def teeth_exempt(alpha_perm, ident):
-    """The held-out cells at which BOTH declared-to-fail extensions are
+    """The verified cells at which BOTH declared-to-fail extensions are
     ANALYTICALLY forced, because the candidate maps the record to the
     identity.  [instrument -- mutable]"""
     if _M_TEETH:
@@ -1791,8 +1881,10 @@ def module_obstruction_measured(E, pi, p):
     PERMUTATION matrix, so (I - rho_V(pi)) annihilates the all-ones link
     vector; E is invertible, so it does not.  Returns
     (equal, I_minus_rho_kills_ones, E_kills_ones).  [instrument -- mutable]"""
-    Ep = mat_to_fp(E, p)
     R = rho_V(pi)
+    if E is None or R is None:
+        return False, False, False
+    Ep = mat_to_fp(E, p)
     IR = [[((1 if i == j else 0) - R[i][j]) % p for j in range(NV)]
           for i in range(NV)]
     ones = [1] * NV
@@ -1840,6 +1932,285 @@ def census_cell_rule(cells_meta, primes):
         if k not in out:
             out.append(k)
     return out
+
+
+# --------------------------------------------------------------------------
+# 11a.  THE READOUT-PROFILE THEOREM -- the emptiness, derived
+#
+# The order criterion is decided here WITHOUT any linear algebra over F_p and
+# without any census: from the INTEGER readout A alone, by its row profiles.
+#
+#   (i)   Every row of A is a row of the record<->metric readout in some column
+#         order, so its multiset of entries is one of exactly two profiles:
+#         an AXIS link gives (0,0,0,0,0,1) and a DIAGONAL link gives
+#         (0,0,0,1,1,2).  Column order cannot change a multiset.
+#   (ii)  Row 0 -- the axis link e_0 -- is therefore the unit vector e_k, where
+#         k is the position the identification gives the metric slot (0,0).
+#   (iii) det A = +-8, so E is invertible at every prime p >= 3 and the
+#         criterion (I - E)^ord = I is equivalent to a POLYNOMIAL identity in
+#         A with integer coefficients:
+#             ord 2, q->counts    A = 2I            ord 2, counts->q   2A = I
+#             ord 3, q->counts    A^2 - 3A + 3I = 0 ord 3, counts->q   3A^2 - 3A + I = 0
+#   (iv)  Reading that identity at ROW 0 and using row_0(A^2) = row_k(A) turns
+#         it into an equation between explicit INTEGER vectors; the criterion
+#         at a prime p therefore forces p | gcd(witness).  Every witness gcd is
+#         measured to have no prime factor >= 5, so the criterion fails at
+#         EVERY prime p >= 5 -- at every slot order, both directions, both
+#         wing-symmetry orders.  That is a THEOREM, and the 20,160-row sweep is
+#         its confirmation rather than its evidence.
+# --------------------------------------------------------------------------
+
+
+def integer_readout(perm):
+    """The q -> counts readout at a slot order, as an INTEGER matrix.  This is
+    the theorem's only input: no prime, no field, no census."""
+    E = encoding_matrix(perm, "q->counts")
+    if E is None:
+        return None
+    return [[int(v) for v in row] for row in E]
+
+
+def row_profiles(A):
+    """The multiset of entries of each row, sorted.  [instrument -- mutable]"""
+    if _M_PROFILE:
+        return [(0, 0, 0, 0, 0, 1) for _ in A]
+    return [tuple(sorted(row)) for row in A]
+
+
+def slot_position(perm, slot):
+    """The position the identification `perm` gives a metric slot."""
+    for k in range(NV):
+        if SLOTS3[perm[k]] == slot:
+            return k
+    return None
+
+
+def criterion_identity(A, direction, ordpi):
+    """The criterion's POLYNOMIAL form as an integer matrix that must vanish
+    mod p.  Equivalent to (I - E)^ord = I whenever E is invertible."""
+    n = len(A)
+
+    def ide(i, j):
+        return 1 if i == j else 0
+    if ordpi == 2 and direction == "q->counts":
+        return [[A[i][j] - 2 * ide(i, j) for j in range(n)] for i in range(n)]
+    if ordpi == 2:
+        return [[2 * A[i][j] - ide(i, j) for j in range(n)] for i in range(n)]
+    A2 = [[sum(A[i][k] * A[k][j] for k in range(n)) for j in range(n)]
+          for i in range(n)]
+    if direction == "q->counts":
+        return [[A2[i][j] - 3 * A[i][j] + 3 * ide(i, j) for j in range(n)]
+                for i in range(n)]
+    return [[3 * A2[i][j] - 3 * A[i][j] + ide(i, j) for j in range(n)]
+            for i in range(n)]
+
+
+def criterion_row0_witness(A, k, direction, ordpi):
+    """Row 0 of the criterion's polynomial identity, written from the PROFILE
+    data alone: row_0(A) = e_k and row_0(A^2) = row_k(A)."""
+    e0 = [1 if i == 0 else 0 for i in range(NV)]
+    ek = [1 if i == k else 0 for i in range(NV)]
+    rk = A[k]
+    if ordpi == 2 and direction == "q->counts":
+        return [ek[i] - 2 * e0[i] for i in range(NV)]
+    if ordpi == 2:
+        return [2 * ek[i] - e0[i] for i in range(NV)]
+    if direction == "q->counts":
+        return [rk[i] - 3 * ek[i] + 3 * e0[i] for i in range(NV)]
+    return [3 * rk[i] - 3 * ek[i] + e0[i] for i in range(NV)]
+
+
+def prime_factors(n: int) -> list[int]:
+    """The prime factors of |n|; the empty list at 0 and +-1."""
+    n = abs(n)
+    out = []
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            if d not in out:
+                out.append(d)
+            n //= d
+        d += 1
+    if n > 1:
+        out.append(n)
+    return out
+
+
+def gcd_of(values) -> int:
+    g = 0
+    for v in values:
+        g = _gcd(g, int(v))
+    return g
+
+
+def _gcd(a: int, b: int) -> int:
+    a, b = abs(a), abs(b)
+    while b:
+        a, b = b, a % b
+    return a
+
+
+def admissible_primes_of_witness(v, floor_prime: int):
+    """The primes >= floor_prime that could satisfy the criterion at this
+    (slot order, direction, wing order): a prime must divide the witness's
+    gcd.  A gcd of 0 would leave every prime admissible.  [instrument --
+    mutable]"""
+    if _M_THEOREM:
+        return []
+    if _M_THMALIAS:
+        order_criterion([[Fr(0)] * NV for _ in range(NV)], floor_prime, 2)
+    g = gcd_of(v)
+    if g == 0:
+        return ["EVERY-PRIME"]
+    if _M_THMFLOOR:
+        return prime_factors(g)
+    return [q for q in prime_factors(g) if q >= floor_prime]
+
+
+def all_prime_hits(M, floor_prime: int):
+    """The EXACT extension of the criterion sweep to every prime at once: the
+    identity's whole matrix must vanish mod p, so only the primes dividing its
+    gcd can satisfy it.  [instrument -- mutable]"""
+    g = gcd_of(v for row in M for v in row)
+    if g == 0:
+        return ["EVERY-PRIME"]
+    return [q for q in prime_factors(g) if q >= floor_prime]
+
+
+# --------------------------------------------------------------------------
+# 11b.  THE TWO VERDICT HALVES -- both names computed
+# --------------------------------------------------------------------------
+
+
+def identification_qualifier(motivated_survivors: int, generic_survivors: int):
+    """THE FOUND HALF'S NAME.  The precheck's survivors are classified by the
+    identification class they belong to -- MOTIVATED (the S_3-equivariant
+    identifications and HA's own sym_index ordering) or GENERIC (an arbitrary
+    relabelling of the six metric slots).  The name says which.  [instrument --
+    mutable]"""
+    if _M_IDENT:
+        return "FOUND-AT-A-MOTIVATED-IDENTIFICATION"
+    if motivated_survivors > 0:
+        return "FOUND-AT-A-MOTIVATED-IDENTIFICATION"
+    if generic_survivors > 0:
+        return "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS"
+    return "NO-SURVIVOR-AT-ANY-IDENTIFICATION"
+
+
+def emptiness_qualifier(coverage: str, theorem_holds: bool, floor_prime: int):
+    """THE EMPTY HALF'S NAME.  Coverage alone earns only the census-scoped
+    name; the readout-profile theorem earns the prime-unbounded one.
+    [instrument -- mutable]"""
+    if _M_EMPTFLIP:
+        return "UNIVERSAL-FOR-THIS-FAMILY"
+    if coverage != "UNIVERSAL-FOR-THIS-FAMILY":
+        return coverage
+    if theorem_holds:
+        return f"UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-{floor_prime}"
+    return "UNIVERSAL-FOR-THIS-FAMILY"
+
+
+def motivated_precheck_survivors(rows):
+    """The survivor count over the MOTIVATED sub-family, computed from the
+    per-row precheck results.  [instrument -- mutable]"""
+    if _M_MOTIVATED:
+        return 1
+    return sum(1 for r in rows if r["precheck"] == "PASS")
+
+
+def master_equation_holds(lhs, rhs):
+    """I - E = alpha^-1 rho alpha, read one record at a time: conjugation by
+    Sigma on the image, pulled back through alpha, IS the matrix I - E.
+    [instrument -- mutable]"""
+    if _M_MASTER:
+        return True
+    return lhs == rhs
+
+
+def module_independence(precheck_passes: bool, criterion_passes: bool,
+                        singular: bool):
+    """The module obstruction is INDEPENDENT of the other two walls: the
+    module-forced E clears LCB's precheck and the order criterion and dies
+    anyway, because E must be invertible and I - rho_V(pi) is not.
+    [instrument -- mutable]"""
+    if _M_INDEP:
+        return True
+    return precheck_passes and criterion_passes and singular
+
+
+def sufficiency_patterns(patterns):
+    """The declared sufficiency census: every diagonal pattern the criterion
+    admits at p = 7, ord 3.  [instrument -- mutable]"""
+    if _M_SUFFICIENCY:
+        return patterns[:1]
+    return patterns
+
+
+def spectral_multiplicity(dim_fix: int, d: int):
+    """The measured multiplicity of the eigenvalue 1 in HA's readout at a
+    motivated identification.  [instrument -- mutable]"""
+    if _M_SPECTRAL:
+        return d
+    return dim_fix
+
+
+def base_fingerprint(cells, primes, orders, subgroup_sizes):
+    """The census's DECIDING INPUTS, fingerprinted inside the per-base loop:
+    if the fingerprint is the same at every ladder base then the census cannot
+    depend on the base, and base-independence is measured rather than typed.
+    [instrument -- mutable]"""
+    if _M_BASEINDEP:
+        return "IDENTICAL"
+    return json.dumps({"cells": sorted(cells), "primes": sorted(primes),
+                       "wing_orders": sorted(orders),
+                       "subgroup_counts": sorted(subgroup_sizes)},
+                      sort_keys=True)
+
+
+def independent_bad_encoding(p: int):
+    """The precheck's negative control, INDEPENDENT of the family under audit:
+    a synthetic invertible matrix with a one-dimensional fixed space that is
+    not a readout at any slot order or direction.  [instrument -- mutable]"""
+    if _M_NEGCONTROL:
+        return encoding_matrix(tuple(range(NV)), "q->counts")
+    return [[Fr(1 if i == 0 else 3) if i == j else Fr(0) for j in range(NV)]
+            for i in range(NV)]
+
+
+def extension_scope(triples: int) -> int:
+    """The number of triples the exact extension actually reaches.
+    [instrument -- mutable]"""
+    return triples - 1 if _M_EXTENSION else triples
+
+
+def extended_primes(lo: int, hi: int) -> list[int]:
+    """The primes in [lo, hi], sieved rather than typed: the prime range of the
+    WIDE corroboration census.  [instrument -- mutable]"""
+    sieve = [True] * (hi + 1)
+    sieve[0] = sieve[1] = False
+    q = 2
+    while q * q <= hi:
+        if sieve[q]:
+            for t in range(q * q, hi + 1, q):
+                sieve[t] = False
+        q += 1
+    out = [q for q in range(lo, hi + 1) if sieve[q]]
+    return out[:-1] if _M_WIDEDROP else out
+
+
+def drop_row_criterion(rows):
+    """[instrument -- mutable]"""
+    return rows[:-1] if _M_CRITROW else rows
+
+
+def drop_row_census(rows):
+    """[instrument -- mutable]"""
+    return rows[:-1] if _M_CENSUSROW else rows
+
+
+def drop_row_module(rows):
+    """[instrument -- mutable]"""
+    return rows[:-1] if _M_MODROW else rows
 
 
 # --------------------------------------------------------------------------
@@ -1957,6 +2328,10 @@ def run_unit(src: str) -> dict:
                {"candidates_evaluated_before_the_freeze": CANDIDATE_EVALS[0]})
     report("G01", g01, f"candidate evaluations at the freeze point: "
                        f"{CANDIDATE_EVALS[0]}")
+    # the declared REFERENCE PRIME of the census-cell rule and of the printed
+    # per-prime column, taken from the declared sweep rather than typed
+    pref = 7 if 7 in sweep_primes() else sweep_primes()[0]
+    floor_prime = 5
 
     fh = float_scan(src)
     fst = float_scan_selftest()
@@ -2091,18 +2466,27 @@ def run_unit(src: str) -> dict:
     rec = recs["G3-OFF"]
     Nl = {y: (1 if y == DECL["detector_site"] else 0) for y in S}
     Ml = {y: (1 if y in ((0, 0, 1), (0, 1, 0), (1, 0, 0)) else 0) for y in S}
-    rho_closed = residual_closed(rec, Nl, Ml)
-    n0flat = {x: 0 for x in S}
-    rho_lit = residual_literal(rec, Nl, Ml, n0flat)
-    lit_ok = lit_tot = 0
-    for x in S:
-        lit_tot += 1
-        if rho_lit is not None and \
-                all(rho_lit[x][i] == rho_closed[x][i] for i in range(D3)):
-            lit_ok += 1
     xs = DECL["detector_site"]
-    rho_x = rho_closed[xs]
-    nonzero_sites = sum(1 for x in S if any(v != 0 for v in rho_closed[x]))
+    # the residual is defined only where the record's metric is: a link set
+    # that does not determine one is a STRUCTURAL failure, recorded as such and
+    # scored at the gates below rather than raised
+    arena_well_posed = (len(set(lks)) == len(lks) and rec.nonsingular)
+    lit_ok = lit_tot = 0
+    nonzero_sites = 0
+    rho_x = tuple(Fr(0) for _ in range(D3))
+    rho_closed = None
+    if arena_well_posed:
+        rho_closed = residual_closed(rec, Nl, Ml)
+        n0flat = {x: 0 for x in S}
+        rho_lit = residual_literal(rec, Nl, Ml, n0flat)
+        for x in S:
+            lit_tot += 1
+            if rho_lit is not None and \
+                    all(rho_lit[x][i] == rho_closed[x][i] for i in range(D3)):
+                lit_ok += 1
+        rho_x = rho_closed[xs]
+        nonzero_sites = sum(1 for x in S
+                            if any(v != 0 for v in rho_closed[x]))
     say(f"  the residual R_HH at d = 3, two comparators (the literal five-map "
         f"composition and the closed form): {lit_ok} of {lit_tot} sites agree")
     say(f"  exact rational residual at the detector site x* = {xs}: "
@@ -2115,9 +2499,10 @@ def run_unit(src: str) -> dict:
                "composition; the two agree at every site.  The residual is "
                "measured NONZERO at the detector site, so the arena it "
                "generates is not trivial",
-               lit_ok == lit_tot and lit_tot > 0 and
+               arena_well_posed and lit_ok == lit_tot and lit_tot > 0 and
                any(v != 0 for v in rho_x),
-               {"sites_where_the_two_comparators_agree": lit_ok,
+               {"link_set_determines_a_metric": arena_well_posed,
+                "sites_where_the_two_comparators_agree": lit_ok,
                 "sites_tested": lit_tot,
                 "residual_at_the_detector_site": [str(v) for v in rho_x],
                 "sites_with_a_nonzero_residual": nonzero_sites,
@@ -2132,7 +2517,7 @@ def run_unit(src: str) -> dict:
         row = {"p": p, "carrier": p ** (2 + D3),
                "rho_mod_p": list(rho_p), "built": False,
                "group_order": None, "translation": None}
-        if p in carrier_primes():
+        if p in carrier_primes() and arena_well_posed:
             n0 = {x: (x[0] * x[1] * x[2]) % p for x in S}
             RC = ReducedCarrier3(rec, p, n0, [Nl, Ml], xs)
             PN, PM = RC.perm_H(Nl), RC.perm_H(Ml)
@@ -2421,17 +2806,18 @@ def run_unit(src: str) -> dict:
             elif perm == tuple(SLOTS3.index(s) for s in sym_index(D3)):
                 role = "lex"
             fixdims = {p: fix_space_dim(E, p) for p in sweep_primes()}
-            Ep7 = mat_to_fp(E, 7)
+            Ep7 = mat_to_fp(E, pref)
             Et7 = transpose(Ep7)
             meets7 = any(kernel_dim_fp(
-                mat_sub_fp(Et7, scal_fp((1 - s) % 7, NV, 7), 7), 7) > 0
-                for s in cube_roots(7) if s != 1)
+                mat_sub_fp(Et7, scal_fp((1 - s) % pref, NV, pref), pref),
+                pref) > 0
+                for s in cube_roots(pref) if s != 1)
             cells_meta.append({
                 "key": (perm, direction), "perm": list(perm),
                 "direction": direction, "role": role,
                 "fix_dims": fixdims,
                 "trivial_fix_all_primes": all(v == 0 for v in fixdims.values()),
-                "trivial_fix_at_7": fixdims[7] == 0,
+                "trivial_fix_at_7": fixdims[pref] == 0,
                 "meets_at_7": meets7})
     ncells = len(cells_meta)
     ncells_forced = forced_orders * len(directions)
@@ -2461,6 +2847,32 @@ def run_unit(src: str) -> dict:
     census_keys = census_cell_rule(cells_meta, sweep_primes())
     meta_by_key = {m["key"]: m for m in cells_meta}
     census_cells = [meta_by_key[k] for k in census_keys if k in meta_by_key]
+    # the rule's own expected return, rebuilt HERE by a second enumeration that
+    # shares no code with census_cell_rule (RUNBOOK 14 addendum, v13 #219): the
+    # comparator for a cell-count gate must be built independently of the
+    # component it audits
+    exp_keys = []
+    for _m in cells_meta:
+        _pm = tuple(_m["perm"])
+        _is_equi = all(s3_link_perm(_pi) is not None and
+                       s3_slot_perm(_pi)[_pm[_k]] == _pm[s3_link_perm(_pi)[_k]]
+                       for _pi in S3_ELEMS for _k in range(NV))
+        _is_lex = (_pm == tuple(SLOTS3.index(s) for s in sym_index(D3)))
+        if _is_equi or _is_lex:
+            exp_keys.append(_m["key"])
+    for _d in ("q->counts", "counts->q"):
+        _c = next((m["key"] for m in cells_meta if m["direction"] == _d and
+                   all(v == 0 for v in m["fix_dims"].values())), None)
+        _e = next((m["key"] for m in cells_meta if m["direction"] == _d and
+                   m["fix_dims"][pref] == 0 and m["meets_at_7"]), None)
+        for _k in (_c, _e):
+            if _k is not None:
+                exp_keys.append(_k)
+    exp_unique = []
+    for _k in exp_keys:
+        if _k not in exp_unique:
+            exp_unique.append(_k)
+    census_rule_reproduces = (list(census_keys) == exp_unique)
     say(f"  the DECLARED CENSUS CELLS, by the rule stated before any fixture "
         f"truth: {len(census_cells)} (computed)")
     for m in census_cells:
@@ -2468,23 +2880,32 @@ def run_unit(src: str) -> dict:
             f"{[str(SLOTS3[i]) for i in m['perm']]}  dim fix(E) "
             f"{ {p: m['fix_dims'][p] for p in sweep_primes()} }")
     g15 = gate("G15", "THE CENSUS CELLS ARE CHOSEN BY A DECLARED RULE, NOT BY "
-               "A VERDICT.  The rule -- every equivariant identification, HA's "
-               "own lex ordering, the lex-first trivial-fixed-space slot order "
-               "per direction, and the lex-first slot order that both survives "
-               "the precheck at p = 7 and admits the order-3 demanded "
-               "eigenvalue there -- is stated in the instrument before any "
-               "census runs, and it returns a set containing BOTH module cells "
-               "and cells of every measured precheck status, so the census is "
-               "not run only where it is expected to be empty",
-               len(census_cells) >= 8 and
+               "A VERDICT, AND THE RULE'S RETURN IS REPRODUCED EXACTLY BY AN "
+               "INDEPENDENT REBUILD.  The rule -- every equivariant "
+               "identification, HA's own lex ordering, the lex-first "
+               "trivial-fixed-space slot order per direction, and the lex-first "
+               "slot order that both survives the precheck at the reference "
+               "prime and admits the order-3 demanded eigenvalue there -- is "
+               "stated in the instrument before any census runs.  Its return is "
+               "rebuilt here cell by cell from a SECOND equivariance test that "
+               "shares no code with it, and the two agree exactly, so the cell "
+               "count is a measured equality and not a lower bound; and the "
+               "set contains BOTH module cells and cells of every measured "
+               "precheck status, so the census is not run only where it is "
+               "expected to be empty",
+               census_rule_reproduces and
+               len(census_cells) == len(exp_unique) and
                any(m["role"] == "module" for m in census_cells) and
                any(m["trivial_fix_all_primes"] for m in census_cells) and
                any(not m["trivial_fix_all_primes"] for m in census_cells),
                {"census_cells": len(census_cells),
+                "independent_rebuild_cells": len(exp_unique),
+                "rule_reproduced_exactly": census_rule_reproduces,
                 "rows": [{"role": m["role"], "direction": m["direction"],
                           "slots": [str(SLOTS3[i]) for i in m["perm"]],
                           "fix_dims": m["fix_dims"]} for m in census_cells]})
-    report("G15", g15, f"{len(census_cells)} declared census cells")
+    report("G15", g15, f"{len(census_cells)} declared census cells; "
+                       f"independent rebuild agrees {census_rule_reproduces}")
     tables["census_cells"] = [
         {"role": m["role"], "direction": m["direction"],
          "slots": [str(SLOTS3[i]) for i in m["perm"]],
@@ -2499,28 +2920,47 @@ def run_unit(src: str) -> dict:
     synth_ok_E = [[(6 if i == j and i < 3 else (4 if i == j else 0))
                    for j in range(NV)] for i in range(NV)]
     synth_ok_Efr = [[Fr(v) for v in row] for row in synth_ok_E]
-    synth_bad_Efr = encoding_matrix(tuple(range(NV)), "q->counts")
+    synth_bad_Efr = independent_bad_encoding(7)
+    fam7 = {tuple(tuple(r) for r in mat_to_fp(
+        encoding_matrix(tuple(m["perm"]), m["direction"]), 7))
+        for m in cells_meta}
+    bad_is_outside_the_family = (
+        tuple(tuple(r) for r in mat_to_fp(synth_bad_Efr, 7)) not in fam7)
+    bad_is_invertible = (det_exact(synth_bad_Efr) != 0)
     pk_ok = precheck(fix_delta_size, fix_space_dim(synth_ok_Efr, 7), 7)
     pk_bad = precheck(fix_delta_size, fix_space_dim(synth_bad_Efr, 7), 7)
+    audited_Efr = encoding_matrix(tuple(range(NV)), "q->counts")
+    pk_audited = precheck(fix_delta_size, fix_space_dim(audited_Efr, 7), 7)
     say(f"  the precheck's two-way calibration at p = 7: a synthetic "
         f"COMPATIBLE pair (dim fix = "
         f"{fix_space_dim(synth_ok_Efr, 7)}) -> "
         f"{'PASS' if pk_ok[0] else 'FAIL'}; a synthetic MISMATCHED pair "
         f"(dim fix = {fix_space_dim(synth_bad_Efr, 7)}) -> "
         f"{'PASS' if pk_bad[0] else 'FAIL'}")
+    say(f"     the mismatched arm is INDEPENDENT of the family under audit: "
+        f"invertible {bad_is_invertible}, and measured to be none of the "
+        f"{len(cells_meta)} covariant encodings ({bad_is_outside_the_family})")
     g16 = gate("G16", "THE STILLBORN PRECHECK IS A MEASUREMENT WITH BOTH "
-               "OUTCOMES REACHABLE.  The square forces alpha(fix E) into "
+               "OUTCOMES REACHABLE, AND ITS NEGATIVE ARM IS INDEPENDENT OF THE "
+               "OBJECT UNDER AUDIT.  The square forces alpha(fix E) into "
                "fix delta_pi, which is measured to be a single point, so an "
                "INJECTIVE candidate needs |fix E| = 1.  A synthetic pair whose "
-               "re-encoding has trivial fixed space PASSES the precheck and a "
-               "synthetic pair whose re-encoding fixes a nonzero vector FAILS "
-               "it, through the same function -- so a blinded precheck cannot "
-               "pass this gate in either direction",
-               pk_ok[0] and (not pk_bad[0]),
+               "re-encoding has trivial fixed space PASSES the precheck; a "
+               "synthetic INVERTIBLE matrix with a one-dimensional fixed space, "
+               "measured NOT to be any of the covariant family's encodings, "
+               "FAILS it -- through the same function, so a blinded precheck "
+               "cannot pass this gate in either direction and the negative "
+               "control is not the candidate it is used to judge",
+               pk_ok[0] and (not pk_bad[0]) and bad_is_outside_the_family and
+               bad_is_invertible,
                {"synthetic_compatible_fix_dim": fix_space_dim(synth_ok_Efr, 7),
                 "synthetic_compatible_passes": pk_ok[0],
                 "synthetic_mismatched_fix_dim": fix_space_dim(synth_bad_Efr, 7),
                 "synthetic_mismatched_passes": pk_bad[0],
+                "mismatched_control_is_invertible": bad_is_invertible,
+                "mismatched_control_is_outside_the_covariant_family":
+                    bad_is_outside_the_family,
+                "the_audited_minimum_candidate_also_fails": not pk_audited[0],
                 "fix_delta_size": fix_delta_size})
     report("G16", g16, f"compatible PASS {pk_ok[0]}; mismatched PASS "
                        f"{pk_bad[0]}")
@@ -2528,13 +2968,19 @@ def run_unit(src: str) -> dict:
     pre_rows = []
     surv_by_prime = {p: 0 for p in sweep_primes()}
     still_by_prime = {p: 0 for p in sweep_primes()}
+    surv_by_class = {"motivated": 0, "generic": 0}
     for m in cells_meta:
         for p in sweep_primes():
             ok, sfe, sfd = precheck(fix_delta_size, m["fix_dims"][p], p)
             if ok:
                 surv_by_prime[p] += 1
+                surv_by_class["motivated" if m["role"] in ("module", "lex")
+                              else "generic"] += 1
             else:
                 still_by_prime[p] += 1
+    mismatch_computed = 0
+    mismatch_rows = 0
+    mot_rows = []
     for m in cells_meta:
         if m["role"] in ("module", "lex"):
             row = {"role": m["role"], "direction": m["direction"],
@@ -2546,6 +2992,15 @@ def run_unit(src: str) -> dict:
                     "dim_fix_E": m["fix_dims"][p], "size_fix_E": sfe,
                     "size_fix_delta": sfd, "precheck": "PASS" if ok else
                     "STILLBORN", "mismatch": stillborn_mismatch(sfe, sfd)}
+                # the recorded mismatch, rebuilt here from the measured
+                # dimension without touching the helper that formats it
+                mismatch_rows += 1
+                if stillborn_mismatch(sfe, sfd) == \
+                        f"{p ** m['fix_dims'][p]} : {fix_delta_size}":
+                    mismatch_computed += 1
+                mot_rows.append({"cell": m["role"], "direction": m["direction"],
+                                 "p": p, "dim_fix_E": m["fix_dims"][p],
+                                 "precheck": "PASS" if ok else "STILLBORN"})
             pre_rows.append(row)
     module_all_stillborn = all(
         not precheck(fix_delta_size, m["fix_dims"][p], p)[0]
@@ -2554,7 +3009,7 @@ def run_unit(src: str) -> dict:
     say(f"  {'role':8s}{'direction':12s}{'dim fix(E)':12s}"
         f"{'|fix E| : |fix delta|':24s}precheck")
     for row in pre_rows:
-        pp = row["per_prime"][7]
+        pp = row["per_prime"][pref]
         say(f"  {row['role']:8s}{row['direction']:12s}"
             f"{pp['dim_fix_E']:<12d}{pp['mismatch']:24s}{pp['precheck']}"
             f"   (at p = 7)")
@@ -2572,21 +3027,99 @@ def run_unit(src: str) -> dict:
                "every declared prime, so the precheck is not a wall that "
                "everything hits.  The per-prime counts are cell-complete",
                module_all_stillborn and any_survivor and
+               mismatch_rows > 0 and mismatch_computed == mismatch_rows and
                all(completeness([surv_by_prime[p], still_by_prime[p]], ncells)
                    for p in sweep_primes()),
                {"module_candidates_all_stillborn": module_all_stillborn,
                 "survivors_per_prime": surv_by_prime,
                 "stillborn_per_prime": still_by_prime,
+                "mismatch_rows": mismatch_rows,
+                "mismatches_matching_the_recomputed_value": mismatch_computed,
                 "cells": ncells, "rows": pre_rows,
                 "cell_complete": all(
                     completeness([surv_by_prime[p], still_by_prime[p]], ncells)
                     for p in sweep_primes())})
     report("G17", g17, f"module cells all stillborn {module_all_stillborn}; "
-                       f"survivors at p=7: {surv_by_prime[7]}/{ncells}")
+                       f"survivors at p={pref}: {surv_by_prime[pref]}/{ncells}")
     tables["precheck"] = {"rows": pre_rows, "survivors": surv_by_prime,
                           "stillborn": still_by_prime}
     quals["precheck_survivors_at_p7"] = qualifier_value(
-        "precheck_survivors_at_p7", surv_by_prime[7])
+        "precheck_survivors_at_p7", surv_by_prime[pref])
+
+    # --- the MOTIVATED sub-family, censused separately --------------------
+    mot_cells = len(pre_rows)
+    mot_total = len(mot_rows)
+    mot_surv = motivated_precheck_survivors(mot_rows)
+    generic_cells = ncells - mot_cells
+    ident_qual = identification_qualifier(mot_surv, surv_by_class["generic"])
+    # the motivated sub-family's OWN census emptiness, measured here rather
+    # than assumed from the covariant closure's
+    mot_crit_rows = [(m, p, ordpi) for m in cells_meta
+                     if m["role"] in ("module", "lex")
+                     for p in sweep_primes() for ordpi in (2, 3)]
+    mot_crit_hits = sum(
+        1 for (m, p, ordpi) in mot_crit_rows
+        if order_criterion(encoding_matrix(tuple(m["perm"]), m["direction"]),
+                           p, ordpi))
+    mot_census_empty = (mot_crit_hits == 0)
+    # calibrated the other way through the same call: the synthetic encoding
+    # that DOES satisfy the criterion is counted as a hit by it
+    mot_census_probe = order_criterion(synth_ok_Efr, pref, 3)
+    verdict_motivated = derive_verdict(mot_surv > 0, mot_census_empty,
+                                       True, True, d3_constructed)
+    say(f"  THE MOTIVATED SUB-FAMILY, censused separately: the "
+        f"{len(equi)} S_3-equivariant identifications and HA's own sym_index "
+        f"ordering, both directions = {mot_cells} cells x "
+        f"{len(sweep_primes())} primes = {mot_total} rows")
+    say(f"     precheck survivors among them            : {mot_surv} of "
+        f"{mot_total}")
+    say(f"     precheck survivors that are GENERIC cells: "
+        f"{surv_by_class['generic']} (the {generic_cells} identifications that "
+        f"are an arbitrary relabelling of the six metric slots)")
+    say(f"     the identification qualifier (computed)  : {ident_qual}")
+    say(f"     their own census, measured separately    : {mot_crit_hits} of "
+        f"{len(mot_crit_rows)} rows satisfy the order criterion")
+    say(f"     restricted to the motivated sub-family, this instrument's own "
+        f"pre-registered outcome is {verdict_motivated}")
+    g39 = gate("G39", "THE FOUND HALF IS NAMED BY THE IDENTIFICATION CLASS OF "
+               "ITS SURVIVORS, MEASURED.  The identifications with a stated "
+               "motivation -- the S_3-EQUIVARIANT ones, whose number is "
+               "computed, and HA's own sym_index ordering, in both directions "
+               "-- are censused as their own sub-family: every one of them is "
+               "STILLBORN at every declared prime, so the precheck's survivors "
+               "are exactly the identifications that are an arbitrary "
+               "relabelling of the six metric slots.  The FOUND half's "
+               "qualifier is DERIVED here from those two counts, and the "
+               "verdict this instrument returns when it is restricted to the "
+               "motivated sub-family is derived by the same function that "
+               "returns the covariant-closure verdict, from that sub-family's "
+               "OWN census -- run here over its own rows and calibrated the "
+               "other way through the same counting call, which scores the "
+               "synthetic encoding that does satisfy the criterion as a hit",
+               mot_cells == 2 * len(equi) + 2 and mot_total ==
+               mot_cells * len(sweep_primes()) and mot_surv == 0 and
+               surv_by_class["generic"] == sum(surv_by_prime.values()) and
+               ident_qual == "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS" and
+               len(mot_crit_rows) == mot_cells * len(sweep_primes()) * 2 and
+               mot_census_empty and mot_census_probe and
+               verdict_motivated == "RSQ-NO-COMPATIBLE-SQUARE",
+               {"motivated_cells": mot_cells, "motivated_rows": mot_total,
+                "motivated_criterion_rows": len(mot_crit_rows),
+                "motivated_criterion_hits": mot_crit_hits,
+                "counting_call_scores_the_synthetic_positive_control":
+                    mot_census_probe,
+                "motivated_precheck_survivors": mot_surv,
+                "generic_cells": generic_cells,
+                "generic_precheck_survivors": surv_by_class["generic"],
+                "identification_qualifier": ident_qual,
+                "verdict_at_the_motivated_sub_family": verdict_motivated,
+                "rows": mot_rows})
+    report("G39", g39, f"motivated survivors {mot_surv}/{mot_total}; "
+                       f"qualifier {ident_qual}")
+    tables["motivated_sub_family"] = {"cells": mot_cells, "rows": mot_rows,
+                                      "survivors": mot_surv,
+                                      "qualifier": ident_qual,
+                                      "verdict": verdict_motivated}
     say("")
 
     # ---------------------------------------------------------------- 6 ---
@@ -2594,46 +3127,69 @@ def run_unit(src: str) -> dict:
     say("6. ITEM 5 -- THE STRENGTHENED TEST FOR THE SURVIVORS")
     say("------------------------------------------------------------------")
     progress("order criterion")
-    crit_rows = []
     crit_hits = {p: 0 for p in sweep_primes()}
     crit_tot = {p: 0 for p in sweep_primes()}
     disagree = 0
-    for m in cells_meta:
+    crit_index = drop_row_criterion(
+        [(m, p, ordpi) for m in cells_meta for p in sweep_primes()
+         for ordpi in (2, 3)])
+    crit_rows_forced = ncells * len(sweep_primes()) * 2
+    crit_not_hits = 0
+    crit_hit_rows = []
+    crit_by_dir = {"q->counts": [0, 0], "counts->q": [0, 0]}
+    for (m, p, ordpi) in crit_index:
         E = encoding_matrix(tuple(m["perm"]), m["direction"])
-        for p in sweep_primes():
-            for ordpi in (2, 3):
-                crit_tot[p] += 1
-                a = order_criterion(E, p, ordpi)
-                b = order_criterion_polynomial(E, p, ordpi)
-                if a != b:
-                    disagree += 1
-                if a:
-                    crit_hits[p] += 1
-    crit_total_cells = sum(crit_tot.values())
+        crit_tot[p] = crit_tot.get(p, 0) + 1
+        a = order_criterion(E, p, ordpi)
+        b = order_criterion_polynomial(E, p, ordpi)
+        if a != b:
+            disagree += 1
+        crit_by_dir[m["direction"]][0] += 1
+        if a:
+            crit_hits[p] = crit_hits.get(p, 0) + 1
+            crit_hit_rows.append((m, p, ordpi))
+            crit_by_dir[m["direction"]][1] += 1
+        else:
+            crit_not_hits += 1
+    crit_total_cells = len(crit_index)
     crit_total_hits = sum(crit_hits.values())
     say(f"  THE ORDER CRITERION (I - E)^ord(pi) = I, over the whole covariant "
         f"family x every declared prime x both nontrivial wing-symmetry "
         f"orders: {crit_total_hits} of {crit_total_cells} cells satisfy it")
-    say(f"  the matrix-power route and the polynomial route disagree at "
-        f"{disagree} of {crit_total_cells} cells")
+    say(f"  the matrix-power writing and the polynomial writing -- one "
+        f"condition in two encodings, related by the identity "
+        f"(I-E)^3 - I = -E(E^2 - 3E + 3I) -- disagree at "
+        f"{disagree} of {crit_total_cells} rows")
     synth_crit = order_criterion(synth_ok_Efr, 7, 3)
     synth_crit_poly = order_criterion_polynomial(synth_ok_Efr, 7, 3)
     say(f"  the criterion's positive control: the synthetic encoding "
         f"diag(6,6,6,4,4,4) at p = 7 satisfies it -- matrix route "
         f"{synth_crit}, polynomial route {synth_crit_poly}")
-    g18 = gate("G18", "THE ORDER CRITERION IS DERIVED, COMPUTED BY TWO ROUTES, "
-               "AND REACHABLE IN BOTH DIRECTIONS.  S1a and S1b make the image "
+    say(f"  the DIRECTION convention is swept, not chosen: rows and hits per "
+        f"direction {crit_by_dir}")
+    g18 = gate("G18", "THE ORDER CRITERION IS DERIVED, REDUNDANTLY ENCODED, AND "
+               "REACHABLE IN BOTH DIRECTIONS.  S1a and S1b make the image "
                "an abelian Sigma-stable subgroup on which delta_pi acts as "
                "I - rho; S3 makes alpha an isomorphism, so rho = I - alpha E "
                "alpha^-1 and rho^ord(pi) = I, i.e. (I - E)^ord(pi) = I.  The "
-               "matrix-power route and the polynomial route (E = 2I at an "
+               "matrix-power writing and the polynomial writing (E = 2I at an "
                "involution, E^2 - 3E + 3I = 0 at an order-3 wing symmetry, "
-               "whose roots are exactly 1 - omega) agree at every cell; and "
-               "the criterion is SATISFIED by a synthetic encoding, so it is "
-               "not a condition nothing can meet",
+               "whose roots are exactly 1 - omega) agree at every row -- these "
+               "are ONE condition in two encodings, related by the identity "
+               "(I-E)^3 - I = -E(E^2 - 3E + 3I), and the agreement is a "
+               "redundant-encoding check, not a second route; and the "
+               "criterion is SATISFIED by a synthetic encoding, so it is "
+               "not a condition nothing can meet.  The DIRECTION convention -- "
+               "the one orientation choice this instrument makes -- is SWEPT "
+               "rather than chosen: both directions carry the same number of "
+               "rows and the same number of hits, so the verdict cannot be an "
+               "artefact of which way the readout is read (RUNBOOK 14)",
                disagree == 0 and crit_total_cells > 0 and synth_crit and
-               synth_crit_poly,
+               synth_crit_poly and
+               crit_by_dir["q->counts"][0] == crit_by_dir["counts->q"][0] and
+               crit_by_dir["q->counts"][1] == crit_by_dir["counts->q"][1],
                {"cells": crit_total_cells, "cells_satisfying": crit_total_hits,
+                "rows_and_hits_per_direction": crit_by_dir,
                 "per_prime": crit_hits, "route_disagreements": disagree,
                 "synthetic_positive_control_matrix_route": synth_crit,
                 "synthetic_positive_control_polynomial_route":
@@ -2642,24 +3198,290 @@ def run_unit(src: str) -> dict:
                        f"disagreements {disagree}; positive control "
                        f"{synth_crit}")
 
+    # --- THE READOUT-PROFILE THEOREM -------------------------------------
+    progress("the readout-profile theorem")
+    prof_counts = {}
+    row0_unit = 0
+    det_pm8 = 0
+    thm_rows = []
+    thm_admissible = []
+    ext_rows = 0
+    ext_admissible = []
+    ext_gcds = []
+    for perm in slot_orders():
+        A = integer_readout(perm)
+        if A is None:
+            continue
+        for pr in row_profiles(A):
+            prof_counts[pr] = prof_counts.get(pr, 0) + 1
+        k = slot_position(perm, (0, 0))
+        r0 = A[0]
+        if k is not None and all(r0[i] == (1 if i == k else 0)
+                                 for i in range(NV)):
+            row0_unit += 1
+        if abs(det_exact([[Fr(v) for v in row] for row in A])) == 8:
+            det_pm8 += 1
+        for direction in ("q->counts", "counts->q"):
+            for ordpi in (2, 3):
+                v = criterion_row0_witness(A, k, direction, ordpi)
+                adm = admissible_primes_of_witness(v, floor_prime)
+                thm_rows.append({"direction": direction, "ord": ordpi,
+                                 "witness_gcd": gcd_of(v),
+                                 "admissible_primes": adm})
+                thm_admissible += adm
+                ext_rows += 1
+                Mid = criterion_identity(A, direction, ordpi)
+                ext_admissible += all_prime_hits(Mid, floor_prime)
+                ext_gcds.append(gcd_of(x for row_ in Mid for x in row_))
+    thm_rows_forced = len(slot_orders()) * 2 * 2
+    thm_holds = (len(thm_admissible) == 0)
+    # the theorem's decision function, calibrated the other way: a synthetic
+    # readout row carrying the FORBIDDEN profile (one 1 and one 2, nothing
+    # else) makes the same machinery report p = 7 as admissible
+    Asyn = [[0] * NV for _ in range(NV)]
+    Asyn[0][1] = 1
+    Asyn[1][0] = 2
+    Asyn[1][1] = 1
+    syn_adm = admissible_primes_of_witness(
+        criterion_row0_witness(Asyn, 1, "counts->q", 3), floor_prime)
+    syn_profile = tuple(sorted(Asyn[1]))
+    # THE THEOREM'S INDEPENDENCE OF THE CRITERION, MEASURED STRUCTURALLY: the
+    # whole witness sweep is recomputed with the names of BOTH writings of the
+    # order criterion unbound in the module namespace, so a theorem that
+    # reached the criterion through any call could not answer at all
+    _G = globals()
+    _saved_oc = _G.pop("order_criterion")
+    _saved_op = _G.pop("order_criterion_polynomial")
+    thm_probe_error = None
+    thm_unbound = []
+    try:
+        for perm in slot_orders():
+            Au = integer_readout(perm)
+            if Au is None:
+                continue
+            ku = slot_position(perm, (0, 0))
+            for direction in ("q->counts", "counts->q"):
+                for ordpi in (2, 3):
+                    thm_unbound += admissible_primes_of_witness(
+                        criterion_row0_witness(Au, ku, direction, ordpi),
+                        floor_prime)
+    except NameError as exc:
+        thm_unbound, thm_probe_error = None, str(exc)
+    finally:
+        _G["order_criterion"] = _saved_oc
+        _G["order_criterion_polynomial"] = _saved_op
+    thm_independent = (thm_probe_error is None and
+                       thm_unbound == thm_admissible)
+    profiles_measured = sorted(prof_counts)
+    excluded_by_the_cap = [p for p in sweep_primes()
+                           if p not in carrier_primes()]
+    say(f"  THE READOUT-PROFILE THEOREM.  Every row of the readout, at every "
+        f"slot order, has one of exactly {len(prof_counts)} profiles: "
+        f"{ {str(k2): prof_counts[k2] for k2 in profiles_measured} }")
+    say(f"     row 0 is the unit vector e_k (k = the position of the metric "
+        f"slot (0,0)) at {row0_unit} of {len(slot_orders())} slot orders; "
+        f"|det| = 8 at {det_pm8} of {len(slot_orders())}")
+    say(f"     over {len(thm_rows)} (slot order, direction, wing order) "
+        f"triples the criterion forces p | gcd(witness), and the primes "
+        f">= {floor_prime} admitted by any witness are: "
+        f"{sorted(set(thm_admissible))}")
+    say(f"     the same machinery on a SYNTHETIC readout row of the forbidden "
+        f"profile {list(syn_profile)}: admissible primes {syn_adm}")
+    say(f"     the theorem's independence of the F_p criterion, measured "
+        f"structurally: the whole witness sweep recomputed with BOTH writings "
+        f"of the order criterion UNBOUND returns the same answer "
+        f"({thm_independent}, error {thm_probe_error})")
+    say(f"     so the census is EMPTY at every prime p >= {floor_prime} -- "
+        f"including the {len(excluded_by_the_cap)} primes "
+        f"{excluded_by_the_cap} at which the deformation carrier is not built, "
+        f"which the criterion decides without it")
+    g40 = gate("G40", "THE EMPTINESS IS A THEOREM, NOT A CENSUS: THE "
+               "READOUT-PROFILE ARGUMENT, DERIVED HERE FROM THE READOUT'S OWN "
+               "INTEGER STRUCTURE.  Every row of the record<->metric readout is "
+               "a link's row in some column order, so its entries are one of "
+               "exactly two multisets -- (0,0,0,0,0,1) for an axis link, "
+               "(0,0,0,1,1,2) for a diagonal link -- and row 0 is therefore the "
+               "unit vector e_k, k the position the identification gives the "
+               "slot (0,0).  det = +-8 makes E invertible at every odd prime, "
+               "so the criterion is equivalent to a polynomial identity in the "
+               "INTEGER readout; read at row 0, with row_0(A^2) = row_k(A), it "
+               "forces p to divide the gcd of an explicit integer witness.  "
+               "Every witness gcd is measured to admit NO prime >= 5, so the "
+               "criterion fails at EVERY such prime -- at every slot order, "
+               "both directions, both wing-symmetry orders, and at the primes "
+               "the carrier build cap excludes.  The decision function is "
+               "calibrated the other way through the same call: a synthetic "
+               "readout row of the forbidden profile (0,0,0,0,1,2) makes it "
+               "report p = 7 admissible.  And the theorem is measured to be a "
+               "route INDEPENDENT of the F_p sweep, structurally rather than "
+               "by bookkeeping: the whole witness sweep is recomputed with the "
+               "names of BOTH writings of the order criterion unbound in the "
+               "module namespace, so a theorem that reached the criterion "
+               "through any call could not answer, and it must both answer and "
+               "return the same admitted-prime set",
+               len(prof_counts) == 2 and thm_independent and
+               set(profiles_measured) == {(0, 0, 0, 0, 0, 1),
+                                          (0, 0, 0, 1, 1, 2)} and
+               row0_unit == len(slot_orders()) and
+               det_pm8 == len(slot_orders()) and
+               len(thm_rows) == thm_rows_forced and thm_holds and
+               syn_adm == [7] and syn_profile == (0, 0, 0, 0, 1, 2) and
+               all(p >= floor_prime for p in excluded_by_the_cap),
+               {"row_profiles": {str(k2): prof_counts[k2]
+                                 for k2 in profiles_measured},
+                "row_zero_is_a_unit_vector": row0_unit,
+                "slot_orders": len(slot_orders()),
+                "determinant_is_plus_or_minus_8": det_pm8,
+                "witness_triples": len(thm_rows),
+                "witness_triples_forced": thm_rows_forced,
+                "primes_admitted_by_any_witness":
+                    sorted(set(thm_admissible)),
+                "witness_gcds_seen": sorted({r["witness_gcd"]
+                                             for r in thm_rows}),
+                "synthetic_forbidden_profile_admits": syn_adm,
+                "independent_of_the_Fp_criterion_with_its_names_unbound":
+                    thm_independent,
+                "unbound_probe_error": thm_probe_error,
+                "primes_excluded_by_the_carrier_build_cap":
+                    excluded_by_the_cap,
+                "floor_prime": floor_prime})
+    report("G40", g40, f"profiles {len(prof_counts)}; witnesses "
+                       f"{len(thm_rows)}; primes admitted "
+                       f"{sorted(set(thm_admissible))}; synthetic control "
+                       f"{syn_adm}")
+    tables["profile_theorem"] = {
+        "profiles": {str(k2): prof_counts[k2] for k2 in profiles_measured},
+        "witness_triples": len(thm_rows),
+        "primes_admitted": sorted(set(thm_admissible)),
+        "synthetic_control_admits": syn_adm}
+
+    # --- the EXACT extension of the sweep to every prime at once ----------
+    ident_agree = 0
+    ident_rows = 0
+    for m in census_cells:
+        A = integer_readout(tuple(m["perm"]))
+        for direction in ("q->counts", "counts->q"):
+            E = encoding_matrix(tuple(m["perm"]), direction)
+            if A is None or E is None:
+                continue
+            for p in sweep_primes():
+                for ordpi in (2, 3):
+                    M = criterion_identity(A, direction, ordpi)
+                    ident_rows += 1
+                    if order_criterion(E, p, ordpi) == all(
+                            v % p == 0 for row in M for v in row):
+                        ident_agree += 1
+    ext_rows = extension_scope(ext_rows)
+    ext_admissible_set = sorted(set(ext_admissible))
+    say(f"  THE EXACT EXTENSION.  The same identity read as an INTEGER matrix "
+        f"decides every prime at once: over {ext_rows} (slot order, direction, "
+        f"wing order) triples the primes >= {floor_prime} at which the whole "
+        f"identity can vanish are {ext_admissible_set} -- so the 0 of "
+        f"{crit_total_cells} measured at the {len(sweep_primes())} declared "
+        f"primes is 0 at EVERY prime")
+    say(f"  the integer identity and the F_p criterion agree at "
+        f"{ident_agree} of {ident_rows} calibration rows")
+    # THE WIDE CORROBORATION CENSUS: the same integer identities, swept
+    # against every prime from the floor to the declared ceiling
+    wide_ceiling = DECL["wide_corroboration_prime_ceiling"]
+    wide_primes = extended_primes(floor_prime, wide_ceiling)
+    wide_rows = 0
+    wide_hits = 0
+    for g_ in ext_gcds:
+        for p_ in wide_primes:
+            wide_rows += 1
+            if g_ == 0 or g_ % p_ == 0:
+                wide_hits += 1
+    wide_forced = ncells * len(wide_primes) * 2
+    say(f"  THE WIDE CORROBORATION CENSUS: the same identities swept against "
+        f"every one of the {len(wide_primes)} primes from {wide_primes[0]} to "
+        f"{wide_primes[-1]} -- {wide_rows} (cell, prime, wing order) rows, "
+        f"{wide_hits} of them satisfying the criterion")
+    g41 = gate("G41", "THE SWEEP'S EXACT EXTENSION, AND ITS CALIBRATION "
+               "AGAINST THE FIELD COMPUTATION.  The criterion's polynomial "
+               "identity has integer coefficients in the integer readout, so "
+               "the primes at which it can hold are exactly the primes "
+               "dividing the gcd of its entries: computing that gcd at every "
+               "(slot order, direction, wing order) triple extends the "
+               "20,160-row sweep from the seven declared primes to EVERY "
+               "prime, with the same answer.  The extension is calibrated "
+               "against the field computation itself -- the integer identity "
+               "and (I - E)^ord = I over F_p are measured to agree at every "
+               "calibration row -- so the extension is not a different claim.  "
+               "The same identities are then swept explicitly against every "
+               "prime from the floor to the declared ceiling, row by row, as a "
+               "WIDE corroboration census whose row count is checked against "
+               "the product the declarations force",
+               ext_rows == thm_rows_forced and len(ext_admissible_set) == 0 and
+               ident_rows > 0 and ident_agree == ident_rows and
+               wide_hits == 0 and wide_rows == wide_forced and
+               wide_primes[0] == floor_prime and
+               wide_primes[-1] == wide_ceiling,
+               {"triples": ext_rows, "triples_forced": thm_rows_forced,
+                "primes_admitted_at_any_triple": ext_admissible_set,
+                "calibration_rows": ident_rows,
+                "calibration_agreements": ident_agree,
+                "wide_census_primes": len(wide_primes),
+                "wide_census_prime_range": [wide_primes[0], wide_primes[-1]],
+                "wide_census_rows": wide_rows,
+                "wide_census_rows_forced": wide_forced,
+                "wide_census_hits": wide_hits})
+    report("G41", g41, f"{ext_rows} triples; primes admitted "
+                       f"{ext_admissible_set}; calibration {ident_agree}/"
+                       f"{ident_rows}; wide census {wide_hits}/{wide_rows}")
+
     pre_surv_cells = sum(1 for m in cells_meta for p in sweep_primes()
                          if precheck(fix_delta_size, m["fix_dims"][p], p)[0])
     crit_cells_set = crit_total_hits
-    g19 = gate("G19", "THE ORDER CRITERION SUBSUMES THE PRECHECK, MEASURED.  "
-               "(I - E)^ord = I forces I - E invertible, hence "
-               "dim ker(E - I) = 0; so the set of cells satisfying the "
-               "criterion is contained in the set surviving the precheck, and "
-               "the containment is measured STRICT -- the precheck has "
-               "survivors the criterion kills.  The precheck is therefore the "
-               "structural SHADOW of the census criterion, exactly as the LCB "
-               "lesson predicts",
+    # the containment ITSELF, as a set predicate: every (cell, prime) at which
+    # the criterion holds at some wing order must survive the precheck
+    contain_viol = 0
+    contain_witnesses = 0
+    for (m, p, ordpi) in crit_hit_rows:
+        contain_witnesses += 1
+        if not precheck(fix_delta_size, m["fix_dims"][p], p)[0]:
+            contain_viol += 1
+    # with zero witnesses the containment is VACUOUS at the family; the
+    # implication is exercised on the one non-vacuous instance available
+    synth_pre = precheck(fix_delta_size, fix_space_dim(synth_ok_Efr, 7), 7)[0]
+    synth_implication = (not synth_crit) or synth_pre
+    say(f"  the criterion's relation to the precheck: {crit_cells_set} of "
+        f"{crit_total_cells} (cell, prime, order) rows satisfy the criterion "
+        f"against {pre_surv_cells} of {ncells * len(sweep_primes())} "
+        f"(cell, prime) pairs that survive the precheck; the containment is "
+        f"violated at {contain_viol} of {contain_witnesses} witnesses "
+        f"(VACUOUS at this family) and holds at the synthetic instance "
+        f"({synth_implication})")
+    g19 = gate("G19", "THE ORDER CRITERION SUBSUMES THE PRECHECK -- WHAT IS "
+               "MEASURED, STATED AS WHAT IS MEASURED.  (I - E)^ord = I forces "
+               "I - E invertible, hence dim ker(E - I) = 0; that implication is "
+               "a theorem, and what this gate measures is (a) the two counts "
+               "against their OWN denominators -- criterion-satisfying rows out "
+               "of the swept rows, precheck survivors out of the (cell, prime) "
+               "pairs -- (b) the implication itself as a set predicate, cell by "
+               "cell, which at this family has ZERO witnesses and is therefore "
+               "VACUOUS, and (c) the implication exercised on the one "
+               "non-vacuous instance available, the synthetic encoding that "
+               "satisfies the criterion and is measured to have trivial fixed "
+               "space.  The precheck is the structural SHADOW of the census "
+               "criterion, exactly as the LCB lesson predicts",
                subsumption_holds(crit_cells_set, pre_surv_cells) and
-               crit_cells_set < pre_surv_cells,
-               {"cells_satisfying_the_criterion": crit_cells_set,
-                "cells_surviving_the_precheck": pre_surv_cells,
-                "containment_is_strict": crit_cells_set < pre_surv_cells})
-    report("G19", g19, f"criterion {crit_cells_set} <= precheck "
-                       f"{pre_surv_cells}")
+               contain_viol == 0 and synth_implication and synth_crit and
+               synth_pre and crit_cells_set < pre_surv_cells,
+               {"rows_satisfying_the_criterion": crit_cells_set,
+                "rows_swept": crit_total_cells,
+                "cell_prime_pairs_surviving_the_precheck": pre_surv_cells,
+                "cell_prime_pairs_swept": ncells * len(sweep_primes()),
+                "containment_witnesses": contain_witnesses,
+                "containment_violations": contain_viol,
+                "containment_is_vacuous_at_this_family":
+                    contain_witnesses == 0,
+                "synthetic_instance_satisfies_the_criterion": synth_crit,
+                "synthetic_instance_survives_the_precheck": synth_pre})
+    report("G19", g19, f"criterion {crit_cells_set}/{crit_total_cells}; "
+                       f"precheck {pre_surv_cells}/"
+                       f"{ncells * len(sweep_primes())}; containment "
+                       f"violations {contain_viol} of {contain_witnesses}")
     tables["order_criterion"] = {"per_prime_hits": crit_hits,
                                  "per_prime_cells": crit_tot,
                                  "route_disagreements": disagree}
@@ -2728,42 +3550,103 @@ def run_unit(src: str) -> dict:
                     "precheck": "PASS" if ok else "STILLBORN",
                     "route_A": ra, "route_B": rb,
                     "detail": per,
-                    "injective_possible": order_criterion(E, p,
-                                                          pord(SIGMA[pi]))})
+                    "cardinality_admits_injectivity": p ** NV <= len(GC),
+                    "the_order_criterion_at_this_row":
+                        order_criterion(E, p, pord(SIGMA[pi]))})
         progress(f"  census cell {m['role']}/{m['direction']}")
+    census_rows = drop_row_census(census_rows)
+    census_rows_forced = len(census_cells) * len(sweep_primes()) * 5
     live_s1ab = sum(1 for r in census_rows if r["route_A"] > 1)
-    live_full = sum(1 for r in census_rows if r["injective_possible"])
+    live_full = sum(1 for r in census_rows
+                    if r["the_order_criterion_at_this_row"])
+    card_admits = sum(1 for r in census_rows
+                      if r["cardinality_admits_injectivity"])
+    vp_gc = {p: legendre_exponent(NLAB - 1, p) for p in sweep_primes()}
+    rank1_forced = all(v <= 1 for v in vp_gc.values())
     say(f"  the census at {len(census_cells)} declared cells x "
         f"{len(sweep_primes())} primes x 5 nontrivial wing symmetries = "
         f"{len(census_rows)} rows")
     say(f"  rows whose S1a+S1b census is NON-EMPTY (a candidate exists at the "
         f"square and the homomorphism clause): {live_s1ab} of "
         f"{len(census_rows)}")
-    say(f"  rows admitting an INJECTIVE candidate (S1a+S1b+S3): {live_full} of "
-        f"{len(census_rows)}")
+    say(f"  rows admitting an INJECTIVE candidate: {live_full} of "
+        f"{len(census_rows)} -- this column is the ORDER CRITERION restricted "
+        f"to the declared cells, a coverage check on the census and not an "
+        f"independent source, and it is FORCED twice over: no row has "
+        f"p^6 <= |G_C| ({card_admits} of {len(census_rows)}), and v_p(|G_C|) "
+        f"<= 1 at every declared prime ({rank1_forced}), so every additive "
+        f"candidate at this arena has image of order at most p")
     say(f"  route A vs route B disagreements: {census_disagree} of "
         f"{len(census_rows)}")
-    g20 = gate("G20", "THE CENSUS IS COMPUTED BY TWO ROUTES THAT SHARE NO "
-               "DECIDING VARIABLE, AND THEY AGREE EVERYWHERE.  Route A solves "
-               "ker(E^T - (1-s)I) by Gaussian elimination and multiplies by "
-               "the MEASURED count of normalised subgroups; route B enumerates "
-               "every cyclic subgroup of order p, builds its delta-exponent "
-               "table from PERMUTATIONS with no linear algebra in it, and "
-               "enumerates every covector projectively with the measured "
-               "redundancy restored.  The taint counter is zero and both "
-               "invocation counters are nonzero",
-               census_disagree == 0 and ROUTE_CALLS["taint"] == 0 and
+    g20 = gate("G20", "THE CENSUS IS COMPUTED BY TWO ROUTES AND THEY AGREE AT "
+               "EVERY ROW.  Route A solves ker(E^T - (1-s)I) by Gaussian "
+               "elimination and multiplies by the MEASURED count of normalised "
+               "subgroups; route B enumerates every cyclic subgroup of order p, "
+               "builds its delta-exponent table from PERMUTATIONS with no "
+               "linear algebra in it, and enumerates every covector "
+               "projectively with the measured redundancy restored.  What THIS "
+               "gate measures is the agreement and the invocation counters; "
+               "that the two routes are independent COMPUTATIONS is measured "
+               "structurally at G42, not self-reported here",
+               census_disagree == 0 and
                ROUTE_CALLS["A"] > 0 and ROUTE_CALLS["B"] > 0 and
                CANDIDATE_EVALS[0] > 0,
                {"rows": len(census_rows), "disagreements": census_disagree,
                 "route_calls": dict(ROUTE_CALLS),
                 "candidate_evaluations_counted": CANDIDATE_EVALS[0]})
-    report("G20", g20, f"{census_disagree} disagreements; taint "
-                       f"{ROUTE_CALLS['taint']}")
+    report("G20", g20, f"{census_disagree} disagreements; route calls "
+                       f"A={ROUTE_CALLS['A']} B={ROUTE_CALLS['B']}")
+
+    # route independence, measured STRUCTURALLY: route B is re-run with the
+    # name `route_a_count` unbound in the module namespace, so a route B that
+    # reaches route A at all -- with or without a counter -- cannot return
+    probe_cell = census_cells[0]
+    probe_p = sweep_primes()[0]
+    probe_pi = (0, 2, 1)
+    Eprobe = encoding_matrix(tuple(probe_cell["perm"]), probe_cell["direction"])
+    pkey = (tuple(probe_cell["perm"]), probe_cell["direction"])
+    rb_before = route_b_count(Eprobe, probe_p, probe_pi,
+                              subs_by_pi[(probe_p, probe_pi)],
+                              pord(SIGMA[probe_pi]), pkey)
+    _G = globals()
+    _saved = _G.pop("route_a_count")
+    probe_error = None
+    try:
+        rb_unbound = route_b_count(Eprobe, probe_p, probe_pi,
+                                   subs_by_pi[(probe_p, probe_pi)],
+                                   pord(SIGMA[probe_pi]), pkey)
+    except NameError as exc:
+        rb_unbound, probe_error = None, str(exc)
+    finally:
+        _G["route_a_count"] = _saved
+    route_structurally_independent = (probe_error is None and
+                                      rb_unbound == rb_before)
+    say(f"  route independence, measured structurally: route B re-evaluated "
+        f"with route A's name UNBOUND returns {rb_unbound} against "
+        f"{rb_before} (error {probe_error}); taint counter "
+        f"{ROUTE_CALLS['taint']}")
+    g42 = gate("G42", "ROUTE INDEPENDENCE IS MEASURED, NOT SELF-REPORTED.  A "
+               "counter that a route must increment to declare itself tainted "
+               "measures only the routes that agree to be counted.  Here route "
+               "B is re-evaluated with the NAME of route A removed from the "
+               "module namespace: a route B that reaches route A -- through a "
+               "counted call or a silent one -- raises instead of answering, "
+               "and the gate requires both that no error was raised and that "
+               "the answer is unchanged.  The taint counter is retained as a "
+               "disclosure",
+               route_structurally_independent and ROUTE_CALLS["taint"] == 0 and
+               rb_before > 0,
+               {"route_b_answer": rb_before,
+                "route_b_answer_with_route_a_unbound": rb_unbound,
+                "error_raised": probe_error,
+                "structurally_independent": route_structurally_independent,
+                "taint_counter": ROUTE_CALLS["taint"]})
+    report("G42", g42, f"route B with route A unbound: {rb_unbound} vs "
+                       f"{rb_before}; error {probe_error}")
 
     calib_cell = census_cells[0]
     Ecal = encoding_matrix(tuple(calib_cell["perm"]), calib_cell["direction"])
-    pcal = 5
+    pcal = 5 if 5 in sweep_primes() else sweep_primes()[0]
     subs_cal = subs_by_pi[(pcal, (0, 2, 1))]
     rb_proj = route_b_count(Ecal, pcal, (0, 2, 1), subs_cal, 2,
                             (tuple(calib_cell["perm"]),
@@ -2788,7 +3671,7 @@ def run_unit(src: str) -> dict:
     lit_rows = []
     lit_instances = []
     for m in census_cells:
-        for p in (5, 7):
+        for p in [q for q in (5, 7) if q in sweep_primes()]:
             for pi in S3_ELEMS:
                 if pi == (0, 1, 2):
                     continue
@@ -2827,20 +3710,26 @@ def run_unit(src: str) -> dict:
                  if r["status"] == "admitted")
     rej_ok = any(r["violations"] > 0 for r in lit_rows
                  if r["status"] == "rejected")
-    say(f"  route C, the LITERAL permutation verification at "
-        f"{len(lit_rows)} declared (cell, prime) instances: admitted "
-        f"candidates violate the square at 0 cells; a rejected candidate "
-        f"violates it at a measured positive count")
+    say(f"  route C, the LITERAL permutation verification: "
+        f"{len(lit_rows)} rows from {len(lit_instances)} declared "
+        f"(cell, prime) instances -- an admitted and a rejected covector at "
+        f"each -- with the admitted candidates violating the square at 0 cells "
+        f"and the rejected control at a measured positive count")
     g22 = gate("G22", "ROUTE C -- THE LITERAL PERMUTATION VERIFICATION -- "
                "CONFIRMS THAT THE COUNTED SQUARE IS THE PERMUTATION SQUARE.  "
-               "At declared instances a candidate route A admits is rebuilt as "
-               "an ACTUAL permutation and the square is compared entry by "
+               "At each declared INSTANCE a candidate route A admits is rebuilt "
+               "as an ACTUAL permutation and the square is compared entry by "
                "entry at EVERY one of the p^6 record cells: zero violations.  "
-               "A declared rejected covector is run through the same code and "
-               "violates it at a positive count, so the verification is not "
-               "vacuous",
-               adm_ok and rej_ok and len(lit_rows) > 0,
-               {"rows": lit_rows, "admitted_all_clean": adm_ok,
+               "A declared rejected covector is run through the same code at "
+               "the same instance and violates it at a positive count, so the "
+               "verification is not vacuous.  The row count is twice the "
+               "instance count, and both are reported as what they are",
+               adm_ok and rej_ok and len(lit_rows) > 0 and
+               len(lit_rows) == 2 * len(lit_instances),
+               {"instances": len(lit_instances), "rows": lit_rows,
+                "rows_are_two_per_instance":
+                    len(lit_rows) == 2 * len(lit_instances),
+                "admitted_all_clean": adm_ok,
                 "a_rejected_candidate_violates": rej_ok})
     report("G22", g22, f"admitted clean {adm_ok}; rejected violates {rej_ok}")
 
@@ -2861,8 +3750,31 @@ def run_unit(src: str) -> dict:
                                  "p": p, "pi": list(pi), "E_equals_I_minus_rho":
                                      eq, "I_minus_rho_kills_the_all_ones": irk,
                                  "E_kills_the_all_ones": ek})
+    mod_rows = drop_row_module(mod_rows)
+    mod_equal = sum(1 for r in mod_rows if r["E_equals_I_minus_rho"])
+    mod_rows_forced = mot_cells * len(sweep_primes()) * 5
     all_irk = all(r["I_minus_rho_kills_the_all_ones"] for r in mod_rows)
     none_ek = not any(r["E_kills_the_all_ones"] for r in mod_rows)
+    # the obstruction's REACH, measured over the whole covariant family rather
+    # than argued: (I - rho_V) kills the all-ones vector at every wing symmetry,
+    # and E kills it at no (cell, prime) pair whatsoever
+    irk_all_wings = 0
+    for pi in S3_ELEMS:
+        Rv = rho_V(pi)
+        if Rv is not None and all(1 - sum(Rv[i][j] for j in range(NV)) == 0
+                                  for i in range(NV)):
+            irk_all_wings += 1
+    ek_pairs = 0
+    ek_zero_pairs = 0
+    for m in cells_meta:
+        Ecell = encoding_matrix(tuple(m["perm"]), m["direction"])
+        rsums = [sum((Ecell[i][j] for j in range(NV)), Fr(0))
+                 for i in range(NV)]
+        for p in sweep_primes():
+            ek_pairs += 1
+            red = [to_fp_frac(v, p) for v in rsums]
+            if all(v == 0 for v in red):
+                ek_zero_pairs += 1
     synth_rho = synthetic_module_action(7)
     synth_IR = [[((1 if i == j else 0) - synth_rho[i][j]) % 7
                  for j in range(2)] for i in range(2)]
@@ -2876,6 +3788,12 @@ def run_unit(src: str) -> dict:
     say(f"  its positive control: a synthetic NON-permutation S_3-action has "
         f"I - rho invertible ({synth_mod_invertible}), so the module square is "
         f"satisfiable when the module is not a permutation module")
+    say(f"  its REACH, measured beyond the 210 rows: (I - rho_V) kills the "
+        f"all-ones vector at {irk_all_wings} of {len(S3_ELEMS)} wing "
+        f"symmetries, and E kills it at {ek_zero_pairs} of {ek_pairs} "
+        f"(cell, prime) pairs over the WHOLE covariant family -- so the forced "
+        f"equality fails at all {ek_pairs * 5} (cell, prime, wing) rows, not "
+        f"only the {len(mod_rows)} the table prints")
     g23 = gate("G23", "THE PERMUTATION-MODULE OBSTRUCTION, MEASURED.  "
                "S1c-module (alpha equivariant) together with S1a, S1b and S3 "
                "force E = I - rho_V(pi).  The record datum space at d = 3 "
@@ -2888,17 +3806,70 @@ def run_unit(src: str) -> dict:
                "S_3-action makes I - rho invertible and the module square "
                "satisfiable",
                mod_equal == 0 and all_irk and none_ek and
-               synth_mod_invertible and len(mod_rows) > 0,
+               synth_mod_invertible and len(mod_rows) > 0 and
+               irk_all_wings == len(S3_ELEMS) and ek_zero_pairs == 0 and
+               ek_pairs == ncells * len(sweep_primes()),
                {"rows": len(mod_rows),
                 "rows_where_E_equals_I_minus_rho": mod_equal,
                 "I_minus_rho_kills_the_all_ones_at_all_rows": all_irk,
                 "E_kills_the_all_ones_at_no_row": none_ek,
+                "wing_symmetries_where_I_minus_rho_kills_the_all_ones":
+                    irk_all_wings,
+                "family_wide_cell_prime_pairs": ek_pairs,
+                "family_wide_pairs_where_E_kills_the_all_ones": ek_zero_pairs,
                 "synthetic_non_permutation_module_is_invertible":
                     synth_mod_invertible})
-    report("G23", g23, f"E = I - rho at {mod_equal}/{len(mod_rows)}; synthetic "
+    report("G23", g23, f"E = I - rho at {mod_equal}/{len(mod_rows)}; family-wide "
+                       f"E.1 = 0 at {ek_zero_pairs}/{ek_pairs}; synthetic "
                        f"control {synth_mod_invertible}")
     tables["module_obstruction"] = {"rows": len(mod_rows),
-                                    "equalities": mod_equal}
+                                    "equalities": mod_equal,
+                                    "family_wide_pairs": ek_pairs,
+                                    "family_wide_E_kills_the_all_ones":
+                                        ek_zero_pairs}
+    say("")
+
+    # --- cell-completeness on the three verdict-carrying tables ------------
+    cc_probe = completeness([1, 2], 4) is False
+    cc_crit = completeness([crit_total_hits, crit_not_hits], crit_rows_forced)
+    cc_census = completeness([live_full, len(census_rows) - live_full],
+                             census_rows_forced)
+    cc_module = completeness([mod_equal, len(mod_rows) - mod_equal],
+                            mod_rows_forced)
+    say(f"  CELL-COMPLETENESS on the three verdict-carrying tables, each "
+        f"against its FORCED product:")
+    say(f"     the order-criterion sweep : {crit_total_cells} rows against "
+        f"{ncells} cells x {len(sweep_primes())} primes x 2 orders = "
+        f"{crit_rows_forced}  ({cc_crit})")
+    say(f"     the declared census       : {len(census_rows)} rows against "
+        f"{len(census_cells)} cells x {len(sweep_primes())} primes x 5 wings = "
+        f"{census_rows_forced}  ({cc_census})")
+    say(f"     the module table          : {len(mod_rows)} rows against "
+        f"{mot_cells} cells x {len(sweep_primes())} primes x 5 wings = "
+        f"{mod_rows_forced}  ({cc_module})")
+    g43 = gate("G43", "EVERY VERDICT-CARRYING TABLE IS CELL-COMPLETE AGAINST A "
+               "FORCED PRODUCT (RUNBOOK 13 addendum, v13 #234).  The "
+               "order-criterion sweep, the declared census and the "
+               "permutation-module table each have their row count checked "
+               "against the product the declarations force -- cells x primes x "
+               "wing orders -- and their outcome columns checked to sum to that "
+               "total, so a dropped row cannot pass unnoticed at any of them.  "
+               "The completeness helper is calibrated the other way inside this "
+               "same gate: it must REJECT a partition that does not sum",
+               cc_probe and cc_crit and cc_census and cc_module and
+               crit_total_cells == crit_rows_forced and
+               len(census_rows) == census_rows_forced and
+               len(mod_rows) == mod_rows_forced,
+               {"criterion_rows": crit_total_cells,
+                "criterion_rows_forced": crit_rows_forced,
+                "census_rows": len(census_rows),
+                "census_rows_forced": census_rows_forced,
+                "module_rows": len(mod_rows),
+                "module_rows_forced": mod_rows_forced,
+                "completeness_rejects_a_short_partition": cc_probe})
+    report("G43", g43, f"criterion {crit_total_cells}/{crit_rows_forced}; "
+                       f"census {len(census_rows)}/{census_rows_forced}; "
+                       f"module {len(mod_rows)}/{mod_rows_forced}")
     say("")
 
     # --- the in-arena positive control at the grown arena -----------------
@@ -2928,7 +3899,7 @@ def run_unit(src: str) -> dict:
         Etil = [[((1 - cs[i]) % pc) if i == j else 0 for j in range(rank)]
                 for i in range(rank)]
         Etil_fr = [[Fr(v) for v in row] for row in Etil]
-        fit, held_override = held_out_split(pc)
+        fit, held_override = verification_partition(pc)
         viol = 0
         cells_n = 0
         h1 = h2 = h3 = 0
@@ -2967,6 +3938,26 @@ def run_unit(src: str) -> dict:
                     if t2:
                         teeth_flat += 1
         inj = (len(img) == pc ** rank)
+        # THE MASTER EQUATION, I - E = alpha^-1 rho alpha, verified directly:
+        # conjugation by Sigma on the image, pulled back through alpha, is the
+        # matrix rho = I - E_tilde.  On the generating set it is the
+        # normalisation measurement itself; on a declared sample of records it
+        # is verified record by record.  (Given that alpha is a homomorphism it
+        # is EQUIVALENT to the square, which is verified at every record cell.)
+        master_sample = [tuple(t) for t in itertools.product(range(2),
+                                                             repeat=rank)]
+        master_sample += [tuple([j] * rank) for j in range(pc)]
+        master_ok = 0
+        for r in master_sample:
+            a = control_alpha(gens, powers, r)
+            conj = pcomp(SIGg, pcomp(a, SIGgi))
+            rho_r = tuple(cs[k] * r[k] % pc for k in range(rank))
+            if master_equation_holds(conj, control_alpha(gens, powers, rho_r)):
+                master_ok += 1
+        master_gens = sum(1 for k in range(rank)
+                          if master_equation_holds(
+                              pcomp(SIGg, pcomp(gens[k], SIGgi)),
+                              powers[k][cs[k]]))
         homviol = 0
         for r in itertools.product(range(2), repeat=rank):
             for s2 in itertools.product(range(2), repeat=rank):
@@ -2978,20 +3969,24 @@ def run_unit(src: str) -> dict:
                 if pcomp(x1, x2) != x3:
                     homviol += 1
         found_ok = found_branch(viol, inj, homviol, norm_ok, comm_ok)
-        heldout = {"fit_cell": list(fit), "held_cells": h_tot,
-                   "H1_square_verified_out_of_sample": h1,
+        heldout = {"fit_cell": list(fit), "verified_cells": h_tot,
+                   "H1_square_verified_at_every_cell": h1,
                    "H2_defect_permutation_verified": h2,
                    "H3_fixed_label_counts_verified": h3,
                    "distinct_fixed_label_values": sorted(fixvals),
                    "X_NOSQUARE_passes": teeth_nosq,
                    "X_FLATFIX_passes": teeth_flat,
-                   "held_cells_where_both_extensions_are_forced":
+                   "cells_where_both_extensions_are_forced":
                        teeth_exempt_cells}
         ctrl.update({"square_violations": viol, "record_cells": cells_n,
                      "injective": inj, "image_size": len(img),
                      "homomorphism_violations": homviol,
                      "normalisation_verified": norm_ok,
                      "generators_commute": comm_ok,
+                     "master_equation_sample": len(master_sample),
+                     "master_equation_verified": master_ok,
+                     "master_equation_on_the_generating_set": master_gens,
+                     "homomorphism_grid": 2 ** rank * 2 ** rank,
                      "E_tilde_diagonal": [Etil[i][i] for i in range(rank)]})
     say(f"  THE IN-ARENA POSITIVE CONTROL, at the grown arena L_m with "
         f"m = {m_star} ({n_star} labels), p = {pc}:")
@@ -3016,35 +4011,212 @@ def run_unit(src: str) -> dict:
                ctrl)
     report("G24", g24, f"square violations {ctrl.get('square_violations')}; "
                        f"injective {ctrl.get('injective')}")
-    g25 = gate("G25", "THE HELD-OUT VERIFICATION IS PREDICTIVE.  The FIT/HELD "
-               "split is declared before any candidate is fitted: the "
-               "candidate is admitted on the single FIT cell alone and is then "
-               "verified on every HELD cell -- the square (H1), the DEFECT "
-               "PERMUTATION itself entry by entry (H2), and the fixed-label "
-               "count (H3), a transport-side physical quantity that takes more "
-               "than one value.  The two extensions declared IN ADVANCE to "
-               "fail -- X-NOSQUARE and X-FLATFIX -- fail at every held-out "
-               "cell except the ONE at which they are analytically forced, "
-               "the zero record, where every candidate returns the identity "
-               "and both predictions are true of any square whatsoever; that "
-               "exempt count is COMPUTED and gated to be exactly one, so an "
+    g25 = gate("G25", "THE VERIFICATION IS EXHAUSTIVE, AND NOTHING IN IT IS "
+               "FITTED.  The candidate is built from the declared exponents "
+               "before any record cell is read, so the declared FIT / "
+               "COMPLEMENT split "
+               "is a PARTITION of the record space and not an estimation: the "
+               "square is verified at every cell of the complement of the FIT "
+               "cell (H1), and the defect permutation's entry-by-entry "
+               "comparison (H2) is the SAME boolean as H1, reported as such.  "
+               "H3 counts the cells at which the fixed-label count is read and "
+               "the distinct values it takes.  The two extensions declared IN "
+               "ADVANCE to fail -- X-NOSQUARE and X-FLATFIX -- are "
+               "analytically forced to fail off the zero record, and are "
+               "carried as disclosures; what this gate must-passes is the "
+               "COMPUTED exempt count, gated to be exactly one, so an "
                "instrument that exempted more could not pass here",
-               bool(heldout) and heldout["H1_square_verified_out_of_sample"]
-               == heldout["held_cells"] and
-               heldout["H2_defect_permutation_verified"] == heldout["held_cells"]
+               bool(heldout) and heldout["H1_square_verified_at_every_cell"]
+               == heldout["verified_cells"] and
+               heldout["H2_defect_permutation_verified"] ==
+               heldout["verified_cells"]
                and len(heldout["distinct_fixed_label_values"]) > 1 and
                heldout["X_NOSQUARE_passes"] == 0 and
                heldout["X_FLATFIX_passes"] == 0 and
-               heldout["held_cells_where_both_extensions_are_forced"] == 1,
+               heldout["cells_where_both_extensions_are_forced"] == 1,
                heldout)
-    report("G25", g25, f"H1/H2 {heldout.get('H1_square_verified_out_of_sample')}"
-                       f"/{heldout.get('held_cells')}; teeth "
+    report("G25", g25, f"H1/H2 {heldout.get('H1_square_verified_at_every_cell')}"
+                       f"/{heldout.get('verified_cells')}; teeth "
                        f"{heldout.get('X_NOSQUARE_passes')}/"
                        f"{heldout.get('X_FLATFIX_passes')}")
 
+    # --- THE MASTER EQUATION AND THE THREE WALLS AS ITS READINGS ----------
+    progress("master equation")
+    wall_rows = []
+    ind_rows = []
+    for p in sweep_primes():
+        for pi in S3_ELEMS:
+            if pi == (0, 1, 2):
+                continue
+            Rv = rho_V(pi)
+            if Rv is None:
+                continue
+            Emod = [[((1 if i == j else 0) - Rv[i][j]) % p for j in range(NV)]
+                    for i in range(NV)]
+            Emodfr = [[Fr(v) for v in row] for row in Emod]
+            pre_ok = (fix_space_dim(Emodfr, p) == 0)
+            crit_ok = order_criterion(Emodfr, p, pord(SIGMA[pi]))
+            sing = (kernel_dim_fp(Emod, p) > 0)
+            ind_rows.append({"p": p, "pi": list(pi), "ord": pord(SIGMA[pi]),
+                             "clears_the_precheck": pre_ok,
+                             "satisfies_the_order_criterion": crit_ok,
+                             "E_is_singular": sing,
+                             "dim_ker_E": kernel_dim_fp(Emod, p)})
+    ind_ok = all(module_independence(r["clears_the_precheck"],
+                                     r["satisfies_the_order_criterion"],
+                                     r["E_is_singular"]) for r in ind_rows)
+    # both decision helpers calibrated the other way through the same calls
+    master_probe = master_equation_holds((0, 1), (1, 0)) is False
+    indep_probe = module_independence(True, True, False) is False
+    wall_rows = [
+        {"reading": "rho lies in GL(A)",
+         "consequence": "I - E invertible, i.e. dim ker(E - I) = 0",
+         "wall": "the fixed-point mismatch (the stillborn precheck)"},
+        {"reading": "rho^ord(Sigma_pi) = I",
+         "consequence": "(I - E)^ord(pi) = I",
+         "wall": "the order obstruction"},
+        {"reading": "rho = rho_V(pi) (the module clause)",
+         "consequence": "E = I - rho_V(pi)",
+         "wall": "the permutation-module obstruction"}]
+    say(f"  THE MASTER EQUATION  I - E = alpha^-1 rho alpha, with rho the "
+        f"conjugation action of Sigma_pi on the image, read through alpha:")
+    say(f"     verified on the generating set at "
+        f"{ctrl.get('master_equation_on_the_generating_set')} of {rank}, and "
+        f"record by record at "
+        f"{ctrl.get('master_equation_verified')} of "
+        f"{ctrl.get('master_equation_sample')} declared records; given that "
+        f"alpha is a measured homomorphism it is EQUIVALENT to the square, "
+        f"which holds at all {ctrl.get('record_cells')} record cells")
+    for w in wall_rows:
+        say(f"     {w['reading']:36s} => {w['consequence']:44s} "
+            f"{w['wall']}")
+    say(f"  the module obstruction is INDEPENDENT of the other two readings: "
+        f"at {len(ind_rows)} (prime, wing) rows the module-forced "
+        f"E = I - rho_V(pi) clears the precheck "
+        f"({sum(1 for r in ind_rows if r['clears_the_precheck'])}), satisfies "
+        f"the order criterion "
+        f"({sum(1 for r in ind_rows if r['satisfies_the_order_criterion'])}) "
+        f"and is nevertheless SINGULAR "
+        f"({sum(1 for r in ind_rows if r['E_is_singular'])}), so S3 kills it "
+        f"where neither other wall does -- arena-free and transport-free")
+    g44 = gate("G44", "THE MASTER EQUATION, AND THE THREE WALLS AS ITS "
+               "READINGS.  S1a forces the image to be Sigma-stable and S1b "
+               "makes it abelian, so conjugation by Sigma_pi restricts to an "
+               "automorphism rho of it; S3 makes alpha an isomorphism, and the "
+               "square becomes I - E = alpha^-1 rho alpha.  Every obstruction "
+               "this unit reports is a reading of that one equation: rho "
+               "invertible gives the fixed-point mismatch, rho^ord = I gives "
+               "the order obstruction, rho = rho_V(pi) gives the "
+               "permutation-module obstruction.  The equation is VERIFIED at "
+               "the in-arena control -- on its generating set and record by "
+               "record on a declared sample -- and the module reading is "
+               "measured INDEPENDENT of the other two: the module-forced E "
+               "clears the precheck AND satisfies the order criterion at every "
+               "(prime, wing) row and dies anyway, because E must be "
+               "invertible and I - rho_V(pi) is not",
+               gens is not None and
+               ctrl.get("master_equation_on_the_generating_set") == rank and
+               ctrl.get("master_equation_verified") ==
+               ctrl.get("master_equation_sample") and
+               len(ind_rows) == len(sweep_primes()) * 5 and ind_ok and
+               master_probe and indep_probe and
+               all(r["dim_ker_E"] > 0 for r in ind_rows),
+               {"master_equation_rejects_a_mismatch": master_probe,
+                "independence_rejects_an_invertible_module_E": indep_probe,
+                "master_equation_on_the_generating_set":
+                    ctrl.get("master_equation_on_the_generating_set"),
+                "master_equation_verified": ctrl.get("master_equation_verified"),
+                "master_equation_sample": ctrl.get("master_equation_sample"),
+                "square_cells": ctrl.get("record_cells"),
+                "readings": wall_rows,
+                "module_independence_rows": ind_rows})
+    report("G44", g44, f"master equation {ctrl.get('master_equation_verified')}"
+                       f"/{ctrl.get('master_equation_sample')}; independence "
+                       f"rows {len(ind_rows)}, all three clauses {ind_ok}")
+    tables["master_equation"] = {"readings": wall_rows,
+                                 "independence": ind_rows}
+
+    # --- THE SUFFICIENCY CENSUS at the grown arena ------------------------
+    progress("sufficiency census")
+    suff_rows = []
+    cube3 = cube_roots(pc)
+    prim3 = [s for s in cube3 if s != 1]
+    separable = (len(cube3) == 3)
+    patterns = sufficiency_patterns(
+        [tuple(t) for t in itertools.product(sorted(prim3), repeat=rank)])
+    suff_sample = [tuple(t) for t in itertools.product(range(2), repeat=rank)]
+    suff_sample += [tuple([j] * rank) for j in range(pc)]
+    for cvec in patterns:
+        gs, SG = control_blocks(m_star, pc, list(cvec))
+        row = {"exponents": list(cvec), "built": gs is not None}
+        if gs is not None:
+            SGi = pinv(SG)
+            pw = []
+            for g in gs:
+                q, x = [], pident(n_star)
+                for _ in range(pc):
+                    q.append(x)
+                    x = pcomp(x, g)
+                pw.append(q)
+            Ed = [(1 - cvec[k]) % pc for k in range(rank)]
+            supp = [{x for x in range(n_star) if g[x] != x} for g in gs]
+            viol2 = 0
+            for r in suff_sample:
+                a2 = control_alpha(gs, pw, r)
+                if pcomp(SG, pcomp(pinv(a2), pcomp(SGi, a2))) != control_alpha(
+                        gs, pw, tuple(Ed[k] * r[k] % pc for k in range(rank))):
+                    viol2 += 1
+            row.update({
+                "E_tilde": Ed,
+                "normalised": all(pcomp(SG, pcomp(gs[k], SGi)) == pw[k][cvec[k]]
+                                  for k in range(rank)),
+                "commute": all(pcomp(gs[i], gs[j]) == pcomp(gs[j], gs[i])
+                               for i in range(rank) for j in range(rank)),
+                "supports_disjoint": all(not (supp[i] & supp[j])
+                                         for i in range(rank)
+                                         for j in range(i + 1, rank)),
+                "generator_orders_are_p": all(pord(g) == pc for g in gs),
+                "E_invertible": all(v % pc != 0 for v in Ed),
+                "criterion": all(pow((1 - v) % pc, 3, pc) == 1 for v in Ed),
+                "square_violations_on_the_sample": viol2})
+        suff_rows.append(row)
+    suff_ok = all(r["built"] and r["normalised"] and r["commute"] and
+                  r["supports_disjoint"] and r["generator_orders_are_p"] and
+                  r["E_invertible"] and r["criterion"] and
+                  r["square_violations_on_the_sample"] == 0 for r in suff_rows)
+    say(f"  THE SUFFICIENCY CENSUS at L_{m_star} ({n_star} labels), p = {pc}, "
+        f"ord 3: x^3 - 1 has {len(cube3)} distinct roots mod {pc} "
+        f"(separable {separable}), so every E satisfying the criterion there is "
+        f"conjugate to I - diag(c) with c in {sorted(prim3)}^{rank} -- "
+        f"{len(patterns)} patterns, and EVERY one of them is realised by a "
+        f"member of the declared growth family ({suff_ok})")
+    g45 = gate("G45", "AT THE GROWN ARENA THE CRITERION IS NOT MERELY "
+               "NECESSARY BUT SUFFICIENT, CENSUSED OVER EVERY PATTERN.  At "
+               "p = 7 the polynomial x^3 - 1 is measured to have three distinct "
+               "roots, so any rho with rho^3 = I is diagonalisable; "
+               "invertibility of E = I - rho excludes the eigenvalue 1, so "
+               "every E satisfying the criterion at an order-3 wing symmetry is "
+               "conjugate to I - diag(c) with c a vector of primitive cube "
+               "roots.  All 2^6 such patterns are censused: at every one the "
+               "declared growth family realises the encoding -- generators of "
+               "order p on disjoint supports, commuting, normalised with the "
+               "demanded exponents, E invertible, the criterion satisfied, and "
+               "the square holding at every record of a declared sample.  The "
+               "converse therefore holds at this scope, and the bridge question "
+               "reduces there to the criterion",
+               separable and len(patterns) == 2 ** rank and suff_ok and
+               len(prim3) == 2,
+               {"prime": pc, "arena_labels": n_star,
+                "cube_roots": cube3, "separable": separable,
+                "patterns": len(patterns),
+                "sample_records_per_pattern": len(suff_sample),
+                "all_patterns_realised": suff_ok, "rows": suff_rows})
+    report("G45", g45, f"{len(patterns)} patterns; all realised {suff_ok}")
+    tables["sufficiency"] = {"patterns": len(patterns), "rows": suff_rows}
+
     empty_at_grown = None
-    if gens is not None:
-        Ereal = encoding_matrix(tuple(range(NV)), "counts->q")
+    Ereal = encoding_matrix(tuple(range(NV)), "counts->q")
+    if gens is not None and Ereal is not None:
         empty_at_grown = empty_branch(not order_criterion(Ereal, pc, 3))
     say(f"  THE SAME MACHINERY AT THE SAME ARENA, with HA's OWN d = 3 "
         f"encoding in place of the synthetic one: EMPTY "
@@ -3064,11 +4236,12 @@ def run_unit(src: str) -> dict:
 
     brk = {"square_violations": 0, "hom_violations": 0, "cells": 0}
     Ebrk = encoding_matrix(tuple(range(NV)), "counts->q")
-    Ebp = mat_to_fp(Ebrk, 7)
+    Ebp = mat_to_fp(Ebrk, 7) if Ebrk is not None else None
     kerlam = kernel_basis_fp(
-        mat_sub_fp(transpose(Ebp), scal_fp(4, NV, 7), 7), 7)
-    kermu = kernel_basis_fp(mat_sub_fp(transpose(Ebp), eye_fp(NV), 7), 7)
-    if kerlam and kermu:
+        mat_sub_fp(transpose(Ebp), scal_fp(4, NV, 7), 7), 7) if Ebp else []
+    kermu = kernel_basis_fp(mat_sub_fp(transpose(Ebp), eye_fp(NV), 7), 7) \
+        if Ebp else []
+    if kerlam and kermu and 7 in subs_cache:
         lam0, mu0 = kerlam[0], kermu[0]
         subs7 = [(g, conjugation_exponent((1, 2, 0), g, 7))
                  for g in subs_cache[7].values()]
@@ -3119,34 +4292,86 @@ def run_unit(src: str) -> dict:
 
     s2_ok = bool(heldout) and s2_stratification_carried(
         heldout.get("distinct_fixed_label_values", []))
+    s2_probe = s2_stratification_carried([len(GC)]) is False
     s4_rows = []
     for nm, Q in sorted(DECL["ladder_completions"].items()):
         K = ladder_defect_subgroup(Q)
         live = sorted(p for p in sweep_primes() if len(K) % p == 0)
+        # the census's DECIDING INPUTS, fingerprinted with this base in scope
+        fp = base_fingerprint(
+            [str(m["key"]) for m in census_cells], sweep_primes(),
+            [pord(SIGMA[pi]) for pi in S3_ELEMS if pi != (0, 1, 2)],
+            [len(subs_by_pi[(p, pi)]) for p in sweep_primes()
+             for pi in S3_ELEMS if pi != (0, 1, 2)])
+        # and the criterion, re-evaluated at this base's own live primes
+        hits_here = sum(1 for m in census_cells for p in live
+                        for o in (2, 3)
+                        if order_criterion(encoding_matrix(tuple(m["perm"]),
+                                                           m["direction"]),
+                                           p, o))
+        rows_here = len(census_cells) * len(live) * 2
         s4_rows.append({"base": nm, "K_order": len(K), "live_primes": live,
-                        "census_empty_at_this_base": True})
+                        "criterion_rows_at_this_base": rows_here,
+                        "criterion_hits_at_this_base": hits_here,
+                        "deciding_input_fingerprint": fp})
     s4_rows = s4_base_rows(s4_rows)
+    fingerprints = {r["deciding_input_fingerprint"] for r in s4_rows}
+    base_orders = sorted({r["K_order"] for r in s4_rows})
+    # the fingerprint must SEPARATE different inputs, or its equality says
+    # nothing: calibrated the other way through the same function
+    fp_probe = (base_fingerprint(["a-different-cell"], [2], [2], [1]) !=
+                s4_rows[0]["deciding_input_fingerprint"])
     scale_rows = [{"scale": "native", "labels": NLAB,
-                   "census_empty": True},
+                   "census_empty": empty_branch(crit_total_hits == 0)},
                   {"scale": "grown", "labels": n_star,
                    "census_empty": bool(empty_at_grown)}]
-    g28 = gate("G28", "S2 (CARRIER RIGIDITY) AND S4 (FUNCTORIALITY IN THE "
-               "FAMILY).  S2: the transport side's fixed-label stratification "
-               "is measured CARRIED by the admitted candidate -- the held-out "
-               "defect permutations take more than one fixed-label value, so "
-               "the stratification is a real invariant and not a constant.  "
-               "S4: the emptiness is measured at every one of TB3's five "
-               "declared ladder bases -- whose defect subgroups differ by two "
-               "orders of magnitude -- and at BOTH declared arena scales, and "
-               "it does not move",
-               s2_ok and len(s4_rows) == len(DECL["ladder_completions"]) and
+    say(f"  S4 -- BASE-INDEPENDENCE, COMPUTED.  The census's deciding inputs "
+        f"are fingerprinted inside the per-base loop: {len(fingerprints)} "
+        f"distinct fingerprint over {len(s4_rows)} bases whose defect "
+        f"subgroups are {base_orders} -- so the census cannot depend on the "
+        f"base, and the criterion, re-evaluated at each base's own live primes "
+        f"({[r['criterion_rows_at_this_base'] for r in s4_rows]} rows), is hit "
+        f"at {[r['criterion_hits_at_this_base'] for r in s4_rows]}")
+    g28 = gate("G28", "S2 (CARRIER RIGIDITY).  The transport side's "
+               "fixed-label stratification is measured CARRIED by the admitted "
+               "candidate -- the defect permutations take more than one "
+               "fixed-label value, so the stratification is a real invariant "
+               "and not a constant -- and the clause that decides it is "
+               "calibrated the other way inside this same gate: a constant "
+               "stratification must be REJECTED by it",
+               s2_ok and s2_probe and
                all(r["census_empty"] for r in scale_rows),
                {"S2_stratification_values":
                     heldout.get("distinct_fixed_label_values"),
-                "S4_bases": s4_rows, "S4_scales": scale_rows})
-    report("G28", g28, f"S2 stratification carried {s2_ok}; S4 bases "
-                       f"{len(s4_rows)}, scales {len(scale_rows)}")
-    tables["controls"] = {"found": ctrl, "held_out": heldout,
+                "S2_rejects_a_constant_stratification": s2_probe,
+                "S4_scales": scale_rows})
+    report("G28", g28, f"S2 stratification carried {s2_ok}; scales "
+                       f"{len(scale_rows)}")
+    g46 = gate("G46", "S4 (FUNCTORIALITY) IS COMPUTED, NOT TYPED.  The "
+               "deciding quantity (I - E)^ord(pi) = I has NO base input: the "
+               "candidate enumeration ranges over every cyclic subgroup of "
+               "order p in G_C and every wing symmetry, and the completion "
+               "that names a ladder base never enters it.  That is measured "
+               "rather than asserted -- the census's deciding inputs are "
+               "fingerprinted INSIDE the per-base loop and the fingerprint is "
+               "identical at every base, while the bases themselves are "
+               "measured genuinely different, their defect subgroups ranging "
+               "over more than two orders of magnitude; and the criterion, "
+               "re-evaluated at each base's own live primes, is hit nowhere.  "
+               "Base-independence therefore holds BY CONSTRUCTION and the "
+               "gate measures the construction",
+               len(s4_rows) == len(DECL["ladder_completions"]) and
+               len(fingerprints) == 1 and len(base_orders) == len(s4_rows) and
+               max(base_orders) // max(1, min(base_orders)) > 100 and
+               fp_probe and
+               all(r["criterion_hits_at_this_base"] == 0 for r in s4_rows),
+               {"bases": len(s4_rows), "distinct_fingerprints":
+                   len(fingerprints), "defect_subgroup_orders": base_orders,
+                "fingerprint_separates_different_inputs": fp_probe,
+                "rows": s4_rows})
+    report("G46", g46, f"{len(s4_rows)} bases, {len(fingerprints)} distinct "
+                       f"fingerprint, |K| {base_orders}")
+    tables["controls"] = {"found": ctrl, "verification": heldout,
                           "break_hom": brk, "S4_bases": s4_rows,
                           "S4_scales": scale_rows}
     say("")
@@ -3277,6 +4502,58 @@ def run_unit(src: str) -> dict:
                 "primes_with_a_normalised_subgroup":
                     sorted({r["p"] for r in norm_rows if r["normalised"]})})
     report("G31", g31, f"per-prime verdicts {per_prime_verdict}")
+
+    # --- the spectral reading, at every swept dimension --------------------
+    progress("spectral reading")
+    spec_rows = []
+    for dd in dimension_sweep():
+        nn = dd * (dd + 1) // 2
+        for ordering in ("natural", "lex"):
+            A = general_d_readout(dd, ordering)
+            for direction in ("q->counts", "counts->q"):
+                Mx = A if direction == "q->counts" else inv_exact(A)
+                if Mx is None:
+                    continue
+                for p in sweep_primes():
+                    Mp = [[to_fp_frac(v, p) for v in row] for row in Mx]
+                    Kx = [[(Mp[i][j] - (1 if i == j else 0)) % p
+                           for j in range(nn)] for i in range(nn)]
+                    spec_rows.append({
+                        "d": dd, "ordering": ordering, "direction": direction,
+                        "p": p, "size": nn,
+                        "dim_ker_E_minus_I": spectral_multiplicity(
+                            kernel_dim_fp(Kx, p), dd)})
+    nat_is_d = all(r["dim_ker_E_minus_I"] == r["d"] for r in spec_rows
+                   if r["ordering"] == "natural")
+    lex_is_one = all(r["dim_ker_E_minus_I"] == 1 for r in spec_rows
+                     if r["ordering"] == "lex")
+    eig1_everywhere = all(r["dim_ker_E_minus_I"] >= 1 for r in spec_rows)
+    say(f"  the spectral reading at every swept dimension: at the NATURAL "
+        f"identification dim ker(E - I) = d ({nat_is_d}); at HA's own lex "
+        f"ordering it is 1 ({lex_is_one}); so the eigenvalue 1 is present at "
+        f"{sum(1 for r in spec_rows if r['dim_ker_E_minus_I'] >= 1)} of "
+        f"{len(spec_rows)} (dimension, ordering, direction, prime) rows, and "
+        f"0 lies in spec(I - E) at every one of them")
+    g47 = gate("G47", "THE SPECTRAL READING, MEASURED AT EVERY SWEPT "
+               "DIMENSION.  At the motivated identifications HA's readout "
+               "carries the eigenvalue 1 -- with multiplicity d at the natural "
+               "identification and multiplicity 1 at HA's own lex ordering -- "
+               "at d = 2,3,4,5, in both directions and at every declared "
+               "prime.  Hence 0 lies in spec(I - E) there.  A bridge at a wing "
+               "symmetry of order n forces spec(I - E) into the n-th roots of "
+               "unity, and 0 is on no unit circle: the obstruction is "
+               "dimension-independent in PROOF form, which is what a successor "
+               "at a larger or continuous scale inherits from this unit",
+               nat_is_d and lex_is_one and eig1_everywhere and
+               len(spec_rows) == len(dimension_sweep()) * 2 * 2 *
+               len(sweep_primes()),
+               {"rows": spec_rows,
+                "natural_multiplicity_equals_d": nat_is_d,
+                "lex_multiplicity_is_one": lex_is_one,
+                "eigenvalue_one_present_at_every_row": eig1_everywhere})
+    report("G47", g47, f"eigenvalue 1 at {len(spec_rows)}/{len(spec_rows)} "
+                       f"rows; natural multiplicity = d {nat_is_d}")
+    tables["spectral_reading"] = spec_rows
     say("")
 
     # ---------------------------------------------------------------- 8 ---
@@ -3287,10 +4564,13 @@ def run_unit(src: str) -> dict:
     rho_perm_ok = 0
     for pi in S3_ELEMS:
         R = rho_V(pi)
-        if all(sum(R[i][j] for j in range(NV)) == 1 for i in range(NV)) and \
-                all(sum(R[i][j] for i in range(NV)) == 1 for j in range(NV)):
+        if R is not None and \
+                all(sum(R[i][j] for j in range(NV)) == 1 for i in range(NV)) \
+                and all(sum(R[i][j] for i in range(NV)) == 1
+                        for j in range(NV)):
             rho_perm_ok += 1
-    rho_set = {tuple(tuple(r) for r in rho_V(pi)) for pi in S3_ELEMS}
+    rho_set = {tuple(tuple(r) for r in rho_V(pi)) for pi in S3_ELEMS
+               if rho_V(pi) is not None}
     rho_closed_ok = len(rho_set) == 6
 
     warmed = warm_the_cache(GC[:2000], (1, 2, 0))
@@ -3354,19 +4634,39 @@ def run_unit(src: str) -> dict:
                        f"relabelled fix {sorted(set(relab_fix.values()))}; "
                        f"bypasses {bypasses}")
 
+    # the tested set is CONSUMED, not merely counted: the decision quantity is
+    # recomputed at every cell of it and compared against the family table
+    fixdim_by_key = {m["key"]: m["fix_dims"][pref] for m in cells_meta}
+    tested_swept = 0
+    tested_agree = 0
+    for tkey in tested:
+        Et = encoding_matrix(tkey[0], tkey[1])
+        tested_swept += 1
+        if fix_space_dim(Et, pref) == fixdim_by_key.get(tkey):
+            tested_agree += 1
+    say(f"  the self-test's tested set: {len(tested)} declared cells, swept "
+        f"and recomputed at {tested_swept}, agreeing at {tested_agree}")
     g33 = gate("G33", "THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION, "
                "NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 "
-               "addendum).  The declared set is the WHOLE covariant family -- "
-               "every cell, including the ones the precheck kills -- and it is "
-               "measured strictly larger than the set the verdicts would have "
-               "selected",
-               len(tested) == ncells and
+               "addendum) -- AND IT IS CONSUMED BY A SWEEP.  The declared set "
+               "is the WHOLE covariant family -- every cell, including the ones "
+               "the precheck kills -- measured strictly larger than the set the "
+               "verdicts would have selected; and the decision quantity is "
+               "RECOMPUTED at every cell of it and measured to agree with the "
+               "family table, so a tested set selected by the verdicts shrinks "
+               "a sweep that is counted here and not merely a list that is "
+               "counted",
+               len(tested) == ncells and tested_swept == ncells and
+               tested_agree == ncells and
                len(tested) > sum(1 for m in cells_meta
                                  if m["trivial_fix_all_primes"]),
                {"declared_tested_cells": len(tested), "covariant_cells": ncells,
+                "cells_swept_through_the_tested_set": tested_swept,
+                "cells_agreeing_with_the_family_table": tested_agree,
                 "verdict_selected_cells": sum(1 for m in cells_meta
                                               if m["trivial_fix_all_primes"])})
-    report("G33", g33, f"tested {len(tested)} of {ncells}")
+    report("G33", g33, f"tested {len(tested)} of {ncells}; swept "
+                       f"{tested_swept}, agreeing {tested_agree}")
 
     P = basis_change(7)
     Pinvm = None
@@ -3415,28 +4715,44 @@ def run_unit(src: str) -> dict:
     say("9. THE VERDICT")
     say("------------------------------------------------------------------")
     progress("verdict")
-    src1 = live_full
-    src2 = crit_total_hits
-    src3 = mod_equal
-    census_empty = (src1 == 0 and src2 == 0)
-    covered = crit_total_cells - crit_total_hits
+    src1 = crit_total_hits
+    src2 = mod_equal
+    src3 = len(set(thm_admissible))
+    restriction = live_full
+    census_empty = (src1 == 0 and src2 == 0 and src3 == 0)
+    covered = crit_not_hits
     qual_cov = coverage_qualifier(covered, crit_total_cells)
+    qual_emp = emptiness_qualifier(qual_cov, thm_holds, floor_prime)
     verdict = derive_verdict(any_survivor, census_empty, found_ok,
                              bool(empty_at_grown), d3_constructed)
+    # the motivated sub-family's outcome, re-derived here with EVERY argument
+    # measured -- the reachability booleans included, which are not yet
+    # available where the sub-family is censused
+    verdict_motivated_measured = derive_verdict(
+        mot_surv > 0, mot_census_empty, found_ok, bool(empty_at_grown),
+        d3_constructed)
     obstruction = (
-        "THE ORDER OBSTRUCTION: S1a (BRG's registered commuting square), S1b "
+        "THE MASTER EQUATION: S1a, S1b and S3 force I - E = alpha^-1 rho "
+        "alpha, with rho the conjugation action of Sigma_pi on the image; "
+        "every wall below is a reading of it.  THE ORDER OBSTRUCTION "
+        "(rho^ord = I): S1a (BRG's registered commuting square), S1b "
         "(additivity) and S3 (BRG's registered injectivity horn) jointly force "
         "(I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution "
         "and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's "
         "record-is-metric readout satisfies it at "
-        f"{src2} of {crit_total_cells} (cell, prime, order) rows.  It is "
-        "ARENA-FREE: no cardinality, no p-part, no census enters the "
-        "derivation, and it SUBSUMES the fixed-point mismatch, which is its "
-        "first-order shadow.  For the MODULE clause the obstruction is "
-        "sharper still -- THE PERMUTATION-MODULE OBSTRUCTION: S1c-module "
-        "forces E = I - rho_V(pi), and the record datum space carries the S_3 "
+        f"{src1} of {crit_total_cells} (cell, prime, order) rows, and at NO "
+        f"prime >= {floor_prime} whatever, by the READOUT-PROFILE THEOREM: "
+        "every row of the readout has one of two entry multisets, so row 0 is "
+        "a 0/1 unit vector, and the criterion read at row 0 forces p to divide "
+        "an integer witness whose gcd admits no prime >= 5.  It is ARENA-FREE: "
+        "no cardinality, no p-part, no census enters the derivation, and it "
+        "SUBSUMES the fixed-point mismatch, which is its first-order shadow.  "
+        "For the MODULE clause the obstruction is sharper still -- THE "
+        "PERMUTATION-MODULE OBSTRUCTION (rho = rho_V(pi)): S1c-module forces "
+        "E = I - rho_V(pi), and the record datum space carries the S_3 "
         "PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones "
-        "link vector while E, being invertible, never does.")
+        "link vector while E, being invertible, never does -- a wall that "
+        "clears the other two and kills the candidate anyway.")
     quals.update({
         "covariant_cells": qualifier_value("covariant_cells", ncells),
         "declared_primes": qualifier_value("declared_primes",
@@ -3458,61 +4774,134 @@ def run_unit(src: str) -> dict:
             "order_criterion_satisfied", crit_total_hits),
         "module_obstruction_rows": qualifier_value("module_obstruction_rows",
                                                    len(mod_rows)),
+        "motivated_cells": qualifier_value("motivated_cells", mot_cells),
+        "motivated_precheck_survivors": qualifier_value(
+            "motivated_precheck_survivors", mot_surv),
+        "profile_theorem_triples": qualifier_value("profile_theorem_triples",
+                                                   len(thm_rows)),
         "coverage_qualifier": qual_cov,
+        "emptiness_qualifier": qual_emp,
+        "identification_qualifier": ident_qual,
+        "verdict_at_the_motivated_sub_family": verdict_motivated,
         "spectral_meeting_primes": meet_primes,
     })
-    say(f"  source 1 -- the census table's own live-row sum      : {src1}")
-    say(f"  source 2 -- the order-criterion sweep, all cells     : {src2} of "
-        f"{crit_total_cells}")
-    say(f"  source 3 -- the permutation-module equality count    : {src3} of "
-        f"{len(mod_rows)}")
-    say(f"  a candidate PASSES the precheck                      : "
-        f"{any_survivor}")
-    say(f"  FOUND reachable / EMPTY reachable                    : "
-        f"{found_ok} / {bool(empty_at_grown)}")
-    say(f"  coverage qualifier (computed)                        : {qual_cov}")
+    # every recorded numeric qualifier, re-derived here from its own source
+    qual_ledger = {
+        "covariant_cells": (quals["covariant_cells"], ncells),
+        "declared_primes": (quals["declared_primes"], len(sweep_primes())),
+        "equivariant_identifications": (quals["equivariant_identifications"],
+                                        len(equi)),
+        "census_rows": (quals["census_rows"], len(census_rows)),
+        "order_criterion_rows": (quals["order_criterion_rows"],
+                                 crit_total_cells),
+        "module_obstruction_rows": (quals["module_obstruction_rows"],
+                                    len(mod_rows)),
+        "motivated_cells": (quals["motivated_cells"], mot_cells),
+        "profile_theorem_triples": (quals["profile_theorem_triples"],
+                                    len(thm_rows)),
+        "precheck_survivors_at_p7": (quals["precheck_survivors_at_p7"],
+                                     surv_by_prime[pref]),
+    }
+    qual_ok = all(a == b for (a, b) in qual_ledger.values())
+    say(f"  source 1 -- the order-criterion sweep over the WHOLE covariant "
+        f"family        : {src1} of {crit_total_cells}")
+    say(f"  source 2 -- the permutation-module equality count, which runs no "
+        f"criterion   : {src2} of {len(mod_rows)}")
+    say(f"  source 3 -- the readout-profile theorem's admitted primes, which "
+        f"runs no F_p  : {src3} (over {len(thm_rows)} witnesses)")
+    say(f"  a coverage check on the census (a RESTRICTION of source 1, not a "
+        f"source)      : {restriction} of {len(census_rows)}")
+    say(f"  a candidate PASSES the precheck                                   "
+        f"           : {any_survivor}")
+    say(f"  FOUND reachable / EMPTY reachable                                 "
+        f"           : {found_ok} / {bool(empty_at_grown)}")
     say("")
     say(f"  ==>  {verdict}")
+    say(f"       the FOUND half, named by measurement : {ident_qual}")
+    say(f"       the EMPTY half, named by measurement : {qual_emp}")
+    say(f"       at the motivated sub-family          : {verdict_motivated}")
     say("")
     g35 = gate("G35", "THE VERDICT IS DERIVED HERE, INSIDE THE GATE, FROM "
-               "THREE SOURCES THAT SHARE NO DECIDING VARIABLE, WITH BOTH "
-               "BRANCHES REACHABLE.  Source 1 is the declared census's own "
-               "live-row sum; source 2 is the order-criterion sweep over the "
-               "WHOLE covariant family, which never runs a census; source 3 is "
-               "the permutation-module equality count, which touches neither.  "
-               "All three return zero, a candidate is measured to PASS the "
-               "precheck, and the FOUND and EMPTY branches are both measured "
-               "reachable, so the pre-registered outcome is "
-               "RSQ-SQUARE-FOUND-BRIDGE-EMPTY and the verdict-flip mutant "
-               "proves the derivation can fail",
+               "THREE SOURCES THAT ARE GENUINELY INDEPENDENT COMPUTATIONS, "
+               "WITH BOTH BRANCHES REACHABLE AND BOTH HALVES OF THE NAME "
+               "MEASURED.  Source 1 is the order-criterion sweep over the "
+               "WHOLE covariant family, which runs no census; source 2 is the "
+               "permutation-module equality count, which runs no criterion; "
+               "source 3 is the readout-profile theorem, which evaluates no "
+               "matrix over F_p at all and decides every prime from the "
+               "integer readout's row profiles.  The census table's own "
+               "injective column is the criterion RESTRICTED to the declared "
+               "cells -- a coverage check on the census, forced twice over by "
+               "cardinality, and it is reported as a disclosure and not "
+               "conjoined here.  All three sources return zero, a candidate is "
+               "measured to PASS the precheck, and the FOUND and EMPTY "
+               "branches are both measured reachable, so the pre-registered "
+               "outcome is RSQ-SQUARE-FOUND-BRIDGE-EMPTY; the FOUND half "
+               "carries the identification class of its survivors and the "
+               "EMPTY half carries the theorem's prime scope, both DERIVED "
+               "here, and the verdict-flip, ident-flip and emptiness-flip "
+               "mutants prove each derivation can fail on its own.  The "
+               "motivated sub-family's own outcome is re-derived here with "
+               "every argument measured and must agree with the one printed at "
+               "the census",
                verdict == "RSQ-SQUARE-FOUND-BRIDGE-EMPTY" and
                src1 == 0 and src2 == 0 and src3 == 0 and any_survivor and
-               found_ok and bool(empty_at_grown) and d3_constructed,
-               {"verdict": verdict, "source_1_census_live_rows": src1,
-                "source_2_order_criterion_hits": src2,
-                "source_3_module_equalities": src3,
+               found_ok and bool(empty_at_grown) and d3_constructed and
+               ident_qual == "FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS" and
+               qual_emp == f"UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-"
+                           f"{floor_prime}" and
+               verdict_motivated == "RSQ-NO-COMPATIBLE-SQUARE" and
+               verdict_motivated_measured == verdict_motivated,
+               {"verdict": verdict,
+                "verdict_at_the_motivated_sub_family_all_arguments_measured":
+                    verdict_motivated_measured,
+                "source_1_order_criterion_hits": src1,
+                "source_2_module_equalities": src2,
+                "source_3_primes_admitted_by_the_profile_theorem": src3,
+                "restriction_census_live_rows": restriction,
                 "a_candidate_passes_the_precheck": any_survivor,
                 "found_reachable": found_ok,
                 "empty_reachable": bool(empty_at_grown),
                 "d3_constructed": d3_constructed,
+                "identification_qualifier": ident_qual,
+                "emptiness_qualifier": qual_emp,
                 "coverage_qualifier": qual_cov,
+                "verdict_at_the_motivated_sub_family": verdict_motivated,
                 "obstruction": obstruction})
-    report("G35", g35, f"verdict {verdict}")
-    g36 = gate("G36", "THE COVERAGE QUALIFIER IS MEASURED, AND EVERY TABLE IS "
-               "CELL-COMPLETE.  Every one of the (cell, prime, wing-order) "
-               "rows is covered by the arena-free order obstruction -- none is "
-               "left to a cardinality argument, which is the respect in which "
-               "this wall is stronger than LCB's -- and the precheck, census "
-               "and criterion tables each sum to their swept totals",
+    report("G35", g35, f"verdict {verdict} / {ident_qual} / {qual_emp}")
+    g36 = gate("G36", "THE COVERAGE QUALIFIER IS MEASURED, AND ITS OWN "
+               "FUNCTION IS CALIBRATED THE OTHER WAY.  The rows NOT satisfying "
+               "the criterion are counted directly in the sweep, not "
+               "subtracted from its total, and they are measured to be all of "
+               "them: every (cell, prime, wing-order) row is covered by the "
+               "arena-free order obstruction, none is left to a cardinality "
+               "argument -- which is the respect in which this wall is "
+               "stronger than LCB's.  The qualifier function must report "
+               "PARTIAL on a partial input, evaluated here through the same "
+               "call, so a qualifier asserted rather than measured cannot pass",
                qual_cov == "UNIVERSAL-FOR-THIS-FAMILY" and
+               coverage_qualifier(3, 5) == "PARTIAL-3-OF-5" and
                covered == crit_total_cells and
-               completeness([crit_total_hits, covered], crit_total_cells) and
-               completeness([live_full, len(census_rows) - live_full],
-                            len(census_rows)),
+               completeness([crit_total_hits, covered], crit_total_cells),
                {"rows_covered_arena_free": covered,
                 "rows_total": crit_total_cells,
-                "qualifier": qual_cov})
+                "qualifier": qual_cov,
+                "qualifier_reports_PARTIAL_on_a_partial_input":
+                    coverage_qualifier(3, 5) == "PARTIAL-3-OF-5"})
     report("G36", g36, f"{covered}/{crit_total_cells} covered arena-free")
+    say(f"  the qualifier ledger: {sum(1 for (a, b) in qual_ledger.values() if a == b)} "
+        f"of {len(qual_ledger)} recorded qualifiers equal their recomputed "
+        f"source")
+    g48 = gate("G48", "EVERY RECORDED QUALIFIER EQUALS ITS RECOMPUTED SOURCE.  "
+               "The numeric qualifiers carried into the receipt are re-derived "
+               "here from the measurements they name and compared one by one, "
+               "so a qualifier replaced by a typed string is caught in the "
+               "delivered run and not only by a synthetic probe",
+               qual_ok and len(qual_ledger) > 0,
+               {"ledger": {k2: list(v2) for k2, v2 in qual_ledger.items()},
+                "all_agree": qual_ok})
+    report("G48", g48, f"{sum(1 for (a, b) in qual_ledger.values() if a == b)}/"
+                       f"{len(qual_ledger)} qualifiers agree")
     probes = {
         "completeness_rejects_a_dropped_cell": completeness([1, 2], 4) is False,
         "coverage_qualifier_reports_PARTIAL_when_partial":
@@ -3540,6 +4929,64 @@ def run_unit(src: str) -> dict:
         "derive_verdict_returns_NO_COMPATIBLE_SQUARE_when_all_stillborn":
             derive_verdict(False, True, True, True, True) ==
             "RSQ-NO-COMPATIBLE-SQUARE",
+        "identification_qualifier_names_a_motivated_survivor":
+            identification_qualifier(1, 1) ==
+            "FOUND-AT-A-MOTIVATED-IDENTIFICATION",
+        "identification_qualifier_names_an_empty_precheck":
+            identification_qualifier(0, 0) ==
+            "NO-SURVIVOR-AT-ANY-IDENTIFICATION",
+        "emptiness_qualifier_declines_the_theorem_name_without_the_theorem":
+            emptiness_qualifier("UNIVERSAL-FOR-THIS-FAMILY", False,
+                                floor_prime) == "UNIVERSAL-FOR-THIS-FAMILY",
+        "emptiness_qualifier_passes_a_partial_coverage_through":
+            emptiness_qualifier("PARTIAL-3-OF-5", True, floor_prime) ==
+            "PARTIAL-3-OF-5",
+        "the_theorem_admits_a_witness_divisible_by_a_large_prime":
+            admissible_primes_of_witness([11, 22, 0, 0, 0, 0],
+                                         floor_prime) == [11],
+        "the_theorem_rejects_a_witness_with_a_unit_gcd":
+            admissible_primes_of_witness([1, 2, 0, 0, 0, 0],
+                                         floor_prime) == [],
+        "the_theorem_honours_its_declared_prime_floor":
+            admissible_primes_of_witness([2, 4, 0, 0, 0, 0],
+                                         floor_prime) == [],
+        "the_all_prime_test_flags_an_identically_zero_identity":
+            all_prime_hits([[0] * NV for _ in range(NV)], floor_prime) ==
+            ["EVERY-PRIME"],
+        "module_independence_rejects_an_invertible_module_E":
+            module_independence(True, True, False) is False,
+        "master_equation_rejects_a_mismatch":
+            master_equation_holds((0, 1), (1, 0)) is False,
+        "spectral_multiplicity_returns_what_it_measures":
+            spectral_multiplicity(2, 5) == 2,
+        "the_base_fingerprint_separates_different_inputs":
+            base_fingerprint(["a"], [5], [2], [1]) !=
+            base_fingerprint(["b"], [5], [2], [1]),
+        "the_anchor_policy_is_fatal_on_a_failure":
+            anchor_policy_fatal(1) is True,
+        "the_motivated_survivor_count_is_read_from_the_rows":
+            motivated_precheck_survivors([{"precheck": "PASS"}]) == 1,
+        # the two functions that carry verdict sources 1 and 2, and the
+        # profile reader that carries source 3's premise
+        "the_order_criterion_rejects_an_invertible_non_root":
+            order_criterion([[Fr(3 if i == j else 0) for j in range(NV)]
+                             for i in range(NV)], pref, 2) is False,
+        "the_order_criterion_accepts_the_synthetic_positive_control":
+            order_criterion(synth_ok_Efr, pref, 3) is True,
+        "the_polynomial_writing_accepts_the_involution_root":
+            order_criterion_polynomial(
+                [[Fr(2 if i == j else 0) for j in range(NV)]
+                 for i in range(NV)], pref, 2) is True,
+        "the_module_obstruction_rejects_a_non_module_E":
+            module_obstruction_measured(
+                [[Fr(1 if i == j else 0) for j in range(NV)]
+                 for i in range(NV)], (0, 2, 1), pref)[0] is False,
+        "the_row_profile_reads_the_row_it_is_given":
+            row_profiles([[0, 0, 0, 1, 1, 2]]) == [(0, 0, 0, 1, 1, 2)],
+        "the_extended_prime_range_is_sieved":
+            extended_primes(floor_prime, 11) == [5, 7, 11],
+        "the_sufficiency_census_keeps_every_pattern":
+            len(sufficiency_patterns([1, 2, 3])) == 3,
     }
     probes_ok = all(probes.values())
     say(f"  the instrument probe: {sum(1 for v in probes.values() if v)} of "
@@ -3559,14 +5006,24 @@ def run_unit(src: str) -> dict:
                probes_ok, probes)
     report("G37", g37, f"{sum(1 for v in probes.values() if v)}/{len(probes)} "
                        f"helper probes correct")
+    if anchor_policy_fatal(ANCHOR_POLICY["failures"]):
+        ANCHOR_POLICY["fatal"] = 1
+    policy_probe = anchor_policy_fatal(1) is True
     g38 = gate("G38", "THE ANCHOR POLICY IS FAIL-CLOSED AND MEASURED.  Every "
-               "committed number this unit reuses carries an assertion that "
-               "kills the run on mismatch; the count of anchor FAILURES is "
-               "additionally gated here, so an instrument that softened the "
-               "assertions into warnings would still be caught",
-               ANCHOR_POLICY["failures"] == 0 and len(ANCHORS) > 0,
+               "committed number this unit reuses carries an assertion whose "
+               "failure kills the run; the failure is recorded and the run is "
+               "carried to the totals block so that every falsifier is scored "
+               "at a gate against the same denominators as the honest run.  "
+               "The count of anchor FAILURES is gated here, and the policy "
+               "function is calibrated the other way through the same call -- "
+               "it must report FATAL on a synthetic single failure -- so an "
+               "instrument that softened the assertions into warnings is "
+               "caught by the calibration and not only by the count",
+               ANCHOR_POLICY["failures"] == 0 and len(ANCHORS) > 0 and
+               policy_probe,
                {"anchors": len(ANCHORS),
                 "anchor_failures": ANCHOR_POLICY["failures"],
+                "policy_reports_fatal_on_one_failure": policy_probe,
                 "fatal": ANCHOR_POLICY["fatal"]})
     report("G38", g38, f"{len(ANCHORS)} anchors, {ANCHOR_POLICY['failures']} "
                        f"failures")
@@ -3579,6 +5036,54 @@ def run_unit(src: str) -> dict:
              "R2-LCB's F-10(d) measured and the only reading under which the "
              "stated determinant and spectrum are correct.",
              {"record_datum_space": "F_p^6", "determinant": 8})
+    disclose("X07", "FORCED CLAUSES, DISCLOSED AND NOT CONJOINED (RUNBOOK 14 "
+             "addendum, v13 #208).  (a) The census table's 'rows admitting an "
+             "injective candidate' column is the ORDER CRITERION restricted to "
+             "the declared cells -- a coverage check on the census, not an "
+             "independent source -- and it is forced twice over: no census row "
+             "has p^6 <= |G_C|, and v_p(|G_C|) <= 1 at every declared prime, so "
+             "every additive candidate at the native arena has image of order "
+             "at most p and injectivity fails on cardinality alone.  (b) The "
+             "module table's two structural columns are analytically forced: "
+             "(I - rho_V) kills the all-ones vector because rho_V is a "
+             "permutation matrix, and E never does because E is invertible; "
+             "the family-wide counts are reported as the reach of that "
+             "algebra, not as a contingent measurement.  (c) The two declared "
+             "extensions X-NOSQUARE and X-FLATFIX cannot pass off the zero "
+             "record: E_tilde - I is invertible and the fixed-label count is "
+             "1 + 7*#{k : r_k = 0}.  (d) The matrix-power and polynomial "
+             "writings of the criterion are ONE condition in two encodings.  "
+             "None of these is a must-pass conjunct of the verdict gate.",
+             {"census_rows_with_p6_at_most_the_group_order": card_admits,
+              "v_p_of_the_completion_group_order": vp_gc,
+              "family_wide_pairs_where_E_kills_the_all_ones": ek_zero_pairs})
+    disclose("X08", "THE FOUND HALF'S SCOPE.  The precheck's survivors are "
+             "measured to be exactly the identifications with no stated "
+             "motivation: the S_3-equivariant identifications and HA's own "
+             "sym_index ordering are STILLBORN at every declared prime, in "
+             "both directions, so the FOUND half of the verdict is true of the "
+             "arbitrary relabellings of the six metric slots and false of "
+             "every identification anybody has argued for.  Restricted to that "
+             "motivated sub-family this instrument's own pre-registered "
+             "outcome is RSQ-NO-COMPATIBLE-SQUARE, and both readings ship.",
+             {"motivated_cells": mot_cells,
+              "motivated_precheck_survivors": mot_surv,
+              "generic_cells": generic_cells,
+              "verdict_at_the_motivated_sub_family": verdict_motivated})
+    disclose("X09", "SCOPES OF THE CONTROL MEASUREMENTS.  The homomorphism "
+             "checks of the in-arena control and of BREAK-HOM run over the "
+             "declared grid {0,1}^6 x {0,1}^6 = 4,096 pairs, where coordinate "
+             "sums never exceed 2 and modular wrap-around is not exercised; "
+             "the master equation is verified on the generating set and on a "
+             "declared sample of records, and is equivalent to the square -- "
+             "which is verified at every record cell -- given that alpha is a "
+             "homomorphism.  The sufficiency census verifies the square at a "
+             "declared sample of records per pattern, exhaustively at the one "
+             "distinguished pattern.  BREAK-HOM is built at the NATIVE 8-label "
+             "arena with a rank-1 exponent, not at the grown arena.",
+             {"homomorphism_grid": ctrl.get("homomorphism_grid"),
+              "master_equation_sample": ctrl.get("master_equation_sample"),
+              "sufficiency_sample_per_pattern": len(suff_sample)})
     disclose("X02", "Route A and route B are genuinely different computations "
              "over SHARED data: both read the same measured subgroup set and "
              "the same encoding matrix.  Route A decides by Gaussian "
@@ -3603,13 +5108,22 @@ def run_unit(src: str) -> dict:
              {"build_primes": carrier_primes(),
               "declared_primes": sweep_primes()})
     disclose("X05", "The in-arena FOUND control is a control, not a bridge: "
-             "its encoding is the SYNTHETIC I - rho, not HA's readout.  What "
-             "it establishes is that the machinery returns FOUND, with a "
-             "witness verified out of sample, at the same arena and prime at "
-             "which HA's own encoding returns EMPTY.  It does not satisfy the "
-             "module clause, which the permutation-module obstruction kills "
-             "for a different and universal reason.",
-             {"arena_labels": n_star, "prime": pc})
+             "its encoding is the SYNTHETIC I - rho, not HA's readout, and no "
+             "record, metric, chart or readout of the deformation side enters "
+             "it.  What it establishes is exactly one thing -- that EMPTY is "
+             "not caused by the arena, the prime or the instrument, because "
+             "the same arena and the same prime return FOUND for a different "
+             "encoding.  It does not establish that bridges exist in-family at "
+             "scale, and it does not satisfy the module clause, which the "
+             "permutation-module obstruction kills for a different and "
+             "universal reason.  Its square is an algebraic identity in the "
+             "record once the two measured premises hold (the wing symmetry "
+             "normalises the generators with the declared exponents, and they "
+             "commute), and it is reported at that strength.",
+             {"arena_labels": n_star, "prime": pc,
+              "rung_earned": "EMPTY is not an arena, prime or instrument "
+                             "artefact",
+              "rung_not_earned": "bridges in-family at scale"})
     disclose("X06", "The set-level relaxation is NOT decided here.  Dropping "
              "S1b (additivity) removes the order criterion's derivation, and "
              "the precheck's fixed-point argument is then the only arena-free "
@@ -3627,7 +5141,8 @@ def run_unit(src: str) -> dict:
     ext = sum(1 for a in ANCHORS if not a["source"].startswith("this file"))
     slf = len(ANCHORS) - ext
     say(f"  anchors                  {len(ANCHORS):6d}  "
-        f"({ext} EXTERNAL, {slf} SELF)")
+        f"({ext} COMMITTED-NUMBER anchors against other units' receipts and "
+        f"papers, {slf} ARTIFACT-HASH pins of other units' files)")
     say(f"  gates                    {len(GATES):6d}")
     say(f"  must-pass gates          {len(mustp):6d}")
     say(f"  must-pass failures       {len(failed):6d}  {failed}")

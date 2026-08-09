@@ -9692,3 +9692,53 @@ identification data; (iv) the intensive-invariant requirement
 relationalism — the census frame itself is a declaration.
 RSQ repair continuation still in flight; v13 closes at its
 terminal + the synthesis note per the #315 charter.
+
+## 2026-08-09 — RSQ REPAIR DELIVERED, COMMITTED AS-IS (v13 LEDGER #318)
+Repair continuation delivered; all ten orders R-RSQ-1..10
+executed; committed exactly as delivered BEFORE adjudicator
+verification.  Hashes: paper 07bea42728a2, code 8c7705f55fa6,
+output a5266012ebd3, receipt 85f3cf809544.  **THE INVENTORY
+VERDICT: the predecessor's delivery was NOT GREEN —
+mutant_survivors: 1 (wing-lax, exit −9): its own R-RSQ-8 fix
+(removing sys.exit from anchor() so mutants reach totals)
+exposed an unbounded orbit walk in control_blocks under a
+non-permutation growth_sigma → SIGKILL.  Fixed with a blind
+guard; wing-lax now dies at 14 gates.  SIX further
+predecessor defects found+fixed**: no EMPTY-qualifier flip
+mutant; source 3 immovable by any mutant (theorem-floor
+added — src3→1 flips the verdict); theorem-vs-criterion
+independence was PROSE (now a namespace probe: the 2,880-
+witness sweep recomputed with both criterion writings
+unbound, + theorem-alias — this is what discharges R3-F1);
+**derive_verdict fed FOUR TYPED BOOLEANS (#24) — the
+motivated sub-family's own census never run; now computed
+(0 of 84), two-way calibrated, every argument measured**; the
+ordered 172,800-row/60-prime corroboration absent (added:
+primes 5..293 sieved in-unit, 0 hits, wide-drop falsifier);
+G37's every-helper-probed overstated (7 probes added).  THE
+VERDICT SPLIT DELIVERED: **EMPTY half
+UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-5** (profile theorem
+in-unit: 2 profiles 2160/2160, row-0 = e_k 720/720, |det|=8
+720/720, 2,880 integer witnesses w/ gcds {1,2} admitting no
+prime ≥5; forbidden-profile control returns [7]; excluded
+primes folded) / **FOUND half
+FOUND-ONLY-AT-UNMOTIVATED-IDENTIFICATIONS** (motivated
+census: 6 cells / 42 rows / 0 survivors at ALL 7 primes;
+generic survivors 4,420; derive_verdict at the motivated
+family = RSQ-NO-COMPATIBLE-SQUARE) — both halves fail on the
+qualifier alone (ident-flip, emptiness-flip).  Master
+equation verified 6/6 generators, 71/71 records; module
+independence 35/35; sufficiency ALL 64 diagonal patterns →
+iff at measured scope (p≡1 mod 3 caveat); held-out language
+ZERO occurrences; spectral bequest VERIFIED-BEFORE-STATED
+(eigenvalue 1 at 112/112 rows, multiplicity d).  Counts: 48
+gates all must-pass 48/48, 76 mutants 0 survivors 0
+tracebacks, 26 anchors, 9 disclosures, 34/34 helper probes.
+Worker's independent no-import recomputation: zero
+discrepancies.  Two plain-delivery runs byte-identical
+(worker-side); CLI verified in-code: plain run WRITES,
+--falsification-selftest does NOT (WRITE_ARTIFACTS =
+DELIVERY_RUN and not SELFTEST_ONLY) — the brief's TOP-pattern
+assumption corrected by the worker, confirmed by me at code
+line 345 (the #238 discipline).  Adjudicator verification
+next: plain-run byte-identity + full selftest.
