@@ -9245,3 +9245,16 @@ boundary rows — invisible on the nerve, wrong on the
 quotient; moved quotient b₁ 24→25; disclosed).  11
 deviations.  md5 output 46c58627 / receipt 26359faa.
 Adjudicator verification next.
+
+## 2026-08-08 — TOP VERIFIED BYTE-IDENTICAL; PROTOCOL FROZEN; PANEL
+## DISPATCHED (v13 LEDGER #302)
+Adjudicator verification PASSED (inline selftest exit 0;
+output 46c58627 / receipt 26359faa regenerated
+byte-identically; three identical runs).
+note-top-hostile-protocol.md FROZEN (K1 the complex choice /
+K2 b₁-is-the-read-times / K3 the manifold verdict's naming /
+K4 the dissolved exclusivity + the never-at-5-6
+theorem-or-coincidence / K5 instrument incl. the OR-vs-XOR
+reconstruction).  Three-lens panel (Opus 5) dispatched
+immediately after — running beside the resumed RSQ
+construction.
