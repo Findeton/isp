@@ -81,6 +81,22 @@ ledger opens at its founding pin after v13 closes.
   symmetry-tower limit at four wings (paper-08).  Each a full cycle;
   BLOCKED verdicts first-class.
 
+- **R6b′ — THE RENEWAL-GRAIN TRANSPORT** *(added 2026-08-09 by user
+  order, v14 #42/#43; the scout-informed successor to R6b)*.  The
+  scout found the four-times-missing stratum EXISTS at renewal grain:
+  a TERMINAL v11 artifact (U1b) carries the exhaustive positional
+  census inside inter-renewal intervals, and v10 paper 31 carries the
+  exact six-state transition chain with a named renewal state.  R6b′
+  pins six deep-corpus rows and asks THE TRANSPORT QUESTION: can the
+  renewal-grain positional law be carried to HA's spatial interval
+  arena by a MOTIVATED identification — and does the derived kernel
+  collapse the R6a split fiber (value or distribution)?  First-class
+  outcomes: KERNEL-DERIVED / TRANSPORT-UNMOTIVATED /
+  KERNEL-DEFECTIVE (the delivery-free renewal chain terminates a.s. —
+  the scout's derivation, verified in-unit).  The extremal lead is
+  tested against the frozen D12 standard; the cover lead is recorded
+  DISSOLVED (the deep arenas are non-periodic).  paper-09.
+
 Rungs run as full cycles (pin → construct → commit-as-is → verify →
 protocol freeze → three-lens panel → adjudicate → repair → terminal).
 A blocked rung halts and reports; rungs are not skipped.

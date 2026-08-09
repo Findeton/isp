@@ -1286,3 +1286,37 @@ extremal + cover leads re-checked at the deeper rows) — and
 protocol → panel → adjudicate → repair → terminal).  The
 conditional-order precedent: v13 #228.  Paper number
 assigned at pin time.
+
+## 2026-08-09 — THE SCOUT'S REPORT + R6b′ PIN FROZEN (v14 LEDGER #43)
+THE SCOUT REPORTED (read-only confirmed; ranked six rows):
+**THE MISSING STRATUM EXISTS — R6a/CR-B's "records carry no
+positions" is ARENA-RELATIVE, not corpus-wide.**  (1) v11 U1b
+(TERMINAL #20–#21) carries THE POSITIONAL CENSUS: exhaustive
+intervening-pattern enumeration inside inter-renewal intervals
+w/ exact leaf counts (1024/512/512/1024/512 at length 4; the
+leg-2 profile differs — position-in-chain dependent).  (2) v10
+paper 31 (TERMINAL #349) carries THE TRANSITION MATRIX: the
+exact 6×6 transfer, λ=2, the completed stochastic q′, the
+NAMED renewal state, root=renewal.  (3) The inter-renewal law
+is nowhere stated but DERIVABLE — and DEFECTIVE at
+delivery-free scope (the renewal chain terminates a.s.;
+paper 31's own transport-scope caveat).  (4) The continuous
+positional layer (D34b exponential clocks) is DECLARED w/ the
+corpus's own chosen-not-derived disclaimers.  (5) Geometry-
+update absent at EVERY depth (CR-A confirmed against the deep
+trees; record GROWTH exists w/ paper 20's covariance no-go).
+(6) THE EXTREMAL LEAD has a hostile precedent — D12's frozen
+audit killed the supplied-functional family; max-det must
+clear the record-intrinsic bar.  (7) THE COVER LEAD DISSOLVES
+(deep arenas non-periodic).  (8) v12 arena-free — not a
+source.  (9) Compliance trap flagged: u1c NOT CITABLE.
+**note-r6bprime-transport-pin.md (`17111fd19022`) FROZEN per the
+#42 standing order — paper-09**: the R0 supplement (six rows
+S1–S6 hash-pinned w/ pedigrees; named exclusions binding);
+THE TRANSPORT QUESTION (a motivated identification carrying
+the renewal-grain positional law to the spatial interval
+arena; does the derived kernel collapse the R6a split fiber —
+VALUE or DISTRIBUTION); the defective-renewal finding
+first-class; the R6a audit re-run at the enriched type; the
+extremal lead vs the S6 bar; the cover lead recorded
+dissolved.  Construction dispatched.
