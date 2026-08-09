@@ -9742,3 +9742,24 @@ DELIVERY_RUN and not SELFTEST_ONLY) — the brief's TOP-pattern
 assumption corrected by the worker, confirmed by me at code
 line 345 (the #238 discipline).  Adjudicator verification
 next: plain-run byte-identity + full selftest.
+
+## 2026-08-09 — RSQ TERMINAL (v13 LEDGER #319)
+Adjudicator verification CLEAN, both modes (CLI verified
+in-code first per #238): plain delivery run exit 0 with
+output+receipt BYTE-IDENTICAL to the delivered artifacts;
+full falsification selftest exit 0 — 76/76 mutants dead
+(survivors: []), zero never-falsified must-pass gates.
+Paper Status stamped TERMINAL; STATUS.md row written (✓adj);
+paper↔output verdict-triple consistency confirmed (head +
+both computed qualifier halves match the G35 gate line
+verbatim).  **RSQ IS TERMINAL #319 — the era's 13th and last
+unit.**  The unit's bequest to v14-R1, final form: the master
+equation with the three walls as readings; the wall
+UNIVERSAL-BY-THEOREM-AT-EVERY-PRIME-GE-5 with integer
+witnesses (Diophantine character: gcds {1,2}); the iff
+criterion at measured scope; the motivated-family
+NO-COMPATIBLE-SQUARE; THE SPECTRAL CARRY (eigenvalue 1 at
+112/112 — the obstruction dimension-independent in proof
+form); the stillborn-precheck architecture as engraved
+doctrine.  The v13 terminal synthesis next; then the tree
+FREEZES per the #315 charter.

@@ -1,8 +1,10 @@
 # RSQ — THE RE-POSED SQUARE AT THREE WINGS
 
-**Status:** `GREEN-UNREVIEWED-REPAIRED`, 2026-08-09 — panel #308–#312,
-adjudicated #314 ACCEPT-WITH-FIXES; repairs R-RSQ-1…R-RSQ-10 applied and
-delivered byte-identical.  **Pin:**
+**Status:** `TERMINAL` — panel #308/#309/#312 (3× ACCEPT-WITH-FIXES),
+adjudicated #314; repairs R-RSQ-1…R-RSQ-10 delivered #318 and
+adjudicator-verified (independent plain-run byte-identity + full
+falsification selftest, 76/76 mutants dead, zero never-falsified
+gates); v13 ledger #319, 2026-08-09.  **Pin:**
 `v13/note-rsq-reposed-square-pin.md` (STRICT, sha256 `bc79fb6111ff…`, commit
 `d9e3a66`).  **Code:** `v13/code/rsq_reposed_square_exact.py`, with
 `_output.txt` and `_receipt.json`.  **Lean:** none.
