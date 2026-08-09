@@ -1,8 +1,9 @@
 # TOP — topology on the ladder
 
-**Status:** `GREEN-REPAIRED` — panel #307/#310/#311, adjudicated
-ACCEPT-WITH-FIXES; repair R-TOP-1 … R-TOP-12 executed 2026-08-09, delivery
-reruns byte-identical, awaiting adjudicator verification.
+**Status:** `TERMINAL` — panel #307/#310/#311 (3× ACCEPT-WITH-FIXES),
+adjudicated #313; repair R-TOP-1 … R-TOP-12 delivered #316 and
+adjudicator-verified (independent full falsification selftest, 44/44
+mutants, artifacts byte-identical); v13 ledger #317, 2026-08-09.
 
 ## What Shape the Atlas Is, and Which Rung the Fano Plane Sits On
 

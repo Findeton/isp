@@ -9673,3 +9673,22 @@ Engraved-rule sweep passed (incl. both 2026-08-09 addenda;
 #314 precheck doctrine vacuously satisfied — census
 exhaustive, no precheck filter).  Adjudicator verification
 next: CLI-checked independent re-run.
+
+## 2026-08-09 — TOP TERMINAL (v13 LEDGER #317)
+Adjudicator verification CLEAN: independent full falsification
+selftest via the unit CLI (checked first per #238) — 196
+anchors, 41 gates, 0 must-pass failures, 44/44 mutants exit 1
+each killing its named gates, KILL-JSON empty, exit 0,
+artifacts BYTE-IDENTICAL after the run.  Paper Status stamped
+TERMINAL; STATUS.md row written (✓adj).  **TOP IS TERMINAL
+#317.**  The unit's bequest to v14-R1, final form: (i) K₃₆ ⟹
+contractible nerve — no simplicial topology at this scale, the
+non-complete-overlap requirement stands; (ii) TRIVIAL H₁ by
+the ordered measurement (b₁ 140→0 under coherent cross-cell
+digons; the temporal reading dissolved — the fifth
+beautiful-story death of the era); (iii) b₂/N_coh carry the
+identification data; (iv) the intensive-invariant requirement
+(the dimension estimator provably extensive); (v) P*
+relationalism — the census frame itself is a declaration.
+RSQ repair continuation still in flight; v13 closes at its
+terminal + the synthesis note per the #315 charter.
