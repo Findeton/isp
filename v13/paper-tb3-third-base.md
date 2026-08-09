@@ -1,5 +1,7 @@
 # TB3 — the third base
 
+**Status:** `TERMINAL (v13 TB3)` — panel #285–#290, adjudicated #291 ACCEPT-WITH-MAJOR-REPAIRS, repair T-1..T-8 (continuation after outage) verified byte-identical and conferred terminal at v13 LOG #299.
+
 ## Three Wings, and What the Two-Wing Laws Were Laws Of
 
 **Unit:** TB3 (the third base), v13.
