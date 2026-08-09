@@ -372,3 +372,28 @@ selftest exit 0, 14/14 mutants dead (named gates, artifacts
 unchanged, no tracebacks).  CLI contract confirmed in-code
 before invocation.  R2 stands GREEN-VERIFIED-UNREVIEWED.
 Hostile protocol next.
+
+## 2026-08-09 — R2 HOSTILE PROTOCOL FROZEN (v14 LEDGER #14)
+note-r2-hostile-protocol.md (`3768846aebe9`) frozen.  Kill-shots:
+K1 THE CIRCULANT QUESTION (is the 14-of-109 census derivable
+from the grid declaration without running the atlas — the
+overlap graph a circulant w/ computable completeness threshold
++ cycle rank; if yes the census clauses reclassify per #208;
+the locality survives, its epistemic label changes);
+**K2 THE MOTIVATION QUESTION (the RSQ precedent applied): is
+any of the 14 locality rules expressible from the substrate's
+OWN inherited structure without new choices, or is locality
+here an artifact of instrument design — LOCALITY-DECLARABLE
+(a statement about atlas space) vs LOCALITY-FOUND (a statement
+about the substrate)** — the unit's deepest question;
+K3 the standards + the successor requirement for an EARNED
+consistent dimension (reachable in this grid class or provably
+not); K4 scope (the transport decision T7+T4 vs the pin's
+singular; Σ-lattice scoping; REFUSES; B₂ doubling; the
+coherence corollary's forced status); K5 instrument (42 gates
+vs 14 mutants coverage audit; the R1 injection classes
+re-run against THIS unit — the #10 engravings under attack;
+the thin 5-anchor surface vs JSON-path reads; paper↔receipt;
+verdict rebuild w/ all nine segments flippable).  Three-lens
+panel dispatched (Opus ×3), running ALONGSIDE the R1 repair
+continuation (its files off-limits to reviewers).
