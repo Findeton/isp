@@ -733,3 +733,32 @@ scaling question on the substrate's OWN refinement — the R1
 lesson binding).  R6a pin next; construction launches in
 parallel with R3 (disjoint files; paper-04 assigned at pin
 per the numbering convention).
+
+## 2026-08-09 — R6a PIN FROZEN: THE REFINEMENT GRAMMAR (v14 LEDGER #25)
+note-r6a-refinement-grammar-pin.md (`a22582f67168`) frozen;
+paper-04 assigned.  THE QUESTION: does the record grammar AS
+PINNED (I7 receipt 542b8735daf0 + HA paper f286ba10d2d9 +
+HA code d44cb72f8ee9; reaching outside FORBIDDEN —
+BLOCKED-AT-GRAMMAR-SOURCE first-class) admit a MOTIVATED
+interval-subdivision move?  The semantic anchor: n_ℓ counts
+division events in the interval ⟹ COUNT ADDITIVITY IS FORCED
+(events in whole = events in parts — semantics, not choice);
+what is measured: the split fiber, transverse links, the new
+front value, arena-class preservation.  Registered: the move
+census (hyperplane insertion / dyadic / single-interval —
+REFUSED-not-skipped where the class breaks); the forced part
+verified (additivity + metric-restriction commutation); THE
+CHOICE INVENTORY (each freedom classed forced/stabilizer-
+fixed/genuinely-free w/ exact fiber counts — the RSQ-standard
+motivation qualifier COMPUTED from it); the H_a[N]
+commutation census (refine-then-advance vs advance-then-
+refine, both drag architectures — a nonzero defect is a
+MEASURED OBJECT, v12 precedent); the iteration probe (does a
+FAMILY exist — R6b's prerequisite).  Verdicts: MOTIVATED-
+REFINEMENT-EXISTS / NO-MOTIVATED-SPLIT (the strongest
+possible negative in the continuum line: unposable from
+inside the grammar) / BLOCKED-AT-GRAMMAR-SOURCE; per-class
+table composition.  The R1 copying move = the audit's
+negative control (the audit must be able to FAIL a move).
+Construction dispatched IN PARALLEL with R3 (disjoint
+files).
