@@ -1,7 +1,10 @@
 # R1 — The continuum rung
 
-**Status:** GREEN-REPAIRED 2026-08-09 (v14 ledger #2 pin; delivered against
-`v14/note-r1-continuum-pin.md`, sha256-12 `27c9f1144ffa`).
+**Status:** `TERMINAL` — panel #7/#8/#9 (3× ACCEPT-WITH-FIXES),
+adjudicated #10; repair R-R1-1…R-R1-12 delivered #15 and
+adjudicator-verified (plain-run byte-identical; falsification selftest
+names its anchor and writes nothing); v14 ledger #16, 2026-08-09.
+Pin: `v14/note-r1-continuum-pin.md`, sha256-12 `27c9f1144ffa`.
 
 **Artifacts:** `v14/code/r1_continuum_exact.py`,
 `v14/code/r1_continuum_output.txt`, `v14/code/r1_continuum_receipt.json`.

@@ -449,3 +449,18 @@ A/B/B′/C verified in-unit, §14 the scoping note.  27/7 the
 one paper number derived-in-text from printed closed forms
 (declared).  Adjudicator verification next; R2 panel
 running in parallel.
+
+## 2026-08-09 — R1 TERMINAL (v14 LEDGER #16)
+Adjudicator verification CLEAN: plain run exit 0,
+output+receipt BYTE-IDENTICAL; falsification selftest exit 0
+(names A-R0-I5, writes nothing).  Paper Status stamped
+TERMINAL; STATUS.md v14 section opened w/ the R0/R1/R2 rows.
+**R1 / PAPER-01 IS TERMINAL #16 — v14's first terminal unit.**
+Final form: R1-STABILIZES-BY-DISJOINT-COPYING (11 computed
+segments); the copy-forcing theorem w/ the m=1 base case as
+the true content; the atlas verdict-determining (six-
+declaration sweep in-unit); the gateway NONE-EARNED w/ the
+successor criterion + recipe; the continuum question
+untouched and honestly posed onward.  R2 panel still in
+flight — its adjudication decides what LOCALITY-AT-14-OF-109
+may claim.
