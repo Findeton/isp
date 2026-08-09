@@ -1134,3 +1134,11 @@ kernel) all name TRANSITION-LAYER objects — the continuum
 question's shopping list is one item: PIN THE TRANSITION
 LAYER (R6b′'s case strengthens).**  Adjudicator verification
 next.
+
+## 2026-08-09 — CR-B ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #38)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
+42/42 mutants dead.  CR-B stands GREEN-VERIFIED-UNREVIEWED.
+Panel dispatch QUEUED behind the R3 panel (concurrency
+discipline: eight agents in flight; the CR panels fire as
+slots free — deliveries hold their verified state
+indefinitely).
