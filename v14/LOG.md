@@ -1060,3 +1060,8 @@ adjudicator language.  R6b RE-SCOPED not retired → R6b′ the
 record-type discriminator; THREE REOPENING LEADS registered
 (record-type row / extremal principle / universal-cover) —
 charter decisions the USER'S.**  Repair worker next.
+
+## 2026-08-09 — R3 ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #35)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
+60/60 mutants dead (verdict-class mutants confirmed dying by
+name).  R3 stands GREEN-VERIFIED-UNREVIEWED.  Protocol next.
