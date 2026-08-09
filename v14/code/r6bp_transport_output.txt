@@ -1,0 +1,200 @@
+==============================================================================
+v14 R6b' -- THE RENEWAL-GRAIN TRANSPORT (paper-09)
+==============================================================================
+
+SCOPE, DECLARED BEFORE ANY MEASUREMENT:
+  * S1's completed chain and S4's renewal theorem are stated at
+    TWO-ACTOR DELIVERY-FREE SCOPE.
+  * S2's intervening-pattern census is stated at TRANSPORT SCOPE,
+    and its interval lengths are ENSEMBLE DATA (declared renewal
+    positions), not samples of any derived kernel.
+  * S5's continuous positional layer carries its own
+    chosen-not-derived disclaimer and enters only as a labelled
+    comparator.
+
+------------------------------------------------------------------------------
+1.  ANCHORS (verbatim-text evaluated first; then file-bytes; then
+    path-value)
+------------------------------------------------------------------------------
+  [PASS] G-R6A-REPAIR-DELTA: R6a is on the TERMINAL track with its repair IN FLIGHT: this unit consumes the DELIVERED-COMMITTED receipt bytes the pin names (022c3f488a93), and discloses the working tree's in-flight bytes (94adec72ab11).  All 24 path-values consumed from that receipt are compared across the two: 0 moved.  Carried status: DELIVERED-COMMITTED (LOG #26) / ADJUDICATOR-VERIFIED (#27) / ADJUDICATED AWF-UNANIMOUS, THE VERDICT HOLDS (#34), repair under orders R-R6A-1..10 pending its own verification
+  file-bytes 16 | path-value 34 | verbatim-text 24 | disclosures 1 | total 75 | failures 0
+
+  NAMED EXCLUSIONS (binding, status printed):
+    - v11/note-u1c-depth15-two-sided.md  --  GREEN-UNREVIEWED, NOT CITABLE per STATUS -- registered lead only, status printed
+    - v10/THE-THEORY-SO-FAR.md  --  index only, never primary
+    - v12 Gamma objects  --  arena-free -- no interval/position/count content
+    - v10/note-d70-horizon-limit-result.md  --  round-1-repaired, NOT terminal -- excluded from this unit
+
+------------------------------------------------------------------------------
+2.  S1 -- THE CHAIN, BY TWO ROUTES INSIDE S1's OWN ARTIFACTS
+------------------------------------------------------------------------------
+  [PASS] G-S1-TWO-ROUTES: the 6x6 transfer and the harmonic vector parsed independently from paper 31's fenced block (route P) and from d43b's T_REF/f source objects (route C) agree entry by entry; T rows = 6; f = ['4/3', '4/3', '1', '7/3', '1', '1']
+  [PASS] G-S1-ROUTE-PROVENANCE: the two routes are genuinely two: route P reads v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md (7ac66f3fe74d), route C reads v10/code/d43b_state_chain_exact.py (5f91f0190b4c) -- distinct artifacts, distinct formats (a prose fenced block and a Python source object).  A comparator routed through the component under test would verify nothing (#219)
+  [PASS] G-S1-HARMONIC: T f = 2 f exactly with f > 0; row sums = ['2', '2', '2', '5/2', '2', '2'] (the conflict state's 5/2)
+  [PASS] G-KERNEL-CONFLICT-ROW: q'(i->j) = T_ij f_j / (2 f_i): all six rows sum to 1 = True; conflict row = {0: '1/7', 3: '3/4', 5: '3/28'}
+    q'(0 -> .) = {0: '3/4', 1: '1/4'}
+    q'(1 -> .) = {1: '3/4', 2: '3/64', 3: '7/64', 4: '3/32'}
+    q'(2 -> .) = {2: '3/4', 5: '1/4'}
+    q'(3 -> .) = {0: '1/7', 3: '3/4', 5: '3/28'}
+    q'(4 -> .) = {4: '3/4', 5: '1/4'}
+    q'(5 -> .) = {2: '1/8', 4: '1/8', 5: '3/4'}
+
+------------------------------------------------------------------------------
+3.  THE DEFECTIVE-RENEWAL FINDING  [delivery-free scope]
+------------------------------------------------------------------------------
+  [PASS] G-CLOSED-CLASS: the completed chain q' has exactly one closed communicating class [[2, 4, 5]] and transient states [0, 1, 3]; the renewal state 0 lies in the TRANSIENT part and 3 -> 0 is the renewal loop
+  [PASS] G-RENEWAL-DEFECTIVE: P(return to the renewal state | at it) = 13/16 < 1; defect = 3/16 (the mass absorbed into the closed class [2, 4, 5]); hitting probabilities h = {1: '1/4', 2: '0', 3: '4/7', 4: '0', 5: '0'}
+  [PASS] G-FIRST-RETURN-LAW: the inter-renewal (first-return) law computed two ways -- the closed form f(1)=3/4, f(2)=0, f(n)=(n-2)(3/4)^(n-3)/256 for n>=3, and an exact taboo iteration of q' to n=400 -- agree termwise at all 400 terms = True; SUPPORT HOLE AT 2: f(2) = 0 EXACTLY; residual tail mass beyond n=400 is < 1e-40
+  [PASS] G-DEFECTIVE-MEAN: the defective mean E[T.1(T<inf)] = 21/16 in closed form, reproduced by the truncated sum to n=400 to better than 1e-40; the mean inter-renewal length CONDITIONAL ON RETURN is 21/13
+  [PASS] G-AS-TERMINATION: the renewal process is DEFECTIVE at delivery-free scope: the number of renewals after any renewal is geometric with success probability 13/16, so it is almost surely FINITE and the renewal chain TERMINATES a.s.; expected total visits to the renewal state = 16/3; defective mean E[T.1(T<inf)] = 21/16; mean conditional on return = 21/13
+  [PASS] G-DELIVERY-FREE-SCOPE: S4 states the renewal theorem verbatim as "every pair arbitration is a renewal to the root state [THEOREM at two-actor delivery-free scope]" (V-S4-RENEWAL); every headline of this unit therefore carries the DELIVERY-FREE scope qualifier
+    return probability 13/16; defect 3/16; closed class [2, 4, 5]; TERMINATES a.s.
+    first-return law: f(1)=3/4, f(2)=0, f(3)=1/256, f(4)=3/512, f(5)=27/4096
+
+------------------------------------------------------------------------------
+4.  S2 -- THE POSITIONAL CENSUS  [transport scope; ENSEMBLE DATA]
+------------------------------------------------------------------------------
+  [PASS] G-S2-PROFILES: the two length-4 intervening-pattern profiles read from S2's own printed census: leg-1 totals 3584 leaves over 5 patterns; leg-2 totals 73728 leaves over 5 patterns; same pattern set = True
+  [PASS] G-S2-PATTERN-POSITION-MAP: each of S2's five length-4 patterns carries EXACTLY ONE non-proposal interior event (S2: "each with exactly two proposals plus one delivery or one idle"), so the pattern class determines an interior POSITION in {1,2,3}: {'dppr': 1, 'nppr': 1, 'pnpr': 2, 'ppdr': 3, 'ppnr': 3}
+  [PASS] G-POSITION-DEPENDENCE-AT-TRANSPORT-SCOPE: AT TRANSPORT SCOPE the induced interior-position law is CHAIN-POSITION DEPENDENT: leg 1 gives {1: '3/7', 2: '1/7', 3: '3/7'}, leg 2 gives {1: '4/9', 2: '1/9', 3: '4/9'}, total variation 2/63 > 0 -- so an identification that must SUPPLY a chain position is moved by that supply
+  [PASS] G-POSITION-INDEPENDENCE-AT-DELIVERY-FREE-SCOPE: AT DELIVERY-FREE SCOPE (S1/S4's own scope: the delivery-bearing patterns are deleted) the induced interior-position law is EXACTLY UNIFORM at BOTH censused chain positions -- leg 1 {1: '1/3', 2: '1/3', 3: '1/3'}, leg 2 {1: '1/3', 2: '1/3', 3: '1/3'}, total variation 0; the entire position dependence is carried by the delivery patterns, which lie OUTSIDE the scope at which the kernel is derived
+  [PASS] G-SCOPE-SEAM: THE SCOPE SEAM, NAMED: S1's chain and S4's renewal theorem are DELIVERY-FREE (V-S4-RENEWAL); S2's census is TRANSPORT SCOPE (V-S2-SCOPE: "Transport scope (`d42b1`) only"); and S1's own artifact declares the change is not innocuous (V-S1-SCOPE). The delivery-free restriction deletes 4/7 of S2's leg-1 mass and 2/3 of its leg-2 mass
+  [PASS] G-POSITIONAL-STRATUM-EMPTY-AT-3: at leg length 3 S2 censused exactly ONE intervening pattern ((p,p,r), 256 leaves, no delivery and no idle), so the pattern class distinguishes NO interior position: the positional stratum is EMPTY at length 3 and cannot separate the 2 splits of a count-3 interval
+    transport scope   : leg1 {1: '3/7', 2: '1/7', 3: '3/7'}  leg2 {1: '4/9', 2: '1/9', 3: '4/9'}  TV 2/63
+    delivery-free     : leg1 {1: '1/3', 2: '1/3', 3: '1/3'}  leg2 {1: '1/3', 2: '1/3', 3: '1/3'}  TV 0
+
+------------------------------------------------------------------------------
+5.  THE SPATIAL ARENA (I7 / R6a), REBUILT HERE FROM THE COUNTS
+------------------------------------------------------------------------------
+  [PASS] G-R6A-FIBER-REBUILD: R6a's split fibers REBUILT here from the count data alone by an independent construction (raw fiber = prod over intervals of (n-1); equivariant fiber = prod over links of (n_l - 1)) and compared against the anchored receipt values: raw agree 8-of-8 (['G-ANISO', 'G-ANISO2', 'G-CURVED', 'G-DIAG2', 'G-FLAT', 'G-OFFDIAG', 'G-OFFDIAG2', 'G-OFFNEG']), equivariant agree 5-of-5; DECLARED CAP: ['G-CURVOFF'] is inhomogeneous with no count-1 interval among its printed sites, so its fiber is not determined by the printed-site data and is NOT rebuilt.  The comparator is built from the counts, not routed through R6a's own fiber code -- and it reproduces the adjudication's mechanism statement, that the split's wall is the combinatorial multiplicity prod(n_l - 1)
+  [PASS] G-ARENA-BASELINE: the baseline arena row is I7's: sites 9, links 3, n_l(x) = "n_l(x) in Z_>0, the number of division events in the record interval between x and x+l"; this unit censuses 201 record intervals over 9 admissible records (7 homogeneous at all 9 sites, 2 inhomogeneous at the 2 printed sites -- declared cap), against an independently expressed expectation of 201; count values present = [1, 2, 3, 4, 5, 6, 9, 10, 12, 13]
+    count census: {1: 29, 2: 50, 3: 20, 4: 37, 5: 27, 6: 10, 9: 9, 10: 1, 12: 9, 13: 9}  (total 201)
+
+------------------------------------------------------------------------------
+6.  THE IDENTIFICATION CENSUS + THE CHOICE INVENTORY
+------------------------------------------------------------------------------
+  [PASS] G-IDENTIFICATION-CENSUS: 5 identification candidates expressible from the pinned rows; the motivation qualifier is COMPUTED from each choice inventory (MOTIVATED iff zero genuinely-free items) and is consistent with it = True; MOTIVATED 0-of-5; UNMOTIVATED 5-of-5
+  [PASS] G-TYPE-CENSUS: the type census, from S3's [POSIT] verbatim (V-S3-POSIT): a record interval's n_l counts DIVISION EVENTS; an inter-renewal leg contains EXACTLY ONE division event.  C1 (the pin's literal count-matching) therefore equates a division-event count with a grammar-event count, and C2 is the type-honest repair
+  [PASS] G-BRIDGES-READING: S3's bridges reading is admissible exactly at count 1, and 29 of the 201 censused intervals carry count 1 -- every one of them with split fiber 0.  The one type-honest reading of S3's own declaration reaches only intervals that cannot be split
+    C1-COUNT-MATCH-LENGTH: UNMOTIVATED  (forced 3 / stabilizer 1 / FREE 3  free = ['I-POSITION', 'I-SCOPE', 'I-BASIS'])
+    C2-COUNT-MATCH-LEGS: UNMOTIVATED  (forced 1 / stabilizer 0 / FREE 5  free = ['I-LENGTHS', 'I-HALVING', 'I-POSITION', 'I-SCOPE', 'I-BASIS'])
+    C3-THE-BRIDGES-READING: UNMOTIVATED  (forced 2 / stabilizer 0 / FREE 1  free = ['I-SCOPE'])
+    C4-ELEMENTARY-CLICK-REFINEMENT: UNMOTIVATED  (forced 1 / stabilizer 0 / FREE 3  free = ['I-CHAIN-LENGTH', 'I-BASIS', 'I-MIDCHAIN'])
+    C5-CONTINUOUS-PLACEMENT-COMPARATOR: UNMOTIVATED  (forced 0 / stabilizer 1 / FREE 1  free = ['I-WAITING-LAW'])
+
+------------------------------------------------------------------------------
+7.  THE FIBER-COLLAPSE MEASUREMENT (the decisive test)
+------------------------------------------------------------------------------
+  [PASS] G-COLLAPSE-IS-DISTRIBUTION-NOT-VALUE: the derived law does NOT collapse the fiber to a VALUE at either scope: at delivery-free scope the induced split law is uniform and has 3 maximisers [1, 2, 3]; at transport scope it has 2 maximisers [1, 3].  The collapse, where it happens, is IN DISTRIBUTION
+  [PASS] G-FIBER-COLLAPSE-COVERAGE: THE DECISIVE NUMBER: the derived kernel collapses the R6a split fiber -- in distribution, to the uniform law -- on 37 of the 201 censused record intervals (37 of the 122 carrying a non-trivial fiber). The remainder: 37 COLLAPSED-IN-DISTRIBUTION (count 4); 50 KERNEL-HOLE (count 2; f(2) = 0 exactly); 29 NO-SPLIT (count 1; R6a fiber 0); 20 STRATUM-EMPTY (count 3; S2 has one pattern class); 65 UNCENSUSED-BY-S2 (count >= 5)
+  [PASS] G-CRB-SIMPLEX: stated in CR-B's own coordinates: at count 4 CR-B measured a fiber of 3 and an invariant-measure simplex of dimension 2 under the pinned symmetry (and 1 under the flip); the derived kernel selects ONE point of that simplex, so the dimension goes 2 -> 0 at count 4 at delivery-free scope.  CR-B's head was "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW" and its MISSING tag names exactly the object this unit supplies
+  [PASS] G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD: exactly 1 of the record family -- ['G-DIAG2'] -- has every one of its splittable intervals at count 4 and every other interval at fiber 1, so on it the derived kernel supplies a COMPLETE law on R6a's entire split fiber: the uniform law on 19683 elements, and that fiber's raw and admissible-at-images sizes coincide (19683 = 19683).  It is the very law CR-B classed REFUTED-AS-FORCING for want of a declared support -- the support is now derived, not chosen
+  [PASS] G-S5-COMPARATOR-SEPARATION: the continuous comparator (S5, chosen-not-derived) places the interior positions as uniform order statistics, giving the binomial split law {1: '2/7', 2: '3/7', 3: '2/7'} at count 4 -- separated from the DERIVED delivery-free law {1: '1/3', 2: '1/3', 3: '1/3'} by total variation 2/21.  That number reproduces CR-B's own anchored tv_uniform_vs_binomial at count 4 ("2/21") computed by a different unit on a different route.  Two positional layers, one derived and one chosen, disagree
+  [PASS] G-S5-DISCLAIMER: wherever the continuous layer is touched this unit carries S5's own disclaimer verbatim: "the coefficients 1/4 are chosen, not derived" (V-S5-CHOSEN); no continuum claim is entered
+    classes: {'COLLAPSED-IN-DISTRIBUTION (count 4)': 37, 'KERNEL-HOLE (count 2; f(2) = 0 exactly)': 50, 'NO-SPLIT (count 1; R6a fiber 0)': 29, 'STRATUM-EMPTY (count 3; S2 has one pattern class)': 20, 'UNCENSUSED-BY-S2 (count >= 5)': 65}
+    COLLAPSED IN DISTRIBUTION on 37 of 201 intervals (37 of 122 with a non-trivial fiber)
+    CR-B simplex dim at count 4: 2 -> 0
+
+------------------------------------------------------------------------------
+8.  THE R6a AUDIT RE-RUN AT THE ENRICHED RECORD TYPE
+------------------------------------------------------------------------------
+  [PASS] G-ADDITIVITY-REVERIFIED: count additivity RE-VERIFIED UNCHANGED at the enriched type on this unit's own enumeration: 647 split constraints n = n1 + n2 over the censused intervals, 0 violations. R6a's own printed figure is anchored separately (972 checks / 0 violations, P-R6A-ADDITIVITY); the two enumerations are different objects and no ratio is formed between them
+  [PASS] G-METRIC-RESTRICTION-REVERIFIED: metric restriction RE-VERIFIED UNCHANGED: the readout q_ij e^i e^j = n_l(x) recovers every censused count from the rebuilt form, 67 of 67; R6a's own figure (324 of 324) is anchored separately
+  [PASS] G-TRANSVERSE-LINKS-UNFORCED: FREE-TRANSVERSE-LINKS RE-CLASSED: UNCHANGED, still class (iii) with an infinite fiber.  The derived kernel is indexed by an interval's COUNT; the 54 of 108 refined links that lie on no coarse interval carry no count, so the transported law has no index for them -- 0 of 54 forced.  The enrichment is count-indexed and cannot reach a countless link
+  [PASS] G-NEW-FRONTS-RECLASSED: NEW-FRONT-VALUES RE-CLASSED: from class (iii) with an INFINITE fiber to FORCED-RELATIVE-TO-THE-SPLIT with fiber 1.  The enriched type supplies the rule front(new site) = front(x) + n1 (the count of division events on the left half), which is a consequence of the same count semantics that forces additivity. It is INTEGRAL at 647 of 647 cells of THIS unit's grid, by construction
+  [PASS] G-FRONT-RULE-INTEGRAL: the contrast, stated without forming a ratio between different grids: R6a's dynamics-forced (count-weighted) front lift is NON-INTEGRAL at 30 of its 81 cells (anchored path-value); the transported rule is integral everywhere on this unit's grid.  The two grids are different objects.  The transported rule is a THIRD rule: it agrees with the count-weighted interpolation only where the record's counts are a coboundary, and R6a's gated theorem is that no record's counts are
+  [PASS] G-R6A-RECLASSIFICATION: THE-LIFT-PAIR RE-CLASSED: NOT collapsed -- and the freedom GROWS.  The transported front rule front(x) + n1 is neither of R6a's two declared lifts (which interpolate between the two endpoint front values); it coincides with them only under the coboundary condition R6a proved fails.  The enriched type therefore adds a third admissible rule to a fiber of 2 rather than selecting inside it. THE-SPLIT: class (iii) -> class (ii)-IN-DISTRIBUTION, and only at count 4 at delivery-free scope (37 of 201 intervals)
+    THE-SPLIT           iii -> ii-IN-DISTRIBUTION (37/201 intervals, delivery-free only)
+    FREE-TRANSVERSE     iii -> UNCHANGED (0 of 54 forced)
+    NEW-FRONT-VALUES    iii -> FORCED-RELATIVE-TO-THE-SPLIT
+    THE-LIFT-PAIR       iii -> UNCHANGED-AND-GROWN
+
+------------------------------------------------------------------------------
+9.  THE EXTREMAL LEAD vs THE S6 BAR
+------------------------------------------------------------------------------
+  [PASS] G-EXTREMAL-BAR: THE COUNTERMODEL, EXHIBITED: on the pinned arena's own count-4 interval, 4 record-intrinsic functionals -- all computed from the record alone, none supplied a base measure -- return 3 DIFFERENT selections: MAX-BALANCE -> [2]; MAX-DET -> [2]; MAX-LEFT-COUNT -> [3]; MAX-|q12| -> [1, 3].  Max-det does select uniquely ([2]), and that is exactly D12's disqualifier: a selector that "chooses a coefficient after its support, reference measure, modes, and constraints have been supplied" and "selects one member of a preselected toy family".  0 of 6 pinned deep rows declare a variational principle; S6 itself REFUTES the class (V-S6-MAXENT, V-S6-NONSEL).  VERDICT: DIES-AT-THE-BAR
+  [PASS] G-EXTREMAL-INTRINSIC: and the record-intrinsic test fails at a second, independent point: the arena's OWN declared readout is "q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0" -- the determinant enters at exponent ZERO, so the declared readout is DET-BLIND (I7's density_weight is 0, anchored).  Max-det optimises a functional the declared record does not read.  S6's companion: "the corpus has no record-intrinsic, field-redefinition-invariant complexity measure that selects one generator" (V-S6-INTRINSIC)
+  [PASS] G-EXTREMAL-NOT-RATIFIED: and the deep rows do not rescue it: the DERIVED delivery-free law assigns max-det's selection probability 1/3, not 1. The enriched type does not concentrate on the extremal split
+    functionals: MAX-BALANCE -> [2]; MAX-DET -> [2]; MAX-LEFT-COUNT -> [3]; MAX-|q12| -> [1, 3]
+    OUTCOME: DIES-AT-THE-BAR
+
+------------------------------------------------------------------------------
+10.  THE COVER LEAD: RECORDED DISSOLVED (one gate, no hunt)
+------------------------------------------------------------------------------
+  [PASS] G-COVER-DISSOLVED: R6a's cover lead is motivated iff a deeper row de-periodizes the declared arena or pins cover objects.  Of the 6 pinned deep rows, 0 pin a cover object of (Z_3)^2 and 0 de-periodize it: the deep arenas are ROOTED GENERATED OBJECTS, not periodic lattices -- S4 declares verbatim "Truncated completions are therefore depth-non-stationary: **rooted**" (V-COVER-ROOTED) and S1 declares "its state count grows with depth (17, 23, 29 at depths 4, 5, 6)" (V-COVER-GROWS).  A rooted, depth-non-stationary arena carries no deck group, so it supplies no cover object for a torus it never mentions.  RECORDED DISSOLVED; no hunt is run
+
+------------------------------------------------------------------------------
+11.  CONTROLS (the audit must be able to FAIL a move)
+------------------------------------------------------------------------------
+  [PASS] G-CONTROL-R1-COPY: all 3 negative controls FAIL the audit, by 3 distinct measured modes: NC1-R1-COPY=UNMOTIVATED; NC2-R6A-EXTERNAL=REFUSED-AT-SOURCE; NC3-COUNT-MISMATCH=FAILS-THE-CENSUS.  No named-excluded artifact is cited as a source ([]).  An audit that could not fail a move would not be an instrument
+    NC1-R1-COPY: UNMOTIVATED
+    NC2-R6A-EXTERNAL: REFUSED-AT-SOURCE
+    NC3-COUNT-MISMATCH: FAILS-THE-CENSUS
+
+------------------------------------------------------------------------------
+12.  THE VERDICT (built segment by segment from the measured values)
+------------------------------------------------------------------------------
+  [PASS] G-VERDICT-EQUALITY: the emitted verdict string is compared for COMPLETE EQUALITY against a comparator rebuilt segment by segment from the measured values by an independent expression path (no substring, prefix or containment test anywhere): equal = True; emitted length 1299, comparator length 1299
+
+    R6BP-KERNEL-DERIVED<IDENT=C1-COUNT-MATCH-LENGTH|LAW=FIRST-RETURN-f1-3/4-f2-0-fn-(n-2)(3/4)^(n-3)/256|COLLAPSE=DISTRIBUTION-UNIFORM-AT-COUNT-4|COVERAGE=37-OF-201-INTERVALS|CRB-SIMPLEX-DIM-2-TO-0|SCOPE=DELIVERY-FREE>
+    R6BP-TRANSPORT-UNMOTIVATED<CANDIDATES=5|MOTIVATED=0|FREE-ITEMS=C1-COUNT-MATCH-LENGTH:3+C2-COUNT-MATCH-LEGS:5+C3-THE-BRIDGES-READING:1+C4-ELEMENTARY-CLICK-REFINEMENT:3+C5-CONTINUOUS-PLACEMENT-COMPARATOR:1|DECISIVE=I-SCOPE-AND-I-POSITION|TV-BETWEEN-CHAIN-POSITIONS-TRANSPORT=2/63|TV-DELIVERY-FREE=0|BRIDGES-READING-REACHES-ONLY-COUNT-1-29-OF-201-WITH-FIBER-0>
+    R6BP-KERNEL-DEFECTIVE<RETURN=13/16|DEFECT=3/16|CLOSED-CLASS={2,4,5}|TERMINATES-A-S=TRUE|VISITS=16/3|SUPPORT-HOLE-AT-2-COSTS-50-OF-201-INTERVALS|SCOPE=DELIVERY-FREE>
+    R6BP-BLOCKED-AT-THE-SCOPE-SEAM<S1-DELIVERY-FREE|S2-TRANSPORT|DELIVERY-FREE-MASS-LEG1=3/7|LEG2=1/3|S1-DECLARES-THE-CLASS-STRUCTURE-NOT-STABLE-ACROSS-IT>
+    EXTREMAL-BAR=DIES-AT-THE-BAR<FUNCTIONALS=4|DISTINCT-SELECTIONS=3|MAX-DET-UNIQUE=TRUE|READOUT-DET-BLIND-AT-W-0=TRUE|VARIATIONAL-ROWS-0-OF-6|DERIVED-LAW-RATIFIES-AT-1/3>
+    COVER=DISSOLVED<ROWS-PINNING-COVER-OBJECTS-0-OF-6|ROWS-DE-PERIODIZING-0-OF-6|DEEP-ARENAS-ROOTED-AND-DEPTH-NON-STATIONARY|NO-HUNT>
+    CONTROLS=R1-COPY-UNMOTIVATED|EXTERNAL-REFUSED-AT-SOURCE|COUNT-MISMATCH-FAILS-THE-CENSUS|EXCLUDED-CITED-0>
+
+  [PASS] G-SCOPE-HONESTY: scope honesty, discharged: Gamma(cut' <- cut) is NOT constructed here (S3 declares it TO BE CONSTRUCTED, V-S3-GAMMA); no scaling census is run; the transport-scope renewal arm is untouched; no continuum claim is entered beyond what the fiber-collapse measurement earns
+  [PASS] G-PIN-BOUND: this unit's pin is anchored by bytes (A-PIN) and every one of its six registered measurements has a section above; the named exclusions are printed with their statuses and none is cited as a source
+------------------------------------------------------------------------------
+13.  PAPER <-> RECEIPT
+------------------------------------------------------------------------------
+  [PASS] G-PAPER-CLAIMS: paper present = True; load-bearing claims bound to receipt paths 25 of 25; missing []
+  [PASS] G-PAPER-VERDICT: the paper's verdict block is compared against the EMITTED verdict segment by segment: 7 of 7 present verbatim.  The headline the paper prints is the headline the gates computed
+  [PASS] G-PAPER-NUMBER-SWEEP: backticked numeric tokens scanned in the paper: 135; tokens carried by no receipt value and no declared structural literal: []
+
+------------------------------------------------------------------------------
+14.  COMPLIANCE SWEEP (statuses computed, not asserted)
+------------------------------------------------------------------------------
+  [PASS] G-COMPLIANCE: 15 engraved rules swept; each row's status is COMPUTED by checking that its named injection-falsifier is a declared mutant that the selftest runs; MISSING rows 0
+    [MET] §13 counts computed, never typed
+    [MET] §13 (v13 #234) the verdict string is derived inside a gate
+    [MET] §13 (v13 #313) repair propagation -- gates diffed against every rule engraved since the pin froze
+    [MET] §13 (v13 #314) precheck doctrine
+    [MET] §14 (v14 #10) containment is not equality
+    [MET] §13 (v14 #10) render from the gated object
+    [MET] §13 (v14 #20) prose renders from the receipt
+    [MET] §14 (v14 #20) compliance claims are gate claims
+    [MET] §14 (v14 #20) path-value anchoring
+    [MET] §14 (v14 #34) waiver claims are gate claims
+    [MET] §14 (v14 #34) verbatim-text anchors with the three modifications
+    [MET] §14 (v13 #208) no gate predicate references mutant identity
+    [MET] §14 (v13 #219) independent comparators
+    [MET] §15 declared-arena discipline
+    [MET] §15 (v13 #196) like-for-like matches every coordinate
+
+  [PASS] G-WAIVER-CENSUS: never-falsified census over all 46 gates: 46 carry a declared injection that reaches them; 0 are WAIVED-VERIFIED as disclosures whose predicates read anchored objects that a declared injection perturbs; UNWAIVED 0 []
+  [PASS] G-GATE-COUNT: the gate count the paper renders (48) is verified against the gate list actually registered at the end of the run (48); the paper's instrument figures are receipt values, not hand counts
+------------------------------------------------------------------------------
+15.  TOTALS
+------------------------------------------------------------------------------
+    anchor_failures: 0
+    anchors: 75
+    compliance_missing: 0
+    compliance_rows: 15
+    gates: 48
+    must_pass_failures: 0
+    must_pass_gates: 48
+    mutants: 31
+    unwaived_never_falsified: 0
+
+THE VERDICT AS EMITTED:
+
+  R6BP-KERNEL-DERIVED<IDENT=C1-COUNT-MATCH-LENGTH|LAW=FIRST-RETURN-f1-3/4-f2-0-fn-(n-2)(3/4)^(n-3)/256|COLLAPSE=DISTRIBUTION-UNIFORM-AT-COUNT-4|COVERAGE=37-OF-201-INTERVALS|CRB-SIMPLEX-DIM-2-TO-0|SCOPE=DELIVERY-FREE>
+  R6BP-TRANSPORT-UNMOTIVATED<CANDIDATES=5|MOTIVATED=0|FREE-ITEMS=C1-COUNT-MATCH-LENGTH:3+C2-COUNT-MATCH-LEGS:5+C3-THE-BRIDGES-READING:1+C4-ELEMENTARY-CLICK-REFINEMENT:3+C5-CONTINUOUS-PLACEMENT-COMPARATOR:1|DECISIVE=I-SCOPE-AND-I-POSITION|TV-BETWEEN-CHAIN-POSITIONS-TRANSPORT=2/63|TV-DELIVERY-FREE=0|BRIDGES-READING-REACHES-ONLY-COUNT-1-29-OF-201-WITH-FIBER-0>
+  R6BP-KERNEL-DEFECTIVE<RETURN=13/16|DEFECT=3/16|CLOSED-CLASS={2,4,5}|TERMINATES-A-S=TRUE|VISITS=16/3|SUPPORT-HOLE-AT-2-COSTS-50-OF-201-INTERVALS|SCOPE=DELIVERY-FREE>
+  R6BP-BLOCKED-AT-THE-SCOPE-SEAM<S1-DELIVERY-FREE|S2-TRANSPORT|DELIVERY-FREE-MASS-LEG1=3/7|LEG2=1/3|S1-DECLARES-THE-CLASS-STRUCTURE-NOT-STABLE-ACROSS-IT>
+  EXTREMAL-BAR=DIES-AT-THE-BAR<FUNCTIONALS=4|DISTINCT-SELECTIONS=3|MAX-DET-UNIQUE=TRUE|READOUT-DET-BLIND-AT-W-0=TRUE|VARIATIONAL-ROWS-0-OF-6|DERIVED-LAW-RATIFIES-AT-1/3>
+  COVER=DISSOLVED<ROWS-PINNING-COVER-OBJECTS-0-OF-6|ROWS-DE-PERIODIZING-0-OF-6|DEEP-ARENAS-ROOTED-AND-DEPTH-NON-STATIONARY|NO-HUNT>
+  CONTROLS=R1-COPY-UNMOTIVATED|EXTERNAL-REFUSED-AT-SOURCE|COUNT-MISMATCH-FAILS-THE-CENSUS|EXCLUDED-CITED-0>
+

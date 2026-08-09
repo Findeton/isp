@@ -1404,3 +1404,48 @@ state-motion check (FR2).  Verdicts: DEFECT-PRESENT-<...> /
 DEFECT-ABSENT-<...> / BLOCKED.  All eight 2026-08-09
 engravings at birth.  Construction dispatched — running in
 parallel w/ the R3 repair, R6b′, CR-C, CR-D, the R6a repair.
+
+## 2026-08-09 — R6b′ DELIVERED, COMMITTED AS-IS (v14 LEDGER #48)
+paper-09-renewal-transport.md (68c20d1fdae4) + r6bp_transport_
+exact.py (8e188dd3ab70) + _output.txt (42a39fcaf194) +
+_receipt.json (50f63b3ba362) committed exactly as delivered.
+**FOUR COMPOSED HEADS:**  (1) **R6BP-KERNEL-DERIVED** — the
+first-return law EXACT, two routes (f(1)=3/4, f(2)=0,
+f(n)=(n−2)(3/4)^(n−3)/256, mass 13/16); **THE FIBER COLLAPSES
+IN DISTRIBUTION — NEVER TO A VALUE — at count 4: 37 of 201
+intervals; CR-B's simplex dim 2→0 there; G-DIAG2 completely
+covered — THE UNIFORM LAW ON ITS 19,683-ELEMENT FIBER
+DERIVED, the very law CR-B refuted for want of a declared
+support (now it has one)**; and the derived-vs-continuous
+comparison REPRODUCES CR-B's anchored TV=2/21 by a different
+unit on a different route.  (2) **R6BP-TRANSPORT-UNMOTIVATED**
+— 0 of 5 identifications motivated; **the type census caught
+the pin's literal reading equating a division-event count
+with a grammar-event count**; the bridges reading reaches
+only count-1 intervals (29/201, fiber 0); the line's FIRST
+stabilizer-fixed entries (orientation; clock rate).  (3)
+**R6BP-KERNEL-DEFECTIVE** — terminates a.s. (return 13/16,
+defect 3/16, visits 16/3); **THE SUPPORT HOLE AT 2 IS EXACT —
+no length-2 leg exists, and count 2 is the arena's MOST
+COMMON count (50/201)**.  (4) **R6BP-BLOCKED-AT-THE-SCOPE-
+SEAM — the deepest finding: S1 is delivery-free, S2 is
+transport-scope; the position-dependence of the positional
+layer is ENTIRELY a delivery effect (TV 2/63 transport vs
+EXACTLY 0 delivery-free); the two rows that would jointly
+supply the law live at different scopes and the corpus itself
+declares the seam not innocuous.**  R6a RE-CLASSIFICATION:
+THE-SPLIT (iii)→(ii)-IN-DISTRIBUTION (count 4, delivery-free
+only); NEW-FRONT-VALUES (iii,∞)→FORCED-RELATIVE-TO-THE-SPLIT
+fiber 1; transverse links UNCHANGED (count-blind); THE-LIFT
+freedom GROWS (the transported rule is a THIRD rule).
+EXTREMAL-BAR=DIES (4 record-intrinsic functionals, 3 distinct
+selections; the pinned readout DET-BLIND at w=0).
+COVER=DISSOLVED.  Controls 3/3 distinct failure modes; 0
+excluded artifacts cited; the provenance note (the R6a
+worktree moved mid-run; consumed committed bytes via git
+show; 23/23 path-values identical).  Instrument: 75 anchors
+(24 verbatim-context bound to consumer gates, evaluated
+first), 48 gates, 31/31 mutants killed BY NAME,
+never-falsified 46 rows 0 unwaived, 15-rule compliance sweep
+0 MISSING.  Byte-identical ×2.  Adjudicator verification
+next; panel queued.

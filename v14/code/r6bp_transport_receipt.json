@@ -1,0 +1,2865 @@
+{
+ "anchor_totals": {
+  "disclosures": 1,
+  "failures": 0,
+  "file_bytes": 16,
+  "path_value": 34,
+  "total": 75,
+  "verbatim_text": 24
+ },
+ "anchors": [
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-S1-TWO-ROUTES",
+   "kind": "verbatim-text",
+   "name": "V-S1-T",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "The `6 x 6` transfer is well-defined: every one of the 215 histories of length `<= 3` in a class produces the same exact row",
+   "window_chars": 124
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-S1-TWO-ROUTES",
+   "kind": "verbatim-text",
+   "name": "V-S1-F",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "`T f = 2 f` exactly at `f = (4, 4, 3, 7, 3, 3)/3 > 0`",
+   "window_chars": 53
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-KERNEL-CONFLICT-ROW",
+   "kind": "verbatim-text",
+   "name": "V-S1-QP",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "the conflict\n  row is `{0: 1/7, 3: 3/4, 5: 3/28}`.  This is the root-free\n  completion, exhibited on the intrinsic chain.",
+   "window_chars": 116
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-CLOSED-CLASS",
+   "kind": "verbatim-text",
+   "name": "V-S1-CLASS",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "The dominant class `{2, 4, 5}` (Tarjan decomposition;\n  `{0, 1, 3}` is transient and carries the renewal loop `3 -> 0`)",
+   "window_chars": 117
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-SCOPE-SEAM",
+   "kind": "verbatim-text",
+   "name": "V-S1-SCOPE",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "At transport scope the picture will change and is declared: deliveries\nreopen the absorbing sector (diverged holdings can reconverge), the\nclass structure of §3.2 is not stable under the transport grammar",
+   "window_chars": 204
+  },
+  {
+   "artifact": "v11/code/u1b_output.txt",
+   "consumer_gate": "G-S2-PROFILES",
+   "kind": "verbatim-text",
+   "name": "V-S2-LEG1",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)",
+   "window": "[DATA] LEG-1 interval-4 tag patterns (the unequal-interval structure, exhaustive): {('d', 'p', 'p', 'r'): 1024, ('n', 'p', 'p', 'r'): 512, ('p', 'n', 'p', 'r'): 512, ('p', 'p', 'd', 'r'): 1024, ('p', 'p', 'n', 'r'): 512}",
+   "window_chars": 220
+  },
+  {
+   "artifact": "v11/code/u1b_output.txt",
+   "consumer_gate": "G-S2-PROFILES",
+   "kind": "verbatim-text",
+   "name": "V-S2-LEG2",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)",
+   "window": "leg-2 patterns {('d', 'p', 'p', 'r'): 24576, ('n', 'p', 'p', 'r'): 8192, ('p', 'n', 'p', 'r'): 8192, ('p', 'p', 'd', 'r'): 24576, ('p', 'p', 'n', 'r'): 8192}",
+   "window_chars": 157
+  },
+  {
+   "artifact": "v11/code/u1b_output.txt",
+   "consumer_gate": "G-POSITIONAL-STRATUM-EMPTY-AT-3",
+   "kind": "verbatim-text",
+   "name": "V-S2-L3",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)",
+   "window": "(p,p,r) is the ONLY intervening pattern that reaches a renewal three events after a renewal",
+   "window_chars": 91
+  },
+  {
+   "artifact": "v11/note-u1b-renewal-class-sweep.md",
+   "consumer_gate": "G-S2-PATTERN-POSITION-MAP",
+   "kind": "verbatim-text",
+   "name": "V-S2-FIVE",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)",
+   "window": "A renewal three\nevents after a renewal forces `(p,p,r)` and nothing else.  A renewal\nfour events after a renewal admits exactly five intervening patterns",
+   "window_chars": 152
+  },
+  {
+   "artifact": "v11/note-u1b-renewal-class-sweep.md",
+   "consumer_gate": "G-SCOPE-SEAM",
+   "kind": "verbatim-text",
+   "name": "V-S2-SCOPE",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)",
+   "window": "Transport scope (`d42b1`) only; the two-actor pool only",
+   "window_chars": 55
+  },
+  {
+   "artifact": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "consumer_gate": "G-TYPE-CENSUS",
+   "kind": "verbatim-text",
+   "name": "V-S3-POSIT",
+   "ok": true,
+   "pedigree": "S3 THE TYPE DECLARATION -- founding paper; v11 FROZEN",
+   "window": "**[POSIT]** v11's **division events are the renewal events.**",
+   "window_chars": 61
+  },
+  {
+   "artifact": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "consumer_gate": "G-BRIDGES-READING",
+   "kind": "verbatim-text",
+   "name": "V-S3-BRIDGES",
+   "ok": true,
+   "pedigree": "S3 THE TYPE DECLARATION -- founding paper; v11 FROZEN",
+   "window": "**The bridges** are the conflict windows between renewals.",
+   "window_chars": 58
+  },
+  {
+   "artifact": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "consumer_gate": "G-SCOPE-HONESTY",
+   "kind": "verbatim-text",
+   "name": "V-S3-GAMMA",
+   "ok": true,
+   "pedigree": "S3 THE TYPE DECLARATION -- founding paper; v11 FROZEN",
+   "window": "the sparse indivisible family Γ(cut′ ← cut), conditioned only at division events | to be constructed",
+   "window_chars": 100
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md",
+   "consumer_gate": "G-DELIVERY-FREE-SCOPE",
+   "kind": "verbatim-text",
+   "name": "V-S4-RENEWAL",
+   "ok": true,
+   "pedigree": "S4 THE RENEWAL THEOREM -- TERMINAL (v10 #326; ten hostile rounds; its header's \"paper-level review open\" note carried)",
+   "window": "**every pair arbitration\nis a renewal to the root state** [THEOREM at two-actor delivery-free\nscope]",
+   "window_chars": 100
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md",
+   "consumer_gate": "G-IDENTIFICATION-CENSUS",
+   "kind": "verbatim-text",
+   "name": "V-S4-CLICK",
+   "ok": true,
+   "pedigree": "S4 THE RENEWAL THEOREM -- TERMINAL (v10 #326; ten hostile rounds; its header's \"paper-level review open\" note carried)",
+   "window": "**K1** refines into a chain of selection clicks",
+   "window_chars": 47
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md",
+   "consumer_gate": "G-IDENTIFICATION-CENSUS",
+   "kind": "verbatim-text",
+   "name": "V-S4-EMPIRICAL",
+   "ok": true,
+   "pedigree": "S4 THE RENEWAL THEOREM -- TERMINAL (v10 #326; ten hostile rounds; its header's \"paper-level review open\" note carried)",
+   "window": "Which basis nature seals — the fine order-sealed\nrecord or the coarse winner-sealed record — is an *empirical* question.",
+   "window_chars": 120
+  },
+  {
+   "artifact": "v10/note-d33-history-law-phase.md",
+   "consumer_gate": "G-S5-DISCLAIMER",
+   "kind": "verbatim-text",
+   "name": "V-S5-CHOSEN",
+   "ok": true,
+   "pedigree": "S5 THE DECLARED POSITIONAL LAW -- D34b TERMINAL delta (3 hostile streams); the waiting law and rates are CHOSEN, NOT DERIVED",
+   "window": "the coefficients 1/4 are chosen, not derived",
+   "window_chars": 44
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper21-local-generators-do-not-imply-local-memory.md",
+   "consumer_gate": "G-S5-DISCLAIMER",
+   "kind": "verbatim-text",
+   "name": "V-S5-CHOSEN2",
+   "ok": true,
+   "pedigree": "S5 THE DECLARED POSITIONAL LAW -- D34b TERMINAL delta (3 hostile streams); the waiting law and rates are CHOSEN, NOT DERIVED",
+   "window": "For the chosen static-adjacency D34b birth/idle/interaction exemplar",
+   "window_chars": 68
+  },
+  {
+   "artifact": "v10/note-d12-selection-principle-audit.md",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "kind": "verbatim-text",
+   "name": "V-S6-BAR",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem",
+   "window": "A proposed selector `Q` derives a unique law only if the frozen SHARD premises\nplus `Q` have exactly one physical equivalence class of models.",
+   "window_chars": 142
+  },
+  {
+   "artifact": "v10/note-d12-selection-principle-audit.md",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "kind": "verbatim-text",
+   "name": "V-S6-MAXENT",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem",
+   "window": "least-committal law relative to a supplied base measure and supplied constraints",
+   "window_chars": 80
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper16-the-rulebook-is-the-history-law.md",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "kind": "verbatim-text",
+   "name": "V-S6-NONSEL",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem",
+   "window": "a fixed causal action does not select the boundary state, orbit measure,\n> extension kernel or complete next-record law.\n\nThis is a finite nonselection theorem.",
+   "window_chars": 159
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper16-the-rulebook-is-the-history-law.md",
+   "consumer_gate": "G-EXTREMAL-INTRINSIC",
+   "kind": "verbatim-text",
+   "name": "V-S6-INTRINSIC",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem",
+   "window": "the corpus has no\nrecord-intrinsic, field-redefinition-invariant complexity measure that selects\none generator.",
+   "window_chars": 111
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md",
+   "consumer_gate": "G-COVER-DISSOLVED",
+   "kind": "verbatim-text",
+   "name": "V-COVER-ROOTED",
+   "ok": true,
+   "pedigree": "S4 THE RENEWAL THEOREM -- TERMINAL (v10 #326; ten hostile rounds; its header's \"paper-level review open\" note carried)",
+   "window": "Truncated completions are therefore depth-non-stationary: **rooted**",
+   "window_chars": 68
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-COVER-DISSOLVED",
+   "kind": "verbatim-text",
+   "name": "V-COVER-GROWS",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)",
+   "window": "its state count grows with depth (17, 23,\n29 at depths 4, 5, 6) while representing no new structure",
+   "window_chars": 99
+  },
+  {
+   "artifact": "v14/note-r6bprime-transport-pin.md",
+   "consumer_gate": "G-PIN-BOUND",
+   "expected": "17111fd19022",
+   "kind": "file-bytes",
+   "measured": "17111fd19022",
+   "name": "A-PIN",
+   "ok": true,
+   "pedigree": "this unit's pin, FROZEN at v14 ledger #43"
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
+   "consumer_gate": "G-S1-TWO-ROUTES",
+   "expected": "7ac66f3fe74d",
+   "kind": "file-bytes",
+   "measured": "7ac66f3fe74d",
+   "name": "A-S1-PAPER31",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)"
+  },
+  {
+   "artifact": "v10/code/d43b_state_chain_exact.py",
+   "consumer_gate": "G-S1-TWO-ROUTES",
+   "expected": "5f91f0190b4c",
+   "kind": "file-bytes",
+   "measured": "5f91f0190b4c",
+   "name": "A-S1-D43B",
+   "ok": true,
+   "pedigree": "S1 THE TRANSITION MATRIX -- TERMINAL (v10 #349)"
+  },
+  {
+   "artifact": "v11/note-u1b-renewal-class-sweep.md",
+   "consumer_gate": "G-S2-PROFILES",
+   "expected": "47f001fad828",
+   "kind": "file-bytes",
+   "measured": "47f001fad828",
+   "name": "A-S2-NOTE",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)"
+  },
+  {
+   "artifact": "v11/code/u1b_output.txt",
+   "consumer_gate": "G-S2-PROFILES",
+   "expected": "a955b8484465",
+   "kind": "file-bytes",
+   "measured": "a955b8484465",
+   "name": "A-S2-OUT",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)"
+  },
+  {
+   "artifact": "v11/code/u1b_renewal_class_sweep_exact.py",
+   "consumer_gate": "G-S2-PROFILES",
+   "expected": "5adb205a33d6",
+   "kind": "file-bytes",
+   "measured": "5adb205a33d6",
+   "name": "A-S2-CODE",
+   "ok": true,
+   "pedigree": "S2 THE POSITIONAL CENSUS -- TERMINAL (v11 #20-#21); interval lengths are ENSEMBLE DATA (declared)"
+  },
+  {
+   "artifact": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md",
+   "consumer_gate": "G-TYPE-CENSUS",
+   "expected": "37a428321f46",
+   "kind": "file-bytes",
+   "measured": "37a428321f46",
+   "name": "A-S3-PAPER0",
+   "ok": true,
+   "pedigree": "S3 THE TYPE DECLARATION -- founding paper; v11 FROZEN"
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper30-the-generated-record-and-its-completion.md",
+   "consumer_gate": "G-DELIVERY-FREE-SCOPE",
+   "expected": "e431a7c48f76",
+   "kind": "file-bytes",
+   "measured": "e431a7c48f76",
+   "name": "A-S4-PAPER30",
+   "ok": true,
+   "pedigree": "S4 THE RENEWAL THEOREM -- TERMINAL (v10 #326; ten hostile rounds; its header's \"paper-level review open\" note carried)"
+  },
+  {
+   "artifact": "v10/note-d33-history-law-phase.md",
+   "consumer_gate": "G-S5-DISCLAIMER",
+   "expected": "bad952ee5849",
+   "kind": "file-bytes",
+   "measured": "bad952ee5849",
+   "name": "A-S5-D33",
+   "ok": true,
+   "pedigree": "S5 THE DECLARED POSITIONAL LAW -- D34b TERMINAL delta (3 hostile streams); the waiting law and rates are CHOSEN, NOT DERIVED"
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper21-local-generators-do-not-imply-local-memory.md",
+   "consumer_gate": "G-S5-DISCLAIMER",
+   "expected": "038a424a8843",
+   "kind": "file-bytes",
+   "measured": "038a424a8843",
+   "name": "A-S5-PAPER21",
+   "ok": true,
+   "pedigree": "S5 THE DECLARED POSITIONAL LAW -- D34b TERMINAL delta (3 hostile streams); the waiting law and rates are CHOSEN, NOT DERIVED"
+  },
+  {
+   "artifact": "v10/code/d34b_exponential_clocks_exact.py",
+   "consumer_gate": "G-S5-DISCLAIMER",
+   "expected": "dee1cc968268",
+   "kind": "file-bytes",
+   "measured": "dee1cc968268",
+   "name": "A-S5-D34B",
+   "ok": true,
+   "pedigree": "S5 THE DECLARED POSITIONAL LAW -- D34b TERMINAL delta (3 hostile streams); the waiting law and rates are CHOSEN, NOT DERIVED"
+  },
+  {
+   "artifact": "v10/note-d12-selection-principle-audit.md",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "expected": "2670a2ea7644",
+   "kind": "file-bytes",
+   "measured": "2670a2ea7644",
+   "name": "A-S6-D12",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem"
+  },
+  {
+   "artifact": "v10/relativistic-isp-v10-paper16-the-rulebook-is-the-history-law.md",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "expected": "dbf027b2fbc9",
+   "kind": "file-bytes",
+   "measured": "dbf027b2fbc9",
+   "name": "A-S6-PAPER16",
+   "ok": true,
+   "pedigree": "S6 THE EXTREMAL STANDARD -- audit (status: completed pre-hostile-review, carried) + finite nonselection theorem"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": "542b8735daf0",
+   "kind": "file-bytes",
+   "measured": "542b8735daf0",
+   "name": "A-I7",
+   "ok": true,
+   "pedigree": "I7 (R0 founding pin) -- gravity's record layer; H_a[N] record-native; record-IS-metric; THE BASELINE ARENA ROW"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": "022c3f488a93",
+   "kind": "file-bytes-committed",
+   "measured": "022c3f488a93",
+   "name": "A-R6A",
+   "ok": true,
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-CRB-SIMPLEX",
+   "expected": "5ebeec141303",
+   "kind": "file-bytes",
+   "measured": "5ebeec141303",
+   "name": "A-CRB",
+   "ok": true,
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-REPAIR-DELTA",
+   "expected": "(disclosure -- no expectation)",
+   "kind": "file-bytes-disclosure",
+   "measured": "94adec72ab11",
+   "name": "A-R6A-WORKTREE",
+   "ok": true,
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": "n_l(x) in Z_>0, the number of division events in the record interval between x and x+l",
+   "kind": "path-value",
+   "measured": "n_l(x) in Z_>0, the number of division events in the record interval between x and x+l",
+   "name": "P-ARENA-GEOMETRY-RECORD",
+   "ok": true,
+   "path": "arena/geometry_record",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-EXTREMAL-INTRINSIC",
+   "expected": "q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0",
+   "kind": "path-value",
+   "measured": "q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0",
+   "name": "P-ARENA-READOUT",
+   "ok": true,
+   "path": "arena/readout",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": "X = (Z_L)^d with L = 3, d = 2 (|X| = 9)",
+   "kind": "path-value",
+   "measured": "X = (Z_L)^d with L = 3, d = 2 (|X| = 9)",
+   "name": "P-ARENA-SITES",
+   "ok": true,
+   "path": "arena/sites",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "kind": "path-value",
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "name": "P-ARENA-LINKS",
+   "ok": true,
+   "path": "arena/links",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "consumer_gate": "G-EXTREMAL-INTRINSIC",
+   "expected": 0,
+   "kind": "path-value",
+   "measured": 0,
+   "name": "P-I7-DENSITY-WEIGHT",
+   "ok": true,
+   "path": "declarations/density_weight",
+   "pedigree": "I7 (R0 founding pin) -- gravity's record layer; H_a[N] record-native; record-IS-metric; THE BASELINE ARENA ROW"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": 3,
+   "kind": "path-value",
+   "measured": 3,
+   "name": "P-I7-L",
+   "ok": true,
+   "path": "declarations/L",
+   "pedigree": "I7 (R0 founding pin) -- gravity's record layer; H_a[N] record-native; record-IS-metric; THE BASELINE ARENA ROW"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "consumer_gate": "G-ARENA-BASELINE",
+   "expected": 2,
+   "kind": "path-value",
+   "measured": 2,
+   "name": "P-I7-D",
+   "ok": true,
+   "path": "declarations/d",
+   "pedigree": "I7 (R0 founding pin) -- gravity's record layer; H_a[N] record-native; record-IS-metric; THE BASELINE ARENA ROW"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": 19683,
+   "kind": "path-value",
+   "measured": 19683,
+   "name": "P-R6A-SPLIT-FIBER-MIN",
+   "ok": true,
+   "path": "split_fibers/G-DIAG2/raw",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": 13631146639813244878848,
+   "kind": "path-value",
+   "measured": 13631146639813244878848,
+   "name": "P-R6A-SPLIT-FIBER-MAX",
+   "ok": true,
+   "path": "split_fibers/G-ANISO2/raw",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD",
+   "expected": 19683,
+   "kind": "path-value",
+   "measured": 19683,
+   "name": "P-R6A-DIAG2-ADMISSIBLE",
+   "ok": true,
+   "path": "split_fibers/G-DIAG2/admissible_at_images",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": 1257565061957837936381,
+   "kind": "path-value",
+   "measured": 1257565061957837936381,
+   "name": "P-R6A-ANISO2-ADMISSIBLE",
+   "ok": true,
+   "path": "split_fibers/G-ANISO2/admissible_at_images",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": 1953125,
+   "kind": "path-value",
+   "measured": 1953125,
+   "name": "P-R6A-OFFDIAG-RAW",
+   "ok": true,
+   "path": "split_fibers/G-OFFDIAG/raw",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD",
+   "expected": 19683,
+   "kind": "path-value",
+   "measured": 19683,
+   "name": "P-R6A-OFFDIAG-ADMISSIBLE",
+   "ok": true,
+   "path": "split_fibers/G-OFFDIAG/admissible_at_images",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-FIBER-REBUILD",
+   "expected": {
+    "G-ANISO2": 288,
+    "G-CURVOFF": 29393280,
+    "G-DIAG2": 3,
+    "G-OFFDIAG": 5,
+    "G-OFFDIAG2": 88,
+    "G-OFFNEG": 24
+   },
+   "kind": "path-value",
+   "measured": {
+    "G-ANISO2": 288,
+    "G-CURVOFF": 29393280,
+    "G-DIAG2": 3,
+    "G-OFFDIAG": 5,
+    "G-OFFDIAG2": 88,
+    "G-OFFNEG": 24
+   },
+   "name": "P-R6A-EQUIVARIANT-FIBERS",
+   "ok": true,
+   "path": "equivariant_fibers",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-ADDITIVITY-REVERIFIED",
+   "expected": 972,
+   "kind": "path-value",
+   "measured": 972,
+   "name": "P-R6A-ADDITIVITY",
+   "ok": true,
+   "path": "forced_part/additivity_checks",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-ADDITIVITY-REVERIFIED",
+   "expected": 0,
+   "kind": "path-value",
+   "measured": 0,
+   "name": "P-R6A-ADDITIVITY-VIOL",
+   "ok": true,
+   "path": "forced_part/additivity_violations",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-METRIC-RESTRICTION-REVERIFIED",
+   "expected": 324,
+   "kind": "path-value",
+   "measured": 324,
+   "name": "P-R6A-RESTRICTION",
+   "ok": true,
+   "path": "forced_part/restriction_checks",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-METRIC-RESTRICTION-REVERIFIED",
+   "expected": 324,
+   "kind": "path-value",
+   "measured": 324,
+   "name": "P-R6A-RESTRICTION-OK",
+   "ok": true,
+   "path": "forced_part/restriction_ok",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-RECLASSIFICATION",
+   "expected": 2,
+   "kind": "path-value",
+   "measured": 2,
+   "name": "P-R6A-LIFT-PAIR",
+   "ok": true,
+   "path": "choice_inventory/items/7/fiber",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-FRONT-RULE-INTEGRAL",
+   "expected": 30,
+   "kind": "path-value",
+   "measured": 30,
+   "name": "P-R6A-FRONT-NONINTEGRAL",
+   "ok": true,
+   "path": "forced_front_lift/non_integral",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-FRONT-RULE-INTEGRAL",
+   "expected": 81,
+   "kind": "path-value",
+   "measured": 81,
+   "name": "P-R6A-FRONT-CELLS",
+   "ok": true,
+   "path": "forced_front_lift/cells",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-TRANSVERSE-LINKS-UNFORCED",
+   "expected": 54,
+   "kind": "path-value",
+   "measured": 54,
+   "name": "P-R6A-FREE-LINKS",
+   "ok": true,
+   "path": "cover/free_links",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-TRANSVERSE-LINKS-UNFORCED",
+   "expected": 108,
+   "kind": "path-value",
+   "measured": 108,
+   "name": "P-R6A-REFINED-LINKS",
+   "ok": true,
+   "path": "cover/refined_links",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-NEW-FRONTS-RECLASSED",
+   "expected": 27,
+   "kind": "path-value",
+   "measured": 27,
+   "name": "P-R6A-NEW-SITES",
+   "ok": true,
+   "path": "cover/new_sites",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-R6A-RECLASSIFICATION",
+   "expected": "R6A-NO-MOTIVATED-SPLIT",
+   "kind": "path-value",
+   "measured": "R6A-NO-MOTIVATED-SPLIT",
+   "name": "P-R6A-VERDICT-HEAD",
+   "ok": true,
+   "path": "verdict_head",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-CONTROL-R1-COPY",
+   "expected": "UNMOTIVATED",
+   "kind": "path-value",
+   "measured": "UNMOTIVATED",
+   "name": "P-R6A-CONTROL-QUALIFIER",
+   "ok": true,
+   "path": "control/qualifier",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "consumer_gate": "G-CONTROL-R1-COPY",
+   "expected": 6,
+   "kind": "path-value",
+   "measured": 6,
+   "name": "P-R6A-CONTROL-UNREPRESENTED",
+   "ok": true,
+   "path": "control/tally/UNREPRESENTED",
+   "pedigree": "v14 R6a paper-04 -- DELIVERED-COMMITTED (LOG #26), ADJUDICATOR-VERIFIED (#27), JOINT ADJUDICATION AWF UNANIMOUS with THE VERDICT HOLDS (#34), TERMINAL-track: repair in flight under orders R-R6A-1..10; the receipt bytes anchored here are the delivered-committed ones"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-CRB-SIMPLEX",
+   "expected": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+   "kind": "path-value",
+   "measured": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+   "name": "P-CRB-HEAD",
+   "ok": true,
+   "path": "verdict_head",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-CRB-SIMPLEX",
+   "expected": "THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER",
+   "kind": "path-value",
+   "measured": "THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER",
+   "name": "P-CRB-MISSING",
+   "ok": true,
+   "path": "missing_tag",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-CRB-SIMPLEX",
+   "expected": {
+    "fiber": 3,
+    "flip_orbits": 2,
+    "flip_simplex_dim": 1,
+    "flip_transitive": false,
+    "n": 4,
+    "pinned_orbits": 3,
+    "pinned_simplex_dim": 2,
+    "pinned_transitive": false
+   },
+   "kind": "path-value",
+   "measured": {
+    "fiber": 3,
+    "flip_orbits": 2,
+    "flip_simplex_dim": 1,
+    "flip_transitive": false,
+    "n": 4,
+    "pinned_orbits": 3,
+    "pinned_simplex_dim": 2,
+    "pinned_transitive": false
+   },
+   "name": "P-CRB-N4-ROW",
+   "ok": true,
+   "path": "per_interval_law/rows/3",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-CRB-SIMPLEX",
+   "expected": {
+    "fiber": 2,
+    "flip_orbits": 1,
+    "flip_simplex_dim": 0,
+    "flip_transitive": true,
+    "n": 3,
+    "pinned_orbits": 2,
+    "pinned_simplex_dim": 1,
+    "pinned_transitive": false
+   },
+   "kind": "path-value",
+   "measured": {
+    "fiber": 2,
+    "flip_orbits": 1,
+    "flip_simplex_dim": 0,
+    "flip_transitive": true,
+    "n": 3,
+    "pinned_orbits": 2,
+    "pinned_simplex_dim": 1,
+    "pinned_transitive": false
+   },
+   "name": "P-CRB-N3-ROW",
+   "ok": true,
+   "path": "per_interval_law/rows/2",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-S5-COMPARATOR-SEPARATION",
+   "expected": "2/21",
+   "kind": "path-value",
+   "measured": "2/21",
+   "name": "P-CRB-TV-UNIFORM-BINOMIAL-4",
+   "ok": true,
+   "path": "selection_candidates/rows/0/evidence/tv_uniform_vs_binomial/4",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD",
+   "expected": "REFUTED-AS-FORCING",
+   "kind": "path-value",
+   "measured": "REFUTED-AS-FORCING",
+   "name": "P-CRB-UNIFORM-REFUTED",
+   "ok": true,
+   "path": "selection_candidates/rows/2/result",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  },
+  {
+   "artifact": "v14/code/crb_stochastic_receipt.json",
+   "consumer_gate": "G-EXTREMAL-BAR",
+   "expected": 0,
+   "kind": "path-value",
+   "measured": 0,
+   "name": "P-CRB-MAXENT-CONSTRAINTS",
+   "ok": true,
+   "path": "selection_candidates/rows/1/evidence/pinned_moment_constraints",
+   "pedigree": "v14 CR-B -- DELIVERED-VERIFIED-UNREVIEWED (LOG #37, #38)"
+  }
+ ],
+ "arena": {
+  "count_census": {
+   "1": 29,
+   "10": 1,
+   "12": 9,
+   "13": 9,
+   "2": 50,
+   "3": 20,
+   "4": 37,
+   "5": 27,
+   "6": 10,
+   "9": 9
+  },
+  "declared_cap": "the two inhomogeneous records are censused at the two sites the R6a receipt prints (00 and 11); the remaining 7 sites of each are UNCENSUSED here",
+  "fiber_rebuild_equivariant": {
+   "G-ANISO2": 288,
+   "G-DIAG2": 3,
+   "G-OFFDIAG": 5,
+   "G-OFFDIAG2": 88,
+   "G-OFFNEG": 24
+  },
+  "fiber_rebuild_raw": {
+   "G-ANISO": 0,
+   "G-ANISO2": 13631146639813244878848,
+   "G-CURVED": 0,
+   "G-DIAG2": 19683,
+   "G-FLAT": 0,
+   "G-OFFDIAG": 1953125,
+   "G-OFFDIAG2": 316478381828866048,
+   "G-OFFNEG": 2641807540224
+  },
+  "geometry_record": "n_l(x) in Z_>0, the number of division events in the record interval between x and x+l",
+  "intervals_censused": 201,
+  "links": 3,
+  "readout": "q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0",
+  "records_censused": [
+   "G-ANISO",
+   "G-ANISO2",
+   "G-CURVED",
+   "G-CURVOFF",
+   "G-DIAG2",
+   "G-FLAT",
+   "G-OFFDIAG",
+   "G-OFFDIAG2",
+   "G-OFFNEG"
+  ],
+  "records_inadmissible": [
+   "G-INDEF",
+   "G-SINGULAR"
+  ],
+  "sites": 9
+ },
+ "arithmetic": {
+  "constants_scanned": 2742,
+  "float_literals_in_source": 0,
+  "kind": "exact int/Fraction only"
+ },
+ "chain": {
+  "T": [
+   [
+    "3/2",
+    "1/2",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "3/2",
+    "1/8",
+    "1/8",
+    "1/4",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "3/2",
+    "0",
+    "0",
+    "1/2"
+   ],
+   [
+    "1/2",
+    "0",
+    "0",
+    "3/2",
+    "0",
+    "1/2"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "0",
+    "3/2",
+    "1/2"
+   ],
+   [
+    "0",
+    "0",
+    "1/4",
+    "0",
+    "1/4",
+    "3/2"
+   ]
+  ],
+  "f": [
+   "4/3",
+   "4/3",
+   "1",
+   "7/3",
+   "1",
+   "1"
+  ],
+  "q_prime": [
+   [
+    "3/4",
+    "1/4",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "3/4",
+    "3/64",
+    "7/64",
+    "3/32",
+    "0"
+   ],
+   [
+    "0",
+    "0",
+    "3/4",
+    "0",
+    "0",
+    "1/4"
+   ],
+   [
+    "1/7",
+    "0",
+    "0",
+    "3/4",
+    "0",
+    "3/28"
+   ],
+   [
+    "0",
+    "0",
+    "0",
+    "0",
+    "3/4",
+    "1/4"
+   ],
+   [
+    "0",
+    "0",
+    "1/8",
+    "0",
+    "1/8",
+    "3/4"
+   ]
+  ],
+  "routes": [
+   "paper-31 fenced 6x6 block",
+   "d43b T_REF / f source objects"
+  ],
+  "routes_agree": true,
+  "row_sums_T": [
+   "2",
+   "2",
+   "2",
+   "5/2",
+   "2",
+   "2"
+  ]
+ },
+ "compliance": [
+  {
+   "how": "every count in the verdict and the paper is computed from the measured objects; the typed-segment mutant dies",
+   "injection_falsifier": "INJ-VERDICT-TYPED",
+   "rule": "§13 counts computed, never typed",
+   "status": "MET"
+  },
+  {
+   "how": "G-VERDICT-EQUALITY derives the comparator from the measured values and a verdict-flip mutant proves the derivation can fail",
+   "injection_falsifier": "INJ-VERDICT-CLASS",
+   "rule": "§13 (v13 #234) the verdict string is derived inside a gate",
+   "status": "MET"
+  },
+  {
+   "how": "all seven 2026-08-09 engravings are gated at birth, each with an injection-falsifier",
+   "injection_falsifier": "INJ-COMPLIANCE",
+   "rule": "§13 (v13 #313) repair propagation -- gates diffed against every rule engraved since the pin froze",
+   "status": "MET"
+  },
+  {
+   "how": "no precheck-level quantity names the verdict: the fiber-collapse coverage, the motivation qualifiers and the defectiveness are all measured on the censused objects",
+   "injection_falsifier": "INJ-COLLAPSE-COUNT",
+   "rule": "§13 (v13 #314) precheck doctrine",
+   "status": "MET"
+  },
+  {
+   "how": "G-VERDICT-EQUALITY compares complete strings; the append mutant survives no containment test here because none is used",
+   "injection_falsifier": "INJ-VERDICT-APPEND",
+   "rule": "§14 (v14 #10) containment is not equality",
+   "status": "MET"
+  },
+  {
+   "how": "the receipt object R is the single source of truth: the output text and the paper's claims both render from it",
+   "injection_falsifier": "INJ-PAPER-CLAIM",
+   "rule": "§13 (v14 #10) render from the gated object",
+   "status": "MET"
+  },
+  {
+   "how": "G-PAPER-CLAIMS binds each of the paper's load-bearing numbers to a receipt path; G-PAPER-VERDICT compares the paper's verdict block against the emitted one segment by segment; G-PAPER-NUMBER-SWEEP catches any backticked number the receipt does not carry",
+   "injection_falsifier": "INJ-PAPER-NUMBER / INJ-PAPER-VERDICT",
+   "rule": "§13 (v14 #20) prose renders from the receipt",
+   "status": "MET"
+  },
+  {
+   "how": "this compliance sweep is itself a gate with an injection-falsifier that makes it fail",
+   "injection_falsifier": "INJ-COMPLIANCE",
+   "rule": "§14 (v14 #20) compliance claims are gate claims",
+   "status": "MET"
+  },
+  {
+   "how": "every read from a pinned receipt anchors the (path, value) pair; the path-drift mutant dies",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "rule": "§14 (v14 #20) path-value anchoring",
+   "status": "MET"
+  },
+  {
+   "how": "the never-falsified census below carries a VERIFIED status per row: each waived gate names a mutant that reaches it, or is marked ANALYTICALLY-FORCED as a disclosure",
+   "injection_falsifier": "INJ-COMPLIANCE",
+   "rule": "§14 (v14 #34) waiver claims are gate claims",
+   "status": "MET"
+  },
+  {
+   "how": "verbatim anchors are evaluated FIRST, each is bound to a named consumer gate, and each anchors a CONTEXT WINDOW rather than a fragment",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "rule": "§14 (v14 #34) verbatim-text anchors with the three modifications",
+   "status": "MET"
+  },
+  {
+   "how": "no gate predicate mentions MUT; every injection is applied to a VALUE and the gates evaluate blind",
+   "injection_falsifier": "INJ-KERNEL-ROW",
+   "rule": "§14 (v13 #208) no gate predicate references mutant identity",
+   "status": "MET"
+  },
+  {
+   "how": "the verdict comparator, the split-fiber rebuild and the S1 second route are all built independently of the components they audit",
+   "injection_falsifier": "INJ-S1-ROUTE-DRIFT",
+   "rule": "§14 (v13 #219) independent comparators",
+   "status": "MET"
+  },
+  {
+   "how": "the arena (boundary, family, law, state, scope) is declared as data before any measurement, and every headline carries its scope tag",
+   "injection_falsifier": "INJ-ARENA-CENSUS",
+   "rule": "§15 declared-arena discipline",
+   "status": "MET"
+  },
+  {
+   "how": "the two chain positions are compared at the SAME leg length, the same pattern set and the same scope before any contrast is claimed; no ratio is formed between this unit's grid and R6a's",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "rule": "§15 (v13 #196) like-for-like matches every coordinate",
+   "status": "MET"
+  }
+ ],
+ "compliance_row_count": 15,
+ "controls": [
+  {
+   "failure_mode": "no coarse interval constrains the appended block, so the identification forces 0 constraints and leaves 6 intervals unrepresented",
+   "forced_constraints": 0,
+   "intervals_represented": 0,
+   "move": "append a disjoint temporal block and call it the interval",
+   "name": "NC1-R1-COPY",
+   "qualifier": "UNMOTIVATED",
+   "unrepresented": 6
+  },
+  {
+   "excluded_artifacts_cited": [],
+   "failure_mode": "the exclusion is binding at the pin; u1c may appear only as a registered lead with its status printed, which is what this unit does",
+   "move": "an identification reaching outside the pinned rows (the named exclusions: u1c, THE-THEORY-SO-FAR, v12's Gamma objects, d70)",
+   "name": "NC2-R6A-EXTERNAL",
+   "qualifier": "REFUSED-AT-SOURCE"
+  },
+  {
+   "failure_mode": "the leg offers n interior positions against n-1 admissible splits, so the induced map is not a bijection and additivity is not represented; the census rejects it on a measured cardinality mismatch, not on taste",
+   "interior_positions_offered": "n, against n-1 admissible splits",
+   "intervals_checked": 201,
+   "move": "identify an interval of count n with a leg of LENGTH n+1",
+   "name": "NC3-COUNT-MISMATCH",
+   "qualifier": "FAILS-THE-CENSUS",
+   "surjective_onto_the_split_fiber": false
+  }
+ ],
+ "cover_lead": {
+  "declarations_quoted": [
+   "V-COVER-ROOTED",
+   "V-COVER-GROWS"
+  ],
+  "hunt_run": false,
+  "outcome": "DISSOLVED",
+  "rows_deperiodizing_the_arena": 0,
+  "rows_pinning_cover_objects": 0
+ },
+ "defective_renewal": {
+  "closed_class": [
+   2,
+   4,
+   5
+  ],
+  "defect": "3/16",
+  "defective_mean": "21/16",
+  "expected_total_visits_to_the_renewal_state": "16/3",
+  "first_return_law": {
+   "closed_form": "f(1)=3/4; f(2)=0; f(n)=(n-2)(3/4)^(n-3)/256, n>=3",
+   "f_1": "3/4",
+   "f_2": "0",
+   "f_3": "1/256",
+   "f_4": "3/512",
+   "f_5": "27/4096",
+   "iteration_cap": 400,
+   "support_hole_at": 2,
+   "tail_beyond_cap_is_zero_to_1e40": true,
+   "two_routes_agree": true
+  },
+  "hitting_probabilities": {
+   "1": "1/4",
+   "2": "0",
+   "3": "4/7",
+   "4": "0",
+   "5": "0"
+  },
+  "mean_conditional_on_return": "21/13",
+  "return_probability": "13/16",
+  "scope": "DELIVERY-FREE (S1/S4's own tags)",
+  "termination": "A.S. TERMINATION AT DELIVERY-FREE SCOPE",
+  "transient_states": [
+   0,
+   1,
+   3
+  ],
+  "transport_scope_caveat_verbatim": "At transport scope the picture will change and is declared: deliveries reopen the absorbing sector (diverged holdings can reconverge), the class structure of §3.2 is not stable under the transport grammar, and the Martin-boundary machinery that this section did *not* need is expected to become load-bearing exactly there (§7, successor 2)."
+ },
+ "extremal_lead": {
+  "countermodel": "four record-intrinsic functionals on one pinned interval return three distinct selections; the declared readout is det-blind at w = 0",
+  "declared_readout_is_det_blind": true,
+  "deep_rows_declaring_a_variational_principle": 0,
+  "derived_law_probability_of_the_extremal_split": "1/3",
+  "distinct_selections": 3,
+  "fixture": {
+   "counts": [
+    2,
+    2,
+    4
+   ],
+   "splits": [
+    1,
+    2,
+    3
+   ]
+  },
+  "functionals": {
+   "MAX-BALANCE": [
+    2
+   ],
+   "MAX-DET": [
+    2
+   ],
+   "MAX-LEFT-COUNT": [
+    3
+   ],
+   "MAX-|q12|": [
+    1,
+    3
+   ]
+  },
+  "max_det_selection": [
+   2
+  ],
+  "max_det_unique": true,
+  "outcome": "DIES-AT-THE-BAR"
+ },
+ "fiber_collapse": {
+  "collapse_kind": "DISTRIBUTION",
+  "collapse_law_delivery_free": {
+   "1": "1/3",
+   "2": "1/3",
+   "3": "1/3"
+  },
+  "collapse_law_transport_leg1": {
+   "1": "3/7",
+   "2": "1/7",
+   "3": "3/7"
+  },
+  "collapse_law_transport_leg2": {
+   "1": "4/9",
+   "2": "1/9",
+   "3": "4/9"
+  },
+  "collapsed_intervals": 37,
+  "crb_anchored_tv": "2/21",
+  "crb_simplex_dim_at_count_4_after": 0,
+  "crb_simplex_dim_at_count_4_before": 2,
+  "interval_classes": {
+   "COLLAPSED-IN-DISTRIBUTION (count 4)": 37,
+   "KERNEL-HOLE (count 2; f(2) = 0 exactly)": 50,
+   "NO-SPLIT (count 1; R6a fiber 0)": 29,
+   "STRATUM-EMPTY (count 3; S2 has one pattern class)": 20,
+   "UNCENSUSED-BY-S2 (count >= 5)": 65
+  },
+  "intervals_total": 201,
+  "intervals_with_nontrivial_fiber": 122,
+  "maximisers_delivery_free": [
+   1,
+   2,
+   3
+  ],
+  "maximisers_transport": [
+   1,
+   3
+  ],
+  "records_with_a_complete_derived_law": [
+   "G-DIAG2"
+  ],
+  "s5_comparator_law": {
+   "1": "2/7",
+   "2": "3/7",
+   "3": "2/7"
+  },
+  "scope": "DELIVERY-FREE; at transport scope the law is chain-position dependent and no unique distribution exists",
+  "tv_derived_vs_s5_comparator": "2/21"
+ },
+ "gate_count_final": 48,
+ "gates": [
+  {
+   "detail": "R6a is on the TERMINAL track with its repair IN FLIGHT: this unit consumes the DELIVERED-COMMITTED receipt bytes the pin names (022c3f488a93), and discloses the working tree's in-flight bytes (94adec72ab11).  All 24 path-values consumed from that receipt are compared across the two: 0 moved.  Carried status: DELIVERED-COMMITTED (LOG #26) / ADJUDICATOR-VERIFIED (#27) / ADJUDICATED AWF-UNANIMOUS, THE VERDICT HOLDS (#34), repair under orders R-R6A-1..10 pending its own verification",
+   "injection_falsifier": "INJ-REPAIR-DELTA",
+   "must_pass": true,
+   "name": "G-R6A-REPAIR-DELTA",
+   "passed": true
+  },
+  {
+   "detail": "the 6x6 transfer and the harmonic vector parsed independently from paper 31's fenced block (route P) and from d43b's T_REF/f source objects (route C) agree entry by entry; T rows = 6; f = ['4/3', '4/3', '1', '7/3', '1', '1']",
+   "injection_falsifier": "INJ-S1-ROUTE-DRIFT",
+   "must_pass": true,
+   "name": "G-S1-TWO-ROUTES",
+   "passed": true
+  },
+  {
+   "detail": "the two routes are genuinely two: route P reads v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md (7ac66f3fe74d), route C reads v10/code/d43b_state_chain_exact.py (5f91f0190b4c) -- distinct artifacts, distinct formats (a prose fenced block and a Python source object).  A comparator routed through the component under test would verify nothing (#219)",
+   "injection_falsifier": "INJ-S1-ROUTE-SAME-SOURCE",
+   "must_pass": true,
+   "name": "G-S1-ROUTE-PROVENANCE",
+   "passed": true
+  },
+  {
+   "detail": "T f = 2 f exactly with f > 0; row sums = ['2', '2', '2', '5/2', '2', '2'] (the conflict state's 5/2)",
+   "injection_falsifier": "INJ-S1-ROUTE-DRIFT",
+   "must_pass": true,
+   "name": "G-S1-HARMONIC",
+   "passed": true
+  },
+  {
+   "detail": "q'(i->j) = T_ij f_j / (2 f_i): all six rows sum to 1 = True; conflict row = {0: '1/7', 3: '3/4', 5: '3/28'}",
+   "injection_falsifier": "INJ-KERNEL-ROW",
+   "must_pass": true,
+   "name": "G-KERNEL-CONFLICT-ROW",
+   "passed": true
+  },
+  {
+   "detail": "the completed chain q' has exactly one closed communicating class [[2, 4, 5]] and transient states [0, 1, 3]; the renewal state 0 lies in the TRANSIENT part and 3 -> 0 is the renewal loop",
+   "injection_falsifier": "INJ-CLOSED-CLASS",
+   "must_pass": true,
+   "name": "G-CLOSED-CLASS",
+   "passed": true
+  },
+  {
+   "detail": "P(return to the renewal state | at it) = 13/16 < 1; defect = 3/16 (the mass absorbed into the closed class [2, 4, 5]); hitting probabilities h = {1: '1/4', 2: '0', 3: '4/7', 4: '0', 5: '0'}",
+   "injection_falsifier": "INJ-DEFECT-ARITHMETIC",
+   "must_pass": true,
+   "name": "G-RENEWAL-DEFECTIVE",
+   "passed": true
+  },
+  {
+   "detail": "the inter-renewal (first-return) law computed two ways -- the closed form f(1)=3/4, f(2)=0, f(n)=(n-2)(3/4)^(n-3)/256 for n>=3, and an exact taboo iteration of q' to n=400 -- agree termwise at all 400 terms = True; SUPPORT HOLE AT 2: f(2) = 0 EXACTLY; residual tail mass beyond n=400 is < 1e-40",
+   "injection_falsifier": "INJ-FIRST-RETURN-HOLE",
+   "must_pass": true,
+   "name": "G-FIRST-RETURN-LAW",
+   "passed": true
+  },
+  {
+   "detail": "the defective mean E[T.1(T<inf)] = 21/16 in closed form, reproduced by the truncated sum to n=400 to better than 1e-40; the mean inter-renewal length CONDITIONAL ON RETURN is 21/13",
+   "injection_falsifier": "INJ-DEFECT-ARITHMETIC",
+   "must_pass": true,
+   "name": "G-DEFECTIVE-MEAN",
+   "passed": true
+  },
+  {
+   "detail": "the renewal process is DEFECTIVE at delivery-free scope: the number of renewals after any renewal is geometric with success probability 13/16, so it is almost surely FINITE and the renewal chain TERMINATES a.s.; expected total visits to the renewal state = 16/3; defective mean E[T.1(T<inf)] = 21/16; mean conditional on return = 21/13",
+   "injection_falsifier": "INJ-DEFECT-ARITHMETIC",
+   "must_pass": true,
+   "name": "G-AS-TERMINATION",
+   "passed": true
+  },
+  {
+   "detail": "S4 states the renewal theorem verbatim as \"every pair arbitration is a renewal to the root state [THEOREM at two-actor delivery-free scope]\" (V-S4-RENEWAL); every headline of this unit therefore carries the DELIVERY-FREE scope qualifier",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-DELIVERY-FREE-SCOPE",
+   "passed": true
+  },
+  {
+   "detail": "the two length-4 intervening-pattern profiles read from S2's own printed census: leg-1 totals 3584 leaves over 5 patterns; leg-2 totals 73728 leaves over 5 patterns; same pattern set = True",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "must_pass": true,
+   "name": "G-S2-PROFILES",
+   "passed": true
+  },
+  {
+   "detail": "each of S2's five length-4 patterns carries EXACTLY ONE non-proposal interior event (S2: \"each with exactly two proposals plus one delivery or one idle\"), so the pattern class determines an interior POSITION in {1,2,3}: {'dppr': 1, 'nppr': 1, 'pnpr': 2, 'ppdr': 3, 'ppnr': 3}",
+   "injection_falsifier": "INJ-POSITION-MAP",
+   "must_pass": true,
+   "name": "G-S2-PATTERN-POSITION-MAP",
+   "passed": true
+  },
+  {
+   "detail": "AT TRANSPORT SCOPE the induced interior-position law is CHAIN-POSITION DEPENDENT: leg 1 gives {1: '3/7', 2: '1/7', 3: '3/7'}, leg 2 gives {1: '4/9', 2: '1/9', 3: '4/9'}, total variation 2/63 > 0 -- so an identification that must SUPPLY a chain position is moved by that supply",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "must_pass": true,
+   "name": "G-POSITION-DEPENDENCE-AT-TRANSPORT-SCOPE",
+   "passed": true
+  },
+  {
+   "detail": "AT DELIVERY-FREE SCOPE (S1/S4's own scope: the delivery-bearing patterns are deleted) the induced interior-position law is EXACTLY UNIFORM at BOTH censused chain positions -- leg 1 {1: '1/3', 2: '1/3', 3: '1/3'}, leg 2 {1: '1/3', 2: '1/3', 3: '1/3'}, total variation 0; the entire position dependence is carried by the delivery patterns, which lie OUTSIDE the scope at which the kernel is derived",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "must_pass": true,
+   "name": "G-POSITION-INDEPENDENCE-AT-DELIVERY-FREE-SCOPE",
+   "passed": true
+  },
+  {
+   "detail": "THE SCOPE SEAM, NAMED: S1's chain and S4's renewal theorem are DELIVERY-FREE (V-S4-RENEWAL); S2's census is TRANSPORT SCOPE (V-S2-SCOPE: \"Transport scope (`d42b1`) only\"); and S1's own artifact declares the change is not innocuous (V-S1-SCOPE). The delivery-free restriction deletes 4/7 of S2's leg-1 mass and 2/3 of its leg-2 mass",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-SCOPE-SEAM",
+   "passed": true
+  },
+  {
+   "detail": "at leg length 3 S2 censused exactly ONE intervening pattern ((p,p,r), 256 leaves, no delivery and no idle), so the pattern class distinguishes NO interior position: the positional stratum is EMPTY at length 3 and cannot separate the 2 splits of a count-3 interval",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-POSITIONAL-STRATUM-EMPTY-AT-3",
+   "passed": true
+  },
+  {
+   "detail": "R6a's split fibers REBUILT here from the count data alone by an independent construction (raw fiber = prod over intervals of (n-1); equivariant fiber = prod over links of (n_l - 1)) and compared against the anchored receipt values: raw agree 8-of-8 (['G-ANISO', 'G-ANISO2', 'G-CURVED', 'G-DIAG2', 'G-FLAT', 'G-OFFDIAG', 'G-OFFDIAG2', 'G-OFFNEG']), equivariant agree 5-of-5; DECLARED CAP: ['G-CURVOFF'] is inhomogeneous with no count-1 interval among its printed sites, so its fiber is not determined by the printed-site data and is NOT rebuilt.  The comparator is built from the counts, not routed through R6a's own fiber code -- and it reproduces the adjudication's mechanism statement, that the split's wall is the combinatorial multiplicity prod(n_l - 1)",
+   "injection_falsifier": "INJ-FIBER-REBUILD",
+   "must_pass": true,
+   "name": "G-R6A-FIBER-REBUILD",
+   "passed": true
+  },
+  {
+   "detail": "the baseline arena row is I7's: sites 9, links 3, n_l(x) = \"n_l(x) in Z_>0, the number of division events in the record interval between x and x+l\"; this unit censuses 201 record intervals over 9 admissible records (7 homogeneous at all 9 sites, 2 inhomogeneous at the 2 printed sites -- declared cap), against an independently expressed expectation of 201; count values present = [1, 2, 3, 4, 5, 6, 9, 10, 12, 13]",
+   "injection_falsifier": "INJ-ARENA-CENSUS",
+   "must_pass": true,
+   "name": "G-ARENA-BASELINE",
+   "passed": true
+  },
+  {
+   "detail": "5 identification candidates expressible from the pinned rows; the motivation qualifier is COMPUTED from each choice inventory (MOTIVATED iff zero genuinely-free items) and is consistent with it = True; MOTIVATED 0-of-5; UNMOTIVATED 5-of-5",
+   "injection_falsifier": "INJ-MOTIVATION-QUALIFIER",
+   "must_pass": true,
+   "name": "G-IDENTIFICATION-CENSUS",
+   "passed": true
+  },
+  {
+   "detail": "the type census, from S3's [POSIT] verbatim (V-S3-POSIT): a record interval's n_l counts DIVISION EVENTS; an inter-renewal leg contains EXACTLY ONE division event.  C1 (the pin's literal count-matching) therefore equates a division-event count with a grammar-event count, and C2 is the type-honest repair",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-TYPE-CENSUS",
+   "passed": true
+  },
+  {
+   "detail": "S3's bridges reading is admissible exactly at count 1, and 29 of the 201 censused intervals carry count 1 -- every one of them with split fiber 0.  The one type-honest reading of S3's own declaration reaches only intervals that cannot be split",
+   "injection_falsifier": "INJ-ARENA-CENSUS",
+   "must_pass": true,
+   "name": "G-BRIDGES-READING",
+   "passed": true
+  },
+  {
+   "detail": "the derived law does NOT collapse the fiber to a VALUE at either scope: at delivery-free scope the induced split law is uniform and has 3 maximisers [1, 2, 3]; at transport scope it has 2 maximisers [1, 3].  The collapse, where it happens, is IN DISTRIBUTION",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "must_pass": true,
+   "name": "G-COLLAPSE-IS-DISTRIBUTION-NOT-VALUE",
+   "passed": true
+  },
+  {
+   "detail": "THE DECISIVE NUMBER: the derived kernel collapses the R6a split fiber -- in distribution, to the uniform law -- on 37 of the 201 censused record intervals (37 of the 122 carrying a non-trivial fiber). The remainder: 37 COLLAPSED-IN-DISTRIBUTION (count 4); 50 KERNEL-HOLE (count 2; f(2) = 0 exactly); 29 NO-SPLIT (count 1; R6a fiber 0); 20 STRATUM-EMPTY (count 3; S2 has one pattern class); 65 UNCENSUSED-BY-S2 (count >= 5)",
+   "injection_falsifier": "INJ-COLLAPSE-COUNT",
+   "must_pass": true,
+   "name": "G-FIBER-COLLAPSE-COVERAGE",
+   "passed": true
+  },
+  {
+   "detail": "stated in CR-B's own coordinates: at count 4 CR-B measured a fiber of 3 and an invariant-measure simplex of dimension 2 under the pinned symmetry (and 1 under the flip); the derived kernel selects ONE point of that simplex, so the dimension goes 2 -> 0 at count 4 at delivery-free scope.  CR-B's head was \"CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW\" and its MISSING tag names exactly the object this unit supplies",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "must_pass": true,
+   "name": "G-CRB-SIMPLEX",
+   "passed": true
+  },
+  {
+   "detail": "exactly 1 of the record family -- ['G-DIAG2'] -- has every one of its splittable intervals at count 4 and every other interval at fiber 1, so on it the derived kernel supplies a COMPLETE law on R6a's entire split fiber: the uniform law on 19683 elements, and that fiber's raw and admissible-at-images sizes coincide (19683 = 19683).  It is the very law CR-B classed REFUTED-AS-FORCING for want of a declared support -- the support is now derived, not chosen",
+   "injection_falsifier": "INJ-FIBER-REBUILD",
+   "must_pass": true,
+   "name": "G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD",
+   "passed": true
+  },
+  {
+   "detail": "the continuous comparator (S5, chosen-not-derived) places the interior positions as uniform order statistics, giving the binomial split law {1: '2/7', 2: '3/7', 3: '2/7'} at count 4 -- separated from the DERIVED delivery-free law {1: '1/3', 2: '1/3', 3: '1/3'} by total variation 2/21.  That number reproduces CR-B's own anchored tv_uniform_vs_binomial at count 4 (\"2/21\") computed by a different unit on a different route.  Two positional layers, one derived and one chosen, disagree",
+   "injection_falsifier": "INJ-S5-COMPARATOR",
+   "must_pass": true,
+   "name": "G-S5-COMPARATOR-SEPARATION",
+   "passed": true
+  },
+  {
+   "detail": "wherever the continuous layer is touched this unit carries S5's own disclaimer verbatim: \"the coefficients 1/4 are chosen, not derived\" (V-S5-CHOSEN); no continuum claim is entered",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-S5-DISCLAIMER",
+   "passed": true
+  },
+  {
+   "detail": "count additivity RE-VERIFIED UNCHANGED at the enriched type on this unit's own enumeration: 647 split constraints n = n1 + n2 over the censused intervals, 0 violations. R6a's own printed figure is anchored separately (972 checks / 0 violations, P-R6A-ADDITIVITY); the two enumerations are different objects and no ratio is formed between them",
+   "injection_falsifier": "INJ-ADDITIVITY",
+   "must_pass": true,
+   "name": "G-ADDITIVITY-REVERIFIED",
+   "passed": true
+  },
+  {
+   "detail": "metric restriction RE-VERIFIED UNCHANGED: the readout q_ij e^i e^j = n_l(x) recovers every censused count from the rebuilt form, 67 of 67; R6a's own figure (324 of 324) is anchored separately",
+   "injection_falsifier": "INJ-ADDITIVITY",
+   "must_pass": true,
+   "name": "G-METRIC-RESTRICTION-REVERIFIED",
+   "passed": true
+  },
+  {
+   "detail": "FREE-TRANSVERSE-LINKS RE-CLASSED: UNCHANGED, still class (iii) with an infinite fiber.  The derived kernel is indexed by an interval's COUNT; the 54 of 108 refined links that lie on no coarse interval carry no count, so the transported law has no index for them -- 0 of 54 forced.  The enrichment is count-indexed and cannot reach a countless link",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "must_pass": true,
+   "name": "G-TRANSVERSE-LINKS-UNFORCED",
+   "passed": true
+  },
+  {
+   "detail": "NEW-FRONT-VALUES RE-CLASSED: from class (iii) with an INFINITE fiber to FORCED-RELATIVE-TO-THE-SPLIT with fiber 1.  The enriched type supplies the rule front(new site) = front(x) + n1 (the count of division events on the left half), which is a consequence of the same count semantics that forces additivity. It is INTEGRAL at 647 of 647 cells of THIS unit's grid, by construction",
+   "injection_falsifier": "INJ-FRONT-RULE",
+   "must_pass": true,
+   "name": "G-NEW-FRONTS-RECLASSED",
+   "passed": true
+  },
+  {
+   "detail": "the contrast, stated without forming a ratio between different grids: R6a's dynamics-forced (count-weighted) front lift is NON-INTEGRAL at 30 of its 81 cells (anchored path-value); the transported rule is integral everywhere on this unit's grid.  The two grids are different objects.  The transported rule is a THIRD rule: it agrees with the count-weighted interpolation only where the record's counts are a coboundary, and R6a's gated theorem is that no record's counts are",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "must_pass": true,
+   "name": "G-FRONT-RULE-INTEGRAL",
+   "passed": true
+  },
+  {
+   "detail": "THE-LIFT-PAIR RE-CLASSED: NOT collapsed -- and the freedom GROWS.  The transported front rule front(x) + n1 is neither of R6a's two declared lifts (which interpolate between the two endpoint front values); it coincides with them only under the coboundary condition R6a proved fails.  The enriched type therefore adds a third admissible rule to a fiber of 2 rather than selecting inside it. THE-SPLIT: class (iii) -> class (ii)-IN-DISTRIBUTION, and only at count 4 at delivery-free scope (37 of 201 intervals)",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "must_pass": true,
+   "name": "G-R6A-RECLASSIFICATION",
+   "passed": true
+  },
+  {
+   "detail": "THE COUNTERMODEL, EXHIBITED: on the pinned arena's own count-4 interval, 4 record-intrinsic functionals -- all computed from the record alone, none supplied a base measure -- return 3 DIFFERENT selections: MAX-BALANCE -> [2]; MAX-DET -> [2]; MAX-LEFT-COUNT -> [3]; MAX-|q12| -> [1, 3].  Max-det does select uniquely ([2]), and that is exactly D12's disqualifier: a selector that \"chooses a coefficient after its support, reference measure, modes, and constraints have been supplied\" and \"selects one member of a preselected toy family\".  0 of 6 pinned deep rows declare a variational principle; S6 itself REFUTES the class (V-S6-MAXENT, V-S6-NONSEL).  VERDICT: DIES-AT-THE-BAR",
+   "injection_falsifier": "INJ-EXTREMAL-BAR",
+   "must_pass": true,
+   "name": "G-EXTREMAL-BAR",
+   "passed": true
+  },
+  {
+   "detail": "and the record-intrinsic test fails at a second, independent point: the arena's OWN declared readout is \"q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0\" -- the determinant enters at exponent ZERO, so the declared readout is DET-BLIND (I7's density_weight is 0, anchored).  Max-det optimises a functional the declared record does not read.  S6's companion: \"the corpus has no record-intrinsic, field-redefinition-invariant complexity measure that selects one generator\" (V-S6-INTRINSIC)",
+   "injection_falsifier": "INJ-PATH-DRIFT",
+   "must_pass": true,
+   "name": "G-EXTREMAL-INTRINSIC",
+   "passed": true
+  },
+  {
+   "detail": "and the deep rows do not rescue it: the DERIVED delivery-free law assigns max-det's selection probability 1/3, not 1. The enriched type does not concentrate on the extremal split",
+   "injection_falsifier": "INJ-S2-PROFILE",
+   "must_pass": true,
+   "name": "G-EXTREMAL-NOT-RATIFIED",
+   "passed": true
+  },
+  {
+   "detail": "R6a's cover lead is motivated iff a deeper row de-periodizes the declared arena or pins cover objects.  Of the 6 pinned deep rows, 0 pin a cover object of (Z_3)^2 and 0 de-periodize it: the deep arenas are ROOTED GENERATED OBJECTS, not periodic lattices -- S4 declares verbatim \"Truncated completions are therefore depth-non-stationary: **rooted**\" (V-COVER-ROOTED) and S1 declares \"its state count grows with depth (17, 23, 29 at depths 4, 5, 6)\" (V-COVER-GROWS).  A rooted, depth-non-stationary arena carries no deck group, so it supplies no cover object for a torus it never mentions.  RECORDED DISSOLVED; no hunt is run",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-COVER-DISSOLVED",
+   "passed": true
+  },
+  {
+   "detail": "all 3 negative controls FAIL the audit, by 3 distinct measured modes: NC1-R1-COPY=UNMOTIVATED; NC2-R6A-EXTERNAL=REFUSED-AT-SOURCE; NC3-COUNT-MISMATCH=FAILS-THE-CENSUS.  No named-excluded artifact is cited as a source ([]).  An audit that could not fail a move would not be an instrument",
+   "injection_falsifier": "INJ-CONTROL",
+   "must_pass": true,
+   "name": "G-CONTROL-R1-COPY",
+   "passed": true
+  },
+  {
+   "detail": "the emitted verdict string is compared for COMPLETE EQUALITY against a comparator rebuilt segment by segment from the measured values by an independent expression path (no substring, prefix or containment test anywhere): equal = True; emitted length 1299, comparator length 1299",
+   "injection_falsifier": "INJ-VERDICT-TYPED / INJ-VERDICT-APPEND / INJ-VERDICT-CLASS",
+   "must_pass": true,
+   "name": "G-VERDICT-EQUALITY",
+   "passed": true
+  },
+  {
+   "detail": "scope honesty, discharged: Gamma(cut' <- cut) is NOT constructed here (S3 declares it TO BE CONSTRUCTED, V-S3-GAMMA); no scaling census is run; the transport-scope renewal arm is untouched; no continuum claim is entered beyond what the fiber-collapse measurement earns",
+   "injection_falsifier": "INJ-VERBATIM-DRIFT",
+   "must_pass": true,
+   "name": "G-SCOPE-HONESTY",
+   "passed": true
+  },
+  {
+   "detail": "this unit's pin is anchored by bytes (A-PIN) and every one of its six registered measurements has a section above; the named exclusions are printed with their statuses and none is cited as a source",
+   "injection_falsifier": "INJ-FILE-ANCHOR-DRIFT",
+   "must_pass": true,
+   "name": "G-PIN-BOUND",
+   "passed": true
+  },
+  {
+   "detail": "paper present = True; load-bearing claims bound to receipt paths 25 of 25; missing []",
+   "injection_falsifier": "INJ-PAPER-CLAIM",
+   "must_pass": true,
+   "name": "G-PAPER-CLAIMS",
+   "passed": true
+  },
+  {
+   "detail": "the paper's verdict block is compared against the EMITTED verdict segment by segment: 7 of 7 present verbatim.  The headline the paper prints is the headline the gates computed",
+   "injection_falsifier": "INJ-PAPER-VERDICT",
+   "must_pass": true,
+   "name": "G-PAPER-VERDICT",
+   "passed": true
+  },
+  {
+   "detail": "backticked numeric tokens scanned in the paper: 135; tokens carried by no receipt value and no declared structural literal: []",
+   "injection_falsifier": "INJ-PAPER-NUMBER",
+   "must_pass": true,
+   "name": "G-PAPER-NUMBER-SWEEP",
+   "passed": true
+  },
+  {
+   "detail": "15 engraved rules swept; each row's status is COMPUTED by checking that its named injection-falsifier is a declared mutant that the selftest runs; MISSING rows 0",
+   "injection_falsifier": "INJ-COMPLIANCE",
+   "must_pass": true,
+   "name": "G-COMPLIANCE",
+   "passed": true
+  },
+  {
+   "detail": "never-falsified census over all 46 gates: 46 carry a declared injection that reaches them; 0 are WAIVED-VERIFIED as disclosures whose predicates read anchored objects that a declared injection perturbs; UNWAIVED 0 []",
+   "injection_falsifier": "INJ-WAIVER",
+   "must_pass": true,
+   "name": "G-WAIVER-CENSUS",
+   "passed": true
+  },
+  {
+   "detail": "the gate count the paper renders (48) is verified against the gate list actually registered at the end of the run (48); the paper's instrument figures are receipt values, not hand counts",
+   "injection_falsifier": "INJ-GATE-COUNT",
+   "must_pass": true,
+   "name": "G-GATE-COUNT",
+   "passed": true
+  }
+ ],
+ "identification_census": {
+  "candidate_count": 5,
+  "candidates": [
+   {
+    "expressible_from": [
+     "S1",
+     "S2",
+     "S3",
+     "I7"
+    ],
+    "free_items": [
+     "I-POSITION",
+     "I-SCOPE",
+     "I-BASIS"
+    ],
+    "inventory": {
+     "forced": 3,
+     "genuinely-free": 3,
+     "stabilizer-fixed": 1
+    },
+    "items": [
+     {
+      "class": "forced",
+      "evidence": {
+       "division_events_per_leg": 1
+      },
+      "fiber": 1,
+      "name": "I-TYPE",
+      "what": "does the identification preserve the declared type (division-event count <-> division-event count)?",
+      "why": "VIOLATED-AS-DECLARED: n_l counts DIVISION EVENTS (arena row, P-ARENA-GEOMETRY-RECORD) while a leg's LENGTH counts GRAMMAR events, of which exactly one is a division event (S3's [POSIT], V-S3-POSIT).  The identification is fixed by the pin's own wording, so nothing is chosen here -- but the type it fixes is not the declared one"
+     },
+     {
+      "class": "forced",
+      "evidence": {
+       "links": 3
+      },
+      "fiber": 1,
+      "name": "I-LINK",
+      "what": "which link direction supplies the leg length",
+      "why": "the interval's own count fixes the leg length"
+     },
+     {
+      "class": "forced",
+      "evidence": {
+       "sites": 9
+      },
+      "fiber": 1,
+      "name": "I-SITE",
+      "what": "which site",
+      "why": "every interval is identified separately"
+     },
+     {
+      "class": "stabilizer-fixed",
+      "evidence": {
+       "reversal_invariant_delivery_free": true,
+       "reversal_invariant_transport": true
+      },
+      "fiber": 2,
+      "name": "I-ORIENT",
+      "what": "which of the two interval orientations",
+      "why": "MEASURED: the induced interior-position law is invariant under the interval reversal at BOTH scopes and BOTH censused chain positions, so the orientation choice is fixed by a stabilizer rather than free"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "positions_censused": 2,
+       "tv_delivery_free": "0",
+       "tv_transport": "2/63"
+      },
+      "fiber": 2,
+      "name": "I-POSITION",
+      "what": "which chain position the leg is drawn at",
+      "why": "MEASURED AND CONSEQUENTIAL AT TRANSPORT SCOPE: the record carries no chain position, and supplying one moves the induced law (TV = 2/63 between the two censused positions).  At delivery-free scope the same supply is inert (TV = 0), so this item's class is SCOPE-RELATIVE and is reported as free because the composite must first choose the scope"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "tv_transport_leg1_vs_delivery_free": "4/21",
+       "tv_transport_leg2_vs_delivery_free": "2/9"
+      },
+      "fiber": 2,
+      "name": "I-SCOPE",
+      "what": "delivery-free or transport",
+      "why": "THE SCOPE SEAM: the kernel comes from S1 (delivery-free) and the positional profile from S2 (transport); the two rows are at different scopes and S1's own artifact declares the class structure is not stable across the seam (V-S1-SCOPE).  The two scopes give measurably different laws"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "declared_open_by_the_row": true
+      },
+      "fiber": 2,
+      "name": "I-BASIS",
+      "what": "the fine order-sealed or the coarse winner-sealed record basis",
+      "why": "S4 itself declares this an OPEN EMPIRICAL question (V-S4-EMPIRICAL): \"Which basis nature seals ... is an *empirical* question\".  A row that declares its own choice open cannot force one"
+     }
+    ],
+    "name": "C1-COUNT-MATCH-LENGTH",
+    "qualifier": "UNMOTIVATED",
+    "statement": "a record interval of count n is a single inter-renewal leg of LENGTH n; its n-1 interior positions are the n-1 admissible splits"
+   },
+   {
+    "expressible_from": [
+     "S1",
+     "S3",
+     "I7"
+    ],
+    "free_items": [
+     "I-LENGTHS",
+     "I-HALVING",
+     "I-POSITION",
+     "I-SCOPE",
+     "I-BASIS"
+    ],
+    "inventory": {
+     "forced": 1,
+     "genuinely-free": 5,
+     "stabilizer-fixed": 0
+    },
+    "items": [
+     {
+      "class": "forced",
+      "evidence": {
+       "division_events_per_leg": 1
+      },
+      "fiber": 1,
+      "name": "I-TYPE",
+      "what": "type preservation",
+      "why": "PRESERVED: n division events <-> n consecutive legs, each terminated by one division event (S3's [POSIT])"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "kernel_support": "{1} u {3,4,5,...}"
+      },
+      "fiber": "INFINITE",
+      "name": "I-LENGTHS",
+      "what": "the sequence of n leg lengths",
+      "why": "the record fixes only the NUMBER of legs; each leg's length is drawn from the derived kernel, whose support is infinite, so the interior configuration is not determined by the record"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "halvings_expressible": 3
+      },
+      "fiber": 3,
+      "name": "I-HALVING",
+      "what": "which halving rule locates the inserted site inside the leg chain",
+      "why": "the spatial move halves the interval geometrically; the temporal chain offers at least three inequivalent halvings (elapsed-event-time half, leg-count half, renewal-index half) and no pinned row declares one"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "tv_transport": "2/63"
+      },
+      "fiber": 2,
+      "name": "I-POSITION",
+      "what": "the chain position of the first leg",
+      "why": "as C1"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "seam": true
+      },
+      "fiber": 2,
+      "name": "I-SCOPE",
+      "what": "delivery-free or transport",
+      "why": "as C1"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "declared_open_by_the_row": true
+      },
+      "fiber": 2,
+      "name": "I-BASIS",
+      "what": "record basis",
+      "why": "as C1 (V-S4-EMPIRICAL)"
+     }
+    ],
+    "name": "C2-COUNT-MATCH-LEGS",
+    "qualifier": "UNMOTIVATED",
+    "statement": "a record interval of count n is a chain of n consecutive inter-renewal legs (the type-honest reading of S3's [POSIT])"
+   },
+   {
+    "expressible_from": [
+     "S3",
+     "I7"
+    ],
+    "free_items": [
+     "I-SCOPE"
+    ],
+    "inventory": {
+     "forced": 2,
+     "genuinely-free": 1,
+     "stabilizer-fixed": 0
+    },
+    "items": [
+     {
+      "class": "forced",
+      "evidence": {
+       "admissible_count": 1
+      },
+      "fiber": 1,
+      "name": "I-TYPE",
+      "what": "type preservation",
+      "why": "S3 declares verbatim \"The bridges are the conflict windows between renewals\" (V-S3-BRIDGES); a bridge's INTERIOR carries no division event, so the reading is admissible only where n_l = 1"
+     },
+     {
+      "class": "forced",
+      "evidence": {
+       "count_1_intervals": 29,
+       "of_total": 201,
+       "split_fiber_at_count_1": 0
+      },
+      "fiber": 1,
+      "name": "I-COVERAGE",
+      "what": "which intervals the reading reaches",
+      "why": "MEASURED: the reading is defined exactly on the count-1 intervals, and R6a's own datum is that a count-1 interval admits NO subdivision at all -- the one type-honest reading of S3's declaration lands precisely where the split fiber is EMPTY"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "seam": true
+      },
+      "fiber": 2,
+      "name": "I-SCOPE",
+      "what": "delivery-free or transport",
+      "why": "as C1"
+     }
+    ],
+    "name": "C3-THE-BRIDGES-READING",
+    "qualifier": "UNMOTIVATED",
+    "statement": "a record interval IS a bridge -- one conflict window between consecutive renewals (S3's verbatim declaration)"
+   },
+   {
+    "expressible_from": [
+     "S4",
+     "I7"
+    ],
+    "free_items": [
+     "I-CHAIN-LENGTH",
+     "I-BASIS",
+     "I-MIDCHAIN"
+    ],
+    "inventory": {
+     "forced": 1,
+     "genuinely-free": 3,
+     "stabilizer-fixed": 0
+    },
+    "items": [
+     {
+      "class": "forced",
+      "evidence": {
+       "clicks_per_arbitration": "chain-length dependent"
+      },
+      "fiber": 1,
+      "name": "I-TYPE",
+      "what": "type preservation",
+      "why": "S4's elementary-click refinement (V-S4-CLICK) resolves ONE division event into a chain of recorded selection clicks, so an interval of count n carries n click chains and the interior positions are click positions"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "exhibited_chain": 6
+      },
+      "fiber": "INFINITE",
+      "name": "I-CHAIN-LENGTH",
+      "what": "the click-chain length at each division event",
+      "why": "the refinement's chain length is set by the component's proposer count, which the record does not carry"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "declared_open_by_the_row": true
+      },
+      "fiber": 2,
+      "name": "I-BASIS",
+      "what": "fine order-sealed or coarse winner-sealed",
+      "why": "declared an open EMPIRICAL question by S4 itself (V-S4-EMPIRICAL)"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "declared_carried_question": true
+      },
+      "fiber": "INFINITE",
+      "name": "I-MIDCHAIN",
+      "what": "how mid-chain drift is legislated",
+      "why": "S4 names mid-chain drift as a CARRIED QUESTION: \"the full refined grammar must legislate it\" -- an unlegislated rule cannot force a split"
+     }
+    ],
+    "name": "C4-ELEMENTARY-CLICK-REFINEMENT",
+    "qualifier": "UNMOTIVATED",
+    "statement": "the interval's interior positions are the elementary click positions inside its division events (S4 §3.2)"
+   },
+   {
+    "expressible_from": [
+     "S5",
+     "I7"
+    ],
+    "free_items": [
+     "I-WAITING-LAW"
+    ],
+    "inventory": {
+     "forced": 0,
+     "genuinely-free": 1,
+     "stabilizer-fixed": 1
+    },
+    "items": [
+     {
+      "class": "stabilizer-fixed",
+      "evidence": {
+       "rate_invariance": true
+      },
+      "fiber": "INFINITE",
+      "name": "I-RATE",
+      "what": "the clock rate",
+      "why": "MEASURED: conditioned on the event count, the positions of a Poisson process are uniform order statistics, so the induced split law does not move with the rate -- the rate freedom is a stabilizer of THIS observable"
+     },
+     {
+      "class": "genuinely-free",
+      "evidence": {
+       "chosen_not_derived": true
+      },
+      "fiber": "INFINITE",
+      "name": "I-WAITING-LAW",
+      "what": "the waiting-time law itself",
+      "why": "S5 carries its own disclaimer verbatim: \"the coefficients 1/4 are chosen, not derived\" (V-S5-CHOSEN) and \"the chosen static-adjacency D34b birth/idle/interaction exemplar\" (V-S5-CHOSEN2).  A chosen law is not a forcing"
+     }
+    ],
+    "name": "C5-CONTINUOUS-PLACEMENT-COMPARATOR",
+    "qualifier": "UNMOTIVATED",
+    "statement": "interior positions from S5's continuous positional layer (exponential clocks), CARRIED ONLY AS A LABELLED COMPARATOR under its chosen-not-derived disclaimer"
+   }
+  ],
+  "motivated": [],
+  "motivated_count": 0,
+  "unmotivated": [
+   "C1-COUNT-MATCH-LENGTH",
+   "C2-COUNT-MATCH-LEGS",
+   "C3-THE-BRIDGES-READING",
+   "C4-ELEMENTARY-CLICK-REFINEMENT",
+   "C5-CONTINUOUS-PLACEMENT-COMPARATOR"
+  ]
+ },
+ "mutant_count": 31,
+ "mutants": [
+  {
+   "name": "INJ-FILE-ANCHOR-DRIFT",
+   "target": "A-S1-PAPER31 / G-PIN-BOUND",
+   "what": "corrupt a pinned deep row's byte hash"
+  },
+  {
+   "name": "INJ-PATH-DRIFT",
+   "target": "P-R6A-SPLIT-FIBER-MIN",
+   "what": "drift a path-value read from the R6a receipt"
+  },
+  {
+   "name": "INJ-VERBATIM-DRIFT",
+   "target": "V-S1-SCOPE",
+   "what": "modify the anchored context window (scope wording)"
+  },
+  {
+   "name": "INJ-S1-ROUTE-DRIFT",
+   "target": "G-S1-TWO-ROUTES",
+   "what": "drift one entry of the second S1 route"
+  },
+  {
+   "name": "INJ-S1-ROUTE-SAME-SOURCE",
+   "target": "G-S1-ROUTE-PROVENANCE",
+   "what": "point both S1 routes at one artifact (the #219 disease)"
+  },
+  {
+   "name": "INJ-KERNEL-ROW",
+   "target": "G-KERNEL-CONFLICT-ROW",
+   "what": "corrupt one entry of the completed chain q'"
+  },
+  {
+   "name": "INJ-CLOSED-CLASS",
+   "target": "G-CLOSED-CLASS",
+   "what": "add a spurious closed class containing the renewal state"
+  },
+  {
+   "name": "INJ-DEFECT-ARITHMETIC",
+   "target": "G-RENEWAL-DEFECTIVE / G-AS-TERMINATION",
+   "what": "set the return probability to 1"
+  },
+  {
+   "name": "INJ-FIRST-RETURN-HOLE",
+   "target": "G-FIRST-RETURN-LAW",
+   "what": "fill the support hole at 2"
+  },
+  {
+   "name": "INJ-S2-PROFILE",
+   "target": "G-POSITION-DEPENDENCE-AT-TRANSPORT-SCOPE",
+   "what": "make the two chain positions' profiles equal"
+  },
+  {
+   "name": "INJ-POSITION-MAP",
+   "target": "G-S2-PATTERN-POSITION-MAP",
+   "what": "collapse the pattern->interior-position map to a constant"
+  },
+  {
+   "name": "INJ-ARENA-CENSUS",
+   "target": "G-ARENA-BASELINE",
+   "what": "inflate one count class of the interval census"
+  },
+  {
+   "name": "INJ-REPAIR-DELTA",
+   "target": "G-R6A-REPAIR-DELTA",
+   "what": "declare a consumed R6a path-value moved between the committed bytes and the in-flight repair"
+  },
+  {
+   "name": "INJ-DEFECTIVE-MEAN",
+   "target": "G-DEFECTIVE-MEAN",
+   "what": "corrupt the closed-form defective mean"
+  },
+  {
+   "name": "INJ-WAIVER",
+   "target": "G-WAIVER-CENSUS",
+   "what": "leave a gate with no falsifier and no verified waiver"
+  },
+  {
+   "name": "INJ-FIBER-REBUILD",
+   "target": "G-R6A-FIBER-REBUILD",
+   "what": "drift the independently rebuilt split fiber"
+  },
+  {
+   "name": "INJ-MOTIVATION-QUALIFIER",
+   "target": "G-IDENTIFICATION-CENSUS",
+   "what": "declare an identification MOTIVATED while its inventory carries free items"
+  },
+  {
+   "name": "INJ-COLLAPSE-COUNT",
+   "target": "G-FIBER-COLLAPSE-COVERAGE",
+   "what": "inflate the fiber-collapse coverage"
+  },
+  {
+   "name": "INJ-S5-COMPARATOR",
+   "target": "G-S5-COMPARATOR-SEPARATION",
+   "what": "collapse the S5 comparator separation to 0"
+  },
+  {
+   "name": "INJ-ADDITIVITY",
+   "target": "G-ADDITIVITY-REVERIFIED",
+   "what": "empty the additivity enumeration (a vacuous gate)"
+  },
+  {
+   "name": "INJ-FRONT-RULE",
+   "target": "G-NEW-FRONTS-RECLASSED",
+   "what": "make the transported front rule non-integral"
+  },
+  {
+   "name": "INJ-EXTREMAL-BAR",
+   "target": "G-EXTREMAL-BAR",
+   "what": "collapse the countermodel to one selection"
+  },
+  {
+   "name": "INJ-CONTROL",
+   "target": "G-CONTROL-R1-COPY",
+   "what": "declare the negative controls MOTIVATED"
+  },
+  {
+   "name": "INJ-VERDICT-TYPED",
+   "target": "G-VERDICT-EQUALITY",
+   "what": "type a verdict segment (VALUE for DISTRIBUTION)"
+  },
+  {
+   "name": "INJ-VERDICT-APPEND",
+   "target": "G-VERDICT-EQUALITY",
+   "what": "append text to the verdict (the containment class)"
+  },
+  {
+   "name": "INJ-VERDICT-CLASS",
+   "target": "G-VERDICT-EQUALITY",
+   "what": "swap the verdict class KERNEL-DEFECTIVE -> KERNEL-SOUND"
+  },
+  {
+   "name": "INJ-PAPER-CLAIM",
+   "target": "G-PAPER-CLAIMS",
+   "what": "drift a number the paper renders from the receipt"
+  },
+  {
+   "name": "INJ-PAPER-NUMBER",
+   "target": "G-PAPER-NUMBER-SWEEP",
+   "what": "leave a backticked number in the paper that no receipt value carries"
+  },
+  {
+   "name": "INJ-COMPLIANCE",
+   "target": "G-COMPLIANCE",
+   "what": "assert compliance with an engraved rule that is not met"
+  },
+  {
+   "name": "INJ-GATE-COUNT",
+   "target": "G-GATE-COUNT",
+   "what": "drift the gate count the paper renders"
+  },
+  {
+   "name": "INJ-PAPER-VERDICT",
+   "target": "G-PAPER-VERDICT",
+   "what": "drift a verdict segment as the paper prints it"
+  }
+ ],
+ "named_exclusions": [
+  {
+   "artifact": "v11/note-u1c-depth15-two-sided.md",
+   "status_printed": "GREEN-UNREVIEWED, NOT CITABLE per STATUS -- registered lead only, status printed"
+  },
+  {
+   "artifact": "v10/THE-THEORY-SO-FAR.md",
+   "status_printed": "index only, never primary"
+  },
+  {
+   "artifact": "v12 Gamma objects",
+   "status_printed": "arena-free -- no interval/position/count content"
+  },
+  {
+   "artifact": "v10/note-d70-horizon-limit-result.md",
+   "status_printed": "round-1-repaired, NOT terminal -- excluded from this unit"
+  }
+ ],
+ "never_falsified_census": [
+  {
+   "gate": "G-R6A-REPAIR-DELTA",
+   "killing_mutants": [
+    "INJ-REPAIR-DELTA"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S1-TWO-ROUTES",
+   "killing_mutants": [
+    "INJ-S1-ROUTE-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S1-ROUTE-PROVENANCE",
+   "killing_mutants": [
+    "INJ-S1-ROUTE-SAME-SOURCE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S1-HARMONIC",
+   "killing_mutants": [
+    "INJ-S1-ROUTE-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-KERNEL-CONFLICT-ROW",
+   "killing_mutants": [
+    "INJ-KERNEL-ROW"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-CLOSED-CLASS",
+   "killing_mutants": [
+    "INJ-CLOSED-CLASS"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-RENEWAL-DEFECTIVE",
+   "killing_mutants": [
+    "INJ-DEFECT-ARITHMETIC"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-FIRST-RETURN-LAW",
+   "killing_mutants": [
+    "INJ-FIRST-RETURN-HOLE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-DEFECTIVE-MEAN",
+   "killing_mutants": [
+    "INJ-DEFECT-ARITHMETIC"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-AS-TERMINATION",
+   "killing_mutants": [
+    "INJ-DEFECT-ARITHMETIC"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-DELIVERY-FREE-SCOPE",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S2-PROFILES",
+   "killing_mutants": [
+    "INJ-S2-PROFILE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S2-PATTERN-POSITION-MAP",
+   "killing_mutants": [
+    "INJ-POSITION-MAP"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-POSITION-DEPENDENCE-AT-TRANSPORT-SCOPE",
+   "killing_mutants": [
+    "INJ-S2-PROFILE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-POSITION-INDEPENDENCE-AT-DELIVERY-FREE-SCOPE",
+   "killing_mutants": [
+    "INJ-S2-PROFILE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-SCOPE-SEAM",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-POSITIONAL-STRATUM-EMPTY-AT-3",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-R6A-FIBER-REBUILD",
+   "killing_mutants": [
+    "INJ-FIBER-REBUILD"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-ARENA-BASELINE",
+   "killing_mutants": [
+    "INJ-ARENA-CENSUS"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-IDENTIFICATION-CENSUS",
+   "killing_mutants": [
+    "INJ-MOTIVATION-QUALIFIER"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-TYPE-CENSUS",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-BRIDGES-READING",
+   "killing_mutants": [
+    "INJ-ARENA-CENSUS"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-COLLAPSE-IS-DISTRIBUTION-NOT-VALUE",
+   "killing_mutants": [
+    "INJ-S2-PROFILE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-FIBER-COLLAPSE-COVERAGE",
+   "killing_mutants": [
+    "INJ-COLLAPSE-COUNT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-CRB-SIMPLEX",
+   "killing_mutants": [
+    "INJ-PATH-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-DERIVED-LAW-COMPLETE-ON-ONE-RECORD",
+   "killing_mutants": [
+    "INJ-FIBER-REBUILD"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S5-COMPARATOR-SEPARATION",
+   "killing_mutants": [
+    "INJ-S5-COMPARATOR"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-S5-DISCLAIMER",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-ADDITIVITY-REVERIFIED",
+   "killing_mutants": [
+    "INJ-ADDITIVITY"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-METRIC-RESTRICTION-REVERIFIED",
+   "killing_mutants": [
+    "INJ-ADDITIVITY"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-TRANSVERSE-LINKS-UNFORCED",
+   "killing_mutants": [
+    "INJ-PATH-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-NEW-FRONTS-RECLASSED",
+   "killing_mutants": [
+    "INJ-FRONT-RULE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-FRONT-RULE-INTEGRAL",
+   "killing_mutants": [
+    "INJ-PATH-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-R6A-RECLASSIFICATION",
+   "killing_mutants": [
+    "INJ-PATH-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-EXTREMAL-BAR",
+   "killing_mutants": [
+    "INJ-EXTREMAL-BAR"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-EXTREMAL-INTRINSIC",
+   "killing_mutants": [
+    "INJ-PATH-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-EXTREMAL-NOT-RATIFIED",
+   "killing_mutants": [
+    "INJ-S2-PROFILE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-COVER-DISSOLVED",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-CONTROL-R1-COPY",
+   "killing_mutants": [
+    "INJ-CONTROL"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-VERDICT-EQUALITY",
+   "killing_mutants": [
+    "INJ-VERDICT-APPEND",
+    "INJ-VERDICT-CLASS",
+    "INJ-VERDICT-TYPED"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-SCOPE-HONESTY",
+   "killing_mutants": [
+    "INJ-VERBATIM-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-PIN-BOUND",
+   "killing_mutants": [
+    "INJ-FILE-ANCHOR-DRIFT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-PAPER-CLAIMS",
+   "killing_mutants": [
+    "INJ-PAPER-CLAIM"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-PAPER-VERDICT",
+   "killing_mutants": [
+    "INJ-PAPER-VERDICT"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-PAPER-NUMBER-SWEEP",
+   "killing_mutants": [
+    "INJ-PAPER-NUMBER"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  },
+  {
+   "gate": "G-COMPLIANCE",
+   "killing_mutants": [
+    "INJ-COMPLIANCE"
+   ],
+   "status": "FALSIFIER-REACHES-IT",
+   "waiver": null
+  }
+ ],
+ "paper_claims": [
+  {
+   "key": "RETURN-PROBABILITY",
+   "receipt_path": "defective_renewal/return_probability",
+   "value": "13/16"
+  },
+  {
+   "key": "DEFECT",
+   "receipt_path": "defective_renewal/defect",
+   "value": "3/16"
+  },
+  {
+   "key": "VISITS",
+   "receipt_path": "defective_renewal/expected_total_visits_to_the_renewal_state",
+   "value": "16/3"
+  },
+  {
+   "key": "MEAN-CONDITIONAL",
+   "receipt_path": "defective_renewal/mean_conditional_on_return",
+   "value": "21/13"
+  },
+  {
+   "key": "F1",
+   "receipt_path": "defective_renewal/first_return_law/f_1",
+   "value": "3/4"
+  },
+  {
+   "key": "F2",
+   "receipt_path": "defective_renewal/first_return_law/f_2",
+   "value": "0"
+  },
+  {
+   "key": "F3",
+   "receipt_path": "defective_renewal/first_return_law/f_3",
+   "value": "1/256"
+  },
+  {
+   "key": "F4",
+   "receipt_path": "defective_renewal/first_return_law/f_4",
+   "value": "3/512"
+  },
+  {
+   "key": "TV-TRANSPORT",
+   "receipt_path": "positional_census/tv_between_chain_positions_transport",
+   "value": "2/63"
+  },
+  {
+   "key": "TV-DELIVERY-FREE",
+   "receipt_path": "positional_census/tv_between_chain_positions_delivery_free",
+   "value": "0"
+  },
+  {
+   "key": "DF-MASS-LEG1",
+   "receipt_path": "positional_census/delivery_free_mass_leg1",
+   "value": "3/7"
+  },
+  {
+   "key": "DF-MASS-LEG2",
+   "receipt_path": "positional_census/delivery_free_mass_leg2",
+   "value": "1/3"
+  },
+  {
+   "key": "INTERVALS",
+   "receipt_path": "arena/intervals_censused",
+   "value": "201"
+  },
+  {
+   "key": "COLLAPSED",
+   "receipt_path": "fiber_collapse/collapsed_intervals",
+   "value": "37"
+  },
+  {
+   "key": "NONTRIVIAL",
+   "receipt_path": "fiber_collapse/intervals_with_nontrivial_fiber",
+   "value": "122"
+  },
+  {
+   "key": "SIMPLEX-BEFORE",
+   "receipt_path": "fiber_collapse/crb_simplex_dim_at_count_4_before",
+   "value": "2"
+  },
+  {
+   "key": "TV-S5",
+   "receipt_path": "fiber_collapse/tv_derived_vs_s5_comparator",
+   "value": "2/21"
+  },
+  {
+   "key": "CANDIDATES",
+   "receipt_path": "identification_census/candidate_count",
+   "value": "5"
+  },
+  {
+   "key": "MOTIVATED",
+   "receipt_path": "identification_census/motivated_count",
+   "value": "0"
+  },
+  {
+   "key": "FREE-LINKS",
+   "receipt_path": "r6a_reclassification/FREE-TRANSVERSE-LINKS/of",
+   "value": "54"
+  },
+  {
+   "key": "EXTREMAL-SELECTIONS",
+   "receipt_path": "extremal_lead/distinct_selections",
+   "value": "3"
+  },
+  {
+   "key": "GATES",
+   "receipt_path": "gate_count_final",
+   "value": "48"
+  },
+  {
+   "key": "MUTANTS",
+   "receipt_path": "mutant_count",
+   "value": "31"
+  },
+  {
+   "key": "COMPLIANCE-ROWS",
+   "receipt_path": "compliance_row_count",
+   "value": "15"
+  },
+  {
+   "key": "LEG3-LEAVES",
+   "receipt_path": "positional_census/length3_leaf_count",
+   "value": "256"
+  }
+ ],
+ "paper_sweep": {
+  "claims_found": 25,
+  "claims_total": 25,
+  "missing": [],
+  "numbers_scanned": 135,
+  "paper_present": true,
+  "unmatched_numbers": []
+ },
+ "paper_verdict_segments": {
+  "in_paper": 7,
+  "total": 7
+ },
+ "pin": "v14/note-r6bprime-transport-pin.md",
+ "pin_sha256_prefix": "17111fd19022",
+ "positional_census": {
+  "delivery_free_mass_leg1": "3/7",
+  "delivery_free_mass_leg2": "1/3",
+  "ensemble_data_qualifier": "S2's interval lengths are ENSEMBLE DATA -- the renewal positions are DECLARED by the ensembles E1-E4, not sampled from any kernel",
+  "leg1_length4_profile": {
+   "dppr": 1024,
+   "nppr": 512,
+   "pnpr": 512,
+   "ppdr": 1024,
+   "ppnr": 512
+  },
+  "leg1_total": 3584,
+  "leg2_length4_profile": {
+   "dppr": 24576,
+   "nppr": 8192,
+   "pnpr": 8192,
+   "ppdr": 24576,
+   "ppnr": 8192
+  },
+  "leg2_total": 73728,
+  "length3_leaf_count": 256,
+  "length3_pattern_classes": 1,
+  "pattern_to_interior_position": {
+   "dppr": 1,
+   "nppr": 1,
+   "pnpr": 2,
+   "ppdr": 3,
+   "ppnr": 3
+  },
+  "position_law_delivery_free_leg1": {
+   "1": "1/3",
+   "2": "1/3",
+   "3": "1/3"
+  },
+  "position_law_delivery_free_leg2": {
+   "1": "1/3",
+   "2": "1/3",
+   "3": "1/3"
+  },
+  "position_law_transport_leg1": {
+   "1": "3/7",
+   "2": "1/7",
+   "3": "3/7"
+  },
+  "position_law_transport_leg2": {
+   "1": "4/9",
+   "2": "1/9",
+   "3": "4/9"
+  },
+  "scope": "TRANSPORT SCOPE (d42b1) only, per S2's own §10",
+  "tv_between_chain_positions_delivery_free": "0",
+  "tv_between_chain_positions_transport": "2/63",
+  "tv_transport_leg1_vs_uniform": "4/21",
+  "tv_transport_leg2_vs_uniform": "2/9"
+ },
+ "python": "3.13.2",
+ "question": "can a MOTIVATED identification carry the renewal-grain positional structure (S1's chain q'; S2's intervening-pattern census) to the spatial record-interval arena (I7), and does the derived kernel collapse the R6a split fiber as a forced VALUE or a forced DISTRIBUTION?",
+ "r6a_reclassification": {
+  "FREE-TRANSVERSE-LINKS": {
+   "forced": 0,
+   "of": 54,
+   "r6a_class": "iii (fiber INFINITE)",
+   "reclassed": "UNCHANGED",
+   "why": "the kernel is count-indexed; these links carry no count"
+  },
+  "NEW-FRONT-VALUES": {
+   "cells_this_grid": 647,
+   "integral_cells_this_grid": 647,
+   "r6a_cells": 81,
+   "r6a_class": "iii (fiber INFINITE)",
+   "r6a_non_integral": 30,
+   "reclassed": "FORCED-RELATIVE-TO-THE-SPLIT (fiber 1 given n1)",
+   "rule": "front(new) = front(x) + n1"
+  },
+  "THE-LIFT-PAIR": {
+   "fiber": 2,
+   "r6a_class": "iii (fiber 2)",
+   "reclassed": "UNCHANGED-AND-GROWN (a third rule admitted)"
+  },
+  "THE-SPLIT": {
+   "coverage_intervals": 37,
+   "in_distribution": true,
+   "in_value": false,
+   "of_total": 201,
+   "r6a_class": "iii (genuinely free)",
+   "reclassed": "ii-IN-DISTRIBUTION, count 4 only, delivery-free scope only"
+  },
+  "additivity_r6a_anchored": {
+   "checks": 972,
+   "violations": 0
+  },
+  "additivity_this_unit": {
+   "checks": 647,
+   "violations": 0
+  },
+  "metric_restriction_r6a_anchored": {
+   "checks": 324,
+   "ok": 324
+  },
+  "metric_restriction_this_unit": {
+   "checks": 67,
+   "ok": 67
+  }
+ },
+ "r6a_repair_disclosure": {
+  "carried_status": "DELIVERED-COMMITTED (v14 LOG #26); ADJUDICATOR-VERIFICATION CLEAN (#27); JOINT ADJUDICATION grade AWF unanimous, THE VERDICT HOLDS (#34); repair in flight under orders R-R6A-1..10, its verification pending",
+  "committed_sha256_12": "022c3f488a93",
+  "path_values_consumed": 24,
+  "path_values_moved": [],
+  "worktree_sha256_12": "94adec72ab11"
+ },
+ "registered_leads": [
+  {
+   "artifact": "v11/note-u1c-depth15-two-sided.md",
+   "role": "registered lead only; no value of this unit reads from it",
+   "status": "GREEN-UNREVIEWED -- NOT CITABLE per its STATUS line",
+   "why_it_would_matter": "S2 names depth 15 as the first depth at which its own question is askable; a terminal depth-15 row would extend the positional census past leg 2"
+  }
+ ],
+ "schema": "r6bp-transport-v1",
+ "scope_qualifiers": {
+  "delivery_free_vs_transport": "EVERY headline of this unit carries the DELIVERY-FREE qualifier: S1's chain and S4's renewal theorem are stated at two-actor delivery-free scope, and S1's own artifact declares the class structure is not stable at transport scope",
+  "not_constructed": "this unit does not construct Gamma(cut' <- cut) -- S3 declares it TO BE CONSTRUCTED (V-S3-GAMMA); it runs no scaling census; it does not touch the transport-scope renewal arm (d70 excluded); it claims nothing about the continuum",
+  "s2_interval_lengths_are_ensemble_data": "S2's leg lengths 3 and 4 are DECLARED renewal positions of the ensembles E1-E4, not samples of the derived kernel; no frequency of this unit is read as a kernel probability",
+  "s5_chosen_not_derived": "the continuous positional layer is touched only as a labelled comparator and carries S5's own chosen-not-derived disclaimer"
+ },
+ "source_sha256": "8e188dd3ab70",
+ "totals": {
+  "anchor_failures": 0,
+  "anchors": 75,
+  "compliance_missing": 0,
+  "compliance_rows": 15,
+  "gates": 48,
+  "must_pass_failures": 0,
+  "must_pass_gates": 48,
+  "mutants": 31,
+  "unwaived_never_falsified": 0
+ },
+ "unit": "v14 R6b' -- THE RENEWAL-GRAIN TRANSPORT (paper-09)",
+ "verdict": "R6BP-KERNEL-DERIVED<IDENT=C1-COUNT-MATCH-LENGTH|LAW=FIRST-RETURN-f1-3/4-f2-0-fn-(n-2)(3/4)^(n-3)/256|COLLAPSE=DISTRIBUTION-UNIFORM-AT-COUNT-4|COVERAGE=37-OF-201-INTERVALS|CRB-SIMPLEX-DIM-2-TO-0|SCOPE=DELIVERY-FREE>  R6BP-TRANSPORT-UNMOTIVATED<CANDIDATES=5|MOTIVATED=0|FREE-ITEMS=C1-COUNT-MATCH-LENGTH:3+C2-COUNT-MATCH-LEGS:5+C3-THE-BRIDGES-READING:1+C4-ELEMENTARY-CLICK-REFINEMENT:3+C5-CONTINUOUS-PLACEMENT-COMPARATOR:1|DECISIVE=I-SCOPE-AND-I-POSITION|TV-BETWEEN-CHAIN-POSITIONS-TRANSPORT=2/63|TV-DELIVERY-FREE=0|BRIDGES-READING-REACHES-ONLY-COUNT-1-29-OF-201-WITH-FIBER-0>  R6BP-KERNEL-DEFECTIVE<RETURN=13/16|DEFECT=3/16|CLOSED-CLASS={2,4,5}|TERMINATES-A-S=TRUE|VISITS=16/3|SUPPORT-HOLE-AT-2-COSTS-50-OF-201-INTERVALS|SCOPE=DELIVERY-FREE>  R6BP-BLOCKED-AT-THE-SCOPE-SEAM<S1-DELIVERY-FREE|S2-TRANSPORT|DELIVERY-FREE-MASS-LEG1=3/7|LEG2=1/3|S1-DECLARES-THE-CLASS-STRUCTURE-NOT-STABLE-ACROSS-IT>  EXTREMAL-BAR=DIES-AT-THE-BAR<FUNCTIONALS=4|DISTINCT-SELECTIONS=3|MAX-DET-UNIQUE=TRUE|READOUT-DET-BLIND-AT-W-0=TRUE|VARIATIONAL-ROWS-0-OF-6|DERIVED-LAW-RATIFIES-AT-1/3>  COVER=DISSOLVED<ROWS-PINNING-COVER-OBJECTS-0-OF-6|ROWS-DE-PERIODIZING-0-OF-6|DEEP-ARENAS-ROOTED-AND-DEPTH-NON-STATIONARY|NO-HUNT>  CONTROLS=R1-COPY-UNMOTIVATED|EXTERNAL-REFUSED-AT-SOURCE|COUNT-MISMATCH-FAILS-THE-CENSUS|EXCLUDED-CITED-0>",
+ "verdict_audit": {
+  "comparator_built_from": "measured values only",
+  "comparator_equal": true,
+  "comparison": "complete-string equality"
+ },
+ "verdict_heads": [
+  "R6BP-KERNEL-DERIVED",
+  "R6BP-TRANSPORT-UNMOTIVATED",
+  "R6BP-KERNEL-DEFECTIVE",
+  "R6BP-BLOCKED-AT-THE-SCOPE-SEAM"
+ ],
+ "verdict_segments": [
+  {
+   "name": "KERNEL-DERIVED",
+   "text": "R6BP-KERNEL-DERIVED<IDENT=C1-COUNT-MATCH-LENGTH|LAW=FIRST-RETURN-f1-3/4-f2-0-fn-(n-2)(3/4)^(n-3)/256|COLLAPSE=DISTRIBUTION-UNIFORM-AT-COUNT-4|COVERAGE=37-OF-201-INTERVALS|CRB-SIMPLEX-DIM-2-TO-0|SCOPE=DELIVERY-FREE>"
+  },
+  {
+   "name": "TRANSPORT-UNMOTIVATED",
+   "text": "R6BP-TRANSPORT-UNMOTIVATED<CANDIDATES=5|MOTIVATED=0|FREE-ITEMS=C1-COUNT-MATCH-LENGTH:3+C2-COUNT-MATCH-LEGS:5+C3-THE-BRIDGES-READING:1+C4-ELEMENTARY-CLICK-REFINEMENT:3+C5-CONTINUOUS-PLACEMENT-COMPARATOR:1|DECISIVE=I-SCOPE-AND-I-POSITION|TV-BETWEEN-CHAIN-POSITIONS-TRANSPORT=2/63|TV-DELIVERY-FREE=0|BRIDGES-READING-REACHES-ONLY-COUNT-1-29-OF-201-WITH-FIBER-0>"
+  },
+  {
+   "name": "KERNEL-DEFECTIVE",
+   "text": "R6BP-KERNEL-DEFECTIVE<RETURN=13/16|DEFECT=3/16|CLOSED-CLASS={2,4,5}|TERMINATES-A-S=TRUE|VISITS=16/3|SUPPORT-HOLE-AT-2-COSTS-50-OF-201-INTERVALS|SCOPE=DELIVERY-FREE>"
+  },
+  {
+   "name": "BLOCKED-AT",
+   "text": "R6BP-BLOCKED-AT-THE-SCOPE-SEAM<S1-DELIVERY-FREE|S2-TRANSPORT|DELIVERY-FREE-MASS-LEG1=3/7|LEG2=1/3|S1-DECLARES-THE-CLASS-STRUCTURE-NOT-STABLE-ACROSS-IT>"
+  },
+  {
+   "name": "EXTREMAL-BAR",
+   "text": "EXTREMAL-BAR=DIES-AT-THE-BAR<FUNCTIONALS=4|DISTINCT-SELECTIONS=3|MAX-DET-UNIQUE=TRUE|READOUT-DET-BLIND-AT-W-0=TRUE|VARIATIONAL-ROWS-0-OF-6|DERIVED-LAW-RATIFIES-AT-1/3>"
+  },
+  {
+   "name": "COVER",
+   "text": "COVER=DISSOLVED<ROWS-PINNING-COVER-OBJECTS-0-OF-6|ROWS-DE-PERIODIZING-0-OF-6|DEEP-ARENAS-ROOTED-AND-DEPTH-NON-STATIONARY|NO-HUNT>"
+  },
+  {
+   "name": "CONTROLS",
+   "text": "CONTROLS=R1-COPY-UNMOTIVATED|EXTERNAL-REFUSED-AT-SOURCE|COUNT-MISMATCH-FAILS-THE-CENSUS|EXCLUDED-CITED-0>"
+  }
+ ]
+}
