@@ -1449,3 +1449,9 @@ first), 48 gates, 31/31 mutants killed BY NAME,
 never-falsified 46 rows 0 unwaived, 15-rule compliance sweep
 0 MISSING.  Byte-identical ×2.  Adjudicator verification
 next; panel queued.
+
+## 2026-08-09 — R6b′ ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #49)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
+mutants dying by their named gates.  R6b′ stands
+GREEN-VERIFIED-UNREVIEWED; panel queued (behind the running
+repairs/constructions).
