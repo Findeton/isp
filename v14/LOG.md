@@ -292,3 +292,31 @@ coordinator-narrative-outran-measurement instance (#241,
 #267, exclusive-Fano, scale-thesis, this); standing sentence
 adopted: between delivery and adjudication, headline readings
 are CANDIDATE readings.  Repair worker next.
+
+## 2026-08-09 — R2 PIN FROZEN: THE MANIFOLD RUNG (v14 LEDGER #11)
+note-r2-manifold-pin.md (`76d42dfbc900`) frozen; base = R0 + the
+R1 adjudication (`4115dcd83cfa`) — R2's inputs are the
+adjudication's SETTLED findings (criterion: a COMPONENT with
+a non-complete overlap graph; recipe: R2-A's declared PARTIAL
+orbit overlap; null: regular orbits ⟹ cliques; the
+copy-forcing reduction ⟹ work at the block L₁ + the L₂
+cross-block control), so R2 runs CONCURRENTLY with the R1
+repair on disjoint files (user-ordered parallelism).  The
+question: does any rule in a DECLARED finite atlas grid
+(G0 null / G1 subgroup orbits / G2 coset unions — the partial-
+overlap mechanism / G3 Σ-mixed; grid enumerated in-unit,
+cell-completeness gated, THE GRID IS ARENA DATA AND A NAMED
+VERDICT COORDINATE — the R1 atlas lesson applied at birth)
+produce a non-complete component, and what do the ported
+manifold standards measure there?  Verdicts both first-class:
+R2-LOCALITY-AT-<rules> / R2-NO-LOCALITY-IN-THE-DECLARED-GRID.
+Registered measurements: the locality census over the grid;
+component spectra; link profiles + dimension reading at
+locality-bearing rules; THE TWO BLOCK CONSTANTS under the new
+atlases (B→B₂ persistence — connecting R1's constants to
+declared locality); per-component b₁ (the first chance for
+non-trivial degree-1 topology since I3).  The word "manifold"
+banned from the verdict.  paper-02 assigned.  Construction
+dispatched in parallel with the R1 repair continuation
+(the sleep killed the first repair worker at 09:10 — only
+code-layer partials; relaunched with inventory+audit orders).
