@@ -1326,3 +1326,33 @@ Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
 39/39 mutants dead (the paper-number-sweep mutant confirmed
 dying by name).  CR-A stands GREEN-VERIFIED-UNREVIEWED; panel
 queued with CR-B's.
+
+## 2026-08-09 — R3 REVIEW: INSTRUMENT FROZEN (v14 LEDGER #45)
+review-r3-instrument.md (cae0f52610d8) frozen as delivered.
+Grade AWF; 187 CLI executions, 1,585 field comparisons 0
+mismatches, verdict rebuilt byte-identically, 14/14 segments
+flipped, 60/60 mutants honest.  **TEN INJECTION CLASSES
+SURVIVE** (Y1 defect-zeroing INVERTS ALL FOUR §6 FINDINGS at
+green gates; post-gate receipt corruption; LSWEEP truncation
+drops 6 of 8 rows from the verdict; gap_matrix
+shared-component corruption defeats "two independent routes";
+RECOVERY + CONTROLS self-compares; coefficient-class flip;
+row drops).  WAIVER AUDIT: **0 shadowed (an advance on R6a)**
+but 27-of-29 falsifiable and killed by the reviewer; false
+waivers by name (the six file-byte rows; the 20 path-value
+rows typed "eight" where the true count is twelve; the
+divisibility tautology); a dead waiver entry + a stale
+falsifier_map.  Coefficient pipeline HONEST (crafted
+no-solution input → NOT-EXTRACTABLE, no fabrication; #219
+two genuine routes).  ZERO false numbers by value; two false
+MECHANISM claims confirmed (the "architecture-B" cells are
+exactly B-all, 36-of-108; the "degenerate probe" is a typed
+Boolean — no such probe exists).  **M1, THE TOP FINDING — A
+NEW DISEASE CLASS: THE DELIVERY READS UNANCHORED v14/LOG.md
+AND ITS L-GATE VERDICT SEGMENT IS A FUNCTION OF IT** —
+appending one ledger sentence changed the verdict and both
+artifact hashes at exit 0 / 81 gates green; the LOG changed
+DURING the review (+7,972 bytes by a concurrent worker) and
+the delivery survived only because the new text contains none
+of the six fraction patterns.  PANEL COMPLETE: 3× AWF.
+Joint adjudication next.
