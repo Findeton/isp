@@ -1269,3 +1269,20 @@ paper must exist in the receipt — the surface all four false
 paper numbers lived on)**; one self-caught cache bug fixed
 content-addressed.  Byte-identical ×2.  Adjudicator
 verification next; panel queued w/ CR-B's.
+
+## 2026-08-09 — USER ORDER: R6b′ AUTHORIZED ON THE SCOUT'S REPORT (v14 LEDGER #42)
+User order of record ("ok after step 0/the scout, continue
+with steps 1,2"): when the transition-layer source scout
+reports, proceed WITHOUT FURTHER ASK to (1) the charter
+amendment + THE R6b′ PIN — an R0-supplement adding the
+scout's ranked transition-layer rows by hash with stated
+reasons, then the unit: re-run R6a's audit VERBATIM at the
+enriched record type, with the registered questions (does
+the renewal law derive the interval-positional kernel; does
+it supply the geometry-update law; does the split fiber
+collapse to a forced value or forced distribution; the
+extremal + cover leads re-checked at the deeper rows) — and
+(2) the full cycle (construction → commit-as-is → verify →
+protocol → panel → adjudicate → repair → terminal).  The
+conditional-order precedent: v13 #228.  Paper number
+assigned at pin time.
