@@ -9490,3 +9490,46 @@ all three manifold standards, the entire 252/5,040 census +
 never-at-5,6 + the transvection.  67 paper-vs-receipt checks:
 F3 the only false number.  TOP PANEL COMPLETE (R2 #307,
 R1 #310, R3 #311) — three AWF.  Adjudication next.
+
+## 2026-08-09 — RSQ R2 (EFFECTUS) FROZEN (v13 LEDGER #312)
+review-rsq-effectus.md (c7a3ef7a718e) frozen as delivered.
+Grade AWF; 199 recomputations across three self-written
+scripts, ZERO numerical discrepancies; byte-identical re-run
++ 57/57 mutants reproduced.  The mathematics HOLDS: the order
+obstruction re-derived step by step; route A's premise
+verified exhaustively (every elementary abelian p-subgroup of
+G_C cyclic); **two beyond-scope refutation sweeps STRENGTHEN
+the wall — 0 of 172,800 rows over ALL 60 PRIMES 5..293; 0 at
+d=2 (exhaustive) and d=4 (sampled): UNIVERSAL-FOR-THIS-FAMILY
+understates the truth.**  Four defects, none a false theorem
+or number: F-1 G35's "three sources" are TWO (the injective
+column IS order_criterion, src1 = live_full; 315 rows ⊂ the
+20,160 sweep; #234).  F-2 "0 of 315 injective" forced twice
+over (criterion + cardinality p⁶ > |G_C|; #208 — disclosure,
+not gate).  **F-3 (HIGHEST): THE VERDICT'S FOUND HALF RESTS
+ENTIRELY ON UNMOTIVATED IDENTIFICATIONS — the two
+S₃-equivariant cells AND HA's own sym_index are 6 of 6
+STILLBORN at all 7 primes; every precheck survivor is one of
+the 1,434 arbitrary relabellings selected by the property
+under test; restricted to the pin's motivated family the
+unit's own derive_verdict returns RSQ-NO-COMPATIBLE-SQUARE.
+Pin-legal, never stated.**  F-4 S4 functoriality typed not
+measured (census_empty_at_this_base a literal G28 never
+reads); the true statement — base-independence by
+construction — is better.  ASSIGNED QUESTIONS: the 43-label
+FOUND control is an ALGEBRAIC IDENTITY (Ẽ ≡ I−ρ by
+definition) — rung 2 (EMPTY not an arena/prime artefact), NOT
+rung 3; one gate from a real theorem (criterion SUFFICIENT at
+L₆/p=7/ord 3 for every diagonal pattern, verified).  **THE
+SCALE-CONVERGENCE THESIS IS NARRATIVE** — LCB refused the
+same inference; 43=6p+1 definitional; TB3's torsion not a
+growth result; RSQ's own arena-free obstruction refutes it;
+"four sentences carry it further than the measurements."
+Precheck architecture → RUNBOOK with the drafted amendment
+(a precheck-level quantity may gate which candidates are
+censused but may never by itself name the verdict).  THE
+SPECTRAL BEQUEST for the continuum rung: HA's readout carries
+eigenvalue 1 at every dimension, so 0 ∈ spec(I−E) lies on no
+unit circle — the continuum rung can inherit a PROOF rather
+than a census (S-1..S-5 written out).  RSQ PANEL COMPLETE
+(R3 #308, R1 #309, R2 #312) — three AWF.  Adjudication next.
