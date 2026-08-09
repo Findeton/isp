@@ -1,0 +1,3916 @@
+{
+ "unit": "v14 R6a -- THE REFINEMENT GRAMMAR",
+ "question": "does the record grammar AS PINNED admit a MOTIVATED interval-subdivision move -- a new site because a division event resolved a record interval, the count partition FORCED by the counting semantics and the residual freedom MEASURED?",
+ "anchors": [
+  {
+   "name": "A-PIN-R6A",
+   "kind": "file-bytes",
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": "a22582f67168",
+   "measured": "a22582f67168",
+   "provenance": "this unit's pin, frozen at v14 ledger #25",
+   "ok": true
+  },
+  {
+   "name": "A-R0-PIN",
+   "kind": "file-bytes",
+   "artifact": "v14/note-r0-founding-pin.md",
+   "expected": "e9d2bedff244",
+   "measured": "e9d2bedff244",
+   "provenance": "the v14 founding pin: the inheritance table whose I7 row this unit uses",
+   "ok": true
+  },
+  {
+   "name": "A-I7-RECEIPT",
+   "kind": "file-bytes",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "542b8735daf0",
+   "measured": "542b8735daf0",
+   "provenance": "R0 row I7 -- the pinned grammar source: sites, links, interval counts, the front, H_a[N], record-IS-metric",
+   "ok": true
+  },
+  {
+   "name": "A-HA-PAPER",
+   "kind": "file-bytes",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "f286ba10d2d9",
+   "measured": "f286ba10d2d9",
+   "provenance": "the HA paper: the written grammar declarations reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "A-HA-CODE",
+   "kind": "file-bytes",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "d44cb72f8ee9",
+   "measured": "d44cb72f8ee9",
+   "provenance": "the HA instrument: the exact definitions reimplemented here (nothing imported)",
+   "ok": true
+  },
+  {
+   "name": "P-I7-D",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "d"
+   ],
+   "expected": 2,
+   "measured": 2,
+   "provenance": "the primary spatial dimension",
+   "ok": true
+  },
+  {
+   "name": "P-I7-L",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "L"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "sites per direction: X = (Z_L)^d",
+   "ok": true
+  },
+  {
+   "name": "P-I7-DEXT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "d_ext"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "the declared d=3 extension",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LEXT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "L_ext"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "L at the d=3 extension",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LINKS2",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "links_d2"
+   ],
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "provenance": "THE DECLARED LINK SET at d=2: the d axis links and the C(d,2) positive diagonals -- the object whose minimal decompositions decide incidence",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LINKS3",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "links_d3"
+   ],
+   "expected": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "measured": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "provenance": "the declared link set at d=3 -- six links, NO body diagonal",
+   "ok": true
+  },
+  {
+   "name": "P-I7-RECORDS2",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d2"
+   ],
+   "expected": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "measured": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "provenance": "THE DECLARED RECORD FAMILY (homogeneous members + the two negative controls), rebuilt here rather than trusted",
+   "ok": true
+  },
+  {
+   "name": "P-I7-RECORDS3",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d3"
+   ],
+   "expected": {
+    "G3-ANISO": [
+     1,
+     4,
+     9,
+     5,
+     10,
+     13
+    ],
+    "G3-FLAT": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "G3-OFF": [
+     2,
+     2,
+     2,
+     6,
+     4,
+     4
+    ]
+   },
+   "measured": {
+    "G3-ANISO": [
+     1,
+     4,
+     9,
+     5,
+     10,
+     13
+    ],
+    "G3-FLAT": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "G3-OFF": [
+     2,
+     2,
+     2,
+     6,
+     4,
+     4
+    ]
+   },
+   "provenance": "the declared d=3 records",
+   "ok": true
+  },
+  {
+   "name": "P-I7-INHOMOG",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d2_inhomogeneous"
+   ],
+   "expected": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "measured": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "provenance": "the two site-dependent members of the record family",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LAPSE",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "lapse_family"
+   ],
+   "expected": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "measured": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "provenance": "THE DECLARED LAPSE FAMILY -- the test set for the dynamics census",
+   "ok": true
+  },
+  {
+   "name": "P-I7-WEIGHT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "density_weight"
+   ],
+   "expected": 0,
+   "measured": 0,
+   "provenance": "the declared density weight w = 0 (every statement here is at w = 0)",
+   "ok": true
+  },
+  {
+   "name": "P-I7-CHART",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "chart_group"
+   ],
+   "expected": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "measured": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "provenance": "THE DECLARED CHART GROUP -- the group whose stabiliser decides class (ii)",
+   "ok": true
+  },
+  {
+   "name": "P-I7-READOUT-DET",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "tables",
+    "readout_reencoding",
+    "determinant"
+   ],
+   "expected": "2",
+   "measured": "2",
+   "provenance": "record-IS-metric: the count -> q map's exact determinant at d=2",
+   "ok": true
+  },
+  {
+   "name": "P-I7-READOUT-SITES",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "tables",
+    "readout_reencoding",
+    "sites_verified"
+   ],
+   "expected": 81,
+   "measured": 81,
+   "provenance": "record-IS-metric verified at 81 of 81 (record, site) pairs",
+   "ok": true
+  },
+  {
+   "name": "P-I7-RANK",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "tables",
+    "identifiability_rank",
+    "(0, 0)"
+   ],
+   "expected": 2,
+   "measured": 2,
+   "provenance": "the lapse-pair bracket rank, full at the origin",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LATTICE",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "count_lattice"
+   ],
+   "expected": {
+    "axis_max": 6,
+    "description": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses",
+    "diag_max": 12
+   },
+   "measured": {
+    "axis_max": 6,
+    "description": "the declared box of count vectors (n_e1, n_e2, n_diag) swept for the link-locality theorem's witnesses",
+    "diag_max": 12
+   },
+   "provenance": "I7's own declared count box -- the scope at which the split fiber is censused beyond the nine records",
+   "ok": true
+  },
+  {
+   "name": "P-I7-VERDICT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "verdict"
+   ],
+   "expected": [
+    "HA-RUNNABLE",
+    "HA-BRIDGE-NOT-ENTERED"
+   ],
+   "measured": [
+    "HA-RUNNABLE",
+    "HA-BRIDGE-NOT-ENTERED"
+   ],
+   "provenance": "I7's own verdict: the arena this unit refines is a RUNNABLE one",
+   "ok": true
+  },
+  {
+   "name": "T-COUNTS-POSITIVE",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "the interval cardinality $n_\\ell(x)\\in\\mathbb Z_{>0}$",
+   "measured": true,
+   "provenance": "THE TYPE DECLARATION.  Counts are STRICTLY POSITIVE integers -- the declaration that makes a split of a count-1 interval impossible",
+   "ok": true
+  },
+  {
+   "name": "T-COUNTS-SEMANTIC",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "is the number of division events in the record interval between",
+   "measured": true,
+   "provenance": "THE SEMANTIC ANCHOR.  n_l(x) COUNTS DIVISION EVENTS IN THE INTERVAL -- the declaration from which count additivity follows as semantics",
+   "ok": true
+  },
+  {
+   "name": "T-FRONT",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "$n(x)$ = the number of division events already committed at record site $x$",
+   "measured": true,
+   "provenance": "THE FRONT.  A separate configuration variable counting events AT a site",
+   "ok": true
+  },
+  {
+   "name": "T-READOUT",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "$q_{12} = (n_{e_1+e_2} - n_{e_1} - n_{e_2})/2$",
+   "measured": true,
+   "provenance": "THE DECLARED READOUT at d=2, reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "T-CURVED",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "| `G-CURVED` | $(1,1,2)$ | $(2,2,4)$ |",
+   "measured": true,
+   "provenance": "the site-dependent diagonal record's counts at (0,0) and (1,1)",
+   "ok": true
+  },
+  {
+   "name": "T-CURVOFF",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "| `G-CURVOFF` | $(2,2,6)$ | $(3,3,10)$ |",
+   "measured": true,
+   "provenance": "the site-dependent cross-term record's counts at (0,0) and (1,1)",
+   "ok": true
+  },
+  {
+   "name": "T-FROZEN-GEOMETRY",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "The interval-cardinality\n   record $s$ is a configuration variable that $H_a[N]$ does not move; only the\n   front does.",
+   "measured": true,
+   "provenance": "THE INDEPENDENCE.  The geometry record and the front are separate variables -- the front cannot supply the split",
+   "ok": true
+  },
+  {
+   "name": "T-DRAG",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "The drag has exactly two ingredients: the **front tilt** $n(x+e)-n(x)$",
+   "measured": true,
+   "provenance": "the drag's ingredients: front tilt and eventwise lapse value, nothing else",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-ADDITIVITY",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": "n(x,y) + n(y, x+\u2113) = n(x, x+\u2113) (events in the whole = events in the\nparts) \u2014 this is semantics, not a choice.",
+   "measured": true,
+   "provenance": "THE PIN'S OWN FORCED CLAUSE -- the constraint this unit verifies rather than assumes",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-SCOPE",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": "Reaching outside\nthe pinned sources is forbidden.",
+   "measured": true,
+   "provenance": "THE SCOPE RULING that makes BLOCKED-AT-GRAMMAR-SOURCE first class",
+   "ok": true
+  }
+ ],
+ "anchor_totals": {
+  "file_bytes": 5,
+  "path_value": 17,
+  "verbatim_text": 10,
+  "total": 32
+ },
+ "arena": {
+  "sites": "X = (Z_L)^d with L = 3, d = 2 (|X| = 9)",
+  "links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "d_ext": 3,
+  "geometry_record": "n_l(x) in Z_>0, the number of division events in the record interval between x and x+l",
+  "front": "n : X -> Z, the number of division events already committed at record site x",
+  "readout": "q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0",
+  "lapse_family": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+  "drag_rules": [
+   [
+    "A-chart",
+    "A",
+    "Lambda = delta (count-blind chart identity)"
+   ],
+   [
+    "A-axis",
+    "A",
+    "Lambda = diag(1/n_{e_j}) from the axis interval counts"
+   ],
+   [
+    "A-linkframe",
+    "A",
+    "Lambda^{ij} = sum_l e_l^i e_l^j / n_l"
+   ],
+   [
+    "A-linkhalf",
+    "A",
+    "Lambda = (1/2) sum_l e_l e_l^T / n_l"
+   ],
+   [
+    "A-insert",
+    "A",
+    "Lambda = I_a(g), read from the record [POSITIVE CONTROL]"
+   ],
+   [
+    "A-insert-x",
+    "A",
+    "I_a(g) with the cross term sign-flipped [BROKEN]"
+   ],
+   [
+    "A-insert-2x",
+    "A",
+    "2 I_a(g) [BROKEN]"
+   ],
+   [
+    "A-notransport",
+    "A",
+    "I_a(g) reading a frozen reference front [BROKEN]"
+   ],
+   [
+    "B-axis",
+    "B",
+    "lambda_l = 1/n_l on the axis links"
+   ],
+   [
+    "B-all",
+    "B",
+    "lambda_l = 1/n_l on every declared link"
+   ],
+   [
+    "B-chart",
+    "B",
+    "lambda_l = 1 on the axis links"
+   ]
+  ],
+  "provenance": "every row REBUILT here from the pinned sources; nothing imported"
+ },
+ "lapse_family_size": 12,
+ "count_lattice": {
+  "admissible_count_vectors": 361,
+  "splittable": 261,
+  "unique_admissible_split": [
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "unique_admissible_split_count": 1,
+  "box": {
+   "axis_max": 6,
+   "diag_max": 12
+  }
+ },
+ "record_family": {
+  "G-ANISO": {
+   "counts_at_00": [
+    1,
+    4,
+    5
+   ],
+   "counts_at_11": [
+    1,
+    4,
+    5
+   ],
+   "admissible": true,
+   "min_count": 1,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-ANISO2": {
+   "counts_at_00": [
+    4,
+    9,
+    13
+   ],
+   "counts_at_11": [
+    4,
+    9,
+    13
+   ],
+   "admissible": true,
+   "min_count": 4,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-CURVED": {
+   "counts_at_00": [
+    1,
+    1,
+    2
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    4
+   ],
+   "admissible": true,
+   "min_count": 1,
+   "homogeneous": false,
+   "note": "inhomogeneous, exactly diagonal"
+  },
+  "G-CURVOFF": {
+   "counts_at_00": [
+    2,
+    2,
+    6
+   ],
+   "counts_at_11": [
+    3,
+    3,
+    10
+   ],
+   "admissible": true,
+   "min_count": 2,
+   "homogeneous": false,
+   "note": "inhomogeneous, site-dependent cross term"
+  },
+  "G-DIAG2": {
+   "counts_at_00": [
+    2,
+    2,
+    4
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    4
+   ],
+   "admissible": true,
+   "min_count": 2,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-FLAT": {
+   "counts_at_00": [
+    1,
+    1,
+    2
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    2
+   ],
+   "admissible": true,
+   "min_count": 1,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-INDEF": {
+   "counts_at_00": [
+    1,
+    1,
+    6
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    6
+   ],
+   "admissible": false,
+   "min_count": 1,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-OFFDIAG": {
+   "counts_at_00": [
+    2,
+    2,
+    6
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    6
+   ],
+   "admissible": true,
+   "min_count": 2,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-OFFDIAG2": {
+   "counts_at_00": [
+    3,
+    5,
+    12
+   ],
+   "counts_at_11": [
+    3,
+    5,
+    12
+   ],
+   "admissible": true,
+   "min_count": 3,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-OFFNEG": {
+   "counts_at_00": [
+    3,
+    5,
+    4
+   ],
+   "counts_at_11": [
+    3,
+    5,
+    4
+   ],
+   "admissible": true,
+   "min_count": 3,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  },
+  "G-SINGULAR": {
+   "counts_at_00": [
+    1,
+    1,
+    4
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    4
+   ],
+   "admissible": false,
+   "min_count": 1,
+   "homogeneous": true,
+   "note": "homogeneous, declared count vector"
+  }
+ },
+ "no_potential": {
+  "G-ANISO": {
+   "min_axis_cycle_sum": 3,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-ANISO2": {
+   "min_axis_cycle_sum": 12,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-CURVED": {
+   "min_axis_cycle_sum": 6,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-CURVOFF": {
+   "min_axis_cycle_sum": 9,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-DIAG2": {
+   "min_axis_cycle_sum": 6,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-FLAT": {
+   "min_axis_cycle_sum": 3,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-OFFDIAG": {
+   "min_axis_cycle_sum": 6,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-OFFDIAG2": {
+   "min_axis_cycle_sum": 9,
+   "cycles": 18,
+   "admits_a_potential": false
+  },
+  "G-OFFNEG": {
+   "min_axis_cycle_sum": 9,
+   "cycles": 18,
+   "admits_a_potential": false
+  }
+ },
+ "move_census": {
+  "coarse_intervals": 27,
+  "classification_rule": "INHERITED = the coarse interval IS a refined link; SUBDIVIDED = exactly one refined site lies on it; AMBIGUOUS = two or more candidate interior sites; UNREPRESENTED = no minimal 1- or 2-step realisation",
+  "rows": [
+   {
+    "move": "DYADIC",
+    "name": "global dyadic refinement",
+    "kind": "subdivision",
+    "refined_shape": [
+     6,
+     6
+    ],
+    "refined_sites": 36,
+    "arena_class_preserved": true,
+    "tally": {
+     "INHERITED": 0,
+     "SUBDIVIDED": 27,
+     "AMBIGUOUS": 0,
+     "UNREPRESENTED": 0
+    },
+    "verdict": "ADMISSIBLE",
+    "note": "every axis interval subdivided; L -> 2L",
+    "intervals": 27
+   },
+   {
+    "move": "HYPERPLANE@0",
+    "name": "axis-hyperplane insertion at locus 0",
+    "kind": "subdivision",
+    "refined_shape": [
+     4,
+     3
+    ],
+    "refined_sites": 12,
+    "arena_class_preserved": true,
+    "tally": {
+     "INHERITED": 21,
+     "SUBDIVIDED": 3,
+     "AMBIGUOUS": 3,
+     "UNREPRESENTED": 0
+    },
+    "verdict": "BLOCKED",
+    "note": "one hyperplane inserted orthogonal to direction 0; (Z_{L+1} x Z_L^{d-1})",
+    "intervals": 27
+   },
+   {
+    "move": "HYPERPLANE@1",
+    "name": "axis-hyperplane insertion at locus 1",
+    "kind": "subdivision",
+    "refined_shape": [
+     4,
+     3
+    ],
+    "refined_sites": 12,
+    "arena_class_preserved": true,
+    "tally": {
+     "INHERITED": 21,
+     "SUBDIVIDED": 3,
+     "AMBIGUOUS": 3,
+     "UNREPRESENTED": 0
+    },
+    "verdict": "BLOCKED",
+    "note": "one hyperplane inserted orthogonal to direction 0; (Z_{L+1} x Z_L^{d-1})",
+    "intervals": 27
+   },
+   {
+    "move": "HYPERPLANE@2",
+    "name": "axis-hyperplane insertion at locus 2",
+    "kind": "subdivision",
+    "refined_shape": [
+     4,
+     3
+    ],
+    "refined_sites": 12,
+    "arena_class_preserved": true,
+    "tally": {
+     "INHERITED": 21,
+     "SUBDIVIDED": 3,
+     "AMBIGUOUS": 3,
+     "UNREPRESENTED": 0
+    },
+    "verdict": "BLOCKED",
+    "note": "one hyperplane inserted orthogonal to direction 0; (Z_{L+1} x Z_L^{d-1})",
+    "intervals": 27
+   },
+   {
+    "move": "SINGLE-INTERVAL",
+    "name": "single-interval insertion",
+    "kind": "subdivision",
+    "refined_shape": null,
+    "arena_class_preserved": false,
+    "tally": {
+     "INHERITED": 0,
+     "SUBDIVIDED": 0,
+     "AMBIGUOUS": 0,
+     "UNREPRESENTED": 0
+    },
+    "verdict": "REFUSED",
+    "probe": {
+     "sites": 10,
+     "direction_0_cycle_lengths": [
+      4,
+      3,
+      3
+     ],
+     "cycle_lengths_constant": false,
+     "site_count_divisible_by_longest_cycle": false,
+     "declared_link_targets_defined_at_the_new_site": 1,
+     "declared_links": 3,
+     "reason": "a product-of-cyclic-groups site set carrying the declared link displacements by translation forces every direction-0 cycle to have the SAME length; inserting one site into one link makes them [4, 3, 3], and 10 is not divisible by the longest cycle 4.  At the new site only 1 of the 3 declared link displacements has a target.",
+     "move": "SINGLE-INTERVAL"
+    },
+    "reason": "a product-of-cyclic-groups site set carrying the declared link displacements by translation forces every direction-0 cycle to have the SAME length; inserting one site into one link makes them [4, 3, 3], and 10 is not divisible by the longest cycle 4.  At the new site only 1 of the 3 declared link displacements has a target."
+   },
+   {
+    "move": "R1-COPY",
+    "name": "the R1 copying move (append a disjoint block)",
+    "kind": "control",
+    "refined_shape": [
+     6,
+     3
+    ],
+    "refined_sites": 18,
+    "arena_class_preserved": true,
+    "tally": {
+     "INHERITED": 21,
+     "SUBDIVIDED": 0,
+     "AMBIGUOUS": 0,
+     "UNREPRESENTED": 6
+    },
+    "verdict": "CONTROL",
+    "note": "label growth: a disjoint block appended, no interval subdivided [THE NEGATIVE CONTROL -- the audit must be able to FAIL a move]",
+    "intervals": 27
+   }
+  ]
+ },
+ "blocked_branch": {
+  "move": "HYPERPLANE",
+  "named_fact": "DIAGONAL-INTERVAL-INCIDENCE",
+  "statement": "which refined site subdivides a coarse DIAGONAL interval cut by a single-direction hyperplane insertion.  The coarse displacement (2,1) has two minimal decompositions into declared link vectors, with two distinct interior sites; the pinned grammar declares a link SET and no incidence rule, and supplying one would be a grammar fact from outside the pinned sources (pin section 1)",
+  "ambiguous_intervals": 3,
+  "candidates_per_interval": 2,
+  "loci_censused": 3,
+  "all_loci_agree": true,
+  "completion_sweep": {
+   "completions": 16,
+   "disagreeing": 12
+  }
+ },
+ "refused_branch": {
+  "sites": 10,
+  "direction_0_cycle_lengths": [
+   4,
+   3,
+   3
+  ],
+  "cycle_lengths_constant": false,
+  "site_count_divisible_by_longest_cycle": false,
+  "declared_link_targets_defined_at_the_new_site": 1,
+  "declared_links": 3,
+  "reason": "a product-of-cyclic-groups site set carrying the declared link displacements by translation forces every direction-0 cycle to have the SAME length; inserting one site into one link makes them [4, 3, 3], and 10 is not divisible by the longest cycle 4.  At the new site only 1 of the 3 declared link displacements has a target.",
+  "move": "SINGLE-INTERVAL"
+ },
+ "dimension_extension": {
+  "d": 3,
+  "refined_sites": 216,
+  "coarse_images": 27,
+  "interior_sites": 162,
+  "unreached_sites": 27,
+  "unreached_parities": [
+   [
+    1,
+    1,
+    1
+   ]
+  ],
+  "refined_links": 1296,
+  "covered_links": 324,
+  "free_links": 972,
+  "reading": "at d = 3 the declared link set has no body diagonal, so one parity class of refined sites lies on NO coarse interval: the move is site-complete at d = 2 and site-incomplete at d = 3"
+ },
+ "forced_part": {
+  "additivity_checks": 972,
+  "additivity_violations": 0,
+  "restriction_checks": 324,
+  "restriction_ok": 324,
+  "splittable_records": [
+   "G-ANISO2",
+   "G-CURVOFF",
+   "G-DIAG2",
+   "G-OFFDIAG",
+   "G-OFFDIAG2",
+   "G-OFFNEG"
+  ],
+  "unsplittable_records": [
+   "G-ANISO",
+   "G-CURVED",
+   "G-FLAT"
+  ],
+  "builds": [
+   {
+    "record": "G-ANISO2",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-ANISO2",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-ANISO2",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-ANISO2",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 2
+   },
+   {
+    "record": "G-ANISO2",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-ANISO2",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": false,
+    "inadmissible_sites": 1,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": false,
+    "inadmissible_sites": 1,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": false,
+    "inadmissible_sites": 4,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-CURVOFF",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": false,
+    "inadmissible_sites": 4,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-DIAG2",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": false,
+    "inadmissible_sites": 9,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": false,
+    "inadmissible_sites": 9,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": false,
+    "inadmissible_sites": 9,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": false,
+    "inadmissible_sites": 9,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "low",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "low",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "floor",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "floor",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "high",
+    "free": "minimal",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   },
+   {
+    "record": "G-OFFNEG",
+    "split": "high",
+    "free": "iterable-64",
+    "refined_admissible": true,
+    "inadmissible_sites": 0,
+    "additivity_violations": 0,
+    "coarse_q_recovered": 9,
+    "coarse_sites": 9,
+    "refined_min_count": 1
+   }
+  ],
+  "admissible_builds": 28,
+  "declared_builds": 36,
+  "reading": "the FORCED half of the grammar holds exactly: additivity is verified at every cell and the coarse metric is recovered exactly at every cell.  What fails is not the forced part."
+ },
+ "split_fibers": {
+  "G-ANISO": {
+   "raw": 0,
+   "admissible_at_images": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  },
+  "G-ANISO2": {
+   "raw": 13631146639813244878848,
+   "admissible_at_images": 1257565061957837936381,
+   "per_site_admissible": [
+    221
+   ],
+   "splittable": true
+  },
+  "G-CURVED": {
+   "raw": 0,
+   "admissible_at_images": 0,
+   "per_site_admissible": [
+    0,
+    3,
+    7,
+    18
+   ],
+   "splittable": false
+  },
+  "G-CURVOFF": {
+   "raw": 2133246689280,
+   "admissible_at_images": 64562400000,
+   "per_site_admissible": [
+    3,
+    8,
+    15,
+    20,
+    35,
+    61
+   ],
+   "splittable": true
+  },
+  "G-DIAG2": {
+   "raw": 19683,
+   "admissible_at_images": 19683,
+   "per_site_admissible": [
+    3
+   ],
+   "splittable": true
+  },
+  "G-FLAT": {
+   "raw": 0,
+   "admissible_at_images": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  },
+  "G-OFFDIAG": {
+   "raw": 1953125,
+   "admissible_at_images": 19683,
+   "per_site_admissible": [
+    3
+   ],
+   "splittable": true
+  },
+  "G-OFFDIAG2": {
+   "raw": 316478381828866048,
+   "admissible_at_images": 3904305912313344,
+   "per_site_admissible": [
+    54
+   ],
+   "splittable": true
+  },
+  "G-OFFNEG": {
+   "raw": 2641807540224,
+   "admissible_at_images": 1801152661463,
+   "per_site_admissible": [
+    23
+   ],
+   "splittable": true
+  }
+ },
+ "stabilisers": {
+  "G-ANISO2": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     4,
+     3,
+     9
+    ],
+    [
+     9,
+     8,
+     9
+    ],
+    [
+     13,
+     12,
+     9
+    ]
+   ]
+  },
+  "G-CURVOFF": {
+   "order": 2,
+   "orbits": 15,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     6,
+     5,
+     1
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     7,
+     6,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     8,
+     7,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     10,
+     9,
+     1
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     9,
+     8,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     10,
+     9,
+     1
+    ]
+   ]
+  },
+  "G-DIAG2": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     18
+    ],
+    [
+     4,
+     3,
+     9
+    ]
+   ]
+  },
+  "G-OFFDIAG": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     18
+    ],
+    [
+     6,
+     5,
+     9
+    ]
+   ]
+  },
+  "G-OFFDIAG2": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     3,
+     2,
+     9
+    ],
+    [
+     5,
+     4,
+     9
+    ],
+    [
+     12,
+     11,
+     9
+    ]
+   ]
+  },
+  "G-OFFNEG": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     3,
+     2,
+     9
+    ],
+    [
+     5,
+     4,
+     9
+    ],
+    [
+     4,
+     3,
+     9
+    ]
+   ]
+  }
+ },
+ "equivariant_fibers": {
+  "G-ANISO2": 288,
+  "G-CURVOFF": 29393280,
+  "G-DIAG2": 3,
+  "G-OFFDIAG": 5,
+  "G-OFFDIAG2": 88,
+  "G-OFFNEG": 24
+ },
+ "lift_grid": [
+  {
+   "front_lift": "left",
+   "lapse_lift": "left",
+   "front_sector_commutes": true
+  },
+  {
+   "front_lift": "left",
+   "lapse_lift": "right",
+   "front_sector_commutes": false
+  },
+  {
+   "front_lift": "right",
+   "lapse_lift": "left",
+   "front_sector_commutes": false
+  },
+  {
+   "front_lift": "right",
+   "lapse_lift": "right",
+   "front_sector_commutes": true
+  }
+ ],
+ "forced_front_lift": {
+  "cells": 81,
+  "integral": 51,
+  "non_integral": 30,
+  "witnesses": [
+   {
+    "site": [
+     0,
+     0
+    ],
+    "link": [
+     1,
+     1
+    ],
+    "split": [
+     6,
+     7
+    ],
+    "front_tilt": 1,
+    "forced_value_offset": "6/13"
+   },
+   {
+    "site": [
+     0,
+     1
+    ],
+    "link": [
+     1,
+     0
+    ],
+    "split": [
+     2,
+     2
+    ],
+    "front_tilt": 1,
+    "forced_value_offset": "1/2"
+   },
+   {
+    "site": [
+     0,
+     1
+    ],
+    "link": [
+     1,
+     1
+    ],
+    "split": [
+     6,
+     7
+    ],
+    "front_tilt": 2,
+    "forced_value_offset": "12/13"
+   },
+   {
+    "site": [
+     1,
+     0
+    ],
+    "link": [
+     0,
+     1
+    ],
+    "split": [
+     4,
+     5
+    ],
+    "front_tilt": 1,
+    "forced_value_offset": "4/9"
+   }
+  ]
+ },
+ "forced_lift_universal": {
+  "triples_checked": 207,
+  "splits_with_n_dividing_n1": 0
+ },
+ "cover": {
+  "refined_sites": 36,
+  "coarse_images": 9,
+  "new_sites": 27,
+  "refined_links": 108,
+  "covered_links": 54,
+  "free_links": 54
+ },
+ "dynamics_census": {
+  "cells": 11088,
+  "cells_with_a_nonzero_defect": 7112,
+  "cells_with_an_identically_zero_defect": 3976,
+  "builds_censused": 14,
+  "rules": 11,
+  "lapses": 12,
+  "fronts": 3,
+  "lifts": 2,
+  "support": {
+   "IMAGE": {
+    "nonzero": 16296,
+    "total": 99792
+   },
+   "MID-(0, 1)": {
+    "nonzero": 20706,
+    "total": 99792
+   },
+   "MID-(1, 0)": {
+    "nonzero": 18438,
+    "total": 99792
+   },
+   "MID-(1, 1)": {
+    "nonzero": 16079,
+    "total": 99792
+   }
+  },
+  "support_signature": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792",
+  "per_rule": {
+   "A-axis": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-chart": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-insert": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-insert-2x": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-insert-x": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-linkframe": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-linkhalf": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "A-notransport": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "B-all": {
+    "nonzero": 672,
+    "cells": 1008
+   },
+   "B-axis": {
+    "nonzero": 644,
+    "cells": 1008
+   },
+   "B-chart": {
+    "nonzero": 644,
+    "cells": 1008
+   }
+  },
+  "per_record": {
+   "G-ANISO2": {
+    "nonzero": 1524,
+    "cells": 2376
+   },
+   "G-CURVOFF": {
+    "nonzero": 508,
+    "cells": 792
+   },
+   "G-DIAG2": {
+    "nonzero": 1524,
+    "cells": 2376
+   },
+   "G-OFFDIAG": {
+    "nonzero": 1016,
+    "cells": 1584
+   },
+   "G-OFFDIAG2": {
+    "nonzero": 1016,
+    "cells": 1584
+   },
+   "G-OFFNEG": {
+    "nonzero": 1524,
+    "cells": 2376
+   }
+  },
+  "split_dependence": {
+   "left": 2,
+   "right": 2
+  },
+  "split_dependence_at_the_coarse_images": {
+   "left": 1,
+   "right": 2
+  },
+  "closed_form_at_coarse_images": "D(iota(x)) = w^c[N,n](x) exactly, under the left lift, at 49896 of 49896 cells",
+  "matter_independence": "the matter record cancels between the two orders, so the defect is a pure drag comparison"
+ },
+ "iteration": {
+  "per_record": {
+   "G-ANISO": {
+    "ceiling_floor_log2_min_count": 0,
+    "steps_achieved_at_the_declared_split": 0,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [],
+    "family_is_finite": true
+   },
+   "G-ANISO2": {
+    "ceiling_floor_log2_min_count": 2,
+    "steps_achieved_at_the_declared_split": 2,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [
+     {
+      "step": 1,
+      "L": [
+       6,
+       6
+      ],
+      "sites": 36,
+      "links": 108,
+      "min_count": 2
+     },
+     {
+      "step": 2,
+      "L": [
+       12,
+       12
+      ],
+      "sites": 144,
+      "links": 432,
+      "min_count": 1
+     }
+    ],
+    "family_is_finite": true
+   },
+   "G-CURVED": {
+    "ceiling_floor_log2_min_count": 0,
+    "steps_achieved_at_the_declared_split": 0,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [],
+    "family_is_finite": true
+   },
+   "G-CURVOFF": {
+    "ceiling_floor_log2_min_count": 1,
+    "steps_achieved_at_the_declared_split": 0,
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "trace": [],
+    "family_is_finite": true
+   },
+   "G-DIAG2": {
+    "ceiling_floor_log2_min_count": 1,
+    "steps_achieved_at_the_declared_split": 1,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [
+     {
+      "step": 1,
+      "L": [
+       6,
+       6
+      ],
+      "sites": 36,
+      "links": 108,
+      "min_count": 1
+     }
+    ],
+    "family_is_finite": true
+   },
+   "G-FLAT": {
+    "ceiling_floor_log2_min_count": 0,
+    "steps_achieved_at_the_declared_split": 0,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [],
+    "family_is_finite": true
+   },
+   "G-OFFDIAG": {
+    "ceiling_floor_log2_min_count": 1,
+    "steps_achieved_at_the_declared_split": 1,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [
+     {
+      "step": 1,
+      "L": [
+       6,
+       6
+      ],
+      "sites": 36,
+      "links": 108,
+      "min_count": 1
+     }
+    ],
+    "family_is_finite": true
+   },
+   "G-OFFDIAG2": {
+    "ceiling_floor_log2_min_count": 1,
+    "steps_achieved_at_the_declared_split": 0,
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "trace": [],
+    "family_is_finite": true
+   },
+   "G-OFFNEG": {
+    "ceiling_floor_log2_min_count": 1,
+    "steps_achieved_at_the_declared_split": 1,
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "trace": [
+     {
+      "step": 1,
+      "L": [
+       6,
+       6
+      ],
+      "sites": 36,
+      "links": 108,
+      "min_count": 1
+     }
+    ],
+    "family_is_finite": true
+   }
+  },
+  "ceiling_over_the_family": 2,
+  "attained_over_the_family": 2,
+  "inventory_growth": [
+   {
+    "level": 0,
+    "L": 3,
+    "sites": 9,
+    "links": 27,
+    "refined_links": 108,
+    "covered_by_this_level": 54,
+    "free_at_this_step": 54,
+    "reached_by_the_ORIGINAL_record": 54,
+    "original_reach_numerator": 54,
+    "original_reach_denominator": 108
+   },
+   {
+    "level": 1,
+    "L": 6,
+    "sites": 36,
+    "links": 108,
+    "refined_links": 432,
+    "covered_by_this_level": 216,
+    "free_at_this_step": 216,
+    "reached_by_the_ORIGINAL_record": 108,
+    "original_reach_numerator": 108,
+    "original_reach_denominator": 432
+   },
+   {
+    "level": 2,
+    "L": 12,
+    "sites": 144,
+    "links": 432,
+    "refined_links": 1728,
+    "covered_by_this_level": 864,
+    "free_at_this_step": 864,
+    "reached_by_the_ORIGINAL_record": 216,
+    "original_reach_numerator": 216,
+    "original_reach_denominator": 1728
+   }
+  ],
+  "inventory_trend": "GROWS",
+  "reading": "the family closes as a CLASS -- a dyadic step applied to a dyadic refinement is again a dyadic step -- but it TERMINATES: the declared record family supports at most 2 consecutive steps, and the bound is a theorem about strictly positive counts, not a property of the declared splits"
+ },
+ "control": {
+  "move": "R1-COPY",
+  "name": "the R1 copying move (append a disjoint block)",
+  "tally": {
+   "INHERITED": 21,
+   "SUBDIVIDED": 0,
+   "AMBIGUOUS": 0,
+   "UNREPRESENTED": 6
+  },
+  "qualifier": "UNMOTIVATED",
+  "free_rule": "the appended block's counts are set by a free label rule: no coarse interval constrains them",
+  "forced_constraints": 0,
+  "comparison": "DYADIC forces 27 additivity constraints and represents 27 of 27 coarse intervals; the copying move forces 0 and loses 6.  Both fail the motivation audit, by different measured failure modes -- which is what makes the audit an instrument rather than a verdict"
+ },
+ "choice_inventory": {
+  "items": [
+   {
+    "name": "INSERTION-LOCUS",
+    "what": "which intervals the move subdivides",
+    "fiber": 1,
+    "forced_by": "the move-class declaration: DYADIC subdivides EVERY coarse interval, so no locus remains to be chosen",
+    "evidence": {
+     "subdivided": 27,
+     "coarse_intervals": 27
+    },
+    "class_declared": "i"
+   },
+   {
+    "name": "SUBDIVISION-INCIDENCE",
+    "what": "which refined site subdivides each coarse interval",
+    "fiber": 1,
+    "forced_by": "[P-I7-LINKS2] the declared link set -- every coarse displacement has a UNIQUE minimal decomposition into refined links, so the interior site is forced",
+    "evidence": {
+     "unique": 27,
+     "ambiguous": 0
+    },
+    "class_declared": "i"
+   },
+   {
+    "name": "INTERVAL-COUNT-SUM",
+    "what": "the total count carried by the two halves",
+    "fiber": 1,
+    "forced_by": "[T-COUNTS-SEMANTIC] n_l counts division events IN the interval, so events in the whole = events in the parts: additivity is semantics, not a choice",
+    "evidence": {
+     "constraints_verified": 972,
+     "violations": 0
+    },
+    "class_declared": "i"
+   },
+   {
+    "name": "FRONT-AT-COARSE-IMAGES",
+    "what": "the front value at the image of a coarse site",
+    "fiber": 1,
+    "forced_by": "[T-FRONT] the image of a coarse site IS that site, so its committed-event count is carried unchanged",
+    "evidence": {
+     "lift_rules_agreeing_at_images": 2
+    },
+    "class_declared": "i"
+   },
+   {
+    "name": "THE-SPLIT",
+    "what": "the partition (n_1, n_2) of each coarse interval's count",
+    "fiber": 19683,
+    "fiber_max": 1257565061957837936381,
+    "forced_by": null,
+    "equivariant_fiber": 3,
+    "evidence": {
+     "records_admitting_the_move": 6,
+     "min_admissible_fiber": 19683,
+     "max_admissible_fiber": 1257565061957837936381,
+     "equivariant_fibers": [
+      3,
+      5,
+      24,
+      88,
+      288,
+      29393280
+     ],
+     "count_lattice": {
+      "admissible_count_vectors": 361,
+      "splittable": 261,
+      "unique_admissible_split": [
+       [
+        2,
+        2,
+        2
+       ]
+      ],
+      "unique_admissible_split_count": 1,
+      "box": {
+       "axis_max": 6,
+       "diag_max": 12
+      }
+     }
+    },
+    "class_declared": "iii"
+   },
+   {
+    "name": "FREE-TRANSVERSE-LINKS",
+    "what": "the counts on refined links lying on no coarse interval",
+    "fiber": "INFINITE",
+    "forced_by": null,
+    "evidence": {
+     "free": 54,
+     "total": 108,
+     "infinite_family": {
+      "witnesses": 64,
+      "family": "c = a + b keeps det q = a*b > 0 for every b >= 1"
+     }
+    },
+    "class_declared": "iii"
+   },
+   {
+    "name": "NEW-FRONT-VALUES",
+    "what": "the front value at each newly inserted site",
+    "fiber": "INFINITE",
+    "forced_by": null,
+    "evidence": {
+     "new_sites": 27,
+     "dynamics_forced_value_is_non_integral": 30,
+     "of_cells": 81
+    },
+    "class_declared": "iii"
+   },
+   {
+    "name": "THE-LIFT-PAIR",
+    "what": "which (front lift, lapse lift) pair the move carries",
+    "fiber": 2,
+    "forced_by": null,
+    "evidence": {
+     "declared_pairs": 4,
+     "front_sector_commuting": 2
+    },
+    "class_declared": "iii"
+   }
+  ],
+  "forced": 4,
+  "stabiliser_fixed": 0,
+  "genuinely_free": 4,
+  "motivation_qualifier": "NOT-MOTIVATED",
+  "classification_rule": "(i) forced by a NAMED pinned declaration with fiber 1; (ii) fixed by a MEASURED stabiliser (equivariant fiber 1); (iii) genuinely free, fiber counted exactly"
+ },
+ "verdict": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
+ "verdict_head": "R6A-NO-MOTIVATED-SPLIT",
+ "verdict_segments": [
+  {
+   "name": "CLASSES",
+   "text": "CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1"
+  },
+  {
+   "name": "BLOCKED-AT",
+   "text": "BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES"
+  },
+  {
+   "name": "REFUSED-AT",
+   "text": "REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3"
+  },
+  {
+   "name": "FORCED",
+   "text": "FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324"
+  },
+  {
+   "name": "INVENTORY",
+   "text": "INVENTORY=FORCED:4|STABILIZER:0|FREE:4"
+  },
+  {
+   "name": "OBSTRUCTION",
+   "text": "OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR"
+  },
+  {
+   "name": "SPLIT-FIBER",
+   "text": "SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361"
+  },
+  {
+   "name": "FREE-LINKS",
+   "text": "FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64"
+  },
+  {
+   "name": "NEW-FRONTS",
+   "text": "NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81"
+  },
+  {
+   "name": "DEFECT",
+   "text": "DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792"
+  },
+  {
+   "name": "ITERATION",
+   "text": "ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS"
+  },
+  {
+   "name": "CONTROL",
+   "text": "CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED"
+  }
+ ],
+ "totals": {
+  "anchors": 32,
+  "gates": 48,
+  "must_pass_gates": 48,
+  "recorded_gates": 0,
+  "mutants": 34,
+  "must_pass_failures": 0,
+  "mutant_survivors": 0
+ },
+ "verdict_audit": {
+  "emitted": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
+  "reconstructed": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
+  "segment_flips": [
+   {
+    "segment": "CLASSES",
+    "flips": true
+   },
+   {
+    "segment": "BLOCKED-AT",
+    "flips": true
+   },
+   {
+    "segment": "REFUSED-AT",
+    "flips": true
+   },
+   {
+    "segment": "FORCED",
+    "flips": true
+   },
+   {
+    "segment": "INVENTORY",
+    "flips": true
+   },
+   {
+    "segment": "OBSTRUCTION",
+    "flips": true
+   },
+   {
+    "segment": "SPLIT-FIBER",
+    "flips": true
+   },
+   {
+    "segment": "FREE-LINKS",
+    "flips": true
+   },
+   {
+    "segment": "NEW-FRONTS",
+    "flips": true
+   },
+   {
+    "segment": "DEFECT",
+    "flips": true
+   },
+   {
+    "segment": "ITERATION",
+    "flips": true
+   },
+   {
+    "segment": "CONTROL",
+    "flips": true
+   }
+  ],
+  "heads_reachable": {
+   "EXISTS": "R6A-MOTIVATED-REFINEMENT-EXISTS",
+   "BLOCKED": "R6A-BLOCKED-AT-GRAMMAR-SOURCE",
+   "EMITTED": "R6A-NO-MOTIVATED-SPLIT"
+  }
+ },
+ "schema": "isp/v14/r6a-refinement/1",
+ "pin": "v14/note-r6a-refinement-grammar-pin.md",
+ "pin_sha256_prefix": "a22582f67168",
+ "grammar_sources": {
+  "v13/code/ha_successor_receipt.json": "542b8735daf0",
+  "v13/paper-ha-successor.md": "f286ba10d2d9",
+  "v13/code/ha_successor_exact.py": "d44cb72f8ee9"
+ },
+ "source_sha256": "ea914c6b55aa68c28a46f57abed66272536e4749f48640f9bbaf6c207ad4765a",
+ "python": "3.13.2",
+ "arithmetic": "int / fractions.Fraction only; no float, no tolerance",
+ "mutants": [
+  {
+   "name": "anchor-hash-A-I7-RECEIPT",
+   "expected_gate": "A-I7-RECEIPT",
+   "what": "corrupts the pinned I7 receipt's measured hash"
+  },
+  {
+   "name": "anchor-hash-A-HA-PAPER",
+   "expected_gate": "A-HA-PAPER",
+   "what": "corrupts the pinned HA paper's measured hash"
+  },
+  {
+   "name": "anchor-hash-A-HA-CODE",
+   "expected_gate": "A-HA-CODE",
+   "what": "corrupts the pinned HA instrument's measured hash"
+  },
+  {
+   "name": "anchor-hash-A-PIN-R6A",
+   "expected_gate": "A-PIN-R6A",
+   "what": "corrupts this unit's own pin hash"
+  },
+  {
+   "name": "anchor-skip",
+   "expected_gate": "G-ANCHOR-CELL-COMPLETE",
+   "what": "drops the last declared file-bytes anchor row"
+  },
+  {
+   "name": "path-drift",
+   "expected_gate": "G-PATH-ANCHORS",
+   "what": "reads the arena's L from a DIFFERENT json path (path drift)"
+  },
+  {
+   "name": "path-value",
+   "expected_gate": "G-PATH-ANCHORS",
+   "what": "returns a null value at an anchored path"
+  },
+  {
+   "name": "text-anchor-drift",
+   "expected_gate": "G-TEXT-ANCHORS",
+   "what": "paraphrases the pinned readout formula instead of quoting it"
+  },
+  {
+   "name": "float-leak",
+   "expected_gate": "G-FLOATGUARD",
+   "what": "injects a synthetic float offence the AST scan must flag"
+  },
+  {
+   "name": "readout-det",
+   "expected_gate": "G-READOUT-REENCODING",
+   "what": "perturbs the record-IS-metric determinant"
+  },
+  {
+   "name": "rank-lax",
+   "expected_gate": "G-IDENTIFIABILITY-RANK",
+   "what": "degrades the measured lapse-bracket rank"
+  },
+  {
+   "name": "lattice-drop",
+   "expected_gate": "G-COUNT-LATTICE-REPRODUCES-I7",
+   "what": "drops one admissible count vector from I7's declared box"
+  },
+  {
+   "name": "potential-lax",
+   "expected_gate": "G-NO-POTENTIAL",
+   "what": "reports a vanishing cycle sum, i.e. a record with a potential"
+  },
+  {
+   "name": "census-drop",
+   "expected_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "what": "drops the single-interval class from the move census"
+  },
+  {
+   "name": "incidence-lax",
+   "expected_gate": "G-INCIDENCE-CENSUS",
+   "what": "SMUGGLES the blocked branch through by calling an ambiguous incidence a subdivision"
+  },
+  {
+   "name": "additivity-violation",
+   "expected_gate": "G-ADDITIVITY-FORCED",
+   "what": "breaks count additivity at one refined interval"
+  },
+  {
+   "name": "restriction-lax",
+   "expected_gate": "G-RESTRICTION-COMMUTES",
+   "what": "loses one coarse-metric recovery"
+  },
+  {
+   "name": "fiber-typed",
+   "expected_gate": "G-FIBER-COMPUTED",
+   "what": "types the split fiber as 1 instead of computing it"
+  },
+  {
+   "name": "stabilizer-lax",
+   "expected_gate": "G-STABILIZER-MEASURED",
+   "what": "claims the measured stabiliser fixes the split uniquely"
+  },
+  {
+   "name": "inventory-corrupt",
+   "expected_gate": "G-INVENTORY-CLASSIFICATION",
+   "what": "relabels the class-(iii) split freedom as class-(i) forced"
+  },
+  {
+   "name": "forcedlift-lax",
+   "expected_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+   "what": "claims a split at which the forced front lift is integral"
+  },
+  {
+   "name": "defect-suppress",
+   "expected_gate": "G-DEFECT-NONZERO",
+   "what": "suppresses the measured commutation defect"
+  },
+  {
+   "name": "defect-support-lax",
+   "expected_gate": "G-DEFECT-CHARACTERISED",
+   "what": "replaces the measured support signature by a uniform label"
+  },
+  {
+   "name": "iteration-lax",
+   "expected_gate": "G-ITERATION-CEILING",
+   "what": "claims one step more than the ceiling permits"
+  },
+  {
+   "name": "control-pass",
+   "expected_gate": "G-CONTROL-UNMOTIVATED",
+   "what": "passes the R1 copying move as MOTIVATED -- the positive control OF THE AUDIT"
+  },
+  {
+   "name": "cache-alias",
+   "expected_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "what": "serves one arena another arena's cached weight"
+  },
+  {
+   "name": "verdict-pair-swap",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "swaps two segments' values, keeping their names (INJ class A)"
+  },
+  {
+   "name": "verdict-typed-segment",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "types the SPLIT-FIBER segment (INJ class B)"
+  },
+  {
+   "name": "verdict-append-text",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "appends text to a segment (INJ class C)"
+  },
+  {
+   "name": "verdict-fully-typed",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "types every segment and the head (INJ class D)"
+  },
+  {
+   "name": "verdict-inert-segment",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "replaces the DEFECT segment by an inert literal (INJ class E)"
+  },
+  {
+   "name": "head-constant",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "pins the head so it stops tracking the inventory"
+  },
+  {
+   "name": "render-escape",
+   "expected_gate": "G-RENDER-FROM-GATED-OBJECT",
+   "what": "renders a table cell that bypasses the gated object"
+  },
+  {
+   "name": "prose-claim-drift",
+   "expected_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "what": "drifts a rendered paper claim away from the receipt"
+  }
+ ],
+ "falsifier_census": {
+  "gates": 48,
+  "gates_with_a_declared_falsifier": 28,
+  "never_falsified": [
+   "G-NO-MUTANT-IDENTITY",
+   "A-R0-PIN",
+   "G-RECORD-FAMILY-REPRODUCES-I7",
+   "G-RECORD-IS-METRIC",
+   "G-BLOCK-IS-REAL",
+   "G-DIMENSION-EXTENSION",
+   "G-UNSPLITTABLE-RECORDS",
+   "G-FREE-LINKS-INFINITE",
+   "G-LIFT-GRID-CELL-COMPLETE",
+   "G-DEFECT-CLOSED-FORM",
+   "G-DEFECT-SPLIT-DEPENDENCE",
+   "G-INVENTORY-TREND",
+   "G-CACHE-EXERCISED",
+   "G-MOTIVATION-QUALIFIER-COMPUTED",
+   "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "G-VERDICT-ALL-HEADS-REACHABLE",
+   "G-NO-FLOATS-IN-RECEIPT",
+   "G-DEFERRED-GATES-EVALUATED",
+   "G-FALSIFIER-CENSUS-HONEST",
+   "G-FINAL-GATE-COUNT"
+  ],
+  "never_falsified_count": 20,
+  "denominator": "20 of 48 gates carry no declared falsifier",
+  "waivers": {
+   "G-NO-MUTANT-IDENTITY": "self-validating: the AST detector is proved able to fire by two synthetic injections evaluated inside the gate itself",
+   "A-R0-PIN": "the v14 founding pin's own hash; the anchor-hash channel is falsified at three of the five rows (the I7 receipt, the HA paper, the HA code) and at this unit's own pin, and anchor-skip proves a dropped row dies",
+   "G-RECORD-FAMILY-REPRODUCES-I7": "an I7 reproduction gate; the record constructors are exercised by readout-det, rank-lax and lattice-drop, each of which perturbs a different reading of the SAME rebuilt family",
+   "G-RECORD-IS-METRIC": "covered by readout-det (the same readout)",
+   "G-BLOCK-IS-REAL": "covered by incidence-lax at the paired gate",
+   "G-DIMENSION-EXTENSION": "a d=3 coverage measurement whose value (the all-odd parity class) is forced by the declared link set having no body diagonal -- an analytically forced clause is a disclosure, not a must-pass falsifiable gate (RUNBOOK section 14 addendum, v13 #208)",
+   "G-UNSPLITTABLE-RECORDS": "covered by fiber-typed (the same counts)",
+   "G-FREE-LINKS-INFINITE": "covered by fiber-typed (the same fiber object)",
+   "G-LIFT-GRID-CELL-COMPLETE": "covered by forcedlift-lax at the paired gate",
+   "G-DEFECT-CLOSED-FORM": "covered collaterally by defect-suppress (which moves the same field)",
+   "G-DEFECT-SPLIT-DEPENDENCE": "covered collaterally by fiber-typed and additivity-violation, both of which move the split fiber this gate probes",
+   "G-INVENTORY-TREND": "the growth law is arithmetic in the arena's volume factor; iteration-lax falsifies the neighbouring ceiling gate",
+   "G-CACHE-EXERCISED": "covered by cache-alias at the paired gate",
+   "G-MOTIVATION-QUALIFIER-COMPUTED": "the qualifier is a pure function of the inventory's class counts, so inventory-corrupt falsifies it at G-INVENTORY-CLASSIFICATION one step earlier; a separate injection would test the same arithmetic twice",
+   "G-VERDICT-SEGMENTS-FLIPPABLE": "covered by verdict-inert-segment",
+   "G-VERDICT-ALL-HEADS-REACHABLE": "covered by head-constant",
+   "G-NO-FLOATS-IN-RECEIPT": "covered by float-leak at the source-level gate",
+   "G-DEFERRED-GATES-EVALUATED": "an arithmetic consistency check on the ledger",
+   "G-FALSIFIER-CENSUS-HONEST": "the census gate registers itself after it evaluates, so it appears in its own final denominator; it is an arithmetic consistency check on the ledger and carries no separate injection",
+   "G-FINAL-GATE-COUNT": "an arithmetic consistency check on the ledger"
+  },
+  "falsifier_map": {
+   "A-HA-CODE": [
+    "anchor-hash-A-HA-CODE"
+   ],
+   "A-HA-PAPER": [
+    "anchor-hash-A-HA-PAPER"
+   ],
+   "A-I7-RECEIPT": [
+    "anchor-hash-A-I7-RECEIPT"
+   ],
+   "A-PIN-R6A": [
+    "anchor-hash-A-PIN-R6A"
+   ],
+   "G-ADDITIVITY-FORCED": [
+    "additivity-violation"
+   ],
+   "G-ANCHOR-CELL-COMPLETE": [
+    "anchor-skip"
+   ],
+   "G-CACHE-FRESH-EQUALS-MEMO": [
+    "cache-alias"
+   ],
+   "G-CONTROL-UNMOTIVATED": [
+    "control-pass"
+   ],
+   "G-COUNT-LATTICE-REPRODUCES-I7": [
+    "lattice-drop"
+   ],
+   "G-DEFECT-CHARACTERISED": [
+    "defect-support-lax"
+   ],
+   "G-DEFECT-NONZERO": [
+    "defect-suppress"
+   ],
+   "G-FIBER-COMPUTED": [
+    "fiber-typed"
+   ],
+   "G-FLOATGUARD": [
+    "float-leak"
+   ],
+   "G-FORCED-LIFT-NON-INTEGRAL": [
+    "forcedlift-lax"
+   ],
+   "G-IDENTIFIABILITY-RANK": [
+    "rank-lax"
+   ],
+   "G-INCIDENCE-CENSUS": [
+    "incidence-lax"
+   ],
+   "G-INVENTORY-CLASSIFICATION": [
+    "inventory-corrupt"
+   ],
+   "G-ITERATION-CEILING": [
+    "iteration-lax"
+   ],
+   "G-MOVE-CENSUS-CELL-COMPLETE": [
+    "census-drop"
+   ],
+   "G-NO-POTENTIAL": [
+    "potential-lax"
+   ],
+   "G-PATH-ANCHORS": [
+    "path-drift",
+    "path-value"
+   ],
+   "G-PROSE-RENDERS-FROM-THE-RECEIPT": [
+    "prose-claim-drift"
+   ],
+   "G-READOUT-REENCODING": [
+    "readout-det"
+   ],
+   "G-RENDER-FROM-GATED-OBJECT": [
+    "render-escape"
+   ],
+   "G-RESTRICTION-COMMUTES": [
+    "restriction-lax"
+   ],
+   "G-STABILIZER-MEASURED": [
+    "stabilizer-lax"
+   ],
+   "G-TEXT-ANCHORS": [
+    "text-anchor-drift"
+   ],
+   "G-VERDICT-STRING-EQUALITY": [
+    "head-constant",
+    "verdict-append-text",
+    "verdict-fully-typed",
+    "verdict-inert-segment",
+    "verdict-pair-swap",
+    "verdict-typed-segment"
+   ]
+  },
+  "mutants": 34
+ },
+ "paper_claims": {
+  "paper": "v14/paper-04-refinement-grammar.md",
+  "paper_sha256_prefix": "af5b7f26e427",
+  "claims_rendered": 15,
+  "claims_present_in_the_paper": 15,
+  "claims_missing": [],
+  "rendered": {
+   "blocked": "the coarse displacement has 2 minimal decompositions with 2 distinct interior sites, and over 16 declared completions the two candidate readings disagree at 12",
+   "census": "27 coarse intervals per class; the dyadic move subdivides 27 of 27, single-direction hyperplane insertion subdivides 3 and leaves 3 ambiguous, and the copying move subdivides 0 and leaves 6 unrepresented",
+   "defect": "the commutation defect is nonzero at 7112 of 11088 census cells and identically zero at 3976",
+   "dimension": "at d = 3 the dyadic move leaves 27 of 216 refined sites on no coarse interval at all",
+   "forced": "additivity holds at 972 of 972 constraints and the coarse metric is recovered at 324 of 324 cells",
+   "forced_lift": "the dynamics-forced front lift is non-integral at 30 of 81 cells, and n divides n_1 at 0 of the 207 splits of the declared family",
+   "free_links": "54 of the 108 refined links lie on no coarse interval",
+   "instrument": "48 gates, all passed; 32 anchors; 34 mutants, no survivors",
+   "inventory": "4 freedoms forced by a named pinned declaration, 0 fixed by a measured stabiliser, 4 genuinely free",
+   "iteration": "the ceiling is 2 consecutive steps and it is attained",
+   "lattice": "of the 361 admissible count vectors in the declared box, 261 are splittable at all and exactly 1 has a unique admissible split",
+   "refused": "the direction-0 cycle lengths become [4, 3, 3], 10 sites is not divisible by the longest cycle 4, and only 1 of the 3 declared link displacements has a target at the new site",
+   "split_fiber": "the admissible split fiber runs from 19683 to 1257565061957837936381 over the six records that admit the move, and the chart-equivariant fiber is never 1 (its smallest value is 3)",
+   "unsplittable": "3 of the 9 admissible records carry a count-1 interval and admit no subdivision at all: G-ANISO, G-CURVED, G-FLAT",
+   "verdict": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>"
+  },
+  "rule": "every load-bearing numeric sentence of the paper is RENDERED HERE from the measured object and must appear VERBATIM in the paper; a number the instrument does not render is a number the paper may not assert"
+ },
+ "compliance": [
+  {
+   "rule": "RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)",
+   "status": "APPLIED -- this sweep enumerates each rule and computes its status from the gate ledger (48 gates registered)"
+  },
+  {
+   "rule": "pin section 1 -- the grammar sources are the ONLY authority, hash-verified and path-value anchored at run time",
+   "status": "APPLIED via A-PIN-R6A, A-I7-RECEIPT, A-HA-PAPER, A-HA-CODE, G-PATH-ANCHORS, G-TEXT-ANCHORS, G-ANCHOR-CELL-COMPLETE; falsifiers anchor-hash-A-I7-RECEIPT, anchor-hash-A-HA-PAPER, anchor-hash-A-HA-CODE, path-drift, path-value, text-anchor-drift, anchor-skip"
+  },
+  {
+   "rule": "pin section 1 -- a branch needing a grammar fact from outside the pinned sources STOPS at BLOCKED-AT-GRAMMAR-SOURCE",
+   "status": "APPLIED via G-INCIDENCE-CENSUS, G-BLOCK-IS-REAL -- the named fact is DIAGONAL-INTERVAL-INCIDENCE, and the block is measured REAL (the candidate readings disagree); falsifiers incidence-lax"
+  },
+  {
+   "rule": "pin section 3.1 -- the move census is cell-complete and a class that breaks the arena is REFUSED with the measured reason, never skipped",
+   "status": "APPLIED via G-MOVE-CENSUS-CELL-COMPLETE; falsifiers census-drop"
+  },
+  {
+   "rule": "pin section 3.2 -- the forced part verified: additivity and the metric-restriction test at every admissible class and record",
+   "status": "APPLIED via G-ADDITIVITY-FORCED, G-RESTRICTION-COMMUTES, G-UNSPLITTABLE-RECORDS; falsifiers additivity-violation, restriction-lax"
+  },
+  {
+   "rule": "pin section 3.3 -- every freedom classified with its fiber COUNTED, and the motivation qualifier computed from the inventory",
+   "status": "APPLIED via G-FIBER-COMPUTED, G-STABILIZER-MEASURED, G-INVENTORY-CLASSIFICATION, G-MOTIVATION-QUALIFIER-COMPUTED, G-FREE-LINKS-INFINITE; falsifiers fiber-typed, stabilizer-lax, inventory-corrupt"
+  },
+  {
+   "rule": "pin section 3.4 -- a nonzero commutation defect is a MEASURED OBJECT, characterised at the same standard as a closure result",
+   "status": "APPLIED via G-DEFECT-NONZERO, G-DEFECT-CHARACTERISED, G-DEFECT-CLOSED-FORM, G-DEFECT-SPLIT-DEPENDENCE, G-LIFT-GRID-CELL-COMPLETE, G-FORCED-LIFT-NON-INTEGRAL; falsifiers defect-suppress, defect-support-lax, forcedlift-lax"
+  },
+  {
+   "rule": "pin section 3.5 -- the iteration probe, the R6b prerequisite",
+   "status": "APPLIED via G-ITERATION-CEILING, G-INVENTORY-TREND; falsifiers iteration-lax"
+  },
+  {
+   "rule": "pin section 5 -- the R1 copying move is the audit's NEGATIVE CONTROL: the audit must be able to fail a move",
+   "status": "APPLIED via G-CONTROL-UNMOTIVATED; falsifiers control-pass"
+  },
+  {
+   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE string against an independent rebuild",
+   "status": "APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers verdict-pair-swap, verdict-typed-segment, verdict-append-text, verdict-fully-typed, verdict-inert-segment"
+  },
+  {
+   "rule": "#20 compliance claims are gate claims: a comparator that cannot disagree with the object under test is vacuous",
+   "status": "APPLIED -- reconstruct_verdict_from_receipt() shares no code and no input with build_verdict(); it reads the RECEIPT OBJECT alone, and all five injection classes plus head-constant die on it"
+  },
+  {
+   "rule": "#10 render from the gated object (one object, one source of truth)",
+   "status": "APPLIED via G-RENDER-FROM-GATED-OBJECT; falsifiers render-escape"
+  },
+  {
+   "rule": "#20 prose renders from the receipt: every numeric claim in the paper renders from the receipt object",
+   "status": "APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT over 15 rendered claims; falsifiers prose-claim-drift"
+  },
+  {
+   "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair, not only the file bytes",
+   "status": "APPLIED -- 17 path-value anchor rows and 10 verbatim-text rows; APPLIED via G-PATH-ANCHORS, G-TEXT-ANCHORS; falsifiers path-drift, path-value, text-anchor-drift"
+  },
+  {
+   "rule": "#234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail",
+   "status": "APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE, G-VERDICT-ALL-HEADS-REACHABLE -- flippability is tested by perturbing the RECEIPT ROW each segment derives from, over all 12 segments; falsifiers verdict-inert-segment, head-constant"
+  },
+  {
+   "rule": "#234 counts are computed, never typed",
+   "status": "APPLIED via G-FIBER-COMPUTED, G-COUNT-LATTICE-REPRODUCES-I7, G-RECORD-IS-METRIC; falsifiers fiber-typed, lattice-drop"
+  },
+  {
+   "rule": "#219 a gate clause may not compare an object against a copy of itself routed through the component under test",
+   "status": "APPLIED -- the restriction test's comparator is the coarse record's own q, built by a route the restriction does not touch; the verdict comparator reads the receipt only; APPLIED via G-CACHE-FRESH-EQUALS-MEMO"
+  },
+  {
+   "rule": "#219/#185 a zero-hit cache gate is vacuous, and a self-test routed through the memo tests the cache",
+   "status": "APPLIED via G-CACHE-EXERCISED, G-CACHE-FRESH-EQUALS-MEMO; falsifiers cache-alias"
+  },
+  {
+   "rule": "#208 no gate predicate may reference mutant identity",
+   "status": "APPLIED via G-NO-MUTANT-IDENTITY -- run-mode identity is read by mutate() alone, measured by an AST scan validated with 2 synthetic injections it must flag"
+  },
+  {
+   "rule": "#257 computed qualifiers (no typed qualifier segment)",
+   "status": "APPLIED via G-MOTIVATION-QUALIFIER-COMPUTED -- the qualifier is a function of the inventory's class counts and of nothing else"
+  },
+  {
+   "rule": "#314 precheck doctrine: a precheck may gate which candidates are censused but may never name the verdict",
+   "status": "APPLIED -- the arena predicate and the incidence classification gate WHICH classes are censused; every verdict-naming fact (the fibers, the defect, the ceiling) is measured on the censused objects"
+  },
+  {
+   "rule": "#313 repair propagation: gates diffed against every rule engraved since the pin froze",
+   "status": "APPLIED -- all five 2026-08-09 engravings are carried at birth, each with its injection-falsifier: containment-is-not-equality (5 injections), render-from-the-gated-object (render-escape), prose-renders-from-the-receipt (prose-claim-drift), compliance-claims-are-gate-claims (the independent comparator), path-value anchoring (path-drift, path-value, text-anchor-drift)"
+  },
+  {
+   "rule": "RUNBOOK section 4 exact arithmetic; no float, no tolerance",
+   "status": "APPLIED via G-FLOATGUARD, G-NO-FLOATS-IN-RECEIPT; falsifiers float-leak"
+  },
+  {
+   "rule": "RUNBOOK section 15 declared-arena discipline: boundary, family, law, state, arena declared as DATA",
+   "status": "APPLIED -- the move classes, the record family, the split rules, the free-completion rules, the front family, the lapse family and the lift rules are all declared tables in the receipt; the defect's site support is reported as completion-relative"
+  },
+  {
+   "rule": "RUNBOOK section 4 controls in BOTH directions",
+   "status": "APPLIED -- positive: the defect census returns identically zero at 3976 cells, so a nonzero reading is a measurement; negative: the R1 copying move is failed by the same audit (APPLIED via G-CONTROL-UNMOTIVATED)"
+  },
+  {
+   "rule": "falsifier census with an honest denominator, from delivery one",
+   "status": "APPLIED -- 20 of 48 gates carry no declared falsifier; never falsified: ['G-NO-MUTANT-IDENTITY', 'A-R0-PIN', 'G-RECORD-FAMILY-REPRODUCES-I7', 'G-RECORD-IS-METRIC', 'G-BLOCK-IS-REAL', 'G-DIMENSION-EXTENSION', 'G-UNSPLITTABLE-RECORDS', 'G-FREE-LINKS-INFINITE', 'G-LIFT-GRID-CELL-COMPLETE', 'G-DEFECT-CLOSED-FORM', 'G-DEFECT-SPLIT-DEPENDENCE', 'G-INVENTORY-TREND', 'G-CACHE-EXERCISED', 'G-MOTIVATION-QUALIFIER-COMPUTED', 'G-VERDICT-SEGMENTS-FLIPPABLE', 'G-VERDICT-ALL-HEADS-REACHABLE', 'G-NO-FLOATS-IN-RECEIPT', 'G-DEFERRED-GATES-EVALUATED', 'G-FALSIFIER-CENSUS-HONEST', 'G-FINAL-GATE-COUNT']"
+  }
+ ],
+ "gates": [
+  {
+   "name": "G-FLOATGUARD",
+   "statement": "an AST scan of this source finds no float literal, no float/math import, and no true-division operator (every quotient goes through fdiv)",
+   "passed": true,
+   "value": {
+    "offences": []
+   }
+  },
+  {
+   "name": "G-NO-MUTANT-IDENTITY",
+   "statement": "run-mode identity is read by mutate() alone: no other function, and in particular no gate predicate, names it -- and the AST detector is validated by synthetic injections it must flag (RUNBOOK section 14 addendum, v13 #208)",
+   "passed": true,
+   "value": {
+    "functions_naming_mutant": [
+     "main",
+     "mutate"
+    ],
+    "gate_calls": [],
+    "detector_injections_flagged": [
+     [
+      "a gate predicate that reads run-mode identity",
+      true
+     ],
+     [
+      "a second function that reads run-mode identity",
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "name": "A-PIN-R6A",
+   "statement": "external anchor a22582f67168 verifies at v14/note-r6a-refinement-grammar-pin.md",
+   "passed": true,
+   "value": {
+    "expected": "a22582f67168",
+    "measured": "a22582f67168"
+   }
+  },
+  {
+   "name": "A-R0-PIN",
+   "statement": "external anchor e9d2bedff244 verifies at v14/note-r0-founding-pin.md",
+   "passed": true,
+   "value": {
+    "expected": "e9d2bedff244",
+    "measured": "e9d2bedff244"
+   }
+  },
+  {
+   "name": "A-I7-RECEIPT",
+   "statement": "external anchor 542b8735daf0 verifies at v13/code/ha_successor_receipt.json",
+   "passed": true,
+   "value": {
+    "expected": "542b8735daf0",
+    "measured": "542b8735daf0"
+   }
+  },
+  {
+   "name": "A-HA-PAPER",
+   "statement": "external anchor f286ba10d2d9 verifies at v13/paper-ha-successor.md",
+   "passed": true,
+   "value": {
+    "expected": "f286ba10d2d9",
+    "measured": "f286ba10d2d9"
+   }
+  },
+  {
+   "name": "A-HA-CODE",
+   "statement": "external anchor d44cb72f8ee9 verifies at v13/code/ha_successor_exact.py",
+   "passed": true,
+   "value": {
+    "expected": "d44cb72f8ee9",
+    "measured": "d44cb72f8ee9"
+   }
+  },
+  {
+   "name": "G-ANCHOR-CELL-COMPLETE",
+   "statement": "every declared file-bytes anchor row was evaluated (a dropped anchor row is a dropped external check)",
+   "passed": true,
+   "value": {
+    "evaluated": 5,
+    "declared": 5
+   }
+  },
+  {
+   "name": "G-PATH-ANCHORS",
+   "statement": "every value this unit reads out of the pinned I7 receipt matches the declared (path, value) PAIR -- a path drift that changes the arena dies here, not only a byte change to the file",
+   "passed": true,
+   "value": {
+    "rows": 17,
+    "failures": []
+   }
+  },
+  {
+   "name": "G-TEXT-ANCHORS",
+   "statement": "every load-bearing grammar sentence this unit reimplements appears VERBATIM in its pinned source -- the grammar is quoted, not paraphrased",
+   "passed": true,
+   "value": {
+    "rows": 10,
+    "failures": []
+   }
+  },
+  {
+   "name": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "statement": "the record family rebuilt from the pinned declarations reproduces I7's own admissibility verdict: nine admissible records and the two declared negative controls rejected, one in each failure mode",
+   "passed": true,
+   "value": {
+    "admissible": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-FLAT",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "rejected": [
+     "G-INDEF",
+     "G-SINGULAR"
+    ]
+   }
+  },
+  {
+   "name": "G-READOUT-REENCODING",
+   "statement": "record-IS-metric: the count -> q map is an invertible linear re-encoding whose determinant, in I7's own sorted-link row order, is exactly the pinned value",
+   "passed": true,
+   "value": {
+    "measured": "2",
+    "pinned": "2"
+   }
+  },
+  {
+   "name": "G-RECORD-IS-METRIC",
+   "statement": "q reproduces every declared link count at every site of every admissible record -- I7's own 81 of 81 (record, site) pairs, recomputed here from 243 link comparisons",
+   "passed": true,
+   "value": {
+    "sites_reproduced": 81,
+    "pinned": 81,
+    "link_comparisons": 243
+   }
+  },
+  {
+   "name": "G-IDENTIFIABILITY-RANK",
+   "statement": "the declared lapse family realises bracket covectors of FULL rank at every site -- I7's identifiability measurement, recomputed",
+   "passed": true,
+   "value": {
+    "ranks": {
+     "(0, 0)": 2,
+     "(0, 1)": 2,
+     "(0, 2)": 2,
+     "(1, 0)": 2,
+     "(1, 1)": 2,
+     "(1, 2)": 2,
+     "(2, 0)": 2,
+     "(2, 1)": 2,
+     "(2, 2)": 2
+    }
+   }
+  },
+  {
+   "name": "G-COUNT-LATTICE-REPRODUCES-I7",
+   "statement": "the admissible count vectors of I7's own declared count box are recomputed here and match its committed 361 -- the scope at which the split freedom is censused beyond the nine records",
+   "passed": true,
+   "value": {
+    "measured": 361,
+    "box": {
+     "axis_max": 6,
+     "diag_max": 12
+    }
+   }
+  },
+  {
+   "name": "G-NO-POTENTIAL",
+   "statement": "no record's counts are the coboundary of a site function: the counts are strictly positive [T-COUNTS-POSITIVE] and the lattice is periodic, so every axis cycle sum is positive where a coboundary's would vanish.  The split therefore cannot be read off any front-like potential -- this is the MECHANISM of the freedom measured below",
+   "passed": true,
+   "value": {
+    "min_axis_cycle_sum": {
+     "G-ANISO": 3,
+     "G-ANISO2": 12,
+     "G-CURVED": 6,
+     "G-CURVOFF": 9,
+     "G-DIAG2": 6,
+     "G-FLAT": 3,
+     "G-OFFDIAG": 6,
+     "G-OFFDIAG2": 9,
+     "G-OFFNEG": 9
+    }
+   }
+  },
+  {
+   "name": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "statement": "every declared move class was censused and every coarse interval of every class was classified -- a dropped class or a dropped interval cannot shrink the census",
+   "passed": true,
+   "value": {
+    "classes": 6,
+    "declared": 6,
+    "coarse_intervals": 27
+   }
+  },
+  {
+   "name": "G-INCIDENCE-CENSUS",
+   "statement": "the incidence of every coarse interval is decided by the UNIQUENESS of its minimal decomposition into declared link vectors: the dyadic move subdivides every interval uniquely, while single-direction hyperplane insertion leaves the diagonal intervals with two candidate interior sites and the grammar declares no rule choosing between them",
+   "passed": true,
+   "value": {
+    "dyadic": {
+     "INHERITED": 0,
+     "SUBDIVIDED": 27,
+     "AMBIGUOUS": 0,
+     "UNREPRESENTED": 0
+    },
+    "hyperplane": [
+     {
+      "INHERITED": 21,
+      "SUBDIVIDED": 3,
+      "AMBIGUOUS": 3,
+      "UNREPRESENTED": 0
+     },
+     {
+      "INHERITED": 21,
+      "SUBDIVIDED": 3,
+      "AMBIGUOUS": 3,
+      "UNREPRESENTED": 0
+     },
+     {
+      "INHERITED": 21,
+      "SUBDIVIDED": 3,
+      "AMBIGUOUS": 3,
+      "UNREPRESENTED": 0
+     }
+    ]
+   }
+  },
+  {
+   "name": "G-BLOCK-IS-REAL",
+   "statement": "the blocked branch's ambiguity is not harmless: over a declared completion sweep the two candidate readings of a cut diagonal interval's count DISAGREE at most cells, so no reading can be adopted without a grammar fact the pinned sources do not supply",
+   "passed": true,
+   "value": {
+    "completions": 16,
+    "disagreeing": 12,
+    "agreeing": 4
+   }
+  },
+  {
+   "name": "G-DIMENSION-EXTENSION",
+   "statement": "the dyadic move's site coverage is measured at BOTH declared dimensions: complete at d = 2 and incomplete at d = 3, the gap being exactly the all-odd parity class the declared link set cannot reach",
+   "passed": true,
+   "value": {
+    "d": 3,
+    "refined_sites": 216,
+    "coarse_images": 27,
+    "interior_sites": 162,
+    "unreached_sites": 27,
+    "unreached_parities": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "refined_links": 1296,
+    "covered_links": 324,
+    "free_links": 972,
+    "reading": "at d = 3 the declared link set has no body diagonal, so one parity class of refined sites lies on NO coarse interval: the move is site-complete at d = 2 and site-incomplete at d = 3"
+   }
+  },
+  {
+   "name": "G-ADDITIVITY-FORCED",
+   "statement": "count additivity holds by construction in every admissible move: the two halves of every coarse interval sum to its count, at every record, every declared split and every declared completion",
+   "passed": true,
+   "value": {
+    "checks": 972,
+    "violations": 0
+   }
+  },
+  {
+   "name": "G-RESTRICTION-COMMUTES",
+   "statement": "record-IS-metric COMMUTES with refinement: the coarse metric rebuilt from the RESTRICTED refined counts equals the coarse metric computed directly, at every (record, split, completion, site) cell -- the comparator is the coarse record's own q, computed by a route the restriction does not touch",
+   "passed": true,
+   "value": {
+    "checks": 324,
+    "recovered": 324
+   }
+  },
+  {
+   "name": "G-UNSPLITTABLE-RECORDS",
+   "statement": "a record carrying a count-1 interval admits NO subdivision at all: n_l(x) in Z_>0 [T-COUNTS-POSITIVE] leaves no positive partition of 1, and the readout independently rejects a zero part.  Measured over the declared family, not argued",
+   "passed": true,
+   "value": {
+    "unsplittable": [
+     "G-ANISO",
+     "G-CURVED",
+     "G-FLAT"
+    ],
+    "splittable": [
+     "G-ANISO2",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ]
+   }
+  },
+  {
+   "name": "G-FIBER-COMPUTED",
+   "statement": "every split fiber is COMPUTED from the record's own counts, never typed: a record with a count-1 interval has fiber 0, and the admissible fiber equals an independent recomputation of the product over coarse sites of that site's admissible split triples",
+   "passed": true,
+   "value": {
+    "declared": {
+     "G-ANISO2": 1257565061957837936381,
+     "G-CURVOFF": 64562400000,
+     "G-DIAG2": 19683,
+     "G-OFFDIAG": 19683,
+     "G-OFFDIAG2": 3904305912313344,
+     "G-OFFNEG": 1801152661463
+    },
+    "recomputed": {
+     "G-ANISO2": 1257565061957837936381,
+     "G-CURVOFF": 64562400000,
+     "G-DIAG2": 19683,
+     "G-OFFDIAG": 19683,
+     "G-OFFDIAG2": 3904305912313344,
+     "G-OFFNEG": 1801152661463
+    }
+   }
+  },
+  {
+   "name": "G-STABILIZER-MEASURED",
+   "statement": "the stabiliser of each record in the DECLARED chart group is measured, its orbits on the (site, link) pairs are computed, and the number of chart-EQUIVARIANT split assignments is counted.  No record of the declared family has a unique equivariant split, so no measured symmetry fixes the split -- class (ii) is EMPTY here, and that is a measurement, not an omission",
+   "passed": true,
+   "value": {
+    "equivariant_fibers": {
+     "G-ANISO2": 288,
+     "G-CURVOFF": 29393280,
+     "G-DIAG2": 3,
+     "G-OFFDIAG": 5,
+     "G-OFFDIAG2": 88,
+     "G-OFFNEG": 24
+    },
+    "stabilisers": {
+     "G-ANISO2": {
+      "order": 9,
+      "orbits": 3,
+      "orbit_profile": [
+       [
+        4,
+        3,
+        9
+       ],
+       [
+        9,
+        8,
+        9
+       ],
+       [
+        13,
+        12,
+        9
+       ]
+      ]
+     },
+     "G-CURVOFF": {
+      "order": 2,
+      "orbits": 15,
+      "orbit_profile": [
+       [
+        2,
+        1,
+        2
+       ],
+       [
+        6,
+        5,
+        1
+       ],
+       [
+        2,
+        1,
+        2
+       ],
+       [
+        3,
+        2,
+        2
+       ],
+       [
+        7,
+        6,
+        2
+       ],
+       [
+        2,
+        1,
+        2
+       ],
+       [
+        4,
+        3,
+        2
+       ],
+       [
+        8,
+        7,
+        2
+       ],
+       [
+        3,
+        2,
+        2
+       ],
+       [
+        10,
+        9,
+        1
+       ],
+       [
+        3,
+        2,
+        2
+       ],
+       [
+        4,
+        3,
+        2
+       ],
+       [
+        9,
+        8,
+        2
+       ],
+       [
+        4,
+        3,
+        2
+       ],
+       [
+        10,
+        9,
+        1
+       ]
+      ]
+     },
+     "G-DIAG2": {
+      "order": 18,
+      "orbits": 2,
+      "orbit_profile": [
+       [
+        2,
+        1,
+        18
+       ],
+       [
+        4,
+        3,
+        9
+       ]
+      ]
+     },
+     "G-OFFDIAG": {
+      "order": 18,
+      "orbits": 2,
+      "orbit_profile": [
+       [
+        2,
+        1,
+        18
+       ],
+       [
+        6,
+        5,
+        9
+       ]
+      ]
+     },
+     "G-OFFDIAG2": {
+      "order": 9,
+      "orbits": 3,
+      "orbit_profile": [
+       [
+        3,
+        2,
+        9
+       ],
+       [
+        5,
+        4,
+        9
+       ],
+       [
+        12,
+        11,
+        9
+       ]
+      ]
+     },
+     "G-OFFNEG": {
+      "order": 9,
+      "orbits": 3,
+      "orbit_profile": [
+       [
+        3,
+        2,
+        9
+       ],
+       [
+        5,
+        4,
+        9
+       ],
+       [
+        4,
+        3,
+        9
+       ]
+      ]
+     }
+    }
+   }
+  },
+  {
+   "name": "G-FREE-LINKS-INFINITE",
+   "statement": "the free transverse links carry an INFINITE fiber, exhibited: with c = a + b the readout is diagonal and det q = a*b > 0 for every b >= 1, so a whole one-parameter family of admissible completions restricts to the same coarse record",
+   "passed": true,
+   "value": {
+    "free_slots": 54,
+    "refined_links": 108,
+    "witnesses_checked": 64
+   }
+  },
+  {
+   "name": "G-LIFT-GRID-CELL-COMPLETE",
+   "statement": "the (front lift, lapse lift) grid is censused cell-complete and the front sector's commutation is MEASURED: exactly the MATCHED pairs commute, so dynamics-compatibility ties the lapse lift rigidly to the front lift without fixing either",
+   "passed": true,
+   "value": {
+    "pairs": [
+     {
+      "front_lift": "left",
+      "lapse_lift": "left",
+      "front_sector_commutes": true
+     },
+     {
+      "front_lift": "left",
+      "lapse_lift": "right",
+      "front_sector_commutes": false
+     },
+     {
+      "front_lift": "right",
+      "lapse_lift": "left",
+      "front_sector_commutes": false
+     },
+     {
+      "front_lift": "right",
+      "lapse_lift": "right",
+      "front_sector_commutes": true
+     }
+    ]
+   }
+  },
+  {
+   "name": "G-FORCED-LIFT-NON-INTEGRAL",
+   "statement": "requiring the drag to agree at the coarse image sites FORCES the front lift to the count-weighted interpolation n(x) + n_1*dn/n -- and that value is not of the declared Z-valued front type: integrality for EVERY front tilt would require n | n_1 with 1 <= n_1 < n, which holds at no split of any interval of the declared family.  The dynamics does not rescue the free front value; it forces an inadmissible one",
+   "passed": true,
+   "value": {
+    "forced_lift": {
+     "cells": 81,
+     "integral": 51,
+     "non_integral": 30,
+     "witnesses": [
+      {
+       "site": [
+        0,
+        0
+       ],
+       "link": [
+        1,
+        1
+       ],
+       "split": [
+        6,
+        7
+       ],
+       "front_tilt": 1,
+       "forced_value_offset": "6/13"
+      },
+      {
+       "site": [
+        0,
+        1
+       ],
+       "link": [
+        1,
+        0
+       ],
+       "split": [
+        2,
+        2
+       ],
+       "front_tilt": 1,
+       "forced_value_offset": "1/2"
+      },
+      {
+       "site": [
+        0,
+        1
+       ],
+       "link": [
+        1,
+        1
+       ],
+       "split": [
+        6,
+        7
+       ],
+       "front_tilt": 2,
+       "forced_value_offset": "12/13"
+      },
+      {
+       "site": [
+        1,
+        0
+       ],
+       "link": [
+        0,
+        1
+       ],
+       "split": [
+        4,
+        5
+       ],
+       "front_tilt": 1,
+       "forced_value_offset": "4/9"
+      }
+     ]
+    },
+    "universal": {
+     "triples_checked": 207,
+     "splits_with_n_dividing_n1": 0
+    }
+   }
+  },
+  {
+   "name": "G-DEFECT-NONZERO",
+   "statement": "the commutation defect is NONZERO: refine-then-advance and advance-then-refine differ at most cells of the census.  It is measured, not asserted, and the census carries both directions -- cells with an identically zero defect are counted too",
+   "passed": true,
+   "value": {
+    "cells": 11088,
+    "nonzero": 7112,
+    "zero": 3976
+   }
+  },
+  {
+   "name": "G-DEFECT-CLOSED-FORM",
+   "statement": "the defect has an EXACT closed form at the coarse image sites under the left lift: the refined front is constant on each cell, so the refined drag vanishes there and the defect equals the WHOLE coarse drag -- verified cell by cell, not argued",
+   "passed": true,
+   "value": {
+    "image_cells": 49896,
+    "matching": 49896
+   }
+  },
+  {
+   "name": "G-DEFECT-CHARACTERISED",
+   "statement": "the defect's SITE SUPPORT is characterised by which coarse interval each refined site subdivides, the support is not uniform across those classes, and the signature the verdict carries is REBUILT here from the support table and must agree -- the defect is a structured object with a measured signature, not a scalar failure",
+   "passed": true,
+   "value": {
+    "support": {
+     "IMAGE": {
+      "nonzero": 16296,
+      "total": 99792
+     },
+     "MID-(0, 1)": {
+      "nonzero": 20706,
+      "total": 99792
+     },
+     "MID-(1, 0)": {
+      "nonzero": 18438,
+      "total": 99792
+     },
+     "MID-(1, 1)": {
+      "nonzero": 16079,
+      "total": 99792
+     }
+    },
+    "signature": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792",
+    "rebuilt": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792"
+   }
+  },
+  {
+   "name": "G-DEFECT-SPLIT-DEPENDENCE",
+   "statement": "THE SPLIT MOVES THE DEFECT.  Over a genuine split fiber the defect field takes distinct values under BOTH declared lifts, so the class-(iii) split freedom is not physically inert -- it changes the measured obstruction.  Restricted to the coarse image sites the dependence is lift-relative: the left lift makes that part split-INDEPENDENT (it is the whole coarse drag) while the right lift does not, and both readings are reported",
+   "passed": true,
+   "value": {
+    "splits_probed": 2,
+    "max_distinct_defect_fields_over_the_lapse_x_front_sweep": {
+     "left": 2,
+     "right": 2
+    },
+    "restricted_to_the_coarse_images": {
+     "left": 1,
+     "right": 2
+    },
+    "record": "G-OFFDIAG2",
+    "rule": "A-axis"
+   }
+  },
+  {
+   "name": "G-ITERATION-CEILING",
+   "statement": "the refinement FAMILY IS FINITE.  Each dyadic step partitions every interval into two strictly positive parts, so after k steps a coarse interval of count n has n >= 2^k: no record admits more than floor(log2(min count)) consecutive steps.  Over the declared family the ceiling is attained and never exceeded",
+   "passed": true,
+   "value": {
+    "ceiling": 2,
+    "attained": 2,
+    "per_record": {
+     "G-ANISO": [
+      0,
+      0
+     ],
+     "G-ANISO2": [
+      2,
+      2
+     ],
+     "G-CURVED": [
+      0,
+      0
+     ],
+     "G-CURVOFF": [
+      1,
+      0
+     ],
+     "G-DIAG2": [
+      1,
+      1
+     ],
+     "G-FLAT": [
+      0,
+      0
+     ],
+     "G-OFFDIAG": [
+      1,
+      1
+     ],
+     "G-OFFDIAG2": [
+      1,
+      0
+     ],
+     "G-OFFNEG": [
+      1,
+      1
+     ]
+    }
+   }
+  },
+  {
+   "name": "G-INVENTORY-TREND",
+   "statement": "the choice inventory under iteration is measured, not guessed: the free part of each step grows by the arena's own volume factor while the fraction of the level-k arena that the ORIGINAL record reaches falls, so iteration adds freedom rather than removing it",
+   "passed": true,
+   "value": {
+    "growth": [
+     {
+      "level": 0,
+      "L": 3,
+      "sites": 9,
+      "links": 27,
+      "refined_links": 108,
+      "covered_by_this_level": 54,
+      "free_at_this_step": 54,
+      "reached_by_the_ORIGINAL_record": 54,
+      "original_reach_numerator": 54,
+      "original_reach_denominator": 108
+     },
+     {
+      "level": 1,
+      "L": 6,
+      "sites": 36,
+      "links": 108,
+      "refined_links": 432,
+      "covered_by_this_level": 216,
+      "free_at_this_step": 216,
+      "reached_by_the_ORIGINAL_record": 108,
+      "original_reach_numerator": 108,
+      "original_reach_denominator": 432
+     },
+     {
+      "level": 2,
+      "L": 12,
+      "sites": 144,
+      "links": 432,
+      "refined_links": 1728,
+      "covered_by_this_level": 864,
+      "free_at_this_step": 864,
+      "reached_by_the_ORIGINAL_record": 216,
+      "original_reach_numerator": 216,
+      "original_reach_denominator": 1728
+     }
+    ]
+   }
+  },
+  {
+   "name": "G-CONTROL-UNMOTIVATED",
+   "statement": "THE AUDIT CAN FAIL A MOVE.  The R1 copying move, run through the same uniform audit, subdivides NO coarse interval, leaves coarse intervals UNREPRESENTED (so the restriction test cannot even be posed for them) and carries an unconstrained free label rule -- it is scored strictly worse than the dyadic move on the same instrument, and by a DIFFERENT failure mode",
+   "passed": true,
+   "value": {
+    "tally": {
+     "INHERITED": 21,
+     "SUBDIVIDED": 0,
+     "AMBIGUOUS": 0,
+     "UNREPRESENTED": 6
+    },
+    "qualifier": "UNMOTIVATED"
+   }
+  },
+  {
+   "name": "G-CACHE-EXERCISED",
+   "statement": "the weight memo is genuinely exercised -- a zero-hit cache gate is vacuous (RUNBOOK section 14 addendum, v13 #219)",
+   "passed": true,
+   "value": {
+    "hits": 862758,
+    "misses": 6210,
+    "bypass": 99,
+    "compared": 99,
+    "disagreements": 0
+   }
+  },
+  {
+   "name": "G-CACHE-FRESH-EQUALS-MEMO",
+   "statement": "every memoised weight compared here is recomputed with the memo BYPASSED and agrees -- the gate tests the quantity, not the cache",
+   "passed": true,
+   "value": {
+    "compared": 99,
+    "disagreements": 0
+   }
+  },
+  {
+   "name": "G-INVENTORY-CLASSIFICATION",
+   "statement": "every freedom's class is RECOMPUTED from its own measured evidence and must equal the class the inventory carries: a class-(iii) freedom relabelled class-(i) dies here.  Forced iff the fiber is exactly 1 AND a pinned declaration is named; stabiliser-fixed iff the measured equivariant fiber is exactly 1",
+   "passed": true,
+   "value": {
+    "declared": [
+     "i",
+     "i",
+     "i",
+     "i",
+     "iii",
+     "iii",
+     "iii",
+     "iii"
+    ],
+    "recomputed": [
+     "i",
+     "i",
+     "i",
+     "i",
+     "iii",
+     "iii",
+     "iii",
+     "iii"
+    ]
+   }
+  },
+  {
+   "name": "G-MOTIVATION-QUALIFIER-COMPUTED",
+   "statement": "the motivation qualifier is COMPUTED from the inventory and from nothing else (the RSQ standard): a move every one of whose freedoms is class (i) or class (ii) is MOTIVATED; any class-(iii) freedom is named in the verdict with its fiber",
+   "passed": true,
+   "value": {
+    "forced": 4,
+    "stabiliser": 0,
+    "free": 4,
+    "qualifier": "NOT-MOTIVATED"
+   }
+  },
+  {
+   "name": "G-VERDICT-STRING-EQUALITY",
+   "statement": "the COMPLETE emitted verdict string equals, character for character, a reconstruction built segment by segment from the RECEIPT OBJECT by a function sharing no code and no input with the builder.  Substring, prefix and containment checks are not verdict gates (RUNBOOK section 14 addendum, v14 #10)",
+   "passed": true,
+   "value": {
+    "emitted": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:C",
+    "rebuilt": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:C",
+    "equal": true
+   }
+  },
+  {
+   "name": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "statement": "every verdict segment is shown to MOVE when the receipt row it derives from is perturbed -- flippability is tested at the measurement, not by appending to the string (RUNBOOK section 13 addendum, v13 #234).  An inert segment is a typed segment",
+   "passed": true,
+   "value": {
+    "flips": [
+     {
+      "segment": "CLASSES",
+      "flips": true
+     },
+     {
+      "segment": "BLOCKED-AT",
+      "flips": true
+     },
+     {
+      "segment": "REFUSED-AT",
+      "flips": true
+     },
+     {
+      "segment": "FORCED",
+      "flips": true
+     },
+     {
+      "segment": "INVENTORY",
+      "flips": true
+     },
+     {
+      "segment": "OBSTRUCTION",
+      "flips": true
+     },
+     {
+      "segment": "SPLIT-FIBER",
+      "flips": true
+     },
+     {
+      "segment": "FREE-LINKS",
+      "flips": true
+     },
+     {
+      "segment": "NEW-FRONTS",
+      "flips": true
+     },
+     {
+      "segment": "DEFECT",
+      "flips": true
+     },
+     {
+      "segment": "ITERATION",
+      "flips": true
+     },
+     {
+      "segment": "CONTROL",
+      "flips": true
+     }
+    ]
+   }
+  },
+  {
+   "name": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "statement": "all three pre-registered heads are REACHABLE by measurement: a synthetic receipt whose inventory carries no class-(iii) freedom returns MOTIVATED-REFINEMENT-EXISTS, and one whose census admits no class returns BLOCKED-AT-GRAMMAR-SOURCE.  A head that cannot take its other values is not a measurement",
+   "passed": true,
+   "value": {
+    "exists_reachable": "R6A-MOTIVATED-REFINEMENT-EXISTS",
+    "blocked_reachable": "R6A-BLOCKED-AT-GRAMMAR-SOURCE",
+    "emitted": "R6A-NO-MOTIVATED-SPLIT"
+   }
+  },
+  {
+   "name": "G-RENDER-FROM-GATED-OBJECT",
+   "statement": "every rendered table cell equals the corresponding cell of the gated measurement object -- the receipt and the output render from ONE object, with no bypass path",
+   "passed": true,
+   "value": {
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-NO-FLOATS-IN-RECEIPT",
+   "statement": "the emitted receipt contains no float",
+   "passed": true,
+   "value": {
+    "floats": []
+   }
+  },
+  {
+   "name": "G-DEFERRED-GATES-EVALUATED",
+   "statement": "the write-time gates named in the falsifier census really did run, so the census's denominator covers every gate this instrument declares",
+   "passed": true,
+   "value": {
+    "deferred": [
+     "G-RENDER-FROM-GATED-OBJECT",
+     "G-NO-FLOATS-IN-RECEIPT",
+     "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+     "G-FINAL-GATE-COUNT",
+     "G-DEFERRED-GATES-EVALUATED"
+    ]
+   }
+  },
+  {
+   "name": "G-FALSIFIER-CENSUS-HONEST",
+   "statement": "the falsifier census denominates itself over EVERY registered gate and every gate without a declared falsifier carries a recorded waiver with its forcing reason -- no silent exemption",
+   "passed": true,
+   "value": {
+    "never_falsified": 18,
+    "unwaived": []
+   }
+  },
+  {
+   "name": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "statement": "every load-bearing numeric sentence of paper-04 is rendered from the receipt object and appears verbatim in the paper: the prose surface is gated like the tables (all of the programme's false paper numbers to date lived in hand-written prose)",
+   "passed": true,
+   "value": {
+    "claims": 15,
+    "missing": [],
+    "paper_sha256_prefix": "af5b7f26e427"
+   }
+  },
+  {
+   "name": "G-FINAL-GATE-COUNT",
+   "statement": "the gate count the paper's rendered instrument sentence carries equals the number of gates this run will have registered when it finishes -- the claim's own arithmetic, gated",
+   "passed": true,
+   "value": {
+    "registered_now": 47,
+    "claimed": "48 gates, all passed; 32 anchors; 34 mutants, no survivors"
+   }
+  }
+ ]
+}

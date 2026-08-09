@@ -1,0 +1,187 @@
+==============================================================================
+v14 R6a -- THE REFINEMENT GRAMMAR
+==============================================================================
+
+QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivision move -- a new site because a division event resolved a record interval, the count partition FORCED by the counting semantics and the residual freedom MEASURED?
+
+--- 0. ANCHORS (32 total: 5 file-bytes, 17 path-value, 10 verbatim text)
+  A-PIN-R6A                  v14/note-r6a-refinement-grammar-pin.md         a22582f67168
+  A-R0-PIN                   v14/note-r0-founding-pin.md                    e9d2bedff244
+  A-I7-RECEIPT               v13/code/ha_successor_receipt.json             542b8735daf0
+  A-HA-PAPER                 v13/paper-ha-successor.md                      f286ba10d2d9
+  A-HA-CODE                  v13/code/ha_successor_exact.py                 d44cb72f8ee9
+  path-value rows: 17, all matching the declared (path, value) pair
+  verbatim-text rows: 10, every load-bearing grammar sentence quoted from its pinned source
+
+--- 1. THE ARENA, REBUILT FROM THE PINNED SOURCES
+  sites              X = (Z_L)^d with L = 3, d = 2 (|X| = 9)
+  links              [[1, 0], [0, 1], [1, 1]]
+  geometry_record    n_l(x) in Z_>0, the number of division events in the record interval between x and x+l
+  front              n : X -> Z, the number of division events already committed at record site x
+  readout            q_ij e_l^i e_l^j = n_l(x); I = q^-1 (det q)^w at w = 0
+  lapse_family       the |X| site deltas, the constant profile 1, and the d chart ramps
+
+  record family (counts at (0,0) / (1,1)):
+    G-ANISO      (1, 4, 5)      (1, 4, 5)      admissible=True  min=1 homog=True
+    G-ANISO2     (4, 9, 13)     (4, 9, 13)     admissible=True  min=4 homog=True
+    G-CURVED     (1, 1, 2)      (2, 2, 4)      admissible=True  min=1 homog=False
+    G-CURVOFF    (2, 2, 6)      (3, 3, 10)     admissible=True  min=2 homog=False
+    G-DIAG2      (2, 2, 4)      (2, 2, 4)      admissible=True  min=2 homog=True
+    G-FLAT       (1, 1, 2)      (1, 1, 2)      admissible=True  min=1 homog=True
+    G-INDEF      (1, 1, 6)      (1, 1, 6)      admissible=False min=1 homog=True
+    G-OFFDIAG    (2, 2, 6)      (2, 2, 6)      admissible=True  min=2 homog=True
+    G-OFFDIAG2   (3, 5, 12)     (3, 5, 12)     admissible=True  min=3 homog=True
+    G-OFFNEG     (3, 5, 4)      (3, 5, 4)      admissible=True  min=3 homog=True
+    G-SINGULAR   (1, 1, 4)      (1, 1, 4)      admissible=False min=1 homog=True
+
+--- 2. THE NO-POTENTIAL THEOREM (the mechanism of the freedom)
+  counts are strictly positive on a periodic lattice, so no record's
+  counts are the coboundary of a site function; the split cannot be
+  read off any potential.  min axis cycle sum per record:
+    G-ANISO=3, G-ANISO2=12, G-CURVED=6, G-CURVOFF=9, G-DIAG2=6, G-FLAT=3, G-OFFDIAG=6, G-OFFDIAG2=9, G-OFFNEG=9
+
+--- 3. THE MOVE CENSUS (27 coarse intervals per class)
+  class              verdict       INH   SUB   AMB   UNR  refined shape
+  DYADIC             ADMISSIBLE      0    27     0     0  [6, 6]
+  HYPERPLANE@0       BLOCKED        21     3     3     0  [4, 3]
+  HYPERPLANE@1       BLOCKED        21     3     3     0  [4, 3]
+  HYPERPLANE@2       BLOCKED        21     3     3     0  [4, 3]
+  SINGLE-INTERVAL    REFUSED         0     0     0     0  None
+  R1-COPY            CONTROL        21     0     0     6  [6, 3]
+
+  BLOCKED branch -- DIAGONAL-INTERVAL-INCIDENCE
+    which refined site subdivides a coarse DIAGONAL interval cut by a single-direction hyperplane insertion.  The coarse displacement (2,1) has two minimal decompositions into declared link vectors, with two distinct interior sites; the pinned grammar declares a link SET and no incidence rule, and supplying one would be a grammar fact from outside the pinned sources (pin section 1)
+    ambiguous coarse intervals: 3 of 27, 2 candidate interior sites each; all 3 declared loci agree: True
+    the ambiguity is REAL: over 16 declared completions the two candidate readings disagree at 12
+
+  REFUSED branch -- SINGLE-INTERVAL
+    a product-of-cyclic-groups site set carrying the declared link displacements by translation forces every direction-0 cycle to have the SAME length; inserting one site into one link makes them [4, 3, 3], and 10 is not divisible by the longest cycle 4.  At the new site only 1 of the 3 declared link displacements has a target.
+
+  dimension extension (d = 3): 216 refined sites, 27 images, 162 interior, 27 UNREACHED (parity [(1, 1, 1)])
+
+--- 4. THE FORCED PART
+  additivity:  972 of 972 constraints hold (0 violations)
+  restriction: the coarse metric is recovered at 324 of 324 cells
+  splittable records: G-ANISO2, G-CURVOFF, G-DIAG2, G-OFFDIAG, G-OFFDIAG2, G-OFFNEG
+  UNSPLITTABLE (a count-1 interval admits no positive partition): G-ANISO, G-CURVED, G-FLAT
+  declared builds 36, of which admissible 28
+  record       split  free       adm?   bad  qrec
+  G-ANISO2     low    minimal    True     0     9
+  G-ANISO2     low    iterable-64  True     0     9
+  G-ANISO2     floor  minimal    True     0     9
+  G-ANISO2     floor  iterable-64  True     0     9
+  G-ANISO2     high   minimal    True     0     9
+  G-ANISO2     high   iterable-64  True     0     9
+  G-CURVOFF    low    minimal    True     0     9
+  G-CURVOFF    low    iterable-64  True     0     9
+  G-CURVOFF    floor  minimal   False     1     9
+  G-CURVOFF    floor  iterable-64 False     1     9
+  G-CURVOFF    high   minimal   False     4     9
+  G-CURVOFF    high   iterable-64 False     4     9
+  G-DIAG2      low    minimal    True     0     9
+  G-DIAG2      low    iterable-64  True     0     9
+  G-DIAG2      floor  minimal    True     0     9
+  G-DIAG2      floor  iterable-64  True     0     9
+  G-DIAG2      high   minimal    True     0     9
+  G-DIAG2      high   iterable-64  True     0     9
+  G-OFFDIAG    low    minimal    True     0     9
+  G-OFFDIAG    low    iterable-64  True     0     9
+  G-OFFDIAG    floor  minimal    True     0     9
+  G-OFFDIAG    floor  iterable-64  True     0     9
+  G-OFFDIAG    high   minimal   False     9     9
+  G-OFFDIAG    high   iterable-64 False     9     9
+  G-OFFDIAG2   low    minimal    True     0     9
+  G-OFFDIAG2   low    iterable-64  True     0     9
+  G-OFFDIAG2   floor  minimal   False     9     9
+  G-OFFDIAG2   floor  iterable-64 False     9     9
+  G-OFFDIAG2   high   minimal    True     0     9
+  G-OFFDIAG2   high   iterable-64  True     0     9
+  G-OFFNEG     low    minimal    True     0     9
+  G-OFFNEG     low    iterable-64  True     0     9
+  G-OFFNEG     floor  minimal    True     0     9
+  G-OFFNEG     floor  iterable-64  True     0     9
+  G-OFFNEG     high   minimal    True     0     9
+  G-OFFNEG     high   iterable-64  True     0     9
+
+--- 5. THE CHOICE INVENTORY  (qualifier COMPUTED: NOT-MOTIVATED)
+  freedom                    class  fiber                  forced by
+  INSERTION-LOCUS            (i  ) 1                      the move-class declaration: DYADIC subdivides EVERY coarse i
+  SUBDIVISION-INCIDENCE      (i  ) 1                      [P-I7-LINKS2] the declared link set -- every coarse displace
+  INTERVAL-COUNT-SUM         (i  ) 1                      [T-COUNTS-SEMANTIC] n_l counts division events IN the interv
+  FRONT-AT-COARSE-IMAGES     (i  ) 1                      [T-FRONT] the image of a coarse site IS that site, so its co
+  THE-SPLIT                  (iii) 19683                  -- NOTHING IN THE PINNED GRAMMAR --
+  FREE-TRANSVERSE-LINKS      (iii) INFINITE               -- NOTHING IN THE PINNED GRAMMAR --
+  NEW-FRONT-VALUES           (iii) INFINITE               -- NOTHING IN THE PINNED GRAMMAR --
+  THE-LIFT-PAIR              (iii) 2                      -- NOTHING IN THE PINNED GRAMMAR --
+  forced 4 | stabiliser-fixed 0 | genuinely free 4
+
+  split fibers (raw / admissible-at-images / equivariant):
+    G-ANISO      0                          0                          -
+    G-ANISO2     13631146639813244878848    1257565061957837936381     288
+    G-CURVED     0                          0                          -
+    G-CURVOFF    2133246689280              64562400000                29393280
+    G-DIAG2      19683                      19683                      3
+    G-FLAT       0                          0                          -
+    G-OFFDIAG    1953125                    19683                      5
+    G-OFFDIAG2   316478381828866048         3904305912313344           88
+    G-OFFNEG     2641807540224              1801152661463              24
+  beyond the nine records, over I7's own declared count box (axis<=6, diag<=12): 361 admissible count vectors, 261 splittable, and 1 with a UNIQUE admissible split [(2, 2, 2)]
+
+--- 6. THE DYNAMICS-COMPATIBILITY CENSUS
+  11088 cells (14 builds x 11 rules x 12 lapses x 3 fronts x 2 lifts)
+  nonzero defect at 7112 cells, identically zero at 3976
+  site support (by which coarse interval the site subdivides):
+    IMAGE          nonzero  16296 of  99792
+    MID-(0, 1)     nonzero  20706 of  99792
+    MID-(1, 0)     nonzero  18438 of  99792
+    MID-(1, 1)     nonzero  16079 of  99792
+  closed form: D(iota(x)) = w^c[N,n](x) exactly, under the left lift, at 49896 of 49896 cells
+  split dependence (distinct defect fields over a genuine fiber): {'left': 2, 'right': 2}
+  lift grid (front sector):
+    front=left   lapse=left   commutes=True
+    front=left   lapse=right  commutes=False
+    front=right  lapse=left   commutes=False
+    front=right  lapse=right  commutes=True
+  the dynamics-forced front lift is NON-INTEGRAL at 30 of 81 cells; and n | n_1 holds at 0 of 207 splits (it cannot)
+
+--- 7. THE ITERATION PROBE
+  ceiling floor(log2 min count) over the family: 2; attained: 2
+    G-ANISO      ceiling 0  achieved 0  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-ANISO2     ceiling 2  achieved 2  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-CURVED     ceiling 0  achieved 0  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-CURVOFF    ceiling 1  achieved 0  halt: REFINED RECORD INADMISSIBLE at the balanced split
+    G-DIAG2      ceiling 1  achieved 1  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-FLAT       ceiling 0  achieved 0  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-OFFDIAG    ceiling 1  achieved 1  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+    G-OFFDIAG2   ceiling 1  achieved 0  halt: REFINED RECORD INADMISSIBLE at the balanced split
+    G-OFFNEG     ceiling 1  achieved 1  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+  inventory trend: GROWS
+    level 0: L=3 links 27 -> refined 108, covered 54, free 54; original record reaches 54 of 108
+    level 1: L=6 links 108 -> refined 432, covered 216, free 216; original record reaches 108 of 432
+    level 2: L=12 links 432 -> refined 1728, covered 864, free 864; original record reaches 216 of 1728
+
+--- 8. THE R1 NEGATIVE CONTROL (the audit must be able to FAIL a move)
+  R1-COPY -- UNMOTIVATED
+  DYADIC forces 27 additivity constraints and represents 27 of 27 coarse intervals; the copying move forces 0 and loses 6.  Both fail the motivation audit, by different measured failure modes -- which is what makes the audit an instrument rather than a verdict
+  its free rule: the appended block's counts are set by a free label rule: no coarse interval constrains them
+
+--- 9. THE VERDICT
+    CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1
+    BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES
+    REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3
+    FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324
+    INVENTORY=FORCED:4|STABILIZER:0|FREE:4
+    OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR
+    SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361
+    FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64
+    NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81
+    DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792
+    ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS
+    CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED
+
+  R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>
+
+--- 10. INSTRUMENT
+  anchors 32 | gates 48 (48 must-pass, 0 recorded) | mutants 34
+  falsifier census: 20 of 48 gates carry no declared falsifier; never falsified: ['G-NO-MUTANT-IDENTITY', 'A-R0-PIN', 'G-RECORD-FAMILY-REPRODUCES-I7', 'G-RECORD-IS-METRIC', 'G-BLOCK-IS-REAL', 'G-DIMENSION-EXTENSION', 'G-UNSPLITTABLE-RECORDS', 'G-FREE-LINKS-INFINITE', 'G-LIFT-GRID-CELL-COMPLETE', 'G-DEFECT-CLOSED-FORM', 'G-DEFECT-SPLIT-DEPENDENCE', 'G-INVENTORY-TREND', 'G-CACHE-EXERCISED', 'G-MOTIVATION-QUALIFIER-COMPUTED', 'G-VERDICT-SEGMENTS-FLIPPABLE', 'G-VERDICT-ALL-HEADS-REACHABLE', 'G-NO-FLOATS-IN-RECEIPT', 'G-DEFERRED-GATES-EVALUATED', 'G-FALSIFIER-CENSUS-HONEST', 'G-FINAL-GATE-COUNT']
+

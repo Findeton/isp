@@ -762,3 +762,54 @@ table composition.  The R1 copying move = the audit's
 negative control (the audit must be able to FAIL a move).
 Construction dispatched IN PARALLEL with R3 (disjoint
 files).
+
+## 2026-08-09 — R6a DELIVERED, COMMITTED AS-IS (v14 LEDGER #26)
+paper-04-refinement-grammar.md (af5b7f26e427) + r6a_
+refinement_exact.py (ea914c6b55aa) + _output.txt
+(a04b97d2b7bc) + _receipt.json (022c3f488a93) committed
+exactly as delivered BEFORE adjudicator verification.  **THE
+VERDICT AS EMITTED: R6A-NO-MOTIVATED-SPLIT<...12 segments>.**
+MOVE CENSUS: DYADIC (L→2L) the ONE admissible class;
+HYPERPLANE BLOCKED at 3-of-27 diagonal intervals (2 minimal
+decompositions, 2 interior candidates — the pinned grammar
+declares a link SET, no incidence rule; the block measured
+REAL: 16 completions disagree at 12); SINGLE-INTERVAL REFUSED
+(translation forces equal direction cycles — [4,3,3]
+impossible; 1-of-3 link targets).  **THE FORCED PART IS
+PERFECT: additivity 972/972; metric-restriction 324/324 —
+record-IS-metric COMMUTES with refinement.**  THE CHOICE
+INVENTORY (dyadic): 4 forced / 0 stabilizer-fixed / **4
+GENUINELY FREE** — THE-SPLIT (fiber 19,683..~1.26e21;
+equivariant min 3; lattice-forced unique at 1-of-361 vectors
+— and that one, (2,2,2), is NOT in the declared family; the
+uniform split fails positive-definiteness at 8-of-36 builds
+and is undefinable at odd counts); FREE-TRANSVERSE-LINKS
+(54-of-108, fiber INFINITE, 64 witnesses); NEW-FRONT-VALUES
+(27 sites, fiber INFINITE); THE-LIFT-PAIR (2).  **THE
+MECHANISM, A GATED THEOREM: NO RECORD'S COUNTS ARE A
+COBOUNDARY — the datum a split needs (event positions within
+intervals) is exactly the datum the record does not carry
+(interval totals only).**  THE COMMUTATION DEFECT NONZERO +
+characterized (7,112-of-11,088 cells; exact closed form at
+coarse images under the left lift: D(ι(x)) = the whole coarse
+drag; lift-relative at images; rule-blind); **the
+dynamics-FORCED front lift is NON-INTEGRAL at 30-of-81 cells,
+n|n₁ at 0-of-207 splits — the dynamics forces an INADMISSIBLE
+value rather than rescuing the free one.**  ITERATION: the
+family CLOSES AS A CLASS BUT TERMINATES — ceiling
+⌊log₂(min count)⌋ = 2, ATTAINED; the inventory GROWS
+(54/108 → 108/432 → 216/1728).  **THREE OF NINE records
+(G-FLAT among them) carry a count-1 interval and admit NO
+SUBDIVISION AT ALL — count 1 is a floor: the flattest arena
+is the one that cannot be refined.**  d=3: the declared link
+set has no body diagonal — 27-of-216 refined sites on no
+coarse interval.  The R1-COPY control fails the audit BY A
+DIFFERENT MODE (0 additivity constraints; 6 unrepresented
+intervals; free label rule) — the audit discriminates.
+Instrument: 32 anchors (5 file / 17 path-value / **10
+verbatim-text — a new anchor kind**), 48 gates 0 failures,
+34/34 mutants dead, never-falsified 20-of-48 ALL WAIVED
+(0 unwaived), 26 compliance rows 0 MISSING, all five
+2026-08-09 engravings at birth w/ injection-falsifiers, two
+plain runs BYTE-IDENTICAL.  Adjudicator verification next;
+R3 still constructing in parallel.
