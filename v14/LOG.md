@@ -85,3 +85,21 @@ Declared limitation stated in paper §12: the atlas is this
 unit's own declaration; coherence analytically forced at A₂
 alone (X-REAL-EMPTY disclosure).  Adjudicator verification
 next.
+
+## 2026-08-09 — R0 COMPANION-HASH ERRATUM (v14 LEDGER #4)
+The R1 worker's provenance finding, verified on disk by the
+adjudicator: R0's I2/I3 rows carry PARENTHETICAL companion
+hashes for the two v13 papers that are STALE BY ONE COMMIT —
+recorded at the repair commits (c45e80f/efc1bed), superseded
+by the terminal Status-line stamps (cb18c24/cd98f05).  Row
+PRIMARY KEYS (the receipts) and all other companions verify;
+no R1 number reads from a paper; R1 censused the delta and
+carries disclosure X-COMPANION-HASH.  ERRATUM OF RECORD (the
+R0 note stays frozen; this entry is the correction):
+`v13/paper-rsq-reposed-square.md` = f80317a25037;
+`v13/paper-top-topology.md` = 379194959fbc.  Future v14 units
+citing these companions cite THIS entry.  Adjudicator's own
+error, owned: R0 was written before the terminal stamps and
+its companion hashes were not re-verified after them — the
+repair-propagation lesson applied to pins: **a pin recording
+hashes of a tree still moving must re-verify at freeze.**
