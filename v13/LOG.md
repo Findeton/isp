@@ -9459,3 +9459,34 @@ equal those of the BLOCK-INCIDENCE GRAPH of the two rules'
 partitions (25/25) — K2's deepest sentence made exact: the
 temporal b₁ is PARTITION-NESTING structure at each read
 time.**  Two reviewers pending (R2-RSQ, R3-TOP).
+
+## 2026-08-09 — TOP R3 (INSTRUMENT) FROZEN (v13 LEDGER #311)
+review-top-instrument.md (afb46745b73f) frozen as delivered.
+Grade AWF; 434 recomputations (172 anchor-provenance traces),
+six from-scratch reimplementations, 41 instrument executions;
+both delivery runs byte-identical.  **K5(b) MET: the OR-vs-XOR
+bug reconstructed with the delta exact (quotient b₁ 24 vs 25;
+240 loop 1-cells; rank ∂₁ 5→6, b₀ 1→0) and the injected bug
+killed by TOP-QUOTIENT.**  **F1 (MAJOR): VERDICT QUALIFIERS
+UNGATED IN ALL THREE VERDICTS (b₁ 140→141 exits 0) — A
+RECURRENCE OF TB3-R3's F1 AGAINST AN ENGRAVED RULE (#257):
+the repair was not carried forward to the parallel-built
+successor.**  F2 (MAJOR): the atlas's link/star have no
+falsifier — the bug class injected into local_profiles alone
+exits 0 while the load-bearing 16,998 becomes 0 at all five
+instances (the declared mutant's death carried entirely by
+the control path).  F3 (MAJOR): the same false paper number
+R1 found (§5.2 C7 clause-(c): printed 0, receipt+census say
+6, six named witnesses).  MODs: three "external" anchors with
+a source-typed declared side structurally unable to fail;
+provenance-lax a waiver declared as a computation (§10
+denominators off by one); TOP-SIMPLICIAL's χ clause
+analytically forced (alternating binomial sum = 1, k=1..40);
+Burnside floor division absorbs fixed-cell errors 1–5.
+Everything substantive reproduces: 168/172 anchors traced to
+real TB3 bytes; never_falsified EMPTY at honest denominator
+28; the full invariant table, H₂-additivity, quotient −50,
+all three manifold standards, the entire 252/5,040 census +
+never-at-5,6 + the transvection.  67 paper-vs-receipt checks:
+F3 the only false number.  TOP PANEL COMPLETE (R2 #307,
+R1 #310, R3 #311) — three AWF.  Adjudication next.
