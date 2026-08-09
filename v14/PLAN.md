@@ -51,6 +51,26 @@ ledger opens at its founding pin after v13 closes.
   benchmarks, then the confinement-analog question (prior art: the v4
   YM line).
 
+- **R6a — THE REFINEMENT GRAMMAR** *(added 2026-08-09 by user
+  order, v14 #24; may run in parallel with R3–R5 — its inputs are I7
+  and the record grammar only)*.  Does the record grammar admit a
+  MOTIVATED interval-subdivision move — a new site because a division
+  event resolved an interval, with the count partition forced by the
+  counting semantics (additivity) and the residual freedom measured as
+  a choice inventory?  Verdicts first-class:
+  MOTIVATED-REFINEMENT-EXISTS / NO-MOTIVATED-SPLIT /
+  BLOCKED-AT-GRAMMAR-SOURCE.  The refinement-commutation defect
+  (refine-then-advance vs advance-then-refine), if nonzero, is a
+  measured object.
+- **R6b — THE SCALING RUNG** *(added 2026-08-09 by user order; pins
+  only at R3 terminal, runs only after R6a delivers a family)*.
+  Pre-registered intensive invariants = the measured quantities of
+  R3/R4/R5 (structure functions, excitation data, holonomy data) per
+  volume, censused for convergence along R6a's derived family.  The
+  continuum limit is a scaling question posed on the substrate's own
+  refinement — never a declared label-growth rule (the R1 lesson is
+  binding).
+
 Rungs run as full cycles (pin → construct → commit-as-is → verify →
 protocol freeze → three-lens panel → adjudicate → repair → terminal).
 A blocked rung halts and reports; rungs are not skipped.

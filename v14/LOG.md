@@ -716,3 +716,20 @@ a MEASURED OBJECT, not a failure (the v12 precedent binds
 the design: the composition defect WAS the physics)**.  All
 five 2026-08-09 engravings at birth w/ injection-falsifiers.
 paper-03 assigned.  Construction dispatched.
+
+## 2026-08-09 — CHARTER AMENDED BY USER ORDER: R6a + R6b (v14 LEDGER #24)
+User order of record ("go ahead", following the R6 design
+discussion): v14/PLAN.md §2 gains **R6a THE REFINEMENT
+GRAMMAR** (parallel-eligible: inputs are I7 + the record
+grammar only — does the grammar admit a MOTIVATED
+interval-subdivision move, the count partition forced by
+additivity of event counts, residual freedom measured as a
+choice inventory; NO-MOTIVATED-SPLIT and
+BLOCKED-AT-GRAMMAR-SOURCE first-class) and **R6b THE SCALING
+RUNG** (pins at R3 terminal; runs after R6a delivers a
+family; intensive invariants = R3/R4/R5's measured
+quantities per volume; the continuum limit re-posed as a
+scaling question on the substrate's OWN refinement — the R1
+lesson binding).  R6a pin next; construction launches in
+parallel with R3 (disjoint files; paper-04 assigned at pin
+per the numbering convention).
