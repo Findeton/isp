@@ -111,3 +111,21 @@ selftest exit 0 — corrupts the I5 pinned anchor, fails it BY
 NAME (A-R0-I5), writes no artifacts (CLI contract confirmed
 in-code before invocation, #238).  R1 stands
 GREEN-VERIFIED-UNREVIEWED.  Hostile protocol next.
+
+## 2026-08-09 — R1 HOSTILE PROTOCOL FROZEN (v14 LEDGER #6)
+note-r1-hostile-protocol.md (`0647aeba4d9e`) frozen.  Kill-shots:
+K1 THE COPYING QUESTION (is the stabilisation an algebraic
+consequence of the rule — forced clause per #208 — and does
+ANY non-copied quantity stabilise; the honest verdict wording);
+K2 family legitimacy (heterogeneous head; does STABILIZES
+survive restriction to the homogeneous tail; window vs rule
+homogeneity in the qualifier); K3 invariant well-definedness
+(b₂ density PARTIAL under scramble; the eigenvalue-1 chain vs
+I2's actual wall; N_coh per-pair fidelity; extensive-estimator
+exclusion honored); K4 ATLAS-RELATIVITY (an alternative
+declared atlas at the tail — do 37/27 and 20/37 move; §12
+disclosure vs the TOP P*-precedent demanding the sweep);
+K5 instrument (falsifier audit w/ uncovered-class injections,
+verdict rebuilt from receipt alone, the 28+1 anchors traced,
+paper↔receipt numbers, byte-identity).  Three-lens panel
+dispatched (operator / effectus / instrument, all Opus).
