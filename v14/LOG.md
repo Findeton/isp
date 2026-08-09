@@ -692,3 +692,27 @@ question formally moved to I7's arena.  **THE R3 PIN NEXT:
 hypersurface deformation on the record lattice** (I7's sites;
 L ≥ 4 gated; motivated locality + consistent dimension
 inherited).
+
+## 2026-08-09 — R3 PIN FROZEN: THE RELATIVITY RUNG (v14 LEDGER #23)
+note-r3-relativity-pin.md (`a2ac89687a65`) frozen.  **THE QUESTION:
+does the record-native constraint family H_a[N] close as an
+algebra over the declared lapse family on I7's OWN lattice —
+and in what form?**  The HDA signature to test: commutators
+landing in the family w/ coefficients that are READINGS OF
+THE RECORD METRIC (structure functions, not constants).
+Arena = I7's sites/links/chart-group/lapse_family at d=2,3,
+**L ≥ 4 GATED** (R2's measured requirement; L=3 excluded w/
+reason printed); locality/dimension/covariance INHERITED as
+anchors from the R2 terminal.  Registered: the closure census
+(cell-complete residuals); coefficient extraction vs
+record-metric readings; the diagonal-sector anchor (I7's
+exact closure recovered before anything counts); translation
+positive control + scrambled negative; the L-sweep (4,5 min,
+caps printed); the lapse family a NAMED VERDICT COORDINATE.
+THREE first-class outcomes: R3-DEFORMATION-CLOSES-<form> /
+rigid-constant-coefficients (named as weaker geometry) /
+**R3-DEFORMATION-DEFECT-AT-<computed> — a nonzero defect is
+a MEASURED OBJECT, not a failure (the v12 precedent binds
+the design: the composition defect WAS the physics)**.  All
+five 2026-08-09 engravings at birth w/ injection-falsifiers.
+paper-03 assigned.  Construction dispatched.
