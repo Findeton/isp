@@ -9763,3 +9763,19 @@ NO-COMPATIBLE-SQUARE; THE SPECTRAL CARRY (eigenvalue 1 at
 form); the stillborn-precheck architecture as engraved
 doctrine.  The v13 terminal synthesis next; then the tree
 FREEZES per the #315 charter.
+
+## 2026-08-09 — v13 CLOSED AND FROZEN (v13 LEDGER #320 — FINAL)
+note-v13-terminal-synthesis.md committed.  Fourteen terminal
+units in the geometry era over the RQ0 tower's base; ~6,500+
+panel recomputations; ZERO false numbers surviving to
+terminal; five positive headlines killed by their own ordered
+measurements, each leaving a sharper mechanism; the walls
+proved with integer witnesses; the spectral carry verified;
+trivial H₁ inherited.  **THIS IS THE FINAL ENTRY OF v13.
+THE TREE IS FROZEN** per the #315 charter — never reopened,
+like v11 and v12.  The line continues in v14 (THE LIMIT
+PROGRAM): charter v14/PLAN.md; founding pin v14/LOG.md #1;
+inheritance by hash-pin only; papers numbered.  Standing
+user-owned items at the close: publication routes (all
+terminal papers), pushing to origin, the v11/bc unreviewed
+partials.
