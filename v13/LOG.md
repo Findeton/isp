@@ -9369,3 +9369,29 @@ declared refinement family; a pre-registered INTENSIVE
 invariant (the current estimator is extensive: {11,35} =
 {12−1, 36−1}); F-3's measurement settled; N_coh the working
 object.  Five reviewers pending; adjudications after panels.
+
+## 2026-08-09 — RSQ R3 (INSTRUMENT) FROZEN (v13 LEDGER #308)
+review-rsq-instrument.md frozen as delivered (sha256-12
+e898d8181de7).  Grade AWF; 212 recomputations; the delivery
+byte-identical in an isolated tree.  UNBREAKABLE: the
+0/20,160 census reproduced EXHAUSTIVELY by an independent
+route (matrix + polynomial forms, 0 disagreements; the
+derivation checked line by line — CORRECT); 26/26 anchors
+corrupt-and-fire; 57 mutants perfect (never_falsified
+honestly empty); the exactly-1-exemption precisely the zero
+record (#208-compliant); Sylvester + the negative controls
+verified.  FOUR INSTRUMENT MAJORS (none moving a number):
+(1) the verdict's "three sources" are TWO (src1 IS
+order_criterion on a sub-index-set of src2 — one edit moves
+both; the #234 disease again); (2) NO cell-completeness on
+any verdict-carrying table (dropped row / dropped prime /
+dropped census row all survive at exit 0 with the qualifier
+still printing); (3) the UNIVERSAL qualifier is an alias for
+zero-hits, not coverage (identically true at 0 hits); (4)
+G20's taint counter is a self-report (a silent route-B alias
+survives).  F5: G19 measures cardinality, not containment
+(forced the criterion to fire only on precheck-killed cells —
+still passed).  FAVOURABLE: the build cap conservative — the
+carrier built at ALL FOUR excluded primes (13/17/19/23);
+**G29's Z/p claim holds at 7 OF 7 declared primes.**  Four
+reviewers pending across the two panels.
