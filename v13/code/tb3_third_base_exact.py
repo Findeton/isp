@@ -39,7 +39,19 @@ THE PRE-REGISTERED OUTCOMES (only these).
              with A2 additionally carrying its named form:
              TB3-ONE-LAW-<HOLDS-VERBATIM | GENERALIZES-<computed form> |
                           FAILS-<witness>>
+             -- and the run MEASURES that two of those three branches are
+             algebraically unreachable at S_3 and says so (section 5).
   unit       TB3-BASE-ESTABLISHED  /  TB3-BLOCKED-AT-<object>
+
+WHAT THE FAMILY IS.  The holonomy orders are not a list: they are a LADDER of
+named groups inside Alt(7) = the alternating group on the seven non-zero
+labels of F_2^3, six-fold extended by the wing group, with a measured
+algebraic CEILING that is attained.  Every name is EARNED by set equality
+against a group brute-forced in this run (the full alternating group on the
+measured support; GL(3,2) = the F_2-linear label permutations), never read off
+an order.  The relation 15120 = 7 x 2160 is the DIRECTOR'S OBSERVATION
+(v13 LOG #286); what this instrument adds is that it is [A_7 : A_6], with the
+embedding constructed and genuine carrier 7-torsion exhibited.
 
 CONTROLS.  Positive with teeth: the SAME generic machinery instantiated at
 TWO wings must reproduce the committed two-wing structure -- 8 nodes, 13
@@ -81,11 +93,25 @@ XBA_RECEIPT = HERE / "xba_crossbase_receipt.json"
 GEN_RECEIPT = HERE / "gen_generality_receipt.json"
 COC_RECEIPT = HERE / "coc_cocycle_receipt.json"
 PSI_RECEIPT = HERE / "psi_curvature_receipt.json"
+BRG_RECEIPT = HERE / "brg_bridge_receipt.json"
 PINNED_RECEIPT_SHA256 = {
     "XBA": "6015708df2a437a61955c1e194a0273b0eb712699844c9e6eb567cc3536db053",
     "GEN": "e0b2f444f6a9b82861024f7733c7230583742dfd477d9ed6037a241e7b48d292",
     "COC": "1533ae14b3dc0f712e54abf50910e6b1d34f82f821dbdfdd1d83b153dca265c0",
     "PSI": "7c7b91a9257e3888f3e1048366d728b5adead82b84cc9ef36175c0ba3e99fa75",
+    "BRG": "5c428afd5c58c8998b575b38b6a7808803805c2cb5c2d5bc0baca3bc10a989f9",
+}
+# THE DECLARED ANCHOR PROVENANCE VOCABULARY.  An anchor is EXTERNAL when the
+# side this unit computes comes from bytes outside this file; it is a
+# SELF-ANCHOR when both sides live here.  A self-anchor buys drift-detection
+# and nothing else, and the split is printed rather than averaged.
+ANCHOR_PROVENANCE = {
+    "SELF-ANCHOR (this file, pinned completion)": "self",
+    "SELF-ANCHOR (this file, pinned rotation)": "self",
+    "this file, pinned SHA-256": "external",
+    "XBA committed receipt": "external",
+    "PSI committed receipt": "external",
+    "BRG committed receipt": "external",
 }
 OUT_TXT = HERE / "tb3_third_base_output.txt"
 OUT_JSON = HERE / "tb3_third_base_receipt.json"
@@ -1023,8 +1049,7 @@ def spanning_generators(nodes, links, base, reverse=False):
     return tree, te, gens
 
 
-def closure_left(genperms, n, cap=400000):
-    """Route A closure: breadth-first, LEFT multiplication by generators."""
+def _bfs_left(genperms, n, cap):
     idp = tuple(range(n))
     S = {idp}
     dq = deque([idp])
@@ -1040,11 +1065,7 @@ def closure_left(genperms, n, cap=400000):
     return S
 
 
-def closure_right(genperms, n, cap=400000):
-    """Route B closure: breadth-first, RIGHT multiplication, from a
-    different generating set produced by a different spanning tree at a
-    different base node.  A different traversal of a different presentation:
-    the two routes share no intermediate value."""
+def _bfs_right(genperms, n, cap):
     idp = tuple(range(n))
     S = {idp}
     dq = deque([idp])
@@ -1058,6 +1079,249 @@ def closure_right(genperms, n, cap=400000):
                 if len(S) > cap:
                     return None
     return S
+
+
+def closure_left(genperms, n, cap=400000):
+    """Route A closure: breadth-first, LEFT multiplication by generators.  A
+    generator already inside the subgroup built from the generators before it
+    is skipped -- an economy that moves no value, since <S> = <S'> whenever
+    S' subset S and <S'> contains S."""
+    S = {tuple(range(n))}
+    acc = []
+    for g in genperms:
+        if g in S:
+            continue
+        acc.append(g)
+        S = _bfs_left(acc, n, cap)
+        if S is None:
+            return None
+    return S
+
+
+def closure_right(genperms, n, cap=400000):
+    """Route B closure: breadth-first, RIGHT multiplication, from the
+    generating set a DIFFERENT spanning tree produces.  A different traversal
+    of a different presentation -- an implementation cross-check on route A,
+    not an independent measurement of the group: that <S_A> = <S_B> is the
+    spanning-tree-independence THEOREM.  The genuinely independent route is
+    `group_order_schreier`, which never enumerates the group at all."""
+    S = {tuple(range(n))}
+    acc = []
+    for g in genperms:
+        if g in S:
+            continue
+        acc.append(g)
+        S = _bfs_right(acc, n, cap)
+        if S is None:
+            return None
+    return S
+
+
+# ---------------------------------------------------------------------------
+# THE GENUINELY INDEPENDENT ROUTE, and the group-theoretic instruments the
+# naming needs.  `group_order_schreier` computes |<S>| WITHOUT EVER BUILDING
+# THE GROUP: an orbit-stabiliser chain whose stabiliser generators are
+# Schreier generators.  It shares no intermediate value with either closure --
+# no element of the group is ever produced -- so RUNBOOK section 13's #234
+# addendum ("a pair related by an algebraic identity is one route") is met by
+# this route and not by the A/B pair.
+# ---------------------------------------------------------------------------
+def group_order_schreier(genperms, n, cap=400000):
+    idp = tuple(range(n))
+    gens = [g for g in dict.fromkeys(genperms) if g != idp]
+    drop_a_schreier_generator = (MUTANT == "schreier-lax")
+    order = 1
+    chain = []
+    depth = 0
+    while gens:
+        depth += 1
+        if depth > n:
+            raise RuntimeError("orbit-stabiliser chain too deep")
+        b = min(i for g in gens for i in range(n) if g[i] != i)
+        u = {b: idp}
+        dq = deque([b])
+        while dq:
+            x = dq.popleft()
+            for g in gens:
+                y = g[x]
+                if y not in u:
+                    u[y] = pcomp(g, u[x])
+                    dq.append(y)
+        order *= len(u)
+        chain.append([b, len(u), len(gens)])
+        if order > cap:
+            return None, chain
+        new = set()
+        for x in u:
+            for g in gens:
+                s = pcomp(pinv(u[g[x]]), pcomp(g, u[x]))
+                if s != idp:
+                    new.add(s)
+        gens = sorted(new)
+        if drop_a_schreier_generator and gens:
+            gens = gens[1:]
+    return order, chain
+
+
+def perm_parity(p):
+    """0 for an even permutation, 1 for an odd one."""
+    seen = [False] * len(p)
+    s = 0
+    for i in range(len(p)):
+        if seen[i]:
+            continue
+        j, c = i, 0
+        while not seen[j]:
+            seen[j] = True
+            j = p[j]
+            c += 1
+        s += c - 1
+    return s % 2
+
+
+def product_form(g, npt=NPT):
+    """(alpha on the system triple labels, beta on the pointer triple labels)
+    where g = alpha (x) beta on the carrier, or None where g is not of that
+    product form.  Measured, never assumed."""
+    ns = len(g) // npt
+    a = tuple(g[x * npt] // npt for x in range(ns))
+    b = tuple(g[x] % npt for x in range(npt))
+    for x in range(ns):
+        for p in range(npt):
+            if g[x * npt + p] != a[x] * npt + b[p]:
+                return None
+    return a, b
+
+
+def alt_group_on(support, nsys=NSYS):
+    """The FULL alternating group on the given support, brute-forced as label
+    permutations of the nsys labels fixing everything outside it."""
+    sup = sorted(support)
+    out = set()
+    for pm in itertools.permutations(sup):
+        q = list(range(nsys))
+        for a, b in zip(sup, pm):
+            q[a] = b
+        q = tuple(q)
+        if perm_parity(q) == 0:
+            out.add(q)
+    return out
+
+
+def f2_linear_labels(nsys=NSYS):
+    """GL(3,2) = Aut(F_2^3), brute-forced: every permutation of the nsys
+    labels fixing 0 that is F_2-LINEAR for the bitwise-xor addition on the
+    labels.  No group is assumed; the set is built from the linearity test."""
+    out = set()
+    for tail in itertools.permutations(range(1, nsys)):
+        q = (0,) + tail
+        if all(q[x ^ y] == q[x] ^ q[y]
+               for x in range(nsys) for y in range(nsys)):
+            out.add(q)
+    return out
+
+
+def reduced_generating_set(gens, n):
+    """A small generating set of <gens>: the generators the incremental
+    closure actually accepts."""
+    S = {tuple(range(n))}
+    acc = []
+    for g in gens:
+        if g in S:
+            continue
+        acc.append(g)
+        S = _bfs_left(acc, n, 400000)
+        if S is None:
+            return acc
+    return acc
+
+
+def normal_closure(seeds, gens, n):
+    """The normal closure of <seeds> under <gens>, computed by closing and
+    then conjugating the generating set until stable."""
+    idp = tuple(range(n))
+    cur = [g for g in dict.fromkeys(seeds) if g != idp]
+    if not cur:
+        return {idp}
+    conj = list(gens) + [pinv(g) for g in gens]
+    while True:
+        N = closure_left(cur, n)
+        extra = []
+        for s in conj:
+            si = pinv(s)
+            for g in cur:
+                c = pcomp(s, pcomp(g, si))
+                if c not in N:
+                    extra.append(c)
+        if not extra:
+            return N
+        cur = list(dict.fromkeys(cur + extra))
+
+
+def conjugacy_class_reps(G, gens):
+    """One representative per conjugacy class, by orbiting the group under
+    conjugation by a generating set.  |G| x |gens| work, no class equation."""
+    rest = set(G)
+    reps = []
+    sizes = []
+    while rest:
+        x = min(rest)
+        orb = {x}
+        dq = [x]
+        while dq:
+            y = dq.pop()
+            for s in gens:
+                z = pcomp(s, pcomp(y, pinv(s)))
+                if z not in orb:
+                    orb.add(z)
+                    dq.append(z)
+        reps.append(x)
+        sizes.append(len(orb))
+        rest -= orb
+    return reps, sizes
+
+
+def is_simple_group(G, gens, n):
+    """SIMPLE iff the normal closure of every non-identity element is the
+    whole group.  One element per conjugacy class suffices, since a normal
+    subgroup is a union of classes."""
+    idp = tuple(range(n))
+    reps, _ = conjugacy_class_reps(G, gens)
+    for x in reps:
+        if x == idp:
+            continue
+        if len(normal_closure([x], gens, n)) != len(G):
+            return False
+    return True
+
+
+def derived_subgroup(gens, n):
+    """[G, G] = the normal closure of the commutators of a generating set."""
+    idp = tuple(range(n))
+    seeds = []
+    for a in gens:
+        for b in gens:
+            c = pcomp(pinv(a), pcomp(pinv(b), pcomp(a, b)))
+            if c != idp:
+                seeds.append(c)
+    drop_the_normal_closure = (MUTANT == "split-lax")
+    if drop_the_normal_closure:
+        return closure_left(seeds[:1], n) or {idp}
+    return normal_closure(seeds, gens, n)
+
+
+def prime_factorisation(m):
+    """Trial division; returns {prime: exponent}."""
+    out = {}
+    d = 2
+    while d * d <= m:
+        while m % d == 0:
+            out[d] = out.get(d, 0) + 1
+            m //= d
+        d += 1
+    if m > 1:
+        out[m] = out.get(m, 0) + 1
+    return out
 
 
 def holonomy(sp, nodes, links, base=None, reverse=False, right=False):
@@ -1254,11 +1518,17 @@ def run_base_declaration():
 
     # -- the rotations and the legs
     rot_anchor = 0
+    mislabel = (MUTANT == "selflabel-lax")
     for g in ROT_ORDER:
         R = rotation(g)
         for i in range(NS):
             for j in range(NS):
-                anchor("A-ROT-%s-%d%d" % (g, i, j), "this file, pinned data",
+                # SELF-ANCHORS, labelled as such: the pinned matrix and the
+                # constructor both live in this file, so what they buy is
+                # drift-detection, not provenance.
+                anchor("A-ROT-%s-%d%d" % (g, i, j),
+                       "this file, pinned data" if mislabel
+                       else "SELF-ANCHOR (this file, pinned rotation)",
                        "rotation entry", ROT_PINNED[g][i][j], str(R.get(i, j)))
                 rot_anchor += 1
     orth = {g: rotation(g).is_orthogonal() for g in ROT_ORDER}
@@ -1554,7 +1824,8 @@ def run_external_pins():
     out = {}
     perturb = (MUTANT == "pin-hash")
     for nm, path in (("XBA", XBA_RECEIPT), ("GEN", GEN_RECEIPT),
-                     ("COC", COC_RECEIPT), ("PSI", PSI_RECEIPT)):
+                     ("COC", COC_RECEIPT), ("PSI", PSI_RECEIPT),
+                     ("BRG", BRG_RECEIPT)):
         b = path.read_bytes()
         if perturb and nm == "XBA":
             b = b + b" "
@@ -1565,18 +1836,27 @@ def run_external_pins():
     matched = sum(1 for k, v in out.items()
                   if v["sha256"] == PINNED_RECEIPT_SHA256[k])
     gate("TB3-EXTERNAL-PINS", "measurement",
-         "THE FOUR COMMITTED TERMINAL RECEIPTS THIS UNIT ANCHORS AGAINST ARE "
+         "THE FIVE COMMITTED TERMINAL RECEIPTS THIS UNIT READS ARE "
          "HASH-PINNED BY SHA-256, and the pin is a TYPED CONSTANT of this "
          "instrument gated against the hash of the bytes actually read -- so "
          "a receipt that changes under this unit kills the run rather than "
          "silently re-anchoring it.  Every reused number below is READ from "
-         "those bytes rather than typed here.  The `pin-hash` mutant "
-         "perturbs the bytes before they are hashed and dies here",
+         "those bytes rather than typed here.  THREE of the five "
+         "additionally supply ANCHORED VALUES -- XBA and PSI at the two-wing "
+         "control, BRG at the cross-section -- and the other two (GEN, COC) "
+         "are pinned for provenance only; the receipt says which is which "
+         "rather than letting the count of pins imply the count of anchored "
+         "sources.  The `pin-hash` mutant perturbs the bytes before they are "
+         "hashed and dies here",
          matched == len(out) and all(v["bytes"] > 0 for v in out.values()),
-         {k: {"file": v["file"], "sha256": v["sha256"], "bytes": v["bytes"],
-              "matches_the_pinned_hash":
-                  v["sha256"] == PINNED_RECEIPT_SHA256[k]}
-          for k, v in out.items()})
+         {"per_receipt":
+             {k: {"file": v["file"], "sha256": v["sha256"],
+                  "bytes": v["bytes"],
+                  "matches_the_pinned_hash":
+                      v["sha256"] == PINNED_RECEIPT_SHA256[k]}
+              for k, v in out.items()},
+          "receipts_supplying_anchored_values": ["BRG", "PSI", "XBA"],
+          "receipts_pinned_for_provenance_only": ["COC", "GEN"]})
     for nm in out:
         anchor("A-PIN-%s" % nm, "this file, pinned SHA-256",
                "sha-256 of the committed receipt's own bytes",
@@ -1593,9 +1873,17 @@ def run_external_pins():
 # ===========================================================================
 P_STAR = PERMS[1]                     # the lex-first non-identity element
 # The pin's A1 targets, declared as data: three literal orders and one
-# COMPUTED one -- the maximum the carrier admits at P*.
+# COMPUTED one -- the measured maximum AT P*.  (Over all of S_3 the maximum
+# is larger; both are measured and both are printed -- see run_ord_census.)
 A1_TARGET_RULE = ("1", "2", "3", "the measured maximum at P*")
 assert PERM_NAME  # names are built above
+A1_GROUPS: dict = {}
+REF_GROUP: dict = {}
+# The declared setting scope of A1's law sweep: the lex-first setting at each
+# measured stabiliser order, plus one further partially symmetric setting.
+# Declared here, before any holonomy at any setting other than TB-000 exists.
+A1_SETTING_SCOPE = (("R0", "R0", "R0"), ("R0", "R0", "R1"),
+                    ("R1", "R2", "R2"), ("R0", "R1", "R2"))
 
 
 def defect_label_route(pi, q):
@@ -1621,15 +1909,31 @@ def run_ord_census():
     dist = Counter()
     first = {}
     profile_counter = Counter()
+    profile_first = {}
     for tail in tails:
         q = (0,) + tail
-        o = pord(defect_label_route(P_STAR, q))
+        prof = tuple(pord(defect_label_route(pi, q)) for pi in PERMS)
+        o = prof[list(PERMS).index(P_STAR)]
         dist[o] += 1
         if o not in first:
             first[o] = q
-        profile_counter[tuple(pord(defect_label_route(pi, q))
-                              for pi in PERMS)] += 1
+        profile_counter[prof] += 1
+        profile_first.setdefault(prof, []).append(q)
     maxord = max(dist)
+    # THE MAXIMUM IS A MAXIMUM AT P*, NOT AT THE CARRIER.  Both are measured
+    # and both are printed: the census's own maximum at the declared
+    # transposition, and the maximum over EVERY element of S_3, which is
+    # larger and is attained at the three-cycles.
+    max_per_symmetry = {PERM_NAME[pi]: max(p[i] for p in profile_counter)
+                        for i, pi in enumerate(PERMS)}
+    max_all = max(max_per_symmetry.values())
+    max_witness = sorted(k for k, v in max_per_symmetry.items()
+                         if v == max_all)
+    # the MODAL full profile over S_3 and the lex-first completions carrying
+    # it -- the declared sample the profile mechanism is tested on (A1).
+    modal_profile = max(profile_counter,
+                        key=lambda k: (profile_counter[k],
+                                       tuple(-x for x in k)))
     # ROUTE 1, on a declared subset: the 64x64 matrix commutator itself.
     route1 = {}
     for o in sorted(first):
@@ -1639,42 +1943,127 @@ def run_ord_census():
         dp = D.as_perm()
         route1[o] = None if dp is None else pord(dp)
     agree = all(route1[o] == o for o in sorted(first))
+    # THE SCOPE OF THE TWO-ROUTE AGREEMENT, MEASURED RATHER THAN ASSUMED.
+    # The label route computes sigma^-1 q^-1 sigma q on the eight system
+    # labels; the matrix route reads the order off the 64x64 transport
+    # defect, which carries the preparation factor H(psi) as well.  The two
+    # agree when H(psi) COMMUTES with Sigma_{P*} -- then H cancels out of the
+    # matrix defect and what is left is conjugate to the label commutator.
+    # Where it does not commute, the two routes measure DIFFERENT things.
+    # Both halves are measured here over the whole declared family, so the
+    # agreement is reported at its true scope.
+    force_equivariant = (MUTANT == "equiv-lax")
+    SP_ = Mat.from_perm(SIGMA[P_STAR])
+    SPi = Mat.from_perm(pinv(SIGMA[P_STAR]))
+    scope_rows = {}
+    equiv_members = 0
+    agree_cells = 0
+    scope_cells = 0
+    for nm, coeff, _role in PSI_DECL:
+        pv = psi_vector(dict(coeff))
+        Hm = householder(pv)
+        eqv = force_equivariant or \
+            (SP_ @ (Hm @ SPi)).key() == Hm.key()
+        if eqv:
+            equiv_members += 1
+        hits = 0
+        for o in sorted(first):
+            scope_cells += 1
+            w2 = World(sp, pv, first[o], ("R0", "R0", "R0"))
+            D2, _ = w2.defect_measured(P_STAR)
+            dp2 = D2.as_perm()
+            if dp2 is not None and pord(dp2) == o:
+                hits += 1
+                agree_cells += 1
+        scope_rows[nm] = {
+            "the_preparation_factor_commutes_with_the_declared_symmetry": eqv,
+            "cells_where_the_two_routes_agree": hits,
+            "of_cells": len(first)}
+    agreement_tracks_equivariance = (agree_cells
+                                     == equiv_members * len(first))
     tab = {"census_size_the_declaration_forces": forced,
            "census_size_measured": len(tails),
+           "the_route_agreement_scope": scope_rows,
+           "route_agreement_cells": scope_cells,
+           "cells_where_the_two_routes_agree": agree_cells,
+           "members_whose_preparation_factor_commutes_with_P_star":
+               equiv_members,
+           "of_members": len(PSI_DECL),
+           "the_agreement_holds_exactly_on_the_commuting_members":
+               agreement_tracks_equivariance,
+           "what_the_matrix_route_independently_establishes":
+               "that the 64x64 transport defect is a carrier PERMUTATION at "
+               "all, and that the preparation factor cancels exactly where "
+               "it commutes with the declared symmetry -- not a second "
+               "reading of the label commutator's order, whose equality is "
+               "forced by conjugacy once the cancellation holds",
            "P_star": PERM_NAME[P_STAR],
            "ord_distribution_at_P_star": dict(sorted(dist.items())),
-           "the_maximum_order_the_carrier_admits": maxord,
+           "the_maximum_order_at_P_star": maxord,
+           "the_maximum_order_over_all_of_S3": max_all,
+           "the_maximum_order_per_wing_symmetry": max_per_symmetry,
+           "the_symmetries_attaining_the_maximum_over_S3": max_witness,
            "lex_first_Q_per_order": {str(k): list(first[k])
                                      for k in sorted(first)},
            "route_1_matrix_commutator_order": {str(k): route1[k]
                                                for k in sorted(route1)},
            "the_two_routes_agree": agree,
            "distinct_ord_profiles_over_S3": len(profile_counter),
+           "the_modal_full_profile_over_S3": list(modal_profile),
+           "completions_carrying_the_modal_full_profile":
+               profile_counter[modal_profile],
            "orders_realised": sorted(dist)}
     gate("TB3-A1-ORDCENSUS", "measurement",
-         "THE COMPLETION CENSUS IS EXHAUSTIVE AT THE DECLARED SCOPE AND IS "
-         "READ BY TWO GENUINELY INDEPENDENT ROUTES.  Route 2 computes "
-         "ord([P,u]) from the LABEL formula sigma^-1 q^-1 sigma q on the "
-         "eight system triple labels -- no matrix is built; route 1 builds "
-         "the 64x64 preparation leg, forms the transport commutator and "
-         "reads its order off the resulting carrier permutation.  The census "
+         "THE COMPLETION CENSUS IS EXHAUSTIVE AT THE DECLARED SCOPE, AND THE "
+         "SECOND ROUTE IS SCOPED BY THE MEASUREMENT THAT MAKES IT VALID.  "
+         "The census itself is taken by the LABEL route: ord([P,u]) from "
+         "sigma^-1 q^-1 sigma q on the eight system triple labels, no matrix "
+         "built, all 5040 completions.  The MATRIX route -- build the 64x64 "
+         "preparation leg, form the transport commutator, read the order off "
+         "the carrier permutation -- is run at the six lex-first "
+         "representatives and at EVERY declared member, and what it "
+         "establishes independently is stated for what it is: that the "
+         "64x64 defect is a carrier PERMUTATION at all, and that the "
+         "preparation factor H(psi) cancels out of it EXACTLY where H(psi) "
+         "commutes with Sigma_{P*}.  Once that cancellation holds the two "
+         "orders are equal by conjugacy, so the agreement is not a second "
+         "independent reading of the order -- and the gate requires the "
+         "agreement to track the commutation MEMBER BY MEMBER over the whole "
+         "family, so the scope is measured rather than assumed.  The census "
          "size is the one the declaration forces, computed as a factorial "
          "here and compared against the enumeration; the `ordcensus-half` "
-         "mutant halves the enumeration and dies on that comparison.  The "
-         "maximum order the carrier admits is MEASURED, never typed",
+         "mutant halves the enumeration and dies on that comparison, and the "
+         "`equiv-lax` mutant reports every member's preparation factor as "
+         "commuting and dies on the tracking clause.  BOTH MAXIMA ARE "
+         "MEASURED AND BOTH ARE NAMED FOR WHAT THEY ARE: the maximum AT P* "
+         "(the sweep's target) and the maximum over EVERY element of S_3, "
+         "which is strictly larger and is attained at the three-cycles.  "
+         "Nothing here is a maximum 'the carrier admits'",
          len(tails) == forced and agree and maxord == max(dist)
-         and sorted(dist) == list(range(1, maxord + 1)), tab)
+         and sorted(dist) == list(range(1, maxord + 1))
+         and max_all >= maxord and bool(max_witness)
+         and scope_cells == len(PSI_DECL) * len(first)
+         and agreement_tracks_equivariance
+         and 0 < equiv_members < len(PSI_DECL), tab)
     TABLES["ord_census"] = tab
-    return first, maxord
+    return first, maxord, profile_first[modal_profile], modal_profile
 
 
 def group_two_routes(sp, world, adm, label):
-    """The based holonomy group by two independent routes: (A) a spanning
-    tree taken in the declared link order from the declared base node, with
-    the closure taken by LEFT multiplication; (B) a spanning tree taken in
-    the REVERSED link order from a DIFFERENT base node, with the closure
-    taken by RIGHT multiplication.  Different tree, different generators,
-    different traversal: the two share no intermediate value."""
+    """The based holonomy group by THREE routes, of which exactly one pair is
+    genuinely independent and the paper now says which.
+
+      (A) a breadth-first spanning tree in the declared link order, closure
+          by LEFT multiplication;
+      (B) a depth-first tree in the REVERSED link order, closure by RIGHT
+          multiplication.  A and B share the graph and every link matrix, and
+          <S_A> = <S_B> is the spanning-tree-independence THEOREM -- so B is
+          an IMPLEMENTATION CROSS-CHECK on A, not a second measurement of the
+          value, and it is described as one (RUNBOOK section 13, #234).
+      (C) `group_order_schreier`: an orbit-stabiliser chain over Schreier
+          generators that NEVER BUILDS THE GROUP.  It produces no group
+          element, shares no intermediate value with A or B, and is the
+          genuinely independent route to the order."""
     nodes, links = build_graph(sp, world, adm)
     baseA = (sp.FRAMES[0], 0)
     A = holonomy(sp, nodes, links, base=baseA)
@@ -1682,18 +2071,29 @@ def group_two_routes(sp, world, adm, label):
     _, teA, _ = spanning_generators(nodes, links, baseA)
     _, teB, _ = spanning_generators(nodes, links, baseA, reverse=True)
     conj = (teA != teB)
+    gp = [g.as_perm() for _, g, _ in A["gens_obj"]]
+    if A["all_generators_are_permutations"]:
+        cord, chain = group_order_schreier(gp, sp.NC)
+    else:
+        cord, chain = None, []
     return {"nodes": len(nodes), "links": len(links),
             "nodes_reached_from_the_base": A["nodes_reached"],
             "the_graph_is_connected": (A["nodes_reached"] == len(nodes)),
             "cycle_rank": len(links) - len(nodes) + 1,
             "route_A_order": A["order"], "route_B_order": B["order"],
+            "route_C_order_by_orbit_stabiliser_chain": cord,
+            "the_orbit_stabiliser_chain": chain,
             "route_A_generators": A["generators"],
             "route_B_generators": B["generators"],
             "generators_are_permutations":
                 A["all_generators_are_permutations"],
             "readable_generators": A["readable_generators"],
+            "the_two_closure_routes_agree": (A["order"] == B["order"]
+                                             and A["group"] == B["group"]),
+            "the_independent_route_agrees": (cord == A["order"]),
             "the_two_routes_agree": (A["order"] == B["order"]
-                                     and A["group"] == B["group"]),
+                                     and A["group"] == B["group"]
+                                     and cord == A["order"]),
             "the_two_routes_use_different_cotrees": conj,
             "label": label}, A, B, nodes, links
 
@@ -1733,6 +2133,10 @@ def run_a1(Qfirst, maxord):
         if g["route_A_order"] is not None:
             n = g["route_A_order"]
             dihedral = (n == 2 * k)
+        A1_GROUPS[k] = {"Hol": (set(A["group"]) if A["group"] else None),
+                        "K": (set(comm) if comm else None),
+                        "gens": [x.as_perm() for _, x, _ in A["gens_obj"]],
+                        "Q": q}
         rows[str(k)] = {
             "Q": list(q),
             "ord_profile_over_S3": ords,
@@ -1740,34 +2144,48 @@ def run_a1(Qfirst, maxord):
                 x for x in ords.values() if x is not None)),
             "holonomy_order": g["route_A_order"],
             "route_B_order": g["route_B_order"],
+            "route_C_order_by_orbit_stabiliser_chain":
+                g["route_C_order_by_orbit_stabiliser_chain"],
             "routes_agree": g["the_two_routes_agree"],
+            "the_independent_route_agrees": g["the_independent_route_agrees"],
             "different_cotrees": g["the_two_routes_use_different_cotrees"],
             "links": g["links"], "cycle_rank": g["cycle_rank"],
-            "the_commutator_subgroup_order":
+            "the_defect_subgroup_order":
                 (len(comm) if comm else None),
             "the_wing_symmetry_group_order": (len(wings) if wings else None),
             "the_group_generated_by_both":
                 (len(both) if both else None),
-            "the_geometry_equals_commutators_and_wings":
+            "the_geometry_equals_the_defects_and_the_wings":
                 (both is not None and A["group"] is not None
                  and set(both) == set(A["group"])),
-            "twice_the_commutator_order_would_be": 2 * k,
+            "twice_the_defect_order_would_be": 2 * k,
             "the_dihedral_prediction_holds": dihedral}
     dihedral_hits = sum(1 for r in rows.values()
                         if r["the_dihedral_prediction_holds"])
     orders = [r["holonomy_order"] for r in rows.values()]
-    fn_of_ord = len(set(zip([r["ord_profile_over_S3"][PERM_NAME[P_STAR]]
-                             for r in rows.values()], orders))) == \
-        len(set(r["ord_profile_over_S3"][PERM_NAME[P_STAR]]
-                for r in rows.values()))
+    star_ords = [r["ord_profile_over_S3"][PERM_NAME[P_STAR]]
+                 for r in rows.values()]
+    gen_scope = sum(1 for r in rows.values()
+                    if r["the_geometry_equals_the_defects_and_the_wings"])
     tab = {"declared_targets": declared_targets,
            "targets_swept": targets, "per_target": rows,
            "targets_realised": sorted(int(k) for k in rows),
            "the_dihedral_prediction_holds_at": dihedral_hits,
            "of_targets": len(rows),
            "holonomy_orders": orders,
-           "the_two_wing_law_is_twice_the_commutator": False,
-           "the_order_is_a_function_of_ord_at_P_star_alone": fn_of_ord}
+           "the_geometry_equals_the_defects_and_the_wings_at": gen_scope,
+           "the_two_wing_law_is_twice_the_defect_order":
+               dihedral_hits == len(rows),
+           # NOT a test of anything: the four targets are SELECTED to have
+           # pairwise distinct defect orders at P*, so a collision at a fixed
+           # ord cannot occur here and a function test over these four rows
+           # is vacuous BY CONSTRUCTION.  The real test is A5's S7 sample,
+           # which fixes the ord, and A1's profile probe, which fixes the
+           # whole profile.  The vacuity is measured, not asserted.
+           "the_targets_defect_orders_at_P_star_are_pairwise_distinct":
+               len(set(star_ords)) == len(star_ords),
+           "a_fixed_ord_collision_is_impossible_over_these_targets":
+               len(set(star_ords)) == len(star_ords)}
     verdict = "CONFIRMED" if (dihedral_hits < len(rows)) else "REFUTED"
     gate("TB3-A1", "derivation",
          "A1, THE ORD-SWEEP, AND ITS VERDICT DERIVED HERE FROM THE MEASURED "
@@ -1790,6 +2208,198 @@ def run_a1(Qfirst, maxord):
          and verdict in ("CONFIRMED", "REFUTED"), tab)
     TABLES["a1_ord_sweep"] = tab
     FINDINGS["a1_verdict"] = "TB3-A1-" + verdict
+    return tab
+
+
+def _order_at(sp, psi, q, st):
+    """|Hol| at one (preparation, completion, setting) by route A, with the
+    orbit-stabiliser chain as its independent check.  Returns
+    (order, group, links, independent_order)."""
+    w = World(sp, psi, q, st)
+    adm = w.admission()
+    nodes, links = build_graph(sp, w, adm)
+    _, _, gens = spanning_generators(nodes, links, (sp.FRAMES[0], 0))
+    gp = [g.as_perm() for _, g, _ in gens]
+    if any(x is None for x in gp):
+        return None, None, len(links), None
+    G = closure_left(gp, sp.NC)
+    c, _ = group_order_schreier(gp, sp.NC)
+    return (len(G) if G is not None else None), G, len(links), c
+
+
+PROFILE_SAMPLE_N = 6
+
+
+def run_a1_mechanism(Qfirst, modal_sample, modal_profile):
+    """WHAT THE GEOMETRY SEES, MEASURED.  Two probes the delivered unit
+    asserted rather than ran.
+
+    (1) THE PROFILE PROBE.  At three wings one completion carries a PROFILE
+        of six defect orders.  Is the holonomy order a function of that
+        profile?  Tested on a DECLARED SAMPLE `[SAMP]`: the lexicographically
+        first PROFILE_SAMPLE_N completions carrying the MODAL full profile of
+        the exhaustive census -- both the profile and the size are computed,
+        neither is chosen.  All sampled completions are verified to share the
+        whole profile, so a collision CAN occur and the test is not vacuous.
+
+    (2) THE ord = 1 SWEEP, EXHAUSTIVE.  The delivered negative control read
+        "ord = 1 gives |Hol| = 1".  That is a property of the IDENTITY
+        completion; here every one of the completions with ord([P*,u]) = 1 is
+        swept and the holonomy distribution is measured."""
+    prog("A1: the mechanism probes")
+    sp = species(3)
+    psi = psi_vector(dict(PSI_DECL[0][1]))
+    st = ("R0", "R0", "R0")
+    n = PROFILE_SAMPLE_N
+    shrink = (MUTANT == "mechanism-lax")
+    if shrink:
+        n = 1
+    sample = list(modal_sample[:n])
+    prows = {}
+    shared = 0
+    for q in sample:
+        prof = tuple(pord(defect_label_route(pi, q)) for pi in PERMS)
+        if prof == tuple(modal_profile):
+            shared += 1
+        o, _G, links, cord = _order_at(sp, psi, q, st)
+        prows[canon(list(q))] = {"holonomy_order": o, "links": links,
+                                 "ord_profile": list(prof),
+                                 "independent_route_order": cord,
+                                 "the_routes_agree": (o == cord)}
+    porders = sorted({canon(r["holonomy_order"]) for r in prows.values()})
+    # (2) the exhaustive ord = 1 sweep
+    o1 = Counter()
+    o1rows = {}
+    for tail in itertools.permutations(range(1, NSYS)):
+        q = (0,) + tail
+        if pord(defect_label_route(P_STAR, q)) != 1:
+            continue
+        o, _G, links, cord = _order_at(sp, psi, q, st)
+        o1[o] += 1
+        o1rows[canon(list(q))] = o
+    ident = tuple(range(NSYS))
+    tab = {"the_modal_full_profile": list(modal_profile),
+           "profile_sample_declared_size": PROFILE_SAMPLE_N,
+           "profile_sample_size": len(sample),
+           "sampled_completions_carrying_the_declared_profile": shared,
+           "per_sampled_completion": prows,
+           "distinct_holonomy_orders_at_a_fixed_full_profile": porders,
+           "the_holonomy_order_is_a_function_of_the_full_profile":
+               len(porders) == 1,
+           "ord_1_completions_swept": sum(o1.values()),
+           "ord_1_completions_the_census_records":
+               TABLES["ord_census"]["ord_distribution_at_P_star"][1],
+           "ord_1_holonomy_distribution":
+               {canon(k): v for k, v in sorted(o1.items(),
+                                               key=lambda x: (x[0] is None,
+                                                              x[0]))},
+           "ord_1_completions_with_a_trivial_holonomy": o1[1],
+           "the_identity_completion_is_one_of_them":
+               canon(list(ident)) in o1rows,
+           "the_holonomy_at_the_identity_completion":
+               o1rows.get(canon(list(ident)))}
+    gate("TB3-A1-MECHANISM", "measurement",
+         "WHAT THE GEOMETRY SEES IS NOT THE PROFILE, AND ord = 1 IS NOT THE "
+         "IDENTITY COMPLETION -- both MEASURED here rather than asserted.  "
+         "PROBE 1: the holonomy order is read at the lexicographically first "
+         "completions carrying the MODAL full ord-profile over S_3 -- the "
+         "profile and the sample size are both computed from the exhaustive "
+         "census, never chosen, and every sampled completion is verified to "
+         "carry the whole declared profile, so a collision CAN occur.  The "
+         "gate requires the sample to be the declared size and every member "
+         "to share the profile; the `mechanism-lax` mutant shrinks the "
+         "sample to one, so a collision becomes impossible, and dies here.  "
+         "PROBE 2: every completion whose defect order at P* is 1 is swept "
+         "EXHAUSTIVELY and the holonomy distribution measured, and the sweep "
+         "size is gated against the exhaustive census's own count of them",
+         len(sample) == PROFILE_SAMPLE_N and shared == len(sample)
+         and sum(o1.values())
+         == TABLES["ord_census"]["ord_distribution_at_P_star"][1]
+         and all(r["the_routes_agree"] for r in prows.values()), tab)
+    TABLES["a1_mechanism"] = tab
+    return tab
+
+
+def run_a1_settings(Qfirst):
+    """THE LAW'S FATE IS SETTING-SCOPED, AND THE SCOPE IS MEASURED.  A1's
+    group family runs at the fully symmetric setting; the two-wing law
+    |Hol| = 2.ord is re-tested at a DECLARED setting scope -- the lex-first
+    setting at each measured stabiliser order, plus one further partially
+    symmetric setting -- at the same four rule-selected completions."""
+    prog("A1: the setting scope of the dihedral law")
+    sp = species(3)
+    psi = psi_vector(dict(PSI_DECL[0][1]))
+    rows = {}
+    cells = 0
+    for st in A1_SETTING_SCOPE:
+        per = {}
+        for k in sorted(Qfirst):
+            if k not in (1, 2, 3, max(Qfirst)):
+                continue
+            cells += 1
+            o, _G, links, cord = _order_at(sp, psi, Qfirst[k], st)
+            per[str(k)] = {"holonomy_order": o, "links": links,
+                           "twice_the_defect_order": 2 * k,
+                           "the_law_holds": (o == 2 * k),
+                           "independent_route_order": cord,
+                           "the_routes_agree": (o == cord)}
+        rows[setting_name(st)] = {
+            "setting": setting_name(st),
+            "stabiliser_order": len(stabiliser(st)),
+            "per_target": per,
+            "the_law_holds_at": sum(1 for r in per.values()
+                                    if r["the_law_holds"]),
+            "of_targets": len(per)}
+    hits = {k: v["the_law_holds_at"] for k, v in rows.items()}
+    by_stab = {}
+    for v in rows.values():
+        by_stab.setdefault(str(v["stabiliser_order"]), []).append(
+            v["the_law_holds_at"])
+    # THE VERDICT, derived from the counts, both branches live.
+    swap = (MUTANT == "setting-sweep-lax")
+    if swap:
+        dep = ("SETTING-UNIFORM" if len(set(hits.values())) > 1
+               else "SETTING-SCOPED")
+    else:
+        dep = ("SETTING-SCOPED" if len(set(hits.values())) > 1
+               else "SETTING-UNIFORM")
+    a1 = TABLES["a1_ord_sweep"]["per_target"]
+    ref = rows[setting_name(("R0", "R0", "R0"))]["per_target"]
+    consistent = all(ref[k]["holonomy_order"] == a1[k]["holonomy_order"]
+                     for k in ref if k in a1)
+    tab = {"declared_setting_scope": [setting_name(s)
+                                      for s in A1_SETTING_SCOPE],
+           "cells_the_declaration_forces":
+               len(A1_SETTING_SCOPE) * len(A1_TARGET_RULE),
+           "cells_measured": cells,
+           "per_setting": rows,
+           "the_law_holds_at_by_setting": hits,
+           "the_law_holds_at_by_stabiliser_order": by_stab,
+           "the_dependence": dep,
+           "the_fully_symmetric_row_reproduces_A1": consistent}
+    re_dep = ("SETTING-SCOPED"
+              if len({r["the_law_holds_at"] for r in rows.values()}) > 1
+              else "SETTING-UNIFORM")
+    gate("TB3-A1-SETTING", "derivation",
+         "THE DIHEDRAL LAW'S FATE IS RE-TESTED ACROSS A DECLARED SETTING "
+         "SCOPE, AND THE SCOPE VERDICT IS DERIVED HERE FROM THE MEASURED "
+         "COUNTS.  A1's group family runs at the fully symmetric setting "
+         "only; the same four rule-selected completions are re-run at the "
+         "lex-first setting of each measured stabiliser order plus one "
+         "further partially symmetric setting, and the law's hit count is "
+         "measured per setting.  SETTING-SCOPED is derived exactly when the "
+         "hit counts DIFFER across the scope, SETTING-UNIFORM when they do "
+         "not -- both branches live, the branch computed from the counts and "
+         "never typed, and the derivation repeated inside this gate by a "
+         "second evaluation and gated against the emitted string.  The "
+         "`setting-sweep-lax` mutant swaps the branch order and dies here.  "
+         "The fully symmetric row is additionally gated to reproduce A1's "
+         "own holonomy orders, so the two computations are cross-checked",
+         cells == len(A1_SETTING_SCOPE) * len(A1_TARGET_RULE)
+         and dep == re_dep and consistent
+         and all(r["the_routes_agree"] for v in rows.values()
+                 for r in v["per_target"].values()), tab)
+    TABLES["a1_setting_scope"] = tab
     return tab
 
 
@@ -1827,6 +2437,142 @@ def delta_sys(sp, X, pi):
     S = Mat.from_perm(sp.SIGMA[pi])
     Si = Mat.from_perm(pinv(sp.SIGMA[pi]))
     return Si @ (X.T() @ (S @ X))
+
+
+def _a2_qualifier(form, best, cells, f1hits, ninv, nmembers, nonlinv,
+                  idraws, idev):
+    """THE COMPUTED QUALIFIER, built from measured counts alone.  Called
+    TWICE: once by the emitter, once inside TB3-A2 from the recorded table,
+    and the two are gated equal (RUNBOOK section 13, #234 -- the delivered
+    unit gated the verdict WORD and left the qualifier ungated)."""
+    if form == "HOLDS-VERBATIM":
+        return ""
+    return ("-<THE INDEX, NOT THE LAW: %s reproduces the measured defect at "
+            "%d of %d cells, and it does so as an ALGEBRAIC IDENTITY that "
+            "holds for every orthogonal leg and every symmetry -- %d of %d "
+            "unrelated random pairs, %d deviations -- so the law IS the "
+            "commutator law at S_3 and what moved is the INDEX, a placement "
+            "convention; the committed four-factor product P u^-1 P u "
+            "coincides with it at %d cells, exactly the %d involutions x %d "
+            "members, and the committed derivation asserted it only under "
+            "P^2 = 1; HOLDS-VERBATIM and FAILS are algebraically "
+            "UNREACHABLE at S_3, which has %d elements of order above 2>"
+            % (best, cells, cells, idraws, idraws, idev, f1hits, ninv,
+               nmembers, nonlinv))
+
+
+def run_a2_identity(Q):
+    """THE DISCLOSURE THE DELIVERED UNIT OWED (RUNBOOK section 14, #208).
+
+    D_sigma is READ OFF the conjugated leg matrix as (sigma u sigma^-1)^T u.
+    For ANY orthogonal u and ANY permutation matrix P that is, in one line,
+
+        (P u P^-1)^T u  =  P u^T P^T u  =  P u^-1 P^-1 u  =  [P^-1, u],
+
+    so `F3 reproduces the measured defect at 54 of 54` is an IDENTITY, not a
+    measurement, and no perturbation of the physics can move it.  The same
+    line forces the rest of the form table: F1 = D iff P^2 = 1.  This is
+    entered as a DISCLOSURE and its evidence is a sweep on random pairs built
+    in a dimension and from ingredients that have nothing to do with this
+    base: dimension 6, P a random permutation matrix of arbitrary order, u a
+    random rational orthogonal matrix.  The generator is seeded by the
+    SHA-256 of the declared data alone."""
+    prog("A2: the identity disclosure sweep")
+    dim = 6
+    seed = hashlib.sha256(canon(["TB3-A2-IDENTITY", list(Q), dim]
+                                + [PERM_NAME[p] for p in PERMS]).encode()
+                          ).hexdigest()
+    state = int(seed, 16)
+    ndraw = 200
+
+    def nxt(m):
+        nonlocal state
+        state = (state * 6364136223846793005 + 1442695040888963407) % (2 ** 64)
+        return (state >> 17) % m
+
+    def rand_perm():
+        p = list(range(dim))
+        for i in range(dim - 1, 0, -1):
+            j = nxt(i + 1)
+            p[i], p[j] = p[j], p[i]
+        return tuple(p)
+
+    def rand_orth():
+        M = Mat.from_perm(rand_perm())
+        cols = [dict(c) for c in M.cols]
+        for j in range(dim):                      # random signs
+            if nxt(2):
+                cols[j] = {i: -v for i, v in cols[j].items()}
+        M = Mat(dim, cols)
+        for _ in range(2):                        # random Givens rotations
+            c, s = ROT_PYTH[ROT_ORDER[1 + nxt(2)]]
+            i, j = nxt(dim), nxt(dim)
+            if i == j:
+                j = (j + 1) % dim
+            g = [{k: Fr(1)} for k in range(dim)]
+            g[i] = {i: c, j: s}
+            g[j] = {i: -s, j: c}
+            M = Mat(dim, g) @ M
+        return M
+
+    dev = 0
+    orth = 0
+    noninv = 0
+    f1_eq = 0
+    f1_eq_at_involutions = 0
+    involutive = 0
+    orders = Counter()
+    for _ in range(ndraw):
+        p = rand_perm()
+        P = Mat.from_perm(p)
+        Pi = Mat.from_perm(pinv(p))
+        u = rand_orth()
+        if u.is_orthogonal():
+            orth += 1
+        o = pord(p)
+        orders[o] += 1
+        conj = P @ (u @ Pi)
+        D = conj.T() @ u                          # the MEASURED comparator
+        F3 = P @ (u.T() @ (Pi @ u))               # [P^-1, u]
+        F1 = P @ (u.T() @ (P @ u))                # the committed writing
+        if D.key() != F3.key():
+            dev += 1
+        if o <= 2:
+            involutive += 1
+            if F1.key() == D.key():
+                f1_eq_at_involutions += 1
+        else:
+            noninv += 1
+        if F1.key() == D.key():
+            f1_eq += 1
+    tab = {"seed_sha256_of_declared_data_alone": seed,
+           "dimension": dim, "draws": ndraw,
+           "draws_measured_exactly_orthogonal": orth,
+           "deviations_from_D_equals_the_commutator_at_P_inverse": dev,
+           "draws_whose_P_is_not_an_involution": noninv,
+           "draws_whose_P_is_an_involution": involutive,
+           "element_order_census_of_the_drawn_P": dict(sorted(orders.items())),
+           "draws_where_the_four_factor_form_equals_D": f1_eq,
+           "draws_where_it_equals_D_at_an_involution": f1_eq_at_involutions,
+           "the_four_factor_form_equals_D_exactly_at_the_involutions":
+               (f1_eq == f1_eq_at_involutions == involutive)}
+    gate("TB3-A2-IDENTITY", "disclosure",
+         "D_sigma = [sigma^-1, u] IS AN ALGEBRAIC IDENTITY, NOT A "
+         "MEASUREMENT, AND IS ENTERED AS A DISCLOSURE (RUNBOOK section 14, "
+         "#208).  (P u P^-1)^T u = P u^T P^T u = P u^-1 P^-1 u for every "
+         "orthogonal u and every permutation matrix P -- one line -- so the "
+         "form table's headline count could not have come out otherwise and "
+         "no perturbation of the physics can move it.  The same line forces "
+         "the rest: the committed four-factor product equals the measured "
+         "defect exactly where P^2 = 1.  The evidence is a sweep in "
+         "dimension 6 on random permutation matrices of arbitrary order and "
+         "random rational orthogonal matrices, none of which has anything to "
+         "do with this base; the draws are measured NOT to be involutions on "
+         "a non-zero count, so the second half is not vacuous either",
+         dev == 0 and orth == ndraw and noninv > 0
+         and f1_eq == f1_eq_at_involutions == involutive, tab)
+    TABLES["a2_identity"] = tab
+    return tab
 
 
 def run_a2(Q):
@@ -1956,29 +2702,49 @@ def run_a2(Q):
     n_forms_inv = [k for k in hits
                    if hits_at_involutions[k] == len(involutions)
                    * len(PSI_ORDER)]
-    # THE VERDICT, with its computed qualifier.
+    nonlinv = len(PERMS) - len(involutions)
+    idt = TABLES["a2_identity"]
+    idraws, idev = idt["draws"], idt[
+        "deviations_from_D_equals_the_commutator_at_P_inverse"]
+    # THE VERDICT, with its computed qualifier.  BOTH ALTERNATIVE BRANCHES
+    # ARE MEASURED TO BE ALGEBRAICALLY UNREACHABLE AT S_3, and that is
+    # recorded rather than concealed: HOLDS-VERBATIM would need every element
+    # of S_3 to be an involution (measured: it has non-involutions), FAILS
+    # would need some cell at which no form reproduces the defect (measured:
+    # F3 does so identically, on this base and on unrelated random pairs).
     if "F1_four_factor_P_u_P_u" in n_forms_all:
         form = "HOLDS-VERBATIM"
-        qual = ""
     elif n_forms_all:
         form = "GENERALIZES"
-        qual = ("-<D_P = %s reproduces the measured defect at %d of %d "
-                "cells; the committed four-factor product P u^-1 P u at "
-                "%d, and only at the %d involutions>"
-                % (sorted(n_forms_all)[0], cells, cells,
-                   hits["F1_four_factor_P_u_P_u"], len(involutions)))
     else:
         form = "FAILS"
+    type_the_counts = (MUTANT == "qual-typed")
+    if form == "FAILS":
         bad = sorted((nm, k) for nm in per for k in per[nm]
                      if not per[nm][k]["forms_reproducing_the_measured_"
                                        "defect"])
         qual = "-<%s>" % (canon(bad[:1]) if bad else "no witness")
+    else:
+        qual = _a2_qualifier(
+            form, sorted(n_forms_all)[0] if n_forms_all else "",
+            53 if type_the_counts else cells,
+            99 if type_the_counts else hits["F1_four_factor_P_u_P_u"],
+            7 if type_the_counts else len(involutions), len(PSI_ORDER),
+            nonlinv, idraws, idev)
     tab = {"cells_the_declaration_forces": len(PSI_ORDER) * len(PERMS),
            "cells_measured": cells,
            "per_member": per,
            "form_hits": hits,
            "form_hits_at_the_involutions_only": hits_at_involutions,
            "involutions_in_S3": len(involutions),
+           "non_involutions_in_S3": nonlinv,
+           "the_identity_sweep_draws": idraws,
+           "the_identity_sweep_deviations": idev,
+           "HOLDS_VERBATIM_is_reachable_at_S3": (nonlinv == 0),
+           "FAILS_is_reachable_at_S3": (not n_forms_all),
+           "the_reachable_branches": sorted(
+               (["HOLDS-VERBATIM"] if nonlinv == 0 else [])
+               + ["GENERALIZES"] + ([] if n_forms_all else ["FAILS"])),
            "forms_holding_at_every_cell": sorted(n_forms_all),
            "forms_holding_at_every_involution_cell": sorted(n_forms_inv),
            "cells_where_each_form_splits_off_the_pointer_identity":
@@ -1988,19 +2754,20 @@ def run_a2(Q):
            "cocycle_cells": cocycle_cells,
            "cocycle_deviations": cocycle_dev,
            "factorisation_deviations": factorisation_dev,
-           "the_geometry_is_generated_by_the_commutators_alone":
+           "the_geometry_is_generated_by_the_defects_alone":
                gen_by_commutators,
-           "the_geometry_is_generated_by_commutators_and_wing_symmetries":
+           "the_geometry_is_generated_by_the_defects_and_the_wings":
                gen_by_commutators_and_wings,
-           "the_commutator_subgroup_order": (len(comm) if comm else None),
-           "the_commutator_subgroup_is_normal_under_the_wing_symmetries":
+           "the_defect_subgroup_order": (len(comm) if comm else None),
+           "the_defect_subgroup_is_normal_under_the_wing_symmetries":
                normal,
            "the_level_1_holonomy_order": gref["route_A_order"],
            "the_named_form": form, "the_computed_qualifier": qual}
     verdict = "TB3-ONE-LAW-" + form + qual
     ok_vocab = any(verdict.startswith(x) for x in PREREGISTERED_ONE_LAW)
     # re-derived INSIDE the gate from the recorded table, by an evaluation
-    # that does not call the emitter above (RUNBOOK section 14, #219).
+    # that does not call the emitter above (RUNBOOK section 14, #219) --
+    # THE QUALIFIER INCLUDED (section 13, #234).
     re_all = [k for k in tab["form_hits"]
               if tab["form_hits"][k] == tab["cells_measured"]]
     if "F1_four_factor_P_u_P_u" in re_all:
@@ -2009,6 +2776,16 @@ def run_a2(Q):
         re_form = "GENERALIZES"
     else:
         re_form = "FAILS"
+    if re_form == "FAILS":
+        re_qual = qual
+    else:
+        re_qual = _a2_qualifier(
+            re_form, sorted(re_all)[0] if re_all else "",
+            tab["cells_measured"], tab["form_hits"]["F1_four_factor_P_u_P_u"],
+            tab["involutions_in_S3"], len(PSI_ORDER),
+            tab["non_involutions_in_S3"], tab["the_identity_sweep_draws"],
+            tab["the_identity_sweep_deviations"])
+    re_verdict = "TB3-ONE-LAW-" + re_form + re_qual
     gate("TB3-A2", "derivation",
          "A2, THE ONE LAW AT S_3, WITH ITS VERDICT AND ITS QUALIFIER DERIVED "
          "HERE FROM THE MEASURED COUNTS.  Three candidate forms are "
@@ -2019,16 +2796,21 @@ def run_a2(Q):
          "declaration forces.  HOLDS-VERBATIM requires the committed "
          "four-factor product to reproduce the measured defect at EVERY "
          "cell; GENERALIZES requires some other form to do so while the "
-         "committed one does not, and the qualifier then CARRIES THE "
-         "MEASURED COUNTS; FAILS requires no form to work and names a "
-         "witness cell.  The cocycle identity delta_P(XY) = delta_P(Y) . "
-         "Y^-1 delta_P(X) Y is measured at every cell, and the "
-         "instantiation at the declared factorisation V = H(psi).Q is "
-         "measured to reproduce the measured defect.  The verdict is "
-         "re-derived inside this gate from the recorded table by a second "
-         "evaluation and gated against the emitted one",
+         "committed one does not; FAILS requires no form to work and names a "
+         "witness cell.  TWO OF THE THREE BRANCHES ARE MEASURED "
+         "ALGEBRAICALLY UNREACHABLE AT S_3 and the table says so, so the "
+         "weight of this axis is NOT the branch: it is the cocycle, the "
+         "independent construction of each form, and the generation result.  "
+         "The cocycle identity delta_P(XY) = delta_P(Y) . Y^-1 delta_P(X) Y "
+         "is measured at every cell, and the instantiation at the declared "
+         "factorisation V = H(psi).Q is measured to reproduce the measured "
+         "defect.  THE VERDICT AND ITS QUALIFIER ARE BOTH re-derived inside "
+         "this gate from the recorded table by a second evaluation and gated "
+         "against the emitted string, character for character; the "
+         "`qual-typed` mutant types the qualifier's counts and dies here",
          cells == len(PSI_ORDER) * len(PERMS) and ok_vocab
-         and re_form == form and cocycle_dev == 0
+         and re_form == form and re_qual == qual
+         and re_verdict == verdict and cocycle_dev == 0
          and factorisation_dev == 0
          and form_construction_ok == form_construction_cells
          and form_construction_cells == 3 * cells, tab)
@@ -2037,6 +2819,10 @@ def run_a2(Q):
     FINDINGS["a2_axis_verdict"] = "TB3-A2-" + (
         "CONFIRMED" if cocycle_dev == 0 and factorisation_dev == 0
         else "REFUTED")
+    REF_GROUP["Hol"] = set(Aref["group"]) if Aref["group"] else None
+    REF_GROUP["K"] = set(comm) if comm else None
+    REF_GROUP["gens"] = [x.as_perm() for _, x, _ in Aref["gens_obj"]]
+    REF_GROUP["Q"] = Q
     return tab, gref, Aref, nodesref, linksref, wref, admref
 
 
@@ -2143,6 +2929,533 @@ def run_a2_randomised(Q):
          "below the declared size and dies on the size comparison",
          ndraw == 200 and mirror_differs > 0 and nontrivial > 0, tab)
     TABLES["a2_randomised_sweep"] = tab
+
+
+# ===========================================================================
+# 5b.  THE LADDER.  The delivered unit reported the holonomy family as a list
+#      of numbers -- 1, 72, 1008, 2160, 15120.  It is a LADDER of named
+#      groups inside Alt(7) = the alternating group on the seven non-zero
+#      labels of F_2^3, six-fold extended by the wing group, and every naming
+#      here is EARNED by construction rather than read off an order: each
+#      defect-generated subgroup's system image is compared, as a SET, with
+#      the FULL alternating group on its own support and with GL(3,2) = the
+#      F_2-linear label permutations, both brute-forced in this run.  The
+#      element-order spectra and the simplicity tests are corroboration.
+#      THE RELATION 15120 = 7 x 2160 is the DIRECTOR'S OBSERVATION (v13 LOG
+#      #286); what this section adds is that it is [A_7 : A_6], with the
+#      embedding constructed.
+# ===========================================================================
+def _classify(K, sysK, alt, gl):
+    if len(K) == 1:
+        return "trivial", False, False
+    eq_gl = (sysK == gl)
+    eq_alt = (alt is not None and sysK == alt)
+    force_alt = (MUTANT == "ladder-lax")
+    if force_alt:
+        eq_alt = True
+    if eq_gl:
+        return ("GL(3,2) = PSL(3,2) = Aut(F_2^3) acting F_2-linearly on the "
+                "seven Fano points", eq_gl, eq_alt)
+    if eq_alt:
+        sup = sorted({a for al in sysK for a in range(len(al)) if al[a] != a})
+        return ("A_%d, the FULL alternating group on its own %d-point support"
+                % (len(sup), len(sup)), eq_gl, eq_alt)
+    return "UNNAMED", eq_gl, eq_alt
+
+
+def run_ladder(Q):
+    prog("the ladder: naming, structure, ceiling, embedding")
+    sp = species(3)
+    n = sp.NC
+    gl = f2_linear_labels()
+    lines = {frozenset((x, y, x ^ y)) for x in range(1, NSYS)
+             for y in range(1, NSYS) if x != y}
+    wings = closure_left([PCARR[pi] for pi in PERMS], n)
+    declared = [("the declared reference completion (GHZ)", REF_GROUP)]
+    for k in sorted(A1_GROUPS):
+        declared.append(("A1 target ord = %d" % k, A1_GROUPS[k]))
+    # A group that is not a readable permutation group cannot be NAMED, and
+    # this section says so rather than dying: the unreadable instances are
+    # counted and the gate requires every declared instance to be readable,
+    # so a perturbation that destroys one dies HERE, by name.
+    def _nameable(ob):
+        G, K = ob.get("Hol"), ob.get("K")
+        if G is None or K is None:
+            return False
+        return all(product_form(g) is not None for g in G) and \
+            all(product_form(g) is not None for g in K)
+
+    instances = [(lb, ob) for lb, ob in declared if _nameable(ob)]
+    unreadable = [lb for lb, ob in declared if not _nameable(ob)]
+    rows = {}
+    for label, obj in instances:
+        G, K = obj["Hol"], obj["K"]
+        prodok = sum(1 for g in G if product_form(g) is not None)
+        sysG = {product_form(g)[0] for g in G} if prodok == len(G) else None
+        ptr = {product_form(g)[1] for g in G} if prodok == len(G) else None
+        sysK = {product_form(g)[0] for g in K}
+        sup = sorted({a for al in sysK for a in range(NSYS) if al[a] != a})
+        alt = alt_group_on(sup) if sup else {tuple(range(NSYS))}
+        name, eq_gl, eq_alt = _classify(K, sysK, alt, gl)
+        gens_K = reduced_generating_set(sorted(K), n)
+        gens_G = reduced_generating_set(obj["gens"], n)
+        spec = dict(sorted(Counter(pord(x) for x in K).items()))
+        simple = is_simple_group(K, gens_K, n) if len(K) > 1 else None
+        DD = derived_subgroup(gens_G, n)
+        linear = sum(1 for al in sysK
+                     if all(al[x ^ y] == al[x] ^ al[y]
+                            for x in range(NSYS) for y in range(NSYS)))
+        rows[label] = {
+            "Q": list(obj["Q"]),
+            "holonomy_order": len(G), "defect_subgroup_order": len(K),
+            "every_element_is_of_product_form": (prodok == len(G)),
+            "elements_of_product_form": prodok,
+            "the_system_image_of_the_defect_subgroup": len(sysK),
+            "its_support": sup,
+            "it_equals_the_full_alternating_group_on_its_support": eq_alt,
+            "it_equals_GL_3_2": eq_gl,
+            "F2_linear_elements_of_the_system_image": linear,
+            "of_system_image_elements": len(sysK),
+            "it_permutes_the_seven_Fano_lines":
+                all(frozenset(al[i] for i in L) in lines
+                    for al in sysK for L in lines),
+            "element_order_spectrum": spec,
+            "is_simple": simple,
+            "THE_TYPE": name,
+            "the_derived_subgroup_of_the_holonomy": len(DD),
+            "it_is_three_times_the_defect_subgroup":
+                (len(DD) == 3 * len(K)),
+            "the_defect_subgroup_is_normal":
+                all(pcomp(PCARR[pi], pcomp(g, pinv(PCARR[pi]))) in K
+                    for pi in PERMS for g in K),
+            "the_defect_subgroup_meets_the_wings_in":
+                len(set(K) & set(wings)),
+            "the_wings_inside_the_holonomy": sum(1 for pi in PERMS
+                                                 if PCARR[pi] in G),
+            "six_times_the_defect_subgroup": 6 * len(K),
+            "the_extension_is_split_by_the_wing_group":
+                (len(set(K) & set(wings)) == 1 and 6 * len(K) == len(G)
+                 and sum(1 for pi in PERMS if PCARR[pi] in G) == 6),
+            "the_pointer_image_order": (len(ptr) if ptr else None),
+            "system_parts_fixing_label_0":
+                (sum(1 for al in sysG if al[0] == 0) if sysG else None),
+            "system_parts_that_are_even":
+                (sum(1 for al in sysG if perm_parity(al) == 0)
+                 if sysG else None),
+            "of_system_parts": (len(sysG) if sysG else None)}
+    named = [r["THE_TYPE"] for r in rows.values()]
+    ambiguous = sum(1 for r in rows.values()
+                    if r["it_equals_GL_3_2"]
+                    and r["it_equals_the_full_alternating_group_on_its_support"])
+    gate("TB3-LADDER", "measurement",
+         "THE HOLONOMY FAMILY IS A NAMED LADDER, AND EVERY NAME IS EARNED BY "
+         "CONSTRUCTION RATHER THAN READ OFF AN ORDER.  For each instance the "
+         "defect-generated subgroup K = <D_P : P in S_3> is measured to act "
+         "on the carrier in PRODUCT FORM, its system image is extracted, and "
+         "that image is compared AS A SET against two groups brute-forced in "
+         "this run: the FULL alternating group on the image's own measured "
+         "support, and GL(3,2) = the F_2-linear permutations of the eight "
+         "system-triple labels fixing 0.  Order alone fixes nothing (there "
+         "are 162 groups of order 360 and 15 of order 168); a set equality "
+         "does.  The element-order spectrum, the simplicity test (the normal "
+         "closure of one representative per conjugacy class), the count of "
+         "F_2-linear elements and the action on the seven lines of PG(2,2) "
+         "are all measured beside it.  The gate requires every instance to "
+         "be NAMED and requires the two namings to be MUTUALLY EXCLUSIVE at "
+         "every non-trivial instance; the `ladder-lax` mutant reports every "
+         "system image as the alternating group and dies on that exclusion",
+         bool(rows) and not unreadable and len(rows) == len(declared)
+         and all(x != "UNNAMED" for x in named) and ambiguous == 0
+         and all(r["every_element_is_of_product_form"]
+                 for r in rows.values()),
+         {"per_instance": rows, "instances_declared": len(declared),
+          "instances_readable": len(rows),
+          "instances_whose_holonomy_is_not_a_readable_permutation_group":
+              sorted(unreadable)})
+    split_rows = [r for r in rows.values() if r["holonomy_order"] > 1]
+    gate("TB3-STRUCTURE", "measurement",
+         "Hol = K semidirect S_3, SPLIT, AND K IS NOT THE COMMUTATOR "
+         "SUBGROUP.  Measured at every non-trivial instance: K is normal in "
+         "Hol, K meets the wing group in the identity alone, the wing group "
+         "sits INSIDE Hol at all six elements, and 6.|K| = |Hol| -- which is "
+         "what promotes the delivered order factorisation from an extension "
+         "to a SPLIT semidirect product with the wing group as the measured "
+         "complement.  And the DERIVED subgroup [Hol, Hol] is computed "
+         "explicitly, as the normal closure of the commutators of a measured "
+         "generating set, and is measured to be THREE TIMES |K| at every "
+         "non-trivial instance -- so K, which this unit previously called "
+         "'the commutator subgroup', is NOT the commutator subgroup of the "
+         "holonomy group: it has index 6, the derived subgroup has index 2.  "
+         "The `split-lax` mutant perturbs the derived-subgroup construction "
+         "and dies here",
+         bool(split_rows)
+         and all(r["the_extension_is_split_by_the_wing_group"]
+                 for r in split_rows)
+         and all(r["it_is_three_times_the_defect_subgroup"]
+                 for r in split_rows), rows)
+    # ---- THE CEILING THEOREM, measured on its own ingredients.
+    alt7 = alt_group_on(range(1, NSYS))
+    wing_parity = {PERM_NAME[pi]: perm_parity(SIGMA[pi]) for pi in PERMS}
+    wing_fix0 = sum(1 for pi in PERMS if SIGMA[pi][0] == 0)
+    ptr_sizes = [r["the_pointer_image_order"] for r in rows.values()
+                 if r["the_pointer_image_order"]]
+    inflate = (MUTANT == "ceiling-lax")
+    largest_ptr = max(ptr_sizes) if ptr_sizes else 0
+    ceiling = len(alt7) * (largest_ptr + (1 if inflate else 0))
+    attained = max([r["holonomy_order"] for r in rows.values()] or [0])
+    cel = {"the_alternating_group_on_the_seven_non_zero_labels": len(alt7),
+           "the_largest_pointer_image_measured": largest_ptr,
+           "the_algebraic_ceiling": ceiling,
+           "the_largest_holonomy_order_measured": attained,
+           "the_ceiling_is_attained": (attained == ceiling),
+           "wing_symmetries_that_are_even_on_the_labels":
+               sum(1 for v in wing_parity.values() if v == 0),
+           "wing_symmetries_fixing_label_0": wing_fix0,
+           "wing_parities": wing_parity,
+           "instances_all_of_whose_system_parts_are_even":
+               sum(1 for r in rows.values()
+                   if r["system_parts_that_are_even"] == r["of_system_parts"]),
+           "instances_all_of_whose_system_parts_fix_label_0":
+               sum(1 for r in rows.values()
+                   if r["system_parts_fixing_label_0"] == r["of_system_parts"]),
+           "of_instances": len(rows)}
+    gate("TB3-CEILING", "derivation",
+         "THE CONSTRUCTION HAS AN ALGEBRAIC CEILING AND IT IS ATTAINED.  "
+         "THE ARGUMENT, and every ingredient of it measured here: every "
+         "defect is a commutator of label permutations fixing label 0, hence "
+         "an EVEN permutation of the seven non-zero system labels; every "
+         "wing symmetry is measured EVEN on the labels and measured to fix "
+         "label 0; so every holonomy element's system part lies in the "
+         "alternating group on those seven labels -- measured directly, "
+         "element by element, at every instance -- while its pointer part "
+         "lies in the measured pointer image.  Hence |Hol| is at most "
+         "|Alt(7)| times the pointer image's order, both COMPUTED here "
+         "(Alt(7) brute-forced, not cited), and the largest holonomy order "
+         "measured is gated EQUAL to that ceiling.  This is the answer to "
+         "the pin's A1 question that a list of numbers cannot give: the "
+         "family is the lattice of subgroups realisable below the ceiling, "
+         "and its top is realised.  The `ceiling-lax` mutant inflates the "
+         "ceiling and dies on the attainment clause",
+         cel["the_ceiling_is_attained"]
+         and cel["wing_symmetries_that_are_even_on_the_labels"] == len(PERMS)
+         and wing_fix0 == len(PERMS)
+         and cel["instances_all_of_whose_system_parts_are_even"] == len(rows)
+         and cel["instances_all_of_whose_system_parts_fix_label_0"]
+         == len(rows), cel)
+    # ---- THE x7: the embedding, constructed.
+    HG = REF_GROUP["Hol"]
+    kk = max(A1_GROUPS)
+    H6 = A1_GROUPS[kk]["Hol"]
+    K6 = A1_GROUPS[kk]["K"]
+    if HG is None or H6 is None or K6 is None or not all(
+            product_form(g) is not None for g in (HG | H6 | K6)):
+        # The embedding is a statement about two READABLE permutation groups
+        # in product form.  Where either is unreadable there is nothing to
+        # construct, and the gate fails on the construction clauses rather
+        # than the run dying without a name.
+        emb = {"the_reference_holonomy_order":
+                   (len(HG) if HG is not None else None),
+               "the_richest_holonomy_order":
+                   (len(H6) if H6 is not None else None),
+               "the_groups_are_readable_permutation_groups_in_product_form":
+                   False,
+               "the_reference_group_is_a_subgroup_of_the_richest": False,
+               "elements_of_the_reference_group_outside_the_richest": None,
+               "the_index_is_exact": False,
+               "it_equals_the_reference_system_image": False,
+               "the_index": None,
+               "the_index_equals_the_alternating_point_stabiliser_index":
+                   None,
+               "the_witness_pointer_part_is_the_identity": False,
+               "the_two_sevens_are_the_same_seven": False}
+        gate("TB3-EMBEDDING", "measurement",
+             "THE RELATION 15120 = 7 x 2160 IS STRUCTURAL, AND THE EMBEDDING "
+             "IS CONSTRUCTED HERE RATHER THAN INFERRED FROM DIVISIBILITY -- "
+             "which requires both groups to be READABLE permutation groups in "
+             "product form.  At this run they are not, so nothing is "
+             "constructed and the gate fails by name", False, emb)
+        TABLES["the_ladder"] = {
+            "per_instance": rows, "the_ceiling": cel, "the_embedding": emb,
+            "instances_declared": len(declared),
+            "instances_readable": len(rows),
+            "instances_whose_holonomy_is_not_a_readable_permutation_group":
+                sorted(unreadable),
+            "the_relation_was_observed_by_the_director": "v13 LOG #286"}
+        return rows
+    reverse = (MUTANT == "embed-lax")
+    outside = (len(H6 - HG) if reverse else len(HG - H6))
+    sysHG = {product_form(g)[0] for g in HG}
+    sysK6 = {product_form(g)[0] for g in K6}
+    sup6 = sorted({a for al in sysK6 for a in range(NSYS) if al[a] != a})
+    fixed_labels = [a for a in range(NSYS) if all(al[a] == a for al in sysHG)]
+    stab = {al for al in sysK6 if all(al[a] == a for a in fixed_labels
+                                      if a != 0)}
+    sevens6 = [g for g in H6 if pord(g) == 7]
+    sevensG = [g for g in HG if pord(g) == 7]
+    witness = sorted(sevens6)[0] if sevens6 else None
+    wcyc = []
+    if witness is not None:
+        seen = set()
+        for i in range(n):
+            if i in seen:
+                continue
+            c = [i]
+            j = witness[i]
+            while j != i:
+                c.append(j)
+                j = witness[j]
+            seen |= set(c)
+            wcyc.append(tuple(c))
+    wsys, wptr = product_form(witness) if witness else (None, None)
+    emb = {"the_reference_holonomy_order": len(HG),
+           "the_richest_holonomy_order": len(H6),
+           "the_index": (len(H6) // len(HG) if len(HG) else None),
+           "the_index_is_exact": (len(H6) % len(HG) == 0),
+           "elements_of_the_reference_group_outside_the_richest": outside,
+           "the_reference_group_is_a_subgroup_of_the_richest": (outside == 0),
+           "the_system_labels_fixed_by_every_reference_element": fixed_labels,
+           "the_stabiliser_of_those_labels_inside_the_richest_system_image":
+               len(stab),
+           "it_equals_the_reference_system_image": (stab == sysHG),
+           "the_index_equals_the_alternating_point_stabiliser_index":
+               (len(sysK6) // len(stab) if stab else None),
+           "elements_of_order_7_in_the_richest": len(sevens6),
+           "elements_of_order_7_in_the_reference": len(sevensG),
+           "the_witness_cycle_type_on_the_64_configurations":
+               dict(sorted(Counter(len(c) for c in wcyc).items())),
+           "the_witness_first_three_seven_cycles":
+               [list(c) for c in wcyc if len(c) == 7][:3],
+           "the_witness_system_part": list(wsys) if wsys else None,
+           "the_witness_pointer_part_is_the_identity":
+               (wptr == tuple(range(NPT)) if wptr else None),
+           "the_witness_is_in_the_defect_subgroup":
+               (witness in K6 if witness else None),
+           "the_witness_seventh_power_is_the_identity":
+               (pord(witness) == 7 if witness else None),
+           "the_non_zero_labels_of_F2_cubed":
+               sorted(set(range(NSYS)) - {0}),
+           "the_completion_census_exponent": NSYS - 1,
+           "the_support_of_the_richest_system_image": sup6,
+           "the_two_sevens_are_the_same_seven":
+               (sup6 == sorted(set(range(NSYS)) - {0}))}
+    gate("TB3-EMBEDDING", "measurement",
+         "THE RELATION 15120 = 7 x 2160 IS STRUCTURAL, AND THE EMBEDDING IS "
+         "CONSTRUCTED HERE RATHER THAN INFERRED FROM DIVISIBILITY.  Measured: "
+         "the reference (GHZ) holonomy group is a SUBGROUP of the richest "
+         "target's -- every one of its elements is tested for membership and "
+         "the count outside is gated at zero -- so the ratio is a genuine "
+         "index and not a coincidence of orders.  The mechanism is measured "
+         "too: the system labels fixed by EVERY element of the reference "
+         "group are computed, the stabiliser of those labels inside the "
+         "richest target's system image is built, and it is gated EQUAL to "
+         "the reference group's own system image -- so the factor 7 is the "
+         "index of a point stabiliser in the natural degree-7 alternating "
+         "action.  AND THE TWO SEVENS ARE AUDITED: the seven of 7! = 5040 "
+         "and the seven of the alternating degree are both the seven "
+         "non-zero labels of F_2^3, and the group-theoretic one is not a "
+         "label artifact -- a genuine element of order 7 is exhibited as a "
+         "permutation OF THE 64 CONFIGURATIONS with its cycle type printed, "
+         "while the reference geometry is measured to contain NO element of "
+         "order 7.  The `embed-lax` mutant tests the containment in the "
+         "wrong direction and dies here",
+         emb["the_reference_group_is_a_subgroup_of_the_richest"]
+         and emb["the_index_is_exact"]
+         and emb["it_equals_the_reference_system_image"]
+         and emb["the_index"] == emb[
+             "the_index_equals_the_alternating_point_stabiliser_index"]
+         and len(sevens6) > 0 and len(sevensG) == 0
+         and emb["the_witness_pointer_part_is_the_identity"], emb)
+    TABLES["the_ladder"] = {
+        "per_instance": rows, "the_ceiling": cel, "the_embedding": emb,
+        "instances_declared": len(declared), "instances_readable": len(rows),
+        "instances_whose_holonomy_is_not_a_readable_permutation_group":
+            sorted(unreadable),
+        "the_relation_was_observed_by_the_director": "v13 LOG #286"}
+    return rows
+
+
+# ===========================================================================
+# 5c.  THE BRG CROSS-SECTION.  BRG's forward obstruction is order-coprimality
+#      and its theorem -- hom(Z/q, G) non-trivial iff q | |G| -- carries NO
+#      dihedral hypothesis.  Applied to the groups THIS base builds it
+#      delivers live cells at the two primes BRG's own extended scope calls
+#      admissible.  In the other direction BRG's family theorem
+#      |<W,D>| = 2.ord(D) rests on two hypotheses that three wings break, so
+#      its stated reach is BOUNDED here -- not contradicted: it is measured
+#      to hold verbatim at every involutive wing symmetry of this base.
+# ===========================================================================
+def run_brg_cross_section(ext, wref):
+    prog("the BRG cross-section")
+    sp = species(3)
+    brg = ext["BRG"]["json"]
+    zoo = {g["group"]: g for g in
+           brg["tables"]["the_lagrange_cauchy_sweep"]["zoo"]}
+    declared_primes = sorted(int(p) for p in
+                             brg["tables"]["prime_tracking"]["F3_by_prime"])
+    brg_live = sorted(int(p) for p, v in
+                      brg["tables"]["prime_tracking"][
+                          "extended_census_by_prime"].items() if v)
+    declared_instances = [("the declared reference completion (GHZ)",
+                           REF_GROUP)]
+    for k in sorted(A1_GROUPS):
+        declared_instances.append(("A1 target ord = %d" % k, A1_GROUPS[k]))
+    # A prime cell needs a readable group order to divide into; an unreadable
+    # instance contributes no cells, and the gate's cell count then falls
+    # short of the one the declaration forces, so it dies HERE by name.
+    instances = [(lb, ob) for lb, ob in declared_instances
+                 if ob.get("Hol") is not None]
+    bad_witness = (MUTANT == "brg-lax")
+    rows = {}
+    cells = 0
+    agree = 0
+    live = set()
+    for label, obj in instances:
+        G = obj["Hol"]
+        spec = Counter()
+        byorder = {}
+        for g in sorted(G):
+            o = pord(g)
+            spec[o] += 1
+            byorder.setdefault(o, g)
+        per = {}
+        for q in declared_primes:
+            cells += 1
+            divides = (len(G) % q == 0)
+            wit = None
+            for o in ([q + 1, q] if bad_witness else [q]):
+                if o in byorder:
+                    wit = byorder[o]
+                    break
+            nontrivial = wit is not None and pord(wit) == q
+            if divides == nontrivial:
+                agree += 1
+            if nontrivial:
+                live.add(q)
+            per[str(q)] = {"q_divides_the_order": divides,
+                           "a_non_trivial_hom_exists": nontrivial,
+                           "the_witness_order":
+                               (pord(wit) if wit is not None else None),
+                           "elements_of_that_order": spec.get(q, 0)}
+        rows[label] = {"holonomy_order": len(G),
+                       "prime_factorisation":
+                           {str(k2): v for k2, v in
+                            sorted(prime_factorisation(len(G)).items())},
+                       "element_order_spectrum":
+                           dict(sorted(spec.items())),
+                       "per_declared_prime": per}
+    # ---- BRG's family theorem, tested where its hypotheses live and where
+    #      they do not.
+    fam = {}
+    single_generates = 0
+    dihedral_at = 0
+    involutive = 0
+    for pi in PERMS:
+        if pi == IDENT_PERM:
+            continue
+        D, _ = wref.defect_measured(pi)
+        dp = D.as_perm()
+        if dp is None:
+            continue
+        o = pord(dp)
+        WD = closure_left([PCARR[pi], dp], sp.NC)
+        isinv = (pord(PCARR[pi]) <= 2)
+        if isinv:
+            involutive += 1
+        if WD is not None and len(WD) == 2 * o:
+            dihedral_at += 1
+        if WD is not None and REF_GROUP["Hol"] is not None \
+                and set(WD) == REF_GROUP["Hol"]:
+            single_generates += 1
+        fam[PERM_NAME[pi]] = {
+            "the_wing_symmetry_is_an_involution": isinv,
+            "the_defect_order": o,
+            "the_order_of_the_group_it_generates_with_the_defect":
+                (len(WD) if WD else None),
+            "twice_the_defect_order": 2 * o,
+            "the_dihedral_order_formula_holds":
+                (WD is not None and len(WD) == 2 * o),
+            "it_generates_the_whole_geometry":
+                (WD is not None and REF_GROUP["Hol"] is not None
+                 and set(WD) == REF_GROUP["Hol"])}
+    computed_live = sorted(live)
+    a4row = TABLES["the_ladder"]["per_instance"].get("A1 target ord = 3", {})
+    anchor("A-BRG-ZOO-A4-ORDER", "BRG committed receipt",
+           "the order of A_4 in BRG's declared group zoo", zoo["A_4"]["order"],
+           a4row.get("defect_subgroup_order"))
+    anchor("A-BRG-ZOO-A4-SPECTRUM", "BRG committed receipt",
+           "the element orders of A_4 in BRG's declared group zoo",
+           zoo["A_4"]["element_orders"],
+           sorted(a4row.get("element_order_spectrum", {})))
+    anchor("A-BRG-ZOO-S3-ORDER", "BRG committed receipt",
+           "the order of S_3 in BRG's declared group zoo", zoo["S_3"]["order"],
+           TABLES["base_declaration"]["wing_symmetry"]["order"])
+    anchor("A-BRG-ZOO-S3-SPECTRUM", "BRG committed receipt",
+           "the element orders of S_3 in BRG's declared group zoo",
+           zoo["S_3"]["element_orders"],
+           TABLES["base_declaration"]["wing_symmetry"][
+               "distinct_element_orders"])
+    anchor("A-BRG-LIVE-PRIMES", "BRG committed receipt",
+           "the primes at which BRG's extended-scope forward census is LIVE",
+           brg_live, computed_live)
+    tab = {"BRG_declared_primes": declared_primes,
+           "BRG_recorded_live_primes": brg_live,
+           "the_primes_live_at_this_base": computed_live,
+           "the_theorem_as_committed":
+               "hom(Z/q, G) is non-trivial if and only if q divides |G| "
+               "(Lagrange one way, Cauchy the other; no dihedral hypothesis)",
+           "cells": cells, "cells_where_divisibility_and_existence_agree":
+               agree,
+           "per_instance": rows,
+           "BRG_family_theorem_hypotheses":
+               brg["tables"]["the_one_law_family"]["statement"],
+           "the_family_theorem_per_wing_symmetry": fam,
+           "wing_symmetries_that_are_involutions": involutive,
+           "wing_symmetries_where_the_dihedral_order_formula_holds":
+               dihedral_at,
+           "single_pairs_generating_the_whole_geometry": single_generates,
+           "of_non_identity_wing_symmetries": len(PERMS) - 1,
+           "instances_declared": len(declared_instances),
+           "instances_with_a_readable_group_order": len(instances),
+           "cells_the_declaration_forces":
+               len(declared_instances) * len(declared_primes),
+           "the_scope_statement":
+               "BRG's coprimality theorem applies UNCHANGED and is measured "
+               "to hold at every cell here; its FAMILY theorem "
+               "|<W,D>| = 2.ord(D) is measured to hold at every INVOLUTIVE "
+               "wing symmetry of this base and is measured NOT to describe "
+               "the geometry, which no single (involution, defect) pair "
+               "generates -- so the family theorem's stated reach is bounded "
+               "to two-wing bases, with this base as the witness that the "
+               "bound is not vacuous",
+           "what_is_NOT_claimed":
+               "this is a GROUP-LEVEL statement about homomorphisms out of "
+               "Z/q; BRG's strengthened standard is untested at three wings, "
+               "and no transport-side match is claimed here"}
+    gate("TB3-BRG-CROSS", "measurement",
+         "THE BRIDGE PRIMES ARE LIVE AT THIS BASE, NATIVELY, AND THE "
+         "COMMITTED THEOREM IS RE-VERIFIED ON GROUPS IT HAS NEVER SEEN.  "
+         "BRG's forward obstruction is order-coprimality and its theorem -- "
+         "hom(Z/q, G) non-trivial iff q divides |G| -- carries no dihedral "
+         "hypothesis.  Here every holonomy order is factored and, at every "
+         "one of BRG's own declared primes, divisibility is gated EQUAL to "
+         "the existence of a non-trivial homomorphism, which is not asserted "
+         "from Cauchy's theorem but WITNESSED: an explicit element of order "
+         "exactly q is exhibited and its order is re-measured.  The primes "
+         "the base makes live are computed and ANCHORED against the primes "
+         "BRG's own receipt records as live at its extended scope.  In the "
+         "other direction BRG's family theorem is measured where its "
+         "hypotheses hold and where they do not: it holds at every "
+         "involutive wing symmetry, and no single (involution, defect) pair "
+         "generates the geometry -- which is what bounds its stated reach to "
+         "two-wing bases.  The `brg-lax` mutant exhibits a witness of the "
+         "wrong order and dies here",
+         cells == len(declared_instances) * len(declared_primes)
+         and len(instances) == len(declared_instances)
+         and agree == cells and computed_live == brg_live
+         and involutive > 0 and dihedral_at == involutive
+         and single_generates == 0, tab)
+    TABLES["brg_cross_section"] = tab
+    return tab
 
 
 # ===========================================================================
@@ -2326,6 +3639,8 @@ def run_a3(Q):
         declared_instances = declared_instances[:-1]
     cent_matches = 0
     norm_matches = 0
+    rival_matches = 0
+    break_the_conjugation = (MUTANT == "norm-lax")
     for label, member, qkind, st in declared_instances:
         psi = psi_vector(next(c for n, c, _ in PSI_DECL if n == member))
         q = Q if qkind == "declared" else tuple(range(NSYS))
@@ -2345,21 +3660,38 @@ def run_a3(Q):
                            for x in G))
         norm = sum(1 for pi in sp.PERMS
                    if G is not None
-                   and all(pcomp(sp.PCARR[pi], pcomp(x, pinv(sp.PCARR[pi])))
+                   and all(pcomp(sp.PCARR[pi],
+                                 pcomp(x, sp.PCARR[pi]
+                                       if break_the_conjugation
+                                       else pinv(sp.PCARR[pi])))
                            in G for x in G))
         drawn = set()
         for k, tabv in pair.items():
             drawn |= set(tabv.values())
         contained = sum(1 for pi in drawn
                         if G is not None and sp.PCARR[pi] in G)
+        wings_in = sum(1 for pi in sp.PERMS
+                       if G is not None and sp.PCARR[pi] in G)
         closes = (esc == 0)
         centralises = (cent == len(sp.PERMS))
         normalises = (norm == len(sp.PERMS))
+        contains = (wings_in == len(sp.PERMS))
+        # THE RIVAL the base cannot tell apart from the refinement.
+        rival = (contains or centralises)
         if centralises == closes:
             cent_matches += 1
         if normalises == closes:
             norm_matches += 1
-        # the telescoping identity, measured on the census itself
+        if rival == closes:
+            rival_matches += 1
+        # the defect multiset: every triangle defect is a product of three
+        # DRAWN maps, so it lies in the six-element wing group; the multiset
+        # over that group is the finest thing the census reports.
+        dm = {}
+        for d, c in defects.items():
+            nm = next((PERM_NAME[pi] for pi in sp.PERMS
+                       if sp.PCARR[pi] == d), "outside-the-wing-group")
+            dm[nm] = dm.get(nm, 0) + c
         rows[label] = {
             "member": member, "completion": qkind,
             "setting": setting_name(st),
@@ -2383,21 +3715,55 @@ def run_a3(Q):
             "elements_normalising_the_level_1_holonomy": norm,
             "drawn_maps_contained_in_the_level_1_group": contained,
             "distinct_drawn_maps": len(drawn),
+            "wing_symmetries_inside_the_level_1_group": wings_in,
+            "the_defect_multiset_over_the_wing_group": dm,
             "the_cocycle_closes": closes,
             "the_group_centralises": centralises,
-            "the_group_normalises": normalises}
+            "the_group_normalises": normalises,
+            "the_group_contains_the_wings": contains,
+            "the_rival_criterion_contains_or_centralises": rival,
+            # EVERY triangle defect is a product of three DRAWN maps.  Where
+            # all the drawn maps already lie in the level-1 group, so does
+            # every triple product: the zero escape count at such an instance
+            # is FORCED BY ALGEBRA and is not a measurement that could have
+            # come out otherwise.
+            "the_zero_escape_count_is_algebraically_forced_here":
+                (contained == len(drawn) and closes),
+            # and where the level-1 group is trivial, or contains the wings,
+            # normalisation cannot fail either.
+            "the_normalisation_verdict_is_forced_here":
+                (contains or (G is not None and len(G) == 1))}
     n = len(rows)
+    escaping = [k for k, r in rows.items() if not r["the_cocycle_closes"]]
+    teeth = len({canon(rows[k]["the_defect_multiset_over_the_wing_group"])
+                 for k in escaping})
     tab = {"instances_declared": len(A3_INSTANCES), "instances_measured": n,
            "per_instance": rows,
            "the_centralizer_criterion_agrees_with_closure_at": cent_matches,
            "the_normaliser_criterion_agrees_with_closure_at": norm_matches,
+           "the_rival_criterion_agrees_with_closure_at": rival_matches,
+           "instances_whose_closure_is_algebraically_forced":
+               sum(1 for r in rows.values()
+                   if r["the_zero_escape_count_is_algebraically_forced_here"]),
+           "instances_whose_normalisation_verdict_is_forced":
+               sum(1 for r in rows.values()
+                   if r["the_normalisation_verdict_is_forced_here"]),
+           "escaping_instances": sorted(escaping),
+           "independent_teeth_among_the_escaping_instances": teeth,
+           "the_escaping_instances_share_a_defect_multiset":
+               (len(escaping) > 1 and teeth == 1),
            "of_instances": n,
            "the_criterion_as_committed":
                "THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE "
                "CHART-GENERATING GROUP CENTRALISES THE LEVEL-1 HOLONOMY",
            "the_computed_refinement":
                "THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE "
-               "CHART-GENERATING GROUP NORMALISES THE LEVEL-1 HOLONOMY"}
+               "CHART-GENERATING GROUP NORMALISES THE LEVEL-1 HOLONOMY",
+           "the_rival_the_base_cannot_separate":
+               "THE COCYCLE CLOSES AT AN ATLAS IF AND ONLY IF THE "
+               "CHART-GENERATING GROUP CONTAINS OR CENTRALISES THE LEVEL-1 "
+               "HOLONOMY -- extensionally identical to the refinement at "
+               "every instance this base offers"}
     verdict = "CONFIRMED" if (n == len(A3_INSTANCES)
                               and all(r["the_two_census_routes_agree"]
                                       for r in rows.values())) else "REFUTED"
@@ -2420,24 +3786,138 @@ def run_a3(Q):
          and all(r["the_two_census_routes_agree"] for r in rows.values())
          and all(r["the_two_group_routes_agree"] for r in rows.values()),
          tab)
+    re_cent = sum(1 for r in rows.values()
+                  if r["the_group_centralises"] == r["the_cocycle_closes"])
+    re_norm = sum(1 for r in rows.values()
+                  if r["the_group_normalises"] == r["the_cocycle_closes"])
+    re_rival = sum(1 for r in rows.values()
+                   if r["the_rival_criterion_contains_or_centralises"]
+                   == r["the_cocycle_closes"])
     gate("TB3-A3-CRITERION", "measurement",
          "THE CENTRALIZER CRITERION, RE-TESTED WHERE THE TRIANGLES ARE NOT "
-         "ENGINEERED.  COC gated the criterion at two atlases it built; this "
-         "unit measures it at five instances of a base that was not designed "
-         "around it, and reports BOTH the committed biconditional and a "
-         "computed refinement -- normalises in place of centralises -- with "
-         "their agreement counts against the measured closure.  The census "
-         "has TEETH in both directions: it is measured to find escapes at "
-         "some instances and none at others, so a zero escape count is a "
-         "measurement and not a property of the instrument.  This gate "
-         "requires the census to be non-degenerate -- at least one instance "
-         "closing and at least one escaping -- and requires the two "
-         "criteria's agreement counts to be computed from the same rows",
+         "ENGINEERED -- AND THE REFINEMENT REPORTED AT EXTENSIONAL HONESTY.  "
+         "COC gated the criterion at two atlases it built; this unit "
+         "measures it at five instances of a base that was not designed "
+         "around it.  THREE criteria are carried, not one: the committed "
+         "centraliser form, the normaliser refinement, and the RIVAL "
+         "'contains or centralises' -- and each agreement count is "
+         "RE-DERIVED INSIDE THIS GATE from the per-instance booleans and "
+         "gated against the accumulated one, so a dropped or "
+         "double-counted row dies here (the delivered version's last two "
+         "clauses were true for every possible input and gated nothing).  "
+         "Two SELF-TESTS of the group predicates are gated with them: "
+         "centralising must imply normalising at every instance, and the "
+         "normaliser count must never fall below the centraliser count -- "
+         "both true of a correct conjugation test and false of a broken "
+         "one.  The `norm-lax` mutant conjugates by P on both sides instead "
+         "of by P and P^-1 and dies on those clauses.  The census's TEETH "
+         "are counted honestly: the escaping instances' full defect "
+         "multisets over the wing group are compared, and the number of "
+         "INDEPENDENT teeth is what is reported, not the number of rows",
          any(r["the_cocycle_closes"] for r in rows.values())
          and any(not r["the_cocycle_closes"] for r in rows.values())
-         and cent_matches <= n and norm_matches <= n, tab)
+         and re_cent == cent_matches and re_norm == norm_matches
+         and re_rival == rival_matches
+         and all(not r["the_group_centralises"] or r["the_group_normalises"]
+                 for r in rows.values())
+         and all(r["elements_normalising_the_level_1_holonomy"]
+                 >= r["elements_centralising_the_level_1_holonomy"]
+                 for r in rows.values())
+         and teeth >= 1, tab)
     TABLES["a3_triangles"] = tab
     FINDINGS["a3_verdict"] = "TB3-A3-" + verdict
+    return tab
+
+
+# The declared scope of the discriminating hunt: the reference preparation at
+# EVERY declared setting, and every other member at one setting of each
+# measured stabiliser type.  Declared here as data.
+HUNT_SETTINGS = (("R0", "R0", "R0"), ("R0", "R0", "R1"), ("R0", "R1", "R2"))
+
+
+def run_a3_hunt(Q):
+    """THE HUNT FOR A DISCRIMINATING INSTANCE.  The refinement -- normalises
+    in place of centralises -- is only a REFINEMENT if some atlas normalises
+    WITHOUT containing and WITHOUT centralising.  Nothing in the five
+    declared A3 instances is of that kind, so the criterion is hunted for
+    across a much larger declared scope, and what the scope contains is
+    reported as a profile space rather than as a verdict."""
+    prog("A3: the discriminating-instance hunt")
+    sp = species(3)
+    break_the_conjugation = (MUTANT == "norm-lax")
+    scope = [(PSI_REFERENCE, st) for st in SETTINGS]
+    for nm, _c, _r in PSI_DECL:
+        if nm == PSI_REFERENCE:
+            continue
+        for st in HUNT_SETTINGS:
+            scope.append((nm, st))
+    prof = Counter()
+    disc = 0
+    unreadable = 0
+    selftest_ok = 0
+    measured = 0
+    for nm, st in scope:
+        psi = psi_vector(dict(next(c for n, c, _ in PSI_DECL if n == nm)))
+        o, G, links, cord = _order_at(sp, psi, Q, st)
+        if G is None:
+            unreadable += 1
+            prof["unreadable-holonomy"] += 1
+            continue
+        measured += 1
+        cent = sum(1 for pi in PERMS
+                   if all(pcomp(PCARR[pi], x) == pcomp(x, PCARR[pi])
+                          for x in G))
+        norm = sum(1 for pi in PERMS
+                   if all(pcomp(PCARR[pi],
+                                pcomp(x, PCARR[pi] if break_the_conjugation
+                                      else pinv(PCARR[pi]))) in G
+                          for x in G))
+        contains = all(PCARR[pi] in G for pi in PERMS)
+        if norm >= cent and (cent < len(PERMS) or norm == len(PERMS)):
+            selftest_ok += 1
+        prof[canon([cent, norm, contains, len(G)])] += 1
+        if norm == len(PERMS) and not contains and cent != len(PERMS):
+            disc += 1
+    tab = {"declared_hunt_scope":
+               "the reference preparation at every declared setting, and "
+               "every other declared member at one setting of each measured "
+               "stabiliser type",
+           "instances_the_declaration_forces":
+               len(SETTINGS) + (len(PSI_ORDER) - 1) * len(HUNT_SETTINGS),
+           "instances_swept": len(scope),
+           "instances_with_a_readable_holonomy": measured,
+           "instances_whose_holonomy_is_not_a_permutation_group": unreadable,
+           "the_profile_space_cent_norm_contains_order":
+               {k: v for k, v in sorted(prof.items())},
+           "discriminating_instances_normalising_without_containing_or_"
+           "centralising": disc,
+           "the_group_predicate_self_test_passes_at": selftest_ok,
+           "the_measured_reading":
+               "on this base 'normalises' is extensionally "
+               "'contains-or-centralises': every instance that normalises "
+               "either contains the wing group or has a trivial holonomy, "
+               "and no instance separates the refinement from the rival"}
+    gate("TB3-A3-HUNT", "measurement",
+         "THE REFINEMENT IS HUNTED FOR A DISCRIMINATING INSTANCE, AND THE "
+         "RESULT IS REPORTED AS A PROFILE SPACE.  A criterion that is never "
+         "satisfied except where a stronger one already is has not been "
+         "SEPARATED from that stronger one, whatever its agreement count.  "
+         "The hunt sweeps a declared scope -- the reference preparation at "
+         "every declared setting, and every other member at one setting of "
+         "each measured stabiliser type -- and records, per instance, the "
+         "quadruple (centralising elements, normalising elements, whether "
+         "the wing group is CONTAINED, holonomy order).  The gate requires "
+         "the sweep to be the declared size, requires the group-predicate "
+         "self-test to pass at every readable instance (a group is "
+         "normalised by anything that centralises it, and the normaliser "
+         "count never falls below the centraliser count), and records the "
+         "count of discriminating instances -- whatever it is.  The "
+         "`norm-lax` mutant breaks the conjugation and dies on the "
+         "self-test",
+         len(scope) == len(SETTINGS)
+         + (len(PSI_ORDER) - 1) * len(HUNT_SETTINGS)
+         and selftest_ok == measured and measured > 0, tab)
+    TABLES["a3_hunt"] = tab
     return tab
 
 
@@ -2563,6 +4043,9 @@ def run_a4(Q):
         if same_shadow and same_adm and differ:
             witnesses.append(row)
         prows.append(row)
+    empty_the_witnesses = (MUTANT == "qual-free")
+    if empty_the_witnesses:
+        witnesses = []
     tab = {"per_member": per, "E_cells": cells, "E_law_deviations": dev,
            "the_class_comparison": cmp_tab,
            "pair_census_size_the_declaration_forces": forced_pairs,
@@ -2573,7 +4056,9 @@ def run_a4(Q):
            "witness_count": len(witnesses)}
     verdict = "CONFIRMED" if (dev == 0 and len(prows) == forced_pairs) \
         else "REFUTED"
-    qual = ("-AT-FIXED-BORN-SHADOW" if witnesses else "")
+    qual = ("-AT-FIXED-BORN-SHADOW"
+            if (witnesses or empty_the_witnesses) else "")
+    re_qual = ("-AT-FIXED-BORN-SHADOW" if tab["witness_count"] else "")
     gate("TB3-A4", "derivation",
          "A4, THE psi-FAMILY, WITH ITS VERDICT AND ITS COMPUTED QUALIFIER "
          "DERIVED HERE.  The state factor E_P(psi) = delta_P(H(psi)) is "
@@ -2588,12 +4073,118 @@ def run_a4(Q):
          "when the census measures a pair that shares a Born shadow, agrees "
          "cell for cell on its admission table, and still carries a common "
          "NAMED loop whose gauge-invariant Born holonomy differs -- three "
-         "measured conditions, all required",
+         "measured conditions, all required.  THE QUALIFIER IS GATED, not "
+         "merely described: it is rebuilt here from the recorded witness "
+         "count and gated against the emitted string, and the emitted axis "
+         "verdict is gated to end in it.  The `qual-free` mutant appends the "
+         "qualifier unconditionally while emptying the witness census and "
+         "dies here",
          dev == 0 and cells == len(PSI_ORDER) * len(PERMS)
-         and len(prows) == forced_pairs, tab)
+         and len(prows) == forced_pairs and qual == re_qual
+         and ("TB3-A4-" + verdict + qual).endswith(re_qual), tab)
     TABLES["a4_psi_family"] = tab
     FINDINGS["a4_verdict"] = "TB3-A4-" + verdict + qual
+    run_a4_stabiliser(sp, per, worlds)
     return tab, worlds
+
+
+def run_a4_stabiliser(sp, per, worlds):
+    """THE CONTROL THE DELIVERED UNIT HAD AND DID NOT READ.  The GHZ/W
+    contrast is confounded with the Born-shadow stabiliser by construction --
+    section 2.5 discloses that no rational W state can carry the full
+    stabiliser -- so the contrast is re-read AT MATCHED STABILISER, where the
+    family contains a BISEPARABLE member.  And psi-W4's departure from the
+    permutation class is measured for what it is, not for what it resembles."""
+    prog("A4: the stabiliser control and the unreadable class")
+    bystab = {}
+    for nm in PSI_ORDER:
+        r = per[nm]
+        bystab.setdefault(str(r["born_shadow_stabiliser_order"]), []).append(
+            {"member": nm, "class": r["entanglement_class"],
+             "holonomy_order": r["holonomy_order"],
+             "wing_stabiliser_order": r["wing_stabiliser_order"]})
+    matched = max(bystab, key=lambda k: (len(bystab[k]), -int(k)))
+    grp = bystab[matched]
+    byclass = {}
+    for x in grp:
+        byclass.setdefault(x["class"], set()).add(canon(x["holonomy_order"]))
+    overlap = sum(1 for a in byclass for b in byclass
+                  if a < b and byclass[a] & byclass[b])
+    multi = sum(1 for c in byclass if len(byclass[c]) > 1)
+    swap = (MUTANT == "psib-lax")
+    if swap:
+        dep = ("THE-CONTRAST-IS-CLEAN" if (overlap or multi)
+               else "THE-CONTRAST-IS-CONFOUNDED-WITH-THE-STABILISER")
+    else:
+        dep = ("THE-CONTRAST-IS-CONFOUNDED-WITH-THE-STABILISER"
+               if (overlap or multi) else "THE-CONTRAST-IS-CLEAN")
+    # the top stabiliser class, for contrast
+    top = max(int(k) for k in bystab)
+    topset = {canon(x["holonomy_order"]) for x in bystab[str(top)]}
+    restset = {canon(x["holonomy_order"]) for k in bystab if int(k) != top
+               for x in bystab[k]}
+    # psi-W4's unreadable generators, measured for their actual class
+    w4 = worlds["psi-W4"]
+    unread = [(nm, g) for nm, g, _p in w4[3]["gens_obj"]
+              if g.as_perm() is None]
+    mono = sum(1 for _nm, g in unread
+               if all(len([1 for _i, v in c.items() if v != 0]) == 1
+                      for c in g.cols))
+    signed = sum(1 for _nm, g in unread if g.as_signed_perm() is not None)
+    orth = sum(1 for _nm, g in unread if g.is_orthogonal())
+    invol = sum(1 for _nm, g in unread
+                if (g @ g).key() == Mat.ident(sp.NC).key())
+    supp = Counter()
+    for _nm, g in unread:
+        for c in g.cols:
+            supp[len([1 for _i, v in c.items() if v != 0])] += 1
+    tab = {"members_by_born_shadow_stabiliser_order": bystab,
+           "the_matched_stabiliser_class": matched,
+           "members_at_the_matched_stabiliser": grp,
+           "holonomy_orders_by_entanglement_class_at_that_stabiliser":
+               {k: sorted(v) for k, v in byclass.items()},
+           "entanglement_classes_sharing_a_holonomy_order": overlap,
+           "entanglement_classes_carrying_more_than_one_holonomy_order":
+               multi,
+           "the_reading": dep,
+           "the_top_stabiliser_order": top,
+           "holonomy_orders_at_the_top_stabiliser": sorted(topset),
+           "holonomy_orders_below_it": sorted(restset),
+           "the_only_disjoint_split_is_by_stabiliser":
+               (not (topset & restset)),
+           "psi_W4_unreadable_generators": len(unread),
+           "of_which_monomial": mono,
+           "of_which_signed_permutations": signed,
+           "of_which_exactly_orthogonal": orth,
+           "of_which_are_involutions": invol,
+           "their_column_support_census": dict(sorted(supp.items()))}
+    re_dep = ("THE-CONTRAST-IS-CONFOUNDED-WITH-THE-STABILISER"
+              if (tab["entanglement_classes_sharing_a_holonomy_order"]
+                  or tab[
+                      "entanglement_classes_carrying_more_than_one_holonomy_"
+                      "order"]) else "THE-CONTRAST-IS-CLEAN")
+    gate("TB3-A4-STABILISER", "derivation",
+         "THE GHZ/W CONTRAST IS RE-READ AT MATCHED STABILISER, AND THE "
+         "READING IS DERIVED HERE FROM THE MEASURED COUNTS.  The family is "
+         "partitioned by MEASURED Born-shadow stabiliser order; inside the "
+         "largest class -- which contains a BISEPARABLE member as well as "
+         "W-class ones -- the holonomy orders are grouped by entanglement "
+         "class, and the reading is CONFOUNDED exactly when two classes "
+         "share a holonomy order or one class carries more than one, CLEAN "
+         "otherwise.  Both branches are live and the branch is computed, "
+         "never typed; the `psib-lax` mutant swaps the branch order and dies "
+         "here.  Beside it, psi-W4's departure from the permutation class is "
+         "measured rather than named by analogy: every unreadable generator "
+         "is tested for being MONOMIAL, for being a signed permutation, for "
+         "exact orthogonality and for being an involution, and the column "
+         "support census is printed -- the class actually left is recorded, "
+         "not the class a committed unit left.  The gate requires the "
+         "unreadable set to be non-empty and exactly orthogonal, so the "
+         "measurement is neither vacuous nor about a numerical artifact",
+         dep == re_dep and len(unread) > 0 and orth == len(unread)
+         and len(grp) > 1, tab)
+    TABLES["a4_stabiliser"] = tab
+    return tab
 
 
 # ===========================================================================
@@ -2915,9 +4506,23 @@ def run_positive_control(ext):
     # -- twice the commutator where the identifications are drawn, and ONE
     # where the equivariant completion makes the rule refuse them.
     predicted_ok = 0
+    receipts_disagree = 0
     for o in sorted(rows):
         pred = (psi_rows[o]["the_GEN_law_predicts_a_group_of_order"]
                 if o in psi_rows else 2 * o)
+        # BOTH committed readings are printed side by side.  PSI's receipt
+        # records the order its own transport measured; XBA's records the
+        # order its committed COROLLARY |<W,D>| = 2.ord(D) predicts.  At
+        # ord = 1 THEY DISAGREE -- XBA's corollary says 2, PSI measured 1,
+        # because the identifications are refused there -- and this unit
+        # says so instead of reading only the one it reproduces.
+        xba_pred = grp.get(o)
+        rows[o]["the_order_PSI_measured_and_this_row_is_gated_against"] = pred
+        rows[o]["the_order_XBA_s_corollary_2_ord_D_predicts"] = xba_pred
+        rows[o]["the_two_committed_receipts_agree_at_this_order"] = \
+            (xba_pred is None or xba_pred == pred)
+        if xba_pred is not None and xba_pred != pred:
+            receipts_disagree += 1
         rows[o]["the_law_predicts_a_group_of_order"] = pred
         rows[o]["the_prediction_is_met"] = \
             (rows[o]["holonomy_group_order"] == pred)
@@ -2952,6 +4557,16 @@ def run_positive_control(ext):
            "defect_orders_the_two_wing_species_realises": sorted(rows),
            "completions_reproducing_the_committed_link_count":
                sorted(reproducing),
+           "defect_orders_where_the_two_committed_receipts_disagree":
+               receipts_disagree,
+           "what_the_disagreement_is":
+               "at ord(D) = 1 XBA's committed corollary |<W,D>| = 2.ord(D) "
+               "predicts 2 while PSI's committed transport measured 1: the "
+               "equivariant completion makes the rule REFUSE the "
+               "identifications, so the geometry collapses below the "
+               "corollary.  The dihedral law therefore already failed at TWO "
+               "wings at this order, and this row is gated against PSI's "
+               "measured value, not against the corollary",
            "the_anchor_row_defect_order": main_ord,
            "the_reason_only_these_orders_occur":
                "at two wings the system pair has four labels, the wing "
@@ -3001,9 +4616,16 @@ def run_positive_control(ext):
          "transport-native instrument.  The walk census is taken by TWO "
          "independent routes, an enumerator that builds every walk and a "
          "transfer recursion that counts without building one, and both are "
-         "anchored.  This is the control that gives the three-wing "
-         "measurement its teeth: the code under test is the code that "
-         "reproduces the committed base",
+         "anchored.  BOTH COMMITTED READINGS OF THE GROUP-ORDER LAW ARE "
+         "PRINTED PER ROW -- the order PSI's transport MEASURED and the "
+         "order XBA's corollary 2.ord(D) PREDICTS -- and the count of orders "
+         "at which the two committed receipts DISAGREE is measured, not "
+         "hidden behind the one this control reproduces.  This is the "
+         "control that gives the three-wing measurement its teeth: the code "
+         "under test is the code that reproduces the committed base.  What "
+         "it does NOT reach is stated in the per-axis map: at two wings the "
+         "symmetry group is Z/2, so there are no non-involution cells, two "
+         "frames rather than six, and no multipartite preparations at all",
          ok, tab)
     TABLES["positive_control"] = tab
     return tab
@@ -3128,26 +4750,107 @@ def run_clause_census(Q):
             "links_drawn_without_it": sum(len(v) for v in a.values()),
             "links_drawn_with_it": sum(len(v) for v in base.values())}
     lb = [d for d in rows if rows[d]["cells_whose_drawn_table_changes"] > 0]
+    # CLAUSE 1 IS NOT "MEASURED INERT": IT IS ANALYTICALLY FORCED at this
+    # quantifier.  The predicate ranges over the wing symmetries alone, and
+    # every one of them fixes the all-zero configuration -- measured here --
+    # so the j0 filter can never reject a candidate, at this or at ANY base
+    # of this construction.  Clauses 3 and 4 are contingently inert; clause 1
+    # could not have come out otherwise, and RUNBOOK section 14's #208
+    # addendum makes that a DISCLOSURE rather than a measurement.
+    wings_fixing_j0 = sum(1 for pi in sp.PERMS
+                          if sp.PCARR[pi][sp.J0] == sp.J0)
+    # ...and the inertness is measured at SIX declared instances, not one.
+    scope = (("psi-G1", ("R0", "R0", "R0")), ("psi-W1", ("R0", "R0", "R0")),
+             ("psi-W3", ("R0", "R0", "R0")), ("psi-G1", ("R0", "R0", "R1")),
+             ("psi-G1", ("R0", "R1", "R2")), ("psi-P", ("R0", "R0", "R0")))
+    sweep = {}
+    for nm, st in scope:
+        pv = psi_vector(dict(next(c for n, c, _ in PSI_DECL if n == nm)))
+        ww = World(sp, pv, Q, st)
+        bb = ww.admission()
+
+        def drop_at(drop, ww=ww, bb=bb):
+            out = 0
+            for t in sp.CKPTS:
+                for rule in ("FULL", "REAL"):
+                    tabx = {}
+                    for X in sp.FRAMES:
+                        for Y in sp.FRAMES:
+                            if X == Y:
+                                continue
+                            adm = []
+                            for pi in sp.PERMS:
+                                spm = sp.PCARR[pi]
+                                if drop != 1 and spm[sp.J0] != sp.J0:
+                                    continue
+                                if drop != 2:
+                                    if rule == "FULL":
+                                        if sorted(push_bornkey(k, spm)
+                                                  for k in ww._fk[X]) != \
+                                                sorted(ww._fk[Y]):
+                                            continue
+                                    else:
+                                        if sorted(push_realkey(k, spm)
+                                                  for k in ww._rk[X]) != \
+                                                sorted(ww._rk[Y]):
+                                            continue
+                                if drop != 3:
+                                    if frozenset(spm[i] for i in
+                                                 ww.proc[X][1][t]) != \
+                                            ww.proc[Y][1][t]:
+                                        continue
+                                if drop != 4:
+                                    if push_state(ww.proc[X][0][t], spm) != \
+                                            ww.proc[Y][0][t]:
+                                        continue
+                                adm.append(pi)
+                            if len(adm) == 1:
+                                tabx[(X, Y)] = adm[0]
+                    if tabx != bb[(t, rule)]:
+                        out += 1
+            return out
+        sweep["%s @ %s" % (nm, setting_name(st))] = {
+            "links": sum(len(v) for v in bb.values()),
+            "cells_that_move_per_clause": {str(d): drop_at(d)
+                                           for d in (1, 2, 3, 4)}}
+    generalises = all(v["cells_that_move_per_clause"][d] == 0
+                      for v in sweep.values() for d in ("1", "3", "4"))
     tab = {"clauses": {"1": "the j0 filter",
                        "2": "the leg list matched order-free as a multiset "
                             "of canonical Born leg keys",
                        "3": "the occupied-set clause",
                        "4": "the exact-law clause"},
            "per_clause": rows, "load_bearing_clauses": sorted(lb),
-           "clauses_measured_inert": sorted(set(rows) - set(lb))}
+           "clauses_measured_inert": sorted(set(rows) - set(lb)),
+           "wing_symmetries_fixing_the_initial_configuration":
+               wings_fixing_j0,
+           "of_wing_symmetries": len(sp.PERMS),
+           "clause_1_is_analytically_forced_at_this_quantifier":
+               (wings_fixing_j0 == len(sp.PERMS)),
+           "clauses_that_are_contingently_inert": ["3", "4"],
+           "the_declared_instance_sweep": sweep,
+           "instances_swept": len(sweep),
+           "the_inertness_generalises_over_the_sweep": generalises}
     gate("TB3-CLAUSE-CENSUS", "measurement",
-         "WHICH CLAUSES DECIDE ANYTHING AT THIS BASE, MEASURED.  Each clause "
-         "of the committed four-clause predicate is dropped in turn and the "
-         "admission table recomputed; the cells whose drawn table moves are "
-         "counted.  The gate requires at least one clause to be measured "
-         "load-bearing -- a predicate none of whose clauses does anything "
-         "decides nothing -- and it is stated as a measurement because the "
-         "answer at THIS base is that only ONE of the four moves the table: "
-         "the others' content is implied by it here, which is a fact about "
-         "this base and not a defect of the predicate.  The mutant that "
-         "drops a clause is targeted at the clause measured load-bearing, so "
-         "the falsifier is one that can fire",
-         bool(lb), tab)
+         "WHICH CLAUSES DECIDE ANYTHING AT THIS BASE, MEASURED -- AND ONE OF "
+         "THEM RECLASSIFIED.  Each clause of the committed four-clause "
+         "predicate is dropped in turn and the admission table recomputed.  "
+         "CLAUSE 1 IS NOT MEASURED INERT: it is ANALYTICALLY FORCED at this "
+         "quantifier, because the predicate ranges over the wing symmetries "
+         "alone and every one of them is measured to FIX the initial "
+         "configuration -- so the j0 filter can never reject a candidate at "
+         "any base of this construction, and its zero could not have come "
+         "out otherwise (RUNBOOK section 14, #208: that is a disclosure, not "
+         "a measurement).  Clauses 3 and 4 are contingently inert, and their "
+         "inertness is measured at SIX declared instances rather than "
+         "asserted from one.  The gate requires at least one clause to be "
+         "measured load-bearing -- a predicate none of whose clauses does "
+         "anything decides nothing -- and requires the forcedness of clause "
+         "1 to be measured rather than assumed.  The mutant that drops a "
+         "clause is targeted at the clause measured load-bearing, so the "
+         "falsifier is one that can fire",
+         bool(lb) and wings_fixing_j0 == len(sp.PERMS)
+         and len(sweep) == len(scope), tab)
     TABLES["clause_census"] = tab
 
 
@@ -3276,6 +4979,152 @@ def run_switching_selftest(Q):
     TABLES["switching_selftest"] = tab
 
 
+def run_holonomy_routes():
+    """WHAT THE HOLONOMY ROUTES DO AND DO NOT TEST, MEASURED.
+
+    Routes A and B share the graph and every link matrix and differ only in
+    spanning tree and closure side; that <S_A> = <S_B> is the spanning-tree
+    independence THEOREM, so their agreement is an implementation
+    cross-check, not a second measurement -- and the DROP PROBE measures
+    exactly how much it can catch.  Route C, the orbit-stabiliser chain, is
+    the genuinely independent one: it never builds the group."""
+    prog("the holonomy routes, measured")
+    sp = species(3)
+    rows = {}
+    inst = [("the declared reference completion", REF_GROUP)]
+    for k in sorted(A1_GROUPS):
+        inst.append(("A1 target ord = %d" % k, A1_GROUPS[k]))
+    unreadable_routes = 0
+    for label, obj in inst:
+        gens = obj["gens"]
+        # A generating set with an unreadable member is not a permutation
+        # generating set: both routes are then undefined and the gate says so
+        # rather than the run dying.
+        if any(g is None for g in gens):
+            unreadable_routes += 1
+            rows[label] = {"route_A_order": None, "route_C_order": None,
+                           "the_independent_route_agrees": False,
+                           "generators": len(gens),
+                           "distinct_generators": None,
+                           "the_generating_set_is_readable": False,
+                           "the_orbit_stabiliser_chain": None}
+            continue
+        G = closure_left(gens, sp.NC)
+        c, chain = group_order_schreier(gens, sp.NC)
+        rows[label] = {"route_A_order": (len(G) if G else None),
+                       "route_C_order": c,
+                       "the_independent_route_agrees":
+                           (G is not None and c == len(G)),
+                       "generators": len(gens),
+                       "distinct_generators": len(set(gens)),
+                       "the_generating_set_is_readable": True,
+                       "the_orbit_stabiliser_chain": chain}
+    # THE DROP PROBE: how much does a route pair blind to the generating set
+    # actually catch?  One generator is dropped at a time and the group
+    # recomputed; the count of drops that MOVE the order is the measured
+    # power of any test that compares two readings of the same generating
+    # set.  A redundant generating set is caught by NOTHING here, and the
+    # number is printed rather than the claim.
+    gens = REF_GROUP["gens"]
+    moved = 0
+    if not any(g is None for g in gens):
+        full = closure_left(gens, sp.NC)
+        for i in range(len(gens)):
+            sub = closure_left(gens[:i] + gens[i + 1:], sp.NC)
+            if sub is None or full is None or len(sub) != len(full):
+                moved += 1
+    a1 = TABLES["a1_ord_sweep"]["per_target"]
+    cot = sum(1 for r in a1.values() if r["different_cotrees"])
+    tab = {"per_instance": rows,
+           "instances_whose_generating_set_is_unreadable": unreadable_routes,
+           "generator_drops_probed": len(gens),
+           "generator_drops_that_move_the_group": moved,
+           "the_measured_power_of_a_generating_set_comparison":
+               "%d of %d single-generator drops move the group order" %
+               (moved, len(gens)),
+           "targets_whose_two_spanning_trees_have_different_cotrees": cot,
+           "of_targets": len(a1),
+           "what_route_B_is":
+               "an implementation cross-check on route A: a different "
+               "spanning tree and a different closure side over THE SAME "
+               "graph and THE SAME link matrices, agreeing by the "
+               "spanning-tree independence theorem",
+           "what_route_C_is":
+               "the genuinely independent route: an orbit-stabiliser chain "
+               "over Schreier generators that never builds the group and "
+               "produces no group element"}
+    gate("TB3-HOLONOMY-ROUTES", "measurement",
+         "THE HOLONOMY GROUP HAS A GENUINELY INDEPENDENT ROUTE, AND THE "
+         "OTHER PAIR IS DESCRIBED AS WHAT IT IS.  Routes A and B share the "
+         "graph and every link matrix and differ only in spanning tree and "
+         "closure side; <S_A> = <S_B> is the spanning-tree independence "
+         "THEOREM, so their agreement is an implementation cross-check.  "
+         "ROUTE C is an orbit-stabiliser chain over Schreier generators that "
+         "NEVER BUILDS THE GROUP -- it produces no group element and shares "
+         "no intermediate value with either closure -- and its order is "
+         "gated equal to route A's at every instance (RUNBOOK section 13, "
+         "#234).  WHAT FALSIFIES THIS GATE IS REPORTED AS MEASURED, NOT AS "
+         "INTENDED: the Schreier generating sets at these four instances are "
+         "redundant enough that dropping one generator per level of the chain "
+         "leaves their orders unchanged, so the `schreier-lax` mutant that "
+         "does so dies at the setting sweep's own route comparison rather "
+         "than here; the mutants measured to die HERE are the ones that "
+         "destroy a generating set or a link matrix -- `anchor-record`, "
+         "`legkey-lax`, `readtime-conflate`.  Two further facts are MEASURED "
+         "rather than claimed: how many single-generator drops a "
+         "generating-set comparison can catch, and at how many targets the "
+         "two spanning trees actually have different cotrees -- the "
+         "delivered unit stated the latter unscoped and it is FALSE at one "
+         "target, which is why the count is printed and not the claim",
+         all(r["the_independent_route_agrees"] for r in rows.values())
+         and len(gens) > 0, tab)
+    TABLES["holonomy_routes"] = tab
+    return tab
+
+
+def run_anchor_provenance():
+    """THE ANCHOR SPLIT, COMPUTED.  610-odd anchors is not 610-odd external
+    checks: most of them compare a pinned matrix against the constructor in
+    this same file.  The split is computed from a DECLARED provenance
+    vocabulary and printed."""
+    prog("anchor provenance")
+    kinds = Counter()
+    unknown = []
+    for a in ANCHORS:
+        k = ANCHOR_PROVENANCE.get(a["source"])
+        if k is None:
+            unknown.append(a["source"])
+            continue
+        kinds[k] += 1
+    by_source = Counter(a["source"] for a in ANCHORS)
+    tab = {"declared_provenance_vocabulary": ANCHOR_PROVENANCE,
+           "anchors": len(ANCHORS),
+           "self_anchors": kinds["self"],
+           "external_anchors": kinds["external"],
+           "anchors_with_an_undeclared_provenance": sorted(set(unknown)),
+           "per_source": dict(sorted(by_source.items())),
+           "what_a_self_anchor_buys":
+               "that no constructor drifts from the printed declaration; it "
+               "establishes no provenance, because both sides live in this "
+               "file"}
+    gate("TB3-ANCHOR-PROVENANCE", "measurement",
+         "EVERY ANCHOR'S PROVENANCE IS DECLARED AND THE SPLIT IS COMPUTED.  "
+         "An anchor is EXTERNAL when the side this unit computes comes from "
+         "bytes outside this file -- a committed receipt's values, or the "
+         "SHA-256 of its bytes -- and a SELF-ANCHOR when both sides live "
+         "here.  The provenance vocabulary is declared as data; every "
+         "anchor's source string is looked up in it, the two counts are "
+         "computed and gated to exhaust the anchor set, and the set of "
+         "anchors with an UNDECLARED provenance is gated EMPTY.  The "
+         "`selflabel-lax` mutant restores the delivered unit's ambiguous "
+         "label on the rotation anchors -- which invited the aggregate to be "
+         "read as external checks -- and dies here",
+         not unknown and kinds["self"] + kinds["external"] == len(ANCHORS)
+         and kinds["self"] > 0 and kinds["external"] > 0, tab)
+    TABLES["anchor_provenance"] = tab
+    return tab
+
+
 # ===========================================================================
 # 11.  CELL COMPLETENESS, DECLARATION ORDER, EXACTNESS, EXEMPTION SWEEP.
 # ===========================================================================
@@ -3291,7 +5140,16 @@ def run_cell_completeness():
         "ord_census_size": _factorial(NSYS - 1),
         "survival_candidates": len(SURVIVAL_CANDIDATES),
         "completion_self_anchors": len(PSI_ORDER) * NSYS * NSYS,
-        "wing_conjugation_cells": len(PERMS) * NW * len(ROT_ORDER)}
+        "wing_conjugation_cells": len(PERMS) * NW * len(ROT_ORDER),
+        "a1_setting_scope_cells":
+            len(A1_SETTING_SCOPE) * len(A1_TARGET_RULE),
+        "profile_probe_sample": PROFILE_SAMPLE_N,
+        "hunt_instances":
+            len(SETTINGS) + (len(PSI_ORDER) - 1) * len(HUNT_SETTINGS),
+        "ladder_instances": 1 + len(A1_TARGET_RULE),
+        "brg_prime_cells": (1 + len(A1_TARGET_RULE))
+            * len(TABLES["brg_cross_section"]["BRG_declared_primes"]),
+        "clause_census_instances": 6}
     measured = {
         "setting_checkpoint_rule_cells":
             TABLES["a5_graph"]["settings_censused"] * len(CKPTS) * 2,
@@ -3305,7 +5163,15 @@ def run_cell_completeness():
         "completion_self_anchors":
             TABLES["psi_family"]["completion_self_anchors"],
         "wing_conjugation_cells":
-            TABLES["base_declaration"]["wing_symmetry"]["conjugation_cells"]}
+            TABLES["base_declaration"]["wing_symmetry"]["conjugation_cells"],
+        "a1_setting_scope_cells":
+            TABLES["a1_setting_scope"]["cells_measured"],
+        "profile_probe_sample":
+            TABLES["a1_mechanism"]["profile_sample_size"],
+        "hunt_instances": TABLES["a3_hunt"]["instances_swept"],
+        "ladder_instances": len(TABLES["the_ladder"]["per_instance"]),
+        "brg_prime_cells": TABLES["brg_cross_section"]["cells"],
+        "clause_census_instances": TABLES["clause_census"]["instances_swept"]}
     bad = sorted(k for k in forced if forced[k] != measured[k])
     gate("TB3-CELLS", "derivation",
          "CELL COMPLETENESS.  Every census size in this unit is COMPUTED "
@@ -3313,7 +5179,7 @@ def run_cell_completeness():
          "evaluated here -- and gated against the size the corresponding "
          "table actually reports.  A census that silently drops a cell, a "
          "target, an instance, a pair or an anchor moves one side of a "
-         "comparison and not the other, and dies here.  Nine independent "
+         "comparison and not the other, and dies here.  Fifteen independent "
          "cell counts are gated, each against its own denominator",
          not bad, {"forced": forced, "measured": measured,
                    "mismatching": bad})
@@ -3454,10 +5320,14 @@ def run_verdict():
     rederived = ("TB3-BASE-ESTABLISHED" if len(have) == 5
                  else "TB3-BLOCKED-AT-a-missing-axis")
     invocab = any(v.startswith(x) for x in PREREGISTERED_UNIT)
+    # EVERY axis verdict, the two that carry qualifiers included: the
+    # delivered version checked three of five and left exactly the two whose
+    # strings are built with a computed qualifier outside the check.
     axis_vocab = all(
         any(("TB3-" + a.split("_")[0].upper() + "-" + x) in
             (FINDINGS.get(a) or "") for x in PREREGISTERED_AXIS)
-        for a in ("a1_verdict", "a3_verdict", "a5_verdict"))
+        for a in ("a1_verdict", "a2_axis_verdict", "a3_verdict",
+                  "a4_verdict", "a5_verdict"))
     gate("TB3-VERDICT", "derivation",
          "THE UNIT VERDICT IS DERIVED INSIDE THIS GATE FROM THE MEASURED "
          "COUNTS AND GATED AGAINST THE STRING THAT WAS EMITTED (RUNBOOK "
@@ -3536,6 +5406,10 @@ MUTANT_DECL = (
     ("ordcensus-half", "computation",
      "the completion census halved, so its size is no longer the size the "
      "declaration forces"),
+    ("equiv-lax", "computation",
+     "every member's preparation factor reported as commuting with the "
+     "declared symmetry, so the second route's agreement stops being scoped "
+     "by the measurement that makes it valid"),
     ("a1-drop", "computation", "two of the four declared A1 targets dropped"),
     ("form-order", "computation",
      "one candidate defect form composed in the wrong order"),
@@ -3572,6 +5446,39 @@ MUTANT_DECL = (
     ("negcontrol-lax", "computation",
      "every negative control's completion replaced by the declared one, so "
      "the controls stop being controls"),
+    ("qual-typed", "computation",
+     "A2's computed qualifier built from TYPED counts instead of the "
+     "measured ones, while the recorded table keeps the measurements"),
+    ("qual-free", "computation",
+     "A4's computed qualifier appended unconditionally while the witness "
+     "census is emptied"),
+    ("schreier-lax", "computation",
+     "one Schreier generator dropped from the orbit-stabiliser chain, so "
+     "the independent route to the group order returns a divisor of it"),
+    ("ladder-lax", "computation",
+     "every defect-generated subgroup's system image reported as the full "
+     "alternating group on its support"),
+    ("split-lax", "computation",
+     "the derived subgroup built without its normal closure"),
+    ("ceiling-lax", "computation",
+     "the algebraic ceiling inflated by one pointer factor"),
+    ("embed-lax", "computation",
+     "the subgroup containment tested in the wrong direction"),
+    ("brg-lax", "computation",
+     "the Cauchy witness taken at the wrong element order, so a "
+     "homomorphism is claimed without an element to carry it"),
+    ("mechanism-lax", "computation",
+     "the fixed-profile sample shrunk to one completion, so a collision "
+     "cannot occur"),
+    ("setting-sweep-lax", "computation",
+     "the setting-dependence rule's branch order swapped"),
+    ("norm-lax", "computation",
+     "the normaliser test conjugating by P on both sides instead of by P "
+     "and P^-1"),
+    ("psib-lax", "computation",
+     "the matched-stabiliser reading's branch order swapped"),
+    ("selflabel-lax", "computation",
+     "the rotation anchors relabelled with an undeclared provenance"),
     ("verdict-lax", "waiver", "an out-of-vocabulary verdict emitted"),
     ("float-lax", "waiver",
      "a float literal registered in the exactness gate's own evidence list "
@@ -3593,7 +5500,8 @@ def run_mutant_table():
         r = subprocess.run([sys.executable, str(Path(__file__).resolve()),
                             "--mutant", m, "--quiet"],
                            capture_output=True, text=True)
-        kill = {"failed_anchors": [], "failed_gates": [], "crashed": True}
+        kill = {"failed_anchors": [], "failed_gates": [], "crashed": True,
+                "aborted": False}
         for ln in r.stdout.splitlines():
             if ln.startswith("KILL-JSON "):
                 kill = json.loads(ln[len("KILL-JSON "):])
@@ -3604,7 +5512,12 @@ def run_mutant_table():
         return {"mutant": m, "exit": r.returncode, "died": r.returncode == 1,
                 "falsified_anchors": kill["failed_anchors"][:6],
                 "falsified_gates": kill["failed_gates"],
-                "crashed_before_reporting": kill["crashed"]}
+                "crashed_before_reporting": kill["crashed"],
+                # the run's OWN report of whether it died mid-pipeline: the
+                # delivered collector read the flag and discarded it, so the
+                # receipt could not tell "died at a gate" from "died at a
+                # traceback" after all.
+                "aborted_mid_pipeline": bool(kill.get("aborted", False))}
 
     with ThreadPoolExecutor(max_workers=min(10, len(MUTANTS))) as ex:
         rows = list(ex.map(_run, MUTANTS))
@@ -3652,6 +5565,11 @@ def run_mutant_table():
                  for r in rows)
          and not never,
          {"mutants": len(rows), "died": sum(1 for r in rows if r["died"]),
+          "aborted_mid_pipeline": sorted(r["mutant"] for r in rows
+                                         if r["aborted_mid_pipeline"]),
+          "died_at_a_gate_without_aborting":
+              sum(1 for r in rows if r["died"]
+                  and not r["aborted_mid_pipeline"]),
           "perturb_a_computation": sum(1 for r in rows
                                        if r["kind"] == "computation"),
           "waivers": sum(1 for r in rows if r["kind"] == "waiver"),
@@ -3771,26 +5689,131 @@ def render(rec):
     A("2.  A1 -- THE ORD-SWEEP")
     A("-" * 78)
     oc = rec["tables"]["ord_census"]
-    A("completion census %d (forced %d), P* = %s, two routes agree %s"
+    A("completion census %d (forced %d) BY THE LABEL ROUTE, P* = %s; the "
+      "matrix route agrees at the six lex-first representatives %s"
       % (oc["census_size_measured"], oc["census_size_the_declaration_forces"],
          oc["P_star"], oc["the_two_routes_agree"]))
-    A("ord distribution at P*: %s;  maximum the carrier admits: %d"
-      % (canon(oc["ord_distribution_at_P_star"]),
-         oc["the_maximum_order_the_carrier_admits"]))
+    A("   the agreement's SCOPE: the matrix route agrees at %d of %d "
+      "(member, representative) cells, exactly the %d of %d members whose "
+      "preparation factor commutes with Sigma_{P*} (tracking gated %s); at "
+      "the others the 64x64 defect is not even a carrier permutation"
+      % (oc["cells_where_the_two_routes_agree"], oc["route_agreement_cells"],
+         oc["members_whose_preparation_factor_commutes_with_P_star"],
+         oc["of_members"],
+         oc["the_agreement_holds_exactly_on_the_commuting_members"]))
+    A("ord distribution at P*: %s"
+      % canon(oc["ord_distribution_at_P_star"]))
+    A("maximum order AT P*: %d;  maximum over all of S_3: %d, at %s;  "
+      "per symmetry %s"
+      % (oc["the_maximum_order_at_P_star"],
+         oc["the_maximum_order_over_all_of_S3"],
+         canon(oc["the_symmetries_attaining_the_maximum_over_S3"]),
+         canon(oc["the_maximum_order_per_wing_symmetry"])))
     a1 = rec["tables"]["a1_ord_sweep"]
     A("%-6s %-22s %-9s %-9s %-9s %-8s %s"
-      % ("target", "ord profile over S3", "|Hol|", "commutator", "wings+comm",
-         "2.ord?", "links"))
+      % ("target", "ord profile over S3", "|Hol|", "defect sg",
+         "wings+defs", "2.ord?", "links"))
     for k in sorted(a1["per_target"], key=lambda x: int(x)):
         r = a1["per_target"][k]
         A("%-6s %-22s %-9s %-9s %-9s %-8s %s"
           % (k, canon(sorted(set(v for v in
                                  r["ord_profile_over_S3"].values()))),
-             r["holonomy_order"], r["the_commutator_subgroup_order"],
+             r["holonomy_order"], r["the_defect_subgroup_order"],
              r["the_group_generated_by_both"],
              r["the_dihedral_prediction_holds"], r["links"]))
-    A("the dihedral prediction |Hol| = 2.ord holds at %d of %d targets"
-      % (a1["the_dihedral_prediction_holds_at"], a1["of_targets"]))
+    A("the dihedral prediction |Hol| = 2.ord holds at %d of %d targets AT "
+      "THE FULLY SYMMETRIC SETTING" % (a1["the_dihedral_prediction_holds_at"],
+                                       a1["of_targets"]))
+    ss = rec["tables"]["a1_setting_scope"]
+    A("across the declared setting scope (%d cells): %s -- %s"
+      % (ss["cells_measured"], canon(ss["the_law_holds_at_by_setting"]),
+         ss["the_dependence"]))
+    A("   hits by setting stabiliser order: %s"
+      % canon(ss["the_law_holds_at_by_stabiliser_order"]))
+    mc = rec["tables"]["a1_mechanism"]
+    A("the profile probe: %d completions sharing the modal full profile %s; "
+      "distinct |Hol| %s"
+      % (mc["profile_sample_size"], canon(mc["the_modal_full_profile"]),
+         canon(mc["distinct_holonomy_orders_at_a_fixed_full_profile"])))
+    A("the exhaustive ord = 1 sweep: %d completions, |Hol| distribution %s; "
+      "trivial at %d of them (the identity completion gives %s)"
+      % (mc["ord_1_completions_swept"],
+         canon(mc["ord_1_holonomy_distribution"]),
+         mc["ord_1_completions_with_a_trivial_holonomy"],
+         mc["the_holonomy_at_the_identity_completion"]))
+    A("")
+    A("-" * 78)
+    A("2b. THE LADDER: THE FAMILY, NAMED AND BOUNDED")
+    A("-" * 78)
+    ld = rec["tables"]["the_ladder"]
+    A("%-40s %-8s %-8s %-9s %s"
+      % ("instance", "|Hol|", "|K|", "[Hol,Hol]", "THE TYPE OF K"))
+    for k, r in ld["per_instance"].items():
+        A("%-40s %-8s %-8s %-9s %s"
+          % (k[:40], r["holonomy_order"], r["defect_subgroup_order"],
+             r["the_derived_subgroup_of_the_holonomy"], r["THE_TYPE"][:48]))
+        A("     spectrum %s  simple %s  split by the wing group %s  "
+          "[Hol,Hol] = 3|K| %s"
+          % (canon(r["element_order_spectrum"]), r["is_simple"],
+             r["the_extension_is_split_by_the_wing_group"],
+             r["it_is_three_times_the_defect_subgroup"]))
+    ce = ld["the_ceiling"]
+    A("THE CEILING: |Alt(7)| = %d (brute-forced) x pointer image %d = %d; "
+      "largest measured %d; attained %s"
+      % (ce["the_alternating_group_on_the_seven_non_zero_labels"],
+         ce["the_largest_pointer_image_measured"], ce["the_algebraic_ceiling"],
+         ce["the_largest_holonomy_order_measured"],
+         ce["the_ceiling_is_attained"]))
+    em = ld["the_embedding"]
+    A("THE x7: %s / %s = %s, subgroup %s (%s of %s outside); the system "
+      "labels every reference element fixes: %s"
+      % (em["the_richest_holonomy_order"], em["the_reference_holonomy_order"],
+         em["the_index"], em["the_reference_group_is_a_subgroup_of_the_"
+                             "richest"],
+         em.get("elements_of_the_reference_group_outside_the_richest"),
+         em["the_reference_holonomy_order"],
+         canon(em.get("the_system_labels_fixed_by_every_reference_element"))))
+    A("   the point stabiliser inside the richest system image has order %s "
+      "and equals the reference system image: %s; index %s"
+      % (em.get("the_stabiliser_of_those_labels_inside_the_richest_system_"
+                "image"),
+         em["it_equals_the_reference_system_image"],
+         em["the_index_equals_the_alternating_point_stabiliser_index"]))
+    A("   order-7 elements: %s in the richest, %s in the reference; witness "
+      "cycle type on the 64 configurations %s, pointer part the identity %s"
+      % (em.get("elements_of_order_7_in_the_richest"),
+         em.get("elements_of_order_7_in_the_reference"),
+         canon(em.get("the_witness_cycle_type_on_the_64_configurations")),
+         em["the_witness_pointer_part_is_the_identity"]))
+    A("   the two sevens are the same seven: %s (the non-zero labels of "
+      "F_2^3 are %s; the census exponent is %s)"
+      % (em["the_two_sevens_are_the_same_seven"],
+         canon(em.get("the_non_zero_labels_of_F2_cubed")),
+         em.get("the_completion_census_exponent")))
+    A("   the relation 15120 = 7 x 2160 was observed by the director, %s"
+      % ld["the_relation_was_observed_by_the_director"])
+    A("")
+    A("-" * 78)
+    A("2c. THE BRG CROSS-SECTION")
+    A("-" * 78)
+    bx = rec["tables"]["brg_cross_section"]
+    for k, r in bx["per_instance"].items():
+        A("%-40s |Hol| %-7s = %s"
+          % (k[:40], r["holonomy_order"], canon(r["prime_factorisation"])))
+    A("BRG's declared primes %s; live at this base %s; BRG's own recorded "
+      "live primes %s"
+      % (canon(bx["BRG_declared_primes"]), canon(bx["the_primes_live_at_"
+                                                    "this_base"]),
+         canon(bx["BRG_recorded_live_primes"])))
+    A("divisibility and hom-existence agree at %d of %d cells, every "
+      "existence WITNESSED by an element of that exact order"
+      % (bx["cells_where_divisibility_and_existence_agree"], bx["cells"]))
+    A("BRG's family theorem holds at %d of %d involutive wing symmetries; "
+      "single (involution, defect) pairs generating the geometry: %d of %d"
+      % (bx["wing_symmetries_where_the_dihedral_order_formula_holds"],
+         bx["wing_symmetries_that_are_involutions"],
+         bx["single_pairs_generating_the_whole_geometry"],
+         bx["of_non_identity_wing_symmetries"]))
     A("")
     A("-" * 78)
     A("3.  A2 -- THE ONE LAW AT S_3")
@@ -3809,15 +5832,28 @@ def render(rec):
     A("cocycle deviations %d / %d;  factorisation deviations %d"
       % (a2["cocycle_deviations"], a2["cocycle_cells"],
          a2["factorisation_deviations"]))
-    A("the geometry is generated by the commutators alone: %s;  by "
-      "commutators and wing symmetries: %s"
-      % (a2["the_geometry_is_generated_by_the_commutators_alone"],
-         a2["the_geometry_is_generated_by_commutators_and_wing_symmetries"]))
-    A("commutator subgroup order %s, normal under the wing symmetries %s, "
+    A("the geometry is generated by the defects alone: %s;  by the defects "
+      "and the wing symmetries: %s"
+      % (a2["the_geometry_is_generated_by_the_defects_alone"],
+         a2["the_geometry_is_generated_by_the_defects_and_the_wings"]))
+    A("defect subgroup order %s, normal under the wing symmetries %s, "
       "level-1 holonomy %s"
-      % (a2["the_commutator_subgroup_order"],
-         a2["the_commutator_subgroup_is_normal_under_the_wing_symmetries"],
+      % (a2["the_defect_subgroup_order"],
+         a2["the_defect_subgroup_is_normal_under_the_wing_symmetries"],
          a2["the_level_1_holonomy_order"]))
+    idt = rec["tables"]["a2_identity"]
+    A("DISCLOSURE -- the form table is an algebraic identity: %d unrelated "
+      "random pairs in dimension %d, %d deviations; the four-factor form "
+      "equals D exactly at the involutions: %s (%d of the draws are not "
+      "involutions)"
+      % (idt["draws"], idt["dimension"],
+         idt["deviations_from_D_equals_the_commutator_at_P_inverse"],
+         idt["the_four_factor_form_equals_D_exactly_at_the_involutions"],
+         idt["draws_whose_P_is_not_an_involution"]))
+    A("reachable branches at S_3: %s (HOLDS-VERBATIM %s, FAILS %s)"
+      % (canon(a2["the_reachable_branches"]),
+         a2["HOLDS_VERBATIM_is_reachable_at_S3"],
+         a2["FAILS_is_reachable_at_S3"]))
     rs = rec["tables"]["a2_randomised_sweep"]
     A("randomised sweep: %d triples, %d orthogonal, %d deviations, %d with "
       "the mirror order differing"
@@ -3846,9 +5882,28 @@ def render(rec):
       "at %d of %d instances"
       % (a3["the_centralizer_criterion_agrees_with_closure_at"],
          a3["of_instances"]))
-    A("the computed NORMALISER refinement agrees at %d of %d"
+    A("the computed NORMALISER refinement agrees at %d of %d; the RIVAL "
+      "'contains or centralises' agrees at %d of %d -- the base does not "
+      "separate them"
       % (a3["the_normaliser_criterion_agrees_with_closure_at"],
-         a3["of_instances"]))
+         a3["of_instances"],
+         a3["the_rival_criterion_agrees_with_closure_at"], a3["of_instances"]))
+    A("closure ALGEBRAICALLY FORCED at %d of %d instances; normalisation "
+      "verdict forced at %d; escaping instances %s with %d independent "
+      "tooth/teeth (shared defect multiset %s)"
+      % (a3["instances_whose_closure_is_algebraically_forced"],
+         a3["of_instances"],
+         a3["instances_whose_normalisation_verdict_is_forced"],
+         canon(a3["escaping_instances"]),
+         a3["independent_teeth_among_the_escaping_instances"],
+         a3["the_escaping_instances_share_a_defect_multiset"]))
+    hu = rec["tables"]["a3_hunt"]
+    A("the discriminating hunt: %d instances swept (%d readable), "
+      "discriminating instances %d; profile space %s"
+      % (hu["instances_swept"], hu["instances_with_a_readable_holonomy"],
+         hu["discriminating_instances_normalising_without_containing_or_"
+            "centralising"],
+         canon(hu["the_profile_space_cent_norm_contains_order"])))
     A("")
     A("-" * 78)
     A("5.  A4 -- THE psi-FAMILY")
@@ -3876,6 +5931,27 @@ def render(rec):
          canon(a4["the_class_comparison"]["W_holonomy_orders"]),
          a4["the_class_comparison"][
              "the_classes_are_distinguished_by_the_geometry"]))
+    sb = rec["tables"]["a4_stabiliser"]
+    A("AT MATCHED BORN-SHADOW STABILISER (%s): %s"
+      % (sb["the_matched_stabiliser_class"],
+         canon([[x["member"], x["class"], x["holonomy_order"]]
+                for x in sb["members_at_the_matched_stabiliser"]])))
+    A("   holonomy orders by class there: %s -- READING: %s"
+      % (canon(sb["holonomy_orders_by_entanglement_class_at_that_stabiliser"]),
+         sb["the_reading"]))
+    A("   the only disjoint split is by stabiliser: %s (%s at stabiliser %d, "
+      "%s below it)"
+      % (sb["the_only_disjoint_split_is_by_stabiliser"],
+         canon(sb["holonomy_orders_at_the_top_stabiliser"]),
+         sb["the_top_stabiliser_order"],
+         canon(sb["holonomy_orders_below_it"])))
+    A("   psi-W4's %d unreadable generators: monomial %d, signed "
+      "permutations %d, exactly orthogonal %d, involutions %d; column "
+      "support census %s"
+      % (sb["psi_W4_unreadable_generators"], sb["of_which_monomial"],
+         sb["of_which_signed_permutations"], sb["of_which_exactly_orthogonal"],
+         sb["of_which_are_involutions"],
+         canon(sb["their_column_support_census"])))
     A("")
     A("-" * 78)
     A("6.  A5 -- THE GRAPH BROKEN ON PURPOSE")
@@ -3919,9 +5995,13 @@ def render(rec):
           % (k, canon(r["Q"]), r["nodes"], r["links"], r["cycle_rank"],
              r["based_closed_reduced_walks"], r["holonomy_group_order"],
              canon(r["class_counts"])))
-        A("      the law (read out of PSI's receipt) predicts %s; met %s"
-          % (r["the_law_predicts_a_group_of_order"],
-             r["the_prediction_is_met"]))
+        A("      PSI measured %s (this row is gated against it, met %s); "
+          "XBA's corollary 2.ord(D) predicts %s; the two committed receipts "
+          "agree here: %s"
+          % (r["the_order_PSI_measured_and_this_row_is_gated_against"],
+             r["the_prediction_is_met"],
+             r["the_order_XBA_s_corollary_2_ord_D_predicts"],
+             r["the_two_committed_receipts_agree_at_this_order"]))
     for ln in _wrap(pc["the_reason_only_these_orders_occur"], 74):
         A("  " + ln)
     A("committed values read from the receipts: %s"
@@ -3945,12 +6025,30 @@ def render(rec):
         A("    value: " + canon(g["value"])[:1200])
         A("")
     A("-" * 78)
+    A("8b. THE HOLONOMY ROUTES, MEASURED")
+    A("-" * 78)
+    hr = rec["tables"]["holonomy_routes"]
+    for k, r in hr["per_instance"].items():
+        A("%-40s route A %-8s route C (orbit-stabiliser chain, no group "
+          "built) %-8s agree %s"
+          % (k[:40], r["route_A_order"], r["route_C_order"],
+             r["the_independent_route_agrees"]))
+    A("%s; the two spanning trees have different cotrees at %d of %d targets"
+      % (hr["the_measured_power_of_a_generating_set_comparison"],
+         hr["targets_whose_two_spanning_trees_have_different_cotrees"],
+         hr["of_targets"]))
+    A("")
+    A("-" * 78)
     A("9.  ANCHORS (exit-1 only)")
     A("-" * 78)
     bad = [a for a in rec["anchors"] if not a["passed"]]
     A("%d anchors, %d passed, %d failed"
       % (len(rec["anchors"]),
          sum(1 for a in rec["anchors"] if a["passed"]), len(bad)))
+    ap = rec["tables"]["anchor_provenance"]
+    A("provenance split: %d SELF-anchors, %d EXTERNAL; per source %s"
+      % (ap["self_anchors"], ap["external_anchors"],
+         canon(ap["per_source"])))
     ext = sorted({a["source"] for a in rec["anchors"]})
     A("anchor sources: %s" % canon(ext))
     for a in bad[:20]:
@@ -4039,17 +6137,24 @@ def _pipeline(a):
                                    "bytes": v["bytes"]}
                                for k, v in ext.items()}
 
-    Qfirst, maxord = run_ord_census()
+    Qfirst, maxord, modal_sample, modal_profile = run_ord_census()
     run_a1(Qfirst, maxord)
-    run_a2(Q)
+    run_a1_mechanism(Qfirst, modal_sample, modal_profile)
+    run_a1_settings(Qfirst)
+    run_a2_identity(Q)
+    _a2, _gref, _Aref, _nref, _lref, wref, _admref = run_a2(Q)
     run_a2_randomised(Q)
+    run_ladder(Q)
+    run_brg_cross_section(ext, wref)
     run_a3(Q)
+    run_a3_hunt(Q)
     _a4, worlds = run_a4(Q)
     run_a5(Q, worlds)
     run_positive_control(ext)
     run_negative_controls(Q)
     run_switching_selftest(Q)
     run_clause_census(Q)
+    run_holonomy_routes()
     run_cell_completeness()
     verdict = run_verdict()
     del TABLES["external"]
@@ -4070,42 +6175,72 @@ def _pipeline(a):
         "computed from Cayley's hyperdeterminant, and one completion per "
         "member chosen by a declared lex-first-within-property rule and "
         "pinned entry by entry.  A1: the completion census is exhaustive "
-        "at %d completions and the maximum defect order the carrier admits "
-        "is %d, measured; the two-wing law |Hol| = 2.ord([P,u]) holds at %d "
-        "of %d swept targets, and the holonomy orders measured are %s -- "
-        "the dihedral family does NOT survive, and the order is not a "
-        "function of ord([P,u]) at one symmetry.  A2: the committed "
-        "four-factor product P u^-1 P u reproduces the measured transport "
-        "defect at %d of %d cells and the GROUP COMMUTATOR form at %d, so "
-        "the law generalises rather than holding verbatim -- the "
-        "four-factor writing was an involution artifact, and at the "
-        "three-cycles it does not even split off the pointer factor; the "
-        "cocycle delta_P(XY) = delta_P(Y).Y^-1 delta_P(X) Y survives "
-        "VERBATIM with %d deviations.  A3: the native atlas has %s charts "
-        "over six seeds, the census runs to %s admissible triangles at the "
-        "reference instance by two independent routes, and the committed "
-        "centralizer criterion agrees with the measured closure at %d of "
-        "%d instances while the computed NORMALISER refinement agrees at "
-        "%d -- the necessity direction of the committed biconditional is "
-        "measured false where the triangles are not engineered.  A4: the "
+        "at %d completions; the maximum defect order AT P* is %d and over "
+        "all of S_3 is %d, both measured; the two-wing law "
+        "|Hol| = 2.ord([P,u]) holds at %d of %d swept targets AT THE FULLY "
+        "SYMMETRIC SETTING and its fate across the declared setting scope "
+        "is %s (%s) -- the order is a function neither of ord([P,u]) at one "
+        "symmetry NOR of the whole six-order profile, measured at a fixed "
+        "profile where a collision can occur, and the holonomy orders are "
+        "%s.  THE LADDER: those orders are the named family %s inside the "
+        "measured ALGEBRAIC CEILING |Alt(7)| x (pointer image) = %d, which "
+        "is ATTAINED; the wing group is a measured SPLIT complement, "
+        "[Hol,Hol] = 3|K| so K is NOT the commutator subgroup, and the "
+        "relation 15120 = 7 x 2160 (the director's observation, v13 LOG "
+        "#286) is [A_7 : A_6] with the embedding constructed -- %s of %s "
+        "reference elements outside, the point stabiliser measured to equal "
+        "the reference system image, and genuine carrier 7-torsion "
+        "exhibited.  BRG: the bridge primes %s are LIVE at this base, "
+        "witnessed by elements of exactly those orders.  A2: the measured "
+        "defect IS the group commutator -- D = [P^-1, u] is an ALGEBRAIC "
+        "IDENTITY, disclosed, not a measurement (%d unrelated random pairs, "
+        "%d deviations) -- so what moved is the INDEX, a placement "
+        "convention; the committed four-factor product coincides with it at "
+        "%d of %d cells, exactly the involutions, and %s were the reachable "
+        "branches; the cocycle survives VERBATIM with %d deviations.  A3: "
+        "the native atlas has %s charts over six seeds and the census runs "
+        "to %s admissible triangles by two independent routes; the "
+        "committed centraliser criterion agrees with the measured closure "
+        "at %d of %d instances and the NORMALISER refinement at %d -- but "
+        "the reference zero is ALGEBRAICALLY FORCED (%d of %d instances "
+        "are), the rival 'contains-or-centralises' agrees equally at %d, "
+        "and a %d-instance hunt found %d discriminating instances: on this "
+        "base the refinement is UNIDENTIFIED, not established.  A4: the "
         "state factor is the identity exactly on the invariant locus, %d "
-        "deviations over %d cells; GHZ-class and W-class preparations are "
-        "measured to carry DIFFERENT geometries at identical declarations "
-        "(%s against %s); and the exhaustive pair census finds "
-        "fixed-Born-shadow witness pairs %s.  A5: the committed 8/13/6 "
-        "does not transfer (%s here), and of the eight declared survival "
-        "candidates %s survive and %s do not.  Controls: the same "
-        "machinery run at two wings reproduces the committed two-wing "
-        "graph, walk counts, group-order law and class-count profiles on a "
-        "carrier neither committed unit used, every one anchored exit-1 "
-        "against the hash-pinned XBA receipt."
+        "deviations over %d cells; the GHZ/W contrast is %s, read at "
+        "matched Born-shadow stabiliser against a BISEPARABLE control; the "
+        "exhaustive pair census finds fixed-Born-shadow witness pairs %s, "
+        "and psi-W4's %d unreadable generators are measured NON-MONOMIAL "
+        "and orthogonal involutions -- a stronger departure than the "
+        "committed one.  A5: the committed 8/13/6 does not transfer (%s "
+        "here), and of the eight declared survival candidates %s survive "
+        "and %s do not.  Controls: the same machinery run at two wings "
+        "reproduces the committed two-wing graph, walk counts, group-order "
+        "law and class-count profiles on a carrier neither committed unit "
+        "used, every one anchored exit-1 against the hash-pinned XBA "
+        "receipt -- and the two committed receipts are measured to DISAGREE "
+        "at %d defect order(s)."
         % (NC, len(PSI_ORDER),
            TABLES["ord_census"]["census_size_measured"],
-           TABLES["ord_census"]["the_maximum_order_the_carrier_admits"],
+           TABLES["ord_census"]["the_maximum_order_at_P_star"],
+           TABLES["ord_census"]["the_maximum_order_over_all_of_S3"],
            a1["the_dihedral_prediction_holds_at"], a1["of_targets"],
+           TABLES["a1_setting_scope"]["the_dependence"],
+           canon(TABLES["a1_setting_scope"]["the_law_holds_at_by_setting"]),
            canon(a1["holonomy_orders"]),
+           canon([r["THE_TYPE"].split(",")[0]
+                  for r in TABLES["the_ladder"]["per_instance"].values()]),
+           TABLES["the_ladder"]["the_ceiling"]["the_algebraic_ceiling"],
+           TABLES["the_ladder"]["the_embedding"][
+               "elements_of_the_reference_group_outside_the_richest"],
+           TABLES["the_ladder"]["the_embedding"][
+               "the_reference_holonomy_order"],
+           canon(TABLES["brg_cross_section"]["the_primes_live_at_this_base"]),
+           TABLES["a2_identity"]["draws"],
+           TABLES["a2_identity"][
+               "deviations_from_D_equals_the_commutator_at_P_inverse"],
            a2["form_hits"]["F1_four_factor_P_u_P_u"], a2["cells_measured"],
-           max(a2["form_hits"].values()), a2["cocycle_deviations"],
+           canon(a2["the_reachable_branches"]), a2["cocycle_deviations"],
            canon(sorted({r["charts_in_the_atlas"]
                          for r in a3["per_instance"].values()})),
            canon(sorted({r["admissible_triangles_route_1"]
@@ -4113,14 +6248,23 @@ def _pipeline(a):
            a3["the_centralizer_criterion_agrees_with_closure_at"],
            a3["of_instances"],
            a3["the_normaliser_criterion_agrees_with_closure_at"],
+           a3["instances_whose_closure_is_algebraically_forced"],
+           a3["of_instances"],
+           a3["the_rival_criterion_agrees_with_closure_at"],
+           TABLES["a3_hunt"]["instances_swept"],
+           TABLES["a3_hunt"]["discriminating_instances_normalising_without_"
+                             "containing_or_centralising"],
            a4["E_law_deviations"], a4["E_cells"],
-           canon(a4["the_class_comparison"]["GHZ_holonomy_orders"]),
-           canon(a4["the_class_comparison"]["W_holonomy_orders"]),
+           TABLES["a4_stabiliser"]["the_reading"],
            canon(a4["fixed_born_shadow_witness_pairs"]),
+           TABLES["a4_stabiliser"]["psi_W4_unreadable_generators"],
            canon(a5["graph_triple_three_wings"]),
-           canon(a5["survived"]), canon(a5["did_not_survive"])))
+           canon(a5["survived"]), canon(a5["did_not_survive"]),
+           TABLES["positive_control"][
+               "defect_orders_where_the_two_committed_receipts_disagree"]))
 
     run_declaration_order()
+    run_anchor_provenance()
     run_exemption_sweep()
     run_exactness()
     if a.falsification_selftest and not a.mutant:
@@ -4144,7 +6288,8 @@ def _pipeline(a):
             {"failed_anchors": [x["id"] for x in ANCHORS if not x["passed"]],
              "failed_gates": [x["id"] for x in GATES
                               if x["class"] != "disclosure"
-                              and not x["passed"]]}) + "\n")
+                              and not x["passed"]],
+             "aborted": False}) + "\n")
     prog("done: %d anchors, %d gates, %d must-pass failures"
          % (rec["totals"]["anchors"], rec["totals"]["gates"], fail))
     return 1 if fail else 0

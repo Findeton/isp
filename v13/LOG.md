@@ -9128,3 +9128,40 @@ square's requirements (change the encodings; the S₃-module
 machinery; HA at d=3); the scale-threshold table; the
 confirmed-but-declaration-carried ruling as instrument
 practice.
+
+## 2026-08-08 — TB3 REPAIR DELIVERED (CONTINUATION), COMMITTED AS-IS
+## (v13 LEDGER #298)
+Delivery committed as-is.  The continuation inventoried the
+predecessor (code complete T-1..T-6, T-7 partial, T-8/paper
+absent) and FOUND-AND-FIXED THREE DEFECTS in the partial code:
+R1-F8b unimplemented (the ord-census routes — now the matrix
+route's agreement GATED to track measured Σ-commutation, 36/54
+= exactly the 6/9 commuting members, w/ equiv-lax dying); a
+SILENT ABORT (readtime-conflate exiting 1 with an EMPTY kill
+list — would have blocked delivery; unreadable groups now
+counted and gates fail BY NAME); a FALSE gate claim
+(schreier-lax's death site corrected to the measured
+falsifiers, w/ a mechanical cross-check of every gate's named
+mutant).  **THE LADDER INSTALLED: 1 < A₄ < GL(3,2) < A₆ < A₇,
+each named by SET EQUALITY against brute-forced groups
+(GL(3,2): 168/168 F₂-linear, all 7 Fano lines, neighbours NOT
+linear); split semidirect at every non-trivial instance;
+[Hol,Hol] = 3|K| everywhere; THE CEILING |Alt(7)|×6 = 15,120
+ATTAINED.  THE EMBEDDING GATE: 0/2,160 outside; fixed labels
+{0, 7} (7 = |111⟩); the point stabiliser EQUALS the reference
+system image; 720 order-7 elements vs 0; the two sevens one
+seven.  THE BRG CROSS-SECTION: live {5,7} anchored to BRG's
+own set; divisibility ⟺ witnessed hom 35/35; the family
+theorem 3/3 at involutive symmetries and 0/5 at single pairs
+— bounded to two wings, TB3 the witness, group-level only.**
+The A2 verdict verbatim at the paper's head: GENERALIZES-⟨THE
+INDEX, NOT THE LAW⟩ — the law IS the commutator law at S₃;
+what moved is a placement convention; HOLDS/FAILS
+algebraically unreachable.  Dihedral setting-scoped {0,1,3,0};
+the A3 hunt 51/0; psi-B installed; psi-W4's 14 unreadables 0
+monomial / 14 orthogonal involutions.  616 anchors (588/28,
+honestly split) / 40 gates (38 must-pass, 0 failures) / 56
+mutants died, no empty-kill rows / never_falsified EMPTY,
+both denominators / byte-identical ×2.  11 deviations incl.
+the predecessor line.  md5 output 68e4896b / receipt
+4d36d63f.  Adjudicator verification next.
