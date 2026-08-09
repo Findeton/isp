@@ -1,0 +1,4479 @@
+{
+ "anchors": [
+  {
+   "committed": "371e38742059d14a",
+   "computed": "371e38742059d14a",
+   "id": "A-SHA-brg_paper",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/paper-brg-bridge.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "5c428afd5c58c899",
+   "computed": "5c428afd5c58c899",
+   "id": "A-SHA-brg_receipt",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/code/brg_bridge_receipt.json",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "f286ba10d2d9a0f3",
+   "computed": "f286ba10d2d9a0f3",
+   "id": "A-SHA-ha_paper",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/paper-ha-successor.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "542b8735daf0ebc6",
+   "computed": "542b8735daf0ebc6",
+   "id": "A-SHA-ha_receipt",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/code/ha_successor_receipt.json",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "3ff069d2127b0917",
+   "computed": "3ff069d2127b0917",
+   "id": "A-SHA-lcb_paper",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/paper-lcb-livecell.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "3e502f685ab3010f",
+   "computed": "3e502f685ab3010f",
+   "id": "A-SHA-lcb_receipt",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/code/lcb_livecell_receipt.json",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "bc79fb6111ff6c90",
+   "computed": "bc79fb6111ff6c90",
+   "id": "A-SHA-pin",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/note-rsq-reposed-square-pin.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "41d358d421d8288d",
+   "computed": "41d358d421d8288d",
+   "id": "A-SHA-psi_paper",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/paper-psi-curvature.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "7c7b91a9257e3888",
+   "computed": "7c7b91a9257e3888",
+   "id": "A-SHA-psi_receipt",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/code/psi_curvature_receipt.json",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "4a1f9c53d8640145",
+   "computed": "4a1f9c53d8640145",
+   "id": "A-SHA-tb3_paper",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/paper-tb3-third-base.md",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": "c9bc956fe75129bd",
+   "computed": "c9bc956fe75129bd",
+   "id": "A-SHA-tb3_receipt",
+   "passed": true,
+   "quantity": "sha256 prefix of v13/code/tb3_third_base_receipt.json",
+   "source": "this file, pinned SHA-256 of a TERMINAL artifact"
+  },
+  {
+   "committed": 3,
+   "computed": 3,
+   "id": "A-LCB-D3-NAT",
+   "passed": true,
+   "quantity": "LCB G36 general-d row: d = 3, natural, dim fix(E)",
+   "source": "LCB committed receipt (G36)"
+  },
+  {
+   "committed": 1,
+   "computed": 1,
+   "id": "A-LCB-D3-LEX",
+   "passed": true,
+   "quantity": "LCB G36 general-d row: d = 3, lex, dim fix(E)",
+   "source": "LCB committed receipt (G36)"
+  },
+  {
+   "committed": [
+    "3",
+    "3",
+    "3",
+    "2",
+    "2",
+    "2"
+   ],
+   "computed": [
+    "3",
+    "3",
+    "3",
+    "2",
+    "2",
+    "2"
+   ],
+   "id": "A-LCB-D3-COLSUM",
+   "passed": true,
+   "quantity": "LCB G36 general-d row: d = 3, natural, column sums",
+   "source": "LCB committed receipt (G36)"
+  },
+  {
+   "committed": "2",
+   "computed": "2",
+   "id": "A-HA-D2-DET",
+   "passed": true,
+   "quantity": "HA G28: the d = 2 readout determinant",
+   "source": "HA committed receipt (G28)"
+  },
+  {
+   "committed": 5040,
+   "computed": 5040,
+   "id": "A-TB3-CENSUS",
+   "passed": true,
+   "quantity": "TB3: the completion census size",
+   "source": "TB3 committed receipt (TB3-A1-ORDCENSUS)"
+  },
+  {
+   "committed": [
+    1,
+    2,
+    2,
+    2,
+    3,
+    3
+   ],
+   "computed": [
+    1,
+    2,
+    2,
+    2,
+    3,
+    3
+   ],
+   "id": "A-TB3-WING",
+   "passed": true,
+   "quantity": "TB3: the wing symmetry group's element orders",
+   "source": "TB3 committed receipt (TB3-S3)"
+  },
+  {
+   "committed": 4,
+   "computed": 4,
+   "id": "A-TB3-INVOL",
+   "passed": true,
+   "quantity": "TB3: wing symmetries with P^2 = 1 (TB3's F_1 hits 36 = 4 x 9 members)",
+   "source": "TB3 committed receipt (TB3-A2, form_hits F_1 = 36 over 9 members)"
+  },
+  {
+   "committed": 1,
+   "computed": 1,
+   "id": "A-TB3-K-ord1",
+   "passed": true,
+   "quantity": "TB3 ladder: |K| at the ord1 completion",
+   "source": "TB3 committed receipt (TB3-LADDER, defect_subgroup_order)"
+  },
+  {
+   "committed": 168,
+   "computed": 168,
+   "id": "A-TB3-K-ord2",
+   "passed": true,
+   "quantity": "TB3 ladder: |K| at the ord2 completion",
+   "source": "TB3 committed receipt (TB3-LADDER, defect_subgroup_order)"
+  },
+  {
+   "committed": 12,
+   "computed": 12,
+   "id": "A-TB3-K-ord3",
+   "passed": true,
+   "quantity": "TB3 ladder: |K| at the ord3 completion",
+   "source": "TB3 committed receipt (TB3-LADDER, defect_subgroup_order)"
+  },
+  {
+   "committed": 2520,
+   "computed": 2520,
+   "id": "A-TB3-K-ord6",
+   "passed": true,
+   "quantity": "TB3 ladder: |K| at the ord6 completion",
+   "source": "TB3 committed receipt (TB3-LADDER, defect_subgroup_order)"
+  },
+  {
+   "committed": 360,
+   "computed": 360,
+   "id": "A-TB3-K-reference",
+   "passed": true,
+   "quantity": "TB3 ladder: |K| at the reference completion",
+   "source": "TB3 committed receipt (TB3-LADDER, defect_subgroup_order)"
+  },
+  {
+   "committed": 1,
+   "computed": 1,
+   "id": "A-LCB-FIXDELTA",
+   "passed": true,
+   "quantity": "LCB G35: |fix(delta)| at the 9-label arena",
+   "source": "LCB committed receipt (G35)"
+  },
+  {
+   "committed": 16,
+   "computed": 16,
+   "id": "A-LCB-THR-5",
+   "passed": true,
+   "quantity": "LCB section 12.3: the smallest arena admitting an injective candidate at d = 2, p = 5 (3p+1)",
+   "source": "LCB committed paper (section 12.3)"
+  },
+  {
+   "committed": 22,
+   "computed": 22,
+   "id": "A-LCB-THR-7",
+   "passed": true,
+   "quantity": "LCB section 12.3: the same at p = 7",
+   "source": "LCB committed paper (section 12.3)"
+  }
+ ],
+ "arithmetic": "integers / fractions.Fraction / exact F_p; no floats",
+ "declarations": {
+  "L": 3,
+  "arena": {
+   "admission": "a candidate is ACCEPTED only if every clause of S1 holds and S2, S3 hold.  A candidate is STILLBORN if the precheck's fixed-point-compatibility test fails, and then no census is run for it and the mismatch is recorded",
+   "arena action": "the metric-slot relabelling group S_6 (whose orbit on the declared identifications IS the covariant cell family); the DIRECTION sweep; the choice of wing symmetry inside S_3; the prime sweep; change of basis of V by a declared element of GL_6(F_p); the arena scale.  These six are THIS UNIT'S OWN declared choices and the ones the verdict must be invariant under; the three-wing 8-label arena is INHERITED from TB3, and its effect is not tested by re-declaration but reported separately at both scales",
+   "boundary": "one PAIRING at THREE WINGS.  Deformation side: HA rebuilt at d = 3 -- X = (Z_3)^3 (27 sites), 6 links (the 3 axes and the 3 positive diagonals), the record datum space V = F_p^6 (the six link counts at a site), HA's record<->metric readout E, and the arena C_HA(p) = F_p^k x F_p^3 with 3-DIMENSIONAL fronts.  Transport side: TB3's three-wing base -- the 8 system-triple labels F_2^3, the completion group G_C of permutations fixing label 0, the wing symmetry group S_3 acting by bit permutation, and the three-wing commutator encoding delta_pi(Q) = Sigma_pi Q^-1 Sigma_pi^-1 Q (TB3's F_3).",
+   "family": "THE CANDIDATE-SQUARE FAMILY, declared as data: (i) the S_3-EQUIVARIANT identifications of the six metric slots with the six links -- their number is COMPUTED by an exhaustive equivariance test over all 6! slot orders and never typed -- x 2 directions, the MODULE cells; (ii) the whole COVARIANT ORBIT of the slot-relabelling group, 6! slot orders x 2 directions, the SET-LEVEL cells; (iii) the declared census cells, chosen by a rule stated before any fixture truth; (iv) 7 declared primes; (v) the 6 wing symmetries of S_3; (vi) two arena scales -- the NATIVE 8-label three-wing arena and the GROWN family L_m = {0} + (F_2^3 minus 0) x {1..m}; (vii) the dimensions d = 2,3,4,5 at the fixed-space and criterion sweeps",
+   "law": "BRG's S1-S6 as its terminal paper section 2.6 registers them, with S1c generalised per R2-LCB's F-10 from the two-wing Z/2 SIGN condition to the F_p[S_3] MODULE condition; a candidate morphism is a map alpha : V -> G_C",
+   "provenance": "TB3, LCB, HA, BRG, PSI -- all terminal; papers and receipts hash-pinned, every reused number read from them and recomputed here",
+   "state": "the deformation side's declared base geometry record G3-FLAT = (1,1,1,2,2,2) (HA's own declared d = 3 record); the transport side's declared base completions -- TB3's own five ord-target completions; the detector site x* = (0,0,0)"
+  },
+  "carrier_build_primes": [
+   5,
+   7,
+   11
+  ],
+  "d": 3,
+  "detector_site": [
+   0,
+   0,
+   0
+  ],
+  "dimension_sweep": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "drag_rule": "A-axis",
+  "growth_family": "L_m = {0} + (F_2^3 minus 0) x {1..m}: m copies of TB3's seven moved labels, with S_3 acting on the F_2^3 factor alone and fixing label 0.  m = 1 is TB3's native arena.",
+  "held_out": {
+   "H1": "the square at every HELD cell, as permutation matrices",
+   "H2": "the defect permutation delta_pi(alpha(r)) itself, entry by entry, at every HELD cell",
+   "H3": "the fixed-label count of delta_pi(alpha(r)) at every HELD cell",
+   "fit rule": "a candidate is admitted if the square holds at the FIT cell ALONE; nothing on HELD is consulted",
+   "split rule": "FIT = the single declared basis record e_1 = (1,0,0,0,0,0); HELD = every other element of V; sizes computed",
+   "teeth": "X-NOSQUARE (predict delta_pi(alpha(r)) = alpha(r)) and X-FLATFIX (predict the identity stratum everywhere), both declared IN ADVANCE to fail"
+  },
+  "ladder_completions": {
+   "ord1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "ord2": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    4,
+    7,
+    6
+   ],
+   "ord3": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    6
+   ],
+   "ord6": [
+    0,
+    1,
+    3,
+    2,
+    5,
+    4,
+    7,
+    6
+   ],
+   "reference": [
+    0,
+    3,
+    2,
+    1,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  "negative_records_d3": {
+   "G3-INDEF": [
+    1,
+    1,
+    1,
+    6,
+    2,
+    2
+   ],
+   "G3-SINGULAR": [
+    1,
+    1,
+    1,
+    4,
+    2,
+    2
+   ]
+  },
+  "primes": [
+   5,
+   7,
+   11,
+   13,
+   17,
+   19,
+   23
+  ],
+  "records_d3": {
+   "G3-ANISO": [
+    1,
+    4,
+    9,
+    5,
+    10,
+    13
+   ],
+   "G3-FLAT": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "G3-OFF": [
+    2,
+    2,
+    2,
+    6,
+    4,
+    4
+   ]
+  },
+  "wings": 3
+ },
+ "disclosures": [
+  {
+   "detail": {
+    "determinant": 8,
+    "record_datum_space": "F_p^6"
+   },
+   "id": "X01",
+   "statement": "The pin's phrase 'the encoding V: F_p^3 -> F_p^6' is read here as: the record datum space at d = 3 is F_p^6 (the six link counts at a site of a 3-dimensional chart), and the record-is-metric readout is the endomorphism of that space with determinant 8 and spectrum {1,1,1,2,2,2}.  That is the object R2-LCB's F-10(d) measured and the only reading under which the stated determinant and spectrum are correct."
+  },
+  {
+   "detail": {
+    "taint": 0
+   },
+   "id": "X02",
+   "statement": "Route A and route B are genuinely different computations over SHARED data: both read the same measured subgroup set and the same encoding matrix.  Route A decides by Gaussian elimination; route B decides from a delta-exponent table built by permutation arithmetic with no linear algebra in it, over an explicit enumeration of the covector space.  Route C verifies the permutation square literally.  Neither B nor C reads A."
+  },
+  {
+   "detail": {
+    "projective_calibrated_at": {
+     "prime": 5
+    }
+   },
+   "id": "X03",
+   "statement": "The census's exhaustive enumeration is scoped: route B enumerates every cyclic subgroup of order p and every covector PROJECTIVELY, restoring the measured redundancy p-1, and that quotient is calibrated at a declared cell and prime against the FULL p^6 enumeration.  The order-criterion sweep, which carries the verdict, is exhaustive over the whole covariant family at every declared prime with no sampling anywhere."
+  },
+  {
+   "detail": {
+    "build_primes": [
+     5,
+     7,
+     11
+    ],
+    "declared_primes": [
+     5,
+     7,
+     11,
+     13,
+     17,
+     19,
+     23
+    ]
+   },
+   "id": "X04",
+   "statement": "The reduced carrier is BUILT as explicit permutations only at the declared build primes (its size is p^(k+3)); rho is reduced and the arena coordinate reported at every declared prime.  This is a declared computational cap, not a measured boundary."
+  },
+  {
+   "detail": {
+    "arena_labels": 43,
+    "prime": 7
+   },
+   "id": "X05",
+   "statement": "The in-arena FOUND control is a control, not a bridge: its encoding is the SYNTHETIC I - rho, not HA's readout.  What it establishes is that the machinery returns FOUND, with a witness verified out of sample, at the same arena and prime at which HA's own encoding returns EMPTY.  It does not satisfy the module clause, which the permutation-module obstruction kills for a different and universal reason."
+  },
+  {
+   "detail": {
+    "native_arena_completion_group_order": 5040
+   },
+   "id": "X06",
+   "statement": "The set-level relaxation is NOT decided here.  Dropping S1b (additivity) removes the order criterion's derivation, and the precheck's fixed-point argument is then the only arena-free constraint; at the NATIVE arena the set level is closed anyway because |V| = p^6 exceeds |G_C| = 5,040 at every declared prime, but at the grown arena it is open and is recorded as such."
+  }
+ ],
+ "gates": [
+  {
+   "claim": "THE DECLARATIONS ARE FROZEN BEFORE ANY CANDIDATE IS EVALUATED.  Every candidate evaluation in this instrument runs through a counter; the counter is measured HERE and must read zero.  What this records is the ordering WITHIN ONE EXECUTION; it is not offered as proof that the declarations were fixed before any fixture truth was seen, which no in-run measurement can establish",
+   "detail": {
+    "candidates_evaluated_before_the_freeze": 0
+   },
+   "id": "G01",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EXACT ARITHMETIC ONLY: the source carries no float or complex literal and no float()/complex() call, measured by an AST sweep that is itself VALIDATED by a synthetic injection it must flag",
+   "detail": {
+    "float_hits": [],
+    "scanner_flags_the_synthetic_sample": true
+   },
+   "id": "G02",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "NO GATE-REGISTERING FUNCTION REFERENCES MUTANT IDENTITY (RUNBOOK 14 addendum, v13 #208): every mutation is a mutation of an INSTRUMENT helper.  The AST guard is validated by a synthetic sample it must flag",
+   "detail": {
+    "exempt_hits": [],
+    "scanner_flags_the_synthetic_sample": true
+   },
+   "id": "G03",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE d = 3 ARENA CONSTRUCTS.  The site set and the link set are enumerated and their sizes agree with the counts the declaration forces; all three of HA's own declared d = 3 records are admissible by the EXACT Sylvester criterion at every site; and both declared negative controls -- one singular, one indefinite -- are REJECTED by the same test, so the admissibility clause is not vacuous",
+   "detail": {
+    "admissible_records": [
+     "G3-ANISO",
+     "G3-FLAT",
+     "G3-OFF"
+    ],
+    "links": 6,
+    "links_forced": 6,
+    "negative_controls_rejected": [
+     "G3-INDEF",
+     "G3-SINGULAR"
+    ],
+    "of_declared": 3,
+    "of_negative_controls": 2,
+    "sites": 27,
+    "sites_forced": 27
+   },
+   "id": "G04",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE d = 3 RECORD-IS-METRIC READOUT IS AN INVERTIBLE LINEAR RE-ENCODING WITH DETERMINANT 8 AND SPECTRUM {1,1,1,2,2,2} -- exactly the requirement R2-LCB measured for the successor.  The determinant is computed exactly; q reproduces every declared link count at every site of every admissible record; and the general law det = 2^(d(d-1)/2) with spectrum {1^d, 2^(d(d-1)/2)} is re-measured at every swept dimension",
+   "detail": {
+    "HA_convention_determinant": "8",
+    "determinant_law_holds_at_every_swept_dimension": true,
+    "general_dimension_rows": [
+     {
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 2,
+      "det": "2",
+      "ordering": "natural",
+      "size": 3
+     },
+     {
+      "column_sums": [
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 2,
+      "det": "-2",
+      "ordering": "lex",
+      "size": 3
+     },
+     {
+      "column_sums": [
+       "3",
+       "3",
+       "3",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 3,
+      "det": "8",
+      "ordering": "natural",
+      "size": 6
+     },
+     {
+      "column_sums": [
+       "3",
+       "2",
+       "2",
+       "3",
+       "2",
+       "3"
+      ],
+      "d": 3,
+      "det": "-8",
+      "ordering": "lex",
+      "size": 6
+     },
+     {
+      "column_sums": [
+       "4",
+       "4",
+       "4",
+       "4",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 4,
+      "det": "64",
+      "ordering": "natural",
+      "size": 10
+     },
+     {
+      "column_sums": [
+       "4",
+       "2",
+       "2",
+       "2",
+       "4",
+       "2",
+       "2",
+       "4",
+       "2",
+       "4"
+      ],
+      "d": 4,
+      "det": "64",
+      "ordering": "lex",
+      "size": 10
+     },
+     {
+      "column_sums": [
+       "5",
+       "5",
+       "5",
+       "5",
+       "5",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2",
+       "2"
+      ],
+      "d": 5,
+      "det": "1024",
+      "ordering": "natural",
+      "size": 15
+     },
+     {
+      "column_sums": [
+       "5",
+       "2",
+       "2",
+       "2",
+       "2",
+       "5",
+       "2",
+       "2",
+       "2",
+       "5",
+       "2",
+       "2",
+       "5",
+       "2",
+       "5"
+      ],
+      "d": 5,
+      "det": "1024",
+      "ordering": "lex",
+      "size": 15
+     }
+    ],
+    "natural_identification_determinant": "8",
+    "sites_tested": 81,
+    "sites_where_q_reproduces_every_count": 81,
+    "spectrum": [
+     "1",
+     "1",
+     "1",
+     "2",
+     "2",
+     "2"
+    ]
+   },
+   "id": "G05",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE d = 3 RESIDUAL RUNS, AND ITS TWO COMPARATORS AGREE. R_HH is computed both as the LITERAL five-map composition on exact rational fields and by the CLOSED FORM built from the drag rule and the record readout without touching the composition; the two agree at every site.  The residual is measured NONZERO at the detector site, so the arena it generates is not trivial",
+   "detail": {
+    "of_sites": 27,
+    "residual_at_the_detector_site": [
+     "1/6",
+     "1/6",
+     "0"
+    ],
+    "sites_tested": 27,
+    "sites_where_the_two_comparators_agree": 27,
+    "sites_with_a_nonzero_residual": 1
+   },
+   "id": "G06",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "HA's G29 HOLDS VERBATIM AT d = 3, WITH 3-DIMENSIONAL FRONTS.  R_HH acts on the reduced carrier C_HA(p) = F_p^k x F_p^3 as the TRANSLATION OF THE 3-DIMENSIONAL ADDRESS REGISTER by rho mod p, measured configuration by configuration, with the front sector returning to itself; hence <R_HH> is cyclic of order p wherever rho is nonzero mod p.  The deformation side of the re-posed square therefore CONSTRUCTS at d = 3",
+   "detail": {
+    "build_cap": "the carrier has p^(k+3) configurations; the primes at which it is BUILT as permutations are declared, and rho is reduced at every declared prime",
+    "carriers_checked": 3,
+    "measured_group_orders": [
+     5,
+     7,
+     11
+    ],
+    "order_equals_the_declared_prime": true,
+    "primes_built": [
+     5,
+     7,
+     11
+    ],
+    "rows": [
+     {
+      "built": true,
+      "carrier": 3125,
+      "fronts": 25,
+      "group_order": 5,
+      "k": 2,
+      "p": 5,
+      "register_dimension": 3,
+      "rho_mod_p": [
+       1,
+       1,
+       0
+      ],
+      "translation": true
+     },
+     {
+      "built": true,
+      "carrier": 16807,
+      "fronts": 49,
+      "group_order": 7,
+      "k": 2,
+      "p": 7,
+      "register_dimension": 3,
+      "rho_mod_p": [
+       6,
+       6,
+       0
+      ],
+      "translation": true
+     },
+     {
+      "built": true,
+      "carrier": 161051,
+      "fronts": 121,
+      "group_order": 11,
+      "k": 2,
+      "p": 11,
+      "register_dimension": 3,
+      "rho_mod_p": [
+       2,
+       2,
+       0
+      ],
+      "translation": true
+     },
+     {
+      "built": false,
+      "carrier": 371293,
+      "group_order": null,
+      "p": 13,
+      "rho_mod_p": [
+       11,
+       11,
+       0
+      ],
+      "translation": null
+     },
+     {
+      "built": false,
+      "carrier": 1419857,
+      "group_order": null,
+      "p": 17,
+      "rho_mod_p": [
+       3,
+       3,
+       0
+      ],
+      "translation": null
+     },
+     {
+      "built": false,
+      "carrier": 2476099,
+      "group_order": null,
+      "p": 19,
+      "rho_mod_p": [
+       16,
+       16,
+       0
+      ],
+      "translation": null
+     },
+     {
+      "built": false,
+      "carrier": 6436343,
+      "group_order": null,
+      "p": 23,
+      "rho_mod_p": [
+       4,
+       4,
+       0
+      ],
+      "translation": null
+     }
+    ],
+    "translation_structure_confirmed": 3
+   },
+   "id": "G07",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE HOLONOMY ORDER IS AN ARENA COORDINATE AT d = 3 TOO (RUNBOOK 15, HA's G30 re-proved here): swept over the built primes the measured group order EQUALS the declared prime at every one, while the exact rational residual is measured prime-INDEPENDENT.  A quantity that moves with the arena may serve as an instrument reading and may never enter as a conclusion, and no argument below uses it",
+   "detail": {
+    "built_primes": [
+     5,
+     7,
+     11
+    ],
+    "exact_residual": [
+     "1/6",
+     "1/6",
+     "0"
+    ],
+    "measured_orders": [
+     5,
+     7,
+     11
+    ],
+    "residual_is_prime_independent": true
+   },
+   "id": "G08",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE THREE-WING TRANSPORT BASE IS REBUILT.  The completion group -- the permutations of the 8 system-triple labels FIXING label 0 -- is enumerated and its size agrees with the factorial the declaration forces; the wing symmetry group is measured closed, NON-ABELIAN, of order 6 with element orders {1,2,2,2,3,3}; every wing symmetry fixes labels 0 and 7 (7 = |111>), and exactly 4 of the 6 square to the identity",
+   "detail": {
+    "abelian": false,
+    "closed": true,
+    "completion_group_order": 5040,
+    "completion_group_order_forced": 5040,
+    "element_orders": [
+     1,
+     2,
+     2,
+     2,
+     3,
+     3
+    ],
+    "labels_fixed_by_every_wing_symmetry": [
+     0,
+     7
+    ],
+    "wing_group_order": 6,
+    "wing_symmetries_with_P_squared_equal_1": 4
+   },
+   "id": "G09",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE THREE-WING COMMUTATOR ENCODING IS THE ONE TB3 DECIDED.  delta_pi(Q) = Sigma_pi Q^-1 Sigma_pi^-1 Q is TB3's F_3 = [Sigma_pi^-1, Q]; the four-factor writing F_1 is measured to agree with it at EXACTLY the cells whose wing symmetry squares to the identity and nowhere else -- so the two readings really do come apart at three wings, as TB3 measured -- and the twisted cocycle identity for F_2 holds with zero deviations",
+   "detail": {
+    "F1_differs_from_F3": 10,
+    "F1_equals_F3": 20,
+    "F1_equals_F3_at_involution_cells": 20,
+    "cells": 30,
+    "cocycle_cells": 150,
+    "cocycle_deviations": 0,
+    "delta_equals_F3": 30,
+    "involution_cells": 20
+   },
+   "id": "G10",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "TB3's LADDER IS REBUILT HERE AS THE STRUCTURE-GROUP FAMILY OF THIS PAIRING.  The defect subgroup K = <delta_pi(Q) : pi in S_3> is closed explicitly as a permutation group on the 8 labels at each of TB3's five declared ord-target completions, and its order reproduces TB3's own defect-subgroup order at every one: 1 < 12 < 168 < 360 < 2520, the ladder 1 < A_4 < GL(3,2) < A_6 < A_7",
+   "detail": {
+    "committed": {
+     "ord1": 1,
+     "ord2": 168,
+     "ord3": 12,
+     "ord6": 2520,
+     "reference": 360
+    },
+    "rebuilt": {
+     "ord1": 1,
+     "ord2": 168,
+     "ord3": 12,
+     "ord6": 2520,
+     "reference": 360
+    }
+   },
+   "id": "G11",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE FIXED-POINT WALL TRANSPORTS TO THREE WINGS UNCHANGED.  delta_pi(Q) = Q forces Sigma_pi Q^-1 Sigma_pi^-1 = e, hence Q = e, because conjugation is injective -- there is no hypothesis on the arena in that line.  Measured member by member over the whole completion group at EVERY one of the six wing symmetries, and again at LCB's own nine-label two-wing arena: exactly ONE fixed point everywhere, and it is the identity",
+   "detail": {
+    "nine_label_arena_fix_size": 1,
+    "nine_label_arena_members": 40320,
+    "rows": [
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 1,
+      "pi": [
+       0,
+       1,
+       2
+      ],
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 2,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 2,
+      "pi": [
+       1,
+       0,
+       2
+      ],
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 3,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 3,
+      "pi": [
+       2,
+       0,
+       1
+      ],
+      "the_fixed_point_is_the_identity": true
+     },
+     {
+      "fix_size": 1,
+      "members": 5040,
+      "ord": 2,
+      "pi": [
+       2,
+       1,
+       0
+      ],
+      "the_fixed_point_is_the_identity": true
+     }
+    ]
+   },
+   "id": "G12",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE S_3-EQUIVARIANT IDENTIFICATIONS ARE COMPUTED, NOT TYPED.  Every one of the 6! slot orders is tested for equivariance between the S_3-action on the six links and the S_3-action on the six metric slots, at every group element; the surviving set is measured to have exactly two members -- the NATURAL identification (each diagonal slot with its axis link) and the SWAP identification (each diagonal slot with the diagonal link of the complementary pair).  Two is what the orbit structure forces: both index sets are two free copies of the natural S_3-set, and the centraliser of S_3 in S_3 is trivial",
+   "detail": {
+    "equivariant_identifications": 2,
+    "equivariant_slot_orders": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+     ]
+    ],
+    "natural_is_among_them": true,
+    "slot_orders": 720,
+    "slot_orders_forced": 720
+   },
+   "id": "G13",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COVARIANT CELL FAMILY IS THE WHOLE ORBIT OF THE DECLARED IDENTIFICATION UNDER THE SLOT-RELABELLING GROUP (RUNBOOK 15): every ordering of the six metric slots, in both directions.  The count is computed from the declared slot set and never typed, every slot order is classified exactly once, and the classification is CELL-COMPLETE -- the role counts sum to the swept total",
+   "detail": {
+    "cell_complete": true,
+    "cells": 1440,
+    "cells_forced": 1440,
+    "invertible_failures": 0,
+    "role_counts": {
+     "lex": 2,
+     "module": 4,
+     "set": 1434
+    }
+   },
+   "id": "G14",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE CENSUS CELLS ARE CHOSEN BY A DECLARED RULE, NOT BY A VERDICT.  The rule -- every equivariant identification, HA's own lex ordering, the lex-first trivial-fixed-space slot order per direction, and the lex-first slot order that both survives the precheck at p = 7 and admits the order-3 demanded eigenvalue there -- is stated in the instrument before any census runs, and it returns a set containing BOTH module cells and cells of every measured precheck status, so the census is not run only where it is expected to be empty",
+   "detail": {
+    "census_cells": 9,
+    "rows": [
+     {
+      "direction": "q->counts",
+      "fix_dims": {
+       "5": 3,
+       "7": 3,
+       "11": 3,
+       "13": 3,
+       "17": 3,
+       "19": 3,
+       "23": 3
+      },
+      "role": "module",
+      "slots": [
+       "(0, 0)",
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "fix_dims": {
+       "5": 3,
+       "7": 3,
+       "11": 3,
+       "13": 3,
+       "17": 3,
+       "19": 3,
+       "23": 3
+      },
+      "role": "module",
+      "slots": [
+       "(0, 0)",
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "fix_dims": {
+       "5": 1,
+       "7": 1,
+       "11": 1,
+       "13": 1,
+       "17": 1,
+       "19": 1,
+       "23": 1
+      },
+      "role": "lex",
+      "slots": [
+       "(0, 0)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 1)",
+       "(1, 2)",
+       "(2, 2)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "fix_dims": {
+       "5": 1,
+       "7": 1,
+       "11": 1,
+       "13": 1,
+       "17": 1,
+       "19": 1,
+       "23": 1
+      },
+      "role": "lex",
+      "slots": [
+       "(0, 0)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 1)",
+       "(1, 2)",
+       "(2, 2)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "fix_dims": {
+       "5": 2,
+       "7": 2,
+       "11": 2,
+       "13": 2,
+       "17": 2,
+       "19": 2,
+       "23": 2
+      },
+      "role": "module",
+      "slots": [
+       "(1, 2)",
+       "(0, 2)",
+       "(0, 1)",
+       "(2, 2)",
+       "(1, 1)",
+       "(0, 0)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "fix_dims": {
+       "5": 2,
+       "7": 2,
+       "11": 2,
+       "13": 2,
+       "17": 2,
+       "19": 2,
+       "23": 2
+      },
+      "role": "module",
+      "slots": [
+       "(1, 2)",
+       "(0, 2)",
+       "(0, 1)",
+       "(2, 2)",
+       "(1, 1)",
+       "(0, 0)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "fix_dims": {
+       "5": 0,
+       "7": 0,
+       "11": 0,
+       "13": 0,
+       "17": 0,
+       "19": 0,
+       "23": 0
+      },
+      "role": "set",
+      "slots": [
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 0)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "fix_dims": {
+       "5": 0,
+       "7": 0,
+       "11": 0,
+       "13": 0,
+       "17": 0,
+       "19": 0,
+       "23": 0
+      },
+      "role": "set",
+      "slots": [
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 2)",
+       "(0, 0)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "fix_dims": {
+       "5": 0,
+       "7": 0,
+       "11": 0,
+       "13": 0,
+       "17": 0,
+       "19": 0,
+       "23": 0
+      },
+      "role": "set",
+      "slots": [
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 0)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     }
+    ]
+   },
+   "id": "G15",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE STILLBORN PRECHECK IS A MEASUREMENT WITH BOTH OUTCOMES REACHABLE.  The square forces alpha(fix E) into fix delta_pi, which is measured to be a single point, so an INJECTIVE candidate needs |fix E| = 1.  A synthetic pair whose re-encoding has trivial fixed space PASSES the precheck and a synthetic pair whose re-encoding fixes a nonzero vector FAILS it, through the same function -- so a blinded precheck cannot pass this gate in either direction",
+   "detail": {
+    "fix_delta_size": 1,
+    "synthetic_compatible_fix_dim": 0,
+    "synthetic_compatible_passes": true,
+    "synthetic_mismatched_fix_dim": 3,
+    "synthetic_mismatched_passes": false
+   },
+   "id": "G16",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PRECHECK IS RUN FIRST, PER CANDIDATE, OVER THE WHOLE COVARIANT FAMILY, AND ITS MISMATCH IS COMPUTED.  BOTH S_3-EQUIVARIANT identifications -- the pin's minimum candidate -- are STILLBORN at every declared prime, with the mismatch recorded as |fix E| : |fix delta| = p^3 : 1 at the natural identification and p^2 : 1 at the swap identification; and the SET-LEVEL covariant family is measured to contain survivors at every declared prime, so the precheck is not a wall that everything hits.  The per-prime counts are cell-complete",
+   "detail": {
+    "cell_complete": true,
+    "cells": 1440,
+    "module_candidates_all_stillborn": true,
+    "rows": [
+     {
+      "direction": "q->counts",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 3,
+        "mismatch": "125 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 125,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 3,
+        "mismatch": "343 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 343,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 3,
+        "mismatch": "1331 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 1331,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 3,
+        "mismatch": "2197 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 2197,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 3,
+        "mismatch": "4913 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 4913,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 3,
+        "mismatch": "6859 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 6859,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 3,
+        "mismatch": "12167 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 12167,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "module",
+      "slots": [
+       "(0, 0)",
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 3,
+        "mismatch": "125 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 125,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 3,
+        "mismatch": "343 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 343,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 3,
+        "mismatch": "1331 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 1331,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 3,
+        "mismatch": "2197 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 2197,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 3,
+        "mismatch": "4913 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 4913,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 3,
+        "mismatch": "6859 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 6859,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 3,
+        "mismatch": "12167 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 12167,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "module",
+      "slots": [
+       "(0, 0)",
+       "(1, 1)",
+       "(2, 2)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 2)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 1,
+        "mismatch": "5 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 5,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 1,
+        "mismatch": "7 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 7,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 1,
+        "mismatch": "11 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 11,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 1,
+        "mismatch": "13 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 13,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 1,
+        "mismatch": "17 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 17,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 1,
+        "mismatch": "19 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 19,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 1,
+        "mismatch": "23 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 23,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "lex",
+      "slots": [
+       "(0, 0)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 1)",
+       "(1, 2)",
+       "(2, 2)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 1,
+        "mismatch": "5 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 5,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 1,
+        "mismatch": "7 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 7,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 1,
+        "mismatch": "11 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 11,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 1,
+        "mismatch": "13 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 13,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 1,
+        "mismatch": "17 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 17,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 1,
+        "mismatch": "19 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 19,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 1,
+        "mismatch": "23 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 23,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "lex",
+      "slots": [
+       "(0, 0)",
+       "(0, 1)",
+       "(0, 2)",
+       "(1, 1)",
+       "(1, 2)",
+       "(2, 2)"
+      ]
+     },
+     {
+      "direction": "q->counts",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 2,
+        "mismatch": "25 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 25,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 2,
+        "mismatch": "49 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 49,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 2,
+        "mismatch": "121 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 121,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 2,
+        "mismatch": "169 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 169,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 2,
+        "mismatch": "289 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 289,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 2,
+        "mismatch": "361 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 361,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 2,
+        "mismatch": "529 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 529,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "module",
+      "slots": [
+       "(1, 2)",
+       "(0, 2)",
+       "(0, 1)",
+       "(2, 2)",
+       "(1, 1)",
+       "(0, 0)"
+      ]
+     },
+     {
+      "direction": "counts->q",
+      "per_prime": {
+       "5": {
+        "dim_fix_E": 2,
+        "mismatch": "25 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 25,
+        "size_fix_delta": 1
+       },
+       "7": {
+        "dim_fix_E": 2,
+        "mismatch": "49 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 49,
+        "size_fix_delta": 1
+       },
+       "11": {
+        "dim_fix_E": 2,
+        "mismatch": "121 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 121,
+        "size_fix_delta": 1
+       },
+       "13": {
+        "dim_fix_E": 2,
+        "mismatch": "169 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 169,
+        "size_fix_delta": 1
+       },
+       "17": {
+        "dim_fix_E": 2,
+        "mismatch": "289 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 289,
+        "size_fix_delta": 1
+       },
+       "19": {
+        "dim_fix_E": 2,
+        "mismatch": "361 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 361,
+        "size_fix_delta": 1
+       },
+       "23": {
+        "dim_fix_E": 2,
+        "mismatch": "529 : 1",
+        "precheck": "STILLBORN",
+        "size_fix_E": 529,
+        "size_fix_delta": 1
+       }
+      },
+      "role": "module",
+      "slots": [
+       "(1, 2)",
+       "(0, 2)",
+       "(0, 1)",
+       "(2, 2)",
+       "(1, 1)",
+       "(0, 0)"
+      ]
+     }
+    ],
+    "stillborn_per_prime": {
+     "5": 860,
+     "7": 860,
+     "11": 788,
+     "13": 788,
+     "17": 788,
+     "19": 788,
+     "23": 788
+    },
+    "survivors_per_prime": {
+     "5": 580,
+     "7": 580,
+     "11": 652,
+     "13": 652,
+     "17": 652,
+     "19": 652,
+     "23": 652
+    }
+   },
+   "id": "G17",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ORDER CRITERION IS DERIVED, COMPUTED BY TWO ROUTES, AND REACHABLE IN BOTH DIRECTIONS.  S1a and S1b make the image an abelian Sigma-stable subgroup on which delta_pi acts as I - rho; S3 makes alpha an isomorphism, so rho = I - alpha E alpha^-1 and rho^ord(pi) = I, i.e. (I - E)^ord(pi) = I.  The matrix-power route and the polynomial route (E = 2I at an involution, E^2 - 3E + 3I = 0 at an order-3 wing symmetry, whose roots are exactly 1 - omega) agree at every cell; and the criterion is SATISFIED by a synthetic encoding, so it is not a condition nothing can meet",
+   "detail": {
+    "cells": 20160,
+    "cells_satisfying": 0,
+    "per_prime": {
+     "5": 0,
+     "7": 0,
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0
+    },
+    "route_disagreements": 0,
+    "synthetic_positive_control_matrix_route": true,
+    "synthetic_positive_control_polynomial_route": true
+   },
+   "id": "G18",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ORDER CRITERION SUBSUMES THE PRECHECK, MEASURED.  (I - E)^ord = I forces I - E invertible, hence dim ker(E - I) = 0; so the set of cells satisfying the criterion is contained in the set surviving the precheck, and the containment is measured STRICT -- the precheck has survivors the criterion kills.  The precheck is therefore the structural SHADOW of the census criterion, exactly as the LCB lesson predicts",
+   "detail": {
+    "cells_satisfying_the_criterion": 0,
+    "cells_surviving_the_precheck": 4420,
+    "containment_is_strict": true
+   },
+   "id": "G19",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE CENSUS IS COMPUTED BY TWO ROUTES THAT SHARE NO DECIDING VARIABLE, AND THEY AGREE EVERYWHERE.  Route A solves ker(E^T - (1-s)I) by Gaussian elimination and multiplies by the MEASURED count of normalised subgroups; route B enumerates every cyclic subgroup of order p, builds its delta-exponent table from PERMUTATIONS with no linear algebra in it, and enumerates every covector projectively with the measured redundancy restored.  The taint counter is zero and both invocation counters are nonzero",
+   "detail": {
+    "candidate_evaluations_counted": 41653,
+    "disagreements": 0,
+    "route_calls": {
+     "A": 315,
+     "B": 315,
+     "taint": 0
+    },
+    "rows": 315
+   },
+   "id": "G20",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "ROUTE B's PROJECTIVE ENUMERATION IS CALIBRATED AGAINST THE FULL ONE.  At a declared cell and prime the covector space is enumerated in FULL -- every one of p^6 covectors, with no redundancy quotient -- and the count agrees with the projective enumeration's, so the declared redundancy p-1 is measured rather than assumed",
+   "detail": {
+    "cell": {
+     "direction": "q->counts",
+     "role": "module"
+    },
+    "covectors_enumerated": 15625,
+    "full_count": 745,
+    "prime": 5,
+    "projective_count": 745
+   },
+   "id": "G21",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "ROUTE C -- THE LITERAL PERMUTATION VERIFICATION -- CONFIRMS THAT THE COUNTED SQUARE IS THE PERMUTATION SQUARE.  At declared instances a candidate route A admits is rebuilt as an ACTUAL permutation and the square is compared entry by entry at EVERY one of the p^6 record cells: zero violations.  A declared rejected covector is run through the same code and violates it at a positive count, so the verification is not vacuous",
+   "detail": {
+    "a_rejected_candidate_violates": true,
+    "admitted_all_clean": true,
+    "rows": [
+     {
+      "cells": 15625,
+      "direction": "q->counts",
+      "p": 5,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "role": "module",
+      "status": "admitted",
+      "violations": 0
+     },
+     {
+      "cells": 15625,
+      "direction": "q->counts",
+      "p": 5,
+      "pi": [
+       0,
+       2,
+       1
+      ],
+      "role": "module",
+      "status": "rejected",
+      "violations": 12500
+     },
+     {
+      "cells": 117649,
+      "direction": "counts->q",
+      "p": 7,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "role": "module",
+      "status": "admitted",
+      "violations": 0
+     },
+     {
+      "cells": 117649,
+      "direction": "counts->q",
+      "p": 7,
+      "pi": [
+       1,
+       2,
+       0
+      ],
+      "role": "module",
+      "status": "rejected",
+      "violations": 100842
+     }
+    ]
+   },
+   "id": "G22",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE PERMUTATION-MODULE OBSTRUCTION, MEASURED.  S1c-module (alpha equivariant) together with S1a, S1b and S3 force E = I - rho_V(pi).  The record datum space at d = 3 carries the S_3 PERMUTATION module -- the chart symmetry permutes links, it does not mix them -- so I - rho_V(pi) annihilates the all-ones link vector at every row measured, while E, being invertible, annihilates it at none; the forced equality therefore holds at zero rows.  The obstruction is not an artefact of the instrument: a synthetic NON-permutation S_3-action makes I - rho invertible and the module square satisfiable",
+   "detail": {
+    "E_kills_the_all_ones_at_no_row": true,
+    "I_minus_rho_kills_the_all_ones_at_all_rows": true,
+    "rows": 210,
+    "rows_where_E_equals_I_minus_rho": 0,
+    "synthetic_non_permutation_module_is_invertible": true
+   },
+   "id": "G23",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "FOUND IS REACHABLE, AND IT IS REACHABLE IN-ARENA.  At the grown arena of the DECLARED growth family -- m copies of TB3's seven moved labels, S_3 acting on the F_2^3 factor -- an elementary abelian subgroup of rank 6 is CONSTRUCTED, the wing symmetry is measured to normalise it with the declared exponents, and the resulting alpha is measured injective, a homomorphism, and to satisfy the commuting square at EVERY one of the p^6 record cells.  So the census instrument returns FOUND when the encodings are compatible, and the emptiness reported below is a measurement and not a dead branch",
+   "detail": {
+    "E_tilde_diagonal": [
+     6,
+     6,
+     6,
+     4,
+     4,
+     4
+    ],
+    "exponents": [
+     2,
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "generators_commute": true,
+    "homomorphism_violations": 0,
+    "image_size": 117649,
+    "injective": true,
+    "labels": 43,
+    "m": 6,
+    "normalisation_verified": true,
+    "prime": 7,
+    "record_cells": 117649,
+    "square_violations": 0
+   },
+   "id": "G24",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE HELD-OUT VERIFICATION IS PREDICTIVE.  The FIT/HELD split is declared before any candidate is fitted: the candidate is admitted on the single FIT cell alone and is then verified on every HELD cell -- the square (H1), the DEFECT PERMUTATION itself entry by entry (H2), and the fixed-label count (H3), a transport-side physical quantity that takes more than one value.  The two extensions declared IN ADVANCE to fail -- X-NOSQUARE and X-FLATFIX -- fail at every held-out cell except the ONE at which they are analytically forced, the zero record, where every candidate returns the identity and both predictions are true of any square whatsoever; that exempt count is COMPUTED and gated to be exactly one, so an instrument that exempted more could not pass here",
+   "detail": {
+    "H1_square_verified_out_of_sample": 117648,
+    "H2_defect_permutation_verified": 117648,
+    "H3_fixed_label_counts_verified": 117648,
+    "X_FLATFIX_passes": 0,
+    "X_NOSQUARE_passes": 0,
+    "distinct_fixed_label_values": [
+     1,
+     8,
+     15,
+     22,
+     29,
+     36,
+     43
+    ],
+    "fit_cell": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "held_cells": 117648,
+    "held_cells_where_both_extensions_are_forced": 1
+   },
+   "id": "G25",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EMPTY IS REACHABLE BY THE SAME MACHINERY AT THE SAME ARENA.  Replacing the synthetic encoding by HA's own d = 3 record-is-metric readout at the grown arena, and changing nothing else, the order criterion fails and the census is empty -- so the FOUND and EMPTY branches are separated by the ENCODING and not by the arena, the prime, or the instrument",
+   "detail": {
+    "HA_encoding_empty": true,
+    "arena_labels": 43,
+    "prime": 7,
+    "synthetic_encoding_found": true
+   },
+   "id": "G26",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE NEGATIVE CONTROL HAS TEETH, AND THE REJECTING CLAUSE IS NAMED.  BREAK-HOM multiplies an admitted exponent by a 1-eigencovector raised to the (p-1)st power: it satisfies the commuting square at EVERY record cell, differing from an admitted candidate only in the LINEARITY of its exponent, and it is rejected by S1b alone at a measured positive count",
+   "detail": {
+    "cells": 117649,
+    "hom_violations": 1536,
+    "square_violations": 0
+   },
+   "id": "G27",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S2 (CARRIER RIGIDITY) AND S4 (FUNCTORIALITY IN THE FAMILY).  S2: the transport side's fixed-label stratification is measured CARRIED by the admitted candidate -- the held-out defect permutations take more than one fixed-label value, so the stratification is a real invariant and not a constant.  S4: the emptiness is measured at every one of TB3's five declared ladder bases -- whose defect subgroups differ by two orders of magnitude -- and at BOTH declared arena scales, and it does not move",
+   "detail": {
+    "S2_stratification_values": [
+     1,
+     8,
+     15,
+     22,
+     29,
+     36,
+     43
+    ],
+    "S4_bases": [
+     {
+      "K_order": 1,
+      "base": "ord1",
+      "census_empty_at_this_base": true,
+      "live_primes": []
+     },
+     {
+      "K_order": 168,
+      "base": "ord2",
+      "census_empty_at_this_base": true,
+      "live_primes": [
+       7
+      ]
+     },
+     {
+      "K_order": 12,
+      "base": "ord3",
+      "census_empty_at_this_base": true,
+      "live_primes": []
+     },
+     {
+      "K_order": 2520,
+      "base": "ord6",
+      "census_empty_at_this_base": true,
+      "live_primes": [
+       5,
+       7
+      ]
+     },
+     {
+      "K_order": 360,
+      "base": "reference",
+      "census_empty_at_this_base": true,
+      "live_primes": [
+       5
+      ]
+     }
+    ],
+    "S4_scales": [
+     {
+      "census_empty": true,
+      "labels": 8,
+      "scale": "native"
+     },
+     {
+      "census_empty": true,
+      "labels": 43,
+      "scale": "grown"
+     }
+    ]
+   },
+   "id": "G28",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SCALE-THRESHOLD TABLE IS RECOMPUTED AT THE NEW PAIRING.  Per prime, three thresholds are COMPUTED and never typed: the smallest arena whose completion group's order is divisible by p^6 (Legendre's formula), the smallest arena containing an elementary abelian subgroup of rank 6 (minimal faithful degree 6p), and the smallest member of the declared growth family reaching it.  The two are measured DIFFERENT -- divisibility is strictly weaker than realisability -- and the NATIVE three-wing arena admits an injective candidate at NO declared prime.  The d = 2 analogue recomputed by the same function reproduces LCB's own 3p+1 thresholds",
+   "detail": {
+    "declared_primes_the_native_arena_admits": [],
+    "native_arena_labels": 8,
+    "rows": [
+     {
+      "d2_elementary_abelian_threshold": 16,
+      "d3_divisibility_threshold": 26,
+      "d3_elementary_abelian_threshold": 31,
+      "d3_growth_family_labels": 36,
+      "d3_growth_family_member": 5,
+      "p": 5
+     },
+     {
+      "d2_elementary_abelian_threshold": 22,
+      "d3_divisibility_threshold": 43,
+      "d3_elementary_abelian_threshold": 43,
+      "d3_growth_family_labels": 43,
+      "d3_growth_family_member": 6,
+      "p": 7
+     },
+     {
+      "d2_elementary_abelian_threshold": 34,
+      "d3_divisibility_threshold": 67,
+      "d3_elementary_abelian_threshold": 67,
+      "d3_growth_family_labels": 71,
+      "d3_growth_family_member": 10,
+      "p": 11
+     },
+     {
+      "d2_elementary_abelian_threshold": 40,
+      "d3_divisibility_threshold": 79,
+      "d3_elementary_abelian_threshold": 79,
+      "d3_growth_family_labels": 85,
+      "d3_growth_family_member": 12,
+      "p": 13
+     },
+     {
+      "d2_elementary_abelian_threshold": 52,
+      "d3_divisibility_threshold": 103,
+      "d3_elementary_abelian_threshold": 103,
+      "d3_growth_family_labels": 106,
+      "d3_growth_family_member": 15,
+      "p": 17
+     },
+     {
+      "d2_elementary_abelian_threshold": 58,
+      "d3_divisibility_threshold": 115,
+      "d3_elementary_abelian_threshold": 115,
+      "d3_growth_family_labels": 120,
+      "d3_growth_family_member": 17,
+      "p": 19
+     },
+     {
+      "d2_elementary_abelian_threshold": 70,
+      "d3_divisibility_threshold": 139,
+      "d3_elementary_abelian_threshold": 139,
+      "d3_growth_family_labels": 141,
+      "d3_growth_family_member": 20,
+      "p": 23
+     }
+    ]
+   },
+   "id": "G29",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE p = 7 SPECTRAL MEETING, TESTED AS A MEASUREMENT AND CONFIRMED -- AND ITS PRICE MEASURED WITH IT.  For an order-3 wing symmetry the square demands the eigenvalue 1 - s with s^3 = 1; the demanded set is computed per prime, and the values actually REALISED in the three-wing arena are measured from the conjugation exponents of the subgroups the wing symmetry normalises.  At p = 7 the realised set is {4, 6} and HA's own counts->q eigenvalue 1/2 is 4: they MEET, and at no other declared prime do they.  R2-LCB's prediction is confirmed at the d = 3 pairing.  What it buys is measured too: the meeting occurs at the equivariant identification, which the precheck has already declared STILLBORN",
+   "detail": {
+    "module_cells_admitting_it_at_7": 1,
+    "primes_where_they_meet": [
+     7
+    ],
+    "rows": [
+     {
+      "HA_half_mod_p": 3,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1
+      ],
+      "demanded_1_minus_s_order3": [],
+      "in_arena_demanded_values": [],
+      "p": 5,
+      "precheck_surviving_cells_admitting_it": 0
+     },
+     {
+      "HA_half_mod_p": 4,
+      "MEETING": true,
+      "cube_roots_of_1": [
+       1,
+       2,
+       4
+      ],
+      "demanded_1_minus_s_order3": [
+       4,
+       6
+      ],
+      "in_arena_demanded_values": [
+       4,
+       6
+      ],
+      "p": 7,
+      "precheck_surviving_cells_admitting_it": 214
+     },
+     {
+      "HA_half_mod_p": 6,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1
+      ],
+      "demanded_1_minus_s_order3": [],
+      "in_arena_demanded_values": [],
+      "p": 11,
+      "precheck_surviving_cells_admitting_it": 0
+     },
+     {
+      "HA_half_mod_p": 7,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1,
+       3,
+       9
+      ],
+      "demanded_1_minus_s_order3": [
+       5,
+       11
+      ],
+      "in_arena_demanded_values": [],
+      "p": 13,
+      "precheck_surviving_cells_admitting_it": 114
+     },
+     {
+      "HA_half_mod_p": 9,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1
+      ],
+      "demanded_1_minus_s_order3": [],
+      "in_arena_demanded_values": [],
+      "p": 17,
+      "precheck_surviving_cells_admitting_it": 0
+     },
+     {
+      "HA_half_mod_p": 10,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1,
+       7,
+       11
+      ],
+      "demanded_1_minus_s_order3": [
+       9,
+       13
+      ],
+      "in_arena_demanded_values": [],
+      "p": 19,
+      "precheck_surviving_cells_admitting_it": 56
+     },
+     {
+      "HA_half_mod_p": 12,
+      "MEETING": false,
+      "cube_roots_of_1": [
+       1
+      ],
+      "demanded_1_minus_s_order3": [],
+      "in_arena_demanded_values": [],
+      "p": 23,
+      "precheck_surviving_cells_admitting_it": 0
+     }
+    ],
+    "those_cells_precheck": [
+     3
+    ]
+   },
+   "id": "G30",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "S6 -- THE PRIME IS A PARAMETER, WITH PER-PRIME VERDICTS.  The order criterion is evaluated at every declared prime separately; the partial clause list is measured prime-DEPENDENT (the S1a+S1b census is live at 5 and 7 and dead above) while the full clause list is measured prime-UNIFORM, so the verdict does not ride on the declared prime and the difference between the two readings is itself a measurement",
+   "detail": {
+    "per_prime": {
+     "5": "EMPTY",
+     "7": "EMPTY",
+     "11": "EMPTY",
+     "13": "EMPTY",
+     "17": "EMPTY",
+     "19": "EMPTY",
+     "23": "EMPTY"
+    },
+    "primes_with_a_normalised_subgroup": [
+     5,
+     7
+    ]
+   },
+   "id": "G31",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SYMMETRY SELF-TEST, WITH THE CACHE DISCIPLINE.  The S_3-action on the record datum space is measured to be by PERMUTATION matrices at every group element and closed with six distinct images -- that is the fact the permutation-module obstruction turns on, and it is measured, not assumed.  fix(delta) is recounted INSIDE a declared relabelled arena, with a relabelling measured to move a positive number of labels, and it is still exactly one.  Every self-test evaluation BYPASSES the memo, self-test cache hits are zero, and the cache is measured to have been exercised before the self-tests began, so the zero-hit clause is not the signature of a cache nobody uses",
+   "detail": {
+    "cache_warmed_over": 2000,
+    "distinct_rho_images": 6,
+    "fix_delta_inside_the_relabelled_arena": {
+     "[0, 1, 2]": 1,
+     "[0, 2, 1]": 1,
+     "[1, 0, 2]": 1,
+     "[1, 2, 0]": 1,
+     "[2, 0, 1]": 1,
+     "[2, 1, 0]": 1
+    },
+    "hits_before_the_selftests": 9501,
+    "lookups_before_the_selftests": 39741,
+    "permutation_matrix_elements": 6,
+    "relabelling_moves": 7,
+    "selftest_bypasses": 2000,
+    "selftest_cache_hits": 0
+   },
+   "id": "G32",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE SELF-TEST'S TESTED SET IS FIXED BY DECLARATION, NEVER SELECTED BY THE VERDICTS UNDER AUDIT (RUNBOOK 14 addendum).  The declared set is the WHOLE covariant family -- every cell, including the ones the precheck kills -- and it is measured strictly larger than the set the verdicts would have selected",
+   "detail": {
+    "covariant_cells": 1440,
+    "declared_tested_cells": 1440,
+    "verdict_selected_cells": 508
+   },
+   "id": "G33",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE CHANGE-OF-BASIS SELF-TEST.  The record datum space is re-based by a declared element of GL_6(F_p), measured non-trivial by its determinant and by the fact that it is not the identity, and both decision quantities -- the fixed-space dimension and the order criterion -- are recomputed in the new basis and are unchanged.  The invariance is analytically forced and is reported at that strength; what the gate measures that is not forced is that the action is non-trivial and that the recomputation is taken INSIDE the new basis",
+   "detail": {
+    "basis_change_is_non_trivial": true,
+    "determinant_of_the_declared_basis_change": "1",
+    "rows": [
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 3,
+      "fix_before": 3,
+      "p": 5,
+      "role": "module"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 3,
+      "fix_before": 3,
+      "p": 7,
+      "role": "module"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 3,
+      "fix_before": 3,
+      "p": 5,
+      "role": "module"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 3,
+      "fix_before": 3,
+      "p": 7,
+      "role": "module"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 1,
+      "fix_before": 1,
+      "p": 5,
+      "role": "lex"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 1,
+      "fix_before": 1,
+      "p": 7,
+      "role": "lex"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 1,
+      "fix_before": 1,
+      "p": 5,
+      "role": "lex"
+     },
+     {
+      "criterion_after": false,
+      "criterion_before": false,
+      "fix_after": 1,
+      "fix_before": 1,
+      "p": 7,
+      "role": "lex"
+     }
+    ]
+   },
+   "id": "G34",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE VERDICT IS DERIVED HERE, INSIDE THE GATE, FROM THREE SOURCES THAT SHARE NO DECIDING VARIABLE, WITH BOTH BRANCHES REACHABLE.  Source 1 is the declared census's own live-row sum; source 2 is the order-criterion sweep over the WHOLE covariant family, which never runs a census; source 3 is the permutation-module equality count, which touches neither.  All three return zero, a candidate is measured to PASS the precheck, and the FOUND and EMPTY branches are both measured reachable, so the pre-registered outcome is RSQ-SQUARE-FOUND-BRIDGE-EMPTY and the verdict-flip mutant proves the derivation can fail",
+   "detail": {
+    "a_candidate_passes_the_precheck": true,
+    "coverage_qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
+    "d3_constructed": true,
+    "empty_reachable": true,
+    "found_reachable": true,
+    "obstruction": "THE ORDER OBSTRUCTION: S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION: S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does.",
+    "source_1_census_live_rows": 0,
+    "source_2_order_criterion_hits": 0,
+    "source_3_module_equalities": 0,
+    "verdict": "RSQ-SQUARE-FOUND-BRIDGE-EMPTY"
+   },
+   "id": "G35",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE COVERAGE QUALIFIER IS MEASURED, AND EVERY TABLE IS CELL-COMPLETE.  Every one of the (cell, prime, wing-order) rows is covered by the arena-free order obstruction -- none is left to a cardinality argument, which is the respect in which this wall is stronger than LCB's -- and the precheck, census and criterion tables each sum to their swept totals",
+   "detail": {
+    "qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
+    "rows_covered_arena_free": 20160,
+    "rows_total": 20160
+   },
+   "id": "G36",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "EVERY DECISION HELPER IS PROBED WITH ITS OWN NEGATIVE CASE.  Each helper that carries a verdict, a qualifier, a completeness clause or a branch decision is fed a SYNTHETIC input whose correct answer is fixed in advance and must return it -- the completeness clause must reject a dropped cell, the coverage qualifier must report PARTIAL when the coverage is partial, the precheck must reject a nonzero fixed space, the verdict function must return the NO-COMPATIBLE-SQUARE branch when nothing survives.  A helper blinded to always answer one way cannot pass here, so no gate below rests on a clause that could not have come out otherwise",
+   "detail": {
+    "completeness_rejects_a_dropped_cell": true,
+    "coverage_qualifier_reports_PARTIAL_when_partial": true,
+    "derive_verdict_returns_NO_COMPATIBLE_SQUARE_when_all_stillborn": true,
+    "empty_branch_reports_what_it_is_given": true,
+    "found_branch_rejects_a_violating_witness": true,
+    "ladder_measured_is_the_identity_on_its_input": true,
+    "meeting_verdict_rejects_a_non_meeting": true,
+    "precheck_rejects_a_nonzero_fixed_space": true,
+    "qualifier_value_returns_what_it_is_given": true,
+    "s2_rejects_a_constant_stratification": true,
+    "stillborn_mismatch_is_computed": true,
+    "subsumption_rejects_the_wrong_direction": true,
+    "teeth_exempt_only_at_the_identity": true
+   },
+   "id": "G37",
+   "must_pass": true,
+   "passed": true
+  },
+  {
+   "claim": "THE ANCHOR POLICY IS FAIL-CLOSED AND MEASURED.  Every committed number this unit reuses carries an assertion that kills the run on mismatch; the count of anchor FAILURES is additionally gated here, so an instrument that softened the assertions into warnings would still be caught",
+   "detail": {
+    "anchor_failures": 0,
+    "anchors": 26,
+    "fatal": 0
+   },
+   "id": "G38",
+   "must_pass": true,
+   "passed": true
+  }
+ ],
+ "hash_pins": {
+  "brg_paper": {
+   "path": "v13/paper-brg-bridge.md",
+   "sha256_prefix": "371e38742059d14a"
+  },
+  "brg_receipt": {
+   "path": "v13/code/brg_bridge_receipt.json",
+   "sha256_prefix": "5c428afd5c58c899"
+  },
+  "ha_paper": {
+   "path": "v13/paper-ha-successor.md",
+   "sha256_prefix": "f286ba10d2d9a0f3"
+  },
+  "ha_receipt": {
+   "path": "v13/code/ha_successor_receipt.json",
+   "sha256_prefix": "542b8735daf0ebc6"
+  },
+  "lcb_paper": {
+   "path": "v13/paper-lcb-livecell.md",
+   "sha256_prefix": "3ff069d2127b0917"
+  },
+  "lcb_receipt": {
+   "path": "v13/code/lcb_livecell_receipt.json",
+   "sha256_prefix": "3e502f685ab3010f"
+  },
+  "pin": {
+   "path": "v13/note-rsq-reposed-square-pin.md",
+   "sha256_prefix": "bc79fb6111ff6c90"
+  },
+  "psi_paper": {
+   "path": "v13/paper-psi-curvature.md",
+   "sha256_prefix": "41d358d421d8288d"
+  },
+  "psi_receipt": {
+   "path": "v13/code/psi_curvature_receipt.json",
+   "sha256_prefix": "7c7b91a9257e3888"
+  },
+  "tb3_paper": {
+   "path": "v13/paper-tb3-third-base.md",
+   "sha256_prefix": "4a1f9c53d8640145"
+  },
+  "tb3_receipt": {
+   "path": "v13/code/tb3_third_base_receipt.json",
+   "sha256_prefix": "c9bc956fe75129bd"
+  }
+ },
+ "mutants": [
+  {
+   "exit": 1,
+   "expected_kill": "the BRG paper's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-brg-sha",
+   "named_kills": [
+    "A:A-SHA-brg_paper"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the HA receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-ha-sha",
+   "named_kills": [
+    "A:A-SHA-ha_receipt"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the rebuilt defect-subgroup ladder is perturbed",
+   "killed": true,
+   "mutant": "anchor-ladder",
+   "named_kills": [
+    "A:A-TB3-K-ord1"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the LCB receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-lcb-sha",
+   "named_kills": [
+    "A:A-SHA-lcb_receipt"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the RSQ pin's own hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-pin-sha",
+   "named_kills": [
+    "A:A-SHA-pin"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the PSI receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-psi-sha",
+   "named_kills": [
+    "A:A-SHA-psi_receipt"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-to-F_p reduction of rho is perturbed",
+   "killed": true,
+   "mutant": "anchor-rho",
+   "named_kills": [
+    "G:G07",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "anchor failures are made non-fatal",
+   "killed": true,
+   "mutant": "anchor-soft",
+   "named_kills": [
+    "A:A-SHA-pin",
+    "G:G38"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the TB3 receipt's hash pin is perturbed",
+   "killed": true,
+   "mutant": "anchor-tb3-sha",
+   "named_kills": [
+    "A:A-SHA-tb3_receipt"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the d = 3 link set drops its diagonals",
+   "killed": true,
+   "mutant": "arena3-lax",
+   "named_kills": [
+    "G:G04",
+    "G:G05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared GL_6 basis change is made trivial",
+   "killed": true,
+   "mutant": "basis-lax",
+   "named_kills": [
+    "G:G34"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the negative-with-teeth is not rejected",
+   "killed": true,
+   "mutant": "break-blind",
+   "named_kills": [
+    "G:G27"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test cache bypass is disabled",
+   "killed": true,
+   "mutant": "cache-lax",
+   "named_kills": [
+    "G:G32"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the cache is never exercised before the self-tests",
+   "killed": true,
+   "mutant": "cache-unused",
+   "named_kills": [
+    "G:G32"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the reduced carrier's register shift is perturbed",
+   "killed": true,
+   "mutant": "carrier3-lax",
+   "named_kills": [
+    "G:G07",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "one covariant cell is dropped from the sweep",
+   "killed": true,
+   "mutant": "cell-drop",
+   "named_kills": [
+    "G:G13",
+    "G:G14",
+    "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the covariant family is truncated to the declared identifications",
+   "killed": true,
+   "mutant": "cell-orbit-drop",
+   "named_kills": [
+    "G:G13",
+    "G:G14",
+    "G:G15",
+    "G:G17",
+    "G:G19",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the census tally drops the trivial map",
+   "killed": true,
+   "mutant": "census-lax",
+   "named_kills": [
+    "G:G20",
+    "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared census-cell rule is replaced by an arbitrary pick",
+   "killed": true,
+   "mutant": "censuscell-lax",
+   "named_kills": [
+    "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a table's cell-completeness check is blinded",
+   "killed": true,
+   "mutant": "complete-lax",
+   "named_kills": [
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the order criterion is weakened to the fixed-space test alone",
+   "killed": true,
+   "mutant": "criterion-lax",
+   "named_kills": [
+    "G:G18",
+    "G:G19",
+    "G:G31",
+    "G:G35",
+    "G:G36"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the EMPTY branch is blocked",
+   "killed": true,
+   "mutant": "empty-block",
+   "named_kills": [
+    "G:G26",
+    "G:G28",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the four-factor form replaces the commutator encoding",
+   "killed": true,
+   "mutant": "encoding-lax",
+   "named_kills": [
+    "A:A-TB3-K-ord1",
+    "G:G10",
+    "G:G11"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the equivariance test is skipped and the identifications are typed",
+   "killed": true,
+   "mutant": "equi-lax",
+   "named_kills": [
+    "G:G13",
+    "G:G15"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the mutant-identity AST scanner is blinded",
+   "killed": true,
+   "mutant": "exempt-lax",
+   "named_kills": [
+    "G:G03"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "fix(delta) is read off the wrong law",
+   "killed": true,
+   "mutant": "fixpoint-lax",
+   "named_kills": [
+    "G:G12",
+    "G:G16",
+    "G:G17"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact-arithmetic scanner is blinded",
+   "killed": true,
+   "mutant": "float-lax",
+   "named_kills": [
+    "G:G02"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the FOUND branch is blocked",
+   "killed": true,
+   "mutant": "found-block",
+   "named_kills": [
+    "G:G24",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a candidate is evaluated before the declarations freeze",
+   "killed": true,
+   "mutant": "freeze-lax",
+   "named_kills": [
+    "G:G01"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the held-out split is contaminated by the fit cell",
+   "killed": true,
+   "mutant": "heldout-lax",
+   "named_kills": [
+    "G:G25"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the defect-subgroup closure is truncated",
+   "killed": true,
+   "mutant": "ladder-lax",
+   "named_kills": [
+    "A:A-TB3-K-ord2",
+    "G:G11"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the literal permutation verification is skipped",
+   "killed": true,
+   "mutant": "literal-lax",
+   "named_kills": [
+    "G:G22"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the spectral meeting is asserted at every prime",
+   "killed": true,
+   "mutant": "meeting-lax",
+   "named_kills": [
+    "G:G30",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the module witness's action is replaced by a permutation action",
+   "killed": true,
+   "mutant": "module-blind",
+   "named_kills": [
+    "G:G23"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the permutation-module obstruction is asserted, not measured",
+   "killed": true,
+   "mutant": "module-lax",
+   "named_kills": [
+    "G:G23",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exact Sylvester admissibility test is blinded",
+   "killed": true,
+   "mutant": "posdef-lax",
+   "named_kills": [
+    "G:G04",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the precheck rejects every candidate",
+   "killed": true,
+   "mutant": "precheck-blind",
+   "named_kills": [
+    "G:G16",
+    "G:G17",
+    "G:G19",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the precheck admits every candidate",
+   "killed": true,
+   "mutant": "precheck-lax",
+   "named_kills": [
+    "G:G16",
+    "G:G17",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the deformation prime sweep collapses to one prime",
+   "killed": true,
+   "mutant": "prime-single",
+   "named_kills": [
+    "G:G08"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "a computed qualifier is replaced by a typed string",
+   "killed": true,
+   "mutant": "qualifier-typo",
+   "named_kills": [
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the d = 3 record<->metric readout is perturbed",
+   "killed": true,
+   "mutant": "readout3-lax",
+   "named_kills": [
+    "A:A-LCB-D3-NAT",
+    "G:G05"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the closed-form residual comparator is perturbed",
+   "killed": true,
+   "mutant": "residual3-lax",
+   "named_kills": [
+    "G:G06",
+    "G:G07",
+    "G:G35"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "route A's eigenvalue is perturbed",
+   "killed": true,
+   "mutant": "route-a-lax",
+   "named_kills": [
+    "G:G20"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "route B reads route A's answer",
+   "killed": true,
+   "mutant": "route-alias",
+   "named_kills": [
+    "G:G20"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "route B's covector enumeration is truncated",
+   "killed": true,
+   "mutant": "route-b-lax",
+   "named_kills": [
+    "G:G20",
+    "G:G21"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the carrier-rigidity clause is blinded",
+   "killed": true,
+   "mutant": "s2-lax",
+   "named_kills": [
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the functoriality base change is dropped",
+   "killed": true,
+   "mutant": "s4-lax",
+   "named_kills": [
+    "G:G28"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the S_3 self-test reads a memoised value",
+   "killed": true,
+   "mutant": "selftest-lax",
+   "named_kills": [
+    "G:G32"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the self-test's tested set is selected by the verdicts",
+   "killed": true,
+   "mutant": "selftest-select",
+   "named_kills": [
+    "G:G33"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the stillborn mismatch is typed rather than computed",
+   "killed": true,
+   "mutant": "stillborn-lax",
+   "named_kills": [
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the subsumption comparison is inverted",
+   "killed": true,
+   "mutant": "subsume-lax",
+   "named_kills": [
+    "G:G19",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the declared-to-fail extensions are made to pass",
+   "killed": true,
+   "mutant": "teeth-off",
+   "named_kills": [
+    "G:G25",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the scale threshold is typed rather than computed",
+   "killed": true,
+   "mutant": "threshold-lax",
+   "named_kills": [
+    "G:G29"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the coverage qualifier is asserted, not measured",
+   "killed": true,
+   "mutant": "universal-lax",
+   "named_kills": [
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the verdict derivation is flipped",
+   "killed": true,
+   "mutant": "verdict-flip",
+   "named_kills": [
+    "G:G35",
+    "G:G37"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the wing symmetry acts by the wrong label map",
+   "killed": true,
+   "mutant": "wing-lax",
+   "named_kills": [
+    "A:A-TB3-WING",
+    "G:G09"
+   ]
+  },
+  {
+   "exit": 1,
+   "expected_kill": "the exhibited witness is blanked",
+   "killed": true,
+   "mutant": "witness-blank",
+   "named_kills": [
+    "G:G24",
+    "G:G25",
+    "G:G28",
+    "G:G35"
+   ]
+  }
+ ],
+ "never_falsified": [],
+ "obstruction": "THE ORDER OBSTRUCTION: S1a (BRG's registered commuting square), S1b (additivity) and S3 (BRG's registered injectivity horn) jointly force (I - E)^ord(pi) = I over F_p -- equivalently E = 2I at an involution and E^2 - 3E + 3I = 0 at an order-3 wing symmetry -- and HA's record-is-metric readout satisfies it at 0 of 20160 (cell, prime, order) rows.  It is ARENA-FREE: no cardinality, no p-part, no census enters the derivation, and it SUBSUMES the fixed-point mismatch, which is its first-order shadow.  For the MODULE clause the obstruction is sharper still -- THE PERMUTATION-MODULE OBSTRUCTION: S1c-module forces E = I - rho_V(pi), and the record datum space carries the S_3 PERMUTATION module, so I - rho_V(pi) always annihilates the all-ones link vector while E, being invertible, never does.",
+ "pin": "v13/note-rsq-reposed-square-pin.md",
+ "pin_commit": "d9e3a66",
+ "python": "3.13.2",
+ "qualifiers": {
+  "census_rows": 315,
+  "covariant_cells": 1440,
+  "coverage_qualifier": "UNIVERSAL-FOR-THIS-FAMILY",
+  "declared_primes": 7,
+  "equivariant_identifications": 2,
+  "module_candidates_stillborn": 4,
+  "module_obstruction_rows": 210,
+  "order_criterion_rows": 20160,
+  "order_criterion_satisfied": 0,
+  "precheck_survivors_at_p7": 580,
+  "precheck_survivors_per_prime": {
+   "11": 652,
+   "13": 652,
+   "17": 652,
+   "19": 652,
+   "23": 652,
+   "5": 580,
+   "7": 580
+  },
+  "rows_admitting_an_injective_candidate": 0,
+  "rows_live_at_S1a_S1b": 25,
+  "spectral_meeting_primes": [
+   7
+  ]
+ },
+ "schema": "rsq-reposed-square-receipt-v1",
+ "source_sha256": "18eb651d1ab1053dd9f02038829614e2ba3494c1095a1284388e70b2636202a9",
+ "tables": {
+  "census_cells": [
+   {
+    "direction": "q->counts",
+    "fix_dims": {
+     "11": 3,
+     "13": 3,
+     "17": 3,
+     "19": 3,
+     "23": 3,
+     "5": 3,
+     "7": 3
+    },
+    "role": "module",
+    "slots": [
+     "(0, 0)",
+     "(1, 1)",
+     "(2, 2)",
+     "(0, 1)",
+     "(0, 2)",
+     "(1, 2)"
+    ]
+   },
+   {
+    "direction": "counts->q",
+    "fix_dims": {
+     "11": 3,
+     "13": 3,
+     "17": 3,
+     "19": 3,
+     "23": 3,
+     "5": 3,
+     "7": 3
+    },
+    "role": "module",
+    "slots": [
+     "(0, 0)",
+     "(1, 1)",
+     "(2, 2)",
+     "(0, 1)",
+     "(0, 2)",
+     "(1, 2)"
+    ]
+   },
+   {
+    "direction": "q->counts",
+    "fix_dims": {
+     "11": 1,
+     "13": 1,
+     "17": 1,
+     "19": 1,
+     "23": 1,
+     "5": 1,
+     "7": 1
+    },
+    "role": "lex",
+    "slots": [
+     "(0, 0)",
+     "(0, 1)",
+     "(0, 2)",
+     "(1, 1)",
+     "(1, 2)",
+     "(2, 2)"
+    ]
+   },
+   {
+    "direction": "counts->q",
+    "fix_dims": {
+     "11": 1,
+     "13": 1,
+     "17": 1,
+     "19": 1,
+     "23": 1,
+     "5": 1,
+     "7": 1
+    },
+    "role": "lex",
+    "slots": [
+     "(0, 0)",
+     "(0, 1)",
+     "(0, 2)",
+     "(1, 1)",
+     "(1, 2)",
+     "(2, 2)"
+    ]
+   },
+   {
+    "direction": "q->counts",
+    "fix_dims": {
+     "11": 2,
+     "13": 2,
+     "17": 2,
+     "19": 2,
+     "23": 2,
+     "5": 2,
+     "7": 2
+    },
+    "role": "module",
+    "slots": [
+     "(1, 2)",
+     "(0, 2)",
+     "(0, 1)",
+     "(2, 2)",
+     "(1, 1)",
+     "(0, 0)"
+    ]
+   },
+   {
+    "direction": "counts->q",
+    "fix_dims": {
+     "11": 2,
+     "13": 2,
+     "17": 2,
+     "19": 2,
+     "23": 2,
+     "5": 2,
+     "7": 2
+    },
+    "role": "module",
+    "slots": [
+     "(1, 2)",
+     "(0, 2)",
+     "(0, 1)",
+     "(2, 2)",
+     "(1, 1)",
+     "(0, 0)"
+    ]
+   },
+   {
+    "direction": "q->counts",
+    "fix_dims": {
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0,
+     "5": 0,
+     "7": 0
+    },
+    "role": "set",
+    "slots": [
+     "(1, 1)",
+     "(2, 2)",
+     "(0, 1)",
+     "(0, 0)",
+     "(0, 2)",
+     "(1, 2)"
+    ]
+   },
+   {
+    "direction": "q->counts",
+    "fix_dims": {
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0,
+     "5": 0,
+     "7": 0
+    },
+    "role": "set",
+    "slots": [
+     "(1, 1)",
+     "(2, 2)",
+     "(0, 1)",
+     "(0, 2)",
+     "(0, 0)",
+     "(1, 2)"
+    ]
+   },
+   {
+    "direction": "counts->q",
+    "fix_dims": {
+     "11": 0,
+     "13": 0,
+     "17": 0,
+     "19": 0,
+     "23": 0,
+     "5": 0,
+     "7": 0
+    },
+    "role": "set",
+    "slots": [
+     "(1, 1)",
+     "(2, 2)",
+     "(0, 1)",
+     "(0, 0)",
+     "(0, 2)",
+     "(1, 2)"
+    ]
+   }
+  ],
+  "controls": {
+   "S4_bases": [
+    {
+     "K_order": 1,
+     "base": "ord1",
+     "census_empty_at_this_base": true,
+     "live_primes": []
+    },
+    {
+     "K_order": 168,
+     "base": "ord2",
+     "census_empty_at_this_base": true,
+     "live_primes": [
+      7
+     ]
+    },
+    {
+     "K_order": 12,
+     "base": "ord3",
+     "census_empty_at_this_base": true,
+     "live_primes": []
+    },
+    {
+     "K_order": 2520,
+     "base": "ord6",
+     "census_empty_at_this_base": true,
+     "live_primes": [
+      5,
+      7
+     ]
+    },
+    {
+     "K_order": 360,
+     "base": "reference",
+     "census_empty_at_this_base": true,
+     "live_primes": [
+      5
+     ]
+    }
+   ],
+   "S4_scales": [
+    {
+     "census_empty": true,
+     "labels": 8,
+     "scale": "native"
+    },
+    {
+     "census_empty": true,
+     "labels": 43,
+     "scale": "grown"
+    }
+   ],
+   "break_hom": {
+    "cells": 117649,
+    "hom_violations": 1536,
+    "square_violations": 0
+   },
+   "found": {
+    "E_tilde_diagonal": [
+     6,
+     6,
+     6,
+     4,
+     4,
+     4
+    ],
+    "exponents": [
+     2,
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "generators_commute": true,
+    "homomorphism_violations": 0,
+    "image_size": 117649,
+    "injective": true,
+    "labels": 43,
+    "m": 6,
+    "normalisation_verified": true,
+    "prime": 7,
+    "record_cells": 117649,
+    "square_violations": 0
+   },
+   "held_out": {
+    "H1_square_verified_out_of_sample": 117648,
+    "H2_defect_permutation_verified": 117648,
+    "H3_fixed_label_counts_verified": 117648,
+    "X_FLATFIX_passes": 0,
+    "X_NOSQUARE_passes": 0,
+    "distinct_fixed_label_values": [
+     1,
+     8,
+     15,
+     22,
+     29,
+     36,
+     43
+    ],
+    "fit_cell": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "held_cells": 117648,
+    "held_cells_where_both_extensions_are_forced": 1
+   }
+  },
+  "fix_delta": [
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 1,
+    "pi": [
+     0,
+     1,
+     2
+    ],
+    "the_fixed_point_is_the_identity": true
+   },
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 2,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "the_fixed_point_is_the_identity": true
+   },
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 2,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "the_fixed_point_is_the_identity": true
+   },
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 3,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "the_fixed_point_is_the_identity": true
+   },
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 3,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "the_fixed_point_is_the_identity": true
+   },
+   {
+    "fix_size": 1,
+    "members": 5040,
+    "ord": 2,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "the_fixed_point_is_the_identity": true
+   }
+  ],
+  "ha_d3_prime_sweep": [
+   {
+    "built": true,
+    "carrier": 3125,
+    "fronts": 25,
+    "group_order": 5,
+    "k": 2,
+    "p": 5,
+    "register_dimension": 3,
+    "rho_mod_p": [
+     1,
+     1,
+     0
+    ],
+    "translation": true
+   },
+   {
+    "built": true,
+    "carrier": 16807,
+    "fronts": 49,
+    "group_order": 7,
+    "k": 2,
+    "p": 7,
+    "register_dimension": 3,
+    "rho_mod_p": [
+     6,
+     6,
+     0
+    ],
+    "translation": true
+   },
+   {
+    "built": true,
+    "carrier": 161051,
+    "fronts": 121,
+    "group_order": 11,
+    "k": 2,
+    "p": 11,
+    "register_dimension": 3,
+    "rho_mod_p": [
+     2,
+     2,
+     0
+    ],
+    "translation": true
+   },
+   {
+    "built": false,
+    "carrier": 371293,
+    "group_order": null,
+    "p": 13,
+    "rho_mod_p": [
+     11,
+     11,
+     0
+    ],
+    "translation": null
+   },
+   {
+    "built": false,
+    "carrier": 1419857,
+    "group_order": null,
+    "p": 17,
+    "rho_mod_p": [
+     3,
+     3,
+     0
+    ],
+    "translation": null
+   },
+   {
+    "built": false,
+    "carrier": 2476099,
+    "group_order": null,
+    "p": 19,
+    "rho_mod_p": [
+     16,
+     16,
+     0
+    ],
+    "translation": null
+   },
+   {
+    "built": false,
+    "carrier": 6436343,
+    "group_order": null,
+    "p": 23,
+    "rho_mod_p": [
+     4,
+     4,
+     0
+    ],
+    "translation": null
+   }
+  ],
+  "module_obstruction": {
+   "equalities": 0,
+   "rows": 210
+  },
+  "normalisation": [
+   {
+    "demanded_eigenvalues": [
+     2
+    ],
+    "exponent_spectrum": {
+     "4": 6
+    },
+    "normalised": 6,
+    "ord": 2,
+    "p": 5,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 126
+   },
+   {
+    "demanded_eigenvalues": [
+     2
+    ],
+    "exponent_spectrum": {
+     "4": 6
+    },
+    "normalised": 6,
+    "ord": 2,
+    "p": 5,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 126
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 5,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 126
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 5,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 126
+   },
+   {
+    "demanded_eigenvalues": [
+     2
+    ],
+    "exponent_spectrum": {
+     "4": 6
+    },
+    "normalised": 6,
+    "ord": 2,
+    "p": 5,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 126
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 7,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 120
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 7,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 120
+   },
+   {
+    "demanded_eigenvalues": [
+     4,
+     6
+    ],
+    "exponent_spectrum": {
+     "2": 3,
+     "4": 3
+    },
+    "normalised": 6,
+    "ord": 3,
+    "p": 7,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 120
+   },
+   {
+    "demanded_eigenvalues": [
+     4,
+     6
+    ],
+    "exponent_spectrum": {
+     "2": 3,
+     "4": 3
+    },
+    "normalised": 6,
+    "ord": 3,
+    "p": 7,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 120
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 7,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 120
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 11,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 11,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 11,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 11,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 11,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 13,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 13,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 13,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 13,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 13,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 17,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 17,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 17,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 17,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 17,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 19,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 19,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 19,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 19,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 19,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 23,
+    "pi": [
+     0,
+     2,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 23,
+    "pi": [
+     1,
+     0,
+     2
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 23,
+    "pi": [
+     1,
+     2,
+     0
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 3,
+    "p": 23,
+    "pi": [
+     2,
+     0,
+     1
+    ],
+    "subgroups": 0
+   },
+   {
+    "demanded_eigenvalues": [],
+    "exponent_spectrum": {},
+    "normalised": 0,
+    "ord": 2,
+    "p": 23,
+    "pi": [
+     2,
+     1,
+     0
+    ],
+    "subgroups": 0
+   }
+  ],
+  "order_criterion": {
+   "per_prime_cells": {
+    "11": 2880,
+    "13": 2880,
+    "17": 2880,
+    "19": 2880,
+    "23": 2880,
+    "5": 2880,
+    "7": 2880
+   },
+   "per_prime_hits": {
+    "11": 0,
+    "13": 0,
+    "17": 0,
+    "19": 0,
+    "23": 0,
+    "5": 0,
+    "7": 0
+   },
+   "route_disagreements": 0
+  },
+  "precheck": {
+   "rows": [
+    {
+     "direction": "q->counts",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 3,
+       "mismatch": "1331 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 1331,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 3,
+       "mismatch": "2197 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 2197,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 3,
+       "mismatch": "4913 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 4913,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 3,
+       "mismatch": "6859 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 6859,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 3,
+       "mismatch": "12167 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 12167,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 3,
+       "mismatch": "125 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 125,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 3,
+       "mismatch": "343 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 343,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "module",
+     "slots": [
+      "(0, 0)",
+      "(1, 1)",
+      "(2, 2)",
+      "(0, 1)",
+      "(0, 2)",
+      "(1, 2)"
+     ]
+    },
+    {
+     "direction": "counts->q",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 3,
+       "mismatch": "1331 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 1331,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 3,
+       "mismatch": "2197 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 2197,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 3,
+       "mismatch": "4913 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 4913,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 3,
+       "mismatch": "6859 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 6859,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 3,
+       "mismatch": "12167 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 12167,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 3,
+       "mismatch": "125 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 125,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 3,
+       "mismatch": "343 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 343,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "module",
+     "slots": [
+      "(0, 0)",
+      "(1, 1)",
+      "(2, 2)",
+      "(0, 1)",
+      "(0, 2)",
+      "(1, 2)"
+     ]
+    },
+    {
+     "direction": "q->counts",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 1,
+       "mismatch": "11 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 11,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 1,
+       "mismatch": "13 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 13,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 1,
+       "mismatch": "17 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 17,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 1,
+       "mismatch": "19 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 19,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 1,
+       "mismatch": "23 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 23,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 1,
+       "mismatch": "5 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 5,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 1,
+       "mismatch": "7 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 7,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "lex",
+     "slots": [
+      "(0, 0)",
+      "(0, 1)",
+      "(0, 2)",
+      "(1, 1)",
+      "(1, 2)",
+      "(2, 2)"
+     ]
+    },
+    {
+     "direction": "counts->q",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 1,
+       "mismatch": "11 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 11,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 1,
+       "mismatch": "13 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 13,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 1,
+       "mismatch": "17 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 17,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 1,
+       "mismatch": "19 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 19,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 1,
+       "mismatch": "23 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 23,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 1,
+       "mismatch": "5 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 5,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 1,
+       "mismatch": "7 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 7,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "lex",
+     "slots": [
+      "(0, 0)",
+      "(0, 1)",
+      "(0, 2)",
+      "(1, 1)",
+      "(1, 2)",
+      "(2, 2)"
+     ]
+    },
+    {
+     "direction": "q->counts",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 2,
+       "mismatch": "121 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 121,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 2,
+       "mismatch": "169 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 169,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 2,
+       "mismatch": "289 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 289,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 2,
+       "mismatch": "361 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 361,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 2,
+       "mismatch": "529 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 529,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 2,
+       "mismatch": "25 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 25,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 2,
+       "mismatch": "49 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 49,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "module",
+     "slots": [
+      "(1, 2)",
+      "(0, 2)",
+      "(0, 1)",
+      "(2, 2)",
+      "(1, 1)",
+      "(0, 0)"
+     ]
+    },
+    {
+     "direction": "counts->q",
+     "per_prime": {
+      "11": {
+       "dim_fix_E": 2,
+       "mismatch": "121 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 121,
+       "size_fix_delta": 1
+      },
+      "13": {
+       "dim_fix_E": 2,
+       "mismatch": "169 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 169,
+       "size_fix_delta": 1
+      },
+      "17": {
+       "dim_fix_E": 2,
+       "mismatch": "289 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 289,
+       "size_fix_delta": 1
+      },
+      "19": {
+       "dim_fix_E": 2,
+       "mismatch": "361 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 361,
+       "size_fix_delta": 1
+      },
+      "23": {
+       "dim_fix_E": 2,
+       "mismatch": "529 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 529,
+       "size_fix_delta": 1
+      },
+      "5": {
+       "dim_fix_E": 2,
+       "mismatch": "25 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 25,
+       "size_fix_delta": 1
+      },
+      "7": {
+       "dim_fix_E": 2,
+       "mismatch": "49 : 1",
+       "precheck": "STILLBORN",
+       "size_fix_E": 49,
+       "size_fix_delta": 1
+      }
+     },
+     "role": "module",
+     "slots": [
+      "(1, 2)",
+      "(0, 2)",
+      "(0, 1)",
+      "(2, 2)",
+      "(1, 1)",
+      "(0, 0)"
+     ]
+    }
+   ],
+   "stillborn": {
+    "11": 788,
+    "13": 788,
+    "17": 788,
+    "19": 788,
+    "23": 788,
+    "5": 860,
+    "7": 860
+   },
+   "survivors": {
+    "11": 652,
+    "13": 652,
+    "17": 652,
+    "19": 652,
+    "23": 652,
+    "5": 580,
+    "7": 580
+   }
+  },
+  "scale_thresholds": [
+   {
+    "d2_elementary_abelian_threshold": 16,
+    "d3_divisibility_threshold": 26,
+    "d3_elementary_abelian_threshold": 31,
+    "d3_growth_family_labels": 36,
+    "d3_growth_family_member": 5,
+    "p": 5
+   },
+   {
+    "d2_elementary_abelian_threshold": 22,
+    "d3_divisibility_threshold": 43,
+    "d3_elementary_abelian_threshold": 43,
+    "d3_growth_family_labels": 43,
+    "d3_growth_family_member": 6,
+    "p": 7
+   },
+   {
+    "d2_elementary_abelian_threshold": 34,
+    "d3_divisibility_threshold": 67,
+    "d3_elementary_abelian_threshold": 67,
+    "d3_growth_family_labels": 71,
+    "d3_growth_family_member": 10,
+    "p": 11
+   },
+   {
+    "d2_elementary_abelian_threshold": 40,
+    "d3_divisibility_threshold": 79,
+    "d3_elementary_abelian_threshold": 79,
+    "d3_growth_family_labels": 85,
+    "d3_growth_family_member": 12,
+    "p": 13
+   },
+   {
+    "d2_elementary_abelian_threshold": 52,
+    "d3_divisibility_threshold": 103,
+    "d3_elementary_abelian_threshold": 103,
+    "d3_growth_family_labels": 106,
+    "d3_growth_family_member": 15,
+    "p": 17
+   },
+   {
+    "d2_elementary_abelian_threshold": 58,
+    "d3_divisibility_threshold": 115,
+    "d3_elementary_abelian_threshold": 115,
+    "d3_growth_family_labels": 120,
+    "d3_growth_family_member": 17,
+    "p": 19
+   },
+   {
+    "d2_elementary_abelian_threshold": 70,
+    "d3_divisibility_threshold": 139,
+    "d3_elementary_abelian_threshold": 139,
+    "d3_growth_family_labels": 141,
+    "d3_growth_family_member": 20,
+    "p": 23
+   }
+  ],
+  "spectral_meeting": [
+   {
+    "HA_half_mod_p": 3,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1
+    ],
+    "demanded_1_minus_s_order3": [],
+    "in_arena_demanded_values": [],
+    "p": 5,
+    "precheck_surviving_cells_admitting_it": 0
+   },
+   {
+    "HA_half_mod_p": 4,
+    "MEETING": true,
+    "cube_roots_of_1": [
+     1,
+     2,
+     4
+    ],
+    "demanded_1_minus_s_order3": [
+     4,
+     6
+    ],
+    "in_arena_demanded_values": [
+     4,
+     6
+    ],
+    "p": 7,
+    "precheck_surviving_cells_admitting_it": 214
+   },
+   {
+    "HA_half_mod_p": 6,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1
+    ],
+    "demanded_1_minus_s_order3": [],
+    "in_arena_demanded_values": [],
+    "p": 11,
+    "precheck_surviving_cells_admitting_it": 0
+   },
+   {
+    "HA_half_mod_p": 7,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1,
+     3,
+     9
+    ],
+    "demanded_1_minus_s_order3": [
+     5,
+     11
+    ],
+    "in_arena_demanded_values": [],
+    "p": 13,
+    "precheck_surviving_cells_admitting_it": 114
+   },
+   {
+    "HA_half_mod_p": 9,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1
+    ],
+    "demanded_1_minus_s_order3": [],
+    "in_arena_demanded_values": [],
+    "p": 17,
+    "precheck_surviving_cells_admitting_it": 0
+   },
+   {
+    "HA_half_mod_p": 10,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1,
+     7,
+     11
+    ],
+    "demanded_1_minus_s_order3": [
+     9,
+     13
+    ],
+    "in_arena_demanded_values": [],
+    "p": 19,
+    "precheck_surviving_cells_admitting_it": 56
+   },
+   {
+    "HA_half_mod_p": 12,
+    "MEETING": false,
+    "cube_roots_of_1": [
+     1
+    ],
+    "demanded_1_minus_s_order3": [],
+    "in_arena_demanded_values": [],
+    "p": 23,
+    "precheck_surviving_cells_admitting_it": 0
+   }
+  ]
+ },
+ "totals": {
+  "anchors": 26,
+  "anchors_external": 15,
+  "anchors_self": 11,
+  "census_rows": 315,
+  "covariant_cells": 1440,
+  "disclosures": 6,
+  "gates": 38,
+  "must_pass_failures": 0,
+  "must_pass_gates": 38,
+  "mutant_survivors": 0,
+  "mutants": 57,
+  "order_criterion_rows": 20160
+ },
+ "verdict": "RSQ-SQUARE-FOUND-BRIDGE-EMPTY"
+}

@@ -1,0 +1,251 @@
+==============================================================================
+RSQ -- THE RE-POSED SQUARE AT THREE WINGS
+==============================================================================
+
+------------------------------------------------------------------
+1. THE DECLARATIONS, FROZEN; THE SCANNERS; THE HASH PINS
+------------------------------------------------------------------
+  G01 PASS   candidate evaluations at the freeze point: 0
+  G02 PASS   float hits 0; scanner self-test True
+  G03 PASS   mutant-identity hits 0; scanner self-test True
+  11 terminal artifacts hash-pinned and verified (TB3 #299, LCB #297, HA #262, BRG #276, PSI #265)
+
+------------------------------------------------------------------
+2. ITEM 1 -- HA REBUILT AT d = 3: THE DEFORMATION ARENA
+------------------------------------------------------------------
+  |X| = 27 sites, 6 links (the 3 axes and the 3 positive diagonals)
+  declared records admissible: ['G3-ANISO', 'G3-FLAT', 'G3-OFF']
+  declared negative controls REJECTED: ['G3-INDEF', 'G3-SINGULAR'] (of 2)
+  G04 PASS   27 sites, 6 links, 3/3 admissible, 2/2 controls rejected
+  HA's own G28 readout at d = 3 (rows the links SORTED, columns sym_index): det = 8
+  the natural identification's readout, q -> counts: det = 8, diagonal (its spectrum, triangular) = ['1', '1', '1', '2', '2', '2']
+  q reproduces every declared link count at 81 of 81 sites
+  G05 PASS   det 8; spectrum ['1', '1', '1', '2', '2', '2']; re-encoding 81/81
+  the residual R_HH at d = 3, two comparators (the literal five-map composition and the closed form): 27 of 27 sites agree
+  exact rational residual at the detector site x* = (0, 0, 0): ['1/6', '1/6', '0']; nonzero at 1 of 27 sites
+  G06 PASS   27/27 agree; rho(x*) = ['1/6', '1/6', '0']
+  p    carrier    k   rho mod p     |<R_HH>|  translation-by-rho
+  5    3125       2   [1, 1, 0]     5         True
+  7    16807      2   [6, 6, 0]     7         True
+  11   161051     2   [2, 2, 0]     11        True
+  13   371293     -   [11, 11, 0]   None      None
+  17   1419857    -   [3, 3, 0]     None      None
+  19   2476099    -   [16, 16, 0]   None      None
+  23   6436343    -   [4, 4, 0]     None      None
+  G07 PASS   translation structure 3/3; orders [5, 7, 11] against primes [5, 7, 11]
+  G08 PASS   orders [5, 7, 11] track the primes [5, 7, 11]
+
+------------------------------------------------------------------
+3. ITEM 2 -- THE TRANSPORT SIDE AT THREE WINGS
+------------------------------------------------------------------
+  |G_C| = 5040 (enumerated) = 5040 (the factorial the declaration forces)
+  the wing symmetry group: order 6, abelian False, element orders [1, 2, 2, 2, 3, 3]
+  labels fixed by EVERY wing symmetry: [0, 7]; wing symmetries with P^2 = 1: 4 of 6
+  G09 PASS   |G_C| = 5040; wing orders [1, 2, 2, 2, 3, 3]; fixed labels [0, 7]
+  the three commutator forms at 30 (wing symmetry, completion) cells: F_1 = F_3 at 20, and at 20 of 20 involution cells
+  the twisted cocycle identity: 0 deviations of 150 cells
+  G10 PASS   F1=F3 at 20/30; cocycle deviations 0
+  the ladder rebuilt as the structure-group family (K = <delta_pi(Q) : pi in S_3>): {'ord1': 1, 'ord2': 168, 'ord3': 12, 'ord6': 2520, 'reference': 360}
+  G11 PASS   ladder [1, 12, 168, 360, 2520]
+  fix(delta_pi) at all 6 wing symmetries over all 5040 completions: [1]
+  the same measurement at LCB's own 9-label two-wing arena (40320 members): 1
+  G12 PASS   |fix(delta_pi)| = 1 at 6/6 wing symmetries; 9-label arena 1
+
+------------------------------------------------------------------
+4. ITEM 3 -- THE CANDIDATE-SQUARE FAMILY, DECLARED AS DATA
+------------------------------------------------------------------
+  slot orders enumerated: 720 (the factorial the declaration forces: 720)
+  S_3-EQUIVARIANT identifications, found by an exhaustive equivariance test: 2
+     ['(0, 0)', '(1, 1)', '(2, 2)', '(0, 1)', '(0, 2)', '(1, 2)']
+     ['(1, 2)', '(0, 2)', '(0, 1)', '(2, 2)', '(1, 1)', '(0, 0)']
+  G13 PASS   720 slot orders; 2 equivariant
+  the COVARIANT cell family: 1440 cells (720 slot orders x 2 directions), roles {'lex': 2, 'module': 4, 'set': 1434}
+  G14 PASS   1440/1440 cells; roles complete True
+  the DECLARED CENSUS CELLS, by the rule stated before any fixture truth: 9 (computed)
+     module  q->counts   slots ['(0, 0)', '(1, 1)', '(2, 2)', '(0, 1)', '(0, 2)', '(1, 2)']  dim fix(E) {5: 3, 7: 3, 11: 3, 13: 3, 17: 3, 19: 3, 23: 3}
+     module  counts->q   slots ['(0, 0)', '(1, 1)', '(2, 2)', '(0, 1)', '(0, 2)', '(1, 2)']  dim fix(E) {5: 3, 7: 3, 11: 3, 13: 3, 17: 3, 19: 3, 23: 3}
+     lex     q->counts   slots ['(0, 0)', '(0, 1)', '(0, 2)', '(1, 1)', '(1, 2)', '(2, 2)']  dim fix(E) {5: 1, 7: 1, 11: 1, 13: 1, 17: 1, 19: 1, 23: 1}
+     lex     counts->q   slots ['(0, 0)', '(0, 1)', '(0, 2)', '(1, 1)', '(1, 2)', '(2, 2)']  dim fix(E) {5: 1, 7: 1, 11: 1, 13: 1, 17: 1, 19: 1, 23: 1}
+     module  q->counts   slots ['(1, 2)', '(0, 2)', '(0, 1)', '(2, 2)', '(1, 1)', '(0, 0)']  dim fix(E) {5: 2, 7: 2, 11: 2, 13: 2, 17: 2, 19: 2, 23: 2}
+     module  counts->q   slots ['(1, 2)', '(0, 2)', '(0, 1)', '(2, 2)', '(1, 1)', '(0, 0)']  dim fix(E) {5: 2, 7: 2, 11: 2, 13: 2, 17: 2, 19: 2, 23: 2}
+     set     q->counts   slots ['(1, 1)', '(2, 2)', '(0, 1)', '(0, 0)', '(0, 2)', '(1, 2)']  dim fix(E) {5: 0, 7: 0, 11: 0, 13: 0, 17: 0, 19: 0, 23: 0}
+     set     q->counts   slots ['(1, 1)', '(2, 2)', '(0, 1)', '(0, 2)', '(0, 0)', '(1, 2)']  dim fix(E) {5: 0, 7: 0, 11: 0, 13: 0, 17: 0, 19: 0, 23: 0}
+     set     counts->q   slots ['(1, 1)', '(2, 2)', '(0, 1)', '(0, 0)', '(0, 2)', '(1, 2)']  dim fix(E) {5: 0, 7: 0, 11: 0, 13: 0, 17: 0, 19: 0, 23: 0}
+  G15 PASS   9 declared census cells
+
+------------------------------------------------------------------
+5. ITEM 4 -- THE STILLBORN PRECHECK (structural, FIRST)
+------------------------------------------------------------------
+  the precheck's two-way calibration at p = 7: a synthetic COMPATIBLE pair (dim fix = 0) -> PASS; a synthetic MISMATCHED pair (dim fix = 3) -> FAIL
+  G16 PASS   compatible PASS True; mismatched PASS False
+  role    direction   dim fix(E)  |fix E| : |fix delta|   precheck
+  module  q->counts   3           343 : 1                 STILLBORN   (at p = 7)
+  module  counts->q   3           343 : 1                 STILLBORN   (at p = 7)
+  lex     q->counts   1           7 : 1                   STILLBORN   (at p = 7)
+  lex     counts->q   1           7 : 1                   STILLBORN   (at p = 7)
+  module  q->counts   2           49 : 1                  STILLBORN   (at p = 7)
+  module  counts->q   2           49 : 1                  STILLBORN   (at p = 7)
+  over the whole covariant family, per prime -- survivors: {5: 580, 7: 580, 11: 652, 13: 652, 17: 652, 19: 652, 23: 652}
+                                     stillborn: {5: 860, 7: 860, 11: 788, 13: 788, 17: 788, 19: 788, 23: 788}
+  G17 PASS   module cells all stillborn True; survivors at p=7: 580/1440
+
+------------------------------------------------------------------
+6. ITEM 5 -- THE STRENGTHENED TEST FOR THE SURVIVORS
+------------------------------------------------------------------
+  THE ORDER CRITERION (I - E)^ord(pi) = I, over the whole covariant family x every declared prime x both nontrivial wing-symmetry orders: 0 of 20160 cells satisfy it
+  the matrix-power route and the polynomial route disagree at 0 of 20160 cells
+  the criterion's positive control: the synthetic encoding diag(6,6,6,4,4,4) at p = 7 satisfies it -- matrix route True, polynomial route True
+  G18 PASS   0/20160 satisfy; disagreements 0; positive control True
+  G19 PASS   criterion 0 <= precheck 4420
+  p   wing pi    ord  subgroups  normalised  exponents s     demanded 1-s
+  5   [0, 2, 1]  2    126        6           {'4': 6}        [2]
+  5   [1, 0, 2]  2    126        6           {'4': 6}        [2]
+  5   [2, 1, 0]  2    126        6           {'4': 6}        [2]
+  7   [1, 2, 0]  3    120        6           {'2': 3, '4': 3}[4, 6]
+  7   [2, 0, 1]  3    120        6           {'2': 3, '4': 3}[4, 6]
+  the census at 9 declared cells x 7 primes x 5 nontrivial wing symmetries = 315 rows
+  rows whose S1a+S1b census is NON-EMPTY (a candidate exists at the square and the homomorphism clause): 25 of 315
+  rows admitting an INJECTIVE candidate (S1a+S1b+S3): 0 of 315
+  route A vs route B disagreements: 0 of 315
+  G20 PASS   0 disagreements; taint 0
+  route B's redundancy calibration at p = 5: the projective enumeration returns 745, the FULL enumeration over all 15625 covectors returns 745
+  G21 PASS   projective 745 vs full 745
+  route C, the LITERAL permutation verification at 4 declared (cell, prime) instances: admitted candidates violate the square at 0 cells; a rejected candidate violates it at a measured positive count
+  G22 PASS   admitted clean True; rejected violates True
+  the PERMUTATION-MODULE obstruction over 210 (cell, prime, wing) rows: E = I - rho_V(pi) at 0; (I - rho_V) kills the all-ones link vector at 210; E kills it at 0
+  its positive control: a synthetic NON-permutation S_3-action has I - rho invertible (True), so the module square is satisfiable when the module is not a permutation module
+  G23 PASS   E = I - rho at 0/210; synthetic control True
+
+  THE IN-ARENA POSITIVE CONTROL, at the grown arena L_m with m = 6 (43 labels), p = 7:
+     six blocks identified with Z/7 so the wing symmetry acts as multiplication by [2, 2, 2, 4, 4, 4]; A = <g_1..g_6> is elementary abelian of order 7^6
+     the square holds at 117649 of 117649 record cells; alpha injective True; homomorphism violations 0
+  G24 PASS   square violations 0; injective True
+  G25 PASS   H1/H2 117648/117648; teeth 0/0
+  THE SAME MACHINERY AT THE SAME ARENA, with HA's OWN d = 3 encoding in place of the synthetic one: EMPTY (True)
+  G26 PASS   HA's encoding at the grown arena: EMPTY True
+  BREAK-HOM (the negative with teeth): square violations 0 of 117649; homomorphism violations 1536 -- rejected by S1b ALONE
+  G27 PASS   square 0/117649; hom 1536
+  G28 PASS   S2 stratification carried True; S4 bases 5, scales 2
+
+------------------------------------------------------------------
+7. ITEM 6 -- THE PRIME SECTION AT THE NEW PAIRING
+------------------------------------------------------------------
+  p    p^6 | (n-1)!   elem. abelian  growth m  growth labels  d=2 analogue
+  5    26             31             5         36             16
+  7    43             43             6         43             22
+  11   67             67             10        71             34
+  13   79             79             12        85             40
+  17   103            103            15        106            52
+  19   115            115            17        120            58
+  23   139            139            20        141            70
+  G29 PASS   native arena admits 0 of 7 primes
+  p    cube roots    demanded 1-s    HA 1/2 mod p  in-arena 1-s    MEETING
+  5    [1]           []              3             []              False
+  7    [1, 2, 4]     [4, 6]          4             [4, 6]          True
+  11   [1]           []              6             []              False
+  13   [1, 3, 9]     [5, 11]         7             []              False
+  17   [1]           []              9             []              False
+  19   [1, 7, 11]    [9, 13]         10            []              False
+  23   [1]           []              12            []              False
+  G30 PASS   meeting primes [7]; module cells admitting it at 7: 1
+  G31 PASS   per-prime verdicts {5: 'EMPTY', 7: 'EMPTY', 11: 'EMPTY', 13: 'EMPTY', 17: 'EMPTY', 19: 'EMPTY', 23: 'EMPTY'}
+
+------------------------------------------------------------------
+8. THE SYMMETRY SELF-TESTS (RUNBOOK 14, ALL ADDENDA)
+------------------------------------------------------------------
+  the S_3-action on the record datum space is by PERMUTATION matrices at 6 of 6 elements; the image is closed with 6 distinct matrices
+  fix(delta) recomputed INSIDE a relabelled arena (the relabelling moves 7 labels): [1]
+  cache: 2000 self-test bypasses, 0 self-test hits, against 39741 lookups and 9501 hits before the self-tests began
+  G32 PASS   rho permutation 6/6; relabelled fix [1]; bypasses 2000
+  G33 PASS   tested 1440 of 1440
+  G34 PASS   basis invariance True; det 1; nontrivial True
+
+------------------------------------------------------------------
+9. THE VERDICT
+------------------------------------------------------------------
+  source 1 -- the census table's own live-row sum      : 0
+  source 2 -- the order-criterion sweep, all cells     : 0 of 20160
+  source 3 -- the permutation-module equality count    : 0 of 210
+  a candidate PASSES the precheck                      : True
+  FOUND reachable / EMPTY reachable                    : True / True
+  coverage qualifier (computed)                        : UNIVERSAL-FOR-THIS-FAMILY
+
+  ==>  RSQ-SQUARE-FOUND-BRIDGE-EMPTY
+
+  G35 PASS   verdict RSQ-SQUARE-FOUND-BRIDGE-EMPTY
+  G36 PASS   20160/20160 covered arena-free
+  the instrument probe: 13 of 13 declared helpers return the KNOWN answer on a synthetic input whose correct value is fixed in advance
+  G37 PASS   13/13 helper probes correct
+  G38 PASS   26 anchors, 0 failures
+
+------------------------------------------------------------------
+10. TOTALS
+------------------------------------------------------------------
+  anchors                      26  (15 EXTERNAL, 11 SELF)
+  gates                        38
+  must-pass gates              38
+  must-pass failures            0  []
+  disclosures                   6
+==============================================================================
+--- 11. THE MUTANT HARNESS (every declared mutant must exit 1) ---
+  mutant              exit  killed   named kills
+  anchor-brg-sha      1     True     A:A-SHA-brg_paper
+  anchor-ha-sha       1     True     A:A-SHA-ha_receipt
+  anchor-ladder       1     True     A:A-TB3-K-ord1
+  anchor-lcb-sha      1     True     A:A-SHA-lcb_receipt
+  anchor-pin-sha      1     True     A:A-SHA-pin
+  anchor-psi-sha      1     True     A:A-SHA-psi_receipt
+  anchor-rho          1     True     G:G07,G:G35
+  anchor-soft         1     True     A:A-SHA-pin,G:G38
+  anchor-tb3-sha      1     True     A:A-SHA-tb3_receipt
+  arena3-lax          1     True     G:G04,G:G05
+  basis-lax           1     True     G:G34
+  break-blind         1     True     G:G27
+  cache-lax           1     True     G:G32
+  cache-unused        1     True     G:G32
+  carrier3-lax        1     True     G:G07,G:G35
+  cell-drop           1     True     G:G13,G:G14,G:G15
+  cell-orbit-drop     1     True     G:G13,G:G14,G:G15,G:G17,G:G19,G:G35
+  census-lax          1     True     G:G20,G:G21
+  censuscell-lax      1     True     G:G15
+  complete-lax        1     True     G:G37
+  criterion-lax       1     True     G:G18,G:G19,G:G31,G:G35,G:G36
+  empty-block         1     True     G:G26,G:G28,G:G35
+  encoding-lax        1     True     A:A-TB3-K-ord1,G:G10,G:G11
+  equi-lax            1     True     G:G13,G:G15
+  exempt-lax          1     True     G:G03
+  fixpoint-lax        1     True     G:G12,G:G16,G:G17
+  float-lax           1     True     G:G02
+  found-block         1     True     G:G24,G:G35
+  freeze-lax          1     True     G:G01
+  heldout-lax         1     True     G:G25
+  ladder-lax          1     True     A:A-TB3-K-ord2,G:G11
+  literal-lax         1     True     G:G22
+  meeting-lax         1     True     G:G30,G:G37
+  module-blind        1     True     G:G23
+  module-lax          1     True     G:G23,G:G35
+  posdef-lax          1     True     G:G04,G:G35
+  precheck-blind      1     True     G:G16,G:G17,G:G19,G:G35
+  precheck-lax        1     True     G:G16,G:G17,G:G37
+  prime-single        1     True     G:G08
+  qualifier-typo      1     True     G:G37
+  readout3-lax        1     True     A:A-LCB-D3-NAT,G:G05
+  residual3-lax       1     True     G:G06,G:G07,G:G35
+  route-a-lax         1     True     G:G20
+  route-alias         1     True     G:G20
+  route-b-lax         1     True     G:G20,G:G21
+  s2-lax              1     True     G:G37
+  s4-lax              1     True     G:G28
+  selftest-lax        1     True     G:G32
+  selftest-select     1     True     G:G33
+  stillborn-lax       1     True     G:G37
+  subsume-lax         1     True     G:G19,G:G37
+  teeth-off           1     True     G:G25,G:G37
+  threshold-lax       1     True     G:G29
+  universal-lax       1     True     G:G37
+  verdict-flip        1     True     G:G35,G:G37
+  wing-lax            1     True     A:A-TB3-WING,G:G09
+  witness-blank       1     True     G:G24,G:G25,G:G28,G:G35
+  mutants that survived : []
+  must-pass gates never falsified by any mutant : []
+

@@ -9272,3 +9272,40 @@ what survives of the self-recognition reading); R3 instrument
 class; the route pairs probed; the standards calibrated).
 Reviews frozen on return.  Four agents in flight: TOP panel
 ×3 + RSQ construction.
+
+## 2026-08-08 — RSQ DELIVERED, COMMITTED AS-IS (v13 LEDGER #304)
+Delivery committed as-is (resumed post-stall; design intact).
+VERDICT (verbatim): **RSQ-SQUARE-FOUND-BRIDGE-EMPTY, qualifier
+UNIVERSAL-FOR-THIS-FAMILY.**  (1) **HA AT d=3 CONSTRUCTS** —
+G29 holds VERBATIM at 3-dimensional fronts (Z/p at p ∈
+{5,7,11}; det 8; spectrum {1,1,1,2,2,2}; q reproduces 81/81)
+— the deformation side SCALES.  (2) The F-1 wall TRANSPORTS
+(fix(δ) = {e} at all 6 wing symmetries over all 5,040
+completions).  (3)+(4) The candidate family: ALL module-level
+and lex candidates STILLBORN at the precheck (dim ker(E−I) =
+3/2/1 vs fix(δ) = 1); ONLY the set-level candidates pass —
+the precheck fired exactly as designed, both mutants dying.
+(5) **THE SURVIVOR CENSUS: EMPTY, with a NEW sharper
+arena-free obstruction — THE PERMUTATION-MODULE OBSTRUCTION:
+S1a∧S1b∧S3 force (I−E)^ord(π) = I, measured 0/20,160 rows
+exhaustive over the covariant family; and at the module
+clause E = I − ρ_V(π) is forced with ρ_V a permutation
+matrix, which KILLS the all-ones link vector (210/210) while
+E never does (0/210).**  **THE FOUND CONTROL AT A GROWN ARENA
+IS REAL: at m=6 (43 labels, p=7) a genuine injective square
+EXISTS with held-out verification 117,648/117,648 — the
+machinery finds bridges where they exist; the native arenas
+simply lack them.**  (6) The p=7 spectral meeting REAL and
+unique ({4,6} demanded = {4,6} realised; HA's 1/2 = 4) — and
+its price measured: it lands EXACTLY on the identification
+the precheck declared stillborn (the near-miss pattern
+again).  Thresholds: the native arena admits injective
+candidates at NO declared prime; p=5 needs 26–36 labels, p=7
+needs 43 — **THE SCALE THEME CONVERGES: primes derivable at
+16, injectives at 43, torsion at 3 wings — everything opens
+with growth; all roads point at the continuum.**  38 gates /
+26 anchors / 57 mutants, 0 survivors, never_falsified EMPTY /
+byte-identical ×2.  10 deviations (lead: the pin's V read as
+F_p⁶ — the only reading under which the pin's own numbers are
+correct; owned).  md5 output d660fc9f / receipt 57298318.
+Adjudicator verification next.
