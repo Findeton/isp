@@ -1142,3 +1142,50 @@ Panel dispatch QUEUED behind the R3 panel (concurrency
 discipline: eight agents in flight; the CR panels fire as
 slots free — deliveries hold their verified state
 indefinitely).
+
+## 2026-08-09 — R3 REVIEW: EFFECTUS FROZEN (v14 LEDGER #39)
+review-r3-effectus.md frozen as delivered.  Grade AWF;
+~159,900 recomputations + ~10⁶-value residual sweep; ZERO
+false numbers; every hash re-verified.  **F1: THE ENTIRE
+476-CELL CENSUS IS ANALYTIC** (ρ=(Λ−I)ω, c=Λ — closure AND
+class reproduced 476/476 without computing one commutator;
+#208 reclassifies; the R2/R6a pattern a third time).  **F2:
+"closes ⟺ metric-reading" AS SETS by the closure definition
+itself** (the metric-inserted generator IS the target);
+A-notransport's identically-zero commutator recorded as NOT
+CLOSING at 36 cells.  **F3: THE PIN'S RIGID BRANCH WAS
+UNREACHABLE BY CONSTRUCTION — a three-outcome design whose
+instrument can return two (ADJUDICATOR'S PIN-DESIGN ERROR,
+owned).**  **F4 MAJOR: THE REGISTER DEFECT IS
+REALIZATION-RELATIVE — at D-FULL (transport the register
+too) OUTSIDE = 0-of-2,926 (d=2) and 0-of-360 (d=3)
+homogeneous brackets; §6's "transport, not curvature"
+REVERSES.**  **F5 THE COVARIANCE THEOREM (2,064/2,064
+exact): D_full[v] H_g[N] D_full[v]⁻¹ = H_{S_v g}[S_v N] —
+THE SURVIVING OBSTRUCTION IS THAT THE RECORD DOES NOT
+TRANSPORT: the geometry is a FIXED BACKGROUND, not a
+dynamical variable.**  F6: the three HDA relations are not
+simultaneously realizable at this arena (99.29%/99.75% of
+{H,H} generators admit no D-TOT generator; zero are
+translations).  THE CORRESPONDENCE MAP: (I) exact in form /
+analogical in status (a CENTRAL EXTENSION w/ background
+coefficient — Heisenberg-type 2-cocycle, measured); (II)
+partial; (III) absent in discriminating content; 5 of 7
+discriminators not run.  F7–F15 incl. duplicate rules
+(A-axis≡B-axis, A-chart≡B-chart, A-insert≡A-notransport —
+the R6a recurrence), denominator inflation ×3, L-stability
+and lapse-inertness ARE theorems.  ELEVEN FORWARD
+REQUIREMENTS FR1–FR11 (the R4-relevant list: a bracket not a
+group commutator; the coefficient must move with the STATE;
+THE RECORD MUST TRANSPORT or the arena declares a fixed
+background and must not name the HDA; one algebra one
+realization; a rigid outcome that can win...).  **THE R4
+RECOMMENDATION: SEED FROM Δᴮ (v12), NOT the register defect
+— the defect is a GRAMMAR FACT about a fixed background
+(absorbed by D-FULL on the homogeneous sector; its signature
+inverts; the v12 precedent does NOT transfer); carry it as
+R4's mandatory REALIZATION-CENSUS GATE (D-REG/D-TOT/D-FULL)
++ a background detector.**  NOTE THE CROSS-UNIT CONVERGENCE:
+"the record does not transport" (R3-F5) = "no geometry-update
+law" (CR-A) — the SAME missing object, now named four times
+across four routes.  Two R3 reviewers pending.
