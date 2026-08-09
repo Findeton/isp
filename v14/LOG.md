@@ -549,3 +549,50 @@ vertex-transitivity).  K4: B₂ doubling FORCED by disjointness
 this construction.  Mutants 14/14 honest; CLI exact; three
 plain runs byte-identical; #208 letter holds.  One reviewer
 pending (effectus).
+
+## 2026-08-09 — R2 REVIEW: EFFECTUS FROZEN (v14 LEDGER #19)
+review-r2-effectus.md frozen as delivered.  Grade AWF; 3,503
+quantities rebuilt + 4,247,080 sweep computations; ZERO
+numerical disagreements/false numbers/false theorems; three
+reviewer errors owned in-file, resolved in the delivery's
+favour.  **K2 DECIDED — NO MOTIVATED SELECTION PRINCIPLE
+EXISTS**: all 4,140 set partitions × 2 transports → 0
+locality (disqualifying Σ, ⟨γ,Σ⟩, the seven words, the
+ladder, GL(3,2), A₄/A₆/A₇ AT ONCE); **the corpus's one
+motivated partial-overlap cover — I6's OWN SEVEN FANO LINES —
+is CLIQUE-ONLY at both transports: it is a 2-design covering
+21/21 pairs.  THE MOTIVATED COVER IS PRECISELY A
+LOCALITY-DESTROYER.**  Order-relativity measured: 11 distinct
+rule sets over all 40,320 numberings, counts 11–16, the
+declared 14 MODAL at 34.29% — the unit did NOT cherry-pick
+(credit).  Head must become R2-LOCALITY-DECLARABLE w/ new
+computed segments (DRAWING verdict-determining — the ⟨γ,Σ⟩
+probe draws 0 pairs; MOTIVATION; WIDTH-LAW; forced labels;
+link-convention clause — **F7/F8: the undisclosed convention:
+1-OF-80 becomes 8-OF-80 under the simple-graph reading, and
+triangulated-circle links are 0-OF-80** (the one "circle" has
+degree sequence (1,2,2,2,3)); GRID-BOUNDARY — **F10: the
+admissibility proxy excluded 60 constructible rules, ONE
+locality-bearing (16/21, a value no censused rule attains)**;
+VALUES-GRID-DEPENDENT).  F3: INCONSISTENT-at-14/14 is a
+THEOREM (CONSISTENT ∧ NON-COMPLETE impossible under the
+cell-indexed reading; 19,948 families, 0 hits).  **F6: §11's
+closing claim REFUTED CONSTRUCTIVELY — a fixed-point-free
+transport + the same sliding class yields a TRIANGULATED
+1-MANIFOLD with a CONSISTENT reading: the successor exists.**
+**THE R3 RECOMMENDATION — the panel's gem: the 14 components
+are INADEQUATE (no consistent dimension — forced; ≤20
+2-cells; no direction structure; numbering-relative);
+INSTEAD, I7's OWN ARENA — the gravity record layer — ALREADY
+DECLARES A MOTIVATED LOCALITY (links_d2/links_d3, chart_group,
+lapse_family, site lattice), MEASURED HERE: satisfies R2's
+criterion (64/120; 324/351; 768/2016), translation-covariant,
+CONSISTENT chart-intrinsic dimension w/ a SINGLE link profile
+at every site — (8,12,1,5) at d=2, (24,96,1,73) at d=3;
+fails only at d=2,L=3 ⟹ THE R3 PIN MUST GATE L ≥ 4.**  Side
+finding for R1 (terminal): N_coh = N forced at the shared
+drawing relation ⟹ the NCOH numerator's "coherent" qualifier
+is extensionally vacuous — recorded as a ledger note, no
+reopening.  F15 CREDIT: the grid as named coordinate at
+birth; the coherence corollary correctly self-demoted.
+PANEL COMPLETE: 3× AWF.  Joint adjudication next.
