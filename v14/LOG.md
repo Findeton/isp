@@ -957,3 +957,39 @@ degenerate; R6a the record is extensive).  R6b: RE-SCOPE NOT
 RETIRE → R6b′ THE RECORD-TYPE DISCRIMINATOR (pin the v10/v11
 renewal/event-position row, re-run R6a's audit verbatim) + a
 cheap unbounded-count probe.**  Two reviewers pending.
+
+## 2026-08-09 — R6a REVIEW: OPERATOR FROZEN (v14 LEDGER #32)
+review-r6a-operator.md frozen as delivered.  Grade AWF; 177
+recomputations on a primitive-disjoint instrument, EVERY
+delivered number exact; the verdict string rebuilds
+BYTE-FOR-BYTE from the reviewer's own censuses.  **K1: THE
+COBOUNDARY THEOREM IS ABOUT THE GRAMMAR** (characterization
+proved: coboundary ⟺ axis cycle sums 0 ∧ triangle relations;
+positivity forbids (a) for ANY L, d, record — no admissible
+record can be a coboundary; G-FLAT's counts are δφ on the
+UNIVERSAL COVER — the obstruction is purely periodic
+holonomy) — **but PARALLEL to the split, not its mechanism**
+(a granted potential leaves the split fiber IDENTICAL —
+13,631,146,639,813,244,878,848 both ways on G-ANISO2 — and
+collapses only the transverse links; confirms effectus-F3/F4
+independently).  **K2: NINE candidates hunted; TWO structures
+reduce a fiber to 1 — lattice-reflection-with-interval-
+reversal (fiber 1 on 2 records / 0 on 3 / unchanged on 1)
+and THE MAX-DET SELECTOR (unique at 9-of-9 sites on ALL 6
+splittable records, globally admissible) — NEITHER derivable
+from the pinned sources; THE VERDICT DOES NOT FLIP** (the
+max-det near-miss = the sharpest reopening lead for a future
+pin that declares an extremal principle from deeper grammar).
+K3 confirms the overclaim: A-chart/B-chart force u = v — the
+declared RIGHT lift, Z-valued 378/378, admissible; B-all
+UNDERDETERMINED; the sentence/segment/§11-open need rule
+scope.  New: F4 the 3,976 "positive control" cells are
+exactly the both-drags-vanish sector (0 nontrivial zero
+agreements); F6 the 324 restriction cells are a COROLLARY of
+the 972 additivity checks (not an independent comparator);
+**F9 A-notransport is implemented IDENTICALLY to A-insert —
+10 distinct rules, not 11**; F7 the 16-completion sweep
+reduces to f₀≠f₁ (wider census 92.3%); F8 an unrendered
+odd-count omission.  K4: the per-class table is the right
+carrier; both R1-copy fingerprints verified genuinely
+different.  One reviewer pending (instrument).
