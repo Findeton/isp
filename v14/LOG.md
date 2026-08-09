@@ -813,3 +813,9 @@ verbatim-text — a new anchor kind**), 48 gates 0 failures,
 2026-08-09 engravings at birth w/ injection-falsifiers, two
 plain runs BYTE-IDENTICAL.  Adjudicator verification next;
 R3 still constructing in parallel.
+
+## 2026-08-09 — R6a ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #27)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
+34/34 mutants dead (render-escape and prose-claim-drift
+confirmed dying by name).  R6a stands GREEN-VERIFIED-
+UNREVIEWED.  Hostile protocol next.
