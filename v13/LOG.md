@@ -9204,3 +9204,44 @@ measurement; THE FANO-RUNG SELECTOR hunted within a declared
 candidate family; the wing-quotient invariants.  Both
 dispatched (Opus 5, freeze-on-delivery, rsq_*/top_*
 namespaces).  Ledger reaches #300.
+
+## 2026-08-08 — TOP DELIVERED, COMMITTED AS-IS (v13 LEDGER #301)
+Delivery committed as-is (resumed post-stall; scratch state
+intact).  THREE VERDICTS (verbatim in the paper):
+**TOP-GLOBAL-STRUCTURE** — the overlap graph is COMPLETE
+(K₃₆): the simplicial nerve is the full 35-simplex,
+contractible, χ = 1 — NO simplicial topology; the genuine
+invariants live in the coordinate-resolved complex: b₀ = 1,
+cycle rank 5,401, **b₁ = 140 — ENTIRELY THE READ TIMES**
+(every checkpoint sub-nerve has vanishing first homology; the
+elimination-free route: 1 + 144 + 0 − 5 = 140), b₂ = 199,123,
+χ = 198,984; the coherent sub-nerve b₁ = 161; the wing
+quotient b₁ = 25, χ = 33,114 (Burnside-checked; the −50
+correction exactly the fixed-cell census).
+**TOP-MANIFOLD-READING-CONSISTENT-BUT** — the estimator is
+chart-independent at all 36 charts of the reference (one
+reading everywhere) BUT the reading is not one number
+(dimprofile realising {11, 35}), no link is a circle
+(b₁(link) = 16,998), so UNIFORMITY ≠ MANIFOLDHOOD; and the
+consistency is INSTANCE-SPECIFIC (3 of 5; the W-class and
+partial-symmetry instances split the charts 24/12).
+**TOP-FANO-SELECTOR-NOT-FOUND — AND THE PREMISE DISSOLVED:**
+none of 13 pre-declared candidates passes all three clauses;
+**GL(3,2) is reached at 252 of 5,040 completions across
+defect orders {1:4, 2:48, 3:72, 4:128} — never at 5 or 6,
+exactly the orders GL(3,2) lacks** — the "exclusive Fano
+visit at the order-2 rung" was a property of the LEX-FIRST
+SELECTION RULE, not the locus (TB3's sentence was
+target-scoped, not contradicted; **the adjudicator's
+"exclusive, a point not a region" framing at #298-era is
+CORRECTED: the linear group occupies ~5% of completion space
+across orders 1–4, bounded by its own element orders**).
+Controls: the two-wing atlas, sphere/torus/pinched standards
+anchored; the equivariant-completion nerve as the collapse
+control.  196 anchors / 30 gates (29 must-pass, 0 failures) /
+29 mutants died, never_falsified EMPTY / byte-identical ×2.
+ONE BUG FOUND-AND-FIXED in construction (OR-vs-XOR in
+boundary rows — invisible on the nerve, wrong on the
+quotient; moved quotient b₁ 24→25; disclosed).  11
+deviations.  md5 output 46c58627 / receipt 26359faa.
+Adjudicator verification next.
