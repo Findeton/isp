@@ -9597,3 +9597,29 @@ on no unit circle at any dimension (HA readout carries
 eigenvalue 1): the continuum rung inherits the obstruction in
 PROOF FORM**, plus S-1..S-5 and the master equation.  Repair
 workers next (TOP + RSQ, parallel).
+
+## 2026-08-09 — v14 CHARTER RECORDED, USER-ORDERED (v13 LEDGER #315)
+User decisions of record: (1) the limit program lives in a NEW
+TREE v14; (2) **v14 PAPERS ARE NUMBERED** (paper-NN-<slug>.md,
+NN assigned at pin time, never reused; unit-slug companions
+unchanged).  v14/PLAN.md committed — the charter: boundary
+(v13 closes at the TOP+RSQ terminals + a terminal synthesis
+note, then freezes like v11/v12; TOP/RSQ finish INSIDE v13;
+v14 reaches back by hash-pin only, never copy); the rungs
+R0 founding pin → R1 CONTINUUM (declared refinement family +
+pre-registered INTENSIVE invariants; the no-limit verdict
+first-class) → R2 MANIFOLD (first non-complete overlap graph;
+links→spheres?) → R3 RELATIVITY (H_a[N] constraint algebra
+along the family; hypersurface-deformation relations in the
+limit) → R4 QFT BENCHMARKS (free-field analog; Δᴮ the
+interaction seed) → R5 GAUGE/QCD (holonomy algebra under
+refinement; YM-likeness; confinement analog, prior art v4);
+the seven-item inheritance list to be hash-pinned at R0 (the
+master equation + spectral carry, the five topology
+requirements + R-TOP-7's outcome, S-1..S-5, the scale table
+FACTS-ONLY w/ the thesis-retirement clause binding on all
+v14 documents, the ladder + defect law + one law, H_a[N] +
+record-IS-metric); all v13 discipline carries unchanged;
+publication route the USER'S.  v14/LOG.md does NOT open until
+R0, after the v13 close.  Repair continuations for TOP + RSQ
+in flight at this entry.
