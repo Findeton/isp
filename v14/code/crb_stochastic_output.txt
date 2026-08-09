@@ -1,0 +1,161 @@
+==============================================================================
+v14 CR-B -- STOCHASTIC REFINEMENT: THE SPLIT IN DISTRIBUTION
+==============================================================================
+
+QUESTION: R6a proved no motivated split VALUE.  Is there a motivated split DISTRIBUTION -- a conditional law over the split fiber forced by pinned structure?
+PIN: v14/note-cr-batch-pins.md (CR-B section) (1cfee4fc0891)
+PREDECESSOR: v14 R6a -- R6A-NO-MOTIVATED-SPLIT [DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel)]
+
+--- 1. THE FIBER REBUILD, ANCHORED AGAINST R6a ---
+  record       counts(0,0)  adm       admissible fiber         per-site
+  G-ANISO      (1, 4, 5)    True      0                        [0]
+  G-ANISO2     (4, 9, 13)   True      1257565061957837936381   [221]
+  G-CURVED     (1, 1, 2)    True      0                        [0, 3, 7, 18]
+  G-CURVOFF    (2, 2, 6)    True      64562400000              [3, 8, 15, 20, 35, 61]
+  G-DIAG2      (2, 2, 4)    True      19683                    [3]
+  G-FLAT       (1, 1, 2)    True      0                        [0]
+  G-INDEF      (1, 1, 6)    False     0                        [0]
+  G-OFFDIAG    (2, 2, 6)    True      19683                    [3]
+  G-OFFDIAG2   (3, 5, 12)   True      3904305912313344         [54]
+  G-OFFNEG     (3, 5, 4)    True      1801152661463            [23]
+  G-SINGULAR   (1, 1, 4)    False     0                        [0]
+  cells anchored against R6a: 27 ; mismatches: 0
+  span: 19683 .. 1257565061957837936381 ; records admitting the move: 6 ; no split at all: G-ANISO, G-CURVED, G-FLAT
+
+--- 2. THE SYMMETRY INVENTORY (as data) ---
+  TRANS      order 9            PINNED -- the |X| chart translations (P-I7-CHART)
+  SIGMA      order 2            PINNED -- the d! direction relabellings (P-I7-CHART)
+  CHART      order 18           PINNED -- the declared chart group, order 18 (P-I7-CHART, T-CHART-ORDER)
+  EXT        order 108          DECLARED-EXTENSION -- translations times the A_2 point group of the declared link set; NOT declared by I7, entered as arena data (RUNBOOK section 15)
+  LOCALFLIP  order 134217728    DECLARED-EXTENSION -- the per-interval reversal group (Z_2)^27, the count-preserving ceiling; no pinned declaration reverses one interval alone
+  the declared link set is the A_2 root system; its automorphism group has order 12
+  direction permutations: pinned 2, declared extension 6 (all of S_3)
+  THE MEASURED THEOREM: block-preserving elements of the extension = 18 = the pinned chart group exactly
+
+--- 3. THE ORBIT DECOMPOSITION ---
+  record       group   |H|    fiber                    orbits                   simplex dim
+  G-ANISO2     TRANS   9      1257565061957837936381   139729451328658254141    139729451328658254140
+  G-ANISO2     SIGMA   1      1257565061957837936381   1257565061957837936381   1257565061957837936380
+  G-ANISO2     CHART   9      1257565061957837936381   139729451328658254141    139729451328658254140
+  G-ANISO2     EXT     18     1257565061957837936381   139729451328658254141    139729451328658254140
+  G-CURVOFF    TRANS   1      64562400000              64562400000              64562399999
+  G-CURVOFF    SIGMA   2      64562400000              32282397000              32282396999
+  G-CURVOFF    CHART   2      64562400000              32282397000              32282396999
+  G-CURVOFF    EXT     2      64562400000              32282397000              32282396999
+  G-DIAG2      TRANS   9      19683                    2211                     2210
+  G-DIAG2      SIGMA   2      19683                    10206                    10205
+  G-DIAG2      CHART   18     19683                    1230                     1229
+  G-DIAG2      EXT     36     19683                    638                      637
+  G-OFFDIAG    TRANS   9      19683                    2211                     2210
+  G-OFFDIAG    SIGMA   2      19683                    10206                    10205
+  G-OFFDIAG    CHART   18     19683                    1230                     1229
+  G-OFFDIAG    EXT     36     19683                    1230                     1229
+  G-OFFDIAG2   TRANS   9      3904305912313344         433811768174784          433811768174783
+  G-OFFDIAG2   SIGMA   1      3904305912313344         3904305912313344         3904305912313343
+  G-OFFDIAG2   CHART   9      3904305912313344         433811768174784          433811768174783
+  G-OFFDIAG2   EXT     18     3904305912313344         433811768174784          433811768174783
+  G-OFFNEG     TRANS   9      1801152661463            200128084311             200128084310
+  G-OFFNEG     SIGMA   1      1801152661463            1801152661463            1801152661462
+  G-OFFNEG     CHART   9      1801152661463            200128084311             200128084310
+  G-OFFNEG     EXT     18     1801152661463            200128084311             200128084310
+  comparator 1 (direct orbit walk, cap 20000):
+     G-DIAG2      CHART  fiber 19683    direct 1230     burnside 1230     agree True escapes 0
+     G-DIAG2      EXT    fiber 19683    direct 638      burnside 638      agree True escapes 0
+     G-OFFDIAG    CHART  fiber 19683    direct 1230     burnside 1230     agree True escapes 0
+     G-OFFDIAG    EXT    fiber 19683    direct 1230     burnside 1230     agree True escapes 39364
+  comparator 2 (closed form (k^9 + 8 k^3) / 9):
+     G-ANISO2     k=221   closed form 139729451328658254141    engine 139729451328658254141    agree True
+     G-DIAG2      k=3     closed form 2211                     engine 2211                     agree True
+     G-OFFDIAG    k=3     closed form 2211                     engine 2211                     agree True
+     G-OFFDIAG2   k=54    closed form 433811768174784          engine 433811768174784          agree True
+     G-OFFNEG     k=23    closed form 200128084311             engine 200128084311             agree True
+
+--- 4. THE INVARIANT-MEASURE CENSUS ---
+  cells: 24 ; cells with a UNIQUE invariant law: 0
+  orbit-simplex dimension: 637 .. 1257565061957837936380
+  comparator 3 -- the criterion measured, not assumed:
+     n=2   pinned (no element reverses an interval)   orbits 1   dim(linear system) 0   agree True
+     n=2   declared reversal extension                orbits 1   dim(linear system) 0   agree True
+     n=3   pinned (no element reverses an interval)   orbits 2   dim(linear system) 1   agree True
+     n=3   declared reversal extension                orbits 1   dim(linear system) 0   agree True
+     n=4   pinned (no element reverses an interval)   orbits 3   dim(linear system) 2   agree True
+     n=4   declared reversal extension                orbits 2   dim(linear system) 1   agree True
+     ... 24 cells, all agreeing
+
+--- 5. THE PER-INTERVAL LAW ---
+  count values in the declared family: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13]
+  n     fiber   pinned    dim       reversal  dim
+  1     0       0         None      0         None
+  2     1       1         0         1         0
+  3     2       2         1         1         0
+  4     3       3         2         2         1
+  5     4       4         3         2         1
+  6     5       5         4         3         2
+  7     6       6         5         3         2
+  8     7       7         6         4         3
+  9     8       8         7         4         3
+  10    9       9         8         5         4
+  12    11      11        10        6         5
+  13    12      12        11        6         5
+  pinned dimension law: n - 2 ; reversal dimension law: ceil((n-1)/2) - 1
+
+--- 6. THE COUNT-LATTICE CENSUS ---
+  admissible count vectors 361 ; splittable 261 ; fiber a point [[2, 2, 2]]
+  pinned-transitive [[2, 2, 2]] ; reversal-transitive [[2, 2, 2], [2, 2, 3], [2, 3, 2], [3, 2, 2]]
+  transitive vectors inside the declared record family: NONE
+
+--- 7. SELECTION CANDIDATES BEYOND SYMMETRY ---
+  THE-RECORD-COUNTS-AS-WEIGHTS           REFUTED-AS-FORCING
+      all five are expressible and no pinned declaration prefers one; at every count value they are pairwise distinct, so the record's counts admit a family of laws rather than selecting one
+  MAXENT-UNDER-PINNED-CONSTRAINTS        REFUTED-AS-FORCING
+      the audit finds no pinned moment constraint at all, so maximum entropy reduces to the uniform law on whatever support is declared -- and the two supports the pinned grammar makes available (the raw fiber and the admissible-at-images fiber) give measurably different laws.  A principle whose answer is a function of an undeclared choice is not a forcing
+  THE-UNIFORM-LAW-ON-THE-ADMISSIBLE-FIBER REFUTED-AS-FORCING
+      it is invariant, but it is not canonical (it depends on the declared support) and at 4 of the 6 records that admit the move it does not factorise: the admissibility constraint COUPLES the three splits at a site, so 'the law of a split' is not even well-posed interval by interval under it
+  THE-BARYCENTRE-OF-THE-INVARIANT-SIMPLEX REFUTED-AS-FORCING
+      the orbits are not all the same size, so the barycentre and the uniform law are different invariant laws; two canonical-looking constructions disagree, measured, which is exactly what a forcing would have to exclude
+  THE-FRONT                              REFUTED-AS-FORCING
+      the front is a per-site integer; the only functional the pinned data offers returns an admissible integer split at a small minority of cells and is undefined or out of range at the rest.  And a value rule, even where defined, is not a law: it names a point, and a point mass is invariant only if that point is fixed
+  THE-DRAG-FIELD                         REFUTED-AS-FORCING
+      the drag's index set is the tangent frame (d = 2 indices) or the declared link set (3 indices); the split fiber at an interval carrying n events has n - 1 points, and no pinned declaration maps one onto the other.  The index-set mismatch is prior to the stochasticity question and settles it
+  THE-EQUIVARIANT-(DETERMINISTIC)-LAWS   REFUTED-AS-FORCING
+      these are genuinely invariant laws, and they are the vertices of the simplex that happen to be deterministic -- but there is never exactly one of them (the smallest count is 3), so demanding determinism does not select either.  This is R6a's value-level finding recovered as a distribution-level one
+  forced: 0 ; refuted: 7
+
+--- 8. THE DETERMINISM CENSUS ---
+  pinned declarations 27 ; value-level 27 ; distribution-level 0
+  H_a[N] bijection cells 3168 ; round-trip identity 3168 ; collisions 0
+  MISSING OBJECT: THE-INTERVAL-POSITIONAL-LAW: a joint law for WHERE inside a record interval its n_l(x) division events fall -- equivalently the transition kernel between the interval's endpoints whose renewal count is n_l(x).  It is a transition-matrix-layer object; R0's inheritance carries the record layer (I7: counts, front, H_a[N], record-IS-metric) and no transition layer at all.
+
+--- 9. ITERATION IN DISTRIBUTION ---
+  G-ANISO2     completion key 0  dims [139729451328658254140, 931585421115223670367161565730857830751295, None]  groups [9, 9, 9]  trend GROWS
+  G-ANISO2     completion key 1  dims [139729451328658254140, 650537975143368364531828108621034255299203, None]  groups [9, 18, 36]  trend GROWS
+  G-CURVOFF    completion key 0  dims [32282396999]  groups [2]  trend SINGLE-LEVEL
+  G-CURVOFF    completion key 1  dims [32282396999]  groups [2]  trend SINGLE-LEVEL
+  G-DIAG2      completion key 0  dims [1229, None]  groups [18, 72]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  G-DIAG2      completion key 1  dims [1229, None]  groups [18, 72]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  G-OFFDIAG    completion key 0  dims [1229, None]  groups [18, 72]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  G-OFFDIAG    completion key 1  dims [1229, None]  groups [18, 72]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  G-OFFDIAG2   completion key 0  dims [433811768174783]  groups [9]  trend SINGLE-LEVEL
+  G-OFFDIAG2   completion key 1  dims [433811768174783]  groups [9]  trend SINGLE-LEVEL
+  G-OFFNEG     completion key 0  dims [200128084310, None]  groups [9, 9]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  G-OFFNEG     completion key 1  dims [200128084310, None]  groups [9, 9]  trend COLLAPSES-TO-AN-EMPTY-FIBER
+  cells with two live levels: 2 ; completion-relative: True
+     G-ANISO2     key 0 fiber x6667065620433171892736 group x1 outruns True
+     G-ANISO2     key 1 fiber x1104218420946351124044663943408693/118587876497 group x2 outruns True
+
+--- 10. CONTROLS ---
+  POSITIVE COUNT-3-INTERVAL-UNDER-REVERSAL      orbits 1 dim 0 unique measure FOUND
+  POSITIVE CYCLIC-5-TRANSITIVE                  orbits 1 dim 0 unique measure FOUND
+  NEGATIVE COUNT-5-INTERVAL-UNDER-THE-PINNED-GROUP orbits 4 dim 3
+  NEGATIVE UNEQUAL-ORBITS-1-2-2                 orbits 3 dim 2
+
+--- 11. THE VERDICT ---
+
+CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11|SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108|ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381|TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380|PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3|LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0|SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7|MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4|DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0|ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True|CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2|MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER>
+
+--- 12. THE INSTRUMENT ---
+  anchors 52 (file-bytes 6 / path-value 30 / verbatim-text 16)
+  gates 97, failures 0 ; mutants 42
+  never-falsified 64 of 97, all waived
+  arithmetic: int / fractions.Fraction only; no float, no tolerance
+

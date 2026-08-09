@@ -1,0 +1,5946 @@
+{
+ "unit": "v14 CR-B -- STOCHASTIC REFINEMENT: THE SPLIT IN DISTRIBUTION",
+ "question": "R6a proved no motivated split VALUE.  Is there a motivated split DISTRIBUTION -- a conditional law over the split fiber forced by pinned structure?",
+ "predecessor": {
+  "unit": "v14 R6a",
+  "verdict_head": "R6A-NO-MOTIVATED-SPLIT",
+  "receipt": "v14/code/r6a_refinement_receipt.json",
+  "sha256_12": "022c3f488a93",
+  "status": "DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel)"
+ },
+ "anchors": [
+  {
+   "name": "A-PIN-CRB",
+   "kind": "file-bytes",
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": "1cfee4fc0891",
+   "measured": "1cfee4fc0891",
+   "provenance": "this unit's pin: the CR-B section of the continuum-routes batch, frozen at v14 ledger #30",
+   "ok": true
+  },
+  {
+   "name": "A-R0-PIN",
+   "kind": "file-bytes",
+   "artifact": "v14/note-r0-founding-pin.md",
+   "expected": "e9d2bedff244",
+   "measured": "e9d2bedff244",
+   "provenance": "the v14 founding pin: the inheritance table whose I7 row this unit uses",
+   "ok": true
+  },
+  {
+   "name": "A-R6A-RECEIPT",
+   "kind": "file-bytes",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": "022c3f488a93",
+   "measured": "022c3f488a93",
+   "provenance": "the R6a receipt -- the split fibers, stabilisers, equivariant fibers, count lattice and iteration table this unit rebuilds and anchors against; cited at DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel)",
+   "ok": true
+  },
+  {
+   "name": "A-I7-RECEIPT",
+   "kind": "file-bytes",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "542b8735daf0",
+   "measured": "542b8735daf0",
+   "provenance": "R0 row I7 -- the pinned grammar source: sites, links, interval counts, the front, the chart group, H_a[N], record-IS-metric",
+   "ok": true
+  },
+  {
+   "name": "A-HA-PAPER",
+   "kind": "file-bytes",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "f286ba10d2d9",
+   "measured": "f286ba10d2d9",
+   "provenance": "the HA paper: the written grammar declarations reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "A-HA-CODE",
+   "kind": "file-bytes",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "d44cb72f8ee9",
+   "measured": "d44cb72f8ee9",
+   "provenance": "the HA instrument: the exact record constructors and H_a[N] reimplemented here (nothing imported)",
+   "ok": true
+  },
+  {
+   "name": "P-I7-D",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "d"
+   ],
+   "expected": 2,
+   "measured": 2,
+   "provenance": "the primary spatial dimension",
+   "ok": true
+  },
+  {
+   "name": "P-I7-L",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "L"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "the arena's linear size",
+   "ok": true
+  },
+  {
+   "name": "P-I7-DEXT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "d_ext"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "the number of declared link directions at d = 2",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LINKS2",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "links_d2"
+   ],
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "provenance": "the declared link set -- the arena datum whose symmetries this unit inventories",
+   "ok": true
+  },
+  {
+   "name": "P-I7-CHART",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "chart_group"
+   ],
+   "expected": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "measured": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "provenance": "THE PINNED SYMMETRY: the chart group, declared in full -- 9 translations times Sigma = S_d, order 18",
+   "ok": true
+  },
+  {
+   "name": "P-I7-RECORDS2",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d2",
+    "G-ANISO2"
+   ],
+   "expected": [
+    4,
+    9,
+    13
+   ],
+   "measured": [
+    4,
+    9,
+    13
+   ],
+   "provenance": "the widest-count declared record: the fiber's upper end",
+   "ok": true
+  },
+  {
+   "name": "P-I7-DIAG2",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d2",
+    "G-DIAG2"
+   ],
+   "expected": [
+    2,
+    2,
+    4
+   ],
+   "measured": [
+    2,
+    2,
+    4
+   ],
+   "provenance": "the narrowest splittable declared record: the fiber's lower end",
+   "ok": true
+  },
+  {
+   "name": "P-I7-INHOMOG",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "records_d2_inhomogeneous"
+   ],
+   "expected": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "measured": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "provenance": "the two inhomogeneous records, whose constructors are reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LATTICE-AXIS",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "count_lattice",
+    "axis_max"
+   ],
+   "expected": 6,
+   "measured": 6,
+   "provenance": "the declared count box's axis bound",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LATTICE-DIAG",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "count_lattice",
+    "diag_max"
+   ],
+   "expected": 12,
+   "measured": 12,
+   "provenance": "the declared count box's diagonal bound",
+   "ok": true
+  },
+  {
+   "name": "P-I7-LAPSE",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "lapse_family"
+   ],
+   "expected": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "measured": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "provenance": "the declared profile family, used here as the declared FRONT family for the front-selection candidate",
+   "ok": true
+  },
+  {
+   "name": "P-I7-WEIGHT",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "density_weight"
+   ],
+   "expected": 0,
+   "measured": 0,
+   "provenance": "the readout convention w = 0 under which admissibility is read",
+   "ok": true
+  },
+  {
+   "name": "P-I7-REGISTERS",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "registers",
+    "m == 0"
+   ],
+   "expected": "the zero address register",
+   "measured": "the zero address register",
+   "provenance": "the matter register's declared states -- the carrier of the determinism census",
+   "ok": true
+  },
+  {
+   "name": "P-I7-TESTCLASS",
+   "kind": "path-value",
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "json_path": [
+    "declarations",
+    "test_class"
+   ],
+   "expected": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size",
+   "measured": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size",
+   "provenance": "the ONE ratio-valued pinned declaration -- audited here for whether it is a probability law",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-VERDICT",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "verdict_head"
+   ],
+   "expected": "R6A-NO-MOTIVATED-SPLIT",
+   "measured": "R6A-NO-MOTIVATED-SPLIT",
+   "provenance": "R6a's head: no motivated split VALUE -- the predecessor this unit re-poses in distribution (DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel))",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-RAW-DIAG2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "split_fibers",
+    "G-DIAG2",
+    "raw"
+   ],
+   "expected": 19683,
+   "measured": 19683,
+   "provenance": "the smallest raw split fiber -- the span's lower end",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-IMG-DIAG2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "split_fibers",
+    "G-DIAG2",
+    "admissible_at_images"
+   ],
+   "expected": 19683,
+   "measured": 19683,
+   "provenance": "the smallest admissible split fiber",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-IMG-ANISO2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "split_fibers",
+    "G-ANISO2",
+    "admissible_at_images"
+   ],
+   "expected": 1257565061957837936381,
+   "measured": 1257565061957837936381,
+   "provenance": "the largest admissible split fiber -- the span's upper end",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-PS-CURVOFF",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "split_fibers",
+    "G-CURVOFF",
+    "per_site_admissible"
+   ],
+   "expected": [
+    3,
+    8,
+    15,
+    20,
+    35,
+    61
+   ],
+   "measured": [
+    3,
+    8,
+    15,
+    20,
+    35,
+    61
+   ],
+   "provenance": "the inhomogeneous record's per-site admissible profile",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-EQ-DIAG2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "equivariant_fibers",
+    "G-DIAG2"
+   ],
+   "expected": 3,
+   "measured": 3,
+   "provenance": "R6a's chart-equivariant fiber = the number of CHART-fixed points of the raw fiber = the deterministic invariant laws",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-EQ-CURVOFF",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "equivariant_fibers",
+    "G-CURVOFF"
+   ],
+   "expected": 29393280,
+   "measured": 29393280,
+   "provenance": "the inhomogeneous record's equivariant fiber",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-STAB-DIAG2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "stabilisers",
+    "G-DIAG2",
+    "order"
+   ],
+   "expected": 18,
+   "measured": 18,
+   "provenance": "the record stabiliser inside the pinned chart group",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-STAB-CURVOFF-ORBITS",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "stabilisers",
+    "G-CURVOFF",
+    "orbits"
+   ],
+   "expected": 15,
+   "measured": 15,
+   "provenance": "the stabiliser's orbit count on the 27 coarse intervals",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-LATTICE-ADM",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "count_lattice",
+    "admissible_count_vectors"
+   ],
+   "expected": 361,
+   "measured": 361,
+   "provenance": "the declared count box's admissible vectors",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-LATTICE-SPLIT",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "count_lattice",
+    "splittable"
+   ],
+   "expected": 261,
+   "measured": 261,
+   "provenance": "the splittable count vectors",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-LATTICE-UNIQUE",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "count_lattice",
+    "unique_admissible_split"
+   ],
+   "expected": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "measured": [
+    [
+     2,
+     2,
+     2
+    ]
+   ],
+   "provenance": "the ONE count vector with a unique admissible split -- the fiber that is a point",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-SPLIT-CLASS",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "choice_inventory",
+    "items",
+    4,
+    "class_declared"
+   ],
+   "expected": "iii",
+   "measured": "iii",
+   "provenance": "R6a's classification of THE-SPLIT: genuinely free -- the freedom this unit re-poses as a distribution",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-ITER-CEILING",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "iteration",
+    "ceiling_over_the_family"
+   ],
+   "expected": 2,
+   "measured": 2,
+   "provenance": "the refinement family's ceiling: the iteration-in-distribution's depth",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-ITER-ANISO2",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "iteration",
+    "per_record",
+    "G-ANISO2",
+    "steps_achieved_at_the_declared_split"
+   ],
+   "expected": 2,
+   "measured": 2,
+   "provenance": "the one record reaching two steps -- the only record with a level-1 fiber to decompose",
+   "ok": true
+  },
+  {
+   "name": "P-R6A-ARENA-LINKS",
+   "kind": "path-value",
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "json_path": [
+    "arena",
+    "links"
+   ],
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "provenance": "R6a's own rebuild of the link set, matched against I7's",
+   "ok": true
+  },
+  {
+   "name": "T-CHART-GROUP",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "The declared chart group is the $\\lvert X\\rvert = 9$ chart translations and the",
+   "measured": true,
+   "provenance": "the pinned symmetry, in the paper's own words",
+   "ok": true
+  },
+  {
+   "name": "T-CHART-ORDER",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "$d! = 2$ direction relabellings \u2014 **18** elements",
+   "measured": true,
+   "provenance": "the chart group's order, written",
+   "ok": true
+  },
+  {
+   "name": "T-NORM-IS-A-BOOLEAN",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "boolean in disguise on this carrier",
+   "measured": true,
+   "provenance": "THE DETERMINISM DATUM: the single ratio-valued pinned declaration is a bit, not a magnitude -- the pinned sources' own reading",
+   "ok": true
+  },
+  {
+   "name": "T-H-FORWARD",
+   "kind": "verbatim-text",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "H_a[N](n, m) = ( n + N ,  m + w[N,n] )",
+   "measured": true,
+   "provenance": "the pinned dynamics, written: a deterministic map on configurations",
+   "ok": true
+  },
+  {
+   "name": "T-H-INVERSE",
+   "kind": "verbatim-text",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "H_a[N]^{-1}(n, m) = ( n - N ,  m - w[N, n-N] )        (exact, closed form)",
+   "measured": true,
+   "provenance": "the closed-form inverse: H_a[N] is a BIJECTION, so it maps point masses to point masses",
+   "ok": true
+  },
+  {
+   "name": "T-CURVED-CTOR",
+   "kind": "verbatim-text",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "\"\"\"Inhomogeneous, exactly DIAGONAL: q(x) = diag(1+x_1, ..., 1+x_d).\"\"\"",
+   "measured": true,
+   "provenance": "the G-CURVED constructor reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "T-CURVOFF-CTOR",
+   "kind": "verbatim-text",
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "def make_curved_off_record(name, d, L, weight):",
+   "measured": true,
+   "provenance": "the G-CURVOFF constructor reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-QUESTION",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": "unique invariant distribution",
+   "measured": true,
+   "provenance": "the pin's own criterion: unique invariant distribution iff transitivity",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-BLOCKED",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": "`CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW-<the missing object>`",
+   "measured": true,
+   "provenance": "the pin's third first-class head, with its obligation to NAME the missing object",
+   "ok": true
+  },
+  {
+   "name": "T-R0-I7",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-r0-founding-pin.md",
+   "expected": "Gravity's record layer: H_a[N] record-native",
+   "measured": true,
+   "provenance": "the R0 row this unit's grammar comes through",
+   "ok": true
+  },
+  {
+   "name": "T-ERRATUM",
+   "kind": "verbatim-text",
+   "artifact": "v14/LOG.md",
+   "expected": "R0 COMPANION-HASH ERRATUM (v14 LEDGER #4)",
+   "measured": true,
+   "provenance": "the erratum of record; this unit reads no artifact it touches (its only v13 paper read is the HA paper, a PRIMARY key, not a companion)",
+   "ok": true
+  },
+  {
+   "name": "T-ENGRAVE-1",
+   "kind": "verbatim-text",
+   "artifact": "RUNBOOK.md",
+   "expected": "**\u00a713 addendum (2026-08-09, from v13 #313 \u2014 repair",
+   "measured": true,
+   "provenance": "engraving 1 of 5 carried at birth: repair propagation",
+   "ok": true
+  },
+  {
+   "name": "T-ENGRAVE-2",
+   "kind": "verbatim-text",
+   "artifact": "RUNBOOK.md",
+   "expected": "**\u00a714 addendum (2026-08-09, from v13 #313 \u2014 boundary",
+   "measured": true,
+   "provenance": "engraving 2 of 5: boundary parity",
+   "ok": true
+  },
+  {
+   "name": "T-ENGRAVE-3",
+   "kind": "verbatim-text",
+   "artifact": "RUNBOOK.md",
+   "expected": "**\u00a713 addendum (2026-08-09, from v13 #314 \u2014 precheck",
+   "measured": true,
+   "provenance": "engraving 3 of 5: precheck doctrine",
+   "ok": true
+  },
+  {
+   "name": "T-ENGRAVE-4",
+   "kind": "verbatim-text",
+   "artifact": "RUNBOOK.md",
+   "expected": "**\u00a714 addendum (2026-08-09, from v14 #10 \u2014 containment is not",
+   "measured": true,
+   "provenance": "engraving 4 of 5: containment is not equality",
+   "ok": true
+  },
+  {
+   "name": "T-ENGRAVE-5",
+   "kind": "verbatim-text",
+   "artifact": "RUNBOOK.md",
+   "expected": "**\u00a713 addendum (2026-08-09, from v14 #20 \u2014 prose renders from",
+   "measured": true,
+   "provenance": "engraving 5 of 5: prose renders from the receipt",
+   "ok": true
+  }
+ ],
+ "anchor_totals": {
+  "file_bytes": 6,
+  "path_value": 30,
+  "verbatim_text": 16,
+  "total": 52
+ },
+ "arena": {
+  "boundary": "the 27 coarse intervals of the L = 3, d = 2 arena, and the split fiber over them",
+  "family": "I7's nine admissible d = 2 records, rebuilt here; and the declared count box (axis <= 6, diagonal <= 12)",
+  "law": "the DYADIC refinement move (R6a's one admissible class): L -> 2L, every coarse interval subdivided, count additivity forced by the counting semantics",
+  "state": "a split a : intervals -> Z_>0 with 1 <= a <= n - 1; the ADMISSIBLE fiber additionally requires the refined readout at each coarse image site to be positive definite",
+  "arena": "the symmetry inventory: PINNED chart group (order 18) and the DECLARED EXTENSIONS (the order-108 lattice group of the declared link set; the order-2^27 local reversal group)",
+  "provenance": "R6a's receipt at DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel), read by hash 022c3f488a93; every fiber count REBUILT here from the pinned declarations and anchored against it",
+  "sites": "X = (Z_L)^d with L = 3, d = 2 (|X| = 9)",
+  "links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "d_ext": 3,
+  "readout": "q_ij e_l^i e_l^j = n_l(x); admissible iff q is positive definite at every site (density weight w = 0)"
+ },
+ "record_family": {
+  "G-ANISO": {
+   "counts_at_00": [
+    1,
+    4,
+    5
+   ],
+   "counts_at_11": [
+    1,
+    4,
+    5
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 0,
+   "img": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  },
+  "G-ANISO2": {
+   "counts_at_00": [
+    4,
+    9,
+    13
+   ],
+   "counts_at_11": [
+    4,
+    9,
+    13
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 13631146639813244878848,
+   "img": 1257565061957837936381,
+   "per_site_admissible": [
+    221
+   ],
+   "splittable": true
+  },
+  "G-CURVED": {
+   "counts_at_00": [
+    1,
+    1,
+    2
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    4
+   ],
+   "admissible": true,
+   "homogeneous": false,
+   "raw": 0,
+   "img": 0,
+   "per_site_admissible": [
+    0,
+    3,
+    7,
+    18
+   ],
+   "splittable": false
+  },
+  "G-CURVOFF": {
+   "counts_at_00": [
+    2,
+    2,
+    6
+   ],
+   "counts_at_11": [
+    3,
+    3,
+    10
+   ],
+   "admissible": true,
+   "homogeneous": false,
+   "raw": 2133246689280,
+   "img": 64562400000,
+   "per_site_admissible": [
+    3,
+    8,
+    15,
+    20,
+    35,
+    61
+   ],
+   "splittable": true
+  },
+  "G-DIAG2": {
+   "counts_at_00": [
+    2,
+    2,
+    4
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    4
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 19683,
+   "img": 19683,
+   "per_site_admissible": [
+    3
+   ],
+   "splittable": true
+  },
+  "G-FLAT": {
+   "counts_at_00": [
+    1,
+    1,
+    2
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    2
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 0,
+   "img": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  },
+  "G-INDEF": {
+   "counts_at_00": [
+    1,
+    1,
+    6
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    6
+   ],
+   "admissible": false,
+   "homogeneous": true,
+   "raw": 0,
+   "img": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  },
+  "G-OFFDIAG": {
+   "counts_at_00": [
+    2,
+    2,
+    6
+   ],
+   "counts_at_11": [
+    2,
+    2,
+    6
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 1953125,
+   "img": 19683,
+   "per_site_admissible": [
+    3
+   ],
+   "splittable": true
+  },
+  "G-OFFDIAG2": {
+   "counts_at_00": [
+    3,
+    5,
+    12
+   ],
+   "counts_at_11": [
+    3,
+    5,
+    12
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 316478381828866048,
+   "img": 3904305912313344,
+   "per_site_admissible": [
+    54
+   ],
+   "splittable": true
+  },
+  "G-OFFNEG": {
+   "counts_at_00": [
+    3,
+    5,
+    4
+   ],
+   "counts_at_11": [
+    3,
+    5,
+    4
+   ],
+   "admissible": true,
+   "homogeneous": true,
+   "raw": 2641807540224,
+   "img": 1801152661463,
+   "per_site_admissible": [
+    23
+   ],
+   "splittable": true
+  },
+  "G-SINGULAR": {
+   "counts_at_00": [
+    1,
+    1,
+    4
+   ],
+   "counts_at_11": [
+    1,
+    1,
+    4
+   ],
+   "admissible": false,
+   "homogeneous": true,
+   "raw": 0,
+   "img": 0,
+   "per_site_admissible": [
+    0
+   ],
+   "splittable": false
+  }
+ },
+ "fiber_rebuild": {
+  "cells_anchored": 27,
+  "mismatches": [],
+  "span_min": 19683,
+  "span_max": 1257565061957837936381,
+  "records_admitting_the_move": 6,
+  "records_with_no_split": [
+   "G-ANISO",
+   "G-CURVED",
+   "G-FLAT"
+  ],
+  "source": "v14/code/r6a_refinement_receipt.json @ 022c3f488a93 (DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel))"
+ },
+ "symmetry_inventory": {
+  "rows": [
+   {
+    "group": "TRANS",
+    "order": 9,
+    "provenance": "PINNED -- the |X| chart translations (P-I7-CHART)",
+    "block_preserving_elements": 9,
+    "carries_a_reversal": false
+   },
+   {
+    "group": "SIGMA",
+    "order": 2,
+    "provenance": "PINNED -- the d! direction relabellings (P-I7-CHART)",
+    "block_preserving_elements": 2,
+    "carries_a_reversal": false
+   },
+   {
+    "group": "CHART",
+    "order": 18,
+    "provenance": "PINNED -- the declared chart group, order 18 (P-I7-CHART, T-CHART-ORDER)",
+    "block_preserving_elements": 18,
+    "carries_a_reversal": false
+   },
+   {
+    "group": "EXT",
+    "order": 108,
+    "provenance": "DECLARED-EXTENSION -- translations times the A_2 point group of the declared link set; NOT declared by I7, entered as arena data (RUNBOOK section 15)",
+    "block_preserving_elements": 18,
+    "carries_a_reversal": true
+   },
+   {
+    "group": "LOCALFLIP",
+    "order": 134217728,
+    "provenance": "DECLARED-EXTENSION -- the per-interval reversal group (Z_2)^27, the count-preserving ceiling; no pinned declaration reverses one interval alone",
+    "block_preserving_elements": 1,
+    "carries_a_reversal": true
+   }
+  ],
+  "point_group_order": 12,
+  "point_group_direction_permutations": [
+   [
+    0,
+    1,
+    2
+   ],
+   [
+    0,
+    2,
+    1
+   ],
+   [
+    1,
+    0,
+    2
+   ],
+   [
+    1,
+    2,
+    0
+   ],
+   [
+    2,
+    0,
+    1
+   ],
+   [
+    2,
+    1,
+    0
+   ]
+  ],
+  "pinned_sigma_is_S2_extension_is_S3": {
+   "pinned_direction_permutations": 2,
+   "declared_extension_direction_permutations": 6
+  },
+  "block_preserving_of_the_extension": 18,
+  "reading": "the pinned chart group is not an arbitrary choice: it is EXACTLY the reversal-free part of the largest group the declared link set admits.  Every element outside it reverses at least one interval, and a reversal exchanges the two halves of a split."
+ },
+ "stabilisers": {
+  "G-ANISO": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     1,
+     0,
+     9
+    ],
+    [
+     4,
+     3,
+     9
+    ],
+    [
+     5,
+     4,
+     9
+    ]
+   ],
+   "equivariant_fiber": 0,
+   "fixed_points_raw": 0,
+   "signed_classes": 3
+  },
+  "G-ANISO2": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     4,
+     3,
+     9
+    ],
+    [
+     9,
+     8,
+     9
+    ],
+    [
+     13,
+     12,
+     9
+    ]
+   ],
+   "equivariant_fiber": 288,
+   "fixed_points_raw": 288,
+   "signed_classes": 3
+  },
+  "G-CURVED": {
+   "order": 2,
+   "orbits": 15,
+   "orbit_profile": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     1,
+     1
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     4,
+     3,
+     1
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     5,
+     4,
+     2
+    ],
+    [
+     6,
+     5,
+     1
+    ]
+   ],
+   "equivariant_fiber": 0,
+   "fixed_points_raw": 0,
+   "signed_classes": 15
+  },
+  "G-CURVOFF": {
+   "order": 2,
+   "orbits": 15,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     2,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     3,
+     2,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     4,
+     3,
+     2
+    ],
+    [
+     6,
+     5,
+     1
+    ],
+    [
+     7,
+     6,
+     2
+    ],
+    [
+     8,
+     7,
+     2
+    ],
+    [
+     9,
+     8,
+     2
+    ],
+    [
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     9,
+     1
+    ]
+   ],
+   "equivariant_fiber": 29393280,
+   "fixed_points_raw": 29393280,
+   "signed_classes": 15
+  },
+  "G-DIAG2": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     18
+    ],
+    [
+     4,
+     3,
+     9
+    ]
+   ],
+   "equivariant_fiber": 3,
+   "fixed_points_raw": 3,
+   "signed_classes": 2
+  },
+  "G-FLAT": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     1,
+     0,
+     18
+    ],
+    [
+     2,
+     1,
+     9
+    ]
+   ],
+   "equivariant_fiber": 0,
+   "fixed_points_raw": 0,
+   "signed_classes": 2
+  },
+  "G-INDEF": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     1,
+     0,
+     18
+    ],
+    [
+     6,
+     5,
+     9
+    ]
+   ],
+   "equivariant_fiber": 0,
+   "fixed_points_raw": 0,
+   "signed_classes": 2
+  },
+  "G-OFFDIAG": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     2,
+     1,
+     18
+    ],
+    [
+     6,
+     5,
+     9
+    ]
+   ],
+   "equivariant_fiber": 5,
+   "fixed_points_raw": 5,
+   "signed_classes": 2
+  },
+  "G-OFFDIAG2": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     3,
+     2,
+     9
+    ],
+    [
+     5,
+     4,
+     9
+    ],
+    [
+     12,
+     11,
+     9
+    ]
+   ],
+   "equivariant_fiber": 88,
+   "fixed_points_raw": 88,
+   "signed_classes": 3
+  },
+  "G-OFFNEG": {
+   "order": 9,
+   "orbits": 3,
+   "orbit_profile": [
+    [
+     3,
+     2,
+     9
+    ],
+    [
+     4,
+     3,
+     9
+    ],
+    [
+     5,
+     4,
+     9
+    ]
+   ],
+   "equivariant_fiber": 24,
+   "fixed_points_raw": 24,
+   "signed_classes": 3
+  },
+  "G-SINGULAR": {
+   "order": 18,
+   "orbits": 2,
+   "orbit_profile": [
+    [
+     1,
+     0,
+     18
+    ],
+    [
+     4,
+     3,
+     9
+    ]
+   ],
+   "equivariant_fiber": 0,
+   "fixed_points_raw": 0,
+   "signed_classes": 2
+  }
+ },
+ "orbit_decomposition": {
+  "rows": [
+   {
+    "record": "G-ANISO2",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 13631146639813244878848,
+    "fiber_img": 1257565061957837936381,
+    "orbits_raw": 1514571848868159553536,
+    "orbits_img": 139729451328658254141,
+    "simplex_dim_raw": 1514571848868159553535,
+    "simplex_dim_img": 139729451328658254140,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 288
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 1,
+    "elements_acting_on_the_admissible_fiber": 1,
+    "block_preserving_elements": 1,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 13631146639813244878848,
+    "fiber_img": 1257565061957837936381,
+    "orbits_raw": 13631146639813244878848,
+    "orbits_img": 1257565061957837936381,
+    "simplex_dim_raw": 13631146639813244878847,
+    "simplex_dim_img": 1257565061957837936380,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 13631146639813244878848
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 13631146639813244878848,
+    "fiber_img": 1257565061957837936381,
+    "orbits_raw": 1514571848868159553536,
+    "orbits_img": 139729451328658254141,
+    "simplex_dim_raw": 1514571848868159553535,
+    "simplex_dim_img": 139729451328658254140,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 288
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 18,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 13631146639813244878848,
+    "fiber_img": 1257565061957837936381,
+    "orbits_raw": 757285924434079776768,
+    "orbits_img": 139729451328658254141,
+    "simplex_dim_raw": 757285924434079776767,
+    "simplex_dim_img": 139729451328658254140,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 0
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 1,
+    "elements_acting_on_the_admissible_fiber": 1,
+    "block_preserving_elements": 1,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2133246689280,
+    "fiber_img": 64562400000,
+    "orbits_raw": 2133246689280,
+    "orbits_img": 64562400000,
+    "simplex_dim_raw": 2133246689279,
+    "simplex_dim_img": 64562399999,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 2133246689280
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 2,
+    "elements_acting_on_the_admissible_fiber": 2,
+    "block_preserving_elements": 2,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2133246689280,
+    "fiber_img": 64562400000,
+    "orbits_raw": 1066638041280,
+    "orbits_img": 32282397000,
+    "simplex_dim_raw": 1066638041279,
+    "simplex_dim_img": 32282396999,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 29393280
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 2,
+    "elements_acting_on_the_admissible_fiber": 2,
+    "block_preserving_elements": 2,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2133246689280,
+    "fiber_img": 64562400000,
+    "orbits_raw": 1066638041280,
+    "orbits_img": 32282397000,
+    "simplex_dim_raw": 1066638041279,
+    "simplex_dim_img": 32282396999,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 29393280
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 2,
+    "elements_acting_on_the_admissible_fiber": 2,
+    "block_preserving_elements": 2,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2133246689280,
+    "fiber_img": 64562400000,
+    "orbits_raw": 1066638041280,
+    "orbits_img": 32282397000,
+    "simplex_dim_raw": 1066638041279,
+    "simplex_dim_img": 32282396999,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 29393280
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 19683,
+    "fiber_img": 19683,
+    "orbits_raw": 2211,
+    "orbits_img": 2211,
+    "simplex_dim_raw": 2210,
+    "simplex_dim_img": 2210,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 3
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 2,
+    "elements_acting_on_the_admissible_fiber": 2,
+    "block_preserving_elements": 2,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 19683,
+    "fiber_img": 19683,
+    "orbits_raw": 10206,
+    "orbits_img": 10206,
+    "simplex_dim_raw": 10205,
+    "simplex_dim_img": 10205,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 729
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 18,
+    "elements_acting_on_the_admissible_fiber": 18,
+    "block_preserving_elements": 18,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 19683,
+    "fiber_img": 19683,
+    "orbits_raw": 1230,
+    "orbits_img": 1230,
+    "simplex_dim_raw": 1229,
+    "simplex_dim_img": 1229,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 3
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 36,
+    "elements_acting_on_the_admissible_fiber": 36,
+    "block_preserving_elements": 18,
+    "mode": "boxwise (the admissible fiber is a product over intervals, so a reversal can act on it)",
+    "fiber_raw": 19683,
+    "fiber_img": 19683,
+    "orbits_raw": 638,
+    "orbits_img": 638,
+    "simplex_dim_raw": 637,
+    "simplex_dim_img": 637,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 1
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 1953125,
+    "fiber_img": 19683,
+    "orbits_raw": 217125,
+    "orbits_img": 2211,
+    "simplex_dim_raw": 217124,
+    "simplex_dim_img": 2210,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 5
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 2,
+    "elements_acting_on_the_admissible_fiber": 2,
+    "block_preserving_elements": 2,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 1953125,
+    "fiber_img": 19683,
+    "orbits_raw": 984375,
+    "orbits_img": 10206,
+    "simplex_dim_raw": 984374,
+    "simplex_dim_img": 10205,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 15625
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 18,
+    "elements_acting_on_the_admissible_fiber": 18,
+    "block_preserving_elements": 18,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 1953125,
+    "fiber_img": 19683,
+    "orbits_raw": 111175,
+    "orbits_img": 1230,
+    "simplex_dim_raw": 111174,
+    "simplex_dim_img": 1229,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 5
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 36,
+    "elements_acting_on_the_admissible_fiber": 18,
+    "block_preserving_elements": 18,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 1953125,
+    "fiber_img": 19683,
+    "orbits_raw": 55755,
+    "orbits_img": 1230,
+    "simplex_dim_raw": 55754,
+    "simplex_dim_img": 1229,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 1
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 316478381828866048,
+    "fiber_img": 3904305912313344,
+    "orbits_raw": 35164264648257536,
+    "orbits_img": 433811768174784,
+    "simplex_dim_raw": 35164264648257535,
+    "simplex_dim_img": 433811768174783,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 88
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 1,
+    "elements_acting_on_the_admissible_fiber": 1,
+    "block_preserving_elements": 1,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 316478381828866048,
+    "fiber_img": 3904305912313344,
+    "orbits_raw": 316478381828866048,
+    "orbits_img": 3904305912313344,
+    "simplex_dim_raw": 316478381828866047,
+    "simplex_dim_img": 3904305912313343,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 316478381828866048
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 316478381828866048,
+    "fiber_img": 3904305912313344,
+    "orbits_raw": 35164264648257536,
+    "orbits_img": 433811768174784,
+    "simplex_dim_raw": 35164264648257535,
+    "simplex_dim_img": 433811768174783,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 88
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 18,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 316478381828866048,
+    "fiber_img": 3904305912313344,
+    "orbits_raw": 17582132324128768,
+    "orbits_img": 433811768174784,
+    "simplex_dim_raw": 17582132324128767,
+    "simplex_dim_img": 433811768174783,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 0
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "TRANS",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2641807540224,
+    "fiber_img": 1801152661463,
+    "orbits_raw": 293534183424,
+    "orbits_img": 200128084311,
+    "simplex_dim_raw": 293534183423,
+    "simplex_dim_img": 200128084310,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 24
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "SIGMA",
+    "provenance": "PINNED",
+    "stabiliser_order": 1,
+    "elements_acting_on_the_admissible_fiber": 1,
+    "block_preserving_elements": 1,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2641807540224,
+    "fiber_img": 1801152661463,
+    "orbits_raw": 2641807540224,
+    "orbits_img": 1801152661463,
+    "simplex_dim_raw": 2641807540223,
+    "simplex_dim_img": 1801152661462,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 2641807540224
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "CHART",
+    "provenance": "PINNED",
+    "stabiliser_order": 9,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2641807540224,
+    "fiber_img": 1801152661463,
+    "orbits_raw": 293534183424,
+    "orbits_img": 200128084311,
+    "simplex_dim_raw": 293534183423,
+    "simplex_dim_img": 200128084310,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 24
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "EXT",
+    "provenance": "DECLARED-EXTENSION",
+    "stabiliser_order": 18,
+    "elements_acting_on_the_admissible_fiber": 9,
+    "block_preserving_elements": 9,
+    "mode": "blockwise (only reversal-free elements act on the admissible fiber)",
+    "fiber_raw": 2641807540224,
+    "fiber_img": 1801152661463,
+    "orbits_raw": 146767091712,
+    "orbits_img": 200128084311,
+    "simplex_dim_raw": 146767091711,
+    "simplex_dim_img": 200128084310,
+    "transitive_raw": false,
+    "transitive_img": false,
+    "deterministic_invariant_laws": 0
+   }
+  ],
+  "cells": 24,
+  "records": 6,
+  "groups": 4
+ },
+ "direct_enumeration": {
+  "cap": 20000,
+  "rows": [
+   {
+    "record": "G-DIAG2",
+    "group": "CHART",
+    "generators": 3,
+    "generated_order": 18,
+    "stabiliser_order": 18,
+    "fiber": 19683,
+    "orbits_direct": 1230,
+    "orbits_burnside": 1230,
+    "orbit_sizes": {
+     "1": 3,
+     "3": 14,
+     "6": 9,
+     "9": 232,
+     "18": 972
+    },
+    "escapes": 0,
+    "elements_visited": 19683,
+    "agree": true
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "EXT",
+    "generators": 6,
+    "generated_order": 36,
+    "stabiliser_order": 36,
+    "fiber": 19683,
+    "orbits_direct": 638,
+    "orbits_burnside": 638,
+    "orbit_sizes": {
+     "1": 1,
+     "2": 1,
+     "3": 2,
+     "6": 9,
+     "9": 6,
+     "12": 3,
+     "18": 147,
+     "36": 469
+    },
+    "escapes": 0,
+    "elements_visited": 19683,
+    "agree": true
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "CHART",
+    "generators": 3,
+    "generated_order": 18,
+    "stabiliser_order": 18,
+    "fiber": 19683,
+    "orbits_direct": 1230,
+    "orbits_burnside": 1230,
+    "orbit_sizes": {
+     "1": 3,
+     "3": 14,
+     "6": 9,
+     "9": 232,
+     "18": 972
+    },
+    "escapes": 0,
+    "elements_visited": 19683,
+    "agree": true
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "EXT",
+    "generators": 6,
+    "generated_order": 36,
+    "stabiliser_order": 36,
+    "fiber": 19683,
+    "orbits_direct": 1230,
+    "orbits_burnside": 1230,
+    "orbit_sizes": {
+     "1": 3,
+     "3": 14,
+     "6": 9,
+     "9": 232,
+     "18": 972
+    },
+    "escapes": 39364,
+    "elements_visited": 19683,
+    "agree": true
+   }
+  ]
+ },
+ "closed_form_comparator": {
+  "rows": [
+   {
+    "record": "G-ANISO2",
+    "k": 221,
+    "closed_form": 139729451328658254141,
+    "engine": 139729451328658254141,
+    "agree": true
+   },
+   {
+    "record": "G-DIAG2",
+    "k": 3,
+    "closed_form": 2211,
+    "engine": 2211,
+    "agree": true
+   },
+   {
+    "record": "G-OFFDIAG",
+    "k": 3,
+    "closed_form": 2211,
+    "engine": 2211,
+    "agree": true
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "k": 54,
+    "closed_form": 433811768174784,
+    "engine": 433811768174784,
+    "agree": true
+   },
+   {
+    "record": "G-OFFNEG",
+    "k": 23,
+    "closed_form": 200128084311,
+    "engine": 200128084311,
+    "agree": true
+   }
+  ],
+  "formula": "(k^9 + 8 k^3) / 9"
+ },
+ "invariant_measure_comparator": {
+  "rows": [
+   {
+    "n": 2,
+    "action": "pinned (no element reverses an interval)",
+    "points": 1,
+    "orbits": 1,
+    "simplex_dim_linear_system": 0,
+    "orbits_minus_one": 0,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 2,
+    "action": "declared reversal extension",
+    "points": 1,
+    "orbits": 1,
+    "simplex_dim_linear_system": 0,
+    "orbits_minus_one": 0,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 3,
+    "action": "pinned (no element reverses an interval)",
+    "points": 2,
+    "orbits": 2,
+    "simplex_dim_linear_system": 1,
+    "orbits_minus_one": 1,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 3,
+    "action": "declared reversal extension",
+    "points": 2,
+    "orbits": 1,
+    "simplex_dim_linear_system": 0,
+    "orbits_minus_one": 0,
+    "constraint_rows": 2,
+    "rank": 1,
+    "agree": true
+   },
+   {
+    "n": 4,
+    "action": "pinned (no element reverses an interval)",
+    "points": 3,
+    "orbits": 3,
+    "simplex_dim_linear_system": 2,
+    "orbits_minus_one": 2,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 4,
+    "action": "declared reversal extension",
+    "points": 3,
+    "orbits": 2,
+    "simplex_dim_linear_system": 1,
+    "orbits_minus_one": 1,
+    "constraint_rows": 2,
+    "rank": 1,
+    "agree": true
+   },
+   {
+    "n": 5,
+    "action": "pinned (no element reverses an interval)",
+    "points": 4,
+    "orbits": 4,
+    "simplex_dim_linear_system": 3,
+    "orbits_minus_one": 3,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 5,
+    "action": "declared reversal extension",
+    "points": 4,
+    "orbits": 2,
+    "simplex_dim_linear_system": 1,
+    "orbits_minus_one": 1,
+    "constraint_rows": 4,
+    "rank": 2,
+    "agree": true
+   },
+   {
+    "n": 6,
+    "action": "pinned (no element reverses an interval)",
+    "points": 5,
+    "orbits": 5,
+    "simplex_dim_linear_system": 4,
+    "orbits_minus_one": 4,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 6,
+    "action": "declared reversal extension",
+    "points": 5,
+    "orbits": 3,
+    "simplex_dim_linear_system": 2,
+    "orbits_minus_one": 2,
+    "constraint_rows": 4,
+    "rank": 2,
+    "agree": true
+   },
+   {
+    "n": 7,
+    "action": "pinned (no element reverses an interval)",
+    "points": 6,
+    "orbits": 6,
+    "simplex_dim_linear_system": 5,
+    "orbits_minus_one": 5,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 7,
+    "action": "declared reversal extension",
+    "points": 6,
+    "orbits": 3,
+    "simplex_dim_linear_system": 2,
+    "orbits_minus_one": 2,
+    "constraint_rows": 6,
+    "rank": 3,
+    "agree": true
+   },
+   {
+    "n": 8,
+    "action": "pinned (no element reverses an interval)",
+    "points": 7,
+    "orbits": 7,
+    "simplex_dim_linear_system": 6,
+    "orbits_minus_one": 6,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 8,
+    "action": "declared reversal extension",
+    "points": 7,
+    "orbits": 4,
+    "simplex_dim_linear_system": 3,
+    "orbits_minus_one": 3,
+    "constraint_rows": 6,
+    "rank": 3,
+    "agree": true
+   },
+   {
+    "n": 9,
+    "action": "pinned (no element reverses an interval)",
+    "points": 8,
+    "orbits": 8,
+    "simplex_dim_linear_system": 7,
+    "orbits_minus_one": 7,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 9,
+    "action": "declared reversal extension",
+    "points": 8,
+    "orbits": 4,
+    "simplex_dim_linear_system": 3,
+    "orbits_minus_one": 3,
+    "constraint_rows": 8,
+    "rank": 4,
+    "agree": true
+   },
+   {
+    "n": 10,
+    "action": "pinned (no element reverses an interval)",
+    "points": 9,
+    "orbits": 9,
+    "simplex_dim_linear_system": 8,
+    "orbits_minus_one": 8,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 10,
+    "action": "declared reversal extension",
+    "points": 9,
+    "orbits": 5,
+    "simplex_dim_linear_system": 4,
+    "orbits_minus_one": 4,
+    "constraint_rows": 8,
+    "rank": 4,
+    "agree": true
+   },
+   {
+    "n": 11,
+    "action": "pinned (no element reverses an interval)",
+    "points": 10,
+    "orbits": 10,
+    "simplex_dim_linear_system": 9,
+    "orbits_minus_one": 9,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 11,
+    "action": "declared reversal extension",
+    "points": 10,
+    "orbits": 5,
+    "simplex_dim_linear_system": 4,
+    "orbits_minus_one": 4,
+    "constraint_rows": 10,
+    "rank": 5,
+    "agree": true
+   },
+   {
+    "n": 12,
+    "action": "pinned (no element reverses an interval)",
+    "points": 11,
+    "orbits": 11,
+    "simplex_dim_linear_system": 10,
+    "orbits_minus_one": 10,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 12,
+    "action": "declared reversal extension",
+    "points": 11,
+    "orbits": 6,
+    "simplex_dim_linear_system": 5,
+    "orbits_minus_one": 5,
+    "constraint_rows": 10,
+    "rank": 5,
+    "agree": true
+   },
+   {
+    "n": 13,
+    "action": "pinned (no element reverses an interval)",
+    "points": 12,
+    "orbits": 12,
+    "simplex_dim_linear_system": 11,
+    "orbits_minus_one": 11,
+    "constraint_rows": 0,
+    "rank": 0,
+    "agree": true
+   },
+   {
+    "n": 13,
+    "action": "declared reversal extension",
+    "points": 12,
+    "orbits": 6,
+    "simplex_dim_linear_system": 5,
+    "orbits_minus_one": 5,
+    "constraint_rows": 12,
+    "rank": 6,
+    "agree": true
+   }
+  ]
+ },
+ "invariant_measure_census": {
+  "rows": [
+   {
+    "record": "G-ANISO2",
+    "group": "TRANS",
+    "fiber": 1257565061957837936381,
+    "orbits": 139729451328658254141,
+    "simplex_dim": 139729451328658254140,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "SIGMA",
+    "fiber": 1257565061957837936381,
+    "orbits": 1257565061957837936381,
+    "simplex_dim": 1257565061957837936380,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "CHART",
+    "fiber": 1257565061957837936381,
+    "orbits": 139729451328658254141,
+    "simplex_dim": 139729451328658254140,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-ANISO2",
+    "group": "EXT",
+    "fiber": 1257565061957837936381,
+    "orbits": 139729451328658254141,
+    "simplex_dim": 139729451328658254140,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "TRANS",
+    "fiber": 64562400000,
+    "orbits": 64562400000,
+    "simplex_dim": 64562399999,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "SIGMA",
+    "fiber": 64562400000,
+    "orbits": 32282397000,
+    "simplex_dim": 32282396999,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "CHART",
+    "fiber": 64562400000,
+    "orbits": 32282397000,
+    "simplex_dim": 32282396999,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-CURVOFF",
+    "group": "EXT",
+    "fiber": 64562400000,
+    "orbits": 32282397000,
+    "simplex_dim": 32282396999,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "TRANS",
+    "fiber": 19683,
+    "orbits": 2211,
+    "simplex_dim": 2210,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "SIGMA",
+    "fiber": 19683,
+    "orbits": 10206,
+    "simplex_dim": 10205,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "CHART",
+    "fiber": 19683,
+    "orbits": 1230,
+    "simplex_dim": 1229,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-DIAG2",
+    "group": "EXT",
+    "fiber": 19683,
+    "orbits": 638,
+    "simplex_dim": 637,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "TRANS",
+    "fiber": 19683,
+    "orbits": 2211,
+    "simplex_dim": 2210,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "SIGMA",
+    "fiber": 19683,
+    "orbits": 10206,
+    "simplex_dim": 10205,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "CHART",
+    "fiber": 19683,
+    "orbits": 1230,
+    "simplex_dim": 1229,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "group": "EXT",
+    "fiber": 19683,
+    "orbits": 1230,
+    "simplex_dim": 1229,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "TRANS",
+    "fiber": 3904305912313344,
+    "orbits": 433811768174784,
+    "simplex_dim": 433811768174783,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "SIGMA",
+    "fiber": 3904305912313344,
+    "orbits": 3904305912313344,
+    "simplex_dim": 3904305912313343,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "CHART",
+    "fiber": 3904305912313344,
+    "orbits": 433811768174784,
+    "simplex_dim": 433811768174783,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "group": "EXT",
+    "fiber": 3904305912313344,
+    "orbits": 433811768174784,
+    "simplex_dim": 433811768174783,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "TRANS",
+    "fiber": 1801152661463,
+    "orbits": 200128084311,
+    "simplex_dim": 200128084310,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "SIGMA",
+    "fiber": 1801152661463,
+    "orbits": 1801152661463,
+    "simplex_dim": 1801152661462,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "CHART",
+    "fiber": 1801152661463,
+    "orbits": 200128084311,
+    "simplex_dim": 200128084310,
+    "unique_invariant_law": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "group": "EXT",
+    "fiber": 1801152661463,
+    "orbits": 200128084311,
+    "simplex_dim": 200128084310,
+    "unique_invariant_law": false
+   }
+  ],
+  "cells": 24,
+  "cells_with_a_unique_invariant_law": 0,
+  "simplex_dim_min": 637,
+  "simplex_dim_max": 1257565061957837936380,
+  "reading": "no pinned symmetry acts transitively on any nontrivial split fiber of the declared family, so at every cell the invariant laws form a simplex of positive dimension: the symmetry does not choose."
+ },
+ "per_interval_law": {
+  "family_count_values": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   13
+  ],
+  "rows": [
+   {
+    "n": 1,
+    "fiber": 0,
+    "pinned_orbits": 0,
+    "pinned_simplex_dim": null,
+    "pinned_transitive": false,
+    "flip_orbits": 0,
+    "flip_simplex_dim": null,
+    "flip_transitive": false
+   },
+   {
+    "n": 2,
+    "fiber": 1,
+    "pinned_orbits": 1,
+    "pinned_simplex_dim": 0,
+    "pinned_transitive": true,
+    "flip_orbits": 1,
+    "flip_simplex_dim": 0,
+    "flip_transitive": true
+   },
+   {
+    "n": 3,
+    "fiber": 2,
+    "pinned_orbits": 2,
+    "pinned_simplex_dim": 1,
+    "pinned_transitive": false,
+    "flip_orbits": 1,
+    "flip_simplex_dim": 0,
+    "flip_transitive": true
+   },
+   {
+    "n": 4,
+    "fiber": 3,
+    "pinned_orbits": 3,
+    "pinned_simplex_dim": 2,
+    "pinned_transitive": false,
+    "flip_orbits": 2,
+    "flip_simplex_dim": 1,
+    "flip_transitive": false
+   },
+   {
+    "n": 5,
+    "fiber": 4,
+    "pinned_orbits": 4,
+    "pinned_simplex_dim": 3,
+    "pinned_transitive": false,
+    "flip_orbits": 2,
+    "flip_simplex_dim": 1,
+    "flip_transitive": false
+   },
+   {
+    "n": 6,
+    "fiber": 5,
+    "pinned_orbits": 5,
+    "pinned_simplex_dim": 4,
+    "pinned_transitive": false,
+    "flip_orbits": 3,
+    "flip_simplex_dim": 2,
+    "flip_transitive": false
+   },
+   {
+    "n": 7,
+    "fiber": 6,
+    "pinned_orbits": 6,
+    "pinned_simplex_dim": 5,
+    "pinned_transitive": false,
+    "flip_orbits": 3,
+    "flip_simplex_dim": 2,
+    "flip_transitive": false
+   },
+   {
+    "n": 8,
+    "fiber": 7,
+    "pinned_orbits": 7,
+    "pinned_simplex_dim": 6,
+    "pinned_transitive": false,
+    "flip_orbits": 4,
+    "flip_simplex_dim": 3,
+    "flip_transitive": false
+   },
+   {
+    "n": 9,
+    "fiber": 8,
+    "pinned_orbits": 8,
+    "pinned_simplex_dim": 7,
+    "pinned_transitive": false,
+    "flip_orbits": 4,
+    "flip_simplex_dim": 3,
+    "flip_transitive": false
+   },
+   {
+    "n": 10,
+    "fiber": 9,
+    "pinned_orbits": 9,
+    "pinned_simplex_dim": 8,
+    "pinned_transitive": false,
+    "flip_orbits": 5,
+    "flip_simplex_dim": 4,
+    "flip_transitive": false
+   },
+   {
+    "n": 12,
+    "fiber": 11,
+    "pinned_orbits": 11,
+    "pinned_simplex_dim": 10,
+    "pinned_transitive": false,
+    "flip_orbits": 6,
+    "flip_simplex_dim": 5,
+    "flip_transitive": false
+   },
+   {
+    "n": 13,
+    "fiber": 12,
+    "pinned_orbits": 12,
+    "pinned_simplex_dim": 11,
+    "pinned_transitive": false,
+    "flip_orbits": 6,
+    "flip_simplex_dim": 5,
+    "flip_transitive": false
+   }
+  ],
+  "pinned_dim_law": "n - 2",
+  "flip_dim_law": "ceil((n-1)/2) - 1",
+  "trajectory_pinned": [
+   null,
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   10,
+   11
+  ],
+  "trajectory_flip": [
+   null,
+   0,
+   0,
+   1,
+   1,
+   2,
+   2,
+   3,
+   3,
+   4,
+   5,
+   5
+  ]
+ },
+ "count_lattice_census": {
+  "admissible_count_vectors": 361,
+  "splittable": 261,
+  "with_a_nonempty_fiber": 261,
+  "fiber_is_a_point": [
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "fiber_is_a_point_count": 1,
+  "pinned_transitive": [
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "pinned_transitive_count": 1,
+  "flip_transitive": [
+   [
+    2,
+    2,
+    2
+   ],
+   [
+    2,
+    2,
+    3
+   ],
+   [
+    2,
+    3,
+    2
+   ],
+   [
+    3,
+    2,
+    2
+   ]
+  ],
+  "flip_transitive_count": 4,
+  "flip_acts_on_the_fiber_at": 30,
+  "box": {
+   "axis_max": 6,
+   "diag_max": 12
+  },
+  "transitive_vectors_in_the_declared_family": []
+ },
+ "selection_candidates": {
+  "rows": [
+   {
+    "name": "THE-RECORD-COUNTS-AS-WEIGHTS",
+    "what": "a law P(a) built from the interval's own count n",
+    "tested": "five weight functionals expressible from the pinned data alone (uniform, binomial, linear, product, min-half), at every count value the declared family carries",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "all five are expressible and no pinned declaration prefers one; at every count value they are pairwise distinct, so the record's counts admit a family of laws rather than selecting one",
+    "evidence": {
+     "count_values": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13
+     ],
+     "distinct_laws_per_value": {
+      "3": 2,
+      "4": 5,
+      "5": 4,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5,
+      "10": 5,
+      "12": 5,
+      "13": 5
+     },
+     "tv_uniform_vs_binomial": {
+      "3": "0",
+      "4": "2/21",
+      "5": "1/6",
+      "6": "32/155",
+      "7": "2/9",
+      "8": "256/889",
+      "9": "11/34",
+      "10": "1549/4599",
+      "12": "9004/22517",
+      "13": "257/630"
+     }
+    }
+   },
+   {
+    "name": "MAXENT-UNDER-PINNED-CONSTRAINTS",
+    "what": "the maximum-entropy law on the split fiber",
+    "tested": "the CONSTRAINT SET is audited before the principle is applied: every pinned declaration is classified value-level or distribution-level, and the two pinned-plausible supports are compared exactly",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "the audit finds no pinned moment constraint at all, so maximum entropy reduces to the uniform law on whatever support is declared -- and the two supports the pinned grammar makes available (the raw fiber and the admissible-at-images fiber) give measurably different laws.  A principle whose answer is a function of an undeclared choice is not a forcing",
+    "evidence": {
+     "records_with_a_measured_support_gap": 5,
+     "distinct_total_variations": [
+      "1/10",
+      "1/14",
+      "1/4",
+      "1/46",
+      "1/8",
+      "11/105",
+      "139/594",
+      "159/1768"
+     ],
+     "pinned_moment_constraints": 0
+    }
+   },
+   {
+    "name": "THE-UNIFORM-LAW-ON-THE-ADMISSIBLE-FIBER",
+    "what": "P = uniform on the admissible split fiber",
+    "tested": "whether it is a product law -- that is, whether it even gives each interval a law of its own",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "it is invariant, but it is not canonical (it depends on the declared support) and at 4 of the 6 records that admit the move it does not factorise: the admissibility constraint COUPLES the three splits at a site, so 'the law of a split' is not even well-posed interval by interval under it",
+    "evidence": {
+     "records": [
+      "G-ANISO2",
+      "G-CURVOFF",
+      "G-DIAG2",
+      "G-OFFDIAG",
+      "G-OFFDIAG2",
+      "G-OFFNEG"
+     ],
+     "non_factorising": [
+      "G-ANISO2",
+      "G-CURVOFF",
+      "G-OFFDIAG2",
+      "G-OFFNEG"
+     ],
+     "per_record": {
+      "G-ANISO2": {
+       "sites": 9,
+       "sites_not_factorising": 9
+      },
+      "G-CURVOFF": {
+       "sites": 9,
+       "sites_not_factorising": 8
+      },
+      "G-DIAG2": {
+       "sites": 9,
+       "sites_not_factorising": 0
+      },
+      "G-OFFDIAG": {
+       "sites": 9,
+       "sites_not_factorising": 0
+      },
+      "G-OFFDIAG2": {
+       "sites": 9,
+       "sites_not_factorising": 9
+      },
+      "G-OFFNEG": {
+       "sites": 9,
+       "sites_not_factorising": 9
+      }
+     }
+    }
+   },
+   {
+    "name": "THE-BARYCENTRE-OF-THE-INVARIANT-SIMPLEX",
+    "what": "the average of the orbit-uniform measures -- the simplex's own centre",
+    "tested": "against the other invariant law that looks canonical, the uniform law on the fiber",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "the orbits are not all the same size, so the barycentre and the uniform law are different invariant laws; two canonical-looking constructions disagree, measured, which is exactly what a forcing would have to exclude",
+    "evidence": {
+     "rows": [
+      {
+       "record": "G-DIAG2",
+       "orbit_sizes": {
+        "1": 3,
+        "3": 14,
+        "6": 9,
+        "9": 232,
+        "18": 972
+       },
+       "orbit_sizes_all_equal": false,
+       "fixed_points": 3,
+       "uniform_mass_on_a_fixed_point": "1/19683",
+       "barycentre_mass_on_a_fixed_point": "1/1230",
+       "ratio": "6561/410"
+      },
+      {
+       "record": "G-OFFDIAG",
+       "orbit_sizes": {
+        "1": 3,
+        "3": 14,
+        "6": 9,
+        "9": 232,
+        "18": 972
+       },
+       "orbit_sizes_all_equal": false,
+       "fixed_points": 3,
+       "uniform_mass_on_a_fixed_point": "1/19683",
+       "barycentre_mass_on_a_fixed_point": "1/1230",
+       "ratio": "6561/410"
+      }
+     ]
+    }
+   },
+   {
+    "name": "THE-FRONT",
+    "what": "a split supplied by the front n(x) -- the front-proportional rule a = n_l(x) * N(x) / (N(x) + N(x+l))",
+    "tested": "over the declared profile family used as fronts, at every record admitting the move and every coarse interval",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "the front is a per-site integer; the only functional the pinned data offers returns an admissible integer split at a small minority of cells and is undefined or out of range at the rest.  And a value rule, even where defined, is not a law: it names a point, and a point mass is invariant only if that point is fixed",
+    "evidence": {
+     "cells": 1944,
+     "admissible_integer": 165,
+     "non_integral": 141,
+     "out_of_range": 468,
+     "undefined": 1170,
+     "fronts": 12
+    }
+   },
+   {
+    "name": "THE-DRAG-FIELD",
+    "what": "a law supplied by the declared drag rules",
+    "tested": "every declared drag rule at every admissible record and site: is the weight a stochastic kernel, and does its index set meet the split fiber at all",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "the drag's index set is the tangent frame (d = 2 indices) or the declared link set (3 indices); the split fiber at an interval carrying n events has n - 1 points, and no pinned declaration maps one onto the other.  The index-set mismatch is prior to the stochasticity question and settles it",
+    "evidence": {
+     "cells": 891,
+     "row_stochastic_cells": 182,
+     "per_rule": {
+      "A-chart": {
+       "cells": 81,
+       "row_stochastic": 81
+      },
+      "A-axis": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "A-linkframe": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "A-linkhalf": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "A-insert": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "A-insert-x": {
+       "cells": 81,
+       "row_stochastic": 21
+      },
+      "A-insert-2x": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "A-notransport": {
+       "cells": 81,
+       "row_stochastic": 10
+      },
+      "B-axis": {
+       "cells": 81,
+       "row_stochastic": 20
+      },
+      "B-all": {
+       "cells": 81,
+       "row_stochastic": 0
+      },
+      "B-chart": {
+       "cells": 81,
+       "row_stochastic": 0
+      }
+     },
+     "index_sets": {
+      "drag_matrix_indices": 2,
+      "drag_link_indices": 3,
+      "declared_maps_onto_the_split_fiber": 0
+     }
+    }
+   },
+   {
+    "name": "THE-EQUIVARIANT-(DETERMINISTIC)-LAWS",
+    "what": "the invariant point masses -- R6a's chart-equivariant splits, read as distributions",
+    "tested": "counted exactly, as the fixed points of the pinned group on the fiber",
+    "result": "REFUTED-AS-FORCING",
+    "forcing": null,
+    "why": "these are genuinely invariant laws, and they are the vertices of the simplex that happen to be deterministic -- but there is never exactly one of them (the smallest count is 3), so demanding determinism does not select either.  This is R6a's value-level finding recovered as a distribution-level one",
+    "evidence": {
+     "per_record": {
+      "G-ANISO2": 288,
+      "G-CURVOFF": 29393280,
+      "G-DIAG2": 3,
+      "G-OFFDIAG": 5,
+      "G-OFFDIAG2": 88,
+      "G-OFFNEG": 24
+     },
+     "minimum": 3
+    }
+   }
+  ],
+  "count": 7,
+  "forced": 0,
+  "refuted": 7
+ },
+ "determinism_census": {
+  "declarations": {
+   "declarations": 27,
+   "value_level": 27,
+   "distribution_level": 0,
+   "distribution_level_rows": [],
+   "rows": [
+    {
+     "declaration": "L",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "L_ext",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "bridge_coordinates",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "bridge_primes",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "broken_rules",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "chart_group",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "count_lattice",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "d",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "d_ext",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "density_weight",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "density_weight_flip",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "frozen_front_rule",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "lapse_family",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "links_d2",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "links_d3",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "positive_control_rule",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "primes",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "records_d2",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "records_d2_inhomogeneous",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "records_d3",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "registers",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "relation_sets",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "rules",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "rules_d3",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "tangential_realisations",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "test_class",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    },
+    {
+     "declaration": "transported_rules",
+     "kind": "VALUE-LEVEL",
+     "markers": []
+    }
+   ],
+   "the_one_ratio_valued_declaration": {
+    "key": "test_class",
+    "text": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size",
+    "reading": "a ratio, but the pinned paper reads it as a bit: \"That norm is a boolean in disguise on this carrier\" (anchor T-NORM-IS-A-BOOLEAN) -- so even the one ratio-valued declaration is not a law"
+   }
+  },
+  "h_bijection": {
+   "cells": 3168,
+   "roundtrip_identity": 3168,
+   "collisions": 0,
+   "point_mass_images_that_are_point_masses": 3168,
+   "reading": "the pinned dynamics is a BIJECTION of configurations: its pushforward carries a point mass to a point mass, so no iterate of it turns a determinate split into a distribution over splits"
+  },
+  "stochastic_pinned_objects": 0,
+  "missing_object": "THE-INTERVAL-POSITIONAL-LAW: a joint law for WHERE inside a record interval its n_l(x) division events fall -- equivalently the transition kernel between the interval's endpoints whose renewal count is n_l(x).  It is a transition-matrix-layer object; R0's inheritance carries the record layer (I7: counts, front, H_a[N], record-IS-metric) and no transition layer at all.",
+  "reading": "a split distribution is an object of a kind the pinned layer does not contain: every declaration is value-level, the dynamics is a deterministic bijection, and the only ratio-valued declaration is read as a bit by its own source."
+ },
+ "iteration_in_distribution": {
+  "r6a_anchor": [
+   {
+    "record": "G-ANISO",
+    "steps": 0,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 0,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-ANISO2",
+    "steps": 2,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 2,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-CURVED",
+    "steps": 0,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 0,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-CURVOFF",
+    "steps": 0,
+    "halt": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "r6a_steps": 0,
+    "r6a_halt": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "ok": true
+   },
+   {
+    "record": "G-DIAG2",
+    "steps": 1,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 1,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-FLAT",
+    "steps": 0,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 0,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-OFFDIAG",
+    "steps": 1,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 1,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "steps": 0,
+    "halt": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "r6a_steps": 0,
+    "r6a_halt": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "ok": true
+   },
+   {
+    "record": "G-OFFNEG",
+    "steps": 1,
+    "halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "r6a_steps": 1,
+    "r6a_halt": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "ok": true
+   }
+  ],
+  "rows": [
+   {
+    "record": "G-ANISO2",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 13631146639813244878848,
+      "img": 1257565061957837936381,
+      "group": 9,
+      "orbits": 139729451328658254141,
+      "simplex_dim": 139729451328658254140,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 10314424798490535546171949056000000000000000000,
+      "img": 8384268790037013033304454089952502124028416,
+      "group": 9,
+      "orbits": 931585421115223670367161565730857830751296,
+      "simplex_dim": 931585421115223670367161565730857830751295,
+      "admissible": true,
+      "level": 1
+     },
+     {
+      "L": 12,
+      "sites": 144,
+      "intervals": 432,
+      "raw": 0,
+      "img": 0,
+      "group": 9,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 2
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     139729451328658254140,
+     931585421115223670367161565730857830751295,
+     null
+    ],
+    "group_orders": [
+     9,
+     9,
+     9
+    ],
+    "trend": "GROWS",
+    "live_levels": 2,
+    "fiber_growth_factor": "6667065620433171892736",
+    "group_growth_factor": "1",
+    "fiber_outruns_the_group": true,
+    "group_grows": false
+   },
+   {
+    "record": "G-ANISO2",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 13631146639813244878848,
+      "img": 1257565061957837936381,
+      "group": 9,
+      "orbits": 139729451328658254141,
+      "simplex_dim": 139729451328658254140,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 10314424798490535546171949056000000000000000000,
+      "img": 11709683552580630561569484011873192401249489,
+      "group": 18,
+      "orbits": 650537975143368364531828108621034255299204,
+      "simplex_dim": 650537975143368364531828108621034255299203,
+      "admissible": true,
+      "level": 1
+     },
+     {
+      "L": 12,
+      "sites": 144,
+      "intervals": 432,
+      "raw": 0,
+      "img": 0,
+      "group": 36,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 2
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     139729451328658254140,
+     650537975143368364531828108621034255299203,
+     null
+    ],
+    "group_orders": [
+     9,
+     18,
+     36
+    ],
+    "trend": "GROWS",
+    "live_levels": 2,
+    "fiber_growth_factor": "1104218420946351124044663943408693/118587876497",
+    "group_growth_factor": "2",
+    "fiber_outruns_the_group": true,
+    "group_grows": true
+   },
+   {
+    "record": "G-CURVOFF",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 2133246689280,
+      "img": 64562400000,
+      "group": 2,
+      "orbits": 32282397000,
+      "simplex_dim": 32282396999,
+      "admissible": true,
+      "level": 0
+     }
+    ],
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "simplex_dims": [
+     32282396999
+    ],
+    "group_orders": [
+     2
+    ],
+    "trend": "SINGLE-LEVEL",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-CURVOFF",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 2133246689280,
+      "img": 64562400000,
+      "group": 2,
+      "orbits": 32282397000,
+      "simplex_dim": 32282396999,
+      "admissible": true,
+      "level": 0
+     }
+    ],
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "simplex_dims": [
+     32282396999
+    ],
+    "group_orders": [
+     2
+    ],
+    "trend": "SINGLE-LEVEL",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-DIAG2",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 19683,
+      "img": 19683,
+      "group": 18,
+      "orbits": 1230,
+      "simplex_dim": 1229,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 72,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     1229,
+     null
+    ],
+    "group_orders": [
+     18,
+     72
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-DIAG2",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 19683,
+      "img": 19683,
+      "group": 18,
+      "orbits": 1230,
+      "simplex_dim": 1229,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 72,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     1229,
+     null
+    ],
+    "group_orders": [
+     18,
+     72
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 1953125,
+      "img": 19683,
+      "group": 18,
+      "orbits": 1230,
+      "simplex_dim": 1229,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 72,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     1229,
+     null
+    ],
+    "group_orders": [
+     18,
+     72
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFDIAG",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 1953125,
+      "img": 19683,
+      "group": 18,
+      "orbits": 1230,
+      "simplex_dim": 1229,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 72,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     1229,
+     null
+    ],
+    "group_orders": [
+     18,
+     72
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 316478381828866048,
+      "img": 3904305912313344,
+      "group": 9,
+      "orbits": 433811768174784,
+      "simplex_dim": 433811768174783,
+      "admissible": true,
+      "level": 0
+     }
+    ],
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "simplex_dims": [
+     433811768174783
+    ],
+    "group_orders": [
+     9
+    ],
+    "trend": "SINGLE-LEVEL",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFDIAG2",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 316478381828866048,
+      "img": 3904305912313344,
+      "group": 9,
+      "orbits": 433811768174784,
+      "simplex_dim": 433811768174783,
+      "admissible": true,
+      "level": 0
+     }
+    ],
+    "halt_reason": "REFINED RECORD INADMISSIBLE at the balanced split",
+    "simplex_dims": [
+     433811768174783
+    ],
+    "group_orders": [
+     9
+    ],
+    "trend": "SINGLE-LEVEL",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "diag_completion_key": 0,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 2641807540224,
+      "img": 1801152661463,
+      "group": 9,
+      "orbits": 200128084311,
+      "simplex_dim": 200128084310,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 9,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     200128084310,
+     null
+    ],
+    "group_orders": [
+     9,
+     9
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   },
+   {
+    "record": "G-OFFNEG",
+    "diag_completion_key": 1,
+    "trace": [
+     {
+      "L": 3,
+      "sites": 9,
+      "intervals": 27,
+      "raw": 2641807540224,
+      "img": 1801152661463,
+      "group": 9,
+      "orbits": 200128084311,
+      "simplex_dim": 200128084310,
+      "admissible": true,
+      "level": 0
+     },
+     {
+      "L": 6,
+      "sites": 36,
+      "intervals": 108,
+      "raw": 0,
+      "img": 0,
+      "group": 9,
+      "orbits": null,
+      "simplex_dim": null,
+      "admissible": true,
+      "level": 1
+     }
+    ],
+    "halt_reason": "NO-SPLIT-EXISTS (a descendant interval has count 1)",
+    "simplex_dims": [
+     200128084310,
+     null
+    ],
+    "group_orders": [
+     9,
+     9
+    ],
+    "trend": "COLLAPSES-TO-AN-EMPTY-FIBER",
+    "live_levels": 1,
+    "fiber_growth_factor": null,
+    "group_growth_factor": null,
+    "fiber_outruns_the_group": null,
+    "group_grows": false
+   }
+  ],
+  "trend_summary": {
+   "grows": 2,
+   "collapses": 6,
+   "stable": 0,
+   "single_level": 4
+  },
+  "completion_independent": false,
+  "completion_relative": true,
+  "cells_with_two_live_levels": 2,
+  "reading": "under repeated refinement the orbit-simplex dimension never stabilises.  Where a second level exists it grows by twenty-one orders of magnitude, and the fiber outruns the symmetry at every such cell: under one declared completion of the free links the acting group stays at 9 and under the other it doubles to 18, while the fiber multiplies by more than 10^21 either way.  Everywhere else the fiber collapses to empty, because a descendant interval reaches count 1 and count 1 admits no split at all.  THE LEVEL-1 READING IS COMPLETION-RELATIVE and is reported as such."
+ },
+ "controls": {
+  "positive": [
+   {
+    "name": "COUNT-3-INTERVAL-UNDER-REVERSAL",
+    "points": 2,
+    "orbits": 1,
+    "simplex_dim": 0,
+    "transitive": true,
+    "unique_measure": {
+     "1": "1/2",
+     "2": "1/2"
+    },
+    "constraint_rows": 2,
+    "rank": 1
+   },
+   {
+    "name": "CYCLIC-5-TRANSITIVE",
+    "points": 5,
+    "orbits": 1,
+    "simplex_dim": 0,
+    "transitive": true,
+    "unique_measure": {
+     "0": "1/5",
+     "1": "1/5",
+     "2": "1/5",
+     "3": "1/5",
+     "4": "1/5"
+    },
+    "constraint_rows": 5,
+    "rank": 4
+   }
+  ],
+  "negative": [
+   {
+    "name": "COUNT-5-INTERVAL-UNDER-THE-PINNED-GROUP",
+    "points": 4,
+    "orbits": 4,
+    "simplex_dim": 3,
+    "transitive": false,
+    "constraint_rows": 0,
+    "rank": 0
+   },
+   {
+    "name": "UNEQUAL-ORBITS-1-2-2",
+    "points": 5,
+    "orbits": 3,
+    "simplex_dim": 2,
+    "transitive": false,
+    "orbit_sizes": {
+     "1": 1,
+     "2": 2
+    },
+    "barycentre_equals_uniform": false,
+    "constraint_rows": 4,
+    "rank": 2
+   }
+  ],
+  "positive_all_unique": true,
+  "negative_all_nonunique": true
+ },
+ "cache": {
+  "hits": 868,
+  "misses": 275,
+  "bypasses": 99,
+  "fresh_comparisons": 99,
+  "disagreements": 0
+ },
+ "missing_tag": "THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER",
+ "verdict": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11|SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108|ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381|TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380|PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3|LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0|SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7|MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4|DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0|ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True|CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2|MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER>",
+ "verdict_head": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+ "verdict_segments": [
+  {
+   "name": "FIBERS",
+   "text": "FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11"
+  },
+  {
+   "name": "SYMMETRY",
+   "text": "SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108"
+  },
+  {
+   "name": "ORBITS",
+   "text": "ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381"
+  },
+  {
+   "name": "TRANSITIVE",
+   "text": "TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380"
+  },
+  {
+   "name": "PER-INTERVAL",
+   "text": "PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3"
+  },
+  {
+   "name": "LATTICE",
+   "text": "LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0"
+  },
+  {
+   "name": "SELECTION",
+   "text": "SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7"
+  },
+  {
+   "name": "MAXENT",
+   "text": "MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4"
+  },
+  {
+   "name": "DETERMINISM",
+   "text": "DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0"
+  },
+  {
+   "name": "ITERATION",
+   "text": "ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True"
+  },
+  {
+   "name": "CONTROLS",
+   "text": "CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2"
+  },
+  {
+   "name": "MISSING",
+   "text": "MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER"
+  }
+ ],
+ "verdict_payload": {
+  "anchor_cells": 27,
+  "anchor_mismatches": 0,
+  "block_preserving": 18,
+  "cand_forced": 0,
+  "cand_refuted": 7,
+  "cand_total": 7,
+  "chart_order": 18,
+  "decls": 27,
+  "dim_max": 1257565061957837936380,
+  "dim_min": 637,
+  "dl": 0,
+  "enum_cells": 4,
+  "ext_order": 108,
+  "flip_transitive_n": [
+   2,
+   3
+  ],
+  "h_cells": 3168,
+  "h_coll": 0,
+  "h_ok": 3168,
+  "head": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW",
+  "iter_ceiling": 2,
+  "iter_collapses": 6,
+  "iter_completion_relative": "True",
+  "iter_grows": 2,
+  "iter_outrun": "True",
+  "iter_single": 4,
+  "lat_admissible": 361,
+  "lat_flip_T": 4,
+  "lat_in_family": 0,
+  "lat_pinned_T": 1,
+  "lat_splittable": 261,
+  "missing_tag": "THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER",
+  "neck_cells": 5,
+  "neg_dims": [
+   3,
+   2
+  ],
+  "neg_n": 2,
+  "nonfac": 4,
+  "orbit_cells": 24,
+  "orbits_max": 1257565061957837936381,
+  "orbits_min": 638,
+  "pos_n": 2,
+  "pos_unique": 2,
+  "records": 11,
+  "sigma_order": 2,
+  "span_max": 1257565061957837936381,
+  "span_min": 19683,
+  "splittable": 6,
+  "stoch": 0,
+  "supp_records": 5,
+  "unique_cells": 0
+ },
+ "verdict_audit": {
+  "emitted": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11|SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108|ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381|TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380|PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3|LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0|SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7|MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4|DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0|ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True|CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2|MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER>",
+  "reconstructed": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11|SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108|ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381|TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380|PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3|LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0|SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7|MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4|DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0|ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True|CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2|MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER>",
+  "segment_flips": [
+   {
+    "segment": "FIBERS",
+    "flips": true
+   },
+   {
+    "segment": "SYMMETRY",
+    "flips": true
+   },
+   {
+    "segment": "ORBITS",
+    "flips": true
+   },
+   {
+    "segment": "TRANSITIVE",
+    "flips": true
+   },
+   {
+    "segment": "PER-INTERVAL",
+    "flips": true
+   },
+   {
+    "segment": "LATTICE",
+    "flips": true
+   },
+   {
+    "segment": "SELECTION",
+    "flips": true
+   },
+   {
+    "segment": "MAXENT",
+    "flips": true
+   },
+   {
+    "segment": "DETERMINISM",
+    "flips": true
+   },
+   {
+    "segment": "ITERATION",
+    "flips": true
+   },
+   {
+    "segment": "CONTROLS",
+    "flips": true
+   },
+   {
+    "segment": "MISSING",
+    "flips": true
+   }
+  ],
+  "heads_reachable": {
+   "MOTIVATED": "CRB-DISTRIBUTION-MOTIVATED",
+   "MOTIVATED-VIA-CANDIDATE": "CRB-DISTRIBUTION-MOTIVATED",
+   "SIMPLEX": "CRB-ORBIT-SIMPLEX",
+   "BLOCKED": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW"
+  }
+ },
+ "totals": {
+  "anchors": 52,
+  "gates": 97,
+  "mutants": 42,
+  "must_pass_failures": 0,
+  "orbit_cells": 24,
+  "records": 11
+ },
+ "falsifier_census": {
+  "gates": 97,
+  "gates_with_a_declared_falsifier": 33,
+  "never_falsified": [
+   "A-R0-PIN",
+   "A-HA-CODE",
+   "P-I7-D",
+   "P-I7-L",
+   "P-I7-DEXT",
+   "P-I7-CHART",
+   "P-I7-RECORDS2",
+   "P-I7-DIAG2",
+   "P-I7-INHOMOG",
+   "P-I7-LATTICE-AXIS",
+   "P-I7-LATTICE-DIAG",
+   "P-I7-LAPSE",
+   "P-I7-WEIGHT",
+   "P-I7-REGISTERS",
+   "P-I7-TESTCLASS",
+   "P-R6A-VERDICT",
+   "P-R6A-RAW-DIAG2",
+   "P-R6A-IMG-DIAG2",
+   "P-R6A-PS-CURVOFF",
+   "P-R6A-EQ-DIAG2",
+   "P-R6A-EQ-CURVOFF",
+   "P-R6A-STAB-DIAG2",
+   "P-R6A-STAB-CURVOFF-ORBITS",
+   "P-R6A-LATTICE-ADM",
+   "P-R6A-LATTICE-SPLIT",
+   "P-R6A-LATTICE-UNIQUE",
+   "P-R6A-SPLIT-CLASS",
+   "P-R6A-ITER-CEILING",
+   "P-R6A-ITER-ANISO2",
+   "P-R6A-ARENA-LINKS",
+   "T-CHART-GROUP",
+   "T-CHART-ORDER",
+   "T-H-FORWARD",
+   "T-H-INVERSE",
+   "T-CURVED-CTOR",
+   "T-CURVOFF-CTOR",
+   "T-PIN-QUESTION",
+   "T-PIN-BLOCKED",
+   "T-R0-I7",
+   "T-ERRATUM",
+   "T-ENGRAVE-1",
+   "T-ENGRAVE-2",
+   "T-ENGRAVE-3",
+   "T-ENGRAVE-4",
+   "T-ENGRAVE-5",
+   "G-SPLIT-SPAN-ANCHOR",
+   "G-COUNT-LATTICE-REPRODUCES-R6A",
+   "G-POINT-GROUP-CLOSED",
+   "G-BURNSIDE-INTEGRAL",
+   "G-COMPARATOR-EXERCISED",
+   "G-NECKLACE-COMPARATOR",
+   "G-INVSYS-EXERCISED",
+   "G-PER-INTERVAL-LAW",
+   "G-SELECTION-CANDIDATES-CELL-COMPLETE",
+   "G-MAXENT-CONSTRAINT-AUDIT",
+   "G-H-IS-A-BIJECTION",
+   "G-ITERATION-SYMMETRY-OUTRUN",
+   "G-CACHE-EXERCISED",
+   "G-VERDICT-ALL-HEADS-REACHABLE",
+   "G-COMPLIANCE-SWEEP",
+   "G-NO-FLOATS-IN-RECEIPT",
+   "G-FALSIFIER-CENSUS-HONEST",
+   "G-FINAL-GATE-COUNT",
+   "G-DEFERRED-GATES-EVALUATED"
+  ],
+  "never_falsified_count": 64,
+  "unwaived": [],
+  "unwaived_count": 0,
+  "denominator": "64 of 97 gates carry no declared falsifier",
+  "waivers": {
+   "A-R0-PIN": "the v14 founding pin's own hash; the anchor-hash channel is falsified at four of the six file-bytes rows and anchor-skip proves a dropped row dies",
+   "A-HA-CODE": "covered by anchor-hash-A-HA-PAPER and anchor-skip on the same channel",
+   "P-I7-D": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-L": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-DEXT": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-CHART": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-RECORDS2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-DIAG2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-INHOMOG": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-LATTICE-AXIS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-LATTICE-DIAG": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-LAPSE": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-WEIGHT": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-REGISTERS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-I7-TESTCLASS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-VERDICT": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-RAW-DIAG2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-IMG-DIAG2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-PS-CURVOFF": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-EQ-DIAG2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-EQ-CURVOFF": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-STAB-DIAG2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-STAB-CURVOFF-ORBITS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-LATTICE-ADM": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-LATTICE-SPLIT": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-LATTICE-UNIQUE": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-SPLIT-CLASS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-ITER-CEILING": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-ITER-ANISO2": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "P-R6A-ARENA-LINKS": "path-value channel: every row is gated individually, and the channel is falsified by path-drift (a neighbouring JSON path) and path-value (a corrupted read) at two of its rows",
+   "T-CHART-GROUP": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-CHART-ORDER": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-H-FORWARD": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-H-INVERSE": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-CURVED-CTOR": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-CURVOFF-CTOR": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-PIN-QUESTION": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-PIN-BLOCKED": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-R0-I7": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ERRATUM": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ENGRAVE-1": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ENGRAVE-2": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ENGRAVE-3": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ENGRAVE-4": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "T-ENGRAVE-5": "verbatim-text channel: every row is gated individually, and the channel is falsified by text-anchor-drift at one of its rows",
+   "G-SPLIT-SPAN-ANCHOR": "covered by fiber-typed and r6a-anchor-drift, which move the same rebuilt fibers",
+   "G-COUNT-LATTICE-REPRODUCES-R6A": "covered by lattice-transitivity-flip at the paired census gate",
+   "G-POINT-GROUP-CLOSED": "a closure measurement on a group built by enumeration; blockgroup-lax falsifies the neighbouring gate that reads the same object",
+   "G-BURNSIDE-INTEGRAL": "an analytically forced clause for a genuine group action -- a disclosure, not a must-pass falsifiable gate (RUNBOOK section 14 addendum, v13 #208); the orbit counts it guards are falsified by burnside-corrupt",
+   "G-COMPARATOR-EXERCISED": "covered by comparator-alias at the paired gate",
+   "G-NECKLACE-COMPARATOR": "covered collaterally by burnside-corrupt, which moves the same orbit counts",
+   "G-INVSYS-EXERCISED": "covered by invsys-inert at the paired gate",
+   "G-PER-INTERVAL-LAW": "an arithmetic law over the count values; simplex-dim-lax falsifies the identity it rests on",
+   "G-SELECTION-CANDIDATES-CELL-COMPLETE": "covered by selection-forced and by G-CANDIDATE-REFUTATIONS-MEASURED, which carries three falsifiers over the same candidate rows",
+   "G-MAXENT-CONSTRAINT-AUDIT": "covered by declaration-census-drop, which moves the same census",
+   "G-H-IS-A-BIJECTION": "an analytically forced clause: the closed-form inverse is exhibited in the pinned source and anchored verbatim (T-H-INVERSE) -- a disclosure, not a must-pass falsifiable gate",
+   "G-ITERATION-SYMMETRY-OUTRUN": "covered by iteration-lax at the paired gate, which moves the same trace",
+   "G-CACHE-EXERCISED": "covered by cache-alias at the paired gate",
+   "G-VERDICT-ALL-HEADS-REACHABLE": "the ladder is evaluated on synthetic counts inside the gate, so the gate carries its own falsifier; head-constant falsifies the neighbouring string gate",
+   "G-COMPLIANCE-SWEEP": "the sweep's rows are computed from the live gate ledger, so every mutant that removes a gate moves it; it cannot be falsified independently without deleting a gate the run needs",
+   "G-NO-FLOATS-IN-RECEIPT": "a write-time scan of the emitted payload; float-leak falsifies the source-level scan",
+   "G-FALSIFIER-CENSUS-HONEST": "the census gate itself: it reports its own denominator and every waiver, and is the one gate whose failure mode is a false waiver, checked by construction below",
+   "G-FINAL-GATE-COUNT": "arithmetic over the live ledger; every mutant that aborts the run changes it",
+   "G-DEFERRED-GATES-EVALUATED": "a bookkeeping gate over the write-time gates; render-escape and prose-claim-drift falsify two of the three it accounts for"
+  },
+  "falsifier_map": {
+   "A-HA-PAPER": [
+    "anchor-hash-A-HA-PAPER"
+   ],
+   "A-I7-RECEIPT": [
+    "anchor-hash-A-I7-RECEIPT"
+   ],
+   "A-PIN-CRB": [
+    "anchor-hash-A-PIN-CRB"
+   ],
+   "A-R6A-RECEIPT": [
+    "anchor-hash-A-R6A-RECEIPT"
+   ],
+   "G-ANCHOR-CELL-COMPLETE": [
+    "anchor-skip"
+   ],
+   "G-BLOCK-PRESERVING-IS-THE-PINNED-GROUP": [
+    "blockgroup-lax"
+   ],
+   "G-CACHE-FRESH-EQUALS-MEMO": [
+    "cache-alias"
+   ],
+   "G-CANDIDATE-REFUTATIONS-MEASURED": [
+    "drag-lax",
+    "front-lax",
+    "weightlaws-collapse"
+   ],
+   "G-COUNT-LATTICE-TRANSITIVITY-CENSUS": [
+    "lattice-transitivity-flip"
+   ],
+   "G-DECLARATION-CENSUS-CELL-COMPLETE": [
+    "declaration-census-drop"
+   ],
+   "G-DECLARED-SPLIT-ANCHORS-R6A": [
+    "iter-anchor-drift"
+   ],
+   "G-EQUIVARIANT-FIBER-ANCHOR-R6A": [
+    "equivariant-anchor-drift"
+   ],
+   "G-FIBER-REBUILD-ANCHORS-R6A": [
+    "fiber-typed",
+    "r6a-anchor-drift"
+   ],
+   "G-FLOATGUARD": [
+    "float-leak"
+   ],
+   "G-FORCED-CLAUSE-DISCLOSURE": [
+    "forced-clause-promote"
+   ],
+   "G-ITERATION-TREND": [
+    "iteration-lax"
+   ],
+   "G-MISSING-OBJECT-NAMED": [
+    "missing-object-blank"
+   ],
+   "G-NEGATIVE-CONTROL": [
+    "neg-control-pass"
+   ],
+   "G-NO-MUTANT-IDENTITY": [
+    "mutant-identity-leak"
+   ],
+   "G-ORBIT-TWO-ROUTES": [
+    "burnside-corrupt",
+    "comparator-alias"
+   ],
+   "G-POSITIVE-CONTROL": [
+    "control-pass"
+   ],
+   "G-PROSE-RENDERS-FROM-THE-RECEIPT": [
+    "prose-claim-drift"
+   ],
+   "G-RENDER-FROM-GATED-OBJECT": [
+    "render-escape"
+   ],
+   "G-SELECTION-CLASSIFICATION": [
+    "selection-forced"
+   ],
+   "G-SIMPLEX-DIM-EQUALS-ORBITS-MINUS-ONE": [
+    "invsys-inert",
+    "simplex-dim-lax"
+   ],
+   "G-STABILISERS-ANCHOR-R6A": [
+    "stabiliser-anchor-drift"
+   ],
+   "G-SYMMETRY-INVENTORY-CELL-COMPLETE": [
+    "census-drop"
+   ],
+   "G-TRANSITIVITY-CENSUS": [
+    "transitivity-flip"
+   ],
+   "G-VERDICT-SEGMENTS-FLIPPABLE": [
+    "verdict-inert-segment"
+   ],
+   "G-VERDICT-STRING-EQUALITY": [
+    "head-constant",
+    "verdict-append-text",
+    "verdict-fully-typed",
+    "verdict-pair-swap",
+    "verdict-typed-segment"
+   ],
+   "P-I7-LINKS2": [
+    "path-value"
+   ],
+   "P-R6A-IMG-ANISO2": [
+    "path-drift"
+   ],
+   "T-NORM-IS-A-BOOLEAN": [
+    "text-anchor-drift"
+   ]
+  }
+ },
+ "schema": "isp/v14/crb-stochastic-split/1",
+ "pin": "v14/note-cr-batch-pins.md (CR-B section)",
+ "pin_sha256_prefix": "1cfee4fc0891",
+ "sources": {
+  "v14/code/r6a_refinement_receipt.json": "022c3f488a93 [DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel)]",
+  "v13/code/ha_successor_receipt.json": "542b8735daf0",
+  "v13/paper-ha-successor.md": "f286ba10d2d9",
+  "v13/code/ha_successor_exact.py": "d44cb72f8ee9",
+  "v14/note-r0-founding-pin.md": "e9d2bedff244"
+ },
+ "erratum_v14_4": "v14 LOG #4 -- the R0 companion-hash erratum.  This unit reads no artifact the erratum touches: its only v13 paper read is v13/paper-ha-successor.md, a PRIMARY key of row I7, not one of the stale I2/I3 companions.  Carried as a disclosure, anchored by T-ERRATUM.",
+ "source_sha256": "5f2a54ea8a9826c33d284f5a3a18bd42e8857407d9cfda2d27f4459b45690019",
+ "python": "3.13.2",
+ "arithmetic": "int / fractions.Fraction only; no float, no tolerance",
+ "compliance": [
+  {
+   "rule": "RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)",
+   "status": "APPLIED via G-FLOATGUARD, G-NO-MUTANT-IDENTITY"
+  },
+  {
+   "rule": "the CR-B pin -- sources hash-verified AND path-value anchored at run time, R6a cited at DELIVERED-UNDER-PANEL",
+   "status": "APPLIED via A-PIN-CRB, A-R6A-RECEIPT, A-I7-RECEIPT, A-HA-PAPER, A-HA-CODE, G-ANCHOR-CELL-COMPLETE; falsifiers anchor-hash-A-R6A-RECEIPT, anchor-hash-A-I7-RECEIPT, anchor-hash-A-HA-PAPER, anchor-hash-A-PIN-CRB, anchor-skip, path-drift, path-value, text-anchor-drift"
+  },
+  {
+   "rule": "the pin's measurement (1): the split fibers rebuilt and anchored against R6a's counts",
+   "status": "APPLIED via G-FIBER-REBUILD-ANCHORS-R6A, G-SPLIT-SPAN-ANCHOR, G-COUNT-LATTICE-REPRODUCES-R6A; falsifiers fiber-typed, r6a-anchor-drift"
+  },
+  {
+   "rule": "the pin's measurement (2): the symmetry inventory as data, every pinned symmetry acting on a fiber",
+   "status": "APPLIED via G-SYMMETRY-INVENTORY-CELL-COMPLETE, G-POINT-GROUP-CLOSED, G-BLOCK-PRESERVING-IS-THE-PINNED-GROUP, G-STABILISERS-ANCHOR-R6A, G-EQUIVARIANT-FIBER-ANCHOR-R6A; falsifiers census-drop, blockgroup-lax, stabiliser-anchor-drift, equivariant-anchor-drift"
+  },
+  {
+   "rule": "the pin's measurement (2): the orbit decomposition of each fiber, computed exactly",
+   "status": "APPLIED via G-BURNSIDE-INTEGRAL, G-ORBIT-TWO-ROUTES, G-COMPARATOR-EXERCISED, G-NECKLACE-COMPARATOR; falsifiers burnside-corrupt, comparator-alias"
+  },
+  {
+   "rule": "the pin's measurement (3): unique invariant distribution iff transitive -- MEASURED per fiber, the simplex dimension counted exactly where not transitive",
+   "status": "APPLIED via G-SIMPLEX-DIM-EQUALS-ORBITS-MINUS-ONE, G-INVSYS-EXERCISED, G-TRANSITIVITY-CENSUS, G-PER-INTERVAL-LAW, G-COUNT-LATTICE-TRANSITIVITY-CENSUS; falsifiers simplex-dim-lax, invsys-inert, transitivity-flip"
+  },
+  {
+   "rule": "the pin's measurement (4): every further selection candidate tested, its forcing NAMED or REFUTED -- MaxEnt audited, not assumed",
+   "status": "APPLIED via G-SELECTION-CANDIDATES-CELL-COMPLETE, G-SELECTION-CLASSIFICATION, G-MAXENT-CONSTRAINT-AUDIT, G-DECLARATION-CENSUS-CELL-COMPLETE; falsifiers selection-forced, weightlaws-collapse, front-lax, drag-lax, declaration-census-drop"
+  },
+  {
+   "rule": "the pin's measurement (5): iteration in distribution -- do the orbit-simplex dimensions grow, stabilise or collapse",
+   "status": "APPLIED via G-DECLARED-SPLIT-ANCHORS-R6A, G-ITERATION-TREND, G-ITERATION-SYMMETRY-OUTRUN; falsifiers iteration-lax, iter-anchor-drift"
+  },
+  {
+   "rule": "the pin's controls: a constructed transitive fiber (positive) and an asymmetric fiber (negative)",
+   "status": "APPLIED via G-POSITIVE-CONTROL, G-NEGATIVE-CONTROL; falsifiers control-pass, neg-control-pass"
+  },
+  {
+   "rule": "BLOCKED verdicts are first-class and NAME the missing object",
+   "status": "APPLIED via G-MISSING-OBJECT-NAMED, G-VERDICT-ALL-HEADS-REACHABLE; falsifiers missing-object-blank"
+  },
+  {
+   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE string against an independent rebuild",
+   "status": "APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers verdict-pair-swap, verdict-typed-segment, verdict-append-text, verdict-fully-typed, verdict-inert-segment, head-constant"
+  },
+  {
+   "rule": "#20 compliance claims are gate claims: a comparator that cannot disagree with the object under test is vacuous",
+   "status": "APPLIED -- reconstruct_verdict_from_receipt() shares no code and no input with build_verdict(); it reads the RECEIPT OBJECT alone, and all five injection classes plus head-constant die on it"
+  },
+  {
+   "rule": "#10 render from the gated object (one object, one source of truth)",
+   "status": "APPLIED via G-RENDER-FROM-GATED-OBJECT; falsifiers render-escape"
+  },
+  {
+   "rule": "#20 prose renders from the receipt: every numeric claim in the paper renders from the receipt object",
+   "status": "APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT; falsifiers prose-claim-drift"
+  },
+  {
+   "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair, not only the file bytes",
+   "status": "APPLIED -- 30 path-value anchor rows and 16 verbatim-text rows, each gated individually"
+  },
+  {
+   "rule": "#234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail",
+   "status": "APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE; falsifiers verdict-inert-segment"
+  },
+  {
+   "rule": "#234 counts are computed, never typed",
+   "status": "APPLIED via G-FIBER-REBUILD-ANCHORS-R6A, G-TRANSITIVITY-CENSUS, G-COUNT-LATTICE-TRANSITIVITY-CENSUS; falsifiers fiber-typed, weightlaws-collapse"
+  },
+  {
+   "rule": "#219 a gate clause may not compare an object against a copy of itself routed through the component under test",
+   "status": "APPLIED via G-ORBIT-TWO-ROUTES, G-COMPARATOR-EXERCISED, G-NECKLACE-COMPARATOR, G-CACHE-FRESH-EQUALS-MEMO; falsifiers comparator-alias, cache-alias"
+  },
+  {
+   "rule": "#219/#185 a zero-hit cache gate is vacuous, and a self-test routed through the memo tests the cache",
+   "status": "APPLIED via G-CACHE-EXERCISED, G-CACHE-FRESH-EQUALS-MEMO; falsifiers cache-alias"
+  },
+  {
+   "rule": "#208 no gate predicate may reference mutant identity",
+   "status": "APPLIED via G-NO-MUTANT-IDENTITY -- run-mode identity is read by mutate() and main() alone, measured by an AST scan validated with 2 synthetic injections it must flag"
+  },
+  {
+   "rule": "#208 analytically-forced clauses are disclosures, not must-pass gates",
+   "status": "APPLIED via G-FORCED-CLAUSE-DISCLOSURE; falsifiers forced-clause-promote"
+  },
+  {
+   "rule": "#257 computed qualifiers (no typed qualifier segment)",
+   "status": "APPLIED via G-SELECTION-CLASSIFICATION -- the FORCED/REFUTED qualifier is a function of whether a forcing is named, and of nothing else"
+  },
+  {
+   "rule": "#314 precheck doctrine: a precheck may gate which candidates are censused but may never name the verdict",
+   "status": "APPLIED -- admissibility and splittability gate WHICH records are censused; every verdict-naming fact (the orbit counts, the simplex dimensions, the candidate verdicts) is measured on the censused objects"
+  },
+  {
+   "rule": "#313 repair propagation: gates diffed against every rule engraved since the pin froze",
+   "status": "APPLIED -- all five 2026-08-09 engravings are carried at birth with injection-falsifiers, and their presence in the RUNBOOK is itself anchored (T-ENGRAVE-1..5)"
+  },
+  {
+   "rule": "#313 boundary parity: a boolean-connective boundary carries a parity-witness gate",
+   "status": "APPLIED via G-BLOCK-PRESERVING-IS-THE-PINNED-GROUP; falsifiers blockgroup-lax"
+  },
+  {
+   "rule": "RUNBOOK section 15 declared-arena discipline: the arena is declared as data and arena-artifacts never become conclusions",
+   "status": "APPLIED -- the arena block names boundary/family/law/state/arena/provenance; every symmetry carries a provenance class (PINNED vs DECLARED-EXTENSION) and the extension's results are reported beside the pinned ones, never in place of them"
+  },
+  {
+   "rule": "RUNBOOK section 14 symmetry self-test: an instrument that enforces a symmetry-invariant quantity self-tests under that symmetry's own action",
+   "status": "APPLIED -- the orbit engine is checked against a direct orbit walk under the group's own generators and against a closed form for the translations, and the reversal elements are measured for whether they act on the admissible fiber at all rather than assumed to"
+  },
+  {
+   "rule": "v14 LOG #4 erratum",
+   "status": "APPLIED -- disclosed and anchored (T-ERRATUM); this unit reads no artifact the erratum touches"
+  },
+  {
+   "rule": "never-falsified census in the receipt from delivery one",
+   "status": "APPLIED via G-FALSIFIER-CENSUS-HONEST"
+  }
+ ],
+ "gates": [
+  {
+   "name": "G-FLOATGUARD",
+   "statement": "an AST scan of this source finds no float literal, no float/math import, and no true-division operator (every quotient goes through fdiv)",
+   "passed": true,
+   "value": {
+    "offences": []
+   }
+  },
+  {
+   "name": "G-NO-MUTANT-IDENTITY",
+   "statement": "run-mode identity is read by mutate() and main() ALONE: no other function, and in particular no gate predicate, names it -- and the AST detector is validated by synthetic injections it must flag (RUNBOOK section 14 addendum, v13 #208)",
+   "passed": true,
+   "value": {
+    "functions_naming_mutant": [
+     "main",
+     "mutate"
+    ],
+    "detector_injections_flagged": [
+     [
+      "a gate predicate that reads run-mode identity",
+      true
+     ],
+     [
+      "a second function that reads run-mode identity",
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "name": "A-PIN-CRB",
+   "statement": "external anchor 1cfee4fc0891 verifies at v14/note-cr-batch-pins.md",
+   "passed": true,
+   "value": {
+    "expected": "1cfee4fc0891",
+    "measured": "1cfee4fc0891"
+   }
+  },
+  {
+   "name": "A-R0-PIN",
+   "statement": "external anchor e9d2bedff244 verifies at v14/note-r0-founding-pin.md",
+   "passed": true,
+   "value": {
+    "expected": "e9d2bedff244",
+    "measured": "e9d2bedff244"
+   }
+  },
+  {
+   "name": "A-R6A-RECEIPT",
+   "statement": "external anchor 022c3f488a93 verifies at v14/code/r6a_refinement_receipt.json",
+   "passed": true,
+   "value": {
+    "expected": "022c3f488a93",
+    "measured": "022c3f488a93"
+   }
+  },
+  {
+   "name": "A-I7-RECEIPT",
+   "statement": "external anchor 542b8735daf0 verifies at v13/code/ha_successor_receipt.json",
+   "passed": true,
+   "value": {
+    "expected": "542b8735daf0",
+    "measured": "542b8735daf0"
+   }
+  },
+  {
+   "name": "A-HA-PAPER",
+   "statement": "external anchor f286ba10d2d9 verifies at v13/paper-ha-successor.md",
+   "passed": true,
+   "value": {
+    "expected": "f286ba10d2d9",
+    "measured": "f286ba10d2d9"
+   }
+  },
+  {
+   "name": "A-HA-CODE",
+   "statement": "external anchor d44cb72f8ee9 verifies at v13/code/ha_successor_exact.py",
+   "passed": true,
+   "value": {
+    "expected": "d44cb72f8ee9",
+    "measured": "d44cb72f8ee9"
+   }
+  },
+  {
+   "name": "P-I7-D",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.d] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "d"
+    ],
+    "expected": 2,
+    "measured": 2
+   }
+  },
+  {
+   "name": "P-I7-L",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.L] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "L"
+    ],
+    "expected": 3,
+    "measured": 3
+   }
+  },
+  {
+   "name": "P-I7-DEXT",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.d_ext] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "d_ext"
+    ],
+    "expected": 3,
+    "measured": 3
+   }
+  },
+  {
+   "name": "P-I7-LINKS2",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.links_d2] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "links_d2"
+    ],
+    "expected": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "measured": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "name": "P-I7-CHART",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.chart_group] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "chart_group"
+    ],
+    "expected": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+    "measured": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index"
+   }
+  },
+  {
+   "name": "P-I7-RECORDS2",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.records_d2.G-ANISO2] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "records_d2",
+     "G-ANISO2"
+    ],
+    "expected": [
+     4,
+     9,
+     13
+    ],
+    "measured": [
+     4,
+     9,
+     13
+    ]
+   }
+  },
+  {
+   "name": "P-I7-DIAG2",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.records_d2.G-DIAG2] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "records_d2",
+     "G-DIAG2"
+    ],
+    "expected": [
+     2,
+     2,
+     4
+    ],
+    "measured": [
+     2,
+     2,
+     4
+    ]
+   }
+  },
+  {
+   "name": "P-I7-INHOMOG",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.records_d2_inhomogeneous] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "records_d2_inhomogeneous"
+    ],
+    "expected": [
+     "G-CURVED (diagonal, site-dependent)",
+     "G-CURVOFF (cross term, site-dependent)"
+    ],
+    "measured": [
+     "G-CURVED (diagonal, site-dependent)",
+     "G-CURVOFF (cross term, site-dependent)"
+    ]
+   }
+  },
+  {
+   "name": "P-I7-LATTICE-AXIS",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.count_lattice.axis_max] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "count_lattice",
+     "axis_max"
+    ],
+    "expected": 6,
+    "measured": 6
+   }
+  },
+  {
+   "name": "P-I7-LATTICE-DIAG",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.count_lattice.diag_max] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "count_lattice",
+     "diag_max"
+    ],
+    "expected": 12,
+    "measured": 12
+   }
+  },
+  {
+   "name": "P-I7-LAPSE",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.lapse_family] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "lapse_family"
+    ],
+    "expected": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+    "measured": "the |X| site deltas, the constant profile 1, and the d chart ramps"
+   }
+  },
+  {
+   "name": "P-I7-WEIGHT",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.density_weight] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "density_weight"
+    ],
+    "expected": 0,
+    "measured": 0
+   }
+  },
+  {
+   "name": "P-I7-REGISTERS",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.registers.m == 0] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "registers",
+     "m == 0"
+    ],
+    "expected": "the zero address register",
+    "measured": "the zero address register"
+   }
+  },
+  {
+   "name": "P-I7-TESTCLASS",
+   "statement": "path-value anchor: v13/code/ha_successor_receipt.json[declarations.test_class] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "declarations",
+     "test_class"
+    ],
+    "expected": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size",
+    "measured": "the indicator effects of the reduced total-configuration carrier; ||R|| := the number of configurations R moves / carrier size"
+   }
+  },
+  {
+   "name": "P-R6A-VERDICT",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[verdict_head] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "verdict_head"
+    ],
+    "expected": "R6A-NO-MOTIVATED-SPLIT",
+    "measured": "R6A-NO-MOTIVATED-SPLIT"
+   }
+  },
+  {
+   "name": "P-R6A-RAW-DIAG2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[split_fibers.G-DIAG2.raw] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "split_fibers",
+     "G-DIAG2",
+     "raw"
+    ],
+    "expected": 19683,
+    "measured": 19683
+   }
+  },
+  {
+   "name": "P-R6A-IMG-DIAG2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[split_fibers.G-DIAG2.admissible_at_images] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "split_fibers",
+     "G-DIAG2",
+     "admissible_at_images"
+    ],
+    "expected": 19683,
+    "measured": 19683
+   }
+  },
+  {
+   "name": "P-R6A-IMG-ANISO2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[split_fibers.G-ANISO2.admissible_at_images] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "split_fibers",
+     "G-ANISO2",
+     "admissible_at_images"
+    ],
+    "expected": 1257565061957837936381,
+    "measured": 1257565061957837936381
+   }
+  },
+  {
+   "name": "P-R6A-PS-CURVOFF",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[split_fibers.G-CURVOFF.per_site_admissible] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "split_fibers",
+     "G-CURVOFF",
+     "per_site_admissible"
+    ],
+    "expected": [
+     3,
+     8,
+     15,
+     20,
+     35,
+     61
+    ],
+    "measured": [
+     3,
+     8,
+     15,
+     20,
+     35,
+     61
+    ]
+   }
+  },
+  {
+   "name": "P-R6A-EQ-DIAG2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[equivariant_fibers.G-DIAG2] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "equivariant_fibers",
+     "G-DIAG2"
+    ],
+    "expected": 3,
+    "measured": 3
+   }
+  },
+  {
+   "name": "P-R6A-EQ-CURVOFF",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[equivariant_fibers.G-CURVOFF] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "equivariant_fibers",
+     "G-CURVOFF"
+    ],
+    "expected": 29393280,
+    "measured": 29393280
+   }
+  },
+  {
+   "name": "P-R6A-STAB-DIAG2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[stabilisers.G-DIAG2.order] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "stabilisers",
+     "G-DIAG2",
+     "order"
+    ],
+    "expected": 18,
+    "measured": 18
+   }
+  },
+  {
+   "name": "P-R6A-STAB-CURVOFF-ORBITS",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[stabilisers.G-CURVOFF.orbits] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "stabilisers",
+     "G-CURVOFF",
+     "orbits"
+    ],
+    "expected": 15,
+    "measured": 15
+   }
+  },
+  {
+   "name": "P-R6A-LATTICE-ADM",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[count_lattice.admissible_count_vectors] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "count_lattice",
+     "admissible_count_vectors"
+    ],
+    "expected": 361,
+    "measured": 361
+   }
+  },
+  {
+   "name": "P-R6A-LATTICE-SPLIT",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[count_lattice.splittable] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "count_lattice",
+     "splittable"
+    ],
+    "expected": 261,
+    "measured": 261
+   }
+  },
+  {
+   "name": "P-R6A-LATTICE-UNIQUE",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[count_lattice.unique_admissible_split] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "count_lattice",
+     "unique_admissible_split"
+    ],
+    "expected": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "measured": [
+     [
+      2,
+      2,
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "name": "P-R6A-SPLIT-CLASS",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[choice_inventory.items.4.class_declared] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "choice_inventory",
+     "items",
+     4,
+     "class_declared"
+    ],
+    "expected": "iii",
+    "measured": "iii"
+   }
+  },
+  {
+   "name": "P-R6A-ITER-CEILING",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[iteration.ceiling_over_the_family] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "iteration",
+     "ceiling_over_the_family"
+    ],
+    "expected": 2,
+    "measured": 2
+   }
+  },
+  {
+   "name": "P-R6A-ITER-ANISO2",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[iteration.per_record.G-ANISO2.steps_achieved_at_the_declared_split] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "iteration",
+     "per_record",
+     "G-ANISO2",
+     "steps_achieved_at_the_declared_split"
+    ],
+    "expected": 2,
+    "measured": 2
+   }
+  },
+  {
+   "name": "P-R6A-ARENA-LINKS",
+   "statement": "path-value anchor: v14/code/r6a_refinement_receipt.json[arena.links] reads exactly the pinned value (the PAIR is anchored, not only the file bytes)",
+   "passed": true,
+   "value": {
+    "path": [
+     "arena",
+     "links"
+    ],
+    "expected": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "measured": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "name": "T-CHART-GROUP",
+   "statement": "verbatim-text anchor: v13/paper-ha-successor.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "The declared chart group is the $\\lvert X\\rvert = 9$ chart translation"
+   }
+  },
+  {
+   "name": "T-CHART-ORDER",
+   "statement": "verbatim-text anchor: v13/paper-ha-successor.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "$d! = 2$ direction relabellings \u2014 **18** elements"
+   }
+  },
+  {
+   "name": "T-NORM-IS-A-BOOLEAN",
+   "statement": "verbatim-text anchor: v13/paper-ha-successor.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "boolean in disguise on this carrier"
+   }
+  },
+  {
+   "name": "T-H-FORWARD",
+   "statement": "verbatim-text anchor: v13/code/ha_successor_exact.py still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "H_a[N](n, m) = ( n + N ,  m + w[N,n] )"
+   }
+  },
+  {
+   "name": "T-H-INVERSE",
+   "statement": "verbatim-text anchor: v13/code/ha_successor_exact.py still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "H_a[N]^{-1}(n, m) = ( n - N ,  m - w[N, n-N] )        (exact, closed f"
+   }
+  },
+  {
+   "name": "T-CURVED-CTOR",
+   "statement": "verbatim-text anchor: v13/code/ha_successor_exact.py still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "\"\"\"Inhomogeneous, exactly DIAGONAL: q(x) = diag(1+x_1, ..., 1+x_d).\"\"\""
+   }
+  },
+  {
+   "name": "T-CURVOFF-CTOR",
+   "statement": "verbatim-text anchor: v13/code/ha_successor_exact.py still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "def make_curved_off_record(name, d, L, weight):"
+   }
+  },
+  {
+   "name": "T-PIN-QUESTION",
+   "statement": "verbatim-text anchor: v14/note-cr-batch-pins.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "unique invariant distribution"
+   }
+  },
+  {
+   "name": "T-PIN-BLOCKED",
+   "statement": "verbatim-text anchor: v14/note-cr-batch-pins.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "`CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW-<the missing object>`"
+   }
+  },
+  {
+   "name": "T-R0-I7",
+   "statement": "verbatim-text anchor: v14/note-r0-founding-pin.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "Gravity's record layer: H_a[N] record-native"
+   }
+  },
+  {
+   "name": "T-ERRATUM",
+   "statement": "verbatim-text anchor: v14/LOG.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "R0 COMPANION-HASH ERRATUM (v14 LEDGER #4)"
+   }
+  },
+  {
+   "name": "T-ENGRAVE-1",
+   "statement": "verbatim-text anchor: RUNBOOK.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "**\u00a713 addendum (2026-08-09, from v13 #313 \u2014 repair"
+   }
+  },
+  {
+   "name": "T-ENGRAVE-2",
+   "statement": "verbatim-text anchor: RUNBOOK.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "**\u00a714 addendum (2026-08-09, from v13 #313 \u2014 boundary"
+   }
+  },
+  {
+   "name": "T-ENGRAVE-3",
+   "statement": "verbatim-text anchor: RUNBOOK.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "**\u00a713 addendum (2026-08-09, from v13 #314 \u2014 precheck"
+   }
+  },
+  {
+   "name": "T-ENGRAVE-4",
+   "statement": "verbatim-text anchor: RUNBOOK.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "**\u00a714 addendum (2026-08-09, from v14 #10 \u2014 containment is not"
+   }
+  },
+  {
+   "name": "T-ENGRAVE-5",
+   "statement": "verbatim-text anchor: RUNBOOK.md still contains the pinned sentence this unit reimplements",
+   "passed": true,
+   "value": {
+    "needle": "**\u00a713 addendum (2026-08-09, from v14 #20 \u2014 prose renders from"
+   }
+  },
+  {
+   "name": "G-ANCHOR-CELL-COMPLETE",
+   "statement": "every declared anchor row was evaluated: file-bytes, path-value and verbatim-text alike",
+   "passed": true,
+   "value": {
+    "file_bytes": 6,
+    "path_value": 30,
+    "verbatim_text": 16,
+    "registered": 52
+   }
+  },
+  {
+   "name": "G-FIBER-REBUILD-ANCHORS-R6A",
+   "statement": "every split-fiber number is REBUILT here from the pinned declarations and agrees cell-by-cell with the R6a receipt (DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel)): raw fiber, admissible-at-images fiber and per-site admissible profile at every record R6a reports",
+   "passed": true,
+   "value": {
+    "cells": 27,
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-SPLIT-SPAN-ANCHOR",
+   "statement": "the rebuilt admissible-fiber span reproduces R6a's span exactly",
+   "passed": true,
+   "value": {
+    "min": 19683,
+    "max": 1257565061957837936381
+   }
+  },
+  {
+   "name": "G-COUNT-LATTICE-REPRODUCES-R6A",
+   "statement": "the declared count box is re-censused here and reproduces R6a's admissible / splittable / unique-split counts",
+   "passed": true,
+   "value": {
+    "mine": [
+     361,
+     261,
+     [
+      [
+       2,
+       2,
+       2
+      ]
+     ]
+    ],
+    "r6a": [
+     361,
+     261,
+     [
+      [
+       2,
+       2,
+       2
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-POINT-GROUP-CLOSED",
+   "statement": "the maximal subgroup of GL(2,Z) carrying the declared link set into the signed link set is built by enumeration and verified closed under composition -- the declared links are the A_2 root system and its automorphism group is dihedral of order 12",
+   "passed": true,
+   "value": {
+    "order": 12,
+    "closed": true
+   }
+  },
+  {
+   "name": "G-BLOCK-PRESERVING-IS-THE-PINNED-GROUP",
+   "statement": "THE MEASURED THEOREM: of the 108 elements of the declared extension, exactly the 18 that carry every declared link to a declared link (no reversal) preserve the coarse-image block structure the admissible fiber is built on -- and those 18 are exactly the pinned chart group",
+   "passed": true,
+   "value": {
+    "ext_order": 108,
+    "block_preserving": 18,
+    "equals_chart_group": true
+   }
+  },
+  {
+   "name": "G-SYMMETRY-INVENTORY-CELL-COMPLETE",
+   "statement": "the symmetry inventory is cell-complete: every declared group is censused with its order, its provenance class (PINNED vs DECLARED-EXTENSION) and whether it carries an interval reversal",
+   "passed": true,
+   "value": {
+    "rows": 5,
+    "orders": {
+     "TRANS": 9,
+     "SIGMA": 2,
+     "CHART": 18,
+     "EXT": 108,
+     "LOCALFLIP": 134217728
+    }
+   }
+  },
+  {
+   "name": "G-STABILISERS-ANCHOR-R6A",
+   "statement": "every record's stabiliser inside the pinned chart group, its orbit count on the 27 coarse intervals and its full orbit profile are rebuilt here and agree with the R6a receipt (DELIVERED-UNDER-PANEL (v14 #26 committed, #27 verified, #28 panel))",
+   "passed": true,
+   "value": {
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-EQUIVARIANT-FIBER-ANCHOR-R6A",
+   "statement": "R6a's chart-equivariant fiber is re-derived here BY A DIFFERENT ROUTE -- as the number of chart-group FIXED POINTS of the raw split fiber, computed by a signed union-find -- and agrees at every record; these fixed points are exactly the DETERMINISTIC invariant laws (the invariant point masses)",
+   "passed": true,
+   "value": {
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-BURNSIDE-INTEGRAL",
+   "statement": "every Cauchy-Frobenius sum is divisible by its group order -- the arithmetic identity the orbit count rests on, checked at every cell [ANALYTICALLY FORCED for a genuine group action: a DISCLOSURE, not a must-pass falsifiable gate, RUNBOOK section 14 addendum v13 #208]",
+   "passed": true,
+   "value": {
+    "violations": [],
+    "cells": 48
+   }
+  },
+  {
+   "name": "G-ORBIT-TWO-ROUTES",
+   "statement": "wherever the admissible fiber is enumerable under the declared cap, the Cauchy-Frobenius orbit count is checked against a DIRECT orbit walk that applies GENERATORS only -- a different computation, not the same sum rearranged",
+   "passed": true,
+   "value": {
+    "cells": 4,
+    "cap": 20000,
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-COMPARATOR-EXERCISED",
+   "statement": "the direct comparator really enumerated: every walk visited at least as many configurations as the fiber holds, and its generating set closes to the group the Cauchy-Frobenius census used (a comparator that never ran cannot disagree -- RUNBOOK section 14 addendum, v13 #219)",
+   "passed": true,
+   "value": {
+    "rows": [
+     [
+      "G-DIAG2",
+      "CHART",
+      19683,
+      19683,
+      18,
+      18
+     ],
+     [
+      "G-DIAG2",
+      "EXT",
+      19683,
+      19683,
+      36,
+      36
+     ],
+     [
+      "G-OFFDIAG",
+      "CHART",
+      19683,
+      19683,
+      18,
+      18
+     ],
+     [
+      "G-OFFDIAG",
+      "EXT",
+      19683,
+      19683,
+      36,
+      36
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-NECKLACE-COMPARATOR",
+   "statement": "the orbit engine is validated against a CLOSED FORM written from the group's structure and not from this file's cycle machinery: the translations' orbit count on functions X -> A is (k^9 + 8k^3)/9",
+   "passed": true,
+   "value": {
+    "rows": [
+     {
+      "record": "G-ANISO2",
+      "k": 221,
+      "closed_form": 139729451328658254141,
+      "engine": 139729451328658254141,
+      "agree": true
+     },
+     {
+      "record": "G-DIAG2",
+      "k": 3,
+      "closed_form": 2211,
+      "engine": 2211,
+      "agree": true
+     },
+     {
+      "record": "G-OFFDIAG",
+      "k": 3,
+      "closed_form": 2211,
+      "engine": 2211,
+      "agree": true
+     },
+     {
+      "record": "G-OFFDIAG2",
+      "k": 54,
+      "closed_form": 433811768174784,
+      "engine": 433811768174784,
+      "agree": true
+     },
+     {
+      "record": "G-OFFNEG",
+      "k": 23,
+      "closed_form": 200128084311,
+      "engine": 200128084311,
+      "agree": true
+     }
+    ],
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-SIMPLEX-DIM-EQUALS-ORBITS-MINUS-ONE",
+   "statement": "the criterion is MEASURED, not assumed: the dimension of the affine space of invariant probability measures is computed by exact Gaussian elimination over Q and equals orbits - 1 at every cell -- so 'unique invariant distribution iff transitive' is a measurement here, not a citation",
+   "passed": true,
+   "value": {
+    "cells": 24,
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-INVSYS-EXERCISED",
+   "statement": "the linear-system comparator actually solved something: every cell that carries a nontrivial action built constraint rows and reported a positive rank, and a cell builds no rows only where the action is measurably trivial on its fiber (a comparator that returns without solving is vacuous -- RUNBOOK section 14 addendum, v13 #219)",
+   "passed": true,
+   "value": {
+    "max_rank": 6,
+    "cells_with_rows": 11,
+    "cells_with_a_trivial_action": 13
+   }
+  },
+  {
+   "name": "G-TRANSITIVITY-CENSUS",
+   "statement": "the invariant-measure census is cell-complete over (record, group) and every cell carries its transitivity bit and its orbit-simplex dimension",
+   "passed": true,
+   "value": {
+    "cells": 24,
+    "unique": 0
+   }
+  },
+  {
+   "name": "G-PER-INTERVAL-LAW",
+   "statement": "at the per-interval level the fiber is {1,...,n-1} and the law is exact: under the pinned group the orbits are the points (n-1 of them, simplex dimension n-2, unique only at n = 2 where the fiber IS a point); under the declared reversal extension the orbits are the reversal pairs (unique at n = 2 and n = 3 alone)",
+   "passed": true,
+   "value": {
+    "count_values": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     12,
+     13
+    ],
+    "flip_transitive_at": [
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "name": "G-COUNT-LATTICE-TRANSITIVITY-CENSUS",
+   "statement": "over the DECLARED count box the transitivity question is answered exactly: of the 261 splittable count vectors exactly one has a fiber the pinned symmetry acts transitively on, and it is the vector whose fiber is a single point -- uniqueness by triviality, not by selection; the declared reversal extension raises that to four, all outside the declared record family",
+   "passed": true,
+   "value": {
+    "pinned": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "flip": [
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      2,
+      2,
+      3
+     ],
+     [
+      2,
+      3,
+      2
+     ],
+     [
+      3,
+      2,
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-SELECTION-CANDIDATES-CELL-COMPLETE",
+   "statement": "seven selection candidates beyond symmetry are censused, each with what it is, what was tested, its verdict, and its forcing named or refuted",
+   "passed": true,
+   "value": {
+    "candidates": [
+     "THE-RECORD-COUNTS-AS-WEIGHTS",
+     "MAXENT-UNDER-PINNED-CONSTRAINTS",
+     "THE-UNIFORM-LAW-ON-THE-ADMISSIBLE-FIBER",
+     "THE-BARYCENTRE-OF-THE-INVARIANT-SIMPLEX",
+     "THE-FRONT",
+     "THE-DRAG-FIELD",
+     "THE-EQUIVARIANT-(DETERMINISTIC)-LAWS"
+    ]
+   }
+  },
+  {
+   "name": "G-CANDIDATE-REFUTATIONS-MEASURED",
+   "statement": "each refutation is a MEASUREMENT, not an assertion: the weight functionals are pairwise distinct at every count value; the front-proportional rule fails to return an admissible integer at most cells; and the number of declared maps from the drag's index set onto the split fiber is counted, not asserted",
+   "passed": true,
+   "value": {
+    "distinct_laws": {
+     "3": 2,
+     "4": 5,
+     "5": 4,
+     "6": 5,
+     "7": 5,
+     "8": 5,
+     "9": 5,
+     "10": 5,
+     "12": 5,
+     "13": 5
+    },
+    "front": [
+     165,
+     1944
+    ],
+    "drag_maps": 0
+   }
+  },
+  {
+   "name": "G-SELECTION-CLASSIFICATION",
+   "statement": "a candidate counts as FORCED only if a named pinned declaration forces it; every candidate that names no forcing is classified REFUTED-AS-FORCING, and the classification is computed from the 'forcing' field, never typed",
+   "passed": true,
+   "value": {
+    "forced": []
+   }
+  },
+  {
+   "name": "G-DECLARATION-CENSUS-CELL-COMPLETE",
+   "statement": "every declaration the pinned I7 receipt carries is classified value-level or distribution-level, by a marker scan of the declaration's own text -- the census is read from the receipt, not typed",
+   "passed": true,
+   "value": {
+    "declarations": 27,
+    "distribution_level": 0
+   }
+  },
+  {
+   "name": "G-MAXENT-CONSTRAINT-AUDIT",
+   "statement": "the maximum-entropy candidate is audited, never assumed: the pinned layer carries zero distribution-level declarations, so it supplies no constraint set for the principle to act on, and the one ratio-valued declaration is read by its own source as a bit",
+   "passed": true,
+   "value": {
+    "distribution_level_rows": []
+   }
+  },
+  {
+   "name": "G-H-IS-A-BIJECTION",
+   "statement": "the pinned dynamics H_a[N] is a bijection of configurations, measured on a declared sample: the closed-form inverse returns every configuration exactly and no two configurations collide -- so its pushforward carries point masses to point masses and cannot make a law out of a value [ANALYTICALLY FORCED: the inverse is exhibited in the pinned source, so this is a DISCLOSURE, not a must-pass falsifiable gate, RUNBOOK section 14 addendum v13 #208]",
+   "passed": true,
+   "value": {
+    "cells": 3168,
+    "roundtrip": 3168,
+    "collisions": 0
+   }
+  },
+  {
+   "name": "G-MISSING-OBJECT-NAMED",
+   "statement": "the BLOCKED head names the missing object precisely -- what kind of object it is, what it would have to say, and which pinned layer does not carry it",
+   "passed": true,
+   "value": {
+    "missing": "THE-INTERVAL-POSITIONAL-LAW: a joint law for WHERE inside a record interval its "
+   }
+  },
+  {
+   "name": "G-DECLARED-SPLIT-ANCHORS-R6A",
+   "statement": "this unit's declared split is R6a's declared split, proved by reproducing R6a's whole iteration table -- steps achieved and halt reason -- at every record before the split is used for anything",
+   "passed": true,
+   "value": {
+    "rows": 9,
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-ITERATION-TREND",
+   "statement": "the iteration-in-distribution trend is COMPUTED from the measured dimension trace at each level, never typed, and the group order at each level is measured beside it",
+   "passed": true,
+   "value": {
+    "cells": 12,
+    "summary": {
+     "grows": 2,
+     "collapses": 6,
+     "stable": 0,
+     "single_level": 4
+    }
+   }
+  },
+  {
+   "name": "G-ITERATION-SYMMETRY-OUTRUN",
+   "statement": "where a second level exists the acting group's order is MEASURED at both levels beside the fiber's, and the two growth factors are compared exactly: at every such cell the fiber outruns the group, and the orbit-simplex dimension strictly grows.  Whether the group grows at all is completion-relative and is reported, not assumed",
+   "passed": true,
+   "value": {
+    "rows": [
+     [
+      "G-ANISO2",
+      0,
+      [
+       9,
+       9,
+       9
+      ],
+      "6667065620433171892736",
+      "1"
+     ],
+     [
+      "G-ANISO2",
+      1,
+      [
+       9,
+       18,
+       36
+      ],
+      "1104218420946351124044663943408693/118587876497",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-POSITIVE-CONTROL",
+   "statement": "the positive controls are fibers a group acts TRANSITIVELY on, and on each the unique invariant measure is FOUND -- by the linear system, whose solution space comes out zero-dimensional, not by citing the orbit theorem",
+   "passed": true,
+   "value": {
+    "positive": [
+     [
+      "COUNT-3-INTERVAL-UNDER-REVERSAL",
+      1,
+      0
+     ],
+     [
+      "CYCLIC-5-TRANSITIVE",
+      1,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-NEGATIVE-CONTROL",
+   "statement": "the negative controls are asymmetric fibers, and on each the invariant laws come out a positive-dimensional simplex -- the instrument can return NOT-UNIQUE and does",
+   "passed": true,
+   "value": {
+    "negative": [
+     [
+      "COUNT-5-INTERVAL-UNDER-THE-PINNED-GROUP",
+      4,
+      3
+     ],
+     [
+      "UNEQUAL-ORBITS-1-2-2",
+      3,
+      2
+     ]
+    ]
+   }
+  },
+  {
+   "name": "G-CACHE-EXERCISED",
+   "statement": "the memo is exercised and its hit and miss counts are gated: a zero-hit cache gate is vacuous (RUNBOOK section 14 addendum, v13 #185 / #219)",
+   "passed": true,
+   "value": {
+    "hits": 868,
+    "misses": 275,
+    "bypasses": 99
+   }
+  },
+  {
+   "name": "G-CACHE-FRESH-EQUALS-MEMO",
+   "statement": "every memoised admissible-split set is recomputed with the memo BYPASSED and compared against what the memo returns",
+   "passed": true,
+   "value": {
+    "tested": 99,
+    "disagreements": 0
+   }
+  },
+  {
+   "name": "G-VERDICT-STRING-EQUALITY",
+   "statement": "the COMPLETE emitted verdict string equals, character for character, a string rebuilt segment-by-segment from the receipt object by a function that shares no code and no input with the builder (RUNBOOK section 14 addendum, v14 #10: containment is not equality)",
+   "passed": true,
+   "value": {
+    "emitted": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED",
+    "rebuilt": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED",
+    "equal": true
+   }
+  },
+  {
+   "name": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "statement": "every verdict segment is derived: perturbing the measured value it reads moves the emitted string, at all twelve segments (RUNBOOK section 13 addendum, v13 #234)",
+   "passed": true,
+   "value": {
+    "flips": [
+     {
+      "segment": "FIBERS",
+      "flips": true
+     },
+     {
+      "segment": "SYMMETRY",
+      "flips": true
+     },
+     {
+      "segment": "ORBITS",
+      "flips": true
+     },
+     {
+      "segment": "TRANSITIVE",
+      "flips": true
+     },
+     {
+      "segment": "PER-INTERVAL",
+      "flips": true
+     },
+     {
+      "segment": "LATTICE",
+      "flips": true
+     },
+     {
+      "segment": "SELECTION",
+      "flips": true
+     },
+     {
+      "segment": "MAXENT",
+      "flips": true
+     },
+     {
+      "segment": "DETERMINISM",
+      "flips": true
+     },
+     {
+      "segment": "ITERATION",
+      "flips": true
+     },
+     {
+      "segment": "CONTROLS",
+      "flips": true
+     },
+     {
+      "segment": "MISSING",
+      "flips": true
+     }
+    ]
+   }
+  },
+  {
+   "name": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "statement": "all three first-class heads are reachable from the decision ladder, proved by evaluating the same ladder on synthetic counts",
+   "passed": true,
+   "value": {
+    "MOTIVATED": "CRB-DISTRIBUTION-MOTIVATED",
+    "MOTIVATED-VIA-CANDIDATE": "CRB-DISTRIBUTION-MOTIVATED",
+    "SIMPLEX": "CRB-ORBIT-SIMPLEX",
+    "BLOCKED": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW"
+   }
+  },
+  {
+   "name": "G-FORCED-CLAUSE-DISCLOSURE",
+   "statement": "every analytically-forced clause in this instrument is declared a DISCLOSURE in one place and nowhere claimed as a must-pass falsifiable gate (RUNBOOK section 14 addendum, v13 #208)",
+   "passed": true,
+   "value": {
+    "disclosures": [
+     "G-BURNSIDE-INTEGRAL",
+     "G-H-IS-A-BIJECTION"
+    ],
+    "registered": [
+     "G-BURNSIDE-INTEGRAL",
+     "G-H-IS-A-BIJECTION"
+    ]
+   }
+  },
+  {
+   "name": "G-COMPLIANCE-SWEEP",
+   "statement": "the compliance sweep enumerates every binding rule and computes its status from the live gate ledger; no row reads MISSING",
+   "passed": true,
+   "value": {
+    "rows": 29,
+    "missing": []
+   }
+  },
+  {
+   "name": "G-RENDER-FROM-GATED-OBJECT",
+   "statement": "every rendered cell equals the corresponding cell of the gated measurement object -- the receipt and the output render from one object, with no bypass path",
+   "passed": true,
+   "value": {
+    "mismatches": []
+   }
+  },
+  {
+   "name": "G-NO-FLOATS-IN-RECEIPT",
+   "statement": "the emitted receipt contains no float",
+   "passed": true,
+   "value": {
+    "floats": []
+   }
+  },
+  {
+   "name": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "statement": "every load-bearing numeric sentence of paper-06 is rendered from the receipt object and appears verbatim in the paper (all four of the programme's false paper numbers to date lived in hand-written prose)",
+   "passed": true,
+   "value": {
+    "claims": 17,
+    "missing": [],
+    "paper_sha256_prefix": "c350caab17ee"
+   }
+  },
+  {
+   "name": "G-FALSIFIER-CENSUS-HONEST",
+   "statement": "the never-falsified census is computed from the live gate ledger and the declared mutant map, and every never-falsified gate carries a written waiver -- an unwaived silent gate is a false gate claim",
+   "passed": true,
+   "value": {
+    "never_falsified": 61,
+    "unwaived": []
+   }
+  },
+  {
+   "name": "G-FINAL-GATE-COUNT",
+   "statement": "the gate count carried by the paper's rendered instrument sentence equals the number of gates this run actually registers",
+   "passed": true,
+   "value": {
+    "registered_now": 95,
+    "claimed": "97 gates, all passed; 52 anchors; 42 mutants, no survivors"
+   }
+  },
+  {
+   "name": "G-DEFERRED-GATES-EVALUATED",
+   "statement": "the write-time gates named in the falsifier census really did run, so the census's denominator covers every gate this instrument declares",
+   "passed": true,
+   "value": {
+    "deferred": [
+     "G-RENDER-FROM-GATED-OBJECT",
+     "G-NO-FLOATS-IN-RECEIPT",
+     "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+     "G-FINAL-GATE-COUNT",
+     "G-FALSIFIER-CENSUS-HONEST",
+     "G-DEFERRED-GATES-EVALUATED"
+    ],
+    "registered": 97
+   }
+  }
+ ],
+ "mutants": [
+  {
+   "name": "anchor-hash-A-PIN-CRB",
+   "expected_gate": "A-PIN-CRB",
+   "what": "corrupts this unit's own pin hash"
+  },
+  {
+   "name": "anchor-hash-A-R6A-RECEIPT",
+   "expected_gate": "A-R6A-RECEIPT",
+   "what": "corrupts the R6a receipt's measured hash"
+  },
+  {
+   "name": "anchor-hash-A-I7-RECEIPT",
+   "expected_gate": "A-I7-RECEIPT",
+   "what": "corrupts the pinned I7 receipt's measured hash"
+  },
+  {
+   "name": "anchor-hash-A-HA-PAPER",
+   "expected_gate": "A-HA-PAPER",
+   "what": "corrupts the pinned HA paper's measured hash"
+  },
+  {
+   "name": "anchor-skip",
+   "expected_gate": "G-ANCHOR-CELL-COMPLETE",
+   "what": "silently drops the last file-bytes anchor row"
+  },
+  {
+   "name": "path-drift",
+   "expected_gate": "P-R6A-IMG-ANISO2",
+   "what": "reads the R6a fiber from a neighbouring JSON path"
+  },
+  {
+   "name": "path-value",
+   "expected_gate": "P-I7-LINKS2",
+   "what": "corrupts the value read at a pinned path"
+  },
+  {
+   "name": "text-anchor-drift",
+   "expected_gate": "T-NORM-IS-A-BOOLEAN",
+   "what": "drifts the verbatim sentence the determinism reading rests on"
+  },
+  {
+   "name": "float-leak",
+   "expected_gate": "G-FLOATGUARD",
+   "what": "injects a float offence into the AST scan"
+  },
+  {
+   "name": "mutant-identity-leak",
+   "expected_gate": "G-NO-MUTANT-IDENTITY",
+   "what": "adds a third function reading run-mode identity"
+  },
+  {
+   "name": "fiber-typed",
+   "expected_gate": "G-FIBER-REBUILD-ANCHORS-R6A",
+   "what": "types a split fiber instead of computing it"
+  },
+  {
+   "name": "r6a-anchor-drift",
+   "expected_gate": "G-FIBER-REBUILD-ANCHORS-R6A",
+   "what": "suppresses a rebuild-vs-R6a mismatch"
+  },
+  {
+   "name": "census-drop",
+   "expected_gate": "G-SYMMETRY-INVENTORY-CELL-COMPLETE",
+   "what": "drops a row of the symmetry inventory"
+  },
+  {
+   "name": "blockgroup-lax",
+   "expected_gate": "G-BLOCK-PRESERVING-IS-THE-PINNED-GROUP",
+   "what": "corrupts the block-preservation count"
+  },
+  {
+   "name": "stabiliser-anchor-drift",
+   "expected_gate": "G-STABILISERS-ANCHOR-R6A",
+   "what": "hides a stabiliser mismatch against R6a"
+  },
+  {
+   "name": "equivariant-anchor-drift",
+   "expected_gate": "G-EQUIVARIANT-FIBER-ANCHOR-R6A",
+   "what": "hides an equivariant-fiber mismatch against R6a"
+  },
+  {
+   "name": "burnside-corrupt",
+   "expected_gate": "G-ORBIT-TWO-ROUTES",
+   "what": "corrupts one Cauchy-Frobenius orbit count"
+  },
+  {
+   "name": "comparator-alias",
+   "expected_gate": "G-ORBIT-TWO-ROUTES",
+   "what": "makes the direct comparator return a shifted count"
+  },
+  {
+   "name": "simplex-dim-lax",
+   "expected_gate": "G-SIMPLEX-DIM-EQUALS-ORBITS-MINUS-ONE",
+   "what": "breaks the orbits-minus-one identity at one cell"
+  },
+  {
+   "name": "invsys-inert",
+   "expected_gate": "G-SIMPLEX-DIM-EQUALS-ORBITS-MINUS-ONE",
+   "what": "makes the linear-system route return a wrong dimension"
+  },
+  {
+   "name": "transitivity-flip",
+   "expected_gate": "G-TRANSITIVITY-CENSUS",
+   "what": "flips the decisive transitivity bit at one cell"
+  },
+  {
+   "name": "lattice-transitivity-flip",
+   "expected_gate": "G-COUNT-LATTICE-TRANSITIVITY-CENSUS",
+   "what": "corrupts the count-lattice transitivity count"
+  },
+  {
+   "name": "selection-forced",
+   "expected_gate": "G-SELECTION-CLASSIFICATION",
+   "what": "relabels a refuted candidate FORCED without naming a forcing"
+  },
+  {
+   "name": "weightlaws-collapse",
+   "expected_gate": "G-CANDIDATE-REFUTATIONS-MEASURED",
+   "what": "collapses the weight-functional census"
+  },
+  {
+   "name": "front-lax",
+   "expected_gate": "G-CANDIDATE-REFUTATIONS-MEASURED",
+   "what": "reports the front candidate as everywhere admissible"
+  },
+  {
+   "name": "drag-lax",
+   "expected_gate": "G-CANDIDATE-REFUTATIONS-MEASURED",
+   "what": "reports a declared map from the drag onto the split fiber"
+  },
+  {
+   "name": "declaration-census-drop",
+   "expected_gate": "G-DECLARATION-CENSUS-CELL-COMPLETE",
+   "what": "drops a pinned declaration from the classification census"
+  },
+  {
+   "name": "missing-object-blank",
+   "expected_gate": "G-MISSING-OBJECT-NAMED",
+   "what": "empties the named missing object under the BLOCKED head"
+  },
+  {
+   "name": "iter-anchor-drift",
+   "expected_gate": "G-DECLARED-SPLIT-ANCHORS-R6A",
+   "what": "breaks the reproduction of R6a's iteration table"
+  },
+  {
+   "name": "iteration-lax",
+   "expected_gate": "G-ITERATION-TREND",
+   "what": "corrupts the iteration trend summary"
+  },
+  {
+   "name": "control-pass",
+   "expected_gate": "G-POSITIVE-CONTROL",
+   "what": "makes the positive control fail to find its unique measure"
+  },
+  {
+   "name": "neg-control-pass",
+   "expected_gate": "G-NEGATIVE-CONTROL",
+   "what": "declares the asymmetric fiber transitive"
+  },
+  {
+   "name": "cache-alias",
+   "expected_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "what": "serves a wrong memo value against the fresh recomputation"
+  },
+  {
+   "name": "forced-clause-promote",
+   "expected_gate": "G-FORCED-CLAUSE-DISCLOSURE",
+   "what": "promotes an analytically-forced clause out of the disclosure list"
+  },
+  {
+   "name": "verdict-pair-swap",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "swaps two verdict segments' values against their names"
+  },
+  {
+   "name": "verdict-typed-segment",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "types a verdict segment instead of deriving it"
+  },
+  {
+   "name": "verdict-append-text",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "appends text after the verdict string"
+  },
+  {
+   "name": "verdict-fully-typed",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "types every verdict segment"
+  },
+  {
+   "name": "verdict-inert-segment",
+   "expected_gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "what": "makes one verdict segment ignore the value it reads"
+  },
+  {
+   "name": "head-constant",
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "what": "pins the head to a constant regardless of the measurement"
+  },
+  {
+   "name": "render-escape",
+   "expected_gate": "G-RENDER-FROM-GATED-OBJECT",
+   "what": "corrupts a rendered cell after the gates have run"
+  },
+  {
+   "name": "prose-claim-drift",
+   "expected_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "what": "drifts a rendered paper claim away from the receipt"
+  }
+ ],
+ "paper_claims": {
+  "paper": "v14/paper-06-stochastic-split.md",
+  "paper_sha256_prefix": "c350caab17ee",
+  "claims_rendered": 17,
+  "claims_present_in_the_paper": 17,
+  "claims_missing": [],
+  "rendered": {
+   "aniso2": "G-ANISO2's admissible fiber holds 1257565061957837936381 splits and 139729451328658254141 orbits, an invariant simplex of dimension 139729451328658254140",
+   "controls": "the 2 positive controls each return a unique invariant measure and the 2 negative controls each return a positive-dimensional simplex",
+   "determinism": "the pinned dynamics is a bijection at 3168 of 3168 sampled cells with 0 collisions, so its pushforward carries point masses to point masses",
+   "diag2": "G-DIAG2's fiber of 19683 splits falls into 1230 orbits under the pinned chart group, with orbit sizes 3 x 1, 14 x 3, 9 x 6, 232 x 9, 972 x 18",
+   "fibers": "the split fibers are rebuilt here from the pinned declarations alone and agree with the R6a receipt at 27 of 27 cells, spanning 19683 to 1257565061957837936381 over the 6 records that admit the move",
+   "front": "the front-proportional split returns an admissible integer at 165 of 1944 cells, is non-integral at 141, out of range at 468 and undefined at 1170",
+   "instrument": "97 gates, all passed; 52 anchors; 42 mutants, no survivors",
+   "iteration": "at the one record that reaches a second level the fiber grows from 1257565061957837936381 to 8384268790037013033304454089952502124028416 under the first declared completion while the acting group stays at 9, so the simplex dimension grows from 139729451328658254140 to 931585421115223670367161565730857830751295; under the second completion the group doubles to 18 and the fiber, at 11709683552580630561569484011873192401249489, still outruns it",
+   "lattice": "of the 361 admissible count vectors in the declared box, 261 are splittable, exactly 1 has a fiber the pinned symmetry acts transitively on, and under the declared reversal extension 4 do -- 0 of them inside the declared record family",
+   "maxent": "the pinned layer carries 0 distribution-level declarations out of 27, so maximum entropy has no constraint set of its own to act on",
+   "nonfactor": "the uniform law on the admissible fiber fails to factorise at 4 of the 6 records that admit the move",
+   "orbits": "the orbit decomposition is computed at 24 (record, group) cells, cross-checked by direct enumeration at 4 of them and by a closed form at 5",
+   "per_interval": "a single interval carrying n events has n - 1 splits: under the pinned group the simplex has dimension n - 2 and is a point only at n = 2, and under the declared reversal extension it is a point only at n = 2 and n = 3",
+   "selection": "7 selection candidates beyond symmetry are tested and 0 are forced",
+   "symmetry": "the pinned chart group has order 18; the largest group the declared link set admits has order 108; and exactly 18 of those 108 elements preserve the block structure the admissible fiber is built on",
+   "transitive": "no cell of the census is transitive: 0 of 24, and the orbit-simplex dimension runs from 637 to 1257565061957837936380",
+   "verdict": "CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<FIBERS=REBUILT-27-OF-27-CELLS-0|SPAN-19683..1257565061957837936381|MOVE-ADMITTED-BY-6-OF-11|SYMMETRY=PINNED-CHART-18|SIGMA-2|EXTENSION-108|BLOCK-PRESERVING-18-OF-108|ORBITS=CELLS-24|ROUTES-4|CLOSED-FORM-5|MIN-638-MAX-1257565061957837936381|TRANSITIVE=UNIQUE-0-OF-24|SIMPLEX-DIM-637..1257565061957837936380|PER-INTERVAL=PINNED-DIM-N-MINUS-2|FLIP-DIM-CEIL-N-MINUS-1-OVER-2-MINUS-1|TRANSITIVE-AT-N-2-3|LATTICE=SPLITTABLE-261-OF-361|PINNED-TRANSITIVE-1|FLIP-TRANSITIVE-4|IN-THE-DECLARED-FAMILY-0|SELECTION=CANDIDATES-7|FORCED-0|REFUTED-7|MAXENT=PINNED-DISTRIBUTION-LEVEL-DECLARATIONS-0-OF-27|SUPPORT-RELATIVE-RECORDS-5|NON-FACTORISING-4|DETERMINISM=STOCHASTIC-PINNED-OBJECTS-0|H-BIJECTION-3168-OF-3168|COLLISIONS-0|ITERATION=CEILING-2|GROWS-2|COLLAPSES-6|SINGLE-LEVEL-4|FIBER-OUTRUNS-GROUP-True|COMPLETION-RELATIVE-True|CONTROLS=POSITIVE-2-UNIQUE-2|NEGATIVE-2-SIMPLEX-DIM-3-2|MISSING=THE-INTERVAL-POSITIONAL-LAW-=-THE-TRANSITION-KERNEL-BETWEEN-AN-INTERVALS-ENDPOINTS-WHOSE-RENEWAL-COUNT-IS-N|R0-CARRIES-THE-RECORD-LAYER-I7-AND-NO-TRANSITION-LAYER>"
+  },
+  "rule": "every load-bearing numeric sentence of the paper is RENDERED HERE from the measured object and must appear VERBATIM in the paper"
+ }
+}

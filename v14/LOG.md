@@ -1086,3 +1086,51 @@ delivery's standing; injections incl. the R6a Y1 class;
 verdict rebuild; prose sweep).  Three-lens panel dispatched
 (Opus ×3) — with the R6a repair + four CR constructions,
 EIGHT concurrent.
+
+## 2026-08-09 — CR-B DELIVERED, COMMITTED AS-IS (v14 LEDGER #37)
+paper-06-stochastic-split.md (c350caab17ee) + crb_stochastic_
+exact.py (5f2a54ea8a98) + _output.txt (c62fdedec153) +
+_receipt.json (5ebeec141303) committed exactly as delivered.
+**THE VERDICT: CRB-BLOCKED-AT-NO-PINNED-STOCHASTIC-LAW<...>
+— THE MISSING OBJECT NAMED EXACTLY: THE INTERVAL-POSITIONAL
+LAW = the transition kernel between an interval's endpoints
+whose renewal count is n_ℓ(x) — A TRANSITION-MATRIX-LAYER
+OBJECT; R0 carries the record layer (I7) and NO transition
+layer.**  The census: fibers rebuilt 27/27 against R6a's
+receipt; **TRANSITIVE NOWHERE (0 of 24 cells) — no unique
+invariant measure exists anywhere** (simplex dims 637..1.26e21;
+per-interval law exact: pinned dim n−2, reversal dim
+⌈(n−1)/2⌉−1, transitive only at n∈{2,3}); **7 selection
+candidates, 0 forced, 7 refuted** (MaxEnt properly audited —
+0 distribution-level declarations of 27, support-relative at
+5 records; uniform FAILS TO FACTORISE at 4 of 6 —
+admissibility couples the site's three splits; barycentre vs
+uniform disagree — two "canonical" laws conflict; front
+non-integral/out-of-range at most cells; drag index-mismatch;
+equivariant min 3).  MEASURED THEOREM: exactly the pinned
+chart-18 of the 108-element extension preserves the
+coarse-image block structure (admissibility intrinsically
+reversal-asymmetric; G-OFFDIAG records 39,364 escapes).
+Structural gem: THE DECLARED LINKS + NEGATIVES ARE THE A₂
+ROOT SYSTEM (its automorphism group order 12 realises S₃ ⊃
+the pinned Σ).  DETERMINISM CENSUS grounds the head: all 27
+pinned declarations value-level; H a bijection 3,168/3,168 —
+pushforwards preserve point masses; the pinned layer is
+deterministic and stochasticity lives in the unpinned
+transition layer.  ITERATION: never stabilises — THE FIBER
+OUTRUNS THE GROUP (dim 1.4e20 → 9.3e41 at one step;
+completion-relative, reported as such).  Orbit machinery:
+three independent routes agreeing at 24 cells (signed
+Cauchy–Frobenius / capped direct walk / closed form
+(k⁹+8k³)/9).  Controls: 2 positive (transitive — unique
+measure FOUND by 0-dim linear system), 2 negative (dims 3,2).
+Instrument: 97 gates, 52 anchors (16 VERBATIM-TEXT per the
+#34 adopted modification — engravings anchored verbatim),
+42/42 mutants dead, never-falsified 64/97 ALL-WAIVED, 29
+compliance rows, byte-identical ×2.  **THE CONVERGENCE
+ACROSS ROUTES: R6a (event positions) + CR-A-interim (a
+geometry-update law) + CR-B (the interval-positional
+kernel) all name TRANSITION-LAYER objects — the continuum
+question's shopping list is one item: PIN THE TRANSITION
+LAYER (R6b′'s case strengthens).**  Adjudicator verification
+next.
