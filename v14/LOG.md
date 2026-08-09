@@ -1496,3 +1496,8 @@ COMMITTED bytes (022c3f488a93) remain canonical until the
 R6a repair reports and is committed-as-is; CR-C's handling
 is the correct pattern.**  Adjudicator verification next;
 panel queued.
+
+## 2026-08-09 — CR-C ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #51)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
+(44 anchors / 55 gates / 44 mutants, 0 failures).  CR-C
+stands GREEN-VERIFIED-UNREVIEWED; panel queued.
