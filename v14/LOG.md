@@ -464,3 +464,46 @@ successor criterion + recipe; the continuum question
 untouched and honestly posed onward.  R2 panel still in
 flight — its adjudication decides what LOCALITY-AT-14-OF-109
 may claim.
+
+## 2026-08-09 — R2 REVIEW: OPERATOR FROZEN (v14 LEDGER #17)
+review-r2-operator.md frozen as delivered.  Grade AWF;
+**197,129 recomputations** (the full 40,320-action R2-A sweep
+rerun; 144,339 partition measurements; a 6,895-config theorem
+sweep; 2,703/2,703 delivered receipt numbers reproduce —
+ZERO false numbers in the receipt).  **K1 DECIDED — THE
+CIRCULANT THEOREM (R2-OP-1)**: the drawn graph on the regular
+orbit is the lexicographic blow-up of the circulant
+C_k(1..c−1)[S] by cliques; LOCALITY ⟺ c ≤ diam_k(S) (when
+connected); |E| and b₁ in closed form reproducing (0,6,12;
+1,8; 0,2) at 14/14; ALL/BLOCKWISE clique-only BY THEOREM;
+218/218 analytic agreement; **THE ENTIRE 14-OF-109 CENSUS IS
+DERIVABLE FROM THE DECLARATION — all fourteen rule IDs
+predicted BEFORE measuring.**  The two window thresholds have
+DIFFERENT CAUSES (T7: S = Z₈∖{pt}, c ≤ ⌊(n+1)/2⌋; T4: S a
+contiguous arc, c ≤ n−1) — the paper reports one effect.
+**K2 DECIDED — LOCALITY-DECLARABLE, NOT FOUND**: 0 of 14
+locality rules has a γ-stable cell family; ALL 45 γ-stable
+atlases are clique-only; the SLIDING successor is in neither
+⟨γ,Σ⟩; no permutation realises the min-label coset order —
+**the mechanism's key ingredient is the INTEGER LABELLING:
+the RSQ precedent exactly.**  F2 MAJOR: DIMREAD=INCONSISTENT
+is FORCED at sliding rules (computed only on the filtered
+14); CONSISTENT is attained at 22 of 109 rules and the
+INTERSECTION WITH LOCALITY IS EMPTY — dimension-consistency
+and locality are DISJOINT in this grid; the estimator is not
+relabelling-invariant (a vertex-transitive 8-cycle probe w/
+identical links reads INCONSISTENT; no positive control for
+the measure).  F4: B₂-persistence + block-constants FORCED
+by the block-local declaration; the missing STRADDLING
+control (run by the reviewer) moves the densities while the
+census holds.  **F5+F6: TWO FALSE PAPER NUMBERS — the
+programme's third and fourth, both in PROSE** (the
+per-incidence range is 0..5/3, not 0/1..25/18, contradicted
+by the paper's own table; R048 has THREE one-link charts,
+not two).  The reviewer's mechanism note: every error sits
+in prose — THE ONE SURFACE NOT RENDERED FROM THE GATED
+OBJECT.  F7: the NULL segment counts rule×arena measurements
+(4/38) where rules are 2/19 — the one segment the rebuild
+did not match.  F8: 109 coordinates = 66 DISTINCT cell
+families; the 14 locality rules = 9 DISTINCT atlases.
+F9–F12 minors.  Two reviewers pending (effectus, instrument).
