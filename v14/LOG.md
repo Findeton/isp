@@ -173,3 +173,47 @@ under moved-label normalisation — only φ diverges
 structurally.  K5 PASS: the verdict regenerates VERBATIM;
 28+1 anchors trace; NO false numbers.  Two reviewers
 (effectus, instrument) resumed post-stall, in flight.
+
+## 2026-08-09 — R1 REVIEW: EFFECTUS FROZEN (v14 LEDGER #8)
+review-r1-effectus.md frozen as delivered.  Grade AWF; 258
+scratch recomputations + 43,921 sweep computations; ZERO
+numerical disagreements, zero false numbers/theorems.
+**K1 SETTLED WITH THREE THEOREMS**: R2-B (disjoint isomorphic
+copies + isolated basepoint ⟹ every ratio of additive
+point-vanishing quantities is block-count-independent — both
+headline invariants are exactly such ratios) + converse R2-B′
+(the profiles move by O(1/B) ENTIRELY via the basepoint);
+**26/26 tail data points = (A₃ per-block value)×m — THE
+INDEPENDENT CONTENT OF THE SECOND AND THIRD WINDOW MEMBERS IS
+ZERO** (the K=3 window carries one block census).  **R2-A:
+drawn ⟺ regular orbit ⟹ the overlap graph is ALWAYS a union
+of cliques** (43,537 cyclic actions, 0 counterexamples) —
+X-REAL-EMPTY explained in general form, and the successor's
+recipe stated: locality is EARNED only by declaring two cells
+whose regular orbits overlap PARTIALLY.  **R2-C: φ<1 is
+FORCED** (the basepoint lies in no cell's support) — the
+gateway criterion degenerates to "first member"; A₁ uniquely
+ATTAINS the forced maximum (7/9 = (9−2)/9): it is the LEAST
+local member, K₈ ⊔ {pt}.  **R2-F1 MAJOR: ATLAS-C (non-block-
+local, the unit's own rules verbatim) RETURNS 0-OF-5
+STABILIZING OVER THE SAME ARENAS — THE HEAD FLIPS TO
+NO-CONTINUUM-LIMIT.  The atlas is VERDICT-DETERMINING**; the
+P*-precedent demands the sweep in-unit w/ the atlas a named
+coordinate.  R2-F4 MAJOR: componentwise overlap completeness
+= 1 at 5/5 members + both probes — **the I4 non-complete-
+overlap requirement is met in letter, DEFEATED IN PURPOSE**
+(each component is a complete clique; the "incompleteness"
+is the isolated basepoint).  Basepoint-deleted: 4 of 5
+invariants stabilize (the 2-of-5 split is a basepoint
+artefact).  The eigenvalue-1 chain forced AND strictly
+weaker than I2's wall (μ₁ = #cycles).  NC hunt: nothing
+non-copied stabilizes (NC-3 moves 6/7→7/8; NC-1 ≡ 1 vacuous;
+NC-2 ≡ 0).  PROPOSED VERDICT:
+R1-STABILIZES-BY-DISJOINT-COPYING-AT-<...> w/ mechanism,
+independent-content, atlas, and R2-GATEWAY=NONE-EARNED
+segments, every one computed and flippable.  **GATEWAY:
+WITHDRAW A₁; hand forward NONE-EARNED; successor criterion
+= first COMPONENT with an incomplete overlap graph (currently
+EMPTY); if a member must be named, A₃, never A₁.**  R2-F11
+CREDIT: b₂-partiality handled by pre-declared failure mode —
+a clean pass.  One reviewer (instrument) still in flight.
