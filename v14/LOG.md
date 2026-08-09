@@ -1320,3 +1320,9 @@ VALUE or DISTRIBUTION); the defective-renewal finding
 first-class; the R6a audit re-run at the enriched type; the
 extremal lead vs the S6 bar; the cover lead recorded
 dissolved.  Construction dispatched.
+
+## 2026-08-09 — CR-A ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #44)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
+39/39 mutants dead (the paper-number-sweep mutant confirmed
+dying by name).  CR-A stands GREEN-VERIFIED-UNREVIEWED; panel
+queued with CR-B's.
