@@ -9561,3 +9561,39 @@ diff their gates against rules engraved since pin-freeze);
 §14 boundary parity.  Continuum inheritance consolidated
 (non-complete overlap graph; refinement family; intensive
 invariant; R-TOP-7 settled; N_coh primary).
+
+## 2026-08-09 — RSQ JOINT ADJUDICATION (v13 LEDGER #314)
+note-rsq-adjudication.md committed.  Grade AWF unanimous
+(~495 combined recomputations, zero discrepancies, zero false
+theorems/numbers).  THE TWO VERDICT MOVEMENTS: **the EMPTY
+half PROMOTED census→THEOREM** (R1's readout-profile proof at
+every p≥5, corroborated by R2's 0/172,800 over all 60 primes
+5..293 + d=2 exhaustive/d=4 sampled; R3's alias complaint
+resolved by promotion; excluded primes folded in) and **the
+FOUND half DEMOTED** (R2-F-3: S₃-equivariant cells + HA's
+sym_index 6/6 STILLBORN at all 7 primes; every survivor one
+of 1,434 arbitrary relabellings selected by the property
+under test; the motivated family returns
+RSQ-NO-COMPATIBLE-SQUARE — the verdict must carry the
+computed split).  Ten binding orders R-RSQ-1..10, the spine:
+split-and-rename both halves computed (#257); the master
+equation I−E=α⁻¹ρα into the paper w/ the three walls as
+readings + the measured independence of the module
+obstruction; the sufficiency gate (criterion iff at
+L₆/p=7/ord 3, all diagonal patterns); held-out language
+struck (H1≡H2; the 43-label control at rung 2); sources
+recounted two w/ the profile theorem as the independent
+second; forced clauses → disclosures (#208); functoriality
+computed; R3's gate batch; provenance.  **THE
+SCALE-CONVERGENCE THESIS RETIRED AND OWNED** — R2's verdict:
+narrative; adjudicator-introduced framing (my ledger language
+#304–#306, never in STATUS.md); fourth instance of
+coordinator narrative outrunning measurement (#241, #267,
+exclusive-Fano, this); the record keeps the measured scale
+table only.  ONE RUNBOOK ENGRAVING: §13 precheck doctrine
+(precheck may gate the census, never name the verdict).
+Continuum inheritance: **THE SPECTRAL CARRY — 0 ∈ spec(I−E)
+on no unit circle at any dimension (HA readout carries
+eigenvalue 1): the continuum rung inherits the obstruction in
+PROOF FORM**, plus S-1..S-5 and the master equation.  Repair
+workers next (TOP + RSQ, parallel).
