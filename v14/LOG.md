@@ -842,3 +842,52 @@ reject; 20-of-48 all-waived audit — a false waiver is a
 false gate claim; the five injection classes under attack;
 paper↔receipt sweep).  Three-lens panel dispatched (Opus ×3),
 alongside the R3 construction.
+
+## 2026-08-09 — R3 DELIVERED, COMMITTED AS-IS (v14 LEDGER #29)
+paper-03-relativity-rung.md (00850cc796d0) + r3_relativity_
+exact.py (bbcc9a1aa7de) + _output.txt (d54142292980) +
+_receipt.json (1c8beb16c8a2) committed exactly as delivered
+BEFORE adjudicator verification.  **THE VERDICT AS EMITTED:
+R3-DEFORMATION-DEFECT-AT<...14 segments> — a THREE-BRACKET
+structure:**  (1) **{H,H} CLOSES into the tangential family
+476/476** (labelled FORCED — w linear in the front, X01) —
+**with THE COEFFICIENT RESULT: METRIC-READING-SITE-VARYING at
+32 of 120 inhomogeneous-record cells — GENUINE STRUCTURE
+FUNCTIONS, THE HDA SIGNATURE, the programme's first
+relativity-shaped measurement** (classes: constant-non-metric
+216 / metric-reading-constant 108 / metric-reading-site-
+varying 32 / site-varying-non-metric 48 / zero 36 /
+not-extractable 36; metric-reading at 56/56 positive-control
+cells).  (2) {D,D} closes exactly 644/644 (forced, control).
+(3) **{D,H} DEFECTS: D-TOT/OUTSIDE at 10,386 of 21,012 —
+IN-CONSTRAINT at 0** — the defect CHARACTERIZED: closed form
+w[N,(S₋ᵥ−1)(n−N)] − w[SᵥN−N,n] verified against the literal
+composition; nonzero 3096/3096; lattice sum nonzero (NOT a
+boundary term, degenerate probe as death certificate); NO
+sector-vanishing (0 of 2280); L- AND d-INDEPENDENT; not H[P],
+not H[P]∘D[u].  **THE CONVENTION SWEEP — the decisive
+discriminator: exactly 1 of 4 declared combinations
+(BACKWARD) makes the bracket's front sector equal the
+TRANSPORTED LAPSE DERIVATIVE everywhere (21,126/21,126) — the
+front-sector mismatch is a CONVENTION; the REGISTER-sector
+defect is REAL.**  (GR-shaped reading, candidate: the
+geometry sector carries the deformation algebra; the
+matter-address sector carries the defect object.)  L-SWEEP:
+closure counts + coefficient classes CONSTANT IN L at fixed d
+(only residual magnitudes move; lapse coordinate moves
+magnitude at 62/476, statuses at 0).  Diagonal anchor
+recovered EXACTLY before anything counted (99/99, 72/72,
+81/81 two-route).  L=3 gate demonstrated (the R2 fractions
+64/120, 324/351, 768/2016 re-measured and matched).
+Translation equivariance 0-of-120,969 violations vs 58,572
+on the scrambled control.  Counts: 40 anchors (32
+path-value), 81 gates all pass, 60/60 mutants dead,
+never-falsified 29-of-81 all named w/ forcing, 7 disclosures.
+Two plain runs byte-identical; 26-rule compliance sweep ALL
+APPLIED (all five 2026-08-09 engravings w/ firing
+falsifiers).  Worker flags for adjudication: the w=1
+density-weight flip anchored but not swept; the d=3 dense
+cross-route sparse; the {D,H} d=3 lapse scope = I7's probe
+convention (X07); non-constant tangential generators
+excluded (bijection requirement).  Adjudicator verification
+next; the R6a panel runs in parallel.
