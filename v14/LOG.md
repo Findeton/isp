@@ -1231,3 +1231,41 @@ pair/cell denominators.  Two NOTES STRENGTHEN: the defect
 survives the other bracket order (0/3096) AND non-constant
 bijective tangential fields.  One reviewer pending
 (instrument).
+
+## 2026-08-09 — CR-A DELIVERED, COMMITTED AS-IS (v14 LEDGER #41)
+paper-05-accumulation.md (af0058432b79) + cra_accumulation_
+exact.py (e289d3afc852) + _output.txt (f398959da079) +
+_receipt.json (5f68bac811bd) committed exactly as delivered.
+**THE VERDICT: CRA-BLOCKED-AT-STATIC-GEOMETRY<...> — the
+interim snapshot held verbatim.**  H-does-not-touch-s
+verified two ways (pointwise 2,376/2,376; the move-monoid
+s-orbit is a SINGLETON at depth 4 w/ a positive control
+reaching 5).  The census: 8,192 candidates / 2,976 advancing
+/ 1,232 admissible; **INVENTORY i:0, ii:0, iii:1,232 — the
+symmetry REDUCES (64×) AND SELECTS NOTHING; MOTIVATED MOVERS:
+0.**  **THE STATIC-GEOMETRY THEOREM: no admissible advancing
+mover commutes with H_a[N] at 9-of-11 rules (every
+count-reading rule; census not extrapolation — the 3 realised
+read-link sets both measured empty); the two count-blind
+exceptions close only on G-FLAT and are destroyed by any
+advancing move; closure-preservation ∧ commutation JOINTLY
+EMPTY.**  **THE MISSING OBJECT IS NAMED BY THE PINNED SOURCE
+ITSELF, verbatim-gated: HA §12(7) "No geometry-update law is
+constructed."**  Trajectories: 531 converge / 117 diverge /
+108 undef / 216 unclassified (all declinations mechanism-
+accounted); NORMALIZATION-RELATIVITY at 216/486;
+**THE MOVER-BLIND LIMIT: (1/27, −1/54, 1/27) — the hexagonal
+Gram matrix of the link set — reached by FIVE movers incl.
+the foreign fiat move, all schedules, any record: accumulate
+forever and the record is erased, converging to the geometry
+OF THE LINK DECLARATION (the A₂ resonance with CR-B)**;
+dilations by contrast REMEMBER the record.  Honest cost: the
+pinned readouts separate 29/36 mover pairs — fiat
+indistinguishable from three coupled movers at any horizon.
+Instrument: 31 anchors, 47 gates, 39/39 mutants dead, 6
+disclosures, never-falsified 42 named; **a mechanical
+paper-number sweep gate added (every numeric token in the
+paper must exist in the receipt — the surface all four false
+paper numbers lived on)**; one self-caught cache bug fixed
+content-addressed.  Byte-identical ×2.  Adjudicator
+verification next; panel queued w/ CR-B's.

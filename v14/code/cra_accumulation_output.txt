@@ -1,0 +1,96 @@
+==============================================================================
+v14 CR-A -- REFINEMENT BY ACCUMULATION
+Does the pinned grammar contain a geometry-record-ADVANCING move?
+==============================================================================
+
+[0] float guard clean; mutant-blindness scan clean (4/4 synthetic injections flagged).
+[1] 5 pinned source hashes verified: A-PIN-CRA, A-I7-RECEIPT, A-HA-PAPER, A-HA-CODE, A-R0-PIN
+[1] 11 path-value anchors verified (the (path, value) pair, not the file bytes).
+[1] 8 pinned clauses verified verbatim against v13/paper-ha-successor.md.
+[1] 8 RUNBOOK engravings verified verbatim (the five 2026-08-09 engravings and their companions).
+[2] arena rebuilt: |X| = 9 sites, 3 links, 9 admissible records (G-INDEF/G-SINGULAR rejected), 12 lapse profiles, 132 ordered pairs; diagonal sector = G-ANISO, G-ANISO2, G-CURVED, G-DIAG2, G-FLAT.
+[2] the closure census recomputed independently and anchored: 6 rules x 9 records = 54 cells, all matching I7.
+[2] I7's rank (2 at 9 of 9), re-encoding (81 of 81) and count lattice (361 / 5100 / 781) reproduced.
+
+------------------------------------------------------------------------------
+A.  THE ANCHOR OBSERVATION: H_a[N] does not touch the geometry record
+------------------------------------------------------------------------------
+A.1  s is bit-identical after H_a[N] and its inverse at 2376 of 2376 (rule, record, lapse, register) instances.
+A.2  the s-orbit of the pinned move monoid at depth 4: 1 point.  With one geometry-writing generator added: 5 points (positive control).
+
+------------------------------------------------------------------------------
+B.  THE ATOMS, and which of them the pinned grammar can express
+------------------------------------------------------------------------------
+B.1  12 of 13 declared atoms are expressible from the pinned clauses; the negative control SIDX (a held-out chart label) is excluded.
+
+------------------------------------------------------------------------------
+C.  THE ADVANCING-MOVE CENSUS
+------------------------------------------------------------------------------
+C.1  family LIN: 4096 declared candidates -> 1752 advancing (delta >= 0 everywhere, > 0 somewhere) -> 1209 admissible (the record stays positive definite under 1, 2 and 3 applications).  1010 deduplicated probe cells from a 3888-cell product.
+C.1  family BIL: 4096 declared candidates -> 1224 advancing (delta >= 0 everywhere, > 0 somewhere) -> 23 admissible (the record stays positive definite under 1, 2 and 3 applications).  809 deduplicated probe cells from a 3888-cell product.
+C.2  TOTAL: 8192 candidates, 2976 advancing, 1232 admissible advancing movers.
+
+------------------------------------------------------------------------------
+D.  THE CHOICE INVENTORY (forced / stabilizer-fixed / genuinely free)
+------------------------------------------------------------------------------
+D.1  class (i) FORCED: the pinned clause table forces exactly 2 movers (the identity, one per declared family), and neither is advancing.  Forced advancing movers: 0.
+D.2  class (ii) STABILIZER: on the per-link coefficient space (262144 points) the chart group has 133120 orbits and 4096 fixed points -- the instrument sees a nontrivial action.  Chart-equivariance cuts that space to 4096; the censused uniform space (64 points there) is fixed POINTWISE, so the symmetry reduces and selects nothing.
+D.3  class (iii) GENUINELY FREE: the fiber is 1232 movers exactly.  MOTIVATED movers (every freedom class-(i) or class-(ii)): 0.
+
+------------------------------------------------------------------------------
+E.  THE SELECTOR CENSUS -- can anything expressible SELECT a mover?
+------------------------------------------------------------------------------
+E.1  SEL-TYPE             PINNED (clause C-TYPE)   fiber = 2976
+E.1  SEL-ADMISSIBLE       PINNED (clause C-ADMISSIBLE) fiber = 1232
+E.1  SEL-CHART            PINNED (clause C-CHART)  fiber = 4096
+E.1  SEL-CLOSURE          DECLARED BY THIS UNIT    fiber = 4
+E.1  SEL-COMMUTE-AXIS     DECLARED BY THIS UNIT    fiber = 0
+E.1  SEL-COMMUTE-INSERT   DECLARED BY THIS UNIT    fiber = 0
+E.1  SEL-JOINT            DECLARED BY THIS UNIT    fiber = 0
+E.1b  the 11 drag rules realise 2 distinct read-link sets among the 9 that read a count -- [1, 2] and [1, 2, 3] -- and both are measured below: the theorem's scope is a census, not an extrapolation.
+E.2  THE STATIC-GEOMETRY THEOREM: commuting AND advancing movers = 0, at 9 of 11 drag rules (every rule whose weight reads an interval count).  The exception is exactly the 2 count-blind rules A-chart, B-chart, which close on G-FLAT alone.
+E.3  the commutation defect by literal composition and by the independent closed form: 2916 cells, 0 disagreements.
+
+------------------------------------------------------------------------------
+F.  THE RESCALED-GEOMETRY TRAJECTORIES
+------------------------------------------------------------------------------
+F.1  972 trajectory cells (9 movers x 6 schedules x 9 records x 2 normalizations), horizon t = 20, exact rationals throughout: 531 CONVERGES, 117 DIVERGES, 108 UNDEFINED-NORMALIZATION, 216 UNCLASSIFIED.
+F.1b  the classifier declines 216 cells; all 216 are accounted for by a non-stationary schedule (SCH-DELTA-CYC, SCH-MIX) or by the site-dependent growth ratio of the lapse-modulated dilation -- no unexplained residue.
+F.2  NORMALIZATION-RELATIVITY: of 486 (mover, schedule, record) cells, 216 change convergence type between NORM-FRONT and NORM-INT.
+F.3  MOVER-BLINDNESS of the limit: the exact rescaled limit (1/27, -1/54, 1/27) is reached by M-CLOSED, M-FIAT, M-FRONT, M-SOURCE, M-TARGET -- including the foreign fiat move.
+
+------------------------------------------------------------------------------
+G.  THE FOREIGN CONTROL
+------------------------------------------------------------------------------
+G.1  coupling profiles: M-CLOSED reads {N}; M-DILATE reads {N,n,s}; M-FIAT reads {nothing}; M-FRONT reads {n}; M-LAPDIL reads {N,n,s}; M-NONE reads {nothing}; M-SOURCE reads {N}; M-TARGET reads {N}; M-TILT reads {n}
+G.2  FOREIGN flagged: M-FIAT (declared: M-FIAT).  COUPLED: M-CLOSED, M-DILATE, M-FRONT, M-LAPDIL, M-SOURCE, M-TARGET, M-TILT -- all of them class-(iii) unmotivated, which is a different finding.
+
+------------------------------------------------------------------------------
+H.  THE DISCRIMINATOR CENSUS
+------------------------------------------------------------------------------
+H.1  of 36 ordered-free pairs of named movers, 29 are separated by the one-step readout at the declared coordinate; 7 are not.
+
+------------------------------------------------------------------------------
+THE VERDICT
+------------------------------------------------------------------------------
+CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>
+
+PROSE| H_a[N] leaves the geometry record bit-identical at 2376 of 2376 (rule, record, lapse, register) instances, and the s-image of the whole pinned move monoid is a single point at depth 4, against 5 points when one geometry-writing generator is added.
+PROSE| Of 8192 declared candidate moves, 2976 are advancing and 1232 are admissible advancing movers.
+PROSE| The pinned clause table forces exactly 2 movers -- the identity, one per declared coefficient family -- and 0 advancing ones.
+PROSE| On the per-link coefficient space of 262144 points the chart group has 133120 orbits and 4096 fixed points; chart equivariance cuts that space to 4096, and the censused uniform space is fixed pointwise, so the stabilizer selects nothing.
+PROSE| The strongest declared selector, closure preservation, leaves a fiber of 4 movers; commuting advancing movers number 0 at 9 of 11 drag rules.
+PROSE| The commutation defect computed by literal composition and by the independent closed form agrees at 2916 of 2916 cells.
+PROSE| Across 972 trajectory cells at horizon t = 20, 531 converge, 117 diverge, 108 have an undefined normalization and 216 are unclassified, in 27 distinct exact limit classes.
+PROSE| The convergence type changes with the declared normalization at 216 of the 486 (mover, schedule, record) cells.
+PROSE| The exact rescaled limit (1/27, -1/54, 1/27) is reached by M-CLOSED, M-FIAT, M-FRONT, M-SOURCE, M-TARGET -- including the foreign fiat move.
+PROSE| The coupling instrument flags 1 of 1 declared external growth moves FOREIGN, and reports 7 coupled movers, every one of them class-(iii) unmotivated.
+PROSE| Of 36 pairs of named movers, 29 are separated by the one-step record readout at the declared coordinate.
+paper number sweep: 191 numeric tokens, 58 distinct, 0 unbacked.
+
+------------------------------------------------------------------------------
+RECEIPT
+------------------------------------------------------------------------------
+gates 47 (47 must-pass, 0 failures) | anchors 31 | mutants 39 | disclosures 6 | never-falsified 42
+never falsified: A-HA-CODE, A-HA-PAPER, A-PIN-CRA, A-R0-PIN, G-CENSUS-CELLS-COMPLETE-BIL, G-CENSUS-TWO-ROUTES-BIL, G-CLASS-II-SELECTS-NOTHING, G-COUNT-BLIND-EXCEPTION, G-DISCRIMINATOR-CENSUS, G-ENGRAVINGS-PRESENT, G-FORCED-ADVANCING-EMPTY, G-FOREIGN-AND-UNMOTIVATED-ARE-DIFFERENT-FINDINGS, G-MUTANT-BLINDNESS, G-NO-FLOATS-IN-RECEIPT, G-NO-PINNED-SELECTOR-SELECTS, G-S-ORBIT-SINGLETON, G-TRAJ-CLASSIFICATION-CERTIFIED, G-UNCLASSIFIED-CHARACTERIZED, G-VERDICT-STILL-EQUAL-AT-WRITE-TIME, N-ADMISSIBLE-RECORDS, N-CLOSURE-A-axis, N-CLOSURE-A-chart, N-CLOSURE-A-insert, N-CLOSURE-A-insert-2x, N-CLOSURE-A-insert-x, N-CLOSURE-A-linkframe, N-DIAGONAL-SECTOR, N-LAPSE-PAIRS, N-LATTICE, N-RANK, N-REJECTED-RECORDS, N-S-FROZEN-INSTANCES, P-I7-D, P-I7-L, P-I7-LAPSE, P-I7-LATTICE, P-I7-LINKS, P-I7-RANK, P-I7-REENCODE, P-I7-RULES, P-I7-SECTOR-NOTRANSPORT, P-I7-WEIGHT
+verdict: CRA-BLOCKED-AT-STATIC-GEOMETRY-<MISSING=A-GEOMETRY-UPDATE-LAW; EXPRESSIBLE=12/13; CENSUS=8192|ADVANCING=2976|ADMISSIBLE=1232; FORCED=2|FORCED-ADVANCING=0; INVENTORY=i:0,ii:0,iii:1232; SELECTOR-CLOSURE-FIBER=4; COMMUTING-ADVANCING=0-AT-9-OF-11-RULES; TRAJ=CONVERGES:531,DIVERGES:117,UNDEF:108,UNCLASSIFIED:216; LIMIT-CLASSES=27|MOVER-BLIND-LIMIT=YES; NORMALIZATION-FLIPS=216; FOREIGN-FLAGGED=1/1>
