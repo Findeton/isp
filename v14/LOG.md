@@ -507,3 +507,45 @@ OBJECT.  F7: the NULL segment counts rule×arena measurements
 did not match.  F8: 109 coordinates = 66 DISTINCT cell
 families; the 14 locality rules = 9 DISTINCT atlases.
 F9–F12 minors.  Two reviewers pending (effectus, instrument).
+
+## 2026-08-09 — R2 REVIEW: INSTRUMENT FROZEN (v14 LEDGER #18)
+review-r2-instrument.md (7eabff507110) frozen as delivered.
+Grade AWF; 52 process executions, 218 measurements rebuilt,
+**3,770 receipt/paper cells recomputed w/ 0 mismatches**
+(receipt CLEAN), the 40,320 R2-A sweep reproduced, verdict
+rebuilt byte-identically from the receipt.  **INJECTIONS: 13
+executed classes, 11 SURVIVE UNDETECTED** (exit 0, 42/42
+gates PASS, artifacts written): **ALL FIVE R1 VERDICT CLASSES
+— root cause: G-VERDICT-STRING-EQUALITY compares
+build_verdict(payload,swap) against build_verdict(payload),
+THE SAME FUNCTION ON THE SAME INPUT — a #219 recurrence AT
+THE GATE THE #10 ENGRAVING CREATED, and §8's description of
+it is a FALSE GATE CLAIM** (a fully typed nine-segment
+verdict naming rule R999 in a grid of size 1 passes);
+render_check covers 10 of ~40 fields (7 corrupted cells
+reach the receipt); per-block-uniform 2-cell drop rewrites
+densities + LINK-CIRCLES 1→6-OF-80 (R1's M1 recurrence);
+single unguarded bits flip REFUSES/RULES/B1 counts (incl. an
+internally CONTRADICTORY receipt); a dropped sliding window
+w/ grid reported complete; **INJ11: JSON-path drift ["4"]→
+["6"] delivers a 115-RULE GRID, an order-2 transport, an
+ENTIRELY DIFFERENT VERDICT — 5/5 anchors green (the file is
+byte-anchored; the path and read value are NOT)**; the
+"exhaustive" sweep truncated to 100 emits verbatim.  Died as
+designed: on-disk I6 edit → A-R0-I6; coherent-cell drop →
+G-COHERENCE-FORCED.  **NEVER-FALSIFIED: 30 OF 42 GATES — 4
+of which CANNOT FAIL ON ANY INPUT; the receipt carries NO
+never-falsified census (a REGRESSION against R1's EMPTY-at-
+41).**  False numbers BY VALUE: the same two paper-prose
+numbers (25/18 vs true 5/3, contradicted by the paper's own
+table; two vs THREE one-link charts at R048) + the 4-OF-4/
+38-OF-38 denominators mislabelled (measurements, not rules).
+K1 at instrument depth: THE CENSUS IS A THEOREM (closed form
+verified 30/30 edges + 30/30 verdicts; thresholds + b₁
+triples derived exactly).  K3: consistent dimension PROVABLY
+UNREACHABLE in this grid (the fixed point breaks
+vertex-transitivity).  K4: B₂ doubling FORCED by disjointness
+— the pin's blocks-could-interact control does not exist in
+this construction.  Mutants 14/14 honest; CLI exact; three
+plain runs byte-identical; #208 letter holds.  One reviewer
+pending (effectus).
