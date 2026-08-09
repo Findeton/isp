@@ -1,0 +1,57 @@
+--- 1. ANCHORS ---
+  anchors 44 (6 file-bytes, 27 path-value, 11 verbatim-text)
+
+--- 2. THE ARENAS AND THE MOVE CENSUS ---
+  I7 base arena L=3: 11 records, all NON-MERGEABLE (odd axis) -- recorded
+  built A4 (16 sites), A6 (36 sites), A4X d=3 (64 sites); 9 of 11 records admissible, identical at both d=2 arenas
+  move census: M-DYADIC=ADMISSIBLE, M-AXIS-0=BLOCKED, M-AXIS-1=BLOCKED, C-PROJECT=FOREIGN
+  DYADIC incidence unique at 3 of 3 lifts; AXIS diagonal lift carries 2 candidates (R6a's DIAGONAL-INTERVAL-INCIDENCE, met from the merge side)
+  axis-merge readings disagree at 26 of 1404 cells, on 1 of 9 records (G-CURVOFF)
+  CONTROL C-PROJECT: 0 additivity constraints forced, 180 recorded events discarded over 27 coarse intervals -> FOREIGN
+
+--- 3. THE FORCED PART: THE ADDITIVITY DUAL ---
+  count additivity 591/591; front additivity 314/314; readout re-encoding 788/788
+  ALT-INTERIOR (the declared alternative composition) differs at 877 cells -- excluded by the register distinction
+
+--- 4. THE TRANSFORMATION LAW ---
+  q diagonal block additive 234/234; q cross term additive 117/117
+  HA's diagonal sector: 10 of 10 fine-diagonal records merge to diagonal records
+
+--- 5. THE MERGE CHOICE INVENTORY (s, n, m) ---
+  chart subgroup: 9 of 36 translations survive (index 4) at A6
+  matter-merge fiber: 35 of 625 box members are D-equivariant, 9 also relabelling-equivariant; affine dimension over Q = 2 (INFINITE)
+  inventory: FORCED 4 | STABILIZER 0 | FREE 3 -> CHOICE-BEARING
+  forced registers: n, s; free registers: dynamics, m, n x dynamics
+
+--- 6. THE FIXED-POINT CENSUS ---
+  E-AFFINE: box 1125, admissible 775 (identical at A4 and A6), fixed 35
+  lambda spectrum {'2': 31, '4': 4} -- lambda=2 is the homogeneous locus, lambda=4 the graded locus b_j = 2a_j, FORCED diagonal (g = 0)
+  E-HOM 361 (all doublings admissible: 361); E-PARITY 16983563041, fixed 361, one-step image admissible 16855671371
+  diagonal parity records 1679616, of which merge PRESERVES diagonality at 189216
+
+--- 7. THE COARSE-GRAINING SEMIGROUP ---
+  axis merges commute 702/702; composite == dyadic 598/702 (iff diagonal: True)
+  chain: A4 -> 1 steps to L=2, A6 -> 1 steps to L=3; L=1 REFUSED
+
+--- 8. THE DIMENSION EXTENSION (d = 3) ---
+  d=3: 64 of 64 sites covered by 8 blocks of size [8]; 6 of 6 lifts unique
+  R6a's SPLIT left 27 sites unreached at the same arena; the MERGE leaves none
+
+--- 9. MERGE-DYNAMICS COMMUTATION ---
+  commutation cells 118260: nonzero 61780, identically zero 56480
+  front grid: matched pairs commute 1044/1044; mixed pairs 234/1044
+  two routes agree 67716/67716; independent weight route agrees 2880/2880
+  m-rule fiber: UNSOLVABLE at 540 of 540 cells (positive control recovers a constructed solution)
+  support by block parity class: (0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260
+
+--- 10. CONSISTENCY CONTROL: SPLIT-THEN-MERGE ---
+  split-then-merge identity on the count register: 2971/2971
+  R6a split fibers reproduced independently: 9 of 9 records; splittable 6, unsplittable 3
+  count lattice reproduced: 361 admissible, 261 splittable, unique split [[2, 2, 2]]
+
+--- 11. THE VERDICT ---
+  CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>
+
+--- 12. TOTALS ---
+  anchors 44 | gates 55 (55 must-pass, 0 recorded) | mutants 44
+  must-pass failures 0 | anchor failures 0

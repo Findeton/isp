@@ -1,0 +1,4606 @@
+{
+ "anchor_totals": {
+  "file_bytes": 6,
+  "path_value": 27,
+  "total": 44,
+  "verbatim_text": 11
+ },
+ "anchors": [
+  {
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": "1cfee4fc0891",
+   "kind": "file-bytes",
+   "measured": "1cfee4fc0891",
+   "name": "A-PIN-CRC",
+   "ok": true,
+   "provenance": "this unit's pin, frozen at v14 ledger #30"
+  },
+  {
+   "artifact": "v14/note-r0-founding-pin.md",
+   "expected": "e9d2bedff244",
+   "kind": "file-bytes",
+   "measured": "e9d2bedff244",
+   "name": "A-R0-PIN",
+   "ok": true,
+   "provenance": "the v14 founding pin, whose I7 row this unit uses"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "542b8735daf0",
+   "kind": "file-bytes",
+   "measured": "542b8735daf0",
+   "name": "A-I7-RECEIPT",
+   "ok": true,
+   "provenance": "R0 row I7 -- the pinned grammar source"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "f286ba10d2d9",
+   "kind": "file-bytes",
+   "measured": "f286ba10d2d9",
+   "name": "A-HA-PAPER",
+   "ok": true,
+   "provenance": "the HA paper: the written grammar declarations reimplemented here"
+  },
+  {
+   "artifact": "v13/code/ha_successor_exact.py",
+   "expected": "d44cb72f8ee9",
+   "kind": "file-bytes",
+   "measured": "d44cb72f8ee9",
+   "name": "A-HA-CODE",
+   "ok": true,
+   "provenance": "the HA instrument: the exact definitions reimplemented here"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": true,
+   "kind": "file-bytes",
+   "measured": true,
+   "name": "A-R6A-RECEIPT",
+   "ok": true,
+   "provenance": "R6a's DELIVERED artifact -- committed v14 #26, verified #27, UNDER PANEL. The receipt is a LIVE file and its bytes moved during this unit's build; the pin hash and the observed superseding hash are both DECLARED at R6A_ACCEPTED_HASHES, the drift is disclosed at X-R6A-BYTES-MOVED, and the load-bearing check is G-R6A-VALUES-STABLE-UNDER-DRIFT"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": 2,
+   "json_path": [
+    "declarations",
+    "d"
+   ],
+   "kind": "path-value",
+   "measured": 2,
+   "name": "P-I7-D",
+   "ok": true,
+   "provenance": "the primary spatial dimension"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": 3,
+   "json_path": [
+    "declarations",
+    "L"
+   ],
+   "kind": "path-value",
+   "measured": 3,
+   "name": "P-I7-L",
+   "ok": true,
+   "provenance": "sites per direction of the base arena"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": 3,
+   "json_path": [
+    "declarations",
+    "d_ext"
+   ],
+   "kind": "path-value",
+   "measured": 3,
+   "name": "P-I7-DEXT",
+   "ok": true,
+   "provenance": "the declared d=3 extension"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "json_path": [
+    "declarations",
+    "links_d2"
+   ],
+   "kind": "path-value",
+   "measured": [
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "name": "P-I7-LINKS2",
+   "ok": true,
+   "provenance": "the declared d=2 link set"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "json_path": [
+    "declarations",
+    "links_d3"
+   ],
+   "kind": "path-value",
+   "measured": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     1
+    ]
+   ],
+   "name": "P-I7-LINKS3",
+   "ok": true,
+   "provenance": "the declared d=3 link set"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "json_path": [
+    "declarations",
+    "records_d2"
+   ],
+   "kind": "path-value",
+   "measured": {
+    "G-ANISO": [
+     1,
+     4,
+     5
+    ],
+    "G-ANISO2": [
+     4,
+     9,
+     13
+    ],
+    "G-DIAG2": [
+     2,
+     2,
+     4
+    ],
+    "G-FLAT": [
+     1,
+     1,
+     2
+    ],
+    "G-INDEF": [
+     1,
+     1,
+     6
+    ],
+    "G-OFFDIAG": [
+     2,
+     2,
+     6
+    ],
+    "G-OFFDIAG2": [
+     3,
+     5,
+     12
+    ],
+    "G-OFFNEG": [
+     3,
+     5,
+     4
+    ],
+    "G-SINGULAR": [
+     1,
+     1,
+     4
+    ]
+   },
+   "name": "P-I7-RECORDS2",
+   "ok": true,
+   "provenance": "the declared d=2 records"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": {
+    "G3-ANISO": [
+     1,
+     4,
+     9,
+     5,
+     10,
+     13
+    ],
+    "G3-FLAT": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "G3-OFF": [
+     2,
+     2,
+     2,
+     6,
+     4,
+     4
+    ]
+   },
+   "json_path": [
+    "declarations",
+    "records_d3"
+   ],
+   "kind": "path-value",
+   "measured": {
+    "G3-ANISO": [
+     1,
+     4,
+     9,
+     5,
+     10,
+     13
+    ],
+    "G3-FLAT": [
+     1,
+     1,
+     1,
+     2,
+     2,
+     2
+    ],
+    "G3-OFF": [
+     2,
+     2,
+     2,
+     6,
+     4,
+     4
+    ]
+   },
+   "name": "P-I7-RECORDS3",
+   "ok": true,
+   "provenance": "the declared d=3 records"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "json_path": [
+    "declarations",
+    "records_d2_inhomogeneous"
+   ],
+   "kind": "path-value",
+   "measured": [
+    "G-CURVED (diagonal, site-dependent)",
+    "G-CURVOFF (cross term, site-dependent)"
+   ],
+   "name": "P-I7-INHOMOG",
+   "ok": true,
+   "provenance": "the two declared inhomogeneous site rules"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "json_path": [
+    "declarations",
+    "lapse_family"
+   ],
+   "kind": "path-value",
+   "measured": "the |X| site deltas, the constant profile 1, and the d chart ramps",
+   "name": "P-I7-LAPSE",
+   "ok": true,
+   "provenance": "the declared lapse family, rebuilt at every arena"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": 0,
+   "json_path": [
+    "declarations",
+    "density_weight"
+   ],
+   "kind": "path-value",
+   "measured": 0,
+   "name": "P-I7-WEIGHT",
+   "ok": true,
+   "provenance": "the declared density weight w = 0"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "json_path": [
+    "declarations",
+    "chart_group"
+   ],
+   "kind": "path-value",
+   "measured": "the |X| chart translations and the d! direction relabellings, acting on sites, on the record's link counts, on the lapse profiles and on every tensor index",
+   "name": "P-I7-CHART",
+   "ok": true,
+   "provenance": "the chart group whose surviving subgroup is measured here"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": [
+    "A-chart",
+    "A-axis",
+    "A-linkframe",
+    "A-linkhalf",
+    "A-insert",
+    "A-insert-x",
+    "A-insert-2x",
+    "A-notransport",
+    "B-axis",
+    "B-all",
+    "B-chart"
+   ],
+   "json_path": [
+    "declarations",
+    "rules"
+   ],
+   "kind": "path-value",
+   "measured": [
+    "A-chart",
+    "A-axis",
+    "A-linkframe",
+    "A-linkhalf",
+    "A-insert",
+    "A-insert-x",
+    "A-insert-2x",
+    "A-notransport",
+    "B-axis",
+    "B-all",
+    "B-chart"
+   ],
+   "name": "P-I7-RULES",
+   "ok": true,
+   "provenance": "the 11 declared drag rules, reimplemented here"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": [
+    "A-chart",
+    "A-axis",
+    "A-linkframe",
+    "A-insert"
+   ],
+   "json_path": [
+    "declarations",
+    "rules_d3"
+   ],
+   "kind": "path-value",
+   "measured": [
+    "A-chart",
+    "A-axis",
+    "A-linkframe",
+    "A-insert"
+   ],
+   "name": "P-I7-RULES-EXT",
+   "ok": true,
+   "provenance": "I7's own declared rule subfamily, reused as this unit's extension set"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": 6,
+   "json_path": [
+    "declarations",
+    "count_lattice",
+    "axis_max"
+   ],
+   "kind": "path-value",
+   "measured": 6,
+   "name": "P-I7-LATTICE",
+   "ok": true,
+   "provenance": "the declared count box"
+  },
+  {
+   "artifact": "v13/code/ha_successor_receipt.json",
+   "expected": "2",
+   "json_path": [
+    "tables",
+    "readout_reencoding",
+    "determinant"
+   ],
+   "kind": "path-value",
+   "measured": "2",
+   "name": "P-I7-READOUT-DET",
+   "ok": true,
+   "provenance": "record-IS-metric: the re-encoding determinant at d=2"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": "R6A-NO-MOTIVATED-SPLIT",
+   "json_path": [
+    "verdict_head"
+   ],
+   "kind": "path-value",
+   "measured": "R6A-NO-MOTIVATED-SPLIT",
+   "name": "P-R6A-HEAD",
+   "ok": true,
+   "provenance": "R6a's delivered verdict head (UNDER PANEL)"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 27,
+   "json_path": [
+    "move_census",
+    "coarse_intervals"
+   ],
+   "kind": "path-value",
+   "measured": 27,
+   "name": "P-R6A-COARSE-INTERVALS",
+   "ok": true,
+   "provenance": "the coarse intervals of R6a's DYADIC move -- the merge's own denominator"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 972,
+   "json_path": [
+    "forced_part",
+    "additivity_checks"
+   ],
+   "kind": "path-value",
+   "measured": 972,
+   "name": "P-R6A-ADDITIVITY",
+   "ok": true,
+   "provenance": "THE ADDITIVITY DUAL: R6a's forced-part constraint count"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 0,
+   "json_path": [
+    "forced_part",
+    "additivity_violations"
+   ],
+   "kind": "path-value",
+   "measured": 0,
+   "name": "P-R6A-ADDITIVITY-VIOL",
+   "ok": true,
+   "provenance": "R6a measured zero additivity violations"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 361,
+   "json_path": [
+    "count_lattice",
+    "admissible_count_vectors"
+   ],
+   "kind": "path-value",
+   "measured": 361,
+   "name": "P-R6A-LATTICE",
+   "ok": true,
+   "provenance": "R6a's count-lattice census, independently rebuilt here"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": "DIAGONAL-INTERVAL-INCIDENCE",
+   "json_path": [
+    "blocked_branch",
+    "named_fact"
+   ],
+   "kind": "path-value",
+   "measured": "DIAGONAL-INTERVAL-INCIDENCE",
+   "name": "P-R6A-BLOCKED-FACT",
+   "ok": true,
+   "provenance": "the grammar fact R6a's HYPERPLANE branch blocked at -- met here from the merge side"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 2,
+   "json_path": [
+    "blocked_branch",
+    "candidates_per_interval"
+   ],
+   "kind": "path-value",
+   "measured": 2,
+   "name": "P-R6A-BLOCKED-CANDS",
+   "ok": true,
+   "provenance": "R6a measured two candidate interior sites; the merge measures two candidate decompositions"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 54,
+   "json_path": [
+    "cover",
+    "free_links"
+   ],
+   "kind": "path-value",
+   "measured": 54,
+   "name": "P-R6A-COVER",
+   "ok": true,
+   "provenance": "R6a's free refined links -- the split's class-(iii) freedom"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": 27,
+   "json_path": [
+    "dimension_extension",
+    "unreached_sites"
+   ],
+   "kind": "path-value",
+   "measured": 27,
+   "name": "P-R6A-D3-UNREACHED",
+   "ok": true,
+   "provenance": "R6a's d=3 SPLIT is site-INcomplete; the merge is measured site-complete"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": [
+    "G-ANISO2",
+    "G-CURVOFF",
+    "G-DIAG2",
+    "G-OFFDIAG",
+    "G-OFFDIAG2",
+    "G-OFFNEG"
+   ],
+   "json_path": [
+    "forced_part",
+    "splittable_records"
+   ],
+   "kind": "path-value",
+   "measured": [
+    "G-ANISO2",
+    "G-CURVOFF",
+    "G-DIAG2",
+    "G-OFFDIAG",
+    "G-OFFDIAG2",
+    "G-OFFNEG"
+   ],
+   "name": "P-R6A-SPLITTABLE",
+   "ok": true,
+   "provenance": "R6a's splittable records -- independently rebuilt here"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": [
+    "G-ANISO",
+    "G-CURVED",
+    "G-FLAT"
+   ],
+   "json_path": [
+    "forced_part",
+    "unsplittable_records"
+   ],
+   "kind": "path-value",
+   "measured": [
+    "G-ANISO",
+    "G-CURVED",
+    "G-FLAT"
+   ],
+   "name": "P-R6A-UNSPLITTABLE",
+   "ok": true,
+   "provenance": "R6a's unsplittable records -- independently rebuilt here"
+  },
+  {
+   "artifact": "v14/code/r6a_refinement_receipt.json",
+   "expected": {
+    "G-ANISO": 0,
+    "G-ANISO2": 1257565061957837936381,
+    "G-CURVED": 0,
+    "G-CURVOFF": 64562400000,
+    "G-DIAG2": 19683,
+    "G-FLAT": 0,
+    "G-OFFDIAG": 19683,
+    "G-OFFDIAG2": 3904305912313344,
+    "G-OFFNEG": 1801152661463
+   },
+   "json_path": [
+    "split_fibers"
+   ],
+   "kind": "path-value",
+   "measured": {
+    "G-ANISO": 0,
+    "G-ANISO2": 1257565061957837936381,
+    "G-CURVED": 0,
+    "G-CURVOFF": 64562400000,
+    "G-DIAG2": 19683,
+    "G-FLAT": 0,
+    "G-OFFDIAG": 19683,
+    "G-OFFDIAG2": 3904305912313344,
+    "G-OFFNEG": 1801152661463
+   },
+   "name": "P-R6A-FIBERS",
+   "ok": true,
+   "provenance": "R6a's split-fiber table -- reproduced cell by cell here"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-COUNTS-SEMANTIC",
+   "ok": true,
+   "provenance": "the counting semantics that FORCES additivity in both directions"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-FRONT",
+   "ok": true,
+   "provenance": "the front register's semantics -- events committed AT a site"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-MATTER",
+   "ok": true,
+   "provenance": "the matter register is an ADDRESS, not a count -- addresses do not add"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-READOUT",
+   "ok": true,
+   "provenance": "the readout whose commutation with merge is measured here"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-FROZEN-GEOMETRY",
+   "ok": true,
+   "provenance": "why the merge/dynamics comparison is posed on the front and the register"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-DRAG",
+   "ok": true,
+   "provenance": "the drag's ingredients, reimplemented here"
+  },
+  {
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-SECTOR",
+   "ok": true,
+   "provenance": "HA's sector boundary -- recovered here from the semigroup question"
+  },
+  {
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-PIN-MERGE",
+   "ok": true,
+   "provenance": "this unit's thesis, quoted from its own pin"
+  },
+  {
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-PIN-SUM",
+   "ok": true,
+   "provenance": "the pin's additivity-dual clause"
+  },
+  {
+   "artifact": "v14/note-cr-batch-pins.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-PIN-M",
+   "ok": true,
+   "provenance": "the pin's matter-register clause"
+  },
+  {
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": true,
+   "kind": "verbatim-text",
+   "measured": true,
+   "name": "T-R6APIN-ADDITIVITY",
+   "ok": true,
+   "provenance": "the semantic anchor read in the merge direction"
+  }
+ ],
+ "arenas": {
+  "A4X_sites": 64,
+  "A4_sites": 16,
+  "A6_sites": 36,
+  "admissible": 9,
+  "admissible_names": [
+   "G-ANISO",
+   "G-ANISO2",
+   "G-CURVED",
+   "G-CURVOFF",
+   "G-DIAG2",
+   "G-FLAT",
+   "G-OFFDIAG",
+   "G-OFFDIAG2",
+   "G-OFFNEG"
+  ],
+  "base_L": 3,
+  "built": [
+   "A4",
+   "A6",
+   "A4X"
+  ],
+  "non_mergeable_records": 11,
+  "records": 11
+ },
+ "arithmetic": "int / fractions.Fraction only; no float, no tolerance",
+ "axis_block": {
+  "A4": {
+   "G-ANISO": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-ANISO2": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-CURVED": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-CURVOFF": {
+    "cells": 48,
+    "disagreeing": 8
+   },
+   "G-DIAG2": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-FLAT": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-OFFDIAG": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-OFFDIAG2": {
+    "cells": 48,
+    "disagreeing": 0
+   },
+   "G-OFFNEG": {
+    "cells": 48,
+    "disagreeing": 0
+   }
+  },
+  "A6": {
+   "G-ANISO": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-ANISO2": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-CURVED": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-CURVOFF": {
+    "cells": 108,
+    "disagreeing": 18
+   },
+   "G-DIAG2": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-FLAT": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-OFFDIAG": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-OFFDIAG2": {
+    "cells": 108,
+    "disagreeing": 0
+   },
+   "G-OFFNEG": {
+    "cells": 108,
+    "disagreeing": 0
+   }
+  },
+  "cells": 1404,
+  "disagreeing": 26,
+  "reading": "the block is REAL: the two declared tie-resolutions of the ambiguous diagonal lift give DIFFERENT coarse counts, and they do so exactly on the record whose cross term is site-dependent",
+  "records": 9,
+  "records_disagreeing": 1,
+  "which": [
+   "G-CURVOFF"
+  ]
+ },
+ "cache": {
+  "bypass": 1980,
+  "hits": 3774780,
+  "misses": 3600
+ },
+ "chart_subgroup": {
+  "A4": {
+   "block_preserving": 4,
+   "full_group": 32,
+   "index": 4,
+   "relabellings": 2,
+   "surviving_group": 8,
+   "translations": 16
+  },
+  "A6": {
+   "block_preserving": 9,
+   "full_group": 72,
+   "index": 4,
+   "relabellings": 2,
+   "surviving_group": 18,
+   "translations": 36
+  },
+  "reading": "the merge breaks the refined chart group to the block-preserving subgroup: the even translations, of index 2^d.  No pinned symmetry acts WITHIN a block, so no stabiliser can fix a within-block rule"
+ },
+ "choice_inventory": {
+  "classification_rule": "(i) forced by a NAMED pinned declaration with fiber 1; (ii) fixed by a MEASURED stabiliser (equivariant fiber 1); (iii) genuinely free, fiber counted exactly",
+  "forced": 4,
+  "forced_registers": [
+   "n",
+   "s"
+  ],
+  "free_names": [
+   "THE-MATTER-RULE",
+   "THE-LAPSE-RESTRICTION",
+   "THE-FRONT-MERGE-PAIR"
+  ],
+  "free_registers": [
+   "dynamics",
+   "m",
+   "n x dynamics"
+  ],
+  "genuinely_free": 3,
+  "items": [
+   {
+    "class_declared": "i",
+    "evidence": {
+     "merged": 3,
+     "of": 3
+    },
+    "fiber": 1,
+    "forced_by": "the move-class declaration: M-DYADIC merges EVERY coarse interval, so no locus remains to be chosen",
+    "measured_fiber": 1,
+    "name": "MERGE-LOCUS",
+    "register": "-",
+    "what": "which intervals the move merges"
+   },
+   {
+    "class_declared": "i",
+    "evidence": {
+     "lifts": 3,
+     "unique": 3
+    },
+    "fiber": 1,
+    "forced_by": "[P-I7-LINKS2] the declared link set: every dyadic lift has a UNIQUE minimal realisation",
+    "measured_fiber": 1,
+    "name": "MERGE-INCIDENCE",
+    "register": "s",
+    "what": "which refined links realise each coarse interval"
+   },
+   {
+    "class_declared": "i",
+    "evidence": {
+     "alternative_differs_at": 877,
+     "checks": 591,
+     "ok": 591
+    },
+    "fiber": 1,
+    "forced_by": "[T-COUNTS-SEMANTIC] n_l counts division events IN the interval, so events in the whole = events in the parts: the SUM is semantics, not a choice.  This is the R6a dual, verified in the merge direction",
+    "measured_fiber": 1,
+    "name": "INTERVAL-COUNT-COMPOSITION",
+    "register": "s",
+    "what": "how the two sub-interval counts compose"
+   },
+   {
+    "class_declared": "i",
+    "evidence": {
+     "checks": 314,
+     "ok": 314
+    },
+    "fiber": 1,
+    "forced_by": "[T-FRONT] n(x) counts events committed AT the site; the merged site IS the block, so its committed-event count is the block sum",
+    "measured_fiber": 1,
+    "name": "FRONT-COMPOSITION",
+    "register": "n",
+    "what": "the front value at a merged site"
+   },
+   {
+    "class_declared": "iii",
+    "evidence": {
+     "D_equivariant": 35,
+     "affine_dimension": 2,
+     "box": 625,
+     "chart_equivariant": 9,
+     "named_rules": [
+      "M-ANTI",
+      "M-CORNER",
+      "M-MEAN"
+     ],
+     "why_not_stabiliser_fixed": "no pinned symmetry acts WITHIN a block: the surviving chart subgroup is the even translations, which permute blocks and fix every offset"
+    },
+    "fiber": "INFINITE",
+    "fiber_over_the_declared_box": 9,
+    "forced_by": null,
+    "measured_fiber": 9,
+    "name": "THE-MATTER-RULE",
+    "register": "m",
+    "stabiliser_fiber": null,
+    "what": "how the block's address registers combine into one"
+   },
+   {
+    "class_declared": "iii",
+    "evidence": {
+     "declared_rules": 2
+    },
+    "fiber": 2,
+    "forced_by": null,
+    "measured_fiber": 2,
+    "name": "THE-LAPSE-RESTRICTION",
+    "register": "dynamics",
+    "what": "which rule restricts a fine lapse to the coarse arena"
+   },
+   {
+    "class_declared": "iii",
+    "evidence": {
+     "declared_pairs": 4
+    },
+    "fiber": 2,
+    "forced_by": null,
+    "measured_fiber": 2,
+    "name": "THE-FRONT-MERGE-PAIR",
+    "register": "n x dynamics",
+    "what": "which (front merge, lapse restriction) pair the move carries"
+   }
+  ],
+  "qualifier": "CHOICE-BEARING",
+  "stabiliser_fixed": 0
+ },
+ "commutation": {
+  "cells": 118260,
+  "closed_form": "D^i(x) = sum_k c_k N^f(y_k) sum_j Lambda^f(y_k)^{ij} (n(y_k+e_j) - n(y_k)) - N^c(x) sum_j Lambda^c(x)^{ij} (n^c(x+e_j) - n^c(x)),  y_k = iota(x) + delta_k",
+  "fiber_cells": 540,
+  "front_universal_ok": 1044,
+  "front_universal_total": 1044,
+  "grid_cells": 4,
+  "grid_universal": 2,
+  "lambda_cells": 2880,
+  "lambda_ok": 2880,
+  "matter_independence": "the matter record cancels between the two orders, so the defect is a pure drag comparison and is independent of m",
+  "mixed_commuting": 234,
+  "mixed_total": 1044,
+  "nonzero": 61780,
+  "per_grid": {
+   "CORNER/CORNER/M-ANTI": {
+    "cells": 9855,
+    "nonzero": 3564
+   },
+   "CORNER/CORNER/M-CORNER": {
+    "cells": 9855,
+    "nonzero": 1655
+   },
+   "CORNER/CORNER/M-MEAN": {
+    "cells": 9855,
+    "nonzero": 6360
+   },
+   "CORNER/SUM/M-ANTI": {
+    "cells": 9855,
+    "nonzero": 5940
+   },
+   "CORNER/SUM/M-CORNER": {
+    "cells": 9855,
+    "nonzero": 5597
+   },
+   "CORNER/SUM/M-MEAN": {
+    "cells": 9855,
+    "nonzero": 6444
+   },
+   "SUM/CORNER/M-ANTI": {
+    "cells": 9855,
+    "nonzero": 3690
+   },
+   "SUM/CORNER/M-CORNER": {
+    "cells": 9855,
+    "nonzero": 2250
+   },
+   "SUM/CORNER/M-MEAN": {
+    "cells": 9855,
+    "nonzero": 6570
+   },
+   "SUM/SUM/M-ANTI": {
+    "cells": 9855,
+    "nonzero": 6570
+   },
+   "SUM/SUM/M-CORNER": {
+    "cells": 9855,
+    "nonzero": 6570
+   },
+   "SUM/SUM/M-MEAN": {
+    "cells": 9855,
+    "nonzero": 6570
+   }
+  },
+  "per_record": {
+   "G-ANISO": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-ANISO2": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-CURVED": {
+    "cells": 13140,
+    "nonzero": 7006
+   },
+   "G-CURVOFF": {
+    "cells": 13140,
+    "nonzero": 7006
+   },
+   "G-DIAG2": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-FLAT": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-OFFDIAG": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-OFFDIAG2": {
+    "cells": 13140,
+    "nonzero": 6824
+   },
+   "G-OFFNEG": {
+    "cells": 13140,
+    "nonzero": 6824
+   }
+  },
+  "per_rule": {
+   "A-axis": {
+    "cells": 18792,
+    "nonzero": 9710
+   },
+   "A-chart": {
+    "cells": 18792,
+    "nonzero": 9990
+   },
+   "A-insert": {
+    "cells": 18792,
+    "nonzero": 9710
+   },
+   "A-insert-2x": {
+    "cells": 6156,
+    "nonzero": 3208
+   },
+   "A-insert-x": {
+    "cells": 6156,
+    "nonzero": 3208
+   },
+   "A-linkframe": {
+    "cells": 18792,
+    "nonzero": 9710
+   },
+   "A-linkhalf": {
+    "cells": 6156,
+    "nonzero": 3208
+   },
+   "A-notransport": {
+    "cells": 6156,
+    "nonzero": 3208
+   },
+   "B-all": {
+    "cells": 6156,
+    "nonzero": 3335
+   },
+   "B-axis": {
+    "cells": 6156,
+    "nonzero": 3208
+   },
+   "B-chart": {
+    "cells": 6156,
+    "nonzero": 3285
+   }
+  },
+  "positive_control": {
+   "constructed": [
+    "1/3",
+    "1/5",
+    "2/7",
+    "1"
+   ],
+   "recovered": [
+    "1/3",
+    "1/5",
+    "2/7",
+    "1"
+   ],
+   "reproduces_the_image": true,
+   "solver_returns_a_solution": true
+  },
+  "reading": "the FRONT sector commutes exactly when the lapse restriction is the SAME rule as the front merge, at every lapse of the declared family; the mixed pairs commute only at the block-corner deltas.  The REGISTER sector carries a defect that no linear matter-merge rule can remove: the joint system over the declared lapse family is UNSOLVABLE at every censused cell, while the positive control shows the same solver returning a solution when one exists",
+  "support": {
+   "(0, 0)": {
+    "nonzero": 31845,
+    "total": 269892
+   },
+   "(0, 1)": {
+    "nonzero": 23851,
+    "total": 168804
+   },
+   "(1, 0)": {
+    "nonzero": 24082,
+    "total": 168804
+   },
+   "(1, 1)": {
+    "nonzero": 19644,
+    "total": 118260
+   }
+  },
+  "support_signature": "(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260",
+  "two_routes": {
+   "agreeing": 67716,
+   "compared": 67716,
+   "not_shared": "route 2 builds the two orders as configuration maps on (n, m) and coarsens both registers; route 1 never forms a total record",
+   "shared": "both routes call drag(); the shared part is policed by G-LAMBDA-INDEPENDENT, which recomputes every weight the census uses by a second, independently written route"
+  },
+  "unsolvable": 540,
+  "zero": 56480
+ },
+ "compliance": [
+  {
+   "rule": "RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)",
+   "status": "APPLIED -- this sweep enumerates each rule and computes its status from the gate ledger (54 gates registered)"
+  },
+  {
+   "rule": "CR-batch pin -- sources hash-verified AND path-value anchored at run time",
+   "status": "APPLIED via A-PIN-CRC, A-I7-RECEIPT, A-HA-PAPER, A-HA-CODE, A-R6A-RECEIPT, G-PATH-ANCHORS, G-TEXT-ANCHORS, G-ANCHOR-CELL-COMPLETE; falsifiers anchor-hash-*, path-drift, path-value, text-anchor-drift, anchor-skip"
+  },
+  {
+   "rule": "CR-C pin -- R6a is cited as DELIVERED-UNDER-PANEL, status carried",
+   "status": "APPLIED -- every R6a citation carries the UNDER-PANEL tag; and the status is not decorative: R6a's bytes MOVED during this build, the drift is disclosed at X-R6A-BYTES-MOVED, both hashes are declared, and G-R6A-VALUES-STABLE-UNDER-DRIFT measures every (path, value) pair unchanged; falsifiers anchor-hash-A-R6A-RECEIPT, r6a-value-drift"
+  },
+  {
+   "rule": "CR-C pin (1) -- both merge moves constructed; non-mergeable records RECORDED with the reason, never skipped",
+   "status": "APPLIED via G-MOVE-CENSUS-CELL-COMPLETE, G-NON-MERGEABLE-RECORDED, G-INCIDENCE-FORCED-DYADIC, G-INCIDENCE-AMBIGUOUS-AXIS, G-BLOCK-IS-REAL; falsifiers census-drop, nonmergeable-skip, incidence-lax, block-fake"
+  },
+  {
+   "rule": "CR-C pin (1) -- the choice inventory on the FULL record (s, n, m), every freedom classed with its fiber counted",
+   "status": "APPLIED via G-COUNT-ADDITIVITY-FORCED, G-FRONT-ADDITIVITY-FORCED, G-INTERIOR-CONTRIBUTION-EXCLUDED, G-M-FIBER-INFINITE, G-STABILIZER-MEASURED, G-INVENTORY-CLASSIFICATION, G-FIBER-COMPUTED, G-MOTIVATION-QUALIFIER-COMPUTED; falsifiers additivity-violation, front-rule-lax, inventory-corrupt, fiber-typed, stabilizer-lax, mfiber-lax"
+  },
+  {
+   "rule": "CR-C pin (2) -- the transformation law and the covariant set",
+   "status": "APPLIED via G-Q-TRANSFORM-LAW, G-COVARIANT-SET, G-SECTOR-STABILITY; falsifiers qlaw-lax"
+  },
+  {
+   "rule": "CR-C pin (3) -- the fixed-point census over the declared family AND a declared enlargement, with the rescaling measured",
+   "status": "APPLIED via G-FIXED-POINT-CENSUS, G-RESCALING-MEASURED, G-FIXED-POINT-SECTOR, G-PARITY-FLOW; falsifiers fixedpoint-drop, lambda-typed, flow-lax"
+  },
+  {
+   "rule": "CR-C pin (4) -- the commutation census with a nonzero defect CHARACTERISED as a measured object",
+   "status": "APPLIED via G-LIFT-GRID-CELL-COMPLETE, G-FRONT-SECTOR-COMMUTES, G-DEFECT-NONZERO, G-DEFECT-TWO-ROUTES, G-DEFECT-CHARACTERISED, G-DEFECT-IRREDUCIBLE, G-LAMBDA-INDEPENDENT; falsifiers defect-suppress, order-swap, coarsen-skew, defect-support-lax, solver-lax, lambda-route-lax"
+  },
+  {
+   "rule": "CR-C pin control -- R6a's split run backwards must reproduce the merge on its overlap",
+   "status": "APPLIED via G-SPLIT-MERGE-IDENTITY, G-SPLIT-FIBER-ANCHOR, G-COUNT-LATTICE-REPRODUCES-R6A, G-SITE-LOCALITY, G-SPLIT-MERGE-FRONT-IFF; falsifiers splitmerge-lax, locality-lax"
+  },
+  {
+   "rule": "shared mutant minimum -- a negative control the audit must FAIL",
+   "status": "APPLIED via G-CONTROL-FOREIGN on C-PROJECT; falsifier control-pass"
+  },
+  {
+   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE string against an independent rebuild",
+   "status": "APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers verdict-pair-swap, verdict-typed-segment, verdict-append-text, verdict-fully-typed, verdict-inert-segment"
+  },
+  {
+   "rule": "#20 compliance claims are gate claims: a comparator that cannot disagree with the object under test is vacuous",
+   "status": "APPLIED -- reconstruct_verdict_from_receipt() shares no code and no input with build_verdict(); it reads the RECEIPT OBJECT alone, and all five injection classes plus head-constant die on it"
+  },
+  {
+   "rule": "#10 render from the gated object (one object, one source of truth)",
+   "status": "APPLIED via G-RENDER-FROM-THE-GATED-OBJECT; falsifier render-escape"
+  },
+  {
+   "rule": "#20 prose renders from the receipt",
+   "status": "APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT over the rendered claim set; falsifier prose-claim-drift"
+  },
+  {
+   "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair",
+   "status": "APPLIED -- 27 path-value rows and 11 verbatim-text rows; falsifiers path-drift, path-value, text-anchor-drift"
+  },
+  {
+   "rule": "#234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail",
+   "status": "APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE and G-VERDICT-ALL-HEADS-REACHABLE -- flippability is tested by perturbing the RECEIPT ROW each segment derives from; falsifiers verdict-inert-segment, head-constant"
+  },
+  {
+   "rule": "#234 counts are computed, never typed",
+   "status": "APPLIED via G-FIBER-COMPUTED, G-RESCALING-MEASURED, G-COUNT-LATTICE-REPRODUCES-R6A; falsifiers fiber-typed, lambda-typed"
+  },
+  {
+   "rule": "#219 a gate clause may not compare an object against a copy of itself routed through the component under test",
+   "status": "APPLIED -- G-LAMBDA-INDEPENDENT recomputes every weight by a second, independently written route; the split-fiber comparator is this unit's own rebuild against R6a's delivered table; the verdict comparator reads the receipt only"
+  },
+  {
+   "rule": "#219/#185 a zero-hit cache gate is vacuous, and a self-test routed through the memo tests the cache",
+   "status": "APPLIED via G-CACHE-EXERCISED and G-CACHE-FRESH-EQUALS-MEMO, whose fresh phase bypasses the memo and whose bypass count is gated nonzero; falsifiers cache-alias, cache-lax"
+  },
+  {
+   "rule": "#208 no gate predicate may reference mutant identity",
+   "status": "APPLIED via G-NO-MUTANT-IDENTITY -- run-mode identity is read by instrument helpers alone, measured by an AST scan validated with synthetic injections it must flag"
+  },
+  {
+   "rule": "#313 boundary parity: a Boolean-connective boundary carries a parity-witness gate whose death certificate is the measured delta of the alternative",
+   "status": "APPLIED via G-INTERIOR-CONTRIBUTION-EXCLUDED -- the declared alternative composition's delta is measured and printed"
+  },
+  {
+   "rule": "#314 precheck doctrine: a precheck may gate which candidates are censused but may never name the verdict",
+   "status": "APPLIED -- the arena predicate and the incidence classification gate WHICH moves are censused; every verdict-naming fact (the fibers, the defect, the fixed points, the consistency counts) is measured on the censused objects"
+  },
+  {
+   "rule": "#313 repair propagation: gates diffed against every rule engraved since the pin froze",
+   "status": "APPLIED -- all five 2026-08-09 engravings are carried at birth, each with an injection-falsifier that must die at it"
+  },
+  {
+   "rule": "RUNBOOK 15 declared-arena discipline: arenas declared as data, arena-relative quantities never entered as conclusions",
+   "status": "APPLIED -- the arenas, records, fronts, lapses, merge rules and enlargements are declared rows of this receipt; the L-dependence of the fixed-point census is MEASURED (identical at A4 and A6) rather than assumed, and every count is reported with its arena"
+  },
+  {
+   "rule": "RUNBOOK 4 controls in both directions",
+   "status": "APPLIED -- positive: the m-rule solver recovers a constructed solution (G-DEFECT-IRREDUCIBLE); negative: C-PROJECT is failed by the same audit (G-CONTROL-FOREIGN)"
+  },
+  {
+   "rule": "RUNBOOK 4 determinism: two full runs identical modulo timing",
+   "status": "APPLIED -- the delivery writes no timing stamp into either artifact"
+  }
+ ],
+ "consistency": {
+  "count_lattice": {
+   "admissible": 361,
+   "agrees_with_r6a": true,
+   "splittable": 261,
+   "unique_admissible_split": [
+    [
+     2,
+     2,
+     2
+    ]
+   ]
+  },
+  "fiber_rows": [
+   {
+    "agree": true,
+    "mine_fiber": 0,
+    "mine_per_site": [
+     0
+    ],
+    "r6a_fiber": 0,
+    "r6a_per_site": [
+     0
+    ],
+    "record": "G-ANISO"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 1257565061957837936381,
+    "mine_per_site": [
+     221
+    ],
+    "r6a_fiber": 1257565061957837936381,
+    "r6a_per_site": [
+     221
+    ],
+    "record": "G-ANISO2"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 0,
+    "mine_per_site": [
+     0,
+     3,
+     7,
+     18
+    ],
+    "r6a_fiber": 0,
+    "r6a_per_site": [
+     0,
+     3,
+     7,
+     18
+    ],
+    "record": "G-CURVED"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 64562400000,
+    "mine_per_site": [
+     3,
+     8,
+     15,
+     20,
+     35,
+     61
+    ],
+    "r6a_fiber": 64562400000,
+    "r6a_per_site": [
+     3,
+     8,
+     15,
+     20,
+     35,
+     61
+    ],
+    "record": "G-CURVOFF"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 19683,
+    "mine_per_site": [
+     3
+    ],
+    "r6a_fiber": 19683,
+    "r6a_per_site": [
+     3
+    ],
+    "record": "G-DIAG2"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 0,
+    "mine_per_site": [
+     0
+    ],
+    "r6a_fiber": 0,
+    "r6a_per_site": [
+     0
+    ],
+    "record": "G-FLAT"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 19683,
+    "mine_per_site": [
+     3
+    ],
+    "r6a_fiber": 19683,
+    "r6a_per_site": [
+     3
+    ],
+    "record": "G-OFFDIAG"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 3904305912313344,
+    "mine_per_site": [
+     54
+    ],
+    "r6a_fiber": 3904305912313344,
+    "r6a_per_site": [
+     54
+    ],
+    "record": "G-OFFDIAG2"
+   },
+   {
+    "agree": true,
+    "mine_fiber": 1801152661463,
+    "mine_per_site": [
+     23
+    ],
+    "r6a_fiber": 1801152661463,
+    "r6a_per_site": [
+     23
+    ],
+    "record": "G-OFFNEG"
+   }
+  ],
+  "fibers_compared": 9,
+  "fibers_reproduced": 9,
+  "front_iff": true,
+  "front_iff_rows": [
+   {
+    "identity": true,
+    "new_front_value": 0
+   },
+   {
+    "identity": false,
+    "new_front_value": 1
+   }
+  ],
+  "front_reading": "under the FORCED block-sum front rule, split-then-merge is the identity on the front register exactly when R6a's class-(iii) NEW-FRONT-VALUES are zero; the merge direction therefore cuts an INFINITE R6a fiber to a single point -- conditionally on demanding the identity, which is stated and not hidden",
+  "identity_checks": 2971,
+  "identity_ok": 2971,
+  "matter_reading": "under M-CORNER the identity on the matter register is unconditional; under any other rule in the fiber it holds exactly when the split's new-site addresses agree with the corner address",
+  "per_record": {
+   "G-ANISO": {
+    "fiber": 0,
+    "per_site": [
+     0
+    ],
+    "status": "UNSPLITTABLE"
+   },
+   "G-ANISO2": {
+    "fiber": 1257565061957837936381,
+    "per_site": [
+     221
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-CURVED": {
+    "fiber": 0,
+    "per_site": [
+     0,
+     3,
+     7,
+     18
+    ],
+    "status": "UNSPLITTABLE"
+   },
+   "G-CURVOFF": {
+    "fiber": 64562400000,
+    "per_site": [
+     3,
+     8,
+     15,
+     20,
+     35,
+     61
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-DIAG2": {
+    "fiber": 19683,
+    "per_site": [
+     3
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-FLAT": {
+    "fiber": 0,
+    "per_site": [
+     0
+    ],
+    "status": "UNSPLITTABLE"
+   },
+   "G-INDEF": {
+    "fiber": 0,
+    "per_site": [],
+    "status": "INADMISSIBLE"
+   },
+   "G-OFFDIAG": {
+    "fiber": 19683,
+    "per_site": [
+     3
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-OFFDIAG2": {
+    "fiber": 3904305912313344,
+    "per_site": [
+     54
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-OFFNEG": {
+    "fiber": 1801152661463,
+    "per_site": [
+     23
+    ],
+    "status": "SPLITTABLE"
+   },
+   "G-SINGULAR": {
+    "fiber": 0,
+    "per_site": [],
+    "status": "INADMISSIBLE"
+   }
+  },
+  "site_locality": "the split fiber factorises over coarse sites and the merge is site-local, so a per-site exhaustive check IS fiber-exhaustive",
+  "splittable": 6,
+  "unsplittable": 3
+ },
+ "control": {
+  "additivity_constraints": 0,
+  "coarse_intervals": 27,
+  "comparison": "M-DYADIC forces 27 additivity constraints and represents 27 of 27 coarse intervals; C-PROJECT forces 0 and discards 180 recorded events",
+  "events_discarded": 180,
+  "free_rule": "the coarse count is READ OFF one refined link; the other half of every coarse interval constrains nothing",
+  "move": "C-PROJECT",
+  "qualifier": "FOREIGN"
+ },
+ "d3": {
+  "block_sizes": [
+   8
+  ],
+  "blocks": 8,
+  "covered": 64,
+  "lifts": 6,
+  "r6a_unreached": 27,
+  "reading": "at d = 3 the declared link set still gives every coarse lift a UNIQUE minimal realisation, and the dyadic blocks partition the site set: the merge is TOTAL.  R6a measured the SPLIT site-incomplete at the same arena -- one parity class of refined sites lies on no coarse interval.  Merging is the direction the grammar licenses, and this is where the asymmetry is sharpest",
+  "rows": [
+   {
+    "admissible": true,
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     3,
+     3,
+     3,
+     6,
+     6,
+     6
+    ],
+    "record": "G-CURVED"
+   },
+   {
+    "admissible": true,
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     5,
+     5,
+     5,
+     16,
+     14,
+     14
+    ],
+    "record": "G-CURVOFF"
+   },
+   {
+    "admissible": true,
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     8,
+     18,
+     10,
+     20,
+     26
+    ],
+    "record": "G3-ANISO"
+   },
+   {
+    "admissible": true,
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     2,
+     2,
+     4,
+     4,
+     4
+    ],
+    "record": "G3-FLAT"
+   },
+   {
+    "admissible": true,
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     4,
+     4,
+     4,
+     12,
+     8,
+     8
+    ],
+    "record": "G3-OFF"
+   }
+  ],
+  "sites": 64,
+  "unique": 6
+ },
+ "declarations": {
+  "base_arena": "I7's declared arena: X = (Z_L)^d, L = 3, d = 2 primary / d = 3 extension",
+  "built_arenas": {
+   "A4": {
+    "d": 2,
+    "shape": [
+     4,
+     4
+    ],
+    "why": "the smallest even-L arena of I7's class"
+   },
+   "A4X": {
+    "d": 3,
+    "shape": [
+     4,
+     4,
+     4
+    ],
+    "why": "the declared dimension extension"
+   },
+   "A6": {
+    "d": 2,
+    "shape": [
+     6,
+     6
+    ],
+    "why": "the 2:1 merge target of I7's own L = 3 arena -- the R6a overlap"
+   }
+  },
+  "enlargements": {
+   "E-AFFINE": "n_{e_j}(x) = a_j + b_j x_j and n_diag = n_{e_0} + n_{e_1} + 2g, over the declared parameter box a_j in 1..3, b_j in 0..4, g in -2..2",
+   "E-HOM": "every admissible homogeneous count vector in I7's declared count box",
+   "E-PARITY": "records whose count vector depends only on the site parity class (Z_2)^d, each class drawn from E-HOM"
+  },
+  "extension_rule_set": "I7's own declared d=3 rule subfamily (arena A6 extension)",
+  "front_merge_rules": {
+   "CORNER": "n^c(x) = n^f(iota(x))",
+   "SUM": "n^c(x) = sum over the block"
+  },
+  "fronts": {
+   "F-RAMP": "n(x) = x_0",
+   "F-SYM": "n(x) = x_0 * x_1",
+   "F-ZERO": "n = 0"
+  },
+  "lapse_restrict_rules": {
+   "CORNER": "N^c(x) = N^f(iota(x))",
+   "SUM": "N^c(x) = sum over the block"
+  },
+  "matter_coefficient_box": "c_delta in {0, 1/4, 1/2, 3/4, 1} independently at each block offset",
+  "matter_merge_rules": {
+   "M-ANTI": "c = (0,0,0,1)",
+   "M-CORNER": "c = (1,0,0,0)",
+   "M-MEAN": "c = (1/4,1/4,1/4,1/4)"
+  },
+  "merge_moves": {
+   "C-PROJECT": "[NEGATIVE CONTROL] corner projection: read the coarse count off the base-corner link, merging no interval",
+   "M-AXIS-0": "2:1 axis block-merge along declared axis 0, block 2",
+   "M-AXIS-1": "2:1 axis block-merge along declared axis 1, block 2",
+   "M-DYADIC": "full dyadic coarsening: every axis halved, block 2^d, 2L -> L"
+  },
+  "paper": "v14/paper-07-coarse-graining.md",
+  "primary_rule_set": "I7's 11 declared drag rules (arena A4)",
+  "registers": {
+   "m == 0": "the zero address register",
+   "m == 1": "the unit address register"
+  },
+  "s_merge_alternative": "ALT-INTERIOR: the same sum PLUS the front value at the interior site [the declared alternative composition, measured]",
+  "s_merge_rule": "n^c_l(x) = sum of the counts on the refined links realising the coarse interval -- FORCED by the counting semantics [T-COUNTS-SEMANTIC]",
+  "tie_rules": {
+   "A": "axis-step first",
+   "B": "diagonal-step first"
+  },
+  "unit": "v14 CR-C -- THE COARSE-GRAINING SEMIGROUP"
+ },
+ "disclosures": [
+  {
+   "id": "X-UNDER-PANEL",
+   "text": "R6a's artifacts are DELIVERED and adjudicator-verified but UNDER PANEL (v14 #26/#27/#28).  Every number this unit reads from them is anchored by hash and by path, and every number it compares against them is independently rebuilt here; if the panel moves an R6a number, this unit's anchors fail loudly rather than silently agreeing."
+  },
+  {
+   "id": "X-R6A-BYTES-MOVED",
+   "text": "R6a's receipt is a LIVE artifact under panel, and its bytes moved while this unit was being built: the pin names sha256-12 022c3f488a93 and the observed superseding hash is 94adec72ab11 (a panel repair -- its gate count went 48 -> 71, its mutant count 34 -> 78, and a MECHANISM segment was added to its verdict string).  Both hashes are DECLARED in this instrument; the citation this unit actually rests on is the twelve (path, value) pairs it reads, every one of which is MEASURED unchanged across the drift at G-R6A-VALUES-STABLE-UNDER-DRIFT.  This is the LOG #4 lesson applied at run time: a unit reading a tree that is still moving must anchor the values, not only the bytes, and must say so."
+  },
+  {
+   "id": "X-NOTRANSPORT",
+   "text": "At the level of a SINGLE H_a[N] step the rules A-insert and A-notransport supply the same weight, so the one-step commutation census cannot separate them; the frozen-front behaviour is a property of the composition, which this unit does not form.  The duplicate row is disclosed, not claimed as an independent measurement."
+  },
+  {
+   "id": "X-FRONT-IFF-CONDITIONAL",
+   "text": "The statement that the merge direction forces R6a's free NEW-FRONT-VALUES to zero is CONDITIONAL on demanding that split-then-merge be the identity on the front register under the forced block-sum rule.  It is a consequence of a demand this unit states, not a derivation from the pinned grammar alone."
+  },
+  {
+   "id": "X-SECTOR-SCOPE",
+   "text": "HA's diagonal sector is measured merge-stable on the DECLARED record family and measurably NOT stable on the declared parity enlargement.  Both counts are printed; neither is generalised."
+  },
+  {
+   "id": "X-ROUTES-SHARE-DRAG",
+   "text": "The closed form and the literal composition both call drag().  A common-mode error in drag() would be invisible to G-DEFECT-TWO-ROUTES and is policed instead by G-LAMBDA-INDEPENDENT, which recomputes every weight the census uses by a second, independently written route, and by the positive control at G-DEFECT-IRREDUCIBLE."
+  },
+  {
+   "id": "X-EXTENSION-RULE-SET",
+   "text": "The A6 commutation census runs I7's own declared d=3 rule subfamily rather than all eleven rules -- the same narrowing I7 used for its own extension, anchored at P-I7-RULES-EXT.  The A4 census carries all eleven.  The scope is printed at every count."
+  }
+ ],
+ "falsifier_census": {
+  "anchors": 44,
+  "denominator": "62 of 97 registered gates and anchors carry no declared falsifier of their own",
+  "falsifier_map": {
+   "A-HA-CODE": [
+    "anchor-hash-A-HA-CODE"
+   ],
+   "A-HA-PAPER": [
+    "anchor-hash-A-HA-PAPER"
+   ],
+   "A-I7-RECEIPT": [
+    "anchor-hash-A-I7-RECEIPT"
+   ],
+   "A-R6A-RECEIPT": [
+    "anchor-hash-A-R6A-RECEIPT"
+   ],
+   "G-ANCHOR-CELL-COMPLETE": [
+    "anchor-skip"
+   ],
+   "G-BLOCK-IS-REAL": [
+    "block-fake"
+   ],
+   "G-CACHE-FRESH-EQUALS-MEMO": [
+    "cache-alias",
+    "cache-lax"
+   ],
+   "G-CONTROL-FOREIGN": [
+    "control-pass"
+   ],
+   "G-COUNT-ADDITIVITY-FORCED": [
+    "additivity-violation"
+   ],
+   "G-DEFECT-CHARACTERISED": [
+    "defect-support-lax"
+   ],
+   "G-DEFECT-IRREDUCIBLE": [
+    "solver-lax"
+   ],
+   "G-DEFECT-NONZERO": [
+    "defect-suppress"
+   ],
+   "G-DEFECT-TWO-ROUTES": [
+    "order-swap",
+    "coarsen-skew"
+   ],
+   "G-FIBER-COMPUTED": [
+    "fiber-typed"
+   ],
+   "G-FLOATGUARD": [
+    "float-lax"
+   ],
+   "G-FRONT-ADDITIVITY-FORCED": [
+    "front-rule-lax"
+   ],
+   "G-INCIDENCE-AMBIGUOUS-AXIS": [
+    "incidence-lax"
+   ],
+   "G-INCIDENCE-FORCED-DYADIC": [
+    "incidence-fake-tie"
+   ],
+   "G-INVENTORY-CLASSIFICATION": [
+    "inventory-corrupt"
+   ],
+   "G-LAMBDA-INDEPENDENT": [
+    "lambda-route-lax"
+   ],
+   "G-M-FIBER-INFINITE": [
+    "mfiber-lax"
+   ],
+   "G-MOVE-CENSUS-CELL-COMPLETE": [
+    "census-drop"
+   ],
+   "G-NON-MERGEABLE-RECORDED": [
+    "nonmergeable-skip"
+   ],
+   "G-PARITY-FLOW": [
+    "flow-lax"
+   ],
+   "G-PATH-ANCHORS": [
+    "path-drift",
+    "path-value"
+   ],
+   "G-PROSE-RENDERS-FROM-THE-RECEIPT": [
+    "prose-claim-drift"
+   ],
+   "G-Q-TRANSFORM-LAW": [
+    "qlaw-lax"
+   ],
+   "G-R6A-VALUES-STABLE-UNDER-DRIFT": [
+    "r6a-value-drift"
+   ],
+   "G-RENDER-FROM-THE-GATED-OBJECT": [
+    "render-escape"
+   ],
+   "G-RESCALING-MEASURED": [
+    "fixedpoint-drop",
+    "lambda-typed"
+   ],
+   "G-SITE-LOCALITY": [
+    "locality-lax"
+   ],
+   "G-SPLIT-MERGE-IDENTITY": [
+    "splitmerge-lax"
+   ],
+   "G-STABILIZER-MEASURED": [
+    "stabilizer-lax"
+   ],
+   "G-TEXT-ANCHORS": [
+    "text-anchor-drift"
+   ],
+   "G-VERDICT-STRING-EQUALITY": [
+    "verdict-pair-swap",
+    "verdict-typed-segment",
+    "verdict-append-text",
+    "verdict-fully-typed",
+    "verdict-inert-segment",
+    "head-constant"
+   ]
+  },
+  "gates": 53,
+  "gates_with_a_declared_falsifier": 35,
+  "mutants": 44,
+  "never_falsified": [
+   "G-NO-MUTANT-IDENTITY",
+   "G-ARENA-CLASS",
+   "G-INTERIOR-CONTRIBUTION-EXCLUDED",
+   "G-READOUT-REENCODING",
+   "G-COVARIANT-SET",
+   "G-SECTOR-STABILITY",
+   "G-MOTIVATION-QUALIFIER-COMPUTED",
+   "G-FIXED-POINT-CENSUS",
+   "G-FIXED-POINT-SECTOR",
+   "G-SEMIGROUP-AXIS-COMMUTE",
+   "G-SEMIGROUP-FACTORISATION",
+   "G-MERGE-TERMINATES",
+   "G-D3-SITE-COMPLETE",
+   "G-LIFT-GRID-CELL-COMPLETE",
+   "G-FRONT-SECTOR-COMMUTES",
+   "G-SPLIT-FIBER-ANCHOR",
+   "G-COUNT-LATTICE-REPRODUCES-R6A",
+   "G-SPLIT-MERGE-FRONT-IFF",
+   "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "G-VERDICT-ALL-HEADS-REACHABLE",
+   "G-CACHE-EXERCISED",
+   "G-NO-FLOATS-IN-RECEIPT",
+   "A-PIN-CRC",
+   "A-R0-PIN",
+   "P-I7-D",
+   "P-I7-L",
+   "P-I7-DEXT",
+   "P-I7-LINKS2",
+   "P-I7-LINKS3",
+   "P-I7-RECORDS2",
+   "P-I7-RECORDS3",
+   "P-I7-INHOMOG",
+   "P-I7-LAPSE",
+   "P-I7-WEIGHT",
+   "P-I7-CHART",
+   "P-I7-RULES",
+   "P-I7-RULES-EXT",
+   "P-I7-LATTICE",
+   "P-I7-READOUT-DET",
+   "P-R6A-HEAD",
+   "P-R6A-COARSE-INTERVALS",
+   "P-R6A-ADDITIVITY",
+   "P-R6A-ADDITIVITY-VIOL",
+   "P-R6A-LATTICE",
+   "P-R6A-BLOCKED-FACT",
+   "P-R6A-BLOCKED-CANDS",
+   "P-R6A-COVER",
+   "P-R6A-D3-UNREACHED",
+   "P-R6A-SPLITTABLE",
+   "P-R6A-UNSPLITTABLE",
+   "P-R6A-FIBERS",
+   "T-COUNTS-SEMANTIC",
+   "T-FRONT",
+   "T-MATTER",
+   "T-READOUT",
+   "T-FROZEN-GEOMETRY",
+   "T-DRAG",
+   "T-SECTOR",
+   "T-PIN-MERGE",
+   "T-PIN-SUM",
+   "T-PIN-M",
+   "T-R6APIN-ADDITIVITY"
+  ],
+  "never_falsified_count": 62,
+  "waivers": {
+   "A-PIN-CRC": "no falsifier of its own; this unit's own pin files are recomputed and exit 1 on mismatch on every run",
+   "A-R0-PIN": "no falsifier of its own; this unit's own pin files are recomputed and exit 1 on mismatch on every run",
+   "G-ARENA-CLASS": "a declaration check: the arenas are built here from the pinned schema, so no independent object can drift from them",
+   "G-CACHE-EXERCISED": "cache-lax moves the counters it reads",
+   "G-COUNT-LATTICE-REPRODUCES-R6A": "the anchor rows it compares against carry their own mutants",
+   "G-COVARIANT-SET": "a cell-completeness check on a declared list",
+   "G-D3-SITE-COMPLETE": "incidence-lax moves the lift census it reads",
+   "G-FIXED-POINT-CENSUS": "cell-completeness over the declared parameter box",
+   "G-FIXED-POINT-SECTOR": "fixedpoint-drop and lambda-typed both move the census it reads",
+   "G-FRONT-SECTOR-COMMUTES": "front-rule-lax moves the coarsening it reads",
+   "G-INTERIOR-CONTRIBUTION-EXCLUDED": "a measured delta of the declared alternative; a mutant that removed the delta would remove the alternative, not the gate",
+   "G-LIFT-GRID-CELL-COMPLETE": "a cell-completeness check on a declared grid",
+   "G-MERGE-TERMINATES": "an arithmetic property of the declared arena shapes",
+   "G-MOTIVATION-QUALIFIER-COMPUTED": "analytically forced once the inventory is fixed; inventory-corrupt moves the inventory it reads",
+   "G-NO-FLOATS-IN-RECEIPT": "float-lax blinds the source scan, not the receipt scan; the receipt scan is total by construction",
+   "G-NO-MUTANT-IDENTITY": "an AST scan validated by synthetic injections it must flag; a mutant of the scan would be a mutant of the falsifier",
+   "G-READOUT-REENCODING": "re-verification of a pinned I7 fact",
+   "G-SECTOR-STABILITY": "measured on the declared family; the enlargement's counter-examples are reported in the same receipt",
+   "G-SEMIGROUP-AXIS-COMMUTE": "incidence-lax moves the merge the gate compares",
+   "G-SEMIGROUP-FACTORISATION": "incidence-lax moves the merge the gate compares",
+   "G-SPLIT-FIBER-ANCHOR": "the anchor rows it compares against carry their own mutants",
+   "G-SPLIT-MERGE-FRONT-IFF": "a two-sided measurement whose other side is reported",
+   "G-VERDICT-ALL-HEADS-REACHABLE": "its own falsifier is the synthetic probe it runs",
+   "G-VERDICT-SEGMENTS-FLIPPABLE": "its own falsifier is the flip probe it runs",
+   "P-I7-CHART": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-D": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-DEXT": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-INHOMOG": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-L": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-LAPSE": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-LATTICE": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-LINKS2": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-LINKS3": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-READOUT-DET": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-RECORDS2": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-RECORDS3": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-RULES": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-RULES-EXT": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-I7-WEIGHT": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-ADDITIVITY": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-ADDITIVITY-VIOL": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-BLOCKED-CANDS": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-BLOCKED-FACT": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-COARSE-INTERVALS": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-COVER": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-D3-UNREACHED": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-FIBERS": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-HEAD": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-LATTICE": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-SPLITTABLE": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "P-R6A-UNSPLITTABLE": "no falsifier of its own; the path-value rows are covered AS A CLASS by path-drift and path-value, which kill G-PATH-ANCHORS, and every row is recomputed and exits 1 on mismatch on every run",
+   "T-COUNTS-SEMANTIC": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-DRAG": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-FRONT": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-FROZEN-GEOMETRY": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-MATTER": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-PIN-M": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-PIN-MERGE": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-PIN-SUM": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-R6APIN-ADDITIVITY": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-READOUT": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS",
+   "T-SECTOR": "no falsifier of its own; the verbatim rows are covered AS A CLASS by text-anchor-drift, which kills G-TEXT-ANCHORS"
+  }
+ },
+ "fixed_points": {
+  "E_HOM": 361,
+  "E_HOM_diagonal": 36,
+  "E_HOM_doubling_admissible": 361,
+  "E_PARITY": 16983563041,
+  "E_PARITY_diagonal": 1679616,
+  "E_PARITY_diagonal_sector_preserved": 189216,
+  "E_PARITY_fixed": 361,
+  "E_PARITY_one_step_image_admissible": 16855671371,
+  "E_PARITY_q_componentwise_additive": 2052770184,
+  "L_independence": {
+   "A4": [
+    1125,
+    775,
+    35
+   ],
+   "A6": [
+    1125,
+    775,
+    35
+   ]
+  },
+  "affine_admissible": 775,
+  "affine_box": 1125,
+  "affine_fixed": 35,
+  "lambda2": 31,
+  "lambda2_homogeneous": true,
+  "lambda4": 4,
+  "lambda4_diagonal": true,
+  "lambda4_members": [
+   [
+    1,
+    1,
+    2,
+    2,
+    0
+   ],
+   [
+    1,
+    2,
+    2,
+    4,
+    0
+   ],
+   [
+    2,
+    1,
+    4,
+    2,
+    0
+   ],
+   [
+    2,
+    2,
+    4,
+    4,
+    0
+   ]
+  ],
+  "lambda_spectrum": {
+   "2": 31,
+   "4": 4
+  },
+  "parameterisation": "merge acts on (a_0, a_1, b_0, b_1, g) by (2a_j + b_j, 4b_j, 2g); a record is merge-self-similar when the image is lambda times the record for ONE rational lambda",
+  "reading": "TWO fixed-point families with DISTINCT rescalings.  lambda = 2 is the homogeneous locus b = 0 (any cross term); lambda = 4 is the graded locus b_j = 2 a_j, and it is FORCED into HA's diagonal sector because the cross term rescales by 2 while a graded axis count rescales by 4",
+  "transversality": "n_{e_0}(2x+diag) + n_{e_1}(2x+diag) = n_{e_0}(2x+e_0) + n_{e_1}(2x+e_1) -- the transversality condition"
+ },
+ "forced": {
+  "additivity_checks": 591,
+  "additivity_ok": 591,
+  "alt_interior_delta": 877,
+  "alt_rule": "ALT-INTERIOR: the same sum PLUS the front value at the interior site [the declared alternative composition, measured]",
+  "front_checks": 314,
+  "front_ok": 314,
+  "readout_cells": 788,
+  "readout_ok": 788,
+  "s_rule": "n^c_l(x) = sum of the counts on the refined links realising the coarse interval -- FORCED by the counting semantics [T-COUNTS-SEMANTIC]"
+ },
+ "gates": [
+  {
+   "evidence": {
+    "accepted": [
+     "022c3f488a93",
+     "94adec72ab11"
+    ],
+    "bytes_moved": true,
+    "observed_hash": "94adec72ab11",
+    "path_value_rows_read": 12,
+    "path_value_rows_unchanged": 12,
+    "pin_hash": "022c3f488a93",
+    "rows": [
+     {
+      "expected": "R6A-NO-MOTIVATED-SPLIT",
+      "json_path": [
+       "verdict_head"
+      ],
+      "name": "P-R6A-HEAD",
+      "ok": true
+     },
+     {
+      "expected": 27,
+      "json_path": [
+       "move_census",
+       "coarse_intervals"
+      ],
+      "name": "P-R6A-COARSE-INTERVALS",
+      "ok": true
+     },
+     {
+      "expected": 972,
+      "json_path": [
+       "forced_part",
+       "additivity_checks"
+      ],
+      "name": "P-R6A-ADDITIVITY",
+      "ok": true
+     },
+     {
+      "expected": 0,
+      "json_path": [
+       "forced_part",
+       "additivity_violations"
+      ],
+      "name": "P-R6A-ADDITIVITY-VIOL",
+      "ok": true
+     },
+     {
+      "expected": 361,
+      "json_path": [
+       "count_lattice",
+       "admissible_count_vectors"
+      ],
+      "name": "P-R6A-LATTICE",
+      "ok": true
+     },
+     {
+      "expected": "DIAGONAL-INTERVAL-INCIDENCE",
+      "json_path": [
+       "blocked_branch",
+       "named_fact"
+      ],
+      "name": "P-R6A-BLOCKED-FACT",
+      "ok": true
+     },
+     {
+      "expected": 2,
+      "json_path": [
+       "blocked_branch",
+       "candidates_per_interval"
+      ],
+      "name": "P-R6A-BLOCKED-CANDS",
+      "ok": true
+     },
+     {
+      "expected": 54,
+      "json_path": [
+       "cover",
+       "free_links"
+      ],
+      "name": "P-R6A-COVER",
+      "ok": true
+     },
+     {
+      "expected": 27,
+      "json_path": [
+       "dimension_extension",
+       "unreached_sites"
+      ],
+      "name": "P-R6A-D3-UNREACHED",
+      "ok": true
+     },
+     {
+      "expected": [
+       "G-ANISO2",
+       "G-CURVOFF",
+       "G-DIAG2",
+       "G-OFFDIAG",
+       "G-OFFDIAG2",
+       "G-OFFNEG"
+      ],
+      "json_path": [
+       "forced_part",
+       "splittable_records"
+      ],
+      "name": "P-R6A-SPLITTABLE",
+      "ok": true
+     },
+     {
+      "expected": [
+       "G-ANISO",
+       "G-CURVED",
+       "G-FLAT"
+      ],
+      "json_path": [
+       "forced_part",
+       "unsplittable_records"
+      ],
+      "name": "P-R6A-UNSPLITTABLE",
+      "ok": true
+     },
+     {
+      "expected": {
+       "G-ANISO": 0,
+       "G-ANISO2": 1257565061957837936381,
+       "G-CURVED": 0,
+       "G-CURVOFF": 64562400000,
+       "G-DIAG2": 19683,
+       "G-FLAT": 0,
+       "G-OFFDIAG": 19683,
+       "G-OFFDIAG2": 3904305912313344,
+       "G-OFFNEG": 1801152661463
+      },
+      "json_path": [
+       "split_fibers"
+      ],
+      "name": "P-R6A-FIBERS",
+      "ok": true
+     }
+    ]
+   },
+   "must_pass": true,
+   "name": "G-R6A-VALUES-STABLE-UNDER-DRIFT",
+   "ok": true,
+   "statement": "R6a is UNDER PANEL and its receipt is a live file whose bytes moved during this unit's build; every (path, value) pair this unit reads from it is MEASURED unchanged across the drift -- the #20 path-value engraving is what carries the citation, not the file bytes"
+  },
+  {
+   "evidence": {
+    "declared": 44,
+    "missing": [],
+    "registered": 44
+   },
+   "must_pass": true,
+   "name": "G-ANCHOR-CELL-COMPLETE",
+   "ok": true,
+   "statement": "the anchor census carries exactly the declared rows, none skipped"
+  },
+  {
+   "evidence": {
+    "rows": 27
+   },
+   "must_pass": true,
+   "name": "G-PATH-ANCHORS",
+   "ok": true,
+   "statement": "every path-value anchor with a declared expected value matches"
+  },
+  {
+   "evidence": {
+    "rows": 11
+   },
+   "must_pass": true,
+   "name": "G-TEXT-ANCHORS",
+   "ok": true,
+   "statement": "every verbatim-text anchor is present in its pinned artifact"
+  },
+  {
+   "evidence": {
+    "hits": [],
+    "injections": 3,
+    "injections_flagged": 3
+   },
+   "must_pass": true,
+   "name": "G-FLOATGUARD",
+   "ok": true,
+   "statement": "an AST scan of this source finds no float literal, no float cast and no floating-point import; the scanner is validated by synthetic injections it must flag"
+  },
+  {
+   "evidence": {
+    "hits": [],
+    "injections": 3,
+    "injections_flagged": 3
+   },
+   "must_pass": true,
+   "name": "G-NO-MUTANT-IDENTITY",
+   "ok": true,
+   "statement": "no gate-registering function reads run-mode identity; the scanner is validated by synthetic injections it must flag"
+  },
+  {
+   "evidence": {
+    "odd_axis": 3,
+    "recorded": 11,
+    "records": 11
+   },
+   "must_pass": true,
+   "name": "G-NON-MERGEABLE-RECORDED",
+   "ok": true,
+   "statement": "every record of I7's own L=3 arena is RECORDED non-mergeable with the measured reason -- none skipped"
+  },
+  {
+   "evidence": {
+    "A4_admissible": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-FLAT",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "A6_admissible": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-FLAT",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "records": 11
+   },
+   "must_pass": true,
+   "name": "G-ARENA-CLASS",
+   "ok": true,
+   "statement": "every built arena is an I7-class arena: a product of cyclic groups carrying the declared link set, with counts, front and matter register defined at every site; the admissible sub-family agrees across the built arenas"
+  },
+  {
+   "evidence": {
+    "censused": 4,
+    "declared": 4,
+    "moves": [
+     "M-DYADIC",
+     "M-AXIS-0",
+     "M-AXIS-1",
+     "C-PROJECT"
+    ]
+   },
+   "must_pass": true,
+   "name": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "ok": true,
+   "statement": "the move census carries exactly the declared rows, each with its incidence table; a dropped move cannot shrink the census"
+  },
+  {
+   "evidence": {
+    "lifts": 3,
+    "unique": 3
+   },
+   "must_pass": true,
+   "name": "G-INCIDENCE-FORCED-DYADIC",
+   "ok": true,
+   "statement": "M-DYADIC: every coarse link's lift has exactly ONE minimal realisation, so the merge incidence is FORCED by the declared link set"
+  },
+  {
+   "evidence": {
+    "candidates_per_link": [
+     1,
+     1,
+     2,
+     1,
+     1,
+     2
+    ],
+    "named_fact": "DIAGONAL-INTERVAL-INCIDENCE"
+   },
+   "must_pass": true,
+   "name": "G-INCIDENCE-AMBIGUOUS-AXIS",
+   "ok": true,
+   "statement": "M-AXIS: the diagonal link's lift has exactly TWO minimal realisations -- the same named grammar fact R6a's HYPERPLANE branch blocked at"
+  },
+  {
+   "evidence": {
+    "cells": 1404,
+    "disagreeing": 26,
+    "records": [
+     "G-CURVOFF"
+    ]
+   },
+   "must_pass": true,
+   "name": "G-BLOCK-IS-REAL",
+   "ok": true,
+   "statement": "the axis-merge block is REAL, not formal: the two candidate readings are MEASURED to disagree at a nonzero, counted set of cells"
+  },
+  {
+   "evidence": {
+    "coarse_intervals": 27,
+    "events_discarded": 180
+   },
+   "must_pass": true,
+   "name": "G-CONTROL-FOREIGN",
+   "ok": true,
+   "statement": "the declared negative control C-PROJECT is measured FOREIGN by the same audit: it forces zero additivity constraints and discards a counted, nonzero number of recorded division events"
+  },
+  {
+   "evidence": {
+    "checks": 591,
+    "ok": 591
+   },
+   "must_pass": true,
+   "name": "G-COUNT-ADDITIVITY-FORCED",
+   "ok": true,
+   "statement": "the interval-count composition under merge is the SUM of the realising sub-interval counts at every cell: events in the whole = events in the parts, read in the merge direction"
+  },
+  {
+   "evidence": {
+    "checks": 314,
+    "ok": 314
+   },
+   "must_pass": true,
+   "name": "G-FRONT-ADDITIVITY-FORCED",
+   "ok": true,
+   "statement": "the front register sums over the merged block at every cell: the events committed at the merged site are the events committed at the sites merged"
+  },
+  {
+   "evidence": {
+    "differing_cells": 877,
+    "why_excluded": "T-COUNTS-SEMANTIC and T-FRONT declare two different registers; adding one to the other is a category error, and it also destroys the split-then-merge identity"
+   },
+   "must_pass": true,
+   "name": "G-INTERIOR-CONTRIBUTION-EXCLUDED",
+   "ok": true,
+   "statement": "the declared alternative composition -- the sub-interval sum PLUS the interior site's front value -- is MEASURED different at a counted, nonzero set of cells, and is excluded because the two registers are distinct: n_l counts events IN an interval, n(x) counts events AT a site"
+  },
+  {
+   "evidence": {
+    "cells": 788,
+    "ok": 788
+   },
+   "must_pass": true,
+   "name": "G-READOUT-REENCODING",
+   "ok": true,
+   "statement": "record-IS-metric rebuilt here: q reproduces every declared link count at every site of every admissible record, on every built arena"
+  },
+  {
+   "evidence": {
+    "cross_cells": 117,
+    "cross_ok": 117,
+    "diag_cells": 234,
+    "diag_ok": 234,
+    "iff_cells": 117,
+    "iff_ok": 117,
+    "negative_control": {
+     "classes": {
+      "(0, 0)": [
+       2,
+       2,
+       4
+      ],
+      "(0, 1)": [
+       3,
+       2,
+       5
+      ],
+      "(1, 0)": [
+       2,
+       3,
+       5
+      ],
+      "(1, 1)": [
+       4,
+       4,
+       8
+      ]
+     },
+     "cross_term_adds": false,
+     "record": "NC-PARITY",
+     "transversality_holds": false
+    }
+   },
+   "must_pass": true,
+   "name": "G-Q-TRANSFORM-LAW",
+   "ok": true,
+   "statement": "the diagonal components of q are additive under merge at EVERY cell (identically, by the readout), while the cross component is additive at a cell IF AND ONLY IF the measured transversality condition holds there -- checked cell by cell, with a declared negative-control record that violates the condition and whose cross term must therefore fail to add"
+  },
+  {
+   "evidence": {
+    "covariant": [
+     "COUNTS-n_l",
+     "FRONT-n",
+     "Q-DIAGONAL-BLOCK"
+    ],
+    "not_covariant": [
+     "Q-CROSS-TERM",
+     "DET-Q",
+     "I=Q-INVERSE"
+    ]
+   },
+   "must_pass": true,
+   "name": "G-COVARIANT-SET",
+   "ok": true,
+   "statement": "the covariant/non-covariant classification is computed cell-complete over the declared quantity list"
+  },
+  {
+   "evidence": {
+    "coarse_diagonal": 10,
+    "fine_diagonal": 10
+   },
+   "must_pass": true,
+   "name": "G-SECTOR-STABILITY",
+   "ok": true,
+   "statement": "HA's diagonal sector is measured merge-stable on the DECLARED record family (every fine-diagonal record has a diagonal merge)"
+  },
+  {
+   "evidence": {
+    "A4": {
+     "block_preserving": 4,
+     "full_group": 32,
+     "index": 4,
+     "relabellings": 2,
+     "surviving_group": 8,
+     "translations": 16
+    },
+    "A6": {
+     "block_preserving": 9,
+     "full_group": 72,
+     "index": 4,
+     "relabellings": 2,
+     "surviving_group": 18,
+     "translations": 36
+    }
+   },
+   "must_pass": true,
+   "name": "G-STABILIZER-MEASURED",
+   "ok": true,
+   "statement": "the surviving chart subgroup is MEASURED: the block-preserving translations have index 2^d in the refined chart translations, at every built d=2 arena"
+  },
+  {
+   "evidence": {
+    "D_equivariant": 35,
+    "affine_dimension": 2,
+    "box": 625,
+    "chart_equivariant": 9,
+    "named_rules_in_the_fiber": [
+     "M-ANTI",
+     "M-CORNER",
+     "M-MEAN"
+    ]
+   },
+   "must_pass": true,
+   "name": "G-M-FIBER-INFINITE",
+   "ok": true,
+   "statement": "the matter-merge rule is a GENUINELY FREE choice: the admissible rules form an affine Q-space of measured dimension 2 (infinite), cut from Q^4 by D-equivariance and by the surviving relabelling and by nothing else; the exact count over the declared finite coefficient box is computed, never typed"
+  },
+  {
+   "evidence": {
+    "declared": [
+     "i",
+     "i",
+     "i",
+     "i",
+     "iii",
+     "iii",
+     "iii"
+    ],
+    "derived": [
+     "i",
+     "i",
+     "i",
+     "i",
+     "iii",
+     "iii",
+     "iii"
+    ],
+    "forced": 4,
+    "free": 3,
+    "items": 7,
+    "measured_fibers": [
+     1,
+     1,
+     1,
+     1,
+     9,
+     2,
+     2
+    ],
+    "stabiliser": 0
+   },
+   "must_pass": true,
+   "name": "G-INVENTORY-CLASSIFICATION",
+   "ok": true,
+   "statement": "every merge freedom's class is DERIVED from its MEASURED fiber and from whether a pinned declaration forces it, and the derived class matches the declared one at every item: a relabelled freedom whose measured fiber still exceeds 1 dies here"
+  },
+  {
+   "evidence": {
+    "fibers": [
+     1,
+     1,
+     1,
+     1,
+     "INFINITE",
+     2,
+     2
+    ]
+   },
+   "must_pass": true,
+   "name": "G-FIBER-COMPUTED",
+   "ok": true,
+   "statement": "every fiber in the inventory is computed from a measured census, never typed"
+  },
+  {
+   "evidence": {
+    "free": 3,
+    "qualifier": "CHOICE-BEARING"
+   },
+   "must_pass": true,
+   "name": "G-MOTIVATION-QUALIFIER-COMPUTED",
+   "ok": true,
+   "statement": "the merge qualifier is a function of the inventory's class counts and of nothing else"
+  },
+  {
+   "evidence": {
+    "L_independent": true,
+    "admissible": 775,
+    "box": 1125,
+    "fixed": 35
+   },
+   "must_pass": true,
+   "name": "G-FIXED-POINT-CENSUS",
+   "ok": true,
+   "statement": "the fixed-point census over the declared affine enlargement is complete: every parameter of the declared box is tested, admissibility measured, and the fixed set counted"
+  },
+  {
+   "evidence": {
+    "spectrum": {
+     "2": 31,
+     "4": 4
+    }
+   },
+   "must_pass": true,
+   "name": "G-RESCALING-MEASURED",
+   "ok": true,
+   "statement": "the rescaling lambda is MEASURED per fixed point, never typed, and the spectrum carries more than one value"
+  },
+  {
+   "evidence": {
+    "lambda2_all_homogeneous": true,
+    "lambda4_all_diagonal": true,
+    "lambda4_members": [
+     [
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     [
+      1,
+      2,
+      2,
+      4,
+      0
+     ],
+     [
+      2,
+      1,
+      4,
+      2,
+      0
+     ],
+     [
+      2,
+      2,
+      4,
+      4,
+      0
+     ]
+    ]
+   },
+   "must_pass": true,
+   "name": "G-FIXED-POINT-SECTOR",
+   "ok": true,
+   "statement": "the lambda = 4 family lies ENTIRELY in HA's diagonal sector, and the lambda = 2 family is exactly the homogeneous locus -- both measured over the declared box, not assumed"
+  },
+  {
+   "evidence": {
+    "E_PARITY": 16983563041,
+    "fixed": 361,
+    "image_admissible": 16855671371
+   },
+   "must_pass": true,
+   "name": "G-PARITY-FLOW",
+   "ok": true,
+   "statement": "the merge sends every parity record to a HOMOGENEOUS record in one step, so within the parity enlargement the merge-fixed points are exactly the homogeneous records; the flow's admissible image is counted exactly"
+  },
+  {
+   "evidence": {
+    "cells": 702,
+    "commuting": 702
+   },
+   "must_pass": true,
+   "name": "G-SEMIGROUP-AXIS-COMMUTE",
+   "ok": true,
+   "statement": "the two 2:1 axis block-merges commute with each other at every cell"
+  },
+  {
+   "evidence": {
+    "cells": 702,
+    "disagreeing_records": [
+     "G-CURVOFF",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "equal": 598,
+    "iff_diagonal": true
+   },
+   "must_pass": true,
+   "name": "G-SEMIGROUP-FACTORISATION",
+   "ok": true,
+   "statement": "the composite of the two axis merges equals the dyadic merge EXACTLY on the diagonal-sector records and on no other -- an iff, measured record by record"
+  },
+  {
+   "evidence": {
+    "A4_floor": 2,
+    "A4_steps": 1,
+    "A6_floor": 3,
+    "A6_steps": 1
+   },
+   "must_pass": true,
+   "name": "G-MERGE-TERMINATES",
+   "ok": true,
+   "statement": "the merge chain is finite at every built arena, and the L = 1 floor is REFUSED with the measured reason"
+  },
+  {
+   "evidence": {
+    "covered": 64,
+    "r6a_split_unreached": 27,
+    "sites": 64,
+    "unique_lifts": 6
+   },
+   "must_pass": true,
+   "name": "G-D3-SITE-COMPLETE",
+   "ok": true,
+   "statement": "at d = 3 the dyadic blocks partition the fine site set (every site merged, none unreached) and every coarse lift has a unique minimal realisation -- the exact dual of R6a's measured site-INcompleteness of the split at the same arena"
+  },
+  {
+   "evidence": {
+    "grid": [
+     [
+      "SUM",
+      "SUM"
+     ],
+     [
+      "SUM",
+      "CORNER"
+     ],
+     [
+      "CORNER",
+      "SUM"
+     ],
+     [
+      "CORNER",
+      "CORNER"
+     ]
+    ],
+    "mixed_cells": 1044,
+    "universal_cells": 1044
+   },
+   "must_pass": true,
+   "name": "G-LIFT-GRID-CELL-COMPLETE",
+   "ok": true,
+   "statement": "the (front merge, lapse restriction) grid is complete and every cell is measured"
+  },
+  {
+   "evidence": {
+    "matched_ok": 1044,
+    "matched_total": 1044,
+    "mixed_ok": 234,
+    "mixed_total": 1044
+   },
+   "must_pass": true,
+   "name": "G-FRONT-SECTOR-COMMUTES",
+   "ok": true,
+   "statement": "the front sector commutes at EVERY lapse when the lapse restriction matches the front merge, and at a strictly smaller counted set when it does not"
+  },
+  {
+   "evidence": {
+    "cells": 118260,
+    "nonzero": 61780,
+    "zero": 56480
+   },
+   "must_pass": true,
+   "name": "G-DEFECT-NONZERO",
+   "ok": true,
+   "statement": "the register-sector commutation defect is a MEASURED nonzero object: nonzero at a counted set of cells and identically zero at a counted complement -- both nonempty, so the measurement could have come out otherwise"
+  },
+  {
+   "evidence": {
+    "agreeing": 67716,
+    "compared": 67716
+   },
+   "must_pass": true,
+   "name": "G-DEFECT-TWO-ROUTES",
+   "ok": true,
+   "statement": "the closed form and the literal two-order composition of configuration maps agree at every compared cell"
+  },
+  {
+   "evidence": {
+    "per_grid_cells": 118260,
+    "per_record_cells": 118260,
+    "per_rule_cells": 118260,
+    "support_signature": "(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260"
+   },
+   "must_pass": true,
+   "name": "G-DEFECT-CHARACTERISED",
+   "ok": true,
+   "statement": "the defect is characterised, not merely reported: its support by block parity class, its per-rule and per-record profiles and its per-grid profile are all measured and cell-complete"
+  },
+  {
+   "evidence": {
+    "cells": 540,
+    "positive_control": {
+     "constructed": [
+      "1/3",
+      "1/5",
+      "2/7",
+      "1"
+     ],
+     "recovered": [
+      "1/3",
+      "1/5",
+      "2/7",
+      "1"
+     ],
+     "reproduces_the_image": true,
+     "solver_returns_a_solution": true
+    },
+    "unsolvable": 540
+   },
+   "must_pass": true,
+   "name": "G-DEFECT-IRREDUCIBLE",
+   "ok": true,
+   "statement": "no linear matter-merge rule removes the defect: the joint linear system over the whole declared lapse family is UNSOLVABLE at every censused cell -- and the positive control shows the same solver returning the constructed solution when one exists, so the verdict is a measurement and not a solver artefact"
+  },
+  {
+   "evidence": {
+    "agreeing": 2880,
+    "cells": 2880
+   },
+   "must_pass": true,
+   "name": "G-LAMBDA-INDEPENDENT",
+   "ok": true,
+   "statement": "every drag weight the census uses is recomputed by a second, independently written route (diagonal rules assembled directly, inserted rules by the adjugate/determinant formula): 0 mismatches"
+  },
+  {
+   "evidence": {
+    "checks": 2971,
+    "ok": 2971
+   },
+   "must_pass": true,
+   "name": "G-SPLIT-MERGE-IDENTITY",
+   "ok": true,
+   "statement": "split-then-merge is the IDENTITY on the count register at every per-site admissible split of every splittable record -- R6a's move run backwards reproduces the merge on its overlap"
+  },
+  {
+   "evidence": {
+    "compared": 9,
+    "reproduced": 9
+   },
+   "must_pass": true,
+   "name": "G-SPLIT-FIBER-ANCHOR",
+   "ok": true,
+   "statement": "this unit's INDEPENDENT rebuild of the split fibers reproduces R6a's delivered table cell by cell -- fibers, per-site admissible counts and splittability"
+  },
+  {
+   "evidence": {
+    "admissible": 361,
+    "r6a": {
+     "admissible": 361,
+     "splittable": 261,
+     "unique": [
+      [
+       2,
+       2,
+       2
+      ]
+     ]
+    },
+    "splittable": 261,
+    "unique": [
+     [
+      2,
+      2,
+      2
+     ]
+    ]
+   },
+   "must_pass": true,
+   "name": "G-COUNT-LATTICE-REPRODUCES-R6A",
+   "ok": true,
+   "statement": "this unit's independent count-lattice census reproduces R6a's delivered numbers exactly: admissible vectors, splittable vectors and the unique-admissible-split witness"
+  },
+  {
+   "evidence": {
+    "records": 6
+   },
+   "must_pass": true,
+   "name": "G-SITE-LOCALITY",
+   "ok": true,
+   "statement": "the merge is site-local in the coarse site and the split fiber factorises over coarse sites, so the per-site exhaustive check is fiber-exhaustive: the measured fiber equals the product of the per-site counts at every record"
+  },
+  {
+   "evidence": {
+    "rows": [
+     {
+      "identity": true,
+      "new_front_value": 0
+     },
+     {
+      "identity": false,
+      "new_front_value": 1
+     }
+    ]
+   },
+   "must_pass": true,
+   "name": "G-SPLIT-MERGE-FRONT-IFF",
+   "ok": true,
+   "statement": "on the front register the split-merge identity holds exactly when the split's free new-front values vanish -- measured in both directions"
+  },
+  {
+   "evidence": {
+    "emitted": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>",
+    "equal": true,
+    "reconstructed": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>"
+   },
+   "must_pass": true,
+   "name": "G-VERDICT-STRING-EQUALITY",
+   "ok": true,
+   "statement": "the COMPLETE emitted verdict string equals a string rebuilt segment by segment from the RECEIPT OBJECT by a comparator that shares no code and no input with the builder; containment is not equality"
+  },
+  {
+   "evidence": {
+    "gated": 61780,
+    "rendered": 61780
+   },
+   "must_pass": true,
+   "name": "G-RENDER-FROM-THE-GATED-OBJECT",
+   "ok": true,
+   "statement": "the receipt object the gates check IS the object the receipt and the paper render from: the commutation census in the receipt equals the gated census"
+  },
+  {
+   "evidence": {
+    "segments": [
+     {
+      "flips": true,
+      "segment": "ARENAS"
+     },
+     {
+      "flips": true,
+      "segment": "MOVES"
+     },
+     {
+      "flips": true,
+      "segment": "BLOCK-REAL"
+     },
+     {
+      "flips": true,
+      "segment": "CANONICAL"
+     },
+     {
+      "flips": true,
+      "segment": "CHOICE"
+     },
+     {
+      "flips": true,
+      "segment": "INVENTORY"
+     },
+     {
+      "flips": true,
+      "segment": "TRANSFORM"
+     },
+     {
+      "flips": true,
+      "segment": "FIXED-POINTS"
+     },
+     {
+      "flips": true,
+      "segment": "SEMIGROUP"
+     },
+     {
+      "flips": true,
+      "segment": "COMMUTATION"
+     },
+     {
+      "flips": true,
+      "segment": "CONSISTENCY"
+     },
+     {
+      "flips": true,
+      "segment": "D3"
+     }
+    ]
+   },
+   "must_pass": true,
+   "name": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "ok": true,
+   "statement": "every verdict segment is derived: perturbing the receipt row it reads moves the reconstructed segment"
+  },
+  {
+   "evidence": {
+    "both_reachable": true,
+    "heads": {
+     "CANONICAL": "CRC-MERGE-CANONICAL-ON",
+     "CHOICE": "CRC-MERGE-CHOICE-AT",
+     "EMITTED": "CRC-MERGE-CHOICE-AT"
+    }
+   },
+   "must_pass": true,
+   "name": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "ok": true,
+   "statement": "both declared verdict heads are reachable by measurement: a synthetic inventory with no free freedom yields CANONICAL, one with a free freedom yields CHOICE"
+  },
+  {
+   "evidence": {
+    "claims": 22,
+    "missing": [],
+    "present": 22
+   },
+   "must_pass": true,
+   "name": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "ok": true,
+   "statement": "every load-bearing numeric sentence of the paper is rendered here from the receipt object and appears VERBATIM in the paper (line wrapping normalised, content not)"
+  },
+  {
+   "evidence": {
+    "bypass": 0,
+    "hits": 3772800,
+    "misses": 3600
+   },
+   "must_pass": true,
+   "name": "G-CACHE-EXERCISED",
+   "ok": true,
+   "statement": "the weight memo is exercised: lookups and hits are both nonzero, and the fresh bypass path is taken"
+  },
+  {
+   "evidence": {
+    "agreeing": 1980,
+    "bypasses": 1980,
+    "cells": 1980
+   },
+   "must_pass": true,
+   "name": "G-CACHE-FRESH-EQUALS-MEMO",
+   "ok": true,
+   "statement": "every memoised weight is recomputed with the memo BYPASSED and compared against what the memo returned: 0 disagreements, and the bypass count is nonzero"
+  },
+  {
+   "evidence": {
+    "count": 0,
+    "hits": []
+   },
+   "must_pass": true,
+   "name": "G-NO-FLOATS-IN-RECEIPT",
+   "ok": true,
+   "statement": "no float value appears anywhere in the receipt"
+  },
+  {
+   "evidence": {
+    "gates": 53,
+    "never_falsified": 62,
+    "with_falsifier": 35
+   },
+   "must_pass": true,
+   "name": "G-FALSIFIER-CENSUS-HONEST",
+   "ok": true,
+   "statement": "the never-falsified census is present from delivery one, with an honest denominator and a stated waiver for every gate carrying no declared falsifier"
+  },
+  {
+   "evidence": {
+    "gates": 54
+   },
+   "must_pass": true,
+   "name": "G-FINAL-GATE-COUNT",
+   "ok": true,
+   "statement": "the registered gate count matches the count the receipt reports"
+  }
+ ],
+ "grammar_sources": {
+  "v13/code/ha_successor_exact.py": "d44cb72f8ee9",
+  "v13/code/ha_successor_receipt.json": "542b8735daf0",
+  "v13/paper-ha-successor.md": "f286ba10d2d9",
+  "v14/code/r6a_refinement_receipt.json": "022c3f488a93 [DELIVERED-UNDER-PANEL]"
+ },
+ "m_fiber": {
+  "D_equivariant": 35,
+  "affine_dimension_over_Q": 2,
+  "box": 625,
+  "chart_equivariant": 9,
+  "constraint_D": "sum(c) = 1 -- forced by commuting with D_a[v] at constant v",
+  "constraint_chart": "c_{(1,0)} = c_{(0,1)} -- forced by the surviving direction relabelling",
+  "named_in_fiber": [
+   "M-ANTI",
+   "M-CORNER",
+   "M-MEAN"
+  ]
+ },
+ "move_census": {
+  "axis_candidates": 2,
+  "blocked_fact": "DIAGONAL-INTERVAL-INCIDENCE",
+  "classification_rule": "a merge move is ADMISSIBLE when every coarse link's lift has a UNIQUE minimal realisation by declared links; BLOCKED when some lift has two or more; FOREIGN when it merges no interval",
+  "declared_rows": 4,
+  "dyadic_lifts": 3,
+  "dyadic_unique": 3,
+  "rows": [
+   {
+    "ambiguous_links": 0,
+    "beta": [
+     2,
+     2
+    ],
+    "blocked_at": null,
+    "incidence": [
+     {
+      "lift": [
+       2,
+       0
+      ],
+      "link": [
+       1,
+       0
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       0,
+       2
+      ],
+      "link": [
+       0,
+       1
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       2,
+       2
+      ],
+      "link": [
+       1,
+       1
+      ],
+      "minimal_decompositions": 1
+     }
+    ],
+    "kind": "subdivision-inverse",
+    "move": "M-DYADIC",
+    "verdict": "ADMISSIBLE"
+   },
+   {
+    "ambiguous_links": 1,
+    "beta": [
+     2,
+     1
+    ],
+    "blocked_at": "DIAGONAL-INTERVAL-INCIDENCE",
+    "incidence": [
+     {
+      "lift": [
+       2,
+       0
+      ],
+      "link": [
+       1,
+       0
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       0,
+       1
+      ],
+      "link": [
+       0,
+       1
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       2,
+       1
+      ],
+      "link": [
+       1,
+       1
+      ],
+      "minimal_decompositions": 2
+     }
+    ],
+    "kind": "subdivision-inverse",
+    "move": "M-AXIS-0",
+    "verdict": "BLOCKED"
+   },
+   {
+    "ambiguous_links": 1,
+    "beta": [
+     1,
+     2
+    ],
+    "blocked_at": "DIAGONAL-INTERVAL-INCIDENCE",
+    "incidence": [
+     {
+      "lift": [
+       1,
+       0
+      ],
+      "link": [
+       1,
+       0
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       0,
+       2
+      ],
+      "link": [
+       0,
+       1
+      ],
+      "minimal_decompositions": 1
+     },
+     {
+      "lift": [
+       1,
+       2
+      ],
+      "link": [
+       1,
+       1
+      ],
+      "minimal_decompositions": 2
+     }
+    ],
+    "kind": "subdivision-inverse",
+    "move": "M-AXIS-1",
+    "verdict": "BLOCKED"
+   },
+   {
+    "kind": "control",
+    "move": "C-PROJECT",
+    "note": "merges no interval; forces 0 additivity constraints",
+    "verdict": "FOREIGN"
+   }
+  ]
+ },
+ "mutants": [
+  {
+   "expected_gate": "A-I7-RECEIPT",
+   "name": "anchor-hash-A-I7-RECEIPT",
+   "what": "corrupts the pinned I7 receipt hash"
+  },
+  {
+   "expected_gate": "A-HA-PAPER",
+   "name": "anchor-hash-A-HA-PAPER",
+   "what": "corrupts the pinned HA paper hash"
+  },
+  {
+   "expected_gate": "A-HA-CODE",
+   "name": "anchor-hash-A-HA-CODE",
+   "what": "corrupts the pinned HA instrument hash"
+  },
+  {
+   "expected_gate": "A-R6A-RECEIPT",
+   "name": "anchor-hash-A-R6A-RECEIPT",
+   "what": "returns an R6a receipt hash outside the declared accepted list"
+  },
+  {
+   "expected_gate": "G-R6A-VALUES-STABLE-UNDER-DRIFT",
+   "name": "r6a-value-drift",
+   "what": "drifts a value read by path from the R6a receipt"
+  },
+  {
+   "expected_gate": "G-ANCHOR-CELL-COMPLETE",
+   "name": "anchor-skip",
+   "what": "drops one declared anchor row"
+  },
+  {
+   "expected_gate": "G-PATH-ANCHORS",
+   "name": "path-drift",
+   "what": "reads a pinned value from a drifted json path"
+  },
+  {
+   "expected_gate": "G-PATH-ANCHORS",
+   "name": "path-value",
+   "what": "reads the right path and the wrong value"
+  },
+  {
+   "expected_gate": "G-TEXT-ANCHORS",
+   "name": "text-anchor-drift",
+   "what": "perturbs a verbatim source quotation"
+  },
+  {
+   "expected_gate": "G-FLOATGUARD",
+   "name": "float-lax",
+   "what": "blinds the float scanner"
+  },
+  {
+   "expected_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "name": "census-drop",
+   "what": "silently drops a move class from the census"
+  },
+  {
+   "expected_gate": "G-INCIDENCE-AMBIGUOUS-AXIS",
+   "name": "incidence-lax",
+   "what": "returns a single hard-coded decomposition for every lift, erasing the measured axis ambiguity"
+  },
+  {
+   "expected_gate": "G-INCIDENCE-FORCED-DYADIC",
+   "name": "incidence-fake-tie",
+   "what": "duplicates every decomposition, so no lift looks uniquely realised"
+  },
+  {
+   "expected_gate": "G-BLOCK-IS-REAL",
+   "name": "block-fake",
+   "what": "reports the axis-merge readings as agreeing"
+  },
+  {
+   "expected_gate": "G-NON-MERGEABLE-RECORDED",
+   "name": "nonmergeable-skip",
+   "what": "skips one non-mergeable record instead of recording it"
+  },
+  {
+   "expected_gate": "G-COUNT-ADDITIVITY-FORCED",
+   "name": "additivity-violation",
+   "what": "perturbs one merged interval count"
+  },
+  {
+   "expected_gate": "G-FRONT-ADDITIVITY-FORCED",
+   "name": "front-rule-lax",
+   "what": "serves the CORNER reading where the SUM rule is asked for"
+  },
+  {
+   "expected_gate": "G-Q-TRANSFORM-LAW",
+   "name": "qlaw-lax",
+   "what": "reports the cross-term additivity as universal"
+  },
+  {
+   "expected_gate": "G-INVENTORY-CLASSIFICATION",
+   "name": "inventory-corrupt",
+   "what": "relabels the class-(iii) matter freedom as class-(i)"
+  },
+  {
+   "expected_gate": "G-FIBER-COMPUTED",
+   "name": "fiber-typed",
+   "what": "strips the measured evidence from every inventory fiber"
+  },
+  {
+   "expected_gate": "G-STABILIZER-MEASURED",
+   "name": "stabilizer-lax",
+   "what": "reports the whole chart group as surviving the merge"
+  },
+  {
+   "expected_gate": "G-M-FIBER-INFINITE",
+   "name": "mfiber-lax",
+   "what": "drops the relabelling constraint and the dimension"
+  },
+  {
+   "expected_gate": "G-RESCALING-MEASURED",
+   "name": "fixedpoint-drop",
+   "what": "drops the lambda = 4 fixed-point family"
+  },
+  {
+   "expected_gate": "G-RESCALING-MEASURED",
+   "name": "lambda-typed",
+   "what": "types every rescaling as 2 instead of measuring it"
+  },
+  {
+   "expected_gate": "G-PARITY-FLOW",
+   "name": "flow-lax",
+   "what": "reports the whole parity family as flowing to admissible images"
+  },
+  {
+   "expected_gate": "G-DEFECT-NONZERO",
+   "name": "defect-suppress",
+   "what": "zeroes the commutation defect"
+  },
+  {
+   "expected_gate": "G-DEFECT-TWO-ROUTES",
+   "name": "order-swap",
+   "what": "swaps the two orders in the literal route only"
+  },
+  {
+   "expected_gate": "G-DEFECT-TWO-ROUTES",
+   "name": "coarsen-skew",
+   "what": "rotates the block offsets in the register coarsening"
+  },
+  {
+   "expected_gate": "G-DEFECT-CHARACTERISED",
+   "name": "defect-support-lax",
+   "what": "suppresses the defect's support signature"
+  },
+  {
+   "expected_gate": "G-DEFECT-IRREDUCIBLE",
+   "name": "solver-lax",
+   "what": "makes the exact solver accept an inconsistent system"
+  },
+  {
+   "expected_gate": "G-LAMBDA-INDEPENDENT",
+   "name": "lambda-route-lax",
+   "what": "scales the independent weight route"
+  },
+  {
+   "expected_gate": "G-SPLIT-MERGE-IDENTITY",
+   "name": "splitmerge-lax",
+   "what": "makes the split-merge comparison return its own target"
+  },
+  {
+   "expected_gate": "G-SITE-LOCALITY",
+   "name": "locality-lax",
+   "what": "corrupts the per-site multiplicity used by the factorisation check"
+  },
+  {
+   "expected_gate": "G-CONTROL-FOREIGN",
+   "name": "control-pass",
+   "what": "lets the foreign move through the audit"
+  },
+  {
+   "expected_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "name": "cache-alias",
+   "what": "serves a merged record the base record's cached weight"
+  },
+  {
+   "expected_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "name": "cache-lax",
+   "what": "routes the fresh path back through the memo"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "verdict-pair-swap",
+   "what": "swaps two value names inside a verdict segment"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "verdict-typed-segment",
+   "what": "hand-types one verdict segment"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "verdict-append-text",
+   "what": "appends a segment to the verdict"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "verdict-fully-typed",
+   "what": "hand-types the whole verdict"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "verdict-inert-segment",
+   "what": "replaces a segment by an inert constant"
+  },
+  {
+   "expected_gate": "G-VERDICT-STRING-EQUALITY",
+   "name": "head-constant",
+   "what": "pins the verdict head to a constant instead of deriving it from the inventory's class counts"
+  },
+  {
+   "expected_gate": "G-RENDER-FROM-THE-GATED-OBJECT",
+   "name": "render-escape",
+   "what": "lets a corrupted census cell reach the receipt"
+  },
+  {
+   "expected_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "name": "prose-claim-drift",
+   "what": "drifts one rendered paper claim away from the measured value"
+  }
+ ],
+ "non_mergeable": [
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-ANISO"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-ANISO2"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-CURVED"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-CURVOFF"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-DIAG2"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-FLAT"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-INDEF"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-OFFDIAG"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-OFFDIAG2"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-OFFNEG"
+  },
+  {
+   "arena": [
+    3,
+    3
+   ],
+   "mergeable": false,
+   "reason": "axis length 3 is odd: the 2:1 block partition {2i, 2i+1} of Z_3 is not a partition (site 2 would pair with site 0), so the block map is not defined",
+   "record": "G-SINGULAR"
+  }
+ ],
+ "paper_claims": {
+  "claims_missing": [],
+  "claims_present_in_the_paper": 22,
+  "claims_rendered": 22,
+  "paper": "v14/paper-07-coarse-graining.md",
+  "rendered": {
+   "additivity": "Count additivity holds at 591 of 591 checked cells and the front sums at 314 of 314.",
+   "alt": "The declared alternative composition differs at 877 cells.",
+   "arenas": "The L = 3 arena I7 declares does not merge: 3 is odd, and all 11 of its declared records are recorded non-mergeable.",
+   "blocked": "M-AXIS carries 2 candidate realisations of the diagonal lift, and the block is real: the two readings disagree at 26 of 1404 cells, on 1 of 9 records.",
+   "consistency": "Split-then-merge is the identity at 2971 of 2971 checks, and this unit's independent rebuild reproduces R6a's split fibers at 9 of 9 records.",
+   "d3": "At d = 3 the dyadic blocks cover 64 of 64 sites and 6 of 6 lifts are unique, while R6a measured 27 sites unreached by the split at the same arena.",
+   "defect": "The register defect is nonzero at 61780 of 118260 censused cells and identically zero at 56480.",
+   "drift": "R6a's receipt moved from 022c3f488a93 to 94adec72ab11 while this unit was built, and all 12 of the values this unit reads from it by path are unchanged.",
+   "fixed": "Over the declared affine box of 1125 parameter points, 775 are admissible and 35 are merge-self-similar, with rescalings 31 at lambda = 2 and 4 at lambda = 4.",
+   "frontgrid": "The front sector commutes at 1044 of 1044 matched cells and at 234 of 1044 mixed ones.",
+   "incidence": "M-DYADIC's incidence is forced: 3 of 3 coarse lifts have a unique minimal realisation.",
+   "inventory": "The inventory closes at FORCED 4, STABILIZER 0, FREE 3.",
+   "irreducible": "The joint linear system for a defect-killing matter rule is unsolvable at 540 of 540 cells.",
+   "lattice": "The count lattice reproduces at 361 admissible vectors and 261 splittable ones.",
+   "mfiber": "The matter-merge fiber is an affine Q-space of dimension 2; over the declared coefficient box 35 of 625 members are D-equivariant and 9 are also relabelling-equivariant.",
+   "parity": "E-HOM carries 361 records and E-PARITY 16983563041; the merge sends every parity record to a homogeneous one in a single step, with 16855671371 of them landing on an admissible image.",
+   "routes": "The closed form and the literal composition agree at 67716 of 67716 compared cells, and the independent weight route at 2880 of 2880.",
+   "sector": "Of the 1679616 diagonal parity records, the merge preserves diagonality at 189216.",
+   "semigroup": "The two axis merges commute at 702 of 702 cells, while their composite equals the dyadic merge at 598 of 702.",
+   "stabiliser": "The merge breaks the chart translations to the block-preserving subgroup: 9 of 36 survive at A6, of index 4.",
+   "transform": "The diagonal components of q are additive at 234 of 234 cells; the cross component at 117 of 117.",
+   "verdict": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>"
+  },
+  "rule": "every load-bearing numeric sentence of the paper is RENDERED HERE from the measured object and must appear VERBATIM in the paper; a number the instrument does not render is a number the paper may not carry"
+ },
+ "pin": "v14/note-cr-batch-pins.md",
+ "pin_sha256_prefix": "1cfee4fc0891",
+ "python": "3.13.2",
+ "question": "merging is the direction the grammar licenses -- construct the merge moves, run the choice inventory on the merge direction for the FULL record (s, n, m), measure the transformation law, the fixed-point census, the merge/dynamics commutation and the split-merge consistency control",
+ "r6a_drift": {
+  "accepted": [
+   "022c3f488a93",
+   "94adec72ab11"
+  ],
+  "bytes_moved": true,
+  "observed_hash": "94adec72ab11",
+  "path_value_rows_read": 12,
+  "path_value_rows_unchanged": 12,
+  "pin_hash": "022c3f488a93",
+  "rows": [
+   {
+    "expected": "R6A-NO-MOTIVATED-SPLIT",
+    "json_path": [
+     "verdict_head"
+    ],
+    "name": "P-R6A-HEAD",
+    "ok": true
+   },
+   {
+    "expected": 27,
+    "json_path": [
+     "move_census",
+     "coarse_intervals"
+    ],
+    "name": "P-R6A-COARSE-INTERVALS",
+    "ok": true
+   },
+   {
+    "expected": 972,
+    "json_path": [
+     "forced_part",
+     "additivity_checks"
+    ],
+    "name": "P-R6A-ADDITIVITY",
+    "ok": true
+   },
+   {
+    "expected": 0,
+    "json_path": [
+     "forced_part",
+     "additivity_violations"
+    ],
+    "name": "P-R6A-ADDITIVITY-VIOL",
+    "ok": true
+   },
+   {
+    "expected": 361,
+    "json_path": [
+     "count_lattice",
+     "admissible_count_vectors"
+    ],
+    "name": "P-R6A-LATTICE",
+    "ok": true
+   },
+   {
+    "expected": "DIAGONAL-INTERVAL-INCIDENCE",
+    "json_path": [
+     "blocked_branch",
+     "named_fact"
+    ],
+    "name": "P-R6A-BLOCKED-FACT",
+    "ok": true
+   },
+   {
+    "expected": 2,
+    "json_path": [
+     "blocked_branch",
+     "candidates_per_interval"
+    ],
+    "name": "P-R6A-BLOCKED-CANDS",
+    "ok": true
+   },
+   {
+    "expected": 54,
+    "json_path": [
+     "cover",
+     "free_links"
+    ],
+    "name": "P-R6A-COVER",
+    "ok": true
+   },
+   {
+    "expected": 27,
+    "json_path": [
+     "dimension_extension",
+     "unreached_sites"
+    ],
+    "name": "P-R6A-D3-UNREACHED",
+    "ok": true
+   },
+   {
+    "expected": [
+     "G-ANISO2",
+     "G-CURVOFF",
+     "G-DIAG2",
+     "G-OFFDIAG",
+     "G-OFFDIAG2",
+     "G-OFFNEG"
+    ],
+    "json_path": [
+     "forced_part",
+     "splittable_records"
+    ],
+    "name": "P-R6A-SPLITTABLE",
+    "ok": true
+   },
+   {
+    "expected": [
+     "G-ANISO",
+     "G-CURVED",
+     "G-FLAT"
+    ],
+    "json_path": [
+     "forced_part",
+     "unsplittable_records"
+    ],
+    "name": "P-R6A-UNSPLITTABLE",
+    "ok": true
+   },
+   {
+    "expected": {
+     "G-ANISO": 0,
+     "G-ANISO2": 1257565061957837936381,
+     "G-CURVED": 0,
+     "G-CURVOFF": 64562400000,
+     "G-DIAG2": 19683,
+     "G-FLAT": 0,
+     "G-OFFDIAG": 19683,
+     "G-OFFDIAG2": 3904305912313344,
+     "G-OFFNEG": 1801152661463
+    },
+    "json_path": [
+     "split_fibers"
+    ],
+    "name": "P-R6A-FIBERS",
+    "ok": true
+   }
+  ]
+ },
+ "schema": "isp/v14/crc-coarsegrain/1",
+ "semigroup": {
+  "axis_commute": 702,
+  "cells": 702,
+  "chain_A4": 1,
+  "chain_A4_floor_L": 2,
+  "chain_A6": 1,
+  "chain_A6_floor_L": 3,
+  "composite_equals_dyadic": 598,
+  "floor_reason": "L = 1 is REFUSED: at a single site every declared link maps the site to itself, so 'the interval between x and x+l' is a self-loop and the count register loses its referent",
+  "iff_diagonal": true,
+  "reading": "the two axis merges COMMUTE with each other everywhere, but their composite equals the dyadic merge exactly on the records whose readout is diagonal, and nowhere else.  The semigroup does not factor through the axis merges off HA's diagonal sector, and it does so for the same arithmetic reason HA's link-local rule closes there: the diagonal count is the sum of the axis counts",
+  "rows": [
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO2",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-CURVED",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-CURVOFF",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-DIAG2",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-FLAT",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG2",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFNEG",
+    "tie": "A"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO2",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-CURVED",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-CURVOFF",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-DIAG2",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-FLAT",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG2",
+    "tie": "B"
+   },
+   {
+    "arena": "A4",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFNEG",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO2",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-CURVED",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-CURVOFF",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-DIAG2",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-FLAT",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG2",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFNEG",
+    "tie": "A"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-ANISO2",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-CURVED",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-CURVOFF",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-DIAG2",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": true,
+    "fine_diagonal": true,
+    "record": "G-FLAT",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFDIAG2",
+    "tie": "B"
+   },
+   {
+    "arena": "A6",
+    "axis_merges_commute": true,
+    "composite_equals_dyadic": false,
+    "fine_diagonal": false,
+    "record": "G-OFFNEG",
+    "tie": "B"
+   }
+  ]
+ },
+ "source_sha256": "fc15b9922ec64276f516f999abe77685673670356f8ddb96012fe8c6598df5e0",
+ "totals": {
+  "anchor_failures": 0,
+  "anchors": 44,
+  "gates": 55,
+  "must_pass_failures": 0,
+  "must_pass_gates": 55,
+  "mutant_survivors": 0,
+  "mutants": 44,
+  "recorded_gates": 0
+ },
+ "transform": {
+  "covariant": [
+   "COUNTS-n_l",
+   "FRONT-n",
+   "Q-DIAGONAL-BLOCK"
+  ],
+  "criterion": "q^c_12 = q^f_12(iota) + q^f_12(iota+diag) iff n_{e_0}(iota+diag) + n_{e_1}(iota+diag) = n_{e_0}(iota+e_0) + n_{e_1}(iota+e_1)",
+  "cross_cells": 117,
+  "cross_ok": 117,
+  "diag_cells": 234,
+  "diag_ok": 234,
+  "iff_cells": 117,
+  "iff_ok": 117,
+  "law": "n^c_l(x) = n^f_l(iota(x)) + n^f_l(iota(x)+l); q^c is the pinned readout of n^c.  The three links sample three DIFFERENT second points, so 'q adds componentwise' is not one statement: it holds identically on the diagonal block and only under the transversality condition at the cross term",
+  "negative_control": {
+   "cross_term_adds": false,
+   "record": "NC-PARITY",
+   "transversality_holds": false
+  },
+  "not_covariant": [
+   "Q-CROSS-TERM",
+   "DET-Q",
+   "I=Q-INVERSE"
+  ],
+  "rows": [
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     8,
+     10
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     1,
+     4,
+     5
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-ANISO"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     8,
+     18,
+     26
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     4,
+     9,
+     13
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-ANISO2"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     3,
+     3,
+     6
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": false,
+    "fine_counts_at_0": [
+     1,
+     1,
+     2
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": false,
+    "record": "G-CURVED"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     5,
+     5,
+     16
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": false,
+    "fine_counts_at_0": [
+     2,
+     2,
+     6
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": false,
+    "record": "G-CURVOFF"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     4,
+     4,
+     8
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     2,
+     2,
+     4
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-DIAG2"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     2,
+     4
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     1,
+     1,
+     2
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-FLAT"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     4,
+     4,
+     12
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     2,
+     2,
+     6
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFDIAG"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     6,
+     10,
+     24
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     3,
+     5,
+     12
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFDIAG2"
+   },
+   {
+    "arena": "A4",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     6,
+     10,
+     8
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     3,
+     5,
+     4
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFNEG"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     8,
+     10
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     1,
+     4,
+     5
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-ANISO"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     8,
+     18,
+     26
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     4,
+     9,
+     13
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-ANISO2"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     3,
+     3,
+     6
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": false,
+    "fine_counts_at_0": [
+     1,
+     1,
+     2
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": false,
+    "record": "G-CURVED"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     5,
+     5,
+     16
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": false,
+    "fine_counts_at_0": [
+     2,
+     2,
+     6
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": false,
+    "record": "G-CURVOFF"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     4,
+     4,
+     8
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     2,
+     2,
+     4
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-DIAG2"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     2,
+     2,
+     4
+    ],
+    "coarse_diagonal": true,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     1,
+     1,
+     2
+    ],
+    "fine_diagonal": true,
+    "fine_homogeneous": true,
+    "record": "G-FLAT"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     4,
+     4,
+     12
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     2,
+     2,
+     6
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFDIAG"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     6,
+     10,
+     24
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     3,
+     5,
+     12
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFDIAG2"
+   },
+   {
+    "arena": "A6",
+    "coarse_admissible": true,
+    "coarse_counts_at_0": [
+     6,
+     10,
+     8
+    ],
+    "coarse_diagonal": false,
+    "coarse_homogeneous": true,
+    "fine_counts_at_0": [
+     3,
+     5,
+     4
+    ],
+    "fine_diagonal": false,
+    "fine_homogeneous": true,
+    "record": "G-OFFNEG"
+   }
+  ],
+  "sector_coarse": 10,
+  "sector_fine": 10
+ },
+ "unit": "v14 CR-C -- THE COARSE-GRAINING SEMIGROUP",
+ "verdict": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>",
+ "verdict_audit": {
+  "emitted": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>",
+  "heads_reachable": {
+   "CANONICAL": "CRC-MERGE-CANONICAL-ON",
+   "CHOICE": "CRC-MERGE-CHOICE-AT",
+   "EMITTED": "CRC-MERGE-CHOICE-AT"
+  },
+  "reconstructed": "CRC-MERGE-CHOICE-AT<ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X|MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180|BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS|CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877|CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3|INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR|TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK|FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361|SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED|COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260|CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED|D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27>",
+  "segment_flips": [
+   {
+    "flips": true,
+    "segment": "ARENAS"
+   },
+   {
+    "flips": true,
+    "segment": "MOVES"
+   },
+   {
+    "flips": true,
+    "segment": "BLOCK-REAL"
+   },
+   {
+    "flips": true,
+    "segment": "CANONICAL"
+   },
+   {
+    "flips": true,
+    "segment": "CHOICE"
+   },
+   {
+    "flips": true,
+    "segment": "INVENTORY"
+   },
+   {
+    "flips": true,
+    "segment": "TRANSFORM"
+   },
+   {
+    "flips": true,
+    "segment": "FIXED-POINTS"
+   },
+   {
+    "flips": true,
+    "segment": "SEMIGROUP"
+   },
+   {
+    "flips": true,
+    "segment": "COMMUTATION"
+   },
+   {
+    "flips": true,
+    "segment": "CONSISTENCY"
+   },
+   {
+    "flips": true,
+    "segment": "D3"
+   }
+  ]
+ },
+ "verdict_head": "CRC-MERGE-CHOICE-AT",
+ "verdict_segments": [
+  {
+   "name": "ARENAS",
+   "text": "ARENAS=I7-BASE-L3-NON-MERGEABLE-11-RECORDS|BUILT-A4-A6-A4X"
+  },
+  {
+   "name": "MOVES",
+   "text": "MOVES=DYADIC:ADMISSIBLE-INCIDENCE-3-OF-3-UNIQUE|AXIS:BLOCKED-AT-DIAGONAL-INTERVAL-INCIDENCE-2-CANDIDATES|PROJECT:FOREIGN-ADDITIVITY-0-EVENTS-DISCARDED-180"
+  },
+  {
+   "name": "BLOCK-REAL",
+   "text": "BLOCK-REAL=DISAGREEING-26-OF-1404-ON-1-OF-9-RECORDS"
+  },
+  {
+   "name": "CANONICAL",
+   "text": "CANONICAL=S-ADDITIVITY-591-OF-591|N-FRONT-SUM-FORCED-314-OF-314|ALT-INTERIOR-DELTA-877"
+  },
+  {
+   "name": "CHOICE",
+   "text": "CHOICE=REGISTER-M-FIBER-AFFINE-DIM-2-BOX-9-OF-625-NAMED-3"
+  },
+  {
+   "name": "INVENTORY",
+   "text": "INVENTORY=FORCED:4|STABILIZER:0|FREE:3|OBSTRUCTION=THE-MATTER-RULE+THE-LAPSE-RESTRICTION+THE-FRONT-MERGE-PAIR"
+  },
+  {
+   "name": "TRANSFORM",
+   "text": "TRANSFORM=Q-DIAGONAL-BLOCK-ADDITIVE-234-OF-234|CROSS-IFF-TRANSVERSALITY-117-OF-117|COVARIANT=COUNTS-n_l+FRONT-n+Q-DIAGONAL-BLOCK"
+  },
+  {
+   "name": "FIXED-POINTS",
+   "text": "FIXED-POINTS=AFFINE-35-OF-775-ADMISSIBLE-OF-1125-BOX|LAMBDA-2-31|LAMBDA-4-4-DIAGONAL-FORCED-YES|HOM-361-ALL-LAMBDA-2|PARITY-16983563041-FIXED-361"
+  },
+  {
+   "name": "SEMIGROUP",
+   "text": "SEMIGROUP=AXIS-COMMUTE-702-OF-702|COMPOSITE-EQUALS-DYADIC-598-OF-702-IFF-DIAGONAL-YES|CHAIN-A4-1-A6-1-FLOOR-L1-REFUSED"
+  },
+  {
+   "name": "COMMUTATION",
+   "text": "COMMUTATION=FRONT-GRID-2-OF-4-UNIVERSAL-MIXED-234-OF-1044|REGISTER-DEFECT-NONZERO-61780-OF-118260-ZERO-56480|IRREDUCIBLE-540-OF-540-UNSOLVABLE|SUPPORT-(0, 0):31845-OF-269892|(0, 1):23851-OF-168804|(1, 0):24082-OF-168804|(1, 1):19644-OF-118260"
+  },
+  {
+   "name": "CONSISTENCY",
+   "text": "CONSISTENCY=SPLIT-MERGE-IDENTITY-2971-OF-2971|R6A-FIBERS-REPRODUCED-9-OF-9|SPLITTABLE-6-UNSPLITTABLE-3|FRONT-IDENTITY-IFF-NEW-FRONTS-ZERO-MEASURED"
+  },
+  {
+   "name": "D3",
+   "text": "D3=MERGE-SITE-COMPLETE-64-OF-64-INCIDENCE-6-OF-6-UNIQUE-VS-R6A-SPLIT-UNREACHED-27"
+  }
+ ]
+}

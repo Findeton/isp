@@ -1455,3 +1455,44 @@ Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
 mutants dying by their named gates.  R6b′ stands
 GREEN-VERIFIED-UNREVIEWED; panel queued (behind the running
 repairs/constructions).
+
+## 2026-08-09 — CR-C DELIVERED, COMMITTED AS-IS (v14 LEDGER #50)
+paper-07-coarse-graining.md (2ec57a6a415f) + crc_coarsegrain_
+exact.py (fc15b9922ec6) + _output.txt (5dc21826882a) +
+_receipt.json (1c7698228cca) committed exactly as delivered.
+**THE VERDICT: CRC-MERGE-CHOICE-AT<...> — merging is CANONICAL
+on geometry and front (additivity FORCED 591/591 + 314/314,
+the R6a dual) BUT THE MATTER REGISTER IS GENUINELY FREE
+(affine fiber dim 2, INFINITE box) — and THE SHARPEST RESULT:
+the dynamics CANNOT fix it — the commutation linear system is
+UNSOLVABLE at 540 OF 540 cells (planted-solution positive
+control recovers).**  Why no stabilizer exists: THE MERGE
+BREAKS CHART TRANSLATIONS TO THE EVEN SUBLATTICE (index
+4 = 2^d) — no pinned symmetry acts within a block.
+THE FIXED-POINT CENSUS (the RG analogs): 35 affine fixed
+points of 775 admissible — spectrum λ=2 (31, the homogeneous
+locus) / **λ=4 (4, the graded locus — FORCED INTO HA'S
+DIAGONAL SECTOR)**; parity box 1.7e10 w/ exactly the 361
+homogeneous fixed.  Semigroup: axis merges commute 702/702;
+**composite = dyadic IFF the record is DIAGONAL (598/702) —
+HA's sector boundary recovered from a different question.**
+Cross-additivity of q₁₂ IFF the transversality criterion
+(iff verified 117/117 w/ a violating control).  M-AXIS
+BLOCKED at R6a's own DIAGONAL-INTERVAL-INCIDENCE fact FROM
+THE MERGE SIDE (26/1404 disagreements, 1/9 records).
+Consistency: split-then-merge identity 2,971/2,971; R6a
+fibers reproduced 9/9 (incl. the 1.26e21); **d=3: the merge
+is SITE-COMPLETE 64/64 — the exact dual of the split's 27
+unreached sites.**  L=3 non-mergeable (11 records, reason
+measured); C-PROJECT foreign (180 events discarded).
+Instrument: 44 anchors, 55 gates, 44/44 mutants, 22/22 paper
+claims verbatim, byte-identical ×2.  **PROVENANCE: R6a's
+receipt moved mid-run (the R6a repair delivering:
+022c3f488a93 → 94adec72ab11, gates 48→71, mutants 34→78) —
+CR-C's anchor FIRED AND ABORTED as designed; resolution
+dual-hash disclosure + G-R6A-VALUES-STABLE-UNDER-DRIFT
+(12/12 path-values unchanged).  ADJUDICATOR'S RULING: the
+COMMITTED bytes (022c3f488a93) remain canonical until the
+R6a repair reports and is committed-as-is; CR-C's handling
+is the correct pattern.**  Adjudicator verification next;
+panel queued.
