@@ -596,3 +596,37 @@ is extensionally vacuous — recorded as a ledger note, no
 reopening.  F15 CREDIT: the grid as named coordinate at
 birth; the coherence corollary correctly self-demoted.
 PANEL COMPLETE: 3× AWF.  Joint adjudication next.
+
+## 2026-08-09 — R2 JOINT ADJUDICATION (v14 LEDGER #20)
+note-r2-adjudication.md (`ee295ac1bb68`) committed.  Grade AWF
+unanimous (~204,402 recomputations + ~4.25M sweeps; receipt
+CLEAN both counts; two false PROSE numbers — the programme's
+3rd+4th, all four to date in prose).  Settled: the census IS
+a theorem (three independent derivations; all 14 rule IDs
+predictable; TWO threshold causes); LOCALITY-DECLARABLE not
+FOUND (0-of-8,280 partitions; the Fano lines a
+locality-DESTROYER; the integer labelling the essential
+ingredient; the declared numbering MODAL — no cherry-pick);
+dimension ⊥ locality in-grid w/ the constructive
+fixed-point-free 1-manifold escape; the forced remainder
+(B₂, LOCAL-DIMENSIONS, link conventions, the 60-rule
+boundary w/ one locality-bearing exclusion).  RULINGS: the
+transport scope ADOPTED (vindicated by the two-causes
+finding; the pin's singular wording mine, owned); the R1
+side finding a ledger note of record (N_coh=N forced ⟹ the
+"coherent" qualifier extensionally vacuous at that relation;
+no reopening); **THE R3 HANDOFF: I7's OWN ARENA, L ≥ 4
+GATED — the gravity record layer's declared lattice measured
+as satisfying the locality criterion w/ CONSISTENT dimension
+and a single per-site link profile: the substrate's motivated
+locality lives in the RECORD LAYER, not the declaration
+grid.**  Twelve binding orders R-R2-1..12 (verdict rewrite w/
+the effectus segment set; the width theorem + motivation
+census in-unit; prose-number regeneration; the verdict gate
+rebuilt w/ a comparator that can disagree + non-vacuity
+injections; path-value anchors; render_check total; count
+guards + internal-consistency gate; never-falsified census
+restored; the F6 successor control shipped; paper rewrite;
+scoping).  **THREE RUNBOOK ENGRAVINGS: prose-renders-from-
+the-receipt; compliance-claims-are-gate-claims; path-value
+anchoring.**  Repair worker next.

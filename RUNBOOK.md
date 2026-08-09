@@ -1823,3 +1823,23 @@ object the receipt and paper render from — one object, one
 source of truth; a rendering path that bypasses the gated
 object is an ungated verdict (the R1 INJ_D class: a corrupted
 trajectory cell reached the delivered receipt at exit 0).
+
+**§13 addendum (2026-08-09, from v14 #20 — prose renders from
+the receipt):** every numeric claim in a paper renders from
+the receipt object or is explicitly marked derived-in-text at
+its derivation site. All four of the programme's false paper
+numbers to date lived in hand-written prose — the one surface
+the render-from-the-gated-object rule did not yet cover.
+
+**§14 addendum (2026-08-09, from v14 #20 — compliance claims
+are gate claims):** a gate asserting compliance with an
+engraved rule ships with an injection-falsifier demonstrating
+the gate can fail; a compliance gate whose comparator cannot
+disagree with the object under test is vacuous by
+construction (the R2 verdict-gate recurrence of #219, at the
+very gate the #10 engraving created).
+
+**§14 addendum (2026-08-09, from v14 #20 — path-value
+anchoring):** a read-by-path from a pinned artifact anchors
+the (path, value) pair, not only the file bytes; a path drift
+that changes the arena or the verdict must die by anchor.
