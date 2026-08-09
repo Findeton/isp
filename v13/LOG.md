@@ -9186,3 +9186,21 @@ RSQ (the re-posed square at three wings — new encoding
 pairing per LCB's universal wall + the S₃-module machinery +
 HA at d=3) and TOP (topology on the ladder — the atlas's
 global structure with named groups).  Pinned next.
+
+## 2026-08-08 — THE SUCCESSORS PINNED: RSQ + TOP (v13 LEDGER #300)
+The era's batch closed at eleven terminal units; the two
+successors pinned and dispatched per the standing order.
+**RSQ** (note-rsq-reposed-square-pin.md): the from-question
+moved to the FLESH — HA rebuilt at d=3; candidate squares
+declared as a family with the STILLBORN PRECHECK (the LCB
+fixed-point lesson made structural: no census runs on a
+square whose fixed-point structures cannot match); F_p[S₃]
+module-level intertwining; the p=7 spectral meeting tested;
+outcomes incl. RSQ-NO-COMPATIBLE-SQUARE as a first-class
+negative.  **TOP** (note-top-topology-pin.md): the atlas's
+global shape — the nerve as a cell complex with exact
+F₂-invariants; the local-dimension (manifold-shaped)
+measurement; THE FANO-RUNG SELECTOR hunted within a declared
+candidate family; the wing-quotient invariants.  Both
+dispatched (Opus 5, freeze-on-delivery, rsq_*/top_*
+namespaces).  Ledger reaches #300.
