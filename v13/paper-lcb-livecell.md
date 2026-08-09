@@ -1,6 +1,6 @@
 # LCB — THE LIVE-CELL BRIDGE AT THE STRENGTHENED STANDARD
 
-**Status:** `GREEN-UNREVIEWED` — re-derivation delivery under
+**Status:** `TERMINAL (v13 LCB)` — panel #287–#292, adjudicated #293 REJECT-AS-DELIVERED, re-derivation L-1..L-6 (continuation after outage) verified byte-identical and conferred terminal at v13 LOG #297.
 `v13/note-lcb-livecell-pin.md` (STRICT), not citable before its own external
 hostile round.
 **Pin:** `v13/note-lcb-livecell-pin.md`, frozen, sha256

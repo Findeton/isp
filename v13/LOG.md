@@ -9105,3 +9105,26 @@ never_falsified EMPTY / 18 qualifiers recomputed +
 token-gated / byte-identical ×2.  11 deviations incl. the
 predecessor line.  md5 output 3bdb2782 / receipt 670c65a0.
 Adjudicator verification next.
+
+## 2026-08-08 — LCB TERMINAL (v13 LEDGER #297)
+Adjudicator verification PASSED (plain exit 0 byte-identical:
+output 3bdb2782 / receipt 670c65a0; selftest exit 0; three
+identical runs).  TERMINAL CONFERRED: the continuation
+implemented #293 exactly (the per-item predecessor inventory
+in its deviations; the interruption point — G27's stale list —
+identified and fixed).  **LCB CLOSES: the strengthened square
+is EMPTY UNIVERSALLY (the fixed-point mismatch, registered
+clauses, arena-free, 0 uncovered of 84, 0 survivors at all 12
+covariant cells) — the from-question moves entirely to the
+re-posed square; and THE PRIME IS SCALE-DEPENDENT (DECLARED
+at 9 labels, DERIVED-[5] at 16, arena-coupled) — the
+relational pattern RECURSED at the top: whether the
+unification question has an absolute answer is itself
+frame-dependent at finite scale, with derivability APPEARING
+as the arena grows (injective-candidate thresholds computed:
+16 labels for p=5, 22 for p=7) — the limit-stability question
+is the continuum rung's to pose.**  Bequests: the re-posed
+square's requirements (change the encodings; the S₃-module
+machinery; HA at d=3); the scale-threshold table; the
+confirmed-but-declaration-carried ruling as instrument
+practice.
