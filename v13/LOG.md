@@ -9321,3 +9321,15 @@ architecture + the stillborn-cell meeting / K4 HA-at-d=3 +
 the pin-reading deviation / K5 instrument).  Three-lens panel
 (Opus 5) dispatched immediately after — running beside the
 TOP panel: SIX reviewers concurrent.
+
+## 2026-08-09 — RSQ PANEL DISPATCHED (v13 LEDGER #306)
+Three-lens panel dispatched (Opus 5): R1 operator (the
+permutation-module obstruction derived + its exact relation
+to the LCB wall; the grown-arena control verified); R2
+effectus (what the 43-label FOUND proves — the honest ladder;
+THE SCALE-CONVERGENCE THESIS audited sentence by sentence;
+the precheck as RUNBOOK doctrine; the verdict naming); R3
+instrument (the precheck function probed; the qualifier
+probes; the 1,440-sweep completeness; the held-out trace).
+SIX reviewers now concurrent (TOP panel ×3 + RSQ panel ×3).
+Reviews frozen on return.
