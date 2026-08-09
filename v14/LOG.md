@@ -217,3 +217,41 @@ WITHDRAW A₁; hand forward NONE-EARNED; successor criterion
 EMPTY); if a member must be named, A₃, never A₁.**  R2-F11
 CREDIT: b₂-partiality handled by pre-declared failure mode —
 a clean pass.  One reviewer (instrument) still in flight.
+
+## 2026-08-09 — R1 REVIEW: INSTRUMENT FROZEN (v14 LEDGER #9)
+review-r1-instrument.md (d3685698da65) frozen as delivered.
+Grade AWF; 220 process-level executions + 47-mutant
+independent audit + 9 crafted injections + 168 number checks
++ 60 anchor traces + a from-scratch re-implementation at 10
+arenas + ~20,000 algebraic checks.  **ZERO false numbers
+(168/168); all 47 mutants reproduce exactly; X-COMPANION-HASH
+matches the #4 erratum.**  **FIVE OF EIGHT BUG-CLASS
+INJECTIONS SURVIVE A PASSING RUN, each PROVEN EXECUTED (the
+corruption appears in the emitted artifact, exit 0, all gates
+PASS)**: INJ_A per-block-uniform coherence corruption
+SILENTLY REWRITES THE HEADLINE to 4/3;19/36 (G16's
+"independent recount" iterates the ALREADY-FILTERED list —
+the #219 disease at v14's first unit; no anchor touches this
+unit's own atlas); INJ_B the two stabilised values SWAP
+BETWEEN THEIR NAMES (G22 checks containment, never
+name↔value pairing); INJ_C R2-GATEWAY=A3 TYPED while the
+computed gateway is A1 (segment never inspected); INJ_D one
+trajectory cell corrupted AT FULL DELIVERY STRENGTH (the
+delivered receipt carries PHI(A3)=6/44 while G15/G23 say
+6/43 — the rendered object is not the gated object); INJ_E
+text appended to every DIVERGENT mode survives (prefix
+containment).  Died as designed: forced-UNDEFINED, cache
+counting, pinned-byte corruption (the hash check reads
+bytes).  Forced clauses in must-pass gates (#208): G17's
+eigenvalue_1_present + degree_check are permutation
+identities; A-LCB-A1/A2-FIX forced (δ(q)=q ⟺ q=1 over
+14,976 pairs).  K1 instrument-side: 1-cells 27b / coherent
+37b / b₂ 20b EXACTLY at b=6,7,8,10,12 — the stabilisations
+algebraic given G24.  M5: the NCOH denominator is the
+coordinate-resolved 1-cell count (162) not the pin's drawn-
+pair count (126) — 37/27 vs 37/21.  M6: R0 hash literals
+typed; the docstring's read-from-pin claim unimplemented.
+Sound: G33 legitimate; the boundary-parity degenerate probe
+a REAL death certificate (ablation lets parity-lax survive);
+cache gating non-vacuous; byte-identity reproduced.
+**PANEL COMPLETE: 3× AWF.**  Joint adjudication next.
