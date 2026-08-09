@@ -630,3 +630,50 @@ restored; the F6 successor control shipped; paper rewrite;
 scoping).  **THREE RUNBOOK ENGRAVINGS: prose-renders-from-
 the-receipt; compliance-claims-are-gate-claims; path-value
 anchoring.**  Repair worker next.
+
+## 2026-08-09 — R2 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #21)
+Repair delivered (one API-stall resume mid-flight; inventory
+protocol held); ALL TWELVE ORDERS R-R2-1..12 executed.
+Hashes: paper ee83db5b81c6, code a4b0e71819be, output
+ccc56c093d78, receipt 08b2140f46ae.  **THE NEW VERDICT: head
+R2-LOCALITY-DECLARABLE-AT<...> — 14 computed segments** incl.
+DRAWING (ALT-⟨γ,Σ⟩ 0-pairs at 2/2 transports), WIDTH-LAW
+(theorem R2-W in-unit; census PREDICTED at 109/109 with no
+atlas built; closed forms 30/30; TWO CAUSES measured — T7
+missing-point D=4 / T4 contiguous-arc D=3), **MOTIVATION
+(measured in-unit: 0-of-8,280 partitions; the Fano lines
+clique-only 2/2 as a 21/21-pair 2-design; order-relativity
+over 40,320 numberings — counts 11..16, 11 distinct rule
+sets, declared 14 MODAL 34.29%)**, LINK-CONVENTION (1-of-80
+cell-multiplicity / 8-of-80 simple-graph / 0-of-80
+triangulated circles), GRID-BOUNDARY (60 word-rule + 12
+cyclic-lattice exclusions printed; the ONE locality-bearing
+exclusion measured 16/21), forced labels throughout.  Both
+false prose numbers fixed; 24 load-bearing sentences now
+RENDERED from the receipt and gated verbatim.  The verdict
+comparator rebuilt as an independent reconstruction sharing
+no code/input w/ build_verdict — ALL FIVE R1 injection
+classes die; §8's false gate claim rewritten.  Six path-value
+anchor rows (path-drift dies).  render_check total;
+internal-consistency gate.  Count guards (flag-flip/
+refuses-reclassify/b1-zero/twocell-drop/sweep-truncate/
+window-drop all die).  **The honest falsifier census IN the
+receipt: 25 of 69 gates never falsified — 14 waived w/
+forcing stated, 11 NAMED; 44 carry declared falsifiers; the
+four cannot-fail gates rebuilt falsifiable.**  The F6
+successor control shipped: the fixed-point-free 8-cycle at
+c=2 is a TRIANGULATED 1-MANIFOLD w/ CONSISTENT reading (and
+it resolved an operator/effectus c=4 discrepancy as a
+link-convention difference — both printed).  Counts: anchors
+5→11, gates 42→69, mutants 14→54 (54/54 dead), segments
+9→14.  **ZERO MEASURED NUMBERS MOVED** (field-by-field diff:
+0 shared-field differences; the only uncovered paper tokens
+are the I7 fractions, explicitly marked as the
+adjudication's external measurements).  Two plain runs
+byte-identical; compliance sweep 28 rules w/ COMPUTED
+statuses, all five 2026-08-09 engravings each shipping a
+falsifier.  Worker flags: Status-vocabulary
+(GREEN-REPAIRED per order vs §10 ladder wording — moot at
+the terminal stamp); the 60-vs-72 boundary counts both
+printed; effectus F8/F12 not ordered, not implemented.
+Adjudicator verification next.

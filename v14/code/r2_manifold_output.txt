@@ -19,6 +19,18 @@ declarations produce a component with a NON-COMPLETE overlap graph?
       R0 row I3 -- the topology base: nerve / link / dimension definitions and the sphere / torus / pinch-point controls
   A-ERRATUM-TOP-PAPER    v13/paper-top-topology.md                      379194959fbc  OK
       v14 LOG #4 erratum -- the TOP paper's terminal companion hash, the written source of the I3 definitions reimplemented here
+  P-I6-GAMMA7            v13/code/tb3_third_base_receipt.json           [0, 2, 3, 4, 5, 6, 7, 1]  OK
+      T7's transport generator: the x7 = [A7:A6] embedding witness's system part
+  P-I6-GAMMA4            v13/code/tb3_third_base_receipt.json           [0, 1, 3, 4, 5, 2, 7, 6]  OK
+      T4's transport generator: the lex-first completion permutation at defect order 4
+  P-I6-SIGMA             v13/code/tb3_third_base_receipt.json           [0, 3, 2, 1, 4, 5, 6, 7]  OK
+      Sigma, the declared completion transposition (1 3)
+  P-I6-BLOCKSIZE         v13/code/tb3_third_base_receipt.json           8  OK
+      the block size, read from I6 and never typed
+  P-I6-FANO-LABELS       v13/code/tb3_third_base_receipt.json           [1, 2, 3, 4, 5, 6, 7]  OK
+      the seven non-zero labels of F_2^3 -- the Fano points I6 declares its type on; the motivation census's one inherited partial-overlap cover
+  P-I3-CONTROL-TETRA     v13/code/top_topology_receipt.json             top-topology-receipt-v1  OK
+      I3's receipt schema: the topology base whose nerve/link/dimension definitions are reimplemented here
 
 ------------------------------------------------------------------------------
 2.  THE ARENAS AND THE TRANSPORTS (declared data, RUNBOOK section 15)
@@ -650,6 +662,144 @@ declarations produce a component with a NON-COMPLETE overlap graph?
   R109  non-complete components B=1 B2=2 ; survives=True doubles=True ; componentwise completeness 5/6 -> 5/6 (unchanged=True)
 
 ------------------------------------------------------------------------------
+9a. THE WIDTH LAW (theorem R2-W) -- the census as a corollary of the
+    declaration
+------------------------------------------------------------------------------
+  R2-W: on a regular orbit R, x ~ y iff the cyclic distance of their coset indices is <= c-1, so the drawn graph is the lexicographic blow-up of the circulant C_k(1..c-1)[S] by cliques K_{w_i}; a component is incomplete iff it holds a pair at cyclic distance >= c; when the circulant on S is connected this is exactly c <= diam_k(S)
+  predicted correctly (status AND edge count), no atlas built: 109 of 109
+  closed forms agreeing with the measured (|E|, b1): 30 of 30 rows
+  THE TWO THRESHOLDS HAVE DIFFERENT CAUSES:
+    T4  coset support [2, 3, 4, 5] of 8, shape CONTIGUOUS-ARC, diameter D = 3 => locality vanishes at c = 4
+    T7  coset support [1, 2, 3, 4, 5, 6, 7] of 8, shape MISSING-POINT, diameter D = 4 => locality vanishes at c = 5
+  the two declared transports reach their thresholds by DIFFERENT causes: at T7 the regular orbit's coset support is Z_k minus ONE POINT (diam = floor(k/2)), at T4 it is a CONTIGUOUS ARC of length m (diam = m-1).  One reported effect, two mechanisms
+  epistemic status: FORCED (#208): which rules are local, their component sizes, their completeness fractions and their cycle ranks are all computed from the declaration.  What remains MEASURED is the grid, the drawing relation and the density values
+  closed-form rows (rule, family, k, m, c, |E|, b1):
+    R005  MISSING-POINT:|E|=(c-1)(k-2),b1=(c-2)(k-2)
+    R014  GENERAL-BLOW-UP:|E|=sum C(w_i,2)+sum_{d<=c-1} w_i w_j
+    R063  CONTIGUOUS-ARC(c<=m):|E|=(c-1)m-C(c,2),b1=|E|-m+1
+    R072  CONTIGUOUS-ARC(c>m,SATURATED):|E|=C(m,2),b1=|E|-m+1
+    R005   k=8 m=7 c=2  |E| closed=6   measured=6    b1 closed=0   measured=0    agree
+    R008   k=8 m=7 c=3  |E| closed=12  measured=12   b1 closed=6   measured=6    agree
+    R011   k=8 m=7 c=4  |E| closed=18  measured=18   b1 closed=12  measured=12   agree
+    R014   k=8 m=7 c=5  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R017   k=8 m=7 c=6  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R020   k=8 m=7 c=7  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R030   k=8 m=7 c=2  |E| closed=6   measured=6    b1 closed=0   measured=0    agree
+    R033   k=8 m=7 c=3  |E| closed=12  measured=12   b1 closed=6   measured=6    agree
+    R036   k=8 m=7 c=4  |E| closed=18  measured=18   b1 closed=12  measured=12   agree
+    R039   k=8 m=7 c=5  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R042   k=8 m=7 c=6  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R045   k=8 m=7 c=7  |E| closed=21  measured=21   b1 closed=15  measured=15   agree
+    R048   k=7 m=6 c=2  |E| closed=7   measured=7    b1 closed=1   measured=1    agree
+    R051   k=7 m=6 c=3  |E| closed=14  measured=14   b1 closed=8   measured=8    agree
+    R057   k=6 m=2 c=2  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R060   k=6 m=2 c=3  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R063   k=8 m=4 c=2  |E| closed=3   measured=3    b1 closed=0   measured=0    agree
+    R066   k=8 m=4 c=3  |E| closed=5   measured=5    b1 closed=2   measured=2    agree
+    R069   k=8 m=4 c=4  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R072   k=8 m=4 c=5  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R075   k=8 m=4 c=6  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R078   k=8 m=4 c=7  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R088   k=8 m=4 c=2  |E| closed=3   measured=3    b1 closed=0   measured=0    agree
+    R091   k=8 m=4 c=3  |E| closed=5   measured=5    b1 closed=2   measured=2    agree
+    R094   k=8 m=4 c=4  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R097   k=8 m=4 c=5  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R100   k=8 m=4 c=6  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R103   k=8 m=4 c=7  |E| closed=6   measured=6    b1 closed=3   measured=3    agree
+    R106   k=7 m=4 c=2  |E| closed=3   measured=3    b1 closed=0   measured=0    agree
+    R109   k=7 m=4 c=3  |E| closed=5   measured=5    b1 closed=2   measured=2    agree
+
+------------------------------------------------------------------------------
+9b. THE MOTIVATION CENSUS -- is any locality-bearing cover inherited?
+------------------------------------------------------------------------------
+  (a) EVERY set partition of the eight labels, at both transports
+      partitions 4140 (Bell(8) derived = 4140) x 2 transports = 8280 measurements
+      non-complete components found: 0
+      the orbit family of ANY subgroup of S_8 is one of these partitions, so Sigma, <gamma,Sigma>, the seven declared words, the ladder 1<A4<GL(3,2)<A6<A7 and every subgroup of every one of them are settled at once
+  (b) I6's OWN declared partial-overlap cover: the seven Fano lines
+      source: I6 tables.the_ladder.the_embedding.the_non_zero_labels_of_F2_cubed (path-anchored), with the lines derived by the F_2-linear rule a^b^c = 0
+      lines: [[1, 2, 3], [1, 4, 5], [1, 6, 7], [2, 4, 6], [2, 5, 7], [3, 4, 7], [3, 5, 6]]
+      pairs covered 21 of 21 -- a 2-design: True
+      T4  lines: non-complete=False (6 drawn pairs) ; complements: non-complete=False (6 drawn pairs)
+      T7  lines: non-complete=False (21 drawn pairs) ; complements: non-complete=False (21 drawn pairs)
+      clique-only at 2 of 2 transports -- THE ONE MOTIVATED COVER THE
+      CORPUS OWNS IS A LOCALITY-DESTROYER, and for a reason: a 2-design
+      covers every pair, so its overlap graph is complete.
+  (c) the locality census under EVERY numbering of the carrier
+      numberings swept 40320 ; sliding rules 30 ; distinct coset systems 5 ; rule-censuses 1209600
+      locality count distribution:
+        11 rules local at   4032 numberings  (10.00%)
+        12 rules local at   2880 numberings  (7.14%)
+        13 rules local at  10368 numberings  (25.71%)
+        14 rules local at  13824 numberings  (34.29%)   <-- THE DECLARED NUMBERING
+        15 rules local at   1728 numberings  (4.29%)
+        16 rules local at   7488 numberings  (18.57%)
+      distinct locality-bearing rule sets realised: 11
+      the declared numbering's count is 14 and it is the MODAL value at 34.29% -- the unit did not cherry-pick
+      rules local at SOME numbering: 16 -- R005, R008, R011, R030, R033, R036, R048, R051, R063, R066, R069, R088, R091, R094, R106, R109
+      per-rule numberings at which the rule is local:
+        R005    40320 of 40320
+        R008    40320 of 40320
+        R011    40320 of 40320
+        R030    40320 of 40320
+        R033    40320 of 40320
+        R036    40320 of 40320
+        R048    40320 of 40320
+        R051    40320 of 40320
+        R063    18432 of 40320
+        R066    33408 of 40320
+        R069    31104 of 40320
+        R088    18432 of 40320
+        R091    33408 of 40320
+        R094    31104 of 40320
+        R106    24192 of 40320
+        R109    40320 of 40320
+
+------------------------------------------------------------------------------
+9c. THE GRID BOUNDARY -- what the admissibility proxy excludes
+------------------------------------------------------------------------------
+  declared test    : c * |H| < block size (an arithmetic on the GROUP ORDER)
+  alternative test : c < the number of H-cosets (an arithmetic on the ORBIT COUNT -- the quantity the construction actually uses)
+  excluded rules constructible from the declared words : 60
+  excluded rules including the cyclic lattice          : 72
+  of the excluded, LOCALITY-BEARING                    : 1
+    ['G3-UNIONS', 'T7', '<gsgs>', 5, 2, 'SLIDING']  cosets 4  cells [[0, 1, 4, 5, 6, 7], [0, 3], [1, 2, 4, 5, 6, 7], [2, 3]]
+      component size 7: 16 of 21 pairs drawn, completeness 16/21
+
+------------------------------------------------------------------------------
+9d. THE SUCCESSOR CONTROL -- the grid's boundary, made visible
+------------------------------------------------------------------------------
+  the 8-cycle transport (fixed-point-free, regular on the whole label set) with the SAME sliding cell class; OUTSIDE the declared grid, a control only
+  transport [1, 2, 3, 4, 5, 6, 7, 0] (order 8), fixed points [], orbits [[0, 1, 2, 3, 4, 5, 6, 7]]
+  the regular orbit is the WHOLE label set: True
+    c=2  cells=8 edges=8 2-cells=0 components=[8] non-complete=True
+         reading: cell-indexed INCONSISTENT (8 distinct) ; chart-intrinsic CONSISTENT (1 distinct)
+         links (cell multiplicity) [[2, 0, 2, 0]] ; (simple graph) [[2, 0, 2, 0]]
+         A TRIANGULATED 1-MANIFOLD: True
+    c=3  cells=8 edges=16 2-cells=8 components=[8] non-complete=True
+         reading: cell-indexed INCONSISTENT (8 distinct) ; chart-intrinsic CONSISTENT (1 distinct)
+         links (cell multiplicity) [[4, 3, 1, 0]] ; (simple graph) [[4, 3, 1, 0]]
+         A TRIANGULATED 1-MANIFOLD: False
+    c=4  cells=8 edges=24 2-cells=32 components=[8] non-complete=True
+         reading: cell-indexed INCONSISTENT (8 distinct) ; chart-intrinsic CONSISTENT (1 distinct)
+         links (cell multiplicity) [[6, 12, 1, 7]] ; (simple graph) [[6, 9, 1, 4]]
+         A TRIANGULATED 1-MANIFOLD: False
+
+------------------------------------------------------------------------------
+9e. THE DIMENSION READING OVER THE WHOLE GRID, AND THE LINK CONVENTION
+------------------------------------------------------------------------------
+  R2-D: under the cell-indexed reading CONSISTENT and NON-COMPLETE are mutually exclusive, so INCONSISTENT at the locality-bearing rules is FORCED, not measured
+  rules measured 109 ; CONSISTENT at 22 ; locality-bearing 14 ; intersection 0
+  CONSISTENT at: R001, R019, R022, R023, R026, R027, R044, R052, R056, R065, R071, R074, R077, R080, R082, R083, R085, R090, R096, R099, R102, R105
+  locality rules CONSISTENT under the chart-intrinsic reading: 0
+  link circles over 80 charts with links:
+      cell-multiplicity convention (delivered) : 1
+      simple-graph convention                  : 8
+      TRIANGULATED circles (the manifold test)  : 0
+  the delivered link counts its EDGES as 2-cells WITH CELL MULTIPLICITY while counting its VERTICES as distinct neighbours; the simple-graph convention counts both without multiplicity.  The conventions disagree, and the headline moves with them -- so both are printed, together with the count of links that are TRIANGULATED CIRCLES (a cycle graph: the manifold condition, stronger than (b0,b1) = (1,1))
+  LOCAL-DIMENSIONS is an identity: agrees at 14 of 14 -- the top local dimension equals max |cell cap regular orbit| - 1 -- a restatement of the declared window width, not an independent reading (#208 disclosure)
+
+------------------------------------------------------------------------------
 10. CONTROLS
 ------------------------------------------------------------------------------
   POSITIVE CONTROL: two coset-union cells sharing exactly one label, hand-declared OUTSIDE the grid (pin section 6)
@@ -678,11 +828,13 @@ declarations produce a component with a NON-COMPLETE overlap graph?
   R2-A               drawn <=> b in orbit(a) and orbit(a) regular; the drawn relation at a cell is a disjoint union of complete graphs on the regular orbits.  Re-proved in the paper, verified at 10 actions with 0 counterexamples.
   R2-A-coherence     a drawn pair forces a trivial stabiliser, so the three drawn maps of any 2-cell compose to the identity: N_coh = N identically (FORCED, disclosed).
   R2-C-inherited     the R1 gateway phi < 1 is forced by the basepoint; R2 does not use phi (anchor A-R1-ADJ).
-  R2-partition       an atlas whose cells PARTITION the labels can never produce a non-complete component; locality requires cells that overlap partially (G0/G1/G3-ORBITS verified clique-only).
+  R2-D               R2-D: under the cell-indexed reading CONSISTENT and NON-COMPLETE are mutually exclusive, so INCONSISTENT at the locality-bearing rules is FORCED, not measured
+  R2-W               R2-W: on a regular orbit R, x ~ y iff the cyclic distance of their coset indices is <= c-1, so the drawn graph is the lexicographic blow-up of the circulant C_k(1..c-1)[S] by cliques K_{w_i}; a component is incomplete iff it holds a pair at cyclic distance >= c; when the circulant on S is connected this is exactly c <= diam_k(S)
+  R2-partition       an atlas whose cells PARTITION the labels can never produce a non-complete component; locality requires cells that overlap partially (G0/G1/G3-ORBITS verified clique-only).  Measured at full generality: all 4140 set partitions of the eight labels, at both transports, 8280 measurements, 0 non-complete.
   R2-A verification: 10 actions this unit uses (0 counterexamples); 40320 cyclic actions swept on the block (0 counterexamples)
 
 ------------------------------------------------------------------------------
-12. GATES (42, all passed)
+12. GATES (69, all passed)
 ------------------------------------------------------------------------------
   [PASS] G-FLOATGUARD
        no float literal, no true division, no float/math/random/numpy/statistics/decimal anywhere in this source
@@ -696,10 +848,24 @@ declarations produce a component with a NON-COMPLETE overlap graph?
        external anchor 65bb1fc5231f verifies at v13/code/top_topology_receipt.json
   [PASS] A-ERRATUM-TOP-PAPER
        external anchor 379194959fbc verifies at v13/paper-top-topology.md
+  [PASS] P-I6-GAMMA7
+       path-value anchor: v13/code/tb3_third_base_receipt.json[tables.the_ladder.the_embedding.the_witness_system_part] reads exactly [0, 2, 3, 4, 5, 6, 7, 1] (the PAIR is anchored, not only the file bytes)
+  [PASS] P-I6-GAMMA4
+       path-value anchor: v13/code/tb3_third_base_receipt.json[tables.ord_census.lex_first_Q_per_order.4] reads exactly [0, 1, 3, 4, 5, 2, 7, 6] (the PAIR is anchored, not only the file bytes)
+  [PASS] P-I6-SIGMA
+       path-value anchor: v13/code/tb3_third_base_receipt.json[tables.arena.the_declared_completion_transposition] reads exactly [0, 3, 2, 1, 4, 5, 6, 7] (the PAIR is anchored, not only the file bytes)
+  [PASS] P-I6-BLOCKSIZE
+       path-value anchor: v13/code/tb3_third_base_receipt.json[tables.base_declaration.carrier.system_triple_dimension] reads exactly 8 (the PAIR is anchored, not only the file bytes)
+  [PASS] P-I6-FANO-LABELS
+       path-value anchor: v13/code/tb3_third_base_receipt.json[tables.the_ladder.the_embedding.the_non_zero_labels_of_F2_cubed] reads exactly [1, 2, 3, 4, 5, 6, 7] (the PAIR is anchored, not only the file bytes)
+  [PASS] P-I3-CONTROL-TETRA
+       path-value anchor: v13/code/top_topology_receipt.json[schema] reads exactly 'top-topology-receipt-v1' (the PAIR is anchored, not only the file bytes)
   [PASS] G-ANCHOR-COUNT
-       every declared R0/pin anchor was evaluated
+       every declared anchor row -- file-bytes AND path-value -- was evaluated and passed; the count is derived from the declared tables, so a skipped row is fatal
   [PASS] G-BLOCKSIZE-FROM-I6
        the block size is READ from I6 (system_triple_dimension), not typed
+  [PASS] G-READ-VALUES-MATCH-THE-DECLARATION
+       every property the paper states about a value read from a pinned receipt -- the transport orders, their cycle types, the Sigma-mixed group orders -- is recomputed from the anchored value and matched (RUNBOOK section 15: match EVERY coordinate)
   [PASS] G-GROUP-CAP
        every declared group closure stays under the printed cap (no silent truncation)
   [PASS] G-ARENA-DECL-MATCHED
@@ -710,6 +876,8 @@ declarations produce a component with a NON-COMPLETE overlap graph?
        every grid coordinate occurs exactly once
   [PASS] G-GRID-NOT-TRUNCATED
        no silent cap: the grid is enumerated exhaustively from the declarations
+  [PASS] G-GRID-CELL-SETS-COMPLETE
+       every rule's CELL SET equals an independently rebuilt one (windows over the coset-index map, never through cells_from_orbits): a silently dropped window is fatal, not merely a coordinate drop
   [PASS] G-EVERY-RULE-RECORDED
        every grid rule is recorded at both arenas -- a rule that draws nothing is REFUSES, never skipped
   [PASS] G-DRAW-TWO-ROUTES
@@ -717,15 +885,19 @@ declarations produce a component with a NON-COMPLETE overlap graph?
   [PASS] G-R2A-AT-THIS-UNITS-ACTIONS
        THEOREM R2-A holds at every cyclic action this unit uses (drawn <=> regular orbit); zero counterexamples
   [PASS] G-R2A-EXHAUSTIVE
-       THEOREM R2-A holds at EVERY cyclic action on the block's 8 labels (one per permutation), zero counterexamples
+       THEOREM R2-A holds at EVERY cyclic action on the block's 8 labels, and the sweep is EXHAUSTIVE BY DERIVED COUNT: it visited exactly factorial(block size) permutations (a silent truncation is fatal); the number of DISTINCT cyclic groups so obtained is printed beside the permutation count, since <p> is generated by phi(ord p) elements
   [PASS] G-R2A-NULL-CLIQUE-ONLY
-       the G0 null (regular <gamma>-orbits) returns clique-only components at every transport and arena -- the R2-A theorem check
+       the G0 null (regular <gamma>-orbits) returns clique-only components at every rule and arena -- the R2-A theorem check.  The denominator is DERIVED: #G0 rules x #arenas, not #transports x 2
   [PASS] G-ORBIT-CLASSES-CLIQUE-ONLY
-       every orbit-partition class (G0, G1, G3-ORBITS) returns clique-only components: disjoint cells cannot make a non-complete component
+       every orbit-partition class (G0, G1, G3-ORBITS) returns clique-only components: disjoint cells cannot make a non-complete component.  REFUSES is counted separately -- it is a distinct status, not a kind of clique-only
   [PASS] G-COMPONENTS-TWO-ROUTES
        b0 by union-find equals |V| - rank(d1) over F_2 at every rule and arena
   [PASS] G-COMPLETENESS-TWO-ROUTES
        per-component completeness by stored edge count agrees with an explicit pair scan at every component of every rule
+  [PASS] G-FLAGS-DERIVED-NOT-TRUSTED
+       the locality flag, the REFUSES flag, per-component completeness and the per-component cycle rank are each RE-DERIVED inside the gate from per_component/edges and compared against the stored bit: a single flipped bit is fatal, at every rule and arena
+  [PASS] G-TWOCELLS-TWO-ROUTES
+       the 2-cell count is reproduced by an independent triangle enumeration over the drawn-pair table at every rule and arena (the deduplication step is a measured no-op: combinations yields each triple once per cell)
   [PASS] G-COHERENCE-FORCED
        every 2-cell of N is coherent at every rule and arena: a drawn pair forces a trivial stabiliser, so the three drawn maps compose to the identity (FORCED -- entered as a disclosure, #208)
   [PASS] G-UNDEFINED-PATH-LIVE
@@ -736,10 +908,16 @@ declarations produce a component with a NON-COMPLETE overlap graph?
        the controls' Betti numbers reproduce I3's table exactly
   [PASS] G-STANDARDS-IDENTITIES
        sum_v star_E(v) = 2|E(N)| and sum_v star_F(v) = 3|F(N)| at every rule where the standards are measured, and the per-cell dimension agrees with an independent component census
+  [PASS] G-DIMREAD-MUTUAL-EXCLUSION
+       the dimension reading is evaluated at EVERY grid rule, not only at the filtered locality-bearing ones: CONSISTENT is attained somewhere (so the measure has a positive control on shipped input) and its intersection with the locality census is EMPTY -- the mutual-exclusion theorem R2-D, measured
+  [PASS] G-LINK-CONVENTION-WITNESSED
+       both link conventions are computed and printed, and the triangulated-circle count is reported beside the Betti-coincidence count: the convention is a witnessed declaration, not an implicit one (RUNBOOK section 14 addendum, v13 #313)
+  [PASS] G-LOCAL-DIMENSIONS-ARE-AN-IDENTITY
+       the realised top local dimension equals max|cell cap regular orbit| - 1 at every locality-bearing rule: LOCAL-DIMENSIONS is carried as a FORCED identity, with the forcing measured
   [PASS] G-COPY-REDUCTION
        the per-block reduction is VERIFIED, not assumed: at every rule the additive counts at B2 are exactly twice B's and all three densities are unchanged (the copy-forcing theorem's content at this scale)
   [PASS] G-B2-PERSISTENCE-MEASURED
-       every locality-bearing rule is re-measured at B2 and its persistence recorded (survival is measured, never assumed)
+       every rule that has a non-complete component at B -- the set derived here afresh from per_component, not the list this dict was built by iterating -- is re-measured at B2 and its persistence recorded
   [PASS] G-POSITIVE-CONTROL
        the hand-declared toy (two cells sharing exactly one label) returns a NON-COMPLETE component -- the criterion's instrument has teeth
   [PASS] G-MODES-DISTINCT
@@ -756,21 +934,49 @@ declarations produce a component with a NON-COMPLETE overlap graph?
        the alternative drawing-group reading is measured and recorded (it draws nothing at both transports)
   [PASS] G-LATTICE-CROSSCHECK
        the Sigma-mixed lattice's trivial subgroup reproduces the cyclic lattice's trivial subgroup exactly (two independently declared lattices, same measured census)
+  [PASS] G-CONSTANTS-SPAN-COMPUTED
+       the per-incidence density's span across the grid is COMPUTED here and carried in the verdict, never typed in prose (RUNBOOK section 13 addendum, v14 #20: prose renders from the receipt)
+  [PASS] G-WIDTH-LAW-PREDICTS-THE-CENSUS
+       the width law predicts BOTH the locality status AND the drawn edge count of every grid rule from the declaration alone -- no atlas built, no cell enumerated -- and agrees with the measured census at every rule; the census is therefore a COROLLARY OF THE DECLARATION and its clauses are carried as forced (#208)
+  [PASS] G-WIDTH-LAW-CLOSED-FORMS
+       the closed forms specialise the law to the declared families and reproduce the measured edge counts and cycle ranks by arithmetic in (k, m, c) alone -- a THIRD route, neither the atlas nor the graph build
+  [PASS] G-WIDTH-LAW-TWO-CAUSES
+       the two declared transports' width thresholds are shown to have DIFFERENT causes: the regular orbit's coset support is a punctured cycle at one transport and a contiguous arc at the other, measured and printed with each diameter
+  [PASS] G-MOTIVATION-PARTITION-SWEEP
+       EVERY set partition of the eight labels is measured at every transport and NONE yields a non-complete component: since the orbit family of any subgroup of S_8 is one of these partitions, no inherited GROUP can motivate a locality-bearing cover.  The denominator is derived from the Bell number, so a truncated sweep is fatal
+  [PASS] G-MOTIVATION-FANO-COVER
+       I6's OWN declared partial-overlap cover -- the seven Fano lines, derived from the anchored non-zero F_2^3 labels -- is measured at both transports.  It is a 2-design (it covers every pair), so its overlap graph is complete: the one motivated cover the corpus owns is a locality-DESTROYER
+  [PASS] G-MOTIVATION-ORDER-RELATIVITY
+       the locality census is re-run under EVERY numbering of the carrier: SLIDING reads the label order twice (to name the cosets and to say 'consecutive'), so the rule list is a coordinate of the numbering.  The sweep is exhaustive by derived count, the count distribution and the number of distinct rule sets are printed, and the declared numbering's own count is compared against the modal one
+  [PASS] G-GRID-BOUNDARY-CENSUSED
+       the admissibility proxy c*|H| < block size is an arithmetic on the GROUP ORDER while the construction uses H's ORBITS; the rules a coset-count test would admit and this one excludes are enumerated, measured and printed -- including any that bear locality, whose completeness values are printed beside the censused ones
+  [PASS] G-SUCCESSOR-CONTROL
+       a fixed-point-free transport with the SAME sliding cell class yields, at width 2, a NON-COMPLETE component that is a TRIANGULATED 1-MANIFOLD -- a cycle graph whose every link is two points (S^0, the correct link for dimension one) -- and a CONSISTENT chart-intrinsic dimension reading.  The obstruction at the declared transports is their FIXED POINTS, not width-based overlap: measured, not inferred
   [PASS] G-VERDICT-STRING-EQUALITY
-       the complete emitted verdict string equals a string rebuilt segment-by-segment from the measured values (equality, not containment)
+       the complete emitted verdict string equals a string reconstructed INDEPENDENTLY from the receipt object's own measured tables -- equality, not containment, and a comparator that CAN disagree
   [PASS] G-VERDICT-SEGMENTS-FLIPPABLE
-       perturbing any one measured segment changes the emitted string: every segment carries content
+       perturbing the RECEIPT ROW a segment is derived from moves the independently reconstructed string, at every one of the segments: each segment carries measured content, not decoration
   [PASS] G-VERDICT-BOTH-HEADS-REACHABLE
-       both verdict heads are derivable by the same derivation: the instrument can emit either outcome
+       both verdict heads are emitted by the SAME derivation run on synthesised receipts -- a receipt with no non-complete rule yields the negative head, one with a non-complete rule the positive head
   [PASS] G-COUNTS-COMPUTED
        every total is recomputed by an independent expression and matches (#24: counts computed, never typed)
+  [PASS] G-RECEIPT-INTERNALLY-CONSISTENT
+       the receipt does not contradict itself: no rule is labelled clique-only while a non-complete component is listed for it, no REFUSES draws an edge, every cycle rank agrees with its own (edges, size), and the locality set agrees across census_rows, locality_census, standards, b2_persistence and b1_per_component
+  [PASS] G-FALSIFIER-CENSUS
+       the never-falsified set is computed from the declared mutant table against the gate ledger and emitted in the receipt with an honest denominator; every gate in it that cannot fail by construction carries a waiver stating its forcing, and every waiver names a gate that really is unfalsified
   [PASS] G-RENDER-FROM-GATED-OBJECT
        every rendered table cell equals the corresponding cell of the gated measurement object -- the receipt and the output render from one object, no bypass path
   [PASS] G-NO-FLOATS-IN-RECEIPT
        the emitted receipt contains no float
+  [PASS] G-PROSE-RENDERS-FROM-THE-RECEIPT
+       every load-bearing numeric sentence of paper-02 is rendered from the receipt object and appears verbatim in the paper: the prose surface is gated like the tables (all four of the programme's false paper numbers to date lived in hand-written prose)
+  [PASS] G-FINAL-GATE-COUNT
+       the gate count carried by the paper's rendered instrument sentence equals the number of gates this run actually registered (the claim's own arithmetic, gated)
+  [PASS] G-DEFERRED-GATES-EVALUATED
+       the write-time gates named in the falsifier census really did run, so the census's denominator covers every gate this instrument declares
 
 ------------------------------------------------------------------------------
-13. MUTANTS DECLARED (14) -- each must exit 1 on a NAMED gate
+13. MUTANTS DECLARED (54) -- each must exit 1 on a NAMED gate
 ------------------------------------------------------------------------------
   grid-drop            silently drops one (H,c,mode) grid cell
   census-corrupt       drops one drawn edge from a rule's census
@@ -780,85 +986,210 @@ declarations produce a component with a NON-COMPLETE overlap graph?
   table-corrupt        corrupts one block-constants table cell after measurement
   anchor-hash          corrupts the I6 anchor hash
   orbit-corrupt        corrupts the orbit machinery at the G0 null
-  locality-erase       collapses SLIDING onto BLOCKWISE, erasing all locality
+  locality-erase       collapses SLIDING onto BLOCKWISE, erasing all locality and driving the head to NO-LOCALITY-IN-THE-DECLARED-GRID; it is caught one level earlier than the mode probe, by the cell-set comparator
+  modes-collapse       makes the mode probe see BLOCKWISE and SLIDING as the same construction
   locality-inject      injects a spurious non-complete component at the null
   toy-broken           breaks the positive control's partial overlap
   scramble-inert       makes the scramble control a no-op
   census-row-corrupt   corrupts one rendered census row after measurement
   float-leak           reports a float offence in the source scan
+  verdict-typed-segment TYPES the STANDARDS segment -- the headline negative finding emitted inverted (links circles at 80 of 80, DIMREAD=CONSISTENT)
+  verdict-append-text  appends '-AND-SUBSTRATE-MOTIVATED' to the MECHANISM segment (the containment class)
+  verdict-typed-motivation types the MOTIVATION segment to claim the cover is inherited from I6's Fano lines -- the exact opposite of the measurement
+  verdict-fully-typed  replaces EVERY segment with a literal and names a rule that does not exist (R999 in a grid of size 1)
+  verdict-inert-segment makes the MOTIVATION segment a constant in BOTH the builder and the comparator: string equality still holds and the segment stops carrying content
+  head-constant        the reconstructed head stops tracking the census, so the negative head becomes unreachable
+  path-drift           drifts ONE JSON path component (lex_first_Q_per_order['4'] -> ['6']): a 115-rule grid, an order-2 transport and an entirely different verdict, with every file-bytes anchor green
+  anchor-skip          silently drops one declared anchor row
+  flag-flip            clears one rule's locality bit: the rule leaves the headline census while its non-complete component stays in the receipt (the internally contradictory receipt)
+  refuses-reclassify   reclassifies every REFUSES as a drawing rule
+  b1-zero              zeroes every per-component cycle rank -- the whole degree-one finding erased
+  twocell-drop         drops the first 2-cell of each block, per-block uniformly, so the copy-reduction and coherence gates stay green
+  window-drop          silently drops one interior sliding window: the grid coordinate set is untouched and the grid still reports complete
+  sweep-truncate       truncates the 'exhaustive' R2-A sweep to 100 permutations and emits the truncated count verbatim
+  width-law-corrupt    corrupts the width law's prediction at one rule
+  partition-sweep-truncate truncates the 4,140-partition motivation sweep
+  fano-shrink          drops four of I6's seven Fano lines, so the cover is no longer the declared 2-design
+  order-sweep-truncate truncates the 40,320-numbering order-relativity sweep
+  successor-control-broken gives the successor control a fixed point, destroying the triangulated 1-manifold
+  render-escape        corrupts seven receipt cells the old render check did not cover (b2_density, ncoh_per_incidence, the whole B2 column, a standards reading, a circle count, a cycle rank, a B2 completeness)
+  internal-contradiction labels a rule clique-only in census_rows while leaving its non-complete component listed
+  prose-claim-drift    renders one paper claim with a number the measurement does not support, so the paper no longer carries the receipt's own sentence
+  read-value-drift     swaps the T4 transport for the order-2 completion AFTER the anchor, so the paper's typed 'order 4' no longer describes the value in use
+  copy-reduction-break flips one rule's B->B2 doubling flag
+  b2-persistence-drop  drops one locality-bearing rule from the B2 persistence table
+  components-route2-break perturbs the F_2-rank route to b0
+  standards-identity-break breaks the star/edge global identity at one rule
+  symmetry-break       makes the census non-invariant under the declared Sigma relabelling
+  parity-inert         makes the alternative 2-cell connective agree with the delivered one everywhere -- a parity witness with no measured delta
+  lattice-crosscheck-break breaks the agreement between the two independently declared lattices at their shared trivial subgroup
+  anchor-hash-A-PIN-R2 corrupts the A-PIN-R2 file-bytes anchor
+  anchor-hash-A-R1-ADJ corrupts the A-R1-ADJ file-bytes anchor
+  anchor-hash-A-R0-I3  corrupts the A-R0-I3 file-bytes anchor
+  anchor-hash-A-ERRATUM-TOP-PAPER corrupts the A-ERRATUM-TOP-PAPER file-bytes anchor
+  path-value-P-I6-GAMMA7 breaks the P-I6-GAMMA7 (path, value) anchor
+  path-value-P-I6-SIGMA breaks the P-I6-SIGMA (path, value) anchor
+  path-value-P-I6-BLOCKSIZE breaks the P-I6-BLOCKSIZE (path, value) anchor
+  path-value-P-I6-FANO-LABELS breaks the P-I6-FANO-LABELS (path, value) anchor
+  path-value-P-I3-CONTROL-TETRA breaks the P-I3-CONTROL-TETRA (path, value) anchor
+
+  gates with a declared falsifier : 44 of 69
+  NEVER FALSIFIED (honest denominator): 25 of 69 gates
+      G-BLOCKSIZE-FROM-I6                    no declared falsifier
+      G-GROUP-CAP                            WAIVED: A DECLARED SCOPE STATEMENT, not a measurement: it records that no group closure was silently truncated.  It can fail only on a declaration whose closure exceeds the printed cap.
+      G-ARENA-DECL-MATCHED                   no declared falsifier
+      G-GRID-NO-DUPLICATES                   no declared falsifier
+      G-GRID-NOT-TRUNCATED                   no declared falsifier
+      G-R2A-AT-THIS-UNITS-ACTIONS            WAIVED: ANALYTICALLY FORCED: theorem R2-A is true of every group action, so this can never report a fact about the substrate. Kept as an implementation comparator (two genuinely independent routes); shadowed by G-DRAW-TWO-ROUTES, which fires earlier on the same corruption.
+      G-ORBIT-CLASSES-CLIQUE-ONLY            WAIVED: ANALYTICALLY FORCED: the partition corollary is proved in the paper and measured at full generality by the 4,140-partition sweep.  A disclosure carried as an instrument check, not a claim about the substrate.
+      G-COHERENCE-FORCED                     WAIVED: ANALYTICALLY FORCED: a drawn pair has a trivial stabiliser, so N_coh = N for every input.  Non-vacuous as an implementation check -- the scramble control moves the coherent count at every rule of its declared tested set.
+      G-UNDEFINED-PATH-LIVE                  no declared falsifier
+      G-STANDARDS-CONTROLS                   no declared falsifier
+      G-STANDARDS-CONTROL-BETTI              no declared falsifier
+      G-DIMREAD-MUTUAL-EXCLUSION             WAIVED: HALF FORCED: the EMPTY INTERSECTION is theorem R2-D (CONSISTENT and NON-COMPLETE are mutually exclusive under a cell-indexed reading), so that half cannot come out otherwise.  The other half -- that CONSISTENT is attained at all, at 22 of the 109 shipped rules -- IS a measurement, and it is the positive control the delivered instrument lacked.
+      G-LINK-CONVENTION-WITNESSED            no declared falsifier
+      G-LOCAL-DIMENSIONS-ARE-AN-IDENTITY     WAIVED: ANALYTICALLY FORCED: the top local dimension IS max|cell cap regular orbit| - 1 because the drawn slice of a cell inside a regular orbit is a clique.  The gate exists to make the identity visible, not to test it.
+      G-CACHE-EXERCISED                      no declared falsifier
+      G-ALT-DRAW-PROBE                       WAIVED: ANALYTICALLY FORCED: |<gamma,Sigma>| exceeds the label count at both transports, so no orbit can be regular and nothing is drawable.  The MEASUREMENT it records is verdict-determining and is carried in the DRAWING segment.
+      G-CONSTANTS-SPAN-COMPUTED              WAIVED: FORCED: the grid contains rules with F_coh = 0 and rules with F_coh > E_N, so the span is non-degenerate for any grid of this shape.  Its purpose is to make the span a COMPUTED object so the paper's sentence cannot be typed.
+      G-WIDTH-LAW-CLOSED-FORMS               WAIVED: ANALYTICALLY FORCED given the declaration: the closed forms are arithmetic specialisations of theorem R2-W, whose measured content is carried by G-WIDTH-LAW-PREDICTS-THE-CENSUS (falsifier: width-law-corrupt).
+      G-WIDTH-LAW-TWO-CAUSES                 WAIVED: FORCED BY THE ARENA: the two declared transports' regular orbits sit in their coset cycles as a punctured cycle and as a contiguous arc respectively; this is a property of the anchored permutations, not an outcome.
+      G-GRID-BOUNDARY-CENSUSED               no declared falsifier
+      G-COUNTS-COMPUTED                      WAIVED: INSTRUMENT BOOKKEEPING: it compares this run's totals against recomputations of the same objects.  Its content is that no total is typed (#24); it cannot report a fact about the substrate.
+      G-FALSIFIER-CENSUS                     WAIVED: INSTRUMENT BOOKKEEPING: it gates the shape of this unit's own falsifier accounting -- that gate names are unique, that every waiver names a genuinely unfalsified gate, and that every declared mutant names a gate that exists.
+      G-NO-FLOATS-IN-RECEIPT                 no declared falsifier
+      G-FINAL-GATE-COUNT                     WAIVED: INSTRUMENT BOOKKEEPING: it checks that the gate count the paper's rendered sentence carries equals the number of gates actually registered -- the arithmetic of the claim, not a measurement.
+      G-DEFERRED-GATES-EVALUATED             WAIVED: INSTRUMENT BOOKKEEPING: it records that the three write-time gates ran, so the falsifier census's denominator covers every gate.  It can fail only if a write-time gate is removed from deliver().
+  waivers censused: 14
+
+------------------------------------------------------------------------------
+13a. THE PAPER'S NUMERIC SENTENCES, RENDERED FROM THIS RECEIPT
+------------------------------------------------------------------------------
+  every load-bearing numeric sentence of the paper is RENDERED HERE from the measured object and must appear VERBATIM in the paper; a number the instrument does not render is a number the paper may not assert
+  paper v14/paper-02-manifold-rung.md (sha256-12 ee83db5b81c6); claims rendered 24, present 24
+      b1_nontrivial          9 of the 14 carry a non-trivial degree-one component
+      census                 14 of 109 rules produce a component that is not complete
+      closed_forms           the closed forms reproduce the measured edge counts and cycle ranks at 30 of 30 rows
+      dimread                CONSISTENT is attained at 22 of 109 rules and its intersection with the locality census is empty
+      falsifiers             25 of 69 gates carry no declared falsifier, and 14 of those are waived with their forcing stated
+      fano                   the seven Fano lines cover 21 of 21 pairs and are clique-only at 2 of 2 transports
+      grid_boundary          60 rules constructible from the same declared words are excluded, and 1 of them bears locality
+      grid_boundary_value    completeness 16/21, a value no censused rule attains
+      grid_size              an exhaustively enumerated declared atlas grid of 109 rules at 2 declared transports
+      instrument             69 gates, all passed; 11 anchors; 54 declared mutants, all dead
+      link_circles           links are circles at 1 of 80 charts under the cell-multiplicity convention and at 8 of 80 under the simple-graph convention
+      null_units             G0 clique-only at 2 of 2 rules (4 of 4 rule-arena measurements) and the whole orbit-partition family at 19 of 19 rules (38 of 38 measurements, of which 10 refuse)
+      order_extra            16 rules are local at some numbering
+      order_sweep            over all 40320 numberings of the carrier the count runs from 11 to 16, realising 11 distinct rule sets, and the declared numbering's 14 is the modal value at 34.29%
+      partitions             all 4140 set partitions of the eight labels at both transports -- 8280 measurements, 0 non-complete
+      per_incidence_span     the per-incidence density runs from 0/1 to 5/3 across the grid
+      per_incidence_union    within the ALL-mode union classes it reaches 25/18
+      r048_link_edges        3 charts carry one link edge apiece
+      r2a_sweep              40320 cyclic actions on the block's eight labels, 14170 distinct cyclic groups, 0 counterexamples
+      refuses                5 rules refuse
+      successor              at width 2 the drawn graph is an 8-cycle: a triangulated 1-manifold, every link two points, and the chart-intrinsic reading is CONSISTENT
+      triangulated           0 of 80 links is a triangulated circle
+      two_causes             at T7 the support is missing point with diameter 4, at T4 it is contiguous arc with diameter 3
+      width_law              the law predicts the locality status and the drawn edge count of every rule at 109 of 109
 
 ------------------------------------------------------------------------------
 14. COMPLIANCE SWEEP, rule by rule
 ------------------------------------------------------------------------------
   RULE   : RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)
-  STATUS : APPLIED -- this sweep enumerates each rule and its status
-  RULE   : #10 containment is not equality (verdict gate compares the COMPLETE string against a segment rebuild)
-  STATUS : G-VERDICT-STRING-EQUALITY
+  STATUS : APPLIED -- this sweep enumerates each rule and computes its status from the gate ledger (69 gates)
+  RULE   : #10 containment is not equality: the verdict gate compares the COMPLETE string against a rebuild
+  STATUS : APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers verdict-pair-swap, verdict-typed-segment, verdict-append-text, verdict-typed-motivation, verdict-fully-typed
+  RULE   : #20 compliance claims are gate claims: a gate asserting compliance with an engraved rule ships with an injection-falsifier, and a comparator that cannot disagree is vacuous
+  STATUS : APPLIED -- the verdict comparator is reconstruct_verdict_from_receipt(), which shares no code and no input with build_verdict(); all five R1 injection classes are declared mutants and die on it
   RULE   : #10 render from the gated object (one object, one source of truth)
-  STATUS : G-RENDER-FROM-GATED-OBJECT (evaluated at write time)
+  STATUS : APPLIED via G-RENDER-FROM-GATED-OBJECT -- TOTAL over every rendered field of every rendered object; falsifiers render-escape, table-corrupt, census-row-corrupt
+  RULE   : #20 prose renders from the receipt: every numeric claim in the paper renders from the receipt object
+  STATUS : APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT; falsifiers prose-claim-drift
+  RULE   : #20 path-value anchoring: a read-by-path anchors the (path, value) pair, not only the file bytes
+  STATUS : APPLIED -- 6 path-value anchor rows; APPLIED via G-READ-VALUES-MATCH-THE-DECLARATION; falsifiers path-drift
   RULE   : #234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail
-  STATUS : G-VERDICT-SEGMENTS-FLIPPABLE + mutants verdict-pair-swap / locality-erase / locality-inject
-  RULE   : #234 cell-completeness gate catches a dropped cell
-  STATUS : G-GRID-CELL-COMPLETE + mutant grid-drop
+  STATUS : APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE, G-VERDICT-BOTH-HEADS-REACHABLE -- flippability is tested by perturbing the RECEIPT ROW each segment derives from, not by appending to its string; falsifiers verdict-inert-segment, head-constant
+  RULE   : #234 the cell-completeness gate catches a dropped cell
+  STATUS : APPLIED via G-GRID-CELL-COMPLETE, G-GRID-CELL-SETS-COMPLETE; falsifiers grid-drop, window-drop
   RULE   : #234/#219 two independent routes are genuinely independent
-  STATUS : G-DRAW-TWO-ROUTES (orbit/stabiliser vs brute force over the group), G-COMPONENTS-TWO-ROUTES (union-find vs F_2 rank), G-COMPLETENESS-TWO-ROUTES (stored count vs pair scan)
+  STATUS : APPLIED via G-DRAW-TWO-ROUTES, G-COMPONENTS-TWO-ROUTES, G-TWOCELLS-TWO-ROUTES, G-WIDTH-LAW-PREDICTS-THE-CENSUS -- orbit/stabiliser vs brute force; union-find vs F_2 rank; cell enumeration vs triangle recount; atlas census vs the analytic width law.  G-COMPLETENESS-TWO-ROUTES is a stored-flag-versus-recomputation TAMPER check and is described as one, not as two routes
+  RULE   : #219 a gate clause may not compare an object against a copy of itself routed through the component under test
+  STATUS : APPLIED -- the verdict comparator was exactly that and is rebuilt; see the #20 row above
   RULE   : #257 computed qualifiers (no typed qualifier segment)
-  STATUS : every verdict segment is built from measured counts; G-VERDICT-SEGMENTS-FLIPPABLE proves each carries content
+  STATUS : APPLIED -- all 14 verdict segments are built from measured counts and each is shown flippable at its measurement
   RULE   : #208 forced clauses are disclosures, not must-pass claims
-  STATUS : coherence (N_coh = N) and the orbit-partition clique-only result are recorded as FORCED disclosures with their proofs
+  STATUS : APPLIED -- FORCED is written into the verdict string itself at DIMREAD, LOCAL-DIMENSIONS, B2-PERSISTENCE and BLOCK-CONSTANTS, and the width law states that WHICH RULES ARE LOCAL is computed from the declaration; the waiver table names 14 gates that cannot fail, each with its forcing
   RULE   : #208 no gate predicate references mutant identity
-  STATUS : no gate reads MUTANT; injections live in the measured functions
+  STATUS : APPLIED -- no gate reads MUTANT; every injection lives in a measured function or in the rendered object
+  RULE   : #208/#175 falsified-or-waived, with the waivers censused
+  STATUS : APPLIED -- 25 of 69 gates never falsified, 14 waived with forcing stated; the census is emitted in the receipt (APPLIED via G-FALSIFIER-CENSUS)
   RULE   : #219 a zero-hit or zero-lookup cache gate is vacuous
-  STATUS : G-CACHE-EXERCISED gates hits > 0 AND misses > 0
+  STATUS : APPLIED via G-CACHE-EXERCISED -- hits > 0 AND misses > 0
   RULE   : #24 counts are computed, never typed
-  STATUS : every total in R['totals'] is a len() or a comprehension count
+  STATUS : APPLIED via G-COUNTS-COMPUTED, G-R2A-EXHAUSTIVE, G-CONSTANTS-SPAN-COMPUTED -- the sweep's exhaustiveness is gated against a DERIVED factorial, and the constants' span is computed, not typed; falsifiers sweep-truncate, partition-sweep-truncate, order-sweep-truncate
   RULE   : section 15 declared-arena discipline: the arena and the grid are printed and matched at every coordinate
-  STATUS : G-ARENA-DECL-MATCHED + G-GRID-CELL-COMPLETE + the grid is a named verdict coordinate (segment GRID)
+  STATUS : APPLIED via G-ARENA-DECL-MATCHED, G-GRID-CELL-COMPLETE, G-READ-VALUES-MATCH-THE-DECLARATION -- the grid, the drawing relation and the transport are named verdict coordinates; the two transports are arena data and the census is reported at both
   RULE   : section 14 #175 symmetry self-tests, evaluated fresh
-  STATUS : G-SYMMETRY-SELFTEST (memo bypassed, fresh-call count gated)
+  STATUS : APPLIED via G-SYMMETRY-SELFTEST (memo bypassed, fresh-call count gated).  DECLARED SCOPE: it conjugates the transport AND transports the cells, so it is a COVARIANCE check; the ORDER-invariance question it cannot reach is measured separately by G-MOTIVATION-ORDER-RELATIVITY
   RULE   : section 14 #185 self-tests must not reach their quantity through the memo
-  STATUS : f2_rank(fresh=True) in the self-test path
+  STATUS : APPLIED -- f2_rank(fresh=True) in the self-test path
   RULE   : section 13 #313 boundary parity witness with a measured delta
-  STATUS : G-BOUNDARY-PARITY
+  STATUS : APPLIED via G-BOUNDARY-PARITY, G-LINK-CONVENTION-WITNESSED -- the 2-cell connective AND the link convention both carry their measured deltas
   RULE   : section 13 #314 precheck doctrine: a precheck may gate what is censused but never name the verdict
-  STATUS : no precheck exists; the verdict is named by the censused objects only
+  STATUS : APPLIED -- no precheck exists; the verdict is named by the censused objects only
+  RULE   : section 13 #313 repair propagation: a recurrence of an engraved disease is a MAJOR by default
+  STATUS : APPLIED -- the three engravings of v14 #20 were all raised against THIS unit and all three are implemented above
   RULE   : exact arithmetic only
-  STATUS : G-FLOATGUARD (AST scan) + G-NO-FLOATS-IN-RECEIPT (evaluated at write time)
+  STATUS : APPLIED via G-FLOATGUARD, G-NO-FLOATS-IN-RECEIPT (AST scan of this source + a recursive scan of the emitted receipt); falsifiers float-leak
   RULE   : REFUSES is recorded, never skipped
-  STATUS : G-EVERY-RULE-RECORDED + mutant refuses-skip
-  RULE   : the UNDEFINED path is live or the exclusion is stated (R1 repair order 8)
-  STATUS : G-UNDEFINED-PATH-LIVE -- reached by shipped inputs
-  RULE   : no claim about the continuum; the word 'manifold' appears only in the rung's name
-  STATUS : the verdict string uses LINK-CIRCLES / DIMREAD / LOCAL-DIMENSIONS
+  STATUS : APPLIED via G-EVERY-RULE-RECORDED, G-FLAGS-DERIVED-NOT-TRUSTED; falsifiers refuses-skip, refuses-reclassify
+  RULE   : the receipt may not contradict itself
+  STATUS : APPLIED via G-RECEIPT-INTERNALLY-CONSISTENT; falsifiers internal-contradiction, flag-flip
+  RULE   : the UNDEFINED path is live or the exclusion is stated
+  STATUS : APPLIED via G-UNDEFINED-PATH-LIVE -- reached by shipped inputs at 28 rules
+  RULE   : controls in both directions: a positive control that fires and a negative control that must not
+  STATUS : APPLIED via G-POSITIVE-CONTROL, G-SCRAMBLE-CONTROL, G-STANDARDS-CONTROLS, G-DIMREAD-MUTUAL-EXCLUSION, G-SUCCESSOR-CONTROL -- and the dimension reading now has a POSITIVE control on shipped input (CONSISTENT is attained) plus a constructive successor control
+  RULE   : no claim about the continuum; the word 'manifold' appears only in the rung's name and in the successor control's measured type
+  STATUS : APPLIED -- the verdict string uses LINK-CIRCLES / DIMREAD / LOCAL-DIMENSIONS / TRIANGULATED-CIRCLES; the one place the unit says '1-manifold' is the fixed-point-free CONTROL, where it is a measured graph-theoretic property (a cycle graph with S^0 links), declared outside the grid
 
 ------------------------------------------------------------------------------
 15. TOTALS (computed, never typed)
 ------------------------------------------------------------------------------
-  anchors                          5
+  anchors                          11
+  cyclic_actions_swept             40320
   declared_modes                   3
   declared_transports              2
-  gates                            42
+  gates                            69
   grid_rules                       109
   locality_bearing_rules_B         14
-  mutants_declared                 14
+  mutants_declared                 54
+  numberings_swept                 40320
+  partition_sweep_measurements     8280
+  path_value_anchors               6
   refusing_rules_B                 5
   rule_arena_measurements          218
+  verdict_segments                 14
 
 ==============================================================================
 THE VERDICT
 ==============================================================================
-R2-LOCALITY-AT<RULES=14-OF-109:R005,R008,R011,R030,R033,R036,R048,R051,R063,R066,R088,R091,R106,R109|GRID=T4:G0=1;G1=2;G2=24;G3-ORBITS=7;G3-UNIONS=24|T7:G0=1;G1=1;G2=18;G3-ORBITS=7;G3-UNIONS=24|TOTAL=109|MECHANISM=DECLARED-PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)|COMPONENTS=NONCOMPLETE-COMPONENT-SIZES=4+7;RULES-WITH-NONTRIVIAL-B1=9|STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT;LOCAL-DIMENSIONS=1+2+3;DIMPROFILE=EXTENSIVE-EXCLUDED|B2-PERSISTENCE=SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14|NULL=G0-CLIQUE-ONLY-AT-4-OF-4;ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-38-OF-38(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-0-COUNTEREXAMPLES)|REFUSES=5-OF-109|BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109;UNDEFINED-B2-DENSITY-AT-28>
+R2-LOCALITY-DECLARABLE-AT<RULES=14-OF-109:R005,R008,R011,R030,R033,R036,R048,R051,R063,R066,R088,R091,R106,R109|GRID=T4:G0=1;G1=2;G2=24;G3-ORBITS=7;G3-UNIONS=24|T7:G0=1;G1=1;G2=18;G3-ORBITS=7;G3-UNIONS=24|TOTAL=109|DRAWING=R1-RELATION-AT-<GAMMA>-VERDICT-DETERMINING(ALT-<GAMMA,SIGMA>:0-PAIRS-AT-2-OF-2-TRANSPORTS=>NO-LOCALITY-IN-THE-DECLARED-GRID)|MECHANISM=DECLARED-PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)|WIDTH-LAW=NONCOMPLETE-IFF-C<=D(D=MAX-CYCLIC-COSET-DISTANCE-IN-THE-REGULAR-ORBIT);TWO-CAUSES=T4:CONTIGUOUS-ARC(D=3,C-MAX=3);T7:MISSING-POINT(D=4,C-MAX=4);CENSUS-DERIVABLE-FROM-THE-DECLARATION-AT-109-OF-109;CLOSED-FORMS-AGREE-AT-30-OF-30|MOTIVATION=NONE-INHERITED:PARTITION-COVERS-NONCOMPLETE-AT-0-OF-8280(ALL-4140-PARTITIONS-X-2-TRANSPORTS);I6-FANO-LINES-CLIQUE-ONLY-AT-2-OF-2(2-DESIGN:21-OF-21-PAIRS-COVERED);ORDER-RELATIVE(COUNT=11..16-OVER-40320-NUMBERINGS;DECLARED=14-MODAL-34.29%;DISTINCT-RULE-SETS=11)|COMPONENTS=NONCOMPLETE-COMPONENT-SIZES=4+7;RULES-WITH-NONTRIVIAL-B1=9|STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT-FORCED(CELL-INDEXED-READING:CONSISTENT-EXCLUDES-NONCOMPLETE-BY-THEOREM;CONSISTENT-AT-22-OF-109-RULES,INTERSECTION-WITH-LOCALITY=0);LOCAL-DIMENSIONS=1+2+3-FORCED(=MAX|CELL-CAP-REGULAR-ORBIT|-1-AT-14-OF-14);DIMPROFILE=EXTENSIVE-EXCLUDED|LINK-CONVENTION=CELL-MULTIPLICITY=1-OF-80;SIMPLE-GRAPH=8-OF-80;TRIANGULATED-CIRCLES=0-OF-80|B2-PERSISTENCE=FORCED-BY-BLOCK-LOCALITY:SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14|NULL=G0-CLIQUE-ONLY-AT-2-OF-2-RULES(4-OF-4-MEASUREMENTS);ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-19-OF-19-RULES(38-OF-38-MEASUREMENTS;10-OF-THEM-REFUSE)(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-14170-DISTINCT-CYCLIC-GROUPS-0-COUNTEREXAMPLES)|REFUSES=5-OF-109|GRID-BOUNDARY=(H,C)-ADMITTED-BY-GROUP-ORDER-NOT-COSET-COUNT:60-DECLARED-WORD-RULES-EXCLUDED(72-WITH-THE-CYCLIC-LATTICE);1-OF-THEM-NONCOMPLETE(T7-<GSGS>-C2-SLIDING-16-OF-21)|BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109-FORCED-BY-COPYING;VALUES-GRID-DEPENDENT=0/1..5/3;UNDEFINED-B2-DENSITY-AT-28>
 
 segments:
   RULES        RULES=14-OF-109:R005,R008,R011,R030,R033,R036,R048,R051,R063,R066,R088,R091,R106,R109
   GRID         GRID=T4:G0=1;G1=2;G2=24;G3-ORBITS=7;G3-UNIONS=24|T7:G0=1;G1=1;G2=18;G3-ORBITS=7;G3-UNIONS=24|TOTAL=109
+  DRAWING      DRAWING=R1-RELATION-AT-<GAMMA>-VERDICT-DETERMINING(ALT-<GAMMA,SIGMA>:0-PAIRS-AT-2-OF-2-TRANSPORTS=>NO-LOCALITY-IN-THE-DECLARED-GRID)
   MECHANISM    MECHANISM=DECLARED-PARTIAL-COSET-OVERLAP(CLASSES=G2+G3-UNIONS;MODES=SLIDING)
+  WIDTH-LAW    WIDTH-LAW=NONCOMPLETE-IFF-C<=D(D=MAX-CYCLIC-COSET-DISTANCE-IN-THE-REGULAR-ORBIT);TWO-CAUSES=T4:CONTIGUOUS-ARC(D=3,C-MAX=3);T7:MISSING-POINT(D=4,C-MAX=4);CENSUS-DERIVABLE-FROM-THE-DECLARATION-AT-109-OF-109;CLOSED-FORMS-AGREE-AT-30-OF-30
+  MOTIVATION   MOTIVATION=NONE-INHERITED:PARTITION-COVERS-NONCOMPLETE-AT-0-OF-8280(ALL-4140-PARTITIONS-X-2-TRANSPORTS);I6-FANO-LINES-CLIQUE-ONLY-AT-2-OF-2(2-DESIGN:21-OF-21-PAIRS-COVERED);ORDER-RELATIVE(COUNT=11..16-OVER-40320-NUMBERINGS;DECLARED=14-MODAL-34.29%;DISTINCT-RULE-SETS=11)
   COMPONENTS   COMPONENTS=NONCOMPLETE-COMPONENT-SIZES=4+7;RULES-WITH-NONTRIVIAL-B1=9
-  STANDARDS    STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT;LOCAL-DIMENSIONS=1+2+3;DIMPROFILE=EXTENSIVE-EXCLUDED
-  B2           B2-PERSISTENCE=SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14
-  NULL         NULL=G0-CLIQUE-ONLY-AT-4-OF-4;ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-38-OF-38(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-0-COUNTEREXAMPLES)
+  STANDARDS    STANDARDS=LINK-CIRCLES=1-OF-80-CHARTS;DIMREAD=INCONSISTENT-FORCED(CELL-INDEXED-READING:CONSISTENT-EXCLUDES-NONCOMPLETE-BY-THEOREM;CONSISTENT-AT-22-OF-109-RULES,INTERSECTION-WITH-LOCALITY=0);LOCAL-DIMENSIONS=1+2+3-FORCED(=MAX|CELL-CAP-REGULAR-ORBIT|-1-AT-14-OF-14);DIMPROFILE=EXTENSIVE-EXCLUDED
+  LINK-CONVENTION LINK-CONVENTION=CELL-MULTIPLICITY=1-OF-80;SIMPLE-GRAPH=8-OF-80;TRIANGULATED-CIRCLES=0-OF-80
+  B2-PERSISTENCE B2-PERSISTENCE=FORCED-BY-BLOCK-LOCALITY:SURVIVES-AT-14-OF-14;COMPONENTS-DOUBLE-AT-14
+  NULL         NULL=G0-CLIQUE-ONLY-AT-2-OF-2-RULES(4-OF-4-MEASUREMENTS);ORBIT-PARTITION-CLASSES-CLIQUE-ONLY-AT-19-OF-19-RULES(38-OF-38-MEASUREMENTS;10-OF-THEM-REFUSE)(R2-A-VERIFIED-10-UNIT-ACTIONS-AND-40320-SWEPT-ACTIONS-14170-DISTINCT-CYCLIC-GROUPS-0-COUNTEREXAMPLES)
   REFUSES      REFUSES=5-OF-109
-  CONSTANTS    BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109;UNDEFINED-B2-DENSITY-AT-28
+  GRID-BOUNDARY GRID-BOUNDARY=(H,C)-ADMITTED-BY-GROUP-ORDER-NOT-COSET-COUNT:60-DECLARED-WORD-RULES-EXCLUDED(72-WITH-THE-CYCLIC-LATTICE);1-OF-THEM-NONCOMPLETE(T7-<GSGS>-C2-SLIDING-16-OF-21)
+  BLOCK-CONSTANTS BLOCK-CONSTANTS=DENSITIES-CONSTANT-B-TO-B2-AT-109-OF-109-FORCED-BY-COPYING;VALUES-GRID-DEPENDENT=0/1..5/3;UNDEFINED-B2-DENSITY-AT-28
 
 declared scope: at the single block B (TB3's native 8-label arena via I6) and at B2 (two blocks plus basepoint), over the exhaustively enumerated declared atlas grid of 109 rules at two declared transports
 
