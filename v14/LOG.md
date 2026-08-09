@@ -819,3 +819,26 @@ Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
 34/34 mutants dead (render-escape and prose-claim-drift
 confirmed dying by name).  R6a stands GREEN-VERIFIED-
 UNREVIEWED.  Hostile protocol next.
+
+## 2026-08-09 — R6a HOSTILE PROTOCOL FROZEN (v14 LEDGER #28)
+note-r6a-hostile-protocol.md (`02d249f22f6f`) frozen.  Kill-shots:
+K1 the coboundary theorem (universality: grammar-wide or
+family-bound; could an admissible record carry coboundary
+counts; is it the MECHANISM or a restatement); **K2 THE
+CLASSIFICATION HUNT — the verdict's hinge: a missed
+stabilizer/forcing flips NO-MOTIVATED-SPLIT (Σ, reflections,
+the front's structure, extremal selections, the dynamics —
+the mirror of R2's motivation hunt at the same
+exhaustiveness)**; K3 the dynamics claims (the defect census
++ closed form; and the interpretive hinge: is the
+count-weighted interpolation THE forced lift — derive what
+forces it — or one class among lifts, which would rescale
+"the dynamics vetoes" to "this lift class fails"); K4 the
+move census + the head composition (hyperplane's
+underivability; the count-1 floor's scope; mixed-head
+adjudication per pin §4); K5 instrument (the NEW
+verbatim-text anchor kind — first deployment, adopt or
+reject; 20-of-48 all-waived audit — a false waiver is a
+false gate claim; the five injection classes under attack;
+paper↔receipt sweep).  Three-lens panel dispatched (Opus ×3),
+alongside the R3 construction.
