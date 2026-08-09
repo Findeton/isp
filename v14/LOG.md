@@ -1065,3 +1065,24 @@ charter decisions the USER'S.**  Repair worker next.
 Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0,
 60/60 mutants dead (verdict-class mutants confirmed dying by
 name).  R3 stands GREEN-VERIFIED-UNREVIEWED.  Protocol next.
+
+## 2026-08-09 — R3 HOSTILE PROTOCOL FROZEN (v14 LEDGER #36)
+note-r3-hostile-protocol.md (`c575340216fc`) frozen.  Kill-shots:
+K1 WHAT CARRIES THE HDA CLAIM (closure is forced ⟹ the
+coefficient typing carries everything: well-posedness,
+comparator independence, and the derivability question — does
+HA's ρ=(Λ−I)ω determine the coefficient census analytically,
+the R2/R6a pattern; is SITE-VARYING real or inherited);
+K2 THE DEFECT'S REALITY (realization-relativity: the
+R6a-style census over declared-expressible D realizations —
+could one absorb the register defect as BACKWARD absorbed the
+front; the boundary/sector/L-d claims verified);  K3 THE HDA
+CORRESPONDENCE (what distinguishes the discrete HDA from a
+deformation algebra w/ metric coefficients; the successor
+requirements for GR-at-scale);  K4 scope (the five worker
+flags + is L-stability a THEOREM);  K5 instrument (the waiver
+audit AT THE #34 STANDARD — binds the repair, not the
+delivery's standing; injections incl. the R6a Y1 class;
+verdict rebuild; prose sweep).  Three-lens panel dispatched
+(Opus ×3) — with the R6a repair + four CR constructions,
+EIGHT concurrent.
