@@ -919,3 +919,41 @@ four cite R6a at DELIVERED-UNDER-PANEL status w/ gated hash
 reads; disjoint file surfaces; four construction workers
 dispatched (Opus ×4) — with the R3 verification + the R6a
 panel, EIGHT concurrent processes.
+
+## 2026-08-09 — R6a REVIEW: EFFECTUS FROZEN (v14 LEDGER #31)
+review-r6a-effectus.md frozen as delivered.  Grade AWF; 181
+delivered scalars recomputed ZERO disagreements + ~4.0M exact
+evaluations + ~57M split enumerations.  **K2: THE VERDICT'S
+HINGE HOLDS — NO MISSED FORCING** (symmetry, admissibility
+0-of-20,356 narrowings, lattice arithmetic, extremal,
+dynamics, front semantics all hunted; the trichotomy SOUND;
+the gauge gap CLOSED by the reviewer: split↦defect INJECTIVE
+over the full rule family 24/24 + 9/9 — the split freedom is
+NOT gauge).  **BUT THE MECHANISM WAS MISATTACHED — F3 MAJOR:
+the coboundary theorem is NOT the split's mechanism** (the
+split fiber = ∏(n_ℓ−1) EXACTLY, and the position-carrying
+counterfactual leaves it UNCHANGED); **F4: it IS the
+mechanism of FREE-TRANSVERSE-LINKS** (a potential collapses
+that fiber from INFINITE to 1).  **F1+F2 MAJOR: the
+"dynamics vetoes refinement" claim is RULE-RELATIVE and its
+counterexample was in the delivered census unreported** —
+2-of-11 rules give the count-weighted interpolation;
+A-chart/B-chart FORCE the declared RIGHT lift, INTEGRAL AND
+ADMISSIBLE, with EXACT IMAGE AGREEMENT at 4,536/4,536.
+F7: the count-1 floor "flattest cannot be refined" is a
+SCALE ARTEFACT (flat (a,a,2a) records refine at ceilings up
+to 2).  F9: LATTICE-FORCED-1-OF-361 structurally empty
+(uniqueness ⟺ all counts 2).  F5/F6: denominator-scope and
+arena-coordinate omissions in gated renders.  F8: five
+measured relativities uncarried by the segments.  K4 ruling:
+BLOCKED stays OUT of the head (the hyperplane branch, granted
+any incidence rule, still ends at the same wall).  PROPOSED
+HEAD: R6A-NO-MOTIVATED-REFINEMENT-AT<...> w/ the MECHANISM
+segment corrected.  **PROGRAMME STATEMENT: "the continuum is
+at most effective" is NARRATIVE; EARNED =
+CONTINUUM-NOT-POSABLE-AT-THE-PINNED-GRAMMAR-ROWS (2 of 2,
+and the two walls are DIFFERENT walls: R1 the family is
+degenerate; R6a the record is extensive).  R6b: RE-SCOPE NOT
+RETIRE → R6b′ THE RECORD-TYPE DISCRIMINATOR (pin the v10/v11
+renewal/event-position row, re-run R6a's audit verbatim) + a
+cheap unbounded-count probe.**  Two reviewers pending.
