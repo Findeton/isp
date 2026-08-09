@@ -103,3 +103,11 @@ error, owned: R0 was written before the terminal stamps and
 its companion hashes were not re-verified after them — the
 repair-propagation lesson applied to pins: **a pin recording
 hashes of a tree still moving must re-verify at freeze.**
+
+## 2026-08-09 — R1 ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #5)
+Independent plain delivery run exit 0, output+receipt
+BYTE-IDENTICAL to the committed artifacts; falsification
+selftest exit 0 — corrupts the I5 pinned anchor, fails it BY
+NAME (A-R0-I5), writes no artifacts (CLI contract confirmed
+in-code before invocation, #238).  R1 stands
+GREEN-VERIFIED-UNREVIEWED.  Hostile protocol next.
