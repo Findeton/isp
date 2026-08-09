@@ -19,3 +19,23 @@ family admit a PRE-REGISTERED intensive invariant that stabilizes?
 Both verdicts first-class (STABILIZES-AT-<invariant> /
 NO-CONTINUUM-LIMIT-AT-THIS-SUBSTRATE).  **paper-01 assigned to R1.**
 R1 pin next.
+
+## 2026-08-09 — R1 PIN FROZEN: THE CONTINUUM RUNG (v14 LEDGER #2)
+note-r1-continuum-pin.md (`27c9f1144ffa`) frozen.  The question,
+two-sided: does the DECLARED refinement family (A₁ 9-label /
+A₂ 16-label / A₃ 43-label rebuilt from pinned receipts; A₄, A₅
+by A₃'s own stated generator rule; maps = the constructions'
+own label-embeddings, functoriality GATED) admit a
+PRE-REGISTERED intensive invariant that stabilizes (exact
+constancy on the final 3 members)?  FIVE invariants registered
+before computation: φ overlap-completeness fraction (= R2's
+gateway iff φ<1), N_coh density, normalized spectral profile
+of I−E (eigenvalue-1 row = the walls riding as anchors),
+per-volume dimension profile (raw estimator EXCLUDED as
+extensive per I3), b₂ density (b₁ excluded as trivial per
+I3).  Both verdicts first-class w/ flip mutants:
+R1-STABILIZES-AT-<computed> / R1-NO-CONTINUUM-LIMIT-AT-THIS-
+SUBSTRATE-<computed>.  Controls: positive, negative, scramble
+(must move exactly the identification-sensitive invariants).
+paper-01 = v14/paper-01-continuum-rung.md.  Construction
+dispatched.
