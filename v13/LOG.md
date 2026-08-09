@@ -9333,3 +9333,39 @@ instrument (the precheck function probed; the qualifier
 probes; the 1,440-sweep completeness; the held-out trace).
 SIX reviewers now concurrent (TOP panel ×3 + RSQ panel ×3).
 Reviews frozen on return.
+
+## 2026-08-09 — TOP R2 (EFFECTUS) FROZEN (v13 LEDGER #307)
+review-top-effectus.md frozen as delivered (sha256-12
+b97464904be0).  Grade AWF; 236 recomputations, zero arithmetic
+errors.  FOUR MAJORS: F-1 the naming (CONSISTENT must carry
+its restrictions — the qualifier precedents run the other
+way; recommend
+...-CONSISTENT-AT-THE-REFERENCE-INSTANCE-NOT-A-MANIFOLD).
+**F-2: the reference drawn table is VERTEX-TRANSITIVE (21/21
+generators are automorphisms; orbit 36/36) — chart-
+independence was FORCED BY SYMMETRY; CONSISTENT could not
+have come out otherwise** (the analytically-forced disease at
+the dimension verdict; §4.2's measurement claim inverted).
+**F-3: the temporal-b₁ reading is FORCED by deviation 2**
+(cross-checkpoint digons add rank exactly 140 and kill every
+class; b₁ = (T−1)(|V|−1) + Σb₁ᵗ = 4×35 + 0) — **the deciding
+measurement (drawn-map agreement across coordinate cells) was
+NEVER TAKEN and is one loop away; it decides what the
+continuum rung inherits.**  F-4: the defended sentence false
+of N_coh (21/161 classes intra-time).  Minors: C5 ≡ C10
+analytically (the 13-name family is 11 predicates); C8 does
+not hold on the locus (192/384); "nothing finer" refuted by a
+measured ladder (3,312→1,176→768, 432 false positives — the
+visit is NOT order-theoretic at any refinement); no committed
+number anchors any rank ∂₂; six candidates mis-attributed to
+the pin.  CONTRIBUTED: conditional on all-six-linear, K = the
+WHOLE GL(3,2) at 252/336 = 75% (TB3's "and no more" survives
+as a conditional); **order 168 is realised at 504 completions
+split EXACTLY 252 GL(3,2) / 252 a different order-168
+subgroup — the set-equality naming discipline vindicated.**
+THE CONTINUUM-RUNG REQUIREMENTS WRITTEN: a non-complete
+overlap graph (K₃₆ has no locality to be local about); a
+declared refinement family; a pre-registered INTENSIVE
+invariant (the current estimator is extensive: {11,35} =
+{12−1, 36−1}); F-3's measurement settled; N_coh the working
+object.  Five reviewers pending; adjudications after panels.
