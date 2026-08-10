@@ -97,6 +97,20 @@ ledger opens at its founding pin after v13 closes.
   tested against the frozen D12 standard; the cover lead is recorded
   DISSOLVED (the deep arenas are non-periodic).  paper-09.
 
+- **THE Γ CAMPAIGN — THE GEOMETRY-UPDATE LAW** *(added 2026-08-09 by
+  user order, v14 #56; the Einstein-equation slot — the flagship)*.
+  Staged: **Γ-scout** (read-only: the transport-scope line's exact
+  pedigrees — d70's content and gaps, the v10 transport-scope grammar
+  rows, the v11 Phase II boards U2/U3 as Γ-constraints; ranked pin
+  rows); **Γ-prep** (terminalize the transport-scope renewal
+  foundation as a full-cycle unit; pins on the scout's report,
+  standing order, no further ask); **Γ-main** (construct Γ(cut′←cut)
+  at transport scope; test against the three requirement lists — the
+  interval-positional kernel, the geometry-update law, the seam;
+  pins on Γ-prep's delivery + the R6b′ panel's findings).  If Γ-main
+  lands, "no QFT without gravity" upgrades from structural
+  implication to theorem.  Paper numbers at pin time.
+
 Rungs run as full cycles (pin → construct → commit-as-is → verify →
 protocol freeze → three-lens panel → adjudicate → repair → terminal).
 A blocked rung halts and reports; rungs are not skipped.

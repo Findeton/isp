@@ -1602,3 +1602,25 @@ Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
 (77/77 gates, 82/82 mutants dead).  R4 stands
 GREEN-VERIFIED-UNREVIEWED; panel queued (five panels now
 queued: CR-A, CR-B, CR-C, R6b′, R4).
+
+## 2026-08-09 — USER ORDER: THE Γ CAMPAIGN LAUNCHED (v14 LEDGER #56)
+User order of record ("ok go ahead, launch those"): the
+geometry-update-law campaign — THE EINSTEIN-EQUATION SLOT —
+begins.  Staged per the readiness audit: **Γ-scout** launched
+now (read-only; the transport-scope pedigree map; the R6b′
+scout precedent); **Γ-prep** pins ON THE SCOUT'S REPORT
+(standing conditional order, no further ask — the #42
+pattern): terminalize the transport-scope renewal foundation
+(the d70-class facts re-derived from pinned v10 grammar rows
+at a full hostile cycle — the citability gap named by the
+scout closed the honest way); **Γ-main** pins on Γ-prep's
+delivery + the R6b′ panel's report: construct Γ(cut′←cut) at
+transport scope against the three measured requirement lists
+(CR-B's interval-positional kernel; CR-A's geometry-update
+law; R6b′'s seam).  THE STAKE, recorded: if Γ-main lands,
+"you cannot have QFT without gravity" upgrades from
+structural implication to a THEOREM of the theory (the
+division event = one mechanism, two faces: where the quantum
+law conditions and what the metric counts; back-reaction =
+interaction writing geometry; QFT-on-background = the
+frozen-stage approximation w/ a built-in validity domain).
