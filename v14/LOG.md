@@ -2135,3 +2135,43 @@ transformation-type census (translations-trivial: finding or
 forced); K4 the gates (the realization gate's principled
 bite; state-motion); K5 instrument.  The remaining queue
 (CR-A/B/C/D, Γ-prep) fires in the next waves.
+
+## 2026-08-10 — Γ-MAIN REVIEW: EFFECTUS FROZEN (v14 LEDGER #76)
+review-gmain-effectus.md frozen as delivered.  Grade AWF
+(fixes BLOCKING); 113 recomputations, ZERO divergences.
+**THE SETTLEMENT'S FAILED LINK INVERTS.**  K2: OCCUPANCY is
+the motivated readout FOUR times over (the unique
+disintegration of one measure — the flow identity 3,968/3,968;
+declared primary; the only readout keeping REC flat; the only
+one where CR-B's object exists); COUNT is motivated ONLY by
+the targets' own provenance — **THE PRE-REGISTERED TARGETS
+WERE CENSUS STATISTICS AT BIRTH** (S2 read them off leaf
+counts); and DECISIVE: at COUNT the mandatory negative
+control BREAKS (REC gains 296/473 non-unit holonomy primes
+[2,3,5,7]; CK fails 10/10; the count construction is
+column-stochastic at 0-of-544 — NOT A LAW).  **Conjunct 2 =
+FALSE.**  K3: "holonomy consistent" was ILL-POSED — THE
+ADJUDICATOR'S PIN ERROR (my §4 silently converted §3.2's
+"agreement OR the measured deviation" into an agreement
+demand; the deviation is an IDENTITY — r_k = r_q·G/G at
+1,546/1,546, forced exactly where the potential fails to
+descend); under the well-posed REPRODUCED-AND-LOCATED the
+unit MEETS it.  **Conjunct 3 = TRUE (well-posed).  THE
+CORRECTED SETTLEMENT: PARTIAL — FAILED LINK = TARGETS, not
+holonomy; the paper names the wrong link.**  **F-5 THE
+SUCCESSOR CARRIER EXISTS AND IS DERIVABLE: MENU+G (MENU
+refined by the potential — 181 classes, MENU ≼ MENU+G ≼ REC)
+has G-DESCENT AT EVERY HORIZON AND k-HOLONOMY IDENTICAL TO
+⟨2,3⟩ RANK 2, the obstruction 44 intact, Γ exactly
+stochastic** — the between-carrier tension RESOLVED by
+derivation; I-CARRIER is not fiber 1.  THE READOUT-INVARIANT
+RESIDUE stronger than claimed: both sector-conditionals +
+the F8 exclusion are readout-free; the whole dependence is
+ONE LAW ((m+1),1,(m+1))/(2m+3) w/ one scalar m.  The
+next-iteration recipe complete (occupancy by the
+disintegration criterion; pre-register (3/8,1/4,3/8); build
+on MENU+G; REPRODUCED-AND-LOCATED; the [B3] feasibility LP).
+Instrument findings: T2-HOLONOMY cannot fail + its control
+claim FALSE (REC returns DEVIATE); string-literal segments;
+spliced quotations; F8's causal premise ungated.  Two Γ-main
+reviewers + three R4 reviewers pending.
