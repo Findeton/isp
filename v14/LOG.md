@@ -2704,3 +2704,27 @@ contract.  Artifacts committed as-is: paper 535e288ff412, code
 Successor register (registered, not claimed): U4 renewal-only
 crystals; the diagonal question; the ≥9-actor carrier; Route B
 still the user's call.
+
+## 2026-08-10 — WELD-2 PROTOCOL FROZEN, PANEL LAUNCHED; VERIFICATION 2/4 IN (v14 LEDGER #93)
+
+Orchestrator verification so far: **argv handler inspected in
+source (real argparse; extra → exit 2; unknown mutant → exit 2;
+write-guard `(MUTANT is None) and (not selftest)`; selftest
+returns before any write) — the #238/#82 pre-check done
+properly this time; plain run BYTE-IDENTICAL in-tree; unknown
+flag exit 2 confirmed.**  Selftest + mutant artifact-integrity
+checks running in background (each re-runs the ~2-min census);
+results to be recorded on landing.  Protocol frozen at
+v14/note-w2-hostile-protocol.md: K1 the 60-cell enumeration
+rebuilt at both carriers; K2 the scissors theorem decisive (both
+blades independently; the cycle-length bound; the quantifier
+coverage; the d≤5 window; the outside-the-checked-set attack);
+K3 the controls (same-standard audit — does the crystal FOUND
+meet the census's own gates, or does the blueprint smuggle?);
+K4 the empty diagonal (licensed reading vs over-readings; the R4
+resonance ruled at citable scope) + the CONG-185 six-of-six
+re-derivation verified against D74 + the unweighted-113 + the
+git-show routes; K5 the first born-under-#82 instrument audited
+against the FULL contract incl. no-moving-refs off-tree/git-less
+reproduction.  Three reviewers launched (operator, effectus,
+instrument) → v14/review-w2-{operator,effectus,instrument}.md.
