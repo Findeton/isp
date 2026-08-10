@@ -3427,3 +3427,36 @@ MAJOR/6 MINOR all bounded mechanical (MAJOR-1+3 = ONE
 mechanism: SEAL payload+digest at gate time; integrity gate
 compares disk bytes against the SEAL).  Joint adjudication
 next.
+
+## 2026-08-10 — R4B JOINT ADJUDICATION (v14 LEDGER #119)
+
+Three AWF; 541 seat recomputations, ZERO false computed numbers;
+grade ACCEPT-WITH-FIXES.  **THE CORRECTED SETTLEMENT:** (1) the
+convention STRATIFIED (both content seats independent, one
+resolution): STENCIL FORCED by the stated normalisation
+(384/384, to be gated); the identity selects the TIE only
+(3→1, winding provably stencil-blind); residual declared fiber
+2; **the identity itself an ARENA ARTIFACT** (fails on the
+widened-alphabet generator) — instrument, never conclusion; the
+BOUND segment invariance-gated or READING-RELATIVE.  (2)
+**VMAX=diameter a STRUCTURAL THEOREM at every even L (L=8
+cannot fix the cone); the resolution parameter = interior
+radii** (1→3 at L=8); §11 corrected.  (3) the cancellation
+STRATIFIED (24/42 zero-drift under all three readings, 18
+averaged-only; 30/12 winding) and licensed as arithmetic only —
+the mechanism reading killed; "interfering" = non-monomial,
+bound to the parent's diagonal-defect rows.  (4) the 19/19
+MULTISET separation adopted (the 58-vs-14 mismatch replaced).
+(5) **the first in-artifact LABEL defect classified** (the
+REACH label misassigns the falsifiers; numbers correct;
+register category opened, count 1; the computed-number record
+stays ZERO).  (6) two delivery gaps closed in its favor by the
+panel (integrality verified; the negative-reading clause
+verified).  THE SEAM: ten surviving injections all between the
+last gate and the disk — **ONE ENGRAVING: THE GATE-TO-DISK
+SEAL** (seal at gate time; write from the sealed object;
+integrity = disk vs seal, never re-derivation).  Nine repair
+orders R-R4B-1..9 (note-r4b-adjudication.md).  Repair worker
+dispatched; **THE U4 PANEL LAUNCHED** (protocol c4f2b33aa315,
+#114) — reviewers → v14/review-u4-{operator,effectus,
+instrument}.md.
