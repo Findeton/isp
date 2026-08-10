@@ -4460,3 +4460,35 @@ reports 15 seals with declared_in_run=16 while the run ends at
 19 — Seal.verify iterates only TAKEN seals, so a
 declared-but-untaken seal is invisible** (a totality-addendum
 instance).  One seat pending (instrument) → adjudication.
+
+## 2026-08-10 — U4B INSTRUMENT FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #152)
+
+review-u4b-instrument.md frozen (ebcfbb49fa88, 473 lines).
+Grade AWF; 62 executions, ~500 recomputations, zero
+disagreements — the entire headline rebuilt independently.
+**THE SEAM: TEN WIDE, FIVE EXPLOITABLE AT EXIT 0, ALL FIVE
+EXPLOITED — the character: the unit seals what it MEASURED and
+leaves unsealed what it VOUCHED FOR** (six published keys
+outside the seal: schema, paper, provenance, paper_claims,
+coverage, polarity; three final-gate seals; one droppable
+declared seal).  **Sharpest fact: the transcript-head flip
+(→CRYSTAL-SEEDED) and the silent seal-drop both leave the
+receipt BYTE-IDENTICAL to committed — the corpus's sha check
+cannot see either.**  TOTALITY: NOT TOTAL on both addendum
+clauses — **ruled a miss against a standard that did not yet
+exist** (born #146, addendum #148); against #119-as-it-stood,
+compliant.  Six MAJORs liftable incl. the operator's
+untaken-seal invisibility MEASURED (two-line repair); **#34
+dishonest at three rows** (G-WAIVERS-VERIFIED omits itself —
+its declared waiver is dead code; two gates credited to mutants
+dying eight gates early; honest denominator 51, published 50
+twice by two coinciding miscounts); **#125 one wrapping
+convention from the U4 failure** (the retracted sentence walks
+through as a markdown BLOCKQUOTE or list item; the paper uses
+blockquotes 18×).  **D60: the finding REAL, the handling
+HONEST** — three distinct winners across five seeds with
+maxhits invariant at 7; registration wanted: the
+tie-break-over-unordered-container class + TWO NEW live gaps
+(d60's C2 gate checks refusal but not maxhits; a CWD-relative
+path read at d60 L70).  CLI PASS on the #82 minimum (43 argv
+shapes) with two residues.  Joint adjudication next.
