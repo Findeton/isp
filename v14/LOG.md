@@ -2931,3 +2931,35 @@ involving a scramble, strata defined explicitly in §7 over all
 contested.  Artifacts committed as-is: paper 1063401c7bb5, code
 2959c5a6a84b, output ffd069ff3eb4, receipt 3dc1393b0df8.
 Verification battery next; TERMINAL on completion.
+
+## 2026-08-10 — WELD-2 INSTRUMENT FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #100)
+
+review-w2-instrument.md frozen (e83855bd5e74).  **CLI verdict:
+COMPLIANT at the #82 contract — the first born-compliant unit
+confirmed under attack** (19/19 hostile invocations correct;
+selftest writes nothing, proven by hashes; 13/13 mutants died at
+named gates byte-unchanged; unknown mutants exit 2; the
+engraving's disease does not recur).  **BORN-COMPLIANT ON THE
+CONTRACT, NOT YET ON THE ERA:** 12/12 reviewer injections
+SURVIVED (the complement of the defended surface is undefended)
+— INJ01: a FOUND head delivers at 32/32 gates exit 0 (the head
+is a TYPED LITERAL no gate compares; R4's F1 recurring, with no
+reconstruction at all); INJ12: one raw worktree read at L1016
+bypasses read_pinned — G-PROVENANCE passes its
+"never-from-worktree" claim while G-I7-ARENA consumes the
+corrupted copy (#91 violation, unit postdates the engraving);
+INJ03/04: no per-cell fate gates and no carrier-agreement gate
+(the carriers can disagree and still stamp @BOTH — #87);
+INJ05/10/11: nothing re-reads what was written; INJ06: ZERO
+code reads the paper (the #20 claim has no instrument).
+Honest coverage: 11/32 gates falsified (34%), all 21 uncovered
+named; the 3 waivers = exactly the 3 literal-True gates.  ~179
+recomputations, ZERO disagreements with delivered numbers;
+byte-identity ×2 from a foreign root incl.
+PYTHONHASHSEED=987654.  All seven MAJORs mechanical — none
+touches the census, the scissors, or any delivered number.  Two
+items handed to the operator seat (the directed-vs-undirected
+criterion asymmetry — the operator's MINOR-2, convergent; the
+literal-True grading branch — resolved by the operator's
+grading THEOREM, to be gated as a theorem-pass with forcing).
+Joint adjudication next.
