@@ -2963,3 +2963,33 @@ criterion asymmetry — the operator's MINOR-2, convergent; the
 literal-True grading branch — resolved by the operator's
 grading THEOREM, to be gated as a theorem-pass with forcing).
 Joint adjudication next.
+
+## 2026-08-10 — THE ROUTE-A SUCCESSOR SCOUT REPORTED (v14 LEDGER #101)
+
+Report of record: v14/note-routeA-successor-scout.md.  **THE
+≥9-ACTOR ROUTE AS POSED IS PRE-DETERMINED (kill-risk severe):**
+equivariance makes the co-division graph K₉ complete-and-constant
+(measured exhaustively at n=3; the enabling sub-history verified
+at 9 actors); K₉ → I7's 3-link lattice = 0 isomorphisms; the
+count field constant; restriction cannot repair — EMPTY would
+recur by OVER-CONNECTION; the one live move is a declared channel
+sub-grammar (a priced free item).  Compute: 9-actor d≤4
+enumeration INFEASIBLE (~10⁸ histories); d≤3 the ceiling; the
+menu law n²+2n scout-measured.  **S1 (feeds the adjudication):
+K₉ IS Cayley(Z₃²,{e₁,e₂,e₁+e₂,e₁−e₂}) — 9! isomorphisms — so the
+obstruction is a LINK-COUNT MISMATCH (the grammar offers 4
+directions, I7 declares 3), and the diagonal is NOT structurally
+absent from the grammar, only from the crystals.**  **S2: CONG's
+depth-purity makes its acyclicity a THEOREM at every cap**
+(convergent with the operator's grading theorem; only MENU is
+live for the registered depth-≥5 test).  **U4: constructors
+committed twice; the claim never checked anywhere; PRELIMINARY
+scratch measurement — TRUE on all four arbitration crystals with
+the invariance direction the DIAGONAL ⟨(1,1)⟩, FALSE on the
+delivery crystal.**  The U4 pin's declared-data obligations
+(site reading; the renewal-only operationalization, three
+candidates; arbitration-crystal scope) and walls (L-1
+fourth-form ARGUED FIRST — retracted wording flagged; BHS;
+KR height control; rook's-graph q₁₂ ≡ 0 inherited) recorded.
+Convergent with the effectus: **U4 is the well-posed Route-A
+continuation.**  Zero writes confirmed.
