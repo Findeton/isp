@@ -224,9 +224,25 @@
     1,
     0
    ],
+   "schema": "(n_(1,0), n_(0,1), n_(1,1), q_11, q_22, |q_12|, det) -- the sixth entry is the ABSOLUTE VALUE; the source row prints -1",
    "source": "v14/review-u4-effectus.md"
   }
  ],
+ "carrier": {
+  "beyond_coset_share_of_crystallinity": "6/7",
+  "beyond_coset_with_a_line_seed": 0,
+  "closed_form_beyond_coset": 216,
+  "closed_form_cu_joint": 36,
+  "closed_form_total": 252,
+  "crystalline_seed_pairs": 252,
+  "same_seed_set_pairs": 12,
+  "support_is_a_coset_union": 252,
+  "two_coset_pairs": 240,
+  "value_shapes": {
+   "((0, 3), (1, 6))": 240,
+   "((0, 6), (2, 3))": 12
+  }
+ },
  "class_pairs": [
   {
    "det": "-1",
@@ -389,6 +405,12 @@
    "round1": "ANT"
   }
  ],
+ "closure": {
+  "gates_in_receipt": 63,
+  "gates_passed": 63,
+  "mutants_killed": 49,
+  "mutants_on_target": 49
+ },
  "constructibility": {
   "control_nosupply": {
    "events": 13,
@@ -440,13 +462,29 @@
   },
   "fraction_pairs": "747/78400",
   "homogeneous": 9,
+  "max_link_incidence_per_pair": 18,
   "max_posdef_sites": 3,
+  "min_incidences_at_a_posdef_site": 3,
   "mixed_sign": 486,
   "nonzero_at_all_sites_pairs": 747,
   "nonzero_at_all_sites_schedules": 544563,
+  "pairs_attaining_the_budget": 1296,
+  "pairs_with_a_posdef_site": 28404,
   "partition_pairs": 78400,
+  "posdef_cells": 32400,
+  "posdef_site_histogram": {
+   "0": 49996,
+   "1": 24660,
+   "2": 3492,
+   "3": 252
+  },
+  "posdef_site_share": "7101/19600",
+  "posdef_sites_below_three_incidences": 0,
+  "schedules_with_a_posdef_site": 20706516,
   "strictly_positive_pairs": 0,
   "uniform_negative": 261,
+  "uniform_positive": 0,
+  "wall_permits_posdef_sites": 6,
   "window_nonzero_at_all_sites": 6561,
   "witness": {
    "det": "-1",
@@ -471,7 +509,10 @@
    "(12, 12)": 540
   },
   "crystalline_in_window": 540,
-  "edits_per_schedule": 12
+  "edits_per_schedule": 12,
+  "family_scope_any_nontrivial_period": 0,
+  "family_scope_cases": 9072,
+  "family_scope_period_preserved": 0
  },
  "gates": [
   {
@@ -545,6 +586,13 @@
    "waiver": null
   },
   {
+   "evidence": "{'schema': 'isp/v14/u4b-schedule-census/1', 'paper': 'v14/paper-17-schedule-census.md', 'schema_matches_declaration': True, 'paper_matches_object_under_test': True, 'declared_unsealed': 6}",
+   "gate": "G-DECLARED-UNSEALED",
+   "passed": true,
+   "statement": "THE TWO DECLARED-UNSEALED RECEIPT KEYS ARE BOUND.  A published row that is not digested at a gate must say so and must be bound some other way: `schema` is a constant of this file, re-verified here against its own definition, and `paper` is the relative path of the object under test, re-verified here against the path this run actually read.  Both are fixed before the first gate; the declared-unsealed manifest carries both, with their reasons, into the receipt",
+   "waiver": null
+  },
+  {
    "evidence": "{'sources': 10, 'reads': ['v10/code/d42b1_transport_exact.py', 'v10/code/d60_crystal_exact.py', 'v10/code/d66_arbitration_crystal_exact.py', 'v10/data/d66_arbitration_crystal_exact.out', 'v11/note-L1-lorentz-no-go-lemma.md', 'v11/note-v11p0a-reproduction-catalog.md', 'v13/paper-ha-successor.md', 'v14/note-u4-adjudication.md', 'v14/note-u4b-pin.md', 'v14/review-u4-effectus.md'], 'unpinned_reads': ['<self>', 'v14/paper-17-schedule-census.md'], 'subprocesses': 0}",
    "gate": "G-PROV-ALL",
    "passed": true,
@@ -573,7 +621,7 @@
    "waiver": null
   },
   {
-   "evidence": "{'anchors': [{'id': 'A-D66-GRID34', 'read': (66, 12, 18), 'recomputed': (66, 12, 18), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-D66-GRID36', 'read': (102, 18, 30), 'recomputed': (102, 18, 30), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-EFF-I7', 'read': [1, 1, 0, 1, 1, 1, 0], 'recomputed': [1, 1, 0, 1, 1, 1, 0], 'ok': True, 'source': 'v14/review-u4-effectus.md'}]}",
+   "evidence": "{'anchors': [{'id': 'A-D66-GRID34', 'read': (66, 12, 18), 'recomputed': (66, 12, 18), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-D66-GRID36', 'read': (102, 18, 30), 'recomputed': (102, 18, 30), 'ok': True, 'source': 'v10/data/d66_arbitration_crystal_exact.out'}, {'id': 'A-EFF-I7', 'read': [1, 1, 0, 1, 1, 1, 0], 'recomputed': [1, 1, 0, 1, 1, 1, 0], 'ok': True, 'schema': '(n_(1,0), n_(0,1), n_(1,1), q_11, q_22, |q_12|, det) -- the sixth entry is the ABSOLUTE VALUE; the source row prints -1', 'source': 'v14/review-u4-effectus.md'}]}",
    "gate": "G-ANCHORS-READ",
    "passed": true,
    "statement": "the committed numbers this unit reproduces are READ from their committed files at run time and never re-typed: d66's own output rows for GRID(g=3,R=4) and GRID(g=3,R=6) (events, arbitrations, deliveries) are parsed out of `d66_arbitration_crystal_exact.out` and reproduced by the extracted constructor, and the U4 effectus review's CONFLICT-GRID(3,2) I7 row (n_(1,0), n_(0,1), n_(1,1), q_11, q_22, |q_12|, det) is parsed out of the review and reproduced by this unit's own readout -- 3 of 3",
@@ -587,10 +635,10 @@
    "waiver": null
   },
   {
-   "evidence": "{'committed_row': [1, 1, 0, 1, 1, 1, 0], 'recomputed': [1, 1, 0, 1, 1, 1, 0]}",
+   "evidence": "{'committed_row': [1, 1, 0, 1, 1, 1, 0], 'sites': 9, 'distinct_rows': 1, 'recomputed': [[1, 1, 0, 1, 1, 1, 0]], 'links': [[1, 0], [0, 1], [1, 1]]}",
    "gate": "G-I7-READOUT",
    "passed": true,
-   "statement": "the determinant column is computed through HA 3.2's DECLARED readout in the U4 effectus review's own I7 coordinates -- q_11 = n_(1,0), q_22 = n_(0,1), q_12 = (n_(1,1) - n_(1,0) - n_(0,1))/2 -- applied to the co-division adjacency (the number of division events whose footprint contains both x and x + l); both source statements are verbatim anchors V04 and V05, and the route is validated by reproducing the effectus's committed CONFLICT-GRID(3,2) row exactly",
+   "statement": "THE READOUT REPRODUCES THE COMMITTED ROW AT ALL NINE SITES, not at the one the anchor prints.  The determinant column is computed through HA 3.2's DECLARED readout in the U4 effectus review's own I7 coordinates -- q_11 = n_(1,0), q_22 = n_(0,1), q_12 = (n_(1,1) - n_(1,0) - n_(0,1))/2 -- applied to THE CO-DIVISION ADJACENCY: for a link l and a site x, the number of division events whose footprint contains both x and x + l, on the link set {(1,0), (0,1), (1,1)}.  Both source statements are verbatim anchors V04 and V05.  The committed schedule's induced form is the same at every one of the nine sites and equals the row the effectus review published, whose sixth entry is |q_12| and not q_12 -- the ASCII fold the read anchor applies does not carry the sign, so the anchor validates the route up to that sign and this gate says so",
    "waiver": null
   },
   {
@@ -608,24 +656,24 @@
    "waiver": null
   },
   {
-   "evidence": "{'schedules': 11664, 'fates': {'FORCED': 11664}, 'events': {24: 2916, 30: 8748}, 'refused': []}",
+   "evidence": "{'schedules': 11664, 'fates': {'FORCED': 11664}, 'events': {24: 2916, 30: 8748}, 'branching_is_structural': True, 'refused': []}",
    "gate": "G-CONSTRUCTIBILITY",
    "passed": true,
-   "statement": "EVERY schedule of the declared window is evaluated against its OWN driven record (#87), not against an aggregate: for each of the 11664 schedules the layer's menu offered every specified full event tuple exactly once (maxhits = 1), no step was refused, the record carries exactly 6 division events and between 24 and 30 events in total.  Measured fates: {'FORCED': 11664}.  The instrument's ability to return the other two fates is demonstrated by the two declared controls below",
+   "statement": "EVERY schedule of the declared window is evaluated against its OWN driven record (#87), not against an aggregate: for each of the 11664 schedules the layer's menu offered every specified full event tuple exactly once (maxhits = 1), no step was refused, the record carries exactly 6 division events and between 24 and 30 events in total.  Measured fates: {'FORCED': 11664} -- and the published row is built before this gate, which reads it.  What the FORCED count is a measurement OF is exact: REFUSED is genuinely at risk, and the no-supply control below reaches it; BRANCHING is a STRUCTURAL ZERO for any schedule of this family, because every event is specified by its full tuple and at most one menu candidate can ever match, so the second control establishes instrument sensitivity rather than family-level reachability",
    "waiver": null
   },
   {
-   "evidence": "{'refusal': ('propose G10', 13), 'events': 13}",
+   "evidence": "{'row': {'refusal': ['propose G10', 13], 'events': 13}}",
    "gate": "G-CTRL-REFUSED",
    "passed": true,
-   "statement": "THE REFUSED FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  The declared no-supply control runs the committed schedule with the conflict-supply deliveries suppressed; the layer then refuses the first round-1 proposal by an actor that does not hold the base, at the located prefix ('propose G10', 13).  A refusal is recorded, never patched",
+   "statement": "THE REFUSED FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  The declared no-supply control runs the committed schedule with the conflict-supply deliveries suppressed; the layer then refuses the first round-1 proposal by an actor that does not hold the base, at the located prefix ('propose G10', 13).  A refusal is recorded, never patched.  This gate reads the published control row, which is sealed here at its own gate rather than folded into a composite",
    "waiver": null
   },
   {
-   "evidence": "{'candidates': 7, 'prefix': 3, 'initiator': 'G00'}",
+   "evidence": "{'row': {'candidates': 7, 'prefix': 3, 'initiator': 'G00'}}",
    "gate": "G-CTRL-BRANCHING",
    "passed": true,
-   "statement": "THE BRANCHING FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  At prefix 3 of the committed record the declared under-specified control asks d60's `pick` for an arbitration by G00 WITHOUT naming its conflict key and winner key; 7 menu candidates match, so the builder's own `maxhits` reads 7 > 1 and the fate is BRANCHING.  This is what makes the FORCED reading above a measurement rather than a structural tautology.  ONLY THE COUNT IS REPORTED, and that is deliberate: d60's `pick` breaks ties with `sorted(key=repr)`, whose value on a frozenset depends on the interpreter's per-process string hashing, so WHICH candidate an under-specified pick selects is not reproducible.  Every event of every schedule in this census is specified by its FULL TUPLE, where at most one candidate can match and the tie-break is never consulted; the control stops at the first under-specified pick and never continues a record past it",
+   "statement": "THE BRANCHING FATE IS REACHABLE AND THE INSTRUMENT SEES IT.  At prefix 3 of the committed record the declared under-specified control asks d60's `pick` for an arbitration by G00 WITHOUT naming its conflict key and winner key; 7 menu candidates match, so the builder's own `maxhits` reads 7 > 1 and the fate is BRANCHING.  THIS GATE READS THE PUBLISHED ROW, and the row is sealed here at its own gate: a control row moved under its label after the fact is what this repair closes.  ONLY THE COUNT IS REPORTED, and that is deliberate: d60's `pick` breaks ties with `sorted(key=repr)`, whose value on a frozenset depends on the interpreter's per-process string hashing, so WHICH candidate an under-specified pick selects is not reproducible.  Every event of every schedule in this census is specified by its FULL TUPLE, where at most one candidate can match and the tie-break is never consulted; the control stops at the first under-specified pick and never continues a record past it",
    "waiver": null
   },
   {
@@ -639,7 +687,7 @@
    "evidence": "{'objects': 11664, 'mismatches': 0, 'first': None}",
    "gate": "G-DRIVEN-EQUALS-COMBINATORIAL",
    "passed": true,
-   "statement": "for EVERY one of the 11664 window schedules the division-event field read off the DRIVEN record -- the initiator field from each arbitration's `op[1]`, the footprint field from each arbitration's `regs_of` footprint intersected with the actor set -- equals the field the combinatorial census computes from the schedule alone (#87, per object).  That equality is what lets the stabilizer and determinant columns be exhaustive over the whole family while the menus are driven on the window",
+   "statement": "for EVERY one of the 11664 window schedules the division-event field read off the DRIVEN record -- the initiator field from each arbitration's `op[1]`, the footprint field from each arbitration's `regs_of` footprint intersected with the actor set -- equals the field the combinatorial census computes from the schedule alone (#87, per object).  WHAT THIS EQUALITY IS, EXACTLY: given a record the layer did not refuse it is a THEOREM, not a measurement -- every event here is specified by its full tuple, so an appended event IS the specified tuple and the field is a function of the schedule.  The only way it can fail is a refusal.  The licence for the exhaustive columns is therefore CONSTRUCTIBILITY, which is the window-scoped thing, and the exhaustive columns inherit the window's INDUCTION -- measured on the window and on the out-of-window stratum witnesses below -- rather than its measurement",
    "waiver": null
   },
   {
@@ -657,17 +705,17 @@
    "waiver": null
   },
   {
-   "evidence": "{'witness': 'ROW|ROW/DIAG', 'q11': '0', 'q22': '2', 'q12': '-1', 'det': '-1', 'sites': 9, 'pairs': 747, 'schedules': 544563}",
+   "evidence": "{'witness': 'ROW|ROW/DIAG', 'row': {'name': 'ROW|ROW/DIAG', 'q11': '0', 'q22': '2', 'q12': '-1', 'det': '-1'}, 'sites': 9, 'pairs': 747, 'schedules': 544563, 'e1_is_null': True, 'record_length': 24}",
    "gate": "G-DET-NONZERO-EXISTS",
    "passed": true,
    "statement": "DET-NONZERO-EXISTS, AND THE WITNESS IS NAMED.  The schedule ROW|ROW/DIAG -- the committed constructor with round 1's column class replaced by the row class again, i.e. the schedule that never rotates its conflict groups, with the committed diagonal seeds -- induces q = [[0, -1], [-1, 2]] with det = -1 at every one of the nine sites, the same form at every site.  It is a member of the declared window and its record is FORCED.  Over the whole family 747 of the 78400 partition pairs (544563 of 57153600 schedules) carry a non-degenerate induced form at all nine sites",
    "waiver": null
   },
   {
-   "evidence": "{'pairs': 78400, 'max_posdef_sites': 3, 'budget': 18, 'needed': 27}",
+   "evidence": "{'pairs': 78400, 'max_posdef_sites': 3, 'budget': 18, 'needed': 27, 'pairs_with_at_least_one': 28404}",
    "gate": "G-POSDEF-EMPTY",
    "passed": true,
-   "statement": "NO SCHEDULE IN THE FAMILY CARRIES A POSITIVE-DEFINITE INDUCED FORM AT EVERY SITE.  Exhaustively over all 78400 partition pairs the maximum number of sites at which q is positive definite is 3, never 9.  The mechanism is a budget: a partition into three triples has nine within-group pairs, and only those whose difference direction lies in I7's link set contribute, so the two rounds deposit at most 18 link-incidences over the nine sites -- while positive definiteness at a site needs q_11, q_22 > 0 and 4 q_11 q_22 > (n_(1,1) - q_11 - q_22)^2, hence at least 3 incidences there, hence at least 27 in all",
+   "statement": "NO SCHEDULE IN THE FAMILY CARRIES A POSITIVE-DEFINITE INDUCED FORM AT EVERY SITE.  Exhaustively over all 78400 partition pairs the maximum number of sites at which q is positive definite is 3, never 9.  The mechanism is a budget: a partition into three triples has nine within-group pairs, and only those whose difference direction lies in I7's link set contribute, so the two rounds deposit at most 18 link-incidences over the nine sites -- while positive definiteness at a site needs q_11, q_22 > 0 and 4 q_11 q_22 > (n_(1,1) - q_11 - q_22)^2, hence at least 3 incidences there, hence at least 27 in all.  The quantifier is AT EVERY SITE and it is load-bearing: positive-definite sites themselves are common (28404 of the 78400 pairs carry at least one), and this gate says only that no pair carries nine",
    "waiver": null
   },
   {
@@ -675,6 +723,20 @@
    "gate": "G-I7-STRICT-EMPTY",
    "passed": true,
    "statement": "I7's OWN ADMISSIBILITY CRITERION IS EMPTY ON THIS FAMILY: not one of the 78400 partition pairs makes all 27 link counts strictly positive, so no schedule is an admissible I7 geometry record, and the renewal-crystal weld census the U4 effectus predicted EMPTY is recorded EMPTY here for a reason the effectus did not have -- the link budget, not the diagonal alone",
+   "waiver": null
+  },
+  {
+   "evidence": "{'histogram': {'0': 49996, '1': 24660, '2': 3492, '3': 252}, 'attained': 3, 'permitted_by_the_wall': 6, 'uniform_positive_pairs': 0}",
+   "gate": "G-POSDEF-CEILING",
+   "passed": true,
+   "statement": "THE MEASURED CEILING IS FINER THAN THE WALL, AND THAT GAP IS A MEASUREMENT AND NOT A THEOREM.  The same 18-incidence budget that forbids nine positive-definite sites permits as many as 6; the exhaustive census over all 78400 partition pairs attains 3, at 252 pairs.  The full histogram of positive-definite sites per pair is {'0': 49996, '1': 24660, '2': 3492, '3': 252}, so 28404 pairs -- 20706516 of the 57153600 schedules, 7101/19600 of the family -- carry at least one positive-definite site, over 32400 (pair, site) cells in all.  The third sign case is empty too: 0 pairs have det > 0 at every one of the nine sites.  Anyone reading NEVER RIEMANNIAN as fully explained by the counting wall is reading past this gap, which is registered as an open",
+   "waiver": null
+  },
+  {
+   "evidence": "{'budget': 18, 'tight_at_pairs': 1296, 'min_incidences_at_a_posdef_site': 3, 'posdef_sites_below_three': 0, 'needed_for_nine': 27}",
+   "gate": "G-INCIDENCE-WALL",
+   "passed": true,
+   "statement": "THE COUNTING WALL, WITH BOTH ITS PREMISES MEASURED AND ITS OMITTED STEP WRITTEN DOWN.  (i) Each round's partition into three triples has exactly nine within-group pairs, and a within-group pair contributes at most one link-incidence because I7's link set {(1,0), (0,1), (1,1)} holds exactly one representative of each of three of the four direction classes and nothing in the fourth: measured, the maximum total link-incidence over all 78400 partition pairs is exactly 18, ATTAINED at 1296 pairs, so the bound is tight and not merely an estimate.  (ii) Positive definiteness at a site needs q_11 > 0, q_22 > 0 -- that is n_(1,0) >= 1 and n_(0,1) >= 1 -- AND n_(1,1) >= 1, the step the delivered proof omitted: if n_(1,1) = 0 then q_12 = -(q_11 + q_22)/2 and det = -(q_11 - q_22)^2/4 <= 0, so the site is not positive definite.  Hence at least three incidences at a positive-definite site: measured, the minimum over every positive-definite cell in the census is exactly 3 and 0 such cells hold fewer.  (iii) Nine positive-definite sites would need at least 27 > 18.  The same count gives I7-STRICT-EMPTY directly: 27 strictly positive counts need 27 incidences",
    "waiver": null
   },
   {
@@ -706,7 +768,28 @@
    "waiver": null
   },
   {
-   "evidence": "{'strata': 20, 'witnessed': 20, 'missing': [], 'all_forced': True}",
+   "evidence": "{'pairs': 252, 'not_a_coset_union': 0, 'shapes': {'((0, 3), (1, 6))': 240, '((0, 6), (2, 3))': 12}, 'closed_forms': [216, 36, 252], 'beyond_coset_share': '6/7'}",
+   "gate": "G-UNION-CARRIER",
+   "passed": true,
+   "statement": "THE CARRIER OF THE PERIOD IS THE SUM, NOT EITHER SUMMAND -- AND IT IS A COSET UNION AT EVERY CRYSTALLINE PAIR.  For each of the 252 crystalline seed pairs the support of the division field is tested against the cosets of THAT FIELD'S OWN period subgroup: 252 of 252 are exactly a union of them, in two shapes -- 12 pairs with the two seed sets EQUAL, so the field is 2 on one coset and 0 elsewhere, and 240 pairs with the field 1 on two cosets and 0 on the third.  So the affine law n = c + m*1_S is violated NOWHERE in this census: it holds on the UNION of the two seed sets.  What the census measures is that the inherited argument was stated on the wrong variable -- the per-seed locus contains one seventh of the crystallinity it was supposed to explain, and the beyond-coset class carries the other 6/7 -- not that a mechanism outside the affine law exists on this arena.  The mechanism is closed in closed form and needs no census: 4 subgroups x 3 choices of the empty coset x 18 ordered splits of the remaining six sites that are not the two cosets themselves = 216 beyond-coset pairs, and 36 coset-union pairs, 252 in all",
+   "waiver": null
+  },
+  {
+   "evidence": "{'beyond_coset_crystalline_pairs': 216, 'with_a_line_seed': 0, 'lines_of_AG23': 12}",
+   "gate": "G-NO-LINE-SEED",
+   "passed": true,
+   "statement": "AT EVERY BEYOND-COSET CRYSTALLINE PAIR, NEITHER SEED SET IS A LINE AT ALL -- not merely 'not a coset of the period'.  All 216 are checked one by one against the 12 lines of AG(2,3): 0 have a line seed.  The reason is geometric and not statistical: a coset of a DIFFERENT order-3 subgroup meets each coset of the period exactly once, so it cannot sit inside the union of two of them",
+   "waiver": null
+  },
+  {
+   "evidence": "{'marginal_uniform': True, 'rates': {'<(0,1)>': '4661/4725', '<(1,0)>': '4661/4725', '<(1,1)>': '101/105', '<(1,2)>': '4661/4725'}, 'conditional': '15/31', 'independence': '1/4'}",
+   "gate": "G-PERIOD-DIAGONAL-JOINT",
+   "passed": true,
+   "statement": "THE PERIOD AND THE DIAGONAL LINK COUNT ARE SEPARATELY CARRIED AND NEITHER DETERMINES THE OTHER -- BUT THEY ARE NOT INDEPENDENT, AND THE DEPARTURE IS EXACTLY AT THE DIAGONAL.  The MARGINAL is exactly uniform: [510300] crystalline schedules in each of the four period directions.  The JOINT is not: the diagonal link count is populated at 4661/4725 of crystalline schedules in each of the three non-diagonal directions but at 101/105 when the period IS the diagonal.  Conditionally, among the 40176 crystalline schedules whose diagonal link count is EMPTY, the period is the diagonal at 19440 of them -- 15/31, against 1/4 under independence.  The period is a seed property and the diagonal link count a grouping property; the residual coupling is the transversal constraint between seed sets and groupings, and it is read as nothing else",
+   "waiver": null
+  },
+  {
+   "evidence": "{'strata': 20, 'witnessed': 20, 'published_witnesses': 20, 'outside_the_window': 12, 'missing': [], 'all_forced': True}",
    "gate": "G-STRATA-WITNESSED",
    "passed": true,
    "statement": "EVERY NONEMPTY CENSUS STRATUM HAS A MENU-DRIVEN WITNESS.  The 20 nonempty (stabilizer x affine-class x non-degeneracy) strata of the WHOLE family are each given a deterministic representative -- the first in a fixed enumeration, no sampling -- and each representative's record is built by driving the layer's menus: 20 witnesses, every one FORCED (maxhits = 1, no refusal, 6 division events).  So the grammar's verdict is not confined to the resolvable window: it has been taken at least once in every cell of the census",
@@ -720,17 +803,38 @@
    "waiver": null
   },
   {
-   "evidence": "{'banned_len': 97, 'absent_from_paper': True, 'argued_first': True, 'present_in_source_prose': False}",
-   "gate": "G-WALL-L1",
+   "evidence": "{'pairs': 252, 'cases': 9072, 'period_preserved': 0, 'any_nontrivial_period': 0}",
+   "gate": "G-FRAGILITY-FAMILY",
    "passed": true,
-   "statement": "L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED, AND THE RETRACTED SENTENCE IS ABSENT.  Order-level covariance is a fourth form outside paper 8's three (verbatim anchor V07) and its admissibility is v11's to argue; this unit measures a PERMUTATION action of Z_3^2 on the actor set, which L-1's own scope guard leaves free, constructs no bridge from those translations to any boost, and states in the paper that the fourth form is NOT TESTED HERE.  The prohibition gate whitespace-normalises and ASCII-folds BOTH sides (#125), so a line-wrapped injection of the 97-character retracted sentence is caught -- the mutant MUT-WALL-L1 injects exactly that",
+   "statement": "AND THE FRAGILITY IS A FAMILY-SCOPE THEOREM, NOT A WINDOW MEASUREMENT.  Over ALL 252 crystalline seed pairs and ALL 9072 single-point re-seatings of either seed to any other site -- a strict superset of the admissible single-arbitration re-seatings of ANY partition, not just the window's -- 0 preserve the original period and 0 leave the edited field with ANY nontrivial period at all.  So the crystal is not merely un-preserved under the minimal admissible edit: it is DESTROYED by it, everywhere in the family.  This closes the gap the one-line mechanism leaves open, which is that an edit might land on a DIFFERENT period and rotate the crystal rather than destroy it",
    "waiver": null
   },
   {
-   "evidence": "{'sprinkling_computed': False, 'groups_acting': ['Z_3^2 translations']}",
+   "evidence": "{'conventions': 36, 'records': 108, 'deviations': 0}",
+   "gate": "G-ORDER-INVARIANCE",
+   "passed": true,
+   "statement": "THE PROCESSING ORDER IS A DECLARED CONVENTION WITH A MEASURED FIBER.  d66's order -- groups in ascending seed-site index, members in ascending site index -- pins the committed POINT; extending it to the whole family is a choice with 36 forms per round (3! group orders x 3! member orders), and this unit declares rather than derives it.  Every one of those 36 conventions is DRIVEN, APPLIED TO BOTH ROUNDS, at 3 declared schedules -- 108 records -- and compared against the committed convention's: 0 deviations in fate, in event count, or in either site field.  The probe covers the conventions applied uniformly across the rounds, not every pairing of two different ones.  The choice is inert where it is driven, and the inventory says so instead of asserting a fiber of one",
+   "waiver": null
+  },
+  {
+   "evidence": "{'probe': {'rounds': 3, 'cells': 27, 'distinct_counts': [1], 'q11': '1', 'q22': '1', 'q12': '-1/2', 'det': '3/4', 'homogeneous': True, 'posdef_sites': 9, 'strictly_positive_cells': 27}, 'in_this_family': False}",
+   "gate": "G-R3-SATURATION",
+   "passed": true,
+   "statement": "THE WELD ROUTE'S EXACT DEMAND, COMPUTED AND READ NO FURTHER.  The counting wall says the obstruction is a RESOURCE DEFICIT in the committed cycle, so the successor's entry criterion is a budget depositing at least 27 link-incidences on I7's link set.  The minimal saturating arrangement is exhibited here: R = 3, the three rounds grouped on the three link-direction parallel classes, giving n = 1 at all 27 cells, q = [[1, -1/2], [-1/2, 1]], det = 3/4 at every site, positive definite at 9 of the nine, and I7's strict-positivity criterion satisfied for the first time (27 of 27 counts strictly positive).  THIS IS A PROBE OUTSIDE THIS UNIT'S DECLARED FAMILY, which is R = 2; nothing above uses it, no record is driven for it, and it says nothing about whether such a schedule is grammar-admissible or whether clearing the count clears the weld",
+   "waiver": null
+  },
+  {
+   "evidence": "{'banned_len': 97, 'absent_from_paper': True, 'argued_first': True, 'present_in_source_prose': False}",
+   "gate": "G-WALL-L1",
+   "passed": true,
+   "statement": "L-1 IS ARGUED BEFORE ANY TEST AND THEN DECLINED, AND THE RETRACTED SENTENCE IS ABSENT.  Order-level covariance is a fourth form outside paper 8's three (verbatim anchor V07) and its admissibility is v11's to argue; this unit measures a PERMUTATION action of Z_3^2 on the actor set, which L-1's own scope guard leaves free, constructs no bridge from those translations to any boost, and states in the paper that the fourth form is NOT TESTED HERE.  The prohibition gate ASCII-folds BOTH sides, STRIPS LEADING MARKDOWN LINE-DECORATIONS and only then whitespace-normalises (#125 as this unit's adjudication clarified it), so both a line-wrapped and a BLOCKQUOTED injection of the 97-character retracted sentence are caught -- MUT-WALL-L1 injects the first and MUT-WALL-L1-QUOTED the second, and the blockquote is the form the corpus actually writes",
+   "waiver": null
+  },
+  {
+   "evidence": "{'identifiers_scanned': 713, 'computing_hits': [], 'prose_occurrences': {'sprinkl': 6, 'boost': 5, 'rapidit': 3, 'frame': 3, 'poisson': 4, 'lorentz': 8}, 'groups_acting': ['Z_3^2 translations']}",
    "gate": "G-WALL-BHS",
    "passed": true,
-   "statement": "NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog's BHS block (verbatim anchor V08) says a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running the test would manufacture a false negative.  Measured on this program's own source: no sprinkling, no boost, no rapidity and no frame is computed anywhere -- the only group that acts here is the translation group of a 9-element site lattice",
+   "statement": "NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog's BHS block (verbatim anchor V08) says a Poisson sprinkling admits no Lorentz-invariant finite-valency graph, and these schedules are finite-valency by construction, so running the test would manufacture a false negative.  MEASURED, and the measurement is an AST SCAN OF THIS PROGRAM'S OWN SOURCE: of the 713 identifiers this file defines or references -- every name, attribute, function, class, argument and keyword -- 0 are named for a sprinkling, a boost, a rapidity, a Poisson process, a Lorentz transformation or a frame.  The stems DO occur in the file, 29 times, entirely in prose: gate statements, mutant descriptions and the verbatim catalog anchor.  A gate that counted those would be counting its own bar; a gate that declared the absence would measure nothing.  The only group that acts here is the translation group of a 9-element site lattice",
    "waiver": null
   },
   {
@@ -741,24 +845,17 @@
    "waiver": null
   },
   {
-   "evidence": "{'cosmological_words': [], 'diagonal_measured': True, 'period_directions': ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>']}",
+   "evidence": "{'cosmological_claim_phrases': [], 'diagonal_measured': True, 'resonance_named': True, 'period_directions': ['<(0,1)>', '<(1,0)>', '<(1,1)>', '<(1,2)>']}",
    "gate": "G-WALL-DIAGONAL",
    "passed": true,
-   "statement": "THE DIAGONAL COUNTERPOINT IS MEASURED HERE -- THAT IS THIS UNIT'S POINT (verbatim anchor V10) -- AND COSMOLOGICAL READINGS STAY BARRED.  U4 found the division field's period and the vanishing diagonal link count jointly forced by one design choice; this census varies that choice and measures the two separately: the period direction ranges over all four order-3 subgroups and the diagonal link count is populated by the diagonal parallel class.  No cosmological word appears in the paper",
+   "statement": "THE DIAGONAL COUNTERPOINT IS MEASURED HERE -- THAT IS THIS UNIT'S POINT (verbatim anchor V10) -- AND COSMOLOGICAL READINGS STAY BARRED.  U4 found the division field's period and the vanishing diagonal link count jointly forced by one design choice; this census varies that choice and measures the two separately: the period direction ranges over all four order-3 subgroups and the diagonal link count is populated by the diagonal parallel class.  NO COSMOLOGICAL CLAIM PHRASE appears in the paper -- the bar is on the READING and not on the word, so the needles are claim phrases and the word 'cosmological' itself occurs in the paper, in the bar.  And the LORENTZIAN RESONANCE IS NAMED: a two-by-two symmetric form with det < 0 is indefinite, which in this corpus is a loaded observation, so the paper is required to say so and to say why the reading is not merely barred but ill-posed here -- 486 of the 747 non-degenerate groupings do not carry one sign across their own nine sites.  Naming is what keeps the inference governed; silence would leave the reader to supply it",
    "waiver": null
   },
   {
    "evidence": "{'crystal': 'U4B-CRYSTAL-GENERIC-[beyond-coset 1/32; 1749600 of 55987200; <(0,1)>|<(1,0)>|<(1,1)>|<(1,2)>]', 'det': 'DET-NONZERO-EXISTS-[ROW|ROW/DIAG: det=-1 at 9 of 9; 747 of 78400 pairs; POSDEF-EMPTY; I7-STRICT-EMPTY]', 'constructibility': 'CONSTRUCTIBILITY-[FORCED 11664 of 11664; BRANCHING 0; REFUSED 0]@WINDOW-11664-OF-57153600+20-STRATUM-WITNESSES'}",
    "gate": "G-VERDICT-RECONSTRUCTED",
    "passed": true,
-   "statement": "THE HEAD IS DERIVED A SECOND TIME BY A PATH THAT SHARES NEITHER CODE NOR INPUT NOR TYPED LITERAL WITH THE BUILDER.  The builder assembles the three verdict strings from live Python objects; the comparator reads the RECEIPT'S OWN census rows, recomputes the beyond-coset rate as a Fraction from the two counts it finds there, re-sorts the subgroup list, and rebuilds all three strings from its own format templates.  The two agree character for character",
-   "waiver": null
-  },
-  {
-   "evidence": "{'seals': 15, 'declared_in_run': 16, 'broken': []}",
-   "gate": "G-SEAL-COMPLETE",
-   "passed": true,
-   "statement": "EVERY PUBLISHED OBJECT WAS DIGESTED AT THE MOMENT ITS GATE PASSED (#119) AND EVERY ONE OF THOSE 15 IN-RUN SEALS STILL VERIFIES HERE.  The artifacts below are written FROM the sealed payload, and the terminal integrity gate compares the bytes on disk against these digests, never against a re-derivation",
+   "statement": "THE HEAD IS DERIVED A SECOND TIME BY A PATH THAT SHARES NEITHER CODE NOR INPUT NOR TYPED LITERAL WITH THE BUILDER.  The builder assembles the three verdict strings from live Python objects; the comparator is handed the receipt SERIALIZED TO JSON AND PARSED BACK -- the write path's own route, so not one live object crosses -- recomputes the beyond-coset rate as a Fraction from the two counts it finds there, re-sorts the subgroup list, and rebuilds all three strings from its own format templates.  The two agree character for character",
    "waiver": null
   },
   {
@@ -769,52 +866,94 @@
    "waiver": null
   },
   {
-   "evidence": "{'probes': [{'argv': ['--not-a-flag'], 'rejected': True, 'expected': True}, {'argv': ['--mutant'], 'rejected': True, 'expected': True}, {'argv': ['--mutant', 'NOPE'], 'rejected': True, 'expected': True}, {'argv': ['--break-anchor'], 'rejected': True, 'expected': True}, {'argv': ['--verify-paper', '/no/such/file.md'], 'rejected': True, 'expected': True}, {'argv': ['extra'], 'rejected': True, 'expected': True}, {'argv': ['--no-write'], 'rejected': False, 'expected': False}, {'argv': ['--numbers'], 'rejected': False, 'expected': False}]}",
+   "evidence": "{'probes': [{'argv': ['--not-a-flag'], 'rejected': True, 'expected': True}, {'argv': ['--mutant'], 'rejected': True, 'expected': True}, {'argv': ['--mutant', 'NOPE'], 'rejected': True, 'expected': True}, {'argv': ['--break-anchor'], 'rejected': True, 'expected': True}, {'argv': ['--verify-paper', '/no/such/file.md'], 'rejected': True, 'expected': True}, {'argv': ['--verify-paper', 'v14'], 'rejected': True, 'expected': True}, {'argv': ['--verify-paper', ''], 'rejected': True, 'expected': True}, {'argv': ['--mutant', 'MUT-HEAD', '--mutant', 'MUT-HEAD'], 'rejected': True, 'expected': True}, {'argv': ['--break-anchor', 'A-PIN', '--break-anchor', 'A-PIN'], 'rejected': True, 'expected': True}, {'argv': ['extra'], 'rejected': True, 'expected': True}, {'argv': ['--no-write'], 'rejected': False, 'expected': False}, {'argv': ['--numbers'], 'rejected': False, 'expected': False}]}",
    "gate": "G-CLI-WHITELIST",
    "passed": true,
-   "statement": "THE CLI IS ARGV-PARSED AGAINST A WHITELIST AND EXERCISED HERE (#82): unknown flags, unknown flag arguments, missing flag arguments and a --verify-paper path that does not exist are all rejected with exit 2, while the two documented no-op-free flags parse.  8 probes, all as declared.  The registered PERMISSIVE shape -- a runner that ignores what it does not recognise -- is present only as this gate's falsifier and is what MUT-CLI-PERMISSIVE substitutes",
+   "statement": "THE CLI IS ARGV-PARSED AGAINST A WHITELIST AND EXERCISED HERE (#82): unknown flags, unknown flag arguments, missing flag arguments and a --verify-paper path that does not exist are all rejected with exit 2, while the two documented no-op-free flags parse.  12 probes, all as declared.  The registered PERMISSIVE shape -- a runner that ignores what it does not recognise -- is present only as this gate's falsifier and is what MUT-CLI-PERMISSIVE substitutes",
    "waiver": null
   },
   {
-   "evidence": "{'gates': 50, 'falsifiable': 43, 'waived': 7, 'unaccounted': 'none'}",
-   "gate": "G-WAIVERS-VERIFIED",
-   "passed": true,
-   "statement": "THE COVERAGE LEDGER IS HONEST (#34).  Every gate this instrument declares -- the ones evaluated here and the ones evaluated only in the paper, mutant, self-test and writing paths -- is classified FALSIFIABLE, meaning a declared mutant or a declared control drives it to FAIL, or WAIVED WITH A FORCING that says why it cannot fail and what would have to change for it to.  50 gates: 43 falsifiable, 7 waived-with-forcing, 0 unaccounted",
-   "waiver": null
-  },
-  {
-   "evidence": "{'missing': 'none', 'claims': 15}",
+   "evidence": "{'missing': 'none', 'claims': 24}",
    "gate": "G-PAPER-CLAIMS",
    "passed": true,
-   "statement": "every one of the 15 claims this instrument makes is rendered in the paper under test, whitespace-normalised and ASCII-folded on both sides (#125)",
+   "statement": "every one of the 24 claims this instrument makes is rendered in the paper under test, whitespace-normalised, markdown-stripped and ASCII-folded on both sides (#125), and the claim rows themselves are published and sealed here",
    "waiver": null
   },
   {
    "evidence": "{'uncovered': 'none', 'undeclared_hex': 'none'}",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "passed": true,
-   "statement": "every numeral occurring in the paper is either a number this run COMPUTED and registered, or one of the 54 declared in-text residues; every hexadecimal token is one of the 10 pinned source digests or the 3 declared commits; 95 distinct numerals over 532 occurrences",
+   "statement": "every numeral occurring in the paper is either a number this run COMPUTED and registered, or one of the 55 declared in-text residues; every hexadecimal token is one of the 10 pinned source digests or the 3 declared commits; 112 distinct numerals over 753 occurrences",
    "waiver": null
   },
   {
    "evidence": "{'polarity': [{'id': 'P1', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P2', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P3', 'true_present': True, 'false_present': False, 'ok': True}, {'id': 'P4', 'true_present': True, 'false_present': False, 'ok': True}]}",
    "gate": "G-PAPER-CLAIM-POLARITY",
    "passed": true,
-   "statement": "every declared polarity of the head is present in the paper in its TRUE form and absent in its FALSE form: 4 pairs",
+   "statement": "every declared polarity of the head is present in the paper in its TRUE form and absent in its FALSE form: 4 pairs.  These needles are HEAD TOKENS, not prose, so the #62 length floor does not apply to them and is not claimed; what makes them discriminating is that each false form is the emitted head's own opening -- `U4B-CRYSTAL-SEEDED-[` and not the bare branch name, so the paper may discuss the unfired branch by name without tripping its own gate, and MUT-PAPER-POLARITY injects a genuine SEEDED head into a copy of the paper rather than flipping a boolean",
    "waiver": null
   },
   {
-   "evidence": "{'killed': 31, 'on_target': 31, 'off_target': 'none'}",
+   "evidence": "{'universe': 66, 'ledger_rows': 66, 'emitted_so_far': 54, 'missing_from_ledger': 'none', 'extra_in_ledger': 'none'}",
+   "gate": "G-GATE-UNIVERSE",
+   "passed": true,
+   "statement": "THE COVERAGE LEDGER'S DENOMINATOR IS HONEST (#34).  The gate universe is every gate name this run EMITTED, plus the 5 gates still to come in this run's own tail, plus the 7 evaluated only in the mutant, self-test and writing paths -- 66 distinct names in all.  The ledger below is built over exactly that set and this gate requires the two to be equal, so a gate cannot be counted by the instrument and missed by its own coverage row.  Two miscounts that happened to agree are what this closes: a total that omitted the self-test gate, and a ledger that omitted the gate making the honesty claim",
+   "waiver": null
+  },
+  {
+   "evidence": "{'gates': 66, 'falsifiable': 54, 'waived': 12, 'unaccounted': 'none'}",
+   "gate": "G-WAIVERS-VERIFIED",
+   "passed": true,
+   "statement": "THE COVERAGE LEDGER IS HONEST (#34).  Every gate this instrument declares -- the ones evaluated here and the ones evaluated only in the paper, mutant, self-test and writing paths -- is classified FALSIFIABLE, meaning a declared mutant or a declared control drives it to FAIL, or WAIVED WITH A FORCING that says why it cannot fail and what would have to change for it to.  66 gates: 54 falsifiable, 12 waived-with-forcing, 0 unaccounted.  The FALSIFIABLE rows are checked for REACHABILITY after the mutant sweep, at G-FALSIFIER-REACHABILITY: a falsifier that dies at some other gate is not this gate's falsifier",
+   "waiver": null
+  },
+  {
+   "evidence": "{'totals': {'gates': 66, 'gates_in_receipt': 63, 'sources': 10, 'verbatim_anchors': 10, 'anchors': 3, 'mutants': 49, 'seals_declared': 32, 'unsealed_declared': 6, 'records_driven': 11785, 'window_builds': 11679}}",
+   "gate": "G-TOTALS",
+   "passed": true,
+   "statement": "THE INSTRUMENT'S OWN TOTALS CLOSE HERE, AT THEIR OWN GATE, and are sealed here -- not at the last gate of the run, where anything moved into them between the last measurement and the take would be sealed in and published with a digest certifying the lie.  66 gates in the universe, 63 of them reaching the receipt; 10 hash-pinned sources; 10 verbatim anchors; 3 read anchors; 49 declared mutants; 32 declared seals and 6 declared unsealed rows; 11785 records driven through the layer's own menus, 11679 of them distinct and cached.  The counts that can only be known after the mutant sweep are NOT stored here: they are DERIVED at close from the sealed rows themselves",
+   "waiver": null
+  },
+  {
+   "evidence": "{'lines': 301, 'chain_intact': True, 'verdicts_present': True, 'chain': 'd87298b859a6'}",
+   "gate": "G-TRANSCRIPT-BOUND",
+   "passed": true,
+   "statement": "THE TRANSCRIPT IS A PUBLISHED ARTIFACT AND IS BOUND TO WHAT WAS ACTUALLY SAID.  Every line extends a rolling digest as it is emitted, and the chain recomputed from the 301 lines standing now equals the digest accumulated while they were written; the three sealed verdict strings are present in it verbatim.  Two artifacts stating opposite verdicts with the receipt byte-identical is what this closes: the receipt's sha256 could not see a transcript edited after the fact, and now the transcript's own chain can",
+   "waiver": null
+  },
+  {
+   "evidence": "{'taken': 30, 'declared_in_run': 30, 'broken': 'none'}",
+   "gate": "G-SEAL-COMPLETE",
+   "passed": true,
+   "statement": "EVERY PUBLISHED OBJECT WAS DIGESTED AT THE MOMENT ITS GATE PASSED (#119), EVERY ONE OF THE 30 DECLARED IN-RUN SEALS WAS ACTUALLY TAKEN, AND EVERY ONE STILL VERIFIES HERE.  The comparison is against the DECLARATION and not against the manifest's own contents: a declared seal that was never taken counts as BROKEN, not as absent, so a seal cannot be dropped without trace.  The vouching layer is inside this count -- provenance, the paper claim rows, the paper coverage row, the paper polarity rows -- because the rows a reader cannot recompute are exactly the rows a seal is for.  The artifacts below are written FROM the sealed payload, and the terminal integrity gate compares the bytes on disk against these digests, never against a re-derivation",
+   "waiver": null
+  },
+  {
+   "evidence": "{'killed': 49, 'on_target': 49, 'off_target': 'none'}",
    "gate": "G-MUTANTS-ON-TARGET",
    "passed": true,
-   "statement": "every one of the 31 declared mutants is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
+   "statement": "every one of the 49 declared mutants is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
    "waiver": null
   },
   {
-   "evidence": "{'missing': 'none', 'uncovered': 'none', 'undeclared_hex': 'none', 'declared_but_absent': 'none'}",
+   "evidence": "{'falsifiable_rows': 54, 'unreachable': 'none', 'uncredited': 'none'}",
+   "gate": "G-FALSIFIER-REACHABILITY",
+   "passed": true,
+   "statement": "EVERY FALSIFIABLE ROW'S NAMED FALSIFIER REACHES THE GATE IT IS CREDITED WITH.  54 gates in the coverage ledger are classified FALSIFIABLE on a declared mutant, and for each the mutant's measured `killed_at` is required to equal that row's own gate -- not merely to be non-null.  Two failures of exactly this kind are what the check closes: a gate credited to a mutant that dies eight gates earlier, and a gate credited to a mutant that reaches it and PASSES it.  The per-source provenance rows are excluded by name: their falsifier is `--break-anchor`, which is a separate process and not an in-run mutant",
+   "waiver": null
+  },
+  {
+   "evidence": "{'missing': 'none', 'uncovered': 'none', 'undeclared_hex': 'none', 'agrees_with_the_sealed_row': True, 'declared_but_absent': 'none'}",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "passed": true,
-   "statement": "the paper-claim and numeral-coverage check is re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers and this evaluation is the enforcement -- a failure here exits 1 and writes nothing.  It also closes the residue ledger: every declared in-text residue must actually occur in the paper, so the list cannot be padded",
+   "statement": "the paper-claim and numeral-coverage check is re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers and this evaluation is the enforcement -- a failure here exits 1 and writes nothing.  It also closes the residue ledger: every declared in-text residue must actually occur in the paper, so the list cannot be padded.  And it AGREES ROW FOR ROW with the coverage row sealed in run, which is why the re-run does not overwrite the sealed object",
+   "waiver": null
+  },
+  {
+   "evidence": "{'rows_at_close': 63, 'predicted': 63, 'mutants_killed': 49, 'mutants_on_target': 49}",
+   "gate": "G-CLOSURE-DERIVED",
+   "passed": true,
+   "statement": "THE CLOSING COUNTS ARE DERIVED FROM THE SEALED ROWS.  With this row the ledger closes at 63 gates -- exactly the number the in-run totals predicted BEFORE the sweep began, from the declared universe minus the 3 gates evaluated outside the ledger -- and every one of them passed.  49 of 49 declared mutants were killed and 49 on target, recomputed here from the sealed mutant report rather than carried forward in a counter",
    "waiver": null
   }
  ],
@@ -1066,6 +1205,150 @@
    "note": "injects an unregistered numeral into the paper under test -- must die at the numeral-coverage gate",
    "on_target": true,
    "target": "G-PAPER-NUMERAL-COVERAGE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-UNION-CARRIER",
+   "mutant": "MUT-UNION-CARRIER",
+   "note": "reports one crystalline seed pair whose division field is NOT supported on a union of cosets of its own period -- must die at the union-carrier gate, which evaluates all 252 crystalline pairs",
+   "on_target": true,
+   "target": "G-UNION-CARRIER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-LINE-SEED",
+   "mutant": "MUT-LINE-SEED",
+   "note": "reports one beyond-coset crystalline pair as having a line seed -- must die at the per-pair no-line-seed gate",
+   "on_target": true,
+   "target": "G-NO-LINE-SEED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-FRAGILITY-FAMILY",
+   "mutant": "MUT-FRAG-FAMILY",
+   "note": "reports one family-scope re-seating as leaving a nontrivial period -- must die at the 9072-case family fragility gate",
+   "on_target": true,
+   "target": "G-FRAGILITY-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PERIOD-DIAGONAL-JOINT",
+   "mutant": "MUT-JOINT-COUPLING",
+   "note": "reports the period and the diagonal link count as jointly independent -- must die at the measured-coupling gate",
+   "on_target": true,
+   "target": "G-PERIOD-DIAGONAL-JOINT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-POSDEF-CEILING",
+   "mutant": "MUT-POSDEF-CEILING",
+   "note": "moves the positive-definite site histogram -- must die at the exhaustive ceiling gate",
+   "on_target": true,
+   "target": "G-POSDEF-CEILING"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-INCIDENCE-WALL",
+   "mutant": "MUT-INCIDENCE-WALL",
+   "note": "reports a partition pair depositing more than the budget's link incidences, or a positive-definite site holding fewer than three -- must die at the counting-wall gate that carries both theorems",
+   "on_target": true,
+   "target": "G-INCIDENCE-WALL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-R3-SATURATION",
+   "mutant": "MUT-R3-SATURATION",
+   "note": "corrupts the successor probe's saturating arrangement -- must die at the R=3 gate",
+   "on_target": true,
+   "target": "G-R3-SATURATION"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-I7-READOUT",
+   "mutant": "MUT-I7-READOUT",
+   "note": "corrupts the induced form at ONE site of the committed schedule, which the single-row read anchor cannot see -- must die at the nine-site readout gate",
+   "on_target": true,
+   "target": "G-I7-READOUT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-STAB-FULL-FAMILY",
+   "mutant": "MUT-STAB-WEIGHT",
+   "note": "corrupts the transversal weight that licenses the exhaustive stabilizer column -- must die at the full-family gate (the falsifier the coverage ledger previously mis-credited to a gate eight rows earlier)",
+   "on_target": true,
+   "target": "G-STAB-FULL-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-ORDER-INVARIANCE",
+   "mutant": "MUT-ORDER-VARIANT",
+   "note": "reports one processing-order variant as changing the record -- must die at the order-invariance gate",
+   "on_target": true,
+   "target": "G-ORDER-INVARIANCE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-VOUCH-FORGED",
+   "note": "forges the four VOUCHING rows -- provenance, paper claims, paper coverage, paper polarity -- after their gates passed, the injection that previously left the receipt publishable at exit 0; must die at the completeness gate now that the vouching layer is sealed",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-DECLARED-UNSEALED",
+   "mutant": "MUT-SCHEMA-FORGED",
+   "note": "forges the two declared-unsealed rows, the receipt schema and the path of the object under test -- must die at the gate that binds them",
+   "on_target": true,
+   "target": "G-DECLARED-UNSEALED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-SEAL-DROPPED",
+   "note": "deletes one DECLARED seal without trace, which previously left both artifacts byte-identical to the honest run -- must die at the completeness gate, which now compares the manifest against the DECLARATION rather than against what it happens to contain",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-CTRL-ROW",
+   "note": "moves a control row under its label after its own gate passed -- must die at the completeness gate now that each control is sealed at its own gate and its gate reads the published row",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-COMPLETE",
+   "mutant": "MUT-TOTALS-FORGED",
+   "note": "forges the instrument's own totals after their gate -- must die at the completeness gate now that the totals close in run rather than at the last gate of all",
+   "on_target": true,
+   "target": "G-SEAL-COMPLETE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-TRANSCRIPT-BOUND",
+   "mutant": "MUT-TRANSCRIPT-HEAD",
+   "note": "flips the head in the transcript's own line buffer, the injection that previously published two artifacts stating opposite verdicts with the receipt byte-identical -- must die at the transcript chain gate",
+   "on_target": true,
+   "target": "G-TRANSCRIPT-BOUND"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GATE-UNIVERSE",
+   "mutant": "MUT-GATE-UNIVERSE",
+   "note": "hides one gate from the coverage ledger's denominator -- must die at the honest-denominator gate (#34)",
+   "on_target": true,
+   "target": "G-GATE-UNIVERSE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-WALL-L1",
+   "mutant": "MUT-WALL-L1-QUOTED",
+   "note": "injects the retracted L-1 sentence as a MARKDOWN BLOCKQUOTE, the corpus's own house style for quoting a prior unit and the wrapping the whitespace-only fold walked past -- must die at the L-1 wall gate under the markdown-prefix normalisation (#125)",
+   "on_target": true,
+   "target": "G-WALL-L1"
   }
  ],
  "paper": "v14/paper-17-schedule-census.md",
@@ -1129,11 +1412,47 @@
   {
    "id": "C15",
    "text": "the named witness is ROW|ROW/DIAG"
+  },
+  {
+   "id": "C16",
+   "text": "at 252 of 252 crystalline seed pairs the field is supported on a union of cosets of its own period"
+  },
+  {
+   "id": "C17",
+   "text": "six sevenths of all crystallinity in the family lies outside the inherited locus"
+  },
+  {
+   "id": "C18",
+   "text": "at all 9072 single-point re-seatings of one seed of a crystalline pair, the edited field's stabilizer is trivial"
+  },
+  {
+   "id": "C19",
+   "text": "the same count permits as many as 6 positive-definite sites; the measured maximum is 3"
+  },
+  {
+   "id": "C20",
+   "text": "28404 of the 78400 partition pairs carry at least one positive-definite site"
+  },
+  {
+   "id": "C21",
+   "text": "the maximum total link-incidence over the whole family is exactly 18, attained at 1296 partition pairs"
+  },
+  {
+   "id": "C22",
+   "text": "the period is the diagonal at 15/31 of them, against 1/4 under independence"
+  },
+  {
+   "id": "C23",
+   "text": "neither seed set is a coset of any order-3 subgroup"
+  },
+  {
+   "id": "C24",
+   "text": "no partition pair is positive definite at every site"
   }
  ],
  "paper_coverage": {
-  "claims": 15,
-  "distinct_numerals": 95,
+  "claims": 24,
+  "distinct_numerals": 112,
   "hex_tokens": [
    "06b89fe",
    "0cebe543e814",
@@ -1147,7 +1466,7 @@
    "fa991e19ae54"
   ],
   "missing": [],
-  "numeral_occurrences": 532,
+  "numeral_occurrences": 753,
   "residue_declared_but_absent": [],
   "uncovered": [],
   "undeclared_hex": []
@@ -1178,6 +1497,37 @@
    "true_present": true
   }
  ],
+ "period_vs_diagonal": {
+  "conditional": "15/31",
+  "crystalline_with_an_empty_diagonal": 40176,
+  "diagonal_link_populated": {
+   "<(0,1)>": 503388,
+   "<(1,0)>": 503388,
+   "<(1,1)>": 490860,
+   "<(1,2)>": 503388
+  },
+  "marginal_uniform": true,
+  "of_those_period_is_the_diagonal": 19440,
+  "per_period_schedules": {
+   "<(0,1)>": 510300,
+   "<(1,0)>": 510300,
+   "<(1,1)>": 510300,
+   "<(1,2)>": 510300
+  },
+  "populated_rate": {
+   "<(0,1)>": "4661/4725",
+   "<(1,0)>": "4661/4725",
+   "<(1,1)>": "101/105",
+   "<(1,2)>": "4661/4725"
+  },
+  "under_independence": "1/4"
+ },
+ "processing_order": {
+  "conventions_per_round": 36,
+  "deviations": 0,
+  "drives": 108,
+  "schedules_probed": 3
+ },
  "provenance": [
   {
    "got": "d2cff9a274a8",
@@ -1261,6 +1611,232 @@
   }
  ],
  "schema": "isp/v14/u4b-schedule-census/1",
+ "seals": [
+  {
+   "path": "provenance",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-PROV-ALL",
+   "sha256_12": "512a9b03e33f"
+  },
+  {
+   "path": "anchors",
+   "seal": "SEAL-ANCHORS",
+   "sealed_at_gate": "G-ANCHORS-READ",
+   "sha256_12": "bbe842c187a3"
+  },
+  {
+   "path": "verbatim_anchors",
+   "seal": "SEAL-VERBATIM",
+   "sealed_at_gate": "G-VERBATIM",
+   "sha256_12": "79c71400ca4c"
+  },
+  {
+   "path": "family",
+   "seal": "SEAL-FAMILY",
+   "sealed_at_gate": "G-WINDOW-DISCLOSED",
+   "sha256_12": "b4ebed48a284"
+  },
+  {
+   "path": "constructibility/fates",
+   "seal": "SEAL-CONSTR-FATES",
+   "sealed_at_gate": "G-CONSTRUCTIBILITY",
+   "sha256_12": "9a35953d8585"
+  },
+  {
+   "path": "constructibility/control_nosupply",
+   "seal": "SEAL-CTRL-REFUSED",
+   "sealed_at_gate": "G-CTRL-REFUSED",
+   "sha256_12": "c63851e66e2e"
+  },
+  {
+   "path": "constructibility/control_underspecified",
+   "seal": "SEAL-CTRL-BRANCHING",
+   "sealed_at_gate": "G-CTRL-BRANCHING",
+   "sha256_12": "6bdabb22b010"
+  },
+  {
+   "path": "constructibility",
+   "seal": "SEAL-CONSTRUCTIBILITY",
+   "sealed_at_gate": "G-CTRL-BRANCHING",
+   "sha256_12": "92c8f8c6b129"
+  },
+  {
+   "path": "stabilizer",
+   "seal": "SEAL-STABILIZER",
+   "sealed_at_gate": "G-STAB-FULL-FAMILY",
+   "sha256_12": "80ef7df01c2a"
+  },
+  {
+   "path": "determinant/witness",
+   "seal": "SEAL-DET-WITNESS",
+   "sealed_at_gate": "G-DET-NONZERO-EXISTS",
+   "sha256_12": "65136e99df0e"
+  },
+  {
+   "path": "determinant/posdef_site_histogram",
+   "seal": "SEAL-DET-CEILING",
+   "sealed_at_gate": "G-POSDEF-CEILING",
+   "sha256_12": "1c7174d3f5a9"
+  },
+  {
+   "path": "determinant",
+   "seal": "SEAL-DETERMINANT",
+   "sealed_at_gate": "G-INCIDENCE-WALL",
+   "sha256_12": "df74e9db19f8"
+  },
+  {
+   "path": "class_pairs",
+   "seal": "SEAL-CLASS-PAIRS",
+   "sealed_at_gate": "G-CLASS-PAIR-TABLE",
+   "sha256_12": "b001164bc55f"
+  },
+  {
+   "path": "affine",
+   "seal": "SEAL-AFFINE",
+   "sealed_at_gate": "G-CU-SPLIT-EMPTY",
+   "sha256_12": "9ea7cb5e1f0c"
+  },
+  {
+   "path": "carrier",
+   "seal": "SEAL-CARRIER",
+   "sealed_at_gate": "G-UNION-CARRIER",
+   "sha256_12": "9bb27c12e014"
+  },
+  {
+   "path": "period_vs_diagonal",
+   "seal": "SEAL-JOINT",
+   "sealed_at_gate": "G-PERIOD-DIAGONAL-JOINT",
+   "sha256_12": "668bb3e3cf83"
+  },
+  {
+   "path": "strata",
+   "seal": "SEAL-STRATA",
+   "sealed_at_gate": "G-STRATA-WITNESSED",
+   "sha256_12": "d90e12869bbc"
+  },
+  {
+   "path": "fragility",
+   "seal": "SEAL-FRAGILITY",
+   "sealed_at_gate": "G-FRAGILITY-FAMILY",
+   "sha256_12": "a3303b2eb107"
+  },
+  {
+   "path": "processing_order",
+   "seal": "SEAL-ORDER",
+   "sealed_at_gate": "G-ORDER-INVARIANCE",
+   "sha256_12": "5952661e2e87"
+  },
+  {
+   "path": "successor_probe",
+   "seal": "SEAL-SUCCESSOR",
+   "sealed_at_gate": "G-R3-SATURATION",
+   "sha256_12": "1fa83f9c9a90"
+  },
+  {
+   "path": "walls",
+   "seal": "SEAL-WALLS",
+   "sealed_at_gate": "G-WALL-DIAGONAL",
+   "sha256_12": "b81f389fd5cb"
+  },
+  {
+   "path": "verdict/crystal",
+   "seal": "SEAL-VERDICT-CRYSTAL",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "e134d3623415"
+  },
+  {
+   "path": "verdict/det",
+   "seal": "SEAL-VERDICT-DET",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "4cf504e40adc"
+  },
+  {
+   "path": "verdict/constructibility",
+   "seal": "SEAL-VERDICT-CONSTR",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "4fc8b0a0a935"
+  },
+  {
+   "path": "counts",
+   "seal": "SEAL-COUNTS",
+   "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
+   "sha256_12": "c1d5c9d9f710"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "55d50b2ddddc"
+  },
+  {
+   "path": "paper_coverage",
+   "seal": "SEAL-PAPER-COVERAGE",
+   "sealed_at_gate": "G-PAPER-NUMERAL-COVERAGE",
+   "sha256_12": "7e787d7d2ebd"
+  },
+  {
+   "path": "paper_polarity",
+   "seal": "SEAL-PAPER-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "3514fa8c7e5a"
+  },
+  {
+   "path": "waiver_ledger",
+   "seal": "SEAL-WAIVERS",
+   "sealed_at_gate": "G-WAIVERS-VERIFIED",
+   "sha256_12": "653463cb9722"
+  },
+  {
+   "path": "totals",
+   "seal": "SEAL-TOTALS",
+   "sealed_at_gate": "G-TOTALS",
+   "sha256_12": "2d68cf8c506a"
+  },
+  {
+   "path": "mutants",
+   "seal": "SEAL-MUTANTS",
+   "sealed_at_gate": "G-MUTANTS-ON-TARGET",
+   "sha256_12": "3ce97f608745"
+  },
+  {
+   "path": "closure",
+   "seal": "SEAL-CLOSURE",
+   "sealed_at_gate": "G-CLOSURE-DERIVED",
+   "sha256_12": "01a2fd312632"
+  }
+ ],
+ "seals_unsealed": [
+  {
+   "bound_by": "G-DECLARED-UNSEALED",
+   "key": "schema",
+   "reason": "a constant of this file, fixed before the first gate; it names the receipt's shape and is re-verified against its own definition"
+  },
+  {
+   "bound_by": "G-DECLARED-UNSEALED",
+   "key": "paper",
+   "reason": "the relative path of the object under test, fixed by the CLI before the first gate and re-verified here against the path actually read"
+  },
+  {
+   "bound_by": "G-SEAL-CLOSE",
+   "key": "gates",
+   "reason": "not sealed once but CHAINED row by row: each ledger row extends a rolling digest at the moment its gate passes, and the chain is recomputed from the published rows at close"
+  },
+  {
+   "bound_by": "G-SEAL-CLOSE",
+   "key": "seals",
+   "reason": "the manifest cannot digest itself; it is CONSTRUCTED at close from the seal rows actually taken, never read from mutable state"
+  },
+  {
+   "bound_by": "G-SEAL-CLOSE",
+   "key": "seals_unsealed",
+   "reason": "this manifest, constructed at close from the declaration above"
+  },
+  {
+   "bound_by": "G-TRANSCRIPT-BOUND",
+   "key": "transcript",
+   "reason": "the transcript's own chain digest, constructed at close; the transcript is chained line by line as it is written"
+  }
+ ],
  "stabilizer": {
   "crystalline": 2041200,
   "crystalline_fraction": "1/28",
@@ -1284,6 +1860,9 @@
    "<(1,1)>": 63,
    "<(1,2)>": 63
   },
+  "transversal_weights": [
+   90
+  ],
   "uniform_weight": 90
  },
  "strata": {
@@ -2023,19 +2602,39 @@
     "refusal": null,
     "stratum": "<(1,2)>|CU-JOINT|det9=True"
    }
-  ]
+  ],
+  "witnesses_outside_the_window": 12
+ },
+ "successor_probe": {
+  "cells": 27,
+  "det": "3/4",
+  "distinct_counts": [
+   1
+  ],
+  "homogeneous": true,
+  "posdef_sites": 9,
+  "q11": "1",
+  "q12": "-1/2",
+  "q22": "1",
+  "rounds": 3,
+  "strictly_positive_cells": 27
  },
  "totals": {
   "anchors": 3,
-  "gates": 50,
-  "gates_in_receipt": 49,
-  "gates_passed": 49,
-  "mutants": 31,
-  "mutants_killed": 31,
-  "mutants_on_target": 31,
+  "gates": 66,
+  "gates_in_receipt": 63,
+  "mutants": 49,
+  "records_driven": 11785,
+  "seals_declared": 32,
   "sources": 10,
+  "unsealed_declared": 6,
   "verbatim_anchors": 10,
-  "window_builds": 11686
+  "window_builds": 11679
+ },
+ "transcript": {
+  "chain": "69fd1c783cad",
+  "lines": 419,
+  "sha256_12": "03e587aece2d"
  },
  "verbatim_anchors": [
   {
@@ -2071,7 +2670,7 @@
    "source": "A-EFF"
   },
   {
-   "chars": 98,
+   "chars": 96,
    "consumer": "G-I7-READOUT",
    "found": true,
    "id": "V05",
@@ -2176,6 +2775,11 @@
    "status": "FALSIFIABLE"
   },
   {
+   "gate": "G-DECLARED-UNSEALED",
+   "reason": "driven to FAIL by MUT-SCHEMA-FORGED",
+   "status": "FALSIFIABLE"
+  },
+  {
    "gate": "G-PROV-ALL",
    "reason": "an aggregate over per-source gates that each carry MUT-ANCHOR's falsifier via --break-anchor; it cannot fail once they pass, and --break-anchor NAME drives it",
    "status": "WAIVED"
@@ -2207,7 +2811,7 @@
   },
   {
    "gate": "G-I7-READOUT",
-   "reason": "MUT-DET-EMPTY and the A-EFF-I7 anchor both drive it",
+   "reason": "driven to FAIL by MUT-I7-READOUT",
    "status": "FALSIFIABLE"
   },
   {
@@ -2252,7 +2856,7 @@
   },
   {
    "gate": "G-STAB-FULL-FAMILY",
-   "reason": "MUT-FAMILY-COUNT moves the family total the gate's own sum must reach",
+   "reason": "driven to FAIL by MUT-STAB-WEIGHT",
    "status": "FALSIFIABLE"
   },
   {
@@ -2268,6 +2872,16 @@
   {
    "gate": "G-I7-STRICT-EMPTY",
    "reason": "driven to FAIL by MUT-I7-STRICT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-POSDEF-CEILING",
+   "reason": "driven to FAIL by MUT-POSDEF-CEILING",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-INCIDENCE-WALL",
+   "reason": "driven to FAIL by MUT-INCIDENCE-WALL",
    "status": "FALSIFIABLE"
   },
   {
@@ -2291,6 +2905,21 @@
    "status": "FALSIFIABLE"
   },
   {
+   "gate": "G-UNION-CARRIER",
+   "reason": "driven to FAIL by MUT-UNION-CARRIER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-NO-LINE-SEED",
+   "reason": "driven to FAIL by MUT-LINE-SEED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-PERIOD-DIAGONAL-JOINT",
+   "reason": "driven to FAIL by MUT-JOINT-COUPLING",
+   "status": "FALSIFIABLE"
+  },
+  {
    "gate": "G-STRATA-WITNESSED",
    "reason": "driven to FAIL by MUT-STRATUM-BLIND",
    "status": "FALSIFIABLE"
@@ -2301,8 +2930,23 @@
    "status": "FALSIFIABLE"
   },
   {
+   "gate": "G-FRAGILITY-FAMILY",
+   "reason": "driven to FAIL by MUT-FRAG-FAMILY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-ORDER-INVARIANCE",
+   "reason": "driven to FAIL by MUT-ORDER-VARIANT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-R3-SATURATION",
+   "reason": "driven to FAIL by MUT-R3-SATURATION",
+   "status": "FALSIFIABLE"
+  },
+  {
    "gate": "G-WALL-L1",
-   "reason": "driven to FAIL by MUT-WALL-L1",
+   "reason": "driven to FAIL by MUT-WALL-L1, MUT-WALL-L1-QUOTED",
    "status": "FALSIFIABLE"
   },
   {
@@ -2323,11 +2967,6 @@
   {
    "gate": "G-VERDICT-RECONSTRUCTED",
    "reason": "driven to FAIL by MUT-HEAD",
-   "status": "FALSIFIABLE"
-  },
-  {
-   "gate": "G-SEAL-COMPLETE",
-   "reason": "MUT-SEAL-BROKEN mutates a sealed object after its gate",
    "status": "FALSIFIABLE"
   },
   {
@@ -2356,13 +2995,53 @@
    "status": "FALSIFIABLE"
   },
   {
+   "gate": "G-GATE-UNIVERSE",
+   "reason": "driven to FAIL by MUT-GATE-UNIVERSE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-WAIVERS-VERIFIED",
+   "reason": "the ledger's own closure gate; it fails if any gate is unclassified, which is a construction error rather than a measurement",
+   "status": "WAIVED"
+  },
+  {
+   "gate": "G-TOTALS",
+   "reason": "the totals' own closing gate: it recomputes the universe it is comparing against, so it cannot disagree with itself.  Its forcing is that the numbers it publishes are re-derived from the SEALED rows at close by G-CLOSURE-DERIVED, and a forged totals row dies at G-SEAL-COMPLETE -- MUT-TOTALS-FORGED is that falsifier",
+   "status": "WAIVED"
+  },
+  {
+   "gate": "G-TRANSCRIPT-BOUND",
+   "reason": "driven to FAIL by MUT-TRANSCRIPT-HEAD",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "gate": "G-SEAL-COMPLETE",
+   "reason": "driven to FAIL by MUT-CTRL-ROW, MUT-SEAL-BROKEN, MUT-SEAL-DROPPED, MUT-TOTALS-FORGED, MUT-VOUCH-FORGED",
+   "status": "FALSIFIABLE"
+  },
+  {
    "gate": "G-MUTANTS-ON-TARGET",
    "reason": "the sweep's own closure gate: it fails when a declared mutant survives or dies off target, which is a fact about the OTHER gates, so it has no falsifier of its own",
    "status": "WAIVED"
   },
   {
+   "gate": "G-FALSIFIER-REACHABILITY",
+   "reason": "the sweep's reachability closure: it fails when a FALSIFIABLE row's named mutant dies at a gate other than that row's own, which is a fact about the OTHER gates' boundaries, so it has no falsifier of its own -- the same standing as G-MUTANTS-ON-TARGET",
+   "status": "WAIVED"
+  },
+  {
    "gate": "G-PAPER-COVERAGE-FINAL",
    "reason": "the same three checks re-run once the totals close; its in-run twins G-PAPER-CLAIMS and G-PAPER-NUMERAL-COVERAGE carry the injection falsifiers, and this evaluation is the enforcement",
+   "status": "WAIVED"
+  },
+  {
+   "gate": "G-CLOSURE-DERIVED",
+   "reason": "evaluated after the mutant sweep, which no in-process mutant reaches.  Its forcing is that it READS NOTHING: every number it checks is recomputed at close from the chained gate ledger and the sealed mutant report, so it can disagree only if one of those was forged -- and MUT-TOTALS-FORGED and MUT-SEAL-BROKEN kill that at G-SEAL-COMPLETE",
+   "status": "WAIVED"
+  },
+  {
+   "gate": "G-SEAL-CLOSE",
+   "reason": "the seal's own closing gate, evaluated on the payload about to be serialized and so only in the writing path.  Its forcing is the same as the integrity gate's: it fires on EVERY delivery run, and its three clauses -- every declared seal taken, every taken seal verifying, every published key sealed or declared -- are each driven to FAIL in-run by MUT-SEAL-DROPPED, MUT-SEAL-BROKEN and MUT-VOUCH-FORGED at G-SEAL-COMPLETE",
    "status": "WAIVED"
   },
   {

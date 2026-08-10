@@ -52,8 +52,9 @@ CLI CONTRACT (the #82 minimum: argv-parsed against a whitelist)
         The same run, writing nothing.
 
     python3.13 v14/code/u4b_schedule_exact.py --numbers
-        The census only: every published row printed, no paper gate, no mutant
-        sweep, nothing written.  Exits 0 iff every gate it reaches passes.
+        The census and the paper gates: every published row printed, then the
+        registered numerals and the instrument's claims.  No mutant sweep, no
+        seal close, nothing written.  Exits 0 iff every gate it reaches passes.
 
     python3.13 v14/code/u4b_schedule_exact.py --selftest
         FALSIFICATION SELF-TEST.  Corrupts one anchor's expected digest IN
@@ -75,21 +76,43 @@ CLI CONTRACT (the #82 minimum: argv-parsed against a whitelist)
         unit's paper by default) as the object under test.  Exits 1 on any
         drift, 0 on a clean paper, 2 if PATH does not exist.  Writes nothing.
 
-    Any other argument, any unknown flag argument, any missing flag argument
-    and any --verify-paper PATH that does not exist exits 2.  No flag is
-    mutant-only and no flag is a no-op.
+    Any other argument, any unknown flag argument, any missing flag argument,
+    any REPEATED flag, and any --verify-paper PATH that is not an existing FILE
+    (a directory and the empty string are not papers) exits 2.  No flag is
+    mutant-only, no flag is a no-op, and no COMBINATION is: the mutant is bound
+    before --selftest is dispatched, so `--selftest --mutant NAME` is honoured.
 
-THE GATE-TO-DISK SEAL (RUNBOOK 14 addendum, v14 #119), disciplined from birth.
-Every published object is DIGESTED AT THE MOMENT ITS GATE PASSES; the payload
-may only be sealed if every earlier seal still verifies; the artifacts are
-written FROM the sealed payload; and the terminal integrity gate compares the
-BYTES ON DISK against the gate-time seal.  A re-derivation from disk is not an
+THE GATE-TO-DISK SEAL (RUNBOOK 14 addendum, v14 #119 with the #148 TOTALITY
+addendum).  Every published object is DIGESTED AT THE MOMENT ITS GATE PASSES;
+the payload may only be sealed if every earlier seal still verifies; the
+artifacts are written FROM the sealed payload; the terminal integrity gate
+compares the BYTES ON DISK against the gate-time seal, and a failure after the
+replace RESTORES the previous artifacts.  A re-derivation from disk is not an
 integrity check -- it confirms corruption.
 
-TEXT GATES (RUNBOOK 14 addendum, v14 #125).  Every gate that matches prose
-against a needle whitespace-normalises BOTH sides, uses #62-anchored needles
-with a length floor, and includes the corpus's canonical short fragments.  The
-four inherited U4 walls are enforced that way.
+TOTALITY.  Every published receipt key is sealed at its own gate or carried on
+a DECLARED-UNSEALED manifest with a reason and a gate that binds it instead;
+both manifests are published.  A DECLARED seal that was never TAKEN counts as
+BROKEN, so a seal cannot be dropped without trace, and the completeness gate
+compares the manifest against the DECLARATION rather than its own contents.
+The seal covers what this program VOUCHES FOR -- its provenance rows, its
+claims about its own paper, its coverage and polarity rows -- as well as what
+it measured.  The gate ledger is CHAINED one row at a time rather than sealed
+once; the transcript is chained line by line as it is written; and the closing
+counts are DERIVED at close from the sealed rows.
+
+TEXT GATES (RUNBOOK 14 addendum, v14 #125, as this unit's adjudication
+clarified it).  Every gate that matches prose against a needle ASCII-folds both
+sides, STRIPS LEADING MARKDOWN LINE-DECORATIONS -- blockquote markers, list
+bullets, heading hashes, ordered-list numbers -- and only then
+whitespace-normalises, uses #62-anchored needles with a length floor, and
+includes the corpus's canonical short fragments.  The four inherited U4 walls
+are enforced that way, and the blockquote is the wrapping the corpus itself
+writes when it quotes a prior unit.
+
+COVERAGE (#34, with reachability).  The denominator is the DECLARED gate
+universe and the ledger is required to equal it; every FALSIFIABLE row's named
+mutant must have its measured `killed_at` equal to that row's own gate.
 
 ARITHMETIC.  Exact only: `fractions.Fraction` and Python integers.  There are
 no floats anywhere -- an AST scan of this file and a recursive type scan of the
@@ -258,6 +281,77 @@ MUTANTS = [
     ("MUT-PAPER-NUMERAL", "G-PAPER-NUMERAL-COVERAGE",
      "injects an unregistered numeral into the paper under test -- must die "
      "at the numeral-coverage gate"),
+    # ---- the repaired heads: falsifiers for the census blocks added at
+    # ---- adjudication, one per new gate
+    ("MUT-UNION-CARRIER", "G-UNION-CARRIER",
+     "reports one crystalline seed pair whose division field is NOT supported "
+     "on a union of cosets of its own period -- must die at the "
+     "union-carrier gate, which evaluates all 252 crystalline pairs"),
+    ("MUT-LINE-SEED", "G-NO-LINE-SEED",
+     "reports one beyond-coset crystalline pair as having a line seed -- must "
+     "die at the per-pair no-line-seed gate"),
+    ("MUT-FRAG-FAMILY", "G-FRAGILITY-FAMILY",
+     "reports one family-scope re-seating as leaving a nontrivial period -- "
+     "must die at the 9072-case family fragility gate"),
+    ("MUT-JOINT-COUPLING", "G-PERIOD-DIAGONAL-JOINT",
+     "reports the period and the diagonal link count as jointly independent "
+     "-- must die at the measured-coupling gate"),
+    ("MUT-POSDEF-CEILING", "G-POSDEF-CEILING",
+     "moves the positive-definite site histogram -- must die at the "
+     "exhaustive ceiling gate"),
+    ("MUT-INCIDENCE-WALL", "G-INCIDENCE-WALL",
+     "reports a partition pair depositing more than the budget's link "
+     "incidences, or a positive-definite site holding fewer than three -- "
+     "must die at the counting-wall gate that carries both theorems"),
+    ("MUT-R3-SATURATION", "G-R3-SATURATION",
+     "corrupts the successor probe's saturating arrangement -- must die at "
+     "the R=3 gate"),
+    ("MUT-I7-READOUT", "G-I7-READOUT",
+     "corrupts the induced form at ONE site of the committed schedule, which "
+     "the single-row read anchor cannot see -- must die at the nine-site "
+     "readout gate"),
+    ("MUT-STAB-WEIGHT", "G-STAB-FULL-FAMILY",
+     "corrupts the transversal weight that licenses the exhaustive stabilizer "
+     "column -- must die at the full-family gate (the falsifier the coverage "
+     "ledger previously mis-credited to a gate eight rows earlier)"),
+    ("MUT-ORDER-VARIANT", "G-ORDER-INVARIANCE",
+     "reports one processing-order variant as changing the record -- must die "
+     "at the order-invariance gate"),
+    # ---- the seam: the five injections the instrument review exploited at
+    # ---- exit 0, each now a declared mutant that dies at a named gate
+    ("MUT-VOUCH-FORGED", "G-SEAL-COMPLETE",
+     "forges the four VOUCHING rows -- provenance, paper claims, paper "
+     "coverage, paper polarity -- after their gates passed, the injection "
+     "that previously left the receipt publishable at exit 0; must die at "
+     "the completeness gate now that the vouching layer is sealed"),
+    ("MUT-SCHEMA-FORGED", "G-DECLARED-UNSEALED",
+     "forges the two declared-unsealed rows, the receipt schema and the path "
+     "of the object under test -- must die at the gate that binds them"),
+    ("MUT-SEAL-DROPPED", "G-SEAL-COMPLETE",
+     "deletes one DECLARED seal without trace, which previously left both "
+     "artifacts byte-identical to the honest run -- must die at the "
+     "completeness gate, which now compares the manifest against the "
+     "DECLARATION rather than against what it happens to contain"),
+    ("MUT-CTRL-ROW", "G-SEAL-COMPLETE",
+     "moves a control row under its label after its own gate passed -- must "
+     "die at the completeness gate now that each control is sealed at its "
+     "own gate and its gate reads the published row"),
+    ("MUT-TOTALS-FORGED", "G-SEAL-COMPLETE",
+     "forges the instrument's own totals after their gate -- must die at the "
+     "completeness gate now that the totals close in run rather than at the "
+     "last gate of all"),
+    ("MUT-TRANSCRIPT-HEAD", "G-TRANSCRIPT-BOUND",
+     "flips the head in the transcript's own line buffer, the injection that "
+     "previously published two artifacts stating opposite verdicts with the "
+     "receipt byte-identical -- must die at the transcript chain gate"),
+    ("MUT-GATE-UNIVERSE", "G-GATE-UNIVERSE",
+     "hides one gate from the coverage ledger's denominator -- must die at "
+     "the honest-denominator gate (#34)"),
+    ("MUT-WALL-L1-QUOTED", "G-WALL-L1",
+     "injects the retracted L-1 sentence as a MARKDOWN BLOCKQUOTE, the "
+     "corpus's own house style for quoting a prior unit and the wrapping the "
+     "whitespace-only fold walked past -- must die at the L-1 wall gate under "
+     "the markdown-prefix normalisation (#125)"),
 ]
 MUTANT_NAMES = {m[0] for m in MUTANTS}
 
@@ -279,10 +373,32 @@ class CliError(Exception):
     pass
 
 
+TRANSCRIPT_CHAIN = ["<transcript-genesis>"]
+
+
 def say(s=""):
     LINES.append(s)
+    TRANSCRIPT_CHAIN[0] = _chain_step(TRANSCRIPT_CHAIN[0], s)
     if not QUIET:
         print(s, flush=True)
+
+
+def transcript_state():
+    """the transcript is a published artifact, so it is chained as it is
+    written; this pair is saved and restored around every quiet sub-run."""
+    return list(LINES), TRANSCRIPT_CHAIN[0]
+
+
+def transcript_restore(state):
+    LINES[:] = state[0]
+    TRANSCRIPT_CHAIN[0] = state[1]
+
+
+def transcript_chain_of(lines):
+    acc = "<transcript-genesis>"
+    for s in lines:
+        acc = _chain_step(acc, s)
+    return acc
 
 
 def mut(name):
@@ -299,16 +415,22 @@ def pick(name, normal, corrupted):
 # ===========================================================================
 
 class Ledger:
-    """gates carry their verdict IN the statement; a failure raises."""
+    """gates carry their verdict IN the statement; a failure raises.
+
+    The ledger is CHAINED: each row extends a rolling digest at the moment the
+    gate passes, so `gates` is sealed row by row rather than once at the end.
+    A row edited, dropped or appended after its gate breaks the chain."""
 
     def __init__(self):
         self.rows = []
+        self.chain = "<ledger-genesis>"
 
     def gate(self, name, statement, ok, evidence, waiver=None):
         ok = bool(ok)
         self.rows.append({"gate": name, "statement": statement,
                           "passed": ok, "evidence": str(evidence),
                           "waiver": waiver})
+        self.chain = _chain_step(self.chain, digest(self.rows[-1]))
         say("  [%s] %s" % ("PASS" if ok else "FAIL", name))
         say("         %s" % statement)
         say("         evidence: %s" % evidence)
@@ -327,6 +449,10 @@ def digest(value):
     ).hexdigest()[:12]
 
 
+def _chain_step(acc, item):
+    return hashlib.sha256(("%s|%s" % (acc, item)).encode("utf-8")).hexdigest()[:12]
+
+
 def jpath(obj, path):
     cur = obj
     for part in path.split("/"):
@@ -334,35 +460,92 @@ def jpath(obj, path):
     return cur
 
 
+# THE SEAL MANIFEST (#119 + the v14 #148 totality addendum).  EVERY published
+# receipt key is either sealed AT THE GATE THAT CERTIFIES IT, or carried on
+# the declared-unsealed manifest below with a reason and its own gate.  The
+# adjudication's finding this repairs: the delivery sealed WHAT IT MEASURED
+# and left unsealed WHAT IT VOUCHED FOR -- provenance, the paper rows, the
+# transcript -- which are exactly the rows a reader cannot recompute.
 SEALED_PATHS = [
     ("SEAL-VERDICT-CRYSTAL", "verdict/crystal", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-VERDICT-DET", "verdict/det", "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-VERDICT-CONSTR", "verdict/constructibility",
      "G-VERDICT-RECONSTRUCTED"),
     ("SEAL-COUNTS", "counts", "G-VERDICT-RECONSTRUCTED"),
+    ("SEAL-PROVENANCE", "provenance", "G-PROV-ALL"),
     ("SEAL-FAMILY", "family", "G-WINDOW-DISCLOSED"),
+    ("SEAL-CONSTR-FATES", "constructibility/fates", "G-CONSTRUCTIBILITY"),
+    ("SEAL-CTRL-REFUSED", "constructibility/control_nosupply",
+     "G-CTRL-REFUSED"),
+    ("SEAL-CTRL-BRANCHING", "constructibility/control_underspecified",
+     "G-CTRL-BRANCHING"),
     ("SEAL-CONSTRUCTIBILITY", "constructibility", "G-CTRL-BRANCHING"),
-    ("SEAL-STABILIZER", "stabilizer", "G-FOOTPRINT-CONSTANT"),
-    ("SEAL-DETERMINANT", "determinant", "G-I7-STRICT-EMPTY"),
+    ("SEAL-STABILIZER", "stabilizer", "G-STAB-FULL-FAMILY"),
+    ("SEAL-DET-WITNESS", "determinant/witness", "G-DET-NONZERO-EXISTS"),
+    ("SEAL-DET-CEILING", "determinant/posdef_site_histogram",
+     "G-POSDEF-CEILING"),
+    ("SEAL-DETERMINANT", "determinant", "G-INCIDENCE-WALL"),
     ("SEAL-CLASS-PAIRS", "class_pairs", "G-CLASS-PAIR-TABLE"),
     ("SEAL-AFFINE", "affine", "G-CU-SPLIT-EMPTY"),
-    ("SEAL-FRAGILITY", "fragility", "G-FRAGILITY"),
+    ("SEAL-CARRIER", "carrier", "G-UNION-CARRIER"),
+    ("SEAL-JOINT", "period_vs_diagonal", "G-PERIOD-DIAGONAL-JOINT"),
+    ("SEAL-FRAGILITY", "fragility", "G-FRAGILITY-FAMILY"),
     ("SEAL-STRATA", "strata", "G-STRATA-WITNESSED"),
     ("SEAL-ANCHORS", "anchors", "G-ANCHORS-READ"),
     ("SEAL-VERBATIM", "verbatim_anchors", "G-VERBATIM"),
+    ("SEAL-ORDER", "processing_order", "G-ORDER-INVARIANCE"),
+    ("SEAL-SUCCESSOR", "successor_probe", "G-R3-SATURATION"),
     ("SEAL-WALLS", "walls", "G-WALL-DIAGONAL"),
+    ("SEAL-PAPER-CLAIMS", "paper_claims", "G-PAPER-CLAIMS"),
+    ("SEAL-PAPER-COVERAGE", "paper_coverage", "G-PAPER-NUMERAL-COVERAGE"),
+    ("SEAL-PAPER-POLARITY", "paper_polarity", "G-PAPER-CLAIM-POLARITY"),
     ("SEAL-WAIVERS", "waiver_ledger", "G-WAIVERS-VERIFIED"),
+    ("SEAL-TOTALS", "totals", "G-TOTALS"),
+    # taken after the in-run completeness gate, in the delivery path only,
+    # each at the gate that certifies its own object
     ("SEAL-MUTANTS", "mutants", "G-MUTANTS-ON-TARGET"),
-    ("SEAL-GATES", "gates", "G-PAPER-COVERAGE-FINAL"),
-    ("SEAL-TOTALS", "totals", "G-PAPER-COVERAGE-FINAL"),
+    ("SEAL-CLOSURE", "closure", "G-CLOSURE-DERIVED"),
 ]
-SEALS_IN_RUN = tuple(s for s, _p, g in SEALED_PATHS
-                     if g not in ("G-MUTANTS-ON-TARGET",
-                                  "G-PAPER-COVERAGE-FINAL"))
+# `gates` is not in the table above because it is not sealed once: it is
+# CHAINED, one rolling digest step per row at the moment that row's gate
+# passes, and the chain is checked at close.
+POST_COMPLETENESS_SEALS = ("SEAL-MUTANTS", "SEAL-CLOSURE")
+SEALS_IN_RUN = tuple(s for s, _p, _g in SEALED_PATHS
+                     if s not in POST_COMPLETENESS_SEALS)
+
+# the declared-unsealed manifest: published keys that are NOT digested at a
+# gate, each with the reason and the gate that binds it instead.
+UNSEALED_DECLARED = [
+    ("schema", "a constant of this file, fixed before the first gate; it "
+     "names the receipt's shape and is re-verified against its own "
+     "definition", "G-DECLARED-UNSEALED"),
+    ("paper", "the relative path of the object under test, fixed by the CLI "
+     "before the first gate and re-verified here against the path actually "
+     "read", "G-DECLARED-UNSEALED"),
+    ("gates", "not sealed once but CHAINED row by row: each ledger row "
+     "extends a rolling digest at the moment its gate passes, and the chain "
+     "is recomputed from the published rows at close", "G-SEAL-CLOSE"),
+    ("seals", "the manifest cannot digest itself; it is CONSTRUCTED at close "
+     "from the seal rows actually taken, never read from mutable state",
+     "G-SEAL-CLOSE"),
+    ("seals_unsealed", "this manifest, constructed at close from the "
+     "declaration above", "G-SEAL-CLOSE"),
+    ("transcript", "the transcript's own chain digest, constructed at close; "
+     "the transcript is chained line by line as it is written",
+     "G-TRANSCRIPT-BOUND"),
+]
+UNSEALED_KEYS = tuple(k for k, _r, _g in UNSEALED_DECLARED)
 
 
 class Seal:
-    """the gate-time seal (#119)."""
+    """the gate-time seal (#119), TOTALIZED (#148 addendum).
+
+    Three properties this repair adds.  (1) A DECLARED seal that was never
+    TAKEN counts as BROKEN, not as absent -- so a seal cannot be deleted
+    without trace.  (2) The completeness gate compares the manifest against
+    the DECLARATION, not against what happens to be in it.  (3) Closing
+    requires TOTALITY: every published receipt key is sealed or on the
+    declared-unsealed manifest."""
 
     def __init__(self):
         self.rows = []
@@ -380,8 +563,15 @@ class Seal:
                           "sha256_12": d})
         self.index[sid] = d
 
+    def drop(self, sid):
+        """used by MUT-SEAL-DROPPED only: delete a declared seal silently."""
+        self.rows = [r for r in self.rows if r["seal"] != sid]
+        self.index.pop(sid, None)
+
     def verify(self, obj, only=None):
         broken = []
+        if only is not None:
+            broken.extend(sid for sid in only if sid not in self.index)
         for row in self.rows:
             if only is not None and row["seal"] not in only:
                 continue
@@ -392,19 +582,49 @@ class Seal:
                 continue
             if now != row["sha256_12"]:
                 broken.append(row["seal"])
-        return broken
+        return sorted(set(broken))
 
-    def close(self, obj, payload):
+    def manifest(self):
+        return [dict(r) for r in self.rows]
+
+    def totality(self, obj):
+        """every published top-level key is sealed or declared unsealed."""
+        sealed = {r["path"].split("/")[0] for r in self.rows}
+        return sorted(set(obj) - sealed - set(UNSEALED_KEYS))
+
+    def close(self, obj, ledger):
+        """the seal's own closing gate, evaluated on the object about to be
+        serialized: every declared seal taken, every taken seal still
+        verifying, the ledger chain intact, and the receipt total."""
+        obj["seals"] = self.manifest()
+        obj["seals_unsealed"] = [{"key": k, "reason": r, "bound_by": g}
+                                 for k, r, g in UNSEALED_DECLARED]
+        untaken = [s for s, _p, _g in SEALED_PATHS if s not in self.index]
         broken = self.verify(obj)
-        if broken:
-            raise GateFail("G-ARTIFACT-INTEGRITY :: the payload was sealed "
-                           "over a broken seal :: %s" % broken)
+        stray = self.totality(obj)
+        chain_ok = (ledger is None
+                    or _chain_of_rows(obj["gates"]) == ledger.chain)
+        ok = not untaken and not broken and not stray and chain_ok
+        payload = json.dumps(obj, indent=1, sort_keys=True, default=str)
         self.payload = payload
         self.payload_sha = digest(payload)
+        return ok, {"declared": len(SEALED_PATHS), "taken": len(self.rows),
+                    "untaken": untaken or "none", "broken": broken or "none",
+                    "unsealed_declared": len(UNSEALED_DECLARED),
+                    "published_keys": len(obj),
+                    "unsealed_and_undeclared": stray or "none",
+                    "ledger_chain_intact": chain_ok}
 
     def close_transcript(self, text):
         self.transcript = text
         self.transcript_sha = digest(text)
+
+
+def _chain_of_rows(rows):
+    acc = "<ledger-genesis>"
+    for r in rows:
+        acc = _chain_step(acc, digest(r))
+    return acc
 
 
 def read_bytes(rel):
@@ -418,9 +638,18 @@ def read_text(path):
         return fh.read()
 
 
+MD_PREFIX = re.compile(r"(?m)^[ \t]*(?:[>\-*+#]+|\d+[.)])[ \t]*")
+
+
 def norm(s):
-    """#125: whitespace-normalise both sides of every text match."""
-    return re.sub(r"\s+", " ", s).strip()
+    """#125, as clarified by this unit's adjudication: strip LEADING MARKDOWN
+    LINE-DECORATIONS -- blockquote markers, list bullets, heading hashes and
+    ordered-list numbers -- and only then whitespace-normalise.  Both sides of
+    every text match go through this.  The bare whitespace fold is not enough:
+    the corpus's own house style for quoting a prior unit is the blockquote,
+    so a prohibited sentence re-wrapped as `> ...` or `- ...` would otherwise
+    walk straight through a prohibition gate."""
+    return re.sub(r"\s+", " ", MD_PREFIX.sub(" ", s)).strip()
 
 
 # ===========================================================================
@@ -579,22 +808,36 @@ ACTORS = tuple(actor(s) for s in SITES)
 ACTOR_SITE = {actor(s): s for s in SITES}
 
 
-def drive(G, schedule, supply=True, underspecified=False, drop_supply=None):
+ORDER_PERMS = tuple(permutations(range(3)))
+DRIVEN_RECORDS = []
+
+
+def drive(G, schedule, supply=True, underspecified=False, drop_supply=None,
+          order=None):
     """THE GENERALIZED SCHEDULE DRIVER.  Exactly d66's CONFLICT-GRID(g, R)
     cycle -- conflict-supply deliveries from the group's seed, g proposals
     (0 for the seed, 1 for the rest), one g-proposer arbitration won by the
     seed -- with the GROUPING AND THE SEED taken from the schedule instead of
     being hard-wired to rows/columns and the diagonal.  Groups are processed in
     ascending order of their seed's site index and members in ascending site
-    index, which is d66's own order at the committed schedule.  Every event is
-    specified by its FULL TUPLE and taken from the layer's own menu."""
+    index, which is d66's own order at the committed schedule; `order` selects
+    one of the 6 x 6 alternative processing conventions per round, and is used
+    only by the declared invariance probe.  Every event is specified by its
+    FULL TUPLE and taken from the layer's own menu."""
     b = G.B(ACTORS)
+    DRIVEN_RECORDS.append((schedule, supply, underspecified, drop_supply,
+                           order))
     cur = {a: G.V0 for a in ACTORS}
     dropped = 0
     for rnd, (groups, seeds) in enumerate(schedule):
-        order = sorted(range(len(groups)), key=lambda gi: SITE_INDEX[seeds[gi]])
-        for gi in order:
-            grp = [actor(s) for s in sorted(groups[gi])]
+        seq = sorted(range(len(groups)), key=lambda gi: SITE_INDEX[seeds[gi]])
+        if order is not None:
+            seq = [seq[i] for i in ORDER_PERMS[order[0]]]
+        for gi in seq:
+            mem = sorted(groups[gi])
+            if order is not None:
+                mem = [mem[i] for i in ORDER_PERMS[order[1]]]
+            grp = [actor(s) for s in mem]
             sd = actor(seeds[gi])
             base = cur[sd]
             for a in grp:
@@ -669,6 +912,68 @@ def branching_control(G):
     b.pick((seed,), lambda z, s=seed: z[0] == "r" and z[1] == s,
            "arbitrate* %s" % seed)
     return b.maxhits, first, seed
+
+
+def fields_of(G, divisions):
+    """the two site readings, read off a DRIVEN record: initiators from each
+    arbitration's `op[1]`, footprints from its `regs_of` footprint intersected
+    with the actor set."""
+    init, foot = Counter(), Counter()
+    for e in divisions:
+        init[ACTOR_SITE[e[1]]] += 1
+        for r in G.regs_of(e):
+            if r in ACTOR_SITE:
+                foot[ACTOR_SITE[r]] += 1
+    return (tuple(init[x] for x in SITES), tuple(foot[x] for x in SITES))
+
+
+def order_probe(G, schedules):
+    """THE PROCESSING-ORDER FIBER, MEASURED.  d66's order pins the committed
+    POINT; extending it to the family -- ascending seed-site index, ascending
+    member index -- is a declared convention with a fiber of 6 x 6 per round.
+    Every one of the 36 conventions is driven at each declared schedule and
+    the record's fate and both site fields are compared against the committed
+    convention's."""
+    rows = []
+    for sched in schedules:
+        ref = driven(G, sched)
+        ref_fields = fields_of(G, ref["divisions"])
+        for gp in range(len(ORDER_PERMS)):
+            for mp in range(len(ORDER_PERMS)):
+                b = drive(G, sched, order=(gp, mp))
+                div = [e for e in b.H if e[0] == "r"]
+                rows.append({
+                    "order": "g%d/m%d" % (gp, mp),
+                    "forced": b.refusal is None and b.maxhits == 1,
+                    "events": len(b.H), "divisions": len(div),
+                    "fields_match": fields_of(G, div) == ref_fields,
+                    "events_match": len(b.H) == ref["events"]})
+    return rows
+
+
+def r3_saturating():
+    """THE SUCCESSOR'S ENTRY DATUM, computed here and read no further.  The
+    weld route needs a budget depositing at least 27 link-incidences on I7's
+    link set; the minimal saturating arrangement is R = 3 with the three
+    rounds grouped on the three link-direction parallel classes.  This is a
+    probe OUTSIDE this unit's declared family (which is R = 2), reported as
+    the successor's demand and used in no measurement above."""
+    three = [CLASSES["ROW"], CLASSES["COL"], CLASSES["DIA"]]
+    n = {}
+    for l in I7_LINKS:
+        for x in SITES:
+            n[(l, x)] = sum(1 for P in three for g in P
+                            if x in g and zadd(x, l) in g)
+    forms = [i7_form(n, x) for x in SITES]
+    q = forms[0]
+    return {"rounds": len(three),
+            "cells": len(n),
+            "distinct_counts": sorted({v for v in n.values()}),
+            "q11": str(q[0]), "q22": str(q[1]), "q12": str(q[2]),
+            "det": str(q[3]),
+            "homogeneous": len(set(forms)) == 1,
+            "posdef_sites": sum(1 for f in forms if f[3] > 0 and f[0] > 0),
+            "strictly_positive_cells": sum(1 for v in n.values() if v > 0)}
 
 
 def committed_grid(G, R_):
@@ -837,11 +1142,14 @@ def raw_census(G):
                     for l in I7_LINKS for x in SITES) for P in parts]
     det_class, det9, posdef_max, strict_pos = {}, [], 0, 0
     detvals = Counter()
+    pd_hist = Counter()
+    posdef_cells = det_all_positive = posdef_under_three = 0
+    min_inc_at_posdef = 27
     for i0 in range(len(parts)):
         f0 = fields[i0]
         for i1 in range(len(parts)):
             f1 = fields[i1]
-            nz = pd = 0
+            nz = pd = allpos = 0
             rows = []
             for k, x in enumerate(SITES):
                 a = f0[k] + f1[k]
@@ -852,17 +1160,95 @@ def raw_census(G):
                 rows.append((a, b, c, q12, d))
                 if d != 0:
                     nz += 1
+                if d > 0:
+                    allpos += 1
                 if d > 0 and a > 0:
                     pd += 1
+                    if a + b + c < min_inc_at_posdef:
+                        min_inc_at_posdef = a + b + c
+                    if a + b + c < 3:
+                        posdef_under_three += 1
             hom = len(set(rows)) == 1
             det_class[(i0, i1)] = (nz, pd, hom)
             posdef_max = max(posdef_max, pd)
+            pd_hist[pd] += 1
+            posdef_cells += pd
+            if allpos == 9:
+                det_all_positive += 1
             if all(f0[k] + f1[k] > 0 for k in range(27)):
                 strict_pos += 1
             if nz == 9:
                 det9.append((i0, i1, hom, tuple(r[4] for r in rows)))
                 for r in rows:
                     detvals[str(r[4])] += 1
+
+    # -- THE CARRIER OF THE PERIOD (the adjudication's re-seating of the null)
+    # For every crystalline seed pair: is the support of the division field a
+    # UNION OF COSETS of the field's own period subgroup?  If it is, the pair
+    # obeys the affine law n = c + m*1_S on that union, and the null was
+    # stated on the wrong variable rather than defeated.
+    carrier_rows, carrier_bad, line_seed, shape = [], [], [], Counter()
+    for key in sorted(stabpair):
+        if stabpair[key] == "1":
+            continue
+        T0, T1 = subsets[key[0]], subsets[key[1]]
+        n = initiator_field(T0, T1)
+        H = SUBGROUPS[stabpair[key]]
+        supp = {x for x in SITES if n[x] > 0}
+        cosets = {frozenset(zadd(x, h) for h in H) for x in SITES}
+        is_union = all(c <= supp or not (c & supp) for c in cosets)
+        vals = tuple(sorted(Counter(n[x] for x in SITES).items()))
+        shape[str(vals)] += 1
+        if not is_union:
+            carrier_bad.append(key)
+        if affpair[key] == "BEYOND-COSET" and (T0 in AG_LINES
+                                               or T1 in AG_LINES):
+            line_seed.append(key)
+        carrier_rows.append((key, stabpair[key], affpair[key], is_union,
+                             T0 == T1))
+    same_seed = sum(1 for r in carrier_rows if r[4])
+
+    # -- FRAGILITY AT FAMILY SCOPE: every single-point re-seating of either
+    # -- seed of every crystalline pair, a strict superset of the admissible
+    # -- window edits.  Measured: does ANY nontrivial period survive?
+    frag_cases = frag_kept = frag_nontrivial = 0
+    for key, sname, _a, _u, _s in carrier_rows:
+        H = SUBGROUPS[sname]
+        base = [set(subsets[key[0]]), set(subsets[key[1]])]
+        for which in (0, 1):
+            for old in sorted(base[which]):
+                for new in SITES:
+                    if new in base[which]:
+                        continue
+                    edited = list(base)
+                    edited[which] = (base[which] - {old}) | {new}
+                    st = stab_direct(initiator_field(edited[0], edited[1]))
+                    frag_cases += 1
+                    if st >= H:
+                        frag_kept += 1
+                    if len(st) > 1:
+                        frag_nontrivial += 1
+
+    # -- THE PERIOD AND THE DIAGONAL LINK COUNT, JOINTLY.  The marginal is
+    # -- uniform; the joint is not, and the departure is exactly at the
+    # -- diagonal.  A partition deposits diagonal incidences iff its groups
+    # -- contain a <(1,1)>-difference pair, so a pair of partitions leaves the
+    # -- diagonal link EMPTY iff both do.
+    zero_diag = [sum(f[18:27]) == 0 for f in fields]
+    zcount = Counter()
+    for k in range(len(parts)):
+        if zero_diag[k]:
+            for t in tr_index[k]:
+                zcount[t] += 1
+    per_period, per_populated = Counter(), Counter()
+    for key, sname, _a, _u, _s in carrier_rows:
+        per_period[sname] += 90 * 90
+        per_populated[sname] += 90 * 90 - zcount[key[0]] * zcount[key[1]]
+
+    # -- THE POSITIVE-DEFINITE CEILING AND THE INCIDENCE WALL ---------------
+    per_partition_incidence = [sum(f) for f in fields]
+    max_part_inc = max(per_partition_incidence)
+    parts_at_max = sum(1 for v in per_partition_incidence if v == max_part_inc)
 
     # -- the joint stratum, and one DRIVEN witness per nonempty stratum -----
     joint = Counter((affpair[k], stabpair[k]) for k in affpair)
@@ -911,6 +1297,16 @@ def raw_census(G):
         "det_class": det_class, "det9": det9, "posdef_max": posdef_max,
         "strict_pos": strict_pos, "detvals": detvals, "joint": joint,
         "joint_det": joint_det, "want": want, "witness": witness,
+        "carrier_rows": carrier_rows, "carrier_bad": carrier_bad,
+        "line_seed": line_seed, "shape": shape, "same_seed": same_seed,
+        "frag_cases": frag_cases, "frag_kept": frag_kept,
+        "frag_nontrivial": frag_nontrivial,
+        "per_period": per_period, "per_populated": per_populated,
+        "pd_hist": pd_hist, "posdef_cells": posdef_cells,
+        "det_all_positive": det_all_positive,
+        "min_inc_at_posdef": min_inc_at_posdef,
+        "posdef_under_three": posdef_under_three,
+        "max_part_inc": max_part_inc, "parts_at_max": parts_at_max,
     })
     return RAW
 
@@ -926,19 +1322,12 @@ def window_drive(G):
     for (a, s0, b, s1) in window_schedules():
         sched = schedule_of(CLASSES[a], s0, CLASSES[b], s1)
         rec = driven(G, sched)
-        init = Counter()
-        foot = Counter()
-        for e in rec["divisions"]:
-            init[ACTOR_SITE[e[1]]] += 1
-            for r in G.regs_of(e):
-                if r in ACTOR_SITE:
-                    foot[ACTOR_SITE[r]] += 1
+        init, foot = fields_of(G, rec["divisions"])
         WINDOW_DRIVE[(a, s0, b, s1)] = {
             "events": rec["events"], "maxhits": rec["maxhits"],
             "refusal": rec["refusal"],
             "divisions": len(rec["divisions"]),
-            "init": tuple(init[x] for x in SITES),
-            "foot": tuple(foot[x] for x in SITES),
+            "init": init, "foot": foot,
         }
     return WINDOW_DRIVE
 
@@ -1057,6 +1446,26 @@ def full_run(break_anchor, paper_text, paper_rel):
                 "(measured %s) -- %s" % (rel, want_eff, got, what),
                 ok, {"path": rel, "want": want_eff, "got": got})
     R["provenance"] = prov
+    if mut("MUT-SCHEMA-FORGED"):
+        # INJ02's move on the two rows a seal cannot cover, object-level
+        R["schema"] = "INJECTED-SCHEMA"
+        R["paper"] = "v14/NOT-THE-PAPER.md"
+    schema_ok = R["schema"] == SCHEMA
+    paper_ok = R["paper"] == paper_rel
+    LD.gate("G-DECLARED-UNSEALED",
+            "THE TWO DECLARED-UNSEALED RECEIPT KEYS ARE BOUND.  A published "
+            "row that is not digested at a gate must say so and must be "
+            "bound some other way: `schema` is a constant of this file, "
+            "re-verified here against its own definition, and `paper` is the "
+            "relative path of the object under test, re-verified here against "
+            "the path this run actually read.  Both are fixed before the "
+            "first gate; the declared-unsealed manifest carries both, with "
+            "their reasons, into the receipt",
+            schema_ok and paper_ok,
+            {"schema": R["schema"], "paper": R["paper"],
+             "schema_matches_declaration": schema_ok,
+             "paper_matches_object_under_test": paper_ok,
+             "declared_unsealed": len(UNSEALED_DECLARED)})
     LD.gate("G-PROV-ALL",
             "ALL %d declared sources resolve under the repository root "
             "derived from this file's own location, every one reproduces its "
@@ -1067,10 +1476,17 @@ def full_run(break_anchor, paper_text, paper_rel):
             "the object being verified).  No `git` subprocess is invoked "
             "anywhere in this program, so the run is correct off-tree and in "
             "a directory with no version control (#91)" % len(SOURCES),
-            all(p["ok"] for p in prov)
+            all(p["ok"] for p in R["provenance"])
             and set(READS) == {s[1] for s in SOURCES},
             {"sources": len(SOURCES), "reads": sorted(set(READS)),
              "unpinned_reads": ["<self>", paper_rel], "subprocesses": 0})
+    SEAL.take("SEAL-PROVENANCE", R)
+    if mut("MUT-VOUCH-FORGED"):
+        # INJ02, as the instrument review ran it: the four VOUCHING rows
+        # forged after their gates.  Before this repair they were sealed
+        # nowhere and the receipt published the forgery at exit 0.
+        R["provenance"] = [dict(p, ok=False, got="deadbeefcafe")
+                           for p in R["provenance"]]
 
     # -- SEC 2  THE GRAMMAR --------------------------------------------------
     say("")
@@ -1153,11 +1569,23 @@ def full_run(break_anchor, paper_text, paper_rel):
     eff_row = tuple(int(m.group(k)) for k in range(1, 8))
     nn = link_counts(CLASSES["ROW"], CLASSES["COL"])
     q11, q22, q12, det = i7_form(nn, (0, 0))
-    got_row = (nn[((1, 0), (0, 0))], nn[((0, 1), (0, 0))],
-               nn[((1, 1), (0, 0))], int(q11), int(q22), abs(int(q12)),
-               int(det))
+
+    def i7_row(x):
+        a11, a22, a12, dd = i7_form(nn, x)
+        return (nn[((1, 0), x)], nn[((0, 1), x)], nn[((1, 1), x)],
+                int(a11), int(a22), abs(int(a12)), int(dd))
+    site_rows = [i7_row(x) for x in SITES]
+    if mut("MUT-I7-READOUT"):
+        # the corruption sits at ONE site away from the read anchor's own,
+        # which is exactly what the single-row anchor cannot see
+        site_rows = list(site_rows)
+        site_rows[4] = tuple(v + 1 for v in site_rows[4])
+    got_row = site_rows[0]
     anchors.append({"id": "A-EFF-I7", "read": list(eff_row),
                     "recomputed": list(got_row), "ok": got_row == eff_row,
+                    "schema": "(n_(1,0), n_(0,1), n_(1,1), q_11, q_22, "
+                              "|q_12|, det) -- the sixth entry is the "
+                              "ABSOLUTE VALUE; the source row prints -1",
                     "source": "v14/review-u4-effectus.md"})
     if mut("MUT-ANCHOR-DRIFT"):
         anchors[0] = dict(anchors[0])
@@ -1209,16 +1637,25 @@ def full_run(break_anchor, paper_text, paper_rel):
     SEAL.take("SEAL-VERBATIM", R)
 
     LD.gate("G-I7-READOUT",
-            "the determinant column is computed through HA 3.2's DECLARED "
-            "readout in the U4 effectus review's own I7 coordinates -- "
-            "q_11 = n_(1,0), q_22 = n_(0,1), q_12 = (n_(1,1) - n_(1,0) - "
-            "n_(0,1))/2 -- applied to the co-division adjacency (the number "
-            "of division events whose footprint contains both x and x + l); "
-            "both source statements are verbatim anchors V04 and V05, and the "
-            "route is validated by reproducing the effectus's committed "
-            "CONFLICT-GRID(3,2) row exactly",
-            [a["ok"] for a in anchors if a["id"] == "A-EFF-I7"][0],
-            {"committed_row": list(eff_row), "recomputed": list(got_row)})
+            "THE READOUT REPRODUCES THE COMMITTED ROW AT ALL NINE SITES, not "
+            "at the one the anchor prints.  The determinant column is "
+            "computed through HA 3.2's DECLARED readout in the U4 effectus "
+            "review's own I7 coordinates -- q_11 = n_(1,0), q_22 = n_(0,1), "
+            "q_12 = (n_(1,1) - n_(1,0) - n_(0,1))/2 -- applied to THE "
+            "CO-DIVISION ADJACENCY: for a link l and a site x, the number of "
+            "division events whose footprint contains both x and x + l, on "
+            "the link set {(1,0), (0,1), (1,1)}.  Both source statements are "
+            "verbatim anchors V04 and V05.  The committed schedule's induced "
+            "form is the same at every one of the nine sites and equals the "
+            "row the effectus review published, whose sixth entry is |q_12| "
+            "and not q_12 -- the ASCII fold the read anchor applies does not "
+            "carry the sign, so the anchor validates the route up to that "
+            "sign and this gate says so",
+            all(r == eff_row for r in site_rows),
+            {"committed_row": list(eff_row), "sites": len(site_rows),
+             "distinct_rows": len({r for r in site_rows}),
+             "recomputed": [list(r) for r in site_rows[:1]],
+             "links": [list(l) for l in I7_LINKS]})
 
     # -- SEC 3  THE FAMILY ---------------------------------------------------
     say("")
@@ -1323,23 +1760,42 @@ def full_run(break_anchor, paper_text, paper_rel):
          and WD[k]["divisions"] == 6 and 24 <= WD[k]["events"] <= 30)
         for k in WD)
     refused_here = [k for k in WD if WD[k]["refusal"] is not None]
+    # THE PUBLISHED ROW IS BUILT FIRST AND THE GATE READS IT (#87 at
+    # emission): a row assembled after its gate is a row no gate ever saw.
+    R["constructibility"] = {
+        "window": len(WD), "fates": dict(sorted(census.items())),
+        "events": {str(k): v for k, v in sorted(ev.items())},
+    }
     LD.gate("G-CONSTRUCTIBILITY",
             "EVERY schedule of the declared window is evaluated against its "
             "OWN driven record (#87), not against an aggregate: for each of "
             "the %d schedules the layer's menu offered every specified full "
             "event tuple exactly once (maxhits = 1), no step was refused, the "
             "record carries exactly 6 division events and between 24 and 30 "
-            "events in total.  Measured fates: %s.  The instrument's ability "
-            "to return the other two fates is demonstrated by the two "
-            "declared controls below"
+            "events in total.  Measured fates: %s -- and the published row is "
+            "built before this gate, which reads it.  What the FORCED count "
+            "is a measurement OF is exact: REFUSED is genuinely at risk, and "
+            "the no-supply control below reaches it; BRANCHING is a "
+            "STRUCTURAL ZERO for any schedule of this family, because every "
+            "event is specified by its full tuple and at most one menu "
+            "candidate can ever match, so the second control establishes "
+            "instrument sensitivity rather than family-level reachability"
             % (len(WD), dict(sorted(census.items()))),
-            per_object_ok and not refused_here,
+            per_object_ok and not refused_here
+            and R["constructibility"]["fates"].get("FORCED") == len(WD),
             {"schedules": len(WD), "fates": dict(sorted(census.items())),
              "events": dict(sorted(ev.items())),
+             "branching_is_structural": True,
              "refused": [str(k) for k in refused_here[:3]]})
+    SEAL.take("SEAL-CONSTR-FATES", R)
 
     ctrl_ns = drive(G, COMMITTED, supply=False)
-    ns_ok = pick("MUT-REFUSAL-BLIND", ctrl_ns.refusal is not None, False)
+    R["constructibility"]["control_nosupply"] = {
+        "refusal": list(ctrl_ns.refusal) if ctrl_ns.refusal else None,
+        "events": len(ctrl_ns.H)}
+    ns_ok = pick("MUT-REFUSAL-BLIND",
+                 R["constructibility"]["control_nosupply"]["refusal"]
+                 is not None, False)
     say("  CONTROL 1 (no-supply)   : refusal %s after %d events"
         % (ctrl_ns.refusal, len(ctrl_ns.H)))
     LD.gate("G-CTRL-REFUSED",
@@ -1347,11 +1803,19 @@ def full_run(break_anchor, paper_text, paper_rel):
             "declared no-supply control runs the committed schedule with the "
             "conflict-supply deliveries suppressed; the layer then refuses the "
             "first round-1 proposal by an actor that does not hold the base, "
-            "at the located prefix %s.  A refusal is recorded, never patched"
+            "at the located prefix %s.  A refusal is recorded, never patched.  "
+            "This gate reads the published control row, which is sealed here "
+            "at its own gate rather than folded into a composite"
             % (ctrl_ns.refusal,),
-            ns_ok, {"refusal": ctrl_ns.refusal, "events": len(ctrl_ns.H)})
+            ns_ok, {"row": R["constructibility"]["control_nosupply"]})
+    SEAL.take("SEAL-CTRL-REFUSED", R)
+
     us_hits, us_prefix, us_seed = branching_control(G)
-    us_ok = pick("MUT-BRANCHING-BLIND", us_hits > 1, False)
+    if mut("MUT-BRANCHING-BLIND"):
+        us_hits = 1            # the MEASURED count, not the gate's verdict
+    R["constructibility"]["control_underspecified"] = {
+        "candidates": us_hits, "prefix": us_prefix, "initiator": us_seed}
+    us_ok = R["constructibility"]["control_underspecified"]["candidates"] > 1
     say("  CONTROL 2 (under-spec)  : %d menu candidates match at prefix %d, "
         "so maxhits = %d" % (us_hits, us_prefix, us_hits))
     LD.gate("G-CTRL-BRANCHING",
@@ -1360,29 +1824,25 @@ def full_run(break_anchor, paper_text, paper_rel):
             "control asks d60's `pick` for an arbitration by %s WITHOUT "
             "naming its conflict key and winner key; %d menu candidates "
             "match, so the builder's own `maxhits` reads %d > 1 and the fate "
-            "is BRANCHING.  This is what makes the FORCED reading above a "
-            "measurement rather than a structural tautology.  ONLY THE COUNT "
-            "IS REPORTED, and that is deliberate: d60's `pick` breaks ties "
-            "with `sorted(key=repr)`, whose value on a frozenset depends on "
-            "the interpreter's per-process string hashing, so WHICH "
-            "candidate an under-specified pick selects is not reproducible.  "
-            "Every event of every schedule in this census is specified by "
-            "its FULL TUPLE, where at most one candidate can match and the "
-            "tie-break is never consulted; the control stops at the first "
-            "under-specified pick and never continues a record past it"
+            "is BRANCHING.  THIS GATE READS THE PUBLISHED ROW, and the row is "
+            "sealed here at its own gate: a control row moved under its label "
+            "after the fact is what this repair closes.  ONLY THE COUNT IS "
+            "REPORTED, and that is deliberate: d60's `pick` breaks ties with "
+            "`sorted(key=repr)`, whose value on a frozenset depends on the "
+            "interpreter's per-process string hashing, so WHICH candidate an "
+            "under-specified pick selects is not reproducible.  Every event "
+            "of every schedule in this census is specified by its FULL TUPLE, "
+            "where at most one candidate can match and the tie-break is never "
+            "consulted; the control stops at the first under-specified pick "
+            "and never continues a record past it"
             % (us_prefix, us_seed, us_hits, us_hits),
-            us_ok, {"candidates": us_hits, "prefix": us_prefix,
-                    "initiator": us_seed})
-    R["constructibility"] = {
-        "window": len(WD), "fates": dict(sorted(census.items())),
-        "events": {str(k): v for k, v in sorted(ev.items())},
-        "control_nosupply": {"refusal": list(ctrl_ns.refusal)
-                             if ctrl_ns.refusal else None,
-                             "events": len(ctrl_ns.H)},
-        "control_underspecified": {"candidates": us_hits,
-                                   "prefix": us_prefix,
-                                   "initiator": us_seed},
-    }
+            us_ok, {"row": R["constructibility"]["control_underspecified"]})
+    SEAL.take("SEAL-CTRL-BRANCHING", R)
+    if mut("MUT-CTRL-ROW"):
+        # INJ04, as the instrument review ran it: the control row replaced
+        # after its gate passed.  It is now sealed at that gate.
+        R["constructibility"]["control_underspecified"] = {
+            "candidates": 1, "prefix": 0, "initiator": "G22"}
     SEAL.take("SEAL-CONSTRUCTIBILITY", R)
     reg(len(WD), census["FORCED"], us_hits, us_prefix, len(ctrl_ns.H))
     reg(*[k for k in ev], *[v for v in ev.values()])
@@ -1393,9 +1853,12 @@ def full_run(break_anchor, paper_text, paper_rel):
     say("SEC 5   THE STABILIZER COLUMN (pin R2.2) -- both readings, 3 routes")
     say("=" * 78)
     route_rows = C["route_rows"]
-    disagree = [r for r in route_rows if not (r[2] == r[3] == r[4])]
     if mut("MUT-STAB-ROUTE"):
-        disagree = [route_rows[0]]
+        # object-level: corrupt the Fourier route's ANSWER on one field, on a
+        # copy, and let the agreement test find it
+        route_rows = [(r[0], r[1], r[2], "Z3^2", r[4]) if i == 0 else r
+                      for i, r in enumerate(route_rows)]
+    disagree = [r for r in route_rows if not (r[2] == r[3] == r[4])]
     LD.gate("G-STAB-ROUTES",
             "THE STABILIZER OF EVERY SEED-PAIR FIELD IS COMPUTED THREE TIMES "
             "BY ROUTES SHARING NO CODE AND NO TYPED CONSTANT, and the three "
@@ -1410,31 +1873,46 @@ def full_run(break_anchor, paper_text, paper_rel):
              "first": str(disagree[0]) if disagree else None})
 
     # driven records vs the combinatorial field, per window schedule
+    drv = dict(WD)
+    if mut("MUT-DRIVEN-FIELD"):
+        # object-level: detach ONE window record's own initiator field
+        drv[win[0]] = dict(drv[win[0]])
+        drv[win[0]]["init"] = tuple(v + 1 for v in drv[win[0]]["init"])
     bad = []
-    for (a, s0, b, s1), row in WD.items():
+    for (a, s0, b, s1), row in drv.items():
         n_init = initiator_field(frozenset(s0), frozenset(s1))
         n_foot = footprint_field(CLASSES[a], CLASSES[b])
         if (row["init"] != tuple(n_init[x] for x in SITES)
                 or row["foot"] != tuple(n_foot[x] for x in SITES)):
             bad.append((a, s0, b, s1))
-    if mut("MUT-DRIVEN-FIELD"):
-        bad = [win[0]]
     LD.gate("G-DRIVEN-EQUALS-COMBINATORIAL",
             "for EVERY one of the %d window schedules the division-event "
             "field read off the DRIVEN record -- the initiator field from "
             "each arbitration's `op[1]`, the footprint field from each "
             "arbitration's `regs_of` footprint intersected with the actor set "
             "-- equals the field the combinatorial census computes from the "
-            "schedule alone (#87, per object).  That equality is what lets "
-            "the stabilizer and determinant columns be exhaustive over the "
-            "whole family while the menus are driven on the window"
+            "schedule alone (#87, per object).  WHAT THIS EQUALITY IS, "
+            "EXACTLY: given a record the layer did not refuse it is a "
+            "THEOREM, not a measurement -- every event here is specified by "
+            "its full tuple, so an appended event IS the specified tuple and "
+            "the field is a function of the schedule.  The only way it can "
+            "fail is a refusal.  The licence for the exhaustive columns is "
+            "therefore CONSTRUCTIBILITY, which is the window-scoped thing, "
+            "and the exhaustive columns inherit the window's INDUCTION -- "
+            "measured on the window and on the out-of-window stratum "
+            "witnesses below -- rather than its measurement"
             % len(WD),
-            not bad, {"objects": len(WD), "mismatches": len(bad),
+            not bad, {"objects": len(drv), "mismatches": len(bad),
                       "first": str(bad[0]) if bad else None})
 
-    foot_bad = [k for k, row in WD.items() if set(row["foot"]) != {2}]
+    foot_src = drv
     if mut("MUT-FOOTPRINT"):
-        foot_bad = [win[0]]
+        # object-level, and injected AFTER the equality gate so this mutant
+        # reaches the gate it was declared to falsify
+        foot_src = dict(drv)
+        foot_src[win[1]] = dict(foot_src[win[1]])
+        foot_src[win[1]]["foot"] = (3,) + foot_src[win[1]]["foot"][1:]
+    foot_bad = [k for k, row in foot_src.items() if set(row["foot"]) != {2}]
     LD.gate("G-FOOTPRINT-CONSTANT",
             "AT THE FOOTPRINT READING THE DIVISION FIELD IS THE CONSTANT 2 AT "
             "EVERY SITE OF EVERY SCHEDULE, so its stabilizer is the whole "
@@ -1453,6 +1931,10 @@ def full_run(break_anchor, paper_text, paper_rel):
     sidx = C["sidx"]
     W = 90
     weights = set(C["weight"].values())
+    if mut("MUT-STAB-WEIGHT"):
+        # the licence for the exhaustive column is the UNIFORM transversal
+        # weight; corrupt it and the column loses its right to the family
+        weights = {W, W + 1}
     stab_counts = Counter(stabpair.values())
     fam_stab = {k: v * W * W for k, v in stab_counts.items()}
     crystalline = sum(v for k, v in fam_stab.items() if k != "1")
@@ -1465,6 +1947,16 @@ def full_run(break_anchor, paper_text, paper_rel):
                 % (k, stab_counts[k], fam_stab[k]))
     say("  CRYSTALLINE (initiator reading)   : %d of %d = %s"
         % (crystalline, family, Fraction(crystalline, family)))
+    R["stabilizer"] = {
+        "reading_initiator": {k: fam_stab.get(k, 0) for k in SUBGROUP_ORDER},
+        "reading_footprint": {"Z3^2": family},
+        "seed_pair_counts": dict(sorted(stab_counts.items())),
+        "uniform_weight": W,
+        "transversal_weights": sorted(weights),
+        "crystalline": crystalline,
+        "crystalline_fraction": str(Fraction(crystalline, family)),
+        "routes": 3, "route_objects": len(route_rows),
+    }
     LD.gate("G-STAB-FULL-FAMILY",
             "THE STABILIZER COLUMN IS EXHAUSTIVE OVER THE WHOLE FAMILY, not "
             "over a window.  The initiator field depends on the schedule only "
@@ -1477,21 +1969,13 @@ def full_run(break_anchor, paper_text, paper_rel):
             "cannot spread evenly over nine sites"
             % (W, n_parts, len(stabpair), W * W, crystalline, family,
                Fraction(crystalline, family)),
-            weights == {W} and len(stabpair) == 84 * 84
+            R["stabilizer"]["transversal_weights"] == [W]
+            and len(stabpair) == 84 * 84
             and sum(fam_stab.values()) == family
             and "Z3^2" not in stab_counts,
             {"weights": sorted(weights), "pairs": len(stabpair),
              "per_subgroup": dict(sorted(stab_counts.items())),
              "family_check": sum(fam_stab.values())})
-    R["stabilizer"] = {
-        "reading_initiator": {k: fam_stab.get(k, 0) for k in SUBGROUP_ORDER},
-        "reading_footprint": {"Z3^2": family},
-        "seed_pair_counts": dict(sorted(stab_counts.items())),
-        "uniform_weight": W,
-        "crystalline": crystalline,
-        "crystalline_fraction": str(Fraction(crystalline, family)),
-        "routes": 3, "route_objects": len(route_rows),
-    }
     SEAL.take("SEAL-STABILIZER", R)
     reg(crystalline, Fraction(crystalline, family), W, len(stabpair))
     for k in SUBGROUP_ORDER:
@@ -1536,6 +2020,42 @@ def full_run(break_anchor, paper_text, paper_rel):
     wq = wrows[0]
     say("  NAMED WITNESS %s : q_11=%s q_22=%s q_12=%s det=%s at 9 of 9 sites"
         % (wname, wq[0], wq[1], wq[2], wq[3]))
+    win_det9 = sum(1 for (a, s0, b, s1) in win
+                   if det_class[(pidx[CLASSES[a]], pidx[CLASSES[b]])][0] == 9)
+    pd_hist = Counter(C["pd_hist"])
+    if mut("MUT-POSDEF-CEILING"):
+        pd_hist[0] -= 1
+        pd_hist[4] += 1
+    pairs_with_posdef = n_pairs - pd_hist[0]
+    max_total_inc = 2 * C["max_part_inc"]
+    pairs_at_max_inc = C["parts_at_max"] ** 2
+    if mut("MUT-INCIDENCE-WALL"):
+        max_total_inc = 27
+    R["determinant"] = {
+        "partition_pairs": n_pairs, "nonzero_at_all_sites_pairs": n_det9,
+        "window_nonzero_at_all_sites": win_det9,
+        "nonzero_at_all_sites_schedules": det9_scheds,
+        "fraction_pairs": str(Fraction(n_det9, n_pairs)),
+        "homogeneous": hom9, "uniform_negative": uniform_sign,
+        "mixed_sign": mixed_sign,
+        "uniform_positive": C["det_all_positive"],
+        "max_posdef_sites": posdef_max, "strictly_positive_pairs": strict_pos,
+        "det_values": dict(sorted(C["detvals"].items())),
+        "posdef_site_histogram": {str(k): pd_hist[k]
+                                  for k in sorted(pd_hist)},
+        "pairs_with_a_posdef_site": pairs_with_posdef,
+        "schedules_with_a_posdef_site": pairs_with_posdef * 729,
+        "posdef_site_share": str(Fraction(pairs_with_posdef * 729, family)),
+        "posdef_cells": C["posdef_cells"],
+        "max_link_incidence_per_pair": max_total_inc,
+        "pairs_attaining_the_budget": pairs_at_max_inc,
+        "min_incidences_at_a_posdef_site": C["min_inc_at_posdef"],
+        "posdef_sites_below_three_incidences": C["posdef_under_three"],
+        "wall_permits_posdef_sites": max_total_inc // 3,
+        "witness": {"name": wname, "q11": str(wq[0]), "q22": str(wq[1]),
+                    "q12": str(wq[2]), "det": str(wq[3])},
+        "committed_schedule_det": str(det),
+    }
     LD.gate("G-DET-NONZERO-EXISTS",
             "DET-NONZERO-EXISTS, AND THE WITNESS IS NAMED.  The schedule "
             "%s -- the committed constructor with round 1's column class "
@@ -1550,9 +2070,12 @@ def full_run(break_anchor, paper_text, paper_rel):
                det9_scheds, family),
             w_ok and n_det9 > 0
             and fates[("ROW", DIAG_SEED, "ROW", DIAG_SEED)] == "FORCED",
-            {"witness": wname, "q11": str(wq[0]), "q22": str(wq[1]),
-             "q12": str(wq[2]), "det": str(wq[3]), "sites": 9,
-             "pairs": n_det9, "schedules": det9_scheds})
+            {"witness": wname, "row": R["determinant"]["witness"], "sites": 9,
+             "pairs": n_det9, "schedules": det9_scheds,
+             "e1_is_null": wq[0] == 0,
+             "record_length": WD[("ROW", DIAG_SEED, "ROW", DIAG_SEED)]
+             ["events"]})
+    SEAL.take("SEAL-DET-WITNESS", R)
     LD.gate("G-POSDEF-EMPTY",
             "NO SCHEDULE IN THE FAMILY CARRIES A POSITIVE-DEFINITE INDUCED "
             "FORM AT EVERY SITE.  Exhaustively over all %d partition pairs "
@@ -1563,11 +2086,14 @@ def full_run(break_anchor, paper_text, paper_rel):
             "two rounds deposit at most 18 link-incidences over the nine "
             "sites -- while positive definiteness at a site needs q_11, q_22 "
             "> 0 and 4 q_11 q_22 > (n_(1,1) - q_11 - q_22)^2, hence at least "
-            "3 incidences there, hence at least 27 in all"
-            % (n_pairs, posdef_max),
+            "3 incidences there, hence at least 27 in all.  The quantifier is "
+            "AT EVERY SITE and it is load-bearing: positive-definite sites "
+            "themselves are common (%d of the %d pairs carry at least one), "
+            "and this gate says only that no pair carries nine"
+            % (n_pairs, posdef_max, pairs_with_posdef, n_pairs),
             posdef_max < 9,
             {"pairs": n_pairs, "max_posdef_sites": posdef_max, "budget": 18,
-             "needed": 27})
+             "needed": 27, "pairs_with_at_least_one": pairs_with_posdef})
     LD.gate("G-I7-STRICT-EMPTY",
             "I7's OWN ADMISSIBILITY CRITERION IS EMPTY ON THIS FAMILY: not "
             "one of the %d partition pairs makes all 27 link counts strictly "
@@ -1578,27 +2104,86 @@ def full_run(break_anchor, paper_text, paper_rel):
             % n_pairs,
             strict_pos == 0, {"pairs": n_pairs, "strictly_positive": strict_pos,
                               "budget": 18, "needed": 27})
-    win_det9 = sum(1 for (a, s0, b, s1) in win
-                   if det_class[(pidx[CLASSES[a]], pidx[CLASSES[b]])][0] == 9)
+    LD.gate("G-POSDEF-CEILING",
+            "THE MEASURED CEILING IS FINER THAN THE WALL, AND THAT GAP IS A "
+            "MEASUREMENT AND NOT A THEOREM.  The same %d-incidence budget "
+            "that forbids nine positive-definite sites permits as many as "
+            "%d; the exhaustive census over all %d partition pairs attains "
+            "%d, at %d pairs.  The full histogram of positive-definite sites "
+            "per pair is %s, so %d pairs -- %d of the %d schedules, %s of the "
+            "family -- carry at least one positive-definite site, over %d "
+            "(pair, site) cells in all.  The third sign case is empty too: "
+            "%d pairs have det > 0 at every one of the nine sites.  Anyone "
+            "reading NEVER RIEMANNIAN as fully explained by the counting wall "
+            "is reading past this gap, which is registered as an open"
+            % (max_total_inc, R["determinant"]["wall_permits_posdef_sites"],
+               n_pairs, posdef_max, pd_hist[posdef_max],
+               R["determinant"]["posdef_site_histogram"], pairs_with_posdef,
+               pairs_with_posdef * 729, family,
+               R["determinant"]["posdef_site_share"], C["posdef_cells"],
+               C["det_all_positive"]),
+            sum(pd_hist.values()) == n_pairs
+            and max(pd_hist) == posdef_max
+            and posdef_max < R["determinant"]["wall_permits_posdef_sites"]
+            and C["det_all_positive"] == 0,
+            {"histogram": R["determinant"]["posdef_site_histogram"],
+             "attained": posdef_max,
+             "permitted_by_the_wall":
+                 R["determinant"]["wall_permits_posdef_sites"],
+             "uniform_positive_pairs": C["det_all_positive"]})
+    SEAL.take("SEAL-DET-CEILING", R)
+    LD.gate("G-INCIDENCE-WALL",
+            "THE COUNTING WALL, WITH BOTH ITS PREMISES MEASURED AND ITS "
+            "OMITTED STEP WRITTEN DOWN.  (i) Each round's partition into "
+            "three triples has exactly nine within-group pairs, and a "
+            "within-group pair contributes at most one link-incidence because "
+            "I7's link set {(1,0), (0,1), (1,1)} holds exactly one "
+            "representative of each of three of the four direction classes "
+            "and nothing in the fourth: measured, the maximum total "
+            "link-incidence over all %d partition pairs is exactly %d, "
+            "ATTAINED at %d pairs, so the bound is tight and not merely an "
+            "estimate.  (ii) Positive definiteness at a site needs q_11 > 0, "
+            "q_22 > 0 -- that is n_(1,0) >= 1 and n_(0,1) >= 1 -- AND "
+            "n_(1,1) >= 1, the step the delivered proof omitted: if "
+            "n_(1,1) = 0 then q_12 = -(q_11 + q_22)/2 and "
+            "det = -(q_11 - q_22)^2/4 <= 0, so the site is not positive "
+            "definite.  Hence at least three incidences at a positive-definite "
+            "site: measured, the minimum over every positive-definite cell in "
+            "the census is exactly %d and %d such cells hold fewer.  (iii) "
+            "Nine positive-definite sites would need at least 27 > %d.  The "
+            "same count gives I7-STRICT-EMPTY directly: 27 strictly positive "
+            "counts need 27 incidences"
+            % (n_pairs, max_total_inc, pairs_at_max_inc,
+               C["min_inc_at_posdef"], C["posdef_under_three"],
+               max_total_inc),
+            max_total_inc == 18 and pairs_at_max_inc > 0
+            and C["min_inc_at_posdef"] == 3
+            and C["posdef_under_three"] == 0 and max_total_inc < 27,
+            {"budget": max_total_inc, "tight_at_pairs": pairs_at_max_inc,
+             "min_incidences_at_a_posdef_site": C["min_inc_at_posdef"],
+             "posdef_sites_below_three": C["posdef_under_three"],
+             "needed_for_nine": 27})
     say("  of the %d window schedules, %d carry det != 0 at all nine sites"
         % (n_win, win_det9))
-    R["determinant"] = {
-        "partition_pairs": n_pairs, "nonzero_at_all_sites_pairs": n_det9,
-        "window_nonzero_at_all_sites": win_det9,
-        "nonzero_at_all_sites_schedules": det9_scheds,
-        "fraction_pairs": str(Fraction(n_det9, n_pairs)),
-        "homogeneous": hom9, "uniform_negative": uniform_sign,
-        "mixed_sign": mixed_sign,
-        "max_posdef_sites": posdef_max, "strictly_positive_pairs": strict_pos,
-        "det_values": dict(sorted(C["detvals"].items())),
-        "witness": {"name": wname, "q11": str(wq[0]), "q22": str(wq[1]),
-                    "q12": str(wq[2]), "det": str(wq[3])},
-        "committed_schedule_det": str(det),
-    }
+    say("  positive-definite sites per pair      : %s"
+        % R["determinant"]["posdef_site_histogram"])
+    say("  pairs with >= 1 positive-definite site: %d (%d schedules, %s)"
+        % (pairs_with_posdef, pairs_with_posdef * 729,
+           R["determinant"]["posdef_site_share"]))
+    say("  link-incidence budget, measured       : %d, attained at %d pairs; "
+        "a positive-definite site holds >= %d"
+        % (max_total_inc, pairs_at_max_inc, C["min_inc_at_posdef"]))
     SEAL.take("SEAL-DETERMINANT", R)
     reg(n_pairs, n_det9, det9_scheds, hom9, uniform_sign, mixed_sign,
         posdef_max, strict_pos, wq[0], wq[1], wq[2], wq[3],
         Fraction(n_det9, n_pairs), det, 18, 27)
+    reg(pairs_with_posdef, pairs_with_posdef * 729, C["posdef_cells"],
+        C["det_all_positive"], max_total_inc, pairs_at_max_inc,
+        C["min_inc_at_posdef"], C["posdef_under_three"],
+        R["determinant"]["wall_permits_posdef_sites"],
+        Fraction(pairs_with_posdef * 729, family))
+    for k, v in pd_hist.items():
+        reg(k, v)
     for k, v in C["detvals"].items():
         reg(Fraction(k), v)
     reg(win_det9)
@@ -1741,6 +2326,143 @@ def full_run(break_anchor, paper_text, paper_rel):
     reg(aff_counts["CU-JOINT"], aff_counts["CU-SPLIT"],
         aff_counts["BEYOND-COSET"], len(bc_pairs))
 
+    # -- THE CARRIER OF THE PERIOD ------------------------------------------
+    carrier_rows = C["carrier_rows"]
+    carrier_bad = list(C["carrier_bad"])
+    line_seed = list(C["line_seed"])
+    if mut("MUT-UNION-CARRIER"):
+        carrier_bad = [carrier_rows[0][0]]
+    if mut("MUT-LINE-SEED"):
+        line_seed = [carrier_rows[-1][0]]
+    n_cry_pairs = len(carrier_rows)
+    same_seed = C["same_seed"]
+    two_coset = n_cry_pairs - same_seed
+    closed_216 = len(DIRECTIONS) * 3 * 18
+    closed_36 = len(DIRECTIONS) * 3 * 2 + len(DIRECTIONS) * 3
+    bc_share = Fraction(strat["BEYOND-COSET"]["crystalline"], crystalline)
+    R["carrier"] = {
+        "crystalline_seed_pairs": n_cry_pairs,
+        "support_is_a_coset_union": n_cry_pairs - len(carrier_bad),
+        "value_shapes": {k: v for k, v in sorted(C["shape"].items())},
+        "same_seed_set_pairs": same_seed,
+        "two_coset_pairs": two_coset,
+        "beyond_coset_with_a_line_seed": len(line_seed),
+        "closed_form_beyond_coset": closed_216,
+        "closed_form_cu_joint": closed_36,
+        "closed_form_total": len(DIRECTIONS) * 63,
+        "beyond_coset_share_of_crystallinity": str(bc_share),
+    }
+    say("  crystalline seed pairs                : %d (%d = %d x 63)"
+        % (n_cry_pairs, len(DIRECTIONS) * 63, len(DIRECTIONS)))
+    say("  supp(n) a union of cosets of Stab(n)  : %d of %d"
+        % (n_cry_pairs - len(carrier_bad), n_cry_pairs))
+    say("  value shapes over the 9 sites         : %s"
+        % R["carrier"]["value_shapes"])
+    say("  beyond-coset share of ALL crystallinity : %s" % bc_share)
+    LD.gate("G-UNION-CARRIER",
+            "THE CARRIER OF THE PERIOD IS THE SUM, NOT EITHER SUMMAND -- AND "
+            "IT IS A COSET UNION AT EVERY CRYSTALLINE PAIR.  For each of the "
+            "%d crystalline seed pairs the support of the division field is "
+            "tested against the cosets of THAT FIELD'S OWN period subgroup: "
+            "%d of %d are exactly a union of them, in two shapes -- %d pairs "
+            "with the two seed sets EQUAL, so the field is 2 on one coset and "
+            "0 elsewhere, and %d pairs with the field 1 on two cosets and 0 "
+            "on the third.  So the affine law n = c + m*1_S is violated "
+            "NOWHERE in this census: it holds on the UNION of the two seed "
+            "sets.  What the census measures is that the inherited argument "
+            "was stated on the wrong variable -- the per-seed locus contains "
+            "one seventh of the crystallinity it was supposed to explain, and "
+            "the beyond-coset class carries the other %s -- not that a "
+            "mechanism outside the affine law exists on this arena.  The "
+            "mechanism is closed in closed form and needs no census: %d "
+            "subgroups x 3 choices of the empty coset x 18 ordered splits of "
+            "the remaining six sites that are not the two cosets themselves = "
+            "%d beyond-coset pairs, and %d coset-union pairs, %d in all"
+            % (n_cry_pairs, n_cry_pairs - len(carrier_bad), n_cry_pairs,
+               same_seed, two_coset, bc_share, len(DIRECTIONS), closed_216,
+               closed_36, len(DIRECTIONS) * 63),
+            not carrier_bad and len(bc_pairs) == closed_216
+            and aff_counts["CU-JOINT"] == closed_36
+            and n_cry_pairs == len(DIRECTIONS) * 63
+            and same_seed + two_coset == n_cry_pairs,
+            {"pairs": n_cry_pairs, "not_a_coset_union": len(carrier_bad),
+             "shapes": R["carrier"]["value_shapes"],
+             "closed_forms": [closed_216, closed_36, len(DIRECTIONS) * 63],
+             "beyond_coset_share": str(bc_share)})
+    SEAL.take("SEAL-CARRIER", R)
+    LD.gate("G-NO-LINE-SEED",
+            "AT EVERY BEYOND-COSET CRYSTALLINE PAIR, NEITHER SEED SET IS A "
+            "LINE AT ALL -- not merely 'not a coset of the period'.  All %d "
+            "are checked one by one against the 12 lines of AG(2,3): %d have "
+            "a line seed.  The reason is geometric and not statistical: a "
+            "coset of a DIFFERENT order-3 subgroup meets each coset of the "
+            "period exactly once, so it cannot sit inside the union of two of "
+            "them"
+            % (len(bc_pairs), len(line_seed)),
+            not line_seed,
+            {"beyond_coset_crystalline_pairs": len(bc_pairs),
+             "with_a_line_seed": len(line_seed),
+             "lines_of_AG23": len(AG_LINES)})
+    reg(n_cry_pairs, same_seed, two_coset, closed_216, closed_36,
+        len(DIRECTIONS) * 63, bc_share, len(AG_LINES), len(line_seed))
+    for k, v in C["shape"].items():
+        reg(v)
+
+    # -- THE PERIOD AND THE DIAGONAL LINK COUNT, JOINTLY --------------------
+    per_period = C["per_period"]
+    per_populated = dict(C["per_populated"])
+    if mut("MUT-JOINT-COUPLING"):
+        per_populated["<(1,1)>"] = per_populated["<(1,0)>"]
+    empty_total = sum(per_period[k] - per_populated[k] for k in per_period)
+    diag_empty = per_period["<(1,1)>"] - per_populated["<(1,1)>"]
+    cond = Fraction(diag_empty, empty_total) if empty_total else Fraction(0)
+    marginal = Fraction(1, len(DIRECTIONS))
+    R["period_vs_diagonal"] = {
+        "per_period_schedules": {k: per_period[k] for k in sorted(per_period)},
+        "diagonal_link_populated": {k: per_populated[k]
+                                    for k in sorted(per_populated)},
+        "populated_rate": {k: str(Fraction(per_populated[k], per_period[k]))
+                           for k in sorted(per_period)},
+        "marginal_uniform": len({per_period[k] for k in per_period}) == 1,
+        "crystalline_with_an_empty_diagonal": empty_total,
+        "of_those_period_is_the_diagonal": diag_empty,
+        "conditional": str(cond), "under_independence": str(marginal),
+    }
+    say("  period vs diagonal link, populated    : %s"
+        % R["period_vs_diagonal"]["populated_rate"])
+    say("  crystalline with an EMPTY diagonal    : %d, of which the period IS "
+        "the diagonal: %d = %s (against %s under independence)"
+        % (empty_total, diag_empty, cond, marginal))
+    LD.gate("G-PERIOD-DIAGONAL-JOINT",
+            "THE PERIOD AND THE DIAGONAL LINK COUNT ARE SEPARATELY CARRIED "
+            "AND NEITHER DETERMINES THE OTHER -- BUT THEY ARE NOT "
+            "INDEPENDENT, AND THE DEPARTURE IS EXACTLY AT THE DIAGONAL.  The "
+            "MARGINAL is exactly uniform: %s crystalline schedules in each of "
+            "the four period directions.  The JOINT is not: the diagonal link "
+            "count is populated at %s of crystalline schedules in each of the "
+            "three non-diagonal directions but at %s when the period IS the "
+            "diagonal.  Conditionally, among the %d crystalline schedules "
+            "whose diagonal link count is EMPTY, the period is the diagonal "
+            "at %d of them -- %s, against %s under independence.  The period "
+            "is a seed property and the diagonal link count a grouping "
+            "property; the residual coupling is the transversal constraint "
+            "between seed sets and groupings, and it is read as nothing else"
+            % (sorted({per_period[k] for k in per_period}),
+               R["period_vs_diagonal"]["populated_rate"]["<(1,0)>"],
+               R["period_vs_diagonal"]["populated_rate"]["<(1,1)>"],
+               empty_total, diag_empty, cond, marginal),
+            R["period_vs_diagonal"]["marginal_uniform"]
+            and per_populated["<(1,1)>"] < per_populated["<(1,0)>"]
+            and cond > marginal,
+            {"marginal_uniform": R["period_vs_diagonal"]["marginal_uniform"],
+             "rates": R["period_vs_diagonal"]["populated_rate"],
+             "conditional": str(cond), "independence": str(marginal)})
+    SEAL.take("SEAL-JOINT", R)
+    for k in per_period:
+        reg(per_period[k], per_populated[k],
+            Fraction(per_populated[k], per_period[k]))
+    reg(empty_total, diag_empty, cond, marginal)
+
     # -- the joint stratum: crystalline AND non-degenerate ------------------
     tr_index = C["tr_index"]
     joint_det = C["joint_det"]
@@ -1783,6 +2505,11 @@ def full_run(break_anchor, paper_text, paper_rel):
     say("  census strata (stab x affine x det9)  : %d, all witnessed by a "
         "menu-driven schedule outside as well as inside the window: %d"
         % (len(want), driven_wit))
+    strata["witnesses"] = wit_rows
+    strata["strata_count"] = len(want)
+    strata["witnesses_outside_the_window"] = sum(
+        1 for w in wit_rows if not w["in_window"])
+    R["strata"] = strata
     LD.gate("G-STRATA-WITNESSED",
             "EVERY NONEMPTY CENSUS STRATUM HAS A MENU-DRIVEN WITNESS.  The "
             "%d nonempty (stabilizer x affine-class x non-degeneracy) strata "
@@ -1793,15 +2520,17 @@ def full_run(break_anchor, paper_text, paper_rel):
             "division events).  So the grammar's verdict is not confined to "
             "the resolvable window: it has been taken at least once in every "
             "cell of the census" % (len(want), driven_wit),
-            not missing and all_forced and driven_wit == len(want),
+            not missing and all_forced
+            and len(R["strata"]["witnesses"]) == len(want),
             {"strata": len(want), "witnessed": driven_wit,
+             "published_witnesses": len(R["strata"]["witnesses"]),
+             "outside_the_window":
+                 R["strata"]["witnesses_outside_the_window"],
              "missing": [str(m) for m in missing],
              "all_forced": all_forced})
-    strata["witnesses"] = wit_rows
-    strata["strata_count"] = len(want)
-    R["strata"] = strata
     SEAL.take("SEAL-STRATA", R)
-    reg(cry_det, cry_det_bc, len(want), driven_wit)
+    reg(cry_det, cry_det_bc, len(want), driven_wit,
+        R["strata"]["witnesses_outside_the_window"])
 
     # -- SEC 8  FRAGILITY ----------------------------------------------------
     say("")
@@ -1860,12 +2589,130 @@ def full_run(break_anchor, paper_text, paper_rel):
             {"crystalline_window": n_cryst_win,
              "census": {str(k): v for k, v in sorted(frag_rows.items())},
              "exceptions": len(frag_bad)})
+
+    frag_kept = pick("MUT-FRAG-FAMILY", C["frag_kept"], 1)
+    frag_nontrivial = pick("MUT-FRAG-FAMILY", C["frag_nontrivial"], 1)
     R["fragility"] = {"crystalline_in_window": n_cryst_win,
                       "edits_per_schedule": 12,
                       "census": {str(k): v
-                                 for k, v in sorted(frag_rows.items())}}
+                                 for k, v in sorted(frag_rows.items())},
+                      "family_scope_cases": C["frag_cases"],
+                      "family_scope_period_preserved": frag_kept,
+                      "family_scope_any_nontrivial_period": frag_nontrivial}
+    say("  family-scope re-seatings              : %d, preserving the period "
+        "%d, landing on ANY nontrivial period %d"
+        % (C["frag_cases"], frag_kept, frag_nontrivial))
+    LD.gate("G-FRAGILITY-FAMILY",
+            "AND THE FRAGILITY IS A FAMILY-SCOPE THEOREM, NOT A WINDOW "
+            "MEASUREMENT.  Over ALL %d crystalline seed pairs and ALL %d "
+            "single-point re-seatings of either seed to any other site -- a "
+            "strict superset of the admissible single-arbitration re-seatings "
+            "of ANY partition, not just the window's -- %d preserve the "
+            "original period and %d leave the edited field with ANY "
+            "nontrivial period at all.  So the crystal is not merely "
+            "un-preserved under the minimal admissible edit: it is DESTROYED "
+            "by it, everywhere in the family.  This closes the gap the "
+            "one-line mechanism leaves open, which is that an edit might land "
+            "on a DIFFERENT period and rotate the crystal rather than destroy "
+            "it"
+            % (len(C["carrier_rows"]), C["frag_cases"], frag_kept,
+               frag_nontrivial),
+            frag_kept == 0 and frag_nontrivial == 0
+            and C["frag_cases"] == len(C["carrier_rows"]) * 2 * 3 * 6,
+            {"pairs": len(C["carrier_rows"]), "cases": C["frag_cases"],
+             "period_preserved": frag_kept,
+             "any_nontrivial_period": frag_nontrivial})
     SEAL.take("SEAL-FRAGILITY", R)
-    reg(n_cryst_win, 12, 6, 2)
+    reg(n_cryst_win, 12, 6, 2, C["frag_cases"], frag_kept, frag_nontrivial)
+
+    # -- THE PROCESSING-ORDER FIBER, MEASURED -------------------------------
+    order_scheds = [COMMITTED,
+                    schedule_of(CLASSES["ROW"], DIAG_SEED,
+                                CLASSES["ROW"], DIAG_SEED)]
+    for key in sorted(want):           # the first OUT-OF-WINDOW witness
+        loc = found.get(key)
+        if loc is None:
+            continue
+        i0, i1, t0, t1 = loc
+        if parts[i0] in CLASSES.values() and parts[i1] in CLASSES.values():
+            continue
+        order_scheds.append(schedule_of(
+            parts[i0], align_seeds(parts[i0], inv_sub[t0]),
+            parts[i1], align_seeds(parts[i1], inv_sub[t1])))
+        break
+    order_rows = order_probe(G, order_scheds)
+    if mut("MUT-ORDER-VARIANT"):
+        order_rows = list(order_rows)
+        order_rows[1] = dict(order_rows[1], fields_match=False)
+    order_bad = [r for r in order_rows
+                 if not (r["forced"] and r["fields_match"]
+                         and r["events_match"])]
+    R["processing_order"] = {
+        "conventions_per_round": len(ORDER_PERMS) ** 2,
+        "schedules_probed": len(order_scheds),
+        "drives": len(order_rows),
+        "deviations": len(order_bad)}
+    say("  processing-order variants driven      : %d over %d schedules, "
+        "deviations %d" % (len(order_rows), len(order_scheds), len(order_bad)))
+    LD.gate("G-ORDER-INVARIANCE",
+            "THE PROCESSING ORDER IS A DECLARED CONVENTION WITH A MEASURED "
+            "FIBER.  d66's order -- groups in ascending seed-site index, "
+            "members in ascending site index -- pins the committed POINT; "
+            "extending it to the whole family is a choice with %d forms per "
+            "round (3! group orders x 3! member orders), and this unit "
+            "declares rather than derives it.  Every one of those %d "
+            "conventions is DRIVEN, APPLIED TO BOTH ROUNDS, at %d declared "
+            "schedules -- %d records -- and compared against the committed "
+            "convention's: %d deviations in fate, in event count, or in "
+            "either site field.  The probe covers the conventions applied "
+            "uniformly across the rounds, not every pairing of two different "
+            "ones.  The choice is inert where it is driven, and the inventory "
+            "says so instead of asserting a fiber of one"
+            % (len(ORDER_PERMS) ** 2, len(ORDER_PERMS) ** 2,
+               len(order_scheds), len(order_rows), len(order_bad)),
+            not order_bad and len(order_rows) == len(order_scheds)
+            * len(ORDER_PERMS) ** 2,
+            {"conventions": len(ORDER_PERMS) ** 2,
+             "records": len(order_rows), "deviations": len(order_bad)})
+    SEAL.take("SEAL-ORDER", R)
+    reg(len(ORDER_PERMS) ** 2, len(order_rows), len(order_bad),
+        len(order_scheds))
+
+    # -- THE SUCCESSOR'S ENTRY DATUM (outside this unit's family) -----------
+    sat = r3_saturating()
+    if mut("MUT-R3-SATURATION"):
+        sat = dict(sat, det="0", posdef_sites=0)
+    R["successor_probe"] = sat
+    say("  SUCCESSOR PROBE (R=3, outside this family): n = 1 at all %d cells, "
+        "q_11=%s q_22=%s q_12=%s det=%s, positive definite at %d of 9"
+        % (sat["cells"], sat["q11"], sat["q22"], sat["q12"], sat["det"],
+           sat["posdef_sites"]))
+    LD.gate("G-R3-SATURATION",
+            "THE WELD ROUTE'S EXACT DEMAND, COMPUTED AND READ NO FURTHER.  "
+            "The counting wall says the obstruction is a RESOURCE DEFICIT in "
+            "the committed cycle, so the successor's entry criterion is a "
+            "budget depositing at least 27 link-incidences on I7's link set.  "
+            "The minimal saturating arrangement is exhibited here: R = %d, "
+            "the three rounds grouped on the three link-direction parallel "
+            "classes, giving n = 1 at all %d cells, q = [[%s, %s], [%s, %s]], "
+            "det = %s at every site, positive definite at %d of the nine, and "
+            "I7's strict-positivity criterion satisfied for the first time "
+            "(%d of %d counts strictly positive).  THIS IS A PROBE OUTSIDE "
+            "THIS UNIT'S DECLARED FAMILY, which is R = 2; nothing above uses "
+            "it, no record is driven for it, and it says nothing about "
+            "whether such a schedule is grammar-admissible or whether "
+            "clearing the count clears the weld"
+            % (sat["rounds"], sat["cells"], sat["q11"], sat["q12"],
+               sat["q12"], sat["q22"], sat["det"], sat["posdef_sites"],
+               sat["strictly_positive_cells"], sat["cells"]),
+            sat["distinct_counts"] == [1] and sat["det"] == "3/4"
+            and sat["posdef_sites"] == 9 and sat["homogeneous"]
+            and sat["strictly_positive_cells"] == 27,
+            {"probe": sat, "in_this_family": False})
+    SEAL.take("SEAL-SUCCESSOR", R)
+    reg(sat["rounds"], sat["cells"], Fraction(sat["det"]),
+        Fraction(sat["q11"]), Fraction(sat["q22"]), Fraction(sat["q12"]),
+        sat["posdef_sites"], sat["strictly_positive_cells"])
 
     # -- SEC 9  THE WALLS ----------------------------------------------------
     say("")
@@ -1874,12 +2721,21 @@ def full_run(break_anchor, paper_text, paper_rel):
     say("=" * 78)
     src_text = read_text(SELF)
     banned_here = norm(BANNED_L1) in norm(src_text)
-    paper_norm = norm(ascii_fold(paper_text))
+    paper_under_test = paper_text
     if mut("MUT-WALL-L1"):
-        paper_norm = norm(ascii_fold(paper_text + "\n\nOrder-level "
-                          "covariance is\nprecisely the form U4 tests, and "
-                          "precisely the form the\ncorpus's strongest "
-                          "relativity result took.\n"))
+        paper_under_test = paper_text + (
+            "\n\nOrder-level covariance is\nprecisely the form U4 tests, and "
+            "precisely the form the\ncorpus's strongest relativity result "
+            "took.\n")
+    if mut("MUT-WALL-L1-QUOTED"):
+        # THE EVASION THE WHITESPACE-ONLY FOLD WALKED PAST: the retracted
+        # sentence re-wrapped as a MARKDOWN BLOCKQUOTE, which is the corpus's
+        # own house style for quoting a prior unit
+        paper_under_test = paper_text + (
+            "\n\n> Order-level covariance is\n> precisely the form U4 tests, "
+            "and\n> precisely the form the corpus's\n> strongest relativity "
+            "result took.\n")
+    paper_norm = norm(ascii_fold(paper_under_test))
     l1_absent = norm(ascii_fold(BANNED_L1)) not in paper_norm
     l1_argued = ("fourth form" in paper_norm
                  and "not tested here" in paper_norm)
@@ -1891,27 +2747,61 @@ def full_run(break_anchor, paper_text, paper_rel):
             "PERMUTATION action of Z_3^2 on the actor set, which L-1's own "
             "scope guard leaves free, constructs no bridge from those "
             "translations to any boost, and states in the paper that the "
-            "fourth form is NOT TESTED HERE.  The prohibition gate "
-            "whitespace-normalises and ASCII-folds BOTH sides (#125), so a "
-            "line-wrapped injection of the %d-character retracted sentence is "
-            "caught -- the mutant MUT-WALL-L1 injects exactly that"
+            "fourth form is NOT TESTED HERE.  The prohibition gate ASCII-folds "
+            "BOTH sides, STRIPS LEADING MARKDOWN LINE-DECORATIONS and only "
+            "then whitespace-normalises (#125 as this unit's adjudication "
+            "clarified it), so both a line-wrapped and a BLOCKQUOTED "
+            "injection of the %d-character retracted sentence are caught -- "
+            "MUT-WALL-L1 injects the first and MUT-WALL-L1-QUOTED the second, "
+            "and the blockquote is the form the corpus actually writes"
             % len(BANNED_L1),
             l1_absent and (l1_argued or not paper_text),
             {"banned_len": len(BANNED_L1), "absent_from_paper": l1_absent,
              "argued_first": l1_argued, "present_in_source_prose":
              banned_here})
-    bhs_run = pick("MUT-WALL-BHS", False, True)
+
+    # THE BHS WALL, MEASURED ON THIS PROGRAM'S OWN AST rather than declared.
+    # The stems occur in this file as PROSE -- gate statements, mutant
+    # descriptions, the verbatim anchor -- and the honest question is whether
+    # any of them names a COMPUTATION.
+    BARRED_STEMS = ("sprinkl", "boost", "rapidit", "frame", "poisson",
+                    "lorentz")
+    idents = set()
+    for nd in ast.walk(ast.parse(src_text)):
+        if isinstance(nd, ast.Name):
+            idents.add(nd.id)
+        elif isinstance(nd, ast.Attribute):
+            idents.add(nd.attr)
+        elif isinstance(nd, (ast.FunctionDef, ast.ClassDef)):
+            idents.add(nd.name)
+        elif isinstance(nd, ast.arg):
+            idents.add(nd.arg)
+        elif isinstance(nd, ast.keyword) and nd.arg:
+            idents.add(nd.arg)
+    idents |= pick("MUT-WALL-BHS", set(), {"rapidity_of_the_boost_frame"})
+    bhs_hits = sorted(i for i in idents
+                      if any(s in i.lower() for s in BARRED_STEMS))
+    prose = {s: len(re.findall(s, src_text, re.I)) for s in BARRED_STEMS}
     LD.gate("G-WALL-BHS",
             "NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The "
             "catalog's BHS block (verbatim anchor V08) says a Poisson "
             "sprinkling admits no Lorentz-invariant finite-valency graph, and "
             "these schedules are finite-valency by construction, so running "
-            "the test would manufacture a false negative.  Measured on this "
-            "program's own source: no sprinkling, no boost, no rapidity and "
-            "no frame is computed anywhere -- the only group that acts here is "
-            "the translation group of a 9-element site lattice",
-            not bhs_run,
-            {"sprinkling_computed": bhs_run,
+            "the test would manufacture a false negative.  MEASURED, and the "
+            "measurement is an AST SCAN OF THIS PROGRAM'S OWN SOURCE: of the "
+            "%d identifiers this file defines or references -- every name, "
+            "attribute, function, class, argument and keyword -- %d are named "
+            "for a sprinkling, a boost, a rapidity, a Poisson process, a "
+            "Lorentz transformation or a frame.  The stems DO occur in the "
+            "file, %s times, entirely in prose: gate statements, mutant "
+            "descriptions and the verbatim catalog anchor.  A gate that "
+            "counted those would be counting its own bar; a gate that "
+            "declared the absence would measure nothing.  The only group that "
+            "acts here is the translation group of a 9-element site lattice"
+            % (len(idents), len(bhs_hits), sum(prose.values())),
+            not bhs_hits,
+            {"identifiers_scanned": len(idents), "computing_hits": bhs_hits,
+             "prose_occurrences": prose,
              "groups_acting": ["Z_3^2 translations"]})
     kr_hay = pick("MUT-WALL-KR", paper_norm.lower(),
                   paper_norm.lower().replace("height", "") + " dimension")
@@ -1940,6 +2830,17 @@ def full_run(break_anchor, paper_text, paper_rel):
                      "expansion of the universe")
     cosmo = [w for w in COSMO_CLAIMS if w in cosmo_hay]
     diag_measured = ("(1,1)" in paper_norm or "<(1,1)>" in paper_norm)
+    # NAMED-NOT-READ: the protocol requires the Lorentzian resonance to be
+    # NAMED so that the reader cannot supply it ungoverned.  Silence achieves
+    # NOT-READ and fails NAMED, so the naming is gated here.
+    RESONANCE = ("a form with det < 0 is indefinite, of signature (1,1)")
+    RESONANCE2 = ("The resonance is named here so that it is not read")
+    resonance_named = (norm(ascii_fold(RESONANCE)).lower() in
+                       paper_norm.lower()
+                       and norm(ascii_fold(RESONANCE2)).lower()
+                       in paper_norm.lower())
+    if mut("MUT-WALL-COSMO"):
+        resonance_named = True
     LD.gate("G-WALL-DIAGONAL",
             "THE DIAGONAL COUNTERPOINT IS MEASURED HERE -- THAT IS THIS "
             "UNIT'S POINT (verbatim anchor V10) -- AND COSMOLOGICAL READINGS "
@@ -1948,10 +2849,22 @@ def full_run(break_anchor, paper_text, paper_rel):
             "choice; this census varies that choice and measures the two "
             "separately: the period direction ranges over all four order-3 "
             "subgroups and the diagonal link count is populated by the "
-            "diagonal parallel class.  No cosmological word appears in the "
-            "paper",
-            not cosmo and (diag_measured or not paper_text),
-            {"cosmological_words": cosmo, "diagonal_measured": diag_measured,
+            "diagonal parallel class.  NO COSMOLOGICAL CLAIM PHRASE appears "
+            "in the paper -- the bar is on the READING and not on the word, "
+            "so the needles are claim phrases and the word 'cosmological' "
+            "itself occurs in the paper, in the bar.  And the LORENTZIAN "
+            "RESONANCE IS NAMED: a two-by-two symmetric form with det < 0 is "
+            "indefinite, which in this corpus is a loaded observation, so the "
+            "paper is required to say so and to say why the reading is not "
+            "merely barred but ill-posed here -- 486 of the 747 "
+            "non-degenerate groupings do not carry one sign across their own "
+            "nine sites.  Naming is what keeps the inference governed; "
+            "silence would leave the reader to supply it",
+            not cosmo and (diag_measured or not paper_text)
+            and (resonance_named or not paper_text),
+            {"cosmological_claim_phrases": cosmo,
+             "diagonal_measured": diag_measured,
+             "resonance_named": resonance_named,
              "period_directions": bc_subs})
     R["walls"] = {"L1": "argued-first-and-declined", "BHS": "not-run",
                   "KR": "no-dimension-reading",
@@ -1994,37 +2907,27 @@ def full_run(break_anchor, paper_text, paper_rel):
     }
     reg(*[v for v in R["counts"].values() if isinstance(v, int)])
 
-    ok_head = reconstruct(R) == (v_crystal, v_det, v_con)
+    # the comparator reads the SERIALIZED receipt, so it shares no live
+    # object with the builder either -- the write path's route, taken here
+    ok_head = (reconstruct_from_serialized(
+        json.dumps(R, indent=1, sort_keys=True, default=str))
+        == (v_crystal, v_det, v_con))
     LD.gate("G-VERDICT-RECONSTRUCTED",
             "THE HEAD IS DERIVED A SECOND TIME BY A PATH THAT SHARES NEITHER "
             "CODE NOR INPUT NOR TYPED LITERAL WITH THE BUILDER.  The builder "
             "assembles the three verdict strings from live Python objects; "
-            "the comparator reads the RECEIPT'S OWN census rows, recomputes "
-            "the beyond-coset rate as a Fraction from the two counts it finds "
-            "there, re-sorts the subgroup list, and rebuilds all three "
-            "strings from its own format templates.  The two agree character "
-            "for character",
+            "the comparator is handed the receipt SERIALIZED TO JSON AND "
+            "PARSED BACK -- the write path's own route, so not one live "
+            "object crosses -- recomputes the beyond-coset rate as a Fraction "
+            "from the two counts it finds there, re-sorts the subgroup list, "
+            "and rebuilds all three strings from its own format templates.  "
+            "The two agree character for character",
             ok_head, {"crystal": v_crystal, "det": v_det,
                       "constructibility": v_con})
     SEAL.take("SEAL-VERDICT-CRYSTAL", R)
     SEAL.take("SEAL-VERDICT-DET", R)
     SEAL.take("SEAL-VERDICT-CONSTR", R)
     SEAL.take("SEAL-COUNTS", R)
-
-    broken = SEAL.verify(R, only=SEALS_IN_RUN)
-    if mut("MUT-SEAL-BROKEN"):
-        R["counts"]["family"] = family + 1
-        broken = SEAL.verify(R, only=SEALS_IN_RUN)
-    LD.gate("G-SEAL-COMPLETE",
-            "EVERY PUBLISHED OBJECT WAS DIGESTED AT THE MOMENT ITS GATE "
-            "PASSED (#119) AND EVERY ONE OF THOSE %d IN-RUN SEALS STILL "
-            "VERIFIES HERE.  The artifacts below are written FROM the sealed "
-            "payload, and the terminal integrity gate compares the bytes on "
-            "disk against these digests, never against a re-derivation"
-            % len(SEAL.rows),
-            not broken, {"seals": len(SEAL.rows),
-                         "declared_in_run": len(SEALS_IN_RUN),
-                         "broken": broken})
 
     # -- exactness -----------------------------------------------------------
     tree = ast.parse(src_text)
@@ -2060,6 +2963,12 @@ def full_run(break_anchor, paper_text, paper_rel):
                               (["--mutant", "NOPE"], True),
                               (["--break-anchor"], True),
                               (["--verify-paper", "/no/such/file.md"], True),
+                              (["--verify-paper", "v14"], True),
+                              (["--verify-paper", ""], True),
+                              (["--mutant", "MUT-HEAD",
+                                "--mutant", "MUT-HEAD"], True),
+                              (["--break-anchor", "A-PIN",
+                                "--break-anchor", "A-PIN"], True),
                               (["extra"], True), (["--no-write"], False),
                               (["--numbers"], False)):
         try:
@@ -2081,7 +2990,83 @@ def full_run(break_anchor, paper_text, paper_rel):
             all(p["rejected"] == p["expected"] for p in probes),
             {"probes": probes})
 
-    R["waiver_ledger"] = waiver_ledger(LD)
+    # -- SEC 11  THE PAPER GATES, IN RUN so that every VOUCHING row is sealed
+    # -- inside the run and reachable by a declared mutant
+    say("")
+    say("=" * 78)
+    say("SEC 11  THE PAPER GATES")
+    say("=" * 78)
+    cov = paper_coverage(R, mutate_paper(paper_text))
+    R["paper_claims"] = [{"id": c, "text": t} for c, t in paper_claims(R)]
+    LD.gate("G-PAPER-CLAIMS",
+            "every one of the %d claims this instrument makes is rendered in "
+            "the paper under test, whitespace-normalised, markdown-stripped "
+            "and ASCII-folded on both sides (#125), and the claim rows "
+            "themselves are published and sealed here" % cov["claims"],
+            not cov["missing"], {"missing": cov["missing"] or "none",
+                                 "claims": cov["claims"]})
+    SEAL.take("SEAL-PAPER-CLAIMS", R)
+    R["paper_coverage"] = cov
+    LD.gate("G-PAPER-NUMERAL-COVERAGE",
+            "every numeral occurring in the paper is either a number this run "
+            "COMPUTED and registered, or one of the %d declared in-text "
+            "residues; every hexadecimal token is one of the %d pinned source "
+            "digests or the %d declared commits; %d distinct numerals over %d "
+            "occurrences"
+            % (len(DERIVED_IN_TEXT), len(SOURCES), len(DECLARED_COMMITS),
+               cov["distinct_numerals"], cov["numeral_occurrences"]),
+            not cov["uncovered"] and not cov["undeclared_hex"],
+            {"uncovered": cov["uncovered"] or "none",
+             "undeclared_hex": cov["undeclared_hex"] or "none"})
+    SEAL.take("SEAL-PAPER-COVERAGE", R)
+    R["paper_polarity"] = paper_polarity(R, paper_text,
+                                         mut("MUT-PAPER-POLARITY"))
+    LD.gate("G-PAPER-CLAIM-POLARITY",
+            "every declared polarity of the head is present in the paper in "
+            "its TRUE form and absent in its FALSE form: %d pairs.  These "
+            "needles are HEAD TOKENS, not prose, so the #62 length floor does "
+            "not apply to them and is not claimed; what makes them "
+            "discriminating is that each false form is the emitted head's own "
+            "opening -- `U4B-CRYSTAL-SEEDED-[` and not the bare branch name, "
+            "so the paper may discuss the unfired branch by name without "
+            "tripping its own gate, and MUT-PAPER-POLARITY injects a genuine "
+            "SEEDED head into a copy of the paper rather than flipping a "
+            "boolean" % len(R["paper_polarity"]),
+            all(p["ok"] for p in R["paper_polarity"]),
+            {"polarity": R["paper_polarity"]})
+    SEAL.take("SEAL-PAPER-POLARITY", R)
+    if mut("MUT-VOUCH-FORGED"):
+        # INJ02's remaining three rows, forged after their gates
+        R["paper_claims"] = [dict(c, text="INJECTED-FALSE-CLAIM")
+                             for c in R["paper_claims"]]
+        R["paper_coverage"] = dict(cov, missing=["INJECTED"])
+        R["paper_polarity"] = [dict(p, ok=False) for p in R["paper_polarity"]]
+
+    # -- THE COVERAGE LEDGER, over the DECLARED gate universe ---------------
+    emitted = [r["gate"] for r in LD.rows]
+    universe = sorted(set(emitted) | set(LATE_GATES) | set(POST_RUN_GATES))
+    ledger_src = emitted[:-1] if mut("MUT-GATE-UNIVERSE") else emitted
+    R["waiver_ledger"] = waiver_ledger(ledger_src)
+    ledger_gates = sorted({w["gate"] for w in R["waiver_ledger"]})
+    LD.gate("G-GATE-UNIVERSE",
+            "THE COVERAGE LEDGER'S DENOMINATOR IS HONEST (#34).  The gate "
+            "universe is every gate name this run EMITTED, plus the %d gates "
+            "still to come in this run's own tail, plus the %d evaluated only "
+            "in the mutant, self-test and writing paths -- %d distinct names "
+            "in all.  The ledger below is built over exactly that set and "
+            "this gate requires the two to be equal, so a gate cannot be "
+            "counted by the instrument and missed by its own coverage row.  "
+            "Two miscounts that happened to agree are what this closes: a "
+            "total that omitted the self-test gate, and a ledger that omitted "
+            "the gate making the honesty claim"
+            % (len(LATE_GATES), len(POST_RUN_GATES), len(universe)),
+            ledger_gates == universe,
+            {"universe": len(universe), "ledger_rows": len(ledger_gates),
+             "emitted_so_far": len(set(emitted)),
+             "missing_from_ledger": sorted(set(universe) - set(ledger_gates))
+             or "none",
+             "extra_in_ledger": sorted(set(ledger_gates) - set(universe))
+             or "none"})
     LD.gate("G-WAIVERS-VERIFIED",
             "THE COVERAGE LEDGER IS HONEST (#34).  Every gate this "
             "instrument declares -- the ones evaluated here and the ones "
@@ -2090,7 +3075,10 @@ def full_run(break_anchor, paper_text, paper_rel):
             "or a declared control drives it to FAIL, or WAIVED WITH A "
             "FORCING that says "
             "why it cannot fail and what would have to change for it to.  "
-            "%d gates: %d falsifiable, %d waived-with-forcing, 0 unaccounted"
+            "%d gates: %d falsifiable, %d waived-with-forcing, 0 unaccounted.  "
+            "The FALSIFIABLE rows are checked for REACHABILITY after the "
+            "mutant sweep, at G-FALSIFIER-REACHABILITY: a falsifier that dies "
+            "at some other gate is not this gate's falsifier"
             % (len(R["waiver_ledger"]),
                sum(1 for w in R["waiver_ledger"] if w["status"] == "FALSIFIABLE"),
                sum(1 for w in R["waiver_ledger"] if w["status"] == "WAIVED")),
@@ -2106,16 +3094,93 @@ def full_run(break_anchor, paper_text, paper_rel):
                              if w["status"] == "UNACCOUNTED"] or "none"})
     SEAL.take("SEAL-WAIVERS", R)
 
-    # the prediction: 3 paper gates + the mutant gate + the final coverage
-    # gate are still to come inside the ledger, and the integrity gate is
-    # evaluated only in the writing path and so never reaches the receipt
+    # -- the totals close IN RUN, at their own gate -------------------------
     R["totals"] = {
-        "gates": len(LD.rows) + 6,
-        "gates_in_receipt": len(LD.rows) + 5,
+        "gates": len(universe),
+        "gates_in_receipt": len(universe) - len(NOT_IN_RECEIPT),
         "sources": len(SOURCES), "verbatim_anchors": len(VERBATIM),
         "anchors": len(anchors), "mutants": len(MUTANTS),
-        "window_builds": len(WD) + driven_wit + 2,
+        "seals_declared": len(SEALED_PATHS),
+        "unsealed_declared": len(UNSEALED_DECLARED),
+        "records_driven": len(DRIVEN_RECORDS),
+        "window_builds": len(BUILD_CACHE) + len(ANCHOR_CACHE),
     }
+    LD.gate("G-TOTALS",
+            "THE INSTRUMENT'S OWN TOTALS CLOSE HERE, AT THEIR OWN GATE, and "
+            "are sealed here -- not at the last gate of the run, where "
+            "anything moved into them between the last measurement and the "
+            "take would be sealed in and published with a digest certifying "
+            "the lie.  %d gates in the universe, %d of them reaching the "
+            "receipt; %d hash-pinned sources; %d verbatim anchors; %d read "
+            "anchors; %d declared mutants; %d declared seals and %d declared "
+            "unsealed rows; %d records driven through the layer's own menus, "
+            "%d of them distinct and cached.  The counts that can only be "
+            "known after the mutant sweep are NOT stored here: they are "
+            "DERIVED at close from the sealed rows themselves"
+            % (len(universe), len(universe) - len(NOT_IN_RECEIPT),
+               len(SOURCES),
+               len(VERBATIM), len(anchors), len(MUTANTS), len(SEALED_PATHS),
+               len(UNSEALED_DECLARED), len(DRIVEN_RECORDS),
+               len(BUILD_CACHE) + len(ANCHOR_CACHE)),
+            R["totals"]["gates"] == len(universe)
+            and R["totals"]["mutants"] == len(MUTANTS),
+            {"totals": R["totals"]})
+    SEAL.take("SEAL-TOTALS", R)
+    if mut("MUT-TOTALS-FORGED"):
+        # INJ03, as the instrument review ran it
+        R["totals"] = dict(R["totals"], gates=999, mutants=99)
+
+    # -- the transcript is a published artifact and is CHAINED --------------
+    if mut("MUT-TRANSCRIPT-HEAD"):
+        # INJ06, as the instrument review ran it: the head flipped in the
+        # transcript's own line buffer.  It left the receipt byte-identical.
+        for k, s in enumerate(LINES):
+            LINES[k] = s.replace("U4B-CRYSTAL-GENERIC", "U4B-CRYSTAL-SEEDED")
+    chain_ok = transcript_chain_of(LINES) == TRANSCRIPT_CHAIN[0]
+    heads_present = all(v in "\n".join(LINES)
+                        for v in (v_crystal, v_det, v_con))
+    LD.gate("G-TRANSCRIPT-BOUND",
+            "THE TRANSCRIPT IS A PUBLISHED ARTIFACT AND IS BOUND TO WHAT WAS "
+            "ACTUALLY SAID.  Every line extends a rolling digest as it is "
+            "emitted, and the chain recomputed from the %d lines standing now "
+            "equals the digest accumulated while they were written; the three "
+            "sealed verdict strings are present in it verbatim.  Two "
+            "artifacts stating opposite verdicts with the receipt "
+            "byte-identical is what this closes: the receipt's sha256 could "
+            "not see a transcript edited after the fact, and now the "
+            "transcript's own chain can"
+            % len(LINES),
+            chain_ok and heads_present,
+            {"lines": len(LINES), "chain_intact": chain_ok,
+             "verdicts_present": heads_present,
+             "chain": TRANSCRIPT_CHAIN[0]})
+
+    # -- the completeness gate, against the DECLARATION ---------------------
+    if mut("MUT-SEAL-DROPPED"):
+        # INJ07, as the instrument review ran it: a declared seal deleted.
+        # It left BOTH artifacts byte-identical to the honest run.
+        SEAL.drop("SEAL-WAIVERS")
+    if mut("MUT-SEAL-BROKEN"):
+        R["counts"]["family"] = family + 1
+    broken = SEAL.verify(R, only=SEALS_IN_RUN)
+    LD.gate("G-SEAL-COMPLETE",
+            "EVERY PUBLISHED OBJECT WAS DIGESTED AT THE MOMENT ITS GATE "
+            "PASSED (#119), EVERY ONE OF THE %d DECLARED IN-RUN SEALS WAS "
+            "ACTUALLY TAKEN, AND EVERY ONE STILL VERIFIES HERE.  The "
+            "comparison is against the DECLARATION and not against the "
+            "manifest's own contents: a declared seal that was never taken "
+            "counts as BROKEN, not as absent, so a seal cannot be dropped "
+            "without trace.  The vouching layer is inside this count -- "
+            "provenance, the paper claim rows, the paper coverage row, the "
+            "paper polarity rows -- because the rows a reader cannot "
+            "recompute are exactly the rows a seal is for.  The artifacts "
+            "below are written FROM the sealed payload, and the terminal "
+            "integrity gate compares the bytes on disk against these digests, "
+            "never against a re-derivation"
+            % len(SEALS_IN_RUN),
+            not broken and len(SEAL.rows) == len(SEALS_IN_RUN),
+            {"taken": len(SEAL.rows), "declared_in_run": len(SEALS_IN_RUN),
+             "broken": broken or "none"})
     return LD, R, SEAL, paper_norm
 
 
@@ -2164,10 +3229,18 @@ def reconstruct_from_serialized(text):
     return reconstruct(json.loads(text))
 
 
-POST_RUN_GATES = ("G-PAPER-CLAIMS", "G-PAPER-NUMERAL-COVERAGE",
-                  "G-PAPER-CLAIM-POLARITY", "G-MUTANTS-ON-TARGET",
-                  "G-PAPER-COVERAGE-FINAL", "G-ARTIFACT-INTEGRITY",
+# the gates still to come inside `full_run` at the moment the coverage
+# ledger is built, and the gates evaluated only after it returns
+LATE_GATES = ("G-GATE-UNIVERSE", "G-WAIVERS-VERIFIED", "G-TOTALS",
+              "G-TRANSCRIPT-BOUND", "G-SEAL-COMPLETE")
+POST_RUN_GATES = ("G-MUTANTS-ON-TARGET", "G-FALSIFIER-REACHABILITY",
+                  "G-PAPER-COVERAGE-FINAL", "G-CLOSURE-DERIVED",
+                  "G-SEAL-CLOSE", "G-ARTIFACT-INTEGRITY",
                   "G-SELFTEST-WRITES-NOTHING")
+# the two gates that are evaluated outside the ledger and so never appear
+# as receipt rows
+NOT_IN_RECEIPT = ("G-ARTIFACT-INTEGRITY", "G-SELFTEST-WRITES-NOTHING",
+                  "G-SEAL-CLOSE")
 
 WAIVERS = {
     "G-MUTANTS-ON-TARGET": ("WAIVED", "the sweep's own closure gate: it "
@@ -2198,10 +3271,6 @@ WAIVERS = {
                        "hash-pinned committed function; it fails if that "
                        "function changes, which the provenance gate "
                        "forbids first"),
-    "G-I7-READOUT": ("FALSIFIABLE", "MUT-DET-EMPTY and the A-EFF-I7 anchor "
-                     "both drive it"),
-    "G-STAB-FULL-FAMILY": ("FALSIFIABLE", "MUT-FAMILY-COUNT moves the family "
-                           "total the gate's own sum must reach"),
     "G-EXACT": ("WAIVED", "would fail on any float entering this file or "
                 "the receipt; no mutant introduces one because a mutant "
                 "that did would be testing Python, not this census -- the "
@@ -2210,15 +3279,45 @@ WAIVERS = {
     "G-WAIVERS-VERIFIED": ("WAIVED", "the ledger's own closure gate; it "
                            "fails if any gate is unclassified, which is a "
                            "construction error rather than a measurement"),
-    "G-SEAL-COMPLETE": ("FALSIFIABLE", "MUT-SEAL-BROKEN mutates a sealed "
-                        "object after its gate"),
+    "G-TOTALS": ("WAIVED", "the totals' own closing gate: it recomputes the "
+                 "universe it is comparing against, so it cannot disagree "
+                 "with itself.  Its forcing is that the numbers it publishes "
+                 "are re-derived from the SEALED rows at close by "
+                 "G-CLOSURE-DERIVED, and a forged totals row dies at "
+                 "G-SEAL-COMPLETE -- MUT-TOTALS-FORGED is that falsifier"),
+    "G-CLOSURE-DERIVED": ("WAIVED", "evaluated after the mutant sweep, which "
+                          "no in-process mutant reaches.  Its forcing is that "
+                          "it READS NOTHING: every number it checks is "
+                          "recomputed at close from the chained gate ledger "
+                          "and the sealed mutant report, so it can disagree "
+                          "only if one of those was forged -- and "
+                          "MUT-TOTALS-FORGED and MUT-SEAL-BROKEN kill that "
+                          "at G-SEAL-COMPLETE"),
+    "G-SEAL-CLOSE": ("WAIVED", "the seal's own closing gate, evaluated on the "
+                     "payload about to be serialized and so only in the "
+                     "writing path.  Its forcing is the same as the integrity "
+                     "gate's: it fires on EVERY delivery run, and its three "
+                     "clauses -- every declared seal taken, every taken seal "
+                     "verifying, every published key sealed or declared -- "
+                     "are each driven to FAIL in-run by MUT-SEAL-DROPPED, "
+                     "MUT-SEAL-BROKEN and MUT-VOUCH-FORGED at "
+                     "G-SEAL-COMPLETE"),
+    "G-FALSIFIER-REACHABILITY": ("WAIVED", "the sweep's reachability closure: "
+                                 "it fails when a FALSIFIABLE row's named "
+                                 "mutant dies at a gate other than that row's "
+                                 "own, which is a fact about the OTHER gates' "
+                                 "boundaries, so it has no falsifier of its "
+                                 "own -- the same standing as "
+                                 "G-MUTANTS-ON-TARGET"),
 }
 
 
-def waiver_ledger(LD):
+def waiver_ledger(emitted):
     out = []
     targets = {m[1] for m in MUTANTS}
-    for g in [r["gate"] for r in LD.rows] + list(POST_RUN_GATES):
+    for g in list(emitted) + list(LATE_GATES) + list(POST_RUN_GATES):
+        if g in [r["gate"] for r in out]:
+            continue
         if g in WAIVERS:
             status, reason = WAIVERS[g]
         elif g in targets:
@@ -2263,12 +3362,42 @@ def paper_claims(R):
         ("C14", "all %d admissible single-arbitration re-seatings break the "
          "stabilizer" % 12),
         ("C15", "the named witness is %s" % d["witness"]["name"]),
+        # the heads as the adjudication recomposed them
+        ("C16", "at %d of %d crystalline seed pairs the field is supported on "
+         "a union of cosets of its own period"
+         % (R["carrier"]["support_is_a_coset_union"],
+            R["carrier"]["crystalline_seed_pairs"])),
+        ("C17", "six sevenths of all crystallinity in the family lies outside "
+         "the inherited locus"),
+        ("C18", "at all %d single-point re-seatings of one seed of a "
+         "crystalline pair, the edited field's stabilizer is trivial"
+         % R["fragility"]["family_scope_cases"]),
+        ("C19", "the same count permits as many as %d positive-definite "
+         "sites; the measured maximum is %d"
+         % (d["wall_permits_posdef_sites"], d["max_posdef_sites"])),
+        ("C20", "%d of the %d partition pairs carry at least one "
+         "positive-definite site"
+         % (d["pairs_with_a_posdef_site"], d["partition_pairs"])),
+        ("C21", "the maximum total link-incidence over the whole family is "
+         "exactly %d, attained at %d partition pairs"
+         % (d["max_link_incidence_per_pair"],
+            d["pairs_attaining_the_budget"])),
+        ("C22", "the period is the diagonal at %s of them, against %s under "
+         "independence"
+         % (R["period_vs_diagonal"]["conditional"],
+            R["period_vs_diagonal"]["under_independence"])),
+        ("C23", "neither seed set is a coset of any order-3 subgroup"),
+        ("C24", "no partition pair is positive definite at every site"),
     ]
 
 
+# the polarity needles are HEAD TOKENS, not prose: the #62 length floor is a
+# floor on VERBATIM SOURCE ANCHORS and is not claimed for them.  Each false
+# form is the emitted head's own opening -- with its bracket -- so the paper
+# may name the branch that did not fire without tripping its own gate.
 PAPER_POLARITY = [
-    ("P1", "U4B-CRYSTAL-GENERIC", "U4B-CRYSTAL-SEEDED-"),
-    ("P2", "DET-NONZERO-EXISTS", "DET-NONZERO-EMPTY"),
+    ("P1", "U4B-CRYSTAL-GENERIC-[", "U4B-CRYSTAL-SEEDED-["),
+    ("P2", "DET-NONZERO-EXISTS-[", "DET-NONZERO-EMPTY-["),
     ("P3", "POSDEF-EMPTY", "POSDEF-EXISTS"),
     ("P4", "I7-STRICT-EMPTY", "I7-STRICT-EXISTS"),
 ]
@@ -2289,6 +3418,7 @@ DERIVED_IN_TEXT = {
     "42": "the layer name `d42b1`", "60": "the layer name `d60`",
     "256": "the hash width in `sha256-12`",
     "119": "the RUNBOOK engraving numbers", "125": "the RUNBOOK engraving",
+    "148": "the RUNBOOK engraving: the seal-totality addendum",
     "82": "the RUNBOOK engraving", "87": "the RUNBOOK engraving",
     "91": "the RUNBOOK engraving", "62": "the RUNBOOK engraving",
     "34": "the RUNBOOK engraving", "24": "the RUNBOOK engraving",
@@ -2361,23 +3491,28 @@ def paper_coverage(R, paper_text):
 
 
 def mutate_paper(text):
-    """the two paper-side injections: a dropped claim and an unregistered
-    numeral.  They act on a COPY of the object under test, never on disk."""
+    """the paper-side injections: a dropped claim, an unregistered numeral,
+    and a genuine SEEDED head.  They act on a COPY of the object under test,
+    never on disk."""
     if mut("MUT-PAPER-CLAIM"):
         return text.replace("crystalline", "crystallime")
     if mut("MUT-PAPER-NUMERAL"):
         return text + "\n\nAn unregistered number: 31337.\n"
+    if mut("MUT-PAPER-POLARITY"):
+        return text + (
+            "\n```\nU4B-CRYSTAL-SEEDED-[the inherited locus]\n```\n")
     return text
 
 
 def paper_polarity(R, paper_text, mutated=False):
-    hay = norm(ascii_fold(paper_text))
+    """the mutant injects TEXT -- a real SEEDED head in a copy of the paper --
+    rather than flipping this function's own booleans."""
+    hay = norm(ascii_fold(mutate_paper(paper_text) if mutated
+                          else paper_text))
     rows = []
     for pid, true_s, false_s in PAPER_POLARITY:
         t = norm(ascii_fold(true_s)) in hay
         f = norm(ascii_fold(false_s)) in hay
-        if mutated and pid == "P1":
-            t, f = False, True
         rows.append({"id": pid, "true_present": t, "false_present": f,
                      "ok": t and not f})
     return rows
@@ -2402,6 +3537,8 @@ def parse_args(argv):
             opts["selftest"] = True
             opts["write"] = bool(mut("MUT-SELFTEST-WRITES"))
         elif a == "--mutant":
+            if opts["mutant"] is not None:
+                raise CliError("--mutant given more than once")
             if i + 1 >= len(argv):
                 raise CliError("--mutant requires a mutant NAME")
             if argv[i + 1] not in MUTANT_NAMES:
@@ -2410,6 +3547,8 @@ def parse_args(argv):
             opts["write"] = False
             i += 1
         elif a == "--break-anchor":
+            if opts["break_anchor"] is not None:
+                raise CliError("--break-anchor given more than once")
             if i + 1 >= len(argv):
                 raise CliError("--break-anchor requires an anchor NAME")
             if argv[i + 1] not in SOURCE_IDS:
@@ -2418,14 +3557,19 @@ def parse_args(argv):
             opts["write"] = False
             i += 1
         elif a == "--verify-paper":
+            if opts["verify_paper"] is not None:
+                raise CliError("--verify-paper given more than once")
             opts["verify_paper"] = PAPER_REL
             if i + 1 < len(argv) and not argv[i + 1].startswith("--"):
                 opts["verify_paper"] = argv[i + 1]
                 i += 1
             p = opts["verify_paper"]
-            if not os.path.exists(p if os.path.isabs(p)
+            # isfile, not exists: a DIRECTORY and the EMPTY STRING are not
+            # papers, and accepting them turned an operator error into an
+            # uncaught traceback indistinguishable from "the paper drifted"
+            if not os.path.isfile(p if os.path.isabs(p)
                                   else os.path.join(REPO, p)):
-                raise CliError("no such paper %r" % p)
+                raise CliError("no such paper file %r" % p)
             opts["write"] = False
         else:
             raise CliError("unknown argument %r" % a)
@@ -2445,7 +3589,7 @@ def selftest_result():
     """MEASURED, never typed: corrupt one anchor, run, and observe both
     whether the run died and whether anything on disk moved."""
     global QUIET
-    was, saved_lines = QUIET, list(LINES)
+    was, saved_lines = QUIET, transcript_state()
     QUIET = True
     watched = (OUT_TXT, OUT_JSON, OUT_TXT + ".selftest-probe")
 
@@ -2467,7 +3611,7 @@ def selftest_result():
     wrote = (before != snap())
     if os.path.exists(watched[2]):
         os.remove(watched[2])
-    LINES[:] = saved_lines
+    transcript_restore(saved_lines)
     QUIET = was
     return died, wrote
 
@@ -2498,14 +3642,25 @@ def emit_report(R, SEAL):
     say("  sources    : %d hash-pinned; verbatim anchors %d; read anchors %d"
         % (R["totals"]["sources"], R["totals"]["verbatim_anchors"],
            R["totals"]["anchors"]))
-    say("  mutants    : %d declared" % R["totals"]["mutants"])
-    say("  menu drives: %d records built by the layer's own menu"
-        % R["totals"]["window_builds"])
-    say("  seals      : %d objects sealed at gate time" % len(SEAL.rows))
+    say("  mutants    : %d declared, %d killed, %d on target"
+        % (R["totals"]["mutants"], R["closure"]["mutants_killed"],
+           R["closure"]["mutants_on_target"]))
+    say("  menu drives: %d distinct records built by the layer's own menu, "
+        "%d drives in all"
+        % (R["totals"]["window_builds"], R["totals"]["records_driven"]))
+    say("  seals      : %d objects sealed at gate time, %d rows declared "
+        "unsealed" % (len(SEAL.rows), len(UNSEALED_DECLARED)))
     for row in SEAL.rows:
-        say("    %-24s %-28s %s" % (row["seal"], row["path"],
+        say("    %-24s %-40s %s" % (row["seal"], row["path"],
                                     row["sha256_12"]))
-    SEAL.close_transcript("\n".join(LINES) + "\n")
+    for key, _reason, bound in UNSEALED_DECLARED:
+        say("    %-24s %-40s DECLARED UNSEALED, bound by %s"
+            % ("(unsealed)", key, bound))
+    text = "\n".join(LINES) + "\n"
+    if transcript_chain_of(LINES) != TRANSCRIPT_CHAIN[0]:
+        raise GateFail("G-TRANSCRIPT-BOUND :: the transcript standing at "
+                       "close is not the transcript that was written")
+    SEAL.close_transcript(text)
 
 
 def main():
@@ -2518,9 +3673,12 @@ def main():
               % os.path.basename(SELF), file=sys.stderr)
         print("error: %s" % e, file=sys.stderr)
         sys.exit(2)
+    # THE MUTANT IS SET BEFORE THE SELF-TEST IS DISPATCHED, so that
+    # `--selftest --mutant MUT-SELFTEST-WRITES` is honoured rather than inert:
+    # no flag is a no-op and no combination silently is either
+    MUT = opts["mutant"]
     if opts["selftest"]:
         selftest()
-    MUT = opts["mutant"]
     write = opts["write"]
 
     say("=" * 78)
@@ -2556,50 +3714,9 @@ def main():
         say("THE REGISTERED NUMERALS (%d)" % len(NUMREG))
         say("  " + " ".join(sorted(NUMREG)))
         say("")
-        say("--numbers: the census is printed above; no paper gate, no "
-            "mutant sweep, nothing written.")
+        say("--numbers: the census and the paper gates are above; no mutant "
+            "sweep, no seal close, nothing written.")
         sys.exit(0)
-
-    # -- the paper gates -----------------------------------------------------
-    say("")
-    say("=" * 78)
-    say("SEC 11  THE PAPER GATES")
-    say("=" * 78)
-    try:
-        cov = paper_coverage(R, mutate_paper(paper_text))
-        LD.gate("G-PAPER-CLAIMS",
-                "every one of the %d claims this instrument makes is rendered "
-                "in the paper under test, whitespace-normalised and "
-                "ASCII-folded on both sides (#125)" % cov["claims"],
-                not cov["missing"], {"missing": cov["missing"] or "none",
-                                     "claims": cov["claims"]})
-        LD.gate("G-PAPER-NUMERAL-COVERAGE",
-                "every numeral occurring in the paper is either a number this "
-                "run COMPUTED and registered, or one of the %d declared "
-                "in-text residues; every hexadecimal token is one of the %d "
-                "pinned source digests or the %d declared commits; %d "
-                "distinct numerals over %d occurrences"
-                % (len(DERIVED_IN_TEXT), len(SOURCES),
-                   len(DECLARED_COMMITS), cov["distinct_numerals"],
-                   cov["numeral_occurrences"]),
-                not cov["uncovered"] and not cov["undeclared_hex"],
-                {"uncovered": cov["uncovered"] or "none",
-                 "undeclared_hex": cov["undeclared_hex"] or "none"})
-        pol = paper_polarity(R, paper_text, mut("MUT-PAPER-POLARITY"))
-        LD.gate("G-PAPER-CLAIM-POLARITY",
-                "every declared polarity of the head is present in the paper "
-                "in its TRUE form and absent in its FALSE form: %d pairs"
-                % len(pol),
-                all(p["ok"] for p in pol),
-                {"polarity": pol})
-    except GateFail as e:
-        say("")
-        say("GATE FAILED: %s" % e)
-        say("EXIT 1")
-        sys.exit(1)
-    R["paper_coverage"] = cov
-    R["paper_polarity"] = pol
-    R["paper_claims"] = [{"id": c, "text": t} for c, t in paper_claims(R)]
 
     if opts["verify_paper"]:
         say("")
@@ -2623,31 +3740,19 @@ def main():
     for nm, target, note in MUTANTS:
         MUT = nm
         QUIET = True
-        saved = list(LINES)
+        saved = transcript_state()
         killed_at = None
         try:
             if nm == "MUT-SELFTEST-WRITES":
                 died, wrote = selftest_result()
                 killed_at = ("G-SELFTEST-WRITES-NOTHING" if wrote else None)
-            elif nm == "MUT-PAPER-POLARITY":
-                p = paper_polarity(R, paper_text, True)
-                killed_at = (None if all(x["ok"] for x in p)
-                             else "G-PAPER-CLAIM-POLARITY")
-            elif nm == "MUT-PAPER-CLAIM":
-                c = paper_coverage(R, mutate_paper(paper_text))
-                killed_at = "G-PAPER-CLAIMS" if c["missing"] else None
-            elif nm == "MUT-PAPER-NUMERAL":
-                c = paper_coverage(R, mutate_paper(paper_text))
-                killed_at = ("G-PAPER-NUMERAL-COVERAGE"
-                             if c["uncovered"] or c["undeclared_hex"]
-                             else None)
             else:
                 full_run(None, paper_text, paper_rel)
         except GateFail as e:
             killed_at = str(e).split(" ::")[0]
         except SystemExit:
             killed_at = "SYSTEM-EXIT"
-        LINES[:] = saved
+        transcript_restore(saved)
         QUIET = False
         MUT = None
         report.append({"mutant": nm, "target": target, "note": note,
@@ -2679,16 +3784,42 @@ def main():
         sys.exit(1)
     SEAL.take("SEAL-MUTANTS", R)
 
-    R["gates"] = LD.rows
-    R["totals"]["mutants_killed"] = sum(1 for m in report if m["killed"])
-    R["totals"]["mutants_on_target"] = on_target
-    if R["totals"]["gates"] != len(LD.rows) + 2:
-        say("")
-        say("GATE FAILED: G-PAPER-COVERAGE-FINAL :: the predicted gate count "
-            "%d did not close at %d" % (R["totals"]["gates"], len(LD.rows) + 1))
-        say("EXIT 1")
-        sys.exit(1)
     try:
+        # #34 WITH REACHABILITY: a FALSIFIABLE row's named mutant must die at
+        # THAT ROW'S OWN GATE.  A mutant credited with driving a gate it
+        # never reaches -- because an earlier gate kills it first, or because
+        # it passes the gate it is credited with -- is not a falsifier.
+        credited = {}
+        for w in R["waiver_ledger"]:
+            if w["status"] != "FALSIFIABLE":
+                continue
+            credited[w["gate"]] = [m[0] for m in MUTANTS if m[1] == w["gate"]]
+        killed_where = {m["mutant"]: m["killed_at"] for m in report}
+        unreachable = sorted(
+            (g, nm, killed_where.get(nm))
+            for g, names in credited.items() for nm in names
+            if killed_where.get(nm) != g)
+        uncredited = sorted(g for g, names in credited.items()
+                            if not names and not g.startswith("G-PROV["))
+        LD.gate("G-FALSIFIER-REACHABILITY",
+                "EVERY FALSIFIABLE ROW'S NAMED FALSIFIER REACHES THE GATE IT "
+                "IS CREDITED WITH.  %d gates in the coverage ledger are "
+                "classified FALSIFIABLE on a declared mutant, and for each "
+                "the mutant's measured `killed_at` is required to equal that "
+                "row's own gate -- not merely to be non-null.  Two failures "
+                "of exactly this kind are what the check closes: a gate "
+                "credited to a mutant that dies eight gates earlier, and a "
+                "gate credited to a mutant that reaches it and PASSES it.  "
+                "The per-source provenance rows are excluded by name: their "
+                "falsifier is `--break-anchor`, which is a separate process "
+                "and not an in-run mutant"
+                % len(credited),
+                not unreachable and not uncredited,
+                {"falsifiable_rows": len(credited),
+                 "unreachable": [list(u) for u in unreachable] or "none",
+                 "uncredited": uncredited or "none"})
+
+        # the final coverage check must AGREE with the sealed in-run row
         cov2 = paper_coverage(R, paper_text)
         LD.gate("G-PAPER-COVERAGE-FINAL",
                 "the paper-claim and numeral-coverage check is re-run once "
@@ -2697,30 +3828,64 @@ def main():
                 "falsifiers and this evaluation is the enforcement -- a "
                 "failure here exits 1 and writes nothing.  It also closes the "
                 "residue ledger: every declared in-text residue must actually "
-                "occur in the paper, so the list cannot be padded",
+                "occur in the paper, so the list cannot be padded.  And it "
+                "AGREES ROW FOR ROW with the coverage row sealed in run, "
+                "which is why the re-run does not overwrite the sealed object",
                 not cov2["missing"] and not cov2["uncovered"]
                 and not cov2["undeclared_hex"]
-                and not cov2["residue_declared_but_absent"],
+                and not cov2["residue_declared_but_absent"]
+                and cov2 == R["paper_coverage"],
                 {"missing": cov2["missing"] or "none",
                  "uncovered": cov2["uncovered"] or "none",
                  "undeclared_hex": cov2["undeclared_hex"] or "none",
+                 "agrees_with_the_sealed_row": cov2 == R["paper_coverage"],
                  "declared_but_absent":
                      cov2["residue_declared_but_absent"] or "none"})
+
+        # THE CLOSING COUNTS ARE DERIVED, NEVER STORED AND RE-READ: every
+        # number is recomputed from the chained gate ledger and the sealed
+        # mutant report, so none can be moved without breaking one of those.
+        killed = sum(1 for m in R["mutants"] if m["killed"])
+        ontgt = sum(1 for m in R["mutants"] if m["on_target"])
+        LD.gate("G-CLOSURE-DERIVED",
+                "THE CLOSING COUNTS ARE DERIVED FROM THE SEALED ROWS.  With "
+                "this row the ledger closes at %d gates -- exactly the number "
+                "the in-run totals predicted BEFORE the sweep began, from the "
+                "declared universe minus the %d gates evaluated outside the "
+                "ledger -- and every one of them passed.  %d of %d declared "
+                "mutants were killed and %d on target, recomputed here from "
+                "the sealed mutant report rather than carried forward in a "
+                "counter"
+                % (len(LD.rows) + 1, len(NOT_IN_RECEIPT), killed,
+                   len(MUTANTS), ontgt),
+                len(LD.rows) + 1 == R["totals"]["gates_in_receipt"]
+                and all(g["passed"] for g in LD.rows)
+                and killed == len(MUTANTS) and ontgt == len(MUTANTS),
+                {"rows_at_close": len(LD.rows) + 1,
+                 "predicted": R["totals"]["gates_in_receipt"],
+                 "mutants_killed": killed, "mutants_on_target": ontgt})
+        R["gates"] = LD.rows
+        R["closure"] = {
+            "gates_in_receipt": len(R["gates"]),
+            "gates_passed": sum(1 for g in R["gates"] if g["passed"]),
+            "mutants_killed": killed, "mutants_on_target": ontgt,
+        }
+        SEAL.take("SEAL-CLOSURE", R)
+        emit_report(R, SEAL)
+        R["transcript"] = {"lines": len(LINES), "chain": TRANSCRIPT_CHAIN[0],
+                           "sha256_12": SEAL.transcript_sha}
+        ok_close, close_ev = SEAL.close(R, LD)
+        print("G-SEAL-CLOSE: %s -- %s"
+              % ("the seal closes, totally" if ok_close
+                 else "THE SEAL DID NOT CLOSE", close_ev), flush=True)
+        if not ok_close:
+            raise GateFail("G-SEAL-CLOSE :: %s" % close_ev)
     except GateFail as e:
         say("")
         say("GATE FAILED: %s" % e)
-        say("EXIT 1")
+        print("GATE FAILED: %s" % e, file=sys.stderr)
+        print("EXIT 1", file=sys.stderr)
         sys.exit(1)
-    R["paper_coverage"] = cov2
-    R["gates"] = LD.rows
-    # counted AFTER the last ledger gate, so the published row is not a
-    # snapshot of an earlier moment in the run
-    R["totals"]["gates_passed"] = sum(1 for g in LD.rows if g["passed"])
-    SEAL.take("SEAL-GATES", R)
-    SEAL.take("SEAL-TOTALS", R)
-
-    SEAL.close(R, json.dumps(R, indent=1, sort_keys=True, default=str))
-    emit_report(R, SEAL)
 
     if write:
         payload, text = SEAL.payload, SEAL.transcript
@@ -2753,18 +3918,33 @@ def main():
                   "written does not match the gate-time seal (corruption "
                   "detected=%s); nothing written" % detected, flush=True)
             sys.exit(1)
+        # CONTAINMENT: the bytes standing before the replace are held, so a
+        # failure after it restores them instead of leaving a corrupt or
+        # non-parsing artifact on disk with only a warning line
+        prior = {p: (read_text(p) if os.path.exists(p) else None)
+                 for p in (OUT_JSON, OUT_TXT)}
         os.replace(tj, OUT_JSON)
         os.replace(tt, OUT_TXT)
         if not against_the_seal(read_text(OUT_JSON), read_text(OUT_TXT)):
+            for p, was in prior.items():
+                if was is None:
+                    if os.path.exists(p):
+                        os.remove(p)
+                else:
+                    with open(p, "w", encoding="utf-8") as f:
+                        f.write(was)
             print("GATE FAILED: G-ARTIFACT-INTEGRITY :: the artifacts on disk "
-                  "differ from the gate-time seal", flush=True)
+                  "differ from the gate-time seal; the previous artifacts "
+                  "have been RESTORED and nothing corrupt is left in place",
+                  flush=True)
+            print("EXIT 1", file=sys.stderr)
             sys.exit(1)
         print("G-ARTIFACT-INTEGRITY: corrupted probe detected; both artifacts "
               "written from the SEALED payload, re-read from disk and matched "
-              "against the gate-time seal -- %d sealed objects, payload %s, "
-              "transcript %s (%d + %d bytes)."
-              % (len(SEAL.rows), SEAL.payload_sha, SEAL.transcript_sha,
-                 len(payload), len(text)), flush=True)
+              "against the gate-time seal -- %d sealed objects, %d declared "
+              "unsealed, payload %s, transcript %s (%d + %d bytes)."
+              % (len(SEAL.rows), len(UNSEALED_DECLARED), SEAL.payload_sha,
+                 SEAL.transcript_sha, len(payload), len(text)), flush=True)
     sys.exit(0)
 
 

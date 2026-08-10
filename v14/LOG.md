@@ -4647,3 +4647,56 @@ committed as-is: paper 5c1df50673d4, code a75c435bffda, output
 ef570ac7d61c, receipt 42255f50328a, the annotation note
 eb75423c05bd.  Battery next; TERMINAL on completion (the
 thirteenth — THE GRAVITY LAW FINAL).
+
+## 2026-08-10 — U4B REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #158)
+
+All ten orders discharged.  **The recomposed heads: the CRYSTAL
+head on the UNION CARRIER** (252/252 — 12 same-seed pairs value
+2 on one coset, 240 pairs value 1 on two; the affine law
+violated nowhere; the closed forms registered as theorems
+216/36/252=4×63; "relational order" barred in text; F6 adopted
+— neither seed is a LINE at all, 0/216); **the honest headline:
+six sevenths of all crystallinity outside the inherited locus**;
+**the DET head with F1's two words** ("at every site") and the
+positive datum added (28,404/78,400 pairs = 7101/19600 carry a
+posdef site); the wall COMPLETED (the n₍₁,₁₎≥1 step written;
+tightness measured — max incidence exactly 18 at 1,296 pairs);
+the ceiling gap registered open (permits 6, attains 3 at 252);
+**the Lorentzian resonance NAMED and gated**; §8's independence
+corrected (separately carried, NOT independent — conditional
+15/31 vs 1/4); fragility family-scope (9,072 re-seatings, 0
+preserve, 0 land nontrivial); the licence renamed
+(driven=combinatorial a THEOREM; constructibility the
+window-scoped thing); **the inventory upgraded to MOTIVATED,
+stated in the head**.  **THE SEAL TOTALIZED WITH TWO NEW
+MECHANISMS: the ledger CHAINED row-by-row and the transcript
+CHAINED line-by-line, closure DERIVED at close** — the five
+exploited injections ALL DEAD (the vouching forgery at
+G-SEAL-COMPLETE + G-DECLARED-UNSEALED; the totals forgery with
+totals sealed in-run; the control row sealed at its own gate;
+the transcript-head flip at G-TRANSCRIPT-BOUND; **the silent
+seal-drop: untaken ⇒ broken, manifest vs DECLARATION**); INJ05
+upgraded to caught-and-contained (prior artifacts
+byte-restored).  #34 at the declared-gate-universe standard
+(66/63, equal by gate; reachability gated 54/0); #125
+markdown-prefix normalization (14/14 wrapping variants die);
+the d60 register written (0e22bea6b53a).  **TWO WORKER-FOUND
+CORRECTIONS: the "twenty strata witnesses driven outside the
+window" overstatement fixed (only 12/20 are; 19 strata
+realizable inside; gated) and the order-probe scope stated (36
+uniform conventions, not 1,296 pairings).**  Honest partials
+named (~8 verdict-variable injections remain object-level
+upgrades; the d60 RUNBOOK/LOG lines PROPOSED in the note, not
+engraved — out of scope, adjudicator's call; the
+selftest-writes mutant inert-combination now exit 2).  Counts:
+gates 51→66; mutants 31→49 on-target; seals 19→32 + 6
+declared; unsealed-and-undeclared keys 6→0; NO delivered
+number moved (every difference an addition; 15 added numerals
+each independently recomputed).  Verification at the worker's
+hands: byte ×2; off-tree git-less 12-file mirror with
+PYTHONHASHSEED unset BYTE-IDENTICAL; the seals and transcript
+chain re-verified from disk by the worker's own
+reimplementation.  Artifacts committed as-is: paper
+acd9787960c2, code 6d5278b38dcc, output 03e587aece2d, receipt
+5f1715f715e5, the d60 register 0e22bea6b53a.  Battery next;
+TERMINAL on completion.
