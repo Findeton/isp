@@ -3519,3 +3519,44 @@ to theorems and the FOUND capability demonstrated at the
 verdict's own target.  STATUS row written (same commit, §13).
 The successor arena is U4's renewal crystal (panel in flight);
 Route B remains the user's call at its measured price.
+
+## 2026-08-10 — U4 EFFECTUS FROZEN (1 OF 3) (v14 LEDGER #122)
+
+review-u4-effectus.md frozen (61fb7d9e8471).  Grade AWF; 390
+recomputations; 0 false numbers (all ten stabilizers brute-force
+reproduced; all 712 numeric tokens resolve).  **THE WALLS AUDIT:
+NO BREACH — all four respected** (L-1's banned sentence absent,
+the fourth form named-argued-NOT-tested; zero sprinkling/boost
+anywhere; KR honored by BLOCKED; the diagonal named-never-read).
+**Four MAJORs, all prose/scope — neither verdict string moves:**
+(1) **THE PERIODICITY IS CONSTRUCTOR-INHERITED** — all eight
+arbitration fields derivable in closed form from D66's seed rule
+(two ⟨(1,1)⟩-cosets in the seed) with no record built; the
+reviewer derived them, matching site-for-site; TRUE BUT NOT
+EMERGENT, undisclosed (and it answers the paper's own open
+S-U4-5); (2) §6.6 guards one direction, its falsifier not
+evaluable; (3) the KR refusal names the wrong object (the
+longest chain EXISTS for all ten populations; the empty control
+is a stricter population of the unit's own devising, correctly
+classed free — the conflation propagates into 5 waivers); (4)
+the founding spec's indivisibility clause UNDISCHARGED and
+UNPOSABLE (maxhits=1 ⟹ no branching ⟹ no transition kernel);
+U4 discharges 1 of §7's five clauses and the paper never
+aggregates that.  **THE CONSEQUENTIAL HANDOFF: I7's third link
+IS (1,1) — THE DIAGONAL.**  The renewal sublattice supplies
+18/27 of I7's cells strictly positive and homogeneous and fails
+EXACTLY the 9 diagonal cells; induced form c·[[1,−1],[−1,1]],
+det ≡ 0, kernel (1,1) — independently reproducing weld-2's
+INDUCED-DET=0.  **The diagonal counterpoint is ONE CAUSE
+(diagonal seeds + row/column conflict groups), not two
+witnesses; the renewal-crystal census is posable now and
+PREDICTABLY EMPTY at this family** — six register rows written.
+**One reviewer claim REBUTTED by the adjudicator:** the "pin
+pinned a live worktree state" finding is in error — git show
+58195da:v14/code/w2_census_exact.py = 290149118b9d exactly; the
+pin's sha named the committed CODE file (the reviewer compared
+against paper-13); the pin's wording could name file paths
+explicitly (an improvement), but the accusation fails.  Eight
+MINORs incl. the control's trivial stabilizer being forced
+arithmetic (support 1) and a scout-attribution fix.  Two seats
+pending.
