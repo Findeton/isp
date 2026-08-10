@@ -3831,3 +3831,41 @@ hunt, and the correct #46/#91 exclusion of the
 concurrently-rewritten paper-13.  Three reviewers launched →
 v14/review-giter-{operator,effectus,instrument}.md.
 Orchestrator battery in background.
+
+## 2026-08-10 — U4 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #132)
+
+All ten orders discharged.  **The qualified head:
+U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-CONSTRUCTOR-INHERITED-[…]**
+— the qualifier READ from the adjudication by two different
+regexes on two different sentences, never typed; the geometry
+verdict unchanged; NO delivered number moved.  The affine row
+measured in-unit at all 10 cells, matching the operator's table
+exactly (S = full ⟨(1,1)⟩-coset union at 8/8 arbitration cells;
+the two m=0 cells marked constant-field); §7.1 the diagonal
+unification (18/27; det ≡ 0 kernel (1,1); the one-cause
+statement; the census re-scoped to U4b); the L-1 wall repaired
+as verified (both sides whitespace-normalised; the canonical
+fragment a second needle; both #62-anchored; needles assembled
+from fragments so the source cannot self-trigger); VARIES
+reachable at segment level (MUT-GEOM-VARIES emits the witness);
+**THE SEAL DISCIPLINED (gate-time digests on every
+gate/anchor/verbatim/waiver/payload row + an emit-time byte
+seal; integrity = DISK-VS-SEAL)** — the nine seam survivors +
+the wrapped-L1 injection ALL DEAD at named gates; the 42
+anchors READ from the pinned v10 .out lines by context-keyed
+regex (extraction compared, not literals); MUT-SITEMAP the
+advertised transposition + the registry bound to the run; KR
+re-worded with the 5 waivers re-grounded; prose polarity gated
+(55 checks); the founding-spec aggregate stated; U4b registered
+as paper-17.  Honest partials: the three wall gates given
+MEASURED booleans (stronger than waivers); cannot-fail 25→0
+(23 falsified + 2 reclassified DECLARED); the unanchored v10
+rows NAMED (the either/or option taken).  Counts: gates
+147→173; mutants 12→26 (26/26 at registered targets);
+verbatim 14→18; polarity 0→55; sealed rows 0→13.  Worker
+verification: plain ×2 byte-identical (173 gates 0 failed);
+git-less mirror byte-identical; off-tree LOUD FAIL by design
+(20 G-PROV failures, nothing written); 16/16 malformed argv
+exit 2.  Artifacts committed as-is: paper dbc300e16342, code
+d3aac4c5f413, output 8591be75413f, receipt a0e2b3342f54.
+Battery next; TERMINAL on completion (the eleventh).

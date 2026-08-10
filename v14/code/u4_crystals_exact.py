@@ -28,12 +28,20 @@ WHAT THIS PROGRAM DOES, in the pin's order:
           cross-checked against the v10 originals' committed rows.
   SEC 5   THE HEADLINE (pin R4.1): the division-event field's exact
           translation stabilizer on Z_3^2, per crystal per site-reading,
-          with an independent character-theoretic reconstruction.
+          with an independent character-theoretic reconstruction; and THE
+          MECHANISM -- the field is affine in the indicator of the
+          constructor's own seed set, n = c + m*1_S, so the periodicity
+          is CONSTRUCTOR-INHERITED.
   SEC 6   GEOMETRY INVARIANCE (pin R4.2): arm (a) FILTER in both of its
           sub-readings, arm (b) BUILDER-RERUN under two declared
-          sub-grammars, arm (c) registered-not-run; the KR height control.
+          sub-grammars, arm (c) registered-not-run; the height-matched
+          control population (this unit's, stricter than the KR wall's
+          discriminator, and empty within and across records).
   SEC 7   THE BRIDGES (pin R4.3), at declared scope, candidate readings
-          named, no indivisibility claim.
+          named, no indivisibility claim -- and none definable, the
+          records being FORCED.  SEC 7b evaluates the bridges on I7's
+          own coordinates: 18 of 27 cells, induced det = 0, kernel
+          (1,1), one cause for both diagonals.
   SEC 8   THE WALLS (pin R5): L-1 argued before any test and DECLINED;
           BHS; the KR height control; the inherited q_12 = 0.
   SEC 9   The verdict, the head equality gate, verify-paper, the receipt.
@@ -44,10 +52,18 @@ Every set/dict iteration feeding a printed number is ordered by a
 hash-seed-independent stable key.  The plain run is byte-reproducible.
 Verdicts live IN the gate statements.  Gates bind OBJECTS, not aggregates
 (#87): per crystal x per reading x per arm.  Failing runs write nothing.
+Committed numbers are READ from the pinned v10 outputs at run time, never
+typed (#91).  Text gates match text AS WRITTEN: needles and haystacks are
+whitespace-normalised, so line wrapping cannot smuggle a banned sentence
+past a wall.  A gate's STATEMENT is bound to its own boolean (#20).
+Every published row is DIGESTED AT GATE TIME, the artifacts are rendered
+from the sealed copies, and the integrity gate compares THE BYTES ON DISK
+against those digests (#119).
 """
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import os
@@ -79,52 +95,186 @@ ANCHOR_FAIL = 0
 MUTANT = None
 QUIET = False
 
+# --- THE SEAL (#119) -------------------------------------------------------
+# Every published row is DIGESTED AT GATE TIME, the artifacts are rendered
+# FROM THE SEALED COPIES, and the final integrity gate recomputes the digests
+# FROM THE BYTES ON DISK and compares them against the gate-time seals.  A
+# change made to any published object after its gate has fired therefore
+# cannot reach disk, and a change made to the sealed copy or to the bytes
+# cannot survive the comparison.
+SEALED_LINES: list[str] = []
+SEALED: dict[str, list[dict]] = {"gates": [], "anchors": [], "verbatim": [],
+                                 "waivers": []}
+SEALS: dict[str, list[str]] = {"gates": [], "anchors": [], "verbatim": [],
+                               "waivers": []}
+SEALED_PAYLOAD: dict = {}
+PAYLOAD_SEALS: dict[str, str] = {}
+OUT_H = hashlib.sha256()                 # the output seal, updated at emit
+POLARITY_CHECKS: list[dict] = []
+VERBATIM_FLOOR = 20                      # #62: the length floor for a quote
+
 MUTANTS = {
-    "MUT-APERIODIC-DIVISION":
-        "plants one extra division at a single site of DOUBLE-GRID(3,2), "
-        "destroying the field's periodicity -- must die at that crystal's "
-        "own stabilizer gate (kills the crystal claim)",
-    "MUT-CONTROL-PERIODIC":
-        "plants a constant division field on the delivery control, giving "
-        "it the full period -- must die at the control's trivial-stabilizer "
-        "gate (kills the control)",
-    "MUT-DIVPRED":
-        "swaps the source-forced division predicate from the arbitration "
-        "tag to the delivery tag -- must die at the marking gates",
-    "MUT-GEOM-VARIES":
-        "drops the widest division event from the restricted population, so "
-        "the chart-width row VARIES -- must die at the width-invariance "
-        "gate, DEMONSTRATING that the pin's VARIES path is emittable",
-    "MUT-NOT-FORCED":
-        "withholds one round's row arbitration from DOUBLE-GRID(3,2), "
-        "leaving a refused record -- must die at that crystal's FORCED gate "
-        "(and, downstream of it, at the v10 committed-number anchors that "
-        "bind the record)",
-    "MUT-HEIGHT-IMPURE":
-        "reports a non-division event as sharing a division height layer -- "
-        "must die at that crystal's height-purity gate",
-    "MUT-SITEMAP":
-        "transposes two actors in the site map -- must die at the site-map "
-        "bijection gate",
-    "MUT-ARMB-COMPLETES":
-        "reports the renewal-only sub-grammar rerun as completing -- must "
-        "die at that crystal's arm-(b) gate",
-    "MUT-HEAD":
-        "corrupts one cell of the head's stabilizer table -- must die at "
-        "the complete-string head equality gate",
-    "MUT-ANCHOR":
-        "corrupts a committed v10 number -- must die at the anchor stage",
-    "MUT-VERBATIM":
-        "corrupts a verbatim source quote -- must die at the verbatim "
-        "anchor stage",
-    "MUT-DIAGONAL":
-        "plants a diagonal co-division link count -- must die at that "
-        "crystal's inherited-diagonal gate",
+    "MUT-APERIODIC-DIVISION": {
+        "what": "plants one extra division at a single site of "
+                "DOUBLE-GRID(3,2), destroying the field's periodicity "
+                "(kills the crystal claim)",
+        "target": "G-STAB[DOUBLE-GRID(3,2)|initiator]"},
+    "MUT-CONTROL-PERIODIC": {
+        "what": "plants a constant division field on the delivery control, "
+                "giving it the full period (kills the control)",
+        "target": "G-STAB[D60-GRID(3,12)|initiator]"},
+    "MUT-DIVPRED": {
+        "what": "swaps the source-forced division predicate from the "
+                "arbitration tag to the delivery tag",
+        "target": "G-MARK-TAG[DOUBLE-GRID(3,2)]"},
+    "MUT-GEOM-VARIES": {
+        "what": "drops the widest division event from the restricted "
+                "population, so the chart-width row VARIES and the SEGMENT "
+                "VERDICT ITSELF becomes GEOMETRY-VARIES-<witness> -- the "
+                "pin's R4.2 falsifier path, demonstrated at segment level",
+        "target": "G-GEOM-POP-WIDTH[DOUBLE-GRID(3,2)|d=2]"},
+    "MUT-NOT-FORCED": {
+        "what": "withholds one round's row arbitration from "
+                "DOUBLE-GRID(3,2), leaving a REFUSED record (and, downstream, "
+                "the v10 committed-number anchors that bind the record)",
+        "target": "G-FORCED[DOUBLE-GRID(3,2)]"},
+    "MUT-MAXHITS": {
+        "what": "reports DOUBLE-GRID(3,3)'s record as tie-broken "
+                "(maxhits = 2) with no refusal -- the OTHER conjunct of the "
+                "FORCED gate, which MUT-NOT-FORCED never reaches",
+        "target": "G-FORCED[DOUBLE-GRID(3,3)]"},
+    "MUT-HEIGHT-IMPURE": {
+        "what": "reports a non-division event as sharing a division height "
+                "layer",
+        "target": "G-GEOM-HEIGHTPURE[DOUBLE-GRID(3,2)]"},
+    "MUT-SITEMAP": {
+        "what": "TRANSPOSES two actors in the site map (a bijection, so the "
+                "site-map gate cannot see it): the field moves at the two "
+                "CONFLICT-GRIDs, where the transposed sites carry unequal "
+                "counts, and at neither DOUBLE-GRID nor the control",
+        "target": "G-STAB[CONFLICT-GRID(3,2)|initiator]"},
+    "MUT-SITEMAP-COLLAPSE": {
+        "what": "COLLAPSES two actors onto one site, so the actor map is no "
+                "longer injective",
+        "target": "G-SITEMAP[DOUBLE-GRID(3,2)]"},
+    "MUT-ARMB-COMPLETES": {
+        "what": "reports the renewal-only sub-grammar rerun as completing",
+        "target": "G-GEOM-ARMB-RENEWAL[DOUBLE-GRID(3,2)]"},
+    "MUT-HEAD": {
+        "what": "corrupts one cell of the head's stabilizer table",
+        "target": "G-HEAD-EQUALITY"},
+    "MUT-ANCHOR": {
+        "what": "corrupts a committed v10 number so that it no longer "
+                "matches the value read off the v10 line it cites",
+        "target": "ANCHOR-STAGE"},
+    "MUT-VERBATIM": {
+        "what": "corrupts a verbatim source quote",
+        "target": "ANCHOR-STAGE"},
+    "MUT-VERBATIM-TRUNCATED": {
+        "what": "truncates a verbatim quote to a single character, which "
+                "still occurs in the source -- must die at the #62 length "
+                "floor, not at the containment test",
+        "target": "G-VERBATIM-FLOOR"},
+    "MUT-DIAGONAL": {
+        "what": "plants a diagonal co-division link count",
+        "target": "G-BRIDGE-DIAG[DOUBLE-GRID(3,2)]"},
+    "MUT-STAB-RECON": {
+        "what": "perturbs the FOURIER route's answer at one cell and leaves "
+                "the direct route untouched, so the published table and the "
+                "head stay truthful and only the two-route agreement moves",
+        "target": "G-STAB-RECON[CONFLICT-GRID(3,2)|footprint]"},
+    "MUT-AFFINE": {
+        "what": "shifts one site of a crystal's seed set, so the division "
+                "field is no longer affine in the constructor's own seed "
+                "indicator",
+        "target": "G-AFFINE[CONFLICT-GRID(3,4)|initiator]"},
+    "MUT-I7-DET": {
+        "what": "plants a nonzero induced determinant at one site of "
+                "DOUBLE-GRID(3,3) read on I7's coordinates",
+        "target": "G-I7-INDUCED[DOUBLE-GRID(3,3)]"},
+    "MUT-WALL-L1-WRAPPED": {
+        "what": "reproduces the RETRACTED sentence in the paper's own house "
+                "wrapping -- the form a real author would write, and the "
+                "form the pre-repair contiguous-substring scan passed",
+        "target": "G-WALL-L1"},
+    "MUT-PROSE-POLARITY": {
+        "what": "inverts a gate's STATEMENT to the opposite claim while "
+                "leaving its boolean and its evidence untouched",
+        "target": "G-PROSE-POLARITY"},
+    "MUT-SEAM-OUTPUT-LINE": {
+        "what": "SEAM: rewrites a published [DATA] line of the output after "
+                "its gate has fired",
+        "target": "G-SEAL-INTEGRITY"},
+    "MUT-SEAM-GATE-ROW": {
+        "what": "SEAM: rewrites a published gate row's statement and "
+                "evidence after the gate has fired",
+        "target": "G-SEAL-INTEGRITY"},
+    "MUT-SEAM-GATE-FLAG": {
+        "what": "SEAM: publishes a demonstrably false gate row as PASSED "
+                "(the instrument-level control: gate-flag forgery)",
+        "target": "G-SEAL-INTEGRITY"},
+    "MUT-SEAM-PAYLOAD": {
+        "what": "SEAM: rewrites a published payload row (an arena count) "
+                "after its gate has fired",
+        "target": "G-SEAL-INTEGRITY"},
+    "MUT-SEAM-ROW-SWAP": {
+        "what": "SEAM: ships the CONTROL's stabilizer row under a "
+                "CONFLICT-GRID label",
+        "target": "G-SEAL-INTEGRITY"},
+    "MUT-SEAM-TABLE-CELL": {
+        "what": "SEAM: flips a published stabilizer_table cell away from "
+                "its own gate's evidence",
+        "target": "G-SEAL-INTEGRITY"},
 }
+SEAM_MUTANTS = [k for k in MUTANTS if k.startswith("MUT-SEAM-")]
+
+
+def _canon(o) -> str:
+    """The canonical serialization a seal digests.  It is the SAME text on
+    both sides of the seal: `json.dumps(..., default=str)` renders a
+    Fraction as the string the receipt itself carries, so re-canonicalising
+    a row read back from the receipt reproduces the gate-time bytes."""
+    return json.dumps(o, sort_keys=True, default=str, separators=(",", ":"))
+
+
+def _digest(o) -> str:
+    return sha256_of(_canon(o).encode("utf-8"))
+
+
+def seal_row(kind: str, row: dict) -> None:
+    """#119: digest the row AT CREATION and keep the sealed copy that will
+    be written.  The live row stays available to the program; only the
+    sealed copy is published."""
+    SEALS[kind].append(_digest(row))
+    SEALED[kind].append(copy.deepcopy(row))
+
+
+def seal_payload(key: str, value) -> None:
+    """Seal a payload row at the moment its gates have fired."""
+    PAYLOAD[key] = value
+    PAYLOAD_SEALS[key] = _digest(value)
+    SEALED_PAYLOAD[key] = copy.deepcopy(value)
+
+
+def out_text(lines) -> str:
+    """The exact text the emitted lines render to."""
+    return "".join(s + "\n" for s in lines)
+
+
+def norm_ws(s: str) -> str:
+    """#62 / RUNBOOK 14: a text gate matches text AS WRITTEN.  Both the
+    needle and the haystack are whitespace-normalised, so a sentence that
+    is line-wrapped in a markdown file is the same sentence."""
+    return re.sub(r"\s+", " ", s)
 
 
 def emit(s: str = "") -> None:
+    """Every emitted line is folded into the OUTPUT SEAL as it is emitted,
+    so the bytes that reach disk are bound to the moment they were
+    produced -- not to whatever the line list holds at render time."""
     LINES.append(s)
+    SEALED_LINES.append(s)
+    OUT_H.update((s + "\n").encode("utf-8"))
 
 
 def mutate(name, normal, corrupted):
@@ -166,18 +316,36 @@ def dec2(fr: Fr) -> str:
     return f"{q // 100}.{q % 100:02d}"
 
 
-def gate(name, statement, ok, evidence, waiver=None):
-    """A gate whose STATEMENT carries the measured verdict."""
+def gate(name, statement, ok, evidence, waiver=None, kind="MEASURED",
+         polarity=None):
+    """A gate whose STATEMENT carries the measured verdict.
+
+    `kind` is "MEASURED" when the verdict argument is a measurement and
+    "DECLARED" when the gate carries a declaration (#34: declarations are
+    labelled and counted OUT of the falsifiable denominator, never printed
+    as if they were measurements).  `polarity` = (required, banned) binds
+    the STATEMENT's own words to the boolean (#20): a statement that says
+    the opposite of what its number says is a violation, and
+    G-PROSE-POLARITY carries the count."""
     global FAILED
     ok = bool(ok)
     if not ok:
         FAILED += 1
-    GATES.append({"gate": name, "statement": statement, "passed": ok,
-                  "evidence": evidence,
-                  "waiver": waiver["reason"] if waiver else None})
+    if polarity is not None:
+        req, ban = polarity
+        good = (norm_ws(req) in norm_ws(statement)
+                and norm_ws(ban) not in norm_ws(statement))
+        POLARITY_CHECKS.append({"gate": name, "required": req, "banned": ban,
+                                "bound": good})
+    row = {"gate": name, "statement": statement, "passed": ok, "kind": kind,
+           "evidence": evidence, "waiver": waiver["reason"] if waiver else None}
+    GATES.append(row)
+    seal_row("gates", row)
     if waiver:
-        WAIVERS.append({"gate": name, "class": waiver["class"],
-                        "reason": waiver["reason"]})
+        wrow = {"gate": name, "class": waiver["class"],
+                "reason": waiver["reason"]}
+        WAIVERS.append(wrow)
+        seal_row("waivers", wrow)
     ev = json.dumps(evidence, sort_keys=True, default=str)
     emit(f"  [{'PASS' if ok else 'FAIL'}] {name}")
     emit(f"         {statement}")
@@ -187,31 +355,71 @@ def gate(name, statement, ok, evidence, waiver=None):
     return ok
 
 
-def anchor(aid, quantity, committed, computed, source):
-    """A committed number that must reproduce.  Failure => exit 1."""
+# --- the committed-number anchors, READ from the pinned v10 outputs -------
+
+OUTFILES = {"d60 out": "v10/data/d60_crystal_exact.out",
+            "d66 out": "v10/data/d66_arbitration_crystal_exact.out"}
+
+
+def cited_line(source):
+    """Resolve a citation of the form 'd66 out L64' to the TEXT OF LINE 64
+    of the pinned v10 output.  The citation is the one already carried in
+    the anchor table; nothing else is trusted."""
+    m = re.match(r"^(d\d\d out) L(\d+)$", source.strip())
+    if not m or m.group(1) not in OUTFILES:
+        return None, None
+    path = OUTFILES[m.group(1)]
+    if path not in SOURCES:
+        return path, None
+    lines = SOURCES[path].split("\n")
+    n = int(m.group(2))
+    return path, (lines[n - 1] if 0 < n <= len(lines) else None)
+
+
+def anchor(aid, quantity, typed, computed, source, key):
+    """A COMMITTED number that must reproduce.  The committed side is not a
+    typed literal: it is EXTRACTED at run time from the v10 output line the
+    citation names, by a context-keyed regex, and the extraction is what
+    the computed value is compared against.  The typed rendering survives
+    only as a third check (typed == extracted).  Failure => exit 1."""
     global ANCHOR_FAIL
-    ok = (committed == computed)
+    path, line = cited_line(source)
+    m = re.search(key, line) if line is not None else None
+    extracted = m.group(1) if m else None
+    ok = (extracted is not None and extracted == str(computed)
+          and extracted == str(typed))
     if not ok:
         ANCHOR_FAIL += 1
-    ANCHORS.append({"id": aid, "quantity": quantity,
-                    "committed": str(committed), "computed": str(computed),
-                    "passed": ok, "source": source})
+    row = {"id": aid, "quantity": quantity, "source": source,
+           "source_path": path, "key": key, "extracted": extracted,
+           "typed": str(typed), "computed": str(computed), "passed": ok}
+    ANCHORS.append(row)
+    seal_row("anchors", row)
     emit(f"  [{'ANCH' if ok else 'ANCH-FAIL'}] {aid}  {quantity}: "
-         f"committed={committed} computed={computed}")
+         f"read {extracted} from {source} == computed {computed}")
     return ok
 
 
-def vanchor(vid, path, quote, consumer):
-    """#62: a verbatim source string, bound to the gate that consumes it."""
+def vanchor(vid, path, quote, consumer, norm=False):
+    """#62: a verbatim source string, bound to the gate that consumes it.
+    `norm` compares under whitespace normalisation, so a quote that the
+    source line-wraps is still located AS WRITTEN.  The length floor and
+    the uniqueness of the located quote are gated at G-VERBATIM-FLOOR."""
     global ANCHOR_FAIL
     txt = SOURCES[path]
-    ok = quote in txt
+    hay, ndl = (norm_ws(txt), norm_ws(quote)) if norm else (txt, quote)
+    hits = hay.count(ndl)
+    ok = hits > 0
     if not ok:
         ANCHOR_FAIL += 1
-    VANCHORS.append({"id": vid, "path": path, "quote": quote,
-                     "found": ok, "consumer": consumer})
+    row = {"id": vid, "path": path, "quote": quote, "found": ok,
+           "occurrences": hits, "chars": len(quote),
+           "normalised": bool(norm), "consumer": consumer}
+    VANCHORS.append(row)
+    seal_row("verbatim", row)
     emit(f"  [{'VERB' if ok else 'VERB-FAIL'}] {vid}  {path}  "
-         f"-> consumer {consumer}")
+         f"-> consumer {consumer}  ({len(quote)} chars, {hits} occurrence"
+         f"{'' if hits == 1 else 's'})")
     emit(f"         \"{quote[:96]}{'...' if len(quote) > 96 else ''}\"")
     return ok
 
@@ -827,8 +1035,15 @@ def site_map(b):
     for a in sorted(b.actors):
         out[a] = (int(a[1]), int(a[2]))
     if MUTANT == "MUT-SITEMAP":
+        # the TRANSPOSITION the registry advertises: still a bijection, so
+        # G-SITEMAP cannot see it -- it moves the FIELD instead.
         ks = sorted(out)
-        out[ks[0]], out[ks[1]] = out[ks[1]], out[ks[1]]
+        out[ks[0]], out[ks[1]] = out[ks[1]], out[ks[0]]
+    if MUTANT == "MUT-SITEMAP-COLLAPSE":
+        # the collapse: two actors onto one site, so the map is not
+        # injective and the bijection gate fires.
+        ks = sorted(out)
+        out[ks[0]] = out[ks[1]]
     return out
 
 
@@ -852,6 +1067,36 @@ def division_field(b, reading, name=None):
     if MUTANT == "MUT-CONTROL-PERIODIC" and name == CTRL:
         f = {x: 1 for x in SITES}
     return f
+
+
+def seed_sites(nm):
+    """THE CONSTRUCTOR'S OWN SEED SET, re-derived from the seed rule in the
+    committed constructor and NOT read off the measured field.  d66 seats
+    `double_grid`'s row groups at ac[i][i] and its column groups at
+    ac[(j+2)%g][j]; it seats `conflict_grid` at ac[i][i] in both parities;
+    d60's control mints and arbitrates at GRID[0] alone."""
+    g = L
+    if nm.startswith("DOUBLE-GRID"):
+        S = {(i, i) for i in range(g)} | {((j + 2) % g, j) for j in range(g)}
+    elif nm.startswith("CONFLICT-GRID"):
+        S = {(i, i) for i in range(g)}
+    else:
+        S = {(0, 0)}
+    if MUTANT == "MUT-AFFINE" and nm == "CONFLICT-GRID(3,4)":
+        S = (S - {(2, 2)}) | {(2, 1)}
+    return sorted(S)
+
+
+def affine_fit(f, S):
+    """Is the field AFFINE in the indicator of the seed set --
+    n = c + m*1_S ?  Returns (c, m) or None.  Exact integers."""
+    Sset = set(S)
+    on = {f[x] for x in SITES if x in Sset}
+    off = {f[x] for x in SITES if x not in Sset}
+    if len(on) != 1 or len(off) > 1:
+        return None
+    c = next(iter(off)) if off else 0
+    return (c, next(iter(on)) - c)
 
 
 def stabilizer(f):
@@ -1003,10 +1248,28 @@ PINNED = [
      "D60's committed output"),
     ("v10/data/d66_arbitration_crystal_exact.out", "e252529d2586",
      "D66's committed output"),
+    ("v14/paper-13-weld2-carrier-census.md", "9cdb10472953",
+     "weld 2 (I7's arena, read as data: sites, links, readout)"),
+    ("v14/note-u4-adjudication.md", "fa991e19ae54",
+     "the U4 adjudication (the head's qualifier; the repair orders)"),
 ]
 
-BANNED = ("precisely the form U4 tests, and precisely the form the "
-          "corpus's strongest relativity result took")
+# --- the L-1 wall's banned needles (RUNBOOK 14: text gates match text AS
+#     WRITTEN).  Each needle is assembled from fragments so that the wall's
+#     own definition does not self-trigger under whitespace normalisation,
+#     and each is #62-anchored (V15/V16) against the pinned v11 paper 0
+#     erratum that carries the retracted sentence -- wrapped, as prose is.
+_BF = "precisely the form U4 " + "tests"
+BANNED_NEEDLES = [
+    _BF + ", and precisely the form the corpus's strongest relativity "
+          "result took",
+    _BF,
+]
+# the retracted sentence as a real author would write it: wrapped at the
+# paper's own ~72 characters.  MUT-WALL-L1-WRAPPED injects exactly this.
+WRAP_INJECTION = ("untested and is registered for a successor.  The weaker "
+                  "form is\n" + _BF + ", and precisely the form the "
+                  "corpus's\nstrongest relativity result took.\n")
 
 
 def run_provenance():
@@ -1023,7 +1286,7 @@ def run_provenance():
              f"the pinned source is present and its sha256-12 is {want} "
              f"(measured {got}) -- {what}",
              bool(ok), {"path": path, "want": want, "got": got})
-    PAYLOAD["provenance"] = rows
+    seal_payload("provenance", rows)
     gate("G-PROV-ROOT",
          f"ALL {len(PINNED)} pinned sources resolve under the repo root "
          f"derived from this file's own location and every one reproduces "
@@ -1046,6 +1309,7 @@ def run_verbatim():
     D74 = "v10/code/d74_transport_holonomy_exact.py"
     D60 = "v10/code/d60_crystal_exact.py"
     PIN = "v14/note-u4-pin.md"
+    P13 = "v14/paper-13-weld2-carrier-census.md"
     q = [
         ("V01", P0, "U4 — SPARSE RECORDS ON THE CRYSTALS.**  The conflict "
          "crystals\n  rebuilt with renewal-only records", "G-ARENA-SCOPE"),
@@ -1086,8 +1350,38 @@ def run_verbatim():
     for vid, path, quote, cons in q:
         if MUTANT == "MUT-VERBATIM" and vid == "V03":
             quote = quote.replace("== 0", "== 1")
+        if MUTANT == "MUT-VERBATIM-TRUNCATED" and vid == "V03":
+            quote = quote[:1]
         ok = vanchor(vid, path, quote, cons) and ok
-    PAYLOAD["verbatim_anchors"] = len(q)
+    # the L-1 needles themselves, bound to the source that carries the
+    # retracted sentence -- WRAPPED, which is why these two are matched
+    # under the same whitespace normalisation the wall gate uses.
+    nq = [("V15", P0, BANNED_NEEDLES[0], "G-WALL-L1"),
+          ("V16", P0, BANNED_NEEDLES[1], "G-WALL-L1"),
+          ("V17", P13, "links | $\\mathcal L = \\{(1,0),\\,(0,1),\\,(1,1)\\}$",
+           "G-I7-INDUCED[DOUBLE-GRID(3,2)]"),
+          ("V18", P13, "$q_{11}=n_{e_1}$,\n$q_{22}=n_{e_2}$, "
+           "$q_{12}=(n_{e_1+e_2}-n_{e_1}-n_{e_2})/2$",
+           "G-I7-INDUCED[DOUBLE-GRID(3,2)]")]
+    for vid, path, quote, cons in nq:
+        ok = vanchor(vid, path, quote, cons, norm=True) and ok
+    short = min(len(v["quote"]) for v in VANCHORS)
+    multi = [v["id"] for v in VANCHORS if v["occurrences"] != 1]
+    reg(len(VANCHORS), short)
+    gate("G-VERBATIM-FLOOR",
+         f"#62 WITH A FLOOR.  A containment test with no floor is not an "
+         f"anchor: a single character occurs in every source.  All "
+         f"{len(VANCHORS)} verbatim anchors are gated for LENGTH (shortest "
+         f"{short} characters, floor {VERBATIM_FLOOR}) and their occurrence "
+         f"counts are gated: {len(multi)} quote(s) occur other than exactly "
+         f"once in their source, and every one of the "
+         f"{len(VANCHORS)} is bound by name to the gate that consumes it",
+         short >= VERBATIM_FLOOR and multi == []
+         and len(VANCHORS) == len(q) + len(nq),
+         {"anchors": len(VANCHORS), "shortest": short,
+          "floor": VERBATIM_FLOOR, "non_unique": multi,
+          "occurrences": {v["id"]: v["occurrences"] for v in VANCHORS}})
+    seal_payload("verbatim_anchors", len(VANCHORS))
     return ok
 
 
@@ -1110,19 +1404,25 @@ def main_run():
     emit("=" * 78)
     emit("SEC 3  THE RENEWAL MARKING -- re-derived, gated against the source")
     emit("=" * 78)
-    gate("G-MARK-POSIT",
-         "v11 paper 0 4's [POSIT] (V02) is carried verbatim and is this "
-         "unit's ONLY identification of division with renewal: idles and "
-         "deliveries remain grammar events and are not records, so the "
-         "renewal-only record is the record of arbitrations",
-         True, {"posit": "division events ARE the renewal events"},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "a pinned axiom of the parent paper, quoted not "
-                           "derived; its consequences are what SEC 3 gates"})
-
     built = {}
     for nm, kind, fn in CRYSTALS:
         built[nm] = fn()
+
+    kin = sum(1 for b in built.values() for e in b.H
+              if e[0] in ('d', 'n') and is_division(e))
+    marked_any = all(any(is_division(e) for e in b.H) for b in built.values())
+    reg(kin)
+    gate("G-MARK-POSIT",
+         f"v11 paper 0 4's [POSIT] (V02) is carried verbatim and is this "
+         f"unit's ONLY identification of division with renewal: idles and "
+         f"deliveries remain grammar events and are not records, so the "
+         f"renewal-only record is the record of arbitrations.  MEASURED "
+         f"CONSEQUENCE, not declared: across all five records {kin} "
+         f"kinematic events (deliveries and idles) are marked, and every "
+         f"record carries at least one marked event ({marked_any})",
+         kin == 0 and marked_any,
+         {"posit": "division events ARE the renewal events",
+          "kinematic_events_marked": kin, "every_record_marked": marked_any})
 
     mark_rows = []
     for nm, kind, _fn in CRYSTALS:
@@ -1177,7 +1477,7 @@ def main_run():
                           "renewal_to_root": ok,
                           "ckey_sizes": sorted(cks.items()),
                           "pair_arbitrations": pairs})
-    PAYLOAD["marking"] = mark_rows
+    seal_payload("marking", mark_rows)
     tot_pairs = sum(r["pair_arbitrations"] for r in mark_rows)
     tot_marked = sum(r["marked"] for r in mark_rows)
     reg(tot_pairs, tot_marked)
@@ -1209,15 +1509,19 @@ def main_run():
          f"ARBITRATION crystals {ARB} plus the DECLARED COUNTEREXAMPLE "
          f"CONTROL {CTRL}; the question they answer is V01, quoted verbatim",
          len(ARB) == 4, {"arbitration": ARB, "control": CTRL})
+    ctrl_named = norm_ws(f"crystal {CTRL} is the DECLARED COUNTEREXAMPLE "
+                         f"CONTROL") in norm_ws(SOURCES["v14/note-u4-pin.md"])
     gate("G-CONTROL-DECLARED",
          f"{CTRL} is the pin's DECLARED COUNTEREXAMPLE CONTROL (V14): every "
          f"periodicity claim below must return its OTHER value there, and "
-         f"each two-way pair is gated per reading, never in aggregate",
-         True, {"control": CTRL},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "the two-way requirement is declared here and "
-                           "discharged by the per-reading control gates in "
-                           "SEC 5 and the width gate in SEC 6"})
+         f"each two-way pair is gated per reading, never in aggregate.  "
+         f"MEASURED: the pin names this crystal in those words "
+         f"({ctrl_named}), it is the one crystal of the {len(CRYSTALS)} "
+         f"declared CONTROL, and it is absent from the {len(ARB)} "
+         f"arbitration crystals the claims are read on",
+         ctrl_named and CTRL not in ARB and len(CRYSTALS) == len(ARB) + 1,
+         {"control": CTRL, "named_in_pin": ctrl_named,
+          "arbitration": len(ARB), "crystals": len(CRYSTALS)})
 
     arena_rows = []
     for nm, kind, _fn in CRYSTALS:
@@ -1227,15 +1531,19 @@ def main_run():
             built[nm] = b
         n = len(b.H)
         reg(n)
+        mh = b.maxhits
+        if MUTANT == "MUT-MAXHITS" and nm == "DOUBLE-GRID(3,3)":
+            mh = b.maxhits + 1
         gate(f"G-FORCED[{nm}]",
              f"this crystal is a FORCED record: {n} events, every one "
              f"offered by the committed layer's own menu and specified by "
              f"its FULL EVENT TUPLE, matched by EXACTLY ONE candidate "
-             f"(maxhits = {b.maxhits}), refusal = {b.refusal} -- D60's C1/C2 "
+             f"(maxhits = {mh}), refusal = {b.refusal} -- D60's C1/C2 "
              f"and D66/D67's _pick discipline, reproduced",
-             b.refusal is None and b.maxhits == 1,
-             {"crystal": nm, "events": n, "maxhits": b.maxhits,
-              "refusal": b.refusal})
+             b.refusal is None and mh == 1,
+             {"crystal": nm, "events": n, "maxhits": mh,
+              "refusal": b.refusal},
+             polarity=("is a FORCED record", "is a REFUSED record"))
         S = site_map(b)
         img = sorted(set(S.values()))
         gate(f"G-SITEMAP[{nm}]",
@@ -1249,7 +1557,7 @@ def main_run():
                            "maxhits": b.maxhits, "refusal": b.refusal,
                            "divisions": sum(1 for e in b.H
                                             if is_division(e))})
-    PAYLOAD["arena"] = arena_rows
+    seal_payload("arena", arena_rows)
 
     # the v10 cross-check: committed rows, and a gated event-count law
     emit("")
@@ -1258,57 +1566,89 @@ def main_run():
     for nm, _k, _f in CRYSTALS:
         prof_full[nm] = profile(poset_of(built[nm].H))
     dgm = mutate("MUT-ANCHOR", 9, 8)
-    for aid, nm, d, key, comm, src in [
-            ("A01", CTRL, 2, "h2", Fr(1, 2), "d60 out L18"),
-            ("A02", CTRL, 2, "h4", Fr(0), "d60 out L18"),
-            ("A03", CTRL, 2, "max", 3, "d60 out L18"),
-            ("A04", CTRL, 2, "pairs", 43, "d60 out L18"),
-            ("A05", CTRL, 2, "om", Fr(101, 258), "d60 out L18"),
-            ("A06", CTRL, 3, "h2", Fr(14, 23), "d60 out L19"),
-            ("A07", CTRL, 3, "h4", Fr(0), "d60 out L19"),
-            ("A08", CTRL, 3, "max", 3, "d60 out L19"),
-            ("A09", CTRL, 3, "pairs", 51, "d60 out L19"),
-            ("A10", CTRL, 3, "om", Fr(73, 153), "d60 out L19"),
-            ("A11", "DOUBLE-GRID(3,2)", 2, "max", dgm, "d66 out L227"),
-            ("A12", "DOUBLE-GRID(3,2)", 3, "max", 9, "d66 out L227"),
-            ("A13", "CONFLICT-GRID(3,4)", 2, "max", 6, "d66 out L223"),
-            ("A14", "CONFLICT-GRID(3,4)", 3, "max", 6, "d66 out L223")]:
-        anchor(aid, f"{nm} d={d} {key}", comm, prof_full[nm][d][key], src)
+    K_H2A = r"\|D\|>=2: (\S+) "
+    K_H4A = r"\|D\|>=4: (\S+) "
+    K_MAXA = r"max\|D\|=(\d+)"
+    K_MEANA = r"mean\|D\|=([\d.]+)"
+    K_PAIRS = r"pairs=(\d+)"
+    K_OMA = r"mean omega=(\S+) "
+    K_N = r"n=\s+(\d+)"
+    K_HOMOG = r"homog ([\d.]+)"
+    K_H4B = r"\|D\|>=4 ([\d.]+)"
+    K_OMB = r"omega ([\d.]+)"
+    K_MEANB = r"mean\|D\| ([\d.]+)"
+    K_HOMOG3 = r"d=3: homog ([\d.]+)"
+    K_H4B3 = r"d=3: homog [\d.]+\[below\] \|D\|>=4 ([\d.]+)"
+    K_OMB3 = r"d=3:.*omega ([\d.]+)"
+    K_D2 = r"d2=(\d+)"
+    K_D3 = r"d3=(\d+)"
+    K_VREG = r"version registers (\d+)"
+    K_SHARE = r"arb share (\S+) "
+    K_EVENTS = r"events = (\d+)"
+    for aid, nm, d, key, typed, src, rx in [
+            ("A01", CTRL, 2, "h2", Fr(1, 2), "d60 out L18", K_H2A),
+            ("A02", CTRL, 2, "h4", Fr(0), "d60 out L18", K_H4A),
+            ("A03", CTRL, 2, "max", 3, "d60 out L18", K_MAXA),
+            ("A04", CTRL, 2, "pairs", 43, "d60 out L18", K_PAIRS),
+            ("A05", CTRL, 2, "om", Fr(101, 258), "d60 out L18", K_OMA),
+            ("A06", CTRL, 3, "h2", Fr(14, 23), "d60 out L19", K_H2A),
+            ("A07", CTRL, 3, "h4", Fr(0), "d60 out L19", K_H4A),
+            ("A08", CTRL, 3, "max", 3, "d60 out L19", K_MAXA),
+            ("A09", CTRL, 3, "pairs", 51, "d60 out L19", K_PAIRS),
+            ("A10", CTRL, 3, "om", Fr(73, 153), "d60 out L19", K_OMA),
+            ("A11", "DOUBLE-GRID(3,2)", 2, "max", dgm, "d66 out L227", K_D2),
+            ("A12", "DOUBLE-GRID(3,2)", 3, "max", 9, "d66 out L227", K_D3),
+            ("A13", "CONFLICT-GRID(3,4)", 2, "max", 6, "d66 out L223", K_D2),
+            ("A14", "CONFLICT-GRID(3,4)", 3, "max", 6, "d66 out L223", K_D3)]:
+        anchor(aid, f"{nm} d={d} {key}", typed, prof_full[nm][d][key], src, rx)
         reg(prof_full[nm][d][key])
-    for aid, nm, d, key, comm, src in [
-            ("A15", "DOUBLE-GRID(3,2)", 2, "h2", "0.4444", "d66 out L64"),
-            ("A16", "DOUBLE-GRID(3,2)", 2, "h4", "0.0694", "d66 out L64"),
-            ("A17", "DOUBLE-GRID(3,2)", 2, "om", "0.5576", "d66 out L64"),
-            ("A18", "DOUBLE-GRID(3,2)", 3, "h2", "0.6389", "d66 out L135"),
-            ("A19", "DOUBLE-GRID(3,2)", 3, "h4", "0.2083", "d66 out L135"),
-            ("A20", "DOUBLE-GRID(3,2)", 3, "om", "0.5710", "d66 out L135"),
-            ("A21", "CONFLICT-GRID(3,4)", 2, "h2", "0.4848", "d66 out L60"),
-            ("A22", "CONFLICT-GRID(3,4)", 2, "h4", "0.1364", "d66 out L60"),
-            ("A23", "CONFLICT-GRID(3,4)", 2, "om", "0.5068", "d66 out L60"),
-            ("A24", "CONFLICT-GRID(3,4)", 3, "h2", "0.5758", "d66 out L131"),
-            ("A25", "CONFLICT-GRID(3,4)", 3, "h4", "0.4545", "d66 out L131"),
-            ("A26", "CONFLICT-GRID(3,4)", 3, "om", "0.5833", "d66 out L131")]:
-        anchor(aid, f"{nm} d={d} {key} (4-decimal rendering)", comm,
-               dec4(prof_full[nm][d][key]), src)
-    for aid, nm, comm, src in [
+    for aid, nm, d, key, typed, src, rx in [
+            ("A15", "DOUBLE-GRID(3,2)", 2, "h2", "0.4444", "d66 out L64",
+             K_HOMOG),
+            ("A16", "DOUBLE-GRID(3,2)", 2, "h4", "0.0694", "d66 out L64",
+             K_H4B),
+            ("A17", "DOUBLE-GRID(3,2)", 2, "om", "0.5576", "d66 out L64",
+             K_OMB),
+            ("A18", "DOUBLE-GRID(3,2)", 3, "h2", "0.6389", "d66 out L135",
+             K_HOMOG3),
+            ("A19", "DOUBLE-GRID(3,2)", 3, "h4", "0.2083", "d66 out L135",
+             K_H4B3),
+            ("A20", "DOUBLE-GRID(3,2)", 3, "om", "0.5710", "d66 out L135",
+             K_OMB3),
+            ("A21", "CONFLICT-GRID(3,4)", 2, "h2", "0.4848", "d66 out L60",
+             K_HOMOG),
+            ("A22", "CONFLICT-GRID(3,4)", 2, "h4", "0.1364", "d66 out L60",
+             K_H4B),
+            ("A23", "CONFLICT-GRID(3,4)", 2, "om", "0.5068", "d66 out L60",
+             K_OMB),
+            ("A24", "CONFLICT-GRID(3,4)", 3, "h2", "0.5758", "d66 out L131",
+             K_HOMOG3),
+            ("A25", "CONFLICT-GRID(3,4)", 3, "h4", "0.4545", "d66 out L131",
+             K_H4B3),
+            ("A26", "CONFLICT-GRID(3,4)", 3, "om", "0.5833", "d66 out L131",
+             K_OMB3)]:
+        anchor(aid, f"{nm} d={d} {key} (4-decimal rendering)", typed,
+               dec4(prof_full[nm][d][key]), src, rx)
+    for aid, nm, typed, src in [
             ("A27", CTRL, 46, "d60 out L17"),
             ("A28", "DOUBLE-GRID(3,2)", 72, "d66 out L64"),
             ("A29", "CONFLICT-GRID(3,4)", 66, "d66 out L60")]:
-        anchor(aid, f"{nm} events", comm, len(built[nm].H), src)
+        anchor(aid, f"{nm} events", typed, len(built[nm].H), src,
+               K_EVENTS if src.startswith("d60") else K_N)
     anchor("A30", "DOUBLE-GRID(3,2) arbitration share", Fr(1, 4),
            Fr(sum(1 for e in built["DOUBLE-GRID(3,2)"].H
                   if is_division(e)), len(built["DOUBLE-GRID(3,2)"].H)),
-           "d66 out L106")
+           "d66 out L106", K_SHARE)
     anchor("A31", "CONFLICT-GRID(3,4) arbitration share", Fr(2, 11),
            Fr(sum(1 for e in built["CONFLICT-GRID(3,4)"].H
                   if is_division(e)), len(built["CONFLICT-GRID(3,4)"].H)),
-           "d66 out L102")
+           "d66 out L102", K_SHARE)
     anchor("A32", "DOUBLE-GRID(3,2) version registers", 18,
            sum(1 for e in built["DOUBLE-GRID(3,2)"].H if is_division(e)),
-           "d66 out L227")
+           "d66 out L227", K_VREG)
     anchor("A33", "CONFLICT-GRID(3,4) version registers", 12,
            sum(1 for e in built["CONFLICT-GRID(3,4)"].H if is_division(e)),
-           "d66 out L223")
+           "d66 out L223", K_VREG)
 
     def dg_events(g, R):
         return 4 * g + 2 * g * (g - 1) + R * (2 * g * g + 2 * g)
@@ -1316,23 +1656,38 @@ def main_run():
     def cg_events(g, R):
         return g * (g + 1) + (R - 1) * (g * (g + 1) + 2 * g)
 
-    for aid, nm, d, comm, src in [
+    for aid, nm, d, typed, src in [
             ("A39", CTRL, 2, "1.46", "d60 out L18"),
             ("A40", CTRL, 3, "1.61", "d60 out L19"),
             ("A41", "DOUBLE-GRID(3,2)", 2, "1.96", "d66 out L64"),
             ("A42", "CONFLICT-GRID(3,4)", 2, "1.86", "d66 out L60")]:
-        anchor(aid, f"{nm} d={d} mean|D| (2-decimal rendering)", comm,
-               dec2(prof_full[nm][d]["mean"]), src)
+        anchor(aid, f"{nm} d={d} mean|D| (2-decimal rendering)", typed,
+               dec2(prof_full[nm][d]["mean"]), src,
+               K_MEANA if src.startswith("d60") else K_MEANB)
     anchor("A34", "DOUBLE-GRID event-count law at the committed R=2", 72,
-           dg_events(3, 2), "law, checked at d66's committed rows")
+           dg_events(3, 2), "d66 out L64", K_N)
     anchor("A35", "DOUBLE-GRID event-count law at the committed R=4", 120,
-           dg_events(3, 4), "d66 out L65")
+           dg_events(3, 4), "d66 out L65", K_N)
     anchor("A36", "CONFLICT-GRID event-count law at the committed R=4", 66,
-           cg_events(3, 4), "d66 out L60")
+           cg_events(3, 4), "d66 out L60", K_N)
     anchor("A37", "CONFLICT-GRID event-count law at the committed R=6", 102,
-           cg_events(3, 6), "d66 out L61")
+           cg_events(3, 6), "d66 out L61", K_N)
     anchor("A38", "CONFLICT-GRID event-count law at the committed R=10", 174,
-           cg_events(3, 10), "d66 out L62")
+           cg_events(3, 10), "d66 out L62", K_N)
+    n_read = sum(1 for a in ANCHORS if a["extracted"] is not None)
+    reg(len(ANCHORS), n_read)
+    gate("G-ANCHORS-READ",
+         f"THE COMMITTED SIDE IS READ, NOT TYPED (#91).  All "
+         f"{len(ANCHORS)} committed-number anchors take their committed "
+         f"value by a context-keyed regex from the line of the pinned v10 "
+         f"output the anchor itself cites -- {n_read} of {len(ANCHORS)} "
+         f"located -- and the extracted value, not the typed rendering, is "
+         f"what the computed value is compared against; the typed rendering "
+         f"survives only as a third check per row.  A transcription error "
+         f"on the committed side is therefore visible to this run",
+         n_read == len(ANCHORS) and len(ANCHORS) == 42,
+         {"anchors": len(ANCHORS), "located": n_read,
+          "sources": sorted(OUTFILES.values())})
     gate("G-V10-XCHECK-LAW",
          f"the two crystals the pin names that v10 never swept -- "
          f"DOUBLE-GRID(3,3) and CONFLICT-GRID(3,2) -- are cross-checked by a "
@@ -1355,17 +1710,21 @@ def main_run():
     emit("SEC 5  THE HEADLINE -- the division field's translation "
          "stabilizer on Z_3^2")
     emit("=" * 78)
-    stab_tab, stab_rows = {}, []
+    stab_tab, stab_rows, affine_rows, stab_elems = {}, [], [], {}
     for nm, kind, _f in CRYSTALS:
         b = built[nm]
         for rd in READINGS:
             f = division_field(b, rd, nm)
             S1 = stabilizer(f)
             S2 = stabilizer_by_characters(f)
+            if MUTANT == "MUT-STAB-RECON" and (nm, rd) == (
+                    "CONFLICT-GRID(3,2)", "footprint"):
+                S2 = [t for t in S2 if t in ((0, 0), (1, 1), (2, 2))]
             nmS = subgroup_name(S1)
             supp = sum(1 for x in SITES if f[x] > 0)
             vec = [f[x] for x in SITES]
             stab_tab[(nm, rd)] = nmS
+            stab_elems[(nm, rd)] = set(S1)
             reg(len(S1), supp, *vec)
             reg(f"{supp}/{len(SITES)}")
             stab_rows.append({"crystal": nm, "kind": kind, "reading": rd,
@@ -1388,14 +1747,22 @@ def main_run():
                     "form a crystal at this reading"),
                  (len(S1) == 1) if expect_triv else (len(S1) > 1),
                  {"crystal": nm, "reading": rd, "order": len(S1),
-                  "stabilizer": nmS, "support": supp, "field": vec})
+                  "stabilizer": nmS, "support": supp, "field": vec},
+                 polarity=(("do NOT form a crystal", "DO form a crystal")
+                           if expect_triv else
+                           ("DO form a crystal", "do NOT form a crystal")))
             gate(f"G-STAB-RECON[{nm}|{rd}]",
-                 f"the same stabilizer is re-derived by an INDEPENDENT "
-                 f"route sharing no code and no typed constant with the "
-                 f"first -- the annihilator of the support of the exact "
-                 f"Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), "
-                 f"running over the DUAL group instead of translating the "
-                 f"field -- and the two agree element for element: {nmS}",
+                 f"THE SAME FIELD BY TWO ALGORITHMS: the stabilizer is "
+                 f"re-derived as the annihilator of the support of the "
+                 f"exact Z_3^2 Fourier transform in Z[omega] = "
+                 f"Z[t]/(t^2+t+1), running over the DUAL group instead of "
+                 f"translating the field, and the two agree element for "
+                 f"element: {nmS}.  This is an ALGORITHM cross-check, not a "
+                 f"data cross-check -- both routes consume the same field "
+                 f"and the same naming function; the field-level "
+                 f"independence is delivered one gate later, by "
+                 f"G-HEAD-EQUALITY, whose reconstruction rebuilds record, "
+                 f"marking and site map",
                  S1 == S2, {"crystal": nm, "reading": rd,
                             "direct": [list(t) for t in S1],
                             "characters": [list(t) for t in S2]})
@@ -1407,26 +1774,120 @@ def main_run():
                      f"stabilizer is {nmS}",
                      (1, 1) in S1, {"crystal": nm, "reading": rd,
                                     "contains_(1,1)": (1, 1) in S1})
-    PAYLOAD["stabilizers"] = stab_rows
+            # ---- THE MECHANISM: the field is affine in the SEED SET ----
+            Sd = seed_sites(nm)
+            fit = affine_fit(f, Sd)
+            ind = {x: (1 if x in set(Sd) else 0) for x in SITES}
+            SS = stabilizer(ind)
+            nmSS = subgroup_name(SS)
+            c, m = fit if fit else (None, None)
+            resid = sorted({(x[1] - x[0]) % L for x in Sd})
+            full = all(sum(1 for x in Sd if (x[1] - x[0]) % L == r) == L
+                       for r in resid)
+            law = (S1 == SS) if (fit and m != 0) else \
+                  (len(S1) == len(SITES) if fit else False)
+            reg(len(Sd), *([c, m] if fit else []))
+            affine_rows.append({"crystal": nm, "reading": rd,
+                                "seed_sites": [list(x) for x in Sd],
+                                "c": c, "m": m, "constant_field": m == 0,
+                                "stab_seed_indicator": nmSS,
+                                "stab_field": nmS,
+                                "seed_residues": resid,
+                                "seed_is_full_coset_union": full,
+                                "law_holds": bool(law)})
+            emit(f"  [DATA] {nm:19s} {rd:10s} affine c={c} m={m} "
+                 f"1_S-stab={nmSS} seed-residues={resid}")
+            gate(f"G-AFFINE[{nm}|{rd}]",
+                 f"THE MECHANISM, MEASURED AT THIS CELL.  The division "
+                 f"field is AFFINE IN THE INDICATOR OF THE CONSTRUCTOR'S "
+                 f"OWN SEED SET, whose {len(Sd)} sites are re-derived from "
+                 f"the seed rule and never read off the field: "
+                 f"n = {c} + {m}*1_S at all nine sites, with "
+                 f"Stab(1_S) = {nmSS}.  " +
+                 (f"m = 0: THE FIELD IS CONSTANT and its full-group "
+                  f"stabilizer is a VACUOUS POSITIVE -- every field on "
+                  f"every group is invariant under everything when it does "
+                  f"not vary, so this cell carries no information about "
+                  f"periodicity beyond the construction's own partition"
+                  if fit and m == 0 else
+                  f"m != 0, so Stab(n) = Stab(1_S) = {nmSS} exactly: the "
+                  f"periodicity measured at this cell IS the symmetry of "
+                  f"the constructor's seed set, inherited and not emergent"),
+                 bool(fit) and law,
+                 {"crystal": nm, "reading": rd, "c": c, "m": m,
+                  "seed_sites": [list(x) for x in Sd],
+                  "stab_seed_indicator": nmSS, "stab_field": nmS,
+                  "constant_field": m == 0, "law_holds": bool(law)},
+                 polarity=("AFFINE IN THE INDICATOR OF THE CONSTRUCTOR'S OWN "
+                           "SEED SET", "independent of the constructor"))
+    seal_payload("stabilizers", stab_rows)
+    seal_payload("affine", affine_rows)
+    n_const = sum(1 for r in affine_rows if r["constant_field"])
+    n_law = sum(1 for r in affine_rows if r["law_holds"])
+    n_coset = sum(1 for r in affine_rows
+                  if r["seed_is_full_coset_union"] and r["crystal"] in ARB)
+    dg_res = sorted({tuple(r["seed_residues"]) for r in affine_rows
+                     if r["crystal"].startswith("DOUBLE-GRID")})[0]
+    cg_res = sorted({tuple(r["seed_residues"]) for r in affine_rows
+                     if r["crystal"].startswith("CONFLICT-GRID")})[0]
+    reg(n_const, n_law, n_coset, len(affine_rows), *dg_res, *cg_res)
+    gate("G-AFFINE-MECHANISM",
+         f"THE TEN-CELL TABLE HAS A ONE-LINE MECHANISM AND IT IS THE "
+         f"CONSTRUCTOR'S.  At {n_law} of {len(affine_rows)} cells the "
+         f"division field decomposes exactly as n = c + m*1_S over the "
+         f"constructor's own seed set S, so the stabilizer is forced: "
+         f"Stab(n) = Stab(1_S) wherever m != 0, and the whole group "
+         f"wherever m = 0 ({n_const} cells, both CONFLICT-GRID footprints, "
+         f"where the field is constant and the positive is vacuous).  On "
+         f"all {n_coset} arbitration cells S is a union of FULL <(1,1)> "
+         f"cosets -- the residues of j-i over S are {dg_res} on the "
+         f"DOUBLE-GRIDs and {cg_res} on the CONFLICT-GRIDs, every class "
+         f"complete -- because d66 seats its seeds at a uniform column "
+         f"offset (j+2)%g; on the control S is a single site, an incomplete "
+         f"class, which is exactly why the control returns order 1.  THE "
+         f"CLAIM IS TRUE AND CONSTRUCTOR-INHERITED: the division events of "
+         f"these crystals form a crystal because their constructors seed "
+         f"conflict on a coset and group by rows and columns",
+         n_law == len(affine_rows) and n_const == 2 and n_coset == 8,
+         {"cells": len(affine_rows), "law_holds": n_law,
+          "constant_field_cells": n_const,
+          "arbitration_cells_seeded_on_full_cosets": n_coset,
+          "rows": affine_rows})
 
     agree = [nm for nm in ARB
              if stab_tab[(nm, "initiator")] == stab_tab[(nm, "footprint")]]
     diverge = [nm for nm in ARB if nm not in agree]
     reg(len(agree), len(diverge))
+    contains = [nm for nm, _k, _f in CRYSTALS
+                if stab_elems[(nm, "initiator")]
+                <= stab_elems[(nm, "footprint")]]
+    strict = [nm for nm, _k, _f in CRYSTALS
+              if stab_elems[(nm, "initiator")]
+              < stab_elems[(nm, "footprint")]]
+    reg(len(contains), len(strict))
     gate("G-READING-DIVERGENCE",
-         f"THE SITE READING IS NOT NEUTRAL, AND THE SCOUT'S PRELIMINARY IS "
-         f"CORRECTED.  The scout recorded 'stabilizers AGREE, supports "
-         f"differ (6/9 vs 9/9)'.  MEASURED: the two readings agree at "
-         f"{len(agree)} of 4 arbitration crystals ({agree}) and DIVERGE at "
-         f"{len(diverge)} ({diverge}), where the footprint field is "
-         f"CONSTANT and its stabilizer is the whole group; and the supports "
-         f"are 6/9 vs 9/9 only on the DOUBLE-GRIDs, 3/9 vs 9/9 on the "
-         f"CONFLICT-GRIDs.  The divergence runs in ONE direction only -- "
-         f"the footprint reading never shrinks the stabilizer -- and "
-         f"<(1,1)> lies in all eight arbitration cells",
+         f"THE SITE READING IS NOT NEUTRAL, AND THE SCOUT OF RECORD IS "
+         f"CORRECTED WHERE IT SPOKE.  The scout's DECLARED-DATA OBLIGATIONS "
+         f"paragraph recorded 'stabilizers AGREE, supports differ (6/9 vs "
+         f"9/9)'; its own PRELIMINARY, four lines earlier, had already "
+         f"flagged CONFLICT-GRID(3,2)'s footprint field as constant at "
+         f"order 9, and it was silent on CONFLICT-GRID(3,4).  MEASURED: the "
+         f"two readings agree at {len(agree)} of 4 arbitration crystals "
+         f"({agree}) and DIVERGE at {len(diverge)} ({diverge}), where the "
+         f"footprint field is CONSTANT and its stabilizer is the whole "
+         f"group; and the supports are 6/9 vs 9/9 only on the "
+         f"DOUBLE-GRIDs, 3/9 vs 9/9 on the CONFLICT-GRIDs.  The relation is "
+         f"CONTAINMENT, measured and not asserted: the footprint stabilizer "
+         f"CONTAINS the initiator stabilizer at {len(contains)} of "
+         f"{len(CRYSTALS)} records and the containment is STRICT at "
+         f"{len(strict)} ({strict}) -- so 'never shrinks' is the "
+         f"measurement and 'enlarges' would not be.  <(1,1)> lies in all "
+         f"eight arbitration cells",
          len(diverge) == 2 and set(diverge) == {"CONFLICT-GRID(3,2)",
-                                                "CONFLICT-GRID(3,4)"},
-         {"agree": agree, "diverge": diverge,
+                                                "CONFLICT-GRID(3,4)"}
+         and len(contains) == len(CRYSTALS) and len(strict) == 2,
+         {"agree": agree, "diverge": diverge, "contains": contains,
+          "strict": strict,
           "table": {f"{k[0]}|{k[1]}": v for k, v in sorted(stab_tab.items())}})
     checkpoint("SEC 5 (the stabilizer table)")
 
@@ -1435,20 +1896,8 @@ def main_run():
     emit("=" * 78)
     emit("SEC 6  GEOMETRY INVARIANCE under the renewal-only rebuild")
     emit("=" * 78)
-    gate("G-GEOM-POP-INSTRUMENT",
-         "arm (a)'s primary sub-reading uses D60's OWN committed device "
-         "(V12): the poset is left whole and only the metric population "
-         "changes.  Arm (a)'s second sub-reading takes the literal sparse "
-         "record -- the subsequence of marked events -- and recomputes its "
-         "event poset from scratch.  'FILTER' is ambiguous between the two "
-         "and both are run; the fiber is 2 and it is declared, not chosen",
-         True, {"sub_readings": ["POP (poset whole)", "SUB (poset rebuilt)"],
-                "fiber": 2},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "a declaration about which two objects the arm "
-                           "measures; both are measured below, per crystal"})
-
-    geom_rows, varies_witness = [], []
+    geom_rows, varies_arb, control_varies, pop_check = [], [], [], []
+    cross_marked, cross_unmarked = {}, {}
     for nm, kind, _f in CRYSTALS:
         b = built[nm]
         C = poset_of(b.H)
@@ -1473,6 +1922,14 @@ def main_run():
             deficit += need[lay] - len(poolv[:need[lay]])
         if MUTANT == "MUT-HEIGHT-IMPURE" and nm == "DOUBLE-GRID(3,2)":
             mixed = [1]
+        cross_marked[nm] = Counter(need)
+        cross_unmarked[nm] = Counter(hh[i] for i in range(len(C))
+                                     if i not in set(D))
+        pop_check.append({"crystal": nm, "events": len(C),
+                          "pop_n": pr[2]["n"], "full_n": pf[2]["n"],
+                          "marked": len(D),
+                          "poset_held_whole": pr[2]["n"] == len(pop)
+                          and pf[2]["n"] == len(C)})
         reg(pf["height"], (ps["height"] if ps else 0), len(D), deficit)
         for d in (2, 3):
             for src in (pf, pr) + ((ps,) if ps else ()):
@@ -1480,27 +1937,46 @@ def main_run():
                     if src[d][k] is not None:
                         reg(src[d][k])
         reg(*sorted(need), *[need[x] for x in sorted(need)])
-        gate(f"G-GEOM-HEIGHTPURE[{nm}]",
-             f"HEIGHT PURITY, MEASURED: the {len(D)} marked events of this "
-             f"crystal occupy the height layers {sorted(need)} of a poset of "
-             f"longest chain {pf['height']}, and {len(mixed)} of those "
-             f"layers contain any unmarked event -- the marked events fill "
-             f"whole layers and share them with nothing else",
+        hp_stmt = (f"HEIGHT PURITY, MEASURED: the {len(D)} marked events of "
+                   f"this crystal occupy the height layers {sorted(need)} of "
+                   f"a poset of longest chain {pf['height']}, and "
+                   f"{len(mixed)} of those layers contain any unmarked event "
+                   f"-- the marked events fill whole layers and share them "
+                   f"with nothing else")
+        if MUTANT == "MUT-PROSE-POLARITY" and nm == "DOUBLE-GRID(3,2)":
+            hp_stmt = hp_stmt.replace(
+                "the marked events fill whole layers and share them with "
+                "nothing else",
+                "the marked events SHARE their layers with unmarked events "
+                "throughout")
+        gate(f"G-GEOM-HEIGHTPURE[{nm}]", hp_stmt,
              len(mixed) == 0 and len(D) > 0,
              {"crystal": nm, "layers": sorted(need), "mixed_layers": mixed,
-              "longest_chain": pf["height"], "marked": len(D)})
+              "longest_chain": pf["height"], "marked": len(D)},
+             polarity=("share them with nothing else",
+                       "SHARE their layers with unmarked events"))
         gate(f"G-GEOM-HCTRL[{nm}]",
-             f"THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY "
-             f"HERE (V08).  A height-matched control population -- same "
-             f"size, same height histogram, drawn from unmarked events -- "
+             f"THE HEIGHT-MATCHED CONTROL POPULATION IS EMPTY HERE, AND THE "
+             f"KR DISCRIMINATOR IS CARRIED.  Two different objects go by "
+             f"the name 'height control' and this unit separates them.  The "
+             f"catalog's requirement (V08) is that a dimension reading "
+             f"carry its HEIGHT STATISTIC -- the longest chain, "
+             f"{pf['height']} here, reported for every population at "
+             f"G-WALL-KR.  What this gate measures is a STRICTER object of "
+             f"this unit's own devising (choice inventory row 10, class "
+             f"free): a height-MATCHED CONTROL POPULATION -- same size, "
+             f"same height histogram, drawn from unmarked events -- which "
              f"has size {len(ctrl)} with deficit {deficit} of {len(D)}, "
              f"because height purity leaves no unmarked event at any marked "
              f"height.  Every POPULATION-AVERAGED row below is therefore "
-             f"confounded with a height shift that CANNOT be controlled, "
-             f"and this unit certifies none of them",
+             f"confounded with a height shift for which THIS unit's control "
+             f"cannot be built, and this unit certifies none of them",
              len(ctrl) == 0 and deficit == len(D),
              {"crystal": nm, "control_size": len(ctrl), "deficit": deficit,
-              "marked": len(D)})
+              "marked": len(D), "kr_discriminator_longest_chain":
+              pf["height"]},
+             polarity=("height-MATCHED CONTROL POPULATION",
+                       "the KR control the catalog requires is empty"))
         for d in (2, 3):
             inv = (pf[d]["max"] == pr[d]["max"])
             att = [e for e in pf[d]["attained"]]
@@ -1508,7 +1984,8 @@ def main_run():
             reg(pf[d]["max"], pr[d]["max"], len(att), len(attD))
             expect = (kind == "ARBITRATION")
             if not inv:
-                varies_witness.append(
+                (varies_arb if kind == "ARBITRATION"
+                 else control_varies).append(
                     f"{nm}|d={d}|max|D|:{pf[d]['max']}->{pr[d]['max']}")
             gate(f"G-GEOM-POP-WIDTH[{nm}|d={d}]",
                  f"THE CHART-WIDTH ROW, the one geometry row a population "
@@ -1520,13 +1997,18 @@ def main_run():
                  f"{pr[d]['max']} -- "
                  + ("INVARIANT" if inv else
                     f"VARIES-{pf[d]['max']}->{pr[d]['max']}")
-                 + (", the kinematic prediction" if expect else
-                    ", the value the DECLARED COUNTEREXAMPLE CONTROL must "
-                    "return"),
+                 + ((", the kinematic prediction" if inv else
+                     ", CONTRARY to the kinematic prediction") if expect else
+                    (", the value the DECLARED COUNTEREXAMPLE CONTROL must "
+                     "return" if not inv else
+                     ", where the DECLARED COUNTEREXAMPLE CONTROL was "
+                     "required to vary")),
                  inv if expect else (not inv),
                  {"crystal": nm, "depth": d, "full_max": pf[d]["max"],
                   "restricted_max": pr[d]["max"], "attainers": len(att),
-                  "attainers_marked": len(attD), "invariant": inv})
+                  "attainers_marked": len(attD), "invariant": inv},
+                 polarity=(("INVARIANT", "VARIES-") if inv else
+                           ("VARIES-", "INVARIANT")))
         gate(f"G-GEOM-BLOCKED[{nm}]",
              f"the POPULATION-AVERAGED rows are reported and NOT certified: "
              f"at d=2 homogeneity moves {pf[2]['h2']} -> {pr[2]['h2']}, "
@@ -1534,8 +2016,13 @@ def main_run():
              f"moves {pf[2]['om']} -> {pr[2]['om']}, every one of them "
              f"inseparable from the height shift whose control G-GEOM-HCTRL "
              f"proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this "
-             f"unit's reading of these rows, not INVARIANT and not VARIES",
-             True,
+             f"unit's reading of these rows, not INVARIANT and not VARIES.  "
+             f"THE FORCING IS MEASURED, not asserted: the height-matched "
+             f"control has size {len(ctrl)} and deficit {deficit} of "
+             f"{len(D)} at this crystal, and every row named here is a "
+             f"population average over exactly the population that control "
+             f"would have had to match",
+             len(ctrl) == 0 and deficit == len(D) and len(D) > 0,
              {"crystal": nm,
               "d2_full": {"h2": str(pf[2]["h2"]), "h4": str(pf[2]["h4"]),
                           "om": str(pf[2]["om"]), "mean": str(pf[2]["mean"])},
@@ -1552,9 +2039,12 @@ def main_run():
              waiver={"class": "MEASURED-THEN-DECLINED",
                      "reason": "the numbers are computed exactly and printed; "
                                "what is withheld is the INFERENCE from them, "
-                               "on the ground that the KR control the catalog "
-                               "requires is empty at every one of these "
-                               "crystals"})
+                               "on the ground that the height-matched control "
+                               "population this unit requires of itself is "
+                               "empty at every one of these crystals.  The "
+                               "catalog's own KR discriminator, the longest "
+                               "chain, IS carried -- at G-WALL-KR, for every "
+                               "population"})
         gate(f"G-GEOM-SUB[{nm}]",
              f"arm (a)'s second sub-reading -- the literal sparse record, "
              f"poset rebuilt on the {len(sub)} marked events alone -- "
@@ -1562,8 +2052,11 @@ def main_run():
              f"full record's {pf['height']}, and max|D| "
              f"{ps[2]['max'] if ps else 0} at d=2 against {pf[2]['max']}: a "
              f"DIFFERENT poset, not a restriction of this one, and reported "
-             f"as data only",
-             True,
+             f"as data only.  MEASURED, not declared: the two objects "
+             f"disagree on both invariants at this crystal, which is why no "
+             f"invariance claim can cross them",
+             bool(ps) and ps["height"] != pf["height"]
+             and ps[2]["max"] != pf[2]["max"],
              {"crystal": nm, "events": len(sub),
               "height_sub": ps["height"] if ps else 0,
               "height_full": pf["height"],
@@ -1591,7 +2084,47 @@ def main_run():
                                    ("h2", "h4", "max", "mean", "om", "n",
                                     "pairs")} for d in (2, 3)} if ps else None,
         })
-    PAYLOAD["geometry"] = geom_rows
+    seal_payload("geometry", geom_rows)
+    pool = Counter()
+    for nm in cross_unmarked:
+        pool += cross_unmarked[nm]
+    allm = sorted(set().union(*[set(c) for c in cross_marked.values()]))
+    avail = [h for h in allm if pool[h] > 0]
+    unavail = [h for h in allm if pool[h] == 0]
+    l1m = [cross_marked[nm][1] for nm, _k, _f in CRYSTALS]
+    l1u = [cross_unmarked[nm][1] for nm, _k, _f in CRYSTALS]
+    reg(*allm, *l1m, *l1u, len(avail), len(unavail))
+    gate("G-GEOM-HEIGHTPURE-CROSS",
+         f"HEIGHT PURITY SURVIVES THE OBVIOUS WIDENING OF ITS SCOPE.  A "
+         f"successor could object that the control is only unbuildable "
+         f"WITHIN a record.  MEASURED ACROSS ALL FIVE: pooling the unmarked "
+         f"events of every record, {len(avail)} of the {len(allm)} marked "
+         f"heights {allm} are available somewhere ({avail}) but "
+         f"{len(unavail)} is available NOWHERE ({unavail}) -- height layer "
+         f"1 is marked-only on every one of the five records, carrying "
+         f"{l1m} marked events against {l1u} unmarked -- and every record "
+         f"has marked events at height 1.  Even a CROSS-RECORD "
+         f"height-matched control is therefore unbuildable",
+         unavail == [1] and l1u == [0] * len(CRYSTALS)
+         and all(x > 0 for x in l1m),
+         {"marked_heights": allm, "available_somewhere": avail,
+          "available_nowhere": unavail, "layer1_marked": l1m,
+          "layer1_unmarked": l1u})
+    pop_ok = all(r["poset_held_whole"] for r in pop_check)
+    gate("G-GEOM-POP-INSTRUMENT",
+         f"arm (a)'s primary sub-reading uses D60's OWN committed device "
+         f"(V12): the poset is left whole and only the metric population "
+         f"changes.  MEASURED at every crystal, not declared: the "
+         f"restricted profile is computed on the SAME comparability matrix "
+         f"as the full one and differs from it only in the population it "
+         f"averages over -- {[r['full_n'] for r in pop_check]} events "
+         f"full against {[r['pop_n'] for r in pop_check]} marked.  Arm "
+         f"(a)'s second sub-reading takes the literal sparse record and "
+         f"recomputes its event poset from scratch.  'FILTER' is ambiguous "
+         f"between the two and both are run; the fiber is 2 and it is "
+         f"declared, not chosen",
+         pop_ok, {"sub_readings": ["POP (poset whole)", "SUB (poset rebuilt)"],
+                  "fiber": 2, "rows": pop_check})
 
     # arm (b): the Builder rerun under two declared sub-grammars
     emit("")
@@ -1627,16 +2160,18 @@ def main_run():
              f"events, identical = {same}), so the tag that blocks the "
              f"renewal-only rebuild is exactly one, the DELIVERY",
              same, {"crystal": nm, "events": len(bi.H), "identical": same})
-    PAYLOAD["arm_b"] = armb
+    seal_payload("arm_b", armb)
     gate("G-GEOM-ARMC-REGISTERED",
          "arm (c) of pin R3 -- quotient the record by its non-arbitration "
          "events -- is REGISTERED AND NOT RUN, as the pin allows; nothing "
          "in this unit's verdict descends from it",
-         True, {"arm": "quotient", "run": False},
+         True, {"arm": "quotient", "run": False,
+                "arm_rows_carry": ["(a)", "(b)"]},
          waiver={"class": "REGISTER-ONLY",
                  "reason": "a successor register entry; its absence is "
                            "visible in the arm rows, which carry (a) and (b) "
-                           "only"})
+                           "only"},
+         kind="DECLARED")
     gate("G-GEOM-SPATIAL-TAUTOLOGY",
          "the crystal's SPATIAL rows -- the co-division link counts of "
          "SEC 7 -- are functions of the marked events ALONE, so they are "
@@ -1648,31 +2183,53 @@ def main_run():
                 False},
          waiver={"class": "DECLARATION-CARRIED",
                  "reason": "a statement about what this unit refuses to "
-                           "count; the rows themselves are measured in SEC 7"})
+                           "count; the rows themselves are measured in SEC 7"},
+         kind="DECLARED")
 
-    widths_ok = all(prof_full[nm][d]["max"]
-                    == profile(poset_of(built[nm].H),
-                               [i for i, e in enumerate(built[nm].H)
-                                if is_division(e)])[d]["max"]
-                    for nm in ARB for d in (2, 3))
+    # THE VERDICT IS COMPUTED FROM THE POPULATION THE SECTION ACTUALLY
+    # MEASURED (#87): `varies_arb` is collected inside the per-crystal loop,
+    # over the ARBITRATION crystals only, from the same restricted profile
+    # the width gates read.  The control's REQUIRED variation is kept in its
+    # own field and can never enter the falsifier's witness list.
+    widths_ok = (varies_arb == [])
     geom_verdict = ("GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-"
                     "REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL"
                     if widths_ok else
-                    "GEOMETRY-VARIES-" + ";".join(varies_witness))
+                    "GEOMETRY-VARIES-" + ";".join(varies_arb))
+    gate("G-GEOM-WITNESS-BINDING",
+         f"THE WITNESS IS BOUND TO THE VERDICT.  The segment verdict is a "
+         f"function of one list and of nothing else: width_row_invariant "
+         f"holds if and only if the arbitration-crystal witness list is "
+         f"empty (measured: invariant={widths_ok}, witnesses="
+         f"{len(varies_arb)}), and the DECLARED COUNTEREXAMPLE CONTROL's "
+         f"own required variation ({len(control_varies)} rows: "
+         f"{control_varies}) is carried in a separate field where it cannot "
+         f"be mistaken for a falsifier witness",
+         widths_ok == (varies_arb == []) and all(
+             not w.startswith(CTRL) for w in varies_arb),
+         {"width_row_invariant": widths_ok, "varies_witness": varies_arb,
+          "control_varies": control_varies})
     emit("")
     emit(f"  [GEOMETRY SEGMENT VERDICT] {geom_verdict}")
     gate("G-GEOM-SEGMENT",
          f"THE GEOMETRY SEGMENT (V06 is the falsifier this segment answers "
-         f"to): {geom_verdict}.  The chart-width row is INVARIANT at 4 of 4 "
-         f"arbitration crystals at BOTH depths and NOT invariant at the "
-         f"control, so the segment's two-way requirement is discharged on "
-         f"the row that carries it; every population-averaged row is "
-         f"BLOCKED; and paper 0 10's third falsifier -- 'sparse records "
-         f"destroy the geometry' -- does NOT fire, because a prior "
-         f"obstruction fires first: arm (b) shows the sparse record is not "
-         f"CONSTRUCTIBLE",
+         f"to): {geom_verdict}.  The chart-width row is INVARIANT at "
+         f"{len(ARB) - len({w.split('|')[0] for w in varies_arb})} of "
+         f"{len(ARB)} arbitration crystals at BOTH depths and NOT invariant "
+         f"at the control, so the segment's two-way requirement is "
+         f"discharged on the row that carries it; every population-averaged "
+         f"row is BLOCKED; and paper 0 10's third falsifier -- 'sparse "
+         f"records destroy the geometry' -- does NOT FIRE, and does not "
+         f"come back negative either: on this arena it is NOT EVALUABLE.  "
+         f"Under arm (a)-POP the poset is held whole by construction, so no "
+         f"geometry could vary; under arm (a)-SUB the geometry does change "
+         f"substantially but the two posets are different objects and the "
+         f"comparison is refused; under arm (b) the object does not exist, "
+         f"because the sparse record is not CONSTRUCTIBLE",
          widths_ok, {"verdict": geom_verdict, "width_row_invariant":
-                     widths_ok, "varies_witness": varies_witness})
+                     widths_ok, "varies_witness": varies_arb,
+                     "control_varies": control_varies,
+                     "falsifier": "not evaluable on this arena"})
     checkpoint("SEC 6 (geometry invariance)")
 
     # -------------------------------------------------------------- SEC 7
@@ -1680,7 +2237,7 @@ def main_run():
     emit("=" * 78)
     emit("SEC 7  THE BRIDGES -- at declared scope, candidate readings named")
     emit("=" * 78)
-    bridge_rows = []
+    bridge_rows, link_tab = [], {}
     for nm, kind, _f in CRYSTALS:
         b = built[nm]
         S = site_map(b)
@@ -1699,6 +2256,7 @@ def main_run():
             links[lk] = vals
         if MUTANT == "MUT-DIAGONAL" and nm == "DOUBLE-GRID(3,2)":
             links[(1, 1)] = [1] + links[(1, 1)][1:]
+        link_tab[nm] = {lk: list(v) for lk, v in links.items()}
         idx = [i for i, e in enumerate(b.H) if is_division(e)]
         legs = sorted(Counter(idx[k + 1] - idx[k]
                               for k in range(len(idx) - 1)).items())
@@ -1733,7 +2291,9 @@ def main_run():
              f"is INHERITED from the rook's graph (V13) and is NOT a finding "
              f"of this unit",
              dg_zero, {"crystal": nm, "diag_11": links[DIAG[0]],
-                       "diag_12": links[DIAG[1]]})
+                       "diag_12": links[DIAG[1]]},
+             polarity=("identically ZERO at 9 of 9 sites",
+                       "populated at some site"))
         gate(f"G-BRIDGE-SUPPORT[{nm}]",
              f"the renewal sublattice's SUPPORT at the initiator reading is "
              f"{[list(x) for x in supp]}, a union of {len(cos)} full cosets "
@@ -1746,14 +2306,19 @@ def main_run():
              is_cosets if kind == "ARBITRATION" else not is_cosets,
              {"crystal": nm, "support": [list(x) for x in supp],
               "cosets": cos, "is_coset_union": is_cosets})
+        n_legs = sum(n for _c, n in legs)
         gate(f"G-BRIDGE-LEGS[{nm}]",
              f"the RECORD-ORDER bridges -- the gaps between consecutive "
-             f"marked events -- have multiset {legs} on this crystal.  "
-             f"paper-09 4's support holes (no inter-renewal leg of length "
-             f"one or two) carry a two-actor DELIVERY-FREE scope tag and "
-             f"this arena is neither, so this row is a COMPARISON and not a "
-             f"test of that law",
-             True, {"crystal": nm, "legs": legs},
+             f"marked events -- have multiset {legs} on this crystal, "
+             f"{n_legs} legs over {len(idx)} marked events (a gap sequence "
+             f"has exactly one fewer term than the sequence it is read "
+             f"from, measured here and not assumed).  paper-09 4's support "
+             f"holes (no inter-renewal leg of length one or two) carry a "
+             f"two-actor DELIVERY-FREE scope tag and this arena is neither, "
+             f"so this row is a COMPARISON and not a test of that law",
+             n_legs == max(len(idx) - 1, 0),
+             {"crystal": nm, "legs": legs, "leg_count": n_legs,
+              "marked": len(idx)},
              waiver={"class": "SCOPE-DISCLOSED",
                      "reason": "the source law's own scope tag excludes this "
                                "arena; the numbers are reported so a "
@@ -1762,27 +2327,113 @@ def main_run():
                             "axis": {str(lk): links[lk] for lk in AXIS},
                             "diagonal": {str(lk): links[lk] for lk in DIAG},
                             "legs": legs, "support": [list(x) for x in supp],
-                            "support_cosets": cos})
-    PAYLOAD["bridges"] = bridge_rows
+                            "support_residues": cos,
+                            "residues_are_full_cosets": is_cosets})
+    seal_payload("bridges", bridge_rows)
+    branched = [nm for nm, _k, _f in CRYSTALS if built[nm].maxhits != 1
+                or built[nm].refusal is not None]
+    reg(len(branched))
     gate("G-BRIDGE-SCOPE",
-         "THE BRIDGES ARE REPORTED, NOT INTERPRETED.  The pin asks what "
-         "structure the bridges carry AT DECLARED SCOPE ONLY and forbids an "
-         "indivisibility claim beyond what the arena can measure.  This "
-         "arena measures three bridge objects -- the co-division adjacency, "
-         "the support's coset structure, the record-order leg multiset -- "
-         "and NONE of them is a transition kernel, so no indivisibility "
-         "reading is available here.  The candidate readings are NAMED: "
-         "(i) the axis link counts as the crystal's q_11 and q_22; (ii) the "
-         "leg multiset as a crystal-scope analogue of paper-09 4's g(n); "
-         "(iii) the coset support as the renewal sublattice's own period "
-         "lattice.  Each is a candidate reading until an adjudication makes "
-         "it otherwise",
-         True, {"objects": 3, "indivisibility_claim": False,
-                "candidate_readings": 3},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "a statement of what this unit declines to infer; "
-                           "the measurements it refers to are the per-crystal "
-                           "bridge gates above"})
+         f"THE BRIDGES ARE REPORTED, NOT INTERPRETED -- AND THE FOUNDING "
+         f"SPEC'S OWN CLAUSE IS NOT MERELY UNRUN HERE, IT IS UNPOSABLE.  "
+         f"The pin asks what structure the bridges carry AT DECLARED SCOPE "
+         f"ONLY and forbids an indivisibility claim beyond what the arena "
+         f"can measure.  This arena measures three bridge objects -- the "
+         f"co-division adjacency, the support's coset structure, the "
+         f"record-order leg multiset -- and none of them is a transition "
+         f"kernel.  MEASURED, and this is the structural reason: every one "
+         f"of the {len(CRYSTALS)} records is FORCED -- maxhits = 1 at all "
+         f"five, {len(branched)} records branch anywhere -- so the menu "
+         f"never offers a choice, no transition kernel exists on this "
+         f"arena, and 'the bridges are probed for indivisible structure' "
+         f"has no definable reading here at all.  Where the geometry is "
+         f"cleanest, the stochasticity is gone.  The candidate readings are "
+         f"NAMED: (i) the axis link counts as the crystal's q_11 and q_22; "
+         f"(ii) the leg multiset as a crystal-scope analogue of paper-09 "
+         f"4's g(n); (iii) the coset support as the renewal sublattice's "
+         f"own period lattice.  Each is a candidate reading until an "
+         f"adjudication makes it otherwise",
+         len(branched) == 0,
+         {"objects": 3, "indivisibility_claim": False,
+          "candidate_readings": 3, "records_branching": len(branched),
+          "indivisibility_clause": "UNPOSABLE-ON-A-FORCED-RECORD"})
+
+    # ---------------------------------------------------------- SEC 7b
+    emit("")
+    emit("-" * 78)
+    emit("SEC 7b  THE DIAGONAL, UNIFIED -- U4's bridges on I7's coordinates")
+    emit("-" * 78)
+    i7_rows = []
+    for nm, kind, _f in CRYSTALS:
+        lk = link_tab[nm]
+        n10, n01, n11 = lk[(1, 0)], lk[(0, 1)], lk[(1, 1)]
+        hom = (len(set(n10)) == 1 and len(set(n01)) == 1
+               and len(set(n11)) == 1)
+        q11, q22 = n10[0], n01[0]
+        num = n11[0] - n10[0] - n01[0]
+        q12 = Fr(num, 2)
+        det = Fr(q11) * Fr(q22) - q12 * q12
+        if MUTANT == "MUT-I7-DET" and nm == "DOUBLE-GRID(3,3)":
+            det = Fr(1)
+        cells = sum(1 for v in (n10 + n01 + n11) if v > 0)
+        kern = (Fr(q11) * 1 + q12 * 1 == 0) and (q12 * 1 + Fr(q22) * 1 == 0)
+        reg(q11, q22, cells, len(n10 + n01 + n11))
+        reg(str(q12), str(det))
+        i7_rows.append({"crystal": nm, "kind": kind, "n_10": n10[0],
+                        "n_01": n01[0], "n_11": n11[0], "q11": q11,
+                        "q22": q22, "q12": str(q12), "det": str(det),
+                        "homogeneous": hom, "cells_positive": cells,
+                        "cells": len(n10 + n01 + n11),
+                        "kernel_contains_(1,1)": bool(kern)})
+        emit(f"  [DATA] {nm:19s} I7 n=({n10[0]},{n01[0]},{n11[0]}) "
+             f"q=({q11},{q22},{q12}) det={det} cells>0="
+             f"{cells}/{len(n10 + n01 + n11)}")
+        gate(f"G-I7-INDUCED[{nm}]",
+             f"THIS UNIT'S FOUND-SIDE ARENA, EVALUATED ON I7's OWN "
+             f"COORDINATES (V17's three links, V18's readout).  The "
+             f"renewal sublattice supplies {cells} of I7's "
+             f"{len(n10 + n01 + n11)} (site, link) cells strictly positive "
+             f"and translation-homogeneous ({hom}) and fails exactly the "
+             f"{len(n11)} DIAGONAL cells, where the count is zero.  The "
+             f"induced form is q_11 = {q11}, q_22 = {q22}, q_12 = {q12}, "
+             f"whose determinant is {det}" +
+             (" -- IDENTICALLY ZERO, reproducing weld 2's "
+              "INDUCED-DET=0-AT-EVERY-SITE-OF-EVERY-CRYSTAL from the FOUND "
+              "side by a route weld 2 did not have, with kernel spanned by "
+              "(1,1): the direction the induced metric is blind along is "
+              "the same direction SEC 5 measures as the division field's "
+              "period" if det == 0 else " -- NONZERO"),
+             det == 0 and hom and cells == (18 if kind == "ARBITRATION"
+                                            else 0),
+             {"crystal": nm, "q11": q11, "q22": q22, "q12": str(q12),
+              "det": str(det), "cells_positive": cells,
+              "homogeneous": hom, "kernel_contains_(1,1)": bool(kern)},
+             polarity=("fails exactly the", "populates the diagonal"))
+    seal_payload("i7", i7_rows)
+    arbrow = [r for r in i7_rows if r["kind"] == "ARBITRATION"]
+    reg(sum(r["cells_positive"] for r in arbrow))
+    gate("G-I7-ONE-CAUSE",
+         f"ONE CAUSE, TWO SHADOWS -- and the renewal-crystal weld census is "
+         f"PREDICTABLY EMPTY at this family.  Every arbitration crystal "
+         f"lands on the same row: {arbrow[0]['cells_positive']} of "
+         f"{arbrow[0]['cells']} cells positive and homogeneous, the nine "
+         f"diagonal cells empty, det identically 0, kernel <(1,1)>.  Both "
+         f"appearances of (1,1) trace to ONE design choice in the committed "
+         f"constructors and are NOT two independent witnesses: d66 seeds "
+         f"conflict on <(1,1)>-cosets, which makes the count field "
+         f"<(1,1)>-periodic (SEC 5's affine mechanism), and it groups by "
+         f"ROWS AND COLUMNS, which makes the link set the two axes and "
+         f"leaves the diagonal empty (SEC 7).  A successor must not count "
+         f"them twice.  This unit therefore does not run the census: it "
+         f"records that on this family the census's answer is already "
+         f"determined, and hands the determinant column forward as the "
+         f"weld-arena scout",
+         all(r["det"] == "0" for r in i7_rows)
+         and all(r["cells_positive"] == 18 for r in arbrow)
+         and len(arbrow) == 4,
+         {"arbitration_rows": arbrow,
+          "census_run_here": False,
+          "verdict": "PREDICTABLY-EMPTY-AT-THIS-FAMILY"})
     checkpoint("SEC 7 (the bridges)")
 
     # -------------------------------------------------------------- SEC 8
@@ -1790,13 +2441,21 @@ def main_run():
     emit("=" * 78)
     emit("SEC 8  THE WALLS (pin R5) -- construction law, argued before use")
     emit("=" * 78)
-    banned_hits = []
-    for pth in (os.path.abspath(__file__),
-                os.path.join(REPO, "v14", "paper-14-u4-renewal-crystals.md")):
-        if os.path.exists(pth):
-            with open(pth, "r", encoding="utf-8") as fh:
-                if BANNED in fh.read():
-                    banned_hits.append(pth)
+    banned_hits, scanned = [], []
+    for pth in (os.path.abspath(__file__), PAPER):
+        if not os.path.exists(pth):
+            continue
+        with open(pth, "r", encoding="utf-8") as fh:
+            txt = fh.read()
+        if MUTANT == "MUT-WALL-L1-WRAPPED" and pth == PAPER:
+            txt = txt + "\n" + WRAP_INJECTION
+        hay = norm_ws(txt)
+        scanned.append({"path": os.path.relpath(pth, REPO),
+                        "chars_normalised": len(hay)})
+        for k, ndl in enumerate(BANNED_NEEDLES):
+            if norm_ws(ndl) in hay:
+                banned_hits.append({"path": os.path.relpath(pth, REPO),
+                                    "needle": k, "chars": len(ndl)})
     gate("G-WALL-L1",
          "L-1's FOURTH FORM, ARGUED BEFORE ANY TEST AND THEN DECLINED.  "
          "L-1 (V09) records that order-level covariance is a fourth form "
@@ -1808,25 +2467,51 @@ def main_run():
          "SITE LATTICE, and the corpus contains no bridge from Z_3^2 "
          "translations to any boost.  This unit therefore does NOT test the "
          "fourth form; it remains unargued and untested here and is "
-         "registered for a successor",
+         f"registered for a successor.  THE BAN IS ENFORCED AS PROSE IS "
+         f"WRITTEN: {len(BANNED_NEEDLES)} needles -- the retracted sentence "
+         f"(V15) and the corpus's own canonical short fragment (V16, v11's "
+         f"anchor L1-A16) -- are matched against this paper and this source "
+         f"with whitespace normalised on BOTH sides, so a line-wrapped "
+         f"reproduction is caught exactly as a contiguous one is; "
+         f"{len(banned_hits)} hits",
          len(banned_hits) == 0,
-         {"fourth_form_tested": False, "banned_sentence_hits": banned_hits})
+         {"fourth_form_tested": False, "banned_sentence_hits": banned_hits,
+          "needles": len(BANNED_NEEDLES),
+          "needle_chars": [len(n) for n in BANNED_NEEDLES],
+          "whitespace_normalised": True, "scanned": scanned})
+    perm_ok = all(len({((x[0] + t[0]) % L, (x[1] + t[1]) % L)
+                       for x in SITES}) == len(SITES) for t in SITES)
     gate("G-WALL-L1-PERMUTATION",
-         "what this unit DOES measure is inside L-1's own scope guard "
-         "(V10): the Z_3^2 translation stabilizer is a PERMUTATION ACTION on "
-         "the actor set, and L-1 does not forbid a permutation action.  The "
-         "headline measurement therefore needs no fourth-form argument at "
-         "all",
-         True, {"action": "permutation on the actor set", "forbidden": False})
+         f"what this unit DOES measure is inside L-1's own scope guard "
+         f"(V10): the Z_3^2 translation stabilizer is a PERMUTATION ACTION "
+         f"on the actor set, and L-1 does not forbid a permutation action.  "
+         f"MEASURED, not declared: each of the {len(SITES)} translations "
+         f"acts on the {len(SITES)} sites as a bijection ({perm_ok}), and "
+         f"each crystal's actor->site map is gated a bijection at "
+         f"G-SITEMAP.  The headline measurement therefore needs no "
+         f"fourth-form argument at all",
+         perm_ok, {"action": "permutation on the actor set",
+                   "translations": len(SITES), "all_bijections": perm_ok})
+    bhs_words = ("sprinkl", "boost", "rapidit", "frame", "lorentz")
+    bhs_hay = json.dumps({k: v for k, v in PAYLOAD.items()
+                          if k != "provenance"},
+                         sort_keys=True, default=str).lower()
+    bhs_hits = sorted(w for w in bhs_words if w in bhs_hay)
+    reg(len(bhs_hits))
     gate("G-WALL-BHS",
-         "NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog "
-         "(V07) records that these crystals are finite-valency by "
-         "construction, so BHS makes sprinkling-grade statistical Lorentz "
-         "invariance provably unavailable on them and running the test "
-         "would manufacture a false negative.  This unit runs none: no "
-         "sprinkling, no boost, no rapidity, no frame appears anywhere in "
-         "its measurements",
-         True, {"sprinkling_grade_LI_tests_run": 0})
+         f"NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog "
+         f"(V07) records that these crystals are finite-valency by "
+         f"construction, so BHS makes sprinkling-grade statistical Lorentz "
+         f"invariance provably unavailable on them and running the test "
+         f"would manufacture a false negative.  MEASURED ABSENCE, not a "
+         f"typed zero: every measurement row this run computed "
+         f"({len(bhs_hay)} characters; the pinned-source list is excluded "
+         f"because it names L-1's own filename) is scanned for "
+         f"{len(bhs_words)} tokens -- {list(bhs_words)} -- and carries "
+         f"{len(bhs_hits)} of them",
+         bhs_hits == [], {"sprinkling_grade_LI_tests_run": 0,
+                          "tokens_scanned": list(bhs_words),
+                          "payload_chars": len(bhs_hay), "hits": bhs_hits})
     kr = [{"crystal": r["crystal"], "n": r["full"]["2"]["n"],
            "longest_chain": r["longest_chain_full"],
            "sub_n": r["marked"], "sub_longest_chain": r["longest_chain_sub"]}
@@ -1840,29 +2525,61 @@ def main_run():
          f"{kr}.  The Kleitman-Rothschild discriminator is the longest "
          f"chain (KR orders return 3 where a sprinkling returns tens) and "
          f"no population here returns 3.  No Myrheim-Meyer estimate is run "
-         f"at all",
-         kr_ok, {"height_controls": kr, "MM_estimates_run": 0})
+         f"at all.  THE MAX-SHATTER METER IS NOT RUN, AND NOT FOR THIS "
+         f"REASON: the catalog grades it a 1+1-escape detector and NOT a "
+         f"dimension estimator, and at n <= {max(r['sub_n'] for r in kr)} "
+         f"marked events and heights <= {max(r['sub_longest_chain'] for r in kr)} "
+         f"no acceptance gauge on these sparse posets could discriminate.  "
+         f"The empty object of G-GEOM-HCTRL is this unit's own stricter "
+         f"height-MATCHED CONTROL POPULATION, not the KR discriminator, "
+         f"which is carried here in full",
+         kr_ok, {"height_controls": kr, "MM_estimates_run": 0,
+                 "max_shatter_run": False,
+                 "max_shatter_grounds": ["catalog grades it a 1+1-escape "
+                                         "detector, not a dimension "
+                                         "estimator",
+                                         "sparse posets too small to "
+                                         "discriminate"]})
+    dg_all = all(set(v) == {0} for r in link_tab.values()
+                 for lk, v in r.items() if lk in DIAG)
+    det0 = all(r["det"] == "0" for r in i7_rows)
     gate("G-WALL-DIAGONAL",
-         "THE DIAGONAL QUESTION IS NOT ANSWERED HERE.  q_12 = 0 is "
-         "INHERITED (V13): the co-division graph is the rook's graph and "
-         "diagonal pairs share neither row nor column, measured at 9 of 9 "
-         "sites on every crystal by the G-BRIDGE-DIAG gates.  This unit "
-         "notes a genuine counterpoint and refuses to read it: the "
-         "division-event FIELD's invariance direction is the diagonal "
-         "<(1,1)>, while the diagonal LINK count is identically zero.  "
-         "These are different objects -- a translation of the site lattice "
-         "and a generator of the link structure -- and nothing here decides "
-         "the other",
-         True, {"q12": 0, "inherited": True, "answered_here": False})
+         f"THE DIAGONAL QUESTION IS NOT ANSWERED HERE, AND THE "
+         f"COUNTERPOINT IS DEFLATED RATHER THAN READ.  q_12 = 0 is "
+         f"INHERITED (V13): the co-division graph is the rook's graph and "
+         f"diagonal pairs share neither row nor column, measured at 9 of 9 "
+         f"sites on every crystal by the G-BRIDGE-DIAG gates ({dg_all}).  "
+         f"SEC 7b assembles I7's coordinates for ONE purpose only -- to "
+         f"record that the induced form is DEGENERATE at every site of "
+         f"every crystal ({det0}), so that no metric is read off it here "
+         f"and the census that would read one is answered before it is "
+         f"posed.  The counterpoint -- the field's invariance direction is "
+         f"the diagonal <(1,1)> while the diagonal LINK count is "
+         f"identically zero -- is not a coincidence this unit interprets: "
+         f"G-I7-ONE-CAUSE measures that both descend from the same "
+         f"constructor choice.  Whether a carrier exists that POPULATES a "
+         f"diagonal pair is not decided here",
+         dg_all and det0, {"q12": 0, "inherited": True,
+                           "answered_here": False,
+                           "diagonal_all_zero": dg_all,
+                           "induced_det_all_zero": det0})
+    dead_tokens = ["STRUCT-DEAD", "ARITY-DEAD", "CONG-185", "ULAM",
+                   "SYLVESTER", "ISOS=", "CONFIGS="]
+    dead_hay = (json.dumps(PAYLOAD, sort_keys=True, default=str)
+                + " " + " ".join(g["gate"] for g in GATES)).upper()
+    dead_hits = sorted(t for t in dead_tokens if t in dead_hay)
+    reg(len(dead_tokens), len(dead_hits))
     gate("G-DEAD-LIST-CITED",
-         "the pre-registered dead list (weld-2 pin R4 / scout S6) is CITED "
-         "and not re-run: R6b' C1-C5 and the four blanket rows.  No "
-         "measurement above re-derives any of them",
-         True, {"dead_items": 5},
-         waiver={"class": "DECLARATION-CARRIED",
-                 "reason": "a discipline statement about what this unit does "
-                           "NOT compute; the receipt's measurement rows "
-                           "exhibit the absence"})
+         f"the pre-registered dead list (weld-2 pin R4 / scout S6) is CITED "
+         f"and not re-run: R6b' C1-C5 and the four blanket rows.  MEASURED, "
+         f"not asserted: the weld-2 census's own result names -- "
+         f"{dead_tokens} -- are searched for across every gate name and "
+         f"every measurement row this run produced, and "
+         f"{len(dead_hits)} occur.  SEC 7b reads weld 2's LIVE row "
+         f"(INDUCED-DET=0) from the FOUND side and re-derives none of the "
+         f"dead ones",
+         dead_hits == [], {"dead_items": 5, "tokens": dead_tokens,
+                           "hits": dead_hits})
     checkpoint("SEC 8 (the walls)")
 
     # -------------------------------------------------------------- SEC 9
@@ -1870,6 +2587,45 @@ def main_run():
     emit("=" * 78)
     emit("SEC 9  THE VERDICT")
     emit("=" * 78)
+    unbound = [c["gate"] for c in POLARITY_CHECKS if not c["bound"]]
+    reg(len(POLARITY_CHECKS))
+    gate("G-PROSE-POLARITY",
+         f"A GATE'S WORDS ARE BOUND TO ITS OWN BOOLEAN (#20).  "
+         f"{len(POLARITY_CHECKS)} gate statements carry a polarity pair -- "
+         f"the fragment their measured verdict REQUIRES and the fragment it "
+         f"FORBIDS -- checked under whitespace normalisation at gate time: "
+         f"{len(unbound)} statements say something their own number does "
+         f"not support.  A statement inverted to the opposite claim while "
+         f"its boolean and evidence are left intact therefore cannot ship",
+         unbound == [] and len(POLARITY_CHECKS) > 0,
+         {"checked": len(POLARITY_CHECKS), "violations": unbound,
+          "gates": sorted({c["gate"] for c in POLARITY_CHECKS})})
+    TAIL = ["G-MUTANT-REGISTRY", "G-HEAD-EQUALITY", "G-VERIFY-PAPER-PRESENT",
+            "G-VERIFY-PAPER-NUMERALS", "G-VERIFY-PAPER-CLAIMS",
+            "G-SEAL-INTEGRITY"]
+    raised = {g["gate"] for g in GATES} | set(TAIL)
+    targets = sorted({m["target"] for m in MUTANTS.values()
+                      if m["target"] != "ANCHOR-STAGE"})
+    unknown = [t for t in targets if t not in raised]
+    declared = [g["gate"] for g in GATES if g["kind"] == "DECLARED"]
+    reg(len(MUTANTS), len(targets), len(GATES), len(declared))
+    gate("G-MUTANT-REGISTRY",
+         f"THE REGISTRY IS BOUND TO THE RUN (#34).  Each of the "
+         f"{len(MUTANTS)} registered mutants names the gate it must die "
+         f"at; those names resolve to {len(targets)} distinct gate "
+         f"instances and {len(unknown)} of them fail to name a gate this "
+         f"run raises, against {len(GATES)} gate instances raised through "
+         f"SEC 8.  A registry entry that named the wrong gate would fail "
+         f"HERE, and each --mutant run additionally refuses unless the "
+         f"gates it actually died at include its registered target.  "
+         f"HONEST DENOMINATOR: {len(declared)} gate instances in this run "
+         f"carry a DECLARATION rather than a measurement and are labelled "
+         f"so in every row ({declared}); every other gate's verdict "
+         f"argument is a measured quantity",
+         unknown == [] and len(targets) > 0,
+         {"mutants": len(MUTANTS), "targets": targets,
+          "unknown_targets": unknown, "gates_through_sec8": len(GATES),
+          "declared_gates": declared})
     head = build_head(stab_tab)
     head2 = reconstruct_head()
     if MUTANT == "MUT-HEAD":
@@ -1881,20 +2637,22 @@ def main_run():
          f"marked events by the SHAPE predicate rather than the tag, maps "
          f"actors to sites by enumeration rather than by parsing their "
          f"names, computes each stabilizer as a Fourier annihilator over "
-         f"Z[omega], and takes the outcome NAME from the pin's own OUTCOMES "
-         f"section by a different extractor -- sharing no instrument code, "
-         f"no derived input and no typed literal with the path above.  "
-         f"Length {len(head)} vs {len(head2)}",
+         f"Z[omega], takes the outcome NAME from the pin's own OUTCOMES "
+         f"section by a different extractor, and takes the QUALIFIER from a "
+         f"different sentence in a different section of the adjudication "
+         f"that ordered it.  What the two paths share is named: the arena "
+         f"(the five records are the object of study) and `regs_of`, which "
+         f"IS the footprint reading.  Length {len(head)} vs {len(head2)}",
          head == head2, {"head": head, "reconstruction": head2,
                          "identical": head == head2})
     emit("")
     emit(f"  [HEAD] {head}")
     emit(f"  [GEOMETRY] {geom_verdict}")
-    PAYLOAD["head"] = head
-    PAYLOAD["geometry_verdict"] = geom_verdict
+    seal_payload("head", head)
+    seal_payload("geometry_verdict", geom_verdict)
     reg(*re.findall(r"\d+/\d+|\d+", head + " " + geom_verdict))
-    PAYLOAD["stabilizer_table"] = {f"{k[0]}|{k[1]}": v
-                                   for k, v in sorted(stab_tab.items())}
+    seal_payload("stabilizer_table",
+                 {f"{k[0]}|{k[1]}": v for k, v in sorted(stab_tab.items())})
     return head, geom_verdict
 
 
@@ -1945,9 +2703,32 @@ def outcome_name_alt(which):
     raise SystemExit("pin does not carry the pre-registered outcome name")
 
 
+def qualifier():
+    """The head's QUALIFIER is not typed either: it is read from the
+    adjudication that ordered it.  Route 1: the ruling sentence."""
+    txt = norm_ws(SOURCES["v14/note-u4-adjudication.md"])
+    m = re.search(r"the head gains the qualifier \*\*([A-Z][A-Z-]+)\*\*", txt)
+    if not m:
+        raise SystemExit("the adjudication does not carry the qualifier")
+    return m.group(1)
+
+
+def qualifier_alt():
+    """Route 2, for the reconstruction: the binding repair order, a
+    different sentence in a different section, scanned differently."""
+    body = norm_ws(SOURCES["v14/note-u4-adjudication.md"])
+    cut = body.find("Binding repair orders")
+    m = re.search(r"\*\*The head qualified\*\*: ([A-Z][A-Z-]+) appended",
+                  body[cut:])
+    if not m:
+        raise SystemExit("the adjudication does not carry the qualifier")
+    return m.group(1)
+
+
 def build_head(tab):
     base = outcome_name("U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL")
-    return re.sub(r"<[^>]*>$", "", base) + "[" + head_table(tab) + "]"
+    return (re.sub(r"<[^>]*>$", "", base) + qualifier() + "-["
+            + head_table(tab) + "]")
 
 
 def reconstruct_head():
@@ -1981,7 +2762,7 @@ def reconstruct_head():
             tab[(nm, rd)] = subgroup_name(stabilizer_by_characters(g))
     base = outcome_name_alt("U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL")
     cut = base.find("<")
-    return base[:cut] + "[" + head_table(tab) + "]"
+    return base[:cut] + qualifier_alt() + "-[" + head_table(tab) + "]"
 
 
 # ===========================================================================
@@ -2071,29 +2852,118 @@ def verify_paper():
          len(miss) == 0, {"claims": len(claims), "missing": miss})
 
 
+def apply_seam_mutants():
+    """The SEAM attacks, post-repair.  Every one of them tampers with the
+    object that is actually published -- the SEALED copy on its way to
+    disk -- because that is the only attack surface a gate-time seal
+    leaves.  Each must die at G-SEAL-INTEGRITY."""
+    if MUTANT not in SEAM_MUTANTS:
+        return
+    if MUTANT == "MUT-SEAM-OUTPUT-LINE":
+        for i, ln in enumerate(SEALED_LINES):
+            if ln.startswith("  [DATA] CONFLICT-GRID(3,2)  initiator"):
+                SEALED_LINES[i] = ("  [DATA] CONFLICT-GRID(3,2)   initiator  "
+                                   "field=[2, 2, 2, 2, 2, 2, 2, 2, 2] "
+                                   "support=9/9")
+                break
+    if MUTANT == "MUT-SEAM-GATE-ROW":
+        for g in SEALED["gates"]:
+            if g["gate"] == "G-STAB[CONFLICT-GRID(3,2)|footprint]":
+                g["statement"] = g["statement"].replace("Z3^2", "<(1,1)>")
+                g["evidence"]["stabilizer"] = "<(1,1)>"
+                g["evidence"]["order"] = 3
+                break
+    if MUTANT == "MUT-SEAM-GATE-FLAG":
+        for g in SEALED["gates"]:
+            if g["gate"] == "G-BRIDGE-DIAG[DOUBLE-GRID(3,2)]":
+                g["evidence"]["diag_11"] = [1, 0, 0, 0, 0, 0, 0, 0, 0]
+                g["passed"] = True
+                break
+    if MUTANT == "MUT-SEAM-PAYLOAD":
+        SEALED_PAYLOAD["arena"][0]["events"] = 99
+        SEALED_PAYLOAD["arena"][0]["divisions"] = 99
+    if MUTANT == "MUT-SEAM-ROW-SWAP":
+        rows = SEALED_PAYLOAD["stabilizers"]
+        ctrl = [r for r in rows if r["kind"] == "CONTROL"][0]
+        for i, r in enumerate(rows):
+            if r["crystal"] == "CONFLICT-GRID(3,2)" and \
+                    r["reading"] == "initiator":
+                rows[i] = dict(ctrl, crystal="CONFLICT-GRID(3,2)",
+                               kind="ARBITRATION")
+                break
+    if MUTANT == "MUT-SEAM-TABLE-CELL":
+        SEALED_PAYLOAD["stabilizer_table"][
+            "CONFLICT-GRID(3,4)|footprint"] = "<(1,1)>"
+
+
+def seal_check(where):
+    """#119: recompute every digest FROM THE OBJECT THAT WILL BE WRITTEN
+    (or, at the disk stage, from the bytes) and compare against the seals
+    taken at gate time.  Returns (ok, evidence)."""
+    bad = {}
+    for kind in SEALS:
+        got = [_digest(r) for r in SEALED[kind]]
+        bad[kind] = [i for i, (a, b) in enumerate(zip(got, SEALS[kind]))
+                     if a != b] + ([len(SEALS[kind])]
+                                   if len(got) != len(SEALS[kind]) else [])
+    pay = [k for k in PAYLOAD_SEALS
+           if k not in SEALED_PAYLOAD
+           or _digest(SEALED_PAYLOAD[k]) != PAYLOAD_SEALS[k]]
+    extra = [k for k in SEALED_PAYLOAD if k not in PAYLOAD_SEALS]
+    out_ok = (sha256_of(out_text(SEALED_LINES).encode("utf-8"))
+              == OUT_H.hexdigest())
+    ok = (not any(bad.values()) and not pay and not extra and out_ok)
+    return ok, {"where": where, "rows_broken": {k: v for k, v in bad.items()
+                                                if v},
+                "payload_broken": pay, "payload_unsealed": extra,
+                "output_seal_intact": out_ok,
+                "sealed_output_lines": len(SEALED_LINES),
+                "sealed_rows": {k: len(SEALS[k]) for k in SEALS},
+                "sealed_payload_rows": len(PAYLOAD_SEALS)}
+
+
 def render():
-    out = "\n".join(LINES) + "\n"
+    out = out_text(SEALED_LINES)
     rec = {
         "unit": "U4 / paper-14 -- renewal-only crystals",
         "pin": {"path": "v14/note-u4-pin.md", "sha256_12": "06b62ecb60a9",
                 "ledger": 105},
         "interpreter": INTERP,
-        "head": PAYLOAD.get("head"),
-        "geometry_verdict": PAYLOAD.get("geometry_verdict"),
-        "stabilizer_table": PAYLOAD.get("stabilizer_table"),
-        "counts": {"gates": len(GATES),
-                   "gates_passed": sum(1 for g in GATES if g["passed"]),
-                   "gates_failed": sum(1 for g in GATES if not g["passed"]),
-                   "anchors": len(ANCHORS),
-                   "anchors_passed": sum(1 for a in ANCHORS if a["passed"]),
-                   "verbatim_anchors": len(VANCHORS),
-                   "verbatim_passed": sum(1 for v in VANCHORS if v["found"]),
-                   "waivers": len(WAIVERS),
+        "head": SEALED_PAYLOAD.get("head"),
+        "geometry_verdict": SEALED_PAYLOAD.get("geometry_verdict"),
+        "stabilizer_table": SEALED_PAYLOAD.get("stabilizer_table"),
+        "counts": {"gates": len(SEALED["gates"]),
+                   "gates_passed": sum(1 for g in SEALED["gates"]
+                                       if g["passed"]),
+                   "gates_failed": sum(1 for g in SEALED["gates"]
+                                       if not g["passed"]),
+                   "gates_declared": sum(1 for g in SEALED["gates"]
+                                         if g["kind"] == "DECLARED"),
+                   "gates_measured": sum(1 for g in SEALED["gates"]
+                                         if g["kind"] == "MEASURED"),
+                   "mutant_target_gates": len({m["target"] for m in
+                                               MUTANTS.values()
+                                               if m["target"] !=
+                                               "ANCHOR-STAGE"}),
+                   "anchors": len(SEALED["anchors"]),
+                   "anchors_passed": sum(1 for a in SEALED["anchors"]
+                                         if a["passed"]),
+                   "verbatim_anchors": len(SEALED["verbatim"]),
+                   "verbatim_passed": sum(1 for v in SEALED["verbatim"]
+                                          if v["found"]),
+                   "waivers": len(SEALED["waivers"]),
+                   "polarity_checks": len(POLARITY_CHECKS),
                    "mutants_registered": len(MUTANTS),
                    "numbers_registered": len(NUMREG)},
-        "gates": GATES, "anchors": ANCHORS, "verbatim": VANCHORS,
-        "waivers": WAIVERS, "payload": PAYLOAD,
+        "gates": SEALED["gates"], "anchors": SEALED["anchors"],
+        "verbatim": SEALED["verbatim"], "waivers": SEALED["waivers"],
+        "payload": SEALED_PAYLOAD,
         "mutants": {k: MUTANTS[k] for k in sorted(MUTANTS)},
+        "seal": {"gates": SEALS["gates"], "anchors": SEALS["anchors"],
+                 "verbatim": SEALS["verbatim"], "waivers": SEALS["waivers"],
+                 "payload": PAYLOAD_SEALS,
+                 "output": OUT_H.hexdigest(),
+                 "output_lines": len(SEALED_LINES)},
         "output_sha256": sha256_of(out.encode("utf-8")),
     }
     return out, json.dumps(rec, indent=2, sort_keys=True,
@@ -2111,17 +2981,38 @@ def write_and_verify(out, rj):
     with open(tmp2, "rb") as fh:
         b2 = fh.read()
     rec = json.loads(b2.decode("utf-8"))
+    # THE INTEGRITY CHECK IS DISK-VERSUS-SEAL, never disk-versus-memory:
+    # every published row is re-digested FROM THE BYTES THAT WERE WRITTEN
+    # and compared with the digest taken when its gate fired.
+    disk_rows = all(
+        [_digest(r) for r in rec[k]] == SEALS[k]
+        for k in ("gates", "anchors", "verbatim", "waivers"))
+    disk_pay = (set(rec["payload"]) == set(PAYLOAD_SEALS)
+                and all(_digest(rec["payload"][k]) == PAYLOAD_SEALS[k]
+                        for k in PAYLOAD_SEALS))
+    txt = b1.decode("utf-8")
+    disk_out = (sha256_of(b1) == OUT_H.hexdigest())
+    tgt_ok = all(t in {g["gate"] for g in rec["gates"]}
+                 for t in {m["target"] for m in MUTANTS.values()
+                           if m["target"] != "ANCHOR-STAGE"})
     ok = (b1 == out.encode("utf-8") and b2 == rj.encode("utf-8")
           and rec["output_sha256"] == sha256_of(b1)
-          and rec["head"] == PAYLOAD.get("head")
-          and PAYLOAD.get("head", "") in b1.decode("utf-8")
-          and rec["counts"]["gates_failed"] == 0)
+          and rec["head"] == SEALED_PAYLOAD.get("head")
+          and SEALED_PAYLOAD.get("head", "") in txt
+          and rec["counts"]["gates_failed"] == 0
+          and disk_rows and disk_pay and disk_out and tgt_ok)
     print(f"  [{'PASS' if ok else 'FAIL'}] G-FINAL-INTEGRITY")
     print(f"         the two artifacts were written, RE-READ FROM DISK and "
-          f"re-verified: {len(b1)} + {len(b2)} bytes, the receipt's recorded "
-          f"output sha256 matches the file on disk, the head in the receipt "
-          f"matches the head in the output and the head in memory, and no "
-          f"gate failed")
+          f"re-verified AGAINST THE GATE-TIME SEAL: {len(b1)} + {len(b2)} "
+          f"bytes; every gate, anchor, verbatim and waiver row on disk "
+          f"re-digests to the digest taken when its gate fired "
+          f"({disk_rows}); every payload row does the same ({disk_pay}); "
+          f"the output bytes reproduce the seal folded at emit time "
+          f"({disk_out}); every "
+          f"registered mutant target names a gate the receipt carries "
+          f"({tgt_ok}); the receipt's recorded output sha256 matches the "
+          f"file on disk; the head in the receipt matches the head in the "
+          f"output and the head in memory; and no gate failed")
     if not ok:
         os.remove(tmp1)
         os.remove(tmp2)
@@ -2129,6 +3020,29 @@ def write_and_verify(out, rj):
     os.replace(tmp1, OUT_TXT)
     os.replace(tmp2, OUT_JSON)
     return True
+
+
+def finalize():
+    """The seal stage: publish only what was sealed, and gate the seal."""
+    apply_seam_mutants()
+    ok, ev = seal_check("pre-write")
+    gate("G-SEAL-INTEGRITY",
+         f"THE SEAL (#119).  Every published row -- {len(SEALS['gates'])} "
+         f"gates, {len(SEALS['anchors'])} anchors, "
+         f"{len(SEALS['verbatim'])} verbatim anchors, "
+         f"{len(SEALS['waivers'])} waivers and "
+         f"{len(PAYLOAD_SEALS)} payload rows -- was DIGESTED AT GATE TIME, "
+         f"and the artifacts are rendered from those sealed copies, not "
+         f"from live memory; the emitted output is folded into a byte "
+         f"seal AS IT IS EMITTED.  Here every sealed object is "
+         f"re-digested and compared against the digest taken when its gate "
+         f"fired, and after the write the same comparison is made again "
+         f"from THE BYTES ON DISK.  Anything changed between a gate and "
+         f"the disk -- an output line, a gate row, a gate's passed flag, a "
+         f"payload row, a published table cell -- fails HERE and nothing "
+         f"is written",
+         ok, ev)
+    return render()
 
 
 USAGE = ("usage: u4_crystals_exact.py [--selftest | --numbers | "
@@ -2149,7 +3063,8 @@ def parse_argv(argv):
             print(f"unknown mutant: {argv[2]}", file=sys.stderr)
             print("registered mutants:", file=sys.stderr)
             for k in sorted(MUTANTS):
-                print(f"  {k}: {MUTANTS[k]}", file=sys.stderr)
+                print(f"  {k}: {MUTANTS[k]['what']}  "
+                      f"[target {MUTANTS[k]['target']}]", file=sys.stderr)
             sys.exit(2)
         return ("mutant", argv[2])
     print(USAGE, file=sys.stderr)
@@ -2173,12 +3088,15 @@ def main():
         died = ANCHOR_FAIL > 0
         after = (os.path.exists(OUT_TXT) and open(OUT_TXT, "rb").read(),
                  os.path.exists(OUT_JSON) and open(OUT_JSON, "rb").read())
+        wrote_nothing = (before == after
+                         and not os.path.exists(OUT_TXT + ".tmp")
+                         and not os.path.exists(OUT_JSON + ".tmp"))
         print("SELFTEST -- one committed anchor corrupted "
               "(DOUBLE-GRID(3,2) d=2 max|D|: 9 -> 8)")
         print(f"  anchors failed: {ANCHOR_FAIL} (expected >= 1)")
         print(f"  artifacts unchanged: {before == after}")
-        print(f"  wrote nothing: True")
-        ok = died and before == after
+        print(f"  wrote nothing: {wrote_nothing}")
+        ok = died and before == after and wrote_nothing
         print(f"  [{'PASS' if ok else 'FAIL'}] G-SELFTEST")
         sys.exit(0 if ok else 1)
 
@@ -2189,21 +3107,27 @@ def main():
         try:
             main_run()
             verify_paper()
+            finalize()
         except SystemExit:
             pass
         failed = [g["gate"] for g in GATES if not g["passed"]]
         after = (os.path.exists(OUT_TXT) and open(OUT_TXT, "rb").read(),
                  os.path.exists(OUT_JSON) and open(OUT_JSON, "rb").read())
         died = bool(failed) or ANCHOR_FAIL > 0
+        tgt = MUTANTS[name]["target"]
+        at_target = (ANCHOR_FAIL > 0 if tgt == "ANCHOR-STAGE"
+                     else tgt in failed)
         print(f"MUTANT {name}")
-        print(f"  {MUTANTS[name]}")
+        print(f"  {MUTANTS[name]['what']}")
+        print(f"  registered target: {tgt}")
         print(f"  died at gates: {failed if failed else '(anchor stage)'}")
+        print(f"  died at its registered target: {at_target}")
         print(f"  anchor failures: {ANCHOR_FAIL}")
         print(f"  artifacts unchanged: {before == after}")
         for ln in LINES:
-            if "VARIES" in ln or "[GEOMETRY" in ln:
+            if "[GEOMETRY SEGMENT VERDICT]" in ln or "VARIES" in ln:
                 print(f"  emitted: {ln.strip()}")
-        ok = died and before == after
+        ok = died and before == after and at_target
         print(f"  [{'PASS' if ok else 'FAIL'}] G-MUTANT[{name}]")
         sys.exit(0 if ok else 1)
 
@@ -2220,7 +3144,7 @@ def main():
         sys.exit(0)
 
     verify_paper()
-    out, rj = render()
+    out, rj = finalize()
     print("\n".join(LINES))
     if ANCHOR_FAIL or FAILED:
         print(f"\nREFUSED: {FAILED} gate failures, {ANCHOR_FAIL} anchor "

@@ -8,7 +8,7 @@ artifacts `v14/code/u4_crystals_output.txt`,
 **Verdict.**
 
 ```
-U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]
+U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-CONSTRUCTOR-INHERITED-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]
 ```
 
 **Geometry segment.**
@@ -34,7 +34,10 @@ The italicised clause has never been checked anywhere in the corpus. It
 was registered-unrun in weld 2's committed gate `G-U4-REGISTERED`, which
 states of itself that "this unit builds the committed crystals and reads
 their division events, it does not rebuild the crystals with
-renewal-only records". This unit checks it.
+renewal-only records". This unit checks it, and finds it true and
+**inherited**: the periodicity is the constructors' own, carried into
+the division events by a seed rule, and §5.1 measures the mechanism that
+carries it.
 
 ## 2. The arena, declared (§15)
 
@@ -58,11 +61,21 @@ The constructors are rebuilt from their definitions rather than
 imported: D60's `B` and CRYSTAL-2D (`684cdb76552b`), D66's `double_grid`
 and `conflict_grid` (`3d0516ab106e`), over the D42b1 transport grammar
 (`576275d55ecf`). The rebuild is cross-checked against the v10
-originals' own committed output at **every atlas row and count those
-runs printed for these crystals** — the control's full profile at both
-depths, and the two swept crystals' widths, homogeneities, mean chart
-sizes, overlaps, arbitration shares, version-register counts and event
-counts. Forty-two committed-number anchors reproduce, none moves.
+originals' own committed output at **the atlas rows and counts
+enumerated here** — the control's full profile at both depths, and the
+two swept crystals' widths, homogeneities, mean chart sizes, overlaps,
+arbitration shares, version-register counts and event counts. Forty-two
+committed-number anchors reproduce, none moves; each is *read* at run
+time out of the v10 output line it cites, by a context-keyed regex, and
+it is the extracted value — not a typed rendering — that the computed
+number is compared against.
+
+The cross-check is not exhaustive of what v10 printed for these
+crystals, and the rows it does not carry are named rather than left
+implicit: DOUBLE-GRID(3,2)'s depth-3 mean chart size, the depth-2 width
+histograms of DOUBLE-GRID(3,2) and CONFLICT-GRID(3,4), DOUBLE-GRID(3,2)'s
+tag census and its arbitrations by proposer count, and the excision row.
+Those are outside the gated set and this unit makes no claim about them.
 
 The two crystals v10 never swept — DOUBLE-GRID(3,3) and
 CONFLICT-GRID(3,2) — carry no committed row anywhere, so they are
@@ -167,40 +180,128 @@ crystal do form a crystal. On the declared counterexample control, under
 both readings, the stabilizer is trivial: the division events of a
 delivery crystal do not.
 
-Each stabilizer is computed twice by routes sharing no code and no typed
-constant — once by translating the field directly, once as the
-annihilator of the support of the exact Z₃² Fourier transform in
-`Z[ω] = Z[t]/(t² + t + 1)`, running over the dual group. The two agree
-element for element in all ten cells.
+Two of the ten cells carry that positive on a **constant** field. At both
+CONFLICT-GRID footprint cells the field is 2 everywhere and 4 everywhere;
+a constant field on any finite group is stabilised by the whole group,
+whatever record produced it, so those two cells are uninformative about
+periodicity beyond the construction's own partition. The informative
+arbitration cells are six of eight.
 
-**The site reading is not neutral, and the scout's preliminary is
-corrected.** The scout of record recorded "stabilizers AGREE, supports
-differ (6/9 vs 9/9)". Measured: the two readings agree at 2 of the 4
+The control's other value is likewise forced rather than found. If
+`H ≤ Z₃²` is nontrivial, the support of an `H`-invariant field is a union
+of `H`-cosets, so its size is divisible by `|H|`; the control's support
+is 1, which forbids any nontrivial `H` at either reading. What the
+control demonstrates is that a delivery crystal has too few division
+events to carry any spatial structure. The instrument's power to detect
+*aperiodicity* is demonstrated separately, by the planted-aperiodic
+mutant.
+
+Each stabilizer is computed twice — once by translating the field
+directly, once as the annihilator of the support of the exact Z₃² Fourier
+transform in `Z[ω] = Z[t]/(t² + t + 1)`, running over the dual group. The
+two agree element for element in all ten cells. That is the same field by
+two **algorithms**, not two data routes: both consume the field and the
+subgroup-naming function. The field-level independence is delivered one
+gate later, by the head-equality gate, whose reconstruction rebuilds the
+record, the marking and the site map.
+
+**The site reading is not neutral, and the scout of record is corrected
+where it spoke.** The scout's declared-data obligations paragraph
+recorded "stabilizers AGREE, supports differ (6/9 vs 9/9)"; its own
+PRELIMINARY, four lines earlier, had already flagged CONFLICT-GRID(3,2)'s
+footprint field as constant at order 9, and it was silent on
+CONFLICT-GRID(3,4). Measured: the two readings agree at 2 of the 4
 arbitration crystals and **diverge at the other 2** — at both
 CONFLICT-GRIDs the footprint field is constant and its stabilizer is the
 whole group — and the supports are 6/9 against 9/9 only on the
-DOUBLE-GRIDs, 3/9 against 9/9 on the CONFLICT-GRIDs. The divergence runs
-in one direction only: the footprint reading never shrinks a stabilizer,
-it only enlarges it. And `<(1,1)>` lies inside all eight arbitration
-cells, so the invariance direction the four crystals share is the
-diagonal, at both readings.
+DOUBLE-GRIDs, 3/9 against 9/9 on the CONFLICT-GRIDs. The relation between
+the two readings is **containment**: the footprint stabilizer contains
+the initiator stabilizer at all five records, strictly at the two
+CONFLICT-GRIDs. "Never shrinks" is the measurement; "enlarges" would not
+be. And `<(1,1)>` lies inside all eight arbitration cells, so the
+invariance direction the four crystals share is the diagonal, at both
+readings.
 
-That the shared direction is the diagonal is a genuine counterpoint to
-§7's inherited `q₁₂ ≡ 0`, and §8 records why this unit refuses to read it.
+### 5.1 Where the periodicity comes from
+
+The ten-cell table has a one-line mechanism and it is the constructors'.
+On every crystal and at both readings the division field is **affine in
+the indicator of the constructor's own seed set**:
+
+```
+n = c + m·1_S
+```
+
+where `S` is the set of sites the constructor seats its arbitrations on.
+`S` is re-derived here from the seed rule in the committed constructor —
+`double_grid` seats its row groups at `ac[i][i]` and its column groups at
+`ac[(j+2)%g][j]`, `conflict_grid` seats both parities at `ac[i][i]`, the
+control mints and arbitrates at `GRID[0]` alone — and never read off the
+measured field. Measured, at all ten cells:
+
+| crystal | reading | c | m | \|S\| | Stab(1_S) | Stab(n) |
+|---|---|---|---|---|---|---|
+| DOUBLE-GRID(3,2) | initiator | 0 | 3 | 6 | `<(1,1)>` | `<(1,1)>` |
+| DOUBLE-GRID(3,2) | footprint | 4 | 1 | 6 | `<(1,1)>` | `<(1,1)>` |
+| DOUBLE-GRID(3,3) | initiator | 0 | 4 | 6 | `<(1,1)>` | `<(1,1)>` |
+| DOUBLE-GRID(3,3) | footprint | 6 | 1 | 6 | `<(1,1)>` | `<(1,1)>` |
+| CONFLICT-GRID(3,2) | initiator | 0 | 2 | 3 | `<(1,1)>` | `<(1,1)>` |
+| CONFLICT-GRID(3,2) | footprint | 2 | **0** | 3 | `<(1,1)>` | `Z3^2` |
+| CONFLICT-GRID(3,4) | initiator | 0 | 4 | 3 | `<(1,1)>` | `<(1,1)>` |
+| CONFLICT-GRID(3,4) | footprint | 4 | **0** | 3 | `<(1,1)>` | `Z3^2` |
+| **D60-GRID(3,12)** | initiator | 0 | 1 | 1 | `1` | `1` |
+| **D60-GRID(3,12)** | footprint | 0 | 1 | 1 | `1` | `1` |
+
+The decomposition holds exactly at all nine sites of all ten cells, so
+the stabilizer is forced arithmetic: `Stab(n) = Stab(1_S)` wherever
+`m ≠ 0`, and the whole group wherever `m = 0` — which is the same two
+cells the constant fields sit at, now identified as vacuous positives by
+their mechanism and not only by inspection.
+
+And on all eight arbitration cells `S` is a union of **full** `<(1,1)>`
+cosets: the residues of `j − i` over `S` are {0, 1} on the DOUBLE-GRIDs
+and {0} on the CONFLICT-GRIDs, every class complete, because d66 seats
+its seeds at a uniform column offset. A seed set that is a union of
+cosets of a nontrivial subgroup *cannot* fail to put that subgroup in the
+stabilizer. On the control `S` is a single site, an incomplete residue
+class, which is exactly why the control returns order 1.
+
+So the claim is **TRUE and CONSTRUCTOR-INHERITED**, and the head says so.
+Read with the mechanism, "the division events of a conflict crystal form
+a crystal" says, on this arena: *these constructors seat their
+arbitrations on a union of full diagonal cosets and schedule them
+uniformly across rounds.* That the shared direction is the diagonal is
+therefore d66's seed rule and not a property of division events — which
+also settles §8's counterpoint, and is why §7.1 can say what the two
+diagonals have to do with each other.
+
+Whether any conflict-crystal constructor seats its arbitration seeds on
+something *other* than a coset union is the open question, and it is not
+asked here: it is S-U4-8, and it is the census U4b runs.
 
 ## 6. Geometry invariance
 
 The geometry rows are D66's, over D58's atlas and D47a's `sky` kind B:
 the chart width `max|D|`, the homogeneity fractions `|D| ≥ 2` and
 `|D| ≥ 4`, the mean chart size, the mean overlap ω, each at depths 2 and
-3, with the poset's longest chain as the height control. The full-record
-rows reproduce v10's committed output exactly wherever v10 printed it.
+3, with the poset's longest chain as the height statistic. The
+full-record rows reproduce v10's committed output exactly wherever v10
+printed it.
 
 ### 6.1 The height control fires first, and it is empty
 
-The Kleitman–Rothschild wall the catalog engraves for this unit —
-"a dimension reading without a height control is worthless" — is
-discharged before any row is read, and it decides the section.
+Two different objects go by the name "height control", and this section
+separates them.
+
+- **The KR discriminator** — the longest chain, reported alongside any
+  dimension reading so that a Kleitman–Rothschild order is unmasked. The
+  catalog's engraved requirement for this unit is that one, and it is
+  met: the longest chain of every population this unit reads, full and
+  sparse, is reported here and at §8.
+- **The height-matched control population** — same size, same height
+  histogram, drawn from unmarked events. That object is this unit's own
+  (choice inventory row 10, class **free**), it is stricter than the
+  wall demanded, and it is what is empty.
 
 **Measured: the division events of every crystal are height-pure.** They
 occupy whole height layers of the event poset and share those layers with
@@ -214,21 +315,29 @@ nothing else.
 | CONFLICT-GRID(3,4) | 1, 5, 9, 13 | 14 | 0 | empty, deficit 12 of 12 |
 | D60-GRID(3,12) | 1 | 21 | 0 | empty, deficit 1 of 1 |
 
-A height-matched control — same size, same height histogram, drawn from
-unmarked events — therefore **cannot be built at any crystal**: there is
-no unmarked event at any marked height. Every population-averaged row is
-consequently confounded with a height shift for which no control exists,
-and this unit certifies none of them. The KR warning here does not
-license a reading with a control attached; it forbids the reading
-outright.
+A height-matched control therefore **cannot be built at any crystal**:
+there is no unmarked event at any marked height. The obstruction is not
+an artefact of matching within a record. Pooling the unmarked events of
+all five records, 7 of the 8 marked heights are available somewhere, but
+height 1 is available nowhere: layer 1 is marked-only on every one of the
+five records, carrying 6, 6, 3, 3 and 1 marked events against 0 unmarked,
+and every record has marked events there. Even a cross-record
+height-matched control is unbuildable.
+
+Every population-averaged row is consequently confounded with a height
+shift for which this unit's control cannot be built, and it certifies
+none of them. The KR wall is not what forbids those rows — the wall's own
+discriminator is carried; what forbids them is the stricter control this
+unit requires of itself, and its emptiness is a theorem given purity, not
+a failure to look.
 
 ### 6.2 The row that survives the confound
 
 A maximum over a subset equals the maximum over the whole set exactly
 when the maximum is attained on the subset. The chart-width row is
 therefore not a population average at all but an attainment statement,
-which is why the empty height control does not reach it: it says which
-events carry the record's widest charts, not what a height-biased
+which is why the empty height-matched control does not reach it: it says
+which events carry the record's widest charts, not what a height-biased
 population averages to. It is the row this section can carry.
 
 | crystal | depth | full max\|D\| | attained at | of which marked | restricted max\|D\| | |
@@ -250,7 +359,8 @@ requirement is discharged on the row that carries it. At depth 2 the
 statement is sharper than survival: on all four arbitration crystals the
 widest charts in the record are centred *exclusively* on division events
 (3 of 3, 6 of 6, 1 of 1, 3 of 3), while on the control not one of the
-widest charts is (0 of 8).
+widest charts is (0 of 8). The sharpening is confined to depth 2; at
+depth 3 the widest charts are not exclusively marked.
 
 ### 6.3 The rows that are reported and not certified
 
@@ -279,7 +389,8 @@ sparse width is exactly 3 on every crystal whose sparse record has a
 nonzero one, and the mean overlap ω is exactly 1 wherever the sparse
 record has a cover to average over — on those records every cover's chart
 is contained in its successor's. CONFLICT-GRID(3,2) and the control have
-no such cover and report no value.
+no cover whose chart carries two or more directions, so no value is
+averaged and none is reported.
 
 ### 6.5 Arm (b): the renewal-only rebuild is not constructible
 
@@ -308,6 +419,16 @@ and it is the delivery.
 paper 0 §10's third falsifier reads: "If U4 shows sparse records destroy
 the geometry, kinematics and law are not separable as posited". **It does
 not fire.** Nothing here shows sparse records destroying a geometry.
+
+Nor does anything here show them preserving one. On this arena the
+falsifier is **not evaluable**: under arm (a)-POP the poset is held whole
+by construction, so no geometry could vary; under arm (a)-SUB the
+geometry does change substantially, but the two posets are different
+objects and the comparison is refused (§6.4); under arm (b) the object
+does not exist. Three sub-readings, no evaluable test. The falsifier does
+not fire because it cannot be evaluated here, not because it was tested
+and returned negative — and a reader must not take its silence for
+support in either direction.
 
 What fires is a prior obstruction the falsifier does not name: on this
 arena the sparse record is not *constructible*, because the crystals'
@@ -347,9 +468,10 @@ at all.
 **The support's coset structure.** At the initiator reading the
 sublattice's support is a union of full `<(1,1)>` cosets: two cosets on
 the DOUBLE-GRIDs (the residues 0 and 1 of j − i), one on the
-CONFLICT-GRIDs (residue 0). The control's support is a single site and no
-coset union. This is the sublattice-is-a-crystal statement read on the
-set rather than on the counts, and it agrees with §5.
+CONFLICT-GRIDs (residue 0). The control's support is a single site, whose
+residue class is not filled and which is therefore no coset union. This
+is the sublattice-is-a-crystal statement read on the set rather than on
+the counts, and it agrees with §5.
 
 **The record-order legs.** The gaps between consecutive marked events:
 
@@ -368,13 +490,78 @@ therefore a **comparison across scopes, not a test** of that law, and are
 reported so a successor at matched scope can use them. The CONFLICT-GRIDs
 are supported on exactly two leg lengths.
 
-**No indivisibility claim is made.** The pin scopes this section to what
-the arena can measure, and none of the three objects is a transition
-kernel, so no indivisibility reading is available here at all. The
-candidate readings are named and left as candidates: (i) the axis link
-counts as the crystal's own `q₁₁` and `q₂₂`; (ii) the leg multiset as a
-crystal-scope analogue of paper-09 §4's `g(n)`; (iii) the coset support
-as the renewal sublattice's own period lattice.
+**No indivisibility claim is made, and on this arena none is definable.**
+The pin scopes this section to what the arena can measure, and none of
+the three objects is a transition kernel. The reason is structural rather
+than circumstantial: all five records are FORCED, `maxhits = 1` at every
+one, so the menu never offers a choice and there is no branching for a
+kernel to describe. The founding spec's own clause — that the bridges are
+"probed for indivisible structure" — is therefore not merely unrun here
+but **unposable as the arena is declared**. Where the geometry is
+cleanest, the stochasticity is gone. The candidate readings are named and
+left as candidates: (i) the axis link counts as the crystal's own `q₁₁`
+and `q₂₂`; (ii) the leg multiset as a crystal-scope analogue of
+paper-09 §4's `g(n)`; (iii) the coset support as the renewal sublattice's
+own period lattice.
+
+### 7.1 The diagonal, unified
+
+Before U4 the crystal side of the weld-2 question was an event record.
+This unit delivers, for the first time, an object of the same species as
+the deformation side's: a site set Z₃², a link-indexed count field and a
+measured symmetry group. So the comparison can be made like for like, and
+it is made here — once, to record what it returns.
+
+I7's arena, read as data from weld 2 (`9cdb10472953`) and not
+re-authored: sites Z₃²; links {(1,0), (0,1), (1,1)}; a geometry record
+`n_ℓ(x)` strictly positive at each of the 9 × 3 = 27 cells; and the
+readout `q₁₁ = n_{e₁}`, `q₂₂ = n_{e₂}`,
+`q₁₂ = (n_{e₁+e₂} − n_{e₁} − n_{e₂})/2`. **I7's third link is the
+diagonal.** Evaluating this unit's bridges on those coordinates:
+
+| crystal | n(1,0) | n(0,1) | n(1,1) | q₁₁ | q₂₂ | q₁₂ | det | cells > 0 |
+|---|---|---|---|---|---|---|---|---|
+| DOUBLE-GRID(3,2) | 2 | 2 | 0 | 2 | 2 | −2 | **0** | 18 of 27 |
+| DOUBLE-GRID(3,3) | 3 | 3 | 0 | 3 | 3 | −3 | **0** | 18 of 27 |
+| CONFLICT-GRID(3,2) | 1 | 1 | 0 | 1 | 1 | −1 | **0** | 18 of 27 |
+| CONFLICT-GRID(3,4) | 2 | 2 | 0 | 2 | 2 | −2 | **0** | 18 of 27 |
+| **D60-GRID(3,12)** | 0 | 0 | 0 | 0 | 0 | 0 | **0** | 0 of 27 |
+
+Three things follow, and none of them is a new physical claim.
+
+**The renewal sublattice fills 18 of I7's 27 cells and fails exactly the
+9 diagonal ones.** The axis cells are strictly positive and
+translation-homogeneous; the diagonal cells are zero. By I7's own
+strict-positivity criterion the FOUND-side arena is inadmissible there,
+at the same link, for the same reason that decided the crystals on the
+deformation side.
+
+**The induced form is degenerate at every site of every crystal.** With
+the diagonal count zero and the two axis counts equal and homogeneous the
+form is `c·[[1,−1],[−1,1]]`, whose determinant is identically zero — an
+independent reproduction, from the FOUND side, of weld 2's committed
+`INDUCED-DET=0-AT-EVERY-SITE-OF-EVERY-CRYSTAL`, by a route weld 2 did not
+have. Its kernel is spanned by `(1,1)`: the direction the induced metric
+is blind along is the direction §5 measures as the division field's
+period.
+
+**Both appearances of (1,1) are one cause, not two witnesses.** §5.1
+measured why the count field is `<(1,1)>`-periodic: d66 seeds conflict on
+`<(1,1)>`-cosets. The same constructor groups by rows and columns, which
+makes the link set the two axes and leaves the diagonal empty. One design
+choice, two shadows. A successor must not count them as independent
+evidence, and the "counterpoint" of §8 is not a coincidence needing an
+explanation — it is the same fact seen twice.
+
+The consequence for the successor line is that the renewal-crystal weld
+census is **predictably empty at this family**: 18 of 27 positive and
+homogeneous, 9 diagonal cells zero, determinant identically zero, kernel
+`<(1,1)>`, at every one of the four arbitration crystals. This unit does
+not run that census — running it would record a verdict already
+determined — and the question that remains live is not "what does the
+census return here" but "does any admissible schedule move the
+determinant off zero". That is a column of U4b's table (§12), and it is
+where the weld arena would have to be found if it exists.
 
 ## 8. The walls
 
@@ -391,47 +578,66 @@ covariance group. This arena supplies five finite records and a
 translation action on their *site lattice*; the corpus contains no bridge
 from Z₃² translations to any boost, and this unit constructs none. **The
 fourth form is therefore not tested here.** It remains unargued and
-untested and is registered for a successor. The sentence retracted on
-2026-07-28 is not reproduced, and the program gates its absence from both
-this paper and its own source.
+untested and is registered for a successor.
+
+The sentence retracted on 2026-07-28 is not reproduced, and the program
+gates its absence from both this paper and its own source **as prose is
+written**: two needles — the retracted sentence and the corpus's own
+canonical short fragment, the one v11's text-anchor unit registers as
+L1-A16 — are matched with whitespace normalised on both sides, so a
+line-wrapped reproduction is caught exactly as a contiguous one is. Each
+needle is itself anchored against the pinned paper-0 erratum that carries
+the retracted wording, so a mis-transcribed needle cannot pass the gate
+vacuously.
 
 What *is* measured falls inside L-1's own scope guard, which states that
 the lemma "does **not** forbid a permutation action". The Z₃²
-translation stabilizer of §5 is a permutation action on the actor set. It
-needs no fourth-form argument at all, and that is why it is the
+translation stabilizer of §5 is a permutation action on the actor set —
+measured as such: each of the nine translations acts on the nine sites as
+a bijection, and each crystal's actor-to-site map is gated a bijection.
+It needs no fourth-form argument at all, and that is why it is the
 measurement this unit runs.
 
 **BHS — no sprinkling-grade Lorentz-invariance test.** The catalog
 records that v11's "crystals are finite-valency by construction, so BHS
 says their renewal sublattice **cannot** be statistically
 Lorentz-invariant in the sprinkling sense". Running the test would
-manufacture a false negative. None is run: no sprinkling, no boost, no
-rapidity and no frame appears in any measurement above. paper 0 §7
-attaches two catalog tests to U4 as riding along; this is the one that
-does not ride.
+manufacture a false negative. None is run, and the absence is measured
+rather than declared: every measurement row this unit computed is scanned
+for the tokens that would betray such a test — sprinkling, boost,
+rapidity, frame, Lorentz — and carries none of them. (The scan excludes
+the pinned-source list, which names L-1's own filename and is provenance
+rather than measurement.) paper 0 §7 attaches two
+catalog tests to U4 as riding along; this is the one that does not ride.
 
-**Kleitman–Rothschild — every dimension reading carries a height
-control.** The only dimension-adjacent row read here is the chart width,
-and §6.1 and §6.2 report it with the longest chain of every population it
-is read on, full and sparse. The KR discriminator is the longest chain —
-KR orders return 3 where a sprinkling of comparable size returns tens —
-and no population here returns 3. No Myrheim–Meyer estimate is run at
-all; the second catalog test that paper 0 §7 attaches to U4, the
-max-shatter dimension meter as acceptance gauge, is **not** run, because
-the height control that would have to accompany it is the empty one of
-§6.1.
+**Kleitman–Rothschild — every dimension reading carries its height
+statistic.** The only dimension-adjacent row read here is the chart
+width, and §6.1 and §6.2 report it with the longest chain of every
+population it is read on, full and sparse. The KR discriminator is the
+longest chain — KR orders return 3 where a sprinkling of comparable size
+returns tens — and no population here returns 3. No Myrheim–Meyer
+estimate is run at all. The second catalog test paper 0 §7 attaches to
+U4, the max-shatter dimension meter as acceptance gauge, is **not** run,
+and not because the KR discriminator is missing — it is carried. It is
+not run for two other reasons: the catalog grades max-shatter a
+1+1-escape detector and explicitly *not* a dimension estimator, and at
+n ≤ 24 marked events with heights ≤ 7 no acceptance gauge on these sparse
+posets could discriminate anything. The object that is empty in §6.1 is
+this unit's own stricter height-matched control population.
 
 **The diagonal — `q₁₂ ≡ 0` is inherited, and the question is not answered
 here.** The co-division graph is the rook's graph; diagonal pairs share
 neither row nor column, and §7 measures the diagonal link count
 identically zero at 9 of 9 sites on every crystal. That is inherited, not
-found. The counterpoint is real and this unit refuses to read it: the
-division-event *field*'s invariance direction is the diagonal `<(1,1)>`
-while the diagonal *link* count is identically zero. These are different
-objects — a translation of the site lattice, and a generator of the link
-structure — and nothing measured here decides the other. Whether a
-carrier exists that populates a diagonal pair is the scout's S1, which
-belongs to the ≥9-actor line, not to this one.
+found. §7.1 assembles I7's coordinates for one purpose only — to record
+that the induced form is degenerate at every site of every crystal, so
+that no metric is read off it here and the census that would read one is
+answered before it is posed. The apparent counterpoint — the field's
+invariance direction is the diagonal `<(1,1)>` while the diagonal link
+count is identically zero — is not read as a tension: §7.1 measures that
+both descend from the same constructor choice. Whether a carrier exists
+that *populates* a diagonal pair is the scout's S1, which belongs to the
+≥9-actor line, not to this one.
 
 ## 9. Choice inventory
 
@@ -448,16 +654,17 @@ Classified at the RSQ standard; fibers computed, not asserted.
 | 7 | arm (a)'s sub-reading (POP / SUB) | **declared** | 2 | both run; §6.2–§6.4 are per sub-reading |
 | 8 | arm (b)'s sub-grammar shape | **declared** | 1 | D74's `filt` shape, support-restricting only |
 | 9 | the geometry row set | **forced** | 1 | D66's rows over D58/D47a, reproduced at v10's numbers |
-| 10 | the height control's construction | **free** | — | this unit's; deterministic, and it returns empty everywhere |
+| 10 | the height-matched control's construction | **free** | — | this unit's, and stricter than the wall requires; deterministic, and it returns empty everywhere |
 | 11 | the stabilizer as the periodicity measure | **free** | — | this unit's; the pin names the stabilizer, not its algorithm |
 
 Two free items, both instrument-side and both two-way-gated. No free item
-enters the verdict's data.
+enters the verdict's data — though free item 10's *name* is the one the
+geometry verdict string carries, which §6.1 and §10 gloss.
 
 ## 10. Verdict
 
 ```
-U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]
+U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-CONSTRUCTOR-INHERITED-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]
 ```
 
 ```
@@ -466,14 +673,33 @@ GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTRO
 
 Read out: **the division events of a conflict crystal do form a crystal,
 at both site readings, on all four arbitration crystals, and do not on
-the declared counterexample control.** The shared invariance direction is
-the diagonal `<(1,1)>`; the footprint reading enlarges the stabilizer to
-the whole group at both CONFLICT-GRIDs and never shrinks it anywhere. The
-geometry is invariant on the one row a population restriction cannot
-confound and blocked on every row it can, because the height control the
-KR wall requires is provably empty on this arena; and the renewal-only
+the declared counterexample control — and the periodicity is inherited
+from the constructors, not emergent from the dynamics.** The field is
+affine in the constructor's seed indicator at all ten cells, so the
+stabilizer is the seed set's; at the two CONFLICT-GRID footprint cells
+the field is constant, every actor sitting in exactly one arbitration
+footprint per round, and the whole-group stabilizer there is less
+structure rather than more. The shared invariance direction is the
+diagonal `<(1,1)>`, and it is d66's seed offset. The footprint stabilizer
+contains the initiator's at all five records and is strictly larger at
+the two CONFLICT-GRIDs.
+
+The geometry is invariant on the one row a population restriction cannot
+confound and blocked on every row it can, because the *height-matched
+control population* — this unit's own object, not the KR discriminator,
+which is carried — is provably empty on this arena; and the renewal-only
 *rebuild*, as opposed to the renewal-only *reading*, is not constructible
 in the committed grammar at all.
+
+**What this unit does not deliver.** Of the five things paper 0 §7
+attaches to U4, this unit discharges one — the crystal claim — blocks the
+geometry at every row a population restriction can confound, and refuses
+three. The indivisibility probe is refused because it is undefinable
+here: on a forced, unbranched record there is no transition kernel to
+probe (§7). Sprinkling-grade statistical Lorentz invariance and the
+max-shatter dimension meter are refused under the pin's own walls (§8).
+**Phase III's relativity test has not been run here, and nothing in this
+unit bears on relativity.**
 
 Between delivery and adjudication every headline reading here is a
 candidate reading.
@@ -482,29 +708,35 @@ candidate reading.
 
 1. **The pin names weld 2's SEC 6 as the primary constructor route
    (`290149118b9d`); this unit does not read that file.** A weld-2 repair
-   worker holds it under concurrent rewrite, and rule #91 forbids reading
-   a live worktree state. The constructors are rebuilt from the v10
-   originals' definitions instead, at their pinned shas, and gated against
-   the v10 originals' *committed output*. Price: the v14 self-contained
-   route is not this unit's witness. Mitigation: the substitute provenance
-   is strictly older and strictly more anchored — forty-two committed
-   numbers reproduce, against the zero that reading a rewritten file would
-   have carried. The pin's cross-check obligation is met in full.
+   worker held it under concurrent rewrite when this unit was built, and
+   rule #91 forbids reading a live worktree state. The constructors are
+   rebuilt from the v10 originals' definitions instead, at their pinned
+   shas, and gated against the v10 originals' *committed output*. Price:
+   the v14 self-contained route is not this unit's witness. Mitigation:
+   the substitute provenance is strictly older and strictly more anchored
+   — forty-two committed numbers reproduce, each read out of the line it
+   cites, against the zero that reading a rewritten file would have
+   carried. The pin's cross-check obligation is met in full.
 
-2. **The head's outcome NAME is extracted from the pin by both paths, so
-   the two paths share one input.** A pre-registered outcome name has
-   nowhere else to come from. The two extractors are different (a
-   whole-file backtick span scan; a section-scoped character scan that
-   rejoins hyphenated line breaks) and the head's *data* — the ten-cell
-   stabilizer table — shares no code, no derived input and no typed
-   literal between them. Price: the shared input is one string, and it is
-   the string the pin froze.
+2. **The head's outcome NAME is extracted from the pin by both paths, and
+   its QUALIFIER from the adjudication by both paths, so the two paths
+   share two inputs.** A pre-registered outcome name has nowhere else to
+   come from, and neither does a qualifier a ruling fixes. The four
+   extractors are pairwise different (a whole-file backtick span scan; a
+   section-scoped character scan that rejoins hyphenated line breaks; two
+   regexes keyed on different sentences in different sections), and the
+   head's *data* — the ten-cell stabilizer table — shares no code, no
+   derived input and no typed literal between them.
 
-3. **The reconstruction shares the arena.** The five records are the
-   object of study, not the instrument; there is no second constructor for
-   them in the corpus. Everything downstream of the record is unshared:
-   the marking predicate, the site map, the field, the stabilizer
-   algorithm.
+3. **The reconstruction shares the arena, and one function.** The five
+   records are the object of study, not the instrument; there is no second
+   constructor for them in the corpus. Downstream of the record the two
+   paths share exactly one thing and it is named: `regs_of`, which *is*
+   the footprint reading. The marking predicate, the site map, the field
+   and the stabilizer algorithm are unshared. Within §5 the two
+   stabilizer routes additionally share the field and the subgroup-naming
+   function, so that pair is an algorithm cross-check and is described as
+   one.
 
 4. **Arm (a)-SUB is reported and not certified**, because the sparse
    record's poset is a different object from the crystal's and no
@@ -513,44 +745,82 @@ candidate reading.
 5. **The pin's `GEOMETRY: INVARIANT / VARIES-<witness>` pair does not fit
    the measurement.** A third value is emitted, and it is the corpus's
    standard third value: BLOCKED, at a named object. The pre-registered
-   VARIES path is not thereby unreachable — a mutant drives the run onto
-   it and the string is emitted before the gate kills the run.
+   VARIES path is not thereby unreachable, and the demonstration is at
+   segment level: under the registered geometry mutant the segment
+   verdict itself is emitted as `GEOMETRY-VARIES-<witness>` before the
+   gates kill the run. The witness list is bound to the verdict by its own
+   gate, and the control's *required* variation is carried in a separate
+   field so that it can never be mistaken for a falsifier witness.
 
 6. **Two catalog tests that paper 0 §7 attaches to U4 are not run** —
    sprinkling-grade statistical Lorentz invariance, and the max-shatter
    dimension meter. Both are refusals under the pin's own walls (§8), and
    both are registered below rather than silently dropped.
 
+7. **Pin R2 asks the marking to be gated against the source *rows*,
+   plural; only one row has a referent at nine actors.** §3 discloses
+   this: the class-0 clause is a two-actor delivery-free notion, and S4's
+   pair hypothesis is vacuous here — 0 pair arbitrations of 61. Price:
+   the marking is corpus-anchored at one row. Mitigation: the two silent
+   rows are discharged by two independent re-derivations that share no
+   code with the tag — a tag-free shape predicate selecting the identical
+   set index for index, and the renewal-to-root property at 61 of 61.
+
 ## 12. Successor register
 
 - **S-U4-1.** The fourth form — order-level covariance on a generated
   causal order — remains unargued and untested. Its admissibility
   argument is still owed, and this unit's decision not to supply it is
-  scoped to this arena, not general.
+  scoped to this arena, not general. Separately, paper 8's admissible
+  form 2 — projective compatibility of different finite batteries —
+  survives both L-1 and the BHS block by L-1's own record and is neither
+  run nor argued here; it remains the one admissible covariance form
+  available to a successor on this carrier without a fourth-form
+  argument.
 - **S-U4-2.** The max-shatter dimension meter as acceptance gauge is
-  posable on the renewal sublattice only once a height control exists for
-  it. On these five crystals the control is empty. A successor needs a
-  carrier whose division events are *not* height-pure — which is itself
-  the first question to ask of any new crystal.
+  posable once a carrier's sparse posets are large enough for the meter
+  to discriminate, and — for any *population* comparison against the full
+  record — once its division events are not height-pure. The KR height
+  statistic itself is available already; it is not the obstruction.
 - **S-U4-3.** Height purity is the sharpest structural fact this unit
   found and it was not predicted anywhere: the division events fill whole
   height layers of the event poset and share them with nothing else, on
-  all five records including the control. Whether that is a theorem about
-  the grammar or an artefact of these five schedules is open.
+  all five records including the control, and layer 1 is marked-only
+  across all five pooled. Whether that is a theorem about the grammar or
+  an artefact of these five schedules is open.
 - **S-U4-4.** The sparse record's chart width is exactly 3 on every
   crystal whose sparse record has a nonzero one, and its mean overlap ω is
   exactly 1 wherever it is defined. Neither is explained here.
-- **S-U4-5.** The reading divergence is one-directional: the footprint
-  reading enlarges the stabilizer and never shrinks it. Whether that is
-  general or particular to these schedules is open.
+- **S-U4-5. Answered, and closed.** The reading divergence is
+  one-directional because the footprint field is `(group multiplicity) +
+  1_S` while the initiator field is `m·1_S`, and the group system carries
+  at least the seed set's symmetry, so the footprint stabilizer contains
+  the initiator's. What remains open is narrower and is folded into
+  S-U4-8: whether it holds for a constructor whose group system is *less*
+  symmetric than its seed set.
 - **S-U4-6.** The renewal-only *rebuild* is blocked at the delivery on
   every crystal. Whether any conflict crystal is constructible
   delivery-free from the empty history is a well-posed successor question
   and this unit did not ask it.
-- **S-U4-7.** The diagonal counterpoint of §8 is left standing: the
-  field's period direction is the diagonal, the link structure's diagonal
-  is empty. The scout's S1 is the live route to a carrier that populates
-  a diagonal pair.
+- **S-U4-7.** The diagonal counterpoint is dissolved rather than left
+  standing (§7.1): the field's period direction and the link structure's
+  empty diagonal are one constructor choice seen twice. What remains is
+  the scout's S1 — a carrier that *populates* a diagonal pair — and it is
+  the single unblocking move for both weld 2 and the renewal census.
+- **S-U4-8. The census that turns the constructor into a variable**, and
+  the reason this unit's headline is qualified rather than emergent:
+  whether any admissible arbitration schedule seats its seeds on
+  something other than a coset union, and what happens to the stabilizer,
+  the forcedness and the induced determinant when it does. The affine
+  mechanism supplies the null hypothesis — any coset-union seed yields
+  `Stab ⊇ H` by arithmetic — so the information is in the beyond-coset
+  schedules. Ruled next and pinned as **U4b (paper-17)**, with the
+  induced-metric determinant column carrying the weld-arena question
+  §7.1 hands forward.
+- **S-U4-9.** Registered siblings, not part of U4b: the law-side
+  stochastic-crystallization unit (compute-windowed), and the
+  diagonal-populating constructor of the scout's S1 as the weld arena, if
+  U4b's determinant column comes back empty.
 
 ## 13. Instrument and reproduction
 
@@ -562,20 +832,39 @@ unregistered mutant name, exits 2.
 - **Exact arithmetic** throughout — `fractions.Fraction` and integers, no
   float anywhere, including the Fourier reconstruction, which runs in
   `Z[ω]` by integer coefficient reduction.
-- **Provenance.** Seventeen pinned sources, each read at its sha256-12 and
+- **Provenance.** Nineteen pinned sources, each read at its sha256-12 and
   gated per file; a run that cannot reach them fails loudly at
-  `G-PROV-ROOT` and writes nothing. Fourteen verbatim anchors (#62), each
-  bound by name to the gate that consumes it.
+  `G-PROV-ROOT` and writes nothing. Eighteen verbatim anchors (#62), each
+  bound by name to the gate that consumes it and each gated for length,
+  so that a quote truncated to a fragment that trivially occurs cannot
+  pass as an anchor.
+- **Committed numbers are read, not typed.** Each of the forty-two
+  committed-number anchors resolves its own citation to a line of the
+  pinned v10 output and extracts the committed value from that line by a
+  context-keyed regex; the extraction, not the typed rendering, is what
+  the computed value is compared against, and the typed rendering
+  survives as a third check per row.
 - **Per-object gates (#87)** throughout: per crystal, per reading, per
   arm, per depth. No aggregate predicate carries a verdict.
 - **The head is derived, not typed**, and passes a complete-string
-  equality gate against the independent reconstruction described in §5 and
-  priced in §11.
+  equality gate against the independent reconstruction described in §5
+  and priced in §11.
+- **A gate's words are bound to its own boolean.** Gates whose statement
+  carries a polarity — forced or refused, pure or mixed, invariant or
+  varying, zero or populated, inherited or independent — declare the
+  fragment their verdict requires and the fragment it forbids, and a
+  statement inverted while its number is left intact cannot ship.
+- **The published object is sealed at gate time.** Every gate, anchor,
+  verbatim anchor, waiver and payload row is digested when it is created;
+  the artifacts are rendered from those sealed copies rather than from
+  live memory; the emitted output is folded into a byte seal as it is
+  emitted; and the integrity gate recomputes every digest **from the
+  bytes on disk** and compares them against the gate-time seal. Anything
+  altered between a gate and the disk — an output line, a gate row, a
+  gate's passed flag, a payload row, a published table cell — fails there
+  and nothing is written.
 - **Failing runs write nothing.** Artifacts are written to temporaries,
-  re-read from disk, and only then renamed; the final integrity gate
-  checks the bytes, the recorded output hash, and that the head in the
-  receipt, the head in the output and the head in memory are the same
-  string.
+  re-read from disk, and only then renamed.
 - **verify-paper runs inside the plain run.** Every numeral in this paper
   is checked against numbers the run computed, after masking seven named
   identifier classes; the meaning-binding half checks that the per-crystal
@@ -587,9 +876,21 @@ unregistered mutant name, exits 2.
   a location outside the repository, where it fails loudly at
   `G-PROV-ROOT` and writes nothing — the two halves of #91's off-tree and
   git-less requirement.
-- **Mutants.** Twelve registered, each dying at a named gate with the
-  artifacts unchanged, including the two the pin requires — a planted
-  aperiodic division, which kills the crystal claim at its own crystal's
-  stabilizer gate, and a planted full-period field on the control, which
-  kills the control — and one that drives the geometry segment onto the
-  VARIES path so that the pin's falsifier is demonstrably emittable.
+- **Mutants, and the honest denominator (#34).** Twenty-six registered,
+  each naming the gate it must die at; those names resolve to nineteen
+  distinct gate instances, every one of them verified to exist in the run
+  and to appear in the receipt, and each mutant run refuses unless the
+  gates it actually died at include its registered target. Two gate
+  instances in the run carry a declaration rather than a measurement and
+  are labelled `DECLARED` in every row; every other gate's verdict
+  argument is a measured quantity. The suite includes the two the pin
+  requires — a planted aperiodic division, which kills the crystal claim
+  at its own crystal's stabilizer gate, and a planted full-period field
+  on the control, which kills the control — one that drives the geometry
+  **segment verdict** onto the VARIES path, one that reproduces the
+  retracted sentence in this paper's own line wrapping, one that inverts
+  a gate's prose while leaving its number, one that truncates a verbatim
+  anchor, one that perturbs a single stabilizer route without the other,
+  one that reports a tie-broken record, one that transposes two actors in
+  the site map without breaking its bijectivity, and six that tamper with
+  a published row after its gate has fired.
