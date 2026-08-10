@@ -1,0 +1,32 @@
+==============================================================================
+v14 R5 -- THE GAUGE RUNG: link-indexed unitaries and their holonomy
+==============================================================================
+[1/9] anchors: 9 hash-pinned sources, 17 path-value, 14 verbatim
+[2/9] the arena: the L = 4 torus, its links, plaquettes and strata
+[3/9] the curvature census over the 640 uniform configurations
+[4/9] the holonomy group: isomorphism class at 7 declared stencils
+[5/9] the mandatory flat control: R4's FULL-transport stratum
+[6/9] the gate-inheritance audit: which transport level each link-local generator attains
+[7/9] curvature against Delta^B at matched coordinates
+[8/9] the gauge self-test, in both directions
+[9/9] refinement: the class at L = 4 against the declared doubling to L = 8
+      the scramble caveat: does the group separate the physical case
+
+running 24 declared mutants
+    mutants: 24 declared, 24 killed, 24 killed by their declared target
+
+==============================================================================
+THE VERDICT
+==============================================================================
+R5-NON-ABELIAN-<CLASS=ALTERNATING-ON-ITS-OWN-SUPPORT(S1-ONE=A3<S2-EDGE=A5<S2-CORNER=A3 x A3<S2-APART=A3 x A3<S3-ROW=A7<S4-BLOCK=A8);RANK=8-OF-16-DECLARED-PLAQUETTE-GENERATORS-ARENA-RELATIVE;COMMUTATOR-SUBGROUP=NONTRIVIAL-AT-576-OF-640-UNIFORM-COINS|GATE=INHERITED-PER-GENERATOR-FULL-ADMITS-0-OF-52(R5-BLOCKED-AT-THE-GATE-AT-THAT-READING);MAXIMAL-PER-GENERATOR-LEVEL=NONE;DECLARED-GATE=FAMILY-COVARIANCE-4096-OF-4096-CHECKS|CURVATURE-DEFECT=CURVATURE-DEFECT-INDEPENDENT(LINK-GRAIN=MUTUALLY-EXCLUSIVE-BY-THEOREM-0-OF-1920-BOTH;PLAQUETTE-GRAIN=ALL-FOUR-CELLS-384-BOTH;TWO-EXCITATION=EXCLUSIVITY-SURVIVES-0-OF-18-BOTH;PARENT-BASELINE=588-DEFECTS-AT-ZERO-CURVATURE)|CONTROL=FULL-STRATUM-FLAT-0-OF-3364-TRIVIAL-GROUP|REFINEMENT=LOCAL-STABLE-GLOBAL-EXTENSIVE(LOCAL-STABLE-6-OF-6;GLOBAL-A16-TO-A64)|SCRAMBLE=SEPARATES-LOCAL-12-OF-12;FAILS-GLOBAL-0-OF-2|INTERFERING-SECTOR=INFINITE-ORDER-512-OF-512-BY-TRACE-NON-INTEGRALITY|SCOPE=D=2;L=4;REFINED-TO-8;FIELD=Q(ZETA-8);ALPHABET=25;COINS=640;LINKS=32;PLAQUETTES=16;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));STENCIL=2-SITE-DOMINO-PER-LINK;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=UNIFORM-CONFIGURATIONS-EXHAUSTIVE-OVER-THE-COIN-ALPHABET;NON-UNIFORM-CONFIGURATIONS=NOT-SWEPT;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-CONFINEMENT-CLAIM>
+
+  G1  commutator subgroup nontrivial at 576 of 640 uniform coins; the class, certified by set equality, is the FULL alternating group on its own support
+      the local ladder: S1-ONE=A3<S2-EDGE=A5<S2-CORNER=A3 x A3<S2-APART=A3 x A3<S3-ROW=A7<S4-BLOCK=A8
+      the flat control returns the trivial group: 0 of 3364
+  G2  the inherited per-generator gate admits 0 of 52 objects at FULL
+  G3  CURVATURE-DEFECT-INDEPENDENT -- link grain {'00': 960, '01': 384, '10': 576, '11': 0}, plaquette grain {'00': 960, '01': 512, '10': 704, '11': 384}
+  G4  the untraced holonomy moves at 64 checked loops; the Wilson trace never
+  G6  LOCAL-STABLE-GLOBAL-EXTENSIVE: 6 of 6 local stencils stable, global A16 -> A64
+  G7  the scramble separates locally at 12 of 12 and globally at 0 of 2
+
+  gates 61 (60 in the receipt); mutants 24; anchors 40; sealed 21

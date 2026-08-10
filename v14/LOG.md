@@ -3991,3 +3991,46 @@ hostile argv; 750 numerals 0 unexplained; 44/44 semantic
 three-way checks.  Ten liftable orders, none moving a number;
 R-GI-2 = lift R4b's 6d32993 seal.  One seat pending (operator)
 → adjudication.
+
+## 2026-08-10 — R5-GAUGE DELIVERED, COMMITTED AS-IS (v14 LEDGER #137)
+
+Paper-18 delivered.  **VERDICT (CANDIDATE READING):
+R5-NON-ABELIAN — the plaquette-holonomy group is THE FULL
+ALTERNATING GROUP ON ITS OWN SUPPORT**, certified by set
+equality (even-on-every-orbit + measured order), never as
+matrices: the local ladder A₃ < A₅ < A₃×A₃ < A₃×A₃ < A₇ < A₈;
+the global group A₁₆; commutator subgroup nontrivial at 576/640
+uniform coins; RANK 8 of 16 declared plaquette generators,
+arena-relative; the coin alphabet DERIVED from R4's 25 elements
+(640 coins); **the mandatory flat control rebuilt independently
+— 58 circulants, 0/3364, trivial group**.  **AGAINST CR-D'S
+LADDER THE FORM MATCHES EXACTLY ("the full alternating group on
+its own support"), with CR-D's own A₅ reappearing at the
+five-point stencil** — the corpus's group-family prior
+confirmed at the gauge rung.  **G2: the inherited per-generator
+gate EMPTIES the arena (0/52 at FULL; all objects at NONE) —
+R5-BLOCKED-AT-THE-GATE entered as its own segment at that
+reading; the right instrument is FAMILY covariance, measured
+4096/4096** — a result about the programme's gate, sharper than
+the review's projector prediction.  **G3:
+CURVATURE-DEFECT-INDEPENDENT — and at link grain MUTUALLY
+EXCLUSIVE BY THEOREM** (the single-path lemma; 0/1920 both;
+576 curvature-only, 384 defect-only); the declared
+two-excitation extension run and NEGATIVE (exclusivity survives
+0/18); the parent baseline carried (588 defects at zero
+curvature).  **Surprise (iii): the defect-carrying sector's
+holonomy is INFINITE-ORDER, certified by trace non-integrality
+512/512** — not a search cap.  G6:
+LOCAL-STABLE-GLOBAL-EXTENSIVE (6/6 local classes identical at
+L=4 and L=8; global A₁₆→A₆₄).  G7: the local profile separates
+from both scrambles 12/12; the global class separates at
+neither — A₁₆ entered measured-but-not-discriminating.
+NO-CONFINEMENT-CLAIM honored in SCOPE.  Instrument: born with
+the seal (21 sealed objects; MUT-SEAL-BROKEN →
+G-SEAL-COMPLETE); 61 gates (58 falsifiable, 3
+waived-with-forcings); 24/24 mutants on target; 40 anchors
+(floor 20, consumer-bound); byte-identical ×2 AND
+off-tree/git-less/foreign-CWD/seed-varied; 10 hostile argv exit
+2.  Artifacts committed as-is: paper 3800959353b4, code
+37c232de91a6, output e86be9a581a7, receipt 1c072956ac7b.
+Battery + panel next.
