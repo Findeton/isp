@@ -2374,3 +2374,34 @@ shared typed literals).**  The duplicate reviewer
 confirmation received (identical results; hashes stable).
 Repair worker next; the R4 adjudication awaits its
 instrument review.
+
+## 2026-08-10 — THE REFERENT-WELD SCOUT REPORTED (v14 LEDGER #83)
+
+Two independent read-only agents (the scout + a full-corpus sweep)
+returned CONVERGENT: **NO-SEED-AT-THE-CARRIER — the lattice is a
+fresh declaration; SEED-EXISTS-AT-THE-COUNT-SEMANTICS-ONLY.**  The
+corpus pins what the counts count (division events = renewals, the
+v11 paper-0 §4 [POSIT]) and nothing about where; sites, links,
+direction labels and the chart group are authored literals
+everywhere quantitative, and the papers say so about themselves.
+The absence is instrument-carried (MUT-CRA-BRIDGE dies in the
+committed Γ-main gate) and uniformly registered (GW1-NOT-RUNNABLE,
+GW2-BLOCKED-AT-1, CRA-BLOCKED, R6BP 0-of-5, D29-vacant,
+"combinatorial spatial position, an open problem").  Report of
+record: v14/note-weld2-referent-scout.md — five seeds ranked (the
+count semantics the one real tie, load-bearing in two gates; the
+CRYSTAL LINE D60-D67 the only lattice-shaped objects ON grammar
+records, never connected to I7 — the unexploited asset; the sweep's
+addition: v11 U4 "the division events of a crystal form a crystal"
+NAMES the FOUND-side route and was never run), five dead entries
+pre-registered (C3 the least-unmotivated AND degenerate; BRG named
+and declined exactly this census), TWO ROUTES for the weld-2 unit
+(A: the carrier census posed to return EMPTY well, crystal records
+as positive control; B: the declared weld, priced
+DECLARATION-RELATIVE permanently), and the post-#82 CARRIER
+AMENDMENT: the census, when ordered, runs at BOTH carriers (MENU
+and CONG-185) and carrier-stamps its verdict; the absence finding
+is carrier-robust.  All load-bearing hashes re-verified against the
+tree (all match; the scout's paper-09 read 006f96aaa2ff is the
+correct terminal hash).  **The unit itself awaits the user's word
+(#80): Route A vs Route B.**  Zero repo writes by either agent.
