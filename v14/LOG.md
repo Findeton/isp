@@ -4579,3 +4579,23 @@ argv exit 2; --break-anchor gate-specific across all three
 anchor classes.  Artifacts committed as-is: paper 62cfe5689d2c,
 code 0d98de793b79, output 204f43013237, receipt 0c02b7684e5b.
 Battery next; TERMINAL on completion (the twelfth).
+
+## 2026-08-10 — R5 / PAPER-18 TERMINAL (v14 LEDGER #156)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 + "no artifact written"; MUT-SEAL-BROKEN dies
+at G-SEAL-COMPLETE, artifacts unchanged.  The manifest-split
+prose discrepancy settled from the committed receipt: 43
+published keys, a 33-entry seal manifest (the duplicate
+report's "12" a typo; the #155 entry stands).  **R5 IS TERMINAL
+— the twelfth terminal (papers 01/02/03/04/09/10/11/12/13/14/
+15/18).  The QCD line's opener stands in final form:
+non-abelian holonomy exists (alternating on each of its
+orbits), the physical fingerprint is the (order, support)
+PROFILE, the geometry/quantum interface is the SUPPORT-OVERLAP
+LAW with the defect strictly contained in the never-closing
+sector, and the distance to QCD is itemized in the verdict
+itself (measure, action, coupling, dynamics — four named
+gaps).**  STATUS row written (same commit, §13).  The
+configuration-measure unit is the named successor; the
+coupling unit's inheritance list is in the register.
