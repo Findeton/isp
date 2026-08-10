@@ -3951,3 +3951,43 @@ quotations no longer locate exactly once), artifacts unchanged.
 The unit stands verified at the #82 contract by my own runs;
 the panel (effectus frozen #134; operator + instrument in
 flight) carries the era audit and the three-answer calibration.
+
+## 2026-08-10 — Γ-ITERATION INSTRUMENT FROZEN (2 OF 3) (v14 LEDGER #136)
+
+review-giter-instrument.md frozen (68f5b34dba1f, 827 lines).
+Grade AWF; 57 executions, ~640 recomputations, ZERO false
+computed numbers (own partition refinement, spanning-forest
+holonomy, rank routine, eq-22 route — all reproduce).  **THE
+SEAM RULING: NINE WIDE, one mechanism — no gate-time seal** (the
+unit predates #119; the write PRECEDES the integrity check;
+disk compared against live memory): ships at exit 0 with
+gate_failures 0 — a GITER-DEVIATION head beside
+GITER-LAW-CONFIRMED in the same file; a quantum cell 36→99
+contradicting the same receipt; **post-write corruption at exit
+0 with the receipt no longer parsing as JSON (WORSE than
+weld-2's stated exit-1 ceiling)**; the REC control's flat row
+published under CONG's holonomy key; **the census shadow
+shipped as law_value_leg2 — the #82 disease reachable in the
+receipt**.  Defended: the emitter DIGEST catches buffer
+rewrites (but leaves the corrupt file, falsifying §3's
+"every failure path writes nothing"); the registry check
+catches count tampering cleanly.  **MAJOR: GITER-DEVIATION IS
+UNREACHABLE** (the FLAGS branch sets two flags → check_verdict
+refuses → the pin's R3 first-class finding can only appear as a
+refused run; one-line fix).  G-OFFTREE-READY a tautology (the
+#91 property HOLDS — proved twice byte-identically — but the
+gate measures nothing).  Coverage by naming not reach (honest:
+36/41 gates, 49/54 falsifiers).  **#125 recurs** (the
+moving-ref scan whitespace-evaded 4/4; 5/5 aliased-import
+evasions).  The comparator re-audits (shares RECORD) rather
+than re-derives.  **The mechanism sentence's factual half
+VERIFIED TRUE (the 4 multi-target edges do sit on recurring
+classes) but ungated** — reconciliation with the effectus's
+totality refutation goes to adjudication (true-at-MENU, false
+as a general law).  HOLDS at the reviewer's hands: off-tree +
+git-less + a FOURTH hash seed byte-identical; the paper-13
+exclusion clean on 3 routes incl. a runtime audit hook; 18/18
+hostile argv; 750 numerals 0 unexplained; 44/44 semantic
+three-way checks.  Ten liftable orders, none moving a number;
+R-GI-2 = lift R4b's 6d32993 seal.  One seat pending (operator)
+→ adjudication.
