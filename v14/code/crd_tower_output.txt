@@ -1,0 +1,81 @@
+==============================================================================
+v14 CR-D -- THE SYMMETRY-TOWER LIMIT: FOUR WINGS
+==============================================================================
+
+VERDICT: CRD-TOWER-EXTENDS-<EMBEDS-IN-THE-TOP-RUNG-5-of-5-rungs-0-elements-outside, ATTAINED-AT-15692092416000, ALTERNATING-3-of-4-LINEAR-0-of-4, 3-MODES-COMPLETION-RULE-EMPTY+SPLIT-STRUCTURE-FAILS-AT-1-of-4-RUNGS+LINEAR-RUNG-NOT-REALISED, EXHAUSTIVE-CENSUS-1307674368000-COMPLETIONS-AT-675675-ORBITS>  ||  CRD-TOWER-BREAKS-<3-MODES-COMPLETION-RULE-EMPTY+SPLIT-STRUCTURE-FAILS-AT-1-of-4-RUNGS+LINEAR-RUNG-NOT-REALISED>
+
+-- THE THREE-WING RECOVERY (the control: nothing four-wing counts until this matches)
+   holonomy orders at the declared targets : [1, 1008, 72, 15120]
+   I6 declares                             : [1, 1008, 72, 15120]
+   the reference holonomy order            : 2160 (I6: 2160)
+   the completion rule returns             : [0, 3, 2, 1, 4, 5, 6, 7] (I6: [0, 3, 2, 1, 4, 5, 6, 7])
+   the exhaustive ord census               : {1: 48, 2: 384, 3: 1728, 4: 1152, 5: 1152, 6: 576}
+   the ladder, re-named by construction    :
+      A1 target ord = 1                  |Hol|=1      |K|=1     trivial
+      A1 target ord = 2                  |Hol|=1008   |K|=168   GL(3,2) = Aut(F_2^3) acting F_2-linearly on the non-zero labels
+      A1 target ord = 3                  |Hol|=72     |K|=12    A_4, the FULL alternating group on its own 4-point support
+      A1 target ord = 6                  |Hol|=15120  |K|=2520  A_7, the FULL alternating group on its own 7-point support
+      the declared reference completion  |Hol|=2160   |K|=360   A_6, the FULL alternating group on its own 6-point support
+
+-- THE FOUR-WING CONSTRUCTION
+   carrier 256 = 16 system labels x 16 pointer labels; wing group 24; settings 81; frames 24; nodes 144
+   the choice inventory: 18 coordinates -- 14 FORCED, 2 FREE, 1 EMPTY, 1 declared by the pin
+   THE PINNED COMPLETION RULE IS EMPTY AT FOUR WINGS: 0 of 105 label pairs admitted (three wings: 6 of 21)
+   mechanism: shadow-invariance == commutation at 2415 of 2415 cells; setwise stabiliser census {2: 72, 4: 18, 6: 12, 8: 3}
+
+-- THE FOUR-WING CENSUS (exhaustive, by orbit count)
+   1307674368000 completions censused at 675675 orbits x fibre 1935360; maximum defect order at P* = 30
+   ord distribution: {1: 1935360, 2: 5655121920, 3: 42005053440, 4: 97635041280, 5: 16257024000, 6: 307908034560, 7: 2601123840, 8: 15606743040, 9: 5202247680, 10: 50071633920, 12: 366758461440, 14: 39016857600, 15: 93640458240, 20: 78033715200, 21: 31213486080, 30: 156067430400}
+   the naive lex scan reached rank 1000000 of 1307674368000 without finding the maximum-order target
+
+-- THE FOUR-WING LADDER
+   A1 target ord = 1      |Hol|=1                |K|=1              support  0  trivial
+      identification: set equality (the one-element group)
+   A1 target ord = 2      |Hol|=479001600        |K|=19958400       support 11  A_11, the FULL alternating group on its own 11-point support
+      identification: containment plus order (a PROOF, not an enumeration): every generator is even and fixes the complement of the support, so the group is contained in Alt(support); its order equals |Alt(support)| = 19958400; equality of sets follows.  Enumeration is refused above the printed cap 20000
+   A1 target ord = 3      |Hol|=60               |K|=60             support  5  A_5, the FULL alternating group on its own 5-point support
+      identification: set equality against a brute-forced Alt(5) (60 elements, cap 20000)
+   A1 target ord = 30     |Hol|=15692092416000   |K|=653837184000   support 15  A_15, the FULL alternating group on its own 15-point support
+      identification: containment plus order (a PROOF, not an enumeration): every generator is even and fixes the complement of the support, so the group is contained in Alt(support); its order equals |Alt(support)| = 653837184000; equality of sets follows.  Enumeration is refused above the printed cap 20000
+
+-- THE LADDER-EXTENSION TEST
+   embedding: three wings A,B,C inside four wings A,B,C,D with wing D in the zero state: the system label a becomes 2a, and every odd four-wing label is fixed
+   5 of 5 three-wing rungs lie inside the four-wing top rung; 0 elements outside
+      A1 target ord = 1                  trivial                                              outside per target {'A1 target ord = 1': 0, 'A1 target ord = 2': 0, 'A1 target ord = 3': 0, 'A1 target ord = 30': 0}
+      A1 target ord = 2                  GL(3,2) = Aut(F_2^3) acting F_2-linearly on the non-zero labels outside per target {'A1 target ord = 1': 167, 'A1 target ord = 2': 167, 'A1 target ord = 3': 167, 'A1 target ord = 30': 0}
+      A1 target ord = 3                  A_4, the FULL alternating group on its own 4-point support outside per target {'A1 target ord = 1': 11, 'A1 target ord = 2': 0, 'A1 target ord = 3': 11, 'A1 target ord = 30': 0}
+      A1 target ord = 6                  A_7, the FULL alternating group on its own 7-point support outside per target {'A1 target ord = 1': 2519, 'A1 target ord = 2': 2508, 'A1 target ord = 3': 2519, 'A1 target ord = 30': 0}
+      the declared reference completion  A_6, the FULL alternating group on its own 6-point support outside per target {'A1 target ord = 1': 359, 'A1 target ord = 2': 357, 'A1 target ord = 3': 359, 'A1 target ord = 30': 0}
+   the reverse containment: 23 of 23 generators of the four-wing top rung lie outside the lifted three-wing top rung
+
+-- THE CEILING
+   2 wings: |Alt(3)| = 3               x pointer image 2  = 6               ; measured max 6               ; attained True ; parity hypothesis False
+   3 wings: |Alt(7)| = 2520            x pointer image 6  = 15120           ; measured max 15120           ; attained True ; parity hypothesis True
+   4 wings: |Alt(15)| = 653837184000    x pointer image 24 = 15692092416000  ; measured max 15692092416000  ; attained True ; parity hypothesis True
+
+-- THE GROWTH LAW
+   the sequence: 6 -> 15120 -> 15692092416000
+   the closed form (2^n - 1)!/2 x n! holds at wing counts [2, 3, 4]
+   the ratio from three to four wings: 1037836800
+
+-- THE FAMILIES
+   four-wing rungs: 3 alternating, 0 linear, 1 trivial, 0 other
+   |GL(4,2)| = 20160, elements outside the top rung: 0; realised as a rung at 0 targets (three wings: 1)
+
+-- THE BREAKS
+   COMPLETION-RULE-EMPTY: the pinned completion-selection rule admits 0 of 105 label pairs at four wings, so the ladder's reference row has no four-wing analogue by the pinned rule
+   SPLIT-STRUCTURE-FAILS-AT-1-of-4-RUNGS: at three wings every non-trivial instance had |Hol| = |wing group| x |K| with all wing symmetries inside Hol; at four wings that fails at A1 target ord = 3
+   LINEAR-RUNG-NOT-REALISED: GL(3,2) was a realised rung at three wings; no four-wing target realises GL(4,2), though all 20160 of its elements lie inside the top rung
+
+-- CONTROLS
+   conjugation law 54 of 54 fresh cells; base-node invariance True; relabelling invariance True; cache hits 1641 misses 129
+   negative controls: 3, all moving the geometry: True
+
+-- LEDGER
+   gates: 86, all passed
+   anchors: 7 file-byte, 24 path-value, 6 verbatim-text
+   mutants declared: 90 ; never-falsified gates: 5 of 86 gates
+
+==============================================================================
+VERDICT: CRD-TOWER-EXTENDS-<EMBEDS-IN-THE-TOP-RUNG-5-of-5-rungs-0-elements-outside, ATTAINED-AT-15692092416000, ALTERNATING-3-of-4-LINEAR-0-of-4, 3-MODES-COMPLETION-RULE-EMPTY+SPLIT-STRUCTURE-FAILS-AT-1-of-4-RUNGS+LINEAR-RUNG-NOT-REALISED, EXHAUSTIVE-CENSUS-1307674368000-COMPLETIONS-AT-675675-ORBITS>  ||  CRD-TOWER-BREAKS-<3-MODES-COMPLETION-RULE-EMPTY+SPLIT-STRUCTURE-FAILS-AT-1-of-4-RUNGS+LINEAR-RUNG-NOT-REALISED>
+==============================================================================

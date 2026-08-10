@@ -1751,3 +1751,49 @@ of the three links welded; the stake rides on Γ-main; the
 delivery-multiplicity-per-slot = a concrete validity-domain
 coordinate (measured at 2 and 3).  K5: five uncarried
 restrictions.  One reviewer pending (instrument).
+
+## 2026-08-09 — CR-D DELIVERED, COMMITTED AS-IS (v14 LEDGER #61)
+paper-08-tower-four-wings.md (602c9ac2ccc4) + crd_tower_
+exact.py (1583b235da86) + _output.txt (3a316d40a67b) +
+_receipt.json (b07b78fe2e97) committed exactly as delivered.
+**THE VERDICT (both pre-registered heads emitted side by side
+— adjudicator to confirm the composition): CRD-TOWER-EXTENDS
+∥ CRD-TOWER-BREAKS-<3-MODES>.**  THE EXTENSION: the entire
+three-wing ladder EMBEDS IN THE TOP RUNG (5/5 rungs, 0
+elements outside A₁₅ — embedding constructed and gated); the
+four-wing groups: A₁₁ (479,001,600) at ord 2, A₅ at ord 3,
+**A₁₅ w/ |Hol| = 15,692,092,416,000 at ord 30 — THE CEILING
+|Alt(15)|×24 DERIVED AND ATTAINED** (parity lemma w/
+boundary: wing transpositions odd exactly at n=2 — the n=2
+value 6 a disclosed coincidence); **THE GROWTH LAW
+(2ⁿ−1)!/2 × n! at n=3,4**; supports = Hamming weight classes;
+**THE CENSUS EXHAUSTIVE — 1,307,674,368,000 completions at
+675,675 orbits × fibre 1,935,360, NO SAMPLING (not
+BLOCKED-AT-SCALE)**.  **FAMILIES: ALTERNATING 3-of-4, LINEAR
+0-of-4 — GL(4,2) is a SUBGROUP of A₁₅ but NO completion
+realises it as a rung: THE LIE-DIRECTION'S FIRST DATUM POINTS
+AWAY FROM THE LINEAR FAMILY (the tower climbs the alternating
+series).**  THE BREAKS: the pinned completion-selection rule
+EMPTY at four wings (0-of-105 pairs; mechanism measured —
+shadow-invariance ⟺ trivial setwise stabiliser in S₄, min
+stabiliser 2; **the GHZ reference row has no four-wing
+analogue by the pinned rule, and none was invented**);
+rung-by-rung extension FAILS (only whole-into-top; the one
+exception A₄⊂A₁₁ derived); the linear rung not realised.
+THE RECOVERY CLARIFICATION: the three-wing ladder's < orders
+rungs BY SIZE, not containment (intermediate containments
+measured FALSE — A₄⊄GL(3,2), GL(3,2)⊄A₆).  The four-wing
+construction inventory: 14 forced / 2 free (the preparation
+family genuinely undetermined — no unique hyperdeterminant
+analogue; disclosed) / 1 EMPTY.  Orders by two genuinely
+independent routes (closure vs Schreier–Sims never building
+the group) 7/7 + an outside-deliverable third implementation
+agreeing exactly.  Instrument: 86 gates, 90/90 mutants dead
+(4-way parallel sweep; the sequential selftest run for the
+record), 37 anchors, never-falsified 5/86 all machine-
+checked; **FOUR self-caught gate weaknesses fixed incl.
+adopting the TOTAL render check (which immediately caught a
+module-global render)**; two self-caught false paper
+sentences corrected pre-delivery.  Both #34 engravings
+applied though post-pin (repair-propagation honored).
+Adjudicator verification next; panel queued.
