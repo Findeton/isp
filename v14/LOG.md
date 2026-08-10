@@ -2257,3 +2257,42 @@ background half + §6 forced/assumed (#208).  The
 never-falsified census under-counts (~10 forced gates, not
 2).  Strong: byte-identical scratch replay; Y1 dies
 correctly.  Two reviewers pending (Γ-main op+inst, R4 inst).
+
+## 2026-08-10 — Γ-MAIN REVIEW: OPERATOR FROZEN (v14 LEDGER #79)
+review-gmain-operator.md frozen.  Grade AWF; 405
+recomputations, ZERO false numbers (Γ rebuilt TWICE by
+disjoint routes agreeing 11,989/11,989; byte-identical to
+committed).  **K2 CONFIRMED INDEPENDENTLY + SHARPENED: the
+target test is Γ-FREE AND OFF-CARRIER** (a token scan of the
+test's code region: zero uses of the quotient, Γ, or the
+carrier; the legs live at depths 3–10 outside the d≤4 cap) —
+TARGETS-HIT never touched the constructed law; **and
+I-READOUT's fiber is ≥3, not 2** (the menu mass is
+non-constant, so the "occupancy" leg readout is unnormalised;
+the step-normalised readout yields a THIRD law
+(15/38,5/19,13/38)).  **K3 — THE DECISIVE DISCOVERY:
+CONG-185, d74's own coarsest weighted congruence, IS THE
+SUCCESSOR CARRIER**: the potential DESCENDS at every horizon
+(0 multi-valued edges in weights AND targets); all 44
+curvature squares close, obstruction intact; q-group ⟨2,3⟩;
+**k-group COLLAPSES BACK TO ⟨2,3⟩ — THE ENLARGEMENT THAT
+MADE THE SETTLEMENT PARTIAL DISAPPEARS**; and the chain is
+EXACTLY LUMPABLE (CK 10/10).  Proved: descent ⟹ r_k = r_q on
+every closing square (2,756 squares, 0 exceptions).  The
+protocol's premise refuted (PORT/STATE/MULT are NOT between
+MENU and REC) but the interval is non-empty; MENU+G (the
+effectus's candidate) descends but keeps 4 bad targets and
+CK 8/10 — **CONG-185 strictly dominates; the two reviews'
+carriers reconciled in its favor at adjudication.**
+FLAGGED TENSION for adjudication: CONG-185's exact
+lumpability = the quotient chain is Markov THERE — the
+indivisibility signature (non-Markov at MENU, CK 4/10)
+re-poses at the new carrier; the quantum-shape claim's scope
+must be carrier-stamped.  K4: the eq-22 refutation ROBUST
+(cyclic padding identical; uniform/marginal make the
+candidate nonexistent).  M4: the B2-block claim covers 9/113
+(overstated).  D1: two vacuous mutants.  **D2: the paper is
+ABSENT at the declared commit — the 13 quote-fidelity rows
+evaluated against WORKTREE bytes (a #46-class residue).**
+N1: the flow identity needs r = 4−|h|.  Two reviewers
+pending (Γ-main inst, R4 inst).
