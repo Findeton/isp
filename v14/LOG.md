@@ -3718,3 +3718,19 @@ foreign-CWD seed-varied BYTE-IDENTICAL; 14 hostile argv exit 2.
 Artifacts committed as-is: paper 89c636906061, code
 4216f3de5f44, output 9e8e928d318e, receipt 562e2a3d4d85.
 Battery next; TERMINAL on completion (the tenth).
+
+## 2026-08-10 — R4B / PAPER-15 TERMINAL (v14 LEDGER #128)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 + "no artifact written"; **MUT-SEAL-BROKEN
+dies at G-SEAL-COMPLETE** with artifacts unchanged — the
+orchestrator's own runs exercising the era's newest engraving.
+**R4B IS TERMINAL — the tenth terminal (papers
+01/02/03/04/09/10/11/12/13/15).**  The momentum rung stands:
+motion real at 57/58 with the identity as the static control;
+the velocity convention stratified honestly (forced stencil /
+arena-instrument tie / inert residual); the bound structural
+with interior radii as the genuine resolution parameter; the
+cancellation robustness-split; the first #119-native sealed
+instrument.  STATUS row written (same commit, §13).  The
+R4c-multi and R5-gauge pins now have their terminal parent rows.
