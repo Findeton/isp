@@ -1998,3 +1998,17 @@ practice regardless).  The dual-head composition ruling
 (EXTENDS ∥ BREAKS side-by-side — the pin's three questions
 all EXTENDS, three named breaks outside them) is REGISTERED
 for CR-D's adjudication.
+
+## 2026-08-09 — R6b′ TERMINAL (v14 LEDGER #70)
+Adjudicator verification CLEAN: plain run exit 0
+BYTE-IDENTICAL; selftest exit 0, 76/76 named-kills (the
+engraving-class mutants confirmed dying by name).  Paper
+stamped TERMINAL; STATUS row written (✓adj).  **R6b′ /
+PAPER-09 IS TERMINAL #70 — v14's fourth terminal.**  Final
+form: four heads under the source convention; THE WELD; the
+all-n uniform position law; the pre-registered Γ-main
+targets; the seam avoidable at delivery-free scope with the
+escape as its transport-scope cause.  The continuum-in-
+distribution result now stands at terminal grade on 83-of-103
+honest coverage.  Fleet: Γ-main + the R3 repair; six panels
+queued.

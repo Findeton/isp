@@ -5,8 +5,11 @@ deep corpus's renewal-grain positional structure to the spatial
 record-interval arena, and does the derived kernel collapse the R6a
 split fiber?
 
-**Status:** GREEN-REPAIRED (2026-08-09).
-**Pin:** `v14/note-r6bprime-transport-pin.md` (frozen, v14 ledger #43).
+**Status:** `TERMINAL` — panel #59/#60/#62 (3× ACCEPT-WITH-FIXES),
+adjudicated #62; repair R-R6BP-1…R-R6BP-9 delivered #68 and
+adjudicator-verified (plain-run byte-identical; selftest 76/76 mutants
+dead by named gates); v14 ledger #70, 2026-08-09.  Pin:
+`v14/note-r6bprime-transport-pin.md`, sha256-12 `17111fd19022`.**Pin:** `v14/note-r6bprime-transport-pin.md` (frozen, v14 ledger #43).
 **Instrument:** `v14/code/r6bp_transport_exact.py` with
 `_output.txt` and `_receipt.json`; exact `int`/`Fraction` arithmetic
 under an AST float guard; two plain runs byte-identical.
