@@ -3308,3 +3308,14 @@ MUT-NOT-FORCED fix verified).  Reviewers →
 v14/review-u4-{operator,effectus,instrument}.md; LAUNCH ON THE
 R4B PANEL'S COMPLETION (in-flight budget).  Orchestrator battery
 running (plain/flag/selftest/the-fixed-mutant).
+
+## 2026-08-10 — U4 ORCHESTRATOR VERIFICATION 4/4 (v14 LEDGER #115)
+
+Plain run BYTE-IDENTICAL; unknown flag exit 2; --selftest exit 0
+with "wrote nothing: True" + [PASS] G-SELFTEST (the
+confirmation-succeeded convention); MUT-NOT-FORCED — the mutant
+whose registry the worker fixed non-silently — dies at exactly
+the advertised gate G-FORCED[DOUBLE-GRID(3,2)], artifacts
+unchanged (independent confirmation of the fix).  U4 stands
+verified at the #82 contract by my own runs; the panel (queued
+behind R4b's, protocol #114) carries the era audit.
