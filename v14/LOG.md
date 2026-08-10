@@ -1903,3 +1903,29 @@ committed artifacts exactly); selftest exit 0.  Γ-prep stands
 GREEN-VERIFIED-UNREVIEWED; panel queued.  Γ-main constructs
 against its committed sha (0f5d57eef77f) per the #62
 engraving — verification does not move those bytes.
+
+## 2026-08-09 — CORRECTION OF RECORD: THE #65 SELFTEST WAS VACUOUS (v14 LEDGER #66)
+The Γ-prep worker's post-delivery addendum (its artifacts
+re-confirmed unchanged, byte-identity now ×4) surfaced a
+CLI-contract defect IN ITS OWN UNIT: the argument handler
+reads only --no-write/--list-gates/--list-mutants and
+SILENTLY IGNORES unrecognized flags — so the adjudicator's
+`--selftest` invocation at #65 performed a THIRD PLAIN
+DELIVERY RUN, not a falsification selftest.  **CORRECTION:
+#65's "selftest exit 0" was VACUOUS.  What stands: the
+byte-identity (now confirmed four times).  What does NOT
+stand: independent adjudicator confirmation of the mutant
+sweep — the 118-falsifier/0-dead claim rests on the delivered
+in-run mechanism pending the unit's panel.**  ADJUDICATOR'S
+OWN ERROR, owned: the #238 discipline (check the CLI contract
+before invoking) was skipped at the Γ-prep verification — the
+one unit where I did not grep the argv handler first.  The
+worker's conduct was exemplary both ways: it did NOT fix
+post-delivery (freeze-on-delivery honored; the repair
+belongs to a gated pass) and did NOT kill the foreign
+process (the only action that could have corrupted the
+frozen artifacts).  REPAIR ITEM registered for the Γ-prep
+panel/adjudication: the argument whitelist (exit 1 on
+unrecognized flags) + a real falsification selftest per the
+pin standard.  Γ-main is unaffected (it reads by committed
+sha; the plain runs were byte-identical).
