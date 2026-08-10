@@ -2117,3 +2117,21 @@ handoff.  Terminals: papers 01/02/03/04/09.  The construction
 program of v14 is COMPLETE — all remaining work is judgment
 (seven queued panels) and the user's two open calls (the
 between-carrier Γ iteration; R5 after R4's panel).
+
+## 2026-08-10 — Γ-MAIN + R4 PROTOCOLS FROZEN; TWO PANELS DISPATCHED (v14 LEDGER #75)
+note-gmain-r4-protocols.md (`a3a39813e5b5`) frozen — the two
+forward-gating panels launched with the fleet idle (six
+reviewers).  PANEL A (Γ-main): K1 construction fidelity;
+**K2 THE TARGETS UNDER READOUT-RELATIVITY (decisive — is
+TARGETS-HIT honest at any motivated reading, or is the count
+readout selected BY the targets: the RSQ shape at the
+summit)**; K3 the holonomy deviation + the between-carrier
+successor question; K4 the quantum-shape claims (the eq-22
+refutation's robustness); K5 instrument at the #34/#62
+standards.  PANEL B (R4): K1 the defect census + the
+derivability question; **K2 THE L=4 UNIQUENESS THEOREM
+(decisive — both halves + honest scope)**; K3 the
+transformation-type census (translations-trivial: finding or
+forced); K4 the gates (the realization gate's principled
+bite; state-motion); K5 instrument.  The remaining queue
+(CR-A/B/C/D, Γ-prep) fires in the next waves.
