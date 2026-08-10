@@ -2857,3 +2857,40 @@ reading-robust), the count-semantics ingredient (972/972,
 (selftest re-verified 18/18, 0 vacuous, wrote nothing).
 Successor register written for all four consumers.  Instrument
 seat pending → adjudication.
+
+## 2026-08-10 — Γ-MAIN REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #98)
+
+All thirteen orders + both mid-flight advisories applied.  **THE
+RECOMPOSED VERDICT: head GMAIN-CONSTRUCTED, SETTLEMENT =
+PARTIAL-FAILED-LINK-TARGETS** — constructed TRUE (544/544 columns
+exact; flow identity 3968/3968; rebuilt on both quotients);
+targets FALSE (census-statistics-at-birth; the target test
+Γ-free-and-off-carrier, token-scan 0 hits at depths 3–10; the
+count readout breaks the negative control); holonomy
+TRUE-under-REPRODUCED-AND-LOCATED (the deviation identity
+1546/1546; 8 non-unit deviations, 0 unlocated); motivation TRUE
+with fiber 3 and **the law value at the proved step-normaliser
+(G-K1-IS-THE-STEP-NORMALISER, 0 violations): (15/38, 5/19,
+13/38) at both legs — the census numbers demoted to a DECLARED
+CENSUS SHADOW (external control), reproduced exactly.**  The
+real CLI (unknown flag 2, unknown mutant 2, selftest exit 1 +
+files-written 0 + exactly-one-anchor); the comparator now a
+PARSER over a serialised record (no shared code/inputs/
+literals); the four surviving injections killed (incl. the paper
+byte-anchored via A-PAPER-SELF, closing the worktree residue;
+663 prose numerals swept, 0 unexplained); coverage 15/88-honest
+→ **135/135 by MEASURED reach** (reaches_target computed:
+predicate True-clean/False-mutated); 60/60 falsifiers killed
+REACHING; INJ12 closed (G-SETTLEMENT-TWO-WAY, 10-payload
+battery, SETTLED emitted with the sheet clean); the probe reads
+B2_best_delta = the STRING '1' + row-wise cross-check;
+unresolvable probes abort.  R-GM-12/13 acknowledged and applied
+(atoms import scoped, 3 exclusions named, the (1,1)-collapse in
+the register; monotonicity 30728/243768 = 12.60% with V-LADDER
+rebound to the scoped sentence).  Honest not-executed list on
+the record (CONG-185 in the register with recipe, results
+stamped MENU-113; d≤6/d≤7 and the [B3] LP to the successor).
+Artifacts committed as-is: paper 05f5dc7c7273, code
+a47d622c7608, output 1ef2b3a603cc, receipt d4fe2c64c082
+(receipt's source_sha256 and paper anchor both match).
+Orchestrator verification next; TERMINAL on its completion.
