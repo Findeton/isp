@@ -3600,3 +3600,34 @@ their v10 lines); **all ten stabilizer cells re-derived by a
 THIRD route (subgroup-lattice coset-constancy) and the head by a
 fourth**; 267 three-way cells zero mismatches.  One seat pending
 (operator) → adjudication.
+
+## 2026-08-10 — U4 OPERATOR FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #124)
+
+review-u4-operator.md frozen (3f310a447c47).  Grade AWF; 249
+recomputations + 24 whole-program runs; ZERO false numbers; the
+FORCED claim checked against the REAL committed d42b1 source
+driven by the reviewer's own builder (not a re-typing), agreeing
+event for event; a THIRD stabilizer route (subgroup lattice +
+coset constancy) and a third marking predicate.  **MAJOR-1 — THE
+MECHANISM, one line: at all ten cells the division field is
+AFFINE in the constructor's seed set, n = c + m·1_S, so
+Stab(n) = Stab(1_S) for m ≠ 0 and Z₃² at m = 0** (the
+constant-field cells explained); S is a union of FULL ⟨(1,1)⟩
+cosets because d66 seats seeds at a uniform column offset —
+**"the diagonal is d66's seed rule, not a property of division
+events."**  MAJOR-2: the 42 anchors are typed literals (the
+pinned .out files hashed but never read) — closed by hand 41/41
+verbatim.  MAJOR-3 = the instrument's L-1 wrapping defeat found
+INDEPENDENTLY, with the two-line whitespace-normalise repair
+VERIFIED (kills the wrapped injection; byte-identical on the
+pristine paper).  MAJOR-4 = the VARIES dead-code finding
+independently (+ the witness leak).  RULINGS: height purity
+STRENGTHENED (pooling all five records, height layer 1 is
+marked-only everywhere — even a cross-record control is
+unbuildable); the scout refutation confirmed in every part;
+delivery isolation confirmed in the unprinted direction (drop
+only d → same refusal on all five).  MINORs: §2's "every" false
+(named unanchored rows all reproduce — incl. v10's committed
+widest witness corroborating the sharpening); the two Z₃² cells
+vacuous positives (constant fields); "enlarges"→"contains".
+Joint adjudication next.
