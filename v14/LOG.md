@@ -3939,3 +3939,15 @@ interpretation (the boundary-convention carrier; the
 eq-22/feasibility separation; what one refinement round
 removes).  NO delivered number moves under any fix.  Two seats
 pending.
+
+## 2026-08-10 — Γ-ITERATION ORCHESTRATOR VERIFICATION 4/4 (v14 LEDGER #135)
+
+Plain run BYTE-IDENTICAL (the programme's heaviest); unknown flag
+exit 2; --selftest exit 1 with exactly one byte-anchor row
+failing and files-written 0 (the corrupt-one-anchor design
+through the real exit path); MUT-VERBATIM-DRIFT kill-confirmed
+at G-PROVENANCE with the mechanism printed (19/19 perturbed
+quotations no longer locate exactly once), artifacts unchanged.
+The unit stands verified at the #82 contract by my own runs;
+the panel (effectus frozen #134; operator + instrument in
+flight) carries the era audit and the three-answer calibration.
