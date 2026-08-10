@@ -4067,3 +4067,14 @@ successor register; K5 the second born-#119 seal audited under
 the R4b playbook.  Three reviewers launched →
 v14/review-r5-{operator,effectus,instrument}.md.  Orchestrator
 battery in background.
+
+## 2026-08-10 — R5-GAUGE ORCHESTRATOR VERIFICATION 4/4 (v14 LEDGER #140)
+
+Plain BYTE-IDENTICAL; unknown flag exit 2; --selftest exit 1 +
+"no artifact written"; MUT-SEAL-BROKEN dies at G-SEAL-COMPLETE,
+artifacts unchanged — the second born-#119 seal exercised at my
+own hands.  The unit stands verified at the #82 contract; the
+panel (#139) carries the era audit and the four decisive
+questions (the set-equality certification's soundness; the CR-D
+match's grade; the exclusion theorem's licensed reading; the
+two-verdicts composition).
