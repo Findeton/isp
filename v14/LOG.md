@@ -3319,3 +3319,42 @@ the advertised gate G-FORCED[DOUBLE-GRID(3,2)], artifacts
 unchanged (independent confirmation of the fix).  U4 stands
 verified at the #82 contract by my own runs; the panel (queued
 behind R4b's, protocol #114) carries the era audit.
+
+## 2026-08-10 — R4B EFFECTUS FROZEN (1 OF 3) (v14 LEDGER #116)
+
+review-r4b-effectus.md frozen.  Grade AWF; 234 recomputations; 0
+false computed numbers (all 58 census rows field-for-field in an
+independent Q(ζ₈) representation).  Four MAJORs, all
+meaning/scope: (1) **the convention-selection claim over-reaches
+— two different "nines" silently identified**; crossed properly,
+TWO readings reach drift=winding at 58/58 (tie-averaged forward
+AND backward); the stencil half is actually FORCED by the stated
+normalisation (384/384, prose-only, never gated); residual fiber
+2, undisclosed, differing at 768/1856 cells.  **The killer: the
+selecting identity is an ARENA ARTIFACT** — on the R4-effectus
+widened-alphabet generator (exact in Q(i,√3), μ₁₂ eigenphases)
+winding = −1 vs drift = −1/2: the identity FAILS off-arena; it
+may serve as an instrument, never as "the velocity convention is
+not free."  (2) §15 violation: the whole BOUND segment is a
+function of the ungated velocity coordinate (under the central
+reading VMAX=1, cone 9/16); no invariance gate.  (3) **"VMAX =
+diameter" is STRUCTURAL, not an L=4 fact** — |v| ≤ L/2 by
+construction and the antipodal shift saturates at EVERY even L
+(verified L∈{4..12}); the one-step cone is vacuous at every even
+L and **L=8 cannot fix it** — §11's founding premise falsified;
+the real resolution parameter is the interior-radius count
+(1 → 3 at L=8).  A scale-relative negative upgraded into a
+structural theorem.  (4) REACH-BOUND-FALSE-AT=14-OF-58 is
+MISLABELLED in the verdict string (an upper bound is falsified
+by the 8 overshooters, not the 14 undershooters) — flagged as
+the programme's first in-artifact LABEL defect (the numbers are
+right; the label misassigns meaning; classification to
+adjudication).  K4 ruling: "cancellation" licensed as arithmetic
+only (nonzero summands, zero sum), killed as mechanism;
+"interfering" = a definitional rename of "non-monomial"; repair
+= bind the 42 to the parent's diagonal-defect rows.  Successor
+rows: R4c inherits NO transport number (single-occupation
+uniform-average scope); R5-gauge gets NOT-BLOCH-DIAGONAL as a
+THEOREM (index-two stabiliser); the L=8 question re-posed on
+interior radii.  Three of the four MAJORs STRENGTHEN the paper.
+Two seats pending.
