@@ -4538,3 +4538,44 @@ TOTAL seal incl. the vouching layer; #34-with-reachability;
 #125-with-markdown-prefixes).  Worker launched (opus).  In
 flight (5): Γ-iter repair, R5 repair, U4b repair, U4b→(this),
 R=3-weld construction.
+
+## 2026-08-10 — R5 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #155)
+
+All nine orders discharged.  **The recomposed head rendered from
+the receipt and string-equality gated**: ALTERNATING-ON-EACH-OF-
+ITS-ORBITS; REALIZATION-GATE=NONE-EFFECTIVE (the inherited
+0-of-52 BLOCKED reading + the forced-identity declaration —
+probed at 128/128 off-chart/off-alphabet/non-unitary; a real
+declared gate substituted: LINK-SET-CLOSED 5120/5120);
+**THE SUPPORT-OVERLAP LAW measured as a column (0→1, 1→1, 2→2,
+4→4)** with the link-grain statement honestly split (by-theorem
+at ≤1-shared-site; by-the-uniform-restriction at same-link,
+where 189,952/409,600 differing-coin pairs carry both — exact
+match to the operator); REFINEMENT=LOCAL-STABLE-BY-NON-WRAPPING
+(0/6 wrapping) - GLOBAL-SUPPORT-IS-THE-VOLUME (16→64,
+A16-TO-A64-NOT-SCRAMBLE-SEPARATED); SCRAMBLE=SEPARATES-BY-THE-
+ORDER-SUPPORT-PROFILE-12/12 with THE-FORM-ALONE-IS-NOT-THE-
+SEPARATOR stated in-string; DEFECT-STRICTLY-CONTAINED-384-OF-
+512-ONE-WAY; **SCOPE: THIS-IS-A-CONNECTION-NOT-A-GAUGE-FIELD;
+NO-CONFIGURATION-MEASURE; NO-ACTION; NO-COUPLING; NO-DYNAMICS;
+NOT-QCD; NO-CONFINEMENT-CLAIM.**  **ONE REVIEWER NUMBER
+CORRECTED BY MEASUREMENT**: the operator's Λ² "2-of-36 both"
+was the defect-only cell — the both-cell is 0/36 (cells
+{00:16, 01:2, 10:18, 11:0}; a 6,400-pair stride cross-check 0
+disagreements) — corrections still flowing in every direction.
+The 16 injections: 15 CAUGHT (the comparator circularity dead
+at G-VERDICT-RECONSTRUCTED; the confinement-prose injection
+dead at G-NO-CONFINEMENT-IN-THE-PAPER; the paper-verdict
+staleness dead at G-PAPER-CARRIES-THE-VERDICT); INJ13 survives
+only by INSERTING a statement the source lacks — the
+post-verification window ZERO statements wide.  Counts: gates
+61→75; mutants 24→45 all named-target; **seals 21→33 over 43
+published keys, THE MANIFEST TOTAL (32 sealed + 11
+declared-unsealed, gated)**; #34 honest 41/2/3/29 replacing the
+blanket; window floor 20→50; polarity guards 6→15.
+Verification at the worker's hands: byte ×2; off-tree git-less
+CWD-/ seed-31337 TZ/locale-varied BYTE-IDENTICAL; 27 hostile
+argv exit 2; --break-anchor gate-specific across all three
+anchor classes.  Artifacts committed as-is: paper 62cfe5689d2c,
+code 0d98de793b79, output 204f43013237, receipt 0c02b7684e5b.
+Battery next; TERMINAL on completion (the twelfth).

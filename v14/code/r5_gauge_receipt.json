@@ -17,6 +17,7 @@
   ],
   "sector": "SINGLE-OCCUPATION",
   "sector_extension": "PLUS-ONE-DECLARED-TWO-EXCITATION-EXTENSION-WEDGE-2",
+  "stencil_tag": "2-SITE-DOMINO-PER-LINK",
   "swept": "exhaustive over the coin alphabet at the uniform configuration; the non-uniform configuration space is 640^32 and is NOT swept -- the restriction is declared here and carried in the verdict's SCOPE segment"
  },
  "arithmetic": "exact: Q(zeta_8) as integer 5-tuples (a0,a1,a2,a3,den) modulo x^4+1, canonical; group orders from a deterministic Schreier-Sims; no floats anywhere",
@@ -93,77 +94,142 @@
   {
    "choice": "the spatial dimension",
    "class": "FORCED (anchored)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the lattice size",
    "class": "FORCED (anchored)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the neighbourhood connective",
    "class": "FORCED (inherited)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the coefficient alphabet",
    "class": "FORCED (inherited)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the coin alphabet",
    "class": "FORCED (derived from the alphabet)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the link set",
    "class": "FORCED (exhaustive)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the plaquette set",
    "class": "FORCED (exhaustive)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the parity strata",
    "class": "FORCED (exhaustive)",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 1,
+   "verdict_determining": false
   },
   {
    "choice": "the loop base point and orientation",
    "class": "STABILIZER-FIXED",
-   "fibre": 4
+   "declared_instances": 1,
+   "fibre": 4,
+   "verdict_determining": false
   },
   {
    "choice": "the global phase",
    "class": "STABILIZER-FIXED",
-   "fibre": 8
+   "declared_instances": 1,
+   "fibre": 8,
+   "verdict_determining": false
+  },
+  {
+   "choice": "THE DECLARED REALIZATION GATE",
+   "class": "GENUINELY-FREE",
+   "declared_instances": 1,
+   "fibre": 2,
+   "verdict_determining": true
   },
   {
    "choice": "the division-event times",
    "class": "GENUINELY-FREE",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
   },
   {
    "choice": "the leg at the cut",
    "class": "GENUINELY-FREE",
-   "fibre": 1
+   "declared_instances": 1,
+   "fibre": 2,
+   "verdict_determining": false
   },
   {
    "choice": "the plaquette stencils",
    "class": "GENUINELY-FREE",
-   "fibre": 6
+   "declared_instances": 6,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
   },
   {
    "choice": "the gauge handles",
    "class": "GENUINELY-FREE",
-   "fibre": 3
+   "declared_instances": 3,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
   },
   {
    "choice": "the two-excitation extension",
    "class": "GENUINELY-FREE",
-   "fibre": 2
+   "declared_instances": 1,
+   "fibre": 2,
+   "verdict_determining": false
+  },
+  {
+   "choice": "the scramble controls",
+   "class": "GENUINELY-FREE",
+   "declared_instances": 2,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the refined lattice size",
+   "class": "GENUINELY-FREE",
+   "declared_instances": 1,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the projective-period cap",
+   "class": "GENUINELY-FREE",
+   "declared_instances": 1,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
+  },
+  {
+   "choice": "the named coins",
+   "class": "GENUINELY-FREE",
+   "declared_instances": 6,
+   "fibre": "UNBOUNDED",
+   "verdict_determining": false
   }
  ],
  "coin_sectors": {
@@ -179,6 +245,7 @@
   "balanced_infinite": 512,
   "baseline": 588,
   "chart_group": 32,
+  "choices": 20,
   "coins": 640,
   "coins_antidiagonal": 64,
   "coins_balanced": 512,
@@ -189,11 +256,15 @@
   "control_noncommuting": 0,
   "control_pairs": 3364,
   "d": 2,
-  "declared_gate_admits": 4096,
+  "declared_gate_admits": 5120,
+  "defect_carrying_coins": 384,
   "diagonal_noncommuting": 0,
+  "effective_realization_gate": "NONE",
   "extension_group": 128,
   "family_covariance_checks": 4096,
   "family_covariance_failures": 0,
+  "family_covariance_forced_failures": 0,
+  "family_covariance_forced_probes": 128,
   "field": "Q(ZETA-8)",
   "forcing_link": "(1,1)",
   "gauge_handles": 3,
@@ -202,28 +273,44 @@
   "global_class_small": "A16",
   "global_order_small": 10461394944000,
   "global_rank": 8,
+  "global_support_large": 64,
+  "global_support_small": 16,
   "indivisibility": "DECLARED-BY-DIVISION-EVENT-TIMES",
   "inherited_gate_admits": 0,
   "link_both": 0,
   "link_curvature_no_defect": 576,
   "link_defect_no_curvature": 384,
   "link_rows": 1920,
+  "link_set_closed_checks": 5120,
+  "link_set_closed_failures": 0,
   "links": 32,
-  "local_ladder": "S1-ONE=A3<S2-EDGE=A5<S2-CORNER=A3 x A3<S2-APART=A3 x A3<S3-ROW=A7<S4-BLOCK=A8",
+  "local_profile": "S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8",
+  "local_stability_wrapping_stencils": 0,
   "local_stable": 6,
   "local_stencils": 6,
   "matched_outcome": "CURVATURE-DEFECT-INDEPENDENT",
   "maximal_attained": "NONE",
   "maximal_level": "FULL",
+  "multi_orbit_stencils": 2,
   "noncommuting_configs": 576,
   "nonflat_configs": 632,
   "objects_censused": 52,
+  "overlap_relations_covered": 4,
+  "overlap_relations_uncovered": 3,
   "plaq_both": 384,
   "plaq_curvature_no_defect": 704,
   "plaq_defect_no_curvature": 512,
   "plaq_rows": 2560,
   "plaquettes": 16,
-  "refinement_verdict": "LOCAL-STABLE-GLOBAL-EXTENSIVE",
+  "projective_period_cap": 32,
+  "refinement_verdict": "LOCAL-STABLE-BY-NON-WRAPPING-GLOBAL-SUPPORT-IS-THE-VOLUME",
+  "same_link_both": 189952,
+  "same_link_curvature_only": 197120,
+  "same_link_defect_only": 6656,
+  "same_link_neither": 15872,
+  "same_link_pairs": 409600,
+  "scramble_cells_alternating": 5,
+  "scramble_global_alternating": 2,
   "scramble_global_separating": 0,
   "scramble_local_total": 12,
   "scrambles": 2,
@@ -234,7 +321,14 @@
   "stencil": "2-SITE-DOMINO-PER-LINK",
   "strata": 4,
   "two_both": 0,
+  "two_diff_both": 0,
+  "two_diff_defect_only": 2,
+  "two_diff_disagreements": 0,
+  "two_diff_rows": 36,
+  "two_diff_sample_pairs": 6400,
   "two_excitation_states": 120,
+  "two_named_coins": 6,
+  "two_relations": 3,
   "two_rows": 18
  },
  "curvature_census": {
@@ -273,6 +367,104 @@
   "route_disagreements": 0,
   "second_route_sample": 54
  },
+ "forced_outcomes": {
+  "R5-BLOCKED-AT-THE-COMMUTATOR-SUBGROUP": {
+   "forced_shut": false,
+   "trigger": "noncommuting_configs == 0",
+   "why": "genuinely reachable: a coin alphabet whose every element was diagonal would have returned 0, and the measured value is 576"
+  },
+  "R5-BLOCKED-AT-THE-GATE": {
+   "forced_shut": true,
+   "trigger": "declared_gate_admits == 0",
+   "why": "the declared gate's covariance half is a forced identity (measured at G-NO-EFFECTIVE-REALIZATION-GATE) and its closure half holds for a link set built from the lattice, so the count could not have been 0 on this arena.  The reading under which the arena IS blocked -- the inherited per-generator criterion, which admits nothing -- is carried in the verdict as its own segment"
+  },
+  "R5-BLOCKED-AT-THE-SCRAMBLE-CONTROL": {
+   "forced_shut": false,
+   "trigger": "separating_stencils == 0",
+   "why": "genuinely reachable: the global grain measures exactly this failure, at 0 of 2, and the local grain did not have to separate either.  The measured value is 12"
+  },
+  "R5-NO-STABLE-GROUP": {
+   "forced_shut": true,
+   "trigger": "local_stable == 0",
+   "why": "no declared local stencil wraps at the smaller size, so the generators are the same maps at both sizes and every local class agrees by relabelling (measured at G-LOCAL-STABILITY-IS-FORCED-BY-NON-WRAPPING)"
+  }
+ },
+ "gate_digests": [
+  "a8b5b3948ea4",
+  "715f4c92433b",
+  "84c60d7decd5",
+  "3ff23368c9d4",
+  "ef3278284bcb",
+  "9c68ad7bc050",
+  "eebb6e60d792",
+  "1d4df2bc27b1",
+  "110c3c25eac8",
+  "3ec698b244bd",
+  "4f2d5fa8ed57",
+  "3684f6aafbc2",
+  "c1b1d4615c00",
+  "becef91acb89",
+  "3a450bd2bdca",
+  "b81e94ee0f27",
+  "411c6e0ce888",
+  "a26ef3149e35",
+  "13ec2d9804ac",
+  "20e2ac67d2b9",
+  "b0b4a71f074d",
+  "731490ad64d7",
+  "de4746da259b",
+  "b2c046235396",
+  "7f1cf543cbfc",
+  "4d7157b513c5",
+  "3f68d8b66304",
+  "7d4b39cdcf55",
+  "ee71297c33fa",
+  "8d74b34cd34b",
+  "ddfba41a48c8",
+  "3a8b13fc717d",
+  "ce76c3c20630",
+  "ed9af3b87cd5",
+  "74a6bff73aaf",
+  "68b4402e7fbb",
+  "853644bd3795",
+  "d5e667988560",
+  "12afaaf6192c",
+  "452b591a12c4",
+  "3fffb19ab64c",
+  "0246c0deb46e",
+  "076de7341d1f",
+  "5a645c6a1f84",
+  "129ecac7cc8a",
+  "b213456cc5f7",
+  "b0655a4d6e7e",
+  "7e1c8e51b9ff",
+  "0a006f5e7b78",
+  "2962d6bbc63e",
+  "a9f97f81e425",
+  "d0bcf92fe13a",
+  "e66077c14a88",
+  "a8f430830dd3",
+  "21e54d573577",
+  "3185bd99025b",
+  "53f999575601",
+  "18b4c6cc84b0",
+  "f62671670abd",
+  "f6de9778e59b",
+  "e8f9442e2422",
+  "aa93626d50dd",
+  "cf091b739109",
+  "fcd5d6f83878",
+  "88036078bfd3",
+  "784af7ed0492",
+  "dc31eeb23c42",
+  "67b375e76ac2",
+  "314d155039fb",
+  "7d0ab4903ac6",
+  "8adb2b847539",
+  "7c71e2cff278",
+  "5a8ff62c35c9",
+  "7da8efb78c55"
+ ],
  "gates": [
   {
    "claim": "every runtime input is hash-pinned by this unit's frozen declaration and re-verified at run time; a drifted byte in any of them stops the run before a single measurement is taken",
@@ -282,8 +474,8 @@
    "passed": true
   },
   {
-   "claim": "every verbatim window is present in its pinned source under whitespace normalisation, is at least the declared length floor long, and has the exact digest this unit froze: presence alone would admit a window truncated to a decoration, and the floor and the digest together do not",
-   "detail": "14 windows, floor 20 chars",
+   "claim": "every verbatim window is present in its pinned source under whitespace normalisation, clears the declared length floor, has the exact digest this unit froze AND has the exact character count this unit froze.  Presence alone admits a window truncated to a decoration; the digest alone admits a window shrunk to the floor and re-frozen; the digest together with the frozen length does not, because shrinking a window moves both declarations",
+   "detail": "14 windows, floor 50 chars, each pinned to its own frozen length",
    "gate": "G-VERBATIM-ANCHORS",
    "kind": "MEASURED",
    "passed": true
@@ -380,9 +572,9 @@
    "passed": true
   },
   {
-   "claim": "THE MEASURED LAW: at every connected declared stencil the holonomy group is the FULL ALTERNATING GROUP on its own support, and at a disconnected stencil it is the direct product of the alternating groups on the components -- the same form CR-D's tower measured in a different arena",
-   "detail": "6 connected-stencil rows, classes ['A16', 'A3', 'A5', 'A7', 'A8']",
-   "gate": "G-ALTERNATING-ON-ITS-OWN-SUPPORT",
+   "claim": "THE MEASURED LAW, stated at the grain the certificate proves: the holonomy group is the FULL ALTERNATING GROUP ON EACH OF ITS ORBITS -- the direct product of the alternating groups on the orbits, which at a single-orbit stencil is the full alternating group on the support and at a multi-orbit stencil is NOT.  Two of the six declared stencils have two orbits, where the group is A_3 x A_3 inside Alt(6) at index 40, so 'the full alternating group on its own support' would be false there and the orbit form is what every row is certified against",
+   "detail": "6 single-orbit rows with classes ['A16', 'A3', 'A5', 'A7', 'A8']; 2 multi-orbit rows with classes ['A3 x A3']",
+   "gate": "G-ALTERNATING-ON-EACH-OF-ITS-ORBITS",
    "kind": "MEASURED",
    "passed": true
   },
@@ -443,9 +635,16 @@
    "passed": true
   },
   {
-   "claim": "the gate is therefore RE-DERIVED and not silently inherited: the declared R5 gate is covariance of the FAMILY -- the image of any link operator under any chart element is again a link operator, on the transported link, with the transported coin.  That is the parent's own FULL criterion read at the level a gauge family has it, and it is measured here, not assumed",
+   "claim": "the gate is therefore RE-DERIVED and not silently inherited: the declared R5 gate is covariance of the FAMILY -- the image of any link operator under any chart element is again a link operator, on the transported link, with the transported coin -- together with closure of the link set under every chart action.  The covariance half holds and the closure half holds, and the two are reported at different weights by the next gate",
    "detail": "link set closed under 5120 chart actions with 0 failures; family covariance 4096 checks, 0 failures",
    "gate": "G-DECLARED-GATE-COVARIANCE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE GATE HONESTY, measured on both readings: the inherited per-generator criterion admits NOTHING here, and the declared family-level replacement is a FORCED IDENTITY -- conjugating an operator supported on two sites by ANY site permutation returns the same operator on the image sites, which the probe confirms for permutations outside the chart group and for a matrix that is neither unitary nor in the derived alphabet.  So the family covariance is a disclosure and not a measurement, this arena has no realization gate that selects, and the segment is carried by the arena-dependent half instead: the link set is closed under every one of the chart actions",
+   "detail": "inherited admits 0 of 52; the covariance identity holds at 128 of 128 off-chart, off-alphabet, non-unitary probes; the link set is closed at 5120 of 5120 chart actions",
+   "gate": "G-NO-EFFECTIVE-REALIZATION-GATE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -464,9 +663,23 @@
    "passed": true
   },
   {
-   "claim": "AT LINK GRAIN CURVATURE AND DEFECT ARE MUTUALLY EXCLUSIVE, and the exclusion is a theorem: two link operators fail to commute only when their links share exactly one site, and then every entry of the composite is a single product, so there is no second path to interfere with and the defect vanishes identically.  The cell that would carry both is empty",
+   "claim": "at link grain the cell that would carry both is EMPTY, and on the two relations the theorem covers -- supports meeting in at most one site -- it is empty BY THE THEOREM: one shared site admits exactly one intermediate path, a one-term sum has nothing to interfere with, and the defect vanishes identically for every coin alphabet whatever.  On the third relation, SAME-LINK, the supports meet in TWO sites, the theorem does not reach it, and the cell is empty by the declared uniform restriction alone",
    "detail": "cells {'00': 960, '01': 384, '10': 576, '11': 0} over 1920 rows",
    "gate": "G-LINK-GRAIN-EXCLUSIVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE EXCLUSION IS A SUPPORT-OVERLAP LAW, and its boundary is measured, not assumed: at every relation whose supports meet in at most one site the maximum number of intermediate paths is exactly ONE, so no defect is possible there; at every relation whose supports meet in two or more sites there are two or more paths and the lemma stops.  The SAME-LINK stratum is on the far side of that boundary, so its empty both-cell is scoped by the DECLARED UNIFORM CONFIGURATION and not by the theorem -- lifting the restriction and censusing all ordered coin pairs on one link exhaustively populates it",
+   "detail": "overlap<=1 at 4 relations, all one-path; overlap>=2 at 3; SAME-LINK exhaustive 189952 of 409600 ordered coin pairs carry both",
+   "gate": "G-SUPPORT-OVERLAP-LAW",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the link between the defect and the infinite-order sector runs ONE WAY and the containment is STRICT: every coin that carries a defect lies in the interfering sector, whose holonomy has infinite order, and the sector is strictly larger than the set that carries the defect.  'Exactly the sector' would be a biconditional and the measurement refuses it",
+   "detail": "defect-carrying coins by sector {'ANTIDIAGONAL': 0, 'BALANCED': 384, 'DIAGONAL': 0}",
+   "gate": "G-DEFECT-IMPLIES-INFINITE-ONE-WAY",
    "kind": "MEASURED",
    "passed": true
   },
@@ -492,9 +705,16 @@
    "passed": true
   },
   {
-   "claim": "the ONE declared two-excitation extension is pre-registered and RUN, and it returns a negative: on the hard-core antisymmetric sector the exclusivity SURVIVES.  The parent named this sector as one of exactly three routes out of its arena; taking it does not break the link-grain exclusion, and the reason is the same single-path counting one dimension up",
-   "detail": "states 120; cells {'00': 12, '01': 2, '10': 4, '11': 0}",
+   "claim": "the ONE declared two-excitation extension is pre-registered and RUN, and it returns a negative: on the hard-core antisymmetric sector the exclusivity SURVIVES at the six declared named coins against the three declared relations -- 6 x 3 rows, which is a declared sample and not the exhaustive sweep the 1920-row link table is.  The parent named this sector as one of exactly three routes out of its arena; taking it does not break the link-grain exclusion, and the reason is the same single-path counting one dimension up",
+   "detail": "states 120; cells {'00': 12, '01': 2, '10': 4, '11': 0} over 6 x 3 rows",
    "gate": "G-TWO-EXCITATION-RUN",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the extension is taken to the same boundary the single-excitation census was: at SAME-LINK with the coins ALLOWED TO DIFFER, exhaustively over the named coins, and then against the single-excitation census on a declared stride sample of the whole alphabet.  One dimension up does not move the census: the exterior square of an operator supported on one domino acts as the determinant on the domino's own state and as the coin itself on every state that meets it, so the sampled cells agree coordinate for coordinate",
+   "detail": "named-coin cells {'00': 16, '01': 2, '10': 18, '11': 0} over 36 ordered pairs; 6400 of 6400 sampled pairs agree with the single-excitation census, 0 disagree",
+   "gate": "G-TWO-EXCITATION-SAME-LINK-SCOPE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -520,15 +740,29 @@
    "passed": true
   },
   {
-   "claim": "G6, and the isomorphism class is the invariant while the plaquette count is the extensive control: at every declared local stencil the class is IDENTICAL at the two sizes, while the global class moves with the lattice.  So the holonomy has a stable local content and an extensive global one, and the refinement question has a two-part answer rather than a yes",
+   "claim": "G6: at every declared local stencil the class is IDENTICAL at the two sizes, while the global class moves with the lattice.  The isomorphism class is the invariant and the plaquette count is the extensive control, and the refinement question has a two-part answer rather than a yes",
    "detail": "6 of 6 local stencils stable; global A16 -> A64",
    "gate": "G-REFINEMENT-CLASS",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the measured class is reported against the programme's own group-family prior: CR-D's tower returned the FULL alternating group on its own support at every realised rung, and this arena returns the same FORM by an independent route -- the alternating group on the support, with the ladder's own A_5 reappearing at the five-point stencil",
-   "detail": "classes at L = 4: ['A16', 'A3', 'A3 x A3', 'A5', 'A7', 'A8']",
+   "claim": "and the local half of that answer is FORCED, which is measured here rather than left for a reader to notice: not one declared local stencil wraps at the smaller size, so at both sizes its generators are the same maps on the same relative coordinates and the two groups are equal by relabelling.  It could not have come out otherwise at any size at least as large as the widest declared stencil, so the refinement step measures the GLOBAL stencil alone",
+   "detail": "0 of 6 declared stencils wrap at L = 4; extents {'S1-ONE': [2, 2], 'S2-APART': [4, 2], 'S2-CORNER': [3, 3], 'S2-EDGE': [3, 2], 'S3-ROW': [4, 2], 'S4-BLOCK': [3, 3]}",
+   "gate": "G-LOCAL-STABILITY-IS-FORCED-BY-NON-WRAPPING",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "'extensive' is licensed for the SUPPORT and the plaquette count and for nothing else: the global class is the full alternating group on the ENTIRE site set at both sizes, so its support is exactly the volume, L squared, while log of the group order is superextensive by a logarithmic factor and 'extensive object' is not a predicate of a group at all.  What refines is the support; the law -- full alternating on the support -- does not",
+   "detail": "global support 16 of 16 sites at L = 4, 64 of 64 at L = 8",
+   "gate": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the measured class is reported against the programme's own group-family prior, and reported for what it is: CR-D returned the FULL alternating group on its own support and this arena returns the same FORM, but in BOTH constructions the generators are even permutations of small overlapping support, which forces the alternating group by a classical theorem.  The convergence is evidence about the generator type the two constructions share, not evidence that the theory prefers the alternating family, and the gate requires the entailment rather than the coincidence: every certified class here is the full alternating group on its own orbits",
+   "detail": "certified at 7 of 7 rows at L = 4 and 7 of 7 at L = 8",
    "gate": "G-CRD-LADDER-COMPARATOR",
    "kind": "MEASURED",
    "passed": true
@@ -537,6 +771,13 @@
    "claim": "G7, and the caveat bites exactly where the parent warned it would: the local stencil profile SEPARATES the physical connection from both declared scrambles at every declared stencil, while the GLOBAL class does not separate at all -- both scrambles return the same global group.  The group claim is therefore entered at the local stencils and the global reading is entered as measured-but-not-discriminating",
    "detail": "local separation {'SCR-TRANSPOSE': 6, 'SCR-DIRECTION-FLIP': 6} of 6; global separation {'SCR-TRANSPOSE': False, 'SCR-DIRECTION-FLIP': False}",
    "gate": "G-SCRAMBLE-SEPARATION",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "and the unit's own control says WHICH statistic separates.  The scrambles are assemblies built to be wrong, and they reach the full alternating group on their own orbits at a measured share of the local cells and at BOTH global cells.  So 'the full alternating group on its own orbits' is not a discriminating statistic on this arena; what separates at every local cell is the (ORDER, SUPPORT) PROFILE, and that pair is what the verdict enters",
+   "detail": "the scrambles are themselves full alternating at 5 of 12 local cells and 2 of 2 global cells, while the (order, support) profile separates at 12 of 12 local cells",
+   "gate": "G-THE-FORM-IS-NOT-THE-SEPARATOR",
    "kind": "MEASURED",
    "passed": true
   },
@@ -555,8 +796,15 @@
    "passed": true
   },
   {
+   "claim": "TWO OF THE FOUR BLOCKING BRANCHES WERE FORCED SHUT ON THIS ARENA and the unit says which, rather than resting on the head law's reachability: the gate branch, because the declared gate is an identity, and the refinement branch, because no declared local stencil wraps.  The unit's falsifiability lives in the commutator census and in the scramble control, both of which could have gone the other way and are measured to have gone this way",
+   "detail": "forced shut: ['R5-BLOCKED-AT-THE-GATE', 'R5-NO-STABLE-GROUP']; genuinely reachable: ['R5-BLOCKED-AT-THE-COMMUTATOR-SUBGROUP', 'R5-BLOCKED-AT-THE-SCRAMBLE-CONTROL']",
+   "gate": "G-UNREACHABLE-OUTCOMES-DISCLOSED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "the complete verdict string -- head included -- is compared for equality against an INDEPENDENT reconstruction that derives the head by its own copy of the head law, reads only the serialized receipt, and shares no helper, no input and no typed value with the builder",
-   "detail": "1324 characters compared",
+   "detail": "2144 characters compared",
    "gate": "G-VERDICT-RECONSTRUCTED",
    "kind": "MEASURED",
    "passed": true
@@ -583,8 +831,8 @@
    "passed": true
   },
   {
-   "claim": "every construction choice is inventoried with an exact fibre, and the fibres that are measurable are measured: the declared stencils, handles and extension options are counted from the declaration itself",
-   "detail": "15 choices",
+   "claim": "every construction choice is inventoried with TWO numbers the earlier form conflated: the FIBRE, meaning the cardinality of the admissible alternatives, and the count of DECLARED INSTANCES actually run.  A declared-instance count is not a fibre; a GENUINELY-FREE choice with fibre 1 is a contradiction in terms and none is reported; the declared instances that are countable are counted from the declaration itself; and the one choice the head law BRANCHES ON -- which realization gate is declared -- is inventoried and flagged verdict-determining",
+   "detail": "20 choices; verdict-determining ['THE DECLARED REALIZATION GATE']; free-with-unit-fibre none",
    "gate": "G-CHOICE-INVENTORY",
    "kind": "MEASURED",
    "passed": true
@@ -646,22 +894,29 @@
    "passed": true
   },
   {
-   "claim": "no gate is left un-falsifiable without a registered forcing: every gate the run will reach -- the ones already evaluated and the declared late ones -- is either bound to a declared mutant that kills it, or to the anchor-break self-test, or carries an explicit forcing naming the mechanism that falsifies it instead",
-   "detail": "58 falsifiable, 3 waived with forcings",
+   "claim": "the #34 ledger, at an HONEST DENOMINATOR: every gate the run will reach is classed as bound to a declared mutant that reaches it, or to an anchor break that reaches it, or as carrying a registered forcing, or -- and this is the class the earlier form hid inside a blanket sentence -- as one that NO falsifier reaches.  The last class is disclosed by name rather than counted as falsifiable",
+   "detail": "41 carry a mutant that reaches them, 2 an anchor break that does, 3 carry a registered forcing, and 29 carry no falsifier that reaches them at all -- disclosed, of 75 gates",
    "gate": "G-WAIVERS-VERIFIED",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "every published total is RE-DERIVED from the object that produces it and compared, rather than assigned and then sealed over: the gate count from the waiver ledger, the anchor counts from the three anchor tables, the seal count from the seal's own rows plus the declared late takes, the verdict values from the verdict string.  A total set by hand dies here",
+   "detail": "13 totals re-derived; drifted none",
+   "gate": "G-TOTALS-REDERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every claim string the instrument renders occurs in the paper verbatim up to line wrapping: the comparison collapses runs of whitespace on BOTH sides, so a claim broken across two lines is still the same characters in the same order",
-   "detail": "missing none of 48 claims",
+   "detail": "missing none of 62 claims",
    "gate": "G-PAPER-CLAIMS",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every numeral in the paper is either rendered by a receipt field or is one of the declared derived-in-text residues, each named individually: a number in the prose that no measurement produces dies here",
-   "detail": "uncovered none; declared-but-absent none; 64 distinct numerals over 282 occurrences",
+   "detail": "uncovered none; declared-but-absent none; 75 distinct numerals over 387 occurrences",
    "gate": "G-PAPER-NUMERAL-COVERAGE",
    "kind": "MEASURED",
    "passed": true
@@ -674,22 +929,57 @@
    "passed": true
   },
   {
+   "claim": "THE PAPER'S HEADLINE IS THE INSTRUMENT'S HEADLINE: the complete delivered verdict string occurs in the paper verbatim up to line wrapping.  Nothing else in the instrument compares them -- the claim gate asks only for fragments, and the numeral gate is structurally blind to every numeral inside a hyphenated segment -- so only string equality can catch a stale or retyped verdict block, and this is that equality",
+   "detail": "2144 characters of verdict matched against the paper",
+   "gate": "G-PAPER-CARRIES-THE-VERDICT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE MUST-NOT, SWEPT AGAINST THE PAPER AND NOT ONLY THE VERDICT: the paper's whitespace-normalised text carries none of the declared confinement vocabulary outside the declared negative contexts, each of which is required to be present in the paper in the same sweep.  A paragraph asserting an area law, a string tension or a static potential dies here, whoever wrote it",
+   "detail": "4 declared negative contexts, all present; leaked vocabulary none",
+   "gate": "G-NO-CONFINEMENT-IN-THE-PAPER",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "THE SEAL MANIFEST IS TOTAL (#119 addendum): every top-level key the receipt publishes is either sealed at the gate that produced it or named in the declaration with the reason it cannot be, and no declared exemption names a key the receipt does not carry.  A manifest that covers only what it happens to reach is the complement of a working seal; a published table that is neither sealed nor declared dies here",
+   "detail": "43 published keys: 32 sealed, 12 declared unsealed; undeclared none; orphan declarations none",
+   "gate": "G-SEAL-MANIFEST-TOTAL",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "THE GATE-TO-DISK SEAL: a gate that fires on an object still mutable when the artifact is built has not gated the artifact.  Every published object was digested at the moment its gate passed, and every one of those digests still verifies here; the payload may not be sealed over a broken seal, and the artifacts are written from the sealed payload alone",
-   "detail": "17 seals verified, 0 broken",
+   "detail": "29 of 29 declared in-run seals taken, 29 still verify, 0 broken",
    "gate": "G-SEAL-COMPLETE",
    "kind": "MEASURED",
    "passed": true
   },
   {
+   "claim": "the declared not-executed list is EMPTY: no branch of this derivation was skipped and published as if it had run.  A non-empty list would be a finding and is published either way",
+   "detail": "0 not-executed entries",
+   "gate": "G-NOT-EXECUTED-EMPTY",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the gate table is sealed ROW BY ROW AT GATE TIME and not in one late take: each row was digested at the moment its gate closed, and every row still matches its own digest here.  A gate row edited after the fact -- a failure retyped as a pass -- no longer matches, in run and again when the bytes on disk are re-read",
+   "detail": "71 rows against 71 gate-time digests; drifted none",
+   "gate": "G-GATE-ROWS-SEALED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every declared mutant is killed, and killed by the gate it was declared to falsify: a mutant that dies elsewhere is a gate boundary this unit does not understand",
-   "detail": "killed 24 of 24; off target none",
+   "detail": "killed 45 of 45; off target none",
    "gate": "G-MUTANTS-ON-TARGET",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the paper-claim and numeral-coverage check re-run once the instrument's own totals close, so the paper's instrument section is covered too; its in-run twins carry the injection falsifiers, and this evaluation is the enforcement -- a failure here exits 1 and writes nothing",
-   "detail": "missing none; uncovered none; declared-but-absent none; 49 claims, 64 distinct numerals over 282 occurrences",
+   "detail": "missing none; uncovered none; declared-but-absent none; 62 claims, 75 distinct numerals over 387 occurrences",
    "gate": "G-PAPER-COVERAGE-FINAL",
    "kind": "MEASURED",
    "passed": true
@@ -1366,11 +1656,11 @@
   },
   {
    "killed": true,
-   "killed_at": "G-ALTERNATING-ON-ITS-OWN-SUPPORT",
+   "killed_at": "G-ALTERNATING-ON-EACH-OF-ITS-ORBITS",
    "mutant": "MUT-GROUP-CLASS",
    "note": "retypes one measured isomorphism class",
    "on_target": true,
-   "target": "G-ALTERNATING-ON-ITS-OWN-SUPPORT"
+   "target": "G-ALTERNATING-ON-EACH-OF-ITS-ORBITS"
   },
   {
    "killed": true,
@@ -1523,6 +1813,174 @@
    "note": "changes an expected occurrence count",
    "on_target": true,
    "target": "G-PAPER-CLAIM-POLARITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PAPER-CARRIES-THE-VERDICT",
+   "mutant": "MUT-PAPER-VERDICT",
+   "note": "perturbs one character of the verdict before it is compared to the paper, so a paper carrying a DIFFERENT verdict string must die",
+   "on_target": true,
+   "target": "G-PAPER-CARRIES-THE-VERDICT"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-VERDICT-RECONSTRUCTED",
+   "mutant": "MUT-VERDICT-SEGMENT-DRIFT",
+   "note": "drifts two segment literals inside the builder while every measured table stays right -- the injection that a comparator reading the builder's own segments back cannot see",
+   "on_target": true,
+   "target": "G-VERDICT-RECONSTRUCTED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-CONFINEMENT-IN-THE-PAPER",
+   "mutant": "MUT-CONFINEMENT-IN-THE-PAPER",
+   "note": "adds an area-law assertion to the swept paper text",
+   "on_target": true,
+   "target": "G-NO-CONFINEMENT-IN-THE-PAPER"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SEAL-MANIFEST-TOTAL",
+   "mutant": "MUT-UNDECLARED-KEY",
+   "note": "publishes a receipt key that is neither sealed nor declared unsealed",
+   "on_target": true,
+   "target": "G-SEAL-MANIFEST-TOTAL"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GATE-ROWS-SEALED",
+   "mutant": "MUT-GATE-ROW-FLIPPED",
+   "note": "retypes a closed gate row's outcome after its gate-time digest",
+   "on_target": true,
+   "target": "G-GATE-ROWS-SEALED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-TOTALS-REDERIVED",
+   "mutant": "MUT-TOTALS-DRIFT",
+   "note": "sets a published total by hand instead of deriving it",
+   "on_target": true,
+   "target": "G-TOTALS-REDERIVED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SUPPORT-OVERLAP-LAW",
+   "mutant": "MUT-SUPPORT-OVERLAP",
+   "note": "reports one path where the census measures two, which would make the lemma cover the relation it does not cover",
+   "on_target": true,
+   "target": "G-SUPPORT-OVERLAP-LAW"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-SUPPORT-OVERLAP-LAW",
+   "mutant": "MUT-SAME-LINK-SCOPE",
+   "note": "empties the exhaustive SAME-LINK both-cell, restoring the over-claim",
+   "on_target": true,
+   "target": "G-SUPPORT-OVERLAP-LAW"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-NO-EFFECTIVE-REALIZATION-GATE",
+   "mutant": "MUT-COVARIANCE-FORCING",
+   "note": "breaks one off-chart forcing probe, so the declared gate would read as a measurement again",
+   "on_target": true,
+   "target": "G-NO-EFFECTIVE-REALIZATION-GATE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-LOCAL-STABILITY-IS-FORCED-BY-NON-WRAPPING",
+   "mutant": "MUT-NON-WRAPPING",
+   "note": "reports the declared stencils as wrapping, hiding the forcing",
+   "on_target": true,
+   "target": "G-LOCAL-STABILITY-IS-FORCED-BY-NON-WRAPPING"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-THE-FORM-IS-NOT-THE-SEPARATOR",
+   "mutant": "MUT-FORM-NOT-DISCRIMINATING",
+   "note": "reports the scrambles as never reaching the alternating form, which would license the form as the separator",
+   "on_target": true,
+   "target": "G-THE-FORM-IS-NOT-THE-SEPARATOR"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-UNREACHABLE-OUTCOMES-DISCLOSED",
+   "mutant": "MUT-UNREACHABLE-HIDDEN",
+   "note": "hides one of the two forced-shut branches",
+   "on_target": true,
+   "target": "G-UNREACHABLE-OUTCOMES-DISCLOSED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-DEFECT-IMPLIES-INFINITE-ONE-WAY",
+   "mutant": "MUT-DEFECT-SECTOR",
+   "note": "reports every balanced coin as defect-carrying, which would make the containment an equality and the link a biconditional",
+   "on_target": true,
+   "target": "G-DEFECT-IMPLIES-INFINITE-ONE-WAY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-TWO-EXCITATION-SAME-LINK-SCOPE",
+   "mutant": "MUT-TWO-EXCITATION-DIFF",
+   "note": "breaks the agreement between the two-excitation census and the single-excitation one",
+   "on_target": true,
+   "target": "G-TWO-EXCITATION-SAME-LINK-SCOPE"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "mutant": "MUT-GLOBAL-SUPPORT",
+   "note": "moves the global support off the volume",
+   "on_target": true,
+   "target": "G-GLOBAL-SUPPORT-IS-THE-VOLUME"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CHOICE-INVENTORY",
+   "mutant": "MUT-CHOICE-FIBRE",
+   "note": "reports a genuinely free choice as having fibre 1",
+   "on_target": true,
+   "target": "G-CHOICE-INVENTORY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-GROUP-CERTIFIED-BY-SET-EQUALITY",
+   "mutant": "MUT-ORBIT-CERTIFICATE",
+   "note": "publishes an uncertified row among the certified ones",
+   "on_target": true,
+   "target": "G-GROUP-CERTIFIED-BY-SET-EQUALITY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-STRATA-ARE-THE-EXCLUDED-FAMILY",
+   "mutant": "MUT-STRATA-MATCHING",
+   "note": "breaks the perfect-matching property of a declared parity stratum",
+   "on_target": true,
+   "target": "G-STRATA-ARE-THE-EXCLUDED-FAMILY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-CHART-GROUPS-CENSUSED",
+   "mutant": "MUT-CHART-GROUP",
+   "note": "retypes the anchored chart group's order",
+   "on_target": true,
+   "target": "G-CHART-GROUPS-CENSUSED"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-HOLONOMY-UNITARY",
+   "mutant": "MUT-HOLONOMY-UNITARY",
+   "note": "admits a non-unitary plaquette holonomy into the census",
+   "on_target": true,
+   "target": "G-HOLONOMY-UNITARY"
+  },
+  {
+   "killed": true,
+   "killed_at": "G-PLAQUETTE-GRAIN-COOCCUR",
+   "mutant": "MUT-PLAQUETTE-COOCCUR",
+   "note": "empties the plaquette-grain both-cell, which would make the exclusivity a statement about the connection",
+   "on_target": true,
+   "target": "G-PLAQUETTE-GRAIN-COOCCUR"
   }
  ],
  "named_coins": {
@@ -1713,67 +2171,80 @@
   "L8": "L = 8",
   "abelian_arm": "0 of the 64 diagonal coins",
   "alphabet": "25 elements",
-  "alternating": "the FULL alternating group on its own support",
+  "alternating": "the FULL alternating group on each of its orbits",
   "anchors": "40 anchors",
   "baseline": "588 defects at identically zero curvature",
   "byte_anchors": "9 file-bytes anchors",
   "chart": "order 32",
+  "choices": "20 construction choices",
   "coins": "640 coins",
   "control_circ": "58 circulants",
   "control_flat": "0 of 3364",
   "covariance": "4096 of the 4096 checks",
   "d": "d = 2",
+  "defect_strict": "384 of the 512 balanced coins",
   "exclusive": "mutually exclusive",
   "extension": "order 128",
+  "forcing_probes": "128 of 128 off-chart",
+  "form_not_separator": "5 of 12 local cells and 2 of 2 global cells",
   "gate_admits": "0 of the 52",
-  "gates": "61 gates",
-  "gates_falsifiable": "58 carrying their own injection falsifier and 3 their registered forcing",
-  "gates_in_receipt": "60 of them evaluated inside the receipt",
+  "gates": "75 gates",
+  "gates_falsifiable": "41 carry a declared mutant that reaches them and 2 an anchor break that does",
+  "gates_in_receipt": "74 of them evaluated inside the receipt",
+  "gates_unreached": "3 carry a registered forcing and 29 carry no falsifier that reaches them at all",
   "gauge_moved": "64",
   "global": "A16 at L = 4 and A64 at L = 8",
   "global_order": "10461394944000",
+  "global_support": "16 at L = 4 and 64 at L = 8",
   "infinite": "512 of 512",
-  "ladder": "S1-ONE = A3 < S2-EDGE = A5 < S2-CORNER = A3 x A3 < S2-APART = A3 x A3 < S3-ROW = A7 < S4-BLOCK = A8",
   "link_cells": "0 of the 1920 rows carry both",
+  "link_closed": "5120 of 5120 chart actions",
   "link_curv": "576 rows carry curvature and no defect",
   "link_def": "384 carry a defect and no curvature",
   "links": "32 links",
   "local_stable": "6 of 6 declared local stencils",
   "matched_outcome": "CURVATURE-DEFECT-INDEPENDENT",
-  "mutants": "24 declared mutants",
-  "mutants_dead": "24 declared mutants, all dead",
+  "mutants": "45 declared mutants",
   "nonabelian": "576 of 640 uniform configurations",
   "nonflat": "632 of 640 are non-flat",
+  "orbits_two": "2 of the six declared stencils have two orbits",
+  "overlap": "4 of the 7 declared relations",
   "plaq_cells": "384 rows carry both",
   "plaquettes": "16 plaquettes",
+  "profile": "S1-ONE = A3; S2-EDGE = A5; S2-CORNER = A3 x A3; S2-APART = A3 x A3; S3-ROW = A7; S4-BLOCK = A8",
   "pv_anchors": "17 path-value anchors",
+  "quantum_negative": "Curvature does not imply quantum character on this stage",
   "rank": "rank 8 of the 16 declared plaquette generators",
-  "refinement_verdict": "LOCAL-STABLE-GLOBAL-EXTENSIVE",
+  "refinement_verdict": "LOCAL-STABLE-BY-NON-WRAPPING-GLOBAL-SUPPORT-IS-THE-VOLUME",
+  "same_link": "189952 of 409600 ordered coin pairs",
   "scramble_global": "neither scramble separates the global class",
   "scramble_local": "12 of 12",
-  "seals": "21 sealed objects",
+  "seals": "33 sealed objects",
   "sectors": "64 diagonal, 64 antidiagonal and 512 balanced",
   "sites": "16 sites",
   "strata": "four parity strata",
   "two_both": "0 of 18",
+  "two_diff": "0 of 36",
+  "two_scope": "6 named coins against 3 relations",
   "two_states": "120 two-excitation states",
-  "vb_anchors": "14 verbatim-text anchors"
+  "vb_anchors": "14 verbatim-text anchors",
+  "wrapping": "0 of the 6 declared local stencils wrap"
  },
  "paper_coverage": {
-  "claims": 49,
-  "covered_by_rendering": 55,
+  "claims": 62,
+  "covered_by_rendering": 65,
   "declared_derived_in_text": 16,
-  "distinct_numerals": 64,
+  "distinct_numerals": 75,
   "missing": [],
-  "numeral_occurrences": 282,
+  "numeral_occurrences": 387,
   "residue_declared_but_absent": [],
   "uncovered": []
  },
  "paper_polarity": {
-  "claims_with_expected_occurrences": 7,
+  "claims_with_expected_occurrences": 12,
   "inverted": [],
   "miscounted": [],
-  "polarity_guarded_claims": 6,
+  "polarity_guarded_claims": 15,
   "window": 64
  },
  "path_value_anchors": [
@@ -2095,13 +2566,67 @@
    }
   },
   "global_stable": false,
+  "global_support": {
+   "4": 16,
+   "8": 64
+  },
+  "global_support_is_the_volume": true,
+  "local_stability_is_forced_by": {
+   "reading": "no declared local stencil wraps at the smaller size, so its generators are the same maps at both sizes and its class agrees by relabelling: the local half of the refinement result is FORCED BY NON-WRAPPING, and what the step measures is the global stencil alone",
+   "small_size": 4,
+   "stencils": {
+    "S1-ONE": {
+     "extent": [
+      2,
+      2
+     ],
+     "wraps_at_the_small_size": false
+    },
+    "S2-APART": {
+     "extent": [
+      4,
+      2
+     ],
+     "wraps_at_the_small_size": false
+    },
+    "S2-CORNER": {
+     "extent": [
+      3,
+      3
+     ],
+     "wraps_at_the_small_size": false
+    },
+    "S2-EDGE": {
+     "extent": [
+      3,
+      2
+     ],
+     "wraps_at_the_small_size": false
+    },
+    "S3-ROW": {
+     "extent": [
+      4,
+      2
+     ],
+     "wraps_at_the_small_size": false
+    },
+    "S4-BLOCK": {
+     "extent": [
+      3,
+      3
+     ],
+     "wraps_at_the_small_size": false
+    }
+   },
+   "wrapping_stencils": 0
+  },
   "local_stable": 6,
   "local_stencils": 6,
   "sizes": [
    4,
    8
   ],
-  "verdict": "LOCAL-STABLE-GLOBAL-EXTENSIVE"
+  "verdict": "LOCAL-STABLE-BY-NON-WRAPPING-GLOBAL-SUPPORT-IS-THE-VOLUME"
  },
  "runtime_inputs": {
   "object_under_test": "v14/paper-18-gauge-rung.md",
@@ -2128,6 +2653,37 @@
    "v14/paper-08-tower-four-wings.md"
   ]
  },
+ "same_link_scope": {
+  "cells": {
+   "00": 15872,
+   "01": 6656,
+   "10": 197120,
+   "11": 189952
+  },
+  "defect_carrying_coins_by_sector": {
+   "ANTIDIAGONAL": {
+    "carrying_a_defect": 0,
+    "coins": 64
+   },
+   "BALANCED": {
+    "carrying_a_defect": 384,
+    "coins": 512
+   },
+   "DIAGONAL": {
+    "carrying_a_defect": 0,
+    "coins": 64
+   }
+  },
+  "note": "the uniform restriction puts the same coin on both legs, so the two operators are the SAME operator and commute for free; the exhaustive census is what the restriction was hiding",
+  "pairs": 409600,
+  "uniform_cells": {
+   "00": 256,
+   "01": 384,
+   "10": 0,
+   "11": 0
+  },
+  "uniform_diagonal_pairs": 640
+ },
  "schema": "isp/v14/r5-gauge/1",
  "scramble_control": {
   "controls": [
@@ -2139,36 +2695,43 @@
    "PHYSICAL": {
     "S-ALL": {
      "class": "A16",
+     "is_full_alternating_on_its_orbits": true,
      "order": 10461394944000,
      "support": 16
     },
     "S1-ONE": {
      "class": "A3",
+     "is_full_alternating_on_its_orbits": true,
      "order": 3,
      "support": 3
     },
     "S2-APART": {
      "class": "A3 x A3",
+     "is_full_alternating_on_its_orbits": true,
      "order": 9,
      "support": 6
     },
     "S2-CORNER": {
      "class": "A3 x A3",
+     "is_full_alternating_on_its_orbits": true,
      "order": 9,
      "support": 6
     },
     "S2-EDGE": {
      "class": "A5",
+     "is_full_alternating_on_its_orbits": true,
      "order": 60,
      "support": 5
     },
     "S3-ROW": {
      "class": "A7",
+     "is_full_alternating_on_its_orbits": true,
      "order": 2520,
      "support": 7
     },
     "S4-BLOCK": {
      "class": "A8",
+     "is_full_alternating_on_its_orbits": true,
      "order": 20160,
      "support": 8
     }
@@ -2176,36 +2739,43 @@
    "SCR-DIRECTION-FLIP": {
     "S-ALL": {
      "class": "A16",
+     "is_full_alternating_on_its_orbits": true,
      "order": 10461394944000,
      "support": 16
     },
     "S1-ONE": {
      "class": "NOT-ALTERNATING(order=5)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 5,
      "support": 5
     },
     "S2-APART": {
      "class": "A8",
+     "is_full_alternating_on_its_orbits": true,
      "order": 20160,
      "support": 8
     },
     "S2-CORNER": {
      "class": "NOT-ALTERNATING(order=25)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 25,
      "support": 10
     },
     "S2-EDGE": {
      "class": "A8",
+     "is_full_alternating_on_its_orbits": true,
      "order": 20160,
      "support": 8
     },
     "S3-ROW": {
      "class": "A10",
+     "is_full_alternating_on_its_orbits": true,
      "order": 1814400,
      "support": 10
     },
     "S4-BLOCK": {
      "class": "A12",
+     "is_full_alternating_on_its_orbits": true,
      "order": 239500800,
      "support": 12
     }
@@ -2213,42 +2783,59 @@
    "SCR-TRANSPOSE": {
     "S-ALL": {
      "class": "A16",
+     "is_full_alternating_on_its_orbits": true,
      "order": 10461394944000,
      "support": 16
     },
     "S1-ONE": {
      "class": "NOT-ALTERNATING(order=4)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 4,
      "support": 6
     },
     "S2-APART": {
      "class": "NOT-ALTERNATING(order=12)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 12,
      "support": 9
     },
     "S2-CORNER": {
      "class": "NOT-ALTERNATING(order=5040)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 5040,
      "support": 9
     },
     "S2-EDGE": {
      "class": "NOT-ALTERNATING(order=720)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 720,
      "support": 8
     },
     "S3-ROW": {
      "class": "NOT-ALTERNATING(order=40320)",
+     "is_full_alternating_on_its_orbits": false,
      "order": 40320,
      "support": 10
     },
     "S4-BLOCK": {
      "class": "A10",
+     "is_full_alternating_on_its_orbits": true,
      "order": 1814400,
      "support": 10
     }
    }
   },
-  "reading": "the group claim is entered at the LOCAL stencils, where the statistic separates; the global class is entered as measured-but-not-discriminating",
+  "reading": "the group claim is entered at the LOCAL stencils, where the (order, support) profile separates; the global class is entered as measured-but-not-discriminating; and the FORM alone -- 'the full alternating group on its own orbits' -- is measured NOT to be the separator, because the scrambles reach it too",
+  "scramble_cells_that_are_themselves_full_alternating": {
+   "global": {
+    "SCR-DIRECTION-FLIP": true,
+    "SCR-TRANSPOSE": true
+   },
+   "local": {
+    "SCR-DIRECTION-FLIP": 4,
+    "SCR-TRANSPOSE": 1
+   }
+  },
   "separates_globally": {
    "SCR-DIRECTION-FLIP": false,
    "SCR-TRANSPOSE": false
@@ -2256,14 +2843,75 @@
   "separating_local_stencils": {
    "SCR-DIRECTION-FLIP": 6,
    "SCR-TRANSPOSE": 6
-  }
+  },
+  "separator": "THE (ORDER, SUPPORT) PROFILE"
  },
  "seal_manifest": [
+  {
+   "path": "source_sha256",
+   "seal": "SEAL-PROVENANCE",
+   "sealed_at_gate": "G-SOURCES-PINNED",
+   "sha256_12": "9dc48c4d369e"
+  },
+  {
+   "path": "coin_sectors",
+   "seal": "SEAL-COIN-SECTORS",
+   "sealed_at_gate": "G-COIN-ALPHABET-DERIVED",
+   "sha256_12": "70903e245871"
+  },
+  {
+   "path": "named_coins",
+   "seal": "SEAL-NAMED-COINS",
+   "sealed_at_gate": "G-NAMED-COINS-PRESENT",
+   "sha256_12": "6a9f149a23f4"
+  },
+  {
+   "path": "holonomy_rank",
+   "seal": "SEAL-RANK",
+   "sealed_at_gate": "G-RANK-MEASURED",
+   "sha256_12": "b91908065f82"
+  },
+  {
+   "path": "balanced_sector",
+   "seal": "SEAL-BALANCED",
+   "sealed_at_gate": "G-BALANCED-SECTOR-INFINITE",
+   "sha256_12": "1d594d3f12fc"
+  },
+  {
+   "path": "projective_periods",
+   "seal": "SEAL-PERIODS",
+   "sealed_at_gate": "G-PROJECTIVE-PERIOD-TEMPLATE",
+   "sha256_12": "e58d4008189f"
+  },
+  {
+   "path": "support_overlap",
+   "seal": "SEAL-OVERLAP",
+   "sealed_at_gate": "G-SUPPORT-OVERLAP-LAW",
+   "sha256_12": "be0c3252d88c"
+  },
+  {
+   "path": "same_link_scope",
+   "seal": "SEAL-SAME-LINK",
+   "sealed_at_gate": "G-SUPPORT-OVERLAP-LAW",
+   "sha256_12": "d3a861fabd5d"
+  },
+  {
+   "path": "preregistered_heads",
+   "seal": "SEAL-PREREGISTERED",
+   "sealed_at_gate": "G-VERDICT-PREREGISTERED",
+   "sha256_12": "e81296654d3e"
+  },
+  {
+   "path": "forced_outcomes",
+   "seal": "SEAL-FORCED",
+   "sealed_at_gate": "G-UNREACHABLE-OUTCOMES-DISCLOSED",
+   "sha256_12": "a8e3d58845fa"
+  },
   {
    "path": "verdict/string",
    "seal": "SEAL-VERDICT-STRING",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "180b15cbcc3b"
+   "sha256_12": "f428fe41f6f3"
   },
   {
    "path": "verdict/head",
@@ -2275,7 +2923,7 @@
    "path": "counts",
    "seal": "SEAL-COUNTS",
    "sealed_at_gate": "G-VERDICT-RECONSTRUCTED",
-   "sha256_12": "66d627095b28"
+   "sha256_12": "49fdfac081bc"
   },
   {
    "path": "curvature_census",
@@ -2299,7 +2947,7 @@
    "path": "transport_audit",
    "seal": "SEAL-TRANSPORT",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "f4232188a1ec"
+   "sha256_12": "0c35937e6205"
   },
   {
    "path": "matched_tables",
@@ -2311,7 +2959,7 @@
    "path": "two_excitation",
    "seal": "SEAL-TWO-EXCITATION",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "b69f0d6d73c2"
+   "sha256_12": "2b75cbdf6bb2"
   },
   {
    "path": "gauge_selftest",
@@ -2323,19 +2971,19 @@
    "path": "refinement",
    "seal": "SEAL-REFINEMENT",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "95fc921d64dd"
+   "sha256_12": "411ecc602359"
   },
   {
    "path": "scramble_control",
    "seal": "SEAL-SCRAMBLE",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "affd3bda8d37"
+   "sha256_12": "78a43177e0af"
   },
   {
    "path": "choice_inventory",
    "seal": "SEAL-CHOICES",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "d142f15c0b06"
+   "sha256_12": "f88b1e2ae3e2"
   },
   {
    "path": "path_value_anchors",
@@ -2353,37 +3001,49 @@
    "path": "verbatim_anchors",
    "seal": "SEAL-VERBATIM",
    "sealed_at_gate": "G-PUBLISHED-ROWS-BOUND",
-   "sha256_12": "08dcee01943a"
+   "sha256_12": "fc297bac6a4f"
   },
   {
    "path": "waiver_ledger",
    "seal": "SEAL-WAIVERS",
    "sealed_at_gate": "G-WAIVERS-VERIFIED",
-   "sha256_12": "4b4964ad792d"
+   "sha256_12": "7af944c262c6"
+  },
+  {
+   "path": "paper_claims",
+   "seal": "SEAL-PAPER-CLAIMS",
+   "sealed_at_gate": "G-PAPER-CLAIMS",
+   "sha256_12": "e7210172566b"
+  },
+  {
+   "path": "paper_polarity",
+   "seal": "SEAL-PAPER-POLARITY",
+   "sealed_at_gate": "G-PAPER-CLAIM-POLARITY",
+   "sha256_12": "680c6629fb23"
   },
   {
    "path": "mutants",
    "seal": "SEAL-MUTANTS",
    "sealed_at_gate": "G-MUTANTS-ON-TARGET",
-   "sha256_12": "6bf67273bcab"
+   "sha256_12": "7156dd462c64"
   },
   {
    "path": "gates",
    "seal": "SEAL-GATES",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "ce98fd98e187"
+   "sha256_12": "a154d478ccfd"
   },
   {
    "path": "totals",
    "seal": "SEAL-TOTALS",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "b11e6db00fe1"
+   "sha256_12": "d92c7ea313a5"
   },
   {
    "path": "paper_coverage",
    "seal": "SEAL-COVERAGE",
    "sealed_at_gate": "G-PAPER-COVERAGE-FINAL",
-   "sha256_12": "144bab58a043"
+   "sha256_12": "9156503989f8"
   }
  ],
  "source_sha256": {
@@ -2397,27 +3057,71 @@
   "A-R4B-RECEIPT": "562e2a3d4d85",
   "A-REV-EFFECTUS": "f54fa11dfd07"
  },
+ "support_overlap": {
+  "LINK/DISJOINT": {
+   "max_intermediate_paths": 1,
+   "sites_shared": 0
+  },
+  "LINK/SAME-LINK": {
+   "max_intermediate_paths": 2,
+   "sites_shared": 2
+  },
+  "LINK/SHARE-ONE-SITE": {
+   "max_intermediate_paths": 1,
+   "sites_shared": 1
+  },
+  "PLAQUETTE/DISJOINT": {
+   "max_intermediate_paths": 1,
+   "sites_shared": 0
+  },
+  "PLAQUETTE/SAME-PLAQUETTE": {
+   "max_intermediate_paths": 4,
+   "sites_shared": 4
+  },
+  "PLAQUETTE/SHARE-A-CORNER": {
+   "max_intermediate_paths": 1,
+   "sites_shared": 1
+  },
+  "PLAQUETTE/SHARE-AN-EDGE": {
+   "max_intermediate_paths": 2,
+   "sites_shared": 2
+  }
+ },
+ "sweep_totals": {
+  "gates_passed_in_receipt": 74,
+  "mutants_killed": 45,
+  "mutants_on_target": 45
+ },
  "totals": {
   "anchors": 40,
   "byte_anchors": 9,
-  "gates": 61,
-  "gates_falsifiable": 58,
-  "gates_in_receipt": 60,
-  "gates_passed_in_receipt": 60,
+  "gates": 75,
+  "gates_falsifiable": 41,
+  "gates_falsifiable_by_anchor_break": 2,
+  "gates_in_receipt": 74,
   "gates_waived": 3,
-  "mutants": 24,
-  "mutants_killed": 24,
-  "mutants_on_target": 24,
+  "gates_with_no_falsifier_that_reaches_them": 29,
+  "mutants": 45,
   "path_value_anchors": 17,
-  "seals": 21,
+  "seals": 33,
   "verbatim_anchors": 14,
   "verdict_values": 8
  },
  "transport_audit": {
   "chart_group_order": 32,
+  "declared_gate_admits": 5120,
+  "effective_realization_gate": "NONE",
   "extension_order": 128,
   "family_covariance_checks": 4096,
   "family_covariance_failures": 0,
+  "family_covariance_is_forced": {
+   "checks": 128,
+   "failures": 0,
+   "off_chart_permutations": 4,
+   "probe_coin_is_in_the_derived_alphabet": false,
+   "probe_coin_is_unitary": false,
+   "reading": "the identity holds for permutations that are not chart elements and for a matrix that is neither unitary nor a member of the derived alphabet, so the check cannot fail on any arena of link-indexed operators: it is a DISCLOSURE, not a measurement, and it selects nothing"
+  },
   "inherited_gate_admits": 0,
   "link_set_closed_checks": 5120,
   "link_set_closed_failures": 0,
@@ -2443,7 +3147,8 @@
     },
     "objects": 4
    }
-  }
+  },
+  "reading": "the inherited per-generator criterion admits 0 of the objects censused and the declared family-level replacement is a forced identity, so this arena has NO EFFECTIVE REALIZATION GATE: one criterion is empty, the other is vacuous, and neither selects.  What the declared segment carries is the arena-dependent half -- the link set is closed under every chart action of both groups"
  },
  "two_excitation": {
   "by_named_coin": {
@@ -2484,7 +3189,25 @@
     "11": 0
    }
   },
+  "differing_coins_at_same_link": {
+   "agrees_with_single_excitation": 6400,
+   "cells": {
+    "00": 16,
+    "01": 2,
+    "10": 18,
+    "11": 0
+   },
+   "disagrees_with_single_excitation": 0,
+   "named_coins": 6,
+   "ordered_pairs": 36,
+   "sample_coins": 80,
+   "sample_ordered_pairs": 6400,
+   "sample_stride": 8,
+   "sector": "HARD-CORE-ANTISYMMETRIC-WEDGE-2",
+   "wedge_keys_touching_the_link": 29
+  },
   "exclusivity_survives": true,
+  "rows_are": "the six declared named coins against the three declared link relations, at the uniform configuration: 6 x 3, not an exhaustive sweep of the alphabet",
   "sector": "HARD-CORE-ANTISYMMETRIC-WEDGE-2",
   "states": 120,
   "totals": {
@@ -2499,140 +3222,168 @@
   {
    "anchor": "VB-EFF-G1",
    "chars": 174,
+   "chars_frozen": 174,
    "consumer": "G-FLAT-CONTROL-TRIVIAL",
    "digest": "bf4407a94519",
    "expected": "bf4407a94519",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-REV-EFFECTUS"
   },
   {
    "anchor": "VB-EFF-G2",
    "chars": 171,
+   "chars_frozen": 171,
    "consumer": "G-GATE-INHERITANCE-AUDIT",
    "digest": "879cb3aa705c",
    "expected": "879cb3aa705c",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-REV-EFFECTUS"
   },
   {
    "anchor": "VB-EFF-G6",
    "chars": 91,
+   "chars_frozen": 91,
    "consumer": "G-REFINEMENT-CLASS",
    "digest": "2e5fdf63e164",
    "expected": "2e5fdf63e164",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-REV-EFFECTUS"
   },
   {
    "anchor": "VB-EFF-G7",
    "chars": 131,
+   "chars_frozen": 131,
    "consumer": "G-SCRAMBLE-SEPARATION",
    "digest": "a0665130a554",
    "expected": "a0665130a554",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-REV-EFFECTUS"
   },
   {
    "anchor": "VB-R4-ABELIAN",
    "chars": 71,
+   "chars_frozen": 71,
    "consumer": "G-OPENING-DATUM",
    "digest": "8261822fc859",
    "expected": "8261822fc859",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-PAPER"
   },
   {
    "anchor": "VB-R4-ALPHABET",
    "chars": 132,
+   "chars_frozen": 132,
    "consumer": "G-COIN-ALPHABET-DERIVED",
    "digest": "d21521ca4f99",
    "expected": "d21521ca4f99",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-PAPER"
   },
   {
    "anchor": "VB-R4-BRICK",
    "chars": 163,
+   "chars_frozen": 163,
    "consumer": "G-STRATA-ARE-THE-EXCLUDED-FAMILY",
    "digest": "3234d355007f",
    "expected": "3234d355007f",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-PAPER"
   },
   {
    "anchor": "VB-R4-588",
    "chars": 66,
+   "chars_frozen": 66,
    "consumer": "G-DEFECT-BASELINE",
    "digest": "83942558915a",
    "expected": "83942558915a",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-PAPER"
   },
   {
    "anchor": "VB-R4-PERIOD",
    "chars": 158,
+   "chars_frozen": 158,
    "consumer": "G-PROJECTIVE-PERIOD-TEMPLATE",
    "digest": "e7d655793980",
    "expected": "e7d655793980",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-PAPER"
   },
   {
    "anchor": "VB-R4-CONNECTIVE",
    "chars": 50,
+   "chars_frozen": 50,
    "consumer": "G-SCOPE-INHERITED",
    "digest": "37bb69c658cb",
    "expected": "37bb69c658cb",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4-OUTPUT"
   },
   {
    "anchor": "VB-PIN-OUTCOMES",
    "chars": 117,
+   "chars_frozen": 117,
    "consumer": "G-VERDICT-PREREGISTERED",
    "digest": "2a2313b166ae",
    "expected": "2a2313b166ae",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-PIN-R5"
   },
   {
    "anchor": "VB-PIN-ARENA",
    "chars": 148,
+   "chars_frozen": 148,
    "consumer": "G-ARENA-DECLARED",
    "digest": "8769964eb7d7",
    "expected": "8769964eb7d7",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-PIN-R5"
   },
   {
    "anchor": "VB-CRD-ALT",
    "chars": 53,
+   "chars_frozen": 53,
    "consumer": "G-CRD-LADDER-COMPARATOR",
    "digest": "37edc20aa06e",
    "expected": "37edc20aa06e",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-CRD-PAPER"
   },
   {
    "anchor": "VB-R4B-NOTBLOCH",
    "chars": 196,
+   "chars_frozen": 196,
    "consumer": "G-R4B-HANDOFF",
    "digest": "63831d7ddc72",
    "expected": "63831d7ddc72",
    "meets_floor": true,
+   "meets_frozen_length": true,
    "present": true,
    "source": "A-R4B-PAPER"
   }
@@ -2640,22 +3391,22 @@
  "verdict": {
   "head": "R5-NON-ABELIAN",
   "segments": [
-   "CLASS=ALTERNATING-ON-ITS-OWN-SUPPORT(S1-ONE=A3<S2-EDGE=A5<S2-CORNER=A3 x A3<S2-APART=A3 x A3<S3-ROW=A7<S4-BLOCK=A8);RANK=8-OF-16-DECLARED-PLAQUETTE-GENERATORS-ARENA-RELATIVE;COMMUTATOR-SUBGROUP=NONTRIVIAL-AT-576-OF-640-UNIFORM-COINS",
-   "GATE=INHERITED-PER-GENERATOR-FULL-ADMITS-0-OF-52(R5-BLOCKED-AT-THE-GATE-AT-THAT-READING);MAXIMAL-PER-GENERATOR-LEVEL=NONE;DECLARED-GATE=FAMILY-COVARIANCE-4096-OF-4096-CHECKS",
-   "CURVATURE-DEFECT=CURVATURE-DEFECT-INDEPENDENT(LINK-GRAIN=MUTUALLY-EXCLUSIVE-BY-THEOREM-0-OF-1920-BOTH;PLAQUETTE-GRAIN=ALL-FOUR-CELLS-384-BOTH;TWO-EXCITATION=EXCLUSIVITY-SURVIVES-0-OF-18-BOTH;PARENT-BASELINE=588-DEFECTS-AT-ZERO-CURVATURE)",
+   "CLASS=ALTERNATING-ON-EACH-OF-ITS-ORBITS(S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8);RANK=8-OF-16-DECLARED-PLAQUETTE-GENERATORS-ARENA-RELATIVE;COMMUTATOR-SUBGROUP=NONTRIVIAL-AT-576-OF-640-UNIFORM-COINS",
+   "REALIZATION-GATE=NONE-EFFECTIVE(INHERITED-PER-GENERATOR-FULL-ADMITS-0-OF-52(R5-BLOCKED-AT-THE-GATE-AT-THAT-READING);DECLARED-FAMILY-COVARIANCE-IS-A-FORCED-IDENTITY-128-OF-128-OFF-CHART-OFF-ALPHABET-PROBES-AGREE-SELECTS-NOTHING);MAXIMAL-PER-GENERATOR-LEVEL=NONE;DECLARED-GATE=LINK-SET-CLOSED-5120-OF-5120-CHART-ACTIONS",
+   "CURVATURE-DEFECT=CURVATURE-DEFECT-INDEPENDENT(SUPPORT-OVERLAP-LAW=NO-DEFECT-AT-OVERLAP-LE-1-BY-THEOREM-4-OF-7-RELATIONS;LINK-GRAIN=0-OF-1920-BOTH(BY-THEOREM-AT-SHARE-ONE-SITE-AND-DISJOINT;BY-THE-UNIFORM-RESTRICTION-AT-SAME-LINK-WHERE-189952-OF-409600-DIFFERING-COIN-PAIRS-CARRY-BOTH);PLAQUETTE-GRAIN=ALL-FOUR-CELLS-384-BOTH;TWO-EXCITATION=EXCLUSIVITY-SURVIVES-0-OF-18-BOTH-AT-6-NAMED-COINS-X-3-RELATIONS(SAME-LINK-DIFFERING-COINS-0-OF-36-BOTH);PARENT-BASELINE=588-DEFECTS-AT-ZERO-CURVATURE)",
    "CONTROL=FULL-STRATUM-FLAT-0-OF-3364-TRIVIAL-GROUP",
-   "REFINEMENT=LOCAL-STABLE-GLOBAL-EXTENSIVE(LOCAL-STABLE-6-OF-6;GLOBAL-A16-TO-A64)",
-   "SCRAMBLE=SEPARATES-LOCAL-12-OF-12;FAILS-GLOBAL-0-OF-2",
-   "INTERFERING-SECTOR=INFINITE-ORDER-512-OF-512-BY-TRACE-NON-INTEGRALITY",
-   "SCOPE=D=2;L=4;REFINED-TO-8;FIELD=Q(ZETA-8);ALPHABET=25;COINS=640;LINKS=32;PLAQUETTES=16;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));STENCIL=2-SITE-DOMINO-PER-LINK;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=UNIFORM-CONFIGURATIONS-EXHAUSTIVE-OVER-THE-COIN-ALPHABET;NON-UNIFORM-CONFIGURATIONS=NOT-SWEPT;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-CONFINEMENT-CLAIM"
+   "REFINEMENT=LOCAL-STABLE-BY-NON-WRAPPING-GLOBAL-SUPPORT-IS-THE-VOLUME(LOCAL-STABLE-BY-NON-WRAPPING-6-OF-6-WITH-0-WRAPPING-STENCILS;GLOBAL-SUPPORT-IS-THE-VOLUME-16-AT-L-4-AND-64-AT-L-8(A16-TO-A64-NOT-SCRAMBLE-SEPARATED))",
+   "SCRAMBLE=SEPARATES-LOCAL-BY-THE-ORDER-SUPPORT-PROFILE-12-OF-12;THE-FORM-ALONE-IS-NOT-THE-SEPARATOR-SCRAMBLES-REACH-IT-AT-5-OF-12-LOCAL-AND-2-OF-2-GLOBAL-CELLS;FAILS-GLOBAL-0-OF-2",
+   "INTERFERING-SECTOR=INFINITE-ORDER-512-OF-512-BY-TRACE-NON-INTEGRALITY;DEFECT-STRICTLY-CONTAINED-384-OF-512-ONE-WAY-ONLY",
+   "SCOPE=D=2;L=4;REFINED-TO-8;FIELD=Q(ZETA-8);ALPHABET=25;COINS=640;LINKS=32;PLAQUETTES=16;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));STENCIL=2-SITE-DOMINO-PER-LINK;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=UNIFORM-CONFIGURATIONS-EXHAUSTIVE-OVER-THE-COIN-ALPHABET;NON-UNIFORM-CONFIGURATIONS=NOT-SWEPT;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;THIS-IS-A-CONNECTION-NOT-A-GAUGE-FIELD;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM"
   ],
-  "string": "R5-NON-ABELIAN-<CLASS=ALTERNATING-ON-ITS-OWN-SUPPORT(S1-ONE=A3<S2-EDGE=A5<S2-CORNER=A3 x A3<S2-APART=A3 x A3<S3-ROW=A7<S4-BLOCK=A8);RANK=8-OF-16-DECLARED-PLAQUETTE-GENERATORS-ARENA-RELATIVE;COMMUTATOR-SUBGROUP=NONTRIVIAL-AT-576-OF-640-UNIFORM-COINS|GATE=INHERITED-PER-GENERATOR-FULL-ADMITS-0-OF-52(R5-BLOCKED-AT-THE-GATE-AT-THAT-READING);MAXIMAL-PER-GENERATOR-LEVEL=NONE;DECLARED-GATE=FAMILY-COVARIANCE-4096-OF-4096-CHECKS|CURVATURE-DEFECT=CURVATURE-DEFECT-INDEPENDENT(LINK-GRAIN=MUTUALLY-EXCLUSIVE-BY-THEOREM-0-OF-1920-BOTH;PLAQUETTE-GRAIN=ALL-FOUR-CELLS-384-BOTH;TWO-EXCITATION=EXCLUSIVITY-SURVIVES-0-OF-18-BOTH;PARENT-BASELINE=588-DEFECTS-AT-ZERO-CURVATURE)|CONTROL=FULL-STRATUM-FLAT-0-OF-3364-TRIVIAL-GROUP|REFINEMENT=LOCAL-STABLE-GLOBAL-EXTENSIVE(LOCAL-STABLE-6-OF-6;GLOBAL-A16-TO-A64)|SCRAMBLE=SEPARATES-LOCAL-12-OF-12;FAILS-GLOBAL-0-OF-2|INTERFERING-SECTOR=INFINITE-ORDER-512-OF-512-BY-TRACE-NON-INTEGRALITY|SCOPE=D=2;L=4;REFINED-TO-8;FIELD=Q(ZETA-8);ALPHABET=25;COINS=640;LINKS=32;PLAQUETTES=16;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));STENCIL=2-SITE-DOMINO-PER-LINK;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=UNIFORM-CONFIGURATIONS-EXHAUSTIVE-OVER-THE-COIN-ALPHABET;NON-UNIFORM-CONFIGURATIONS=NOT-SWEPT;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-CONFINEMENT-CLAIM>"
+  "string": "R5-NON-ABELIAN-<CLASS=ALTERNATING-ON-EACH-OF-ITS-ORBITS(S1-ONE=A3;S2-EDGE=A5;S2-CORNER=A3 x A3;S2-APART=A3 x A3;S3-ROW=A7;S4-BLOCK=A8);RANK=8-OF-16-DECLARED-PLAQUETTE-GENERATORS-ARENA-RELATIVE;COMMUTATOR-SUBGROUP=NONTRIVIAL-AT-576-OF-640-UNIFORM-COINS|REALIZATION-GATE=NONE-EFFECTIVE(INHERITED-PER-GENERATOR-FULL-ADMITS-0-OF-52(R5-BLOCKED-AT-THE-GATE-AT-THAT-READING);DECLARED-FAMILY-COVARIANCE-IS-A-FORCED-IDENTITY-128-OF-128-OFF-CHART-OFF-ALPHABET-PROBES-AGREE-SELECTS-NOTHING);MAXIMAL-PER-GENERATOR-LEVEL=NONE;DECLARED-GATE=LINK-SET-CLOSED-5120-OF-5120-CHART-ACTIONS|CURVATURE-DEFECT=CURVATURE-DEFECT-INDEPENDENT(SUPPORT-OVERLAP-LAW=NO-DEFECT-AT-OVERLAP-LE-1-BY-THEOREM-4-OF-7-RELATIONS;LINK-GRAIN=0-OF-1920-BOTH(BY-THEOREM-AT-SHARE-ONE-SITE-AND-DISJOINT;BY-THE-UNIFORM-RESTRICTION-AT-SAME-LINK-WHERE-189952-OF-409600-DIFFERING-COIN-PAIRS-CARRY-BOTH);PLAQUETTE-GRAIN=ALL-FOUR-CELLS-384-BOTH;TWO-EXCITATION=EXCLUSIVITY-SURVIVES-0-OF-18-BOTH-AT-6-NAMED-COINS-X-3-RELATIONS(SAME-LINK-DIFFERING-COINS-0-OF-36-BOTH);PARENT-BASELINE=588-DEFECTS-AT-ZERO-CURVATURE)|CONTROL=FULL-STRATUM-FLAT-0-OF-3364-TRIVIAL-GROUP|REFINEMENT=LOCAL-STABLE-BY-NON-WRAPPING-GLOBAL-SUPPORT-IS-THE-VOLUME(LOCAL-STABLE-BY-NON-WRAPPING-6-OF-6-WITH-0-WRAPPING-STENCILS;GLOBAL-SUPPORT-IS-THE-VOLUME-16-AT-L-4-AND-64-AT-L-8(A16-TO-A64-NOT-SCRAMBLE-SEPARATED))|SCRAMBLE=SEPARATES-LOCAL-BY-THE-ORDER-SUPPORT-PROFILE-12-OF-12;THE-FORM-ALONE-IS-NOT-THE-SEPARATOR-SCRAMBLES-REACH-IT-AT-5-OF-12-LOCAL-AND-2-OF-2-GLOBAL-CELLS;FAILS-GLOBAL-0-OF-2|INTERFERING-SECTOR=INFINITE-ORDER-512-OF-512-BY-TRACE-NON-INTEGRALITY;DEFECT-STRICTLY-CONTAINED-384-OF-512-ONE-WAY-ONLY|SCOPE=D=2;L=4;REFINED-TO-8;FIELD=Q(ZETA-8);ALPHABET=25;COINS=640;LINKS=32;PLAQUETTES=16;CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1));STENCIL=2-SITE-DOMINO-PER-LINK;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=UNIFORM-CONFIGURATIONS-EXHAUSTIVE-OVER-THE-COIN-ALPHABET;NON-UNIFORM-CONFIGURATIONS=NOT-SWEPT;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;THIS-IS-A-CONNECTION-NOT-A-GAUGE-FIELD;NO-CONFIGURATION-MEASURE;NO-ACTION;NO-COUPLING;NO-DYNAMICS;NOT-QCD;NO-CONFINEMENT-CLAIM>"
  },
  "waiver_ledger": [
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "the byte-anchor break (--break-anchor A-*), which corrupts a pinned source's expected digest and kills the run at this gate",
    "gate": "G-SOURCES-PINNED",
-   "status": "FALSIFIABLE"
+   "status": "FALSIFIABLE-BY-ANCHOR-BREAK"
   },
   {
    "falsifier": "MUT-WINDOW-TRUNCATED",
@@ -2663,29 +3414,29 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "the path-value anchor break (--break-anchor PV-*), which corrupts an anchored parent value and kills the run at this gate",
    "gate": "G-PATH-VALUE-ANCHORS",
-   "status": "FALSIFIABLE"
+   "status": "FALSIFIABLE-BY-ANCHOR-BREAK"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-ARENA-DERIVED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-STRATA-MATCHING",
    "gate": "G-STRATA-ARE-THE-EXCLUDED-FAMILY",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-ARENA-DECLARED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-R4B-HANDOFF",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-ALPHABET",
@@ -2698,12 +3449,12 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-NAMED-COINS-PRESENT",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-HOLONOMY-UNITARY",
    "gate": "G-HOLONOMY-UNITARY",
    "status": "FALSIFIABLE"
   },
@@ -2718,24 +3469,24 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-ABELIAN-SECTOR-MEASURED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-ORBIT-CERTIFICATE",
    "gate": "G-GROUP-CERTIFIED-BY-SET-EQUALITY",
    "status": "FALSIFIABLE"
   },
   {
    "falsifier": "MUT-GROUP-CLASS",
-   "gate": "G-ALTERNATING-ON-ITS-OWN-SUPPORT",
+   "gate": "G-ALTERNATING-ON-EACH-OF-ITS-ORBITS",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-RANK-MEASURED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-INFINITE-CERTIFICATE",
@@ -2743,9 +3494,9 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-PROJECTIVE-PERIOD-TEMPLATE",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-MATRIX-AS-PHYSICS",
@@ -2753,17 +3504,17 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "MUT-CIRCULANT-POOL",
+   "falsifier": "MUT-CIRCULANT-POOL, MUT-FLAT-CONTROL",
    "gate": "G-FLAT-CONTROL-TRIVIAL",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-OPENING-DATUM",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-CHART-GROUP",
    "gate": "G-CHART-GROUPS-CENSUSED",
    "status": "FALSIFIABLE"
   },
@@ -2778,14 +3529,19 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
-   "gate": "G-DEFECT-REBUILT",
+   "falsifier": "MUT-COVARIANCE-FORCING",
+   "gate": "G-NO-EFFECTIVE-REALIZATION-GATE",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
+   "gate": "G-DEFECT-REBUILT",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
+  },
+  {
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-MATCHED-COORDINATES",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-MATCHED-CELL",
@@ -2793,23 +3549,38 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
-   "gate": "G-DEFECT-BASELINE",
+   "falsifier": "MUT-SUPPORT-OVERLAP, MUT-SAME-LINK-SCOPE",
+   "gate": "G-SUPPORT-OVERLAP-LAW",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-DEFECT-SECTOR",
+   "gate": "G-DEFECT-IMPLIES-INFINITE-ONE-WAY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
+   "gate": "G-DEFECT-BASELINE",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
+  },
+  {
+   "falsifier": "MUT-PLAQUETTE-COOCCUR",
    "gate": "G-PLAQUETTE-GRAIN-COOCCUR",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-CURVATURE-DOES-NOT-IMPLY-QUANTUM",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-TWO-EXCITATION",
    "gate": "G-TWO-EXCITATION-RUN",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-TWO-EXCITATION-DIFF",
+   "gate": "G-TWO-EXCITATION-SAME-LINK-SCOPE",
    "status": "FALSIFIABLE"
   },
   {
@@ -2818,14 +3589,14 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-ABELIAN-ARM-GAUGE-INERT",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-GAUGE-FAMILY-CLOSED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-REFINEMENT",
@@ -2833,13 +3604,28 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
-   "gate": "G-CRD-LADDER-COMPARATOR",
+   "falsifier": "MUT-NON-WRAPPING",
+   "gate": "G-LOCAL-STABILITY-IS-FORCED-BY-NON-WRAPPING",
    "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-GLOBAL-SUPPORT",
+   "gate": "G-GLOBAL-SUPPORT-IS-THE-VOLUME",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
+   "gate": "G-CRD-LADDER-COMPARATOR",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
    "falsifier": "MUT-SCRAMBLE",
    "gate": "G-SCRAMBLE-SEPARATION",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-FORM-NOT-DISCRIMINATING",
+   "gate": "G-THE-FORM-IS-NOT-THE-SEPARATOR",
    "status": "FALSIFIABLE"
   },
   {
@@ -2848,78 +3634,88 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-VERDICT-PREREGISTERED",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
+  },
+  {
+   "falsifier": "MUT-UNREACHABLE-HIDDEN",
+   "gate": "G-UNREACHABLE-OUTCOMES-DISCLOSED",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "MUT-HEAD-TYPED",
+   "falsifier": "MUT-HEAD-TYPED, MUT-VERDICT-SEGMENT-DRIFT",
    "gate": "G-VERDICT-RECONSTRUCTED",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-SCOPE-INHERITED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-DECLARATION-SEGMENTS",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-NO-CONFINEMENT-LANGUAGE",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "MUT-CHOICE-FIBRE",
    "gate": "G-CHOICE-INVENTORY",
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-NO-FLOATS-IN-SOURCE",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-NO-FLOATS-IN-RECEIPT",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-NO-SUBPROCESS",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-RUNTIME-INPUTS-ENUMERATED",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-ANCHOR-CONSUMERS-EXIST",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-PUBLISHED-ROWS-BOUND",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-CLI-CONTRACT",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-VERIFY-PAPER-LIVE",
-   "status": "FALSIFIABLE"
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
   },
   {
-   "falsifier": "the anchor break self-test (--break-anchor), which corrupts an input this gate reads and kills the run",
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
    "gate": "G-WAIVERS-VERIFIED",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
+  },
+  {
+   "falsifier": "MUT-TOTALS-DRIFT",
+   "gate": "G-TOTALS-REDERIVED",
    "status": "FALSIFIABLE"
   },
   {
@@ -2933,8 +3729,23 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifier": "MUT-PAPER-POLARITY",
+   "falsifier": "MUT-PAPER-POLARITY, MUT-PAPER-OCCURRENCES",
    "gate": "G-PAPER-CLAIM-POLARITY",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-PAPER-VERDICT",
+   "gate": "G-PAPER-CARRIES-THE-VERDICT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-CONFINEMENT-IN-THE-PAPER",
+   "gate": "G-NO-CONFINEMENT-IN-THE-PAPER",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifier": "MUT-UNDECLARED-KEY",
+   "gate": "G-SEAL-MANIFEST-TOTAL",
    "status": "FALSIFIABLE"
   },
   {
@@ -2943,12 +3754,22 @@
    "status": "FALSIFIABLE"
   },
   {
+   "falsifier": "DISCLOSED, not claimed: this gate carries no declared mutant, and the anchor-break self-test does NOT exercise it -- an anchor break kills the run upstream at the anchor gate, so the run never arrives here.  The gate is evaluated on every delivery run and its predicate is published with its measured detail, and that is the whole of what it is exercised by",
+   "gate": "G-NOT-EXECUTED-EMPTY",
+   "status": "NO-FALSIFIER-REACHES-THIS-GATE"
+  },
+  {
+   "falsifier": "MUT-GATE-ROW-FLIPPED",
+   "gate": "G-GATE-ROWS-SEALED",
+   "status": "FALSIFIABLE"
+  },
+  {
    "forcing": "the gate that adjudicates the mutant sweep cannot itself be a mutant's target; its falsifier is the sweep, and every surviving or off-target injection fails it -- exercised by all declared mutants on every run",
    "gate": "G-MUTANTS-ON-TARGET",
    "status": "WAIVED"
   },
   {
-   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference value is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN",
+   "forcing": "evaluated only in the writing path, which no diagnostic run reaches; it is two-way by construction -- a deliberately corrupted payload is written to a probe path, re-read and required to be detected -- and its reference value is the GATE-TIME SEAL, whose in-run half G-SEAL-COMPLETE carries the injection falsifier MUT-SEAL-BROKEN.  It carries the whole disk-boundary re-derivation battery: the verdict, the gate rows against their gate-time digests, the totals, the published seal manifest, the paper legs and every rendered transcript line are all re-derived FROM THE BYTES ON DISK, and each of those has an in-run twin gate that carries a mutant",
    "gate": "G-ARTIFACT-INTEGRITY",
    "status": "WAIVED"
   },
