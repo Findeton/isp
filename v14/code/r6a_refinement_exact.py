@@ -113,7 +113,9 @@ ANCHORS = []             # [{name, kind, artifact, expected, measured, ok}]
 # exists.  Named here so the falsifier census denominates itself honestly.
 DEFERRED_GATES = ("G-RENDER-FROM-GATED-OBJECT", "G-NO-FLOATS-IN-RECEIPT",
                   "G-PROSE-RENDERS-FROM-THE-RECEIPT", "G-FINAL-GATE-COUNT",
-                  "G-DEFERRED-GATES-EVALUATED")
+                  "G-DEFERRED-GATES-EVALUATED", "G-MUTANT-TABLE-MEASURED",
+                  "G-WAIVER-LEDGER-CLEAN", "G-WAIVER-TEXT-RENDERED",
+                  "G-RECEIPT-MATCHES-THE-GATED-VALUES")
 
 
 def gate(name, statement, ok, value=None):
@@ -292,44 +294,70 @@ PATH_ANCHOR_ROWS = [
 # TEXT ANCHORS: the load-bearing grammar sentences, quoted VERBATIM from the
 # pinned HA paper.  Everything this unit calls "the pinned grammar" is one of
 # these, and a drift in any of them changes the question.
+#
+# RUNBOOK section 14 addendum (v14 #34, verbatim-text anchors ADOPTED WITH THREE
+# BINDING MODIFICATIONS), all three implemented here:
+#   (1) EVALUATED BEFORE THE BYTE ANCHORS.  As first shipped the text anchors
+#       sat behind the byte anchors of the same files, so no drift in a pinned
+#       source could ever reach them; verify_text_anchors() now runs first.
+#   (2) EACH ROW BOUND TO A NAMED CONSUMER GATE.  A row with no consumer is
+#       decoration; G-TEXT-ANCHOR-CONSUMERS measures that every named consumer
+#       really was registered by this run.
+#   (3) CONTEXT WINDOWS, NOT FRAGMENTS.  Each row anchors the sha256-12 of the
+#       TEXT_ANCHOR_WINDOW bytes centred on the needle, so a negation or a
+#       repeal inserted AROUND the quoted sentence dies here -- the fragment
+#       test binds existence, the window test binds meaning.
+TEXT_ANCHOR_WINDOW = 240
+
 TEXT_ANCHOR_ROWS = [
     ("T-COUNTS-POSITIVE", "v13/paper-ha-successor.md",
      "the interval cardinality $n_\\ell(x)\\in\\mathbb Z_{>0}$",
+     "248db28ce1e5", "G-UNSPLITTABLE-RECORDS",
      "THE TYPE DECLARATION.  Counts are STRICTLY POSITIVE integers -- the "
      "declaration that makes a split of a count-1 interval impossible"),
     ("T-COUNTS-SEMANTIC", "v13/paper-ha-successor.md",
      "is the number of division events in the record interval between",
+     "774c3e4683a5", "G-ADDITIVITY-FORCED",
      "THE SEMANTIC ANCHOR.  n_l(x) COUNTS DIVISION EVENTS IN THE INTERVAL -- "
      "the declaration from which count additivity follows as semantics"),
     ("T-FRONT", "v13/paper-ha-successor.md",
      "$n(x)$ = the number of division events already committed at record site "
      "$x$",
+     "33f042de2c3f", "G-FORCED-LIFT-NON-INTEGRAL",
      "THE FRONT.  A separate configuration variable counting events AT a site"),
     ("T-READOUT", "v13/paper-ha-successor.md",
      "$q_{12} = (n_{e_1+e_2} - n_{e_1} - n_{e_2})/2$",
+     "242d9d1cec3f", "G-READOUT-REENCODING",
      "THE DECLARED READOUT at d=2, reimplemented here"),
     ("T-CURVED", "v13/paper-ha-successor.md",
      "| `G-CURVED` | $(1,1,2)$ | $(2,2,4)$ |",
+     "cd89979cb323", "G-RECORD-FAMILY-REPRODUCES-I7",
      "the site-dependent diagonal record's counts at (0,0) and (1,1)"),
     ("T-CURVOFF", "v13/paper-ha-successor.md",
      "| `G-CURVOFF` | $(2,2,6)$ | $(3,3,10)$ |",
+     "1bdddd908192", "G-RECORD-FAMILY-REPRODUCES-I7",
      "the site-dependent cross-term record's counts at (0,0) and (1,1)"),
     ("T-FROZEN-GEOMETRY", "v13/paper-ha-successor.md",
      "The interval-cardinality\n   record $s$ is a configuration variable that "
      "$H_a[N]$ does not move; only the\n   front does.",
+     "6927b4e6eff3", "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
      "THE INDEPENDENCE.  The geometry record and the front are separate "
-     "variables -- the front cannot supply the split"),
+     "variables -- the front cannot supply the split, and this route to the "
+     "same conclusion is arena-free and positivity-free"),
     ("T-DRAG", "v13/paper-ha-successor.md",
      "The drag has exactly two ingredients: the **front tilt** $n(x+e)-n(x)$",
+     "b02dd7578d45", "G-FORCED-LIFT-RULE-RELATIVE",
      "the drag's ingredients: front tilt and eventwise lapse value, nothing "
      "else"),
     ("T-PIN-ADDITIVITY", "v14/note-r6a-refinement-grammar-pin.md",
      "n(x,y) + n(y, x+ℓ) = n(x, x+ℓ) (events in the whole = events in the\n"
      "parts) — this is semantics, not a choice.",
+     "2bcdca39d42a", "G-ADDITIVITY-FORCED",
      "THE PIN'S OWN FORCED CLAUSE -- the constraint this unit verifies rather "
      "than assumes"),
     ("T-PIN-SCOPE", "v14/note-r6a-refinement-grammar-pin.md",
      "Reaching outside\nthe pinned sources is forbidden.",
+     "150cb02308d0", "G-INCIDENCE-CENSUS",
      "THE SCOPE RULING that makes BLOCKED-AT-GRAMMAR-SOURCE first class"),
 ]
 
@@ -398,27 +426,79 @@ def verify_path_anchors(rel="v13/code/ha_successor_receipt.json"):
     return len(PATH_ANCHOR_ROWS)
 
 
+def text_window(text, needle, half=None):
+    """The local CONTEXT of a quoted sentence: the bytes centred on the needle.
+    Anchoring the window rather than the fragment is modification (3) of the
+    adopted verbatim-text anchor kind -- a repeal or a negation inserted AROUND
+    a preserved needle moves the window and dies."""
+    half = TEXT_ANCHOR_WINDOW if half is None else half
+    i = text.find(needle)
+    if i < 0:
+        return None
+    return text[max(0, i - half):i + len(needle) + half]
+
+
 def verify_text_anchors():
+    """MODIFICATION (1): this runs BEFORE verify_anchors(), so a sentence-level
+    drift in a pinned source dies with a sentence-level message instead of being
+    masked by the file's own byte anchor."""
     cache = {}
     bad = []
-    for name, rel, needle, why in TEXT_ANCHOR_ROWS:
+    for name, rel, needle, window_sha, consumer, why in TEXT_ANCHOR_ROWS:
         if rel not in cache:
             cache[rel] = read_text(rel)
         probe = mutate("text-anchor-drift", needle,
                        needle.replace("$", "@") if name == "T-READOUT"
                        else needle)
-        ok = probe in cache[rel]
+        present = probe in cache[rel]
+        win = text_window(cache[rel], probe) if present else None
+        got_sha = (hashlib.sha256(win.encode("utf-8")).hexdigest()[:12]
+                   if win is not None else None)
+        got_sha = mutate("text-window-drift", got_sha,
+                         "0" * 12 if name == "T-COUNTS-POSITIVE" else got_sha)
+        ok = present and got_sha == window_sha
         if not ok:
-            bad.append({"name": name, "artifact": rel, "needle": probe[:60]})
+            bad.append({"name": name, "artifact": rel, "needle": probe[:60],
+                        "present": present, "window_sha256_prefix": got_sha,
+                        "expected_window": window_sha})
         ANCHORS.append({"name": name, "kind": "verbatim-text", "artifact": rel,
-                        "expected": needle, "measured": ok,
+                        "expected": needle, "measured": present,
+                        "window_bytes": 2 * TEXT_ANCHOR_WINDOW + len(needle),
+                        "expected_window_sha256_prefix": window_sha,
+                        "measured_window_sha256_prefix": got_sha,
+                        "consumer_gate": consumer,
                         "provenance": why, "ok": ok})
     gate("G-TEXT-ANCHORS",
          "every load-bearing grammar sentence this unit reimplements appears "
-         "VERBATIM in its pinned source -- the grammar is quoted, not "
-         "paraphrased",
+         "VERBATIM in its pinned source AND the %d-byte context window centred "
+         "on it hashes to its anchored value -- the grammar is quoted, not "
+         "paraphrased, and a repeal inserted around a preserved sentence dies "
+         "here (RUNBOOK section 14 addendum, v14 #34, modification 3)"
+         % (2 * TEXT_ANCHOR_WINDOW),
          len(bad) == 0, {"rows": len(TEXT_ANCHOR_ROWS), "failures": bad[:3]})
     return len(TEXT_ANCHOR_ROWS)
+
+
+def verify_text_anchor_consumers():
+    """MODIFICATION (2): every text-anchor row names the gate it licenses, and
+    that gate must really have been registered by this run.  A row with no
+    reachable consumer is decoration, not an anchor."""
+    registered = set(g["name"] for g in GATES)
+    rows = [{"anchor": name, "consumer_gate": consumer,
+             "consumer_registered": consumer in registered}
+            for name, rel, needle, wsha, consumer, why in TEXT_ANCHOR_ROWS]
+    rows = mutate("text-consumer-drift", rows,
+                  [dict(r, consumer_gate="G-NOWHERE",
+                        consumer_registered=False) if i == 0 else r
+                   for i, r in enumerate(rows)])
+    gate("G-TEXT-ANCHOR-CONSUMERS",
+         "every verbatim-text anchor names the gate it licenses and that gate "
+         "was registered by this run -- an anchor row bound to no consumer is "
+         "decoration (RUNBOOK section 14 addendum, v14 #34, modification 2)",
+         all(r["consumer_registered"] for r in rows)
+         and len(rows) == len(TEXT_ANCHOR_ROWS),
+         {"rows": rows})
+    return rows
 
 
 # ----------------------------------------------------------------------------
@@ -626,7 +706,7 @@ def curvoff_rule(d):
     """G-CURVOFF, from the pinned HA code: a site-dependent cross term."""
     def rule(x, lk):
         b = [2 + x[j] for j in range(d)]
-        cross = 1 + (x[0] * x[1]) % 2
+        cross = mutate("curvoff-corrupt", 1, 3) + (x[0] * x[1]) % 2
         s = sum(b[j] for j in range(d) if lk[j])
         pairs = sum(1 for i in range(d) for j in range(i + 1, d)
                     if lk[i] and lk[j])
@@ -733,8 +813,10 @@ def lambda_of(rule, arena, x, fresh=False):
         M = {lk: (Fr(1) if lk in axes else Fr(0)) for lk in lks}
     else:
         raise RuntimeError("unknown rule %s" % rule)
-    if not fresh:
-        # the cache-alias injection serves one arena another arena's weight
+    if not fresh and mutate("cache-disable", True, False):
+        # the cache-alias injection serves one arena another arena's weight;
+        # the cache-disable injection stops the memo being populated at all,
+        # so the cache path is never exercised
         _LAMBDA_MEMO[key] = M
     return M
 
@@ -747,14 +829,28 @@ def cache_lookup_key_for(arena, rule, x):
                   ("ALIAS", rule, x))
 
 
-def drag_at(rule, arena, N, n, x):
+# The DECLARED frozen-front rules (HA paper section 3.4, the `A-notransport`
+# row: "I_a(g), but the drag reads a FROZEN REFERENCE FRONT -- broken").  In
+# this unit the object that moves a front is the LIFT, so the R6a-native reading
+# of "frozen reference front" is: on the refined arena the rule's drag reads the
+# UNTRANSPORTED front z -> n(base(z)) rather than the lifted front F(n).  The
+# rule then differs from `A-insert` exactly where the lift differs from the left
+# lift, which is what makes it a distinct declared rule rather than a duplicate
+# row.
+FROZEN_FRONT_RULES = ("A-notransport",)
+
+
+def drag_at(rule, arena, N, n, x, frozen=None):
     """w[N,n](x): the record-native drag.  Architecture A reads the axis front
-    tilts through Lambda; architecture B sums over every declared link."""
+    tilts through Lambda; architecture B sums over every declared link.  A rule
+    in FROZEN_FRONT_RULES reads `frozen` instead of `n` when one is supplied --
+    the declared broken variant."""
     d = arena.d
     Ls = arena.Ls
+    front = frozen if (rule in FROZEN_FRONT_RULES and frozen is not None) else n
     if arch_of(rule) == "A":
         Lam = lambda_of(rule, arena, x)
-        dn = [Fr(n[add(x, e, Ls)] - n[x]) for e in arena.links[:d]]
+        dn = [Fr(front[add(x, e, Ls)] - front[x]) for e in arena.links[:d]]
         return tuple(sum((Lam[i][j] * dn[j] for j in range(d)), Fr(0)) * Fr(N[x])
                      for i in range(d))
     lam = lambda_of(rule, arena, x)
@@ -762,7 +858,7 @@ def drag_at(rule, arena, N, n, x):
     for lk in arena.links:
         if lam[lk] == 0:
             continue
-        dl = Fr(n[add(x, lk, Ls)] - n[x])
+        dl = Fr(front[add(x, lk, Ls)] - front[x])
         for i in range(d):
             if lk[i]:
                 v[i] = v[i] + lam[lk] * Fr(lk[i]) * dl
@@ -789,6 +885,23 @@ class Move(object):
         self.kind = kind          # "subdivision" | "control"
 
 
+def expected_move_keys(d, L):
+    """THE INDEPENDENT CONSTRUCTOR for the move-census denominator (RUNBOOK
+    section 14 addendum, v13 #219).  The declared classes are, by the pin's own
+    section 3.1 plus section 5's control: one global dyadic refinement, one
+    axis-hyperplane insertion PER LOCUS (L of them), one single-interval
+    insertion, and one copying control -- so 1 + L + 1 + 1 classes, a number
+    computed from L and never read back from declared_moves().  Gating the
+    census against declared_moves() would compare the census with a copy of
+    itself routed through the very constructor under test."""
+    return (["DYADIC"] + ["HYPERPLANE@%d" % lam for lam in range(L)]
+            + ["SINGLE-INTERVAL", "R1-COPY"])
+
+
+def expected_move_count(d, L):
+    return 1 + L + 1 + 1
+
+
 def declared_moves(d, L):
     """The subdivision-move classes expressible from the pinned declarations
     (pin section 3.1), PLUS the R1 negative control (pin section 5)."""
@@ -813,7 +926,10 @@ def declared_moves(d, L):
         "label growth: a disjoint block appended, no interval subdivided "
         "[THE NEGATIVE CONTROL -- the audit must be able to FAIL a move]",
         "control"))
-    return out
+    # the `census-drop-inside` injection drops a class INSIDE the constructor,
+    # so a completeness gate that re-called the constructor would not see it
+    return mutate("census-drop-inside", out,
+                  [m for m in out if not m.key.startswith("HYPERPLANE@0")])
 
 
 def minimal_decompositions(disp, links, cap=6):
@@ -897,19 +1013,68 @@ def move_incidence_census(move, d, links):
 
 def single_interval_arena_probe(d, L):
     """CLASS (c): one new site inside ONE declared link.  REFUSED, with the
-    measured reason -- never skipped (pin section 3.1)."""
-    n_sites = L ** d + 1
-    # the direction-0 cycle lengths after inserting one site into one row
-    cycles = [L + 1] + [L] * (L ** (d - 1) - 1)
+    measured reason -- never skipped (pin section 3.1).
+
+    THE ARENA IS BUILT, NOT DESCRIBED.  The site set is X together with one
+    interior site y placed inside the direction-0 link out of the origin; the
+    direction-0 successor relation is then followed to measure the cycle
+    lengths, and each declared link displacement is TESTED for a target at y.
+    Every number in this probe is a measurement on that site set (the delivered
+    version typed all three)."""
+    links = link_set(d)
+    Ls = (L,) * d
+    base = sites(Ls)
+    # y is the interior site of the direction-0 link [origin, origin + e_0];
+    # coordinates are carried as doubled integers so that y is representable
+    origin = (0,) * d
+    e0 = links[0]
+    Y = ("MID", origin, e0)
+    S = [("SITE", x) for x in base] + [Y]
+    n_sites = len(S)
+
+    def succ0(node):
+        """The direction-0 successor: the new site splits the origin's link."""
+        if node == Y:
+            return ("SITE", add(origin, e0, Ls))
+        x = node[1]
+        if x == origin:
+            return Y
+        return ("SITE", add(x, e0, Ls))
+
+    seen = set()
+    cycles = []
+    for node in S:
+        if node in seen:
+            continue
+        cur = node
+        length = 0
+        while cur not in seen:
+            seen.add(cur)
+            cur = succ0(cur)
+            length += 1
+        cycles.append(length)
+    cycles = sorted(cycles, reverse=True)
     constant = len(set(cycles)) == 1
     longest = max(cycles)
     divides = (n_sites % longest == 0)
-    # declared link displacements with a target at the new site
-    targets = {"axis-along-the-split": True}
-    for lk in link_set(d)[1:]:
-        targets[str(lk)] = False
-    have = sum(1 for v in targets.values() if v)
+    # declared link displacements with a target at the new site: y + l must be a
+    # site of the enlarged set.  Only the axis link ALONG the split has one (the
+    # far end of the subdivided link); the transverse displacements land at
+    # half-integer positions that the site set does not contain.
+    site_set = set(S)
+    targets = {}
+    for lk in links:
+        if lk == e0:
+            targets[str(lk)] = succ0(Y) in site_set
+        else:
+            # y + lk would be the interior of the link out of origin + lk, which
+            # this move does not insert
+            targets[str(lk)] = ("MID", add(origin, lk, Ls), e0) in site_set
+    have = mutate("link-targets-typed",
+                  sum(1 for v in targets.values() if v), 2)
     return {
+        "targets_by_link": {k: bool(v) for k, v in sorted(targets.items())},
+        "cycle_lengths_measured_on_the_built_site_set": True,
         "sites": n_sites,
         "direction_0_cycle_lengths": cycles,
         "cycle_lengths_constant": constant,
@@ -971,6 +1136,10 @@ def free_slots(Ls_coarse, Ls_refined, links):
 
 
 SPLIT_RULES = ("low", "floor", "high")
+
+# the declared trial range for the infinite-family witness sweep (a SCOPE
+# declaration; the witness COUNT is measured, never typed)
+FREE_LINK_TRIALS = 64
 
 
 def make_split(arena, mode):
@@ -1158,6 +1327,97 @@ def site_admissible_triples(row, links):
                 q12 = Fr(c - a - b, 2)
                 if Fr(a * b) - q12 * q12 > 0:
                     out.append((a, b, c))
+    return mutate("triples-drop", out, out[:-1] if out else out)
+
+
+def isqrt_floor(n):
+    """floor(sqrt(n)) for n >= 0, by integer bisection -- no float anywhere."""
+    if n < 0:
+        raise ValueError("isqrt of a negative")
+    if n < 2:
+        return n
+    lo = 0
+    hi = 1
+    while hi * hi <= n:
+        hi = hi * 2
+    while hi - lo > 1:
+        mid = (lo + hi) // 2
+        if mid * mid <= n:
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
+def count_admissible_triples_closed(A, B, C):
+    """THE INDEPENDENT COMPARATOR for the split fiber at one coarse site
+    (RUNBOOK section 14 addendum, v13 #219: a decomposition/rebuild check must
+    construct its comparator independently of the audited component).
+
+    It shares no loop, no predicate and no arithmetic type with
+    site_admissible_triples(): admissibility of (a, b, c) is
+    (c - a - b)^2 < 4ab, so with s = c - a - b the admissible s are exactly the
+    integers with |s| <= floor(sqrt(4ab - 1)), and the count of admissible c in
+    [1, C-1] is the length of an INTEGER INTERVAL computed from an integer
+    square root.  No triple is ever enumerated."""
+    total = 0
+    for a in range(1, A):
+        for b in range(1, B):
+            m = isqrt_floor(4 * a * b - 1)
+            lo = max(-m, 1 - a - b)
+            hi = min(m, C - 1 - a - b)
+            if hi >= lo:
+                total += hi - lo + 1
+    return total
+
+
+def extremal_selector_census(arena):
+    """THE SELECTOR CLASS THE DELIVERED INVENTORY NEVER TESTED.  Three extremal
+    selections are evaluated at every coarse site: maximise det q at the refined
+    image, minimise the imbalance sum |2 n_1 - n|, and minimise |q_12| at the
+    image.  For each, how many sites have a UNIQUE optimum -- and, for max-det,
+    whether the selected refinement is globally admissible.
+
+    No extremal principle is declared in the pinned sources, so a unique
+    selector is a LEAD, not a forcing: it is reported as such."""
+    d = arena.d
+    links = arena.links
+    out = {"max_det": {"unique_sites": 0}, "most_balanced": {"unique_sites": 0},
+           "min_abs_q12": {"unique_sites": 0}, "sites": len(arena.S)}
+    sel = {}
+    for x in arena.S:
+        row = arena.counts[x]
+        trips = site_admissible_triples(row, links)
+        if not trips:
+            continue
+        scored = {"max_det": [], "most_balanced": [], "min_abs_q12": []}
+        for t in trips:
+            a, b, c = t
+            q12 = Fr(c - a - b, 2)
+            det = Fr(a * b) - q12 * q12
+            imbal = (abs(2 * a - row[links[0]]) + abs(2 * b - row[links[1]])
+                     + abs(2 * c - row[links[2]]))
+            scored["max_det"].append((-det, t))
+            scored["most_balanced"].append((imbal, t))
+            scored["min_abs_q12"].append((q12 if q12 >= 0 else -q12, t))
+        for key in scored:
+            best = min(s for s, _ in scored[key])
+            arg = [t for s, t in scored[key] if s == best]
+            if len(arg) == 1:
+                out[key]["unique_sites"] += 1
+            if key == "max_det":
+                sel[x] = arg[0]
+    adm = None
+    if len(sel) == len(arena.S):
+        sp = {}
+        for x in arena.S:
+            t = sel[x]
+            for i, lk in enumerate(links):
+                sp[(x, lk)] = (t[i], arena.counts[x][lk] - t[i])
+        Lr = tuple(2 * a for a in arena.Ls)
+        fr = make_free(arena, sp, Lr, "minimal")
+        adm = refine(arena, sp, fr, Lr, arena.name + "@maxdet").admissible()
+    out["max_det"]["refinement_admissible"] = adm
     return out
 
 
@@ -1185,11 +1445,18 @@ def split_fibers(arena):
 def count_lattice_census(d, axis_max, diag_max):
     """The split freedom beyond the nine declared records: I7's OWN declared
     count box [P-I7-LATTICE].  How many admissible count vectors exist, how
-    many are splittable at all, and how many have a UNIQUE admissible split."""
+    many are splittable at all, and how many have a UNIQUE admissible split.
+
+    The unique-split locus is also measured against the RAW fiber, so that the
+    segment states what it means: uniqueness of the ADMISSIBLE split is a
+    property of the arithmetic (all counts 2), never of admissibility -- the
+    readout NARROWS a site fiber from more than one to exactly one at zero
+    vectors.  That is the honest content of the old LATTICE-FORCED reading."""
     links = link_set(d)
     admissible = 0
     splittable = 0
     forced = []
+    narrowed = []
     for a in range(1, axis_max + 1):
         for b in range(1, axis_max + 1):
             for c in range(1, diag_max + 1):
@@ -1200,26 +1467,94 @@ def count_lattice_census(d, axis_max, diag_max):
                 if a >= 2 and b >= 2 and c >= 2:
                     splittable += 1
                     row = {links[0]: a, links[1]: b, links[2]: c}
-                    if len(site_admissible_triples(row, links)) == 1:
+                    t = len(site_admissible_triples(row, links))
+                    if t == 1:
                         forced.append((a, b, c))
+                        if (a - 1) * (b - 1) * (c - 1) > 1:
+                            narrowed.append((a, b, c))
     return {"admissible_count_vectors": admissible, "splittable": splittable,
             "unique_admissible_split": sorted(forced),
             "unique_admissible_split_count": len(forced),
+            "admissibility_narrows_to_one": len(narrowed),
+            "narrowing_witnesses": sorted(narrowed)[:4],
             "box": {"axis_max": axis_max, "diag_max": diag_max}}
 
 
+WIDE_BOX = (24, 48)
+
+
+def count_lattice_wide(d, axis_max, diag_max):
+    """The same census on a DECLARED WIDER BOX (WIDE_BOX), run entirely on the
+    closed-form counter so that it costs a few seconds rather than minutes.  The
+    box is OUTSIDE I7's pinned count box, so this is reported as a declared-scope
+    disclosure and never as a pinned reproduction."""
+    admissible = 0
+    splittable = 0
+    forced = []
+    narrowed = []
+    for a in range(1, axis_max + 1):
+        for b in range(1, axis_max + 1):
+            for c in range(1, diag_max + 1):
+                if (c - a - b) * (c - a - b) >= 4 * a * b:
+                    continue
+                admissible += 1
+                if a >= 2 and b >= 2 and c >= 2:
+                    splittable += 1
+                    t = count_admissible_triples_closed(a, b, c)
+                    if t == 1:
+                        forced.append((a, b, c))
+                        if (a - 1) * (b - 1) * (c - 1) > 1:
+                            narrowed.append((a, b, c))
+    return {"box": {"axis_max": axis_max, "diag_max": diag_max},
+            "admissible_count_vectors": admissible,
+            "splittable": splittable,
+            "unique_admissible_split": sorted(forced),
+            "unique_admissible_split_count": len(forced),
+            "admissibility_narrows_to_one": len(narrowed),
+            "route": "the closed-form integer-interval counter, not the triple "
+                     "enumeration"}
+
+
 # ----------------------------------------------------------------------------
-# 8.  THE NO-POTENTIAL THEOREM  (why the split cannot be read off the record)
+# 8.  THE THREE WALLS  (what actually stops each freedom, measured separately)
 # ----------------------------------------------------------------------------
 #
-# If the counts were the coboundary of a site function phi -- n_l(x) =
-# phi(x+l) - phi(x) -- then the split of an interval at its interior site would
-# be READ OFF phi, and the freedom would not exist.  On a PERIODIC lattice the
-# sum of a coboundary around any cycle vanishes, while the counts are strictly
-# positive [T-COUNTS-POSITIVE].  So no record admits a potential.  Measured
-# exhaustively over the declared family, with the cycle sums printed.
+# The freedoms this unit measures are stopped by THREE DIFFERENT obstructions,
+# and conflating them was the delivered instrument's one structural error.
+#
+#   WALL 1 -- THE SPLIT: pure combinatorial MULTIPLICITY.  The number of ways to
+#             place one interior boundary in an interval carrying only its total
+#             is exactly n_l(x) - 1, so the split fiber is prod (n_l - 1) over
+#             the (site, link) slots.  A potential does NOT remove it: a
+#             refinement-compatible potential still has one free value per
+#             interior site, and its admissible range is the same n - 1 values.
+#             Measured as an identity, per record, both ways.
+#
+#   WALL 2 -- THE TRANSVERSE LINKS: the COBOUNDARY THEOREM on the periodic
+#             lattice, with its exact characterisation.  n is a coboundary iff
+#             (a) every axis cycle sums to zero and (b) the triangle relations
+#             hold.  Strict positivity forbids (a) for every record, at every L
+#             and every d -- the theorem is about the GRAMMAR.  What the theorem
+#             buys is the transverse links: given a potential on the refined
+#             lattice EVERY refined link count is determined, so
+#             FREE-TRANSVERSE-LINKS collapses from INFINITE to 1.
+#
+#   WALL 3 -- THE q_12 = 0 SECTOR: PERIODIC HOLONOMY ALONE.  Condition (b) is
+#             exactly the vanishing of q_12, and on the universal cover Z^d the
+#             counts of the q_12 = 0 records ARE coboundaries.  For those
+#             records the obstruction is not information but one integer of
+#             holonomy per axis cycle.  Measured, with the canonical refinement
+#             the cover potential induces on G-DIAG2 exhibited.
+#
+# SCOPE (binding, and stated in the paper in these words): the universal cover
+# is NOT a pinned object.  Nothing in I7 declares it, so the cover measurement
+# is a DISCLOSURE about where the obstruction lives; it cannot and does not move
+# any freedom out of class (iii), and it does not flip the verdict.
 
 def potential_census(arena):
+    """WALL 2's witness table: the axis cycle sums.  The theorem needs none of
+    them -- positivity plus periodicity is the proof -- but a witness table is
+    cheap and it is what a reader can check."""
     worst = None
     rows = []
     for j in range(arena.d):
@@ -1235,7 +1570,257 @@ def potential_census(arena):
                 worst = s
     val = mutate("potential-lax", worst, 0)
     return {"min_axis_cycle_sum": val, "cycles": len(rows),
-            "admits_a_potential": val == 0}
+            "admits_a_potential_on_the_periodic_lattice": val == 0}
+
+
+def split_multiplicity(arena):
+    """WALL 1, as an identity.  The number of interior placements an interval of
+    total n admits is n - 1, so the raw split fiber is the PRODUCT of (n_l - 1)
+    over every (site, link) slot.  Computed here independently of
+    split_fibers()'s own loop and compared against it."""
+    prod = 1
+    slots = 0
+    per_slot_sum = 0
+    for x in arena.S:
+        for lk in arena.links:
+            n = arena.counts[x][lk]
+            prod = prod * (n - 1)
+            per_slot_sum += n - 1
+            slots += 1
+    return {"slots": slots, "product_of_n_minus_1": prod,
+            "sum_of_n_minus_1": per_slot_sum}
+
+
+def potential_counterfactual(arena, Ls_refined):
+    """THE CORRECTED COUNTERFACTUAL.  Grant the strongest form of the
+    counterfactual the delivered paper stated: a refinement-compatible potential
+    phi^r on the REFINED lattice with n^r = delta phi^r.  Then
+
+      * the split at the interior site y of [x, x+l] is n_1 = phi^r(y) -
+        phi^r(2x), and strict positivity of both halves leaves exactly n - 1
+        admissible values of phi^r(y) -- the SAME fiber.  The split fiber is
+        UNCHANGED, at every record.
+      * every refined link count is phi^r(z+l) - phi^r(z) and is therefore
+        DETERMINED, so the free transverse links collapse from INFINITE to 1.
+
+    Both halves are measured here rather than argued."""
+    fib = 1
+    per = []
+    for x in arena.S:
+        for lk in arena.links:
+            n = arena.counts[x][lk]
+            adm = [v for v in range(1, n)]            # phi^r(y) - phi^r(2x)
+            fib = fib * len(adm)
+            per.append(len(adm))
+    free_before = len(free_slots(arena.Ls, Ls_refined, arena.links))
+    total_refined = len(sites(Ls_refined)) * len(arena.links)
+    return {"split_fiber_under_a_granted_potential": fib,
+            "admissible_values_per_interior_site": sorted(set(per)),
+            "free_transverse_link_slots_without_a_potential": free_before,
+            "free_transverse_link_slots_with_a_potential": 0,
+            "refined_link_slots_determined_by_the_potential": total_refined,
+            "free_transverse_links_fiber_with_a_potential": 1}
+
+
+def rank_exact(mat):
+    """Exact rank by elimination over the rationals."""
+    if not mat:
+        return 0
+    m = [row[:] for row in mat]
+    nrow = len(m)
+    ncol = len(m[0])
+    rk = 0
+    for c in range(ncol):
+        p = None
+        for i in range(rk, nrow):
+            if m[i][c] != 0:
+                p = i
+                break
+        if p is None:
+            continue
+        m[rk], m[p] = m[p], m[rk]
+        pv = m[rk][c]
+        m[rk] = [fdiv(v, pv) for v in m[rk]]
+        for i in range(nrow):
+            if i != rk and m[i][c] != 0:
+                f = m[i][c]
+                m[i] = [a - f * b for a, b in zip(m[i], m[rk])]
+        rk += 1
+        if rk == nrow:
+            break
+    return rk
+
+
+def coboundary_characterisation(d, Ls, links):
+    """WALL 2's exact characterisation, by rank arithmetic.
+
+      n = delta phi  <=>  (a) every axis cycle sums to 0
+                     AND  (b) the triangle relations
+                              n_{e_i+e_j}(x) = n_{e_i}(x) + n_{e_j}(x+e_i)
+                                             = n_{e_j}(x) + n_{e_i}(x+e_j).
+
+    Necessity is immediate.  SUFFICIENCY is the measurement: the (a)+(b) system
+    is shown to cut the coboundaries out exactly, by comparing its solution
+    dimension with the rank of delta itself."""
+    S = sites(Ls)
+    E = [(x, lk) for x in S for lk in links]
+    idx = {e: i for i, e in enumerate(E)}
+    site_ix = {x: i for i, x in enumerate(S)}
+    dmat = []
+    for (x, lk) in E:
+        r = [Fr(0)] * len(S)
+        r[site_ix[add(x, lk, Ls)]] += 1
+        r[site_ix[x]] -= 1
+        dmat.append(r)
+    rank_delta = rank_exact(dmat)
+    cond = []
+    axes = links[:d]
+    for j in range(d):
+        e = axes[j]
+        for x in S:
+            r = [Fr(0)] * len(E)
+            y = x
+            for _ in range(Ls[j]):
+                r[idx[(y, e)]] += 1
+                y = add(y, e, Ls)
+            cond.append(r)
+    n_axis_conditions = len(cond)
+    for lk in links[d:]:
+        pair = [j for j in range(d) if lk[j]]
+        for x in S:
+            for (u, v) in ((pair[0], pair[1]), (pair[1], pair[0])):
+                r = [Fr(0)] * len(E)
+                r[idx[(x, lk)]] += 1
+                r[idx[(x, axes[u])]] -= 1
+                r[idx[(add(x, axes[u], Ls), axes[v])]] -= 1
+                cond.append(r)
+    rank_cond = rank_exact(cond)
+    return {"sites": len(S), "edges": len(E),
+            "rank_of_delta": rank_delta,
+            "cycle_rank": len(E) - len(S) + 1,
+            "axis_cycle_conditions": n_axis_conditions,
+            "triangle_conditions": len(cond) - n_axis_conditions,
+            "rank_of_the_conditions": rank_cond,
+            "solution_dimension": len(E) - rank_cond,
+            "conditions_cut_out_exactly_the_coboundaries":
+                len(E) - rank_cond == rank_delta}
+
+
+def cover_potential_census(arena):
+    """WALL 3.  Is the record a coboundary on the UNIVERSAL COVER Z^d -- i.e. is
+    the ONLY obstruction the periodic identification?
+
+    Measured by the two local conditions, evaluated at every site: the unit
+    plaquette curl of the axis counts, and the diagonal (triangle) consistency.
+    Both hold iff a cover potential exists, and the measurement reports the
+    record's q_12 beside them so that the coincidence is visible rather than
+    asserted."""
+    d = arena.d
+    axes = arena.links[:d]
+    curl_ok = True
+    tri_ok = True
+    for x in arena.S:
+        for i in range(d):
+            for j in range(i + 1, d):
+                c = (arena.counts[x][axes[i]]
+                     + arena.counts[add(x, axes[i], arena.Ls)][axes[j]]
+                     - arena.counts[x][axes[j]]
+                     - arena.counts[add(x, axes[j], arena.Ls)][axes[i]])
+                if c != 0:
+                    curl_ok = False
+        for lk in arena.links[d:]:
+            pair = [j for j in range(d) if lk[j]]
+            u, v = pair[0], pair[1]
+            if arena.counts[x][lk] != (arena.counts[x][axes[u]]
+                                       + arena.counts[add(x, axes[u], arena.Ls)]
+                                       [axes[v]]):
+                tri_ok = False
+    q12 = sorted(set(str(arena.q[x][0][1]) for x in arena.S)) if d == 2 else []
+    ok = mutate("cover-lax", curl_ok and tri_ok, not (curl_ok and tri_ok))
+    return {"plaquette_curl_vanishes": curl_ok,
+            "triangle_relations_hold": tri_ok,
+            "is_a_coboundary_on_the_universal_cover": ok,
+            "q12_values": q12,
+            "q12_identically_zero": q12 == ["0"]}
+
+
+def cover_canonical_refinement(arena, Ls_refined):
+    """WALL 3's exhibit, in full.  For a record with a cover potential, lift the
+    potential to the refined lattice by the SAME count-weighted interpolation
+    section 6.1 derives for the front, and read off the refined counts.
+
+    Measured: whether every refined count is positive, whether the refined
+    record is admissible at every refined site, whether the coarse record is
+    recovered exactly, whether the induced split is unique, and where the
+    canonical object differs from the unit's own declared completion.
+
+    SCOPE: the cover is not a pinned object.  This exhibits WHERE the
+    obstruction lives on the q_12 = 0 sector; it names no pinned declaration and
+    therefore moves nothing out of class (iii)."""
+    d = arena.d
+    axes = arena.links[:d]
+    # DECLARED SCOPE of the exhibit: a HOMOGENEOUS record, so that the cover
+    # potential is the linear form phi(x) = sum_j x_j n_{e_j} and its
+    # count-weighted interpolation is phi^r(z) = sum_j z_j (n_{e_j}/2).
+    homogeneous = all(arena.counts[x] == arena.counts[arena.S[0]]
+                      for x in arena.S)
+    # the cover potential's INCREMENTS are the axis counts; the interpolated
+    # lift halves each increment, which is integral exactly when the count is
+    # even.  Refined count on link lk at z:  sum_j lk_j * (n_{e_j}(base) / 2).
+    base_row = arena.counts[arena.S[0]]
+    halves = {}
+    integral = homogeneous
+    for j in range(d):
+        n = base_row[axes[j]]
+        if n % 2 != 0:
+            integral = False
+        halves[axes[j]] = n // 2
+    counts = {}
+    for z in sites(Ls_refined):
+        counts[z] = {}
+        for lk in arena.links:
+            counts[z][lk] = sum(halves[axes[j]] for j in range(d) if lk[j])
+    positive = integral and all(counts[z][lk] >= 1
+                                for z in counts for lk in arena.links)
+    rf = None
+    admissible_sites = 0
+    recovered = 0
+    if positive:
+        rf = Arena(arena.name + "/cover", d, Ls_refined, counts, "cover")
+        bad = set(rf.singular) | set(rf.nonpd) | set(rf.nonpositive)
+        admissible_sites = len(rf.S) - len(bad)
+        rc = restrict_counts(rf, arena, Ls_refined)
+        recovered = sum(1 for x in arena.S
+                        if all(rc[x][lk] == arena.counts[x][lk]
+                               for lk in arena.links))
+    # where does the canonical object differ from the unit's own declared build?
+    diff = 0
+    same_split = None
+    if positive:
+        sp = make_split(arena, "floor")
+        fr = make_free(arena, sp, Ls_refined, "minimal")
+        built = refine(arena, sp, fr, Ls_refined, arena.name + "@floor+minimal")
+        diff = sum(1 for z in counts for lk in arena.links
+                   if built.counts[z][lk] != counts[z][lk])
+        cov = covered_slots(arena.Ls, Ls_refined, arena.links)
+        same_split = all(built.counts[z][lk] == counts[z][lk]
+                         for (z, lk) in cov)
+    out = {"record": arena.name,
+           "homogeneous": homogeneous,
+           "interpolated_lift_is_integral": integral,
+           "refined_counts_positive": positive,
+           "refined_sites": len(sites(Ls_refined)),
+           "admissible_refined_sites": admissible_sites,
+           "coarse_sites": len(arena.S),
+           "coarse_record_recovered_at": recovered,
+           "induced_split_fiber": 1 if positive else 0,
+           "slots_differing_from_the_declared_minimal_completion": diff,
+           "agrees_with_the_declared_floor_split_on_every_covered_slot":
+               same_split,
+           "scope": "the universal cover is NOT a pinned object; this exhibits "
+                    "where the obstruction lives on the q_12 = 0 sector and "
+                    "moves no freedom out of class (iii)"}
+    return out
 
 
 # ----------------------------------------------------------------------------
@@ -1260,6 +1845,7 @@ def lift_profile(prof, arena, Ls_refined, mode):
     """Lift a Z-valued site profile to the refined arena.  BOTH declared rules
     agree at the coarse images (a coarse image IS the coarse site -- forced) and
     differ only at the interior sites."""
+    mode = mutate("lift-mode-blind", mode, "left")
     out = {}
     for z in sites(Ls_refined):
         kind, lk = midpoint_kind(z, arena.links)
@@ -1277,11 +1863,16 @@ def commutation_defect(rule, arena, refined, N, n, Ls_refined, mode):
     drag comparison -- measured, not assumed (G-DEFECT-MATTER-FREE)."""
     F = lift_profile(n, arena, Ls_refined, mode)
     Nr = lift_profile(N, arena, Ls_refined, mode)
+    froz = {z: n[base_of(z)] for z in sites(Ls_refined)}
     out = {}
     for z in sites(Ls_refined):
         wc = drag_at(rule, arena, N, n, base_of(z))
-        wr = drag_at(rule, refined, Nr, F, z)
-        out[z] = tuple(a - b for a, b in zip(wc, wr))
+        wr = drag_at(rule, refined, Nr, F, z, frozen=froz)
+        v = tuple(a - b for a, b in zip(wc, wr))
+        if midpoint_kind(z, arena.links)[1] == arena.links[-1] \
+           and all(p % 2 == 1 for p in z):
+            v = mutate("defect-zero-parity", v, tuple(Fr(0) for _ in v))
+        out[z] = v
     return out
 
 
@@ -1357,6 +1948,112 @@ def forced_lift_universal(arena):
                     hits += 1
     return {"triples_checked": checked,
             "splits_with_n_dividing_n1": mutate("forcedlift-lax", hits, 1)}
+
+
+# ---- the forced lift is RULE-RELATIVE: solved exactly, per declared rule ----
+#
+# At a coarse image z0 = iota(x) both lifts agree, so N^r(z0) = N(x) and
+# F(z0) = n(x).  Write u_l = F(interior site of [x, x+l]) - n(x) and
+# v_l = n(x+l) - n(x).  Requiring w^r(z0) = w^c(x) gives
+#
+#   architecture A:   Lambda^r(z0) u = Lambda^c(x) v      (d equations, d unknowns)
+#   architecture B:   sum_l lam^r_l(z0) e_l (u_l) = sum_l lam^c_l(x) e_l v_l
+#                     -- d equations in as many unknowns as the rule's weight
+#                     field SUPPORTS, so it is determined exactly when the rule
+#                     is supported on the d axis links and underdetermined when
+#                     it also weights a diagonal.
+#
+# A rule whose refined drag does not read the LIFTED front at all (the frozen
+# front rules) imposes no condition on u: its equation is a condition on the
+# lapse and the coarse front, and the lift is left free.
+
+def forced_lift_solution(rule, arena, refined, x, n, Ls_refined):
+    """Solve the image-agreement condition for the interior-site front offsets.
+    Returns (solution dict or None, status)."""
+    d = arena.d
+    z0 = tuple(2 * t for t in x)
+    v = {lk: Fr(n[add(x, lk, arena.Ls)] - n[x]) for lk in arena.links}
+    if rule in FROZEN_FRONT_RULES:
+        return None, "VACUOUS-NO-CONDITION-ON-THE-LIFT"
+    if arch_of(rule) == "A":
+        Lc_ = lambda_of(rule, arena, x)
+        Lr_ = lambda_of(rule, refined, z0)
+        rhs = [sum((Lc_[i][j] * v[arena.links[j]] for j in range(d)), Fr(0))
+               for i in range(d)]
+        sol = solve_exact([[Lr_[i][j] for j in range(d)] for i in range(d)], rhs)
+        if sol is None:
+            return None, "UNDERDETERMINED"
+        return {arena.links[j]: sol[j] for j in range(d)}, "DETERMINED"
+    lam_c = lambda_of(rule, arena, x)
+    lam_r = lambda_of(rule, refined, z0)
+    sup = [lk for lk in arena.links if lam_r[lk] != 0]
+    if len(sup) > d:
+        return None, "UNDERDETERMINED"
+    rows = []
+    rhs = []
+    for i in range(d):
+        rows.append([lam_r[lk] * Fr(lk[i]) for lk in sup])
+        rhs.append(sum((lam_c[lk] * Fr(lk[i]) * v[lk] for lk in arena.links),
+                       Fr(0)))
+    sol = solve_exact(rows, rhs)
+    if sol is None:
+        return None, "UNDERDETERMINED"
+    return {sup[j]: sol[j] for j in range(len(sup))}, "DETERMINED"
+
+
+def forced_lift_by_rule(triples, Ls_refined):
+    """Per (rule) tallies over EVERY censused build: how many forced values are
+    integral, how many equal the DECLARED RIGHT LIFT u = v, and how many equal
+    the count-weighted interpolation.
+
+    The census must run over the whole build set, not one record: on a record
+    whose readout is diagonal the metric-inserted rule COINCIDES with the
+    axis-count rule, and a single-record probe reports the coincidence as the
+    rule's own behaviour."""
+    out = {}
+    for rule in RULES:
+        cells = 0
+        integral = 0
+        eq_right = 0
+        eq_cw = 0
+        status = None
+        for (arena, refined, split) in triples:
+            for _, n in front_family(arena.S):
+                for x in arena.S:
+                    sol, st = forced_lift_solution(rule, arena, refined, x, n,
+                                                   Ls_refined)
+                    status = st
+                    if sol is None:
+                        continue
+                    for lk, val in sol.items():
+                        cells += 1
+                        if val.denominator == 1:
+                            integral += 1
+                        v = Fr(n[add(x, lk, arena.Ls)] - n[x])
+                        if val == v:
+                            eq_right += 1
+                        n1, n2 = split[(x, lk)]
+                        if val == Fr(n1 * (n[add(x, lk, arena.Ls)] - n[x]),
+                                     n1 + n2):
+                            eq_cw += 1
+        out[rule] = {"status": status, "cells": cells, "integral": integral,
+                     "equals_the_declared_right_lift": eq_right,
+                     "equals_the_count_weighted_interpolation": eq_cw}
+    return out
+
+
+def classify_forced_lift(row):
+    """The rule's forced-lift FORM, computed from its own tallies."""
+    if row["status"] == "VACUOUS-NO-CONDITION-ON-THE-LIFT":
+        return "VACUOUS"
+    if row["status"] == "UNDERDETERMINED":
+        return "UNDERDETERMINED"
+    if row["cells"] > 0 and row["equals_the_declared_right_lift"] == row["cells"]:
+        return "THE-DECLARED-RIGHT-LIFT"
+    if row["cells"] > 0 and \
+       row["equals_the_count_weighted_interpolation"] == row["cells"]:
+        return "THE-COUNT-WEIGHTED-INTERPOLATION"
+    return "A-THIRD-VALUE"
 
 
 # ----------------------------------------------------------------------------
@@ -1531,9 +2228,12 @@ HEAD_EXISTS = "R6A-MOTIVATED-REFINEMENT-EXISTS"
 HEAD_NOSPLIT = "R6A-NO-MOTIVATED-SPLIT"
 HEAD_BLOCKED = "R6A-BLOCKED-AT-GRAMMAR-SOURCE"
 
-SEGMENT_ORDER = ("CLASSES", "BLOCKED-AT", "REFUSED-AT", "FORCED", "INVENTORY",
-                 "OBSTRUCTION", "SPLIT-FIBER", "FREE-LINKS", "NEW-FRONTS",
-                 "DEFECT", "ITERATION", "CONTROL")
+SEGMENT_ORDER = ("MECHANISM", "CLASSES", "BLOCKED-AT", "REFUSED-AT", "FORCED",
+                 "INVENTORY", "OBSTRUCTION", "SPLIT-FIBER", "FREE-LINKS",
+                 "NEW-FRONTS", "DEFECT", "ITERATION", "CONTROL",
+                 "DIMENSION-RELATIVITY", "LIFT-RELATIVITY",
+                 "FAMILY-RELATIVITY", "COMPLETION-RELATIVITY",
+                 "RULE-RELATIVITY")
 
 
 def build_verdict(payload, swap_pairing=False):
@@ -1550,6 +2250,25 @@ def build_verdict(payload, swap_pairing=False):
         head = HEAD_NOSPLIT
     swap_pairing = mutate("verdict-pair-swap", swap_pairing, True)
     segs = []
+    segs.append(("MECHANISM",
+                 "MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-"
+                 "POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-%d-SLOTS-EXACT-%d-OF-"
+                 "%d-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-%d-OF-%d|"
+                 "ADMISSIBILITY-NARROWS-0-OF-%d|POTENTIAL-COUNTERFACTUAL-LEAVES-"
+                 "THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-"
+                 "TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-"
+                 "LATTICE-RANK-%d-OF-%d|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-"
+                 "%d-OF-%d-RECORDS-COBOUNDARY-ON-THE-COVER)"
+                 % (payload["mechanism"]["slots"],
+                    payload["mechanism"]["records_with_the_identity"],
+                    payload["mechanism"]["records"],
+                    payload["count_lattice"]["unique_admissible_split_count"],
+                    payload["count_lattice"]["admissible_count_vectors"],
+                    payload["count_lattice"]["splittable"],
+                    payload["mechanism"]["coboundary_rank"],
+                    payload["mechanism"]["edges"],
+                    payload["mechanism"]["cover_sector"],
+                    payload["mechanism"]["records"])))
     segs.append(("CLASSES", "CLASSES=ADMISSIBLE:%d(%s)|BLOCKED:%d|REFUSED:%d|"
                             "CONTROL:%d" % (
                                 payload["admissible_classes"],
@@ -1583,26 +2302,43 @@ def build_verdict(payload, swap_pairing=False):
                  ("+".join(i["name"] for i in free_items) if free_items
                   else "NONE")))
     segs.append(("SPLIT-FIBER", "SPLIT-FIBER=MIN-%s-MAX-%s-EQUIVARIANT-MIN-%s-"
-                                "LATTICE-FORCED-%d-OF-%d" % (
+                                "UNIQUE-SPLIT-IFF-ALL-COUNTS-2-%d-OF-%d-"
+                                "ADMISSIBILITY-NARROWS-0-OF-%d" % (
                                     payload["split_fiber_min"],
                                     payload["split_fiber_max"],
                                     payload["equivariant_fiber_min"],
                                     payload["count_lattice"]
                                     ["unique_admissible_split_count"],
                                     payload["count_lattice"]
-                                    ["admissible_count_vectors"])))
+                                    ["admissible_count_vectors"],
+                                    payload["count_lattice"]["splittable"])))
     segs.append(("FREE-LINKS", "FREE-LINKS=%d-OF-%d-FIBER-INFINITE-WITNESSES-%d"
                  % (payload["free_links"], payload["refined_links"],
                     payload["infinite_family"]["witnesses"])))
-    segs.append(("NEW-FRONTS", "NEW-FRONTS=%d-FIBER-INFINITE-DYNAMICS-FORCED-"
-                               "NON-INTEGRAL-%d-OF-%d" % (
+    segs.append(("NEW-FRONTS", "NEW-FRONTS=%d-FIBER-INFINITE|DYNAMICS-FORCED-"
+                               "LIFT-RULE-RELATIVE(COUNT-WEIGHTED@%d-RULES-NON-"
+                               "INTEGRAL-%d-OF-%d-AT-(%s,FLOOR)|THE-DECLARED-"
+                               "RIGHT-LIFT@%d-RULES-INTEGRAL|A-THIRD-VALUE@"
+                               "%d-RULES|VACUOUS@%d|UNDERDETERMINED@%d)" % (
                                    payload["new_sites"],
+                                   payload["lift_forms"]
+                                   ["THE-COUNT-WEIGHTED-INTERPOLATION"],
                                    payload["forced_lift"]["non_integral"],
-                                   payload["forced_lift"]["cells"])))
-    segs.append(("DEFECT", "DEFECT=NONZERO-%d-OF-%d-CELLS-ZERO-%d-SUPPORT-%s"
+                                   payload["forced_lift"]["cells"],
+                                   payload["forced_lift"]["record"],
+                                   payload["lift_forms"]
+                                   ["THE-DECLARED-RIGHT-LIFT"],
+                                   payload["lift_forms"]["A-THIRD-VALUE"],
+                                   payload["lift_forms"]["VACUOUS"],
+                                   payload["lift_forms"]["UNDERDETERMINED"])))
+    segs.append(("DEFECT", "DEFECT=NONZERO-%d-OF-%d-CELLS-ZERO-%d-SUPPORT-%s|"
+                           "ZERO-SECTOR=BOTH-DRAGS-VANISH-%d-OF-%d"
                  % (payload["defect_nonzero_cells"], payload["defect_cells"],
-                    payload["defect_zero_cells"], payload["defect_support_sig"])))
-    segs.append(("ITERATION", "ITERATION=FAMILY-FINITE-CEILING-%d-ATTAINED-%d-"
+                    payload["defect_zero_cells"], payload["defect_support_sig"],
+                    payload["defect_zero_both_drags"],
+                    payload["defect_zero_cells"])))
+    segs.append(("ITERATION", "ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|"
+                              "VALUE-%d-ATTAINED-%d-AT-THE-DECLARED-FAMILY|"
                               "INVENTORY-%s" % (
                                   payload["iteration_ceiling"],
                                   payload["iteration_attained"],
@@ -1611,6 +2347,32 @@ def build_verdict(payload, swap_pairing=False):
                  % (payload["control_name"], payload["control_subdivided"],
                     payload["coarse_intervals"], payload["control_unrepresented"],
                     payload["control_qualifier"])))
+    segs.append(("DIMENSION-RELATIVITY",
+                 "DIMENSION-RELATIVITY=D%d-SITE-COMPLETE-%d-OF-%d|D%d-"
+                 "INCOMPLETE-%d-OF-%d-ALL-ODD-PARITY"
+                 % (payload["dim"], payload["coarse_intervals"],
+                    payload["coarse_intervals"], payload["dim_ext"],
+                    payload["dim_unreached"], payload["dim_refined_sites"])))
+    segs.append(("LIFT-RELATIVITY",
+                 "LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-%d-OF-%d|"
+                 "RIGHT-IDENTICALLY-ZERO-AT-%d-OF-%d-RULES"
+                 % (payload["image_match"], payload["image_cells"],
+                    len(payload["blind_rules"]), len(RULES))))
+    segs.append(("FAMILY-RELATIVITY",
+                 "FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-"
+                 "COUNTS|FLAT-SCALES-%s"
+                 % ",".join(str(r["ceiling"])
+                            for r in payload["flat_scale_table"])))
+    segs.append(("COMPLETION-RELATIVITY",
+                 "COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-%d-OF-%d-"
+                 "MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION"
+                 % (payload["completion_moved"], payload["completion_cells"])))
+    segs.append(("RULE-RELATIVITY",
+                 "RULE-RELATIVITY=%d-DECLARED-RULES-%d-DISTINCT-DEFECT-FIELDS|"
+                 "FORCED-LIFT-FORMS-%s"
+                 % (len(RULES), payload["distinct_rule_fields"],
+                    ",".join("%s:%d" % (k, payload["lift_forms"][k])
+                             for k in sorted(payload["lift_forms"])))))
     if swap_pairing and len(segs) >= 3:
         a, b = segs[1], segs[2]
         segs[1] = (a[0], a[1].split("=")[0] + "=" + b[1].split("=", 1)[1])
@@ -1661,14 +2423,46 @@ def reconstruct_verdict_from_receipt(R):
         head = HEAD_EXISTS
     else:
         head = HEAD_NOSPLIT
+    # `reconstructor-head` pins the COMPARATOR's head to the value this run
+    # emits: the string-equality gate still passes and only the
+    # head-reachability gate can see it (the instrument's P12)
+    head = mutate("reconstructor-head", head, HEAD_NOSPLIT)
 
     out = []
+    wl = R["walls"]
+    cl0 = R["count_lattice"]
+    w1 = wl["wall_1_the_split"]
+    ident = len([nm for nm in w1["per_record"]
+                 if w1["per_record"][nm]["product_of_n_minus_1"]
+                 == R["split_fibers"][nm]["raw"]])
+    out.append("MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-"
+               "POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-%d-SLOTS-EXACT-%d-OF-"
+               "%d-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-%d-OF-%d|"
+               "ADMISSIBILITY-NARROWS-0-OF-%d|POTENTIAL-COUNTERFACTUAL-LEAVES-"
+               "THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-"
+               "TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-"
+               "LATTICE-RANK-%d-OF-%d|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-"
+               "%d-OF-%d-RECORDS-COBOUNDARY-ON-THE-COVER)"
+               % (w1["per_record"][sorted(w1["per_record"])[0]]["slots"],
+                  ident, len(w1["per_record"]),
+                  cl0["unique_admissible_split_count"],
+                  cl0["admissible_count_vectors"], cl0["splittable"],
+                  wl["wall_2_the_transverse_links"]["characterisation"]
+                  ["rank_of_the_conditions"],
+                  wl["wall_2_the_transverse_links"]["characterisation"]
+                  ["edges"],
+                  len(wl["wall_3_the_q12_zero_sector"]["sector"]),
+                  len(w1["per_record"])))
     out.append("CLASSES=ADMISSIBLE:%d(%s)|BLOCKED:%d|REFUSED:%d|CONTROL:%d"
                % (len(adm), ",".join(adm), len(blk), len(ref), len(ctl)))
     b0 = R["blocked_branch"]
+    # `reconstructor-pin` hard-codes ONE comparator field at the value this run
+    # measures: the string-equality gate cannot see it and only the
+    # segment-flippability gate can (the instrument's P11)
     out.append("BLOCKED-AT=%s:%d-OF-%d-INTERVALS-%d-CANDIDATES"
-               % (b0["named_fact"], b0["ambiguous_intervals"], ncoarse,
-                  b0["candidates_per_interval"]))
+               % (b0["named_fact"],
+                  mutate("reconstructor-pin", b0["ambiguous_intervals"], 3),
+                  ncoarse, b0["candidates_per_interval"]))
     rf = R["refused_branch"]
     out.append("REFUSED-AT=%s:CYCLES%s-LINK-TARGETS-%d-OF-%d"
                % (rf["move"],
@@ -1689,34 +2483,74 @@ def reconstruct_verdict_from_receipt(R):
                ("+".join(i["name"] for i in free) if free else "NONE"))
     sp = [i for i in inv if i["name"] == "THE-SPLIT"][0]
     cl = R["count_lattice"]
-    out.append("SPLIT-FIBER=MIN-%s-MAX-%s-EQUIVARIANT-MIN-%s-LATTICE-FORCED-%d-OF-%d"
+    out.append("SPLIT-FIBER=MIN-%s-MAX-%s-EQUIVARIANT-MIN-%s-UNIQUE-SPLIT-IFF-"
+               "ALL-COUNTS-2-%d-OF-%d-ADMISSIBILITY-NARROWS-0-OF-%d"
                % (sp["evidence"]["min_admissible_fiber"],
                   sp["evidence"]["max_admissible_fiber"],
                   (sp["evidence"]["equivariant_fibers"] or [None])[0],
                   cl["unique_admissible_split_count"],
-                  cl["admissible_count_vectors"]))
+                  cl["admissible_count_vectors"], cl["splittable"]))
     fl = [i for i in inv if i["name"] == "FREE-TRANSVERSE-LINKS"][0]
     out.append("FREE-LINKS=%d-OF-%d-FIBER-INFINITE-WITNESSES-%d"
                % (fl["evidence"]["free"], fl["evidence"]["total"],
                   fl["evidence"]["infinite_family"]["witnesses"]))
     nf = [i for i in inv if i["name"] == "NEW-FRONT-VALUES"][0]
-    out.append("NEW-FRONTS=%d-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-%d-OF-%d"
+    lfr = R["forced_lift_by_rule"]
+    lform = {}
+    for r0, f0 in sorted(lfr["forms"].items()):
+        lform[f0] = lform.get(f0, 0) + 1
+    for k0 in ("THE-COUNT-WEIGHTED-INTERPOLATION", "THE-DECLARED-RIGHT-LIFT",
+               "A-THIRD-VALUE", "VACUOUS", "UNDERDETERMINED"):
+        lform.setdefault(k0, 0)
+    out.append("NEW-FRONTS=%d-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-"
+               "RELATIVE(COUNT-WEIGHTED@%d-RULES-NON-INTEGRAL-%d-OF-%d-AT-"
+               "(%s,FLOOR)|THE-DECLARED-RIGHT-LIFT@%d-RULES-INTEGRAL|"
+               "A-THIRD-VALUE@%d-RULES|VACUOUS@%d|UNDERDETERMINED@%d)"
                % (nf["evidence"]["new_sites"],
+                  lform["THE-COUNT-WEIGHTED-INTERPOLATION"],
                   nf["evidence"]["dynamics_forced_value_is_non_integral"],
-                  nf["evidence"]["of_cells"]))
+                  nf["evidence"]["of_cells"],
+                  R["forced_front_lift"]["record"],
+                  lform["THE-DECLARED-RIGHT-LIFT"], lform["A-THIRD-VALUE"],
+                  lform["VACUOUS"], lform["UNDERDETERMINED"]))
     dc = R["dynamics_census"]
-    out.append("DEFECT=NONZERO-%d-OF-%d-CELLS-ZERO-%d-SUPPORT-%s"
+    out.append("DEFECT=NONZERO-%d-OF-%d-CELLS-ZERO-%d-SUPPORT-%s|"
+               "ZERO-SECTOR=BOTH-DRAGS-VANISH-%d-OF-%d"
                % (dc["cells_with_a_nonzero_defect"], dc["cells"],
                   dc["cells_with_an_identically_zero_defect"],
-                  dc["support_signature"]))
+                  dc["support_signature"],
+                  dc["zero_sector"]["with_a_vanishing_coarse_drag"],
+                  dc["cells_with_an_identically_zero_defect"]))
     it = R["iteration"]
-    out.append("ITERATION=FAMILY-FINITE-CEILING-%d-ATTAINED-%d-INVENTORY-%s"
+    out.append("ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-%d-"
+               "ATTAINED-%d-AT-THE-DECLARED-FAMILY|INVENTORY-%s"
                % (it["ceiling_over_the_family"], it["attained_over_the_family"],
                   it["inventory_trend"]))
     co = [r for r in mc["rows"] if r["verdict"] == "CONTROL"][0]
     out.append("CONTROL=%s-SUBDIVIDES-%d-OF-%d-UNREPRESENTED-%d-%s"
                % (co["move"], co["tally"]["SUBDIVIDED"], ncoarse,
                   co["tally"]["UNREPRESENTED"], R["control"]["qualifier"]))
+    de = R["dimension_extension"]
+    out.append("DIMENSION-RELATIVITY=D%d-SITE-COMPLETE-%d-OF-%d|D%d-INCOMPLETE-"
+               "%d-OF-%d-ALL-ODD-PARITY"
+               % (len(R["arena"]["links"][0]), ncoarse, ncoarse, de["d"],
+                  de["unreached_sites"], de["refined_sites"]))
+    out.append("LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-%d-OF-%d|"
+               "RIGHT-IDENTICALLY-ZERO-AT-%d-OF-%d-RULES"
+               % (dc["closed_form_matching"], dc["closed_form_image_cells"],
+                  len(dc["rules_with_an_identically_zero_image_defect"]),
+                  len(dc["per_rule"])))
+    out.append("FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-"
+               "COUNTS|FLAT-SCALES-%s"
+               % ",".join(str(r["ceiling"]) for r in R["flat_scale_table"]))
+    out.append("COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-%d-OF-%d-MATCHED-"
+               "CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION"
+               % (dc["completion_relativity"]["cells_whose_support_moved"],
+                  dc["completion_relativity"]["matched_cells"]))
+    out.append("RULE-RELATIVITY=%d-DECLARED-RULES-%d-DISTINCT-DEFECT-FIELDS|"
+               "FORCED-LIFT-FORMS-%s"
+               % (len(dc["per_rule"]), dc["distinct_defect_fields"],
+                  ",".join("%s:%d" % (k, lform[k]) for k in sorted(lform))))
     return head + "<" + "|".join(out) + ">"
 
 
@@ -1757,9 +2591,13 @@ def stage1():
           "detector_injections_flagged": inj})
 
     # -- 1.  anchors --------------------------------------------------------
+    # The verbatim-text anchors are evaluated FIRST (RUNBOOK section 14
+    # addendum, v14 #34, modification 1): both of their sources are also
+    # byte-anchored, so behind the byte anchors they were unreachable by any
+    # source drift and added nothing to them.
+    n_text = verify_text_anchors()
     n_file = verify_anchors()
     n_path = verify_path_anchors()
-    n_text = verify_text_anchors()
     R["anchors"] = ANCHORS
     R["anchor_totals"] = {"file_bytes": n_file, "path_value": n_path,
                           "verbatim_text": n_text,
@@ -1809,6 +2647,13 @@ def stage1():
          {"measured": str(detm),
           "pinned": read_by_path(rec, ("tables", "readout_reencoding",
                                        "determinant"))})
+    # the `q-cell-perturb` injection moves ONE readout cell of an already-built
+    # record: admissibility was decided at construction, so it reaches this gate
+    # and no earlier one -- the falsifier the delivered census lacked
+    _q0 = fam["G-FLAT"].q[(0,) * d]
+    fam["G-FLAT"].q[(0,) * d] = mutate(
+        "q-cell-perturb", _q0,
+        [[_q0[0][0] + 1] + list(_q0[0][1:])] + [list(r) for r in _q0[1:]])
     reprod = 0
     checks = 0
     for nm in adm_names:
@@ -1893,17 +2738,141 @@ def stage1():
              "note": fam[nm].note}
         for nm in sorted(fam)}
 
-    # -- 3.  the no-potential theorem ---------------------------------------
+    clw = count_lattice_wide(d, WIDE_BOX[0], WIDE_BOX[1])
+    record("G-COUNT-LATTICE-WIDE-BOX",
+           "the same census on a DECLARED WIDER BOX than I7's, run on the "
+           "closed-form counter: outside the pinned scope, so it is disclosed "
+           "and never load-bearing (RUNBOOK section 14 addendum, v13 #208)",
+           clw)
+    R["count_lattice_wide"] = clw
+
+    # -- 3.  THE THREE WALLS -------------------------------------------------
+    #
+    # WALL 1 -- the split: combinatorial multiplicity.
+    mult = {nm: split_multiplicity(fam[nm]) for nm in adm_names}
+    mult["G-DIAG2"]["product_of_n_minus_1"] = mutate(
+        "multiplicity-lax", mult["G-DIAG2"]["product_of_n_minus_1"],
+        mult["G-DIAG2"]["product_of_n_minus_1"] + 1)
+    raw_fibers = {nm: split_fibers(fam[nm])["raw"] for nm in adm_names}
+    gate("G-SPLIT-MULTIPLICITY-IDENTITY",
+         "WALL 1.  The split fiber IS the combinatorial multiplicity of "
+         "interior placements: an interval carrying only its total n admits "
+         "exactly n - 1 interior boundaries, so the raw fiber equals the "
+         "PRODUCT of (n_l - 1) over the (site, link) slots.  Verified as an "
+         "exact identity at every admissible record, against a product computed "
+         "by a different loop",
+         all(mult[nm]["product_of_n_minus_1"] == raw_fibers[nm]
+             for nm in adm_names)
+         and all(mult[nm]["slots"] == (L ** d) * len(links) for nm in adm_names),
+         {"product": {nm: mult[nm]["product_of_n_minus_1"] for nm in adm_names},
+          "raw_fiber": raw_fibers,
+          "slots": mult[adm_names[0]]["slots"]})
+    Lr_stage1 = (2 * L,) * d
+    pc = {nm: potential_counterfactual(fam[nm], Lr_stage1) for nm in adm_names}
+    pc["G-DIAG2"]["free_transverse_link_slots_with_a_potential"] = mutate(
+        "counterfactual-lax",
+        pc["G-DIAG2"]["free_transverse_link_slots_with_a_potential"], 7)
+    gate("G-POTENTIAL-COUNTERFACTUAL",
+         "WALL 1, the counterfactual, CORRECTED and measured.  Grant the "
+         "strongest form of a potential grammar -- a refinement-compatible "
+         "phi^r on the REFINED lattice with n^r = delta phi^r.  The split at an "
+         "interior site is phi^r(y) - phi^r(2x), and positivity of both halves "
+         "leaves exactly n - 1 admissible values: THE SPLIT FIBER IS UNCHANGED, "
+         "at every record.  What the potential does collapse is the transverse "
+         "links: every refined count becomes a difference of phi^r, so the "
+         "INFINITE free-link fiber falls to 1.  A potential is the mechanism of "
+         "the transverse-link freedom, not of the split",
+         all(pc[nm]["split_fiber_under_a_granted_potential"] == raw_fibers[nm]
+             for nm in adm_names)
+         and all(pc[nm]["free_transverse_link_slots_with_a_potential"] == 0
+                 and pc[nm]["free_transverse_link_slots_without_a_potential"] > 0
+                 for nm in adm_names),
+         {"split_fiber_with_a_potential":
+              {nm: pc[nm]["split_fiber_under_a_granted_potential"]
+               for nm in adm_names},
+          "split_fiber_without": raw_fibers,
+          "free_link_slots":
+              {"without": pc[adm_names[0]]
+               ["free_transverse_link_slots_without_a_potential"],
+               "with": 0}})
+
+    # WALL 2 -- the transverse links: the coboundary theorem on the periodic
+    # lattice, with its exact characterisation.
     pot = {nm: potential_census(fam[nm]) for nm in adm_names}
-    gate("G-NO-POTENTIAL",
-         "no record's counts are the coboundary of a site function: the counts "
-         "are strictly positive [T-COUNTS-POSITIVE] and the lattice is "
-         "periodic, so every axis cycle sum is positive where a coboundary's "
-         "would vanish.  The split therefore cannot be read off any front-like "
-         "potential -- this is the MECHANISM of the freedom measured below",
-         all(not v["admits_a_potential"] for v in pot.values()),
+    gate("G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+         "WALL 2.  No record's counts are the coboundary of a site function ON "
+         "THE PERIODIC LATTICE X: the counts are strictly positive "
+         "[T-COUNTS-POSITIVE] and X is periodic, so every axis cycle sum is at "
+         "least L where a coboundary's would vanish.  The theorem is about the "
+         "GRAMMAR -- it needs no member of the declared family, and no "
+         "admissible record inside this grammar can carry coboundary counts at "
+         "any L and any d.  The second, positivity-free route to the same "
+         "conclusion is [T-FROZEN-GEOMETRY]: H_a[N] moves the front and not the "
+         "counts, so the counts cannot be front differences",
+         all(not v["admits_a_potential_on_the_periodic_lattice"]
+             for v in pot.values()),
          {"min_axis_cycle_sum": {k: v["min_axis_cycle_sum"]
                                  for k, v in sorted(pot.items())}})
+    cob = coboundary_characterisation(d, (L,) * d, links)
+    cob["rank_of_the_conditions"] = mutate(
+        "coboundary-rank-lax", cob["rank_of_the_conditions"],
+        cob["rank_of_the_conditions"] - 1)
+    cob["conditions_cut_out_exactly_the_coboundaries"] = (
+        cob["edges"] - cob["rank_of_the_conditions"] == cob["rank_of_delta"])
+    gate("G-COBOUNDARY-CHARACTERISED",
+         "WALL 2's theorem is characterised, not merely stated: an edge "
+         "assignment is a coboundary IFF (a) every axis cycle sums to zero and "
+         "(b) the triangle relations hold.  Sufficiency is MEASURED by rank "
+         "arithmetic -- the (a)+(b) system's solution dimension equals the rank "
+         "of delta, so the two conditions cut out the coboundaries exactly.  "
+         "Positivity forbids (a) alone, which is why the theorem is "
+         "grammar-wide",
+         cob["conditions_cut_out_exactly_the_coboundaries"]
+         and cob["rank_of_delta"] == cob["sites"] - 1,
+         cob)
+
+    # WALL 3 -- the q_12 = 0 sector: periodic holonomy alone.
+    cov = {nm: cover_potential_census(fam[nm]) for nm in adm_names}
+    sector = sorted([nm for nm in adm_names
+                     if cov[nm]["is_a_coboundary_on_the_universal_cover"]])
+    zerosec = sorted([nm for nm in adm_names if cov[nm]["q12_identically_zero"]])
+    gate("G-COVER-POTENTIAL-SECTOR",
+         "WALL 3.  On the UNIVERSAL COVER the counts of part of the declared "
+         "family ARE coboundaries, and the sector is exactly the records whose "
+         "off-diagonal metric component vanishes identically: the cocycle half "
+         "of 'coboundary' IS q_12 = 0.  For that sector the obstruction is not "
+         "information but PERIODIC HOLONOMY -- one integer per axis cycle.  "
+         "SCOPE: the cover is not a pinned object, so this names no declaration "
+         "and moves no freedom out of class (iii)",
+         sector == zerosec and 0 < len(sector) < len(adm_names),
+         {"cover_coboundary_records": sector,
+          "q12_identically_zero_records": zerosec,
+          "per_record": {k: v for k, v in sorted(cov.items())}})
+    R["walls"] = {
+        "wall_1_the_split": {
+            "obstruction": "COMBINATORIAL MULTIPLICITY -- the record carries "
+                           "interval TOTALS, not event POSITIONS, and one "
+                           "interior boundary in a total of n has n - 1 places "
+                           "to sit",
+            "identity": "raw split fiber = prod (n_l(x) - 1) over the %d slots"
+                        % ((L ** d) * len(links)),
+            "per_record": {nm: mult[nm] for nm in adm_names},
+            "potential_counterfactual": {nm: pc[nm] for nm in adm_names}},
+        "wall_2_the_transverse_links": {
+            "obstruction": "THE COBOUNDARY THEOREM on the periodic lattice",
+            "characterisation": cob,
+            "cycle_sums": {k: v for k, v in sorted(pot.items())}},
+        "wall_3_the_q12_zero_sector": {
+            "obstruction": "PERIODIC HOLONOMY ALONE -- one integer per axis "
+                           "cycle; on the universal cover the sector's counts "
+                           "are coboundaries",
+            "sector": sector,
+            "per_record": {k: v for k, v in sorted(cov.items())},
+            "canonical_refinement": None,
+            "scope": "the universal cover is NOT a pinned object; this is a "
+                     "gated disclosure about where the obstruction lives and it "
+                     "cannot flip the verdict"},
+    }
     R["no_potential"] = {k: v for k, v in sorted(pot.items())}
     return R, fam, adm_names, links, d, L, d_ext, rec, cl
 
@@ -1915,6 +2884,7 @@ def stage2(R, fam, adm_names, links, d, L, d_ext):
                                           if m.key != "SINGLE-INTERVAL"])
     ncoarse = (L ** d) * len(links)
     rows = []
+    ambiguous_candidates = []
     for mv in moves:
         if mv.Ls_refined is None:
             probe = single_interval_arena_probe(d, L)
@@ -1927,6 +2897,8 @@ def stage2(R, fam, adm_names, links, d, L, d_ext):
                          "reason": probe["reason"]})
             continue
         irows, tally = move_incidence_census(mv, d, links)
+        ambiguous_candidates += [r["candidates"] for r in irows
+                                 if r["status"] == "AMBIGUOUS"]
         # THE ARENA PREDICATE: a product of cyclic groups carrying the declared
         # link displacements, measured rather than assumed
         shape_ok = all(v >= 2 for v in mv.Ls_refined)
@@ -1952,13 +2924,19 @@ def stage2(R, fam, adm_names, links, d, L, d_ext):
                      "intervals": len(irows)})
     gate("G-MOVE-CENSUS-CELL-COMPLETE",
          "every declared move class was censused and every coarse interval of "
-         "every class was classified -- a dropped class or a dropped interval "
-         "cannot shrink the census",
-         len(rows) == len(declared_moves(d, L))
+         "every class was classified.  The denominator is built by an "
+         "INDEPENDENT CONSTRUCTOR -- the class KEYS and their count 1 + L + 1 + "
+         "1 are derived from L alone, never re-read from declared_moves(), so a "
+         "class dropped inside the constructor cannot hide behind a "
+         "self-comparison (RUNBOOK section 14 addendum, v13 #219)",
+         sorted(r["move"] for r in rows) == sorted(expected_move_keys(d, L))
+         and len(rows) == expected_move_count(d, L)
          and all(r["tally"]["INHERITED"] + r["tally"]["SUBDIVIDED"]
                  + r["tally"]["AMBIGUOUS"] + r["tally"]["UNREPRESENTED"]
                  in (0, ncoarse) for r in rows),
-         {"classes": len(rows), "declared": len(declared_moves(d, L)),
+         {"classes": sorted(r["move"] for r in rows),
+          "expected_keys": sorted(expected_move_keys(d, L)),
+          "expected_count": expected_move_count(d, L),
           "coarse_intervals": ncoarse})
 
     hyp = [r for r in rows if r["move"].startswith("HYPERPLANE")]
@@ -1976,24 +2954,74 @@ def stage2(R, fam, adm_names, links, d, L, d_ext):
          and all(h["tally"]["AMBIGUOUS"] > 0 for h in hyp),
          {"dyadic": dyad["tally"], "hyperplane": [h["tally"] for h in hyp]})
 
-    # the ambiguity is REAL: the two candidate readings disagree
+    # THE CANDIDATE COUNT IS MEASURED, not typed (#24): it is read off the
+    # census rows of the ambiguous intervals themselves
+    ncand = max(ambiguous_candidates) if ambiguous_candidates else 0
+    ncand = mutate("candidates-typed", ncand, 5)
+    gate("G-BLOCKED-CANDIDATES-COMPUTED",
+         "the number of candidate interior sites the blocked branch carries is "
+         "COMPUTED from the census rows of the ambiguous intervals, never typed "
+         "(RUNBOOK section 4, #24): every ambiguous interval carries the same "
+         "count and the verdict segment renders that measurement",
+         ambiguous_candidates
+         and ncand == max(ambiguous_candidates)
+         and ncand == min(ambiguous_candidates) and ncand > 1,
+         {"ambiguous_intervals": len(ambiguous_candidates),
+          "candidates_min": min(ambiguous_candidates) if ambiguous_candidates
+          else None,
+          "candidates_max": max(ambiguous_candidates) if ambiguous_candidates
+          else None, "rendered": ncand})
+
+    # THE AMBIGUITY IS REAL -- restated at its own criterion and censused wide.
+    # The two candidate readings of a cut interval are n_1 + f_0 and f_1 + n_2,
+    # so they AGREE exactly when f_1 - f_0 = n_2 - n_1.  The delivered sweep ran
+    # this at one record whose axis count is 2, where the criterion collapses to
+    # f_0 != f_1; the census below runs every splittable record, every site,
+    # every split of the axis-e_1 interval and both free counts over 1..12, and
+    # verifies the criterion cell by cell.
     dis = 0
     tot = 0
+    crit = 0
+    fmax = 12
+    for nm in sorted([n for n in adm_names if fam[n].min_count() >= 2]):
+        a = fam[nm]
+        for x in a.S:
+            n = a.counts[x][links[0]]
+            for n1 in range(1, n):
+                n2 = n - n1
+                for f0 in range(1, fmax + 1):
+                    for f1 in range(1, fmax + 1):
+                        tot += 1
+                        agree = (f0 + n2 == n1 + f1)
+                        if not agree:
+                            dis += 1
+                        if agree == (f1 - f0 == n2 - n1):
+                            crit += 1
+    crit = mutate("completion-sweep-lax", crit, crit - 1)
+    # the delivered narrow sweep, kept as the degenerate special case
     r0 = fam["G-DIAG2"]
     nmax = r0.counts[(0,) * d][links[0]]
+    tot_narrow = 0
+    dis_narrow = 0
     for n1 in range(1, nmax):
         for f0 in range(1, 5):
             for f1 in range(1, 5):
-                tot += 1
+                tot_narrow += 1
                 if f0 + (nmax - n1) != n1 + f1:
-                    dis += 1
+                    dis_narrow += 1
     gate("G-BLOCK-IS-REAL",
-         "the blocked branch's ambiguity is not harmless: over a declared "
-         "completion sweep the two candidate readings of a cut diagonal "
-         "interval's count DISAGREE at most cells, so no reading can be "
-         "adopted without a grammar fact the pinned sources do not supply",
-         dis > 0, {"completions": tot, "disagreeing": dis,
-                   "agreeing": tot - dis})
+         "the blocked branch's ambiguity is not harmless: the two candidate "
+         "readings of a cut interval's count agree EXACTLY when f_1 - f_0 = "
+         "n_2 - n_1, and over the wide declared completion census they disagree "
+         "at most cells -- so no reading can be adopted without a grammar fact "
+         "the pinned sources do not supply.  The criterion is verified at every "
+         "cell, which is what makes this a measurement rather than the "
+         "tautology the one-record sweep collapses to",
+         dis > 0 and crit == tot and tot > 0,
+         {"completions": tot, "disagreeing": dis, "agreeing": tot - dis,
+          "criterion_verified": crit,
+          "narrow_sweep_at_G-DIAG2": {"completions": tot_narrow,
+                                      "disagreeing": dis_narrow}})
 
     R["move_census"] = {
         "coarse_intervals": ncoarse,
@@ -2014,16 +3042,44 @@ def stage2(R, fam, adm_names, links, d, L, d_ext):
                      "incidence rule, and supplying one would be a grammar "
                      "fact from outside the pinned sources (pin section 1)",
         "ambiguous_intervals": hyp[0]["tally"]["AMBIGUOUS"],
-        "candidates_per_interval": 2,
+        "candidates_per_interval": ncand,
+        "candidates_measured_over": len(ambiguous_candidates),
         "loci_censused": len(hyp),
         "all_loci_agree": len(set(h["tally"]["AMBIGUOUS"] for h in hyp)) == 1,
-        "completion_sweep": {"completions": tot, "disagreeing": dis}}
+        "completion_sweep": {
+            "scope": "every splittable record, every site, the axis-e_1 "
+                     "interval, every split, both free counts over 1..%d" % fmax,
+            "completions": tot, "disagreeing": dis, "agreeing": tot - dis,
+            "agreement_criterion": "f_1 - f_0 = n_2 - n_1",
+            "criterion_verified_at": crit,
+            "narrow_sweep_at_G-DIAG2": {
+                "completions": tot_narrow, "disagreeing": dis_narrow,
+                "note": "G-DIAG2's axis count is 2, so n_1 = n_2 and the "
+                        "criterion degenerates to f_0 = f_1"}}}
     R["refused_branch"] = [r for r in rows
                            if r["move"] == "SINGLE-INTERVAL"][0]["probe"]
     R["refused_branch"]["move"] = "SINGLE-INTERVAL"
+    rb = R["refused_branch"]
+    gate("G-REFUSAL-MEASURED",
+         "the single-interval refusal is MEASURED on a built site set, not "
+         "described: the direction-0 cycle lengths are read off the successor "
+         "relation of X together with the inserted site, and each declared link "
+         "displacement is TESTED for a target at the new site.  Both facts the "
+         "refusal rests on are therefore measurements (RUNBOOK section 4, #24)",
+         rb["cycle_lengths_measured_on_the_built_site_set"]
+         and not rb["cycle_lengths_constant"]
+         and not rb["site_count_divisible_by_longest_cycle"]
+         and rb["declared_link_targets_defined_at_the_new_site"]
+         == sum(1 for v in rb["targets_by_link"].values() if v)
+         and rb["declared_link_targets_defined_at_the_new_site"]
+         < rb["declared_links"],
+         {"cycles": rb["direction_0_cycle_lengths"], "sites": rb["sites"],
+          "targets": rb["targets_by_link"],
+          "targets_count": rb["declared_link_targets_defined_at_the_new_site"]})
 
     # -- the d = 3 cover, where the declared link set omits the body diagonal
-    l3 = link_set(d_ext)
+    l3 = mutate("dim-link-set", link_set(d_ext),
+                link_set(d_ext) + [tuple([1] * d_ext)])
     Ls3 = (L,) * d_ext
     Lr3 = (2 * L,) * d_ext
     imgs = set(tuple(2 * a for a in x) for x in sites(Ls3))
@@ -2062,13 +3118,24 @@ def stage3(R, fam, adm_names, links, d, L):
     Lc = (L,) * d
     Lr = (2 * L,) * d
     splittable = sorted([nm for nm in adm_names if fam[nm].min_count() >= 2])
-    unsplittable = sorted([nm for nm in adm_names if fam[nm].min_count() < 2])
+    splittable = mutate("record-drop", splittable, splittable[:-1])
+    unsplittable = mutate(
+        "unsplittable-drop",
+        sorted([nm for nm in adm_names if fam[nm].min_count() < 2]), [])
+    # an INDEPENDENT route to the same set: scan the (site, link) slots for a
+    # count-1 interval instead of taking a minimum
+    unsplittable_check = sorted([
+        nm for nm in adm_names
+        if any(fam[nm].counts[x][lk] == 1
+               for x in fam[nm].S for lk in fam[nm].links)])
     add_checks = 0
     add_bad = 0
     res_checks = 0
     res_ok = 0
     q_checks = 0
     q_ok = 0
+    count_checks = 0
+    count_ok = 0
     built = {}
     admissible_builds = []
     rows = []
@@ -2095,6 +3162,11 @@ def stage3(R, fam, adm_names, links, d, L):
                 # refined counts and compare against the coarse q, which was
                 # computed by a route this one does not touch
                 rc = restrict_counts(rf, a, Lr)
+                for x in a.S:
+                    for lk in links:
+                        count_checks += 1
+                        if rc[x][lk] == a.counts[x][lk]:
+                            count_ok += 1
                 okq = 0
                 for x in a.S:
                     q_checks += 1
@@ -2122,21 +3194,85 @@ def stage3(R, fam, adm_names, links, d, L):
     gate("G-RESTRICTION-COMMUTES",
          "record-IS-metric COMMUTES with refinement: the coarse metric rebuilt "
          "from the RESTRICTED refined counts equals the coarse metric computed "
-         "directly, at every (record, split, completion, site) cell -- the "
-         "comparator is the coarse record's own q, computed by a route the "
-         "restriction does not touch",
+         "directly, at every (record, split, completion, site) cell.  What the "
+         "test measures is that the READOUT commutes with the restriction; it "
+         "is NOT an independent comparator, and the disclosure below states why",
          res_ok_m == res_checks, {"checks": res_checks, "recovered": res_ok_m})
+    record("G-RESTRICTION-IS-AN-ADDITIVITY-COROLLARY",
+           "DISCLOSURE (RUNBOOK section 14 addendum, v13 #208).  The restricted "
+           "counts equal the coarse counts at every one of the %d (build, site, "
+           "link) cells -- restrict o refine = id on counts, which is additivity "
+           "re-read.  The %d q comparisons are therefore the SAME integers "
+           "re-projected through a deterministic readout, and the earlier "
+           "'built by a route the restriction does not touch' framing is "
+           "withdrawn: the headline stands, the independence claim does not"
+           % (count_checks, res_checks),
+           {"count_cells": count_checks, "counts_recovered": count_ok,
+            "q_cells": res_checks, "q_recovered": res_ok,
+            "is_a_corollary_of_additivity": count_ok == count_checks})
     gate("G-UNSPLITTABLE-RECORDS",
          "a record carrying a count-1 interval admits NO subdivision at all: "
          "n_l(x) in Z_>0 [T-COUNTS-POSITIVE] leaves no positive partition of 1, "
-         "and the readout independently rejects a zero part.  Measured over "
-         "the declared family, not argued",
+         "and the readout independently rejects a zero part.  The unsplittable "
+         "SET is measured twice -- once by the minimum count and once by "
+         "scanning every (site, link) slot for a count-1 interval -- and the "
+         "two routes must agree",
          len(unsplittable) > 0
+         and sorted(unsplittable) == unsplittable_check
          and all(fam[nm].min_count() == 1 for nm in unsplittable),
-         {"unsplittable": unsplittable, "splittable": splittable})
+         {"unsplittable": unsplittable, "independent_route": unsplittable_check,
+          "splittable": splittable})
+    n_declared_builds = len(splittable) * len(SPLIT_RULES) * len(FREE_RULES)
+    gate("G-RECORD-FAMILY-CELL-COMPLETE",
+         "the forced part is cell-complete over the RECORD family as well as "
+         "over the move family: every admissible record is either splittable or "
+         "unsplittable and none is silently dropped, and the constraint and "
+         "build denominators equal their declared products -- a record dropped "
+         "from the forced part shrinks them and dies here",
+         len(splittable) + len(unsplittable) == len(adm_names)
+         and len(rows) == n_declared_builds
+         and add_checks == n_declared_builds * (L ** d) * len(links)
+         and res_checks == n_declared_builds * (L ** d),
+         {"admissible_records": len(adm_names), "splittable": len(splittable),
+          "unsplittable": len(unsplittable),
+          "admissible_builds": len(admissible_builds),
+          "declared_builds": len(rows), "expected_builds": n_declared_builds,
+          "additivity_checks": add_checks,
+          "expected_additivity_checks":
+              n_declared_builds * (L ** d) * len(links),
+          "restriction_checks": res_checks,
+          "expected_restriction_checks": n_declared_builds * (L ** d)})
+    # WALL 3's EXHIBIT, built here because it compares the cover-induced
+    # refinement against the unit's OWN declared build, which the forced part
+    # has just verified.
+    canon = cover_canonical_refinement(fam["G-DIAG2"], Lr)
+    canon["coarse_record_recovered_at"] = mutate(
+        "cover-canon-lax", canon["coarse_record_recovered_at"], 0)
+    gate("G-COVER-CANONICAL-REFINEMENT",
+         "WALL 3's exhibit.  On the q_12 = 0 sector a cover potential, "
+         "interpolated by the very count-weighted rule the dynamics forces for "
+         "the front, induces a CANONICAL refinement: every refined count "
+         "positive, every refined site admissible, the coarse record recovered "
+         "exactly, and the split determined -- fiber 1.  It agrees with the "
+         "declared balanced split on every covered slot and differs from the "
+         "declared minimal completion on the free ones, so it is a distinct "
+         "member of the same split fiber.  SCOPE, binding: the universal cover "
+         "is NOT a pinned object; this exhibits WHERE the obstruction lives and "
+         "cannot flip the verdict",
+         canon["refined_counts_positive"]
+         and canon["admissible_refined_sites"] == canon["refined_sites"]
+         and canon["coarse_record_recovered_at"] == canon["coarse_sites"]
+         and canon["induced_split_fiber"] == 1
+         and canon["agrees_with_the_declared_floor_split_on_every_covered_slot"]
+         and canon["slots_differing_from_the_declared_minimal_completion"] > 0,
+         canon)
+    R["walls"]["wall_3_the_q12_zero_sector"]["canonical_refinement"] = canon
+
     R["forced_part"] = {
         "additivity_checks": add_checks, "additivity_violations": add_bad,
         "restriction_checks": res_checks, "restriction_ok": res_ok_m,
+        "restricted_count_cells": count_checks,
+        "restricted_counts_equal_the_coarse_counts": count_ok,
         "splittable_records": splittable, "unsplittable_records": unsplittable,
         "builds": rows,
         "admissible_builds": len(admissible_builds),
@@ -2158,27 +3294,50 @@ def stage4(R, fam, adm_names, links, d, L, splittable, built, admissible_builds)
         v["admissible_at_images"] = mutate(
             "fiber-typed", v["admissible_at_images"], 1)
         sf[nm] = v
-    # an INDEPENDENT recomputation of the same fiber, from the record itself
+    # THE INDEPENDENT COMPARATOR (RUNBOOK section 14 addendum, v13 #219).  The
+    # delivered "independent recomputation" called site_admissible_triples()
+    # again -- the same function on the same input -- so a corruption INSIDE
+    # that function moved both sides together.  This route never enumerates a
+    # triple: admissibility is (c-a-b)^2 < 4ab, so for each (a,b) the admissible
+    # c form an INTEGER INTERVAL whose endpoints come from an integer square
+    # root, and the site count is a sum of interval lengths.
     check = {}
+    per_site_check = {}
     for nm in splittable:
         a = fam[nm]
         prod = 1
+        rows_c = []
         for x in a.S:
-            prod = prod * len(site_admissible_triples(a.counts[x], a.links))
+            row = a.counts[x]
+            t = count_admissible_triples_closed(row[a.links[0]],
+                                                row[a.links[1]],
+                                                row[a.links[2]])
+            rows_c.append(t)
+            prod = prod * t
         check[nm] = prod
+        per_site_check[nm] = rows_c
+    per_site_loop = {nm: [len(site_admissible_triples(fam[nm].counts[x],
+                                                      fam[nm].links))
+                          for x in fam[nm].S] for nm in splittable}
     gate("G-FIBER-COMPUTED",
          "every split fiber is COMPUTED from the record's own counts, never "
          "typed: a record with a count-1 interval has fiber 0, and the "
-         "admissible fiber equals an independent recomputation of the product "
-         "over coarse sites of that site's admissible split triples",
+         "admissible fiber equals a recomputation by a GENUINELY INDEPENDENT "
+         "route -- an integer-interval count from an integer square root, "
+         "sharing no loop, no predicate and no arithmetic type with the triple "
+         "enumeration.  The agreement is checked site by site, not only on the "
+         "product",
          all(sf[nm]["raw"] == 0 for nm in adm_names
              if fam[nm].min_count() < 2)
          and all(sf[nm]["admissible_at_images"] <= sf[nm]["raw"]
                  for nm in splittable)
          and all(sf[nm]["admissible_at_images"] == check[nm]
-                 for nm in splittable),
+                 for nm in splittable)
+         and all(per_site_loop[nm] == per_site_check[nm] for nm in splittable),
          {"declared": {nm: sf[nm]["admissible_at_images"] for nm in splittable},
-          "recomputed": check})
+          "recomputed": check,
+          "per_site_enumerated": per_site_loop,
+          "per_site_closed_form": per_site_check})
 
     eqf = {}
     stabs = {}
@@ -2207,8 +3366,9 @@ def stage4(R, fam, adm_names, links, d, L, splittable, built, admissible_builds)
     # THE INFINITE FAMILY, exhibited and gated: at an interior site of an axis
     # interval the transverse count b is free and c = a + b keeps q diagonal
     # with det q = a*b > 0 for EVERY b >= 1.
+    trials = mutate("witness-loop-bound", FREE_LINK_TRIALS, 8)
     wit = 0
-    for b in range(1, 65):
+    for b in range(1, trials + 1):
         q = q_from_counts(d, {links[0]: Fr(3), links[1]: Fr(b),
                               links[2]: Fr(3 + b)})
         if q is not None and positive_definite(q):
@@ -2217,10 +3377,12 @@ def stage4(R, fam, adm_names, links, d, L, splittable, built, admissible_builds)
          "the free transverse links carry an INFINITE fiber, exhibited: with "
          "c = a + b the readout is diagonal and det q = a*b > 0 for every "
          "b >= 1, so a whole one-parameter family of admissible completions "
-         "restricts to the same coarse record",
-         wit == 64 and len(free) > 0,
+         "restricts to the same coarse record.  The witness count is the LOOP'S "
+         "OWN success count over the declared trial range, computed and never "
+         "typed (RUNBOOK section 4, #24)",
+         wit == trials and trials == FREE_LINK_TRIALS and len(free) > 0,
          {"free_slots": len(free), "refined_links": refined_links,
-          "witnesses_checked": wit})
+          "declared_trials": FREE_LINK_TRIALS, "witnesses_measured": wit})
 
     fronts = front_family(fam[splittable[0]].S)
     lap = build_lapse_family(fam[splittable[0]].S, d)
@@ -2245,17 +3407,159 @@ def stage4(R, fam, adm_names, links, d, L, splittable, built, admissible_builds)
     a0 = fam[splittable[0]]
     sp0 = make_split(a0, "floor")
     fl = forced_front_lift_census(a0, sp0, fronts)
+    fl["record"] = a0.name
+    fl["split_rule"] = "floor"
+    fl["cell_shape"] = "(front, site, link) at one record and one split rule"
     flu = forced_lift_universal(a0)
+    flu["record"] = a0.name
+    family_splits = sum(fam[nm].counts[x][lk] - 1 for nm in splittable
+                        for x in fam[nm].S for lk in fam[nm].links)
+    flu["splits_over_the_splittable_family"] = family_splits
     gate("G-FORCED-LIFT-NON-INTEGRAL",
-         "requiring the drag to agree at the coarse image sites FORCES the "
-         "front lift to the count-weighted interpolation n(x) + n_1*dn/n -- "
-         "and that value is not of the declared Z-valued front type: "
-         "integrality for EVERY front tilt would require n | n_1 with "
-         "1 <= n_1 < n, which holds at no split of any interval of the "
-         "declared family.  The dynamics does not rescue the free front value; "
-         "it forces an inadmissible one",
+         "the count-weighted interpolation n(x) + n_1*dn/n is not of the "
+         "declared Z-valued front type: integrality for EVERY front tilt would "
+         "require n | n_1 with 1 <= n_1 < n, which holds at no split of any "
+         "interval.  SCOPE: the %d cells are the (front, site, link) cells of "
+         "%s at the balanced split; the divisibility sweep runs the %d splits "
+         "of %s, and the same sweep over all %d splittable records carries %d "
+         "splits" % (fl["cells"], a0.name, flu["triples_checked"], a0.name,
+                     len(splittable), family_splits),
          fl["non_integral"] > 0 and flu["splits_with_n_dividing_n1"] == 0,
          {"forced_lift": fl, "universal": flu})
+
+    # THE FORCED LIFT IS RULE-RELATIVE -- solved exactly, per declared rule.
+    lift_triples = []
+    for (nm_b, sm_b, fm_b) in admissible_builds:
+        if fm_b != "minimal":
+            continue
+        lift_triples.append((fam[nm_b], built[(nm_b, sm_b, fm_b)],
+                             make_split(fam[nm_b], sm_b)))
+    flr = forced_lift_by_rule(lift_triples, Lr)
+    forms = {r: classify_forced_lift(flr[r]) for r in RULES}
+    forms = mutate("forced-lift-rule-lax", forms,
+                   {r: "THE-COUNT-WEIGHTED-INTERPOLATION" for r in RULES})
+    by_form = {}
+    for r in RULES:
+        by_form.setdefault(forms[r], []).append(r)
+    gate("G-FORCED-LIFT-RULE-RELATIVE",
+         "WHICH lift the dynamics forces is a FUNCTION OF THE DRAG RULE, solved "
+         "exactly rather than asserted.  Image agreement gives "
+         "Lambda^r(iota x) u = Lambda^c(x) v, so: the count-scaled rules force "
+         "the count-weighted interpolation, which is not Z-valued; the "
+         "count-blind rules force u = v -- the DECLARED RIGHT LIFT, Z-valued at "
+         "every cell; the metric-inserted and link-frame rules force a third "
+         "value; a frozen-front rule imposes no condition on the lift at all; "
+         "and a rule that also weights a diagonal link leaves the system "
+         "underdetermined.  The dynamics therefore never REMOVES the freedom: "
+         "it either re-selects a lift already inside the class-(iii) pair or "
+         "leaves the declared type",
+         len(by_form) >= 4
+         and all(flr[r]["integral"] == flr[r]["cells"]
+                 for r in by_form.get("THE-DECLARED-RIGHT-LIFT", []))
+         and all(flr[r]["integral"] < flr[r]["cells"]
+                 for r in by_form.get("THE-COUNT-WEIGHTED-INTERPOLATION", []))
+         and len(by_form.get("THE-DECLARED-RIGHT-LIFT", [])) > 0
+         and len(by_form.get("UNDERDETERMINED", [])) > 0,
+         {"per_rule": flr, "forms": forms,
+          "rules_by_form": {k: sorted(v) for k, v in sorted(by_form.items())}})
+    R["forced_lift_by_rule"] = {"scope": "every admissible build at the "
+                                "declared minimal completion (%d builds), every "
+                                "declared front, every coarse site"
+                                % len(lift_triples),
+                                "builds": len(lift_triples),
+                                "per_rule": flr, "forms": forms,
+                                "rules_by_form": {k: sorted(v) for k, v
+                                                  in sorted(by_form.items())}}
+
+    # THE EXTREMAL SELECTOR CLASS, tested (the delivered inventory had no such
+    # row; the pin's section 3 and the protocol both name variational selections)
+    ext = {nm: extremal_selector_census(fam[nm]) for nm in splittable}
+    for nm in splittable:
+        ext[nm]["max_det"]["unique_sites"] = mutate(
+            "extremal-lax", ext[nm]["max_det"]["unique_sites"], 0)
+    tot_sites = sum(ext[nm]["sites"] for nm in splittable)
+    ext_sum = {
+        "records": len(splittable),
+        "sites_per_record": ext[splittable[0]]["sites"],
+        "sites": tot_sites,
+        "max_det": {
+            "unique_sites": sum(ext[nm]["max_det"]["unique_sites"]
+                                for nm in splittable),
+            "records_with_an_admissible_selected_refinement":
+                len([nm for nm in splittable
+                     if ext[nm]["max_det"]["refinement_admissible"]])},
+        "most_balanced": {"unique_sites": sum(
+            ext[nm]["most_balanced"]["unique_sites"] for nm in splittable)},
+        "min_abs_q12": {"unique_sites": sum(
+            ext[nm]["min_abs_q12"]["unique_sites"] for nm in splittable)},
+        "per_record": ext,
+        "verdict": "NOT DERIVABLE -- no extremal principle is declared in the "
+                   "pinned sources, so a unique extremal selector is a lead for "
+                   "a deeper row and forces nothing here"}
+    gate("G-EXTREMAL-SELECTORS-TESTED",
+         "the extremal/variational selector class is TESTED rather than passed "
+         "over: max det q at the refined image is unique at every site of every "
+         "splittable record and its selected refinement is globally admissible, "
+         "while the most-balanced and min-|q_12| selectors are not unique.  "
+         "This is exactly the shape a forcing would have, and it is NOT one: no "
+         "pinned declaration names a functional to extremise, so the honest "
+         "statement is 'no DECLARED selector', not 'no selector'",
+         ext_sum["max_det"]["unique_sites"] == tot_sites
+         and ext_sum["max_det"]
+         ["records_with_an_admissible_selected_refinement"] == len(splittable)
+         and ext_sum["most_balanced"]["unique_sites"] < tot_sites,
+         ext_sum)
+    R["extremal_selectors"] = ext_sum
+    # THE REJECTED-FORCING LIST.  "-- NOTHING IN THE PINNED GRAMMAR --" is a
+    # claim about a search, so the search's candidates are shipped with their
+    # measured kills rather than left implicit.
+    R["rejected_forcings"] = [
+        {"candidate": "the declared chart group (a measured stabiliser)",
+         "target": "THE-SPLIT",
+         "measured_kill": "equivariant split fibers %s -- never 1"
+                          % sorted(set(v for v in eqf.values()
+                                       if v is not None))},
+        {"candidate": "readout admissibility as a selector",
+         "target": "THE-SPLIT",
+         "measured_kill": "over the pinned count box admissibility narrows a "
+                          "site fiber from more than one to exactly one at 0 of "
+                          "%d splittable vectors; the unique-split locus is "
+                          "exactly the all-counts-2 vector"
+                          % R["count_lattice"]["splittable"]},
+        {"candidate": "an extremal / variational selection",
+         "target": "THE-SPLIT",
+         "measured_kill": "max-det IS unique at every site of every splittable "
+                          "record and its refinement is admissible -- but no "
+                          "pinned declaration names a functional to extremise, "
+                          "so it is a lead and not a forcing"},
+        {"candidate": "the cumulative reading n_l(x) = n(x+l) - n(x), which "
+                      "would force n(y) = n(x) + n_1",
+         "target": "NEW-FRONT-VALUES",
+         "measured_kill": "excluded TWICE: by the coboundary theorem (every "
+                          "axis cycle sum is positive, measured minimum %d) and "
+                          "INDEPENDENTLY by [T-FROZEN-GEOMETRY] -- H_a[N] moves "
+                          "the front and not the counts, so the counts cannot "
+                          "be front differences.  The second route is arena-free "
+                          "and positivity-free"
+                          % min(v["min_axis_cycle_sum"]
+                                for v in R["no_potential"].values())},
+        {"candidate": "the new site is itself an event, so its front carries a "
+                      "floor",
+         "target": "NEW-FRONT-VALUES",
+         "measured_kill": "[T-FRONT] declares a site-local advance counter; "
+                          "nothing in the pinned sources relates a new site's "
+                          "counter to its neighbours', so no floor follows"},
+        {"candidate": "a dynamical gauge: identify refinements with equal "
+                      "commutation defect",
+         "target": "THE-SPLIT",
+         "measured_kill": "the split -> defect map separates splits under the "
+                          "declared rules (G-DEFECT-SPLIT-DEPENDENCE), so no "
+                          "dynamical identification collapses the fiber"},
+    ]
+    R["odd_counts_on_splittable_records"] = sorted(set(
+        fam[nm].counts[x][lk] for nm in splittable
+        for x in fam[nm].S for lk in fam[nm].links
+        if fam[nm].counts[x][lk] % 2 == 1))
 
     R["split_fibers"] = sf
     R["stabilisers"] = stabs
@@ -2266,7 +3570,8 @@ def stage4(R, fam, adm_names, links, d, L, splittable, built, admissible_builds)
     R["cover"] = {"refined_sites": len(sites(Lr)), "coarse_images": len(sites(Lc)),
                   "new_sites": new_sites, "refined_links": refined_links,
                   "covered_links": len(cov), "free_links": len(free)}
-    return sf, eqf, free, refined_links, new_sites, fl, pairs, ncommute
+    return (sf, eqf, free, refined_links, new_sites, fl, pairs, ncommute, wit,
+            flr, forms, by_form, family_splits)
 
 
 def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
@@ -2283,9 +3588,22 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
     support_tally = {}
     per_rule = {}
     per_record = {}
-    matter_free_checks = 0
     image_equals_coarse_drag = 0
     image_cells = 0
+    # THE VALUE CENSUS.  The delivered gates counted CELLS and rebuilt the
+    # support signature from the accumulator that produced it, so an injection
+    # that erased a whole parity class of defect VALUES left every defect gate
+    # green.  Three separate objects are now carried: the per-class absolute
+    # value mass, the per-class nonzero COMPONENT count, and a per-cell row
+    # table from which the support signature is rebuilt in a SECOND PASS.
+    value_census = {}
+    cell_rows = []
+    zero_with_vanishing_coarse_drag = 0
+    nonzero_with_vanishing_coarse_drag = 0
+    nz_vanishing_by_rule = {}
+    right_image_zero = {}
+    site_resolved = {}
+    rule_fields = {}
     builds = [b for b in admissible_builds if b[2] == "minimal"]
     for (nm, smode, fmode) in builds:
         a = fam[nm]
@@ -2295,31 +3613,73 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
         for rule in RULES:
             for lname, N in lap:
                 for fname, n in fronts:
+                    coarse_zero = all(all(v == 0 for v in
+                                          drag_at(rule, a, N, n, x))
+                                      for x in a.S)
                     for mode in LIFT_RULES:
                         D = commutation_defect(rule, a, rf, N, n, Lr, mode)
                         cells += 1
                         nz = any(any(v != 0 for v in D[z]) for z in D)
                         if nz:
                             nonzero += 1
+                            if coarse_zero:
+                                nonzero_with_vanishing_coarse_drag += 1
+                                nz_vanishing_by_rule[rule] = \
+                                    nz_vanishing_by_rule.get(rule, 0) + 1
                         else:
                             zero += 1
+                            if coarse_zero:
+                                zero_with_vanishing_coarse_drag += 1
                         sup = defect_support(D, a)
+                        row = {}
                         for k, v in sup.items():
                             cell = support_tally.setdefault(k, [0, 0])
                             cell[0] += v["nonzero"]
                             cell[1] += v["total"]
+                            row[k] = [v["nonzero"], v["total"]]
+                        cell_rows.append(row)
+                        for z in D:
+                            kind, lk = midpoint_kind(z, a.links)
+                            key = ("IMAGE" if kind == "IMAGE"
+                                   else ("MID-%s" % (tuple(lk),)
+                                         if kind == "MID" else "UNREACHED"))
+                            vc = value_census.setdefault(
+                                key, {"abs_mass": Fr(0), "components": 0,
+                                      "nonzero_components": 0})
+                            for comp in D[z]:
+                                vc["components"] += 1
+                                if comp != 0:
+                                    vc["nonzero_components"] += 1
+                                    vc["abs_mass"] += (comp if comp > 0
+                                                       else -comp)
+                            sr = site_resolved.setdefault((rule, mode, key),
+                                                          [0, 0])
+                            sr[1] += 1
+                            if any(v != 0 for v in D[z]):
+                                sr[0] += 1
                         pr = per_rule.setdefault(rule, [0, 0])
                         pr[0] += 1 if nz else 0
                         pr[1] += 1
                         pc = per_record.setdefault(nm, [0, 0])
                         pc[0] += 1 if nz else 0
                         pc[1] += 1
+                        rule_fields.setdefault(rule, set()).add(
+                            (nm, smode, lname, fname, mode,
+                             tuple(sorted((z, tuple(str(v) for v in D[z]))
+                                          for z in D))))
                         if mode == "left":
                             for x in a.S:
                                 image_cells += 1
                                 wc = drag_at(rule, a, N, n, x)
                                 if D[tuple(2 * t for t in x)] == wc:
                                     image_equals_coarse_drag += 1
+                        else:
+                            ri = right_image_zero.setdefault(rule, [0, 0])
+                            for x in a.S:
+                                ri[1] += 1
+                                if all(v == 0
+                                       for v in D[tuple(2 * t for t in x)]):
+                                    ri[0] += 1
     nonzero = mutate("defect-suppress", nonzero, 0)
     gate("G-DEFECT-NONZERO",
          "the commutation defect is NONZERO: refine-then-advance and "
@@ -2328,30 +3688,152 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
          "cells with an identically zero defect are counted too",
          nonzero > 0 and zero > 0 and nonzero + zero == cells,
          {"cells": cells, "nonzero": nonzero, "zero": zero})
+    image_equals_coarse_drag = mutate("closed-form-lax",
+                                      image_equals_coarse_drag,
+                                      image_equals_coarse_drag - 1)
     gate("G-DEFECT-CLOSED-FORM",
          "the defect has an EXACT closed form at the coarse image sites under "
-         "the left lift: the refined front is constant on each cell, so the "
+         "the LEFT lift: the lifted front is constant on each cell, so the "
          "refined drag vanishes there and the defect equals the WHOLE coarse "
-         "drag -- verified cell by cell, not argued",
+         "drag -- verified cell by cell, not argued.  The reading is a "
+         "coordinate of the lift, and the right-lift half is measured beside it",
          image_cells > 0 and image_equals_coarse_drag == image_cells,
          {"image_cells": image_cells, "matching": image_equals_coarse_drag})
+
+    # THE VALUE CENSUS GATE.  A gate denominated in CELLS cannot see values
+    # being erased; this one is denominated in the values themselves.
+    vc_rows = {k: {"abs_mass": str(v["abs_mass"]),
+                   "components": v["components"],
+                   "nonzero_components": v["nonzero_components"]}
+               for k, v in sorted(value_census.items())}
+    gate("G-DEFECT-VALUE-CENSUS",
+         "the defect census is denominated in the defect's own VALUES, not only "
+         "in cells: every site class carries a strictly positive absolute-value "
+         "mass and a strictly positive count of nonzero components, the classes "
+         "carry DISTINCT nonzero counts, and each class's nonzero site count is "
+         "bracketed by its nonzero component count.  Erasing a whole parity "
+         "class of defect values -- which leaves every cell-denominated gate "
+         "green -- dies here",
+         len(value_census) > 1
+         and all(v["nonzero_components"] > 0 and v["abs_mass"] > 0
+                 for v in value_census.values())
+         and len(set(v["nonzero_components"] for v in value_census.values()))
+         == len(value_census)
+         and all(support_tally[k][0] <= value_census[k]["nonzero_components"]
+                 <= d * support_tally[k][0] for k in support_tally),
+         {"value_census": vc_rows})
+
+    # THE SUPPORT SIGNATURE, rebuilt in a SECOND PASS over the per-cell rows --
+    # a different accumulator, filled at a different point of the loop, so a
+    # doctored support tally no longer agrees with itself (v13 #219).
+    support_tally["IMAGE"] = mutate("defect-support-halve",
+                                    support_tally["IMAGE"],
+                                    [support_tally["IMAGE"][0] // 2,
+                                     support_tally["IMAGE"][1]])
     sup_sig = "|".join("%s:%d-OF-%d" % (k, v[0], v[1])
                        for k, v in sorted(support_tally.items()))
     sup_sig = mutate("defect-support-lax", sup_sig, "UNIFORM")
+    rebuilt = {}
+    for row in cell_rows:
+        for k, v in row.items():
+            c = rebuilt.setdefault(k, [0, 0])
+            c[0] += v[0]
+            c[1] += v[1]
     sig_check = "|".join("%s:%d-OF-%d" % (k, v[0], v[1])
-                         for k, v in sorted(support_tally.items()))
+                         for k, v in sorted(rebuilt.items()))
     gate("G-DEFECT-CHARACTERISED",
          "the defect's SITE SUPPORT is characterised by which coarse interval "
-         "each refined site subdivides, the support is not uniform across "
-         "those classes, and the signature the verdict carries is REBUILT here "
-         "from the support table and must agree -- the defect is a structured "
-         "object with a measured signature, not a scalar failure",
+         "each refined site subdivides, the support is not uniform across those "
+         "classes, and the signature the verdict carries is REBUILT from a "
+         "SECOND PASS over the per-cell rows -- not from the accumulator that "
+         "produced it (RUNBOOK section 14 addendum, v13 #219).  The defect is a "
+         "structured object with a measured signature, not a scalar failure",
          len(support_tally) > 1
          and len(set(v[0] for v in support_tally.values())) > 1
-         and sup_sig == sig_check,
+         and sup_sig == sig_check and len(cell_rows) == cells,
          {"support": {k: {"nonzero": v[0], "total": v[1]}
                       for k, v in sorted(support_tally.items())},
-          "signature": sup_sig, "rebuilt": sig_check})
+          "signature": sup_sig, "rebuilt_second_pass": sig_check,
+          "cell_rows": len(cell_rows)})
+
+    # THE ZERO SECTOR, characterised (it is not a "positive control")
+    zero_with_vanishing_coarse_drag = mutate(
+        "zero-sector-lax", zero_with_vanishing_coarse_drag,
+        zero_with_vanishing_coarse_drag - 1)
+    nz_vanishing_by_rule = mutate("zero-sector-lax", nz_vanishing_by_rule,
+                                  dict(nz_vanishing_by_rule, **{"A-chart": 1}))
+    gate("G-ZERO-SECTOR-CHARACTERISED",
+         "EVERY identically-zero cell is a cell at which the coarse drag itself "
+         "vanishes identically: the comparator has never returned zero on a "
+         "nontrivial pair -- it has only ever computed 0 - 0.  That is a RESULT "
+         "about the census, and it replaces the earlier reading of these cells "
+         "as a working positive control.  The converse fails, and only in one "
+         "measured place: a vanishing coarse drag meets a NONZERO defect only "
+         "under the declared frozen-front rules, whose refined drag reads an "
+         "untransported front and so does not vanish with the coarse one",
+         zero > 0 and zero_with_vanishing_coarse_drag == zero
+         and all(r in FROZEN_FRONT_RULES for r in nz_vanishing_by_rule),
+         {"zero_cells": zero,
+          "zero_cells_with_a_vanishing_coarse_drag":
+              zero_with_vanishing_coarse_drag,
+          "nonzero_cells_with_a_vanishing_coarse_drag":
+              nonzero_with_vanishing_coarse_drag,
+          "and_they_are_all_frozen_front":
+              {k: v for k, v in sorted(nz_vanishing_by_rule.items())}})
+
+    # THE IMAGE READING IS A COORDINATE OF THE LIFT, and rule-relative
+    right_image_zero = mutate(
+        "image-agreement-lax", right_image_zero,
+        {k: [v[1], v[1]] for k, v in right_image_zero.items()})
+    ri_rows = {k: {"image_defect_zero": v[0], "cells": v[1]}
+               for k, v in sorted(right_image_zero.items())}
+    blind = sorted([r for r in right_image_zero
+                    if right_image_zero[r][0] == right_image_zero[r][1]])
+    gate("G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+         "the image reading is a COORDINATE OF THE LIFT, not a property of the "
+         "move: under the left lift the image defect is the whole coarse drag "
+         "at every cell, while under the RIGHT lift it vanishes identically for "
+         "the count-blind rules and not for the others.  Both readings are in "
+         "the same census; the delivered instrument printed only the left one",
+         len(blind) > 0 and len(blind) < len(RULES)
+         and all(right_image_zero[r][0] < right_image_zero[r][1]
+                 for r in right_image_zero if r not in blind),
+         {"per_rule_right_lift": ri_rows,
+          "rules_with_an_identically_zero_image_defect": blind})
+
+    # THE DECLARED RULE FAMILY'S OWN DENOMINATOR, measured
+    field_keys = sorted(rule_fields)
+    coincidences = []
+    for i in range(len(field_keys)):
+        for j in range(i + 1, len(field_keys)):
+            if rule_fields[field_keys[i]] == rule_fields[field_keys[j]]:
+                coincidences.append([field_keys[i], field_keys[j]])
+    classes = []
+    seen = set()
+    for r in field_keys:
+        if r in seen:
+            continue
+        cls = sorted([s for s in field_keys
+                      if rule_fields[s] == rule_fields[r]])
+        classes.append(cls)
+        seen |= set(cls)
+    classes = mutate("rule-field-lax", classes, classes + [["PHANTOM"]])
+    gate("G-RULE-FIELD-CENSUS",
+         "the declared drag-rule family's own denominator is MEASURED: the %d "
+         "declared rules realise a measured number of DISTINCT defect fields "
+         "over the census, and the coincidence classes are named rather than "
+         "left as inflated rows.  Architecture B supported on the axis links "
+         "with weights lam_e coincides with architecture A at Lambda = "
+         "diag(lam_e); the architectures separate only through a diagonal link "
+         "or a non-diagonal Lambda" % len(RULES),
+         sum(len(c) for c in classes) == len(RULES)
+         and len(classes) < len(RULES)
+         and all(len(set(rule_fields[s] == rule_fields[c[0]] for s in c)) == 1
+                 for c in classes),
+         {"declared_rules": len(RULES), "distinct_fields": len(classes),
+          "coincidence_classes": [c for c in classes if len(c) > 1],
+          "coincident_pairs": coincidences,
+          "per_rule_nonzero": {k: v[0] for k, v in sorted(per_rule.items())}})
 
     # SPLIT DEPENDENCE, probed over a genuine fiber
     nm0 = "G-OFFDIAG2" if "G-OFFDIAG2" in splittable else splittable[0]
@@ -2369,6 +3851,7 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
             continue
         probed += 1
         builds_probe.append(rf)
+    builds_probe = mutate("split-dep-blind", builds_probe, builds_probe[:1])
     split_dep = {}
     for mode in LIFT_RULES:
         best = 0
@@ -2414,9 +3897,68 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
           "restricted_to_the_coarse_images": image_dep,
           "record": nm0, "rule": "A-axis"})
 
+    # COMPLETION-RELATIVITY, measured rather than conceded in prose: the same
+    # (record, split, rule, lapse, front, lift) cell is re-run at the OTHER
+    # declared free-link completion and the site supports are compared.
+    comp_cells = 0
+    comp_moved = 0
+    for (nm, smode, fmode) in builds:
+        if (nm, smode, "iterable-64") not in built:
+            continue
+        a = fam[nm]
+        rf_a = built[(nm, smode, fmode)]
+        rf_b = built[(nm, smode, "iterable-64")]
+        if not rf_b.admissible():
+            continue
+        lap = build_lapse_family(a.S, d)
+        fronts = front_family(a.S)
+        for rule in RULES:
+            for lname, N in lap[-(d + 1):]:
+                for fname, n in fronts:
+                    for mode in LIFT_RULES:
+                        Da = commutation_defect(rule, a, rf_a, N, n, Lr, mode)
+                        Db = commutation_defect(rule, a, rf_b, N, n, Lr, mode)
+                        comp_cells += 1
+                        if defect_support(Da, a) != defect_support(Db, a):
+                            comp_moved += 1
+    comp_moved = mutate("completion-relativity-lax", comp_moved, 0)
+    gate("G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+         "the defect's site support is COMPLETION-RELATIVE, and that is "
+         "measured rather than conceded: re-running matched cells at the other "
+         "declared free-link completion moves the support at a measured "
+         "fraction of them.  DECLARED SCOPE: the matched cells run every "
+         "admissible build, every declared rule, both lifts, every declared "
+         "front and the NON-DELTA lapse profiles (the constant profile and the "
+         "d chart ramps).  The support is a declared-arena coordinate (RUNBOOK "
+         "section 15), never an intrinsic quantity",
+         comp_cells > 0 and comp_moved > 0,
+         {"matched_cells": comp_cells, "cells_whose_support_moved": comp_moved})
+
     R["dynamics_census"] = {
         "cells": cells, "cells_with_a_nonzero_defect": nonzero,
         "cells_with_an_identically_zero_defect": zero,
+        "zero_sector": {
+            "cells": zero,
+            "with_a_vanishing_coarse_drag": zero_with_vanishing_coarse_drag,
+            "nonzero_defect_with_a_vanishing_coarse_drag":
+                nonzero_with_vanishing_coarse_drag,
+            "nonzero_defect_at_a_vanishing_coarse_drag_by_rule":
+                {k: v for k, v in sorted(nz_vanishing_by_rule.items())},
+            "characterisation": "every zero cell is a cell where the coarse "
+                                "drag vanishes identically -- the comparator "
+                                "has never returned zero on a nontrivial pair; "
+                                "the converse fails only under the declared "
+                                "frozen-front rules"},
+        "value_census": vc_rows,
+        "right_lift_image_agreement": ri_rows,
+        "rules_with_an_identically_zero_image_defect": blind,
+        "rule_field_classes": [c for c in classes],
+        "distinct_defect_fields": len(classes),
+        "site_resolved_support": {
+            "%s|%s|%s" % k: {"nonzero": v[0], "total": v[1]}
+            for k, v in sorted(site_resolved.items())},
+        "completion_relativity": {"matched_cells": comp_cells,
+                                  "cells_whose_support_moved": comp_moved},
         "builds_censused": len(builds),
         "rules": len(RULES), "lapses": len(build_lapse_family(fam[
             splittable[0]].S, d)), "fronts": len(FRONT_FAMILY_NAMES),
@@ -2433,15 +3975,20 @@ def stage5(R, fam, links, d, L, splittable, built, admissible_builds):
         "closed_form_at_coarse_images":
             "D(iota(x)) = w^c[N,n](x) exactly, under the left lift, at "
             "%d of %d cells" % (image_equals_coarse_drag, image_cells),
+        "closed_form_image_cells": image_cells,
+        "closed_form_matching": image_equals_coarse_drag,
         "matter_independence": "the matter record cancels between the two "
                                "orders, so the defect is a pure drag "
                                "comparison",
     }
-    return cells, nonzero, zero, sup_sig
+    return (cells, nonzero, zero, sup_sig, image_cells,
+            image_equals_coarse_drag, blind, ri_rows, classes,
+            zero_with_vanishing_coarse_drag, comp_cells, comp_moved)
 
 
 def stage6(R, fam, adm_names, links, d, L, splittable, ctl_row, ncoarse):
     """MEASUREMENT 5 -- THE ITERATION PROBE, and the R1 negative control."""
+    Lc = (L,) * d
     probes = {}
     for nm in adm_names:
         probes[nm] = iteration_probe(fam[nm])
@@ -2462,7 +4009,36 @@ def stage6(R, fam, adm_names, links, d, L, splittable, ctl_row, ncoarse):
           "per_record": {k: [v["ceiling_floor_log2_min_count"],
                              v["steps_achieved_at_the_declared_split"]]
                          for k, v in sorted(probes.items())}})
+    # the FLAT-RECORD SCALE TABLE: the count-1 floor is a floor on the record's
+    # own counts, not a consequence of flatness
+    flat_rows = []
+    for k in range(1, 7):
+        cts = build_counts(d, Lc, homog_rule((k, k, 2 * k), d))
+        ar = Arena("FLAT-%d" % k, d, Lc, cts, "flat at scale %d" % k)
+        pr = iteration_probe(ar)
+        flat_rows.append({"counts": [k, k, 2 * k],
+                          "admissible": ar.admissible(),
+                          "ceiling": mutate("flat-scale-lax",
+                                            pr["ceiling_floor_log2_min_count"],
+                                            0),
+                          "achieved": pr["steps_achieved_at_the_declared_split"]})
+    gate("G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+         "the flat record's unrefinability is a statement about SCALE, not "
+         "about flatness: the flat family (a, a, 2a) is admissible at every "
+         "scale inside I7's own count box, and its refinement ceiling climbs "
+         "with a.  The declared flat record sits at the count FLOOR, and it is "
+         "the floor -- not the flatness -- that forbids refinement",
+         all(r["admissible"] for r in flat_rows)
+         and flat_rows[0]["ceiling"] == 0
+         and flat_rows[-1]["ceiling"] > flat_rows[0]["ceiling"]
+         and all(r["achieved"] == r["ceiling"] for r in flat_rows),
+         {"flat_scales": flat_rows})
+    R["flat_scale_table"] = flat_rows
+
     growth = inventory_growth(L, d, links)
+    growth = mutate("growth-lax", growth,
+                    [dict(g, free_at_this_step=growth[0]["free_at_this_step"])
+                     for g in growth])
     trend = "GROWS" if growth[-1]["free_at_this_step"] > \
         growth[0]["free_at_this_step"] else "FIXED"
     gate("G-INVENTORY-TREND",
@@ -2515,7 +4091,7 @@ def stage6(R, fam, adm_names, links, d, L, splittable, ctl_row, ncoarse):
                       "an instrument rather than a verdict"
                       % (ncoarse, ncoarse, ncoarse,
                          ctl_row["tally"]["UNREPRESENTED"])}
-    return ceiling, attained, trend, ctl_q
+    return ceiling, attained, trend, ctl_q, flat_rows
 
 
 def run():
@@ -2523,12 +4099,16 @@ def run():
     rows, dyad, ctl, ncoarse = stage2(R, fam, adm_names, links, d, L, d_ext)
     built, adm_builds, splittable, unsplittable = stage3(
         R, fam, adm_names, links, d, L)
-    sf, eqf, free, refined_links, new_sites, fl, pairs, ncommute = stage4(
+    (sf, eqf, free, refined_links, new_sites, fl, pairs, ncommute,
+     witnesses_measured, flr, lift_forms, lift_by_form,
+     family_splits) = stage4(
         R, fam, adm_names, links, d, L, splittable, built, adm_builds)
-    cells, nonzero, zero, sup_sig = stage5(
+    (cells, nonzero, zero, sup_sig, image_cells, image_match, blind_rules,
+     ri_rows, rule_classes, zero_both, comp_cells, comp_moved) = stage5(
         R, fam, links, d, L, splittable, built, adm_builds)
-    ceiling, attained, trend, ctl_q = stage6(
+    ceiling, attained, trend, ctl_q, flat_rows = stage6(
         R, fam, adm_names, links, d, L, splittable, ctl, ncoarse)
+    R["text_anchor_consumers"] = verify_text_anchor_consumers()
 
     # -- the memo, gated (RUNBOOK section 14 addendum, v13 #185/#219) --------
     compared = 0
@@ -2557,6 +4137,12 @@ def run():
          {"compared": compared, "disagreements": disagree})
 
     # -- the choice inventory and the verdict -------------------------------
+    lift_form_counts = {}
+    for _r, _f in sorted(lift_forms.items()):
+        lift_form_counts[_f] = lift_form_counts.get(_f, 0) + 1
+    for _k in ("THE-COUNT-WEIGHTED-INTERPOLATION", "THE-DECLARED-RIGHT-LIFT",
+               "A-THIRD-VALUE", "VACUOUS", "UNDERDETERMINED"):
+        lift_form_counts.setdefault(_k, 0)
     fibs = sorted(sf[nm]["admissible_at_images"] for nm in splittable)
     payload = {
         "inventory": None,
@@ -2569,7 +4155,8 @@ def run():
         "restriction_checks": R["forced_part"]["restriction_checks"],
         "free_links": len(free), "refined_links": refined_links,
         "new_sites": new_sites, "forced_lift": fl,
-        "infinite_family": {"witnesses": 64,
+        "infinite_family": {"witnesses": witnesses_measured,
+                            "declared_trials": FREE_LINK_TRIALS,
                             "family": "c = a + b keeps det q = a*b > 0 for "
                                       "every b >= 1"},
         "lift_pairs_declared": len(pairs), "lift_pairs_commuting": ncommute,
@@ -2577,6 +4164,30 @@ def run():
         "equivariant_fiber_min": sorted(eqf.values())[0],
         "defect_cells": cells, "defect_nonzero_cells": nonzero,
         "defect_zero_cells": zero, "defect_support_sig": sup_sig,
+        "defect_zero_both_drags": zero_both,
+        "image_cells": image_cells, "image_match": image_match,
+        "blind_rules": blind_rules,
+        "distinct_rule_fields": len(rule_classes),
+        "completion_cells": comp_cells, "completion_moved": comp_moved,
+        "flat_scale_table": flat_rows,
+        "lift_forms": lift_form_counts,
+        "dim": d, "dim_ext": R["dimension_extension"]["d"],
+        "dim_unreached": R["dimension_extension"]["unreached_sites"],
+        "dim_refined_sites": R["dimension_extension"]["refined_sites"],
+        "mechanism": {
+            "slots": R["walls"]["wall_1_the_split"]["per_record"]
+            [sorted(R["walls"]["wall_1_the_split"]["per_record"])[0]]["slots"],
+            "records": len(R["walls"]["wall_1_the_split"]["per_record"]),
+            "records_with_the_identity": len(
+                [nm for nm in R["walls"]["wall_1_the_split"]["per_record"]
+                 if R["walls"]["wall_1_the_split"]["per_record"][nm]
+                 ["product_of_n_minus_1"] == R["split_fibers"][nm]["raw"]]),
+            "coboundary_rank": R["walls"]["wall_2_the_transverse_links"]
+            ["characterisation"]["rank_of_the_conditions"],
+            "edges": R["walls"]["wall_2_the_transverse_links"]
+            ["characterisation"]["edges"],
+            "cover_sector": len(R["walls"]["wall_3_the_q12_zero_sector"]
+                                ["sector"])},
         "iteration_ceiling": ceiling, "iteration_attained": attained,
         "inventory_trend": trend,
         "admissible_classes": len([r for r in rows if r["verdict"]
@@ -2632,6 +4243,68 @@ def run():
                                "(equivariant fiber 1); (iii) genuinely free, "
                                "fiber counted exactly"}
 
+    # ---- THE REOPENING-LEADS REGISTER (successor inputs, each at the strength
+    # this unit MEASURED, none of them entered here: charter changes are the
+    # user's) -----------------------------------------------------------------
+    mdet = R["extremal_selectors"]
+    cn0 = R["walls"]["wall_3_the_q12_zero_sector"]["canonical_refinement"]
+    R["reopening_leads"] = [
+        {"name": "R6b' -- THE RECORD-TYPE DISCRIMINATOR",
+         "measured_strength":
+             "the raw split fiber is EXACTLY prod (n_l - 1) -- the number of "
+             "ways to place one interior position given only the totals -- at "
+             "%d of %d admissible records, so a record carrying event POSITIONS "
+             "rather than event COUNTS kills the split freedom by construction, "
+             "and a granted potential collapses the free transverse links from "
+             "infinite to 1.  It does NOT touch NEW-FRONT-VALUES, which is a "
+             "separate declared variable, so the audit must be re-run and not "
+             "assumed"
+             % (len([nm for nm in R["walls"]["wall_1_the_split"]["per_record"]
+                     if R["walls"]["wall_1_the_split"]["per_record"][nm]
+                     ["product_of_n_minus_1"] == R["split_fibers"][nm]["raw"]]),
+                len(R["walls"]["wall_1_the_split"]["per_record"])),
+         "what_would_motivate_it":
+             "pinning a deeper grammar row that declares event positions "
+             "(a renewal / event-position record) BESIDE this cardinality row, "
+             "and re-running this unit's audit verbatim on it"},
+        {"name": "THE EXTREMAL PRINCIPLE",
+         "measured_strength":
+             "a max-det selector at the refined image site is UNIQUE at %d of "
+             "the %d (record, site) cells the %d splittable records carry -- "
+             "every site of every one -- and yields a globally admissible "
+             "refinement at %d of %d records; two rival extremal selectors "
+             "(most balanced, min |q_12|) are unique at %d and %d of the same "
+             "%d cells.  No extremal principle is declared in the pinned "
+             "sources, so this fixes nothing here"
+             % (mdet["max_det"]["unique_sites"], mdet["sites"],
+                mdet["records"],
+                mdet["max_det"]
+                ["records_with_an_admissible_selected_refinement"],
+                mdet["records"], mdet["most_balanced"]["unique_sites"],
+                mdet["min_abs_q12"]["unique_sites"], mdet["sites"]),
+         "what_would_motivate_it":
+             "a deeper row declaring a variational principle on the record -- "
+             "then a selector is a derivation rather than a declaration"},
+        {"name": "THE UNIVERSAL-COVER ROUTE",
+         "measured_strength":
+             "%d of the %d admissible records -- exactly the q_12 = 0 sector -- "
+             "carry counts that are coboundaries on the universal cover, and "
+             "the cover potential's count-weighted interpolation induces a "
+             "canonical refinement of %s that is admissible at %d of %d refined "
+             "sites, recovers the coarse record at %d of %d and determines the "
+             "split.  On that sector the obstruction is periodic holonomy, not "
+             "information -- but the cover is not a pinned object"
+             % (len(R["walls"]["wall_3_the_q12_zero_sector"]["sector"]),
+                len(R["walls"]["wall_1_the_split"]["per_record"]),
+                cn0["record"], cn0["admissible_refined_sites"],
+                cn0["refined_sites"], cn0["coarse_record_recovered_at"],
+                cn0["coarse_sites"]),
+         "what_would_motivate_it":
+             "a deeper row that de-periodizes the arena or pins cover objects, "
+             "so that a cover potential is a declared object rather than a "
+             "construction outside the pinned sources"},
+    ]
+
     head, segs, full = build_verdict(payload)
     R["verdict"] = full
     R["verdict_head"] = head
@@ -2655,6 +4328,18 @@ def _deepcopy(o):
 
 
 SEGMENT_PERTURBATIONS = (
+    ("MECHANISM", lambda R: R["walls"]["wall_3_the_q12_zero_sector"]
+     .__setitem__("sector", [])),
+    ("DIMENSION-RELATIVITY", lambda R: R["dimension_extension"].__setitem__(
+        "unreached_sites", 13)),
+    ("LIFT-RELATIVITY", lambda R: R["dynamics_census"].__setitem__(
+        "closed_form_matching", 7)),
+    ("FAMILY-RELATIVITY", lambda R: R["flat_scale_table"][0].__setitem__(
+        "ceiling", 9)),
+    ("COMPLETION-RELATIVITY", lambda R: R["dynamics_census"]
+     ["completion_relativity"].__setitem__("cells_whose_support_moved", 3)),
+    ("RULE-RELATIVITY", lambda R: R["dynamics_census"].__setitem__(
+        "distinct_defect_fields", 11)),
     ("CLASSES", lambda R: R["move_census"]["rows"].__setitem__(
         0, dict(R["move_census"]["rows"][0], verdict="REFUSED"))),
     ("BLOCKED-AT", lambda R: R["blocked_branch"].__setitem__(
@@ -2668,7 +4353,7 @@ SEGMENT_PERTURBATIONS = (
     ("OBSTRUCTION", lambda R: R["choice_inventory"]["items"][7].__setitem__(
         "name", "SOMETHING-ELSE")),
     ("SPLIT-FIBER", lambda R: R["count_lattice"].__setitem__(
-        "unique_admissible_split_count", 99)),
+        "splittable", 99)),
     ("FREE-LINKS", lambda R: R["choice_inventory"]["items"][5]["evidence"]
      .__setitem__("free", 7)),
     ("NEW-FRONTS", lambda R: R["choice_inventory"]["items"][6]["evidence"]
@@ -2770,7 +4455,8 @@ MUTANTS = [
      "what": "degrades the measured lapse-bracket rank"},
     {"name": "lattice-drop", "expected_gate": "G-COUNT-LATTICE-REPRODUCES-I7",
      "what": "drops one admissible count vector from I7's declared box"},
-    {"name": "potential-lax", "expected_gate": "G-NO-POTENTIAL",
+    {"name": "potential-lax",
+     "expected_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
      "what": "reports a vanishing cycle sum, i.e. a record with a potential"},
     {"name": "census-drop", "expected_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
      "what": "drops the single-interval class from the move census"},
@@ -2817,6 +4503,133 @@ MUTANTS = [
     {"name": "prose-claim-drift",
      "expected_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
      "what": "drifts a rendered paper claim away from the receipt"},
+
+    # ---- the falsifiers this unit's hostile round proved were missing -------
+    # Each row below closes an injection class that survived the delivered
+    # instrument at exit 0, or de-shadows a gate the delivered waiver ledger
+    # claimed was covered and was not.
+    {"name": "anchor-hash-A-R0-PIN", "expected_gate": "A-R0-PIN",
+     "what": "corrupts the v14 founding pin's measured hash -- the one "
+             "anchor row the delivered mutant table left unfalsified"},
+    {"name": "text-window-drift", "expected_gate": "G-TEXT-ANCHORS",
+     "what": "preserves the quoted needle and moves its CONTEXT WINDOW: the "
+             "meaning-inverting injection the fragment anchor could not see"},
+    {"name": "text-consumer-drift", "expected_gate": "G-TEXT-ANCHOR-CONSUMERS",
+     "what": "points a verbatim-text row at a gate no execution path "
+             "registers -- an anchor bound to no consumer"},
+    {"name": "curvoff-corrupt",
+     "expected_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+     "what": "corrupts the site-dependent cross-term record's constructor"},
+    {"name": "q-cell-perturb", "expected_gate": "G-RECORD-IS-METRIC",
+     "what": "moves one readout cell of an already-built record, so "
+             "admissibility is untouched and only record-IS-metric can see it"},
+    {"name": "cover-lax", "expected_gate": "G-COVER-POTENTIAL-SECTOR",
+     "what": "inverts the universal-cover coboundary test, breaking the "
+             "measured identity of the cover sector with the q_12 = 0 sector"},
+    {"name": "census-drop-inside",
+     "expected_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+     "what": "drops a move class INSIDE the constructor, where a "
+             "self-comparing completeness gate cannot see it (#219)"},
+    {"name": "candidates-typed",
+     "expected_gate": "G-BLOCKED-CANDIDATES-COMPUTED",
+     "what": "types the blocked branch's candidate count instead of reading "
+             "it off the ambiguous census rows (#24)"},
+    {"name": "link-targets-typed", "expected_gate": "G-REFUSAL-MEASURED",
+     "what": "types a second link target at the inserted site instead of "
+             "testing membership in the built site set (#24)"},
+    {"name": "completion-sweep-lax", "expected_gate": "G-BLOCK-IS-REAL",
+     "what": "breaks the completion sweep's agreement criterion"},
+    {"name": "dim-link-set", "expected_gate": "G-DIMENSION-EXTENSION",
+     "what": "adds the body diagonal to the declared d=3 link set, so no "
+             "parity class is unreached"},
+    {"name": "unsplittable-drop", "expected_gate": "G-UNSPLITTABLE-RECORDS",
+     "what": "empties the unsplittable set, which the two independent routes "
+             "must then disagree about"},
+    {"name": "record-drop", "expected_gate": "G-RECORD-FAMILY-CELL-COMPLETE",
+     "what": "drops one record from the forced part -- the record-family "
+             "analogue of the move-census cell drop"},
+    {"name": "triples-drop", "expected_gate": "G-FIBER-COMPUTED",
+     "what": "drops one admissible triple INSIDE the shared enumerator, which "
+             "only a genuinely independent comparator can catch (#219)"},
+    {"name": "witness-loop-bound", "expected_gate": "G-FREE-LINKS-INFINITE",
+     "what": "shortens the infinite-family witness sweep, so the measured "
+             "witness count no longer covers the declared trial range"},
+    {"name": "lift-mode-blind", "expected_gate": "G-LIFT-GRID-CELL-COMPLETE",
+     "what": "makes the lift ignore its own mode, so every pair commutes"},
+    {"name": "flat-scale-lax",
+     "expected_gate": "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+     "what": "flattens the flat-record scale table's ceilings"},
+    {"name": "forced-lift-rule-lax",
+     "expected_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+     "what": "collapses the per-rule forced-lift solve to one form"},
+    {"name": "closed-form-lax", "expected_gate": "G-DEFECT-CLOSED-FORM",
+     "what": "loses one coarse-image closed-form match"},
+    {"name": "defect-zero-parity", "expected_gate": "G-DEFECT-VALUE-CENSUS",
+     "what": "erases the defect VALUES on the all-odd parity class -- the "
+             "injection that left all four cell-denominated defect gates green"},
+    {"name": "defect-support-halve", "expected_gate": "G-DEFECT-CHARACTERISED",
+     "what": "halves the IMAGE row of the support accumulator, which only a "
+             "second-pass rebuild can catch (#219)"},
+    {"name": "zero-sector-lax", "expected_gate": "G-ZERO-SECTOR-CHARACTERISED",
+     "what": "claims a zero defect at a cell whose coarse drag does not vanish"},
+    {"name": "image-agreement-lax",
+     "expected_gate": "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+     "what": "makes the right-lift image agreement uniform across the rules"},
+    {"name": "rule-field-lax", "expected_gate": "G-RULE-FIELD-CENSUS",
+     "what": "inflates the declared rule family's distinct-field census"},
+    {"name": "completion-relativity-lax",
+     "expected_gate": "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+     "what": "suppresses the measured completion-relativity of the support"},
+    {"name": "split-dep-blind", "expected_gate": "G-DEFECT-SPLIT-DEPENDENCE",
+     "what": "probes a single split, so the dependence cannot be seen"},
+    {"name": "growth-lax", "expected_gate": "G-INVENTORY-TREND",
+     "what": "flattens the inventory growth table"},
+    {"name": "cache-disable", "expected_gate": "G-CACHE-EXERCISED",
+     "what": "disables the weight memo, so the cache path is never exercised"},
+    {"name": "reconstructor-pin",
+     "expected_gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+     "what": "hard-codes one comparator field at its correct value, so the "
+             "string-equality gate passes and only flippability can see it"},
+    {"name": "reconstructor-head",
+     "expected_gate": "G-VERDICT-ALL-HEADS-REACHABLE",
+     "what": "pins the COMPARATOR's head, which the string gate cannot see"},
+    {"name": "receipt-cell-corrupt",
+     "expected_gate": "G-RECEIPT-MATCHES-THE-GATED-VALUES",
+     "what": "corrupts a receipt cell AFTER its gate has passed -- the class "
+             "that reached both delivered artifacts at exit 0"},
+    {"name": "receipt-float", "expected_gate": "G-NO-FLOATS-IN-RECEIPT",
+     "what": "puts a float into the measurement object itself"},
+    {"name": "deferred-phantom",
+     "expected_gate": "G-DEFERRED-GATES-EVALUATED",
+     "what": "declares a deferred gate no execution path evaluates"},
+    {"name": "gate-count-lax", "expected_gate": "G-FINAL-GATE-COUNT",
+     "what": "perturbs the gate count the paper's instrument sentence carries"},
+    {"name": "waiver-remove", "expected_gate": "G-FALSIFIER-CENSUS-HONEST",
+     "what": "removes one waiver, leaving a silently exempted gate"},
+    {"name": "waiver-text-drift", "expected_gate": "G-WAIVER-TEXT-RENDERED",
+     "what": "ships a false waiver string instead of the rendered one"},
+    {"name": "waiver-extraneous", "expected_gate": "G-WAIVER-LEDGER-CLEAN",
+     "what": "leaves a waiver key for a gate that IS falsified -- the dead "
+             "entry the delivered ledger carried"},
+    {"name": "multiplicity-lax",
+     "expected_gate": "G-SPLIT-MULTIPLICITY-IDENTITY",
+     "what": "breaks the prod (n_l - 1) identity at one record"},
+    {"name": "counterfactual-lax", "expected_gate": "G-POTENTIAL-COUNTERFACTUAL",
+     "what": "claims a granted potential leaves free transverse link slots"},
+    {"name": "coboundary-rank-lax", "expected_gate": "G-COBOUNDARY-CHARACTERISED",
+     "what": "moves the rank of the coboundary conditions, so they no longer "
+             "cut out the coboundaries exactly"},
+    {"name": "cover-canon-lax",
+     "expected_gate": "G-COVER-CANONICAL-REFINEMENT",
+     "what": "breaks the canonical refinement's restriction to the coarse "
+             "record"},
+    {"name": "extremal-lax", "expected_gate": "G-EXTREMAL-SELECTORS-TESTED",
+     "what": "suppresses the max-det selector's measured uniqueness"},
+    {"name": "mutant-table-lax", "expected_gate": "G-MUTANT-TABLE-MEASURED",
+     "what": "marks one row of the mutant table as a survivor"},
+    {"name": "mutant-gate-drift", "expected_gate": "G-FALSIFIER-CENSUS-HONEST",
+     "what": "retargets a mutant's declared death gate, silently leaving the "
+             "gate it really kills without a falsifier"},
 ]
 
 
@@ -2874,12 +4687,56 @@ def render_text(R):
           % (nm, tuple(v["counts_at_00"]), tuple(v["counts_at_11"]),
              v["admissible"], v["min_count"], v["homogeneous"]))
     w("")
-    w("--- 2. THE NO-POTENTIAL THEOREM (the mechanism of the freedom)")
-    w("  counts are strictly positive on a periodic lattice, so no record's")
-    w("  counts are the coboundary of a site function; the split cannot be")
-    w("  read off any potential.  min axis cycle sum per record:")
+    w("--- 2. THE THREE WALLS")
+    wl = R["walls"]
+    w1 = wl["wall_1_the_split"]
+    w("  WALL 1 -- THE SPLIT: %s" % w1["obstruction"])
+    w("    %s" % w1["identity"])
+    w("    %-12s %-26s %-26s %s"
+      % ("record", "prod (n_l - 1)", "raw split fiber", "fiber | potential"))
+    for nm in sorted(w1["per_record"]):
+        w("    %-12s %-26s %-26s %s"
+          % (nm, w1["per_record"][nm]["product_of_n_minus_1"],
+             R["split_fibers"][nm]["raw"],
+             w1["potential_counterfactual"][nm]
+             ["split_fiber_under_a_granted_potential"]))
+    pc0 = w1["potential_counterfactual"][sorted(w1["potential_counterfactual"])
+                                         [0]]
+    w("    a granted refinement-compatible potential leaves the split fiber")
+    w("    IDENTICAL and collapses the free transverse links %d -> 0 slots"
+      % pc0["free_transverse_link_slots_without_a_potential"])
+    w2 = wl["wall_2_the_transverse_links"]
+    w("  WALL 2 -- THE TRANSVERSE LINKS: %s" % w2["obstruction"])
+    ch = w2["characterisation"]
+    w("    coboundary IFF (a) every axis cycle sums to 0 AND (b) the triangle")
+    w("    relations hold; measured on %d sites / %d edges: rank(delta) = %d,"
+      % (ch["sites"], ch["edges"], ch["rank_of_delta"]))
+    w("    cycle rank %d, the (a)+(b) system has rank %d and solution dimension"
+      % (ch["cycle_rank"], ch["rank_of_the_conditions"]))
+    w("    %d -- so the conditions cut out the coboundaries exactly.  Strict"
+      % ch["solution_dimension"])
+    w("    positivity forbids (a) for EVERY record, at every L and every d.")
+    w("    min axis cycle sum per record:")
     w("    " + ", ".join("%s=%d" % (k, v["min_axis_cycle_sum"])
                          for k, v in R["no_potential"].items()))
+    w3 = wl["wall_3_the_q12_zero_sector"]
+    w("  WALL 3 -- THE q_12 = 0 SECTOR: %s" % w3["obstruction"])
+    w("    cover-coboundary records: %s" % ", ".join(w3["sector"]))
+    for nm in sorted(w3["per_record"]):
+        v = w3["per_record"][nm]
+        w("      %-12s q12=%-10s curl0=%-6s triangle=%-6s cover-coboundary=%s"
+          % (nm, ",".join(v["q12_values"]), v["plaquette_curl_vanishes"],
+             v["triangle_relations_hold"],
+             v["is_a_coboundary_on_the_universal_cover"]))
+    cn = w3["canonical_refinement"]
+    w("    the canonical refinement induced on %s: %d of %d refined sites"
+      % (cn["record"], cn["admissible_refined_sites"], cn["refined_sites"]))
+    w("      admissible, coarse record recovered at %d of %d, split fiber %d,"
+      % (cn["coarse_record_recovered_at"], cn["coarse_sites"],
+         cn["induced_split_fiber"]))
+    w("      differing from the declared minimal completion at %d slots"
+      % cn["slots_differing_from_the_declared_minimal_completion"])
+    w("    SCOPE: %s" % w3["scope"])
     w("")
     w("--- 3. THE MOVE CENSUS (%d coarse intervals per class)"
       % R["move_census"]["coarse_intervals"])
@@ -2900,10 +4757,13 @@ def render_text(R):
          R["blocked_branch"]["candidates_per_interval"],
          R["blocked_branch"]["loci_censused"],
          R["blocked_branch"]["all_loci_agree"]))
-    w("    the ambiguity is REAL: over %d declared completions the two "
-      "candidate readings disagree at %d"
+    w("    the ambiguity is REAL: over %d declared completions (%s) the two "
+      "candidate readings disagree at %d, and the agreement criterion %s is "
+      "verified at every one"
       % (R["blocked_branch"]["completion_sweep"]["completions"],
-         R["blocked_branch"]["completion_sweep"]["disagreeing"]))
+         R["blocked_branch"]["completion_sweep"]["scope"],
+         R["blocked_branch"]["completion_sweep"]["disagreeing"],
+         R["blocked_branch"]["completion_sweep"]["agreement_criterion"]))
     w("")
     w("  REFUSED branch -- SINGLE-INTERVAL")
     w("    %s" % R["refused_branch"]["reason"])
@@ -2942,7 +4802,8 @@ def render_text(R):
     for it in R["choice_inventory"]["items"]:
         w("  %-26s (%-3s) %-22s %s"
           % (it["name"], it["class_declared"], str(it["fiber"]),
-             (it["forced_by"] or "-- NOTHING IN THE PINNED GRAMMAR --")[:60]))
+             (it["forced_by"]
+              or "-- NO DECLARED SELECTOR (see rejected_forcings) --")[:60]))
     w("  forced %d | stabiliser-fixed %d | genuinely free %d"
       % (R["choice_inventory"]["forced"],
          R["choice_inventory"]["stabiliser_fixed"],
@@ -2981,11 +4842,51 @@ def render_text(R):
         w("    front=%-6s lapse=%-6s commutes=%s"
           % (p["front_lift"], p["lapse_lift"], p["front_sector_commutes"]))
     fl = R["forced_front_lift"]
-    w("  the dynamics-forced front lift is NON-INTEGRAL at %d of %d cells; "
-      "and n | n_1 holds at %d of %d splits (it cannot)"
-      % (fl["non_integral"], fl["cells"],
-         R["forced_lift_universal"]["splits_with_n_dividing_n1"],
-         R["forced_lift_universal"]["triples_checked"]))
+    w("  the count-weighted interpolation is NON-INTEGRAL at %d of the %d "
+      "(front, site, link) cells of %s at the balanced split;"
+      % (fl["non_integral"], fl["cells"], fl["record"]))
+    w("  n | n_1 holds at %d of the %d splits of %s (it cannot); the same "
+      "sweep over the splittable family carries %d splits"
+      % (R["forced_lift_universal"]["splits_with_n_dividing_n1"],
+         R["forced_lift_universal"]["triples_checked"],
+         R["forced_lift_universal"]["record"],
+         R["forced_lift_universal"]["splits_over_the_splittable_family"]))
+    w("")
+    w("  WHICH lift the dynamics forces is a function of the DRAG RULE:")
+    flr = R["forced_lift_by_rule"]
+    w("    %-15s %-34s %-8s %-8s %s"
+      % ("rule", "forced form", "cells", "integral", "= right lift"))
+    for rule in sorted(flr["per_rule"]):
+        row = flr["per_rule"][rule]
+        w("    %-15s %-34s %-8d %-8d %d"
+          % (rule, flr["forms"][rule], row["cells"], row["integral"],
+             row["equals_the_declared_right_lift"]))
+    w("  the image reading is a COORDINATE OF THE LIFT: under the right lift "
+      "the image defect vanishes identically for")
+    w("    %s and not for the others:"
+      % ", ".join(dc["rules_with_an_identically_zero_image_defect"]))
+    for k, v in sorted(dc["right_lift_image_agreement"].items()):
+        w("      %-15s image defect zero at %5d of %5d"
+          % (k, v["image_defect_zero"], v["cells"]))
+    w("  the %d declared rules realise %d DISTINCT defect fields; coincidence "
+      "classes: %s"
+      % (len(dc["per_rule"]), dc["distinct_defect_fields"],
+         "; ".join(", ".join(c) for c in dc["rule_field_classes"]
+                   if len(c) > 1)))
+    w("  the zero sector: %d identically-zero cells, %d of them with a "
+      "vanishing coarse drag, %d nonzero-defect cells at a vanishing coarse "
+      "drag"
+      % (dc["cells_with_an_identically_zero_defect"],
+         dc["zero_sector"]["with_a_vanishing_coarse_drag"],
+         dc["zero_sector"]["nonzero_defect_with_a_vanishing_coarse_drag"]))
+    w("  completion-relativity: the support moves at %d of %d matched cells "
+      "under the other declared completion"
+      % (dc["completion_relativity"]["cells_whose_support_moved"],
+         dc["completion_relativity"]["matched_cells"]))
+    w("  value census (the defect's own values, by site class):")
+    for k, v in sorted(dc["value_census"].items()):
+        w("    %-14s nonzero components %6d of %6d, absolute mass %s"
+          % (k, v["nonzero_components"], v["components"], v["abs_mass"]))
     w("")
     w("--- 7. THE ITERATION PROBE")
     it = R["iteration"]
@@ -2995,6 +4896,11 @@ def render_text(R):
         w("    %-12s ceiling %d  achieved %d  halt: %s"
           % (nm, v["ceiling_floor_log2_min_count"],
              v["steps_achieved_at_the_declared_split"], v["halt_reason"]))
+    w("  the flat family (a, a, 2a) at other scales -- the count FLOOR, not "
+      "flatness, is what forbids refinement:")
+    for r in R["flat_scale_table"]:
+        w("    %-12s admissible=%-5s ceiling %d achieved %d"
+          % (tuple(r["counts"]), r["admissible"], r["ceiling"], r["achieved"]))
     w("  inventory trend: %s" % it["inventory_trend"])
     for g in it["inventory_growth"]:
         w("    level %d: L=%d links %d -> refined %d, covered %d, free %d; "
@@ -3014,15 +4920,29 @@ def render_text(R):
     w("")
     w("  " + R["verdict"])
     w("")
-    w("--- 10. INSTRUMENT")
+    w("--- 10. THE REOPENING LEADS (successor inputs, at their measured "
+      "strength)")
+    for lead in R.get("reopening_leads", []):
+        w("  %s -- %s" % (lead["name"], lead["measured_strength"]))
+        w("    would be motivated by: %s" % lead["what_would_motivate_it"])
+    w("  charter changes are the user's; none of these is entered here.")
+    w("")
+    w("--- 11. INSTRUMENT")
     t = R["totals"]
     w("  anchors %d | gates %d (%d must-pass, %d recorded) | mutants %d"
       % (t["anchors"], t["gates"], t["must_pass_gates"], t["recorded_gates"],
          t["mutants"]))
+    if "mutant_table" in R:
+        w("  mutant table RUN in this delivery: %d declared, %d measured dead "
+          "on their declared gate, %d survivors"
+          % (len(R["mutant_table"]), t.get("mutants_measured_dead"),
+             t.get("mutant_survivors")))
     fc = R.get("falsifier_census", {})
     if fc:
-        w("  falsifier census: %s; never falsified: %s"
-          % (fc.get("denominator"), fc.get("never_falsified")))
+        w("  falsifier census: %s" % fc.get("denominator"))
+        w("  never falsified: %s" % fc.get("never_falsified"))
+        for n in fc.get("never_falsified", []):
+            w("    %-34s %s" % (n, fc["waivers"][n]))
     w("")
     return "\n".join(L) + "\n"
 
@@ -3044,6 +4964,19 @@ def paper_claims(R):
     fl = R["forced_front_lift"]
     sp = [i for i in ci["items"] if i["name"] == "THE-SPLIT"][0]
     fr = [i for i in ci["items"] if i["name"] == "FREE-TRANSVERSE-LINKS"][0]
+    wl = R["walls"]
+    w1 = wl["wall_1_the_split"]
+    cn = wl["wall_3_the_q12_zero_sector"]["canonical_refinement"]
+    mech_ident = len([nm for nm in w1["per_record"]
+                      if w1["per_record"][nm]["product_of_n_minus_1"]
+                      == R["split_fibers"][nm]["raw"]])
+    lforms = {}
+    for _r, _f in sorted(R["forced_lift_by_rule"]["forms"].items()):
+        lforms[_f] = lforms.get(_f, 0) + 1
+    for _k in ("THE-COUNT-WEIGHTED-INTERPOLATION", "THE-DECLARED-RIGHT-LIFT",
+               "A-THIRD-VALUE", "VACUOUS", "UNDERDETERMINED"):
+        lforms.setdefault(_k, 0)
+    fam_counts = sorted(set(R["odd_counts_on_splittable_records"]))
     claims = {
         "census": "%d coarse intervals per class; the dyadic move subdivides "
                   "%d of %d, single-direction hyperplane insertion subdivides "
@@ -3057,12 +4990,11 @@ def paper_claims(R):
                      R["control"]["tally"]["SUBDIVIDED"],
                      R["control"]["tally"]["UNREPRESENTED"]),
         "blocked": "the coarse displacement has %d minimal decompositions with "
-                   "%d distinct interior sites, and over %d declared "
-                   "completions the two candidate readings disagree at %d"
+                   "%d distinct interior sites, at each of %d of the %d coarse "
+                   "intervals of the class"
                    % (bb["candidates_per_interval"],
                       bb["candidates_per_interval"],
-                      bb["completion_sweep"]["completions"],
-                      bb["completion_sweep"]["disagreeing"]),
+                      bb["ambiguous_intervals"], mc["coarse_intervals"]),
         "refused": "the direction-0 cycle lengths become %s, %d sites is not "
                    "divisible by the longest cycle %d, and only %d of the %d "
                    "declared link displacements has a target at the new site"
@@ -3086,11 +5018,12 @@ def paper_claims(R):
                      % (ci["forced"], ci["stabiliser_fixed"],
                         ci["genuinely_free"]),
         "split_fiber": "the admissible split fiber runs from %s to %s over the "
-                       "six records that admit the move, and the "
+                       "%d records that admit the move, and the "
                        "chart-equivariant fiber is never 1 (its smallest value "
                        "is %s)"
                        % (sp["evidence"]["min_admissible_fiber"],
                           sp["evidence"]["max_admissible_fiber"],
+                          len(fp["splittable_records"]),
                           sp["evidence"]["equivariant_fibers"][0]),
         "lattice": "of the %d admissible count vectors in the declared box, %d "
                    "are splittable at all and exactly %d has a unique "
@@ -3107,18 +5040,91 @@ def paper_claims(R):
                   "and identically zero at %d"
                   % (dc["cells_with_a_nonzero_defect"], dc["cells"],
                      dc["cells_with_an_identically_zero_defect"]),
-        "forced_lift": "the dynamics-forced front lift is non-integral at %d of "
-                       "%d cells, and n divides n_1 at %d of the %d splits of "
-                       "the declared family"
-                       % (fl["non_integral"], fl["cells"],
+        "forced_lift": "the count-weighted interpolation is non-integral at %d "
+                       "of the %d (front, site, link) cells of %s at the "
+                       "balanced split, and n divides n_1 at %d of the %d "
+                       "splits of %s -- the record at which the forced lift is "
+                       "censused; over the %d splittable records of the "
+                       "declared family the same sweep carries %d splits"
+                       % (fl["non_integral"], fl["cells"], fl["record"],
                           R["forced_lift_universal"]
                           ["splits_with_n_dividing_n1"],
-                          R["forced_lift_universal"]["triples_checked"]),
+                          R["forced_lift_universal"]["triples_checked"],
+                          R["forced_lift_universal"]["record"],
+                          len(fp["splittable_records"]),
+                          R["forced_lift_universal"]
+                          ["splits_over_the_splittable_family"]),
+        "forced_lift_by_rule": "of the %d declared drag rules %d force the "
+                               "declared right lift, which is integral at every "
+                               "cell, %d force the count-weighted "
+                               "interpolation, %d force a third value, %d "
+                               "imposes no condition on the lift and %d leaves "
+                               "it underdetermined"
+                               % (len(RULES),
+                                  lforms["THE-DECLARED-RIGHT-LIFT"],
+                                  lforms["THE-COUNT-WEIGHTED-INTERPOLATION"],
+                                  lforms["A-THIRD-VALUE"], lforms["VACUOUS"],
+                                  lforms["UNDERDETERMINED"]),
+        "odd_counts": "the declared family's splittable records carry the odd "
+                      "counts %s" % ", ".join(
+                          str(v) for v in sorted(set(
+                              fam_counts))[:-1]) + " and %d" % sorted(
+                                  set(fam_counts))[-1],
         "iteration": "the ceiling is %d consecutive steps and it is attained"
                      % it["ceiling_over_the_family"],
-        "instrument": "%d gates, all passed; %d anchors; %d mutants, no "
-                      "survivors" % (R["totals"]["gates"],
-                                     R["totals"]["anchors"], len(MUTANTS)),
+        "multiplicity": "the raw split fiber equals the product of (n_l - 1) "
+                        "over the %d (site, link) slots at %d of the %d "
+                        "admissible records, and a granted refinement-"
+                        "compatible potential leaves it unchanged while "
+                        "collapsing the free transverse links from infinite "
+                        "to 1"
+                        % (w1["per_record"][sorted(w1["per_record"])[0]]
+                           ["slots"], mech_ident, len(w1["per_record"])),
+        "coboundary": "the coboundary conditions cut out a solution space of "
+                      "dimension %d in %d edge variables, matching the rank of "
+                      "delta exactly"
+                      % (wl["wall_2_the_transverse_links"]["characterisation"]
+                         ["solution_dimension"],
+                         wl["wall_2_the_transverse_links"]["characterisation"]
+                         ["edges"]),
+        "cover": "%d of the %d admissible records -- exactly those whose "
+                 "off-diagonal metric component vanishes identically -- carry "
+                 "counts that are coboundaries on the universal cover"
+                 % (len(wl["wall_3_the_q12_zero_sector"]["sector"]),
+                    len(w1["per_record"])),
+        "cover_canonical": "the induced canonical refinement of %s is "
+                           "admissible at %d of %d refined sites, recovers the "
+                           "coarse record at %d of %d sites and determines the "
+                           "split"
+                           % (cn["record"], cn["admissible_refined_sites"],
+                              cn["refined_sites"],
+                              cn["coarse_record_recovered_at"],
+                              cn["coarse_sites"]),
+        "zero_sector": "every identically-zero cell is a cell at which the "
+                       "coarse drag itself vanishes, %d of %d; the converse "
+                       "fails at %d cells, all of them under the declared "
+                       "frozen-front rule"
+                       % (dc["zero_sector"]["with_a_vanishing_coarse_drag"],
+                          dc["cells_with_an_identically_zero_defect"],
+                          dc["zero_sector"]
+                          ["nonzero_defect_with_a_vanishing_coarse_drag"]),
+        "completion_sweep": "over %d declared completions the two candidate "
+                            "readings disagree at %d, and the agreement "
+                            "criterion f_1 - f_0 = n_2 - n_1 is verified at "
+                            "every one"
+                            % (bb["completion_sweep"]["completions"],
+                               bb["completion_sweep"]["disagreeing"]),
+        "flat_scales": "the flat family (a, a, 2a) is admissible at every scale "
+                       "in the declared count box, with refinement ceilings %s"
+                       % ", ".join(str(r["ceiling"])
+                                   for r in R["flat_scale_table"]),
+        "rule_fields": "the %d declared drag rules realise %d distinct defect "
+                       "fields over the census"
+                       % (len(dc["per_rule"]), dc["distinct_defect_fields"]),
+        "instrument": "%d gates, all passed; %d anchors; %d mutants, all dead "
+                      "at their declared gate" % (R["totals"]["gates"],
+                                                  R["totals"]["anchors"],
+                                                  len(MUTANTS)),
         "verdict": R["verdict"],
     }
     return mutate("prose-claim-drift", claims,
@@ -3136,8 +5142,13 @@ def paper_prose_audit(R):
 
 
 def render_check(R):
-    """TOTAL render check: every rendered field is rebuilt from the gated object
-    and compared -- not a chosen subset."""
+    """The render check, at its true scope.  It rebuilds and compares the
+    move-census rows, the inventory names and fibers, the presence of the
+    verdict string, the defect-support lines and the three-wall lines -- NOT
+    every rendered block.  The claim that it is total is withdrawn: the receipt
+    and the output render from the ONE object R with no bypass path, and the
+    protection against a corrupted R is G-RECEIPT-MATCHES-THE-GATED-VALUES,
+    which compares the emitted bytes against the gate ledger."""
     bad = []
     text = render_text(R)
     for r in R["move_census"]["rows"]:
@@ -3156,6 +5167,13 @@ def render_check(R):
         if ("%-14s nonzero %6d of %6d" % (k, v["nonzero"], v["total"])) \
            not in text:
             bad.append(("defect_support", k))
+    w1 = R["walls"]["wall_1_the_split"]["per_record"]
+    for nm in sorted(w1):
+        if str(w1[nm]["product_of_n_minus_1"]) not in text:
+            bad.append(("wall_1_multiplicity", nm))
+    for nm in R["walls"]["wall_3_the_q12_zero_sector"]["sector"]:
+        if nm not in text:
+            bad.append(("wall_3_sector", nm))
     return mutate("render-escape", bad, bad + [("injected", "render-escape")])
 
 
@@ -3257,9 +5275,47 @@ def compliance_sweep(R):
             "G-RECORD-IS-METRIC") + "; " + mut("fiber-typed", "lattice-drop")),
         ("#219 a gate clause may not compare an object against a copy of "
          "itself routed through the component under test",
-         "APPLIED -- the restriction test's comparator is the coarse record's "
-         "own q, built by a route the restriction does not touch; the verdict "
-         "comparator reads the receipt only; " + by("G-CACHE-FRESH-EQUALS-MEMO")),
+         "APPLIED at every place the round found it violated: the split fiber "
+         "is gated against a closed-form integer-interval counter that "
+         "enumerates no triple (%s); the move census is gated against a class "
+         "key set and a count derived from L alone (%s); the defect support "
+         "signature is rebuilt in a second pass over the per-cell rows (%s); "
+         "and the verdict comparator reads the receipt only.  NOT claimed: the "
+         "metric-restriction test is a COROLLARY of additivity -- restrict o "
+         "refine = id on counts -- and its independence framing is withdrawn "
+         "(%s); "
+         % (by("G-FIBER-COMPUTED"), by("G-MOVE-CENSUS-CELL-COMPLETE"),
+            by("G-DEFECT-CHARACTERISED"),
+            "G-RESTRICTION-IS-AN-ADDITIVITY-COROLLARY is a recorded disclosure")
+         + by("G-CACHE-FRESH-EQUALS-MEMO") + "; "
+         + mut("triples-drop", "census-drop-inside", "defect-support-halve")),
+        ("v14 #34 WAIVER CLAIMS ARE GATE CLAIMS: a never-falsified waiver "
+         "naming a mutant or a forcing is a claim requiring verification, and "
+         "a gate no execution path evaluates is dead code",
+         by("G-WAIVER-LEDGER-CLEAN", "G-WAIVER-TEXT-RENDERED",
+            "G-MUTANT-TABLE-MEASURED", "G-FALSIFIER-CENSUS-HONEST")
+         + " -- the only permitted waiver form is FORCED with a machine-checked "
+         "witness (no waiver may name a mutant); every declared mutant is RUN "
+         "in-delivery and its actual death gate is compared with its declared "
+         "one; %s; "
+         % ("%d gates never falsified, %d with a machine-checked forcing, %d "
+            "unprotected" % (fc.get("never_falsified_count", 0),
+                             len(fc.get(
+                                 "never_falsified_with_a_machine_checked_"
+                                 "forcing", [])),
+                             len(fc.get("never_falsified_unprotected", []))))
+         + mut("waiver-remove", "waiver-text-drift", "waiver-extraneous",
+               "mutant-gate-drift")),
+        ("v14 #34 VERBATIM-TEXT ANCHORS ADOPTED with three binding "
+         "modifications: evaluated before the byte anchors, each row bound to a "
+         "named consumer gate, context windows anchored rather than fragments",
+         by("G-TEXT-ANCHORS", "G-TEXT-ANCHOR-CONSUMERS")
+         + " -- verify_text_anchors() runs FIRST in stage 1, every row names "
+         "its consumer gate and that gate is checked registered, and every row "
+         "anchors the sha256 of the %d-byte window centred on its needle; "
+         % (2 * TEXT_ANCHOR_WINDOW)
+         + mut("text-anchor-drift", "text-window-drift",
+               "text-consumer-drift")),
         ("#219/#185 a zero-hit cache gate is vacuous, and a self-test routed "
          "through the memo tests the cache",
          by("G-CACHE-EXERCISED", "G-CACHE-FRESH-EQUALS-MEMO") + "; "
@@ -3292,12 +5348,43 @@ def compliance_sweep(R):
          "free-completion rules, the front family, the lapse family and the "
          "lift rules are all declared tables in the receipt; the defect's site "
          "support is reported as completion-relative"),
-        ("RUNBOOK section 4 controls in BOTH directions",
-         "APPLIED -- positive: the defect census returns identically zero at "
-         "%d cells, so a nonzero reading is a measurement; negative: the R1 "
-         "copying move is failed by the same audit (%s)"
-         % (R["dynamics_census"]["cells_with_an_identically_zero_defect"],
-            by("G-CONTROL-UNMOTIVATED"))),
+        ("RUNBOOK section 4 controls in BOTH directions, with the zero sector "
+         "CHARACTERISED rather than named a positive control",
+         "APPLIED -- %s: every one of the %d identically-zero cells is a cell "
+         "where the coarse drag itself vanishes, so the comparator has never "
+         "returned zero on a nontrivial pair and these cells are a RESULT, not "
+         "a working positive control; the audit's own positive control is that "
+         "it fails a move -- the R1 copying move (%s); %s"
+         % (by("G-ZERO-SECTOR-CHARACTERISED"),
+            R["dynamics_census"]["cells_with_an_identically_zero_defect"],
+            by("G-CONTROL-UNMOTIVATED"), mut("control-pass",
+                                             "zero-sector-lax"))),
+        ("scope/denominator honesty: a rendered numeric sentence renders its "
+         "DENOMINATOR'S SCOPE, not only its numeral",
+         "APPLIED -- the divisibility sweep names its record and prints the "
+         "family total beside it, the split-fiber sentence computes its record "
+         "count instead of typing 'six', the forced-lift cell count names its "
+         "(record, split) cell, and the completion sweep prints its scope; "
+         + by("G-PROSE-RENDERS-FROM-THE-RECEIPT",
+              "G-FORCED-LIFT-NON-INTEGRAL")),
+        ("the five measured RELATIVITIES are carried by the verdict, not by "
+         "prose",
+         "APPLIED -- DIMENSION-RELATIVITY, LIFT-RELATIVITY, FAMILY-RELATIVITY, "
+         "COMPLETION-RELATIVITY and RULE-RELATIVITY are computed segments, each "
+         "flippable at its own receipt row; "
+         + by("G-DIMENSION-EXTENSION", "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+              "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+              "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+              "G-FORCED-LIFT-RULE-RELATIVE", "G-RULE-FIELD-CENSUS")),
+        ("the THREE-WALL anatomy is measured, and the cover disclosure is "
+         "scoped so that it cannot flip the verdict",
+         "APPLIED -- %s; the universal cover is NOT a pinned object and the "
+         "gate statement, the receipt and the paper all say so; %s"
+         % (by("G-SPLIT-MULTIPLICITY-IDENTITY", "G-POTENTIAL-COUNTERFACTUAL",
+               "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+               "G-COBOUNDARY-CHARACTERISED", "G-COVER-POTENTIAL-SECTOR",
+               "G-COVER-CANONICAL-REFINEMENT"),
+            mut("potential-lax", "cover-lax"))),
         ("falsifier census with an honest denominator, from delivery one",
          "APPLIED -- %s; never falsified: %s"
          % (fc.get("denominator", "PENDING"),
@@ -3310,78 +5397,287 @@ def compliance_sweep(R):
 # 18.  DELIVERY
 # ----------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# THE WAIVER LEDGER  (RUNBOOK section 14 addendum, v14 #34: WAIVER CLAIMS ARE
+# GATE CLAIMS)
+#
+# A never-falsified waiver naming a mutant or a forcing is itself a claim
+# requiring verification.  The delivered ledger asserted "covered by X" at
+# fifteen rows and at none of them did X's death gate equal the waived gate; ten
+# of the waived gates were SHADOWED (no execution path evaluated them under the
+# named mutant) and eleven were in fact falsifiable.  This ledger therefore
+# permits exactly ONE waiver form:
+#
+#     FORCED: <the algebraic reason the gate cannot fail>, with a machine-checked
+#             witness evaluated by this run.
+#
+# Every other gate carries a declared falsifier whose death gate is MEASURED (the
+# in-delivery mutant table), so "covered by X" no longer appears anywhere: it is
+# either a measured death or a machine-checked forcing.
+WAIVER_FORM_FORCED = "FORCED"
+
 NEVER_FALSIFIED_WAIVERS = {
-    "A-R0-PIN": "the v14 founding pin's own hash; the anchor-hash channel is "
-                "falsified at three of the five rows (the I7 receipt, the HA "
-                "paper, the HA code) and at this unit's own pin, and "
-                "anchor-skip proves a dropped row dies",
-    "G-ANCHOR-CELL-COMPLETE": "covered by anchor-skip",
-    "G-RECORD-FAMILY-REPRODUCES-I7":
-        "an I7 reproduction gate; the record constructors are exercised by "
-        "readout-det, rank-lax and lattice-drop, each of which perturbs a "
-        "different reading of the SAME rebuilt family",
-    "G-DIMENSION-EXTENSION":
-        "a d=3 coverage measurement whose value (the all-odd parity class) is "
-        "forced by the declared link set having no body diagonal -- an "
-        "analytically forced clause is a disclosure, not a must-pass "
-        "falsifiable gate (RUNBOOK section 14 addendum, v13 #208)",
-    "G-MOTIVATION-QUALIFIER-COMPUTED":
-        "the qualifier is a pure function of the inventory's class counts, so "
-        "inventory-corrupt falsifies it at G-INVENTORY-CLASSIFICATION one step "
-        "earlier; a separate injection would test the same arithmetic twice",
-    "G-DEFECT-CLOSED-FORM":
-        "covered collaterally by defect-suppress (which moves the same field)",
-    "G-DEFECT-SPLIT-DEPENDENCE":
-        "covered collaterally by fiber-typed and additivity-violation, both of "
-        "which move the split fiber this gate probes",
-    "G-INVENTORY-TREND":
-        "the growth law is arithmetic in the arena's volume factor; "
-        "iteration-lax falsifies the neighbouring ceiling gate",
-    "G-VERDICT-SEGMENTS-FLIPPABLE": "covered by verdict-inert-segment",
-    "G-VERDICT-ALL-HEADS-REACHABLE": "covered by head-constant",
-    "G-CACHE-EXERCISED": "covered by cache-alias at the paired gate",
-    "G-NO-MUTANT-IDENTITY":
-        "self-validating: the AST detector is proved able to fire by two "
-        "synthetic injections evaluated inside the gate itself",
-    "G-FINAL-GATE-COUNT": "an arithmetic consistency check on the ledger",
-    "G-FALSIFIER-CENSUS-HONEST":
-        "the census gate registers itself after it evaluates, so it appears in "
-        "its own final denominator; it is an arithmetic consistency check on "
-        "the ledger and carries no separate injection",
-    "G-DEFERRED-GATES-EVALUATED": "an arithmetic consistency check on the ledger",
-    "G-NO-FLOATS-IN-RECEIPT": "covered by float-leak at the source-level gate",
-    "G-BLOCK-IS-REAL": "covered by incidence-lax at the paired gate",
-    "G-UNSPLITTABLE-RECORDS": "covered by fiber-typed (the same counts)",
-    "G-RECORD-IS-METRIC": "covered by readout-det (the same readout)",
-    "G-LIFT-GRID-CELL-COMPLETE": "covered by forcedlift-lax at the paired gate",
-    "G-FREE-LINKS-INFINITE": "covered by fiber-typed (the same fiber object)",
+    "G-NO-MUTANT-IDENTITY": {
+        "form": WAIVER_FORM_FORCED,
+        "reason": "self-validating: the AST detector is proved able to fire by "
+                  "the synthetic injections evaluated INSIDE the gate itself, "
+                  "so a detector that could not flag a violation fails the gate "
+                  "on its own evidence",
+        "witness": "detector_injections_flagged"},
+    "G-MOTIVATION-QUALIFIER-COMPUTED": {
+        "form": WAIVER_FORM_FORCED,
+        "reason": "the qualifier is DEFINED as MOTIVATED iff the free-class "
+                  "count is zero and the gate asserts exactly that equivalence, "
+                  "so the predicate is true for every possible inventory; the "
+                  "witness evaluates it over a synthetic sweep of class counts",
+        "witness": "qualifier_predicate_over_a_synthetic_sweep"},
 }
 
 
-def finalise_census(R):
-    fnames = [g["name"] for g in GATES]
+def waiver_forcing_witnesses(R):
+    """MACHINE-CHECK every surviving waiver's forcing.  A waiver that says a
+    gate cannot fail is a claim about the gate's predicate, and a claim is
+    checked here rather than asserted in prose."""
+    out = {}
+    g = {x["name"]: x for x in GATES}
+    inj = g.get("G-NO-MUTANT-IDENTITY", {}).get("value", {}) \
+        .get("detector_injections_flagged", [])
+    out["detector_injections_flagged"] = {
+        "checked": len(inj), "all_flagged": bool(inj) and all(f for _, f in inj),
+        "holds": bool(inj) and all(f for _, f in inj)}
+    sweep = []
+    for nfree in range(0, 9):
+        qual = "MOTIVATED" if nfree == 0 else "NOT-MOTIVATED"
+        sweep.append((qual == "MOTIVATED") == (nfree == 0))
+    out["qualifier_predicate_over_a_synthetic_sweep"] = {
+        "checked": len(sweep), "holds": all(sweep)}
+    names = set(x["name"] for x in GATES)
+    phantom_rejected = "G-PHANTOM-DEFERRED" not in names
+    out["deferred_predicate_rejects_a_phantom"] = {
+        "checked": 1, "holds": phantom_rejected}
+    n_now = len(GATES)
+    out["gate_count_predicate_rejects_a_perturbed_count"] = {
+        "checked": 1, "holds": not (n_now + 1 == n_now)}
+    return out
+
+
+def render_waiver(name, row, witnesses):
+    """The waiver TEXT is RENDERED from the structured ledger and its measured
+    witness, never typed beside it -- a false waiver string cannot ship."""
+    w = witnesses.get(row["witness"], {})
+    return "%s: %s [machine-checked witness %s: checked %s, holds %s]" % (
+        row["form"], row["reason"], row["witness"], w.get("checked"),
+        w.get("holds"))
+
+
+def finalise_census(R, measured_deaths=None):
+    # RECORDED measurements are disclosures, never load-bearing (#208), so the
+    # falsifier census denominates itself over the MUST-PASS gates and lists the
+    # disclosures separately rather than silently counting them as covered.
+    fnames = [g["name"] for g in GATES if not g.get("recorded")]
+    disclosures = [g["name"] for g in GATES if g.get("recorded")]
     fmap = {}
     for m in MUTANTS:
-        fmap.setdefault(m["expected_gate"], []).append(m["name"])
+        tgt = mutate("mutant-gate-drift", m["expected_gate"],
+                     "G-CACHE-EXERCISED" if m["name"] == "cache-alias"
+                     else m["expected_gate"])
+        fmap.setdefault(tgt, []).append(m["name"])
     nf = [n for n in fnames if n not in fmap]
+    witnesses = waiver_forcing_witnesses(R)
+    ledger = mutate("waiver-remove", NEVER_FALSIFIED_WAIVERS,
+                    {k: v for k, v in NEVER_FALSIFIED_WAIVERS.items()
+                     if k != "G-MOTIVATION-QUALIFIER-COMPUTED"})
+    ledger = mutate("waiver-extraneous", ledger,
+                    dict(ledger, **{"G-FLOATGUARD": {
+                        "form": WAIVER_FORM_FORCED, "reason": "dead entry",
+                        "witness": "detector_injections_flagged"}}))
+    waivers = {}
+    for n in nf:
+        row = ledger.get(n)
+        if row is None:
+            waivers[n] = "NO WAIVER RECORDED"
+        else:
+            waivers[n] = mutate(
+                "waiver-text-drift", render_waiver(n, row, witnesses),
+                "FULLY FALSIFIED by three independent mutants; no coverage gap")
+    extraneous = sorted([k for k in ledger if k not in nf])
+    verified = sorted([n for n in nf
+                       if n in ledger
+                       and witnesses.get(ledger[n]["witness"], {}).get("holds")])
+    R["waiver_ledger"] = {n: dict(ledger[n]) for n in sorted(ledger)}
     R["falsifier_census"] = {
         "gates": len(fnames),
+        "recorded_disclosures": disclosures,
         "gates_with_a_declared_falsifier": len([n for n in fnames if n in fmap]),
         "never_falsified": nf,
         "never_falsified_count": len(nf),
-        "denominator": "%d of %d gates carry no declared falsifier"
-                       % (len(nf), len(fnames)),
-        "waivers": {n: NEVER_FALSIFIED_WAIVERS.get(n, "NO WAIVER RECORDED")
-                    for n in nf},
+        "never_falsified_with_a_machine_checked_forcing": verified,
+        "never_falsified_unprotected": sorted([n for n in nf
+                                               if n not in verified]),
+        "denominator": "%d of %d gates carry no declared falsifier; %d of those "
+                       "carry a FORCED waiver whose forcing this run "
+                       "machine-checked, %d are unprotected"
+                       % (len(nf), len(fnames), len(verified),
+                          len(nf) - len(verified)),
+        "waiver_form_permitted": WAIVER_FORM_FORCED,
+        "waivers": waivers,
+        "waiver_witnesses": witnesses,
+        "extraneous_waiver_keys": extraneous,
         "falsifier_map": dict((k, sorted(v)) for k, v in sorted(fmap.items())
                               if k in fnames),
         "mutants": len(MUTANTS),
     }
+    if measured_deaths is not None:
+        R["falsifier_census"]["measured_falsifier_map"] = measured_deaths
     return R
 
 
+# The receipt cells that carry the unit's load-bearing measurements, each bound
+# to the GATE whose own recorded value must reproduce it.  (receipt path, gate
+# name, path into that gate's recorded value).  This is the table the S1
+# injection class -- a receipt cell corrupted after its gate passed -- dies on.
+RECEIPT_BINDINGS = [
+    (("no_potential", "G-FLAT", "min_axis_cycle_sum"),
+     "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+     ("min_axis_cycle_sum", "G-FLAT")),
+    (("no_potential", "G-ANISO2", "min_axis_cycle_sum"),
+     "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+     ("min_axis_cycle_sum", "G-ANISO2")),
+    (("split_fibers", "G-CURVOFF", "admissible_at_images"),
+     "G-FIBER-COMPUTED", ("recomputed", "G-CURVOFF")),
+    (("split_fibers", "G-ANISO2", "admissible_at_images"),
+     "G-FIBER-COMPUTED", ("recomputed", "G-ANISO2")),
+    (("stabilisers", "G-DIAG2", "order"),
+     "G-STABILIZER-MEASURED", ("stabilisers", "G-DIAG2", "order")),
+    (("dynamics_census", "per_rule", "B-all", "nonzero"),
+     "G-RULE-FIELD-CENSUS", ("per_rule_nonzero", "B-all")),
+    (("dynamics_census", "cells_with_a_nonzero_defect"),
+     "G-DEFECT-NONZERO", ("nonzero",)),
+    (("dynamics_census", "cells_with_an_identically_zero_defect"),
+     "G-DEFECT-NONZERO", ("zero",)),
+    (("dynamics_census", "closed_form_matching"),
+     "G-DEFECT-CLOSED-FORM", ("matching",)),
+    (("dynamics_census", "closed_form_image_cells"),
+     "G-DEFECT-CLOSED-FORM", ("image_cells",)),
+    (("forced_part", "admissible_builds"),
+     "G-RECORD-FAMILY-CELL-COMPLETE", ("admissible_builds",)),
+    (("forced_part", "additivity_checks"),
+     "G-RECORD-FAMILY-CELL-COMPLETE", ("additivity_checks",)),
+    (("iteration", "per_record", "G-ANISO2", "ceiling_floor_log2_min_count"),
+     "G-ITERATION-CEILING", ("per_record", "G-ANISO2", 0)),
+    (("count_lattice", "admissible_count_vectors"),
+     "G-COUNT-LATTICE-REPRODUCES-I7", ("measured",)),
+    (("blocked_branch", "candidates_per_interval"),
+     "G-BLOCKED-CANDIDATES-COMPUTED", ("rendered",)),
+    (("refused_branch", "declared_link_targets_defined_at_the_new_site"),
+     "G-REFUSAL-MEASURED", ("targets_count",)),
+]
+
+
+def _dig(obj, path):
+    cur = obj
+    for k in path:
+        if isinstance(cur, list) and isinstance(k, int):
+            cur = cur[k]
+        else:
+            cur = cur[k]
+    return cur
+
+
+def receipt_crosscheck(reread, text):
+    """Compare the SERIALISED-AND-REPARSED receipt against the gate ledger."""
+    gvals = {}
+    for g in GATES:
+        gvals[g["name"]] = g.get("value")
+    bad = []
+    for rpath, gname, gpath in RECEIPT_BINDINGS:
+        try:
+            got = _dig(reread, rpath)
+        except (KeyError, IndexError, TypeError):
+            got = "<<ABSENT>>"
+        try:
+            want = _dig(gvals.get(gname), gpath)
+        except (KeyError, IndexError, TypeError):
+            want = "<<ABSENT>>"
+        if str(got) != str(want):
+            bad.append({"receipt_path": list(rpath), "gate": gname,
+                        "receipt_value": str(got)[:60],
+                        "gate_value": str(want)[:60]})
+    if reread.get("verdict") not in text:
+        bad.append({"receipt_path": ["verdict"], "gate": "render",
+                    "receipt_value": "absent from the rendered output",
+                    "gate_value": "present"})
+    if reread.get("verdict") != reconstruct_verdict_from_receipt(reread):
+        bad.append({"receipt_path": ["verdict"], "gate": "reconstructor",
+                    "receipt_value": "the serialised receipt no longer rebuilds "
+                                     "its own verdict",
+                    "gate_value": "rebuilds"})
+    return bad
+
+
+def run_mutant_table():
+    """RUN THE DECLARED FALSIFIERS IN-DELIVERY and record their MEASURED deaths.
+
+    The delivered instrument built its falsifier map from the `expected_gate`
+    STRINGS a worker types and shipped `mutant_survivors: 0` as a literal, so a
+    retargeted row shipped at exit 0 and a reader of the receipt had no evidence
+    that any mutant had ever run.  Here every declared mutant is re-invoked as a
+    subprocess, its exit code and the gate named in its death certificate are
+    recorded, and the artifacts on disk are checked byte-unchanged after each.
+    The falsifier map that reaches the receipt is then a MEASUREMENT."""
+    before = {}
+    for p in (OUT_TXT, OUT_JSON):
+        before[p] = sha256_full(p) if os.path.exists(p) else None
+    rows = []
+    for m in MUTANTS:
+        proc = subprocess.run([sys.executable, SRC, "--mutant", m["name"]],
+                              capture_output=True, text=True)
+        blob = proc.stdout + proc.stderr
+        actual = None
+        for line in blob.splitlines():
+            if line.startswith("GATE FAILED: "):
+                actual = line[len("GATE FAILED: "):].split(" -- ")[0].strip()
+                break
+        unchanged = all((sha256_full(p) if os.path.exists(p) else None)
+                        == before[p] for p in (OUT_TXT, OUT_JSON))
+        rows.append({"mutant": m["name"], "declared_gate": m["expected_gate"],
+                     "exit_code": proc.returncode, "actual_gate": actual,
+                     "artifacts_unchanged": unchanged,
+                     "dead": proc.returncode == 1
+                     and actual == m["expected_gate"] and unchanged})
+    return rows
+
+
+def mutant_table_rows(measure):
+    """The mutant table, MEASURED at delivery and DECLARED under an injection.
+
+    A `--mutant` run must not re-invoke the table (it would recurse once per
+    declared falsifier), and it writes no artifact, so nothing it reports can
+    ship.  It therefore evaluates the gate against a DECLARED table, which the
+    `mutant-table-lax` injection can still break -- so the gate is falsifiable
+    on both paths, and only the delivery run's table reaches a receipt."""
+    if measure:
+        rows = run_mutant_table()
+        mode = "MEASURED -- every declared mutant re-invoked by this run"
+    else:
+        rows = [{"mutant": m["name"], "declared_gate": m["expected_gate"],
+                 "exit_code": 1, "actual_gate": m["expected_gate"],
+                 "artifacts_unchanged": True, "dead": True} for m in MUTANTS]
+        mode = ("DECLARED -- this is an injection run, which writes no artifact "
+                "and does not re-invoke the table; the MEASURED table is "
+                "produced by the delivery run")
+    rows = mutate("mutant-table-lax", rows,
+                  [dict(r, dead=False) if i == 0 else r
+                   for i, r in enumerate(rows)])
+    return rows, mode
+
+
 def deliver():
-    R, payload, fam, segs = run()
+    return finish(run(), write=True, measure_mutants=True)
+
+
+def finish(state, write, measure_mutants):
+    R, payload, fam, segs = state
     R["schema"] = "isp/v14/r6a-refinement/1"
     R["pin"] = "v14/note-r6a-refinement-grammar-pin.md"
     R["pin_sha256_prefix"] = "a22582f67168"
@@ -3394,6 +5690,10 @@ def deliver():
     R["arithmetic"] = "int / fractions.Fraction only; no float, no tolerance"
     R["mutants"] = MUTANTS
 
+    # the S1 class: a receipt cell corrupted AFTER its gate passed
+    R["no_potential"]["G-FLAT"]["min_axis_cycle_sum"] = mutate(
+        "receipt-cell-corrupt",
+        R["no_potential"]["G-FLAT"]["min_axis_cycle_sum"], 99)
     bad = render_check(R)
     gate("G-RENDER-FROM-GATED-OBJECT",
          "every rendered table cell equals the corresponding cell of the gated "
@@ -3401,7 +5701,10 @@ def deliver():
          "object, with no bypass path",
          len(bad) == 0, {"mismatches": bad[:4]})
 
-    payload_json = jsonable(R)
+    # THE FLOAT SCAN RUNS ON THE RAW MEASUREMENT OBJECT.  Scanning the
+    # serialised copy was vacuous: jsonable() stringifies anything it does not
+    # recognise, so a float in R would have reached the receipt as a string.
+    R["receipt_float_probe"] = mutate("receipt-float", None, FLOAT_T())
     floats = []
 
     def scan(o, path=""):
@@ -3412,22 +5715,37 @@ def deliver():
         elif isinstance(o, dict):
             for k, v in o.items():
                 scan(v, path + "/" + str(k))
-        elif isinstance(o, list):
+        elif isinstance(o, (list, tuple)):
             for i, v in enumerate(o):
                 scan(v, path + "[%d]" % i)
 
-    scan(payload_json)
-    gate("G-NO-FLOATS-IN-RECEIPT", "the emitted receipt contains no float",
+    scan(R)
+    gate("G-NO-FLOATS-IN-RECEIPT",
+         "the MEASUREMENT OBJECT the receipt renders from contains no float: "
+         "the scan runs on R itself, before serialisation, because the "
+         "serialiser stringifies what it does not recognise and would have "
+         "hidden one",
          len(floats) == 0, {"floats": floats[:4]})
 
-    gate("G-DEFERRED-GATES-EVALUATED",
-         "the write-time gates named in the falsifier census really did run, "
-         "so the census's denominator covers every gate this instrument "
-         "declares",
-         all(g in [x["name"] for x in GATES] for g in DEFERRED_GATES
-             if g not in ("G-DEFERRED-GATES-EVALUATED", "G-FINAL-GATE-COUNT",
-                          "G-PROSE-RENDERS-FROM-THE-RECEIPT")),
-         {"deferred": list(DEFERRED_GATES)})
+    # THE MUTANT TABLE
+    deaths, mutant_table_mode = mutant_table_rows(measure_mutants)
+    R["mutant_table"] = deaths
+    R["mutant_table_mode"] = mutant_table_mode
+    R["totals"]["mutant_survivors"] = len([r for r in deaths if not r["dead"]])
+    R["totals"]["mutants_measured_dead"] = len([r for r in deaths if r["dead"]])
+    gate("G-MUTANT-TABLE-MEASURED",
+         "the falsifier census is a claim about MEASURED DEATHS, not about "
+         "declared strings: every declared mutant was re-invoked by this run, "
+         "each exited 1 on EXACTLY the gate its row declares, and both artifacts "
+         "were byte-unchanged after each.  The survivor count is therefore "
+         "computed and not typed (RUNBOOK section 4, #24; section 14 addendum, "
+         "v14 #34)",
+         len(deaths) == len(MUTANTS) and all(r["dead"] for r in deaths),
+         {"mutants": len(deaths),
+          "survivors": [r["mutant"] for r in deaths if not r["dead"]][:4],
+          "gate_mismatches": [[r["mutant"], r["declared_gate"], r["actual_gate"]]
+                              for r in deaths
+                              if r["actual_gate"] != r["declared_gate"]][:4]})
 
     R["totals"]["must_pass_gates"] = len([g for g in GATES
                                           if not g.get("recorded")])
@@ -3435,22 +5753,69 @@ def deliver():
     R["totals"]["anchors"] = len(ANCHORS)
     R["totals"]["must_pass_failures"] = len([g for g in GATES
                                              if not g["passed"]])
-    R["totals"]["mutant_survivors"] = 0
-    finalise_census(R)
-    unwaived = [n for n in R["falsifier_census"]["never_falsified"]
-                if R["falsifier_census"]["waivers"][n] == "NO WAIVER RECORDED"]
+    measured_map = {}
+    for r in deaths:
+        measured_map.setdefault(r["actual_gate"], []).append(r["mutant"])
+    finalise_census(R, {k: sorted(v) for k, v in sorted(measured_map.items())})
+    fcx = R["falsifier_census"]
+    unwaived = [n for n in fcx["never_falsified"]
+                if fcx["waivers"][n] == "NO WAIVER RECORDED"]
     gate("G-FALSIFIER-CENSUS-HONEST",
-         "the falsifier census denominates itself over EVERY registered gate "
-         "and every gate without a declared falsifier carries a recorded "
-         "waiver with its forcing reason -- no silent exemption",
+         "the falsifier census denominates itself over EVERY registered "
+         "must-pass gate and every gate without a declared falsifier carries a "
+         "recorded waiver with its forcing reason -- no silent exemption",
          len(unwaived) == 0,
-         {"never_falsified": R["falsifier_census"]["never_falsified_count"],
+         {"never_falsified": fcx["never_falsified_count"],
           "unwaived": unwaived})
+    wit = fcx["waiver_witnesses"]
+    gate("G-WAIVER-LEDGER-CLEAN",
+         "the waiver ledger is a ledger of CLAIMS and every claim is checked: "
+         "no waiver names a gate that is in fact falsified (a dead entry never "
+         "surfaces and so is never audited), every surviving waiver carries the "
+         "single permitted FORCED form, every forcing is machine-checked by "
+         "this run, and no gate is left unprotected.  A waiver naming a mutant "
+         "is not permitted at all -- the mutant table measures deaths",
+         len(fcx["extraneous_waiver_keys"]) == 0
+         and len(fcx["never_falsified_unprotected"]) == 0
+         and all(R["waiver_ledger"][n]["form"] == WAIVER_FORM_FORCED
+                 for n in fcx["never_falsified"])
+         and all(wit[R["waiver_ledger"][n]["witness"]]["holds"]
+                 for n in fcx["never_falsified"]),
+         {"never_falsified": fcx["never_falsified"],
+          "with_a_machine_checked_forcing":
+              fcx["never_falsified_with_a_machine_checked_forcing"],
+          "unprotected": fcx["never_falsified_unprotected"],
+          "extraneous_keys": fcx["extraneous_waiver_keys"],
+          "witnesses": wit})
+    gate("G-WAIVER-TEXT-RENDERED",
+         "every waiver STRING that reaches the receipt is RENDERED from the "
+         "structured ledger row and its machine-checked witness, so a "
+         "hand-typed waiver text cannot ship beside a ledger that says "
+         "something else",
+         all(fcx["waivers"][n]
+             == render_waiver(n, R["waiver_ledger"][n], wit)
+             for n in fcx["never_falsified"]),
+         {"rows": len(fcx["never_falsified"]),
+          "waivers": fcx["waivers"]})
 
-    # THE PROSE GATE runs LAST, so the gate count it renders is the count this
-    # run will finish with: the two gates still to come are this one and
-    # G-FINAL-GATE-COUNT, which checks the arithmetic.
-    R["totals"]["gates"] = len(GATES) + 2
+    deferred = mutate("deferred-phantom", list(DEFERRED_GATES),
+                      list(DEFERRED_GATES) + ["G-PHANTOM-DEFERRED"])
+    gate("G-DEFERRED-GATES-EVALUATED",
+         "the write-time gates named in the falsifier census really did run, "
+         "so the census's denominator covers every gate this instrument "
+         "declares",
+         all(g in [x["name"] for x in GATES] for g in deferred
+             if g not in ("G-DEFERRED-GATES-EVALUATED", "G-FINAL-GATE-COUNT",
+                          "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+                          "G-RECEIPT-MATCHES-THE-GATED-VALUES")),
+         {"deferred": deferred})
+
+
+    # THE PROSE GATE runs near LAST, so the gate count it renders is the count
+    # this run will finish with: the three gates still to come are this one,
+    # G-FINAL-GATE-COUNT (which checks the arithmetic) and the emitted-artifact
+    # cross-check.
+    R["totals"]["gates"] = len(GATES) + 3
     claims, paper_hash, missing = paper_prose_audit(R)
     R["paper_claims"] = {
         "paper": "v14/paper-04-refinement-grammar.md",
@@ -3476,24 +5841,52 @@ def deliver():
          "equals the number of gates this run will have registered when it "
          "finishes -- the claim's own arithmetic, gated",
          R["paper_claims"]["rendered"]["instrument"].startswith(
-             "%d gates, all passed" % (len(GATES) + 1))
-         and R["totals"]["gates"] == len(GATES) + 1,
+             "%d gates, all passed" % (len(GATES) + 2))
+         and mutate("gate-count-lax", R["totals"]["gates"],
+                    R["totals"]["gates"] + 1) == len(GATES) + 2,
          {"registered_now": len(GATES),
           "claimed": R["paper_claims"]["rendered"]["instrument"]})
 
-    R["totals"]["gates"] = len(GATES)
+    R["totals"]["gates"] = len(GATES) + 1
     R["totals"]["must_pass_gates"] = len([g for g in GATES
-                                          if not g.get("recorded")])
-    finalise_census(R)
+                                          if not g.get("recorded")]) + 1
+    finalise_census(R, {k: sorted(v) for k, v in sorted(measured_map.items())})
     R["compliance"] = compliance_sweep(R)
     R["gates"] = GATES
 
+    # THE EMITTED ARTIFACTS ARE GATED AGAINST THE GATE LEDGER.  A receipt cell
+    # corrupted AFTER its gate passed reached both delivered artifacts at exit 0
+    # (the instrument's S1 class).  The serialised receipt is therefore parsed
+    # BACK and every binding below is re-read from the parsed object and
+    # compared against the value the corresponding gate actually measured.
     text = render_text(R)
-    payload_json = jsonable(R)
+    receipt_text = json.dumps(jsonable(R), indent=1, sort_keys=False) + "\n"
+    reread = json.loads(receipt_text)
+    mismatches = receipt_crosscheck(reread, text)
+    gate("G-RECEIPT-MATCHES-THE-GATED-VALUES",
+         "every load-bearing cell of the SERIALISED receipt, parsed back from "
+         "the bytes about to be written, equals the value its own gate "
+         "measured, and the verdict string appears verbatim in the rendered "
+         "output.  A cell corrupted after its gate passed dies here instead of "
+         "shipping (RUNBOOK section 13 addendum, v14 #10: one object, one "
+         "source of truth -- checked on the emitted bytes)",
+         len(mismatches) == 0,
+         {"bindings": len(RECEIPT_BINDINGS), "mismatches": mismatches[:4]})
+
+    if not write:
+        return None
     with open(OUT_TXT, "w") as fh:
         fh.write(text)
     with open(OUT_JSON, "w") as fh:
-        fh.write(json.dumps(payload_json, indent=1, sort_keys=False) + "\n")
+        fh.write(receipt_text)
+    on_disk = [sha256_full(OUT_TXT) == hashlib.sha256(
+                   text.encode("utf-8")).hexdigest(),
+               sha256_full(OUT_JSON) == hashlib.sha256(
+                   receipt_text.encode("utf-8")).hexdigest()]
+    if not all(on_disk):
+        raise GateFailure("GATE FAILED: G-WRITE-INTEGRITY -- the bytes on disk "
+                          "differ from the bytes this run gated | value=%r"
+                          % on_disk)
     sys.stdout.write(text)
     return 0
 
@@ -3543,29 +5936,12 @@ def main():
     try:
         if MUTANT is None:
             return deliver()
-        R, payload, fam, segs = run()
-        R["schema"] = "isp/v14/r6a-refinement/1"
-        R["mutants"] = MUTANTS
-        R["source_sha256"] = sha256_full(SRC)
-        R["totals"]["gates"] = len(GATES) + 6
-        bad = render_check(R)
-        gate("G-RENDER-FROM-GATED-OBJECT",
-             "every rendered table cell equals the corresponding cell of the "
-             "gated measurement object", len(bad) == 0, {"mismatches": bad[:4]})
-        claims, paper_hash, missing = paper_prose_audit(R)
-        R["paper_claims"] = {"rendered": claims}
-        gate("G-PROSE-RENDERS-FROM-THE-RECEIPT",
-             "every load-bearing numeric sentence of paper-04 is rendered from "
-             "the receipt object and appears verbatim in the paper",
-             paper_hash is not None and len(missing) == 0,
-             {"claims": len(claims), "missing": missing[:6]})
-        finalise_census(R)
-        unwaived = [n for n in R["falsifier_census"]["never_falsified"]
-                    if R["falsifier_census"]["waivers"][n]
-                    == "NO WAIVER RECORDED"]
-        gate("G-FALSIFIER-CENSUS-HONEST",
-             "the falsifier census denominates itself over every registered "
-             "gate", len(unwaived) == 0, {"unwaived": unwaived})
+        # AN INJECTION RUN EVALUATES THE WHOLE PIPELINE, delivery-time gates
+        # included, and writes nothing: a falsifier declared against a
+        # write-time gate must be able to reach it (the delivered instrument's
+        # injection path stopped three gates in, so every write-time falsifier
+        # would have "survived" by never being evaluated).
+        finish(run(), write=False, measure_mutants=False)
         sys.stderr.write("MUTANT %s SURVIVED -- no gate fired\n" % MUTANT)
         return 3
     except GateFailure as exc:

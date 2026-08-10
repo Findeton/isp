@@ -34,11 +34,44 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
     G-OFFNEG     (3, 5, 4)      (3, 5, 4)      admissible=True  min=3 homog=True
     G-SINGULAR   (1, 1, 4)      (1, 1, 4)      admissible=False min=1 homog=True
 
---- 2. THE NO-POTENTIAL THEOREM (the mechanism of the freedom)
-  counts are strictly positive on a periodic lattice, so no record's
-  counts are the coboundary of a site function; the split cannot be
-  read off any potential.  min axis cycle sum per record:
+--- 2. THE THREE WALLS
+  WALL 1 -- THE SPLIT: COMBINATORIAL MULTIPLICITY -- the record carries interval TOTALS, not event POSITIONS, and one interior boundary in a total of n has n - 1 places to sit
+    raw split fiber = prod (n_l(x) - 1) over the 27 slots
+    record       prod (n_l - 1)             raw split fiber            fiber | potential
+    G-ANISO      0                          0                          0
+    G-ANISO2     13631146639813244878848    13631146639813244878848    13631146639813244878848
+    G-CURVED     0                          0                          0
+    G-CURVOFF    2133246689280              2133246689280              2133246689280
+    G-DIAG2      19683                      19683                      19683
+    G-FLAT       0                          0                          0
+    G-OFFDIAG    1953125                    1953125                    1953125
+    G-OFFDIAG2   316478381828866048         316478381828866048         316478381828866048
+    G-OFFNEG     2641807540224              2641807540224              2641807540224
+    a granted refinement-compatible potential leaves the split fiber
+    IDENTICAL and collapses the free transverse links 54 -> 0 slots
+  WALL 2 -- THE TRANSVERSE LINKS: THE COBOUNDARY THEOREM on the periodic lattice
+    coboundary IFF (a) every axis cycle sums to 0 AND (b) the triangle
+    relations hold; measured on 9 sites / 27 edges: rank(delta) = 8,
+    cycle rank 19, the (a)+(b) system has rank 19 and solution dimension
+    8 -- so the conditions cut out the coboundaries exactly.  Strict
+    positivity forbids (a) for EVERY record, at every L and every d.
+    min axis cycle sum per record:
     G-ANISO=3, G-ANISO2=12, G-CURVED=6, G-CURVOFF=9, G-DIAG2=6, G-FLAT=3, G-OFFDIAG=6, G-OFFDIAG2=9, G-OFFNEG=9
+  WALL 3 -- THE q_12 = 0 SECTOR: PERIODIC HOLONOMY ALONE -- one integer per axis cycle; on the universal cover the sector's counts are coboundaries
+    cover-coboundary records: G-ANISO, G-ANISO2, G-CURVED, G-DIAG2, G-FLAT
+      G-ANISO      q12=0          curl0=True   triangle=True   cover-coboundary=True
+      G-ANISO2     q12=0          curl0=True   triangle=True   cover-coboundary=True
+      G-CURVED     q12=0          curl0=True   triangle=True   cover-coboundary=True
+      G-CURVOFF    q12=1,2        curl0=True   triangle=False  cover-coboundary=False
+      G-DIAG2      q12=0          curl0=True   triangle=True   cover-coboundary=True
+      G-FLAT       q12=0          curl0=True   triangle=True   cover-coboundary=True
+      G-OFFDIAG    q12=1          curl0=True   triangle=False  cover-coboundary=False
+      G-OFFDIAG2   q12=2          curl0=True   triangle=False  cover-coboundary=False
+      G-OFFNEG     q12=-2         curl0=True   triangle=False  cover-coboundary=False
+    the canonical refinement induced on G-DIAG2: 36 of 36 refined sites
+      admissible, coarse record recovered at 9 of 9, split fiber 1,
+      differing from the declared minimal completion at 18 slots
+    SCOPE: the universal cover is NOT a pinned object; this is a gated disclosure about where the obstruction lives and it cannot flip the verdict
 
 --- 3. THE MOVE CENSUS (27 coarse intervals per class)
   class              verdict       INH   SUB   AMB   UNR  refined shape
@@ -52,7 +85,7 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
   BLOCKED branch -- DIAGONAL-INTERVAL-INCIDENCE
     which refined site subdivides a coarse DIAGONAL interval cut by a single-direction hyperplane insertion.  The coarse displacement (2,1) has two minimal decompositions into declared link vectors, with two distinct interior sites; the pinned grammar declares a link SET and no incidence rule, and supplying one would be a grammar fact from outside the pinned sources (pin section 1)
     ambiguous coarse intervals: 3 of 27, 2 candidate interior sites each; all 3 declared loci agree: True
-    the ambiguity is REAL: over 16 declared completions the two candidate readings disagree at 12
+    the ambiguity is REAL: over 14256 declared completions (every splittable record, every site, the axis-e_1 interval, every split, both free counts over 1..12) the two candidate readings disagree at 13158, and the agreement criterion f_1 - f_0 = n_2 - n_1 is verified at every one
 
   REFUSED branch -- SINGLE-INTERVAL
     a product-of-cyclic-groups site set carrying the declared link displacements by translation forces every direction-0 cycle to have the SAME length; inserting one site into one link makes them [4, 3, 3], and 10 is not divisible by the longest cycle 4.  At the new site only 1 of the 3 declared link displacements has a target.
@@ -109,10 +142,10 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
   SUBDIVISION-INCIDENCE      (i  ) 1                      [P-I7-LINKS2] the declared link set -- every coarse displace
   INTERVAL-COUNT-SUM         (i  ) 1                      [T-COUNTS-SEMANTIC] n_l counts division events IN the interv
   FRONT-AT-COARSE-IMAGES     (i  ) 1                      [T-FRONT] the image of a coarse site IS that site, so its co
-  THE-SPLIT                  (iii) 19683                  -- NOTHING IN THE PINNED GRAMMAR --
-  FREE-TRANSVERSE-LINKS      (iii) INFINITE               -- NOTHING IN THE PINNED GRAMMAR --
-  NEW-FRONT-VALUES           (iii) INFINITE               -- NOTHING IN THE PINNED GRAMMAR --
-  THE-LIFT-PAIR              (iii) 2                      -- NOTHING IN THE PINNED GRAMMAR --
+  THE-SPLIT                  (iii) 19683                  -- NO DECLARED SELECTOR (see rejected_forcings) --
+  FREE-TRANSVERSE-LINKS      (iii) INFINITE               -- NO DECLARED SELECTOR (see rejected_forcings) --
+  NEW-FRONT-VALUES           (iii) INFINITE               -- NO DECLARED SELECTOR (see rejected_forcings) --
+  THE-LIFT-PAIR              (iii) 2                      -- NO DECLARED SELECTOR (see rejected_forcings) --
   forced 4 | stabiliser-fixed 0 | genuinely free 4
 
   split fibers (raw / admissible-at-images / equivariant):
@@ -129,12 +162,12 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
 
 --- 6. THE DYNAMICS-COMPATIBILITY CENSUS
   11088 cells (14 builds x 11 rules x 12 lapses x 3 fronts x 2 lifts)
-  nonzero defect at 7112 cells, identically zero at 3976
+  nonzero defect at 7126 cells, identically zero at 3962
   site support (by which coarse interval the site subdivides):
     IMAGE          nonzero  16296 of  99792
-    MID-(0, 1)     nonzero  20706 of  99792
-    MID-(1, 0)     nonzero  18438 of  99792
-    MID-(1, 1)     nonzero  16079 of  99792
+    MID-(0, 1)     nonzero  20510 of  99792
+    MID-(1, 0)     nonzero  18578 of  99792
+    MID-(1, 1)     nonzero  16457 of  99792
   closed form: D(iota(x)) = w^c[N,n](x) exactly, under the left lift, at 49896 of 49896 cells
   split dependence (distinct defect fields over a genuine fiber): {'left': 2, 'right': 2}
   lift grid (front sector):
@@ -142,7 +175,43 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
     front=left   lapse=right  commutes=False
     front=right  lapse=left   commutes=False
     front=right  lapse=right  commutes=True
-  the dynamics-forced front lift is NON-INTEGRAL at 30 of 81 cells; and n | n_1 holds at 0 of 207 splits (it cannot)
+  the count-weighted interpolation is NON-INTEGRAL at 30 of the 81 (front, site, link) cells of G-ANISO2 at the balanced split;
+  n | n_1 holds at 0 of the 207 splits of G-ANISO2 (it cannot); the same sweep over the splittable family carries 650 splits
+
+  WHICH lift the dynamics forces is a function of the DRAG RULE:
+    rule            forced form                        cells    integral = right lift
+    A-axis          THE-COUNT-WEIGHTED-INTERPOLATION   756      530      462
+    A-chart         THE-DECLARED-RIGHT-LIFT            756      756      756
+    A-insert        A-THIRD-VALUE                      756      366      319
+    A-insert-2x     A-THIRD-VALUE                      756      366      319
+    A-insert-x      A-THIRD-VALUE                      756      366      319
+    A-linkframe     A-THIRD-VALUE                      756      340      306
+    A-linkhalf      A-THIRD-VALUE                      756      340      306
+    A-notransport   VACUOUS                            0        0        0
+    B-all           UNDERDETERMINED                    0        0        0
+    B-axis          THE-COUNT-WEIGHTED-INTERPOLATION   756      530      462
+    B-chart         THE-DECLARED-RIGHT-LIFT            756      756      756
+  the image reading is a COORDINATE OF THE LIFT: under the right lift the image defect vanishes identically for
+    A-chart, B-chart and not for the others:
+      A-axis          image defect zero at  3724 of  4536
+      A-chart         image defect zero at  4536 of  4536
+      A-insert        image defect zero at  3724 of  4536
+      A-insert-2x     image defect zero at  3724 of  4536
+      A-insert-x      image defect zero at  3724 of  4536
+      A-linkframe     image defect zero at  3724 of  4536
+      A-linkhalf      image defect zero at  3724 of  4536
+      A-notransport   image defect zero at  3724 of  4536
+      B-all           image defect zero at  3696 of  4536
+      B-axis          image defect zero at  3724 of  4536
+      B-chart         image defect zero at  4536 of  4536
+  the 11 declared rules realise 9 DISTINCT defect fields; coincidence classes: A-axis, B-axis; A-chart, B-chart
+  the zero sector: 3962 identically-zero cells, 3962 of them with a vanishing coarse drag, 14 nonzero-defect cells at a vanishing coarse drag
+  completion-relativity: the support moves at 36 of 2772 matched cells under the other declared completion
+  value census (the defect's own values, by site class):
+    IMAGE          nonzero components  27384 of 199584, absolute mass 80315314777/2368080
+    MID-(0, 1)     nonzero components  32167 of 199584, absolute mass 4205592797/102960
+    MID-(1, 0)     nonzero components  29790 of 199584, absolute mass 1079224873/30030
+    MID-(1, 1)     nonzero components  28343 of 199584, absolute mass 238908105636737/8725917200
 
 --- 7. THE ITERATION PROBE
   ceiling floor(log2 min count) over the family: 2; attained: 2
@@ -155,6 +224,13 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
     G-OFFDIAG    ceiling 1  achieved 1  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
     G-OFFDIAG2   ceiling 1  achieved 0  halt: REFINED RECORD INADMISSIBLE at the balanced split
     G-OFFNEG     ceiling 1  achieved 1  halt: NO-SPLIT-EXISTS (a descendant interval has count 1)
+  the flat family (a, a, 2a) at other scales -- the count FLOOR, not flatness, is what forbids refinement:
+    (1, 1, 2)    admissible=True  ceiling 0 achieved 0
+    (2, 2, 4)    admissible=True  ceiling 1 achieved 1
+    (3, 3, 6)    admissible=True  ceiling 1 achieved 1
+    (4, 4, 8)    admissible=True  ceiling 2 achieved 2
+    (5, 5, 10)   admissible=True  ceiling 2 achieved 2
+    (6, 6, 12)   admissible=True  ceiling 2 achieved 2
   inventory trend: GROWS
     level 0: L=3 links 27 -> refined 108, covered 54, free 54; original record reaches 54 of 108
     level 1: L=6 links 108 -> refined 432, covered 216, free 216; original record reaches 108 of 432
@@ -166,22 +242,41 @@ QUESTION: does the record grammar AS PINNED admit a MOTIVATED interval-subdivisi
   its free rule: the appended block's counts are set by a free label rule: no coarse interval constrains them
 
 --- 9. THE VERDICT
+    MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)
     CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1
     BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES
     REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3
     FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324
     INVENTORY=FORCED:4|STABILIZER:0|FREE:4
     OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR
-    SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361
+    SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261
     FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64
-    NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81
-    DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792
-    ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS
+    NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)
+    DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962
+    ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS
     CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED
+    DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY
+    LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES
+    FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2
+    COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION
+    RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1
 
-  R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>
+  R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)|CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)|DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962|ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED|DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY|LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES|FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2|COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION|RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1>
 
---- 10. INSTRUMENT
-  anchors 32 | gates 48 (48 must-pass, 0 recorded) | mutants 34
-  falsifier census: 20 of 48 gates carry no declared falsifier; never falsified: ['G-NO-MUTANT-IDENTITY', 'A-R0-PIN', 'G-RECORD-FAMILY-REPRODUCES-I7', 'G-RECORD-IS-METRIC', 'G-BLOCK-IS-REAL', 'G-DIMENSION-EXTENSION', 'G-UNSPLITTABLE-RECORDS', 'G-FREE-LINKS-INFINITE', 'G-LIFT-GRID-CELL-COMPLETE', 'G-DEFECT-CLOSED-FORM', 'G-DEFECT-SPLIT-DEPENDENCE', 'G-INVENTORY-TREND', 'G-CACHE-EXERCISED', 'G-MOTIVATION-QUALIFIER-COMPUTED', 'G-VERDICT-SEGMENTS-FLIPPABLE', 'G-VERDICT-ALL-HEADS-REACHABLE', 'G-NO-FLOATS-IN-RECEIPT', 'G-DEFERRED-GATES-EVALUATED', 'G-FALSIFIER-CENSUS-HONEST', 'G-FINAL-GATE-COUNT']
+--- 10. THE REOPENING LEADS (successor inputs, at their measured strength)
+  R6b' -- THE RECORD-TYPE DISCRIMINATOR -- the raw split fiber is EXACTLY prod (n_l - 1) -- the number of ways to place one interior position given only the totals -- at 9 of 9 admissible records, so a record carrying event POSITIONS rather than event COUNTS kills the split freedom by construction, and a granted potential collapses the free transverse links from infinite to 1.  It does NOT touch NEW-FRONT-VALUES, which is a separate declared variable, so the audit must be re-run and not assumed
+    would be motivated by: pinning a deeper grammar row that declares event positions (a renewal / event-position record) BESIDE this cardinality row, and re-running this unit's audit verbatim on it
+  THE EXTREMAL PRINCIPLE -- a max-det selector at the refined image site is UNIQUE at 54 of the 54 (record, site) cells the 6 splittable records carry -- every site of every one -- and yields a globally admissible refinement at 6 of 6 records; two rival extremal selectors (most balanced, min |q_12|) are unique at 22 and 19 of the same 54 cells.  No extremal principle is declared in the pinned sources, so this fixes nothing here
+    would be motivated by: a deeper row declaring a variational principle on the record -- then a selector is a derivation rather than a declaration
+  THE UNIVERSAL-COVER ROUTE -- 5 of the 9 admissible records -- exactly the q_12 = 0 sector -- carry counts that are coboundaries on the universal cover, and the cover potential's count-weighted interpolation induces a canonical refinement of G-DIAG2 that is admissible at 36 of 36 refined sites, recovers the coarse record at 9 of 9 and determines the split.  On that sector the obstruction is periodic holonomy, not information -- but the cover is not a pinned object
+    would be motivated by: a deeper row that de-periodizes the arena or pins cover objects, so that a cover potential is a declared object rather than a construction outside the pinned sources
+  charter changes are the user's; none of these is entered here.
+
+--- 11. INSTRUMENT
+  anchors 32 | gates 71 (69 must-pass, 2 recorded) | mutants 78
+  mutant table RUN in this delivery: 78 declared, 78 measured dead on their declared gate, 0 survivors
+  falsifier census: 2 of 68 gates carry no declared falsifier; 2 of those carry a FORCED waiver whose forcing this run machine-checked, 0 are unprotected
+  never falsified: ['G-NO-MUTANT-IDENTITY', 'G-MOTIVATION-QUALIFIER-COMPUTED']
+    G-NO-MUTANT-IDENTITY               FORCED: self-validating: the AST detector is proved able to fire by the synthetic injections evaluated INSIDE the gate itself, so a detector that could not flag a violation fails the gate on its own evidence [machine-checked witness detector_injections_flagged: checked 2, holds True]
+    G-MOTIVATION-QUALIFIER-COMPUTED    FORCED: the qualifier is DEFINED as MOTIVATED iff the free-class count is zero and the gate asserts exactly that equivalence, so the predicate is true for every possible inventory; the witness evaluates it over a synthetic sweep of class counts [machine-checked witness qualifier_predicate_over_a_synthetic_sweep: checked 9, holds True]
 

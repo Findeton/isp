@@ -3,6 +3,136 @@
  "question": "does the record grammar AS PINNED admit a MOTIVATED interval-subdivision move -- a new site because a division event resolved a record interval, the count partition FORCED by the counting semantics and the residual freedom MEASURED?",
  "anchors": [
   {
+   "name": "T-COUNTS-POSITIVE",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "the interval cardinality $n_\\ell(x)\\in\\mathbb Z_{>0}$",
+   "measured": true,
+   "window_bytes": 533,
+   "expected_window_sha256_prefix": "248db28ce1e5",
+   "measured_window_sha256_prefix": "248db28ce1e5",
+   "consumer_gate": "G-UNSPLITTABLE-RECORDS",
+   "provenance": "THE TYPE DECLARATION.  Counts are STRICTLY POSITIVE integers -- the declaration that makes a split of a count-1 interval impossible",
+   "ok": true
+  },
+  {
+   "name": "T-COUNTS-SEMANTIC",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "is the number of division events in the record interval between",
+   "measured": true,
+   "window_bytes": 543,
+   "expected_window_sha256_prefix": "774c3e4683a5",
+   "measured_window_sha256_prefix": "774c3e4683a5",
+   "consumer_gate": "G-ADDITIVITY-FORCED",
+   "provenance": "THE SEMANTIC ANCHOR.  n_l(x) COUNTS DIVISION EVENTS IN THE INTERVAL -- the declaration from which count additivity follows as semantics",
+   "ok": true
+  },
+  {
+   "name": "T-FRONT",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "$n(x)$ = the number of division events already committed at record site $x$",
+   "measured": true,
+   "window_bytes": 555,
+   "expected_window_sha256_prefix": "33f042de2c3f",
+   "measured_window_sha256_prefix": "33f042de2c3f",
+   "consumer_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+   "provenance": "THE FRONT.  A separate configuration variable counting events AT a site",
+   "ok": true
+  },
+  {
+   "name": "T-READOUT",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "$q_{12} = (n_{e_1+e_2} - n_{e_1} - n_{e_2})/2$",
+   "measured": true,
+   "window_bytes": 526,
+   "expected_window_sha256_prefix": "242d9d1cec3f",
+   "measured_window_sha256_prefix": "242d9d1cec3f",
+   "consumer_gate": "G-READOUT-REENCODING",
+   "provenance": "THE DECLARED READOUT at d=2, reimplemented here",
+   "ok": true
+  },
+  {
+   "name": "T-CURVED",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "| `G-CURVED` | $(1,1,2)$ | $(2,2,4)$ |",
+   "measured": true,
+   "window_bytes": 518,
+   "expected_window_sha256_prefix": "cd89979cb323",
+   "measured_window_sha256_prefix": "cd89979cb323",
+   "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "provenance": "the site-dependent diagonal record's counts at (0,0) and (1,1)",
+   "ok": true
+  },
+  {
+   "name": "T-CURVOFF",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "| `G-CURVOFF` | $(2,2,6)$ | $(3,3,10)$ |",
+   "measured": true,
+   "window_bytes": 520,
+   "expected_window_sha256_prefix": "1bdddd908192",
+   "measured_window_sha256_prefix": "1bdddd908192",
+   "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "provenance": "the site-dependent cross-term record's counts at (0,0) and (1,1)",
+   "ok": true
+  },
+  {
+   "name": "T-FROZEN-GEOMETRY",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "The interval-cardinality\n   record $s$ is a configuration variable that $H_a[N]$ does not move; only the\n   front does.",
+   "measured": true,
+   "window_bytes": 599,
+   "expected_window_sha256_prefix": "6927b4e6eff3",
+   "measured_window_sha256_prefix": "6927b4e6eff3",
+   "consumer_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+   "provenance": "THE INDEPENDENCE.  The geometry record and the front are separate variables -- the front cannot supply the split, and this route to the same conclusion is arena-free and positivity-free",
+   "ok": true
+  },
+  {
+   "name": "T-DRAG",
+   "kind": "verbatim-text",
+   "artifact": "v13/paper-ha-successor.md",
+   "expected": "The drag has exactly two ingredients: the **front tilt** $n(x+e)-n(x)$",
+   "measured": true,
+   "window_bytes": 550,
+   "expected_window_sha256_prefix": "b02dd7578d45",
+   "measured_window_sha256_prefix": "b02dd7578d45",
+   "consumer_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+   "provenance": "the drag's ingredients: front tilt and eventwise lapse value, nothing else",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-ADDITIVITY",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": "n(x,y) + n(y, x+\u2113) = n(x, x+\u2113) (events in the whole = events in the\nparts) \u2014 this is semantics, not a choice.",
+   "measured": true,
+   "window_bytes": 589,
+   "expected_window_sha256_prefix": "2bcdca39d42a",
+   "measured_window_sha256_prefix": "2bcdca39d42a",
+   "consumer_gate": "G-ADDITIVITY-FORCED",
+   "provenance": "THE PIN'S OWN FORCED CLAUSE -- the constraint this unit verifies rather than assumes",
+   "ok": true
+  },
+  {
+   "name": "T-PIN-SCOPE",
+   "kind": "verbatim-text",
+   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
+   "expected": "Reaching outside\nthe pinned sources is forbidden.",
+   "measured": true,
+   "window_bytes": 529,
+   "expected_window_sha256_prefix": "150cb02308d0",
+   "measured_window_sha256_prefix": "150cb02308d0",
+   "consumer_gate": "G-INCIDENCE-CENSUS",
+   "provenance": "THE SCOPE RULING that makes BLOCKED-AT-GRAMMAR-SOURCE first class",
+   "ok": true
+  },
+  {
    "name": "A-PIN-R6A",
    "kind": "file-bytes",
    "artifact": "v14/note-r6a-refinement-grammar-pin.md",
@@ -519,96 +649,6 @@
    ],
    "provenance": "I7's own verdict: the arena this unit refines is a RUNNABLE one",
    "ok": true
-  },
-  {
-   "name": "T-COUNTS-POSITIVE",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "the interval cardinality $n_\\ell(x)\\in\\mathbb Z_{>0}$",
-   "measured": true,
-   "provenance": "THE TYPE DECLARATION.  Counts are STRICTLY POSITIVE integers -- the declaration that makes a split of a count-1 interval impossible",
-   "ok": true
-  },
-  {
-   "name": "T-COUNTS-SEMANTIC",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "is the number of division events in the record interval between",
-   "measured": true,
-   "provenance": "THE SEMANTIC ANCHOR.  n_l(x) COUNTS DIVISION EVENTS IN THE INTERVAL -- the declaration from which count additivity follows as semantics",
-   "ok": true
-  },
-  {
-   "name": "T-FRONT",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "$n(x)$ = the number of division events already committed at record site $x$",
-   "measured": true,
-   "provenance": "THE FRONT.  A separate configuration variable counting events AT a site",
-   "ok": true
-  },
-  {
-   "name": "T-READOUT",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "$q_{12} = (n_{e_1+e_2} - n_{e_1} - n_{e_2})/2$",
-   "measured": true,
-   "provenance": "THE DECLARED READOUT at d=2, reimplemented here",
-   "ok": true
-  },
-  {
-   "name": "T-CURVED",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "| `G-CURVED` | $(1,1,2)$ | $(2,2,4)$ |",
-   "measured": true,
-   "provenance": "the site-dependent diagonal record's counts at (0,0) and (1,1)",
-   "ok": true
-  },
-  {
-   "name": "T-CURVOFF",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "| `G-CURVOFF` | $(2,2,6)$ | $(3,3,10)$ |",
-   "measured": true,
-   "provenance": "the site-dependent cross-term record's counts at (0,0) and (1,1)",
-   "ok": true
-  },
-  {
-   "name": "T-FROZEN-GEOMETRY",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "The interval-cardinality\n   record $s$ is a configuration variable that $H_a[N]$ does not move; only the\n   front does.",
-   "measured": true,
-   "provenance": "THE INDEPENDENCE.  The geometry record and the front are separate variables -- the front cannot supply the split",
-   "ok": true
-  },
-  {
-   "name": "T-DRAG",
-   "kind": "verbatim-text",
-   "artifact": "v13/paper-ha-successor.md",
-   "expected": "The drag has exactly two ingredients: the **front tilt** $n(x+e)-n(x)$",
-   "measured": true,
-   "provenance": "the drag's ingredients: front tilt and eventwise lapse value, nothing else",
-   "ok": true
-  },
-  {
-   "name": "T-PIN-ADDITIVITY",
-   "kind": "verbatim-text",
-   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
-   "expected": "n(x,y) + n(y, x+\u2113) = n(x, x+\u2113) (events in the whole = events in the\nparts) \u2014 this is semantics, not a choice.",
-   "measured": true,
-   "provenance": "THE PIN'S OWN FORCED CLAUSE -- the constraint this unit verifies rather than assumes",
-   "ok": true
-  },
-  {
-   "name": "T-PIN-SCOPE",
-   "kind": "verbatim-text",
-   "artifact": "v14/note-r6a-refinement-grammar-pin.md",
-   "expected": "Reaching outside\nthe pinned sources is forbidden.",
-   "measured": true,
-   "provenance": "THE SCOPE RULING that makes BLOCKED-AT-GRAMMAR-SOURCE first class",
-   "ok": true
   }
  ],
  "anchor_totals": {
@@ -709,6 +749,8 @@
    ]
   ],
   "unique_admissible_split_count": 1,
+  "admissibility_narrows_to_one": 0,
+  "narrowing_witnesses": [],
   "box": {
    "axis_max": 6,
    "diag_max": 12
@@ -892,51 +934,407 @@
    "note": "homogeneous, declared count vector"
   }
  },
+ "count_lattice_wide": {
+  "box": {
+   "axis_max": 24,
+   "diag_max": 48
+  },
+  "admissible_count_vectors": 21248,
+  "splittable": 20356,
+  "unique_admissible_split": [
+   [
+    2,
+    2,
+    2
+   ]
+  ],
+  "unique_admissible_split_count": 1,
+  "admissibility_narrows_to_one": 0,
+  "route": "the closed-form integer-interval counter, not the triple enumeration"
+ },
+ "walls": {
+  "wall_1_the_split": {
+   "obstruction": "COMBINATORIAL MULTIPLICITY -- the record carries interval TOTALS, not event POSITIONS, and one interior boundary in a total of n has n - 1 places to sit",
+   "identity": "raw split fiber = prod (n_l(x) - 1) over the 27 slots",
+   "per_record": {
+    "G-ANISO": {
+     "slots": 27,
+     "product_of_n_minus_1": 0,
+     "sum_of_n_minus_1": 63
+    },
+    "G-ANISO2": {
+     "slots": 27,
+     "product_of_n_minus_1": 13631146639813244878848,
+     "sum_of_n_minus_1": 207
+    },
+    "G-CURVED": {
+     "slots": 27,
+     "product_of_n_minus_1": 0,
+     "sum_of_n_minus_1": 45
+    },
+    "G-CURVOFF": {
+     "slots": 27,
+     "product_of_n_minus_1": 2133246689280,
+     "sum_of_n_minus_1": 101
+    },
+    "G-DIAG2": {
+     "slots": 27,
+     "product_of_n_minus_1": 19683,
+     "sum_of_n_minus_1": 45
+    },
+    "G-FLAT": {
+     "slots": 27,
+     "product_of_n_minus_1": 0,
+     "sum_of_n_minus_1": 9
+    },
+    "G-OFFDIAG": {
+     "slots": 27,
+     "product_of_n_minus_1": 1953125,
+     "sum_of_n_minus_1": 63
+    },
+    "G-OFFDIAG2": {
+     "slots": 27,
+     "product_of_n_minus_1": 316478381828866048,
+     "sum_of_n_minus_1": 153
+    },
+    "G-OFFNEG": {
+     "slots": 27,
+     "product_of_n_minus_1": 2641807540224,
+     "sum_of_n_minus_1": 81
+    }
+   },
+   "potential_counterfactual": {
+    "G-ANISO": {
+     "split_fiber_under_a_granted_potential": 0,
+     "admissible_values_per_interior_site": [
+      0,
+      3,
+      4
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-ANISO2": {
+     "split_fiber_under_a_granted_potential": 13631146639813244878848,
+     "admissible_values_per_interior_site": [
+      3,
+      8,
+      12
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-CURVED": {
+     "split_fiber_under_a_granted_potential": 0,
+     "admissible_values_per_interior_site": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-CURVOFF": {
+     "split_fiber_under_a_granted_potential": 2133246689280,
+     "admissible_values_per_interior_site": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-DIAG2": {
+     "split_fiber_under_a_granted_potential": 19683,
+     "admissible_values_per_interior_site": [
+      1,
+      3
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-FLAT": {
+     "split_fiber_under_a_granted_potential": 0,
+     "admissible_values_per_interior_site": [
+      0,
+      1
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-OFFDIAG": {
+     "split_fiber_under_a_granted_potential": 1953125,
+     "admissible_values_per_interior_site": [
+      1,
+      5
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-OFFDIAG2": {
+     "split_fiber_under_a_granted_potential": 316478381828866048,
+     "admissible_values_per_interior_site": [
+      2,
+      4,
+      11
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    },
+    "G-OFFNEG": {
+     "split_fiber_under_a_granted_potential": 2641807540224,
+     "admissible_values_per_interior_site": [
+      2,
+      3,
+      4
+     ],
+     "free_transverse_link_slots_without_a_potential": 54,
+     "free_transverse_link_slots_with_a_potential": 0,
+     "refined_link_slots_determined_by_the_potential": 108,
+     "free_transverse_links_fiber_with_a_potential": 1
+    }
+   }
+  },
+  "wall_2_the_transverse_links": {
+   "obstruction": "THE COBOUNDARY THEOREM on the periodic lattice",
+   "characterisation": {
+    "sites": 9,
+    "edges": 27,
+    "rank_of_delta": 8,
+    "cycle_rank": 19,
+    "axis_cycle_conditions": 18,
+    "triangle_conditions": 18,
+    "rank_of_the_conditions": 19,
+    "solution_dimension": 8,
+    "conditions_cut_out_exactly_the_coboundaries": true
+   },
+   "cycle_sums": {
+    "G-ANISO": {
+     "min_axis_cycle_sum": 3,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-ANISO2": {
+     "min_axis_cycle_sum": 12,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-CURVED": {
+     "min_axis_cycle_sum": 6,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-CURVOFF": {
+     "min_axis_cycle_sum": 9,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-DIAG2": {
+     "min_axis_cycle_sum": 6,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-FLAT": {
+     "min_axis_cycle_sum": 3,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-OFFDIAG": {
+     "min_axis_cycle_sum": 6,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-OFFDIAG2": {
+     "min_axis_cycle_sum": 9,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    },
+    "G-OFFNEG": {
+     "min_axis_cycle_sum": 9,
+     "cycles": 18,
+     "admits_a_potential_on_the_periodic_lattice": false
+    }
+   }
+  },
+  "wall_3_the_q12_zero_sector": {
+   "obstruction": "PERIODIC HOLONOMY ALONE -- one integer per axis cycle; on the universal cover the sector's counts are coboundaries",
+   "sector": [
+    "G-ANISO",
+    "G-ANISO2",
+    "G-CURVED",
+    "G-DIAG2",
+    "G-FLAT"
+   ],
+   "per_record": {
+    "G-ANISO": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": true,
+     "is_a_coboundary_on_the_universal_cover": true,
+     "q12_values": [
+      "0"
+     ],
+     "q12_identically_zero": true
+    },
+    "G-ANISO2": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": true,
+     "is_a_coboundary_on_the_universal_cover": true,
+     "q12_values": [
+      "0"
+     ],
+     "q12_identically_zero": true
+    },
+    "G-CURVED": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": true,
+     "is_a_coboundary_on_the_universal_cover": true,
+     "q12_values": [
+      "0"
+     ],
+     "q12_identically_zero": true
+    },
+    "G-CURVOFF": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": false,
+     "is_a_coboundary_on_the_universal_cover": false,
+     "q12_values": [
+      "1",
+      "2"
+     ],
+     "q12_identically_zero": false
+    },
+    "G-DIAG2": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": true,
+     "is_a_coboundary_on_the_universal_cover": true,
+     "q12_values": [
+      "0"
+     ],
+     "q12_identically_zero": true
+    },
+    "G-FLAT": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": true,
+     "is_a_coboundary_on_the_universal_cover": true,
+     "q12_values": [
+      "0"
+     ],
+     "q12_identically_zero": true
+    },
+    "G-OFFDIAG": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": false,
+     "is_a_coboundary_on_the_universal_cover": false,
+     "q12_values": [
+      "1"
+     ],
+     "q12_identically_zero": false
+    },
+    "G-OFFDIAG2": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": false,
+     "is_a_coboundary_on_the_universal_cover": false,
+     "q12_values": [
+      "2"
+     ],
+     "q12_identically_zero": false
+    },
+    "G-OFFNEG": {
+     "plaquette_curl_vanishes": true,
+     "triangle_relations_hold": false,
+     "is_a_coboundary_on_the_universal_cover": false,
+     "q12_values": [
+      "-2"
+     ],
+     "q12_identically_zero": false
+    }
+   },
+   "canonical_refinement": {
+    "record": "G-DIAG2",
+    "homogeneous": true,
+    "interpolated_lift_is_integral": true,
+    "refined_counts_positive": true,
+    "refined_sites": 36,
+    "admissible_refined_sites": 36,
+    "coarse_sites": 9,
+    "coarse_record_recovered_at": 9,
+    "induced_split_fiber": 1,
+    "slots_differing_from_the_declared_minimal_completion": 18,
+    "agrees_with_the_declared_floor_split_on_every_covered_slot": true,
+    "scope": "the universal cover is NOT a pinned object; this exhibits where the obstruction lives on the q_12 = 0 sector and moves no freedom out of class (iii)"
+   },
+   "scope": "the universal cover is NOT a pinned object; this is a gated disclosure about where the obstruction lives and it cannot flip the verdict"
+  }
+ },
  "no_potential": {
   "G-ANISO": {
    "min_axis_cycle_sum": 3,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-ANISO2": {
    "min_axis_cycle_sum": 12,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-CURVED": {
    "min_axis_cycle_sum": 6,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-CURVOFF": {
    "min_axis_cycle_sum": 9,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-DIAG2": {
    "min_axis_cycle_sum": 6,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-FLAT": {
    "min_axis_cycle_sum": 3,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-OFFDIAG": {
    "min_axis_cycle_sum": 6,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-OFFDIAG2": {
    "min_axis_cycle_sum": 9,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   },
   "G-OFFNEG": {
    "min_axis_cycle_sum": 9,
    "cycles": 18,
-   "admits_a_potential": false
+   "admits_a_potential_on_the_periodic_lattice": false
   }
  },
  "move_census": {
@@ -1037,6 +1435,12 @@
     },
     "verdict": "REFUSED",
     "probe": {
+     "targets_by_link": {
+      "(0, 1)": false,
+      "(1, 0)": true,
+      "(1, 1)": false
+     },
+     "cycle_lengths_measured_on_the_built_site_set": true,
      "sites": 10,
      "direction_0_cycle_lengths": [
       4,
@@ -1080,14 +1484,30 @@
   "statement": "which refined site subdivides a coarse DIAGONAL interval cut by a single-direction hyperplane insertion.  The coarse displacement (2,1) has two minimal decompositions into declared link vectors, with two distinct interior sites; the pinned grammar declares a link SET and no incidence rule, and supplying one would be a grammar fact from outside the pinned sources (pin section 1)",
   "ambiguous_intervals": 3,
   "candidates_per_interval": 2,
+  "candidates_measured_over": 9,
   "loci_censused": 3,
   "all_loci_agree": true,
   "completion_sweep": {
-   "completions": 16,
-   "disagreeing": 12
+   "scope": "every splittable record, every site, the axis-e_1 interval, every split, both free counts over 1..12",
+   "completions": 14256,
+   "disagreeing": 13158,
+   "agreeing": 1098,
+   "agreement_criterion": "f_1 - f_0 = n_2 - n_1",
+   "criterion_verified_at": 14256,
+   "narrow_sweep_at_G-DIAG2": {
+    "completions": 16,
+    "disagreeing": 12,
+    "note": "G-DIAG2's axis count is 2, so n_1 = n_2 and the criterion degenerates to f_0 = f_1"
+   }
   }
  },
  "refused_branch": {
+  "targets_by_link": {
+   "(0, 1)": false,
+   "(1, 0)": true,
+   "(1, 1)": false
+  },
+  "cycle_lengths_measured_on_the_built_site_set": true,
   "sites": 10,
   "direction_0_cycle_lengths": [
    4,
@@ -1124,6 +1544,8 @@
   "additivity_violations": 0,
   "restriction_checks": 324,
   "restriction_ok": 324,
+  "restricted_count_cells": 972,
+  "restricted_counts_equal_the_coarse_counts": 972,
   "splittable_records": [
    "G-ANISO2",
    "G-CURVOFF",
@@ -1539,6 +1961,260 @@
   "declared_builds": 36,
   "reading": "the FORCED half of the grammar holds exactly: additivity is verified at every cell and the coarse metric is recovered exactly at every cell.  What fails is not the forced part."
  },
+ "forced_lift_by_rule": {
+  "scope": "every admissible build at the declared minimal completion (14 builds), every declared front, every coarse site",
+  "builds": 14,
+  "per_rule": {
+   "A-chart": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 756,
+    "equals_the_declared_right_lift": 756,
+    "equals_the_count_weighted_interpolation": 462
+   },
+   "A-axis": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 530,
+    "equals_the_declared_right_lift": 462,
+    "equals_the_count_weighted_interpolation": 756
+   },
+   "A-linkframe": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 340,
+    "equals_the_declared_right_lift": 306,
+    "equals_the_count_weighted_interpolation": 360
+   },
+   "A-linkhalf": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 340,
+    "equals_the_declared_right_lift": 306,
+    "equals_the_count_weighted_interpolation": 360
+   },
+   "A-insert": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 366,
+    "equals_the_declared_right_lift": 319,
+    "equals_the_count_weighted_interpolation": 434
+   },
+   "A-insert-x": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 366,
+    "equals_the_declared_right_lift": 319,
+    "equals_the_count_weighted_interpolation": 434
+   },
+   "A-insert-2x": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 366,
+    "equals_the_declared_right_lift": 319,
+    "equals_the_count_weighted_interpolation": 434
+   },
+   "A-notransport": {
+    "status": "VACUOUS-NO-CONDITION-ON-THE-LIFT",
+    "cells": 0,
+    "integral": 0,
+    "equals_the_declared_right_lift": 0,
+    "equals_the_count_weighted_interpolation": 0
+   },
+   "B-axis": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 530,
+    "equals_the_declared_right_lift": 462,
+    "equals_the_count_weighted_interpolation": 756
+   },
+   "B-all": {
+    "status": "UNDERDETERMINED",
+    "cells": 0,
+    "integral": 0,
+    "equals_the_declared_right_lift": 0,
+    "equals_the_count_weighted_interpolation": 0
+   },
+   "B-chart": {
+    "status": "DETERMINED",
+    "cells": 756,
+    "integral": 756,
+    "equals_the_declared_right_lift": 756,
+    "equals_the_count_weighted_interpolation": 462
+   }
+  },
+  "forms": {
+   "A-chart": "THE-DECLARED-RIGHT-LIFT",
+   "A-axis": "THE-COUNT-WEIGHTED-INTERPOLATION",
+   "A-linkframe": "A-THIRD-VALUE",
+   "A-linkhalf": "A-THIRD-VALUE",
+   "A-insert": "A-THIRD-VALUE",
+   "A-insert-x": "A-THIRD-VALUE",
+   "A-insert-2x": "A-THIRD-VALUE",
+   "A-notransport": "VACUOUS",
+   "B-axis": "THE-COUNT-WEIGHTED-INTERPOLATION",
+   "B-all": "UNDERDETERMINED",
+   "B-chart": "THE-DECLARED-RIGHT-LIFT"
+  },
+  "rules_by_form": {
+   "A-THIRD-VALUE": [
+    "A-insert",
+    "A-insert-2x",
+    "A-insert-x",
+    "A-linkframe",
+    "A-linkhalf"
+   ],
+   "THE-COUNT-WEIGHTED-INTERPOLATION": [
+    "A-axis",
+    "B-axis"
+   ],
+   "THE-DECLARED-RIGHT-LIFT": [
+    "A-chart",
+    "B-chart"
+   ],
+   "UNDERDETERMINED": [
+    "B-all"
+   ],
+   "VACUOUS": [
+    "A-notransport"
+   ]
+  }
+ },
+ "extremal_selectors": {
+  "records": 6,
+  "sites_per_record": 9,
+  "sites": 54,
+  "max_det": {
+   "unique_sites": 54,
+   "records_with_an_admissible_selected_refinement": 6
+  },
+  "most_balanced": {
+   "unique_sites": 22
+  },
+  "min_abs_q12": {
+   "unique_sites": 19
+  },
+  "per_record": {
+   "G-ANISO2": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 0
+    },
+    "min_abs_q12": {
+     "unique_sites": 0
+    },
+    "sites": 9
+   },
+   "G-CURVOFF": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 4
+    },
+    "min_abs_q12": {
+     "unique_sites": 1
+    },
+    "sites": 9
+   },
+   "G-DIAG2": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 9
+    },
+    "min_abs_q12": {
+     "unique_sites": 9
+    },
+    "sites": 9
+   },
+   "G-OFFDIAG": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 9
+    },
+    "min_abs_q12": {
+     "unique_sites": 9
+    },
+    "sites": 9
+   },
+   "G-OFFDIAG2": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 0
+    },
+    "min_abs_q12": {
+     "unique_sites": 0
+    },
+    "sites": 9
+   },
+   "G-OFFNEG": {
+    "max_det": {
+     "unique_sites": 9,
+     "refinement_admissible": true
+    },
+    "most_balanced": {
+     "unique_sites": 0
+    },
+    "min_abs_q12": {
+     "unique_sites": 0
+    },
+    "sites": 9
+   }
+  },
+  "verdict": "NOT DERIVABLE -- no extremal principle is declared in the pinned sources, so a unique extremal selector is a lead for a deeper row and forces nothing here"
+ },
+ "rejected_forcings": [
+  {
+   "candidate": "the declared chart group (a measured stabiliser)",
+   "target": "THE-SPLIT",
+   "measured_kill": "equivariant split fibers [3, 5, 24, 88, 288, 29393280] -- never 1"
+  },
+  {
+   "candidate": "readout admissibility as a selector",
+   "target": "THE-SPLIT",
+   "measured_kill": "over the pinned count box admissibility narrows a site fiber from more than one to exactly one at 0 of 261 splittable vectors; the unique-split locus is exactly the all-counts-2 vector"
+  },
+  {
+   "candidate": "an extremal / variational selection",
+   "target": "THE-SPLIT",
+   "measured_kill": "max-det IS unique at every site of every splittable record and its refinement is admissible -- but no pinned declaration names a functional to extremise, so it is a lead and not a forcing"
+  },
+  {
+   "candidate": "the cumulative reading n_l(x) = n(x+l) - n(x), which would force n(y) = n(x) + n_1",
+   "target": "NEW-FRONT-VALUES",
+   "measured_kill": "excluded TWICE: by the coboundary theorem (every axis cycle sum is positive, measured minimum 3) and INDEPENDENTLY by [T-FROZEN-GEOMETRY] -- H_a[N] moves the front and not the counts, so the counts cannot be front differences.  The second route is arena-free and positivity-free"
+  },
+  {
+   "candidate": "the new site is itself an event, so its front carries a floor",
+   "target": "NEW-FRONT-VALUES",
+   "measured_kill": "[T-FRONT] declares a site-local advance counter; nothing in the pinned sources relates a new site's counter to its neighbours', so no floor follows"
+  },
+  {
+   "candidate": "a dynamical gauge: identify refinements with equal commutation defect",
+   "target": "THE-SPLIT",
+   "measured_kill": "the split -> defect map separates splits under the declared rules (G-DEFECT-SPLIT-DEPENDENCE), so no dynamical identification collapses the fiber"
+  }
+ ],
+ "odd_counts_on_splittable_records": [
+  3,
+  5,
+  7,
+  9,
+  13
+ ],
  "split_fibers": {
   "G-ANISO": {
    "raw": 0,
@@ -1898,11 +2574,16 @@
     "front_tilt": 1,
     "forced_value_offset": "4/9"
    }
-  ]
+  ],
+  "record": "G-ANISO2",
+  "split_rule": "floor",
+  "cell_shape": "(front, site, link) at one record and one split rule"
  },
  "forced_lift_universal": {
   "triples_checked": 207,
-  "splits_with_n_dividing_n1": 0
+  "splits_with_n_dividing_n1": 0,
+  "record": "G-ANISO2",
+  "splits_over_the_splittable_family": 650
  },
  "cover": {
   "refined_sites": 36,
@@ -1914,8 +2595,479 @@
  },
  "dynamics_census": {
   "cells": 11088,
-  "cells_with_a_nonzero_defect": 7112,
-  "cells_with_an_identically_zero_defect": 3976,
+  "cells_with_a_nonzero_defect": 7126,
+  "cells_with_an_identically_zero_defect": 3962,
+  "zero_sector": {
+   "cells": 3962,
+   "with_a_vanishing_coarse_drag": 3962,
+   "nonzero_defect_with_a_vanishing_coarse_drag": 14,
+   "nonzero_defect_at_a_vanishing_coarse_drag_by_rule": {
+    "A-notransport": 14
+   },
+   "characterisation": "every zero cell is a cell where the coarse drag vanishes identically -- the comparator has never returned zero on a nontrivial pair; the converse fails only under the declared frozen-front rules"
+  },
+  "value_census": {
+   "IMAGE": {
+    "abs_mass": "80315314777/2368080",
+    "components": 199584,
+    "nonzero_components": 27384
+   },
+   "MID-(0, 1)": {
+    "abs_mass": "4205592797/102960",
+    "components": 199584,
+    "nonzero_components": 32167
+   },
+   "MID-(1, 0)": {
+    "abs_mass": "1079224873/30030",
+    "components": 199584,
+    "nonzero_components": 29790
+   },
+   "MID-(1, 1)": {
+    "abs_mass": "238908105636737/8725917200",
+    "components": 199584,
+    "nonzero_components": 28343
+   }
+  },
+  "right_lift_image_agreement": {
+   "A-axis": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-chart": {
+    "image_defect_zero": 4536,
+    "cells": 4536
+   },
+   "A-insert": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-insert-2x": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-insert-x": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-linkframe": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-linkhalf": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "A-notransport": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "B-all": {
+    "image_defect_zero": 3696,
+    "cells": 4536
+   },
+   "B-axis": {
+    "image_defect_zero": 3724,
+    "cells": 4536
+   },
+   "B-chart": {
+    "image_defect_zero": 4536,
+    "cells": 4536
+   }
+  },
+  "rules_with_an_identically_zero_image_defect": [
+   "A-chart",
+   "B-chart"
+  ],
+  "rule_field_classes": [
+   [
+    "A-axis",
+    "B-axis"
+   ],
+   [
+    "A-chart",
+    "B-chart"
+   ],
+   [
+    "A-insert"
+   ],
+   [
+    "A-insert-2x"
+   ],
+   [
+    "A-insert-x"
+   ],
+   [
+    "A-linkframe"
+   ],
+   [
+    "A-linkhalf"
+   ],
+   [
+    "A-notransport"
+   ],
+   [
+    "B-all"
+   ]
+  ],
+  "distinct_defect_fields": 9,
+  "site_resolved_support": {
+   "A-axis|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-axis|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-axis|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-axis|left|MID-(1, 1)": {
+    "nonzero": 718,
+    "total": 4536
+   },
+   "A-axis|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-axis|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-axis|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-axis|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-chart|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-chart|left|MID-(0, 1)": {
+    "nonzero": 728,
+    "total": 4536
+   },
+   "A-chart|left|MID-(1, 0)": {
+    "nonzero": 308,
+    "total": 4536
+   },
+   "A-chart|left|MID-(1, 1)": {
+    "nonzero": 0,
+    "total": 4536
+   },
+   "A-chart|right|IMAGE": {
+    "nonzero": 0,
+    "total": 4536
+   },
+   "A-chart|right|MID-(0, 1)": {
+    "nonzero": 910,
+    "total": 4536
+   },
+   "A-chart|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-chart|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|left|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-insert|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-insert|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|left|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-2x|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-insert-2x|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-insert-2x|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|left|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-insert-x|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-insert-x|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-insert-x|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkframe|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkframe|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkframe|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkframe|left|MID-(1, 1)": {
+    "nonzero": 804,
+    "total": 4536
+   },
+   "A-linkframe|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkframe|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-linkframe|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-linkframe|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkhalf|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkhalf|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkhalf|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkhalf|left|MID-(1, 1)": {
+    "nonzero": 804,
+    "total": 4536
+   },
+   "A-linkhalf|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-linkhalf|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "A-linkhalf|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "A-linkhalf|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|left|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "A-notransport|right|MID-(0, 1)": {
+    "nonzero": 924,
+    "total": 4536
+   },
+   "A-notransport|right|MID-(1, 0)": {
+    "nonzero": 1092,
+    "total": 4536
+   },
+   "A-notransport|right|MID-(1, 1)": {
+    "nonzero": 1190,
+    "total": 4536
+   },
+   "B-all|left|IMAGE": {
+    "nonzero": 840,
+    "total": 4536
+   },
+   "B-all|left|MID-(0, 1)": {
+    "nonzero": 840,
+    "total": 4536
+   },
+   "B-all|left|MID-(1, 0)": {
+    "nonzero": 840,
+    "total": 4536
+   },
+   "B-all|left|MID-(1, 1)": {
+    "nonzero": 827,
+    "total": 4536
+   },
+   "B-all|right|IMAGE": {
+    "nonzero": 840,
+    "total": 4536
+   },
+   "B-all|right|MID-(0, 1)": {
+    "nonzero": 1134,
+    "total": 4536
+   },
+   "B-all|right|MID-(1, 0)": {
+    "nonzero": 966,
+    "total": 4536
+   },
+   "B-all|right|MID-(1, 1)": {
+    "nonzero": 840,
+    "total": 4536
+   },
+   "B-axis|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-axis|left|MID-(0, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-axis|left|MID-(1, 0)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-axis|left|MID-(1, 1)": {
+    "nonzero": 718,
+    "total": 4536
+   },
+   "B-axis|right|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-axis|right|MID-(0, 1)": {
+    "nonzero": 1120,
+    "total": 4536
+   },
+   "B-axis|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "B-axis|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-chart|left|IMAGE": {
+    "nonzero": 812,
+    "total": 4536
+   },
+   "B-chart|left|MID-(0, 1)": {
+    "nonzero": 728,
+    "total": 4536
+   },
+   "B-chart|left|MID-(1, 0)": {
+    "nonzero": 308,
+    "total": 4536
+   },
+   "B-chart|left|MID-(1, 1)": {
+    "nonzero": 0,
+    "total": 4536
+   },
+   "B-chart|right|IMAGE": {
+    "nonzero": 0,
+    "total": 4536
+   },
+   "B-chart|right|MID-(0, 1)": {
+    "nonzero": 910,
+    "total": 4536
+   },
+   "B-chart|right|MID-(1, 0)": {
+    "nonzero": 952,
+    "total": 4536
+   },
+   "B-chart|right|MID-(1, 1)": {
+    "nonzero": 812,
+    "total": 4536
+   }
+  },
+  "completion_relativity": {
+   "matched_cells": 2772,
+   "cells_whose_support_moved": 36
+  },
   "builds_censused": 14,
   "rules": 11,
   "lapses": 12,
@@ -1927,19 +3079,19 @@
     "total": 99792
    },
    "MID-(0, 1)": {
-    "nonzero": 20706,
+    "nonzero": 20510,
     "total": 99792
    },
    "MID-(1, 0)": {
-    "nonzero": 18438,
+    "nonzero": 18578,
     "total": 99792
    },
    "MID-(1, 1)": {
-    "nonzero": 16079,
+    "nonzero": 16457,
     "total": 99792
    }
   },
-  "support_signature": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792",
+  "support_signature": "IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792",
   "per_rule": {
    "A-axis": {
     "nonzero": 644,
@@ -1970,7 +3122,7 @@
     "cells": 1008
    },
    "A-notransport": {
-    "nonzero": 644,
+    "nonzero": 658,
     "cells": 1008
    },
    "B-all": {
@@ -1988,27 +3140,27 @@
   },
   "per_record": {
    "G-ANISO2": {
-    "nonzero": 1524,
+    "nonzero": 1527,
     "cells": 2376
    },
    "G-CURVOFF": {
-    "nonzero": 508,
+    "nonzero": 509,
     "cells": 792
    },
    "G-DIAG2": {
-    "nonzero": 1524,
+    "nonzero": 1527,
     "cells": 2376
    },
    "G-OFFDIAG": {
-    "nonzero": 1016,
+    "nonzero": 1018,
     "cells": 1584
    },
    "G-OFFDIAG2": {
-    "nonzero": 1016,
+    "nonzero": 1018,
     "cells": 1584
    },
    "G-OFFNEG": {
-    "nonzero": 1524,
+    "nonzero": 1527,
     "cells": 2376
    }
   },
@@ -2021,8 +3173,72 @@
    "right": 2
   },
   "closed_form_at_coarse_images": "D(iota(x)) = w^c[N,n](x) exactly, under the left lift, at 49896 of 49896 cells",
+  "closed_form_image_cells": 49896,
+  "closed_form_matching": 49896,
   "matter_independence": "the matter record cancels between the two orders, so the defect is a pure drag comparison"
  },
+ "flat_scale_table": [
+  {
+   "counts": [
+    1,
+    1,
+    2
+   ],
+   "admissible": true,
+   "ceiling": 0,
+   "achieved": 0
+  },
+  {
+   "counts": [
+    2,
+    2,
+    4
+   ],
+   "admissible": true,
+   "ceiling": 1,
+   "achieved": 1
+  },
+  {
+   "counts": [
+    3,
+    3,
+    6
+   ],
+   "admissible": true,
+   "ceiling": 1,
+   "achieved": 1
+  },
+  {
+   "counts": [
+    4,
+    4,
+    8
+   ],
+   "admissible": true,
+   "ceiling": 2,
+   "achieved": 2
+  },
+  {
+   "counts": [
+    5,
+    5,
+    10
+   ],
+   "admissible": true,
+   "ceiling": 2,
+   "achieved": 2
+  },
+  {
+   "counts": [
+    6,
+    6,
+    12
+   ],
+   "admissible": true,
+   "ceiling": 2,
+   "achieved": 2
+  }
+ ],
  "iteration": {
   "per_record": {
    "G-ANISO": {
@@ -2200,6 +3416,58 @@
   "forced_constraints": 0,
   "comparison": "DYADIC forces 27 additivity constraints and represents 27 of 27 coarse intervals; the copying move forces 0 and loses 6.  Both fail the motivation audit, by different measured failure modes -- which is what makes the audit an instrument rather than a verdict"
  },
+ "text_anchor_consumers": [
+  {
+   "anchor": "T-COUNTS-POSITIVE",
+   "consumer_gate": "G-UNSPLITTABLE-RECORDS",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-COUNTS-SEMANTIC",
+   "consumer_gate": "G-ADDITIVITY-FORCED",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-FRONT",
+   "consumer_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-READOUT",
+   "consumer_gate": "G-READOUT-REENCODING",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-CURVED",
+   "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-CURVOFF",
+   "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-FROZEN-GEOMETRY",
+   "consumer_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-DRAG",
+   "consumer_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-PIN-ADDITIVITY",
+   "consumer_gate": "G-ADDITIVITY-FORCED",
+   "consumer_registered": true
+  },
+  {
+   "anchor": "T-PIN-SCOPE",
+   "consumer_gate": "G-INCIDENCE-CENSUS",
+   "consumer_registered": true
+  }
+ ],
  "choice_inventory": {
   "items": [
    {
@@ -2275,6 +3543,8 @@
        ]
       ],
       "unique_admissible_split_count": 1,
+      "admissibility_narrows_to_one": 0,
+      "narrowing_witnesses": [],
       "box": {
        "axis_max": 6,
        "diag_max": 12
@@ -2293,6 +3563,7 @@
      "total": 108,
      "infinite_family": {
       "witnesses": 64,
+      "declared_trials": 64,
       "family": "c = a + b keeps det q = a*b > 0 for every b >= 1"
      }
     },
@@ -2328,9 +3599,30 @@
   "motivation_qualifier": "NOT-MOTIVATED",
   "classification_rule": "(i) forced by a NAMED pinned declaration with fiber 1; (ii) fixed by a MEASURED stabiliser (equivariant fiber 1); (iii) genuinely free, fiber counted exactly"
  },
- "verdict": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
+ "reopening_leads": [
+  {
+   "name": "R6b' -- THE RECORD-TYPE DISCRIMINATOR",
+   "measured_strength": "the raw split fiber is EXACTLY prod (n_l - 1) -- the number of ways to place one interior position given only the totals -- at 9 of 9 admissible records, so a record carrying event POSITIONS rather than event COUNTS kills the split freedom by construction, and a granted potential collapses the free transverse links from infinite to 1.  It does NOT touch NEW-FRONT-VALUES, which is a separate declared variable, so the audit must be re-run and not assumed",
+   "what_would_motivate_it": "pinning a deeper grammar row that declares event positions (a renewal / event-position record) BESIDE this cardinality row, and re-running this unit's audit verbatim on it"
+  },
+  {
+   "name": "THE EXTREMAL PRINCIPLE",
+   "measured_strength": "a max-det selector at the refined image site is UNIQUE at 54 of the 54 (record, site) cells the 6 splittable records carry -- every site of every one -- and yields a globally admissible refinement at 6 of 6 records; two rival extremal selectors (most balanced, min |q_12|) are unique at 22 and 19 of the same 54 cells.  No extremal principle is declared in the pinned sources, so this fixes nothing here",
+   "what_would_motivate_it": "a deeper row declaring a variational principle on the record -- then a selector is a derivation rather than a declaration"
+  },
+  {
+   "name": "THE UNIVERSAL-COVER ROUTE",
+   "measured_strength": "5 of the 9 admissible records -- exactly the q_12 = 0 sector -- carry counts that are coboundaries on the universal cover, and the cover potential's count-weighted interpolation induces a canonical refinement of G-DIAG2 that is admissible at 36 of 36 refined sites, recovers the coarse record at 9 of 9 and determines the split.  On that sector the obstruction is periodic holonomy, not information -- but the cover is not a pinned object",
+   "what_would_motivate_it": "a deeper row that de-periodizes the arena or pins cover objects, so that a cover potential is a declared object rather than a construction outside the pinned sources"
+  }
+ ],
+ "verdict": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)|CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)|DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962|ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED|DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY|LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES|FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2|COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION|RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1>",
  "verdict_head": "R6A-NO-MOTIVATED-SPLIT",
  "verdict_segments": [
+  {
+   "name": "MECHANISM",
+   "text": "MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)"
+  },
   {
    "name": "CLASSES",
    "text": "CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1"
@@ -2357,7 +3649,7 @@
   },
   {
    "name": "SPLIT-FIBER",
-   "text": "SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361"
+   "text": "SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261"
   },
   {
    "name": "FREE-LINKS",
@@ -2365,34 +3657,79 @@
   },
   {
    "name": "NEW-FRONTS",
-   "text": "NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81"
+   "text": "NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)"
   },
   {
    "name": "DEFECT",
-   "text": "DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792"
+   "text": "DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962"
   },
   {
    "name": "ITERATION",
-   "text": "ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS"
+   "text": "ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS"
   },
   {
    "name": "CONTROL",
    "text": "CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED"
+  },
+  {
+   "name": "DIMENSION-RELATIVITY",
+   "text": "DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY"
+  },
+  {
+   "name": "LIFT-RELATIVITY",
+   "text": "LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES"
+  },
+  {
+   "name": "FAMILY-RELATIVITY",
+   "text": "FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2"
+  },
+  {
+   "name": "COMPLETION-RELATIVITY",
+   "text": "COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION"
+  },
+  {
+   "name": "RULE-RELATIVITY",
+   "text": "RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1"
   }
  ],
  "totals": {
   "anchors": 32,
-  "gates": 48,
-  "must_pass_gates": 48,
-  "recorded_gates": 0,
-  "mutants": 34,
-  "must_pass_failures": 0,
-  "mutant_survivors": 0
+  "gates": 71,
+  "must_pass_gates": 69,
+  "recorded_gates": 2,
+  "mutants": 78,
+  "mutant_survivors": 0,
+  "mutants_measured_dead": 78,
+  "must_pass_failures": 0
  },
  "verdict_audit": {
-  "emitted": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
-  "reconstructed": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>",
+  "emitted": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)|CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)|DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962|ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED|DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY|LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES|FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2|COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION|RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1>",
+  "reconstructed": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)|CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)|DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962|ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED|DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY|LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES|FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2|COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION|RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1>",
   "segment_flips": [
+   {
+    "segment": "MECHANISM",
+    "flips": true
+   },
+   {
+    "segment": "DIMENSION-RELATIVITY",
+    "flips": true
+   },
+   {
+    "segment": "LIFT-RELATIVITY",
+    "flips": true
+   },
+   {
+    "segment": "FAMILY-RELATIVITY",
+    "flips": true
+   },
+   {
+    "segment": "COMPLETION-RELATIVITY",
+    "flips": true
+   },
+   {
+    "segment": "RULE-RELATIVITY",
+    "flips": true
+   },
    {
     "segment": "CLASSES",
     "flips": true
@@ -2456,7 +3793,7 @@
   "v13/paper-ha-successor.md": "f286ba10d2d9",
   "v13/code/ha_successor_exact.py": "d44cb72f8ee9"
  },
- "source_sha256": "ea914c6b55aa68c28a46f57abed66272536e4749f48640f9bbaf6c207ad4765a",
+ "source_sha256": "a3a15ed3c3c83d7dfe86bfe1a6338c375e8be52af32cd3790f2a21ef30b024fb",
  "python": "3.13.2",
  "arithmetic": "int / fractions.Fraction only; no float, no tolerance",
  "mutants": [
@@ -2522,7 +3859,7 @@
   },
   {
    "name": "potential-lax",
-   "expected_gate": "G-NO-POTENTIAL",
+   "expected_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
    "what": "reports a vanishing cycle sum, i.e. a record with a potential"
   },
   {
@@ -2629,57 +3966,911 @@
    "name": "prose-claim-drift",
    "expected_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
    "what": "drifts a rendered paper claim away from the receipt"
+  },
+  {
+   "name": "anchor-hash-A-R0-PIN",
+   "expected_gate": "A-R0-PIN",
+   "what": "corrupts the v14 founding pin's measured hash -- the one anchor row the delivered mutant table left unfalsified"
+  },
+  {
+   "name": "text-window-drift",
+   "expected_gate": "G-TEXT-ANCHORS",
+   "what": "preserves the quoted needle and moves its CONTEXT WINDOW: the meaning-inverting injection the fragment anchor could not see"
+  },
+  {
+   "name": "text-consumer-drift",
+   "expected_gate": "G-TEXT-ANCHOR-CONSUMERS",
+   "what": "points a verbatim-text row at a gate no execution path registers -- an anchor bound to no consumer"
+  },
+  {
+   "name": "curvoff-corrupt",
+   "expected_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "what": "corrupts the site-dependent cross-term record's constructor"
+  },
+  {
+   "name": "q-cell-perturb",
+   "expected_gate": "G-RECORD-IS-METRIC",
+   "what": "moves one readout cell of an already-built record, so admissibility is untouched and only record-IS-metric can see it"
+  },
+  {
+   "name": "cover-lax",
+   "expected_gate": "G-COVER-POTENTIAL-SECTOR",
+   "what": "inverts the universal-cover coboundary test, breaking the measured identity of the cover sector with the q_12 = 0 sector"
+  },
+  {
+   "name": "census-drop-inside",
+   "expected_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "what": "drops a move class INSIDE the constructor, where a self-comparing completeness gate cannot see it (#219)"
+  },
+  {
+   "name": "candidates-typed",
+   "expected_gate": "G-BLOCKED-CANDIDATES-COMPUTED",
+   "what": "types the blocked branch's candidate count instead of reading it off the ambiguous census rows (#24)"
+  },
+  {
+   "name": "link-targets-typed",
+   "expected_gate": "G-REFUSAL-MEASURED",
+   "what": "types a second link target at the inserted site instead of testing membership in the built site set (#24)"
+  },
+  {
+   "name": "completion-sweep-lax",
+   "expected_gate": "G-BLOCK-IS-REAL",
+   "what": "breaks the completion sweep's agreement criterion"
+  },
+  {
+   "name": "dim-link-set",
+   "expected_gate": "G-DIMENSION-EXTENSION",
+   "what": "adds the body diagonal to the declared d=3 link set, so no parity class is unreached"
+  },
+  {
+   "name": "unsplittable-drop",
+   "expected_gate": "G-UNSPLITTABLE-RECORDS",
+   "what": "empties the unsplittable set, which the two independent routes must then disagree about"
+  },
+  {
+   "name": "record-drop",
+   "expected_gate": "G-RECORD-FAMILY-CELL-COMPLETE",
+   "what": "drops one record from the forced part -- the record-family analogue of the move-census cell drop"
+  },
+  {
+   "name": "triples-drop",
+   "expected_gate": "G-FIBER-COMPUTED",
+   "what": "drops one admissible triple INSIDE the shared enumerator, which only a genuinely independent comparator can catch (#219)"
+  },
+  {
+   "name": "witness-loop-bound",
+   "expected_gate": "G-FREE-LINKS-INFINITE",
+   "what": "shortens the infinite-family witness sweep, so the measured witness count no longer covers the declared trial range"
+  },
+  {
+   "name": "lift-mode-blind",
+   "expected_gate": "G-LIFT-GRID-CELL-COMPLETE",
+   "what": "makes the lift ignore its own mode, so every pair commutes"
+  },
+  {
+   "name": "flat-scale-lax",
+   "expected_gate": "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+   "what": "flattens the flat-record scale table's ceilings"
+  },
+  {
+   "name": "forced-lift-rule-lax",
+   "expected_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+   "what": "collapses the per-rule forced-lift solve to one form"
+  },
+  {
+   "name": "closed-form-lax",
+   "expected_gate": "G-DEFECT-CLOSED-FORM",
+   "what": "loses one coarse-image closed-form match"
+  },
+  {
+   "name": "defect-zero-parity",
+   "expected_gate": "G-DEFECT-VALUE-CENSUS",
+   "what": "erases the defect VALUES on the all-odd parity class -- the injection that left all four cell-denominated defect gates green"
+  },
+  {
+   "name": "defect-support-halve",
+   "expected_gate": "G-DEFECT-CHARACTERISED",
+   "what": "halves the IMAGE row of the support accumulator, which only a second-pass rebuild can catch (#219)"
+  },
+  {
+   "name": "zero-sector-lax",
+   "expected_gate": "G-ZERO-SECTOR-CHARACTERISED",
+   "what": "claims a zero defect at a cell whose coarse drag does not vanish"
+  },
+  {
+   "name": "image-agreement-lax",
+   "expected_gate": "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+   "what": "makes the right-lift image agreement uniform across the rules"
+  },
+  {
+   "name": "rule-field-lax",
+   "expected_gate": "G-RULE-FIELD-CENSUS",
+   "what": "inflates the declared rule family's distinct-field census"
+  },
+  {
+   "name": "completion-relativity-lax",
+   "expected_gate": "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+   "what": "suppresses the measured completion-relativity of the support"
+  },
+  {
+   "name": "split-dep-blind",
+   "expected_gate": "G-DEFECT-SPLIT-DEPENDENCE",
+   "what": "probes a single split, so the dependence cannot be seen"
+  },
+  {
+   "name": "growth-lax",
+   "expected_gate": "G-INVENTORY-TREND",
+   "what": "flattens the inventory growth table"
+  },
+  {
+   "name": "cache-disable",
+   "expected_gate": "G-CACHE-EXERCISED",
+   "what": "disables the weight memo, so the cache path is never exercised"
+  },
+  {
+   "name": "reconstructor-pin",
+   "expected_gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "what": "hard-codes one comparator field at its correct value, so the string-equality gate passes and only flippability can see it"
+  },
+  {
+   "name": "reconstructor-head",
+   "expected_gate": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "what": "pins the COMPARATOR's head, which the string gate cannot see"
+  },
+  {
+   "name": "receipt-cell-corrupt",
+   "expected_gate": "G-RECEIPT-MATCHES-THE-GATED-VALUES",
+   "what": "corrupts a receipt cell AFTER its gate has passed -- the class that reached both delivered artifacts at exit 0"
+  },
+  {
+   "name": "receipt-float",
+   "expected_gate": "G-NO-FLOATS-IN-RECEIPT",
+   "what": "puts a float into the measurement object itself"
+  },
+  {
+   "name": "deferred-phantom",
+   "expected_gate": "G-DEFERRED-GATES-EVALUATED",
+   "what": "declares a deferred gate no execution path evaluates"
+  },
+  {
+   "name": "gate-count-lax",
+   "expected_gate": "G-FINAL-GATE-COUNT",
+   "what": "perturbs the gate count the paper's instrument sentence carries"
+  },
+  {
+   "name": "waiver-remove",
+   "expected_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "what": "removes one waiver, leaving a silently exempted gate"
+  },
+  {
+   "name": "waiver-text-drift",
+   "expected_gate": "G-WAIVER-TEXT-RENDERED",
+   "what": "ships a false waiver string instead of the rendered one"
+  },
+  {
+   "name": "waiver-extraneous",
+   "expected_gate": "G-WAIVER-LEDGER-CLEAN",
+   "what": "leaves a waiver key for a gate that IS falsified -- the dead entry the delivered ledger carried"
+  },
+  {
+   "name": "multiplicity-lax",
+   "expected_gate": "G-SPLIT-MULTIPLICITY-IDENTITY",
+   "what": "breaks the prod (n_l - 1) identity at one record"
+  },
+  {
+   "name": "counterfactual-lax",
+   "expected_gate": "G-POTENTIAL-COUNTERFACTUAL",
+   "what": "claims a granted potential leaves free transverse link slots"
+  },
+  {
+   "name": "coboundary-rank-lax",
+   "expected_gate": "G-COBOUNDARY-CHARACTERISED",
+   "what": "moves the rank of the coboundary conditions, so they no longer cut out the coboundaries exactly"
+  },
+  {
+   "name": "cover-canon-lax",
+   "expected_gate": "G-COVER-CANONICAL-REFINEMENT",
+   "what": "breaks the canonical refinement's restriction to the coarse record"
+  },
+  {
+   "name": "extremal-lax",
+   "expected_gate": "G-EXTREMAL-SELECTORS-TESTED",
+   "what": "suppresses the max-det selector's measured uniqueness"
+  },
+  {
+   "name": "mutant-table-lax",
+   "expected_gate": "G-MUTANT-TABLE-MEASURED",
+   "what": "marks one row of the mutant table as a survivor"
+  },
+  {
+   "name": "mutant-gate-drift",
+   "expected_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "what": "retargets a mutant's declared death gate, silently leaving the gate it really kills without a falsifier"
   }
  ],
+ "receipt_float_probe": null,
+ "mutant_table": [
+  {
+   "mutant": "anchor-hash-A-I7-RECEIPT",
+   "declared_gate": "A-I7-RECEIPT",
+   "exit_code": 1,
+   "actual_gate": "A-I7-RECEIPT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "anchor-hash-A-HA-PAPER",
+   "declared_gate": "A-HA-PAPER",
+   "exit_code": 1,
+   "actual_gate": "A-HA-PAPER",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "anchor-hash-A-HA-CODE",
+   "declared_gate": "A-HA-CODE",
+   "exit_code": 1,
+   "actual_gate": "A-HA-CODE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "anchor-hash-A-PIN-R6A",
+   "declared_gate": "A-PIN-R6A",
+   "exit_code": 1,
+   "actual_gate": "A-PIN-R6A",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "anchor-skip",
+   "declared_gate": "G-ANCHOR-CELL-COMPLETE",
+   "exit_code": 1,
+   "actual_gate": "G-ANCHOR-CELL-COMPLETE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "path-drift",
+   "declared_gate": "G-PATH-ANCHORS",
+   "exit_code": 1,
+   "actual_gate": "G-PATH-ANCHORS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "path-value",
+   "declared_gate": "G-PATH-ANCHORS",
+   "exit_code": 1,
+   "actual_gate": "G-PATH-ANCHORS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "text-anchor-drift",
+   "declared_gate": "G-TEXT-ANCHORS",
+   "exit_code": 1,
+   "actual_gate": "G-TEXT-ANCHORS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "float-leak",
+   "declared_gate": "G-FLOATGUARD",
+   "exit_code": 1,
+   "actual_gate": "G-FLOATGUARD",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "readout-det",
+   "declared_gate": "G-READOUT-REENCODING",
+   "exit_code": 1,
+   "actual_gate": "G-READOUT-REENCODING",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "rank-lax",
+   "declared_gate": "G-IDENTIFIABILITY-RANK",
+   "exit_code": 1,
+   "actual_gate": "G-IDENTIFIABILITY-RANK",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "lattice-drop",
+   "declared_gate": "G-COUNT-LATTICE-REPRODUCES-I7",
+   "exit_code": 1,
+   "actual_gate": "G-COUNT-LATTICE-REPRODUCES-I7",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "potential-lax",
+   "declared_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+   "exit_code": 1,
+   "actual_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "census-drop",
+   "declared_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "exit_code": 1,
+   "actual_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "incidence-lax",
+   "declared_gate": "G-INCIDENCE-CENSUS",
+   "exit_code": 1,
+   "actual_gate": "G-INCIDENCE-CENSUS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "additivity-violation",
+   "declared_gate": "G-ADDITIVITY-FORCED",
+   "exit_code": 1,
+   "actual_gate": "G-ADDITIVITY-FORCED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "restriction-lax",
+   "declared_gate": "G-RESTRICTION-COMMUTES",
+   "exit_code": 1,
+   "actual_gate": "G-RESTRICTION-COMMUTES",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "fiber-typed",
+   "declared_gate": "G-FIBER-COMPUTED",
+   "exit_code": 1,
+   "actual_gate": "G-FIBER-COMPUTED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "stabilizer-lax",
+   "declared_gate": "G-STABILIZER-MEASURED",
+   "exit_code": 1,
+   "actual_gate": "G-STABILIZER-MEASURED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "inventory-corrupt",
+   "declared_gate": "G-INVENTORY-CLASSIFICATION",
+   "exit_code": 1,
+   "actual_gate": "G-INVENTORY-CLASSIFICATION",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "forcedlift-lax",
+   "declared_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+   "exit_code": 1,
+   "actual_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "defect-suppress",
+   "declared_gate": "G-DEFECT-NONZERO",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-NONZERO",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "defect-support-lax",
+   "declared_gate": "G-DEFECT-CHARACTERISED",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-CHARACTERISED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "iteration-lax",
+   "declared_gate": "G-ITERATION-CEILING",
+   "exit_code": 1,
+   "actual_gate": "G-ITERATION-CEILING",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "control-pass",
+   "declared_gate": "G-CONTROL-UNMOTIVATED",
+   "exit_code": 1,
+   "actual_gate": "G-CONTROL-UNMOTIVATED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "cache-alias",
+   "declared_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "exit_code": 1,
+   "actual_gate": "G-CACHE-FRESH-EQUALS-MEMO",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "verdict-pair-swap",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "verdict-typed-segment",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "verdict-append-text",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "verdict-fully-typed",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "verdict-inert-segment",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "head-constant",
+   "declared_gate": "G-VERDICT-STRING-EQUALITY",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-STRING-EQUALITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "render-escape",
+   "declared_gate": "G-RENDER-FROM-GATED-OBJECT",
+   "exit_code": 1,
+   "actual_gate": "G-RENDER-FROM-GATED-OBJECT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "prose-claim-drift",
+   "declared_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "exit_code": 1,
+   "actual_gate": "G-PROSE-RENDERS-FROM-THE-RECEIPT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "anchor-hash-A-R0-PIN",
+   "declared_gate": "A-R0-PIN",
+   "exit_code": 1,
+   "actual_gate": "A-R0-PIN",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "text-window-drift",
+   "declared_gate": "G-TEXT-ANCHORS",
+   "exit_code": 1,
+   "actual_gate": "G-TEXT-ANCHORS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "text-consumer-drift",
+   "declared_gate": "G-TEXT-ANCHOR-CONSUMERS",
+   "exit_code": 1,
+   "actual_gate": "G-TEXT-ANCHOR-CONSUMERS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "curvoff-corrupt",
+   "declared_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "exit_code": 1,
+   "actual_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "q-cell-perturb",
+   "declared_gate": "G-RECORD-IS-METRIC",
+   "exit_code": 1,
+   "actual_gate": "G-RECORD-IS-METRIC",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "cover-lax",
+   "declared_gate": "G-COVER-POTENTIAL-SECTOR",
+   "exit_code": 1,
+   "actual_gate": "G-COVER-POTENTIAL-SECTOR",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "census-drop-inside",
+   "declared_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "exit_code": 1,
+   "actual_gate": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "candidates-typed",
+   "declared_gate": "G-BLOCKED-CANDIDATES-COMPUTED",
+   "exit_code": 1,
+   "actual_gate": "G-BLOCKED-CANDIDATES-COMPUTED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "link-targets-typed",
+   "declared_gate": "G-REFUSAL-MEASURED",
+   "exit_code": 1,
+   "actual_gate": "G-REFUSAL-MEASURED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "completion-sweep-lax",
+   "declared_gate": "G-BLOCK-IS-REAL",
+   "exit_code": 1,
+   "actual_gate": "G-BLOCK-IS-REAL",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "dim-link-set",
+   "declared_gate": "G-DIMENSION-EXTENSION",
+   "exit_code": 1,
+   "actual_gate": "G-DIMENSION-EXTENSION",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "unsplittable-drop",
+   "declared_gate": "G-UNSPLITTABLE-RECORDS",
+   "exit_code": 1,
+   "actual_gate": "G-UNSPLITTABLE-RECORDS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "record-drop",
+   "declared_gate": "G-RECORD-FAMILY-CELL-COMPLETE",
+   "exit_code": 1,
+   "actual_gate": "G-RECORD-FAMILY-CELL-COMPLETE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "triples-drop",
+   "declared_gate": "G-FIBER-COMPUTED",
+   "exit_code": 1,
+   "actual_gate": "G-FIBER-COMPUTED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "witness-loop-bound",
+   "declared_gate": "G-FREE-LINKS-INFINITE",
+   "exit_code": 1,
+   "actual_gate": "G-FREE-LINKS-INFINITE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "lift-mode-blind",
+   "declared_gate": "G-LIFT-GRID-CELL-COMPLETE",
+   "exit_code": 1,
+   "actual_gate": "G-LIFT-GRID-CELL-COMPLETE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "flat-scale-lax",
+   "declared_gate": "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+   "exit_code": 1,
+   "actual_gate": "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "forced-lift-rule-lax",
+   "declared_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+   "exit_code": 1,
+   "actual_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "closed-form-lax",
+   "declared_gate": "G-DEFECT-CLOSED-FORM",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-CLOSED-FORM",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "defect-zero-parity",
+   "declared_gate": "G-DEFECT-VALUE-CENSUS",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-VALUE-CENSUS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "defect-support-halve",
+   "declared_gate": "G-DEFECT-CHARACTERISED",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-CHARACTERISED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "zero-sector-lax",
+   "declared_gate": "G-ZERO-SECTOR-CHARACTERISED",
+   "exit_code": 1,
+   "actual_gate": "G-ZERO-SECTOR-CHARACTERISED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "image-agreement-lax",
+   "declared_gate": "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+   "exit_code": 1,
+   "actual_gate": "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "rule-field-lax",
+   "declared_gate": "G-RULE-FIELD-CENSUS",
+   "exit_code": 1,
+   "actual_gate": "G-RULE-FIELD-CENSUS",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "completion-relativity-lax",
+   "declared_gate": "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "split-dep-blind",
+   "declared_gate": "G-DEFECT-SPLIT-DEPENDENCE",
+   "exit_code": 1,
+   "actual_gate": "G-DEFECT-SPLIT-DEPENDENCE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "growth-lax",
+   "declared_gate": "G-INVENTORY-TREND",
+   "exit_code": 1,
+   "actual_gate": "G-INVENTORY-TREND",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "cache-disable",
+   "declared_gate": "G-CACHE-EXERCISED",
+   "exit_code": 1,
+   "actual_gate": "G-CACHE-EXERCISED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "reconstructor-pin",
+   "declared_gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "reconstructor-head",
+   "declared_gate": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "exit_code": 1,
+   "actual_gate": "G-VERDICT-ALL-HEADS-REACHABLE",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "receipt-cell-corrupt",
+   "declared_gate": "G-RECEIPT-MATCHES-THE-GATED-VALUES",
+   "exit_code": 1,
+   "actual_gate": "G-RECEIPT-MATCHES-THE-GATED-VALUES",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "receipt-float",
+   "declared_gate": "G-NO-FLOATS-IN-RECEIPT",
+   "exit_code": 1,
+   "actual_gate": "G-NO-FLOATS-IN-RECEIPT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "deferred-phantom",
+   "declared_gate": "G-DEFERRED-GATES-EVALUATED",
+   "exit_code": 1,
+   "actual_gate": "G-DEFERRED-GATES-EVALUATED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "gate-count-lax",
+   "declared_gate": "G-FINAL-GATE-COUNT",
+   "exit_code": 1,
+   "actual_gate": "G-FINAL-GATE-COUNT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "waiver-remove",
+   "declared_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "exit_code": 1,
+   "actual_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "waiver-text-drift",
+   "declared_gate": "G-WAIVER-TEXT-RENDERED",
+   "exit_code": 1,
+   "actual_gate": "G-WAIVER-TEXT-RENDERED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "waiver-extraneous",
+   "declared_gate": "G-WAIVER-LEDGER-CLEAN",
+   "exit_code": 1,
+   "actual_gate": "G-WAIVER-LEDGER-CLEAN",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "multiplicity-lax",
+   "declared_gate": "G-SPLIT-MULTIPLICITY-IDENTITY",
+   "exit_code": 1,
+   "actual_gate": "G-SPLIT-MULTIPLICITY-IDENTITY",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "counterfactual-lax",
+   "declared_gate": "G-POTENTIAL-COUNTERFACTUAL",
+   "exit_code": 1,
+   "actual_gate": "G-POTENTIAL-COUNTERFACTUAL",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "coboundary-rank-lax",
+   "declared_gate": "G-COBOUNDARY-CHARACTERISED",
+   "exit_code": 1,
+   "actual_gate": "G-COBOUNDARY-CHARACTERISED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "cover-canon-lax",
+   "declared_gate": "G-COVER-CANONICAL-REFINEMENT",
+   "exit_code": 1,
+   "actual_gate": "G-COVER-CANONICAL-REFINEMENT",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "extremal-lax",
+   "declared_gate": "G-EXTREMAL-SELECTORS-TESTED",
+   "exit_code": 1,
+   "actual_gate": "G-EXTREMAL-SELECTORS-TESTED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "mutant-table-lax",
+   "declared_gate": "G-MUTANT-TABLE-MEASURED",
+   "exit_code": 1,
+   "actual_gate": "G-MUTANT-TABLE-MEASURED",
+   "artifacts_unchanged": true,
+   "dead": true
+  },
+  {
+   "mutant": "mutant-gate-drift",
+   "declared_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "exit_code": 1,
+   "actual_gate": "G-FALSIFIER-CENSUS-HONEST",
+   "artifacts_unchanged": true,
+   "dead": true
+  }
+ ],
+ "mutant_table_mode": "MEASURED -- every declared mutant re-invoked by this run",
+ "waiver_ledger": {
+  "G-MOTIVATION-QUALIFIER-COMPUTED": {
+   "form": "FORCED",
+   "reason": "the qualifier is DEFINED as MOTIVATED iff the free-class count is zero and the gate asserts exactly that equivalence, so the predicate is true for every possible inventory; the witness evaluates it over a synthetic sweep of class counts",
+   "witness": "qualifier_predicate_over_a_synthetic_sweep"
+  },
+  "G-NO-MUTANT-IDENTITY": {
+   "form": "FORCED",
+   "reason": "self-validating: the AST detector is proved able to fire by the synthetic injections evaluated INSIDE the gate itself, so a detector that could not flag a violation fails the gate on its own evidence",
+   "witness": "detector_injections_flagged"
+  }
+ },
  "falsifier_census": {
-  "gates": 48,
-  "gates_with_a_declared_falsifier": 28,
+  "gates": 68,
+  "recorded_disclosures": [
+   "G-COUNT-LATTICE-WIDE-BOX",
+   "G-RESTRICTION-IS-AN-ADDITIVITY-COROLLARY"
+  ],
+  "gates_with_a_declared_falsifier": 66,
   "never_falsified": [
    "G-NO-MUTANT-IDENTITY",
-   "A-R0-PIN",
-   "G-RECORD-FAMILY-REPRODUCES-I7",
-   "G-RECORD-IS-METRIC",
-   "G-BLOCK-IS-REAL",
-   "G-DIMENSION-EXTENSION",
-   "G-UNSPLITTABLE-RECORDS",
-   "G-FREE-LINKS-INFINITE",
-   "G-LIFT-GRID-CELL-COMPLETE",
-   "G-DEFECT-CLOSED-FORM",
-   "G-DEFECT-SPLIT-DEPENDENCE",
-   "G-INVENTORY-TREND",
-   "G-CACHE-EXERCISED",
-   "G-MOTIVATION-QUALIFIER-COMPUTED",
-   "G-VERDICT-SEGMENTS-FLIPPABLE",
-   "G-VERDICT-ALL-HEADS-REACHABLE",
-   "G-NO-FLOATS-IN-RECEIPT",
-   "G-DEFERRED-GATES-EVALUATED",
-   "G-FALSIFIER-CENSUS-HONEST",
-   "G-FINAL-GATE-COUNT"
+   "G-MOTIVATION-QUALIFIER-COMPUTED"
   ],
-  "never_falsified_count": 20,
-  "denominator": "20 of 48 gates carry no declared falsifier",
+  "never_falsified_count": 2,
+  "never_falsified_with_a_machine_checked_forcing": [
+   "G-MOTIVATION-QUALIFIER-COMPUTED",
+   "G-NO-MUTANT-IDENTITY"
+  ],
+  "never_falsified_unprotected": [],
+  "denominator": "2 of 68 gates carry no declared falsifier; 2 of those carry a FORCED waiver whose forcing this run machine-checked, 0 are unprotected",
+  "waiver_form_permitted": "FORCED",
   "waivers": {
-   "G-NO-MUTANT-IDENTITY": "self-validating: the AST detector is proved able to fire by two synthetic injections evaluated inside the gate itself",
-   "A-R0-PIN": "the v14 founding pin's own hash; the anchor-hash channel is falsified at three of the five rows (the I7 receipt, the HA paper, the HA code) and at this unit's own pin, and anchor-skip proves a dropped row dies",
-   "G-RECORD-FAMILY-REPRODUCES-I7": "an I7 reproduction gate; the record constructors are exercised by readout-det, rank-lax and lattice-drop, each of which perturbs a different reading of the SAME rebuilt family",
-   "G-RECORD-IS-METRIC": "covered by readout-det (the same readout)",
-   "G-BLOCK-IS-REAL": "covered by incidence-lax at the paired gate",
-   "G-DIMENSION-EXTENSION": "a d=3 coverage measurement whose value (the all-odd parity class) is forced by the declared link set having no body diagonal -- an analytically forced clause is a disclosure, not a must-pass falsifiable gate (RUNBOOK section 14 addendum, v13 #208)",
-   "G-UNSPLITTABLE-RECORDS": "covered by fiber-typed (the same counts)",
-   "G-FREE-LINKS-INFINITE": "covered by fiber-typed (the same fiber object)",
-   "G-LIFT-GRID-CELL-COMPLETE": "covered by forcedlift-lax at the paired gate",
-   "G-DEFECT-CLOSED-FORM": "covered collaterally by defect-suppress (which moves the same field)",
-   "G-DEFECT-SPLIT-DEPENDENCE": "covered collaterally by fiber-typed and additivity-violation, both of which move the split fiber this gate probes",
-   "G-INVENTORY-TREND": "the growth law is arithmetic in the arena's volume factor; iteration-lax falsifies the neighbouring ceiling gate",
-   "G-CACHE-EXERCISED": "covered by cache-alias at the paired gate",
-   "G-MOTIVATION-QUALIFIER-COMPUTED": "the qualifier is a pure function of the inventory's class counts, so inventory-corrupt falsifies it at G-INVENTORY-CLASSIFICATION one step earlier; a separate injection would test the same arithmetic twice",
-   "G-VERDICT-SEGMENTS-FLIPPABLE": "covered by verdict-inert-segment",
-   "G-VERDICT-ALL-HEADS-REACHABLE": "covered by head-constant",
-   "G-NO-FLOATS-IN-RECEIPT": "covered by float-leak at the source-level gate",
-   "G-DEFERRED-GATES-EVALUATED": "an arithmetic consistency check on the ledger",
-   "G-FALSIFIER-CENSUS-HONEST": "the census gate registers itself after it evaluates, so it appears in its own final denominator; it is an arithmetic consistency check on the ledger and carries no separate injection",
-   "G-FINAL-GATE-COUNT": "an arithmetic consistency check on the ledger"
+   "G-NO-MUTANT-IDENTITY": "FORCED: self-validating: the AST detector is proved able to fire by the synthetic injections evaluated INSIDE the gate itself, so a detector that could not flag a violation fails the gate on its own evidence [machine-checked witness detector_injections_flagged: checked 2, holds True]",
+   "G-MOTIVATION-QUALIFIER-COMPUTED": "FORCED: the qualifier is DEFINED as MOTIVATED iff the free-class count is zero and the gate asserts exactly that equivalence, so the predicate is true for every possible inventory; the witness evaluates it over a synthetic sweep of class counts [machine-checked witness qualifier_predicate_over_a_synthetic_sweep: checked 9, holds True]"
   },
+  "waiver_witnesses": {
+   "detector_injections_flagged": {
+    "checked": 2,
+    "all_flagged": true,
+    "holds": true
+   },
+   "qualifier_predicate_over_a_synthetic_sweep": {
+    "checked": 9,
+    "holds": true
+   },
+   "deferred_predicate_rejects_a_phantom": {
+    "checked": 1,
+    "holds": true
+   },
+   "gate_count_predicate_rejects_a_perturbed_count": {
+    "checked": 1,
+    "holds": true
+   }
+  },
+  "extraneous_waiver_keys": [],
   "falsifier_map": {
    "A-HA-CODE": [
     "anchor-hash-A-HA-CODE"
@@ -2693,14 +4884,29 @@
    "A-PIN-R6A": [
     "anchor-hash-A-PIN-R6A"
    ],
+   "A-R0-PIN": [
+    "anchor-hash-A-R0-PIN"
+   ],
    "G-ADDITIVITY-FORCED": [
     "additivity-violation"
    ],
    "G-ANCHOR-CELL-COMPLETE": [
     "anchor-skip"
    ],
+   "G-BLOCK-IS-REAL": [
+    "completion-sweep-lax"
+   ],
+   "G-BLOCKED-CANDIDATES-COMPUTED": [
+    "candidates-typed"
+   ],
+   "G-CACHE-EXERCISED": [
+    "cache-disable"
+   ],
    "G-CACHE-FRESH-EQUALS-MEMO": [
     "cache-alias"
+   ],
+   "G-COBOUNDARY-CHARACTERISED": [
+    "coboundary-rank-lax"
    ],
    "G-CONTROL-UNMOTIVATED": [
     "control-pass"
@@ -2708,14 +4914,53 @@
    "G-COUNT-LATTICE-REPRODUCES-I7": [
     "lattice-drop"
    ],
+   "G-COVER-CANONICAL-REFINEMENT": [
+    "cover-canon-lax"
+   ],
+   "G-COVER-POTENTIAL-SECTOR": [
+    "cover-lax"
+   ],
    "G-DEFECT-CHARACTERISED": [
+    "defect-support-halve",
     "defect-support-lax"
+   ],
+   "G-DEFECT-CLOSED-FORM": [
+    "closed-form-lax"
    ],
    "G-DEFECT-NONZERO": [
     "defect-suppress"
    ],
+   "G-DEFECT-SPLIT-DEPENDENCE": [
+    "split-dep-blind"
+   ],
+   "G-DEFECT-SUPPORT-COMPLETION-RELATIVE": [
+    "completion-relativity-lax"
+   ],
+   "G-DEFECT-VALUE-CENSUS": [
+    "defect-zero-parity"
+   ],
+   "G-DEFERRED-GATES-EVALUATED": [
+    "deferred-phantom"
+   ],
+   "G-DIMENSION-EXTENSION": [
+    "dim-link-set"
+   ],
+   "G-EXTREMAL-SELECTORS-TESTED": [
+    "extremal-lax"
+   ],
+   "G-FALSIFIER-CENSUS-HONEST": [
+    "mutant-gate-drift",
+    "waiver-remove"
+   ],
    "G-FIBER-COMPUTED": [
-    "fiber-typed"
+    "fiber-typed",
+    "triples-drop"
+   ],
+   "G-FINAL-GATE-COUNT": [
+    "gate-count-lax"
+   ],
+   "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE": [
+    "flat-scale-lax"
    ],
    "G-FLOATGUARD": [
     "float-leak"
@@ -2723,8 +4968,17 @@
    "G-FORCED-LIFT-NON-INTEGRAL": [
     "forcedlift-lax"
    ],
+   "G-FORCED-LIFT-RULE-RELATIVE": [
+    "forced-lift-rule-lax"
+   ],
+   "G-FREE-LINKS-INFINITE": [
+    "witness-loop-bound"
+   ],
    "G-IDENTIFIABILITY-RANK": [
     "rank-lax"
+   ],
+   "G-IMAGE-AGREEMENT-LIFT-RELATIVE": [
+    "image-agreement-lax"
    ],
    "G-INCIDENCE-CENSUS": [
     "incidence-lax"
@@ -2732,18 +4986,34 @@
    "G-INVENTORY-CLASSIFICATION": [
     "inventory-corrupt"
    ],
+   "G-INVENTORY-TREND": [
+    "growth-lax"
+   ],
    "G-ITERATION-CEILING": [
     "iteration-lax"
    ],
-   "G-MOVE-CENSUS-CELL-COMPLETE": [
-    "census-drop"
+   "G-LIFT-GRID-CELL-COMPLETE": [
+    "lift-mode-blind"
    ],
-   "G-NO-POTENTIAL": [
+   "G-MOVE-CENSUS-CELL-COMPLETE": [
+    "census-drop",
+    "census-drop-inside"
+   ],
+   "G-MUTANT-TABLE-MEASURED": [
+    "mutant-table-lax"
+   ],
+   "G-NO-FLOATS-IN-RECEIPT": [
+    "receipt-float"
+   ],
+   "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE": [
     "potential-lax"
    ],
    "G-PATH-ANCHORS": [
     "path-drift",
     "path-value"
+   ],
+   "G-POTENTIAL-COUNTERFACTUAL": [
+    "counterfactual-lax"
    ],
    "G-PROSE-RENDERS-FROM-THE-RECEIPT": [
     "prose-claim-drift"
@@ -2751,17 +5021,48 @@
    "G-READOUT-REENCODING": [
     "readout-det"
    ],
+   "G-RECORD-FAMILY-CELL-COMPLETE": [
+    "record-drop"
+   ],
+   "G-RECORD-FAMILY-REPRODUCES-I7": [
+    "curvoff-corrupt"
+   ],
+   "G-RECORD-IS-METRIC": [
+    "q-cell-perturb"
+   ],
+   "G-REFUSAL-MEASURED": [
+    "link-targets-typed"
+   ],
    "G-RENDER-FROM-GATED-OBJECT": [
     "render-escape"
    ],
    "G-RESTRICTION-COMMUTES": [
     "restriction-lax"
    ],
+   "G-RULE-FIELD-CENSUS": [
+    "rule-field-lax"
+   ],
+   "G-SPLIT-MULTIPLICITY-IDENTITY": [
+    "multiplicity-lax"
+   ],
    "G-STABILIZER-MEASURED": [
     "stabilizer-lax"
    ],
+   "G-TEXT-ANCHOR-CONSUMERS": [
+    "text-consumer-drift"
+   ],
    "G-TEXT-ANCHORS": [
-    "text-anchor-drift"
+    "text-anchor-drift",
+    "text-window-drift"
+   ],
+   "G-UNSPLITTABLE-RECORDS": [
+    "unsplittable-drop"
+   ],
+   "G-VERDICT-ALL-HEADS-REACHABLE": [
+    "reconstructor-head"
+   ],
+   "G-VERDICT-SEGMENTS-FLIPPABLE": [
+    "reconstructor-pin"
    ],
    "G-VERDICT-STRING-EQUALITY": [
     "head-constant",
@@ -2770,39 +5071,272 @@
     "verdict-inert-segment",
     "verdict-pair-swap",
     "verdict-typed-segment"
+   ],
+   "G-WAIVER-LEDGER-CLEAN": [
+    "waiver-extraneous"
+   ],
+   "G-WAIVER-TEXT-RENDERED": [
+    "waiver-text-drift"
+   ],
+   "G-ZERO-SECTOR-CHARACTERISED": [
+    "zero-sector-lax"
    ]
   },
-  "mutants": 34
+  "mutants": 78,
+  "measured_falsifier_map": {
+   "A-HA-CODE": [
+    "anchor-hash-A-HA-CODE"
+   ],
+   "A-HA-PAPER": [
+    "anchor-hash-A-HA-PAPER"
+   ],
+   "A-I7-RECEIPT": [
+    "anchor-hash-A-I7-RECEIPT"
+   ],
+   "A-PIN-R6A": [
+    "anchor-hash-A-PIN-R6A"
+   ],
+   "A-R0-PIN": [
+    "anchor-hash-A-R0-PIN"
+   ],
+   "G-ADDITIVITY-FORCED": [
+    "additivity-violation"
+   ],
+   "G-ANCHOR-CELL-COMPLETE": [
+    "anchor-skip"
+   ],
+   "G-BLOCK-IS-REAL": [
+    "completion-sweep-lax"
+   ],
+   "G-BLOCKED-CANDIDATES-COMPUTED": [
+    "candidates-typed"
+   ],
+   "G-CACHE-EXERCISED": [
+    "cache-disable"
+   ],
+   "G-CACHE-FRESH-EQUALS-MEMO": [
+    "cache-alias"
+   ],
+   "G-COBOUNDARY-CHARACTERISED": [
+    "coboundary-rank-lax"
+   ],
+   "G-CONTROL-UNMOTIVATED": [
+    "control-pass"
+   ],
+   "G-COUNT-LATTICE-REPRODUCES-I7": [
+    "lattice-drop"
+   ],
+   "G-COVER-CANONICAL-REFINEMENT": [
+    "cover-canon-lax"
+   ],
+   "G-COVER-POTENTIAL-SECTOR": [
+    "cover-lax"
+   ],
+   "G-DEFECT-CHARACTERISED": [
+    "defect-support-halve",
+    "defect-support-lax"
+   ],
+   "G-DEFECT-CLOSED-FORM": [
+    "closed-form-lax"
+   ],
+   "G-DEFECT-NONZERO": [
+    "defect-suppress"
+   ],
+   "G-DEFECT-SPLIT-DEPENDENCE": [
+    "split-dep-blind"
+   ],
+   "G-DEFECT-SUPPORT-COMPLETION-RELATIVE": [
+    "completion-relativity-lax"
+   ],
+   "G-DEFECT-VALUE-CENSUS": [
+    "defect-zero-parity"
+   ],
+   "G-DEFERRED-GATES-EVALUATED": [
+    "deferred-phantom"
+   ],
+   "G-DIMENSION-EXTENSION": [
+    "dim-link-set"
+   ],
+   "G-EXTREMAL-SELECTORS-TESTED": [
+    "extremal-lax"
+   ],
+   "G-FALSIFIER-CENSUS-HONEST": [
+    "mutant-gate-drift",
+    "waiver-remove"
+   ],
+   "G-FIBER-COMPUTED": [
+    "fiber-typed",
+    "triples-drop"
+   ],
+   "G-FINAL-GATE-COUNT": [
+    "gate-count-lax"
+   ],
+   "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE": [
+    "flat-scale-lax"
+   ],
+   "G-FLOATGUARD": [
+    "float-leak"
+   ],
+   "G-FORCED-LIFT-NON-INTEGRAL": [
+    "forcedlift-lax"
+   ],
+   "G-FORCED-LIFT-RULE-RELATIVE": [
+    "forced-lift-rule-lax"
+   ],
+   "G-FREE-LINKS-INFINITE": [
+    "witness-loop-bound"
+   ],
+   "G-IDENTIFIABILITY-RANK": [
+    "rank-lax"
+   ],
+   "G-IMAGE-AGREEMENT-LIFT-RELATIVE": [
+    "image-agreement-lax"
+   ],
+   "G-INCIDENCE-CENSUS": [
+    "incidence-lax"
+   ],
+   "G-INVENTORY-CLASSIFICATION": [
+    "inventory-corrupt"
+   ],
+   "G-INVENTORY-TREND": [
+    "growth-lax"
+   ],
+   "G-ITERATION-CEILING": [
+    "iteration-lax"
+   ],
+   "G-LIFT-GRID-CELL-COMPLETE": [
+    "lift-mode-blind"
+   ],
+   "G-MOVE-CENSUS-CELL-COMPLETE": [
+    "census-drop",
+    "census-drop-inside"
+   ],
+   "G-MUTANT-TABLE-MEASURED": [
+    "mutant-table-lax"
+   ],
+   "G-NO-FLOATS-IN-RECEIPT": [
+    "receipt-float"
+   ],
+   "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE": [
+    "potential-lax"
+   ],
+   "G-PATH-ANCHORS": [
+    "path-drift",
+    "path-value"
+   ],
+   "G-POTENTIAL-COUNTERFACTUAL": [
+    "counterfactual-lax"
+   ],
+   "G-PROSE-RENDERS-FROM-THE-RECEIPT": [
+    "prose-claim-drift"
+   ],
+   "G-READOUT-REENCODING": [
+    "readout-det"
+   ],
+   "G-RECEIPT-MATCHES-THE-GATED-VALUES": [
+    "receipt-cell-corrupt"
+   ],
+   "G-RECORD-FAMILY-CELL-COMPLETE": [
+    "record-drop"
+   ],
+   "G-RECORD-FAMILY-REPRODUCES-I7": [
+    "curvoff-corrupt"
+   ],
+   "G-RECORD-IS-METRIC": [
+    "q-cell-perturb"
+   ],
+   "G-REFUSAL-MEASURED": [
+    "link-targets-typed"
+   ],
+   "G-RENDER-FROM-GATED-OBJECT": [
+    "render-escape"
+   ],
+   "G-RESTRICTION-COMMUTES": [
+    "restriction-lax"
+   ],
+   "G-RULE-FIELD-CENSUS": [
+    "rule-field-lax"
+   ],
+   "G-SPLIT-MULTIPLICITY-IDENTITY": [
+    "multiplicity-lax"
+   ],
+   "G-STABILIZER-MEASURED": [
+    "stabilizer-lax"
+   ],
+   "G-TEXT-ANCHOR-CONSUMERS": [
+    "text-consumer-drift"
+   ],
+   "G-TEXT-ANCHORS": [
+    "text-anchor-drift",
+    "text-window-drift"
+   ],
+   "G-UNSPLITTABLE-RECORDS": [
+    "unsplittable-drop"
+   ],
+   "G-VERDICT-ALL-HEADS-REACHABLE": [
+    "reconstructor-head"
+   ],
+   "G-VERDICT-SEGMENTS-FLIPPABLE": [
+    "reconstructor-pin"
+   ],
+   "G-VERDICT-STRING-EQUALITY": [
+    "head-constant",
+    "verdict-append-text",
+    "verdict-fully-typed",
+    "verdict-inert-segment",
+    "verdict-pair-swap",
+    "verdict-typed-segment"
+   ],
+   "G-WAIVER-LEDGER-CLEAN": [
+    "waiver-extraneous"
+   ],
+   "G-WAIVER-TEXT-RENDERED": [
+    "waiver-text-drift"
+   ],
+   "G-ZERO-SECTOR-CHARACTERISED": [
+    "zero-sector-lax"
+   ]
+  }
  },
  "paper_claims": {
   "paper": "v14/paper-04-refinement-grammar.md",
-  "paper_sha256_prefix": "af5b7f26e427",
-  "claims_rendered": 15,
-  "claims_present_in_the_paper": 15,
+  "paper_sha256_prefix": "87dc33a5815c",
+  "claims_rendered": 25,
+  "claims_present_in_the_paper": 25,
   "claims_missing": [],
   "rendered": {
-   "blocked": "the coarse displacement has 2 minimal decompositions with 2 distinct interior sites, and over 16 declared completions the two candidate readings disagree at 12",
+   "blocked": "the coarse displacement has 2 minimal decompositions with 2 distinct interior sites, at each of 3 of the 27 coarse intervals of the class",
    "census": "27 coarse intervals per class; the dyadic move subdivides 27 of 27, single-direction hyperplane insertion subdivides 3 and leaves 3 ambiguous, and the copying move subdivides 0 and leaves 6 unrepresented",
-   "defect": "the commutation defect is nonzero at 7112 of 11088 census cells and identically zero at 3976",
+   "coboundary": "the coboundary conditions cut out a solution space of dimension 8 in 27 edge variables, matching the rank of delta exactly",
+   "completion_sweep": "over 14256 declared completions the two candidate readings disagree at 13158, and the agreement criterion f_1 - f_0 = n_2 - n_1 is verified at every one",
+   "cover": "5 of the 9 admissible records -- exactly those whose off-diagonal metric component vanishes identically -- carry counts that are coboundaries on the universal cover",
+   "cover_canonical": "the induced canonical refinement of G-DIAG2 is admissible at 36 of 36 refined sites, recovers the coarse record at 9 of 9 sites and determines the split",
+   "defect": "the commutation defect is nonzero at 7126 of 11088 census cells and identically zero at 3962",
    "dimension": "at d = 3 the dyadic move leaves 27 of 216 refined sites on no coarse interval at all",
+   "flat_scales": "the flat family (a, a, 2a) is admissible at every scale in the declared count box, with refinement ceilings 0, 1, 1, 2, 2, 2",
    "forced": "additivity holds at 972 of 972 constraints and the coarse metric is recovered at 324 of 324 cells",
-   "forced_lift": "the dynamics-forced front lift is non-integral at 30 of 81 cells, and n divides n_1 at 0 of the 207 splits of the declared family",
+   "forced_lift": "the count-weighted interpolation is non-integral at 30 of the 81 (front, site, link) cells of G-ANISO2 at the balanced split, and n divides n_1 at 0 of the 207 splits of G-ANISO2 -- the record at which the forced lift is censused; over the 6 splittable records of the declared family the same sweep carries 650 splits",
+   "forced_lift_by_rule": "of the 11 declared drag rules 2 force the declared right lift, which is integral at every cell, 2 force the count-weighted interpolation, 5 force a third value, 1 imposes no condition on the lift and 1 leaves it underdetermined",
    "free_links": "54 of the 108 refined links lie on no coarse interval",
-   "instrument": "48 gates, all passed; 32 anchors; 34 mutants, no survivors",
+   "instrument": "71 gates, all passed; 32 anchors; 78 mutants, all dead at their declared gate",
    "inventory": "4 freedoms forced by a named pinned declaration, 0 fixed by a measured stabiliser, 4 genuinely free",
    "iteration": "the ceiling is 2 consecutive steps and it is attained",
    "lattice": "of the 361 admissible count vectors in the declared box, 261 are splittable at all and exactly 1 has a unique admissible split",
+   "multiplicity": "the raw split fiber equals the product of (n_l - 1) over the 27 (site, link) slots at 9 of the 9 admissible records, and a granted refinement-compatible potential leaves it unchanged while collapsing the free transverse links from infinite to 1",
+   "odd_counts": "the declared family's splittable records carry the odd counts 3, 5, 7, 9 and 13",
    "refused": "the direction-0 cycle lengths become [4, 3, 3], 10 sites is not divisible by the longest cycle 4, and only 1 of the 3 declared link displacements has a target at the new site",
-   "split_fiber": "the admissible split fiber runs from 19683 to 1257565061957837936381 over the six records that admit the move, and the chart-equivariant fiber is never 1 (its smallest value is 3)",
+   "rule_fields": "the 11 declared drag rules realise 9 distinct defect fields over the census",
+   "split_fiber": "the admissible split fiber runs from 19683 to 1257565061957837936381 over the 6 records that admit the move, and the chart-equivariant fiber is never 1 (its smallest value is 3)",
    "unsplittable": "3 of the 9 admissible records carry a count-1 interval and admit no subdivision at all: G-ANISO, G-CURVED, G-FLAT",
-   "verdict": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-LATTICE-FORCED-1-OF-361|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE-DYNAMICS-FORCED-NON-INTEGRAL-30-OF-81|DEFECT=NONZERO-7112-OF-11088-CELLS-ZERO-3976-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792|ITERATION=FAMILY-FINITE-CEILING-2-ATTAINED-2-INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED>"
+   "verdict": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361|ADMISSIBILITY-NARROWS-0-OF-261|POTENTIAL-COUNTERFACTUAL-LEAVES-THE-SPLIT-FIBER-UNCHANGED-AND-COLLAPSES-FREE-LINKS-INFINITE-TO-1|TRANSVERSE-WALL=COBOUNDARY-THEOREM-ON-THE-PERIODIC-LATTICE-RANK-19-OF-27|q12-ZERO-SECTOR-WALL=PERIODIC-HOLONOMY-5-OF-9-RECORDS-COBOUNDARY-ON-THE-COVER)|CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:CYCLES433-LINK-TARGETS-1-OF-3|FORCED=INCIDENCE-27-OF-27|ADDITIVITY-972-OF-972|RESTRICTION-324-OF-324|INVENTORY=FORCED:4|STABILIZER:0|FREE:4|OBSTRUCTION=THE-SPLIT+FREE-TRANSVERSE-LINKS+NEW-FRONT-VALUES+THE-LIFT-PAIR|SPLIT-FIBER=MIN-19683-MAX-1257565061957837936381-EQUIVARIANT-MIN-3-UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-OF-361-ADMISSIBILITY-NARROWS-0-OF-261|FREE-LINKS=54-OF-108-FIBER-INFINITE-WITNESSES-64|NEW-FRONTS=27-FIBER-INFINITE|DYNAMICS-FORCED-LIFT-RULE-RELATIVE(COUNT-WEIGHTED@2-RULES-NON-INTEGRAL-30-OF-81-AT-(G-ANISO2,FLOOR)|THE-DECLARED-RIGHT-LIFT@2-RULES-INTEGRAL|A-THIRD-VALUE@5-RULES|VACUOUS@1|UNDERDETERMINED@1)|DEFECT=NONZERO-7126-OF-11088-CELLS-ZERO-3962-SUPPORT-IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792|ZERO-SECTOR=BOTH-DRAGS-VANISH-3962-OF-3962|ITERATION=CEILING-LAW-FLOOR-LOG2-MIN-N-GRAMMAR|VALUE-2-ATTAINED-2-AT-THE-DECLARED-FAMILY|INVENTORY-GROWS|CONTROL=R1-COPY-SUBDIVIDES-0-OF-27-UNREPRESENTED-6-UNMOTIVATED|DIMENSION-RELATIVITY=D2-SITE-COMPLETE-27-OF-27|D3-INCOMPLETE-27-OF-216-ALL-ODD-PARITY|LIFT-RELATIVITY=IMAGE-DEFECT-LEFT-WHOLE-COARSE-DRAG-49896-OF-49896|RIGHT-IDENTICALLY-ZERO-AT-2-OF-11-RULES|FAMILY-RELATIVITY=CEILING-VALUE-IS-A-PROPERTY-OF-THE-DECLARED-COUNTS|FLAT-SCALES-0,1,1,2,2,2|COMPLETION-RELATIVITY=DEFECT-SUPPORT-MOVES-AT-36-OF-2772-MATCHED-CELLS-UNDER-THE-OTHER-DECLARED-COMPLETION|RULE-RELATIVITY=11-DECLARED-RULES-9-DISTINCT-DEFECT-FIELDS|FORCED-LIFT-FORMS-A-THIRD-VALUE:5,THE-COUNT-WEIGHTED-INTERPOLATION:2,THE-DECLARED-RIGHT-LIFT:2,UNDERDETERMINED:1,VACUOUS:1>",
+   "zero_sector": "every identically-zero cell is a cell at which the coarse drag itself vanishes, 3962 of 3962; the converse fails at 14 cells, all of them under the declared frozen-front rule"
   },
   "rule": "every load-bearing numeric sentence of the paper is RENDERED HERE from the measured object and must appear VERBATIM in the paper; a number the instrument does not render is a number the paper may not assert"
  },
  "compliance": [
   {
    "rule": "RUNBOOK 13/14/15 with every addendum binds at delivery (#246/#313)",
-   "status": "APPLIED -- this sweep enumerates each rule and computes its status from the gate ledger (48 gates registered)"
+   "status": "APPLIED -- this sweep enumerates each rule and computes its status from the gate ledger (70 gates registered)"
   },
   {
    "rule": "pin section 1 -- the grammar sources are the ONLY authority, hash-verified and path-value anchored at run time",
@@ -2850,7 +5384,7 @@
   },
   {
    "rule": "#20 prose renders from the receipt: every numeric claim in the paper renders from the receipt object",
-   "status": "APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT over 15 rendered claims; falsifiers prose-claim-drift"
+   "status": "APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT over 25 rendered claims; falsifiers prose-claim-drift"
   },
   {
    "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair, not only the file bytes",
@@ -2858,7 +5392,7 @@
   },
   {
    "rule": "#234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail",
-   "status": "APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE, G-VERDICT-ALL-HEADS-REACHABLE -- flippability is tested by perturbing the RECEIPT ROW each segment derives from, over all 12 segments; falsifiers verdict-inert-segment, head-constant"
+   "status": "APPLIED via G-VERDICT-SEGMENTS-FLIPPABLE, G-VERDICT-ALL-HEADS-REACHABLE -- flippability is tested by perturbing the RECEIPT ROW each segment derives from, over all 18 segments; falsifiers verdict-inert-segment, head-constant"
   },
   {
    "rule": "#234 counts are computed, never typed",
@@ -2866,7 +5400,15 @@
   },
   {
    "rule": "#219 a gate clause may not compare an object against a copy of itself routed through the component under test",
-   "status": "APPLIED -- the restriction test's comparator is the coarse record's own q, built by a route the restriction does not touch; the verdict comparator reads the receipt only; APPLIED via G-CACHE-FRESH-EQUALS-MEMO"
+   "status": "APPLIED at every place the round found it violated: the split fiber is gated against a closed-form integer-interval counter that enumerates no triple (APPLIED via G-FIBER-COMPUTED); the move census is gated against a class key set and a count derived from L alone (APPLIED via G-MOVE-CENSUS-CELL-COMPLETE); the defect support signature is rebuilt in a second pass over the per-cell rows (APPLIED via G-DEFECT-CHARACTERISED); and the verdict comparator reads the receipt only.  NOT claimed: the metric-restriction test is a COROLLARY of additivity -- restrict o refine = id on counts -- and its independence framing is withdrawn (G-RESTRICTION-IS-AN-ADDITIVITY-COROLLARY is a recorded disclosure); APPLIED via G-CACHE-FRESH-EQUALS-MEMO; falsifiers triples-drop, census-drop-inside, defect-support-halve"
+  },
+  {
+   "rule": "v14 #34 WAIVER CLAIMS ARE GATE CLAIMS: a never-falsified waiver naming a mutant or a forcing is a claim requiring verification, and a gate no execution path evaluates is dead code",
+   "status": "APPLIED via G-WAIVER-LEDGER-CLEAN, G-WAIVER-TEXT-RENDERED, G-MUTANT-TABLE-MEASURED, G-FALSIFIER-CENSUS-HONEST -- the only permitted waiver form is FORCED with a machine-checked witness (no waiver may name a mutant); every declared mutant is RUN in-delivery and its actual death gate is compared with its declared one; 2 gates never falsified, 2 with a machine-checked forcing, 0 unprotected; falsifiers waiver-remove, waiver-text-drift, waiver-extraneous, mutant-gate-drift"
+  },
+  {
+   "rule": "v14 #34 VERBATIM-TEXT ANCHORS ADOPTED with three binding modifications: evaluated before the byte anchors, each row bound to a named consumer gate, context windows anchored rather than fragments",
+   "status": "APPLIED via G-TEXT-ANCHORS, G-TEXT-ANCHOR-CONSUMERS -- verify_text_anchors() runs FIRST in stage 1, every row names its consumer gate and that gate is checked registered, and every row anchors the sha256 of the 480-byte window centred on its needle; falsifiers text-anchor-drift, text-window-drift, text-consumer-drift"
   },
   {
    "rule": "#219/#185 a zero-hit cache gate is vacuous, and a self-test routed through the memo tests the cache",
@@ -2897,12 +5439,24 @@
    "status": "APPLIED -- the move classes, the record family, the split rules, the free-completion rules, the front family, the lapse family and the lift rules are all declared tables in the receipt; the defect's site support is reported as completion-relative"
   },
   {
-   "rule": "RUNBOOK section 4 controls in BOTH directions",
-   "status": "APPLIED -- positive: the defect census returns identically zero at 3976 cells, so a nonzero reading is a measurement; negative: the R1 copying move is failed by the same audit (APPLIED via G-CONTROL-UNMOTIVATED)"
+   "rule": "RUNBOOK section 4 controls in BOTH directions, with the zero sector CHARACTERISED rather than named a positive control",
+   "status": "APPLIED -- APPLIED via G-ZERO-SECTOR-CHARACTERISED: every one of the 3962 identically-zero cells is a cell where the coarse drag itself vanishes, so the comparator has never returned zero on a nontrivial pair and these cells are a RESULT, not a working positive control; the audit's own positive control is that it fails a move -- the R1 copying move (APPLIED via G-CONTROL-UNMOTIVATED); falsifiers control-pass, zero-sector-lax"
+  },
+  {
+   "rule": "scope/denominator honesty: a rendered numeric sentence renders its DENOMINATOR'S SCOPE, not only its numeral",
+   "status": "APPLIED -- the divisibility sweep names its record and prints the family total beside it, the split-fiber sentence computes its record count instead of typing 'six', the forced-lift cell count names its (record, split) cell, and the completion sweep prints its scope; APPLIED via G-PROSE-RENDERS-FROM-THE-RECEIPT, G-FORCED-LIFT-NON-INTEGRAL"
+  },
+  {
+   "rule": "the five measured RELATIVITIES are carried by the verdict, not by prose",
+   "status": "APPLIED -- DIMENSION-RELATIVITY, LIFT-RELATIVITY, FAMILY-RELATIVITY, COMPLETION-RELATIVITY and RULE-RELATIVITY are computed segments, each flippable at its own receipt row; APPLIED via G-DIMENSION-EXTENSION, G-IMAGE-AGREEMENT-LIFT-RELATIVE, G-FLAT-IS-A-SCALE-NOT-A-CURVATURE, G-DEFECT-SUPPORT-COMPLETION-RELATIVE, G-FORCED-LIFT-RULE-RELATIVE, G-RULE-FIELD-CENSUS"
+  },
+  {
+   "rule": "the THREE-WALL anatomy is measured, and the cover disclosure is scoped so that it cannot flip the verdict",
+   "status": "APPLIED -- APPLIED via G-SPLIT-MULTIPLICITY-IDENTITY, G-POTENTIAL-COUNTERFACTUAL, G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE, G-COBOUNDARY-CHARACTERISED, G-COVER-POTENTIAL-SECTOR, G-COVER-CANONICAL-REFINEMENT; the universal cover is NOT a pinned object and the gate statement, the receipt and the paper all say so; falsifiers potential-lax, cover-lax"
   },
   {
    "rule": "falsifier census with an honest denominator, from delivery one",
-   "status": "APPLIED -- 20 of 48 gates carry no declared falsifier; never falsified: ['G-NO-MUTANT-IDENTITY', 'A-R0-PIN', 'G-RECORD-FAMILY-REPRODUCES-I7', 'G-RECORD-IS-METRIC', 'G-BLOCK-IS-REAL', 'G-DIMENSION-EXTENSION', 'G-UNSPLITTABLE-RECORDS', 'G-FREE-LINKS-INFINITE', 'G-LIFT-GRID-CELL-COMPLETE', 'G-DEFECT-CLOSED-FORM', 'G-DEFECT-SPLIT-DEPENDENCE', 'G-INVENTORY-TREND', 'G-CACHE-EXERCISED', 'G-MOTIVATION-QUALIFIER-COMPUTED', 'G-VERDICT-SEGMENTS-FLIPPABLE', 'G-VERDICT-ALL-HEADS-REACHABLE', 'G-NO-FLOATS-IN-RECEIPT', 'G-DEFERRED-GATES-EVALUATED', 'G-FALSIFIER-CENSUS-HONEST', 'G-FINAL-GATE-COUNT']"
+   "status": "APPLIED -- 2 of 68 gates carry no declared falsifier; 2 of those carry a FORCED waiver whose forcing this run machine-checked, 0 are unprotected; never falsified: ['G-NO-MUTANT-IDENTITY', 'G-MOTIVATION-QUALIFIER-COMPUTED']"
   }
  ],
  "gates": [
@@ -2934,6 +5488,15 @@
       true
      ]
     ]
+   }
+  },
+  {
+   "name": "G-TEXT-ANCHORS",
+   "statement": "every load-bearing grammar sentence this unit reimplements appears VERBATIM in its pinned source AND the 480-byte context window centred on it hashes to its anchored value -- the grammar is quoted, not paraphrased, and a repeal inserted around a preserved sentence dies here (RUNBOOK section 14 addendum, v14 #34, modification 3)",
+   "passed": true,
+   "value": {
+    "rows": 10,
+    "failures": []
    }
   },
   {
@@ -2996,15 +5559,6 @@
    "passed": true,
    "value": {
     "rows": 17,
-    "failures": []
-   }
-  },
-  {
-   "name": "G-TEXT-ANCHORS",
-   "statement": "every load-bearing grammar sentence this unit reimplements appears VERBATIM in its pinned source -- the grammar is quoted, not paraphrased",
-   "passed": true,
-   "value": {
-    "rows": 10,
     "failures": []
    }
   },
@@ -3080,8 +5634,95 @@
    }
   },
   {
-   "name": "G-NO-POTENTIAL",
-   "statement": "no record's counts are the coboundary of a site function: the counts are strictly positive [T-COUNTS-POSITIVE] and the lattice is periodic, so every axis cycle sum is positive where a coboundary's would vanish.  The split therefore cannot be read off any front-like potential -- this is the MECHANISM of the freedom measured below",
+   "name": "G-COUNT-LATTICE-WIDE-BOX",
+   "statement": "the same census on a DECLARED WIDER BOX than I7's, run on the closed-form counter: outside the pinned scope, so it is disclosed and never load-bearing (RUNBOOK section 14 addendum, v13 #208)",
+   "passed": true,
+   "recorded": true,
+   "value": {
+    "box": {
+     "axis_max": 24,
+     "diag_max": 48
+    },
+    "admissible_count_vectors": 21248,
+    "splittable": 20356,
+    "unique_admissible_split": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "unique_admissible_split_count": 1,
+    "admissibility_narrows_to_one": 0,
+    "route": "the closed-form integer-interval counter, not the triple enumeration"
+   }
+  },
+  {
+   "name": "G-SPLIT-MULTIPLICITY-IDENTITY",
+   "statement": "WALL 1.  The split fiber IS the combinatorial multiplicity of interior placements: an interval carrying only its total n admits exactly n - 1 interior boundaries, so the raw fiber equals the PRODUCT of (n_l - 1) over the (site, link) slots.  Verified as an exact identity at every admissible record, against a product computed by a different loop",
+   "passed": true,
+   "value": {
+    "product": {
+     "G-ANISO": 0,
+     "G-ANISO2": 13631146639813244878848,
+     "G-CURVED": 0,
+     "G-CURVOFF": 2133246689280,
+     "G-DIAG2": 19683,
+     "G-FLAT": 0,
+     "G-OFFDIAG": 1953125,
+     "G-OFFDIAG2": 316478381828866048,
+     "G-OFFNEG": 2641807540224
+    },
+    "raw_fiber": {
+     "G-ANISO": 0,
+     "G-ANISO2": 13631146639813244878848,
+     "G-CURVED": 0,
+     "G-CURVOFF": 2133246689280,
+     "G-DIAG2": 19683,
+     "G-FLAT": 0,
+     "G-OFFDIAG": 1953125,
+     "G-OFFDIAG2": 316478381828866048,
+     "G-OFFNEG": 2641807540224
+    },
+    "slots": 27
+   }
+  },
+  {
+   "name": "G-POTENTIAL-COUNTERFACTUAL",
+   "statement": "WALL 1, the counterfactual, CORRECTED and measured.  Grant the strongest form of a potential grammar -- a refinement-compatible phi^r on the REFINED lattice with n^r = delta phi^r.  The split at an interior site is phi^r(y) - phi^r(2x), and positivity of both halves leaves exactly n - 1 admissible values: THE SPLIT FIBER IS UNCHANGED, at every record.  What the potential does collapse is the transverse links: every refined count becomes a difference of phi^r, so the INFINITE free-link fiber falls to 1.  A potential is the mechanism of the transverse-link freedom, not of the split",
+   "passed": true,
+   "value": {
+    "split_fiber_with_a_potential": {
+     "G-ANISO": 0,
+     "G-ANISO2": 13631146639813244878848,
+     "G-CURVED": 0,
+     "G-CURVOFF": 2133246689280,
+     "G-DIAG2": 19683,
+     "G-FLAT": 0,
+     "G-OFFDIAG": 1953125,
+     "G-OFFDIAG2": 316478381828866048,
+     "G-OFFNEG": 2641807540224
+    },
+    "split_fiber_without": {
+     "G-ANISO": 0,
+     "G-ANISO2": 13631146639813244878848,
+     "G-CURVED": 0,
+     "G-CURVOFF": 2133246689280,
+     "G-DIAG2": 19683,
+     "G-FLAT": 0,
+     "G-OFFDIAG": 1953125,
+     "G-OFFDIAG2": 316478381828866048,
+     "G-OFFNEG": 2641807540224
+    },
+    "free_link_slots": {
+     "without": 54,
+     "with": 0
+    }
+   }
+  },
+  {
+   "name": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+   "statement": "WALL 2.  No record's counts are the coboundary of a site function ON THE PERIODIC LATTICE X: the counts are strictly positive [T-COUNTS-POSITIVE] and X is periodic, so every axis cycle sum is at least L where a coboundary's would vanish.  The theorem is about the GRAMMAR -- it needs no member of the declared family, and no admissible record inside this grammar can carry coboundary counts at any L and any d.  The second, positivity-free route to the same conclusion is [T-FROZEN-GEOMETRY]: H_a[N] moves the front and not the counts, so the counts cannot be front differences",
    "passed": true,
    "value": {
     "min_axis_cycle_sum": {
@@ -3098,12 +5739,148 @@
    }
   },
   {
-   "name": "G-MOVE-CENSUS-CELL-COMPLETE",
-   "statement": "every declared move class was censused and every coarse interval of every class was classified -- a dropped class or a dropped interval cannot shrink the census",
+   "name": "G-COBOUNDARY-CHARACTERISED",
+   "statement": "WALL 2's theorem is characterised, not merely stated: an edge assignment is a coboundary IFF (a) every axis cycle sums to zero and (b) the triangle relations hold.  Sufficiency is MEASURED by rank arithmetic -- the (a)+(b) system's solution dimension equals the rank of delta, so the two conditions cut out the coboundaries exactly.  Positivity forbids (a) alone, which is why the theorem is grammar-wide",
    "passed": true,
    "value": {
-    "classes": 6,
-    "declared": 6,
+    "sites": 9,
+    "edges": 27,
+    "rank_of_delta": 8,
+    "cycle_rank": 19,
+    "axis_cycle_conditions": 18,
+    "triangle_conditions": 18,
+    "rank_of_the_conditions": 19,
+    "solution_dimension": 8,
+    "conditions_cut_out_exactly_the_coboundaries": true
+   }
+  },
+  {
+   "name": "G-COVER-POTENTIAL-SECTOR",
+   "statement": "WALL 3.  On the UNIVERSAL COVER the counts of part of the declared family ARE coboundaries, and the sector is exactly the records whose off-diagonal metric component vanishes identically: the cocycle half of 'coboundary' IS q_12 = 0.  For that sector the obstruction is not information but PERIODIC HOLONOMY -- one integer per axis cycle.  SCOPE: the cover is not a pinned object, so this names no declaration and moves no freedom out of class (iii)",
+   "passed": true,
+   "value": {
+    "cover_coboundary_records": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-DIAG2",
+     "G-FLAT"
+    ],
+    "q12_identically_zero_records": [
+     "G-ANISO",
+     "G-ANISO2",
+     "G-CURVED",
+     "G-DIAG2",
+     "G-FLAT"
+    ],
+    "per_record": {
+     "G-ANISO": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": true,
+      "is_a_coboundary_on_the_universal_cover": true,
+      "q12_values": [
+       "0"
+      ],
+      "q12_identically_zero": true
+     },
+     "G-ANISO2": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": true,
+      "is_a_coboundary_on_the_universal_cover": true,
+      "q12_values": [
+       "0"
+      ],
+      "q12_identically_zero": true
+     },
+     "G-CURVED": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": true,
+      "is_a_coboundary_on_the_universal_cover": true,
+      "q12_values": [
+       "0"
+      ],
+      "q12_identically_zero": true
+     },
+     "G-CURVOFF": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": false,
+      "is_a_coboundary_on_the_universal_cover": false,
+      "q12_values": [
+       "1",
+       "2"
+      ],
+      "q12_identically_zero": false
+     },
+     "G-DIAG2": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": true,
+      "is_a_coboundary_on_the_universal_cover": true,
+      "q12_values": [
+       "0"
+      ],
+      "q12_identically_zero": true
+     },
+     "G-FLAT": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": true,
+      "is_a_coboundary_on_the_universal_cover": true,
+      "q12_values": [
+       "0"
+      ],
+      "q12_identically_zero": true
+     },
+     "G-OFFDIAG": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": false,
+      "is_a_coboundary_on_the_universal_cover": false,
+      "q12_values": [
+       "1"
+      ],
+      "q12_identically_zero": false
+     },
+     "G-OFFDIAG2": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": false,
+      "is_a_coboundary_on_the_universal_cover": false,
+      "q12_values": [
+       "2"
+      ],
+      "q12_identically_zero": false
+     },
+     "G-OFFNEG": {
+      "plaquette_curl_vanishes": true,
+      "triangle_relations_hold": false,
+      "is_a_coboundary_on_the_universal_cover": false,
+      "q12_values": [
+       "-2"
+      ],
+      "q12_identically_zero": false
+     }
+    }
+   }
+  },
+  {
+   "name": "G-MOVE-CENSUS-CELL-COMPLETE",
+   "statement": "every declared move class was censused and every coarse interval of every class was classified.  The denominator is built by an INDEPENDENT CONSTRUCTOR -- the class KEYS and their count 1 + L + 1 + 1 are derived from L alone, never re-read from declared_moves(), so a class dropped inside the constructor cannot hide behind a self-comparison (RUNBOOK section 14 addendum, v13 #219)",
+   "passed": true,
+   "value": {
+    "classes": [
+     "DYADIC",
+     "HYPERPLANE@0",
+     "HYPERPLANE@1",
+     "HYPERPLANE@2",
+     "R1-COPY",
+     "SINGLE-INTERVAL"
+    ],
+    "expected_keys": [
+     "DYADIC",
+     "HYPERPLANE@0",
+     "HYPERPLANE@1",
+     "HYPERPLANE@2",
+     "R1-COPY",
+     "SINGLE-INTERVAL"
+    ],
+    "expected_count": 6,
     "coarse_intervals": 27
    }
   },
@@ -3141,13 +5918,48 @@
    }
   },
   {
-   "name": "G-BLOCK-IS-REAL",
-   "statement": "the blocked branch's ambiguity is not harmless: over a declared completion sweep the two candidate readings of a cut diagonal interval's count DISAGREE at most cells, so no reading can be adopted without a grammar fact the pinned sources do not supply",
+   "name": "G-BLOCKED-CANDIDATES-COMPUTED",
+   "statement": "the number of candidate interior sites the blocked branch carries is COMPUTED from the census rows of the ambiguous intervals, never typed (RUNBOOK section 4, #24): every ambiguous interval carries the same count and the verdict segment renders that measurement",
    "passed": true,
    "value": {
-    "completions": 16,
-    "disagreeing": 12,
-    "agreeing": 4
+    "ambiguous_intervals": 9,
+    "candidates_min": 2,
+    "candidates_max": 2,
+    "rendered": 2
+   }
+  },
+  {
+   "name": "G-BLOCK-IS-REAL",
+   "statement": "the blocked branch's ambiguity is not harmless: the two candidate readings of a cut interval's count agree EXACTLY when f_1 - f_0 = n_2 - n_1, and over the wide declared completion census they disagree at most cells -- so no reading can be adopted without a grammar fact the pinned sources do not supply.  The criterion is verified at every cell, which is what makes this a measurement rather than the tautology the one-record sweep collapses to",
+   "passed": true,
+   "value": {
+    "completions": 14256,
+    "disagreeing": 13158,
+    "agreeing": 1098,
+    "criterion_verified": 14256,
+    "narrow_sweep_at_G-DIAG2": {
+     "completions": 16,
+     "disagreeing": 12
+    }
+   }
+  },
+  {
+   "name": "G-REFUSAL-MEASURED",
+   "statement": "the single-interval refusal is MEASURED on a built site set, not described: the direction-0 cycle lengths are read off the successor relation of X together with the inserted site, and each declared link displacement is TESTED for a target at the new site.  Both facts the refusal rests on are therefore measurements (RUNBOOK section 4, #24)",
+   "passed": true,
+   "value": {
+    "cycles": [
+     4,
+     3,
+     3
+    ],
+    "sites": 10,
+    "targets": {
+     "(0, 1)": false,
+     "(1, 0)": true,
+     "(1, 1)": false
+    },
+    "targets_count": 1
    }
   },
   {
@@ -3184,7 +5996,7 @@
   },
   {
    "name": "G-RESTRICTION-COMMUTES",
-   "statement": "record-IS-metric COMMUTES with refinement: the coarse metric rebuilt from the RESTRICTED refined counts equals the coarse metric computed directly, at every (record, split, completion, site) cell -- the comparator is the coarse record's own q, computed by a route the restriction does not touch",
+   "statement": "record-IS-metric COMMUTES with refinement: the coarse metric rebuilt from the RESTRICTED refined counts equals the coarse metric computed directly, at every (record, split, completion, site) cell.  What the test measures is that the READOUT commutes with the restriction; it is NOT an independent comparator, and the disclosure below states why",
    "passed": true,
    "value": {
     "checks": 324,
@@ -3192,11 +6004,29 @@
    }
   },
   {
+   "name": "G-RESTRICTION-IS-AN-ADDITIVITY-COROLLARY",
+   "statement": "DISCLOSURE (RUNBOOK section 14 addendum, v13 #208).  The restricted counts equal the coarse counts at every one of the 972 (build, site, link) cells -- restrict o refine = id on counts, which is additivity re-read.  The 324 q comparisons are therefore the SAME integers re-projected through a deterministic readout, and the earlier 'built by a route the restriction does not touch' framing is withdrawn: the headline stands, the independence claim does not",
+   "passed": true,
+   "recorded": true,
+   "value": {
+    "count_cells": 972,
+    "counts_recovered": 972,
+    "q_cells": 324,
+    "q_recovered": 324,
+    "is_a_corollary_of_additivity": true
+   }
+  },
+  {
    "name": "G-UNSPLITTABLE-RECORDS",
-   "statement": "a record carrying a count-1 interval admits NO subdivision at all: n_l(x) in Z_>0 [T-COUNTS-POSITIVE] leaves no positive partition of 1, and the readout independently rejects a zero part.  Measured over the declared family, not argued",
+   "statement": "a record carrying a count-1 interval admits NO subdivision at all: n_l(x) in Z_>0 [T-COUNTS-POSITIVE] leaves no positive partition of 1, and the readout independently rejects a zero part.  The unsplittable SET is measured twice -- once by the minimum count and once by scanning every (site, link) slot for a count-1 interval -- and the two routes must agree",
    "passed": true,
    "value": {
     "unsplittable": [
+     "G-ANISO",
+     "G-CURVED",
+     "G-FLAT"
+    ],
+    "independent_route": [
      "G-ANISO",
      "G-CURVED",
      "G-FLAT"
@@ -3212,8 +6042,44 @@
    }
   },
   {
+   "name": "G-RECORD-FAMILY-CELL-COMPLETE",
+   "statement": "the forced part is cell-complete over the RECORD family as well as over the move family: every admissible record is either splittable or unsplittable and none is silently dropped, and the constraint and build denominators equal their declared products -- a record dropped from the forced part shrinks them and dies here",
+   "passed": true,
+   "value": {
+    "admissible_records": 9,
+    "splittable": 6,
+    "unsplittable": 3,
+    "admissible_builds": 28,
+    "declared_builds": 36,
+    "expected_builds": 36,
+    "additivity_checks": 972,
+    "expected_additivity_checks": 972,
+    "restriction_checks": 324,
+    "expected_restriction_checks": 324
+   }
+  },
+  {
+   "name": "G-COVER-CANONICAL-REFINEMENT",
+   "statement": "WALL 3's exhibit.  On the q_12 = 0 sector a cover potential, interpolated by the very count-weighted rule the dynamics forces for the front, induces a CANONICAL refinement: every refined count positive, every refined site admissible, the coarse record recovered exactly, and the split determined -- fiber 1.  It agrees with the declared balanced split on every covered slot and differs from the declared minimal completion on the free ones, so it is a distinct member of the same split fiber.  SCOPE, binding: the universal cover is NOT a pinned object; this exhibits WHERE the obstruction lives and cannot flip the verdict",
+   "passed": true,
+   "value": {
+    "record": "G-DIAG2",
+    "homogeneous": true,
+    "interpolated_lift_is_integral": true,
+    "refined_counts_positive": true,
+    "refined_sites": 36,
+    "admissible_refined_sites": 36,
+    "coarse_sites": 9,
+    "coarse_record_recovered_at": 9,
+    "induced_split_fiber": 1,
+    "slots_differing_from_the_declared_minimal_completion": 18,
+    "agrees_with_the_declared_floor_split_on_every_covered_slot": true,
+    "scope": "the universal cover is NOT a pinned object; this exhibits where the obstruction lives on the q_12 = 0 sector and moves no freedom out of class (iii)"
+   }
+  },
+  {
    "name": "G-FIBER-COMPUTED",
-   "statement": "every split fiber is COMPUTED from the record's own counts, never typed: a record with a count-1 interval has fiber 0, and the admissible fiber equals an independent recomputation of the product over coarse sites of that site's admissible split triples",
+   "statement": "every split fiber is COMPUTED from the record's own counts, never typed: a record with a count-1 interval has fiber 0, and the admissible fiber equals a recomputation by a GENUINELY INDEPENDENT route -- an integer-interval count from an integer square root, sharing no loop, no predicate and no arithmetic type with the triple enumeration.  The agreement is checked site by site, not only on the product",
    "passed": true,
    "value": {
     "declared": {
@@ -3231,6 +6097,142 @@
      "G-OFFDIAG": 19683,
      "G-OFFDIAG2": 3904305912313344,
      "G-OFFNEG": 1801152661463
+    },
+    "per_site_enumerated": {
+     "G-ANISO2": [
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221
+     ],
+     "G-CURVOFF": [
+      3,
+      8,
+      15,
+      8,
+      20,
+      35,
+      15,
+      35,
+      61
+     ],
+     "G-DIAG2": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "G-OFFDIAG": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "G-OFFDIAG2": [
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54
+     ],
+     "G-OFFNEG": [
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
+     ]
+    },
+    "per_site_closed_form": {
+     "G-ANISO2": [
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221,
+      221
+     ],
+     "G-CURVOFF": [
+      3,
+      8,
+      15,
+      8,
+      20,
+      35,
+      15,
+      35,
+      61
+     ],
+     "G-DIAG2": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "G-OFFDIAG": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ],
+     "G-OFFDIAG2": [
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54,
+      54
+     ],
+     "G-OFFNEG": [
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
+     ]
     }
    }
   },
@@ -3429,12 +6431,13 @@
   },
   {
    "name": "G-FREE-LINKS-INFINITE",
-   "statement": "the free transverse links carry an INFINITE fiber, exhibited: with c = a + b the readout is diagonal and det q = a*b > 0 for every b >= 1, so a whole one-parameter family of admissible completions restricts to the same coarse record",
+   "statement": "the free transverse links carry an INFINITE fiber, exhibited: with c = a + b the readout is diagonal and det q = a*b > 0 for every b >= 1, so a whole one-parameter family of admissible completions restricts to the same coarse record.  The witness count is the LOOP'S OWN success count over the declared trial range, computed and never typed (RUNBOOK section 4, #24)",
    "passed": true,
    "value": {
     "free_slots": 54,
     "refined_links": 108,
-    "witnesses_checked": 64
+    "declared_trials": 64,
+    "witnesses_measured": 64
    }
   },
   {
@@ -3468,7 +6471,7 @@
   },
   {
    "name": "G-FORCED-LIFT-NON-INTEGRAL",
-   "statement": "requiring the drag to agree at the coarse image sites FORCES the front lift to the count-weighted interpolation n(x) + n_1*dn/n -- and that value is not of the declared Z-valued front type: integrality for EVERY front tilt would require n | n_1 with 1 <= n_1 < n, which holds at no split of any interval of the declared family.  The dynamics does not rescue the free front value; it forces an inadmissible one",
+   "statement": "the count-weighted interpolation n(x) + n_1*dn/n is not of the declared Z-valued front type: integrality for EVERY front tilt would require n | n_1 with 1 <= n_1 < n, which holds at no split of any interval.  SCOPE: the 81 cells are the (front, site, link) cells of G-ANISO2 at the balanced split; the divisibility sweep runs the 207 splits of G-ANISO2, and the same sweep over all 6 splittable records carries 650 splits",
    "passed": true,
    "value": {
     "forced_lift": {
@@ -3540,12 +6543,240 @@
        "front_tilt": 1,
        "forced_value_offset": "4/9"
       }
-     ]
+     ],
+     "record": "G-ANISO2",
+     "split_rule": "floor",
+     "cell_shape": "(front, site, link) at one record and one split rule"
     },
     "universal": {
      "triples_checked": 207,
-     "splits_with_n_dividing_n1": 0
+     "splits_with_n_dividing_n1": 0,
+     "record": "G-ANISO2",
+     "splits_over_the_splittable_family": 650
     }
+   }
+  },
+  {
+   "name": "G-FORCED-LIFT-RULE-RELATIVE",
+   "statement": "WHICH lift the dynamics forces is a FUNCTION OF THE DRAG RULE, solved exactly rather than asserted.  Image agreement gives Lambda^r(iota x) u = Lambda^c(x) v, so: the count-scaled rules force the count-weighted interpolation, which is not Z-valued; the count-blind rules force u = v -- the DECLARED RIGHT LIFT, Z-valued at every cell; the metric-inserted and link-frame rules force a third value; a frozen-front rule imposes no condition on the lift at all; and a rule that also weights a diagonal link leaves the system underdetermined.  The dynamics therefore never REMOVES the freedom: it either re-selects a lift already inside the class-(iii) pair or leaves the declared type",
+   "passed": true,
+   "value": {
+    "per_rule": {
+     "A-chart": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 756,
+      "equals_the_declared_right_lift": 756,
+      "equals_the_count_weighted_interpolation": 462
+     },
+     "A-axis": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 530,
+      "equals_the_declared_right_lift": 462,
+      "equals_the_count_weighted_interpolation": 756
+     },
+     "A-linkframe": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 340,
+      "equals_the_declared_right_lift": 306,
+      "equals_the_count_weighted_interpolation": 360
+     },
+     "A-linkhalf": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 340,
+      "equals_the_declared_right_lift": 306,
+      "equals_the_count_weighted_interpolation": 360
+     },
+     "A-insert": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 366,
+      "equals_the_declared_right_lift": 319,
+      "equals_the_count_weighted_interpolation": 434
+     },
+     "A-insert-x": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 366,
+      "equals_the_declared_right_lift": 319,
+      "equals_the_count_weighted_interpolation": 434
+     },
+     "A-insert-2x": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 366,
+      "equals_the_declared_right_lift": 319,
+      "equals_the_count_weighted_interpolation": 434
+     },
+     "A-notransport": {
+      "status": "VACUOUS-NO-CONDITION-ON-THE-LIFT",
+      "cells": 0,
+      "integral": 0,
+      "equals_the_declared_right_lift": 0,
+      "equals_the_count_weighted_interpolation": 0
+     },
+     "B-axis": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 530,
+      "equals_the_declared_right_lift": 462,
+      "equals_the_count_weighted_interpolation": 756
+     },
+     "B-all": {
+      "status": "UNDERDETERMINED",
+      "cells": 0,
+      "integral": 0,
+      "equals_the_declared_right_lift": 0,
+      "equals_the_count_weighted_interpolation": 0
+     },
+     "B-chart": {
+      "status": "DETERMINED",
+      "cells": 756,
+      "integral": 756,
+      "equals_the_declared_right_lift": 756,
+      "equals_the_count_weighted_interpolation": 462
+     }
+    },
+    "forms": {
+     "A-chart": "THE-DECLARED-RIGHT-LIFT",
+     "A-axis": "THE-COUNT-WEIGHTED-INTERPOLATION",
+     "A-linkframe": "A-THIRD-VALUE",
+     "A-linkhalf": "A-THIRD-VALUE",
+     "A-insert": "A-THIRD-VALUE",
+     "A-insert-x": "A-THIRD-VALUE",
+     "A-insert-2x": "A-THIRD-VALUE",
+     "A-notransport": "VACUOUS",
+     "B-axis": "THE-COUNT-WEIGHTED-INTERPOLATION",
+     "B-all": "UNDERDETERMINED",
+     "B-chart": "THE-DECLARED-RIGHT-LIFT"
+    },
+    "rules_by_form": {
+     "A-THIRD-VALUE": [
+      "A-insert",
+      "A-insert-2x",
+      "A-insert-x",
+      "A-linkframe",
+      "A-linkhalf"
+     ],
+     "THE-COUNT-WEIGHTED-INTERPOLATION": [
+      "A-axis",
+      "B-axis"
+     ],
+     "THE-DECLARED-RIGHT-LIFT": [
+      "A-chart",
+      "B-chart"
+     ],
+     "UNDERDETERMINED": [
+      "B-all"
+     ],
+     "VACUOUS": [
+      "A-notransport"
+     ]
+    }
+   }
+  },
+  {
+   "name": "G-EXTREMAL-SELECTORS-TESTED",
+   "statement": "the extremal/variational selector class is TESTED rather than passed over: max det q at the refined image is unique at every site of every splittable record and its selected refinement is globally admissible, while the most-balanced and min-|q_12| selectors are not unique.  This is exactly the shape a forcing would have, and it is NOT one: no pinned declaration names a functional to extremise, so the honest statement is 'no DECLARED selector', not 'no selector'",
+   "passed": true,
+   "value": {
+    "records": 6,
+    "sites_per_record": 9,
+    "sites": 54,
+    "max_det": {
+     "unique_sites": 54,
+     "records_with_an_admissible_selected_refinement": 6
+    },
+    "most_balanced": {
+     "unique_sites": 22
+    },
+    "min_abs_q12": {
+     "unique_sites": 19
+    },
+    "per_record": {
+     "G-ANISO2": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 0
+      },
+      "min_abs_q12": {
+       "unique_sites": 0
+      },
+      "sites": 9
+     },
+     "G-CURVOFF": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 4
+      },
+      "min_abs_q12": {
+       "unique_sites": 1
+      },
+      "sites": 9
+     },
+     "G-DIAG2": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 9
+      },
+      "min_abs_q12": {
+       "unique_sites": 9
+      },
+      "sites": 9
+     },
+     "G-OFFDIAG": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 9
+      },
+      "min_abs_q12": {
+       "unique_sites": 9
+      },
+      "sites": 9
+     },
+     "G-OFFDIAG2": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 0
+      },
+      "min_abs_q12": {
+       "unique_sites": 0
+      },
+      "sites": 9
+     },
+     "G-OFFNEG": {
+      "max_det": {
+       "unique_sites": 9,
+       "refinement_admissible": true
+      },
+      "most_balanced": {
+       "unique_sites": 0
+      },
+      "min_abs_q12": {
+       "unique_sites": 0
+      },
+      "sites": 9
+     }
+    },
+    "verdict": "NOT DERIVABLE -- no extremal principle is declared in the pinned sources, so a unique extremal selector is a lead for a deeper row and forces nothing here"
    }
   },
   {
@@ -3554,13 +6785,13 @@
    "passed": true,
    "value": {
     "cells": 11088,
-    "nonzero": 7112,
-    "zero": 3976
+    "nonzero": 7126,
+    "zero": 3962
    }
   },
   {
    "name": "G-DEFECT-CLOSED-FORM",
-   "statement": "the defect has an EXACT closed form at the coarse image sites under the left lift: the refined front is constant on each cell, so the refined drag vanishes there and the defect equals the WHOLE coarse drag -- verified cell by cell, not argued",
+   "statement": "the defect has an EXACT closed form at the coarse image sites under the LEFT lift: the lifted front is constant on each cell, so the refined drag vanishes there and the defect equals the WHOLE coarse drag -- verified cell by cell, not argued.  The reading is a coordinate of the lift, and the right-lift half is measured beside it",
    "passed": true,
    "value": {
     "image_cells": 49896,
@@ -3568,8 +6799,37 @@
    }
   },
   {
+   "name": "G-DEFECT-VALUE-CENSUS",
+   "statement": "the defect census is denominated in the defect's own VALUES, not only in cells: every site class carries a strictly positive absolute-value mass and a strictly positive count of nonzero components, the classes carry DISTINCT nonzero counts, and each class's nonzero site count is bracketed by its nonzero component count.  Erasing a whole parity class of defect values -- which leaves every cell-denominated gate green -- dies here",
+   "passed": true,
+   "value": {
+    "value_census": {
+     "IMAGE": {
+      "abs_mass": "80315314777/2368080",
+      "components": 199584,
+      "nonzero_components": 27384
+     },
+     "MID-(0, 1)": {
+      "abs_mass": "4205592797/102960",
+      "components": 199584,
+      "nonzero_components": 32167
+     },
+     "MID-(1, 0)": {
+      "abs_mass": "1079224873/30030",
+      "components": 199584,
+      "nonzero_components": 29790
+     },
+     "MID-(1, 1)": {
+      "abs_mass": "238908105636737/8725917200",
+      "components": 199584,
+      "nonzero_components": 28343
+     }
+    }
+   }
+  },
+  {
    "name": "G-DEFECT-CHARACTERISED",
-   "statement": "the defect's SITE SUPPORT is characterised by which coarse interval each refined site subdivides, the support is not uniform across those classes, and the signature the verdict carries is REBUILT here from the support table and must agree -- the defect is a structured object with a measured signature, not a scalar failure",
+   "statement": "the defect's SITE SUPPORT is characterised by which coarse interval each refined site subdivides, the support is not uniform across those classes, and the signature the verdict carries is REBUILT from a SECOND PASS over the per-cell rows -- not from the accumulator that produced it (RUNBOOK section 14 addendum, v13 #219).  The defect is a structured object with a measured signature, not a scalar failure",
    "passed": true,
    "value": {
     "support": {
@@ -3578,20 +6838,133 @@
       "total": 99792
      },
      "MID-(0, 1)": {
-      "nonzero": 20706,
+      "nonzero": 20510,
       "total": 99792
      },
      "MID-(1, 0)": {
-      "nonzero": 18438,
+      "nonzero": 18578,
       "total": 99792
      },
      "MID-(1, 1)": {
-      "nonzero": 16079,
+      "nonzero": 16457,
       "total": 99792
      }
     },
-    "signature": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792",
-    "rebuilt": "IMAGE:16296-OF-99792|MID-(0, 1):20706-OF-99792|MID-(1, 0):18438-OF-99792|MID-(1, 1):16079-OF-99792"
+    "signature": "IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792",
+    "rebuilt_second_pass": "IMAGE:16296-OF-99792|MID-(0, 1):20510-OF-99792|MID-(1, 0):18578-OF-99792|MID-(1, 1):16457-OF-99792",
+    "cell_rows": 11088
+   }
+  },
+  {
+   "name": "G-ZERO-SECTOR-CHARACTERISED",
+   "statement": "EVERY identically-zero cell is a cell at which the coarse drag itself vanishes identically: the comparator has never returned zero on a nontrivial pair -- it has only ever computed 0 - 0.  That is a RESULT about the census, and it replaces the earlier reading of these cells as a working positive control.  The converse fails, and only in one measured place: a vanishing coarse drag meets a NONZERO defect only under the declared frozen-front rules, whose refined drag reads an untransported front and so does not vanish with the coarse one",
+   "passed": true,
+   "value": {
+    "zero_cells": 3962,
+    "zero_cells_with_a_vanishing_coarse_drag": 3962,
+    "nonzero_cells_with_a_vanishing_coarse_drag": 14,
+    "and_they_are_all_frozen_front": {
+     "A-notransport": 14
+    }
+   }
+  },
+  {
+   "name": "G-IMAGE-AGREEMENT-LIFT-RELATIVE",
+   "statement": "the image reading is a COORDINATE OF THE LIFT, not a property of the move: under the left lift the image defect is the whole coarse drag at every cell, while under the RIGHT lift it vanishes identically for the count-blind rules and not for the others.  Both readings are in the same census; the delivered instrument printed only the left one",
+   "passed": true,
+   "value": {
+    "per_rule_right_lift": {
+     "A-axis": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-chart": {
+      "image_defect_zero": 4536,
+      "cells": 4536
+     },
+     "A-insert": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-insert-2x": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-insert-x": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-linkframe": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-linkhalf": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "A-notransport": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "B-all": {
+      "image_defect_zero": 3696,
+      "cells": 4536
+     },
+     "B-axis": {
+      "image_defect_zero": 3724,
+      "cells": 4536
+     },
+     "B-chart": {
+      "image_defect_zero": 4536,
+      "cells": 4536
+     }
+    },
+    "rules_with_an_identically_zero_image_defect": [
+     "A-chart",
+     "B-chart"
+    ]
+   }
+  },
+  {
+   "name": "G-RULE-FIELD-CENSUS",
+   "statement": "the declared drag-rule family's own denominator is MEASURED: the 11 declared rules realise a measured number of DISTINCT defect fields over the census, and the coincidence classes are named rather than left as inflated rows.  Architecture B supported on the axis links with weights lam_e coincides with architecture A at Lambda = diag(lam_e); the architectures separate only through a diagonal link or a non-diagonal Lambda",
+   "passed": true,
+   "value": {
+    "declared_rules": 11,
+    "distinct_fields": 9,
+    "coincidence_classes": [
+     [
+      "A-axis",
+      "B-axis"
+     ],
+     [
+      "A-chart",
+      "B-chart"
+     ]
+    ],
+    "coincident_pairs": [
+     [
+      "A-axis",
+      "B-axis"
+     ],
+     [
+      "A-chart",
+      "B-chart"
+     ]
+    ],
+    "per_rule_nonzero": {
+     "A-axis": 644,
+     "A-chart": 644,
+     "A-insert": 644,
+     "A-insert-2x": 644,
+     "A-insert-x": 644,
+     "A-linkframe": 644,
+     "A-linkhalf": 644,
+     "A-notransport": 658,
+     "B-all": 672,
+     "B-axis": 644,
+     "B-chart": 644
+    }
    }
   },
   {
@@ -3610,6 +6983,15 @@
     },
     "record": "G-OFFDIAG2",
     "rule": "A-axis"
+   }
+  },
+  {
+   "name": "G-DEFECT-SUPPORT-COMPLETION-RELATIVE",
+   "statement": "the defect's site support is COMPLETION-RELATIVE, and that is measured rather than conceded: re-running matched cells at the other declared free-link completion moves the support at a measured fraction of them.  DECLARED SCOPE: the matched cells run every admissible build, every declared rule, both lifts, every declared front and the NON-DELTA lapse profiles (the constant profile and the d chart ramps).  The support is a declared-arena coordinate (RUNBOOK section 15), never an intrinsic quantity",
+   "passed": true,
+   "value": {
+    "matched_cells": 2772,
+    "cells_whose_support_moved": 36
    }
   },
   {
@@ -3657,6 +7039,75 @@
       1
      ]
     }
+   }
+  },
+  {
+   "name": "G-FLAT-IS-A-SCALE-NOT-A-CURVATURE",
+   "statement": "the flat record's unrefinability is a statement about SCALE, not about flatness: the flat family (a, a, 2a) is admissible at every scale inside I7's own count box, and its refinement ceiling climbs with a.  The declared flat record sits at the count FLOOR, and it is the floor -- not the flatness -- that forbids refinement",
+   "passed": true,
+   "value": {
+    "flat_scales": [
+     {
+      "counts": [
+       1,
+       1,
+       2
+      ],
+      "admissible": true,
+      "ceiling": 0,
+      "achieved": 0
+     },
+     {
+      "counts": [
+       2,
+       2,
+       4
+      ],
+      "admissible": true,
+      "ceiling": 1,
+      "achieved": 1
+     },
+     {
+      "counts": [
+       3,
+       3,
+       6
+      ],
+      "admissible": true,
+      "ceiling": 1,
+      "achieved": 1
+     },
+     {
+      "counts": [
+       4,
+       4,
+       8
+      ],
+      "admissible": true,
+      "ceiling": 2,
+      "achieved": 2
+     },
+     {
+      "counts": [
+       5,
+       5,
+       10
+      ],
+      "admissible": true,
+      "ceiling": 2,
+      "achieved": 2
+     },
+     {
+      "counts": [
+       6,
+       6,
+       12
+      ],
+      "admissible": true,
+      "ceiling": 2,
+      "achieved": 2
+     }
+    ]
    }
   },
   {
@@ -3719,12 +7170,71 @@
    }
   },
   {
+   "name": "G-TEXT-ANCHOR-CONSUMERS",
+   "statement": "every verbatim-text anchor names the gate it licenses and that gate was registered by this run -- an anchor row bound to no consumer is decoration (RUNBOOK section 14 addendum, v14 #34, modification 2)",
+   "passed": true,
+   "value": {
+    "rows": [
+     {
+      "anchor": "T-COUNTS-POSITIVE",
+      "consumer_gate": "G-UNSPLITTABLE-RECORDS",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-COUNTS-SEMANTIC",
+      "consumer_gate": "G-ADDITIVITY-FORCED",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-FRONT",
+      "consumer_gate": "G-FORCED-LIFT-NON-INTEGRAL",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-READOUT",
+      "consumer_gate": "G-READOUT-REENCODING",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-CURVED",
+      "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-CURVOFF",
+      "consumer_gate": "G-RECORD-FAMILY-REPRODUCES-I7",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-FROZEN-GEOMETRY",
+      "consumer_gate": "G-NO-POTENTIAL-ON-THE-PERIODIC-LATTICE",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-DRAG",
+      "consumer_gate": "G-FORCED-LIFT-RULE-RELATIVE",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-PIN-ADDITIVITY",
+      "consumer_gate": "G-ADDITIVITY-FORCED",
+      "consumer_registered": true
+     },
+     {
+      "anchor": "T-PIN-SCOPE",
+      "consumer_gate": "G-INCIDENCE-CENSUS",
+      "consumer_registered": true
+     }
+    ]
+   }
+  },
+  {
    "name": "G-CACHE-EXERCISED",
    "statement": "the weight memo is genuinely exercised -- a zero-hit cache gate is vacuous (RUNBOOK section 14 addendum, v13 #219)",
    "passed": true,
    "value": {
-    "hits": 862758,
-    "misses": 6210,
+    "hits": 1297850,
+    "misses": 11754,
     "bypass": 99,
     "compared": 99,
     "disagreements": 0
@@ -3782,8 +7292,8 @@
    "statement": "the COMPLETE emitted verdict string equals, character for character, a reconstruction built segment by segment from the RECEIPT OBJECT by a function sharing no code and no input with the builder.  Substring, prefix and containment checks are not verdict gates (RUNBOOK section 14 addendum, v14 #10)",
    "passed": true,
    "value": {
-    "emitted": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:C",
-    "rebuilt": "R6A-NO-MOTIVATED-SPLIT<CLASSES=ADMISSIBLE:1(DYADIC)|BLOCKED:3|REFUSED:1|CONTROL:1|BLOCKED-AT=DIAGONAL-INTERVAL-INCIDENCE:3-OF-27-INTERVALS-2-CANDIDATES|REFUSED-AT=SINGLE-INTERVAL:C",
+    "emitted": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-O",
+    "rebuilt": "R6A-NO-MOTIVATED-SPLIT<MECHANISM=THE-RECORD-CARRIES-INTERVAL-TOTALS-NOT-EVENT-POSITIONS(SPLIT-FIBER=PROD(n_l-1)-OVER-27-SLOTS-EXACT-9-OF-9-RECORDS|UNIQUE-SPLIT-IFF-ALL-COUNTS-2-1-O",
     "equal": true
    }
   },
@@ -3793,6 +7303,30 @@
    "passed": true,
    "value": {
     "flips": [
+     {
+      "segment": "MECHANISM",
+      "flips": true
+     },
+     {
+      "segment": "DIMENSION-RELATIVITY",
+      "flips": true
+     },
+     {
+      "segment": "LIFT-RELATIVITY",
+      "flips": true
+     },
+     {
+      "segment": "FAMILY-RELATIVITY",
+      "flips": true
+     },
+     {
+      "segment": "COMPLETION-RELATIVITY",
+      "flips": true
+     },
+     {
+      "segment": "RULE-RELATIVITY",
+      "flips": true
+     },
      {
       "segment": "CLASSES",
       "flips": true
@@ -3864,10 +7398,77 @@
   },
   {
    "name": "G-NO-FLOATS-IN-RECEIPT",
-   "statement": "the emitted receipt contains no float",
+   "statement": "the MEASUREMENT OBJECT the receipt renders from contains no float: the scan runs on R itself, before serialisation, because the serialiser stringifies what it does not recognise and would have hidden one",
    "passed": true,
    "value": {
     "floats": []
+   }
+  },
+  {
+   "name": "G-MUTANT-TABLE-MEASURED",
+   "statement": "the falsifier census is a claim about MEASURED DEATHS, not about declared strings: every declared mutant was re-invoked by this run, each exited 1 on EXACTLY the gate its row declares, and both artifacts were byte-unchanged after each.  The survivor count is therefore computed and not typed (RUNBOOK section 4, #24; section 14 addendum, v14 #34)",
+   "passed": true,
+   "value": {
+    "mutants": 78,
+    "survivors": [],
+    "gate_mismatches": []
+   }
+  },
+  {
+   "name": "G-FALSIFIER-CENSUS-HONEST",
+   "statement": "the falsifier census denominates itself over EVERY registered must-pass gate and every gate without a declared falsifier carries a recorded waiver with its forcing reason -- no silent exemption",
+   "passed": true,
+   "value": {
+    "never_falsified": 2,
+    "unwaived": []
+   }
+  },
+  {
+   "name": "G-WAIVER-LEDGER-CLEAN",
+   "statement": "the waiver ledger is a ledger of CLAIMS and every claim is checked: no waiver names a gate that is in fact falsified (a dead entry never surfaces and so is never audited), every surviving waiver carries the single permitted FORCED form, every forcing is machine-checked by this run, and no gate is left unprotected.  A waiver naming a mutant is not permitted at all -- the mutant table measures deaths",
+   "passed": true,
+   "value": {
+    "never_falsified": [
+     "G-NO-MUTANT-IDENTITY",
+     "G-MOTIVATION-QUALIFIER-COMPUTED"
+    ],
+    "with_a_machine_checked_forcing": [
+     "G-MOTIVATION-QUALIFIER-COMPUTED",
+     "G-NO-MUTANT-IDENTITY"
+    ],
+    "unprotected": [],
+    "extraneous_keys": [],
+    "witnesses": {
+     "detector_injections_flagged": {
+      "checked": 2,
+      "all_flagged": true,
+      "holds": true
+     },
+     "qualifier_predicate_over_a_synthetic_sweep": {
+      "checked": 9,
+      "holds": true
+     },
+     "deferred_predicate_rejects_a_phantom": {
+      "checked": 1,
+      "holds": true
+     },
+     "gate_count_predicate_rejects_a_perturbed_count": {
+      "checked": 1,
+      "holds": true
+     }
+    }
+   }
+  },
+  {
+   "name": "G-WAIVER-TEXT-RENDERED",
+   "statement": "every waiver STRING that reaches the receipt is RENDERED from the structured ledger row and its machine-checked witness, so a hand-typed waiver text cannot ship beside a ledger that says something else",
+   "passed": true,
+   "value": {
+    "rows": 2,
+    "waivers": {
+     "G-NO-MUTANT-IDENTITY": "FORCED: self-validating: the AST detector is proved able to fire by the synthetic injections evaluated INSIDE the gate itself, so a detector that could not flag a violation fails the gate on its own evidence [machine-checked witness detector_injections_flagged: checked 2, holds True]",
+     "G-MOTIVATION-QUALIFIER-COMPUTED": "FORCED: the qualifier is DEFINED as MOTIVATED iff the free-class count is zero and the gate asserts exactly that equivalence, so the predicate is true for every possible inventory; the witness evaluates it over a synthetic sweep of class counts [machine-checked witness qualifier_predicate_over_a_synthetic_sweep: checked 9, holds True]"
+    }
    }
   },
   {
@@ -3880,17 +7481,12 @@
      "G-NO-FLOATS-IN-RECEIPT",
      "G-PROSE-RENDERS-FROM-THE-RECEIPT",
      "G-FINAL-GATE-COUNT",
-     "G-DEFERRED-GATES-EVALUATED"
+     "G-DEFERRED-GATES-EVALUATED",
+     "G-MUTANT-TABLE-MEASURED",
+     "G-WAIVER-LEDGER-CLEAN",
+     "G-WAIVER-TEXT-RENDERED",
+     "G-RECEIPT-MATCHES-THE-GATED-VALUES"
     ]
-   }
-  },
-  {
-   "name": "G-FALSIFIER-CENSUS-HONEST",
-   "statement": "the falsifier census denominates itself over EVERY registered gate and every gate without a declared falsifier carries a recorded waiver with its forcing reason -- no silent exemption",
-   "passed": true,
-   "value": {
-    "never_falsified": 18,
-    "unwaived": []
    }
   },
   {
@@ -3898,9 +7494,9 @@
    "statement": "every load-bearing numeric sentence of paper-04 is rendered from the receipt object and appears verbatim in the paper: the prose surface is gated like the tables (all of the programme's false paper numbers to date lived in hand-written prose)",
    "passed": true,
    "value": {
-    "claims": 15,
+    "claims": 25,
     "missing": [],
-    "paper_sha256_prefix": "af5b7f26e427"
+    "paper_sha256_prefix": "87dc33a5815c"
    }
   },
   {
@@ -3908,8 +7504,8 @@
    "statement": "the gate count the paper's rendered instrument sentence carries equals the number of gates this run will have registered when it finishes -- the claim's own arithmetic, gated",
    "passed": true,
    "value": {
-    "registered_now": 47,
-    "claimed": "48 gates, all passed; 32 anchors; 34 mutants, no survivors"
+    "registered_now": 69,
+    "claimed": "71 gates, all passed; 32 anchors; 78 mutants, all dead at their declared gate"
    }
   }
  ]

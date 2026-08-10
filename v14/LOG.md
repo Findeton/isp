@@ -1501,3 +1501,42 @@ panel queued.
 Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
 (44 anchors / 55 gates / 44 mutants, 0 failures).  CR-C
 stands GREEN-VERIFIED-UNREVIEWED; panel queued.
+
+## 2026-08-09 — R6a REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #52)
+Repair delivered; ALL TEN ORDERS R-R6A-1..10 executed.
+Hashes: paper 87dc33a5815c, code a3a15ed3c3c8, output
+d6f462ab25ce, receipt 856f6e810ab5 (this supersedes both the
+#26 bytes and the mid-flight drift CR-C observed; CR-C
+consumed the #26 bytes via git show and is insulated).
+**THE THREE-WALL §3 DELIVERED** (multiplicity ∏(n_ℓ−1) 9/9;
+the torus coboundary theorem w/ the operator's
+characterization rank-19-of-27; periodic holonomy w/ THE
+UNIVERSAL-COVER DISCLOSURE GATED — the q₁₂≡0 sector 5-of-9,
+G-DIAG2's cover refinement 36/36 admissible, coarse recovered
+9/9, split fiber 1, cover-not-pinned scope sentence in gate+
+receipt+paper).  **TWO REVIEW CLAIMS CORRECTED AGAINST
+MEASUREMENT: the instrument's "the cover refinement IS the
+floor+minimal build" is FALSE (agree on covered slots, differ
+at 18 free slots — a DISTINCT member of the fiber); the
+effectus's 0-of-20,356 carried at the pinned box (0-of-261)
+w/ the wide box as a disclosure.**  A-notransport implemented
+DISTINCT (658 vs 644 nonzero cells; the census moved:
+defect nonzero 7,126/11,088, zero 3,962; support updated) —
+and a NEW FINDING: the 11 declared rules realise only 9
+DISTINCT DEFECT FIELDS (A-axis≡B-axis, A-chart≡B-chart
+structurally).  The per-rule forced-lift table: right-lift @2
+(756/756 integral), count-weighted @2, third-value @5,
+VACUOUS @1, UNDERDETERMINED @1; B-all's agreement 3,696 (not
+the reviews' uniform 812).  THE WAIVER LEDGER TRANSFORMED:
+never-falsified 20 → 2 (both FORCED w/ machine-checked
+witnesses), mutants 34 → 78 (ALL RUN IN-DELIVERY, 78/78
+measured dead), gates 48 → 71; the 11 instrument kills all
+declared mutants; injections now traverse the whole pipeline.
+Verbatim anchors per the adopted modification (windows +
+consumer gates — the T1 meaning-inversion dies).  The zero
+sector characterised (both-drags-vanish 3,962/3,962, converse
+failing at exactly 14 cells, all frozen-front — a new
+measured qualification).  18 verdict segments (12→18), all
+flippable; 25 rendered claims 0 missing; 31-row compliance
+sweep incl. both #34 engravings.  Byte-identical ×2.
+Adjudicator verification next (78-mutant selftest).
