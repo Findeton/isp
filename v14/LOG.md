@@ -4383,3 +4383,46 @@ cited-not-read discipline for U4/weld-2 (rewrites were in
 flight); #34/#62/#87/#91/#125 at the current era; the
 R4b/R5 injection playbooks.  Candidate-readings rule in force.
 Three reviewers launched.
+
+## 2026-08-10 — U4B EFFECTUS FROZEN (1 OF 3) (v14 LEDGER #150)
+
+review-u4b-effectus.md frozen (dc37768d323b, 637 lines).  Grade
+AWF; 88 recomputations, 77 delivered quantities reproduced
+exactly, zero mismatches.  **THE DECISIVE RE-READING:
+CRYSTAL-GENERIC SUSTAINED, "EMERGENCE" RE-WORDED — all 252
+crystalline seed pairs have supp(n) = a union of
+period-subgroup cosets (verified 252/252): the beyond-coset
+crystals are THE AFFINE LAW TAKEN ON THE UNION of the two seed
+sets.  "The null wasn't defeated; it was stated on the wrong
+carrier."  RELATIONAL ORDER AS A MEASURED CATEGORY: KILLED**
+(Stab is by construction a function of the aggregate field).
+The honest under-claim supplied: **6/7 exactly of all
+crystallinity lies outside the inherited locus** — the census
+still moved knowledge; the mechanism is one law throughout.
+**THE BUDGET WALL IS THE REAL RESULT (displacing the diagonal)
+— and the effectus COMPUTED THE MINIMAL SATURATING SUCCESSOR:
+R=3 on the three link classes → n_ℓ ≡ 1 at ALL 27 cells,
+det = 3/4, POSDEF 9/9** — i.e. at one more round the grammar
+affords an I7-STRICT-compatible, everywhere-positive-definite
+record; "never-Riemannian" is BUDGET-SCOPED (never at R=2);
+the successor pin's demand is now EXACT.  MAJOR-1: a false
+sentence in the wall section (§8's "independent across the
+family" — conditional on the empty diagonal the period is the
+diagonal at 15/31 vs 1/4; the repair STRENGTHENS the bar) —
+**the register's 9th false paper claim (prose)**.  MAJOR-2: the
+Lorentzian resonance NEITHER named NOR read — silence, not
+governance; the one-sentence repair written; otherwise NO wall
+breach.  MAJOR-3 (routed): G-WALL-BHS prints "measured" but is
+a hard-coded literal.  MAJOR-4: the co-division adjacency
+load-bearing, absent from the inventory.  Rulings: U4's
+vacuous cells = one cross-reference line (no erratum);
+**fragility STRENGTHENED at family scope — 9,072/9,072
+single-point re-seatings land on the trivial stabilizer:
+crystals are DESTROYED, not rotated**; the d60 seed-dependence
+confirmed empirically and scoped to a 7-unit audit (U4/U4b
+immune via maxhits=1); the inventory ONE ITEM from MOTIVATED
+(the upgrade on the table).  Successors (7 rows): the coupling
+unit inheriting ROW|ROW/DIAG is PREMATURE — inherit the
+19,791/17,118 pool AND the wall; no pair-mechanism unit
+(register the closed form as a theorem); the posdef ceiling
+open (wall permits 6, measured 3).  Two seats pending.
