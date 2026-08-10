@@ -1,35 +1,85 @@
 {
+ "B2_atom_deltas": [
+  [
+   "(1, 1)",
+   1,
+   "5531/5564",
+   "1",
+   "1"
+  ],
+  [
+   "(1, 1)",
+   2,
+   "3916670725604/3948076132837",
+   "1",
+   "1"
+  ],
+  [
+   "(2, 2)",
+   1,
+   "1373/1380",
+   "1",
+   "0"
+  ],
+  [
+   "(2, 2)",
+   2,
+   "88301/88665",
+   "1",
+   "0"
+  ],
+  [
+   "(2, 3)",
+   1,
+   "1",
+   "1",
+   "0"
+  ],
+  [
+   "(3, 2)",
+   1,
+   "1",
+   "1",
+   "0"
+  ]
+ ],
  "B2_atom_found": true,
  "B2_atoms": [
   [
    "(1, 1)",
    1,
-   1365
+   1365,
+   "1"
   ],
   [
    "(1, 1)",
    2,
-   341
+   341,
+   "1"
   ],
   [
    "(2, 2)",
    1,
-   3788
+   3788,
+   "1"
   ],
   [
    "(2, 2)",
    2,
-   348
+   348,
+   "1"
   ],
   [
    "(2, 3)",
    1,
-   4
+   4,
+   "1"
   ],
   [
    "(3, 2)",
    1,
-   4
+   4,
+   "1"
   ]
  ],
  "B2_best_N": 1,
@@ -38,7 +88,174 @@
   "(1, 1)",
   "(2, 2)",
   "(2, 3)",
-  "(3, 2)"
+  "(3, 2)",
+  "(3, 3)"
+ ],
+ "B2_blocks_excluded": [
+  [
+   "(2, 3)",
+   2,
+   0,
+   "EXCLUDED-BY-CAP: the block has fewer than two points at depth <= 4, so no N-step window with dep + N <= 6 exists"
+  ],
+  [
+   "(3, 2)",
+   2,
+   0,
+   "EXCLUDED-BY-CAP: the block has fewer than two points at depth <= 4, so no N-step window with dep + N <= 6 exists"
+  ],
+  [
+   "(3, 3)",
+   1,
+   0,
+   "EXCLUDED-BY-CAP: the block has fewer than two points at depth <= 5, so no N-step window with dep + N <= 6 exists"
+  ],
+  [
+   "(3, 3)",
+   2,
+   0,
+   "EXCLUDED-BY-CAP: the block has fewer than two points at depth <= 4, so no N-step window with dep + N <= 6 exists"
+  ]
+ ],
+ "B2_coarsening_rows": [
+  [
+   "(1, 1)",
+   1,
+   "1",
+   "1",
+   "1"
+  ],
+  [
+   "(1, 1)",
+   2,
+   "1",
+   "1",
+   "1"
+  ],
+  [
+   "(2, 2)",
+   1,
+   "0",
+   "1",
+   "1"
+  ],
+  [
+   "(2, 2)",
+   2,
+   "0",
+   "1",
+   "1"
+  ],
+  [
+   "(2, 3)",
+   1,
+   "0",
+   "1",
+   "1"
+  ],
+  [
+   "(3, 2)",
+   1,
+   "0",
+   "1",
+   "1"
+  ]
+ ],
+ "B2_coarsening_violations": 0,
+ "B2_full_grain_rows": [
+  [
+   1,
+   5161,
+   [
+    [
+     "kind13",
+     "0",
+     "0"
+    ],
+    [
+     "event113",
+     "0",
+     "0"
+    ],
+    [
+     "profile",
+     "0",
+     "0"
+    ],
+    [
+     "profile_unordered",
+     "0",
+     "0"
+    ],
+    [
+     "rsig_indicator",
+     "5531/5564",
+     "1"
+    ]
+   ]
+  ],
+  [
+   2,
+   689,
+   [
+    [
+     "kind13",
+     "0",
+     "0"
+    ],
+    [
+     "event113",
+     "0",
+     "0"
+    ],
+    [
+     "profile",
+     "0",
+     "0"
+    ],
+    [
+     "profile_unordered",
+     "0",
+     "0"
+    ],
+    [
+     "rsig_indicator",
+     "34359971/34588859",
+     "1"
+    ]
+   ]
+  ],
+  [
+   3,
+   105,
+   [
+    [
+     "kind13",
+     "12420/2168717",
+     "3/514"
+    ],
+    [
+     "event113",
+     "0",
+     "0"
+    ],
+    [
+     "profile",
+     "12420/2168717",
+     "3/514"
+    ],
+    [
+     "profile_unordered",
+     "12420/2168717",
+     "3/514"
+    ],
+    [
+     "rsig_indicator",
+     "744372383/748207365",
+     "1541/1542"
+    ]
+   ]
+  ]
  ],
  "B2_full_rows": [
   [
@@ -107,6 +324,7 @@
    "0"
   ]
  ],
+ "B2_grain_split_direction_ok": true,
  "B2_hetero_pos_rows": [
   [
    3,
@@ -296,11 +514,223 @@
    3
   ]
  ],
+ "B2_profile_rows_full": [
+  [
+   [
+    1,
+    1
+   ],
+   1,
+   1365,
+   [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "5531/5564",
+   "1",
+   "1",
+   2,
+   "1",
+   "1",
+   "1",
+   6
+  ],
+  [
+   [
+    1,
+    1
+   ],
+   2,
+   341,
+   [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "3916670725604/3948076132837",
+   "1",
+   "1",
+   5,
+   "1",
+   "1",
+   "1",
+   6
+  ],
+  [
+   [
+    2,
+    2
+   ],
+   1,
+   3788,
+   [
+    3,
+    4,
+    5
+   ],
+   "1373/1380",
+   "1",
+   "0",
+   2,
+   "1",
+   "1",
+   "1",
+   6
+  ],
+  [
+   [
+    2,
+    2
+   ],
+   2,
+   348,
+   [
+    3,
+    4
+   ],
+   "88301/88665",
+   "1",
+   "0",
+   5,
+   "1",
+   "1",
+   "1",
+   6
+  ],
+  [
+   [
+    2,
+    3
+   ],
+   1,
+   4,
+   [
+    5
+   ],
+   "1",
+   "1",
+   "0",
+   3,
+   "1",
+   "1",
+   "1",
+   6
+  ],
+  [
+   [
+    3,
+    2
+   ],
+   1,
+   4,
+   [
+    5
+   ],
+   "1",
+   "1",
+   "0",
+   3,
+   "1",
+   "1",
+   "1",
+   6
+  ]
+ ],
+ "B2_rsig_indicator_delta1_at": [
+  1,
+  2
+ ],
+ "B2_rsig_indicator_matched": [
+  [
+   1,
+   "1"
+  ],
+  [
+   2,
+   "1"
+  ],
+  [
+   3,
+   "1541/1542"
+  ]
+ ],
  "B2_widest_zero_N": [
   1,
   2
  ],
  "B3_all_zero_inf": true,
+ "B3_block_entries": [
+  [
+   "(1, 1)",
+   0
+  ],
+  [
+   "(2, 2)",
+   10532
+  ],
+  [
+   "(2, 3)",
+   84
+  ],
+  [
+   "(3, 2)",
+   84
+  ],
+  [
+   "(3, 3)",
+   424
+  ]
+ ],
+ "B3_block_entries_nonroot_positive": true,
+ "B3_block_entries_positive": false,
+ "B3_block_entries_root_zero": true,
+ "B3_block_entry_rows": [
+  [
+   "(1, 1)",
+   5461,
+   0,
+   true,
+   0
+  ],
+  [
+   "(2, 2)",
+   33260,
+   33260,
+   false,
+   10532
+  ],
+  [
+   "(2, 3)",
+   108,
+   108,
+   false,
+   84
+  ],
+  [
+   "(3, 2)",
+   108,
+   108,
+   false,
+   84
+  ],
+  [
+   "(3, 3)",
+   424,
+   424,
+   false,
+   424
+  ]
+ ],
+ "B3_block_inf_sup": "0",
+ "B3_block_inf_values": [
+  "0"
+ ],
  "B3_block_reentries": [
   [
    "(1, 1)",
@@ -321,8 +751,36 @@
    "(3, 2)",
    108,
    108
+  ],
+  [
+   "(3, 3)",
+   424,
+   424
   ]
  ],
+ "B3_block_reentry_forced": [
+  [
+   "(2, 2)",
+   33260,
+   33260
+  ],
+  [
+   "(2, 3)",
+   108,
+   108
+  ],
+  [
+   "(3, 2)",
+   108,
+   108
+  ],
+  [
+   "(3, 3)",
+   424,
+   424
+  ]
+ ],
+ "B3_block_reentry_forced_all": true,
  "B3_dist_by_depth": [
   [
    0,
@@ -381,7 +839,45 @@
    213040
   ]
  ],
+ "B3_dist_max_by_depth": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   2
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   3,
+   2
+  ],
+  [
+   4,
+   2
+  ],
+  [
+   5,
+   1
+  ],
+  [
+   6,
+   0
+  ]
+ ],
+ "B3_dist_max_informative": 2,
+ "B3_dist_max_rises": false,
  "B3_dist_max_saturated": 2,
+ "B3_dist_rows_informative": [
+  0,
+  1,
+  2,
+  3
+ ],
  "B3_dist_rows_saturated": [
   0,
   1,
@@ -502,10 +998,40 @@
    69,
    49,
    "0"
+  ],
+  [
+   "(3, 3)",
+   1,
+   30729,
+   30545,
+   "0"
+  ],
+  [
+   "(3, 3)",
+   2,
+   3969,
+   3873,
+   "0"
+  ],
+  [
+   "(3, 3)",
+   3,
+   521,
+   493,
+   "0"
+  ],
+  [
+   "(3, 3)",
+   4,
+   69,
+   61,
+   "0"
   ]
  ],
  "B3_profile_decreases": 0,
- "B3_profile_pairs": 30728,
+ "B3_profile_decreases_narrow": 0,
+ "B3_profile_pairs": 243768,
+ "B3_profile_pairs_narrow": 30728,
  "B3_rsig_first_nonzero_N": 5,
  "B3_rsig_inf_widest": "0",
  "B3_rsig_rows": [
@@ -643,6 +1169,118 @@
    4,
    49,
    69
+  ],
+  [
+   "(3, 3)",
+   1,
+   30545,
+   30729
+  ],
+  [
+   "(3, 3)",
+   2,
+   3873,
+   3969
+  ],
+  [
+   "(3, 3)",
+   3,
+   493,
+   521
+  ],
+  [
+   "(3, 3)",
+   4,
+   61,
+   69
+  ]
+ ],
+ "B4_block11_menu_classes_d4": 1,
+ "B4_block11_points_d4": 341,
+ "B4_carrier_dead_rows": [
+  [
+   "(2, 2)",
+   1
+  ],
+  [
+   "(2, 2)",
+   2
+  ],
+  [
+   "(2, 3)",
+   1
+  ],
+  [
+   "(3, 2)",
+   1
+  ]
+ ],
+ "B4_carrier_open_rows": [
+  [
+   "(1, 1)",
+   1
+  ],
+  [
+   "(1, 1)",
+   2
+  ]
+ ],
+ "B4_rows_statable_d4": 0,
+ "B4_rows_statable_d5": 0,
+ "B4_statability": [
+  [
+   "(1, 1)",
+   1,
+   0,
+   5,
+   6,
+   false,
+   false
+  ],
+  [
+   "(1, 1)",
+   2,
+   0,
+   4,
+   6,
+   false,
+   false
+  ],
+  [
+   "(2, 2)",
+   1,
+   3,
+   5,
+   6,
+   false,
+   false
+  ],
+  [
+   "(2, 2)",
+   2,
+   3,
+   4,
+   6,
+   false,
+   false
+  ],
+  [
+   "(2, 3)",
+   1,
+   5,
+   5,
+   6,
+   false,
+   false
+  ],
+  [
+   "(3, 2)",
+   1,
+   5,
+   5,
+   6,
+   false,
+   false
   ]
  ],
  "G_d_frac": [
@@ -784,12 +1422,19 @@
    "path": "v10/note-d46f-reception-dynamics.md",
    "row": "T8",
    "sha256_12": "a6368078be4c"
+  },
+  {
+   "ok": true,
+   "path": "v10/LOG.md",
+   "row": "T9",
+   "sha256_12": "d244f925e172"
   }
  ],
  "_anchors_verbatim": [
   {
    "chars": 130,
    "consumer": "A1-BUDGETS",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/code/d42b1_transport_exact.py",
    "row": "T1"
@@ -797,6 +1442,7 @@
   {
    "chars": 208,
    "consumer": "A5-ESCAPE",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md",
    "row": "T2"
@@ -804,6 +1450,7 @@
   {
    "chars": 221,
    "consumer": "A5-OPERATOR-CONTROL",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md",
    "row": "T2"
@@ -811,6 +1458,7 @@
   {
    "chars": 106,
    "consumer": "A5-ESCAPE",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d44b-transport-scope-invariance.md",
    "row": "T3"
@@ -818,6 +1466,7 @@
   {
    "chars": 100,
    "consumer": "A6-REOPENING",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d44b-transport-scope-invariance.md",
    "row": "T3"
@@ -825,6 +1474,7 @@
   {
    "chars": 76,
    "consumer": "A4-PORTS",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d70-horizon-limit-result.md",
    "row": "T4"
@@ -832,6 +1482,7 @@
   {
    "chars": 186,
    "consumer": "B0-SUCCESSOR-NAMED",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d70-horizon-limit-result.md",
    "row": "T4"
@@ -839,20 +1490,47 @@
   {
    "chars": 52,
    "consumer": "A3-POSITIVITY",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d70-horizon-limit-result.md",
    "row": "T4"
   },
   {
-   "chars": 15,
+   "chars": 112,
    "consumer": "A5-CONTROL-GRAIN",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/data/d74_transport_holonomy_exact.out",
    "row": "T5"
   },
   {
+   "chars": 108,
+   "consumer": "B4-CARRIER-SUPPLY",
+   "occurrences": 1,
+   "ok": true,
+   "path": "v10/data/d74_transport_holonomy_exact.out",
+   "row": "T5"
+  },
+  {
+   "chars": 175,
+   "consumer": "B4-CARRIER-CHAIN",
+   "occurrences": 1,
+   "ok": true,
+   "path": "v10/data/d74_transport_holonomy_exact.out",
+   "row": "T5"
+  },
+  {
+   "chars": 208,
+   "consumer": "A0-LEDGER",
+   "occurrences": 1,
+   "ok": true,
+   "path": "v10/LOG.md",
+   "row": "T9"
+  },
+  {
    "chars": 299,
    "consumer": "A5-METHOD",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
    "row": "T6"
@@ -860,6 +1538,7 @@
   {
    "chars": 41,
    "consumer": "A3-KERNEL",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d46b-martin-at-transport.md",
    "row": "T7"
@@ -867,6 +1546,7 @@
   {
    "chars": 62,
    "consumer": "A1-DELIVERY",
+   "occurrences": 1,
    "ok": true,
    "path": "v10/note-d46f-reception-dynamics.md",
    "row": "T8"
@@ -882,104 +1562,248 @@
   "pool3_depth": 3,
   "pool3_depth5_conditional_arm": "NOT RUN"
  },
+ "_choices": [
+  {
+   "choice": "C1 the R-SIG predicate reduction",
+   "class": "FORCED",
+   "evidence": "exhibited: agrees with the full predicate at 30729/30729, 0 disagreements, with the two structural implications machine-checked at 0 counterexamples each, and the unforced variant disagreeing at 2078"
+  },
+  {
+   "choice": "C2 the delivery-free partner derived, not imported",
+   "class": "FORCED",
+   "evidence": "exhibited: the layer's own idle clause with the delivery indicator forced false; gated against T4's committed partner census 34375 and its potentials"
+  },
+  {
+   "choice": "C3 grain: primary 13-class vs control 113-class",
+   "class": "DECLARED",
+   "evidence": "fiber MEASURED and large: 4 of 6 atom rows flip; five grains run on the full class"
+  },
+  {
+   "choice": "C4 horizon: H7 vs MATCHED",
+   "class": "DECLARED",
+   "evidence": "fiber measured at both grains on the full class and at the primary grain on every block row; the H7 x control cell is bounded above by the H7 x primary column by the coarsening lemma and is not separately computed"
+  },
+  {
+   "choice": "C5 caps CAP_T = 6, N <= 5, escape window 4, symmetry window 3",
+   "class": "DECLARED",
+   "evidence": "N-fiber measured across N = 1..5; the depth fiber is NOT measured \u2014 depth 7 is declared infeasible with its projected count printed"
+  },
+  {
+   "choice": "C6 actor pool = (A, B) for ARM B",
+   "class": "FREE",
+   "evidence": "three actors censused to depth 3 only (3424 histories); NO ARM-B row is run at three actors, so the fiber over the actor pool has ONE sampled point"
+  },
+  {
+   "choice": "C7 terminal convention G(h, 0) = 1",
+   "class": "FREE",
+   "evidence": "no second terminal convention is run anywhere; ARM A fact 7 forces only the ROOT leg, and only for relabelling-invariant conventions"
+  },
+  {
+   "choice": "C8 Psi ranges over menu-shape functions",
+   "class": "FREE",
+   "evidence": "the two declared grains are both menu-shape functions of the successor.  THIS REPAIR MEASURES THREE MORE Psi OF OTHER KINDS (the ordered and unordered holdings profile, and the R-SIG indicator) and the last of them REVERSES the answer, which is exactly why the item is FREE and why the verdict now carries a PSI-FAMILY qualifier.  d74's congruence CONG-185 is still not run as a Psi"
+  },
+  {
+   "choice": "C9 candidate small sets = R-SIG's profile blocks and their union",
+   "class": "FREE",
+   "evidence": "declared, not answer-selected (the block list is taken from ARM A fact 4 before ARM B runs) \u2014 but the fiber over candidate small sets has exactly two sampled points, and both are level sets, or the total, OF THE SAME MONOTONE COORDINATE.  Nothing outside the level-set family is tried, so 'the process climbs past each one' is entailed by the choice of candidates"
+  }
+ ],
+ "_code_sha256_12": "8ddbc93cd48d",
  "_compliance": [
   {
    "evidence": "AST float-guard: 0 float literals; float() confined to display",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 4 exact arithmetic"
   },
   {
-   "evidence": "every census in this receipt is enumerated in-process; the committed values appear only inside gate predicates as expectations that kill the run on mismatch",
+   "evidence": "every census in this receipt is enumerated in-process; an AST census of constant assignments into the gated object finds 8 typed keys ['B2_nu_block_size', 'B2_nu_profile', 'B2_nu_support', 'carrier_cong_d4', 'carrier_cong_d5', 'carrier_menu_d4', 'carrier_menu_d5', 't5_ledger_source'], and NONE of them is a measured quantity ([] \u2014 the Birkhoff coefficient and the diameter flag are DERIVED from the computed witness minor, never typed)",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 4 counts computed, never typed"
   },
   {
-   "evidence": "negative controls: mis-normalized kernel, classifier mismatch, grain swap; positive controls: the atoms of B2, the reduction control of A4-PRED",
+   "evidence": "negative controls: mis-normalized kernel, classifier mismatch, grain swap, the unforced predicate variant, the non-superseded profile; positive controls: the atoms of B2, the reduction control of A4-PRED",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 4 controls in both directions"
   },
   {
-   "evidence": "V-VERDICT compares the complete emitted string against a segment-by-segment rebuild",
+   "evidence": "V-VERDICT parses the complete emitted string against an independently declared field table and accounts for every numeral in it",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 13 (#234) verdict derived in a gate"
   },
   {
    "evidence": "all five verdict falsifiers (value swap, appended text, truncation, dropped segment, retyped segment) kill a gate; gated at C-VERDICTFALSIFIERS with its own falsifier",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#10) containment is not equality"
   },
   {
-   "evidence": "every printed number and every receipt field reads from F, the same object the gates read",
+   "evidence": "every gate reads keys of the gated object and nothing else (186 distinct keys, all present in F), and the emitted verdict's every numeral is accounted for by a value of that object",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 13 (#10) render from the gated object"
   },
   {
-   "evidence": "paper-11 renders its numbers from gprep_foundation_receipt.json; any number derived in text is marked at its derivation site",
+   "evidence": "ASSERTED, NOT COMPUTED, and counted separately: this is a claim about paper-11, a different artifact, and this process cannot measure it.  It is carried as a disclosure so that the computed count below is honest",
+   "kind": "DISCLOSURE",
    "ok": true,
    "rule": "RUNBOOK 13 (#20) prose renders from the receipt"
   },
   {
-   "evidence": "this sweep is itself gated at C-COMPLIANCE below, with an injection-falsifier",
+   "evidence": "an AST census of this very table finds 0 rows whose COMPUTED status is a literal constant; the DISCLOSURE rows are counted separately and named as asserted; gated at C-COMPLIANCE and at C-NOCONSTANTRULES",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#20) compliance claims are gate claims"
   },
   {
    "evidence": "M-PATHDRIFT: every drifted path fails to resolve",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#20) path-value anchoring"
   },
   {
-   "evidence": "every never-falsified gate carries a verified waiver naming its forcing; gated at C-WAIVERS with its own falsifier",
+   "evidence": "a waiver is issued only to a predicate MEASURED to be input-independent under drift, poison and erase of every key it reads; a never-falsified gate that could be flipped has its killing perturbation registered as a falsifier instead (0 such registrations)",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#34) waiver claims are gate claims"
   },
   {
-   "evidence": "12 context windows over 8 of the 8 pinned rows, evaluated before the byte anchors, each bound to a named consumer gate",
+   "evidence": "15 context windows over 9 of the 9 pinned rows, evaluated before the byte anchors, each at least 40 characters, each occurring exactly once in its source, each perturbed at a content-bearing token, and each bound to a REGISTERED consumer gate",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#34) verbatim-text anchors"
   },
   {
-   "evidence": "the only files read are the pinned artifacts and this file's own source; v14/LOG.md and /STATUS.md are not opened",
+   "evidence": "the set of paths this process opened is instrumented and compared against the anchored set: 19 opened, 0 outside the anchor table [].  The committed v10 ledger is row T9 and is read at its pinned sha like every other artifact; an AST census finds 0 subprocess calls, so nothing is read at `git show HEAD:` or any other moving reference",
+   "kind": "COMPUTED",
    "ok": true,
-   "rule": "RUNBOOK 14 (#46) no unanchored runtime inputs"
+   "rule": "RUNBOOK 14 (#46) no unanchored runtime inputs, no moving references"
   },
   {
-   "evidence": "the falsifiers perturb the gated object; the predicates are the same functions evaluated blind",
+   "evidence": "an AST census of every string constant inside every gate() call finds 0 that equal a registered falsifier's name []; the predicates are the same functions evaluated blind",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#208) no gate references mutant identity"
   },
   {
-   "evidence": "A4-MASS compares a chained kernel product against a closed rational expression in the potentials \u2014 two independent routes, not one routed twice",
+   "evidence": "an AST comparison of build_verdict and check_verdict finds 0 string literals shared other than the keys of the shared token table []; and A4-MASS compares a chained kernel product against a closed rational expression in the potentials \u2014 two independent routes, not one routed twice",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 14 (#219) comparators built independently"
   },
   {
-   "evidence": "boundary / family / law / state / arena / provenance printed as data at the head of this receipt; the GRAIN is declared and both grains are measured",
+   "evidence": "boundary / family / law / state / arena / provenance printed as data at the head of this receipt; the GRAIN is declared and five grains are measured; the choice inventory classifies all nine choices and counts the free ones",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 15 declared arena"
   },
   {
-   "evidence": "ARM B's like-for-like comparisons fix the horizon convention AND the grain AND the depth window before any class contrast is read; the matched-coordinate tables are the primary objects",
+   "evidence": "ARM B's like-for-like comparisons fix the horizon convention AND the grain AND the depth window before any class contrast is read; every block row carries all five grains and its own window, and the coarsening lemma is checked cell by cell",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 15 (#196) match every coordinate"
   },
   {
-   "evidence": "the anchor and float-guard prechecks gate what is censused; every verdict-naming fact is measured on the censused objects",
+   "evidence": "the source region up to the shared token table \u2014 the anchors, the float-guard and every precheck \u2014 contains 0 of the three verdict segment names",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "RUNBOOK 13 (#314) precheck may not name the verdict"
   },
   {
+   "evidence": "the argv whitelist is exercised in-process on a bogus sample before any measurement: both tokens are rejected and the usage exit code is 2",
+   "kind": "COMPUTED",
+   "ok": true,
+   "rule": "v14 #82 the CLI contract is enforced, not documented"
+  },
+  {
    "evidence": "the partner family is derived from T1 and censused beside every transport census",
+   "kind": "COMPUTED",
    "ok": true,
    "rule": "pin section 4 the delivery-free contrast at every census"
   }
  ],
+ "_forcing": [
+  {
+   "forced_value": 0,
+   "forcing": "k_r divides by its own denominator: G(h, r) is DEFINED as the sum k_r normalizes by, so properness is an identity",
+   "gate": "A3-KERNEL",
+   "kind": "THEOREM-PASS",
+   "witness_key": "proper_violations",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "cut-additivity follows BY INDUCTION from properness: a chain of probability kernels has cut mass 1 at every cut",
+   "gate": "A3-CUTADD",
+   "kind": "DISCLOSURE",
+   "witness_key": "proper_violations",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "View.holdings is a UNION over the view's arbs, deliveries and merges, so it cannot shrink along a transition",
+   "gate": "A4-MONO",
+   "kind": "THEOREM-PASS",
+   "witness_key": "mono_shrinking_all",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "components are built from live proposals, so an empty live set forces an empty component set; a merge pair needs two non-superseded created versions, so a singleton forces none",
+   "gate": "A4-PRED",
+   "kind": "THEOREM-PASS",
+   "witness_key": "pred_forcing_live_empty_but_components",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "the root menu is ONE ORBIT PER EVENT KIND under the layer's own automorphisms, so every equivariant terminal forces the uniform-within-kind root conditional",
+   "gate": "A7-ROOTTHEOREM",
+   "kind": "THEOREM-PASS",
+   "witness_key": "sym_menu_violations",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "a history IS its event sequence, so h = g + (e,) forces g = h[:-1]: unique parenthood is a property of the representation, and its only failure mode \u2014 a duplicated menu entry \u2014 is gated substantively at B1-NODUP",
+   "gate": "B1-TREE",
+   "kind": "THEOREM-PASS",
+   "witness_key": "menu_duplicate_entries",
+   "witness_value": 0
+  },
+  {
+   "forced_value": 0,
+   "forcing": "set-monotonicity of holdings (A4-MONO) ENTAILS cardinality-monotonicity of the profile; the entailment is machine-checked pointwise over every transition of the family",
+   "gate": "B3-MONOTONE",
+   "kind": "THEOREM-PASS",
+   "witness_key": "mono_entailment_violations",
+   "witness_value": 0
+  }
+ ],
  "_gates": [
   {
-   "detail": "kinds = ['d', 'm', 'n', 'p', 'r']; counts = {'d': 763382, 'm': 2744, 'n': 487538, 'p': 497036, 'r': 248156}",
+   "detail": "terminal #495, delivered #494, pinned #492; note status line '**Status: ROUND-1 REVIEWED AND REPAIRED, 2026-07-27.** Hostile round:'",
+   "id": "A0-LEDGER",
+   "kind": "SUBSTANTIVE",
+   "label": "THE PIN'S ORDERED LEDGER VERIFICATION IS GATED, so that it can never be discharged by a read that verified nothing: the D74 terminal stamp parsed out of the BYTE-ANCHORED v10 ledger is exactly 495 and is not None, the green delivery immediately preceding it is 494 and the pin freeze 492, and the d74 note's own status line does not contain the word TERMINAL \u2014 which is the citability gap this row closes",
+   "ok": true
+  },
+  {
+   "detail": "rejected ['--utterly-bogus', '--no-writ']; accepted ['--mutant', '--no-write']; exit code 2; flags ['--list-gates', '--list-mutants', '--mutant', '--no-write', '--selftest']",
+   "id": "C-CLI",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CLI CONTRACT IS ENFORCED AND MEASURED, NOT DOCUMENTED (v14 #66 -> #82, the registered repair item): the argv handler is a whitelist, it is exercised in-process on a bogus sample and rejects both tokens \u2014 the unknown flag and the one-character typo of --no-write \u2014 the usage exit code is 2, and the accepted flag set is exactly the five the contract names",
+   "ok": true
+  },
+  {
+   "detail": "kinds = ['d', 'm', 'n', 'p', 'r'] (5); generator branches = 5; counts = {'d': 763382, 'm': 2744, 'n': 487538, 'p': 497036, 'r': 248156}",
    "id": "A1-KINDS",
    "kind": "SUBSTANTIVE",
-   "label": "the committed layer generates exactly the six declared event kinds (p, r, m, d, n) and no others, with merge present",
+   "label": "the committed layer generates exactly the FIVE kinds the layer defines (p, r, m, d, n) and no others, with merge present \u2014 the pin's T1 summary column says six; this is the measurement, and the discrepancy is registered in-unit as a PIN ERRATUM",
    "ok": true
   },
   {
@@ -1074,14 +1898,21 @@
    "ok": true
   },
   {
-   "detail": "disagreements = 0 over 30729 histories",
+   "detail": "disagreements = 0 over 30729 histories; forcing counterexamples 0 / 0",
    "id": "A4-PRED",
-   "kind": "SUBSTANTIVE",
-   "label": "the reduced R-SIG predicate is the committed predicate: over every history of depth <= 5 the reduced form (live empty and both non-superseded holdings the same singleton) agrees with the full form (which also tests components and merge pairs) at every single history",
+   "kind": "THEOREM-PASS",
+   "label": "THE REDUCED R-SIG PREDICATE IS THE COMMITTED PREDICATE, AND THE AGREEMENT IS FORCED \u2014 carried as a THEOREM-PASS with its forcing exhibited, not as a measurement: components are built from live proposals so an empty live set forces an empty component set (0 counterexamples), and a merge pair needs two non-superseded created versions so a singleton forces none (0 counterexamples). Over every history of depth <= 5 the reduced form agrees with the full form at every single history",
    "ok": true
   },
   {
-   "detail": "R-SIG 5161 (menu-exact 1365, not 3796); R-MENU 1365; re-entries R-MENU 0, R-SIG 3796",
+   "detail": "unforced-variant disagreements = 2078 over 30729 histories",
+   "id": "A4-PRED-UNFORCED",
+   "kind": "SUBSTANTIVE",
+   "label": "THE OTHER HALF OF THE TWO-WAY DEMONSTRATION, and it is the substantive one: the same reduction with its single UNFORCED clause dropped DOES disagree with the committed predicate, at a strictly positive number of histories \u2014 so the reduction comparison is not vacuous, and the delivered agreement is bought by the forcing rather than by the window",
+   "ok": true
+  },
+  {
+   "detail": "R-SIG 5161 (menu-exact 1365, not 3796); R-MENU 1365; re-entries R-MENU 0, R-SIG 3796; SET identity not-menu-exact = re-entered: True (symmetric difference 0)",
    "id": "A4-PORTS",
    "kind": "SUBSTANTIVE",
    "label": "THE TWO PORTS COME APART AT TRANSPORT SCOPE, with the committed counts: R-SIG = 5,161 points of which 1,365 are menu-exact and 3,796 are not; R-MENU = 1,365, menu-exact at all of them; R-MENU has 0 re-entries (absorbing-complement) and R-SIG has 3,796 \u2014 and the re-entered points are EXACTLY the non-menu-exact ones",
@@ -1102,10 +1933,17 @@
    "ok": true
   },
   {
-   "detail": "transitions = 30728 (expected 30728); holdings-shrinking = 0; NON-superseded-shrinking = 4340",
+   "detail": "FULL scope: transitions = 243768 (expected 243768), holdings-shrinking = 0; narrowed scope: 30728 transitions, 0 shrinking",
    "id": "A4-MONO",
    "kind": "THEOREM-PASS",
-   "label": "HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION (a one-line consequence of View.holdings being a union over the view's arbs, deliveries and merges \u2014 carried as a THEOREM-PASS and censused rather than proved), AND THE NARROWING IS GATED WITH IT: non-superseded holdings DO shrink, at a strictly positive number of transitions, which is exactly why the absorbing-complement argument covers R-MENU only",
+   "label": "HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION OF THE FAMILY (a one-line consequence of View.holdings being a union over the view's arbs, deliveries and merges \u2014 carried as a THEOREM-PASS and censused rather than proved), now at FULL FAMILY SCOPE: 0 holdings-shrinking transitions over all 243,768, not over the 12.6% window a depth-<5 census would cover",
+   "ok": true
+  },
+  {
+   "detail": "non-superseded-shrinking: 4340 of 30728 (depth < 5), 29980 of 243768 (whole family)",
+   "id": "A4-NSUP-SHRINKS",
+   "kind": "SUBSTANTIVE",
+   "label": "AND THE NARROWING IS GATED SEPARATELY, BECAUSE IT IS THE SUBSTANTIVE HALF: non-superseded holdings DO shrink, at a strictly positive number of transitions at BOTH scopes (4,340 out of depth < 5; 29,980 over the whole family) \u2014 which is exactly why the absorbing-complement argument covers R-MENU and nothing else.  This predicate could have returned False and the monotonicity theorem could not",
    "ok": true
   },
   {
@@ -1172,17 +2010,45 @@
    "ok": true
   },
   {
-   "detail": "columns = 243768, single-parent = 243768, other = 0; witness minor = ['1/4', '0', '0', '1/4']; tau = 1",
+   "detail": "columns = 243768, single-parent = 243768, other = 0; witness minor = ['1/4', '0', '0', '1/4'] (COMPUTED, each entry a sum over the row's own menu); diameter finite = False; tau = 1",
    "id": "B1-TREE",
-   "kind": "SUBSTANTIVE",
-   "label": "THE TREE OBSTRUCTION, measured: every column of every level operator has exactly one nonzero entry (unique parenthood), so the projective diameter is infinite, the Birkhoff contraction coefficient is 1 at every level, and the history-level Doeblin constant is 0 for every N by disjointness of supports",
+   "kind": "THEOREM-PASS",
+   "label": "THE TREE OBSTRUCTION \u2014 carried as a THEOREM-PASS with its forcing named, because unique parenthood is a property of the REPRESENTATION (a history IS its event sequence, so h = g + (e,) forces g = h[:-1]) and not a finding about this family: every column of every level operator has exactly one nonzero entry, so the projective diameter is infinite, the Birkhoff contraction coefficient is 1 at every level, and the history-level Doeblin constant is 0 for every N by disjointness of supports.  Its only failure mode is a duplicated menu entry, and THAT is gated separately and substantively at B1-NODUP",
    "ok": true
   },
   {
-   "detail": "atoms = [('(1, 1)', 1, 1365), ('(1, 1)', 2, 341), ('(2, 2)', 1, 3788), ('(2, 2)', 2, 348), ('(2, 3)', 1, 4), ('(3, 2)', 1, 4)]; nu support = 2 classes on block (1, 1) over 1365 points at depths [0, 1, 2, 3, 4, 5]",
+   "detail": "duplicated menu entries = 0 over 1998856 menu entries",
+   "id": "B1-NODUP",
+   "kind": "SUBSTANTIVE",
+   "label": "THE SUBSTANTIVE HALF OF THE TREE OBSTRUCTION, separated from the forced half: the committed layer emits NO DUPLICATED MENU ENTRY anywhere in the family \u2014 0 duplicates over every menu entry of all 243,769 histories.  This is the only input that could have broken the column census, and it is a real measurement of the layer's bookkeeping rather than a property of the history-tree representation",
+   "ok": true
+  },
+  {
+   "detail": "atoms = [('(1, 1)', 1, 1365, '1'), ('(1, 1)', 2, 341, '1'), ('(2, 2)', 1, 3788, '1'), ('(2, 2)', 2, 348, '1'), ('(2, 3)', 1, 4, '1'), ('(3, 2)', 1, 4, '1')]; excluded-by-cap = [('(2, 3)', 2), ('(3, 2)', 2), ('(3, 3)', 1), ('(3, 3)', 2)]; nu support = 2 classes on block (1, 1) over 1365 points at depths [0, 1, 2, 3, 4, 5]",
    "id": "B2-ATOM",
    "kind": "SUBSTANTIVE",
-   "label": "THE MINORIZATION LANDS ON THE PROFILE BLOCKS: at the matched horizon and the primary grain every holdings-profile block of R-SIG that the window can test is an EXACT ATOM \u2014 delta* = 1 with an explicitly exhibited nu on a small support \u2014 and the measurement could have come out otherwise, since the same computation returns 0 on the full class and on the control grain",
+   "label": "THE MINORIZATION LANDS ON THE PROFILE BLOCKS THE CAP CAN TEST: at the matched horizon and the primary grain every holdings-profile block of R-SIG with a testable window is an EXACT ATOM \u2014 delta* = 1 with an explicitly exhibited nu on a small support \u2014 and the measurement could have come out otherwise, since the same computation returns 0 on the full class and on the control grain.  The claim is NOT universal over blocks: the fifth block is excluded by the cap and named",
+   "ok": true
+  },
+  {
+   "detail": "blocks = [('(1, 1)', 5461), ('(2, 2)', 33260), ('(2, 3)', 108), ('(3, 2)', 108), ('(3, 3)', 424)]; coverage 39361 of 39361; depth support = [('(1, 1)', ((0, 1), (1, 4), (2, 16), (3, 64), (4, 256), (5, 1024), (6, 4096))), ('(2, 2)', ((3, 20), (4, 328), (5, 3440), (6, 29472))), ('(2, 3)', ((5, 4), (6, 104))), ('(3, 2)', ((5, 4), (6, 104))), ('(3, 3)', ((6, 424),))]",
+   "id": "B2-BLOCKCOVER",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCK DECOMPOSITION COVERS R-SIG EXACTLY, so that an undeclared block cannot recur: the holdings-profile blocks are built from every R-SIG point of the family, their sizes sum to the R-SIG count, there are FIVE of them where the depth-<=5 census names four, and the fifth is (3, 3) with 424 points all at depth 6",
+   "ok": true
+  },
+  {
+   "detail": "violations = 0 over 6 rows; rows = [('(1, 1)', 1, '1', '1', '1'), ('(1, 1)', 2, '1', '1', '1'), ('(2, 2)', 1, '0', '1', '1'), ('(2, 2)', 2, '0', '1', '1'), ('(2, 3)', 1, '0', '1', '1'), ('(3, 2)', 1, '0', '1', '1')]",
+   "id": "B2-COARSENING",
+   "kind": "SUBSTANTIVE",
+   "label": "THE COARSENING LEMMA HOLDS ON EVERY MEASURED ROW: delta* is monotone under coarsening, so event113 <= kind13 <= profile at every (block, N) row \u2014 0 violations.  This is what makes the two-grain measurement decisive rather than two data points, and it is what transports every delta* in this receipt to any refinement or coarsening of the grains actually run",
+   "ok": true
+  },
+  {
+   "detail": "rsig-indicator MATCHED by N = [(1, '1'), (2, '1'), (3, '1541/1542')]; delta* = 1 at N = [1, 2]",
+   "id": "B2-PSI-COUNTERREADING",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCKED CLAUSE IS PSI-FAMILY-RELATIVE AND THE COUNTER-READING IS PRINTED: at Psi = the R-SIG indicator the same full class has delta* = 1 at matched horizon on both of its widest windows, while at the two menu grains and at both holdings-profile grains it is 0 there.  A verdict that stated the delta* = 0 clause without its grain would be false at a declared abstraction, and this gate is what forbids it",
    "ok": true
   },
   {
@@ -1193,17 +2059,38 @@
    "ok": true
   },
   {
-   "detail": "rows differing between grains = [('(2, 2)', 1, '1', '0'), ('(2, 2)', 2, '1', '0'), ('(2, 3)', 1, '1', '0'), ('(3, 2)', 1, '1', '0')]",
+   "detail": "4 of 6 rows differ, all primary 1 / control 0 = True: [('(2, 2)', 1, '1', '0'), ('(2, 2)', 2, '1', '0'), ('(2, 3)', 1, '1', '0'), ('(3, 2)', 1, '1', '0')]",
    "id": "B2-GRAIN",
    "kind": "SUBSTANTIVE",
-   "label": "THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B: at least one profile block is an atom at the primary grain and is NOT at the control grain, so the minorization is grain-relative and the grain must be declared",
+   "label": "THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B, IN THE DIRECTION ITS LABEL CLAIMS: exactly 4 of the 6 measured (block, N) rows are an atom at the primary grain and are NOT at the control grain, and in EVERY such row the primary value is exactly 1 and the control value exactly 0 \u2014 a directional fact, not a non-emptiness test.  So the minorization is grain-relative and the grain must be declared",
    "ok": true
   },
   {
-   "detail": "(1, 1) N=1: 29364/30729 zeros, inf 0; (1, 1) N=2: 3628/3969 zeros, inf 0; (1, 1) N=3: 436/521 zeros, inf 0; (1, 1) N=4: 48/69 zeros, inf 0; (2, 2) N=1: 22061/30729 zeros, inf 0; (2, 2) N=2: 1617/3969 zeros, inf 0; (2, 2) N=3: 92/521 zeros, inf 0; (2, 2) N=4: 4/69 zeros, inf 0; (2, 3) N=1: 30641/30729 zeros, inf 0; (2, 3) N=2: 3897/3969 zeros, inf 0; (2, 3) N=3: 491/521 zeros, inf 0; (2, 3) N=4: 49/69 zeros, inf 0; (3, 2) N=1: 30641/30729 zeros, inf 0; (3, 2) N=2: 3897/3969 zeros, inf 0; (3, 2) N=3: 491/521 zeros, inf 0; (3, 2) N=4: 49/69 zeros, inf 0",
+   "detail": "exceptions = 0 over 3969; KIND per window = [1, 2, 5, 9, 13, 21]; EVENT per window = [1, 5, 13, 45, 113, 265]",
+   "id": "B4-CARRIER-CHAIN",
+   "kind": "SUBSTANTIVE",
+   "label": "THE REFINEMENT CHAIN IS ESTABLISHED, NOT ASSUMED: the event x weight menu shape determines the kind x weight menu shape at every history of the depth-4 family (0 exceptions over 3,969), the two partitions have 113 and 13 classes there, and the per-window class counts reproduce d74's committed MENU 113 at depth <= 4 and 265 at depth <= 5 from this unit's own family.  So CONG-185 <= MENU-113 <= KIND-13 and every delta* in this receipt transports along it",
+   "ok": true
+  },
+  {
+   "detail": "dead at CONG-185: [('(2, 2)', 1), ('(2, 2)', 2), ('(2, 3)', 1), ('(3, 2)', 1)]; open: [('(1, 1)', 1), ('(1, 1)', 2)]; statable on d<=4: 0, on d<=5: 0",
+   "id": "B4-CARRIER-SUPPLY",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CARRIER COLLAPSE IS MEASURED AND ITS SUPPLY IS CARRIED: 4 of the 6 delivered atom rows have delta* = 0 at the ruled carrier CONG-185, by the coarsening lemma applied to this receipt's own MATCHED-control column; the 2 survivors are exactly the (1, 1) block, i.e. R-MENU; NO delivered row is statable on either committed carrier window, so the successor needs the carrier extended past depth 4; and d74's committed d <= 5 row (menu 265 / congruence 462) is carried in the T5 supply with its own verbatim anchor",
+   "ok": true
+  },
+  {
+   "detail": "(1, 1) N=1: 29364/30729 zeros, inf 0; (1, 1) N=2: 3628/3969 zeros, inf 0; (1, 1) N=3: 436/521 zeros, inf 0; (1, 1) N=4: 48/69 zeros, inf 0; (2, 2) N=1: 22061/30729 zeros, inf 0; (2, 2) N=2: 1617/3969 zeros, inf 0; (2, 2) N=3: 92/521 zeros, inf 0; (2, 2) N=4: 4/69 zeros, inf 0; (2, 3) N=1: 30641/30729 zeros, inf 0; (2, 3) N=2: 3897/3969 zeros, inf 0; (2, 3) N=3: 491/521 zeros, inf 0; (2, 3) N=4: 49/69 zeros, inf 0; (3, 2) N=1: 30641/30729 zeros, inf 0; (3, 2) N=2: 3897/3969 zeros, inf 0; (3, 2) N=3: 491/521 zeros, inf 0; (3, 2) N=4: 49/69 zeros, inf 0; (3, 3) N=1: 30545/30729 zeros, inf 0; (3, 3) N=2: 3873/3969 zeros, inf 0; (3, 3) N=3: 493/521 zeros, inf 0; (3, 3) N=4: 61/69 zeros, inf 0",
    "id": "B3-HITTING",
    "kind": "SUBSTANTIVE",
-   "label": "THE SECOND HALF FAILS WHERE IT MATTERS: the N-step hitting probability into each ATOM (each holdings-profile block) has infimum exactly 0 over every tested window and every N \u2014 so the small sets that carry delta = 1 are exactly the ones the process cannot be guaranteed to return to",
+   "label": "THE SECOND HALF FAILS WHERE IT MATTERS: the N-step hitting probability into EVERY holdings-profile block of the family \u2014 all five, the cap-excluded (3, 3) included \u2014 has infimum exactly 0 over every tested window and every N, so the small sets that carry delta = 1 are exactly the ones the process cannot be guaranteed to return to.  The word ATOM is deliberately not used in this label: the (3, 3) row is a hitting measurement on a block whose atomicity this cap cannot test",
+   "ok": true
+  },
+  {
+   "detail": "(1, 1): size 5461, re-entries 0, root True, entries-into 0; (2, 2): size 33260, re-entries 33260, root False, entries-into 10532; (2, 3): size 108, re-entries 108, root False, entries-into 84; (3, 2): size 108, re-entries 108, root False, entries-into 84; (3, 3): size 424, re-entries 424, root False, entries-into 424",
+   "id": "B3-BLOCKENTRY",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCK RE-ENTRY CENSUS IS REPLACED BY THE OBJECT THE ARGUMENT NEEDS, and the forced rows are disclosed as forced: for every block not containing the root the re-entry count equals the block's own size by construction, and every one of them does.  What is measured instead is the number of TRANSITIONS INTO each block from outside it, and it SPLITS THE BLOCKS IN TWO: the four blocks without the root are entered at a strictly positive number of transitions, so for them it is the uniformity of the entry probability that fails; the (1, 1) block \u2014 R-MENU, and the only block still an atom at the ruled carrier \u2014 is entered at EXACTLY 0, i.e. it is absorbing-complement, so for it no uniform bound is even posable",
    "ok": true
   },
   {
@@ -1221,59 +2108,115 @@
    "ok": true
   },
   {
-   "detail": "transitions = 30728; profile decreases = 0; block re-entries = [('(1, 1)', 5461, 0), ('(2, 2)', 33260, 33260), ('(2, 3)', 108, 108), ('(3, 2)', 108, 108)]",
+   "detail": "transitions = 243768 (FULL family scope); profile decreases = 0; entailment violations = 0; narrowed scope 0 of 30728",
    "id": "B3-MONOTONE",
-   "kind": "SUBSTANTIVE",
-   "label": "AND THE MECHANISM IS THE MONOTONE INDEX: the holdings profile never decreases along any transition of the family, so the atoms form a ladder that the process climbs and never descends \u2014 which is exactly why no single atom can be the regeneration set",
+   "kind": "THEOREM-PASS",
+   "label": "AND THE MECHANISM IS THE MONOTONE INDEX \u2014 carried as a THEOREM-PASS with its forcing exhibited, because cardinality-monotonicity of the profile is ENTAILED by set-monotonicity of holdings (A4-MONO) and cannot come out otherwise: the holdings profile never decreases along any of the 243,768 transitions of the family, so the atoms form a ladder the process climbs and never descends.  The entailment is machine-checked pointwise \u2014 0 transitions decrease the profile without shrinking the holdings set \u2014 and the SUBSTANTIVE companion is B3-NSUP-PROFILE, where the same index computed on the NON-superseded holdings does decrease",
    "ok": true
   },
   {
-   "detail": "verdict length = 1671 chars, 3 composed segments",
+   "detail": "non-superseded shrinking = 29980 of 243768 transitions, against 0 for the full holdings set",
+   "id": "B3-NSUP-PROFILE",
+   "kind": "SUBSTANTIVE",
+   "label": "THE TWO-WAY DEMONSTRATION BEHIND THAT THEOREM-PASS: the same ladder built on the NON-SUPERSEDED holdings is NOT monotone \u2014 it shrinks at 29,980 of the family's 243,768 transitions \u2014 so a monotone-index gate on this family is not vacuous by construction; it is the choice of index that makes it monotone, and this gate is what could have returned False",
+   "ok": true
+  },
+  {
+   "detail": "free 4 ['C6 actor pool = (A, B) for ARM B', 'C7 terminal convention G(h, 0) = 1', 'C8 Psi ranges over menu-shape functions', \"C9 candidate small sets = R-SIG's profile blocks and their union\"]; forced 2; declared 3; motivated = False",
+   "id": "B5-FREEITEMS",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CHOICE INVENTORY IS GATED, NOT NARRATED: ARM B carries exactly FOUR free items (the actor pool, the terminal convention, the menu-shape-only Psi family, and the level-set-only family of candidate small sets), each with its fiber measured or its absence stated, so the unit's own receipt says that ARM B is a measurement at a declared arena and not a motivated result",
+   "ok": true
+  },
+  {
+   "detail": "consumer bound = True; tau = 1; atom found = True with nu support 2",
+   "id": "B0-SUCCESSOR-NAMED",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CONSUMER OF THE QUOTATION THAT LICENSES ARM B, registered as a gate rather than named by a verbatim row and never built: T4's verbatim window 'No operator-level minorization \u2014 Birkhoff / Hilbert-metric contraction of the positive backward recursion G \u2014 has been attempted anywhere' is located, and ARM B was in fact run \u2014 the Birkhoff coefficient is derived from a computed minor, an atom is exhibited with its nu, and the blocking fact is measured.  The named engine is closed at the history level ONLY, and that limitation is printed at B1",
+   "ok": true
+  },
+  {
+   "detail": "verdict length = 2225 chars; 58 anchored fields, 73 numerals all accounted for, 3 segments",
    "id": "V-VERDICT",
    "kind": "SUBSTANTIVE",
-   "label": "THE VERDICT IS DERIVED INSIDE A GATE FROM THE MEASURED COUNTS: the emitted string is compared for COMPLETE-STRING EQUALITY against a string rebuilt segment-by-segment from the gated object (never containment, never a prefix), and a verdict-flip falsifier proves the derivation can fail",
+   "label": "THE VERDICT IS CHECKED BY A COMPARATOR BUILT INDEPENDENTLY OF ITS BUILDER (v14 #82): check_verdict never calls build_verdict and never re-concatenates the string.  It declares, from the gated object alone, which measured value must follow which token of the shared table and in what order; it walks the emitted string once asserting each; it requires the declared tail; and it accounts for EVERY numeral in the string.  A builder field swap (a value read from the wrong key) and a builder template error (a missing, extra or reordered token) therefore both die here, and two falsifiers reproduce exactly those two injections",
    "ok": true
   },
   {
    "detail": "F1 grammar: True; F2 census+potentials: True; F3 kernels: True; F4 renewal ports: True; F5 the escape: True; F6 reopening: True; F7 root symmetry: True",
    "id": "V-SEVEN",
    "kind": "SUBSTANTIVE",
-   "label": "ARM A's seven facts each carry a passing substantive gate, and the TERMINALIZED segment may not be emitted otherwise",
+   "label": "ARM A's seven facts each carry a passing substantive gate, and the TERMINALIZED segment may not be emitted otherwise.  The segment is located by its KEY in the shared token table, never by a substring re-typed inside the predicate",
    "ok": true
   },
   {
-   "detail": "drifted paths that still resolve: 0 of 8",
+   "detail": "bound ['A0-LEDGER', 'A1-BUDGETS', 'A1-DELIVERY', 'A3-KERNEL', 'A3-POSITIVITY', 'A4-PORTS', 'A5-CONTROL-GRAIN', 'A5-ESCAPE', 'A5-METHOD', 'A5-OPERATOR-CONTROL', 'A6-REOPENING', 'B0-SUCCESSOR-NAMED', 'B4-CARRIER-CHAIN', 'B4-CARRIER-SUPPLY']; unbound []",
+   "id": "M-CONSUMERBINDING",
+   "kind": "SUBSTANTIVE",
+   "label": "REFERENTIAL INTEGRITY OF THE ANCHOR TABLE: every consumer gate named by a verbatim-context row is a REGISTERED gate.  The first delivery named a consumer that did not exist \u2014 the one licensing ARM B \u2014 and no check caught it; this is that check",
+   "ok": true
+  },
+  {
+   "detail": "shortest window 41 chars (minimum 40); all windows unique in source = True; located 15 of 15",
+   "id": "M-VERBATIMSPEC",
+   "kind": "SUBSTANTIVE",
+   "label": "THE #62 SPECIFICITY STANDARD IS ENFORCED, NOT ASSERTED: every verbatim-context window is at least 40 characters long AND occurs EXACTLY ONCE in its source file, so a window truncated to a short generic substring is refused at the precheck instead of being certified as an anchor",
+   "ok": true
+  },
+  {
+   "detail": "drifted paths that still resolve: 0 of 9",
    "id": "M-PATHDRIFT",
    "kind": "SUBSTANTIVE",
    "label": "PATH-VALUE ANCHORING: for every pinned row, a drifted path (the same basename moved to a sibling directory, or a near-miss filename) does NOT resolve on this filesystem \u2014 so a path drift that would change the arena dies at the anchor and cannot reach a verdict segment",
    "ok": true
   },
   {
-   "detail": "drifted windows still found: 0 of 12",
+   "detail": "drifted windows still found: 0 of 15; every perturbation real = True; append-only perturbations = 0",
    "id": "M-VERBATIMDRIFT",
    "kind": "SUBSTANTIVE",
-   "label": "VERBATIM-CONTEXT ANCHORING: each anchored context window, perturbed by one character or one digit, is NOT found in its source \u2014 the windows bind meaning to use, not mere existence",
+   "label": "VERBATIM-CONTEXT ANCHORING, WITH A LABEL THAT CLAIMS ONLY WHAT IT TESTS: each anchored context window, perturbed at a CONTENT-BEARING token (its first digit, else its first two words swapped, else its longest word deleted \u2014 never a mere appended character), is NOT found in its source.  Every one of the twelve perturbations is a real one, and the perturbation applied is printed per row.  Together with M-VERBATIMSPEC (length and uniqueness) this is what makes the windows bind their span rather than mere existence",
    "ok": true
   },
   {
-   "detail": "40 substantive + 3 theorem-pass + 1 disclosure = 44",
+   "detail": "56 substantive + 6 theorem-pass + 1 disclosure = 63; forcing registry covers every non-substantive gate = True; witnesses = [('A3-KERNEL', 'proper_violations', 0), ('A3-CUTADD', 'proper_violations', 0), ('A4-MONO', 'mono_shrinking_all', 0), ('A4-PRED', 'pred_forcing_live_empty_but_components', 0), ('A7-ROOTTHEOREM', 'sym_menu_violations', 0), ('B1-TREE', 'menu_duplicate_entries', 0), ('B3-MONOTONE', 'mono_entailment_violations', 0)]",
    "id": "C-THEOREMCENSUS",
    "kind": "SUBSTANTIVE",
-   "label": "THE THEOREM-PASS CENSUS IS ITSELF GATED: the substantive, theorem-pass and disclosure counts partition the gate list exactly, and the theorem-pass count is not zero (a receipt that claimed every gate substantive would be the vacuous-must-pass defect)",
+   "label": "THE THEOREM-PASS CENSUS IS ITSELF GATED AND MECHANICALLY RECOMPUTED: the substantive, theorem-pass and disclosure counts partition the gate list exactly; EVERY non-substantive gate appears in the forcing registry with the kind it is registered under; no substantive gate does; and every registered forcing's machine-checked witness carries the value the forcing predicts.  So the classification is a computed property with an exhibited reason, not a tag",
    "ok": true
   },
   {
-   "detail": "18 of 18 rules satisfied",
+   "detail": "209 of 311 delivered keys carry a falsifier; 208 are read by a gate; read-but-unfalsified = []",
+   "id": "C-KEYCOVERAGE",
+   "kind": "SUBSTANTIVE",
+   "label": "THE COVERAGE DENOMINATOR IS PUBLISHED AND GATED: every delivered receipt key that ANY gate reads carries a declared falsifier \u2014 not only the keys the substantive gates read, which is how a theorem-pass gate used to escape falsification entirely \u2014 and the delivered keys no gate reads are enumerated as disclosure-only rather than reported as covered",
+   "ok": true
+  },
+  {
+   "detail": "19 of 19 rules satisfied; 18 computed, 1 asserted",
    "id": "C-COMPLIANCE",
    "kind": "SUBSTANTIVE",
-   "label": "THE COMPLIANCE SWEEP IS A GATE, NOT A CLAIM: every engraved rule in the table above is evaluated against a measured quantity, and this gate fails if any one of them is False",
+   "label": "THE COMPLIANCE SWEEP IS A GATE, NOT A CLAIM: every engraved rule in the table above is evaluated, this gate fails if any one of them is False, and the COMPUTED and ASSERTED rows are counted separately so that the header cannot outrun the table",
    "ok": true
   },
   {
-   "detail": "3 waived gates, 0 unwaived",
+   "detail": "unanchored opens []; subprocess calls 0; shared verdict literals []; gate constants naming a falsifier []",
+   "id": "C-INSTRUMENT",
+   "kind": "SUBSTANTIVE",
+   "label": "THE INSTRUMENT'S FOUR SELF-DESCRIPTIONS ARE GATED RATHER THAN PRINTED: the set of paths this process opened lies inside the anchor table (no unanchored runtime input); the AST census finds no subprocess call anywhere (no moving reference \u2014 the `git show HEAD:` read is gone and the ledger is a pinned row); build_verdict and check_verdict share no string literal outside the shared token table (the comparator is independent); and no string constant inside any gate() call equals a registered falsifier's name (the predicates are blind)",
+   "ok": true
+  },
+  {
+   "detail": "constant statuses in COMPLY = 0; asserted rows = 1",
+   "id": "C-NOCONSTANTRULES",
+   "kind": "SUBSTANTIVE",
+   "label": "NO COMPLIANCE ROW MARKED COMPUTED MAY CARRY A CONSTANT STATUS, and this is checked over the table's own syntax tree rather than believed: an AST census of the COMPLY literal finds zero rows whose status expression is a literal.  A constant status cannot move the aggregate, so a rule asserted as a constant would be a rule the sweep can never fail",
+   "ok": true
+  },
+  {
+   "detail": "0 waived gates, 0 unwaived, 0 killing perturbations registered as falsifiers instead of being waived",
    "id": "C-WAIVERS",
    "kind": "SUBSTANTIVE",
-   "label": "THE WAIVER CENSUS IS A GATE: no gate is both never-falsified and without a verified waiver.  A never-falsified SUBSTANTIVE gate is a defect and this predicate is what says so",
+   "label": "THE WAIVER CENSUS IS A GATE, AND THE WAIVER NO LONGER CLOSES ON THE AUTHOR'S DECLARATION: no gate is both never-falsified and without a verified waiver, where 'verified' means MEASURED input-independent under drift, poison and erase of every key the predicate reads.  A never-falsified gate that could be flipped has its killing perturbation registered as a declared falsifier instead of being waived, and the count of such registrations is published",
    "ok": true
   },
   {
@@ -1284,15 +2227,397 @@
    "ok": true
   }
  ],
+ "_gates_by_id": {
+  "A0-LEDGER": {
+   "detail": "terminal #495, delivered #494, pinned #492; note status line '**Status: ROUND-1 REVIEWED AND REPAIRED, 2026-07-27.** Hostile round:'",
+   "kind": "SUBSTANTIVE",
+   "label": "THE PIN'S ORDERED LEDGER VERIFICATION IS GATED, so that it can never be discharged by a read that verified nothing: the D74 terminal stamp parsed out of the BYTE-ANCHORED v10 ledger is exactly 495 and is not None, the green delivery immediately preceding it is 494 and the pin freeze 492, and the d74 note's own status line does not contain the word TERMINAL \u2014 which is the citability gap this row closes",
+   "ok": true
+  },
+  "A1-BUDGETS": {
+   "detail": "propose ['1/4']; deliver ['1/4']; arb+merge (join-view) ['1/2', '1/4']",
+   "kind": "SUBSTANTIVE",
+   "label": "the declared budgets are the measured ones, PER ACTOR: the propose sector totals exactly 1/4 wherever it is non-empty and the deliver sector exactly 1/4 \u2014 consumer of T1's verbatim budget line.  The arb-and-merge sector is join-view and its measured value set is reported beside them rather than asserted equal to a quarter",
+   "ok": true
+  },
+  "A1-DELIVERY": {
+   "detail": "re-delivery menu entries in the depth-3 window = 350",
+   "kind": "SUBSTANTIVE",
+   "label": "delivery is NON-INJECTIVE at transport scope (T8): re-delivery of the same (sender, receiver, version) is admissible, so the delivery map does not embed the record",
+   "ok": true
+  },
+  "A1-KINDS": {
+   "detail": "kinds = ['d', 'm', 'n', 'p', 'r'] (5); generator branches = 5; counts = {'d': 763382, 'm': 2744, 'n': 487538, 'p': 497036, 'r': 248156}",
+   "kind": "SUBSTANTIVE",
+   "label": "the committed layer generates exactly the FIVE kinds the layer defines (p, r, m, d, n) and no others, with merge present \u2014 the pin's T1 summary column says six; this is the measurement, and the discrepancy is registered in-unit as a PIN ERRATUM",
+   "ok": true
+  },
+  "A1-LADDER": {
+   "detail": "depth <= 4: {'2': 3757, '5/2': 212}; depth <= 5: {'2': 29605, '5/2': 1124}; depth <= 6 (NEW): {'2': 237269, '5/2': 6500}",
+   "kind": "SUBSTANTIVE",
+   "label": "THE QUARTER-QUANTIZED LADDER, re-derived: the per-history menu weight sum takes the value set {2, 5/2} with multiplicities {2: 3757, 5/2: 212} at depth <= 4 and {2: 29605, 5/2: 1124} at depth <= 5 \u2014 both committed \u2014 and the VALUE SET is unchanged at depth <= 6, which is this receipt's own one-level extension",
+   "ok": true
+  },
+  "A1-LAYER": {
+   "detail": "v10/code/d42b1_transport_exact.py: prefix 16129 chars, 8 definitions lifted, 0 sys.exit / 0 top-level check / 0 top-level print",
+   "kind": "SUBSTANTIVE",
+   "label": "SINGLE SOURCE: the committed d42b1 layer is exec'd from its own path, pre-print slice only, carrying candidates_for, admissible, event_poset, View, vname, V0 and BOTH option enumerators; nothing about admission or pricing is re-implemented here",
+   "ok": true
+  },
+  "A2-CENSUS": {
+   "detail": "cumulative = [1, 9, 69, 521, 3969, 30729, 243769]; per level = [1, 8, 60, 452, 3448, 26760, 213040]",
+   "kind": "SUBSTANTIVE",
+   "label": "the ARM-1T census reproduces the committed cumulative sizes [1, 9, 69, 521, 3969, 30729] and 243,769 to depth 6, with the per-level breakdown [1, 8, 60, 452, 3448, 26760, 213040]",
+   "ok": true
+  },
+  "A2-DF-CENSUS": {
+   "detail": "cumulative = [1, 7, 39, 215, 1191, 6471, 34375]",
+   "kind": "SUBSTANTIVE",
+   "label": "the DERIVED delivery-free partner reproduces the committed partner census [1, 7, 39, 215, 1191, 6471] and 34,375 to depth 6 \u2014 the (path, value) anchor that licenses deriving the partner from T1 instead of reading a second, unpinned layer",
+   "ok": true
+  },
+  "A2-G-DF": {
+   "detail": "G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1037/64; G_5 = 2101/64; G_6 = 68313/1024; G_7 = 139065/1024",
+   "kind": "SUBSTANTIVE",
+   "label": "the delivery-free potentials G_1..G_7 = 2, 4, 257/32, 1037/64, 2101/64, 68313/1024, 139065/1024",
+   "ok": true
+  },
+  "A2-G-TRANSPORT": {
+   "detail": "G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1035/64; G_5 = 4173/128; G_6 = 134587/2048; G_7 = 2168717/16384",
+   "kind": "SUBSTANTIVE",
+   "label": "the transport potentials G_1..G_7 = 2, 4, 257/32, 1035/64, 4173/128, 134587/2048, 2168717/16384",
+   "ok": true
+  },
+  "A2-SIGN": {
+   "detail": "df >= transport at all 7 horizons = True; first separation at D = 4",
+   "kind": "SUBSTANTIVE",
+   "label": "DELIVERIES REDUCE BRANCHING, measured with its sign: the delivery-free potential dominates the transport potential at every horizon and the two first separate at D = 4 (1037/64 > 1035/64)",
+   "ok": true
+  },
+  "A3-CUTADD": {
+   "detail": "raw cut masses = ['2', '4', '257/32', '1035/64', '4173/128', '134587/2048', '2168717/16384']",
+   "kind": "DISCLOSURE",
+   "label": "CUT-ADDITIVITY IS AN INDUCTION, NOT A MEASUREMENT \u2014 disclosed, not gated.  The raw cut masses are the root potentials, i.e. the raw weight is unnormalized; the horizon normalization is what buys mass 1 at every cut",
+   "ok": true
+  },
+  "A3-KERNEL": {
+   "detail": "pairs = 279067; violations = 0; per horizon = {1: 243769, 2: 30729, 3: 3969, 4: 521, 5: 69, 6: 9, 7: 1}",
+   "kind": "THEOREM-PASS",
+   "label": "PROPERNESS: sum_e k_r(e|h) = 1 exactly at every (history, horizon) pair with r = 1..7.  THEOREM-PASS, disclosed as such: k_r divides by its own denominator.  Carried as a regression tripwire on the menu bookkeeping (it catches a menu used in the kernel that differs from the menu used in the potential)",
+   "ok": true
+  },
+  "A3-MISNORM": {
+   "detail": "69 of 69 tested histories fail",
+   "kind": "SUBSTANTIVE",
+   "label": "THE NEGATIVE CONTROL FIRES: a deliberately mis-normalized kernel fails the properness identity at every tested history \u2014 the properness gate is not vacuous",
+   "ok": true
+  },
+  "A3-POSITIVITY": {
+   "detail": "kernel entries <= 0: 0; potentials <= 0: 0",
+   "kind": "SUBSTANTIVE",
+   "label": "STRICT POSITIVITY \u2014 the substantive properness gate (T4's own correction, honoured): every potential and every kernel entry is strictly positive, so no denominator vanishes anywhere in the family",
+   "ok": true
+  },
+  "A4-4N": {
+   "detail": "by depth = [1, 4, 16, 64, 256, 1024]; sum = 1365",
+   "kind": "SUBSTANTIVE",
+   "label": "the menu-exact renewal count is exactly 4^n at every depth and sums to 1,365 = sum_(n <= 5) 4^n",
+   "ok": true
+  },
+  "A4-MASS": {
+   "detail": "raw = ['3/2', '9/4', '27/8', '81/16', '243/32']; not-at-renewal = ['553673/2168717', '966893/2168717', '1274477/2168717', '1502573/2168717', '1671053/2168717']; closed form 497664/2168717 = measured 497664/2168717",
+   "kind": "SUBSTANTIVE",
+   "label": "the raw renewal mass is exactly (3/2)^n; the horizon-completed mass NOT at a renewal rises monotonically to 1671053/2168717 (~0.7705) at depth 5; and the depth-5 renewal mass equals its closed form (3/2)^5 * G_2 / G_7 = 497664/2168717, computed by two independent routes (a chained kernel product and a rational expression in the potentials)",
+   "ok": true
+  },
+  "A4-MONO": {
+   "detail": "FULL scope: transitions = 243768 (expected 243768), holdings-shrinking = 0; narrowed scope: 30728 transitions, 0 shrinking",
+   "kind": "THEOREM-PASS",
+   "label": "HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION OF THE FAMILY (a one-line consequence of View.holdings being a union over the view's arbs, deliveries and merges \u2014 carried as a THEOREM-PASS and censused rather than proved), now at FULL FAMILY SCOPE: 0 holdings-shrinking transitions over all 243,768, not over the 12.6% window a depth-<5 census would cover",
+   "ok": true
+  },
+  "A4-NSUP-SHRINKS": {
+   "detail": "non-superseded-shrinking: 4340 of 30728 (depth < 5), 29980 of 243768 (whole family)",
+   "kind": "SUBSTANTIVE",
+   "label": "AND THE NARROWING IS GATED SEPARATELY, BECAUSE IT IS THE SUBSTANTIVE HALF: non-superseded holdings DO shrink, at a strictly positive number of transitions at BOTH scopes (4,340 out of depth < 5; 29,980 over the whole family) \u2014 which is exactly why the absorbing-complement argument covers R-MENU and nothing else.  This predicate could have returned False and the monotonicity theorem could not",
+   "ok": true
+  },
+  "A4-PORTS": {
+   "detail": "R-SIG 5161 (menu-exact 1365, not 3796); R-MENU 1365; re-entries R-MENU 0, R-SIG 3796; SET identity not-menu-exact = re-entered: True (symmetric difference 0)",
+   "kind": "SUBSTANTIVE",
+   "label": "THE TWO PORTS COME APART AT TRANSPORT SCOPE, with the committed counts: R-SIG = 5,161 points of which 1,365 are menu-exact and 3,796 are not; R-MENU = 1,365, menu-exact at all of them; R-MENU has 0 re-entries (absorbing-complement) and R-SIG has 3,796 \u2014 and the re-entered points are EXACTLY the non-menu-exact ones",
+   "ok": true
+  },
+  "A4-PRED": {
+   "detail": "disagreements = 0 over 30729 histories; forcing counterexamples 0 / 0",
+   "kind": "THEOREM-PASS",
+   "label": "THE REDUCED R-SIG PREDICATE IS THE COMMITTED PREDICATE, AND THE AGREEMENT IS FORCED \u2014 carried as a THEOREM-PASS with its forcing exhibited, not as a measurement: components are built from live proposals so an empty live set forces an empty component set (0 counterexamples), and a merge pair needs two non-superseded created versions so a singleton forces none (0 counterexamples). Over every history of depth <= 5 the reduced form agrees with the full form at every single history",
+   "ok": true
+  },
+  "A4-PRED-UNFORCED": {
+   "detail": "unforced-variant disagreements = 2078 over 30729 histories",
+   "kind": "SUBSTANTIVE",
+   "label": "THE OTHER HALF OF THE TWO-WAY DEMONSTRATION, and it is the substantive one: the same reduction with its single UNFORCED clause dropped DOES disagree with the committed predicate, at a strictly positive number of histories \u2014 so the reduction comparison is not vacuous, and the delivered agreement is bought by the forcing rather than by the window",
+   "ok": true
+  },
+  "A5-CONTROL-GRAIN": {
+   "detail": "control 113 classes / 76 escapes vs primary 13 / 68",
+   "kind": "SUBSTANTIVE",
+   "label": "the CONTROL grain is T5's MENU rung: the event x weight menu partition has exactly 113 classes on the depth-4 family, and it disagrees with the primary grain \u2014 the grain-swap control fires (different class counts AND different escape counts), so the grain is arena data and is declared, never assumed",
+   "ok": true
+  },
+  "A5-ESCAPE": {
+   "detail": "escapes = 68 into [6, 7, 8, 9, 10]; window carries 6 classes; witness target's shallowest member has length 3",
+   "kind": "SUBSTANTIVE",
+   "label": "THE ESCAPE reproduces exactly: 68 escaping transitions into exactly 5 above-window classes at the primary grain, with the witness transition exhibited and its target class shown to have no member inside the window \u2014 consumer of T2's and T3's verbatim escape windows",
+   "ok": true
+  },
+  "A5-FACTORISATION": {
+   "detail": "level-0 = 2/9 failing; level-1 = 0/6",
+   "kind": "SUBSTANTIVE",
+   "label": "MENU-SHAPE FACTORISATION FAILS at 2 of 9 level-0 classes, and one refinement step repairs it at 0 of 6 level-1 classes on the shallower window \u2014 the intrinsic refinement is load-bearing",
+   "ok": true
+  },
+  "A5-METHOD": {
+   "detail": "growth = [(0, 4, 3969, 13), (1, 3, 521, 11), (2, 2, 69, 6), (3, 1, 9, 2), (4, 0, 1, 1)]; tables = {1: (2, 2, 2, 2), 2: (5, 6, 6), 3: (9, 11), 4: (13,)}",
+   "kind": "SUBSTANTIVE",
+   "label": "the re-implemented refinement reproduces T3's committed growth table and |P_t| tables at the primary grain: growth (0,4,3969,13); (1,3,521,11); (2,2,69,6); (3,1,9,2); (4,0,1,1) and tables cutoff-1 [2,2,2,2] / cutoff-2 [5,6,6] / cutoff-3 [9,11] / cutoff-4 [13] \u2014 consumer of T6's verbatim method window",
+   "ok": true
+  },
+  "A5-OPERATOR-CONTROL": {
+   "detail": "partitions agree = True; escapes 68 vs 68",
+   "kind": "SUBSTANTIVE",
+   "label": "T2's binding clause re-measured rather than repeated: the per-candidate and per-class-AGGREGATE refinement operators are EXTENSIONALLY NULL against each other at the transport cap \u2014 same partition, same escape count",
+   "ok": true
+  },
+  "A6-CLASSIFIER": {
+   "detail": "delivery-free shapes = 4 (with 'd': 0); transport menus matching any = 0/3969",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CLASSIFIER-MISMATCH CONTROL: zero of the 3,969 transport menus matches any delivery-free menu shape, and zero of the 4 delivery-free shapes contains a delivery kind \u2014 the control set is gated by size, not only through its consequences",
+   "ok": true
+  },
+  "A6-REOPENING": {
+   "detail": "diverged 1044; pairs 124; prefixes 84; minimal chains 4 at ['1/256']",
+   "kind": "SUBSTANTIVE",
+   "label": "THE REOPENING WITNESS, decomposed exactly as the committed correction requires: 1,044 diverged histories; 124 reconverging (history, delivery) pairs carrying suffix multiplicity; 84 DISTINCT diverged prefixes; 4 DISTINCT minimal 3-event chains, all at exact weight 1/256 \u2014 consumer of T3's verbatim decomposition window",
+   "ok": true
+  },
+  "A7-AUTOMORPHISM": {
+   "detail": "A<->B: 521 tested, 0 not closed, 0 menu violations, 0 G violations; 0<->1: 521 tested, 0 not closed, 0 menu violations, 0 G violations; both: 521 tested, 0 not closed, 0 menu violations, 0 G violations",
+   "kind": "SUBSTANTIVE",
+   "label": "A <-> B and 0 <-> 1 are EXACT automorphisms of the committed layer: relabelling a history and relabelling its menu give the same (event, weight) multiset at every history of the window, the family is closed under all three relabellings, and G(h, r) = G(sigma h, r) at every (history, horizon) pair \u2014 0 violations of each kind",
+   "ok": true
+  },
+  "A7-ROOTTHEOREM": {
+   "detail": "orbits per kind = {'d': 1, 'n': 1, 'p': 1}; conditional constant across r = 1..7 = True; distribution = {'d': '1/2', 'n': '1/2', 'p': '1/4'}",
+   "kind": "THEOREM-PASS",
+   "label": "THE ROOT LEG IS A THEOREM (disclosed as a theorem-pass, so that a forced identity is never counted as a measurement): the root menu is ONE ORBIT PER EVENT KIND under the layer's own automorphisms, so every equivariant terminal forces the uniform-within-kind root conditional at every horizon",
+   "ok": true
+  },
+  "B0-SUCCESSOR-NAMED": {
+   "detail": "consumer bound = True; tau = 1; atom found = True with nu support 2",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CONSUMER OF THE QUOTATION THAT LICENSES ARM B, registered as a gate rather than named by a verbatim row and never built: T4's verbatim window 'No operator-level minorization \u2014 Birkhoff / Hilbert-metric contraction of the positive backward recursion G \u2014 has been attempted anywhere' is located, and ARM B was in fact run \u2014 the Birkhoff coefficient is derived from a computed minor, an atom is exhibited with its nu, and the blocking fact is measured.  The named engine is closed at the history level ONLY, and that limitation is printed at B1",
+   "ok": true
+  },
+  "B1-NODUP": {
+   "detail": "duplicated menu entries = 0 over 1998856 menu entries",
+   "kind": "SUBSTANTIVE",
+   "label": "THE SUBSTANTIVE HALF OF THE TREE OBSTRUCTION, separated from the forced half: the committed layer emits NO DUPLICATED MENU ENTRY anywhere in the family \u2014 0 duplicates over every menu entry of all 243,769 histories.  This is the only input that could have broken the column census, and it is a real measurement of the layer's bookkeeping rather than a property of the history-tree representation",
+   "ok": true
+  },
+  "B1-TREE": {
+   "detail": "columns = 243768, single-parent = 243768, other = 0; witness minor = ['1/4', '0', '0', '1/4'] (COMPUTED, each entry a sum over the row's own menu); diameter finite = False; tau = 1",
+   "kind": "THEOREM-PASS",
+   "label": "THE TREE OBSTRUCTION \u2014 carried as a THEOREM-PASS with its forcing named, because unique parenthood is a property of the REPRESENTATION (a history IS its event sequence, so h = g + (e,) forces g = h[:-1]) and not a finding about this family: every column of every level operator has exactly one nonzero entry, so the projective diameter is infinite, the Birkhoff contraction coefficient is 1 at every level, and the history-level Doeblin constant is 0 for every N by disjointness of supports.  Its only failure mode is a duplicated menu entry, and THAT is gated separately and substantively at B1-NODUP",
+   "ok": true
+  },
+  "B2-ATOM": {
+   "detail": "atoms = [('(1, 1)', 1, 1365, '1'), ('(1, 1)', 2, 341, '1'), ('(2, 2)', 1, 3788, '1'), ('(2, 2)', 2, 348, '1'), ('(2, 3)', 1, 4, '1'), ('(3, 2)', 1, 4, '1')]; excluded-by-cap = [('(2, 3)', 2), ('(3, 2)', 2), ('(3, 3)', 1), ('(3, 3)', 2)]; nu support = 2 classes on block (1, 1) over 1365 points at depths [0, 1, 2, 3, 4, 5]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE MINORIZATION LANDS ON THE PROFILE BLOCKS THE CAP CAN TEST: at the matched horizon and the primary grain every holdings-profile block of R-SIG with a testable window is an EXACT ATOM \u2014 delta* = 1 with an explicitly exhibited nu on a small support \u2014 and the measurement could have come out otherwise, since the same computation returns 0 on the full class and on the control grain.  The claim is NOT universal over blocks: the fifth block is excluded by the cap and named",
+   "ok": true
+  },
+  "B2-BLOCKCOVER": {
+   "detail": "blocks = [('(1, 1)', 5461), ('(2, 2)', 33260), ('(2, 3)', 108), ('(3, 2)', 108), ('(3, 3)', 424)]; coverage 39361 of 39361; depth support = [('(1, 1)', ((0, 1), (1, 4), (2, 16), (3, 64), (4, 256), (5, 1024), (6, 4096))), ('(2, 2)', ((3, 20), (4, 328), (5, 3440), (6, 29472))), ('(2, 3)', ((5, 4), (6, 104))), ('(3, 2)', ((5, 4), (6, 104))), ('(3, 3)', ((6, 424),))]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCK DECOMPOSITION COVERS R-SIG EXACTLY, so that an undeclared block cannot recur: the holdings-profile blocks are built from every R-SIG point of the family, their sizes sum to the R-SIG count, there are FIVE of them where the depth-<=5 census names four, and the fifth is (3, 3) with 424 points all at depth 6",
+   "ok": true
+  },
+  "B2-COARSENING": {
+   "detail": "violations = 0 over 6 rows; rows = [('(1, 1)', 1, '1', '1', '1'), ('(1, 1)', 2, '1', '1', '1'), ('(2, 2)', 1, '0', '1', '1'), ('(2, 2)', 2, '0', '1', '1'), ('(2, 3)', 1, '0', '1', '1'), ('(3, 2)', 1, '0', '1', '1')]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE COARSENING LEMMA HOLDS ON EVERY MEASURED ROW: delta* is monotone under coarsening, so event113 <= kind13 <= profile at every (block, N) row \u2014 0 violations.  This is what makes the two-grain measurement decisive rather than two data points, and it is what transports every delta* in this receipt to any refinement or coarsening of the grains actually run",
+   "ok": true
+  },
+  "B2-FULLZERO": {
+   "detail": "zero rows (N, points, profiles, H7, MATCHED) = [(1, 5161, 4, '0', '0'), (2, 689, 2, '0', '0')]; positive cross-profile rows on narrower windows = [(3, 105, 2, '12420/2168717', '3/514')]; single-profile rows (no cross-profile content) = [(4, 21, 1, '8988404357/9050056041', '1'), (5, 5, 1, '290707648979/291881114879', '1')]",
+   "kind": "SUBSTANTIVE",
+   "label": "AND IT DOES NOT EXTEND ON THE WINDOWS THAT CAN CARRY THE CLAIM: on the two WIDEST windows of the full R-SIG class \u2014 the only ones holding enough of the class to say anything about it \u2014 delta* is exactly 0 under BOTH horizon conventions, and each of those windows carries more than one holdings profile.  The narrower windows are printed beside them and nothing is claimed from them",
+   "ok": true
+  },
+  "B2-GRAIN": {
+   "detail": "4 of 6 rows differ, all primary 1 / control 0 = True: [('(2, 2)', 1, '1', '0'), ('(2, 2)', 2, '1', '0'), ('(2, 3)', 1, '1', '0'), ('(3, 2)', 1, '1', '0')]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B, IN THE DIRECTION ITS LABEL CLAIMS: exactly 4 of the 6 measured (block, N) rows are an atom at the primary grain and are NOT at the control grain, and in EVERY such row the primary value is exactly 1 and the control value exactly 0 \u2014 a directional fact, not a non-emptiness test.  So the minorization is grain-relative and the grain must be declared",
+   "ok": true
+  },
+  "B2-PSI-COUNTERREADING": {
+   "detail": "rsig-indicator MATCHED by N = [(1, '1'), (2, '1'), (3, '1541/1542')]; delta* = 1 at N = [1, 2]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCKED CLAUSE IS PSI-FAMILY-RELATIVE AND THE COUNTER-READING IS PRINTED: at Psi = the R-SIG indicator the same full class has delta* = 1 at matched horizon on both of its widest windows, while at the two menu grains and at both holdings-profile grains it is 0 there.  A verdict that stated the delta* = 0 clause without its grain would be false at a declared abstraction, and this gate is what forbids it",
+   "ok": true
+  },
+  "B3-BLOCKENTRY": {
+   "detail": "(1, 1): size 5461, re-entries 0, root True, entries-into 0; (2, 2): size 33260, re-entries 33260, root False, entries-into 10532; (2, 3): size 108, re-entries 108, root False, entries-into 84; (3, 2): size 108, re-entries 108, root False, entries-into 84; (3, 3): size 424, re-entries 424, root False, entries-into 424",
+   "kind": "SUBSTANTIVE",
+   "label": "THE BLOCK RE-ENTRY CENSUS IS REPLACED BY THE OBJECT THE ARGUMENT NEEDS, and the forced rows are disclosed as forced: for every block not containing the root the re-entry count equals the block's own size by construction, and every one of them does.  What is measured instead is the number of TRANSITIONS INTO each block from outside it, and it SPLITS THE BLOCKS IN TWO: the four blocks without the root are entered at a strictly positive number of transitions, so for them it is the uniformity of the entry probability that fails; the (1, 1) block \u2014 R-MENU, and the only block still an atom at the ruled carrier \u2014 is entered at EXACTLY 0, i.e. it is absorbing-complement, so for it no uniform bound is even posable",
+   "ok": true
+  },
+  "B3-DISTANCE": {
+   "detail": "informative rows at depths [0, 1, 2, 3], max attained distance 2; unresolved at this cap 84; full table (depth, max, lookahead, informative, unresolved, histories) = [(0, 0, 6, True, 0, 1), (1, 2, 5, True, 0, 8), (2, 2, 4, True, 4, 60), (3, 2, 3, True, 80, 452), (4, 2, 2, False, 960, 3448), (5, 1, 1, False, 17824, 26760), (6, 0, 0, False, 178840, 213040)]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE RETURN DISTANCE, EXACTLY, WITH THE CAP SEPARATED FROM THE MEASUREMENT: on the rows where the lookahead strictly exceeds the attained maximum \u2014 the only rows where the number is the process and not the cap \u2014 the largest return distance is at least 2, so returning to R-SIG is not one-step generic; and a strictly positive number of histories are UNRESOLVED at this cap, their entire remaining subtree containing no R-SIG point",
+   "ok": true
+  },
+  "B3-HITTING": {
+   "detail": "(1, 1) N=1: 29364/30729 zeros, inf 0; (1, 1) N=2: 3628/3969 zeros, inf 0; (1, 1) N=3: 436/521 zeros, inf 0; (1, 1) N=4: 48/69 zeros, inf 0; (2, 2) N=1: 22061/30729 zeros, inf 0; (2, 2) N=2: 1617/3969 zeros, inf 0; (2, 2) N=3: 92/521 zeros, inf 0; (2, 2) N=4: 4/69 zeros, inf 0; (2, 3) N=1: 30641/30729 zeros, inf 0; (2, 3) N=2: 3897/3969 zeros, inf 0; (2, 3) N=3: 491/521 zeros, inf 0; (2, 3) N=4: 49/69 zeros, inf 0; (3, 2) N=1: 30641/30729 zeros, inf 0; (3, 2) N=2: 3897/3969 zeros, inf 0; (3, 2) N=3: 491/521 zeros, inf 0; (3, 2) N=4: 49/69 zeros, inf 0; (3, 3) N=1: 30545/30729 zeros, inf 0; (3, 3) N=2: 3873/3969 zeros, inf 0; (3, 3) N=3: 493/521 zeros, inf 0; (3, 3) N=4: 61/69 zeros, inf 0",
+   "kind": "SUBSTANTIVE",
+   "label": "THE SECOND HALF FAILS WHERE IT MATTERS: the N-step hitting probability into EVERY holdings-profile block of the family \u2014 all five, the cap-excluded (3, 3) included \u2014 has infimum exactly 0 over every tested window and every N, so the small sets that carry delta = 1 are exactly the ones the process cannot be guaranteed to return to.  The word ATOM is deliberately not used in this label: the (3, 3) row is a hitting measurement on a block whose atomicity this cap cannot test",
+   "ok": true
+  },
+  "B3-MONOTONE": {
+   "detail": "transitions = 243768 (FULL family scope); profile decreases = 0; entailment violations = 0; narrowed scope 0 of 30728",
+   "kind": "THEOREM-PASS",
+   "label": "AND THE MECHANISM IS THE MONOTONE INDEX \u2014 carried as a THEOREM-PASS with its forcing exhibited, because cardinality-monotonicity of the profile is ENTAILED by set-monotonicity of holdings (A4-MONO) and cannot come out otherwise: the holdings profile never decreases along any of the 243,768 transitions of the family, so the atoms form a ladder the process climbs and never descends.  The entailment is machine-checked pointwise \u2014 0 transitions decrease the profile without shrinking the holdings set \u2014 and the SUBSTANTIVE companion is B3-NSUP-PROFILE, where the same index computed on the NON-superseded holdings does decrease",
+   "ok": true
+  },
+  "B3-NSUP-PROFILE": {
+   "detail": "non-superseded shrinking = 29980 of 243768 transitions, against 0 for the full holdings set",
+   "kind": "SUBSTANTIVE",
+   "label": "THE TWO-WAY DEMONSTRATION BEHIND THAT THEOREM-PASS: the same ladder built on the NON-SUPERSEDED holdings is NOT monotone \u2014 it shrinks at 29,980 of the family's 243,768 transitions \u2014 so a monotone-index gate on this family is not vacuous by construction; it is the choice of index that makes it monotone, and this gate is what could have returned False",
+   "ok": true
+  },
+  "B3-RSIG-RETURN": {
+   "detail": "N=1: 20344 of 30729 exactly 0, inf 0; N=2: 1044 of 3969 exactly 0, inf 0; N=3: 84 of 521 exactly 0, inf 0; N=4: 4 of 69 exactly 0, inf 0; N=5: 0 of 9 exactly 0, inf 31570/293121",
+   "kind": "SUBSTANTIVE",
+   "label": "AND THE UNION IS NOT A SUBSTITUTE, MEASURED ON A WINDOW ONE FULL DEPTH WIDER THAN THE PREDECESSOR'S: the return probability into R-SIG as a whole is exactly 0 at a strictly positive number of histories on the widest window, its zero-set collapses with N, and the infimum on the widest window is 0 \u2014 so no uniform Doeblin constant is exhibited for the union either",
+   "ok": true
+  },
+  "B4-CARRIER-CHAIN": {
+   "detail": "exceptions = 0 over 3969; KIND per window = [1, 2, 5, 9, 13, 21]; EVENT per window = [1, 5, 13, 45, 113, 265]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE REFINEMENT CHAIN IS ESTABLISHED, NOT ASSUMED: the event x weight menu shape determines the kind x weight menu shape at every history of the depth-4 family (0 exceptions over 3,969), the two partitions have 113 and 13 classes there, and the per-window class counts reproduce d74's committed MENU 113 at depth <= 4 and 265 at depth <= 5 from this unit's own family.  So CONG-185 <= MENU-113 <= KIND-13 and every delta* in this receipt transports along it",
+   "ok": true
+  },
+  "B4-CARRIER-SUPPLY": {
+   "detail": "dead at CONG-185: [('(2, 2)', 1), ('(2, 2)', 2), ('(2, 3)', 1), ('(3, 2)', 1)]; open: [('(1, 1)', 1), ('(1, 1)', 2)]; statable on d<=4: 0, on d<=5: 0",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CARRIER COLLAPSE IS MEASURED AND ITS SUPPLY IS CARRIED: 4 of the 6 delivered atom rows have delta* = 0 at the ruled carrier CONG-185, by the coarsening lemma applied to this receipt's own MATCHED-control column; the 2 survivors are exactly the (1, 1) block, i.e. R-MENU; NO delivered row is statable on either committed carrier window, so the successor needs the carrier extended past depth 4; and d74's committed d <= 5 row (menu 265 / congruence 462) is carried in the T5 supply with its own verbatim anchor",
+   "ok": true
+  },
+  "B5-FREEITEMS": {
+   "detail": "free 4 ['C6 actor pool = (A, B) for ARM B', 'C7 terminal convention G(h, 0) = 1', 'C8 Psi ranges over menu-shape functions', \"C9 candidate small sets = R-SIG's profile blocks and their union\"]; forced 2; declared 3; motivated = False",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CHOICE INVENTORY IS GATED, NOT NARRATED: ARM B carries exactly FOUR free items (the actor pool, the terminal convention, the menu-shape-only Psi family, and the level-set-only family of candidate small sets), each with its fiber measured or its absence stated, so the unit's own receipt says that ARM B is a measurement at a declared arena and not a motivated result",
+   "ok": true
+  },
+  "C-CLI": {
+   "detail": "rejected ['--utterly-bogus', '--no-writ']; accepted ['--mutant', '--no-write']; exit code 2; flags ['--list-gates', '--list-mutants', '--mutant', '--no-write', '--selftest']",
+   "kind": "SUBSTANTIVE",
+   "label": "THE CLI CONTRACT IS ENFORCED AND MEASURED, NOT DOCUMENTED (v14 #66 -> #82, the registered repair item): the argv handler is a whitelist, it is exercised in-process on a bogus sample and rejects both tokens \u2014 the unknown flag and the one-character typo of --no-write \u2014 the usage exit code is 2, and the accepted flag set is exactly the five the contract names",
+   "ok": true
+  },
+  "C-COMPLIANCE": {
+   "detail": "19 of 19 rules satisfied; 18 computed, 1 asserted",
+   "kind": "SUBSTANTIVE",
+   "label": "THE COMPLIANCE SWEEP IS A GATE, NOT A CLAIM: every engraved rule in the table above is evaluated, this gate fails if any one of them is False, and the COMPUTED and ASSERTED rows are counted separately so that the header cannot outrun the table",
+   "ok": true
+  },
+  "C-INSTRUMENT": {
+   "detail": "unanchored opens []; subprocess calls 0; shared verdict literals []; gate constants naming a falsifier []",
+   "kind": "SUBSTANTIVE",
+   "label": "THE INSTRUMENT'S FOUR SELF-DESCRIPTIONS ARE GATED RATHER THAN PRINTED: the set of paths this process opened lies inside the anchor table (no unanchored runtime input); the AST census finds no subprocess call anywhere (no moving reference \u2014 the `git show HEAD:` read is gone and the ledger is a pinned row); build_verdict and check_verdict share no string literal outside the shared token table (the comparator is independent); and no string constant inside any gate() call equals a registered falsifier's name (the predicates are blind)",
+   "ok": true
+  },
+  "C-KEYCOVERAGE": {
+   "detail": "209 of 311 delivered keys carry a falsifier; 208 are read by a gate; read-but-unfalsified = []",
+   "kind": "SUBSTANTIVE",
+   "label": "THE COVERAGE DENOMINATOR IS PUBLISHED AND GATED: every delivered receipt key that ANY gate reads carries a declared falsifier \u2014 not only the keys the substantive gates read, which is how a theorem-pass gate used to escape falsification entirely \u2014 and the delivered keys no gate reads are enumerated as disclosure-only rather than reported as covered",
+   "ok": true
+  },
+  "C-NOCONSTANTRULES": {
+   "detail": "constant statuses in COMPLY = 0; asserted rows = 1",
+   "kind": "SUBSTANTIVE",
+   "label": "NO COMPLIANCE ROW MARKED COMPUTED MAY CARRY A CONSTANT STATUS, and this is checked over the table's own syntax tree rather than believed: an AST census of the COMPLY literal finds zero rows whose status expression is a literal.  A constant status cannot move the aggregate, so a rule asserted as a constant would be a rule the sweep can never fail",
+   "ok": true
+  },
+  "C-THEOREMCENSUS": {
+   "detail": "56 substantive + 6 theorem-pass + 1 disclosure = 63; forcing registry covers every non-substantive gate = True; witnesses = [('A3-KERNEL', 'proper_violations', 0), ('A3-CUTADD', 'proper_violations', 0), ('A4-MONO', 'mono_shrinking_all', 0), ('A4-PRED', 'pred_forcing_live_empty_but_components', 0), ('A7-ROOTTHEOREM', 'sym_menu_violations', 0), ('B1-TREE', 'menu_duplicate_entries', 0), ('B3-MONOTONE', 'mono_entailment_violations', 0)]",
+   "kind": "SUBSTANTIVE",
+   "label": "THE THEOREM-PASS CENSUS IS ITSELF GATED AND MECHANICALLY RECOMPUTED: the substantive, theorem-pass and disclosure counts partition the gate list exactly; EVERY non-substantive gate appears in the forcing registry with the kind it is registered under; no substantive gate does; and every registered forcing's machine-checked witness carries the value the forcing predicts.  So the classification is a computed property with an exhibited reason, not a tag",
+   "ok": true
+  },
+  "C-VERDICTFALSIFIERS": {
+   "detail": "5 of 5 verdict falsifiers killed a gate",
+   "kind": "SUBSTANTIVE",
+   "label": "THE VERDICT-FALSIFIER CENSUS IS A GATE: all five declared verdict falsifiers \u2014 value swap, appended text, truncation, dropped segment, retyped segment \u2014 each killed at least one gate, so containment can never stand in for equality here",
+   "ok": true
+  },
+  "C-WAIVERS": {
+   "detail": "0 waived gates, 0 unwaived, 0 killing perturbations registered as falsifiers instead of being waived",
+   "kind": "SUBSTANTIVE",
+   "label": "THE WAIVER CENSUS IS A GATE, AND THE WAIVER NO LONGER CLOSES ON THE AUTHOR'S DECLARATION: no gate is both never-falsified and without a verified waiver, where 'verified' means MEASURED input-independent under drift, poison and erase of every key the predicate reads.  A never-falsified gate that could be flipped has its killing perturbation registered as a declared falsifier instead of being waived, and the count of such registrations is published",
+   "ok": true
+  },
+  "M-CONSUMERBINDING": {
+   "detail": "bound ['A0-LEDGER', 'A1-BUDGETS', 'A1-DELIVERY', 'A3-KERNEL', 'A3-POSITIVITY', 'A4-PORTS', 'A5-CONTROL-GRAIN', 'A5-ESCAPE', 'A5-METHOD', 'A5-OPERATOR-CONTROL', 'A6-REOPENING', 'B0-SUCCESSOR-NAMED', 'B4-CARRIER-CHAIN', 'B4-CARRIER-SUPPLY']; unbound []",
+   "kind": "SUBSTANTIVE",
+   "label": "REFERENTIAL INTEGRITY OF THE ANCHOR TABLE: every consumer gate named by a verbatim-context row is a REGISTERED gate.  The first delivery named a consumer that did not exist \u2014 the one licensing ARM B \u2014 and no check caught it; this is that check",
+   "ok": true
+  },
+  "M-PATHDRIFT": {
+   "detail": "drifted paths that still resolve: 0 of 9",
+   "kind": "SUBSTANTIVE",
+   "label": "PATH-VALUE ANCHORING: for every pinned row, a drifted path (the same basename moved to a sibling directory, or a near-miss filename) does NOT resolve on this filesystem \u2014 so a path drift that would change the arena dies at the anchor and cannot reach a verdict segment",
+   "ok": true
+  },
+  "M-VERBATIMDRIFT": {
+   "detail": "drifted windows still found: 0 of 15; every perturbation real = True; append-only perturbations = 0",
+   "kind": "SUBSTANTIVE",
+   "label": "VERBATIM-CONTEXT ANCHORING, WITH A LABEL THAT CLAIMS ONLY WHAT IT TESTS: each anchored context window, perturbed at a CONTENT-BEARING token (its first digit, else its first two words swapped, else its longest word deleted \u2014 never a mere appended character), is NOT found in its source.  Every one of the twelve perturbations is a real one, and the perturbation applied is printed per row.  Together with M-VERBATIMSPEC (length and uniqueness) this is what makes the windows bind their span rather than mere existence",
+   "ok": true
+  },
+  "M-VERBATIMSPEC": {
+   "detail": "shortest window 41 chars (minimum 40); all windows unique in source = True; located 15 of 15",
+   "kind": "SUBSTANTIVE",
+   "label": "THE #62 SPECIFICITY STANDARD IS ENFORCED, NOT ASSERTED: every verbatim-context window is at least 40 characters long AND occurs EXACTLY ONCE in its source file, so a window truncated to a short generic substring is refused at the precheck instead of being certified as an anchor",
+   "ok": true
+  },
+  "V-SEVEN": {
+   "detail": "F1 grammar: True; F2 census+potentials: True; F3 kernels: True; F4 renewal ports: True; F5 the escape: True; F6 reopening: True; F7 root symmetry: True",
+   "kind": "SUBSTANTIVE",
+   "label": "ARM A's seven facts each carry a passing substantive gate, and the TERMINALIZED segment may not be emitted otherwise.  The segment is located by its KEY in the shared token table, never by a substring re-typed inside the predicate",
+   "ok": true
+  },
+  "V-VERDICT": {
+   "detail": "verdict length = 2225 chars; 58 anchored fields, 73 numerals all accounted for, 3 segments",
+   "kind": "SUBSTANTIVE",
+   "label": "THE VERDICT IS CHECKED BY A COMPARATOR BUILT INDEPENDENTLY OF ITS BUILDER (v14 #82): check_verdict never calls build_verdict and never re-concatenates the string.  It declares, from the gated object alone, which measured value must follow which token of the shared table and in what order; it walks the emitted string once asserting each; it requires the declared tail; and it accounts for EVERY numeral in the string.  A builder field swap (a value read from the wrong key) and a builder template error (a missing, extra or reordered token) therefore both die here, and two falsifiers reproduce exactly those two injections",
+   "ok": true
+  }
+ },
  "_mutants": [
   {
    "class": "value-drift/census-drop",
-   "killed": 2,
+   "killed": 3,
    "name": "DRIFT[B2_atom_found]",
    "sample": [
+    "B0-SUCCESSOR-NAMED",
     "B2-ATOM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1300,7 +2625,8 @@
    "name": "DRIFT[B2_atoms]+POISON",
    "sample": [
     "B2-ATOM"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1308,7 +2634,8 @@
    "name": "DRIFT[B2_best_N]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1317,15 +2644,71 @@
    "sample": [
     "B2-ATOM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
    "killed": 1,
-   "name": "DRIFT[B2_grain_split]+ERASE",
+   "name": "DRIFT[B2_blocks_excluded]+POISON",
+   "sample": [
+    "B2-ATOM"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_coarsening_rows]",
+   "sample": [
+    "B2-COARSENING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_coarsening_violations]",
+   "sample": [
+    "B2-COARSENING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_full_grain_rows]",
+   "sample": [
+    "B2-PSI-COUNTERREADING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_full_rows]+POISON",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_grain_split]",
    "sample": [
     "B2-GRAIN"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_grain_split_direction_ok]",
+   "sample": [
+    "B2-GRAIN"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1333,7 +2716,8 @@
    "name": "DRIFT[B2_hetero_zero_rows]",
    "sample": [
     "B2-FULLZERO"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1341,7 +2725,8 @@
    "name": "DRIFT[B2_nu_block_size]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1349,7 +2734,8 @@
    "name": "DRIFT[B2_nu_depths]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1357,7 +2743,8 @@
    "name": "DRIFT[B2_nu_measure]",
    "sample": [
     "B2-ATOM"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1365,7 +2752,8 @@
    "name": "DRIFT[B2_nu_profile]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1374,7 +2762,37 @@
    "sample": [
     "B2-ATOM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[B2_profile_rows]",
+   "sample": [
+    "B2-GRAIN",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[B2_rsig_indicator_delta1_at]",
+   "sample": [
+    "B2-PSI-COUNTERREADING",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B2_rsig_indicator_matched]+POISON",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1382,7 +2800,8 @@
    "name": "DRIFT[B2_widest_zero_N]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1390,15 +2809,80 @@
    "name": "DRIFT[B3_all_zero_inf]",
    "sample": [
     "B3-HITTING"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
    "killed": 1,
-   "name": "DRIFT[B3_dist_max_saturated]",
+   "name": "DRIFT[B3_block_entries_nonroot_positive]",
+   "sample": [
+    "B3-BLOCKENTRY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_block_entries_positive]",
+   "sample": [
+    "B3-BLOCKENTRY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_block_entries_root_zero]",
+   "sample": [
+    "B3-BLOCKENTRY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_block_entry_rows]",
+   "sample": [
+    "B3-BLOCKENTRY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_block_inf_sup]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_block_reentry_forced_all]",
+   "sample": [
+    "B3-BLOCKENTRY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_dist_max_informative]",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B3_dist_max_saturated]+POISON",
+   "sample": [
+    "B3-DISTANCE"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1406,7 +2890,8 @@
    "name": "DRIFT[B3_dist_rows_saturated]+POISON",
    "sample": [
     "B3-DISTANCE"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1414,7 +2899,8 @@
    "name": "DRIFT[B3_dist_unresolved]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1422,7 +2908,8 @@
    "name": "DRIFT[B3_hit_rows]+POISON",
    "sample": [
     "B3-HITTING"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1431,15 +2918,18 @@
    "sample": [
     "B3-MONOTONE",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
-   "killed": 1,
+   "killed": 2,
    "name": "DRIFT[B3_profile_pairs]",
    "sample": [
+    "B3-MONOTONE",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1448,7 +2938,8 @@
    "sample": [
     "B3-RSIG-RETURN",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1456,7 +2947,8 @@
    "name": "DRIFT[B3_rsig_rows]",
    "sample": [
     "B3-RSIG-RETURN"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1464,7 +2956,36 @@
    "name": "DRIFT[B3_rsig_zeros]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[B4_carrier_dead_rows]",
+   "sample": [
+    "B4-CARRIER-SUPPLY",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B4_carrier_open_rows]",
+   "sample": [
+    "B4-CARRIER-SUPPLY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[B4_rows_statable_d4]",
+   "sample": [
+    "B4-CARRIER-SUPPLY"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1473,7 +2994,8 @@
    "sample": [
     "A2-G-DF",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1481,7 +3003,8 @@
    "name": "DRIFT[G_positivity_violations]",
    "sample": [
     "A3-POSITIVITY"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1490,7 +3013,26 @@
    "sample": [
     "A2-G-TRANSPORT",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[armB_motivated]",
+   "sample": [
+    "B5-FREEITEMS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[birkhoff_crossratio_infinite]",
+   "sample": [
+    "B1-TREE"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1498,15 +3040,28 @@
    "name": "DRIFT[birkhoff_diameter_finite]",
    "sample": [
     "B1-TREE"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
    "killed": 1,
-   "name": "DRIFT[birkhoff_tau]",
+   "name": "DRIFT[birkhoff_doeblin_history]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 3,
+   "name": "DRIFT[birkhoff_tau]",
+   "sample": [
+    "B0-SUCCESSOR-NAMED",
+    "B1-TREE",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1514,15 +3069,26 @@
    "name": "DRIFT[birkhoff_witness]+POISON",
    "sample": [
     "B1-TREE"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
    "killed": 1,
-   "name": "DRIFT[budget_arbmerge]+ERASE",
+   "name": "DRIFT[birkhoff_zero_offdiag]",
+   "sample": [
+    "B1-TREE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[budget_arbmerge]",
    "sample": [
     "A1-BUDGETS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1530,7 +3096,8 @@
    "name": "DRIFT[budget_deliver]",
    "sample": [
     "A1-BUDGETS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1538,7 +3105,81 @@
    "name": "DRIFT[budget_propose]",
    "sample": [
     "A1-BUDGETS"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[carrier_chain_exceptions]",
+   "sample": [
+    "B4-CARRIER-CHAIN"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[carrier_chain_tested]",
+   "sample": [
+    "B4-CARRIER-CHAIN"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[carrier_cong_d4]",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[carrier_cong_d5]",
+   "sample": [
+    "B4-CARRIER-SUPPLY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[carrier_menu_d4]",
+   "sample": [
+    "B4-CARRIER-CHAIN"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[carrier_menu_d5]",
+   "sample": [
+    "B4-CARRIER-CHAIN",
+    "B4-CARRIER-SUPPLY"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[choices]",
+   "sample": [
+    "B5-FREEITEMS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[choices_forced]",
+   "sample": [
+    "B5-FREEITEMS"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1546,7 +3187,8 @@
    "name": "DRIFT[classifier_matches]",
    "sample": [
     "A6-CLASSIFIER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1554,7 +3196,53 @@
    "name": "DRIFT[classifier_tested]",
    "sample": [
     "A6-CLASSIFIER"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[cli_accepted_sample]",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[cli_exit_on_unknown]",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[cli_flags]",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[cli_flags_known]",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[cli_rejected_sample]",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1562,7 +3250,8 @@
    "name": "DRIFT[columns_other]",
    "sample": [
     "B1-TREE"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1571,7 +3260,8 @@
    "sample": [
     "B1-TREE",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1579,7 +3269,8 @@
    "name": "DRIFT[df_cumulative]",
    "sample": [
     "A2-DF-CENSUS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1587,7 +3278,8 @@
    "name": "DRIFT[df_ge_t]+POISON",
    "sample": [
     "A2-SIGN"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1596,7 +3288,8 @@
    "sample": [
     "A2-SIGN",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1604,7 +3297,8 @@
    "name": "DRIFT[df_shapes]",
    "sample": [
     "A6-CLASSIFIER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1612,7 +3306,8 @@
    "name": "DRIFT[df_shapes_with_d]",
    "sample": [
     "A6-CLASSIFIER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1620,7 +3315,8 @@
    "name": "DRIFT[df_total]",
    "sample": [
     "A2-DF-CENSUS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1628,7 +3324,8 @@
    "name": "DRIFT[diverged]",
    "sample": [
     "A6-REOPENING"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1637,7 +3334,8 @@
    "sample": [
     "A6-REOPENING",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1645,7 +3343,8 @@
    "name": "DRIFT[escape_aggregate]",
    "sample": [
     "A5-OPERATOR-CONTROL"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1653,7 +3352,8 @@
    "name": "DRIFT[escape_control]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1663,7 +3363,8 @@
     "A5-ESCAPE",
     "A5-OPERATOR-CONTROL",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1672,7 +3373,8 @@
    "sample": [
     "A5-ESCAPE",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1680,7 +3382,8 @@
    "name": "DRIFT[escape_primary_window_classes]",
    "sample": [
     "A5-ESCAPE"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1688,7 +3391,17 @@
    "name": "DRIFT[escape_witness_target_minlen]+POISON",
    "sample": [
     "A5-ESCAPE"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[event_kind_count]",
+   "sample": [
+    "A1-KINDS"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1697,7 +3410,27 @@
    "sample": [
     "A1-KINDS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[free_items]",
+   "sample": [
+    "B5-FREEITEMS",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[grain_control_by_window]",
+   "sample": [
+    "B4-CARRIER-CHAIN"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1706,7 +3439,17 @@
    "sample": [
     "A5-CONTROL-GRAIN",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[grain_primary_by_window]",
+   "sample": [
+    "B4-CARRIER-CHAIN"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1715,7 +3458,8 @@
    "sample": [
     "A5-CONTROL-GRAIN",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1723,15 +3467,17 @@
    "name": "DRIFT[grow_primary]",
    "sample": [
     "A5-METHOD"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
    "killed": 1,
-   "name": "DRIFT[kind_counts]+POISON",
+   "name": "DRIFT[kind_counts]",
    "sample": [
-    "A1-KINDS"
-   ]
+    "B1-NODUP"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1739,7 +3485,17 @@
    "name": "DRIFT[layer_defs]",
    "sample": [
     "A1-LAYER"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[layer_kind_branches]",
+   "sample": [
+    "A1-KINDS"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1747,7 +3503,8 @@
    "name": "DRIFT[layer_no_exit]",
    "sample": [
     "A1-LAYER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1755,7 +3512,8 @@
    "name": "DRIFT[layer_path]",
    "sample": [
     "A1-LAYER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1763,7 +3521,8 @@
    "name": "DRIFT[layer_prefix_chars]+POISON",
    "sample": [
     "A1-LAYER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1771,7 +3530,8 @@
    "name": "DRIFT[mass_census_d4]",
    "sample": [
     "A1-LADDER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1779,7 +3539,8 @@
    "name": "DRIFT[mass_census_d5]",
    "sample": [
     "A1-LADDER"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1787,7 +3548,26 @@
    "name": "DRIFT[mass_values_d6]",
    "sample": [
     "A1-LADDER"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[menu_duplicate_entries]",
+   "sample": [
+    "B1-NODUP"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[menu_entries_total]",
+   "sample": [
+    "B1-NODUP"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1796,7 +3576,8 @@
    "sample": [
     "A6-REOPENING",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1805,7 +3586,8 @@
    "sample": [
     "A6-REOPENING",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1813,7 +3595,8 @@
    "name": "DRIFT[misnorm_failures]",
    "sample": [
     "A3-MISNORM"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1821,7 +3604,82 @@
    "name": "DRIFT[misnorm_tested]",
    "sample": [
     "A3-MISNORM"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[mono_entailment_violations]",
+   "sample": [
+    "B3-MONOTONE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[mono_expect]",
+   "sample": [
+    "A4-MONO"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[mono_expect_all]",
+   "sample": [
+    "A4-MONO"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[mono_pairs]",
+   "sample": [
+    "A4-MONO"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[mono_pairs_all]",
+   "sample": [
+    "A4-MONO",
+    "B3-NSUP-PROFILE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[mono_shrinking]",
+   "sample": [
+    "A4-MONO"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[mono_shrinking_all]",
+   "sample": [
+    "A4-MONO",
+    "B3-MONOTONE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[n_actors]",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1830,7 +3688,8 @@
    "sample": [
     "A4-MASS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1838,7 +3697,27 @@
    "name": "DRIFT[nonrenewal_grows]",
    "sample": [
     "A4-MASS"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[nsup_shrinking]",
+   "sample": [
+    "A4-NSUP-SHRINKS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 2,
+   "name": "DRIFT[nsup_shrinking_all]",
+   "sample": [
+    "A4-NSUP-SHRINKS",
+    "B3-NSUP-PROFILE"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1846,7 +3725,8 @@
    "name": "DRIFT[operator_agree]",
    "sample": [
     "A5-OPERATOR-CONTROL"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1854,7 +3734,8 @@
    "name": "DRIFT[path_drift_survivors]",
    "sample": [
     "M-PATHDRIFT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1863,7 +3744,26 @@
    "sample": [
     "A3-POSITIVITY",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[pred_forcing_live_empty_but_components]",
+   "sample": [
+    "A4-PRED"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[pred_forcing_singleton_but_merge_pairs]",
+   "sample": [
+    "A4-PRED"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1871,7 +3771,8 @@
    "name": "DRIFT[pred_reduction_disagreements]",
    "sample": [
     "A4-PRED"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1879,7 +3780,17 @@
    "name": "DRIFT[pred_reduction_tested]",
    "sample": [
     "A4-PRED"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[pred_unforced_disagreements]+POISON",
+   "sample": [
+    "A4-PRED-UNFORCED"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1888,7 +3799,17 @@
    "sample": [
     "A3-KERNEL",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[proper_violations]",
+   "sample": [
+    "A3-KERNEL"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1896,7 +3817,17 @@
    "name": "DRIFT[ratio_df_ge_t]",
    "sample": [
     "A2-SIGN"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[raw_cut_masses]",
+   "sample": [
+    "A3-CUTADD"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1904,7 +3835,8 @@
    "name": "DRIFT[reconverging_pairs]",
    "sample": [
     "A6-REOPENING"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1912,7 +3844,8 @@
    "name": "DRIFT[redelivery_admissible]+POISON",
    "sample": [
     "A1-DELIVERY"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1920,7 +3853,8 @@
    "name": "DRIFT[renewal_depth5_closed]",
    "sample": [
     "A4-MASS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1928,7 +3862,8 @@
    "name": "DRIFT[renewal_depth5_measured]",
    "sample": [
     "A4-MASS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1936,7 +3871,8 @@
    "name": "DRIFT[renewal_raw_is_32n]",
    "sample": [
     "A4-MASS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1944,7 +3880,8 @@
    "name": "DRIFT[reopening_shortest_len]",
    "sample": [
     "A6-REOPENING"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1952,7 +3889,8 @@
    "name": "DRIFT[rmenu_4n]",
    "sample": [
     "A4-4N"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1961,7 +3899,8 @@
    "sample": [
     "A4-PORTS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1969,7 +3908,8 @@
    "name": "DRIFT[rmenu_is_4n]",
    "sample": [
     "A4-4N"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1977,7 +3917,8 @@
    "name": "DRIFT[rmenu_menu_not_exact]",
    "sample": [
     "A4-PORTS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1986,7 +3927,8 @@
    "sample": [
     "A4-PORTS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -1994,7 +3936,65 @@
    "name": "DRIFT[rmenu_sum_4n]",
    "sample": [
     "A4-4N"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[root_conditional_constant]",
+   "sample": [
+    "A7-ROOTTHEOREM"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[root_one_orbit_per_kind]",
+   "sample": [
+    "A7-ROOTTHEOREM"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_all_count]",
+   "sample": [
+    "B2-BLOCKCOVER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_block_coverage]",
+   "sample": [
+    "B2-BLOCKCOVER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_blocks_declared_at_d5]",
+   "sample": [
+    "B2-BLOCKCOVER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 4,
+   "name": "DRIFT[rsig_blocks_n]",
+   "sample": [
+    "B2-BLOCKCOVER",
+    "B3-BLOCKENTRY",
+    "B3-HITTING",
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2003,7 +4003,8 @@
    "sample": [
     "A4-PORTS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2011,7 +4012,8 @@
    "name": "DRIFT[rsig_menu_exact]",
    "sample": [
     "A4-PORTS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2019,7 +4021,44 @@
    "name": "DRIFT[rsig_menu_not_exact]",
    "sample": [
     "A4-PORTS"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_notexact_eq_reentered]",
+   "sample": [
+    "A4-PORTS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_notexact_symdiff]",
+   "sample": [
+    "A4-PORTS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_profile_depths]",
+   "sample": [
+    "B2-BLOCKCOVER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[rsig_profiles_all]",
+   "sample": [
+    "B2-BLOCKCOVER"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2028,7 +4067,8 @@
    "sample": [
     "A4-PORTS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2036,7 +4076,17 @@
    "name": "DRIFT[seven_all]",
    "sample": [
     "V-SEVEN"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[seven_facts_ok]",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2045,7 +4095,8 @@
    "sample": [
     "A7-AUTOMORPHISM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2054,7 +4105,8 @@
    "sample": [
     "A7-AUTOMORPHISM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2062,7 +4114,8 @@
    "name": "DRIFT[sym_not_closed]",
    "sample": [
     "A7-AUTOMORPHISM"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2070,7 +4123,42 @@
    "name": "DRIFT[sym_rows]+POISON",
    "sample": [
     "A7-AUTOMORPHISM"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[t5_ledger_delivered]",
+   "sample": [
+    "A0-LEDGER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[t5_ledger_number]",
+   "sample": [
+    "A0-LEDGER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[t5_ledger_pinned]",
+   "sample": [
+    "A0-LEDGER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 0,
+   "name": "DRIFT[t5_note_status_line]",
+   "sample": [],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2079,7 +4167,8 @@
    "sample": [
     "A2-CENSUS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2087,7 +4176,8 @@
    "name": "DRIFT[t_per_level]",
    "sample": [
     "A2-CENSUS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2096,7 +4186,8 @@
    "sample": [
     "A2-CENSUS",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2104,7 +4195,53 @@
    "name": "DRIFT[tables_primary]",
    "sample": [
     "A5-METHOD"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_consumers]+POISON",
+   "sample": [
+    "B0-SUCCESSOR-NAMED"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_consumers_bound]+POISON",
+   "sample": [
+    "M-CONSUMERBINDING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_consumers_unbound]",
+   "sample": [
+    "M-CONSUMERBINDING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_drift_appends]",
+   "sample": [
+    "M-VERBATIMDRIFT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_drift_real]",
+   "sample": [
+    "M-VERBATIMDRIFT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2112,7 +4249,53 @@
    "name": "DRIFT[verbatim_drift_survivors]",
    "sample": [
     "M-VERBATIMDRIFT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_min_chars]+POISON",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_min_required]+POISON",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_n]",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_ok]",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[verbatim_unique]",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2120,7 +4303,8 @@
    "name": "DRIFT[verdict]",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2128,7 +4312,8 @@
    "name": "DRIFT[welldef_primary_level0]",
    "sample": [
     "A5-FACTORISATION"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "value-drift/census-drop",
@@ -2136,7 +4321,35 @@
    "name": "DRIFT[welldef_primary_level1]",
    "sample": [
     "A5-FACTORISATION"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "verdict-builder",
+   "killed": 1,
+   "name": "BUILDER-FIELD-SWAP",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "verdict-builder",
+   "killed": 1,
+   "name": "BUILDER-VALUE-SWAP",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "verdict-builder",
+   "killed": 1,
+   "name": "BUILDER-TOKEN-DROPPED",
+   "sample": [
+    "V-VERDICT"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "verdict",
@@ -2144,7 +4357,8 @@
    "name": "VERDICT-VALUE-SWAP",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "verdict",
@@ -2152,7 +4366,8 @@
    "name": "VERDICT-APPENDED-TEXT",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "verdict",
@@ -2160,7 +4375,8 @@
    "name": "VERDICT-TRUNCATED",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "verdict",
@@ -2168,7 +4384,8 @@
    "name": "VERDICT-SEGMENT-DROPPED",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "verdict",
@@ -2176,7 +4393,8 @@
    "name": "VERDICT-TYPED-SEGMENT",
    "sample": [
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "science",
@@ -2186,7 +4404,8 @@
     "A5-ESCAPE",
     "A5-OPERATOR-CONTROL",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "science",
@@ -2195,16 +4414,19 @@
    "sample": [
     "A5-CONTROL-GRAIN",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "science",
-   "killed": 2,
+   "killed": 3,
    "name": "ATOM-CLAIMED-WITHOUT-NU",
    "sample": [
+    "B0-SUCCESSOR-NAMED",
     "B2-ATOM",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "science",
@@ -2214,7 +4436,8 @@
     "B3-HITTING",
     "B3-MONOTONE",
     "V-VERDICT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "compliance",
@@ -2222,7 +4445,26 @@
    "name": "THEOREM-CENSUS-DROP",
    "sample": [
     "C-THEOREMCENSUS"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "compliance",
+   "killed": 1,
+   "name": "FORCING-WITNESS-BROKEN",
+   "sample": [
+    "C-THEOREMCENSUS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "compliance",
+   "killed": 1,
+   "name": "FORCING-COVERAGE-BROKEN",
+   "sample": [
+    "C-THEOREMCENSUS"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "compliance",
@@ -2230,7 +4472,27 @@
    "name": "COMPLIANCE-FALSE",
    "sample": [
     "C-COMPLIANCE"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "compliance",
+   "killed": 1,
+   "name": "COMPLIANCE-CONSTANT-ROW",
+   "sample": [
+    "C-NOCONSTANTRULES"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "compliance",
+   "killed": 2,
+   "name": "COMPLIANCE-ASSERTED-INFLATED",
+   "sample": [
+    "C-COMPLIANCE",
+    "C-NOCONSTANTRULES"
+   ],
+   "sample_truncated": false
   },
   {
    "class": "compliance",
@@ -2238,7 +4500,8 @@
    "name": "WAIVER-UNVERIFIED",
    "sample": [
     "C-WAIVERS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "compliance",
@@ -2246,7 +4509,8 @@
    "name": "VERDICT-FALSIFIER-CENSUS-DROP",
    "sample": [
     "C-VERDICTFALSIFIERS"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "anchor",
@@ -2254,7 +4518,8 @@
    "name": "PATHDRIFT-SURVIVES",
    "sample": [
     "M-PATHDRIFT"
-   ]
+   ],
+   "sample_truncated": false
   },
   {
    "class": "anchor",
@@ -2262,7 +4527,189 @@
    "name": "VERBATIMDRIFT-SURVIVES",
    "sample": [
     "M-VERBATIMDRIFT"
-   ]
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 2,
+   "name": "VERBATIM-CONSUMER-UNBOUND",
+   "sample": [
+    "B0-SUCCESSOR-NAMED",
+    "M-CONSUMERBINDING"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 1,
+   "name": "VERBATIM-WINDOW-TRUNCATED",
+   "sample": [
+    "M-VERBATIMSPEC"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 1,
+   "name": "VERBATIM-DRIFT-APPEND-ONLY",
+   "sample": [
+    "M-VERBATIMDRIFT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 1,
+   "name": "LEDGER-DEGRADED-TO-NONE",
+   "sample": [
+    "A0-LEDGER"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 1,
+   "name": "UNANCHORED-OPEN",
+   "sample": [
+    "C-INSTRUMENT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "anchor",
+   "killed": 1,
+   "name": "SUBPROCESS-SPAWNED",
+   "sample": [
+    "C-INSTRUMENT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "cli",
+   "killed": 1,
+   "name": "CLI-WHITELIST-DISABLED",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "cli",
+   "killed": 1,
+   "name": "CLI-EXIT-CODE-WRONG",
+   "sample": [
+    "C-CLI"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "coverage",
+   "killed": 1,
+   "name": "KEYCOVERAGE-HOLE",
+   "sample": [
+    "C-KEYCOVERAGE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "comparator",
+   "killed": 1,
+   "name": "SHARED-VERDICT-LITERAL",
+   "sample": [
+    "C-INSTRUMENT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "comparator",
+   "killed": 1,
+   "name": "GATE-NAMES-MUTANT",
+   "sample": [
+    "C-INSTRUMENT"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[compliance]",
+   "sample": [
+    "C-COMPLIANCE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[compliance_computed]",
+   "sample": [
+    "C-COMPLIANCE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[forcing_kinds_match]",
+   "sample": [
+    "C-THEOREMCENSUS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[keys_read_by_a_gate]+POISON",
+   "sample": [
+    "C-KEYCOVERAGE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[keys_with_falsifier]+POISON",
+   "sample": [
+    "C-KEYCOVERAGE"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[n_disclosure]",
+   "sample": [
+    "C-THEOREMCENSUS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[n_substantive]",
+   "sample": [
+    "C-THEOREMCENSUS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[never_falsified]",
+   "sample": [
+    "C-WAIVERS"
+   ],
+   "sample_truncated": false
+  },
+  {
+   "class": "value-drift/census-drop",
+   "killed": 1,
+   "name": "DRIFT[waivers]",
+   "sample": [
+    "C-WAIVERS"
+   ],
+   "sample_truncated": false
   }
  ],
  "_pedigrees": [
@@ -2283,7 +4730,7 @@
    "row": "T4"
   },
   {
-   "pedigree": "round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED in-unit below and printed",
+   "pedigree": "round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED in-unit below against the byte-anchored ledger row T9 and printed",
    "row": "T5"
   },
   {
@@ -2297,11 +4744,113 @@
   {
    "pedigree": "TERMINAL v10 #403",
    "row": "T8"
+  },
+  {
+   "pedigree": "v10 is CLOSED; this artifact is byte-anchored like every other pinned row and read from the same path, never at a moving reference",
+   "row": "T9"
   }
  ],
- "ast_float_calls": 6,
+ "_schema": {
+  "B2_atom_deltas": [
+   "profile",
+   "N",
+   "delta_H7_primary",
+   "delta_matched_primary",
+   "delta_matched_control"
+  ],
+  "B2_atoms": [
+   "profile",
+   "N",
+   "block_window",
+   "delta_matched_primary"
+  ],
+  "B2_full_rows": [
+   "N",
+   "class_window",
+   "profiles_in_window",
+   "delta_H7_primary",
+   "delta_matched_primary"
+  ],
+  "B2_profile_rows": [
+   "profile",
+   "N",
+   "block_window",
+   "depths",
+   "delta_H7_primary",
+   "delta_matched_primary",
+   "delta_matched_control",
+   "nu_support"
+  ],
+  "B2_profile_rows_full": [
+   "profile",
+   "N",
+   "block_window",
+   "depths",
+   "delta_H7_primary",
+   "delta_matched_primary",
+   "delta_matched_control",
+   "nu_support",
+   "delta_matched_profile",
+   "delta_matched_profile_unordered",
+   "delta_matched_rsig_indicator",
+   "max_successor_depth"
+  ],
+  "B3_block_entry_rows": [
+   "profile",
+   "size",
+   "reentries",
+   "contains_root",
+   "transitions_into"
+  ],
+  "B3_dist_by_depth": [
+   "depth",
+   "max_finite_distance",
+   "lookahead",
+   "informative",
+   "unresolved",
+   "histories"
+  ],
+  "B3_hit_rows": [
+   "profile",
+   "N",
+   "histories_tested",
+   "zeros",
+   "infimum"
+  ],
+  "B3_rsig_rows": [
+   "N",
+   "histories_tested",
+   "zeros",
+   "infimum"
+  ],
+  "B4_statability": [
+   "profile",
+   "N",
+   "min_depth",
+   "max_depth",
+   "max_successor_depth",
+   "statable_d4",
+   "statable_d5"
+  ],
+  "aliases": {
+   "B3_dist_max_saturated": "B3_dist_max_informative",
+   "B3_dist_rows_saturated": "B3_dist_rows_informative"
+  },
+  "per_block_delta_star": "B2_atom_deltas and B2_profile_rows_full publish delta* PER BLOCK under a name; B2_best_delta is a MAXIMUM over the table, not a row",
+  "typing": {
+   "fractions": "every exact rational is serialised as a STRING (json.dumps default=str): compare with Fraction(s), never numerically",
+   "none": "a key whose measurement failed would serialise as null; no delivered key is null",
+   "tuple_keys": "every tuple used as a dict key is serialised as its str(), e.g. \"(1, 1)\"",
+   "tuples": "every tuple is serialised as a LIST"
+  }
+ },
+ "armB_motivated": false,
+ "ast_float_calls": 8,
  "ast_float_literals": [],
+ "birkhoff_crossratio_infinite": true,
  "birkhoff_diameter_finite": false,
+ "birkhoff_doeblin_history": "0",
+ "birkhoff_doeblin_witness_n": 8,
  "birkhoff_tau": "1",
  "birkhoff_witness": [
   "1/4",
@@ -2309,6 +4858,7 @@
   "0",
   "1/4"
  ],
+ "birkhoff_zero_offdiag": true,
  "budget_arbmerge": [
   "1/2",
   "1/4"
@@ -2319,7 +4869,7 @@
  "budget_propose": [
   "1/4"
  ],
- "byte_n": 17,
+ "byte_n": 18,
  "byte_ok": [
   [
    "T1",
@@ -2405,10 +4955,92 @@
    "T8",
    "v10/note-d46f-reception-dynamics.md",
    "a6368078be4c"
+  ],
+  [
+   "T9",
+   "v10/LOG.md",
+   "d244f925e172"
   ]
+ ],
+ "carrier_chain_exceptions": 0,
+ "carrier_chain_tested": 3969,
+ "carrier_cong_d4": 185,
+ "carrier_cong_d5": 462,
+ "carrier_menu_d4": 113,
+ "carrier_menu_d5": 265,
+ "choices": [
+  [
+   "C1 the R-SIG predicate reduction",
+   "FORCED"
+  ],
+  [
+   "C2 the delivery-free partner derived, not imported",
+   "FORCED"
+  ],
+  [
+   "C3 grain: primary 13-class vs control 113-class",
+   "DECLARED"
+  ],
+  [
+   "C4 horizon: H7 vs MATCHED",
+   "DECLARED"
+  ],
+  [
+   "C5 caps CAP_T = 6, N <= 5, escape window 4, symmetry window 3",
+   "DECLARED"
+  ],
+  [
+   "C6 actor pool = (A, B) for ARM B",
+   "FREE"
+  ],
+  [
+   "C7 terminal convention G(h, 0) = 1",
+   "FREE"
+  ],
+  [
+   "C8 Psi ranges over menu-shape functions",
+   "FREE"
+  ],
+  [
+   "C9 candidate small sets = R-SIG's profile blocks and their union",
+   "FREE"
+  ]
+ ],
+ "choices_declared": [
+  "C3 grain: primary 13-class vs control 113-class",
+  "C4 horizon: H7 vs MATCHED",
+  "C5 caps CAP_T = 6, N <= 5, escape window 4, symmetry window 3"
+ ],
+ "choices_forced": [
+  "C1 the R-SIG predicate reduction",
+  "C2 the delivery-free partner derived, not imported"
+ ],
+ "choices_free": [
+  "C6 actor pool = (A, B) for ARM B",
+  "C7 terminal convention G(h, 0) = 1",
+  "C8 Psi ranges over menu-shape functions",
+  "C9 candidate small sets = R-SIG's profile blocks and their union"
  ],
  "classifier_matches": 0,
  "classifier_tested": 3969,
+ "cli_accepted_sample": [
+  "--mutant",
+  "--no-write"
+ ],
+ "cli_exit_on_unknown": 2,
+ "cli_flags": [
+  "--list-gates",
+  "--list-mutants",
+  "--mutant",
+  "--no-write",
+  "--selftest"
+ ],
+ "cli_flags_known": 5,
+ "cli_rejected_sample": 2,
+ "cli_rejected_tokens": [
+  "--utterly-bogus",
+  "--no-writ"
+ ],
  "columns_other": 0,
  "columns_single_parent": 243768,
  "columns_tested": 243768,
@@ -2458,7 +5090,7 @@
    true
   ],
   [
-   "RUNBOOK 14 (#46) no unanchored runtime inputs",
+   "RUNBOOK 14 (#46) no unanchored runtime inputs, no moving references",
    true
   ],
   [
@@ -2482,11 +5114,99 @@
    true
   ],
   [
+   "v14 #82 the CLI contract is enforced, not documented",
+   true
+  ],
+  [
    "pin section 4 the delivery-free contrast at every census",
    true
   ]
  ],
  "compliance_all": true,
+ "compliance_asserted": 1,
+ "compliance_computed": 18,
+ "compliance_kinds": [
+  [
+   "RUNBOOK 4 exact arithmetic",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 4 counts computed, never typed",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 4 controls in both directions",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 13 (#234) verdict derived in a gate",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#10) containment is not equality",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 13 (#10) render from the gated object",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 13 (#20) prose renders from the receipt",
+   "DISCLOSURE"
+  ],
+  [
+   "RUNBOOK 14 (#20) compliance claims are gate claims",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#20) path-value anchoring",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#34) waiver claims are gate claims",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#34) verbatim-text anchors",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#46) no unanchored runtime inputs, no moving references",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#208) no gate references mutant identity",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 14 (#219) comparators built independently",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 15 declared arena",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 15 (#196) match every coordinate",
+   "COMPUTED"
+  ],
+  [
+   "RUNBOOK 13 (#314) precheck may not name the verdict",
+   "COMPUTED"
+  ],
+  [
+   "v14 #82 the CLI contract is enforced, not documented",
+   "COMPUTED"
+  ],
+  [
+   "pin section 4 the delivery-free contrast at every census",
+   "COMPUTED"
+  ]
+ ],
+ "comply_constant_statuses": 0,
+ "coverage_every_read_key_falsified": true,
+ "depth7_over_build": "1696040/243769",
+ "depth7_over_level6": "42401/5326",
  "depth7_projection": 1696040,
  "df_cumulative": [
   1,
@@ -2521,6 +5241,11 @@
  "df_total": 34375,
  "diverged": 1044,
  "diverged_prefixes": 84,
+ "escalation_drift": 180,
+ "escalation_erase": 0,
+ "escalation_erase_gates": [],
+ "escalation_erase_names": [],
+ "escalation_poison": 18,
  "escape_aggregate": 68,
  "escape_control": 76,
  "escape_control_classes": 32,
@@ -2547,7 +5272,98 @@
   "p",
   "r"
  ],
+ "forcing_covers_nonsub": true,
+ "forcing_kinds_match": true,
+ "forcing_rows": [
+  [
+   "A3-KERNEL",
+   "THEOREM-PASS",
+   "proper_violations",
+   0
+  ],
+  [
+   "A3-CUTADD",
+   "DISCLOSURE",
+   "proper_violations",
+   0
+  ],
+  [
+   "A4-MONO",
+   "THEOREM-PASS",
+   "mono_shrinking_all",
+   0
+  ],
+  [
+   "A4-PRED",
+   "THEOREM-PASS",
+   "pred_forcing_live_empty_but_components",
+   0
+  ],
+  [
+   "A7-ROOTTHEOREM",
+   "THEOREM-PASS",
+   "sym_menu_violations",
+   0
+  ],
+  [
+   "B1-TREE",
+   "THEOREM-PASS",
+   "menu_duplicate_entries",
+   0
+  ],
+  [
+   "B3-MONOTONE",
+   "THEOREM-PASS",
+   "mono_entailment_violations",
+   0
+  ]
+ ],
+ "forcing_witness_ok": true,
+ "forcing_witness_values": [
+  [
+   "A3-KERNEL",
+   "proper_violations",
+   0
+  ],
+  [
+   "A3-CUTADD",
+   "proper_violations",
+   0
+  ],
+  [
+   "A4-MONO",
+   "mono_shrinking_all",
+   0
+  ],
+  [
+   "A4-PRED",
+   "pred_forcing_live_empty_but_components",
+   0
+  ],
+  [
+   "A7-ROOTTHEOREM",
+   "sym_menu_violations",
+   0
+  ],
+  [
+   "B1-TREE",
+   "menu_duplicate_entries",
+   0
+  ],
+  [
+   "B3-MONOTONE",
+   "mono_entailment_violations",
+   0
+  ]
+ ],
+ "free_items": 4,
+ "gate_reads_all_in_F": true,
+ "gate_refs_mutant": [],
  "gate_results": [
+  [
+   "A0-LEDGER",
+   true
+  ],
   [
    "A1-BUDGETS",
    true
@@ -2617,11 +5433,19 @@
    true
   ],
   [
+   "A4-NSUP-SHRINKS",
+   true
+  ],
+  [
    "A4-PORTS",
    true
   ],
   [
    "A4-PRED",
+   true
+  ],
+  [
+   "A4-PRED-UNFORCED",
    true
   ],
   [
@@ -2661,6 +5485,14 @@
    true
   ],
   [
+   "B0-SUCCESSOR-NAMED",
+   true
+  ],
+  [
+   "B1-NODUP",
+   true
+  ],
+  [
    "B1-TREE",
    true
   ],
@@ -2669,11 +5501,27 @@
    true
   ],
   [
+   "B2-BLOCKCOVER",
+   true
+  ],
+  [
+   "B2-COARSENING",
+   true
+  ],
+  [
    "B2-FULLZERO",
    true
   ],
   [
    "B2-GRAIN",
+   true
+  ],
+  [
+   "B2-PSI-COUNTERREADING",
+   true
+  ],
+  [
+   "B3-BLOCKENTRY",
    true
   ],
   [
@@ -2689,11 +5537,43 @@
    true
   ],
   [
+   "B3-NSUP-PROFILE",
+   true
+  ],
+  [
    "B3-RSIG-RETURN",
    true
   ],
   [
+   "B4-CARRIER-CHAIN",
+   true
+  ],
+  [
+   "B4-CARRIER-SUPPLY",
+   true
+  ],
+  [
+   "B5-FREEITEMS",
+   true
+  ],
+  [
+   "C-CLI",
+   true
+  ],
+  [
    "C-COMPLIANCE",
+   true
+  ],
+  [
+   "C-INSTRUMENT",
+   true
+  ],
+  [
+   "C-KEYCOVERAGE",
+   true
+  ],
+  [
+   "C-NOCONSTANTRULES",
    true
   ],
   [
@@ -2709,11 +5589,19 @@
    true
   ],
   [
+   "M-CONSUMERBINDING",
+   true
+  ],
+  [
    "M-PATHDRIFT",
    true
   ],
   [
    "M-VERBATIMDRIFT",
+   true
+  ],
+  [
+   "M-VERBATIMSPEC",
    true
   ],
   [
@@ -2725,7 +5613,23 @@
    true
   ]
  ],
+ "grain_control_by_window": [
+  1,
+  5,
+  13,
+  45,
+  113,
+  265
+ ],
  "grain_control_classes": 113,
+ "grain_primary_by_window": [
+  1,
+  2,
+  5,
+  9,
+  13,
+  21
+ ],
  "grain_primary_classes": 13,
  "grow_control": [
   [
@@ -2810,6 +5714,114 @@
   ]
  ],
  "histories_with_merge": 72,
+ "keys_delivered": 311,
+ "keys_read_but_unfalsified": [],
+ "keys_read_by_a_gate": 208,
+ "keys_with_falsifier": 209,
+ "keys_without_falsifier": [
+  "B2_atom_deltas",
+  "B2_blocks_declared",
+  "B2_full_zero_at",
+  "B2_hetero_pos_rows",
+  "B2_hetero_rows",
+  "B2_homo_rows",
+  "B2_profile_rows_full",
+  "B3_block_entries",
+  "B3_block_inf_values",
+  "B3_block_reentries",
+  "B3_block_reentry_forced",
+  "B3_dist_by_depth",
+  "B3_dist_max_by_depth",
+  "B3_dist_max_rises",
+  "B3_dist_rows_informative",
+  "B3_dist_unresolved_all",
+  "B3_profile_decreases_narrow",
+  "B3_profile_pairs_narrow",
+  "B3_rsig_first_nonzero_N",
+  "B3_zero_fraction",
+  "B4_block11_menu_classes_d4",
+  "B4_block11_points_d4",
+  "B4_rows_statable_d5",
+  "B4_statability",
+  "G_d_frac",
+  "G_t_frac",
+  "ast_float_calls",
+  "ast_float_literals",
+  "birkhoff_doeblin_witness_n",
+  "byte_n",
+  "byte_ok",
+  "choices_declared",
+  "choices_free",
+  "cli_rejected_tokens",
+  "columns_tested",
+  "compliance_kinds",
+  "depth7_over_build",
+  "depth7_over_level6",
+  "depth7_projection",
+  "df_per_level",
+  "escalation_drift",
+  "escalation_erase",
+  "escalation_erase_gates",
+  "escalation_erase_names",
+  "escalation_poison",
+  "escape_control_classes",
+  "escape_control_window_classes",
+  "escape_witness_depth",
+  "escape_witness_kind",
+  "escape_witness_q",
+  "escape_witness_target",
+  "forcing_rows",
+  "forcing_witness_values",
+  "gate_reads_all_in_F",
+  "gate_results",
+  "grow_control",
+  "grow_first_by_kind",
+  "histories_with_merge",
+  "keys_delivered",
+  "keys_without_falsifier",
+  "layer_kind_tags",
+  "mass_census_d6",
+  "merge_menu_depths",
+  "mutant_rows",
+  "mutants_dead",
+  "mutants_total",
+  "n_fail",
+  "n_pass",
+  "nonrenewal_k",
+  "path_drift_rows",
+  "pedigrees",
+  "phase3_falsifiers",
+  "pin_erratum_kind_count",
+  "pool3_branching",
+  "pool3_depth3",
+  "pool3_depth5_projection",
+  "pool3_per_level",
+  "pred_forcing_tested",
+  "ratio_deliveryfree",
+  "ratio_transport",
+  "read_but_unconstrained",
+  "renewal_k",
+  "renewal_raw_q",
+  "rmenu_menu_exact",
+  "root_conditional",
+  "root_menu",
+  "root_menu_mass",
+  "root_menu_size",
+  "root_orbits_per_kind",
+  "rsig_depths",
+  "rsig_profiles",
+  "t5_ledger_path",
+  "t5_ledger_source",
+  "tables_control",
+  "typed_F_assignments",
+  "verbatim_drift_how",
+  "verbatim_drift_rows",
+  "verbatim_occurrences",
+  "verdict_check",
+  "waiver_probes_registered",
+  "welldef_control_level0",
+  "welldef_control_level1"
+ ],
  "kind_counts": [
   [
    "d",
@@ -2841,6 +5853,14 @@
   "event_poset",
   "prop_options_in_view",
   "vname"
+ ],
+ "layer_kind_branches": 5,
+ "layer_kind_tags": [
+  "d",
+  "m",
+  "n",
+  "p",
+  "r"
  ],
  "layer_no_exit": true,
  "layer_path": "v10/code/d42b1_transport_exact.py",
@@ -2879,6 +5899,8 @@
   "2",
   "5/2"
  ],
+ "menu_duplicate_entries": 0,
+ "menu_entries_total": 1998856,
  "merge_menu_depths": [
   [
    5,
@@ -2895,15 +5917,20 @@
  "minimal_chains": 4,
  "misnorm_failures": 69,
  "misnorm_tested": 69,
+ "mono_entailment_violations": 0,
  "mono_expect": 30728,
+ "mono_expect_all": 243768,
  "mono_pairs": 30728,
+ "mono_pairs_all": 243768,
  "mono_shrinking": 0,
+ "mono_shrinking_all": 0,
  "mutant_rows": [
   [
    "DRIFT[B2_atom_found]",
    "value-drift/census-drop",
-   2,
+   3,
    [
+    "B0-SUCCESSOR-NAMED",
     "B2-ATOM",
     "V-VERDICT"
    ]
@@ -2934,7 +5961,55 @@
    ]
   ],
   [
-   "DRIFT[B2_grain_split]+ERASE",
+   "DRIFT[B2_blocks_excluded]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-ATOM"
+   ]
+  ],
+  [
+   "DRIFT[B2_coarsening_rows]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-COARSENING"
+   ]
+  ],
+  [
+   "DRIFT[B2_coarsening_violations]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-COARSENING"
+   ]
+  ],
+  [
+   "DRIFT[B2_full_grain_rows]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-PSI-COUNTERREADING"
+   ]
+  ],
+  [
+   "DRIFT[B2_full_rows]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B2_grain_split]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-GRAIN"
+   ]
+  ],
+  [
+   "DRIFT[B2_grain_split_direction_ok]",
    "value-drift/census-drop",
    1,
    [
@@ -2991,6 +6066,32 @@
    ]
   ],
   [
+   "DRIFT[B2_profile_rows]",
+   "value-drift/census-drop",
+   2,
+   [
+    "B2-GRAIN",
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B2_rsig_indicator_delta1_at]",
+   "value-drift/census-drop",
+   2,
+   [
+    "B2-PSI-COUNTERREADING",
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B2_rsig_indicator_matched]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
    "DRIFT[B2_widest_zero_N]",
    "value-drift/census-drop",
    1,
@@ -3007,11 +6108,67 @@
    ]
   ],
   [
-   "DRIFT[B3_dist_max_saturated]",
+   "DRIFT[B3_block_entries_nonroot_positive]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-BLOCKENTRY"
+   ]
+  ],
+  [
+   "DRIFT[B3_block_entries_positive]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-BLOCKENTRY"
+   ]
+  ],
+  [
+   "DRIFT[B3_block_entries_root_zero]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-BLOCKENTRY"
+   ]
+  ],
+  [
+   "DRIFT[B3_block_entry_rows]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-BLOCKENTRY"
+   ]
+  ],
+  [
+   "DRIFT[B3_block_inf_sup]",
    "value-drift/census-drop",
    1,
    [
     "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B3_block_reentry_forced_all]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-BLOCKENTRY"
+   ]
+  ],
+  [
+   "DRIFT[B3_dist_max_informative]",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B3_dist_max_saturated]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-DISTANCE"
    ]
   ],
   [
@@ -3050,8 +6207,9 @@
   [
    "DRIFT[B3_profile_pairs]",
    "value-drift/census-drop",
-   1,
+   2,
    [
+    "B3-MONOTONE",
     "V-VERDICT"
    ]
   ],
@@ -3081,6 +6239,31 @@
    ]
   ],
   [
+   "DRIFT[B4_carrier_dead_rows]",
+   "value-drift/census-drop",
+   2,
+   [
+    "B4-CARRIER-SUPPLY",
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[B4_carrier_open_rows]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-SUPPLY"
+   ]
+  ],
+  [
+   "DRIFT[B4_rows_statable_d4]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-SUPPLY"
+   ]
+  ],
+  [
    "DRIFT[G_deliveryfree]",
    "value-drift/census-drop",
    2,
@@ -3107,6 +6290,22 @@
    ]
   ],
   [
+   "DRIFT[armB_motivated]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B5-FREEITEMS"
+   ]
+  ],
+  [
+   "DRIFT[birkhoff_crossratio_infinite]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B1-TREE"
+   ]
+  ],
+  [
    "DRIFT[birkhoff_diameter_finite]",
    "value-drift/census-drop",
    1,
@@ -3115,10 +6314,20 @@
    ]
   ],
   [
-   "DRIFT[birkhoff_tau]",
+   "DRIFT[birkhoff_doeblin_history]",
    "value-drift/census-drop",
    1,
    [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[birkhoff_tau]",
+   "value-drift/census-drop",
+   3,
+   [
+    "B0-SUCCESSOR-NAMED",
+    "B1-TREE",
     "V-VERDICT"
    ]
   ],
@@ -3131,7 +6340,15 @@
    ]
   ],
   [
-   "DRIFT[budget_arbmerge]+ERASE",
+   "DRIFT[birkhoff_zero_offdiag]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B1-TREE"
+   ]
+  ],
+  [
+   "DRIFT[budget_arbmerge]",
    "value-drift/census-drop",
    1,
    [
@@ -3155,6 +6372,71 @@
    ]
   ],
   [
+   "DRIFT[carrier_chain_exceptions]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-CHAIN"
+   ]
+  ],
+  [
+   "DRIFT[carrier_chain_tested]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-CHAIN"
+   ]
+  ],
+  [
+   "DRIFT[carrier_cong_d4]",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[carrier_cong_d5]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-SUPPLY"
+   ]
+  ],
+  [
+   "DRIFT[carrier_menu_d4]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-CHAIN"
+   ]
+  ],
+  [
+   "DRIFT[carrier_menu_d5]",
+   "value-drift/census-drop",
+   2,
+   [
+    "B4-CARRIER-CHAIN",
+    "B4-CARRIER-SUPPLY"
+   ]
+  ],
+  [
+   "DRIFT[choices]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B5-FREEITEMS"
+   ]
+  ],
+  [
+   "DRIFT[choices_forced]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B5-FREEITEMS"
+   ]
+  ],
+  [
    "DRIFT[classifier_matches]",
    "value-drift/census-drop",
    1,
@@ -3168,6 +6450,46 @@
    1,
    [
     "A6-CLASSIFIER"
+   ]
+  ],
+  [
+   "DRIFT[cli_accepted_sample]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "DRIFT[cli_exit_on_unknown]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "DRIFT[cli_flags]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "DRIFT[cli_flags_known]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "DRIFT[cli_rejected_sample]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-CLI"
    ]
   ],
   [
@@ -3305,6 +6627,14 @@
    ]
   ],
   [
+   "DRIFT[event_kind_count]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A1-KINDS"
+   ]
+  ],
+  [
    "DRIFT[event_kinds]",
    "value-drift/census-drop",
    2,
@@ -3314,12 +6644,37 @@
    ]
   ],
   [
+   "DRIFT[free_items]",
+   "value-drift/census-drop",
+   2,
+   [
+    "B5-FREEITEMS",
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[grain_control_by_window]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-CHAIN"
+   ]
+  ],
+  [
    "DRIFT[grain_control_classes]",
    "value-drift/census-drop",
    2,
    [
     "A5-CONTROL-GRAIN",
     "V-VERDICT"
+   ]
+  ],
+  [
+   "DRIFT[grain_primary_by_window]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B4-CARRIER-CHAIN"
    ]
   ],
   [
@@ -3340,11 +6695,11 @@
    ]
   ],
   [
-   "DRIFT[kind_counts]+POISON",
+   "DRIFT[kind_counts]",
    "value-drift/census-drop",
    1,
    [
-    "A1-KINDS"
+    "B1-NODUP"
    ]
   ],
   [
@@ -3353,6 +6708,14 @@
    1,
    [
     "A1-LAYER"
+   ]
+  ],
+  [
+   "DRIFT[layer_kind_branches]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A1-KINDS"
    ]
   ],
   [
@@ -3404,6 +6767,22 @@
    ]
   ],
   [
+   "DRIFT[menu_duplicate_entries]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B1-NODUP"
+   ]
+  ],
+  [
+   "DRIFT[menu_entries_total]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B1-NODUP"
+   ]
+  ],
+  [
    "DRIFT[minimal_chain_weights]",
    "value-drift/census-drop",
    2,
@@ -3438,6 +6817,72 @@
    ]
   ],
   [
+   "DRIFT[mono_entailment_violations]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B3-MONOTONE"
+   ]
+  ],
+  [
+   "DRIFT[mono_expect]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-MONO"
+   ]
+  ],
+  [
+   "DRIFT[mono_expect_all]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-MONO"
+   ]
+  ],
+  [
+   "DRIFT[mono_pairs]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-MONO"
+   ]
+  ],
+  [
+   "DRIFT[mono_pairs_all]",
+   "value-drift/census-drop",
+   2,
+   [
+    "A4-MONO",
+    "B3-NSUP-PROFILE"
+   ]
+  ],
+  [
+   "DRIFT[mono_shrinking]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-MONO"
+   ]
+  ],
+  [
+   "DRIFT[mono_shrinking_all]",
+   "value-drift/census-drop",
+   2,
+   [
+    "A4-MONO",
+    "B3-MONOTONE"
+   ]
+  ],
+  [
+   "DRIFT[n_actors]",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
    "DRIFT[nonrenewal_depth5]",
    "value-drift/census-drop",
    2,
@@ -3452,6 +6897,23 @@
    1,
    [
     "A4-MASS"
+   ]
+  ],
+  [
+   "DRIFT[nsup_shrinking]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-NSUP-SHRINKS"
+   ]
+  ],
+  [
+   "DRIFT[nsup_shrinking_all]",
+   "value-drift/census-drop",
+   2,
+   [
+    "A4-NSUP-SHRINKS",
+    "B3-NSUP-PROFILE"
    ]
   ],
   [
@@ -3480,6 +6942,22 @@
    ]
   ],
   [
+   "DRIFT[pred_forcing_live_empty_but_components]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-PRED"
+   ]
+  ],
+  [
+   "DRIFT[pred_forcing_singleton_but_merge_pairs]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-PRED"
+   ]
+  ],
+  [
    "DRIFT[pred_reduction_disagreements]",
    "value-drift/census-drop",
    1,
@@ -3496,6 +6974,14 @@
    ]
   ],
   [
+   "DRIFT[pred_unforced_disagreements]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-PRED-UNFORCED"
+   ]
+  ],
+  [
    "DRIFT[proper_rows]",
    "value-drift/census-drop",
    2,
@@ -3505,11 +6991,27 @@
    ]
   ],
   [
+   "DRIFT[proper_violations]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A3-KERNEL"
+   ]
+  ],
+  [
    "DRIFT[ratio_df_ge_t]",
    "value-drift/census-drop",
    1,
    [
     "A2-SIGN"
+   ]
+  ],
+  [
+   "DRIFT[raw_cut_masses]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A3-CUTADD"
    ]
   ],
   [
@@ -3611,6 +7113,57 @@
    ]
   ],
   [
+   "DRIFT[root_conditional_constant]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A7-ROOTTHEOREM"
+   ]
+  ],
+  [
+   "DRIFT[root_one_orbit_per_kind]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A7-ROOTTHEOREM"
+   ]
+  ],
+  [
+   "DRIFT[rsig_all_count]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-BLOCKCOVER"
+   ]
+  ],
+  [
+   "DRIFT[rsig_block_coverage]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-BLOCKCOVER"
+   ]
+  ],
+  [
+   "DRIFT[rsig_blocks_declared_at_d5]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-BLOCKCOVER"
+   ]
+  ],
+  [
+   "DRIFT[rsig_blocks_n]",
+   "value-drift/census-drop",
+   4,
+   [
+    "B2-BLOCKCOVER",
+    "B3-BLOCKENTRY",
+    "B3-HITTING",
+    "V-VERDICT"
+   ]
+  ],
+  [
    "DRIFT[rsig_count]",
    "value-drift/census-drop",
    2,
@@ -3636,6 +7189,38 @@
    ]
   ],
   [
+   "DRIFT[rsig_notexact_eq_reentered]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-PORTS"
+   ]
+  ],
+  [
+   "DRIFT[rsig_notexact_symdiff]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A4-PORTS"
+   ]
+  ],
+  [
+   "DRIFT[rsig_profile_depths]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-BLOCKCOVER"
+   ]
+  ],
+  [
+   "DRIFT[rsig_profiles_all]",
+   "value-drift/census-drop",
+   1,
+   [
+    "B2-BLOCKCOVER"
+   ]
+  ],
+  [
    "DRIFT[rsig_reentries]",
    "value-drift/census-drop",
    2,
@@ -3650,6 +7235,14 @@
    1,
    [
     "V-SEVEN"
+   ]
+  ],
+  [
+   "DRIFT[seven_facts_ok]",
+   "value-drift/census-drop",
+   1,
+   [
+    "V-VERDICT"
    ]
   ],
   [
@@ -3687,6 +7280,36 @@
    ]
   ],
   [
+   "DRIFT[t5_ledger_delivered]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A0-LEDGER"
+   ]
+  ],
+  [
+   "DRIFT[t5_ledger_number]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A0-LEDGER"
+   ]
+  ],
+  [
+   "DRIFT[t5_ledger_pinned]",
+   "value-drift/census-drop",
+   1,
+   [
+    "A0-LEDGER"
+   ]
+  ],
+  [
+   "DRIFT[t5_note_status_line]",
+   "value-drift/census-drop",
+   0,
+   []
+  ],
+  [
    "DRIFT[t_cumulative]",
    "value-drift/census-drop",
    2,
@@ -3721,11 +7344,91 @@
    ]
   ],
   [
+   "DRIFT[verbatim_consumers]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "B0-SUCCESSOR-NAMED"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_consumers_bound]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-CONSUMERBINDING"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_consumers_unbound]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-CONSUMERBINDING"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_drift_appends]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMDRIFT"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_drift_real]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMDRIFT"
+   ]
+  ],
+  [
    "DRIFT[verbatim_drift_survivors]",
    "value-drift/census-drop",
    1,
    [
     "M-VERBATIMDRIFT"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_min_chars]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMSPEC"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_min_required]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMSPEC"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_n]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMSPEC"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_ok]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMSPEC"
+   ]
+  ],
+  [
+   "DRIFT[verbatim_unique]",
+   "value-drift/census-drop",
+   1,
+   [
+    "M-VERBATIMSPEC"
    ]
   ],
   [
@@ -3750,6 +7453,30 @@
    1,
    [
     "A5-FACTORISATION"
+   ]
+  ],
+  [
+   "BUILDER-FIELD-SWAP",
+   "verdict-builder",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "BUILDER-VALUE-SWAP",
+   "verdict-builder",
+   1,
+   [
+    "V-VERDICT"
+   ]
+  ],
+  [
+   "BUILDER-TOKEN-DROPPED",
+   "verdict-builder",
+   1,
+   [
+    "V-VERDICT"
    ]
   ],
   [
@@ -3814,8 +7541,9 @@
   [
    "ATOM-CLAIMED-WITHOUT-NU",
    "science",
-   2,
+   3,
    [
+    "B0-SUCCESSOR-NAMED",
     "B2-ATOM",
     "V-VERDICT"
    ]
@@ -3839,11 +7567,44 @@
    ]
   ],
   [
+   "FORCING-WITNESS-BROKEN",
+   "compliance",
+   1,
+   [
+    "C-THEOREMCENSUS"
+   ]
+  ],
+  [
+   "FORCING-COVERAGE-BROKEN",
+   "compliance",
+   1,
+   [
+    "C-THEOREMCENSUS"
+   ]
+  ],
+  [
    "COMPLIANCE-FALSE",
    "compliance",
    1,
    [
     "C-COMPLIANCE"
+   ]
+  ],
+  [
+   "COMPLIANCE-CONSTANT-ROW",
+   "compliance",
+   1,
+   [
+    "C-NOCONSTANTRULES"
+   ]
+  ],
+  [
+   "COMPLIANCE-ASSERTED-INFLATED",
+   "compliance",
+   2,
+   [
+    "C-COMPLIANCE",
+    "C-NOCONSTANTRULES"
    ]
   ],
   [
@@ -3877,20 +7638,178 @@
    [
     "M-VERBATIMDRIFT"
    ]
+  ],
+  [
+   "VERBATIM-CONSUMER-UNBOUND",
+   "anchor",
+   2,
+   [
+    "B0-SUCCESSOR-NAMED",
+    "M-CONSUMERBINDING"
+   ]
+  ],
+  [
+   "VERBATIM-WINDOW-TRUNCATED",
+   "anchor",
+   1,
+   [
+    "M-VERBATIMSPEC"
+   ]
+  ],
+  [
+   "VERBATIM-DRIFT-APPEND-ONLY",
+   "anchor",
+   1,
+   [
+    "M-VERBATIMDRIFT"
+   ]
+  ],
+  [
+   "LEDGER-DEGRADED-TO-NONE",
+   "anchor",
+   1,
+   [
+    "A0-LEDGER"
+   ]
+  ],
+  [
+   "UNANCHORED-OPEN",
+   "anchor",
+   1,
+   [
+    "C-INSTRUMENT"
+   ]
+  ],
+  [
+   "SUBPROCESS-SPAWNED",
+   "anchor",
+   1,
+   [
+    "C-INSTRUMENT"
+   ]
+  ],
+  [
+   "CLI-WHITELIST-DISABLED",
+   "cli",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "CLI-EXIT-CODE-WRONG",
+   "cli",
+   1,
+   [
+    "C-CLI"
+   ]
+  ],
+  [
+   "KEYCOVERAGE-HOLE",
+   "coverage",
+   1,
+   [
+    "C-KEYCOVERAGE"
+   ]
+  ],
+  [
+   "SHARED-VERDICT-LITERAL",
+   "comparator",
+   1,
+   [
+    "C-INSTRUMENT"
+   ]
+  ],
+  [
+   "GATE-NAMES-MUTANT",
+   "comparator",
+   1,
+   [
+    "C-INSTRUMENT"
+   ]
+  ],
+  [
+   "DRIFT[compliance]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-COMPLIANCE"
+   ]
+  ],
+  [
+   "DRIFT[compliance_computed]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-COMPLIANCE"
+   ]
+  ],
+  [
+   "DRIFT[forcing_kinds_match]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-THEOREMCENSUS"
+   ]
+  ],
+  [
+   "DRIFT[keys_read_by_a_gate]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-KEYCOVERAGE"
+   ]
+  ],
+  [
+   "DRIFT[keys_with_falsifier]+POISON",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-KEYCOVERAGE"
+   ]
+  ],
+  [
+   "DRIFT[n_disclosure]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-THEOREMCENSUS"
+   ]
+  ],
+  [
+   "DRIFT[n_substantive]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-THEOREMCENSUS"
+   ]
+  ],
+  [
+   "DRIFT[never_falsified]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-WAIVERS"
+   ]
+  ],
+  [
+   "DRIFT[waivers]",
+   "value-drift/census-drop",
+   1,
+   [
+    "C-WAIVERS"
+   ]
   ]
  ],
  "mutants_dead": [],
- "mutants_total": 118,
+ "mutants_total": 228,
+ "n_actors": 2,
  "n_disclosure": 1,
  "n_fail": 0,
- "n_pass": 44,
- "n_substantive": 40,
- "n_theorem": 3,
- "never_falsified": [
-  "A3-CUTADD",
-  "A4-MONO",
-  "A7-ROOTTHEOREM"
- ],
+ "n_pass": 63,
+ "n_substantive": 56,
+ "n_theorem": 6,
+ "never_falsified": [],
  "never_falsified_unwaived": [],
  "nonrenewal_depth5": "1671053/2168717",
  "nonrenewal_grows": true,
@@ -3902,6 +7821,7 @@
   "1671053/2168717"
  ],
  "nsup_shrinking": 4340,
+ "nsup_shrinking_all": 29980,
  "operator_agree": true,
  "path_drift_rows": [
   [
@@ -3951,6 +7871,12 @@
    "v10/note-d46f-reception-dynamics.md",
    "v10/note-d46f-reception-dynamics_.md",
    false
+  ],
+  [
+   "T9",
+   "v10/LOG.md",
+   "v10/LOG_.md",
+   false
   ]
  ],
  "path_drift_survivors": 0,
@@ -3973,7 +7899,7 @@
   ],
   [
    "T5",
-   "round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED in-unit below and printed"
+   "round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED in-unit below against the byte-anchored ledger row T9 and printed"
   ],
   [
    "T6",
@@ -3986,7 +7912,26 @@
   [
    "T8",
    "TERMINAL v10 #403"
+  ],
+  [
+   "T9",
+   "v10 is CLOSED; this artifact is byte-anchored like every other pinned row and read from the same path, never at a moving reference"
   ]
+ ],
+ "phase3_falsifiers": [
+  "DRIFT[compliance]",
+  "DRIFT[compliance_computed]",
+  "DRIFT[forcing_kinds_match]",
+  "DRIFT[keys_read_by_a_gate]",
+  "DRIFT[keys_with_falsifier]",
+  "DRIFT[n_disclosure]",
+  "DRIFT[n_substantive]",
+  "DRIFT[never_falsified]",
+  "DRIFT[waivers]"
+ ],
+ "pin_erratum_kind_count": [
+  6,
+  5
  ],
  "pool3_branching": "1063/73",
  "pool3_depth3": 3424,
@@ -4010,8 +7955,12 @@
   ]
  ],
  "positivity_violations": 0,
+ "pred_forcing_live_empty_but_components": 0,
+ "pred_forcing_singleton_but_merge_pairs": 0,
+ "pred_forcing_tested": 8893,
  "pred_reduction_disagreements": 0,
  "pred_reduction_tested": 30729,
+ "pred_unforced_disagreements": 2078,
  "proper_rows": [
   [
    1,
@@ -4069,7 +8018,9 @@
   "134587/2048",
   "2168717/16384"
  ],
- "read_but_unconstrained": [],
+ "read_but_unconstrained": [
+  "t5_note_status_line"
+ ],
  "reconverging_pairs": 124,
  "redelivery_admissible": 350,
  "renewal_depth5_closed": "497664/2168717",
@@ -4170,6 +8121,10 @@
    1
   ]
  ],
+ "rsig_all_count": 39361,
+ "rsig_block_coverage": 39361,
+ "rsig_blocks_declared_at_d5": 4,
+ "rsig_blocks_n": 5,
  "rsig_count": 5161,
  "rsig_depths": [
   0,
@@ -4181,6 +8136,99 @@
  ],
  "rsig_menu_exact": 1365,
  "rsig_menu_not_exact": 3796,
+ "rsig_notexact_eq_reentered": true,
+ "rsig_notexact_symdiff": 0,
+ "rsig_profile_depths": [
+  [
+   "(1, 1)",
+   [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     16
+    ],
+    [
+     3,
+     64
+    ],
+    [
+     4,
+     256
+    ],
+    [
+     5,
+     1024
+    ],
+    [
+     6,
+     4096
+    ]
+   ]
+  ],
+  [
+   "(2, 2)",
+   [
+    [
+     3,
+     20
+    ],
+    [
+     4,
+     328
+    ],
+    [
+     5,
+     3440
+    ],
+    [
+     6,
+     29472
+    ]
+   ]
+  ],
+  [
+   "(2, 3)",
+   [
+    [
+     5,
+     4
+    ],
+    [
+     6,
+     104
+    ]
+   ]
+  ],
+  [
+   "(3, 2)",
+   [
+    [
+     5,
+     4
+    ],
+    [
+     6,
+     104
+    ]
+   ]
+  ],
+  [
+   "(3, 3)",
+   [
+    [
+     6,
+     424
+    ]
+   ]
+  ]
+ ],
  "rsig_profiles": [
   [
    [
@@ -4209,6 +8257,28 @@
     2
    ],
    4
+  ]
+ ],
+ "rsig_profiles_all": [
+  [
+   "(1, 1)",
+   5461
+  ],
+  [
+   "(2, 2)",
+   33260
+  ],
+  [
+   "(2, 3)",
+   108
+  ],
+  [
+   "(3, 2)",
+   108
+  ],
+  [
+   "(3, 3)",
+   424
   ]
  ],
  "rsig_reentries": 3796,
@@ -4243,6 +8313,8 @@
    true
   ]
  ],
+ "shared_verdict_literals": [],
+ "subprocess_calls": 0,
  "sym_G_violations": 0,
  "sym_menu_violations": 0,
  "sym_not_closed": 0,
@@ -4269,8 +8341,11 @@
    0
   ]
  ],
+ "t5_ledger_delivered": 494,
  "t5_ledger_number": 495,
- "t5_ledger_source": "git show HEAD:v10/LOG.md (committed bytes; the working-tree LOG is never read)",
+ "t5_ledger_path": "v10/LOG.md",
+ "t5_ledger_pinned": 492,
+ "t5_ledger_source": "v10/LOG.md read at its pinned sha256-12 (row T9), byte-anchored and verbatim-anchored like every other pinned artifact; no subprocess, no moving reference",
  "t5_note_status_line": "**Status: ROUND-1 REVIEWED AND REPAIRED, 2026-07-27.** Hostile round:",
  "t_cumulative": [
   1,
@@ -4355,6 +8430,129 @@
    ]
   ]
  ],
+ "typed_F_assignments": [
+  "B2_nu_block_size",
+  "B2_nu_profile",
+  "B2_nu_support",
+  "carrier_cong_d4",
+  "carrier_cong_d5",
+  "carrier_menu_d4",
+  "carrier_menu_d5",
+  "t5_ledger_source"
+ ],
+ "unanchored_opens": [],
+ "verbatim_consumers": [
+  "A0-LEDGER",
+  "A1-BUDGETS",
+  "A1-DELIVERY",
+  "A3-KERNEL",
+  "A3-POSITIVITY",
+  "A4-PORTS",
+  "A5-CONTROL-GRAIN",
+  "A5-ESCAPE",
+  "A5-METHOD",
+  "A5-OPERATOR-CONTROL",
+  "A6-REOPENING",
+  "B0-SUCCESSOR-NAMED",
+  "B4-CARRIER-CHAIN",
+  "B4-CARRIER-SUPPLY"
+ ],
+ "verbatim_consumers_bound": [
+  "A0-LEDGER",
+  "A1-BUDGETS",
+  "A1-DELIVERY",
+  "A3-KERNEL",
+  "A3-POSITIVITY",
+  "A4-PORTS",
+  "A5-CONTROL-GRAIN",
+  "A5-ESCAPE",
+  "A5-METHOD",
+  "A5-OPERATOR-CONTROL",
+  "A6-REOPENING",
+  "B0-SUCCESSOR-NAMED",
+  "B4-CARRIER-CHAIN",
+  "B4-CARRIER-SUPPLY"
+ ],
+ "verbatim_consumers_unbound": [],
+ "verbatim_drift_appends": 0,
+ "verbatim_drift_how": [
+  [
+   "T1",
+   "A1-BUDGETS",
+   "first-digit"
+  ],
+  [
+   "T2",
+   "A5-ESCAPE",
+   "first-digit"
+  ],
+  [
+   "T2",
+   "A5-OPERATOR-CONTROL",
+   "first-digit"
+  ],
+  [
+   "T3",
+   "A5-ESCAPE",
+   "first-digit"
+  ],
+  [
+   "T3",
+   "A6-REOPENING",
+   "first-digit"
+  ],
+  [
+   "T4",
+   "A4-PORTS",
+   "first-digit"
+  ],
+  [
+   "T4",
+   "B0-SUCCESSOR-NAMED",
+   "word-swap"
+  ],
+  [
+   "T4",
+   "A3-POSITIVITY",
+   "first-digit"
+  ],
+  [
+   "T5",
+   "A5-CONTROL-GRAIN",
+   "first-digit"
+  ],
+  [
+   "T5",
+   "B4-CARRIER-SUPPLY",
+   "first-digit"
+  ],
+  [
+   "T5",
+   "B4-CARRIER-CHAIN",
+   "word-swap"
+  ],
+  [
+   "T9",
+   "A0-LEDGER",
+   "first-digit"
+  ],
+  [
+   "T6",
+   "A5-METHOD",
+   "first-digit"
+  ],
+  [
+   "T7",
+   "A3-KERNEL",
+   "first-digit"
+  ],
+  [
+   "T8",
+   "A1-DELIVERY",
+   "word-swap"
+  ]
+ ],
+ "verbatim_drift_real": true,
  "verbatim_drift_rows": [
   [
    "T1",
@@ -4402,6 +8600,21 @@
    false
   ],
   [
+   "T5",
+   "B4-CARRIER-SUPPLY",
+   false
+  ],
+  [
+   "T5",
+   "B4-CARRIER-CHAIN",
+   false
+  ],
+  [
+   "T9",
+   "A0-LEDGER",
+   false
+  ],
+  [
    "T6",
    "A5-METHOD",
    false
@@ -4418,7 +8631,86 @@
   ]
  ],
  "verbatim_drift_survivors": 0,
- "verbatim_n": 12,
+ "verbatim_min_chars": 41,
+ "verbatim_min_required": 40,
+ "verbatim_n": 15,
+ "verbatim_occurrences": [
+  [
+   "T1",
+   "A1-BUDGETS",
+   1
+  ],
+  [
+   "T2",
+   "A5-ESCAPE",
+   1
+  ],
+  [
+   "T2",
+   "A5-OPERATOR-CONTROL",
+   1
+  ],
+  [
+   "T3",
+   "A5-ESCAPE",
+   1
+  ],
+  [
+   "T3",
+   "A6-REOPENING",
+   1
+  ],
+  [
+   "T4",
+   "A4-PORTS",
+   1
+  ],
+  [
+   "T4",
+   "B0-SUCCESSOR-NAMED",
+   1
+  ],
+  [
+   "T4",
+   "A3-POSITIVITY",
+   1
+  ],
+  [
+   "T5",
+   "A5-CONTROL-GRAIN",
+   1
+  ],
+  [
+   "T5",
+   "B4-CARRIER-SUPPLY",
+   1
+  ],
+  [
+   "T5",
+   "B4-CARRIER-CHAIN",
+   1
+  ],
+  [
+   "T9",
+   "A0-LEDGER",
+   1
+  ],
+  [
+   "T6",
+   "A5-METHOD",
+   1
+  ],
+  [
+   "T7",
+   "A3-KERNEL",
+   1
+  ],
+  [
+   "T8",
+   "A1-DELIVERY",
+   1
+  ]
+ ],
  "verbatim_ok": [
   [
    "T1",
@@ -4466,6 +8758,21 @@
    "A5-CONTROL-GRAIN"
   ],
   [
+   "T5",
+   "v10/data/d74_transport_holonomy_exact.out",
+   "B4-CARRIER-SUPPLY"
+  ],
+  [
+   "T5",
+   "v10/data/d74_transport_holonomy_exact.out",
+   "B4-CARRIER-CHAIN"
+  ],
+  [
+   "T9",
+   "v10/LOG.md",
+   "A0-LEDGER"
+  ],
+  [
    "T6",
    "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
    "A5-METHOD"
@@ -4481,22 +8788,15 @@
    "A1-DELIVERY"
   ]
  ],
- "verdict": "GPREP-FOUNDATION-TERMINALIZED-[7/7 facts: grammar 5 kinds; census 243769 histories cumulative [1, 9, 69, 521, 3969, 30729, 243769] with G_7 = 2168717/16384 and delivery-free G_7 = 139065/1024, deliveries REDUCE branching first at D = 4; kernels proper and STRICTLY POSITIVE at r = 1..7 with 0 violations; ports R-SIG 5161 / R-MENU 1365 with 3796 / 0 re-entries and non-renewal mass 1671053/2168717; ESCAPE 68 transitions into 5 above-window classes at the DECLARED-PRIMARY 13-class grain and 76 at the 113-class control grain, NO CLOSED EXACT TRANSFER; reopening 4 minimal chains at 1/256 over 84 prefixes; root symmetry 0 menu and 0 potential violations]  +  GPREP-MINORIZATION-FOUND-[delta = 1 exact; N = 1; nu = the common minorant on 2 Psi-classes of the 13-class primary grain; class = the holdings-profile blocks of R-SIG, block (1, 1) exhibited over 1365 points at depths [0, 1, 2, 3, 4, 5]; scope = 2 actors, transport depth <= 6, MATCHED horizon, primary grain \u2014 the blocks are ATOMS, not merely small sets]  +  GPREP-MINORIZATION-BLOCKED-AT-[THE MONOTONE HOLDINGS LADDER: the holdings profile decreases at 0 of 30728 transitions, so the atoms form a ladder the process climbs and never descends; the full R-SIG class has delta* = 0 on both of its widest windows (N = [1, 2]); the R-SIG return probability has infimum 0 on the widest window and its zero-set is [20344, 1044, 84, 4, 0]; 84 histories are unresolved at this cap and the attained return distance reaches 2 on the informative rows; the hitting infimum into every block is 0; and at the history level the Birkhoff coefficient is 1 and the Doeblin constant 0 by unique parenthood at all 243768 columns]",
- "verdict_falsifiers_that_killed": 5,
- "waivers": [
-  [
-   "A3-CUTADD",
-   "DISCLOSURE"
-  ],
-  [
-   "A4-MONO",
-   "THEOREM-PASS"
-  ],
-  [
-   "A7-ROOTTHEOREM",
-   "THEOREM-PASS"
-  ]
+ "verbatim_unique": true,
+ "verdict": "GPREP-FOUNDATION-TERMINALIZED-[7/7 facts: grammar 5 kinds; census 243769 histories cumulative [1, 9, 69, 521, 3969, 30729, 243769] with G_7 = 2168717/16384 and delivery-free G_7 = 139065/1024, deliveries REDUCE branching first at D = 4; kernels proper and STRICTLY POSITIVE at horizons r up to 7 with 0 violations; ports R-SIG 5161 / R-MENU 1365 with 3796 / 0 re-entries and non-renewal mass 1671053/2168717; ESCAPE 68 transitions into 5 above-window classes at the DECLARED-PRIMARY 13-class grain and 76 at the 113-class control grain, NO CLOSED EXACT TRANSFER; reopening 4 minimal chains at 1/256 over 84 prefixes; root symmetry 0 menu and 0 potential violations]  +  GPREP-MINORIZATION-FOUND-[delta = 1 exact; N = 1; nu = the common minorant on 2 Psi-classes of the 13-class primary grain; class = the holdings-profile blocks of R-SIG, block (1, 1) exhibited over 1365 points at depths [0, 1, 2, 3, 4, 5]; scope = 2 actors, transport depth <= 6, MATCHED horizon, DECLARED-PRIMARY grain \u2014 the blocks the cap can test are ATOMS at that grain, not merely small sets; the claim is NOT universal over blocks and the cap-excluded fifth block is named]  +  GPREP-ARM-B-BLOCKED-AT-THE-MONOTONE-HOLDINGS-LADDER<GRAIN=DECLARED-PRIMARY-13-CLASS;PSI-FAMILY=MENU-SHAPE-ONLY;FREE-ITEMS=4;LADDER=CORPUS-THEOREM;BLOCKING=CONSTRUCTION-FACT>-[the holdings profile decreases at 0 of 243768 transitions of the family, so the atoms form a ladder the process climbs and never descends; at the DECLARED-PRIMARY grain and over the MENU-SHAPE Psi family the full R-SIG class has delta* = 0 on both of its widest windows (N = [1, 2]), while at Psi = the R-SIG indicator the same class has delta* = 1 there (N = [1, 2]); the R-SIG return probability has infimum 0 on the widest window and its zero-set is [20344, 1044, 84, 4, 0]; 84 histories are unresolved at this cap and the attained return distance reaches 2 on the informative rows; the hitting infimum into every one of the 5 holdings-profile blocks is 0; at the ruled carrier CONG-185 the atom claim collapses to R-MENU (4 of 6 rows dead by the coarsening lemma); and at the history level the Birkhoff coefficient is 1 and the Doeblin constant is 0 by unique parenthood at all 243768 columns]",
+ "verdict_check": [
+  true,
+  "58 anchored fields, 73 numerals all accounted for, 3 segments"
  ],
+ "verdict_falsifiers_that_killed": 5,
+ "waiver_probes_registered": [],
+ "waivers": [],
  "welldef_control_level0": [
   4,
   45

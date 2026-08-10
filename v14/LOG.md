@@ -3100,3 +3100,43 @@ charge-without-momentum tension addressed as measurement; full
 era standards at construction.  Construction worker launched
 (opus).  In flight now (4): Γ-prep repair, weld-2 repair, U4
 construction, R4b construction.
+
+## 2026-08-10 — Γ-PREP REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #107)
+
+All twelve orders discharged.  **The recomposed head:
+GPREP-ARM-B-BLOCKED-AT-THE-MONOTONE-HOLDINGS-LADDER<GRAIN=
+DECLARED-PRIMARY-13-CLASS;PSI-FAMILY=MENU-SHAPE-ONLY;
+FREE-ITEMS=4;LADDER=CORPUS-THEOREM;BLOCKING=CONSTRUCTION-FACT>**
+with in-line gated: full-family scope 0/243,768; the grain- and
+Ψ-stamped δ* clauses; the Ψ=R-SIG-indicator FOUND-reachability
+witness (δ*=1, N=[1,2]); the five-block ladder with the hitting
+infimum into every block; the CONG-185 collapse (4/6 rows dead
+by the coarsening lemma, the atom claim collapsing to R-MENU).
+Unit-side recomputations matched the operator cell for cell
+((3,3)=424 at depth 6; census 39,361; the R-SIG-indicator
+column).  **TWO MEASURED RE-SCOPES, recorded as findings:** the
+theorem-pass census is 56/6/1, not the operator's 38/5/1
+reference (the mechanical two-way demonstration moved B3-MONOTONE
+too, each with a substantive companion gate; 19 gates added);
+and **B3-BLOCKENTRY caught the repair's own overreach — "every
+block is entered" is FALSE: the (1,1) block (R-MENU) is entered
+at exactly 0 transitions.  THE SHARPENED RESULT: the one atom
+surviving the carrier change is the one small set the process
+can never return to.**  The four injections all die (V-VERDICT
+×2; the artifact-integrity re-read; the anchor precheck);
+selftest exit 1 writing nothing; junk flags exit 2; 8/8
+representative mutants at named gates.  **The moving-HEAD read
+is gone** (v10/LOG.md = pinned row T9, byte- and
+verbatim-anchored, #495/#494/#492 parsed and gated at
+A0-LEDGER); **off-tree with git ABSENT from PATH:
+byte-identical** (output 9eb0174740b0 / receipt a28d8673a2cc);
+AST census 0 subprocess calls.  Totals: gates 44→63 (0
+failures); falsifiers 118→228 (0 dead, 0 erase-only);
+compliance 19 rows 18-computed+1-labelled; coverage 208/311
+keys all falsified; paper sweep 165 tokens 0 orphans; the
+receipt carries its producer sha (_code_sha256_12).  The pin's
+T1 six-vs-five error registered in-unit as a pin erratum
+(AST-measured: 5 branches), file-scope discipline held.
+Artifacts committed as-is: paper 0f92ab8a1af9, code
+8ddbc93cd48d, output 9eb0174740b0, receipt a28d8673a2cc.
+Battery next; TERMINAL on completion → the Γ-iteration pin.

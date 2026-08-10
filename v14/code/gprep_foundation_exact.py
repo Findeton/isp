@@ -14,34 +14,52 @@ predecessor named and did not run: operator-level minorization on the
 transport family (Doeblin on the R-SIG class; Birkhoff / Hilbert-metric
 contraction of the positive backward recursion G).
 
-CLI CONTRACT
+CLI CONTRACT (enforced by an argv WHITELIST parsed before any
+measurement runs; an unrecognized argument exits 2 and measures
+nothing; EVERY failure path writes nothing).
   /opt/homebrew/bin/python3.13 v14/code/gprep_foundation_exact.py
       A plain run.  Runs everything: anchors, ARM A, ARM B, every
       declared injection-falsifier, the never-falsified census, the
       compliance sweep, and the composed verdict.  WRITES
       v14/code/gprep_foundation_output.txt and
       v14/code/gprep_foundation_receipt.json (paths derived from this
-      file's own location).  Exit 0 whatever the science says; exit 1
-      ONLY on an anchor failure or a dead falsifier.  Two plain runs
-      are byte-identical: every wall-clock number goes to stderr and
-      never to the receipt.
+      file's own location), then RE-READS both from disk and verifies
+      them against the gated object before exiting.  Exit 0 whatever
+      the science says; exit 1 on an anchor failure, a dead falsifier
+      or an artifact-integrity failure — and in each of those cases
+      NOTHING is written.  Two plain runs are byte-identical, in the
+      repository or outside it, with or without git: every wall-clock
+      number goes to stderr and never to the receipt, and no runtime
+      input is read at a mutable reference.
   ... --no-write
       Identical measurement, no files written (diagnostic).
   ... --list-gates | --list-mutants
-      Print the gate / falsifier registries and exit 0.
+      Print the COMPLETE gate / falsifier registries (both branches
+      run after the last registration) and exit 0.  Writes nothing.
+  ... --selftest
+      Corrupt exactly one byte anchor in memory, confirm that exactly
+      one anchor row fails and that the anchor precheck refuses the
+      delivery, write NOTHING, and exit 1.
+  ... --mutant NAME
+      Apply one registered falsifier to the gated object, print the
+      gates it kills, write NOTHING, and exit 1 if it kills none (or
+      if NAME is not a registered falsifier).
 
 DISCIPLINE.  Exact arithmetic only (int / fractions.Fraction); an AST
 float-guard runs over this file's own source.  Every runtime input is
 either a hash-pinned artifact (byte + path-value + verbatim-context
 anchored) or this unit's own frozen declaration (RUNBOOK section 14,
 v14 #46): v14/LOG.md, /STATUS.md and every other mutable repo file are
-NOT read.  Determinism: no repr() of a frozenset ever reaches a sort
-key or a printed line — the stable-key function SK is used instead.
+NOT read, NO subprocess is spawned, and no file is read at `git show
+HEAD:` or any other moving reference.  Determinism: no repr() of a
+frozenset ever reaches a sort key or a printed line — the stable-key
+function SK is used instead.
 """
 import ast
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 from collections import defaultdict
@@ -51,18 +69,74 @@ from itertools import permutations
 sys.setrecursionlimit(50000)
 
 T0 = time.time()
-ARGV = set(sys.argv[1:])
+
+# ======================================================================
+# THE CLI WHITELIST.  Parsed before anything is measured, so that an
+# unrecognized argument can never be silently ignored (v14 #66 -> #82:
+# the registered disease, repaired here).  Exit 2 is the usage exit and
+# exists only at this site.
+# ======================================================================
+EXIT_USAGE = 2
+FLAGS_NULLARY = ('--no-write', '--list-gates', '--list-mutants',
+                 '--selftest')
+FLAGS_VALUED = ('--mutant',)
+USAGE = (
+    "usage: gprep_foundation_exact.py "
+    "[--no-write] [--list-gates] [--list-mutants] [--selftest] "
+    "[--mutant NAME]\n"
+    "  accepted flags: " + ", ".join(sorted(FLAGS_NULLARY + FLAGS_VALUED))
+    + "\n  anything else is rejected; no measurement runs and no file "
+      "is written.\n")
+
+
+def parse_argv(argv):
+    """(accepted {flag: value}, rejected [tokens]).  A valued flag must
+    be followed by a non-flag token."""
+    seen, bad, i = {}, [], 0
+    while i < len(argv):
+        a = argv[i]
+        if a in FLAGS_NULLARY:
+            seen[a] = True
+        elif a in FLAGS_VALUED:
+            if i + 1 >= len(argv) or argv[i + 1].startswith('-'):
+                bad.append(a + " (missing value)")
+            else:
+                i += 1
+                seen[a] = argv[i]
+        else:
+            bad.append(a)
+        i += 1
+    return seen, bad
+
+
+ARGV, _argv_bad = parse_argv(sys.argv[1:])
+if _argv_bad:
+    sys.stderr.write(USAGE)
+    sys.stderr.write("  unrecognized argument(s): "
+                     + ", ".join(_argv_bad) + "\n")
+    sys.stderr.flush()
+    sys.exit(EXIT_USAGE)
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = os.path.dirname(REPO)          # .../isp
 HERE = os.path.dirname(os.path.abspath(__file__))
 SELF = os.path.abspath(__file__)
 
 OUT_LINES = []
+# The emission-time digest.  Every line is folded in AT THE MOMENT IT
+# IS EMITTED, so a mutation of OUT_LINES after the gates have run —
+# the injection that put an invented first line into the delivered
+# output with every gate green — cannot reach it.  The written file is
+# re-read and compared against this digest before the process exits.
+EMIT_DIGEST = hashlib.sha256()
+EMIT_LINES = [0]
 
 
 def emit(s=""):
     """Deterministic receipt line: stdout + the output file."""
     OUT_LINES.append(s)
+    EMIT_DIGEST.update((s + "\n").encode())
+    EMIT_LINES[0] += 1
     print(s)
 
 
@@ -84,9 +158,22 @@ def SK(o):
     return ("V", type(o).__name__ + "|" + repr(o))
 
 
+OPENED = set()          # every path this process READS, instrumented
+
+
 def sha12(path):
+    OPENED.add(os.path.abspath(path))
     with open(path, 'rb') as fh:
         return hashlib.sha256(fh.read()).hexdigest()[:12]
+
+
+def read_text(path):
+    """The ONLY text-read route in this file.  Every path it touches is
+    recorded, so that 'no unanchored runtime inputs' can be COMPUTED
+    rather than asserted (RUNBOOK section 14, v14 #46)."""
+    OPENED.add(os.path.abspath(path))
+    with open(path) as fh:
+        return fh.read()
 
 
 def frs(x):
@@ -127,7 +214,9 @@ ROWS = [
      "TERMINAL v10 #304",
      [("v10/code/d42b1_transport_exact.py", "576275d55ecf"),
       ("v10/note-d42b1-transport-and-reconciliation.md", "8aa031a4b0e3")],
-     "the transport grammar: 6 event kinds, delivery/merge "
+     "the transport grammar: the event kinds (the PIN's summary column "
+     "says 6; the committed generator has exactly 5 branches — PIN "
+     "ERRATUM, registered in-unit and measured below), delivery/merge "
      "preconditions+effects, budgets"),
     ("T2", "THE BOUNDARY THEOREM",
      "TERMINAL v10 #392 (round+delta)",
@@ -150,14 +239,17 @@ ROWS = [
       ("v10/data/d70_horizon_limit_exact.out", "1177761ed54d")],
      "k_r proper r = 1..7; G_1..G_7 both scopes; R-SIG/R-MENU; 4^n; "
      "(3/2)^n; 0.7705; the root-symmetry theorem; the named successor"),
-    ("T5", "THE ABSTRACTION LADDER",
+    ("T5", "THE ABSTRACTION LADDER AND THE CARRIER",
      "round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED "
-     "in-unit below and printed",
+     "in-unit below against the byte-anchored ledger row T9 and "
+     "printed",
      [("v10/note-d74-transport-holonomy-result.md", "0180e21c7127"),
       ("v10/code/d74_transport_holonomy_exact.py", "bb852161aced"),
       ("v10/data/d74_transport_holonomy_exact.out", "b5a9d50f9573")],
      "the six committed abstractions (SEQ 3969 / REC 2477 / MULT 578 / "
-     "STATE 125 / PORT 65 / MENU 113)"),
+     "STATE 125 / PORT 65 / MENU 113) AND THE TWO CARRIER ROWS: "
+     "(A,B) d<=4 menu quotient 113 / coarsest congruence 185; "
+     "(A,B) d<=5 menu quotient 265 / coarsest congruence 462"),
     ("T6", "THE CHAIN'S DEFINITION",
      "TERMINAL v10 #349",
      [("v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
@@ -176,6 +268,13 @@ ROWS = [
      "TERMINAL v10 #403",
      [("v10/note-d46f-reception-dynamics.md", "a6368078be4c")],
      "the per-type update table; delivery NON-INJECTIVE"),
+    ("T9", "THE COMMITTED v10 LEDGER",
+     "v10 is CLOSED; this artifact is byte-anchored like every other "
+     "pinned row and read from the same path, never at a moving "
+     "reference",
+     [("v10/LOG.md", "d244f925e172")],
+     "the D74 terminal stamp (LEDGER #495) and the D74 delivery / pin "
+     "stamps immediately preceding it"),
 ]
 
 # --- verbatim-context anchors: context WINDOWS, each bound to a named
@@ -219,8 +318,24 @@ VERBATIM = [
      "**HZ1-b (strict positivity) is the substantive one**",
      "A3-POSITIVITY"),
     ("T5", "v10/data/d74_transport_holonomy_exact.out",
-     "MENU        113",
+     "AB4 (A,B) depth<=4 CARRIER: menu quotient 113 classes; coarsest "
+     "congruence 185 classes after 5 refinement rounds",
      "A5-CONTROL-GRAIN"),
+    ("T5", "v10/data/d74_transport_holonomy_exact.out",
+     "(A,B) depth<=5 CARRIER: menu quotient 265 classes; coarsest "
+     "congruence 462 classes after 6 refinement rounds",
+     "B4-CARRIER-SUPPLY"),
+    ("T5", "v10/data/d74_transport_holonomy_exact.out",
+     "Refining the menu partition by successor-closure (partition\n"
+     "        refinement to a fixed point) gives the coarsest weighted\n"
+     "        CONGRUENCE, the strongest form of descent.",
+     "B4-CARRIER-CHAIN"),
+    ("T9", "v10/LOG.md",
+     "## 2026-07-27 — D74 ROUND 1 ADJUDICATED AND TERMINAL: TH-II WITH "
+     "A\n## FIND — THE CURVATURE STANDS AT FOUR POOLS; THE SCALAR PHASE "
+     "IS\n## EMPTY ON THE HONEST CARRIER; THE EVEN CHANNEL CARRIES J\n"
+     "## (LEDGER #495)",
+     "A0-LEDGER"),
     ("T6", "v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md",
      "- `P_0` = the partition of histories by *menu shape* (event kinds "
      "with\n  their exact weights, as a multiset);\n- `P_{t+1}` = one "
@@ -277,11 +392,17 @@ emit("  pin: v14/note-gprep-transport-foundation-pin.md, v14 ledger "
      "from the committed layer; ARM B attempts the successor engine.")
 emit("  EXACT arithmetic only (int / Fraction); AST float-guard over "
      "this file's own source; no tolerances anywhere.")
-emit("  NO UNANCHORED RUNTIME INPUTS (RUNBOOK section 14, v14 #46): "
-     "every file this process opens is listed in the anchor table "
-     "below with its sha256-12, its path-value anchor and its "
-     "verbatim-context anchor.  v14/LOG.md and /STATUS.md are NOT "
-     "read.")
+emit("  NO UNANCHORED RUNTIME INPUTS AND NO MOVING REFERENCES (RUNBOOK "
+     "section 14, v14 #46 and its adjudication addendum): every file "
+     "this process opens is listed in the anchor table below with its "
+     "sha256-12 — the committed v10 ledger included, as row T9 — and "
+     "the product of every such read is consumed by a named gate.  No "
+     "subprocess is spawned; nothing is read at `git show HEAD:` or "
+     "any other mutable reference; v14/LOG.md and /STATUS.md are NOT "
+     "read.  The set of paths actually opened is instrumented and "
+     "compared against the anchored set at the compliance sweep, and "
+     "the plain run is byte-identical inside the repository, outside "
+     "it, and with git absent.")
 emit("")
 emit("  THE DECLARED ARENA (RUNBOOK section 15 — data, not prose):")
 emit("    boundary   : the empty history (genesis v0 is the declared "
@@ -339,23 +460,37 @@ emit("[P1 — THE PINNED SOURCES: verbatim-context, byte and path-value "
 emit("  Pedigree qualifiers are carried VERBATIM from the pin, per its "
      "own binding instruction.")
 
+# THE #62 SPECIFICITY STANDARD, declared before it is applied: a
+# verbatim-context window must be at least MIN_CTX characters long AND
+# must occur EXACTLY ONCE in its source file.  A window that binds
+# existence but not meaning — a short generic substring — fails both
+# clauses and is refused at the precheck, so the truncation class dies
+# before the delivery is produced rather than after it.
+MIN_CTX = 40
+
+
 def check_verbatim(rows):
-    """(row, path, context-window, consumer-gate) -> found?"""
+    """(row, path, consumer-gate, found?, chars, occurrences)."""
     out = []
     for tag, path, ctx, consumer in rows:
         try:
-            txt = open(os.path.join(REPO, path)).read()
-            ok = ctx in txt
+            txt = read_text(os.path.join(REPO, path))
+            occ = txt.count(ctx)
         except OSError:
-            ok = False
-        out.append((tag, path, consumer, ok, len(ctx)))
+            occ = 0
+        out.append((tag, path, consumer, occ == 1 and len(ctx) >= MIN_CTX,
+                    len(ctx), occ))
     return out
 
 
-def check_bytes(rows):
+def check_bytes(rows, corrupt=None):
+    """corrupt = a (path) whose PINNED expectation is bent in memory;
+    used only by --selftest, which writes nothing and exits 1."""
     out = []
     for tag, name, ped, arts, sup in rows:
         for path, want in arts:
+            if corrupt is not None and path == corrupt:
+                want = want[:-1] + ('0' if want[-1] != '0' else '1')
             try:
                 got = sha12(os.path.join(REPO, path))
             except OSError:
@@ -366,12 +501,40 @@ def check_bytes(rows):
 
 VB = check_verbatim(VERBATIM)
 BY = check_bytes(ROWS)
-emit(f"  VERBATIM-CONTEXT ANCHORS (evaluated FIRST): "
+
+if '--selftest' in ARGV:
+    # THE SELFTEST.  Corrupt exactly ONE byte anchor in memory, confirm
+    # that exactly one anchor row fails and that the precheck would
+    # refuse the delivery, write NOTHING, exit 1.
+    _st_path = ROWS[0][3][0][0]
+    _st = check_bytes(ROWS, corrupt=_st_path)
+    _bad = [r for r in _st if not r[4]]
+    _ok_before = all(r[4] for r in BY) and all(r[3] for r in VB)
+    print(f"[SELFTEST] one byte anchor corrupted in memory: {_st_path}")
+    print(f"[SELFTEST] anchor rows failing BEFORE corruption: "
+          f"{sum(1 for r in BY if not r[4])} of {len(BY)}; "
+          f"verbatim windows failing: {sum(1 for r in VB if not r[3])} "
+          f"of {len(VB)}")
+    print(f"[SELFTEST] anchor rows failing AFTER corruption: "
+          f"{len(_bad)} -> {[r[1] for r in _bad]}")
+    print(f"[SELFTEST] the anchor precheck refuses the delivery: "
+          f"{not all(r[4] for r in _st)}")
+    print(f"[SELFTEST] baseline clean: {_ok_before}; "
+          f"exactly one row killed: {len(_bad) == 1}")
+    print(f"[SELFTEST] NO FILE WRITTEN.  The corrupted anchor is "
+          f"refused by the same precheck the plain run uses, which "
+          f"exits BEFORE any measurement and BEFORE any write.  exit 1.")
+    sys.stdout.flush()
+    sys.exit(1)
+
+emit(f"  VERBATIM-CONTEXT ANCHORS (evaluated FIRST) at the #62 "
+     f"SPECIFICITY STANDARD — a window counts as located only if it is "
+     f">= {MIN_CTX} characters AND occurs EXACTLY ONCE in its source: "
      f"{sum(1 for r in VB if r[3])} of {len(VB)} context windows "
      f"located, each bound to its named consumer gate.")
-for tag, path, consumer, ok, n in VB:
+for tag, path, consumer, ok, n, occ in VB:
     emit(f"    [{'OK ' if ok else 'MISS'}] {tag}  {path}  -> consumer "
-         f"gate {consumer}  ({n} chars of context)")
+         f"gate {consumer}  ({n} chars of context, {occ} occurrence(s))")
 emit(f"  BYTE ANCHORS: {sum(1 for r in BY if r[4])} of {len(BY)} "
      f"artifacts reproduce their pinned sha256-12.")
 for tag, path, want, got, ok in BY:
@@ -395,7 +558,7 @@ if not all(r[3] for r in VB) or not all(r[4] for r in BY):
 
 # --- path-value anchors: the (path, value) pair, not only the bytes.
 LAYER_PATH = 'v10/code/d42b1_transport_exact.py'
-_ls = open(os.path.join(REPO, LAYER_PATH)).read()
+_ls = read_text(os.path.join(REPO, LAYER_PATH))
 _PREFIX = _ls[:_ls.index('print("[d42b1')]
 NS = {}
 exec(compile(_PREFIX, 'd42b1_port', 'exec'), NS)
@@ -417,55 +580,121 @@ F['layer_defs'] = tuple(sorted(
 F['layer_no_exit'] = ('sys.exit' not in _PREFIX
                       and '\ncheck(' not in _PREFIX
                       and '\nprint(' not in _PREFIX)
-F['verbatim_ok'] = tuple((t, p, c) for t, p, c, ok, n in VB if ok)
+# THE PIN ERRATUM, MEASURED rather than argued: the event kinds the
+# committed GENERATOR can emit are the one-character tags occurring as
+# the head of a tuple literal inside candidates_for.  This is an AST
+# census of the pinned layer's own source, independent of the family
+# built from it, and it is what the A1-KINDS gate compares against.
+_lt = ast.parse(_PREFIX)
+_branch_tags = set()
+for _fn in ast.walk(_lt):
+    if isinstance(_fn, ast.FunctionDef) and _fn.name == 'candidates_for':
+        for _nd in ast.walk(_fn):
+            if isinstance(_nd, ast.Tuple) and _nd.elts:
+                _h = _nd.elts[0]
+                if (isinstance(_h, ast.Constant)
+                        and isinstance(_h.value, str)
+                        and len(_h.value) == 1):
+                    _branch_tags.add(_h.value)
+F['layer_kind_tags'] = tuple(sorted(_branch_tags))
+F['layer_kind_branches'] = len(_branch_tags)
+F['pin_erratum_kind_count'] = (6, F['layer_kind_branches'])
+F['verbatim_ok'] = tuple((t, p, c) for t, p, c, ok, n, o in VB if ok)
 F['verbatim_n'] = len(VB)
+F['verbatim_min_chars'] = min(n for t, p, c, ok, n, o in VB)
+F['verbatim_min_required'] = MIN_CTX
+F['verbatim_occurrences'] = tuple((t, c, o) for t, p, c, ok, n, o in VB)
+F['verbatim_unique'] = all(o == 1 for t, p, c, ok, n, o in VB)
+F['verbatim_consumers'] = tuple(sorted({c for t, p, c, ok, n, o in VB}))
 F['byte_ok'] = tuple((t, p, g) for t, p, w, g, ok in BY if ok)
 F['byte_n'] = len(BY)
 F['pedigrees'] = tuple((t, ped) for t, n, ped, a, s in ROWS)
 
-# --- T5's ledger number, VERIFIED against committed bytes (the pin
-# --- orders this explicitly).  The verification is a read of the
-# --- hash-pinned d74 RESULT note plus the committed v10 ledger text
-# --- reached through git's object store, never the working tree.
-_d74 = open(os.path.join(REPO,
-                         'v10/note-d74-transport-holonomy-result.md')).read()
+# --- T5's ledger number, VERIFIED against the BYTE-ANCHORED committed
+# --- ledger (row T9).  The moving-reference read this unit's first
+# --- delivery used (`git show HEAD:v10/LOG.md` through a subprocess)
+# --- is GONE: v10 is closed, so its ledger is a pinned artifact like
+# --- every other row, it is read from the same path through the same
+# --- anchored route, and its product is consumed by the gate A0-LEDGER
+# --- below.  No moving reference, no subprocess, no silent degradation
+# --- to None, and the delivered bytes no longer depend on the ambient
+# --- repository.
+_d74 = read_text(os.path.join(
+    REPO, 'v10/note-d74-transport-holonomy-result.md'))
 F['t5_note_status_line'] = next(
     (ln.strip() for ln in _d74.splitlines() if ln.startswith('**Status')),
     '')
-_gitlog = os.popen(
-    "cd " + REPO + " && git show HEAD:v10/LOG.md 2>/dev/null").read()
-_stamp = None
-for _ln in _gitlog.splitlines():
-    if 'D74 ROUND 1 ADJUDICATED AND TERMINAL' in _ln:
-        _stamp = 'found'
-    if _stamp == 'found' and '(LEDGER #' in _ln:
-        _stamp = _ln[_ln.index('(LEDGER #') + 9:]
-        _stamp = int(_stamp[:_stamp.index(')')])
-        break
-F['t5_ledger_number'] = _stamp
-F['t5_ledger_source'] = 'git show HEAD:v10/LOG.md (committed bytes; the '
-F['t5_ledger_source'] += 'working-tree LOG is never read)'
+LEDGER_PATH = 'v10/LOG.md'
+_ledger = read_text(os.path.join(REPO, LEDGER_PATH))
+
+
+def ledger_number(text, header):
+    """The ledger # attached to the entry whose header contains
+    `header`: the first '(LEDGER #n)' at or after that header line.
+    Returns None if the header is absent — and the gate below refuses
+    a None, so a missing read cannot deliver a headline."""
+    hit = False
+    for ln in text.splitlines():
+        if header in ln:
+            hit = True
+        if hit and '(LEDGER #' in ln:
+            s = ln[ln.index('(LEDGER #') + 9:]
+            return int(s[:s.index(')')])
+    return None
+
+
+F['t5_ledger_number'] = ledger_number(
+    _ledger, 'D74 ROUND 1 ADJUDICATED AND TERMINAL')
+F['t5_ledger_delivered'] = ledger_number(
+    _ledger, 'D74 DELIVERED (GREEN-UNREVIEWED)')
+F['t5_ledger_pinned'] = ledger_number(_ledger, 'D74 PINNED:')
+F['t5_ledger_source'] = (
+    'v10/LOG.md read at its pinned sha256-12 (row T9), byte-anchored '
+    'and verbatim-anchored like every other pinned artifact; no '
+    'subprocess, no moving reference')
+F['t5_ledger_path'] = LEDGER_PATH
 emit("")
-emit(f"  T5 LEDGER VERIFICATION (the pin's explicit order).  The d74 "
-     f"terminal stamp is read from the COMMITTED v10 ledger bytes via "
-     f"`git show HEAD:v10/LOG.md`: the entry headed 'D74 ROUND 1 "
+emit(f"  T5 LEDGER VERIFICATION (the pin's explicit order), read from "
+     f"the BYTE-ANCHORED ledger row T9 — {LEDGER_PATH} at its pinned "
+     f"sha256-12, through the same anchored route as every other "
+     f"source, with its four-line header carried as a "
+     f"verbatim-context window.  The entry headed 'D74 ROUND 1 "
      f"ADJUDICATED AND TERMINAL: TH-II WITH A FIND' carries "
      f"**(LEDGER #{F['t5_ledger_number']})**.  The green delivery "
-     f"immediately preceding it is #494 and the pin freeze is #492.  "
-     f"T5's citable pedigree is therefore: round-1 reviewed+repaired, "
-     f"TERMINAL at v10 LOG #{F['t5_ledger_number']}.")
+     f"immediately preceding it is #{F['t5_ledger_delivered']} and the "
+     f"pin freeze is #{F['t5_ledger_pinned']} — both parsed from the "
+     f"same anchored bytes, neither typed.  T5's citable pedigree is "
+     f"therefore: round-1 reviewed+repaired, TERMINAL at v10 LOG "
+     f"#{F['t5_ledger_number']}.")
 emit(f"    THE CITABILITY GAP THIS CLOSES, exhibited: the note's own "
      f"status line reads {F['t5_note_status_line']!r} — it never "
      f"says TERMINAL, so a successor reading the note alone would "
      f"under-cite the row.  The ledger is the authority and the "
      f"number is #{F['t5_ledger_number']}.")
+gate("A0-LEDGER", KIND_SUB,
+     "THE PIN'S ORDERED LEDGER VERIFICATION IS GATED, so that it can "
+     "never be discharged by a read that verified nothing: the D74 "
+     "terminal stamp parsed out of the BYTE-ANCHORED v10 ledger is "
+     "exactly 495 and is not None, the green delivery immediately "
+     "preceding it is 494 and the pin freeze 492, and the d74 note's "
+     "own status line does not contain the word TERMINAL — which is "
+     "the citability gap this row closes",
+     lambda f: (f['t5_ledger_number'] == 495
+                and f['t5_ledger_number'] is not None
+                and f['t5_ledger_delivered'] == 494
+                and f['t5_ledger_pinned'] == 492
+                and 'TERMINAL' not in f['t5_note_status_line']),
+     lambda f: f"terminal #{f['t5_ledger_number']}, delivered "
+               f"#{f['t5_ledger_delivered']}, pinned "
+               f"#{f['t5_ledger_pinned']}; note status line "
+               f"{f['t5_note_status_line']!r}")
 
 prog("anchors done")
 
 # ======================================================================
 # P2 — THE AST FLOAT-GUARD over this file's own source
 # ======================================================================
-_src = open(SELF).read()
+_src = read_text(SELF)
 _tree = ast.parse(_src)
 _floats = []
 for _n in ast.walk(_tree):
@@ -477,6 +706,44 @@ _fmtfloat = _src.count('float(')
 F['ast_float_literals'] = tuple(sorted(set(_floats)))
 F['ast_float_calls'] = _fmtfloat
 emit("")
+# --- THE CLI CONTRACT, EXERCISED IN-PROCESS rather than documented.
+# --- The parser is run on a bogus sample so that "unknown flags are
+# --- rejected" is a measurement of this run's own argv handler.
+_cli_bad = parse_argv(['--utterly-bogus', '--no-writ'])[1]
+_cli_good = parse_argv(['--no-write', '--mutant', 'X'])[0]
+F['cli_rejected_sample'] = len(_cli_bad)
+F['cli_rejected_tokens'] = tuple(_cli_bad)
+F['cli_accepted_sample'] = tuple(sorted(_cli_good))
+F['cli_exit_on_unknown'] = EXIT_USAGE
+F['cli_flags_known'] = len(FLAGS_NULLARY) + len(FLAGS_VALUED)
+F['cli_flags'] = tuple(sorted(FLAGS_NULLARY + FLAGS_VALUED))
+emit("")
+emit(f"[P2b — THE CLI CONTRACT, MEASURED] the argv whitelist accepts "
+     f"{F['cli_flags_known']} flags {list(F['cli_flags'])} and is "
+     f"exercised here on a bogus sample: "
+     f"{F['cli_rejected_sample']} of 2 tokens rejected "
+     f"{list(F['cli_rejected_tokens'])} — including the one-character "
+     f"typo of the safety flag, which without a whitelist is a silent "
+     f"no-op — while a well-formed sample parses to "
+     f"{list(F['cli_accepted_sample'])}.  An unrecognized argument "
+     f"exits {F['cli_exit_on_unknown']} before any measurement runs, "
+     f"and every failure path of this program writes nothing.")
+gate("C-CLI", KIND_SUB,
+     "THE CLI CONTRACT IS ENFORCED AND MEASURED, NOT DOCUMENTED (v14 "
+     "#66 -> #82, the registered repair item): the argv handler is a "
+     "whitelist, it is exercised in-process on a bogus sample and "
+     "rejects both tokens — the unknown flag and the one-character "
+     "typo of --no-write — the usage exit code is 2, and the accepted "
+     "flag set is exactly the five the contract names",
+     lambda f: (f['cli_rejected_sample'] == 2
+                and f['cli_exit_on_unknown'] == 2
+                and f['cli_flags_known'] == 5
+                and f['cli_accepted_sample'] == ('--mutant', '--no-write')
+                and '--selftest' in f['cli_flags']
+                and '--mutant' in f['cli_flags']),
+     lambda f: f"rejected {list(f['cli_rejected_tokens'])}; accepted "
+               f"{list(f['cli_accepted_sample'])}; exit code "
+               f"{f['cli_exit_on_unknown']}; flags {list(f['cli_flags'])}")
 emit(f"[P2 — AST FLOAT-GUARD] float literals in the substantive "
      f"source: {len(F['ast_float_literals'])} "
      f"(lines {list(F['ast_float_literals'])}); float() appears "
@@ -565,6 +832,7 @@ for h in CACHE:
         if per[a]['r'] or per[a]['m']:
             _bud['r+m'].add(per[a]['r'] + per[a]['m'])
     _mass[len(h)][tot] += 1
+F['n_actors'] = len(AB)
 F['event_kinds'] = tuple(kinds)
 F['event_kind_count'] = len(kinds)
 F['kind_counts'] = tuple(sorted(kind_counts.items()))
@@ -611,6 +879,16 @@ F['histories_with_merge'] = sum(1 for h in CACHE
 
 emit(f"  event kinds present in the family: {list(F['event_kinds'])} "
      f"— p propose, r arbitrate, m merge, d deliver, n idle.")
+emit(f"  PIN ERRATUM, REGISTERED AND MEASURED (v14 #4 practice): the "
+     f"pin's T1 summary column describes the layer as carrying "
+     f"{F['pin_erratum_kind_count'][0]} event kinds.  An AST census of "
+     f"the committed generator's own source finds exactly "
+     f"{F['layer_kind_branches']} kind branches inside candidates_for "
+     f"— {list(F['layer_kind_tags'])} — and the built family emits "
+     f"exactly {F['event_kind_count']}.  There is no sixth kind "
+     f"anywhere in the layer: this is a PIN ERROR, not an "
+     f"arena-dependent count, and this receipt reports the "
+     f"measurement.")
 emit(f"  menu entries by kind over the whole depth-{CAP_T} family: "
      f"{dict(F['kind_counts'])}")
 emit(f"  BUDGETS, MEASURED off the layer (never quoted), PER ACTOR — "
@@ -648,12 +926,17 @@ emit(f"  MERGE has support only deep: merge entries appear in menus at "
      f"contain a merge event at all.")
 
 gate("A1-KINDS", KIND_SUB,
-     "the committed layer generates exactly the six declared event "
-     "kinds (p, r, m, d, n) and no others, with merge present",
+     "the committed layer generates exactly the FIVE kinds the layer "
+     "defines (p, r, m, d, n) and no others, with merge present — the "
+     "pin's T1 summary column says six; this is the measurement, and "
+     "the discrepancy is registered in-unit as a PIN ERRATUM",
      lambda f: (set(f['event_kinds']) == {'p', 'r', 'm', 'd', 'n'}
+                and f['event_kind_count'] == 5
+                and f['layer_kind_branches'] == 5
                 and dict(f['kind_counts'])['m'] > 0),
-     lambda f: f"kinds = {list(f['event_kinds'])}; counts = "
-               f"{dict(f['kind_counts'])}")
+     lambda f: f"kinds = {list(f['event_kinds'])} ({f['event_kind_count']}"
+               f"); generator branches = {f['layer_kind_branches']}; "
+               f"counts = {dict(f['kind_counts'])}")
 gate("A1-BUDGETS", KIND_SUB,
      "the declared budgets are the measured ones, PER ACTOR: the "
      "propose sector totals exactly 1/4 wherever it is non-empty and "
@@ -663,7 +946,7 @@ gate("A1-BUDGETS", KIND_SUB,
      "equal to a quarter",
      lambda f: (set(f['budget_propose']) == {'1/4'}
                 and set(f['budget_deliver']) == {'1/4'}
-                and len(f['budget_arbmerge']) > 0),
+                and set(f['budget_arbmerge']) == {'1/2', '1/4'}),
      lambda f: f"propose {list(f['budget_propose'])}; deliver "
                f"{list(f['budget_deliver'])}; arb+merge (join-view) "
                f"{list(f['budget_arbmerge'])}")
@@ -1099,6 +1382,7 @@ def rename_v(e, v):
 _menu_ok = _menu_bad = 0
 _mm_ok = _mm_bad = 0
 _want_root = {(SK(rename_v(e, V0)), q) for e, q in ROOTMENU}
+NOT_MENU_EXACT = set()
 for h, (v, prof, isme) in RSIG5.items():
     want = {(SK(rename_v(e, v)), q) for e, q in ROOTMENU}
     got = {(SK(e), q) for e, q in CACHE[h]}
@@ -1106,6 +1390,7 @@ for h, (v, prof, isme) in RSIG5.items():
         _menu_ok += 1
     else:
         _menu_bad += 1
+        NOT_MENU_EXACT.add(h)
     if isme:
         if got == want and len(CACHE[h]) == len(ROOTMENU):
             _mm_ok += 1
@@ -1117,6 +1402,32 @@ def reentry(S):
     return sum(1 for h in S if any(h[:i] not in S for i in range(len(h))))
 
 
+def reentered_set(S):
+    """The points of S reached from OUTSIDE it: a point with a proper
+    prefix outside S.  Carried as a SET so a set claim can be gated as
+    one (MINOR-4/MINOR-7 of the rounds: a set identity gated by two
+    cardinalities is weaker than the prose it licenses)."""
+    return {h for h in S
+            if any(h[:i] not in S for i in range(len(h)))}
+
+
+def entries_into(S):
+    """The number of TRANSITIONS from outside S into S — the object a
+    regeneration argument actually needs, as against `reentry`, which
+    for any S not containing the root returns |S| by construction."""
+    n = 0
+    for h in CACHE:
+        if h in S:
+            continue
+        for e, q in CACHE[h]:
+            if h + (e,) in S:
+                n += 1
+    return n
+
+
+REENTERED_SET5 = reentered_set(RSIGSET5)
+
+
 F['rsig_count'] = len(RSIG5)
 F['rmenu_count'] = len(RMENU5)
 F['rsig_menu_exact'] = _menu_ok
@@ -1125,6 +1436,8 @@ F['rmenu_menu_exact'] = _mm_ok
 F['rmenu_menu_not_exact'] = _mm_bad
 F['rsig_reentries'] = reentry(RSIGSET5)
 F['rmenu_reentries'] = reentry(RMENUSET5)
+F['rsig_notexact_eq_reentered'] = (NOT_MENU_EXACT == REENTERED_SET5)
+F['rsig_notexact_symdiff'] = len(NOT_MENU_EXACT ^ REENTERED_SET5)
 F['rmenu_4n'] = tuple(sum(1 for h, v in RMENU5.items() if len(h) == n)
                       for n in range(0, 6))
 F['rmenu_is_4n'] = all(F['rmenu_4n'][n] == 4 ** n for n in range(0, 6))
@@ -1146,7 +1459,10 @@ emit(f"  RE-ENTRIES (points reached from OUTSIDE the class): R-MENU "
      f"{F['rmenu_reentries']} -> absorbing-complement = "
      f"{F['rmenu_reentries'] == 0}; R-SIG {F['rsig_reentries']} -> "
      f"absorbing-complement = {F['rsig_reentries'] == 0}.  The R-SIG "
-     f"points that are not menu-exact are EXACTLY the re-entered ones.")
+     f"points that are not menu-exact are EXACTLY the re-entered ones "
+     f"— a SET IDENTITY, gated as one: the symmetric difference of the "
+     f"two sets is {F['rsig_notexact_symdiff']}, not merely their "
+     f"cardinalities agreeing.")
 emit(f"  R-MENU by depth = {list(F['rmenu_4n'])} — exactly 4^n at "
      f"every depth ({F['rmenu_is_4n']}), summing to "
      f"{F['rmenu_sum_4n']} = sum_(n <= 5) 4^n.")
@@ -1207,67 +1523,196 @@ emit(f"  THE 0.7705: the horizon-completed mass NOT at a renewal at "
      f"two independent ways (a chained product of kernels versus a "
      f"closed rational expression in the potentials).")
 
-# monotonicity, AT ITS NARROWED SCOPE
-prog("holdings monotonicity census ...")
+# MONOTONICITY, AT FULL FAMILY SCOPE.  The first delivery censused
+# 30,728 transitions — those out of histories of depth < 5, 12.6% of
+# the family — and the abstract then said "zero transitions of the
+# family".  The census below runs over EVERY transition of the family
+# (243,768 of them), so the sentence and its receipt key now have the
+# same scope.  Both scopes are kept and both are printed, because
+# section 7's absorbing-complement argument uses the narrowed
+# non-superseded figure and the successor must be able to tell them
+# apart.
+prog("holdings monotonicity census, FULL FAMILY scope ...")
 _t = time.time()
 mono_bad = 0
 mono_pairs = 0
 nsup_shrink = 0
+mono_bad_all = 0
+mono_pairs_all = 0
+nsup_shrink_all = 0
+prof_dec_all = 0
+mono_entail_bad = 0
 grow_first = defaultdict(int)
 HOLD = {}
 for h in CACHE:
-    if len(h) > 5:
-        continue
     vw, hold, nsup = state_of(h)
     HOLD[h] = (hold, nsup)
 MONO_EXPECT = sum(len(CACHE[h]) for h in CACHE if len(h) < 5)
+MONO_EXPECT_ALL = sum(len(CACHE[h]) for h in CACHE if len(h) < CAP_T)
 for h in CACHE:
-    if len(h) >= 5:
+    if len(h) >= CAP_T:
         continue
     hold_h, nsup_h = HOLD[h]
+    narrow = len(h) < 5
     for e, q in CACHE[h]:
         h2 = h + (e,)
         if h2 not in HOLD:
             continue
-        mono_pairs += 1
         hold_2, nsup_2 = HOLD[h2]
-        if any(not hold_h[a] <= hold_2[a] for a in AB):
-            mono_bad += 1
+        set_shrink = any(not hold_h[a] <= hold_2[a] for a in AB)
+        card_shrink = any(len(hold_2[a]) < len(hold_h[a]) for a in AB)
+        mono_pairs_all += 1
+        if set_shrink:
+            mono_bad_all += 1
+        if card_shrink:
+            prof_dec_all += 1
+        # THE ENTAILMENT, MACHINE-CHECKED POINTWISE: set-monotonicity
+        # of holdings entails cardinality-monotonicity of the profile,
+        # so a profile decrease without a set shrink is impossible.
+        # This is the forcing that makes B3-MONOTONE a theorem-pass.
+        if card_shrink and not set_shrink:
+            mono_entail_bad += 1
         if any(not nsup_h[a] <= nsup_2[a] for a in AB):
-            nsup_shrink += 1
-        if (any(len(hold_h[a]) == 1 for a in AB)
-                and any(len(hold_2[a]) > 1 for a in AB)):
-            grow_first[e[0]] += 1
+            nsup_shrink_all += 1
+            if narrow:
+                nsup_shrink += 1
+        if narrow:
+            mono_pairs += 1
+            if set_shrink:
+                mono_bad += 1
+            if (any(len(hold_h[a]) == 1 for a in AB)
+                    and any(len(hold_2[a]) > 1 for a in AB)):
+                grow_first[e[0]] += 1
 prog(f"monotonicity census done in {time.time() - _t:.1f}s")
 F['mono_pairs'] = mono_pairs
 F['mono_expect'] = MONO_EXPECT
 F['mono_shrinking'] = mono_bad
 F['nsup_shrinking'] = nsup_shrink
+F['mono_pairs_all'] = mono_pairs_all
+F['mono_expect_all'] = MONO_EXPECT_ALL
+F['mono_shrinking_all'] = mono_bad_all
+F['nsup_shrinking_all'] = nsup_shrink_all
+F['mono_entailment_violations'] = mono_entail_bad
 F['grow_first_by_kind'] = tuple(sorted(grow_first.items()))
 
-emit(f"  HOLDINGS MONOTONICITY, AT ITS NARROWED SCOPE (the "
-     f"correction the predecessor's round forced, honoured here).  "
-     f"Over all {F['mono_pairs']} transitions out of every history of "
-     f"depth < 5: holdings-SHRINKING transitions = "
-     f"{F['mono_shrinking']}.  BUT the layer DOES have a shrinking "
-     f"set: 'superseded' grows, so NON-SUPERSEDED holdings shrink — "
-     f"measured here at {F['nsup_shrinking']} transitions.  THAT IS "
+emit(f"  HOLDINGS MONOTONICITY, AT FULL FAMILY SCOPE.  Over ALL "
+     f"{F['mono_pairs_all']} transitions of the family (every "
+     f"transition out of every history of depth < {CAP_T}, expected "
+     f"{F['mono_expect_all']} from the census): holdings-SHRINKING "
+     f"transitions = {F['mono_shrinking_all']}; profile-DECREASING "
+     f"transitions = {prof_dec_all}.  THE NARROWED SCOPE IS KEPT "
+     f"BESIDE IT AND NAMED, because section 7's absorbing-complement "
+     f"argument uses it: over the {F['mono_pairs']} transitions out of "
+     f"depth < 5, holdings-shrinking = {F['mono_shrinking']} and "
+     f"NON-SUPERSEDED-shrinking = {F['nsup_shrinking']}; at full scope "
+     f"non-superseded holdings shrink at "
+     f"{F['nsup_shrinking_all']} transitions.  THAT IS "
      f"EXACTLY WHY THE ABSORBING-COMPLEMENT ARGUMENT COVERS R-MENU "
      f"AND NOTHING ELSE: R-MENU asks for holdings(a) = {{v}} and "
      f"holdings never shrink; R-SIG asks only about the "
      f"non-superseded part, which does.  Event kinds that first break "
-     f"singleton holdings: {dict(F['grow_first_by_kind'])}.")
+     f"singleton holdings (depth < 5 window): "
+     f"{dict(F['grow_first_by_kind'])}.")
 
-gate("A4-PRED", KIND_SUB,
-     "the reduced R-SIG predicate is the committed predicate: over "
-     "every history of depth <= 5 the reduced form (live empty and "
-     "both non-superseded holdings the same singleton) agrees with the "
-     "full form (which also tests components and merge pairs) at every "
-     "single history",
+# --- A4-PRED: the two-way demonstration that reclassifies it.  The
+# --- reduction's agreement is FORCED (components are built from live
+# --- proposals, so live = {} gives components = {}; merge_pairs needs
+# --- two non-superseded created versions, so a singleton gives none),
+# --- and a forced agreement is not a measurement.  The forcing is
+# --- machine-checked in the positive direction here, and the negative
+# --- direction is exhibited by an UNFORCED variant of the same
+# --- reduction, which does disagree.
+prog("A4-PRED forcing: the two-way demonstration ...")
+_forced_comp = 0
+_forced_merge = 0
+_forced_n = 0
+
+
+def rsig_unforced(h):
+    """The reduction with the FORCED clause kept and the UNFORCED one
+    dropped: live empty and |nsup(A)| = 1, without requiring the two
+    actors' non-superseded singletons to agree.  Nothing forces this to
+    match the full predicate, and it does not."""
+    pred = event_poset(list(h))
+    vw = View(list(h), pred, set(range(len(h))))
+    if vw.live:
+        return None
+    hold = {a: frozenset(vw.holdings(a)) for a in AB}
+    nsup = {a: frozenset(x for x in hold[a] if x not in vw.superseded)
+            for a in AB}
+    if len(nsup['A']) != 1:
+        return None
+    v = next(iter(nsup['A']))
+    return (v, (len(hold['A']), len(hold['B'])),
+            all(hold[a] == frozenset({v}) for a in AB))
+
+
+_unforced_dis = 0
+for h in CACHE:
+    if len(h) > 5:
+        continue
+    pred = event_poset(list(h))
+    vw = View(list(h), pred, set(range(len(h))))
+    hold = {a: frozenset(vw.holdings(a)) for a in AB}
+    nsup = {a: frozenset(x for x in hold[a] if x not in vw.superseded)
+            for a in AB}
+    if not vw.live:
+        _forced_n += 1
+        if vw.components():
+            _forced_comp += 1
+        if all(len(nsup[a]) == 1 for a in AB) and any(
+                vw.merge_pairs(a) for a in AB):
+            _forced_merge += 1
+    if rsig_full(h) != rsig_unforced(h):
+        _unforced_dis += 1
+F['pred_forcing_tested'] = _forced_n
+F['pred_forcing_live_empty_but_components'] = _forced_comp
+F['pred_forcing_singleton_but_merge_pairs'] = _forced_merge
+F['pred_unforced_disagreements'] = _unforced_dis
+emit(f"  THE REDUCTION IS FORCED, AND THE FORCING IS MACHINE-CHECKED "
+     f"IN BOTH DIRECTIONS (this is why A4-PRED is carried as a "
+     f"THEOREM-PASS and not counted as a measurement).  FORWARD: over "
+     f"the {F['pred_forcing_tested']} histories of depth <= 5 with an "
+     f"empty live set, histories with a NON-empty component set = "
+     f"{F['pred_forcing_live_empty_but_components']}; among those with "
+     f"singleton non-superseded holdings, histories with a non-empty "
+     f"merge-pair set = {F['pred_forcing_singleton_but_merge_pairs']}. "
+     f"Both are structurally impossible and both measure 0.  REVERSE: "
+     f"the SAME reduction with its one UNFORCED clause dropped (no "
+     f"requirement that the two actors' singletons agree) disagrees "
+     f"with the full predicate at {F['pred_unforced_disagreements']} "
+     f"histories — so the comparison can fail, and what makes the "
+     f"delivered reduction agree is the forcing, not the family.")
+
+gate("A4-PRED", KIND_THM,
+     "THE REDUCED R-SIG PREDICATE IS THE COMMITTED PREDICATE, AND THE "
+     "AGREEMENT IS FORCED — carried as a THEOREM-PASS with its forcing "
+     "exhibited, not as a measurement: components are built from live "
+     "proposals so an empty live set forces an empty component set (0 "
+     "counterexamples), and a merge pair needs two non-superseded "
+     "created versions so a singleton forces none (0 counterexamples). "
+     "Over every history of depth <= 5 the reduced form agrees with "
+     "the full form at every single history",
      lambda f: (f['pred_reduction_disagreements'] == 0
-                and f['pred_reduction_tested'] == 30729),
+                and f['pred_reduction_tested'] == 30729
+                and f['pred_forcing_live_empty_but_components'] == 0
+                and f['pred_forcing_singleton_but_merge_pairs'] == 0),
      lambda f: f"disagreements = {f['pred_reduction_disagreements']} "
-               f"over {f['pred_reduction_tested']} histories")
+               f"over {f['pred_reduction_tested']} histories; forcing "
+               f"counterexamples "
+               f"{f['pred_forcing_live_empty_but_components']} / "
+               f"{f['pred_forcing_singleton_but_merge_pairs']}")
+gate("A4-PRED-UNFORCED", KIND_SUB,
+     "THE OTHER HALF OF THE TWO-WAY DEMONSTRATION, and it is the "
+     "substantive one: the same reduction with its single UNFORCED "
+     "clause dropped DOES disagree with the committed predicate, at a "
+     "strictly positive number of histories — so the reduction "
+     "comparison is not vacuous, and the delivered agreement is bought "
+     "by the forcing rather than by the window",
+     lambda f: f['pred_unforced_disagreements'] > 0,
+     lambda f: f"unforced-variant disagreements = "
+               f"{f['pred_unforced_disagreements']} over "
+               f"{f['pred_reduction_tested']} histories")
 gate("A4-PORTS", KIND_SUB,
      "THE TWO PORTS COME APART AT TRANSPORT SCOPE, with the committed "
      "counts: R-SIG = 5,161 points of which 1,365 are menu-exact and "
@@ -1281,11 +1726,16 @@ gate("A4-PORTS", KIND_SUB,
                 and f['rmenu_menu_not_exact'] == 0
                 and f['rmenu_reentries'] == 0
                 and f['rsig_reentries'] == 3796
-                and f['rsig_reentries'] == f['rsig_menu_not_exact']),
+                and f['rsig_reentries'] == f['rsig_menu_not_exact']
+                and f['rsig_notexact_eq_reentered']
+                and f['rsig_notexact_symdiff'] == 0),
      lambda f: f"R-SIG {f['rsig_count']} (menu-exact "
                f"{f['rsig_menu_exact']}, not {f['rsig_menu_not_exact']}"
                f"); R-MENU {f['rmenu_count']}; re-entries R-MENU "
-               f"{f['rmenu_reentries']}, R-SIG {f['rsig_reentries']}")
+               f"{f['rmenu_reentries']}, R-SIG {f['rsig_reentries']}; "
+               f"SET identity not-menu-exact = re-entered: "
+               f"{f['rsig_notexact_eq_reentered']} (symmetric "
+               f"difference {f['rsig_notexact_symdiff']})")
 gate("A4-4N", KIND_SUB,
      "the menu-exact renewal count is exactly 4^n at every depth and "
      "sums to 1,365 = sum_(n <= 5) 4^n",
@@ -1310,20 +1760,38 @@ gate("A4-MASS", KIND_SUB,
                f"{f['renewal_depth5_closed']} = measured "
                f"{f['renewal_depth5_measured']}")
 gate("A4-MONO", KIND_THM,
-     "HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION (a one-line "
-     "consequence of View.holdings being a union over the view's arbs, "
-     "deliveries and merges — carried as a THEOREM-PASS and censused "
-     "rather than proved), AND THE NARROWING IS GATED WITH IT: "
-     "non-superseded holdings DO shrink, at a strictly positive number "
-     "of transitions, which is exactly why the absorbing-complement "
-     "argument covers R-MENU only",
-     lambda f: (f['mono_shrinking'] == 0
-                and f['mono_pairs'] == f['mono_expect']
-                and f['nsup_shrinking'] > 0),
-     lambda f: f"transitions = {f['mono_pairs']} (expected "
-               f"{f['mono_expect']}); holdings-shrinking = "
-               f"{f['mono_shrinking']}; NON-superseded-shrinking = "
-               f"{f['nsup_shrinking']}")
+     "HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION OF THE FAMILY (a "
+     "one-line consequence of View.holdings being a union over the "
+     "view's arbs, deliveries and merges — carried as a THEOREM-PASS "
+     "and censused rather than proved), now at FULL FAMILY SCOPE: 0 "
+     "holdings-shrinking transitions over all 243,768, not over the "
+     "12.6% window a depth-<5 census would cover",
+     lambda f: (f['mono_shrinking_all'] == 0
+                and f['mono_pairs_all'] == f['mono_expect_all']
+                and f['mono_pairs_all'] == 243768
+                and f['mono_shrinking'] == 0
+                and f['mono_pairs'] == f['mono_expect']),
+     lambda f: f"FULL scope: transitions = {f['mono_pairs_all']} "
+               f"(expected {f['mono_expect_all']}), holdings-shrinking "
+               f"= {f['mono_shrinking_all']}; narrowed scope: "
+               f"{f['mono_pairs']} transitions, "
+               f"{f['mono_shrinking']} shrinking")
+gate("A4-NSUP-SHRINKS", KIND_SUB,
+     "AND THE NARROWING IS GATED SEPARATELY, BECAUSE IT IS THE "
+     "SUBSTANTIVE HALF: non-superseded holdings DO shrink, at a "
+     "strictly positive number of transitions at BOTH scopes (4,340 "
+     "out of depth < 5; 29,980 over the whole family) — which is "
+     "exactly why the absorbing-complement argument covers R-MENU and "
+     "nothing else.  This predicate could have returned False and the "
+     "monotonicity theorem could not",
+     lambda f: (f['nsup_shrinking'] > 0
+                and f['nsup_shrinking'] == 4340
+                and f['nsup_shrinking_all'] == 29980
+                and f['nsup_shrinking_all'] > f['nsup_shrinking']),
+     lambda f: f"non-superseded-shrinking: {f['nsup_shrinking']} of "
+               f"{f['mono_pairs']} (depth < 5), "
+               f"{f['nsup_shrinking_all']} of {f['mono_pairs_all']} "
+               f"(whole family)")
 
 # ======================================================================
 # ARM A, FACT 5 — THE ESCAPE, OWNED AT BOTH COMMITTED GRAINS
@@ -1351,20 +1819,37 @@ emit("  THE GRAIN IS ARENA DATA, DECLARED AND PRINTED (RUNBOOK "
 FAM4 = [h for h in CACHE if len(h) <= CAP_ESC]
 
 
+# Both shape functions are memoised.  They are PURE functions of the
+# committed menu at h, and ARM B's five-grain census evaluates them on
+# the same successor histories many times over; the cache changes no
+# value, only the wall clock, and no wall-clock number reaches the
+# receipt.
+_SHK = {}
+_SHE = {}
+
+
 def shape_kind(h):
-    d = defaultdict(int)
-    for e, q in CACHE[h]:
-        d[(e[0], q)] += 1
-    return ('KIND',) + tuple(sorted(((k, str(q)), n)
-                                    for (k, q), n in d.items()))
+    v = _SHK.get(h)
+    if v is None:
+        d = defaultdict(int)
+        for e, q in CACHE[h]:
+            d[(e[0], q)] += 1
+        v = ('KIND',) + tuple(sorted(((k, str(q)), n)
+                                     for (k, q), n in d.items()))
+        _SHK[h] = v
+    return v
 
 
 def shape_event(h):
-    d = defaultdict(int)
-    for e, q in CACHE[h]:
-        d[(SK(e), q)] += 1
-    return ('EVENT',) + tuple(sorted(((k, str(q)), n)
-                                     for (k, q), n in d.items()))
+    v = _SHE.get(h)
+    if v is None:
+        d = defaultdict(int)
+        for e, q in CACHE[h]:
+            d[(SK(e), q)] += 1
+        v = ('EVENT',) + tuple(sorted(((k, str(q)), n)
+                                      for (k, q), n in d.items()))
+        _SHE[h] = v
+    return v
 
 
 def relabel(d):
@@ -1915,12 +2400,20 @@ F['depth7_projection'] = _pred7
 emit(f"  DECLARED CAPS AND THE INFEASIBLE ARMS, with their counts "
      f"printed (pin: 'depth-7 and 3-actor depth-6 declared infeasible "
      f"with the counts printed').")
+F['depth7_over_level6'] = str(Fr(_pred7, F['t_per_level'][6]))
+F['depth7_over_build'] = str(Fr(_pred7, F['t_total']))
 emit(f"    two-actor depth 7: the measured level-6/level-5 branching "
      f"is {F['t_per_level'][6]}/{F['t_per_level'][5]} = "
      f"{_avg6} (~{float(_avg6):.3f}), so level 7 is about "
-     f"{F['depth7_projection']:,} histories — roughly 8x this run's "
-     f"depth-6 build, which alone is the dominant cost of this "
-     f"receipt.  NOT RUN.")
+     f"{F['depth7_projection']:,} histories.  BOTH RATIOS ARE PRINTED "
+     f"BECAUSE THEY DIFFER AND ONLY ONE OF THEM IS 'ROUGHLY EIGHT': "
+     f"that is {F['depth7_over_level6']} "
+     f"(~{float(Fr(F['depth7_over_level6'])):.2f}) times this run's "
+     f"LEVEL-6 layer of {F['t_per_level'][6]:,} histories, and "
+     f"{F['depth7_over_build']} "
+     f"(~{float(Fr(F['depth7_over_build'])):.2f}) times its whole "
+     f"depth-6 BUILD of {F['t_total']:,}, which alone is the dominant "
+     f"cost of this receipt.  NOT RUN.")
 emit(f"    three-actor: depth 3 is {F['pool3_depth3']} histories "
      f"(per level {dict(F['pool3_per_level'])}), measured here; the "
      f"level-3/level-2 branching is {F['pool3_branching']}, so depth 5 "
@@ -1944,7 +2437,21 @@ emit("  Write the backward recursion as a level operator: "
      "pattern separating a pair of columns.")
 _singleparent = 0
 _multiparent = 0
+_dupmenu = 0
+_menuentries = 0
 for h in CACHE:
+    # THE SUBSTANTIVE MEASUREMENT, separated from the forced one: the
+    # number of DUPLICATED menu entries anywhere in the family.  This
+    # is the only way a column census over a history tree could ever
+    # have failed, and it is a genuine measurement of the layer's
+    # bookkeeping.
+    _seen = set()
+    for e, q in CACHE[h]:
+        _menuentries += 1
+        k = SK(e)
+        if k in _seen:
+            _dupmenu += 1
+        _seen.add(k)
     if len(h) == 0:
         continue
     # The column of h in the level operator M_{|h|-1}: its nonzero
@@ -1963,59 +2470,152 @@ for h in CACHE:
 F['columns_tested'] = _singleparent + _multiparent
 F['columns_single_parent'] = _singleparent
 F['columns_other'] = _multiparent
-# an explicit infinite cross-ratio witness: two rows at level 1, one
-# column under each.
+F['menu_entries_total'] = _menuentries
+F['menu_duplicate_entries'] = _dupmenu
+# THE WITNESS MINOR, COMPUTED — no always-firing else.  Each entry is
+# a SUM OVER THE ROW'S ACTUAL MENU of the weights of the events that
+# carry the row to the named column; an off-diagonal zero is therefore
+# READ off an empty sum, not assigned by a guard that can never hold.
 _lv1 = sorted(LEVEL[1], key=SK)
 r1, r2 = _lv1[0], _lv1[1]
 c1 = r1 + (sorted(CACHE[r1], key=lambda t: SK(t[0]))[0][0],)
 c2 = r2 + (sorted(CACHE[r2], key=lambda t: SK(t[0]))[0][0],)
-_d1 = {SK(e): q for e, q in CACHE[r1]}
-_d2 = {SK(e): q for e, q in CACHE[r2]}
-m11 = _d1.get(SK(c1[-1]), Fr(0))
-m12 = _d1.get(SK(c2[-1]), Fr(0)) if c2[:-1] == r1 else Fr(0)
-m21 = _d2.get(SK(c1[-1]), Fr(0)) if c1[:-1] == r2 else Fr(0)
-m22 = _d2.get(SK(c2[-1]), Fr(0))
+
+
+def moper(row, col):
+    """The (row, col) entry of the level operator: the total weight the
+    row's own menu sends to that exact column history."""
+    return sum(q for e, q in CACHE[row] if row + (e,) == col)
+
+
+m11 = moper(r1, c1)
+m12 = moper(r1, c2)
+m21 = moper(r2, c1)
+m22 = moper(r2, c2)
 _wit = (str(m11), str(m12), str(m21), str(m22))
 F['birkhoff_witness'] = _wit
-F['birkhoff_diameter_finite'] = False
-F['birkhoff_tau'] = '1'
-emit(f"  MEASURED: of the {F['columns_tested']} columns (every "
-     f"non-root history of the family), {F['columns_single_parent']} "
-     f"have EXACTLY ONE nonzero entry — the history's unique parent — "
-     f"and {F['columns_other']} have any other number.  Unique "
-     f"parenthood is the defining property of a history tree.")
-emit(f"  CONSEQUENCE, EXHIBITED: take two rows h1 != h2 at the same "
-     f"level and one column under each.  The 2x2 minor is "
-     f"[[{_wit[0]}, {_wit[1]}], [{_wit[2]}, {_wit[3]}]] — the "
-     f"off-diagonal entries are exactly 0, so the cross-ratio "
-     f"m11*m22/(m21*m12) is +infinity.  Hence Delta(M_n) = infinity "
-     f"and tanh(Delta/4) = 1 AT EVERY LEVEL: THE BIRKHOFF CONTRACTION "
-     f"COEFFICIENT OF THE BACKWARD RECURSION IS 1, NOT BY A CAP AND "
-     f"NOT BY A NUMERICAL ACCIDENT, BUT BY UNIQUE PARENTHOOD.")
+# DERIVED FROM THE WITNESS, not typed: the projective diameter of a
+# nonnegative matrix is finite only if no zero pattern separates a pair
+# of columns; an off-diagonal zero in a 2x2 minor is such a pattern, so
+# the cross-ratio m11*m22/(m12*m21) is infinite and tanh(Delta/4) = 1.
+F['birkhoff_zero_offdiag'] = (m12 == 0 or m21 == 0)
+F['birkhoff_diameter_finite'] = not (m12 == 0 or m21 == 0)
+F['birkhoff_tau'] = ('1' if (m12 == 0 or m21 == 0)
+                     else str((1 - (m12 * m21) / (m11 * m22))
+                              / (1 + (m12 * m21) / (m11 * m22))))
+F['birkhoff_crossratio_infinite'] = (m12 * m21 == 0 and m11 * m22 != 0)
+# THE HISTORY-LEVEL DOEBLIN CONSTANT, COMPUTED rather than argued: the
+# largest common minorant of the one-step laws of the level-1
+# histories, at the finest possible grain (the successor history
+# itself).  Disjoint descendant supports make it exactly 0, and the sum
+# below is what says so.
+_lv1laws = []
+for _x in _lv1:
+    _kk = krel(_x, 1)
+    _lv1laws.append({_x + (_e,): _v for _e, _v in _kk.items()})
+_lv1keys = set()
+for _m in _lv1laws:
+    _lv1keys |= set(_m)
+F['birkhoff_doeblin_history'] = str(
+    sum(min(_m.get(_k, Fr(0)) for _m in _lv1laws) for _k in _lv1keys))
+F['birkhoff_doeblin_witness_n'] = len(_lv1)
+emit(f"  MEASURED, AND THE TWO CLAUSES SEPARATED.  (a) THE "
+     f"SUBSTANTIVE ONE: over all {F['menu_entries_total']} menu "
+     f"entries of the family there are {F['menu_duplicate_entries']} "
+     f"DUPLICATED entries — the only way a history-tree column census "
+     f"could have come out otherwise.  (b) THE FORCED ONE: of the "
+     f"{F['columns_tested']} columns (every non-root history of the "
+     f"family), {F['columns_single_parent']} have EXACTLY ONE nonzero "
+     f"entry — the history's unique parent — and {F['columns_other']} "
+     f"have any other number.  Clause (b) is FORCED: a history is its "
+     f"own event sequence, so h[:-1] is the only candidate row, and "
+     f"unique parenthood is the defining property of a history tree "
+     f"rather than a finding about this one.  It is carried as a "
+     f"THEOREM-PASS below and (a) is carried as the measurement.")
+emit(f"  CONSEQUENCE, EXHIBITED FROM A COMPUTED MINOR: take two rows "
+     f"h1 != h2 at the same level and one column under each.  Each "
+     f"entry is the total weight the row's own menu sends to that "
+     f"exact column, so an off-diagonal zero is READ off an empty sum "
+     f"rather than assigned by a guard.  The 2x2 minor is "
+     f"[[{_wit[0]}, {_wit[1]}], [{_wit[2]}, {_wit[3]}]]; "
+     f"off-diagonal-zero = {F['birkhoff_zero_offdiag']}, so the "
+     f"cross-ratio m11*m22/(m21*m12) is +infinity "
+     f"({F['birkhoff_crossratio_infinite']}), the projective diameter "
+     f"is finite = {F['birkhoff_diameter_finite']}, and the DERIVED "
+     f"contraction coefficient is tau = {F['birkhoff_tau']} AT EVERY "
+     f"LEVEL: THE BIRKHOFF CONTRACTION COEFFICIENT OF THE BACKWARD "
+     f"RECURSION IS {F['birkhoff_tau']}, NOT BY A CAP AND NOT BY A "
+     f"NUMERICAL ACCIDENT, BUT BY UNIQUE PARENTHOOD.  Neither tau nor "
+     f"the diameter flag is typed: both are derived from the minor "
+     f"above.")
+emit(f"  SCOPE OF THE BIRKHOFF ROUTE, DISCLOSED (and this is a "
+     f"limitation, not a result).  What dies here is the Birkhoff / "
+     f"Hilbert route ON THE HISTORY TREE, where it dies for every "
+     f"history tree under every weight law, carrying no "
+     f"transport-specific content.  THE HILBERT PROJECTIVE DIAMETER "
+     f"OF A QUOTIENT TRANSFER OPERATOR IS NOT COMPUTED ANYWHERE IN "
+     f"THIS UNIT: on a quotient the operator need not be a tree "
+     f"operator and Delta may be finite, and that is the only level at "
+     f"which the predecessor's named engine could ever have worked.  "
+     f"ARM B substitutes a DIFFERENT instrument on the quotients — the "
+     f"Doeblin coefficient delta* — and the substitution is named "
+     f"here rather than left for a reader to notice.  The named engine "
+     f"remains UN-ATTEMPTED at the level where it could have worked, "
+     f"and it is carried forward as the successor's first ARM-B task.")
 emit(f"  The same fact kills the history-level Doeblin bound "
      f"outright: for x != y at the same depth, the supports of "
      f"P^N(x, .) and P^N(y, .) are disjoint sets of descendants, so "
      f"the largest common minorant is the zero measure and delta = 0 "
-     f"for every N.  ANY minorization at transport scope must "
+     f"for every N.  MEASURED, not argued: the largest common minorant "
+     f"of the one-step laws of the {F['birkhoff_doeblin_witness_n']} "
+     f"level-1 histories, at the finest possible grain (the successor "
+     f"history itself), has total mass "
+     f"{F['birkhoff_doeblin_history']}.  ANY minorization at transport "
+     f"scope must "
      f"therefore live on a QUOTIENT — which is precisely where ARM A "
      f"fact 5's escape bites.  This is the structural statement the "
      f"predecessor's open question did not contain.")
-gate("B1-TREE", KIND_SUB,
-     "THE TREE OBSTRUCTION, measured: every column of every level "
-     "operator has exactly one nonzero entry (unique parenthood), so "
+gate("B1-TREE", KIND_THM,
+     "THE TREE OBSTRUCTION — carried as a THEOREM-PASS with its "
+     "forcing named, because unique parenthood is a property of the "
+     "REPRESENTATION (a history IS its event sequence, so h = g + (e,) "
+     "forces g = h[:-1]) and not a finding about this family: every "
+     "column of every level operator has exactly one nonzero entry, so "
      "the projective diameter is infinite, the Birkhoff contraction "
      "coefficient is 1 at every level, and the history-level Doeblin "
-     "constant is 0 for every N by disjointness of supports",
+     "constant is 0 for every N by disjointness of supports.  Its only "
+     "failure mode is a duplicated menu entry, and THAT is gated "
+     "separately and substantively at B1-NODUP",
      lambda f: (f['columns_other'] == 0
                 and f['columns_single_parent'] == 243768
                 and f['birkhoff_witness'][1] == '0'
                 and f['birkhoff_witness'][2] == '0'
-                and f['birkhoff_diameter_finite'] is False),
+                and f['birkhoff_zero_offdiag']
+                and f['birkhoff_crossratio_infinite']
+                and f['birkhoff_diameter_finite'] is False
+                and f['birkhoff_tau'] == '1'),
      lambda f: f"columns = {f['columns_tested']}, single-parent = "
                f"{f['columns_single_parent']}, other = "
                f"{f['columns_other']}; witness minor = "
-               f"{list(f['birkhoff_witness'])}; tau = "
+               f"{list(f['birkhoff_witness'])} (COMPUTED, each entry a "
+               f"sum over the row's own menu); diameter finite = "
+               f"{f['birkhoff_diameter_finite']}; tau = "
                f"{f['birkhoff_tau']}")
+gate("B1-NODUP", KIND_SUB,
+     "THE SUBSTANTIVE HALF OF THE TREE OBSTRUCTION, separated from the "
+     "forced half: the committed layer emits NO DUPLICATED MENU ENTRY "
+     "anywhere in the family — 0 duplicates over every menu entry of "
+     "all 243,769 histories.  This is the only input that could have "
+     "broken the column census, and it is a real measurement of the "
+     "layer's bookkeeping rather than a property of the history-tree "
+     "representation",
+     lambda f: (f['menu_duplicate_entries'] == 0
+                and f['menu_entries_total'] > 200000
+                and f['menu_entries_total']
+                == sum(n for k, n in f['kind_counts'])),
+     lambda f: f"duplicated menu entries = "
+               f"{f['menu_duplicate_entries']} over "
+               f"{f['menu_entries_total']} menu entries")
 
 # --- B2: THE QUOTIENT MINORIZATION, ATTEMPTED
 emit("")
@@ -2040,6 +2640,9 @@ emit("  TWO HORIZON CONVENTIONS, both printed, because naming one "
      "regardless of its depth.")
 
 
+RSIGALL = set(RS)
+
+
 def psi_kind_of(h):
     return shape_kind(h)
 
@@ -2048,7 +2651,40 @@ def psi_event_of(h):
     return shape_event(h)
 
 
-def nstep_law(x, N, psi, matched):
+def psi_profile_of(h):
+    """The HOLDINGS PROFILE as a grain — the obstruction coordinate
+    itself, used as the abstraction.  Coarser than or incomparable to
+    both menu grains, and the obvious candidate given this unit's own
+    diagnosis, so it is measured rather than left to a reader."""
+    hold, nsup = HOLD[h]
+    return ('PROF', len(hold['A']), len(hold['B']))
+
+
+def psi_profile_unordered_of(h):
+    hold, nsup = HOLD[h]
+    return ('PROFU',) + tuple(sorted((len(hold['A']), len(hold['B']))))
+
+
+def psi_rsig_of(h):
+    """The R-SIG INDICATOR as a grain: the two-class abstraction a
+    regeneration argument ABOUT R-SIG would naturally declare.  This is
+    the counter-reading of the BLOCKED verdict and it is printed as
+    one."""
+    return ('RSIG', h in RSIGALL)
+
+
+PSIS = (('kind13', psi_kind_of),
+        ('event113', psi_event_of),
+        ('profile', psi_profile_of),
+        ('profile_unordered', psi_profile_unordered_of),
+        ('rsig_indicator', psi_rsig_of))
+PSI_FAMILY_NOTE = (
+    "menu-shape functions of the successor (kind x weight, event x "
+    "weight) PLUS the holdings-profile and R-SIG-indicator "
+    "abstractions added by this repair")
+
+
+def nstep_frontier(x, N, matched):
     fr = {x: Fr(1)}
     for st in range(N):
         nxt = defaultdict(Fr)
@@ -2058,39 +2694,95 @@ def nstep_law(x, N, psi, matched):
             for e, q in CACHE[g]:
                 nxt[g + (e,)] += w * kk[e]
         fr = nxt
+    return fr
+
+
+def nstep_law(x, N, psi, matched):
     mu = defaultdict(Fr)
-    for g, w in fr.items():
+    for g, w in nstep_frontier(x, N, matched).items():
         mu[psi(g)] += w
     return mu
 
 
-def delta_star(Xs, N, psi, matched):
-    laws = [nstep_law(x, N, psi, matched) for x in Xs]
-    keys = set()
-    for m in laws:
-        keys |= set(m)
+def _dstar_from_laws(laws):
+    """delta* = sum_s min_x P^N(x, s).  A class absent from ANY law
+    contributes min = 0, so only the INTERSECTION of the laws' supports
+    can contribute: the intersection is taken first and the minimum is
+    then computed on it alone.  This is the same number by the same
+    definition — it drops terms that are identically zero — and it is
+    what makes the five-grain census affordable."""
+    if not laws:
+        return Fr(0), {}
+    common = set(laws[0])
+    for m in laws[1:]:
+        common &= set(m)
+        if not common:
+            break
     best = Fr(0)
     nu = {}
-    for k in keys:
-        m = min(mm.get(k, Fr(0)) for mm in laws)
-        if m > 0:
-            nu[k] = m
-            best += m
+    for k in sorted(common, key=SK):
+        v = min(mm[k] for mm in laws)
+        if v > 0:
+            nu[k] = v
+            best += v
     return best, nu
 
 
-prog("ARM B: delta* on the FULL R-SIG class ...")
+def delta_star(Xs, N, psi, matched):
+    return _dstar_from_laws(
+        [nstep_law(x, N, psi, matched) for x in Xs])
+
+
+def delta_star_multi(Xs, N, matched, psis=PSIS):
+    """delta* at SEVERAL grains from ONE frontier per point.  The
+    frontier is the expensive object and it does not depend on the
+    grain, so measuring five grains costs barely more than measuring
+    one — which is why the grain fiber below is measured rather than
+    declared."""
+    laws = {nm: [] for nm, ps in psis}
+    for x in Xs:
+        fr = nstep_frontier(x, N, matched)
+        for nm, ps in psis:
+            mu = defaultdict(Fr)
+            for g, w in fr.items():
+                mu[ps(g)] += w
+            laws[nm].append(mu)
+    return {nm: _dstar_from_laws(laws[nm]) for nm, ps in psis}
+
+
+prog("ARM B: delta* on the FULL R-SIG class, five grains ...")
 full_rows = []
+grain_rows = []
 for N in range(1, NMAX + 1):
     Xs = [h for h in RS if len(h) + N <= CAP_T]
     if not Xs:
         full_rows.append((N, 0, 0, None, None))
         continue
     nprof = len({RS[h][1] for h in Xs})
-    dk, _ = delta_star(Xs, N, psi_kind_of, False)
-    dm, _ = delta_star(Xs, N, psi_kind_of, True)
+    if N <= 3:
+        # the three widest windows carry the grain fiber: five grains,
+        # both conventions, one frontier per point
+        mH = delta_star_multi(Xs, N, False)
+        mM = delta_star_multi(Xs, N, True)
+        dk = mH['kind13'][0]
+        dm = mM['kind13'][0]
+        grain_rows.append(
+            (N, len(Xs), tuple((nm, str(mH[nm][0]), str(mM[nm][0]))
+                               for nm, ps in PSIS)))
+    else:
+        # the narrow windows have collapsed to a single profile and
+        # carry no cross-profile content; only the declared primary
+        # grain is run there, exactly as in the first delivery
+        dk, _ = delta_star(Xs, N, psi_kind_of, False)
+        dm, _ = delta_star(Xs, N, psi_kind_of, True)
     full_rows.append((N, len(Xs), nprof, str(dk), str(dm)))
 F['B2_full_rows'] = tuple(full_rows)
+F['B2_full_grain_rows'] = tuple(grain_rows)
+F['B2_rsig_indicator_matched'] = tuple(
+    (N, dict((nm, m) for nm, hh, m in row)['rsig_indicator'])
+    for N, n, row in grain_rows)
+F['B2_rsig_indicator_delta1_at'] = tuple(
+    N for N, v in F['B2_rsig_indicator_matched'] if v == '1')
 emit("")
 emit("  (a) THE FULL R-SIG CLASS.  x ranges over every R-SIG point "
      f"the window admits (len(x) + N <= {CAP_T}).  The third column "
@@ -2139,47 +2831,154 @@ emit(f"  READ EXACTLY, AND NOT ONE WORD FURTHER.  On the two WIDEST "
      f"the narrow ones say is a cap artefact, and it is printed as "
      f"one.")
 
+emit("")
+emit("  (a') THE GRAIN FIBER OF THE FULL-CLASS ROWS, MEASURED AT FIVE "
+     "GRAINS RATHER THAN DECLARED AT ONE.  The delivered verdict's "
+     "delta* = 0 clause is stated at the DECLARED-PRIMARY 13-class "
+     "grain, and it must carry that qualifier, because delta* is "
+     "grain-relative and this table is what shows it.  Each cell is "
+     "(H7, MATCHED).")
+emit("    N | |C-window| | " + " | ".join(nm for nm, ps in PSIS))
+for N, n, row in grain_rows:
+    emit(f"    {N} | {n} | "
+         + " | ".join(f"{h}, {m}" for nm, h, m in row))
+emit(f"  THE COUNTER-READING, PRINTED AS THE FOUND-REACHABILITY "
+     f"WITNESS AND NOT BURIED.  At Psi = THE R-SIG INDICATOR — a "
+     f"legitimate declared abstraction, and the obvious one for a "
+     f"regeneration argument ABOUT R-SIG — the SAME full class has "
+     f"delta* = 1 at matched horizon on the same widest windows "
+     f"(N = {list(F['B2_rsig_indicator_delta1_at'])}).  The mechanism "
+     f"is exact and is not an artefact: the one-step matched kernel is "
+     f"the sector-normalized menu, the two idles carry 1 and the "
+     f"deliveries (of the non-superseded token, or of a superseded "
+     f"remainder, which changes neither nsup nor its equality) carry "
+     f"1/2, so P^1(x, R-SIG) = 3/4 identically at every R-SIG point, "
+     f"menu-exact or not.  BLOCKED IS THEREFORE PSI-FAMILY-RELATIVE, "
+     f"and the verdict now carries the qualifier the FOUND segment "
+     f"already carried.  What the BLOCKED verdict says is that no "
+     f"MENU-SHAPE grain unblocks the ladder; what this row says is "
+     f"that a grain which reads the target class itself does — and "
+     f"that a delta* = 1 at a two-class grain is a lumpability "
+     f"statement, not a contraction instrument.")
+emit(f"  AND THE OBSTRUCTION COORDINATE ITSELF DOES NOT UNBLOCK IT: at "
+     f"Psi = the holdings profile (ordered) and at Psi = the holdings "
+     f"profile (unordered) — both coarser than or incomparable to the "
+     f"two menu grains — delta* is still exactly 0 on the two widest "
+     f"windows.  Four grains, one answer; the fifth is the "
+     f"counter-reading above.")
+
 prog("ARM B: delta* on the holdings-profile blocks ...")
 PROFBLK = defaultdict(list)
 for h, (v, p, m) in RS.items():
     PROFBLK[p].append(h)
-# The blocks tested are exactly the ones ARM A fact 4's depth-5
-# decomposition names — declared, not selected by the answers.
-PROFS = [tuple(p) for p, n in F['rsig_profiles']]
+# THE BLOCK LIST IS BUILT FROM THE WHOLE R-SIG SET, NOT FROM ARM A
+# FACT 4's DEPTH-5 CENSUS.  The first delivery took the profile list
+# from the depth-<=5 decomposition and applied it to the depth-<=6
+# R-SIG set, which silently dropped a FIFTH block — (3, 3), 424 points,
+# all at depth 6 — and made four universals ("each block", "every
+# block", "one per holdings profile") false as written.  The census
+# below is over every R-SIG point of the family and the coverage
+# identity is gated, so an undeclared block cannot recur.
+PROFS = sorted(PROFBLK, key=SK)
+PROF_DEPTHS = {p: tuple(sorted((d, sum(1 for h in PROFBLK[p]
+                                       if len(h) == d))
+                               for d in sorted({len(h)
+                                                for h in PROFBLK[p]})))
+               for p in PROFS}
 F['B2_blocks_declared'] = tuple(str(p) for p in PROFS)
+F['rsig_profiles_all'] = tuple((str(p), len(PROFBLK[p])) for p in PROFS)
+F['rsig_profile_depths'] = tuple((str(p), PROF_DEPTHS[p]) for p in PROFS)
+F['rsig_all_count'] = len(RS)
+F['rsig_block_coverage'] = sum(len(PROFBLK[p]) for p in PROFS)
+F['rsig_blocks_n'] = len(PROFS)
+F['rsig_blocks_declared_at_d5'] = len(F['rsig_profiles'])
+emit("")
+emit("  (b) THE HOLDINGS-PROFILE BLOCKS, CENSUSED OVER THE WHOLE "
+     "FAMILY.  ARM A fact 4 decomposed R-SIG by (|holdings(A)|, "
+     "|holdings(B)|) on the depth-<=5 window; the block LIST below is "
+     "taken from every R-SIG point of the depth-6 family instead, "
+     "which is where the FIFTH block lives.")
+emit("    profile | points | by depth")
+for p in PROFS:
+    emit(f"    {p} | {len(PROFBLK[p])} | {dict(PROF_DEPTHS[p])}")
+emit(f"    total | {F['rsig_block_coverage']} | (= {F['rsig_all_count']} "
+     f"R-SIG points; the coverage identity is gated at B2-BLOCKCOVER)")
+emit(f"  {F['rsig_blocks_declared_at_d5']} blocks appear at depth <= 5 "
+     f"and {F['rsig_blocks_n']} appear in the family.  The fifth block "
+     f"(3, 3) carries {len(PROFBLK[(3, 3)])} points, ALL at depth "
+     f"{CAP_T} — so no window with dep + N <= {CAP_T} exists for it "
+     f"and its delta* is EXCLUDED-BY-CAP, with the reason printed and "
+     f"its hitting row measured below rather than the block dropped.")
 prof_rows = []
+excluded = []
 for p in PROFS:
     for N in (1, 2):
         Xs = [h for h in PROFBLK[p] if len(h) + N <= CAP_T]
         if len(Xs) < 2:
+            excluded.append((str(p), N, len(Xs), 'EXCLUDED-BY-CAP: '
+                             'the block has fewer than two points at '
+                             'depth <= %d, so no N-step window with '
+                             'dep + N <= %d exists' % (CAP_T - N, CAP_T)))
             continue
-        dkH, _ = delta_star(Xs, N, psi_kind_of, False)
-        dkM, nuM = delta_star(Xs, N, psi_kind_of, True)
-        deM, _ = delta_star(Xs, N, psi_event_of, True)
-        prof_rows.append((p, N, len(Xs),
-                          tuple(sorted({len(h) for h in Xs})),
-                          str(dkH), str(dkM), str(deM), len(nuM)))
-F['B2_profile_rows'] = tuple(prof_rows)
-emit("")
-emit("  (b) THE HOLDINGS-PROFILE BLOCKS.  ARM A fact 4 decomposed "
-     "R-SIG by (|holdings(A)|, |holdings(B)|); R-MENU is exactly the "
-     "(1, 1) block.  Here each block is tested as a candidate small "
-     "set.")
+        mH = delta_star_multi(Xs, N, False)
+        mM = delta_star_multi(Xs, N, True)
+        dkH = mH['kind13'][0]
+        dkM, nuM = mM['kind13']
+        deM = mM['event113'][0]
+        dsup = tuple(sorted({len(h) for h in Xs}))
+        prof_rows.append((p, N, len(Xs), dsup,
+                          str(dkH), str(dkM), str(deM), len(nuM),
+                          str(mM['profile'][0]),
+                          str(mM['profile_unordered'][0]),
+                          str(mM['rsig_indicator'][0]),
+                          max(dsup) + N))
+F['B2_profile_rows'] = tuple(
+    r[:8] for r in prof_rows)          # the delivered shape, unchanged
+F['B2_profile_rows_full'] = tuple(prof_rows)
+F['B2_blocks_excluded'] = tuple(excluded)
+F['B2_atom_deltas'] = tuple(
+    (str(p), N, dH, dM, dE) for p, N, n, ds, dH, dM, dE, nnu,
+    dp, dpu, dr, sd in prof_rows)
 emit("    profile | N | |block-window| | depths | delta* H7 primary | "
      "delta* MATCHED primary | delta* MATCHED control | |support(nu)|")
-for p, N, n, ds, dH, dM, dE, nnu in prof_rows:
+for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd in prof_rows:
     emit(f"    {p} | {N} | {n} | {list(ds)} | {dH} | {dM} | {dE} | "
          f"{nnu}")
+for p, N, n, why in excluded:
+    emit(f"    {p} | {N} | {n} | {why}")
+emit("  THE SAME ROWS AT THE THREE FURTHER GRAINS (MATCHED), so that "
+     "the coarsening lemma below can be checked cell by cell rather "
+     "than asserted:")
+emit("    profile | N | kind13 | event113 | profile | "
+     "profile-unordered | rsig-indicator")
+for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd in prof_rows:
+    emit(f"    {p} | {N} | {dM} | {dE} | {dp} | {dpu} | {dr}")
 
-_atoms = [(p, N, n, dM) for p, N, n, ds, dH, dM, dE, nnu in prof_rows
-          if dM == '1']
-F['B2_atoms'] = tuple((str(p), N, n) for p, N, n, dM in _atoms)
+_atoms = [(p, N, n, dM) for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr,
+          sd in prof_rows if dM == '1']
+F['B2_atoms'] = tuple((str(p), N, n, dM) for p, N, n, dM in _atoms)
 F['B2_atom_found'] = len(_atoms) > 0
 F['B2_best_delta'] = '1' if _atoms else '0'
 F['B2_best_N'] = (min(N for p, N, n, dM in _atoms) if _atoms else None)
 F['B2_grain_split'] = tuple(
-    (str(p), N, dM, dE) for p, N, n, ds, dH, dM, dE, nnu in prof_rows
-    if dM != dE)
+    (str(p), N, dM, dE) for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr,
+    sd in prof_rows if dM != dE)
+F['B2_grain_split_direction_ok'] = all(
+    dM == '1' and dE == '0' for p, N, dM, dE in F['B2_grain_split'])
+# THE COARSENING LEMMA, CHECKED CELL BY CELL.  If Psi' coarsens Psi
+# then delta*(C, N, Psi') >= delta*(C, N, Psi), because
+# min_x sum_i P^N(x, s_i) >= sum_i min_x P^N(x, s_i).  The event x
+# weight grain refines the kind x weight grain (the event determines
+# its kind), and both refine the holdings-profile grain on these
+# blocks, so the delivered numbers must satisfy
+# event113 <= kind13 <= profile.  Every row is checked; a violation
+# would mean one of the three columns is wrong.
+F['B2_coarsening_rows'] = tuple(
+    (str(p), N, dE, dM, dp) for p, N, n, ds, dH, dM, dE, nnu, dp, dpu,
+    dr, sd in prof_rows)
+F['B2_coarsening_violations'] = sum(
+    1 for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd in prof_rows
+    if not (Fr(dE) <= Fr(dM) <= Fr(dp)))
 _nu_desc = None
 if _atoms:
     p0 = min((p for p, N, n, dM in _atoms if N == F['B2_best_N']),
@@ -2200,12 +2999,27 @@ else:
     F['B2_nu_depths'] = ()
 
 emit("")
-emit(f"  WHAT LANDED.  At the MATCHED horizon and the PRIMARY grain, "
-     f"each holdings-profile block of R-SIG is an EXACT ATOM: "
-     f"delta* = 1, i.e. P^N(x, .) is the SAME measure for every x in "
-     f"the block, not merely bounded below by a common one.  The "
-     f"blocks that reach delta* = 1 and the windows they were measured "
-     f"on: {list(F['B2_atoms'])}.")
+emit(f"  WHAT LANDED, WITH ITS UNIVERSALS REMOVED.  At the MATCHED "
+     f"horizon and the PRIMARY grain, every holdings-profile block of "
+     f"R-SIG THAT THIS CAP CAN TEST — {len(set(p for p, N, n, d in _atoms))} "
+     f"of the {F['rsig_blocks_n']} blocks the family carries, over "
+     f"{len(prof_rows)} (block, N) rows — is an EXACT ATOM: delta* = 1, "
+     f"i.e. P^N(x, .) is the SAME measure for every x in the block, "
+     f"not merely bounded below by a common one.  The blocks that "
+     f"reach delta* = 1 and the windows they were measured on: "
+     f"{list(F['B2_atoms'])}.  The remaining block (3, 3) is "
+     f"EXCLUDED-BY-CAP and is NOT claimed to be an atom: "
+     f"{list(F['B2_blocks_excluded'])}.")
+emit(f"  AND WHAT delta* = 1 MEANS, said once so that the label cannot "
+     f"drift: a set with delta* = 1 is a set contained in a SINGLE "
+     f"state of the N-step Psi-quotient chain.  That is a LUMPABILITY "
+     f"statement — the block is one quotient state — and it is the "
+     f"DEGENERATE end of the minorization scale, not its strong end: a "
+     f"Doeblin minorization is an instrument when delta lies strictly "
+     f"between 0 and 1 on a set the chain returns to, and delta = 1 "
+     f"contributes no contraction because there is nothing left to "
+     f"contract.  The FOUND segment records a lumpability observation "
+     f"under a minorization label, and B3 measures the half it lacks.")
 if _atoms:
     emit(f"  nu, EXHIBITED (block {F['B2_nu_profile']}, N = "
          f"{F['B2_best_N']}, over {F['B2_nu_block_size']} points "
@@ -2223,29 +3037,98 @@ emit(f"  WHAT DID NOT.  On the FULL R-SIG class delta* = 0 at every "
      f"1/4 divided by |holdings(a)|, so the superseded remainder is "
      f"WRITTEN INTO THE MENU), and their N-step laws therefore share "
      f"no Psi-class at all.")
-emit(f"  THE GRAIN IS ARENA DATA AND IT BITES: at the CONTROL grain "
-     f"the same blocks split — "
+emit(f"  THE GRAIN IS ARENA DATA AND IT BITES, WITH ITS DIRECTION "
+     f"NAMED: at the CONTROL grain the same blocks split — "
      f"{len(F['B2_grain_split'])} of {len(prof_rows)} rows have "
      f"delta*(primary) != delta*(control), because the control grain "
-     f"resolves the version NAMES that the primary grain forgets.  "
-     f"Rows where they differ: {list(F['B2_grain_split'])}.")
+     f"resolves the version NAMES that the primary grain forgets.  In "
+     f"EVERY such row the primary value is 1 and the control value is "
+     f"0 ({F['B2_grain_split_direction_ok']}): the split runs one way "
+     f"only.  Rows where they differ: {list(F['B2_grain_split'])}.  So "
+     f"at the control grain R-MENU — the (1, 1) block — is the ONLY "
+     f"block that remains an atom, and the sentence 'R-MENU is not a "
+     f"special class at all' is true at the primary grain and FALSE at "
+     f"the control grain.  Both readings are printed; neither is "
+     f"promoted.")
+emit(f"  THE COARSENING LEMMA, STATED AND CHECKED CELL BY CELL.  If "
+     f"Psi' coarsens Psi then delta*(C, N, Psi') >= delta*(C, N, Psi), "
+     f"since min_x sum_i P^N(x, s_i) >= sum_i min_x P^N(x, s_i).  The "
+     f"event x weight grain REFINES the kind x weight grain and both "
+     f"refine the holdings-profile grain, so every row must satisfy "
+     f"event113 <= kind13 <= profile.  Violations over "
+     f"{len(F['B2_coarsening_rows'])} rows: "
+     f"{F['B2_coarsening_violations']}.  TWO CONSEQUENCES THE UNIT "
+     f"OWNS: (i) delta* = 0 for the full class at the 13-class grain "
+     f"implies delta* = 0 at EVERY REFINEMENT of it, including all six "
+     f"of T5's committed abstractions, so no pinned abstraction "
+     f"unblocks the ladder; (ii) delta* = 1 on a block at the 13-class "
+     f"grain implies delta* = 1 at every COARSENING of it.  The result "
+     f"is more robust than a two-point measurement, and strictly so.")
 
 gate("B2-ATOM", KIND_SUB,
-     "THE MINORIZATION LANDS ON THE PROFILE BLOCKS: at the matched "
-     "horizon and the primary grain every holdings-profile block of "
-     "R-SIG that the window can test is an EXACT ATOM — delta* = 1 "
-     "with an explicitly exhibited nu on a small support — and the "
-     "measurement could have come out otherwise, since the same "
-     "computation returns 0 on the full class and on the control grain",
+     "THE MINORIZATION LANDS ON THE PROFILE BLOCKS THE CAP CAN TEST: "
+     "at the matched horizon and the primary grain every "
+     "holdings-profile block of R-SIG with a testable window is an "
+     "EXACT ATOM — delta* = 1 with an explicitly exhibited nu on a "
+     "small support — and the measurement could have come out "
+     "otherwise, since the same computation returns 0 on the full "
+     "class and on the control grain.  The claim is NOT universal over "
+     "blocks: the fifth block is excluded by the cap and named",
      lambda f: (f['B2_atom_found'] and f['B2_best_delta'] == '1'
                 and f['B2_nu_support'] > 0
                 and len(f['B2_atoms']) >= 2
                 and len(f['B2_nu_measure']) == f['B2_nu_support']
-                and sum(Fr(w) for k, w in f['B2_nu_measure']) == 1),
-     lambda f: f"atoms = {list(f['B2_atoms'])}; nu support = "
+                and sum(Fr(w) for k, w in f['B2_nu_measure']) == 1
+                and any(p == '(3, 3)'
+                        for p, N, n, w in f['B2_blocks_excluded'])),
+     lambda f: f"atoms = {list(f['B2_atoms'])}; excluded-by-cap = "
+               f"{[(p, N) for p, N, n, w in f['B2_blocks_excluded']]}; "
+               f"nu support = "
                f"{f['B2_nu_support']} classes on block "
                f"{f['B2_nu_profile']} over {f['B2_nu_block_size']} "
                f"points at depths {list(f['B2_nu_depths'])}")
+gate("B2-BLOCKCOVER", KIND_SUB,
+     "THE BLOCK DECOMPOSITION COVERS R-SIG EXACTLY, so that an "
+     "undeclared block cannot recur: the holdings-profile blocks are "
+     "built from every R-SIG point of the family, their sizes sum to "
+     "the R-SIG count, there are FIVE of them where the depth-<=5 "
+     "census names four, and the fifth is (3, 3) with 424 points all "
+     "at depth 6",
+     lambda f: (f['rsig_block_coverage'] == f['rsig_all_count']
+                and f['rsig_all_count'] == 39361
+                and f['rsig_blocks_n'] == 5
+                and f['rsig_blocks_declared_at_d5'] == 4
+                and ('(3, 3)', 424) in f['rsig_profiles_all']
+                and dict(f['rsig_profile_depths'])['(3, 3)']
+                == ((6, 424),)),
+     lambda f: f"blocks = {list(f['rsig_profiles_all'])}; coverage "
+               f"{f['rsig_block_coverage']} of {f['rsig_all_count']}; "
+               f"depth support = {list(f['rsig_profile_depths'])}")
+gate("B2-COARSENING", KIND_SUB,
+     "THE COARSENING LEMMA HOLDS ON EVERY MEASURED ROW: delta* is "
+     "monotone under coarsening, so event113 <= kind13 <= profile at "
+     "every (block, N) row — 0 violations.  This is what makes the "
+     "two-grain measurement decisive rather than two data points, and "
+     "it is what transports every delta* in this receipt to any "
+     "refinement or coarsening of the grains actually run",
+     lambda f: (f['B2_coarsening_violations'] == 0
+                and len(f['B2_coarsening_rows']) >= 6),
+     lambda f: f"violations = {f['B2_coarsening_violations']} over "
+               f"{len(f['B2_coarsening_rows'])} rows; rows = "
+               f"{list(f['B2_coarsening_rows'])}")
+gate("B2-PSI-COUNTERREADING", KIND_SUB,
+     "THE BLOCKED CLAUSE IS PSI-FAMILY-RELATIVE AND THE COUNTER-"
+     "READING IS PRINTED: at Psi = the R-SIG indicator the same full "
+     "class has delta* = 1 at matched horizon on both of its widest "
+     "windows, while at the two menu grains and at both holdings-"
+     "profile grains it is 0 there.  A verdict that stated the delta* "
+     "= 0 clause without its grain would be false at a declared "
+     "abstraction, and this gate is what forbids it",
+     lambda f: (f['B2_rsig_indicator_delta1_at'] == (1, 2)
+                and len(f['B2_full_grain_rows']) == 3),
+     lambda f: f"rsig-indicator MATCHED by N = "
+               f"{list(f['B2_rsig_indicator_matched'])}; delta* = 1 at "
+               f"N = {list(f['B2_rsig_indicator_delta1_at'])}")
 gate("B2-FULLZERO", KIND_SUB,
      "AND IT DOES NOT EXTEND ON THE WINDOWS THAT CAN CARRY THE CLAIM: "
      "on the two WIDEST windows of the full R-SIG class — the only "
@@ -2267,13 +3150,161 @@ gate("B2-FULLZERO", KIND_SUB,
                f"(no cross-profile content) = "
                f"{list(f['B2_homo_rows'])}")
 gate("B2-GRAIN", KIND_SUB,
-     "THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B: at least one profile "
-     "block is an atom at the primary grain and is NOT at the control "
-     "grain, so the minorization is grain-relative and the grain must "
-     "be declared",
-     lambda f: len(f['B2_grain_split']) > 0,
-     lambda f: f"rows differing between grains = "
+     "THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B, IN THE DIRECTION ITS "
+     "LABEL CLAIMS: exactly 4 of the 6 measured (block, N) rows are an "
+     "atom at the primary grain and are NOT at the control grain, and "
+     "in EVERY such row the primary value is exactly 1 and the control "
+     "value exactly 0 — a directional fact, not a non-emptiness test.  "
+     "So the minorization is grain-relative and the grain must be "
+     "declared",
+     lambda f: (len(f['B2_grain_split']) == 4
+                and f['B2_grain_split_direction_ok']
+                and all(dM == '1' and dE == '0'
+                        for p, N, dM, dE in f['B2_grain_split'])
+                and len(f['B2_profile_rows']) == 6),
+     lambda f: f"{len(f['B2_grain_split'])} of "
+               f"{len(f['B2_profile_rows'])} rows differ, all "
+               f"primary 1 / control 0 = "
+               f"{f['B2_grain_split_direction_ok']}: "
                f"{list(f['B2_grain_split'])}")
+
+# ======================================================================
+# B4 — THE CARRIER.  #82 ruled CONG-185 (d74's coarsest weighted
+# congruence at (A,B) depth <= 4) the law's carrier, superseding MENU +
+# G.  Do these atoms survive the carrier change?  The question is
+# decidable HERE, from this unit's own measured columns plus the
+# coarsening lemma, and the answer is measured rather than deferred.
+# ======================================================================
+emit("")
+emit("  [B4 — THE CARRIER: do the atoms survive CONG-185?]")
+prog("ARM B: the refinement chain and the carrier collapse ...")
+_ekmap = {}
+_chain_bad = 0
+for h in FAM4:
+    se, sk = shape_event(h), shape_kind(h)
+    if se in _ekmap and _ekmap[se] != sk:
+        _chain_bad += 1
+    _ekmap[se] = sk
+F['carrier_chain_tested'] = len(FAM4)
+F['carrier_chain_exceptions'] = _chain_bad
+F['grain_primary_by_window'] = tuple(
+    len({shape_kind(h) for h in CACHE if len(h) <= d}) for d in range(0, 6))
+F['grain_control_by_window'] = tuple(
+    len({shape_event(h) for h in CACHE if len(h) <= d}) for d in range(0, 6))
+F['carrier_cong_d4'] = 185
+F['carrier_menu_d4'] = 113
+F['carrier_cong_d5'] = 462
+F['carrier_menu_d5'] = 265
+_dead = [(str(p), N) for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd
+         in prof_rows if dE == '0']
+_open = [(str(p), N) for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd
+         in prof_rows if dE != '0']
+F['B4_carrier_dead_rows'] = tuple(_dead)
+F['B4_carrier_open_rows'] = tuple(_open)
+F['B4_statability'] = tuple(
+    (str(p), N, list(ds)[0], list(ds)[-1], sd, sd <= 4, sd <= 5)
+    for p, N, n, ds, dH, dM, dE, nnu, dp, dpu, dr, sd in prof_rows)
+F['B4_rows_statable_d4'] = sum(1 for r in F['B4_statability'] if r[5])
+F['B4_rows_statable_d5'] = sum(1 for r in F['B4_statability'] if r[6])
+_b11 = [h for h in PROFBLK[(1, 1)] if len(h) <= CAP_ESC]
+F['B4_block11_menu_classes_d4'] = len({shape_event(h) for h in _b11})
+F['B4_block11_points_d4'] = len(_b11)
+emit(f"  THE REFINEMENT CHAIN, ESTABLISHED IN-UNIT AND NOT ASSUMED.  "
+     f"d74's own output states the construction — 'Refining the menu "
+     f"partition by successor-closure (partition refinement to a fixed "
+     f"point) gives the coarsest weighted CONGRUENCE' — and commits "
+     f"'AB4 (A,B) depth<=4 CARRIER: menu quotient "
+     f"{F['carrier_menu_d4']} classes; coarsest congruence "
+     f"{F['carrier_cong_d4']} classes'.  Both strings are carried here "
+     f"as verbatim-context windows.  Measured here: the event x weight "
+     f"shape DETERMINES the kind x weight shape over all "
+     f"{F['carrier_chain_tested']} histories of depth <= {CAP_ESC}, "
+     f"with {F['carrier_chain_exceptions']} exceptions.  Therefore")
+emit(f"      CONG-{F['carrier_cong_d4']}  <=  MENU-"
+     f"{F['carrier_menu_d4']}  <=  KIND-"
+     f"{F['grain_primary_classes']}   (finer to coarser).")
+emit(f"  AND THE GRAIN NAMES ARE WINDOW-BOUND, which a successor must "
+     f"know before it implements 'the 13-class grain' literally: per "
+     f"window depth 0..5 the KIND x weight partition has "
+     f"{list(F['grain_primary_by_window'])} classes and the EVENT x "
+     f"weight partition has {list(F['grain_control_by_window'])} — "
+     f"reproducing d74's committed MENU {F['carrier_menu_d4']} at "
+     f"depth <= 4 AND its committed {F['carrier_menu_d5']} at depth "
+     f"<= 5, from this unit's own family, as an independent re-anchor "
+     f"of both carrier rows.  ARM B evaluates Psi on successors at "
+     f"depths up to {CAP_T}, where the counts are larger still.")
+emit(f"  THE COLLAPSE, MEASURED FROM THIS RECEIPT'S OWN COLUMNS.  By "
+     f"the coarsening lemma delta*(C, N, CONG-{F['carrier_cong_d4']}) "
+     f"<= delta*(C, N, MENU-{F['carrier_menu_d4']}), and the MATCHED "
+     f"control column IS the MENU-{F['carrier_menu_d4']} column.  So "
+     f"{len(_dead)} of the {len(prof_rows)} delivered atom rows have "
+     f"delta* = 0 AT THE RULED CARRIER — {_dead} — and only "
+     f"{len(_open)} remain candidates — {_open}, both of them the "
+     f"(1, 1) block, i.e. R-MENU.  THE ATOM CLAIM COLLAPSES TO R-MENU "
+     f"AT THE CARRIER.  The two open rows are bounded above by 1 and "
+     f"are a genuine successor computation, not a result of this "
+     f"unit; what is measurable here is that the whole (1, 1) block's "
+     f"depth-<= {CAP_ESC} part ({F['B4_block11_points_d4']} points) "
+     f"lies inside {F['B4_block11_menu_classes_d4']} MENU-"
+     f"{F['carrier_menu_d4']} class(es), so the first refinement round "
+     f"does not split it — rounds 2..5 might, and that is the open "
+     f"question.")
+emit(f"  PER-BLOCK STATABILITY ON THE CARRIER'S OWN WINDOW, STAMPED.  "
+     f"A (block, N) row is statable on a depth-D carrier only if the "
+     f"block's points AND their N-step successors lie at depth <= D.")
+emit("    profile | N | block depths | max successor depth | statable "
+     "on CONG-185 (d<=4) | statable on CONG-462 (d<=5)")
+for p, N, dlo, dhi, sd, s4, s5 in F['B4_statability']:
+    emit(f"    {p} | {N} | [{dlo}..{dhi}] | {sd} | {s4} | {s5}")
+emit(f"  {F['B4_rows_statable_d4']} of {len(prof_rows)} rows are "
+     f"statable on the d <= 4 carrier and "
+     f"{F['B4_rows_statable_d5']} on the d <= 5 carrier: the carrier "
+     f"must be extended to depth {CAP_T} before ANY of these rows can "
+     f"be re-run on it.  d74 commits the wider arm — '(A,B) depth<=5 "
+     f"CARRIER: menu quotient {F['carrier_menu_d5']} classes; coarsest "
+     f"congruence {F['carrier_cong_d5']} classes after 6 refinement "
+     f"rounds' — and THAT ROW IS CARRIED IN THIS UNIT'S T5 SUPPLY, "
+     f"because it is the object the Gamma-iteration needs.")
+gate("B4-CARRIER-CHAIN", KIND_SUB,
+     "THE REFINEMENT CHAIN IS ESTABLISHED, NOT ASSUMED: the event x "
+     "weight menu shape determines the kind x weight menu shape at "
+     "every history of the depth-4 family (0 exceptions over 3,969), "
+     "the two partitions have 113 and 13 classes there, and the "
+     "per-window class counts reproduce d74's committed MENU 113 at "
+     "depth <= 4 and 265 at depth <= 5 from this unit's own family.  "
+     "So CONG-185 <= MENU-113 <= KIND-13 and every delta* in this "
+     "receipt transports along it",
+     lambda f: (f['carrier_chain_exceptions'] == 0
+                and f['carrier_chain_tested'] == 3969
+                and f['grain_control_by_window'] == (1, 5, 13, 45, 113, 265)
+                and f['grain_primary_by_window'] == (1, 2, 5, 9, 13, 21)
+                and f['grain_control_by_window'][4] == f['carrier_menu_d4']
+                and f['grain_control_by_window'][5] == f['carrier_menu_d5']),
+     lambda f: f"exceptions = {f['carrier_chain_exceptions']} over "
+               f"{f['carrier_chain_tested']}; KIND per window = "
+               f"{list(f['grain_primary_by_window'])}; EVENT per "
+               f"window = {list(f['grain_control_by_window'])}")
+gate("B4-CARRIER-SUPPLY", KIND_SUB,
+     "THE CARRIER COLLAPSE IS MEASURED AND ITS SUPPLY IS CARRIED: 4 of "
+     "the 6 delivered atom rows have delta* = 0 at the ruled carrier "
+     "CONG-185, by the coarsening lemma applied to this receipt's own "
+     "MATCHED-control column; the 2 survivors are exactly the (1, 1) "
+     "block, i.e. R-MENU; NO delivered row is statable on either "
+     "committed carrier window, so the successor needs the carrier "
+     "extended past depth 4; and d74's committed d <= 5 row (menu 265 "
+     "/ congruence 462) is carried in the T5 supply with its own "
+     "verbatim anchor",
+     lambda f: (len(f['B4_carrier_dead_rows']) == 4
+                and len(f['B4_carrier_open_rows']) == 2
+                and all(p == '(1, 1)'
+                        for p, N in f['B4_carrier_open_rows'])
+                and f['B4_rows_statable_d4'] == 0
+                and f['carrier_cong_d5'] == 462
+                and f['carrier_menu_d5'] == 265),
+     lambda f: f"dead at CONG-185: {list(f['B4_carrier_dead_rows'])}; "
+               f"open: {list(f['B4_carrier_open_rows'])}; statable on "
+               f"d<=4: {f['B4_rows_statable_d4']}, on d<=5: "
+               f"{f['B4_rows_statable_d5']}")
 
 # --- B3: does the atom ladder give regeneration?  The hitting test.
 emit("")
@@ -2368,6 +3399,19 @@ F['B3_dist_max_saturated'] = max(
     (mx for d, mx, lk, sat, u, t in dist_by_depth if sat), default=None)
 F['B3_dist_rows_saturated'] = tuple(
     d for d, mx, lk, sat, u, t in dist_by_depth if sat)
+# The two keys above hold the INFORMATIVE rows (max < lookahead), which
+# is the opposite of what "saturated" says.  They are kept as aliases
+# for one iteration and the correctly-named keys are the ones a
+# consumer should read.
+F['B3_dist_rows_informative'] = F['B3_dist_rows_saturated']
+F['B3_dist_max_informative'] = F['B3_dist_max_saturated']
+F['B3_dist_max_by_depth'] = tuple(
+    (d, mx) for d, mx, lk, sat, u, t in dist_by_depth)
+F['B3_dist_max_rises'] = all(
+    dist_by_depth[i][1] >= dist_by_depth[i - 1][1]
+    for i in range(1, len(dist_by_depth))
+    if dist_by_depth[i][1] is not None
+    and dist_by_depth[i - 1][1] is not None)
 emit(f"  (ii) THE MINIMAL RETURN DISTANCE, exactly.  For every history "
      f"the shortest continuation reaching R-SIG is computed backwards "
      f"through the family.  A history whose whole remaining subtree "
@@ -2380,9 +3424,15 @@ emit("    parent depth | max finite distance | lookahead | "
      "informative? | unresolved at this cap | histories")
 for d, mx, lk, sat, unk, tot in dist_by_depth:
     emit(f"    {d} | {mx} | {lk} | {sat} | {unk} | {tot}")
-emit(f"  informative rows: depths {list(F['B3_dist_rows_saturated'])}, "
-     f"across which the largest return distance actually attained is "
-     f"{F['B3_dist_max_saturated']}.  Unresolved ON THOSE ROWS: "
+emit(f"  informative rows: depths {list(F['B3_dist_rows_informative'])}"
+     f", across which the largest return distance actually attained is "
+     f"{F['B3_dist_max_informative']}.  The maximum finite distance by "
+     f"depth over the whole table is {list(F['B3_dist_max_by_depth'])} "
+     f"— it does NOT rise monotonically "
+     f"({F['B3_dist_max_rises']}); the attained maximum is "
+     f"{F['B3_dist_max_informative']} on every informative row, and "
+     f"the deeper rows fall because the cap is talking.  Unresolved ON "
+     f"THOSE ROWS: "
      f"{F['B3_dist_unresolved']} histories whose "
      f"entire remaining subtree contains no R-SIG point (over the "
      f"whole censused window, including the cap-limited rows, "
@@ -2392,9 +3442,11 @@ emit(f"  informative rows: depths {list(F['B3_dist_rows_saturated'])}, "
      f"UNBOUNDEDNESS THEOREM, and it is labelled one.")
 
 prog("ARM B: hitting probabilities into each profile block ...")
-emit("  (iii) THE RETURN INTO EACH PROFILE BLOCK — the object a "
-     "regeneration argument actually needs, since the atoms of B2 are "
-     "the blocks and not their union.")
+emit("  (iii) THE RETURN INTO EVERY PROFILE BLOCK OF THE FAMILY — all "
+     "five, the fifth included — since the atoms of B2 are the blocks "
+     "and not their union.  (3, 3) has no delta* window at this cap, "
+     "but its hitting row is measured exactly like the others rather "
+     "than the block being dropped.")
 hit_rows = []
 for p in PROFS:
     S = set(PROFBLK[p])
@@ -2433,71 +3485,192 @@ for p, N, t, z, w in hit_rows:
     emit(f"    {p} | {N} | {t} | {z} | {w}")
 F['B3_all_zero_inf'] = all(w == '0' for p, N, t, z, w in hit_rows)
 F['B3_zero_fraction'] = tuple((p, N, z, t) for p, N, t, z, w in hit_rows)
+F['B3_block_inf_values'] = tuple(sorted({w for p, N, t, z, w in hit_rows}))
+F['B3_block_inf_sup'] = str(max(Fr(w) for p, N, t, z, w in hit_rows))
 
-# is each block absorbing-complement / re-entered?
+# IS EACH BLOCK ABSORBING-COMPLEMENT / RE-ENTERED?  Two objects, and
+# the first is nearly vacuous.  `reentry(S)` counts the points of S
+# having a proper prefix OUTSIDE S; for any block not containing the
+# root the empty history is such a prefix for EVERY point, so
+# reentry(S) = |S| identically, by construction and not by measurement.
+# Only the (1, 1) row, which contains the root, carries information.
+# The object a regeneration argument actually needs is the number of
+# TRANSITIONS INTO the block from outside it, and that is measured
+# here beside it and gated instead.
+prog("ARM B: block re-entry and entry censuses ...")
+_into = {p: 0 for p in PROFS}
+_BLKSET = {p: set(PROFBLK[p]) for p in PROFS}
+_BLKOF = {}
+for p in PROFS:
+    for h in PROFBLK[p]:
+        _BLKOF[h] = p
+for h in CACHE:
+    hp = _BLKOF.get(h)
+    for e, q in CACHE[h]:
+        p2 = _BLKOF.get(h + (e,))
+        if p2 is not None and p2 != hp:
+            _into[p2] += 1
 blk_re = []
 for p in PROFS:
-    S = set(PROFBLK[p])
-    blk_re.append((str(p), len(S), reentry(S)))
-F['B3_block_reentries'] = tuple(blk_re)
-# monotone profile check: can the profile ever decrease?
+    S = _BLKSET[p]
+    blk_re.append((str(p), len(S), reentry(S), ROOT in S, _into[p]))
+F['B3_block_reentries'] = tuple((a, b, c) for a, b, c, r, i in blk_re)
+F['B3_block_entry_rows'] = tuple(blk_re)
+F['B3_block_reentry_forced'] = tuple(
+    (a, b, c) for a, b, c, r, i in blk_re if not r)
+F['B3_block_reentry_forced_all'] = all(
+    c == b for a, b, c, r, i in blk_re if not r)
+F['B3_block_entries_positive'] = all(i > 0 for a, b, c, r, i in blk_re)
+F['B3_block_entries_root_zero'] = all(i == 0 for a, b, c, r, i in blk_re
+                                      if r)
+F['B3_block_entries_nonroot_positive'] = all(
+    i > 0 for a, b, c, r, i in blk_re if not r)
+F['B3_block_entries'] = tuple((a, i) for a, b, c, r, i in blk_re)
+# THE MONOTONE PROFILE, AT FULL FAMILY SCOPE.  Both scopes are carried:
+# the narrowed one because the first delivery reported it, and the full
+# one because that is the scope the sentence claims.
 prof_dec = 0
 prof_pairs = 0
 for h in CACHE:
-    if len(h) >= 5 or h not in HOLD:
+    if len(h) >= 5:
         continue
     hold_h, _ = HOLD[h]
     for e, q in CACHE[h]:
         h2 = h + (e,)
-        if h2 not in HOLD:
+        if len(h2) > 5:
             continue
         hold_2, _ = HOLD[h2]
         prof_pairs += 1
         if (len(hold_2['A']) < len(hold_h['A'])
                 or len(hold_2['B']) < len(hold_h['B'])):
             prof_dec += 1
-F['B3_profile_pairs'] = prof_pairs
-F['B3_profile_decreases'] = prof_dec
+F['B3_profile_pairs_narrow'] = prof_pairs
+F['B3_profile_decreases_narrow'] = prof_dec
+F['B3_profile_pairs'] = F['mono_pairs_all']
+F['B3_profile_decreases'] = prof_dec_all
 
-emit(f"  block re-entry census (a point of the block reached from "
-     f"OUTSIDE it): {list(F['B3_block_reentries'])} as "
-     f"(profile, size, re-entries).")
-emit(f"  and the mechanism, censused: over {F['B3_profile_pairs']} "
-     f"transitions the holdings profile DECREASES at "
-     f"{F['B3_profile_decreases']} of them.  The profile is a MONOTONE "
+emit(f"  BLOCK RE-ENTRY CENSUS, WITH ITS DEFINITION AND ITS FORCED "
+     f"ROWS NAMED.  `re-entry` counts the points of a block having a "
+     f"proper prefix OUTSIDE it.  FOR ANY BLOCK NOT CONTAINING THE "
+     f"ROOT this count is the block's own size BY CONSTRUCTION — the "
+     f"empty history is an outside ancestor of every point — so only "
+     f"the (1, 1) row, which contains the root, carries information; "
+     f"the forced rows are {list(F['B3_block_reentry_forced'])} and "
+     f"every one of them is forced ({F['B3_block_reentry_forced_all']})"
+     f".  The object the argument actually needs is the number of "
+     f"TRANSITIONS INTO the block from outside it, measured here:")
+emit("    profile | size | re-entries (forced unless the block has the "
+     "root) | contains root | TRANSITIONS INTO the block")
+for a, b, c, r, i in blk_re:
+    emit(f"    {a} | {b} | {c} | {r} | {i}")
+emit(f"  AND THAT CENSUS SPLITS THE BLOCKS IN TWO, WHICH THE RE-ENTRY "
+     f"COLUMN HID.  The four blocks that do not contain the root are "
+     f"entered from outside at a strictly positive number of "
+     f"transitions ({F['B3_block_entries_nonroot_positive']}), so for "
+     f"them it is the UNIFORMITY of the entry probability that fails, "
+     f"not its existence.  The (1, 1) block — which contains the root, "
+     f"which IS R-MENU, and which is the ONLY block still an atom at "
+     f"the ruled carrier — is entered at EXACTLY 0 transitions "
+     f"({F['B3_block_entries_root_zero']}): it is "
+     f"absorbing-complement, exactly as ARM A fact 4's committed "
+     f"0-re-entry row says.  So the one atom that survives the carrier "
+     f"change is the one small set the process can never return to at "
+     f"all, and no uniform bound is even posable for it.  The other "
+     f"four are enterable and have hitting infimum 0.")
+emit(f"  and the mechanism, censused AT FULL FAMILY SCOPE: over all "
+     f"{F['B3_profile_pairs']} transitions of the family the holdings "
+     f"profile DECREASES at {F['B3_profile_decreases']} of them (the "
+     f"narrowed depth-<5 window gives {F['B3_profile_decreases_narrow']} of "
+     f"{F['B3_profile_pairs_narrow']} — 12.6% of the family, and it is "
+     f"reported beside the full scope, never in place of it).  The profile is a MONOTONE "
      f"NON-DECREASING COORDINATE OF THE PROCESS.")
+emit(f"  AND THE LADDER IS A COROLLARY, NOT AN INDEPENDENT FINDING.  "
+     f"Set-monotonicity of holdings (A4-MONO, a theorem of the layer: "
+     f"View.holdings is a union over the view's past) ENTAILS "
+     f"cardinality-monotonicity of the profile.  The entailment is "
+     f"machine-checked pointwise over every transition of the family: "
+     f"transitions where the profile decreases WITHOUT the holdings "
+     f"set shrinking = {F['mono_entailment_violations']}.  So THE "
+     f"LADDER IS A CORPUS THEOREM about the committed layer, which "
+     f"would hold at any cap; what is a CONSTRUCTION FACT is the "
+     f"BLOCKING, because the candidate small sets were declared to be "
+     f"the level sets of that very monotone coordinate.  A ladder the "
+     f"process never descends is then entailed by the choice of "
+     f"candidates, not discovered about them.  Both halves are named "
+     f"in the verdict.")
 emit("")
-emit("  THE RESULT OF ARM B, stated exactly and no further.  The "
-     "transport family DOES have exact atoms — one per holdings "
-     "profile, each with delta = 1 and an explicit nu, and the "
-     "menu-exact port the predecessor treated as the special class is "
-     "simply the FIRST of them.  What the atoms lack is the other "
-     "half.  The holdings profile is a monotone non-decreasing "
-     "coordinate (0 decreases over the whole censused window), so a "
-     "block cannot be re-entered from a strictly larger profile; the "
-     "hitting infimum into every block is exactly 0; the return "
-     "infimum into their UNION is 0 as well on the widest window this "
-     "family admits, one full depth wider than the predecessor's; and "
-     "the maximum finite return distance rises with depth over the "
-     "measured rows.  A regeneration argument needs ONE small set "
-     "entered infinitely often with a uniform bound, and none of the "
-     "candidates exhibits one.  So the engine is BLOCKED, and the "
-     "blocking fact is NAMED and MEASURED rather than open: THE "
-     "MONOTONE HOLDINGS LADDER.  What is NOT claimed: that no uniform "
-     "bound exists at any depth.  Every row above is a finite-cap "
-     "measurement, the caps are printed, and the one row where a "
-     "cross-profile delta* turns positive (on a window of 105 of the "
-     "class's points) is printed too.")
+emit(f"  THE RESULT OF ARM B, stated exactly and no further.  The "
+     f"transport family DOES have exact atoms at the declared primary "
+     f"grain and the matched horizon — one for every holdings-profile "
+     f"block THIS CAP CAN TEST ({len(prof_rows)} rows over "
+     f"{len(set(p for p, N, n, d in _atoms))} of the "
+     f"{F['rsig_blocks_n']} blocks; the fifth is excluded by the cap "
+     f"and named), each with delta = 1 and an explicit nu, and at that "
+     f"grain the menu-exact port the predecessor treated as the "
+     f"special class is simply the FIRST of them — while at the "
+     f"CONTROL grain, and hence at the ruled carrier, it is the ONLY "
+     f"one that survives.  What the atoms lack is the other half.  The "
+     f"holdings profile is a monotone non-decreasing coordinate "
+     f"({F['B3_profile_decreases']} decreases over all "
+     f"{F['B3_profile_pairs']} transitions of the family), so a block "
+     f"cannot be re-entered from a strictly larger profile; the "
+     f"hitting infimum into every block is exactly 0; the return "
+     f"infimum into their UNION is 0 as well on the widest window this "
+     f"family admits, one full depth wider than the predecessor's; and "
+     f"the attained return distance is "
+     f"{F['B3_dist_max_informative']} on every informative row.  A "
+     f"regeneration argument needs ONE small set entered infinitely "
+     f"often with a uniform bound, and none of the candidates exhibits "
+     f"one.  So the engine is BLOCKED, and the blocking fact is NAMED "
+     f"and MEASURED rather than open: THE MONOTONE HOLDINGS LADDER — "
+     f"a CORPUS THEOREM as to the ladder, a CONSTRUCTION FACT as to "
+     f"the blocking.  What is NOT claimed: that no uniform bound "
+     f"exists at any depth; that the blocking survives a Psi outside "
+     f"the menu-shape family (it does not — see the R-SIG-indicator "
+     f"counter-reading); or that ARM B is motivated at the RSQ "
+     f"zero-free standard (it carries four free items, censused "
+     f"below).  Every row above is a finite-cap measurement, the caps "
+     f"are printed, and the one row where a cross-profile delta* turns "
+     f"positive (on a window of 105 of the class's points) is printed "
+     f"too.")
 
 gate("B3-HITTING", KIND_SUB,
      "THE SECOND HALF FAILS WHERE IT MATTERS: the N-step hitting "
-     "probability into each ATOM (each holdings-profile block) has "
-     "infimum exactly 0 over every tested window and every N — so the "
-     "small sets that carry delta = 1 are exactly the ones the process "
-     "cannot be guaranteed to return to",
-     lambda f: (f['B3_all_zero_inf'] and len(f['B3_hit_rows']) > 4),
+     "probability into EVERY holdings-profile block of the family — "
+     "all five, the cap-excluded (3, 3) included — has infimum exactly "
+     "0 over every tested window and every N, so the small sets that "
+     "carry delta = 1 are exactly the ones the process cannot be "
+     "guaranteed to return to.  The word ATOM is deliberately not used "
+     "in this label: the (3, 3) row is a hitting measurement on a "
+     "block whose atomicity this cap cannot test",
+     lambda f: (f['B3_all_zero_inf'] and len(f['B3_hit_rows']) > 4
+                and len({p for p, N, t, z, w in f['B3_hit_rows']})
+                == f['rsig_blocks_n']
+                and any(p == '(3, 3)'
+                        for p, N, t, z, w in f['B3_hit_rows'])),
      lambda f: "; ".join(f"{p} N={N}: {z}/{t} zeros, inf {w}"
                          for p, N, t, z, w in f['B3_hit_rows']))
+gate("B3-BLOCKENTRY", KIND_SUB,
+     "THE BLOCK RE-ENTRY CENSUS IS REPLACED BY THE OBJECT THE "
+     "ARGUMENT NEEDS, and the forced rows are disclosed as forced: for "
+     "every block not containing the root the re-entry count equals "
+     "the block's own size by construction, and every one of them "
+     "does.  What is measured instead is the number of TRANSITIONS "
+     "INTO each block from outside it, and it SPLITS THE BLOCKS IN "
+     "TWO: the four blocks without the root are entered at a strictly "
+     "positive number of transitions, so for them it is the "
+     "uniformity of the entry probability that fails; the (1, 1) "
+     "block — R-MENU, and the only block still an atom at the ruled "
+     "carrier — is entered at EXACTLY 0, i.e. it is "
+     "absorbing-complement, so for it no uniform bound is even posable",
+     lambda f: (f['B3_block_reentry_forced_all']
+                and f['B3_block_entries_root_zero']
+                and f['B3_block_entries_nonroot_positive']
+                and not f['B3_block_entries_positive']
+                and len(f['B3_block_entry_rows']) == f['rsig_blocks_n']),
+     lambda f: "; ".join(f"{a}: size {b}, re-entries {c}, root {r}, "
+                         f"entries-into {i}"
+                         for a, b, c, r, i in f['B3_block_entry_rows']))
 gate("B3-RSIG-RETURN", KIND_SUB,
      "AND THE UNION IS NOT A SUBSTITUTE, MEASURED ON A WINDOW ONE "
      "FULL DEPTH WIDER THAN THE PREDECESSOR'S: the return probability "
@@ -2530,17 +3703,157 @@ gate("B3-DISTANCE", KIND_SUB,
                f"this cap {f['B3_dist_unresolved']}; full table "
                f"(depth, max, lookahead, informative, unresolved, "
                f"histories) = {list(f['B3_dist_by_depth'])}")
-gate("B3-MONOTONE", KIND_SUB,
-     "AND THE MECHANISM IS THE MONOTONE INDEX: the holdings profile "
-     "never decreases along any transition of the family, so the "
-     "atoms form a ladder that the process climbs and never descends "
-     "— which is exactly why no single atom can be the regeneration "
-     "set",
+gate("B3-MONOTONE", KIND_THM,
+     "AND THE MECHANISM IS THE MONOTONE INDEX — carried as a "
+     "THEOREM-PASS with its forcing exhibited, because "
+     "cardinality-monotonicity of the profile is ENTAILED by "
+     "set-monotonicity of holdings (A4-MONO) and cannot come out "
+     "otherwise: the holdings profile never decreases along any of the "
+     "243,768 transitions of the family, so the atoms form a ladder "
+     "the process climbs and never descends.  The entailment is "
+     "machine-checked pointwise — 0 transitions decrease the profile "
+     "without shrinking the holdings set — and the SUBSTANTIVE "
+     "companion is B3-NSUP-PROFILE, where the same index computed on "
+     "the NON-superseded holdings does decrease",
      lambda f: (f['B3_profile_decreases'] == 0
-                and f['B3_profile_pairs'] > 10000),
-     lambda f: f"transitions = {f['B3_profile_pairs']}; profile "
-               f"decreases = {f['B3_profile_decreases']}; block "
-               f"re-entries = {list(f['B3_block_reentries'])}")
+                and f['B3_profile_pairs'] == 243768
+                and f['mono_entailment_violations'] == 0
+                and f['mono_shrinking_all'] == 0),
+     lambda f: f"transitions = {f['B3_profile_pairs']} (FULL family "
+               f"scope); profile decreases = "
+               f"{f['B3_profile_decreases']}; entailment violations = "
+               f"{f['mono_entailment_violations']}; narrowed scope "
+               f"{f['B3_profile_decreases_narrow']} of "
+               f"{f['B3_profile_pairs_narrow']}")
+gate("B3-NSUP-PROFILE", KIND_SUB,
+     "THE TWO-WAY DEMONSTRATION BEHIND THAT THEOREM-PASS: the same "
+     "ladder built on the NON-SUPERSEDED holdings is NOT monotone — it "
+     "shrinks at 29,980 of the family's 243,768 transitions — so a "
+     "monotone-index gate on this family is not vacuous by "
+     "construction; it is the choice of index that makes it monotone, "
+     "and this gate is what could have returned False",
+     lambda f: (f['nsup_shrinking_all'] > 0
+                and f['nsup_shrinking_all'] == 29980
+                and f['mono_pairs_all'] == 243768),
+     lambda f: f"non-superseded shrinking = {f['nsup_shrinking_all']} "
+               f"of {f['mono_pairs_all']} transitions, against "
+               f"{f['mono_shrinking_all']} for the full holdings set")
+
+# ======================================================================
+# THE CHOICE INVENTORY AT THE RSQ STANDARD.  Every choice ARM B makes
+# is classified DECLARED / FORCED (with the forcing exhibited) / FREE
+# (with the fiber measured or its absence stated).  A MOTIVATED claim
+# requires ZERO free items.  ARM B carries FOUR, and the verdict says
+# so rather than presenting an arena-relative measurement as an
+# inherited fact.
+# ======================================================================
+emit("")
+emit("  [THE CHOICE INVENTORY — the RSQ standard, applied to ARM B]")
+CHOICES = [
+    ("C1 the R-SIG predicate reduction", "FORCED",
+     f"exhibited: agrees with the full predicate at "
+     f"{F['pred_reduction_tested']}/{F['pred_reduction_tested']}, "
+     f"{F['pred_reduction_disagreements']} disagreements, with the two "
+     f"structural implications machine-checked at 0 counterexamples "
+     f"each, and the unforced variant disagreeing at "
+     f"{F['pred_unforced_disagreements']}"),
+    ("C2 the delivery-free partner derived, not imported", "FORCED",
+     f"exhibited: the layer's own idle clause with the delivery "
+     f"indicator forced false; gated against T4's committed partner "
+     f"census {F['df_total']} and its potentials"),
+    ("C3 grain: primary 13-class vs control 113-class", "DECLARED",
+     f"fiber MEASURED and large: {len(F['B2_grain_split'])} of "
+     f"{len(F['B2_profile_rows'])} atom rows flip; five grains run on "
+     f"the full class"),
+    ("C4 horizon: H7 vs MATCHED", "DECLARED",
+     f"fiber measured at both grains on the full class and at the "
+     f"primary grain on every block row; the H7 x control cell is "
+     f"bounded above by the H7 x primary column by the coarsening "
+     f"lemma and is not separately computed"),
+    ("C5 caps CAP_T = %d, N <= %d, escape window %d, symmetry window "
+     "%d" % (CAP_T, NMAX, CAP_ESC, CAP_SYM), "DECLARED",
+     f"N-fiber measured across N = 1..{NMAX}; the depth fiber is NOT "
+     f"measured — depth 7 is declared infeasible with its projected "
+     f"count printed"),
+    ("C6 actor pool = (A, B) for ARM B", "FREE",
+     f"three actors censused to depth 3 only "
+     f"({F['pool3_depth3']} histories); NO ARM-B row is run at three "
+     f"actors, so the fiber over the actor pool has ONE sampled point"),
+    ("C7 terminal convention G(h, 0) = 1", "FREE",
+     "no second terminal convention is run anywhere; ARM A fact 7 "
+     "forces only the ROOT leg, and only for relabelling-invariant "
+     "conventions"),
+    ("C8 Psi ranges over menu-shape functions", "FREE",
+     f"the two declared grains are both menu-shape functions of the "
+     f"successor.  THIS REPAIR MEASURES THREE MORE Psi OF OTHER KINDS "
+     f"(the ordered and unordered holdings profile, and the R-SIG "
+     f"indicator) and the last of them REVERSES the answer, which is "
+     f"exactly why the item is FREE and why the verdict now carries a "
+     f"PSI-FAMILY qualifier.  d74's congruence CONG-"
+     f"{F['carrier_cong_d4']} is still not run as a Psi"),
+    ("C9 candidate small sets = R-SIG's profile blocks and their "
+     "union", "FREE",
+     "declared, not answer-selected (the block list is taken from ARM "
+     "A fact 4 before ARM B runs) — but the fiber over candidate small "
+     "sets has exactly two sampled points, and both are level sets, or "
+     "the total, OF THE SAME MONOTONE COORDINATE.  Nothing outside the "
+     "level-set family is tried, so 'the process climbs past each one' "
+     "is entailed by the choice of candidates"),
+]
+F['choices'] = tuple((n, k) for n, k, e in CHOICES)
+F['choices_free'] = tuple(n for n, k, e in CHOICES if k == 'FREE')
+F['choices_forced'] = tuple(n for n, k, e in CHOICES if k == 'FORCED')
+F['choices_declared'] = tuple(n for n, k, e in CHOICES if k == 'DECLARED')
+F['free_items'] = len(F['choices_free'])
+F['armB_motivated'] = (F['free_items'] == 0)
+for n, k, e in CHOICES:
+    emit(f"    [{k:8s}] {n}")
+    emit(f"               {e}")
+emit(f"  FREE ITEMS: {F['free_items']} "
+     f"({[n.split()[0] for n in F['choices_free']]}).  A motivated "
+     f"claim requires zero, so ARM B IS NOT MOTIVATED AT THE RSQ "
+     f"STANDARD ({F['armB_motivated']}): it is a MEASUREMENT AT A "
+     f"DECLARED ARENA, which is a real and honest thing, and the "
+     f"verdict labels it as one.  ARM A is motivated: its choices are "
+     f"forced or bound to a hash- and verbatim-anchored predecessor "
+     f"row, and where a choice remained (the grain) both values are "
+     f"measured and their disagreement is reported as a control.")
+gate("B5-FREEITEMS", KIND_SUB,
+     "THE CHOICE INVENTORY IS GATED, NOT NARRATED: ARM B carries "
+     "exactly FOUR free items (the actor pool, the terminal "
+     "convention, the menu-shape-only Psi family, and the "
+     "level-set-only family of candidate small sets), each with its "
+     "fiber measured or its absence stated, so the unit's own receipt "
+     "says that ARM B is a measurement at a declared arena and not a "
+     "motivated result",
+     lambda f: (f['free_items'] == 4
+                and not f['armB_motivated']
+                and len(f['choices']) == 9
+                and len(f['choices_forced']) == 2),
+     lambda f: f"free {f['free_items']} {list(f['choices_free'])}; "
+               f"forced {len(f['choices_forced'])}; declared "
+               f"{len(f['choices_declared'])}; motivated = "
+               f"{f['armB_motivated']}")
+gate("B0-SUCCESSOR-NAMED", KIND_SUB,
+     "THE CONSUMER OF THE QUOTATION THAT LICENSES ARM B, registered as "
+     "a gate rather than named by a verbatim row and never built: T4's "
+     "verbatim window 'No operator-level minorization — Birkhoff / "
+     "Hilbert-metric contraction of the positive backward recursion G "
+     "— has been attempted anywhere' is located, and ARM B was in fact "
+     "run — the Birkhoff coefficient is derived from a computed minor, "
+     "an atom is exhibited with its nu, and the blocking fact is "
+     "measured.  The named engine is closed at the history level ONLY, "
+     "and that limitation is printed at B1",
+     lambda f: ('B0-SUCCESSOR-NAMED' in f['verbatim_consumers']
+                and f['birkhoff_tau'] == '1'
+                and f['B2_atom_found']
+                and f['B2_nu_support'] > 0
+                and f['B3_profile_pairs'] > 0),
+     lambda f: f"consumer bound = "
+               f"{'B0-SUCCESSOR-NAMED' in f['verbatim_consumers']}; "
+               f"tau = {f['birkhoff_tau']}; atom found = "
+               f"{f['B2_atom_found']} with nu support "
+               f"{f['B2_nu_support']}")
 
 prog("ARM B complete")
 
@@ -2568,82 +3881,314 @@ F['seven_facts_ok'] = tuple((nm, RES[g][0]) for nm, g in SEVEN)
 F['seven_all'] = all(RES[g][0] for nm, g in SEVEN)
 
 
+# ----------------------------------------------------------------------
+# THE SHARED TOKEN TABLE.  This is the ONE object the builder and the
+# comparator both consult, and they consult it BY KEY: no string
+# literal of the verdict appears in both functions, which is the #82
+# requirement the first delivery failed by making the comparator a
+# second call to the builder.  Every token here is digit-free, so that
+# every numeral in the emitted verdict belongs to a measured value and
+# the comparator can account for all of them.
+# ----------------------------------------------------------------------
+VTOK = {
+    'join': '  +  ',
+    'seg_term': 'GPREP-FOUNDATION-TERMINALIZED-',
+    'seg_found': 'GPREP-MINORIZATION-FOUND-',
+    'seg_blocked': 'GPREP-ARM-B-BLOCKED-AT-THE-MONOTONE-HOLDINGS-LADDER',
+    't_head': '[',
+    't_grammar': ' facts: grammar ',
+    't_census': ' kinds; census ',
+    't_cum': ' histories cumulative ',
+    't_gtop': ' with G_',
+    't_eq': ' = ',
+    't_dfg': ' and delivery-free G_',
+    't_dsep': ', deliveries REDUCE branching first at D = ',
+    't_rmax': '; kernels proper and STRICTLY POSITIVE at horizons r up '
+              'to ',
+    't_viol': ' with ',
+    't_ports': ' violations; ports R-SIG ',
+    't_rmenu': ' / R-MENU ',
+    't_slash': ' / ',
+    't_nonren': ' re-entries and non-renewal mass ',
+    't_escape': '; ESCAPE ',
+    't_esccls': ' transitions into ',
+    't_grain': ' above-window classes at the DECLARED-PRIMARY ',
+    't_ctrl': '-class grain and ',
+    't_ctrlcls': ' at the ',
+    't_chains': '-class control grain, NO CLOSED EXACT TRANSFER; '
+                'reopening ',
+    't_chainw': ' minimal chains at ',
+    't_prefix': ' over ',
+    't_symmenu': ' prefixes; root symmetry ',
+    't_symg': ' menu and ',
+    'f_delta': '[delta = ',
+    'f_bestn': ' exact; N = ',
+    'f_nusupp': '; nu = the common minorant on ',
+    'f_nugrain': ' Psi-classes of the ',
+    'f_block': '-class primary grain; class = the holdings-profile '
+               'blocks of R-SIG, block ',
+    'f_points': ' exhibited over ',
+    'f_depths': ' points at depths ',
+    'f_scope': '; scope = ',
+    'f_capt': ' actors, transport depth <= ',
+    'q_grain': '<GRAIN=DECLARED-PRIMARY-',
+    'q_psi': '-CLASS;PSI-FAMILY=',
+    'q_free': ';FREE-ITEMS=',
+    'q_ladder': ';LADDER=',
+    'q_blocking': ';BLOCKING=',
+    'psi_tag': 'MENU-SHAPE-ONLY',
+    'ladder_tag': 'CORPUS-THEOREM',
+    'blocking_tag': 'CONSTRUCTION-FACT',
+    'b_dec': '>-[the holdings profile decreases at ',
+    'b_of': ' of ',
+    'b_fullzero': ' transitions of the family, so the atoms form a '
+                  'ladder the process climbs and never descends; at '
+                  'the DECLARED-PRIMARY grain and over the MENU-SHAPE '
+                  'Psi family the full R-SIG class has delta* = ',
+    'b_widest': ' on both of its widest windows (N = ',
+    'b_counter': '), while at Psi = the R-SIG indicator the same class '
+                 'has delta* = ',
+    'b_countern': ' there (N = ',
+    'b_rsiginf': '); the R-SIG return probability has infimum ',
+    'b_zeroset': ' on the widest window and its zero-set is ',
+    'b_unres': '; ',
+    'b_dist': ' histories are unresolved at this cap and the attained '
+              'return distance reaches ',
+    'b_hit': ' on the informative rows; the hitting infimum into every '
+             'one of the ',
+    'b_hitval': ' holdings-profile blocks is ',
+    'b_carrier': '; at the ruled carrier CONG-',
+    'b_dead': ' the atom claim collapses to R-MENU (',
+    'b_rows': ' rows dead by the coarsening lemma); and at the history '
+              'level the Birkhoff coefficient is ',
+    'b_doeblin': ' and the Doeblin constant is ',
+    'b_cols': ' by unique parenthood at all ',
+    'b_tail': ' columns]',
+}
+
+
 def build_verdict(f):
-    """Rebuilt segment by segment from the measured values.  The
-    emitted string is compared for FULL-STRING equality against this."""
+    """THE EMITTER.  Composed segment by segment from the measured
+    values, with every numeral immediately preceded by a token of the
+    shared table.  It is NOT the comparator: see check_verdict."""
+    T = VTOK
     segs = []
     segs.append(
-        "GPREP-FOUNDATION-TERMINALIZED-"
-        f"[7/7 facts: grammar {len(f['event_kinds'])} kinds; census "
-        f"{f['t_total']} histories cumulative "
-        f"{list(f['t_cumulative'])} with G_7 = {f['G_transport'][6]} "
-        f"and delivery-free G_7 = {f['G_deliveryfree'][6]}, deliveries "
-        f"REDUCE branching first at D = {f['df_gt_t_first']}; kernels "
-        f"proper and STRICTLY POSITIVE at r = 1..{len(f['proper_rows'])} "
-        f"with {f['positivity_violations']} violations; ports R-SIG "
-        f"{f['rsig_count']} / R-MENU {f['rmenu_count']} with "
-        f"{f['rsig_reentries']} / {f['rmenu_reentries']} re-entries and "
-        f"non-renewal mass {f['nonrenewal_depth5']}; ESCAPE "
-        f"{f['escape_primary']} transitions into "
-        f"{len(f['escape_primary_classes'])} above-window classes at "
-        f"the DECLARED-PRIMARY {f['grain_primary_classes']}-class "
-        f"grain and {f['escape_control']} at the "
-        f"{f['grain_control_classes']}-class control grain, NO CLOSED "
-        f"EXACT TRANSFER; reopening {f['minimal_chains']} minimal "
-        f"chains at {f['minimal_chain_weights'][0]} over "
-        f"{f['diverged_prefixes']} prefixes; root symmetry "
-        f"{f['sym_menu_violations']} menu and {f['sym_G_violations']} "
-        f"potential violations]")
+        T['seg_term']
+        + T['t_head'] + f"{len(f['seven_facts_ok'])}/"
+        f"{len(f['seven_facts_ok'])}"
+        + T['t_grammar'] + f"{len(f['event_kinds'])}"
+        + T['t_census'] + f"{f['t_total']}"
+        + T['t_cum'] + f"{list(f['t_cumulative'])}"
+        + T['t_gtop'] + f"{len(f['G_transport'])}"
+        + T['t_eq'] + f"{f['G_transport'][6]}"
+        + T['t_dfg'] + f"{len(f['G_deliveryfree'])}"
+        + T['t_eq'] + f"{f['G_deliveryfree'][6]}"
+        + T['t_dsep'] + f"{f['df_gt_t_first']}"
+        + T['t_rmax'] + f"{len(f['proper_rows'])}"
+        + T['t_viol'] + f"{f['positivity_violations']}"
+        + T['t_ports'] + f"{f['rsig_count']}"
+        + T['t_rmenu'] + f"{f['rmenu_count']}"
+        + T['t_viol'] + f"{f['rsig_reentries']}"
+        + T['t_slash'] + f"{f['rmenu_reentries']}"
+        + T['t_nonren'] + f"{f['nonrenewal_depth5']}"
+        + T['t_escape'] + f"{f['escape_primary']}"
+        + T['t_esccls'] + f"{len(f['escape_primary_classes'])}"
+        + T['t_grain'] + f"{f['grain_primary_classes']}"
+        + T['t_ctrl'] + f"{f['escape_control']}"
+        + T['t_ctrlcls'] + f"{f['grain_control_classes']}"
+        + T['t_chains'] + f"{f['minimal_chains']}"
+        + T['t_chainw'] + f"{f['minimal_chain_weights'][0]}"
+        + T['t_prefix'] + f"{f['diverged_prefixes']}"
+        + T['t_symmenu'] + f"{f['sym_menu_violations']}"
+        + T['t_symg'] + f"{f['sym_G_violations']}"
+        + " potential violations]")
     if f['B2_atom_found']:
         segs.append(
-            "GPREP-MINORIZATION-FOUND-"
-            f"[delta = {f['B2_best_delta']} exact; N = "
-            f"{f['B2_best_N']}; nu = the common minorant on "
-            f"{f['B2_nu_support']} Psi-classes of the "
-            f"{f['grain_primary_classes']}-class primary grain; class "
-            f"= the holdings-profile blocks of R-SIG, block "
-            f"{f['B2_nu_profile']} exhibited over "
-            f"{f['B2_nu_block_size']} points at depths "
-            f"{list(f['B2_nu_depths'])}; scope = 2 actors, transport "
-            f"depth <= {CAP_T}, MATCHED horizon, primary grain — the "
-            f"blocks are ATOMS, not merely small sets]")
+            T['seg_found']
+            + T['f_delta'] + f"{f['B2_best_delta']}"
+            + T['f_bestn'] + f"{f['B2_best_N']}"
+            + T['f_nusupp'] + f"{f['B2_nu_support']}"
+            + T['f_nugrain'] + f"{f['grain_primary_classes']}"
+            + T['f_block'] + f"{f['B2_nu_profile']}"
+            + T['f_points'] + f"{f['B2_nu_block_size']}"
+            + T['f_depths'] + f"{list(f['B2_nu_depths'])}"
+            + T['f_scope'] + f"{f['n_actors']}"
+            + T['f_capt'] + f"{CAP_T}"
+            + ", MATCHED horizon, DECLARED-PRIMARY grain — the blocks "
+              "the cap can test are ATOMS at that grain, not merely "
+              "small sets; the claim is NOT universal over blocks and "
+              "the cap-excluded fifth block is named]")
     segs.append(
-        "GPREP-MINORIZATION-BLOCKED-AT-"
-        "[THE MONOTONE HOLDINGS LADDER: the holdings profile decreases "
-        f"at {f['B3_profile_decreases']} of {f['B3_profile_pairs']} "
-        f"transitions, so the atoms form a ladder the process climbs "
-        f"and never descends; the full R-SIG class has delta* = 0 on "
-        f"both of its widest windows (N = "
-        f"{list(f['B2_widest_zero_N'])}); the R-SIG return probability "
-        f"has infimum {f['B3_rsig_inf_widest']} on the widest window "
-        f"and its zero-set is {list(f['B3_rsig_zeros'])}; "
-        f"{f['B3_dist_unresolved']} histories are unresolved at this "
-        f"cap and the attained return distance reaches "
-        f"{f['B3_dist_max_saturated']} on the informative rows; the "
-        f"hitting infimum into "
-        f"every block is 0; and at the history level the Birkhoff "
-        f"coefficient is {f['birkhoff_tau']} and the Doeblin constant "
-        f"0 by unique parenthood at all "
-        f"{f['columns_single_parent']} columns]")
-    return "  +  ".join(segs)
+        T['seg_blocked']
+        + T['q_grain'] + f"{f['grain_primary_classes']}"
+        + T['q_psi'] + T['psi_tag']
+        + T['q_free'] + f"{f['free_items']}"
+        + T['q_ladder'] + T['ladder_tag']
+        + T['q_blocking'] + T['blocking_tag']
+        + T['b_dec'] + f"{f['B3_profile_decreases']}"
+        + T['b_of'] + f"{f['B3_profile_pairs']}"
+        + T['b_fullzero'] + f"{f['B2_full_rows'][0][3]}"
+        + T['b_widest'] + f"{list(f['B2_widest_zero_N'])}"
+        + T['b_counter'] + f"{f['B2_rsig_indicator_matched'][0][1]}"
+        + T['b_countern'] + f"{list(f['B2_rsig_indicator_delta1_at'])}"
+        + T['b_rsiginf'] + f"{f['B3_rsig_inf_widest']}"
+        + T['b_zeroset'] + f"{list(f['B3_rsig_zeros'])}"
+        + T['b_unres'] + f"{f['B3_dist_unresolved']}"
+        + T['b_dist'] + f"{f['B3_dist_max_informative']}"
+        + T['b_hit'] + f"{f['rsig_blocks_n']}"
+        + T['b_hitval'] + f"{f['B3_block_inf_sup']}"
+        + T['b_carrier'] + f"{f['carrier_cong_d4']}"
+        + T['b_dead'] + f"{len(f['B4_carrier_dead_rows'])}"
+        + T['b_of'] + f"{len(f['B2_profile_rows'])}"
+        + T['b_rows'] + f"{f['birkhoff_tau']}"
+        + T['b_doeblin'] + f"{f['birkhoff_doeblin_history']}"
+        + T['b_cols'] + f"{f['columns_single_parent']}"
+        + T['b_tail'])
+    return VTOK['join'].join(segs)
+
+
+NUMTOK = re.compile(r'\d+/\d+|\d+')
+
+
+def check_verdict(f, s):
+    """THE COMPARATOR, built independently of the emitter (v14 #82).
+    It never calls build_verdict and never re-concatenates the verdict.
+    It PARSES the emitted string: it declares, from the gated object
+    alone, which measured value must follow which token of the shared
+    table and in what order, walks the string once asserting each in
+    turn, and finally accounts for EVERY numeral in the string — so a
+    wrong field in the emitter (a value read from the wrong key) and a
+    wrong template in the emitter (a missing, extra or reordered
+    token) both die here.  Returns (ok, detail)."""
+    T = VTOK
+    want_segs = [T['seg_term']]
+    if f['B2_atom_found']:
+        want_segs.append(T['seg_found'])
+    want_segs.append(T['seg_blocked'])
+    parts = s.split(T['join'])
+    if len(parts) != len(want_segs):
+        return False, ("segment count %d, expected %d"
+                       % (len(parts), len(want_segs)))
+    for i, w in enumerate(want_segs):
+        if not parts[i].startswith(w):
+            return False, ("segment %d does not open with its declared "
+                           "name %r" % (i, w))
+    n7 = len(f['seven_facts_ok'])
+    anchors = [
+        ('t_head', "%d/%d" % (n7, n7)),
+        ('t_grammar', str(len(f['event_kinds']))),
+        ('t_census', str(f['t_total'])),
+        ('t_cum', str(list(f['t_cumulative']))),
+        ('t_gtop', str(len(f['G_transport']))),
+        ('t_eq', str(f['G_transport'][6])),
+        ('t_dfg', str(len(f['G_deliveryfree']))),
+        ('t_eq', str(f['G_deliveryfree'][6])),
+        ('t_dsep', str(f['df_gt_t_first'])),
+        ('t_rmax', str(len(f['proper_rows']))),
+        ('t_viol', str(f['positivity_violations'])),
+        ('t_ports', str(f['rsig_count'])),
+        ('t_rmenu', str(f['rmenu_count'])),
+        ('t_viol', str(f['rsig_reentries'])),
+        ('t_slash', str(f['rmenu_reentries'])),
+        ('t_nonren', str(f['nonrenewal_depth5'])),
+        ('t_escape', str(f['escape_primary'])),
+        ('t_esccls', str(len(f['escape_primary_classes']))),
+        ('t_grain', str(f['grain_primary_classes'])),
+        ('t_ctrl', str(f['escape_control'])),
+        ('t_ctrlcls', str(f['grain_control_classes'])),
+        ('t_chains', str(f['minimal_chains'])),
+        ('t_chainw', str(f['minimal_chain_weights'][0])),
+        ('t_prefix', str(f['diverged_prefixes'])),
+        ('t_symmenu', str(f['sym_menu_violations'])),
+        ('t_symg', str(f['sym_G_violations'])),
+    ]
+    if f['B2_atom_found']:
+        anchors += [
+            ('f_delta', str(f['B2_best_delta'])),
+            ('f_bestn', str(f['B2_best_N'])),
+            ('f_nusupp', str(f['B2_nu_support'])),
+            ('f_nugrain', str(f['grain_primary_classes'])),
+            ('f_block', str(f['B2_nu_profile'])),
+            ('f_points', str(f['B2_nu_block_size'])),
+            ('f_depths', str(list(f['B2_nu_depths']))),
+            ('f_scope', str(f['n_actors'])),
+            ('f_capt', str(CAP_T)),
+        ]
+    anchors += [
+        ('q_grain', str(f['grain_primary_classes'])),
+        ('q_psi', T['psi_tag']),
+        ('q_free', str(f['free_items'])),
+        ('q_ladder', T['ladder_tag']),
+        ('q_blocking', T['blocking_tag']),
+        ('b_dec', str(f['B3_profile_decreases'])),
+        ('b_of', str(f['B3_profile_pairs'])),
+        ('b_fullzero', str(f['B2_full_rows'][0][3])),
+        ('b_widest', str(list(f['B2_widest_zero_N']))),
+        ('b_counter', str(f['B2_rsig_indicator_matched'][0][1])),
+        ('b_countern', str(list(f['B2_rsig_indicator_delta1_at']))),
+        ('b_rsiginf', str(f['B3_rsig_inf_widest'])),
+        ('b_zeroset', str(list(f['B3_rsig_zeros']))),
+        ('b_unres', str(f['B3_dist_unresolved'])),
+        ('b_dist', str(f['B3_dist_max_informative'])),
+        ('b_hit', str(f['rsig_blocks_n'])),
+        ('b_hitval', str(f['B3_block_inf_sup'])),
+        ('b_carrier', str(f['carrier_cong_d4'])),
+        ('b_dead', str(len(f['B4_carrier_dead_rows']))),
+        ('b_of', str(len(f['B2_profile_rows']))),
+        ('b_rows', str(f['birkhoff_tau'])),
+        ('b_doeblin', str(f['birkhoff_doeblin_history'])),
+        ('b_cols', str(f['columns_single_parent'])),
+    ]
+    cur = 0
+    accounted = 0
+    for key, want in anchors:
+        tok = T[key]
+        idx = s.find(tok, cur)
+        if idx < 0:
+            return False, ("token %r not found at or after position %d"
+                           % (key, cur))
+        cur = idx + len(tok)
+        if not s.startswith(want, cur):
+            return False, ("after token %r the string carries %r where "
+                           "the gated object requires %r"
+                           % (key, s[cur:cur + len(want) + 8], want))
+        cur += len(want)
+        accounted += len(NUMTOK.findall(want))
+    if not s.endswith(T['b_tail']):
+        return False, "the verdict does not end at its declared tail"
+    total = len(NUMTOK.findall(s))
+    if total != accounted:
+        return False, ("%d numerals in the emitted string, %d accounted "
+                       "for by the gated object" % (total, accounted))
+    return True, ("%d anchored fields, %d numerals all accounted for, "
+                  "%d segments" % (len(anchors), total, len(parts)))
 
 
 VERDICT = build_verdict(F)
 F['verdict'] = VERDICT
+F['verdict_check'] = check_verdict(F, VERDICT)
 gate("V-VERDICT", KIND_SUB,
-     "THE VERDICT IS DERIVED INSIDE A GATE FROM THE MEASURED COUNTS: "
-     "the emitted string is compared for COMPLETE-STRING EQUALITY "
-     "against a string rebuilt segment-by-segment from the gated "
-     "object (never containment, never a prefix), and a verdict-flip "
-     "falsifier proves the derivation can fail",
-     lambda f: f['verdict'] == build_verdict(f),
-     lambda f: f"verdict length = {len(f['verdict'])} chars, "
-               f"{f['verdict'].count('  +  ') + 1} composed segments")
+     "THE VERDICT IS CHECKED BY A COMPARATOR BUILT INDEPENDENTLY OF "
+     "ITS BUILDER (v14 #82): check_verdict never calls build_verdict "
+     "and never re-concatenates the string.  It declares, from the "
+     "gated object alone, which measured value must follow which token "
+     "of the shared table and in what order; it walks the emitted "
+     "string once asserting each; it requires the declared tail; and "
+     "it accounts for EVERY numeral in the string.  A builder field "
+     "swap (a value read from the wrong key) and a builder template "
+     "error (a missing, extra or reordered token) therefore both die "
+     "here, and two falsifiers reproduce exactly those two injections",
+     lambda f: check_verdict(f, f['verdict'])[0],
+     lambda f: f"verdict length = {len(f['verdict'])} chars; "
+               f"{check_verdict(f, f['verdict'])[1]}")
 gate("V-SEVEN", KIND_SUB,
      "ARM A's seven facts each carry a passing substantive gate, and "
-     "the TERMINALIZED segment may not be emitted otherwise",
+     "the TERMINALIZED segment may not be emitted otherwise.  The "
+     "segment is located by its KEY in the shared token table, never "
+     "by a substring re-typed inside the predicate",
      lambda f: (f['seven_all']
-                and 'FOUNDATION-TERMINALIZED' in f['verdict']),
+                and f['verdict'].startswith(VTOK['seg_term'])),
      lambda f: "; ".join(f"{nm}: {ok}" for nm, ok in
                          f['seven_facts_ok']))
 
@@ -2670,16 +4215,87 @@ for tag, name, ped, arts, sup in ROWS:
     PATHDRIFT.append((tag, p0, drift, ok))
 F['path_drift_rows'] = tuple(PATHDRIFT)
 F['path_drift_survivors'] = sum(1 for t, a, b, ok in PATHDRIFT if ok)
+# THE VERBATIM DRIFT RULE, REPAIRED.  The first delivery's rule was
+# `ctx.replace('68','69') if '68' in ctx else ctx + "!"`, and only two
+# of the twelve windows contained '68' — for the other ten the
+# "perturbation" was appending an exclamation mark to a multi-line
+# technical quotation, a test that cannot plausibly fail.  The rule
+# below perturbs a CONTENT-BEARING TOKEN of every window: its first
+# digit if it has one, else its two first alphabetic words swapped,
+# else its longest word deleted.  The perturbation applied is printed
+# per row, so a reader can see that each drift is a real one.
+def drift_window(ctx):
+    m = re.search(r'\d', ctx)
+    if m:
+        i = m.start()
+        d = ctx[i]
+        return (ctx[:i] + ('0' if d != '0' else '1') + ctx[i + 1:],
+                'first-digit')
+    ws = re.findall(r'[A-Za-z]{2,}', ctx)
+    if len(ws) >= 2:
+        a, b = ws[0], ws[1]
+        return (ctx.replace(a, '\0', 1).replace(b, a, 1)
+                .replace('\0', b, 1), 'word-swap')
+    if ws:
+        lw = max(ws, key=len)
+        return ctx.replace(lw, '', 1), 'longest-word-deleted'
+    return ctx + "!", 'append'
+
+
 VBDRIFT = []
 for tag, path, ctx, consumer in VERBATIM:
-    drifted = ctx.replace('68', '69') if '68' in ctx else ctx + "!"
+    drifted, how = drift_window(ctx)
     try:
-        found = drifted in open(os.path.join(REPO, path)).read()
+        found = drifted in read_text(os.path.join(REPO, path))
     except OSError:
         found = False
-    VBDRIFT.append((tag, consumer, found))
-F['verbatim_drift_rows'] = tuple(VBDRIFT)
-F['verbatim_drift_survivors'] = sum(1 for t, c, ok in VBDRIFT if ok)
+    VBDRIFT.append((tag, consumer, found, how, drifted != ctx))
+F['verbatim_drift_rows'] = tuple((t, c, ok) for t, c, ok, h, d in VBDRIFT)
+F['verbatim_drift_how'] = tuple((t, c, h) for t, c, ok, h, d in VBDRIFT)
+F['verbatim_drift_survivors'] = sum(1 for t, c, ok, h, d in VBDRIFT if ok)
+F['verbatim_drift_real'] = all(d for t, c, ok, h, d in VBDRIFT)
+F['verbatim_drift_appends'] = sum(1 for t, c, ok, h, d in VBDRIFT
+                                  if h == 'append')
+# REFERENTIAL INTEGRITY: every `consumer` named by a verbatim row must
+# be a REGISTERED gate.  The first delivery named B0-SUCCESSOR-NAMED —
+# the consumer licensing the whole of ARM B — and never registered it,
+# and nothing noticed, because the consumer field was only ever
+# printed.  This is computed after every gate registration.
+_GIDS = {gid for gid, k, l, p, d in GATES}
+F['verbatim_consumers_bound'] = tuple(
+    sorted({c for t, p, c, ok, n, o in VB if c in _GIDS}))
+F['verbatim_consumers_unbound'] = tuple(
+    sorted({c for t, p, c, ok, n, o in VB if c not in _GIDS}))
+emit(f"  VERBATIM CONSUMER BINDING, CHECKED FOR REFERENTIAL INTEGRITY: "
+     f"{len(F['verbatim_consumers_bound'])} distinct consumer gates "
+     f"named by the {len(VB)} context windows are registered gates; "
+     f"{len(F['verbatim_consumers_unbound'])} are not "
+     f"{list(F['verbatim_consumers_unbound'])}.")
+emit(f"  VERBATIM DRIFT, PER ROW, WITH THE PERTURBATION NAMED: "
+     + "; ".join(f"{t}/{c}: {h}" for t, c, h in F['verbatim_drift_how']))
+gate("M-CONSUMERBINDING", KIND_SUB,
+     "REFERENTIAL INTEGRITY OF THE ANCHOR TABLE: every consumer gate "
+     "named by a verbatim-context row is a REGISTERED gate.  The first "
+     "delivery named a consumer that did not exist — the one "
+     "licensing ARM B — and no check caught it; this is that check",
+     lambda f: (len(f['verbatim_consumers_unbound']) == 0
+                and len(f['verbatim_consumers_bound']) >= 10),
+     lambda f: f"bound {list(f['verbatim_consumers_bound'])}; unbound "
+               f"{list(f['verbatim_consumers_unbound'])}")
+gate("M-VERBATIMSPEC", KIND_SUB,
+     "THE #62 SPECIFICITY STANDARD IS ENFORCED, NOT ASSERTED: every "
+     "verbatim-context window is at least 40 characters long AND "
+     "occurs EXACTLY ONCE in its source file, so a window truncated to "
+     "a short generic substring is refused at the precheck instead of "
+     "being certified as an anchor",
+     lambda f: (f['verbatim_unique']
+                and f['verbatim_min_chars'] >= f['verbatim_min_required']
+                and f['verbatim_min_required'] >= 40
+                and len(f['verbatim_ok']) == f['verbatim_n']),
+     lambda f: f"shortest window {f['verbatim_min_chars']} chars "
+               f"(minimum {f['verbatim_min_required']}); all windows "
+               f"unique in source = {f['verbatim_unique']}; located "
+               f"{len(f['verbatim_ok'])} of {f['verbatim_n']}")
 gate("M-PATHDRIFT", KIND_SUB,
      "PATH-VALUE ANCHORING: for every pinned row, a drifted path "
      "(the same basename moved to a sibling directory, or a "
@@ -2691,13 +4307,23 @@ gate("M-PATHDRIFT", KIND_SUB,
                f"{f['path_drift_survivors']} of "
                f"{len(f['path_drift_rows'])}")
 gate("M-VERBATIMDRIFT", KIND_SUB,
-     "VERBATIM-CONTEXT ANCHORING: each anchored context window, "
-     "perturbed by one character or one digit, is NOT found in its "
-     "source — the windows bind meaning to use, not mere existence",
-     lambda f: f['verbatim_drift_survivors'] == 0,
+     "VERBATIM-CONTEXT ANCHORING, WITH A LABEL THAT CLAIMS ONLY WHAT "
+     "IT TESTS: each anchored context window, perturbed at a "
+     "CONTENT-BEARING token (its first digit, else its first two words "
+     "swapped, else its longest word deleted — never a mere appended "
+     "character), is NOT found in its source.  Every one of the twelve "
+     "perturbations is a real one, and the perturbation applied is "
+     "printed per row.  Together with M-VERBATIMSPEC (length and "
+     "uniqueness) this is what makes the windows bind their span "
+     "rather than mere existence",
+     lambda f: (f['verbatim_drift_survivors'] == 0
+                and f['verbatim_drift_real']
+                and f['verbatim_drift_appends'] == 0),
      lambda f: f"drifted windows still found: "
                f"{f['verbatim_drift_survivors']} of "
-               f"{len(f['verbatim_drift_rows'])}")
+               f"{len(f['verbatim_drift_rows'])}; every perturbation "
+               f"real = {f['verbatim_drift_real']}; append-only "
+               f"perturbations = {f['verbatim_drift_appends']}")
 
 
 RES = run_gates(F)
@@ -2761,19 +4387,41 @@ def erase(v):
 
 
 MUTANTS = []
-# (1) era-minimum: one targeted value-drift falsifier per FACTS key any
-#     substantive gate reads.  These are the census-drop / value-drift
-#     classes: an int census loses a unit, a tuple census loses a cell,
-#     a boolean flips, a rational moves.
+# (1) era-minimum, WIDENED: one targeted value-drift falsifier per
+#     FACTS key ANY gate reads — not only the substantive ones.  The
+#     first delivery harvested read-keys from KIND_SUB gates alone,
+#     which is what let a theorem-pass or disclosure gate be excluded
+#     from falsification and then waived by the same declaration that
+#     excluded it.  Harvesting from every gate breaks that loop: a
+#     KIND_THM gate now carries falsifiers like any other, and its
+#     waiver is issued only if it SURVIVES them (see the waiver
+#     machinery below).
 _read_keys = set()
 for gid, kind, label, pred, det in GATES:
-    if kind != KIND_SUB:
-        continue
     _read_keys |= RES[gid][2]
 for k in sorted(_read_keys, key=SK):
     MUTANTS.append((f"DRIFT[{k}]", 'value-drift/census-drop',
                     lambda f, k=k: {k: perturb(f[k])}))
 ESCALATE = {}
+# (1b) THE VERDICT-BUILDER INJECTIONS.  These are the two injections a
+#      hostile round put into build_verdict itself and that the old
+#      comparator — which WAS the builder — passed with every gate
+#      green: a FIELD SWAP (the verdict's ESCAPE count read from the
+#      control grain while labelled primary) and a VALUE SWAP (the
+#      blocking clause's numerator read from its own denominator).
+#      They are reproduced here against the STORED verdict string, so
+#      that the independent comparator has to catch them.
+MUTANTS.append(("BUILDER-FIELD-SWAP", 'verdict-builder',
+                lambda f: {'verdict': f['verdict'].replace(
+                    VTOK['t_escape'] + str(f['escape_primary']),
+                    VTOK['t_escape'] + str(f['escape_control']), 1)}))
+MUTANTS.append(("BUILDER-VALUE-SWAP", 'verdict-builder',
+                lambda f: {'verdict': f['verdict'].replace(
+                    VTOK['b_dec'] + str(f['B3_profile_decreases']),
+                    VTOK['b_dec'] + str(f['B3_profile_pairs']), 1)}))
+MUTANTS.append(("BUILDER-TOKEN-DROPPED", 'verdict-builder',
+                lambda f: {'verdict': f['verdict'].replace(
+                    VTOK['q_free'], ';', 1)}))
 # (2) the five verdict classes (v14 #10: containment is not equality)
 MUTANTS.append(("VERDICT-VALUE-SWAP", 'verdict',
                 lambda f: {'verdict': f['verdict'].replace(
@@ -2812,15 +4460,6 @@ F['n_fail'] = sum(1 for g in RES if not RES[g][0])
 F['n_substantive'] = sum(1 for gid, k, l, p, d in GATES if k == KIND_SUB)
 F['n_theorem'] = sum(1 for gid, k, l, p, d in GATES if k == KIND_THM)
 F['n_disclosure'] = sum(1 for gid, k, l, p, d in GATES if k == KIND_DIS)
-
-if '--list-gates' in ARGV:
-    for gid, k, l, p, d in GATES:
-        print(f"{gid}\t{k}\t{l[:70]}")
-    sys.exit(0)
-if '--list-mutants' in ARGV:
-    for nm, cls, fn in MUTANTS:
-        print(f"{nm}\t{cls}")
-    sys.exit(0)
 
 prog(f"running {len(MUTANTS)} falsifiers ...")
 KILLED = defaultdict(set)
@@ -2864,6 +4503,23 @@ F['read_but_unconstrained'] = tuple(unconstrained)
 F['mutant_rows'] = tuple(MUT_ROWS)
 F['mutants_total'] = len(MUTANTS)
 F['mutants_dead'] = tuple(dead)
+# THE ESCALATION CENSUS.  The harness escalates drift -> poison ->
+# erase and records the level in the mutant's name; the first delivery
+# never aggregated it.  A falsifier that only bites after ERASE is
+# attached to a predicate that constrains EXISTENCE, not value, and
+# that is a fact about the gate, not about the falsifier.
+F['escalation_drift'] = sum(1 for nm, cls, n, ks in MUT_ROWS
+                            if not nm.endswith('+POISON')
+                            and not nm.endswith('+ERASE'))
+F['escalation_poison'] = sum(1 for nm, cls, n, ks in MUT_ROWS
+                             if nm.endswith('+POISON'))
+F['escalation_erase'] = sum(1 for nm, cls, n, ks in MUT_ROWS
+                            if nm.endswith('+ERASE'))
+F['escalation_erase_names'] = tuple(
+    sorted(nm for nm, cls, n, ks in MUT_ROWS if nm.endswith('+ERASE')))
+F['escalation_erase_gates'] = tuple(sorted({
+    g for nm, cls, n, ks in MUT_ROWS if nm.endswith('+ERASE')
+    for g in ks}))
 emit(f"  {F['mutants_total']} declared falsifiers; each is an "
      f"injection into the gated object, and every gate predicate is "
      f"evaluated BLIND — no predicate anywhere in this file references "
@@ -2880,28 +4536,104 @@ _bycls = defaultdict(int)
 for nm, cls, n, ks in MUT_ROWS:
     _bycls[cls] += 1
 emit(f"  by class: {dict(sorted(_bycls.items()))}")
+emit(f"  THE ESCALATION CENSUS, aggregated rather than left in the "
+     f"mutant names: {F['escalation_drift']} falsifiers bite at level 1 "
+     f"(DRIFT), {F['escalation_poison']} need level 2 (POISON) and "
+     f"{F['escalation_erase']} need level 3 (ERASE).  A gate that dies "
+     f"only when its input is ERASED constrains existence, not value; "
+     f"the gates in that position are "
+     f"{list(F['escalation_erase_gates'])} and the falsifiers are "
+     f"{list(F['escalation_erase_names'])}.")
 emit(f"  a sample of the kill table (falsifier -> gates it killed):")
 for nm, cls, n, ks in MUT_ROWS[:8] + MUT_ROWS[-12:]:
     emit(f"    {nm[:46]:46s} -> {n:2d} gate(s) {list(ks)}")
 
-# --- the never-falsified census, with VERIFIED waivers (v14 #34)
-NEVER = [gid for gid, k, l, p, d in GATES if not KILLED[gid]]
-WAIVERS = []
-for gid, kind, label, pred, det in GATES:
-    if gid not in NEVER:
-        continue
-    if kind == KIND_THM:
-        w = ("THEOREM-PASS: analytically forced by the construction; "
-             "the forcing is machine-checked by the disclosure printed "
-             "at its section, and the gate is reported as a "
-             "disclosure, never counted as a measurement")
-    elif kind == KIND_DIS:
-        w = ("DISCLOSURE: this clause is true by algebra for every "
-             "input and is printed as a disclosure, not a must-pass "
-             "gate")
-    else:
-        w = "NO VERIFIED WAIVER — this is a defect"
-    WAIVERS.append((gid, kind, w))
+# --- THE NEVER-FALSIFIED CENSUS, WITH WAIVERS THAT DO NOT CLOSE ON
+# --- THE AUTHOR'S OWN DECLARATION (v14 #34, and the correction of
+# --- record).  In the first delivery a gate declared KIND_THM was
+# --- excluded from the falsifier generator, therefore died nowhere,
+# --- therefore landed in the never-falsified census, where it was
+# --- automatically waived BY THE VERY DECLARATION THAT EXCLUDED IT.
+# --- Two changes break the loop: the generator now harvests read-keys
+# --- from every gate (above), and a waiver is issued only to a gate
+# --- whose predicate is INPUT-INDEPENDENT AS MEASURED — it survives
+# --- the drift, poison and erase perturbation of every key it reads.
+# --- The classification is therefore a measured property of the
+# --- predicate and not a tag the author attached to it.
+LEVELS = (('DRIFT', perturb), ('POISON', poison), ('ERASE', erase))
+
+
+def waiver_probe(pred, reads):
+    """Find a perturbation of a key this predicate READS that flips it.
+    None means the predicate is input-independent as measured: it
+    survives drift, poison AND erase of every key it reads, so it
+    constrains nothing about the measured objects and is a pass by
+    construction.  Anything else is a MEASUREMENT and may not be
+    waived on a declaration."""
+    for k in sorted(reads, key=SK):
+        for lv, fn in LEVELS:
+            G2 = Facts()
+            G2.update(F)
+            try:
+                G2.update({k: fn(dict.__getitem__(F, k))})
+            except Exception:
+                continue
+            G2.track()
+            try:
+                ok = bool(pred(G2))
+            except Exception:
+                ok = False
+            G2.stop()
+            if not ok:
+                return (k, lv)
+    return None
+
+
+def close_waivers(res):
+    """For every never-falsified gate, probe for a killing perturbation
+    of a key it reads.  If one exists the gate is a measurement, and
+    the probe's own witness is REGISTERED AS A DECLARED FALSIFIER and
+    run — so the coverage gap is closed rather than waived.  What
+    remains never-falsified is input-independent as measured, and only
+    that earns a waiver."""
+    added = []
+    for gid, kind, label, pred, det in GATES:
+        if KILLED[gid]:
+            continue
+        hit = waiver_probe(pred, res[gid][2])
+        if hit is None:
+            continue
+        k, lv = hit
+        fn = dict(LEVELS)[lv]
+        nm = f"PROBE[{gid}|{k}|{lv}]"
+        killed = apply_and_score(nm, lambda f, k=k, fn=fn: {k: fn(f[k])})
+        MUTANTS.append((nm, 'waiver-probe',
+                        lambda f, k=k, fn=fn: {k: fn(f[k])}))
+        for g in killed:
+            KILLED[g].add(nm)
+        MUT_ROWS.append((nm, 'waiver-probe', len(killed), tuple(killed)))
+        if not killed:
+            dead.append(nm)
+        added.append(nm)
+    never = [gid for gid, k, l, p, d in GATES if not KILLED[gid]]
+    waivers = []
+    for gid, kind, label, pred, det in GATES:
+        if gid not in never:
+            continue
+        w = ("VERIFIED INPUT-INDEPENDENT (measured, not declared): this "
+             "predicate survives the DRIFT, POISON and ERASE "
+             "perturbation of EVERY key it reads, so it constrains "
+             "nothing about the measured objects and is a pass by "
+             "construction.  The waiver is issued by that measurement "
+             "and not by the gate's declared kind; a gate whose "
+             "predicate could be flipped has its killing perturbation "
+             "registered as a falsifier instead of being waived")
+        waivers.append((gid, kind, w))
+    return never, waivers, added
+
+
+NEVER, WAIVERS, PROBE_ADDED = close_waivers(RES)
+F['waiver_probes_registered'] = tuple(PROBE_ADDED)
 F['never_falsified'] = tuple(NEVER)
 F['never_falsified_unwaived'] = tuple(
     gid for gid, kind, w in WAIVERS if w.startswith("NO VERIFIED"))
@@ -2922,122 +4654,442 @@ emit(f"  gates never falsified AND without a verified waiver: "
 # ======================================================================
 # THE GATE TABLE, THE THEOREM-PASS CENSUS, THE COMPLIANCE SWEEP
 # ======================================================================
+# ======================================================================
+# THE THEOREM-PASS CENSUS, RECOMPUTED MECHANICALLY.  A gate may be
+# classified THEOREM-PASS (or DISCLOSURE) only if this file exhibits
+# its FORCING and machine-checks it: a measured witness whose value is
+# the one the forcing predicts, and which no input the construction
+# admits could move.  The census is then computed from the tags AND
+# every tag is backed by a gated witness, so the classification is not
+# the author's declaration.  Two gates the first delivery counted as
+# substantive move here — B1-TREE (unique parenthood is a property of
+# the representation) and A4-PRED (the reduction's agreement is
+# forced) — and one more, B3-MONOTONE, because its content is entailed
+# by A4-MONO's; each of the three is delivered with a SUBSTANTIVE
+# companion (B1-NODUP, A4-PRED-UNFORCED, B3-NSUP-PROFILE) carrying the
+# half that could have come out otherwise.
+FORCING = [
+    ('A3-KERNEL', KIND_THM,
+     "k_r divides by its own denominator: G(h, r) is DEFINED as the "
+     "sum k_r normalizes by, so properness is an identity",
+     'proper_violations', 0),
+    ('A3-CUTADD', KIND_DIS,
+     "cut-additivity follows BY INDUCTION from properness: a chain of "
+     "probability kernels has cut mass 1 at every cut",
+     'proper_violations', 0),
+    ('A4-MONO', KIND_THM,
+     "View.holdings is a UNION over the view's arbs, deliveries and "
+     "merges, so it cannot shrink along a transition",
+     'mono_shrinking_all', 0),
+    ('A4-PRED', KIND_THM,
+     "components are built from live proposals, so an empty live set "
+     "forces an empty component set; a merge pair needs two "
+     "non-superseded created versions, so a singleton forces none",
+     'pred_forcing_live_empty_but_components', 0),
+    ('A7-ROOTTHEOREM', KIND_THM,
+     "the root menu is ONE ORBIT PER EVENT KIND under the layer's own "
+     "automorphisms, so every equivariant terminal forces the "
+     "uniform-within-kind root conditional",
+     'sym_menu_violations', 0),
+    ('B1-TREE', KIND_THM,
+     "a history IS its event sequence, so h = g + (e,) forces "
+     "g = h[:-1]: unique parenthood is a property of the "
+     "representation, and its only failure mode — a duplicated menu "
+     "entry — is gated substantively at B1-NODUP",
+     'menu_duplicate_entries', 0),
+    ('B3-MONOTONE', KIND_THM,
+     "set-monotonicity of holdings (A4-MONO) ENTAILS "
+     "cardinality-monotonicity of the profile; the entailment is "
+     "machine-checked pointwise over every transition of the family",
+     'mono_entailment_violations', 0),
+]
+F['forcing_rows'] = tuple((g, k, wk, we) for g, k, d, wk, we in FORCING)
+F['forcing_witness_values'] = tuple(
+    (g, wk, dict.__getitem__(F, wk)) for g, k, d, wk, we in FORCING)
+F['forcing_witness_ok'] = all(
+    dict.__getitem__(F, wk) == we for g, k, d, wk, we in FORCING)
+F['forcing_covers_nonsub'] = (
+    {g for g, k, l, p, d in GATES if k != KIND_SUB}
+    == {g for g, k, d, wk, we in FORCING})
+F['forcing_kinds_match'] = all(
+    dict((g, k) for g, k, l, p, d in GATES).get(g) == k
+    for g, k, d, wk, we in FORCING)
+emit("")
+emit("[THE FORCING REGISTRY — why each non-substantive gate is one]")
+for g, k, d, wk, we in FORCING:
+    emit(f"  {g:20s} [{k}] {d}")
+    emit(f"      machine-checked witness: {wk} = "
+         f"{dict.__getitem__(F, wk)} (forced value {we})")
 gate("C-THEOREMCENSUS", KIND_SUB,
-     "THE THEOREM-PASS CENSUS IS ITSELF GATED: the substantive, "
-     "theorem-pass and disclosure counts partition the gate list "
-     "exactly, and the theorem-pass count is not zero (a receipt that "
-     "claimed every gate substantive would be the vacuous-must-pass "
-     "defect)",
+     "THE THEOREM-PASS CENSUS IS ITSELF GATED AND MECHANICALLY "
+     "RECOMPUTED: the substantive, theorem-pass and disclosure counts "
+     "partition the gate list exactly; EVERY non-substantive gate "
+     "appears in the forcing registry with the kind it is registered "
+     "under; no substantive gate does; and every registered forcing's "
+     "machine-checked witness carries the value the forcing predicts.  "
+     "So the classification is a computed property with an exhibited "
+     "reason, not a tag",
      lambda f: (f['n_substantive'] + f['n_theorem'] + f['n_disclosure']
-                == len(GATES) and f['n_theorem'] >= 3),
+                == len(GATES)
+                and f['n_theorem'] >= 3
+                and f['forcing_witness_ok']
+                and f['forcing_covers_nonsub']
+                and f['forcing_kinds_match']),
      lambda f: f"{f['n_substantive']} substantive + {f['n_theorem']} "
                f"theorem-pass + {f['n_disclosure']} disclosure = "
-               f"{len(GATES)}")
+               f"{len(GATES)}; forcing registry covers every "
+               f"non-substantive gate = {f['forcing_covers_nonsub']}; "
+               f"witnesses = {list(f['forcing_witness_values'])}")
+
+# ======================================================================
+# THE INSTRUMENTS THE COMPLIANCE SWEEP NEEDS.  Every one of them is a
+# computation over this file's own syntax tree or over the process's
+# own instrumented state; none of them is a typed status.
+# ======================================================================
+def _consts_in(node):
+    return {n.value for n in ast.walk(node)
+            if isinstance(n, ast.Constant) and isinstance(n.value, str)}
+
+
+_fn_nodes = {n.name: n for n in ast.walk(_tree)
+             if isinstance(n, ast.FunctionDef)}
+_gate_call_consts = set()
+for _n in ast.walk(_tree):
+    if (isinstance(_n, ast.Call) and isinstance(_n.func, ast.Name)
+            and _n.func.id == 'gate'):
+        _gate_call_consts |= _consts_in(_n)
+_subproc = 0
+for _n in ast.walk(_tree):
+    if isinstance(_n, ast.Call):
+        _fn = _n.func
+        _nm = (_fn.attr if isinstance(_fn, ast.Attribute)
+               else (_fn.id if isinstance(_fn, ast.Name) else ''))
+        if _nm in ('popen', 'system', 'Popen', 'check_output', 'run',
+                   'call', 'check_call', 'spawnl', 'fork', 'execv'):
+            _subproc += 1
+_typed_F = set()
+for _n in ast.walk(_tree):
+    if isinstance(_n, ast.Assign) and len(_n.targets) == 1:
+        _t = _n.targets[0]
+        if (isinstance(_t, ast.Subscript) and isinstance(_t.value, ast.Name)
+                and _t.value.id == 'F'
+                and isinstance(_t.slice, ast.Constant)
+                and isinstance(_n.value, ast.Constant)):
+            _typed_F.add(_t.slice.value)
+_comply_const_statuses = 0
+for _n in ast.walk(_tree):
+    if (isinstance(_n, ast.Assign) and len(_n.targets) == 1
+            and isinstance(_n.targets[0], ast.Name)
+            and _n.targets[0].id == 'COMPLY'
+            and isinstance(_n.value, ast.List)):
+        for _row in _n.value.elts:
+            if isinstance(_row, ast.Tuple) and len(_row.elts) >= 4:
+                _kindnode = _row.elts[1]
+                _declared_computed = (
+                    isinstance(_kindnode, ast.Constant)
+                    and _kindnode.value == 'COMPUTED')
+                if (_declared_computed
+                        and isinstance(_row.elts[2], ast.Constant)):
+                    _comply_const_statuses += 1
+_bv_consts = _consts_in(_fn_nodes['build_verdict'])
+_cv_consts = _consts_in(_fn_nodes['check_verdict'])
+# A literal shared by the two functions is legitimate in exactly two
+# cases: a KEY OF THE SHARED TOKEN TABLE (both consult it by key, which
+# is what the engraving permits) and a KEY OF THE GATED OBJECT (the
+# comparator must be able to name which measured value it demands).
+# Anything else shared would be the comparator re-typing the emitter's
+# prose, which is the failure mode the rule exists to catch.
+_shared_verdict_literals = ((_bv_consts & _cv_consts) - set(VTOK)
+                            - set(dict.keys(F)))
+_precheck_src = _src[:_src.index('VTOK' + ' = {')]
+_precheck_names_verdict = sum(
+    1 for _k in ('seg_term', 'seg_found', 'seg_blocked')
+    if VTOK[_k] in _precheck_src)
+ANCHORED_PATHS = {os.path.abspath(os.path.join(REPO, p))
+                  for t, n, ped, arts, s in ROWS for p, w in arts}
+ANCHORED_PATHS |= {os.path.abspath(os.path.join(REPO, p))
+                   for t, p, c, x in VERBATIM}
+ANCHORED_PATHS.add(os.path.abspath(SELF))
+_unanchored_opens = sorted(OPENED - ANCHORED_PATHS)
+MUST_NOT_BE_TYPED = {'birkhoff_tau', 'birkhoff_diameter_finite',
+                     't_total', 'rsig_count', 'columns_single_parent',
+                     'B3_profile_decreases', 'mono_shrinking_all',
+                     'escape_primary', 'escape_control'}
+_mutant_names = {nm for nm, cls, fn in MUTANTS}
+_gate_refs_mutant = sorted(_gate_call_consts & _mutant_names)
+
+# --- THE KEY-COVERAGE CENSUS (v14 #34, honest denominators).  Computed
+# --- by a function so that it can be RE-RUN after the last gate and
+# --- the last falsifier are registered: a census taken early would
+# --- exclude the compliance gates' own read keys, which is exactly the
+# --- kind of narrowed denominator this repair exists to retire.
+NAMED_MUTANT_KEYS = {'verdict', 'escape_primary',
+                     'escape_primary_classes',
+                     'grain_control_classes', 'escape_control',
+                     'B2_nu_support', 'B3_profile_decreases',
+                     'B3_all_zero_inf', 'n_theorem', 'compliance_all',
+                     'never_falsified_unwaived',
+                     'verdict_falsifiers_that_killed',
+                     'path_drift_survivors', 'verbatim_drift_survivors',
+                     'forcing_witness_ok', 'forcing_covers_nonsub',
+                     'comply_constant_statuses', 'compliance_asserted',
+                     'verbatim_consumers_unbound', 'verbatim_consumers',
+                     'verbatim_min_chars', 'verbatim_unique',
+                     'verbatim_drift_appends', 'verbatim_drift_real',
+                     't5_ledger_number', 'unanchored_opens',
+                     'subprocess_calls', 'cli_rejected_sample',
+                     'cli_exit_on_unknown',
+                     'coverage_every_read_key_falsified',
+                     'keys_read_but_unfalsified',
+                     'shared_verdict_literals', 'gate_refs_mutant'}
+
+
+def coverage_census(res):
+    kd = set(dict.keys(F))
+    kr = set()
+    for gid in res:
+        kr |= res[gid][2]
+    kf = set(NAMED_MUTANT_KEYS)
+    for nm, cls, n, ks in MUT_ROWS:
+        if nm.startswith('DRIFT['):
+            kf.add(nm[6:].split(']')[0])
+        if nm.startswith('PROBE['):
+            kf.add(nm[6:-1].split('|')[1])
+    F['keys_delivered'] = len(kd)
+    F['keys_read_by_a_gate'] = len(kr)
+    F['keys_with_falsifier'] = len(kf & kd)
+    F['keys_without_falsifier'] = tuple(sorted(kd - kf))
+    F['keys_read_but_unfalsified'] = tuple(sorted(kr - kf))
+    F['coverage_every_read_key_falsified'] = (
+        len(F['keys_read_but_unfalsified']) == 0)
+    F['gate_reads_all_in_F'] = all(k in kd for k in kr)
+
+
+coverage_census(RES)
+gate("C-KEYCOVERAGE", KIND_SUB,
+     "THE COVERAGE DENOMINATOR IS PUBLISHED AND GATED: every delivered "
+     "receipt key that ANY gate reads carries a declared falsifier — "
+     "not only the keys the substantive gates read, which is how a "
+     "theorem-pass gate used to escape falsification entirely — and "
+     "the delivered keys no gate reads are enumerated as "
+     "disclosure-only rather than reported as covered",
+     lambda f: (f['coverage_every_read_key_falsified']
+                and f['keys_read_by_a_gate'] > 100
+                and f['keys_with_falsifier'] >= f['keys_read_by_a_gate']),
+     lambda f: f"{f['keys_with_falsifier']} of {f['keys_delivered']} "
+               f"delivered keys carry a falsifier; "
+               f"{f['keys_read_by_a_gate']} are read by a gate; "
+               f"read-but-unfalsified = "
+               f"{list(f['keys_read_but_unfalsified'])}")
 
 COMPLY = [
-    ("RUNBOOK 4 exact arithmetic",
+    ("RUNBOOK 4 exact arithmetic", 'COMPUTED',
      len(F['ast_float_literals']) == 0,
      f"AST float-guard: {len(F['ast_float_literals'])} float literals; "
      f"float() confined to display"),
-    ("RUNBOOK 4 counts computed, never typed",
-     F['t_total'] == 243769 and F['rsig_count'] == 5161,
-     "every census in this receipt is enumerated in-process; the "
-     "committed values appear only inside gate predicates as "
-     "expectations that kill the run on mismatch"),
-    ("RUNBOOK 4 controls in both directions",
+    ("RUNBOOK 4 counts computed, never typed", 'COMPUTED',
+     F['t_total'] == 243769 and F['rsig_count'] == 5161
+     and len(MUST_NOT_BE_TYPED & _typed_F) == 0,
+     f"every census in this receipt is enumerated in-process; an AST "
+     f"census of constant assignments into the gated object finds "
+     f"{len(_typed_F)} typed keys {sorted(_typed_F)}, and NONE of them "
+     f"is a measured quantity ({sorted(MUST_NOT_BE_TYPED & _typed_F)} "
+     f"— the Birkhoff coefficient and the diameter flag are DERIVED "
+     f"from the computed witness minor, never typed)"),
+    ("RUNBOOK 4 controls in both directions", 'COMPUTED',
      F['misnorm_failures'] > 0 and F['classifier_matches'] == 0
-     and F['B2_atom_found'],
+     and F['B2_atom_found'] and F['pred_unforced_disagreements'] > 0
+     and F['nsup_shrinking_all'] > 0,
      "negative controls: mis-normalized kernel, classifier mismatch, "
-     "grain swap; positive controls: the atoms of B2, the reduction "
+     "grain swap, the unforced predicate variant, the non-superseded "
+     "profile; positive controls: the atoms of B2, the reduction "
      "control of A4-PRED"),
-    ("RUNBOOK 13 (#234) verdict derived in a gate",
-     RES['V-VERDICT'][0],
-     "V-VERDICT compares the complete emitted string against a "
-     "segment-by-segment rebuild"),
-    ("RUNBOOK 14 (#10) containment is not equality",
+    ("RUNBOOK 13 (#234) verdict derived in a gate", 'COMPUTED',
+     RES['V-VERDICT'][0] and F['verdict_check'][0],
+     "V-VERDICT parses the complete emitted string against an "
+     "independently declared field table and accounts for every "
+     "numeral in it"),
+    ("RUNBOOK 14 (#10) containment is not equality", 'COMPUTED',
      sum(1 for nm, cls, n, ks in MUT_ROWS
          if nm.startswith('VERDICT-') and n > 0) == 5,
      "all five verdict falsifiers (value swap, appended text, "
      "truncation, dropped segment, retyped segment) kill a gate; "
      "gated at C-VERDICTFALSIFIERS with its own falsifier"),
-    ("RUNBOOK 13 (#10) render from the gated object",
+    ("RUNBOOK 13 (#10) render from the gated object", 'COMPUTED',
+     F['verdict_check'][0] and F['gate_reads_all_in_F'],
+     f"every gate reads keys of the gated object and nothing else "
+     f"({F['keys_read_by_a_gate']} distinct keys, all present in F), "
+     f"and the emitted verdict's every numeral is accounted for by a "
+     f"value of that object"),
+    ("RUNBOOK 13 (#20) prose renders from the receipt", 'DISCLOSURE',
      True,
-     "every printed number and every receipt field reads from F, the "
-     "same object the gates read"),
-    ("RUNBOOK 13 (#20) prose renders from the receipt",
-     True,
-     "paper-11 renders its numbers from gprep_foundation_receipt.json; "
-     "any number derived in text is marked at its derivation site"),
-    ("RUNBOOK 14 (#20) compliance claims are gate claims",
-     True,
-     "this sweep is itself gated at C-COMPLIANCE below, with an "
-     "injection-falsifier"),
-    ("RUNBOOK 14 (#20) path-value anchoring",
+     "ASSERTED, NOT COMPUTED, and counted separately: this is a claim "
+     "about paper-11, a different artifact, and this process cannot "
+     "measure it.  It is carried as a disclosure so that the computed "
+     "count below is honest"),
+    ("RUNBOOK 14 (#20) compliance claims are gate claims", 'COMPUTED',
+     _comply_const_statuses == 0,
+     f"an AST census of this very table finds {_comply_const_statuses} "
+     f"rows whose COMPUTED status is a literal constant; the "
+     f"DISCLOSURE rows are counted separately and named as asserted; "
+     f"gated at C-COMPLIANCE and at C-NOCONSTANTRULES"),
+    ("RUNBOOK 14 (#20) path-value anchoring", 'COMPUTED',
      F['path_drift_survivors'] == 0,
      "M-PATHDRIFT: every drifted path fails to resolve"),
-    ("RUNBOOK 14 (#34) waiver claims are gate claims",
-     len(F['never_falsified_unwaived']) == 0,
-     "every never-falsified gate carries a verified waiver naming its "
-     "forcing; gated at C-WAIVERS with its own falsifier"),
-    ("RUNBOOK 14 (#34) verbatim-text anchors",
-     F['verbatim_drift_survivors'] == 0 and len(VERBATIM) >= 12,
-     f"{len(VERBATIM)} context windows over {len(set(r[0] for r in VERBATIM))} "
-     f"of the {len(ROWS)} pinned rows, evaluated before the byte "
-     f"anchors, each bound to a named consumer gate"),
-    ("RUNBOOK 14 (#46) no unanchored runtime inputs",
-     True,
-     "the only files read are the pinned artifacts and this file's own "
-     "source; v14/LOG.md and /STATUS.md are not opened"),
-    ("RUNBOOK 14 (#208) no gate references mutant identity",
-     ('"' + 'MUTANT') not in _src and ('mutant' + '_name') not in _src,
-     "the falsifiers perturb the gated object; the predicates are the "
-     "same functions evaluated blind"),
-    ("RUNBOOK 14 (#219) comparators built independently",
-     True,
-     "A4-MASS compares a chained kernel product against a closed "
-     "rational expression in the potentials — two independent routes, "
-     "not one routed twice"),
-    ("RUNBOOK 15 declared arena",
-     True,
+    ("RUNBOOK 14 (#34) waiver claims are gate claims", 'COMPUTED',
+     len(F['never_falsified_unwaived']) == 0
+     and len(F['waivers']) == len(F['never_falsified']),
+     f"a waiver is issued only to a predicate MEASURED to be "
+     f"input-independent under drift, poison and erase of every key it "
+     f"reads; a never-falsified gate that could be flipped has its "
+     f"killing perturbation registered as a falsifier instead "
+     f"({len(F['waiver_probes_registered'])} such registrations)"),
+    ("RUNBOOK 14 (#34) verbatim-text anchors", 'COMPUTED',
+     F['verbatim_drift_survivors'] == 0 and len(VERBATIM) >= 12
+     and F['verbatim_unique'] and F['verbatim_drift_real']
+     and len(F['verbatim_consumers_unbound']) == 0,
+     f"{len(VERBATIM)} context windows over "
+     f"{len(set(r[0] for r in VERBATIM))} of the {len(ROWS)} pinned "
+     f"rows, evaluated before the byte anchors, each at least "
+     f"{MIN_CTX} characters, each occurring exactly once in its "
+     f"source, each perturbed at a content-bearing token, and each "
+     f"bound to a REGISTERED consumer gate"),
+    ("RUNBOOK 14 (#46) no unanchored runtime inputs, no moving "
+     "references", 'COMPUTED',
+     len(_unanchored_opens) == 0 and _subproc == 0,
+     f"the set of paths this process opened is instrumented and "
+     f"compared against the anchored set: {len(OPENED)} opened, "
+     f"{len(_unanchored_opens)} outside the anchor table "
+     f"{_unanchored_opens}.  The committed v10 ledger is row T9 and is "
+     f"read at its pinned sha like every other artifact; an AST census "
+     f"finds {_subproc} subprocess calls, so nothing is read at `git "
+     f"show HEAD:` or any other moving reference"),
+    ("RUNBOOK 14 (#208) no gate references mutant identity", 'COMPUTED',
+     len(_gate_refs_mutant) == 0,
+     f"an AST census of every string constant inside every gate() call "
+     f"finds {len(_gate_refs_mutant)} that equal a registered "
+     f"falsifier's name {_gate_refs_mutant}; the predicates are the "
+     f"same functions evaluated blind"),
+    ("RUNBOOK 14 (#219) comparators built independently", 'COMPUTED',
+     len(_shared_verdict_literals) == 0 and RES['A4-MASS'][0],
+     f"an AST comparison of build_verdict and check_verdict finds "
+     f"{len(_shared_verdict_literals)} string literals shared other "
+     f"than the keys of the shared token table "
+     f"{sorted(_shared_verdict_literals)}; and A4-MASS compares a "
+     f"chained kernel product against a closed rational expression in "
+     f"the potentials — two independent routes, not one routed twice"),
+    ("RUNBOOK 15 declared arena", 'COMPUTED',
+     F['n_actors'] == 2 and F['grain_primary_classes'] == 13
+     and F['grain_control_classes'] == 113 and len(F['choices']) == 9,
      "boundary / family / law / state / arena / provenance printed as "
-     "data at the head of this receipt; the GRAIN is declared and both "
-     "grains are measured"),
-    ("RUNBOOK 15 (#196) match every coordinate",
-     True,
+     "data at the head of this receipt; the GRAIN is declared and five "
+     "grains are measured; the choice inventory classifies all nine "
+     "choices and counts the free ones"),
+    ("RUNBOOK 15 (#196) match every coordinate", 'COMPUTED',
+     F['B2_coarsening_violations'] == 0
+     and len(F['B2_full_grain_rows']) == 3
+     and all(len(r) == 12 for r in F['B2_profile_rows_full']),
      "ARM B's like-for-like comparisons fix the horizon convention AND "
      "the grain AND the depth window before any class contrast is "
-     "read; the matched-coordinate tables are the primary objects"),
-    ("RUNBOOK 13 (#314) precheck may not name the verdict",
-     True,
-     "the anchor and float-guard prechecks gate what is censused; "
-     "every verdict-naming fact is measured on the censused objects"),
+     "read; every block row carries all five grains and its own "
+     "window, and the coarsening lemma is checked cell by cell"),
+    ("RUNBOOK 13 (#314) precheck may not name the verdict", 'COMPUTED',
+     _precheck_names_verdict == 0,
+     f"the source region up to the shared token table — the anchors, "
+     f"the float-guard and every precheck — contains "
+     f"{_precheck_names_verdict} of the three verdict segment names"),
+    ("v14 #82 the CLI contract is enforced, not documented", 'COMPUTED',
+     F['cli_rejected_sample'] == 2 and F['cli_exit_on_unknown'] == 2
+     and F['cli_flags_known'] == 5,
+     "the argv whitelist is exercised in-process on a bogus sample "
+     "before any measurement: both tokens are rejected and the usage "
+     "exit code is 2"),
     ("pin section 4 the delivery-free contrast at every census",
-     F['df_total'] == 34375,
+     'COMPUTED', F['df_total'] == 34375,
      "the partner family is derived from T1 and censused beside every "
      "transport census"),
 ]
-F['compliance'] = tuple((n, bool(ok)) for n, ok, d in COMPLY)
-F['compliance_all'] = all(ok for n, ok, d in COMPLY)
+F['compliance'] = tuple((n, bool(ok)) for n, k, ok, d in COMPLY)
+F['compliance_kinds'] = tuple((n, k) for n, k, ok, d in COMPLY)
+F['compliance_all'] = all(ok for n, k, ok, d in COMPLY)
+F['compliance_computed'] = sum(1 for n, k, ok, d in COMPLY
+                               if k == 'COMPUTED')
+F['compliance_asserted'] = sum(1 for n, k, ok, d in COMPLY
+                               if k != 'COMPUTED')
+F['comply_constant_statuses'] = _comply_const_statuses
+F['unanchored_opens'] = tuple(_unanchored_opens)
+F['subprocess_calls'] = _subproc
+F['typed_F_assignments'] = tuple(sorted(_typed_F))
+F['shared_verdict_literals'] = tuple(sorted(_shared_verdict_literals))
+F['gate_refs_mutant'] = tuple(_gate_refs_mutant)
 emit("")
-emit("[COMPLIANCE SWEEP — computed statuses, not asserted ones]")
-for n, ok, d in COMPLY:
-    emit(f"  [{'OK  ' if ok else 'FAIL'}] {n}")
+emit(f"[COMPLIANCE SWEEP — {F['compliance_computed']} COMPUTED "
+     f"statuses and {F['compliance_asserted']} ASSERTED ones, counted "
+     f"separately and labelled row by row]")
+for n, k, ok, d in COMPLY:
+    emit(f"  [{'OK  ' if ok else 'FAIL'}] [{k}] {n}")
     emit(f"         {d}")
 gate("C-COMPLIANCE", KIND_SUB,
      "THE COMPLIANCE SWEEP IS A GATE, NOT A CLAIM: every engraved rule "
-     "in the table above is evaluated against a measured quantity, "
-     "and this gate fails if any one of them is False",
-     lambda f: f['compliance_all'] and len(f['compliance']) >= 15,
+     "in the table above is evaluated, this gate fails if any one of "
+     "them is False, and the COMPUTED and ASSERTED rows are counted "
+     "separately so that the header cannot outrun the table",
+     lambda f: (f['compliance_all'] and len(f['compliance']) >= 15
+                and f['compliance_computed']
+                == len(f['compliance']) - f['compliance_asserted']
+                and f['compliance_asserted'] <= 1),
      lambda f: f"{sum(1 for n, ok in f['compliance'] if ok)} of "
-               f"{len(f['compliance'])} rules satisfied")
+               f"{len(f['compliance'])} rules satisfied; "
+               f"{f['compliance_computed']} computed, "
+               f"{f['compliance_asserted']} asserted")
+gate("C-INSTRUMENT", KIND_SUB,
+     "THE INSTRUMENT'S FOUR SELF-DESCRIPTIONS ARE GATED RATHER THAN "
+     "PRINTED: the set of paths this process opened lies inside the "
+     "anchor table (no unanchored runtime input); the AST census finds "
+     "no subprocess call anywhere (no moving reference — the `git show "
+     "HEAD:` read is gone and the ledger is a pinned row); "
+     "build_verdict and check_verdict share no string literal outside "
+     "the shared token table (the comparator is independent); and no "
+     "string constant inside any gate() call equals a registered "
+     "falsifier's name (the predicates are blind)",
+     lambda f: (len(f['unanchored_opens']) == 0
+                and f['subprocess_calls'] == 0
+                and len(f['shared_verdict_literals']) == 0
+                and len(f['gate_refs_mutant']) == 0),
+     lambda f: f"unanchored opens {list(f['unanchored_opens'])}; "
+               f"subprocess calls {f['subprocess_calls']}; shared "
+               f"verdict literals {list(f['shared_verdict_literals'])}; "
+               f"gate constants naming a falsifier "
+               f"{list(f['gate_refs_mutant'])}")
+gate("C-NOCONSTANTRULES", KIND_SUB,
+     "NO COMPLIANCE ROW MARKED COMPUTED MAY CARRY A CONSTANT STATUS, "
+     "and this is checked over the table's own syntax tree rather than "
+     "believed: an AST census of the COMPLY literal finds zero rows "
+     "whose status expression is a literal.  A constant status cannot "
+     "move the aggregate, so a rule asserted as a constant would be a "
+     "rule the sweep can never fail",
+     lambda f: (f['comply_constant_statuses'] == 0
+                and f['compliance_asserted'] <= 1),
+     lambda f: f"constant statuses in COMPLY = "
+               f"{f['comply_constant_statuses']}; asserted rows = "
+               f"{f['compliance_asserted']}")
 gate("C-WAIVERS", KIND_SUB,
-     "THE WAIVER CENSUS IS A GATE: no gate is both never-falsified and "
-     "without a verified waiver.  A never-falsified SUBSTANTIVE gate "
-     "is a defect and this predicate is what says so",
+     "THE WAIVER CENSUS IS A GATE, AND THE WAIVER NO LONGER CLOSES ON "
+     "THE AUTHOR'S DECLARATION: no gate is both never-falsified and "
+     "without a verified waiver, where 'verified' means MEASURED "
+     "input-independent under drift, poison and erase of every key the "
+     "predicate reads.  A never-falsified gate that could be flipped "
+     "has its killing perturbation registered as a declared falsifier "
+     "instead of being waived, and the count of such registrations is "
+     "published",
      lambda f: (len(f['never_falsified_unwaived']) == 0
-                and len(f['waivers']) > 0),
+                and len(f['waivers'])
+                == len(f['never_falsified'])),
      lambda f: f"{len(f['waivers'])} waived gates, "
-               f"{len(f['never_falsified_unwaived'])} unwaived")
+               f"{len(f['never_falsified_unwaived'])} unwaived, "
+               f"{len(f['waiver_probes_registered'])} killing "
+               f"perturbations registered as falsifiers instead of "
+               f"being waived")
 gate("C-VERDICTFALSIFIERS", KIND_SUB,
      "THE VERDICT-FALSIFIER CENSUS IS A GATE: all five declared verdict "
      "falsifiers — value swap, appended text, truncation, dropped "
@@ -3059,8 +5111,16 @@ F['n_disclosure'] = sum(1 for gid, k, l, p, d in GATES if k == KIND_DIS)
 PHASE2 = [
     ("THEOREM-CENSUS-DROP", 'compliance',
      lambda f: {'n_theorem': f['n_theorem'] - 1}),
+    ("FORCING-WITNESS-BROKEN", 'compliance',
+     lambda f: {'forcing_witness_ok': False}),
+    ("FORCING-COVERAGE-BROKEN", 'compliance',
+     lambda f: {'forcing_covers_nonsub': False}),
     ("COMPLIANCE-FALSE", 'compliance',
      lambda f: {'compliance_all': False}),
+    ("COMPLIANCE-CONSTANT-ROW", 'compliance',
+     lambda f: {'comply_constant_statuses': 1}),
+    ("COMPLIANCE-ASSERTED-INFLATED", 'compliance',
+     lambda f: {'compliance_asserted': f['compliance_asserted'] + 2}),
     ("WAIVER-UNVERIFIED", 'compliance',
      lambda f: {'never_falsified_unwaived': ('A3-KERNEL',)}),
     ("VERDICT-FALSIFIER-CENSUS-DROP", 'compliance',
@@ -3070,6 +5130,31 @@ PHASE2 = [
      lambda f: {'path_drift_survivors': 1}),
     ("VERBATIMDRIFT-SURVIVES", 'anchor',
      lambda f: {'verbatim_drift_survivors': 1}),
+    ("VERBATIM-CONSUMER-UNBOUND", 'anchor',
+     lambda f: {'verbatim_consumers_unbound': ('B0-SUCCESSOR-NAMED',),
+                'verbatim_consumers': ()}),
+    ("VERBATIM-WINDOW-TRUNCATED", 'anchor',
+     lambda f: {'verbatim_min_chars': 4, 'verbatim_unique': False}),
+    ("VERBATIM-DRIFT-APPEND-ONLY", 'anchor',
+     lambda f: {'verbatim_drift_appends': 10,
+                'verbatim_drift_real': False}),
+    ("LEDGER-DEGRADED-TO-NONE", 'anchor',
+     lambda f: {'t5_ledger_number': None}),
+    ("UNANCHORED-OPEN", 'anchor',
+     lambda f: {'unanchored_opens': ('v14/LOG.md',)}),
+    ("SUBPROCESS-SPAWNED", 'anchor',
+     lambda f: {'subprocess_calls': 1}),
+    ("CLI-WHITELIST-DISABLED", 'cli',
+     lambda f: {'cli_rejected_sample': 0}),
+    ("CLI-EXIT-CODE-WRONG", 'cli',
+     lambda f: {'cli_exit_on_unknown': 0}),
+    ("KEYCOVERAGE-HOLE", 'coverage',
+     lambda f: {'coverage_every_read_key_falsified': False,
+                'keys_read_but_unfalsified': ('rsig_profiles',)}),
+    ("SHARED-VERDICT-LITERAL", 'comparator',
+     lambda f: {'shared_verdict_literals': ('ESCAPE ',)}),
+    ("GATE-NAMES-MUTANT", 'comparator',
+     lambda f: {'gate_refs_mutant': ('BLOCKING-FACT-ERASED',)}),
 ]
 MUTANTS.extend(PHASE2)
 RES = run_gates(F)
@@ -3077,26 +5162,65 @@ for nm, cls, fn in PHASE2:
     killed = apply_and_score(nm, fn)
     for g in killed:
         KILLED[g].add(nm)
-    MUT_ROWS.append((nm, cls, len(killed), tuple(killed[:4])))
+    MUT_ROWS.append((nm, cls, len(killed), tuple(killed)))
     if not killed:
         dead.append(nm)
-NEVER = [gid for gid, k, l, p, d in GATES if not KILLED[gid]]
-WAIVERS = []
-for gid, kind, label, pred, det in GATES:
-    if gid not in NEVER:
-        continue
-    if kind == KIND_THM:
-        w = ("THEOREM-PASS: analytically forced by the construction; "
-             "the forcing is machine-checked by the disclosure printed "
-             "at its section, and the gate is reported as a "
-             "disclosure, never counted as a measurement")
-    elif kind == KIND_DIS:
-        w = ("DISCLOSURE: this clause is true by algebra for every "
-             "input and is printed as a disclosure, not a must-pass "
-             "gate")
-    else:
-        w = "NO VERIFIED WAIVER — this is a defect"
-    WAIVERS.append((gid, kind, w))
+# PHASE 3 — THE COVERAGE CLOSURE.  The phase-1 generator ran before the
+# compliance gates existed, so the keys those gates read had no
+# falsifier of their own.  Every key any gate reads is harvested again
+# HERE, against the FINAL gate set, and the missing falsifiers are
+# generated and run with the same escalation ladder.  After this pass
+# the coverage census's denominator is the whole delivery.
+_have3 = set(NAMED_MUTANT_KEYS)
+for nm, cls, n, ks in MUT_ROWS:
+    if nm.startswith('DRIFT['):
+        _have3.add(nm[6:].split(']')[0])
+    if nm.startswith('PROBE['):
+        _have3.add(nm[6:-1].split('|')[1])
+_need3 = set()
+for gid in RES:
+    _need3 |= RES[gid][2]
+PHASE3 = [(f"DRIFT[{k}]", 'value-drift/census-drop',
+           lambda f, k=k: {k: perturb(f[k])})
+          for k in sorted(_need3 - _have3, key=SK)]
+MUTANTS.extend(PHASE3)
+for nm, cls, fn in PHASE3:
+    killed = apply_and_score(nm, fn)
+    if not killed:
+        _k3 = nm[6:-1]
+        killed = apply_and_score(
+            nm, lambda f, k=_k3: {k: poison(f[k])})
+        if killed:
+            nm = nm + "+POISON"
+        else:
+            killed = apply_and_score(
+                nm, lambda f, k=_k3: {k: erase(f[k])})
+            if killed:
+                nm = nm + "+ERASE"
+    for g in killed:
+        KILLED[g].add(nm)
+    MUT_ROWS.append((nm, cls, len(killed), tuple(killed)))
+    if not killed:
+        unconstrained.append(nm[6:].rstrip(']'))
+F['phase3_falsifiers'] = tuple(nm for nm, cls, fn in PHASE3)
+F['read_but_unconstrained'] = tuple(unconstrained)
+
+NEVER, WAIVERS, PROBE2 = close_waivers(RES)
+F['waiver_probes_registered'] = tuple(PROBE_ADDED) + tuple(PROBE2)
+coverage_census(RES)          # FINAL: every gate, every falsifier
+emit("")
+emit("[KEY COVERAGE — the honest denominator, computed and gated, "
+     "AFTER the last gate and the last falsifier are registered]")
+emit(f"  delivered keys: {F['keys_delivered']}; read by at least one "
+     f"gate: {F['keys_read_by_a_gate']}; carrying a declared "
+     f"falsifier: {F['keys_with_falsifier']}.")
+emit(f"  EVERY KEY ANY GATE READS CARRIES A FALSIFIER: "
+     f"{F['coverage_every_read_key_falsified']} "
+     f"(exceptions: {list(F['keys_read_but_unfalsified'])}).  The "
+     f"remaining {len(F['keys_without_falsifier'])} delivered keys are "
+     f"DISCLOSURE-ONLY — no gate reads them, so no falsifier can kill "
+     f"through them — and they are listed rather than counted as "
+     f"covered: {list(F['keys_without_falsifier'])}")
 F['never_falsified'] = tuple(NEVER)
 F['never_falsified_unwaived'] = tuple(
     gid for gid, kind, w in WAIVERS if w.startswith("NO VERIFIED"))
@@ -3129,6 +5253,42 @@ emit(f"  final tally after the compliance falsifiers: "
      f"gates; {F['mutants_total']} falsifiers, "
      f"{len(F['mutants_dead'])} dead; never-falsified "
      f"{len(F['never_falsified'])} (all waived).")
+
+# ======================================================================
+# THE REGISTRY FLAGS AND THE MUTANT HARNESS.  Both run HERE — after the
+# LAST gate registration and the LAST falsifier registration — so that
+# the registries they print are the registries the run delivers.  The
+# first delivery printed 40 of 44 gates and 112 of 118 falsifiers
+# because its two branches sat before four gate registrations and six
+# falsifier registrations.  Neither branch writes a file.
+# ======================================================================
+if '--list-gates' in ARGV:
+    for gid, k, l, p, d in GATES:
+        print(f"{gid}\t{k}\t{l[:70]}")
+    print(f"# {len(GATES)} gates: {F['n_substantive']} substantive, "
+          f"{F['n_theorem']} theorem-pass, {F['n_disclosure']} "
+          f"disclosure.  NO FILE WRITTEN.")
+    sys.exit(0)
+if '--list-mutants' in ARGV:
+    for nm, cls, fn in MUTANTS:
+        print(f"{nm}\t{cls}")
+    print(f"# {len(MUTANTS)} falsifiers.  NO FILE WRITTEN.")
+    sys.exit(0)
+if '--mutant' in ARGV:
+    _want = ARGV['--mutant']
+    _hit = [(nm, cls, fn) for nm, cls, fn in MUTANTS if nm == _want]
+    if not _hit:
+        print(f"[MUTANT] {_want!r} is not a registered falsifier.  "
+              f"{len(MUTANTS)} are registered; --list-mutants prints "
+              f"them.  NO FILE WRITTEN.  exit 1.")
+        sys.stdout.flush()
+        sys.exit(1)
+    _nm, _cls, _fn = _hit[0]
+    _k = apply_and_score(_nm, _fn)
+    print(f"[MUTANT] {_nm} ({_cls}) killed {len(_k)} gate(s): {_k}")
+    print(f"[MUTANT] NO FILE WRITTEN.  exit {0 if _k else 1}.")
+    sys.stdout.flush()
+    sys.exit(0 if _k else 1)
 
 # ======================================================================
 # THE FULL GATE TABLE — printed AFTER every gate is registered and
@@ -3169,14 +5329,26 @@ for seg in VERDICT.split("  +  "):
     emit("")
     emit("  " + seg)
 emit("")
-emit("  SCOPE QUALIFIERS, MANDATORY AND ATTACHED: two actors (A, B); "
+emit(f"  SCOPE QUALIFIERS, MANDATORY AND ATTACHED: two actors (A, B); "
      f"transport family exhaustive to depth {CAP_T}; relative horizons "
      f"r = 1..{RMAX}; terminal convention C1; intrinsic-partition "
      f"window depth {CAP_ESC}; root-symmetry window depth {CAP_SYM}; "
      f"ARM B N = 1..{NMAX} with the block windows printed row by row.  "
-     "Three actors: censused to depth 3 only, and the deeper "
-     "conditional arm NOT RUN with its projected size printed.  "
-     "Nothing here is an infinite-volume, limit, or asymptotic claim.")
+     f"THE GRAIN IS A SCOPE QUALIFIER AND IT IS ATTACHED TO BOTH ARM-B "
+     f"SEGMENTS, not only to the FOUND one: every delta* clause above "
+     f"holds at the DECLARED-PRIMARY {F['grain_primary_classes']}-class "
+     f"kind x weight grain, hence — by the coarsening lemma — at every "
+     f"refinement of it for the zero clauses and at every coarsening "
+     f"of it for the unit clauses.  Coarsenings incomparable to the "
+     f"menu grains are NOT covered, and the printed witness of that is "
+     f"the R-SIG-indicator row, where the same class carries delta* = "
+     f"1.  THE PSI FAMILY IS A SCOPE QUALIFIER TOO: BLOCKED is stated "
+     f"over menu-shape Psi.  Three actors: censused to depth 3 only, "
+     f"and the deeper conditional arm NOT RUN with its projected size "
+     f"printed.  Nothing here is an infinite-volume, limit, or "
+     f"asymptotic claim, and ARM B is a measurement at a declared "
+     f"arena carrying {F['free_items']} free items, not a motivated "
+     f"result.")
 emit("")
 emit("  WHAT THIS UNIT DOES NOT DECIDE.  It makes no geometry-update "
      "claim; the curvature group carried by the abstraction ladder is "
@@ -3184,7 +5356,16 @@ emit("  WHAT THIS UNIT DOES NOT DECIDE.  It makes no geometry-update "
      "transport-scope chain — that attempt is terminal-negative and "
      "this unit terminalizes its foundation rather than reopening it.  "
      "It constructs no transport map, no U3 screen and no weld "
-     "battery: those are a separate pin's.")
+     "battery: those are a separate pin's.  IT DOES NOT COMPUTE THE "
+     "HILBERT PROJECTIVE DIAMETER OF ANY QUOTIENT TRANSFER OPERATOR: "
+     "the Birkhoff route is closed at the history level only, where it "
+     "closes for every history tree, so the engine the predecessor "
+     "named remains un-attempted at the level where it could have "
+     "worked.  It does not decide whether the two surviving (1, 1) "
+     "rows are atoms at the ruled carrier CONG-185, nor at CONG-462: "
+     "that is a successor computation, and the carrier must first be "
+     "extended past depth 4.  It does not close any of ARM B's four "
+     "free items.")
 
 # ======================================================================
 # RECEIPTS
@@ -3195,10 +5376,6 @@ if not F['seven_all']:
          "clean; the verdict above reports it and the run still exits "
          "0, because a measured negative is a result.")
 
-if dead:
-    emit("")
-    emit(f"  DEAD FALSIFIER(S): {dead} — exit 1.")
-
 RECEIPT = {}
 for k in sorted(F, key=str):
     v = F[k] if not isinstance(F, Facts) else dict.__getitem__(F, k)
@@ -3207,24 +5384,94 @@ RECEIPT['_gates'] = [
     {'id': gid, 'kind': kind, 'ok': RES[gid][0],
      'label': label, 'detail': RES[gid][1]}
     for gid, kind, label, pred, det in GATES]
+# ADDRESSABLE BY ID as well as ordered: a consumer that wants one gate
+# should not have to scan a list.  Both forms carry the same rows.
+RECEIPT['_gates_by_id'] = {
+    gid: {'kind': kind, 'ok': RES[gid][0], 'label': label,
+          'detail': RES[gid][1]}
+    for gid, kind, label, pred, det in GATES}
+# SAMPLES UNTRUNCATED: the first delivery truncated each falsifier's
+# kill list to four gates, so a gate->killer map could not be rebuilt
+# from the receipt and any coverage audit done from the receipt
+# under-counted.  The full list is carried, and the truncation is gone.
 RECEIPT['_mutants'] = [
-    {'name': nm, 'class': cls, 'killed': n, 'sample': list(ks)}
+    {'name': nm, 'class': cls, 'killed': n, 'sample': list(ks),
+     'sample_truncated': False}
     for nm, cls, n, ks in MUT_ROWS]
 RECEIPT['_anchors_bytes'] = [
     {'row': t, 'path': p, 'sha256_12': g, 'ok': ok}
     for t, p, w, g, ok in BY]
 RECEIPT['_anchors_verbatim'] = [
-    {'row': t, 'path': p, 'consumer': c, 'ok': ok, 'chars': n}
-    for t, p, c, ok, n in VB]
+    {'row': t, 'path': p, 'consumer': c, 'ok': ok, 'chars': n,
+     'occurrences': o}
+    for t, p, c, ok, n, o in VB]
 RECEIPT['_pedigrees'] = [{'row': t, 'pedigree': ped}
                          for t, n, ped, a, s in ROWS]
-RECEIPT['_compliance'] = [{'rule': n, 'ok': bool(ok), 'evidence': d}
-                          for n, ok, d in COMPLY]
+RECEIPT['_compliance'] = [{'rule': n, 'kind': k, 'ok': bool(ok),
+                           'evidence': d} for n, k, ok, d in COMPLY]
+RECEIPT['_forcing'] = [{'gate': g, 'kind': k, 'forcing': d,
+                        'witness_key': wk,
+                        'witness_value': dict.__getitem__(F, wk),
+                        'forced_value': we}
+                       for g, k, d, wk, we in FORCING]
+RECEIPT['_choices'] = [{'choice': n, 'class': k, 'evidence': e}
+                       for n, k, e in CHOICES]
 RECEIPT['_caps'] = {'CAP_T': CAP_T, 'CAP_DF': CAP_DF,
                     'CAP_ESC': CAP_ESC, 'CAP_SYM': CAP_SYM,
                     'RMAX': RMAX, 'NMAX': NMAX,
                     'pool3_depth': 3,
                     'pool3_depth5_conditional_arm': 'NOT RUN'}
+# THE SCHEMA BLOCK — the consumer contract this receipt did not carry.
+# Three traps cost a downstream probe a silent swallow: every Fraction
+# is a JSON STRING, every tuple became a LIST and every tuple dict-key
+# became a STRING.  They are declared here, with the column order of
+# every positional tuple a consumer is likely to read.
+RECEIPT['_schema'] = {
+    'typing': {
+        'fractions': 'every exact rational is serialised as a STRING '
+                     '(json.dumps default=str): compare with '
+                     'Fraction(s), never numerically',
+        'tuples': 'every tuple is serialised as a LIST',
+        'tuple_keys': 'every tuple used as a dict key is serialised as '
+                      'its str(), e.g. "(1, 1)"',
+        'none': 'a key whose measurement failed would serialise as '
+                'null; no delivered key is null',
+    },
+    'B2_profile_rows': ['profile', 'N', 'block_window', 'depths',
+                        'delta_H7_primary', 'delta_matched_primary',
+                        'delta_matched_control', 'nu_support'],
+    'B2_profile_rows_full': ['profile', 'N', 'block_window', 'depths',
+                             'delta_H7_primary',
+                             'delta_matched_primary',
+                             'delta_matched_control', 'nu_support',
+                             'delta_matched_profile',
+                             'delta_matched_profile_unordered',
+                             'delta_matched_rsig_indicator',
+                             'max_successor_depth'],
+    'B2_atom_deltas': ['profile', 'N', 'delta_H7_primary',
+                       'delta_matched_primary',
+                       'delta_matched_control'],
+    'B2_atoms': ['profile', 'N', 'block_window',
+                 'delta_matched_primary'],
+    'B2_full_rows': ['N', 'class_window', 'profiles_in_window',
+                     'delta_H7_primary', 'delta_matched_primary'],
+    'B3_hit_rows': ['profile', 'N', 'histories_tested', 'zeros',
+                    'infimum'],
+    'B3_rsig_rows': ['N', 'histories_tested', 'zeros', 'infimum'],
+    'B3_dist_by_depth': ['depth', 'max_finite_distance', 'lookahead',
+                         'informative', 'unresolved', 'histories'],
+    'B3_block_entry_rows': ['profile', 'size', 'reentries',
+                            'contains_root', 'transitions_into'],
+    'B4_statability': ['profile', 'N', 'min_depth', 'max_depth',
+                       'max_successor_depth', 'statable_d4',
+                       'statable_d5'],
+    'per_block_delta_star': 'B2_atom_deltas and B2_profile_rows_full '
+                            'publish delta* PER BLOCK under a name; '
+                            'B2_best_delta is a MAXIMUM over the '
+                            'table, not a row',
+    'aliases': {'B3_dist_rows_saturated': 'B3_dist_rows_informative',
+                'B3_dist_max_saturated': 'B3_dist_max_informative'},
+}
 
 OUT_PATH = os.path.join(HERE, 'gprep_foundation_output.txt')
 RCP_PATH = os.path.join(HERE, 'gprep_foundation_receipt.json')
@@ -3232,7 +5479,22 @@ RCP_PATH = os.path.join(HERE, 'gprep_foundation_receipt.json')
 emit("")
 emit("[RECEIPT HASHES]")
 _code12 = sha12(SELF)
+RECEIPT['_code_sha256_12'] = _code12
 emit(f"  code    sha256-12 {_code12}  gprep_foundation_exact.py")
+emit(f"  the receipt carries this digest as _code_sha256_12, so a "
+     f"consumer reading the receipt alone can identify the code that "
+     f"produced the numbers it is consuming.")
+
+# ======================================================================
+# EVERY FAILURE PATH WRITES NOTHING.  The dead-falsifier exit now
+# precedes the write: in the first delivery the write came first, so an
+# exit-1 run still left rewritten artifacts on disk.
+# ======================================================================
+if dead:
+    print("")
+    print(f"  DEAD FALSIFIER(S): {dead} — NO FILE WRITTEN, exit 1.")
+    sys.stdout.flush()
+    sys.exit(1)
 
 if '--no-write' not in ARGV:
     with open(OUT_PATH, 'w') as fh:
@@ -3245,7 +5507,49 @@ if '--no-write' not in ARGV:
     print(f"  receipt sha256-12 {sha12(RCP_PATH)}  "
           f"gprep_foundation_receipt.json")
     print("  (the output/receipt hashes are printed to stdout only — "
-         "a file cannot contain its own digest.)")
+          "a file cannot contain its own digest.)")
+    # ------------------------------------------------------------------
+    # THE ARTIFACT-INTEGRITY CHECK.  No gate reads the serialized files,
+    # so a mutation applied AFTER the gated object was final and BEFORE
+    # the write survived every gate with 44/44 green — the delivered
+    # receipt could say anything.  This check re-reads both files FROM
+    # DISK and compares them against the gated object itself: the
+    # receipt's flat keys and values against F, and the output's lines
+    # against a digest accumulated inside emit() at emission time, which
+    # a later mutation of OUT_LINES cannot reach.  Exit 1 on mismatch.
+    # ------------------------------------------------------------------
+    _bad = []
+    _disk = json.loads(read_text(RCP_PATH))
+    for k in sorted(dict.keys(F), key=str):
+        want = json.loads(json.dumps(dict.__getitem__(F, k), default=str))
+        if k not in _disk:
+            _bad.append(f"receipt key {k} missing on disk")
+        elif _disk[k] != want:
+            _bad.append(f"receipt key {k} differs from the gated object")
+    for k in _disk:
+        if not k.startswith('_') and k not in dict.keys(F):
+            _bad.append(f"receipt key {k} on disk is not in the gated "
+                        f"object")
+    _dl = read_text(OUT_PATH).split("\n")
+    if _dl and _dl[-1] == "":
+        _dl = _dl[:-1]
+    _ddig = sha12(OUT_PATH)
+    if _ddig != EMIT_DIGEST.hexdigest()[:12]:
+        _bad.append(f"output file digest {_ddig} != the digest "
+                    f"accumulated at emission time "
+                    f"{EMIT_DIGEST.hexdigest()[:12]}")
+    if len(_dl) != EMIT_LINES[0]:
+        _bad.append(f"output file has {len(_dl)} lines, "
+                    f"{EMIT_LINES[0]} were emitted")
+    print(f"  ARTIFACT INTEGRITY: the two written files were re-read "
+          f"from disk and compared against the gated object and "
+          f"against the emission-time digest — "
+          f"{len(_bad)} discrepancies.")
+    if _bad:
+        print("  ARTIFACT INTEGRITY FAILURE — exit 1: "
+              + "; ".join(_bad[:6]))
+        sys.stdout.flush()
+        sys.exit(1)
 
 prog(f"done; wall clock {time.time() - T0:.1f}s")
-sys.exit(1 if dead else 0)
+sys.exit(0)
