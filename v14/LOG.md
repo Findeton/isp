@@ -1596,3 +1596,9 @@ paper claims, byte-identical vs the pre-interruption
 artifacts (the resume was clean).  One prose over-claim
 self-caught pre-delivery ("field" now in three explicit
 senses).  Adjudicator verification next; panel queued.
+
+## 2026-08-09 — R4 ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #55)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
+(77/77 gates, 82/82 mutants dead).  R4 stands
+GREEN-VERIFIED-UNREVIEWED; panel queued (five panels now
+queued: CR-A, CR-B, CR-C, R6b′, R4).
