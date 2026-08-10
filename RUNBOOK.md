@@ -1901,3 +1901,5 @@ NOTHING with its builder — neither code, nor inputs, nor
 typed literals; "the same concatenation written twice" and
 "the same literal in both paths" are the measured failure
 modes (Γ-main's G-VERDICT-EQUALITY; R4's MAJOR-6).
+
+- **§14 addendum (gates bind objects, not cardinalities; v14 #87):** a gate discharging a per-object obligation must evaluate each object against its own computed invariant; a predicate on an aggregate — a count, a distinct-name tally, a sampled subset where the property is not forced — is vacuous at the per-object level.  Demonstrated three ways in one unit (R4: the realization gate's >=3-names predicate; G-MARKOV-ZERO keying on a count; a lesson binding 12 of 588 rows).  Fourth named recurrence of the #82 CLI contract logged the same day (Gamma-prep, R6b'-partial, Gamma-main, R4).

@@ -2486,3 +2486,35 @@ discipline of the campaign; the RUNBOOK-changed-under-me
 disclosure handled correctly (independent convergence on the
 typed-literal finding, colleague reviews unopened).  Joint
 adjudication next.
+
+## 2026-08-10 — R4 JOINT ADJUDICATION (v14 LEDGER #87)
+
+Three AWF; zero false computed numbers across ~465+ seat
+recomputations; grade ACCEPT-WITH-FIXES with the principal repair
+STRENGTHENING the unit.  **THE HEADLINE RELOCATED (operator
+MAJOR-1 ⇄ effectus F1, independent routes, one fact): the L=4
+uniqueness is connective-relative — vN thresholds 2/2 at d=2,3
+(the delivery's own receipt says so), admissible set [2,4] there —
+and the resolution is the unit's own code: the anchored diagonal
+link (1,1) FORCES the max-norm connective.  The corrected claim,
+verbatim: THE UNIQUE SCALE IS A THEOREM ABOUT I7'S DECLARED LINK
+SET, NOT A LAW OF THE SUBSTRATE.**  The "both connectives"
+sentence = the programme's 5th false paper claim (prose,
+receipt-contradicted, title-load-bearing; computed-number record
+still zero).  What grows: the Moore-ball collapse (any field) +
+alphabet-independence adopted; the abelian-stratum promotion
+(0/3,364 commutators; Wilson loops identity by theorem; the 4
+brickwork generators excluded by the realization gate) = THE R5
+PIN DATUM — a gauge rung on FULL is pre-committed to flat abelian
+holonomy; R5 builds on the excluded non-abelian stratum.
+Instrument: 34 surviving injections (head outside the equality
+gate — BLOCKED-AT-NOTHING at exit 0; the CLI disease 4TH
+INSTANCE; verify-paper 13-for-336 = operator MAJOR-5's
+independent twin and the exact entry surface of the false
+sentence).  Twelve repair orders R-R4-1..12 issued
+(note-r4-adjudication.md).  **ONE ENGRAVING: gates bind objects,
+not cardinalities** (three demonstrations in one unit).  Repair
+worker dispatched.  Note the #83 resonance: the relocated
+headline is the SECOND result resting on the declared lattice —
+exactly the weight the weld-2 census (paper-13, in construction)
+now carries.
