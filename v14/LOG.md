@@ -4492,3 +4492,28 @@ tie-break-over-unordered-container class + TWO NEW live gaps
 (d60's C2 gate checks refusal but not maxhits; a CWD-relative
 path read at d60 L70).  CLI PASS on the #82 minimum (43 argv
 shapes) with two residues.  Joint adjudication next.
+
+## 2026-08-10 — U4B JOINT ADJUDICATION (v14 LEDGER #153)
+
+Three AWF; ~788 seat recomputations; zero false measured
+numbers; the register +2 (9th/10th, prose).  Grade
+ACCEPT-WITH-FIXES.  **THE CORRECTED SETTLEMENT:
+CRYSTAL-GENERIC sustained with emergence re-worded (the affine
+law ON THE UNION, 252/252, closed form 216; relational-order
+KILLED; the honest headline: 6/7 of crystallinity outside the
+inherited locus — one law, seven times the territory);
+fragility family-wide (crystals destroyed, never rotated);
+BOTH COUNTING CLAIMS ADOPTED AS THEOREMS (the wall tight at
+1,296; the proof completed); THE R=3 SATURATION into the
+successor register as the weld route's exact demand; the
+coupling unit inherits THE POOL AND THE WALL, not the witness;
+the Lorentzian resonance NAMED (silence → governance); the
+inventory upgrade TAKEN (MOTIVATED at RSQ).**  Instrument: the
+seal totalized incl. the VOUCHING layer (the
+byte-identical-receipt corruptions die); the untaken-seal
+two-line fix; #34 honesty (denominator 51); #125 CLARIFIED to
+include markdown prefixes; the d60 defect register ordered as
+its own note (no retro-edits; the 7-unit audit scope).  Ten
+repair orders R-U4B-1..10; no new engravings.  Repair worker
+dispatched.  **NEXT: the R=3 constructor pin (paper-19) — the
+weld route's unit — on this adjudication's authority.**
