@@ -4288,3 +4288,35 @@ weld-2 sources cited-not-read (rewrites in flight; frozen shas
 used) — priced.  Artifacts committed as-is: paper 2bcba873d78e,
 code 2c9b999dea31, output 8715c46a7b7f, receipt c4a4e8223b64.
 Battery + panel next.
+
+## 2026-08-10 — R5 INSTRUMENT FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #147)
+
+review-r5-instrument.md frozen.  Grade AWF; 93 invocations,
+~550 recomputations, 0 disagreements; 27 injections 11/16.
+**THE BORN-#119 RULING: THE SECOND NATIVE SEAL HOLDS — mechanism
+sound, manifest short; "coverage, not mechanism, is now the
+constraint."  The R4b injection playbook is DEAD ON ARRIVAL,
+six for six** (head flip, moved class, control-under-label,
+post-write corruption, the "the "-truncation, drifted source —
+four caught BY NAME at seal gates; nothing ships at exit 0 with
+a non-parsing receipt; the post-verification write window
+measured ZERO statements wide).  **SEAM RULING: TWELVE WIDE but
+a different animal — the COMPLEMENT of a working seal** (7
+unsealed tables — 18 of 38 receipt keys carry no seal; 2
+late-seal windows — gates/totals/coverage sealed at the final
+gate; 1 transcript prose; 1 comparator circularity; 1 boundary
+probe).  MAJORs: the stale paper verdict block (THIRD
+independent confirmation; flipping the paper's head leaves both
+artifacts byte-identical — no gate reads the paper's block);
+**G-VERDICT-RECONSTRUCTED circular on 1306 of 1324 characters**
+(reads the builder's own segments; drifting two literals ships
+at exit 0 delivering exactly the stale line); neither must-not
+swept against the PAPER (a confinement-analog assertion and
+"curvature DOES imply quantum" both ship byte-identical); #34
+denominators — 36/61 falsifiers cannot REACH their gates (all
+die at G-SOURCES-PINNED first; honest 22/61); three seals taken
+too late.  HOLDS: byte-identity twice (git-less, CWD /, new
+seeds, TZ/locale varied); all 21 seal digests reproduced; 24/24
+mutants named-gate; --verify-paper LIVE (R4b's MAJOR-4 fixed);
+the ladder recomputed 6/6 by brute-force closure + 16!/2 and
+64!/2.  Joint adjudication next.
