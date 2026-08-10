@@ -3025,3 +3025,22 @@ Route-A unit** — its pin inherits the scout's table, the
 declared-data obligations, and the four walls.  No new
 engravings; three recurrences logged.  Repair worker
 dispatched.
+
+## 2026-08-10 — R4 / PAPER-10 TERMINAL (v14 LEDGER #103)
+
+The verification battery returned 4/4: plain run BYTE-IDENTICAL;
+unknown flag exit 2; --selftest exit 1 + WROTE NOTHING
+("SELFTEST PASSED (the instrument is falsifiable); no artifact
+written"); MUT-ROUTE-SUM-NORM-ROWS exit 1 + wrote nothing, dying
+at G-CONNECTIVE-FORCED-BY-ANCHORED-LINK with the bite-loss
+mechanism printed (under mutation the two admissible sets
+equalize — exactly what the gate forbids).  Handler inspected in
+source (whitelist; unknown flag/mutant/anchor all raise to exit
+2).  **R4 IS TERMINAL — the sixth terminal (papers
+01/02/03/04/09/10).**  The head carries the relocated theorem
+(SCALE=L=4-UNIQUE with PRESENT-AT-L-IN-{2,4};
+CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))), the
+commutator segment (0-OF-3364-IN-THE-VERDICT-STRATUM), and
+INDIVISIBILITY=DECLARED in SCOPE.  STATUS.md row written (same
+commit, §13).  Successor handoffs now live: R4b-momentum and
+R5-gauge pins on this terminal.
