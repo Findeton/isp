@@ -2628,3 +2628,31 @@ target is the flat key B2_best_delta = STRING "1".
 TIME-CRITICAL ADVISORY RELAYED to the in-flight Γ-main repair**
 (int-vs-string anchor mismatch; V-LADDER rebind after R-GM-13).
 Joint adjudication next.
+
+## 2026-08-10 — Γ-PREP JOINT ADJUDICATION (v14 LEDGER #91)
+
+Three AWF; 1,342 seat recomputations; zero false delivered
+numbers; grade ACCEPT-WITH-FIXES.  **THE CORRECTED SETTLEMENT:
+the mechanism stands STRENGTHENED (full coverage 0/243,768; the
+FIFTH block (3,3) confirms the ladder; the coarsening lemma —
+both content seats independently — proves no pinned abstraction
+unblocks), and the head is corrected two ways: GRAIN-QUALIFIED
+(at Ψ = the R-SIG indicator, δ*=1 on the same widest windows —
+BLOCKED is Ψ-family-relative) and SPLIT (the LADDER is a corpus
+theorem A4-MONO; the BLOCKING is a construction fact — the
+small-set family is the level sets of the very monotone
+coordinate; Arm B carries FOUR free items).**  THE CARRIER FACT
+for the Γ-iteration: at CONG-185 the atoms collapse to the (1,1)
+block (4/6 rows δ*=0; chain verified 0-exceptions/3,969); the
+d≤5 265/462 row joins the T5 supply; the Γ-iteration pin
+inherits (1,1)-only + d≤5 + the fifth block.  Arm A stands
+motivated; the seven facts verified at zero mismatches.
+Instrument: the registered #66 disease now the formal order
+(CLI 0/4 + the --no-writ hazard); comparator-is-builder; the
+moving-HEAD read (LEDGER #None at 44/44; off-tree break);
+B0-SUCCESSOR-NAMED ungated; 8/18 compliance rows typed; 82/189
+keys falsifier-free.  Twelve repair orders R-GP-1..12
+(note-gprep-adjudication.md).  **ONE ENGRAVING: no moving refs
+(§13/#46 addendum)** — pinned-sha reads only, products gated,
+off-tree/git-less byte-reproduction mandatory.  Repair worker
+dispatched.

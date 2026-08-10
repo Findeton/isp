@@ -1903,3 +1903,5 @@ typed literals; "the same concatenation written twice" and
 modes (Γ-main's G-VERDICT-EQUALITY; R4's MAJOR-6).
 
 - **§14 addendum (gates bind objects, not cardinalities; v14 #87):** a gate discharging a per-object obligation must evaluate each object against its own computed invariant; a predicate on an aggregate — a count, a distinct-name tally, a sampled subset where the property is not forced — is vacuous at the per-object level.  Demonstrated three ways in one unit (R4: the realization gate's >=3-names predicate; G-MARKOV-ZERO keying on a count; a lesson binding 12 of 588 rows).  Fourth named recurrence of the #82 CLI contract logged the same day (Gamma-prep, R6b'-partial, Gamma-main, R4).
+
+- **§13/#46 addendum (no moving refs; v14 #91):** delivery code reads the repository only at pinned shas; every such read's product is consumed by a gate; the plain run must byte-reproduce off-tree and git-less.  Demonstrated at Gamma-prep: an ungated 'git show HEAD:' read whose product no gate consumes let a git-less run deliver 'LEDGER #None' at 44/44 PASS exit 0 (two seats independently), and broke off-tree byte-identity.
