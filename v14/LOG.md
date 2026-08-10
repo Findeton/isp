@@ -1624,3 +1624,41 @@ division event = one mechanism, two faces: where the quantum
 law conditions and what the metric counts; back-reaction =
 interaction writing geometry; QFT-on-background = the
 frozen-stage approximation w/ a built-in validity domain).
+
+## 2026-08-09 — THE Γ-SCOUT'S REPORT + Γ-PREP PIN FROZEN (v14 LEDGER #57)
+THE SCOUT REPORTED (read-only confirmed).  FOUR RESHAPING
+HEADLINES: (1) **the transport-scope chain was ALREADY
+ATTEMPTED and the attempt is TERMINAL-NEGATIVE** — the window
+chain ESCAPES (68 transitions into 5 classes first realized
+at length 3; paper 32 §2.3 [EXACT]; the no-bounded-MENU-exact-
+abstraction mechanism) — Γ-prep OWNS the escape, never
+re-poses it; (2) **the corpus names Γ-main's route TWICE
+verbatim** (v11 paper 0: "first candidates are built from
+v10's relative-horizon kernels read at record grain"; v10's
+final ledger: "Gamma-family on D74's committed quotient …
+prime suspect: the 44 descent-obstruction squares");
+(3) **TRANSPORT SCOPE IS ALREADY MEASURED CURVED — holonomy
+group ⟨2,3⟩, stable across ten scopes and four pools,
+irremovable above μ-descent, w/ flatness predicate J: the
+geometry-update slot has a measured occupant nobody has read
+as a geometry-update law**; (4) the renewal-cut divisibility
+wall (Γ(cut3←cut1) column-constant at all 176 maps —
+DIVISIBLE forced; first askable depth 15; the depth-15
+artifact NOT CITABLE — any renewal-cut indivisibility
+headline is dead on arrival).  ALSO: the citability gap is a
+DOCUMENTATION LAG (d70 is TERMINAL-AT-ONE-ROUND per v10 LOG
+#489; three stale note headers d70/d46b/u3 — pin ledger
+numbers); U3 owes forward exactly the screen Γ-main needs
+(D74's quotient as a transition matrix — a pre-registered
+terminal-grade test slot); deliveries REDUCE finite-horizon
+branching (sign reversal); the L=4-vs-L=3 scale mismatch in
+the weld flagged; compute affordable (~45–90 min single-core).
+**note-gprep-transport-foundation-pin.md (`42ce06e6be8a`) FROZEN
+— paper-11**: rows T1–T8 w/ pedigrees verbatim (the stale-
+header discipline); Arm A the seven-fact foundation
+terminalized (the escape OWNED at both committed grains — the
+13-class primary BY DECLARATION, the 113-class as control);
+**Arm B the successor engine ATTEMPTED: operator-level
+minorization (Doeblin on R-SIG / Birkhoff on G) — d70's named
+surviving candidate, first-class both ways.**  Construction
+dispatched.  Γ-main pins on Γ-prep + the R6b′ panel.
