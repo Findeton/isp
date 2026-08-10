@@ -3236,3 +3236,13 @@ playbook (the unit claims era-level born-compliance).  Three
 reviewers launched → v14/review-r4b-{operator,effectus,
 instrument}.md.  Orchestrator battery running in background
 (plain/flag/selftest/mutant), results to the ledger on landing.
+
+## 2026-08-10 — R4B ORCHESTRATOR VERIFICATION 4/4 (v14 LEDGER #112)
+
+Whitelist parser confirmed in source (L2091); plain run
+BYTE-IDENTICAL; unknown flag exit 2; --selftest exit 1 + "no
+artifact written" (the falsifiability demonstration through the
+real exit path); MUT-MOTION-CONTROL dies (exit 1,
+die-at-gate convention), artifacts unchanged.  The unit stands
+verified at the #82 contract by my own runs; the panel (#111)
+carries the era-level audit.
