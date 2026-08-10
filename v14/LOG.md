@@ -4517,3 +4517,24 @@ its own note (no retro-edits; the 7-unit audit scope).  Ten
 repair orders R-U4B-1..10; no new engravings.  Repair worker
 dispatched.  **NEXT: the R=3 constructor pin (paper-19) — the
 weld route's unit — on this adjudication's authority.**
+
+## 2026-08-10 — THE R=3 WELD PIN FROZEN (paper-19), WORKER LAUNCHED (v14 LEDGER #154)
+
+On the U4b adjudication's authority.  Pin
+v14/note-r3weld-pin.md: three staged questions — (1) the R=3
+arena unit-grade (the saturating computation confirmed: n ≡ 1
+at 27 cells, det 3/4, posdef 9/9; then forcedness, homogeneity,
+crystallinity-on-the-union, fragility — failures first-class);
+(2) the positive-geometry census at a declared window (the
+attained posdef ceiling; the det spectrum; the I7-STRICT
+class); (3) **THE WELD RE-POSED LIVE** — the validated weld-2
+machinery (both readings, the RSQ standard, the two controls)
+pointed at the R=3 I7-STRICT records vs I7's family, with
+neither degeneracy nor budget foreclosing for the first time;
+outcomes WELD3-FOUND/-EMPTY/-BLOCKED, reading-stamped; the
+dead lists cited never re-run.  The four walls inherited with
+the U4b naming lesson; the era's NEWEST lessons native (the
+TOTAL seal incl. the vouching layer; #34-with-reachability;
+#125-with-markdown-prefixes).  Worker launched (opus).  In
+flight (5): Γ-iter repair, R5 repair, U4b repair, U4b→(this),
+R=3-weld construction.
