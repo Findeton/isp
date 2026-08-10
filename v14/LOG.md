@@ -1982,3 +1982,19 @@ today exit 0).  DECISIVE= recomputed not typed.  Two
 judgement calls flagged (the standing-sentinel scope; S7's
 narrow consumption) — accepted at adjudicator review.
 Verification next (~8 min selftest); on green R6b′ TERMINAL.
+
+## 2026-08-09 — CR-D FALSIFICATION COVERAGE CLOSED (v14 LEDGER #69)
+The CR-D worker's final addendum closes the #67 qualifier:
+the canonical --selftest reached 86/90 (all dead, on-target)
+before the harness killed the background task — NOT a unit
+failure — and the remaining four were verified individually
+through the same code path (negctrl-lax, breaks-lax,
+schreier-lax4, segment-inert — all exit 1 on their declared
+gates, artifacts unchanged).  **The table closes two ways:
+90/90 parallel + 86-canonical+4-individual.**  Artifacts
+re-confirmed unmoved.  The #67 deferred-sweep qualifier
+LIFTS at worker-evidence grade (the panel reruns by
+practice regardless).  The dual-head composition ruling
+(EXTENDS ∥ BREAKS side-by-side — the pin's three questions
+all EXTENDS, three named breaks outside them) is REGISTERED
+for CR-D's adjudication.
