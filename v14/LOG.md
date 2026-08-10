@@ -2012,3 +2012,39 @@ escape as its transport-scope cause.  The continuum-in-
 distribution result now stands at terminal grade on 83-of-103
 honest coverage.  Fleet: Γ-main + the R3 repair; six panels
 queued.
+
+## 2026-08-09 — R3 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #71)
+Repair delivered; ALL TEN ORDERS R-R3-1..10 executed.
+Hashes: paper b74d6418073b, code afe3452d067b, output
+89eac51bf81c, receipt 9e911d7637cc.  **M1 ELIMINATED** (the
+LOG read gone; the criterion a (path,value) read from the R2
+terminal receipt + 4 verbatim-text anchors w/ consumer gates;
+9 files read, all anchored).  **THE RIGID BRANCH REACHABLE —
+AND IT IS THE CENSUS'S MOST POPULOUS FORM: closure against
+the declared generator basis lands in-basis at 440/476 with
+RIGID-CONSTANT-NON-METRIC at 216 cells** (metric-match 140);
+the reachability gated on a synthetic payload.  **IN-UNIT:
+the covariance theorem 2,064/2,064 (D-TOT fails 2,064/2,064)
+and the 27-realisation census — 73,872 classifications,
+IN-CONSTRAINT AT 0 ABSOLUTE; 6 absorbing realisations w/
+0-of-12,384 homogeneous OUTSIDE; the curvature-supported
+residue = EXACTLY the 24 inhomogeneous cells; the register
+shift measured inert.**  Correction over the order's
+estimate: the distinct-rule counts MEASURED at 9-of-11 {H,H}
+/ 8-of-11 register (not 10) w/ the duplicate groups printed.
+The degenerate probe BUILT (zero lapse: vanishes + sums to
+zero 60/60; the typed Boolean gone).  Honest denominators
+throughout (685 probes ×30 disclosed; 62-of-238; 16 distinct
+base cells).  FR1–FR11 verbatim-quoted; the unqualified name
+HDA appears only inside the quotes; the positive claim =
+FIXED-BACKGROUND-COVARIANCE-WITH-GR-BRACKET-FORM.  20
+verdict segments (14→20).  **Instrument: gates 81→99;
+mutants 60→124 ALL verified on-target by an INDEPENDENT
+HARNESS (five real defects self-caught incl. two
+cannot-fail mutants); waiver census 29→1 (genuine
+bookkeeping); anchors 44 w/ the corrected verbatim kind.**
+Byte-identical ×2.  34-row compliance sweep all APPLIED.
+Worker flag: the serial selftest (~4.6h at load 38) clean at
+15/15 at hand-off — the equivalent full-table verification
+complete via the independent harness; adjudicator
+verification next w/ the CR-D precedent available.

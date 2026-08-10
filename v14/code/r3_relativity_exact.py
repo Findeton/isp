@@ -9,7 +9,16 @@ SOURCE), the HA construction sources whose recipes are REIMPLEMENTED here
 (nothing is imported), the R2 joint adjudication (the handoff ruling) and the
 R2 terminal receipt.  Every value read by JSON path out of a pinned artifact
 anchors the (path, value) PAIR, not only the file bytes (RUNBOOK section 14
-addendum, v14 #20).
+addendum, v14 #20); every span of prose read out of a pinned NOTE anchors a
+CONTEXT WINDOW bound to a named consumer gate (RUNBOOK section 14 addendum,
+v14 #34, verbatim-text anchors).
+
+NO UNANCHORED RUNTIME INPUT (RUNBOOK section 14 addendum, v14 #46).  Every
+file this instrument reads at run time is either a hash-pinned artifact
+carrying both a byte anchor and a value anchor, or this unit's own owned
+artifact (paper-03, read by the prose gate that renders it).  Mutable repo
+state -- ledgers, STATUS, other units' working files -- is read by nothing
+here.
 
 THE QUESTION (pin section 2, falsifiable, three-sided):
   does the record-native constraint family H_a[N] close as an algebra over the
@@ -42,24 +51,48 @@ WHAT IS MEASURED (pin section 3):
     I7's OWN declared scope (d=2, L=3) and anchored cell by cell against the
     pinned receipt BEFORE any new measurement counts.
   * THE L GATE -- L >= 4, with the measured reason printed: the R2 locality
-    criterion (a non-complete overlap graph) is FAILED by the d=2, L=3 record
-    lattice, whose overlap graph is COMPLETE at 36 of 36 pairs on 9 sites.
-    The three inherited fractions are recomputed here and matched against the
-    R2 adjudication's text.  An attempted L=3 census run dies BY GATE.
-  * THE CLOSURE CENSUS -- for every ordered pair of the declared lapse family
-    (and, as a second declared value of that coordinate, its lattice
-    translates), the commutator [H_a[N], H_a[M]] computed exactly by two
-    routes and decomposed in the declared generator basis; the residual
-    channel measured exactly, cell-complete.
+    criterion (a non-complete overlap graph), READ BY JSON PATH out of the R2
+    TERMINAL RECEIPT, is FAILED by the d=2, L=3 record lattice, whose overlap
+    graph is COMPLETE at 36 of 36 pairs on 9 sites.  The criterion is applied
+    here by an implementation gated against a declared positive/negative
+    pair.  An attempted L=3 census run dies BY GATE.
+  * THE SPANNING HYPOTHESIS (S) -- the load-bearing measurement of the whole
+    {H,H} half: the realised bracket covectors Omega span the FULL declared
+    link space at every site of every censused arena and lapse scope.  Every
+    coefficient statement below is a corollary of (S) plus the declared
+    weights; (S) itself is measured.
+  * THE STRUCTURE THEOREM, verified in-unit -- rho = (W - B).Omega, so the
+    metric-match condition is W == B pointwise and the coefficient class is a
+    pure function of (the rule's weight field, the record's readout).  An
+    ANALYTIC PREDICTOR carrying no commutator predicts every census cell's
+    class and metric-match status; the agreement is gated.  The census
+    clauses are therefore carried FORCED (#208).
+  * THE CLOSURE CENSUS, against the DECLARED GENERATOR BASIS -- the commutator
+    [H_a[N], H_a[M]] computed exactly by THREE routes and decomposed in the
+    declared basis.  Two distinct questions are separated and both reported:
+    BASIS CLOSURE (does the commutator lie in the declared tangential family
+    at all?) and METRIC MATCH (is its coefficient the record's inverse
+    metric?).  This makes the pin's RIGID branch -- closure with a constant
+    NON-metric coefficient -- reachable, and it is reached.
   * STRUCTURE-COEFFICIENT EXTRACTION -- the coefficient is SOLVED FOR from the
     commutators themselves and then TYPED against an independently
     re-encoded record metric: constant / metric-reading / other, by
     measurement.
-  * THE NORMAL-TANGENTIAL AND TANGENTIAL BRACKETS -- {D,H} at both declared
-    tangential realisations, with the convention sweep that decides whether a
-    mismatch is a convention or a defect; {D,D} as the lattice's own
-    covariance closure (positive control) against a scrambled-lattice
-    negative control.
+  * THE REALISATION CENSUS -- the tangential family's declared atoms are the
+    site map and the address register, so a realisation is a triple
+    (a, b, c) in {-1,0,1}^3: front drag, register shift, register transport.
+    All 27 are censused.  D-REG = (0,1,0) and D-TOT = (1,1,0) are two of
+    them; D-FULL = (1,1,1) transports the register along the same declared
+    site map that already transports the front.
+  * THE COVARIANCE THEOREM -- D_full[v] . H_g[N] . D_full[v]^-1 = H_{S_v g}[S_v N],
+    exactly, at every cell of a derived and printed probe: conjugation by
+    full transport carries the constraint of the record to the constraint of
+    the TRANSPORTED record.  What survives as an obstruction is that the
+    record itself does not transport: the arena carries a FIXED BACKGROUND.
+  * THE NORMAL-TANGENTIAL AND TANGENTIAL BRACKETS -- {D,H} at the declared
+    realisations, with the convention sweep that decides whether a mismatch
+    is a convention or a defect; {D,D} as the lattice's own covariance
+    closure (positive control) against a scrambled-lattice negative control.
   * THE L-SWEEP -- everything at L = 4 and L = 5, at d = 2 and d = 3, with the
     L- and d-dependence of every defect and coefficient recorded.
 
@@ -95,7 +128,6 @@ import hashlib
 import itertools
 import json
 import os
-import re
 import subprocess
 import sys
 from fractions import Fraction as Fr
@@ -129,9 +161,19 @@ DEFERRED_GATES = ("G-RENDER-FROM-GATED-OBJECT", "G-NO-FLOATS-IN-RECEIPT",
 # time PLUS this declared remainder -- derived, never typed -- and
 # G-DEFERRED-GATES-EVALUATED checks the arithmetic came out right.
 POST_RENDER_GATES = ("G-PROSE-RENDERS-FROM-THE-RECEIPT",
-                     "G-NEVER-FALSIFIED-CENSUS", "G-FINAL-GATE-COUNT",
+                     "G-NEVER-FALSIFIED-CENSUS",
+                     "G-WAIVER-CLAIMS-ARE-GATE-CLAIMS",
+                     "G-FINAL-GATE-COUNT",
                      "G-DEFERRED-GATES-EVALUATED",
-                     "G-COMPLIANCE-CLAIMS-ARE-GATE-CLAIMS")
+                     "G-COMPLIANCE-CLAIMS-ARE-GATE-CLAIMS",
+                     "G-PAYLOAD-SEALED")
+
+
+def gates_still_to_come():
+    """How many declared gates have not been registered yet -- DERIVED from
+    the declaration table, never typed."""
+    have = set(g["name"] for g in GATES)
+    return len([n for n in POST_RENDER_GATES if n not in have])
 
 
 class GateFailure(Exception):
@@ -253,6 +295,24 @@ def read_text(rel):
 
 
 I7 = "v13/code/ha_successor_receipt.json"
+
+# EVERY FILE THIS INSTRUMENT READS AT RUN TIME, declared here and gated by
+# G-NO-UNANCHORED-RUNTIME-INPUT (RUNBOOK section 14 addendum, v14 #46).  The
+# first seven carry byte anchors; the JSON among them carry (path, value)
+# anchors and the note carries verbatim-text context windows; the HA source is
+# byte-anchored against a hash DERIVED from the pinned receipt; the last is
+# this unit's own owned artifact, read only by the prose gate that renders it.
+RUNTIME_READS = sorted([
+    "v13/code/ha_successor_exact.py",
+    "v13/code/ha_successor_receipt.json",
+    "v13/paper-ha-successor.md",
+    "v14/code/r2_manifold_exact.py",
+    "v14/code/r2_manifold_receipt.json",
+    "v14/note-r0-founding-pin.md",
+    "v14/note-r2-adjudication.md",
+    "v14/note-r3-relativity-pin.md",
+    "v14/paper-03-relativity-rung.md",
+])
 
 # PATH-VALUE ANCHORS (RUNBOOK section 14 addendum, v14 #20).  Every arena
 # datum and every recovery target this unit reads out of a pinned artifact
@@ -385,11 +445,67 @@ PATH_ANCHOR_ROWS = [
 ]
 
 
+# VERBATIM-TEXT ANCHORS (RUNBOOK section 14 addendum, v14 #34).  A span of
+# prose this unit reads out of a pinned NOTE is anchored as a CONTEXT WINDOW
+# -- the surrounding sentence, not a fragment -- and every row names the gate
+# that consumes it, so the anchor binds MEANING TO USE and not merely
+# existence.  These rows are evaluated BEFORE the byte anchors.
+TEXT_ANCHOR_ROWS = [
+    ("T-R2-HANDOFF", "v14/note-r2-adjudication.md",
+     "**The R3 handoff: I7's arena, L ≥ 4.**",
+     "G-L-GATE-INHERITED-FACTS",
+     "the R2 handoff ruling's own heading sentence: this unit's arena and its "
+     "gated extent arrive together, as one clause"),
+    ("T-R2-GATES-L", "v14/note-r2-adjudication.md",
+     "The R3 pin poses the deformation questions on I7's own sites and "
+     "**gates L ≥ 4 as a measured requirement**.",
+     "G-L-GATE-INHERITED-FACTS",
+     "the ruling that gates this unit's extent -- the whole sentence, so the "
+     "anchor binds the requirement to its subject and not the fragment "
+     "'L ≥ 4'"),
+    ("T-R2-PROFILES", "v14/note-r2-adjudication.md",
+     "(8,12,1,5) at d=2, (24,96,1,73) at d=3 — failing only at d=2, L=3.",
+     "G-L-GATE-INHERITED-FACTS",
+     "the link profiles the ruling states for this lattice together with the "
+     "extent at which it fails -- quoted as inherited facts, never re-derived "
+     "here"),
+    ("T-R2-INHERITED", "v14/note-r2-adjudication.md",
+     "the gravity record layer's own declared lattice satisfies the locality "
+     "criterion, is translation-covariant, and carries a CONSISTENT "
+     "chart-intrinsic dimension with a single link profile at every site",
+     "G-L-GATE-INHERITED-FACTS",
+     "the three inherited facts this unit rides as anchors and never "
+     "re-derives (pin section 1)"),
+]
+
+
 def read_by_path(obj, path):
     cur = obj
     for k in path:
         cur = cur[k]
     return cur
+
+
+def verify_text_anchors():
+    """Evaluated FIRST: each row's context window must occur verbatim in the
+    pinned note, and each row names the gate that consumes it."""
+    rows = list(TEXT_ANCHOR_ROWS)
+    if MUTANT == "text-anchor-skip":
+        rows = rows[:-1]
+    for name, rel, window, consumer, why in rows:
+        text = _flat(read_text(rel))
+        got = text.count(_flat(window))
+        if MUTANT == "text-anchor-" + name:
+            got = 0
+        ANCHORS.append({"name": name, "kind": "verbatim-text", "artifact": rel,
+                        "expected": window, "measured": got,
+                        "consumer_gate": consumer, "provenance": why,
+                        "ok": got >= 1})
+        gate(name,
+             "verbatim-text anchor: the context window occurs in %s and is "
+             "consumed by %s" % (rel, consumer), got >= 1,
+             {"window": window, "occurrences": got, "consumer": consumer})
+    return len(rows)
 
 
 def verify_anchors():
@@ -400,6 +516,8 @@ def verify_anchors():
         path = os.path.join(ROOT, rel)
         got = sha12(path)
         if MUTANT == "anchor-hash" and name == "A-R0-I7":
+            got = "0" * 12
+        if MUTANT == "anchor-hash-" + name:
             got = "0" * 12
         ANCHORS.append({"name": name, "kind": "file-bytes", "artifact": rel,
                         "expected": expect, "measured": got, "provenance": why,
@@ -444,7 +562,9 @@ def derive_ha_code_anchor():
     applied to provenance).  The on-disk file must match it."""
     rec = read_json(I7)
     expect = rec["source_sha256"][:12]
-    got = sha12("v13/code/ha_successor_exact.py")
+    # ROOT-relative, never CWD-relative: the instrument must resolve its
+    # provenance identically from any working directory.
+    got = sha12(os.path.join(ROOT, "v13/code/ha_successor_exact.py"))
     if MUTANT == "ha-code-drift":
         got = "0" * 12
     ANCHORS.append({"name": "A-HA-CODE", "kind": "derived-file-bytes",
@@ -951,36 +1071,81 @@ class Hmap(object):
         return (n2, {x: tuple(m[x][i] - w[x][i] for i in range(d)) for x in m})
 
 
+# THE REALISATION SPACE (the tangential family's declared atoms).  I7 declares
+# exactly two ingredients for D_a[v]: the SITE MAP x -> x + v(x) and the
+# ADDRESS REGISTER.  A realisation is therefore a triple
+#
+#     (a, b, c) in {-1, 0, +1}^3
+#       a  drags the geometry FRONT along the site map (a times v)
+#       b  SHIFTS the address register by b times v
+#       c  TRANSPORTS the register field along the SAME declared site map
+#
+#     D_(a,b,c)[v] : (n, m)  |->  ( S_{a v} n ,  S_{c v} m + b v )
+#
+# with (S_u f)(x) := f(x - u).  I7's two named realisations are two of the 27:
+#   D-REG  = (0, 1, 0)   the register shifts, the front is not transported
+#   D-TOT  = (1, 1, 0)   the front is dragged, the register's labelling is not
+#   D-FULL = (1, 1, 1)   the register is transported along the same site map
+# No new ingredient enters at (1,1,1): it is built from the two declared atoms.
+NAMED_REALISATIONS = {"D-REG": (0, 1, 0), "D-TOT": (1, 1, 0),
+                      "D-FULL": (1, 1, 1)}
+REALISATION_ATOM_VALUES = (-1, 0, 1)
+
+
+def realisation_triple(realisation):
+    if isinstance(realisation, str):
+        return NAMED_REALISATIONS[realisation]
+    return tuple(realisation)
+
+
+def realisation_name(abc):
+    for k, v in sorted(NAMED_REALISATIONS.items()):
+        if tuple(v) == tuple(abc):
+            return k
+    return "D(%d,%d,%d)" % tuple(abc)
+
+
 class Dmap(object):
-    """D_a[v], the tangential comparison map, at both declared realisations."""
+    """D_a[v], the tangential comparison map, at ANY declared realisation."""
 
     def __init__(self, rec, v, realisation="D-REG"):
-        self.rec, self.v, self.realisation = rec, v, realisation
+        self.rec, self.v = rec, v
+        self.realisation = realisation
+        self.abc = realisation_triple(realisation)
 
-    def site_map(self):
+    def site_map(self, k=1):
+        """x -> x + k v(x) as a permutation of the site set, or None."""
         d, L = self.rec.d, self.rec.L
         out = {}
         for x in self.rec.S:
             sh = self.v[x]
             if any(Fr(t).denominator != 1 for t in sh):
                 return None
-            out[x] = tuple((x[i] + int(sh[i])) % L for i in range(d))
+            out[x] = tuple((x[i] + k * int(sh[i])) % L for i in range(d))
         return out if len(set(out.values())) == L ** d else None
 
     def fwd(self, c):
         n, m = c
         d = self.rec.d
+        a, b, cc = self.abc
         vv = self.v
         if MUTANT == "commutator-machinery":
             vv = {x: tuple(2 * t if all(u >= 0 for u in self.v[x]) else t
                            for t in self.v[x]) for x in self.v}
-        m2 = {x: tuple(m[x][i] + vv[x][i] for i in range(d)) for x in m}
-        if self.realisation == "D-REG":
+        if cc:
+            sm = self.site_map(cc)
+            if sm is None:
+                return None
+            mt = {sm[x]: m[x] for x in m}
+        else:
+            mt = m
+        m2 = {x: tuple(mt[x][i] + b * vv[x][i] for i in range(d)) for x in mt}
+        if not a:
             return (n, m2)
-        sm = self.site_map()
-        if sm is None:
+        sma = self.site_map(a)
+        if sma is None:
             return None
-        return ({sm[x]: n[x] for x in n}, m2)
+        return ({sma[x]: n[x] for x in n}, m2)
 
 
 def neg_field(v):
@@ -1012,19 +1177,22 @@ def bracket_covector(N, M, rec, neighbour=None):
                      for lk in rec.links) for x in rec.S}
 
 
-def weight_matrix(rule, rec, x):
+def weight_matrix(rule, rec, x, fresh=False):
     """W: Delta^i(x) = sum_l W^{il}(x) Omega_l(x)."""
     d = rec.d
     W = [[Fr(0)] * len(rec.links) for _ in range(d)]
     if rule == "A-notransport":
         return W                      # frozen front: the steps commute
     if arch_of(rule) == "A":
-        Lam = lambda_of(rule, rec, x)
+        Lam = lambda_of(rule, rec, x, fresh=fresh)
         for i in range(d):
             for j in range(d):
                 W[i][j] = Lam[i][j]
+        if MUTANT == "arch-a-diagonal-weight" and rule == "A-chart" \
+                and rec.L >= CENSUS_L_MIN and x == rec.S[0]:
+            W[0][len(rec.links) - 1] = Fr(1)
         return W
-    lam = lambda_of(rule, rec, x)
+    lam = lambda_of(rule, rec, x, fresh=fresh)
     for li, lk in enumerate(rec.links):
         if lam[lk] == 0:
             continue
@@ -1032,6 +1200,10 @@ def weight_matrix(rule, rec, x):
             if lk[i]:
                 W[i][li] += lam[lk] * Fr(lk[i])
     return W
+
+
+def fresh_weight_matrix(rule, rec, x):
+    return weight_matrix(rule, rec, x, fresh=True)
 
 
 def hda_matrix(rec, x):
@@ -1045,10 +1217,104 @@ def hda_matrix(rec, x):
     return B
 
 
-def gap_matrix(rule, rec, x):
-    W, B = weight_matrix(rule, rec, x), hda_matrix(rec, x)
+def fresh_gap_matrix(rule, rec, x):
+    """The gap matrix with the weight memo BYPASSED -- the self-test's own
+    evaluation path, so it measures the quantity and not the cache."""
+    W = fresh_weight_matrix(rule, rec, x)
+    B = hda_matrix(rec, x)
     return [[W[i][k] - B[i][k] for k in range(len(rec.links))]
             for i in range(rec.d)]
+
+
+def gap_matrix(rule, rec, x):
+    W, B = weight_matrix(rule, rec, x), hda_matrix(rec, x)
+    if MUTANT == "gap-matrix-corrupt" and rule == "B-all" \
+            and rec.L >= CENSUS_L_MIN:
+        W = [row[:] for row in W]
+        for i in range(rec.d):
+            for k in range(rec.d, len(rec.links)):
+                W[i][k] = Fr(0)
+    return [[W[i][k] - B[i][k] for k in range(len(rec.links))]
+            for i in range(rec.d)]
+
+
+# ---- THE STRUCTURE THEOREM, AS AN ANALYTIC PREDICTOR -----------------------
+#
+# rho = (W - B).Omega, so METRIC MATCH  <=>  W == B pointwise, and (given the
+# spanning hypothesis (S), measured below) the extracted coefficient is the
+# axis block of W, whence the coefficient class is a PURE FUNCTION of the
+# rule's weight field and the record's readout -- no commutator, no lapse, no
+# bracket.  This predictor carries none of those, and is compared cell by cell
+# against the census's own solve: the census clauses are FORCED (#208) and the
+# gate is what establishes it.
+
+CLASS_ZERO = "ZERO"
+CLASS_MRC = "METRIC-READING-CONSTANT"
+CLASS_MRSV = "METRIC-READING-SITE-VARYING"
+CLASS_CNM = "CONSTANT-NON-METRIC"
+CLASS_SVNM = "SITE-VARYING-NON-METRIC"
+CLASS_NX = "NOT-EXTRACTABLE"
+
+
+def predict_class(rule, rec):
+    """The coefficient class predicted from (W, B) alone."""
+    d = rec.d
+    nlk = len(rec.links)
+    diagcol = False
+    zero = True
+    metric = True
+    const = True
+    first = None
+    for x in rec.S:
+        W = weight_matrix(rule, rec, x)
+        B = hda_matrix(rec, x)
+        if any(W[i][k] != 0 for i in range(d) for k in range(d, nlk)):
+            diagcol = True
+        ax = tuple(tuple(W[i][j] for j in range(d)) for i in range(d))
+        bx = tuple(tuple(B[i][j] for j in range(d)) for i in range(d))
+        if any(v != 0 for row in ax for v in row):
+            zero = False
+        if ax != bx:
+            metric = False
+        if first is None:
+            first = ax
+        elif ax != first:
+            const = False
+    if MUTANT == "class-predictor-blind":
+        diagcol = False
+    if diagcol:
+        return CLASS_NX
+    if zero:
+        return CLASS_ZERO
+    if metric:
+        return CLASS_MRSV if not const else CLASS_MRC
+    return CLASS_CNM if const else CLASS_SVNM
+
+
+def predict_metric_match(rule, rec):
+    """W == B at every site of every link column -- the metric-match
+    condition, predicted analytically."""
+    d = rec.d
+    nlk = len(rec.links)
+    for x in rec.S:
+        W, B = weight_matrix(rule, rec, x), hda_matrix(rec, x)
+        for i in range(d):
+            for k in range(nlk):
+                if W[i][k] != B[i][k]:
+                    return False
+    return True
+
+
+def weight_has_diagonal_column(rule, rec):
+    """Does the rule put weight on a DIAGONAL link at any site?  This is the
+    exact criterion for the coefficient system's inconsistency -- and the
+    measured answer is that exactly one declared rule does."""
+    d, nlk = rec.d, len(rec.links)
+    for x in rec.S:
+        W = weight_matrix(rule, rec, x)
+        if any(W[i][k] != 0 for i in range(d) for k in range(d, nlk)):
+            return True
+    return False
 
 
 # ----------------------------------------------------------------------------
@@ -1118,7 +1384,7 @@ def census_cell_sparse(rule, rec, lapses, sup):
     if MUTANT == "census-cell-drop" and rule == "A-axis" and len(sup) > 132:
         total = total - 1
     if not active:
-        return {"closes": True, "nonzero_pairs": 0, "total_pairs": total,
+        return {"metric_match": True, "nonzero_pairs": 0, "total_pairs": total,
                 "max_abs": "0", "witness": None,
                 "residual_zero_sites": len(rec.S), "sites": len(rec.S),
                 "active_sites": 0}
@@ -1150,7 +1416,7 @@ def census_cell_sparse(rule, rec, lapses, sup):
             nz += 1
             if fm > mx:
                 mx, wit = fm, [lapses[a][0], lapses[b][0]]
-    return {"closes": nz == 0, "nonzero_pairs": nz, "total_pairs": total,
+    return {"metric_match": nz == 0, "nonzero_pairs": nz, "total_pairs": total,
             "max_abs": str(mx), "witness": wit,
             "residual_zero_sites": len(zero_sites), "sites": len(rec.S),
             "active_sites": len(active)}
@@ -1191,9 +1457,42 @@ def census_cell_dense(rule, rec, lapses, neighbour=None):
                 nz += 1
                 if fm > mx:
                     mx, wit = fm, [lapses[a][0], lapses[b][0]]
-    return {"closes": nz == 0, "nonzero_pairs": nz, "total_pairs": total,
+    return {"metric_match": nz == 0, "nonzero_pairs": nz, "total_pairs": total,
             "max_abs": str(mx), "witness": wit,
             "residual_zero_sites": len(zero_sites), "sites": len(rec.S)}
+
+
+def census_cell_literal(rule, rec, lapses, cfg, probe):
+    """ROUTE 3 -- the residual assembled with NO reference to gap_matrix at
+    all: the register displacement is read off the LITERAL four-map
+    composition and the HDA generator is subtracted from it.  The two other
+    routes share the gap matrix; this one shares nothing with them but the
+    declared field formulae, so a corruption of the shared component is
+    visible here (RUNBOOK section 14 addendum, v13 #219)."""
+    d = rec.d
+    nz, mx = 0, Fr(0)
+    tot = 0
+    for a in range(len(probe)):
+        for b in range(len(probe)):
+            if a == b:
+                continue
+            tot += 1
+            _df, dr = commutator_literal(rule, rec, lapses[probe[a]][1],
+                                         lapses[probe[b]][1], cfg)
+            beta = hda_generator(rec, lapses[probe[a]][1],
+                                 lapses[probe[b]][1])
+            bad = False
+            for x in rec.S:
+                rho = tuple(dr[x][i] - beta[x][i] for i in range(d))
+                if any(t != 0 for t in rho):
+                    bad = True
+                    m = max(abs(t) for t in rho)
+                    if m > mx:
+                        mx = m
+            if bad:
+                nz += 1
+    return {"metric_match": nz == 0, "nonzero_pairs": nz, "pairs": tot,
+            "max_abs": str(mx)}
 
 
 def commutator_literal(rule, rec, N, M, n0):
@@ -1318,14 +1617,19 @@ def extract_coefficient(rule, rec, lapses, sup):
     return out
 
 
+_FLIP_COUNT = [0]
+
+
 def type_coefficient(rec, ext, metric_route=None):
     """TYPE THE EXTRACTED COEFFICIENT BY MEASUREMENT.  The metric it is
     compared against is re-encoded by the INDEPENDENT closed-form route, not
     by the same solve that built the record."""
     st = sorted(set(v[0] for v in ext.values()))
     if st != ["UNIQUE"]:
-        return {"class": "NOT-EXTRACTABLE", "statuses": st,
+        return {"class": CLASS_NX, "statuses": st,
                 "constant": False, "metric_reading": False,
+                "basis_closes": False,
+                "closure_form": "NOT-IN-THE-DECLARED-BASIS",
                 "value_at_first_site": None, "distinct_values": 0,
                 "ranks": sorted(set(v[2] for v in ext.values()))}
     S = rec.S
@@ -1336,24 +1640,44 @@ def type_coefficient(rec, ext, metric_route=None):
             rec.d, rec.counts[x])) for x in S}
     if MUTANT == "coefficient-typing-conflation":
         const = True
+    if MUTANT == "coefficient-class-flip":
+        _FLIP_COUNT[0] += 1
+        if _FLIP_COUNT[0] > 1:
+            const = True
     metric = all(ext[x][1] == metric_route[x] for x in S)
     zero = all(all(v == 0 for row in ext[x][1] for v in row) for x in S)
     if zero:
-        cl = "ZERO"
+        cl = CLASS_ZERO
     elif metric and not const:
-        cl = "METRIC-READING-SITE-VARYING"
+        cl = CLASS_MRSV
     elif metric and const:
-        cl = "METRIC-READING-CONSTANT"
+        cl = CLASS_MRC
     elif const:
-        cl = "CONSTANT-NON-METRIC"
+        cl = CLASS_CNM
     else:
-        cl = "SITE-VARYING-NON-METRIC"
+        cl = CLASS_SVNM
     return {"class": cl, "constant": const, "metric_reading": metric,
+            "basis_closes": True, "closure_form": CLOSURE_FORM[cl],
             "statuses": st, "ranks": sorted(set(v[2] for v in ext.values())),
             "value_at_first_site": [[str(v) for v in row] for row in c0],
             "distinct_values": len(set(
                 tuple(tuple(str(v) for v in row) for row in ext[x][1])
                 for x in S))}
+
+
+# THE THREE-SIDED CLOSURE VOCABULARY (pin section 2).  "Closes" now means one
+# thing only: the commutator lies in the DECLARED GENERATOR BASIS.  Which form
+# it closes with is a second, independent question -- and the pin's RIGID
+# outcome (a constant coefficient that is demonstrably NOT a metric) is one of
+# its answers, reachable and reached.
+CLOSURE_FORM = {
+    CLASS_MRSV: "METRIC-READING-SITE-VARYING(THE-GR-BRACKET-FORM)",
+    CLASS_MRC: "METRIC-READING-CONSTANT(INDISTINGUISHABLE-FROM-RIGID-HERE)",
+    CLASS_CNM: "RIGID-CONSTANT-NON-METRIC",
+    CLASS_SVNM: "SITE-VARYING-NON-METRIC",
+    CLASS_ZERO: "TRIVIAL-ZERO-COEFFICIENT",
+    CLASS_NX: "NOT-IN-THE-DECLARED-BASIS",
+}
 
 
 # ----------------------------------------------------------------------------
@@ -1555,6 +1879,8 @@ def translation_covariance_of_the_residual(rule, rec_builder, d, L, lapses,
     S = sites(d, L)
     probes = [(a, b) for a in range(min(4, len(lapses)))
               for b in range(min(4, len(lapses))) if a != b]
+    distinct_nonzero = set()
+    bypass0 = CACHE_STATS["bypass"]
     for u in S:
         recu = rec_builder()
         recu.counts = {x: dict(rec.counts[add(x, tuple(-t for t in u), L)])
@@ -1567,15 +1893,26 @@ def translation_covariance_of_the_residual(rule, rec_builder, d, L, lapses,
             M = {x: lapses[b][1][add(x, tuple(-t for t in u), L)] for x in S}
             om0 = bracket_covector(lapses[a][1], lapses[b][1], rec, nb)
             omu = bracket_covector(N, M, recu, nb)
-            r0 = {x: tuple(sum((Fr(gap_matrix(rule, rec, x)[i][k]) * Fr(om0[x][k])
+            # FRESH ON BOTH SIDES (RUNBOOK section 14 addendum, v13 #185):
+            # a self-test that reaches its quantity through the instrument's
+            # own memo tests the cache, not the quantity.  The base side's
+            # weights are recomputed with the memo bypassed, and the miss
+            # count the bypass produces is itself gated below.
+            r0 = {x: tuple(sum((Fr(fresh_gap_matrix(rule, rec, x)[i][k])
+                                * Fr(om0[x][k])
                                 for k in range(len(rec.links))), Fr(0))
                            for i in range(d)) for x in S}
-            ru = {x: tuple(sum((Fr(gap_matrix(rule, recu, x)[i][k]) * Fr(omu[x][k])
+            ru = {x: tuple(sum((Fr(fresh_gap_matrix(rule, recu, x)[i][k])
+                                * Fr(omu[x][k])
                                 for k in range(len(rec.links))), Fr(0))
                            for i in range(d)) for x in S}
             for x in S:
                 if any(t != 0 for t in r0[x]):
                     nonzero += 1
+                    # the base residual does NOT depend on the translation u,
+                    # so the honest non-vacuity count is the number of
+                    # DISTINCT nonzero base cells, not that number times |X|
+                    distinct_nonzero.add((a, b, x))
                 if ru[x] == r0[add(x, tuple(-t for t in u), L)]:
                     good += 1
                 else:
@@ -1583,7 +1920,11 @@ def translation_covariance_of_the_residual(rule, rec_builder, d, L, lapses,
     if MUTANT == "covariance-break" and neighbour is None:
         good, bad = good - 1, bad + 1
     return {"covariant_cells": good, "violating_cells": bad,
-            "total_cells": good + bad, "nonzero_base_cells": nonzero}
+            "total_cells": good + bad,
+            "nonzero_base_cells_counted_once_per_translation": nonzero,
+            "distinct_nonzero_base_cells": len(distinct_nonzero),
+            "fresh_bypasses_used": CACHE_STATS["bypass"] - bypass0,
+            "translations": len(S)}
 
 
 # ----------------------------------------------------------------------------
@@ -1622,7 +1963,14 @@ def recover_i7(decl, rec7):
             exp = rec7["tables"]["closure"].get(key)
             if exp is not None:
                 closure_cmp += 1
-                for f in ("closes", "nonzero_pairs", "total_pairs", "max_abs",
+                # I7's pinned table records the METRIC-MATCH condition under
+                # its own field name "closes"; this unit reads that field and
+                # compares it against its own metric_match, and compares every
+                # other field by name.
+                if cell["metric_match"] != exp["closes"]:
+                    closure_bad.append([key, "metric_match",
+                                        cell["metric_match"], exp["closes"]])
+                for f in ("nonzero_pairs", "total_pairs", "max_abs",
                           "witness"):
                     if cell[f] != exp[f]:
                         closure_bad.append([key, f, cell[f], exp[f]])
@@ -1643,6 +1991,11 @@ def recover_i7(decl, rec7):
     out["sector_cells_compared"] = sector_cmp
     out["sector_mismatches"] = sector_bad
     out["closure_rows"] = rows
+    # the RAW keys, so the verdict comparator can re-derive the recovery
+    # denominators from the pinned tables themselves rather than from a
+    # counter the builder also read (#219)
+    out["pinned_closure_keys"] = sorted(rec7["tables"]["closure"])
+    out["pinned_sector_keys"] = sorted(rec7["tables"]["sector_law"])
 
     # -- the identifiability rank ------------------------------------------
     ext = extract_coefficient("A-insert", recs["G-FLAT"], lapses,
@@ -1723,7 +2076,7 @@ def recover_i7(decl, rec7):
         diag = sorted(set(diag) | {"G-OFFDIAG"})
     out["diagonal_sector"] = diag
     out["diagonal_sector_closes_at_the_link_local_rule"] = sorted(
-        [nm for nm in diag if rows["A-axis|%s" % nm]["closes"]])
+        [nm for nm in diag if rows["A-axis|%s" % nm]["metric_match"]])
     return out
 
 
@@ -1734,11 +2087,26 @@ def recover_i7(decl, rec7):
 CENSUS_ARENAS = ((2, 4), (2, 5), (3, 4), (3, 5))
 LAPSE_SCOPES = ("BASE", "TRANSLATES")
 DENSE_ARENAS = ((2, 4), (2, 5))    # the dense cross-route coverage, DERIVED AND PRINTED
+LITERAL_ROUTE_ARENAS = ((2, 4), (2, 5), (3, 4), (3, 5))  # derived and printed
 LITERAL_PROBE_LAPSES = 6      # declared, printed, gated -- never a silent cap
 DH_LITERAL_PROBE = 4
 DEFECT_PROBE_LAPSES = 6
 DH_PROBE_DELTAS = 6           # I7's own d=3 probe convention, reused here
 REALISATIONS = ("D-REG", "D-TOT")
+# The realisation census's declared scope: all 27 (a, b, c) triples, at the
+# defect probe's lapse scope, over these arenas.  Derived and printed.
+REALISATION_ARENAS = ((2, 4), (2, 5), (3, 4))
+# The covariance theorem's declared scope.
+COVARIANCE_ARENAS = ((2, 4), (3, 4))
+COVARIANCE_PROBE_LAPSES = 8
+CENTRAL_EXTENSION_LAPSES = 6
+# the structure probes' declared arenas (derived and printed, never a silent
+# cap): the central-extension identity and the commutator's
+# configuration-independence are per-site facts, so one extent per dimension
+# exhausts them
+STRUCTURE_ARENAS = ((2, 4), (3, 4))
+NONCONSTANT_ARENA = (2, 4)
+NONCONSTANT_PROBE_LAPSES = 6
 
 
 def declared_configurations(d, L):
@@ -1765,16 +2133,99 @@ def dh_probe_family(d, L, base):
     return deltas + rest
 
 
+def route3_probe(rec, lapses):
+    """ROUTE 3'S OWN PROBE, DERIVED so that EVERY declared link direction is
+    realised by some ordered pair.  A residual route whose probe never
+    realises a link cannot see a corruption living on that link's column --
+    the silent-cap failure in miniature -- so the probe is built as the site
+    delta at the origin together with the site delta at the origin plus each
+    declared link, and the coverage it achieves is MEASURED and gated."""
+    S = rec.S
+    want = [S[0]] + [add(S[0], lk, rec.L) for lk in rec.links]
+    idx = {}
+    for k, (nm, N) in enumerate(lapses):
+        for y in want:
+            if nm == "delta%s" % (y,):
+                idx[y] = k
+    return [idx[y] for y in want if y in idx]
+
+
+def route3_links_realised(rec, lapses, probe):
+    """Which declared link directions the probe actually realises."""
+    seen = set()
+    NB = neighbours(rec.d, rec.L)
+    for a in probe:
+        for b in probe:
+            if a == b:
+                continue
+            N, M = lapses[a][1], lapses[b][1]
+            for x in rec.S:
+                for li, y in enumerate(NB[x]):
+                    if N[x] * M[y] - M[x] * N[y] != 0:
+                        seen.add(li)
+    if MUTANT == "route3-probe-blind":
+        seen.discard(len(rec.links) - 1)
+    return sorted(seen)
+
+
+def degenerate_lapses(rec):
+    """THE DEGENERATE PROBES, built and MEASURED (never typed).  The boundary
+    test asks whether the defect's lattice sum can be nonzero; a test that
+    could not also produce a ZERO sum would be vacuous, so the constant lapse
+    profiles are carried as their own labelled rows:
+
+      N == 0   the ZERO field.  Both terms of the defect carry an explicit
+               factor N, so the defect field is identically zero and its
+               lattice sum is zero -- the test's own death certificate.
+      N == 1   the unit constant profile.  S_v N - N == 0, so the second term
+               vanishes; whether the first does is a MEASUREMENT, and it is
+               reported next to the zero row.
+
+    Neither profile is in the defect probe set (which is the first six site
+    deltas), so both are genuine additions."""
+    return [("zero", {x: 0 for x in rec.S}, True),
+            ("one", {x: 1 for x in rec.S}, False)]
+
+
+def nonconstant_tangential_fields(d, L):
+    """DECLARED non-constant tangential fields whose site maps are bijections
+    of the site set and whose negatives invert them -- both properties
+    MEASURED, not assumed.  They test whether the defect is an artefact of
+    restricting v to the lattice's own translations."""
+    def shear(x):
+        return tuple(x[1] if i == 0 else 0 for i in range(d))
+
+    def parity(x):
+        return tuple((x[1] % 2) if i == 0 else 0 for i in range(d))
+
+    def constant(x):
+        return tuple(1 if i == 0 else 0 for i in range(d))
+    if MUTANT == "nonconstant-field-degenerate":
+        return [("shear", constant), ("parity-kick", constant)]
+    return [("shear", shear), ("parity-kick", parity)]
+
+
 def run_census(decl, rec7):
     """The closure census, the coefficient extraction and the bracket census
     over every declared arena.  Cell-complete; every count derived."""
     census, coeffs, dh_rows, dd_rows, conv_rows = [], [], [], [], []
     decomp_rows, defect_rows = [], []
+    spanning_rows, realisation_rows, covariance_rows = [], [], []
+    degenerate_rows, order_rows, nonconstant_rows = [], [], []
+    duplicate_rows, central_rows = [], []
     two_route = {"dense_cells": 0, "dense_disagreements": [],
                  "literal_cells": 0, "literal_disagreements": [],
                  "dh_literal_cells": 0, "dh_literal_disagreements": [],
                  "conv_literal_cells": 0, "conv_literal_disagreements": [],
+                 "route3_cells": 0, "route3_disagreements": [],
+                 "realisation_literal_cells": 0,
+                 "realisation_literal_disagreements": [],
+                 "class_prediction_cells": 0, "class_mispredictions": [],
+                 "metric_identity_sites": 0, "metric_identity_failures": 0,
+                 "metric_match_prediction_mismatches": [],
                  "dense_arenas": [list(a) for a in DENSE_ARENAS],
+                 "route3_arenas": [list(a) for a in LITERAL_ROUTE_ARENAS],
+                 "route3_links_realised": {},
                  "literal_pair_probe": LITERAL_PROBE_LAPSES,
                  "dh_literal_probe": DH_LITERAL_PROBE}
     arenas = list(CENSUS_ARENAS)
@@ -1793,6 +2244,20 @@ def run_census(decl, rec7):
             fams["BASE"] = fams["BASE"][:-1]
         base = fams["BASE"]
 
+        # ---- 0. HYPOTHESIS (S): THE SPANNING CENSUS ----------------------
+        # Omega depends only on the lapse pair and the lattice, so the rank is
+        # measured once per (arena, scope) -- and the record-independence is
+        # itself measured, at two records, rather than assumed.
+        for scope in LAPSE_SCOPES:
+            sr = spanning_rank_census(recs[adm[0]], fams[scope])
+            check = spanning_rank_census(recs[adm[-1]], fams[scope])
+            sr.update({"d": d, "L": L, "scope": scope,
+                       "record_probe": [adm[0], adm[-1]],
+                       "record_independent": (
+                           sr["sites_at_full_rank"] == check["sites_at_full_rank"]
+                           and sr["ranks"] == check["ranks"])})
+            spanning_rows.append(sr)
+
         # ---- 1. THE CLOSURE CENSUS + COEFFICIENT EXTRACTION --------------
         for scope in LAPSE_SCOPES:
             lapses = fams[scope]
@@ -1804,23 +2269,62 @@ def run_census(decl, rec7):
                             and nm == "G-FLAT" and scope == "TRANSLATES":
                         continue
                     cell = census_cell_sparse(rule, rec, lapses, sup)
+                    ext = extract_coefficient(rule, rec, lapses, sup)
+                    typ = type_coefficient(rec, ext)
                     row = {"d": d, "L": L, "scope": scope, "rule": rule,
                            "record": nm, "homogeneous": rec.homogeneous}
                     row.update(cell)
+                    row["basis_closes"] = typ["basis_closes"]
+                    row["closure_form"] = typ["closure_form"]
+                    row["rigid"] = (typ["class"] == CLASS_CNM)
                     census.append(row)
-                    ext = extract_coefficient(rule, rec, lapses, sup)
                     coeffs.append({"d": d, "L": L, "scope": scope,
                                    "rule": rule, "record": nm,
                                    "homogeneous": rec.homogeneous,
-                                   "coefficient": type_coefficient(rec, ext)})
+                                   "coefficient": typ})
+                    # THE ANALYTIC PREDICTOR (the structure theorem), compared
+                    # cell by cell against the solve -- an INDEPENDENT
+                    # comparator carrying no commutator (#219).
+                    if typ["metric_reading"]:
+                        mo, mb = metric_comparator_without_inversion(rec, ext)
+                        two_route["metric_identity_sites"] += mo
+                        two_route["metric_identity_failures"] += mb
+                    pc = predict_class(rule, rec)
+                    pm = predict_metric_match(rule, rec)
+                    two_route["class_prediction_cells"] += 1
+                    if pc != typ["class"]:
+                        two_route["class_mispredictions"].append(
+                            [d, L, scope, rule, nm, typ["class"], pc])
+                    if pm != cell["metric_match"]:
+                        two_route["metric_match_prediction_mismatches"].append(
+                            [d, L, scope, rule, nm, cell["metric_match"], pm])
                     if (d, L) in DENSE_ARENAS and scope == "BASE":
                         dn = census_cell_dense(rule, rec, lapses)
                         two_route["dense_cells"] += 1
-                        for f in ("closes", "nonzero_pairs", "total_pairs",
-                                  "max_abs", "witness", "residual_zero_sites"):
+                        for f in ("metric_match", "nonzero_pairs",
+                                  "total_pairs", "max_abs", "witness",
+                                  "residual_zero_sites"):
                             if cell[f] != dn[f]:
                                 two_route["dense_disagreements"].append(
                                     [d, L, rule, nm, f, cell[f], dn[f]])
+                    # ROUTE 3: the residual assembled from the LITERAL
+                    # composition, sharing no component with the other two.
+                    if (d, L) in LITERAL_ROUTE_ARENAS and scope == "BASE":
+                        pr = route3_probe(rec, lapses)
+                        lk = route3_links_realised(rec, lapses, pr)
+                        two_route["route3_links_realised"][
+                            "d%dL%d" % (d, L)] = [len(lk), len(rec.links)]
+                        lit = census_cell_literal(
+                            rule, rec, lapses, cfgs[0], pr)
+                        two_route["route3_cells"] += 1
+                        if lit["nonzero_pairs"] > 0 and cell["metric_match"]:
+                            two_route["route3_disagreements"].append(
+                                [d, L, rule, nm, "metric_match", True,
+                                 lit["nonzero_pairs"]])
+                        if Fr(lit["max_abs"]) > Fr(cell["max_abs"]):
+                            two_route["route3_disagreements"].append(
+                                [d, L, rule, nm, "max_abs", cell["max_abs"],
+                                 lit["max_abs"]])
 
         # ---- 2. THE LITERAL COMPOSITION ROUTE (declared probe) -----------
         probe = base[:LITERAL_PROBE_LAPSES]
@@ -1883,10 +2387,13 @@ def run_census(decl, rec7):
                             tally[st] = tally.get(st, 0) + 1
                     if MUTANT == "decomposition-basis-drop" and real == "D-TOT":
                         tally = {"IN-CONSTRAINT": sum(tally.values())}
-                    dh_rows.append({"d": d, "L": L, "rule": rule, "record": nm,
-                                    "realisation": real,
-                                    "tally": dict(sorted(tally.items())),
-                                    "brackets": sum(tally.values())})
+                    if not (MUTANT == "dh-row-drop" and rule == rules[-1]
+                            and nm == adm[-1] and real == REALISATIONS[-1]
+                            and (d, L) == arenas[-1]):
+                        dh_rows.append({"d": d, "L": L, "rule": rule,
+                                        "record": nm, "realisation": real,
+                                        "tally": dict(sorted(tally.items())),
+                                        "brackets": sum(tally.values())})
                     for (lname, N) in dh_lapses[:DH_LITERAL_PROBE]:
                         for tv in tgens:
                             v = const_field(rec, tv)
@@ -1903,7 +2410,7 @@ def run_census(decl, rec7):
         for nm in adm:
             rec = recs[nm]
             for real in REALISATIONS:
-                ok = bad = 0
+                ok = bad = info = 0
                 for a in tgens + [tuple([0] * d)]:
                     for b in tgens + [tuple([0] * d)]:
                         r = dd_bracket(rec, const_field(rec, a),
@@ -1912,14 +2419,32 @@ def run_census(decl, rec7):
                             ok += 1
                         else:
                             bad += 1
+                        # INFORMATIVE = two DISTINCT NONZERO generators.  The
+                        # rest pair a generator with itself or with zero and
+                        # cannot discriminate anything.
+                        if a != b and any(a) and any(b):
+                            info += 1
+                if MUTANT == "dd-content-inflate":
+                    info = ok + bad
+                if MUTANT == "dd-row-drop" and nm == adm[-1] \
+                        and real == REALISATIONS[-1] and (d, L) == arenas[-1]:
+                    continue
                 dd_rows.append({"d": d, "L": L, "record": nm,
                                 "realisation": real, "closing": ok,
-                                "non_closing": bad, "total": ok + bad})
+                                "non_closing": bad, "total": ok + bad,
+                                "informative": info,
+                                "lie_bracket_nonzero": 0})
 
         # ---- 6. THE CONVENTION SWEEP -------------------------------------
-        # The bracket's FRONT sector does not involve the drag rule -- measured
-        # below by G-CONVENTION-RULE-INDEPENDENT -- so the sweep is computed
-        # once per (record, lapse, translation) and counted over the rules.
+        # HONEST DENOMINATOR.  The front sector's independence of the record
+        # and of the drag rule is MEASURED here (not asserted, and not left to
+        # a divisibility identity): the front closed form is evaluated at
+        # every declared record and every declared rule on a probe, and the
+        # rows are compared for equality.  The sweep's own denominator is then
+        # the number of DISTINCT front-sector probes actually evaluated --
+        # (lapse x translation) -- and the record x rule multiplicity is
+        # reported separately as a derived multiplier, never folded in
+        # silently.
         conv_hits = {}
         rec0 = recs[adm[0]]
         for (lname, N) in base:
@@ -1932,16 +2457,20 @@ def run_census(decl, rec7):
                         if all(fr[x] == lv[x] for x in rec0.S):
                             conv_hits[(order, cname)] = \
                                 conv_hits.get((order, cname), 0) + 1
+        n_probe = len(base) * len(tgens)
+        mult = len(adm) * len(rules)
         for order in BRACKET_ORDERS:
             for (cname, cfn) in LIE_CONVENTIONS:
-                ok = conv_hits.get((order, cname), 0) * len(adm) * len(rules)
-                tot = len(base) * len(tgens) * len(adm) * len(rules)
+                ok = conv_hits.get((order, cname), 0)
                 if MUTANT == "convention-sweep-truncate" and \
                         order == "H-D-Hinv-Dinv" and cname == "BACKWARD":
                     ok = 0
                 conv_rows.append({"d": d, "L": L, "order": order,
                                   "difference": cname, "front_matches": ok,
-                                  "brackets": tot})
+                                  "front_probes": n_probe,
+                                  "record_rule_multiplicity": mult,
+                                  "brackets_derived_by_multiplication":
+                                      n_probe * mult})
         # the convention sweep's own front closed form, against the literal
         for nm in adm[:2]:
             rec = recs[nm]
@@ -1957,6 +2486,32 @@ def run_census(decl, rec7):
                             if r is None or any(r[0][x] != fr[x] for x in rec.S):
                                 two_route["conv_literal_disagreements"].append(
                                     [d, L, rule, nm, order, lname])
+
+        # ---- 6b. THE DECLARED FRONT-SECTOR INDEPENDENCE, MEASURED ---------
+        # (this replaces a divisibility identity with the measurement whose
+        #  truth licenses the multiplication above)
+        indep_bad = []
+        ref = None
+        for nm in adm:
+            for rule in rules[:2]:
+                sig = []
+                for (lname, N) in base[:DH_LITERAL_PROBE]:
+                    for tv in tgens:
+                        v = const_field(recs[nm], tv)
+                        for order in BRACKET_ORDERS:
+                            fr = dh_front_closed(recs[nm], N, v, order)
+                            sig.append(tuple(fr[x] for x in recs[nm].S))
+                sig = tuple(sig)
+                if MUTANT == "front-independence-break" and nm == adm[-1]:
+                    sig = sig + (1,)
+                if ref is None:
+                    ref = sig
+                elif sig != ref:
+                    indep_bad.append([d, L, rule, nm])
+        two_route.setdefault("front_independence_rows", 0)
+        two_route["front_independence_rows"] += len(adm) * 2
+        two_route.setdefault("front_independence_disagreements", [])
+        two_route["front_independence_disagreements"].extend(indep_bad)
 
         # ---- 7. THE DEFECT, CHARACTERISED --------------------------------
         for nm in adm:
@@ -1978,14 +2533,243 @@ def run_census(decl, rec7):
                             for t in fld[x]:
                                 if abs(t) > mx:
                                     mx = abs(t)
+                if MUTANT == "defect-row-drop" and rule == rules[-1] \
+                        and nm == adm[-1] and (d, L) == arenas[-1]:
+                    continue
                 defect_rows.append(
                     {"d": d, "L": L, "rule": rule, "record": nm,
                      "homogeneous": rec.homogeneous, "probes": ntot,
                      "vanishing_probes": nzero, "lattice_sum_zero": bsum,
                      "max_abs": str(mx)})
+
+        # ---- 7b. THE DEGENERATE PROBES (the boundary test's own control) --
+        for nm in adm[:2]:
+            rec = recs[nm]
+            for rule in rules[:3]:
+                for (lname, N, expect_zero) in degenerate_lapses(rec):
+                    nzero = ntot = bsum = 0
+                    for tv in tgens:
+                        v = const_field(rec, tv)
+                        fld = dh_defect_field(rule, rec, N, v, cfgs[0])
+                        ntot += 1
+                        if all(all(t == 0 for t in fld[x]) for x in rec.S):
+                            nzero += 1
+                        if all(sum((fld[x][i] for x in rec.S), Fr(0)) == 0
+                               for i in range(d)):
+                            bsum += 1
+                    if MUTANT == "degenerate-probe-typed" and lname == "zero":
+                        nzero, bsum = 0, 0
+                    degenerate_rows.append(
+                        {"d": d, "L": L, "rule": rule, "record": nm,
+                         "lapse": lname, "declared_degenerate": expect_zero,
+                         "probes": ntot, "vanishing_probes": nzero,
+                         "lattice_sum_zero": bsum})
+
+        # ---- 7c. THE OTHER BRACKET ORDER ----------------------------------
+        for order in BRACKET_ORDERS:
+            nz = tot = 0
+            for nm in adm:
+                rec = recs[nm]
+                for rule in rules:
+                    for (lname, N) in dh_lapses[:DEFECT_PROBE_LAPSES]:
+                        for tv in tgens:
+                            sgn = tv if order == BRACKET_ORDERS[0] \
+                                else tuple(-t for t in tv)
+                            v = const_field(rec, sgn)
+                            fld = dh_defect_field(rule, rec, N, v, cfgs[0])
+                            tot += 1
+                            if any(any(t != 0 for t in fld[x])
+                                   for x in rec.S):
+                                nz += 1
+            order_rows.append({"d": d, "L": L, "order": order,
+                               "probes": tot, "nonzero": nz})
     return {"census": census, "coefficients": coeffs, "dh": dh_rows,
             "dd": dd_rows, "conventions": conv_rows, "two_route": two_route,
-            "decomposition": decomp_rows, "defect": defect_rows}
+            "decomposition": decomp_rows, "defect": defect_rows,
+            "spanning": spanning_rows, "realisation": realisation_rows,
+            "covariance": covariance_rows, "degenerate": degenerate_rows,
+            "orders": order_rows, "nonconstant": nonconstant_rows,
+            "duplicates": duplicate_rows, "central_extension": central_rows}
+
+
+def run_realisation_census(decl, res):
+    """THE REALISATION CENSUS -- all 27 (a, b, c) triples built from the
+    tangential family's two declared atoms, at the defect probe's declared
+    lapse scope, over the declared realisation arenas.  Every count derived
+    and printed; no silent cap."""
+    rows = []
+    literal_cells = 0
+    literal_bad = []
+    abcs = [(a, b, c) for a in REALISATION_ATOM_VALUES
+            for b in REALISATION_ATOM_VALUES for c in REALISATION_ATOM_VALUES]
+    for (d, L) in REALISATION_ARENAS:
+        recs = build_records(d, L, decl)
+        adm = sorted([n for n in recs if recs[n].admissible])
+        rules = rules_at(d, decl)
+        cfgs = declared_configurations(d, L)
+        tgens = lattice_translation_generators(d)
+        base = build_lapse_family(d, L)
+        lap = dh_probe_family(d, L, base)[:DEFECT_PROBE_LAPSES]
+        tal = dict((abc, {}) for abc in abcs)
+        hom = dict((abc, {}) for abc in abcs)
+        resist = dict((abc, set()) for abc in abcs)
+        for nm in adm:
+            rec = recs[nm]
+            for rule in rules:
+                for (lname, N) in lap:
+                    for tv in tgens:
+                        pieces = realisation_pieces(rule, rec, N, tv, cfgs)
+                        for abc in abcs:
+                            st = classify_realisation(rec, tv, abc, pieces,
+                                                      len(cfgs))
+                            tal[abc][st] = tal[abc].get(st, 0) + 1
+                            if rec.homogeneous:
+                                hom[abc][st] = hom[abc].get(st, 0) + 1
+                            if st == "OUTSIDE":
+                                resist[abc].add("%s|%s" % (rule, nm))
+        for abc in abcs:
+            rows.append({"d": d, "L": L, "realisation": list(abc),
+                         "name": realisation_name(abc),
+                         "tally": dict(sorted(tal[abc].items())),
+                         "homogeneous_tally": dict(sorted(hom[abc].items())),
+                         "resisting_cells": sorted(resist[abc]),
+                         "classifications": sum(tal[abc].values())})
+        # TWO ROUTES: the closed form against the LITERAL four-map composition
+        for nm in adm[:2]:
+            rec = recs[nm]
+            for rule in rules[:2]:
+                for (lname, N) in lap[:2]:
+                    for tv in tgens[:1]:
+                        pieces = realisation_pieces(rule, rec, N, tv, cfgs)
+                        for abc in ((0, 1, 0), (1, 1, 0), (1, 1, 1),
+                                    (-1, 1, -1), (1, 0, 1)):
+                            a1 = classify_realisation(rec, tv, abc, pieces,
+                                                      len(cfgs))
+                            a2 = dh_membership(rule, rec, N,
+                                               const_field(rec, tv), cfgs,
+                                               abc, "D-H-Dinv-Hinv")[0]
+                            literal_cells += 1
+                            if a1 != a2:
+                                literal_bad.append([d, L, rule, nm,
+                                                    list(abc), a1, a2])
+    return {"rows": rows, "literal_cells": literal_cells,
+            "literal_disagreements": literal_bad,
+            "arenas": [list(a) for a in REALISATION_ARENAS],
+            "atoms": list(REALISATION_ATOM_VALUES),
+            "lapse_probe": DEFECT_PROBE_LAPSES}
+
+
+def run_covariance_theorem(decl):
+    """THE COVARIANCE THEOREM, measured at every cell of a derived probe."""
+    rows = []
+    cells = full_ok = tot_ok = 0
+    for (d, L) in COVARIANCE_ARENAS:
+        recs = build_records(d, L, decl)
+        adm = sorted([n for n in recs if recs[n].admissible])
+        rules = rules_at(d, decl)
+        cfgs = declared_configurations(d, L)
+        tgens = lattice_translation_generators(d)
+        base = build_lapse_family(d, L)
+        lap = dh_probe_family(d, L, base)[:COVARIANCE_PROBE_LAPSES]
+        a_ok = a_tot = a_cells = 0
+        for nm in adm:
+            rec = recs[nm]
+            for rule in rules:
+                for (lname, N) in lap:
+                    for tv in tgens:
+                        f, t = covariance_cell(rule, rec, N, tv, cfgs)
+                        a_cells += 1
+                        a_ok += 1 if f else 0
+                        a_tot += 1 if t else 0
+        rows.append({"d": d, "L": L, "cells": a_cells,
+                     "d_full_covariant": a_ok, "d_tot_covariant": a_tot,
+                     "lapse_probe": len(lap), "configurations": len(cfgs)})
+        cells += a_cells
+        full_ok += a_ok
+        tot_ok += a_tot
+    return {"rows": rows, "cells": cells, "d_full_covariant": full_ok,
+            "d_tot_covariant": tot_ok,
+            "arenas": [list(a) for a in COVARIANCE_ARENAS],
+            "lapse_probe": COVARIANCE_PROBE_LAPSES,
+            "statement": "D_full[v] . H_g[N] . D_full[v]^-1 = H_{S_v g}[S_v N]"}
+
+
+def run_structure_probes(decl):
+    """The central extension, the commutator's configuration-independence,
+    the duplicate-rule census, and the non-constant tangential fields."""
+    out = {"central_extension": [], "config_independence": [],
+           "duplicates": [], "nonconstant": [],
+           "arenas": [list(a) for a in STRUCTURE_ARENAS],
+           "lapse_probe": CENTRAL_EXTENSION_LAPSES}
+    for (d, L) in STRUCTURE_ARENAS:
+        recs = build_records(d, L, decl)
+        adm = sorted([n for n in recs if recs[n].admissible])
+        rules = rules_at(d, decl)
+        cfgs = declared_configurations(d, L)
+        base = build_lapse_family(d, L)
+        lap = base[:CENTRAL_EXTENSION_LAPSES]
+        ok = tot = 0
+        same = diff = 0
+        for nm in adm:
+            rec = recs[nm]
+            for rule in rules:
+                for (an, N) in lap:
+                    for (bn, M) in lap:
+                        tot += 1
+                        ok += 1 if central_extension_cell(rule, rec, N, M,
+                                                          cfgs[0]) else 0
+                        if an == bn:
+                            continue
+                        vals = [commutator_literal(rule, rec, N, M, n0)[1]
+                                for n0 in cfgs]
+                        if all(v == vals[0] for v in vals):
+                            same += 1
+                        else:
+                            diff += 1
+        out["central_extension"].append(
+            {"d": d, "L": L, "cells": tot, "cocycle_identity_holds": ok})
+        out["config_independence"].append(
+            {"d": d, "L": L, "pairs": same + diff,
+             "configuration_independent": same})
+        # duplicate rules, by sector
+        rl = [recs[nm] for nm in adm]
+        out["duplicates"].append(
+            {"d": d, "L": L, "declared_rules": len(rules),
+             "distinct_in_the_HH_weight":
+                 rule_equivalence_classes(rl, rules, weight_matrix),
+             "distinct_in_the_register_drag":
+                 rule_equivalence_classes(rl, rules, drag_matrix)})
+    # non-constant bijective tangential fields
+    d, L = NONCONSTANT_ARENA
+    recs = build_records(d, L, decl)
+    adm = sorted([n for n in recs if recs[n].admissible])
+    rules = rules_at(d, decl)
+    cfgs = declared_configurations(d, L)
+    lap = build_lapse_family(d, L)[:NONCONSTANT_PROBE_LAPSES]
+    for (fname, ff) in nonconstant_tangential_fields(d, L):
+        tal = {}
+        rec0 = recs[adm[0]]
+        v0 = {x: tuple(Fr(t) for t in ff(x)) for x in rec0.S}
+        dm = Dmap(rec0, v0, "D-TOT")
+        dmi = Dmap(rec0, neg_field(v0), "D-TOT")
+        sm, smi = dm.site_map(1), dmi.site_map(1)
+        bij = sm is not None and smi is not None
+        inv = bij and all(smi[sm[x]] == x for x in rec0.S)
+        const = all(v0[x] == v0[rec0.S[0]] for x in rec0.S)
+        for nm in adm:
+            rec = recs[nm]
+            v = {x: tuple(Fr(t) for t in ff(x)) for x in rec.S}
+            for rule in rules:
+                for (lname, N) in lap:
+                    st, _u = dh_membership(rule, rec, N, v, cfgs, "D-TOT",
+                                           "D-H-Dinv-Hinv")
+                    tal[st] = tal.get(st, 0) + 1
+        out["nonconstant"].append(
+            {"d": d, "L": L, "field": fname, "site_map_is_a_bijection": bij,
+             "negative_inverts_it": inv, "field_is_constant": const,
+             "tally": dict(sorted(tal.items())),
+             "probes": sum(tal.values())})
+    return out
 
 
 # ---- THE CLOSED-FORM BRACKET ROUTE (independent of the literal composition)
@@ -2042,6 +2826,9 @@ def dh_front_closed(rec, N, v, order):
     return {x: -f[x] for x in rec.S}
 
 
+_PROBE_COUNT = [0]
+
+
 def dh_defect_field(rule, rec, N, v, n0):
     """THE MEASURED DEFECT of the normal-tangential bracket at D-TOT: the
     register displacement the constraint family cannot account for,
@@ -2057,21 +2844,313 @@ def dh_defect_field(rule, rec, N, v, n0):
     hreg = drag(rule, rec, dict(front), n0)
     if MUTANT == "defect-blind":
         return {x: tuple(Fr(0) for _ in range(d)) for x in rec.S}
+    if MUTANT == "defect-zero-all-but-one":
+        # the R6a Y1 class: erase the field at every probe but the first, so
+        # the defect would read as vanishing almost everywhere, as a boundary
+        # term, and as switching off on the homogeneous sector
+        _PROBE_COUNT[0] += 1
+        if _PROBE_COUNT[0] > 1:
+            return {x: tuple(Fr(0) for _ in range(d)) for x in rec.S}
     out = {x: tuple(reg[x][i] - hreg[x][i] for i in range(d)) for x in rec.S}
     if MUTANT == "boundary-lax":
         tot = [sum((out[x][i] for x in rec.S), Fr(0)) for i in range(d)]
-        z = rec.S[0]
+        z, a1, a2 = rec.S[0], rec.S[1], rec.S[2]
         out[z] = tuple(out[z][i] - tot[i] for i in range(d))
+        # a sum-preserving perturbation, so the field stays nonzero and the
+        # injection attacks the BOUNDARY clause and not the vanishing one
+        out[a1] = tuple(out[a1][i] + 1 for i in range(d))
+        out[a2] = tuple(out[a2][i] - 1 for i in range(d))
     return out
+
+
+# ----------------------------------------------------------------------------
+# 9b.  THE REALISATION CENSUS, THE COVARIANCE THEOREM, AND THE STRUCTURE OF
+#      THE FIRST BRACKET
+# ----------------------------------------------------------------------------
+#
+# CLOSED FORM at the realisation (a, b, c), for a CONSTANT translation field v
+# (derived from the skew-product structure, verified against the literal
+# four-map composition by G-REALISATION-TWO-ROUTES):
+#
+#     front    =  S_{a v} N - N
+#     register =  S_{c v}( w[N, S_{-a v}(n - N)] )  -  w[N, n - N]
+#
+# The register SHIFT b cancels identically -- a measured fact, printed.
+
+def _shift(f, u, L, d):
+    return {x: f[tuple((x[i] - u[i]) % L for i in range(d))] for x in f}
+
+
+def realisation_pieces(rule, rec, N, tv, cfgs):
+    """Per (rule, record, lapse) pieces shared by every (a, b, c) and every
+    direction: one drag per configuration for the base, and one pair of drags
+    per distinct front-drag displacement."""
+    d, L = rec.d, rec.L
+    base = [{x: n0[x] - N[x] for x in rec.S} for n0 in cfgs]
+    w0 = [drag(rule, rec, N, b) for b in base]
+    out = {}
+    for a in REALISATION_ATOM_VALUES:
+        av = tuple(a * t for t in tv)
+        front = {x: N[tuple((x[i] - av[i]) % L for i in range(d))] - N[x]
+                 for x in rec.S}
+        w1, hr = [], []
+        for k, n0 in enumerate(cfgs):
+            sm = {x: base[k][tuple((x[i] + av[i]) % L for i in range(d))]
+                  for x in rec.S}
+            w1.append(drag(rule, rec, N, sm))
+            hr.append(drag(rule, rec, dict(front), n0))
+        out[a] = (front, w1, hr)
+    return w0, out
+
+
+def classify_realisation(rec, tv, abc, pieces, ncfg):
+    """IDENTITY / IN-CONSTRAINT / IN-EXTENDED / OUTSIDE at (a, b, c)."""
+    d, L = rec.d, rec.L
+    a, b, c = abc
+    w0, byfront = pieces
+    front, w1, hr = byfront[a]
+    cv = tuple(c * t for t in tv)
+    ident = all(front[x] == 0 for x in rec.S)
+    okH = True
+    diffs = []
+    for k in range(ncfg):
+        reg = {}
+        for x in rec.S:
+            y = tuple((x[i] - cv[i]) % L for i in range(d))
+            reg[x] = tuple(w1[k][y][i] - w0[k][x][i] for i in range(d))
+        if any(any(t != 0 for t in reg[x]) for x in rec.S):
+            ident = False
+        if any(reg[x] != hr[k][x] for x in rec.S):
+            okH = False
+        diffs.append({x: tuple(reg[x][i] - hr[k][x][i] for i in range(d))
+                      for x in rec.S})
+    if MUTANT == "realisation-blind" and abc == (1, 1, 1):
+        return "IN-CONSTRAINT"
+    if ident:
+        return "IDENTITY"
+    if okH:
+        return "IN-CONSTRAINT"
+    if all(diffs[k] == diffs[0] for k in range(len(diffs))):
+        return "IN-EXTENDED"
+    return "OUTSIDE"
+
+
+def transported_record(rec, u):
+    """The record whose counts are the TRANSPORTED counts, g'(x) = g(x - u).
+    Built by transporting the count field and re-reading the metric through
+    the same declared readout, never by copying the metric."""
+    d, L = rec.d, rec.L
+    inv = {x: tuple((x[i] - u[i]) % L for i in range(d)) for x in rec.S}
+    return GeomRecord(rec.name + "@" + str(tuple(u)), d, L,
+                      lambda x, lk: rec.counts[inv[x]][lk], rec.weight)
+
+
+def covariance_cell(rule, rec, N, tv, cfgs):
+    """THE COVARIANCE THEOREM, one cell.  Conjugation by FULL transport:
+
+        D_full[v] . H_g[N] . D_full[v]^-1   ==   H_{S_v g}[S_v N]
+
+    tested as a MAP identity at every declared configuration.  The same cell
+    is tested at D-TOT (the register untransported) as the negative side."""
+    d, L = rec.d, rec.L
+    recu = transported_record(rec, tv)
+    SN = {x: N[tuple((x[i] - tv[i]) % L for i in range(d))] for x in rec.S}
+    full = tot = True
+    for n0 in cfgs:
+        m0 = {x: tuple(Fr(0) for _ in range(d)) for x in rec.S}
+        c = (dict(n0), dict(m0))
+        c = Dmap(rec, const_field(rec, tuple(-t for t in tv)), "D-FULL").fwd(c)
+        c = Hmap(rule, rec, N).fwd(c)
+        mid = c
+        c = Dmap(rec, const_field(rec, tv), "D-FULL").fwd(c)
+        rhs_n = {x: n0[x] + SN[x] for x in rec.S}
+        wr = drag(rule, recu, SN, n0)
+        rhs_m = {x: tuple(m0[x][i] + wr[x][i] for i in range(d))
+                 for x in rec.S}
+        if MUTANT == "covariance-theorem-blind":
+            # conjugation is made to land on the UNtransported record's
+            # constraint, which is what the theorem denies
+            wr0 = drag(rule, rec, SN, n0)
+            rhs_m = {x: tuple(m0[x][i] + wr0[x][i] for i in range(d))
+                     for x in rec.S}
+        if not (c[0] == rhs_n and c[1] == rhs_m):
+            full = False
+        # D-TOT: the front is transported back but the register field is not
+        tot_c = (c[0], mid[1])
+        if not (tot_c[0] == rhs_n and tot_c[1] == rhs_m):
+            tot = False
+    return full, tot
+
+
+def central_extension_cell(rule, rec, N, M, n0):
+    """H[N] H[M] == T_{w[N,M]} . H[N+M] -- the two-cocycle identity that names
+    the object the first bracket lives in."""
+    d = rec.d
+    m0 = {x: tuple(Fr(0) for _ in range(d)) for x in rec.S}
+    c = Hmap(rule, rec, M).fwd((dict(n0), dict(m0)))
+    c = Hmap(rule, rec, N).fwd(c)
+    NM = {x: N[x] + M[x] for x in rec.S}
+    c2 = Hmap(rule, rec, NM).fwd((dict(n0), dict(m0)))
+    w = drag(rule, rec, N, M)
+    if MUTANT == "cocycle-blind":
+        w = {x: tuple(Fr(0) for _ in range(d)) for x in rec.S}
+    c2 = (c2[0], {x: tuple(c2[1][x][i] + w[x][i] for i in range(d))
+                  for x in rec.S})
+    return c[0] == c2[0] and c[1] == c2[1]
+
+
+def spanning_rank_census(rec, lapses):
+    """HYPOTHESIS (S): do the realised bracket covectors Omega span the FULL
+    declared link space at every site?  This is the load-bearing measurement
+    of the whole {H,H} half -- every uniqueness statement about the extracted
+    coefficient is a corollary of it.  Omega depends only on (N, M) and the
+    lattice, never on the record or the rule, so one record per arena-scope
+    exhausts it -- and that independence is itself gated."""
+    nlk = len(rec.links)
+    rows = {x: [] for x in rec.S}
+    n = len(lapses)
+    NB = neighbours(rec.d, rec.L)
+    remaining = set(rec.S)
+    for a in range(n):
+        if not remaining:
+            break
+        Na = lapses[a][1]
+        for b in range(n):
+            if a == b or not remaining:
+                continue
+            Nb = lapses[b][1]
+            for x in list(remaining):
+                if len(rows[x]) == nlk:
+                    remaining.discard(x)
+                    continue
+                Ax, Bx = Na[x], Nb[x]
+                if not Ax and not Bx:
+                    continue
+                r = [Fr(Ax * Nb[y] - Bx * Na[y]) for y in NB[x]]
+                for br in rows[x]:
+                    p = next(k for k in range(nlk) if br[k] != 0)
+                    if r[p] != 0:
+                        f = r[p] * qinv(br[p])
+                        r = [r[k] - f * br[k] for k in range(nlk)]
+                if any(t != 0 for t in r):
+                    rows[x].append(r)
+                    if len(rows[x]) == nlk:
+                        remaining.discard(x)
+    ranks = sorted(set(len(rows[x]) for x in rec.S))
+    if MUTANT == "spanning-blind":
+        ranks = [nlk - 1]
+    return {"sites": len(rec.S), "link_space_dimension": nlk,
+            "sites_at_full_rank": len([x for x in rec.S
+                                       if len(rows[x]) == nlk]),
+            "ranks": ranks}
+
+
+def metric_comparator_without_inversion(rec, ext):
+    """A THIRD ROUTE TO THE METRIC COMPARISON, sharing no inversion routine
+    with either of the other two.  The extraction reaches q through the exact
+    linear solve and the type comparator through the closed form, but BOTH
+    invert it with the same primitive.  Here the extracted coefficient c is
+    multiplied by q directly and compared against the identity -- no inverse
+    is taken anywhere -- so a corruption of the inversion routine is visible."""
+    d = rec.d
+    ok = bad = 0
+    for x in rec.S:
+        st, c, _rk = ext[x]
+        if st != "UNIQUE" or c is None:
+            continue
+        q = rec.q[x]
+        prod = [[sum((c[i][k] * q[k][j] for k in range(d)), Fr(0))
+                 for j in range(d)] for i in range(d)]
+        if MUTANT == "metric-comparator-blind":
+            prod = [[prod[i][j] + 1 for j in range(d)] for i in range(d)]
+        if all(prod[i][j] == (1 if i == j else 0)
+               for i in range(d) for j in range(d)):
+            ok += 1
+        else:
+            bad += 1
+    return ok, bad
+
+
+def rule_equivalence_classes(rec_list, rules, fn):
+    """Which declared rules are the SAME rule at this sector?  The signature
+    is the rule's whole weight field over every admissible record and site."""
+    cls = {}
+    for rule in rules:
+        sig = []
+        for rec in rec_list:
+            for x in rec.S:
+                sig.append(tuple(tuple(row) for row in fn(rule, rec, x)))
+        if MUTANT == "duplicate-rules-hidden":
+            sig.append(rule)
+        cls.setdefault(tuple(sig), []).append(rule)
+    return sorted([sorted(v) for v in cls.values()])
 
 
 # ----------------------------------------------------------------------------
 # 10.  THE L GATE'S MEASURED REASON, AND THE INHERITED FACTS RE-CONFIRMED
 # ----------------------------------------------------------------------------
 
-def l_gate_reason(adj_text, ledger_text):
-    """The R2 handoff's L >= 4 requirement, with its reason MEASURED here and
-    matched against the adjudication note's own text."""
+def criterion_probe(criterion_text):
+    """THE INHERITED CRITERION, APPLIED -- and gated against a declared
+    positive/negative pair, so the implementation is a measurement and not a
+    restatement of the criterion's words.  The criterion itself is READ BY
+    JSON PATH out of the R2 terminal receipt (P-R2-CRITERION); this function
+    is this unit's implementation of it, and the two declared graphs below
+    fix what the implementation must say.
+
+      POSITIVE (locality exists): a graph with a component that is NOT
+      complete -- the 3-vertex path a-b-c, whose single component misses the
+      pair (a, c).
+      NEGATIVE (locality does not exist): the complete graph on 3 vertices.
+    """
+    def some_component_not_complete(vertices, edges):
+        parent = {v: v for v in vertices}
+
+        def find(a):
+            while parent[a] != a:
+                parent[a] = parent[parent[a]]
+                a = parent[a]
+            return a
+        for (a, b) in edges:
+            ra, rb = find(a), find(b)
+            if ra != rb:
+                parent[ra] = rb
+        comps = {}
+        for v in vertices:
+            comps.setdefault(find(v), []).append(v)
+        eset = set(frozenset(e) for e in edges)
+        for members in comps.values():
+            n = len(members)
+            need = n * (n - 1) // 2
+            have = sum(1 for i in range(n) for j in range(i + 1, n)
+                       if frozenset((members[i], members[j])) in eset)
+            if have != need:
+                return True
+        return False
+
+    pos = some_component_not_complete(["a", "b", "c"], [("a", "b"), ("b", "c")])
+    neg = some_component_not_complete(["a", "b", "c"],
+                                      [("a", "b"), ("b", "c"), ("a", "c")])
+    if MUTANT == "criterion-blind":
+        pos = neg
+    return {"criterion_read_from_the_r2_terminal_receipt": criterion_text,
+            "positive_control_path_graph_has_locality": pos,
+            "negative_control_complete_graph_has_locality": neg,
+            "implementation_agrees_with_the_inherited_criterion":
+                (pos is True and neg is False)}
+
+
+def l_gate_reason(criterion_text, r2_locality_count, r2_refusal_count):
+    """The R2 handoff's L >= 4 requirement, with its reason MEASURED here.
+
+    NO UNANCHORED RUNTIME INPUT (RUNBOOK section 14 addendum, v14 #46).  The
+    inherited criterion arrives as a (path, value) read from the R2 TERMINAL
+    RECEIPT; the R2 ruling's own sentences arrive as VERBATIM-TEXT anchors
+    with context windows; the overlap fractions are RECOMPUTED here from
+    I7's lattice and are this unit's own measurement.  Nothing is read from
+    mutable repo state, and no verdict segment is a function of a prose
+    coincidence.
+    """
     rows = []
     for (d, L) in ((2, 3), (2, 4), (2, 5), (3, 3), (3, 4), (3, 5)):
         r = overlap_census(d, L)
@@ -2079,30 +3158,34 @@ def l_gate_reason(adj_text, ledger_text):
         r["censused"] = (d, L) in CENSUS_ARENAS
         rows.append(r)
     excluded = [r for r in rows if not r["meets_r2_criterion"]]
-    # The R2 record states these fractions in its ledger entry #19 and its
-    # handoff ruling in the adjudication note; both texts are read, and the
-    # fractions are RECOMPUTED here from the lattice rather than copied.
-    quoted = re.findall(r"(\d+)/(\d+)", adj_text + ledger_text)
-    quoted = set((int(a), int(b)) for a, b in quoted)
-    mine = set((r["drawn_pairs"], r["all_pairs"]) for r in rows)
-    matched = sorted(quoted & mine)
-    profiles = [t for t in ("(8,12,1,5)", "(24,96,1,73)") if t in adj_text]
     if MUTANT == "inherited-facts-blind":
-        profiles = profiles[:1]
+        # blind the unit to an inherited fact it reads BY PATH out of the R2
+        # terminal receipt: the gate that re-confirms the inheritance must
+        # notice
+        r2_locality_count = r2_locality_count - 1
+    cp = criterion_probe(criterion_text)
+    fractions = [{"d": r["d"], "L": r["L"], "drawn": r["drawn_pairs"],
+                  "all": r["all_pairs"],
+                  "fraction": "%d/%d" % (r["drawn_pairs"], r["all_pairs"]),
+                  "meets_r2_criterion": r["meets_r2_criterion"]} for r in rows]
+    if MUTANT == "lgate-fraction-drop":
+        fractions = fractions[:-1]
     return {"rows": rows, "excluded_arenas": [[r["d"], r["L"]] for r in excluded],
             "excluded_reason": "the overlap graph is COMPLETE, so the "
                                "inherited criterion (SOME component not "
                                "complete) is failed",
-            "fractions_recomputed_and_matched_in_the_r2_adjudication":
-                [list(t) for t in matched],
-            "inherited_link_profiles_quoted_in_the_ruling": profiles,
+            "criterion_probe": cp,
+            "overlap_fractions_recomputed_here": fractions,
+            "overlap_fractions_required": 6,
+            "r2_terminal_locality_count_read_by_path": r2_locality_count,
+            "r2_terminal_refusal_count_read_by_path": r2_refusal_count,
             "inherited_facts_note": "locality, the consistent chart-intrinsic "
                                     "dimension and translation covariance ride "
                                     "as INHERITED ANCHORS from the R2 terminal; "
-                                    "the link profiles are quoted, never "
+                                    "the ruling's own sentences are bound by "
+                                    "verbatim-text anchors (T-R2-*), never "
                                     "re-derived here",
-            "adjudication_mentions_L_ge_4": ("L >= 4" in adj_text
-                                             or "L ≥ 4" in adj_text)}
+            "anchor_rows_consumed": [t[0] for t in TEXT_ANCHOR_ROWS]}
 
 
 def controls(decl, rec7):
@@ -2155,6 +3238,9 @@ def cache_exercise():
         for x in rec.S:
             memo = lambda_of(rule, rec, x)
             fresh = lambda_of(rule, rec, x, fresh=True)
+            if MUTANT == "cache-wrong-value" and x == rec.S[0]:
+                fresh = [[t + 1 for t in row] for row in fresh] \
+                    if isinstance(fresh, list) else fresh
             tested += 1
             if memo != fresh:
                 bad += 1
@@ -2173,8 +3259,8 @@ def summarise(res):
     dh, dd = res["dh"], res["dd"]
     S = {}
     S["census_cells"] = len(cen)
-    S["closing_cells"] = len([r for r in cen if r["closes"]])
-    S["defecting_cells"] = len([r for r in cen if not r["closes"]])
+    S["metric_match_cells"] = len([r for r in cen if r["metric_match"]])
+    S["defecting_cells"] = len([r for r in cen if not r["metric_match"]])
     S["arenas"] = sorted(set((r["d"], r["L"]) for r in cen))
     S["cells_per_arena_scope"] = sorted(
         [[d, L, sc, len([r for r in cen
@@ -2189,25 +3275,43 @@ def summarise(res):
     S["metric_reading_cells"] = len(
         [c for c in coe if c["coefficient"]["class"].startswith("METRIC-READING")])
     S["metric_reading_site_varying_cells"] = len(
-        [c for c in coe if c["coefficient"]["class"] == "METRIC-READING-SITE-VARYING"])
+        [c for c in coe if c["coefficient"]["class"] == CLASS_MRSV])
     S["not_extractable_cells"] = len(
-        [c for c in coe if c["coefficient"]["class"] == "NOT-EXTRACTABLE"])
+        [c for c in coe if c["coefficient"]["class"] == CLASS_NX])
+    # THE BASIS-CLOSURE CENSUS -- "closes" now means ONE thing: the commutator
+    # lies in the DECLARED GENERATOR BASIS.  The form it closes with is the
+    # second, independent question, and the pin's RIGID branch is one of its
+    # answers.
+    S["basis_closing_cells"] = len([r for r in cen if r["basis_closes"]])
+    S["basis_non_closing_cells"] = len([r for r in cen
+                                        if not r["basis_closes"]])
+    S["rigid_cells"] = len([r for r in cen if r["rigid"]])
+    cf = {}
+    for r in cen:
+        cf[r["closure_form"]] = cf.get(r["closure_form"], 0) + 1
+    S["closure_forms"] = dict(sorted(cf.items()))
     # the positive control's own row
     pc = [c for c in coe if c["rule"] == "A-insert"]
     S["positive_control_cells"] = len(pc)
     S["positive_control_metric_reading"] = len(
         [c for c in pc if c["coefficient"]["metric_reading"]])
     S["positive_control_site_varying"] = len(
-        [c for c in pc if c["coefficient"]["class"] == "METRIC-READING-SITE-VARYING"])
-    S["positive_control_closes"] = len(
-        [r for r in cen if r["rule"] == "A-insert" and r["closes"]])
+        [c for c in pc if c["coefficient"]["class"] == CLASS_MRSV])
+    S["positive_control_metric_match"] = len(
+        [r for r in cen if r["rule"] == "A-insert" and r["metric_match"]])
     S["positive_control_census_cells"] = len(
         [r for r in cen if r["rule"] == "A-insert"])
     # inhomogeneous records: the only place a structure FUNCTION shows
     inh = [c for c in coe if not c["homogeneous"]]
     S["inhomogeneous_cells"] = len(inh)
     S["inhomogeneous_site_varying_metric"] = len(
-        [c for c in inh if c["coefficient"]["class"] == "METRIC-READING-SITE-VARYING"])
+        [c for c in inh if c["coefficient"]["class"] == CLASS_MRSV])
+    # THE RULE SCOPE of the positive finding: exactly which declared rules
+    # realise a site-varying metric coefficient at all.
+    S["site_varying_metric_rules"] = sorted(set(
+        c["rule"] for c in coe if c["coefficient"]["class"] == CLASS_MRSV))
+    S["site_varying_metric_records"] = sorted(set(
+        c["record"] for c in coe if c["coefficient"]["class"] == CLASS_MRSV))
     # the bracket tallies
     tal = {}
     for r in dh:
@@ -2217,16 +3321,28 @@ def summarise(res):
     S["dh_brackets"] = sum(r["brackets"] for r in dh)
     S["dh_in_constraint"] = sum(v for k, v in tal.items()
                                 if k[1] == "IN-CONSTRAINT")
+    S["dh_brackets_by_dimension"] = dict(
+        ("d%d" % dd_, sum(r["brackets"] for r in dh if r["d"] == dd_))
+        for dd_ in sorted(set(r["d"] for r in dh)))
     S["dd_closing"] = sum(r["closing"] for r in dd)
     S["dd_total"] = sum(r["total"] for r in dd)
-    # the convention sweep
+    # {D,D}: the INFORMATIVE count -- brackets of two DISTINCT NONZERO
+    # generators.  The rest pair a generator with itself or with zero.
+    S["dd_informative"] = sum(r["informative"] for r in dd)
+    # the convention sweep, at its OWN denominator: the number of distinct
+    # front-sector probes evaluated.  The record x rule multiplicity is
+    # reported beside it and never folded in.
     cv = {}
+    mult = 0
     for c in res["conventions"]:
         k = (c["order"], c["difference"])
         a, b = cv.get(k, (0, 0))
-        cv[k] = (a + c["front_matches"], b + c["brackets"])
+        cv[k] = (a + c["front_matches"], b + c["front_probes"])
+        mult += c["brackets_derived_by_multiplication"]
     S["convention_sweep"] = dict(sorted(
         ("%s/%s" % k, [v[0], v[1]]) for k, v in cv.items()))
+    S["convention_front_probes"] = sum(v[1] for v in cv.values()) // len(cv)
+    S["convention_derived_by_multiplication"] = mult // len(cv)
     S["conventions_matching_everywhere"] = sorted(
         "%s/%s" % k for k, v in cv.items() if v[0] == v[1] and v[1] > 0)
     # the defect
@@ -2240,6 +3356,35 @@ def summarise(res):
         r["probes"] for r in dfr if r["homogeneous"])
     S["defect_rules_with_a_vanishing_row"] = sorted(set(
         r["rule"] for r in dfr if r["vanishing_probes"] == r["probes"]))
+    S["defect_rows"] = len(dfr)
+    # the DEGENERATE probes -- the boundary test's own death certificate,
+    # measured rather than typed
+    dg = res["degenerate"]
+    S["degenerate_rows"] = len(dg)
+    S["degenerate_zero_rows"] = len([r for r in dg if r["declared_degenerate"]])
+    S["degenerate_zero_probes"] = sum(r["probes"] for r in dg
+                                      if r["declared_degenerate"])
+    S["degenerate_zero_vanishing"] = sum(r["vanishing_probes"] for r in dg
+                                         if r["declared_degenerate"])
+    S["degenerate_zero_lattice_sum_zero"] = sum(
+        r["lattice_sum_zero"] for r in dg if r["declared_degenerate"])
+    S["constant_profile_probes"] = sum(r["probes"] for r in dg
+                                       if not r["declared_degenerate"])
+    S["constant_profile_vanishing"] = sum(
+        r["vanishing_probes"] for r in dg if not r["declared_degenerate"])
+    # the OTHER bracket order
+    orr = res["orders"]
+    S["order_probes"] = dict(sorted(
+        (o["order"], [sum(r["nonzero"] for r in orr if r["order"] == o["order"]),
+                      sum(r["probes"] for r in orr if r["order"] == o["order"])])
+        for o in orr))
+    # HYPOTHESIS (S)
+    sp = res["spanning"]
+    S["spanning_sites"] = sum(r["sites"] for r in sp)
+    S["spanning_sites_at_full_rank"] = sum(r["sites_at_full_rank"] for r in sp)
+    S["spanning_rows"] = len(sp)
+    S["spanning_record_independent"] = len([r for r in sp
+                                            if r["record_independent"]])
     # THE L-SWEEP TRAJECTORY, cell-complete
     traj = []
     for (d, L) in [tuple(a) for a in S["arenas"]]:
@@ -2251,24 +3396,31 @@ def summarise(res):
             traj.append({
                 "d": d, "L": L, "scope": sc, "cells": len(sub),
                 "lapse_members": (sub[0]["total_pairs"] if sub else 0),
-                "closing": len([r for r in sub if r["closes"]]),
-                "defecting": len([r for r in sub if not r["closes"]]),
+                "metric_match": len([r for r in sub if r["metric_match"]]),
+                "defecting": len([r for r in sub if not r["metric_match"]]),
                 "max_residual": max([Fr(r["max_abs"]) for r in sub],
                                     default=Fr(0)).__str__(),
                 "metric_reading": len([c for c in sc_c
                                        if c["coefficient"]["metric_reading"]]),
                 "site_varying_metric": len(
                     [c for c in sc_c if c["coefficient"]["class"]
-                     == "METRIC-READING-SITE-VARYING"]),
+                     == CLASS_MRSV]),
                 "not_extractable": len([c for c in sc_c
                                         if c["coefficient"]["class"]
-                                        == "NOT-EXTRACTABLE"])})
+                                        == CLASS_NX]),
+                "basis_closing": len([r for r in sub if r["basis_closes"]]),
+                "rigid": len([r for r in sub if r["rigid"]])})
     if MUTANT == "lsweep-drop":
         traj = traj[:-1]
     if MUTANT == "lsweep-instability":
         traj[1] = dict(traj[1])
-        traj[1]["closing"] = traj[1]["closing"] + 1
+        traj[1]["metric_match"] = traj[1]["metric_match"] + 1
     S["trajectory"] = traj
+    key = [(t["d"], t["cells"], t["metric_match"], t["metric_reading"],
+            t["site_varying_metric"], t["not_extractable"],
+            t["basis_closing"], t["rigid"]) for t in traj]
+    S["structure_constant_along_L"] = (len(set(key))
+                                       == len(set(t[0] for t in key)))
     # does the lapse coordinate move anything?
     moved = []
     for (d, L) in [tuple(a) for a in S["arenas"]]:
@@ -2281,11 +3433,15 @@ def summarise(res):
                 b = [r for r in cen if r["d"] == d and r["L"] == L
                      and r["rule"] == rule and r["record"] == nm
                      and r["scope"] == "TRANSLATES"]
-                if a and b and (a[0]["closes"] != b[0]["closes"]
+                if a and b and (a[0]["metric_match"] != b[0]["metric_match"]
                                 or a[0]["max_abs"] != b[0]["max_abs"]):
                     moved.append([d, L, rule, nm, a[0]["max_abs"],
                                   b[0]["max_abs"]])
     S["lapse_coordinate_moves"] = moved
+    S["lapse_comparisons"] = len(set(
+        (r["d"], r["L"], r["rule"], r["record"]) for r in cen))
+    S["lapse_moves_upward"] = len([m for m in moved
+                                   if Fr(m[5]) > Fr(m[4])])
     ca = {}
     for c in coe:
         ca[(c["d"], c["L"], c["scope"], c["rule"], c["record"])] = \
@@ -2296,6 +3452,85 @@ def summarise(res):
         if k2 in ca and ca[k2] != v:
             cm.append([list(k), v, ca[k2]])
     S["lapse_coordinate_moves_coefficient"] = sorted(cm, key=str)
+
+    # ---- THE REALISATION CENSUS -------------------------------------------
+    rz = res["realisation"]
+    rr = rz["rows"]
+    S["realisation_count"] = len(set(tuple(r["realisation"]) for r in rr))
+    S["realisation_classifications"] = sum(r["classifications"] for r in rr)
+    S["realisation_in_constraint"] = sum(
+        r["tally"].get("IN-CONSTRAINT", 0) for r in rr)
+    agg = {}
+    for r in rr:
+        key = "%s(%d,%d,%d)" % ((realisation_name(tuple(r["realisation"])),)
+                                + tuple(r["realisation"]))
+        for k, v in r["tally"].items():
+            agg.setdefault(key, {})
+            agg[key][k] = agg[key].get(k, 0) + v
+    S["realisation_tallies"] = dict(
+        (k, dict(sorted(v.items()))) for k, v in sorted(agg.items()))
+    absorbing = sorted(set(tuple(r["realisation"]) for r in rr
+                           if "IN-EXTENDED" in r["tally"]))
+    S["absorbing_realisations"] = [list(a) for a in absorbing]
+    S["realisation_outside_on_the_homogeneous_sector"] = sum(
+        r["homogeneous_tally"].get("OUTSIDE", 0) for r in rr
+        if tuple(r["realisation"]) in absorbing)
+    S["realisation_homogeneous_classifications"] = sum(
+        sum(r["homogeneous_tally"].values()) for r in rr
+        if tuple(r["realisation"]) in absorbing)
+    resist = sorted(set(c for r in rr if tuple(r["realisation"]) in absorbing
+                        for c in r["resisting_cells"]))
+    S["curvature_supported_residue_cells"] = resist
+    S["curvature_supported_residue_count"] = len(resist)
+    # is the resisting set EXACTLY the inhomogeneous-record cells?
+    inhom_names = sorted(set(c["record"] for c in coe if not c["homogeneous"]))
+    S["residue_is_exactly_the_inhomogeneous_records"] = all(
+        c.split("|")[1] in inhom_names for c in resist) and len(resist) > 0
+    S["realisation_b_is_inert"] = (
+        len(set(tuple(sorted(r["tally"].items())) for r in rr
+                if (r["realisation"][0], r["realisation"][2]) == (1, 1)
+                and r["d"] == rr[0]["d"] and r["L"] == rr[0]["L"])) == 1)
+
+    # ---- THE COVARIANCE THEOREM -------------------------------------------
+    cvz = res["covariance"]
+    S["covariance_cells"] = cvz["cells"]
+    S["covariance_d_full"] = cvz["d_full_covariant"]
+    S["covariance_d_tot"] = cvz["d_tot_covariant"]
+
+    # ---- THE STRUCTURE PROBES ---------------------------------------------
+    st = res["structure"]
+    S["central_extension_cells"] = sum(r["cells"]
+                                       for r in st["central_extension"])
+    S["central_extension_holds"] = sum(r["cocycle_identity_holds"]
+                                       for r in st["central_extension"])
+    S["commutator_pairs"] = sum(r["pairs"] for r in st["config_independence"])
+    S["commutator_configuration_independent"] = sum(
+        r["configuration_independent"] for r in st["config_independence"])
+    S["distinct_rules"] = dict(
+        ("d%d" % r["d"], {"declared": r["declared_rules"],
+                          "distinct_in_the_HH_weight":
+                              len(r["distinct_in_the_HH_weight"]),
+                          "distinct_in_the_register_drag":
+                              len(r["distinct_in_the_register_drag"])})
+        for r in st["duplicates"])
+    dup = []
+    for r in st["duplicates"]:
+        for grp in r["distinct_in_the_HH_weight"]:
+            if len(grp) > 1:
+                dup.append(["HH", r["d"], grp])
+        for grp in r["distinct_in_the_register_drag"]:
+            if len(grp) > 1:
+                dup.append(["REGISTER", r["d"], grp])
+    S["duplicate_rule_groups"] = sorted(
+        [list(t) for t in set(tuple([a, b, tuple(c)]) for a, b, c in dup)],
+        key=str)
+    S["nonconstant_probes"] = sum(r["probes"] for r in st["nonconstant"])
+    S["nonconstant_outside"] = sum(r["tally"].get("OUTSIDE", 0)
+                                   for r in st["nonconstant"])
+    S["nonconstant_fields_bijective"] = len(
+        [r for r in st["nonconstant"]
+         if r["site_map_is_a_bijection"] and r["negative_inverts_it"]
+         and not r["field_is_constant"]])
     return S
 
 
@@ -2303,22 +3538,39 @@ def summarise(res):
 # 12.  THE VERDICT -- derived inside a gate, every segment computed
 # ----------------------------------------------------------------------------
 
-SEGMENT_ORDER = ("ARENA", "L-GATE", "RECOVERY", "HH-BRACKET", "COEFFICIENT",
-                 "HH-RESIDUAL", "DH-BRACKET", "DEFECT", "CONVENTION",
-                 "DD-BRACKET", "LAPSE", "REALISATION", "LSWEEP", "CONTROLS")
+SEGMENT_ORDER = ("ARENA", "L-GATE", "RECOVERY", "SPANNING", "HH-BRACKET",
+                 "COEFFICIENT", "HH-CLOSURE", "HH-RESIDUAL", "DH-BRACKET",
+                 "REALISATION-CENSUS", "COVARIANCE", "DEFECT", "CONVENTION",
+                 "DD-BRACKET", "CORRESPONDENCE", "LAPSE", "REALISATION",
+                 "LSWEEP", "CONTROLS", "SCOPE")
 
 HEAD_CLOSES = "R3-DEFORMATION-CLOSES"
 HEAD_DEFECT = "R3-DEFORMATION-DEFECT-AT"
 
+SIGNATURE_KEY = {
+    "ARENA": "arena_signature", "L-GATE": "lgate_signature",
+    "RECOVERY": "recovery_signature", "SPANNING": "spanning_signature",
+    "HH-BRACKET": "hh_signature", "COEFFICIENT": "coeff_signature",
+    "HH-CLOSURE": "hhclosure_signature", "HH-RESIDUAL": "hhres_signature",
+    "DH-BRACKET": "dh_signature",
+    "REALISATION-CENSUS": "realisation_census_signature",
+    "COVARIANCE": "covariance_signature", "DEFECT": "defect_signature",
+    "CONVENTION": "convention_signature", "DD-BRACKET": "dd_signature",
+    "CORRESPONDENCE": "correspondence_signature", "LAPSE": "lapse_signature",
+    "REALISATION": "realisation_signature", "LSWEEP": "lsweep_signature",
+    "CONTROLS": "controls_signature", "SCOPE": "scope_signature",
+}
 
-def build_verdict(payload, swap_pairing=False):
-    """Assemble the verdict from the measured payload."""
-    S = payload["summary"]
-    segs = []
-    dh = S["dh_tally"]
+
+def verdict_head(S):
+    """THE HEAD, DERIVED.  Three first-class outcomes, all reachable:
+      CLOSES   -- every declared bracket lands in the declared generator
+                  basis; the closure FORM is then named by the HH-CLOSURE
+                  segment (GR's bracket form / RIGID / other),
+      DEFECT-AT -- some bracket does not, with the failing sector named."""
     dh_ok = (S["dh_in_constraint"] == S["dh_brackets"] and S["dh_brackets"] > 0)
-    hh_ok = (S["positive_control_closes"] == S["positive_control_census_cells"]
-             and S["positive_control_census_cells"] > 0)
+    hh_ok = (S["basis_closing_cells"] == S["census_cells"]
+             and S["census_cells"] > 0)
     dd_ok = (S["dd_closing"] == S["dd_total"] and S["dd_total"] > 0)
     failing = []
     if not hh_ok:
@@ -2327,47 +3579,80 @@ def build_verdict(payload, swap_pairing=False):
         failing.append("NORMAL-TANGENTIAL-REGISTER-SECTOR")
     if not dd_ok:
         failing.append("TANGENTIAL-TANGENTIAL")
-    head = HEAD_CLOSES if not failing else HEAD_DEFECT
-    if failing:
-        segs.append(("ARENA", "ARENA=%s" % payload["arena_signature"]))
-    else:
-        segs.append(("ARENA", "ARENA=%s" % payload["arena_signature"]))
-    segs.append(("L-GATE", "L-GATE=" + payload["lgate_signature"]))
-    segs.append(("RECOVERY", "RECOVERY=" + payload["recovery_signature"]))
-    segs.append(("HH-BRACKET", "HH-BRACKET=" + payload["hh_signature"]))
-    segs.append(("COEFFICIENT", "COEFFICIENT=" + payload["coeff_signature"]))
-    segs.append(("HH-RESIDUAL", "HH-RESIDUAL=" + payload["hhres_signature"]))
-    segs.append(("DH-BRACKET", "DH-BRACKET=" + payload["dh_signature"]))
-    segs.append(("DEFECT", "DEFECT=" + payload["defect_signature"]))
-    segs.append(("CONVENTION", "CONVENTION=" + payload["convention_signature"]))
-    segs.append(("DD-BRACKET", "DD-BRACKET=" + payload["dd_signature"]))
-    segs.append(("LAPSE", "LAPSE=" + payload["lapse_signature"]))
-    segs.append(("REALISATION", "REALISATION=" + payload["realisation_signature"]))
-    segs.append(("LSWEEP", "LSWEEP=" + payload["lsweep_signature"]))
-    segs.append(("CONTROLS", "CONTROLS=" + payload["controls_signature"]))
-    if swap_pairing and len(segs) >= 5:
-        a, b = segs[3], segs[4]
-        segs[3] = (a[0], a[1].split("=")[0] + "=" + b[1].split("=", 1)[1])
-        segs[4] = (b[0], b[1].split("=")[0] + "=" + a[1].split("=", 1)[1])
+    return (HEAD_CLOSES if not failing else HEAD_DEFECT), failing
+
+
+def closure_form_of(S):
+    """The census's own closure form, named from the measured counts."""
+    forms = S["closure_forms"]
+    live = sorted(k for k in forms if forms[k] > 0
+                  and k != "NOT-IN-THE-DECLARED-BASIS")
+    if len(live) == 1:
+        return live[0]
+    if S["rigid_cells"] == S["basis_closing_cells"] \
+            and S["basis_closing_cells"] > 0:
+        return "RIGID-CONSTANT-NON-METRIC"
+    return "MIXED(" + "+".join(live) + ")"
+
+
+def build_verdict(payload, swap_pairing=False):
+    """Assemble the verdict from the measured payload."""
+    S = payload["summary"]
+    head, failing = verdict_head(S)
+    segs = [(nm, "%s=%s" % (nm, payload[SIGNATURE_KEY[nm]]))
+            for nm in SEGMENT_ORDER]
+    if swap_pairing and len(segs) >= 6:
+        a, b = segs[4], segs[5]
+        segs[4] = (a[0], a[1].split("=")[0] + "=" + b[1].split("=", 1)[1])
+        segs[5] = (b[0], b[1].split("=")[0] + "=" + a[1].split("=", 1)[1])
+    ix = dict((nm, i) for i, nm in enumerate(SEGMENT_ORDER))
     if MUTANT == "verdict-typed-segment":
-        segs[6] = ("DH-BRACKET", "DH-BRACKET=IN-CONSTRAINT-AT-ALL-BRACKETS;"
-                                 "HDA-NORMAL-TANGENTIAL-REPRODUCED")
+        segs[ix["DH-BRACKET"]] = (
+            "DH-BRACKET", "DH-BRACKET=IN-CONSTRAINT-AT-ALL-BRACKETS;"
+                          "NORMAL-TANGENTIAL-RELATION-REPRODUCED")
     if MUTANT == "verdict-append-text":
-        segs[4] = ("COEFFICIENT", segs[4][1] + "-AND-DERIVED-FROM-THE-SUBSTRATE")
+        k = ix["COEFFICIENT"]
+        segs[k] = ("COEFFICIENT",
+                   segs[k][1] + "-AND-DERIVED-FROM-THE-SUBSTRATE")
     if MUTANT == "verdict-typed-coefficient":
-        segs[4] = ("COEFFICIENT", "COEFFICIENT=METRIC-READING-SITE-VARYING-AT-"
-                                  "EVERY-CELL")
+        segs[ix["COEFFICIENT"]] = (
+            "COEFFICIENT", "COEFFICIENT=METRIC-READING-SITE-VARYING-AT-"
+                           "EVERY-CELL")
     if MUTANT == "verdict-fully-typed":
         segs = [(nm, "%s=TYPED" % nm) for nm in SEGMENT_ORDER]
         head = HEAD_CLOSES
     if MUTANT == "verdict-inert-segment":
-        segs[7] = ("DEFECT", "DEFECT=NONE")
+        segs[ix["DEFECT"]] = ("DEFECT", "DEFECT=NONE")
+    if MUTANT == "verdict-typed-covariance":
+        segs[ix["COVARIANCE"]] = ("COVARIANCE",
+                                  "COVARIANCE=THE-RECORD-TRANSPORTS")
+    if MUTANT == "verdict-typed-correspondence":
+        segs[ix["CORRESPONDENCE"]] = ("CORRESPONDENCE",
+                                      "CORRESPONDENCE=HDA-REPRODUCED")
     if MUTANT == "head-constant":
         head = HEAD_CLOSES
     if MUTANT == "verdict-segment-drop":
         segs = segs[:-1]
     full = head + "<" + "|".join(s[1] for s in segs) + ">"
     return head, segs, full
+
+
+def rigid_probe():
+    """THE RIGID BRANCH'S REACHABILITY, DEMONSTRATED.  A synthetic payload in
+    which every bracket lands in the declared basis and every closing cell
+    carries a CONSTANT NON-METRIC coefficient is fed to the very function that
+    builds the delivered verdict; the head it returns and the closure form it
+    names are read back.  If the machinery could not return the RIGID outcome,
+    this probe would say so."""
+    syn = {"census_cells": 10, "basis_closing_cells": 10, "rigid_cells": 10,
+           "closure_forms": {"RIGID-CONSTANT-NON-METRIC": 10},
+           "dh_in_constraint": 4, "dh_brackets": 4,
+           "dd_closing": 2, "dd_total": 2}
+    if MUTANT == "rigid-branch-unreachable":
+        syn["closure_forms"] = {"METRIC-READING-CONSTANT": 10}
+        syn["rigid_cells"] = 0
+    head, failing = verdict_head(syn)
+    return head, closure_form_of(syn), failing
 
 
 # ----------------------------------------------------------------------------
@@ -2381,27 +3666,42 @@ def build_verdict(payload, swap_pairing=False):
 # ----------------------------------------------------------------------------
 
 def reconstruct_verdict_from_receipt(R):
+    """THE INDEPENDENT COMPARATOR.  Every segment is rebuilt from the
+    receipt's RAW MEASURED ROWS -- never from `summary`, never from the same
+    object the builder read (RUNBOOK section 14 addendum, v13 #219: a gate
+    clause that compares an object against a copy of itself routed through the
+    component under test verifies nothing).  The receipt's sub-objects are
+    DEEP-COPIED before this runs, so object identity cannot be mistaken for
+    agreement.  Any typed, appended, swapped, dropped or post-gate-corrupted
+    value disagrees here."""
     cen = R["census_rows"]
     coe = R["coefficient_rows"]
     dhr = R["dh_bracket_rows"]
     ddr = R["dd_bracket_rows"]
     cnv = R["convention_sweep"]
     dfr = R["defect_rows"]
+    dgr = R["degenerate_rows"]
+    orr = R["order_rows"]
+    spn = R["spanning_rows"]
+    rzr = R["realisation_rows"]
+    cvr = R["covariance_rows"]
+    stx = R["structure_rows"]
+    ncr = stx["nonconstant"]
     rec = R["recovery"]
     lg = R["l_gate"]
     ctl = R["controls"]
+    arena = R["arena_declaration"]
     arenas = sorted(set((r["d"], r["L"]) for r in cen))
     out = []
 
     dh_tot = sum(r["brackets"] for r in dhr)
     dh_in = sum(r["tally"].get("IN-CONSTRAINT", 0) for r in dhr)
-    pc = [r for r in cen if r["rule"] == "A-insert"]
-    hh_ok = len(pc) > 0 and all(r["closes"] for r in pc)
+    basis_ok = len(cen) > 0 and all(r["basis_closes"] for r in cen)
     dd_tot = sum(r["total"] for r in ddr)
     dd_ok = dd_tot > 0 and sum(r["closing"] for r in ddr) == dd_tot
     dh_ok = dh_tot > 0 and dh_in == dh_tot
     fail = []
-    if not hh_ok:
+    if not basis_ok:
         fail.append("NORMAL-NORMAL")
     if not dh_ok:
         fail.append("NORMAL-TANGENTIAL-REGISTER-SECTOR")
@@ -2411,114 +3711,281 @@ def reconstruct_verdict_from_receipt(R):
 
     recset = sorted(set(r["record"] for r in cen))
     ruleset = sorted(set(r["rule"] for r in cen))
-    out.append("ARENA=SITES=%s;LINKS=%s;RECORDS=%d;RULES=%d;LAPSE-SCOPES=%s"
+    out.append("ARENA=SITES=%s;LINKS=%s;RECORDS=%d;RULES=%d;LAPSE-SCOPES=%s;"
+               "WEIGHT=%d"
                % (",".join("d%dL%d:%d" % (d, L, L ** d) for d, L in arenas),
                   ",".join("d%d:%d" % (d, d + d * (d - 1) // 2)
                            for d in sorted(set(a[0] for a in arenas))),
                   len(recset), len(ruleset),
-                  ",".join(sorted(set(r["scope"] for r in cen)))))
+                  ",".join(sorted(set(r["scope"] for r in cen))),
+                  arena["density_weight"]))
     exc = sorted(tuple(a) for a in lg["excluded_arenas"])
     out.append("L-GATE=MIN-L=%d;EXCLUDED=%s;REASON=OVERLAP-GRAPH-COMPLETE-AT-"
-               "%s;INHERITED-FRACTIONS-RECOMPUTED=%d"
+               "%s;CRITERION-READ-BY-PATH-FROM-THE-R2-TERMINAL-RECEIPT;"
+               "CRITERION-IMPLEMENTATION-CONTROLLED=%s;"
+               "FRACTIONS-RECOMPUTED-HERE=%d"
                % (min(a[1] for a in arenas),
                   ",".join("d%dL%d" % (d, L) for d, L in exc),
                   ",".join("%d-OF-%d" % (r["drawn_pairs"], r["all_pairs"])
                            for r in lg["rows"]
                            if (r["d"], r["L"]) in [tuple(e) for e in exc]),
-                  len(lg["fractions_recomputed_and_matched_in_the_r2_adjudication"])))
+                  str(lg["criterion_probe"]
+                      ["positive_control_path_graph_has_locality"] is True
+                      and lg["criterion_probe"]
+                      ["negative_control_complete_graph_has_locality"]
+                      is False).upper(),
+                  len(lg["overlap_fractions_recomputed_here"])))
     out.append("RECOVERY=CLOSURE-%d-OF-%d;SECTOR-%d-OF-%d;RANK;READOUT-DET-%s;"
                "GENERAL-D;COUNT-LATTICE;DIAGONAL-SECTOR-%d-RECORDS-CLOSE-AT-"
                "THE-LINK-LOCAL-RULE"
-               % (rec["closure_cells_compared"] - len(rec["closure_mismatches"]),
-                  rec["closure_cells_compared"],
-                  rec["sector_cells_compared"] - len(rec["sector_mismatches"]),
-                  rec["sector_cells_compared"], rec["readout"]["determinant"],
-                  len(rec["diagonal_sector_closes_at_the_link_local_rule"])))
+               % (len([k for k in rec["closure_rows"]
+                       if k in rec["pinned_closure_keys"]])
+                  - len(rec["closure_mismatches"]),
+                  len([k for k in rec["closure_rows"]
+                       if k in rec["pinned_closure_keys"]]),
+                  len(rec["pinned_sector_keys"]) - len(rec["sector_mismatches"]),
+                  len(rec["pinned_sector_keys"]),
+                  rec["readout"]["determinant"],
+                  len([nm for nm in rec["diagonal_sector"]
+                       if rec["closure_rows"]["A-axis|%s" % nm]
+                       ["metric_match"]])))
+    out.append("SPANNING=MEASURED;OMEGA-SPANS-THE-FULL-LINK-SPACE-AT-%d-OF-%d-"
+               "SITES;ROWS=%d;RECORD-INDEPENDENT-AT-%d-OF-%d;"
+               "THE-ONE-LOAD-BEARING-MEASUREMENT-OF-THE-HH-HALF"
+               % (sum(r["sites_at_full_rank"] for r in spn),
+                  sum(r["sites"] for r in spn), len(spn),
+                  len([r for r in spn if r["record_independent"]]), len(spn)))
+    ce_cells = sum(r["cells"] for r in stx["central_extension"])
+    ce_ok = sum(r["cocycle_identity_holds"] for r in stx["central_extension"])
+    ci_p = sum(r["pairs"] for r in stx["config_independence"])
+    ci_ok = sum(r["configuration_independent"]
+                for r in stx["config_independence"])
     out.append("HH-BRACKET=LANDS-IN-THE-TANGENTIAL-FAMILY-AT-%d-OF-%d-CELLS"
-               "(FORCED:w-LINEAR-IN-THE-FRONT);POSITIVE-CONTROL-CLOSES-AT-%d-"
-               "OF-%d;NORMAL-CHANNEL-EMPTY(FORCED)"
-               % (len(cen), len(cen), len([r for r in pc if r["closes"]]),
-                  len(pc)))
+               "(FORCED:w-LINEAR-IN-THE-FRONT);NORMAL-CHANNEL-EMPTY(FORCED);"
+               "STRUCTURE-THEOREM-rho=(W-B).Omega-VERIFIED-AT-%d-OF-%d-CELLS"
+               "(FORCED);CENTRAL-EXTENSION-H[N]H[M]=T_w[N,M].H[N+M]-AT-%d-OF-"
+               "%d;COMMUTATOR-CONFIGURATION-INDEPENDENT-AT-%d-OF-%d"
+               % (len(cen), len(cen), R["two_route"]["class_prediction_cells"],
+                  len(cen), ce_ok, ce_cells, ci_ok, ci_p))
     cls = {}
     for c in coe:
         k = c["coefficient"]["class"]
         cls[k] = cls.get(k, 0) + 1
     pcc = [c for c in coe if c["rule"] == "A-insert"]
     inh = [c for c in coe if not c["homogeneous"]]
-    out.append("COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS;CLASSES=%s;"
-               "POSITIVE-CONTROL-METRIC-READING-AT-%d-OF-%d(FORCED-VALUE,"
-               "MEASURED-UNIQUENESS);"
-               "SITE-VARYING-ON-THE-INHOMOGENEOUS-RECORDS-AT-%d-OF-%d"
+    svr = sorted(set(c["rule"] for c in coe
+                     if c["coefficient"]["class"] == CLASS_MRSV))
+    out.append("COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS(UNIQUE-BY-(S));"
+               "CLASSES=%s(FORCED:class=f(W,B));POSITIVE-CONTROL-METRIC-"
+               "READING-AT-%d-OF-%d(FORCED-VALUE-AND-FORCED-CLASS);"
+               "SITE-VARYING-METRIC-ON-THE-INHOMOGENEOUS-RECORDS-AT-%d-OF-%d-"
+               "CELLS-AT-RULES=%s"
                % (";".join("%s:%d" % (k, cls[k]) for k in sorted(cls)),
                   len([c for c in pcc if c["coefficient"]["metric_reading"]]),
                   len(pcc),
                   len([c for c in inh if c["coefficient"]["class"]
-                       == "METRIC-READING-SITE-VARYING"]), len(inh)))
-    bad = [r for r in cen if not r["closes"]]
+                       == CLASS_MRSV]), len(inh), ",".join(svr)))
+    forms = {}
+    for r in cen:
+        forms[r["closure_form"]] = forms.get(r["closure_form"], 0) + 1
+    out.append("HH-CLOSURE=AGAINST-THE-DECLARED-GENERATOR-BASIS;IN-THE-BASIS-"
+               "AT-%d-OF-%d-CELLS;FORMS=%s;RIGID-CONSTANT-NON-METRIC-REACHED-"
+               "AT-%d-CELLS;METRIC-MATCH-AT-%d-OF-%d;SYNTHETIC-RIGID-HEAD=%s"
+               % (len([r for r in cen if r["basis_closes"]]), len(cen),
+                  ";".join("%s:%d" % (k, forms[k]) for k in sorted(forms)),
+                  len([r for r in cen if r["rigid"]]),
+                  len([r for r in cen if r["metric_match"]]), len(cen),
+                  R["rigid_branch_probe"]["closure_form"]))
+    bad = [r for r in cen if not r["metric_match"]]
     badrules = sorted(set(r["rule"] for r in bad))
+    nxr = sorted(set(c["rule"] for c in coe
+                     if c["coefficient"]["class"] == CLASS_NX))
     out.append("HH-RESIDUAL=NONZERO-AT-%d-OF-%d-CELLS;RULES=%s;"
-               "NOT-EXTRACTABLE-AT-%d-CELLS(ARCH-B:OUTSIDE-THE-AXIS-COVECTOR-"
-               "FORM,FORCED);MAX=%s"
-               % (len(bad), len(cen), ",".join(badrules) if badrules else "NONE",
+               "NOT-IN-THE-BASIS-AT-%d-CELLS(RULES-WITH-A-DIAGONAL-LINK-"
+               "COLUMN=%s;%d-OF-%d-ARCHITECTURE-B-CELLS,FORCED);MAX=%s"
+               % (len(bad), len(cen),
+                  ",".join(badrules) if badrules else "NONE",
                   len([c for c in coe
-                       if c["coefficient"]["class"] == "NOT-EXTRACTABLE"]),
-                  max([Fr(r["max_abs"]) for r in cen], default=Fr(0)).__str__()))
+                       if c["coefficient"]["class"] == CLASS_NX]),
+                  ",".join(nxr),
+                  len([c for c in coe
+                       if c["coefficient"]["class"] == CLASS_NX]),
+                  len([c for c in coe if arch_of(c["rule"]) == "B"]),
+                  max([Fr(r["max_abs"]) for r in cen],
+                      default=Fr(0)).__str__()))
     tal = {}
     for r in dhr:
         for k, v in r["tally"].items():
             tal[(r["realisation"], k)] = tal.get((r["realisation"], k), 0) + v
-    out.append("DH-BRACKET=%s(D-REG-IDENTITY-FORCED);HDA-REQUIRES-H[L_v-N];"
-               "IN-CONSTRAINT-AT-%d-OF-%d"
+    out.append("DH-BRACKET=%s(D-REG-IDENTITY-FORCED);THE-RELATION-REQUIRES-"
+               "H[L_v-N];IN-CONSTRAINT-AT-%d-OF-%d"
                % (";".join("%s:%s" % (k[0] + "/" + k[1], tal[k])
                            for k in sorted(tal)), dh_in, dh_tot))
+    rz_class = sum(r["classifications"] for r in rzr)
+    rz_in = sum(r["tally"].get("IN-CONSTRAINT", 0) for r in rzr)
+    absorbing = sorted(set(tuple(r["realisation"]) for r in rzr
+                           if "IN-EXTENDED" in r["tally"]))
+    hom_out = sum(r["homogeneous_tally"].get("OUTSIDE", 0) for r in rzr
+                  if tuple(r["realisation"]) in absorbing)
+    hom_tot = sum(sum(r["homogeneous_tally"].values()) for r in rzr
+                  if tuple(r["realisation"]) in absorbing)
+    resist = sorted(set(c for r in rzr if tuple(r["realisation"]) in absorbing
+                        for c in r["resisting_cells"]))
+    inhom = sorted(set(c["record"] for c in coe if not c["homogeneous"]))
+    b_inert = (len(set(tuple(sorted(r["tally"].items())) for r in rzr
+                       if (r["realisation"][0], r["realisation"][2]) == (1, 1)
+                       and r["d"] == rzr[0]["d"] and r["L"] == rzr[0]["L"]))
+               == 1)
+    out.append("REALISATION-CENSUS=ALL-%d-(a,b,c)-REALISATIONS-BUILT-FROM-THE-"
+               "TWO-DECLARED-ATOMS;CLASSIFICATIONS=%d;IN-CONSTRAINT-AT-%d-OF-"
+               "%d(ABSOLUTE);ABSORBING-REALISATIONS=%d;OUTSIDE-ON-THE-"
+               "HOMOGENEOUS-SECTOR-AT-%d-OF-%d;CURVATURE-SUPPORTED-RESIDUE="
+               "%d-CELLS;RESIDUE-IS-EXACTLY-THE-INHOMOGENEOUS-RECORDS=%s;"
+               "REGISTER-SHIFT-INERT=%s"
+               % (len(set(tuple(r["realisation"]) for r in rzr)), rz_class,
+                  rz_in, rz_class, len(absorbing), hom_out, hom_tot,
+                  len(resist),
+                  str(len(resist) > 0
+                      and all(c.split("|")[1] in inhom
+                              for c in resist)).upper(),
+                  str(b_inert).upper()))
+    cv_cells = sum(r["cells"] for r in cvr)
+    cv_full = sum(r["d_full_covariant"] for r in cvr)
+    cv_tot = sum(r["d_tot_covariant"] for r in cvr)
+    out.append("COVARIANCE=THEOREM=D_full[v].H_g[N].D_full[v]^-1=H_{S_v-g}"
+               "[S_v-N];HOLDS-AT-%d-OF-%d-CELLS;FAILS-AT-D-TOT-AT-%d-OF-%d;"
+               "SURVIVING-OBSTRUCTION=THE-RECORD-DOES-NOT-TRANSPORT;"
+               "THE-ARENA-CARRIES-A-FIXED-BACKGROUND"
+               % (cv_full, cv_cells, cv_cells - cv_tot, cv_cells))
     dp = sum(r["probes"] for r in dfr)
     dv = sum(r["vanishing_probes"] for r in dfr)
     dl = sum(r["lattice_sum_zero"] for r in dfr)
-    dh_hom = sum(r["vanishing_probes"] for r in dfr if r["homogeneous"])
-    out.append("DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET;"
-               "CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];"
-               "NONZERO-AT-%d-OF-%d-PROBES;CONFIGURATION-DEPENDENT;"
-               "LATTICE-SUM-ZERO-AT-%d-OF-%d;VANISHES-ON-THE-HOMOGENEOUS-"
-               "SECTOR-AT-%d;L-AND-D-INDEPENDENT-AT-%d-ARENAS"
-               % (dp - dv, dp, dl, dp, dh_hom, len(arenas)))
+    dhom = sum(r["vanishing_probes"] for r in dfr if r["homogeneous"])
+    dhomp = sum(r["probes"] for r in dfr if r["homogeneous"])
+    dz = [r for r in dgr if r["declared_degenerate"]]
+    dc = [r for r in dgr if not r["declared_degenerate"]]
+    other = [r for r in orr if r["order"] == BRACKET_ORDERS[1]]
+    out.append("DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET-AT-"
+               "D-TOT;CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-"
+               "%d-OF-%d-PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-NONZERO-"
+               "AT-%d-OF-%d;VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-%d-OF-%d;"
+               "DEGENERATE-PROBE-BUILT-AND-MEASURED=%d-OF-%d-VANISH;"
+               "CONSTANT-PROFILE-VANISHES-AT-%d-OF-%d;"
+               "OTHER-BRACKET-ORDER-NONZERO-AT-%d-OF-%d;"
+               "NON-CONSTANT-TANGENTIAL-FIELDS-OUTSIDE-AT-%d-OF-%d;"
+               "L-AND-D-INDEPENDENT-AT-%d-ARENAS"
+               % (dp - dv, dp, dp - dl, dp, dhom, dhomp,
+                  sum(r["vanishing_probes"] for r in dz),
+                  sum(r["probes"] for r in dz),
+                  sum(r["vanishing_probes"] for r in dc),
+                  sum(r["probes"] for r in dc),
+                  sum(r["nonzero"] for r in other),
+                  sum(r["probes"] for r in other),
+                  sum(r["tally"].get("OUTSIDE", 0) for r in ncr),
+                  sum(r["probes"] for r in ncr),
+                  len(arenas)))
     cv = {}
+    mult = 0
     for c in cnv:
         k = (c["order"], c["difference"])
         a, b = cv.get(k, (0, 0))
-        cv[k] = (a + c["front_matches"], b + c["brackets"])
+        cv[k] = (a + c["front_matches"], b + c["front_probes"])
+        mult += c["record_rule_multiplicity"] * c["front_probes"]
     full = sorted(k for k in cv if cv[k][0] == cv[k][1] and cv[k][1] > 0)
+    probes = sum(v[1] for v in cv.values()) // len(cv)
     out.append("CONVENTION=FRONT-SECTOR-REPRODUCES-L_v-N-AT-%s;"
-               "MATCHING-CONVENTIONS=%d-OF-%d;%s"
-               % (",".join("%s/%s" % k for k in full) if full else "NO-CONVENTION",
-                  len(full), len(cv),
+               "MATCHING-CONVENTIONS=%d-OF-%d;%s;DENOMINATOR=DISTINCT-FRONT-"
+               "PROBES-%d(RECORD-AND-RULE-INDEPENDENCE-MEASURED;x%d-"
+               "MULTIPLICITY-DISCLOSED-NOT-FOLDED-IN)"
+               % (",".join("%s/%s" % k for k in full) if full
+                  else "NO-CONVENTION", len(full), len(cv),
                   ";".join("%s/%s:%d-OF-%d" % (k[0], k[1], cv[k][0], cv[k][1])
-                           for k in sorted(cv))))
+                           for k in sorted(cv)),
+                  probes, (mult // len(cv)) // max(1, probes)))
     out.append("DD-BRACKET=LATTICE-TRANSLATIONS-CLOSE-AT-%d-OF-%d-AT-BOTH-"
                "REALISATIONS(FORCED:[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-"
-               "CONTROL,MUTANT-FLIPS-IT)"
-               % (sum(r["closing"] for r in ddr), dd_tot))
-    lm = R["summary"]["lapse_coordinate_moves"]
-    lcm = R["summary"]["lapse_coordinate_moves_coefficient"]
-    out.append("LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;"
-               "ENLARGEMENT-PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-%d-CELLS;"
-               "COEFFICIENT-CLASS-MOVES-AT-%d-CELLS" % (len(lm), len(lcm)))
+               "CONTROL,MUTANT-FLIPS-IT);INFORMATIVE-BRACKETS(TWO-DISTINCT-"
+               "NONZERO-GENERATORS)=%d-OF-%d;NONABELIAN-CORE-UNTESTED-BY-"
+               "CONSTRUCTION"
+               % (sum(r["closing"] for r in ddr), dd_tot,
+                  sum(r["informative"] for r in ddr), dd_tot))
+    out.append("CORRESPONDENCE=RELATION-I=EXACT-IN-FORM-ANALOGICAL-IN-STATUS"
+               "(A-CENTRAL-EXTENSION-WITH-A-BACKGROUND-COEFFICIENT:THE-"
+               "COEFFICIENT-DOES-NOT-MOVE-WITH-THE-STATE-AT-%d-OF-%d-PAIRS);"
+               "RELATION-II=PARTIAL(FRONT-EXACT-AT-1-OF-4-CONVENTIONS-AND-AT-"
+               "CONSTANT-v;REGISTER-DEFECTIVE-AT-D-TOT,ABSORBED-AT-D-FULL-ON-"
+               "THE-HOMOGENEOUS-SECTOR,ABSENT-AT-D-REG);RELATION-III="
+               "CONTENTLESS-ABELIAN([v,w]=0-AT-ALL-%d-BRACKETS);"
+               "THE-POSITIVE-CLAIM=FIXED-BACKGROUND-COVARIANCE-WITH-GR-"
+               "BRACKET-FORM;THE-UNQUALIFIED-NAME-HDA-IS-NOT-USED"
+               % (ci_ok, ci_p, dd_tot))
+    moved = []
+    for (d, L) in arenas:
+        for rule in sorted(set(r["rule"] for r in cen)):
+            for nm in sorted(set(r["record"] for r in cen
+                                 if r["d"] == d and r["L"] == L)):
+                aa = [r for r in cen if r["d"] == d and r["L"] == L
+                      and r["rule"] == rule and r["record"] == nm
+                      and r["scope"] == "BASE"]
+                bb = [r for r in cen if r["d"] == d and r["L"] == L
+                      and r["rule"] == rule and r["record"] == nm
+                      and r["scope"] == "TRANSLATES"]
+                if aa and bb and (aa[0]["metric_match"] != bb[0]["metric_match"]
+                                  or aa[0]["max_abs"] != bb[0]["max_abs"]):
+                    moved.append((aa[0]["max_abs"], bb[0]["max_abs"]))
+    ncmp = len(set((r["d"], r["L"], r["rule"], r["record"]) for r in cen))
+    ca = {}
+    for c in coe:
+        ca[(c["d"], c["L"], c["scope"], c["rule"], c["record"])] = \
+            c["coefficient"]["class"]
+    cmv = 0
+    for k, v in ca.items():
+        k2 = (k[0], k[1], "TRANSLATES" if k[2] == "BASE" else "BASE", k[3],
+              k[4])
+        if k2 in ca and ca[k2] != v:
+            cmv += 1
+    out.append("LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-"
+               "PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-%d-OF-%d-COMPARISONS"
+               "(ALL-UPWARD-AT-%d);COEFFICIENT-CLASS-MOVES-AT-%d-CELLS"
+               "(FORCED-BY-(S))"
+               % (len(moved), ncmp,
+                  len([m for m in moved if Fr(m[1]) > Fr(m[0])]), cmv))
     out.append("REALISATION=D-REG:%s;D-TOT:%s"
                % ("+".join(sorted(set(k[1] for k in tal if k[0] == "D-REG"))),
                   "+".join(sorted(set(k[1] for k in tal if k[0] == "D-TOT")))))
-    tr = R["summary"]["trajectory"]
-    out.append("LSWEEP=%s;COEFFICIENT-CLASS-CONSTANT-ALONG-L=%s"
-               % (",".join("d%dL%d/%s:%d-of-%d-close"
-                           % (t["d"], t["L"], t["scope"][0], t["closing"],
-                              t["cells"]) for t in tr),
-                  str(len(set((t["d"], t["metric_reading"], t["cells"])
-                              for t in tr))
-                      == len(set(t["d"] for t in tr))).upper()))
+    tr = []
+    for (d, L) in arenas:
+        for sc in sorted(set(r["scope"] for r in cen)):
+            sub = [r for r in cen if r["d"] == d and r["L"] == L
+                   and r["scope"] == sc]
+            sc_c = [c for c in coe if c["d"] == d and c["L"] == L
+                    and c["scope"] == sc]
+            tr.append((d, L, sc, len(sub),
+                       len([r for r in sub if r["basis_closes"]]),
+                       len([r for r in sub if r["metric_match"]]),
+                       len([c for c in sc_c
+                            if c["coefficient"]["metric_reading"]]),
+                       len([c for c in sc_c
+                            if c["coefficient"]["class"] == CLASS_MRSV]),
+                       len([c for c in sc_c
+                            if c["coefficient"]["class"] == CLASS_NX]),
+                       len([r for r in sub if r["rigid"]]),
+                       max([Fr(r["max_abs"]) for r in sub],
+                           default=Fr(0)).__str__()))
+    key = [t[:1] + t[3:10] for t in tr]
+    out.append("LSWEEP=%s;STRUCTURE-CONSTANT-ALONG-L=%s(FORCED:class=f(W,B),"
+               "NO-L-IN-IT);MAX-RESIDUAL-MOVES=%s(MEASURED)"
+               % (",".join("d%dL%d/%s:%d-in-basis-of-%d"
+                           % (t[0], t[1], t[2][0], t[4], t[3]) for t in tr),
+                  str(len(set(key)) == len(set(t[0] for t in key))).upper(),
+                  ",".join(t[10] for t in tr)))
     pos = ctl["positive"]
     negc = ctl["negative"]
     cov = ctl["covariance"]
-    out.append("CONTROLS=CHART-GROUP-CLOSES-AT-%d-OF-%d-ARENAS;"
-               "TRANSLATION-EQUIVARIANT-AT-%d-OF-%d;SCRAMBLED-VIOLATES-AT-%d-"
-               "OF-%d;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-%d-CELLS;"
+    out.append("CONTROLS=CHART-GROUP-CLOSES-AT-%d-OF-%d-ARENAS;TRANSLATION-"
+               "EQUIVARIANT-AT-%d-OF-%d(FORCED:MODULAR-ARITHMETIC);SCRAMBLED-"
+               "VIOLATES-AT-%d-OF-%d;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-"
+               "AT-%d-CELLS(NON-VACUITY:%d-DISTINCT-NONZERO-BASE-CELLS);"
                "SCRAMBLED-BREAKS-AT-%d-CELLS"
                % (len([c for c in ctl["chart_group"] if c["closes"]]),
                   len(ctl["chart_group"]),
@@ -2528,8 +3995,36 @@ def reconstruct_verdict_from_receipt(R):
                   sum(n["total_cells"] for n in negc),
                   sum(c["covariant_cells"] for c in cov
                       if c["lattice"] == "RECORD"),
+                  sum(c["distinct_nonzero_base_cells"] for c in cov
+                      if c["lattice"] == "RECORD"),
                   sum(c["violating_cells"] for c in cov
                       if c["lattice"] == "SCRAMBLED")))
+    dups = []
+    dstr = {}
+    for r in stx["duplicates"]:
+        dstr["d%d" % r["d"]] = (r["declared_rules"],
+                                len(r["distinct_in_the_HH_weight"]),
+                                len(r["distinct_in_the_register_drag"]))
+        for grp in r["distinct_in_the_HH_weight"]:
+            if len(grp) > 1:
+                dups.append(("HH", r["d"], tuple(grp)))
+        for grp in r["distinct_in_the_register_drag"]:
+            if len(grp) > 1:
+                dups.append(("REGISTER", r["d"], tuple(grp)))
+    out.append("SCOPE=FINITE-EXTENT-ONLY(NO-CONTINUUM-CLAIM);WEIGHT=%d-ONLY"
+               "(w=1-DECLARED-NOT-SWEPT);TANGENTIAL-FIELDS=CONSTANT-IN-THE-"
+               "CENSUS(BIJECTION-REQUIREMENT)+%d-DECLARED-NON-CONSTANT-"
+               "BIJECTIVE-PROBES;DISTINCT-RULES=%s;DUPLICATE-RULE-GROUPS=%s;"
+               "SIGNATURE-NOT-MEASURED;HKT-REPRESENTATION-LEG-NOT-ATTEMPTED"
+               % (arena["density_weight"],
+                  len([r for r in ncr if r["site_map_is_a_bijection"]
+                       and r["negative_inverts_it"]
+                       and not r["field_is_constant"]]),
+                  ",".join("%s:%d-of-%d-in-HH,%d-of-%d-in-the-register-sector"
+                           % (k, dstr[k][1], dstr[k][0], dstr[k][2],
+                              dstr[k][0]) for k in sorted(dstr)),
+                  "+".join("%s@d%d:%s" % (g[0], g[1], "=".join(g[2]))
+                           for g in sorted(set(dups), key=str))))
     return head + "<" + "|".join(out) + ">"
 
 
@@ -2547,18 +4042,22 @@ def build_signatures(decl, res, S, rec_out, lg, ctl):
     nrec = len(set(r["record"] for r in res["census"]))
     nrul = len(set(r["rule"] for r in res["census"]))
     P["arena_signature"] = (
-        "SITES=%s;LINKS=%s;RECORDS=%d;RULES=%d;LAPSE-SCOPES=%s"
+        "SITES=%s;LINKS=%s;RECORDS=%d;RULES=%d;LAPSE-SCOPES=%s;WEIGHT=%d"
         % (",".join("d%dL%d:%d" % (d, L, L ** d) for d, L in arenas),
            ",".join("d%d:%d" % (d, len(link_set(d))) for d in ds),
-           nrec, nrul, ",".join(sorted(LAPSE_SCOPES))))
+           nrec, nrul, ",".join(sorted(LAPSE_SCOPES)),
+           decl["density_weight"]))
     exc = sorted(tuple(a) for a in lg["excluded_arenas"])
     P["lgate_signature"] = (
         "MIN-L=%d;EXCLUDED=%s;REASON=OVERLAP-GRAPH-COMPLETE-AT-%s;"
-        "INHERITED-FRACTIONS-RECOMPUTED=%d"
+        "CRITERION-READ-BY-PATH-FROM-THE-R2-TERMINAL-RECEIPT;"
+        "CRITERION-IMPLEMENTATION-CONTROLLED=%s;FRACTIONS-RECOMPUTED-HERE=%d"
         % (CENSUS_L_MIN, ",".join("d%dL%d" % (d, L) for d, L in exc),
            ",".join("%d-OF-%d" % (r["drawn_pairs"], r["all_pairs"])
                     for r in lg["rows"] if (r["d"], r["L"]) in exc),
-           len(lg["fractions_recomputed_and_matched_in_the_r2_adjudication"])))
+           str(lg["criterion_probe"]
+               ["implementation_agrees_with_the_inherited_criterion"]).upper(),
+           len(lg["overlap_fractions_recomputed_here"])))
     P["recovery_signature"] = (
         "CLOSURE-%d-OF-%d;SECTOR-%d-OF-%d;RANK;READOUT-DET-%s;GENERAL-D;"
         "COUNT-LATTICE;DIAGONAL-SECTOR-%d-RECORDS-CLOSE-AT-THE-LINK-LOCAL-RULE"
@@ -2567,58 +4066,139 @@ def build_signatures(decl, res, S, rec_out, lg, ctl):
            rec_out["sector_cells_compared"] - len(rec_out["sector_mismatches"]),
            rec_out["sector_cells_compared"], rec_out["readout"]["determinant"],
            len(rec_out["diagonal_sector_closes_at_the_link_local_rule"])))
+    P["spanning_signature"] = (
+        "MEASURED;OMEGA-SPANS-THE-FULL-LINK-SPACE-AT-%d-OF-%d-SITES;"
+        "ROWS=%d;RECORD-INDEPENDENT-AT-%d-OF-%d;"
+        "THE-ONE-LOAD-BEARING-MEASUREMENT-OF-THE-HH-HALF"
+        % (S["spanning_sites_at_full_rank"], S["spanning_sites"],
+           S["spanning_rows"], S["spanning_record_independent"],
+           S["spanning_rows"]))
     P["hh_signature"] = (
         "LANDS-IN-THE-TANGENTIAL-FAMILY-AT-%d-OF-%d-CELLS(FORCED:w-LINEAR-IN-"
-        "THE-FRONT);POSITIVE-CONTROL-CLOSES-AT-%d-OF-%d;NORMAL-CHANNEL-EMPTY"
-        "(FORCED)"
-        % (S["census_cells"], S["census_cells"], S["positive_control_closes"],
-           S["positive_control_census_cells"]))
+        "THE-FRONT);NORMAL-CHANNEL-EMPTY(FORCED);"
+        "STRUCTURE-THEOREM-rho=(W-B).Omega-VERIFIED-AT-%d-OF-%d-CELLS(FORCED);"
+        "CENTRAL-EXTENSION-H[N]H[M]=T_w[N,M].H[N+M]-AT-%d-OF-%d;"
+        "COMMUTATOR-CONFIGURATION-INDEPENDENT-AT-%d-OF-%d"
+        % (S["census_cells"], S["census_cells"],
+           res["two_route"]["class_prediction_cells"], S["census_cells"],
+           S["central_extension_holds"], S["central_extension_cells"],
+           S["commutator_configuration_independent"], S["commutator_pairs"]))
     P["coeff_signature"] = (
-        "EXTRACTED-FROM-THE-COMMUTATORS;CLASSES=%s;POSITIVE-CONTROL-METRIC-"
-        "READING-AT-%d-OF-%d(FORCED-VALUE,MEASURED-UNIQUENESS);SITE-VARYING-"
-        "ON-THE-INHOMOGENEOUS-RECORDS-AT-%d-OF-%d"
+        "EXTRACTED-FROM-THE-COMMUTATORS(UNIQUE-BY-(S));CLASSES=%s(FORCED:"
+        "class=f(W,B));POSITIVE-CONTROL-METRIC-READING-AT-%d-OF-%d(FORCED-"
+        "VALUE-AND-FORCED-CLASS);SITE-VARYING-METRIC-ON-THE-INHOMOGENEOUS-"
+        "RECORDS-AT-%d-OF-%d-CELLS-AT-RULES=%s"
         % (";".join("%s:%d" % (k, v) for k, v in
                     sorted(S["coefficient_classes"].items())),
            S["positive_control_metric_reading"], S["positive_control_cells"],
-           S["inhomogeneous_site_varying_metric"], S["inhomogeneous_cells"]))
-    badrules = sorted(set(r["rule"] for r in res["census"] if not r["closes"]))
+           S["inhomogeneous_site_varying_metric"], S["inhomogeneous_cells"],
+           ",".join(S["site_varying_metric_rules"])))
+    P["hhclosure_signature"] = (
+        "AGAINST-THE-DECLARED-GENERATOR-BASIS;IN-THE-BASIS-AT-%d-OF-%d-CELLS;"
+        "FORMS=%s;RIGID-CONSTANT-NON-METRIC-REACHED-AT-%d-CELLS;"
+        "METRIC-MATCH-AT-%d-OF-%d;SYNTHETIC-RIGID-HEAD=%s"
+        % (S["basis_closing_cells"], S["census_cells"],
+           ";".join("%s:%d" % (k, v)
+                    for k, v in sorted(S["closure_forms"].items())),
+           S["rigid_cells"], S["metric_match_cells"], S["census_cells"],
+           rigid_probe()[1]))
+    badrules = sorted(set(r["rule"] for r in res["census"]
+                          if not r["metric_match"]))
     P["hhres_signature"] = (
-        "NONZERO-AT-%d-OF-%d-CELLS;RULES=%s;NOT-EXTRACTABLE-AT-%d-CELLS"
-        "(ARCH-B:OUTSIDE-THE-AXIS-COVECTOR-FORM,FORCED);MAX=%s"
+        "NONZERO-AT-%d-OF-%d-CELLS;RULES=%s;NOT-IN-THE-BASIS-AT-%d-CELLS"
+        "(RULES-WITH-A-DIAGONAL-LINK-COLUMN=%s;%d-OF-%d-ARCHITECTURE-B-CELLS,"
+        "FORCED);MAX=%s"
         % (S["defecting_cells"], S["census_cells"],
            ",".join(badrules) if badrules else "NONE",
            S["not_extractable_cells"],
+           ",".join(S["not_extractable_rules"]),
+           S["not_extractable_cells"], S["architecture_B_cells"],
            max([Fr(r["max_abs"]) for r in res["census"]],
                default=Fr(0)).__str__()))
     P["dh_signature"] = (
-        "%s(D-REG-IDENTITY-FORCED);HDA-REQUIRES-H[L_v-N];IN-CONSTRAINT-AT-"
-        "%d-OF-%d"
+        "%s(D-REG-IDENTITY-FORCED);THE-RELATION-REQUIRES-H[L_v-N];"
+        "IN-CONSTRAINT-AT-%d-OF-%d"
         % (";".join("%s:%s" % (k, v) for k, v in sorted(S["dh_tally"].items())),
            S["dh_in_constraint"], S["dh_brackets"]))
+    P["realisation_census_signature"] = (
+        "ALL-%d-(a,b,c)-REALISATIONS-BUILT-FROM-THE-TWO-DECLARED-ATOMS;"
+        "CLASSIFICATIONS=%d;IN-CONSTRAINT-AT-%d-OF-%d(ABSOLUTE);"
+        "ABSORBING-REALISATIONS=%d;OUTSIDE-ON-THE-HOMOGENEOUS-SECTOR-AT-%d-"
+        "OF-%d;CURVATURE-SUPPORTED-RESIDUE=%d-CELLS;"
+        "RESIDUE-IS-EXACTLY-THE-INHOMOGENEOUS-RECORDS=%s;REGISTER-SHIFT-INERT=%s"
+        % (S["realisation_count"], S["realisation_classifications"],
+           S["realisation_in_constraint"], S["realisation_classifications"],
+           len(S["absorbing_realisations"]),
+           S["realisation_outside_on_the_homogeneous_sector"],
+           S["realisation_homogeneous_classifications"],
+           S["curvature_supported_residue_count"],
+           str(S["residue_is_exactly_the_inhomogeneous_records"]).upper(),
+           str(S["realisation_b_is_inert"]).upper()))
+    P["covariance_signature"] = (
+        "THEOREM=D_full[v].H_g[N].D_full[v]^-1=H_{S_v-g}[S_v-N];"
+        "HOLDS-AT-%d-OF-%d-CELLS;FAILS-AT-D-TOT-AT-%d-OF-%d;"
+        "SURVIVING-OBSTRUCTION=THE-RECORD-DOES-NOT-TRANSPORT;"
+        "THE-ARENA-CARRIES-A-FIXED-BACKGROUND"
+        % (S["covariance_d_full"], S["covariance_cells"],
+           S["covariance_cells"] - S["covariance_d_tot"],
+           S["covariance_cells"]))
     P["defect_signature"] = (
-        "REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET;CLOSED-FORM="
-        "w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-%d-OF-%d-PROBES;"
-        "CONFIGURATION-DEPENDENT;LATTICE-SUM-ZERO-AT-%d-OF-%d;VANISHES-ON-"
-        "THE-HOMOGENEOUS-SECTOR-AT-%d;L-AND-D-INDEPENDENT-AT-%d-ARENAS"
+        "REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET-AT-D-TOT;"
+        "CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-%d-OF-%d-"
+        "PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-NONZERO-AT-%d-OF-%d;"
+        "VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-%d-OF-%d;"
+        "DEGENERATE-PROBE-BUILT-AND-MEASURED=%d-OF-%d-VANISH;"
+        "CONSTANT-PROFILE-VANISHES-AT-%d-OF-%d;"
+        "OTHER-BRACKET-ORDER-NONZERO-AT-%d-OF-%d;"
+        "NON-CONSTANT-TANGENTIAL-FIELDS-OUTSIDE-AT-%d-OF-%d;"
+        "L-AND-D-INDEPENDENT-AT-%d-ARENAS"
         % (S["defect_probes"] - S["defect_vanishing_probes"],
-           S["defect_probes"], S["defect_lattice_sum_zero"],
+           S["defect_probes"],
+           S["defect_probes"] - S["defect_lattice_sum_zero"],
            S["defect_probes"], S["defect_vanishes_on_homogeneous"],
+           S["defect_homogeneous_probes"],
+           S["degenerate_zero_vanishing"], S["degenerate_zero_probes"],
+           S["constant_profile_vanishing"], S["constant_profile_probes"],
+           S["order_probes"][BRACKET_ORDERS[1]][0],
+           S["order_probes"][BRACKET_ORDERS[1]][1],
+           S["nonconstant_outside"], S["nonconstant_probes"],
            len(arenas)))
     cv = S["convention_sweep"]
     full = sorted(k for k in cv if cv[k][0] == cv[k][1] and cv[k][1] > 0)
     P["convention_signature"] = (
-        "FRONT-SECTOR-REPRODUCES-L_v-N-AT-%s;MATCHING-CONVENTIONS=%d-OF-%d;%s"
+        "FRONT-SECTOR-REPRODUCES-L_v-N-AT-%s;MATCHING-CONVENTIONS=%d-OF-%d;%s;"
+        "DENOMINATOR=DISTINCT-FRONT-PROBES-%d(RECORD-AND-RULE-INDEPENDENCE-"
+        "MEASURED;x%d-MULTIPLICITY-DISCLOSED-NOT-FOLDED-IN)"
         % (",".join(full) if full else "NO-CONVENTION", len(full), len(cv),
            ";".join("%s:%d-OF-%d" % (k, cv[k][0], cv[k][1])
-                    for k in sorted(cv))))
+                    for k in sorted(cv)),
+           S["convention_front_probes"],
+           S["convention_derived_by_multiplication"]
+           // max(1, S["convention_front_probes"])))
     P["dd_signature"] = (
         "LATTICE-TRANSLATIONS-CLOSE-AT-%d-OF-%d-AT-BOTH-REALISATIONS(FORCED:"
-        "[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT)"
-        % (S["dd_closing"], S["dd_total"]))
+        "[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT);"
+        "INFORMATIVE-BRACKETS(TWO-DISTINCT-NONZERO-GENERATORS)=%d-OF-%d;"
+        "NONABELIAN-CORE-UNTESTED-BY-CONSTRUCTION"
+        % (S["dd_closing"], S["dd_total"], S["dd_informative"],
+           S["dd_total"]))
+    P["correspondence_signature"] = (
+        "RELATION-I=EXACT-IN-FORM-ANALOGICAL-IN-STATUS(A-CENTRAL-EXTENSION-"
+        "WITH-A-BACKGROUND-COEFFICIENT:THE-COEFFICIENT-DOES-NOT-MOVE-WITH-THE-"
+        "STATE-AT-%d-OF-%d-PAIRS);RELATION-II=PARTIAL(FRONT-EXACT-AT-1-OF-4-"
+        "CONVENTIONS-AND-AT-CONSTANT-v;REGISTER-DEFECTIVE-AT-D-TOT,ABSORBED-"
+        "AT-D-FULL-ON-THE-HOMOGENEOUS-SECTOR,ABSENT-AT-D-REG);"
+        "RELATION-III=CONTENTLESS-ABELIAN([v,w]=0-AT-ALL-%d-BRACKETS);"
+        "THE-POSITIVE-CLAIM=FIXED-BACKGROUND-COVARIANCE-WITH-GR-BRACKET-FORM;"
+        "THE-UNQUALIFIED-NAME-HDA-IS-NOT-USED"
+        % (S["commutator_configuration_independent"], S["commutator_pairs"],
+           S["dd_total"]))
     P["lapse_signature"] = (
         "DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-PRINTED;"
-        "RESIDUAL-MAGNITUDE-MOVES-AT-%d-CELLS;COEFFICIENT-CLASS-MOVES-AT-%d-CELLS"
-        % (len(S["lapse_coordinate_moves"]),
+        "RESIDUAL-MAGNITUDE-MOVES-AT-%d-OF-%d-COMPARISONS(ALL-UPWARD-AT-%d);"
+        "COEFFICIENT-CLASS-MOVES-AT-%d-CELLS(FORCED-BY-(S))"
+        % (len(S["lapse_coordinate_moves"]), S["lapse_comparisons"],
+           S["lapse_moves_upward"],
            len(S["lapse_coordinate_moves_coefficient"])))
     P["realisation_signature"] = (
         "D-REG:%s;D-TOT:%s"
@@ -2628,16 +4208,18 @@ def build_signatures(decl, res, S, rec_out, lg, ctl):
                                if k.startswith("D-TOT/"))))))
     tr = S["trajectory"]
     P["lsweep_signature"] = (
-        "%s;COEFFICIENT-CLASS-CONSTANT-ALONG-L=%s"
-        % (",".join("d%dL%d/%s:%d-of-%d-close"
-                    % (t["d"], t["L"], t["scope"][0], t["closing"], t["cells"])
-                    for t in tr),
-           str(len(set((t["d"], t["metric_reading"], t["cells"])
-                       for t in tr)) == len(set(t["d"] for t in tr))).upper()))
+        "%s;STRUCTURE-CONSTANT-ALONG-L=%s(FORCED:class=f(W,B),NO-L-IN-IT);"
+        "MAX-RESIDUAL-MOVES=%s(MEASURED)"
+        % (",".join("d%dL%d/%s:%d-in-basis-of-%d"
+                    % (t["d"], t["L"], t["scope"][0], t["basis_closing"],
+                       t["cells"]) for t in tr),
+           str(S["structure_constant_along_L"]).upper(),
+           ",".join("%s" % t["max_residual"] for t in tr)))
     P["controls_signature"] = (
         "CHART-GROUP-CLOSES-AT-%d-OF-%d-ARENAS;TRANSLATION-EQUIVARIANT-AT-%d-"
-        "OF-%d;SCRAMBLED-VIOLATES-AT-%d-OF-%d;RESIDUAL-COVARIANT-ON-THE-"
-        "RECORD-LATTICE-AT-%d-CELLS;SCRAMBLED-BREAKS-AT-%d-CELLS"
+        "OF-%d(FORCED:MODULAR-ARITHMETIC);SCRAMBLED-VIOLATES-AT-%d-OF-%d;"
+        "RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-%d-CELLS(NON-VACUITY:%d-"
+        "DISTINCT-NONZERO-BASE-CELLS);SCRAMBLED-BREAKS-AT-%d-CELLS"
         % (len([c for c in ctl["chart_group"] if c["closes"]]),
            len(ctl["chart_group"]),
            sum(p["equivariant_cells"] for p in ctl["positive"]),
@@ -2646,8 +4228,25 @@ def build_signatures(decl, res, S, rec_out, lg, ctl):
            sum(n["total_cells"] for n in ctl["negative"]),
            sum(c["covariant_cells"] for c in ctl["covariance"]
                if c["lattice"] == "RECORD"),
+           sum(c["distinct_nonzero_base_cells"] for c in ctl["covariance"]
+               if c["lattice"] == "RECORD"),
            sum(c["violating_cells"] for c in ctl["covariance"]
                if c["lattice"] == "SCRAMBLED")))
+    P["scope_signature"] = (
+        "FINITE-EXTENT-ONLY(NO-CONTINUUM-CLAIM);WEIGHT=%d-ONLY(w=1-DECLARED-"
+        "NOT-SWEPT);TANGENTIAL-FIELDS=CONSTANT-IN-THE-CENSUS(BIJECTION-"
+        "REQUIREMENT)+%d-DECLARED-NON-CONSTANT-BIJECTIVE-PROBES;"
+        "DISTINCT-RULES=%s;DUPLICATE-RULE-GROUPS=%s;"
+        "SIGNATURE-NOT-MEASURED;HKT-REPRESENTATION-LEG-NOT-ATTEMPTED"
+        % (decl["density_weight"], S["nonconstant_fields_bijective"],
+           ",".join("%s:%d-of-%d-in-HH,%d-of-%d-in-the-register-sector"
+                    % (k, S["distinct_rules"][k]["distinct_in_the_HH_weight"],
+                       S["distinct_rules"][k]["declared"],
+                       S["distinct_rules"][k]["distinct_in_the_register_drag"],
+                       S["distinct_rules"][k]["declared"])
+                    for k in sorted(S["distinct_rules"])),
+           "+".join("%s@d%d:%s" % (g[0], g[1], "=".join(g[2]))
+                    for g in S["duplicate_rule_groups"])))
     P["summary"] = S
     return P
 
@@ -2665,6 +4264,7 @@ def run():
          "operator and no banned numeric import anywhere in this source",
          len(off) == 0, {"offences": off[:6]})
 
+    n_text = verify_text_anchors()
     n_anch = verify_anchors()
     n_path = verify_path_anchors()
     derive_ha_code_anchor()
@@ -2672,20 +4272,45 @@ def run():
          "every declared anchor row was actually verified: the counts are "
          "derived from the declaration tables, never typed",
          n_anch == len(ANCHOR_ROWS) and n_path == len(PATH_ANCHOR_ROWS)
-         and len(ANCHORS) == n_anch + n_path + 1,
-         {"file_byte": n_anch, "declared_file_byte": len(ANCHOR_ROWS),
+         and n_text == len(TEXT_ANCHOR_ROWS)
+         and len(ANCHORS) == n_anch + n_path + n_text + 1,
+         {"verbatim_text": n_text, "declared_text": len(TEXT_ANCHOR_ROWS),
+          "file_byte": n_anch, "declared_file_byte": len(ANCHOR_ROWS),
           "path_value": n_path, "declared_path_value": len(PATH_ANCHOR_ROWS),
           "registered": len(ANCHORS)})
+    consumers = set(t[3] for t in TEXT_ANCHOR_ROWS)
+    gate("G-NO-UNANCHORED-RUNTIME-INPUT",
+         "every file this instrument reads at run time is a hash-pinned "
+         "artifact carrying BOTH a byte anchor and a value anchor (path-value "
+         "for JSON, verbatim-text context window for prose), or this unit's "
+         "own owned artifact; no mutable repo state -- no ledger, no STATUS, "
+         "no other unit's working file -- is read anywhere (RUNBOOK section "
+         "14 addendum, v14 #46)",
+         (sorted(set(r[1] for r in TEXT_ANCHOR_ROWS))
+          == ["v14/note-r2-adjudication.md"]
+          and all(any(a[1] == r[1] for a in ANCHOR_ROWS)
+                  for r in TEXT_ANCHOR_ROWS)
+          and all(any(a[1] == r[1] for a in ANCHOR_ROWS)
+                  for r in PATH_ANCHOR_ROWS)
+          and RUNTIME_READS == sorted(set(
+              [r[1] for r in ANCHOR_ROWS] + ["v13/code/ha_successor_exact.py",
+                                             "v14/paper-03-relativity-rung.md"]))),
+         {"declared_runtime_reads": RUNTIME_READS,
+          "text_anchor_consumers": sorted(consumers)}) \
+        if MUTANT != "runtime-read-undeclared" else gate(
+            "G-NO-UNANCHORED-RUNTIME-INPUT",
+            "every input this instrument reads at run time is anchored",
+            False, {"undeclared": "v14/LOG.md"})
     say("--- 1. ANCHORS ---")
-    say("  file-byte anchors: %d ; path-value anchors: %d ; derived: 1"
-        % (n_anch, n_path))
+    say("  verbatim-text anchors: %d ; file-byte anchors: %d ; path-value "
+        "anchors: %d ; derived: 1" % (n_text, n_anch, n_path))
     for a in ANCHORS:
         say("    %-28s %-10s %s" % (a["name"], a["kind"][:10], a["artifact"]))
     say()
 
     rec7 = read_json(I7)
     decl = rec7["declarations"]
-    adj = read_text("v14/note-r2-adjudication.md")
+    r2 = read_json("v14/code/r2_manifold_receipt.json")
 
     # ---- THE ARENA, PRINTED AS DATA (RUNBOOK section 15) -----------------
     say("--- 2. THE DECLARED ARENA (data, read from the pinned I7 receipt) ---")
@@ -2711,9 +4336,31 @@ def run():
                                 "from a structure CONSTANT at d = 3",
         "rules_d2": [r[0] for r in RULE_TABLE], "rules_d3": decl["rules_d3"],
         "density_weight": decl["density_weight"],
-        "tangential_realisations": ["D-REG (primary)", "D-TOT (flip test)"],
+        "density_weight_scope": "w = 0 ONLY.  I7 also declares a weight flip "
+                                "w = 1 (anchored at P-I7-WEIGHTFLIP); this "
+                                "unit does not sweep it, and every "
+                                "coefficient statement below is at w = 0",
+        "tangential_realisations": ["D-REG = (0,1,0) (I7's primary)",
+                                    "D-TOT = (1,1,0) (I7's flip test)",
+                                    "D-FULL = (1,1,1) (the register "
+                                    "transported along the same declared "
+                                    "site map)",
+                                    "and the other 24 of the 27 (a,b,c) "
+                                    "triples, all censused"],
+        "tangential_field_scope": "CONSTANT fields only in the bracket "
+                                  "census, because x -> x + v(x) must be a "
+                                  "bijection of the site set; two DECLARED "
+                                  "non-constant bijective fields are run "
+                                  "separately.  Consequence: the Lie bracket "
+                                  "[v,w] vanishes identically on the censused "
+                                  "family, so the third relation carries no "
+                                  "discriminating content here",
         "census_arenas": [list(a) for a in CENSUS_ARENAS],
         "dense_route_arenas": [list(a) for a in DENSE_ARENAS],
+        "literal_route_arenas": [list(a) for a in LITERAL_ROUTE_ARENAS],
+        "realisation_arenas": [list(a) for a in REALISATION_ARENAS],
+        "covariance_arenas": [list(a) for a in COVARIANCE_ARENAS],
+        "covariance_probe_lapses": COVARIANCE_PROBE_LAPSES,
         "literal_probe_lapses": LITERAL_PROBE_LAPSES,
         "dh_probe_convention": "d = 2: the whole declared family; d = 3: I7's "
                                "own probe convention -- the first %d site "
@@ -2732,7 +4379,10 @@ def run():
 
     # ---- THE L GATE -------------------------------------------------------
     say("--- 3. THE L GATE: L >= %d, WITH ITS MEASURED REASON ---" % CENSUS_L_MIN)
-    lg = l_gate_reason(adj, read_text("v14/LOG.md"))
+    lg = l_gate_reason(
+        read_by_path(r2, ("locality_census", "criterion")),
+        read_by_path(r2, ("locality_census", "count_locality_B")),
+        read_by_path(r2, ("locality_census", "count_refuses_B")))
     for r in lg["rows"]:
         say("  d=%d L=%d  |X|=%3d  drawn %5d of %5d  complete=%-5s  "
             "meets-R2-criterion=%-5s  censused=%s"
@@ -2747,17 +4397,35 @@ def run():
                  if (r["d"], r["L"]) in CENSUS_ARENAS),
          {"excluded": lg["excluded_arenas"]})
     gate("G-L-GATE-INHERITED-FACTS",
-         "the locality fractions the R2 adjudication states for this lattice "
-         "are RECOMPUTED here and found in its text -- the inherited fact is "
-         "re-confirmed as an anchor by an independent route, not re-derived "
-         "as a new result",
-         len(lg["fractions_recomputed_and_matched_in_the_r2_adjudication"]) >= 3
-         and lg["adjudication_mentions_L_ge_4"]
-         and len(lg["inherited_link_profiles_quoted_in_the_ruling"]) == 2,
-         {"matched": lg["fractions_recomputed_and_matched_in_the_r2_adjudication"],
-          "profiles": lg["inherited_link_profiles_quoted_in_the_ruling"]})
-    say("  recomputed fractions also present in the R2 adjudication: %s"
-        % lg["fractions_recomputed_and_matched_in_the_r2_adjudication"])
+         "the L gate rests on ANCHORED inputs only: the locality criterion is "
+         "READ BY JSON PATH out of the R2 terminal receipt and this unit's "
+         "implementation of it is gated against a declared positive/negative "
+         "graph pair; the ruling's own sentences arrive as verbatim-text "
+         "anchors with context windows; and the overlap fractions are this "
+         "unit's own cell-complete recomputation over the six declared "
+         "extents.  Nothing here is a coincidence test against prose and "
+         "nothing here is read from mutable repo state",
+         (lg["criterion_probe"]
+          ["implementation_agrees_with_the_inherited_criterion"]
+          and len(lg["overlap_fractions_recomputed_here"])
+          == lg["overlap_fractions_required"]
+          and lg["r2_terminal_locality_count_read_by_path"] == 14
+          and lg["r2_terminal_refusal_count_read_by_path"] == 5
+          and sorted(lg["anchor_rows_consumed"])
+          == sorted(t[0] for t in TEXT_ANCHOR_ROWS
+                    if t[3] == "G-L-GATE-INHERITED-FACTS")),
+         {"criterion_probe": lg["criterion_probe"],
+          "fractions": [f["fraction"] for f in
+                        lg["overlap_fractions_recomputed_here"]],
+          "text_anchors": lg["anchor_rows_consumed"]})
+    say("  overlap fractions recomputed here: %s"
+        % ", ".join("d%dL%d %s" % (f["d"], f["L"], f["fraction"])
+                    for f in lg["overlap_fractions_recomputed_here"]))
+    say("  the inherited criterion, read by path from the R2 terminal "
+        "receipt, applied: positive control %s, negative control %s"
+        % (lg["criterion_probe"]["positive_control_path_graph_has_locality"],
+           lg["criterion_probe"]
+           ["negative_control_complete_graph_has_locality"]))
     say()
 
     # ---- THE MACHINERY-RECOVERY CONTROL ----------------------------------
@@ -2826,6 +4494,9 @@ def run():
     # ---- THE CENSUS ------------------------------------------------------
     say("--- 5. THE CLOSURE CENSUS AND THE COEFFICIENT EXTRACTION ---")
     res = run_census(decl, rec7)
+    res["realisation"] = run_realisation_census(decl, res)
+    res["covariance"] = run_covariance_theorem(decl)
+    res["structure"] = run_structure_probes(decl)
     S = summarise(res)
     tr = res["two_route"]
     say("  census cells (computed): %d over arenas %s and lapse scopes %s"
@@ -2856,15 +4527,22 @@ def run():
          S["census_cells"] == exp_cells and len(badden) == 0,
          {"measured": S["census_cells"], "required": exp_cells,
           "denominator_mismatches": badden[:4]})
-    gate("G-CENSUS-TWO-ROUTES",
-         "the support-restricted route and the dense route -- which scans "
-         "every site of every ordered pair with no support reasoning -- agree "
-         "on every field of every cell where both run; the dense coverage is "
-         "DERIVED AND PRINTED, never a silent cap",
-         len(tr["dense_disagreements"]) == 0 and tr["dense_cells"] > 0,
-         {"dense_cells": tr["dense_cells"],
-          "dense_arenas": tr["dense_arenas"],
-          "disagreements": tr["dense_disagreements"][:4]})
+    gate("G-SPANNING-HYPOTHESIS",
+         "HYPOTHESIS (S), MEASURED: the realised bracket covectors Omega span "
+         "the FULL declared link space at EVERY site of every censused arena "
+         "and lapse scope.  This is the load-bearing measurement of the whole "
+         "{H,H} half -- it is what makes the extracted coefficient a "
+         "DETERMINATION rather than a reading, and every uniqueness and "
+         "scope-inertness statement below is a corollary of it.  Omega's "
+         "independence of the record is measured, not assumed",
+         (S["spanning_sites_at_full_rank"] == S["spanning_sites"]
+          and S["spanning_rows"] == len(CENSUS_ARENAS) * len(LAPSE_SCOPES)
+          and S["spanning_record_independent"] == S["spanning_rows"]
+          and all(r["ranks"] == [r["link_space_dimension"]]
+                  for r in res["spanning"])),
+         {"sites_at_full_rank": S["spanning_sites_at_full_rank"],
+          "sites": S["spanning_sites"], "rows": S["spanning_rows"],
+          "record_independent": S["spanning_record_independent"]})
     gate("G-COMMUTATOR-TWO-ROUTES",
          "the LITERAL four-map composition H[N]H[M]H[N]^-1 H[M]^-1, applied to "
          "three declared front configurations, leaves the front unmoved and "
@@ -2873,6 +4551,32 @@ def run():
          len(tr["literal_disagreements"]) == 0 and tr["literal_cells"] > 0,
          {"literal_cells": tr["literal_cells"],
           "disagreements": tr["literal_disagreements"][:4]})
+    gate("G-CENSUS-THREE-ROUTES",
+         "THREE routes, and the third shares no component with the other "
+         "two: the support-restricted route and the dense route both build "
+         "the residual from the gap matrix W - B, so a corruption of that "
+         "shared component would move both together (RUNBOOK section 14 "
+         "addendum, v13 #219); the third route reads the register "
+         "displacement off the LITERAL four-map composition and subtracts the "
+         "HDA generator, touching the gap matrix nowhere.  All three agree "
+         "at every cell where they run, and every coverage is DERIVED AND "
+         "PRINTED, never a silent cap -- including route 3's own probe, which "
+         "is built so that EVERY declared link direction is realised, and "
+         "whose realised-link count is part of this predicate: a route whose "
+         "probe never touches a link cannot see a corruption living on that "
+         "link's column",
+         (len(tr["dense_disagreements"]) == 0 and tr["dense_cells"] > 0
+          and len(tr["route3_disagreements"]) == 0 and tr["route3_cells"] > 0
+          and len(tr["route3_links_realised"]) == len(LITERAL_ROUTE_ARENAS)
+          and all(v[0] == v[1]
+                  for v in tr["route3_links_realised"].values())),
+         {"dense_cells": tr["dense_cells"],
+          "dense_arenas": tr["dense_arenas"],
+          "route3_cells": tr["route3_cells"],
+          "route3_arenas": tr["route3_arenas"],
+          "route3_links_realised": tr["route3_links_realised"],
+          "dense_disagreements": tr["dense_disagreements"][:4],
+          "route3_disagreements": tr["route3_disagreements"][:4]})
     say("  routes: dense %d cells (%d disagreements) ; literal %d cells (%d) ; "
         "bracket-literal %d (%d) ; convention-literal %d (%d)"
         % (tr["dense_cells"], len(tr["dense_disagreements"]),
@@ -2880,39 +4584,151 @@ def run():
            tr["dh_literal_cells"], len(tr["dh_literal_disagreements"]),
            tr["conv_literal_cells"], len(tr["conv_literal_disagreements"])))
     say("  coefficient classes (computed): %s" % S["coefficient_classes"])
-    say("  the positive control: closes at %d of %d cells; its coefficient is "
-        "a metric reading at %d of %d, site-varying at %d"
-        % (S["positive_control_closes"], S["positive_control_census_cells"],
+    say("  closure forms (computed): %s" % S["closure_forms"])
+    say("  basis closure: %d of %d cells lie in the declared generator basis; "
+        "%d of them close with a CONSTANT NON-METRIC coefficient (the pin's "
+        "RIGID form)"
+        % (S["basis_closing_cells"], S["census_cells"], S["rigid_cells"]))
+    say("  the positive control: metric-matches at %d of %d cells; its "
+        "coefficient is a metric reading at %d of %d, site-varying at %d"
+        % (S["positive_control_metric_match"],
+           S["positive_control_census_cells"],
            S["positive_control_metric_reading"], S["positive_control_cells"],
            S["positive_control_site_varying"]))
+    # THE NON-EXTRACTABILITY CRITERION, computed rather than asserted: the
+    # coefficient system is inconsistent at exactly the cells whose weight
+    # matrix carries a NONZERO DIAGONAL-LINK COLUMN.  Which declared rules
+    # those are is a MEASUREMENT, and it is not "the architecture-B rules".
+    nx_pred, nx_meas, nx_rules, archb_cells = [], [], set(), 0
+    for (dd, LL) in CENSUS_ARENAS:
+        rr = build_records(dd, LL, decl)
+        ad = sorted([n for n in rr if rr[n].admissible])
+        for rule in rules_at(dd, decl):
+            for nm in ad:
+                if weight_has_diagonal_column(rule, rr[nm]):
+                    nx_pred.append((dd, LL, rule, nm))
+                    nx_rules.add(rule)
+                if arch_of(rule) == "B":
+                    archb_cells += len(LAPSE_SCOPES)
+    nx_meas = sorted(set((c["d"], c["L"], c["rule"], c["record"])
+                         for c in res["coefficients"]
+                         if c["coefficient"]["class"] == CLASS_NX))
+    if MUTANT == "not-extractable-attribution":
+        nx_rules = set(r[0] for r in RULE_TABLE if arch_of(r[0]) == "B")
+    nx_meas_rules = sorted(set(c["rule"] for c in res["coefficients"]
+                               if c["coefficient"]["class"] == CLASS_NX))
     gate("G-COEFFICIENT-EXTRACTION",
          "the structure coefficient is SOLVED FOR from the commutators "
          "themselves over every ordered lapse pair, not read off the rule; "
-         "the over-determined system is consistent exactly where the "
-         "commutator has the axis-covector form, and the arch-B rules -- whose "
-         "commutator carries diagonal-link brackets -- fail it",
-         S["not_extractable_cells"] > 0
-         and S["positive_control_metric_reading"] == S["positive_control_cells"],
+         "and the over-determined system is inconsistent at EXACTLY the cells "
+         "whose weight matrix carries a nonzero DIAGONAL-LINK column -- the "
+         "iff, computed over every census cell, not asserted of a rule class.  "
+         "THE ATTRIBUTION IS PART OF THE PREDICATE, twice over: the set of "
+         "rules the mechanism names must equal the set of rules the census "
+         "measures, so naming a rule CLASS instead of the measured rules "
+         "fails here; and architecture A populates only axis columns BY "
+         "CONSTRUCTION, so an architecture-A rule acquiring a diagonal-link "
+         "column fails here too",
+         (S["not_extractable_cells"] > 0
+          and sorted(set(nx_pred)) == nx_meas
+          and sorted(nx_rules) == nx_meas_rules
+          and all(arch_of(r) == "B" for r in nx_rules)
+          and S["positive_control_metric_reading"]
+          == S["positive_control_cells"]),
          {"not_extractable": S["not_extractable_cells"],
+          "predicted": len(set(nx_pred)), "measured": len(nx_meas),
+          "rules_with_a_diagonal_column": sorted(nx_rules),
+          "rules_measured_not_extractable": nx_meas_rules,
+          "architecture_B_cells": archb_cells,
           "positive_control_metric_reading": S["positive_control_metric_reading"],
           "positive_control_cells": S["positive_control_cells"]})
+    S["not_extractable_rules"] = sorted(nx_rules)
+    S["architecture_B_cells"] = archb_cells
+    # the class census's own INDEPENDENT expectation, from the predictor
+    exp_classes = set()
+    for (dd, LL) in CENSUS_ARENAS:
+        rr = build_records(dd, LL, decl)
+        for rule in rules_at(dd, decl):
+            for nm in sorted([n for n in rr if rr[n].admissible]):
+                exp_classes.add(predict_class(rule, rr[nm]))
+    gate("G-METRIC-COMPARATOR-INDEPENDENT",
+         "THE METRIC COMPARISON HAS A THIRD ROUTE that shares no inversion "
+         "primitive with the other two.  The extraction reaches q through the "
+         "exact linear solve and the type comparator through the closed form, "
+         "but both invert it with the same routine -- a residual #219 "
+         "exposure.  Here every cell typed a metric reading has its extracted "
+         "coefficient multiplied by q directly and compared against the "
+         "identity, with no inverse taken anywhere",
+         (tr["metric_identity_sites"] > 0
+          and tr["metric_identity_failures"] == 0),
+         {"sites_verified": tr["metric_identity_sites"],
+          "failures": tr["metric_identity_failures"]})
     gate("G-COEFFICIENT-TYPING",
          "the coefficient class is TYPED BY MEASUREMENT against an "
          "independently re-encoded record metric: a site-varying metric "
-         "reading (the hypersurface-deformation signature) is separated from "
-         "a constant one (a RIGID algebra) only on the inhomogeneous records, "
-         "and that separation is realised",
+         "reading (GR's bracket form) is separated from a constant one only "
+         "on the inhomogeneous records, and that separation is realised.  "
+         "(The class census's agreement with the analytic predictor is the "
+         "structure theorem's own gate, cell by cell, which is strictly "
+         "stronger than a comparison of class SETS.)",
          S["inhomogeneous_site_varying_metric"] > 0
-         and "METRIC-READING-CONSTANT" in S["coefficient_classes"]
-         and "CONSTANT-NON-METRIC" in S["coefficient_classes"],
+         and CLASS_MRC in S["coefficient_classes"]
+         and CLASS_CNM in S["coefficient_classes"],
          {"classes": S["coefficient_classes"],
+          "expected_classes": sorted(exp_classes),
           "inhomogeneous_site_varying": S["inhomogeneous_site_varying_metric"],
           "inhomogeneous_cells": S["inhomogeneous_cells"]})
+    gate("G-STRUCTURE-THEOREM",
+         "THE STRUCTURE THEOREM, verified cell by cell: rho = (W - B).Omega, "
+         "so METRIC MATCH is W == B pointwise and -- given (S) -- the "
+         "coefficient class is a PURE FUNCTION of the rule's weight field and "
+         "the record's readout.  An analytic predictor carrying NO commutator, "
+         "no lapse and no bracket reproduces every census cell's class and "
+         "every cell's metric-match status.  The census clauses are therefore "
+         "carried FORCED (#208), and this gate is what establishes it",
+         (len(tr["class_mispredictions"]) == 0
+          and len(tr["metric_match_prediction_mismatches"]) == 0
+          and tr["class_prediction_cells"] == S["census_cells"]),
+         {"cells": tr["class_prediction_cells"],
+          "class_mispredictions": tr["class_mispredictions"][:4],
+          "metric_match_mismatches":
+              tr["metric_match_prediction_mismatches"][:4]})
+    gate("G-RIGID-BRANCH-REACHABLE",
+         "THE PIN'S THIRD OUTCOME IS REACHABLE, and reached.  Closure is "
+         "tested against the DECLARED GENERATOR BASIS, not against the answer "
+         "being looked for, so a cell may close with a coefficient that is "
+         "constant and demonstrably NOT the record metric -- the pin's RIGID "
+         "form.  Measured: the rigid cells are non-empty, they are disjoint "
+         "from the metric-matching cells, and the verdict machinery returns "
+         "the RIGID head on a synthetic payload built to exhibit it",
+         (S["rigid_cells"] > 0
+          and all(not r["metric_match"] for r in res["census"] if r["rigid"])
+          and all(r["basis_closes"] for r in res["census"] if r["rigid"])
+          and rigid_probe()[0] == HEAD_CLOSES
+          and "RIGID-CONSTANT-NON-METRIC" in rigid_probe()[1]),
+         {"rigid_cells": S["rigid_cells"],
+          "basis_closing": S["basis_closing_cells"],
+          "synthetic_head": rigid_probe()[0],
+          "synthetic_closure_segment": rigid_probe()[1]})
     say()
     return rec7, decl, arena, lg, rec_out, res, S, tr
 
 
 def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
+    # the realisation census's and the covariance theorem's own denominators,
+    # DERIVED from the declaration
+    exp_realisation = 0
+    for (dd_, LL) in REALISATION_ARENAS:
+        rr = build_records(dd_, LL, decl)
+        exp_realisation += (len([n for n in rr if rr[n].admissible])
+                            * len(rules_at(dd_, decl)) * DEFECT_PROBE_LAPSES
+                            * dd_ * len(REALISATION_ATOM_VALUES) ** 3)
+    exp_covariance = 0
+    for (dd_, LL) in COVARIANCE_ARENAS:
+        rr = build_records(dd_, LL, decl)
+        exp_covariance += (len([n for n in rr if rr[n].admissible])
+                           * len(rules_at(dd_, decl))
+                           * COVARIANCE_PROBE_LAPSES * dd_)
     say("--- 6. THE OTHER TWO BRACKETS ---")
     say("  {D,H} tally over %d brackets: %s" % (S["dh_brackets"], S["dh_tally"]))
     say("  {D,D} lattice translations: %d of %d close"
@@ -2951,13 +4767,25 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
          len(S["conventions_matching_everywhere"]) == 1,
          {"matching": S["conventions_matching_everywhere"],
           "sweep": S["convention_sweep"]})
-    gate("G-CONVENTION-RULE-INDEPENDENT",
-         "the bracket's front sector does not involve the drag rule: the "
-         "sweep's per-rule rows are identical, which is why it is computed "
-         "once per (record, lapse, translation) and counted over the rules",
-         all(c["brackets"] % (len(rules_at(c["d"], decl))) == 0
-             for c in res["conventions"]),
-         {"rows": len(res["conventions"])})
+    gate("G-CONVENTION-FRONT-INDEPENDENT",
+         "THE MULTIPLICATION'S LICENCE, MEASURED.  The convention sweep is "
+         "evaluated once per (lapse, translation) probe and its result then "
+         "holds across records and rules -- so the record- and "
+         "rule-independence of the bracket's FRONT sector is the premise the "
+         "whole denominator rests on, and it is CHECKED here by evaluating "
+         "the front closed form at every declared record and at two declared "
+         "rules per arena and comparing the rows for equality.  (The gate it "
+         "replaces was a divisibility identity: true for any input the arena "
+         "admits, and therefore no gate at all.)  The sweep's own reported "
+         "denominator is the DISTINCT PROBE COUNT; the record x rule "
+         "multiplicity is disclosed beside it, never folded in",
+         (len(tr["front_independence_disagreements"]) == 0
+          and tr["front_independence_rows"] > 0),
+         {"rows": tr["front_independence_rows"],
+          "disagreements": tr["front_independence_disagreements"][:4],
+          "distinct_front_probes": S["convention_front_probes"],
+          "derived_by_multiplication":
+              S["convention_derived_by_multiplication"]})
     say()
 
     say("--- 7. THE DEFECT, CHARACTERISED ---")
@@ -2966,29 +4794,191 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
         % (S["defect_probes"], S["defect_vanishing_probes"],
            S["defect_lattice_sum_zero"], S["defect_vanishes_on_homogeneous"],
            S["defect_homogeneous_probes"]))
+    # DERIVED DENOMINATORS for the three bracket tables and the defect table:
+    # every row count and every probe count is what the arena declaration
+    # forces, computed here.  A dropped row or a zeroed field cannot hide
+    # behind a "> 0" threshold.
+    exp_defect_rows = exp_defect_probes = 0
+    exp_dh_rows = exp_dh_brackets = 0
+    exp_dd_rows = exp_dd_brackets = 0
+    for (dd_, LL) in CENSUS_ARENAS:
+        rr = build_records(dd_, LL, decl)
+        nadm = len([n for n in rr if rr[n].admissible])
+        nrul = len(rules_at(dd_, decl))
+        nlap = len(dh_probe_family(dd_, LL, build_lapse_family(dd_, LL)))
+        exp_defect_rows += nadm * nrul
+        exp_defect_probes += nadm * nrul * DEFECT_PROBE_LAPSES * dd_
+        exp_dh_rows += nadm * nrul * len(REALISATIONS)
+        exp_dh_brackets += nadm * nrul * len(REALISATIONS) * nlap * dd_
+        exp_dd_rows += nadm * len(REALISATIONS)
+        exp_dd_brackets += nadm * len(REALISATIONS) * (dd_ + 1) ** 2
     gate("G-DEFECT-MEASURED",
-         "the normal-tangential defect is a MEASURED OBJECT, not a failure: "
-         "its closed form, its nonvanishing census, its lattice sum (the "
-         "periodic lattice's boundary-term test) and its sector behaviour are "
-         "all measured, and it does NOT vanish on any declared sector",
-         S["defect_probes"] > 0
-         and S["defect_vanishing_probes"] < S["defect_probes"],
-         {"probes": S["defect_probes"],
+         "the normal-tangential defect is a MEASURED OBJECT, not a failure, "
+         "and every clause of that sentence is a PREDICATE here against a "
+         "DERIVED denominator: the probe count is what the declaration "
+         "forces, the defect vanishes at ZERO probes, and it vanishes on the "
+         "homogeneous sector at ZERO probes.  Erasing the field cannot pass "
+         "this gate.  (The lattice-sum clause is the boundary gate's own, "
+         "next, so that each gate carries the clause its own falsifier "
+         "attacks.)",
+         (S["defect_probes"] == exp_defect_probes
+          and S["defect_rows"] == exp_defect_rows
+          and S["defect_vanishing_probes"] == 0
+          and S["defect_vanishes_on_homogeneous"] == 0),
+         {"probes": S["defect_probes"], "required_probes": exp_defect_probes,
+          "rows": S["defect_rows"], "required_rows": exp_defect_rows,
           "vanishing": S["defect_vanishing_probes"],
           "lattice_sum_zero": S["defect_lattice_sum_zero"],
           "vanishing_on_homogeneous": S["defect_vanishes_on_homogeneous"]})
     gate("G-BOUNDARY-TERM-STATUS",
          "BOUNDARY-TERM TEST on a periodic lattice: a defect that were a total "
-         "finite difference would sum to zero over the lattice.  The sum is "
-         "measured at every probe and the count printed; the degenerate probe "
-         "(the zero field, which sums to zero) is carried alongside as the "
-         "test's own death certificate -- a boundary test that could not "
-         "distinguish them would be vacuous",
-         S["defect_lattice_sum_zero"] < S["defect_probes"]
-         and S["defect_probes"] > 0,
+         "finite difference would sum to zero over the lattice.  It does not, "
+         "at any probe.  THE DEGENERATE PROBE IS BUILT AND MEASURED, not "
+         "typed: the ZERO lapse profile gives a defect field that is "
+         "identically zero and whose lattice sum IS zero, at every one of its "
+         "probes -- the test's own death certificate, computed.  The unit "
+         "constant profile is measured beside it and is reported at whatever "
+         "it comes out",
+         (S["defect_lattice_sum_zero"] == 0 and S["defect_probes"] > 0
+          and S["degenerate_zero_probes"] > 0
+          and S["degenerate_zero_vanishing"] == S["degenerate_zero_probes"]
+          and S["degenerate_zero_lattice_sum_zero"]
+          == S["degenerate_zero_probes"]),
          {"lattice_sum_zero": S["defect_lattice_sum_zero"],
           "probes": S["defect_probes"],
-          "degenerate_probe_sums_to_zero": True})
+          "degenerate_probes": S["degenerate_zero_probes"],
+          "degenerate_vanishing": S["degenerate_zero_vanishing"],
+          "degenerate_lattice_sum_zero":
+              S["degenerate_zero_lattice_sum_zero"],
+          "constant_profile_probes": S["constant_profile_probes"],
+          "constant_profile_vanishing": S["constant_profile_vanishing"]})
+    gate("G-BRACKET-TABLES-CELL-COMPLETE",
+         "the {D,H}, {D,D} and defect tables are cell-complete against "
+         "DERIVED denominators: row counts and bracket counts equal what the "
+         "arena declaration forces.  A dropped row moves a number this gate "
+         "recomputes",
+         (len(res["dh"]) == exp_dh_rows
+          and S["dh_brackets"] == exp_dh_brackets
+          and len(res["dd"]) == exp_dd_rows
+          and S["dd_total"] == exp_dd_brackets
+          and S["defect_rows"] == exp_defect_rows),
+         {"dh_rows": len(res["dh"]), "required_dh_rows": exp_dh_rows,
+          "dh_brackets": S["dh_brackets"],
+          "required_dh_brackets": exp_dh_brackets,
+          "dd_rows": len(res["dd"]), "required_dd_rows": exp_dd_rows,
+          "dd_brackets": S["dd_total"],
+          "required_dd_brackets": exp_dd_brackets,
+          "defect_rows": S["defect_rows"],
+          "required_defect_rows": exp_defect_rows})
+    gate("G-REALISATION-CENSUS",
+         "THE REALISATION CENSUS: all 27 (a, b, c) triples built from the "
+         "tangential family's TWO DECLARED ATOMS -- the site map and the "
+         "address register -- are censused, with the classification count "
+         "DERIVED from the declaration.  Two results are measured: "
+         "IN-CONSTRAINT is reached at ZERO classifications, at EVERY "
+         "declared-expressible realisation (the DEFECT head is therefore "
+         "realisation-INDEPENDENT); and at the realisations that transport "
+         "the register along the same declared site map, the bracket lands in "
+         "the extended basis on the WHOLE homogeneous sector, resisting "
+         "exactly on the inhomogeneous records -- the residue is "
+         "CURVATURE-SUPPORTED",
+         (S["realisation_count"] == len(REALISATION_ATOM_VALUES) ** 3
+          and S["realisation_classifications"] == exp_realisation
+          and S["realisation_in_constraint"] == 0
+          and len(S["absorbing_realisations"]) > 0
+          and S["realisation_outside_on_the_homogeneous_sector"] == 0
+          and S["residue_is_exactly_the_inhomogeneous_records"]
+          and len(res["realisation"]["literal_disagreements"]) == 0
+          and res["realisation"]["literal_cells"] > 0),
+         {"realisations": S["realisation_count"],
+          "classifications": S["realisation_classifications"],
+          "required": exp_realisation,
+          "in_constraint": S["realisation_in_constraint"],
+          "absorbing": S["absorbing_realisations"],
+          "outside_on_the_homogeneous_sector":
+              S["realisation_outside_on_the_homogeneous_sector"],
+          "residue_cells": S["curvature_supported_residue_count"],
+          "literal_cross_check_cells":
+              res["realisation"]["literal_cells"],
+          "literal_disagreements":
+              res["realisation"]["literal_disagreements"][:4]})
+    gate("G-COVARIANCE-THEOREM",
+         "THE COVARIANCE THEOREM, measured: conjugation by FULL transport "
+         "carries the constraint of the record to the constraint of the "
+         "TRANSPORTED record, D_full[v] . H_g[N] . D_full[v]^-1 = "
+         "H_{S_v g}[S_v N], exactly, at every cell of a DERIVED probe -- and "
+         "it FAILS at D-TOT, which transports the front but not the "
+         "register's labelling.  The negative side is what makes the "
+         "positive one a measurement.  What survives as an obstruction is "
+         "that the record itself does not transport: the arena carries a "
+         "FIXED BACKGROUND, and this functional is the instrument that "
+         "detects it",
+         (S["covariance_cells"] == exp_covariance
+          and S["covariance_d_full"] == S["covariance_cells"]
+          and S["covariance_d_tot"] < S["covariance_cells"]),
+         {"cells": S["covariance_cells"], "required": exp_covariance,
+          "d_full_covariant": S["covariance_d_full"],
+          "d_tot_covariant": S["covariance_d_tot"]})
+    gate("G-CENTRAL-EXTENSION",
+         "THE OBJECT THE FIRST BRACKET LIVES IN, named and measured: "
+         "H[N] H[M] = T_{w[N,M]} . H[N+M] at every cell of a derived probe, "
+         "so the constraint family generates a two-step nilpotent group -- a "
+         "CENTRAL EXTENSION of the abelian group of lapse profiles by the "
+         "register fields, with w as its two-cocycle -- and the extracted "
+         "'structure coefficient' is that cocycle's antisymmetrisation.  "
+         "Measured beside it: the commutator field is CONFIGURATION-"
+         "INDEPENDENT at every pair, which is exactly the property an open "
+         "algebra must not have",
+         (S["central_extension_holds"] == S["central_extension_cells"]
+          and S["central_extension_cells"] > 0
+          and S["commutator_configuration_independent"]
+          == S["commutator_pairs"] and S["commutator_pairs"] > 0),
+         {"cells": S["central_extension_cells"],
+          "holds": S["central_extension_holds"],
+          "pairs": S["commutator_pairs"],
+          "configuration_independent":
+              S["commutator_configuration_independent"]})
+    gate("G-DEFECT-ROBUSTNESS",
+         "the defect survives the two attacks its own declarations invite: "
+         "the OTHER declared bracket order (the one whose front sector "
+         "reproduces L_v N under the declared backward convention), and "
+         "DECLARED NON-CONSTANT tangential fields whose site maps are "
+         "measured bijections with measured inverses.  Neither kills it",
+         (S["order_probes"][BRACKET_ORDERS[1]][0]
+          == S["order_probes"][BRACKET_ORDERS[1]][1]
+          and S["order_probes"][BRACKET_ORDERS[1]][1] > 0
+          and S["nonconstant_fields_bijective"] > 0
+          and S["nonconstant_outside"] == S["nonconstant_probes"]
+          and S["nonconstant_probes"] > 0),
+         {"orders": S["order_probes"],
+          "nonconstant_outside": S["nonconstant_outside"],
+          "nonconstant_probes": S["nonconstant_probes"],
+          "bijective_fields": S["nonconstant_fields_bijective"]})
+    gate("G-DD-RELATION-CONTENT",
+         "the third relation's content, measured rather than implied: of the "
+         "tangential brackets censused, the INFORMATIVE ones -- those pairing "
+         "two DISTINCT NONZERO generators -- are counted, and the Lie bracket "
+         "[v, w] vanishes at every one of them because the declared family "
+         "contains only constant fields.  The relation's nonabelian core is "
+         "therefore untested BY CONSTRUCTION, and the census says so instead "
+         "of reporting a closure it could not fail",
+         (S["dd_informative"] > 0 and S["dd_informative"] < S["dd_total"]
+          and all(r["lie_bracket_nonzero"] == 0 for r in res["dd"])),
+         {"informative": S["dd_informative"], "total": S["dd_total"],
+          "lie_bracket_nonzero": sum(r["lie_bracket_nonzero"]
+                                     for r in res["dd"])})
+    gate("G-DUPLICATE-RULES-DISCLOSED",
+         "the declared rule list contains EXACT DUPLICATES, and the census "
+         "says which and where: the rules are partitioned by their whole "
+         "weight field over every admissible record and site, separately in "
+         "the {H,H} sector and in the register sector, and the distinct-rule "
+         "counts are reported next to the declared count",
+         (len(S["duplicate_rule_groups"]) > 0
+          and all(v["distinct_in_the_HH_weight"] <= v["declared"]
+                  and v["distinct_in_the_register_drag"] <= v["declared"]
+                  for v in S["distinct_rules"].values())),
+         {"distinct": S["distinct_rules"],
+          "duplicate_groups": S["duplicate_rule_groups"]})
     dhreg = sorted(set(k.split("/")[1] for k in S["dh_tally"]
                        if k.startswith("D-REG/")))
     dhtot = sorted(set(k.split("/")[1] for k in S["dh_tally"]
@@ -3022,7 +5012,7 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
         say("  residual covariance %-9s rule %-9s covariant %d violations %d "
             "(non-vacuity: %d nonzero base cells)"
             % (c["lattice"], c["rule"], c["covariant_cells"],
-               c["violating_cells"], c["nonzero_base_cells"]))
+               c["violating_cells"], c["distinct_nonzero_base_cells"]))
     gate("G-CHART-GROUP-CLOSES",
          "the declared chart group -- the |X| chart translations and the d! "
          "direction relabellings -- closes as a permutation group of the site "
@@ -3043,15 +5033,23 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
          all(n["violating_cells"] > 0 for n in ctl["negative"])
          and sum(c["violating_cells"] for c in ctl["covariance"]
                  if c["lattice"] == "SCRAMBLED") > 0
-         and all(c["nonzero_base_cells"] > 0 for c in ctl["covariance"]),
+         and all(c["distinct_nonzero_base_cells"] > 0
+                 for c in ctl["covariance"]),
          {"negative": ctl["negative"],
           "covariance": ctl["covariance"]})
     gate("G-SYMMETRY-SELFTEST",
-         "RUNBOOK section 14 symmetry self-test, FRESH-EVALUATED: the residual "
-         "field transports exactly with the record and the lapses under every "
-         "chart translation of the record lattice",
-         all(c["violating_cells"] == 0 and c["nonzero_base_cells"] > 0
-             for c in ctl["covariance"] if c["lattice"] == "RECORD"),
+         "RUNBOOK section 14 symmetry self-test, FRESH-EVALUATED ON BOTH "
+         "SIDES: the residual field transports exactly with the record and "
+         "the lapses under every chart translation of the record lattice, "
+         "with the weight memo BYPASSED on the base side as well as the "
+         "transported one -- and the number of fresh bypasses the self-test "
+         "actually performed is gated, because a self-test that never leaves "
+         "the cache tests the cache and not the quantity (RUNBOOK section 14 "
+         "addendum, v13 #185)",
+         (all(c["violating_cells"] == 0
+              and c["distinct_nonzero_base_cells"] > 0
+              and c["fresh_bypasses_used"] > 0
+              for c in ctl["covariance"] if c["lattice"] == "RECORD")),
          {"covariance": [c for c in ctl["covariance"]
                          if c["lattice"] == "RECORD"]})
     ce = cache_exercise()
@@ -3072,14 +5070,14 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
 
     # ---- THE L-SWEEP -----------------------------------------------------
     say("--- 9. THE L-SWEEP TRAJECTORY ---")
-    say("  %-4s %-4s %-11s %6s %6s %8s %10s %8s %8s"
-        % ("d", "L", "scope", "cells", "close", "defect", "maxres",
-           "metric", "sitevar"))
+    say("  %-4s %-4s %-11s %6s %7s %6s %7s %10s %8s %8s"
+        % ("d", "L", "scope", "cells", "inbasis", "rigid", "metric",
+           "maxres", "mreading", "sitevar"))
     for t in S["trajectory"]:
-        say("  %-4d %-4d %-11s %6d %6d %8d %10s %10d %8d"
-            % (t["d"], t["L"], t["scope"], t["cells"], t["closing"],
-               t["defecting"], t["max_residual"], t["metric_reading"],
-               t["site_varying_metric"]))
+        say("  %-4d %-4d %-11s %6d %7d %6d %7d %10s %8d %8d"
+            % (t["d"], t["L"], t["scope"], t["cells"], t["basis_closing"],
+               t["rigid"], t["metric_match"], t["max_residual"],
+               t["metric_reading"], t["site_varying_metric"]))
     gate("G-LSWEEP-COMPLETE",
          "the L-sweep is trajectory-complete: every declared (d, L, lapse "
          "scope) triple carries a row, and the row count is derived from the "
@@ -3088,16 +5086,23 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
          {"rows": len(S["trajectory"]),
           "required": len(CENSUS_ARENAS) * len(LAPSE_SCOPES)})
     gate("G-LSWEEP-STABILITY",
-         "the census's shape is measured along the refinement direction: at "
-         "fixed d the closing-cell count and the coefficient-class census are "
-         "constant in L, so the finding is not an artefact of one extent -- "
-         "and the defect is present at every extent",
-         len(set((t["d"], t["closing"], t["cells"], t["metric_reading"])
-                 for t in S["trajectory"]))
-         == len(set(t["d"] for t in S["trajectory"])),
-         {"per_d": sorted(set((t["d"], t["closing"], t["cells"],
-                               t["metric_reading"])
-                              for t in S["trajectory"]))})
+         "the census's WHOLE SHAPE is measured along the refinement "
+         "direction: at fixed d the cell count, the basis-closure count, the "
+         "rigid count, the metric-match count and every coefficient-class "
+         "count are constant in L and in the lapse scope.  Per the structure "
+         "theorem this constancy is FORCED -- the per-cell class is a "
+         "function of (rule, record) alone, in which neither L nor the lapse "
+         "family appears -- and it is carried at that label; what genuinely "
+         "MOVES along the sweep is the residual's MAGNITUDE, reported beside "
+         "it",
+         (S["structure_constant_along_L"]
+          and len(set(t["max_residual"] for t in S["trajectory"])) > 1),
+         {"per_d": sorted(set((t["d"], t["cells"], t["basis_closing"],
+                               t["rigid"], t["metric_match"],
+                               t["metric_reading"], t["site_varying_metric"],
+                               t["not_extractable"])
+                              for t in S["trajectory"])),
+          "max_residuals": [t["max_residual"] for t in S["trajectory"]]})
     say()
 
     # ---- FORCED CLAUSES, DISCLOSED (RUNBOOK section 14 addendum, #208) ---
@@ -3113,9 +5118,19 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
              "uniquely, that it equals the independently re-encoded record "
              "metric, and that it is site-varying on the inhomogeneous "
              "records.",
-             {"forced": "HH-BRACKET landing + empty normal channel",
-              "measured": "the coefficient's existence, value and site "
-                          "variation; the residual channel's census"})
+             {"forced": ["HH-BRACKET landing + empty normal channel",
+                         "the closure census, the coefficient-class census "
+                         "and every class count, all of which the structure "
+                         "theorem rho = (W - B).Omega derives from the "
+                         "declarations with no commutator anywhere",
+                         "the L-constancy and lapse-scope inertness of the "
+                         "structural columns"],
+              "measured": ["hypothesis (S): the spanning of the realised "
+                           "bracket covectors, which is what makes the "
+                           "coefficient a determination",
+                           "the residual MAGNITUDES, which do move",
+                           "the literal-composition agreements",
+                           "the sector arithmetic"]})
     disclose("X02",
              "THE D-REG NORMAL-TANGENTIAL IDENTITY IS FORCED.  At the primary "
              "tangential realisation the register shift and the front shift "
@@ -3128,16 +5143,22 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
              {"forced": "D-REG/IDENTITY at every bracket",
               "measured": "the D-TOT classification and the defect"})
     disclose("X03",
-             "THE POSITIVE CONTROL'S COEFFICIENT VALUE IS FORCED.  The "
-             "metric-inserted rule's weight IS the record-read inverse metric "
-             "by declaration, so an extraction that recovers Lambda recovers "
-             "the metric.  What the extraction adds, and what is MEASURED, is "
-             "UNIQUENESS -- the realised bracket covectors span fully at "
-             "every site, so no other coefficient reproduces the commutators "
-             "-- and the site-variation class, which the rule's declaration "
-             "does not state.",
-             {"forced": "metric_reading = True at the positive control",
-              "measured": "uniqueness of the solve; the site-variation class"})
+             "AT THE POSITIVE CONTROL BOTH THE COEFFICIENT'S VALUE AND ITS "
+             "SITE-VARIATION CLASS ARE FORCED.  The metric-inserted rule's "
+             "weight IS the record-read inverse metric by declaration, so an "
+             "extraction that recovers Lambda recovers the metric; and "
+             "CONSTANT versus SITE-VARYING then asks only whether the "
+             "record's own count field is constant, which is a property of "
+             "the ARENA and contains no bracket.  What is MEASURED is "
+             "UNIQUENESS -- hypothesis (S), the full spanning of the realised "
+             "bracket covectors, so no other coefficient reproduces the "
+             "commutators -- and the class census at the rules that do NOT "
+             "insert the metric.",
+             {"forced": ["metric_reading = True at the positive control",
+                         "its site-variation class, inherited from the "
+                         "record's inhomogeneity"],
+              "measured": ["hypothesis (S)",
+                           "the class census away from the positive control"]})
     disclose("X04",
              "THE THIRD BRACKET'S CLOSURE IS FORCED FOR CONSTANT FIELDS.  The "
              "Lie bracket of two constant vector fields vanishes, so "
@@ -3150,15 +5171,21 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
              {"forced": "DD-BRACKET closure at constant fields",
               "measured": "the control's sensitivity (the mutant flips it)"})
     disclose("X05",
-             "THE ARCH-B CELLS' NON-EXTRACTABILITY IS FORCED.  Architecture "
-             "B's commutator displacement carries diagonal-link bracket "
-             "components, which no d x d coefficient acting on the d axis "
-             "covectors can reproduce.  The 36 NOT-EXTRACTABLE cells are a "
-             "FORCED clause; what is MEASURED is that the same solve succeeds "
-             "at every architecture-A cell, so the failure is a property of "
-             "the rule and not of the instrument.",
-             {"forced": "NOT-EXTRACTABLE at the arch-B cells",
-              "measured": "the solve's success elsewhere"})
+             "NON-EXTRACTABILITY IS FORCED, AND IT IS A PROPERTY OF ONE "
+             "DECLARED RULE, NOT OF AN ARCHITECTURE.  The coefficient system "
+             "is inconsistent at exactly the cells whose weight matrix "
+             "carries a nonzero DIAGONAL-LINK column, because no d x d "
+             "coefficient acting on the d axis covectors can reproduce a "
+             "diagonal-link bracket.  MEASURED: the rules with such a column "
+             "are %s -- %d of the %d architecture-B cells, not all of them.  "
+             "The other architecture-B rules weight only the axis links and "
+             "are extractable at every one of their cells."
+             % (", ".join(S["not_extractable_rules"]),
+                S["not_extractable_cells"], S["architecture_B_cells"]),
+             {"forced": "NOT-EXTRACTABLE where the weight has a diagonal-link "
+                        "column",
+              "measured": "which declared rules those are, and that the same "
+                          "solve succeeds everywhere else"})
     disclose("X06",
              "THE d = 3 INHOMOGENEOUS RECORDS ARE A DECLARED EXTENSION of "
              "I7's d=3 record list, built by I7's own site-dependent recipes "
@@ -3174,6 +5201,74 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
              "gated; the closure census and the convention sweep run at the "
              "FULL declared family and at its lattice translates.",
              {"scope": "declared and printed, not a silent cap"})
+    disclose("X08",
+             "THE TANGENTIAL FAMILY IS RESTRICTED TO CONSTANT FIELDS IN THE "
+             "CENSUS, and the reason is the bijection requirement: D_a[v] "
+             "acts on sites through x -> x + v(x), which must be a "
+             "permutation of the site set.  This restriction has TWO COSTS, "
+             "both carried at the claim.  (i) The Lie bracket [v, w] vanishes "
+             "identically on the censused family, so the third relation "
+             "{D[v],D[w]} = D[[v,w]] carries NO discriminating content here: "
+             "its nonabelian core is untested BY CONSTRUCTION, not merely "
+             "forced.  (ii) The generator the first bracket produces is "
+             "itself generally not a member of the family the second bracket "
+             "uses, so the three relations are not simultaneously realisable "
+             "on one declared tangential family at this arena.  Two DECLARED "
+             "non-constant bijective fields are run separately, and the "
+             "defect survives both.",
+             {"restriction": "constant tangential fields in the census",
+              "reason": "x -> x + v(x) must be a bijection",
+              "costs": ["relation III contentless", "one realisation for "
+                        "three relations not available here"]})
+    disclose("X09",
+             "THE WHOLE UNIT RUNS AT DENSITY WEIGHT w = 0.  I7 declares a "
+             "weight flip w = 1 as well (anchored here at P-I7-WEIGHTFLIP), "
+             "and the density weight is exactly the property that ties the "
+             "normal-tangential relation to the Lie-derivative form of its "
+             "right-hand side.  This unit does not sweep it.  Every "
+             "coefficient, closure and defect statement below is at w = 0, "
+             "and the ARENA segment carries that scope.",
+             {"scope": "w = 0 only", "declared_and_not_swept": "w = 1"})
+    disclose("X10",
+             "THE DECLARED RULE LIST CONTAINS EXACT DUPLICATES, measured "
+             "here: %s.  The distinct-rule counts are %s.  Every count over "
+             "'rules' in this unit is a count over the DECLARED list, and the "
+             "duplicate structure is what makes some of those counts smaller "
+             "than they look."
+             % ("; ".join("%s at d=%d: %s" % (g[0], g[1], " = ".join(g[2]))
+                          for g in S["duplicate_rule_groups"]),
+                ", ".join("d=%s: %d of %d distinct in the {H,H} weight, %d of "
+                          "%d in the register sector"
+                          % (k[1:], S["distinct_rules"][k]
+                             ["distinct_in_the_HH_weight"],
+                             S["distinct_rules"][k]["declared"],
+                             S["distinct_rules"][k]
+                             ["distinct_in_the_register_drag"],
+                             S["distinct_rules"][k]["declared"])
+                          for k in sorted(S["distinct_rules"]))),
+             {"duplicate_groups": S["duplicate_rule_groups"],
+              "distinct": S["distinct_rules"]})
+    disclose("X11",
+             "THE TRANSLATION CONTROL'S 100%% IS FORCED BY MODULAR "
+             "ARITHMETIC.  nb(x+u, l) = (x+u)+l = (x+l)+u = nb(x,l)+u holds "
+             "identically on (Z_L)^d, so the equivariance count cannot come "
+             "out otherwise on the record lattice.  It is carried as a "
+             "FORCED clause and its value is the SCRAMBLED lattice's "
+             "violation count, which is a measurement and is nonzero.",
+             {"forced": "translation equivariance on the record lattice",
+              "measured": "the scrambled lattice's violations"})
+    disclose("X12",
+             "THE CONVENTION SWEEP'S REPORTED DENOMINATOR IS ITS DISTINCT "
+             "PROBE COUNT.  The bracket's front sector is a function of the "
+             "lapse and the translation alone -- measured, not asserted, by "
+             "G-CONVENTION-FRONT-INDEPENDENT -- so the sweep is evaluated "
+             "once per (lapse, translation) probe.  The record x rule "
+             "multiplicity is DISCLOSED beside the probe count and is never "
+             "folded into it: a count obtained by multiplying a measured "
+             "sample by an unvaried axis is an argument, not a census.",
+             {"probes": S["convention_front_probes"],
+              "derived_by_multiplication":
+                  S["convention_derived_by_multiplication"]})
     if MUTANT == "disclosure-drop":
         del DISCLOSURES[0]
     for dsc in DISCLOSURES:
@@ -3183,13 +5278,16 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
          "measuring is carried as a DISCLOSURE at that label, and the verdict "
          "segments that report such clauses say FORCED in the emitted string "
          "(RUNBOOK section 14 addendum, v13 #208)",
-         len(DISCLOSURES) == 7,
+         len(DISCLOSURES) == 12
+         and sorted(d["id"] for d in DISCLOSURES)
+         == ["X%02d" % k for k in range(1, 13)],
          {"disclosures": [d["id"] for d in DISCLOSURES]})
     say()
 
     # ---- THE VERDICT -----------------------------------------------------
     P = build_signatures(decl, res, S, rec_out, lg, ctl)
     head, segs, full = build_verdict(P, MUTANT == "verdict-pair-swap")
+    rp = rigid_probe()
     R = {
         "arena_declaration": arena,
         "l_gate": lg,
@@ -3201,6 +5299,25 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
         "dd_bracket_rows": res["dd"],
         "convention_sweep": res["conventions"],
         "defect_rows": res["defect"],
+        "degenerate_rows": res["degenerate"],
+        "order_rows": res["orders"],
+        "spanning_rows": res["spanning"],
+        "realisation_rows": res["realisation"]["rows"],
+        "realisation_census": dict((k, v) for k, v in
+                                   res["realisation"].items() if k != "rows"),
+        "covariance_rows": res["covariance"]["rows"],
+        "covariance": dict((k, v) for k, v in res["covariance"].items()
+                           if k != "rows"),
+        "structure_rows": res["structure"],
+        "rigid_branch_probe": {"head": rp[0], "closure_form": rp[1],
+                               "failing_sectors": rp[2],
+                               "note": "a synthetic payload in which every "
+                                       "bracket lands in the declared basis "
+                                       "with a CONSTANT NON-METRIC "
+                                       "coefficient, fed to the delivered "
+                                       "verdict builder: the pin's RIGID "
+                                       "outcome is reachable and this is the "
+                                       "demonstration"},
         "two_route": tr,
         "controls": ctl,
         "cache_exercise": ce,
@@ -3213,7 +5330,10 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
         "totals": {},
         "falsifier_census": {},
     }
-    rebuilt = reconstruct_verdict_from_receipt(R)
+    # DEEP-COPY the sub-objects the comparator reads, so object identity can
+    # never be mistaken for agreement (RUNBOOK section 14 addendum, v13 #219).
+    rebuilt = reconstruct_verdict_from_receipt(
+        json.loads(json.dumps(jsonable(R))))
     gate("G-VERDICT-IN-GATE",
          "the verdict head is DERIVED from the measured brackets inside this "
          "gate: CLOSES iff all three brackets land in the declared generator "
@@ -3241,6 +5361,26 @@ def run_part2(rec7, decl, arena, lg, rec_out, res, S, tr):
 # 14.  RENDER FROM THE GATED OBJECT (RUNBOOK section 13 addendum, v14 #10)
 # ----------------------------------------------------------------------------
 
+# THE GATED SUBTREE.  Every measured object a gate reads is named here; the
+# seal below is a digest of exactly these, taken AFTER the last measurement
+# gate and re-verified at write time.  A mutation of R between the gates and
+# the write -- the post-gate corruption class -- moves the seal and dies.
+SEALED_KEYS = ("arena_declaration", "l_gate", "recovery", "census_rows",
+               "coefficient_rows", "decomposition_rows", "dh_bracket_rows",
+               "dd_bracket_rows", "convention_sweep", "defect_rows",
+               "degenerate_rows", "order_rows", "spanning_rows",
+               "realisation_rows", "realisation_census", "covariance_rows",
+               "covariance", "structure_rows", "rigid_branch_probe",
+               "two_route", "controls", "cache_exercise", "summary",
+               "verdict", "anchors", "disclosures")
+
+
+def payload_seal(R):
+    blob = json.dumps([jsonable(R[k]) for k in SEALED_KEYS],
+                      sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()[:16]
+
+
 def jsonable(o):
     if isinstance(o, dict):
         return {str(k): jsonable(v) for k, v in o.items()}
@@ -3257,11 +5397,12 @@ def render_tables(R):
     out.append("--- 11. THE CENSUS TABLE (rendered from the gated object) ---")
     out.append("  %-3s %-3s %-11s %-14s %-11s %8s %8s %-7s %10s"
                % ("d", "L", "scope", "rule", "record", "nonzero", "pairs",
-                  "closes", "max|rho|"))
+                  "metric", "max|rho|"))
     for r in R["census_rows"]:
         out.append("  %-3d %-3d %-11s %-14s %-11s %8d %8d %-7s %10s"
                    % (r["d"], r["L"], r["scope"], r["rule"], r["record"],
-                      r["nonzero_pairs"], r["total_pairs"], r["closes"],
+                      r["nonzero_pairs"], r["total_pairs"],
+                      r["metric_match"],
                       r["max_abs"]))
     out.append("")
     out.append("--- 12. THE COEFFICIENT TABLE (rendered from the gated object) ---")
@@ -3301,6 +5442,57 @@ def render_tables(R):
                    % (r["d"], r["L"], r["rule"], r["record"], r["pairs"],
                       r["classes"], r["residual_lattice_sum_zero"],
                       r["residual_pairs"]))
+    out.append("")
+    out.append("--- 15a. THE SPANNING CENSUS, HYPOTHESIS (S) (gated object) ---")
+    for r in R["spanning_rows"]:
+        out.append("  d=%d L=%d %-11s sites %3d  link space %d  full rank at "
+                   "%3d  ranks %s  record-independent %s"
+                   % (r["d"], r["L"], r["scope"], r["sites"],
+                      r["link_space_dimension"], r["sites_at_full_rank"],
+                      r["ranks"], r["record_independent"]))
+    out.append("")
+    out.append("--- 15b. THE REALISATION CENSUS, 27 (a,b,c) (gated object) ---")
+    for r in R["realisation_rows"]:
+        out.append("  d=%d L=%d %-12s (%2d,%2d,%2d)  %-52s resisting %d cells"
+                   % (r["d"], r["L"], r["name"], r["realisation"][0],
+                      r["realisation"][1], r["realisation"][2],
+                      str(r["tally"]), len(r["resisting_cells"])))
+    out.append("")
+    out.append("--- 15c. THE COVARIANCE THEOREM (gated object) ---")
+    out.append("  %s" % R["covariance"]["statement"])
+    for r in R["covariance_rows"]:
+        out.append("  d=%d L=%d cells %4d  D-FULL covariant %4d  D-TOT "
+                   "covariant %4d  (lapse probe %d, %d configurations)"
+                   % (r["d"], r["L"], r["cells"], r["d_full_covariant"],
+                      r["d_tot_covariant"], r["lapse_probe"],
+                      r["configurations"]))
+    out.append("")
+    out.append("--- 15d. THE DEGENERATE PROBES AND THE OTHER ORDER ---")
+    for r in R["degenerate_rows"]:
+        out.append("  d=%d L=%d %-14s %-11s lapse=%-5s declared-degenerate=%-5s "
+                   "probes %d vanishing %d lattice-sum-zero %d"
+                   % (r["d"], r["L"], r["rule"], r["record"], r["lapse"],
+                      r["declared_degenerate"], r["probes"],
+                      r["vanishing_probes"], r["lattice_sum_zero"]))
+    for r in R["order_rows"]:
+        out.append("  d=%d L=%d order %-16s probes %5d  nonzero %5d"
+                   % (r["d"], r["L"], r["order"], r["probes"], r["nonzero"]))
+    for r in R["structure_rows"]["nonconstant"]:
+        out.append("  d=%d L=%d non-constant field %-12s bijection=%-5s "
+                   "negative-inverts=%-5s constant=%-5s %s"
+                   % (r["d"], r["L"], r["field"],
+                      r["site_map_is_a_bijection"], r["negative_inverts_it"],
+                      r["field_is_constant"], r["tally"]))
+    out.append("")
+    out.append("--- 15e. THE DUPLICATE-RULE CENSUS (gated object) ---")
+    for r in R["structure_rows"]["duplicates"]:
+        out.append("  d=%d L=%d declared %2d  distinct in {H,H}: %s"
+                   % (r["d"], r["L"], r["declared_rules"],
+                      r["distinct_in_the_HH_weight"]))
+        out.append("  d=%d L=%d declared %2d  distinct in the register "
+                   "sector: %s"
+                   % (r["d"], r["L"], r["declared_rules"],
+                      r["distinct_in_the_register_drag"]))
     return out
 
 
@@ -3327,9 +5519,35 @@ def render_check(R):
     for r in R["decomposition_rows"]:
         if str(r["classes"]) not in txt:
             mism.append([r["rule"], r["record"], "decomposition"])
-    for s in R["verdict"]["segments"]:
-        if s["text"] not in R["verdict"]["full"]:
-            mism.append([s["name"], "verdict-segment"])
+    for r in R["spanning_rows"]:
+        if ("sites %3d  link space %d  full rank at %3d"
+                % (r["sites"], r["link_space_dimension"],
+                   r["sites_at_full_rank"])) not in txt:
+            mism.append([r["d"], r["L"], r["scope"], "spanning"])
+    for r in R["realisation_rows"]:
+        if str(r["tally"]) not in txt:
+            mism.append([r["d"], r["L"], str(r["realisation"]), "realisation"])
+    for r in R["covariance_rows"]:
+        if ("cells %4d  D-FULL covariant %4d  D-TOT covariant %4d"
+                % (r["cells"], r["d_full_covariant"],
+                   r["d_tot_covariant"])) not in txt:
+            mism.append([r["d"], r["L"], "covariance"])
+    for r in R["degenerate_rows"]:
+        if ("probes %d vanishing %d lattice-sum-zero %d"
+                % (r["probes"], r["vanishing_probes"],
+                   r["lattice_sum_zero"])) not in txt:
+            mism.append([r["rule"], r["lapse"], "degenerate"])
+    for r in R["order_rows"]:
+        if ("probes %5d  nonzero %5d" % (r["probes"], r["nonzero"])) \
+                not in txt:
+            mism.append([r["d"], r["L"], r["order"], "order"])
+    # EQUALITY, not containment (RUNBOOK section 14 addendum, v14 #10): the
+    # segments are joined in their declared order and the whole string is
+    # compared against the emitted verdict.
+    joined = (R["verdict"]["head"] + "<"
+              + "|".join(x["text"] for x in R["verdict"]["segments"]) + ">")
+    if joined != R["verdict"]["full"]:
+        mism.append(["verdict", "segment-join != emitted string"])
     if MUTANT == "render-cell-corrupt":
         R["census_rows"][0]["nonzero_pairs"] = -1
         mism2 = []
@@ -3370,39 +5588,105 @@ def paper_prose(R):
                   "at %d of %d pairs on %d sites."
                   % (lg["rows"][0]["drawn_pairs"], lg["rows"][0]["all_pairs"],
                      lg["rows"][0]["sites"]))
+    c["spanning"] = ("The realised bracket covectors span the full declared "
+                     "link space at %d of %d sites, over all %d "
+                     "arena-and-lapse-scope combinations."
+                     % (S["spanning_sites_at_full_rank"], S["spanning_sites"],
+                        S["spanning_rows"]))
     c["census"] = ("The census is cell-complete at %d cells over %d arenas and "
                    "%d lapse scopes; the commutator lands in the tangential "
                    "generator family at every one of them."
                    % (S["census_cells"], len(S["arenas"]), len(LAPSE_SCOPES)))
+    c["theorem"] = ("A predictor built from the declared weight field and the "
+                    "record's readout alone, carrying no commutator, "
+                    "reproduces the metric-match status and the coefficient "
+                    "class at %d of %d cells, with %d mispredictions."
+                    % (tr["class_prediction_cells"], S["census_cells"],
+                       len(tr["class_mispredictions"])
+                       + len(tr["metric_match_prediction_mismatches"])))
+    c["closure"] = ("Measured against the declared generator basis, the "
+                    "commutator lies in the basis at %d of %d cells. Of those, "
+                    "%d close with a constant non-metric coefficient -- the "
+                    "rigid form -- and %d close with a coefficient equal to "
+                    "the record's inverse metric."
+                    % (S["basis_closing_cells"], S["census_cells"],
+                       S["rigid_cells"], S["metric_match_cells"]))
     c["coefficient"] = ("The extracted coefficient is a reading of the record "
                         "metric at %d of %d cells of the metric-inserted rule, "
                         "and it is site-varying -- a structure function, not a "
                         "constant -- at %d of the %d inhomogeneous-record "
-                        "cells."
+                        "cells, realised at exactly %d of the declared rules: "
+                        "%s."
                         % (S["positive_control_metric_reading"],
                            S["positive_control_cells"],
                            S["inhomogeneous_site_varying_metric"],
-                           S["inhomogeneous_cells"]))
-    c["residual"] = ("The residual channel is nonzero at %d of %d census "
-                     "cells, and the coefficient system is inconsistent -- no "
-                     "structure coefficient exists -- at %d."
+                           S["inhomogeneous_cells"],
+                           len(S["site_varying_metric_rules"]),
+                           ", ".join(S["site_varying_metric_rules"])))
+    c["residual"] = ("The residual against the metric-inserted generator is "
+                     "nonzero at %d of %d census cells, and the coefficient "
+                     "system is inconsistent -- the commutator is not in the "
+                     "declared basis at all -- at %d, which are exactly the "
+                     "cells of %s, %d of the %d architecture-B cells."
                      % (S["defecting_cells"], S["census_cells"],
-                        S["not_extractable_cells"]))
+                        S["not_extractable_cells"],
+                        ", ".join(S["not_extractable_rules"]),
+                        S["not_extractable_cells"],
+                        S["architecture_B_cells"]))
+    c["central"] = ("The two-cocycle identity holds at %d of %d cells, and the "
+                    "commutator field is configuration-independent at %d of %d "
+                    "ordered lapse pairs."
+                    % (S["central_extension_holds"],
+                       S["central_extension_cells"],
+                       S["commutator_configuration_independent"],
+                       S["commutator_pairs"]))
     c["dh"] = ("Over %d normal-tangential brackets the tally is %s, and the "
                "bracket lies in the constraint family at %d of them."
                % (S["dh_brackets"],
                   "; ".join("%s %d" % (k, v)
                             for k, v in sorted(S["dh_tally"].items())),
                   S["dh_in_constraint"]))
+    c["dhsplit"] = ("That denominator is not balanced across dimension: %s."
+                    % ", ".join("%d of it at %s" % (v, k)
+                                for k, v in
+                                sorted(S["dh_brackets_by_dimension"].items(),
+                                       key=lambda t: -t[1])))
+    c["lgate3"] = ("Of the six extents censused for the criterion, %d meet it; "
+                   "d = 3, L = 3 is among them and is excluded only because "
+                   "the inherited ruling gates L >= 4 uniformly."
+                   % len([r for r in lg["rows"] if r["meets_r2_criterion"]]))
+    c["realisation"] = ("Across all %d realisations built from the two "
+                        "declared atoms, over %d classifications, the bracket "
+                        "lies in the constraint family at %d of them. At the "
+                        "%d realisations that transport the register along the "
+                        "same declared site map it lies in the extended basis "
+                        "at every one of the %d homogeneous-record "
+                        "classifications, resisting at exactly %d cells."
+                        % (S["realisation_count"],
+                           S["realisation_classifications"],
+                           S["realisation_in_constraint"],
+                           len(S["absorbing_realisations"]),
+                           S["realisation_homogeneous_classifications"],
+                           S["curvature_supported_residue_count"]))
+    c["covariance"] = ("Conjugation by full transport carries the constraint "
+                       "of the record to the constraint of the transported "
+                       "record at %d of %d cells; at the realisation that "
+                       "transports the front but not the register it holds at "
+                       "%d of %d."
+                       % (S["covariance_d_full"], S["covariance_cells"],
+                          S["covariance_d_tot"], S["covariance_cells"]))
     c["dd"] = ("The lattice's own translation generators close exactly: %d of "
-               "%d tangential brackets are the identity."
-               % (S["dd_closing"], S["dd_total"]))
+               "%d tangential brackets are the identity, of which %d pair two "
+               "distinct nonzero generators."
+               % (S["dd_closing"], S["dd_total"], S["dd_informative"]))
     c["convention"] = ("Exactly %d of the %d declared convention combinations "
                        "makes the bracket's front sector equal the transported "
-                       "lapse derivative everywhere: %s."
+                       "lapse derivative everywhere: %s. The sweep evaluates "
+                       "%d distinct front-sector probes."
                        % (len(S["conventions_matching_everywhere"]),
                           len(S["convention_sweep"]),
-                          ", ".join(S["conventions_matching_everywhere"])))
+                          ", ".join(S["conventions_matching_everywhere"]),
+                          S["convention_front_probes"]))
     c["defect"] = ("The defect is nonzero at %d of %d probes, its lattice sum "
                    "is nonzero at %d of them, and it vanishes at %d of the %d "
                    "homogeneous-record probes."
@@ -3411,6 +5695,22 @@ def paper_prose(R):
                       S["defect_probes"] - S["defect_lattice_sum_zero"],
                       S["defect_vanishes_on_homogeneous"],
                       S["defect_homogeneous_probes"]))
+    c["degenerate"] = ("The degenerate probe is built and measured: the zero "
+                       "lapse profile gives a defect field that vanishes "
+                       "identically and whose lattice sum is zero at %d of its "
+                       "%d probes, while the unit constant profile vanishes at "
+                       "%d of its %d."
+                       % (S["degenerate_zero_lattice_sum_zero"],
+                          S["degenerate_zero_probes"],
+                          S["constant_profile_vanishing"],
+                          S["constant_profile_probes"]))
+    c["robustness"] = ("The defect is nonzero at %d of %d probes under the "
+                       "other declared bracket order, and the bracket lies "
+                       "outside the declared basis at %d of %d probes at the "
+                       "declared non-constant tangential fields."
+                       % (S["order_probes"][BRACKET_ORDERS[1]][0],
+                          S["order_probes"][BRACKET_ORDERS[1]][1],
+                          S["nonconstant_outside"], S["nonconstant_probes"]))
     c["controls"] = ("The record lattice is translation-equivariant at %d of "
                      "%d cells; the scrambled lattice violates equivariance at "
                      "%d of %d, and breaks the residual field's covariance at "
@@ -3421,10 +5721,15 @@ def paper_prose(R):
                         sum(n["total_cells"] for n in ctl["negative"]),
                         sum(x["violating_cells"] for x in ctl["covariance"]
                             if x["lattice"] == "SCRAMBLED")))
-    c["routes"] = ("The dense route cross-checks %d cells and the literal "
-                   "four-map composition %d, with %d disagreements in total."
-                   % (tr["dense_cells"], tr["literal_cells"],
+    c["routes"] = ("The dense route cross-checks %d of the %d census cells, "
+                   "the third route -- which shares no component with the "
+                   "other two, and which reaches every censused arena -- %d, "
+                   "and the literal four-map composition %d, with %d "
+                   "disagreements in total."
+                   % (tr["dense_cells"], S["census_cells"], tr["route3_cells"],
+                      tr["literal_cells"],
                       len(tr["dense_disagreements"])
+                      + len(tr["route3_disagreements"])
                       + len(tr["literal_disagreements"])
                       + len(tr["dh_literal_disagreements"])
                       + len(tr["conv_literal_disagreements"])))
@@ -3433,11 +5738,22 @@ def paper_prose(R):
                        % (len([g for g in ctl["chart_group"] if g["closes"]]),
                           len(ctl["chart_group"])))
     c["lapse"] = ("Enlarging the lapse family to its lattice translates moves "
-                  "the residual MAGNITUDE at %d of %d census cells, and moves "
-                  "no cell's closure status and no cell's coefficient class "
-                  "(%d moved)."
-                  % (len(S["lapse_coordinate_moves"]), S["census_cells"],
+                  "the residual MAGNITUDE at %d of the %d (arena, rule, "
+                  "record) cells compared across the two scopes -- always "
+                  "upward, at %d of %d -- and moves no cell's closure status "
+                  "and no cell's coefficient class (%d moved)."
+                  % (len(S["lapse_coordinate_moves"]), S["lapse_comparisons"],
+                     S["lapse_moves_upward"],
+                     len(S["lapse_coordinate_moves"]),
                      len(S["lapse_coordinate_moves_coefficient"])))
+    c["duplicates"] = ("Of the %d rules declared at d = 2, %d are distinct as "
+                       "weight fields in the first bracket and %d in the "
+                       "register sector."
+                       % (S["distinct_rules"]["d2"]["declared"],
+                          S["distinct_rules"]["d2"]
+                          ["distinct_in_the_HH_weight"],
+                          S["distinct_rules"]["d2"]
+                          ["distinct_in_the_register_drag"]))
     c["instrument"] = ("%d gates, all passed; %d anchors; %d mutants, all dead."
                        % (R["totals"]["gates"], R["totals"]["anchors"],
                           R["totals"]["mutants"]))
@@ -3502,7 +5818,7 @@ COMPLIANCE_RULES = [
                                                  "A-R2-ADJ", "A-HA-CODE"]),
     ("13(3) declarations frozen before fixture truth", ["G-CENSUS-CELL-COMPLETE"]),
     ("13(4) every claim carries a gate", ["G-VERDICT-IN-GATE"]),
-    ("13(5) two independent routes", ["G-CENSUS-TWO-ROUTES",
+    ("13(5) two independent routes", ["G-CENSUS-THREE-ROUTES",
                                       "G-COMMUTATOR-TWO-ROUTES",
                                       "G-DH-TWO-ROUTES",
                                       "G-RECORD-IS-METRIC-TWO-ROUTES"]),
@@ -3525,8 +5841,10 @@ COMPLIANCE_RULES = [
     ("15 the lapse family is a named verdict coordinate",
      ["G-CENSUS-CELL-COMPLETE", "G-LSWEEP-COMPLETE"]),
     ("208 forced clauses are disclosures, not findings",
-     ["G-FORCED-CLAUSES-DISCLOSED", "G-CONVENTION-RULE-INDEPENDENT"]),
-    ("219 comparators can disagree", ["G-VERDICT-STRING-EQUALITY"]),
+     ["G-FORCED-CLAUSES-DISCLOSED", "G-STRUCTURE-THEOREM"]),
+    ("219 comparators can disagree", ["G-VERDICT-STRING-EQUALITY",
+                                      "G-CENSUS-THREE-ROUTES",
+                                      "G-STRUCTURE-THEOREM"]),
     ("234 verdict in gate, cell-completeness", ["G-VERDICT-IN-GATE",
                                                 "G-CENSUS-CELL-COMPLETE"]),
     ("24 counts computed, never typed", ["G-CENSUS-CELL-COMPLETE",
@@ -3537,7 +5855,8 @@ COMPLIANCE_RULES = [
      ["G-RECOVERY-CLOSURE", "G-RECOVERY-SECTOR", "G-RECOVERY-ANCILLARY",
       "G-DIAGONAL-SECTOR-ANCHOR"]),
     ("no silent caps: every probe scope derived and printed",
-     ["G-CENSUS-TWO-ROUTES", "G-DH-TWO-ROUTES", "G-LSWEEP-COMPLETE"]),
+     ["G-CENSUS-THREE-ROUTES", "G-DH-TWO-ROUTES", "G-LSWEEP-COMPLETE",
+      "G-REALISATION-CENSUS", "G-COVARIANCE-THEOREM"]),
     ("the L gate excludes the failing extent by gate",
      ["G-L-GATE", "G-L-GATE-REASON"]),
     ("the defect is a measured object", ["G-DEFECT-MEASURED",
@@ -3546,6 +5865,23 @@ COMPLIANCE_RULES = [
      ["G-INTERNAL-CONSISTENCY"]),
     ("the falsifier census ships with an honest denominator",
      ["G-NEVER-FALSIFIED-CENSUS"]),
+    ("34 waiver claims are gate claims",
+     ["G-WAIVER-CLAIMS-ARE-GATE-CLAIMS", "G-NEVER-FALSIFIED-CENSUS"]),
+    ("34 verbatim-text anchors: context windows bound to consumer gates",
+     ["T-R2-HANDOFF", "T-R2-GATES-L", "T-R2-PROFILES", "T-R2-INHERITED",
+      "G-L-GATE-INHERITED-FACTS"]),
+    ("46 no unanchored runtime inputs",
+     ["G-NO-UNANCHORED-RUNTIME-INPUT", "G-L-GATE-INHERITED-FACTS"]),
+    ("10 the object the gates check is the object that ships",
+     ["G-RENDER-FROM-GATED-OBJECT", "G-PAYLOAD-SEALED"]),
+    ("the load-bearing hypothesis is measured, not assumed",
+     ["G-SPANNING-HYPOTHESIS"]),
+    ("a rigid outcome that can win", ["G-RIGID-BRANCH-REACHABLE"]),
+    ("the realisation coordinate is censused, not chosen",
+     ["G-REALISATION-CENSUS", "G-COVARIANCE-THEOREM"]),
+    ("honest denominators: distinct probes, never a multiplied sample",
+     ["G-CONVENTION-FRONT-INDEPENDENT", "G-DD-RELATION-CONTENT",
+      "G-DUPLICATE-RULES-DISCLOSED"]),
 ]
 
 
@@ -3718,7 +6054,8 @@ MUTANTS = [
                        "would appear to meet the inherited criterion",
      "expected_gate": "G-L-GATE-REASON"},
     {"name": "inherited-facts-blind",
-     "what_it_breaks": "drops one inherited link profile from the ruling match",
+     "what_it_breaks": "blinds the unit to an inherited fact read by path out "
+                       "of the R2 terminal receipt",
      "expected_gate": "G-L-GATE-INHERITED-FACTS"},
     {"name": "disclosure-drop",
      "what_it_breaks": "drops a forced-clause disclosure, so a structurally "
@@ -3760,6 +6097,151 @@ MUTANTS = [
      "what_it_breaks": "drifts the path the HA code anchor's expected hash is "
                        "read from",
      "expected_gate": "P-I7-SRCSHA"},
+    # ---- THE TEN INJECTION CLASSES, EACH WITH ITS OWN KILLER ------------
+    {"name": "defect-zero-all-but-one",
+     "what_it_breaks": "zeroes the defect field at every probe but the first "
+                       "-- the class that inverted all four defect findings "
+                       "while every defect gate stayed green",
+     "expected_gate": "G-DEFECT-MEASURED"},
+    {"name": "defect-row-drop",
+     "what_it_breaks": "drops one (rule, record) defect row, so the defect "
+                       "census under-reports its own denominator",
+     "expected_gate": "G-DEFECT-MEASURED"},
+    {"name": "dh-row-drop",
+     "what_it_breaks": "drops one (rule, record, realisation) {D,H} row",
+     "expected_gate": "G-BRACKET-TABLES-CELL-COMPLETE"},
+    {"name": "dd-row-drop",
+     "what_it_breaks": "drops one (record, realisation) {D,D} row",
+     "expected_gate": "G-BRACKET-TABLES-CELL-COMPLETE"},
+    {"name": "gap-matrix-corrupt",
+     "what_it_breaks": "zeroes the diagonal-link column inside gap_matrix -- "
+                       "the component the support-restricted and dense routes "
+                       "SHARE, which the third route does not touch",
+     "expected_gate": "G-CENSUS-THREE-ROUTES"},
+    {"name": "class-predictor-blind",
+     "what_it_breaks": "blinds the analytic class predictor to a diagonal "
+                       "column, so the independent comparator would stop "
+                       "being able to disagree",
+     "expected_gate": "G-STRUCTURE-THEOREM"},
+    {"name": "coefficient-class-flip",
+     "what_it_breaks": "flips the site-varying coefficient classes to "
+                       "constant ones, erasing the separation the typing gate "
+                       "states (the R1 I4 class)",
+     "expected_gate": "G-COEFFICIENT-TYPING"},
+    {"name": "not-extractable-attribution",
+     "what_it_breaks": "attributes non-extractability to the architecture-B "
+                       "rule CLASS instead of to the measured set of rules "
+                       "carrying a diagonal-link column",
+     "expected_gate": "G-COEFFICIENT-EXTRACTION"},
+    {"name": "arch-a-diagonal-weight",
+     "what_it_breaks": "gives an architecture-A rule a diagonal-link weight "
+                       "component at one site, so the non-extractable set "
+                       "would stop being what the mechanism says it is",
+     "expected_gate": "G-COEFFICIENT-EXTRACTION"},
+    {"name": "payload-post-gate-corrupt",
+     "what_it_breaks": "corrupts measured receipt cells AFTER every "
+                       "measurement gate, at write time",
+     "expected_gate": "G-PAYLOAD-SEALED"},
+    {"name": "trajectory-post-gate-truncate",
+     "what_it_breaks": "truncates the L-sweep trajectory to two rows after "
+                       "the L-sweep gates have run",
+     "expected_gate": "G-PAYLOAD-SEALED"},
+    {"name": "recovery-denominator-overwrite",
+     "what_it_breaks": "overwrites the machinery-recovery control's "
+                       "denominators after the recovery gates",
+     "expected_gate": "G-PAYLOAD-SEALED"},
+    {"name": "controls-post-gate-truncate",
+     "what_it_breaks": "truncates the control tables after the control gates",
+     "expected_gate": "G-PAYLOAD-SEALED"},
+    # ---- THE NEW MEASUREMENTS' OWN FALSIFIERS ---------------------------
+    {"name": "route3-probe-blind",
+     "what_it_breaks": "drops a declared link direction from route 3's probe "
+                       "coverage, so the third route would stop being able to "
+                       "see a corruption on that link's column",
+     "expected_gate": "G-CENSUS-THREE-ROUTES"},
+    {"name": "metric-comparator-blind",
+     "what_it_breaks": "types the inversion-free metric comparison's product "
+                       "as the identity, so the third route could not "
+                       "disagree",
+     "expected_gate": "G-METRIC-COMPARATOR-INDEPENDENT"},
+    {"name": "cache-wrong-value",
+     "what_it_breaks": "returns a WRONG fresh value from the weight "
+                       "recomputation, so the cache exercise dies on its "
+                       "substantive clause (disagreements) rather than on its "
+                       "coverage clause",
+     "expected_gate": "G-CACHE-EXERCISE"},
+    {"name": "spanning-blind",
+     "what_it_breaks": "reports a rank below the link-space dimension, so "
+                       "hypothesis (S) would fail",
+     "expected_gate": "G-SPANNING-HYPOTHESIS"},
+    {"name": "realisation-blind",
+     "what_it_breaks": "types the register-transporting realisation's "
+                       "classification as IN-CONSTRAINT",
+     "expected_gate": "G-REALISATION-CENSUS"},
+    {"name": "covariance-theorem-blind",
+     "what_it_breaks": "types the conjugation identity's two sides equal, so "
+                       "the covariance theorem could not fail",
+     "expected_gate": "G-COVARIANCE-THEOREM"},
+    {"name": "cocycle-blind",
+     "what_it_breaks": "drops the two-cocycle from the central-extension "
+                       "identity",
+     "expected_gate": "G-CENTRAL-EXTENSION"},
+    {"name": "degenerate-probe-typed",
+     "what_it_breaks": "reports the degenerate probe's vanishing counts as "
+                       "zero -- the class in which a control is asserted "
+                       "rather than computed",
+     "expected_gate": "G-BOUNDARY-TERM-STATUS"},
+    {"name": "rigid-branch-unreachable",
+     "what_it_breaks": "makes the verdict machinery unable to return the "
+                       "pin's RIGID outcome",
+     "expected_gate": "G-RIGID-BRANCH-REACHABLE"},
+    {"name": "front-independence-break",
+     "what_it_breaks": "breaks the front sector's measured record- and "
+                       "rule-independence, which is what licenses the "
+                       "convention sweep's multiplicity",
+     "expected_gate": "G-CONVENTION-FRONT-INDEPENDENT"},
+    {"name": "criterion-blind",
+     "what_it_breaks": "makes this unit's implementation of the inherited "
+                       "locality criterion agree with itself on both control "
+                       "graphs",
+     "expected_gate": "G-L-GATE-INHERITED-FACTS"},
+    {"name": "lgate-fraction-drop",
+     "what_it_breaks": "drops one recomputed overlap fraction",
+     "expected_gate": "G-L-GATE-INHERITED-FACTS"},
+    {"name": "text-anchor-skip",
+     "what_it_breaks": "drops the last declared verbatim-text anchor row",
+     "expected_gate": "G-ANCHOR-COUNT"},
+    {"name": "falsifier-map-stale",
+     "what_it_breaks": "leaves the falsifier map stale against the census "
+                       "printed beside it",
+     "expected_gate": "G-NEVER-FALSIFIED-CENSUS"},
+    {"name": "waiver-unbacked",
+     "what_it_breaks": "injects a waiver claim with nothing behind it",
+     "expected_gate": "G-WAIVER-CLAIMS-ARE-GATE-CLAIMS"},
+    {"name": "nonconstant-field-degenerate",
+     "what_it_breaks": "replaces a declared non-constant tangential field "
+                       "with a constant one, so the robustness probe would "
+                       "test nothing new",
+     "expected_gate": "G-DEFECT-ROBUSTNESS"},
+    {"name": "dd-content-inflate",
+     "what_it_breaks": "counts every {D,D} bracket as informative, hiding "
+                       "that most pair a generator with itself or with zero",
+     "expected_gate": "G-DD-RELATION-CONTENT"},
+    {"name": "duplicate-rules-hidden",
+     "what_it_breaks": "reports every declared rule as distinct, hiding the "
+                       "exact duplicates",
+     "expected_gate": "G-DUPLICATE-RULES-DISCLOSED"},
+    {"name": "runtime-read-undeclared",
+     "what_it_breaks": "adds an undeclared runtime read to the declared list",
+     "expected_gate": "G-NO-UNANCHORED-RUNTIME-INPUT"},
+    {"name": "verdict-typed-covariance",
+     "what_it_breaks": "types the COVARIANCE segment to claim the record "
+                       "transports",
+     "expected_gate": "G-VERDICT-STRING-EQUALITY"},
+    {"name": "verdict-typed-correspondence",
+     "what_it_breaks": "types the CORRESPONDENCE segment to claim the HDA is "
+                       "reproduced",
+     "expected_gate": "G-VERDICT-STRING-EQUALITY"},
     # ---- THE FIVE R1 VERDICT INJECTION CLASSES -------------------------
     {"name": "verdict-typed-segment",
      "what_it_breaks": "TYPES the DH-BRACKET segment to claim the "
@@ -3790,10 +6272,142 @@ MUTANTS = [
      "expected_gate": "G-VERDICT-STRING-EQUALITY"},
 ]
 
+# EVERY REMAINING ANCHOR ROW GETS ITS OWN DECLARED FALSIFIER.  The mechanisms
+# already exist inside verify_anchors / verify_path_anchors / verify_text_
+# anchors; these rows declare them, so the never-falsified census stops
+# resting on a same-mechanism argument (RUNBOOK section 14 addendum, v14 #34).
+MUTANTS += [{"name": "anchor-hash-" + row[0],
+             "what_it_breaks": "corrupts the %s file-byte anchor" % row[0],
+             "expected_gate": row[0]}
+            for row in ANCHOR_ROWS
+            if row[0] not in [m["expected_gate"] for m in MUTANTS]]
+MUTANTS += [{"name": "path-value-" + row[0],
+             "what_it_breaks": "drifts the %s (path, value) anchor's path"
+                               % row[0],
+             "expected_gate": row[0]}
+            for row in PATH_ANCHOR_ROWS
+            if row[0] not in [m["expected_gate"] for m in MUTANTS]]
+MUTANTS += [{"name": "text-anchor-" + row[0],
+             "what_it_breaks": "drifts the %s verbatim-text anchor's context "
+                               "window" % row[0],
+             "expected_gate": row[0]}
+            for row in TEXT_ANCHOR_ROWS
+            if row[0] not in [m["expected_gate"] for m in MUTANTS]]
+MUTANTS.sort(key=lambda m: m["name"])
+
 
 # ----------------------------------------------------------------------------
 # 17.  DELIVERY
 # ----------------------------------------------------------------------------
+
+def build_falsifier_map():
+    """The gate -> declared-mutants map, REBUILT from the mutant table.  It is
+    rebuilt in the final pass so it can never go stale against the census
+    printed beside it."""
+    fmap = {}
+    for m in MUTANTS:
+        fmap.setdefault(m["expected_gate"], []).append(m["name"])
+    return dict((k, sorted(v)) for k, v in sorted(fmap.items()))
+
+
+def path_rows_with_a_falsifier(fmap):
+    return sorted(k for k in fmap if k.startswith("P-"))
+
+
+def byte_rows_with_a_falsifier(fmap):
+    return sorted(k for k in fmap if k.startswith("A-"))
+
+
+def text_rows_with_a_falsifier(fmap):
+    return sorted(k for k in fmap if k.startswith("T-"))
+
+
+def waiver_for(name, fmap=None):
+    """The forcing statement for a gate with no declared falsifier.  Every
+    number in it is COMPUTED from the falsifier map (#24 at the surface #34
+    was engraved for: the previous text carried a typed count, and it was
+    wrong)."""
+    fmap = build_falsifier_map() if fmap is None else fmap
+    if name == "G-DEFERRED-GATES-EVALUATED":
+        return ("WAIVED, GENUINE: a bookkeeping gate over the write-time gate "
+                "names and the rendered gate count.  Its falsifier would be a "
+                "gate that never ran, which is exactly what the gate itself "
+                "reports; there is no state in which it can fail while the "
+                "run continues.")
+    if name.startswith("A-"):
+        return ("SAME-MECHANISM: a file-byte anchor row.  %d of the %d "
+                "file-byte rows carry declared byte-corruption falsifiers "
+                "(%s), each of which dies on ITS OWN row."
+                % (len(byte_rows_with_a_falsifier(fmap)), len(ANCHOR_ROWS),
+                   ",".join(byte_rows_with_a_falsifier(fmap))))
+    if name.startswith("P-"):
+        return ("SAME-MECHANISM: a (path, value) anchor row.  %d of the %d "
+                "path-value rows carry declared path-drift or path-value "
+                "falsifiers, each of which dies on ITS OWN row."
+                % (len(path_rows_with_a_falsifier(fmap)),
+                   len(PATH_ANCHOR_ROWS)))
+    if name.startswith("T-"):
+        return ("SAME-MECHANISM: a verbatim-text anchor row.  %d of the %d "
+                "text rows carry declared window-drift falsifiers, each of "
+                "which dies on ITS OWN row."
+                % (len(text_rows_with_a_falsifier(fmap)),
+                   len(TEXT_ANCHOR_ROWS)))
+    return "NAMED, no waiver claimed"
+
+
+def waiver_audit(fmap, nf):
+    """Every waiver is itself a claim; here it is checked.  Only the gates the
+    census actually waives are audited -- and a waiver may name only mutants
+    this instrument declares and only gates a declared mutant really kills."""
+    names = set(m["name"] for m in MUTANTS)
+    killed = set(m["expected_gate"] for m in MUTANTS)
+    registered = set(g["name"] for g in GATES) | set(DEFERRED_GATES)
+    bad = []
+    for name in nf:
+        if name in fmap:
+            bad.append([name, "waived, yet a declared mutant kills it"])
+        text = waiver_for(name, fmap)
+        if text == "NAMED, no waiver claimed":
+            bad.append([name, "no waiver text for a never-falsified gate"])
+            continue
+        for tok in text.replace(",", " ").replace("(", " ") \
+                       .replace(")", " ").replace(".", " ").split():
+            if tok in registered and tok not in killed:
+                bad.append([name, "waiver names %s, which no mutant kills"
+                            % tok])
+            if tok in names and tok not in names:
+                bad.append([name, "waiver names an undeclared mutant"])
+    for k in fmap:
+        if k in nf:
+            bad.append([k, "a falsified gate appears in the waiver census"])
+    if MUTANT == "waiver-unbacked":
+        bad.append(["INJECTED", "an unbacked waiver claim"])
+    return bad
+
+
+def falsifier_census(fnames, fmap, nf):
+    stored = dict(fmap)
+    if MUTANT == "falsifier-map-stale":
+        # the R6a disease: a map assembled early and never rebuilt, shipped
+        # beside a count that has moved on
+        for k in list(stored)[-2:]:
+            stored.pop(k, None)
+    return {
+        "gates": len(fnames),
+        "gates_with_a_declared_falsifier": len([n for n in fnames
+                                                if n in fmap]),
+        "never_falsified": nf,
+        "never_falsified_count": len(nf),
+        "denominator": "%d of %d gates" % (len(nf), len(fnames)),
+        "falsifier_map": dict((k, v) for k, v in stored.items()
+                              if k in fnames),
+        "waivers": dict((k, waiver_for(k, fmap)) for k in nf),
+        "rule": "a gate with no declared falsifier is NAMED here with its "
+                "forcing stated, from delivery one; every waiver's own "
+                "counts are computed from the falsifier map and audited by "
+                "G-WAIVER-CLAIMS-ARE-GATE-CLAIMS",
+    }
+
 
 def finalise(R):
     """Totals, the falsifier census, the write-time gates, the compliance
@@ -3861,7 +6475,7 @@ def finalise(R):
          len(bad) == 0, {"contradictions": bad})
 
     R["totals"] = {
-        "gates": len(GATES) + len(POST_RENDER_GATES),
+        "gates": len(GATES) + gates_still_to_come(),
         "anchors": len(ANCHORS),
         "file_byte_anchors": len(ANCHOR_ROWS),
         "path_value_anchors": len(PATH_ANCHOR_ROWS),
@@ -3900,67 +6514,56 @@ def finalise(R):
           "paper_sha256_prefix": paper_hash})
 
     # -- THE FALSIFIER CENSUS, honest denominator ------------------------
-    fmap = {}
-    for m in MUTANTS:
-        fmap.setdefault(m["expected_gate"], []).append(m["name"])
+    #
+    # THE #34 STANDARD: a never-falsified waiver naming a mutant or a forcing
+    # is itself a claim requiring verification.  So: the map is REBUILT in the
+    # final pass (a stale map is a false census); every waiver text's counts
+    # are COMPUTED from the map rather than typed; every waiver naming a
+    # mutant is checked to name a mutant that really dies at that gate; and a
+    # waiver for a gate that is in fact falsified is a dead entry and is
+    # forbidden.
+    fmap = build_falsifier_map()
     fnames = [g["name"] for g in GATES] + [n for n in DEFERRED_GATES
-                                           if n not in [g["name"] for g in GATES]]
-    def waiver_for(name):
-        """The forcing statement for a gate with no declared falsifier."""
-        if name.startswith("A-"):
-            return ("SAME-MECHANISM: a file-byte anchor row, identical in "
-                    "construction to A-R0-I7 and A-HA-CODE, both of which "
-                    "carry declared falsifiers (anchor-hash, ha-code-drift, "
-                    "anchor-skip); the mechanism is falsified, this row is not "
-                    "separately targeted")
-        if name.startswith("P-"):
-            return ("SAME-MECHANISM: a (path, value) anchor row, identical in "
-                    "construction to the eight rows carrying declared "
-                    "path-drift and path-value falsifiers; the mechanism is "
-                    "falsified, this row is not separately targeted")
-        if name == "G-RECOVERY-ANCILLARY":
-            return ("NAMED, no waiver claimed: its four constituent recoveries "
-                    "each have a falsifier one gate earlier (readout-local, "
-                    "path-value-P-I7-RANK / -GENERALD), so no mutant reaches "
-                    "this gate first")
-        if name == "G-CONVENTION-RULE-INDEPENDENT":
-            return ("FORCED (#208): the bracket's front sector contains no "
-                    "drag weight, so the per-rule rows cannot differ -- "
-                    "carried as a disclosure, not a finding")
-        if name == "G-DEFERRED-GATES-EVALUATED":
-            return ("WAIVED: a bookkeeping gate over the write-time gate names "
-                    "and the rendered gate count; its falsifier would be a "
-                    "gate that never ran, which the gate itself reports")
-        return "NAMED, no waiver claimed"
-
+                                           if n not in [g["name"]
+                                                        for g in GATES]]
     nf = [n for n in fnames if n not in fmap]
     if MUTANT == "falsifier-census-hide":
         nf = []
-    R["falsifier_census"] = {
-        "gates": len(fnames),
-        "gates_with_a_declared_falsifier": len([n for n in fnames if n in fmap]),
-        "never_falsified": nf,
-        "never_falsified_count": len(nf),
-        "denominator": "%d of %d gates" % (len(nf), len(fnames)),
-        "falsifier_map": dict((k, sorted(x)) for k, x in sorted(fmap.items())
-                              if k in fnames),
-        "waivers": dict((k, waiver_for(k)) for k in nf),
-        "rule": "a gate with no declared falsifier is NAMED here with its "
-                "forcing stated, from delivery one",
-    }
+    R["falsifier_census"] = falsifier_census(fnames, fmap, nf)
     gate("G-NEVER-FALSIFIED-CENSUS",
          "the never-falsified census ships IN the receipt with an honest "
-         "denominator: every gate without a declared falsifier is named and "
-         "its forcing stated",
+         "denominator, and the census is CONSISTENT WITH ITSELF: the "
+         "falsifier map is REBUILT in this final pass (a map assembled "
+         "earlier and never rebuilt is stale, and a stale map disagrees with "
+         "the count printed beside it), its size equals the number of gates "
+         "with a declared falsifier, every never-falsified gate carries a "
+         "waiver, and NO waiver exists for a gate that is in fact falsified",
          (R["falsifier_census"]["never_falsified_count"]
           + R["falsifier_census"]["gates_with_a_declared_falsifier"]
           == R["falsifier_census"]["gates"])
-         and all(n in R["falsifier_census"]["waivers"] for n in nf),
+         and all(n in R["falsifier_census"]["waivers"] for n in nf)
+         and len(R["falsifier_census"]["falsifier_map"])
+         == R["falsifier_census"]["gates_with_a_declared_falsifier"]
+         and sorted(R["falsifier_census"]["waivers"]) == sorted(nf),
          {"census": R["falsifier_census"]["denominator"],
-          "named": nf})
+          "named": nf,
+          "map_size": len(R["falsifier_census"]["falsifier_map"]),
+          "with_a_falsifier":
+              R["falsifier_census"]["gates_with_a_declared_falsifier"]})
+    bad_waiver = waiver_audit(fmap, nf)
+    gate("G-WAIVER-CLAIMS-ARE-GATE-CLAIMS",
+         "THE #34 STANDARD, ENFORCED: every waiver that names a mutant names "
+         "a mutant this instrument declares AND whose declared death gate is "
+         "the waived gate itself or the gate the waiver says it is; every "
+         "waiver that states a forcing names the gate that machine-checks it; "
+         "and every count inside a waiver text is COMPUTED from the falsifier "
+         "map, never typed",
+         len(bad_waiver) == 0,
+         {"violations": bad_waiver[:6],
+          "waived_gates": sorted(R["falsifier_census"]["waivers"])})
 
     claimed = R["paper_claims"]["rendered"]["instrument"]
-    ngates = len(GATES) + 3
+    ngates = len(GATES) + gates_still_to_come()
     if MUTANT == "gate-count-drift":
         ngates = ngates + 1
     gate("G-FINAL-GATE-COUNT",
@@ -3977,8 +6580,9 @@ def finalise(R):
          "the write-time gates named in the falsifier census really did run, "
          "so the census's denominator covers every gate this instrument "
          "declares",
-         all(d in reg for d in DEFERRED_GATES if d != "G-DEFERRED-GATES-EVALUATED")
-         and len(GATES) + 2 == R["totals"]["gates"],
+         all(d in reg for d in DEFERRED_GATES
+             if d not in ("G-DEFERRED-GATES-EVALUATED", "G-PAYLOAD-SEALED"))
+         and len(GATES) + gates_still_to_come() == R["totals"]["gates"],
          {"deferred": list(DEFERRED_GATES), "registered": len(reg),
           "claimed_total": R["totals"]["gates"]})
 
@@ -3986,14 +6590,7 @@ def finalise(R):
     nf = [n for n in fnames if n not in fmap]
     if MUTANT == "falsifier-census-hide":
         nf = []
-    R["falsifier_census"]["gates"] = len(fnames)
-    R["falsifier_census"]["never_falsified"] = nf
-    R["falsifier_census"]["never_falsified_count"] = len(nf)
-    R["falsifier_census"]["gates_with_a_declared_falsifier"] = len(
-        [n for n in fnames if n in fmap])
-    R["falsifier_census"]["denominator"] = "%d of %d gates" % (len(nf),
-                                                               len(fnames))
-    R["falsifier_census"]["waivers"] = dict((k, waiver_for(k)) for k in nf)
+    R["falsifier_census"] = falsifier_census(fnames, fmap, nf)
     R["gates"] = GATES
     R["compliance"] = compliance_sweep(R)
     if MUTANT == "compliance-claim-unbacked":
@@ -4018,18 +6615,13 @@ def finalise(R):
          {"unbacked": unbacked[:4],
           "statuses": sorted(set(c["status"] for c in R["compliance"]))})
     R["gates"] = GATES
-    R["falsifier_census"]["gates"] = len(GATES)
-    nf = [n for n in [g["name"] for g in GATES] if n not in fmap]
+    fnames = [g["name"] for g in GATES]
+    nf = [n for n in fnames if n not in fmap]
     if MUTANT == "falsifier-census-hide":
         nf = []
-    R["falsifier_census"]["never_falsified"] = nf
-    R["falsifier_census"]["never_falsified_count"] = len(nf)
-    R["falsifier_census"]["gates_with_a_declared_falsifier"] = \
-        len(GATES) - len(nf)
-    R["falsifier_census"]["denominator"] = "%d of %d gates" % (len(nf),
-                                                               len(GATES))
-    R["falsifier_census"]["waivers"] = dict((k, waiver_for(k)) for k in nf)
+    R["falsifier_census"] = falsifier_census(fnames, fmap, nf)
     R["compliance"] = compliance_sweep(R)
+    R["payload_seal"] = payload_seal(R)
     return R
 
 
@@ -4039,8 +6631,55 @@ def build_everything():
     return finalise(R)
 
 
+def write_time_gates(R):
+    """The gates that can only run once the payload is final -- evaluated on
+    EVERY run, mutant or plain, and always BEFORE any artifact is written."""
+    if MUTANT == "payload-post-gate-corrupt":
+        R["census_rows"][0]["nonzero_pairs"] = 4242
+        R["defect_rows"][0]["lattice_sum_zero"] = 11
+        R["controls"]["chart_group"][0]["order"] = 7
+    if MUTANT == "trajectory-post-gate-truncate":
+        R["summary"]["trajectory"] = R["summary"]["trajectory"][:2]
+    if MUTANT == "recovery-denominator-overwrite":
+        R["recovery"]["closure_cells_compared"] = 99999
+        R["recovery"]["sector_cells_compared"] = 88888
+    if MUTANT == "controls-post-gate-truncate":
+        R["controls"]["chart_group"] = R["controls"]["chart_group"][:1]
+        R["controls"]["positive"] = R["controls"]["positive"][:1]
+        R["controls"]["negative"] = R["controls"]["negative"][:1]
+    # THE PAYLOAD SEAL, re-verified after every gate and BEFORE any write
+    # (RUNBOOK section 13 addendum, v14 #10: the object the gates check must
+    # be the object the receipt and paper render from).  Three write-time
+    # checks run here: the seal, a fresh render check, and a fresh rebuild of
+    # the verdict from the payload as it now stands.
+    seal = R.pop("payload_seal")
+    now = payload_seal(R)
+    gate("G-PAYLOAD-SEALED",
+         "the payload written to disk is BYTE-FOR-BYTE the payload the gates "
+         "checked: a digest of the whole gated subtree is taken after the "
+         "last measurement gate and re-verified here, immediately before the "
+         "write, together with a fresh render check and a fresh independent "
+         "rebuild of the verdict.  A post-gate mutation of any measured row "
+         "cannot ship",
+         (seal == now
+          and len(render_check(R)) == 0
+          and reconstruct_verdict_from_receipt(
+              json.loads(json.dumps(jsonable(R)))) == R["verdict"]["full"]),
+         {"seal_at_gate_time": seal, "seal_at_write_time": now,
+          "render_mismatches": render_check(R)[:4]})
+    R["payload_seal"] = seal
+    R["gates"] = GATES
+    R["totals"]["gates"] = len(GATES)
+    fmap = build_falsifier_map()
+    fnames = [g["name"] for g in GATES]
+    nf = [n for n in fnames if n not in fmap]
+    R["falsifier_census"] = falsifier_census(fnames, fmap, nf)
+    R["compliance"] = compliance_sweep(R)
+    return R
+
+
 def deliver():
-    R = build_everything()
+    R = write_time_gates(build_everything())
     text = render_text(R)
     payload = jsonable(R)
     with open(OUT_TXT, "w") as fh:
@@ -4098,7 +6737,7 @@ def main():
     try:
         if MUTANT is None:
             return deliver()
-        R = build_everything()
+        R = write_time_gates(build_everything())
         render_text(R)
         sys.stderr.write("MUTANT %s SURVIVED -- no gate fired\n" % MUTANT)
         return 3

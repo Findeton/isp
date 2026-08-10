@@ -4,7 +4,11 @@ record lattice: does H_a[N] close, and with what coefficients?
 ==============================================================================
 
 --- 1. ANCHORS ---
-  file-byte anchors: 7 ; path-value anchors: 32 ; derived: 1
+  verbatim-text anchors: 4 ; file-byte anchors: 7 ; path-value anchors: 32 ; derived: 1
+    T-R2-HANDOFF                 verbatim-t v14/note-r2-adjudication.md
+    T-R2-GATES-L                 verbatim-t v14/note-r2-adjudication.md
+    T-R2-PROFILES                verbatim-t v14/note-r2-adjudication.md
+    T-R2-INHERITED               verbatim-t v14/note-r2-adjudication.md
     A-PIN-R3                     file-bytes v14/note-r3-relativity-pin.md
     A-R0-PIN                     file-bytes v14/note-r0-founding-pin.md
     A-R0-I7                      file-bytes v13/code/ha_successor_receipt.json
@@ -61,7 +65,8 @@ record lattice: does H_a[N] close, and with what coefficients?
   d=3 L=3  |X|= 27  drawn   324 of   351  complete=False  meets-R2-criterion=True   censused=False
   d=3 L=4  |X|= 64  drawn   768 of  2016  complete=False  meets-R2-criterion=True   censused=True
   d=3 L=5  |X|=125  drawn  1500 of  7750  complete=False  meets-R2-criterion=True   censused=True
-  recomputed fractions also present in the R2 adjudication: [[64, 120], [324, 351], [768, 2016]]
+  overlap fractions recomputed here: d2L3 36/36, d2L4 64/120, d2L5 100/300, d3L3 324/351, d3L4 768/2016, d3L5 1500/7750
+  the inherited criterion, read by path from the R2 terminal receipt, applied: positive control True, negative control False
 
 --- 4. THE MACHINERY-RECOVERY CONTROL (at I7's OWN declared scope) ---
   scope d=2 L=3, 9 sites, lapse family 12, ordered pairs 132
@@ -82,16 +87,18 @@ record lattice: does H_a[N] close, and with what coefficients?
     d=3 L=5 TRANSLATES  cells 20
   routes: dense 198 cells (0 disagreements) ; literal 21420 cells (0) ; bracket-literal 4128 (0) ; convention-literal 320 (0)
   coefficient classes (computed): {'CONSTANT-NON-METRIC': 216, 'METRIC-READING-CONSTANT': 108, 'METRIC-READING-SITE-VARYING': 32, 'NOT-EXTRACTABLE': 36, 'SITE-VARYING-NON-METRIC': 48, 'ZERO': 36}
-  the positive control: closes at 56 of 56 cells; its coefficient is a metric reading at 56 of 56, site-varying at 16
+  closure forms (computed): {'METRIC-READING-CONSTANT(INDISTINGUISHABLE-FROM-RIGID-HERE)': 108, 'METRIC-READING-SITE-VARYING(THE-GR-BRACKET-FORM)': 32, 'NOT-IN-THE-DECLARED-BASIS': 36, 'RIGID-CONSTANT-NON-METRIC': 216, 'SITE-VARYING-NON-METRIC': 48, 'TRIVIAL-ZERO-COEFFICIENT': 36}
+  basis closure: 440 of 476 cells lie in the declared generator basis; 216 of them close with a CONSTANT NON-METRIC coefficient (the pin's RIGID form)
+  the positive control: metric-matches at 56 of 56 cells; its coefficient is a metric reading at 56 of 56, site-varying at 16
 
 --- 6. THE OTHER TWO BRACKETS ---
   {D,H} tally over 21012 brackets: {'D-REG/IDENTITY': 10506, 'D-TOT/IDENTITY': 120, 'D-TOT/OUTSIDE': 10386}
   {D,D} lattice translations: 644 of 644 close
   convention sweep (front sector vs the transported lapse derivative):
-    D-H-Dinv-Hinv/BACKWARD        1152 of 21126
-    D-H-Dinv-Hinv/FORWARD         1152 of 21126
-    H-D-Hinv-Dinv/BACKWARD       21126 of 21126
-    H-D-Hinv-Dinv/FORWARD         1152 of 21126
+    D-H-Dinv-Hinv/BACKWARD          26 of   685
+    D-H-Dinv-Hinv/FORWARD           26 of   685
+    H-D-Hinv-Dinv/BACKWARD         685 of   685
+    H-D-Hinv-Dinv/FORWARD           26 of   685
 
 --- 7. THE DEFECT, CHARACTERISED ---
   probes 3096 ; vanishing 0 ; lattice-sum-zero 0 ; vanishing on the homogeneous sector 0 of 2280
@@ -105,51 +112,62 @@ record lattice: does H_a[N] close, and with what coefficients?
   d=2 L=5 equivariance: RECORD 0/1875 violations ; SCRAMBLED 900/1875 violations
   d=3 L=4 equivariance: RECORD 0/24576 violations ; SCRAMBLED 12288/24576 violations
   d=3 L=5 equivariance: RECORD 0/93750 violations ; SCRAMBLED 45000/93750 violations
-  residual covariance RECORD    rule A-chart   covariant 3072 violations 0 (non-vacuity: 128 nonzero base cells)
-  residual covariance RECORD    rule A-axis    covariant 3072 violations 0 (non-vacuity: 128 nonzero base cells)
-  residual covariance SCRAMBLED rule A-chart   covariant 3008 violations 64 (non-vacuity: 64 nonzero base cells)
-  residual covariance SCRAMBLED rule A-axis    covariant 3008 violations 64 (non-vacuity: 64 nonzero base cells)
-  cache: 901876 hits, 9441 misses, 64 fresh bypasses, 64 compared, 0 disagreements
+  residual covariance RECORD    rule A-chart   covariant 3072 violations 0 (non-vacuity: 8 nonzero base cells)
+  residual covariance RECORD    rule A-axis    covariant 3072 violations 0 (non-vacuity: 8 nonzero base cells)
+  residual covariance SCRAMBLED rule A-chart   covariant 3008 violations 64 (non-vacuity: 4 nonzero base cells)
+  residual covariance SCRAMBLED rule A-axis    covariant 3008 violations 64 (non-vacuity: 4 nonzero base cells)
+  cache: 966941 hits, 15907 misses, 147520 fresh bypasses, 64 compared, 0 disagreements
 
 --- 9. THE L-SWEEP TRAJECTORY ---
-  d    L    scope        cells  close   defect     maxres   metric  sitevar
-  2    4    BASE            99     26       73          9         26        5
-  2    4    TRANSLATES      99     26       73          9         26        5
-  2    5    BASE            99     26       73         16         26        5
-  2    5    TRANSLATES      99     26       73         16         26        5
-  3    4    BASE            20      9       11          8          9        3
-  3    4    TRANSLATES      20      9       11         27          9        3
-  3    5    BASE            20      9       11      128/9          9        3
-  3    5    TRANSLATES      20      9       11         48          9        3
+  d    L    scope        cells inbasis  rigid  metric     maxres mreading  sitevar
+  2    4    BASE            99      90     46      26          9       26        5
+  2    4    TRANSLATES      99      90     46      26          9       26        5
+  2    5    BASE            99      90     46      26         16       26        5
+  2    5    TRANSLATES      99      90     46      26         16       26        5
+  3    4    BASE            20      20      8       9          8        9        3
+  3    4    TRANSLATES      20      20      8       9         27        9        3
+  3    5    BASE            20      20      8       9      128/9        9        3
+  3    5    TRANSLATES      20      20      8       9         48        9        3
 
 --- 10. FORCED CLAUSES, DISCLOSED (#208) ---
   X01  THE FIRST BRACKET'S LANDING IS FORCED, ITS COEFFICIENT IS NOT. w[N, .] is linear in the front, s...
   X02  THE D-REG NORMAL-TANGENTIAL IDENTITY IS FORCED.  At the primary tangential realisation the regis...
-  X03  THE POSITIVE CONTROL'S COEFFICIENT VALUE IS FORCED.  The metric-inserted rule's weight IS the re...
+  X03  AT THE POSITIVE CONTROL BOTH THE COEFFICIENT'S VALUE AND ITS SITE-VARIATION CLASS ARE FORCED.  T...
   X04  THE THIRD BRACKET'S CLOSURE IS FORCED FOR CONSTANT FIELDS.  The Lie bracket of two constant vect...
-  X05  THE ARCH-B CELLS' NON-EXTRACTABILITY IS FORCED.  Architecture B's commutator displacement carrie...
+  X05  NON-EXTRACTABILITY IS FORCED, AND IT IS A PROPERTY OF ONE DECLARED RULE, NOT OF AN ARCHITECTURE....
   X06  THE d = 3 INHOMOGENEOUS RECORDS ARE A DECLARED EXTENSION of I7's d=3 record list, built by I7's ...
   X07  THE BRACKET CENSUS'S LAPSE SCOPE AT d = 3 is I7's own d=3 probe convention -- the first six site...
+  X08  THE TANGENTIAL FAMILY IS RESTRICTED TO CONSTANT FIELDS IN THE CENSUS, and the reason is the bije...
+  X09  THE WHOLE UNIT RUNS AT DENSITY WEIGHT w = 0.  I7 declares a weight flip w = 1 as well (anchored ...
+  X10  THE DECLARED RULE LIST CONTAINS EXACT DUPLICATES, measured here: HH at d=2: A-axis = B-axis; HH ...
+  X11  THE TRANSLATION CONTROL'S 100%% IS FORCED BY MODULAR ARITHMETIC.  nb(x+u, l) = (x+u)+l = (x+l)+u...
+  X12  THE CONVENTION SWEEP'S REPORTED DENOMINATOR IS ITS DISTINCT PROBE COUNT.  The bracket's front se...
 
 --- 11. THE VERDICT ---
   R3-DEFORMATION-DEFECT-AT
-    ARENA=SITES=d2L4:16,d2L5:25,d3L4:64,d3L5:125;LINKS=d2:3,d3:6;RECORDS=14;RULES=11;LAPSE-SCOPES=BASE,TRANSLATES
-    L-GATE=MIN-L=4;EXCLUDED=d2L3;REASON=OVERLAP-GRAPH-COMPLETE-AT-36-OF-36;INHERITED-FRACTIONS-RECOMPUTED=3
+    ARENA=SITES=d2L4:16,d2L5:25,d3L4:64,d3L5:125;LINKS=d2:3,d3:6;RECORDS=14;RULES=11;LAPSE-SCOPES=BASE,TRANSLATES;WEIGHT=0
+    L-GATE=MIN-L=4;EXCLUDED=d2L3;REASON=OVERLAP-GRAPH-COMPLETE-AT-36-OF-36;CRITERION-READ-BY-PATH-FROM-THE-R2-TERMINAL-RECEIPT;CRITERION-IMPLEMENTATION-CONTROLLED=TRUE;FRACTIONS-RECOMPUTED-HERE=6
     RECOVERY=CLOSURE-99-OF-99;SECTOR-72-OF-72;RANK;READOUT-DET-2;GENERAL-D;COUNT-LATTICE;DIAGONAL-SECTOR-5-RECORDS-CLOSE-AT-THE-LINK-LOCAL-RULE
-    HH-BRACKET=LANDS-IN-THE-TANGENTIAL-FAMILY-AT-476-OF-476-CELLS(FORCED:w-LINEAR-IN-THE-FRONT);POSITIVE-CONTROL-CLOSES-AT-56-OF-56;NORMAL-CHANNEL-EMPTY(FORCED)
-    COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS;CLASSES=CONSTANT-NON-METRIC:216;METRIC-READING-CONSTANT:108;METRIC-READING-SITE-VARYING:32;NOT-EXTRACTABLE:36;SITE-VARYING-NON-METRIC:48;ZERO:36;POSITIVE-CONTROL-METRIC-READING-AT-56-OF-56(FORCED-VALUE,MEASURED-UNIQUENESS);SITE-VARYING-ON-THE-INHOMOGENEOUS-RECORDS-AT-32-OF-120
-    HH-RESIDUAL=NONZERO-AT-336-OF-476-CELLS;RULES=A-axis,A-chart,A-insert-2x,A-insert-x,A-linkframe,A-linkhalf,A-notransport,B-all,B-axis,B-chart;NOT-EXTRACTABLE-AT-36-CELLS(ARCH-B:OUTSIDE-THE-AXIS-COVECTOR-FORM,FORCED);MAX=48
-    DH-BRACKET=D-REG/IDENTITY:10506;D-TOT/IDENTITY:120;D-TOT/OUTSIDE:10386(D-REG-IDENTITY-FORCED);HDA-REQUIRES-H[L_v-N];IN-CONSTRAINT-AT-0-OF-21012
-    DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET;CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-3096-OF-3096-PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-ZERO-AT-0-OF-3096;VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-0;L-AND-D-INDEPENDENT-AT-4-ARENAS
-    CONVENTION=FRONT-SECTOR-REPRODUCES-L_v-N-AT-H-D-Hinv-Dinv/BACKWARD;MATCHING-CONVENTIONS=1-OF-4;D-H-Dinv-Hinv/BACKWARD:1152-OF-21126;D-H-Dinv-Hinv/FORWARD:1152-OF-21126;H-D-Hinv-Dinv/BACKWARD:21126-OF-21126;H-D-Hinv-Dinv/FORWARD:1152-OF-21126
-    DD-BRACKET=LATTICE-TRANSLATIONS-CLOSE-AT-644-OF-644-AT-BOTH-REALISATIONS(FORCED:[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT)
-    LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-62-CELLS;COEFFICIENT-CLASS-MOVES-AT-0-CELLS
+    SPANNING=MEASURED;OMEGA-SPANS-THE-FULL-LINK-SPACE-AT-460-OF-460-SITES;ROWS=8;RECORD-INDEPENDENT-AT-8-OF-8;THE-ONE-LOAD-BEARING-MEASUREMENT-OF-THE-HH-HALF
+    HH-BRACKET=LANDS-IN-THE-TANGENTIAL-FAMILY-AT-476-OF-476-CELLS(FORCED:w-LINEAR-IN-THE-FRONT);NORMAL-CHANNEL-EMPTY(FORCED);STRUCTURE-THEOREM-rho=(W-B).Omega-VERIFIED-AT-476-OF-476-CELLS(FORCED);CENTRAL-EXTENSION-H[N]H[M]=T_w[N,M].H[N+M]-AT-4284-OF-4284;COMMUTATOR-CONFIGURATION-INDEPENDENT-AT-3570-OF-3570
+    COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS(UNIQUE-BY-(S));CLASSES=CONSTANT-NON-METRIC:216;METRIC-READING-CONSTANT:108;METRIC-READING-SITE-VARYING:32;NOT-EXTRACTABLE:36;SITE-VARYING-NON-METRIC:48;ZERO:36(FORCED:class=f(W,B));POSITIVE-CONTROL-METRIC-READING-AT-56-OF-56(FORCED-VALUE-AND-FORCED-CLASS);SITE-VARYING-METRIC-ON-THE-INHOMOGENEOUS-RECORDS-AT-32-OF-120-CELLS-AT-RULES=A-axis,A-insert,A-insert-x,B-axis
+    HH-CLOSURE=AGAINST-THE-DECLARED-GENERATOR-BASIS;IN-THE-BASIS-AT-440-OF-476-CELLS;FORMS=METRIC-READING-CONSTANT(INDISTINGUISHABLE-FROM-RIGID-HERE):108;METRIC-READING-SITE-VARYING(THE-GR-BRACKET-FORM):32;NOT-IN-THE-DECLARED-BASIS:36;RIGID-CONSTANT-NON-METRIC:216;SITE-VARYING-NON-METRIC:48;TRIVIAL-ZERO-COEFFICIENT:36;RIGID-CONSTANT-NON-METRIC-REACHED-AT-216-CELLS;METRIC-MATCH-AT-140-OF-476;SYNTHETIC-RIGID-HEAD=RIGID-CONSTANT-NON-METRIC
+    HH-RESIDUAL=NONZERO-AT-336-OF-476-CELLS;RULES=A-axis,A-chart,A-insert-2x,A-insert-x,A-linkframe,A-linkhalf,A-notransport,B-all,B-axis,B-chart;NOT-IN-THE-BASIS-AT-36-CELLS(RULES-WITH-A-DIAGONAL-LINK-COLUMN=B-all;36-OF-108-ARCHITECTURE-B-CELLS,FORCED);MAX=48
+    DH-BRACKET=D-REG/IDENTITY:10506;D-TOT/IDENTITY:120;D-TOT/OUTSIDE:10386(D-REG-IDENTITY-FORCED);THE-RELATION-REQUIRES-H[L_v-N];IN-CONSTRAINT-AT-0-OF-21012
+    REALISATION-CENSUS=ALL-27-(a,b,c)-REALISATIONS-BUILT-FROM-THE-TWO-DECLARED-ATOMS;CLASSIFICATIONS=73872;IN-CONSTRAINT-AT-0-OF-73872(ABSOLUTE);ABSORBING-REALISATIONS=6;OUTSIDE-ON-THE-HOMOGENEOUS-SECTOR-AT-0-OF-12384;CURVATURE-SUPPORTED-RESIDUE=24-CELLS;RESIDUE-IS-EXACTLY-THE-INHOMOGENEOUS-RECORDS=TRUE;REGISTER-SHIFT-INERT=TRUE
+    COVARIANCE=THEOREM=D_full[v].H_g[N].D_full[v]^-1=H_{S_v-g}[S_v-N];HOLDS-AT-2064-OF-2064-CELLS;FAILS-AT-D-TOT-AT-2064-OF-2064;SURVIVING-OBSTRUCTION=THE-RECORD-DOES-NOT-TRANSPORT;THE-ARENA-CARRIES-A-FIXED-BACKGROUND
+    DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET-AT-D-TOT;CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-3096-OF-3096-PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-NONZERO-AT-3096-OF-3096;VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-0-OF-2280;DEGENERATE-PROBE-BUILT-AND-MEASURED=60-OF-60-VANISH;CONSTANT-PROFILE-VANISHES-AT-12-OF-60;OTHER-BRACKET-ORDER-NONZERO-AT-3096-OF-3096;NON-CONSTANT-TANGENTIAL-FIELDS-OUTSIDE-AT-1188-OF-1188;L-AND-D-INDEPENDENT-AT-4-ARENAS
+    CONVENTION=FRONT-SECTOR-REPRODUCES-L_v-N-AT-H-D-Hinv-Dinv/BACKWARD;MATCHING-CONVENTIONS=1-OF-4;D-H-Dinv-Hinv/BACKWARD:26-OF-685;D-H-Dinv-Hinv/FORWARD:26-OF-685;H-D-Hinv-Dinv/BACKWARD:685-OF-685;H-D-Hinv-Dinv/FORWARD:26-OF-685;DENOMINATOR=DISTINCT-FRONT-PROBES-685(RECORD-AND-RULE-INDEPENDENCE-MEASURED;x30-MULTIPLICITY-DISCLOSED-NOT-FOLDED-IN)
+    DD-BRACKET=LATTICE-TRANSLATIONS-CLOSE-AT-644-OF-644-AT-BOTH-REALISATIONS(FORCED:[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT);INFORMATIVE-BRACKETS(TWO-DISTINCT-NONZERO-GENERATORS)=192-OF-644;NONABELIAN-CORE-UNTESTED-BY-CONSTRUCTION
+    CORRESPONDENCE=RELATION-I=EXACT-IN-FORM-ANALOGICAL-IN-STATUS(A-CENTRAL-EXTENSION-WITH-A-BACKGROUND-COEFFICIENT:THE-COEFFICIENT-DOES-NOT-MOVE-WITH-THE-STATE-AT-3570-OF-3570-PAIRS);RELATION-II=PARTIAL(FRONT-EXACT-AT-1-OF-4-CONVENTIONS-AND-AT-CONSTANT-v;REGISTER-DEFECTIVE-AT-D-TOT,ABSORBED-AT-D-FULL-ON-THE-HOMOGENEOUS-SECTOR,ABSENT-AT-D-REG);RELATION-III=CONTENTLESS-ABELIAN([v,w]=0-AT-ALL-644-BRACKETS);THE-POSITIVE-CLAIM=FIXED-BACKGROUND-COVARIANCE-WITH-GR-BRACKET-FORM;THE-UNQUALIFIED-NAME-HDA-IS-NOT-USED
+    LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-62-OF-238-COMPARISONS(ALL-UPWARD-AT-62);COEFFICIENT-CLASS-MOVES-AT-0-CELLS(FORCED-BY-(S))
     REALISATION=D-REG:IDENTITY;D-TOT:IDENTITY+OUTSIDE
-    LSWEEP=d2L4/B:26-of-99-close,d2L4/T:26-of-99-close,d2L5/B:26-of-99-close,d2L5/T:26-of-99-close,d3L4/B:9-of-20-close,d3L4/T:9-of-20-close,d3L5/B:9-of-20-close,d3L5/T:9-of-20-close;COEFFICIENT-CLASS-CONSTANT-ALONG-L=TRUE
-    CONTROLS=CHART-GROUP-CLOSES-AT-4-OF-4-ARENAS;TRANSLATION-EQUIVARIANT-AT-120969-OF-120969;SCRAMBLED-VIOLATES-AT-58572-OF-120969;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-6144-CELLS;SCRAMBLED-BREAKS-AT-128-CELLS
+    LSWEEP=d2L4/B:90-in-basis-of-99,d2L4/T:90-in-basis-of-99,d2L5/B:90-in-basis-of-99,d2L5/T:90-in-basis-of-99,d3L4/B:20-in-basis-of-20,d3L4/T:20-in-basis-of-20,d3L5/B:20-in-basis-of-20,d3L5/T:20-in-basis-of-20;STRUCTURE-CONSTANT-ALONG-L=TRUE(FORCED:class=f(W,B),NO-L-IN-IT);MAX-RESIDUAL-MOVES=9,9,16,16,8,27,128/9,48(MEASURED)
+    CONTROLS=CHART-GROUP-CLOSES-AT-4-OF-4-ARENAS;TRANSLATION-EQUIVARIANT-AT-120969-OF-120969(FORCED:MODULAR-ARITHMETIC);SCRAMBLED-VIOLATES-AT-58572-OF-120969;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-6144-CELLS(NON-VACUITY:16-DISTINCT-NONZERO-BASE-CELLS);SCRAMBLED-BREAKS-AT-128-CELLS
+    SCOPE=FINITE-EXTENT-ONLY(NO-CONTINUUM-CLAIM);WEIGHT=0-ONLY(w=1-DECLARED-NOT-SWEPT);TANGENTIAL-FIELDS=CONSTANT-IN-THE-CENSUS(BIJECTION-REQUIREMENT)+2-DECLARED-NON-CONSTANT-BIJECTIVE-PROBES;DISTINCT-RULES=d2:9-of-11-in-HH,8-of-11-in-the-register-sector,d3:4-of-4-in-HH,4-of-4-in-the-register-sector;DUPLICATE-RULE-GROUPS=HH@d2:A-axis=B-axis+HH@d2:A-chart=B-chart+REGISTER@d2:A-axis=B-axis+REGISTER@d2:A-chart=B-chart+REGISTER@d2:A-insert=A-notransport;SIGNATURE-NOT-MEASURED;HKT-REPRESENTATION-LEG-NOT-ATTEMPTED
 
 --- 11. THE CENSUS TABLE (rendered from the gated object) ---
-  d   L   scope       rule           record       nonzero    pairs closes    max|rho|
+  d   L   scope       rule           record       nonzero    pairs metric    max|rho|
   2   4   BASE        A-chart        G-ANISO          124      342 False         27/4
   2   4   BASE        A-axis         G-ANISO            0      342 True             0
   2   4   BASE        A-linkframe    G-ANISO          166      342 False          9/5
@@ -2121,12 +2139,176 @@ record lattice: does H_a[N] close, and with what coefficients?
   d=3 L=5 A-linkframe    G3-OFF      pairs=30 classes=[[[True, 'SITE-VARYING', 'SITE-VARYING'], 12], [[True, 'ZERO', 'ZERO'], 18]] residual-lattice-sum-zero=18 of 30
   d=3 L=5 A-insert       G3-OFF      pairs=30 classes=[[[True, 'SITE-VARYING', 'ZERO'], 12], [[True, 'ZERO', 'ZERO'], 18]] residual-lattice-sum-zero=30 of 30
 
+--- 15a. THE SPANNING CENSUS, HYPOTHESIS (S) (gated object) ---
+  d=2 L=4 BASE        sites  16  link space 3  full rank at  16  ranks [3]  record-independent True
+  d=2 L=4 TRANSLATES  sites  16  link space 3  full rank at  16  ranks [3]  record-independent True
+  d=2 L=5 BASE        sites  25  link space 3  full rank at  25  ranks [3]  record-independent True
+  d=2 L=5 TRANSLATES  sites  25  link space 3  full rank at  25  ranks [3]  record-independent True
+  d=3 L=4 BASE        sites  64  link space 6  full rank at  64  ranks [6]  record-independent True
+  d=3 L=4 TRANSLATES  sites  64  link space 6  full rank at  64  ranks [6]  record-independent True
+  d=3 L=5 BASE        sites 125  link space 6  full rank at 125  ranks [6]  record-independent True
+  d=3 L=5 TRANSLATES  sites 125  link space 6  full rank at 125  ranks [6]  record-independent True
+
+--- 15b. THE REALISATION CENSUS, 27 (a,b,c) (gated object) ---
+  d=2 L=4 D(-1,-1,-1)  (-1,-1,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=4 D(-1,-1,0)   (-1,-1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(-1,-1,1)   (-1,-1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(-1,0,-1)   (-1, 0,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=4 D(-1,0,0)    (-1, 0, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(-1,0,1)    (-1, 0, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(-1,1,-1)   (-1, 1,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=4 D(-1,1,0)    (-1, 1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(-1,1,1)    (-1, 1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(0,-1,-1)   ( 0,-1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(0,-1,0)    ( 0,-1, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=4 D(0,-1,1)    ( 0,-1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(0,0,-1)    ( 0, 0,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(0,0,0)     ( 0, 0, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=4 D(0,0,1)     ( 0, 0, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(0,1,-1)    ( 0, 1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D-REG        ( 0, 1, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=4 D(0,1,1)     ( 0, 1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(1,-1,-1)   ( 1,-1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(1,-1,0)    ( 1,-1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(1,-1,1)    ( 1,-1, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=4 D(1,0,-1)    ( 1, 0,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(1,0,0)     ( 1, 0, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D(1,0,1)     ( 1, 0, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=4 D(1,1,-1)    ( 1, 1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D-TOT        ( 1, 1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=4 D-FULL       ( 1, 1, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(-1,-1,-1)  (-1,-1,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(-1,-1,0)   (-1,-1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(-1,-1,1)   (-1,-1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(-1,0,-1)   (-1, 0,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(-1,0,0)    (-1, 0, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(-1,0,1)    (-1, 0, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(-1,1,-1)   (-1, 1,-1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(-1,1,0)    (-1, 1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(-1,1,1)    (-1, 1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(0,-1,-1)   ( 0,-1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(0,-1,0)    ( 0,-1, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=5 D(0,-1,1)    ( 0,-1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(0,0,-1)    ( 0, 0,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(0,0,0)     ( 0, 0, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=5 D(0,0,1)     ( 0, 0, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(0,1,-1)    ( 0, 1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D-REG        ( 0, 1, 0)  {'IDENTITY': 1188}                                   resisting 0 cells
+  d=2 L=5 D(0,1,1)     ( 0, 1, 1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(1,-1,-1)   ( 1,-1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(1,-1,0)    ( 1,-1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(1,-1,1)    ( 1,-1, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(1,0,-1)    ( 1, 0,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(1,0,0)     ( 1, 0, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D(1,0,1)     ( 1, 0, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=2 L=5 D(1,1,-1)    ( 1, 1,-1)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D-TOT        ( 1, 1, 0)  {'OUTSIDE': 1188}                                    resisting 99 cells
+  d=2 L=5 D-FULL       ( 1, 1, 1)  {'IN-EXTENDED': 972, 'OUTSIDE': 216}                 resisting 18 cells
+  d=3 L=4 D(-1,-1,-1)  (-1,-1,-1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+  d=3 L=4 D(-1,-1,0)   (-1,-1, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(-1,-1,1)   (-1,-1, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(-1,0,-1)   (-1, 0,-1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+  d=3 L=4 D(-1,0,0)    (-1, 0, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(-1,0,1)    (-1, 0, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(-1,1,-1)   (-1, 1,-1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+  d=3 L=4 D(-1,1,0)    (-1, 1, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(-1,1,1)    (-1, 1, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(0,-1,-1)   ( 0,-1,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(0,-1,0)    ( 0,-1, 0)  {'IDENTITY': 360}                                    resisting 0 cells
+  d=3 L=4 D(0,-1,1)    ( 0,-1, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(0,0,-1)    ( 0, 0,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(0,0,0)     ( 0, 0, 0)  {'IDENTITY': 360}                                    resisting 0 cells
+  d=3 L=4 D(0,0,1)     ( 0, 0, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(0,1,-1)    ( 0, 1,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D-REG        ( 0, 1, 0)  {'IDENTITY': 360}                                    resisting 0 cells
+  d=3 L=4 D(0,1,1)     ( 0, 1, 1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(1,-1,-1)   ( 1,-1,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(1,-1,0)    ( 1,-1, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(1,-1,1)    ( 1,-1, 1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+  d=3 L=4 D(1,0,-1)    ( 1, 0,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(1,0,0)     ( 1, 0, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D(1,0,1)     ( 1, 0, 1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+  d=3 L=4 D(1,1,-1)    ( 1, 1,-1)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D-TOT        ( 1, 1, 0)  {'OUTSIDE': 360}                                     resisting 20 cells
+  d=3 L=4 D-FULL       ( 1, 1, 1)  {'IN-EXTENDED': 270, 'OUTSIDE': 90}                  resisting 6 cells
+
+--- 15c. THE COVARIANCE THEOREM (gated object) ---
+  D_full[v] . H_g[N] . D_full[v]^-1 = H_{S_v g}[S_v N]
+  d=2 L=4 cells 1584  D-FULL covariant 1584  D-TOT covariant    0  (lapse probe 8, 3 configurations)
+  d=3 L=4 cells  480  D-FULL covariant  480  D-TOT covariant    0  (lapse probe 8, 3 configurations)
+
+--- 15d. THE DEGENERATE PROBES AND THE OTHER ORDER ---
+  d=2 L=4 A-chart        G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-chart        G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=4 A-axis         G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-axis         G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=4 A-linkframe    G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-linkframe    G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=4 A-chart        G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-chart        G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=4 A-axis         G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-axis         G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=4 A-linkframe    G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=4 A-linkframe    G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-chart        G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-chart        G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-axis         G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-axis         G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-linkframe    G-ANISO     lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-linkframe    G-ANISO     lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-chart        G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-chart        G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-axis         G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-axis         G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=2 L=5 A-linkframe    G-ANISO2    lapse=zero  declared-degenerate=True  probes 2 vanishing 2 lattice-sum-zero 2
+  d=2 L=5 A-linkframe    G-ANISO2    lapse=one   declared-degenerate=False probes 2 vanishing 0 lattice-sum-zero 2
+  d=3 L=4 A-chart        G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-chart        G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=4 A-axis         G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-axis         G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=4 A-linkframe    G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-linkframe    G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=4 A-chart        G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-chart        G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=4 A-axis         G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-axis         G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 1
+  d=3 L=4 A-linkframe    G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=4 A-linkframe    G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 1
+  d=3 L=5 A-chart        G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-chart        G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=5 A-axis         G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-axis         G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=5 A-linkframe    G3-ANISO    lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-linkframe    G3-ANISO    lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=5 A-chart        G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-chart        G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 3
+  d=3 L=5 A-axis         G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-axis         G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 1
+  d=3 L=5 A-linkframe    G3-CURVED   lapse=zero  declared-degenerate=True  probes 3 vanishing 3 lattice-sum-zero 3
+  d=3 L=5 A-linkframe    G3-CURVED   lapse=one   declared-degenerate=False probes 3 vanishing 1 lattice-sum-zero 1
+  d=2 L=4 order D-H-Dinv-Hinv    probes  1188  nonzero  1188
+  d=2 L=4 order H-D-Hinv-Dinv    probes  1188  nonzero  1188
+  d=2 L=5 order D-H-Dinv-Hinv    probes  1188  nonzero  1188
+  d=2 L=5 order H-D-Hinv-Dinv    probes  1188  nonzero  1188
+  d=3 L=4 order D-H-Dinv-Hinv    probes   360  nonzero   360
+  d=3 L=4 order H-D-Hinv-Dinv    probes   360  nonzero   360
+  d=3 L=5 order D-H-Dinv-Hinv    probes   360  nonzero   360
+  d=3 L=5 order H-D-Hinv-Dinv    probes   360  nonzero   360
+  d=2 L=4 non-constant field shear        bijection=True  negative-inverts=True  constant=False {'OUTSIDE': 594}
+  d=2 L=4 non-constant field parity-kick  bijection=True  negative-inverts=True  constant=False {'OUTSIDE': 594}
+
+--- 15e. THE DUPLICATE-RULE CENSUS (gated object) ---
+  d=2 L=4 declared 11  distinct in {H,H}: [['A-axis', 'B-axis'], ['A-chart', 'B-chart'], ['A-insert'], ['A-insert-2x'], ['A-insert-x'], ['A-linkframe'], ['A-linkhalf'], ['A-notransport'], ['B-all']]
+  d=2 L=4 declared 11  distinct in the register sector: [['A-axis', 'B-axis'], ['A-chart', 'B-chart'], ['A-insert', 'A-notransport'], ['A-insert-2x'], ['A-insert-x'], ['A-linkframe'], ['A-linkhalf'], ['B-all']]
+  d=3 L=4 declared  4  distinct in {H,H}: [['A-axis'], ['A-chart'], ['A-insert'], ['A-linkframe']]
+  d=3 L=4 declared  4  distinct in the register sector: [['A-axis'], ['A-chart'], ['A-insert'], ['A-linkframe']]
+
 --- 16. THE COMPLIANCE SWEEP (computed statuses) ---
   13(1) exact arithmetic                         APPLIED    G-FLOATGUARD,G-NO-FLOATS-IN-RECEIPT
   13(2) external anchors verified by hash        APPLIED    A-PIN-R3,A-R0-I7,A-R2-ADJ,A-HA-CODE
   13(3) declarations frozen before fixture truth APPLIED    G-CENSUS-CELL-COMPLETE
   13(4) every claim carries a gate               APPLIED    G-VERDICT-IN-GATE
-  13(5) two independent routes                   APPLIED    G-CENSUS-TWO-ROUTES,G-COMMUTATOR-TWO-ROUTES,G-DH-TWO-ROUTES,G-RECORD-IS-METRIC-TWO-ROUTES
+  13(5) two independent routes                   APPLIED    G-CENSUS-THREE-ROUTES,G-COMMUTATOR-TWO-ROUTES,G-DH-TWO-ROUTES,G-RECORD-IS-METRIC-TWO-ROUTES
   13(6) positive and negative controls           APPLIED    G-DD-TRANSLATION-CONTROL,G-SCRAMBLE-CONTROL-NEGATIVE
   13 addendum: render from the gated object      APPLIED    G-RENDER-FROM-GATED-OBJECT
   13 addendum: prose renders from the receipt    APPLIED    G-PROSE-RENDERS-FROM-THE-RECEIPT
@@ -2137,67 +2319,47 @@ record lattice: does H_a[N] close, and with what coefficients?
   14 addendum: path-value anchoring              APPLIED    P-I7-L,P-I7-LINKS2,P-I7-CLOSURE-AXIS-FLAT
   15 declared arena printed and matched at every coordinate APPLIED    G-L-GATE,G-L-GATE-REASON,G-DH-BRACKET-CENSUS
   15 the lapse family is a named verdict coordinate APPLIED    G-CENSUS-CELL-COMPLETE,G-LSWEEP-COMPLETE
-  208 forced clauses are disclosures, not findings APPLIED    G-FORCED-CLAUSES-DISCLOSED,G-CONVENTION-RULE-INDEPENDENT
-  219 comparators can disagree                   APPLIED    G-VERDICT-STRING-EQUALITY
+  208 forced clauses are disclosures, not findings APPLIED    G-FORCED-CLAUSES-DISCLOSED,G-STRUCTURE-THEOREM
+  219 comparators can disagree                   APPLIED    G-VERDICT-STRING-EQUALITY,G-CENSUS-THREE-ROUTES,G-STRUCTURE-THEOREM
   234 verdict in gate, cell-completeness         APPLIED    G-VERDICT-IN-GATE,G-CENSUS-CELL-COMPLETE
   24 counts computed, never typed                APPLIED    G-CENSUS-CELL-COMPLETE,G-FINAL-GATE-COUNT,G-CHART-GROUP-CLOSES
   boundary parity / boundary-term status         APPLIED    G-BOUNDARY-TERM-STATUS
   the machinery-recovery control precedes every measurement APPLIED    G-RECOVERY-CLOSURE,G-RECOVERY-SECTOR,G-RECOVERY-ANCILLARY,G-DIAGONAL-SECTOR-ANCHOR
-  no silent caps: every probe scope derived and printed APPLIED    G-CENSUS-TWO-ROUTES,G-DH-TWO-ROUTES,G-LSWEEP-COMPLETE
+  no silent caps: every probe scope derived and printed APPLIED    G-CENSUS-THREE-ROUTES,G-DH-TWO-ROUTES,G-LSWEEP-COMPLETE,G-REALISATION-CENSUS,G-COVARIANCE-THEOREM
   the L gate excludes the failing extent by gate APPLIED    G-L-GATE,G-L-GATE-REASON
   the defect is a measured object                APPLIED    G-DEFECT-MEASURED,G-BOUNDARY-TERM-STATUS
   internal consistency of the emitted receipt    APPLIED    G-INTERNAL-CONSISTENCY
   the falsifier census ships with an honest denominator APPLIED    G-NEVER-FALSIFIED-CENSUS
+  34 waiver claims are gate claims               APPLIED    G-WAIVER-CLAIMS-ARE-GATE-CLAIMS,G-NEVER-FALSIFIED-CENSUS
+  34 verbatim-text anchors: context windows bound to consumer gates APPLIED    T-R2-HANDOFF,T-R2-GATES-L,T-R2-PROFILES,T-R2-INHERITED,G-L-GATE-INHERITED-FACTS
+  46 no unanchored runtime inputs                APPLIED    G-NO-UNANCHORED-RUNTIME-INPUT,G-L-GATE-INHERITED-FACTS
+  10 the object the gates check is the object that ships APPLIED    G-RENDER-FROM-GATED-OBJECT,G-PAYLOAD-SEALED
+  the load-bearing hypothesis is measured, not assumed APPLIED    G-SPANNING-HYPOTHESIS
+  a rigid outcome that can win                   APPLIED    G-RIGID-BRANCH-REACHABLE
+  the realisation coordinate is censused, not chosen APPLIED    G-REALISATION-CENSUS,G-COVARIANCE-THEOREM
+  honest denominators: distinct probes, never a multiplied sample APPLIED    G-CONVENTION-FRONT-INDEPENDENT,G-DD-RELATION-CONTENT,G-DUPLICATE-RULES-DISCLOSED
 
 --- 17. TOTALS ---
-  anchors                            40
+  anchors                            44
   census_arenas                      4
   census_cells                       476
   coefficient_cells                  476
   dd_brackets                        644
   defect_probes                      3096
   dh_brackets                        21012
-  disclosures                        7
+  disclosures                        12
   file_byte_anchors                  7
-  gates                              81
+  gates                              99
   lapse_scopes                       2
   measured_data_points               7014
-  mutants                            60
+  mutants                            124
   path_value_anchors                 32
-  verdict_segments                   14
+  verdict_segments                   20
 
 --- 18. THE FALSIFIER CENSUS ---
-  gates 81 ; with a declared falsifier 52 ; NEVER FALSIFIED 29
-    never falsified: A-PIN-R3  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: A-R0-PIN  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: A-R2-ADJ  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: A-R2-RECEIPT  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: A-R2-CODE  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: A-HA-PAPER  [SAME-MECHANISM: a file-byte anchor row, identical in construction to A-R0-I7 and A-HA-CODE, both of which carry declared falsifiers (anchor-hash, ha-code-drift, anchor-skip); the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-D  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-DEXT  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-LINKS3  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-RECORDS3  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-INHOMOG  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-WEIGHT  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-WEIGHTFLIP  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-RULES3  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-BROKEN  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-POSCTL  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-VERDICT  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-CLOSURE-AXIS-OFFD  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-CLOSURE-INSERT-CURVOFF  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-SECTOR-CHART-CURVED  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-LATTICE  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-I7-DETECTOR-CF  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-R2-SCHEMA  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-R2-HEAD  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-R2-GRIDRULES  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: P-R2-LOCCOUNT  [SAME-MECHANISM: a (path, value) anchor row, identical in construction to the eight rows carrying declared path-drift and path-value falsifiers; the mechanism is falsified, this row is not separately targeted]
-    never falsified: G-CENSUS-TWO-ROUTES  [NAMED, no waiver claimed]
-    never falsified: G-CONVENTION-RULE-INDEPENDENT  [FORCED (#208): the bracket's front sector contains no drag weight, so the per-rule rows cannot differ -- carried as a disclosure, not a finding]
-    never falsified: G-DEFERRED-GATES-EVALUATED  [WAIVED: a bookkeeping gate over the write-time gate names and the rendered gate count; its falsifier would be a gate that never ran, which the gate itself reports]
+  gates 99 ; with a declared falsifier 98 ; NEVER FALSIFIED 1
+    never falsified: G-DEFERRED-GATES-EVALUATED  [WAIVED, GENUINE: a bookkeeping gate over the write-time gate names and the rendered gate count.  Its falsifier would be a gate that never ran, which is exactly what the gate itself reports; there is no state in which it can fail while the run continues.]
 
 --- 19. THE VERDICT, EMITTED ---
-R3-DEFORMATION-DEFECT-AT<ARENA=SITES=d2L4:16,d2L5:25,d3L4:64,d3L5:125;LINKS=d2:3,d3:6;RECORDS=14;RULES=11;LAPSE-SCOPES=BASE,TRANSLATES|L-GATE=MIN-L=4;EXCLUDED=d2L3;REASON=OVERLAP-GRAPH-COMPLETE-AT-36-OF-36;INHERITED-FRACTIONS-RECOMPUTED=3|RECOVERY=CLOSURE-99-OF-99;SECTOR-72-OF-72;RANK;READOUT-DET-2;GENERAL-D;COUNT-LATTICE;DIAGONAL-SECTOR-5-RECORDS-CLOSE-AT-THE-LINK-LOCAL-RULE|HH-BRACKET=LANDS-IN-THE-TANGENTIAL-FAMILY-AT-476-OF-476-CELLS(FORCED:w-LINEAR-IN-THE-FRONT);POSITIVE-CONTROL-CLOSES-AT-56-OF-56;NORMAL-CHANNEL-EMPTY(FORCED)|COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS;CLASSES=CONSTANT-NON-METRIC:216;METRIC-READING-CONSTANT:108;METRIC-READING-SITE-VARYING:32;NOT-EXTRACTABLE:36;SITE-VARYING-NON-METRIC:48;ZERO:36;POSITIVE-CONTROL-METRIC-READING-AT-56-OF-56(FORCED-VALUE,MEASURED-UNIQUENESS);SITE-VARYING-ON-THE-INHOMOGENEOUS-RECORDS-AT-32-OF-120|HH-RESIDUAL=NONZERO-AT-336-OF-476-CELLS;RULES=A-axis,A-chart,A-insert-2x,A-insert-x,A-linkframe,A-linkhalf,A-notransport,B-all,B-axis,B-chart;NOT-EXTRACTABLE-AT-36-CELLS(ARCH-B:OUTSIDE-THE-AXIS-COVECTOR-FORM,FORCED);MAX=48|DH-BRACKET=D-REG/IDENTITY:10506;D-TOT/IDENTITY:120;D-TOT/OUTSIDE:10386(D-REG-IDENTITY-FORCED);HDA-REQUIRES-H[L_v-N];IN-CONSTRAINT-AT-0-OF-21012|DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET;CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-3096-OF-3096-PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-ZERO-AT-0-OF-3096;VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-0;L-AND-D-INDEPENDENT-AT-4-ARENAS|CONVENTION=FRONT-SECTOR-REPRODUCES-L_v-N-AT-H-D-Hinv-Dinv/BACKWARD;MATCHING-CONVENTIONS=1-OF-4;D-H-Dinv-Hinv/BACKWARD:1152-OF-21126;D-H-Dinv-Hinv/FORWARD:1152-OF-21126;H-D-Hinv-Dinv/BACKWARD:21126-OF-21126;H-D-Hinv-Dinv/FORWARD:1152-OF-21126|DD-BRACKET=LATTICE-TRANSLATIONS-CLOSE-AT-644-OF-644-AT-BOTH-REALISATIONS(FORCED:[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT)|LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-62-CELLS;COEFFICIENT-CLASS-MOVES-AT-0-CELLS|REALISATION=D-REG:IDENTITY;D-TOT:IDENTITY+OUTSIDE|LSWEEP=d2L4/B:26-of-99-close,d2L4/T:26-of-99-close,d2L5/B:26-of-99-close,d2L5/T:26-of-99-close,d3L4/B:9-of-20-close,d3L4/T:9-of-20-close,d3L5/B:9-of-20-close,d3L5/T:9-of-20-close;COEFFICIENT-CLASS-CONSTANT-ALONG-L=TRUE|CONTROLS=CHART-GROUP-CLOSES-AT-4-OF-4-ARENAS;TRANSLATION-EQUIVARIANT-AT-120969-OF-120969;SCRAMBLED-VIOLATES-AT-58572-OF-120969;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-6144-CELLS;SCRAMBLED-BREAKS-AT-128-CELLS>
+R3-DEFORMATION-DEFECT-AT<ARENA=SITES=d2L4:16,d2L5:25,d3L4:64,d3L5:125;LINKS=d2:3,d3:6;RECORDS=14;RULES=11;LAPSE-SCOPES=BASE,TRANSLATES;WEIGHT=0|L-GATE=MIN-L=4;EXCLUDED=d2L3;REASON=OVERLAP-GRAPH-COMPLETE-AT-36-OF-36;CRITERION-READ-BY-PATH-FROM-THE-R2-TERMINAL-RECEIPT;CRITERION-IMPLEMENTATION-CONTROLLED=TRUE;FRACTIONS-RECOMPUTED-HERE=6|RECOVERY=CLOSURE-99-OF-99;SECTOR-72-OF-72;RANK;READOUT-DET-2;GENERAL-D;COUNT-LATTICE;DIAGONAL-SECTOR-5-RECORDS-CLOSE-AT-THE-LINK-LOCAL-RULE|SPANNING=MEASURED;OMEGA-SPANS-THE-FULL-LINK-SPACE-AT-460-OF-460-SITES;ROWS=8;RECORD-INDEPENDENT-AT-8-OF-8;THE-ONE-LOAD-BEARING-MEASUREMENT-OF-THE-HH-HALF|HH-BRACKET=LANDS-IN-THE-TANGENTIAL-FAMILY-AT-476-OF-476-CELLS(FORCED:w-LINEAR-IN-THE-FRONT);NORMAL-CHANNEL-EMPTY(FORCED);STRUCTURE-THEOREM-rho=(W-B).Omega-VERIFIED-AT-476-OF-476-CELLS(FORCED);CENTRAL-EXTENSION-H[N]H[M]=T_w[N,M].H[N+M]-AT-4284-OF-4284;COMMUTATOR-CONFIGURATION-INDEPENDENT-AT-3570-OF-3570|COEFFICIENT=EXTRACTED-FROM-THE-COMMUTATORS(UNIQUE-BY-(S));CLASSES=CONSTANT-NON-METRIC:216;METRIC-READING-CONSTANT:108;METRIC-READING-SITE-VARYING:32;NOT-EXTRACTABLE:36;SITE-VARYING-NON-METRIC:48;ZERO:36(FORCED:class=f(W,B));POSITIVE-CONTROL-METRIC-READING-AT-56-OF-56(FORCED-VALUE-AND-FORCED-CLASS);SITE-VARYING-METRIC-ON-THE-INHOMOGENEOUS-RECORDS-AT-32-OF-120-CELLS-AT-RULES=A-axis,A-insert,A-insert-x,B-axis|HH-CLOSURE=AGAINST-THE-DECLARED-GENERATOR-BASIS;IN-THE-BASIS-AT-440-OF-476-CELLS;FORMS=METRIC-READING-CONSTANT(INDISTINGUISHABLE-FROM-RIGID-HERE):108;METRIC-READING-SITE-VARYING(THE-GR-BRACKET-FORM):32;NOT-IN-THE-DECLARED-BASIS:36;RIGID-CONSTANT-NON-METRIC:216;SITE-VARYING-NON-METRIC:48;TRIVIAL-ZERO-COEFFICIENT:36;RIGID-CONSTANT-NON-METRIC-REACHED-AT-216-CELLS;METRIC-MATCH-AT-140-OF-476;SYNTHETIC-RIGID-HEAD=RIGID-CONSTANT-NON-METRIC|HH-RESIDUAL=NONZERO-AT-336-OF-476-CELLS;RULES=A-axis,A-chart,A-insert-2x,A-insert-x,A-linkframe,A-linkhalf,A-notransport,B-all,B-axis,B-chart;NOT-IN-THE-BASIS-AT-36-CELLS(RULES-WITH-A-DIAGONAL-LINK-COLUMN=B-all;36-OF-108-ARCHITECTURE-B-CELLS,FORCED);MAX=48|DH-BRACKET=D-REG/IDENTITY:10506;D-TOT/IDENTITY:120;D-TOT/OUTSIDE:10386(D-REG-IDENTITY-FORCED);THE-RELATION-REQUIRES-H[L_v-N];IN-CONSTRAINT-AT-0-OF-21012|REALISATION-CENSUS=ALL-27-(a,b,c)-REALISATIONS-BUILT-FROM-THE-TWO-DECLARED-ATOMS;CLASSIFICATIONS=73872;IN-CONSTRAINT-AT-0-OF-73872(ABSOLUTE);ABSORBING-REALISATIONS=6;OUTSIDE-ON-THE-HOMOGENEOUS-SECTOR-AT-0-OF-12384;CURVATURE-SUPPORTED-RESIDUE=24-CELLS;RESIDUE-IS-EXACTLY-THE-INHOMOGENEOUS-RECORDS=TRUE;REGISTER-SHIFT-INERT=TRUE|COVARIANCE=THEOREM=D_full[v].H_g[N].D_full[v]^-1=H_{S_v-g}[S_v-N];HOLDS-AT-2064-OF-2064-CELLS;FAILS-AT-D-TOT-AT-2064-OF-2064;SURVIVING-OBSTRUCTION=THE-RECORD-DOES-NOT-TRANSPORT;THE-ARENA-CARRIES-A-FIXED-BACKGROUND|DEFECT=REGISTER-SECTOR-OF-THE-NORMAL-TANGENTIAL-BRACKET-AT-D-TOT;CLOSED-FORM=w[N,(S_-v-1)(n-N)]-w[S_vN-N,n];NONZERO-AT-3096-OF-3096-PROBES;CONFIGURATION-DEPENDENT;LATTICE-SUM-NONZERO-AT-3096-OF-3096;VANISHES-ON-THE-HOMOGENEOUS-SECTOR-AT-0-OF-2280;DEGENERATE-PROBE-BUILT-AND-MEASURED=60-OF-60-VANISH;CONSTANT-PROFILE-VANISHES-AT-12-OF-60;OTHER-BRACKET-ORDER-NONZERO-AT-3096-OF-3096;NON-CONSTANT-TANGENTIAL-FIELDS-OUTSIDE-AT-1188-OF-1188;L-AND-D-INDEPENDENT-AT-4-ARENAS|CONVENTION=FRONT-SECTOR-REPRODUCES-L_v-N-AT-H-D-Hinv-Dinv/BACKWARD;MATCHING-CONVENTIONS=1-OF-4;D-H-Dinv-Hinv/BACKWARD:26-OF-685;D-H-Dinv-Hinv/FORWARD:26-OF-685;H-D-Hinv-Dinv/BACKWARD:685-OF-685;H-D-Hinv-Dinv/FORWARD:26-OF-685;DENOMINATOR=DISTINCT-FRONT-PROBES-685(RECORD-AND-RULE-INDEPENDENCE-MEASURED;x30-MULTIPLICITY-DISCLOSED-NOT-FOLDED-IN)|DD-BRACKET=LATTICE-TRANSLATIONS-CLOSE-AT-644-OF-644-AT-BOTH-REALISATIONS(FORCED:[v,w]=0-AT-CONSTANT-FIELDS;POSITIVE-CONTROL,MUTANT-FLIPS-IT);INFORMATIVE-BRACKETS(TWO-DISTINCT-NONZERO-GENERATORS)=192-OF-644;NONABELIAN-CORE-UNTESTED-BY-CONSTRUCTION|CORRESPONDENCE=RELATION-I=EXACT-IN-FORM-ANALOGICAL-IN-STATUS(A-CENTRAL-EXTENSION-WITH-A-BACKGROUND-COEFFICIENT:THE-COEFFICIENT-DOES-NOT-MOVE-WITH-THE-STATE-AT-3570-OF-3570-PAIRS);RELATION-II=PARTIAL(FRONT-EXACT-AT-1-OF-4-CONVENTIONS-AND-AT-CONSTANT-v;REGISTER-DEFECTIVE-AT-D-TOT,ABSORBED-AT-D-FULL-ON-THE-HOMOGENEOUS-SECTOR,ABSENT-AT-D-REG);RELATION-III=CONTENTLESS-ABELIAN([v,w]=0-AT-ALL-644-BRACKETS);THE-POSITIVE-CLAIM=FIXED-BACKGROUND-COVARIANCE-WITH-GR-BRACKET-FORM;THE-UNQUALIFIED-NAME-HDA-IS-NOT-USED|LAPSE=DECLARED-FAMILY-AND-ITS-LATTICE-TRANSLATES;ENLARGEMENT-PRINTED;RESIDUAL-MAGNITUDE-MOVES-AT-62-OF-238-COMPARISONS(ALL-UPWARD-AT-62);COEFFICIENT-CLASS-MOVES-AT-0-CELLS(FORCED-BY-(S))|REALISATION=D-REG:IDENTITY;D-TOT:IDENTITY+OUTSIDE|LSWEEP=d2L4/B:90-in-basis-of-99,d2L4/T:90-in-basis-of-99,d2L5/B:90-in-basis-of-99,d2L5/T:90-in-basis-of-99,d3L4/B:20-in-basis-of-20,d3L4/T:20-in-basis-of-20,d3L5/B:20-in-basis-of-20,d3L5/T:20-in-basis-of-20;STRUCTURE-CONSTANT-ALONG-L=TRUE(FORCED:class=f(W,B),NO-L-IN-IT);MAX-RESIDUAL-MOVES=9,9,16,16,8,27,128/9,48(MEASURED)|CONTROLS=CHART-GROUP-CLOSES-AT-4-OF-4-ARENAS;TRANSLATION-EQUIVARIANT-AT-120969-OF-120969(FORCED:MODULAR-ARITHMETIC);SCRAMBLED-VIOLATES-AT-58572-OF-120969;RESIDUAL-COVARIANT-ON-THE-RECORD-LATTICE-AT-6144-CELLS(NON-VACUITY:16-DISTINCT-NONZERO-BASE-CELLS);SCRAMBLED-BREAKS-AT-128-CELLS|SCOPE=FINITE-EXTENT-ONLY(NO-CONTINUUM-CLAIM);WEIGHT=0-ONLY(w=1-DECLARED-NOT-SWEPT);TANGENTIAL-FIELDS=CONSTANT-IN-THE-CENSUS(BIJECTION-REQUIREMENT)+2-DECLARED-NON-CONSTANT-BIJECTIVE-PROBES;DISTINCT-RULES=d2:9-of-11-in-HH,8-of-11-in-the-register-sector,d3:4-of-4-in-HH,4-of-4-in-the-register-sector;DUPLICATE-RULE-GROUPS=HH@d2:A-axis=B-axis+HH@d2:A-chart=B-chart+REGISTER@d2:A-axis=B-axis+REGISTER@d2:A-chart=B-chart+REGISTER@d2:A-insert=A-notransport;SIGNATURE-NOT-MEASURED;HKT-REPRESENTATION-LEG-NOT-ATTEMPTED>
 
