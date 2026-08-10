@@ -3390,3 +3390,40 @@ counting defect; 2 of the head law's 3 outcomes exercised.
 Both K2 halves verified character-for-character against the
 frozen effectus file.  One seat pending (instrument) →
 adjudication.
+
+## 2026-08-10 — R4B INSTRUMENT FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #118)
+
+review-r4b-instrument.md frozen (680 lines).  **THE
+ERA-BORN-COMPLIANCE RULING: the claim does NOT hold — met
+everywhere the era wrote a rule about the RUN, lost at the one
+seam the era has not yet ruled: BETWEEN THE LAST GATE AND THE
+BYTES ON DISK.**  Met under attack: #82 (20/20 hostile argv;
+hand-rolled parser; selftest writes-nothing hash-proved; 66/66
+mutants at NAMED gates verified by the reviewer, not the
+receipt's flag); #34 at 64/67 falsifiable (vs weld-2's 34%; the
+3 exceptions = the 3 forcings, two fired by the reviewer); #91
+(byte-identical off-tree + git-less FIRST TRY, foreign CWD,
+seed-varied); #20 (the era's FIRST WORKING prose-numeral
+instrument — caught all three protocol surprise-numbers);
+comparator independence AST-verified (the two-way head probe
+defeats a coordinated flip of both copies).  **Injections 19
+run / 9 caught / 10 survived — all ten ONE SEAM WIDE:** INJ01
+delivers R4B-NO-MOTION in both artifacts at exit 0 while the
+receipt's own rows say MOVES=57 — the head IS derived twice in
+a complete-string equality gate, and the gate closes 50 lines
+BEFORE serialization; the terminal integrity gate re-derives
+from the corrupted bytes and so CONFIRMS the corruption
+("#234 satisfied at gate time, vacated at delivery time");
+INJ17 truncates the parent's propagator anchor to "the " with
+output byte-identical (12/13 windows decorative; the parent's
+window_sha256_12 field dropped); the published rows unbound
+(#87 binds internal objects; a control radius ships under a
+census label); three prose inversions byte-identical (#20
+numeral-complete, POLARITY-BLIND).  MAJOR-4: --verify-paper is
+a documented, accepted TOTAL NO-OP.  215 recomputations, 0
+disagreements (incl. a 106-check census rebuild from the
+PARENT's receipt over Q(i,√2)); no delivered number wrong; 4
+MAJOR/6 MINOR all bounded mechanical (MAJOR-1+3 = ONE
+mechanism: SEAL payload+digest at gate time; integrity gate
+compares disk bytes against the SEAL).  Joint adjudication
+next.
