@@ -3062,3 +3062,41 @@ register carries CONG-185 with the rebuild recipe and the
 §13).  The Γ-iteration pin now has both parents (this terminal
 + the Γ-prep adjudication); it freezes when the Γ-prep repair
 lands.  THE U4 AND R4B PINS UNBLOCK NOW — frozen next.
+
+## 2026-08-10 — THE U4 PIN FROZEN, WORKER LAUNCHED (v14 LEDGER #105)
+
+Paper-14 assigned per the weld-2 adjudication §4 ruling (#102)
+and the scout of record (#101).  Pin v14/note-u4-pin.md: the
+founding §7 question verbatim ("the division events of a crystal
+form a crystal" — never run); arena = the four ARBITRATION
+crystals from the committed constructors with the delivery
+crystal as the DECLARED COUNTEREXAMPLE CONTROL; the renewal
+marking source-forced (the POSIT + class-0-carrying-an-arb);
+declared data with printed fibers (the site reading BOTH arms —
+initiator/footprint; the renewal-only operationalization fiber
+3, filter primary + Builder-rerun second + quotient registered);
+three two-way claims (sublattice periodicity — the preliminary
+⟨(1,1)⟩ to be made corpus-grade or refuted; geometry invariance
+with the VARIES falsifier emittable — paper 0 §10's third
+falsifier; the bridges at declared scope); THE WALLS engraved
+(L-1 fourth-form argued first, retracted wording BANNED; BHS no
+sprinkling-LI test; KR height control; q₁₂≡0 inherited — the
+diagonal question NOT answered here); full era standards at
+construction incl. the derived head and the integrity gate.
+Construction worker launched (opus).
+
+## 2026-08-10 — THE R4B PIN FROZEN, WORKER LAUNCHED (v14 LEDGER #106)
+
+Paper-15 assigned on the R4 terminal (#103) and its adjudicated
+successor register.  Pin v14/note-r4b-momentum-pin.md: READ the
+dispersions R4 proved exist (57/58 non-constant eigenphase,
+re-derived in-unit; the 1/58 constant family = the NO-MOTION
+control); exact cyclotomic eigenphases, NEVER floats; the dual
+torus (16 momenta) declared; group velocity by a declared exact
+discrete derivative; the motion head per-class at #87; the
+propagation-bound question posed against R4's ceiling rows; the
+connective-FORCED clause inherited verbatim; the
+charge-without-momentum tension addressed as measurement; full
+era standards at construction.  Construction worker launched
+(opus).  In flight now (4): Γ-prep repair, weld-2 repair, U4
+construction, R4b construction.
