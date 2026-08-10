@@ -2576,3 +2576,16 @@ transmitted to the in-flight Γ-main repair worker**: scope the
 B2-atoms import at the import site (MATCHED + primary-grain
 exclusions named); carry the monotonicity sentence's denominator.
 Adjudication waits on the operator seat.
+
+## 2026-08-10 — SCOUT-SWEEP ADDENDUM: NO REVERSAL (v14 LEDGER #89)
+
+The corpus sweep re-ran two silently-failed greps (macOS lacks
+`timeout`) and reported an addendum: every #83 verdict stands,
+independently corroborated.  Three late hits binned into existing
+categories (d34f → SEED-4 lineage; d71c's "one positive" checked
+in context — v6 paper 1's causal-set metric recovery is on a
+SPRINKLED substrate at [PROBE] grade, corr +0.99 → dead-list D3;
+d10's shadow map self-declared "declared, not derived" → the
+absence register).  ADDENDUM section appended to
+note-weld2-referent-scout.md.  Nothing changes for the paper-13
+census: its pin already covers all three bins.

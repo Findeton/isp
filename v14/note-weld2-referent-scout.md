@@ -150,3 +150,22 @@ without intervals; each identification so far had to invent the
 missing half, and all five died UNMOTIVATED.  The honest sentence:
 **the theory derives what its geometry counts, and declares where
 the counting happens.**
+
+## ADDENDUM (ledger #89) — the sweep's late greps
+
+Two of the sweep's greps had silently failed (`timeout` absent on
+macOS); re-run post-commit.  **No reversal — every verdict
+stands.**  Three additional register hits, binned:
+- d34f "birth events recover actors, parentage, birth counts and
+  adjacency" → SEED-4's lineage adjacency (tree, not lattice).
+- d71c line 832's "one positive" — v6 paper 1's causal-set arc
+  recovering the inverse spatial metric from order+number —
+  checked in context: SPRINKLED substrate, [PROBE] grade,
+  correlation +0.99 (statistical) → dead-list D3 (order-only
+  instruments on supplied backgrounds), not a seed.
+- d10's spacetime shadow: "The map is declared, not derived"
+  (the code says so itself) → the absence register.
+The sweep also confirmed the T6-CRA gate text machine-checks the
+absence ("the count of declared maps between the two is MEASURED
+over every pinned source and is zero") and that BRG's operator
+review re-verified EMPTY 0/56 both directions.
