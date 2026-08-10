@@ -4746,3 +4746,23 @@ empirically by two panel seats); U4/U4b immune and saying so;
 the 7-unit audit scope carried in the register note.  This
 completes the register's owed items — the LOG registration was
 done at #159; the RUNBOOK line is now applied.  Engravings: 20.
+
+## 2026-08-10 — Γ-ITERATION / PAPER-16 TERMINAL — THE GRAVITY LAW FINAL (v14 LEDGER #161)
+
+Battery 4/4 (re-run after the user pause): plain BYTE-IDENTICAL;
+unknown flag exit 2; --selftest exit 1; **MUT-DEVIATION-DELIVERY
+KILLED at G-DEVIATION-REACHABLE** — the once-unreachable
+deviation path exercised end-to-end (the kill mechanism
+printed), artifacts unchanged, files written 0.  **Γ-ITERATION
+IS TERMINAL — the fourteenth terminal (papers
+01/02/03/04/09/10/11/12/13/14/15/16/17/18).  WELD 1 — THE
+GEOMETRY-UPDATE LAW — IS CLOSED AT THIS SCALE**: the law
+constructed and confirmed at its own values on its proved
+carrier; holonomy agreeing perfectly; the quantum character
+carrier-relative with its licensed sentence
+(non-Markovianity a property of the description); the anchor
+answered (sedimentary, by theorem, at every finite cap); the
+corpus-wide eq-22 caution registered; the whole thing sealed
+17-objects + 160-rows deep.  STATUS row written (same commit,
+§13).  Remaining in flight: paper-19 (the weld answer).  The
+coupling unit's first prerequisite is NOW MET.
