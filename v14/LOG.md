@@ -4199,3 +4199,43 @@ right at its declared scope; G2's two-reading segmentation "the
 unit's best work."  MINOR: 8/25 alphabet elements inert (640
 built from 17); "0-of-18" is 6 coins × 3 relations, not
 exhaustive.  Two seats pending.
+
+## 2026-08-10 — R5 EFFECTUS FROZEN (2 OF 3) (v14 LEDGER #145)
+
+review-r5-effectus.md frozen.  Grade AWF; 178 recomputations;
+every reachable paper number reproduced; **the reviewer
+published its own miss** (its hand-rolled Schreier–Sims
+under-counted on non-alternating groups — brute force + Jordan
+confirmed THE DELIVERY RIGHT in all four disputed cells).
+**M1 = the operator's transcription finding independently** (the
+same two numbers; the verdict block entirely ungated — five
+substantive falsifications pass --verify-paper; the two-edit +
+one-line repair mechanism confirmed to fire).  **M2 (new): the
+DECLARED gate is a FORCED IDENTITY** — family covariance holds
+for ANY permutation and ANY coin (4,000 random permutations,
+symbolic coin, 0 failures): the arena has NO effective
+realization gate (inherited empty, replacement vacuous).  **M3
+(new): LOCAL-STABLE-6-OF-6 is FORCED BY NON-WRAPPING** (no
+declared stencil wraps at L=4 — the generators are literally
+identical at both sizes; 2 of G6's 4 pre-registered outcomes
+were unreachable).  M4: the global claim entered at the grain
+where G7 measured 0/2.  M5: G-NO-CONFINEMENT-LANGUAGE blind to
+prose (area law/string tension/flux tube inject at exit 0; the
+delivered paper IS compliant; §10's area-law successor
+over-reaches).  **LICENSED CLAIMS WRITTEN: the head's line is
+at the word "FIELD"** (connection yes; no measure, action, or
+dynamics ⟹ not a gauge field, not QCD); **THE EXCLUSION'S REAL
+LAW IS SUPPORT OVERLAP** (≤1 shared site ⟹ one path ⟹ no
+defect; commutation needs overlap exactly 1) — one column
+reconciling both grains and answering §10's own open;
+"where the quantum lives, the geometry never closes" KILLED;
+**the defect↔infinite-order link is ONE-WAY** (384 of 512
+balanced coins carry the defect — strict containment); the
+CR-D convergence ENTAILED BY THE GENERATOR TYPE (3-cycles +
+Jordan; both scrambles reach A₁₆); "extensive" licensed for
+the support count only (log|Aₙ| superextensive; the sharper
+true statement: the global class is A_{L²} on the entire site
+set at both sizes).  The choice inventory omits the
+verdict-determining choice (which gate is declared).  NO
+measured quantity requires correction.  One seat pending
+(instrument) → adjudication.
