@@ -2894,3 +2894,40 @@ Artifacts committed as-is: paper 05f5dc7c7273, code
 a47d622c7608, output 1ef2b3a603cc, receipt d4fe2c64c082
 (receipt's source_sha256 and paper anchor both match).
 Orchestrator verification next; TERMINAL on its completion.
+
+## 2026-08-10 — R4 REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #99)
+
+All twelve orders fully discharged, no partials.  **The corrected
+head now carries: `SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;
+NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=4;PRESENT-AT-L-IN-{2,4});
+CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))` and
+`COMMUTATOR=0-OF-3364-NONZERO-IN-THE-VERDICT-STRATUM` with
+PRINCIPLED-BITE=36, the value-multiset matching named
+(616-OF-1024-WEIGHTED-FROM-25-DISTINCT), light cone
+BOUND-HAS-CONTENT-ONLY-AT-RADIUS-0, and
+INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES in SCOPE.**  The
+connective row FORCED fiber-1 with the routing mutant; the
+biconditional in ONLY-IF form derived in-gate; both
+strengthenings adopted with finite legs gated; the head DERIVED
+inside the comparator; the real CLI; per-object gates
+(G-REALIZATION-LEVELS-PER-GENERATOR, G-MARKOV-ZERO-OBJECT,
+G-DEFECT-VALUE-CENSUS-FULL); 50 flip probes; the #208
+clause-removal probe now a STANDING one-hop AST scan — it
+immediately caught two pre-existing launders, both repaired;
+verify-paper runs as a gate inside the plain run (117 claims
+rendered, 128 numerals / 655 occurrences, 0 uncovered).  The
+three re-run injections all die at named gates (BLOCKED-AT-
+NOTHING → G-VERDICT-STRING-EQUALITY; promoted-OCC →
+per-generator with the mismatch named; zeroed rows → the full
+value census).  101 gates; 116 mutants, 116/116 on declared
+target; 98 falsifiable / 3 waived-with-forcing; byte-identical
+×2; the scratch CLI battery clean.  **No delivered number
+moved.  TWO REVIEWER NUMBERS CORRECTED by two-route
+recomputation** (operator MINOR-3's 27-of-42 → 29-of-42, unit
+route + from-scratch ℚ(√2,i) route agreeing, now printed and
+gated; effectus F6's 104-pairs → 222-of-252 non-commuting
+involving a scramble, strata defined explicitly in §7 over all
+4096 ordered pairs) — recorded as the delta, standing unless
+contested.  Artifacts committed as-is: paper 1063401c7bb5, code
+2959c5a6a84b, output ffd069ff3eb4, receipt 3dc1393b0df8.
+Verification battery next; TERMINAL on completion.

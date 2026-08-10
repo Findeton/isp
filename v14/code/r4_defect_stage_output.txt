@@ -12,8 +12,8 @@ v14 R4 -- THE QFT RUNG: THE DEFECT ON THE STAGE
 [9/12] the realization gate and the state-motion check
 [10/12] the verdict
 [11/12] receipt gates, mutants, compliance
-[12/12] running 82 declared mutants
-    mutants: 82 declared, 82 killed, 82 killed by their declared target
+[12/12] running 116 declared mutants
+    mutants: 116 declared, 116 killed, 116 killed by their declared target
 
 ------------------------------------------------------------------------------
 ARENA (declared as data)
@@ -50,7 +50,7 @@ ANCHORS
   path-value PV-R2-WIDTH        A-LOCALITY-R2/width_law/rules_predicted_correctly = 109
   path-value PV-R2-GATES        A-LOCALITY-R2/totals/gates = 69
 
-THE STAGE: locality by the ported criterion (Moore connective, d=2)
+THE STAGE: locality by the ported criterion (the FORCED connective, d=2)
   L=2 offsets= 3 neighbours= 3 complete=True  locality=False
   L=3 offsets= 8 neighbours= 8 complete=True  locality=False
   L=4 offsets=15 neighbours= 8 complete=False locality=True
@@ -60,6 +60,35 @@ THE STAGE: locality by the ported criterion (Moore connective, d=2)
   L=8 offsets=63 neighbours= 8 complete=False locality=True
   L=9 offsets=80 neighbours= 8 complete=False locality=True
   parity witness: {'moore_threshold_d2': 4, 'von_neumann_threshold_d2': 2, 'delta': -2}
+
+THE CONNECTIVE IS FORCED BY THE ANCHORED LINK SET
+  anchored links      [[1, 0], [0, 1], [1, 1]]
+  forced              MAX-NORM                 every anchored link inside the radius-1 ball
+  excluded            SUM-NORM                 link (1, 1) has norm 2 > 1
+  admissible sizes    forced [4] / excluded [2, 4]
+  locality thresholds by connective and dimension:
+    MAX-NORM   d=1 threshold=4 admits the anchored links=True
+    MAX-NORM   d=2 threshold=4 admits the anchored links=True
+    MAX-NORM   d=3 threshold=4 admits the anchored links=True
+    SUM-NORM   d=1 threshold=4 admits the anchored links=False
+    SUM-NORM   d=2 threshold=2 admits the anchored links=False
+    SUM-NORM   d=3 threshold=2 admits the anchored links=False
+
+THE MOORE-BALL COLLAPSE THEOREM (legs measured)
+  sizes checked       [5, 6, 7, 8, 9]
+  domain check        {'nonzero_elements': 24, 'zero_divisor_pairs': 0}
+  alphabet independence: {'locality_sizes': [4, 5, 6, 7, 8, 9], 'below_collapse_threshold': [2, 3, 4], 'intersection': [4]}
+
+THE FIVE-POINT SWEEPS (leaves and solutions are the invariants;
+the node count is an artifact of the declared offset ordering)
+    L=4 AXIS-FIRST    nodes= 150125 leaves= 1561 non-monomial=160
+    L=4 CENTRE-FIRST  nodes= 722525 leaves= 1561 non-monomial=160
+    L=5 AXIS-FIRST    nodes=  34925 leaves=  121 non-monomial=0
+    L=5 CENTRE-FIRST  nodes= 452525 leaves=  121 non-monomial=0
+    L=6 AXIS-FIRST    nodes=  34925 leaves=  121 non-monomial=0
+    L=6 CENTRE-FIRST  nodes= 452525 leaves=  121 non-monomial=0
+    L=7 AXIS-FIRST    nodes=  34925 leaves=  121 non-monomial=0
+    L=7 CENTRE-FIRST  nodes= 452525 leaves=  121 non-monomial=0
 
 THE FAMILY: unitary generators on the 3-term axis stencil, by ord(a)
   ord=1 distinct=   8 monomial=  8 non-monomial=  0
@@ -133,6 +162,20 @@ TRANSFORMATION-TYPE CLASSES
     class S062  size=1   kind=SCRAM supp=None radius=2 ord(axis)=None level=NONE     order=None
     class S063  size=1   kind=SCRAM supp=None radius=2 ord(axis)=None level=OCC      order=None
 
+  class labels: 22 classes, 14 distinct invariant tuples, 17 with a direction label added
+    shared label ['1', 'CIRC', '2', '2', '2', 'FULL', '4'] by ['C055', 'C056']
+    shared label ['2', 'CIRC', '2', '2', '2', 'FULL', '4'] by ['C009', 'C010']
+    shared label ['4', 'CIRC', '1', '1', '4', 'FULL', '4'] by ['C007', 'C026']
+    shared label ['4', 'CIRC', '2', '1', '4', 'FULL', '2'] by ['C005', 'C024']
+    shared label ['4', 'CIRC', '3', '1', '4', 'FULL', '4'] by ['C000', 'C001', 'C020', 'C021']
+    shared label ['4', 'CIRC', '3', '2', '4', 'FULL', '4'] by ['C028', 'C029']
+
+THE COMMUTATOR CENSUS (the R5 datum)
+  BRICK-BRICK                         4 non-commuting of   16 ordered pairs
+  CIRC-BRICK                        256 non-commuting of  464 ordered pairs
+  CIRC-CIRC-THE-VERDICT-STRATUM       0 non-commuting of 3364 ordered pairs
+  WITH-SCRAMBLE                     222 non-commuting of  252 ordered pairs
+
 REALIZATION CENSUS (the mandatory gate)
   NONE      1 generators
   OCC       5 generators
@@ -140,32 +183,51 @@ REALIZATION CENSUS (the mandatory gate)
   FULL      58 generators
   maximal declared transport: FULL
   defects entering the verdict: only at FULL
+  every classification verified by a second route at 64 generators
+
+LIKE FOR LIKE
+  {'matched_pairs': 1024, 'value_multiset_agreements': 616, 'distinct_comparisons': 25, 'multiplicities': {'64': 9, '32': 12, '16': 4}, 'matching_species': 'coefficient value multiset', 'gauge_class_matched_pairs': 1024, 'gauge_class_distinct_comparisons': 64, 'gauge_class_agreements': 648}
+
+RADIUS PROFILES AND THE CONE BOUND
+  {'distinct': 6, 'profiles': {'0000': 1, '1010': 8, '1110': 16, '1210': 8, '2020': 7, '2220': 18}, 'half_width_attained': 33, 'generators': 58}
+  {'profiles_swept': 81, 'radii_with_content': [0], 'violating_profiles': {'0': 26}, 'radii_present': [0, 1, 2]}
 
 STATE MOTION
-  {'states_declared': 18, 'probe_pair': ['C000', 'C001'], 'distinct_responses': 18, 'coefficient_reconstructed_exactly': True, 'verdict_label': 'BACKGROUND-COEFFICIENT-OBSERVABLE-MOVES'}
+  {'states_declared': 18, 'probe_pair': ['C000', 'C001'], 'probe_pairs': 8, 'distinct_responses': 18, 'coefficient_reconstructed_exactly': True, 'verdict_label': 'BACKGROUND-BY-CONSTRUCTION-OBSERVABLE-MOVES-MEASURED'}
+
+PAPER CLAIM COVERAGE
+  {'claims': 117, 'missing': [], 'distinct_numerals': 128, 'numeral_occurrences': 655, 'covered_by_rendering': 116, 'declared_derived_in_text': 25, 'residue_declared_but_absent': [], 'uncovered': []}
 
 THE VERDICT
 
   R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUE
-  S=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16;MAX-DEFECT-RAD
-  IUS=2;LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=1+2+4;EQUAL-TIME=15/256
-  |CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4|LOCALITY=LOCAL=216-OF-576;NON
-  LOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=616-OF-1024|MA
-  RKOV=0-OF-1792-NONZERO|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLU
-  DED-NONZERO=150|STATE=BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-18-DISTIN
-  CT-RESPONSES|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IF
-  F-L<=4)|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;FINITE-LAT
-  TICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOS
-  ED-SEGMENT-DEFECT>
+  S=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16-OF-16-CEILING;
+  MAX-DEFECT-RADIUS=2-OF-2-CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIU
+  S-0;RADIUS-PROFILES=6;HALF-WIDTH-ATTAINED=33-OF-58;PERIODS=1+2+4;EQUAL-TIM
+  E=15/256|CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4;DISTINCT-INVARIANT-LA
+  BELS=14|LOCALITY=LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-
+  AT-MATCHED-VALUE-MULTISET=616-OF-1024-WEIGHTED-FROM-25-DISTINCT|MARKOV=0-O
+  F-1792-NONZERO|COMMUTATOR=0-OF-3364-NONZERO-IN-THE-VERDICT-STRATUM|REALIZA
+  TION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150;PRINCIPLED-BIT
+  E=36|STATE=BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;SINGLE-OCCUPA
+  TION);OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES-OVER-8-PROBE-PAIRS|SCALE=L
+  =4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=4;PRESENT-A
+  T-L-IN-{2,4});CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))|SCOPE=D=2
+  ;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=
+  SINGLE-OCCUPATION;SWEPT-RANGE=L-IN-2..9;INDIVISIBILITY=DECLARED-BY-DIVISIO
+  N-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY
+  -CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>
 
-TOTALS: {"anchors": 24, "byte_anchors": 5, "census_rows": 4096, "gates": 77, "gates_falsifiable": 75, "gates_passed": 77, "gates_waived": 2, "mutants": 82, "mutants_killed": 82, "mutants_on_target": 82, "never_falsified": 2, "path_value_anchors": 10, "pool": 64, "verbatim_anchors": 9}
+TOTALS: {"anchors": 24, "byte_anchors": 5, "census_rows": 4096, "gates": 101, "gates_falsifiable": 98, "gates_passed": 101, "gates_waived": 3, "mutants": 116, "mutants_killed": 116, "mutants_on_target": 116, "never_falsified": 3, "path_value_anchors": 10, "pool": 64, "verbatim_anchors": 9}
 
 NOT EXECUTED
-  - the 9-point Moore stencil is not swept; only the 3-term axis stencil (exhaustive over the declared alphabet at every swept order) and the 5-point stencil (at one lattice size above the collapse threshold)
-  - coefficients outside the declared 25-element alphabet are not swept; the order-5-and-above collapse is proved in the paper and is alphabet-independent, but the order-3 emptiness is alphabet-relative
+  - the 9-point Moore stencil is not SWEPT at the admitted size; the Moore-ball collapse theorem settles every size above it over any field, and the 5-point stencil is swept at four sizes in two orderings
+  - the wider 5-point family at the admitted size is disclosed and not censused; the defect census runs on the 3-term axis stencil only
+  - indivisibility is DECLARED by the division-event times and is never measured: no existential stochastic-divisor search is run
+  - coefficients outside the declared 25-element alphabet are not swept; the order-5-and-above collapse and the Moore-ball collapse are theorems and alphabet-independent, and the alphabet-relative order-3 emptiness is irrelevant to the verdict
   - no continuum or infinite-volume limit is taken
   - no multi-excitation sector, no interaction term, and no field operator is constructed; 'field' appears only as the free-field ANALOG
   - d = 3 is swept only for the locality threshold, not for the family
 
-ALL GATES PASSED (77/77); ALL MUTANTS DEAD (82/82)
+ALL GATES PASSED (101/101); ALL MUTANTS DEAD (116/116)
 EXIT 0

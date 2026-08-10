@@ -2,6 +2,24 @@
  "admissible_scales": [
   4
  ],
+ "alphabet_independence": {
+  "below_collapse_threshold": [
+   2,
+   3,
+   4
+  ],
+  "intersection": [
+   4
+  ],
+  "locality_sizes": [
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
  "alphabet_size": 25,
  "arena_declaration": {
   "arena": "the anchored chart group (translations and direction relabellings) and this unit's declared extension by the square point group; both censused",
@@ -62723,10 +62741,10 @@
   },
   {
    "choice": "the neighbourhood connective",
-   "class": "GENUINELY-FREE",
-   "fibre": 2,
+   "class": "FORCED",
+   "fibre": 1,
    "value": "MOORE:max-norm<=1",
-   "why": "both connectives are swept and the threshold delta is the parity witness"
+   "why": "FORCED by the anchored link set: the anchored diagonal link (1,1) has max-norm 1 and sum-norm 2, so it lies inside the max-norm radius-1 ball and outside the sum-norm one.  Exactly one of the two declared connectives can carry the stage's own links; the other is swept only to measure what it would have cost (threshold delta -2, admissible set [2, 4])"
   },
   {
    "choice": "the lattice size L",
@@ -62747,7 +62765,7 @@
    "class": "GENUINELY-FREE",
    "fibre": 2,
    "value": "3-term axis {0, a, -a}",
-   "why": "the 3-term axis stencil is swept at every order and the 5-point stencil is swept as the declared extension; the 9-point stencil is not swept"
+   "why": "free AT the admitted size and only there: the Moore-ball collapse theorem removes every non-monomial local stencil at L >= 5 over any field, but at L = 4 the 5-point stencil carries 160 further non-monomial generators that this census does not examine"
   },
   {
    "choice": "the axis set",
@@ -62813,6 +62831,105 @@
    "why": "declared; the coefficient is shown state-independent and the observable state-dependent"
   }
  ],
+ "class_labels": {
+  "classes": 22,
+  "distinct_labels": 14,
+  "shared": [
+   {
+    "classes": [
+     "C055",
+     "C056"
+    ],
+    "label": [
+     "1",
+     "CIRC",
+     "2",
+     "2",
+     "2",
+     "FULL",
+     "4"
+    ]
+   },
+   {
+    "classes": [
+     "C009",
+     "C010"
+    ],
+    "label": [
+     "2",
+     "CIRC",
+     "2",
+     "2",
+     "2",
+     "FULL",
+     "4"
+    ]
+   },
+   {
+    "classes": [
+     "C007",
+     "C026"
+    ],
+    "label": [
+     "4",
+     "CIRC",
+     "1",
+     "1",
+     "4",
+     "FULL",
+     "4"
+    ]
+   },
+   {
+    "classes": [
+     "C005",
+     "C024"
+    ],
+    "label": [
+     "4",
+     "CIRC",
+     "2",
+     "1",
+     "4",
+     "FULL",
+     "2"
+    ]
+   },
+   {
+    "classes": [
+     "C000",
+     "C001",
+     "C020",
+     "C021"
+    ],
+    "label": [
+     "4",
+     "CIRC",
+     "3",
+     "1",
+     "4",
+     "FULL",
+     "4"
+    ]
+   },
+   {
+    "classes": [
+     "C028",
+     "C029"
+    ],
+    "label": [
+     "4",
+     "CIRC",
+     "3",
+     "2",
+     "4",
+     "FULL",
+     "4"
+    ]
+   }
+  ],
+  "with_direction_label": 17
+ },
  "classes": {
   "anchored": [
    {
@@ -63715,89 +63832,383 @@
   "triples": 48,
   "violations": 0
  },
+ "commutator_census": {
+  "BRICK-BRICK": {
+   "noncommuting": 4,
+   "pairs": 16
+  },
+  "CIRC-BRICK": {
+   "noncommuting": 256,
+   "pairs": 464
+  },
+  "CIRC-CIRC-THE-VERDICT-STRATUM": {
+   "noncommuting": 0,
+   "pairs": 3364
+  },
+  "WITH-SCRAMBLE": {
+   "noncommuting": 222,
+   "pairs": 252
+  },
+  "noncommuting_outside_verdict_stratum": 482
+ },
  "compliance": [
   {
+   "computed": true,
+   "gates": [
+    "G-EVERY-GATE-EVALUATED",
+    "G-WAIVERS-VERIFIED"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-DEAD-GATE"
+   ],
    "rule": "#313 rules bind at delivery: this unit's gates are diffed against every engraving standing on the day its pin froze",
-   "status": "APPLIED -- all eight 2026-08-09 engravings are enumerated in this sweep with a computed status and a named injection-falsifier"
+   "status": "APPLIED"
   },
   {
-   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE emitted string against a segment-by-segment rebuild",
-   "status": "APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers MUT-VERDICT-APPEND, MUT-VERDICT-SWAP, MUT-VERDICT-TYPED, MUT-VERDICT-DROP, MUT-PAPER-INPUT"
+   "computed": true,
+   "gates": [
+    "G-VERDICT-STRING-EQUALITY"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-HEAD-ABSENT-VARIANT",
+    "MUT-HEAD-OFF-PIN",
+    "MUT-HEAD-POST-BUILD",
+    "MUT-PAPER-INPUT",
+    "MUT-VERDICT-APPEND",
+    "MUT-VERDICT-DROP",
+    "MUT-VERDICT-SWAP",
+    "MUT-VERDICT-TYPED"
+   ],
+   "rule": "#10 containment is not equality: the verdict gate compares the COMPLETE emitted string, head included, against an independent rebuild",
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-RENDER-FROM-GATED-OBJECT"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-RENDER-BYPASS"
+   ],
    "rule": "#10 render from the gated object: one object, one source of truth",
-   "status": "APPLIED via G-RENDER-FROM-GATED-OBJECT; falsifier MUT-RENDER-BYPASS"
+   "status": "APPLIED"
   },
   {
-   "rule": "#20 prose renders from the receipt",
-   "status": "APPLIED -- every numeric claim of the paper is emitted here as paper_claims.rendered and checked verbatim by --verify-paper"
+   "computed": true,
+   "gates": [
+    "G-PAPER-CLAIMS-VERIFIED"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-PAPER-CLAIM-DRIFT",
+    "MUT-PAPER-COVERAGE"
+   ],
+   "rule": "#20 prose renders from the receipt: every numeric claim of the paper is rendered here and checked against the paper's bytes, and the paper's numeral coverage is gated",
+   "status": "APPLIED"
   },
   {
-   "rule": "#20 compliance claims are gate claims: a compliance gate ships with an injection-falsifier and its comparator can disagree",
-   "status": "APPLIED -- the verdict comparator reconstruct_verdict_from_receipt() shares no helper and reads only the serialized receipt; G-SELF-COMPARE-GUARD proves the two paths differ"
+   "computed": true,
+   "gates": [
+    "G-COMPLIANCE-COMPUTED"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-COMPLIANCE-TYPED"
+   ],
+   "rule": "#20 compliance claims are gate claims: every status is a computed predicate shipping with an injection-falsifier",
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-PATH-VALUE-ANCHORS"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-ANCHOR-PATH",
+    "MUT-ANCHOR-PATH-VALUE"
+   ],
    "rule": "#20 path-value anchoring: a read-by-path anchors the (path, value) pair",
-   "status": "APPLIED -- 10 path-value anchor rows; falsifiers MUT-ANCHOR-PATH, MUT-ANCHOR-PATH-VALUE"
+   "status": "APPLIED"
   },
   {
-   "rule": "#34 waiver claims are gate claims: a named waiver is verified, and a gate no path evaluates is dead code",
-   "status": "APPLIED via G-EVERY-GATE-EVALUATED and the waiver ledger below, whose every waived row carries a machine-checked forcing"
+   "computed": true,
+   "gates": [
+    "G-WAIVERS-VERIFIED",
+    "G-EVERY-GATE-EVALUATED",
+    "G-FORCINGS-REGISTERED"
+   ],
+   "gates_evaluated": 3,
+   "injection_falsifiers": [
+    "MUT-DEAD-GATE",
+    "MUT-FORCING-UNREGISTERED"
+   ],
+   "rule": "#34 waiver claims are gate claims: a named waiver is verified, a gate no path evaluates is dead code, and every FORCED row names its forcing",
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-VERBATIM-ANCHORS"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-ANCHOR-VERBATIM"
+   ],
    "rule": "#34 verbatim-text anchors: evaluated before byte anchors, each row bound to a named consumer gate, context windows not fragments",
-   "status": "APPLIED -- 9 verbatim rows, evaluated first; falsifier MUT-ANCHOR-VERBATIM"
+   "status": "APPLIED"
   },
   {
-   "rule": "#46 no unanchored runtime inputs",
-   "status": "APPLIED via G-NO-UNANCHORED-RUNTIME-INPUT -- exactly 5 hash-pinned files are read and no mutable repository state"
+   "computed": true,
+   "gates": [
+    "G-NO-UNANCHORED-RUNTIME-INPUT"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-EXTRA-INPUT"
+   ],
+   "rule": "#46 no unanchored runtime inputs: pinned sources, plus the declared object under test and nothing else",
+   "status": "APPLIED"
   },
   {
-   "rule": "#314 precheck doctrine: a precheck may gate the census but may never name the verdict",
-   "status": "APPLIED via G-PRECHECK-DOES-NOT-NAME-THE-VERDICT -- the scale precheck selects the lattice size; the head is named by the defect census"
+   "computed": true,
+   "gates": [
+    "G-PRECHECK-DOES-NOT-NAME-THE-VERDICT",
+    "G-LATTICE-BOUND-TO-ADMISSIBLE"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-LATTICE-UNBOUND",
+    "MUT-PRECHECK-NAMES"
+   ],
+   "rule": "#314 precheck doctrine: a precheck may gate the census but may never name the verdict, and the test is by output",
+   "status": "APPLIED"
   },
   {
-   "rule": "#313 boundary parity: a Boolean connective carries a parity-witness whose death certificate is the alternative connective's measured delta",
-   "status": "APPLIED via G-PARITY-WITNESS -- Moore vs von Neumann threshold delta printed; falsifier MUT-PARITY-WITNESS"
+   "computed": true,
+   "gates": [
+    "G-PARITY-WITNESS",
+    "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-PARITY-WITNESS",
+    "MUT-ROUTE-SUM-NORM-ROWS"
+   ],
+   "rule": "#313 boundary parity: a Boolean connective carries a parity-witness -- and here the witness measures a FORBIDDEN alternative, because the connective is forced by the anchored link set",
+   "status": "APPLIED"
   },
   {
-   "rule": "#208 no gate predicate may reference mutant identity",
-   "status": "APPLIED via G-NO-MUTANT-IDENTITY-IN-GATES -- an AST scan of the gate ledger's own call sites"
+   "computed": true,
+   "gates": [
+    "G-NO-MUTANT-IDENTITY-IN-GATES"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-GATE-READS-LAUNDERED-NAME",
+    "MUT-GATE-REFERENCES-MUTANT"
+   ],
+   "rule": "#208 no gate predicate may reference mutant identity, directly or through one hop",
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-FORCINGS-REGISTERED"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-FORCING-UNREGISTERED"
+   ],
+   "rule": "#208 an analytically-forced clause is a DISCLOSURE, not a must-pass measurement, and names the gate carrying its content",
+   "status": "APPLIED"
+  },
+  {
+   "computed": true,
+   "gates": [
+    "G-SELF-COMPARE-GUARD",
+    "G-COUNTS-FROM-RECEIPT"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-COUNT-RECEIPT",
+    "MUT-SELFCOMPARE"
+   ],
    "rule": "#219 an object may not be compared against a copy of itself routed through the component under test",
-   "status": "APPLIED -- three genuinely distinct defect routes (sparse definition, coefficient convolution, character basis) and an independent verdict comparator"
+   "status": "APPLIED"
   },
   {
-   "rule": "#234 the verdict is derived inside a gate and a flip mutant proves the derivation can fail",
-   "status": "APPLIED via G-VERDICT-HEAD-DERIVED, G-VERDICT-SEGMENTS-FLIPPABLE, G-VERDICT-THREE-HEADS-REACHABLE"
+   "computed": true,
+   "gates": [
+    "G-VERDICT-HEAD-DERIVED",
+    "G-VERDICT-VALUES-FLIPPABLE",
+    "G-VERDICT-SEGMENTS-FLIPPABLE",
+    "G-VERDICT-THREE-HEADS-REACHABLE"
+   ],
+   "gates_evaluated": 4,
+   "injection_falsifiers": [
+    "MUT-VALUE-INERT",
+    "MUT-VERDICT-HEAD",
+    "MUT-VERDICT-HEADS",
+    "MUT-VERDICT-INERT"
+   ],
+   "rule": "#234 the verdict is derived inside a gate and a flip probe proves the derivation can fail -- one probe per measured VALUE, not per segment",
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-COUNTS-DERIVED",
+    "G-COUNTS-FROM-RECEIPT",
+    "G-ORD-CENSUS-COUNTS",
+    "G-POOL-DERIVED"
+   ],
+   "gates_evaluated": 4,
+   "injection_falsifiers": [
+    "MUT-COUNT-RECEIPT",
+    "MUT-COUNT-TYPED",
+    "MUT-ORD-COUNT",
+    "MUT-POOL-COUNT"
+   ],
    "rule": "#24 counts are computed, never typed",
-   "status": "APPLIED via G-COUNTS-DERIVED, G-ORD-CENSUS-COUNTS, G-POOL-DERIVED"
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-MARKOV-POSITIVE-CONTROL",
+    "G-GAUGE-HANDLE",
+    "G-CLASS-CONTROLS-MOVE",
+    "G-TWOPOINT-SCRAMBLE-BREAKS"
+   ],
+   "gates_evaluated": 4,
+   "injection_falsifiers": [
+    "MUT-CONTROLS-INERT",
+    "MUT-GAUGE-HANDLE",
+    "MUT-MARKOV-NOPOS",
+    "MUT-SCRAMBLE-SEPTABLE"
+   ],
    "rule": "#36 every gate is a measurement that could have come out otherwise; controls in both directions",
-   "status": "APPLIED -- 77 gates, 82 declared mutants, positive AND negative controls on the Markovian zero, the gauge invariance and the translation covariance"
+   "status": "APPLIED"
   },
   {
+   "computed": true,
+   "gates": [
+    "G-NO-FLOAT-AST",
+    "G-NO-FLOAT-RECEIPT"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-FLOAT-AST",
+    "MUT-FLOAT-RECEIPT"
+   ],
    "rule": "RUNBOOK section 4: exact arithmetic only, floats swept by AST",
-   "status": "APPLIED via G-NO-FLOAT-AST and G-NO-FLOAT-RECEIPT"
+   "status": "APPLIED"
   },
   {
-   "rule": "RUNBOOK section 14: symmetry self-tests evaluate fresh, cache bypassed",
-   "status": "APPLIED via G-GAUGE-SELFTEST (cache cleared, plus a cache-free recomputation) and G-CACHE-EXERCISED"
+   "computed": true,
+   "gates": [
+    "G-GAUGE-SELFTEST",
+    "G-CACHE-EXERCISED"
+   ],
+   "gates_evaluated": 2,
+   "injection_falsifiers": [
+    "MUT-CACHE",
+    "MUT-GAUGE-SELFTEST",
+    "MUT-GAUGE-SELFTEST-RIGHT"
+   ],
+   "rule": "RUNBOOK section 14: symmetry self-tests evaluate fresh, cache bypassed, both directions",
+   "status": "APPLIED"
   },
   {
-   "rule": "RUNBOOK section 15: the arena is declared as data and matched at every coordinate",
-   "status": "APPLIED -- arena_declaration is printed and G-LOCALITY-LIKE-FOR-LIKE matches every coordinate before the contrast is read"
+   "computed": true,
+   "gates": [
+    "G-REALIZATION-LEVELS-PER-GENERATOR",
+    "G-MARKOV-ZERO-OBJECT",
+    "G-DEFECT-VALUE-CENSUS-FULL"
+   ],
+   "gates_evaluated": 3,
+   "injection_falsifiers": [
+    "MUT-LEVEL-DEMOTE-ONE",
+    "MUT-LEVEL-PROMOTE-ONE",
+    "MUT-MARKOV-OBJECT",
+    "MUT-REALIZATION-PROMOTE",
+    "MUT-VALUE-MULTISET",
+    "MUT-Y1-UNCENSUSED-ZERO"
+   ],
+   "rule": "RUNBOOK section 14 (v14 #87): gates bind objects, not cardinalities",
+   "status": "APPLIED"
+  },
+  {
+   "computed": true,
+   "gates": [
+    "G-CLI-CONTRACT"
+   ],
+   "gates_evaluated": 1,
+   "injection_falsifiers": [
+    "MUT-CLI-ACCEPTS-UNKNOWN"
+   ],
+   "rule": "RUNBOOK section 14 (v14 #82): the CLI-contract minimum -- argv parsed, unknown flags rejected, a real --selftest, a validated --mutant",
+   "status": "APPLIED"
+  },
+  {
+   "computed": true,
+   "gates": [
+    "G-LOCALITY-LIKE-FOR-LIKE",
+    "G-LIKE-FOR-LIKE-DISTINCT",
+    "G-CEILINGS-MEASURED"
+   ],
+   "gates_evaluated": 3,
+   "injection_falsifiers": [
+    "MUT-CEILING",
+    "MUT-MATCHED-DISTINCT",
+    "MUT-MATCHED-EMPTY"
+   ],
+   "rule": "RUNBOOK section 15: the arena is declared as data and matched at every coordinate, and every measured restriction is carried in a segment",
+   "status": "APPLIED"
   }
  ],
+ "connective_forcing": {
+  "admissible_under_excluded": [
+   2,
+   4
+  ],
+  "admissible_under_forced": [
+   4
+  ],
+  "anchored_links": [
+   [
+    1,
+    0
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "excluded": "VON-NEUMANN:sum-norm<=1",
+  "excluded_tag": "SUM-NORM",
+  "forced": "MOORE:max-norm<=1",
+  "forced_tag": "MAX-NORM",
+  "reason_excluded": "link (1, 1) has norm 2 > 1",
+  "reason_forced": "every anchored link inside the radius-1 ball"
+ },
  "counts": {
+  "L": 4,
   "admissible_scales": [
    4
   ],
   "all_rational_rows": 588,
+  "alphabet": 25,
+  "circulants": 58,
+  "class_labels": 14,
   "class_sizes": [
    1,
    2,
@@ -63805,22 +64216,40 @@
   ],
   "classes_anchored": 38,
   "classes_extended": 22,
+  "commutator_nonzero": 0,
+  "commutator_pairs": 3364,
+  "connective_tag": "MAX-NORM",
+  "d": 2,
   "distinct_values": 8,
+  "equal_time": "15/256",
+  "field": "Q(ZETA-8)",
+  "forcing_link": "(1,1)",
   "generators_at_maximal": 58,
+  "half_width_attained": 33,
+  "indivisibility": "DECLARED-BY-DIVISION-EVENT-TIMES",
   "levels_attained": [
    "NONE",
    "OCC",
    "FULL"
   ],
+  "lightcone_content_radii": [
+   0
+  ],
   "local_nonzero": 216,
   "local_pairs": 576,
+  "locality_threshold": 4,
   "markov_nonzero": 0,
   "markov_pairs": 1792,
+  "matched_agreements": 616,
+  "matched_distinct": 25,
+  "matched_pairs": 1024,
   "max_defect_radius": 2,
+  "maximal_transport": "FULL",
   "nonlocal_nonzero": 372,
   "nonlocal_pairs": 1188,
   "nonzero_at_maximal": 588,
   "nonzero_excluded": 150,
+  "only_if_bound": 4,
   "orders": [
    1,
    2,
@@ -63829,8 +64258,20 @@
   "pairs_at_maximal": 3364,
   "pairs_total": 4096,
   "pool": 64,
+  "present_at": [
+   2,
+   4
+  ],
+  "principled_bite": 36,
+  "radius_ceiling": 2,
+  "radius_profiles": 6,
+  "sector": "SINGLE-OCCUPATION",
   "separations": 16,
-  "state_distinct": 18
+  "separations_ceiling": 16,
+  "state_distinct": 18,
+  "state_probe_pairs": 8,
+  "stencil": "3-TERM-AXIS",
+  "swept_range": "L-IN-2..9"
  },
  "covariance_reading": {
   "B058": false,
@@ -64196,6 +64637,40 @@
    ]
   }
  ],
+ "defect_value_multiset": [
+  {
+   "cells": 108,
+   "value": "(+1)/2"
+  },
+  {
+   "cells": 336,
+   "value": "(+1)/4"
+  },
+  {
+   "cells": 144,
+   "value": "(+1)/8"
+  },
+  {
+   "cells": 24,
+   "value": "(+5)/8"
+  },
+  {
+   "cells": 108,
+   "value": "(-1)/2"
+  },
+  {
+   "cells": 336,
+   "value": "(-1)/4"
+  },
+  {
+   "cells": 192,
+   "value": "(-1)/8"
+  },
+  {
+   "cells": 24,
+   "value": "(-3)/8"
+  }
+ ],
  "defect_values": [
   {
    "cells": 108,
@@ -64241,8 +64716,75 @@
   "leaves_reached": 121,
   "nodes_visited": 34925,
   "non_monomial": 0,
+  "ordering": "AXIS-FIRST",
   "stencil": 5
  },
+ "five_point_sweeps": [
+  {
+   "L": 4,
+   "leaves_reached": 1561,
+   "nodes_visited": 150125,
+   "non_monomial": 160,
+   "ordering": "AXIS-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 4,
+   "leaves_reached": 1561,
+   "nodes_visited": 722525,
+   "non_monomial": 160,
+   "ordering": "CENTRE-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 5,
+   "leaves_reached": 121,
+   "nodes_visited": 34925,
+   "non_monomial": 0,
+   "ordering": "AXIS-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 5,
+   "leaves_reached": 121,
+   "nodes_visited": 452525,
+   "non_monomial": 0,
+   "ordering": "CENTRE-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 6,
+   "leaves_reached": 121,
+   "nodes_visited": 34925,
+   "non_monomial": 0,
+   "ordering": "AXIS-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 6,
+   "leaves_reached": 121,
+   "nodes_visited": 452525,
+   "non_monomial": 0,
+   "ordering": "CENTRE-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 7,
+   "leaves_reached": 121,
+   "nodes_visited": 34925,
+   "non_monomial": 0,
+   "ordering": "AXIS-FIRST",
+   "stencil": 5
+  },
+  {
+   "L": 7,
+   "leaves_reached": 121,
+   "nodes_visited": 452525,
+   "non_monomial": 0,
+   "ordering": "CENTRE-FIRST",
+   "stencil": 5
+  }
+ ],
  "gates": [
   {
    "claim": "every verbatim context window occurs in its pinned source, and each row is bound to a named consumer gate",
@@ -64266,8 +64808,8 @@
    "passed": true
   },
   {
-   "claim": "every file read at run time is a hash-pinned artifact; no mutable repository state is read (#46)",
-   "detail": "reads: v12/paper1-composition-defect.md, v12/paper1_code/exact.py, v13/code/ha_successor_receipt.json, v14/code/r2_manifold_receipt.json, v14/note-r4-qft-pin.md",
+   "claim": "every file read at run time is either a hash-pinned SOURCE or the declared OBJECT UNDER TEST (this unit's own paper, which cannot be pinned against itself); both lists are enumerated and no other mutable repository state is read (#46)",
+   "detail": "pinned sources: v12/paper1-composition-defect.md, v12/paper1_code/exact.py, v13/code/ha_successor_receipt.json, v14/code/r2_manifold_receipt.json, v14/note-r4-qft-pin.md | object under test: v14/paper-10-defect-on-the-stage.md",
    "id": "G-NO-UNANCHORED-RUNTIME-INPUT",
    "kind": "MEASURED",
    "passed": true
@@ -64308,8 +64850,8 @@
    "passed": true
   },
   {
-   "claim": "every anchored link lies in the declared radius-1 neighbourhood of the working lattice",
-   "detail": "links=[(1, 0), (0, 1), (1, 1)] ball=8",
+   "claim": "every anchored link lies in the radius-1 neighbourhood of the connective that admits the anchored link set, at every swept lattice size that can carry a radius-1 ball",
+   "detail": "links=[(1, 0), (0, 1), (1, 1)] forced connective=MOORE:max-norm<=1",
    "id": "G-LINKS-IN-BALL",
    "kind": "MEASURED",
    "passed": true
@@ -64322,15 +64864,15 @@
    "passed": true
   },
   {
-   "claim": "the lattice bears locality exactly above a measured size threshold, the same at every swept dimension",
+   "claim": "under the FORCED connective the lattice bears locality exactly above a measured size threshold, the same at every swept dimension",
    "detail": "thresholds by d: {1: 4, 2: 4, 3: 4}",
    "id": "G-LOCALITY-THRESHOLD",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the Boolean connective bounding the neighbourhood carries a parity-witness: the alternative connective's measured threshold delta is printed and is nonzero",
-   "detail": "moore threshold=4 von-neumann threshold=2 delta=-2",
+   "claim": "the Boolean connective bounding the neighbourhood carries a parity-witness: the EXCLUDED connective's measured threshold delta is printed and is nonzero, so the exclusion is not free",
+   "detail": "max-norm threshold=4 sum-norm threshold=2 delta=-2",
    "id": "G-PARITY-WITNESS",
    "kind": "MEASURED",
    "passed": true
@@ -64364,9 +64906,58 @@
    "passed": true
   },
   {
-   "claim": "exactly one swept lattice size carries both locality and a non-monomial local-axis generator",
-   "detail": "admissible sizes: [4]",
+   "claim": "the five-point sweep's leaf count and solution count are invariant under the declared offset ordering while the NODE count is not, so the node count is reported as a search artifact and never as a property of the stencil",
+   "detail": "sizes=4 orderings compared=4 node counts that differ=4; leaves and solutions invariant=True",
+   "id": "G-FIVE-POINT-ORDERING-INVARIANT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "at the unique admissible scale the 5-point stencil admits a wider local family than the 3-term axis stencil this unit censuses; the count is measured and disclosed, and no verdict segment rests on it",
+   "detail": "five-point non-monomial at L=4: 160 (3-term axis stencil at ord 4: 48); leaves=1561",
+   "id": "G-FIVE-POINT-AT-UNIQUE-SCALE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Moore-ball collapse theorem's checkable legs: at every declared L >= 5 the radius-1 ball's extreme lag (2, t) receives contributions only from column -1 against column +1 and the single-column lag (0, 2) receives exactly one pair, with no wraparound; the field has no zero divisors, so the Laurent ring is a domain; and the single-column reduction is the order census's own >= 5 rows",
+   "detail": "sizes checked=[5, 6, 7, 8, 9] lag structure ok=True zero-divisor pairs=0 of 24^2 nonzero; order census >= 5 non-monomial=[0, 0, 0, 0, 0]",
+   "id": "G-MOORE-BALL-COLLAPSE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the neighbourhood connective is FORCED, not free: exactly one declared connective's radius-1 ball contains the anchored link set, and the admissibility loop consumes that connective's rows and no other.  The exclusion has bite: under the excluded connective the admissible set is different",
+   "detail": "forced=MOORE:max-norm<=1 (every anchored link inside the radius-1 ball); excluded=VON-NEUMANN:sum-norm<=1 (link (1, 1) has norm 2 > 1); rows routed into the admissibility loop carry MOORE:max-norm<=1; admissible under the forced connective=[4], under the excluded connective=[2, 4]",
+   "id": "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "exactly one swept lattice size carries both locality and a non-monomial local-axis generator: the uniqueness is measured (len == 1) and the value is anchored separately",
+   "detail": "admissible sizes: [4] (count=1)",
    "id": "G-UNIQUE-SCALE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the non-monomial-local-axis half of the scale statement is derived from the measured order census, not typed: it is an ONLY-IF bound with a measured presence set, and the presence set is NOT the whole interval below the bound",
+   "detail": "non-monomial local axis present at L in [2, 4]; only-if bound L<=4; the interval below the bound is [2, 3, 4]",
+   "id": "G-SCALE-PRESENCE-DERIVED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the uniqueness survives every alphabet enlargement: the sizes excluded by locality are excluded by the stage and the sizes excluded at order >= 5 are excluded by the collapse theorem over any field, so the only size an enlarged alphabet could add lies in their intersection, which is the admitted size itself",
+   "detail": "sizes bearing locality=[4, 5, 6, 7, 8, 9]; sizes below the collapse threshold=[2, 3, 4]; intersection=[4]; admitted=[4]",
+   "id": "G-ALPHABET-INDEPENDENCE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the lattice the census runs on is the lattice the precheck admitted: L is taken FROM the measured admissible set, never typed beside it",
+   "detail": "census L=4 admissible=[4]",
+   "id": "G-LATTICE-BOUND-TO-ADMISSIBLE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64399,9 +64990,16 @@
    "passed": true
   },
   {
-   "claim": "every generator declares which fields it transports, measured: occupation by the translation stabiliser, axis by full covariance, phase register by equivariance of the coefficient label",
+   "claim": "the transport labels are well formed: every name is legal and there is exactly one per generator.  This row is a DISCLOSURE; the per-object obligation is discharged at the gate below",
    "detail": "counts {'NONE': 1, 'OCC': 5, 'OCC+AXIS': 0, 'FULL': 58}",
    "id": "G-REALIZATION-LEVELS",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "EVERY individual generator's transport classification is verified against its own computed invariant by an independent route: the translation stabiliser from explicit permutation-matrix products, the covariance from the matrix action's gauge-canonical membership in the pool.  A single promotion or demotion dies here",
+   "detail": "generators verified=64 mismatched=none",
+   "id": "G-REALIZATION-LEVELS-PER-GENERATOR",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64476,10 +65074,17 @@
    "passed": true
   },
   {
-   "claim": "each defect column sums to zero -- both composites are stochastic",
-   "detail": "violations=0 of the first 64 rows",
-   "id": "G-DEFECT-COLUMN-SUMS",
+   "claim": "the WHOLE value multiset of the verdict-bearing census -- every distinct exact value with its cell count -- is bound against a recomputation by a second code path, and the multiset carries its own exact zero-sum identity.  Zeroing any row, censused or not, dies here",
+   "detail": "values=8 rows recomputed=3364 of 3364; multiset equal=True; sum of all cells=0",
+   "id": "G-DEFECT-VALUE-CENSUS-FULL",
    "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "each defect column sums to zero -- both composites are stochastic. FORCED (|U| entrywise-squared is doubly stochastic for unitary U); the check is widened from a 64-row sample to EVERY census row so the evidence matches the claim",
+   "detail": "violations=0 over 4096 of 4096 census rows",
+   "id": "G-DEFECT-COLUMN-SUMS",
+   "kind": "DISCLOSURE",
    "passed": true
   },
   {
@@ -64493,6 +65098,13 @@
    "claim": "the Markovian sub-family returns a strictly zero defect: every pair with a monomial factor has an empty pairwise sum (the anchored annihilator theorem, measured here)",
    "detail": "0 of 1792 Markovian pairs nonzero",
    "id": "G-MARKOV-ZERO",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the Markovian zero is bound to the defect OBJECT and not to a count: every one of the Markovian rows' defect dictionaries is read and is literally empty",
+   "detail": "objects read=1792 of 1792 Markovian rows; non-empty=none",
+   "id": "G-MARKOV-ZERO-OBJECT",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64532,8 +65144,8 @@
    "passed": true
   },
   {
-   "claim": "the quantity is invariant under the symmetry it claims: the outer torus (the anchored gauge row) leaves the defect fixed, evaluated with the product cache cleared and a cache-free recomputation",
-   "detail": "checked=200 violations=0",
+   "claim": "the quantity is invariant under the symmetry it claims, on BOTH factors: a global phase on the left factor and a global phase on the right factor each leave the defect fixed, evaluated with the product cache cleared and a cache-free recomputation alongside",
+   "detail": "directions checked=400 violations=0",
    "id": "G-GAUGE-SELFTEST",
    "kind": "MEASURED",
    "passed": true
@@ -64547,7 +65159,7 @@
   },
   {
    "claim": "the product cache is genuinely exercised and its hit path is non-vacuous (#219)",
-   "detail": "hits=170329 misses=199",
+   "detail": "hits=247301 misses=283",
    "id": "G-CACHE-EXERCISED",
    "kind": "MEASURED",
    "passed": true
@@ -64560,9 +65172,16 @@
    "passed": true
   },
   {
-   "claim": "the local/non-local contrast is read at matched coordinates -- same coefficient class, same axis order, same gauge fixing -- and the matched table is the primary object",
+   "claim": "the local/non-local contrast is read at matched coordinates -- same coefficient value multiset, same axis order -- and the matched table is the primary object",
    "detail": "matched pairs=1024 value-multiset agreements=616",
    "id": "G-LOCALITY-LIKE-FOR-LIKE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the matched count is WEIGHTED: the matching selects a partner by coefficient value multiset, so the ordered comparisons resolve to a smaller number of DISTINCT non-local comparisons with measured multiplicities, and both numbers are reported.  A second matching on the full axis-relative gauge class -- the coordinate the first does not hold equal -- is measured alongside",
+   "detail": "value-multiset matching: 1024 ordered comparisons drawn from 25 distinct non-local pairs, multiplicities {64: 9, 32: 12, 16: 4}; gauge-class matching: 1024 ordered comparisons from 64 distinct pairs, 648 agreements",
+   "id": "G-LIKE-FOR-LIKE-DISTINCT",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64609,9 +65228,23 @@
    "passed": true
   },
   {
-   "claim": "the support of the composed propagator starts at the generator's own radius and spreads no faster than one neighbourhood per step, bounded by the lattice half-width; it is not monotone, because the torus wraps",
+   "claim": "the support of the composed propagator starts at the generator's own radius and spreads no faster than one neighbourhood per step, bounded by the lattice half-width.  DISCLOSURE: at the admitted size the bound is vacuous above radius 0 -- see the gate below",
    "detail": "generators=58 max radius=2 attaining the half-width=33",
    "id": "G-TWOPOINT-LIGHTCONE",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "the cone bound's content is measured, not assumed: over every conceivable radius profile at this lattice size the bound can fail only at single-step radius 0, so for every generator of radius >= 1 the clause is forced and the verdict must say so",
+   "detail": "profiles swept=81; single-step radii at which the bound can fail at all=[0] (violating profiles by radius {0: 26}); single-step radii present in the family=[0, 1, 2]",
+   "id": "G-LIGHTCONE-VACUITY-MEASURED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the measurement the cone bound is not: the composed propagator's radius profile over the first four powers is censused, several distinct profiles occur, and the half-width is attained by some generators and not by all",
+   "detail": "distinct radius profiles=6 over 58 generators {'0000': 1, '1010': 8, '1110': 16, '1210': 8, '2020': 7, '2220': 18}; attaining the half-width=33 of 58",
+   "id": "G-TWOPOINT-RADIUS-PROFILES",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64651,15 +65284,36 @@
    "passed": true
   },
   {
-   "claim": "the translation group acts trivially on the circulant family and non-trivially on the controls -- measured, not assumed",
-   "detail": "circulant translation orbits of size 1: 58; control orbits >1: 4",
-   "id": "G-CLASS-TRANSLATION-TRIVIAL",
+   "claim": "the declared class invariants are constant on every orbit but do NOT separate the classes: the label count is measured against the class count, the collisions are printed, and the completion by a direction label is measured too",
+   "detail": "classes=22 distinct invariant labels=14 (shared labels=6, the largest shared by 4 classes); with a direction label added=17",
+   "id": "G-CLASS-LABELS-NONSEPARATING",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the realization gate is not vacuous: nonzero defects exist below the maximal declared transport and are excluded from the verdict",
-   "detail": "excluded nonzero defects=150; pairs at maximal transport=3364 of 4096",
+   "claim": "the translation group acts trivially on the circulant family. FORCED: a coefficient-map matrix commutes with every translation by construction, so the singleton orbits are an identity.  The row is a disclosure; the measured half is the next gate",
+   "detail": "circulant translation orbits of size 1: 58 of 58",
+   "id": "G-CLASS-TRANSLATION-TRIVIAL",
+   "kind": "DISCLOSURE",
+   "passed": true
+  },
+  {
+   "claim": "the measured half of the same reading, and what makes the covariance census non-vacuous: the CONTROLS do move under the translation action, so the trivial action on the family is a fact about the family and not about the action",
+   "detail": "control translation orbits of size > 1: 4 of 4 control classes",
+   "id": "G-CLASS-CONTROLS-MOVE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the verdict-bearing stratum is abelian and the excluded stratum is not: every ordered pair of the pool is tested for commutation and the counts are reported per stratum.  The zero on the verdict stratum is FORCED (circulant convolution on an abelian group commutes); what is measured is that the non-commutativity on this stage lives entirely in the generators the mandatory realization gate excludes",
+   "detail": "{'BRICK-BRICK': '4 of 16', 'CIRC-BRICK': '256 of 464', 'CIRC-CIRC-THE-VERDICT-STRATUM': '0 of 3364', 'WITH-SCRAMBLE': '222 of 252'}; non-commuting outside the verdict stratum=482",
+   "id": "G-COMMUTATOR-CENSUS",
+   "kind": "FORCED",
+   "passed": true
+  },
+  {
+   "claim": "the realization gate is not vacuous: nonzero defects exist below the maximal declared transport and are excluded from the verdict. The gate's PRINCIPLED bite -- the excluded rows that do not involve the negative control -- is measured and reported alongside the gross count, because the negative control was never a candidate",
+   "detail": "excluded nonzero defects=150, of which 114 involve the scrambled control and 36 are the principled bite; pairs at maximal transport=3364 of 4096",
    "id": "G-REALIZATION-GATE-BITES",
    "kind": "MEASURED",
    "passed": true
@@ -64672,16 +65326,30 @@
    "passed": true
   },
   {
-   "claim": "the defect coefficient is a background object: the matrix reconstructed from the point-mass responses equals the coefficient matrix exactly, so one and the same coefficient serves every prepared state",
+   "claim": "the defect coefficient is a background object: the matrix reconstructed from the point-mass responses equals the coefficient matrix exactly.  FORCED -- delta(p) = Delta^B p is linear, so the point-mass responses ARE the columns of Delta^B for every matrix whatever.  On a linear law over a single-occupation sector no coefficient CAN move with the state; this row discloses that, it does not test it",
    "detail": "reconstructed cells=32 coefficient cells=32",
    "id": "G-STATE-COEFFICIENT-BACKGROUND",
+   "kind": "FORCED",
+   "passed": true
+  },
+  {
+   "claim": "the same instrument shows the OBSERVABLE defect moving with the prepared state, so the background reading is not an artefact of an inert instrument",
+   "detail": "distinct responses=18 over 18 declared states",
+   "id": "G-STATE-OBSERVABLE-MOVES",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "the same instrument shows the OBSERVABLE defect moving with the prepared state, so the background reading is a measurement",
-   "detail": "distinct responses=18 over 18 declared states",
-   "id": "G-STATE-OBSERVABLE-MOVES",
+   "claim": "the state-motion reading is taken over a declared probe SET, not a single pair, and the count is printed: every probe pair returns the same number of distinct responses and reconstructs its coefficient exactly",
+   "detail": "probe pairs=8 distinct responses per pair=[18] reconstructions exact=8 of 8",
+   "id": "G-STATE-PROBE-BREADTH",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the two-point extent numbers are measured against the arena's own ceilings: the separation count against every separation the torus has, the defect radius against the torus's Chebyshev diameter.  Both are attained, so both are reported as ceilings",
+   "detail": "separations measured=16 ceiling=16; max defect radius measured=2 ceiling=2",
+   "id": "G-CEILINGS-MEASURED",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64700,30 +65368,37 @@
    "passed": true
   },
   {
-   "claim": "the emitted head is one of the pin's pre-registered names, checked against the pin's own verbatim text",
-   "detail": "head=R4-DEFECT-PRESENT",
+   "claim": "the emitted head is one of the pin's pre-registered names, parsed from the pin's own bytes rather than typed here, and the parsed set is exactly the three the pin declares",
+   "detail": "head=R4-DEFECT-PRESENT parsed pre-registered names=['R4-BLOCKED-AT', 'R4-DEFECT-ABSENT', 'R4-DEFECT-PRESENT']",
    "id": "G-VERDICT-PREREGISTERED",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the receipt renders from the gated object: every rendered count equals the gated count, field by field",
-   "detail": "fields compared=23",
+   "detail": "fields compared=52",
    "id": "G-RENDER-FROM-GATED-OBJECT",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the COMPLETE emitted verdict string equals an independent reconstruction built segment-by-segment from the serialized receipt alone; containment is not equality",
-   "detail": "emitted=758 chars rebuilt=758 chars equal=True",
+   "detail": "emitted=1226 chars rebuilt=1226 chars equal=True",
    "id": "G-VERDICT-STRING-EQUALITY",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every verdict segment moves when the receipt row it derives from moves; no segment is inert",
-   "detail": "segments=9 flippable=9",
+   "detail": "segments=10 flippable=10",
    "id": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "EVERY measured value the verdict carries has its own flip probe: the value renders from a declared receipt key, and perturbing that key moves the complete reconstruction.  A value with no probe, or a value that ignores its key, dies here",
+   "detail": "verdict values declared=50 distinct receipt keys probed=50 inert=none",
+   "id": "G-VERDICT-VALUES-FLIPPABLE",
    "kind": "MEASURED",
    "passed": true
   },
@@ -64742,22 +65417,22 @@
    "passed": true
   },
   {
-   "claim": "the scale precheck gates which lattice is censused but never names the head; with the defect census zeroed the head moves, so the head is a function of the census and not of the precheck",
-   "detail": "precheck-independent head under a zeroed census: R4-DEFECT-ABSENT",
+   "claim": "the scale precheck gates which lattice is censused but never names the head: run on a zeroed defect census, the head law in force returns a DIFFERENT head, so the head is a function of the census and not of the precheck",
+   "detail": "head=R4-DEFECT-PRESENT; head under a zeroed census, by the law in force: R4-DEFECT-ABSENT",
    "id": "G-PRECHECK-DOES-NOT-NAME-THE-VERDICT",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "the verdict comparator is independent of the audited path: an AST scan of the comparator in force shows it calls neither build_segments nor derive_head and reads only the serialized receipt",
-   "detail": "comparator scanned=reconstruct_verdict_from_receipt calls: ['len', 'str']",
+   "detail": "comparator scanned=reconstruct_verdict_from_receipt calls: ['lst', 'str']",
    "id": "G-SELF-COMPARE-GUARD",
    "kind": "MEASURED",
    "passed": true
   },
   {
-   "claim": "no gate predicate and no verdict-deriving or comparing function references mutant identity: an AST scan of every gate call site and of the three verdict functions (#208)",
-   "detail": "gate call sites scanned=77 offenders: none",
+   "claim": "no gate predicate and no verdict-deriving or comparing function references mutant identity, DIRECTLY or through one hop: an AST scan of every gate call site and of the three verdict functions, extended to flag any gate reading a name whose every assignment site is mutant-guarded (#208, and the clause-removal probe made standing)",
+   "detail": "gate call sites scanned=101 mutant-guarded names in the module=4 offenders: none",
    "id": "G-NO-MUTANT-IDENTITY-IN-GATES",
    "kind": "MEASURED",
    "passed": true
@@ -64770,20 +65445,56 @@
    "passed": true
   },
   {
+   "claim": "every census-derived headline count is recomputed from the serialized census rows by a function sharing no helper with the census builder, and all of them are compared -- not two of twenty-three (#219)",
+   "detail": "counts recomputed=16 disagreements=none",
+   "id": "G-COUNTS-FROM-RECEIPT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every gate whose clause is analytically forced is registered as a DISCLOSURE with a named forcing and with the gate that carries its measured content in its place (#208)",
+   "detail": "forced/disclosure/declared rows=10 without a registered forcing=none",
+   "id": "G-FORCINGS-REGISTERED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "the CLI is argv-parsed against a whitelist and exercised here: an unknown flag, an unknown mutant name, an unknown anchor name and a missing flag argument are all REJECTED, and the plain run with no flags is the only invocation that writes",
+   "detail": "probes=8 rejections as declared=8; invocations that write=1",
+   "id": "G-CLI-CONTRACT",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every numeric claim of the paper is rendered from this receipt and checked against the paper's own bytes, AND the paper carries no numeral outside that rendering except the declared derived-in-text residue, every entry of which must occur in the paper",
+   "detail": "claims rendered=117 missing from the paper=none; distinct numerals in the paper=128 over 655 occurrences, covered by rendering=116, declared derived-in-text=25, uncovered=none",
+   "id": "G-PAPER-CLAIMS-VERIFIED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
+   "claim": "every compliance status is a COMPUTED predicate over the ledger and the declared falsifier map -- a row is APPLIED only when every gate it names is in the frozen registry, was evaluated on this run, and carries an injection-falsifier or a registered forcing",
+   "detail": "rules=22 applied=22 unsatisfied=none",
+   "id": "G-COMPLIANCE-COMPUTED",
+   "kind": "MEASURED",
+   "passed": true
+  },
+  {
    "claim": "every gate in the frozen registry is reached by an execution path; there is no dead gate and no unregistered gate (#34)",
-   "detail": "registry=77 evaluated=77 missing=none extra=none",
+   "detail": "registry=101 evaluated=101 missing=none extra=none",
    "id": "G-EVERY-GATE-EVALUATED",
    "kind": "MEASURED",
    "passed": true
   },
   {
    "claim": "every gate without a declared falsifier carries a registered forcing and is verified to have been evaluated (#34): a waiver claim is a gate claim.  The gate carries its own injection falsifier: an injected false waiver is detected",
-   "detail": "falsifiable=75 waived=1 unverified=none; injected false waiver detected=True",
+   "detail": "falsifiable=98 waived=2 unverified=none; injected false waiver detected=True",
    "id": "G-WAIVERS-VERIFIED",
    "kind": "MEASURED",
    "passed": true
   }
  ],
+ "head_under_zeroed_census": "R4-DEFECT-ABSENT",
  "lightcone": [
   {
    "gen": "C000",
@@ -65366,8 +66077,32 @@
    "single_step_radius": 2
   }
  ],
+ "lightcone_vacuity": {
+  "profiles_swept": 81,
+  "radii_present": [
+   0,
+   1,
+   2
+  ],
+  "radii_with_content": [
+   0
+  ],
+  "violating_profiles": {
+   "0": 26
+  }
+ },
  "like_for_like": {
+  "distinct_comparisons": 25,
+  "gauge_class_agreements": 648,
+  "gauge_class_distinct_comparisons": 64,
+  "gauge_class_matched_pairs": 1024,
   "matched_pairs": 1024,
+  "matching_species": "coefficient value multiset",
+  "multiplicities": {
+   "16": 4,
+   "32": 12,
+   "64": 9
+  },
   "value_multiset_agreements": 616
  },
  "locality_dependence": {
@@ -65816,6 +66551,50 @@
    "offsets": 728
   }
  ],
+ "locality_threshold_table": [
+  {
+   "admits_anchored_links": true,
+   "connective": "MOORE:max-norm<=1",
+   "connective_tag": "MAX-NORM",
+   "d": 1,
+   "threshold": 4
+  },
+  {
+   "admits_anchored_links": true,
+   "connective": "MOORE:max-norm<=1",
+   "connective_tag": "MAX-NORM",
+   "d": 2,
+   "threshold": 4
+  },
+  {
+   "admits_anchored_links": true,
+   "connective": "MOORE:max-norm<=1",
+   "connective_tag": "MAX-NORM",
+   "d": 3,
+   "threshold": 4
+  },
+  {
+   "admits_anchored_links": false,
+   "connective": "VON-NEUMANN:sum-norm<=1",
+   "connective_tag": "SUM-NORM",
+   "d": 1,
+   "threshold": 4
+  },
+  {
+   "admits_anchored_links": false,
+   "connective": "VON-NEUMANN:sum-norm<=1",
+   "connective_tag": "SUM-NORM",
+   "d": 2,
+   "threshold": 2
+  },
+  {
+   "admits_anchored_links": false,
+   "connective": "VON-NEUMANN:sum-norm<=1",
+   "connective_tag": "SUM-NORM",
+   "d": 3,
+   "threshold": 2
+  }
+ ],
  "locality_thresholds": {
   "1": 4,
   "2": 4,
@@ -65846,6 +66625,236 @@
   ]
  },
  "maximal_transport": "FULL",
+ "moore_ball_collapse": {
+  "domain": {
+   "nonzero_elements": 24,
+   "zero_divisor_pairs": 0
+  },
+  "lag_rows": [
+   {
+    "L": 5,
+    "cross_lag_structure_ok": true,
+    "cross_lags": [
+     {
+      "lag": [
+       2,
+       -2
+      ],
+      "pairs": 1
+     },
+     {
+      "lag": [
+       2,
+       -1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       0
+      ],
+      "pairs": 3
+     },
+     {
+      "lag": [
+       2,
+       1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       2
+      ],
+      "pairs": 1
+     }
+    ],
+    "no_wraparound": true,
+    "single_column_lag_ok": true
+   },
+   {
+    "L": 6,
+    "cross_lag_structure_ok": true,
+    "cross_lags": [
+     {
+      "lag": [
+       2,
+       -2
+      ],
+      "pairs": 1
+     },
+     {
+      "lag": [
+       2,
+       -1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       0
+      ],
+      "pairs": 3
+     },
+     {
+      "lag": [
+       2,
+       1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       2
+      ],
+      "pairs": 1
+     }
+    ],
+    "no_wraparound": true,
+    "single_column_lag_ok": true
+   },
+   {
+    "L": 7,
+    "cross_lag_structure_ok": true,
+    "cross_lags": [
+     {
+      "lag": [
+       2,
+       -2
+      ],
+      "pairs": 1
+     },
+     {
+      "lag": [
+       2,
+       -1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       0
+      ],
+      "pairs": 3
+     },
+     {
+      "lag": [
+       2,
+       1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       2
+      ],
+      "pairs": 1
+     }
+    ],
+    "no_wraparound": true,
+    "single_column_lag_ok": true
+   },
+   {
+    "L": 8,
+    "cross_lag_structure_ok": true,
+    "cross_lags": [
+     {
+      "lag": [
+       2,
+       -2
+      ],
+      "pairs": 1
+     },
+     {
+      "lag": [
+       2,
+       -1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       0
+      ],
+      "pairs": 3
+     },
+     {
+      "lag": [
+       2,
+       1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       2
+      ],
+      "pairs": 1
+     }
+    ],
+    "no_wraparound": true,
+    "single_column_lag_ok": true
+   },
+   {
+    "L": 9,
+    "cross_lag_structure_ok": true,
+    "cross_lags": [
+     {
+      "lag": [
+       2,
+       -2
+      ],
+      "pairs": 1
+     },
+     {
+      "lag": [
+       2,
+       -1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       0
+      ],
+      "pairs": 3
+     },
+     {
+      "lag": [
+       2,
+       1
+      ],
+      "pairs": 2
+     },
+     {
+      "lag": [
+       2,
+       2
+      ],
+      "pairs": 1
+     }
+    ],
+    "no_wraparound": true,
+    "single_column_lag_ok": true
+   }
+  ],
+  "sizes": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
  "mutants": [
   {
    "injects": "corrupts a source's expected digest",
@@ -66162,10 +67171,10 @@
   {
    "injects": "promotes every generator to maximal transport",
    "killed": true,
-   "killed_by": "G-REALIZATION-LEVELS",
+   "killed_by": "G-REALIZATION-LEVELS-PER-GENERATOR",
    "mutant": "MUT-REALIZATION-PROMOTE",
    "reaches_target": true,
-   "target": "G-REALIZATION-LEVELS"
+   "target": "G-REALIZATION-LEVELS-PER-GENERATOR"
   },
   {
    "injects": "claims no defect is excluded below maximal transport",
@@ -66502,11 +67511,285 @@
    "mutant": "MUT-COMPARATOR-READS-PROSE",
    "reaches_target": true,
    "target": "G-VERDICT-NO-PAPER-INPUT"
+  },
+  {
+   "injects": "routes the sum-norm locality rows into the admissibility loop",
+   "killed": true,
+   "killed_by": "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
+   "mutant": "MUT-ROUTE-SUM-NORM-ROWS",
+   "reaches_target": true,
+   "target": "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK"
+  },
+  {
+   "injects": "claims both connectives admit the anchored link set, so none is forced",
+   "killed": true,
+   "killed_by": "G-LINKS-IN-BALL",
+   "mutant": "MUT-CONNECTIVE-FREE",
+   "reaches_target": true,
+   "target": "G-LINKS-IN-BALL"
+  },
+  {
+   "injects": "censuses a lattice size other than the one the precheck admitted",
+   "killed": true,
+   "killed_by": "G-LATTICE-BOUND-TO-ADMISSIBLE",
+   "mutant": "MUT-LATTICE-UNBOUND",
+   "reaches_target": true,
+   "target": "G-LATTICE-BOUND-TO-ADMISSIBLE"
+  },
+  {
+   "injects": "types the presence set instead of deriving it from the order census",
+   "killed": true,
+   "killed_by": "G-SCALE-PRESENCE-DERIVED",
+   "mutant": "MUT-SCALE-PRESENCE",
+   "reaches_target": true,
+   "target": "G-SCALE-PRESENCE-DERIVED"
+  },
+  {
+   "injects": "breaks the extreme-lag structure the ball collapse rests on",
+   "killed": true,
+   "killed_by": "G-MOORE-BALL-COLLAPSE",
+   "mutant": "MUT-MOORE-BALL-LEMMA",
+   "reaches_target": true,
+   "target": "G-MOORE-BALL-COLLAPSE"
+  },
+  {
+   "injects": "reports a zero divisor among the nonzero alphabet elements",
+   "killed": true,
+   "killed_by": "G-MOORE-BALL-COLLAPSE",
+   "mutant": "MUT-FIELD-DOMAIN",
+   "reaches_target": true,
+   "target": "G-MOORE-BALL-COLLAPSE"
+  },
+  {
+   "injects": "claims a size below the locality threshold bears locality",
+   "killed": true,
+   "killed_by": "G-ALPHABET-INDEPENDENCE",
+   "mutant": "MUT-ALPHABET-INDEP",
+   "reaches_target": true,
+   "target": "G-ALPHABET-INDEPENDENCE"
+  },
+  {
+   "injects": "reports the node count as an invariant of the five-point sweep",
+   "killed": true,
+   "killed_by": "G-FIVE-POINT-ORDERING-INVARIANT",
+   "mutant": "MUT-FIVE-POINT-ORDERING",
+   "reaches_target": true,
+   "target": "G-FIVE-POINT-ORDERING-INVARIANT"
+  },
+  {
+   "injects": "empties the wider five-point family at the unique scale",
+   "killed": true,
+   "killed_by": "G-FIVE-POINT-AT-UNIQUE-SCALE",
+   "mutant": "MUT-FIVE-POINT-L4",
+   "reaches_target": true,
+   "target": "G-FIVE-POINT-AT-UNIQUE-SCALE"
+  },
+  {
+   "injects": "promotes exactly one sub-maximal generator to maximal transport",
+   "killed": true,
+   "killed_by": "G-REALIZATION-LEVELS-PER-GENERATOR",
+   "mutant": "MUT-LEVEL-PROMOTE-ONE",
+   "reaches_target": true,
+   "target": "G-REALIZATION-LEVELS-PER-GENERATOR"
+  },
+  {
+   "injects": "demotes exactly one maximal-transport generator",
+   "killed": true,
+   "killed_by": "G-REALIZATION-LEVELS-PER-GENERATOR",
+   "mutant": "MUT-LEVEL-DEMOTE-ONE",
+   "reaches_target": true,
+   "target": "G-REALIZATION-LEVELS-PER-GENERATOR"
+  },
+  {
+   "injects": "zeroes defect rows OUTSIDE the twelve named value-census rows",
+   "killed": true,
+   "killed_by": "G-DEFECT-VALUE-CENSUS-FULL",
+   "mutant": "MUT-Y1-UNCENSUSED-ZERO",
+   "reaches_target": true,
+   "target": "G-DEFECT-VALUE-CENSUS-FULL"
+  },
+  {
+   "injects": "moves one cell count in the full value multiset",
+   "killed": true,
+   "killed_by": "G-DEFECT-VALUE-CENSUS-FULL",
+   "mutant": "MUT-VALUE-MULTISET",
+   "reaches_target": true,
+   "target": "G-DEFECT-VALUE-CENSUS-FULL"
+  },
+  {
+   "injects": "writes a nonzero defect OBJECT into a Markovian row, leaving its count",
+   "killed": true,
+   "killed_by": "G-MARKOV-ZERO-OBJECT",
+   "mutant": "MUT-MARKOV-OBJECT",
+   "reaches_target": true,
+   "target": "G-MARKOV-ZERO-OBJECT"
+  },
+  {
+   "injects": "misreports the commutator census of the verdict stratum",
+   "killed": true,
+   "killed_by": "G-COMMUTATOR-CENSUS",
+   "mutant": "MUT-COMMUTATOR",
+   "reaches_target": true,
+   "target": "G-COMMUTATOR-CENSUS"
+  },
+  {
+   "injects": "claims the declared class invariants separate the classes",
+   "killed": true,
+   "killed_by": "G-CLASS-LABELS-NONSEPARATING",
+   "mutant": "MUT-CLASS-LABELS",
+   "reaches_target": true,
+   "target": "G-CLASS-LABELS-NONSEPARATING"
+  },
+  {
+   "injects": "reports the weighted matched count as the distinct comparison count",
+   "killed": true,
+   "killed_by": "G-LIKE-FOR-LIKE-DISTINCT",
+   "mutant": "MUT-MATCHED-DISTINCT",
+   "reaches_target": true,
+   "target": "G-LIKE-FOR-LIKE-DISTINCT"
+  },
+  {
+   "injects": "shrinks the state-motion probe set below its declared breadth",
+   "killed": true,
+   "killed_by": "G-STATE-PROBE-BREADTH",
+   "mutant": "MUT-STATE-PROBE-NARROW",
+   "reaches_target": true,
+   "target": "G-STATE-PROBE-BREADTH"
+  },
+  {
+   "injects": "makes one measured verdict VALUE ignore the receipt field it renders",
+   "killed": true,
+   "killed_by": "G-VERDICT-VALUES-FLIPPABLE",
+   "mutant": "MUT-VALUE-INERT",
+   "reaches_target": true,
+   "target": "G-VERDICT-VALUES-FLIPPABLE"
+  },
+  {
+   "injects": "retypes the head AFTER every verdict gate has been built",
+   "killed": true,
+   "killed_by": "G-VERDICT-STRING-EQUALITY",
+   "mutant": "MUT-HEAD-POST-BUILD",
+   "reaches_target": true,
+   "target": "G-VERDICT-STRING-EQUALITY"
+  },
+  {
+   "injects": "flips the head to an ABSENT variant after the build",
+   "killed": true,
+   "killed_by": "G-VERDICT-STRING-EQUALITY",
+   "mutant": "MUT-HEAD-ABSENT-VARIANT",
+   "reaches_target": true,
+   "target": "G-VERDICT-STRING-EQUALITY"
+  },
+  {
+   "injects": "flips the head to a name outside the pin after the build",
+   "killed": true,
+   "killed_by": "G-VERDICT-STRING-EQUALITY",
+   "mutant": "MUT-HEAD-OFF-PIN",
+   "reaches_target": true,
+   "target": "G-VERDICT-STRING-EQUALITY"
+  },
+  {
+   "injects": "types a compliance status instead of computing it",
+   "killed": true,
+   "killed_by": "G-COMPLIANCE-COMPUTED",
+   "mutant": "MUT-COMPLIANCE-TYPED",
+   "reaches_target": true,
+   "target": "G-COMPLIANCE-COMPUTED"
+  },
+  {
+   "injects": "drifts one rendered paper claim away from the paper's bytes",
+   "killed": true,
+   "killed_by": "G-PAPER-CLAIMS-VERIFIED",
+   "mutant": "MUT-PAPER-CLAIM-DRIFT",
+   "reaches_target": true,
+   "target": "G-PAPER-CLAIMS-VERIFIED"
+  },
+  {
+   "injects": "drops a rendered claim so a paper numeral goes uncovered",
+   "killed": true,
+   "killed_by": "G-PAPER-CLAIMS-VERIFIED",
+   "mutant": "MUT-PAPER-COVERAGE",
+   "reaches_target": true,
+   "target": "G-PAPER-CLAIMS-VERIFIED"
+  },
+  {
+   "injects": "ships a FORCED gate with no registered forcing",
+   "killed": true,
+   "killed_by": "G-FORCINGS-REGISTERED",
+   "mutant": "MUT-FORCING-UNREGISTERED",
+   "reaches_target": true,
+   "target": "G-FORCINGS-REGISTERED"
+  },
+  {
+   "injects": "moves a headline count away from the serialized census rows",
+   "killed": true,
+   "killed_by": "G-COUNTS-FROM-RECEIPT",
+   "mutant": "MUT-COUNT-RECEIPT",
+   "reaches_target": true,
+   "target": "G-COUNTS-FROM-RECEIPT"
+  },
+  {
+   "injects": "misreports the arena ceiling the two-point numbers attain",
+   "killed": true,
+   "killed_by": "G-CEILINGS-MEASURED",
+   "mutant": "MUT-CEILING",
+   "reaches_target": true,
+   "target": "G-CEILINGS-MEASURED"
+  },
+  {
+   "injects": "collapses the measured radius-profile census",
+   "killed": true,
+   "killed_by": "G-TWOPOINT-RADIUS-PROFILES",
+   "mutant": "MUT-RADIUS-PROFILES",
+   "reaches_target": true,
+   "target": "G-TWOPOINT-RADIUS-PROFILES"
+  },
+  {
+   "injects": "claims the cone bound has content above radius zero",
+   "killed": true,
+   "killed_by": "G-LIGHTCONE-VACUITY-MEASURED",
+   "mutant": "MUT-LIGHTCONE-VACUITY",
+   "reaches_target": true,
+   "target": "G-LIGHTCONE-VACUITY-MEASURED"
+  },
+  {
+   "injects": "freezes the controls under the translation action",
+   "killed": true,
+   "killed_by": "G-CLASS-CONTROLS-MOVE",
+   "mutant": "MUT-CONTROLS-INERT",
+   "reaches_target": true,
+   "target": "G-CLASS-CONTROLS-MOVE"
+  },
+  {
+   "injects": "breaks invariance under the outer torus on the RIGHT factor",
+   "killed": true,
+   "killed_by": "G-GAUGE-SELFTEST",
+   "mutant": "MUT-GAUGE-SELFTEST-RIGHT",
+   "reaches_target": true,
+   "target": "G-GAUGE-SELFTEST"
+  },
+  {
+   "injects": "adds a gate reading a name whose only assignment is mutant-guarded",
+   "killed": true,
+   "killed_by": "G-NO-MUTANT-IDENTITY-IN-GATES",
+   "mutant": "MUT-GATE-READS-LAUNDERED-NAME",
+   "reaches_target": true,
+   "target": "G-NO-MUTANT-IDENTITY-IN-GATES"
+  },
+  {
+   "injects": "swaps in the runner that silently ignores what it does not recognise",
+   "killed": true,
+   "killed_by": "G-CLI-CONTRACT",
+   "mutant": "MUT-CLI-ACCEPTS-UNKNOWN",
+   "reaches_target": true,
+   "target": "G-CLI-CONTRACT"
   }
  ],
  "not_executed": [
-  "the 9-point Moore stencil is not swept; only the 3-term axis stencil (exhaustive over the declared alphabet at every swept order) and the 5-point stencil (at one lattice size above the collapse threshold)",
-  "coefficients outside the declared 25-element alphabet are not swept; the order-5-and-above collapse is proved in the paper and is alphabet-independent, but the order-3 emptiness is alphabet-relative",
+  "the 9-point Moore stencil is not SWEPT at the admitted size; the Moore-ball collapse theorem settles every size above it over any field, and the 5-point stencil is swept at four sizes in two orderings",
+  "the wider 5-point family at the admitted size is disclosed and not censused; the defect census runs on the 3-term axis stencil only",
+  "indivisibility is DECLARED by the division-event times and is never measured: no existential stochastic-divisor search is run",
+  "coefficients outside the declared 25-element alphabet are not swept; the order-5-and-above collapse and the Moore-ball collapse are theorems and alphabet-independent, and the alphabet-relative order-3 emptiness is irrelevant to the verdict",
   "no continuum or infinite-volume limit is taken",
   "no multi-excitation sector, no interaction term, and no field operator is constructed; 'field' appears only as the free-field ANALOG",
   "d = 3 is swept only for the locality threshold, not for the family"
@@ -66690,20 +67973,134 @@
  "paper_claims": {
   "paper": "v14/paper-10-defect-on-the-stage.md",
   "rendered": {
+   "admissible": "the admissible set is {4}",
+   "alphabet": "25 elements",
+   "alphabet_independence": "the sizes bearing locality are {4, 5, 6, 7, 8, 9} and the sizes below the collapse threshold are {2, 3, 4}",
+   "anchor_split": "5 file-bytes anchors, 10 path-value anchors and 9 verbatim-text anchors",
+   "axes": "9 axes, 4 of them local and 5 not",
+   "bite": "114 of them involve the scrambled control, so the gate's principled bite is 36",
    "census": "4096 ordered pairs",
+   "choices": "15 construction choices",
+   "circ_sep": "all 58 pass",
+   "class:B058": "| B058 | 4 | brickwork | \u2014 | 1 | 4 | OCC | \u2014 |",
+   "class:C000": "| C000 | 4 | circulant | 3 | 1 | 4 | FULL | 4 |",
+   "class:C001": "| C001 | 4 | circulant | 3 | 1 | 4 | FULL | 4 |",
+   "class:C004": "| C004 | 1 | circulant | 1 | 0 | 4 | FULL | 1 |",
+   "class:C005": "| C005 | 4 | circulant | 2 | 1 | 4 | FULL | 2 |",
+   "class:C007": "| C007 | 4 | circulant | 1 | 1 | 4 | FULL | 4 |",
+   "class:C009": "| C009 | 2 | circulant | 2 | 2 | 2 | FULL | 4 |",
+   "class:C010": "| C010 | 2 | circulant | 2 | 2 | 2 | FULL | 4 |",
+   "class:C011": "| C011 | 2 | circulant | 1 | 2 | 2 | FULL | 2 |",
+   "class:C020": "| C020 | 4 | circulant | 3 | 1 | 4 | FULL | 4 |",
+   "class:C021": "| C021 | 4 | circulant | 3 | 1 | 4 | FULL | 4 |",
+   "class:C024": "| C024 | 4 | circulant | 2 | 1 | 4 | FULL | 2 |",
+   "class:C026": "| C026 | 4 | circulant | 1 | 1 | 4 | FULL | 4 |",
+   "class:C028": "| C028 | 4 | circulant | 3 | 2 | 4 | FULL | 4 |",
+   "class:C029": "| C029 | 4 | circulant | 3 | 2 | 4 | FULL | 4 |",
+   "class:C032": "| C032 | 4 | circulant | 2 | 2 | 4 | FULL | 2 |",
+   "class:C034": "| C034 | 4 | circulant | 1 | 2 | 4 | FULL | 4 |",
+   "class:C055": "| C055 | 1 | circulant | 2 | 2 | 2 | FULL | 4 |",
+   "class:C056": "| C056 | 1 | circulant | 2 | 2 | 2 | FULL | 4 |",
+   "class:C057": "| C057 | 1 | circulant | 1 | 2 | 2 | FULL | 2 |",
+   "class:S062": "| S062 | 1 | scrambled | \u2014 | 2 | \u2014 | NONE | \u2014 |",
+   "class:S063": "| S063 | 1 | scrambled | \u2014 | 2 | \u2014 | OCC | \u2014 |",
    "classes": "22 transformation-type classes under the extended group and 38 under the anchored chart group",
+   "coherence": "the declared 48 triples with 0 violations",
+   "comm:BRICK-BRICK": "| BRICK-BRICK | 4 | 16 |",
+   "comm:CIRC-BRICK": "| CIRC-BRICK | 256 | 464 |",
+   "comm:CIRC-CIRC-THE-VERDICT-STRATUM": "| CIRC-CIRC-THE-VERDICT-STRATUM | 0 | 3364 |",
+   "comm:WITH-SCRAMBLE": "| WITH-SCRAMBLE | 222 | 252 |",
+   "commutator": "0 of 3364 ordered pairs of the verdict-bearing stratum fail to commute",
+   "compliance": "22 engraved rules",
+   "cone_vacuity": "81 conceivable profiles, and the bound can fail only at single-step radius 0",
+   "connective_excluded_admissible": "the admissible set would be {2, 4}",
    "defect": "588 of 3364 pairs at maximal transport carry a nonzero defect",
+   "domain": "576 ordered pairs of nonzero alphabet elements, 0 zero divisors",
+   "equal_time": "exactly 15/256 at zero separation and -1/256 at every nonzero separation",
    "excluded": "150 nonzero defects are excluded from the verdict",
-   "instrument": "77 gates, all passed; 24 anchors; 82 declared mutants, all dead",
+   "fivepoint:4": "| 4 | 1561 | 160 |",
+   "fivepoint:5": "| 5 | 121 | 0 |",
+   "fivepoint:6": "| 6 | 121 | 0 |",
+   "fivepoint:7": "| 7 | 121 | 0 |",
+   "fivepoint_nodes": "34,925 and 452,525 nodes under the two declared orderings",
+   "fivepoint_nodes4": "150,125 and 722,525 nodes",
+   "free": "738 of 2304 free pairs",
+   "gauge_matched": "1024 ordered comparisons from 64 distinct pairs, of which 648 agree",
+   "gauge_selftest": "the projective period is invariant at 42 of 42 and the raw order moves at 29",
+   "groups": "of order 32",
+   "groups2": "order 128",
+   "half_width": "33 of 58 attain the half-width",
+   "instrument": "101 gates, all passed; 24 anchors; 116 declared mutants, all dead",
+   "labels": "22 classes carry only 14 distinct invariant tuples; adding a direction label raises it to 17",
+   "locality:L2": "| 2 | 3 | 3 |",
+   "locality:L3": "| 3 | 8 | 8 |",
+   "locality:L4": "| 4 | 15 | 8 |",
+   "locality:L5": "| 5 | 24 | 8 |",
+   "locality:L6": "| 6 | 35 | 8 |",
+   "locality:L7": "| 7 | 48 | 8 |",
+   "locality:L8": "| 8 | 63 | 8 |",
+   "locality:L9": "| 9 | 80 | 8 |",
+   "locality_split": "216 of 576 local pairs and 372 of 1188 non-local pairs",
    "markov": "0 of 1792 Markovian pairs",
+   "matched": "1024 ordered comparisons drawn from 25 distinct non-local pairs; 616 of the 1024 agree",
+   "matched_mult": "multiplicities 9 at 64, 12 at 32, 4 at 16",
+   "monomial": "16 of the pool's generators are monomial",
+   "moore_ball_sizes": "L in {5, 6, 7, 8, 9}",
    "ord4_generators": "72 distinct unitary generators, 48 of them non-monomial, in 9 gauge classes",
-   "ord_collapse": "at axis order five and above the only unitary generators on this stencil are the monomial ones",
-   "pool": "64 generators",
-   "separations": "16 separations",
+   "ord:1": "| 1 | 8 | 8 | 0 |",
+   "ord:2": "| 2 | 32 | 16 | 16 |",
+   "ord:3": "| 3 | 24 | 24 | 0 |",
+   "ord:4": "| 4 | 72 | 24 | 48 |",
+   "ord:5": "| 5 | 24 | 24 | 0 |",
+   "ord:6": "| 6 | 24 | 24 | 0 |",
+   "ord:7": "| 7 | 24 | 24 | 0 |",
+   "ord:8": "| 8 | 24 | 24 | 0 |",
+   "ord:9": "| 9 | 24 | 24 | 0 |",
+   "parity": "threshold 2 against the max-norm's 4, a measured delta of -2",
+   "periods": "the projective periods present are {1, 2, 4}; the raw orders are {2, 4}",
+   "pool": "64 generators: 58 translation-covariant circulants, 4 brickwork generators and 2 scrambled generators",
+   "profile_rows": "0000 at 1, 1010 at 8, 1110 at 16, 1210 at 8, 2020 at 7, 2220 at 18",
+   "profiles": "6 radius profiles occur across the first four powers",
+   "rational": "588 of 588",
+   "realization": "1 generator at NONE, 5 at OCC, 0 at OCC+AXIS, 58 at FULL",
+   "scale": "locality requires L >= 4; a non-monomial local-axis generator requires L <= 4, and is present at L in {2, 4}",
+   "scramble": "32 of their 48 defect tables against the probe set fail to be one, and 16 are identically zero",
+   "separations": "16 separations, every separation the torus has, with maximum defect radius 2, the Chebyshev diameter",
+   "source:A-LOCALITY-R2": "08b2140f46ae",
+   "source:A-PIN-R4": "1582cea5df51",
+   "source:A-SEED-EXACT": "8e90f6435922",
+   "source:A-SEED-PAPER1": "81bdab5673fb",
+   "source:A-STAGE-I7": "542b8735daf0",
    "state": "18 distinct responses",
-   "unique_scale": "L = 4 is the only lattice size in the swept range that carries both",
-   "verdict": "R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUES=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16;MAX-DEFECT-RADIUS=2;LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=1+2+4;EQUAL-TIME=15/256|CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4|LOCALITY=LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=616-OF-1024|MARKOV=0-OF-1792-NONZERO|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150|STATE=BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IFF-L<=4)|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
+   "state_probes": "18 declared prepared states over 8 probe pairs",
+   "threshold:MAX-NORM:d1": "| MAX-NORM | 1 | 4 |",
+   "threshold:MAX-NORM:d2": "| MAX-NORM | 2 | 4 |",
+   "threshold:MAX-NORM:d3": "| MAX-NORM | 3 | 4 |",
+   "threshold:SUM-NORM:d1": "| SUM-NORM | 1 | 4 |",
+   "threshold:SUM-NORM:d2": "| SUM-NORM | 2 | 2 |",
+   "threshold:SUM-NORM:d3": "| SUM-NORM | 3 | 2 |",
+   "triples": "15,625 coefficient triples",
+   "value:+1/2": "| $+1/2$ | 108 |",
+   "value:+1/4": "| $+1/4$ | 336 |",
+   "value:+1/8": "| $+1/8$ | 144 |",
+   "value:+5/8": "| $+5/8$ | 24 |",
+   "value:-1/2": "| $-1/2$ | 108 |",
+   "value:-1/4": "| $-1/4$ | 336 |",
+   "value:-1/8": "| $-1/8$ | 192 |",
+   "value:-3/8": "| $-3/8$ | 24 |",
+   "verdict": "R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUES=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16-OF-16-CEILING;MAX-DEFECT-RADIUS=2-OF-2-CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIUS-0;RADIUS-PROFILES=6;HALF-WIDTH-ATTAINED=33-OF-58;PERIODS=1+2+4;EQUAL-TIME=15/256|CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4;DISTINCT-INVARIANT-LABELS=14|LOCALITY=LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-VALUE-MULTISET=616-OF-1024-WEIGHTED-FROM-25-DISTINCT|MARKOV=0-OF-1792-NONZERO|COMMUTATOR=0-OF-3364-NONZERO-IN-THE-VERDICT-STRATUM|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150;PRINCIPLED-BITE=36|STATE=BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;SINGLE-OCCUPATION);OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES-OVER-8-PROBE-PAIRS|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=4;PRESENT-AT-L-IN-{2,4});CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=L-IN-2..9;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>",
+   "verdict_values": "50 measured values"
   }
+ },
+ "paper_coverage": {
+  "claims": 117,
+  "covered_by_rendering": 116,
+  "declared_derived_in_text": 25,
+  "distinct_numerals": 128,
+  "missing": [],
+  "numeral_occurrences": 655,
+  "residue_declared_but_absent": [],
+  "uncovered": []
  },
  "parity_witness": {
   "delta": -2,
@@ -66828,6 +68225,11 @@
    "source": "A-LOCALITY-R2"
   }
  ],
+ "period_selftest": {
+  "combinations": 42,
+  "projective_invariant": 42,
+  "raw_moved": 29
+ },
  "pin": "v14/note-r4-qft-pin.md",
  "pin_sha256_prefix": "1582cea5df51",
  "pool": [
@@ -69337,6 +70739,28 @@
   "scrambled": 2,
   "total": 64
  },
+ "preregistered_heads": [
+  "R4-BLOCKED-AT",
+  "R4-DEFECT-ABSENT",
+  "R4-DEFECT-PRESENT"
+ ],
+ "radius_profiles": {
+  "distinct": 6,
+  "generators": 58,
+  "half_width_attained": 33,
+  "profiles": {
+   "0000": 1,
+   "1010": 8,
+   "1110": 16,
+   "1210": 8,
+   "2020": 7,
+   "2220": 18
+  }
+ },
+ "raw_order_set": [
+  2,
+  4
+ ],
  "realization_census": {
   "levels": {
    "FULL": 58,
@@ -69978,16 +71402,25 @@
    }
   }
  },
- "runtime_inputs": [
-  "v12/paper1-composition-defect.md",
-  "v12/paper1_code/exact.py",
-  "v13/code/ha_successor_receipt.json",
-  "v14/code/r2_manifold_receipt.json",
-  "v14/note-r4-qft-pin.md"
- ],
+ "runtime_inputs": {
+  "object_under_test": [
+   "v14/paper-10-defect-on-the-stage.md"
+  ],
+  "pinned_sources": [
+   "v12/paper1-composition-defect.md",
+   "v12/paper1_code/exact.py",
+   "v13/code/ha_successor_receipt.json",
+   "v14/code/r2_manifold_receipt.json",
+   "v14/note-r4-qft-pin.md"
+  ]
+ },
  "scale_precheck": {
-  "locality_iff": "L>=4",
-  "non_monomial_local_iff": "L<=4",
+  "locality_iff_L_at_least": 4,
+  "non_monomial_local_only_if_L_at_most": 4,
+  "non_monomial_local_present_at": [
+   2,
+   4
+  ],
   "unique": [
    4
   ]
@@ -70002,7 +71435,7 @@
   "generators": 2,
   "transition_tables_separation_indexed": 0
  },
- "source_sha256": "b079bb3b8d55",
+ "source_sha256": "2959c5a6a84b",
  "state_motion": {
   "coefficient_reconstructed_exactly": true,
   "distinct_responses": 18,
@@ -70010,21 +71443,72 @@
    "C000",
    "C001"
   ],
+  "probe_pairs": 8,
+  "probe_rows": [
+   {
+    "U": "C000",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C001",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C002",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C003",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C005",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C006",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C009",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   },
+   {
+    "U": "C010",
+    "V": "C000",
+    "coefficient_reconstructed": true,
+    "distinct_responses": 18
+   }
+  ],
   "states_declared": 18,
-  "verdict_label": "BACKGROUND-COEFFICIENT-OBSERVABLE-MOVES"
+  "verdict_label": "BACKGROUND-BY-CONSTRUCTION-OBSERVABLE-MOVES-MEASURED"
  },
  "totals": {
   "anchors": 24,
   "byte_anchors": 5,
   "census_rows": 4096,
-  "gates": 77,
-  "gates_falsifiable": 75,
-  "gates_passed": 77,
-  "gates_waived": 2,
-  "mutants": 82,
-  "mutants_killed": 82,
-  "mutants_on_target": 82,
-  "never_falsified": 2,
+  "gates": 101,
+  "gates_falsifiable": 98,
+  "gates_passed": 101,
+  "gates_waived": 3,
+  "mutants": 116,
+  "mutants_killed": 116,
+  "mutants_on_target": 116,
+  "never_falsified": 3,
   "path_value_anchors": 10,
   "pool": 64,
   "verbatim_anchors": 9
@@ -70173,7 +71657,8 @@
    "C057": 16,
    "S062": 1,
    "S063": 2
-  }
+  },
+  "verified_by_second_route": 64
  },
  "two_point_profiles": [
   {
@@ -70409,6 +71894,12 @@
  ],
  "verdict": {
   "head": "R4-DEFECT-PRESENT",
+  "head_under_zeroed_census": "R4-DEFECT-ABSENT",
+  "preregistered_heads": [
+   "R4-BLOCKED-AT",
+   "R4-DEFECT-ABSENT",
+   "R4-DEFECT-PRESENT"
+  ],
   "segments": [
    {
     "name": "DEFECT",
@@ -70416,38 +71907,42 @@
    },
    {
     "name": "TWO-POINT",
-    "text": "SEPARATIONS=16;MAX-DEFECT-RADIUS=2;LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=1+2+4;EQUAL-TIME=15/256"
+    "text": "SEPARATIONS=16-OF-16-CEILING;MAX-DEFECT-RADIUS=2-OF-2-CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIUS-0;RADIUS-PROFILES=6;HALF-WIDTH-ATTAINED=33-OF-58;PERIODS=1+2+4;EQUAL-TIME=15/256"
    },
    {
     "name": "CLASSES",
-    "text": "EXTENDED=22;ANCHORED=38;SIZES=1+2+4"
+    "text": "EXTENDED=22;ANCHORED=38;SIZES=1+2+4;DISTINCT-INVARIANT-LABELS=14"
    },
    {
     "name": "LOCALITY",
-    "text": "LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=616-OF-1024"
+    "text": "LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-VALUE-MULTISET=616-OF-1024-WEIGHTED-FROM-25-DISTINCT"
    },
    {
     "name": "MARKOV",
     "text": "0-OF-1792-NONZERO"
    },
    {
+    "name": "COMMUTATOR",
+    "text": "0-OF-3364-NONZERO-IN-THE-VERDICT-STRATUM"
+   },
+   {
     "name": "REALIZATION",
-    "text": "LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150"
+    "text": "LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150;PRINCIPLED-BITE=36"
    },
    {
     "name": "STATE",
-    "text": "BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES"
+    "text": "BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;SINGLE-OCCUPATION);OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES-OVER-8-PROBE-PAIRS"
    },
    {
     "name": "SCALE",
-    "text": "L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IFF-L<=4)"
+    "text": "L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=4;PRESENT-AT-L-IN-{2,4});CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))"
    },
    {
     "name": "SCOPE",
-    "text": "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT"
+    "text": "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=L-IN-2..9;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT"
    }
   ],
-  "string": "R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUES=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16;MAX-DEFECT-RADIUS=2;LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=1+2+4;EQUAL-TIME=15/256|CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4|LOCALITY=LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=616-OF-1024|MARKOV=0-OF-1792-NONZERO|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150|STATE=BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IFF-L<=4)|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
+  "string": "R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUES=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16-OF-16-CEILING;MAX-DEFECT-RADIUS=2-OF-2-CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIUS-0;RADIUS-PROFILES=6;HALF-WIDTH-ATTAINED=33-OF-58;PERIODS=1+2+4;EQUAL-TIME=15/256|CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4;DISTINCT-INVARIANT-LABELS=14|LOCALITY=LOCAL=216-OF-576;NONLOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-VALUE-MULTISET=616-OF-1024-WEIGHTED-FROM-25-DISTINCT|MARKOV=0-OF-1792-NONZERO|COMMUTATOR=0-OF-3364-NONZERO-IN-THE-VERDICT-STRATUM|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLUDED-NONZERO=150;PRINCIPLED-BITE=36|STATE=BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;SINGLE-OCCUPATION);OBSERVABLE-MOVES-AT-18-DISTINCT-RESPONSES-OVER-8-PROBE-PAIRS|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=4;PRESENT-AT-L-IN-{2,4});CONNECTIVE=MAX-NORM(FORCED-BY-ANCHORED-LINK-(1,1))|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;STENCIL=3-TERM-AXIS;SECTOR=SINGLE-OCCUPATION;SWEPT-RANGE=L-IN-2..9;INDIVISIBILITY=DECLARED-BY-DIVISION-EVENT-TIMES;FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT>"
  },
  "waiver_ledger": [
   {
@@ -70516,7 +72011,8 @@
   },
   {
    "falsifiers": [
-    "MUT-LINKS-OUTSIDE-BALL"
+    "MUT-LINKS-OUTSIDE-BALL",
+    "MUT-CONNECTIVE-FREE"
    ],
    "gate": "G-LINKS-IN-BALL",
    "status": "FALSIFIABLE"
@@ -70572,9 +72068,59 @@
   },
   {
    "falsifiers": [
+    "MUT-FIVE-POINT-ORDERING"
+   ],
+   "gate": "G-FIVE-POINT-ORDERING-INVARIANT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-FIVE-POINT-L4"
+   ],
+   "gate": "G-FIVE-POINT-AT-UNIQUE-SCALE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-MOORE-BALL-LEMMA",
+    "MUT-FIELD-DOMAIN"
+   ],
+   "gate": "G-MOORE-BALL-COLLAPSE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-ROUTE-SUM-NORM-ROWS"
+   ],
+   "gate": "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
     "MUT-UNIQUE-SCALE"
    ],
    "gate": "G-UNIQUE-SCALE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-SCALE-PRESENCE"
+   ],
+   "gate": "G-SCALE-PRESENCE-DERIVED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-ALPHABET-INDEP"
+   ],
+   "gate": "G-ALPHABET-INDEPENDENCE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-LATTICE-UNBOUND"
+   ],
+   "gate": "G-LATTICE-BOUND-TO-ADMISSIBLE",
    "status": "FALSIFIABLE"
   },
   {
@@ -70606,10 +72152,20 @@
    "status": "FALSIFIABLE"
   },
   {
-   "falsifiers": [
-    "MUT-REALIZATION-PROMOTE"
-   ],
+   "forcing": "the level names are legal and one is assigned per generator: a well-formedness disclosure only.  The per-object obligation -- every individual classification against its own computed invariant -- is discharged at G-REALIZATION-LEVELS-PER-GENERATOR (the v14 #87 engraving: gates bind objects, not cardinalities).",
+   "forcing_registered": true,
    "gate": "G-REALIZATION-LEVELS",
+   "kind": "DISCLOSURE",
+   "status": "WAIVED",
+   "verified_evaluated": true
+  },
+  {
+   "falsifiers": [
+    "MUT-REALIZATION-PROMOTE",
+    "MUT-LEVEL-PROMOTE-ONE",
+    "MUT-LEVEL-DEMOTE-ONE"
+   ],
+   "gate": "G-REALIZATION-LEVELS-PER-GENERATOR",
    "status": "FALSIFIABLE"
   },
   {
@@ -70686,6 +72242,14 @@
   },
   {
    "falsifiers": [
+    "MUT-Y1-UNCENSUSED-ZERO",
+    "MUT-VALUE-MULTISET"
+   ],
+   "gate": "G-DEFECT-VALUE-CENSUS-FULL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
     "MUT-COLUMN-SUM"
    ],
    "gate": "G-DEFECT-COLUMN-SUMS",
@@ -70703,6 +72267,13 @@
     "MUT-MARKOV-NONZERO"
    ],
    "gate": "G-MARKOV-ZERO",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-MARKOV-OBJECT"
+   ],
+   "gate": "G-MARKOV-ZERO-OBJECT",
    "status": "FALSIFIABLE"
   },
   {
@@ -70742,7 +72313,8 @@
   },
   {
    "falsifiers": [
-    "MUT-GAUGE-SELFTEST"
+    "MUT-GAUGE-SELFTEST",
+    "MUT-GAUGE-SELFTEST-RIGHT"
    ],
    "gate": "G-GAUGE-SELFTEST",
    "status": "FALSIFIABLE"
@@ -70773,6 +72345,13 @@
     "MUT-MATCHED-EMPTY"
    ],
    "gate": "G-LOCALITY-LIKE-FOR-LIKE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-MATCHED-DISTINCT"
+   ],
+   "gate": "G-LIKE-FOR-LIKE-DISTINCT",
    "status": "FALSIFIABLE"
   },
   {
@@ -70827,6 +72406,20 @@
   },
   {
    "falsifiers": [
+    "MUT-LIGHTCONE-VACUITY"
+   ],
+   "gate": "G-LIGHTCONE-VACUITY-MEASURED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-RADIUS-PROFILES"
+   ],
+   "gate": "G-TWOPOINT-RADIUS-PROFILES",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
     "MUT-PERIOD"
    ],
    "gate": "G-TWOPOINT-PERIODICITY",
@@ -70862,9 +72455,30 @@
   },
   {
    "falsifiers": [
+    "MUT-CLASS-LABELS"
+   ],
+   "gate": "G-CLASS-LABELS-NONSEPARATING",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
     "MUT-TRANS-TRIVIAL"
    ],
    "gate": "G-CLASS-TRANSLATION-TRIVIAL",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-CONTROLS-INERT"
+   ],
+   "gate": "G-CLASS-CONTROLS-MOVE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-COMMUTATOR"
+   ],
+   "gate": "G-COMMUTATOR-CENSUS",
    "status": "FALSIFIABLE"
   },
   {
@@ -70893,6 +72507,20 @@
     "MUT-STATE-INERT"
    ],
    "gate": "G-STATE-OBSERVABLE-MOVES",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-STATE-PROBE-NARROW"
+   ],
+   "gate": "G-STATE-PROBE-BREADTH",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-CEILING"
+   ],
+   "gate": "G-CEILINGS-MEASURED",
    "status": "FALSIFIABLE"
   },
   {
@@ -70929,7 +72557,10 @@
     "MUT-VERDICT-SWAP",
     "MUT-VERDICT-TYPED",
     "MUT-VERDICT-DROP",
-    "MUT-PAPER-INPUT"
+    "MUT-PAPER-INPUT",
+    "MUT-HEAD-POST-BUILD",
+    "MUT-HEAD-ABSENT-VARIANT",
+    "MUT-HEAD-OFF-PIN"
    ],
    "gate": "G-VERDICT-STRING-EQUALITY",
    "status": "FALSIFIABLE"
@@ -70939,6 +72570,13 @@
     "MUT-VERDICT-INERT"
    ],
    "gate": "G-VERDICT-SEGMENTS-FLIPPABLE",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-VALUE-INERT"
+   ],
+   "gate": "G-VERDICT-VALUES-FLIPPABLE",
    "status": "FALSIFIABLE"
   },
   {
@@ -70971,7 +72609,8 @@
   },
   {
    "falsifiers": [
-    "MUT-GATE-REFERENCES-MUTANT"
+    "MUT-GATE-REFERENCES-MUTANT",
+    "MUT-GATE-READS-LAUNDERED-NAME"
    ],
    "gate": "G-NO-MUTANT-IDENTITY-IN-GATES",
    "status": "FALSIFIABLE"
@@ -70981,6 +72620,42 @@
     "MUT-FLOAT-RECEIPT"
    ],
    "gate": "G-NO-FLOAT-RECEIPT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-COUNT-RECEIPT"
+   ],
+   "gate": "G-COUNTS-FROM-RECEIPT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-FORCING-UNREGISTERED"
+   ],
+   "gate": "G-FORCINGS-REGISTERED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-CLI-ACCEPTS-UNKNOWN"
+   ],
+   "gate": "G-CLI-CONTRACT",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-PAPER-CLAIM-DRIFT",
+    "MUT-PAPER-COVERAGE"
+   ],
+   "gate": "G-PAPER-CLAIMS-VERIFIED",
+   "status": "FALSIFIABLE"
+  },
+  {
+   "falsifiers": [
+    "MUT-COMPLIANCE-TYPED"
+   ],
+   "gate": "G-COMPLIANCE-COMPUTED",
    "status": "FALSIFIABLE"
   },
   {

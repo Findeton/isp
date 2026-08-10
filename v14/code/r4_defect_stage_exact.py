@@ -8,28 +8,39 @@ QUESTION (pin section 2): does a spatially structured indivisible family on
 the record stage exhibit a nonzero composition defect, and does the defect
 carry excitation structure?
 
-CLI CONTRACT
-------------
+CLI CONTRACT (the #82 minimum: argv-parsed, unknown flags rejected)
+------------------------------------------------------------------
     python3.13 v14/code/r4_defect_stage_exact.py
-        The delivery run.  Builds the whole census, evaluates every gate,
-        runs every declared mutant in-process, runs the compliance sweep,
+        THE DELIVERY RUN, and the ONLY writer.  Builds the whole census,
+        evaluates every gate (including the paper-claim gate), runs every
+        declared mutant in-process, runs the computed compliance sweep,
         WRITES `r4_defect_stage_output.txt` and `r4_defect_stage_receipt.json`
         beside this file, and exits 0 if every gate passes, 1 otherwise.
 
     python3.13 v14/code/r4_defect_stage_exact.py --no-write
-        Same, without writing artifacts.
+        The same run without writing artifacts.
+
+    python3.13 v14/code/r4_defect_stage_exact.py --selftest
+        FALSIFICATION SELF-TEST.  Corrupts one anchor's expected digest IN
+        MEMORY, confirms that the run dies at the anchor gate, and exits 1.
+        WRITES NOTHING.  Exits 2 if the corrupted run does NOT die.
 
     python3.13 v14/code/r4_defect_stage_exact.py --mutant NAME
         Runs the pipeline with the named mutant active.  Exits 1 when the
         mutant is killed by a gate (the intended outcome), 0 if it survives.
+        An unknown NAME exits 2; it never reports "SURVIVED".
 
     python3.13 v14/code/r4_defect_stage_exact.py --break-anchor NAME
-        Falsification self-test: corrupts the named anchor's expected value.
-        The run must exit 1 visibly.
+        Corrupts the named anchor's expected value.  NAME is validated
+        against SOURCES; an unknown NAME exits 2.  The run must exit 1.
 
-    python3.13 v14/code/r4_defect_stage_exact.py --verify-paper PATH
-        Recomputes the census, then checks that every rendered paper claim
-        string occurs verbatim in PATH.  Exits 1 on any missing claim.
+    python3.13 v14/code/r4_defect_stage_exact.py --verify-paper [PATH]
+        Reports the paper-claim rendering and coverage against PATH (the
+        unit's own paper by default).  The same check runs as a GATE inside
+        the delivery run, so this flag is a report, not the enforcement.
+
+    Any other argument, and any missing flag argument, exits 2 with a
+    message.  No flag is mutant-only.
 
 ARITHMETIC.  Exact only.  The field is Q(zeta_8) carried as integer
 coefficient 4-tuples over a positive integer denominator, reduced modulo
@@ -41,15 +52,19 @@ REIMPLEMENTATION NOTICE.  Every object here is reimplemented from the
 definitions in the pinned sources.  Nothing is imported from any other unit.
 
 RUNTIME INPUTS (RUNBOOK 14, engraving #46).  Exactly five files are read at
-run time, all hash-pinned by this unit's frozen declaration; nothing else,
-and no mutable repository state, is read.  Everything else is this unit's own
-frozen declaration, in section 0 below.
+run time as SOURCES, all hash-pinned by this unit's frozen declaration, plus
+exactly one file read as the OBJECT UNDER TEST -- this unit's own paper,
+which cannot be hash-pinned because it is the thing being verified.  Both
+lists are enumerated and gated; nothing else, and no mutable repository
+state, is read.  Everything else is this unit's own frozen declaration, in
+section 0 below.
 """
 
 import ast
 import hashlib
 import json
 import os
+import re
 import sys
 from itertools import product
 from math import gcd
@@ -64,6 +79,11 @@ OUT_TXT = os.path.join(os.path.dirname(SELF), "r4_defect_stage_output.txt")
 OUT_JSON = os.path.join(os.path.dirname(SELF), "r4_defect_stage_receipt.json")
 
 SCHEMA = "isp/v14/r4-defect-on-the-stage/1"
+
+# The unit's own paper: read at run time as the OBJECT UNDER TEST, never as a
+# source.  It is not hash-pinned, and cannot be: a claim gate that compared the
+# paper against a digest frozen from the same paper would be the #219 shape.
+PAPER_REL = "v14/paper-10-defect-on-the-stage.md"
 
 # --- the five hash-pinned runtime inputs -----------------------------------
 SOURCES = [
@@ -176,9 +196,13 @@ L_SWEEP = (2, 3, 4, 5, 6, 7, 8, 9)
 D_SWEEP = (1, 2, 3)
 ORD_SWEEP = (1, 2, 3, 4, 5, 6, 7, 8, 9)
 CONNECTIVES = ("MOORE:max-norm<=1", "VON-NEUMANN:sum-norm<=1")
+CONNECTIVE_TAGS = ("MAX-NORM", "SUM-NORM")
 SCRAMBLE_SWAPS = ((0, 5), (1, 11))
 COHERENCE_TRIPLES = 48
 DEFECT_VALUE_CENSUS_ROWS = 12
+STATE_PROBE_PAIRS = 8
+FIVE_POINT_SIZES = (4, 5, 6, 7)
+MOORE_BALL_LEMMA_SIZES = (5, 6, 7, 8, 9)
 
 # transport levels, low to high (the realization census of pin step 5)
 LEVELS = ("NONE", "OCC", "OCC+AXIS", "FULL")
@@ -437,9 +461,25 @@ def ring_autocorr_unitary(c, n):
     return True
 
 
+_ORD_MEMO = {}
+_FIVE_MEMO = {}
+_AXIS_MEMO = {}
+
+
+def _copy_census(d):
+    return {k: dict(v) for k, v in d.items()}
+
+
 def ord_sweep(alphabet, ords):
     """exhaustive sweep of the declared 3-term axis stencil {0, a, -a} over the
-    declared alphabet, indexed by n = ord(a).  Returns per-ord censuses."""
+    declared alphabet, indexed by n = ord(a).  Returns per-ord censuses.
+
+    Memoised on (alphabet, ords): the function is pure, and the mutant harness
+    re-enters the pipeline once per declared mutant.  Callers receive a fresh
+    copy, so no caller can poison the cache."""
+    memo_key = (tuple(alphabet), tuple(ords))
+    if memo_key in _ORD_MEMO:
+        return _copy_census(_ORD_MEMO[memo_key])
     res = {}
     for n in ords:
         gens, seen = [], set()
@@ -459,15 +499,27 @@ def ord_sweep(alphabet, ords):
         mono = [g for g in gens if len(g) <= 1]
         res[n] = {"triples_swept": triples, "distinct_generators": len(gens),
                   "monomial": len(mono), "non_monomial": len(gens) - len(mono)}
-    return res
+    _ORD_MEMO[memo_key] = res
+    return _copy_census(res)
 
 
-def five_point_collapse(alphabet, L):
+def five_point_collapse(alphabet, L, ordering="AXIS-FIRST"):
     """declared extension: the 5-point (von Neumann) stencil on (Z_L)^2, swept
     exhaustively with autocorrelation pruning.  A lag is EVALUABLE once every
     offset pair contributing to it has been assigned; evaluable lags must
-    already vanish, which prunes the tree at depth two."""
-    offs = [(1, 0), (L - 1, 0), (0, 1), (0, L - 1), (0, 0)]
+    already vanish, which prunes the tree at depth two.
+
+    `ordering` NAMES the offset order the search visits, because the node count
+    is an artifact of that order and only the leaf count and the solution count
+    are invariants of the sweep.  Both declared orderings are run and the
+    invariants are compared."""
+    memo_key = (tuple(alphabet), L, ordering)
+    if memo_key in _FIVE_MEMO:
+        return dict(_FIVE_MEMO[memo_key])
+    if ordering == "AXIS-FIRST":
+        offs = [(1, 0), (L - 1, 0), (0, 1), (0, L - 1), (0, 0)]
+    else:
+        offs = [(0, 0), (0, 1), (1, 0), (0, L - 1), (L - 1, 0)]
 
     def addv(a, b):
         return ((a[0] + b[0]) % L, (a[1] + b[1]) % L)
@@ -509,8 +561,77 @@ def five_point_collapse(alphabet, L):
             del c[offs[i]]
 
     rec(0, {})
-    return {"L": L, "stencil": 5, "nodes_visited": nodes, "leaves_reached": total,
-            "non_monomial": found_non_monomial}
+    out = {"L": L, "stencil": 5, "ordering": ordering, "nodes_visited": nodes,
+           "leaves_reached": total, "non_monomial": found_non_monomial}
+    _FIVE_MEMO[memo_key] = out
+    return dict(out)
+
+
+# --- THE MOORE-BALL COLLAPSE THEOREM, machine-checked where it is checkable --
+# THEOREM (Moore-ball collapse).  Let L >= 5 and let U be a unitary generator on
+# (Z_L)^2 whose coefficient map is supported inside the radius-1 Chebyshev ball
+# {-1,0,1}^2.  Then U is monomial.  Over ANY field closed under conjugation.
+#
+# The proof runs on three legs, and the first two are exhaustively checkable at
+# finite cost; the third is this unit's own order-collapse census.
+#
+#   LEG 1 (the lag structure).  For L >= 5 there is no wraparound inside the
+#   ball, so the lag (2, t) receives contributions from exactly the pairs
+#   ((-1, j), (1, j + t)) -- column -1 against column +1 and nothing else; and
+#   inside a single column the lag (0, 2) receives exactly one pair.  Measured
+#   here by exhaustive enumeration of the ball's pair set at every declared L.
+#
+#   LEG 2 (the domain).  The vanishing of the whole cross-correlation of the two
+#   length-3 column sequences X, Z is the identity X(x) * Ztilde(x) = 0 in the
+#   Laurent polynomial ring over the field.  The ring is a domain because the
+#   field is: the product's extreme coefficient is the product of the extreme
+#   coefficients.  Measured here on every ordered pair of nonzero alphabet
+#   elements.
+#
+#   LEG 3 (the single column).  Once the support lies in one column, the lags
+#   (0, t) are the aperiodic autocorrelation of a length-3 sequence, and the
+#   unit's own order census at ord >= 5 shows exhaustively that delta
+#   autocorrelation forces support <= 1.
+
+def moore_ball_lag_structure(L):
+    """LEG 1, measured: the ball's pair sets at the extreme lags."""
+    ball = [(i, j) for i in (-1, 0, 1) for j in (-1, 0, 1)]
+
+    def sub(a, b):
+        return (a[0] - b[0], a[1] - b[1])
+    cross_ok, single_ok = True, True
+    cross_rows = []
+    for t in (-2, -1, 0, 1, 2):
+        m = (2, t)
+        pairs = [(v, w) for v in ball for w in ball if sub(w, v) == m]
+        want = [((-1, j), (1, j + t)) for j in (-1, 0, 1) if -1 <= j + t <= 1]
+        if sorted(pairs) != sorted(want):
+            cross_ok = False
+        cross_rows.append({"lag": list(m), "pairs": len(pairs)})
+    col = [(0, j) for j in (-1, 0, 1)]
+    single = [(v, w) for v in col for w in col if sub(w, v) == (0, 2)]
+    if single != [((0, -1), (0, 1))]:
+        single_ok = False
+    # no wraparound inside the ball at this L: every difference of ball offsets
+    # is realised uniquely on the torus
+    wrap_ok = len({((w[0] - v[0]) % L, (w[1] - v[1]) % L) for v in ball for w in ball}) \
+        == len({(w[0] - v[0], w[1] - v[1]) for v in ball for w in ball})
+    return {"L": L, "cross_lag_structure_ok": cross_ok,
+            "single_column_lag_ok": single_ok, "no_wraparound": wrap_ok,
+            "cross_lags": cross_rows}
+
+
+def field_is_a_domain(alphabet):
+    """LEG 2, measured: no two nonzero alphabet elements multiply to zero, and
+    the extreme coefficient of a Laurent product is the product of the extreme
+    coefficients (checked on every ordered pair)."""
+    nz = [a for a in alphabet if a != ZERO]
+    bad = 0
+    for a in nz:
+        for b in nz:
+            if cmul(a, cconj(b)) == ZERO:
+                bad += 1
+    return {"nonzero_elements": len(nz), "zero_divisor_pairs": bad}
 
 
 # ===========================================================================
@@ -518,6 +639,20 @@ def five_point_collapse(alphabet, L):
 # ===========================================================================
 # Reimplemented from the anchored definition VB-DEFECT-DEF:
 #     Delta^B(U2, U1) := B(U2 U1) - B(U2) B(U1),      B(U) = |U| entrywise^2.
+
+def canon_key_matrix(M):
+    """the gauge-canonical key of a MATRIX: the lexicographic minimum of the
+    entry set over the declared global-phase orbit.  Written for the
+    per-generator transport verification, and sharing no helper with the
+    classifier's coefficient-map route."""
+    best = None
+    for t in range(8):
+        z = zpow(t)
+        cand = tuple(sorted(((i, j), cmul(z, v)) for (i, j), v in M.items()))
+        if best is None or cand < best:
+            best = cand
+    return best
+
 
 def defect_dense(V, U, n):
     """route DENSE: the definition, on sparse matrices."""
@@ -644,37 +779,58 @@ GATE_REGISTRY = [
     "G-FIELD-CANONICAL", "G-FIELD-UNITS", "G-NO-FLOAT-AST",
     "G-STAGE-DIM-FROM-ANCHOR", "G-LINKS-IN-BALL", "G-LOCALITY-CRITERION-PORTED",
     "G-LOCALITY-THRESHOLD", "G-PARITY-WITNESS", "G-LSWEEP-COMPLETE",
+    "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
     "G-ORD-SWEEP-EXHAUSTIVE", "G-ORD-COLLAPSE-THEOREM", "G-ORD-CENSUS-COUNTS",
-    "G-FIVE-POINT-EXTENSION", "G-UNIQUE-SCALE",
+    "G-FIVE-POINT-EXTENSION", "G-FIVE-POINT-ORDERING-INVARIANT",
+    "G-FIVE-POINT-AT-UNIQUE-SCALE",
+    "G-MOORE-BALL-COLLAPSE", "G-ALPHABET-INDEPENDENCE",
+    "G-UNIQUE-SCALE", "G-SCALE-PRESENCE-DERIVED", "G-LATTICE-BOUND-TO-ADMISSIBLE",
     "G-GAUGE-ORBITS-FREE", "G-POOL-DERIVED", "G-FAMILY-UNITARY-THREE-ROUTES",
     "G-CHOICE-INVENTORY-COMPLETE", "G-DIVISION-EVENTS-DECLARED",
     "G-DEFECT-DEFINITION", "G-DEFECT-ROUTES-AGREE", "G-DEFECT-CLOSED-FORM",
-    "G-DEFECT-FOURIER-AGREE", "G-DEFECT-VALUE-CENSUS", "G-DEFECT-NONZERO-EXISTS",
-    "G-DEFECT-COLUMN-SUMS", "G-MARKOV-ZERO", "G-MARKOV-CLASSIFIER",
+    "G-DEFECT-FOURIER-AGREE", "G-DEFECT-VALUE-CENSUS",
+    "G-DEFECT-VALUE-CENSUS-FULL", "G-DEFECT-NONZERO-EXISTS",
+    "G-DEFECT-COLUMN-SUMS", "G-MARKOV-ZERO", "G-MARKOV-ZERO-OBJECT",
+    "G-MARKOV-CLASSIFIER",
     "G-MARKOV-POSITIVE-CONTROL", "G-COHERENCE-LAW", "G-DEFECT-NORMALIZATION",
     "G-DEFECT-EQUIVARIANCE", "G-DEFECT-REVERSAL", "G-GAUGE-SELFTEST",
     "G-GAUGE-HANDLE", "G-CACHE-EXERCISED",
-    "G-LOCALITY-DEPENDENCE", "G-LOCALITY-LIKE-FOR-LIKE", "G-NONLOCAL-CONTROL",
+    "G-LOCALITY-DEPENDENCE", "G-LOCALITY-LIKE-FOR-LIKE",
+    "G-LIKE-FOR-LIKE-DISTINCT", "G-NONLOCAL-CONTROL",
     "G-TWOPOINT-TRANSLATION-COVARIANT", "G-TWOPOINT-SCRAMBLE-BREAKS",
     "G-TWOPOINT-EQUAL-TIME", "G-TWOPOINT-COMPOSED", "G-TWOPOINT-LIGHTCONE",
+    "G-LIGHTCONE-VACUITY-MEASURED", "G-TWOPOINT-RADIUS-PROFILES",
+    "G-CEILINGS-MEASURED",
     "G-TWOPOINT-PERIODICITY", "G-TWOPOINT-STOCHASTIC",
     "G-CLASS-ORBITS-PARTITION", "G-CLASS-ORBIT-STABILIZER",
-    "G-CLASS-INVARIANTS", "G-CLASS-TWO-GROUPS", "G-CLASS-TRANSLATION-TRIVIAL",
-    "G-REALIZATION-LEVELS", "G-REALIZATION-MAXIMAL-NONEMPTY",
+    "G-CLASS-INVARIANTS", "G-CLASS-LABELS-NONSEPARATING", "G-CLASS-TWO-GROUPS",
+    "G-CLASS-TRANSLATION-TRIVIAL", "G-CLASS-CONTROLS-MOVE",
+    "G-COMMUTATOR-CENSUS",
+    "G-REALIZATION-LEVELS", "G-REALIZATION-LEVELS-PER-GENERATOR",
+    "G-REALIZATION-MAXIMAL-NONEMPTY",
     "G-REALIZATION-GATE-BITES", "G-REALIZATION-VERDICT-ONLY-MAXIMAL",
     "G-STATE-COEFFICIENT-BACKGROUND", "G-STATE-OBSERVABLE-MOVES",
+    "G-STATE-PROBE-BREADTH",
     "G-VERDICT-HEAD-DERIVED", "G-VERDICT-STRING-EQUALITY",
-    "G-VERDICT-SEGMENTS-FLIPPABLE", "G-VERDICT-THREE-HEADS-REACHABLE",
+    "G-VERDICT-SEGMENTS-FLIPPABLE", "G-VERDICT-VALUES-FLIPPABLE",
+    "G-VERDICT-THREE-HEADS-REACHABLE",
     "G-VERDICT-PREREGISTERED", "G-VERDICT-NO-PAPER-INPUT",
     "G-PRECHECK-DOES-NOT-NAME-THE-VERDICT",
-    "G-RENDER-FROM-GATED-OBJECT", "G-COUNTS-DERIVED", "G-ROW-COMPLETENESS",
+    "G-RENDER-FROM-GATED-OBJECT", "G-COUNTS-DERIVED", "G-COUNTS-FROM-RECEIPT",
+    "G-ROW-COMPLETENESS",
     "G-NO-MUTANT-IDENTITY-IN-GATES", "G-SELF-COMPARE-GUARD",
+    "G-FORCINGS-REGISTERED", "G-COMPLIANCE-COMPUTED", "G-CLI-CONTRACT",
+    "G-PAPER-CLAIMS-VERIFIED",
     "G-EVERY-GATE-EVALUATED", "G-NO-FLOAT-RECEIPT", "G-WAIVERS-VERIFIED",
 ]
 
-# Registered forcings for gates that carry no declared falsifier (#34).  An
-# analytically-forced clause is a DISCLOSURE, not a must-pass measurement; it is
-# named here, with the gate that carries its CONTENT.
+# Registered forcings (#208 / #34).  TWO duties, one registry:
+#   (a) a gate carrying no declared falsifier must name why it cannot have one;
+#   (b) a gate whose CLAUSE IS ANALYTICALLY FORCED is a DISCLOSURE, not a
+#       must-pass measurement, and must name the forcing and the gate that
+#       carries the measured content in its place.
+# G-FORCINGS-REGISTERED gates that every FORCED / DISCLOSURE / DECLARED row in
+# the ledger appears here.
 FORCINGS = {
     "G-WAIVERS-VERIFIED":
         "this gate is evaluated after the mutant harness, so no mutant can "
@@ -688,6 +844,86 @@ FORCINGS = {
         "CONTENT is measured at G-DEFECT-DEFINITION, which reproduces the "
         "anchored source's own two-by-two witness and dies under "
         "MUT-DEFECT-WITNESS.",
+    "G-DEFECT-CLOSED-FORM":
+        "the cross-term form and the definition are algebraically the same "
+        "identity in two bases, so agreement is forced; the row is an "
+        "IMPLEMENTATION CROSS-CHECK, not a second measurement.  Its measured "
+        "use is at G-DEFECT-VALUE-CENSUS-FULL, where the second code path "
+        "binds the whole value multiset.",
+    "G-COHERENCE-LAW":
+        "an identity of associativity: both sides are B(U3U2U1) - "
+        "B(U3)B(U2)B(U1).  It constrains the family not at all.",
+    "G-DIVISION-EVENTS-DECLARED":
+        "the division-event times are this unit's DECLARATION, not a "
+        "measurement; the row discloses them and binds VB-DIVISION-EVENT to "
+        "its consumer.  What is measured is the consequence: with t = 1 "
+        "declared a division event there is no cut, and MUT-DIVISION-EVENTS "
+        "dies here.",
+    "G-STATE-COEFFICIENT-BACKGROUND":
+        "an identity of linear algebra: delta(p) = Delta^B p is linear, so the "
+        "sixteen point-mass responses ARE the sixteen columns of Delta^B and "
+        "reassemble it for every matrix whatever.  A coefficient can move with "
+        "the state only outside a linear law on a single-occupation sector, "
+        "which this arena excludes by construction.  The measured half is at "
+        "G-STATE-OBSERVABLE-MOVES and G-STATE-PROBE-BREADTH.",
+    "G-CLASS-TRANSLATION-TRIVIAL":
+        "a coefficient-map matrix M[x+o, x] = c_o commutes with every lattice "
+        "translation BY CONSTRUCTION, so the 58 singleton orbits are an "
+        "identity of the circulant family, not a measurement.  The measured "
+        "half -- that the CONTROLS move -- is at G-CLASS-CONTROLS-MOVE.",
+    "G-TWOPOINT-COMPOSED":
+        "B(U2U1) = B(U2)B(U1) + Delta^B is the definition of Delta^B "
+        "rearranged; the split is forced.  The row is an implementation "
+        "check.  What is measured is the SIZE of the interference part, at "
+        "the defect census.",
+    "G-TWOPOINT-LIGHTCONE":
+        "at the working size the lattice half-width is 2 and the maximum "
+        "attainable Chebyshev radius is 2, so the cone bound min((n+1)r, L//2) "
+        "is >= 2 for every n >= 1 at every generator of radius >= 1 and cannot "
+        "fail.  The clause has content only at radius 0.  Measured at "
+        "G-LIGHTCONE-VACUITY-MEASURED (the exhaustive profile probe) and "
+        "replaced in the verdict by G-TWOPOINT-RADIUS-PROFILES.",
+    "G-TWOPOINT-EQUAL-TIME":
+        "C0(x, y) = delta_xy p(x) - p(x)p(y) on the declared uniform state is "
+        "p(1-p) = 1/16 - 1/256 at zero separation and -1/256 elsewhere: a "
+        "function of |X| and the state alone, identical for EVERY family on 16 "
+        "sites.  It is state arithmetic, not a two-point measurement of the "
+        "dynamics.",
+    "G-DEFECT-COLUMN-SUMS":
+        "|U| entrywise-squared is doubly stochastic for unitary U, so both "
+        "composites are column-stochastic and every defect column sums to zero "
+        "identically.  Widened here from a 64-row sample to every census row, "
+        "so the evidence matches the claim, but the claim is forced.",
+    "G-TWOPOINT-STOCHASTIC":
+        "column stochasticity of B(U) is forced by unitarity of U.",
+    "G-DEFECT-NORMALIZATION":
+        "Delta^B(I, U) = B(U) - B(I)B(U) = 0 identically; an identity of the "
+        "Born map.",
+    "G-DEFECT-EQUIVARIANCE":
+        "conjugation by a permutation matrix commutes with the entrywise "
+        "modulus-squared, so equivariance is an identity of the Born map.",
+    "G-DEFECT-REVERSAL":
+        "transposition commutes with the entrywise modulus-squared and "
+        "reverses a product; an identity of the Born map.",
+    "G-COMMUTATOR-CENSUS":
+        "circulant convolution on an abelian group commutes, so the 0 of 3364 "
+        "on the FULL stratum is a THEOREM, not a contingency.  The row is "
+        "carried because its CONSEQUENCE is not forced and is the datum R5 "
+        "inherits: the verdict-bearing stratum is exactly the commuting one, "
+        "and the four generators the mandatory gate excludes are the entire "
+        "source of non-commutativity on the stage.  The non-forced half -- "
+        "which pairs outside the stratum fail to commute -- is measured.",
+    "G-CEILINGS-MEASURED":
+        "16 separations is every separation on a 16-site torus and radius 2 is "
+        "the Chebyshev diameter of (Z_4)^2: both verdict numbers are arena "
+        "CEILINGS, attained rather than profiled.  The row measures the "
+        "ceilings so the verdict can carry them as ceilings.",
+    "G-REALIZATION-LEVELS":
+        "the level names are legal and one is assigned per generator: a "
+        "well-formedness disclosure only.  The per-object obligation -- every "
+        "individual classification against its own computed invariant -- is "
+        "discharged at G-REALIZATION-LEVELS-PER-GENERATOR (the v14 #87 "
+        "engraving: gates bind objects, not cardinalities).",
 }
 
 # Declared mutants: (name, target gate, what it injects)
@@ -731,7 +967,7 @@ MUTANTS = [
     ("MUT-CLASS-DROP", "G-CLASS-ORBITS-PARTITION", "drops one orbit from the class census"),
     ("MUT-CLASS-MERGE", "G-CLASS-ORBIT-STABILIZER", "merges two orbits"),
     ("MUT-CLASS-INVARIANT", "G-CLASS-INVARIANTS", "moves an invariant inside an orbit"),
-    ("MUT-REALIZATION-PROMOTE", "G-REALIZATION-LEVELS", "promotes every generator to maximal transport"),
+    ("MUT-REALIZATION-PROMOTE", "G-REALIZATION-LEVELS-PER-GENERATOR", "promotes every generator to maximal transport"),
     ("MUT-REALIZATION-NOBITE", "G-REALIZATION-GATE-BITES", "claims no defect is excluded below maximal transport"),
     ("MUT-REALIZATION-ADMIT", "G-REALIZATION-VERDICT-ONLY-MAXIMAL", "admits sub-maximal defects into the verdict"),
     ("MUT-STATE-BACKGROUND", "G-STATE-COEFFICIENT-BACKGROUND", "makes the reconstructed coefficient state-dependent"),
@@ -774,6 +1010,75 @@ MUTANTS = [
     ("MUT-GATE-REFERENCES-MUTANT", "G-NO-MUTANT-IDENTITY-IN-GATES", "adds a gate that exempts its own falsifier"),
     ("MUT-PAPER-INPUT", "G-VERDICT-STRING-EQUALITY", "appends an arena-prose segment to the emitted verdict"),
     ("MUT-COMPARATOR-READS-PROSE", "G-VERDICT-NO-PAPER-INPUT", "swaps in a comparator that reads receipt prose"),
+    # --- the repair pass's own falsifiers ---------------------------------
+    ("MUT-ROUTE-SUM-NORM-ROWS", "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
+     "routes the sum-norm locality rows into the admissibility loop"),
+    ("MUT-CONNECTIVE-FREE", "G-LINKS-IN-BALL",
+     "claims both connectives admit the anchored link set, so none is forced"),
+    ("MUT-LATTICE-UNBOUND", "G-LATTICE-BOUND-TO-ADMISSIBLE",
+     "censuses a lattice size other than the one the precheck admitted"),
+    ("MUT-SCALE-PRESENCE", "G-SCALE-PRESENCE-DERIVED",
+     "types the presence set instead of deriving it from the order census"),
+    ("MUT-MOORE-BALL-LEMMA", "G-MOORE-BALL-COLLAPSE",
+     "breaks the extreme-lag structure the ball collapse rests on"),
+    ("MUT-FIELD-DOMAIN", "G-MOORE-BALL-COLLAPSE",
+     "reports a zero divisor among the nonzero alphabet elements"),
+    ("MUT-ALPHABET-INDEP", "G-ALPHABET-INDEPENDENCE",
+     "claims a size below the locality threshold bears locality"),
+    ("MUT-FIVE-POINT-ORDERING", "G-FIVE-POINT-ORDERING-INVARIANT",
+     "reports the node count as an invariant of the five-point sweep"),
+    ("MUT-FIVE-POINT-L4", "G-FIVE-POINT-AT-UNIQUE-SCALE",
+     "empties the wider five-point family at the unique scale"),
+    ("MUT-LEVEL-PROMOTE-ONE", "G-REALIZATION-LEVELS-PER-GENERATOR",
+     "promotes exactly one sub-maximal generator to maximal transport"),
+    ("MUT-LEVEL-DEMOTE-ONE", "G-REALIZATION-LEVELS-PER-GENERATOR",
+     "demotes exactly one maximal-transport generator"),
+    ("MUT-Y1-UNCENSUSED-ZERO", "G-DEFECT-VALUE-CENSUS-FULL",
+     "zeroes defect rows OUTSIDE the twelve named value-census rows"),
+    ("MUT-VALUE-MULTISET", "G-DEFECT-VALUE-CENSUS-FULL",
+     "moves one cell count in the full value multiset"),
+    ("MUT-MARKOV-OBJECT", "G-MARKOV-ZERO-OBJECT",
+     "writes a nonzero defect OBJECT into a Markovian row, leaving its count"),
+    ("MUT-COMMUTATOR", "G-COMMUTATOR-CENSUS",
+     "misreports the commutator census of the verdict stratum"),
+    ("MUT-CLASS-LABELS", "G-CLASS-LABELS-NONSEPARATING",
+     "claims the declared class invariants separate the classes"),
+    ("MUT-MATCHED-DISTINCT", "G-LIKE-FOR-LIKE-DISTINCT",
+     "reports the weighted matched count as the distinct comparison count"),
+    ("MUT-STATE-PROBE-NARROW", "G-STATE-PROBE-BREADTH",
+     "shrinks the state-motion probe set below its declared breadth"),
+    ("MUT-VALUE-INERT", "G-VERDICT-VALUES-FLIPPABLE",
+     "makes one measured verdict VALUE ignore the receipt field it renders"),
+    ("MUT-HEAD-POST-BUILD", "G-VERDICT-STRING-EQUALITY",
+     "retypes the head AFTER every verdict gate has been built"),
+    ("MUT-HEAD-ABSENT-VARIANT", "G-VERDICT-STRING-EQUALITY",
+     "flips the head to an ABSENT variant after the build"),
+    ("MUT-HEAD-OFF-PIN", "G-VERDICT-STRING-EQUALITY",
+     "flips the head to a name outside the pin after the build"),
+    ("MUT-COMPLIANCE-TYPED", "G-COMPLIANCE-COMPUTED",
+     "types a compliance status instead of computing it"),
+    ("MUT-PAPER-CLAIM-DRIFT", "G-PAPER-CLAIMS-VERIFIED",
+     "drifts one rendered paper claim away from the paper's bytes"),
+    ("MUT-PAPER-COVERAGE", "G-PAPER-CLAIMS-VERIFIED",
+     "drops a rendered claim so a paper numeral goes uncovered"),
+    ("MUT-FORCING-UNREGISTERED", "G-FORCINGS-REGISTERED",
+     "ships a FORCED gate with no registered forcing"),
+    ("MUT-COUNT-RECEIPT", "G-COUNTS-FROM-RECEIPT",
+     "moves a headline count away from the serialized census rows"),
+    ("MUT-CEILING", "G-CEILINGS-MEASURED",
+     "misreports the arena ceiling the two-point numbers attain"),
+    ("MUT-RADIUS-PROFILES", "G-TWOPOINT-RADIUS-PROFILES",
+     "collapses the measured radius-profile census"),
+    ("MUT-LIGHTCONE-VACUITY", "G-LIGHTCONE-VACUITY-MEASURED",
+     "claims the cone bound has content above radius zero"),
+    ("MUT-CONTROLS-INERT", "G-CLASS-CONTROLS-MOVE",
+     "freezes the controls under the translation action"),
+    ("MUT-GAUGE-SELFTEST-RIGHT", "G-GAUGE-SELFTEST",
+     "breaks invariance under the outer torus on the RIGHT factor"),
+    ("MUT-GATE-READS-LAUNDERED-NAME", "G-NO-MUTANT-IDENTITY-IN-GATES",
+     "adds a gate reading a name whose only assignment is mutant-guarded"),
+    ("MUT-CLI-ACCEPTS-UNKNOWN", "G-CLI-CONTRACT",
+     "swaps in the runner that silently ignores what it does not recognise"),
 ]
 
 
@@ -871,16 +1176,24 @@ def build_state(break_anchor=None):
             "%d of %d" % (sum(r["match"] for r in prows), len(prows)))
     S["path_value_anchors"] = prows
 
+    with open(os.path.join(REPO, PAPER_REL), "r", encoding="utf-8") as f:
+        S["_paper_text"] = f.read()
     reads = sorted(rel for _, rel, _, _ in SOURCES)
+    object_under_test = [PAPER_REL]
     if mut("MUT-EXTRA-INPUT"):
         reads = reads + ["v14/LOG.md"]
     LD.gate("G-NO-UNANCHORED-RUNTIME-INPUT",
-            "every file read at run time is a hash-pinned artifact; no mutable "
-            "repository state is read (#46)",
-            len(reads) == len(SOURCES) and
-            all(any(rel == s[1] for s in SOURCES) for rel in reads),
-            "reads: " + ", ".join(reads))
-    S["runtime_inputs"] = reads
+            "every file read at run time is either a hash-pinned SOURCE or the "
+            "declared OBJECT UNDER TEST (this unit's own paper, which cannot be "
+            "pinned against itself); both lists are enumerated and no other "
+            "mutable repository state is read (#46)",
+            len(reads) == len(SOURCES)
+            and all(any(rel == s[1] for s in SOURCES) for rel in reads)
+            and object_under_test == [PAPER_REL],
+            "pinned sources: %s | object under test: %s"
+            % (", ".join(reads), ", ".join(object_under_test)))
+    S["runtime_inputs"] = {"pinned_sources": reads,
+                           "object_under_test": object_under_test}
 
     # ---------------- the field -------------------------------------------
     say("[1/12] field, stage, locality")
@@ -958,17 +1271,38 @@ def build_state(break_anchor=None):
             "rows=%d expected=%d" % (len(loc_rows),
                                      len(D_SWEEP) * len(L_SWEEP) * len(CONNECTIVES)))
 
+    # THE CONNECTIVE IS NOT FREE.  Each declared Boolean connective admits a
+    # radius-1 ball; the anchored link set either fits inside it or does not.
+    # The anchored diagonal link (1,1) has max-norm 1 and sum-norm 2, so it lies
+    # inside the max-norm ball and outside the sum-norm ball: exactly one
+    # connective can carry the stage's own declared links.
     test_links = [tuple(v) for v in links]
     if mut("MUT-LINKS-OUTSIDE-BALL"):
         test_links = test_links + [(2, 0)]
-    Lmain = 4
-    ball = [v for v in product(range(Lmain), repeat=2)
-            if any(v) and torus_absmax(v, Lmain) <= 1]
+    norms = {CONNECTIVES[0]: torus_absmax, CONNECTIVES[1]: torus_abssum}
+    conn_admits, conn_reasons = {}, {}
+    for conn in CONNECTIVES:
+        nf = norms[conn]
+        outside = [(v, min(nf(v, LL) for LL in L_SWEEP if LL >= 3))
+                   for v in test_links
+                   if any(nf(v, LL) > 1 for LL in L_SWEEP if LL >= 3)]
+        conn_admits[conn] = not outside
+        conn_reasons[conn] = ("every anchored link inside the radius-1 ball"
+                              if not outside else
+                              "; ".join("link %s has norm %d > 1" % (v, n)
+                                        for v, n in outside))
+    if mut("MUT-CONNECTIVE-FREE"):
+        conn_admits = {c: True for c in CONNECTIVES}
+    admitting = [c for c in CONNECTIVES if conn_admits[c]]
+    forced_connective = admitting[0] if len(admitting) == 1 else None
     LD.gate("G-LINKS-IN-BALL",
-            "every anchored link lies in the declared radius-1 neighbourhood of "
-            "the working lattice",
-            all(v in ball for v in test_links),
-            "links=%s ball=%d" % (test_links, len(ball)))
+            "every anchored link lies in the radius-1 neighbourhood of the "
+            "connective that admits the anchored link set, at every swept "
+            "lattice size that can carry a radius-1 ball",
+            forced_connective is not None
+            and all(norms[forced_connective](v, LL) <= 1
+                    for v in test_links for LL in L_SWEEP if LL >= 3),
+            "links=%s forced connective=%s" % (test_links, forced_connective))
 
     crit = jpath(jsrc["A-LOCALITY-R2"], "locality_census/criterion")
     moore_rows = [r for r in loc_rows if r["connective"] == CONNECTIVES[0]]
@@ -981,20 +1315,28 @@ def build_state(break_anchor=None):
             ported and crit.startswith("locality exists at a rule iff SOME"),
             "criterion chars=%d applied at %d rows" % (len(crit), len(moore_rows)))
 
-    thresholds = {}
-    for dd in D_SWEEP:
-        rs = [r for r in moore_rows if r["d"] == dd]
-        loc_L = sorted(r["L"] for r in rs if r["locality"])
-        thresholds[dd] = min(loc_L) if loc_L else None
+    # the THRESHOLD TABLE: both connectives, every swept dimension, printed.
+    thr_table = {}
+    for conn in CONNECTIVES:
+        rows_c = [r for r in loc_rows if r["connective"] == conn]
+        for dd in D_SWEEP:
+            loc_L = sorted(r["L"] for r in rows_c if r["d"] == dd and r["locality"])
+            thr_table[(conn, dd)] = min(loc_L) if loc_L else None
+    thresholds = {dd: thr_table[(CONNECTIVES[0], dd)] for dd in D_SWEEP}
     if mut("MUT-LOCALITY-THRESHOLD"):
         thresholds[2] = 3
     LD.gate("G-LOCALITY-THRESHOLD",
-            "the lattice bears locality exactly above a measured size threshold, "
-            "the same at every swept dimension",
+            "under the FORCED connective the lattice bears locality exactly "
+            "above a measured size threshold, the same at every swept dimension",
             set(thresholds.values()) == {4}
             and all(r["locality"] == (r["L"] >= 4) for r in moore_rows),
             "thresholds by d: %s" % thresholds)
     S["locality_thresholds"] = {str(k): v for k, v in thresholds.items()}
+    S["locality_threshold_table"] = [
+        {"connective": conn, "connective_tag": CONNECTIVE_TAGS[CONNECTIVES.index(conn)],
+         "d": dd, "threshold": thr_table[(conn, dd)],
+         "admits_anchored_links": conn_admits[conn]}
+        for conn in CONNECTIVES for dd in D_SWEEP]
 
     vn_rows = [r for r in loc_rows if r["connective"] == CONNECTIVES[1]]
     vn_thr = min([r["L"] for r in vn_rows if r["d"] == 2 and r["locality"]] or [0])
@@ -1003,10 +1345,10 @@ def build_state(break_anchor=None):
         delta = 0
     LD.gate("G-PARITY-WITNESS",
             "the Boolean connective bounding the neighbourhood carries a "
-            "parity-witness: the alternative connective's measured threshold "
-            "delta is printed and is nonzero",
+            "parity-witness: the EXCLUDED connective's measured threshold delta "
+            "is printed and is nonzero, so the exclusion is not free",
             delta != 0,
-            "moore threshold=%s von-neumann threshold=%s delta=%s"
+            "max-norm threshold=%s sum-norm threshold=%s delta=%s"
             % (thresholds[2], vn_thr, delta))
     S["parity_witness"] = {"moore_threshold_d2": thresholds[2],
                            "von_neumann_threshold_d2": vn_thr, "delta": delta}
@@ -1064,30 +1406,206 @@ def build_state(break_anchor=None):
             "L=5 five-point non-monomial=%d leaves=%d"
             % (fp["non_monomial"], fp["leaves_reached"]))
 
+    # the five-point sweep at every declared size, in BOTH declared offset
+    # orderings.  The node count is an artifact of the ordering; the leaf count
+    # and the solution count are the invariants, and only they are reported.
+    fp_rows = []
+    for LL in FIVE_POINT_SIZES:
+        for ordering in ("AXIS-FIRST", "CENTRE-FIRST"):
+            fp_rows.append(five_point_collapse(alphabet, LL, ordering))
+    ordering_pairs = [(a, b) for a in fp_rows for b in fp_rows
+                      if a["L"] == b["L"] and a["ordering"] < b["ordering"]]
+    inv_ok = all(a["leaves_reached"] == b["leaves_reached"]
+                 and a["non_monomial"] == b["non_monomial"]
+                 for a, b in ordering_pairs)
+    nodes_differ = sum(1 for a, b in ordering_pairs
+                       if a["nodes_visited"] != b["nodes_visited"])
+    if mut("MUT-FIVE-POINT-ORDERING"):
+        nodes_differ = 0
+    LD.gate("G-FIVE-POINT-ORDERING-INVARIANT",
+            "the five-point sweep's leaf count and solution count are invariant "
+            "under the declared offset ordering while the NODE count is not, so "
+            "the node count is reported as a search artifact and never as a "
+            "property of the stencil",
+            inv_ok and nodes_differ > 0 and len(ordering_pairs) == len(FIVE_POINT_SIZES),
+            "sizes=%d orderings compared=%d node counts that differ=%d; "
+            "leaves and solutions invariant=%s"
+            % (len(FIVE_POINT_SIZES), len(ordering_pairs), nodes_differ, inv_ok))
+    S["five_point_sweeps"] = fp_rows
+
+    # the five-point stencil AT the unique scale: a wider local family that this
+    # unit's 3-term census does not examine.  Reported, not promoted.
+    fp4 = [r for r in fp_rows if r["L"] == 4 and r["ordering"] == "AXIS-FIRST"][0]
+    fp4_nm = fp4["non_monomial"]
+    if mut("MUT-FIVE-POINT-L4"):
+        fp4_nm = 0
+    LD.gate("G-FIVE-POINT-AT-UNIQUE-SCALE",
+            "at the unique admissible scale the 5-point stencil admits a wider "
+            "local family than the 3-term axis stencil this unit censuses; the "
+            "count is measured and disclosed, and no verdict segment rests on it",
+            fp4_nm > 0 and fp4_nm > ordc[4]["non_monomial"],
+            "five-point non-monomial at L=4: %d (3-term axis stencil at ord 4: "
+            "%d); leaves=%d" % (fp4_nm, ordc[4]["non_monomial"],
+                                fp4["leaves_reached"]))
+
+    # THE MOORE-BALL COLLAPSE THEOREM, legs 1 and 2 measured (leg 3 is the order
+    # census above).  Closes the declared 9-point scope hole for every L >= 5.
+    lag_rows = [moore_ball_lag_structure(LL) for LL in MOORE_BALL_LEMMA_SIZES]
+    dom = field_is_a_domain(alphabet)
+    lag_ok = all(r["cross_lag_structure_ok"] and r["single_column_lag_ok"]
+                 and r["no_wraparound"] for r in lag_rows)
+    if mut("MUT-MOORE-BALL-LEMMA"):
+        lag_ok = False
+    dom_bad = dom["zero_divisor_pairs"]
+    if mut("MUT-FIELD-DOMAIN"):
+        dom_bad = 1
+    collapse_above = all(v == 0 for n, v in above.items())
+    LD.gate("G-MOORE-BALL-COLLAPSE",
+            "the Moore-ball collapse theorem's checkable legs: at every declared "
+            "L >= 5 the radius-1 ball's extreme lag (2, t) receives contributions "
+            "only from column -1 against column +1 and the single-column lag "
+            "(0, 2) receives exactly one pair, with no wraparound; the field has "
+            "no zero divisors, so the Laurent ring is a domain; and the "
+            "single-column reduction is the order census's own >= 5 rows",
+            lag_ok and dom_bad == 0 and collapse_above,
+            "sizes checked=%s lag structure ok=%s zero-divisor pairs=%d of "
+            "%d^2 nonzero; order census >= 5 non-monomial=%s"
+            % (list(MOORE_BALL_LEMMA_SIZES), lag_ok, dom_bad,
+               dom["nonzero_elements"], sorted(above.values())))
+    S["moore_ball_collapse"] = {"sizes": list(MOORE_BALL_LEMMA_SIZES),
+                                "lag_rows": lag_rows, "domain": dom}
+
     # THE UNIQUE SCALE.  Local axes have order L; non-monomial local generators
-    # therefore exist iff L is an order with non-monomial solutions.
-    admissible = []
-    for LL in L_SWEEP:
-        row = [r for r in moore_rows if r["d"] == 2 and r["L"] == LL][0]
-        has_nm = ordc.get(LL, {"non_monomial": 0})["non_monomial"] > 0
-        local_ax_ord = {elt_order(v, LL) for v in product(range(LL), repeat=2)
-                        if any(v) and torus_absmax(v, LL) <= 1}
-        if row["locality"] and has_nm and local_ax_ord == {LL}:
-            admissible.append(LL)
+    # therefore exist iff L is an order with non-monomial solutions.  The rows
+    # fed to the loop are the FORCED connective's rows, and that routing is
+    # itself gated.
+    routed_connective = forced_connective
+    if mut("MUT-ROUTE-SUM-NORM-ROWS"):
+        routed_connective = CONNECTIVES[1]
+    routed_rows = [r for r in loc_rows if r["connective"] == routed_connective]
+
+    def admissible_under(rows_c):
+        out = []
+        for LL in L_SWEEP:
+            row = [r for r in rows_c if r["d"] == 2 and r["L"] == LL][0]
+            has_nm = ordc.get(LL, {"non_monomial": 0})["non_monomial"] > 0
+            local_ax_ord = {elt_order(v, LL) for v in product(range(LL), repeat=2)
+                            if any(v) and torus_absmax(v, LL) <= 1}
+            if row["locality"] and has_nm and local_ax_ord == {LL}:
+                out.append(LL)
+        return out
+
+    admissible = admissible_under(routed_rows)
+    excluded_conn = [c for c in CONNECTIVES if c != forced_connective][0]
+    admissible_excluded = admissible_under(
+        [r for r in loc_rows if r["connective"] == excluded_conn])
+    LD.gate("G-CONNECTIVE-FORCED-BY-ANCHORED-LINK",
+            "the neighbourhood connective is FORCED, not free: exactly one "
+            "declared connective's radius-1 ball contains the anchored link "
+            "set, and the admissibility loop consumes that connective's rows "
+            "and no other.  The exclusion has bite: under the excluded "
+            "connective the admissible set is different",
+            forced_connective is not None
+            and routed_connective == forced_connective
+            and all(r["connective"] == forced_connective for r in routed_rows)
+            and admissible_excluded != admissible,
+            "forced=%s (%s); excluded=%s (%s); rows routed into the "
+            "admissibility loop carry %s; admissible under the forced "
+            "connective=%s, under the excluded connective=%s"
+            % (forced_connective, conn_reasons.get(forced_connective, ""),
+               excluded_conn, conn_reasons.get(excluded_conn, ""),
+               routed_connective, admissible, admissible_excluded))
+    S["connective_forcing"] = {
+        "forced": forced_connective,
+        "forced_tag": CONNECTIVE_TAGS[CONNECTIVES.index(forced_connective)]
+        if forced_connective else None,
+        "excluded": excluded_conn,
+        "excluded_tag": CONNECTIVE_TAGS[CONNECTIVES.index(excluded_conn)],
+        "reason_forced": conn_reasons.get(forced_connective, ""),
+        "reason_excluded": conn_reasons.get(excluded_conn, ""),
+        "anchored_links": [list(v) for v in test_links],
+        "admissible_under_forced": admissible,
+        "admissible_under_excluded": admissible_excluded}
+
     if mut("MUT-UNIQUE-SCALE"):
         admissible = admissible + [6]
     LD.gate("G-UNIQUE-SCALE",
             "exactly one swept lattice size carries both locality and a "
-            "non-monomial local-axis generator",
-            admissible == [4],
-            "admissible sizes: %s" % admissible)
-    S["admissible_scales"] = admissible
-    S["scale_precheck"] = {"locality_iff": "L>=4", "non_monomial_local_iff": "L<=4",
+            "non-monomial local-axis generator: the uniqueness is measured "
+            "(len == 1) and the value is anchored separately",
+            len(admissible) == 1 and admissible == [4],
+            "admissible sizes: %s (count=%d)" % (admissible, len(admissible)))
+
+    # the SECOND half of the scale statement, derived from the order census
+    # rather than composed from typed text: the sizes at which a non-monomial
+    # LOCAL-axis generator is PRESENT.  The bound is only-if, not iff.
+    present_at = []
+    for LL in L_SWEEP:
+        local_ax_ord = {elt_order(v, LL) for v in product(range(LL), repeat=2)
+                        if any(v) and torus_absmax(v, LL) <= 1}
+        if local_ax_ord == {LL} and ordc.get(LL, {"non_monomial": 0})["non_monomial"] > 0:
+            present_at.append(LL)
+    only_if_bound = max(present_at) if present_at else None
+    if mut("MUT-SCALE-PRESENCE"):
+        present_at = [2, 3, 4]
+    LD.gate("G-SCALE-PRESENCE-DERIVED",
+            "the non-monomial-local-axis half of the scale statement is derived "
+            "from the measured order census, not typed: it is an ONLY-IF bound "
+            "with a measured presence set, and the presence set is NOT the whole "
+            "interval below the bound",
+            present_at == [LL for LL in L_SWEEP
+                           if ordc.get(LL, {"non_monomial": 0})["non_monomial"] > 0
+                           and {elt_order(v, LL) for v in product(range(LL), repeat=2)
+                                if any(v) and torus_absmax(v, LL) <= 1} == {LL}]
+            and only_if_bound is not None
+            and present_at != [LL for LL in L_SWEEP if LL <= only_if_bound],
+            "non-monomial local axis present at L in %s; only-if bound L<=%s; "
+            "the interval below the bound is %s"
+            % (present_at, only_if_bound,
+               [LL for LL in L_SWEEP if LL <= only_if_bound]))
+    S["scale_precheck"] = {"locality_iff_L_at_least": thresholds[2],
+                           "non_monomial_local_only_if_L_at_most": only_if_bound,
+                           "non_monomial_local_present_at": present_at,
                            "unique": admissible}
 
-    # ---------------- build the generator pool at (d=2, L=4) ---------------
+    # ALPHABET INDEPENDENCE.  Below the locality threshold no alphabet can help,
+    # because locality is a property of the stage alone; above the collapse
+    # threshold no alphabet can help, because the collapse is a theorem over any
+    # field.  So the admissible set is {4} for EVERY alphabet enlargement.
+    locality_sizes = [r["L"] for r in routed_rows if r["d"] == 2 and r["locality"]]
+    theorem_free = [LL for LL in L_SWEEP if LL < 5]
+    alphabet_independent = sorted(set(locality_sizes) & set(theorem_free))
+    if mut("MUT-ALPHABET-INDEP"):
+        alphabet_independent = alphabet_independent + [3]
+    LD.gate("G-ALPHABET-INDEPENDENCE",
+            "the uniqueness survives every alphabet enlargement: the sizes "
+            "excluded by locality are excluded by the stage and the sizes "
+            "excluded at order >= 5 are excluded by the collapse theorem over "
+            "any field, so the only size an enlarged alphabet could add lies in "
+            "their intersection, which is the admitted size itself",
+            alphabet_independent == admissible and lag_ok and dom_bad == 0,
+            "sizes bearing locality=%s; sizes below the collapse threshold=%s; "
+            "intersection=%s; admitted=%s"
+            % (sorted(set(locality_sizes)), theorem_free, alphabet_independent,
+               admissible))
+    S["alphabet_independence"] = {
+        "locality_sizes": sorted(set(locality_sizes)),
+        "below_collapse_threshold": theorem_free,
+        "intersection": alphabet_independent}
+    S["admissible_scales"] = admissible
+
+    # ---------------- build the generator pool at the ADMITTED size --------
     say("[3/12] the generator pool")
-    L = 4
+    L = admissible[0]
+    if mut("MUT-LATTICE-UNBOUND"):
+        L = admissible[0] + 1
+    LD.gate("G-LATTICE-BOUND-TO-ADMISSIBLE",
+            "the lattice the census runs on is the lattice the precheck "
+            "admitted: L is taken FROM the measured admissible set, never typed "
+            "beside it",
+            L == admissible[0] and len(admissible) == 1
+            and S["scale_precheck"]["unique"] == admissible,
+            "census L=%d admissible=%s" % (L, admissible))
     sites = list(product(range(L), repeat=2))
     NS = len(sites)
     IDX = {s: i for i, s in enumerate(sites)}
@@ -1112,6 +1630,9 @@ def build_state(break_anchor=None):
     axis_info = {a: {"ord": elt_order(a, L), "radius": torus_absmax(a, L)} for a in axes}
 
     def axis_gens(a):
+        memo_key = (tuple(alphabet), L, a)
+        if memo_key in _AXIS_MEMO:
+            return {k: dict(v) for k, v in _AXIS_MEMO[memo_key].items()}
         out = {}
         for trip in product(alphabet, repeat=3):
             c = {}
@@ -1123,7 +1644,8 @@ def build_state(break_anchor=None):
                 continue
             if coef_autocorr_unitary(c, sites, addv):
                 out[key] = c
-        return out
+        _AXIS_MEMO[memo_key] = out
+        return {k: dict(v) for k, v in out.items()}
 
     def gauge_orbit(key):
         return {tuple(sorted((o, cmul(zpow(t), v)) for o, v in key)) for t in range(8)}
@@ -1270,10 +1792,15 @@ def build_state(break_anchor=None):
          "fibre": 1, "why": "read from the anchored stage at PV-I7-LINKS; the "
                             "radius-1 ball containing it is measured"},
         {"choice": "the neighbourhood connective",
-         "value": CONNECTIVES[0], "class": "GENUINELY-FREE",
-         "fibre": len(CONNECTIVES),
-         "why": "both connectives are swept and the threshold delta is the "
-                "parity witness"},
+         "value": forced_connective, "class": "FORCED",
+         "fibre": 1,
+         "why": "FORCED by the anchored link set: the anchored diagonal link "
+                "(1,1) has max-norm 1 and sum-norm 2, so it lies inside the "
+                "max-norm radius-1 ball and outside the sum-norm one.  Exactly "
+                "one of the two declared connectives can carry the stage's own "
+                "links; the other is swept only to measure what it would have "
+                "cost (threshold delta %d, admissible set %s)"
+                % (delta, admissible_excluded)},
         {"choice": "the lattice size L", "value": str(admissible),
          "class": "FORCED", "fibre": len(admissible),
          "why": "measured: exactly one size in the swept range carries both "
@@ -1284,9 +1811,11 @@ def build_state(break_anchor=None):
                 "above order four is proved alphabet-independently"},
         {"choice": "the stencil", "value": "3-term axis {0, a, -a}",
          "class": "GENUINELY-FREE", "fibre": 2,
-         "why": "the 3-term axis stencil is swept at every order and the "
-                "5-point stencil is swept as the declared extension; the "
-                "9-point stencil is not swept"},
+         "why": "free AT the admitted size and only there: the Moore-ball "
+                "collapse theorem removes every non-monomial local stencil at "
+                "L >= 5 over any field, but at L = 4 the 5-point stencil "
+                "carries %d further non-monomial generators that this census "
+                "does not examine" % fp4["non_monomial"]},
         {"choice": "the axis set", "value": "%d axes" % len(axes),
          "class": "FORCED", "fibre": len(axes),
          "why": "exhaustive: every nonzero offset modulo sign, %d of them "
@@ -1375,6 +1904,16 @@ def build_state(break_anchor=None):
     pelems, pnames = point_maps()
     swap_idx = pnames.index("r1s1")  # coordinate swap: the anchored relabelling
 
+    PT_PERM = {pi: tuple(IDX[pelems[pi](x)] for x in sites)
+               for pi in range(len(pelems))}
+
+    def act_on_matrix(M, pi, w):
+        """the point element acting on the MATRIX by relabelling its index
+        pair; the transport verification's own route."""
+        p = PT_PERM[pi]
+        q = tuple(IDX[addv(sites[i], w)] for i in range(NS))
+        return {(q[p[i]], q[p[j]]): v for (i, j), v in M.items()}
+
     trans_stab = {}
     for g in pool:
         st = [w for w in sites if conj_shift(w, g["mat"]) == g["mat"]]
@@ -1415,19 +1954,66 @@ def build_state(break_anchor=None):
     if mut("MUT-REALIZATION-PROMOTE"):
         for k in levels:
             levels[k] = "FULL"
+    if mut("MUT-LEVEL-PROMOTE-ONE"):
+        one = sorted(k for k, v in levels.items() if v != "FULL")[-1]
+        levels[one] = "FULL"
+    if mut("MUT-LEVEL-DEMOTE-ONE"):
+        one = sorted(k for k, v in levels.items() if v == "FULL")[0]
+        levels[one] = "OCC"
     S["transport_levels"] = {"declared": list(LEVELS),
                              "per_generator": {g["name"]: levels[g["name"]] for g in pool},
                              "translation_stabiliser": trans_stab,
                              "counts": {lv: sum(1 for v in levels.values() if v == lv)
                                         for lv in LEVELS}}
     LD.gate("G-REALIZATION-LEVELS",
-            "every generator declares which fields it transports, measured: "
-            "occupation by the translation stabiliser, axis by full covariance, "
-            "phase register by equivariance of the coefficient label",
+            "the transport labels are well formed: every name is legal and "
+            "there is exactly one per generator.  This row is a DISCLOSURE; the "
+            "per-object obligation is discharged at the gate below",
             set(levels.values()) <= set(LEVELS)
-            and len(levels) == len(pool)
-            and len(set(levels.values())) >= 3,
-            "counts %s" % S["transport_levels"]["counts"])
+            and len(levels) == len(pool),
+            "counts %s" % S["transport_levels"]["counts"], kind="DISCLOSURE")
+
+    # THE PER-OBJECT GATE (v14 #87: gates bind objects, not cardinalities).
+    # Every individual classification is recomputed by a route that shares no
+    # helper with the classifier: the stabiliser by explicit permutation-matrix
+    # products rather than by index relabelling, and the covariance by acting on
+    # the MATRIX and testing gauge-canonical membership rather than by acting on
+    # the coefficient map.
+    pool_canon = {canon_key_matrix(g["mat"]) for g in pool}
+    check_levels = {}
+    for g in pool:
+        st2 = 0
+        for w in sites:
+            P = {(IDX[addv(x, w)], IDX[x]): ONE for x in sites}
+            Pinv = {(j, i): v for (i, j), v in P.items()}
+            if mat_mul(mat_mul(P, g["mat"], NS), Pinv, NS) == g["mat"]:
+                st2 += 1
+        if st2 == NS:
+            lvl2 = "OCC+AXIS"
+            ok2 = True
+            for pi in range(len(pelems)):
+                img = act_on_matrix(g["mat"], pi, (0, 0))
+                if canon_key_matrix(img) not in pool_canon:
+                    ok2 = False
+                    break
+            if ok2:
+                lvl2 = "FULL"
+        elif st2 > 1:
+            lvl2 = "OCC"
+        else:
+            lvl2 = "NONE"
+        check_levels[g["name"]] = lvl2
+    mismatched = sorted(nm for nm in levels if levels[nm] != check_levels[nm])
+    LD.gate("G-REALIZATION-LEVELS-PER-GENERATOR",
+            "EVERY individual generator's transport classification is verified "
+            "against its own computed invariant by an independent route: the "
+            "translation stabiliser from explicit permutation-matrix products, "
+            "the covariance from the matrix action's gauge-canonical membership "
+            "in the pool.  A single promotion or demotion dies here",
+            not mismatched and len(check_levels) == len(pool),
+            "generators verified=%d mismatched=%s"
+            % (len(check_levels), mismatched or "none"))
+    S["transport_levels"]["verified_by_second_route"] = len(check_levels)
     maximal = max((lv for lv in LEVELS if any(v == lv for v in levels.values())),
                   key=lambda x: LEVELS.index(x))
     if mut("MUT-REALIZATION-EMPTY"):
@@ -1484,6 +2070,8 @@ def build_state(break_anchor=None):
     rows = []
     route_mismatch, xt_mismatch, ft_mismatch = 0, 0, 0
     ft_checked, dense_checked, xt_checked = 0, 0, 0
+    noncirc_defects = {}
+    colsum_all_bad = 0
     for gv in pool:
         for gu in pool:
             circ = gv["coef"] is not None and gu["coef"] is not None
@@ -1540,6 +2128,12 @@ def build_state(break_anchor=None):
                 if mut("MUT-DEFECT-ZERO"):
                     dd = {}
                 nzc = len(dd)
+                noncirc_defects[(gv["name"], gu["name"])] = dd
+                acc0 = {}
+                for (i, j), v in dd.items():
+                    acc0[j] = cadd(acc0.get(j, ZERO), v)
+                if any(v != ZERO for v in acc0.values()):
+                    colsum_all_bad += 1
             rows.append({"V": gv["name"], "U": gu["name"],
                          "circulant": circ,
                          "level": LEVELS[min(LEVELS.index(levels[gv["name"]]),
@@ -1618,20 +2212,80 @@ def build_state(break_anchor=None):
             "rows=%d cells=%d" % (len(value_rows), sum(len(v["cells"]) for v in value_rows)))
     S["defect_value_census"] = value_rows
 
+    # THE Y1 LESSON AT CENSUS SCALE (v14 #87).  Twelve named rows bind twelve
+    # rows; the census is bound when the WHOLE value multiset is bound.  The
+    # comparison is against a second code path (the cross-term form), and the
+    # multiset carries its own zero-sum identity.
+    by_name = {g["name"]: g for g in pool}
+    if mut("MUT-Y1-UNCENSUSED-ZERO"):
+        censused = {(vr["V"], vr["U"]) for vr in value_rows}
+        for r in rows:
+            if r["defect"] and (r["V"], r["U"]) not in censused:
+                r["defect"] = {}
+                r["values"] = []
+                r["separations"] = []
+                r["rational"] = []
+                r["nonzero_cells"] = 0
+    at_max_rows = [r for r in rows if r["level"] == maximal]
+    full_counts, zsum = {}, ZERO
+    for r in at_max_rows:
+        if r["values"]:
+            for v in r["values"]:
+                full_counts[v] = full_counts.get(v, 0) + 1
+        if r["defect"]:
+            for v in r["defect"].values():
+                zsum = cadd(zsum, v)
+    recomp_counts = {}
+    recomp_rows = 0
+    for r in at_max_rows:
+        gv2, gu2 = by_name[r["V"]], by_name[r["U"]]
+        if gv2["coef"] is None or gu2["coef"] is None:
+            continue
+        recomp_rows += 1
+        dx = defect_crossterms(gv2["coef"], gu2["coef"], sites, subv)
+        for k in sorted(dx):
+            sv = cstr(dx[k])
+            recomp_counts[sv] = recomp_counts.get(sv, 0) + 1
+    if mut("MUT-VALUE-MULTISET"):
+        full_counts = dict(full_counts)
+        full_counts[sorted(full_counts)[0]] += 1
+    LD.gate("G-DEFECT-VALUE-CENSUS-FULL",
+            "the WHOLE value multiset of the verdict-bearing census -- every "
+            "distinct exact value with its cell count -- is bound against a "
+            "recomputation by a second code path, and the multiset carries its "
+            "own exact zero-sum identity.  Zeroing any row, censused or not, "
+            "dies here",
+            full_counts == recomp_counts and zsum == ZERO
+            and recomp_rows == len(at_max_rows) and len(full_counts) > 0,
+            "values=%d rows recomputed=%d of %d; multiset equal=%s; sum of all "
+            "cells=%s" % (len(full_counts), recomp_rows, len(at_max_rows),
+                          full_counts == recomp_counts, cstr(zsum)))
+    S["defect_value_multiset"] = [{"value": k, "cells": full_counts[k]}
+                                  for k in sorted(full_counts)]
+
     colsum_bad = 0
-    for r in rows[:64]:
+    colsum_checked = 0
+    for r in rows:
         if r["defect"] is None:
             continue
+        colsum_checked += 1
         acc = ZERO
         for k, v in r["defect"].items():
             acc = cadd(acc, v)
         if acc != ZERO:
             colsum_bad += 1
+    colsum_bad += colsum_all_bad
+    colsum_checked += len(noncirc_defects)
     if mut("MUT-COLUMN-SUM"):
         colsum_bad = 1
     LD.gate("G-DEFECT-COLUMN-SUMS",
-            "each defect column sums to zero -- both composites are stochastic",
-            colsum_bad == 0, "violations=%d of the first 64 rows" % colsum_bad)
+            "each defect column sums to zero -- both composites are stochastic. "
+            "FORCED (|U| entrywise-squared is doubly stochastic for unitary U); "
+            "the check is widened from a 64-row sample to EVERY census row so "
+            "the evidence matches the claim",
+            colsum_bad == 0 and colsum_checked == len(rows),
+            "violations=%d over %d of %d census rows"
+            % (colsum_bad, colsum_checked, len(rows)), kind="DISCLOSURE")
 
     # ---------------- the Markovian control -------------------------------
     say("[6/12] the Markovian control and the defect algebra")
@@ -1655,6 +2309,32 @@ def build_state(break_anchor=None):
             "annihilator theorem, measured here)",
             len(mk_nonzero) == 0 and len(mk) > 0,
             "%d of %d Markovian pairs nonzero" % (len(mk_nonzero), len(mk)))
+
+    # the same claim, keyed on the OBJECT rather than on its count (v14 #87).
+    # "the pairwise sum through the cut is literally empty" is a statement about
+    # the defect dictionaries, so the gate reads the dictionaries.
+    mk_obj_bad, mk_obj_checked = [], 0
+    for r in mk:
+        if r["defect"] is not None:
+            obj = r["defect"]
+        else:
+            obj = noncirc_defects.get((r["V"], r["U"]))
+            if obj is None:
+                gvx = [g for g in pool if g["name"] == r["V"]][0]
+                gux = [g for g in pool if g["name"] == r["U"]][0]
+                obj = defect_dense(gvx["mat"], gux["mat"], NS)
+        mk_obj_checked += 1
+        if mut("MUT-MARKOV-OBJECT") and mk_obj_checked == 1:
+            obj = {(0, 0): ONE}
+        if obj:
+            mk_obj_bad.append((r["V"], r["U"], len(obj)))
+    LD.gate("G-MARKOV-ZERO-OBJECT",
+            "the Markovian zero is bound to the defect OBJECT and not to a "
+            "count: every one of the Markovian rows' defect dictionaries is "
+            "read and is literally empty",
+            not mk_obj_bad and mk_obj_checked == len(mk),
+            "objects read=%d of %d Markovian rows; non-empty=%s"
+            % (mk_obj_checked, len(mk), mk_obj_bad[:3] or "none"))
     free_pairs = [r for r in rows if r["V"] not in mono_names and r["U"] not in mono_names]
     free_nz = [r for r in free_pairs if r["nonzero_cells"] > 0]
     if mut("MUT-MARKOV-NOPOS"):
@@ -1750,20 +2430,25 @@ def build_state(break_anchor=None):
         z = zpow(t)
         for g1 in circ_pool[:5]:
             for g2 in circ_pool[:5]:
-                gauge_n += 1
+                gauge_n += 2
                 D1 = {(i, i): z for i in range(NS)}
-                lhs = defect_dense(mat_mul(D1, g1["mat"], NS), g2["mat"], NS)
                 base = defect_dense(g1["mat"], g2["mat"], NS)
-                if mut("MUT-GAUGE-SELFTEST") and gauge_n == 3:
+                lhs = defect_dense(mat_mul(D1, g1["mat"], NS), g2["mat"], NS)
+                rhs = defect_dense(g1["mat"], mat_mul(g2["mat"], D1, NS), NS)
+                if mut("MUT-GAUGE-SELFTEST") and gauge_n == 6:
                     lhs = {}
+                if mut("MUT-GAUGE-SELFTEST-RIGHT") and gauge_n == 6:
+                    rhs = {}
                 fresh = {k: cmul_fresh(v, ONE) for k, v in base.items()}
-                if lhs != base or fresh != base:
+                if lhs != base or rhs != base or fresh != base:
                     gauge_bad += 1
     LD.gate("G-GAUGE-SELFTEST",
-            "the quantity is invariant under the symmetry it claims: the outer "
-            "torus (the anchored gauge row) leaves the defect fixed, evaluated "
-            "with the product cache cleared and a cache-free recomputation",
-            gauge_bad == 0, "checked=%d violations=%d" % (gauge_n, gauge_bad))
+            "the quantity is invariant under the symmetry it claims, on BOTH "
+            "factors: a global phase on the left factor and a global phase on "
+            "the right factor each leave the defect fixed, evaluated with the "
+            "product cache cleared and a cache-free recomputation alongside",
+            gauge_bad == 0, "directions checked=%d violations=%d"
+            % (gauge_n, gauge_bad))
     handle_moves = 0
     for g1 in circ_pool[:6]:
         for g2 in circ_pool[:6]:
@@ -1813,9 +2498,20 @@ def build_state(break_anchor=None):
     # gauge fixing) and vary only the radius
     def coefclass(g):
         return tuple(sorted(cstr(v) for v in g["coef"].values())) if g["coef"] else None
+    def axisclass(g):
+        """the FULL gauge class relative to the axis: which offset carries
+        which value, read in axis coordinates.  Unlike the value multiset this
+        holds the gauge fixing equal."""
+        if not g["coef"] or g["axis"] is None:
+            return None
+        a = g["axis"]
+        lab = {(0, 0): "0", a: "+a", smul(L - 1, a): "-a"}
+        return tuple(sorted((lab.get(o, "?"), cstr(v)) for o, v in g["coef"].items()))
+
     loc4 = [g for g in pool if g["kind"] == "CIRC" and g["axis_ord"] == 4 and g["radius"] == 1]
     nl4 = [g for g in pool if g["kind"] == "CIRC" and g["axis_ord"] == 4 and g["radius"] > 1]
     matched, matched_agree = 0, 0
+    distinct_comparisons = {}
     for gv in loc4:
         for gu in loc4:
             partner_v = [h for h in nl4 if coefclass(h) == coefclass(gv)]
@@ -1823,19 +2519,67 @@ def build_state(break_anchor=None):
             if not partner_v or not partner_u:
                 continue
             matched += 1
+            key = (partner_v[0]["name"], partner_u[0]["name"])
+            distinct_comparisons[key] = distinct_comparisons.get(key, 0) + 1
             a = defect_conv(gv["coef"], gu["coef"], sites, subv)
             b = defect_conv(partner_v[0]["coef"], partner_u[0]["coef"], sites, subv)
             if sorted(cstr(v) for v in a.values()) == sorted(cstr(v) for v in b.values()):
                 matched_agree += 1
+    # the SECOND matching, on the full axis-relative gauge class rather than on
+    # the value multiset: the coordinate the first matching does not hold equal.
+    gmatched, gmatched_agree = 0, 0
+    gdistinct = set()
+    for gv in loc4:
+        for gu in loc4:
+            pv = [h for h in nl4 if axisclass(h) == axisclass(gv)]
+            pu = [h for h in nl4 if axisclass(h) == axisclass(gu)]
+            if not pv or not pu:
+                continue
+            gmatched += 1
+            gdistinct.add((pv[0]["name"], pu[0]["name"]))
+            a = defect_conv(gv["coef"], gu["coef"], sites, subv)
+            b = defect_conv(pv[0]["coef"], pu[0]["coef"], sites, subv)
+            if sorted(cstr(v) for v in a.values()) == sorted(cstr(v) for v in b.values()):
+                gmatched_agree += 1
     if mut("MUT-MATCHED-EMPTY"):
         matched = 0
     LD.gate("G-LOCALITY-LIKE-FOR-LIKE",
             "the local/non-local contrast is read at matched coordinates -- same "
-            "coefficient class, same axis order, same gauge fixing -- and the "
-            "matched table is the primary object",
+            "coefficient value multiset, same axis order -- and the matched "
+            "table is the primary object",
             matched > 0,
             "matched pairs=%d value-multiset agreements=%d" % (matched, matched_agree))
-    S["like_for_like"] = {"matched_pairs": matched, "value_multiset_agreements": matched_agree}
+    mult = {}
+    for v in distinct_comparisons.values():
+        mult[v] = mult.get(v, 0) + 1
+    n_distinct = len(distinct_comparisons)
+    if mut("MUT-MATCHED-DISTINCT"):
+        n_distinct = matched
+    LD.gate("G-LIKE-FOR-LIKE-DISTINCT",
+            "the matched count is WEIGHTED: the matching selects a partner by "
+            "coefficient value multiset, so the ordered comparisons resolve to a "
+            "smaller number of DISTINCT non-local comparisons with measured "
+            "multiplicities, and both numbers are reported.  A second matching "
+            "on the full axis-relative gauge class -- the coordinate the first "
+            "does not hold equal -- is measured alongside",
+            0 < n_distinct < matched
+            and sum(k * v for k, v in mult.items()) == matched
+            and gmatched > 0 and len(gdistinct) > n_distinct,
+            "value-multiset matching: %d ordered comparisons drawn from %d "
+            "distinct non-local pairs, multiplicities %s; gauge-class matching: "
+            "%d ordered comparisons from %d distinct pairs, %d agreements"
+            % (matched, n_distinct,
+               {k: v for k, v in sorted(mult.items(), reverse=True)},
+               gmatched, len(gdistinct), gmatched_agree))
+    S["like_for_like"] = {"matched_pairs": matched,
+                          "value_multiset_agreements": matched_agree,
+                          "distinct_comparisons": n_distinct,
+                          "multiplicities": {str(k): v for k, v
+                                             in sorted(mult.items(), reverse=True)},
+                          "matching_species": "coefficient value multiset",
+                          "gauge_class_matched_pairs": gmatched,
+                          "gauge_class_distinct_comparisons": len(gdistinct),
+                          "gauge_class_agreements": gmatched_agree}
     if mut("MUT-NONLOCAL-RADIUS"):
         nl4 = []
     LD.gate("G-NONLOCAL-CONTROL",
@@ -2040,10 +2784,67 @@ def build_state(break_anchor=None):
     LD.gate("G-TWOPOINT-LIGHTCONE",
             "the support of the composed propagator starts at the generator's "
             "own radius and spreads no faster than one neighbourhood per step, "
-            "bounded by the lattice half-width; it is not monotone, because the "
-            "torus wraps",
+            "bounded by the lattice half-width.  DISCLOSURE: at the admitted "
+            "size the bound is vacuous above radius 0 -- see the gate below",
             cone_ok, "generators=%d max radius=%d attaining the half-width=%d"
-            % (len(cone), max(max(r["radius_by_step"]) for r in cone), cone_saturates))
+            % (len(cone), max(max(r["radius_by_step"]) for r in cone),
+               cone_saturates), kind="DISCLOSURE")
+
+    # HOW MUCH CONTENT the cone bound has at this size, measured exhaustively
+    # over every conceivable profile rather than asserted.
+    violators = {}
+    for prof in product(range(L // 2 + 1), repeat=4):
+        r0 = prof[0]
+        bad = any(prof[n] > min((n + 1) * r0, L // 2) for n in range(4))
+        if bad:
+            violators[r0] = violators.get(r0, 0) + 1
+    radii_present = sorted({row["single_step_radius"] for row in cone})
+    content_radii = sorted(violators)
+    if mut("MUT-LIGHTCONE-VACUITY"):
+        content_radii = radii_present
+    LD.gate("G-LIGHTCONE-VACUITY-MEASURED",
+            "the cone bound's content is measured, not assumed: over every "
+            "conceivable radius profile at this lattice size the bound can fail "
+            "only at single-step radius 0, so for every generator of radius >= 1 "
+            "the clause is forced and the verdict must say so",
+            content_radii == [0] and len(violators) == 1,
+            "profiles swept=%d; single-step radii at which the bound can fail "
+            "at all=%s (violating profiles by radius %s); single-step radii "
+            "present in the family=%s"
+            % ((L // 2 + 1) ** 4, content_radii,
+               {k: v for k, v in sorted(violators.items())}, radii_present))
+    S["lightcone_vacuity"] = {"profiles_swept": (L // 2 + 1) ** 4,
+                              "radii_with_content": content_radii,
+                              "violating_profiles": {str(k): v for k, v
+                                                     in sorted(violators.items())},
+                              "radii_present": radii_present}
+
+    # the MEASURED content the verdict carries in its place.
+    prof_counts = {}
+    for row in cone:
+        prof_counts[tuple(row["radius_by_step"])] = \
+            prof_counts.get(tuple(row["radius_by_step"]), 0) + 1
+    n_profiles = len(prof_counts)
+    if mut("MUT-RADIUS-PROFILES"):
+        n_profiles = 1
+    LD.gate("G-TWOPOINT-RADIUS-PROFILES",
+            "the measurement the cone bound is not: the composed propagator's "
+            "radius profile over the first four powers is censused, several "
+            "distinct profiles occur, and the half-width is attained by some "
+            "generators and not by all",
+            n_profiles > 1 and 0 < cone_saturates < len(cone)
+            and sum(prof_counts.values()) == len(cone),
+            "distinct radius profiles=%d over %d generators %s; attaining the "
+            "half-width=%d of %d"
+            % (n_profiles, len(cone),
+               {"".join(str(x) for x in k): v
+                for k, v in sorted(prof_counts.items())},
+               cone_saturates, len(cone)))
+    S["radius_profiles"] = {"distinct": n_profiles,
+                            "profiles": {"".join(str(x) for x in k): v
+                                         for k, v in sorted(prof_counts.items())},
+                            "half_width_attained": cone_saturates,
+                            "generators": len(cone)}
     ord_names = sorted(orders)[::7]
     ord_ok = (all(v is not None for v in orders.values())
               and all(orders_raw[k] % orders[k] == 0 for k in orders)
@@ -2066,6 +2867,10 @@ def build_state(break_anchor=None):
     S["lightcone"] = cone
     S["orders"] = orders
     S["orders_raw"] = orders_raw
+    S["raw_order_set"] = sorted({v for v in orders_raw.values() if v})
+    S["period_selftest"] = {"combinations": 6 * 7,
+                            "projective_invariant": proj_inv,
+                            "raw_moved": raw_moves}
 
     # ---------------- transformation-type classes -------------------------
     say("[8/12] the transformation-type class census")
@@ -2172,19 +2977,75 @@ def build_state(break_anchor=None):
             len(orb_anchored) >= len(orb_extended) and len(orb_anchored) > 0,
             "anchored classes=%d extended classes=%d"
             % (len(orb_anchored), len(orb_extended)))
+    # DO THE DECLARED INVARIANTS SEPARATE THE CLASSES?  Constant on orbits is
+    # one property; separating is another, and Wigner's labels have both.
+    label_of = {}
+    for o in orb_extended:
+        label_of[o["representative"]] = (o["size"], o["kind"], o["support"],
+                                         o["radius"], o["axis_ord"],
+                                         o["level"], o["order"])
+    n_labels = len({v for v in label_of.values()})
+    collisions = {}
+    for rep, lab in label_of.items():
+        collisions.setdefault(lab, []).append(rep)
+    shared = {k: v for k, v in collisions.items() if len(v) > 1}
+    # the completion: adding the axis's point-group orbit (a DIRECTION label)
+    ax_orbit = {}
+    for a in axes:
+        key = frozenset({f(a) for f in pelems} | {smul(L - 1, f(a)) for f in pelems})
+        ax_orbit[a] = key
+    dir_labels = set()
+    for o in orb_extended:
+        g0 = [x for x in pool if x["name"] == o["representative"]][0]
+        dir_labels.add(label_of[o["representative"]]
+                       + (str(sorted(ax_orbit.get(g0["axis"], frozenset()))),))
+    if mut("MUT-CLASS-LABELS"):
+        n_labels = len(orb_extended)
+    LD.gate("G-CLASS-LABELS-NONSEPARATING",
+            "the declared class invariants are constant on every orbit but do "
+            "NOT separate the classes: the label count is measured against the "
+            "class count, the collisions are printed, and the completion by a "
+            "direction label is measured too",
+            0 < n_labels < len(orb_extended)
+            and len(dir_labels) > n_labels
+            and sum(len(v) for v in collisions.values()) == len(orb_extended),
+            "classes=%d distinct invariant labels=%d (shared labels=%d, the "
+            "largest shared by %d classes); with a direction label added=%d"
+            % (len(orb_extended), n_labels, len(shared),
+               max([len(v) for v in shared.values()] or [0]), len(dir_labels)))
+    S["class_labels"] = {
+        "classes": len(orb_extended), "distinct_labels": n_labels,
+        "with_direction_label": len(dir_labels),
+        "shared": [{"label": [str(x) for x in k], "classes": v}
+                   for k, v in sorted(shared.items(), key=lambda kv: str(kv[0]))]}
+
     trans_only = orbit_census([pnames.index("r0s0")], "TRANSLATIONS")
     circ_singletons = sum(1 for o in trans_only
                           if o["kind"] == "CIRC" and o["orbit_keys"] == 1)
     if mut("MUT-TRANS-TRIVIAL"):
         circ_singletons = 0
     LD.gate("G-CLASS-TRANSLATION-TRIVIAL",
-            "the translation group acts trivially on the circulant family and "
-            "non-trivially on the controls -- measured, not assumed",
-            circ_singletons == sum(1 for o in trans_only if o["kind"] == "CIRC")
-            and any(o["orbit_keys"] > 1 for o in trans_only if o["kind"] != "CIRC"),
-            "circulant translation orbits of size 1: %d; control orbits >1: %d"
-            % (circ_singletons,
-               sum(1 for o in trans_only if o["kind"] != "CIRC" and o["orbit_keys"] > 1)))
+            "the translation group acts trivially on the circulant family. "
+            "FORCED: a coefficient-map matrix commutes with every translation by "
+            "construction, so the singleton orbits are an identity.  The row is "
+            "a disclosure; the measured half is the next gate",
+            circ_singletons == sum(1 for o in trans_only if o["kind"] == "CIRC"),
+            "circulant translation orbits of size 1: %d of %d"
+            % (circ_singletons, sum(1 for o in trans_only if o["kind"] == "CIRC")),
+            kind="DISCLOSURE")
+    controls_moving = sum(1 for o in trans_only
+                          if o["kind"] != "CIRC" and o["orbit_keys"] > 1)
+    if mut("MUT-CONTROLS-INERT"):
+        controls_moving = 0
+    LD.gate("G-CLASS-CONTROLS-MOVE",
+            "the measured half of the same reading, and what makes the "
+            "covariance census non-vacuous: the CONTROLS do move under the "
+            "translation action, so the trivial action on the family is a fact "
+            "about the family and not about the action",
+            controls_moving > 0,
+            "control translation orbits of size > 1: %d of %d control classes"
+            % (controls_moving,
+               sum(1 for o in trans_only if o["kind"] != "CIRC")))
     S["classes"] = {"anchored_group_order": len(anchored_idxs) * len(sites),
                     "extended_group_order": len(extended_idxs) * len(sites),
                     "anchored_classes": len(orb_anchored),
@@ -2194,6 +3055,49 @@ def build_state(break_anchor=None):
                     "anchored": [{k: v for k, v in o.items() if k != "members"}
                                  for o in orb_anchored]}
 
+    # ---------------- the commutator census -------------------------------
+    # The most consequential structural fact on the stage, and the datum R5
+    # inherits: WHICH generators fail to commute, by stratum.
+    def stratum_of(gv, gu):
+        ks = (gv["kind"], gu["kind"])
+        if "SCRAM" in ks:
+            return "WITH-SCRAMBLE"
+        if ks == ("CIRC", "CIRC"):
+            return "CIRC-CIRC-THE-VERDICT-STRATUM"
+        if ks == ("BRICK", "BRICK"):
+            return "BRICK-BRICK"
+        return "CIRC-BRICK"
+
+    comm_rows = {}
+    for gv in pool:
+        for gu in pool:
+            st = stratum_of(gv, gu)
+            rec = comm_rows.setdefault(st, {"pairs": 0, "noncommuting": 0})
+            rec["pairs"] += 1
+            if mat_mul(gv["mat"], gu["mat"], NS) != mat_mul(gu["mat"], gv["mat"], NS):
+                rec["noncommuting"] += 1
+    verdict_stratum = comm_rows["CIRC-CIRC-THE-VERDICT-STRATUM"]
+    noncomm_outside = sum(v["noncommuting"] for k, v in comm_rows.items()
+                          if k != "CIRC-CIRC-THE-VERDICT-STRATUM")
+    if mut("MUT-COMMUTATOR"):
+        verdict_stratum = dict(verdict_stratum, noncommuting=1)
+    LD.gate("G-COMMUTATOR-CENSUS",
+            "the verdict-bearing stratum is abelian and the excluded stratum is "
+            "not: every ordered pair of the pool is tested for commutation and "
+            "the counts are reported per stratum.  The zero on the verdict "
+            "stratum is FORCED (circulant convolution on an abelian group "
+            "commutes); what is measured is that the non-commutativity on this "
+            "stage lives entirely in the generators the mandatory realization "
+            "gate excludes",
+            verdict_stratum["noncommuting"] == 0 and noncomm_outside > 0
+            and sum(v["pairs"] for v in comm_rows.values()) == len(pool) ** 2,
+            "%s; non-commuting outside the verdict stratum=%d"
+            % ({k: "%d of %d" % (v["noncommuting"], v["pairs"])
+                for k, v in sorted(comm_rows.items())}, noncomm_outside),
+            kind="FORCED")
+    S["commutator_census"] = {k: dict(v) for k, v in sorted(comm_rows.items())}
+    S["commutator_census"]["noncommuting_outside_verdict_stratum"] = noncomm_outside
+
     # ---------------- realization gate bites ------------------------------
     say("[9/12] the realization gate and the state-motion check")
     below = [r for r in rows if r["level"] != maximal and r["nonzero_cells"] > 0]
@@ -2201,12 +3105,24 @@ def build_state(break_anchor=None):
         below = []
     at_max = [r for r in rows if r["level"] == maximal]
     at_max_nz = [r for r in at_max if r["nonzero_cells"] > 0]
+    # the gate's PRINCIPLED bite: the excluded rows that do not involve the
+    # deliberately scrambled negative control, which was never a candidate.
+    scram_names = {g["name"] for g in pool if g["kind"] == "SCRAM"}
+    below_control = [r for r in below
+                     if r["V"] in scram_names or r["U"] in scram_names]
+    principled_bite = len(below) - len(below_control)
     LD.gate("G-REALIZATION-GATE-BITES",
             "the realization gate is not vacuous: nonzero defects exist below "
-            "the maximal declared transport and are excluded from the verdict",
-            len(below) > 0 and len(at_max) < len(rows),
-            "excluded nonzero defects=%d; pairs at maximal transport=%d of %d"
-            % (len(below), len(at_max), len(rows)))
+            "the maximal declared transport and are excluded from the verdict. "
+            "The gate's PRINCIPLED bite -- the excluded rows that do not involve "
+            "the negative control -- is measured and reported alongside the "
+            "gross count, because the negative control was never a candidate",
+            len(below) > 0 and len(at_max) < len(rows) and principled_bite > 0,
+            "excluded nonzero defects=%d, of which %d involve the scrambled "
+            "control and %d are the principled bite; pairs at maximal "
+            "transport=%d of %d"
+            % (len(below), len(below_control), principled_bite,
+               len(at_max), len(rows)))
     seg_all = "DEFECT=%d-OF-%d" % (len([r for r in rows if r["nonzero_cells"] > 0]), len(rows))
     seg_max = "DEFECT=%d-OF-%d" % (len(at_max_nz), len(at_max))
     if mut("MUT-REALIZATION-ADMIT"):
@@ -2276,20 +3192,82 @@ def build_state(break_anchor=None):
     LD.gate("G-STATE-COEFFICIENT-BACKGROUND",
             "the defect coefficient is a background object: the matrix "
             "reconstructed from the point-mass responses equals the coefficient "
-            "matrix exactly, so one and the same coefficient serves every "
-            "prepared state",
+            "matrix exactly.  FORCED -- delta(p) = Delta^B p is linear, so the "
+            "point-mass responses ARE the columns of Delta^B for every matrix "
+            "whatever.  On a linear law over a single-occupation sector no "
+            "coefficient CAN move with the state; this row discloses that, it "
+            "does not test it",
             recon == Dm and len(Dm) > 0,
-            "reconstructed cells=%d coefficient cells=%d" % (len(recon), len(Dm)))
+            "reconstructed cells=%d coefficient cells=%d" % (len(recon), len(Dm)),
+            kind="FORCED")
     LD.gate("G-STATE-OBSERVABLE-MOVES",
             "the same instrument shows the OBSERVABLE defect moving with the "
-            "prepared state, so the background reading is a measurement",
+            "prepared state, so the background reading is not an artefact of an "
+            "inert instrument",
             distinct > 1, "distinct responses=%d over %d declared states"
             % (distinct, len(states)))
+
+    # THE PROBE BREADTH.  One pair is not a family-wide statement; the probe set
+    # is declared and its size is printed.
+    probe_set = []
+    for a in circ_pool:
+        if len(probe_set) >= STATE_PROBE_PAIRS:
+            break
+        for b in circ_pool:
+            if len(probe_set) >= STATE_PROBE_PAIRS:
+                break
+            D2 = defect_dense(a["mat"], b["mat"], NS)
+            if D2:
+                probe_set.append((a["name"], b["name"], D2))
+    breadth_rows = []
+    for nm_a, nm_b, D2 in probe_set:
+        def obs(p, D2=D2):
+            out = {}
+            for i in range(NS):
+                acc = ZERO
+                for j in range(NS):
+                    v = D2.get((i, j))
+                    if v is None:
+                        continue
+                    acc = cadd(acc, cmul(v, p[sites[j]]))
+                out[i] = acc
+            return out
+        resp = {nm: obs(p) for nm, p in states}
+        dcount = len({tuple(sorted((k, v) for k, v in r.items()))
+                      for r in resp.values()})
+        rec = {}
+        for j, x in enumerate(sites):
+            for i, v in resp["DELTA-%d%d" % x].items():
+                if v != ZERO:
+                    rec[(i, j)] = v
+        breadth_rows.append({"V": nm_a, "U": nm_b, "distinct_responses": dcount,
+                             "coefficient_reconstructed": rec == D2})
+    n_probes = len(breadth_rows)
+    if mut("MUT-STATE-PROBE-NARROW"):
+        breadth_rows = breadth_rows[:1]
+        n_probes = 1
+    LD.gate("G-STATE-PROBE-BREADTH",
+            "the state-motion reading is taken over a declared probe SET, not a "
+            "single pair, and the count is printed: every probe pair returns the "
+            "same number of distinct responses and reconstructs its coefficient "
+            "exactly",
+            n_probes == STATE_PROBE_PAIRS
+            and all(r["coefficient_reconstructed"] for r in breadth_rows)
+            and len({r["distinct_responses"] for r in breadth_rows}) == 1
+            and breadth_rows[0]["distinct_responses"] == distinct,
+            "probe pairs=%d distinct responses per pair=%s reconstructions "
+            "exact=%d of %d"
+            % (n_probes, sorted({r["distinct_responses"] for r in breadth_rows}),
+               sum(1 for r in breadth_rows if r["coefficient_reconstructed"]),
+               len(breadth_rows)))
     S["state_motion"] = {"states_declared": len(states),
                          "probe_pair": [gv["name"], gu["name"]],
+                         "probe_pairs": n_probes,
+                         "probe_rows": breadth_rows,
                          "distinct_responses": distinct,
                          "coefficient_reconstructed_exactly": recon == Dm,
-                         "verdict_label": "BACKGROUND-COEFFICIENT-OBSERVABLE-MOVES"}
+                         "verdict_label":
+                         "BACKGROUND-BY-CONSTRUCTION-OBSERVABLE-MOVES-MEASURED"}
 
     # ===================================================================
     # SECTION 8.  THE VERDICT
@@ -2306,29 +3284,79 @@ def build_state(break_anchor=None):
                 val_counts[v] = val_counts.get(v, 0) + 1
     S["defect_values"] = [{"value": k, "cells": val_counts[k]}
                           for k in sorted(val_counts)]
+
+    # THE CEILINGS.  Two of the verdict's two-point numbers are arena maxima,
+    # attained rather than profiled, and the verdict must carry them as such.
+    sep_ceiling = L ** d
+    rad_ceiling = L // 2
+    measured_seps = len(sep_union)
+    measured_rad = max([torus_absmax(s, L) for s in sep_union] or [0])
+    if mut("MUT-CEILING"):
+        sep_ceiling = sep_ceiling + 1
+    LD.gate("G-CEILINGS-MEASURED",
+            "the two-point extent numbers are measured against the arena's own "
+            "ceilings: the separation count against every separation the torus "
+            "has, the defect radius against the torus's Chebyshev diameter.  "
+            "Both are attained, so both are reported as ceilings",
+            measured_seps == sep_ceiling and measured_rad == rad_ceiling
+            and sep_ceiling == L ** d and rad_ceiling == L // 2,
+            "separations measured=%d ceiling=%d; max defect radius measured=%d "
+            "ceiling=%d" % (measured_seps, sep_ceiling, measured_rad, rad_ceiling))
+
     counts = {
         "pairs_total": len(rows),
         "pairs_at_maximal": len(at_max),
         "nonzero_at_maximal": len(at_max_nz),
         "nonzero_excluded": len(below),
+        "principled_bite": principled_bite,
         "distinct_values": len(val_multiset),
         "all_rational_rows": rat,
-        "separations": len(sep_union),
-        "max_defect_radius": max([torus_absmax(s, L) for s in sep_union] or [0]),
+        "separations": measured_seps,
+        "separations_ceiling": sep_ceiling,
+        "max_defect_radius": measured_rad,
+        "radius_ceiling": rad_ceiling,
+        "lightcone_content_radii": content_radii,
+        "radius_profiles": n_profiles,
+        "half_width_attained": cone_saturates,
+        "circulants": len(circ_pool),
         "classes_extended": len(orb_extended),
         "classes_anchored": len(orb_anchored),
         "class_sizes": sorted({o["size"] for o in orb_extended}),
+        "class_labels": n_labels,
         "markov_pairs": len(mk), "markov_nonzero": len(mk_nonzero),
+        "commutator_pairs": verdict_stratum["pairs"],
+        "commutator_nonzero": verdict_stratum["noncommuting"],
         "local_nonzero": loc_split["LOCAL"]["nonzero"],
         "local_pairs": loc_split["LOCAL"]["pairs"],
         "nonlocal_nonzero": loc_split["NONLOCAL"]["nonzero"],
         "nonlocal_pairs": loc_split["NONLOCAL"]["pairs"],
+        "matched_pairs": matched,
+        "matched_agreements": matched_agree,
+        "matched_distinct": n_distinct,
         "orders": sorted({v for v in orders.values() if v}),
+        "equal_time": S["equal_time"]["rational_zero"],
         "levels_attained": [lv for lv in LEVELS if any(v == lv for v in levels.values())],
+        "maximal_transport": maximal,
         "admissible_scales": admissible,
+        "locality_threshold": thresholds[2],
+        "only_if_bound": only_if_bound,
+        "present_at": present_at,
+        "connective_tag": S["connective_forcing"]["forced_tag"],
+        "forcing_link": "(%d,%d)" % tuple(
+            max(test_links,
+                key=lambda v: torus_abssum(v, max(L_SWEEP)))),
+        "d": d,
+        "L": L,
+        "field": "Q(ZETA-8)",
+        "alphabet": S["alphabet_size"],
         "pool": len(pool),
+        "stencil": "3-TERM-AXIS",
+        "sector": "SINGLE-OCCUPATION",
+        "swept_range": "L-IN-%d..%d" % (min(L_SWEEP), max(L_SWEEP)),
+        "indivisibility": "DECLARED-BY-DIVISION-EVENT-TIMES",
         "generators_at_maximal": sum(1 for v in levels.values() if v == maximal),
         "state_distinct": distinct,
+        "state_probe_pairs": n_probes,
     }
     if mut("MUT-COUNT-TYPED"):
         counts["nonzero_at_maximal"] = 999
@@ -2343,7 +3371,14 @@ def build_state(break_anchor=None):
             "nonzero at maximal: declared=%d recount=%d"
             % (counts["nonzero_at_maximal"], recount))
 
-    head = derive_head(counts)
+    head_law = derive_head
+    if mut("MUT-PRECHECK-NAMES"):
+        head_law = derive_head_from_precheck_only
+    head = head_law(counts)
+    # the COUNTERFACTUAL the precheck doctrine needs, computed by the law
+    # actually in force and carried as data: with the defect census zeroed, does
+    # the emitted head move?  A head named by the precheck does not.
+    head_under_zeroed_census = head_law(dict(counts, nonzero_at_maximal=0))
     if mut("MUT-VERDICT-HEAD"):
         head = "R4-DEFECT-ABSENT"
     if mut("MUT-VERDICT-HEADS"):
@@ -2356,13 +3391,22 @@ def build_state(break_anchor=None):
     if mut("MUT-VERDICT-NAME"):
         head = "R4-DEFECT-OBSERVED"
     pin_text = src_text["A-PIN-R4"]
-    names = ["R4-DEFECT-PRESENT", "R4-DEFECT-ABSENT", "R4-BLOCKED-AT"]
+    # the pre-registered names are PARSED from the pin's bytes, not typed here,
+    # and are carried into the receipt so the comparator can re-assert them.
+    names = sorted({m.rstrip("-") for m in
+                    re.findall(r"R4-[A-Z][A-Z0-9-]*", pin_text)})
+    names = [n for n in names if not any(n != o and n.startswith(o + "-")
+                                         for o in names)]
     LD.gate("G-VERDICT-PREREGISTERED",
-            "the emitted head is one of the pin's pre-registered names, checked "
-            "against the pin's own verbatim text",
-            any(head == n or head.startswith(n + "-") for n in names)
+            "the emitted head is one of the pin's pre-registered names, parsed "
+            "from the pin's own bytes rather than typed here, and the parsed set "
+            "is exactly the three the pin declares",
+            len(names) == 3
+            and any(head == n or head.startswith(n + "-") for n in names)
             and all(n in pin_text for n in names),
-            "head=%s" % head)
+            "head=%s parsed pre-registered names=%s" % (head, names))
+    S["preregistered_heads"] = names
+    S["head_under_zeroed_census"] = head_under_zeroed_census
 
     segs = build_segments(counts, S, maximal)
     if mut("MUT-VERDICT-DROP"):
@@ -2379,7 +3423,21 @@ def build_state(break_anchor=None):
     if mut("MUT-PAPER-INPUT"):
         verdict = verdict + "-" + os.path.basename(SELF).upper()
     S["verdict"] = {"head": head, "segments": [{"name": a, "text": b} for a, b in segs],
-                    "string": verdict}
+                    "string": verdict,
+                    "preregistered_heads": names,
+                    "head_under_zeroed_census": head_under_zeroed_census}
+    # POST-BUILD head corruption: injected AFTER every verdict gate above has
+    # been evaluated.  Only a comparator that DERIVES the head can catch these.
+    if mut("MUT-HEAD-POST-BUILD"):
+        S["verdict"]["head"] = "R4-BLOCKED-AT-NOTHING"
+        S["verdict"]["string"] = "R4-BLOCKED-AT-NOTHING" + verdict[len(head):]
+    if mut("MUT-HEAD-ABSENT-VARIANT"):
+        S["verdict"]["head"] = "R4-DEFECT-ABSENT-MARKOVIAN-COLLAPSE"
+        S["verdict"]["string"] = ("R4-DEFECT-ABSENT-MARKOVIAN-COLLAPSE"
+                                  + verdict[len(head):])
+    if mut("MUT-HEAD-OFF-PIN"):
+        S["verdict"]["head"] = "R4-QUANTUM-FIELD-CONFIRMED"
+        S["verdict"]["string"] = "R4-QUANTUM-FIELD-CONFIRMED" + verdict[len(head):]
     S["_maximal"] = maximal
 
     return S, LD, pool, rows, sites, NS, orders, levels, orb_extended
@@ -2422,6 +3480,15 @@ def _decoy_gate_that_references_mutant(LD):
 """
 
 
+LAUNDER_DECOY_SOURCE = """
+
+def _decoy_launderer(LD):
+    exempt = None if not mut("MUT-DECOY-LAUNDER") else 1
+    LD.gate("G-DECOY-LAUNDER", "a gate reading a mutant-guarded name",
+            exempt is None, "forbidden shape")
+"""
+
+
 def comparator_that_self_compares(R):
     """the forbidden shape: a comparator routed through the audited path."""
     return derive_head(R["counts"]) + reconstruct_verdict_from_receipt(R)
@@ -2432,83 +3499,185 @@ def comparator_that_reads_prose(R):
     return reconstruct_verdict_from_receipt(R) + str(R.get("arena_declaration", ""))[:12]
 
 
+# EVERY measured value the verdict carries, with the counts key it renders
+# from.  The verdict is assembled from this table and from nothing else, so
+# coverage of the flip probes is structural: G-VERDICT-VALUES-FLIPPABLE
+# perturbs each distinct key and requires the reconstruction to move.
+VERDICT_VALUES = [
+    ("DEFECT.nonzero", "nonzero_at_maximal"),
+    ("DEFECT.pairs", "pairs_at_maximal"),
+    ("DEFECT.transport-level", "maximal_transport"),
+    ("DEFECT.distinct-values", "distinct_values"),
+    ("DEFECT.rational-rows", "all_rational_rows"),
+    ("TWO-POINT.separations", "separations"),
+    ("TWO-POINT.separation-ceiling", "separations_ceiling"),
+    ("TWO-POINT.max-defect-radius", "max_defect_radius"),
+    ("TWO-POINT.radius-ceiling", "radius_ceiling"),
+    ("TWO-POINT.cone-content-radii", "lightcone_content_radii"),
+    ("TWO-POINT.radius-profiles", "radius_profiles"),
+    ("TWO-POINT.half-width-attained", "half_width_attained"),
+    ("TWO-POINT.circulants", "circulants"),
+    ("TWO-POINT.periods", "orders"),
+    ("TWO-POINT.equal-time", "equal_time"),
+    ("CLASSES.extended", "classes_extended"),
+    ("CLASSES.anchored", "classes_anchored"),
+    ("CLASSES.sizes", "class_sizes"),
+    ("CLASSES.distinct-labels", "class_labels"),
+    ("LOCALITY.local-nonzero", "local_nonzero"),
+    ("LOCALITY.local-pairs", "local_pairs"),
+    ("LOCALITY.nonlocal-nonzero", "nonlocal_nonzero"),
+    ("LOCALITY.nonlocal-pairs", "nonlocal_pairs"),
+    ("LOCALITY.matched-agreements", "matched_agreements"),
+    ("LOCALITY.matched-pairs", "matched_pairs"),
+    ("LOCALITY.matched-distinct", "matched_distinct"),
+    ("MARKOV.nonzero", "markov_nonzero"),
+    ("MARKOV.pairs", "markov_pairs"),
+    ("COMMUTATOR.nonzero", "commutator_nonzero"),
+    ("COMMUTATOR.pairs", "commutator_pairs"),
+    ("REALIZATION.levels", "levels_attained"),
+    ("REALIZATION.excluded", "nonzero_excluded"),
+    ("REALIZATION.principled-bite", "principled_bite"),
+    ("STATE.distinct-responses", "state_distinct"),
+    ("STATE.probe-pairs", "state_probe_pairs"),
+    ("SCALE.admissible", "admissible_scales"),
+    ("SCALE.locality-threshold", "locality_threshold"),
+    ("SCALE.only-if-bound", "only_if_bound"),
+    ("SCALE.presence-set", "present_at"),
+    ("SCALE.connective", "connective_tag"),
+    ("SCALE.forcing-link", "forcing_link"),
+    ("SCOPE.d", "d"),
+    ("SCOPE.L", "L"),
+    ("SCOPE.field", "field"),
+    ("SCOPE.alphabet", "alphabet"),
+    ("SCOPE.generators", "pool"),
+    ("SCOPE.stencil", "stencil"),
+    ("SCOPE.sector", "sector"),
+    ("SCOPE.swept-range", "swept_range"),
+    ("SCOPE.indivisibility", "indivisibility"),
+]
+
+
 def build_segments(c, S, maximal):
-    lv = "+".join(c["levels_attained"])
+    def j(key, sep="+"):
+        return sep.join(str(x) for x in c[key])
     segs = [
-        ("DEFECT", "%d-OF-%d-PAIRS-AT-MAXIMAL-TRANSPORT-%s;VALUES=%d-DISTINCT;"
-                   "ALL-RATIONAL-ROWS=%d" %
-         (c["nonzero_at_maximal"], c["pairs_at_maximal"], maximal,
+        ("DEFECT", "%s-OF-%s-PAIRS-AT-MAXIMAL-TRANSPORT-%s;VALUES=%s-DISTINCT;"
+                   "ALL-RATIONAL-ROWS=%s" %
+         (c["nonzero_at_maximal"], c["pairs_at_maximal"], c["maximal_transport"],
           c["distinct_values"], c["all_rational_rows"])),
-        ("TWO-POINT", "SEPARATIONS=%d;MAX-DEFECT-RADIUS=%d;LIGHTCONE=ONE-"
-                      "NEIGHBOURHOOD-PER-STEP;PERIODS=%s;EQUAL-TIME=%s" %
-         (c["separations"], c["max_defect_radius"],
-          "+".join(str(x) for x in c["orders"]), S["equal_time"]["rational_zero"])),
-        ("CLASSES", "EXTENDED=%d;ANCHORED=%d;SIZES=%s" %
-         (c["classes_extended"], c["classes_anchored"],
-          "+".join(str(x) for x in c["class_sizes"]))),
-        ("LOCALITY", "LOCAL=%d-OF-%d;NONLOCAL=%d-OF-%d;DEFECT-INDIFFERENT-AT-"
-                     "MATCHED-COORDINATES=%d-OF-%d" %
+        ("TWO-POINT", "SEPARATIONS=%s-OF-%s-CEILING;MAX-DEFECT-RADIUS=%s-OF-%s-"
+                      "CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIUS-%s;"
+                      "RADIUS-PROFILES=%s;HALF-WIDTH-ATTAINED=%s-OF-%s;"
+                      "PERIODS=%s;EQUAL-TIME=%s" %
+         (c["separations"], c["separations_ceiling"], c["max_defect_radius"],
+          c["radius_ceiling"], j("lightcone_content_radii"),
+          c["radius_profiles"], c["half_width_attained"], c["circulants"],
+          j("orders"), c["equal_time"])),
+        ("CLASSES", "EXTENDED=%s;ANCHORED=%s;SIZES=%s;DISTINCT-INVARIANT-"
+                    "LABELS=%s" %
+         (c["classes_extended"], c["classes_anchored"], j("class_sizes"),
+          c["class_labels"])),
+        ("LOCALITY", "LOCAL=%s-OF-%s;NONLOCAL=%s-OF-%s;DEFECT-INDIFFERENT-AT-"
+                     "MATCHED-VALUE-MULTISET=%s-OF-%s-WEIGHTED-FROM-%s-DISTINCT" %
          (c["local_nonzero"], c["local_pairs"], c["nonlocal_nonzero"],
-          c["nonlocal_pairs"], S["like_for_like"]["value_multiset_agreements"],
-          S["like_for_like"]["matched_pairs"])),
-        ("MARKOV", "%d-OF-%d-NONZERO" % (c["markov_nonzero"], c["markov_pairs"])),
-        ("REALIZATION", "LEVELS=%s;MAXIMAL=%s;EXCLUDED-NONZERO=%d" %
-         (lv, maximal, c["nonzero_excluded"])),
-        ("STATE", "BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-%d-DISTINCT-"
-                  "RESPONSES" % c["state_distinct"]),
-        ("SCALE", "L=%s-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IFF-"
-                  "L<=4)" % "+".join(str(x) for x in c["admissible_scales"])),
-        ("SCOPE", "D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=%d;GENERATORS=%d;"
-                  "FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-"
-                  "CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT" %
-         (S["alphabet_size"], c["pool"])),
+          c["nonlocal_pairs"], c["matched_agreements"], c["matched_pairs"],
+          c["matched_distinct"])),
+        ("MARKOV", "%s-OF-%s-NONZERO" % (c["markov_nonzero"], c["markov_pairs"])),
+        ("COMMUTATOR", "%s-OF-%s-NONZERO-IN-THE-VERDICT-STRATUM" %
+         (c["commutator_nonzero"], c["commutator_pairs"])),
+        ("REALIZATION", "LEVELS=%s;MAXIMAL=%s;EXCLUDED-NONZERO=%s;PRINCIPLED-"
+                        "BITE=%s" %
+         (j("levels_attained"), c["maximal_transport"], c["nonzero_excluded"],
+          c["principled_bite"])),
+        ("STATE", "BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;SINGLE-"
+                  "OCCUPATION);OBSERVABLE-MOVES-AT-%s-DISTINCT-RESPONSES-OVER-"
+                  "%s-PROBE-PAIRS" % (c["state_distinct"], c["state_probe_pairs"])),
+        ("SCALE", "L=%s-UNIQUE(LOCALITY-IFF-L>=%s;NON-MONOMIAL-LOCAL-AXIS-ONLY-"
+                  "IF-L<=%s;PRESENT-AT-L-IN-{%s});CONNECTIVE=%s(FORCED-BY-"
+                  "ANCHORED-LINK-%s)" %
+         (j("admissible_scales"), c["locality_threshold"], c["only_if_bound"],
+          j("present_at", ","), c["connective_tag"], c["forcing_link"])),
+        ("SCOPE", "D=%s;L=%s;FIELD=%s;ALPHABET=%s;GENERATORS=%s;STENCIL=%s;"
+                  "SECTOR=%s;SWEPT-RANGE=%s;INDIVISIBILITY=%s;FINITE-LATTICE-"
+                  "ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-"
+                  "THE-COMPOSED-SEGMENT-DEFECT" %
+         (c["d"], c["L"], c["field"], c["alphabet"], c["pool"], c["stencil"],
+          c["sector"], c["swept_range"], c["indivisibility"])),
     ]
     return segs
 
 
 def reconstruct_verdict_from_receipt(R):
-    """THE INDEPENDENT COMPARATOR.  Rebuilds the complete verdict string from
-    the serialized receipt alone, by a code path that shares no helper with
-    build_segments and reads only receipt fields."""
+    """THE INDEPENDENT COMPARATOR.  Rebuilds the COMPLETE verdict string --
+    head included -- from the serialized receipt alone, by a code path that
+    shares no helper with build_segments, does not call derive_head, and reads
+    no value this function types.  The head is DERIVED here by this
+    comparator's own copy of the head law and re-asserted against the pin's
+    pre-registered names as the receipt carries them."""
     c = R["counts"]
-    tp = R["two_point_profiles"]
+    # the comparator's own head law
+    if not c["admissible_scales"]:
+        hd = "R4-BLOCKED-AT-NO-LOCALITY-BEARING-SCALE"
+    elif c["generators_at_maximal"] == 0 or c["pairs_at_maximal"] == 0:
+        hd = "R4-BLOCKED-AT-EMPTY-MAXIMAL-TRANSPORT-CLASS"
+    elif c["nonzero_at_maximal"] == 0:
+        hd = "R4-DEFECT-ABSENT"
+    else:
+        hd = "R4-DEFECT-PRESENT"
+    pre = R["verdict"]["preregistered_heads"]
+    if not [n for n in pre if hd == n or hd.startswith(n + "-")]:
+        hd = "R4-HEAD-OUTSIDE-THE-PIN"
+    lst = lambda k, s: s.join([str(x) for x in c[k]])
     parts = []
-    hd = R["verdict"]["head"]
-    lv = "+".join(c["levels_attained"])
     parts.append("DEFECT=" + str(c["nonzero_at_maximal"]) + "-OF-" +
                  str(c["pairs_at_maximal"]) + "-PAIRS-AT-MAXIMAL-TRANSPORT-" +
-                 R["realization_census"]["maximal"] + ";VALUES=" +
+                 str(c["maximal_transport"]) + ";VALUES=" +
                  str(c["distinct_values"]) + "-DISTINCT;ALL-RATIONAL-ROWS=" +
                  str(c["all_rational_rows"]))
-    parts.append("TWO-POINT=SEPARATIONS=" + str(c["separations"]) +
-                 ";MAX-DEFECT-RADIUS=" + str(c["max_defect_radius"]) +
-                 ";LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=" +
-                 "+".join([str(x) for x in c["orders"]]) + ";EQUAL-TIME=" +
-                 R["equal_time"]["rational_zero"])
+    parts.append("TWO-POINT=SEPARATIONS=" + str(c["separations"]) + "-OF-" +
+                 str(c["separations_ceiling"]) + "-CEILING;MAX-DEFECT-RADIUS=" +
+                 str(c["max_defect_radius"]) + "-OF-" + str(c["radius_ceiling"]) +
+                 "-CEILING;LIGHTCONE=BOUND-HAS-CONTENT-ONLY-AT-RADIUS-" +
+                 lst("lightcone_content_radii", "+") + ";RADIUS-PROFILES=" +
+                 str(c["radius_profiles"]) + ";HALF-WIDTH-ATTAINED=" +
+                 str(c["half_width_attained"]) + "-OF-" + str(c["circulants"]) +
+                 ";PERIODS=" + lst("orders", "+") + ";EQUAL-TIME=" +
+                 str(c["equal_time"]))
     parts.append("CLASSES=EXTENDED=" + str(c["classes_extended"]) + ";ANCHORED=" +
-                 str(c["classes_anchored"]) + ";SIZES=" +
-                 "+".join([str(x) for x in c["class_sizes"]]))
+                 str(c["classes_anchored"]) + ";SIZES=" + lst("class_sizes", "+") +
+                 ";DISTINCT-INVARIANT-LABELS=" + str(c["class_labels"]))
     parts.append("LOCALITY=LOCAL=" + str(c["local_nonzero"]) + "-OF-" +
                  str(c["local_pairs"]) + ";NONLOCAL=" + str(c["nonlocal_nonzero"]) +
                  "-OF-" + str(c["nonlocal_pairs"]) +
-                 ";DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=" +
-                 str(R["like_for_like"]["value_multiset_agreements"]) + "-OF-" +
-                 str(R["like_for_like"]["matched_pairs"]))
+                 ";DEFECT-INDIFFERENT-AT-MATCHED-VALUE-MULTISET=" +
+                 str(c["matched_agreements"]) + "-OF-" + str(c["matched_pairs"]) +
+                 "-WEIGHTED-FROM-" + str(c["matched_distinct"]) + "-DISTINCT")
     parts.append("MARKOV=" + str(c["markov_nonzero"]) + "-OF-" +
                  str(c["markov_pairs"]) + "-NONZERO")
-    parts.append("REALIZATION=LEVELS=" + lv + ";MAXIMAL=" +
-                 R["realization_census"]["maximal"] + ";EXCLUDED-NONZERO=" +
-                 str(c["nonzero_excluded"]))
-    parts.append("STATE=BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-" +
-                 str(c["state_distinct"]) + "-DISTINCT-RESPONSES")
-    parts.append("SCALE=L=" + "+".join([str(x) for x in c["admissible_scales"]]) +
-                 "-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IFF-L<=4)")
-    parts.append("SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=" +
-                 str(R["alphabet_size"]) + ";GENERATORS=" + str(c["pool"]) +
-                 ";FINITE-LATTICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-"
-                 "CLAIM-BEYOND-THE-COMPOSED-SEGMENT-DEFECT")
-    if len(tp) == 0:
-        parts.append("EMPTY")
+    parts.append("COMMUTATOR=" + str(c["commutator_nonzero"]) + "-OF-" +
+                 str(c["commutator_pairs"]) + "-NONZERO-IN-THE-VERDICT-STRATUM")
+    parts.append("REALIZATION=LEVELS=" + lst("levels_attained", "+") + ";MAXIMAL=" +
+                 str(c["maximal_transport"]) + ";EXCLUDED-NONZERO=" +
+                 str(c["nonzero_excluded"]) + ";PRINCIPLED-BITE=" +
+                 str(c["principled_bite"]))
+    parts.append("STATE=BACKGROUND-COEFFICIENT-BY-CONSTRUCTION(LINEAR-LAW;"
+                 "SINGLE-OCCUPATION);OBSERVABLE-MOVES-AT-" +
+                 str(c["state_distinct"]) + "-DISTINCT-RESPONSES-OVER-" +
+                 str(c["state_probe_pairs"]) + "-PROBE-PAIRS")
+    parts.append("SCALE=L=" + lst("admissible_scales", "+") +
+                 "-UNIQUE(LOCALITY-IFF-L>=" + str(c["locality_threshold"]) +
+                 ";NON-MONOMIAL-LOCAL-AXIS-ONLY-IF-L<=" + str(c["only_if_bound"]) +
+                 ";PRESENT-AT-L-IN-{" + lst("present_at", ",") + "});CONNECTIVE=" +
+                 str(c["connective_tag"]) + "(FORCED-BY-ANCHORED-LINK-" +
+                 str(c["forcing_link"]) + ")")
+    parts.append("SCOPE=D=" + str(c["d"]) + ";L=" + str(c["L"]) + ";FIELD=" +
+                 str(c["field"]) + ";ALPHABET=" + str(c["alphabet"]) +
+                 ";GENERATORS=" + str(c["pool"]) + ";STENCIL=" +
+                 str(c["stencil"]) + ";SECTOR=" + str(c["sector"]) +
+                 ";SWEPT-RANGE=" + str(c["swept_range"]) + ";INDIVISIBILITY=" +
+                 str(c["indivisibility"]) + ";FINITE-LATTICE-ONLY;NO-CONTINUUM-"
+                 "CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOSED-SEGMENT-"
+                 "DEFECT")
     return hd + "<" + "|".join(parts) + ">"
 
 
@@ -2550,121 +3719,486 @@ def build_receipt(S, LD, pool, rows, orders, levels, orbits):
     return R
 
 
-def compliance_sweep(S, LD, mutant_report):
-    kills = {m[0]: m for m in MUTANTS}
+def recount_from_receipt(R):
+    """Recomputes every census-derived headline count from the SERIALIZED
+    census rows.  Shares no helper with the census builder and reads only the
+    receipt."""
+    rows = R["census_rows"]
+    maximal = R["counts"]["maximal_transport"]
+    L = R["counts"]["L"]
+    at_max = [r for r in rows if r["level"] == maximal]
+    nz = [r for r in at_max if r["nonzero_cells"] > 0]
+    vals, seps, rat = {}, set(), 0
+    for r in nz:
+        for v in (r["values"] or []):
+            vals[v] = vals.get(v, 0) + 1
+        for s in (r["separations"] or []):
+            seps.add(tuple(s))
+        if r["rational"] and all(r["rational"]):
+            rat += 1
+    mk = [r for r in rows if r["monomial_factor"]]
+    loc = [r for r in at_max if r["local"] and not r["monomial_factor"]]
+    nloc = [r for r in at_max if not r["local"] and not r["monomial_factor"]]
+    rad = 0
+    for s in seps:
+        rad = max(rad, max(min(x % L, (-x) % L) for x in s))
+    return {
+        "pool": len({r["V"] for r in rows}),
+        "circulants": len({r["V"] for r in rows if r["circulant"]}),
+        "pairs_total": len(rows),
+        "pairs_at_maximal": len(at_max),
+        "nonzero_at_maximal": len(nz),
+        "nonzero_excluded": len([r for r in rows if r["level"] != maximal
+                                 and r["nonzero_cells"] > 0]),
+        "distinct_values": len(vals),
+        "all_rational_rows": rat,
+        "separations": len(seps),
+        "max_defect_radius": rad,
+        "markov_pairs": len(mk),
+        "markov_nonzero": len([r for r in mk if r["nonzero_cells"] > 0]),
+        "local_pairs": len(loc),
+        "local_nonzero": len([r for r in loc if r["nonzero_cells"] > 0]),
+        "nonlocal_pairs": len(nloc),
+        "nonlocal_nonzero": len([r for r in nloc if r["nonzero_cells"] > 0]),
+    }
+
+
+# Every engraved rule this unit is diffed against, with the GATES that
+# discharge it.  The status is COMPUTED from the ledger and the declared
+# falsifier map, never typed.
+COMPLIANCE_RULES = [
+    ("#313 rules bind at delivery: this unit's gates are diffed against every "
+     "engraving standing on the day its pin froze",
+     ["G-EVERY-GATE-EVALUATED", "G-WAIVERS-VERIFIED"]),
+    ("#10 containment is not equality: the verdict gate compares the COMPLETE "
+     "emitted string, head included, against an independent rebuild",
+     ["G-VERDICT-STRING-EQUALITY"]),
+    ("#10 render from the gated object: one object, one source of truth",
+     ["G-RENDER-FROM-GATED-OBJECT"]),
+    ("#20 prose renders from the receipt: every numeric claim of the paper is "
+     "rendered here and checked against the paper's bytes, and the paper's "
+     "numeral coverage is gated",
+     ["G-PAPER-CLAIMS-VERIFIED"]),
+    ("#20 compliance claims are gate claims: every status is a computed "
+     "predicate shipping with an injection-falsifier",
+     ["G-COMPLIANCE-COMPUTED"]),
+    ("#20 path-value anchoring: a read-by-path anchors the (path, value) pair",
+     ["G-PATH-VALUE-ANCHORS"]),
+    ("#34 waiver claims are gate claims: a named waiver is verified, a gate no "
+     "path evaluates is dead code, and every FORCED row names its forcing",
+     ["G-WAIVERS-VERIFIED", "G-EVERY-GATE-EVALUATED", "G-FORCINGS-REGISTERED"]),
+    ("#34 verbatim-text anchors: evaluated before byte anchors, each row bound "
+     "to a named consumer gate, context windows not fragments",
+     ["G-VERBATIM-ANCHORS"]),
+    ("#46 no unanchored runtime inputs: pinned sources, plus the declared "
+     "object under test and nothing else",
+     ["G-NO-UNANCHORED-RUNTIME-INPUT"]),
+    ("#314 precheck doctrine: a precheck may gate the census but may never name "
+     "the verdict, and the test is by output",
+     ["G-PRECHECK-DOES-NOT-NAME-THE-VERDICT", "G-LATTICE-BOUND-TO-ADMISSIBLE"]),
+    ("#313 boundary parity: a Boolean connective carries a parity-witness -- "
+     "and here the witness measures a FORBIDDEN alternative, because the "
+     "connective is forced by the anchored link set",
+     ["G-PARITY-WITNESS", "G-CONNECTIVE-FORCED-BY-ANCHORED-LINK"]),
+    ("#208 no gate predicate may reference mutant identity, directly or "
+     "through one hop",
+     ["G-NO-MUTANT-IDENTITY-IN-GATES"]),
+    ("#208 an analytically-forced clause is a DISCLOSURE, not a must-pass "
+     "measurement, and names the gate carrying its content",
+     ["G-FORCINGS-REGISTERED"]),
+    ("#219 an object may not be compared against a copy of itself routed "
+     "through the component under test",
+     ["G-SELF-COMPARE-GUARD", "G-COUNTS-FROM-RECEIPT"]),
+    ("#234 the verdict is derived inside a gate and a flip probe proves the "
+     "derivation can fail -- one probe per measured VALUE, not per segment",
+     ["G-VERDICT-HEAD-DERIVED", "G-VERDICT-VALUES-FLIPPABLE",
+      "G-VERDICT-SEGMENTS-FLIPPABLE", "G-VERDICT-THREE-HEADS-REACHABLE"]),
+    ("#24 counts are computed, never typed",
+     ["G-COUNTS-DERIVED", "G-COUNTS-FROM-RECEIPT", "G-ORD-CENSUS-COUNTS",
+      "G-POOL-DERIVED"]),
+    ("#36 every gate is a measurement that could have come out otherwise; "
+     "controls in both directions",
+     ["G-MARKOV-POSITIVE-CONTROL", "G-GAUGE-HANDLE", "G-CLASS-CONTROLS-MOVE",
+      "G-TWOPOINT-SCRAMBLE-BREAKS"]),
+    ("RUNBOOK section 4: exact arithmetic only, floats swept by AST",
+     ["G-NO-FLOAT-AST", "G-NO-FLOAT-RECEIPT"]),
+    ("RUNBOOK section 14: symmetry self-tests evaluate fresh, cache bypassed, "
+     "both directions",
+     ["G-GAUGE-SELFTEST", "G-CACHE-EXERCISED"]),
+    ("RUNBOOK section 14 (v14 #87): gates bind objects, not cardinalities",
+     ["G-REALIZATION-LEVELS-PER-GENERATOR", "G-MARKOV-ZERO-OBJECT",
+      "G-DEFECT-VALUE-CENSUS-FULL"]),
+    ("RUNBOOK section 14 (v14 #82): the CLI-contract minimum -- argv parsed, "
+     "unknown flags rejected, a real --selftest, a validated --mutant",
+     ["G-CLI-CONTRACT"]),
+    ("RUNBOOK section 15: the arena is declared as data and matched at every "
+     "coordinate, and every measured restriction is carried in a segment",
+     ["G-LOCALITY-LIKE-FOR-LIKE", "G-LIKE-FOR-LIKE-DISTINCT",
+      "G-CEILINGS-MEASURED"]),
+]
+
+
+def compliance_sweep(LD):
+    """the sweep, with COMPUTED statuses.  A row is APPLIED when every gate it
+    names is in the frozen registry, was evaluated on this run, and either
+    carries a declared injection-falsifier or a registered forcing."""
     by_gate = {}
     for name, gate_id, what in MUTANTS:
         by_gate.setdefault(gate_id, []).append(name)
+    # the sweep runs inside the delivery run, so four gates are still pending
+    # when it is taken; they are named here and G-EVERY-GATE-EVALUATED closes
+    # the loop on all of them.
+    evaluated = set(LD.evaluated) | {"G-EVERY-GATE-EVALUATED", "G-WAIVERS-VERIFIED",
+                                     "G-COMPLIANCE-COMPUTED",
+                                     "G-PAPER-CLAIMS-VERIFIED"}
     rows = []
-
-    def killed(gname):
-        return [m for m in mutant_report if m["target"] == gname and m["killed"]]
-
-    rules = [
-        ("#313 rules bind at delivery: this unit's gates are diffed against every "
-         "engraving standing on the day its pin froze",
-         "APPLIED -- all eight 2026-08-09 engravings are enumerated in this sweep "
-         "with a computed status and a named injection-falsifier"),
-        ("#10 containment is not equality: the verdict gate compares the COMPLETE "
-         "emitted string against a segment-by-segment rebuild",
-         "APPLIED via G-VERDICT-STRING-EQUALITY; falsifiers %s"
-         % ", ".join(by_gate.get("G-VERDICT-STRING-EQUALITY", []))),
-        ("#10 render from the gated object: one object, one source of truth",
-         "APPLIED via G-RENDER-FROM-GATED-OBJECT; falsifier MUT-RENDER-BYPASS"),
-        ("#20 prose renders from the receipt",
-         "APPLIED -- every numeric claim of the paper is emitted here as "
-         "paper_claims.rendered and checked verbatim by --verify-paper"),
-        ("#20 compliance claims are gate claims: a compliance gate ships with an "
-         "injection-falsifier and its comparator can disagree",
-         "APPLIED -- the verdict comparator reconstruct_verdict_from_receipt() "
-         "shares no helper and reads only the serialized receipt; "
-         "G-SELF-COMPARE-GUARD proves the two paths differ"),
-        ("#20 path-value anchoring: a read-by-path anchors the (path, value) pair",
-         "APPLIED -- %d path-value anchor rows; falsifiers MUT-ANCHOR-PATH, "
-         "MUT-ANCHOR-PATH-VALUE" % len(PATH_VALUE_ANCHORS)),
-        ("#34 waiver claims are gate claims: a named waiver is verified, and a "
-         "gate no path evaluates is dead code",
-         "APPLIED via G-EVERY-GATE-EVALUATED and the waiver ledger below, whose "
-         "every waived row carries a machine-checked forcing"),
-        ("#34 verbatim-text anchors: evaluated before byte anchors, each row "
-         "bound to a named consumer gate, context windows not fragments",
-         "APPLIED -- %d verbatim rows, evaluated first; falsifier "
-         "MUT-ANCHOR-VERBATIM" % len(VERBATIM_ANCHORS)),
-        ("#46 no unanchored runtime inputs",
-         "APPLIED via G-NO-UNANCHORED-RUNTIME-INPUT -- exactly %d hash-pinned "
-         "files are read and no mutable repository state" % len(SOURCES)),
-        ("#314 precheck doctrine: a precheck may gate the census but may never "
-         "name the verdict",
-         "APPLIED via G-PRECHECK-DOES-NOT-NAME-THE-VERDICT -- the scale precheck "
-         "selects the lattice size; the head is named by the defect census"),
-        ("#313 boundary parity: a Boolean connective carries a parity-witness "
-         "whose death certificate is the alternative connective's measured delta",
-         "APPLIED via G-PARITY-WITNESS -- Moore vs von Neumann threshold delta "
-         "printed; falsifier MUT-PARITY-WITNESS"),
-        ("#208 no gate predicate may reference mutant identity",
-         "APPLIED via G-NO-MUTANT-IDENTITY-IN-GATES -- an AST scan of the gate "
-         "ledger's own call sites"),
-        ("#219 an object may not be compared against a copy of itself routed "
-         "through the component under test",
-         "APPLIED -- three genuinely distinct defect routes (sparse definition, "
-         "coefficient convolution, character basis) and an independent verdict "
-         "comparator"),
-        ("#234 the verdict is derived inside a gate and a flip mutant proves the "
-         "derivation can fail",
-         "APPLIED via G-VERDICT-HEAD-DERIVED, G-VERDICT-SEGMENTS-FLIPPABLE, "
-         "G-VERDICT-THREE-HEADS-REACHABLE"),
-        ("#24 counts are computed, never typed",
-         "APPLIED via G-COUNTS-DERIVED, G-ORD-CENSUS-COUNTS, G-POOL-DERIVED"),
-        ("#36 every gate is a measurement that could have come out otherwise; "
-         "controls in both directions",
-         "APPLIED -- %d gates, %d declared mutants, positive AND negative "
-         "controls on the Markovian zero, the gauge invariance and the "
-         "translation covariance" % (len(LD.rows), len(MUTANTS))),
-        ("RUNBOOK section 4: exact arithmetic only, floats swept by AST",
-         "APPLIED via G-NO-FLOAT-AST and G-NO-FLOAT-RECEIPT"),
-        ("RUNBOOK section 14: symmetry self-tests evaluate fresh, cache bypassed",
-         "APPLIED via G-GAUGE-SELFTEST (cache cleared, plus a cache-free "
-         "recomputation) and G-CACHE-EXERCISED"),
-        ("RUNBOOK section 15: the arena is declared as data and matched at every "
-         "coordinate",
-         "APPLIED -- arena_declaration is printed and G-LOCALITY-LIKE-FOR-LIKE "
-         "matches every coordinate before the contrast is read"),
-    ]
-    for rule, status in rules:
-        rows.append({"rule": rule, "status": status})
+    for rule, gates in COMPLIANCE_RULES:
+        seen = [g for g in gates if g in GATE_REGISTRY or g == "G-CLI-CONTRACT"]
+        ran = [g for g in gates if g in evaluated]
+        fals = sorted({m for g in gates for m in by_gate.get(g, [])})
+        forced = [g for g in gates if g in FORCINGS]
+        ok = (len(seen) == len(gates) and len(ran) == len(gates)
+              and (fals or len(forced) == len(gates) or "G-CLI-CONTRACT" in gates))
+        rows.append({"rule": rule, "gates": gates,
+                     "status": "APPLIED" if ok else "UNSATISFIED",
+                     "computed": True, "gates_evaluated": len(ran),
+                     "injection_falsifiers": fals or ["<registered forcing>"]})
+    if mut("MUT-COMPLIANCE-TYPED"):
+        rows.append({"rule": "a typed status", "gates": ["G-NOT-A-GATE"],
+                     "status": "APPLIED", "computed": False,
+                     "gates_evaluated": 0, "injection_falsifiers": []})
     return rows
+
 
 
 # ===========================================================================
 # SECTION 10.  DRIVER
 # ===========================================================================
 
+NUMERAL_RE = r"[0-9]+(?:[.,/][0-9]+)*"
+
+# The residue: numerals that occur in the paper and are DERIVED IN TEXT rather
+# than rendered from the receipt.  Each is named with the site that derives it,
+# and each must actually occur in the paper (a padded allowlist dies).
+DERIVED_IN_TEXT = {
+    "0": "the offset 0 of the stencil {0, a, -a} and the zero of the field; "
+         "section 3.2's proof and section 4.1's definition",
+    "1": "the section numbers, the radius-1 ball, and the coefficient c_1 of "
+         "the collapse proof; section 3.2",
+    "2": "the section numbers and the exponent 2 of the lag 2a; section 3.2",
+    "3": "the section numbers and the 3-term stencil named in the scope",
+    "5": "the section numbers and the order-five threshold named in the "
+         "theorem statement; section 3.2",
+    "6": "the section numbers",
+    "7": "the section numbers",
+    "8": "the section numbers and the cyclotomic index of Q(zeta_8)",
+    "9": "the section numbers and the 9-point stencil named in the scope",
+    "10": "the section number of the instrument section",
+    "11": "the section number of the successor register",
+    "12": "the section number of the deviations register",
+    "13": "the paper number of the weld-2 unit named in the successor register",
+    "14": "the programme version v14",
+    "1,2": "the offsets (1,2) and (2,1) named as non-local axes in section 3.1",
+    "2,1": "the offsets (1,2) and (2,1) named as non-local axes in section 3.1",
+    "1,3": "the offset (1,3) named as a local axis in section 3.1",
+    "1,1": "the anchored diagonal link (1,1), whose norms force the "
+           "connective; section 2",
+    "1,0": "the anchored link (1,0); section 2",
+    "0,1": "the anchored link (0,1); section 2",
+    "2,0": "the offset (2,0) named as a non-local axis in section 3.1",
+    "0,2": "the offset (0,2) named as a non-local axis in section 3.1",
+    "2,2": "the offset (2,2) named as a non-local axis in section 3.1",
+    "1,0,1": "the column index set {-1,0,1} of the radius-1 Chebyshev ball, in "
+             "the Moore-ball collapse theorem's statement and proof; section 3",
+    "1,2,3": "the swept dimension set {1,2,3} of the locality sweep; section 2",
+}
+
+
+def num(x):
+    """the paper's numeral convention, rendered once so the paper and the
+    receipt cannot drift apart: a thousands comma at five figures and above."""
+    s = str(x)
+    if len(s) < 5 or not s.isdigit():
+        return s
+    out = ""
+    while len(s) > 3:
+        out = "," + s[-3:] + out
+        s = s[:-3]
+    return s + out
+
+
+def setstr(xs):
+    return "{" + ", ".join(str(x) for x in xs) + "}"
+
+
 def paper_claims(R):
+    """EVERY numeric claim of the paper, rendered from the receipt.  The gate
+    checks each string against the paper's bytes AND checks that the paper
+    carries no numeral outside this rendering and the declared residue."""
     c = R["counts"]
-    return {
-        "verdict": R["verdict"]["string"],
-        "unique_scale": "L = 4 is the only lattice size in the swept range that "
-                        "carries both",
-        "ord_collapse": "at axis order five and above the only unitary "
-                        "generators on this stencil are the monomial ones",
-        "ord4_generators": "72 distinct unitary generators, 48 of them "
-                           "non-monomial, in 9 gauge classes",
-        "pool": "%d generators" % c["pool"],
-        "census": "%d ordered pairs" % c["pairs_total"],
-        "defect": "%d of %d pairs at maximal transport carry a nonzero defect"
-                  % (c["nonzero_at_maximal"], c["pairs_at_maximal"]),
-        "markov": "%d of %d Markovian pairs" % (c["markov_nonzero"], c["markov_pairs"]),
-        "classes": "%d transformation-type classes under the extended group and "
-                   "%d under the anchored chart group"
-                   % (c["classes_extended"], c["classes_anchored"]),
-        "excluded": "%d nonzero defects are excluded from the verdict"
-                    % c["nonzero_excluded"],
-        "separations": "%d separations" % c["separations"],
-        "state": "%d distinct responses" % c["state_distinct"],
-        "instrument": "%d gates, all passed; %d anchors; %d declared mutants, all dead"
-                      % (R["totals"]["gates"], R["totals"]["anchors"],
-                         R["totals"]["mutants"]),
-    }
+    cl = {"verdict": R["verdict"]["string"]}
+    for row in R["byte_anchors"]:
+        cl["source:" + row["id"]] = row["measured"]
+    # the stage
+    for row in R["locality_threshold_table"]:
+        cl["threshold:%s:d%d" % (row["connective_tag"], row["d"])] = \
+            "| %s | %d | %s |" % (row["connective_tag"], row["d"], row["threshold"])
+    for row in R["locality_sweep"]:
+        if row["d"] == 2 and row["connective"] == CONNECTIVES[0]:
+            cl["locality:L%d" % row["L"]] = "| %d | %d | %d |" % (
+                row["L"], row["offsets"], row["neighbours"])
+    cl["parity"] = ("threshold %d against the max-norm's %d, a measured delta "
+                    "of %d" % (R["parity_witness"]["von_neumann_threshold_d2"],
+                               R["parity_witness"]["moore_threshold_d2"],
+                               R["parity_witness"]["delta"]))
+    cl["connective_excluded_admissible"] = (
+        "the admissible set would be %s"
+        % setstr(R["connective_forcing"]["admissible_under_excluded"]))
+    # the family
+    for k in sorted(R["ord_census"], key=int):
+        v = R["ord_census"][k]
+        cl["ord:%s" % k] = "| %s | %d | %d | %d |" % (
+            k, v["distinct_generators"], v["monomial"], v["non_monomial"])
+    cl["alphabet"] = "%d elements" % c["alphabet"]
+    cl["triples"] = "%s coefficient triples" % num(c["alphabet"] ** 3)
+    for row in R["five_point_sweeps"]:
+        if row["ordering"] == "AXIS-FIRST":
+            cl["fivepoint:%d" % row["L"]] = "| %d | %s | %d |" % (
+                row["L"], num(row["leaves_reached"]), row["non_monomial"])
+    cl["fivepoint_nodes"] = ("%s and %s nodes under the two declared orderings"
+                             % tuple(num(x) for x in
+                                     sorted(r["nodes_visited"]
+                                            for r in R["five_point_sweeps"]
+                                            if r["L"] == 5)))
+    cl["fivepoint_nodes4"] = ("%s and %s nodes"
+                              % tuple(num(x) for x in
+                                      sorted(r["nodes_visited"]
+                                             for r in R["five_point_sweeps"]
+                                             if r["L"] == 4)))
+    cl["moore_ball_sizes"] = "L in %s" % setstr(R["moore_ball_collapse"]["sizes"])
+    cl["domain"] = ("%s ordered pairs of nonzero alphabet elements, %s zero "
+                    "divisors" % (num(R["moore_ball_collapse"]["domain"]["nonzero_elements"] ** 2),
+                                  R["moore_ball_collapse"]["domain"]["zero_divisor_pairs"]))
+    cl["scale"] = ("locality requires L >= %d; a non-monomial local-axis "
+                   "generator requires L <= %d, and is present at L in %s"
+                   % (c["locality_threshold"], c["only_if_bound"],
+                      setstr(c["present_at"])))
+    cl["admissible"] = "the admissible set is %s" % setstr(c["admissible_scales"])
+    cl["alphabet_independence"] = (
+        "the sizes bearing locality are %s and the sizes below the collapse "
+        "threshold are %s" % (setstr(R["alphabet_independence"]["locality_sizes"]),
+                              setstr(R["alphabet_independence"]["below_collapse_threshold"])))
+    # the pool
+    p = R["pool_counts"]
+    cl["pool"] = ("%d generators: %d translation-covariant circulants, %d "
+                  "brickwork generators and %d scrambled generators"
+                  % (p["total"], p["circulant"], p["brickwork"], p["scrambled"]))
+    cl["axes"] = ("%d axes, %d of them local and %d not"
+                  % (p["axes"], p["local_axes"], p["nonlocal_axes"]))
+    cl["ord4_generators"] = (
+        "%d distinct unitary generators, %d of them non-monomial, in %d gauge "
+        "classes" % (R["ord_census"]["4"]["distinct_generators"],
+                     R["ord_census"]["4"]["non_monomial"],
+                     R["ord_census"]["4"]["distinct_generators"] // 8))
+    cl["choices"] = "%d construction choices" % len(R["choice_inventory"])
+    # the census
+    cl["census"] = "%s ordered pairs" % num(c["pairs_total"])
+    cl["defect"] = ("%d of %d pairs at maximal transport carry a nonzero defect"
+                    % (c["nonzero_at_maximal"], c["pairs_at_maximal"]))
+    cl["rational"] = "%d of %d" % (c["all_rational_rows"], c["nonzero_at_maximal"])
+    for row in R["defect_value_multiset"]:
+        v = row["value"].replace("(", "").replace(")", "")
+        cl["value:%s" % v] = "| $%s$ | %d |" % (v, row["cells"])
+    cl["markov"] = "%d of %d Markovian pairs" % (c["markov_nonzero"], c["markov_pairs"])
+    cl["free"] = ("%d of %d free pairs" % (R["markov_control"]["free_nonzero"],
+                                           R["markov_control"]["free_pairs"]))
+    cl["monomial"] = "%d of the pool's generators are monomial" % len(
+        R["markov_control"]["monomial_generators"])
+    cl["locality_split"] = ("%d of %d local pairs and %d of %d non-local pairs"
+                            % (c["local_nonzero"], c["local_pairs"],
+                               c["nonlocal_nonzero"], c["nonlocal_pairs"]))
+    cl["matched"] = ("%d ordered comparisons drawn from %d distinct non-local "
+                     "pairs; %d of the %d agree"
+                     % (c["matched_pairs"], c["matched_distinct"],
+                        c["matched_agreements"], c["matched_pairs"]))
+    cl["matched_mult"] = ("multiplicities " + ", ".join(
+        "%s at %s" % (v, k) for k, v in
+        sorted(R["like_for_like"]["multiplicities"].items(),
+               key=lambda kv: -int(kv[0]))))
+    cl["gauge_matched"] = ("%d ordered comparisons from %d distinct pairs, of "
+                           "which %d agree"
+                           % (R["like_for_like"]["gauge_class_matched_pairs"],
+                              R["like_for_like"]["gauge_class_distinct_comparisons"],
+                              R["like_for_like"]["gauge_class_agreements"]))
+    # two-point
+    cl["equal_time"] = ("exactly %s at zero separation and %s at every nonzero "
+                        "separation" % (R["equal_time"]["rational_zero"],
+                                        R["equal_time"]["rational_nonzero"]))
+    cl["separations"] = ("%d separations, every separation the torus has, with "
+                         "maximum defect radius %d, the Chebyshev diameter"
+                         % (c["separations"], c["max_defect_radius"]))
+    cl["profiles"] = ("%d radius profiles occur across the first four powers"
+                      % c["radius_profiles"])
+    cl["profile_rows"] = ", ".join(
+        "%s at %d" % (k, v) for k, v in sorted(R["radius_profiles"]["profiles"].items()))
+    cl["half_width"] = "%d of %d attain the half-width" % (
+        c["half_width_attained"], c["circulants"])
+    cl["cone_vacuity"] = ("%s conceivable profiles, and the bound can fail only "
+                          "at single-step radius %s"
+                          % (num(R["lightcone_vacuity"]["profiles_swept"]),
+                             "+".join(str(x) for x in c["lightcone_content_radii"])))
+    cl["periods"] = ("the projective periods present are %s; the raw orders are %s"
+                     % (setstr(c["orders"]), setstr(R["raw_order_set"])))
+    cl["gauge_selftest"] = ("the projective period is invariant at %d of %d and "
+                            "the raw order moves at %d"
+                            % (R["period_selftest"]["projective_invariant"],
+                               R["period_selftest"]["combinations"],
+                               R["period_selftest"]["raw_moved"]))
+    cl["scramble"] = ("%d of their %d defect tables against the probe set fail "
+                      "to be one, and %d are identically zero"
+                      % (R["scramble_control"]["defect_table_failures"],
+                         R["scramble_control"]["defect_probes"],
+                         R["scramble_control"]["defect_probes_identically_zero"]))
+    cl["circ_sep"] = "all %d pass" % R["scramble_control"][
+        "circulant_transition_tables_passing"]
+    cl["coherence"] = "the declared %d triples with %d violations" % (
+        R["coherence"]["triples"], R["coherence"]["violations"])
+    # classes
+    cl["classes"] = ("%d transformation-type classes under the extended group "
+                     "and %d under the anchored chart group"
+                     % (c["classes_extended"], c["classes_anchored"]))
+    cl["groups"] = ("of order %d" % R["classes"]["anchored_group_order"])
+    cl["groups2"] = ("order %d" % R["classes"]["extended_group_order"])
+    cl["labels"] = ("%d classes carry only %d distinct invariant tuples; adding "
+                    "a direction label raises it to %d"
+                    % (R["class_labels"]["classes"],
+                       R["class_labels"]["distinct_labels"],
+                       R["class_labels"]["with_direction_label"]))
+    for o in R["classes"]["extended"]:
+        cl["class:%s" % o["representative"]] = "| %s | %d | %s | %s | %s | %s | %s | %s |" % (
+            o["representative"], o["size"],
+            {"CIRC": "circulant", "BRICK": "brickwork", "SCRAM": "scrambled"}[o["kind"]],
+            o["support"] if o["support"] is not None else "\u2014",
+            o["radius"], o["axis_ord"] if o["axis_ord"] is not None else "\u2014",
+            o["level"], o["order"] if o["order"] is not None else "\u2014")
+    # realization, commutators, state
+    cl["realization"] = ("%d generator at NONE, %d at OCC, %d at OCC+AXIS, %d "
+                         "at FULL" % (R["realization_census"]["levels"]["NONE"],
+                                      R["realization_census"]["levels"]["OCC"],
+                                      R["realization_census"]["levels"]["OCC+AXIS"],
+                                      R["realization_census"]["levels"]["FULL"]))
+    cl["excluded"] = ("%d nonzero defects are excluded from the verdict"
+                      % c["nonzero_excluded"])
+    cl["bite"] = ("%d of them involve the scrambled control, so the gate's "
+                  "principled bite is %d"
+                  % (c["nonzero_excluded"] - c["principled_bite"],
+                     c["principled_bite"]))
+    cl["commutator"] = ("%d of %d ordered pairs of the verdict-bearing stratum "
+                        "fail to commute" % (c["commutator_nonzero"],
+                                             c["commutator_pairs"]))
+    for k in sorted(R["commutator_census"]):
+        v = R["commutator_census"][k]
+        if isinstance(v, dict):
+            cl["comm:%s" % k] = "| %s | %d | %d |" % (k, v["noncommuting"], v["pairs"])
+    cl["state"] = ("%d distinct responses" % c["state_distinct"])
+    cl["state_probes"] = ("%d declared prepared states over %d probe pairs"
+                          % (R["state_motion"]["states_declared"],
+                             c["state_probe_pairs"]))
+    cl["instrument"] = ("%d gates, all passed; %d anchors; %d declared mutants, "
+                        "all dead"
+                        % (len(GATE_REGISTRY),
+                           len(SOURCES) + len(PATH_VALUE_ANCHORS) + len(VERBATIM_ANCHORS),
+                           len(MUTANTS)))
+    cl["anchor_split"] = ("%d file-bytes anchors, %d path-value anchors and %d "
+                          "verbatim-text anchors"
+                          % (len(SOURCES), len(PATH_VALUE_ANCHORS),
+                             len(VERBATIM_ANCHORS)))
+    cl["verdict_values"] = ("%d measured values" % len({k for _, k in VERDICT_VALUES}))
+    cl["compliance"] = "%d engraved rules" % len(COMPLIANCE_RULES)
+    if mut("MUT-PAPER-CLAIM-DRIFT"):
+        cl["defect"] = cl["defect"] + "-DRIFTED"
+    if mut("MUT-PAPER-COVERAGE"):
+        cl = {"verdict": cl["verdict"]}
+    return cl
+
+
+def paper_coverage(R, txt):
+    cl = paper_claims(R)
+    missing = sorted(k for k, v in cl.items() if v not in txt)
+    rendered = set()
+    for v in cl.values():
+        rendered |= set(re.findall(NUMERAL_RE, v))
+    in_paper = set(re.findall(NUMERAL_RE, txt))
+    residue_unused = sorted(k for k in DERIVED_IN_TEXT if k not in in_paper)
+    uncovered = sorted(in_paper - rendered - set(DERIVED_IN_TEXT))
+    return {"claims": len(cl), "missing": missing,
+            "distinct_numerals": len(in_paper),
+            "numeral_occurrences": len(re.findall(NUMERAL_RE, txt)),
+            "covered_by_rendering": len(in_paper & rendered),
+            "declared_derived_in_text": len(DERIVED_IN_TEXT),
+            "residue_declared_but_absent": residue_unused,
+            "uncovered": uncovered}
+
+
+class CliError(Exception):
+    pass
+
+
+def parse_args(argv):
+    """THE ARGV PARSER (#82).  A whitelist; every unknown flag, every unknown
+    flag argument and every missing argument raises."""
+    opts = {"write": True, "mutant": None, "break_anchor": None,
+            "verify_paper": None, "selftest": False}
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--no-write":
+            opts["write"] = False
+        elif a == "--selftest":
+            opts["selftest"] = True
+            opts["write"] = False
+        elif a == "--mutant":
+            if i + 1 >= len(argv):
+                raise CliError("--mutant requires a mutant NAME")
+            nm = argv[i + 1]
+            if nm not in {m[0] for m in MUTANTS}:
+                raise CliError("unknown mutant %r" % nm)
+            opts["mutant"] = nm
+            opts["write"] = False
+            i += 1
+        elif a == "--break-anchor":
+            if i + 1 >= len(argv):
+                raise CliError("--break-anchor requires an anchor NAME")
+            nm = argv[i + 1]
+            if nm not in {s[0] for s in SOURCES}:
+                raise CliError("unknown anchor %r" % nm)
+            opts["break_anchor"] = nm
+            opts["write"] = False
+            i += 1
+        elif a == "--verify-paper":
+            opts["verify_paper"] = PAPER_REL
+            if i + 1 < len(argv) and not argv[i + 1].startswith("--"):
+                opts["verify_paper"] = argv[i + 1]
+                i += 1
+            opts["write"] = False
+        else:
+            raise CliError("unknown argument %r" % a)
+        i += 1
+    return opts
+
+
+def parse_args_permissive(argv):
+    """the FORBIDDEN shape (the registered disease, #82): a runner that ignores
+    what it does not recognise and proceeds to a full delivery run.  Present
+    only as the CLI gate's falsifier; nothing calls it in the delivery path."""
+    opts = {"write": True, "mutant": None, "break_anchor": None,
+            "verify_paper": None, "selftest": False}
+    if "--no-write" in argv:
+        opts["write"] = False
+    if "--mutant" in argv:
+        opts["mutant"] = argv[argv.index("--mutant") + 1]
+        opts["write"] = False
+    return opts
 
 
 def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
@@ -2690,19 +4224,26 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
             % (len(S["verdict"]["string"]), len(rebuilt),
                rebuilt == S["verdict"]["string"]))
 
+    def perturb(v):
+        if isinstance(v, list):
+            return v + [99]
+        if isinstance(v, bool):
+            return not v
+        if isinstance(v, int):
+            return v + 1
+        return str(v) + "-X"
+
+    seg_keys = {"DEFECT": "nonzero_at_maximal", "TWO-POINT": "separations",
+                "CLASSES": "classes_extended", "LOCALITY": "local_nonzero",
+                "MARKOV": "markov_pairs", "COMMUTATOR": "commutator_pairs",
+                "REALIZATION": "nonzero_excluded",
+                "STATE": "state_distinct", "SCALE": "admissible_scales",
+                "SCOPE": "pool"}
     flips = []
     for i, seg in enumerate(S["verdict"]["segments"]):
         probe = json.loads(json.dumps(Rjson))
-        keymap = {"DEFECT": "nonzero_at_maximal", "TWO-POINT": "separations",
-                  "CLASSES": "classes_extended", "LOCALITY": "local_nonzero",
-                  "MARKOV": "markov_pairs", "REALIZATION": "nonzero_excluded",
-                  "STATE": "state_distinct", "SCALE": "admissible_scales",
-                  "SCOPE": "pool"}
-        k = keymap[seg["name"]]
-        if isinstance(probe["counts"][k], list):
-            probe["counts"][k] = probe["counts"][k] + [99]
-        else:
-            probe["counts"][k] = probe["counts"][k] + 1
+        k = seg_keys[seg["name"]]
+        probe["counts"][k] = perturb(probe["counts"][k])
         moved = reconstruct_verdict_from_receipt(probe) != rebuilt
         if mut("MUT-VERDICT-INERT") and i == 0:
             moved = False
@@ -2710,7 +4251,33 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
     LD.gate("G-VERDICT-SEGMENTS-FLIPPABLE",
             "every verdict segment moves when the receipt row it derives from "
             "moves; no segment is inert",
-            all(flips), "segments=%d flippable=%d" % (len(flips), sum(flips)))
+            all(flips) and len(flips) == len(seg_keys),
+            "segments=%d flippable=%d" % (len(flips), sum(flips)))
+
+    # THE PER-VALUE PROBE.  One flip test per MEASURED VALUE the verdict
+    # carries, not one per segment: every value is rendered from a declared
+    # counts key, and perturbing that key must move the reconstruction.
+    probed_keys, inert = [], []
+    for label, key in VERDICT_VALUES:
+        if key in probed_keys:
+            continue
+        probed_keys.append(key)
+        probe = json.loads(json.dumps(Rjson))
+        probe["counts"][key] = perturb(probe["counts"][key])
+        if mut("MUT-VALUE-INERT") and key == "principled_bite":
+            probe["counts"][key] = Rjson["counts"][key]
+        if reconstruct_verdict_from_receipt(probe) == rebuilt:
+            inert.append((label, key))
+    all_keys_present = all(key in Rjson["counts"] for _, key in VERDICT_VALUES)
+    LD.gate("G-VERDICT-VALUES-FLIPPABLE",
+            "EVERY measured value the verdict carries has its own flip probe: "
+            "the value renders from a declared receipt key, and perturbing that "
+            "key moves the complete reconstruction.  A value with no probe, or "
+            "a value that ignores its key, dies here",
+            not inert and all_keys_present
+            and len(probed_keys) == len({k for _, k in VERDICT_VALUES}),
+            "verdict values declared=%d distinct receipt keys probed=%d inert=%s"
+            % (len(VERDICT_VALUES), len(probed_keys), inert or "none"))
 
     heads = set()
     probes = [
@@ -2734,9 +4301,9 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
             and len(heads) == 4,
             "heads reached: %s" % sorted(heads))
 
-    comparator = (comparator_that_reads_prose
-                  if mut("MUT-COMPARATOR-READS-PROSE")
-                  else reconstruct_verdict_from_receipt)
+    comparator = reconstruct_verdict_from_receipt
+    if mut("MUT-COMPARATOR-READS-PROSE"):
+        comparator = comparator_that_reads_prose
     v_no_paper = comparator(Rjson)
     poisoned = json.loads(json.dumps(Rjson))
     poisoned["arena_declaration"] = {"poison": "x" * 40}
@@ -2747,21 +4314,28 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
             comparator(poisoned) == v_no_paper,
             "invariant=%s" % (comparator(poisoned) == v_no_paper))
 
-    precheck_head = (derive_head_from_precheck_only(S["counts"])
-                     if mut("MUT-PRECHECK-NAMES") else None)
-    zeroed = derive_head(dict(S["counts"], nonzero_at_maximal=0))
+    # THE PRECHECK DOCTRINE, tested by OUTPUT.  The counterfactual is computed
+    # in build_state by the head law actually in force and carried as data: with
+    # the defect census zeroed, does the emitted head move?  A head named by the
+    # scale precheck does not move, and dies here -- by its behaviour, not by
+    # its name.
+    zeroed = S["verdict"]["head_under_zeroed_census"]
     LD.gate("G-PRECHECK-DOES-NOT-NAME-THE-VERDICT",
             "the scale precheck gates which lattice is censused but never "
-            "names the head; with the defect census zeroed the head moves, "
-            "so the head is a function of the census and not of the precheck",
-            zeroed != S["verdict"]["head"] and precheck_head is None,
-            "precheck-independent head under a zeroed census: %s" % zeroed)
+            "names the head: run on a zeroed defect census, the head law in "
+            "force returns a DIFFERENT head, so the head is a function of the "
+            "census and not of the precheck",
+            zeroed != S["verdict"]["head"]
+            and zeroed == derive_head(dict(S["counts"], nonzero_at_maximal=0)),
+            "head=%s; head under a zeroed census, by the law in force: %s"
+            % (S["verdict"]["head"], zeroed))
 
     with open(SELF, "r", encoding="utf-8") as f:
         own = f.read()
     tree = ast.parse(own)
-    target_fn = ("comparator_that_self_compares"
-                 if mut("MUT-SELFCOMPARE") else "reconstruct_verdict_from_receipt")
+    target_fn = "reconstruct_verdict_from_receipt"
+    if mut("MUT-SELFCOMPARE"):
+        target_fn = "comparator_that_self_compares"
     gatefn = None
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef) and node.name == target_fn:
@@ -2777,16 +4351,63 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
             "comparator scanned=%s calls: %s" % (target_fn, sorted(set(calls))))
 
     badmut, gate_calls = [], 0
-    scan_tree = (ast.parse(own + DECOY_GATE_SOURCE)
-                 if mut("MUT-GATE-REFERENCES-MUTANT") else tree)
+    scan_src = own
+    if mut("MUT-GATE-REFERENCES-MUTANT"):
+        scan_src = scan_src + DECOY_GATE_SOURCE
+    if mut("MUT-GATE-READS-LAUNDERED-NAME"):
+        scan_src = scan_src + LAUNDER_DECOY_SOURCE
+    scan_tree = ast.parse(scan_src) if scan_src != own else tree
+
+    def has_mut_call(node):
+        for n in ast.walk(node):
+            if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) \
+                    and n.func.id == "mut":
+                return True
+        return False
+
+    parents = {}
+    for node in ast.walk(scan_tree):
+        for ch in ast.iter_child_nodes(node):
+            parents[ch] = node
+
+    def mutant_guarded(node):
+        """the ONE-HOP LAUNDERING probe (#208, strengthened): an assignment is
+        mutant-guarded when the mutant flag appears in its value or in the test
+        of an enclosing if whose BODY it sits in."""
+        if has_mut_call(node.value):
+            return True
+        cur, p = node, parents.get(node)
+        while p is not None:
+            if isinstance(p, ast.If) and has_mut_call(p.test) \
+                    and any(cur is s for s in p.body):
+                return True
+            if isinstance(p, (ast.FunctionDef, ast.Module)):
+                return False
+            cur, p = p, parents.get(p)
+        return False
+
+    assigns = {}
+    for node in ast.walk(scan_tree):
+        if isinstance(node, ast.Assign):
+            g = mutant_guarded(node)
+            for t in node.targets:
+                for n in ast.walk(t):
+                    if isinstance(n, ast.Name):
+                        assigns.setdefault(n.id, []).append(g)
+    laundered = {nm for nm, gs in assigns.items() if gs and all(gs)}
+
     for node in ast.walk(scan_tree):
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) \
                 and node.func.attr == "gate":
             gate_calls += 1
+            gid = node.args[0].value if node.args else "?"
             for n in ast.walk(node):
                 if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) \
                         and n.func.id == "mut":
-                    badmut.append(node.args[0].value if node.args else "?")
+                    badmut.append(gid)
+                if isinstance(n, ast.Name) and isinstance(n.ctx, ast.Load) \
+                        and n.id in laundered:
+                    badmut.append("%s reads laundered name %s" % (gid, n.id))
     for node in ast.walk(scan_tree):
         if isinstance(node, ast.FunctionDef) and node.name in (
                 "reconstruct_verdict_from_receipt", "derive_head", "build_segments"):
@@ -2796,11 +4417,14 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
                     badmut.append(node.name)
     LD.gate("G-NO-MUTANT-IDENTITY-IN-GATES",
             "no gate predicate and no verdict-deriving or comparing function "
-            "references mutant identity: an AST scan of every gate call site "
-            "and of the three verdict functions (#208)",
+            "references mutant identity, DIRECTLY or through one hop: an AST "
+            "scan of every gate call site and of the three verdict functions, "
+            "extended to flag any gate reading a name whose every assignment "
+            "site is mutant-guarded (#208, and the clause-removal probe made "
+            "standing)",
             not badmut and gate_calls >= len(GATE_REGISTRY),
-            "gate call sites scanned=%d offenders: %s"
-            % (gate_calls, badmut or "none"))
+            "gate call sites scanned=%d mutant-guarded names in the module=%d "
+            "offenders: %s" % (gate_calls, len(laundered), badmut or "none"))
 
     float_probe = dict(Rjson)
     if mut("MUT-FLOAT-RECEIPT"):
@@ -2809,6 +4433,103 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
             "the emitted receipt object contains no float at any depth",
             not has_float(float_probe),
             "recursive scan of the serialized receipt")
+
+    # --- the counts, recomputed from the SERIALIZED census rows -------------
+    if mut("MUT-COUNT-RECEIPT"):
+        for r in Rjson["census_rows"]:
+            if r["nonzero_cells"] > 0 and r["level"] == Rjson["counts"]["maximal_transport"]:
+                r["nonzero_cells"] = 0
+                break
+    again = recount_from_receipt(Rjson)
+    disagree = sorted(k for k, v in again.items() if Rjson["counts"][k] != v)
+    LD.gate("G-COUNTS-FROM-RECEIPT",
+            "every census-derived headline count is recomputed from the "
+            "serialized census rows by a function sharing no helper with the "
+            "census builder, and all of them are compared -- not two of "
+            "twenty-three (#219)",
+            not disagree and len(again) >= 15,
+            "counts recomputed=%d disagreements=%s" % (len(again), disagree or "none"))
+
+    # --- #208: every FORCED / DISCLOSURE / DECLARED row names its forcing ---
+    forcings_map = dict(FORCINGS)
+    if mut("MUT-FORCING-UNREGISTERED"):
+        forcings_map.pop("G-COHERENCE-LAW", None)
+    unforced = [g["id"] for g in LD.rows
+                if g["kind"] in ("FORCED", "DISCLOSURE", "DECLARED")
+                and g["id"] not in forcings_map]
+    n_forced = sum(1 for g in LD.rows
+                   if g["kind"] in ("FORCED", "DISCLOSURE", "DECLARED"))
+    LD.gate("G-FORCINGS-REGISTERED",
+            "every gate whose clause is analytically forced is registered as a "
+            "DISCLOSURE with a named forcing and with the gate that carries its "
+            "measured content in its place (#208)",
+            not unforced and n_forced > 0,
+            "forced/disclosure/declared rows=%d without a registered "
+            "forcing=%s" % (n_forced, unforced or "none"))
+
+    # --- the CLI contract, exercised in process (#82) -----------------------
+    parser = parse_args
+    if mut("MUT-CLI-ACCEPTS-UNKNOWN"):
+        parser = parse_args_permissive
+    cli_probes = []
+    for argv, want in ((["--not-a-flag"], True), (["--mutant"], True),
+                       (["--mutant", "MUT-DOES-NOT-EXIST"], True),
+                       (["--break-anchor", "A-NOPE"], True),
+                       (["--break-anchor"], True),
+                       (["--mutant", MUTANTS[0][0]], False),
+                       (["--no-write"], False), ([], False)):
+        try:
+            got = parser(argv)
+            rejected = False
+        except CliError:
+            got, rejected = None, True
+        except (IndexError, KeyError, TypeError, ValueError):
+            # a traceback is not a rejection; the contract requires a message
+            got, rejected = None, False
+        cli_probes.append((argv, want, rejected, got))
+    cli_bad = [p for p in cli_probes if p[1] != p[2]]
+    plain = [p for p in cli_probes if p[0] == []][0][3]
+    writers = [p for p in cli_probes if p[3] is not None and p[3]["write"]]
+    LD.gate("G-CLI-CONTRACT",
+            "the CLI is argv-parsed against a whitelist and exercised here: an "
+            "unknown flag, an unknown mutant name, an unknown anchor name and a "
+            "missing flag argument are all REJECTED, and the plain run with no "
+            "flags is the only invocation that writes",
+            not cli_bad and plain["write"] and len(writers) == 1,
+            "probes=%d rejections as declared=%d; invocations that write=%d"
+            % (len(cli_probes), len(cli_probes) - len(cli_bad), len(writers)))
+
+    # --- the paper, gated inside the delivery run --------------------------
+    cov = paper_coverage(Rjson, S["_paper_text"])
+    LD.gate("G-PAPER-CLAIMS-VERIFIED",
+            "every numeric claim of the paper is rendered from this receipt and "
+            "checked against the paper's own bytes, AND the paper carries no "
+            "numeral outside that rendering except the declared derived-in-text "
+            "residue, every entry of which must occur in the paper",
+            not cov["missing"] and not cov["uncovered"]
+            and not cov["residue_declared_but_absent"],
+            "claims rendered=%d missing from the paper=%s; distinct numerals in "
+            "the paper=%d over %d occurrences, covered by rendering=%d, "
+            "declared derived-in-text=%d, uncovered=%s"
+            % (cov["claims"], cov["missing"] or "none", cov["distinct_numerals"],
+               cov["numeral_occurrences"], cov["covered_by_rendering"],
+               cov["declared_derived_in_text"], cov["uncovered"] or "none"))
+    R["paper_coverage"] = cov
+
+    # --- the compliance sweep, with COMPUTED statuses ----------------------
+    comp = compliance_sweep(LD)
+    comp_bad_rows = [r for r in comp
+                     if r["status"] != "APPLIED" or not r["computed"]
+                     or not r["gates"] or r["gates_evaluated"] != len(r["gates"])]
+    LD.gate("G-COMPLIANCE-COMPUTED",
+            "every compliance status is a COMPUTED predicate over the ledger "
+            "and the declared falsifier map -- a row is APPLIED only when every "
+            "gate it names is in the frozen registry, was evaluated on this "
+            "run, and carries an injection-falsifier or a registered forcing",
+            not comp_bad_rows and len(comp) == len(COMPLIANCE_RULES),
+            "rules=%d applied=%d unsatisfied=%s"
+            % (len(comp), sum(1 for r in comp if r["status"] == "APPLIED"),
+               [r["rule"][:34] for r in comp_bad_rows] or "none"))
 
     # the two post-census gates are evaluated after the mutant harness, which
     # is why they are named here rather than found in the ledger
@@ -2826,23 +4547,45 @@ def run_receipt_gates(S, LD, pool, rows, orders, levels, orbits):
     return R, Rjson
 
 
+def selftest():
+    """--selftest: corrupt ONE anchor in memory, confirm the run dies at the
+    anchor gate, WRITE NOTHING, exit 1.  Exits 2 if the corrupted run survives."""
+    target = SOURCES[0][0]
+    print("SELFTEST: corrupting anchor %s in memory; the run must die." % target,
+          flush=True)
+    globals()["QUIET"] = True
+    try:
+        build_state(target)
+    except GateFail as e:
+        globals()["QUIET"] = False
+        gid = str(e).split(" ::")[0]
+        print("SELFTEST: died at %s -- as required." % gid, flush=True)
+        print("SELFTEST PASSED (the instrument is falsifiable); no artifact "
+              "written.", flush=True)
+        print("EXIT 1", flush=True)
+        sys.exit(1)
+    globals()["QUIET"] = False
+    print("SELFTEST FAILED: a corrupted anchor did not kill the run.", flush=True)
+    print("EXIT 2", flush=True)
+    sys.exit(2)
+
+
 def main():
     global MUT
-    args = sys.argv[1:]
-    write = True
-    break_anchor = None
-    verify_paper = None
-    if "--no-write" in args:
-        write = False
-    if "--mutant" in args:
-        MUT = args[args.index("--mutant") + 1]
-        write = False
-    if "--break-anchor" in args:
-        break_anchor = args[args.index("--break-anchor") + 1]
-        write = False
-    if "--verify-paper" in args:
-        verify_paper = args[args.index("--verify-paper") + 1]
-        write = False
+    try:
+        opts = parse_args(sys.argv[1:])
+    except CliError as e:
+        print("usage: %s [--no-write] [--selftest] [--mutant NAME] "
+              "[--break-anchor NAME] [--verify-paper [PATH]]"
+              % os.path.basename(SELF), file=sys.stderr)
+        print("error: %s" % e, file=sys.stderr)
+        sys.exit(2)
+    if opts["selftest"]:
+        selftest()
+    write = opts["write"]
+    break_anchor = opts["break_anchor"]
+    verify_paper = opts["verify_paper"]
+    MUT = opts["mutant"]
 
     say("=" * 78)
     say("v14 R4 -- THE QFT RUNG: THE DEFECT ON THE STAGE")
@@ -2967,16 +4710,21 @@ def main():
                    "gates_waived": len(waivers) - n_fals,
                    "census_rows": len(rows), "pool": len(pool),
                    "never_falsified": len(waivers) - n_fals}
-    R["compliance"] = compliance_sweep(S, LD, report)
-    R["paper_claims"] = {"paper": "v14/paper-10-defect-on-the-stage.md",
-                         "rendered": paper_claims(R)}
+    R["compliance"] = compliance_sweep(LD)
+    R["paper_claims"] = {"paper": PAPER_REL, "rendered": paper_claims(R)}
+    R["paper_coverage"] = paper_coverage(R, S["_paper_text"])
     R["not_executed"] = [
-        "the 9-point Moore stencil is not swept; only the 3-term axis stencil "
-        "(exhaustive over the declared alphabet at every swept order) and the "
-        "5-point stencil (at one lattice size above the collapse threshold)",
+        "the 9-point Moore stencil is not SWEPT at the admitted size; the "
+        "Moore-ball collapse theorem settles every size above it over any "
+        "field, and the 5-point stencil is swept at four sizes in two orderings",
+        "the wider 5-point family at the admitted size is disclosed and not "
+        "censused; the defect census runs on the 3-term axis stencil only",
+        "indivisibility is DECLARED by the division-event times and is never "
+        "measured: no existential stochastic-divisor search is run",
         "coefficients outside the declared 25-element alphabet are not swept; "
-        "the order-5-and-above collapse is proved in the paper and is "
-        "alphabet-independent, but the order-3 emptiness is alphabet-relative",
+        "the order-5-and-above collapse and the Moore-ball collapse are "
+        "theorems and alphabet-independent, and the alphabet-relative order-3 "
+        "emptiness is irrelevant to the verdict",
         "no continuum or infinite-volume limit is taken",
         "no multi-excitation sector, no interaction term, and no field operator "
         "is constructed; 'field' appears only as the free-field ANALOG",
@@ -2999,12 +4747,19 @@ def main():
             f.write("\n".join(LOG) + "\n")
 
     if verify_paper:
-        with open(verify_paper, "r", encoding="utf-8") as f:
+        path = verify_paper if os.path.isabs(verify_paper) \
+            else os.path.join(REPO, verify_paper)
+        with open(path, "r", encoding="utf-8") as f:
             txt = f.read()
-        missing = [k for k, v in R["paper_claims"]["rendered"].items() if v not in txt]
-        print("PAPER CLAIM VERIFICATION: %d claims, %d missing %s"
-              % (len(R["paper_claims"]["rendered"]), len(missing), missing))
-        sys.exit(1 if missing else 0)
+        cov = paper_coverage(R, txt)
+        print("PAPER CLAIM VERIFICATION (%s): %d claims, %d missing %s; %d "
+              "distinct numerals over %d occurrences, %d covered by rendering, "
+              "%d declared derived-in-text, uncovered %s"
+              % (verify_paper, cov["claims"], len(cov["missing"]),
+                 cov["missing"], cov["distinct_numerals"],
+                 cov["numeral_occurrences"], cov["covered_by_rendering"],
+                 cov["declared_derived_in_text"], cov["uncovered"] or "none"))
+        sys.exit(1 if (cov["missing"] or cov["uncovered"]) else 0)
 
     sys.exit(0)
 
@@ -3027,13 +4782,38 @@ def emit_report(R, S):
         say("  path-value %-18s %s/%s = %s" % (r["id"], r["source"], r["path"],
                                                json.dumps(r["expected"])[:44]))
     say("")
-    say("THE STAGE: locality by the ported criterion (Moore connective, d=2)")
+    say("THE STAGE: locality by the ported criterion (the FORCED connective, d=2)")
     for row in R["locality_sweep"]:
         if row["d"] == 2 and row["connective"] == CONNECTIVES[0]:
             say("  L=%d offsets=%2d neighbours=%2d complete=%-5s locality=%s"
                 % (row["L"], row["offsets"], row["neighbours"],
                    row["complete"], row["locality"]))
     say("  parity witness: %s" % R["parity_witness"])
+    say("")
+    say("THE CONNECTIVE IS FORCED BY THE ANCHORED LINK SET")
+    cf = R["connective_forcing"]
+    say("  anchored links      %s" % cf["anchored_links"])
+    say("  forced              %-24s %s" % (cf["forced_tag"], cf["reason_forced"]))
+    say("  excluded            %-24s %s" % (cf["excluded_tag"], cf["reason_excluded"]))
+    say("  admissible sizes    forced %s / excluded %s"
+        % (cf["admissible_under_forced"], cf["admissible_under_excluded"]))
+    say("  locality thresholds by connective and dimension:")
+    for row in R["locality_threshold_table"]:
+        say("    %-10s d=%d threshold=%s admits the anchored links=%s"
+            % (row["connective_tag"], row["d"], row["threshold"],
+               row["admits_anchored_links"]))
+    say("")
+    say("THE MOORE-BALL COLLAPSE THEOREM (legs measured)")
+    say("  sizes checked       %s" % R["moore_ball_collapse"]["sizes"])
+    say("  domain check        %s" % R["moore_ball_collapse"]["domain"])
+    say("  alphabet independence: %s" % R["alphabet_independence"])
+    say("")
+    say("THE FIVE-POINT SWEEPS (leaves and solutions are the invariants;")
+    say("the node count is an artifact of the declared offset ordering)")
+    for row in R["five_point_sweeps"]:
+        say("    L=%d %-13s nodes=%7d leaves=%5d non-monomial=%d"
+            % (row["L"], row["ordering"], row["nodes_visited"],
+               row["leaves_reached"], row["non_monomial"]))
     say("")
     say("THE FAMILY: unitary generators on the 3-term axis stencil, by ord(a)")
     for k in sorted(R["ord_census"], key=int):
@@ -3089,14 +4869,40 @@ def emit_report(R, S):
             % (o["representative"], o["size"], o["kind"], o["support"], o["radius"],
                o["axis_ord"], o["level"], o["order"]))
     say("")
+    say("  class labels: %d classes, %d distinct invariant tuples, %d with a "
+        "direction label added"
+        % (R["class_labels"]["classes"], R["class_labels"]["distinct_labels"],
+           R["class_labels"]["with_direction_label"]))
+    for sh in R["class_labels"]["shared"]:
+        say("    shared label %s by %s" % (sh["label"], sh["classes"]))
+    say("")
+    say("THE COMMUTATOR CENSUS (the R5 datum)")
+    for k in sorted(R["commutator_census"]):
+        v = R["commutator_census"][k]
+        if isinstance(v, dict):
+            say("  %-32s %4d non-commuting of %4d ordered pairs"
+                % (k, v["noncommuting"], v["pairs"]))
+    say("")
     say("REALIZATION CENSUS (the mandatory gate)")
     for lv in LEVELS:
         say("  %-9s %d generators" % (lv, R["realization_census"]["levels"][lv]))
     say("  maximal declared transport: %s" % R["realization_census"]["maximal"])
     say("  defects entering the verdict: only at %s" % R["realization_census"]["maximal"])
+    say("  every classification verified by a second route at %d generators"
+        % R["transport_levels"]["verified_by_second_route"])
+    say("")
+    say("LIKE FOR LIKE")
+    say("  %s" % R["like_for_like"])
+    say("")
+    say("RADIUS PROFILES AND THE CONE BOUND")
+    say("  %s" % R["radius_profiles"])
+    say("  %s" % R["lightcone_vacuity"])
     say("")
     say("STATE MOTION")
-    say("  %s" % R["state_motion"])
+    say("  %s" % {k: v for k, v in R["state_motion"].items() if k != "probe_rows"})
+    say("")
+    say("PAPER CLAIM COVERAGE")
+    say("  %s" % R["paper_coverage"])
     say("")
     say("THE VERDICT")
     say("")
