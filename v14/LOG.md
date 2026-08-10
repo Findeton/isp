@@ -4733,3 +4733,16 @@ tie-break-over-unordered-container class; d60-C2's missing
 maxhits conjunct; the d60-L70 CWD-relative read; the 7-unit
 audit scope; U4/U4b immune via maxhits=1) — no retro-edits to
 v10 terminals; a v14 pointer suffices.**
+
+## 2026-08-10 — THE D60-REGISTER RUNBOOK LINE ENGRAVED (v14 LEDGER #160)
+
+The U4b repair's routed proposal, quoted verbatim in its final
+report, is ACCEPTED and engraved as a §13/#91 addendum: **"a
+byte-reproducibility claim by any unit driving a v10 grammar
+layer must state the maxhits == 1 immunity or price the
+tie-break — as a gate, not a remark."**  Demonstrated twice
+(the d60 seed-dependence found live by U4b; confirmed
+empirically by two panel seats); U4/U4b immune and saying so;
+the 7-unit audit scope carried in the register note.  This
+completes the register's owed items — the LOG registration was
+done at #159; the RUNBOOK line is now applied.  Engravings: 20.
