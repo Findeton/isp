@@ -3220,3 +3220,19 @@ selftest exit-1-writes-nothing; the era learned at
 construction.  Artifacts committed as-is: paper 5f8ec142319c,
 code 53a10e87ec19, output d33412225949, receipt 00e7f6ea0f90.
 Battery + panel next.
+
+## 2026-08-10 — R4B PROTOCOL FROZEN, PANEL LAUNCHED (v14 LEDGER #111)
+
+Protocol v14/note-r4b-hostile-protocol.md: K1 the 928-cell
+census + the μ₈ claim + the NOT-BLOCH-DIAGONAL scope; K2 the
+motion census decisive (C004-identity two-way; the aliased
+accounting; THE CONVENTION-SELECTION CLAIM verified against the
+frozen effectus table — is "selected-not-declared" honest and
+what must SCOPE carry); K3 the bound (NO-CONTENT two ways; the
+8/14/36 partition; the propagator relation's grade); K4 the
+cancellation claim at citable scope (what it hands R4c-multi);
+K5 the instrument tested with the weld-2 twelve-injection
+playbook (the unit claims era-level born-compliance).  Three
+reviewers launched → v14/review-r4b-{operator,effectus,
+instrument}.md.  Orchestrator battery running in background
+(plain/flag/selftest/mutant), results to the ledger on landing.
