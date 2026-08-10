@@ -1662,3 +1662,21 @@ terminalized (the escape OWNED at both committed grains — the
 minorization (Doeblin on R-SIG / Birkhoff on G) — d70's named
 surviving candidate, first-class both ways.**  Construction
 dispatched.  Γ-main pins on Γ-prep + the R6b′ panel.
+
+## 2026-08-09 — R6b′ HOSTILE PROTOCOL FROZEN; PANEL DISPATCHED (v14 LEDGER #58)
+note-r6bp-hostile-protocol.md (`1cf5fc8b3272`) frozen.  The
+queue partially drained per the throughput reasoning (the
+session-limit constraint relaxed at reset; R6b′ first because
+Γ-main pins on its report).  Kill-shots: K1 the derived
+kernel's purity; K2 THE FIBER-COLLAPSE CLAIM (count-4-only —
+law or S2-census artifact; the citable-scope boundary); K3
+the defective renewal + THE SEAM (genuine or a row-selection
+artifact; does Γ-prep dissolve or confirm it — the answer
+shapes Γ-main's pin); K4 the composed heads + the R6a
+re-classifications + the extremal bar's kill criterion;
+K5 instrument (the 24 verbatim-context anchors' first
+at-scale audit; the #34 waiver standard; the R6a-drift
+provenance handling audited as the candidate STANDARD for
+concurrent-unit reads).  Three reviewers dispatched
+(Opus ×3) — six agents total w/ Γ-prep, the R3 repair, CR-D.
+CR-A/B/C and R4 panels remain queued for the next wave.
