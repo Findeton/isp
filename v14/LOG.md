@@ -2296,3 +2296,21 @@ ABSENT at the declared commit — the 13 quote-fidelity rows
 evaluated against WORKTREE bytes (a #46-class residue).**
 N1: the flow identity needs r = 4−|h|.  Two reviewers
 pending (Γ-main inst, R4 inst).
+
+## 2026-08-10 — THE REFERENT-WELD SCOUT LAUNCHED (v14 LEDGER #80)
+Weld 2 (the referent map: Γ's history-space carrier ↔ the
+spatial record lattice) enters reconnaissance.  THE SCOUT'S
+QUESTION: does ANY pinned source tie I7's sites/links/counts
+to transport-grammar objects (actors, addresses, histories,
+deliveries) — a motivated seed for the map — or is the
+spatial lattice a fresh declaration with no grammar
+provenance (in which case weld 2 requires a NEW declaration,
+itself a first-class structural finding about what the
+theory can derive)?  Leads assigned: HA's own arena
+provenance; the v10 record-growth geometry (paper 20's
+kernel geometry ON grammar objects + its no-go's scope); the
+Ulam-address system (d33 — a spatial-flavored address layer
+in the deep corpus); the actor/pool structures.  The
+precedent warning carried: R6b′'s identification census
+found 0-of-5 motivated at the interval level.  The weld-2
+unit pins on the scout's report + the user's word.
