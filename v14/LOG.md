@@ -2728,3 +2728,21 @@ git-show routes; K5 the first born-under-#82 instrument audited
 against the FULL contract incl. no-moving-refs off-tree/git-less
 reproduction.  Three reviewers launched (operator, effectus,
 instrument) → v14/review-w2-{operator,effectus,instrument}.md.
+
+## 2026-08-10 — WELD-2 VERIFICATION COMPLETE, 4/4 (v14 LEDGER #94)
+
+The remaining checks landed: **--selftest exit 0, WROTE NOTHING**
+(live-run status anchor_failures=0 gate_failures=0; the worker's
+18/18-anchors-killable claim exercised); **MUT-CYCLE-PLANT
+DIED-AT-TARGET=True at G-SCISSORS** (the planted cycle genuinely
+changed the census — 4 STRUCT-DEAD cells moved to a dormant
+ARITY-REPAIR-UNDECIDED class, G-SCISSORS + G-VERDICT both failed
+— and artifacts were NOT written).  Convention note for the
+panel: this unit's mutant harness returns **0 on kill-confirmed**
+(`return 0 if ok else 1`, ok = target gate among the failures),
+the inverse of earlier units' rc=1-on-kill; semantics verified in
+source and self-describing; the instrument reviewer audits all
+13.  Full verification: plain BYTE-IDENTICAL; unknown flag exit
+2; selftest clean + writes nothing; mutant kill-confirmed +
+writes nothing.  The #238/#82 discipline held (handler read in
+source first).  Panel in flight.
