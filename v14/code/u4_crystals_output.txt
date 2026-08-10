@@ -1,0 +1,607 @@
+==============================================================================
+U4 / paper-14 -- RENEWAL-ONLY CRYSTALS
+pin v14/note-u4-pin.md (06b62ecb60a9, ledger #105)
+==============================================================================
+
+==============================================================================
+SEC 1  PROVENANCE -- pinned-sha reads (#91); products gated
+==============================================================================
+  [PASS] G-PROV[v14/note-u4-pin.md]
+         the pinned source is present and its sha256-12 is 06b62ecb60a9 (measured 06b62ecb60a9) -- the pin (FROZEN)
+         evidence: {"got": "06b62ecb60a9", "path": "v14/note-u4-pin.md", "want": "06b62ecb60a9"}
+  [PASS] G-PROV[v14/note-routeA-successor-scout.md]
+         the pinned source is present and its sha256-12 is 88375db9cec2 (measured 88375db9cec2) -- the successor scout of record
+         evidence: {"got": "88375db9cec2", "path": "v14/note-routeA-successor-scout.md", "want": "88375db9cec2"}
+  [PASS] G-PROV[v14/note-w2-adjudication.md]
+         the pinned source is present and its sha256-12 is 7213d26ea4d4 (measured 7213d26ea4d4) -- the weld-2 adjudication (the successor ruling)
+         evidence: {"got": "7213d26ea4d4", "path": "v14/note-w2-adjudication.md", "want": "7213d26ea4d4"}
+  [PASS] G-PROV[v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md]
+         the pinned source is present and its sha256-12 is 37a428321f46 (measured 37a428321f46) -- v11 paper 0 (the question, the POSIT, the falsifiers)
+         evidence: {"got": "37a428321f46", "path": "v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md", "want": "37a428321f46"}
+  [PASS] G-PROV[v14/paper-09-renewal-transport.md]
+         the pinned source is present and its sha256-12 is 006f96aaa2ff (measured 006f96aaa2ff) -- paper-09 3 (what a renewal is)
+         evidence: {"got": "006f96aaa2ff", "path": "v14/paper-09-renewal-transport.md", "want": "006f96aaa2ff"}
+  [PASS] G-PROV[v11/note-v11p0a-reproduction-catalog.md]
+         the pinned source is present and its sha256-12 is 0cebe543e814 (measured 0cebe543e814) -- the reproduction catalog (the BHS and KR walls)
+         evidence: {"got": "0cebe543e814", "path": "v11/note-v11p0a-reproduction-catalog.md", "want": "0cebe543e814"}
+  [PASS] G-PROV[v11/note-L1-lorentz-no-go-lemma.md]
+         the pinned source is present and its sha256-12 is 93ea24591c3c (measured 93ea24591c3c) -- L-1 (the fourth form; the scope guard)
+         evidence: {"got": "93ea24591c3c", "path": "v11/note-L1-lorentz-no-go-lemma.md", "want": "93ea24591c3c"}
+  [PASS] G-PROV[v10/code/d60_crystal_exact.py]
+         the pinned source is present and its sha256-12 is 684cdb76552b (measured 684cdb76552b) -- D60: the Builder, CRYSTAL-2D, profile
+         evidence: {"got": "684cdb76552b", "path": "v10/code/d60_crystal_exact.py", "want": "684cdb76552b"}
+  [PASS] G-PROV[v10/code/d66_arbitration_crystal_exact.py]
+         the pinned source is present and its sha256-12 is 3d0516ab106e (measured 3d0516ab106e) -- D66: double_grid, conflict_grid
+         evidence: {"got": "3d0516ab106e", "path": "v10/code/d66_arbitration_crystal_exact.py", "want": "3d0516ab106e"}
+  [PASS] G-PROV[v10/code/d67_k4_double_grid_exact.py]
+         the pinned source is present and its sha256-12 is e80edf851d93 (measured e80edf851d93) -- D67: the k=4 double grid
+         evidence: {"got": "e80edf851d93", "path": "v10/code/d67_k4_double_grid_exact.py", "want": "e80edf851d93"}
+  [PASS] G-PROV[v10/code/d63_wide_crystal_exact.py]
+         the pinned source is present and its sha256-12 is 89e170f40579 (measured 89e170f40579) -- D63: the wide crystal
+         evidence: {"got": "89e170f40579", "path": "v10/code/d63_wide_crystal_exact.py", "want": "89e170f40579"}
+  [PASS] G-PROV[v10/code/d47a_sky_instrument_exact.py]
+         the pinned source is present and its sha256-12 is f0b578c13409 (measured f0b578c13409) -- D47a: heights, sky
+         evidence: {"got": "f0b578c13409", "path": "v10/code/d47a_sky_instrument_exact.py", "want": "f0b578c13409"}
+  [PASS] G-PROV[v10/code/d58_atlas_instrument_exact.py]
+         the pinned source is present and its sha256-12 is e5f58cb52a06 (measured e5f58cb52a06) -- D58: covers, atlas
+         evidence: {"got": "e5f58cb52a06", "path": "v10/code/d58_atlas_instrument_exact.py", "want": "e5f58cb52a06"}
+  [PASS] G-PROV[v10/code/d42b1_transport_exact.py]
+         the pinned source is present and its sha256-12 is 576275d55ecf (measured 576275d55ecf) -- D42b1: the transport grammar
+         evidence: {"got": "576275d55ecf", "path": "v10/code/d42b1_transport_exact.py", "want": "576275d55ecf"}
+  [PASS] G-PROV[v10/code/d74_transport_holonomy_exact.py]
+         the pinned source is present and its sha256-12 is bb852161aced (measured bb852161aced) -- D74: the declared sub-grammar shapes
+         evidence: {"got": "bb852161aced", "path": "v10/code/d74_transport_holonomy_exact.py", "want": "bb852161aced"}
+  [PASS] G-PROV[v10/data/d60_crystal_exact.out]
+         the pinned source is present and its sha256-12 is f768a4eafcd5 (measured f768a4eafcd5) -- D60's committed output
+         evidence: {"got": "f768a4eafcd5", "path": "v10/data/d60_crystal_exact.out", "want": "f768a4eafcd5"}
+  [PASS] G-PROV[v10/data/d66_arbitration_crystal_exact.out]
+         the pinned source is present and its sha256-12 is e252529d2586 (measured e252529d2586) -- D66's committed output
+         evidence: {"got": "e252529d2586", "path": "v10/data/d66_arbitration_crystal_exact.out", "want": "e252529d2586"}
+  [PASS] G-PROV-ROOT
+         ALL 17 pinned sources resolve under the repo root derived from this file's own location and every one reproduces its pinned sha256-12; a run outside the repo cannot reach them and fails HERE, loudly and by design, writing nothing
+         evidence: {"all_verified": true, "repo_root_derived_from": "__file__", "sources": 17}
+
+------------------------------------------------------------------------------
+The verbatim anchors (#62), each bound to its consumer gate
+------------------------------------------------------------------------------
+  [VERB] V01  v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md  -> consumer G-ARENA-SCOPE
+         "U4 — SPARSE RECORDS ON THE CRYSTALS.**  The conflict crystals
+  rebuilt with renewal-only record..."
+  [VERB] V02  v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md  -> consumer G-MARK-POSIT
+         "v11's **division events are the renewal events.**"
+  [VERB] V03  v14/paper-09-renewal-transport.md  -> consumer G-MARK-SOURCE-ROWS
+         "REN = [h for h in FAM if len(h) <= 4 and CLS[tuple(h)] == 0 and any(e[0] == 'r' for e in h)]"
+  [VERB] V04  v14/paper-09-renewal-transport.md  -> consumer G-MARK-SOURCE-ROWS
+         "Class 0 is necessary and not sufficient: an arbitration is required."
+  [VERB] V05  v14/paper-09-renewal-transport.md  -> consumer G-MARK-ROOT[DOUBLE-GRID(3,2)]
+         "every pair arbitration is a renewal to the root state [THEOREM at two-actor delivery-free scope]"
+  [VERB] V06  v11/relativistic-isp-v11-paper0-the-indivisible-record-law.md  -> consumer G-GEOM-SEGMENT
+         "If U4 shows sparse records destroy the geometry, kinematics and
+  law are not separable as posit..."
+  [VERB] V07  v11/note-v11p0a-reproduction-catalog.md  -> consumer G-WALL-BHS
+         "v11's
+crystals are finite-valency by construction, so BHS says their renewal
+sublattice **cannot..."
+  [VERB] V08  v11/note-v11p0a-reproduction-catalog.md  -> consumer G-WALL-KR
+         "a dimension reading without a height
+control is worthless"
+  [VERB] V09  v11/note-L1-lorentz-no-go-lemma.md  -> consumer G-WALL-L1
+         "it is a
+   **fourth form, outside paper 8's three**, and its admissibility is
+   v11's to argue ..."
+  [VERB] V10  v11/note-L1-lorentz-no-go-lemma.md  -> consumer G-WALL-L1-PERMUTATION
+         "It does **not** forbid a permutation action."
+  [VERB] V11  v10/code/d74_transport_holonomy_exact.py  -> consumer G-GEOM-ARMB-RENEWAL[DOUBLE-GRID(3,2)]
+         "A declared SUB-GRAMMAR: the support is
+    restricted, the committed weights are untouched."
+  [VERB] V12  v10/code/d60_crystal_exact.py  -> consumer G-GEOM-POP-INSTRUMENT
+         "D58's atlas restricted to a POPULATION of events (the poset is
+    left whole; only the metric p..."
+  [VERB] V13  v14/note-u4-pin.md  -> consumer G-WALL-DIAGONAL
+         "q₁₂ ≡ 0 is INHERITED"
+  [VERB] V14  v14/note-u4-pin.md  -> consumer G-CONTROL-DECLARED
+         "The delivery
+crystal D60-GRID(3,12) is the DECLARED COUNTEREXAMPLE CONTROL"
+
+==============================================================================
+SEC 3  THE RENEWAL MARKING -- re-derived, gated against the source
+==============================================================================
+  [PASS] G-MARK-POSIT
+         v11 paper 0 4's [POSIT] (V02) is carried verbatim and is this unit's ONLY identification of division with renewal: idles and deliveries remain grammar events and are not records, so the renewal-only record is the record of arbitrations
+         evidence: {"posit": "division events ARE the renewal events"}
+         WAIVER [DECLARATION-CARRIED]: a pinned axiom of the parent paper, quoted not derived; its consequences are what SEC 3 gates
+  [PASS] G-MARK-TAG[DOUBLE-GRID(3,2)]
+         on this crystal's 72-event record the SOURCE-FORCED tag predicate selects 18 events and an INDEPENDENT predicate written from the grammar's tuple SHAPES (the unique 4-tuple whose third slot is a conflict key) selects 18, and the two sets are IDENTICAL index for index -- the marking is not carried by the tag alone
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "identical": true, "structural": 18, "tag": 18}
+  [PASS] G-MARK-ROOT[DOUBLE-GRID(3,2)]
+         S4's renewal CONTENT (V05) is re-derived on this record event by event: at 18 of 18 marked events every proposer in the conflict key holds the newly minted value immediately after, and the superseded base is retired -- the marked events are exactly the events that reset their conflict group to one shared value, which is what 'a renewal to the root' says at this arena
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "marked": 18, "renewal_to_root": 18, "violations": []}
+  [PASS] G-MARK-TAG[DOUBLE-GRID(3,3)]
+         on this crystal's 96-event record the SOURCE-FORCED tag predicate selects 24 events and an INDEPENDENT predicate written from the grammar's tuple SHAPES (the unique 4-tuple whose third slot is a conflict key) selects 24, and the two sets are IDENTICAL index for index -- the marking is not carried by the tag alone
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "identical": true, "structural": 24, "tag": 24}
+  [PASS] G-MARK-ROOT[DOUBLE-GRID(3,3)]
+         S4's renewal CONTENT (V05) is re-derived on this record event by event: at 24 of 24 marked events every proposer in the conflict key holds the newly minted value immediately after, and the superseded base is retired -- the marked events are exactly the events that reset their conflict group to one shared value, which is what 'a renewal to the root' says at this arena
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "marked": 24, "renewal_to_root": 24, "violations": []}
+  [PASS] G-MARK-TAG[CONFLICT-GRID(3,2)]
+         on this crystal's 30-event record the SOURCE-FORCED tag predicate selects 6 events and an INDEPENDENT predicate written from the grammar's tuple SHAPES (the unique 4-tuple whose third slot is a conflict key) selects 6, and the two sets are IDENTICAL index for index -- the marking is not carried by the tag alone
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "identical": true, "structural": 6, "tag": 6}
+  [PASS] G-MARK-ROOT[CONFLICT-GRID(3,2)]
+         S4's renewal CONTENT (V05) is re-derived on this record event by event: at 6 of 6 marked events every proposer in the conflict key holds the newly minted value immediately after, and the superseded base is retired -- the marked events are exactly the events that reset their conflict group to one shared value, which is what 'a renewal to the root' says at this arena
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "marked": 6, "renewal_to_root": 6, "violations": []}
+  [PASS] G-MARK-TAG[CONFLICT-GRID(3,4)]
+         on this crystal's 66-event record the SOURCE-FORCED tag predicate selects 12 events and an INDEPENDENT predicate written from the grammar's tuple SHAPES (the unique 4-tuple whose third slot is a conflict key) selects 12, and the two sets are IDENTICAL index for index -- the marking is not carried by the tag alone
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "identical": true, "structural": 12, "tag": 12}
+  [PASS] G-MARK-ROOT[CONFLICT-GRID(3,4)]
+         S4's renewal CONTENT (V05) is re-derived on this record event by event: at 12 of 12 marked events every proposer in the conflict key holds the newly minted value immediately after, and the superseded base is retired -- the marked events are exactly the events that reset their conflict group to one shared value, which is what 'a renewal to the root' says at this arena
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "marked": 12, "renewal_to_root": 12, "violations": []}
+  [PASS] G-MARK-TAG[D60-GRID(3,12)]
+         on this crystal's 46-event record the SOURCE-FORCED tag predicate selects 1 events and an INDEPENDENT predicate written from the grammar's tuple SHAPES (the unique 4-tuple whose third slot is a conflict key) selects 1, and the two sets are IDENTICAL index for index -- the marking is not carried by the tag alone
+         evidence: {"crystal": "D60-GRID(3,12)", "identical": true, "structural": 1, "tag": 1}
+  [PASS] G-MARK-ROOT[D60-GRID(3,12)]
+         S4's renewal CONTENT (V05) is re-derived on this record event by event: at 1 of 1 marked events every proposer in the conflict key holds the newly minted value immediately after, and the superseded base is retired -- the marked events are exactly the events that reset their conflict group to one shared value, which is what 'a renewal to the root' says at this arena
+         evidence: {"crystal": "D60-GRID(3,12)", "marked": 1, "renewal_to_root": 1, "violations": []}
+  [PASS] G-MARK-SOURCE-ROWS
+         THE MARKING'S WARRANT, MEASURED AND SCOPED.  paper-09 3 forces renewal = class-0-carrying-an-arb from three agreeing rows (V03, V04, V05).  Of the three, exactly ONE reaches this arena: the class-0 clause is a two-actor delivery-free STATE-SPACE notion with no committed referent at nine actors, and S4's narrower sufficient condition -- PAIR arbitration -- selects 0 of the 61 marked events across all five crystals, because every conflict key here has size 1 or 3.  What transports is the ARBITRATION TAG, and G-MARK-ROOT shows S4's CONTENT transports even though its hypothesis does not
+         evidence: {"clauses_out_of_scope": ["class-0 (two-actor delivery-free)", "S4 pair hypothesis (vacuous here)"], "clauses_reaching_this_arena": ["arbitration tag"], "marked_total": 61, "pair_arbitrations": 0}
+
+==============================================================================
+SEC 4  THE ARENA -- five crystals, FORCED, cross-checked to v10
+==============================================================================
+  [PASS] G-ARENA-SCOPE
+         the arena is the pin R1 arena and nothing else: the four ARBITRATION crystals ['DOUBLE-GRID(3,2)', 'DOUBLE-GRID(3,3)', 'CONFLICT-GRID(3,2)', 'CONFLICT-GRID(3,4)'] plus the DECLARED COUNTEREXAMPLE CONTROL D60-GRID(3,12); the question they answer is V01, quoted verbatim
+         evidence: {"arbitration": ["DOUBLE-GRID(3,2)", "DOUBLE-GRID(3,3)", "CONFLICT-GRID(3,2)", "CONFLICT-GRID(3,4)"], "control": "D60-GRID(3,12)"}
+  [PASS] G-CONTROL-DECLARED
+         D60-GRID(3,12) is the pin's DECLARED COUNTEREXAMPLE CONTROL (V14): every periodicity claim below must return its OTHER value there, and each two-way pair is gated per reading, never in aggregate
+         evidence: {"control": "D60-GRID(3,12)"}
+         WAIVER [DECLARATION-CARRIED]: the two-way requirement is declared here and discharged by the per-reading control gates in SEC 5 and the width gate in SEC 6
+  [PASS] G-FORCED[DOUBLE-GRID(3,2)]
+         this crystal is a FORCED record: 72 events, every one offered by the committed layer's own menu and specified by its FULL EVENT TUPLE, matched by EXACTLY ONE candidate (maxhits = 1), refusal = None -- D60's C1/C2 and D66/D67's _pick discipline, reproduced
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "events": 72, "maxhits": 1, "refusal": null}
+  [PASS] G-SITEMAP[DOUBLE-GRID(3,2)]
+         the site reading's carrier is FORCED by the constructor's own actor naming: the 9 actor names parse as a BIJECTION onto Z_3^2, image size 9 of 9 -- no site assignment is chosen by this unit
+         evidence: {"actors": 9, "crystal": "DOUBLE-GRID(3,2)", "image": 9}
+  [PASS] G-FORCED[DOUBLE-GRID(3,3)]
+         this crystal is a FORCED record: 96 events, every one offered by the committed layer's own menu and specified by its FULL EVENT TUPLE, matched by EXACTLY ONE candidate (maxhits = 1), refusal = None -- D60's C1/C2 and D66/D67's _pick discipline, reproduced
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "events": 96, "maxhits": 1, "refusal": null}
+  [PASS] G-SITEMAP[DOUBLE-GRID(3,3)]
+         the site reading's carrier is FORCED by the constructor's own actor naming: the 9 actor names parse as a BIJECTION onto Z_3^2, image size 9 of 9 -- no site assignment is chosen by this unit
+         evidence: {"actors": 9, "crystal": "DOUBLE-GRID(3,3)", "image": 9}
+  [PASS] G-FORCED[CONFLICT-GRID(3,2)]
+         this crystal is a FORCED record: 30 events, every one offered by the committed layer's own menu and specified by its FULL EVENT TUPLE, matched by EXACTLY ONE candidate (maxhits = 1), refusal = None -- D60's C1/C2 and D66/D67's _pick discipline, reproduced
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "events": 30, "maxhits": 1, "refusal": null}
+  [PASS] G-SITEMAP[CONFLICT-GRID(3,2)]
+         the site reading's carrier is FORCED by the constructor's own actor naming: the 9 actor names parse as a BIJECTION onto Z_3^2, image size 9 of 9 -- no site assignment is chosen by this unit
+         evidence: {"actors": 9, "crystal": "CONFLICT-GRID(3,2)", "image": 9}
+  [PASS] G-FORCED[CONFLICT-GRID(3,4)]
+         this crystal is a FORCED record: 66 events, every one offered by the committed layer's own menu and specified by its FULL EVENT TUPLE, matched by EXACTLY ONE candidate (maxhits = 1), refusal = None -- D60's C1/C2 and D66/D67's _pick discipline, reproduced
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "events": 66, "maxhits": 1, "refusal": null}
+  [PASS] G-SITEMAP[CONFLICT-GRID(3,4)]
+         the site reading's carrier is FORCED by the constructor's own actor naming: the 9 actor names parse as a BIJECTION onto Z_3^2, image size 9 of 9 -- no site assignment is chosen by this unit
+         evidence: {"actors": 9, "crystal": "CONFLICT-GRID(3,4)", "image": 9}
+  [PASS] G-FORCED[D60-GRID(3,12)]
+         this crystal is a FORCED record: 46 events, every one offered by the committed layer's own menu and specified by its FULL EVENT TUPLE, matched by EXACTLY ONE candidate (maxhits = 1), refusal = None -- D60's C1/C2 and D66/D67's _pick discipline, reproduced
+         evidence: {"crystal": "D60-GRID(3,12)", "events": 46, "maxhits": 1, "refusal": null}
+  [PASS] G-SITEMAP[D60-GRID(3,12)]
+         the site reading's carrier is FORCED by the constructor's own actor naming: the 9 actor names parse as a BIJECTION onto Z_3^2, image size 9 of 9 -- no site assignment is chosen by this unit
+         evidence: {"actors": 9, "crystal": "D60-GRID(3,12)", "image": 9}
+
+  [the v10 cross-check -- committed numbers, pin R1]
+  [ANCH] A01  D60-GRID(3,12) d=2 h2: committed=1/2 computed=1/2
+  [ANCH] A02  D60-GRID(3,12) d=2 h4: committed=0 computed=0
+  [ANCH] A03  D60-GRID(3,12) d=2 max: committed=3 computed=3
+  [ANCH] A04  D60-GRID(3,12) d=2 pairs: committed=43 computed=43
+  [ANCH] A05  D60-GRID(3,12) d=2 om: committed=101/258 computed=101/258
+  [ANCH] A06  D60-GRID(3,12) d=3 h2: committed=14/23 computed=14/23
+  [ANCH] A07  D60-GRID(3,12) d=3 h4: committed=0 computed=0
+  [ANCH] A08  D60-GRID(3,12) d=3 max: committed=3 computed=3
+  [ANCH] A09  D60-GRID(3,12) d=3 pairs: committed=51 computed=51
+  [ANCH] A10  D60-GRID(3,12) d=3 om: committed=73/153 computed=73/153
+  [ANCH] A11  DOUBLE-GRID(3,2) d=2 max: committed=9 computed=9
+  [ANCH] A12  DOUBLE-GRID(3,2) d=3 max: committed=9 computed=9
+  [ANCH] A13  CONFLICT-GRID(3,4) d=2 max: committed=6 computed=6
+  [ANCH] A14  CONFLICT-GRID(3,4) d=3 max: committed=6 computed=6
+  [ANCH] A15  DOUBLE-GRID(3,2) d=2 h2 (4-decimal rendering): committed=0.4444 computed=0.4444
+  [ANCH] A16  DOUBLE-GRID(3,2) d=2 h4 (4-decimal rendering): committed=0.0694 computed=0.0694
+  [ANCH] A17  DOUBLE-GRID(3,2) d=2 om (4-decimal rendering): committed=0.5576 computed=0.5576
+  [ANCH] A18  DOUBLE-GRID(3,2) d=3 h2 (4-decimal rendering): committed=0.6389 computed=0.6389
+  [ANCH] A19  DOUBLE-GRID(3,2) d=3 h4 (4-decimal rendering): committed=0.2083 computed=0.2083
+  [ANCH] A20  DOUBLE-GRID(3,2) d=3 om (4-decimal rendering): committed=0.5710 computed=0.5710
+  [ANCH] A21  CONFLICT-GRID(3,4) d=2 h2 (4-decimal rendering): committed=0.4848 computed=0.4848
+  [ANCH] A22  CONFLICT-GRID(3,4) d=2 h4 (4-decimal rendering): committed=0.1364 computed=0.1364
+  [ANCH] A23  CONFLICT-GRID(3,4) d=2 om (4-decimal rendering): committed=0.5068 computed=0.5068
+  [ANCH] A24  CONFLICT-GRID(3,4) d=3 h2 (4-decimal rendering): committed=0.5758 computed=0.5758
+  [ANCH] A25  CONFLICT-GRID(3,4) d=3 h4 (4-decimal rendering): committed=0.4545 computed=0.4545
+  [ANCH] A26  CONFLICT-GRID(3,4) d=3 om (4-decimal rendering): committed=0.5833 computed=0.5833
+  [ANCH] A27  D60-GRID(3,12) events: committed=46 computed=46
+  [ANCH] A28  DOUBLE-GRID(3,2) events: committed=72 computed=72
+  [ANCH] A29  CONFLICT-GRID(3,4) events: committed=66 computed=66
+  [ANCH] A30  DOUBLE-GRID(3,2) arbitration share: committed=1/4 computed=1/4
+  [ANCH] A31  CONFLICT-GRID(3,4) arbitration share: committed=2/11 computed=2/11
+  [ANCH] A32  DOUBLE-GRID(3,2) version registers: committed=18 computed=18
+  [ANCH] A33  CONFLICT-GRID(3,4) version registers: committed=12 computed=12
+  [ANCH] A39  D60-GRID(3,12) d=2 mean|D| (2-decimal rendering): committed=1.46 computed=1.46
+  [ANCH] A40  D60-GRID(3,12) d=3 mean|D| (2-decimal rendering): committed=1.61 computed=1.61
+  [ANCH] A41  DOUBLE-GRID(3,2) d=2 mean|D| (2-decimal rendering): committed=1.96 computed=1.96
+  [ANCH] A42  CONFLICT-GRID(3,4) d=2 mean|D| (2-decimal rendering): committed=1.86 computed=1.86
+  [ANCH] A34  DOUBLE-GRID event-count law at the committed R=2: committed=72 computed=72
+  [ANCH] A35  DOUBLE-GRID event-count law at the committed R=4: committed=120 computed=120
+  [ANCH] A36  CONFLICT-GRID event-count law at the committed R=4: committed=66 computed=66
+  [ANCH] A37  CONFLICT-GRID event-count law at the committed R=6: committed=102 computed=102
+  [ANCH] A38  CONFLICT-GRID event-count law at the committed R=10: committed=174 computed=174
+  [PASS] G-V10-XCHECK-LAW
+         the two crystals the pin names that v10 never swept -- DOUBLE-GRID(3,3) and CONFLICT-GRID(3,2) -- are cross-checked by a CLOSED-FORM event-count law verified at every committed member of its own family (A34-A38): the law predicts 96 and 30 and the rebuilds carry 96 and 30
+         evidence: {"measured": [96, 30], "predicted": [96, 30]}
+
+==============================================================================
+SEC 5  THE HEADLINE -- the division field's translation stabilizer on Z_3^2
+==============================================================================
+  [DATA] DOUBLE-GRID(3,2)    initiator  field=[3, 3, 0, 0, 3, 3, 3, 0, 3] support=6/9
+  [PASS] G-STAB[DOUBLE-GRID(3,2)|initiator]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [3, 3, 0, 0, 3, 3, 3, 0, 3] over the nine sites (support 6/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "field": [3, 3, 0, 0, 3, 3, 3, 0, 3], "order": 3, "reading": "initiator", "stabilizer": "<(1,1)>", "support": 6}
+  [PASS] G-STAB-RECON[DOUBLE-GRID(3,2)|initiator]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "DOUBLE-GRID(3,2)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "initiator"}
+  [PASS] G-DIAGONAL-INVARIANCE[DOUBLE-GRID(3,2)|initiator]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "DOUBLE-GRID(3,2)", "reading": "initiator"}
+  [DATA] DOUBLE-GRID(3,2)    footprint  field=[5, 5, 4, 4, 5, 5, 5, 4, 5] support=9/9
+  [PASS] G-STAB[DOUBLE-GRID(3,2)|footprint]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [5, 5, 4, 4, 5, 5, 5, 4, 5] over the nine sites (support 9/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "field": [5, 5, 4, 4, 5, 5, 5, 4, 5], "order": 3, "reading": "footprint", "stabilizer": "<(1,1)>", "support": 9}
+  [PASS] G-STAB-RECON[DOUBLE-GRID(3,2)|footprint]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "DOUBLE-GRID(3,2)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "footprint"}
+  [PASS] G-DIAGONAL-INVARIANCE[DOUBLE-GRID(3,2)|footprint]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "DOUBLE-GRID(3,2)", "reading": "footprint"}
+  [DATA] DOUBLE-GRID(3,3)    initiator  field=[4, 4, 0, 0, 4, 4, 4, 0, 4] support=6/9
+  [PASS] G-STAB[DOUBLE-GRID(3,3)|initiator]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [4, 4, 0, 0, 4, 4, 4, 0, 4] over the nine sites (support 6/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "field": [4, 4, 0, 0, 4, 4, 4, 0, 4], "order": 3, "reading": "initiator", "stabilizer": "<(1,1)>", "support": 6}
+  [PASS] G-STAB-RECON[DOUBLE-GRID(3,3)|initiator]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "DOUBLE-GRID(3,3)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "initiator"}
+  [PASS] G-DIAGONAL-INVARIANCE[DOUBLE-GRID(3,3)|initiator]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "DOUBLE-GRID(3,3)", "reading": "initiator"}
+  [DATA] DOUBLE-GRID(3,3)    footprint  field=[7, 7, 6, 6, 7, 7, 7, 6, 7] support=9/9
+  [PASS] G-STAB[DOUBLE-GRID(3,3)|footprint]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [7, 7, 6, 6, 7, 7, 7, 6, 7] over the nine sites (support 9/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "field": [7, 7, 6, 6, 7, 7, 7, 6, 7], "order": 3, "reading": "footprint", "stabilizer": "<(1,1)>", "support": 9}
+  [PASS] G-STAB-RECON[DOUBLE-GRID(3,3)|footprint]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "DOUBLE-GRID(3,3)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "footprint"}
+  [PASS] G-DIAGONAL-INVARIANCE[DOUBLE-GRID(3,3)|footprint]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "DOUBLE-GRID(3,3)", "reading": "footprint"}
+  [DATA] CONFLICT-GRID(3,2)  initiator  field=[2, 0, 0, 0, 2, 0, 0, 0, 2] support=3/9
+  [PASS] G-STAB[CONFLICT-GRID(3,2)|initiator]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [2, 0, 0, 0, 2, 0, 0, 0, 2] over the nine sites (support 3/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "field": [2, 0, 0, 0, 2, 0, 0, 0, 2], "order": 3, "reading": "initiator", "stabilizer": "<(1,1)>", "support": 3}
+  [PASS] G-STAB-RECON[CONFLICT-GRID(3,2)|initiator]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "CONFLICT-GRID(3,2)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "initiator"}
+  [PASS] G-DIAGONAL-INVARIANCE[CONFLICT-GRID(3,2)|initiator]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "CONFLICT-GRID(3,2)", "reading": "initiator"}
+  [DATA] CONFLICT-GRID(3,2)  footprint  field=[2, 2, 2, 2, 2, 2, 2, 2, 2] support=9/9
+  [PASS] G-STAB[CONFLICT-GRID(3,2)|footprint]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [2, 2, 2, 2, 2, 2, 2, 2, 2] over the nine sites (support 9/9) and its translation stabilizer in Z_3^2 is Z3^2, of order 9, elements [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "field": [2, 2, 2, 2, 2, 2, 2, 2, 2], "order": 9, "reading": "footprint", "stabilizer": "Z3^2", "support": 9}
+  [PASS] G-STAB-RECON[CONFLICT-GRID(3,2)|footprint]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: Z3^2
+         evidence: {"characters": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "crystal": "CONFLICT-GRID(3,2)", "direct": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "reading": "footprint"}
+  [PASS] G-DIAGONAL-INVARIANCE[CONFLICT-GRID(3,2)|footprint]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is Z3^2
+         evidence: {"contains_(1,1)": true, "crystal": "CONFLICT-GRID(3,2)", "reading": "footprint"}
+  [DATA] CONFLICT-GRID(3,4)  initiator  field=[4, 0, 0, 0, 4, 0, 0, 0, 4] support=3/9
+  [PASS] G-STAB[CONFLICT-GRID(3,4)|initiator]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [4, 0, 0, 0, 4, 0, 0, 0, 4] over the nine sites (support 3/9) and its translation stabilizer in Z_3^2 is <(1,1)>, of order 3, elements [[0, 0], [1, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "field": [4, 0, 0, 0, 4, 0, 0, 0, 4], "order": 3, "reading": "initiator", "stabilizer": "<(1,1)>", "support": 3}
+  [PASS] G-STAB-RECON[CONFLICT-GRID(3,4)|initiator]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: <(1,1)>
+         evidence: {"characters": [[0, 0], [1, 1], [2, 2]], "crystal": "CONFLICT-GRID(3,4)", "direct": [[0, 0], [1, 1], [2, 2]], "reading": "initiator"}
+  [PASS] G-DIAGONAL-INVARIANCE[CONFLICT-GRID(3,4)|initiator]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is <(1,1)>
+         evidence: {"contains_(1,1)": true, "crystal": "CONFLICT-GRID(3,4)", "reading": "initiator"}
+  [DATA] CONFLICT-GRID(3,4)  footprint  field=[4, 4, 4, 4, 4, 4, 4, 4, 4] support=9/9
+  [PASS] G-STAB[CONFLICT-GRID(3,4)|footprint]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [4, 4, 4, 4, 4, 4, 4, 4, 4] over the nine sites (support 9/9) and its translation stabilizer in Z_3^2 is Z3^2, of order 9, elements [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]] -- NONTRIVIAL, so the division events of this crystal DO form a crystal at this reading
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "field": [4, 4, 4, 4, 4, 4, 4, 4, 4], "order": 9, "reading": "footprint", "stabilizer": "Z3^2", "support": 9}
+  [PASS] G-STAB-RECON[CONFLICT-GRID(3,4)|footprint]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: Z3^2
+         evidence: {"characters": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "crystal": "CONFLICT-GRID(3,4)", "direct": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]], "reading": "footprint"}
+  [PASS] G-DIAGONAL-INVARIANCE[CONFLICT-GRID(3,4)|footprint]
+         the DIAGONAL translation (1,1) lies in this stabilizer: the invariance direction the four arbitration crystals share is <(1,1)>, and here the stabilizer is Z3^2
+         evidence: {"contains_(1,1)": true, "crystal": "CONFLICT-GRID(3,4)", "reading": "footprint"}
+  [DATA] D60-GRID(3,12)      initiator  field=[1, 0, 0, 0, 0, 0, 0, 0, 0] support=1/9
+  [PASS] G-STAB[D60-GRID(3,12)|initiator]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [1, 0, 0, 0, 0, 0, 0, 0, 0] over the nine sites (support 1/9) and its translation stabilizer in Z_3^2 is 1, of order 1, elements [[0, 0]] -- TRIVIAL, so the division events of this crystal do NOT form a crystal, which is the value the DECLARED COUNTEREXAMPLE CONTROL must return
+         evidence: {"crystal": "D60-GRID(3,12)", "field": [1, 0, 0, 0, 0, 0, 0, 0, 0], "order": 1, "reading": "initiator", "stabilizer": "1", "support": 1}
+  [PASS] G-STAB-RECON[D60-GRID(3,12)|initiator]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: 1
+         evidence: {"characters": [[0, 0]], "crystal": "D60-GRID(3,12)", "direct": [[0, 0]], "reading": "initiator"}
+  [DATA] D60-GRID(3,12)      footprint  field=[1, 0, 0, 0, 0, 0, 0, 0, 0] support=1/9
+  [PASS] G-STAB[D60-GRID(3,12)|footprint]
+         MEASURED EXACTLY: the division-event field at this crystal and this site reading is [1, 0, 0, 0, 0, 0, 0, 0, 0] over the nine sites (support 1/9) and its translation stabilizer in Z_3^2 is 1, of order 1, elements [[0, 0]] -- TRIVIAL, so the division events of this crystal do NOT form a crystal, which is the value the DECLARED COUNTEREXAMPLE CONTROL must return
+         evidence: {"crystal": "D60-GRID(3,12)", "field": [1, 0, 0, 0, 0, 0, 0, 0, 0], "order": 1, "reading": "footprint", "stabilizer": "1", "support": 1}
+  [PASS] G-STAB-RECON[D60-GRID(3,12)|footprint]
+         the same stabilizer is re-derived by an INDEPENDENT route sharing no code and no typed constant with the first -- the annihilator of the support of the exact Z_3^2 Fourier transform in Z[omega] = Z[t]/(t^2+t+1), running over the DUAL group instead of translating the field -- and the two agree element for element: 1
+         evidence: {"characters": [[0, 0]], "crystal": "D60-GRID(3,12)", "direct": [[0, 0]], "reading": "footprint"}
+  [PASS] G-READING-DIVERGENCE
+         THE SITE READING IS NOT NEUTRAL, AND THE SCOUT'S PRELIMINARY IS CORRECTED.  The scout recorded 'stabilizers AGREE, supports differ (6/9 vs 9/9)'.  MEASURED: the two readings agree at 2 of 4 arbitration crystals (['DOUBLE-GRID(3,2)', 'DOUBLE-GRID(3,3)']) and DIVERGE at 2 (['CONFLICT-GRID(3,2)', 'CONFLICT-GRID(3,4)']), where the footprint field is CONSTANT and its stabilizer is the whole group; and the supports are 6/9 vs 9/9 only on the DOUBLE-GRIDs, 3/9 vs 9/9 on the CONFLICT-GRIDs.  The divergence runs in ONE direction only -- the footprint reading never shrinks the stabilizer -- and <(1,1)> lies in all eight arbitration cells
+         evidence: {"agree": ["DOUBLE-GRID(3,2)", "DOUBLE-GRID(3,3)"], "diverge": ["CONFLICT-GRID(3,2)", "CONFLICT-GRID(3,4)"], "table": {"CONFLICT-GRID(3,2)|footprint": "Z3^2", "CONFLICT-GRID(3,2)|initiator": "<(1,1)>", "CONFLICT-GRID(3,4)|footprint": "Z3^2", "CONFLICT-GRID(3,4)|initiator": "<(1,1)>", "D60-GRID(3,12)|footprint": "1", "D60-GRID(3,12)|initiator": "1", "DOUBLE-GRID(3,2)|footprint": "<(1,1)>", "DOUBLE-GRID(3,2)|initiator": "<(1,1)>", "DOUBLE-GRID(3,3)|footprint": "<(1,1)>", "DOUBLE-GRID(3,3)|initiator": "<(1,1)>"}}
+
+==============================================================================
+SEC 6  GEOMETRY INVARIANCE under the renewal-only rebuild
+==============================================================================
+  [PASS] G-GEOM-POP-INSTRUMENT
+         arm (a)'s primary sub-reading uses D60's OWN committed device (V12): the poset is left whole and only the metric population changes.  Arm (a)'s second sub-reading takes the literal sparse record -- the subsequence of marked events -- and recomputes its event poset from scratch.  'FILTER' is ambiguous between the two and both are run; the fiber is 2 and it is declared, not chosen
+         evidence: {"fiber": 2, "sub_readings": ["POP (poset whole)", "SUB (poset rebuilt)"]}
+         WAIVER [DECLARATION-CARRIED]: a declaration about which two objects the arm measures; both are measured below, per crystal
+  [PASS] G-GEOM-HEIGHTPURE[DOUBLE-GRID(3,2)]
+         HEIGHT PURITY, MEASURED: the 18 marked events of this crystal occupy the height layers [1, 8, 9, 12, 13] of a poset of longest chain 14, and 0 of those layers contain any unmarked event -- the marked events fill whole layers and share them with nothing else
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "layers": [1, 8, 9, 12, 13], "longest_chain": 14, "marked": 18, "mixed_layers": []}
+  [PASS] G-GEOM-HCTRL[DOUBLE-GRID(3,2)]
+         THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY HERE (V08).  A height-matched control population -- same size, same height histogram, drawn from unmarked events -- has size 0 with deficit 18 of 18, because height purity leaves no unmarked event at any marked height.  Every POPULATION-AVERAGED row below is therefore confounded with a height shift that CANNOT be controlled, and this unit certifies none of them
+         evidence: {"control_size": 0, "crystal": "DOUBLE-GRID(3,2)", "deficit": 18, "marked": 18}
+  [PASS] G-GEOM-POP-WIDTH[DOUBLE-GRID(3,2)|d=2]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 9, attained at 3 events of which 3 are marked; restricted max|D| = 9 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 3, "attainers_marked": 3, "crystal": "DOUBLE-GRID(3,2)", "depth": 2, "full_max": 9, "invariant": true, "restricted_max": 9}
+  [PASS] G-GEOM-POP-WIDTH[DOUBLE-GRID(3,2)|d=3]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 9, attained at 9 events of which 3 are marked; restricted max|D| = 9 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 9, "attainers_marked": 3, "crystal": "DOUBLE-GRID(3,2)", "depth": 3, "full_max": 9, "invariant": true, "restricted_max": 9}
+  [PASS] G-GEOM-BLOCKED[DOUBLE-GRID(3,2)]
+         the POPULATION-AVERAGED rows are reported and NOT certified: at d=2 homogeneity moves 4/9 -> 1/3, |D|>=4 moves 5/72 -> 1/6 and mean overlap moves 92/165 -> 1/3, every one of them inseparable from the height shift whose control G-GEOM-HCTRL proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this unit's reading of these rows, not INVARIANT and not VARIES
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "d2_full": {"h2": "4/9", "h4": "5/72", "mean": "47/24", "om": "92/165"}, "d2_restricted": {"h2": "1/3", "h4": "1/6", "mean": "7/3", "om": "1/3"}, "d3_full": {"h2": "23/36", "h4": "5/24", "mean": "26/9", "om": "1199/2100"}, "d3_restricted": {"h2": "5/9", "h4": "1/6", "mean": "8/3", "om": "9/22"}}
+         WAIVER [MEASURED-THEN-DECLINED]: the numbers are computed exactly and printed; what is withheld is the INFERENCE from them, on the ground that the KR control the catalog requires is empty at every one of these crystals
+  [PASS] G-GEOM-SUB[DOUBLE-GRID(3,2)]
+         arm (a)'s second sub-reading -- the literal sparse record, poset rebuilt on the 18 marked events alone -- carries longest chain 5 against the full record's 14, and max|D| 3 at d=2 against 9: a DIFFERENT poset, not a restriction of this one, and reported as data only
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "events": 18, "height_full": 14, "height_sub": 5, "max_full_d2": 9, "max_full_d3": 9, "max_sub_d2": 3, "max_sub_d3": 3}
+         WAIVER [MEASURED-THEN-DECLINED]: the sparse record's own poset is a different object from the crystal's; no invariance claim is made across the two
+  [PASS] G-GEOM-HEIGHTPURE[DOUBLE-GRID(3,3)]
+         HEIGHT PURITY, MEASURED: the 24 marked events of this crystal occupy the height layers [1, 8, 9, 12, 13, 16, 17] of a poset of longest chain 18, and 0 of those layers contain any unmarked event -- the marked events fill whole layers and share them with nothing else
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "layers": [1, 8, 9, 12, 13, 16, 17], "longest_chain": 18, "marked": 24, "mixed_layers": []}
+  [PASS] G-GEOM-HCTRL[DOUBLE-GRID(3,3)]
+         THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY HERE (V08).  A height-matched control population -- same size, same height histogram, drawn from unmarked events -- has size 0 with deficit 24 of 24, because height purity leaves no unmarked event at any marked height.  Every POPULATION-AVERAGED row below is therefore confounded with a height shift that CANNOT be controlled, and this unit certifies none of them
+         evidence: {"control_size": 0, "crystal": "DOUBLE-GRID(3,3)", "deficit": 24, "marked": 24}
+  [PASS] G-GEOM-POP-WIDTH[DOUBLE-GRID(3,3)|d=2]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 9, attained at 6 events of which 6 are marked; restricted max|D| = 9 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 6, "attainers_marked": 6, "crystal": "DOUBLE-GRID(3,3)", "depth": 2, "full_max": 9, "invariant": true, "restricted_max": 9}
+  [PASS] G-GEOM-POP-WIDTH[DOUBLE-GRID(3,3)|d=3]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 9, attained at 21 events of which 6 are marked; restricted max|D| = 9 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 21, "attainers_marked": 6, "crystal": "DOUBLE-GRID(3,3)", "depth": 3, "full_max": 9, "invariant": true, "restricted_max": 9}
+  [PASS] G-GEOM-BLOCKED[DOUBLE-GRID(3,3)]
+         the POPULATION-AVERAGED rows are reported and NOT certified: at d=2 homogeneity moves 47/96 -> 1/2, |D|>=4 moves 1/12 -> 1/4 and mean overlap moves 137/246 -> 1/3, every one of them inseparable from the height shift whose control G-GEOM-HCTRL proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this unit's reading of these rows, not INVARIANT and not VARIES
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "d2_full": {"h2": "47/96", "h4": "1/12", "mean": "71/32", "om": "137/246"}, "d2_restricted": {"h2": "1/2", "h4": "1/4", "mean": "13/4", "om": "1/3"}, "d3_full": {"h2": "35/48", "h4": "9/32", "mean": "11/3", "om": "1919/3180"}, "d3_restricted": {"h2": "2/3", "h4": "1/4", "mean": "7/2", "om": "3/8"}}
+         WAIVER [MEASURED-THEN-DECLINED]: the numbers are computed exactly and printed; what is withheld is the INFERENCE from them, on the ground that the KR control the catalog requires is empty at every one of these crystals
+  [PASS] G-GEOM-SUB[DOUBLE-GRID(3,3)]
+         arm (a)'s second sub-reading -- the literal sparse record, poset rebuilt on the 24 marked events alone -- carries longest chain 7 against the full record's 18, and max|D| 3 at d=2 against 9: a DIFFERENT poset, not a restriction of this one, and reported as data only
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "events": 24, "height_full": 18, "height_sub": 7, "max_full_d2": 9, "max_full_d3": 9, "max_sub_d2": 3, "max_sub_d3": 3}
+         WAIVER [MEASURED-THEN-DECLINED]: the sparse record's own poset is a different object from the crystal's; no invariance claim is made across the two
+  [PASS] G-GEOM-HEIGHTPURE[CONFLICT-GRID(3,2)]
+         HEIGHT PURITY, MEASURED: the 6 marked events of this crystal occupy the height layers [1, 5] of a poset of longest chain 6, and 0 of those layers contain any unmarked event -- the marked events fill whole layers and share them with nothing else
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "layers": [1, 5], "longest_chain": 6, "marked": 6, "mixed_layers": []}
+  [PASS] G-GEOM-HCTRL[CONFLICT-GRID(3,2)]
+         THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY HERE (V08).  A height-matched control population -- same size, same height histogram, drawn from unmarked events -- has size 0 with deficit 6 of 6, because height purity leaves no unmarked event at any marked height.  Every POPULATION-AVERAGED row below is therefore confounded with a height shift that CANNOT be controlled, and this unit certifies none of them
+         evidence: {"control_size": 0, "crystal": "CONFLICT-GRID(3,2)", "deficit": 6, "marked": 6}
+  [PASS] G-GEOM-POP-WIDTH[CONFLICT-GRID(3,2)|d=2]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 6, attained at 1 events of which 1 are marked; restricted max|D| = 6 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 1, "attainers_marked": 1, "crystal": "CONFLICT-GRID(3,2)", "depth": 2, "full_max": 6, "invariant": true, "restricted_max": 6}
+  [PASS] G-GEOM-POP-WIDTH[CONFLICT-GRID(3,2)|d=3]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 6, attained at 6 events of which 3 are marked; restricted max|D| = 6 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 6, "attainers_marked": 3, "crystal": "CONFLICT-GRID(3,2)", "depth": 3, "full_max": 6, "invariant": true, "restricted_max": 6}
+  [PASS] G-GEOM-BLOCKED[CONFLICT-GRID(3,2)]
+         the POPULATION-AVERAGED rows are reported and NOT certified: at d=2 homogeneity moves 2/5 -> 1/2, |D|>=4 moves 1/10 -> 1/2 and mean overlap moves 113/210 -> 23/90, every one of them inseparable from the height shift whose control G-GEOM-HCTRL proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this unit's reading of these rows, not INVARIANT and not VARIES
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "d2_full": {"h2": "2/5", "h4": "1/10", "mean": "3/2", "om": "113/210"}, "d2_restricted": {"h2": "1/2", "h4": "1/2", "mean": "5/2", "om": "23/90"}, "d3_full": {"h2": "2/5", "h4": "2/5", "mean": "11/5", "om": "11/18"}, "d3_restricted": {"h2": "1/2", "h4": "1/2", "mean": "3", "om": "2/9"}}
+         WAIVER [MEASURED-THEN-DECLINED]: the numbers are computed exactly and printed; what is withheld is the INFERENCE from them, on the ground that the KR control the catalog requires is empty at every one of these crystals
+  [PASS] G-GEOM-SUB[CONFLICT-GRID(3,2)]
+         arm (a)'s second sub-reading -- the literal sparse record, poset rebuilt on the 6 marked events alone -- carries longest chain 2 against the full record's 6, and max|D| 0 at d=2 against 6: a DIFFERENT poset, not a restriction of this one, and reported as data only
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "events": 6, "height_full": 6, "height_sub": 2, "max_full_d2": 6, "max_full_d3": 6, "max_sub_d2": 0, "max_sub_d3": 0}
+         WAIVER [MEASURED-THEN-DECLINED]: the sparse record's own poset is a different object from the crystal's; no invariance claim is made across the two
+  [PASS] G-GEOM-HEIGHTPURE[CONFLICT-GRID(3,4)]
+         HEIGHT PURITY, MEASURED: the 12 marked events of this crystal occupy the height layers [1, 5, 9, 13] of a poset of longest chain 14, and 0 of those layers contain any unmarked event -- the marked events fill whole layers and share them with nothing else
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "layers": [1, 5, 9, 13], "longest_chain": 14, "marked": 12, "mixed_layers": []}
+  [PASS] G-GEOM-HCTRL[CONFLICT-GRID(3,4)]
+         THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY HERE (V08).  A height-matched control population -- same size, same height histogram, drawn from unmarked events -- has size 0 with deficit 12 of 12, because height purity leaves no unmarked event at any marked height.  Every POPULATION-AVERAGED row below is therefore confounded with a height shift that CANNOT be controlled, and this unit certifies none of them
+         evidence: {"control_size": 0, "crystal": "CONFLICT-GRID(3,4)", "deficit": 12, "marked": 12}
+  [PASS] G-GEOM-POP-WIDTH[CONFLICT-GRID(3,4)|d=2]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 6, attained at 3 events of which 3 are marked; restricted max|D| = 6 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 3, "attainers_marked": 3, "crystal": "CONFLICT-GRID(3,4)", "depth": 2, "full_max": 6, "invariant": true, "restricted_max": 6}
+  [PASS] G-GEOM-POP-WIDTH[CONFLICT-GRID(3,4)|d=3]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 6, attained at 16 events of which 9 are marked; restricted max|D| = 6 -- INVARIANT, the kinematic prediction
+         evidence: {"attainers": 16, "attainers_marked": 9, "crystal": "CONFLICT-GRID(3,4)", "depth": 3, "full_max": 6, "invariant": true, "restricted_max": 6}
+  [PASS] G-GEOM-BLOCKED[CONFLICT-GRID(3,4)]
+         the POPULATION-AVERAGED rows are reported and NOT certified: at d=2 homogeneity moves 16/33 -> 3/4, |D|>=4 moves 3/22 -> 3/4 and mean overlap moves 299/590 -> 23/90, every one of them inseparable from the height shift whose control G-GEOM-HCTRL proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this unit's reading of these rows, not INVARIANT and not VARIES
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "d2_full": {"h2": "16/33", "h4": "3/22", "mean": "41/22", "om": "299/590"}, "d2_restricted": {"h2": "3/4", "h4": "3/4", "mean": "15/4", "om": "23/90"}, "d3_full": {"h2": "19/33", "h4": "5/11", "mean": "32/11", "om": "7/12"}, "d3_restricted": {"h2": "3/4", "h4": "3/4", "mean": "9/2", "om": "2/9"}}
+         WAIVER [MEASURED-THEN-DECLINED]: the numbers are computed exactly and printed; what is withheld is the INFERENCE from them, on the ground that the KR control the catalog requires is empty at every one of these crystals
+  [PASS] G-GEOM-SUB[CONFLICT-GRID(3,4)]
+         arm (a)'s second sub-reading -- the literal sparse record, poset rebuilt on the 12 marked events alone -- carries longest chain 4 against the full record's 14, and max|D| 3 at d=2 against 6: a DIFFERENT poset, not a restriction of this one, and reported as data only
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "events": 12, "height_full": 14, "height_sub": 4, "max_full_d2": 6, "max_full_d3": 6, "max_sub_d2": 3, "max_sub_d3": 3}
+         WAIVER [MEASURED-THEN-DECLINED]: the sparse record's own poset is a different object from the crystal's; no invariance claim is made across the two
+  [PASS] G-GEOM-HEIGHTPURE[D60-GRID(3,12)]
+         HEIGHT PURITY, MEASURED: the 1 marked events of this crystal occupy the height layers [1] of a poset of longest chain 21, and 0 of those layers contain any unmarked event -- the marked events fill whole layers and share them with nothing else
+         evidence: {"crystal": "D60-GRID(3,12)", "layers": [1], "longest_chain": 21, "marked": 1, "mixed_layers": []}
+  [PASS] G-GEOM-HCTRL[D60-GRID(3,12)]
+         THE KLEITMAN-ROTHSCHILD HEIGHT CONTROL IS PROVABLY EMPTY HERE (V08).  A height-matched control population -- same size, same height histogram, drawn from unmarked events -- has size 0 with deficit 1 of 1, because height purity leaves no unmarked event at any marked height.  Every POPULATION-AVERAGED row below is therefore confounded with a height shift that CANNOT be controlled, and this unit certifies none of them
+         evidence: {"control_size": 0, "crystal": "D60-GRID(3,12)", "deficit": 1, "marked": 1}
+  [PASS] G-GEOM-POP-WIDTH[D60-GRID(3,12)|d=2]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 3, attained at 8 events of which 0 are marked; restricted max|D| = 1 -- VARIES-3->1, the value the DECLARED COUNTEREXAMPLE CONTROL must return
+         evidence: {"attainers": 8, "attainers_marked": 0, "crystal": "D60-GRID(3,12)", "depth": 2, "full_max": 3, "invariant": false, "restricted_max": 1}
+  [PASS] G-GEOM-POP-WIDTH[D60-GRID(3,12)|d=3]
+         THE CHART-WIDTH ROW, the one geometry row a population restriction cannot confound (a maximum over a subset equals the maximum over the whole set exactly when the maximum is ATTAINED on the subset): full max|D| = 3, attained at 12 events of which 0 are marked; restricted max|D| = 2 -- VARIES-3->2, the value the DECLARED COUNTEREXAMPLE CONTROL must return
+         evidence: {"attainers": 12, "attainers_marked": 0, "crystal": "D60-GRID(3,12)", "depth": 3, "full_max": 3, "invariant": false, "restricted_max": 2}
+  [PASS] G-GEOM-BLOCKED[D60-GRID(3,12)]
+         the POPULATION-AVERAGED rows are reported and NOT certified: at d=2 homogeneity moves 1/2 -> 0, |D|>=4 moves 0 -> 0 and mean overlap moves 101/258 -> None, every one of them inseparable from the height shift whose control G-GEOM-HCTRL proves empty.  BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL is this unit's reading of these rows, not INVARIANT and not VARIES
+         evidence: {"crystal": "D60-GRID(3,12)", "d2_full": {"h2": "1/2", "h4": "0", "mean": "67/46", "om": "101/258"}, "d2_restricted": {"h2": "0", "h4": "0", "mean": "1", "om": "None"}, "d3_full": {"h2": "14/23", "h4": "0", "mean": "37/23", "om": "73/153"}, "d3_restricted": {"h2": "1", "h4": "0", "mean": "2", "om": "1"}}
+         WAIVER [MEASURED-THEN-DECLINED]: the numbers are computed exactly and printed; what is withheld is the INFERENCE from them, on the ground that the KR control the catalog requires is empty at every one of these crystals
+  [PASS] G-GEOM-SUB[D60-GRID(3,12)]
+         arm (a)'s second sub-reading -- the literal sparse record, poset rebuilt on the 1 marked events alone -- carries longest chain 1 against the full record's 21, and max|D| 0 at d=2 against 3: a DIFFERENT poset, not a restriction of this one, and reported as data only
+         evidence: {"crystal": "D60-GRID(3,12)", "events": 1, "height_full": 21, "height_sub": 1, "max_full_d2": 3, "max_full_d3": 3, "max_sub_d2": 0, "max_sub_d3": 0}
+         WAIVER [MEASURED-THEN-DECLINED]: the sparse record's own poset is a different object from the crystal's; no invariance claim is made across the two
+
+  [arm (b) -- the Builder rerun on a restricted candidate stream]
+  [PASS] G-GEOM-ARMB-RENEWAL[DOUBLE-GRID(3,2)]
+         arm (b) at the DECLARED RENEWAL-ONLY SUB-GRAMMAR (V11's shape: the support is restricted, the committed weights are untouched) -- the candidate stream keeps only the two record-bearing tags and drops the two the POSIT calls kinematics.  THIS CRYSTAL CANNOT BE REBUILT: the record stops after 12 events with a LOCATED refusal at ('D00->D01', 12), its first delivery.  A refusal is recorded, never patched
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "events": 12, "refusal": ["D00->D01", 12]}
+  [PASS] G-GEOM-ARMB-IDLEFREE[DOUBLE-GRID(3,2)]
+         the isolation control for arm (b): dropping ONLY the idle tag leaves the crystal rebuilt EVENT FOR EVENT (72 events, identical = True), so the tag that blocks the renewal-only rebuild is exactly one, the DELIVERY
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "events": 72, "identical": true}
+  [PASS] G-GEOM-ARMB-RENEWAL[DOUBLE-GRID(3,3)]
+         arm (b) at the DECLARED RENEWAL-ONLY SUB-GRAMMAR (V11's shape: the support is restricted, the committed weights are untouched) -- the candidate stream keeps only the two record-bearing tags and drops the two the POSIT calls kinematics.  THIS CRYSTAL CANNOT BE REBUILT: the record stops after 12 events with a LOCATED refusal at ('D00->D01', 12), its first delivery.  A refusal is recorded, never patched
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "events": 12, "refusal": ["D00->D01", 12]}
+  [PASS] G-GEOM-ARMB-IDLEFREE[DOUBLE-GRID(3,3)]
+         the isolation control for arm (b): dropping ONLY the idle tag leaves the crystal rebuilt EVENT FOR EVENT (96 events, identical = True), so the tag that blocks the renewal-only rebuild is exactly one, the DELIVERY
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "events": 96, "identical": true}
+  [PASS] G-GEOM-ARMB-RENEWAL[CONFLICT-GRID(3,2)]
+         arm (b) at the DECLARED RENEWAL-ONLY SUB-GRAMMAR (V11's shape: the support is restricted, the committed weights are untouched) -- the candidate stream keeps only the two record-bearing tags and drops the two the POSIT calls kinematics.  THIS CRYSTAL CANNOT BE REBUILT: the record stops after 12 events with a LOCATED refusal at ('G00->G10', 12), its first delivery.  A refusal is recorded, never patched
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "events": 12, "refusal": ["G00->G10", 12]}
+  [PASS] G-GEOM-ARMB-IDLEFREE[CONFLICT-GRID(3,2)]
+         the isolation control for arm (b): dropping ONLY the idle tag leaves the crystal rebuilt EVENT FOR EVENT (30 events, identical = True), so the tag that blocks the renewal-only rebuild is exactly one, the DELIVERY
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "events": 30, "identical": true}
+  [PASS] G-GEOM-ARMB-RENEWAL[CONFLICT-GRID(3,4)]
+         arm (b) at the DECLARED RENEWAL-ONLY SUB-GRAMMAR (V11's shape: the support is restricted, the committed weights are untouched) -- the candidate stream keeps only the two record-bearing tags and drops the two the POSIT calls kinematics.  THIS CRYSTAL CANNOT BE REBUILT: the record stops after 12 events with a LOCATED refusal at ('G00->G10', 12), its first delivery.  A refusal is recorded, never patched
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "events": 12, "refusal": ["G00->G10", 12]}
+  [PASS] G-GEOM-ARMB-IDLEFREE[CONFLICT-GRID(3,4)]
+         the isolation control for arm (b): dropping ONLY the idle tag leaves the crystal rebuilt EVENT FOR EVENT (66 events, identical = True), so the tag that blocks the renewal-only rebuild is exactly one, the DELIVERY
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "events": 66, "identical": true}
+  [PASS] G-GEOM-ARMB-RENEWAL[D60-GRID(3,12)]
+         arm (b) at the DECLARED RENEWAL-ONLY SUB-GRAMMAR (V11's shape: the support is restricted, the committed weights are untouched) -- the candidate stream keeps only the two record-bearing tags and drops the two the POSIT calls kinematics.  THIS CRYSTAL CANNOT BE REBUILT: the record stops after 2 events with a LOCATED refusal at ('spread G00->G01', 2), its first delivery.  A refusal is recorded, never patched
+         evidence: {"crystal": "D60-GRID(3,12)", "events": 2, "refusal": ["spread G00->G01", 2]}
+  [PASS] G-GEOM-ARMB-IDLEFREE[D60-GRID(3,12)]
+         the isolation control for arm (b): dropping ONLY the idle tag leaves the crystal rebuilt EVENT FOR EVENT (46 events, identical = True), so the tag that blocks the renewal-only rebuild is exactly one, the DELIVERY
+         evidence: {"crystal": "D60-GRID(3,12)", "events": 46, "identical": true}
+  [PASS] G-GEOM-ARMC-REGISTERED
+         arm (c) of pin R3 -- quotient the record by its non-arbitration events -- is REGISTERED AND NOT RUN, as the pin allows; nothing in this unit's verdict descends from it
+         evidence: {"arm": "quotient", "run": false}
+         WAIVER [REGISTER-ONLY]: a successor register entry; its absence is visible in the arm rows, which carry (a) and (b) only
+  [PASS] G-GEOM-SPATIAL-TAUTOLOGY
+         the crystal's SPATIAL rows -- the co-division link counts of SEC 7 -- are functions of the marked events ALONE, so they are invariant under every renewal-only operationalization that preserves the marking.  That is a tautology of the definition, it is stated here so that it is never counted as evidence, and it is excluded from the geometry verdict
+         evidence: {"counted_as_evidence": false, "rows": "co-division link counts"}
+         WAIVER [DECLARATION-CARRIED]: a statement about what this unit refuses to count; the rows themselves are measured in SEC 7
+
+  [GEOMETRY SEGMENT VERDICT] GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL
+  [PASS] G-GEOM-SEGMENT
+         THE GEOMETRY SEGMENT (V06 is the falsifier this segment answers to): GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL.  The chart-width row is INVARIANT at 4 of 4 arbitration crystals at BOTH depths and NOT invariant at the control, so the segment's two-way requirement is discharged on the row that carries it; every population-averaged row is BLOCKED; and paper 0 10's third falsifier -- 'sparse records destroy the geometry' -- does NOT fire, because a prior obstruction fires first: arm (b) shows the sparse record is not CONSTRUCTIBLE
+         evidence: {"varies_witness": ["D60-GRID(3,12)|d=2|max|D|:3->1", "D60-GRID(3,12)|d=3|max|D|:3->2"], "verdict": "GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL", "width_row_invariant": true}
+
+==============================================================================
+SEC 7  THE BRIDGES -- at declared scope, candidate readings named
+==============================================================================
+  [DATA] DOUBLE-GRID(3,2)    legs=[(1, 10), (2, 5), (19, 1), (31, 1)] axis=2/2 diag=0/0
+  [PASS] G-BRIDGE-AXIS[DOUBLE-GRID(3,2)]
+         the co-division ADJACENCY on the two axis links is [2, 2, 2, 2, 2, 2, 2, 2, 2] and [2, 2, 2, 2, 2, 2, 2, 2, 2] across the nine sites: homogeneous and strictly positive -- the renewal sublattice's bridges are the rook's graph's rows and columns
+         evidence: {"axis_01": [2, 2, 2, 2, 2, 2, 2, 2, 2], "axis_10": [2, 2, 2, 2, 2, 2, 2, 2, 2], "crystal": "DOUBLE-GRID(3,2)"}
+  [PASS] G-BRIDGE-DIAG[DOUBLE-GRID(3,2)]
+         the DIAGONAL co-division link counts are [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0]: identically ZERO at 9 of 9 sites.  q_12 = 0 is INHERITED from the rook's graph (V13) and is NOT a finding of this unit
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "diag_11": [0, 0, 0, 0, 0, 0, 0, 0, 0], "diag_12": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+  [PASS] G-BRIDGE-SUPPORT[DOUBLE-GRID(3,2)]
+         the renewal sublattice's SUPPORT at the initiator reading is [[0, 0], [0, 1], [1, 1], [1, 2], [2, 0], [2, 2]], a union of 2 full cosets of <(1,1)> (residues [0, 1] of j-i) -- the support is itself <(1,1)>-periodic, which is the sublattice-is-a-crystal statement read on the SET rather than on the counts
+         evidence: {"cosets": [0, 1], "crystal": "DOUBLE-GRID(3,2)", "is_coset_union": true, "support": [[0, 0], [0, 1], [1, 1], [1, 2], [2, 0], [2, 2]]}
+  [PASS] G-BRIDGE-LEGS[DOUBLE-GRID(3,2)]
+         the RECORD-ORDER bridges -- the gaps between consecutive marked events -- have multiset [(1, 10), (2, 5), (19, 1), (31, 1)] on this crystal.  paper-09 4's support holes (no inter-renewal leg of length one or two) carry a two-actor DELIVERY-FREE scope tag and this arena is neither, so this row is a COMPARISON and not a test of that law
+         evidence: {"crystal": "DOUBLE-GRID(3,2)", "legs": [[1, 10], [2, 5], [19, 1], [31, 1]]}
+         WAIVER [SCOPE-DISCLOSED]: the source law's own scope tag excludes this arena; the numbers are reported so a successor at matched scope can use them
+  [DATA] DOUBLE-GRID(3,3)    legs=[(1, 15), (2, 5), (19, 2), (31, 1)] axis=3/3 diag=0/0
+  [PASS] G-BRIDGE-AXIS[DOUBLE-GRID(3,3)]
+         the co-division ADJACENCY on the two axis links is [3, 3, 3, 3, 3, 3, 3, 3, 3] and [3, 3, 3, 3, 3, 3, 3, 3, 3] across the nine sites: homogeneous and strictly positive -- the renewal sublattice's bridges are the rook's graph's rows and columns
+         evidence: {"axis_01": [3, 3, 3, 3, 3, 3, 3, 3, 3], "axis_10": [3, 3, 3, 3, 3, 3, 3, 3, 3], "crystal": "DOUBLE-GRID(3,3)"}
+  [PASS] G-BRIDGE-DIAG[DOUBLE-GRID(3,3)]
+         the DIAGONAL co-division link counts are [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0]: identically ZERO at 9 of 9 sites.  q_12 = 0 is INHERITED from the rook's graph (V13) and is NOT a finding of this unit
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "diag_11": [0, 0, 0, 0, 0, 0, 0, 0, 0], "diag_12": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+  [PASS] G-BRIDGE-SUPPORT[DOUBLE-GRID(3,3)]
+         the renewal sublattice's SUPPORT at the initiator reading is [[0, 0], [0, 1], [1, 1], [1, 2], [2, 0], [2, 2]], a union of 2 full cosets of <(1,1)> (residues [0, 1] of j-i) -- the support is itself <(1,1)>-periodic, which is the sublattice-is-a-crystal statement read on the SET rather than on the counts
+         evidence: {"cosets": [0, 1], "crystal": "DOUBLE-GRID(3,3)", "is_coset_union": true, "support": [[0, 0], [0, 1], [1, 1], [1, 2], [2, 0], [2, 2]]}
+  [PASS] G-BRIDGE-LEGS[DOUBLE-GRID(3,3)]
+         the RECORD-ORDER bridges -- the gaps between consecutive marked events -- have multiset [(1, 15), (2, 5), (19, 2), (31, 1)] on this crystal.  paper-09 4's support holes (no inter-renewal leg of length one or two) carry a two-actor DELIVERY-FREE scope tag and this arena is neither, so this row is a COMPARISON and not a test of that law
+         evidence: {"crystal": "DOUBLE-GRID(3,3)", "legs": [[1, 15], [2, 5], [19, 2], [31, 1]]}
+         WAIVER [SCOPE-DISCLOSED]: the source law's own scope tag excludes this arena; the numbers are reported so a successor at matched scope can use them
+  [DATA] CONFLICT-GRID(3,2)  legs=[(4, 2), (6, 3)] axis=1/1 diag=0/0
+  [PASS] G-BRIDGE-AXIS[CONFLICT-GRID(3,2)]
+         the co-division ADJACENCY on the two axis links is [1, 1, 1, 1, 1, 1, 1, 1, 1] and [1, 1, 1, 1, 1, 1, 1, 1, 1] across the nine sites: homogeneous and strictly positive -- the renewal sublattice's bridges are the rook's graph's rows and columns
+         evidence: {"axis_01": [1, 1, 1, 1, 1, 1, 1, 1, 1], "axis_10": [1, 1, 1, 1, 1, 1, 1, 1, 1], "crystal": "CONFLICT-GRID(3,2)"}
+  [PASS] G-BRIDGE-DIAG[CONFLICT-GRID(3,2)]
+         the DIAGONAL co-division link counts are [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0]: identically ZERO at 9 of 9 sites.  q_12 = 0 is INHERITED from the rook's graph (V13) and is NOT a finding of this unit
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "diag_11": [0, 0, 0, 0, 0, 0, 0, 0, 0], "diag_12": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+  [PASS] G-BRIDGE-SUPPORT[CONFLICT-GRID(3,2)]
+         the renewal sublattice's SUPPORT at the initiator reading is [[0, 0], [1, 1], [2, 2]], a union of 1 full cosets of <(1,1)> (residues [0] of j-i) -- the support is itself <(1,1)>-periodic, which is the sublattice-is-a-crystal statement read on the SET rather than on the counts
+         evidence: {"cosets": [0], "crystal": "CONFLICT-GRID(3,2)", "is_coset_union": true, "support": [[0, 0], [1, 1], [2, 2]]}
+  [PASS] G-BRIDGE-LEGS[CONFLICT-GRID(3,2)]
+         the RECORD-ORDER bridges -- the gaps between consecutive marked events -- have multiset [(4, 2), (6, 3)] on this crystal.  paper-09 4's support holes (no inter-renewal leg of length one or two) carry a two-actor DELIVERY-FREE scope tag and this arena is neither, so this row is a COMPARISON and not a test of that law
+         evidence: {"crystal": "CONFLICT-GRID(3,2)", "legs": [[4, 2], [6, 3]]}
+         WAIVER [SCOPE-DISCLOSED]: the source law's own scope tag excludes this arena; the numbers are reported so a successor at matched scope can use them
+  [DATA] CONFLICT-GRID(3,4)  legs=[(4, 2), (6, 9)] axis=2/2 diag=0/0
+  [PASS] G-BRIDGE-AXIS[CONFLICT-GRID(3,4)]
+         the co-division ADJACENCY on the two axis links is [2, 2, 2, 2, 2, 2, 2, 2, 2] and [2, 2, 2, 2, 2, 2, 2, 2, 2] across the nine sites: homogeneous and strictly positive -- the renewal sublattice's bridges are the rook's graph's rows and columns
+         evidence: {"axis_01": [2, 2, 2, 2, 2, 2, 2, 2, 2], "axis_10": [2, 2, 2, 2, 2, 2, 2, 2, 2], "crystal": "CONFLICT-GRID(3,4)"}
+  [PASS] G-BRIDGE-DIAG[CONFLICT-GRID(3,4)]
+         the DIAGONAL co-division link counts are [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0]: identically ZERO at 9 of 9 sites.  q_12 = 0 is INHERITED from the rook's graph (V13) and is NOT a finding of this unit
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "diag_11": [0, 0, 0, 0, 0, 0, 0, 0, 0], "diag_12": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+  [PASS] G-BRIDGE-SUPPORT[CONFLICT-GRID(3,4)]
+         the renewal sublattice's SUPPORT at the initiator reading is [[0, 0], [1, 1], [2, 2]], a union of 1 full cosets of <(1,1)> (residues [0] of j-i) -- the support is itself <(1,1)>-periodic, which is the sublattice-is-a-crystal statement read on the SET rather than on the counts
+         evidence: {"cosets": [0], "crystal": "CONFLICT-GRID(3,4)", "is_coset_union": true, "support": [[0, 0], [1, 1], [2, 2]]}
+  [PASS] G-BRIDGE-LEGS[CONFLICT-GRID(3,4)]
+         the RECORD-ORDER bridges -- the gaps between consecutive marked events -- have multiset [(4, 2), (6, 9)] on this crystal.  paper-09 4's support holes (no inter-renewal leg of length one or two) carry a two-actor DELIVERY-FREE scope tag and this arena is neither, so this row is a COMPARISON and not a test of that law
+         evidence: {"crystal": "CONFLICT-GRID(3,4)", "legs": [[4, 2], [6, 9]]}
+         WAIVER [SCOPE-DISCLOSED]: the source law's own scope tag excludes this arena; the numbers are reported so a successor at matched scope can use them
+  [DATA] D60-GRID(3,12)      legs=[] axis=0/0 diag=0/0
+  [PASS] G-BRIDGE-AXIS[D60-GRID(3,12)]
+         the co-division ADJACENCY on the two axis links is [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0] across the nine sites: identically zero -- the DECLARED COUNTEREXAMPLE CONTROL carries NO bridges at all, its single division event touching one site
+         evidence: {"axis_01": [0, 0, 0, 0, 0, 0, 0, 0, 0], "axis_10": [0, 0, 0, 0, 0, 0, 0, 0, 0], "crystal": "D60-GRID(3,12)"}
+  [PASS] G-BRIDGE-DIAG[D60-GRID(3,12)]
+         the DIAGONAL co-division link counts are [0, 0, 0, 0, 0, 0, 0, 0, 0] and [0, 0, 0, 0, 0, 0, 0, 0, 0]: identically ZERO at 9 of 9 sites.  q_12 = 0 is INHERITED from the rook's graph (V13) and is NOT a finding of this unit
+         evidence: {"crystal": "D60-GRID(3,12)", "diag_11": [0, 0, 0, 0, 0, 0, 0, 0, 0], "diag_12": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+  [PASS] G-BRIDGE-SUPPORT[D60-GRID(3,12)]
+         the renewal sublattice's SUPPORT at the initiator reading is [[0, 0]], a union of 1 full cosets of <(1,1)> (residues [0] of j-i) -- a SINGLE site carrying no coset structure at all -- the value the DECLARED COUNTEREXAMPLE CONTROL must return
+         evidence: {"cosets": [0], "crystal": "D60-GRID(3,12)", "is_coset_union": false, "support": [[0, 0]]}
+  [PASS] G-BRIDGE-LEGS[D60-GRID(3,12)]
+         the RECORD-ORDER bridges -- the gaps between consecutive marked events -- have multiset [] on this crystal.  paper-09 4's support holes (no inter-renewal leg of length one or two) carry a two-actor DELIVERY-FREE scope tag and this arena is neither, so this row is a COMPARISON and not a test of that law
+         evidence: {"crystal": "D60-GRID(3,12)", "legs": []}
+         WAIVER [SCOPE-DISCLOSED]: the source law's own scope tag excludes this arena; the numbers are reported so a successor at matched scope can use them
+  [PASS] G-BRIDGE-SCOPE
+         THE BRIDGES ARE REPORTED, NOT INTERPRETED.  The pin asks what structure the bridges carry AT DECLARED SCOPE ONLY and forbids an indivisibility claim beyond what the arena can measure.  This arena measures three bridge objects -- the co-division adjacency, the support's coset structure, the record-order leg multiset -- and NONE of them is a transition kernel, so no indivisibility reading is available here.  The candidate readings are NAMED: (i) the axis link counts as the crystal's q_11 and q_22; (ii) the leg multiset as a crystal-scope analogue of paper-09 4's g(n); (iii) the coset support as the renewal sublattice's own period lattice.  Each is a candidate reading until an adjudication makes it otherwise
+         evidence: {"candidate_readings": 3, "indivisibility_claim": false, "objects": 3}
+         WAIVER [DECLARATION-CARRIED]: a statement of what this unit declines to infer; the measurements it refers to are the per-crystal bridge gates above
+
+==============================================================================
+SEC 8  THE WALLS (pin R5) -- construction law, argued before use
+==============================================================================
+  [PASS] G-WALL-L1
+         L-1's FOURTH FORM, ARGUED BEFORE ANY TEST AND THEN DECLINED.  L-1 (V09) records that order-level covariance is a fourth form outside v3 paper 8's three and that its admissibility is v11's to argue when U4 runs.  THE ARGUMENT: admissibility would require a declared group acting on the generated causal order together with a reason to read that group as a covariance group; this arena supplies five finite records and a translation action on their SITE LATTICE, and the corpus contains no bridge from Z_3^2 translations to any boost.  This unit therefore does NOT test the fourth form; it remains unargued and untested here and is registered for a successor
+         evidence: {"banned_sentence_hits": [], "fourth_form_tested": false}
+  [PASS] G-WALL-L1-PERMUTATION
+         what this unit DOES measure is inside L-1's own scope guard (V10): the Z_3^2 translation stabilizer is a PERMUTATION ACTION on the actor set, and L-1 does not forbid a permutation action.  The headline measurement therefore needs no fourth-form argument at all
+         evidence: {"action": "permutation on the actor set", "forbidden": false}
+  [PASS] G-WALL-BHS
+         NO SPRINKLING-GRADE LORENTZ-INVARIANCE TEST IS RUN.  The catalog (V07) records that these crystals are finite-valency by construction, so BHS makes sprinkling-grade statistical Lorentz invariance provably unavailable on them and running the test would manufacture a false negative.  This unit runs none: no sprinkling, no boost, no rapidity, no frame appears anywhere in its measurements
+         evidence: {"sprinkling_grade_LI_tests_run": 0}
+  [PASS] G-WALL-KR
+         EVERY DIMENSION-ADJACENT READING CARRIES ITS HEIGHT CONTROL (V08).  The only dimension-adjacent row this unit reads is the chart width max|D|, and it is reported with the longest chain of the population it is read on, full and sparse, at every crystal: [{'crystal': 'DOUBLE-GRID(3,2)', 'n': '72', 'longest_chain': 14, 'sub_n': 18, 'sub_longest_chain': 5}, {'crystal': 'DOUBLE-GRID(3,3)', 'n': '96', 'longest_chain': 18, 'sub_n': 24, 'sub_longest_chain': 7}, {'crystal': 'CONFLICT-GRID(3,2)', 'n': '30', 'longest_chain': 6, 'sub_n': 6, 'sub_longest_chain': 2}, {'crystal': 'CONFLICT-GRID(3,4)', 'n': '66', 'longest_chain': 14, 'sub_n': 12, 'sub_longest_chain': 4}, {'crystal': 'D60-GRID(3,12)', 'n': '46', 'longest_chain': 21, 'sub_n': 1, 'sub_longest_chain': 1}].  The Kleitman-Rothschild discriminator is the longest chain (KR orders return 3 where a sprinkling returns tens) and no population here returns 3.  No Myrheim-Meyer estimate is run at all
+         evidence: {"MM_estimates_run": 0, "height_controls": [{"crystal": "DOUBLE-GRID(3,2)", "longest_chain": 14, "n": "72", "sub_longest_chain": 5, "sub_n": 18}, {"crystal": "DOUBLE-GRID(3,3)", "longest_chain": 18, "n": "96", "sub_longest_chain": 7, "sub_n": 24}, {"crystal": "CONFLICT-GRID(3,2)", "longest_chain": 6, "n": "30", "sub_longest_chain": 2, "sub_n": 6}, {"crystal": "CONFLICT-GRID(3,4)", "longest_chain": 14, "n": "66", "sub_longest_chain": 4, "sub_n": 12}, {"crystal": "D60-GRID(3,12)", "longest_chain": 21, "n": "46", "sub_longest_chain": 1, "sub_n": 1}]}
+  [PASS] G-WALL-DIAGONAL
+         THE DIAGONAL QUESTION IS NOT ANSWERED HERE.  q_12 = 0 is INHERITED (V13): the co-division graph is the rook's graph and diagonal pairs share neither row nor column, measured at 9 of 9 sites on every crystal by the G-BRIDGE-DIAG gates.  This unit notes a genuine counterpoint and refuses to read it: the division-event FIELD's invariance direction is the diagonal <(1,1)>, while the diagonal LINK count is identically zero.  These are different objects -- a translation of the site lattice and a generator of the link structure -- and nothing here decides the other
+         evidence: {"answered_here": false, "inherited": true, "q12": 0}
+  [PASS] G-DEAD-LIST-CITED
+         the pre-registered dead list (weld-2 pin R4 / scout S6) is CITED and not re-run: R6b' C1-C5 and the four blanket rows.  No measurement above re-derives any of them
+         evidence: {"dead_items": 5}
+         WAIVER [DECLARATION-CARRIED]: a discipline statement about what this unit does NOT compute; the receipt's measurement rows exhibit the absence
+
+==============================================================================
+SEC 9  THE VERDICT
+==============================================================================
+  [PASS] G-HEAD-EQUALITY
+         THE HEAD IS DERIVED, NOT TYPED, AND IT SURVIVES A COMPLETE-STRING EQUALITY GATE AGAINST AN INDEPENDENT RECONSTRUCTION.  The reconstruction builds the five records afresh, reads their marked events by the SHAPE predicate rather than the tag, maps actors to sites by enumeration rather than by parsing their names, computes each stabilizer as a Fourier annihilator over Z[omega], and takes the outcome NAME from the pin's own OUTCOMES section by a different extractor -- sharing no instrument code, no derived input and no typed literal with the path above.  Length 126 vs 126
+         evidence: {"head": "U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]", "identical": true, "reconstruction": "U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]"}
+
+  [HEAD] U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL-[DG32:<(1,1)>/<(1,1)>|DG33:<(1,1)>/<(1,1)>|CG32:<(1,1)>/Z3^2|CG34:<(1,1)>/Z3^2|CTRL:1/1]
+  [GEOMETRY] GEOMETRY-INVARIANT-AT-THE-CONTROLLED-ROW-REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL
+  [PASS] G-VERIFY-PAPER-PRESENT
+         the paper is present (31287 bytes) and every numeral in it is checked below against numbers this run COMPUTED
+         evidence: {"bytes": 31287}
+  [PASS] G-VERIFY-PAPER-NUMERALS
+         NUMERAL COVERAGE, HONEST (#34): after masking 7 named identifier classes (["the literal 'sha256-NN'", 'sha256-12 hexes', '7-character commit hexes', 'source line references Lnnn', 'section references', 'grid actor names', 'heading numbers']) the paper carries 759 numeric tokens; 750 reproduce a number this run computed, 9 match the ENUMERATED structural whitelist (era rule numbers, ledger and pin indices, dates, section references -- 45 entries, all printed in the receipt), and 0 match neither: [].  This gate is a TRANSCRIPTION check, not an independent verification -- small integers match the registry trivially -- and the meaning-binding coverage is G-VERIFY-PAPER-CLAIMS
+         evidence: {"coverage": "1", "masks": ["the literal 'sha256-NN'", "sha256-12 hexes", "7-character commit hexes", "source line references Lnnn", "section references", "grid actor names", "heading numbers"], "matched": 750, "structural": 9, "tokens": 759, "unmatched": [], "whitelist": ["0", "07", "08", "09", "1", "10", "101", "102", "105", "11", "12", "13", "14", "144", "15", "1536", "2", "20", "2026", "2325", "24", "28", "29", "3", "34", "4", "42", "46", "47", "5", "58", "6", "60", "62", "63", "66", "67", "7", "74", "8", "82", "87", "9", "91", "972"]}
+  [PASS] G-VERIFY-PAPER-CLAIMS
+         MEANING-BINDING COVERAGE: 17 of 17 keyed claim strings -- the per-crystal event and division counts, every stabilizer name, the head and the geometry verdict -- occur VERBATIM in the paper; missing []
+         evidence: {"claims": 17, "missing": []}

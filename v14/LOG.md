@@ -3246,3 +3246,48 @@ real exit path); MUT-MOTION-CONTROL dies (exit 1,
 die-at-gate convention), artifacts unchanged.  The unit stands
 verified at the #82 contract by my own runs; the panel (#111)
 carries the era-level audit.
+
+## 2026-08-10 — U4 DELIVERED, COMMITTED AS-IS (v14 LEDGER #113)
+
+Paper-14 delivered.  **Verdicts (CANDIDATE READINGS):
+U4-THE-DIVISION-EVENTS-FORM-A-CRYSTAL — TRUE TWO-WAY AT ALL TEN
+CELLS** (5 crystals × 2 readings; each stabilizer derived twice —
+direct translation AND the Fourier-annihilator route in Z[ω],
+element-for-element agreement): the four arbitration crystals
+carry stabilizer ⟨(1,1)⟩ (initiator reading) with the
+CONFLICT-GRIDs' footprint reading rising to the FULL Z₃²
+(constant field); the delivery-crystal control returns the
+trivial stabilizer at both readings, as the two-way gate
+demands.  **THE SCOUT'S PRELIMINARY PARTLY REFUTED by the
+corpus-grade measurement** (readings diverge at 2 of 4 crystals;
+supports 3/9 not 6/9 at the CONFLICT-GRIDs; divergence
+one-directional — footprint never shrinks a stabilizer) — the
+PRELIMINARY label worked as designed.  **GEOMETRY:
+INVARIANT-AT-THE-CONTROLLED-ROW** — chart width max|D| invariant
+at all four arbitration crystals at both depths, and SHARPER at
+d=2: the widest charts are attained EXCLUSIVELY at division
+events (3/3, 6/6, 1/1, 3/3; the control 0/8);
+REST-BLOCKED-AT-THE-EMPTY-HEIGHT-CONTROL — **HEIGHT PURITY (the
+sharpest unpredicted finding): division events fill whole height
+layers and share them with nothing, on all five records — the KR
+control is empty BY THEOREM, forbidding the homogeneity/ω
+readings rather than qualifying them.**  Arm (b): **the
+renewal-only REBUILD is not constructible** — all five crystals
+refuse at their first delivery (locations printed); the
+idle-free rebuild is event-for-event identical, isolating the
+DELIVERY as the sole blocking tag; paper 0 §10's third falsifier
+does NOT fire (a prior obstruction does, and the paper says so).
+S4's pair hypothesis vacuous here (0 pair arbitrations among 61
+marked; the content re-derived 61/61).  **The counterpoint,
+named and explicitly not read (pin R5): the field's period
+direction is THE DIAGONAL while the diagonal link count is
+identically 0.**  147 gates/0 fail; 42 committed-number anchors
+all reproducing; 12 mutants at named gates; byte ×2; git-less
+byte-identical; off-tree loud designed failure at G-PROV-ROOT;
+one mutant-registry defect fixed non-silently and all 12 re-run;
+the #91-forced constructor-route substitution (v10 originals —
+the pinned weld-2 SEC 6 route is under rewrite by the repair
+worker) priced and anchored at 42 numbers.  Artifacts committed
+as-is: paper 7e6db49f0e6e, code c1ae8ec7fdbe, output
+d1bfbbca40c9, receipt ae7a4ce48538.  Battery + protocol next;
+panel queued behind the R4b panel.
