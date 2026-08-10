@@ -3760,3 +3760,56 @@ curvature⟹quantum).  The R4b handoffs carried
 standards at construction incl. the seal from birth.  Worker
 launched (opus).  In flight (4): Γ-iteration, U4 repair, U4b,
 R5-gauge.
+
+## 2026-08-10 — THE Γ-ITERATION DELIVERED, COMMITTED AS-IS (v14 LEDGER #130)
+
+Paper-16 delivered.  **VERDICT (CANDIDATE READING):
+GITER-LAW-CONFIRMED.**  The carrier re-derived in-unit (185
+classes / 5 rounds, no D74 mismatch) with SIX OF SIX ruling
+properties gated on their own objects — MENU-113 scores 2/6 as
+the contrast carrier.  The law column-stochastic exact (102/102
+columns); flow identity 3968/3968 (and 352/596 fail at every
+other admissible horizon — the identity is horizon-selective,
+disclosed).  **TARGETS HIT AT THE LAW VALUES (15/38, 5/19,
+13/38) AT BOTH LEGS** — the step-normaliser RE-PROVED on this
+carrier (k₁ = q/M at 0-of-30728 violations; k₂ fails
+1340/3968); the census shadow reproduced as the declared
+external control, token scan 0 hits.  **HOLONOMY = AGREES:
+r_k = r_q at 1362/1362 closing squares, 0 deviations** (the
+deviation identity carried as a killable must-pass at
+1546/1546; the 8 non-unit correction factors close at MENU and
+at 0 of CONG-185; REC flat both readings).  **QUANTUM =
+CARRIER-RELATIVE, CONFIRMED BY MEASUREMENT, WITH A MECHANISM:**
+@MENU-113 non-Markov 4/10, CK fails, not lumpable, eq-22
+speaks 2/4 (negatives 36/104/108/164); @CONG-185 0/10, CK
+holds, exactly lumpable, eq-22 silent — **the entire signature
+is carried by MENU's 4 multi-target edges, sitting on the 45
+of 113 classes that recur across depth cuts.**  **ANCHOR = (b)
+SEDIMENTARY:** path (a) measured and failed at the class grain
+— 0/185 classes occur at >1 depth (the class chain graded ⟹
+never revisited); prefix-class returns 0 @CONG vs 1900 @MENU
+("recurrence is a property of the COARSER carrier, exactly
+where the chain is non-Markov"); the (1,1) block entered
+0/30728; paper-09's first-return law delivery-free-scoped by
+its own source; **stamped honestly: the grading is CAP-DRIVEN**
+(purity at refinement round 4 of 5) — every negative is about
+this carrier at this cap.  **SURPRISES:** (1) the [B3]
+obstruction is ENTIRELY the column-sum coupling (772 row
+problems, 0 infeasible at both carriers; coupled: FEASIBLE 4/4
+@CONG with witness, INFEASIBLE 3/4 @MENU Farkas-certified) —
+**Γ-main's "no interpolant at 4 of 4" is 3-of-4
+convention-free; ONE cell admits a genuine stochastic
+interpolant**; (2) THE ATOM DIES at CONG (δ* 1→0 at both step
+counts; all 72 testable classes trivially atoms — "the atom
+language is spent here"); (3) Γ-prep's open answered (the
+(1,1) block = exactly 5 pure per-depth CONG classes,
+256/64/16/4/1); (4) a genuine determinism bug (set-iteration
+class indices) caught ONLY by the off-tree comparison — fixed
+with G-REFINE-DETERMINISTIC.  Instrument: 58 gates 0 failures;
+54/54 falsifiers evaluated 0 dead; the concurrently-rewritten
+paper-13 source correctly EXCLUDED (declared-and-not-read per
+#46/#91); 19/19 verbatim windows content-flipping; 750
+numerals 0 unexplained; byte-identical across three hash seeds
+in-tree AND off-tree with git absent; CLI clean.  Artifacts
+committed as-is: paper fd2f25d40002, code fab2cdc1893e, output
+58ddd86a52f2, receipt 8d28b5f2f807.  Battery + panel next.
