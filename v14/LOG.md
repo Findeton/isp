@@ -1896,3 +1896,10 @@ is partial and NAMES the failed link.  All cross-unit reads
 by DECLARED COMMIT SHA (#62); the R6b′ artifacts (mid-repair)
 NOT anchored — the adjudication note carries the targets.
 Construction dispatched.
+
+## 2026-08-09 — Γ-PREP ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #65)
+Independent plain run exit 0, BYTE-IDENTICAL (hashes match the
+committed artifacts exactly); selftest exit 0.  Γ-prep stands
+GREEN-VERIFIED-UNREVIEWED; panel queued.  Γ-main constructs
+against its committed sha (0f5d57eef77f) per the #62
+engraving — verification does not move those bytes.
