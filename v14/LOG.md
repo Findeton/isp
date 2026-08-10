@@ -1712,3 +1712,42 @@ byte-identical across both hashes; §8 provably the unit's
 own).  SURVIVES: TRANSPORT-UNMOTIVATED (all five inventories
 recounted), the 201-census, G-DIAG2, CR-B's 2→0 and 2/21,
 the tail bound, 7/7 paper↔output.  Two reviewers pending.
+
+## 2026-08-09 — R6b′ REVIEW: EFFECTUS FROZEN (v14 LEDGER #60)
+review-r6bp-effectus.md frozen as delivered.  Grade AWF; 738
+recomputations, zero numerical disagreements.  **F1 — A FALSE
+RESULT (outside the verdict block): NEW-FRONT-VALUES→fiber-1
+is WRONG** — the rule is left-anchored; the equally
+expressible right-anchored rule disagrees at 63-of-63 cycles
+(fronts telescope, counts don't) — and the TERMINAL R6a paper
+§5.3 says verbatim it "cannot be".  THE QUALIFIER GRADING:
+DISTRIBUTION-only = LAW (the honest form: "no equivariant
+functional"); count-4-only = SPLIT (count-3 emptiness a LAW —
+(p,p,r) forced; ≥5 silence an ARTIFACT); delivery-free = a
+NO-DELIVERY CONDITIONAL of the transport census (mis-labeled;
+different conditioning events, masses 3/7 vs 1/3);
+denominators ARTIFACT (10 of the 37 sit in unrefinable
+records; corrected 27-of-103).  **F8 — THE GAIN: the exact
+cause of transport position-dependence, never printed:
+(p,d,p,r) DOES NOT OCCUR — no delivery in the middle interior
+slot; delivery multiplicity 2→3 drives 3/7→4/9 — Γ-MAIN'S
+FIRST PRE-REGISTERED TARGET: reproduce (3/7,1/7,3/7) and
+(4/9,1/9,4/9).**  THE SEAM: genuine and deep, CAUSE
+MIS-NAMED — it is the shadow of THE ESCAPE (no bounded
+transport abstraction), not row provenance; Γ-prep dissolves
+it as a blockage and confirms it as a measurement (to be
+reconciled with the operator's "avoidable" ruling at
+adjudication: compatible — avoidable as an obstruction to
+THIS unit; real as a measured fact with the escape as cause).
+F9: the "two independent routes" are two TRANSCRIPTIONS of
+an authored literal (#219).  F5 ∥ operator: det-blindness
+unsound (det q IS record-intrinsic).  THE Γ-MAIN
+RECOMMENDATION: four heads; the kernel = Γ's DELIVERY-FREE
+SHADOW (13/16 a CONTROL, never a target — transport is
+measured to undo the defectiveness); don't inherit the
+artifacts; **a pre-registered holonomy-vs-⟨2,3⟩ gate or
+"Γ-main lands" is unfalsifiable**.  QFT-GRAVITY AUDIT: none
+of the three links welded; the stake rides on Γ-main; the
+delivery-multiplicity-per-slot = a concrete validity-domain
+coordinate (measured at 2 and 3).  K5: five uncarried
+restrictions.  One reviewer pending (instrument).
