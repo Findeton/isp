@@ -4342,3 +4342,44 @@ orders R-R5-1..9; the confinement follow-on REQUIRES A
 CONFIGURATION MEASURE FIRST (its pin's opening obligation).
 **ONE ENGRAVING: the seal manifest is total (#119 addendum).**
 Repair worker dispatched.
+
+## 2026-08-10 — U4B ORCHESTRATOR VERIFICATION 4/4; PROTOCOL FROZEN; PANEL LAUNCHED (v14 LEDGER #149)
+
+Battery complete: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 (corrupted anchor A-D42B1 → run died, wrote
+nothing — the demonstration printed); MUT-AFFINE-NULL exit 1
+with artifacts unchanged; incidental contract confirmations —
+empty and header-garbage mutant names exit 2 (no --list-mutants
+flag ships; the #82 minimum does not require one; noted for the
+panel).  **Protocol frozen in-entry (compact):** reviewers
+operator/effectus/instrument →
+v14/review-u4b-{operator,effectus,instrument}.md; object =
+paper 2bcba873d78e / code 2c9b999dea31 / output 8715c46a7b7f /
+receipt c4a4e8223b64 at commit 8c2dd98; pin d2cff9a274a8.  K1
+(operator, decisive): the family count by both routes (280×27
+squared vs the closed form); the window's licensing gate (the
+driven-field=combinatorial-field equality at all 11,664);
+rebuild the beyond-coset crystallinity census (1,749,600 —
+sample exhaustively within declared strata, fully at the
+window) and THE PAIR-MECHANISM (the field 1 on a union of two
+H-cosets with neither seed a coset — verify at witnesses + the
+216/6,912 seed-pair census); the DET census (747/78,400; the
+ROW|ROW/DIAG witness's q and det at 9/9; the
+positive-definite max-3; I7-STRICT-EMPTY) and **THE BUDGET WALL
+(18<27) + the never-Riemannian counting fact — verify both as
+THEOREMS or reclassify as measurements**.  K2 (effectus,
+decisive): CRYSTAL-GENERIC's licensed reading (emergence at
+declared-family scope — calibrate the word); the DET segment's
+licensed reading; the signature surprise's over-readings killed
+(the Lorentzian resonance NAMED-NOT-READ per the walls); the
+window's honesty (1/4900 disclosed in-string — sufficient?);
+the footprint-artifact reclassification of U4's two cells; the
+fragility reading; the successor register (the bigger-budget
+constructor named as the weld route; the law-side sibling; what
+the coupling unit inherits).  K3 (instrument): the seal at the
+NEW totality addendum (19 gate-time seals — is the manifest
+total?); the d60 seed-dependence handling (the class!); the
+cited-not-read discipline for U4/weld-2 (rewrites were in
+flight); #34/#62/#87/#91/#125 at the current era; the
+R4b/R5 injection playbooks.  Candidate-readings rule in force.
+Three reviewers launched.
