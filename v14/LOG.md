@@ -3291,3 +3291,20 @@ worker) priced and anchored at 42 numbers.  Artifacts committed
 as-is: paper 7e6db49f0e6e, code c1ae8ec7fdbe, output
 d1bfbbca40c9, receipt ae7a4ce48538.  Battery + protocol next;
 panel queued behind the R4b panel.
+
+## 2026-08-10 — U4 PROTOCOL FROZEN; PANEL QUEUED BEHIND R4B (v14 LEDGER #114)
+
+Protocol v14/note-u4-hostile-protocol.md: K1 the five records +
+the 61-event marking (S4 content verified, pair hypothesis
+vacuous); K2 the ten-cell stabilizer table decisive (two
+delivered routes + a reviewer third route; the CONFLICT-GRID
+full-Z₃² rise; the scout-refutation verified); K3 geometry +
+HEIGHT PURITY (what it forbids — is empty-by-theorem the honest
+strength?) + the renewal-only refusal (the delivery isolated);
+K4 the four walls audited + what the result hands Route A at
+citable scope; K5 the twelve-injection playbook (12 mutants vs
+147 gates — every uncovered gate named; the non-silent
+MUT-NOT-FORCED fix verified).  Reviewers →
+v14/review-u4-{operator,effectus,instrument}.md; LAUNCH ON THE
+R4B PANEL'S COMPLETION (in-flight budget).  Orchestrator battery
+running (plain/flag/selftest/the-fixed-mutant).
