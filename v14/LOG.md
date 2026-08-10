@@ -3140,3 +3140,24 @@ T1 six-vs-five error registered in-unit as a pin erratum
 Artifacts committed as-is: paper 0f92ab8a1af9, code
 8ddbc93cd48d, output 9eb0174740b0, receipt a28d8673a2cc.
 Battery next; TERMINAL on completion → the Γ-iteration pin.
+
+## 2026-08-10 — Γ-PREP / PAPER-11 TERMINAL (v14 LEDGER #108)
+
+Battery complete, ALL LEGS: in-tree plain BYTE-IDENTICAL
+(whitelist parser confirmed in source — parse_argv before
+anything); unknown flag exit 2; --selftest exit 1 + NO FILE
+WRITTEN (exactly one row killed through the real exit path);
+VERDICT-TYPED-SEGMENT mutant killed, artifacts unchanged; bare
+off-tree copy LOUD-CLEAN-ABORT (exit 1, wrote nothing — the
+designed de-provisioned behavior); **the provisioned git-less
+mirror run BYTE-IDENTICAL to the committed artifacts
+(9eb0174740b0 / a28d8673a2cc), orchestrator-reproduced**, with
+the integrity gate's re-read reporting 0 discrepancies.
+**Γ-PREP IS TERMINAL — the eighth terminal (papers
+01/02/03/04/09/10/11/12).**  STATUS row written (same commit,
+§13).  The Γ-iteration pin freezes next with the full
+inheritance: CONG-185; the (1,1)-block atoms
+UNREACHABILITY-STAMPED (R-MENU entered at 0/243,768); the d≤5
+265/462 row; the fifth block; the coarsening lemma; and the
+alternative-anchor lead (the renewal root at the class grain —
+paper-09's terminal first-return law).
