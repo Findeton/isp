@@ -1871,3 +1871,28 @@ this pin; flagged for its panel.  Adjudicator verification
 next; **THE Γ-MAIN PIN NOW** (both preconditions met:
 Γ-prep delivered + the R6b′ panel adjudicated w/ the input
 register).
+
+## 2026-08-09 — THE Γ-MAIN PIN FROZEN (v14 LEDGER #64)
+note-gmain-pin.md (`8529ddc4a319`) frozen; **paper-12 — THE
+FLAGSHIP'S FINAL STAGE.**  Both #56 preconditions met.
+THE CONSTRUCTION: Γ(cut′←cut) on D74's committed MENU
+quotient (113 classes) from the pinned kernels k_r — the
+corpus's own twice-named route; REC (measured flat) the
+negative control; renewal cuts positive-control-only (the
+divisibility wall honored); Γ-prep's B2 ATOMS available as
+the block decomposition.  THE BATTERY (9 registered tests,
+all gated): the two POSITION-LAW TARGETS (3/7,1/7,3/7)/(4/9,
+1/9,4/9) + the F8 mechanism as a property; **THE HOLONOMY
+GATE vs the measured ⟨2,3⟩** (without it "lands" is
+unfalsifiable); the U3 SCREEN (the owed test, first run);
+the [B3] interpolant w/ declared conventions; CR-B's kernel
+question; CR-A's mover question; the W-CROSS constraint; THE
+MOTIVATION INVENTORY on Γ's own construction (zero-motivated
+a first-class head); the 44 squares' status.  THE STAKE'S
+SETTLEMENT CONDITION, engraved in the pin: QFT-needs-gravity
+is settled ONLY by constructed ∧ targets-hit ∧
+holonomy-consistent ∧ motivation-non-empty — anything less
+is partial and NAMES the failed link.  All cross-unit reads
+by DECLARED COMMIT SHA (#62); the R6b′ artifacts (mid-repair)
+NOT anchored — the adjudication note carries the targets.
+Construction dispatched.
