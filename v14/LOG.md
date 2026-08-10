@@ -4158,3 +4158,44 @@ those).  All #136/#138 findings stand; 11 orders now.
 Supplementary order transmitted to the in-flight repair: read
 the finalised version; execute R-GI-9 at the broadened class
 scope (R-GI-9a).
+
+## 2026-08-10 — R5 OPERATOR FROZEN (1 OF 3) (v14 LEDGER #144)
+
+review-r5-operator.md frozen (488d79e46d70).  Grade AWF; 60
+recomputations; **zero false numbers in the receipt, TWO in the
+paper** — the headline verdict block is NOT what the instrument
+emits despite claiming verbatim quotation (512-OF-512 should be
+4096-OF-4096; 0-OF-9 should be 0-OF-18; the prose sections are
+right) — the programme's 7th and 8th false paper claims
+(transcription species; the computed record still zero) — **and
+NOTHING GATES THE VERDICT LINE** (the numeral regex excludes
+hyphen-adjacent digits: every X-OF-Y is invisible to the gate;
+two-line repair).  **MAJOR-4: MUTUALLY-EXCLUSIVE-BY-THEOREM
+EXCEEDS ITS THEOREM** — the single-path lemma covers at most one
+shared site; SAME-LINK (640/1920 rows) shares two and is empty
+ONLY by the uniform-coin restriction; the exhaustive scope test:
+**189,952 of 409,600 same-link pairs carry BOTH once coins may
+differ (46.4%)**, and 2/36 in Λ² — the exclusion is
+configuration-class-scoped, not pointwise.  **MAJOR-5/6: THE
+CR-D FORM-MATCH IS NUMEROLOGICAL, proven by the unit's own
+control** — the scrambles return full alternating groups at 5/12
+local cells and both global cells (full-alternating is the
+GENERIC outcome of permutation dynamics); what separates
+physical from scrambled at 12/12 is the (order, support)
+PROFILE, not the form; also misattributed — A₇ tops the
+three-wing ladder CR-D explicitly goes PAST (CR-D's own tower
+tops at A₁₅ and contains GL(3,2), falsifying "at every realised
+rung").  MAJOR-3: the ladder's "<" asserts false relations
+(A₅ ≮ A₃×A₃; a non-proper "<").  MAJOR-7: the title over-states
+at 2/6 stencils (A₃×A₃ has index 40 in Alt(6); the correct
+universal is "on each of its ORBITS").  STRENGTHS: A₁₆
+certified via JORDAN'S THEOREM (primitive + a 3-cycle) with no
+order computed; the set-equality certification proven SOUND (a
+proper subgroup cannot pass); the flat control rebuilt from
+R4's PROSE alone with the silent 66→58 dedup mechanism located
+(the identity circulant); **the infinite-order route AIRTIGHT**
+(rational non-integer traces, e.g. 53/4); the 0/1920 census
+right at its declared scope; G2's two-reading segmentation "the
+unit's best work."  MINOR: 8/25 alphabet elements inert (640
+built from 17); "0-of-18" is 6 coins × 3 relations, not
+exhaustive.  Two seats pending.
