@@ -4140,3 +4140,21 @@ value-binding; the comparator re-derives; the choice inventory
 added; the coupling-unit inheritance row).  No new engravings;
 three recurrences logged.  Repair worker dispatched — TERMINAL
 on its landing + battery = the gravity law's finish line.
+
+## 2026-08-10 — Γ-ITER INSTRUMENT FINALISED (3RD VERSION); REPAIR SUPPLEMENTED (v14 LEDGER #143)
+
+The instrument reviewer finalised its review a third time
+(eacf6bb2655a → c4e0e08050e7, 909 lines; committed as the
+version of record).  The delta: the FIFTH hash seed landed and
+changed a claim before shipping — **the MCENSUS hazard expands
+to a namespace sweep: 31 of 63 dicts carry seed-dependent
+insertion order** (still NO artifact byte moves — every
+publication point sorts; five-seed emitter-DIGEST identity);
+added as R-GI-9a.  **The reviewer also ran down its OWN false
+positive** (27 dicts flagged content-differing → traced to
+frozenset repr hash-ordering; disclosed in §9 as a point IN THE
+DELIVERY'S FAVOUR — sk() exists precisely to canonicalise
+those).  All #136/#138 findings stand; 11 orders now.
+Supplementary order transmitted to the in-flight repair: read
+the finalised version; execute R-GI-9 at the broadened class
+scope (R-GI-9a).

@@ -8,10 +8,10 @@ receipt `8d28b5f2f807`, pin `aa161f8f8e9d`, protocol `9f54f1083f21`.
 
 ## GRADE: AWF (ACCEPT-WITH-FIXES)
 
-**Executions:** 59 — 2 full clean plain runs (off-tree default seed;
+**Executions:** 62 — 2 full clean plain runs (off-tree default seed;
 `PYTHONHASHSEED=4242`), 7 full injected runs, 1 `--mutant` run, 2
 `--selftest` runs, 17 hostile-argv invocations, 3 real source-corruption
-runs, 5 truncated hash-seed probes, 23 reviewer programs.
+runs, 5 truncated hash-seed probes, 26 reviewer programs.
 **Recomputations:** ≈640. **False computed numbers found: ZERO.** Every
 number I could reach independently — with my own partition refinement,
 my own spanning-forest holonomy, my own rational-rank routine, my own
@@ -38,7 +38,7 @@ at the end of this review.
 | **THE #82 CLI** | 18/18 argv verdicts correct. `--selftest` exit 1, hash-proven to write nothing, report matches the corruption it made; 3 real source corruptions also refuse before measurement and do not even create the out-dir. |
 | **#91 BOTH LEGS** | Byte-identical at my own hands: off-tree, `.git`-less mirror, `--out-dir` redirected, default random hash seed → `58ddd86a52f2…` / `8d28b5f2f807…`; and again under a **fourth** interpreter hash seed (4242). |
 | **THE EXCLUSION** | paper-13 declared-and-not-read: **clean** on three independent routes (textual, AST, runtime audit hook). |
-| **THE BUG CLASS** | The fixed bug's fix is correct. Hunting the class found **one survivor the unit's own gate does not reach** — `MCENSUS` (1421), built by iterating the set `CARRIER`, moves under `PYTHONHASHSEED=31337`. No artifact byte moves: both publication paths sort. §9, MINOR-7. |
+| **THE BUG CLASS** | The fixed bug's fix is correct. Hunting the class found a survivor the unit's own gate does not reach: `MCENSUS` (1421) moves under `PYTHONHASHSEED=31337`, and **31 of 63 dicts carry a seed-dependent insertion order**. No artifact byte moves — every publication point sorts, measured three ways. §9, MINOR-7. |
 | **HONEST DENOMINATORS** | 58 registered gates = 17 anchors + 41 gates, of which **36 can independently fail**; 54 falsifiers of which **49 are substantive** and **51 reach the gate they name**. |
 
 ---
@@ -408,15 +408,17 @@ them.
 path** (the artifact-integrity path; MAJOR-2, INJ-2). All other failure
 paths do exit before `finish()`.
 
-**MINOR-7 — one surviving hash-order dependence, masked by two
-incidental sorts.** `MM` (1421) is built by iterating the **set**
-`CARRIER`, so `MCENSUS`'s order is a function of the interpreter hash
-seed; `PYTHONHASHSEED=31337` moves it while the other four seeds I tried
-agree. No artifact byte moves — both publication points sort — but the
-guarantee rests on those sorts rather than on the object, and
-`G-REFINE-DETERMINISTIC` does not cover it. Full detail and the one-line
-repair in §9. *This is the only thing in the delivery I found that the
-unit's own determinism gate does not reach.*
+**MINOR-7 — surviving hash-order dependence, masked by downstream
+sorts.** `MM` (1421) is built by iterating the **set** `CARRIER`, so
+`MCENSUS`'s order is a function of the interpreter hash seed;
+`PYTHONHASHSEED=31337` moves it while four other seeds agree. Sweeping
+the whole namespace, **31 of 63 dicts carry a seed-dependent insertion
+order**. No artifact byte moves — every publication point sorts, and I
+measured that three ways — but the guarantee rests on those sorts rather
+than on the objects, and `G-REFINE-DETERMINISTIC` reaches only
+`refine()`'s traversal. Full detail, the repair, and a disclosed false
+positive of my own probe in §9. *This is the only class in the delivery
+I found that the unit's own determinism gate does not reach.*
 
 ---
 
@@ -716,16 +718,47 @@ the in-memory state is not. And two full plain runs (default *random*
 seed; `PYTHONHASHSEED=4242`) both reproduce the committed artifacts byte
 for byte.
 
+**How wide is the hazard?** I then compared *every* dict in the
+namespace at that cut — 63 of them — across seeds 0 and 31337, on both
+an insertion-order digest and a content digest. **31 of the 63 carry a
+hash-seed-dependent insertion order**: `CACHE`, `CONG`, `MENU`, `REC`,
+`MM`, `MCENSUS`, `MU`, `PRICE`, `G`, `W`, `WBAD`, `GAM_C/M/R`,
+`GAMBAD`, `MASS_C/M/R`, `_cong_idx`, `_cong_rev`, `_mut_cong`, `_EVSK`,
+`_mt_`, `w_`, `t_`, `dep` and the rest. That is the honest size of the
+hazard: the artifacts' seed-independence rests on a sort at *every*
+publication point, across 31 order-dependent structures — not on one.
+
+**And a false positive of my own, disclosed.** That same sweep reported
+27 dicts as *content*-differing, which would have been a genuine
+determinism defect. It is not one — it is an artifact of my probe. The
+committed layer's arbitration events carry frozensets:
+
+```
+('r', 'A', frozenset({('A', ('v', 'v0'), 0)}), frozenset({('A', ('v', 'v0'), 0)}))
+```
+
+and `repr(frozenset)` is itself hash-seed-ordered (verified directly).
+Every dict my sweep flagged is keyed by a history containing such an
+event, or holds a set or a nested dict as a value, so a `repr`-based
+content digest moves while the content does not. `MCENSUS` is the *only*
+flagged dict with plain-string keys, which is exactly why it is the one
+that isolates cleanly as order-sensitive-with-stable-content. This is
+also a point in the delivery's favour: `sk()` (647–652) exists precisely
+to canonicalise those frozensets by sorting them, and every published
+path runs through an `sk()`-sorted traversal or `sort_keys=True`. The
+delivery is right here and my first instrument was naive.
+
 So: **no defect in the delivery, and a live hazard in the code.** The
-seed-independence of the artifacts currently rests on two incidental
-sorts rather than on the object being ordered. Anything a successor
-publishes off `MM`, `MCENSUS`, or any other structure built by iterating
-`CARRIER` without a sort becomes seed-dependent silently.
-*Repair (one line, 1421):* `for h in sorted(CARRIER, key=sk)`; and
-extend `G-REFINE-DETERMINISTIC` (or add a sibling) to assert that every
-dict reaching the receipt is built from a sorted traversal — the cheap
-version being a re-run of the whole emitter under a second hash seed
-inside the delivery, compared on `DIGEST`.
+seed-independence of the artifacts rests on incidental downstream sorts
+rather than on the objects being ordered. Anything a successor publishes
+off `MM`, `MCENSUS`, or any of the other 30 structures built by
+iterating `CARRIER`/`CACHE` as sets, without a sort, becomes
+seed-dependent silently.
+*Repair:* `for h in sorted(CARRIER, key=sk)` at 1421 closes the one I
+isolated; the general fix is to extend `G-REFINE-DETERMINISTIC` (or add
+a sibling) with a whole-emitter check — re-run the delivery's own
+emitter under a second hash seed and compare `DIGEST` — which would have
+caught this class at its root rather than at one object.
 
 **And end to end.** Two full plain runs, both byte-identical to the
 committed artifacts (`58ddd86a52f2…` / `8d28b5f2f807…`): run A off-tree
@@ -850,6 +883,7 @@ implementations, all agreeing with the delivery:
 | R-GI-6 | whitespace-normalise both prohibition scans; add `ast.Import`/`ast.ImportFrom` names to `_banned` | 566–578, 1620–1624 | 5 lines |
 | R-GI-7 | bind the mechanism claim: add `_mt_src ⊆ recurring` to `_carrier_rel` with its own falsifier | 1976–1989 | 1 conjunct + 1 `mutant()` |
 | R-GI-8 | anchor the pre-registered target triple to the pin's bytes | 1588 / `G-LAW-VALUE` | 1 conjunct |
+| R-GI-9a | close the determinism hazard: `for h in sorted(CARRIER, key=sk)` at 1421, and add a whole-emitter second-hash-seed check beside `G-REFINE-DETERMINISTIC` | 1421, 826–847 | 1 line + 1 gate |
 | R-GI-9 | extend `G-EQ22-STAMPED` to `colsums_one` and the label counts, so the quantum table is bound per cell rather than per field | 1919–1937 | 1 conjunct |
 | R-GI-10 | correct four sentences — §3 "Every failure path writes nothing" (false for the integrity path); §3 "bound to a registered consumer gate" → "declared against"; §11 "the two theorem-passes and the one disclosure" (one carries a falsifier); §11/§13 print the honest denominators (36 independently-falsifiable of 41 non-anchor gates; 51 of 54 falsifiers reaching, 49 substantive) | paper §3, §11, §13 | wording |
 
