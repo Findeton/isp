@@ -2518,3 +2518,61 @@ worker dispatched.  Note the #83 resonance: the relocated
 headline is the SECOND result resting on the declared lattice —
 exactly the weight the weld-2 census (paper-13, in construction)
 now carries.
+
+## 2026-08-10 — Γ-PREP INSTRUMENT + EFFECTUS FROZEN (2 OF 3 SEATS) (v14 LEDGER #88)
+
+**INSTRUMENT frozen (aa9b0362fbed): AWF, 7 MAJOR all blocking; 670
+recomputations, 9 scratch executions.**  CLI-CONTRACT-FAILED 0/4 —
+the #66 disease reproduced exactly (junk-flag run: exit 0, full
+delivery, both artifacts rewritten) with two aggravations
+(--no-writ typo WRITES; exit-1-on-dead-falsifier still writes;
+registries under-report 40/44 gates, 112/118 mutants).  4 of 9
+injections survived (arena-artefact under the primary label;
+contradictory prose; post-gate receipt corruption; a 41-char
+verbatim anchor truncated to "the " passing M-VERBATIMDRIFT);
+V-VERDICT passed a headline flip.  The three sharpest: the verdict
+comparator IS its builder (all three #82 axes at L2631/L2639); the
+os.popen `git show HEAD:v10/LOG.md` read — an unanchored input at
+a MOVING HEAD, product read by no gate ("TERMINAL at v10 LOG
+#None" delivers 44/44 PASS) — **and the committed byte-identity
+does NOT reproduce off-tree**; B0-SUCCESSOR-NAMED, the consumer
+licensing all of ARM B, is not among the 44 gates.  Honest
+denominators: 82/189 receipt keys falsifier-free; 8/18 compliance
+rows hard-coded True.  R-GM-9 RESOLVED on this side: the receipt
+is FLAT (189 keys + 7 underscore blocks; Fractions are strings;
+_gates is a list; _mutants samples truncated to 4; NO code sha).
+Credits: 114/114 paper tokens trace; byte anchors block the write;
+PYTHONHASHSEED=7 byte-identical in-tree; A4-MASS genuinely
+independent.  (The concurrent `M gmain_exact.py` the reviewer
+flagged = the Γ-main repair worker, expected.)
+
+**EFFECTUS frozen: AWF, 508 recomputations, 0 false numbers (128
+tokens clean).  MAJOR-2 DECISIVE AND DECIDED IN-REVIEW: at the
+ruled carrier the atoms mostly vanish** — CONG-185 ⊑ MENU-113 ⊑
+KIND-13 verified (EVENT→KIND 0 exceptions/3,969), δ* monotone
+under coarsening, and the receipt's own MATCHED column then gives
+**δ* = 0 at CONG-185 for 4 of the 6 delivered atom rows: the atom
+claim collapses to the (1,1) block**; 3 of 4 blocks are not even
+statable on the d≤4 window (d74 commits d≤5, 265/462 — a pinned
+row the T5 supply list lacks).  Also: the theorem-pass census
+undercounts by ≥2 and both misses carry the Arm-B headline;
+Birkhoff witness zeros assigned by an always-firing else;
+birkhoff_tau/diameter_finite typed literals gated against
+themselves; V-VERDICT = the #82 disease (independent convergence
+with the instrument) + the #219 compliance row false; 3 of 4
+block-re-entry rows 100%-by-construction; the named
+Birkhoff/Hilbert engine never run on a quotient, undisclosed.
+CHOICE INVENTORY: Arm A motivated; **Arm B has FOUR free items —
+fails the RSQ zero-free standard; "blocked" splits: the LADDER is
+a corpus theorem (A4-MONO), the BLOCKING is a construction fact**
+(the small sets are level sets of the very monotone coordinate).
+K3 cross-finding: Γ-main imports "the B2 atoms" UNQUALIFIED while
+its own §8 excludes MATCHED and the primary grain — it inherits a
+result whose entire scope it excluded, plus the unscoped
+monotonicity sentence (30,728/243,768 = 12.6%).  R-GM-9 this
+side: NO receipt key publishes per-block δ* (dropped at
+serialisation).  **Two supplementary orders (R-GM-12/13)
+transmitted to the in-flight Γ-main repair worker**: scope the
+B2-atoms import at the import site (MATCHED + primary-grain
+exclusions named); carry the monotonicity sentence's denominator.
+Adjudication waits on the operator seat.
