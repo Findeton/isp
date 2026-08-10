@@ -3813,3 +3813,21 @@ numerals 0 unexplained; byte-identical across three hash seeds
 in-tree AND off-tree with git absent; CLI clean.  Artifacts
 committed as-is: paper fd2f25d40002, code fab2cdc1893e, output
 58ddd86a52f2, receipt 8d28b5f2f807.  Battery + panel next.
+
+## 2026-08-10 — Γ-ITERATION PROTOCOL FROZEN, PANEL LAUNCHED (v14 LEDGER #131)
+
+Protocol v14/note-giter-hostile-protocol.md: K1 the carrier
+re-derived + the six properties + the 2-of-6 contrast; K2 the
+targets decisive (the on-carrier step-normaliser proof; the law
+values at both legs; the census shadow's control status with
+the #82 disease provably absent); K3 holonomy AGREES audited
+with the two-way demonstration; K4 the three answers —
+carrier-relativity's mechanism gate, the SEDIMENTARY head's
+cap-driven scope audited hard, the [B3] correction to Γ-main
+(3-of-4 convention-free; the ONE interpolant cell's witness)
+verified; K5 the instrument incl. the seam battery (#119 —
+this unit predates the engraving), the determinism-bug CLASS
+hunt, and the correct #46/#91 exclusion of the
+concurrently-rewritten paper-13.  Three reviewers launched →
+v14/review-giter-{operator,effectus,instrument}.md.
+Orchestrator battery in background.
