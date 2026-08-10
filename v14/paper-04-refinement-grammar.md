@@ -1,7 +1,10 @@
 # R6a — THE REFINEMENT GRAMMAR: WHAT THE RECORD'S OWN COUNTING FORCES, AND WHAT IT LEAVES FREE
 
-**Status:** `GREEN-REPAIRED` (v14 R6a, 2026-08-09).
-**Pin:** `v14/note-r6a-refinement-grammar-pin.md` (frozen v14 ledger #25, sha256-12 `a22582f67168`).
+**Status:** `TERMINAL` — panel #31/#32/#33 (3× ACCEPT-WITH-FIXES),
+adjudicated #34; repair R-R6A-1…R-R6A-10 delivered #52 and
+adjudicator-verified (plain-run byte-identical; selftest 78/78 mutants
+dead); v14 ledger #53, 2026-08-09.  Pin:
+`v14/note-r6a-refinement-grammar-pin.md`, sha256-12 `a22582f67168`.**Pin:** `v14/note-r6a-refinement-grammar-pin.md` (frozen v14 ledger #25, sha256-12 `a22582f67168`).
 **Grammar sources (the unit's only authority, hash-verified at run time):** `v13/code/ha_successor_receipt.json` (`542b8735daf0`), `v13/paper-ha-successor.md` (`f286ba10d2d9`), `v13/code/ha_successor_exact.py` (`d44cb72f8ee9`).
 **Verdict:** **`R6A-NO-MOTIVATED-SPLIT`**, with the per-class table and the three-wall mechanism below.
 **Deliverables:** this paper; `v14/code/r6a_refinement_exact.py`, `v14/code/r6a_refinement_output.txt`, `v14/code/r6a_refinement_receipt.json`.

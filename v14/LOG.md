@@ -1540,3 +1540,17 @@ measured qualification).  18 verdict segments (12→18), all
 flippable; 25 rendered claims 0 missing; 31-row compliance
 sweep incl. both #34 engravings.  Byte-identical ×2.
 Adjudicator verification next (78-mutant selftest).
+
+## 2026-08-09 — R6a TERMINAL (v14 LEDGER #53)
+Adjudicator verification CLEAN: plain run exit 0
+BYTE-IDENTICAL; selftest exit 0, 78/78 mutants dead (the
+waiver-ledger mutants confirmed dying by name).  Paper
+stamped TERMINAL; STATUS row written (✓adj).  **R6a /
+PAPER-04 IS TERMINAL #53 — v14's third terminal unit.**
+Final form: R6A-NO-MOTIVATED-SPLIT, 18 computed segments,
+THE THREE WALLS (multiplicity / torus-coboundary / periodic
+holonomy w/ the gated universal-cover disclosure), the
+rule-relative lift table, the five relativities, the
+reopening-leads register.  The R6b′ successor already
+delivered against its committed bytes (#48) and is verified
+(#49) — the lineage is clean.
