@@ -4700,3 +4700,36 @@ reimplementation.  Artifacts committed as-is: paper
 acd9787960c2, code 6d5278b38dcc, output 03e587aece2d, receipt
 5f1715f715e5, the d60 register 0e22bea6b53a.  Battery next;
 TERMINAL on completion.
+
+## 2026-08-10 — U4B / PAPER-17 TERMINAL (v14 LEDGER #159)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 (corrupted anchor A-D42B1 → died, wrote
+nothing); **MUT-SEAL-DROPPED dies at G-SEAL-COMPLETE** —
+the silent-seal-drop attack (which previously left a
+byte-identical receipt) confirmed dead at the orchestrator's
+own hands; artifacts unchanged.  **U4B IS TERMINAL — the
+thirteenth terminal (papers 01/02/03/04/09/10/11/12/13/14/15/
+17/18).**  The census that
+## 2026-08-10 — U4B / PAPER-17 TERMINAL (v14 LEDGER #159)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 (corrupted anchor A-D42B1 → died, wrote
+nothing); MUT-SEAL-DROPPED dies at G-SEAL-COMPLETE, artifacts
+unchanged — the silent-seal-drop attack (once byte-identical)
+now caught, at my own hands.  **U4B IS TERMINAL — the
+thirteenth terminal (papers 01/02/03/04/09/10/11/12/13/14/15/
+17/18).**  The schedule census stands: crystallinity is one
+affine law on the union (6/7 outside the inherited locus, no
+new species of order); the budget wall and never-Riemannian
+are theorems; the first non-degenerate grammar geometry exists
+(indefinite, det=−1); and the R=3 saturation is the exact weld
+demand now under construction as paper-19.  STATUS row written
+(same commit, §13).  **ADJUDICATOR NOTE (folding the repair
+worker's routed item): the d60 defect register
+(v14/note-d60-defect-register.md 0e22bea6b53a) proposes
+corpus-wide lines; ACCEPTED as a register note of record (the
+tie-break-over-unordered-container class; d60-C2's missing
+maxhits conjunct; the d60-L70 CWD-relative read; the 7-unit
+audit scope; U4/U4b immune via maxhits=1) — no retro-edits to
+v10 terminals; a v14 pointer suffices.**
