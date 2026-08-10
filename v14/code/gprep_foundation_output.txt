@@ -1,0 +1,440 @@
+[GPREP — v14 Gamma-PREP: THE TRANSPORT-SCOPE FOUNDATION (paper-11)]
+  pin: v14/note-gprep-transport-foundation-pin.md, v14 ledger #57, sha256-12 42ce06e6be8a.  ARM A terminalizes the foundation from the committed layer; ARM B attempts the successor engine.
+  EXACT arithmetic only (int / Fraction); AST float-guard over this file's own source; no tolerances anywhere.
+  NO UNANCHORED RUNTIME INPUTS (RUNBOOK section 14, v14 #46): every file this process opens is listed in the anchor table below with its sha256-12, its path-value anchor and its verbatim-context anchor.  v14/LOG.md and /STATUS.md are NOT read.
+
+  THE DECLARED ARENA (RUNBOOK section 15 — data, not prose):
+    boundary   : the empty history (genesis v0 is the declared boundary of the committed layer, T1 docstring).
+    family     : ARM-1T, actor pool (A, B), exhaustive menus to depth 6 — 243,769 histories.  The delivery-free partner is the same layer with the delivery kind withheld (derived below, not imported).
+    law        : the committed d42b1 weight law, exec'd from its own path; nothing about admission or pricing is re-implemented.
+    state      : the history itself.  Every coarser object used here (menu shape, holdings profile, intrinsic partition) is a DECLARED abstraction of it and is named at every use.
+    arena      : two actors, depth 6, relative horizons r = 1..7, terminal convention C1 (G(h,0) = 1).  THE GRAIN CHOICE IS ARENA DATA: the 13-class kind x weight partition is DECLARED PRIMARY (T3's), the 113-class event x weight partition is the measured CONTROL (T5's).  Choosing silently would be the arena artefact the era forbids.
+    provenance : the 8 pinned source rows T1-T8, each carrying its pedigree qualifier verbatim (table below).
+
+  DECLARED CAPS, printed before anything uses them: two-actor transport depth 6; delivery-free partner depth 6; intrinsic-partition window depth 4; root-symmetry window depth 3; relative horizons r = 1..7; ARM B N = 1..5.  No sampled arm is run anywhere: every row is EXACT and exhaustive at its printed cap.
+  DECLARED INFEASIBLE, with the counts printed rather than the omission hidden (ARM B): depth 7 at two actors and depth 6 at three actors.  Their sizes are computed from this run's own measured branching below and printed at ARM B.
+
+[P1 — THE PINNED SOURCES: verbatim-context, byte and path-value anchors]
+  Pedigree qualifiers are carried VERBATIM from the pin, per its own binding instruction.
+  VERBATIM-CONTEXT ANCHORS (evaluated FIRST): 12 of 12 context windows located, each bound to its named consumer gate.
+    [OK ] T1  v10/code/d42b1_transport_exact.py  -> consumer gate A1-BUDGETS  (130 chars of context)
+    [OK ] T2  v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md  -> consumer gate A5-ESCAPE  (208 chars of context)
+    [OK ] T2  v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md  -> consumer gate A5-OPERATOR-CONTROL  (221 chars of context)
+    [OK ] T3  v10/note-d44b-transport-scope-invariance.md  -> consumer gate A5-ESCAPE  (106 chars of context)
+    [OK ] T3  v10/note-d44b-transport-scope-invariance.md  -> consumer gate A6-REOPENING  (100 chars of context)
+    [OK ] T4  v10/note-d70-horizon-limit-result.md  -> consumer gate A4-PORTS  (76 chars of context)
+    [OK ] T4  v10/note-d70-horizon-limit-result.md  -> consumer gate B0-SUCCESSOR-NAMED  (186 chars of context)
+    [OK ] T4  v10/note-d70-horizon-limit-result.md  -> consumer gate A3-POSITIVITY  (52 chars of context)
+    [OK ] T5  v10/data/d74_transport_holonomy_exact.out  -> consumer gate A5-CONTROL-GRAIN  (15 chars of context)
+    [OK ] T6  v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md  -> consumer gate A5-METHOD  (299 chars of context)
+    [OK ] T7  v10/note-d46b-martin-at-transport.md  -> consumer gate A3-KERNEL  (41 chars of context)
+    [OK ] T8  v10/note-d46f-reception-dynamics.md  -> consumer gate A1-DELIVERY  (62 chars of context)
+  BYTE ANCHORS: 17 of 17 artifacts reproduce their pinned sha256-12.
+    [OK ] T1  576275d55ecf  v10/code/d42b1_transport_exact.py
+    [OK ] T1  8aa031a4b0e3  v10/note-d42b1-transport-and-reconciliation.md
+    [OK ] T2  4b533e437b0f  v10/relativistic-isp-v10-paper32-the-boundary-of-closure.md
+    [OK ] T3  598ada389811  v10/note-d44b-transport-scope-invariance.md
+    [OK ] T3  dfb2df899603  v10/code/d44b_transport_invariance_exact.py
+    [OK ] T3  d202fe0acf08  v10/data/d44b_transport_invariance_exact.out
+    [OK ] T4  f1c8f17c77c0  v10/note-d70-horizon-limit-result.md
+    [OK ] T4  f55f7034fab0  v10/code/d70_horizon_limit_exact.py
+    [OK ] T4  1177761ed54d  v10/data/d70_horizon_limit_exact.out
+    [OK ] T5  0180e21c7127  v10/note-d74-transport-holonomy-result.md
+    [OK ] T5  bb852161aced  v10/code/d74_transport_holonomy_exact.py
+    [OK ] T5  b5a9d50f9573  v10/data/d74_transport_holonomy_exact.out
+    [OK ] T6  7ac66f3fe74d  v10/relativistic-isp-v10-paper31-four-decisions-at-the-joints.md
+    [OK ] T6  5f91f0190b4c  v10/code/d43b_state_chain_exact.py
+    [OK ] T7  406af54e0c5c  v10/note-d46b-martin-at-transport.md
+    [OK ] T7  f218704b52dd  v10/data/d46b_martin_transport_exact.out
+    [OK ] T8  a6368078be4c  v10/note-d46f-reception-dynamics.md
+  THE PEDIGREE QUALIFIERS, carried verbatim per the pin:
+    T1 THE LAYER: TERMINAL v10 #304
+    T2 THE BOUNDARY THEOREM: TERMINAL v10 #392 (round+delta)
+    T3 THE ESCAPE MEASUREMENT: TERMINAL v10 #374
+    T4 THE KERNEL + RENEWAL ARM: TERMINAL-AT-ONE-HOSTILE-ROUND, v10 LOG #489 (the note's header is STALE; the ledger is the authority)
+    T5 THE ABSTRACTION LADDER: round-1 reviewed+repaired; the exact v10 ledger # is VERIFIED in-unit below and printed
+    T6 THE CHAIN'S DEFINITION: TERMINAL v10 #349
+    T7 THE KERNEL'S PARENT: TERMINAL v10 #403 (three-round sweep; header STALE — the ledger is pinned)
+    T8 RECEPTION DYNAMICS: TERMINAL v10 #403
+  NAMED EXCLUSIONS, printed in-unit and honoured by this process: v10/note-d56-... (uncommitted probe — reachable only through v10/note-d57-sector-exact-pin.md, and this unit does not reach for it); v10/note-d46a-... (target refuted as written); v11/note-u1c-... (NOT CITABLE); THE-THEORY-SO-FAR / THE-COMPLETION-DICHOTOMY (index only); v14/LOG.md and /STATUS.md (forbidden runtime inputs).
+
+  T5 LEDGER VERIFICATION (the pin's explicit order).  The d74 terminal stamp is read from the COMMITTED v10 ledger bytes via `git show HEAD:v10/LOG.md`: the entry headed 'D74 ROUND 1 ADJUDICATED AND TERMINAL: TH-II WITH A FIND' carries **(LEDGER #495)**.  The green delivery immediately preceding it is #494 and the pin freeze is #492.  T5's citable pedigree is therefore: round-1 reviewed+repaired, TERMINAL at v10 LOG #495.
+    THE CITABILITY GAP THIS CLOSES, exhibited: the note's own status line reads '**Status: ROUND-1 REVIEWED AND REPAIRED, 2026-07-27.** Hostile round:' — it never says TERMINAL, so a successor reading the note alone would under-cite the row.  The ledger is the authority and the number is #495.
+
+[P2 — AST FLOAT-GUARD] float literals in the substantive source: 0 (lines []); float() appears 6 times and ONLY inside display formatting (frs()/f-strings) — every comparison, every gate and every stored value is int or Fraction.
+
+[ARM A / FACT 1 — THE GRAMMAR DECLARATION, re-derived from the committed layer]
+  event kinds present in the family: ['d', 'm', 'n', 'p', 'r'] — p propose, r arbitrate, m merge, d deliver, n idle.
+  menu entries by kind over the whole depth-6 family: {'d': 763382, 'm': 2744, 'n': 487538, 'p': 497036, 'r': 248156}
+  BUDGETS, MEASURED off the layer (never quoted), PER ACTOR — T1's own parenthetical says the deliver sector is sender-view and the arb-and-merge sector is components join-view plus pairs initiator-view, so a per-MENU reading would be the wrong object: the propose sector carries total ['1/4'] per actor; the deliver sector ['1/4'] per actor; idle absorbs the remainder.  T1's docstring line is the verbatim-context anchor of gate A1-BUDGETS.
+  THE ARB-AND-MERGE SECTOR IS JOIN-VIEW AND IS REPORTED AS MEASURED, not asserted: its per-actor totals take the values ['1/2', '1/4'].  The excess over the declared quarter is exactly what makes the total menu mass depart from the actor count, and that departure is the corpus's QUARTER-QUANTIZED LADDER, re-derived here: menu-weight-sum census {'2': 3757, '5/2': 212} at depth <= 4, {'2': 29605, '5/2': 1124} at depth <= 5, and {'2': 237269, '5/2': 6500} at depth <= 6 — the VALUE SET is unchanged one level deeper than the committed claim.
+  the ROOT menu: 8 entries, total mass 2 — 2xd@1/4, 2xn@1/2, 4xp@1/8
+  DELIVERY IS NON-INJECTIVE (T8's row, re-measured): re-delivery of an already-delivered (sender, receiver, version) triple is admissible at 350 menu entries in the depth-3 window.
+  MERGE has support only deep: merge entries appear in menus at parent depths {5: 72, 6: 2672}, and 72 of the 243769 histories contain a merge event at all.
+
+[ARM A / FACT 2 — the ARM-1T census, the delivery-free partner, G_1..G_7 at both scopes, and the DELIVERIES-REDUCE-BRANCHING sign]
+  ARM-1T (A, B), exhaustive menus to depth 6:
+    per level  = [1, 8, 60, 452, 3448, 26760, 213040]
+    cumulative = [1, 9, 69, 521, 3969, 30729, 243769]  -> 243769 histories
+  THE DELIVERY-FREE PARTNER (derived from T1 by withholding the delivery kind; NOT imported from a second layer):
+    per level  = [1, 6, 32, 176, 976, 5280, 27904]
+    cumulative = [1, 7, 39, 215, 1191, 6471, 34375]  -> 34375 histories
+  THE FINITE-HORIZON POTENTIALS AT THE ROOT, exact:
+    D | delivery-free G_D | transport G_D | df ratio | transport ratio
+    1 | 2 | 2 | - | -
+    2 | 4 | 4 | 2 | 2
+    3 | 257/32 | 257/32 | 257/128 | 257/128
+    4 | 1037/64 | 1035/64 | 1037/514 | 1035/514
+    5 | 2101/64 | 4173/128 | 2101/1037 | 1391/690
+    6 | 68313/1024 | 134587/2048 | 68313/33616 | 134587/66768
+    7 | 139065/1024 | 2168717/16384 | 46355/22771 | 2168717/1076696
+  THE SIGN, MEASURED: the delivery-free potential is >= the transport potential at every horizon (7/7), first strictly at D = 4 (delivery-free 1037/64 vs transport 1035/64).  DELIVERIES REDUCE FINITE-HORIZON BRANCHING — T7's row, re-derived here and not quoted.  The same sign holds ratio for ratio: True.
+
+[ARM A / FACT 3 — the relative-horizon kernels k_r(e|h) = q(e|h) G(h+e, r-1) / G(h, r), r = 1..7]
+  WHAT IS AND IS NOT SUBSTANTIVE HERE, said before the numbers, and taken from the round that corrected the predecessor.  sum_e k_r(e|h) = 1 is an IDENTITY of the construction: G(h, r) is DEFINED as sum_e q(e|h) G(h+e, r-1) and k_r divides by it.  Cut-additivity of the chained measure follows BY INDUCTION from that identity — a chain of probability kernels has cut mass 1 at every cut — so it is DISCLOSED here, not gated as a measurement.  THE SUBSTANTIVE PROPERNESS GATE IS STRICT POSITIVITY: a zero potential is the only way the identity can break, and it is the only clause below that could have come out otherwise.
+    relative horizon r | histories with a computable k_r | sum_e k_r = 1 exactly
+    1 | 243769 | exactly
+    2 | 30729 | exactly
+    3 | 3969 | exactly
+    4 | 521 | exactly
+    5 | 69 | exactly
+    6 | 9 | exactly
+    7 | 1 | exactly
+  properness violations over all 279067 (history, horizon) pairs: 0
+  STRICT POSITIVITY (the substantive gate): kernel entries <= 0: 0; potentials <= 0: 0.
+  CUT-ADDITIVITY, DISCLOSED AS INDUCTION (not gated as a measurement): given sum_e k_r = 1 the chained mass at every cut is 1 by induction.  What is worth printing is the contrast: the RAW path weight is not a measure — its cut masses sum_(|h| = n) q(h) are exactly the root potentials ['2', '4', '257/32', '1035/64', '4173/128', '134587/2048', '2168717/16384'], i.e. unnormalized.
+  THE MIS-NORMALIZED-KERNEL CONTROL (negative control, pin section 4): dividing by G(h, 2) where G(h, 3) belongs breaks properness at 69 of 69 tested histories — the properness gate can fail, and here is the input that makes it.
+  WINDOW ARTEFACTS, DISCLOSED (the d70 trap, honoured).  A row at horizon r is taken over the window of histories h with len(h) + r <= 7; at r = 7 that window contains the ROOT AND NOTHING ELSE.  THE OFF-ROOT PREFIX CONVENTION, stated: every claim in this unit about behaviour across horizons is taken on the OFF-ROOT prefix of the window sequence — the horizons whose window still contains a history of positive length — and a terminal value on a root-only window is reported as a window artefact, never as contraction, shrinkage or stability.
+
+[ARM A / FACT 4 — the renewal ports R-SIG and R-MENU, re-derived]
+  R-SIG : every actor's NON-SUPERSEDED holdings is the same singleton {v}; no live proposals; no components; no merge pairs.  (The literal sigma-level port: the delivery-free sigma sees the non-superseded token only, because prop_options_in_view SKIPS superseded.)
+  R-MENU: R-SIG and, in addition, holdings(a) = {v} EXACTLY for every a — no superseded remainder.  (The menu-exact port: at transport scope deliver_options_in_view enumerates over the WHOLE holdings set, so anything left in it is visible in the menu.)
+  R-SIG  points at depth <= 5: 5161 (depths [0, 1, 2, 3, 4, 5]); menu-exact at 1365, NOT menu-exact at 3796
+  R-MENU points at depth <= 5: 1365; menu-exact at 1365, NOT menu-exact at 0
+  RE-ENTRIES (points reached from OUTSIDE the class): R-MENU 0 -> absorbing-complement = True; R-SIG 3796 -> absorbing-complement = False.  The R-SIG points that are not menu-exact are EXACTLY the re-entered ones.
+  R-MENU by depth = [1, 4, 16, 64, 256, 1024] — exactly 4^n at every depth (True), summing to 1365 = sum_(n <= 5) 4^n.
+  THE HOLDINGS-PROFILE DECOMPOSITION OF R-SIG (new here, and ARM B rides on it): (|holdings(A)|, |holdings(B)|) -> count = {(1, 1): 1365, (2, 2): 3788, (2, 3): 4, (3, 2): 4}.  R-MENU is exactly the profile-(1, 1) block; the rest of R-SIG is a ladder of further blocks.
+  RETURN-WEIGHT CENSUS (a DEPARTURE census: the renewal class is never re-entered, so there are no cycles, only a survival curve).  Normalization named at every use: column q is the RAW committed weight product; column k is the horizon-7 completed conditional chained from the root under C1.
+    n | # renewal histories | raw-q mass | completed k mass | k mass NOT at a renewal
+    1 | 4 | 3/2 (~1.500000) | 1615044/2168717 (~0.744700) | 553673/2168717 (~0.255300)
+    2 | 16 | 9/4 (~2.250000) | 1201824/2168717 (~0.554164) | 966893/2168717 (~0.445836)
+    3 | 64 | 27/8 (~3.375000) | 894240/2168717 (~0.412336) | 1274477/2168717 (~0.587664)
+    4 | 256 | 81/16 (~5.062500) | 666144/2168717 (~0.307160) | 1502573/2168717 (~0.692840)
+    5 | 1024 | 243/32 (~7.593750) | 497664/2168717 (~0.229474) | 1671053/2168717 (~0.770526)
+  the raw renewal mass is exactly (3/2)^n: True.
+  THE 0.7705: the horizon-completed mass NOT at a renewal at depth 5 is 1671053/2168717 (~0.770526).  Its closed form: the renewal mass at depth 5 is (3/2)^5 * G_2 / G_7 = 497664/2168717, and the measured value is 497664/2168717 — the same rational, computed two independent ways (a chained product of kernels versus a closed rational expression in the potentials).
+  HOLDINGS MONOTONICITY, AT ITS NARROWED SCOPE (the correction the predecessor's round forced, honoured here).  Over all 30728 transitions out of every history of depth < 5: holdings-SHRINKING transitions = 0.  BUT the layer DOES have a shrinking set: 'superseded' grows, so NON-SUPERSEDED holdings shrink — measured here at 4340 transitions.  THAT IS EXACTLY WHY THE ABSORBING-COMPLEMENT ARGUMENT COVERS R-MENU AND NOTHING ELSE: R-MENU asks for holdings(a) = {v} and holdings never shrink; R-SIG asks only about the non-superseded part, which does.  Event kinds that first break singleton holdings: {'d': 3068, 'n': 2040, 'p': 2496, 'r': 4644}.
+
+[ARM A / FACT 5 — THE ESCAPE, owned at both committed grains]
+  THE METHOD (T6 section 3.1, re-implemented, not imported): P_0 = the partition of histories by MENU SHAPE; P_(t+1) = one probabilistic-bisimulation refinement of P_t.  Two operator forms exist in the corpus and BOTH are run here: the PER-CANDIDATE form (two histories stay equivalent iff their multisets of (weight, successor-class) pairs agree) and the PER-CLASS-AGGREGATE form (T6's own words: 'for every successor class the total transition weight into that class agrees exactly').  T2 binds a successor to the fact that the distinction is EXTENSIONALLY NULL at the transport cap; that clause is gated below rather than repeated.
+  THE GRAIN IS ARENA DATA, DECLARED AND PRINTED (RUNBOOK section 15).  PRIMARY: the 13-class KIND x WEIGHT menu shape (T3's grain).  CONTROL: the 113-class EVENT x WEIGHT menu shape (T5's MENU rung).  Choosing one silently is the arena artefact the era forbids, so both are measured and the disagreement is the grain-swap control.
+  PRIMARY GRAIN (kind x weight): 13 classes on the depth-4 family of 3969 histories.
+    |P_t| tables per window cutoff c: cutoff-1: [2, 2, 2, 2]; cutoff-2: [5, 6, 6]; cutoff-3: [9, 11]; cutoff-4: [13]
+    growth table (t, window len <=, histories, |P_t|): (0, 4, 3969, 13); (1, 3, 521, 11); (2, 2, 69, 6); (3, 1, 9, 2); (4, 0, 1, 1)
+    THE ESCAPE: 68 transitions from len <= 2 parents land in 5 classes first realized only at len 3 — classes [6, 7, 8, 9, 10], out of the 6 classes the window carries.  The window chain is NOT closed.
+    ESCAPE WITNESS (exhibited, not asserted): a parent of depth 2 in class 3 takes a 'r' event of exact weight 1/4 into class 6, whose shallowest member has length 3 — strictly deeper than the window.  The transition is a genuine menu entry of the committed layer, not a construction of this unit.
+  CONTROL GRAIN (event x weight, T5's MENU rung): 113 classes on the same family.
+    |P_t| tables per window cutoff c: cutoff-1: [5, 5, 5, 5]; cutoff-2: [13, 17, 17]; cutoff-3: [45, 49]; cutoff-4: [113]
+    growth table: (0, 4, 3969, 113); (1, 3, 521, 49); (2, 2, 69, 17); (3, 1, 9, 5); (4, 0, 1, 1)
+    THE ESCAPE at the control grain: 76 transitions land in 32 classes that lie OUTSIDE the window's 17 — a finer grain escapes into more classes, not fewer.
+  THE GRAIN-SWAP CONTROL FIRES: the two grains disagree exactly where T3 and T5 say they must — 13 classes against 113, and 68 escaping transitions against 76.  A verdict taken at one grain and read at the other would be an arena artefact; both are printed.
+  MENU-SHAPE FACTORISATION FAILS at the primary grain: of the 9 level-0 (menu-shape) classes over parents of length <= 3, 2 have non-constant per-candidate rows — the menu shape does NOT factorize the transfer.  One refinement step repairs it on the shallower window: 0 of 6 level-1 classes fail.
+  THE PER-CANDIDATE vs PER-CLASS-AGGREGATE OPERATOR (T2's binding clause, gated not repeated): the two operators induce the SAME partition on the tested window (True) and the same escape count (68 against 68) — EXTENSIONALLY NULL at the transport cap, exactly as T2 binds a successor to say.
+  THE HONEST STATEMENT, GATED: no closed exact transfer exists at feasible caps.  A closed transfer needs the window's class set to be invariant under the transfer; it is not, at either grain, by the escape counts above.  Nothing here is an instability claim about the partition — the partition behaves; the state space outruns every window this unit can afford.
+
+[ARM A / FACT 6 — the reopening witness, re-derived]
+  divergence exists in-family: 1044 of 3969 histories have unequal non-superseded holdings between A and B.
+  reconverging (history, delivery) pairs: 124, over 84 DISTINCT diverged prefixes — the suffix multiplicity is carried, not hidden.
+  DISTINCT MINIMAL (3-event) reconverging chains: 4, all at exact weight ['1/256'].  Shortest reconverging chain length = 3.
+  So the delivery-free absorption theorem ('diverged holdings never reconverge') is a DELIVERYLESSNESS ARTEFACT: a delivery event inside the enumerated family reconverges a diverged configuration, with every event admission-priced by the committed layer.
+  THE d42a CLASSIFIER-MISMATCH CONTROL (pin section 4, re-measured): the delivery-free family carries 4 distinct menu shapes at depth <= 4, of which 0 contain a delivery kind.  Transport menus matching ANY delivery-free shape: 0 of 3969.  The delivery-free classifier cannot be silently reused here.
+
+[ARM A / FACT 7 — the root-symmetry theorem]
+  the layer's relabellings, tested as automorphisms over every history of depth <= 3:
+    symmetry | histories tested | not closed | menu violations | G(h,r) != G(sigma h, r)
+    A<->B | 521 | 0 | 0 | 0
+    0<->1 | 521 | 0 | 0 | 0
+    both | 521 | 0 | 0 | 0
+  root menu orbits per event kind: {'d': 1, 'n': 1, 'p': 1} — ONE ORBIT PER KIND = True.
+  therefore, for ANY terminal convention invariant under those relabellings, the root sector-normalized conditional is the UNIFORM-WITHIN-KIND distribution at every horizon.  Measured, r = 1..7: constant across horizons = True; the distribution = {'d': '1/2', 'n': '1/2', 'p': '1/4'}.
+  THIS IS A THEOREM OF THE CONSTRUCTION, NOT A MEASUREMENT OF STABILITY: the root's zero drift and the root leg of any convention-separation claim are ONE identity — root-menu symmetry times an equivariant terminal — and neither carries information about horizon stability or convention independence.
+
+======================================================================
+[ARM B — THE SUCCESSOR ENGINE, ATTEMPTED: operator-level minorization on the transport family]
+======================================================================
+  The predecessor named this and did not run it: 'NO OPERATOR-LEVEL MINORIZATION — Birkhoff / Hilbert-metric contraction of the positive backward recursion G, the natural instrument for this kernel — has been attempted anywhere.'  This arm attempts it, at the affordable cap, and reports what it finds either way.
+  DECLARED CAPS AND THE INFEASIBLE ARMS, with their counts printed (pin: 'depth-7 and 3-actor depth-6 declared infeasible with the counts printed').
+    two-actor depth 7: the measured level-6/level-5 branching is 213040/26760 = 5326/669 (~7.961), so level 7 is about 1,696,040 histories — roughly 8x this run's depth-6 build, which alone is the dominant cost of this receipt.  NOT RUN.
+    three-actor: depth 3 is 3424 histories (per level {0: 1, 1: 15, 2: 219, 3: 3189}), measured here; the level-3/level-2 branching is 1063/73, so depth 5 projects to about 676,200 and depth 6 to roughly an order of magnitude beyond that.  THE 3-ACTOR DEPTH-5 CONDITIONAL ARM IS NOT RUN: the projection exceeds this unit's declared wall-clock budget, and the cap is printed here rather than the omission hidden.  3-ACTOR DEPTH 6: DECLARED INFEASIBLE.
+
+  [B1 — THE TREE OBSTRUCTION, measured and named]
+  Write the backward recursion as a level operator: (M_n g)(h) = sum_e q(e|h) g(h+e), a nonnegative matrix with rows the depth-n histories and columns the depth-(n+1) histories.  Then G(., r) at level n is M_n M_(n+1) ... 1.  Birkhoff's theorem gives a contraction of the Hilbert projective metric with coefficient tanh(Delta/4), where Delta is the operator's projective diameter — FINITE only if the matrix has no zero pattern separating a pair of columns.
+  MEASURED: of the 243768 columns (every non-root history of the family), 243768 have EXACTLY ONE nonzero entry — the history's unique parent — and 0 have any other number.  Unique parenthood is the defining property of a history tree.
+  CONSEQUENCE, EXHIBITED: take two rows h1 != h2 at the same level and one column under each.  The 2x2 minor is [[1/4, 0], [0, 1/4]] — the off-diagonal entries are exactly 0, so the cross-ratio m11*m22/(m21*m12) is +infinity.  Hence Delta(M_n) = infinity and tanh(Delta/4) = 1 AT EVERY LEVEL: THE BIRKHOFF CONTRACTION COEFFICIENT OF THE BACKWARD RECURSION IS 1, NOT BY A CAP AND NOT BY A NUMERICAL ACCIDENT, BUT BY UNIQUE PARENTHOOD.
+  The same fact kills the history-level Doeblin bound outright: for x != y at the same depth, the supports of P^N(x, .) and P^N(y, .) are disjoint sets of descendants, so the largest common minorant is the zero measure and delta = 0 for every N.  ANY minorization at transport scope must therefore live on a QUOTIENT — which is precisely where ARM A fact 5's escape bites.  This is the structural statement the predecessor's open question did not contain.
+
+  [B2 — THE QUOTIENT MINORIZATION, attempted on the R-SIG class]
+  The construction, declared before it is run.  Let Psi be a declared state abstraction.  For a class C and a step count N, the LARGEST delta for which a common nu exists is exactly
+      delta*(C, N, Psi) = sum_s min_(x in C) P^N(x, Psi^-1(s)),
+  and nu is that common minorant, renormalized.  delta* > 0 iff some Psi-class is reached in exactly N steps from EVERY x in C.  This is a measurement that can come out either way, and below it does both.
+  TWO GRAINS, both declared (RUNBOOK section 15): Psi_kind = the kind x weight menu shape (the primary grain); Psi_event = the event x weight menu shape (the control grain).
+  TWO HORIZON CONVENTIONS, both printed, because naming one silently is the defect the predecessor's round convicted: (H7) the horizon-7 chain from the root, where a history at depth d steps under k_(7-d); and (MATCHED) the matched-horizon chain, where every x steps under the same k_N, k_(N-1), ..., k_1 regardless of its depth.
+
+  (a) THE FULL R-SIG CLASS.  x ranges over every R-SIG point the window admits (len(x) + N <= 6).  The third column is the number of DISTINCT holdings profiles the window carries — the coordinate ARM A fact 4 found, and the one that decides these rows.
+    N | |C-window| | # profiles in window | delta* (H7, primary grain) | delta* (MATCHED, primary grain)
+    1 | 5161 | 4 | 0 | 0
+    2 | 689 | 2 | 0 | 0
+    3 | 105 | 2 | 12420/2168717 | 3/514
+    4 | 21 | 1 | 8988404357/9050056041 | 1
+    5 | 5 | 1 | 290707648979/291881114879 | 1
+  READ EXACTLY, AND NOT ONE WORD FURTHER.  On the two WIDEST windows — N = [1, 2], carrying [5161, 689] R-SIG points and [4, 2] distinct holdings profiles — delta* is EXACTLY 0 under both horizon conventions.  At N = [3] the window has narrowed to [105] points and delta* turns POSITIVE across profiles ([('12420/2168717', '3/514')]): three steps do bring two different profiles into a common Psi-class ON THAT WINDOW.  THIS UNIT DOES NOT CLAIM A BOUND FROM IT.  The window at that N holds [105] of the class's 39361 points, and the deeper rows [(4, 21, 1, '8988404357/9050056041', '1'), (5, 5, 1, '290707648979/291881114879', '1')] have collapsed to a SINGLE profile, where a positive value carries no cross-profile content at all.  What the widest windows say is the reportable fact; what the narrow ones say is a cap artefact, and it is printed as one.
+
+  (b) THE HOLDINGS-PROFILE BLOCKS.  ARM A fact 4 decomposed R-SIG by (|holdings(A)|, |holdings(B)|); R-MENU is exactly the (1, 1) block.  Here each block is tested as a candidate small set.
+    profile | N | |block-window| | depths | delta* H7 primary | delta* MATCHED primary | delta* MATCHED control | |support(nu)|
+    (1, 1) | 1 | 1365 | [0, 1, 2, 3, 4, 5] | 5531/5564 | 1 | 1 | 2
+    (1, 1) | 2 | 341 | [0, 1, 2, 3, 4] | 3916670725604/3948076132837 | 1 | 1 | 5
+    (2, 2) | 1 | 3788 | [3, 4, 5] | 1373/1380 | 1 | 0 | 2
+    (2, 2) | 2 | 348 | [3, 4] | 88301/88665 | 1 | 0 | 5
+    (2, 3) | 1 | 4 | [5] | 1 | 1 | 0 | 3
+    (3, 2) | 1 | 4 | [5] | 1 | 1 | 0 | 3
+
+  WHAT LANDED.  At the MATCHED horizon and the PRIMARY grain, each holdings-profile block of R-SIG is an EXACT ATOM: delta* = 1, i.e. P^N(x, .) is the SAME measure for every x in the block, not merely bounded below by a common one.  The blocks that reach delta* = 1 and the windows they were measured on: [('(1, 1)', 1, 1365), ('(1, 1)', 2, 341), ('(2, 2)', 1, 3788), ('(2, 2)', 2, 348), ('(2, 3)', 1, 4), ('(3, 2)', 1, 4)].
+  nu, EXHIBITED (block (1, 1), N = 1, over 1365 points spanning depths [0, 1, 2, 3, 4, 5]): a measure on 2 Psi-classes, namely
+      1/4  at  ((('d', '1/4'), 2), (('n', '1/2'), 2), (('p', '1/8'), 2), (('r', '1/4'), 1))
+      3/4  at  ((('d', '1/4'), 2), (('n', '1/2'), 2), (('p', '1/8'), 4))
+  WHAT DID NOT.  On the FULL R-SIG class delta* = 0 at every window carrying more than one holdings profile (N = [1, 2, 3]), under both horizon conventions.  The obstruction is NOT the horizon and NOT the cap: it is the HOLDINGS PROFILE.  Two R-SIG points with different profiles carry different delivery-menu weights (the delivery budget is 1/4 divided by |holdings(a)|, so the superseded remainder is WRITTEN INTO THE MENU), and their N-step laws therefore share no Psi-class at all.
+  THE GRAIN IS ARENA DATA AND IT BITES: at the CONTROL grain the same blocks split — 4 of 6 rows have delta*(primary) != delta*(control), because the control grain resolves the version NAMES that the primary grain forgets.  Rows where they differ: [('(2, 2)', 1, '1', '0'), ('(2, 2)', 2, '1', '0'), ('(2, 3)', 1, '1', '0'), ('(3, 2)', 1, '1', '0')].
+
+  [B3 — DOES THE ATOM LADDER REGENERATE?  The hitting test]
+  A Doeblin/regeneration argument needs BOTH halves: a small set with delta > 0 (B2 has one, in fact an atom) AND a uniform lower bound on the probability of RETURNING to that same small set within N steps.  The second half is measured here.
+  (i) THE RETURN INTO R-SIG ITSELF, on the widest window this family admits.  This is the predecessor's own table extended by one full depth: it tested N-step returns on the window len(h) + N <= 5, which leaves 9 histories at N = 4 and 1 at N = 5; the depth-6 family moves that to len(h) + N <= 6, i.e. 69 histories at N = 4 and 9 at N = 5.  Every count in this sentence is read off the census above, not typed.
+    N | histories tested | return probability EXACTLY 0 at | infimum
+    1 | 30729 | 20344 | 0
+    2 | 3969 | 1044 | 0
+    3 | 521 | 84 | 0
+    4 | 69 | 4 | 0
+    5 | 9 | 0 | 31570/293121
+  the zero-set of the R-SIG return collapses with N ([20344, 1044, 84, 4, 0]) and first empties at N = 5, on a window of 9 histories.  ON THE WIDEST WINDOW (30729 histories) THE INFIMUM IS 0, and that is the number a uniform Doeblin bound would have to beat.
+  (ii) THE MINIMAL RETURN DISTANCE, exactly.  For every history the shortest continuation reaching R-SIG is computed backwards through the family.  A history whose whole remaining subtree misses R-SIG is recorded as UNRESOLVED AT THIS CAP, never as infinite.  The LOOKAHEAD column is what the cap allows a row to see, and a row is only informative when its maximum is STRICTLY BELOW its lookahead — otherwise the number is the cap talking, not the process.
+    parent depth | max finite distance | lookahead | informative? | unresolved at this cap | histories
+    0 | 0 | 6 | True | 0 | 1
+    1 | 2 | 5 | True | 0 | 8
+    2 | 2 | 4 | True | 4 | 60
+    3 | 2 | 3 | True | 80 | 452
+    4 | 2 | 2 | False | 960 | 3448
+    5 | 1 | 1 | False | 17824 | 26760
+    6 | 0 | 0 | False | 178840 | 213040
+  informative rows: depths [0, 1, 2, 3], across which the largest return distance actually attained is 2.  Unresolved ON THOSE ROWS: 84 histories whose entire remaining subtree contains no R-SIG point (over the whole censused window, including the cap-limited rows, 197,708).  A uniform Doeblin N would have to cover those too, and at this cap they are not covered.  THIS IS A CAP MEASUREMENT, NOT AN UNBOUNDEDNESS THEOREM, and it is labelled one.
+  (iii) THE RETURN INTO EACH PROFILE BLOCK — the object a regeneration argument actually needs, since the atoms of B2 are the blocks and not their union.
+    profile block | N | histories tested | hitting probability EXACTLY 0 at | infimum
+    (1, 1) | 1 | 30729 | 29364 | 0
+    (1, 1) | 2 | 3969 | 3628 | 0
+    (1, 1) | 3 | 521 | 436 | 0
+    (1, 1) | 4 | 69 | 48 | 0
+    (2, 2) | 1 | 30729 | 22061 | 0
+    (2, 2) | 2 | 3969 | 1617 | 0
+    (2, 2) | 3 | 521 | 92 | 0
+    (2, 2) | 4 | 69 | 4 | 0
+    (2, 3) | 1 | 30729 | 30641 | 0
+    (2, 3) | 2 | 3969 | 3897 | 0
+    (2, 3) | 3 | 521 | 491 | 0
+    (2, 3) | 4 | 69 | 49 | 0
+    (3, 2) | 1 | 30729 | 30641 | 0
+    (3, 2) | 2 | 3969 | 3897 | 0
+    (3, 2) | 3 | 521 | 491 | 0
+    (3, 2) | 4 | 69 | 49 | 0
+  block re-entry census (a point of the block reached from OUTSIDE it): [('(1, 1)', 5461, 0), ('(2, 2)', 33260, 33260), ('(2, 3)', 108, 108), ('(3, 2)', 108, 108)] as (profile, size, re-entries).
+  and the mechanism, censused: over 30728 transitions the holdings profile DECREASES at 0 of them.  The profile is a MONOTONE NON-DECREASING COORDINATE OF THE PROCESS.
+
+  THE RESULT OF ARM B, stated exactly and no further.  The transport family DOES have exact atoms — one per holdings profile, each with delta = 1 and an explicit nu, and the menu-exact port the predecessor treated as the special class is simply the FIRST of them.  What the atoms lack is the other half.  The holdings profile is a monotone non-decreasing coordinate (0 decreases over the whole censused window), so a block cannot be re-entered from a strictly larger profile; the hitting infimum into every block is exactly 0; the return infimum into their UNION is 0 as well on the widest window this family admits, one full depth wider than the predecessor's; and the maximum finite return distance rises with depth over the measured rows.  A regeneration argument needs ONE small set entered infinitely often with a uniform bound, and none of the candidates exhibits one.  So the engine is BLOCKED, and the blocking fact is NAMED and MEASURED rather than open: THE MONOTONE HOLDINGS LADDER.  What is NOT claimed: that no uniform bound exists at any depth.  Every row above is a finite-cap measurement, the caps are printed, and the one row where a cross-profile delta* turns positive (on a window of 105 of the class's points) is printed too.
+
+[FALSIFIERS — every gate must be able to die]
+  112 declared falsifiers; each is an injection into the gated object, and every gate predicate is evaluated BLIND — no predicate anywhere in this file references a falsifier's identity.
+  falsifiers that killed nothing (a dead falsifier is an exit-1 condition): 0 []
+  keys a predicate READS but does not CONSTRAIN (censused, not hidden: neither the drift nor the escalated poison killed a gate through them, so they enter a predicate without being load-bearing in it): 0 []
+  by class: {'science': 4, 'value-drift/census-drop': 103, 'verdict': 5}
+  a sample of the kill table (falsifier -> gates it killed):
+    DRIFT[B2_atom_found]                           ->  2 gate(s) ['B2-ATOM', 'V-VERDICT']
+    DRIFT[B2_atoms]+POISON                         ->  1 gate(s) ['B2-ATOM']
+    DRIFT[B2_best_N]                               ->  1 gate(s) ['V-VERDICT']
+    DRIFT[B2_best_delta]                           ->  2 gate(s) ['B2-ATOM', 'V-VERDICT']
+    DRIFT[B2_grain_split]+ERASE                    ->  1 gate(s) ['B2-GRAIN']
+    DRIFT[B2_hetero_zero_rows]                     ->  1 gate(s) ['B2-FULLZERO']
+    DRIFT[B2_nu_block_size]                        ->  1 gate(s) ['V-VERDICT']
+    DRIFT[B2_nu_depths]                            ->  1 gate(s) ['V-VERDICT']
+    DRIFT[verdict]                                 ->  1 gate(s) ['V-VERDICT']
+    DRIFT[welldef_primary_level0]                  ->  1 gate(s) ['A5-FACTORISATION']
+    DRIFT[welldef_primary_level1]                  ->  1 gate(s) ['A5-FACTORISATION']
+    VERDICT-VALUE-SWAP                             ->  1 gate(s) ['V-VERDICT']
+    VERDICT-APPENDED-TEXT                          ->  1 gate(s) ['V-VERDICT']
+    VERDICT-TRUNCATED                              ->  1 gate(s) ['V-VERDICT']
+    VERDICT-SEGMENT-DROPPED                        ->  1 gate(s) ['V-VERDICT']
+    VERDICT-TYPED-SEGMENT                          ->  1 gate(s) ['V-VERDICT']
+    ESCAPE-ZEROED                                  ->  3 gate(s) ['A5-ESCAPE', 'A5-OPERATOR-CONTROL', 'V-VERDICT']
+    GRAIN-COLLAPSED                                ->  2 gate(s) ['A5-CONTROL-GRAIN', 'V-VERDICT']
+    ATOM-CLAIMED-WITHOUT-NU                        ->  2 gate(s) ['B2-ATOM', 'V-VERDICT']
+    BLOCKING-FACT-ERASED                           ->  3 gate(s) ['B3-HITTING', 'B3-MONOTONE', 'V-VERDICT']
+
+  THE NEVER-FALSIFIED CENSUS, PHASE 1 (3 of 40 gates registered so far), each with a VERIFIED waiver (v14 #34: a waiver claim is a gate claim).  Three further gates read this phase's own outcome and are registered and falsified in phase 2 below; the FINAL census is printed there:
+    A3-CUTADD            [DISCLOSURE] DISCLOSURE: this clause is true by algebra for every input and is printed as a disclosure, not a must-pass gate
+    A4-MONO              [THEOREM-PASS] THEOREM-PASS: analytically forced by the construction; the forcing is machine-checked by the disclosure printed at its section, and the gate is reported as a disclosure, never counted as a measurement
+    A7-ROOTTHEOREM       [THEOREM-PASS] THEOREM-PASS: analytically forced by the construction; the forcing is machine-checked by the disclosure printed at its section, and the gate is reported as a disclosure, never counted as a measurement
+  gates never falsified AND without a verified waiver: 0 []
+
+[COMPLIANCE SWEEP — computed statuses, not asserted ones]
+  [OK  ] RUNBOOK 4 exact arithmetic
+         AST float-guard: 0 float literals; float() confined to display
+  [OK  ] RUNBOOK 4 counts computed, never typed
+         every census in this receipt is enumerated in-process; the committed values appear only inside gate predicates as expectations that kill the run on mismatch
+  [OK  ] RUNBOOK 4 controls in both directions
+         negative controls: mis-normalized kernel, classifier mismatch, grain swap; positive controls: the atoms of B2, the reduction control of A4-PRED
+  [OK  ] RUNBOOK 13 (#234) verdict derived in a gate
+         V-VERDICT compares the complete emitted string against a segment-by-segment rebuild
+  [OK  ] RUNBOOK 14 (#10) containment is not equality
+         all five verdict falsifiers (value swap, appended text, truncation, dropped segment, retyped segment) kill a gate; gated at C-VERDICTFALSIFIERS with its own falsifier
+  [OK  ] RUNBOOK 13 (#10) render from the gated object
+         every printed number and every receipt field reads from F, the same object the gates read
+  [OK  ] RUNBOOK 13 (#20) prose renders from the receipt
+         paper-11 renders its numbers from gprep_foundation_receipt.json; any number derived in text is marked at its derivation site
+  [OK  ] RUNBOOK 14 (#20) compliance claims are gate claims
+         this sweep is itself gated at C-COMPLIANCE below, with an injection-falsifier
+  [OK  ] RUNBOOK 14 (#20) path-value anchoring
+         M-PATHDRIFT: every drifted path fails to resolve
+  [OK  ] RUNBOOK 14 (#34) waiver claims are gate claims
+         every never-falsified gate carries a verified waiver naming its forcing; gated at C-WAIVERS with its own falsifier
+  [OK  ] RUNBOOK 14 (#34) verbatim-text anchors
+         12 context windows over 8 of the 8 pinned rows, evaluated before the byte anchors, each bound to a named consumer gate
+  [OK  ] RUNBOOK 14 (#46) no unanchored runtime inputs
+         the only files read are the pinned artifacts and this file's own source; v14/LOG.md and /STATUS.md are not opened
+  [OK  ] RUNBOOK 14 (#208) no gate references mutant identity
+         the falsifiers perturb the gated object; the predicates are the same functions evaluated blind
+  [OK  ] RUNBOOK 14 (#219) comparators built independently
+         A4-MASS compares a chained kernel product against a closed rational expression in the potentials — two independent routes, not one routed twice
+  [OK  ] RUNBOOK 15 declared arena
+         boundary / family / law / state / arena / provenance printed as data at the head of this receipt; the GRAIN is declared and both grains are measured
+  [OK  ] RUNBOOK 15 (#196) match every coordinate
+         ARM B's like-for-like comparisons fix the horizon convention AND the grain AND the depth window before any class contrast is read; the matched-coordinate tables are the primary objects
+  [OK  ] RUNBOOK 13 (#314) precheck may not name the verdict
+         the anchor and float-guard prechecks gate what is censused; every verdict-naming fact is measured on the censused objects
+  [OK  ] pin section 4 the delivery-free contrast at every census
+         the partner family is derived from T1 and censused beside every transport census
+
+  THE NEVER-FALSIFIED CENSUS, FINAL (3 of 44 gates), each with a VERIFIED waiver (v14 #34: a waiver claim is a gate claim):
+    A3-CUTADD              [DISCLOSURE] DISCLOSURE: this clause is true by algebra for every input and is printed as a disclosure, not a must-pass gate
+    A4-MONO                [THEOREM-PASS] THEOREM-PASS: analytically forced by the construction; the forcing is machine-checked by the disclosure printed at its section, and the gate is reported as a disclosure, never counted as a measurement
+    A7-ROOTTHEOREM         [THEOREM-PASS] THEOREM-PASS: analytically forced by the construction; the forcing is machine-checked by the disclosure printed at its section, and the gate is reported as a disclosure, never counted as a measurement
+  gates never falsified AND without a verified waiver: 0 []
+
+  final tally after the compliance falsifiers: 44 PASS / 0 FAIL over 44 gates; 118 falsifiers, 0 dead; never-falsified 3 (all waived).
+
+[GATES]
+  [PASS] A1-KINDS (SUBSTANTIVE) — the committed layer generates exactly the six declared event kinds (p, r, m, d, n) and no others, with merge present
+        (kinds = ['d', 'm', 'n', 'p', 'r']; counts = {'d': 763382, 'm': 2744, 'n': 487538, 'p': 497036, 'r': 248156})
+  [PASS] A1-BUDGETS (SUBSTANTIVE) — the declared budgets are the measured ones, PER ACTOR: the propose sector totals exactly 1/4 wherever it is non-empty and the deliver sector exactly 1/4 — consumer of T1's verbatim budget line.  The arb-and-merge sector is join-view and its measured value set is reported beside them rather than asserted equal to a quarter
+        (propose ['1/4']; deliver ['1/4']; arb+merge (join-view) ['1/2', '1/4'])
+  [PASS] A1-LADDER (SUBSTANTIVE) — THE QUARTER-QUANTIZED LADDER, re-derived: the per-history menu weight sum takes the value set {2, 5/2} with multiplicities {2: 3757, 5/2: 212} at depth <= 4 and {2: 29605, 5/2: 1124} at depth <= 5 — both committed — and the VALUE SET is unchanged at depth <= 6, which is this receipt's own one-level extension
+        (depth <= 4: {'2': 3757, '5/2': 212}; depth <= 5: {'2': 29605, '5/2': 1124}; depth <= 6 (NEW): {'2': 237269, '5/2': 6500})
+  [PASS] A1-DELIVERY (SUBSTANTIVE) — delivery is NON-INJECTIVE at transport scope (T8): re-delivery of the same (sender, receiver, version) is admissible, so the delivery map does not embed the record
+        (re-delivery menu entries in the depth-3 window = 350)
+  [PASS] A1-LAYER (SUBSTANTIVE) — SINGLE SOURCE: the committed d42b1 layer is exec'd from its own path, pre-print slice only, carrying candidates_for, admissible, event_poset, View, vname, V0 and BOTH option enumerators; nothing about admission or pricing is re-implemented here
+        (v10/code/d42b1_transport_exact.py: prefix 16129 chars, 8 definitions lifted, 0 sys.exit / 0 top-level check / 0 top-level print)
+  [PASS] A2-CENSUS (SUBSTANTIVE) — the ARM-1T census reproduces the committed cumulative sizes [1, 9, 69, 521, 3969, 30729] and 243,769 to depth 6, with the per-level breakdown [1, 8, 60, 452, 3448, 26760, 213040]
+        (cumulative = [1, 9, 69, 521, 3969, 30729, 243769]; per level = [1, 8, 60, 452, 3448, 26760, 213040])
+  [PASS] A2-DF-CENSUS (SUBSTANTIVE) — the DERIVED delivery-free partner reproduces the committed partner census [1, 7, 39, 215, 1191, 6471] and 34,375 to depth 6 — the (path, value) anchor that licenses deriving the partner from T1 instead of reading a second, unpinned layer
+        (cumulative = [1, 7, 39, 215, 1191, 6471, 34375])
+  [PASS] A2-G-TRANSPORT (SUBSTANTIVE) — the transport potentials G_1..G_7 = 2, 4, 257/32, 1035/64, 4173/128, 134587/2048, 2168717/16384
+        (G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1035/64; G_5 = 4173/128; G_6 = 134587/2048; G_7 = 2168717/16384)
+  [PASS] A2-G-DF (SUBSTANTIVE) — the delivery-free potentials G_1..G_7 = 2, 4, 257/32, 1037/64, 2101/64, 68313/1024, 139065/1024
+        (G_1 = 2; G_2 = 4; G_3 = 257/32; G_4 = 1037/64; G_5 = 2101/64; G_6 = 68313/1024; G_7 = 139065/1024)
+  [PASS] A2-SIGN (SUBSTANTIVE) — DELIVERIES REDUCE BRANCHING, measured with its sign: the delivery-free potential dominates the transport potential at every horizon and the two first separate at D = 4 (1037/64 > 1035/64)
+        (df >= transport at all 7 horizons = True; first separation at D = 4)
+  [PASS] A3-KERNEL (THEOREM-PASS) — PROPERNESS: sum_e k_r(e|h) = 1 exactly at every (history, horizon) pair with r = 1..7.  THEOREM-PASS, disclosed as such: k_r divides by its own denominator.  Carried as a regression tripwire on the menu bookkeeping (it catches a menu used in the kernel that differs from the menu used in the potential)
+        (pairs = 279067; violations = 0; per horizon = {1: 243769, 2: 30729, 3: 3969, 4: 521, 5: 69, 6: 9, 7: 1})
+  [PASS] A3-POSITIVITY (SUBSTANTIVE) — STRICT POSITIVITY — the substantive properness gate (T4's own correction, honoured): every potential and every kernel entry is strictly positive, so no denominator vanishes anywhere in the family
+        (kernel entries <= 0: 0; potentials <= 0: 0)
+  [PASS] A3-MISNORM (SUBSTANTIVE) — THE NEGATIVE CONTROL FIRES: a deliberately mis-normalized kernel fails the properness identity at every tested history — the properness gate is not vacuous
+        (69 of 69 tested histories fail)
+  [PASS] A3-CUTADD (DISCLOSURE) — CUT-ADDITIVITY IS AN INDUCTION, NOT A MEASUREMENT — disclosed, not gated.  The raw cut masses are the root potentials, i.e. the raw weight is unnormalized; the horizon normalization is what buys mass 1 at every cut
+        (raw cut masses = ['2', '4', '257/32', '1035/64', '4173/128', '134587/2048', '2168717/16384'])
+  [PASS] A4-PRED (SUBSTANTIVE) — the reduced R-SIG predicate is the committed predicate: over every history of depth <= 5 the reduced form (live empty and both non-superseded holdings the same singleton) agrees with the full form (which also tests components and merge pairs) at every single history
+        (disagreements = 0 over 30729 histories)
+  [PASS] A4-PORTS (SUBSTANTIVE) — THE TWO PORTS COME APART AT TRANSPORT SCOPE, with the committed counts: R-SIG = 5,161 points of which 1,365 are menu-exact and 3,796 are not; R-MENU = 1,365, menu-exact at all of them; R-MENU has 0 re-entries (absorbing-complement) and R-SIG has 3,796 — and the re-entered points are EXACTLY the non-menu-exact ones
+        (R-SIG 5161 (menu-exact 1365, not 3796); R-MENU 1365; re-entries R-MENU 0, R-SIG 3796)
+  [PASS] A4-4N (SUBSTANTIVE) — the menu-exact renewal count is exactly 4^n at every depth and sums to 1,365 = sum_(n <= 5) 4^n
+        (by depth = [1, 4, 16, 64, 256, 1024]; sum = 1365)
+  [PASS] A4-MASS (SUBSTANTIVE) — the raw renewal mass is exactly (3/2)^n; the horizon-completed mass NOT at a renewal rises monotonically to 1671053/2168717 (~0.7705) at depth 5; and the depth-5 renewal mass equals its closed form (3/2)^5 * G_2 / G_7 = 497664/2168717, computed by two independent routes (a chained kernel product and a rational expression in the potentials)
+        (raw = ['3/2', '9/4', '27/8', '81/16', '243/32']; not-at-renewal = ['553673/2168717', '966893/2168717', '1274477/2168717', '1502573/2168717', '1671053/2168717']; closed form 497664/2168717 = measured 497664/2168717)
+  [PASS] A4-MONO (THEOREM-PASS) — HOLDINGS ARE MONOTONE ALONG EVERY TRANSITION (a one-line consequence of View.holdings being a union over the view's arbs, deliveries and merges — carried as a THEOREM-PASS and censused rather than proved), AND THE NARROWING IS GATED WITH IT: non-superseded holdings DO shrink, at a strictly positive number of transitions, which is exactly why the absorbing-complement argument covers R-MENU only
+        (transitions = 30728 (expected 30728); holdings-shrinking = 0; NON-superseded-shrinking = 4340)
+  [PASS] A5-METHOD (SUBSTANTIVE) — the re-implemented refinement reproduces T3's committed growth table and |P_t| tables at the primary grain: growth (0,4,3969,13); (1,3,521,11); (2,2,69,6); (3,1,9,2); (4,0,1,1) and tables cutoff-1 [2,2,2,2] / cutoff-2 [5,6,6] / cutoff-3 [9,11] / cutoff-4 [13] — consumer of T6's verbatim method window
+        (growth = [(0, 4, 3969, 13), (1, 3, 521, 11), (2, 2, 69, 6), (3, 1, 9, 2), (4, 0, 1, 1)]; tables = {1: (2, 2, 2, 2), 2: (5, 6, 6), 3: (9, 11), 4: (13,)})
+  [PASS] A5-ESCAPE (SUBSTANTIVE) — THE ESCAPE reproduces exactly: 68 escaping transitions into exactly 5 above-window classes at the primary grain, with the witness transition exhibited and its target class shown to have no member inside the window — consumer of T2's and T3's verbatim escape windows
+        (escapes = 68 into [6, 7, 8, 9, 10]; window carries 6 classes; witness target's shallowest member has length 3)
+  [PASS] A5-FACTORISATION (SUBSTANTIVE) — MENU-SHAPE FACTORISATION FAILS at 2 of 9 level-0 classes, and one refinement step repairs it at 0 of 6 level-1 classes on the shallower window — the intrinsic refinement is load-bearing
+        (level-0 = 2/9 failing; level-1 = 0/6)
+  [PASS] A5-CONTROL-GRAIN (SUBSTANTIVE) — the CONTROL grain is T5's MENU rung: the event x weight menu partition has exactly 113 classes on the depth-4 family, and it disagrees with the primary grain — the grain-swap control fires (different class counts AND different escape counts), so the grain is arena data and is declared, never assumed
+        (control 113 classes / 76 escapes vs primary 13 / 68)
+  [PASS] A5-OPERATOR-CONTROL (SUBSTANTIVE) — T2's binding clause re-measured rather than repeated: the per-candidate and per-class-AGGREGATE refinement operators are EXTENSIONALLY NULL against each other at the transport cap — same partition, same escape count
+        (partitions agree = True; escapes 68 vs 68)
+  [PASS] A6-REOPENING (SUBSTANTIVE) — THE REOPENING WITNESS, decomposed exactly as the committed correction requires: 1,044 diverged histories; 124 reconverging (history, delivery) pairs carrying suffix multiplicity; 84 DISTINCT diverged prefixes; 4 DISTINCT minimal 3-event chains, all at exact weight 1/256 — consumer of T3's verbatim decomposition window
+        (diverged 1044; pairs 124; prefixes 84; minimal chains 4 at ['1/256'])
+  [PASS] A6-CLASSIFIER (SUBSTANTIVE) — THE CLASSIFIER-MISMATCH CONTROL: zero of the 3,969 transport menus matches any delivery-free menu shape, and zero of the 4 delivery-free shapes contains a delivery kind — the control set is gated by size, not only through its consequences
+        (delivery-free shapes = 4 (with 'd': 0); transport menus matching any = 0/3969)
+  [PASS] A7-AUTOMORPHISM (SUBSTANTIVE) — A <-> B and 0 <-> 1 are EXACT automorphisms of the committed layer: relabelling a history and relabelling its menu give the same (event, weight) multiset at every history of the window, the family is closed under all three relabellings, and G(h, r) = G(sigma h, r) at every (history, horizon) pair — 0 violations of each kind
+        (A<->B: 521 tested, 0 not closed, 0 menu violations, 0 G violations; 0<->1: 521 tested, 0 not closed, 0 menu violations, 0 G violations; both: 521 tested, 0 not closed, 0 menu violations, 0 G violations)
+  [PASS] A7-ROOTTHEOREM (THEOREM-PASS) — THE ROOT LEG IS A THEOREM (disclosed as a theorem-pass, so that a forced identity is never counted as a measurement): the root menu is ONE ORBIT PER EVENT KIND under the layer's own automorphisms, so every equivariant terminal forces the uniform-within-kind root conditional at every horizon
+        (orbits per kind = {'d': 1, 'n': 1, 'p': 1}; conditional constant across r = 1..7 = True; distribution = {'d': '1/2', 'n': '1/2', 'p': '1/4'})
+  [PASS] B1-TREE (SUBSTANTIVE) — THE TREE OBSTRUCTION, measured: every column of every level operator has exactly one nonzero entry (unique parenthood), so the projective diameter is infinite, the Birkhoff contraction coefficient is 1 at every level, and the history-level Doeblin constant is 0 for every N by disjointness of supports
+        (columns = 243768, single-parent = 243768, other = 0; witness minor = ['1/4', '0', '0', '1/4']; tau = 1)
+  [PASS] B2-ATOM (SUBSTANTIVE) — THE MINORIZATION LANDS ON THE PROFILE BLOCKS: at the matched horizon and the primary grain every holdings-profile block of R-SIG that the window can test is an EXACT ATOM — delta* = 1 with an explicitly exhibited nu on a small support — and the measurement could have come out otherwise, since the same computation returns 0 on the full class and on the control grain
+        (atoms = [('(1, 1)', 1, 1365), ('(1, 1)', 2, 341), ('(2, 2)', 1, 3788), ('(2, 2)', 2, 348), ('(2, 3)', 1, 4), ('(3, 2)', 1, 4)]; nu support = 2 classes on block (1, 1) over 1365 points at depths [0, 1, 2, 3, 4, 5])
+  [PASS] B2-FULLZERO (SUBSTANTIVE) — AND IT DOES NOT EXTEND ON THE WINDOWS THAT CAN CARRY THE CLAIM: on the two WIDEST windows of the full R-SIG class — the only ones holding enough of the class to say anything about it — delta* is exactly 0 under BOTH horizon conventions, and each of those windows carries more than one holdings profile.  The narrower windows are printed beside them and nothing is claimed from them
+        (zero rows (N, points, profiles, H7, MATCHED) = [(1, 5161, 4, '0', '0'), (2, 689, 2, '0', '0')]; positive cross-profile rows on narrower windows = [(3, 105, 2, '12420/2168717', '3/514')]; single-profile rows (no cross-profile content) = [(4, 21, 1, '8988404357/9050056041', '1'), (5, 5, 1, '290707648979/291881114879', '1')])
+  [PASS] B2-GRAIN (SUBSTANTIVE) — THE GRAIN-SWAP CONTROL FIRES INSIDE ARM B: at least one profile block is an atom at the primary grain and is NOT at the control grain, so the minorization is grain-relative and the grain must be declared
+        (rows differing between grains = [('(2, 2)', 1, '1', '0'), ('(2, 2)', 2, '1', '0'), ('(2, 3)', 1, '1', '0'), ('(3, 2)', 1, '1', '0')])
+  [PASS] B3-HITTING (SUBSTANTIVE) — THE SECOND HALF FAILS WHERE IT MATTERS: the N-step hitting probability into each ATOM (each holdings-profile block) has infimum exactly 0 over every tested window and every N — so the small sets that carry delta = 1 are exactly the ones the process cannot be guaranteed to return to
+        ((1, 1) N=1: 29364/30729 zeros, inf 0; (1, 1) N=2: 3628/3969 zeros, inf 0; (1, 1) N=3: 436/521 zeros, inf 0; (1, 1) N=4: 48/69 zeros, inf 0; (2, 2) N=1: 22061/30729 zeros, inf 0; (2, 2) N=2: 1617/3969 zeros, inf 0; (2, 2) N=3: 92/521 zeros, inf 0; (2, 2) N=4: 4/69 zeros, inf 0; (2, 3) N=1: 30641/30729 zeros, inf 0; (2, 3) N=2: 3897/3969 zeros, inf 0; (2, 3) N=3: 491/521 zeros, inf 0; (2, 3) N=4: 49/69 zeros, inf 0; (3, 2) N=1: 30641/30729 zeros, inf 0; (3, 2) N=2: 3897/3969 zeros, inf 0; (3, 2) N=3: 491/521 zeros, inf 0; (3, 2) N=4: 49/69 zeros, inf 0)
+  [PASS] B3-RSIG-RETURN (SUBSTANTIVE) — AND THE UNION IS NOT A SUBSTITUTE, MEASURED ON A WINDOW ONE FULL DEPTH WIDER THAN THE PREDECESSOR'S: the return probability into R-SIG as a whole is exactly 0 at a strictly positive number of histories on the widest window, its zero-set collapses with N, and the infimum on the widest window is 0 — so no uniform Doeblin constant is exhibited for the union either
+        (N=1: 20344 of 30729 exactly 0, inf 0; N=2: 1044 of 3969 exactly 0, inf 0; N=3: 84 of 521 exactly 0, inf 0; N=4: 4 of 69 exactly 0, inf 0; N=5: 0 of 9 exactly 0, inf 31570/293121)
+  [PASS] B3-DISTANCE (SUBSTANTIVE) — THE RETURN DISTANCE, EXACTLY, WITH THE CAP SEPARATED FROM THE MEASUREMENT: on the rows where the lookahead strictly exceeds the attained maximum — the only rows where the number is the process and not the cap — the largest return distance is at least 2, so returning to R-SIG is not one-step generic; and a strictly positive number of histories are UNRESOLVED at this cap, their entire remaining subtree containing no R-SIG point
+        (informative rows at depths [0, 1, 2, 3], max attained distance 2; unresolved at this cap 84; full table (depth, max, lookahead, informative, unresolved, histories) = [(0, 0, 6, True, 0, 1), (1, 2, 5, True, 0, 8), (2, 2, 4, True, 4, 60), (3, 2, 3, True, 80, 452), (4, 2, 2, False, 960, 3448), (5, 1, 1, False, 17824, 26760), (6, 0, 0, False, 178840, 213040)])
+  [PASS] B3-MONOTONE (SUBSTANTIVE) — AND THE MECHANISM IS THE MONOTONE INDEX: the holdings profile never decreases along any transition of the family, so the atoms form a ladder that the process climbs and never descends — which is exactly why no single atom can be the regeneration set
+        (transitions = 30728; profile decreases = 0; block re-entries = [('(1, 1)', 5461, 0), ('(2, 2)', 33260, 33260), ('(2, 3)', 108, 108), ('(3, 2)', 108, 108)])
+  [PASS] V-VERDICT (SUBSTANTIVE) — THE VERDICT IS DERIVED INSIDE A GATE FROM THE MEASURED COUNTS: the emitted string is compared for COMPLETE-STRING EQUALITY against a string rebuilt segment-by-segment from the gated object (never containment, never a prefix), and a verdict-flip falsifier proves the derivation can fail
+        (verdict length = 1671 chars, 3 composed segments)
+  [PASS] V-SEVEN (SUBSTANTIVE) — ARM A's seven facts each carry a passing substantive gate, and the TERMINALIZED segment may not be emitted otherwise
+        (F1 grammar: True; F2 census+potentials: True; F3 kernels: True; F4 renewal ports: True; F5 the escape: True; F6 reopening: True; F7 root symmetry: True)
+  [PASS] M-PATHDRIFT (SUBSTANTIVE) — PATH-VALUE ANCHORING: for every pinned row, a drifted path (the same basename moved to a sibling directory, or a near-miss filename) does NOT resolve on this filesystem — so a path drift that would change the arena dies at the anchor and cannot reach a verdict segment
+        (drifted paths that still resolve: 0 of 8)
+  [PASS] M-VERBATIMDRIFT (SUBSTANTIVE) — VERBATIM-CONTEXT ANCHORING: each anchored context window, perturbed by one character or one digit, is NOT found in its source — the windows bind meaning to use, not mere existence
+        (drifted windows still found: 0 of 12)
+  [PASS] C-THEOREMCENSUS (SUBSTANTIVE) — THE THEOREM-PASS CENSUS IS ITSELF GATED: the substantive, theorem-pass and disclosure counts partition the gate list exactly, and the theorem-pass count is not zero (a receipt that claimed every gate substantive would be the vacuous-must-pass defect)
+        (40 substantive + 3 theorem-pass + 1 disclosure = 44)
+  [PASS] C-COMPLIANCE (SUBSTANTIVE) — THE COMPLIANCE SWEEP IS A GATE, NOT A CLAIM: every engraved rule in the table above is evaluated against a measured quantity, and this gate fails if any one of them is False
+        (18 of 18 rules satisfied)
+  [PASS] C-WAIVERS (SUBSTANTIVE) — THE WAIVER CENSUS IS A GATE: no gate is both never-falsified and without a verified waiver.  A never-falsified SUBSTANTIVE gate is a defect and this predicate is what says so
+        (3 waived gates, 0 unwaived)
+  [PASS] C-VERDICTFALSIFIERS (SUBSTANTIVE) — THE VERDICT-FALSIFIER CENSUS IS A GATE: all five declared verdict falsifiers — value swap, appended text, truncation, dropped segment, retyped segment — each killed at least one gate, so containment can never stand in for equality here
+        (5 of 5 verdict falsifiers killed a gate)
+
+  44 PASS / 0 FAIL over 44 gates.
+  THE THEOREM-PASS CENSUS, PRINTED WITH ITS COUNT (the trap the predecessor's round set, honoured): of the 44 gates, 40 are SUBSTANTIVE — they could have returned False on this family — 3 are THEOREM-PASSES that cannot fail on any input the construction admits, and 1 are DISCLOSURES.  So '44 PASS' is NOT 44 tests, and this receipt says so before anyone else has to.  Every cannot-fail clause is named at its own gate with its reason.
+    theorem-passes: ['A3-KERNEL', 'A4-MONO', 'A7-ROOTTHEOREM']
+    disclosures   : ['A3-CUTADD']
+
+======================================================================
+[VERDICT — composed, every segment computed in-gate]
+======================================================================
+
+  GPREP-FOUNDATION-TERMINALIZED-[7/7 facts: grammar 5 kinds; census 243769 histories cumulative [1, 9, 69, 521, 3969, 30729, 243769] with G_7 = 2168717/16384 and delivery-free G_7 = 139065/1024, deliveries REDUCE branching first at D = 4; kernels proper and STRICTLY POSITIVE at r = 1..7 with 0 violations; ports R-SIG 5161 / R-MENU 1365 with 3796 / 0 re-entries and non-renewal mass 1671053/2168717; ESCAPE 68 transitions into 5 above-window classes at the DECLARED-PRIMARY 13-class grain and 76 at the 113-class control grain, NO CLOSED EXACT TRANSFER; reopening 4 minimal chains at 1/256 over 84 prefixes; root symmetry 0 menu and 0 potential violations]
+
+  GPREP-MINORIZATION-FOUND-[delta = 1 exact; N = 1; nu = the common minorant on 2 Psi-classes of the 13-class primary grain; class = the holdings-profile blocks of R-SIG, block (1, 1) exhibited over 1365 points at depths [0, 1, 2, 3, 4, 5]; scope = 2 actors, transport depth <= 6, MATCHED horizon, primary grain — the blocks are ATOMS, not merely small sets]
+
+  GPREP-MINORIZATION-BLOCKED-AT-[THE MONOTONE HOLDINGS LADDER: the holdings profile decreases at 0 of 30728 transitions, so the atoms form a ladder the process climbs and never descends; the full R-SIG class has delta* = 0 on both of its widest windows (N = [1, 2]); the R-SIG return probability has infimum 0 on the widest window and its zero-set is [20344, 1044, 84, 4, 0]; 84 histories are unresolved at this cap and the attained return distance reaches 2 on the informative rows; the hitting infimum into every block is 0; and at the history level the Birkhoff coefficient is 1 and the Doeblin constant 0 by unique parenthood at all 243768 columns]
+
+  SCOPE QUALIFIERS, MANDATORY AND ATTACHED: two actors (A, B); transport family exhaustive to depth 6; relative horizons r = 1..7; terminal convention C1; intrinsic-partition window depth 4; root-symmetry window depth 3; ARM B N = 1..5 with the block windows printed row by row.  Three actors: censused to depth 3 only, and the deeper conditional arm NOT RUN with its projected size printed.  Nothing here is an infinite-volume, limit, or asymptotic claim.
+
+  WHAT THIS UNIT DOES NOT DECIDE.  It makes no geometry-update claim; the curvature group carried by the abstraction ladder is an anchor, not an interpretation.  It does not re-pose the transport-scope chain — that attempt is terminal-negative and this unit terminalizes its foundation rather than reopening it.  It constructs no transport map, no U3 screen and no weld battery: those are a separate pin's.
+
+[RECEIPT HASHES]
+  code    sha256-12 9a4f0529b840  gprep_foundation_exact.py

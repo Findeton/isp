@@ -1830,3 +1830,44 @@ provenance (re-runnable today); the Γ-main input register.
 **TWO RUNBOOK ENGRAVINGS: the verbatim-anchor CORRECTED SPEC
 (supersedes #34's wording) + provenance-by-committed-sha.**
 Repair worker next.
+
+## 2026-08-09 — Γ-PREP DELIVERED, COMMITTED AS-IS (v14 LEDGER #63)
+paper-11-transport-foundation.md (09482eb080cc) + gprep_
+foundation_exact.py (9a4f0529b840) + _output.txt
+(097c08a0229d) + _receipt.json (dd86ad1a80d7) committed
+exactly as delivered.  **ARM A: ALL SEVEN FACTS TERMINALIZED,
+ZERO MISMATCHES** vs the T-row expectations (census G₁..G₇
+both scopes w/ the deliveries-reduce-branching sign 7/7;
+kernels proper 279,067 pairs; R-SIG/R-MENU 5,161/1,365/
+3,796/0 w/ 4ⁿ, (3/2)ⁿ, 0.7705 two-route; THE ESCAPE at both
+grains — 68 escapes primary/13-class, 76 control/113-class,
+grain-swap fires; the reopening 84/4@1/256; the root
+symmetry).  One pin-prose finding: my T1 summary said "6
+event kinds" — the layer generates 5 (derived-in-text note;
+adjudicator's error, owned).  **ARM B — BOTH VERDICTS, ONE
+FACT SEEN TWICE: B1 a STRUCTURAL THEOREM (unique parenthood
+⟹ Birkhoff τ=1 at every level; history-level Doeblin = 0 for
+all N — the naive route provably dead, not capped); B2
+MINORIZATION FOUND AT THE STRONGEST POSSIBLE FORM — δ*=1
+EXACT: the R-SIG holdings-profile blocks are exact ATOMS at
+matched horizon + primary grain ({(1,1):1365, (2,2):3788,
+(2,3):4, (3,2):4}; ν exhibited on 2 Ψ-classes; R-MENU = the
+ladder's first block); B3 BLOCKED-AT-THE-MONOTONE-HOLDINGS-
+LADDER (the named fact: the delivery budget writes superseded
+remainders and the holdings coordinate never decreases —
+0 decreases in 30,728 transitions).**  A pre-registration
+error self-caught by the gate (δ* positive at N=3 where 0
+was expected; restated to the measurement).  The d74
+citability gap closed (v10 LOG #495 verified via committed
+bytes; the stale header exhibited in-paper).  Instrument: 44
+gates (40 substantive/3 theorem-pass/1 disclosure), **118
+falsifiers 0 dead (three-level escalation drift→poison→
+erase)**, never-falsified 3 all-waived-verified, 18/18
+compliance, two hand-typed counts self-caught pre-delivery.
+Byte-identical ×2 (~4 min runs).  #62-provenance note: the
+unit reads v10/LOG.md via git show HEAD: — v10 is a FROZEN
+tree so the read is stable; the #62 sha-engraving postdates
+this pin; flagged for its panel.  Adjudicator verification
+next; **THE Γ-MAIN PIN NOW** (both preconditions met:
+Γ-prep delivered + the R6b′ panel adjudicated w/ the input
+register).
