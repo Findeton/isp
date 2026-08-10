@@ -2220,3 +2220,40 @@ as R4's baseline; the two-directional gauge self-test;
 declaration segments; refinement L=4→L=8 vs CR-D's ladder;
 the Γ-main scramble caveat pinned).  Four reviewers pending
 (2 Γ-main, 2 R4).
+
+## 2026-08-10 — R4 REVIEW: OPERATOR FROZEN (v14 LEDGER #78)
+review-r4-operator.md (3828376b49a6) frozen.  Grade AWF; 156
+recomputations, zero numbers moved.  **K1: THE CENSUS IS
+ANALYTIC END-TO-END** — the family closed-form (72 and 32 by
+hand from the autocorrelation equations); **the defect
+closed-form Δ(s)=2Σm_km_l·cos((θ_k−θ_l)π/4), NO field
+arithmetic, reproducing all 3,364 pairs**; 588 = pure support
+combinatorics (108+288+192); the 8 values split by COLLISION
+MULTIPLICITY (mult-3 = the whole ±1/8 asymmetry); the one
+measured residual: 0 accidental cancellations.  **K2: the
+ord≥5 collapse ALPHABET-FREE (215-element alphabet); the
+locality half MOORE-RELATIVE (von Neumann → [2,4]; a Z₃
+witness → [2,3,4]) — BUT the repair STRENGTHENS: the anchored
+link (1,1) is in the Moore ball and NOT the von Neumann ball,
+so THE CONNECTIVE IS FORCED, not free** (resolving the
+effectus's F1 in the unit's favor); the 5-point at L≥5 also a
+theorem; the 9-point Moore = the honest open (vs the effectus
+supplying its collapse — the two reviews' Moore statements to
+be reconciled at adjudication).  K3: translations-trivial
+FORCED for any coefficient map (800 conjugations; #208).
+**MAJOR-6 DEMONSTRATED: the verdict's typed qualifiers are
+unguarded in BOTH builder and comparator — flipping
+LOCALITY-IFF-L>=4 to >=3 in both paths passes 77/77 gates,
+82/82 mutants, exit 0** (the shared-typed-literal disease —
+a new form of the #10 class: independent reconstruction must
+not share typed literals).  MAJOR-2: the light cone VACUOUS
+at L=4 (max attainable radius = L//2 = 2; uncheckable for
+57/58 — the unique scale is exactly where the propagator
+cannot be resolved, cross-confirming the effectus).
+MAJOR-5: the 19-row compliance sweep is ungated literal
+prose; its #20 row false (13 rendered vs 66 numeric tokens —
+the surface MAJOR-1 entered through).  MAJOR-3/4: the
+background half + §6 forced/assumed (#208).  The
+never-falsified census under-counts (~10 forced gates, not
+2).  Strong: byte-identical scratch replay; Y1 dies
+correctly.  Two reviewers pending (Γ-main op+inst, R4 inst).
