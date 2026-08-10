@@ -4599,3 +4599,51 @@ itself (measure, action, coupling, dynamics — four named
 gaps).**  STATUS row written (same commit, §13).  The
 configuration-measure unit is the named successor; the
 coupling unit's inheritance list is in the register.
+
+## 2026-08-10 — Γ-ITERATION REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #157)
+
+All thirteen orders (R-GI-1..12 + 9a) discharged.  **The
+recomposed head (9 segments, 5513 chars, byte-identical in
+paper §13, output, and receipt): GITER-LAW-CONFIRMED with the
+three adjudicated answers final** — QUANTUM=CARRIER-RELATIVE
+with the four statistics stamped at both carriers, the measured
+facts replacing the mechanism (5-source-classes-not-4; the
+121-class minimal split CK-exact with 36 edges standing; the
+round-1 refuting control; CONGRUENCE⇒CK sufficient-not-
+necessary), the REC non-separation disclosed, and the licensed
+sentence in-string: NON-MARKOVIANITY-IS-A-PROPERTY-OF-THE-
+DESCRIPTION; ANCHOR=SEDIMENTARY-BY-THEOREM-AT-EVERY-FINITE-CAP
+(measured at d≤4 AND d≤5); TARGETS at CARRIER-FREE scope with
+the STEP-NORMALISER-LAW-NATIVE (G(h,1)=M(h), true under any
+partition); the flow identity's honest split (definitional at
+the matched horizon; off-horizon 352-fail/244-pass, stratified
+by r); B3 with THE-ONE-FEASIBLE-CELL-(1,2,4) and
+SCOPE-ANNOTATION-NOT-AN-ERRATUM; CHOICES=8-INVENTORIED (the
+cap and the [B3] form first).  **The scope-annotation note
+written (paper-12 itself untouched): eb75423c05bd.**  Honest
+partials named (eq-22 not run at REC — cost-excluded at 2093
+classes, the non-separation measured on three statistics and
+the SCOPE says so; the cannot-fail disclosure gate kept AS a
+disclosure stating its predicate is literal True; the
+same-size-control substitute — no other MENU class shares size
+313 — replaced by a strictly finer split of the four largest,
+CK still failing 4/10).  **THE ELEVEN INJECTIONS: 11/11 DEAD**
+— the seal catching post-gate flips at named seal objects; the
+staged write catching the post-emission rewrite (previously a
+50444-byte corrupt file); **the worst case (post-write
+corruption shipping at exit 0 with a non-parsing receipt) now
+dies at the terminal at-exit verification — "the artifacts
+were removed", exit 1, 0 files on disk.**  Counts: gates
+58→65; falsifiers 54→76 (0 dead); sealed objects 0→17 +
+registry rows 0→160; paper numerals 750→1167 with 65
+value-bound sentences; the prune subsample 3→32/256; unreached
+MUST 2→0; off-target 3→0; tautologous 1→0; **bare
+set-iteration sites 29→0 (R-GI-9a executed by sorting every
+verdict-bearing traversal; G-ITERATION-ORDER measures 0 bare
+iterations + an order-permutation invariance leg)**.
+Off-tree: A≡B≡C byte-identical, C under env -i with PATH
+containing only the interpreter, seed 31337.  Artifacts
+committed as-is: paper 5c1df50673d4, code a75c435bffda, output
+ef570ac7d61c, receipt 42255f50328a, the annotation note
+eb75423c05bd.  Battery next; TERMINAL on completion (the
+thirteenth — THE GRAVITY LAW FINAL).

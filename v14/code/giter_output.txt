@@ -56,14 +56,16 @@ P0 -- PROVENANCE: pinned-sha reads without a version-control system
     [OK ] P-GPREP-OPENROWS     B4_carrier_open_rows                         -> [['(1, 1)', 1], ['(1, 1)', 2]]
     [OK ] P-GPREP-DEADROWS     B4_carrier_dead_rows                         -> [['(2, 2)', 1], ['(2, 2)', 2], ['(2, 3)', 1], ['(3, 2)', 1]]
     [OK ] P-GPREP-D4STAT       B4_rows_statable_d4                          -> 0
-  [PASS] G-PROVENANCE: 13 byte anchors OK; 19 verbatim windows located exactly once, 19 of 19 flipping under a content-bearing perturbation; 11 probes resolved; 1 source declared and NOT read
+  [PASS] G-PROVENANCE: 13 declared paths all resolving True; 13 byte anchors OK; 19 verbatim windows located exactly once, 19 of 19 flipping under a content-bearing perturbation; 11 probes resolved; 1 source declared and NOT read
   [KILLED] MUT-VERBATIM-DRIFT -> G-PROVENANCE: predicate on the clean object True, on the mutated object False; 19 of 19 perturbed quotations no longer occur, so the located-exactly-once predicate turns false on the drifted text
   [KILLED] MUT-BYTE-DRIFT -> G-PROVENANCE: predicate on the clean object True, on the mutated object False; the drifted row S-LAYER reads 576275d55ec~ against 576275d55ecf, so the byte-anchor conjunct turns false
-  [KILLED] MUT-PATH-DRIFT -> G-PROVENANCE: predicate on the clean object True, on the mutated object False; the drifted path does not exist (False), so a path change that would silently move the arena dies at the anchor
+  [KILLED] MUT-PATH-DRIFT -> G-PROVENANCE: predicate on the clean object True, on the mutated object False; the drifted declaration resolves False against the delivered True, so the gate's OWN path conjunct turns false -- a path change that would silently move the arena dies here rather than at a predicate the gate does not carry
   [KILLED] MUT-PROBE-UNRESOLVED -> G-PROVENANCE: predicate on the clean object True, on the mutated object False; the drifted probe resolves False, so the all-probes-resolve conjunct turns false -- an unresolvable probe aborts rather than being swallowed
-  [PASS] G-EXACT-AND-STATIC: float literals []; banned names []; moving references []
+  [PASS] G-EXACT-AND-STATIC: float literals []; banned names [] over 984 distinct names including every import and alias; moving references [], scanned against a whitespace-normalised haystack of 224453 characters
   [KILLED] MUT-FLOAT-LEAK -> G-EXACT-AND-STATIC: predicate on the clean object True, on the mutated object False; the mutated source carries 1 float constant(s), so the guard's own predicate turns false on it
   [KILLED] MUT-MOVING-REF -> G-EXACT-AND-STATIC: predicate on the clean object True, on the mutated object False; the mutated source carries ['git show HEAD:'], so the no-moving-reference conjunct turns false
+  [KILLED] MUT-MOVING-REF-SPACED -> G-EXACT-AND-STATIC: predicate on the clean object True, on the mutated object False; the whitespace-normalised scan reports ['git show HEAD:'] on the doubly-spaced splice, so the evasion the engraving names now turns the conjunct false
+  [KILLED] MUT-BANNED-ALIAS -> G-EXACT-AND-STATIC: predicate on the clean object True, on the mutated object False; the alias-aware scan reports ['math', 'subprocess'] on the spliced copy, so an aliased import turns the banned-name conjunct false
 
 ==========================================================================
 P1 -- THE COMMITTED LAYER, PORTED (pre-print slice only)
@@ -121,7 +123,8 @@ congruence has descent at every horizon, zero multi-valued edges,"
   CONG-185  horizon potential G(.,r) multi-valued on [(0, 0, 185), (1, 0, 72), (2, 0, 23), (3, 0, 6), (4, 0, 1)]  (r, classes carrying more than one value, classes tested)
   MENU-113  horizon potential G(.,r) multi-valued on [(0, 0, 113), (1, 0, 45), (2, 4, 13), (3, 0, 5), (4, 0, 1)]  (r, classes carrying more than one value, classes tested)
   REC       horizon potential G(.,r) multi-valued on [(0, 0, 2477), (1, 0, 384), (2, 0, 60), (3, 0, 9), (4, 0, 1)]  (r, classes carrying more than one value, classes tested)
-  [PASS] G-CONG-DESCENT: @CONG-185 multi-valued classes by horizon [0, 0, 0, 0, 0] (total 0); @MENU-113 [0, 0, 4, 0, 0] (total 4) -- the contrast carrier fails at r = 2 on 4 of 13 classes, which is why the predecessor needed a lift
+  r = 0 is DEFINITIONAL and carries no content: G(.,0) = 1 identically, so every partition -- the record quotient and the scramble included -- scores 0 there; at r = 4 exactly one class (the root's) is testable.  The content of ruling property 1 is at r = 1, 2 and 3, and the tested populations are printed beside the counts above.
+  [PASS] G-CONG-DESCENT: @CONG-185 multi-valued classes by horizon [0, 0, 0, 0, 0] over populations [185, 72, 23, 6, 1] (total 0); @MENU-113 [0, 0, 4, 0, 0] over [113, 45, 13, 5, 1] (total 4) -- the contrast carrier fails at r = 2 on 4 of 13 classes, which is why the predecessor needed a lift
   [KILLED] MUT-CONG-DESCENT -> G-CONG-DESCENT: predicate on the clean object True, on the mutated object False; @MENU-113 the potential is multi-valued on 4 of 13 classes at horizon 2, so the descent predicate turns false
   CONG-185  labelled edges   572, multi-WEIGHT 0, multi-TARGET 0
   MENU-113  labelled edges   368, multi-WEIGHT 0, multi-TARGET 4
@@ -155,14 +158,14 @@ P4 -- GAMMA ON CONG-185: the exact rational family between cuts
   REC      : 454 columns over 10 cut pairs; columns not summing to 1: 0; negative entries: 0
   [PASS] G-COLUMN-STOCHASTIC: @CONG-185 102 columns, 0 not summing to 1, 0 negative; @REC 454 columns, 0 bad; cut masses [1, 1, 1, 1, 1]
   [KILLED] MUT-COLUMN-MISNORMALIZED -> G-COLUMN-STOCHASTIC: predicate on the clean object True, on the mutated object False; the mis-normalized family has 72 of 102 columns failing to sum to 1, so the column-stochastic predicate turns false
-  [PASS] G-FLOW-IDENTITY: at r = 4 - |h|: 3968 of 3968 transitions, 0 violations; at every OTHER admissible horizon 352 of 596 tests fail
+  [PASS] G-FLOW-IDENTITY: at r = 4 - |h|: 3968 of 3968 transitions, 0 violations -- and THAT HALF IS DEFINITIONAL, since w = mu G(.,4-|h|)/G(root,4) and k_r = q G(h+e,r-1)/G(h,r) substitute to it for any price law and any carrier; what is MEASURED is that it fails off the matched horizon: 352 of 596 off-horizon tests fail, and the per-horizon structure is (r, tests, pass, fail) [(1, 520, 244, 276), (2, 68, 0, 68), (3, 8, 0, 8)] -- so 244 off-horizon tests PASS, all at r = 1, which the aggregate ratio hides
   [KILLED] MUT-FLOW-HORIZON -> G-FLOW-IDENTITY: predicate on the clean object True, on the mutated object False; with the horizon free the identity fails at 352 of 4564 tests, so the gate's own zero-violation predicate turns false
   CONG-185 : Chapman-Kolmogorov fails at 0 of 10 depth-cut triples
   MENU-113 : Chapman-Kolmogorov fails at 4 of 10 depth-cut triples; failing triples and differing cells [(1, 2, 3, 34), (1, 2, 4, 112), (1, 3, 4, 12), (2, 3, 4, 12)]
   REC      : Chapman-Kolmogorov fails at 0 of 10 depth-cut triples
   [PASS] G-CONG-LUMPABLE: @CONG-185 0 of 10 triples fail; @MENU-113 4 fail at cells [34, 112, 12, 12]; @REC 0 fail
   [KILLED] MUT-CONG-LUMP -> G-CONG-LUMPABLE: predicate on the clean object True, on the mutated object False; @MENU-113 the census reads 4 failing triples, so the exact-lumpability predicate turns false
-  [PASS] G-SIX-PROPERTIES: @CONG-185 6 of 6: [('descent at every horizon', True), ('0 multi-valued edges', True), ('44 curvature squares intact', True), ('q-holonomy <2,3>', True), ('k-holonomy <2,3>', True), ('exact lumpability', True)]; @MENU-113 2 of 6: [('descent at every horizon', False), ('0 multi-valued edges', False), ('44 curvature squares intact', True), ('q-holonomy <2,3>', True), ('k-holonomy <2,3>', False), ('exact lumpability', False)]
+  [PASS] G-SIX-PROPERTIES: @CONG-185 6 of 6: [('descent at every horizon', True), ('0 multi-valued edges', True), ('44 curvature squares intact', True), ('q-holonomy <2,3>', True), ('k-holonomy <2,3>', True), ('CK-exact at the 10 depth-cut triples', True)]; @MENU-113 2 of 6: [('descent at every horizon', False), ('0 multi-valued edges', False), ('44 curvature squares intact', True), ('q-holonomy <2,3>', True), ('k-holonomy <2,3>', False), ('CK-exact at the 10 depth-cut triples', False)]
   [KILLED] MUT-SIX-LAX -> G-SIX-PROPERTIES: predicate on the clean object True, on the mutated object False; MENU-113 scores 2 of 6, so the conjunction turns false
 
 ==========================================================================
@@ -171,7 +174,9 @@ P5 -- THE TARGETS: law values at a re-proved readout
   The order this unit executes, verbatim from the inheritance source:
     "A target must be a
 value of the law under the declared readout, not a leaf count."
-  [PASS] G-K1-IS-THE-STEP-NORMALISER: M(h) census over the ruled carrier {2: 3757, 5/2: 212} -- 2 distinct values, so M is not constant on histories, while it IS class-constant on both quotients (@CONG-185 0 of 185 classes multi-valued, @MENU-113 0 of 113); k_1 = q/M violations 0 of 30728 kernel entries
+  [PASS] G-STEP-NORMALISER-LAW-NATIVE: G(h,1) = M(h) at 3969 of 3969 histories, 0 violations; and at 3969 of 3969 after an arbitrary exact re-pricing of all 243768 priced events, 0 violations -- so the identity is carried by the terminal condition and by nothing else; M is class-constant at @CONG-185 0 of 185 multi-valued and @MENU-113 0 of 113, so the side clause does not select either carrier
+  [KILLED] MUT-NORMALISER-CARRIER -> G-STEP-NORMALISER-LAW-NATIVE: predicate on the clean object True, on the mutated object False; the re-scaled identity fails at 3969 of 3969 histories, so the law-native conjunct is a predicate that can turn false
+  [PASS] G-K1-IS-THE-STEP-NORMALISER: M(h) census over the ruled carrier {2: 3757, 5/2: 212} -- 2 distinct values, so M is not constant on histories, while it IS class-constant on both quotients (@CONG-185 0 of 185 classes multi-valued, @MENU-113 0 of 113); k_1 = q/M violations 0 of 30728 kernel entries, and 0 of 3968 at the k_2 window, against k_2's 1340 of 3968 on that same window -- the like-for-like comparison
   [KILLED] MUT-K1-BREAK -> G-K1-IS-THE-STEP-NORMALISER: predicate on the clean object True, on the mutated object False; k_2 = q/M fails at 1340 of 3968 kernel entries, so the gate's own identity conjunct turns false on the mutated identification
   [PASS] A-LEG1: the committed leg-1 leaf count -- expected 3584, measured 3584
   [PASS] A-R1BASES: the committed renewal-1 base count -- expected 16, measured 16
@@ -181,13 +186,14 @@ value of the law under the declared readout, not a leaf count."
     PRIMARY, step-normalised q/M = k_1 : leg 1 (15/38, 5/19, 13/38)   leg 2 (15/38, 5/19, 13/38)
     RAW-PRODUCT                        : leg 1 (3/8, 1/4, 3/8)   leg 2 (3/8, 1/4, 3/8)
     COUNT (the census shadow's measure) : leg 1 (3/7, 1/7, 3/7)   leg 2 (4/9, 1/9, 4/9)
-  [PASS] G-PRUNE: 3 of 256 bases; 60492 raw continuations unpruned giving 864 legs; the pruned subsample carries 864 legs; identical True
-  [KILLED] MUT-PRUNE-LAX -> G-PRUNE: predicate on the clean object True, on the mutated object False; dropping one leg leaves 863 against the unpruned 864, so the set comparison turns false
+  [PASS] G-PRUNE: 32 of 256 bases, a SPREAD sample at every 8th of the sorted bases (12 per cent coverage); 645248 raw continuations unpruned giving 9216 legs, 20164 and 288 per base; the pruned subsample carries 9216 legs; identical True
+  [KILLED] MUT-PRUNE-LAX -> G-PRUNE: predicate on the clean object True, on the mutated object False; dropping one leg leaves 9215 against the unpruned 9216, so the set comparison turns false
   [PASS] G-LAW-VALUE: leg 1 (15/38, 5/19, 13/38), leg 2 (15/38, 5/19, 13/38); equal to the pre-registered law value (15/38, 5/19, 13/38): True; leg-independent True; left-right asymmetric (15/38 against 13/38)
   [KILLED] MUT-LAWVALUE-DRIFT -> G-LAW-VALUE: predicate on the clean object True, on the mutated object False; the shadow is neither leg-independent (False) nor equal to the law value, so the gate's own predicate turns false on it
-  [PASS] G-SHADOW-IS-A-CONTROL: COUNT at leg 1 (3/7, 1/7, 3/7) against the shadow (3/7, 1/7, 3/7); at leg 2 (4/9, 1/9, 4/9) against (4/9, 1/9, 4/9); token scan over 2744 characters of the measuring region finds 0 occurrences of the constructed family, of either quotient or of the class indices; the shadow is leg-DEPENDENT (True) while the law value is not
+  [PASS] G-SHADOW-IS-A-CONTROL: COUNT at leg 1 (3/7, 1/7, 3/7) against the shadow (3/7, 1/7, 3/7); at leg 2 (4/9, 1/9, 4/9) against (4/9, 1/9, 4/9); token scan over 3005 characters of the measuring region finds 0 occurrences of the constructed family, of either quotient or of the class indices; the shadow is leg-DEPENDENT (True) while the law value is not
   [KILLED] MUT-SHADOW-DRIFT -> G-SHADOW-IS-A-CONTROL: predicate on the clean object True, on the mutated object False; the measured count law does not equal the drifted shadow, so the gate's own equality predicate turns false on it
   [KILLED] MUT-SHADOW-AS-TARGET -> G-SHADOW-IS-A-CONTROL: predicate on the clean object True, on the mutated object False; with the family's name spliced into the measuring region the token scan reports an occurrence, so the Gamma-free conjunct turns false
+  [KILLED] MUT-SHADOW-WIDE -> G-SHADOW-IS-A-CONTROL: predicate on the clean object True, on the mutated object False; with `MENU [h]` spliced in, the whitespace-stripped scan reports the occurrence the delivered scan missed, so the Gamma-free conjunct turns false on the evasion itself
 
 ==========================================================================
 P6 -- HOLONOMY: REPRODUCED-AND-LOCATED on the ruled carrier
@@ -223,17 +229,51 @@ quantum character of Γ is carrier-relative.**"
     [cyclic] negative entries by triple [36, 104, 108, 164], column sums all 1 [True, True, True, True], most negative ['-1/97', '-5/97', '-1/18', '-1/128']
     [uniform] SILENT: the first transfer is singular at 4 of 4 triples (columns 0 and 1 are identical)
     [marginal] SILENT: the first transfer is singular at 4 of 4 triples (columns 0 and 1 are identical)
-  [PASS] G-EQ22-STAMPED: @MENU-113 completions that speak ['cyclic', 'identity'], negatives [36, 104, 108, 164]; @CONG-185 completions that speak [] of 4
-  [KILLED] MUT-EQ22-SIGN -> G-EQ22-STAMPED: predicate on the clean object True, on the mutated object False; a zeroed census does not equal the measured one, so the gate's own value census turns false
+  eq. 22 bound PER CELL (#87): 32 published cells, 32 carrying a label count that reproduces an independent re-derivation together with their column sums, most-negative entry and singularity certificate; the two speaking completions agree FIELD FOR FIELD at every triple: True
+  [PASS] G-EQ22-STAMPED: @MENU-113 completions that speak ['cyclic', 'identity'], negatives [36, 104, 108, 164] against [117, 317, 313, 381] positive entries; @CONG-185 completions that speak [] of 4; per-cell binding 32 of 32 cells; the two speaking completions agree field for field True
+  [KILLED] MUT-EQ22-SIGN -> G-EQ22-STAMPED: predicate on the clean object True, on the mutated object False; the same candidates carry [117, 317, 313, 381] positive entries against [36, 104, 108, 164] negative ones, so a census that consults the wrong sign turns the gate's own value predicate false
+  [KILLED] MUT-EQ22-CELL-BLIND -> G-EQ22-STAMPED: predicate on the clean object True, on the mutated object False; with the label re-derivation shifted by one triple the per-cell binding reads 8 of 32, so the cell-level conjunct turns false
   [KILLED] MUT-EQ22-UNSTAMPED -> G-EQ22-STAMPED: predicate on the clean object True, on the mutated object False; the two carriers do not agree on which completions speak ([] against ['cyclic', 'identity']), so an unstamped reading turns the gate false
   CONG-185 : classes occurring at more than one depth cut 0 of 185; the root's own class also occurs at depths [0]
   MENU-113 : classes occurring at more than one depth cut 45 of 113; the root's own class also occurs at depths [0, 1, 2, 3, 4]
   REC      : classes occurring at more than one depth cut 0 of 2477; the root's own class also occurs at depths [0]
   CONG-185 : class labels shared between the cuts of a triple [0, 0, 0, 0] (triples [(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)])
   MENU-113 : class labels shared between the cuts of a triple [13, 13, 45, 45] (triples [(1, 2, 3), (1, 2, 4), (1, 3, 4), (2, 3, 4)])
-  [PASS] G-CARRIER-RELATIVE: @MENU-113 4 multi-target labelled edges and 4 of 10 Chapman-Kolmogorov triples failing; @CONG-185 0 multi-target edges and 0 failing.  The four bad edges sit on 4 source classes that recur across depth cuts, and MENU-113 carries 45 such classes against CONG-185's 0
+  [PASS] G-CARRIER-RELATIVE: @MENU-113 4 multi-target labelled edges and 4 of 10 Chapman-Kolmogorov triples failing; @CONG-185 0 multi-target edges and 0 failing; @REC (the flat negative control) 0 multi-target edges, 0 failing and 0 classes recurring -- so on every quantum-shape statistic measured here THE RULED CARRIER IS INDISTINGUISHABLE FROM THE CONTROL IT DECLARES FLAT, which is disclosed rather than hidden
   [KILLED] MUT-CARRIER-RELATIVE-FLAT -> G-CARRIER-RELATIVE: predicate on the clean object True, on the mutated object False; the two carriers disagree at both statistics (4 against 0 triples; 4 against 0 edges), so the carrier-blind predicate turns false
   [KILLED] MUT-MULTITARGET-BLIND -> G-CARRIER-RELATIVE: predicate on the clean object True, on the mutated object False; both carriers carry 0 multi-WEIGHT edges, so a weight-only test cannot separate them and the mechanism conjunct turns false
+
+  THE REFINEMENT LADDER, quotient by quotient (classes, multi-target edges, classes
+  spanning more than one depth, Chapman-Kolmogorov failures):
+    MENU-113   classes   113  multi-target    4  depth-spanning  45  CK failures 4
+    round 1    classes   162  multi-target  132  depth-spanning  17  CK failures 0
+    round 2    classes   179  multi-target   36  depth-spanning   5  CK failures 0
+    round 3    classes   184  multi-target    8  depth-spanning   1  CK failures 0
+    CONG-185   classes   185  multi-target    0  depth-spanning   0  CK failures 0
+    REC        classes  2477  multi-target    0  depth-spanning   0  CK failures 0
+  Ruling property 6, PRICED: CK-exactness at the 10 depth-cut triples is passed by 5 of the 6 quotients in this lattice (['round 1', 'round 2', 'round 3', 'CONG-185', 'REC']), so property 6 ALONE does not select CONG-185; it is the conjunction of the six that does.  The row is named 'CK-exact at the 10 depth-cut triples' rather than classical strong lumpability, which is a stronger condition and is not what is measured.
+
+  THE MECHANISM, MEASURED RATHER THAN ASSERTED.  The delivered claim -- that the
+  whole signature is CARRIED BY the multi-target edges -- is refuted on this unit's
+  own refinement lattice.  What is measured instead:
+    (i)   the 4 multi-target labelled edges of MENU-113 sit on 4 source classes, and those classes are SET-IDENTICAL to the 4 classes on which ruling property 1 fails at horizon 2: True
+    (ii)  the Chapman-Kolmogorov failing cells at MENU-113 trace to 5 distinct source classes, NOT 4; the multi-target sources are a strict subset (True and True)
+    (iii) the MINIMAL SPLIT of only those 4 classes, only by the target of their offending label, gives 121 classes, leaves 36 multi-target edges STANDING -- so it is not a congruence and not a probabilistic bisimulation -- and is Chapman-Kolmogorov exact at 0 of 10 triples
+    (iv)  splitting the 4 LARGEST OTHER menu classes instead -- sizes [106, 218, 218, 341] against the offending classes' [313, 313, 313, 313], and by their FULL successor signature, which is a strictly finer cut than the minimal split makes -- gives 117 classes and leaves CK failing at 4 of 10: the repair is the offending edges' and not any refinement's
+    (v)   refinement round 1 carries 132 multi-target edges -- 33 times MENU's 4 -- and 17 depth-spanning classes at 162 classes, and is ALREADY CK-exact at 0 of 10.  The statistic is not monotone in the refinement order, so 'removing the edges removes the signature' is false as an explanation.  At that same quotient the root's class still occurs at depths [0, 1, 2, 3] and 204 histories return to a prefix class, which is why the recurrence/non-Markov co-location this unit's predecessor noticed is COINCIDENTAL and is not carried
+    (vi)  the 4 multi-target source classes lie inside the 45 of 113 MENU classes that recur across depth cuts: True -- a containment the delivery asserted and never computed
+  THE ONE GENERAL LAW: single-valuedness of the labelled WEIGHT and TARGET makes the
+  quotient a probabilistic bisimulation, hence CK-exact BY THEOREM.  That direction is
+  sufficient and it is not necessary -- (iii) and (v) are the witnesses.
+  AND THE ONTOLOGY THIS LICENSES: NON-MARKOVIANITY HERE IS A PROPERTY OF THE
+  DESCRIPTION, NOT OF THE PROCESS.  The transport chain on histories is Markov by
+  construction -- k_r(e|h) is a function of h alone and the flow identity holds at
+  3968 of 3968 transitions -- so every non-Markov statistic in this unit is
+  manufactured by a lumping, and one round of successor-closure destroys it.
+  [PASS] G-MECHANISM-MEASURED: set identity of the descent-failure and multi-target source classes True (4 of 4); CK source classes 5 against 4 multi-target sources, subset True; minimal split 121 classes, 36 multi-target edges standing, CK failures 0; the four-largest-other split 117 classes (sizes [106, 218, 218, 341] against the offending [313, 313, 313, 313]), CK failures 4; round 1 162 classes, 132 multi-target edges, 17 depth-spanning classes, CK failures 0; containment in the recurring classes True, in the depth-pure classes False; the history chain's own flow identity 3968 of 3968
+  [KILLED] MUT-MECHANISM-RECURRENCE -> G-MECHANISM-MEASURED: predicate on the clean object True, on the mutated object False; the multi-target sources lie inside the recurring classes (True) and inside the depth-pure ones (False), so the containment conjunct turns false when the target set is swapped
+  [KILLED] MUT-MECHANISM-NECESSARY -> G-MECHANISM-MEASURED: predicate on the clean object True, on the mutated object False; the minimal repair is CK-exact (0 failures) while carrying 36 multi-target edges, so the necessity reading turns the gate's own conjunct false -- this is the claim the delivered verdict string made
+  [KILLED] MUT-MINSPLIT-ANY-REFINEMENT -> G-MECHANISM-MEASURED: predicate on the clean object True, on the mutated object False; splitting the four largest other classes leaves CK failing at 4 triples while the offending split leaves 0, so an any-refinement reading turns the specificity conjunct false
   [PASS] G-QUANTUM-STAMPED: eq. 22: @MENU-113 refuted at 4 of 4 triples under 2 of 4 completions that speak, @CONG-185 SILENT at 4 of 4; non-Markov triples: @MENU-113 4 of 10, @CONG-185 0; lumpability: @MENU-113 False, @CONG-185 True; carrier-relative True
 
 ==========================================================================
@@ -252,13 +292,37 @@ problems plus one column-sum coupling"
   [B3] @MENU-113 (2, 3, 4): row-decomposed 113 problems in 45 variables and 13 equations -> 0 INFEASIBLE (certificates verified 113 of 113); COUPLED INFEASIBLE in 639 variables and 296 equations (certificate verified True); the process's own two-cut conditional as a witness: product matches False, negatives 0, column-stochastic True; support obstruction: orphan columns 0, empty rows 0
   [PASS] G-B3-ROW-DECOMPOSED: 772 row problems over 8 (carrier, triple) cells; infeasible rows 0; certificates verified 772 of 772; orphan columns 0; empty rows 0
   [KILLED] MUT-LP-ROW-BLIND -> G-B3-ROW-DECOMPOSED: predicate on the clean object True, on the mutated object False; the constructed system returns feasible=False with its Farkas certificate verified True, so a blind solver would fail this gate
-  [PASS] G-B3-COUPLED: @CONG-185 coupled feasibility by triple [True, True, True, True]; @MENU-113 [False, True, False, False]; every verdict certified True; the exhibited witness at the ruled carrier matches at 4 of 4 triples with 0 negative entries
+
+  THE DIVERGENCE CELL, NAMED: at MENU-113 (1, 2, 4) the rectangular column-stochastic problem is FEASIBLE (413 variables against 258 equations, certified) while eq. 22's unique PADDED candidate at the same triple carries 104 negative entries.  The two objects are different problems: the padding converts an underdetermined feasibility question into a determined algebraic one, and the determined answer can be negative while the feasible set is non-empty.  EQ-22 NEGATIVITY IS THEREFORE NOT EQUIVALENT TO THE NON-EXISTENCE OF A STOCHASTIC INTERPOLANT -- a standing caution for every eq-22-based refutation in the corpus, demonstrated here at 1 of 4 cells.
+  The comparison cell: at (1, 2, 3) the same problem carries 121 variables against 94 equations and is INFEASIBLE with a verified Farkas vector.  What distinguishes the two is not measured here and is carried to the successor.
+  [PASS] G-B3-COUPLED: the one feasible MENU cell is (1, 2, 4), where the padded candidate carries 104 negatives; @CONG-185 coupled feasibility by triple [True, True, True, True]; @MENU-113 [False, True, False, False]; every verdict certified True; the exhibited witness at the ruled carrier matches at 4 of 4 triples with 0 negative entries
   [KILLED] MUT-LP-WITNESS-FAKE -> G-B3-COUPLED: predicate on the clean object True, on the mutated object False; @MENU-113 the two-cut conditional reproduces the target at 0 of 4 triples, so the witness conjunct turns false when the carrier is swapped
-  [KILLED] MUT-WROUTE-UNCERTIFIED -> G-B3-COUPLED: predicate on the clean object True, on the mutated object False; every one of the 8 coupled verdicts carries a verified primal point or a verified Farkas vector, so dropping the certificate requirement is a strictly weaker gate
+  [KILLED] MUT-WROUTE-UNCERTIFIED -> G-B3-COUPLED: predicate on the clean object True, on the mutated object False; the 3 negated Farkas vectors verify at 0 of 3, so the certificate conjunct turns false on them while the delivered vectors verify at 8 of 8
 
 ==========================================================================
 P9 -- THE ANCHOR QUESTION: renewal root, or sedimentary?
 ==========================================================================
+
+  THE d <= 5 ARM: menu classes 265, coarsest congruence 462 after 6 refinement rounds; per-round class counts [390, 439, 456, 461, 462, 462] and per-round classes spanning more than one depth [49, 17, 5, 1, 0, 0].
+    classes at more than one depth cut: 0 of 462; the root's class occurs at depths [0]; prefix-class returns 0; per-cut dimensions [1, 5, 17, 49, 125, 265]; depth purity first reached at round 5 of 6.
+    the same measurement on the d <= 5 MENU partition, which is not a congruence: 113 of 265 classes span more than one depth.
+
+  THE DEPTH-GRADING IS NOT CAP-LOCAL; IT IS FORCED AT EVERY FINITE CAP.
+  Theorem.  Let the window be {h : |h| <= N} and suppose every history of depth
+  < N has at least one successor.  After refinement round k a history's class
+  determines min(N - |h|, k).  Proof.  Round 1: the in-window successor multiset
+  is empty iff |h| = N, so the class determines min(N - |h|, 1).  Round k+1: the
+  signature carries the round-k classes of the successors, each of which
+  determines min(N - |h| - 1, k), and non-emptiness distinguishes |h| < N; so the
+  class determines min(N - |h|, k+1).  Hence at round N the class determines |h|
+  exactly: THE FIXED POINT IS DEPTH-PURE AT EVERY FINITE CAP, and purity is
+  reached at round N with the fixed point at round N+1.  QED.
+  Observed, twice: purity at round 4 of 5 for N = 4, and at round 5 of 6 for N = 5 -- the same round-N-of-N+1 position.  The theorem's hypothesis is measured, not assumed: every history below the cap has at least one successor (True).
+  CONSEQUENCE, AND IT IS A WALL: no capped successor-closure fixed point of this
+  construction admits a regeneration anchor at the class grain, at any cap, BY
+  THEOREM rather than by cost.  What is open is not a different cap -- this unit
+  has now built and measured one -- but a different BOUNDARY CONVENTION: a fixed
+  point whose terminal stratum does not carry an empty successor signature.
   The unreachability stamp this section carries, verbatim:
     "the $(1,1)$ block is entered from outside
    at exactly $0$ transitions of the family"
@@ -284,11 +348,12 @@ P9 -- THE ANCHOR QUESTION: renewal root, or sedimentary?
   [PASS] G-COARSENING-LEMMA: delta* at N = 1 matched: @MENU-113 1, @CONG-185 0; at N = 2 matched: 1 and 0; the monotonicity inequality holds on all 4 measured cells; classes of the ruled carrier failing delta* = 1: 0 of 72
   [KILLED] MUT-DELTA-CARRIER-SWAP -> G-COARSENING-LEMMA: predicate on the clean object True, on the mutated object False; with the carriers swapped the row reads 1 and 0, so the collapse predicate turns false
   [PASS] G-ATOM-BLOCK-SCOPE: the two open rows of the predecessor read 0 and 0 at the ruled carrier; every one of the 72 testable carrier classes is an exact atom, which a congruence forces
+  [KILLED] MUT-ATOM-CLASS-SCOPE -> G-ATOM-BLOCK-SCOPE: predicate on the clean object True, on the mutated object False; a carrier class has delta* = 1, not 0 -- every one of the 72 testable classes does, which a congruence forces -- so reading a class row as the block row turns this gate's own zero-delta* conjunct false; the atom language is EMPTY on the block and VACUOUS on the classes
 
   PATH (a), THE RENEWAL-ROOT CANDIDATE, measured at the class grain:
     the ruled carrier's classes occur at more than one depth cut at 0 of 185; the class chain is therefore GRADED by depth and no class is ever revisited.  Histories whose class equals the class of one of their own prefixes: @CONG-185 0, @MENU-113 1900.
-    the root's own class occurs at depths [0] @CONG-185 and [0, 1, 2, 3, 4] @MENU-113 -- recurrence of the renewal root is a property of the COARSER carrier, and exactly there the chain is not Markov.
-    the grading is CAP-DRIVEN and this unit says so: the terminal stratum has an empty successor signature, and depth purity is reached at refinement round 4 of 5, the spanning-class count falling [17, 5, 1, 0, 0].
+    the root's own class occurs at depths [0] @CONG-185 and [0, 1, 2, 3, 4] @MENU-113 -- recurrence of the renewal root is a property of the COARSER carrier.  NO LINK BETWEEN RECURRENCE AND NON-MARKOVIANITY IS CLAIMED: the two carriers the pin names happen to differ in both respects, and this unit's own refinement lattice separates them -- at round 1 the root's class recurs, 204 histories return to a prefix class, and the chain is CK-exact at 0 of 10 triples.  The co-location is COINCIDENTAL and is dropped.
+    the grading is reached at refinement round 4 of 5, the spanning-class count falling [17, 5, 1, 0, 0] -- and it is CAP-FORCED, not cap-driven: the theorem above puts depth purity at round N of N+1 at EVERY finite cap, and the d <= 5 arm reproduces it (0 of 462 classes spanning).
     with the holdings ladder projected out the obstruction does not lift: the carrier's own class label DETERMINES the depth, which is a second monotone coordinate the projection cannot remove.
     and the renewal-root first-return law the pin offers is stated at DELIVERY-FREE scope by its own source, which declares in terms that transport scope changes the picture.
 
@@ -296,13 +361,15 @@ P9 -- THE ANCHOR QUESTION: renewal root, or sedimentary?
   [PASS] G-ANCHOR-RENEWAL-ROOT: classes spanning more than one depth @CONG-185 0, @MENU-113 45; prefix-class returns @CONG-185 0, @MENU-113 1900; block entries 0; the renewal-root law's own scope tag is quoted at V-RENEWAL-SCOPE
   [KILLED] MUT-GRADING-BLIND -> G-ANCHOR-RENEWAL-ROOT: predicate on the clean object True, on the mutated object False; @MENU-113 45 of 113 classes occur at more than one depth, so the grading predicate turns false there -- the anchor answer is a statement about THIS carrier
   [KILLED] MUT-RENEWAL-SCOPE-DROP -> G-ANCHOR-RENEWAL-ROOT: predicate on the clean object True, on the mutated object False; with the scope tag removed the quotation no longer locates, so an unscoped carry of the first-return law cannot pass the verbatim precheck
+  [PASS] G-CAP-UNIVERSAL: d <= 4: 0 of 185 classes spanning, purity at round [4] of 5; d <= 5: 0 of 462 spanning, root depths [0], prefix-class returns 0, purity at round [5] of 6; the d <= 5 menu partition spans at 113 of 265; every history below the cap has a successor True
+  [KILLED] MUT-CAP-LOCAL -> G-CAP-UNIVERSAL: predicate on the clean object True, on the mutated object False; the d <= 5 congruence spans at 0 of 462 while the d <= 5 menu partition spans at 113 of 265, so the purity conjunct turns false on the non-congruence and the grading is a property of the closure, reproduced at the next cap rather than local to this one
   [PASS] G-ANCHOR-PATH: the selector reads grading True, class returns 0, block entries 0, block delta* 0 -> SEDIMENTARY
   [KILLED] MUT-ANCHOR-PATH-FLIP -> G-ANCHOR-PATH: predicate on the clean object True, on the mutated object False; on MENU-113's measurements the selector returns RENEWAL-ROOT, so it is a function with both branches reachable and not a constant
 
 ==========================================================================
 P10 -- SUPPLY: the rows the successor needs, pinned or excluded
 ==========================================================================
-  [PASS] G-SUPPLY-D5: at (A,B) d <= 5: menu classes 265, coarsest congruence 462 after 6 refinement rounds; per-round class counts [390, 439, 456, 461, 462, 462]
+  [PASS] G-SUPPLY-D5: at (A,B) d <= 5: menu classes 265, coarsest congruence 462 after 6 refinement rounds; per-round class counts [390, 439, 456, 461, 462, 462]; per-round classes spanning more than one depth [49, 17, 5, 1, 0, 0]; per-cut dimensions [1, 5, 17, 49, 125, 265]
   [KILLED] MUT-SUPPLY-D5 -> G-SUPPLY-D5: predicate on the clean object True, on the mutated object False; the d <= 4 window returns 185 classes after 5 rounds, so a window confusion turns the gate false
   [PASS] G-SUPPLY-FIFTH-BLOCK: the pinned row resolves to ['(3, 3)', 424]; points of profile (3,3) inside this unit's window: 0; the quoted depth support is at V-BLOCK33
   [EXCLUDED              ] Gamma-prep's own d <= 6 arena
@@ -312,46 +379,85 @@ P10 -- SUPPLY: the rows the successor needs, pinned or excluded
   [PINNED-AND-APPLIED    ] the coarsening lemma (delta* monotone under coarsening)
   [PASS] G-SUPPLY-EXCLUSIONS: 5 rows disposed: {EXCLUDED: 2, PINNED-AND-APPLIED: 1, PINNED-AND-RE-DERIVED: 1, PINNED-CITATION: 1}
   [KILLED] MUT-SUPPLY-EXCLUSION -> G-SUPPLY-EXCLUSIONS: predicate on the clean object True, on the mutated object False; a reasonless row turns the gate's own predicate false
+
+  THE CHOICE INVENTORY, priced (status, fiber, members measured):
+    [FORCED-BY-COST        ] fiber 2, measured 2  --  THE CAP: d <= 4 for the carrier, d <= 5 for the anchor scope
+        decides: every negative of the anchor section, the eq.-22 silence at the ruled carrier, and the SEDIMENTARY answer.  The consequence is now bounded rather than open: the depth-grading is forced at EVERY finite cap by the height-to-cap induction, so no choice of cap escapes it and the fiber is not the live variable
+    [GENUINELY-FREE        ] fiber 2, measured 2  --  THE [B3] PROBLEM FORM: the rectangular column-stochastic feasibility problem, or eq. 22's padded square object
+        decides: the entire correction to the predecessor.  They diverge at exactly one cell, and the divergence is what shows that eq-22 negativity does not imply the non-existence of a stochastic interpolant
+    [MOTIVATION-FORCED     ] fiber 3, measured 3  --  THE READOUT: step-normalised q/M, the raw price product, or the counting measure
+        decides: the law value.  The primary readout is forced by the inheritance source's own order -- a target must be a value of the law -- and q/M is the r = 1 member of the kernel family Gamma is built from
+    [ADJUDICATION-FIXED    ] fiber 3, measured 3  --  THE CARRIER: CONG-185, MENU-113 or the record quotient
+        decides: which quotient the law is read on.  Fixed by the predecessor's adjudication, not by this unit, and the two alternatives are carried as controls
+    [GENUINELY-FREE        ] fiber 4, measured 4  --  THE PADDING COMPLETION for eq. 22: identity, cyclic, uniform or marginal
+        decides: whether the algebraic route speaks at all.  Two speak at MENU-113 and agree field for field; two are singular with a duplicate-column certificate
+    [MOTIVATION-FORCED     ] fiber 2, measured 2  --  THE HORIZON: H4 primary, MATCHED where a predecessor row is stated at it
+        decides: the delta* rows and the flow identity.  The flow identity is false off the matched horizon at 352 of 596 tests, which is what makes the horizon a declaration rather than a convenience
+    [DECLARED-AND-DISCLOSED] fiber 1, measured 1  --  THE OPERATIONALISATION of "exactly lumpable" as CK-exact at the 10 depth-cut triples
+        decides: ruling property 6.  Disclosed: this predicate alone does not select the ruled carrier -- several quotients of the same lattice pass it, and it is the conjunction of the six properties that selects
+    [GATED                 ] fiber 2, measured 2  --  THE LEG-2 PRUNE: pattern-pruned or unpruned
+        decides: the leg-2 ensemble, hence the leg-independence claim. The prune is exhibited rather than assumed
+  [PASS] G-CHOICE-INVENTORY: 8 choices inventoried: {ADJUDICATION-FIXED: 1, DECLARED-AND-DISCLOSED: 1, FORCED-BY-COST: 1, GATED: 1, GENUINELY-FREE: 2, MOTIVATION-FORCED: 2}; total fiber 19 of which 19 members measured; 2 genuinely free, all of their members measured True
+  [KILLED] MUT-CHOICE-UNPRICED -> G-CHOICE-INVENTORY: predicate on the clean object True, on the mutated object False; an unpriced free choice turns the whole-fiber-measured conjunct false, which is what makes the inventory an instrument rather than a table
   [PASS] G-SCRAMBLE-CONTROL: the scrambled carrier has 185 classes against the ruled carrier's 185 and the same multiset of class sizes, and it carries 48 multi-weight and 276 multi-target labelled edges against 0 and 0
   [KILLED] MUT-QUOTIENT-SCRAMBLE -> G-SCRAMBLE-CONTROL: predicate on the clean object True, on the mutated object False; under the identity the carrier keeps 0 and 0 bad edges, so the control's own predicate turns false and the control is demonstrably not vacuous
-  [PASS] G-KERNEL-PROPER: 0 violations at the pinned price law; 0 after an arbitrary exact re-pricing of every one of the 243768 priced events -- the forcing, machine-checked
-  [KILLED] MUT-REPRICE-WAIVER -> G-KERNEL-PROPER: predicate on the clean object True, on the mutated object False; the zeroed law leaves 4 non-positive kernel entries, so the waiver's substantive companion -- strict positivity -- is a predicate that can and does turn false
+  [PASS] G-KERNEL-PROPER: 0 violations at the pinned price law; 0 after an arbitrary exact re-pricing of every one of the 243768 priced events -- the forcing, machine-checked; and 4 non-positive kernel entries once a price is zeroed, which is the substantive companion
+  [KILLED] MUT-REPRICE-WAIVER -> G-KERNEL-PROPER: predicate on the clean object True, on the mutated object False; the offset normalisation leaves 79 properness violations against the pinned law's 0, so the gate's own zero-violation predicate turns false; the zeroed-price law separately leaves 4 non-positive kernel entries
 
 ==========================================================================
 P11 -- THE VERDICT
 ==========================================================================
 
-  GITER-LAW-CONFIRMED-<CARRIER=CONG-185-RE-DERIVED-IN-UNIT-185-CLASSES-AFTER-5-REFINEMENT-ROUNDS-AT-(A,B)-D<=4|DIMS=1x5x17x49x113|SIX-RULING-PROPERTIES=6-OF-6:DESCENT-AT-EVERY-HORIZON-0-MULTIVALUED-CLASSES-AT-r=0..4;MULTIVALUED-EDGES-0-WEIGHT-AND-0-TARGET-OF-572;44-CURVATURE-SQUARES-INTACT-SET-IDENTICAL-TO-MENU-113-SYMDIFF-0;Q-HOLONOMY-PRIMES-[2, 3]-RANK-2-OBSTRUCTION-44;K-HOLONOMY-PRIMES-[2, 3]-RANK-2-THE-ENLARGEMENT-DISAPPEARS;EXACTLY-LUMPABLE-CK-0-OF-10|CONTRAST-CARRIER-MENU-113-SCORES-2-OF-6 -- LAW=COLUMN-STOCHASTIC-EXACT-102-OF-102-COLUMNS-OVER-10-CUT-PAIRS-0-NEGATIVE-ENTRIES|FLOW-IDENTITY-w(h)k_{4-|h|}(e|h)=w(h+e)-3968-OF-3968-AND-352-OF-596-FAIL-AT-EVERY-OTHER-ADMISSIBLE-HORIZON|CUT-MASS-1-AT-ALL-5-CUTS -- TARGETS=HIT-AT-THE-LAW-VALUES-(15/38, 5/19, 13/38)-AT-BOTH-LEGS-LEG-INDEPENDENT-AND-LEFT-RIGHT-ASYMMETRIC|STEP-NORMALISER-RE-PROVED-ON-THIS-CARRIER-0-OF-30728-VIOLATIONS-k_2-FAILS-1340-OF-3968|RAW-PRODUCT-READOUT=(3/8, 1/4, 3/8)|CENSUS-SHADOW=(3/7, 1/7, 3/7)-AND-(4/9, 1/9, 4/9)-REPRODUCED-AT-THE-COUNTING-MEASURE-THAT-DEFINED-IT-DECLARED-EXTERNAL-CONTROL-NEVER-A-TARGET-TOKEN-SCAN-0-HITS -- HOLONOMY=AGREES-AT-REPRODUCED-AND-LOCATED:r_k=r_q-AT-1362-OF-1362-CLOSING-SQUARES-0-DEVIATIONS|DEVIATION-IDENTITY-1546-OF-1546-KILLABLE-MUST-PASS|THE-8-NON-UNIT-CORRECTION-FACTORS-CLOSE-AT-MENU-113-AND-AT-0-OF-CONG-185|REC-FLAT-OBSTRUCTION-0-AT-BOTH-READINGS -- QUANTUM=CARRIER-RELATIVE-CONFIRMED-BY-MEASUREMENT|@MENU-113:NON-MARKOV-AT-4-OF-10-DEPTH-TRIPLES;EQ22-NEGATIVES-36/104/108/164-AT-2-OF-4-COMPLETIONS-THAT-SPEAK;NOT-LUMPABLE;MULTI-TARGET-EDGES-4|@CONG-185:MARKOV-CK-0-OF-10;EXACTLY-LUMPABLE;EQ22-SILENT-AT-4-OF-4-COMPLETIONS;MULTI-TARGET-EDGES-0|MECHANISM=THE-SIGNATURE-IS-CARRIED-BY-THE-MULTI-TARGET-EDGES-AND-THE-45-OF-113-MENU-CLASSES-THAT-RECUR-ACROSS-CUTS -- B3=ROW-DECOMPOSED-FEASIBLE-0-INFEASIBLE-ROWS-OF-772-AT-4-OF-4-TRIPLES-ON-BOTH-CARRIERS-ALL-CERTIFIED|COUPLED=@CONG-185-FEASIBLE-4-OF-4-WITNESS-EXHIBITED;@MENU-113-INFEASIBLE-3-OF-4-FARKAS-CERTIFIED|THE-COLUMN-SUM-COUPLING-IS-THE-WHOLE-CONTENT-ORPHAN-COLUMNS-0|ATOM-AT-(1,1)-BLOCK-SCOPE-ONLY:delta*=0-AT-CONG-185-AGAINST-1-AT-MENU-113-THE-BLOCK-SPLITS-INTO-5-CLASSES-ONE-PER-DEPTH -- ANCHOR=SEDIMENTARY<CLASS-CHAIN-DEPTH-GRADED-0-OF-185-CLASSES-AT-MORE-THAN-ONE-DEPTH;PREFIX-CLASS-RETURNS-0-AT-CONG-185-AGAINST-1900-AT-MENU-113;(1,1)-BLOCK-ENTERED-AT-0-OF-30728-TRANSITIONS;RENEWAL-ROOT-LAW-IS-DELIVERY-FREE-SCOPED-BY-ITS-OWN-SOURCE;THE-GRADING-IS-CAP-DRIVEN-PURITY-AT-REFINEMENT-ROUND-4-OF-5>|LONG-RUN-STRUCTURE-FROM-ACCUMULATION-NOT-RETURN-NO-RECURRENCE-ASSUMED -- SCOPE=(A,B)-D<=4-CARRIER-AND-D<=5-ANCHOR|GRAIN=CONG-185-EVENTxWEIGHT-CONGRUENCE|HORIZON=H4-PRIMARY-MATCHED-NAMED-AT-USE|READOUT=STEP-NORMALISED-PRIMARY-RAW-PRODUCT-AND-COUNT-MEASURED|LEGS=RENEWAL-CUT-ENSEMBLES-AT-DEPTHS-3..10-OUTSIDE-THE-CARRIER-CAP|SUPPLY=5-CROSS-UNIT-ROWS-DISPOSED|SOURCES=13-SHA-PINNED-1-DECLARED-AND-NOT-READ|NO-CURVATURE=>QUANTUM-CLAIM|NO-INDIVISIBILITY-CLAIM-AT-RENEWAL-GRAIN|NO-CONTINUUM-OR-LIMIT-CLAIM|DEPTH-6-AND-THE-FIFTH-BLOCK-EXCLUDED-BY-CAP>
-  [PASS] G-VERDICT-EQUALITY: complete-string audit over 3023 characters and 8 segments carrying 37 declared values checked by occurrence count; failures []
+  THE OUTCOME SELECTOR, ENUMERATED ON ALL FOUR (law_ok, identity violations) COMBINATIONS:
+    law_ok True  identity violations 0 -> [True, False, False] -> 1 flag(s) -> GITER-LAW-CONFIRMED
+    law_ok True  identity violations 3 -> [True, False, False] -> 1 flag(s) -> GITER-LAW-CONFIRMED
+    law_ok False identity violations 0 -> [False, True, False] -> 1 flag(s) -> GITER-DEVIATION
+    law_ok False identity violations 3 -> [False, False, True] -> 1 flag(s) -> GITER-BLOCKED-AT
+    every combination single-valued: True; outcomes reachable: ['GITER-BLOCKED-AT', 'GITER-DEVIATION', 'GITER-LAW-CONFIRMED']
+    the DELIVERED form of this selector was not a partition -- at (False, 0) it set 2 flags, so GITER-DEVIATION, which the pin pre-registers as a FIRST-CLASS FINDING, could only ever have appeared as a refused run.  A deviation here would have looked like a refusal, not like a located deviation.
+
+  GITER-LAW-CONFIRMED-<CARRIER=CONG-185-RE-DERIVED-IN-UNIT-185-CLASSES-AFTER-5-REFINEMENT-ROUNDS-AT-(A,B)-D<=4|DIMS=1x5x17x49x113|SIX-RULING-PROPERTIES=6-OF-6:DESCENT-AT-EVERY-HORIZON-0-MULTIVALUED-CLASSES-AT-r=0..4;MULTIVALUED-EDGES-0-WEIGHT-AND-0-TARGET-OF-572;44-CURVATURE-SQUARES-INTACT-SET-IDENTICAL-TO-MENU-113-SYMDIFF-0;Q-HOLONOMY-PRIMES-[2, 3]-RANK-2-OBSTRUCTION-44;K-HOLONOMY-PRIMES-[2, 3]-RANK-2-THE-ENLARGEMENT-DISAPPEARS;CK-EXACT-AT-THE-10-DEPTH-CUT-TRIPLES-0-FAIL-OF-10|CONTRAST-CARRIER-MENU-113-SCORES-2-OF-6 -- LAW=COLUMN-STOCHASTIC-EXACT-102-OF-102-COLUMNS-OVER-10-CUT-PAIRS-0-NEGATIVE-ENTRIES|FLOW-IDENTITY-w(h)k_{4-|h|}(e|h)=w(h+e)-3968-OF-3968-AT-THE-MATCHED-HORIZON-WHERE-IT-IS-DEFINITIONAL|OFF-HORIZON-352-OF-596-TESTS-FAIL-AND-244-PASS-ALL-AT-r=1-(r=1:276-OF-520,r=2:68-OF-68,r=3:8-OF-8)|CUT-MASS-1-AT-ALL-5-CUTS -- TARGETS=HIT-AT-THE-LAW-VALUES-AT-CARRIER-FREE-SCOPE-(15/38, 5/19, 13/38)-AT-BOTH-LEGS-LEG-INDEPENDENT-AND-LEFT-RIGHT-ASYMMETRIC|THIS-SEGMENT-IS-A-FACT-ABOUT-THE-TRANSPORT-LAW-AND-NOT-ABOUT-CONG-185:THE-LEGS-LIVE-AT-DEPTHS-3..10-OUTSIDE-THE-CARRIER-CAP-AND-THE-MEASURING-REGION-TOUCHES-NEITHER-QUOTIENT-TOKEN-SCAN-0-HITS-ON-31-TOKENS|STEP-NORMALISER-RE-DERIVED-IN-UNIT-AND-LAW-NATIVE:G(h,1)=M(h)-BY-THE-TERMINAL-CONDITION-AT-3969-OF-3969-HISTORIES-AND-AT-3969-OF-3969-UNDER-AN-ARBITRARY-RE-PRICING-TRUE-UNDER-ANY-PARTITION;k_1=q/M-0-OF-30728-VIOLATIONS-AND-0-OF-3968-AT-LIKE-SCOPE-WHERE-k_2-FAILS-1340-OF-3968|RAW-PRODUCT-READOUT=(3/8, 1/4, 3/8)|CENSUS-SHADOW=(3/7, 1/7, 3/7)-AND-(4/9, 1/9, 4/9)-REPRODUCED-AT-THE-COUNTING-MEASURE-THAT-DEFINED-IT-DECLARED-EXTERNAL-CONTROL-NEVER-A-TARGET -- HOLONOMY=AGREES-AT-REPRODUCED-AND-LOCATED:r_k=r_q-AT-1362-OF-1362-CLOSING-SQUARES-0-DEVIATIONS|DEVIATION-IDENTITY-1546-OF-1546-KILLABLE-MUST-PASS|THE-8-NON-UNIT-CORRECTION-FACTORS-CLOSE-AT-MENU-113-AND-AT-0-OF-CONG-185|REC-FLAT-OBSTRUCTION-0-AT-BOTH-READINGS -- QUANTUM=CARRIER-RELATIVE-4-STATISTICS-STAMPED-AT-BOTH-CARRIERS|@MENU-113:NON-MARKOV-AT-4-OF-10-DEPTH-TRIPLES;EQ22-NEGATIVES-36/104/108/164-AT-2-OF-4-COMPLETIONS-THAT-SPEAK;NOT-CK-EXACT;MULTI-TARGET-EDGES-4|@CONG-185:MARKOV-CK-0-OF-10;CK-EXACT-AT-ALL-10-TRIPLES;EQ22-SILENT-AT-4-OF-4-COMPLETIONS;MULTI-TARGET-EDGES-0|@REC:MARKOV-CK-0-OF-10;MULTI-TARGET-EDGES-0;RECURRING-CLASSES-0-THE-QUANTUM-STATISTICS-DO-NOT-SEPARATE-THE-RULED-CARRIER-FROM-THE-FLAT-CONTROL|MEASURED-FACTS=THE-4-MULTI-TARGET-EDGES-SIT-ON-THE-4-MENU-CLASSES-DESCENT-FAILS-ON-AT-r=2-SET-IDENTICAL;THE-CK-FAILING-CELLS-TRACE-TO-5-SOURCE-CLASSES-NOT-4;THE-MINIMAL-121-CLASS-SPLIT-IS-CK-EXACT-AT-0-OF-10-WITH-36-MULTI-TARGET-EDGES-STANDING;SPLITTING-THE-4-LARGEST-OTHER-CLASSES-BY-THEIR-FULL-SUCCESSOR-SIGNATURE-LEAVES-CK-FAILING-AT-4;REFINEMENT-ROUND-1-IS-CK-EXACT-AT-0-OF-10-AT-162-CLASSES-CARRYING-132-MULTI-TARGET-EDGES-AND-17-DEPTH-SPANNING-ONES;THE-4-SOURCES-LIE-INSIDE-THE-45-OF-113-RECURRING-MENU-CLASSES|LAW=CONGRUENCE=>PROBABILISTIC-BISIMULATION=>CK-EXACT-(THEOREM,SUFFICIENT-NOT-NECESSARY,THE-ONLY-GENERAL-ONE-MEASURED-HERE)|NON-MARKOVIANITY-IS-A-PROPERTY-OF-THE-DESCRIPTION-THE-HISTORY-CHAIN-IS-MARKOV-BY-CONSTRUCTION-FLOW-IDENTITY-3968-OF-3968 -- B3=ROW-DECOMPOSED-FEASIBLE-0-INFEASIBLE-ROWS-OF-772-AT-4-OF-4-TRIPLES-ON-BOTH-CARRIERS-ALL-CERTIFIED|COUPLED=@CONG-185-FEASIBLE-4-OF-4-WITNESS-EXHIBITED;@MENU-113-INFEASIBLE-3-OF-4-FARKAS-CERTIFIED|THE-COLUMN-SUM-COUPLING-IS-THE-WHOLE-CONTENT-ORPHAN-COLUMNS-0|THE-ONE-FEASIBLE-MENU-CELL-IS-(1, 2, 4)-WHERE-THE-PADDED-CANDIDATE-CARRIES-104-NEGATIVES:EQ-22-NEGATIVITY-IS-NOT-EQUIVALENT-TO-NON-EXISTENCE-OF-A-STOCHASTIC-INTERPOLANT-SO-GAMMA-MAIN-TAKES-A-SCOPE-ANNOTATION-NOT-AN-ERRATUM|ATOM-AT-(1,1)-BLOCK-SCOPE-ONLY:delta*=0-AT-CONG-185-AGAINST-1-AT-MENU-113-THE-BLOCK-SPLITS-INTO-5-CLASSES-ONE-PER-DEPTH-WHICH-DEPTH-PURITY-FORCES -- ANCHOR=SEDIMENTARY-BY-THEOREM-AT-EVERY-FINITE-CAP<CLASS-CHAIN-DEPTH-GRADED-0-OF-185-CLASSES-AT-MORE-THAN-ONE-DEPTH;PREFIX-CLASS-RETURNS-0-AT-CONG-185-AGAINST-1900-AT-MENU-113;(1,1)-BLOCK-ENTERED-AT-0-OF-30728-TRANSITIONS;RENEWAL-ROOT-LAW-IS-DELIVERY-FREE-SCOPED-BY-ITS-OWN-SOURCE;THE-GRADING-IS-CAP-FORCED-NOT-CAP-DRIVEN-PURITY-AT-ROUND-N-OF-N+1-BY-INDUCTION-ON-HEIGHT-TO-CAP-MEASURED-AT-d<=4-(PURITY-4-OF-5-SPANNING-0-OF-185)-AND-AT-d<=5-(PURITY-5-OF-6-SPANNING-0-OF-462-PREFIX-RETURNS-0);THE-SUCCESSOR-QUESTION-IS-THE-BOUNDARY-CONVENTION-NOT-THE-CAP;NO-LINK-BETWEEN-RECURRENCE-AND-NON-MARKOVIANITY-IS-CLAIMED-ROUND-1-SEPARATES-THEM-AT-204-RETURNS-AND-CK-0-OF-10>|LONG-RUN-STRUCTURE-FROM-ACCUMULATION-NOT-RETURN-NO-RECURRENCE-ASSUMED -- CHOICES=8-INVENTORIED-AND-PRICED:FORCED-BY-COST-2|GENUINELY-FREE-2|MOTIVATION-FORCED-3|ADJUDICATION-FIXED-3|GENUINELY-FREE-4|MOTIVATION-FORCED-2|DECLARED-AND-DISCLOSED-1|GATED-2|THE-CAP-FORCED-BY-COST-FIBER-2-BOTH-BUILT|THE-B3-PROBLEM-FORM-GENUINELY-FREE-FIBER-2-BOTH-MEASURED|GENUINELY-FREE-2-ALL-MEMBERS-MEASURED-True|TOTAL-FIBER-19-MEASURED-19 -- SCOPE=(A,B)-D<=4-CARRIER-AND-D<=5-ANCHOR|GRAIN=CONG-185-EVENTxWEIGHT-CONGRUENCE|HORIZON=H4-PRIMARY-MATCHED-NAMED-AT-USE|READOUT=STEP-NORMALISED-PRIMARY-RAW-PRODUCT-AND-COUNT-MEASURED|LEGS=RENEWAL-CUT-ENSEMBLES-AT-DEPTHS-3..10-OUTSIDE-THE-CARRIER-CAP|SUPPLY=5-CROSS-UNIT-ROWS-DISPOSED|SOURCES=13-SHA-PINNED-1-DECLARED-AND-NOT-READ|NO-CURVATURE=>QUANTUM-CLAIM|NO-INDIVISIBILITY-CLAIM-AT-RENEWAL-GRAIN|NO-CONTINUUM-OR-LIMIT-CLAIM|DEPTH-6-AND-THE-FIFTH-BLOCK-EXCLUDED-BY-CAP|EQ-22-AT-REC-NOT-RUN-EXCLUDED-BY-COST-THE-RECORD-QUOTIENT-CARRIES-2093-CLASSES-AT-THE-LAST-CUT|INSTRUMENT=GATE-TIME-SEAL-17-OBJECTS-PLUS-EVERY-REGISTRY-ROW-DISK-VERIFIED-AGAINST-THE-SEAL-AND-RE-VERIFIED-AT-EXIT>
+  [PASS] G-VERDICT-EQUALITY: complete-string audit over 5513 characters and 9 segments carrying 57 declared values checked by occurrence count; failures []; the head re-derived from the published rows is GITER-LAW-CONFIRMED against the emitted GITER-LAW-CONFIRMED; the pre-registered triple (15/38, 5/19, 13/38) is located in the frozen pin's own bytes True
+  [KILLED] MUT-VERDICT-REDERIVE -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; with the published flow row falsified the re-derived head is GITER-DEVIATION, not GITER-LAW-CONFIRMED, so the selector conjunct turns false on a corruption that leaves string and record perfectly consistent with each other
   [KILLED] MUT-VERDICT-APPEND -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 1 failure(s) on the mutated pair, so the comparator's own predicate turns false
   [KILLED] MUT-VERDICT-HEAD -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 1 failure(s) on the mutated pair, so the comparator's own predicate turns false
-  [KILLED] MUT-VERDICT-TRUNC -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 1 failure(s) on the mutated pair, so the comparator's own predicate turns false
+  [KILLED] MUT-VERDICT-TRUNC -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 2 failure(s) on the mutated pair, so the comparator's own predicate turns false
   [KILLED] MUT-VERDICT-DROP -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 1 failure(s) on the mutated pair, so the comparator's own predicate turns false
-  [KILLED] MUT-VERDICT-RETYPE -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 2 failure(s) on the mutated pair, so the comparator's own predicate turns false
+  [KILLED] MUT-VERDICT-RETYPE -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 3 failure(s) on the mutated pair, so the comparator's own predicate turns false
   [KILLED] MUT-VERDICT-DESYNC -> G-VERDICT-EQUALITY: predicate on the clean object True, on the mutated object False; the audit returns 1 failure(s) on the mutated pair, so the comparator's own predicate turns false
+
+  THE ALTERNATIVE OUTCOMES, DRIVEN END TO END: at (law_ok False, identity violations 0) the selector chooses GITER-DEVIATION and the comparator returns 0 failure(s); at (law_ok False, identity violations 3) it chooses GITER-BLOCKED-AT with 0.  Under the DELIVERED form of the selector the first of those sets 2 flags and the comparator returns 1 failure(s), the first being the outcome selector is not single-valued -- which is the sense in which the pre-registered outcome was unreachable.
+  [PASS] G-DEVIATION-REACHABLE: combinations [((True, 0), 1), ((True, 3), 1), ((False, 0), 1), ((False, 3), 1)]; outcomes reachable ['GITER-BLOCKED-AT', 'GITER-DEVIATION', 'GITER-LAW-CONFIRMED'] of ['GITER-LAW-CONFIRMED', 'GITER-DEVIATION', 'GITER-BLOCKED-AT']; the DEVIATION delivery audits at 0 failures and the BLOCKED delivery at 0; the committed form is a partition False
+  [KILLED] MUT-SELECTOR-COMMITTED-FORM -> G-DEVIATION-REACHABLE: predicate on the clean object True, on the mutated object False; the committed form sets 2 flags at [(False, 0)], so the partition conjunct turns false on it and the pre-registered deviation is unreachable
+  [KILLED] MUT-DEVIATION-DELIVERY -> G-DEVIATION-REACHABLE: predicate on the clean object True, on the mutated object False; with the true record against the deviation string the comparator returns 1 failure(s), so the end-to-end conjunct turns false; on the matched pair it returns 0
 
 ==========================================================================
 P12 -- COUNTS, COVERAGE, AND THE PAPER SWEEP
 ==========================================================================
-  [PASS] G-OFFTREE-READY: 14 distinct paths read, every one resolved from this file's own directory two levels up; process names found in the syntax tree []; moving references []; every declared path resolves under the root this run computed from its own location: 14 of 14 -- a location-independent statement, so the artifacts do not record where the run happened
+  [PASS] G-OFFTREE-READY: 14 distinct paths read, all relative, none escaping the root, all resolving under the root this run computed from its own directory two levels up: True; process names found in the syntax tree []; moving references [] -- a location-independent statement, so the artifacts do not record where the run happened
+  [KILLED] MUT-OFFTREE-RELATIVE -> G-OFFTREE-READY: predicate on the clean object True, on the mutated object False; the absolutised declaration reads False and the escaping one False against the delivered True, so the off-tree conjunct is a predicate that can turn false -- the delivered `isabs` conjunct could not, being true of every string
+  [PASS] G-ITERATION-ORDER: 4 set-valued arena names ['ANCHOR_SCOPE', 'B11', 'CARRIER', 'RMENU']; iteration sites over a bare one: 0 []; the menu-mass census rebuilt from the reversed traversal publishes identically True while its raw insertion order differs True
+  [KILLED] MUT-ITERATION-UNSORTED -> G-ITERATION-ORDER: predicate on the clean object True, on the mutated object False; the spliced copy carries 1 bare set iteration(s) ['1832:CARRIER'], so the zero-sites conjunct turns false
+  [KILLED] MUT-CENSUS-ORDER -> G-ITERATION-ORDER: predicate on the clean object True, on the mutated object False; the reversed traversal gives the same published census (True) and a different traversal order (False), so an order-level assertion turns false while the publication-level invariant holds
   [KILLED] MUT-COVERAGE-LAX -> G-COVERAGE: predicate on the clean object True, on the mutated object False; one falsifier-free MUST gate turns the coverage predicate false, which is what makes the denominator honest
   [KILLED] MUT-COUNTS-ASSERTED -> G-COUNTS: predicate on the clean object True, on the mutated object False; the spliced tally reads 1 failures against the computed 0, so the zero-failure conjunct turns false on it
-  [PASS] G-COVERAGE: 36 MUST gates, 0 of them without a falsifier; 54 falsifiers evaluated, 0 dead; 2 theorem-passes and 1 disclosure, 3 carrying a waiver
-  [PASS] G-COUNTS: registry declared 54, evaluated here 52 plus 2 declared late, identical True; gate failures 0; dead falsifiers 0; falsifiers named by gates 50
+  [PASS] G-COVERAGE: 43 MUST gates, 0 of them NOT REACHED by any falsifier registered against them []; 0 declaring none; 75 falsifiers evaluated, 0 dead, 0 pointed at a name that is not a registered gate []; reach histogram {1: 32, 2: 5, 3: 4, 4: 2, 7: 1}; 2 theorem-pass and 1 disclosure, 3 carrying a waiver, of which 1 also carry a falsifier
+  [KILLED] MUT-COVERAGE-NAMED-ONLY -> G-COVERAGE: predicate on the clean object True, on the mutated object False; a MUST gate reached by no falsifier registered against it turns the reach containment false, while the declaration-list test cannot see it -- which is the hole the standard sentence claimed was already closed
+  [PASS] G-COUNTS: registry declared 76, evaluated here 70 plus 6 declared late, identical True; gate failures 0; dead falsifiers 0; falsifiers named by gates 67
   counts, computed from the registries they summarise:
     anchors                            17
     byte_anchors                       13
     carriers_measured                  3
     disclosure                         1
     gate_failures                      0
-    gates                              58
+    gates                              65
     lp_coupled_problems                8
     lp_row_problems                    772
-    must                               36
+    must                               43
     must_gates_without_a_falsifier     0
     mutants_dead                       0
-    mutants_declared                   54
-    mutants_evaluated                  54
+    mutants_declared                   76
+    mutants_evaluated                  76
     path_value_anchors                 11
     quantum_claims_stamped             4
     sources_declared_not_read          1
@@ -360,15 +466,45 @@ P12 -- COUNTS, COVERAGE, AND THE PAPER SWEEP
     verbatim_anchors                   19
     verbatim_rows_flipping             19
     waivers                            3
-  [PASS] G-VERIFY-PAPER: 750 numeric tokens in the paper, 111 distinct, 0 unexplained []; paper sha256-12 fd2f25d40002 against the anchored fd2f25d40002; 21 structural and 8 ledger-reference numerals declared: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '2026', '08', '09', '109'] and ['20', '24', '34', '46', '62', '82', '87', '91']
+  [PASS] G-VERIFY-PAPER: 1167 numeric tokens in the paper, 132 distinct, 0 unexplained []; 65 value-bound sentences assembled from this run's measurements, 0 not located []; the emitted verdict string of 5513 characters occurs in the paper verbatim True; paper sha256-12 5c1df50673d4 against the anchored 5c1df50673d4; 21 structural and 8 ledger-reference numerals declared: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '2026', '08', '09', '109'] and ['20', '24', '34', '46', '62', '82', '87', '91']
+  [KILLED] MUT-PROSE-TRANSPOSE -> G-VERIFY-PAPER: predicate on the clean object True, on the mutated object False; the transposed text leaves the token multiset identical (True) while 2 value-bound sentence(s) no longer locate, so the placement conjunct turns false where the membership residue does not move
   [KILLED] MUT-PROSE-NUMBER -> G-VERIFY-PAPER: predicate on the clean object True, on the mutated object False; the spliced text leaves 1 unexplained numeral(s), so the zero-residue predicate turns false
-  [KILLED] MUT-PAPER-BYTES -> G-VERIFY-PAPER: predicate on the clean object True, on the mutated object False; a single appended byte moves the paper's sha to 3986eb7849cb, so the byte anchor turns false
+  [KILLED] MUT-PAPER-BYTES -> G-VERIFY-PAPER: predicate on the clean object True, on the mutated object False; a single appended byte moves the paper's sha to e9da44a7a80b, so the byte anchor turns false
+
+==========================================================================
+P12.1 -- THE GATE-TIME SEAL
+==========================================================================
+    SEAL-PROVENANCE        provenance       sealed at G-PROVENANCE               c3bcef38b8d2  9099 bytes
+    SEAL-LAW               law              sealed at G-FLOW-IDENTITY            e1f057bfd2c0  487 bytes
+    SEAL-CARRIER           carrier          sealed at G-SIX-PROPERTIES           292a01f80bab  2030 bytes
+    SEAL-TARGETS           targets          sealed at G-SHADOW-IS-A-CONTROL      5f7caa428e25  877 bytes
+    SEAL-HOLONOMY          holonomy         sealed at G-HOLONOMY-HEAD            c19ecab047d9  1159 bytes
+    SEAL-DEVIATION         deviation        sealed at G-HOLONOMY-HEAD            abba2cea6777  283 bytes
+    SEAL-EQ22              quantum_eq22     sealed at G-EQ22-STAMPED             17c401212a4d  4913 bytes
+    SEAL-QUANTUM           quantum          sealed at G-MECHANISM-MEASURED       762b0ef012e9  1553 bytes
+    SEAL-B3                b3               sealed at G-B3-COUPLED               34241d17b74b  3251 bytes
+    SEAL-ANCHOR            anchor           sealed at G-ANCHOR-PATH              eee5a3ff8573  1548 bytes
+    SEAL-SUPPLY-D5         supply_d5        sealed at G-SUPPLY-D5                a06d7a24a79e  349 bytes
+    SEAL-SUPPLY            supply           sealed at G-SUPPLY-EXCLUSIONS        3f6ec3174b5b  1550 bytes
+    SEAL-CHOICES           choices          sealed at G-CHOICE-INVENTORY         25b3ca9135ae  3406 bytes
+    SEAL-VERDICT-STRING    verdict          sealed at G-VERDICT-EQUALITY         3b9db32b1667  5515 bytes
+    SEAL-VERDICT-HEAD      verdict_head     sealed at G-VERDICT-EQUALITY         fc2489eb4fed  21 bytes
+    SEAL-VERDICT-RECORD    verdict_record   sealed at G-VERDICT-EQUALITY         1b2664fdb9b4  1814 bytes
+    SEAL-PAPER-SWEEP       paper_sweep      sealed at G-VERIFY-PAPER             adcacc339e0a  291 bytes
+  17 sealed objects and 156 sealed registry rows; objects still matching their gate-time digest: 17 of 17; registry rows still matching: 156 of 156
+  [PASS] G-SEAL-COMPLETE: 17 of 17 declared objects sealed, 0 broken []; 156 registry rows, 0 broken []; the seal's own negative controls fire: a mutated object is reported broken (1) and a fabricated registry row is reported broken (1)
+  [KILLED] MUT-SEAL-BROKEN -> G-SEAL-COMPLETE: predicate on the clean object True, on the mutated object False; the mutated object is reported broken by its own gate-time digest (['SEAL-VERDICT-HEAD']), so the unbroken-seal conjunct turns false and the delivery is refused with nothing written
+  [KILLED] MUT-SEAL-ROW-BROKEN -> G-SEAL-COMPLETE: predicate on the clean object True, on the mutated object False; the fabricated row is reported broken against its registration-time digest (['GATE:PROBE']), so the registry conjunct turns false
+  [KILLED] MUT-DISK-UNCHECKED -> G-SEAL-COMPLETE: predicate on the clean object True, on the mutated object False; the corrupted payload digests to 7d8482cbd475 against the sealed bb4a4af6857d: the disk-against-seal comparator detects it (True) and the re-deriving comparator does not (False), so the detection conjunct turns false on the delivered design.  This run performs the same probe against a real file before it writes and refuses if the probe is NOT detected
 
 ==========================================================================
 SUMMARY
 ==========================================================================
-  gates 58 (36 MUST, 2 theorem-pass, 1 disclosure, 17 anchor); failures 0
-  falsifiers 54 evaluated, 0 dead
+  gates 65 (43 MUST, 2 theorem-pass, 1 disclosure, 17 anchor); failures 0
+  falsifiers 76 evaluated, 0 dead
   anchors 13 byte, 19 verbatim, 11 path-value
-  paper sweep: 750 numeric tokens, 0 unexplained
-  final registry consistency: 58 gates against the published 58, 54 falsifiers against the published 54, registry identity True -> True
+  paper sweep: 1167 numeric tokens, 0 unexplained; 65 value-bound sentences located, 0 missing
+  the gate-time seal: 17 sealed objects, 160 sealed registry rows, 0 objects and 0 rows broken since their gate
+  honest denominators: of the 65 registered gates 17 are anchors and 48 are gates; 43 MUST, 2 theorem-pass (which carries a falsifier) and 1 disclosure (whose predicate is the literal True and which is counted as evidence nowhere); 0 MUST gates unreached by a falsifier registered against them; 0 falsifiers pointed anywhere but at a registered gate
+  final registry consistency: 65 gates against the published 65, 76 falsifiers against the published 76, registry identity True -> True
+  final seal check, immediately before the write: 0 sealed object(s) and 0 registry row(s) broken since their gate
