@@ -8,16 +8,16 @@ receipt `8d28b5f2f807`, pin `aa161f8f8e9d`, protocol `9f54f1083f21`.
 
 ## GRADE: AWF (ACCEPT-WITH-FIXES)
 
-**Executions:** 57 — 2 full clean plain runs (off-tree default seed;
+**Executions:** 59 — 2 full clean plain runs (off-tree default seed;
 `PYTHONHASHSEED=4242`), 7 full injected runs, 1 `--mutant` run, 2
 `--selftest` runs, 17 hostile-argv invocations, 3 real source-corruption
-runs, 3 truncated hash-seed probes, 22 reviewer programs.
+runs, 5 truncated hash-seed probes, 23 reviewer programs.
 **Recomputations:** ≈640. **False computed numbers found: ZERO.** Every
 number I could reach independently — with my own partition refinement,
 my own spanning-forest holonomy, my own rational-rank routine, my own
 eq-22 route, my own leg scan — reproduced the delivery exactly.
 
-Eight MAJOR and six MINOR findings, all bounded and mechanical; none
+Eight MAJOR and seven MINOR findings, all bounded and mechanical; none
 moves a delivered number. Two of them change what the instrument can do:
 **the pre-registered outcome `GITER-DEVIATION` is unreachable**, and
 **the seam is nine wide.**
@@ -38,6 +38,7 @@ at the end of this review.
 | **THE #82 CLI** | 18/18 argv verdicts correct. `--selftest` exit 1, hash-proven to write nothing, report matches the corruption it made; 3 real source corruptions also refuse before measurement and do not even create the out-dir. |
 | **#91 BOTH LEGS** | Byte-identical at my own hands: off-tree, `.git`-less mirror, `--out-dir` redirected, default random hash seed → `58ddd86a52f2…` / `8d28b5f2f807…`; and again under a **fourth** interpreter hash seed (4242). |
 | **THE EXCLUSION** | paper-13 declared-and-not-read: **clean** on three independent routes (textual, AST, runtime audit hook). |
+| **THE BUG CLASS** | The fixed bug's fix is correct. Hunting the class found **one survivor the unit's own gate does not reach** — `MCENSUS` (1421), built by iterating the set `CARRIER`, moves under `PYTHONHASHSEED=31337`. No artifact byte moves: both publication paths sort. §9, MINOR-7. |
 | **HONEST DENOMINATORS** | 58 registered gates = 17 anchors + 41 gates, of which **36 can independently fail**; 54 falsifiers of which **49 are substantive** and **51 reach the gate they name**. |
 
 ---
@@ -407,6 +408,16 @@ them.
 path** (the artifact-integrity path; MAJOR-2, INJ-2). All other failure
 paths do exit before `finish()`.
 
+**MINOR-7 — one surviving hash-order dependence, masked by two
+incidental sorts.** `MM` (1421) is built by iterating the **set**
+`CARRIER`, so `MCENSUS`'s order is a function of the interpreter hash
+seed; `PYTHONHASHSEED=31337` moves it while the other four seeds I tried
+agree. No artifact byte moves — both publication points sort — but the
+guarantee rests on those sorts rather than on the object, and
+`G-REFINE-DETERMINISTIC` does not cover it. Full detail and the one-line
+repair in §9. *This is the only thing in the delivery I found that the
+unit's own determinism gate does not reach.*
+
 ---
 
 ## 4. THE SEAM RULING
@@ -670,14 +681,51 @@ and the falsifier is honest.
 - `sk()` is hash-order-free by construction: a `frozenset` becomes
   `("S", tuple(sorted(...)))`.
 
-**Empirically.** I ran the delivery's own source truncated just before
-the heavy [B3] LP — covering the carrier, the six properties, holonomy,
-Γ, CK, the targets, the census shadow and the whole quantum layer — under
-`PYTHONHASHSEED` ∈ {0, 1, 4242} and compared 18 structures per run,
-including the `CONG` label map, the `CONG` index multiset, `IDX_C`, the
-`GAM_C` key order, the raw-order hash of `CLOSED`, the `EQ22` digest, the
-`OUT_LINES` digest and the emitter's own `DIGEST`. **All three seeds give
-one identical result block.**
+**Empirically — and this is where I found one the delivery's own gate
+does not cover.** I ran the delivery's source truncated just before the
+heavy [B3] LP — covering the carrier, the six properties, holonomy, Γ,
+CK, the targets, the census shadow and the whole quantum layer — under
+`PYTHONHASHSEED` ∈ {0, 1, 4242, 987654, 31337}, comparing 18 structures
+per run including the `CONG` label map, the `CONG` index multiset,
+`IDX_C`, the `GAM_C` key order, the raw-order hash of `CLOSED`, the
+`EQ22` digest, `SQ`/`SPEC_Q`, `DEPTHPURE`/`SHARED`, the `OUT_LINES`
+digest and the emitter's own `DIGEST`.
+
+**Four of the five seeds agree exactly; seed 31337 differs in exactly one
+structure of the eighteen — `MCENSUS`.** The mechanism (1421–1422):
+
+```python
+MM = {h: sum(Fr(q) for e, q in CACHE[h]) for h in CARRIER}
+MCENSUS = Counter(str(v) for v in MM.values())
+```
+
+`CARRIER` is a **set** (735), so `MM`'s insertion order — and hence
+`MCENSUS`'s first-occurrence order — is a function of the interpreter's
+hash seed. This is the same class as the bug the worker found and fixed,
+one object further on, and `G-REFINE-DETERMINISTIC` does not reach it:
+that gate is about `refine()`'s traversal, not about `MM`.
+
+**It does not move a single artifact byte, and I verified that three
+ways.** Both publication paths sort: the output goes through
+`ctr(MCENSUS)` (200–202), which sorts on `str(key)`; the receipt's
+`menu_mass_census=dict(MCENSUS)` (3289) is serialised with
+`json.dump(..., sort_keys=True)` (214). Consistently, the `OUT_LINES`
+digest and the emitter `DIGEST` are **identical across all five seeds**,
+including 31337 — the emitted stream is seed-independent exactly where
+the in-memory state is not. And two full plain runs (default *random*
+seed; `PYTHONHASHSEED=4242`) both reproduce the committed artifacts byte
+for byte.
+
+So: **no defect in the delivery, and a live hazard in the code.** The
+seed-independence of the artifacts currently rests on two incidental
+sorts rather than on the object being ordered. Anything a successor
+publishes off `MM`, `MCENSUS`, or any other structure built by iterating
+`CARRIER` without a sort becomes seed-dependent silently.
+*Repair (one line, 1421):* `for h in sorted(CARRIER, key=sk)`; and
+extend `G-REFINE-DETERMINISTIC` (or add a sibling) to assert that every
+dict reaching the receipt is built from a sorted traversal — the cheap
+version being a re-run of the whole emitter under a second hash seed
+inside the delivery, compared on `DIGEST`.
 
 **And end to end.** Two full plain runs, both byte-identical to the
 committed artifacts (`58ddd86a52f2…` / `8d28b5f2f807…`): run A off-tree

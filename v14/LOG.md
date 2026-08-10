@@ -4034,3 +4034,36 @@ off-tree/git-less/foreign-CWD/seed-varied; 10 hostile argv exit
 2.  Artifacts committed as-is: paper 3800959353b4, code
 37c232de91a6, output e86be9a581a7, receipt 1c072956ac7b.
 Battery + panel next.
+
+## 2026-08-10 — Γ-ITER INSTRUMENT AMENDED BY ITS AUTHOR; VERSION OF RECORD RE-FROZEN (v14 LEDGER #138)
+
+The instrument reviewer continued past its first stop and updated
+its review (68f5b34dba1f → eacf6bb2655a, 875 lines; counts
+refined to 8 MAJOR / 7 MINOR).  **The delta: the ordered
+bug-class hunt found ONE SURVIVOR — MCENSUS (L1421) built by
+iterating the set CARRIER moves under PYTHONHASHSEED=31337
+while four other seeds agree; NO artifact byte moves (both
+publication paths sort; DIGEST identical across all five
+seeds) — a LIVE HAZARD, not a defect, and the one thing
+G-REFINE-DETERMINISTIC does not reach.**  Also refined: the
+selftest verified with 3 real source corruptions refusing
+before measurement without creating the out-dir; the mutant
+emitting exactly one line.  The updated version committed as
+the review of record; the #136 entry's findings all stand.
+
+## 2026-08-10 — R5 PROTOCOL FROZEN, PANEL LAUNCHED (v14 LEDGER #139)
+
+Protocol v14/note-r5-hostile-protocol.md: K1 the group decisive
+(the 640-coin family's derivation status; the set-equality
+certification's soundness for A_n; the ladder + A₁₆ with
+independent group machinery; the flat control; THE CR-D
+COMPARISON — structural or numerological); K2 the gate result
+(the emptiness mechanism; the two-verdicts-one-string
+composition); K3 the exclusion theorem (the single-path lemma's
+proof + scope; the two grains reconciled; the infinite-order
+sector's certification and licensed reading); K4 refinement +
+separation + the must-nots sweep + the choice inventory + the
+successor register; K5 the second born-#119 seal audited under
+the R4b playbook.  Three reviewers launched →
+v14/review-r5-{operator,effectus,instrument}.md.  Orchestrator
+battery in background.
