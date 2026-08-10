@@ -1929,3 +1929,17 @@ panel/adjudication: the argument whitelist (exit 1 on
 unrecognized flags) + a real falsification selftest per the
 pin standard.  Γ-main is unaffected (it reads by committed
 sha; the plain runs were byte-identical).
+
+## 2026-08-09 — CR-D ADJUDICATOR VERIFICATION: BYTE-IDENTITY CLEAN, SWEEP PARTIAL (v14 LEDGER #67)
+CLI contract checked first (#238 honored; --selftest is the
+real falsification selftest).  Plain run exit 0,
+BYTE-IDENTICAL.  The independent sequential 90-mutant sweep
+was KILLED at exit 144 partway through (hours-long by
+construction: 90 × ~4-min runs); the observed mutants died
+correctly by name (instances-lax, admission-lax,
+families-lax...).  **Disclosure: the full independent sweep
+is DEFERRED to the panel's instrument reviewer** (standard
+panel practice reruns it); the delivered claim rests on the
+worker's own dual sweeps (4-way parallel 90/90 + the
+sequential record run).  CR-D stands
+GREEN-VERIFIED-UNREVIEWED with this qualifier; panel queued.
