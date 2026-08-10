@@ -3161,3 +3161,27 @@ UNREACHABILITY-STAMPED (R-MENU entered at 0/243,768); the d≤5
 265/462 row; the fifth block; the coarsening lemma; and the
 alternative-anchor lead (the renewal root at the class grain —
 paper-09's terminal first-return law).
+
+## 2026-08-10 — THE Γ-ITERATION PIN FROZEN, WORKER LAUNCHED (v14 LEDGER #109)
+
+Paper-16 assigned on the two terminal parents (Γ-main #104 §10
+register verbatim; Γ-prep #108).  Pin v14/note-giter-pin.md:
+CONG-185 re-derived in-unit with the six ruling properties
+gated; **targets PRE-REGISTERED FROM THE LAW (15/38, 5/19,
+13/38) at both legs**, the census a declared shadow, the
+step-normaliser re-proved on-carrier; holonomy at
+REPRODUCED-AND-LOCATED with agreement the adjudicated
+expectation (a deviation on CONG-185 = a first-class finding);
+**every quantum-shape claim carrier-stamped @MENU/@CONG** (the
+lumpability-vs-indivisibility open settled by measurement);
+**[B3] at (1,1)-block scope with the UNREACHABILITY STAMP —
+recurrence-based readings of the atom BARRED; the two anchor
+paths declared as the unit's measured question: (a) THE
+RENEWAL-ROOT CANDIDATE (paper-09's terminal first-return law;
+the class-grain return with the holdings ladder projected out —
+does it supply a genuine regeneration anchor for Γ?) or (b) THE
+SEDIMENTARY FRAME adopted honestly (accumulation, not
+return).**  Supply: d≤5 265/462; the fifth block; the
+coarsening lemma; the §10 unpinned rows resolved.  Full era
+standards at construction.  Worker launched (opus).  In flight
+(4): weld-2 repair, U4, R4b, Γ-iteration.
