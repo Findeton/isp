@@ -3734,3 +3734,29 @@ with interior radii as the genuine resolution parameter; the
 cancellation robustness-split; the first #119-native sealed
 instrument.  STATUS row written (same commit, §13).  The
 R4c-multi and R5-gauge pins now have their terminal parent rows.
+
+## 2026-08-10 — THE R5-GAUGE PIN FROZEN (paper-18), WORKER LAUNCHED (v14 LEDGER #129)
+
+Both parents terminal (R4 #103, R4b #128).  Pin
+v14/note-r5-gauge-pin.md: the opening datum stated first (the
+abelian stratum; a gauge rung on FULL is pre-committed to flat —
+R5 builds on the EXCLUDED sub-maximal stratum with FULL as the
+provably-flat negative control); the arena = link-indexed coins
+on the 32 links / 16 plaquettes of the L=4 torus, declared coin
+alphabet, brickwork parity strata; THE QUESTION = does the
+declaration-connection carry a NON-ABELIAN holonomy group, does
+it survive refinement, does its curvature couple to Δᴮ; G1–G7
+lifted verbatim-in-structure from the frozen R4-effectus
+recommendation (G1 the isomorphism-class measurement with the
+mandatory flat control; G2 the gate-inheritance audit with
+R5-BLOCKED-AT-THE-GATE first-class; G3 curvature⟺defect at
+matched coordinates, three outcomes; G4 the two-direction gauge
+self-test; G5 declaration segments; G6 refinement with the
+class as invariant and CR-D's ladder as comparator; G7 the
+scramble caveat); the must-nots lifted (no confinement language
+before G1; no matrix holonomy as physics; no
+curvature⟹quantum).  The R4b handoffs carried
+(NOT-BLOCH-DIAGONAL a theorem; no transport number).  Full era
+standards at construction incl. the seal from birth.  Worker
+launched (opus).  In flight (4): Γ-iteration, U4 repair, U4b,
+R5-gauge.
