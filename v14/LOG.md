@@ -2453,3 +2453,36 @@ CONSTRUCTION incl. the #82 CLI contract.  Outcomes pre-registered
 and carrier-stamped.  Construction worker launched (opus).  In
 flight now (6): Γ-main repair, R4 instrument, Γ-prep panel ×3,
 weld-2 construction.
+
+## 2026-08-10 — R4 INSTRUMENT FROZEN — THE PANEL COMPLETE 3× (v14 LEDGER #86)
+
+review-r4-instrument.md frozen (7fa287a04367; the reviewer's sole
+repo write, confirmed).  Grade AWF.  178 instrument executions; 77
+reviewer-designed injections — **34 SURVIVED undetected**; 329
+independent recomputations, zero disagreements; 82/82 declared
+mutants externally confirmed dead at their named gates;
+byte-identity ×3 incl. from a different repo root.  The surviving
+injections, ranked: F1 the verdict HEAD sits outside the
+complete-string equality gate (the reconstruction COPIES it — a
+full 77/77-gate, 82/82-mutant delivery run emitting
+R4-BLOCKED-AT-NOTHING exits 0); F2 the pin-mandatory realization
+gate verifies no individual classification (≥3-distinct-names
+predicate; a promoted generator moving five census numbers exits
+0); F3 the Y1 lesson binds 12 of 588 rows; F4 18 of 27 verdict
+values have no flip probe, D/L/FIELD typed literals in BOTH paths
+(the #82 twin), L typed downstream of its gate; F5 #208
+laundering PROVEN by clause removal (MUT-PRECHECK-NAMES dies on a
+mutant-only flag); F6 the #20 compliance claim false —
+verify-paper renders 13 strings for a 336-numeral paper, 12
+injected false numbers + 3 quotation inversions pass; F7 **the
+CLI disease, FOURTH instance** — --selftest silently ignored and
+the "selftest" WRITES both artifacts; F8 616-OF-1024 resolves to
+25 distinct non-local comparisons (value-multiset matching, not
+gauge-class).  ZERO false numbers in the delivered
+paper/output/receipt (all 154 class-table cells, the 27-cell
+order census, the 8-value defect table verified); both
+never-falsified waivers verified genuine; best on-target mutant
+discipline of the campaign; the RUNBOOK-changed-under-me
+disclosure handled correctly (independent convergence on the
+typed-literal finding, colleague reviews unopened).  Joint
+adjudication next.
