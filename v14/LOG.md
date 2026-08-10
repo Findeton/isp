@@ -2589,3 +2589,42 @@ d10's shadow map self-declared "declared, not derived" → the
 absence register).  ADDENDUM section appended to
 note-weld2-referent-scout.md.  Nothing changes for the paper-13
 census: its pin already covers all three bins.
+
+## 2026-08-10 — Γ-PREP OPERATOR FROZEN — THE PANEL COMPLETE 3× AWF (v14 LEDGER #90)
+
+review-gprep-operator.md frozen; grade AWF; **164 independent
+recomputations (553 machine-counted exact comparisons), ZERO false
+numbers; run 2 regenerated the committed output/receipt
+byte-identically in-tree** (the instrument's off-tree break is the
+HEAD-read, consistent).  The rebuild shared no data structure,
+traversal order, or derivation route with the unit.  **THE
+HEADLINE SURVIVES HOSTILE PROBING, strengthened three ways the
+unit never ran:** (a) no pinned fact unblocks the ladder — all six
+T5 abstractions are FINER than the primary grain, and the
+coarsening lemma (δ* monotone under coarsening — the effectus's
+lemma, derived independently) makes them strictly worse; (b) the
+obstruction coordinate used AS the grain does not unblock; (c) the
+monotone mechanism holds at 8× the delivered coverage — ALL
+243,768 transitions: 0 profile decreases, 0 holdings-shrinking.
+Five MAJORs: (1) the compliance sweep types 8/18 rows as literal
+True (independent convergence with the instrument) and the #46
+row is substantively violated; (2) the git-show-HEAD read — a
+git-less run emits "LEDGER #None", 44/44 PASS, exit 0 (the
+instrument's twin); (3) **A FIFTH HOLDINGS-PROFILE BLOCK (3,3) —
+424 points at depth 6 — never declared or tested; four universals
+false as written; the operator ran the missing measurements and
+the fifth rung CONFIRMS the ladder** (N=1 hits infimum 0;
+30,545/30,729 zeros); (4) the BLOCKED verdict omits the grain
+qualifier FOUND carries, and it bites — at Ψ = the R-SIG
+indicator, δ*=1 on the same widest windows (P¹(x,R-SIG)=3/4
+provably at every R-SIG point); (5) the theorem-pass census
+undercounts (B1-TREE and A4-PRED cannot return False; corrected
+38/5/1 — to be reconciled with the effectus's B3-MONOTONE in
+adjudication).  Eight MINORs incl. A1-KINDS "six"-vs-five (my
+pin's owned T1 error inherited by the label) and the registered
+#66 CLI disease.  **K3 RESOLVED: every value Γ-main consumes
+agrees with what this unit delivers; the R-GM-9 probe's true
+target is the flat key B2_best_delta = STRING "1".
+TIME-CRITICAL ADVISORY RELAYED to the in-flight Γ-main repair**
+(int-vs-string anchor mismatch; V-LADDER rebind after R-GM-13).
+Joint adjudication next.
