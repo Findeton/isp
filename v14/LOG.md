@@ -2101,3 +2101,19 @@ Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
 stands GREEN-VERIFIED-UNREVIEWED; panel queued (seventh in
 the queue).  The settlement evaluation (PARTIAL, the
 holonomy link) now rests on verified artifacts.
+
+## 2026-08-10 — R3 TERMINAL (v14 LEDGER #74)
+Adjudicator verification COMPLETE AND CLEAN: plain run exit 0
+BYTE-IDENTICAL; **the full independent selftest ran to
+completion — 124/124 mutants dead by their named gates, zero
+survivors, zero tracebacks** (no CR-D-style qualifier
+needed).  Paper stamped TERMINAL; STATUS row written (✓adj).
+**R3 / PAPER-03 IS TERMINAL #74 — v14's fifth terminal.**
+Final form: fixed-background covariance with GR's bracket
+form; the analytic structure theorem; the covariance theorem
+and 27-realisation census in-unit; the curvature-supported
+residue; FR1–FR11 as the successor requirements; the R4
+handoff.  Terminals: papers 01/02/03/04/09.  The construction
+program of v14 is COMPLETE — all remaining work is judgment
+(seven queued panels) and the user's two open calls (the
+between-carrier Γ iteration; R5 after R4's panel).

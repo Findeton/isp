@@ -1,7 +1,11 @@
 # R3 — THE RELATIVITY RUNG: the deformation algebra of the record layer
 
-**Status:** GREEN-REPAIRED, 2026-08-09.
-**Pin:** `v14/note-r3-relativity-pin.md` (v14 ledger #23, `a2ac89687a65`).
+**Status:** `TERMINAL` — panel #39/#40/#45 (3× ACCEPT-WITH-FIXES),
+adjudicated #46; repair R-R3-1…R-R3-10 delivered #71 and
+adjudicator-verified (plain-run byte-identical; the full independent
+selftest 124/124 mutants dead by named gates); v14 ledger #74,
+2026-08-10.  Pin: `v14/note-r3-relativity-pin.md`, sha256-12
+`a2ac89687a65`.**Pin:** `v14/note-r3-relativity-pin.md` (v14 ledger #23, `a2ac89687a65`).
 **Instrument:** `v14/code/r3_relativity_exact.py` → `_output.txt`, `_receipt.json`.
 **Base:** the R0 founding pin (row I7), the R2 joint adjudication's handoff
 ruling, and nothing else.
