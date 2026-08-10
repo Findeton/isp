@@ -2425,3 +2425,31 @@ v14/review-gprep-{operator,effectus,instrument}.md, scratch-only,
 read-only git.  In flight elsewhere: the Γ-main repair (R-GM-1..11)
 and the R4 instrument review.  Remaining queue: CR-A, CR-B, CR-C,
 CR-D panels.
+
+## 2026-08-10 — WELD 2 ORDERED: ROUTE A, THE CARRIER CENSUS — PIN FROZEN, WORKER LAUNCHED (v14 LEDGER #85)
+
+**The user's word (verbatim): "ok do route A."**  Paper-13
+assigned: the carrier census, BRG-shaped at the level BRG
+declined, posed to return EMPTY well.  Pin frozen at
+v14/note-weld2-census-pin.md: R1 both grammar carriers (MENU read
+at committed 822bb15; CONG-185 RE-DERIVED from the D74 artifacts
+with its six ruling properties gated before use — a mismatch is a
+finding, not a substitution) vs I7's declared arena; R2 the count
+semantics as the only motivated ingredient (division-event sets →
+link counts; ADDITIVITY-972-OF-972 reproduced; interior positions
+dead on arrival); R3 the candidate family DECLARED as data
+(site/link/count generator vocabulary from the #83 seed
+inventory; EMPTY scoped to the family; arity mismatches measured
+not skipped); R4 the RSQ choice inventory with the C1–C5 + BRG +
+GW1§2 + v12-Γ + 9↔9 dead list pre-registered; R5 two-way gates —
+THE CRYSTAL ARENA as the FOUND-side positive control (rebuilt
+from the committed D60/D66/D67 specs; detector aborts if it
+cannot find the lattice a record provably carries) and the D58
+2-actor walk as the EMPTY-side negative; R6 the sharpened
+no-smuggling gate (record↔metric invertible at I7 ⟹ test WHICH
+FUNCTION each candidate computes; SMUGGLED counted as its own
+species); R7 §15 arena-invariance + the full era standards AT
+CONSTRUCTION incl. the #82 CLI contract.  Outcomes pre-registered
+and carrier-stamped.  Construction worker launched (opus).  In
+flight now (6): Γ-main repair, R4 instrument, Γ-prep panel ×3,
+weld-2 construction.
