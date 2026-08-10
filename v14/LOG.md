@@ -2405,3 +2405,23 @@ is carrier-robust.  All load-bearing hashes re-verified against the
 tree (all match; the scout's paper-09 read 006f96aaa2ff is the
 correct terminal hash).  **The unit itself awaits the user's word
 (#80): Route A vs Route B.**  Zero repo writes by either agent.
+
+## 2026-08-10 — Γ-PREP HOSTILE PROTOCOL FROZEN, PANEL LAUNCHED (v14 LEDGER #84)
+
+The next queued panel drained: Γ-prep (paper-11, the transport
+foundation; artifacts 09482eb080cc / 9a4f0529b840 / 097c08a0229d /
+dd86ad1a80d7 at 0f5d57e).  Protocol frozen at
+v14/note-gprep-hostile-protocol.md: K1 the seven facts rebuilt; K2
+Arm B decisive (Birkhoff death + the δ*=1 exact atoms + is BLOCKED
+the honest head); K3 the feed-forward binding to Γ-main incl.
+resolving what R-GM-9's swallowed probe should have read; K4 scope
++ the carrier question (do the atoms survive CONG-185); K5 the CLI
+audit FIRST at the #82 contract minimum — this unit's silent
+flag-ignoring is the REGISTERED disease (#66 correction of
+record), and the panel carries the #34/#62/#82 standards
+throughout.  Three reviewers launched (operator, effectus,
+instrument), single-file writes to
+v14/review-gprep-{operator,effectus,instrument}.md, scratch-only,
+read-only git.  In flight elsewhere: the Γ-main repair (R-GM-1..11)
+and the R4 instrument review.  Remaining queue: CR-A, CR-B, CR-C,
+CR-D panels.
