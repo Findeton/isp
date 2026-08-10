@@ -3661,3 +3661,23 @@ diagonal-coset seed one point; the determinant column = the
 weld-arena scout; the affine null hypothesis; the fragility
 column; the law-side and diagonal-constructor siblings
 registered).  Repair worker dispatched; U4b pin next.
+
+## 2026-08-10 — THE U4B PIN FROZEN (paper-17), BOTH WORKERS LAUNCHED (v14 LEDGER #126)
+
+Pin v14/note-u4b-pin.md per the adjudication §4: the constructor
+as a variable — the declared family of grammar-admissible
+arbitration schedules at the committed CONFLICT-GRID(3,2)
+structure (admissibility from the d42b1 menus driven directly;
+the family size computed; windows declared never silent); per
+schedule: constructibility fate, the stabilizer at both readings
+(≥2 routes), THE DETERMINANT COLUMN (DET-NONZERO-EXISTS a
+first-class segment — the weld-arena scout), and fragility; THE
+AFFINE NULL (coset-union seeds are predicted-crystalline and
+carry no emergence information — the verdict stratifies over
+the coset-union/beyond-coset classification); outcomes
+U4B-CRYSTAL-SEEDED / U4B-CRYSTAL-GENERIC + DET segment; the
+four U4 walls inherited with the #125 whitespace-normalised
+prohibition; THE SEAL DISCIPLINED FROM BIRTH (#119).  The U4
+REPAIR worker (R-U4-1..10) and the U4B construction worker both
+launched (opus).  In flight (4): Γ-iteration (final battery),
+R4b repair, U4 repair, U4b construction.
