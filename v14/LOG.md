@@ -3358,3 +3358,35 @@ uniform-average scope); R5-gauge gets NOT-BLOCH-DIAGONAL as a
 THEOREM (index-two stabiliser); the L=8 question re-posed on
 interior radii.  Three of the four MAJORs STRENGTHEN the paper.
 Two seats pending.
+
+## 2026-08-10 — R4B OPERATOR FROZEN (2 OF 3) (v14 LEDGER #117)
+
+review-r4b-operator.md frozen.  Grade AWF; 92 recomputations; 0
+false numbers — every delivered number reproduced from scratch
+(different field basis (1,i,√2,i√2); two family sweeps; THREE
+diagonalization routes, two never computing a symbol — M⁸=I at
+58/58 and trace-vector inversion at 58/58); off-tree git-less
+byte-identity incl. under PYTHONHASHSEED=12345.  **MAJOR-1 = the
+effectus's twin, independently: the identity is BLIND to the
+difference stencil** — winding identical family-by-family under
+FORWARD and BACKWARD, so TWO of the nine readings reach 58/58;
+the identity selects the TIE (3→1); the stencil stays DECLARED
+(residual fiber 2); G-DRIFT-WINDING-IDENTITY's claim broader
+than its predicate.  **MAJOR-2 (new): "cancellation" is
+READING-RELATIVE and the split unreported** — only 24/42 have
+zero drift under all three tie readings (18 only under the
+averaged one); 30/42 zero winding; for the remainder the zero IS
+the rival "resolution" reading.  **MAJOR-3 (new, a
+strengthening): the 58-vs-14 row compares per-family with
+per-class** — the reduced dispersion is constant on only 4/19
+classes; the like-for-like statement computed: the MULTISET of
+member dispersions separates 19/19 circulant classes vs 14
+labels for 22.  MINORs: the cone leg FORCED (only attainment
+measured); speed-2⟺aliased definitional; the Kronecker
+integrality step omitted but VERIFIED TRUE by the reviewer (928
+algebraic integers — the result stands); the drift-table
+"only under it" ungated but VERIFIED TRUE; a 67/67-vs-66-rows
+counting defect; 2 of the head law's 3 outcomes exercised.
+Both K2 halves verified character-for-character against the
+frozen effectus file.  One seat pending (instrument) →
+adjudication.
