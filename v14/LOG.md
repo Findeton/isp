@@ -3044,3 +3044,21 @@ commutator segment (0-OF-3364-IN-THE-VERDICT-STRATUM), and
 INDIVISIBILITY=DECLARED in SCOPE.  STATUS.md row written (same
 commit, §13).  Successor handoffs now live: R4b-momentum and
 R5-gauge pins on this terminal.
+
+## 2026-08-10 — Γ-MAIN / PAPER-12 TERMINAL (v14 LEDGER #104)
+
+Battery 4/4: plain BYTE-IDENTICAL; unknown flag exit 2;
+--selftest exit 1 + WROTE NOTHING; MUT-EQ22-SIGN kill-confirmed
+(exit 0 per this unit's convention, files written 0).  The
+comparator confirmed a PARSER in source (verdict_audit re-parses
+the serialised record, locates head and every segment — no
+shared construction).  **Γ-MAIN IS TERMINAL — the seventh
+terminal (papers 01/02/03/04/09/10/12).**  Head
+GMAIN-CONSTRUCTED, SETTLEMENT=PARTIAL-FAILED-LINK-TARGETS; the
+law value (15/38, 5/19, 13/38) at the proved step-normaliser at
+both legs; the census a DECLARED SHADOW; the next-iteration
+register carries CONG-185 with the rebuild recipe and the
+(1,1)-block inheritance.  STATUS row written (same commit,
+§13).  The Γ-iteration pin now has both parents (this terminal
++ the Γ-prep adjudication); it freezes when the Γ-prep repair
+lands.  THE U4 AND R4B PINS UNBLOCK NOW — frozen next.
