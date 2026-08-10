@@ -1885,3 +1885,19 @@ reads via that sha; `git show HEAD:` and worktree bytes are
 mutable state (the #46 class); only committed objects may be
 disclosed. The path-value stability gate across declared
 shas is the adopted core.
+
+**§14 addendum (2026-08-10, from v14 #82 — the CLI-contract
+minimum):** every unit ships an argv-parsed CLI that rejects
+unknown flags (exit 2), a `--selftest` that corrupts one
+anchor, confirms exit 1, and writes nothing, and a
+`--mutant NAME` harness; a runner with no input channels or
+with silent flag-ignoring is undeliverable (third recurrence:
+Γ-prep, R6b′-partial, Γ-main — and twice the adjudicator's
+verification was made vacuous by it).
+
+**§14 amendment (2026-08-10, from v14 #82 — comparator
+independence, strengthened):** a verdict comparator shares
+NOTHING with its builder — neither code, nor inputs, nor
+typed literals; "the same concatenation written twice" and
+"the same literal in both paths" are the measured failure
+modes (Γ-main's G-VERDICT-EQUALITY; R4's MAJOR-6).

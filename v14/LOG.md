@@ -2347,3 +2347,30 @@ instrument claims in the paper + one in the output (0 false
 NUMBERS in 69 traced).  Both theorem-pass waivers genuine;
 all four settlement conjuncts flippable.  **THE Γ-MAIN PANEL
 IS COMPLETE: 3× AWF.**  Adjudication next.
+
+## 2026-08-10 — Γ-MAIN JOINT ADJUDICATION (v14 LEDGER #82)
+note-gmain-adjudication.md (`972e54741330`) committed.  Grade AWF
+unanimous.  **THE CORRECTED SETTLEMENT (three-review
+convergent): constructed TRUE · targets FALSE (census
+statistics at birth; the test Γ-free and off-carrier; the
+count readout breaks the negative control) · holonomy TRUE
+under REPRODUCED-AND-LOCATED (my ill-posed gate owned) ·
+motivation TRUE-but-fiber-≥3.  SETTLEMENT: PARTIAL — FAILED
+LINK = TARGETS.**  THE CARRIER RULING: **CONG-185 supersedes
+MENU+G** (descent + all 44 squares + k-holonomy collapsing to
+⟨2,3⟩ + exact lumpability; the operator's descent⟹r_k=r_q
+theorem); the lumpability/indivisibility question
+CARRIER-STAMPED as a first-class open.  Eleven repair orders
+R-GM-1..11 (the recomposed verdict; the target section
+rebuilt law-side; the well-posed holonomy gate; A REAL CLI;
+the no-shared-literals comparator; the four injections
+killed; the coverage ledger at 15/88-honest → rebuilt; INJ12
+closed — the instrument must be able to emit SETTLED; the
+unresolved probe aborts; the false instrument claims; the
+next-iteration register).  **TWO RUNBOOK ENGRAVINGS: the
+CLI-contract minimum (third recurrence — twice vacuating MY
+verification); comparator-independence STRENGTHENED (no
+shared typed literals).**  The duplicate reviewer
+confirmation received (identical results; hashes stable).
+Repair worker next; the R4 adjudication awaits its
+instrument review.
