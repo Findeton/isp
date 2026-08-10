@@ -2175,3 +2175,48 @@ Instrument findings: T2-HOLONOMY cannot fail + its control
 claim FALSE (REC returns DEVIATE); string-literal segments;
 spliced quotations; F8's causal premise ungated.  Two Γ-main
 reviewers + three R4 reviewers pending.
+
+## 2026-08-10 — R4 REVIEW: EFFECTUS FROZEN (v14 LEDGER #77)
+review-r4-effectus.md frozen as delivered.  Grade AWF; 62
+quantities reproduced 0 discrepancies (~2.4e7 exact-field
+ops); ONE NEW THEOREM SUPPLIED: **the Moore-ball collapse
+(L≥5 ⟹ every radius-1-ball unitary is MONOMIAL, any field —
+proved via column cross-correlation vanishing; confirmed by
+a 23,465,025-node sweep)** — closing the paper's largest
+declared scope hole.  **BUT THE HEADLINE OVER-READS TWICE:
+(i) SCALE IS CONNECTIVE-RELATIVE — under the second declared
+connective the admissible set is {2,4}, uniqueness dies
+(F1 MAJOR; the inventory calls the connective free while a
+gate forces it — §15); (ii) the HOUSEHOLDER CIRCULANT
+(δ−2/L²) is unitary, non-monomial, covariant and
+defect-carrying at EVERY L (F3 MAJOR)** — the honest
+headline: LOCAL SUPERPOSITION (the axis-stencil class) has a
+unique admissible scale; not quantum-at-one-scale.  **MOTION
+IS NOT FORBIDDEN: a non-monomial drift-(−1/2) generator
+constructed at L=4; and 57/58 circulants have NON-CONSTANT
+EIGENPHASE — A DISPERSION THE UNIT NEVER REPORTS** (the
+R4b-momentum prediction confirmed early: momentum was
+unread, not absent).  THE CENSUS: honest as a CONJUGACY
+CENSUS OF LAWS, not an excitation-type table (generators ≠
+states; 22 classes carry 14 labels; translation-triviality
+BY IDENTITY — forced, #208).  **F6 MAJOR: THE VERDICT
+STRATUM IS ABELIAN (0-of-3,364 non-commuting pairs) — the
+only non-commutativity on the stage is the 4 brickwork
+generators THE MANDATORY GATE EXCLUDES** (the gate ruled
+bookkeeping: 114/150 exclusions are the scrambled control;
+its real effect = selecting the commuting sub-family).
+F5 MAJOR: "indivisible" DECLARED never measured — against
+the seed's own engraving (Δᴮ≠0 ⇏ indivisibility); no
+divisor search exists.  F4: the state-motion BACKGROUND half
+is an identity (64/64 — cannot fail; #208).  **THE R5
+RECOMMENDATION COMPLETE: pose gauge on the EXCLUDED
+sub-maximal stratum promoted to first class — link-indexed
+coins on the 32 links/16 plaquettes of the L=4 torus; R4's
+FULL stratum = the provably-flat abelian negative control;
+gates G1–G7** (non-abelian non-vacuity; the gate-inheritance
+audit w/ R5-BLOCKED-AT-THE-GATE first-class; curvature⟺
+defect at matched coordinates w/ DEFECT-WITHOUT-CURVATURE
+as R4's baseline; the two-directional gauge self-test;
+declaration segments; refinement L=4→L=8 vs CR-D's ladder;
+the Γ-main scramble caveat pinned).  Four reviewers pending
+(2 Γ-main, 2 R4).
