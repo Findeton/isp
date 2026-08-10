@@ -2746,3 +2746,24 @@ source and self-describing; the instrument reviewer audits all
 2; selftest clean + writes nothing; mutant kill-confirmed +
 writes nothing.  The #238/#82 discipline held (handler read in
 source first).  Panel in flight.
+
+## 2026-08-10 — THE ROUTE-A SUCCESSOR SCOUT LAUNCHED (v14 LEDGER #95)
+
+Read-only reconnaissance for the two census-named Route-A
+successors, so their pins can be written the moment the weld-2
+adjudication lands: (a) THE ≥9-ACTOR CARRIER — what the corpus
+pins about multi-actor history spaces (d42b1 parameterization;
+the crystals' menus vs their forced records; channel
+generalization from (A,B) to (Ai,Aj); compute scale from pinned
+counts; THE KILL-RISK: are multi-actor extension graphs provably
+acyclic at every actor count, which would close the successor);
+(b) U4 — the §7 spec verbatim; the crystal constructor routes
+(the weld-2 worker's DOUBLE-GRID(3,2) rebuild located); the
+renewal/division marking on crystal records
+(ARBITRATION-TAG-FORCED per the weld-2 ingredient row); a
+PRELIMINARY look at whether the division events of one crystal
+form a periodic sublattice; what "renewal-only rebuild" must
+declare; (c) hazards — the dead list, the scissors quantifier,
+the diagonal question, the four binding engravings.
+Construction pins remain gated on the weld-2 adjudication per
+the candidate-readings discipline.
