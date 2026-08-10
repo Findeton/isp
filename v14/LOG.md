@@ -2094,3 +2094,10 @@ measured into view: MENU has the holonomy but not the
 descent; REC has the descent but no holonomy — the proper
 carrier lives between them.**  Adjudicator verification
 next; panel to follow.
+
+## 2026-08-09 — Γ-MAIN ADJUDICATOR VERIFICATION CLEAN (v14 LEDGER #73)
+Independent plain run exit 0, BYTE-IDENTICAL; selftest exit 0
+(--selftest verified real in-code before invocation).  Γ-main
+stands GREEN-VERIFIED-UNREVIEWED; panel queued (seventh in
+the queue).  The settlement evaluation (PARTIAL, the
+holonomy link) now rests on verified artifacts.
