@@ -1943,3 +1943,42 @@ panel practice reruns it); the delivered claim rests on the
 worker's own dual sweeps (4-way parallel 90/90 + the
 sequential record run).  CR-D stands
 GREEN-VERIFIED-UNREVIEWED with this qualifier; panel queued.
+
+## 2026-08-09 — R6b′ REPAIR DELIVERED, COMMITTED AS-IS (v14 LEDGER #68)
+Repair delivered; ALL NINE ORDERS R-R6BP-1..9 executed.
+Hashes: paper fb451f2fef5f, code b1562bce5a5f, output
+bdbc00fdde80, receipt 9c8f8af07050.  **THE WELD MEASURED AND
+GATED (G-WELD-S1-REPRODUCES-S2): under the source convention
+the S1-alone positional law at n=4 is (1/3,1/3,1/3) and
+reproduces S2's no-delivery census at BOTH cells exactly —
+the three chain configurations bijecting slot-for-slot with
+the three retained patterns; THE SELF-LOOP FILLER IS THE
+IDLE.**  The corrected kernel: return 1/4, defect 3/4,
+renewals 4/3, holes {1,2} cost 79/201 — three independent
+routes; the bare-state-0 reading disclosed (reproduces
+NOTHING).  THE ALL-n LAW: C(n−1,2) gated n=3..12; position
+marginal uniform on n−1 at every n≥4; count-3 a LAW;
+**coverage 102/201 all-intervals / 83-of-103 honest**;
+I-FILLER-REDUCTION added.  Heads recomposed:
+R6BP-SEAM-AVOIDABLE-AT-DELIVERY-FREE-SCOPE (cause = THE
+ESCAPE quoted at committed sha; paper-32 added as row S7
+escape-statement-only, the 36-state prohibition gated);
+the no-delivery-CONDITIONAL naming throughout (masses 3/7
+vs 1/3 gated different).  F1 corrected: front values
+FORCED-RELATIVE-TO-(SPLIT AND ORIENTATION), FIBER 2,
+separated 63/63.  F8 + both Γ-main targets pre-registered
+(slot 2 admits only {n}; multiplicity ((1+m),1,(1+m))/(2m+3)).
+**THE INSTRUMENT TRANSFORMED: waiver census 46-flawed-rows →
+71 rows, 100% coverage, 0 unwaived, 0 false declarations, 0
+literal predicates, no waiver branch — status entered ONLY
+where a mutant is OBSERVED to kill; gates 48→71; mutants
+31→76 (all named-kills); anchors 75→83 (23 PAPER-quotation
+rows w/ enforced consumer predicates; the short-circuit
+PROVED by measurement); ALL TEN 2026-08-09 engravings MET
+with measured killers incl. both #62.**  Provenance by three
+declared commit shas (29/29 path-values stable across the
+R6a delivered→terminal pair; worktree reads 0; re-runnable
+today exit 0).  DECISIVE= recomputed not typed.  Two
+judgement calls flagged (the standing-sentinel scope; S7's
+narrow consumption) — accepted at adjudicator review.
+Verification next (~8 min selftest); on green R6b′ TERMINAL.
