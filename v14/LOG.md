@@ -4320,3 +4320,25 @@ seeds, TZ/locale varied); all 21 seal digests reproduced; 24/24
 mutants named-gate; --verify-paper LIVE (R4b's MAJOR-4 fixed);
 the ladder recomputed 6/6 by brute-force closure + 16!/2 and
 64!/2.  Joint adjudication next.
+
+## 2026-08-10 — R5 JOINT ADJUDICATION (v14 LEDGER #148)
+
+Three AWF; ~788 seat recomputations; zero false measured
+numbers; two paper transcription errors (the register's 7th/8th,
+prose species).  Grade ACCEPT-WITH-FIXES.  **R5-NON-ABELIAN
+STANDS, recomposed six ways**: on-each-of-its-ORBITS; the CR-D
+family claim DROPPED as numerological (the PROFILE is the
+physical content — the 12/12 separator); LOCAL-STABLE →
+FORCED-BY-NON-WRAPPING; **THE SUPPORT-OVERLAP LAW** replaces
+the exclusion over-claim (same-link 46.4%-both carried;
+defect⊂infinite-order strict); **the gate honesty in the head
+(NO EFFECTIVE REALIZATION GATE — inherited empty, replacement a
+forced identity)**; **the line at the word FIELD** (a
+connection; no measure/action/dynamics ⟹ not QCD).  Instrument
+orders: the verdict block rendered+gated; the comparator
+re-derives all segments; the must-nots paper-effective; #34
+reachability; **the seal manifest TOTALIZED**.  Nine repair
+orders R-R5-1..9; the confinement follow-on REQUIRES A
+CONFIGURATION MEASURE FIRST (its pin's opening obligation).
+**ONE ENGRAVING: the seal manifest is total (#119 addendum).**
+Repair worker dispatched.
