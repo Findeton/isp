@@ -1867,3 +1867,21 @@ the unit's own frozen declaration; reading mutable repo state
 a verdict segment depending on an unanchored read is an
 ungated verdict (the R3 M1 class: one appended ledger
 sentence flipped a verdict at exit 0).
+
+**§14 amendment (2026-08-09, from v14 #62 — verbatim-text
+anchors, corrected spec; supersedes the #34 wording):** the
+anchor kind binds QUOTE FIDELITY — the paper's quotations
+against the source's committed bytes; every consumer gate
+must exist, be non-literal, and be falsified by a declared
+mutant; anchor evaluation genuinely short-circuits before
+byte anchors. An anchor whose consumer is an unread label
+binds existence, not meaning (the R6b′ audit: the T1
+meaning-inversion survived the #34 form as implemented).
+
+**§14 addendum (2026-08-09, from v14 #62 — provenance by
+committed sha):** a unit reading another unit's artifacts
+declares the source COMMIT SHA in its own frozen text and
+reads via that sha; `git show HEAD:` and worktree bytes are
+mutable state (the #46 class); only committed objects may be
+disclosed. The path-value stability gate across declared
+shas is the adopted core.

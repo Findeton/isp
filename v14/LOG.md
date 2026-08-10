@@ -1797,3 +1797,36 @@ module-global render)**; two self-caught false paper
 sentences corrected pre-delivery.  Both #34 engravings
 applied though post-pin (repair-propagation honored).
 Adjudicator verification next; panel queued.
+
+## 2026-08-09 — R6b′ REVIEW: INSTRUMENT FROZEN + JOINT ADJUDICATION (v14 LEDGER #62)
+review-r6bp-instrument.md frozen (AWF; 133 executions + 205
+recomputations; ZERO false numbers — the kernel re-derived
+ANALYTICALLY incl. mass 13/16 and mean 21/16).  **FIVE
+surviving injection classes headlined by THE T1
+MEANING-INVERSION STILL SURVIVING — all three #34
+verbatim-anchor modifications were implemented INERT**
+(consumer bindings unread labels: 7 literal-True, 12
+never-falsified; windows under-sized; order without
+short-circuit).  WAIVER CENSUS FAILS #34 (21/46 false
+reaches-it claims; 18 unfalsified gates incl. the one
+carrying TERMINATES-A-S; 6 literal-True must-pass; dead
+branch).  TWO MAJOR RECURRENCES: the #46 class (a must-pass
+gate reading another unit's UNCOMMITTED working file; no #46
+compliance row; "seven" engravings vs the RUNBOOK's eight)
+and the existence-binding anchor.  **THE PROVENANCE PATTERN:
+stability core adopted, addressing broken — git show HEAD: is
+mutable (the unit EXITS 2 TODAY against R6a's terminal
+receipt; the disclosed worktree blob unrecoverable).**
+PANEL COMPLETE: 3× AWF.  note-r6bp-adjudication.md
+(`f6c11163c77d`) committed — nine binding orders R-R6BP-1..9:
+the SOURCE renewal convention (w/ the weld it reveals: S1
+reproduces S2 delivery-free); the ALL-n positional law
+(coverage on honest denominators); the seam re-graded (cause
+= THE ESCAPE; single-scope availability); F1 stricken; F8's
+mechanism + the two Γ-main position-law targets
+pre-registered; the anchor implementation made real; the
+waiver rebuild; the #46 elimination + sha-addressed
+provenance (re-runnable today); the Γ-main input register.
+**TWO RUNBOOK ENGRAVINGS: the verbatim-anchor CORRECTED SPEC
+(supersedes #34's wording) + provenance-by-committed-sha.**
+Repair worker next.
