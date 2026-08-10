@@ -3560,3 +3560,43 @@ explicitly (an improvement), but the accusation fails.  Eight
 MINORs incl. the control's trivial stabilizer being forced
 arithmetic (support 1) and a scout-attribution fix.  Two seats
 pending.
+
+## 2026-08-10 — U4 INSTRUMENT FROZEN (2 OF 3) (v14 LEDGER #123)
+
+review-u4-instrument.md frozen (96ac6ff9a264).  Grade AWF; 49
+executions, 350 recomputations, 0 false computed numbers; 17
+injections — 8 caught, 9 survived.  **MAJOR-1: THE L-1 WALL GATE
+IS DEFEATED BY LINE WRAPPING** — G-WALL-L1 scans for a contiguous
+96-char substring while the paper hard-wraps at ~72; the banned
+sentence inserted WRAPPED passes 147/147 exit 0 (contiguous
+fails); the BANNED literal typed with no #62 anchor; the
+canonical short fragment ("precisely the form U4 tests") missed;
+repair: whitespace-normalise needle+haystack, add the fragment,
+anchor the needle.  **MAJOR-2: no mutant reaches the VARIES
+path** — widths_ok is a SECOND FRESH recomputation over the
+unmutated population (bypassing the mutation, quantifying only
+over ARB); the plain run already ships varies_witness non-empty
+beside verdict INVARIANT with nothing binding them; §13's bullet
+false as measured; pin R4.2's demonstration obligation
+undischarged at segment level.  **MAJOR-3 — THE SEAM RULING: the
+gate-to-disk disease RECURS, NARROWER than R4b's** —
+write_and_verify compares disk against LIVE MEMORY, not a
+gate-time seal; six corruption classes ship with gates_failed=0
+(incl. the control's row under a crystal label and a false
+G-BRIDGE-DIAG row published PASSED) — **but the VERDICT layer
+holds** (head/verdict/table flips all caught, because
+G-VERIFY-PAPER-CLAIMS binds to the paper-on-disk and the
+head-equality gate binds the table): "the seal is accidental,
+not disciplined — exactly the pattern #119 generalises."
+MINORs incl. MUT-SITEMAP's false registry entry (the same class
+as the fixed MUT-NOT-FORCED, unswept), coverage 29/147 with 25
+gates that cannot fail, a 92-char #62 quote truncated to "R"
+shipping 14/14, and three comparator-independence overclaims
+(shared subgroup_name/regs_of).  HOLDS at the reviewer's own
+hands: #91 both legs (git-less byte-identical; off-tree loud
+failure); #82 16/16 argv; 12/12 mutants; the MUT-NOT-FORCED fix
+independently confirmed; 42/42 anchors (41 traced verbatim to
+their v10 lines); **all ten stabilizer cells re-derived by a
+THIRD route (subgroup-lattice coset-constancy) and the head by a
+fourth**; 267 three-way cells zero mismatches.  One seat pending
+(operator) → adjudication.
