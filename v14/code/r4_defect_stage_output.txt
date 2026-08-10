@@ -1,0 +1,171 @@
+==============================================================================
+v14 R4 -- THE QFT RUNG: THE DEFECT ON THE STAGE
+==============================================================================
+[1/12] field, stage, locality
+[2/12] the coefficient sweep and the order census
+[3/12] the generator pool
+[4/12] the realization census
+[5/12] the defect census over 4096 ordered pairs
+[6/12] the Markovian control and the defect algebra
+[7/12] locality dependence and the two-point structure
+[8/12] the transformation-type class census
+[9/12] the realization gate and the state-motion check
+[10/12] the verdict
+[11/12] receipt gates, mutants, compliance
+[12/12] running 82 declared mutants
+    mutants: 82 declared, 82 killed, 82 killed by their declared target
+
+------------------------------------------------------------------------------
+ARENA (declared as data)
+  boundary         the finite periodic site lattice X = (Z_L)^d with d anchored at 2 and L measured (section 3); the configuration carrier is the single-occupation sector, one occupied site per configuration, so |C| = |X| = L^d
+  family           spatially structured indivisible families: unitary generators whose nonzero entries connect only configurations differing by a declared offset, built from a declared coefficient alphabet
+  law              Barandes' identity Gamma = |Theta| entrywise-squared, with Theta a unitary representative; the intermediate leg at a non-division cut is declared to be B(V) (the Born declaration)
+  state            the standalone distribution p over configurations; 18 declared prepared states (16 point masses, uniform, one wedge)
+  arena            the anchored chart group (translations and direction relabellings) and this unit's declared extension by the square point group; both censused
+  division_events  t = 0 and t = 2 are division events; the cut at t = 1 is NOT a division event, and Delta^B measures the failure of the law of total probability across it
+
+ANCHORS
+  verbatim   VB-WITNESS-2X2     -> G-DEFECT-DEFINITION                present
+  verbatim   VB-DEFECT-DEF      -> G-DEFECT-DEFINITION-SHAPE          present
+  verbatim   VB-CLOSED-FORM     -> G-DEFECT-CLOSED-FORM               present
+  verbatim   VB-GAUGE-II        -> G-GAUGE-SELFTEST                   present
+  verbatim   VB-ANNIHILATOR     -> G-MARKOV-ZERO                      present
+  verbatim   VB-DIVISION-EVENT  -> G-DIVISION-EVENTS-DECLARED         present
+  verbatim   VB-COHERENCE       -> G-COHERENCE-LAW                    present
+  verbatim   VB-FIELD-CANON     -> G-FIELD-CANONICAL                  present
+  verbatim   VB-PIN-VERDICTS    -> G-VERDICT-PREREGISTERED            present
+  bytes      A-SEED-PAPER1      v12/paper1-composition-defect.md 81bdab5673fb
+  bytes      A-SEED-EXACT       v12/paper1_code/exact.py 8e90f6435922
+  bytes      A-STAGE-I7         v13/code/ha_successor_receipt.json 542b8735daf0
+  bytes      A-LOCALITY-R2      v14/code/r2_manifold_receipt.json 08b2140f46ae
+  bytes      A-PIN-R4           v14/note-r4-qft-pin.md 1582cea5df51
+  path-value PV-I7-D            A-STAGE-I7/declarations/d = 2
+  path-value PV-I7-LINKS        A-STAGE-I7/declarations/links_d2 = [[1, 0], [0, 1], [1, 1]]
+  path-value PV-I7-L            A-STAGE-I7/declarations/L = 3
+  path-value PV-I7-ARITH        A-STAGE-I7/arithmetic = "fractions.Fraction / integers / exact F_p; 
+  path-value PV-I7-CHART        A-STAGE-I7/declarations/chart_group = "the |X| chart translations and the d! direc
+  path-value PV-R2-CRIT         A-LOCALITY-R2/locality_census/criterion = "locality exists at a rule iff SOME connecte
+  path-value PV-R2-COUNT        A-LOCALITY-R2/locality_census/count_locality_B = 14
+  path-value PV-R2-HEAD         A-LOCALITY-R2/verdict/head = "R2-LOCALITY-DECLARABLE-AT"
+  path-value PV-R2-WIDTH        A-LOCALITY-R2/width_law/rules_predicted_correctly = 109
+  path-value PV-R2-GATES        A-LOCALITY-R2/totals/gates = 69
+
+THE STAGE: locality by the ported criterion (Moore connective, d=2)
+  L=2 offsets= 3 neighbours= 3 complete=True  locality=False
+  L=3 offsets= 8 neighbours= 8 complete=True  locality=False
+  L=4 offsets=15 neighbours= 8 complete=False locality=True
+  L=5 offsets=24 neighbours= 8 complete=False locality=True
+  L=6 offsets=35 neighbours= 8 complete=False locality=True
+  L=7 offsets=48 neighbours= 8 complete=False locality=True
+  L=8 offsets=63 neighbours= 8 complete=False locality=True
+  L=9 offsets=80 neighbours= 8 complete=False locality=True
+  parity witness: {'moore_threshold_d2': 4, 'von_neumann_threshold_d2': 2, 'delta': -2}
+
+THE FAMILY: unitary generators on the 3-term axis stencil, by ord(a)
+  ord=1 distinct=   8 monomial=  8 non-monomial=  0
+  ord=2 distinct=  32 monomial= 16 non-monomial= 16
+  ord=3 distinct=  24 monomial= 24 non-monomial=  0
+  ord=4 distinct=  72 monomial= 24 non-monomial= 48
+  ord=5 distinct=  24 monomial= 24 non-monomial=  0
+  ord=6 distinct=  24 monomial= 24 non-monomial=  0
+  ord=7 distinct=  24 monomial= 24 non-monomial=  0
+  ord=8 distinct=  24 monomial= 24 non-monomial=  0
+  ord=9 distinct=  24 monomial= 24 non-monomial=  0
+  five-point extension at L=5: non-monomial=0
+  admissible lattice sizes (locality AND non-monomial local axis): [4]
+
+THE POOL: {'total': 64, 'circulant': 58, 'brickwork': 4, 'scrambled': 2, 'axes': 9, 'local_axes': 4, 'nonlocal_axes': 5}
+  transport levels: {'NONE': 1, 'OCC': 5, 'OCC+AXIS': 0, 'FULL': 58}
+
+THE DEFECT CENSUS
+  ordered pairs                       4096
+  pairs at maximal transport (FULL)   3364
+  nonzero at maximal transport        588
+  nonzero excluded below maximal      150
+  distinct exact values               8
+  Markovian pairs / nonzero           1792 / 0
+  local pairs / nonzero               576 / 216
+  non-local pairs / nonzero           1188 / 372
+
+  the distinct exact defect values at maximal transport:
+    (+1)/2 x108, (+1)/4 x336, (+1)/8 x144, (+5)/8 x24, (-1)/2 x108, (-1)/4 x336, (-1)/8 x192, (-3)/8 x24
+
+  the value census (first rows, exact):
+    C000 o C000 : s=(0, 0) -> (-3)/8 = -3/8; s=(0, 1) -> (+1)/4 = 1/4; s=(0, 2) -> (-1)/8 = -1/8; s=(0, 3) -> (+1)/4 = 1/4
+    C000 o C001 : s=(0, 0) -> (-1)/8 = -1/8; s=(0, 2) -> (+1)/8 = 1/8
+    C000 o C002 : s=(0, 0) -> (-1)/8 = -1/8; s=(0, 2) -> (+1)/8 = 1/8
+    C000 o C003 : s=(0, 0) -> (+5)/8 = 5/8; s=(0, 1) -> (-1)/4 = -1/4; s=(0, 2) -> (-1)/8 = -1/8; s=(0, 3) -> (-1)/4 = -1/4
+    C000 o C005 : s=(0, 0) -> (+1)/4 = 1/4; s=(0, 2) -> (-1)/4 = -1/4
+    C000 o C006 : s=(0, 0) -> (-1)/4 = -1/4; s=(0, 2) -> (+1)/4 = 1/4
+
+TWO-POINT STRUCTURE
+  equal-time connected correlator: C0(0)=15/256  C0(s!=0)=-1/256
+  composed-time table splits exactly into restarted + defect
+  separations carrying a defect: 16; max defect radius 2
+  generator orders present: [1, 2, 4]
+    C000 radius by step [1, 1, 1, 0]
+    C001 radius by step [1, 1, 1, 0]
+    C002 radius by step [1, 1, 1, 0]
+    C003 radius by step [1, 1, 1, 0]
+
+TRANSFORMATION-TYPE CLASSES
+  extended group order 128 -> 22 classes; anchored chart group order 32 -> 38 classes
+    class C000  size=4   kind=CIRC  supp=3    radius=1 ord(axis)=4    level=FULL     order=4
+    class C001  size=4   kind=CIRC  supp=3    radius=1 ord(axis)=4    level=FULL     order=4
+    class C004  size=1   kind=CIRC  supp=1    radius=0 ord(axis)=4    level=FULL     order=1
+    class C005  size=4   kind=CIRC  supp=2    radius=1 ord(axis)=4    level=FULL     order=2
+    class C007  size=4   kind=CIRC  supp=1    radius=1 ord(axis)=4    level=FULL     order=4
+    class C009  size=2   kind=CIRC  supp=2    radius=2 ord(axis)=2    level=FULL     order=4
+    class C010  size=2   kind=CIRC  supp=2    radius=2 ord(axis)=2    level=FULL     order=4
+    class C011  size=2   kind=CIRC  supp=1    radius=2 ord(axis)=2    level=FULL     order=2
+    class C020  size=4   kind=CIRC  supp=3    radius=1 ord(axis)=4    level=FULL     order=4
+    class C021  size=4   kind=CIRC  supp=3    radius=1 ord(axis)=4    level=FULL     order=4
+    class C024  size=4   kind=CIRC  supp=2    radius=1 ord(axis)=4    level=FULL     order=2
+    class C026  size=4   kind=CIRC  supp=1    radius=1 ord(axis)=4    level=FULL     order=4
+    class C028  size=4   kind=CIRC  supp=3    radius=2 ord(axis)=4    level=FULL     order=4
+    class C029  size=4   kind=CIRC  supp=3    radius=2 ord(axis)=4    level=FULL     order=4
+    class C032  size=4   kind=CIRC  supp=2    radius=2 ord(axis)=4    level=FULL     order=2
+    class C034  size=4   kind=CIRC  supp=1    radius=2 ord(axis)=4    level=FULL     order=4
+    class C055  size=1   kind=CIRC  supp=2    radius=2 ord(axis)=2    level=FULL     order=4
+    class C056  size=1   kind=CIRC  supp=2    radius=2 ord(axis)=2    level=FULL     order=4
+    class C057  size=1   kind=CIRC  supp=1    radius=2 ord(axis)=2    level=FULL     order=2
+    class B058  size=4   kind=BRICK supp=None radius=1 ord(axis)=4    level=OCC      order=None
+    class S062  size=1   kind=SCRAM supp=None radius=2 ord(axis)=None level=NONE     order=None
+    class S063  size=1   kind=SCRAM supp=None radius=2 ord(axis)=None level=OCC      order=None
+
+REALIZATION CENSUS (the mandatory gate)
+  NONE      1 generators
+  OCC       5 generators
+  OCC+AXIS  0 generators
+  FULL      58 generators
+  maximal declared transport: FULL
+  defects entering the verdict: only at FULL
+
+STATE MOTION
+  {'states_declared': 18, 'probe_pair': ['C000', 'C001'], 'distinct_responses': 18, 'coefficient_reconstructed_exactly': True, 'verdict_label': 'BACKGROUND-COEFFICIENT-OBSERVABLE-MOVES'}
+
+THE VERDICT
+
+  R4-DEFECT-PRESENT<DEFECT=588-OF-3364-PAIRS-AT-MAXIMAL-TRANSPORT-FULL;VALUE
+  S=8-DISTINCT;ALL-RATIONAL-ROWS=588|TWO-POINT=SEPARATIONS=16;MAX-DEFECT-RAD
+  IUS=2;LIGHTCONE=ONE-NEIGHBOURHOOD-PER-STEP;PERIODS=1+2+4;EQUAL-TIME=15/256
+  |CLASSES=EXTENDED=22;ANCHORED=38;SIZES=1+2+4|LOCALITY=LOCAL=216-OF-576;NON
+  LOCAL=372-OF-1188;DEFECT-INDIFFERENT-AT-MATCHED-COORDINATES=616-OF-1024|MA
+  RKOV=0-OF-1792-NONZERO|REALIZATION=LEVELS=NONE+OCC+FULL;MAXIMAL=FULL;EXCLU
+  DED-NONZERO=150|STATE=BACKGROUND-COEFFICIENT;OBSERVABLE-MOVES-AT-18-DISTIN
+  CT-RESPONSES|SCALE=L=4-UNIQUE(LOCALITY-IFF-L>=4;NON-MONOMIAL-LOCAL-AXIS-IF
+  F-L<=4)|SCOPE=D=2;L=4;FIELD=Q(ZETA-8);ALPHABET=25;GENERATORS=64;FINITE-LAT
+  TICE-ONLY;NO-CONTINUUM-CLAIM;NO-INTERACTING-THEORY-CLAIM-BEYOND-THE-COMPOS
+  ED-SEGMENT-DEFECT>
+
+TOTALS: {"anchors": 24, "byte_anchors": 5, "census_rows": 4096, "gates": 77, "gates_falsifiable": 75, "gates_passed": 77, "gates_waived": 2, "mutants": 82, "mutants_killed": 82, "mutants_on_target": 82, "never_falsified": 2, "path_value_anchors": 10, "pool": 64, "verbatim_anchors": 9}
+
+NOT EXECUTED
+  - the 9-point Moore stencil is not swept; only the 3-term axis stencil (exhaustive over the declared alphabet at every swept order) and the 5-point stencil (at one lattice size above the collapse threshold)
+  - coefficients outside the declared 25-element alphabet are not swept; the order-5-and-above collapse is proved in the paper and is alphabet-independent, but the order-3 emptiness is alphabet-relative
+  - no continuum or infinite-volume limit is taken
+  - no multi-excitation sector, no interaction term, and no field operator is constructed; 'field' appears only as the free-field ANALOG
+  - d = 3 is swept only for the locality threshold, not for the family
+
+ALL GATES PASSED (77/77); ALL MUTANTS DEAD (82/82)
+EXIT 0

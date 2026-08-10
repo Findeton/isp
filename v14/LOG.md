@@ -1554,3 +1554,45 @@ rule-relative lift table, the five relativities, the
 reopening-leads register.  The R6b′ successor already
 delivered against its committed bytes (#48) and is verified
 (#49) — the lineage is clean.
+
+## 2026-08-09 — R4 DELIVERED, COMMITTED AS-IS (v14 LEDGER #54)
+paper-10-defect-on-the-stage.md (f3e8cc1618f8) + r4_defect_
+stage_exact.py (b079bb3b8d55) + _output.txt (58ec08893526) +
+_receipt.json (3214f4da3af2) committed exactly as delivered.
+**THE VERDICT: R4-DEFECT-PRESENT<9 segments> — QUANTUM
+INTERFERENCE SURVIVES ON THE SPATIAL STAGE.**  588 of 3,364
+maximal-transport pairs carry nonzero Δᴮ — 8 distinct EXACT
+RATIONAL values (±1/2, ±1/4, ±1/8 asymmetric, +5/8, −3/8);
+column sums exactly zero; **the Markovian control 0-of-1,792
+both directions; the R3 Y1 class dies at
+G-DEFECT-VALUE-CENSUS.**  **THE WELD CARRIES TO SPACE:
+B(VU) = B(V)B(U) + Δᴮ — the defect IS the interference part
+of the two-time correlator, now with spatial structure**
+(16 separations carry defects, max radius 2; a light cone —
+one neighbourhood per step; equal-time connected 15/256;
+periods projective {1,2,4} w/ the raw order measured
+gauge-variant).  **A THEOREM FELL OUT: L = 4 IS THE UNIQUE
+ADMISSIBLE SCALE** (locality ⟺ L≥4; non-monomial local axis
+unitaries ⟺ L≤4 — ord(a)≥5 forces monomial,
+alphabet-independent): the non-trivial quantum family lives
+at EXACTLY ONE lattice size — 72 generators, 48 non-monomial,
+9 gauge classes.  **THE FIRST TRANSFORMATION-TYPE CENSUS: 22
+classes (extended group) / 38 (anchored)** — and TRANSLATIONS
+ACT TRIVIALLY on the whole circulant family: the excitation
+classification is carried ENTIRELY by point symmetries at
+this scale.  **THE REALIZATION GATE BITES: 150 nonzero
+defects EXCLUDED at sub-maximal transport** (the R3 lesson
+institutionalized and materially active; printed, not
+promoted).  STATE MOTION: BACKGROUND-COEFFICIENT-OBSERVABLE-
+MOVES (one coefficient serves all states; 18 distinct
+observable responses — the honest FR2 verdict).  Locality
+dependence measured at matched coordinates (616/1,024
+identical value multisets — largely but not wholly
+indifferent).  Instrument: 24 anchors (9 verbatim w/
+consumers, evaluated first), 77 gates, 82/82 mutants killed
+by declared target, **never-falsified = 2 both
+verified-forced** (the post-#34 discipline at birth), 13/13
+paper claims, byte-identical vs the pre-interruption
+artifacts (the resume was clean).  One prose over-claim
+self-caught pre-delivery ("field" now in three explicit
+senses).  Adjudicator verification next; panel queued.
